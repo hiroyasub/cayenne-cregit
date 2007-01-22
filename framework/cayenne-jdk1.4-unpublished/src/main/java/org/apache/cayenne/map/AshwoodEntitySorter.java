@@ -327,14 +327,6 @@ begin_comment
 comment|/**  * Implements dependency sorting algorithms for ObjEntities, DbEntities and DataObjects.  * Presently it works for acyclic database schemas with possible multi-reflexive tables.  * The class uses topological sorting from the<a  * href="http://objectstyle.org/ashwood/">Ashwood library</a>.  *   * @author Andriy Shapochka, Andrus Adamchik  * @since 1.1  */
 end_comment
 
-begin_comment
-comment|// TODO: Andrus, 1/23/2006 - there is a dependency on DataContext ... bad as the sorter is
-end_comment
-
-begin_comment
-comment|// in the map package, and also because we may want to use generic ObjectContext API...
-end_comment
-
 begin_class
 specifier|public
 class|class
