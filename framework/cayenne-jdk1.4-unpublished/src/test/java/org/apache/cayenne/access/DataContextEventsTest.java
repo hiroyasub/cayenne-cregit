@@ -75,6 +75,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|LifecycleEventCallback
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|unit
 operator|.
 name|OneWayMappingCase
@@ -82,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Holger Hoffstaette  * @author Andrus Adamchik  */
+comment|/**  * @author Holger Hoffstaette  * @author Andrus Adamchik  * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be removed in  *             later 3.0 milestones.  */
 end_comment
 
 begin_class

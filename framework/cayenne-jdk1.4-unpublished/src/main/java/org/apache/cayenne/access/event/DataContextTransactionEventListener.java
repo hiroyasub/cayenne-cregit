@@ -27,8 +27,22 @@ name|EventListener
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|LifecycleEventCallback
+import|;
+end_import
+
 begin_comment
-comment|/**  * This interface declares callback methods that subscribers to DataContext  * events can implement to be notified about transactions.  */
+comment|/**  * This interface declares callback methods that subscribers to DataContext events can  * implement to be notified about transactions.  *   * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be removed in  *             later 3.0 milestones.  */
 end_comment
 
 begin_interface
