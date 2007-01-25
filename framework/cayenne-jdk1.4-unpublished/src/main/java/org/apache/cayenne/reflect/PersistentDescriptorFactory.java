@@ -282,6 +282,21 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
+name|Object
+name|attribute
+init|=
+name|attributes
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|attribute
+operator|instanceof
+name|ObjAttribute
+condition|)
+block|{
 name|createAttributeProperty
 argument_list|(
 name|descriptor
@@ -289,12 +304,14 @@ argument_list|,
 operator|(
 name|ObjAttribute
 operator|)
-name|attributes
-operator|.
-name|next
-argument_list|()
+name|attribute
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|// TODO: andrus, 1/25/2007 - EmbeddedAttribute
+block|}
 block|}
 comment|// only include this entity relationships and skip superclasses...
 name|Iterator

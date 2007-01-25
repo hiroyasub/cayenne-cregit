@@ -49,6 +49,20 @@ name|cayenne
 operator|.
 name|util
 operator|.
+name|XMLEncoder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
 name|XMLSerializable
 import|;
 end_import
@@ -98,6 +112,15 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+specifier|public
+specifier|abstract
+name|void
+name|encodeAsXML
+parameter_list|(
+name|XMLEncoder
+name|encoder
+parameter_list|)
+function_decl|;
 comment|/**      * Returns parent entity that holds this attribute.      */
 specifier|public
 name|Entity

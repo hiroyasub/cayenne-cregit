@@ -27,6 +27,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -39,20 +49,6 @@ name|DataNode
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author Andrus Adamchik  */
 end_comment
@@ -62,7 +58,7 @@ specifier|public
 class|class
 name|DataNodeFileTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
 specifier|protected
 name|DataNodeFile
@@ -76,7 +72,6 @@ specifier|protected
 name|Project
 name|pr
 decl_stmt|;
-comment|/**      * @see junit.framework.TestCase#setUp()      */
 specifier|protected
 name|void
 name|setUp
@@ -84,11 +79,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|super
-operator|.
-name|setUp
-argument_list|()
-expr_stmt|;
 name|pr
 operator|=
 operator|new

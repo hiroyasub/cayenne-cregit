@@ -272,6 +272,10 @@ specifier|protected
 name|long
 name|startTime
 decl_stmt|;
+specifier|protected
+name|MapLoader
+name|mapLoader
+decl_stmt|;
 specifier|public
 name|RuntimeLoadDelegate
 parameter_list|(
@@ -780,6 +784,31 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
+name|MapLoader
+name|getMapLoader
+parameter_list|()
+block|{
+comment|// it is worth caching the map loader, as it precompiles some XML operations
+comment|// starting from release 3.0
+if|if
+condition|(
+name|mapLoader
+operator|==
+literal|null
+condition|)
+block|{
+name|mapLoader
+operator|=
+operator|new
+name|MapLoader
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+name|mapLoader
+return|;
+block|}
 comment|/**      * Returns DataMap for the name and location information. If a DataMap is already      * loaded within a given domain, such loaded map is returned, otherwise the map is      * loaded and linked with the DataDomain.      */
 specifier|protected
 name|DataMap
@@ -888,8 +917,7 @@ block|{
 name|DataMap
 name|map
 init|=
-operator|new
-name|MapLoader
+name|getMapLoader
 argument_list|()
 operator|.
 name|loadDataMap

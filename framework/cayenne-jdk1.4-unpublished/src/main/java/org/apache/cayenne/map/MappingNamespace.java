@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries   * and other mapping objects.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries and other  * mapping objects.  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
@@ -48,8 +48,15 @@ specifier|public
 interface|interface
 name|MappingNamespace
 block|{
-comment|/**      * Returns DbEntity for a given name, or null if no      * such DbEntity is found in the MappingNamespace.      */
-specifier|public
+comment|/**      * Returns an {@link Embeddable} matching class name or null if such Embeddable is not      * mapped.      */
+name|Embeddable
+name|getEmbeddable
+parameter_list|(
+name|String
+name|className
+parameter_list|)
+function_decl|;
+comment|/**      * Returns DbEntity for a given name, or null if no such DbEntity is found in the      * MappingNamespace.      */
 name|DbEntity
 name|getDbEntity
 parameter_list|(
@@ -57,8 +64,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns ObjEntity for a given name, or null if no      * such ObjEntity is found in the MappingNamespace.      */
-specifier|public
+comment|/**      * Returns ObjEntity for a given name, or null if no such ObjEntity is found in the      * MappingNamespace.      */
 name|ObjEntity
 name|getObjEntity
 parameter_list|(
@@ -66,8 +72,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns Procedure for a given name, or null if no      * such Procedure is found in the MappingNamespace.      */
-specifier|public
+comment|/**      * Returns Procedure for a given name, or null if no such Procedure is found in the      * MappingNamespace.      */
 name|Procedure
 name|getProcedure
 parameter_list|(
@@ -75,8 +80,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns Query for a given name, or null if no      * such Query is found in the MappingNamespace.      */
-specifier|public
+comment|/**      * Returns Query for a given name, or null if no such Query is found in the      * MappingNamespace.      */
 name|Query
 name|getQuery
 parameter_list|(
@@ -85,25 +89,21 @@ name|name
 parameter_list|)
 function_decl|;
 comment|/**      * Returns all DbEntities in the namespace.      */
-specifier|public
 name|Collection
 name|getDbEntities
 parameter_list|()
 function_decl|;
 comment|/**      * Returns all ObjEntities in the namespace.      */
-specifier|public
 name|Collection
 name|getObjEntities
 parameter_list|()
 function_decl|;
 comment|/**      * Returns all Procedures in the namespace.      */
-specifier|public
 name|Collection
 name|getProcedures
 parameter_list|()
 function_decl|;
 comment|/**      * Returns all Queries in the namespace.      */
-specifier|public
 name|Collection
 name|getQueries
 parameter_list|()
