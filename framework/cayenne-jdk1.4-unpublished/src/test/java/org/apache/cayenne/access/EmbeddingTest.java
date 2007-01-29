@@ -17,6 +17,28 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -153,10 +175,32 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 1/25/2007 - this fails
-comment|// ObjectContext context = createDataContext();
-comment|// List results = context.performQuery(query);
-comment|// assertEquals(2, results.size());
+name|ObjectContext
+name|context
+init|=
+name|createDataContext
+argument_list|()
+decl_stmt|;
+name|List
+name|results
+init|=
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|results
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

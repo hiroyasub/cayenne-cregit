@@ -99,7 +99,7 @@ parameter_list|)
 throws|throws
 name|PropertyException
 function_decl|;
-comment|/**      * Returns a property descriptor matching property name, or null if no such property      * is found. Lookup includes properties from this descriptor and all its superclass      * decsriptors. Returned property maybe any one of simple, value holder or collection      * properties.      */
+comment|/**      * Returns a property descriptor matching property name, or null if no such property      * is found. Lookup includes properties from this descriptor and all its superclass      * decsriptors. Returned property can be any one of {@link AttributeProperty},      * {@link ToManyProperty}, {@link ToOneProperty}.      */
 name|Property
 name|getProperty
 parameter_list|(
@@ -107,7 +107,7 @@ name|String
 name|propertyName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a Java Bean property descriptor matching property name or null if no such      * property is found. Lookup DOES NOT including properties from the superclass      * decsriptors. Returned property maybe any one of simple, value holder or collection      * properties.      */
+comment|/**      * Returns a Java Bean property descriptor matching property name or null if no such      * property is found. Lookup DOES NOT including properties from the superclass      * descriptors. Returned property can be any one of {@link AttributeProperty},      * {@link ToManyProperty}, {@link ToOneProperty}.      */
 name|Property
 name|getDeclaredProperty
 parameter_list|(
@@ -115,7 +115,7 @@ name|String
 name|propertyName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an Iterator over descriptor properties.      */
+comment|/**      * Returns an Iterator over descriptor properties.      *       * @deprecated since 3.0. Use {@link #visitProperties(PropertyVisitor)} method      *             instead.      */
 name|Iterator
 name|getProperties
 parameter_list|()
@@ -125,9 +125,25 @@ name|Iterator
 name|getIdProperties
 parameter_list|()
 function_decl|;
-comment|/**      * Passes the visitor to all properties "visit" method, terminating properties walk      * through in case one of the properties returns false. Returns true if all visited      * properties returned true, false - if one property returned false.      */
+comment|/**      * Passes the visitor to all properties "visit" method, terminating properties      * walkthrough in case one of the properties returns false. Returns true if all      * visited properties returned true, false - if one property returned false.      */
 name|boolean
 name|visitProperties
+parameter_list|(
+name|PropertyVisitor
+name|visitor
+parameter_list|)
+function_decl|;
+comment|/**      * Passes the visitor to the properties "visit" method for all properties declared in      * this descriptor, terminating properties walkthrough in case one of the properties      * returns false. Returns true if all visited properties returned true, false - if one      * property returned false.      *       * @since 3.0      */
+name|boolean
+name|visitDeclaredProperties
+parameter_list|(
+name|PropertyVisitor
+name|visitor
+parameter_list|)
+function_decl|;
+comment|/**      * Passes the visitor to the properties "visit" method for all properties declared in      * this descriptor, its super and subdescriptors, terminating properties walkthrough      * in case one of the properties returns false. Returns true if all visited properties      * returned true, false - if one property returned false.      *       * @since 3.0      */
+name|boolean
+name|visitAllProperties
 parameter_list|(
 name|PropertyVisitor
 name|visitor
