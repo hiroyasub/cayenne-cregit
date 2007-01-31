@@ -304,17 +304,6 @@ literal|"Must have thrown on EntityExists condition."
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: andrus, 1/3/2007 - implement - need to emulate the container environment
-specifier|public
-name|void
-name|_testPersistTransactionRequiredException
-parameter_list|()
-block|{
-comment|// throws TransactionRequiredException if invoked on a
-comment|// container-managed entity manager of type
-comment|// PersistenceContextType.TRANSACTION and there is
-comment|// no transaction.
-block|}
 comment|// TODO: andrus, 1/3/2007 - this fails with Null ObjectId exception
 specifier|public
 name|void
