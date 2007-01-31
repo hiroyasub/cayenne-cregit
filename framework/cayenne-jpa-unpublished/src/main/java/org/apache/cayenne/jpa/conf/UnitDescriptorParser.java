@@ -509,7 +509,6 @@ block|}
 block|}
 comment|/**      * Loads and returns a Collection of PersistenceUnitInfos from the XML descriptor.      */
 specifier|public
-specifier|synchronized
 name|Collection
 argument_list|<
 name|JpaUnit
@@ -546,6 +545,8 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
+comment|// note that parser is not reused - some parser implementations blow on
+comment|// parser.reset() call
 name|SAXParser
 name|parser
 init|=
