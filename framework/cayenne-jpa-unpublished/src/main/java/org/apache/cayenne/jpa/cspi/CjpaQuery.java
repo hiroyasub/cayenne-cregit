@@ -73,6 +73,16 @@ name|javax
 operator|.
 name|persistence
 operator|.
+name|FlushModeType
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|persistence
+operator|.
 name|NoResultException
 import|;
 end_import
@@ -642,6 +652,18 @@ argument_list|(
 literal|"query does not support maxResult"
 argument_list|)
 throw|;
+block|}
+specifier|public
+name|Query
+name|setFlushMode
+parameter_list|(
+name|FlushModeType
+name|flushModeType
+parameter_list|)
+block|{
+return|return
+name|this
+return|;
 block|}
 comment|/**      * Set an implementation-specific hint. If the hint name is not recognized, it is      * silently ignored.      *       * @param hintName      * @param value      * @return the same query instance      * @throws IllegalArgumentException if the second argument is not valid for the      *             implementation      */
 specifier|public
