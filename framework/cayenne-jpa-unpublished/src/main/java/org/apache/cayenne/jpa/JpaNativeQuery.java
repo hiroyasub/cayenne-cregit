@@ -66,6 +66,7 @@ import|;
 end_import
 
 begin_class
+specifier|public
 class|class
 name|JpaNativeQuery
 extends|extends
@@ -79,6 +80,7 @@ name|POSITIONAL_PARAM_PREFIX
 init|=
 literal|"positional_"
 decl_stmt|;
+specifier|public
 name|JpaNativeQuery
 parameter_list|(
 name|ObjectContext
@@ -111,6 +113,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|JpaNativeQuery
 parameter_list|(
 name|ObjectContext

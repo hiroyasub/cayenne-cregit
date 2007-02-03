@@ -86,6 +86,7 @@ comment|/**  * A JPA wrapper around a Cayenne Transaction. For more info see<a  
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|JpaTransaction
 implements|implements

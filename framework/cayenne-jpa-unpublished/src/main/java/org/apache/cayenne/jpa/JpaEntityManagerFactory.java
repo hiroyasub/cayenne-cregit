@@ -86,6 +86,7 @@ comment|/**  * A base implementation of a Cyenne EntityManagerFactory.  *   * @a
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|JpaEntityManagerFactory
 implements|implements
@@ -107,6 +108,7 @@ specifier|protected
 name|Object
 name|delegate
 decl_stmt|;
+specifier|public
 name|JpaEntityManagerFactory
 parameter_list|(
 name|DataDomain

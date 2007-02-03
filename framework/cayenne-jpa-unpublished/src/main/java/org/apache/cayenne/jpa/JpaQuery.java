@@ -210,6 +210,7 @@ comment|/**  * A JPA Query that wraps a Cayenne Query.  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|JpaQuery
 implements|implements
@@ -249,6 +250,7 @@ specifier|protected
 name|ObjectContext
 name|context
 decl_stmt|;
+specifier|public
 name|JpaQuery
 parameter_list|(
 name|ObjectContext
@@ -263,6 +265,7 @@ name|ctxt
 expr_stmt|;
 block|}
 comment|/**      * Construct a named query.      */
+specifier|public
 name|JpaQuery
 parameter_list|(
 name|ObjectContext
