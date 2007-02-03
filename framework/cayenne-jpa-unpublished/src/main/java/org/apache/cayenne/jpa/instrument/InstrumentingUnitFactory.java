@@ -27,6 +27,8 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
+name|conf
+operator|.
 name|JpaUnit
 import|;
 end_import
@@ -40,6 +42,8 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
+operator|.
+name|conf
 operator|.
 name|JpaUnitFactory
 import|;

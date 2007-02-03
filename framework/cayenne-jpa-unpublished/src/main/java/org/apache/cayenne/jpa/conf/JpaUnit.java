@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
+operator|.
+name|conf
 package|;
 end_package
 
@@ -131,6 +133,34 @@ name|DataSource
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|JpaProviderException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|Provider
+import|;
+end_import
+
 begin_comment
 comment|/**  * A<code>javax.persistence.spi.PersistenceUnitInfo</code> implementor used by Cayenne  * JPA provider.  *   * @author Andrus Adamchik  */
 end_comment
@@ -198,6 +228,31 @@ specifier|protected
 name|ClassLoader
 name|classLoader
 decl_stmt|;
+comment|/**      * Builds a DataSource-specific property name for a generic property name.      */
+specifier|public
+specifier|static
+name|String
+name|getDataSourcePropertyName
+parameter_list|(
+name|String
+name|dataSourceName
+parameter_list|,
+name|String
+name|suffix
+parameter_list|)
+block|{
+return|return
+name|DefaultDataSourceFactory
+operator|.
+name|DATA_SOURCE_PREFIX
+operator|+
+name|dataSourceName
+operator|+
+literal|"."
+operator|+
+name|suffix
+return|;
+block|}
 specifier|public
 name|JpaUnit
 parameter_list|()
