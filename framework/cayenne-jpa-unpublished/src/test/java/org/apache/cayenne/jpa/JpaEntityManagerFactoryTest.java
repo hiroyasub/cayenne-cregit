@@ -35,22 +35,6 @@ name|TestCase
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|spi
-operator|.
-name|MockPersistenceUnitInfo
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -67,8 +51,10 @@ name|JpaEntityManagerFactory
 name|f
 init|=
 operator|new
-name|MockJpaEntityManagerFactory
+name|JpaEntityManagerFactory
 argument_list|(
+literal|null
+argument_list|,
 operator|new
 name|MockPersistenceUnitInfo
 argument_list|()

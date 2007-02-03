@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|spi
 package|;
 end_package
 
@@ -130,20 +128,6 @@ operator|.
 name|sql
 operator|.
 name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|JpaProviderException
 import|;
 end_import
 

@@ -12,15 +12,13 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|spi
 package|;
 end_package
 
 begin_class
 specifier|public
 class|class
-name|TestPersistenceProvider2
+name|TestPersistenceProvider1
 extends|extends
 name|MockPersistenceProvider
 block|{
@@ -30,10 +28,10 @@ specifier|final
 name|String
 name|UNIT_NAME
 init|=
-literal|"u2"
+literal|"u1"
 decl_stmt|;
 specifier|public
-name|TestPersistenceProvider2
+name|TestPersistenceProvider1
 parameter_list|()
 block|{
 name|super

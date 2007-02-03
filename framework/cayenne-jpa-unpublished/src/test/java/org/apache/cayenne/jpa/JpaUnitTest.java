@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|spi
 package|;
 end_package
 
@@ -56,6 +54,34 @@ operator|.
 name|spi
 operator|.
 name|PersistenceUnitTransactionType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|JpaPersistenceProvider
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|JpaUnit
 import|;
 end_import
 

@@ -12,27 +12,36 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|spi
 package|;
 end_package
 
-begin_comment
-comment|/**  * A factory of {@link org.apache.cayenne.jpa.spi.JpaUnit} instances. Custom factory can  * be configured by setting a  * {@link org.apache.cayenne.jpa.spi.JpaPersistenceProvider#UNIT_FACTORY_PROPERTY}  * property.  *   * @author Andrus Adamchik  */
-end_comment
-
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|JpaUnitFactory
+class|class
+name|TestPersistenceProvider2
+extends|extends
+name|MockPersistenceProvider
 block|{
-comment|/**      * Creates a new instance of JpaPersistenceUnitInfo.      */
-name|JpaUnit
-name|newUnit
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|UNIT_NAME
+init|=
+literal|"u2"
+decl_stmt|;
+specifier|public
+name|TestPersistenceProvider2
 parameter_list|()
-function_decl|;
+block|{
+name|super
+argument_list|(
+name|UNIT_NAME
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

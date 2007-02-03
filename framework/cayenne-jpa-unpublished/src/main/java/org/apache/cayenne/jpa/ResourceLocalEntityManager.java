@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|cspi
 package|;
 end_package
 
@@ -141,38 +139,10 @@ name|Transaction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|JpaEntityManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|JpaEntityManagerFactory
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
-name|CjpaEntityManager
+name|ResourceLocalEntityManager
 extends|extends
 name|JpaEntityManager
 block|{
@@ -181,7 +151,7 @@ name|ObjectContext
 name|context
 decl_stmt|;
 specifier|public
-name|CjpaEntityManager
+name|ResourceLocalEntityManager
 parameter_list|(
 name|ObjectContext
 name|context
@@ -214,7 +184,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|CjpaEntityTransaction
+name|JpaTransaction
 argument_list|(
 name|Transaction
 operator|.
@@ -472,7 +442,7 @@ argument_list|()
 expr_stmt|;
 return|return
 operator|new
-name|CjpaQuery
+name|JpaQuery
 argument_list|(
 name|context
 argument_list|,
@@ -503,7 +473,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|new
-name|CjpaNativeQuery
+name|JpaNativeQuery
 argument_list|(
 name|context
 argument_list|,
@@ -528,7 +498,7 @@ argument_list|()
 expr_stmt|;
 return|return
 operator|new
-name|CjpaNativeQuery
+name|JpaNativeQuery
 argument_list|(
 name|context
 argument_list|,

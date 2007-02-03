@@ -89,8 +89,6 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
-name|spi
-operator|.
 name|JpaPersistenceProvider
 import|;
 end_import
@@ -104,8 +102,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|spi
 operator|.
 name|JpaUnit
 import|;

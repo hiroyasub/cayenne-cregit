@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|cspi
 package|;
 end_package
 
@@ -212,9 +210,8 @@ comment|/**  * A JPA Query that wraps a Cayenne Query.  */
 end_comment
 
 begin_class
-specifier|public
 class|class
-name|CjpaQuery
+name|JpaQuery
 implements|implements
 name|Query
 block|{
@@ -252,8 +249,7 @@ specifier|protected
 name|ObjectContext
 name|context
 decl_stmt|;
-specifier|public
-name|CjpaQuery
+name|JpaQuery
 parameter_list|(
 name|ObjectContext
 name|ctxt
@@ -267,8 +263,7 @@ name|ctxt
 expr_stmt|;
 block|}
 comment|/**      * Construct a named query.      */
-specifier|public
-name|CjpaQuery
+name|JpaQuery
 parameter_list|(
 name|ObjectContext
 name|context

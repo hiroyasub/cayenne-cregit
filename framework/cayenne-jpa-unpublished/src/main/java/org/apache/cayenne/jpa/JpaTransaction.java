@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|cspi
 package|;
 end_package
 
@@ -84,13 +82,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A JPA wrapper around a Cayenne Transaction. For more info see<a  * href="http://cwiki.apache.org/CAYDOC/understanding-transactions.html">Cayenne Wiki</a>.  */
+comment|/**  * A JPA wrapper around a Cayenne Transaction. For more info see<a  * href="http://cayenne.apache.org/doc/understanding-transactions.html">this page</a>.  */
 end_comment
 
 begin_class
-specifier|public
 class|class
-name|CjpaEntityTransaction
+name|JpaTransaction
 implements|implements
 name|EntityTransaction
 block|{
@@ -107,7 +104,7 @@ name|boolean
 name|rollbackOnly
 decl_stmt|;
 specifier|public
-name|CjpaEntityTransaction
+name|JpaTransaction
 parameter_list|(
 name|Transaction
 name|transaction

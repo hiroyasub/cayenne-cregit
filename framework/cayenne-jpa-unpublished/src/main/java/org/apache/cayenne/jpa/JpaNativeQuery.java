@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|cspi
 package|;
 end_package
 
@@ -68,11 +66,10 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
-name|CjpaNativeQuery
+name|JpaNativeQuery
 extends|extends
-name|CjpaQuery
+name|JpaQuery
 block|{
 specifier|private
 specifier|static
@@ -82,8 +79,7 @@ name|POSITIONAL_PARAM_PREFIX
 init|=
 literal|"positional_"
 decl_stmt|;
-specifier|public
-name|CjpaNativeQuery
+name|JpaNativeQuery
 parameter_list|(
 name|ObjectContext
 name|context
@@ -115,8 +111,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
-name|CjpaNativeQuery
+name|JpaNativeQuery
 parameter_list|(
 name|ObjectContext
 name|context

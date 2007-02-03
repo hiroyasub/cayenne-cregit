@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|cspi
 package|;
 end_package
 
@@ -301,6 +299,22 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
+name|enhancer
+operator|.
+name|JpaEnhancerVisitorFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
 name|instrument
 operator|.
 name|UnitClassTranformer
@@ -336,22 +350,6 @@ operator|.
 name|reflect
 operator|.
 name|CjpaClassDescriptorFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|spi
-operator|.
-name|JpaPersistenceProvider
 import|;
 end_import
 
@@ -488,7 +486,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|CjpaPersistenceProvider
+name|Provider
 extends|extends
 name|JpaPersistenceProvider
 block|{
@@ -510,7 +508,7 @@ name|logger
 decl_stmt|;
 comment|/**      * Creates a new PersistenceProvider with properties configured to run in a standalone      * mode with Cayenne stack.      */
 specifier|public
-name|CjpaPersistenceProvider
+name|Provider
 parameter_list|()
 block|{
 name|this
@@ -520,7 +518,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|CjpaPersistenceProvider
+name|Provider
 parameter_list|(
 name|boolean
 name|validateDescriptors
@@ -582,7 +580,7 @@ name|put
 argument_list|(
 name|DATA_SOURCE_FACTORY_PROPERTY
 argument_list|,
-name|CjpaDataSourceFactory
+name|DefaultDataSourceFactory
 operator|.
 name|class
 operator|.
@@ -747,7 +745,7 @@ operator|new
 name|Enhancer
 argument_list|(
 operator|new
-name|CjpaEnhancerVisitorFactory
+name|JpaEnhancerVisitorFactory
 argument_list|(
 name|managedClasses
 argument_list|)
@@ -976,11 +974,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|CjpaEntityManagerFactory
+name|JpaEntityManagerFactory
 name|factory
 init|=
 operator|new
-name|CjpaEntityManagerFactory
+name|JpaEntityManagerFactory
 argument_list|(
 name|domain
 argument_list|,
@@ -1240,7 +1238,7 @@ block|{
 name|String
 name|adapterKey
 init|=
-name|CjpaDataSourceFactory
+name|DefaultDataSourceFactory
 operator|.
 name|getPropertyName
 argument_list|(

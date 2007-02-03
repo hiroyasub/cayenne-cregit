@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|cspi
 package|;
 end_package
 
@@ -28,6 +26,20 @@ operator|.
 name|access
 operator|.
 name|DataContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|JpaNativeQuery
 import|;
 end_import
 
@@ -53,11 +65,11 @@ name|void
 name|testSetParameter1
 parameter_list|()
 block|{
-name|CjpaNativeQuery
+name|JpaNativeQuery
 name|q
 init|=
 operator|new
-name|CjpaNativeQuery
+name|JpaNativeQuery
 argument_list|(
 operator|new
 name|DataContext
@@ -93,11 +105,11 @@ name|void
 name|testSetParameter2
 parameter_list|()
 block|{
-name|CjpaNativeQuery
+name|JpaNativeQuery
 name|q
 init|=
 operator|new
-name|CjpaNativeQuery
+name|JpaNativeQuery
 argument_list|(
 operator|new
 name|DataContext

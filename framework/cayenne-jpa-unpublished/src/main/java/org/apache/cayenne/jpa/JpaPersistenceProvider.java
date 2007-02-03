@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|spi
 package|;
 end_package
 
@@ -94,20 +92,6 @@ operator|.
 name|instrument
 operator|.
 name|InstrumentUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|JpaProviderException
 import|;
 end_import
 
@@ -398,7 +382,7 @@ name|put
 argument_list|(
 name|DATA_SOURCE_FACTORY_PROPERTY
 argument_list|,
-name|JndiJpaDataSourceFactory
+name|DefaultDataSourceFactory
 operator|.
 name|class
 operator|.
