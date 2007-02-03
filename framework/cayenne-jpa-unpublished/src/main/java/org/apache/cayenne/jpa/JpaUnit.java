@@ -270,7 +270,7 @@ block|{
 return|return
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|PROVIDER_PROPERTY
 argument_list|)
@@ -297,7 +297,7 @@ name|type
 init|=
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|TRANSACTION_TYPE_PROPERTY
 argument_list|)
@@ -342,7 +342,7 @@ name|factory
 init|=
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|DATA_SOURCE_FACTORY_PROPERTY
 argument_list|)
@@ -360,7 +360,7 @@ name|JpaProviderException
 argument_list|(
 literal|"No value for '"
 operator|+
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|DATA_SOURCE_FACTORY_PROPERTY
 operator|+
@@ -425,7 +425,7 @@ name|name
 init|=
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|JTA_DATA_SOURCE_PROPERTY
 argument_list|)
@@ -452,7 +452,7 @@ name|name
 init|=
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|NON_JTA_DATA_SOURCE_PROPERTY
 argument_list|)

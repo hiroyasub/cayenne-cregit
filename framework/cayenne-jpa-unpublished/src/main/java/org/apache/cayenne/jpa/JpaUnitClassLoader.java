@@ -60,13 +60,11 @@ comment|/**  * A special class loader that uses parent loader to get resoirces, 
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|JpaUnitClassLoader
 extends|extends
 name|SecureClassLoader
 block|{
-specifier|public
 name|JpaUnitClassLoader
 parameter_list|(
 name|ClassLoader

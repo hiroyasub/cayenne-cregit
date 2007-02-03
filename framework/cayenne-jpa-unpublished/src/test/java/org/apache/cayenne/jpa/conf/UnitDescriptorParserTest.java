@@ -89,7 +89,7 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
-name|JpaPersistenceProvider
+name|JpaUnit
 import|;
 end_import
 
@@ -103,7 +103,7 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
-name|JpaUnit
+name|Provider
 import|;
 end_import
 
@@ -274,7 +274,7 @@ argument_list|()
 operator|.
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|JTA_DATA_SOURCE_PROPERTY
 argument_list|)
@@ -486,7 +486,7 @@ argument_list|()
 operator|.
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|JTA_DATA_SOURCE_PROPERTY
 argument_list|)
@@ -848,7 +848,7 @@ argument_list|()
 operator|.
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|NON_JTA_DATA_SOURCE_PROPERTY
 argument_list|)
@@ -1077,7 +1077,7 @@ argument_list|()
 operator|.
 name|getProperty
 argument_list|(
-name|JpaPersistenceProvider
+name|Provider
 operator|.
 name|JTA_DATA_SOURCE_PROPERTY
 argument_list|)
