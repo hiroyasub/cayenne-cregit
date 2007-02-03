@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base implementation of a non-JTA EntityManager.  *   * @author Andrus Adamchik  */
+comment|/**  * Base implementation of EntityManager.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class

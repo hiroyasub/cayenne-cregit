@@ -71,12 +71,12 @@ end_import
 
 begin_class
 class|class
-name|CjpaCollectionFieldAccessor
+name|JpaCollectionFieldAccessor
 extends|extends
 name|FieldAccessor
 block|{
 specifier|public
-name|CjpaCollectionFieldAccessor
+name|JpaCollectionFieldAccessor
 parameter_list|(
 name|Class
 name|objectClass

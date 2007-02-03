@@ -349,7 +349,7 @@ name|jpa
 operator|.
 name|reflect
 operator|.
-name|CjpaClassDescriptorFactory
+name|JpaClassDescriptorFactory
 import|;
 end_import
 
@@ -691,7 +691,7 @@ operator|.
 name|addFactory
 argument_list|(
 operator|new
-name|CjpaClassDescriptorFactory
+name|JpaClassDescriptorFactory
 argument_list|(
 name|descriptors
 argument_list|)
