@@ -49,8 +49,6 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
-name|spi
-operator|.
 name|JpaDataSourceFactory
 import|;
 end_import
