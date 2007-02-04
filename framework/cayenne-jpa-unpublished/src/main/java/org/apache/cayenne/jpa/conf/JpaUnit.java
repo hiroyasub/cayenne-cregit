@@ -172,16 +172,6 @@ name|JpaUnit
 implements|implements
 name|PersistenceUnitInfo
 block|{
-comment|// spec defaults
-specifier|static
-specifier|final
-name|PersistenceUnitTransactionType
-name|DEFAULT_TRANSACTION_TYPE
-init|=
-name|PersistenceUnitTransactionType
-operator|.
-name|JTA
-decl_stmt|;
 specifier|protected
 name|String
 name|persistenceUnitName
@@ -357,6 +347,9 @@ operator|.
 name|TRANSACTION_TYPE_PROPERTY
 argument_list|)
 decl_stmt|;
+comment|// default JTA type is somewhat arbitrary as application-managed EntityManagers
+comment|// will use resource-local, while container-managed will use JTA. Normally whoever
+comment|// created this unit will set the right value.
 return|return
 name|type
 operator|!=
@@ -369,7 +362,9 @@ argument_list|(
 name|type
 argument_list|)
 else|:
-name|DEFAULT_TRANSACTION_TYPE
+name|PersistenceUnitTransactionType
+operator|.
+name|JTA
 return|;
 block|}
 name|String

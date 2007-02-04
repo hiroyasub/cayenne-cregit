@@ -606,7 +606,7 @@ name|Provider
 implements|implements
 name|PersistenceProvider
 block|{
-comment|// common properties
+comment|// spec-defined properties per ch. 7.1.3.1.
 specifier|public
 specifier|static
 specifier|final
@@ -639,7 +639,7 @@ name|NON_JTA_DATA_SOURCE_PROPERTY
 init|=
 literal|"javax.persistence.nonJtaDataSource"
 decl_stmt|;
-comment|// provider-specific properties
+comment|// provider-specific properties. Must use provider namespace per ch. 7.1.3.1.
 specifier|public
 specifier|static
 specifier|final
@@ -660,6 +660,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|CREATE_SCHEMA_PROPERTY
+init|=
+literal|"cayenne.schema.create"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|INSTRUMENTING_FACTORY_CLASS
 init|=
 name|InstrumentingUnitFactory
@@ -668,14 +676,6 @@ name|class
 operator|.
 name|getName
 argument_list|()
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|CREATE_SCHEMA_PROPERTY
-init|=
-literal|"cayenne.schema.create"
 decl_stmt|;
 specifier|protected
 name|boolean
@@ -927,6 +927,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Called by Persistence class when an EntityManagerFactory is to be created. Creates      * a {@link JpaUnit} and calls      * {@link #createContainerEntityManagerFactory(PersistenceUnitInfo, Map)}.      */
 specifier|public
 name|EntityManagerFactory
 name|createEntityManagerFactory
@@ -1064,25 +1065,25 @@ return|return
 literal|null
 return|;
 block|}
+comment|// do not pass properties further down, they are already acounted for in the
+comment|// PersistenceUnitInfo.
 return|return
 name|createContainerEntityManagerFactory
 argument_list|(
 name|ui
 argument_list|,
-name|map
+literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Maps PersistenceUnitInfo to Cayenne DataDomain and returns a      * {@link EntityManagerFactory} which is a DataDomain wrapper.      */
-comment|// TODO: andrus, 07/24/2006 - extract properties from the second map parameter as well
-comment|// as PUI.
+comment|/**      * Called by the container when an EntityManagerFactory is to be created. Returns a      * {@link EntityManagerFactory} which is a DataDomain wrapper. Note that Cayenne      * provider will ignore all but 'javax.persistence.transactionType' property in the      * passed property map.      */
 specifier|public
 specifier|synchronized
 name|EntityManagerFactory
 name|createContainerEntityManagerFactory
 parameter_list|(
 name|PersistenceUnitInfo
-name|info
+name|unit
 parameter_list|,
 name|Map
 name|map
@@ -1091,7 +1092,7 @@ block|{
 name|String
 name|name
 init|=
-name|info
+name|unit
 operator|.
 name|getPersistenceUnitName
 argument_list|()
@@ -1106,6 +1107,9 @@ argument_list|(
 name|name
 argument_list|)
 decl_stmt|;
+comment|// TODO: andrus, 2/3/2007 - considering property overrides, it may be a bad idea
+comment|// to cache domains. Essentially we are caching a PersistenceUnitInfo with a given
+comment|// name, without a possibility to refresh it. But maybe this is ok...?
 if|if
 condition|(
 name|domain
@@ -1120,6 +1124,16 @@ name|System
 operator|.
 name|currentTimeMillis
 argument_list|()
+decl_stmt|;
+name|boolean
+name|isJTA
+init|=
+name|isJta
+argument_list|(
+name|unit
+argument_list|,
+name|map
+argument_list|)
 decl_stmt|;
 comment|// configure Cayenne domain
 name|domain
@@ -1165,7 +1179,7 @@ init|=
 operator|new
 name|EntityMapLoader
 argument_list|(
-name|info
+name|unit
 argument_list|)
 decl_stmt|;
 comment|// we must set enhancer in this exact place, between JPA and Cayenne mapping
@@ -1187,7 +1201,7 @@ operator|.
 name|getMangedClasses
 argument_list|()
 decl_stmt|;
-name|info
+name|unit
 operator|.
 name|addTransformer
 argument_list|(
@@ -1230,24 +1244,19 @@ name|getContext
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// TODO: andrus, 2/3/2007 - clarify this logic.... JTA EM may not always mean
+comment|// JTA DS?
 name|DataSource
 name|dataSource
 init|=
-name|info
-operator|.
-name|getTransactionType
-argument_list|()
-operator|==
-name|PersistenceUnitTransactionType
-operator|.
-name|JTA
+name|isJTA
 condition|?
-name|info
+name|unit
 operator|.
 name|getJtaDataSource
 argument_list|()
 else|:
-name|info
+name|unit
 operator|.
 name|getNonJtaDataSource
 argument_list|()
@@ -1262,7 +1271,7 @@ operator|.
 name|getContext
 argument_list|()
 argument_list|,
-name|info
+name|unit
 argument_list|)
 decl_stmt|;
 name|DataNode
@@ -1322,13 +1331,20 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+name|domain
+operator|.
+name|setUsingExternalTransactions
+argument_list|(
+name|isJTA
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 literal|"true"
 operator|.
 name|equalsIgnoreCase
 argument_list|(
-name|info
+name|unit
 operator|.
 name|getProperties
 argument_list|()
@@ -1429,26 +1445,104 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|JpaEntityManagerFactory
-name|factory
-init|=
-operator|new
-name|JpaEntityManagerFactory
-argument_list|(
+comment|// see TODO above - JTA vs RESOURCE_LOCAL is cached per domain... maybe need to
+comment|// change that
+return|return
 name|domain
-argument_list|,
-name|info
-argument_list|)
-decl_stmt|;
-name|factory
 operator|.
-name|setDelegate
+name|isUsingExternalTransactions
+argument_list|()
+condition|?
+operator|new
+name|JtaEntityManagerFactory
 argument_list|(
 name|this
+argument_list|,
+name|domain
+argument_list|,
+name|unit
+argument_list|)
+else|:
+operator|new
+name|ResourceLocalEntityManagerFactory
+argument_list|(
+name|this
+argument_list|,
+name|domain
+argument_list|,
+name|unit
+argument_list|)
+return|;
+block|}
+comment|/**      * Returns whether provided configuration specifies a JTA or RESOURCE_LOCAL      * EntityManager.      */
+specifier|private
+name|boolean
+name|isJta
+parameter_list|(
+name|PersistenceUnitInfo
+name|unit
+parameter_list|,
+name|Map
+name|overrides
+parameter_list|)
+block|{
+name|PersistenceUnitTransactionType
+name|txType
+decl_stmt|;
+name|String
+name|txTypeOverride
+init|=
+operator|(
+name|overrides
+operator|!=
+literal|null
+operator|)
+condition|?
+operator|(
+name|String
+operator|)
+name|overrides
+operator|.
+name|get
+argument_list|(
+name|TRANSACTION_TYPE_PROPERTY
+argument_list|)
+else|:
+literal|null
+decl_stmt|;
+if|if
+condition|(
+name|txTypeOverride
+operator|!=
+literal|null
+condition|)
+block|{
+name|txType
+operator|=
+name|PersistenceUnitTransactionType
+operator|.
+name|valueOf
+argument_list|(
+name|txTypeOverride
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|txType
+operator|=
+name|unit
+operator|.
+name|getTransactionType
+argument_list|()
+expr_stmt|;
+block|}
 return|return
-name|factory
+name|txType
+operator|==
+name|PersistenceUnitTransactionType
+operator|.
+name|JTA
 return|;
 block|}
 comment|/**      * Loads database schema if it doesn't yet exist.      */

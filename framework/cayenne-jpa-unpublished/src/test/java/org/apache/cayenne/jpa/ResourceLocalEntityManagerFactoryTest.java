@@ -38,7 +38,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|JpaEntityManagerFactoryTest
+name|ResourceLocalEntityManagerFactoryTest
 extends|extends
 name|TestCase
 block|{
@@ -47,14 +47,12 @@ name|void
 name|testOpenClose
 parameter_list|()
 block|{
-name|JpaEntityManagerFactory
+name|ResourceLocalEntityManagerFactory
 name|f
 init|=
 operator|new
-name|JpaEntityManagerFactory
+name|ResourceLocalEntityManagerFactory
 argument_list|(
-literal|null
-argument_list|,
 operator|new
 name|MockPersistenceUnitInfo
 argument_list|()

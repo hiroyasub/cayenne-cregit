@@ -82,13 +82,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A base implementation of a Cyenne EntityManagerFactory.  *   * @author Andrus Adamchik  */
+comment|/**  * A Cayenne EntityManagerFactory that supports resource-local transactions.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|JpaEntityManagerFactory
+name|ResourceLocalEntityManagerFactory
 implements|implements
 name|EntityManagerFactory
 block|{
@@ -105,12 +105,33 @@ name|PersistenceUnitInfo
 name|unitInfo
 decl_stmt|;
 specifier|protected
-name|Object
-name|delegate
+name|Provider
+name|provider
 decl_stmt|;
-specifier|public
-name|JpaEntityManagerFactory
+comment|/**      * Non-public constructor used mostly for unit testing.      */
+name|ResourceLocalEntityManagerFactory
 parameter_list|(
+name|PersistenceUnitInfo
+name|unitInfo
+parameter_list|)
+block|{
+name|this
+argument_list|(
+literal|null
+argument_list|,
+literal|null
+argument_list|,
+name|unitInfo
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Creates a new JpaEntityManagerFactory.      */
+specifier|public
+name|ResourceLocalEntityManagerFactory
+parameter_list|(
+name|Provider
+name|provider
+parameter_list|,
 name|DataDomain
 name|domain
 parameter_list|,
@@ -136,7 +157,14 @@ name|domain
 operator|=
 name|domain
 expr_stmt|;
+name|this
+operator|.
+name|provider
+operator|=
+name|provider
+expr_stmt|;
 block|}
+comment|/**      * Returns wrapped unit.      */
 specifier|protected
 name|PersistenceUnitInfo
 name|getPersistenceUnitInfo
@@ -193,7 +221,7 @@ name|EntityManager
 name|createEntityManager
 parameter_list|(
 name|Map
-name|parameters
+name|map
 parameter_list|)
 block|{
 name|checkClosed
@@ -202,21 +230,20 @@ expr_stmt|;
 return|return
 name|createEntityManagerInternal
 argument_list|(
-name|parameters
+name|map
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates a new resource-local EntityManager. Parameter map is ignored as Cayenne      * provider defines no properties for EntityManager as of now.      */
 specifier|protected
 name|EntityManager
 name|createEntityManagerInternal
 parameter_list|(
 name|Map
-name|parameters
+name|map
 parameter_list|)
 block|{
-name|ResourceLocalEntityManager
-name|manager
-init|=
+return|return
 operator|new
 name|ResourceLocalEntityManager
 argument_list|(
@@ -226,20 +253,7 @@ name|createDataContext
 argument_list|()
 argument_list|,
 name|this
-argument_list|,
-name|parameters
 argument_list|)
-decl_stmt|;
-name|manager
-operator|.
-name|setDelegate
-argument_list|(
-name|getDelegate
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-name|manager
 return|;
 block|}
 comment|/**      * A convenience method that throws an exception if called on closed factory.      */
@@ -265,31 +279,15 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a "delegate" object which is usually a parent persistence provider.      */
+comment|/**      * Returns a parent persistence provider.      */
 specifier|public
-name|Object
-name|getDelegate
+name|Provider
+name|getProvider
 parameter_list|()
 block|{
 return|return
-name|delegate
+name|provider
 return|;
-block|}
-comment|/**      * Sets a "delegate" object which is usually a parent persistence provider.      */
-specifier|public
-name|void
-name|setDelegate
-parameter_list|(
-name|Object
-name|delegate
-parameter_list|)
-block|{
-name|this
-operator|.
-name|delegate
-operator|=
-name|delegate
-expr_stmt|;
 block|}
 comment|/**      * Returns PersistenceUnitInfo used by this factory.      */
 name|PersistenceUnitInfo
