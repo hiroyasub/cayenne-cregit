@@ -17,8 +17,22 @@ name|conf
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|JpaUnit
+import|;
+end_import
+
 begin_comment
-comment|/**  * A factory of {@link org.apache.cayenne.jpa.conf.JpaUnit} instances. Custom factory can  * be configured by setting a  * {@link org.apache.cayenne.jpa.Provider#UNIT_FACTORY_PROPERTY} property.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory of {@link org.apache.cayenne.jpa.JpaUnit} instances. Custom factory can  * be configured by setting a  * {@link org.apache.cayenne.jpa.Provider#UNIT_FACTORY_PROPERTY} property.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_interface

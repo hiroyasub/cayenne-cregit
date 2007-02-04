@@ -12,8 +12,6 @@ operator|.
 name|cayenne
 operator|.
 name|jpa
-operator|.
-name|conf
 package|;
 end_package
 
@@ -143,7 +141,9 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
-name|JpaProviderException
+name|conf
+operator|.
+name|DefaultDataSourceFactory
 import|;
 end_import
 
@@ -157,7 +157,25 @@ name|cayenne
 operator|.
 name|jpa
 operator|.
-name|Provider
+name|conf
+operator|.
+name|JpaDataSourceFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|conf
+operator|.
+name|JpaUnitFactory
 import|;
 end_import
 
