@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects   * using information stored in $HOME/.cayenne/connection.properties.   * As of now this is purely a utility class. Its features are not used  * in deployment.  *   * @author Andrus Adamchik  */
+comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects using information stored  * in $HOME/.cayenne/connection.properties. As of now this is purely a utility class. Its  * features are not used in deployment.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -227,6 +227,13 @@ specifier|static
 specifier|final
 name|String
 name|ADAPTER_KEY
+init|=
+literal|"adapter"
+decl_stmt|;
+specifier|static
+specifier|final
+name|String
+name|ADAPTER20_KEY
 init|=
 literal|"cayenne.adapter"
 decl_stmt|;
@@ -691,7 +698,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns DataSourceInfo object for a symbolic name.      * If name does not match an existing object, returns null.      */
+comment|/**      * Returns DataSourceInfo object for a symbolic name. If name does not match an      * existing object, returns null.      */
 specifier|public
 name|DataSourceInfo
 name|getConnectionInfo
@@ -775,7 +782,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**     * Creates a DataSourceInfo object from a set of properties.     */
+comment|/**      * Creates a DataSourceInfo object from a set of properties.      */
 specifier|protected
 name|DataSourceInfo
 name|buildDataSourceInfo
@@ -791,16 +798,39 @@ operator|new
 name|DataSourceInfo
 argument_list|()
 decl_stmt|;
-name|dsi
-operator|.
-name|setAdapterClassName
-argument_list|(
+name|String
+name|adapter
+init|=
 name|props
 operator|.
 name|getString
 argument_list|(
 name|ADAPTER_KEY
 argument_list|)
+decl_stmt|;
+comment|// try legacy adapter key
+if|if
+condition|(
+name|adapter
+operator|==
+literal|null
+condition|)
+block|{
+name|adapter
+operator|=
+name|props
+operator|.
+name|getString
+argument_list|(
+name|ADAPTER20_KEY
+argument_list|)
+expr_stmt|;
+block|}
+name|dsi
+operator|.
+name|setAdapterClassName
+argument_list|(
+name|adapter
 argument_list|)
 expr_stmt|;
 name|dsi
@@ -855,7 +885,7 @@ return|return
 name|dsi
 return|;
 block|}
-comment|/**      * Returns a list of connection names configured      * in the properties object.      */
+comment|/**      * Returns a list of connection names configured in the properties object.      */
 specifier|protected
 name|List
 name|extractNames
