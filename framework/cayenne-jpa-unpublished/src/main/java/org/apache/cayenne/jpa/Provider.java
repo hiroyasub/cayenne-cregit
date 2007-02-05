@@ -923,13 +923,9 @@ name|Map
 name|map
 parameter_list|)
 block|{
-comment|// TODO: Andrus, 2/11/2006 - cache loaded units (or factories)...
 name|JpaUnit
 name|ui
 init|=
-name|getUnitLoader
-argument_list|()
-operator|.
 name|loadUnit
 argument_list|(
 name|emName
@@ -1885,6 +1881,26 @@ parameter_list|()
 block|{
 return|return
 name|configuration
+return|;
+block|}
+comment|/**      * Loads a named JpaUnit using internal UnitLoader.      */
+specifier|protected
+name|JpaUnit
+name|loadUnit
+parameter_list|(
+name|String
+name|emName
+parameter_list|)
+block|{
+comment|// TODO: Andrus, 2/11/2006 - cache loaded units (or factories)...?
+return|return
+name|getUnitLoader
+argument_list|()
+operator|.
+name|loadUnit
+argument_list|(
+name|emName
+argument_list|)
 return|;
 block|}
 comment|/**      * Returns unit loader, lazily creating it on first invocation.      */
