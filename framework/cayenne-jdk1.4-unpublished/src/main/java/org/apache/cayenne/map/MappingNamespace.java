@@ -48,9 +48,17 @@ specifier|public
 interface|interface
 name|MappingNamespace
 block|{
-comment|/**      * Returns an {@link Embeddable} matching class name or null if such Embeddable is not      * mapped.      */
+comment|/**      * Returns an {@link Embeddable} matching class name or null if such Embeddable is not      * mapped.      *       * @since 3.0      */
 name|Embeddable
 name|getEmbeddable
+parameter_list|(
+name|String
+name|className
+parameter_list|)
+function_decl|;
+comment|/**      * Returns an {@link EntityListener} matching class name or null if such      * EntityListener is not mapped.      *       * @since 3.0      */
+name|EntityListener
+name|getEntityListener
 parameter_list|(
 name|String
 name|className
