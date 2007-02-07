@@ -296,6 +296,30 @@ return|return
 name|object
 return|;
 block|}
+comment|/**      * Registers a new object and performs a "PrePersist" callback on it.      */
+specifier|public
+name|void
+name|registerNewObject
+parameter_list|(
+name|Object
+name|object
+parameter_list|)
+block|{
+name|super
+operator|.
+name|registerNewObject
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+name|prePersist
+operator|.
+name|performCallbacks
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Deletes an object, applying "PreRemove" callbacks to it and all its cascaded      * dependencies.      */
 specifier|public
 name|void
