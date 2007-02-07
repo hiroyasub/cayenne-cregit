@@ -17,6 +17,20 @@ name|map
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|TreeNodeChild
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Andrus Adamchik  */
 end_comment
@@ -58,6 +72,8 @@ operator|=
 name|xmlMappingMetadataComplete
 expr_stmt|;
 block|}
+annotation|@
+name|TreeNodeChild
 specifier|public
 name|JpaPersistenceUnitDefaults
 name|getPersistenceUnitDefaults

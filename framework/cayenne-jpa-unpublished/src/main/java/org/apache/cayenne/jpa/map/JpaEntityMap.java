@@ -833,6 +833,8 @@ operator|=
 name|version
 expr_stmt|;
 block|}
+annotation|@
+name|TreeNodeChild
 specifier|public
 name|JpaPersistenceUnitMetadata
 name|getPersistenceUnitMetadata
