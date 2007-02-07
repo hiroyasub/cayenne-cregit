@@ -33,6 +33,16 @@ begin_import
 import|import
 name|javax
 operator|.
+name|persistence
+operator|.
+name|TransactionRequiredException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
 name|transaction
 operator|.
 name|TransactionManager
@@ -119,6 +129,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|getDbHelper
+argument_list|()
+operator|.
+name|deleteAll
+argument_list|(
+literal|"SimpleEntity"
+argument_list|)
+expr_stmt|;
 name|TransactionManager
 name|tm
 init|=
@@ -186,27 +204,77 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: andrus, 1/3/2007 - implement - need to emulate the container environment
-comment|// public void testPersistTransactionRequiredException() throws Exception {
-comment|// // throws TransactionRequiredException if invoked on a
-comment|// // container-managed entity manager of type
-comment|// // PersistenceContextType.TRANSACTION and there is
-comment|// // no transaction.
-comment|//
-comment|// EntityManager em = getEntityManager();
-comment|//
-comment|// SimpleEntity e = new SimpleEntity();
-comment|// e.setProperty1("XXX");
-comment|//
-comment|// try {
-comment|// em.persist(e);
-comment|// em.getTransaction().commit();
-comment|// fail("Must have thrown TransactionRequiredException");
-comment|// }
-comment|// catch (TransactionRequiredException ex) {
-comment|// // expected
-comment|// }
-comment|// }
+specifier|public
+name|void
+name|testPersistTransactionRequiredException
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|EntityManager
+name|entityManager
+init|=
+name|ItestSetup
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|createContainerManagedEntityManager
+argument_list|()
+decl_stmt|;
+name|SimpleEntity
+name|e
+init|=
+operator|new
+name|SimpleEntity
+argument_list|()
+decl_stmt|;
+name|e
+operator|.
+name|setProperty1
+argument_list|(
+literal|"XXX"
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+name|OpenEJBContainer
+operator|.
+name|getContainer
+argument_list|()
+operator|.
+name|isActiveTransaction
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// throws TransactionRequiredException if invoked on a
+comment|// container-managed entity manager of type
+comment|// PersistenceContextType.TRANSACTION and there is
+comment|// no transaction.
+try|try
+block|{
+name|entityManager
+operator|.
+name|persist
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"TransactionRequiredException wasn't thrown"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|TransactionRequiredException
+name|ex
+parameter_list|)
+block|{
+comment|// expected
+block|}
+block|}
 block|}
 end_class
 
