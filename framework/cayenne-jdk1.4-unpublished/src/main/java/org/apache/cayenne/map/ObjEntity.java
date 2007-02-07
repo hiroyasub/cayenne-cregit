@@ -413,7 +413,7 @@ name|clientSuperClassName
 decl_stmt|;
 specifier|protected
 name|List
-name|listeners
+name|entityListeners
 decl_stmt|;
 specifier|protected
 name|SortedMap
@@ -465,7 +465,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|listeners
+name|entityListeners
 operator|=
 operator|new
 name|ArrayList
@@ -992,7 +992,7 @@ block|}
 comment|/**      * Returns an unmodifiable list of registered {@link EntityListener} objects. Note      * that since the order of listeners is significant a list, not just a generic      * Collection is returned.      *       * @since 3.0      */
 specifier|public
 name|List
-name|getListeners
+name|getEntityListeners
 parameter_list|()
 block|{
 return|return
@@ -1000,14 +1000,14 @@ name|Collections
 operator|.
 name|unmodifiableList
 argument_list|(
-name|listeners
+name|entityListeners
 argument_list|)
 return|;
 block|}
 comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException if a listener for the same class name is already      *             registered.      */
 specifier|public
 name|void
-name|addListener
+name|addEntityListener
 parameter_list|(
 name|EntityListener
 name|listener
@@ -1016,7 +1016,7 @@ block|{
 name|Iterator
 name|it
 init|=
-name|listeners
+name|entityListeners
 operator|.
 name|iterator
 argument_list|()
@@ -1070,7 +1070,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-name|listeners
+name|entityListeners
 operator|.
 name|add
 argument_list|(
@@ -1081,7 +1081,7 @@ block|}
 comment|/**      * Removes a listener matching class name.      *       * @since 3.0      */
 specifier|public
 name|void
-name|removeListener
+name|removeEntityListener
 parameter_list|(
 name|String
 name|className
@@ -1090,7 +1090,7 @@ block|{
 name|Iterator
 name|it
 init|=
-name|listeners
+name|entityListeners
 operator|.
 name|iterator
 argument_list|()
@@ -1135,6 +1135,64 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|EntityListener
+name|getEntityListener
+parameter_list|(
+name|String
+name|className
+parameter_list|)
+block|{
+name|Iterator
+name|it
+init|=
+name|entityListeners
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|it
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|EntityListener
+name|next
+init|=
+operator|(
+name|EntityListener
+operator|)
+name|it
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|className
+operator|.
+name|equals
+argument_list|(
+name|next
+operator|.
+name|getClassName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+return|return
+name|next
+return|;
+block|}
+block|}
+return|return
+literal|null
+return|;
 block|}
 comment|/**      * Returns an unmodifiable sorted map of listener methods.      *       * @since 3.0      */
 specifier|public
