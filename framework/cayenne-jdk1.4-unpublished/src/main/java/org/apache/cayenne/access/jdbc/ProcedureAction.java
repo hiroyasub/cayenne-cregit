@@ -476,13 +476,13 @@ name|connection
 parameter_list|)
 block|{
 name|ProcedureTranslator
-name|transl
+name|translator
 init|=
 operator|new
 name|ProcedureTranslator
 argument_list|()
 decl_stmt|;
-name|transl
+name|translator
 operator|.
 name|setAdapter
 argument_list|(
@@ -490,14 +490,14 @@ name|getAdapter
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|transl
+name|translator
 operator|.
 name|setQuery
 argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
-name|transl
+name|translator
 operator|.
 name|setEntityResolver
 argument_list|(
@@ -505,7 +505,7 @@ name|getEntityResolver
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|transl
+name|translator
 operator|.
 name|setConnection
 argument_list|(
@@ -513,7 +513,7 @@ name|connection
 argument_list|)
 expr_stmt|;
 return|return
-name|transl
+name|translator
 return|;
 block|}
 comment|/**      * Creates a RowDescriptor for result set.      *       * @param resultSet JDBC ResultSet      * @param setIndex a zero-based index of the ResultSet in the query results.      */
