@@ -132,7 +132,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|/*  public void createdTables(Connection con, DataMap map) throws Exception {         executeDDL(con, super.ddlFile("db2", "create-update-sp.sql"));         executeDDL(con, super.ddlFile("db2", "create-out-sp.sql"));         executeDDL(con, super.ddlFile("db2", "create-select-sp.sql"));     }      public void willDropTables(Connection con, DataMap map) throws Exception {         // still have to figure out how to safely drop procedures          try {             executeDDL(con, super.ddlFile("db2", "drop-select-sp.sql"));         }         catch (SQLException ex) {             logObj.info("Can't drop procedure, ignoring.", ex);         }          try {             executeDDL(con, super.ddlFile("db2", "drop-update-sp.sql"));         }         catch (SQLException ex) {             logObj.info("Can't drop procedure, ignoring.", ex);         }          try {             executeDDL(con, super.ddlFile("db2", "drop-out-sp.sql"));         }         catch (SQLException ex) {             logObj.info("Can't drop procedure, ignoring.", ex);         }     } */
 block|}
 end_class
 
