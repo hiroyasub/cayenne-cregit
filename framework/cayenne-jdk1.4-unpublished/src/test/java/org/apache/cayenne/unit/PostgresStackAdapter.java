@@ -235,6 +235,15 @@ name|con
 argument_list|,
 literal|"postgresql"
 argument_list|,
+literal|"create-update-sp2.sql"
+argument_list|)
+expr_stmt|;
+name|executeDDL
+argument_list|(
+name|con
+argument_list|,
+literal|"postgresql"
+argument_list|,
 literal|"create-out-sp.sql"
 argument_list|)
 expr_stmt|;
