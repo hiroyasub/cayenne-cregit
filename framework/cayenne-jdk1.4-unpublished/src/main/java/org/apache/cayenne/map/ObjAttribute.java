@@ -185,7 +185,6 @@ return|;
 block|}
 try|try
 block|{
-comment|// tolerate null class loader
 return|return
 name|Util
 operator|.

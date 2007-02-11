@@ -1815,6 +1815,7 @@ specifier|public
 name|DataRow
 name|currentSnapshot
 parameter_list|(
+specifier|final
 name|Persistent
 name|object
 parameter_list|)
@@ -1852,8 +1853,6 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|// TODO: andrus, 10/10/2006 - use descriptor visitor instead of entity attribute
-comment|// iterator
 name|ObjEntity
 name|entity
 init|=
@@ -1865,6 +1864,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+specifier|final
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -1879,6 +1879,7 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+specifier|final
 name|DataRow
 name|snapshot
 init|=
@@ -1888,63 +1889,28 @@ argument_list|(
 literal|10
 argument_list|)
 decl_stmt|;
-name|Iterator
-name|attributes
-init|=
-name|entity
+name|descriptor
 operator|.
-name|getAttributeMap
+name|visitProperties
+argument_list|(
+operator|new
+name|PropertyVisitor
 argument_list|()
-operator|.
-name|entrySet
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|attributes
-operator|.
-name|hasNext
-argument_list|()
-condition|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|attributes
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-name|String
-name|attrName
-init|=
-operator|(
-name|String
-operator|)
-name|entry
-operator|.
-name|getKey
-argument_list|()
-decl_stmt|;
+specifier|public
+name|boolean
+name|visitAttribute
+parameter_list|(
+name|AttributeProperty
+name|property
+parameter_list|)
+block|{
 name|ObjAttribute
 name|objAttr
 init|=
-operator|(
-name|ObjAttribute
-operator|)
-name|entry
+name|property
 operator|.
-name|getValue
+name|getAttribute
 argument_list|()
 decl_stmt|;
 comment|// processing compound attributes correctly
@@ -1957,12 +1923,7 @@ operator|.
 name|getDbAttributePath
 argument_list|()
 argument_list|,
-name|descriptor
-operator|.
-name|getProperty
-argument_list|(
-name|attrName
-argument_list|)
+name|property
 operator|.
 name|readPropertyDirectly
 argument_list|(
@@ -1970,53 +1931,37 @@ name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+literal|true
+return|;
 block|}
-name|Iterator
-name|relationships
-init|=
-name|entity
-operator|.
-name|getRelationshipMap
-argument_list|()
-operator|.
-name|entrySet
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|relationships
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+specifier|public
+name|boolean
+name|visitToMany
+parameter_list|(
+name|ToManyProperty
+name|property
+parameter_list|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|relationships
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+comment|// do nothing
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitToOne
+parameter_list|(
+name|ToOneProperty
+name|property
+parameter_list|)
+block|{
 name|ObjRelationship
 name|rel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
-name|entry
+name|property
 operator|.
-name|getValue
+name|getRelationship
 argument_list|()
 decl_stmt|;
 comment|// if target doesn't propagates its key value, skip it
@@ -2028,20 +1973,14 @@ name|isSourceIndependentFromTargetChange
 argument_list|()
 condition|)
 block|{
-continue|continue;
+return|return
+literal|true
+return|;
 block|}
 name|Object
 name|targetObject
 init|=
-name|descriptor
-operator|.
-name|getProperty
-argument_list|(
-name|rel
-operator|.
-name|getName
-argument_list|()
-argument_list|)
+name|property
 operator|.
 name|readPropertyDirectly
 argument_list|(
@@ -2055,7 +1994,9 @@ operator|==
 literal|null
 condition|)
 block|{
-continue|continue;
+return|return
+literal|true
+return|;
 block|}
 comment|// if target is Fault, get id attributes from stored snapshot
 comment|// to avoid unneeded fault triggering
@@ -2171,7 +2112,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-continue|continue;
+return|return
+literal|true
+return|;
 block|}
 comment|// target is resolved and we have an FK->PK to it,
 comment|// so extract it from target...
@@ -2194,7 +2137,8 @@ operator|.
 name|getIdSnapshot
 argument_list|()
 decl_stmt|;
-comment|// this may happen in uncommitted objects - see the warning in the JavaDoc of
+comment|// this may happen in uncommitted objects - see the warning in the JavaDoc
+comment|// of
 comment|// this method.
 if|if
 condition|(
@@ -2204,7 +2148,9 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-continue|continue;
+return|return
+literal|true
+return|;
 block|}
 name|DbRelationship
 name|dbRel
@@ -2239,7 +2185,13 @@ argument_list|(
 name|fk
 argument_list|)
 expr_stmt|;
+return|return
+literal|true
+return|;
 block|}
+block|}
+argument_list|)
+expr_stmt|;
 comment|// process object id map
 comment|// we should ignore any object id values if a corresponding attribute
 comment|// is a part of relationship "toMasterPK", since those values have been
