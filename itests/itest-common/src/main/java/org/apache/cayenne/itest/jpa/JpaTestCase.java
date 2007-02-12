@@ -19,11 +19,11 @@ end_package
 
 begin_import
 import|import
-name|java
+name|junit
 operator|.
-name|util
+name|framework
 operator|.
-name|Properties
+name|TestCase
 import|;
 end_import
 
@@ -41,16 +41,6 @@ name|ItestDBUtils
 import|;
 end_import
 
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
 begin_comment
 comment|/**  * Abstract test case that bootstraps default JPA unit called "itest" and a schema script  * called "schema-hsqldb.sql".  *   * @author Andrus Adamchik  */
 end_comment
@@ -63,23 +53,6 @@ name|JpaTestCase
 extends|extends
 name|TestCase
 block|{
-static|static
-block|{
-name|Properties
-name|properties
-init|=
-operator|new
-name|Properties
-argument_list|()
-decl_stmt|;
-name|ItestSetup
-operator|.
-name|initInstance
-argument_list|(
-name|properties
-argument_list|)
-expr_stmt|;
-block|}
 specifier|protected
 name|ItestDBUtils
 name|getDbHelper
