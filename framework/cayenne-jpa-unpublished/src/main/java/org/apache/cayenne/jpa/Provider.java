@@ -417,7 +417,7 @@ name|jpa
 operator|.
 name|instrument
 operator|.
-name|UnitClassTranformer
+name|UnitClassTransformer
 import|;
 end_import
 
@@ -1262,7 +1262,7 @@ operator|.
 name|addTransformer
 argument_list|(
 operator|new
-name|UnitClassTranformer
+name|UnitClassTransformer
 argument_list|(
 name|managedClasses
 argument_list|,

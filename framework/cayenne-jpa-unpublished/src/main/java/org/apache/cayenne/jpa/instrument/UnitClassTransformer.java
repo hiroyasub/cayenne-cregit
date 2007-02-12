@@ -124,7 +124,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|UnitClassTranformer
+name|UnitClassTransformer
 implements|implements
 name|ClassTransformer
 block|{
@@ -146,7 +146,7 @@ argument_list|>
 name|managedClasses
 decl_stmt|;
 specifier|public
-name|UnitClassTranformer
+name|UnitClassTransformer
 parameter_list|(
 name|Map
 argument_list|<
