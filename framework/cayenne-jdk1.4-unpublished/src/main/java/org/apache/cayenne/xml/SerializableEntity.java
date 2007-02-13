@@ -241,6 +241,12 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+comment|// Needed for fix to CAY-597.  This makes sure we get back to the appropriate level in the DOM, rather than constantly re-rooting the tree.
+name|encoder
+operator|.
+name|pop
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 specifier|public

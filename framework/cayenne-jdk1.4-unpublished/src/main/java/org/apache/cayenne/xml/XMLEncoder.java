@@ -1056,7 +1056,6 @@ name|child
 return|;
 block|}
 comment|/**      * Pops the top element from the encoding stack.      */
-specifier|private
 name|Node
 name|pop
 parameter_list|()

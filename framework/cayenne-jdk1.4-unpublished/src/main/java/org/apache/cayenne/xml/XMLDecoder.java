@@ -773,6 +773,20 @@ name|objectClass
 argument_list|)
 condition|)
 block|{
+comment|// Fix for decoding 1-to-1 relationships between the same class type, per CAY-597.
+comment|// If we don't re-root the tree, the decoder goes into an infinite loop.  In particular,
+comment|// if R1 -> R2, when it decodes R1, it will attempt to decode R2, but without re-rooting,
+comment|// the decoder tries to decode R1 again, think it's decoding R2, because R1 is the first
+comment|// element of that type found in the XML doc with the true root of the doc.
+name|Element
+name|oldRoot
+init|=
+name|root
+decl_stmt|;
+name|root
+operator|=
+name|child
+expr_stmt|;
 name|XMLSerializable
 name|ret
 init|=
@@ -790,6 +804,11 @@ name|decodeFromXML
 argument_list|(
 name|this
 argument_list|)
+expr_stmt|;
+comment|// Restore the root when we're done decoding the child.
+name|root
+operator|=
+name|oldRoot
 expr_stmt|;
 return|return
 name|ret
