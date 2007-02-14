@@ -75,7 +75,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|reflect
 operator|.
 name|LifecycleCallbackRegistry
 import|;

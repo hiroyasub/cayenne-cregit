@@ -111,9 +111,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|query
 operator|.
-name|LifecycleCallbackRegistry
+name|Query
 import|;
 end_import
 
@@ -125,9 +125,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|reflect
 operator|.
-name|Query
+name|LifecycleCallbackRegistry
 import|;
 end_import
 
