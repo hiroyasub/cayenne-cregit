@@ -72,8 +72,8 @@ end_comment
 begin_class
 class|class
 name|CallbackOnListener
-implements|implements
-name|LifecycleEventCallback
+extends|extends
+name|AbstractCallback
 block|{
 specifier|private
 name|Method

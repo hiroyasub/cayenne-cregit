@@ -231,6 +231,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectContext
 import|;
 end_import
@@ -480,20 +492,6 @@ operator|.
 name|map
 operator|.
 name|EntityResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|LifecycleEventCallback
 import|;
 end_import
 
@@ -4394,7 +4392,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/**      * Sets default for posting transaction events by new DataContexts.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * Sets default for posting transaction events by new DataContexts.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 specifier|public
 specifier|static
 name|void
@@ -4409,7 +4407,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Enables or disables posting of transaction events by this DataContext.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * Enables or disables posting of transaction events by this DataContext.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 specifier|public
 name|void
 name|setTransactionEventsEnabled
@@ -4425,7 +4423,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 specifier|public
 name|boolean
 name|isTransactionEventsEnabled
@@ -4473,7 +4471,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 name|void
 name|fireWillCommit
 parameter_list|()
@@ -4509,7 +4507,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 name|void
 name|fireTransactionRolledback
 parameter_list|()
@@ -4547,7 +4545,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 name|void
 name|fireTransactionCommitted
 parameter_list|()

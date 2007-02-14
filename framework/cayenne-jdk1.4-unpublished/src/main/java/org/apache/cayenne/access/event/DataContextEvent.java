@@ -35,6 +35,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|DataContext
@@ -55,22 +67,8 @@ name|CayenneEvent
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|LifecycleEventCallback
-import|;
-end_import
-
 begin_comment
-comment|/**  * Represents events sent by DataContext.  *   * @author Dirk Olmes  * @author Holger Hoffstaette  * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be removed in  *             later 3.0 milestones.  */
+comment|/**  * Represents events sent by DataContext.  *   * @author Dirk Olmes  * @author Holger Hoffstaette  * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in  *             later 3.0 milestones.  */
 end_comment
 
 begin_class

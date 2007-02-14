@@ -135,6 +135,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectId
 import|;
 end_import
@@ -216,20 +228,6 @@ operator|.
 name|map
 operator|.
 name|DbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|LifecycleEventCallback
 import|;
 end_import
 
@@ -666,7 +664,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
 specifier|public
 name|void
 name|testTransactionEventsEnabled

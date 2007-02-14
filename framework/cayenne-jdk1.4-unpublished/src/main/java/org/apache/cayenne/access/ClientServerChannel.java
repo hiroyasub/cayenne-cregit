@@ -129,20 +129,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|LifecycleEventCallback
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|Query
@@ -345,7 +331,7 @@ return|return
 name|lifecycleCallbacksEnabled
 return|;
 block|}
-comment|/**      * Enables or disables lifecycle event callbacks for the underlying ObjectContext used      * by this channel. Enabling callbacks allows server side logic to be applied to the      * persistent objects during select and commit operations.      *       * @see LifecycleEventCallback      * @since 3.0      */
+comment|/**      * Enables or disables lifecycle event callbacks for the underlying ObjectContext used      * by this channel. Enabling callbacks allows server side logic to be applied to the      * persistent objects during select and commit operations.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setLifecycleCallbacksEnabled

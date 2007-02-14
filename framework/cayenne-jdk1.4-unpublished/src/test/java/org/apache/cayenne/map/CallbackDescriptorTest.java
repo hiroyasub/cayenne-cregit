@@ -43,14 +43,14 @@ init|=
 operator|new
 name|CallbackDescriptor
 argument_list|(
-name|LifecycleEventCallback
+name|CallbackMap
 operator|.
 name|POST_LOAD
 argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-name|LifecycleEventCallback
+name|CallbackMap
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -94,7 +94,7 @@ init|=
 operator|new
 name|CallbackDescriptor
 argument_list|(
-name|LifecycleEventCallback
+name|CallbackMap
 operator|.
 name|PRE_PERSIST
 argument_list|)

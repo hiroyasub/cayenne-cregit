@@ -209,20 +209,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|LifecycleEventCallback
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -1894,7 +1880,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Default implementation does nothing.      *       * @deprecated since 3.0 use callbacks.      * @see LifecycleEventCallback      */
+comment|/**      * Default implementation does nothing.      *       * @deprecated since 3.0 use callbacks.      * @see LifecycleListener      */
 specifier|public
 name|void
 name|fetchFinished

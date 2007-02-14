@@ -59,11 +59,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|mysql
-operator|.
-name|MySQLAdapter
+name|LifecycleListener
 import|;
 end_import
 
@@ -75,9 +71,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dba
 operator|.
-name|LifecycleEventCallback
+name|mysql
+operator|.
+name|MySQLAdapter
 import|;
 end_import
 
@@ -96,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Holger Hoffstaette  * @author Andrus Adamchik  * @deprecated since 3.0M1 in favor of {@link LifecycleEventCallback}. Will be removed in  *             later 3.0 milestones.  */
+comment|/**  * @author Holger Hoffstaette  * @author Andrus Adamchik  * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in  *             later 3.0 milestones.  */
 end_comment
 
 begin_class

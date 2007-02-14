@@ -27,20 +27,6 @@ name|DataContext
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|LifecycleEventCallback
-import|;
-end_import
-
 begin_comment
 comment|/**  * Defines basic methods for a persistent object in Cayenne.  *   * @author Andrus Adamchik  */
 end_comment
@@ -173,7 +159,7 @@ name|boolean
 name|setReverse
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 3.0 users must use callbacks instead. This method is no longer      *             invoked by Cayenne runtime.      * @see LifecycleEventCallback      */
+comment|/**      * @deprecated since 3.0 users must use callbacks instead. This method is no longer      *             invoked by Cayenne runtime.      * @see LifecycleListener      */
 specifier|public
 name|void
 name|fetchFinished
