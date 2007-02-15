@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A callback interface to listen to persistent object lifecycle events. Note that  * listeners ARE NOT REQUIRED to implement this interface, and in fact both won't. It  * exists for type safety and for simplifying listener registration. See  * {@link LifecycleCallbackRegistry} for details on how to register callbacks.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A callback interface to listen to persistent object lifecycle events. Note that  * listeners ARE NOT REQUIRED to implement this interface, and in fact most won't. It  * exists for type safety and for simplifying listener registration. See  * {@link LifecycleCallbackRegistry} for details on how to register callbacks.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
