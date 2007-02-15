@@ -75,6 +75,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|graph
 operator|.
 name|GraphChangeHandler
@@ -106,20 +118,6 @@ operator|.
 name|graph
 operator|.
 name|GraphManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|CallbackMap
 import|;
 end_import
 
@@ -214,7 +212,7 @@ name|FLUSH_NOCASCADE_SYNC
 case|:
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -231,7 +229,7 @@ condition|)
 block|{
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -240,7 +238,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -274,7 +272,7 @@ name|FLUSH_NOCASCADE_SYNC
 case|:
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -283,7 +281,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -292,7 +290,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -307,7 +305,7 @@ name|ROLLBACK_CASCADE_SYNC
 case|:
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -316,7 +314,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,

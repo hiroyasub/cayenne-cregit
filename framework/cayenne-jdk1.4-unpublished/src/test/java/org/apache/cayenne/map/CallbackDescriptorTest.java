@@ -17,6 +17,18 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
 name|junit
 operator|.
 name|framework
@@ -43,14 +55,14 @@ init|=
 operator|new
 name|CallbackDescriptor
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -94,7 +106,7 @@ init|=
 operator|new
 name|CallbackDescriptor
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|)

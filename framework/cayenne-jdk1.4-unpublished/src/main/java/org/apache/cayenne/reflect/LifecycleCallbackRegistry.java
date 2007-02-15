@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A registry of lifecycle callbacks for all callback event types.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event types are  * {@link LifecycleListener#PRE_PERSIST}, {@link LifecycleListener#POST_PERSIST},  * {@link LifecycleListener#PRE_UPDATE}, {@link LifecycleListener#POST_UPDATE},  * {@link LifecycleListener#PRE_REMOVE}, {@link LifecycleListener#POST_REMOVE},  * {@link LifecycleListener#POST_LOAD}.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -210,7 +210,7 @@ parameter_list|)
 block|{
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -221,7 +221,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -232,7 +232,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -243,7 +243,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -254,7 +254,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -265,7 +265,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -276,7 +276,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -328,7 +328,7 @@ parameter_list|)
 block|{
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -341,7 +341,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -354,7 +354,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -367,7 +367,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -380,7 +380,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -393,7 +393,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -406,7 +406,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,

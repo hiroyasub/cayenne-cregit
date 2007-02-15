@@ -35,6 +35,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectContext
 import|;
 end_import
@@ -64,20 +76,6 @@ operator|.
 name|access
 operator|.
 name|ObjectStore
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|CallbackMap
 import|;
 end_import
 
@@ -251,7 +249,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -273,7 +271,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -634,7 +632,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -689,7 +687,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -843,7 +841,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -898,7 +896,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -1024,7 +1022,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -1046,7 +1044,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -1180,7 +1178,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -1202,7 +1200,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|POST_PERSIST
 argument_list|,

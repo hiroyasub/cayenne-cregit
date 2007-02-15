@@ -55,6 +55,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|LifecycleListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectContext
 import|;
 end_import
@@ -80,20 +92,6 @@ operator|.
 name|cayenne
 operator|.
 name|Persistent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|CallbackMap
 import|;
 end_import
 
@@ -239,7 +237,7 @@ name|callbackRegistry
 operator|.
 name|performCallbacks
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -270,7 +268,7 @@ name|callbackRegistry
 operator|.
 name|performCallbacks
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -326,7 +324,7 @@ name|callbackRegistry
 operator|.
 name|performCallbacks
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_REMOVE
 argument_list|,

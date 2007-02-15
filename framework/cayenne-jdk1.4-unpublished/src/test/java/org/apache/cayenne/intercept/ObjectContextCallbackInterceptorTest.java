@@ -47,9 +47,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|CallbackMap
+name|LifecycleListener
 import|;
 end_import
 
@@ -203,7 +201,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -253,7 +251,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -430,7 +428,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -502,7 +500,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|CallbackMap
+name|LifecycleListener
 operator|.
 name|PRE_REMOVE
 argument_list|,
