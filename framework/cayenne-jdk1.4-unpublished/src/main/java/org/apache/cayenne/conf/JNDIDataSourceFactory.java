@@ -331,6 +331,17 @@ name|Exception
 block|{
 comment|// as we don't want compile dependencies on the Modeler, instantiate factory via
 comment|// reflection ...
+name|ClassLoader
+name|loader
+init|=
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|getContextClassLoader
+argument_list|()
+decl_stmt|;
 name|DataSourceFactory
 name|prefsFactory
 init|=
@@ -342,6 +353,10 @@ operator|.
 name|forName
 argument_list|(
 literal|"org.apache.cayenne.modeler.pref.PreferencesDataSourceFactory"
+argument_list|,
+literal|true
+argument_list|,
+name|loader
 argument_list|)
 operator|.
 name|newInstance
