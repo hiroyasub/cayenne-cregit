@@ -74,7 +74,7 @@ specifier|public
 class|class
 name|LifecycleCallbackRegistry
 block|{
-specifier|protected
+specifier|private
 name|LifecycleCallbackEventHandler
 index|[]
 name|eventCallbacks
