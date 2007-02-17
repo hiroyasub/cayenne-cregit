@@ -280,7 +280,7 @@ block|{
 name|checkClosed
 argument_list|()
 expr_stmt|;
-name|EntityManager
+name|CayenneEntityManager
 name|em
 init|=
 operator|new
@@ -292,6 +292,14 @@ argument_list|,
 name|this
 argument_list|)
 decl_stmt|;
+name|em
+operator|=
+operator|new
+name|TypeCheckingEntityManager
+argument_list|(
+name|em
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|isActiveTransaction

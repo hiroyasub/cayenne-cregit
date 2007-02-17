@@ -295,7 +295,9 @@ block|{
 name|checkClosed
 argument_list|()
 expr_stmt|;
-return|return
+name|CayenneEntityManager
+name|em
+init|=
 operator|new
 name|ResourceLocalEntityManager
 argument_list|(
@@ -303,6 +305,13 @@ name|createObjectContext
 argument_list|()
 argument_list|,
 name|this
+argument_list|)
+decl_stmt|;
+return|return
+operator|new
+name|TypeCheckingEntityManager
+argument_list|(
+name|em
 argument_list|)
 return|;
 block|}
