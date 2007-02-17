@@ -250,7 +250,7 @@ name|g1
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 literal|"Generic1"
 argument_list|)
@@ -265,7 +265,7 @@ name|g2
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 literal|"Generic2"
 argument_list|)
@@ -457,7 +457,7 @@ name|assertNotNull
 argument_list|(
 name|clientResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 literal|"MtTable1"
 argument_list|)

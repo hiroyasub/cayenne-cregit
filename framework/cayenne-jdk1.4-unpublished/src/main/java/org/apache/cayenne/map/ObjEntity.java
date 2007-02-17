@@ -907,10 +907,9 @@ return|return
 name|entity
 return|;
 block|}
-comment|/**      * Returns Java class of persistent objects described by this entity. For generic      * entities with no class specified explicitly, default DataMap superclass is used,      * and if it is not set - CayenneDataObject is used. Casts any thrown exceptions into      * CayenneRuntimeException.      *       * @since 1.2      */
-specifier|public
-name|Class
-name|getJavaClass
+comment|/**      * Returns a non-null class name. For generic entities with no class specified      * explicitly, default DataMap superclass is used, and if it is not set -      * CayenneDataObject is used.      */
+name|String
+name|getJavaClassName
 parameter_list|()
 block|{
 name|String
@@ -952,6 +951,22 @@ operator|=
 name|CAYENNE_DATA_OBJECT_CLASS
 expr_stmt|;
 block|}
+return|return
+name|name
+return|;
+block|}
+comment|/**      * Returns Java class of persistent objects described by this entity. For generic      * entities with no class specified explicitly, default DataMap superclass is used,      * and if it is not set - CayenneDataObject is used. Casts any thrown exceptions into      * CayenneRuntimeException.      *       * @since 1.2      */
+specifier|public
+name|Class
+name|getJavaClass
+parameter_list|()
+block|{
+name|String
+name|name
+init|=
+name|getJavaClassName
+argument_list|()
+decl_stmt|;
 try|try
 block|{
 return|return

@@ -153,7 +153,7 @@ operator|.
 name|getResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|entityName
 argument_list|)

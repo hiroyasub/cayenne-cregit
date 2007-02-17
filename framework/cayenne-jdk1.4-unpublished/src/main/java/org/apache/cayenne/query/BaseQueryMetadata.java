@@ -571,7 +571,7 @@ name|entity
 operator|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 operator|(
 name|String

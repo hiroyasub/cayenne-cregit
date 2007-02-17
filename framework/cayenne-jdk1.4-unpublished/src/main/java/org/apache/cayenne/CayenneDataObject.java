@@ -1422,7 +1422,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|objectId
 operator|.
@@ -1513,7 +1513,7 @@ name|entity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|objectId
 operator|.

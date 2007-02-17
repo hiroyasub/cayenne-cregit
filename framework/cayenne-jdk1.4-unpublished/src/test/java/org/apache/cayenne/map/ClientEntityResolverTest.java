@@ -363,7 +363,7 @@ name|entity
 argument_list|,
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|entity
 operator|.
@@ -376,7 +376,7 @@ name|assertNotNull
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|entity
 operator|.

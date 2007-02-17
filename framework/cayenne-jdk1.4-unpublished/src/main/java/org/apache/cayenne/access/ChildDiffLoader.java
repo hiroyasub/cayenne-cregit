@@ -314,7 +314,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|id
 operator|.

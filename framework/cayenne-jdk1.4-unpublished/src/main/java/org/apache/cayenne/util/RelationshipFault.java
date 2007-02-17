@@ -359,7 +359,7 @@ name|sourceEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|relationshipOwner
 operator|.
