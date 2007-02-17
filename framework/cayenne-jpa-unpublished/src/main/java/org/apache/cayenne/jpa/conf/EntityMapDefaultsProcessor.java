@@ -824,6 +824,13 @@ operator|.
 name|getAccess
 argument_list|()
 expr_stmt|;
+name|entity
+operator|.
+name|setAccess
+argument_list|(
+name|access
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
