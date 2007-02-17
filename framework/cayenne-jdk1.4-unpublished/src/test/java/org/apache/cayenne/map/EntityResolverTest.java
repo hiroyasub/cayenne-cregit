@@ -320,6 +320,7 @@ block|{
 comment|// expected
 block|}
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testDbEntityLookupDuplicates
@@ -505,7 +506,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// //Test DbEntitylookups
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testLookupDbEntityByClass
@@ -537,6 +538,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testLookupDbEntityByDataobject

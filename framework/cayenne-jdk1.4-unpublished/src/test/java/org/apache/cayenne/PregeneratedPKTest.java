@@ -255,11 +255,9 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupDbEntity
+name|getDbEntity
 argument_list|(
-name|Artist
-operator|.
-name|class
+literal|"ARTIST"
 argument_list|)
 decl_stmt|;
 name|DataNode
