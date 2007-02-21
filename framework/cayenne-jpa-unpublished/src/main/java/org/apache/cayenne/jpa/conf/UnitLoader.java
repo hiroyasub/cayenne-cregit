@@ -96,9 +96,6 @@ decl_stmt|;
 specifier|public
 name|UnitLoader
 parameter_list|(
-name|JpaUnitFactory
-name|unitFactory
-parameter_list|,
 name|boolean
 name|validateDescriptors
 parameter_list|)
@@ -112,8 +109,6 @@ operator|=
 operator|new
 name|UnitDescriptorParser
 argument_list|(
-name|unitFactory
-argument_list|,
 name|validateDescriptors
 argument_list|)
 expr_stmt|;

@@ -45,6 +45,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|lang
+operator|.
+name|instrument
+operator|.
+name|Instrumentation
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|security
 operator|.
 name|ProtectionDomain
@@ -145,28 +157,6 @@ name|ClassTransformer
 name|transformer
 parameter_list|)
 block|{
-comment|// sanity check
-if|if
-condition|(
-operator|!
-name|InstrumentUtil
-operator|.
-name|isAgentLoaded
-argument_list|()
-condition|)
-block|{
-name|getLogger
-argument_list|()
-operator|.
-name|warn
-argument_list|(
-literal|"*** No instrumentation instance present. "
-operator|+
-literal|"Check the -javaagent: option"
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 comment|// wrap in a ClassFileTransformer
 name|ClassFileTransformer
 name|transformerWrapper
@@ -231,7 +221,32 @@ operator|+
 name|transformer
 argument_list|)
 expr_stmt|;
+name|Instrumentation
+name|i
+init|=
 name|InstrumentUtil
+operator|.
+name|getInstrumentation
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|i
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Attempt to add a transformer failed - "
+operator|+
+literal|"instrumentation is not initialized."
+argument_list|)
+throw|;
+block|}
+name|i
 operator|.
 name|addTransformer
 argument_list|(

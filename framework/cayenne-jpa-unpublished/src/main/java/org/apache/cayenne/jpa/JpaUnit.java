@@ -147,28 +147,13 @@ name|JpaDataSourceFactory
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|jpa
-operator|.
-name|conf
-operator|.
-name|JpaUnitFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  * A<code>javax.persistence.spi.PersistenceUnitInfo</code> implementor used by Cayenne  * JPA provider.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|JpaUnit
 implements|implements
@@ -298,17 +283,16 @@ name|PROVIDER_PROPERTY
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a {@link ClassTransformer} to the persistence unit. Default implementation      * does nothing, although a provider can define a {@link JpaUnitFactory} to integrate      * with its own class loading mechanism.      *<h3>JPA Specification, 7.1.4:</h3>      * Add a transformer supplied by the provider that will be called for every new class      * definition or class redefinition that gets loaded by the loader returned by the      * PersistenceInfo.getClassLoader method. The transformer has no effect on the result      * returned by the PersistenceInfo.getTempClassLoader method. Classes are only      * transformed once within the same classloading scope, regardless of how many      * persistence units they may be a part of.      *       * @param transformer A provider-supplied transformer that the Container invokes at      *            class-(re)definition time      */
+comment|/**      * Adds a {@link ClassTransformer} to the persistence unit.      *<h3>JPA Specification, 7.1.4:</h3>      * Add a transformer supplied by the provider that will be called for every new class      * definition or class redefinition that gets loaded by the loader returned by the      * PersistenceInfo.getClassLoader method. The transformer has no effect on the result      * returned by the PersistenceInfo.getTempClassLoader method. Classes are only      * transformed once within the same classloading scope, regardless of how many      * persistence units they may be a part of.      *       * @param transformer A provider-supplied transformer that the Container invokes at      *            class-(re)definition time      */
 specifier|public
+specifier|abstract
 name|void
 name|addTransformer
 parameter_list|(
 name|ClassTransformer
 name|transformer
 parameter_list|)
-block|{
-comment|// noop
-block|}
+function_decl|;
 specifier|public
 name|PersistenceUnitTransactionType
 name|getTransactionType
