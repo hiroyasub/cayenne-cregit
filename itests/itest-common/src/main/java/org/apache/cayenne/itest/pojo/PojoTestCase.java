@@ -123,6 +123,9 @@ argument_list|()
 expr_stmt|;
 name|InstrumentUtil
 operator|.
+name|getInstrumentation
+argument_list|()
+operator|.
 name|addTransformer
 argument_list|(
 name|initEnhancer
