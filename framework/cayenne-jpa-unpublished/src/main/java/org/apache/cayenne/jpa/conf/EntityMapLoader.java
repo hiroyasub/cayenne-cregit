@@ -304,9 +304,9 @@ init|=
 operator|new
 name|EntityMapXMLLoader
 argument_list|(
-name|unit
+name|context
 operator|.
-name|getClassLoader
+name|getTempClassLoader
 argument_list|()
 argument_list|,
 literal|false
@@ -326,9 +326,9 @@ name|URL
 argument_list|>
 name|standardDescriptors
 init|=
-name|unit
+name|context
 operator|.
-name|getClassLoader
+name|getTempClassLoader
 argument_list|()
 operator|.
 name|getResources
@@ -397,9 +397,9 @@ name|URL
 argument_list|>
 name|mappedDescriptors
 init|=
-name|unit
+name|context
 operator|.
-name|getClassLoader
+name|getTempClassLoader
 argument_list|()
 operator|.
 name|getResources
@@ -465,9 +465,9 @@ comment|// app ClassLoader.
 name|ClassLoader
 name|loader
 init|=
-name|persistenceUnit
+name|context
 operator|.
-name|getClassLoader
+name|getTempClassLoader
 argument_list|()
 decl_stmt|;
 name|EntityMapAnnotationLoader

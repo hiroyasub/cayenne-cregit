@@ -39,6 +39,18 @@ begin_import
 import|import
 name|java
 operator|.
+name|lang
+operator|.
+name|instrument
+operator|.
+name|ClassFileTransformer
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|sql
 operator|.
 name|Connection
@@ -1128,9 +1140,8 @@ argument_list|(
 name|unit
 argument_list|)
 decl_stmt|;
-comment|// we must set enhancer in this exact place, between JPA and Cayenne mapping
-comment|// loading. By now all the JpaEntities are loaded (using separate unit class
-comment|// loader) and Cayenne mapping will be using the App ClassLoader.
+comment|// add transformer before DataMapConverter starts loading the classes via app
+comment|// class loader
 name|Map
 argument_list|<
 name|String
@@ -1147,15 +1158,9 @@ operator|.
 name|getMangedClasses
 argument_list|()
 decl_stmt|;
-name|unit
-operator|.
-name|addTransformer
-argument_list|(
-operator|new
-name|UnitClassTransformer
-argument_list|(
-name|managedClasses
-argument_list|,
+name|ClassFileTransformer
+name|enhancer
+init|=
 operator|new
 name|Enhancer
 argument_list|(
@@ -1165,6 +1170,25 @@ argument_list|(
 name|managedClasses
 argument_list|)
 argument_list|)
+decl_stmt|;
+name|unit
+operator|.
+name|addTransformer
+argument_list|(
+operator|new
+name|UnitClassTransformer
+argument_list|(
+name|managedClasses
+argument_list|,
+name|loader
+operator|.
+name|getContext
+argument_list|()
+operator|.
+name|getTempClassLoader
+argument_list|()
+argument_list|,
+name|enhancer
 argument_list|)
 argument_list|)
 expr_stmt|;

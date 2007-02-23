@@ -360,30 +360,6 @@ argument_list|,
 name|tmp2
 argument_list|)
 expr_stmt|;
-comment|// presumably spec requirements that ".. scope and classpath of this loader is
-comment|// exactly the same as that of the loader returned by
-comment|// PersistenceUnitInfo.getClassLoader..." means that it has to be a child of the
-comment|// main ClassLoader
-name|assertSame
-argument_list|(
-name|topLoader
-argument_list|,
-name|tmp1
-operator|.
-name|getParent
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|topLoader
-argument_list|,
-name|tmp2
-operator|.
-name|getParent
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_class
