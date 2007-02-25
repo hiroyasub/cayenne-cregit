@@ -12,19 +12,36 @@ operator|.
 name|cayenne
 operator|.
 name|ejbql
+operator|.
+name|parser
 package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract EJBQL statement.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
 specifier|public
-specifier|abstract
 class|class
-name|QLStatement
-block|{  }
+name|EJBQLPatternValue
+extends|extends
+name|SimpleNode
+block|{
+specifier|public
+name|EJBQLPatternValue
+parameter_list|(
+name|int
+name|id
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|id
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 end_class
 
 end_unit
