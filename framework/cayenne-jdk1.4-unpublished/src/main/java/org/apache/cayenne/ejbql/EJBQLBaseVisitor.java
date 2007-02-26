@@ -16,26 +16,66 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract definition of EJBQL query parser. The actual parser implementing this  * interface is generated from JavaCC grammar.  *   * @author andrus  * @since 3.0  */
+comment|/**  * A noop implementation of the EJBQL visitor that returns true from all methods. Intended  * for subclassing.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|EJBQLParser
+class|class
+name|EJBQLBaseVisitor
+implements|implements
+name|EJBQLExpressionVisitor
 block|{
-comment|/**      * Parses a string EJB QL into an {@link EJBQLExpression}.      */
-name|EJBQLExpression
-name|parse
+specifier|public
+name|boolean
+name|visitFrom
 parameter_list|(
-name|String
-name|ejbqlStatement
+name|EJBQLExpression
+name|expression
 parameter_list|)
-throws|throws
-name|EJBQLException
-function_decl|;
+block|{
+return|return
+literal|true
+return|;
 block|}
-end_interface
+specifier|public
+name|boolean
+name|visitIdentificationVariable
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitSelect
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitSelectExpression
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+block|}
+end_class
 
 end_unit
 

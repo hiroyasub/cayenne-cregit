@@ -17,6 +17,20 @@ name|parser
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|EJBQLExpression
+import|;
+end_import
+
 begin_comment
 comment|/**  * A JJTree-compliant tree node interface.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -25,6 +39,8 @@ begin_interface
 specifier|public
 interface|interface
 name|Node
+extends|extends
+name|EJBQLExpression
 block|{
 comment|/** 	 * This method is called after the node has been made the current node. It 	 * indicates that child nodes can now be added to it. 	 */
 specifier|public

@@ -17,6 +17,20 @@ name|parser
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|EJBQLExpressionVisitor
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -40,6 +54,23 @@ argument_list|(
 name|id
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|visit
+parameter_list|(
+name|EJBQLExpressionVisitor
+name|visitor
+parameter_list|)
+block|{
+return|return
+name|visitor
+operator|.
+name|visitSelectExpression
+argument_list|(
+name|this
+argument_list|)
+return|;
 block|}
 block|}
 end_class

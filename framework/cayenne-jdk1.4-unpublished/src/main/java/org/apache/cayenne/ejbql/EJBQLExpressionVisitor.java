@@ -16,23 +16,41 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract definition of EJBQL query parser. The actual parser implementing this  * interface is generated from JavaCC grammar.  *   * @author andrus  * @since 3.0  */
+comment|/**  * A visitor interface to inspect the EJBQL expression tree.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|EJBQLParser
+name|EJBQLExpressionVisitor
 block|{
-comment|/**      * Parses a string EJB QL into an {@link EJBQLExpression}.      */
-name|EJBQLExpression
-name|parse
+name|boolean
+name|visitSelect
 parameter_list|(
-name|String
-name|ejbqlStatement
+name|EJBQLExpression
+name|expression
 parameter_list|)
-throws|throws
-name|EJBQLException
+function_decl|;
+name|boolean
+name|visitFrom
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
+name|boolean
+name|visitSelectExpression
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
+name|boolean
+name|visitIdentificationVariable
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
 function_decl|;
 block|}
 end_interface

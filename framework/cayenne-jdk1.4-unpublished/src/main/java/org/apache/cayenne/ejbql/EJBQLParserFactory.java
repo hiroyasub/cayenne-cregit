@@ -20,6 +20,7 @@ comment|/**  * Creates {@link EJBQLParser} based on the system settings.  *   * 
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EJBQLParserFactory
 block|{
@@ -77,6 +78,7 @@ return|return
 name|parserClass
 return|;
 block|}
+specifier|public
 specifier|static
 name|EJBQLParser
 name|getParser
@@ -112,26 +114,6 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
-block|}
-block|}
-specifier|static
-class|class
-name|JavaCCParser
-implements|implements
-name|EJBQLParser
-block|{
-specifier|public
-name|Object
-name|parse
-parameter_list|(
-name|String
-name|ejbqlStatement
-parameter_list|)
-block|{
-comment|// TODO Auto-generated method stub
-return|return
-literal|null
-return|;
 block|}
 block|}
 block|}
