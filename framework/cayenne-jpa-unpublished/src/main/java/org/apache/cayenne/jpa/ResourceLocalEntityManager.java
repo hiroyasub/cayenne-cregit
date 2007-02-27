@@ -650,10 +650,7 @@ operator|)
 name|entity
 decl_stmt|;
 return|return
-name|p
-operator|.
-name|getObjectContext
-argument_list|()
+name|context
 operator|.
 name|getGraphManager
 argument_list|()
