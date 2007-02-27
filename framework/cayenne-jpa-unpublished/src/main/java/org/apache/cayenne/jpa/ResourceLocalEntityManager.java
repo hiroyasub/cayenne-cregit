@@ -654,8 +654,19 @@ name|p
 operator|.
 name|getObjectContext
 argument_list|()
+operator|.
+name|getGraphManager
+argument_list|()
+operator|.
+name|getNode
+argument_list|(
+name|p
+operator|.
+name|getObjectId
+argument_list|()
+argument_list|)
 operator|==
-name|context
+name|p
 return|;
 block|}
 comment|/**      * Create an instance of Query for executing an EJB QL statement.      *       * @param ejbqlString an EJB QL query string      * @return the new query instance      * @throws IllegalArgumentException if query string is not valid      */
