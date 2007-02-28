@@ -45,6 +45,11 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
+comment|/**      * Returns a text property of the node.      */
+name|String
+name|getText
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

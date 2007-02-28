@@ -94,7 +94,7 @@ name|parser
 operator|.
 name|parse
 argument_list|(
-literal|"select a from b"
+literal|"select a from Artist a"
 argument_list|)
 decl_stmt|;
 name|EJBQLTranslator
@@ -111,7 +111,10 @@ argument_list|(
 name|tr
 argument_list|)
 expr_stmt|;
-comment|//assertEquals("Failed to translate: " + select, "SELECT A FROM B", tr.getSql());
+comment|//        assertEquals(
+comment|//                "Failed to translate: " + select,
+comment|//                "SELECT t0.ARTIST_ID, t0.ARTIST_NAME, t0.DATE_OF_BIRTH FROM ARTIST t0",
+comment|//                tr.getSql());
 block|}
 block|}
 end_class

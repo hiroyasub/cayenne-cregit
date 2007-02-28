@@ -25,7 +25,7 @@ name|cayenne
 operator|.
 name|ejbql
 operator|.
-name|EJBQLExpression
+name|EJBQLBaseVisitor
 import|;
 end_import
 
@@ -39,7 +39,7 @@ name|cayenne
 operator|.
 name|ejbql
 operator|.
-name|EJBQLExpressionVisitor
+name|EJBQLExpression
 import|;
 end_import
 
@@ -50,8 +50,8 @@ end_comment
 begin_class
 class|class
 name|EJBQLTranslator
-implements|implements
-name|EJBQLExpressionVisitor
+extends|extends
+name|EJBQLBaseVisitor
 block|{
 specifier|private
 name|StringBuffer
@@ -104,31 +104,6 @@ argument_list|(
 literal|"SELECT"
 argument_list|)
 expr_stmt|;
-return|return
-literal|true
-return|;
-block|}
-specifier|public
-name|boolean
-name|visitSelectExpression
-parameter_list|(
-name|EJBQLExpression
-name|expression
-parameter_list|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-specifier|public
-name|boolean
-name|visitIdentificationVariable
-parameter_list|(
-name|EJBQLExpression
-name|expression
-parameter_list|)
-block|{
-comment|// if we are within the select expression, this is a name of the objentity.
 return|return
 literal|true
 return|;

@@ -24,12 +24,12 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|EJBQLAvergae
+name|EJBQLAverage
 extends|extends
 name|SimpleNode
 block|{
 specifier|public
-name|EJBQLAvergae
+name|EJBQLAverage
 parameter_list|(
 name|int
 name|id
