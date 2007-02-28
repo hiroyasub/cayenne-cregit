@@ -833,9 +833,9 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
-name|replace
+name|replaceAll
 argument_list|(
-literal|"+"
+literal|"\\+"
 argument_list|,
 literal|"%20"
 argument_list|)
