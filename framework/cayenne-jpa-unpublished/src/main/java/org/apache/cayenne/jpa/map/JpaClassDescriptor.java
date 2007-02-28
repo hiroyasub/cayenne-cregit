@@ -129,6 +129,20 @@ name|Pattern
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|enhancer
+operator|.
+name|EnhancementHelper
+import|;
+end_import
+
 begin_comment
 comment|/**  * Provides information about a class relevant to JPA, such potential persistence fields,  * etc.  *   * @author Andrus Adamchik  */
 end_comment
@@ -628,6 +642,25 @@ operator|.
 name|isStatic
 argument_list|(
 name|modifiers
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
+comment|// skip fields created by Cayenne enhancer
+if|if
+condition|(
+name|EnhancementHelper
+operator|.
+name|isGeneratedField
+argument_list|(
+name|fields
+index|[
+name|i
+index|]
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 condition|)
 block|{
