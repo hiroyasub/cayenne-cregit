@@ -136,7 +136,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataChannel that provides a server-side bridge between client and server objects in a  * Remote Object Persistence stack.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A DataChannel that provides a server-side end of the bridge between client and server  * objects in a Remote Object Persistence stack.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
