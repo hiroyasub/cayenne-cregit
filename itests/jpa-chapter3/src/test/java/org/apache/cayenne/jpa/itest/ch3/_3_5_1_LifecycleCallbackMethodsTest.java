@@ -494,6 +494,16 @@ name|getPostPersistedId
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|assertTrue
+argument_list|(
+name|e
+operator|.
+name|getId
+argument_list|()
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
 comment|// external listeners
 name|EntityListenerState
 operator|.
