@@ -3703,11 +3703,16 @@ name|DataChannel
 operator|.
 name|FLUSH_NOCASCADE_SYNC
 decl_stmt|;
+name|ObjectStore
+name|objectStore
+init|=
+name|getObjectStore
+argument_list|()
+decl_stmt|;
 comment|// prevent multiple commits occuring simulteneously
 synchronized|synchronized
 init|(
-name|getObjectStore
-argument_list|()
+name|objectStore
 init|)
 block|{
 name|DataContextFlushEventHandler
@@ -3718,8 +3723,7 @@ decl_stmt|;
 name|ObjectStoreGraphDiff
 name|changes
 init|=
-name|getObjectStore
-argument_list|()
+name|objectStore
 operator|.
 name|getChanges
 argument_list|()
@@ -3746,8 +3750,7 @@ name|noop
 condition|)
 block|{
 comment|// need to clear phantom changes
-name|getObjectStore
-argument_list|()
+name|objectStore
 operator|.
 name|postprocessAfterPhantomCommit
 argument_list|()
@@ -3798,14 +3801,28 @@ argument_list|,
 name|syncType
 argument_list|)
 decl_stmt|;
-name|getObjectStore
+comment|// note that this is a hack resulting from a fix to CAY-766... To support
+comment|// valid object state in PostPersist callback, 'postprocessAfterCommit' is
+comment|// invoked by DataDomain.onSync(..). Unless the parent is DataContext, and
+comment|// this method is not invoked!! As a result, PostPersist will contain temp
+comment|// ObjectIds in nested contexts and perm ones in flat contexts.
+comment|// Pending better callback design .....
+if|if
+condition|(
+name|objectStore
+operator|.
+name|hasChanges
 argument_list|()
+condition|)
+block|{
+name|objectStore
 operator|.
 name|postprocessAfterCommit
 argument_list|(
 name|returnChanges
 argument_list|)
 expr_stmt|;
+block|}
 comment|// this is a legacy event ... will deprecate in 2.0
 name|fireTransactionCommitted
 argument_list|()
@@ -4392,7 +4409,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/**      * Sets default for posting transaction events by new DataContexts.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * Sets default for posting transaction events by new DataContexts.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in      *             later 3.0 milestones.      */
 specifier|public
 specifier|static
 name|void
@@ -4407,7 +4424,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Enables or disables posting of transaction events by this DataContext.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * Enables or disables posting of transaction events by this DataContext.      *       * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in      *             later 3.0 milestones.      */
 specifier|public
 name|void
 name|setTransactionEventsEnabled
@@ -4423,7 +4440,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in      *             later 3.0 milestones.      */
 specifier|public
 name|boolean
 name|isTransactionEventsEnabled
@@ -4471,7 +4488,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in      *             later 3.0 milestones.      */
 name|void
 name|fireWillCommit
 parameter_list|()
@@ -4507,7 +4524,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in      *             later 3.0 milestones.      */
 name|void
 name|fireTransactionRolledback
 parameter_list|()
@@ -4545,7 +4562,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be      *             removed in later 3.0 milestones.      */
+comment|/**      * @deprecated since 3.0M1 in favor of {@link LifecycleListener}. Will be removed in      *             later 3.0 milestones.      */
 name|void
 name|fireTransactionCommitted
 parameter_list|()

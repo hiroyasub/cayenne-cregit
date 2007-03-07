@@ -1028,6 +1028,16 @@ name|resultIndirectlyModifiedIds
 argument_list|)
 expr_stmt|;
 block|}
+name|context
+operator|.
+name|getObjectStore
+argument_list|()
+operator|.
+name|postprocessAfterCommit
+argument_list|(
+name|resultDiff
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
