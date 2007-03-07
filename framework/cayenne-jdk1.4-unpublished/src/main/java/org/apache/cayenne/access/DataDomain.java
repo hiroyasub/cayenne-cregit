@@ -336,7 +336,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain performs query routing functions in Cayenne. DataDomain creates single data  * source abstraction hiding multiple physical data sources from the user. When a child  * DataContext sends a query to the DataDomain, it is transparently routed to an  * appropriate DataNode.  *<p>  *<i>For more information see<a href="../../../../../../userguide/index.html"  * target="_top">Cayenne User Guide.</a></i>  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * DataDomain performs query routing functions in Cayenne. DataDomain creates single data  * source abstraction hiding multiple physical data sources from the user. When a child  * DataContext sends a query to the DataDomain, it is transparently routed to an  * appropriate DataNode.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
