@@ -23,43 +23,38 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|reflect
 operator|.
-name|EntityResolver
+name|ClassDescriptor
 import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract definition of EJBQL query parser. The actual parser implementing this  * interface is generated from JavaCC grammar.  *   * @author andrus  * @since 3.0  */
+comment|/**  * Represents an EJB QL expression "compiled" in the context of a certain mapping.  *   * @author Andrus Adamchik  * @since 3.0  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|EJBQLParser
-block|{
-comment|/**      * Parses a string EJB QL into an {@link EJBQLExpression}.      */
-name|EJBQLExpression
-name|parse
-parameter_list|(
-name|String
-name|ejbqlStatement
-parameter_list|)
-throws|throws
-name|EJBQLException
-function_decl|;
-comment|/**      * Parses and compiles an expression for the EntityResolver.      */
 name|EJBQLCompiledExpression
-name|compile
+block|{
+comment|/**      * Returns a tree representation of an EJBQL expression.      */
+name|EJBQLExpression
+name|getExpression
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a ClassDescriptor for the id variable.      */
+name|ClassDescriptor
+name|getEntityDescriptor
 parameter_list|(
 name|String
-name|ejbqlStatement
-parameter_list|,
-name|EntityResolver
-name|resolver
+name|idVariable
 parameter_list|)
-throws|throws
-name|EJBQLException
+function_decl|;
+comment|/**      * Returns EJB QL source of the compiled expression if available.      */
+name|String
+name|getSource
+parameter_list|()
 function_decl|;
 block|}
 end_interface
