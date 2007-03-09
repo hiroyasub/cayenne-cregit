@@ -1126,7 +1126,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if DataContexts produced by this DataDomain are using      * shared DataRowStore. Returns<code>false</code> if each DataContext would work      * with its own DataRowStore.      */
+comment|/**      * Returns<code>true</code> if DataContexts produced by this DataDomain are using      * shared DataRowStore. Returns<code>false</code> if each DataContext would work      * with its own DataRowStore. Note that this setting can be overwritten per      * DataContext. See {@link #createDataContext(boolean)}.      */
 specifier|public
 name|boolean
 name|isSharedCacheEnabled
@@ -1239,7 +1239,7 @@ operator|=
 name|transactionDelegate
 expr_stmt|;
 block|}
-comment|/**      * Returns snapshots cache for this DataDomain, lazily initializing it on the first      * call.      */
+comment|/**      * Returns snapshots cache for this DataDomain, lazily initializing it on the first      * call if 'sharedCacheEnabled' flag is true.      */
 specifier|public
 specifier|synchronized
 name|DataRowStore
@@ -1253,6 +1253,38 @@ operator|==
 literal|null
 operator|&&
 name|sharedCacheEnabled
+condition|)
+block|{
+name|this
+operator|.
+name|sharedSnapshotCache
+operator|=
+operator|new
+name|DataRowStore
+argument_list|(
+name|name
+argument_list|,
+name|properties
+argument_list|,
+name|eventManager
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|sharedSnapshotCache
+return|;
+block|}
+comment|/**      * Returns a guaranteed non-null shared snapshot cache regardless of the      * 'sharedCacheEnabled' flag setting. This allows to build DataContexts that do not      * follow the default policy.      *       * @since 3.0      */
+specifier|synchronized
+name|DataRowStore
+name|nonNullSharedSnapshotCache
+parameter_list|()
+block|{
+if|if
+condition|(
+name|sharedSnapshotCache
+operator|==
+literal|null
 condition|)
 block|{
 name|this
@@ -1778,7 +1810,7 @@ operator|(
 name|useSharedCache
 operator|)
 condition|?
-name|getSharedSnapshotCache
+name|nonNullSharedSnapshotCache
 argument_list|()
 else|:
 operator|new
