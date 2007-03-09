@@ -324,7 +324,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|=
-name|createDataContextWithLocalCache
+name|createDataContextWithDedicatedCache
 argument_list|()
 expr_stmt|;
 name|SelectQuery

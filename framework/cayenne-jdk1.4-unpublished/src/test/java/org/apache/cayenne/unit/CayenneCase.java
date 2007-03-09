@@ -592,7 +592,7 @@ block|}
 comment|/**      * Creates a DataContext that uses local snapshot cache and is based on default test      * domain.      */
 specifier|protected
 name|DataContext
-name|createDataContextWithLocalCache
+name|createDataContextWithDedicatedCache
 parameter_list|()
 block|{
 name|DataContext

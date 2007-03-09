@@ -398,7 +398,7 @@ block|{
 name|DataContext
 name|context
 init|=
-name|createDataContextWithLocalCache
+name|createDataContextWithDedicatedCache
 argument_list|()
 decl_stmt|;
 name|assertNotSame
