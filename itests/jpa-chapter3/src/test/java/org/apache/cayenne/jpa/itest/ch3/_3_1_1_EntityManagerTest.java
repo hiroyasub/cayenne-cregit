@@ -21,6 +21,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|persistence
@@ -36,6 +46,16 @@ operator|.
 name|persistence
 operator|.
 name|PersistenceException
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|persistence
+operator|.
+name|Query
 import|;
 end_import
 
@@ -578,17 +598,6 @@ block|{
 comment|// expected
 block|}
 block|}
-comment|// TODO: andrus, 1/3/2007 - implement - need to emulate the container environment
-specifier|public
-name|void
-name|_testMergeTransactionRequiredException
-parameter_list|()
-block|{
-comment|// throws TransactionRequiredException if invoked on a
-comment|// container-managed entity manager of type
-comment|// PersistenceContextType.TRANSACTION and there is
-comment|// no transaction.
-block|}
 specifier|public
 name|void
 name|testRemove
@@ -752,17 +761,6 @@ block|{
 comment|// expected
 block|}
 block|}
-comment|// TODO: andrus, 1/3/2007 - implement - need to emulate the container environment
-specifier|public
-name|void
-name|_testRemoveTransactionRequiredException
-parameter_list|()
-block|{
-comment|// throws TransactionRequiredException if invoked on a
-comment|// container-managed entity manager of type
-comment|// PersistenceContextType.TRANSACTION and there is
-comment|// no transaction.
-block|}
 specifier|public
 name|void
 name|testFind
@@ -904,16 +902,118 @@ block|{
 comment|// expected
 block|}
 block|}
-comment|// TODO: andrus, 1/3/2007 - implement - need to emulate the container environment
 specifier|public
 name|void
-name|_testRefreshTransactionRequiredException
+name|testCreateQuery
 parameter_list|()
+throws|throws
+name|Exception
 block|{
-comment|// throws TransactionRequiredException if invoked on a
-comment|// container-managed entity manager of type
-comment|// PersistenceContextType.TRANSACTION and there is
-comment|// no transaction.
+name|getDbHelper
+argument_list|()
+operator|.
+name|deleteAll
+argument_list|(
+literal|"SimpleEntity"
+argument_list|)
+expr_stmt|;
+name|getDbHelper
+argument_list|()
+operator|.
+name|insert
+argument_list|(
+literal|"SimpleEntity"
+argument_list|,
+operator|new
+name|String
+index|[]
+block|{
+literal|"id"
+block|,
+literal|"property1"
+block|}
+argument_list|,
+operator|new
+name|Object
+index|[]
+block|{
+literal|15
+block|,
+literal|"XXX"
+block|}
+argument_list|)
+expr_stmt|;
+name|Query
+name|query
+init|=
+name|getEntityManager
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select x from SimpleEntity x"
+argument_list|)
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|query
+argument_list|)
+expr_stmt|;
+name|List
+name|result
+init|=
+name|query
+operator|.
+name|getResultList
+argument_list|()
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|result
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|result
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|instanceof
+name|SimpleEntity
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"XXX"
+argument_list|,
+operator|(
+operator|(
+name|SimpleEntity
+operator|)
+name|result
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|)
+operator|.
+name|getProperty1
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

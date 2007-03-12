@@ -171,6 +171,20 @@ name|Transaction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EJBQLQuery
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -678,14 +692,29 @@ block|{
 name|checkClosed
 argument_list|()
 expr_stmt|;
-comment|// TODO: Andrus, 2/10/2006 - implement
-throw|throw
+name|JpaQuery
+name|query
+init|=
 operator|new
-name|UnsupportedOperationException
+name|JpaQuery
 argument_list|(
-literal|"TODO"
+name|context
 argument_list|)
-throw|;
+decl_stmt|;
+name|query
+operator|.
+name|setQuery
+argument_list|(
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbqlString
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|query
+return|;
 block|}
 comment|/**      * Create an instance of Query for executing a named query (in EJB QL or native SQL).      *       * @param name the name of a query defined in metadata      * @return the new query instance      * @throws IllegalArgumentException if a query has not been defined with the given      *             name      */
 specifier|public
