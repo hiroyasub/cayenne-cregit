@@ -127,7 +127,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// create a unique key based on entity, qualifier and ordering
+comment|// create a unique key based on entity, qualifier, ordering and fetch
+comment|// limit
 name|StringBuffer
 name|key
 init|=
@@ -299,6 +300,32 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+if|if
+condition|(
+name|query
+operator|.
+name|getFetchLimit
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|key
+operator|.
+name|append
+argument_list|(
+literal|'/'
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|query
+operator|.
+name|getFetchLimit
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 name|this
 operator|.
