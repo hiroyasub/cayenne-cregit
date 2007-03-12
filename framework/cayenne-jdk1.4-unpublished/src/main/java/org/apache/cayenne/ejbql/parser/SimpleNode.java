@@ -143,7 +143,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|nonRecursiveVisit
+name|visitNode
 argument_list|(
 name|visitor
 argument_list|)
@@ -177,14 +177,11 @@ block|{
 if|if
 condition|(
 operator|!
-name|children
-index|[
-name|i
-index|]
-operator|.
-name|visit
+name|visitChild
 argument_list|(
 name|visitor
+argument_list|,
+name|i
 argument_list|)
 condition|)
 block|{
@@ -197,10 +194,10 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * A non-recursive version of accept method. Simply returns true. Subclasses normally      * override this method instead of visit().      */
+comment|/**      * Visits this not without recursion. Default implementation simply returns true.      * Subclasses override this method to call an appropriate visitor method.      */
 specifier|protected
 name|boolean
-name|nonRecursiveVisit
+name|visitNode
 parameter_list|(
 name|EJBQLExpressionVisitor
 name|visitor
@@ -208,6 +205,30 @@ parameter_list|)
 block|{
 return|return
 literal|true
+return|;
+block|}
+comment|/**      * Recursively visits a child at the specified index. Subclasses override this method      * if they desire to implement callbacks after visiting each child.      */
+specifier|protected
+name|boolean
+name|visitChild
+parameter_list|(
+name|EJBQLExpressionVisitor
+name|visitor
+parameter_list|,
+name|int
+name|childIndex
+parameter_list|)
+block|{
+return|return
+name|children
+index|[
+name|childIndex
+index|]
+operator|.
+name|visit
+argument_list|(
+name|visitor
+argument_list|)
 return|;
 block|}
 specifier|public

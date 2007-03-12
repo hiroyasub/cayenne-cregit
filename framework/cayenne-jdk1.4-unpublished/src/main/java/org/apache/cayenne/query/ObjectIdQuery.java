@@ -274,7 +274,7 @@ name|fetchingDataRows
 expr_stmt|;
 block|}
 comment|/**      * Returns query metadata object.      */
-comment|// return metadata without creating replacement, as this is not always possible to
+comment|// return metadata without creating replacement, as it is not always possible to
 comment|// create replacement (e.g. temp ObjectId).
 specifier|public
 name|QueryMetadata

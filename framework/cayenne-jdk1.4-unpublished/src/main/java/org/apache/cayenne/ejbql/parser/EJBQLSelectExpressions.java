@@ -41,6 +41,23 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
+name|EJBQLSelectExpressions
+parameter_list|(
+name|AbstractParser
+name|parser
+parameter_list|,
+name|int
+name|id
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|id
+argument_list|)
+expr_stmt|;
+block|}
+comment|// no visitor method for now, as this node is semantical and not important in
+comment|// analyzing the query
 block|}
 end_class
 

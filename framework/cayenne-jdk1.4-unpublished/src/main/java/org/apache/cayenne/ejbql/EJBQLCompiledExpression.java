@@ -43,12 +43,17 @@ name|EJBQLExpression
 name|getExpression
 parameter_list|()
 function_decl|;
+comment|/**      * Returns a descriptor of the root of this expression such as entity being fetched or      * updated.      */
+name|ClassDescriptor
+name|getRootDescriptor
+parameter_list|()
+function_decl|;
 comment|/**      * Returns a ClassDescriptor for the id variable.      */
 name|ClassDescriptor
 name|getEntityDescriptor
 parameter_list|(
 name|String
-name|idVariable
+name|identifier
 parameter_list|)
 function_decl|;
 comment|/**      * Returns EJB QL source of the compiled expression if available.      */

@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to describe a ResultSet column.  * There are the following possible invocation formats inside the template:  *   *<pre>  * #result(column_name) - e.g. #result('ARTIST_ID')  * #result(column_name java_type) - e.g. #result('ARTIST_ID' 'String')  * #result(column_name java_type column_alias) - e.g. #result('ARTIST_ID' 'String' 'ID')  * #result(column_name java_type column_alias data_row_key) - e.g. #result('ARTIST_ID' 'String' 'ID' 'toArtist.ID')  *</pre>  *   *<p>'data_row_key' is needed if SQL 'column_alias' is not appropriate as a DataRow key on the Cayenne  * side. One common case when this happens is when a DataRow retrieved from a query is mapped  * using joint prefetch keys. In this case DataRow must use DB_PATH expressions for joint column keys,  * and their format is incompatible with most databases alias format.</p>  *   *<p>Most common Java types used in JDBC can be specified without   * a package. This includes all numeric types, primitives, String, SQL dates, BigDecimal  * and BigInteger.  *</p>  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * A custom Velocity directive to describe a ResultSet column. There are the following  * possible invocation formats inside the template:  *   *<pre>  *      #result(column_name) - e.g. #result('ARTIST_ID')  *      #result(column_name java_type) - e.g. #result('ARTIST_ID' 'String')  *      #result(column_name java_type column_alias) - e.g. #result('ARTIST_ID' 'String' 'ID')  *      #result(column_name java_type column_alias data_row_key) - e.g. #result('ARTIST_ID' 'String' 'ID' 'toArtist.ID')  *</pre>  *   *<p>  * 'data_row_key' is needed if SQL 'column_alias' is not appropriate as a DataRow key on  * the Cayenne side. One common case when this happens is when a DataRow retrieved from a  * query is mapped using joint prefetch keys. In this case DataRow must use DB_PATH  * expressions for joint column keys, and their format is incompatible with most databases  * alias format.  *</p>  *<p>  * Most common Java types used in JDBC can be specified without a package. This includes  * all numeric types, primitives, String, SQL dates, BigDecimal and BigInteger.  *</p>  *   * @author Andrus Adamchik  * @since 1.1  */
 end_comment
 
 begin_class
@@ -723,7 +723,10 @@ argument_list|(
 name|column
 argument_list|)
 expr_stmt|;
-comment|// append alias if needed
+comment|// append column alias if needed.
+comment|// Note that if table aliases are used, this logic will result in SQL like
+comment|// "t0.ARTIST_NAME AS ARTIST_NAME". Doing extra regex matching to handle this
+comment|// won't probably buy us much.
 if|if
 condition|(
 operator|!
@@ -814,7 +817,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns a directive argument at a given index converted to String.       *       * @since 1.2      */
+comment|/**      * Returns a directive argument at a given index converted to String.      *       * @since 1.2      */
 specifier|protected
 name|String
 name|getChildAsString
@@ -858,7 +861,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Converts "short" type notation to the fully qualified class name.      * Right now supports all major standard SQL types, including primitives.      * All other types are expected to be fully qualified, and are not converted.      */
+comment|/**      * Converts "short" type notation to the fully qualified class name. Right now      * supports all major standard SQL types, including primitives. All other types are      * expected to be fully qualified, and are not converted.      */
 specifier|protected
 name|String
 name|guessType
