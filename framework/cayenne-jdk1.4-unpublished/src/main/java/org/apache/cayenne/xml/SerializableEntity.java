@@ -226,6 +226,12 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+comment|// Make sure we pop the node we just pushed -- needed for fix to CAY-597.
+name|encoder
+operator|.
+name|pop
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 else|else

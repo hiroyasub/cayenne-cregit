@@ -942,6 +942,13 @@ argument_list|()
 decl_stmt|;
 name|george
 operator|.
+name|setAge
+argument_list|(
+literal|76
+argument_list|)
+expr_stmt|;
+name|george
+operator|.
 name|setName
 argument_list|(
 literal|"George"
