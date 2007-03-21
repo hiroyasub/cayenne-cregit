@@ -324,7 +324,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Attempt to delete object regsitered in a different DataContext. Object: "
+literal|"Attempt to delete object registered in a different DataContext. Object: "
 operator|+
 name|object
 operator|+
