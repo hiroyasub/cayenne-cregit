@@ -81,13 +81,6 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 block|{
-if|if
-condition|(
-name|finishedChildIndex
-operator|>=
-literal|0
-condition|)
-block|{
 name|afterChild
 argument_list|(
 name|expression
@@ -97,7 +90,6 @@ argument_list|,
 name|finishedChildIndex
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -113,23 +105,15 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 block|{
-if|if
-condition|(
-name|finishedChildIndex
-operator|>=
-literal|0
-condition|)
-block|{
 name|afterChild
 argument_list|(
 name|expression
 argument_list|,
-literal|" ="
+literal|" #"
 argument_list|,
 name|finishedChildIndex
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -145,13 +129,6 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 block|{
-if|if
-condition|(
-name|finishedChildIndex
-operator|>=
-literal|0
-condition|)
-block|{
 name|afterChild
 argument_list|(
 name|expression
@@ -161,7 +138,6 @@ argument_list|,
 name|finishedChildIndex
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -179,6 +155,13 @@ parameter_list|,
 name|int
 name|childIndex
 parameter_list|)
+block|{
+if|if
+condition|(
+name|childIndex
+operator|>=
+literal|0
+condition|)
 block|{
 if|if
 condition|(
@@ -206,12 +189,13 @@ name|text
 argument_list|)
 expr_stmt|;
 block|}
-comment|// reset delegate if it was set for a child
+comment|// reset child-specific delegate
 name|setDelegate
 argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|boolean
@@ -228,6 +212,18 @@ name|EJBQLPathVisitor
 argument_list|()
 argument_list|)
 expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitStringLiteral
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
 return|return
 literal|true
 return|;
