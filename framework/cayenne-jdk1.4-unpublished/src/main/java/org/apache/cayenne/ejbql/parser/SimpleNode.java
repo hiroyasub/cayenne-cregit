@@ -131,6 +131,15 @@ return|return
 name|text
 return|;
 block|}
+specifier|public
+name|boolean
+name|isNegated
+parameter_list|()
+block|{
+return|return
+name|not
+return|;
+block|}
 comment|/**      * A recursive visit method that passes a visitor to this node and all its children,      * depth first.      */
 specifier|public
 name|boolean

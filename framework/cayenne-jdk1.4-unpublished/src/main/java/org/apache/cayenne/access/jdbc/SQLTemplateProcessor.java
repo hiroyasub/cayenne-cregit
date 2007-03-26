@@ -83,6 +83,18 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|velocity
 operator|.
 name|VelocityContext
@@ -100,20 +112,6 @@ operator|.
 name|context
 operator|.
 name|InternalContextAdapterImpl
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|velocity
-operator|.
-name|exception
-operator|.
-name|ParseErrorException
 import|;
 end_import
 
@@ -192,18 +190,6 @@ operator|.
 name|node
 operator|.
 name|SimpleNode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
 import|;
 end_import
 
@@ -664,8 +650,14 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|ParseErrorException
+name|CayenneRuntimeException
 argument_list|(
+literal|"Error parsing template '"
+operator|+
+name|template
+operator|+
+literal|"' : "
+operator|+
 name|pex
 operator|.
 name|getMessage

@@ -50,6 +50,11 @@ name|String
 name|getText
 parameter_list|()
 function_decl|;
+comment|/**      * Returns an optional boolean flag that negates the value of the expression.      */
+name|boolean
+name|isNegated
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

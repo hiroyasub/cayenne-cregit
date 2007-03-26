@@ -321,6 +321,9 @@ name|visitDelete
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -855,6 +858,9 @@ name|visitPath
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -891,6 +897,9 @@ name|visitSelect
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1074,6 +1083,9 @@ name|visitUpdate
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return

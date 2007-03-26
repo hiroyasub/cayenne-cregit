@@ -558,6 +558,9 @@ name|visitDelete
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -570,6 +573,8 @@ operator|.
 name|visitDelete
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 literal|false
@@ -1574,6 +1579,9 @@ name|visitPath
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1586,6 +1594,8 @@ operator|.
 name|visitPath
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 literal|false
@@ -1643,6 +1653,9 @@ name|visitSelect
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1655,6 +1668,8 @@ operator|.
 name|visitSelect
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 literal|false
@@ -1993,6 +2008,9 @@ name|visitUpdate
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -2005,6 +2023,8 @@ operator|.
 name|visitUpdate
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 literal|false

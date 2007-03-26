@@ -183,11 +183,15 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 function_decl|;
+comment|/**      * Called on visiting "delete" expression and also after visiting every expression      * child.      *       * @param expression a "delete" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitDelete
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -517,11 +521,15 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 function_decl|;
+comment|/**      * Called on visiting "path" expression and also after visiting every expression      * child.      *       * @param expression a "path" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitPath
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -538,11 +546,15 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 function_decl|;
+comment|/**      * Called on visiting "select" and also after visiting every expression child.      *       * @param expression a "select" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitSelect
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -647,11 +659,15 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 function_decl|;
+comment|/**      * Called on visiting "update" expression and also after visiting every expression      * child.      *       * @param expression a "update" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitUpdate
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
