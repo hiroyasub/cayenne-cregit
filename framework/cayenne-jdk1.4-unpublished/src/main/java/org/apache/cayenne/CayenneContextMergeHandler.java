@@ -303,57 +303,9 @@ name|GraphEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|shouldProcessEvent
-argument_list|(
-name|e
-argument_list|)
-condition|)
-block|{
-comment|// do we need to merge anything?
-if|if
-condition|(
-name|context
-operator|.
-name|internalGraphManager
-argument_list|()
-operator|.
-name|hasChanges
-argument_list|()
-condition|)
-block|{
-name|runWithEventsDisabled
-argument_list|(
-operator|new
-name|Runnable
-argument_list|()
-block|{
-specifier|public
-name|void
-name|run
-parameter_list|()
-block|{
-name|context
-operator|.
-name|internalGraphManager
-argument_list|()
-operator|.
-name|graphReverted
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-argument_list|)
-expr_stmt|;
-comment|// post event outside of "execute" to make sure it is sent
-name|repostAfterMerge
-argument_list|(
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+comment|// TODO: andrus, 3/29/2007: per CAY-771, if a LOCAL peer context posted the event,
+comment|// just ignore it, however if the REMOTE peer reverted the parent remote
+comment|// DataContext, we need to invalidate stale committed objects...
 block|}
 comment|// ******* End DataChannelListener methods *******
 name|void
