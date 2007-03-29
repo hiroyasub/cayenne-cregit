@@ -84,11 +84,10 @@ operator|.
 name|TRANSIENT
 condition|)
 block|{
-name|this
-operator|.
-name|objectContext
-operator|=
+name|setObjectContext
+argument_list|(
 literal|null
+argument_list|)
 expr_stmt|;
 block|}
 block|}
