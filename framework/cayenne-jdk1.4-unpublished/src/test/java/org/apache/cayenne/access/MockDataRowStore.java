@@ -59,6 +59,20 @@ name|ObjectId
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|event
+operator|.
+name|EventManager
+import|;
+end_import
+
 begin_comment
 comment|/**  * A "lightweight" DataRowStore.  *   * @author Andrus Adamchik  */
 end_comment
@@ -120,6 +134,10 @@ argument_list|(
 literal|"mock DataRowStore"
 argument_list|,
 name|TEST_DEFAULTS
+argument_list|,
+operator|new
+name|EventManager
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
