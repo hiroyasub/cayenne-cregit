@@ -134,6 +134,7 @@ name|Object
 block|{
 specifier|private
 specifier|static
+specifier|volatile
 name|EventManager
 name|defaultManager
 decl_stmt|;
