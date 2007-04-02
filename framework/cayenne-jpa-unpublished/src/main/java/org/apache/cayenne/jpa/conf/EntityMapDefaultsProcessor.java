@@ -1165,6 +1165,24 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+comment|// process temporal type defaults
+if|if
+condition|(
+name|jpaBasic
+operator|.
+name|getTemporal
+argument_list|()
+operator|==
+literal|null
+operator|&&
+name|jpaBasic
+operator|.
+name|getEnumerated
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
 name|JpaClassDescriptor
 name|descriptor
 init|=
@@ -1186,29 +1204,27 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|boolean
-name|typeKnown
-init|=
-literal|false
-decl_stmt|;
-comment|// process temporal type defaults
+comment|// sanity check
 if|if
 condition|(
-name|jpaBasic
-operator|.
-name|getTemporal
-argument_list|()
-operator|!=
+name|property
+operator|==
 literal|null
 condition|)
 block|{
-name|typeKnown
-operator|=
-literal|true
-expr_stmt|;
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"No class property found for name: "
+operator|+
+name|jpaBasic
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+throw|;
 block|}
-else|else
-block|{
 if|if
 condition|(
 name|java
@@ -1237,10 +1253,6 @@ operator|.
 name|DATE
 argument_list|)
 expr_stmt|;
-name|typeKnown
-operator|=
-literal|true
-expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1265,10 +1277,6 @@ name|TemporalType
 operator|.
 name|TIME
 argument_list|)
-expr_stmt|;
-name|typeKnown
-operator|=
-literal|true
 expr_stmt|;
 block|}
 if|else if
@@ -1295,10 +1303,6 @@ operator|.
 name|TIMESTAMP
 argument_list|)
 expr_stmt|;
-name|typeKnown
-operator|=
-literal|true
-expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1324,33 +1328,6 @@ operator|.
 name|TIMESTAMP
 argument_list|)
 expr_stmt|;
-name|typeKnown
-operator|=
-literal|true
-expr_stmt|;
-block|}
-block|}
-comment|// process enum type defaults
-if|if
-condition|(
-operator|!
-name|typeKnown
-condition|)
-block|{
-if|if
-condition|(
-name|jpaBasic
-operator|.
-name|getEnumerated
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-name|typeKnown
-operator|=
-literal|true
-expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -1371,10 +1348,6 @@ name|EnumType
 operator|.
 name|ORDINAL
 argument_list|)
-expr_stmt|;
-name|typeKnown
-operator|=
-literal|true
 expr_stmt|;
 block|}
 block|}
