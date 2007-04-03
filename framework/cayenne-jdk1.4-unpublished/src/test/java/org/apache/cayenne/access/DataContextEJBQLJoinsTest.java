@@ -17,84 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|art
-operator|.
-name|Artist
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|EJBQLQuery
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -137,22 +59,22 @@ argument_list|(
 literal|"testThetaJoins"
 argument_list|)
 expr_stmt|;
-comment|//        String ejbql = "SELECT DISTINCT a "
-comment|//                + "FROM Artist a, Painting b "
-comment|//                + "WHERE a.artistName = b.paintingTitle";
+comment|// String ejbql = "SELECT DISTINCT a "
+comment|// + "FROM Artist a, Painting b "
+comment|// + "WHERE a.artistName = b.paintingTitle";
 comment|//
-comment|//        List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
-comment|//        assertEquals(2, artists.size());
+comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
+comment|// assertEquals(2, artists.size());
 comment|//
-comment|//        Set names = new HashSet(2);
-comment|//        Iterator it = artists.iterator();
-comment|//        while (it.hasNext()) {
-comment|//            Artist a = (Artist) it.next();
-comment|//            names.add(a.getArtistName());
-comment|//        }
+comment|// Set names = new HashSet(2);
+comment|// Iterator it = artists.iterator();
+comment|// while (it.hasNext()) {
+comment|// Artist a = (Artist) it.next();
+comment|// names.add(a.getArtistName());
+comment|// }
 comment|//
-comment|//        assertTrue(names.contains("AA1"));
-comment|//        assertTrue(names.contains("BB2"));
+comment|// assertTrue(names.contains("AA1"));
+comment|// assertTrue(names.contains("BB2"));
 block|}
 specifier|public
 name|void
@@ -166,13 +88,13 @@ argument_list|(
 literal|"testInnerJoins"
 argument_list|)
 expr_stmt|;
-comment|//        String ejbql = "SELECT a "
-comment|//                + "FROM Artist a INNER JOIN a.paintingArray p "
-comment|//                + "WHERE a.artistName = 'A1'";
+comment|// String ejbql = "SELECT a "
+comment|// + "FROM Artist a INNER JOIN a.paintingArray p "
+comment|// + "WHERE a.artistName = 'A1'";
 comment|//
-comment|//        List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
-comment|//        assertEquals(1, artists.size());
-comment|//        assertEquals(33001, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
+comment|// assertEquals(1, artists.size());
+comment|// assertEquals(33001, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
 block|}
 specifier|public
 name|void
@@ -199,8 +121,88 @@ comment|// Artist a = (Artist) it.next();
 comment|// ids.add(DataObjectUtils.pkForObject(a));
 comment|// }
 comment|//
-comment|//        assertTrue(ids.contains(new Integer(33001)));
-comment|//        assertTrue(ids.contains(new Integer(33005)));
+comment|// assertTrue(ids.contains(new Integer(33001)));
+comment|// assertTrue(ids.contains(new Integer(33005)));
+block|}
+specifier|public
+name|void
+name|testChainedJoins
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"testChainedJoins"
+argument_list|)
+expr_stmt|;
+comment|// String ejbql = "SELECT a "
+comment|// + "FROM Artist a JOIN a.paintingArray p JOIN p.toGallery g "
+comment|// + "WHERE g.galleryName = 'gallery2'";
+comment|//
+comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
+comment|// assertEquals(1, artists.size());
+comment|// assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+block|}
+specifier|public
+name|void
+name|testImplicitJoins
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"testChainedJoins"
+argument_list|)
+expr_stmt|;
+comment|// String ejbql = "SELECT a "
+comment|// + "FROM Artist a "
+comment|// + "WHERE a.paintingArray.gallery.galleryName = 'gallery2'";
+comment|//
+comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
+comment|// assertEquals(1, artists.size());
+comment|// assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+block|}
+specifier|public
+name|void
+name|testPartialImplicitJoins
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"testChainedJoins"
+argument_list|)
+expr_stmt|;
+comment|// String ejbql = "SELECT a "
+comment|// + "FROM Artist a JOIN a.paintingArray b "
+comment|// + "WHERE a.paintingArray.gallery.galleryName = 'gallery2'";
+comment|//
+comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
+comment|// assertEquals(1, artists.size());
+comment|// assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+block|}
+specifier|public
+name|void
+name|testMultipleJoinsToTheSameTable
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"testMultipleJoinsToTheSameTable"
+argument_list|)
+expr_stmt|;
+comment|// String ejbql = "SELECT a "
+comment|// + "FROM Artist a JOIN a.paintingArray b JOIN a.paintingArray c "
+comment|// + "WHERE b.paintingTitle = 'P1' AND c.paintingTitle = 'P2'";
+comment|//
+comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
+comment|// assertEquals(1, artists.size());
+comment|//        assertEquals(33001, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
 block|}
 block|}
 end_class

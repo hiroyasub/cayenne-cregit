@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|access
+operator|.
+name|jdbc
 package|;
 end_package
 
@@ -74,6 +76,20 @@ operator|.
 name|ejbql
 operator|.
 name|EJBQLExpression
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SQLTemplate
 import|;
 end_import
 

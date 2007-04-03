@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|access
+operator|.
+name|jdbc
 package|;
 end_package
 

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A factory interface to create standard SQLActions for a set of standard queries.  * Instances of SQLActionVisitor are passed by Cayenne to a Query in  * {@link org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)},  * allowing query to choose the action type and convert itself to a "standard" query if  * needed. Individual DbAdapters would provide special visitors, thus allowing for  * DB-dependent execution algorithms.  *   * @see org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)  * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A factory interface to create standard SQLActions for a set of standard queries.  * Instances of SQLActionVisitor are passed by Cayenne to a Query in  * {@link org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)}, allowing  * query to choose the action type and convert itself to a "standard" query if needed.  * Individual DbAdapters would provide special visitors, thus allowing for DB-dependent  * execution algorithms.  *   * @see org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)  * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|SQLActionVisitor
 block|{
-comment|/**      * Executes a generic update query.      */
+comment|/**      * Creates an action to execute a generic update query.      */
 name|SQLAction
 name|updateAction
 parameter_list|(
@@ -32,7 +32,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a batch update query.      */
+comment|/**      * Creates an action to execute a batch update query.      */
 name|SQLAction
 name|batchAction
 parameter_list|(
@@ -40,7 +40,7 @@ name|BatchQuery
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a SelectQuery.      */
+comment|/**      * Creates an action to execute a SelectQuery.      */
 name|SQLAction
 name|objectSelectAction
 parameter_list|(
@@ -48,7 +48,7 @@ name|SelectQuery
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a SQLTemplate.      */
+comment|/**      * Creates an action to execute a SQLTemplate.      */
 name|SQLAction
 name|sqlAction
 parameter_list|(
@@ -56,11 +56,19 @@ name|SQLTemplate
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a ProcedureQuery.      */
+comment|/**      * Creates an action to execute a ProcedureQuery.      */
 name|SQLAction
 name|procedureAction
 parameter_list|(
 name|ProcedureQuery
+name|query
+parameter_list|)
+function_decl|;
+comment|/**      * Creates an action to execute EJBQL query.      */
+name|SQLAction
+name|ejbqlAction
+parameter_list|(
+name|EJBQLQuery
 name|query
 parameter_list|)
 function_decl|;

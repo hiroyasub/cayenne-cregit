@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|access
+operator|.
+name|jdbc
 package|;
 end_package
 
@@ -620,9 +622,7 @@ name|setDelegate
 argument_list|(
 operator|new
 name|EJBQLSelectOrderByTranslator
-argument_list|(
-name|this
-argument_list|)
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
