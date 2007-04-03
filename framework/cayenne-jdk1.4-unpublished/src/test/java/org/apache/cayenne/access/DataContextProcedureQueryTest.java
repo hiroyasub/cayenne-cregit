@@ -252,7 +252,6 @@ operator|.
 name|setUp
 argument_list|()
 expr_stmt|;
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -281,7 +280,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -455,7 +453,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -616,7 +613,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -777,7 +773,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -938,7 +933,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -1113,7 +1107,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!
@@ -1246,7 +1239,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// Don't run this on MySQL
 if|if
 condition|(
 operator|!

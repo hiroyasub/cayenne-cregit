@@ -329,6 +329,9 @@ block|{
 comment|// stored procedure may contain a mixture of update counts and result sets,
 comment|// and out parameters. Read out parameters first, then
 comment|// iterate until we exhaust all results
+comment|// TODO: andrus, 4/2/2007 - according to the docs we should store the boolean
+comment|// return value of this method and avoid calling 'getMoreResults' if it is true.
+comment|// some db's handle this well, some don't (MySQL).
 name|statement
 operator|.
 name|execute
