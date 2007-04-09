@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Helper JavaBean class that holds DataSource login information.   *   *<p><i>For more information see<a href="../../../../../../userguide/index.html"  * target="_top">Cayenne User Guide.</a></i></p>  *   * @author Andrus Adamchik  */
+comment|/**  * Helper JavaBean class that holds DataSource login information.  *<p>  *<i>For more information see<a href="../../../../../../userguide/index.html"  * target="_top">Cayenne User Guide.</a></i>  *</p>  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -879,7 +879,8 @@ operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
-comment|//encoder = (PasswordEncoding) Class.forName(getPasswordEncoderClass()).newInstance();
+comment|// encoder = (PasswordEncoding)
+comment|// Class.forName(getPasswordEncoderClass()).newInstance();
 block|}
 catch|catch
 parameter_list|(
@@ -924,7 +925,7 @@ return|return
 name|encoder
 return|;
 block|}
-comment|/**    * @return the passwordEncoderClass    */
+comment|/**      * @return the passwordEncoderClass      */
 specifier|public
 name|String
 name|getPasswordEncoderClass
@@ -934,7 +935,7 @@ return|return
 name|passwordEncoderClass
 return|;
 block|}
-comment|/**    * @param passwordEncoderClass the passwordEncoderClass to set    */
+comment|/**      * @param passwordEncoderClass the passwordEncoderClass to set      */
 specifier|public
 name|void
 name|setPasswordEncoderClass
@@ -968,7 +969,7 @@ operator|=
 name|passwordEncoderClass
 expr_stmt|;
 block|}
-comment|/**    * @return the passwordEncoderSalt    */
+comment|/**      * @return the passwordEncoderSalt      */
 specifier|public
 name|String
 name|getPasswordEncoderSalt
@@ -978,7 +979,7 @@ return|return
 name|passwordEncoderSalt
 return|;
 block|}
-comment|/**    * @param passwordEncoderSalt the passwordEncoderSalt to set    */
+comment|/**      * @param passwordEncoderSalt the passwordEncoderSalt to set      */
 specifier|public
 name|void
 name|setPasswordEncoderSalt
@@ -994,7 +995,7 @@ operator|=
 name|passwordEncoderSalt
 expr_stmt|;
 block|}
-comment|/**    * @return the passwordLocationFilename    */
+comment|/**      * @return the passwordLocationFilename      */
 specifier|public
 name|String
 name|getPasswordSourceFilename
@@ -1004,7 +1005,7 @@ return|return
 name|passwordSourceFilename
 return|;
 block|}
-comment|/**    * @param passwordSourceFilename the passwordSourceFilename to set    */
+comment|/**      * @param passwordSourceFilename the passwordSourceFilename to set      */
 specifier|public
 name|void
 name|setPasswordSourceFilename
@@ -1020,7 +1021,7 @@ operator|=
 name|passwordSourceFilename
 expr_stmt|;
 block|}
-comment|/**    * @return the passwordLocationModel    */
+comment|/**      * @return the passwordLocationModel      */
 specifier|public
 name|String
 name|getPasswordSourceModel
@@ -1030,7 +1031,7 @@ return|return
 name|passwordSourceModel
 return|;
 block|}
-comment|/**    * @return the passwordLocationUrl    */
+comment|/**      * @return the passwordLocationUrl      */
 specifier|public
 name|String
 name|getPasswordSourceUrl
@@ -1040,7 +1041,7 @@ return|return
 name|passwordSourceUrl
 return|;
 block|}
-comment|/**    * @param passwordSourceUrl the passwordSourceUrl to set    */
+comment|/**      * @param passwordSourceUrl the passwordSourceUrl to set      */
 specifier|public
 name|void
 name|setPasswordSourceUrl
@@ -1056,7 +1057,7 @@ operator|=
 name|passwordSourceUrl
 expr_stmt|;
 block|}
-comment|/**    * @return the passwordLocationExecutable    */
+comment|/**      * @return the passwordLocationExecutable      */
 specifier|public
 name|String
 name|getPasswordSourceExecutable
@@ -1066,7 +1067,7 @@ return|return
 name|passwordSourceExecutable
 return|;
 block|}
-comment|/**    * @param passwordSourceExecutable the passwordSourceExecutable to set    */
+comment|/**      * @param passwordSourceExecutable the passwordSourceExecutable to set      */
 specifier|public
 name|void
 name|setPasswordSourceExecutable
@@ -1206,7 +1207,7 @@ name|passwordSource
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**    * @return the passwordLocation    */
+comment|/**      * @return the passwordLocation      */
 specifier|public
 name|String
 name|getPasswordLocation
@@ -1216,7 +1217,7 @@ return|return
 name|passwordLocation
 return|;
 block|}
-comment|/**    * @param passwordLocation the passwordLocation to set    */
+comment|/**      * @param passwordLocation the passwordLocation to set      */
 specifier|public
 name|void
 name|setPasswordLocation
