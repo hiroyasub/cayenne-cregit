@@ -211,26 +211,8 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0"
+literal|" FROM ARTIST AS t0"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|" FROM ARTIST t0"
-argument_list|,
-name|query
-operator|.
-name|getParameters
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|"from0"
-argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -308,26 +290,8 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0"
+literal|" FROM ARTIST AS t0"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|" FROM ARTIST t0"
-argument_list|,
-name|query
-operator|.
-name|getParameters
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|"from0"
-argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -405,28 +369,10 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 WHERE t0.ARTIST_NAME "
+literal|" FROM ARTIST AS t0 WHERE t0.ARTIST_NAME "
 operator|+
 literal|"#bindEqual('Dali' 'VARCHAR')"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|" FROM ARTIST t0"
-argument_list|,
-name|query
-operator|.
-name|getParameters
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|"from0"
-argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -551,28 +497,10 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" $from0 WHERE "
+literal|" FROM ARTIST AS t0 WHERE "
 argument_list|)
 operator|>
 literal|0
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|" FROM ARTIST t0"
-argument_list|,
-name|query
-operator|.
-name|getParameters
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|"from0"
-argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -614,28 +542,10 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" $from0 WHERE "
+literal|" FROM ARTIST AS t0 WHERE "
 argument_list|)
 operator|>
 literal|0
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|" FROM ARTIST t0"
-argument_list|,
-name|query1
-operator|.
-name|getParameters
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|"from0"
-argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -779,7 +689,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" $from0 WHERE "
+literal|" WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -824,7 +734,7 @@ name|sql1
 operator|.
 name|indexOf
 argument_list|(
-literal|" $from0 WHERE "
+literal|" WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -924,7 +834,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 WHERE NOT "
+literal|" WHERE NOT "
 operator|+
 literal|"t0.ARTIST_NAME #bindEqual('Dali' 'VARCHAR')"
 argument_list|)
@@ -1005,9 +915,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.ESTIMATED_PRICE> #bind($id1 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE> #bind($id0 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1086,9 +994,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.ESTIMATED_PRICE>= #bind($id1 'INTEGER')"
+literal|" WHERE t0.ESTIMATED_PRICE>= #bind($id0 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1167,9 +1073,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.ESTIMATED_PRICE< #bind($id1 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE< #bind($id0 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1248,9 +1152,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.ESTIMATED_PRICE<= #bind($id1 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE<= #bind($id0 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1329,9 +1231,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.ARTIST_NAME #bindNotEqual('Dali' 'VARCHAR')"
+literal|" WHERE t0.ARTIST_NAME #bindNotEqual('Dali' 'VARCHAR')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1410,11 +1310,9 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
+literal|" WHERE t0.ESTIMATED_PRICE "
 operator|+
-literal|"WHERE t0.ESTIMATED_PRICE "
-operator|+
-literal|"BETWEEN #bind($id1 'INTEGER') AND #bind($id2 'INTEGER')"
+literal|"BETWEEN #bind($id0 'INTEGER') AND #bind($id1 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1493,11 +1391,9 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
+literal|" WHERE t0.ESTIMATED_PRICE "
 operator|+
-literal|"WHERE t0.ESTIMATED_PRICE "
-operator|+
-literal|"NOT BETWEEN #bind($id1 'INTEGER') AND #bind($id2 'INTEGER')"
+literal|"NOT BETWEEN #bind($id0 'INTEGER') AND #bind($id1 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1591,9 +1487,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.PAINTING_TITLE "
+literal|" WHERE t0.PAINTING_TITLE "
 operator|+
 literal|"LIKE #bind('Stuff' 'VARCHAR')"
 argument_list|)
@@ -1674,9 +1568,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t0.PAINTING_TITLE "
+literal|" WHERE t0.PAINTING_TITLE "
 operator|+
 literal|"NOT LIKE #bind('Stuff' 'VARCHAR')"
 argument_list|)
@@ -1782,9 +1674,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" $from0 "
-operator|+
-literal|"WHERE t1.ARTIST_NAME #bindEqual('AA2' 'VARCHAR')"
+literal|" WHERE t1.ARTIST_NAME #bindEqual('AA2' 'VARCHAR')"
 argument_list|)
 argument_list|)
 expr_stmt|;

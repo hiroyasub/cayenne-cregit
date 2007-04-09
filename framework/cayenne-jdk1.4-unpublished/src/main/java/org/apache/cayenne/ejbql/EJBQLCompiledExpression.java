@@ -17,6 +17,30 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjRelationship
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -43,6 +67,11 @@ name|EJBQLExpression
 name|getExpression
 parameter_list|()
 function_decl|;
+comment|/**      * Returns a collection of EJBQLExpressions each representing an implicit join in the      * query. The most common example of implicit joins are joins introduced by      * relationships in the WHERE clause.      */
+name|Collection
+name|getImplicitJoins
+parameter_list|()
+function_decl|;
 comment|/**      * Returns a descriptor of the root of this expression such as entity being fetched or      * updated.      */
 name|ClassDescriptor
 name|getRootDescriptor
@@ -51,6 +80,14 @@ function_decl|;
 comment|/**      * Returns a ClassDescriptor for the id variable.      */
 name|ClassDescriptor
 name|getEntityDescriptor
+parameter_list|(
+name|String
+name|identifier
+parameter_list|)
+function_decl|;
+comment|/**      * Returns a relationship that joins identifier with a parent entity. Returns null if      * the identifier corresponds to one of the query roots.      */
+name|ObjRelationship
+name|getIncomingRelationship
 parameter_list|(
 name|String
 name|identifier
