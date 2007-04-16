@@ -140,6 +140,7 @@ name|c
 operator|+=
 literal|13
 expr_stmt|;
+comment|// The first half of the alphabet goes forward 13 letters
 if|else if
 condition|(
 operator|(
@@ -166,6 +167,7 @@ name|c
 operator|-=
 literal|13
 expr_stmt|;
+comment|// The last half of the alphabet goes backward 13 letters
 name|result
 operator|.
 name|append
@@ -181,6 +183,7 @@ name|toString
 argument_list|()
 return|;
 block|}
+comment|/**    * Small test program to run text through the ROT-13 cipher.  This program    * can also be run by hand to encode/decode values manually.  The values    * passed on the command line are printed to standard out.    *       * @param args The array of text values (on the command-line) to be run    *             through the ROT-13 cipher.    */
 specifier|public
 specifier|static
 name|void

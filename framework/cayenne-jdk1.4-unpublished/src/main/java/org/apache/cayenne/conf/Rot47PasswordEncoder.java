@@ -113,7 +113,7 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
-comment|// Process letters, numbers, and symbols -- ignore spaces
+comment|// Process letters, numbers, and symbols -- ignore spaces.
 if|if
 condition|(
 name|c
@@ -129,7 +129,10 @@ expr_stmt|;
 comment|// If character is now above printable range, make it printable.
 comment|// Range of printable characters is ! (33) to ~ (126).  A value
 comment|// of 127 (just above ~) would therefore get rotated down to a
-comment|// 33 (the !).
+comment|// 33 (the !).  The value 94 comes from 127 - 33 = 94, which is
+comment|// therefore the value that needs to be subtracted from the
+comment|// non-printable character to put it into the correct printable
+comment|// range.
 if|if
 condition|(
 name|c
@@ -156,6 +159,7 @@ name|toString
 argument_list|()
 return|;
 block|}
+comment|/**    * Small test program to run text through the ROT-47 cipher.  This program    * can also be run by hand to encode/decode values manually.  The values    * passed on the command line are printed to standard out.    *       * @param args The array of text values (on the command-line) to be run    *             through the ROT-47 cipher.    */
 specifier|public
 specifier|static
 name|void
