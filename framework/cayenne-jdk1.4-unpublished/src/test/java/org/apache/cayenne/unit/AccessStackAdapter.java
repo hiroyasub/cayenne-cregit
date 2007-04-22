@@ -342,14 +342,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-if|if
-condition|(
-name|adapter
-operator|.
-name|supportsFkConstraints
-argument_list|()
-condition|)
-block|{
 name|Map
 name|constraintsMap
 init|=
@@ -495,7 +487,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
 specifier|public
 name|void
 name|droppedTables
@@ -605,10 +596,7 @@ literal|false
 return|;
 block|}
 return|return
-name|adapter
-operator|.
-name|supportsFkConstraints
-argument_list|()
+literal|true
 return|;
 block|}
 comment|/**      * Returns true if the target database has support for large objects (BLOB, CLOB).      */

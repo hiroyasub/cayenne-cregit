@@ -795,6 +795,7 @@ name|node
 argument_list|)
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 - almost all DB's support FK's now and also this flag is less      *             relevant for Cayenne now.      */
 specifier|public
 name|boolean
 name|supportsFkConstraints

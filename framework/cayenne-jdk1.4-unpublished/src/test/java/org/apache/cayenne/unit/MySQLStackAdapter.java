@@ -148,6 +148,8 @@ block|{
 literal|"REFLEXIVE_AND_TO_ONE"
 block|,
 literal|"ARTGROUP"
+block|,
+literal|"FK_OF_DIFFERENT_TYPE"
 block|}
 argument_list|)
 decl_stmt|;
@@ -272,14 +274,6 @@ throws|throws
 name|Exception
 block|{
 comment|// special DROP CONSTRAINT syntax for MySQL
-if|if
-condition|(
-name|adapter
-operator|.
-name|supportsFkConstraints
-argument_list|()
-condition|)
-block|{
 name|Map
 name|constraintsMap
 init|=
@@ -424,7 +418,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 name|Procedure
 name|proc
 init|=
@@ -498,11 +491,6 @@ block|{
 comment|// MySQL supports that, but there are problems deleting objects from such
 comment|// tables...
 return|return
-name|adapter
-operator|.
-name|supportsFkConstraints
-argument_list|()
-operator|&&
 operator|!
 name|NO_CONSTRAINTS_TABLES
 operator|.

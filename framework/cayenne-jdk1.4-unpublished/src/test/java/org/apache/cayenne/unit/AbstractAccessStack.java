@@ -1469,14 +1469,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// FK constraints
-if|if
-condition|(
-name|adapter
-operator|.
-name|supportsFkConstraints
-argument_list|()
-condition|)
-block|{
 name|it
 operator|=
 name|orderedEnts
@@ -1528,7 +1520,7 @@ name|qs
 init|=
 name|gen
 operator|.
-name|createFkConstraintsQueries
+name|createConstraintsQueries
 argument_list|(
 name|ent
 argument_list|)
@@ -1540,7 +1532,6 @@ argument_list|(
 name|qs
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 return|return
 name|queries

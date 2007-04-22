@@ -668,18 +668,11 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
-comment|// force InnoDB tables if constraints are enabled
-if|if
-condition|(
-name|supportsFkConstraints
-argument_list|()
-condition|)
-block|{
+comment|// force InnoDB tables - by default constraints are enabled
 name|ddlSQL
 operator|+=
 literal|" ENGINE=InnoDB"
 expr_stmt|;
-block|}
 return|return
 name|ddlSQL
 return|;

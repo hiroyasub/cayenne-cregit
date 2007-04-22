@@ -213,7 +213,7 @@ name|DataNode
 name|node
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if a target database supports FK constraints.      */
+comment|/**      * Returns true if a target database supports FK constraints.      *       * @deprecated since 3.0 - almost all DB's support FK's now and also this flag is less      *             relevant for Cayenne now.      */
 specifier|public
 name|boolean
 name|supportsFkConstraints
@@ -267,7 +267,7 @@ name|Collection
 name|columns
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship.      */
+comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship, or null if foreign keys are not supported.      */
 specifier|public
 name|String
 name|createFkConstraint

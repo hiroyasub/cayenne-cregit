@@ -465,18 +465,6 @@ block|{
 try|try
 block|{
 name|boolean
-name|supportsFK
-init|=
-name|getNode
-argument_list|()
-operator|.
-name|getAdapter
-argument_list|()
-operator|.
-name|supportsFkConstraints
-argument_list|()
-decl_stmt|;
-name|boolean
 name|supportsUnique
 init|=
 name|getNode
@@ -558,11 +546,6 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|supportsFK
-condition|)
-block|{
 comment|// *** TESTING THIS ***
 name|loader
 operator|.
@@ -709,7 +692,6 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 comment|// *** TESTING THIS ***
 name|loader
 operator|.
@@ -765,13 +747,8 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|supportsFK
-condition|)
-block|{
 name|Collection
-name|rels
+name|rels1
 init|=
 name|ae
 operator|.
@@ -780,12 +757,12 @@ argument_list|()
 decl_stmt|;
 name|assertNotNull
 argument_list|(
-name|rels
+name|rels1
 argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|rels
+name|rels1
 operator|.
 name|size
 argument_list|()
@@ -793,7 +770,6 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 comment|// now when the map is loaded, test
 comment|// various things
 comment|// selectively check how different types were processed
