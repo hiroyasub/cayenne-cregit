@@ -383,6 +383,7 @@ specifier|static
 name|CayenneResources
 name|resources
 decl_stmt|;
+specifier|private
 specifier|static
 name|CayenneResources
 name|loadResources
@@ -472,37 +473,6 @@ name|CONNECTION_NAME_KEY
 argument_list|)
 argument_list|)
 expr_stmt|;
-try|try
-block|{
-name|resources
-operator|.
-name|rebuildSchema
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-name|logObj
-operator|.
-name|error
-argument_list|(
-literal|"Error generating schema..."
-argument_list|,
-name|ex
-argument_list|)
-expr_stmt|;
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"Error generating schema"
-argument_list|)
-throw|;
-block|}
 return|return
 name|resources
 return|;
@@ -546,6 +516,40 @@ operator|=
 name|loadResources
 argument_list|()
 expr_stmt|;
+comment|// rebuild schema after the resources ivar is initialized so that after
+comment|// possible initial failure we don't attempt rebuilding schema in subseequent
+comment|// tests
+try|try
+block|{
+name|resources
+operator|.
+name|rebuildSchema
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ex
+parameter_list|)
+block|{
+name|logObj
+operator|.
+name|error
+argument_list|(
+literal|"Error generating schema..."
+argument_list|,
+name|ex
+argument_list|)
+expr_stmt|;
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"Error generating schema"
+argument_list|)
+throw|;
+block|}
 block|}
 return|return
 name|resources
