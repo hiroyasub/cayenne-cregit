@@ -765,15 +765,6 @@ name|getExcludedTables
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
-name|generatorDefaults
-operator|.
-name|adjustForAdapter
-argument_list|(
-name|adapter
-argument_list|)
-expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
