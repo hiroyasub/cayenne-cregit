@@ -516,8 +516,8 @@ operator|=
 name|loadResources
 argument_list|()
 expr_stmt|;
-comment|// rebuild schema after the resources ivar is initialized so that after
-comment|// possible initial failure we don't attempt rebuilding schema in subseequent
+comment|// rebuild schema after the resources static var is initialized so that after
+comment|// possible initial failure we don't attempt rebuilding schema in subsequent
 comment|// tests
 try|try
 block|{
