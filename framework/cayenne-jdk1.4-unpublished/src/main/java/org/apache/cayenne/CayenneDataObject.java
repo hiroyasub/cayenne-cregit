@@ -606,6 +606,8 @@ index|]
 operator|.
 name|length
 argument_list|()
+operator|+
+literal|1
 expr_stmt|;
 name|object
 operator|=
