@@ -675,18 +675,14 @@ block|}
 try|try
 block|{
 comment|// This crazy conditional checks if we're decoding a collection. There are two
-comment|// ways
-comment|// to enter into this body:
+comment|// ways to enter into this body:
 comment|// 1) If there are two elements at the same level with the same name, then
-comment|// they should
-comment|// part of a collection.
+comment|// they should be part of a collection.
 comment|// 2) If a single occurring element has the "forceList" attribute set to
-comment|// "YES", then it
-comment|// too should be treated as a collection.
+comment|// "YES", then it too should be treated as a collection.
 comment|//
 comment|// The final part checks that we have not previously attempted to decode this
-comment|// collection,
-comment|// which is necessary to prevent infinite loops .
+comment|// collection, which is necessary to prevent infinite loops .
 if|if
 condition|(
 operator|(
@@ -1019,26 +1015,10 @@ name|data
 operator|.
 name|getDocumentElement
 argument_list|()
+argument_list|,
+name|dataContext
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|dataContext
-operator|!=
-literal|null
-condition|)
-block|{
-name|dataContext
-operator|.
-name|registerNewObject
-argument_list|(
-operator|(
-name|Persistent
-operator|)
-name|ret
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|ret
 return|;
@@ -1546,30 +1526,10 @@ operator|.
 name|decode
 argument_list|(
 name|e
+argument_list|,
+name|dataContext
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dataContext
-operator|!=
-literal|null
-operator|&&
-name|o
-operator|instanceof
-name|Persistent
-condition|)
-block|{
-name|dataContext
-operator|.
-name|registerNewObject
-argument_list|(
-operator|(
-name|Persistent
-operator|)
-name|o
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 else|else
 block|{

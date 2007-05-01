@@ -87,6 +87,32 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|DataContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|PropertyUtils
@@ -157,6 +183,10 @@ decl_stmt|;
 specifier|private
 name|Map
 name|entities
+decl_stmt|;
+specifier|private
+name|DataContext
+name|dataContext
 decl_stmt|;
 comment|/**      * Creates new XMLMappingDescriptor using a URL that points to the mapping file.      *       * @param mappingUrl A URL to the mapping file that specifies the mapping model.      * @throws CayenneRuntimeException      */
 name|XMLMappingDescriptor
@@ -342,12 +372,22 @@ name|decode
 parameter_list|(
 name|Element
 name|xml
+parameter_list|,
+name|DataContext
+name|dataContext
 parameter_list|)
 throws|throws
 name|CayenneRuntimeException
 block|{
 comment|// TODO: Add an error check to make sure the mapping file actually is for this
 comment|// data file.
+comment|// Store a local copy of the data context.
+name|this
+operator|.
+name|dataContext
+operator|=
+name|dataContext
+expr_stmt|;
 comment|// Create the object to be returned.
 name|Object
 name|ret
@@ -658,7 +698,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets decoded object property. If a property os of Collection type, an object is      * added to the collection.      */
+comment|/**      * Sets decoded object property. If a property is of Collection type, an object is      * added to the collection.      */
 specifier|private
 name|void
 name|setProperty
@@ -810,6 +850,33 @@ argument_list|,
 name|ex
 argument_list|)
 throw|;
+block|}
+comment|// If a data context has been supplied by the user, then register the data object with the context.
+if|if
+condition|(
+operator|(
+literal|null
+operator|!=
+name|dataContext
+operator|)
+operator|&&
+operator|(
+name|object
+operator|instanceof
+name|Persistent
+operator|)
+condition|)
+block|{
+name|dataContext
+operator|.
+name|registerNewObject
+argument_list|(
+operator|(
+name|Persistent
+operator|)
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 name|NamedNodeMap
 name|attributes
