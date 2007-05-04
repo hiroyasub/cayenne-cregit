@@ -118,7 +118,6 @@ name|Properties
 name|properties
 decl_stmt|;
 comment|/**      * Loads properties from the specified location.      */
-specifier|private
 specifier|static
 name|Properties
 name|loadProperties
