@@ -1126,6 +1126,24 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|setDomainProperty
+argument_list|(
+name|DataRowStore
+operator|.
+name|REMOTE_NOTIFICATION_PROPERTY
+argument_list|,
+literal|"false"
+argument_list|,
+name|Boolean
+operator|.
+name|toString
+argument_list|(
+name|DataRowStore
+operator|.
+name|REMOTE_NOTIFICATION_DEFAULT
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 comment|// depending on final remote updates status change button status
 name|configRemoteUpdates
