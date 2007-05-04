@@ -1327,7 +1327,15 @@ comment|// breaking encapsulation of the DataChannel to detect where in the hier
 comment|// this context is.
 name|Persistent
 name|localObject
-init|=
+decl_stmt|;
+synchronized|synchronized
+init|(
+name|getGraphManager
+argument_list|()
+init|)
+block|{
+name|localObject
+operator|=
 operator|(
 name|Persistent
 operator|)
@@ -1335,7 +1343,7 @@ name|descriptor
 operator|.
 name|createObject
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 name|localObject
 operator|.
 name|setObjectContext
@@ -1360,6 +1368,7 @@ argument_list|,
 name|localObject
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|prototype
