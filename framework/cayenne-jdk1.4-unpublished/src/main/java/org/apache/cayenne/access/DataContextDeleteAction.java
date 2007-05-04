@@ -552,6 +552,12 @@ name|relationship
 operator|.
 name|isToDependentEntity
 argument_list|()
+operator|&&
+operator|!
+name|relationship
+operator|.
+name|isReadOnly
+argument_list|()
 decl_stmt|;
 comment|// first check for no action... bail out if no flattened processing is needed
 if|if
