@@ -1628,7 +1628,14 @@ argument_list|)
 decl_stmt|;
 name|Persistent
 name|object
-init|=
+decl_stmt|;
+synchronized|synchronized
+init|(
+name|graphManager
+init|)
+block|{
+name|object
+operator|=
 operator|(
 name|Persistent
 operator|)
@@ -1636,7 +1643,7 @@ name|descriptor
 operator|.
 name|createObject
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 name|object
 operator|.
 name|setPersistenceState
@@ -1669,6 +1676,7 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|object
 return|;
