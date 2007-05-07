@@ -509,19 +509,6 @@ operator|new
 name|ArrayList
 argument_list|()
 expr_stmt|;
-comment|// note that there is no syncing on the object store itself. This is caller's
-comment|// responsibility.
-synchronized|synchronized
-init|(
-name|context
-operator|.
-name|getObjectStore
-argument_list|()
-operator|.
-name|getDataRowCache
-argument_list|()
-init|)
-block|{
 name|this
 operator|.
 name|resultIndirectlyModifiedIds
@@ -578,6 +565,19 @@ expr_stmt|;
 name|runQueries
 argument_list|()
 expr_stmt|;
+comment|// note that there is no syncing on the object store itself. This is caller's
+comment|// responsibility.
+synchronized|synchronized
+init|(
+name|context
+operator|.
+name|getObjectStore
+argument_list|()
+operator|.
+name|getDataRowCache
+argument_list|()
+init|)
+block|{
 name|postprocess
 argument_list|(
 name|context
