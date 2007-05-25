@@ -163,6 +163,14 @@ begin_class
 class|class
 name|XMLUtil
 block|{
+comment|// note that per CAY-792, to be locale-safe the format must not contain literal parts
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_DATE_FORMAT
+init|=
+literal|"yyyy-MM-dd HH:mm:ss zzz"
+decl_stmt|;
 specifier|static
 name|DocumentBuilderFactory
 name|sharedFactory
