@@ -662,7 +662,7 @@ argument_list|(
 operator|new
 name|BigDecimal
 argument_list|(
-literal|3000
+literal|3000d
 argument_list|)
 argument_list|,
 name|p
@@ -747,7 +747,7 @@ argument_list|(
 operator|new
 name|BigDecimal
 argument_list|(
-literal|5000
+literal|5000d
 argument_list|)
 argument_list|,
 name|p
