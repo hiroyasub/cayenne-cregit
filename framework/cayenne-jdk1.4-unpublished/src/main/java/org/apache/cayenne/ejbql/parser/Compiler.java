@@ -23,26 +23,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
 import|;
 end_import
@@ -68,6 +48,20 @@ operator|.
 name|ejbql
 operator|.
 name|EJBQLBaseVisitor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|EJBQLCompiledExpression
 import|;
 end_import
 
@@ -198,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A visitor that compiles an EJBQL expression.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Produces an {@link EJBQLCompiledExpression} out of an EJBQL expression tree.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -220,10 +214,6 @@ decl_stmt|;
 specifier|private
 name|Map
 name|incomingById
-decl_stmt|;
-specifier|private
-name|Collection
-name|implicitJoins
 decl_stmt|;
 specifier|private
 name|EJBQLExpressionVisitor
@@ -268,16 +258,6 @@ operator|=
 operator|new
 name|HashMap
 argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|implicitJoins
-operator|=
-operator|new
-name|ArrayList
-argument_list|(
-literal|2
-argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -364,13 +344,6 @@ operator|.
 name|setDescriptorsById
 argument_list|(
 name|descriptorsById
-argument_list|)
-expr_stmt|;
-name|compiled
-operator|.
-name|setImplicitJoins
-argument_list|(
-name|implicitJoins
 argument_list|)
 expr_stmt|;
 name|compiled

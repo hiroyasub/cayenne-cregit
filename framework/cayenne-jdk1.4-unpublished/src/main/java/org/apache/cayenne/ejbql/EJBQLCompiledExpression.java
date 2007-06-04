@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -65,11 +55,6 @@ block|{
 comment|/**      * Returns a tree representation of an EJBQL expression.      */
 name|EJBQLExpression
 name|getExpression
-parameter_list|()
-function_decl|;
-comment|/**      * Returns a collection of EJBQLExpressions, each representing an implicit join in the      * query. The most common example of implicit joins are joins introduced by      * relationships in the WHERE clause. Some implicit joins may also have matching      * explicit joins in the same query. Such joins are not included in the returned      * collection.      */
-name|Collection
-name|getImplicitJoins
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a descriptor of the root of this expression such as entity being fetched or      * updated.      */
