@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.  *<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *   *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.  *<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *    SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *   *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -234,6 +234,13 @@ name|ParameterizedQuery
 implements|,
 name|XMLSerializable
 block|{
+specifier|static
+specifier|final
+name|String
+name|COLUMN_NAME_CAPITALIZATION_PROPERTY
+init|=
+literal|"cayenne.SQLTemplate.columnNameCapitalization"
+decl_stmt|;
 comment|/**      * @since 3.0      */
 specifier|public
 specifier|static
@@ -724,6 +731,25 @@ argument_list|(
 name|encoder
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|getColumnNamesCapitalization
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|encoder
+operator|.
+name|printProperty
+argument_list|(
+name|COLUMN_NAME_CAPITALIZATION_PROPERTY
+argument_list|,
+name|getColumnNamesCapitalization
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 comment|// encode default SQL
 if|if
 condition|(
@@ -925,6 +951,47 @@ name|initWithProperties
 argument_list|(
 name|properties
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|properties
+operator|==
+literal|null
+condition|)
+block|{
+name|properties
+operator|=
+name|Collections
+operator|.
+name|EMPTY_MAP
+expr_stmt|;
+block|}
+name|Object
+name|columnNamesCapitalization
+init|=
+name|properties
+operator|.
+name|get
+argument_list|(
+name|COLUMN_NAME_CAPITALIZATION_PROPERTY
+argument_list|)
+decl_stmt|;
+name|this
+operator|.
+name|columnNamesCapitalization
+operator|=
+operator|(
+name|columnNamesCapitalization
+operator|!=
+literal|null
+operator|)
+condition|?
+name|columnNamesCapitalization
+operator|.
+name|toString
+argument_list|()
+else|:
+literal|null
 expr_stmt|;
 block|}
 comment|/**      * Returns an iterator over parameter sets. Each element returned from the iterator is      * a java.util.Map.      */
@@ -1830,7 +1897,7 @@ return|return
 name|columnNamesCapitalization
 return|;
 block|}
-comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p/> Note that while a non-default setting is useful for queries that do not rely      * on a #result directive to describe columns, it works for all SQLTemplates the same way.      *       * @param columnNameCapitalization Can be null of one of      *            {@link #LOWERCASE_COLUMN_NAMES} or {@link #UPPERCASE_COLUMN_NAMES}.      * @since 3.0      */
+comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p/> Note that while a non-default setting is useful for queries that do not rely      * on a #result directive to describe columns, it works for all SQLTemplates the same      * way.      *       * @param columnNameCapitalization Can be null of one of      *            {@link #LOWERCASE_COLUMN_NAMES} or {@link #UPPERCASE_COLUMN_NAMES}.      * @since 3.0      */
 specifier|public
 name|void
 name|setColumnNamesCapitalization
