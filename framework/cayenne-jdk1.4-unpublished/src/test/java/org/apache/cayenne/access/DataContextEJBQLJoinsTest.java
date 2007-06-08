@@ -451,18 +451,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|createTestData
-argument_list|(
-literal|"testChainedJoins"
-argument_list|)
-expr_stmt|;
+comment|// createTestData("testChainedJoins");
 comment|// String ejbql = "SELECT a "
 comment|// + "FROM Artist a "
-comment|// + "WHERE a.paintingArray.gallery.galleryName = 'gallery2'";
+comment|// + "WHERE a.paintingArray.toGallery.galleryName = 'gallery2'";
 comment|//
 comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
 comment|// assertEquals(1, artists.size());
-comment|// assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+comment|//         assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
 block|}
 specifier|public
 name|void
@@ -478,7 +474,7 @@ argument_list|)
 expr_stmt|;
 comment|// String ejbql = "SELECT a "
 comment|// + "FROM Artist a JOIN a.paintingArray b "
-comment|// + "WHERE a.paintingArray.gallery.galleryName = 'gallery2'";
+comment|// + "WHERE a.paintingArray.toGallery.galleryName = 'gallery2'";
 comment|//
 comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
 comment|// assertEquals(1, artists.size());
