@@ -118,7 +118,7 @@ extends|extends
 name|EJBQLDelegatingVisitor
 block|{
 specifier|private
-name|EJBQLTranslator
+name|EJBQLTranslationContext
 name|parent
 decl_stmt|;
 specifier|private
@@ -127,7 +127,7 @@ name|columns
 decl_stmt|;
 name|EJBQLSelectTranslator
 parameter_list|(
-name|EJBQLTranslator
+name|EJBQLTranslationContext
 name|parent
 parameter_list|)
 block|{
@@ -305,7 +305,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|EJBQLTranslator
+name|EJBQLTranslationContext
 name|getParent
 parameter_list|()
 block|{
