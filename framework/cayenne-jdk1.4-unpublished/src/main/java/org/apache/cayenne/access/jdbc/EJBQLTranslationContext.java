@@ -239,7 +239,6 @@ name|this
 return|;
 block|}
 comment|/**      * Appends a piece of SQL to the internal buffer.      */
-specifier|public
 name|EJBQLTranslationContext
 name|append
 parameter_list|(
