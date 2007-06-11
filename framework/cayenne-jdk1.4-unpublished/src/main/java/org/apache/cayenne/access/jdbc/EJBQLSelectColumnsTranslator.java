@@ -788,7 +788,7 @@ name|Set
 operator|)
 name|context
 operator|.
-name|getTranslationValue
+name|getAttribute
 argument_list|(
 name|columnsKey
 argument_list|)
@@ -808,7 +808,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|putTranslationVariable
+name|setAttribute
 argument_list|(
 name|columnsKey
 argument_list|,
