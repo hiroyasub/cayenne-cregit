@@ -132,11 +132,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|createTestData
-argument_list|(
-literal|"testThetaJoins"
-argument_list|)
-expr_stmt|;
+comment|// createTestData("testThetaJoins");
+comment|//
 comment|// String ejbql = "SELECT DISTINCT a "
 comment|// + "FROM Artist a, Painting b "
 comment|// + "WHERE a.artistName = b.paintingTitle";
@@ -153,10 +150,10 @@ comment|// Iterator it = artists.iterator();
 comment|// while (it.hasNext()) {
 comment|// Artist a = (Artist) it.next();
 comment|// names.add(a.getArtistName());
-comment|// }
+comment|//         }
 comment|//
-comment|// assertTrue(names.contains("AA1"));
-comment|// assertTrue(names.contains("BB2"));
+comment|//         assertTrue(names.contains("AA1"));
+comment|//         assertTrue(names.contains("BB2"));
 block|}
 specifier|public
 name|void
@@ -451,18 +448,97 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// createTestData("testChainedJoins");
-comment|// String ejbql = "SELECT a "
-comment|// + "FROM Artist a "
-comment|// + "WHERE a.paintingArray.toGallery.galleryName = 'gallery2'";
-comment|//
-comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
-comment|// assertEquals(1, artists.size());
-comment|//         assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+name|createTestData
+argument_list|(
+literal|"testChainedJoins"
+argument_list|)
+expr_stmt|;
+name|String
+name|ejbql
+init|=
+literal|"SELECT a "
+operator|+
+literal|"FROM Artist a "
+operator|+
+literal|"WHERE a.paintingArray.toGallery.galleryName = 'gallery2'"
+decl_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+decl_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|""
+operator|+
+name|query
+operator|.
+name|getExpression
+argument_list|(
+name|getDomain
+argument_list|()
+operator|.
+name|getEntityResolver
+argument_list|()
+argument_list|)
+operator|.
+name|getExpression
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|List
+name|artists
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|artists
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|33002
+argument_list|,
+name|DataObjectUtils
+operator|.
+name|intPKForObject
+argument_list|(
+operator|(
+name|Artist
+operator|)
+name|artists
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testPartialImplicitJoins
+name|testPartialImplicitJoins1
 parameter_list|()
 throws|throws
 name|Exception
@@ -472,13 +548,127 @@ argument_list|(
 literal|"testChainedJoins"
 argument_list|)
 expr_stmt|;
-comment|// String ejbql = "SELECT a "
-comment|// + "FROM Artist a JOIN a.paintingArray b "
-comment|// + "WHERE a.paintingArray.toGallery.galleryName = 'gallery2'";
-comment|//
-comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
-comment|// assertEquals(1, artists.size());
-comment|// assertEquals(33002, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+name|String
+name|ejbql
+init|=
+literal|"SELECT a "
+operator|+
+literal|"FROM Artist a JOIN a.paintingArray b "
+operator|+
+literal|"WHERE a.paintingArray.toGallery.galleryName = 'gallery2'"
+decl_stmt|;
+name|List
+name|artists
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|artists
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|33002
+argument_list|,
+name|DataObjectUtils
+operator|.
+name|intPKForObject
+argument_list|(
+operator|(
+name|Artist
+operator|)
+name|artists
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testPartialImplicitJoins2
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"testChainedJoins"
+argument_list|)
+expr_stmt|;
+name|String
+name|ejbql
+init|=
+literal|"SELECT a "
+operator|+
+literal|"FROM Artist a JOIN a.paintingArray b "
+operator|+
+literal|"WHERE a.paintingArray.paintingTitle = 'CC2'"
+decl_stmt|;
+name|List
+name|artists
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|artists
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|33002
+argument_list|,
+name|DataObjectUtils
+operator|.
+name|intPKForObject
+argument_list|(
+operator|(
+name|Artist
+operator|)
+name|artists
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
