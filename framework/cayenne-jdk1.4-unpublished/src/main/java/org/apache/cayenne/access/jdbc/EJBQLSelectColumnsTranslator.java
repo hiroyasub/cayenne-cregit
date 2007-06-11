@@ -665,7 +665,7 @@ name|alias
 init|=
 name|context
 operator|.
-name|createAlias
+name|getAlias
 argument_list|(
 name|identifier
 argument_list|,

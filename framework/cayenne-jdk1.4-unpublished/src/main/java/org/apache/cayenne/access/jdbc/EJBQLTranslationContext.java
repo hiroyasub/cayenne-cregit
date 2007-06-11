@@ -334,7 +334,7 @@ return|;
 block|}
 comment|/**      * Retrieves a SQL alias for the combination of EJBQL id variable and a table name. If      * such alias hasn't been used, it is created on the fly.      */
 name|String
-name|createAlias
+name|getAlias
 parameter_list|(
 name|String
 name|idPath

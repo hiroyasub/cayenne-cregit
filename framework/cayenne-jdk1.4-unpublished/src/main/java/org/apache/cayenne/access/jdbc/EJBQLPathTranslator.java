@@ -424,7 +424,7 @@ name|alias
 init|=
 name|context
 operator|.
-name|createAlias
+name|getAlias
 argument_list|(
 name|idPath
 argument_list|,
