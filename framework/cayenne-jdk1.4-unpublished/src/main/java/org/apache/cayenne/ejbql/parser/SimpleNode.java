@@ -467,6 +467,7 @@ operator|.
 name|length
 return|;
 block|}
+specifier|public
 name|void
 name|setText
 parameter_list|(

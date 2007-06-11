@@ -833,6 +833,9 @@ name|visitFrom
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -845,6 +848,8 @@ operator|.
 name|visitFrom
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 name|continueFlag
