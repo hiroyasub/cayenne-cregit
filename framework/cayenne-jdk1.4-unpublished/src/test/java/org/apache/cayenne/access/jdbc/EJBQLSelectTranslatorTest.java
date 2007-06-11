@@ -240,7 +240,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST AS t0"
+literal|" FROM ARTIST AS t0${marker0}"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -286,7 +286,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST AS t0"
+literal|" FROM ARTIST AS t0${marker0}"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -332,7 +332,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST AS t0 WHERE t0.ARTIST_NAME "
+literal|" FROM ARTIST AS t0${marker0} WHERE t0.ARTIST_NAME "
 operator|+
 literal|"#bindEqual('Dali' 'VARCHAR')"
 argument_list|)
@@ -402,7 +402,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST AS t0 WHERE "
+literal|" FROM ARTIST AS t0${marker0} WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -447,7 +447,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST AS t0 WHERE "
+literal|" FROM ARTIST AS t0${marker0} WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -696,7 +696,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE> #bind($id0 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE> #bind($id1 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -742,7 +742,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE>= #bind($id0 'INTEGER')"
+literal|" WHERE t0.ESTIMATED_PRICE>= #bind($id1 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -788,7 +788,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE< #bind($id0 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE< #bind($id1 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -834,7 +834,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE<= #bind($id0 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE<= #bind($id1 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -928,7 +928,7 @@ name|endsWith
 argument_list|(
 literal|" WHERE t0.ESTIMATED_PRICE "
 operator|+
-literal|"BETWEEN #bind($id0 'INTEGER') AND #bind($id1 'INTEGER')"
+literal|"BETWEEN #bind($id1 'INTEGER') AND #bind($id2 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -976,7 +976,7 @@ name|endsWith
 argument_list|(
 literal|" WHERE t0.ESTIMATED_PRICE "
 operator|+
-literal|"NOT BETWEEN #bind($id0 'INTEGER') AND #bind($id1 'INTEGER')"
+literal|"NOT BETWEEN #bind($id1 'INTEGER') AND #bind($id2 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
