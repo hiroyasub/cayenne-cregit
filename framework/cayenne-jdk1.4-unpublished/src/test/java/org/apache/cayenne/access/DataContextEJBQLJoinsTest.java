@@ -150,10 +150,10 @@ comment|// Iterator it = artists.iterator();
 comment|// while (it.hasNext()) {
 comment|// Artist a = (Artist) it.next();
 comment|// names.add(a.getArtistName());
-comment|//         }
+comment|// }
 comment|//
-comment|//         assertTrue(names.contains("AA1"));
-comment|//         assertTrue(names.contains("BB2"));
+comment|// assertTrue(names.contains("AA1"));
+comment|// assertTrue(names.contains("BB2"));
 block|}
 specifier|public
 name|void

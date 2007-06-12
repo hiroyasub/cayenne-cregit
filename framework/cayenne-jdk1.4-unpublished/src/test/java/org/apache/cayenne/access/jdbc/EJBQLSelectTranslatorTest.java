@@ -247,6 +247,74 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testSelectMultipleJoinsToTheSameTable
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|SQLTemplate
+name|query
+init|=
+name|translateSelect
+argument_list|(
+literal|"SELECT a "
+operator|+
+literal|"FROM Artist a JOIN a.paintingArray b JOIN a.paintingArray c "
+operator|+
+literal|"WHERE b.paintingTitle = 'P1' AND c.paintingTitle = 'P2'"
+argument_list|)
+decl_stmt|;
+name|String
+name|sql
+init|=
+name|query
+operator|.
+name|getDefaultTemplate
+argument_list|()
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|sql
+argument_list|,
+name|sql
+operator|.
+name|startsWith
+argument_list|(
+literal|"SELECT "
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|sql
+argument_list|,
+name|sql
+operator|.
+name|indexOf
+argument_list|(
+literal|"INNER JOIN PAINTING AS t1 ON (t0.ARTIST_ID = t1.ARTIST_ID)"
+argument_list|)
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|sql
+argument_list|,
+name|sql
+operator|.
+name|indexOf
+argument_list|(
+literal|"INNER JOIN PAINTING AS t2 ON (t0.ARTIST_ID = t2.ARTIST_ID)"
+argument_list|)
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|testSelectDistinct
 parameter_list|()
 block|{
