@@ -682,13 +682,60 @@ argument_list|(
 literal|"testMultipleJoinsToTheSameTable"
 argument_list|)
 expr_stmt|;
-comment|// String ejbql = "SELECT a "
-comment|// + "FROM Artist a JOIN a.paintingArray b JOIN a.paintingArray c "
-comment|// + "WHERE b.paintingTitle = 'P1' AND c.paintingTitle = 'P2'";
-comment|//
-comment|// List artists = createDataContext().performQuery(new EJBQLQuery(ejbql));
-comment|// assertEquals(1, artists.size());
-comment|// assertEquals(33001, DataObjectUtils.intPKForObject((Artist) artists.get(0)));
+name|String
+name|ejbql
+init|=
+literal|"SELECT a "
+operator|+
+literal|"FROM Artist a JOIN a.paintingArray b JOIN a.paintingArray c "
+operator|+
+literal|"WHERE b.paintingTitle = 'P1' AND c.paintingTitle = 'P2'"
+decl_stmt|;
+name|List
+name|artists
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|artists
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|33001
+argument_list|,
+name|DataObjectUtils
+operator|.
+name|intPKForObject
+argument_list|(
+operator|(
+name|Artist
+operator|)
+name|artists
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
