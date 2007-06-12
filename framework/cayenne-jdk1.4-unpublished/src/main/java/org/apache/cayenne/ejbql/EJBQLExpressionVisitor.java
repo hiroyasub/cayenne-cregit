@@ -63,6 +63,22 @@ name|EJBQLPath
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|parser
+operator|.
+name|EJBQLPositionalInputParameter
+import|;
+end_import
+
 begin_comment
 comment|/**  * A visitor interface to inspect the EJBQL expression tree.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -608,7 +624,7 @@ function_decl|;
 name|boolean
 name|visitPositionalInputParameter
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLPositionalInputParameter
 name|expression
 parameter_list|)
 function_decl|;

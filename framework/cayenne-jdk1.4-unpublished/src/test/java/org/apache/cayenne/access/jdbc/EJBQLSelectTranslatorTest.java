@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -133,6 +143,10 @@ operator|new
 name|EJBQLTranslationContext
 argument_list|(
 name|select
+argument_list|,
+name|Collections
+operator|.
+name|EMPTY_MAP
 argument_list|)
 decl_stmt|;
 name|select
@@ -1147,7 +1161,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testSelectFromWhereRelationshipPropertyPath
+name|testSelectPositionalParameters
 parameter_list|()
 block|{
 name|SQLTemplate
@@ -1155,7 +1169,7 @@ name|query
 init|=
 name|translateSelect
 argument_list|(
-literal|"select p from Painting p where p.toArtist.artistName = 'AA2'"
+literal|"select a from Artist a where a.artistName = ?1 or a.artistName = ?2"
 argument_list|)
 decl_stmt|;
 name|String
@@ -1166,17 +1180,6 @@ operator|.
 name|getDefaultTemplate
 argument_list|()
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"SQL: "
-operator|+
-name|sql
-argument_list|)
-expr_stmt|;
 name|assertTrue
 argument_list|(
 name|sql
@@ -1197,13 +1200,10 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t1.ARTIST_NAME #bindEqual('AA2' 'VARCHAR')"
+literal|"t0.ARTIST_NAME #bindEqual($id1) OR t0.ARTIST_NAME #bindEqual($id2)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus, 3/25/2007 - implement joins support
-comment|// assertEquals(" FROM PAINTING t0 JOIN ARTIST t1 ON (t0.ARTIST_ID =
-comment|// t1.ARTIST_ID)", query.getParameters().get("from0"));
 block|}
 specifier|private
 name|int

@@ -63,6 +63,22 @@ name|EJBQLPath
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|parser
+operator|.
+name|EJBQLPositionalInputParameter
+import|;
+end_import
+
 begin_comment
 comment|/**  * A base implementation of the EJBQLExpressionVisitor that implements all methods to  * delegate processing to another visitor. This is a convenience superclass for visitors  * that delegate processing of subtrees to child visitors.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -1734,7 +1750,7 @@ specifier|public
 name|boolean
 name|visitPositionalInputParameter
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLPositionalInputParameter
 name|expression
 parameter_list|)
 block|{
