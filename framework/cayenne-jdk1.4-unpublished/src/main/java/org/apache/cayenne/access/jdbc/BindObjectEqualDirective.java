@@ -587,6 +587,20 @@ block|}
 if|else if
 condition|(
 name|object
+operator|instanceof
+name|Map
+condition|)
+block|{
+return|return
+operator|(
+name|Map
+operator|)
+name|object
+return|;
+block|}
+if|else if
+condition|(
+name|object
 operator|!=
 literal|null
 condition|)
