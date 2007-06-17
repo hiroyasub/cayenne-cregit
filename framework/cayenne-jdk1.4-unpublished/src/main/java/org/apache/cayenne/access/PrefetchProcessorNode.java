@@ -280,7 +280,7 @@ literal|null
 condition|)
 block|{
 comment|// if a relationship is to-one (i.e. flattened to-one), can connect right
-comment|// away....
+comment|// away.... write directly to prevent changing persistence state.
 if|if
 condition|(
 name|incoming
@@ -290,7 +290,7 @@ condition|)
 block|{
 name|incoming
 operator|.
-name|writeProperty
+name|writePropertyDirectly
 argument_list|(
 name|parent
 argument_list|,
