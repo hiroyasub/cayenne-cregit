@@ -86,7 +86,7 @@ name|aliases
 decl_stmt|;
 specifier|private
 name|Map
-name|bindingVariables
+name|boundParameters
 decl_stmt|;
 specifier|private
 name|StringBuffer
@@ -190,7 +190,7 @@ name|query
 operator|.
 name|setParameters
 argument_list|(
-name|bindingVariables
+name|boundParameters
 argument_list|)
 expr_stmt|;
 return|return
@@ -302,7 +302,7 @@ block|}
 name|Object
 name|object
 init|=
-name|bindingVariables
+name|boundParameters
 operator|.
 name|get
 argument_list|(
@@ -528,12 +528,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|bindingVariables
+name|boundParameters
 operator|==
 literal|null
 condition|)
 block|{
-name|bindingVariables
+name|boundParameters
 operator|=
 operator|new
 name|HashMap
@@ -545,12 +545,12 @@ name|var
 init|=
 name|prefix
 operator|+
-name|bindingVariables
+name|boundParameters
 operator|.
 name|size
 argument_list|()
 decl_stmt|;
-name|bindingVariables
+name|boundParameters
 operator|.
 name|put
 argument_list|(
