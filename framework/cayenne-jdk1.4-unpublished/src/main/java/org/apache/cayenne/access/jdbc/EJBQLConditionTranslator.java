@@ -729,7 +729,7 @@ block|{
 name|setDelegate
 argument_list|(
 operator|new
-name|EJBQLPathTranslator
+name|EJBQLConditionPathTranslator
 argument_list|(
 name|context
 argument_list|)

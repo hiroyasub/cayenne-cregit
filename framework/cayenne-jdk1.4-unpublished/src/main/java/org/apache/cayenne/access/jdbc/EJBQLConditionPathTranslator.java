@@ -195,7 +195,7 @@ end_import
 
 begin_class
 class|class
-name|EJBQLPathTranslator
+name|EJBQLConditionPathTranslator
 extends|extends
 name|EJBQLBaseVisitor
 block|{
@@ -227,7 +227,7 @@ specifier|private
 name|EJBQLFromTranslator
 name|joinAppender
 decl_stmt|;
-name|EJBQLPathTranslator
+name|EJBQLConditionPathTranslator
 parameter_list|(
 name|EJBQLTranslationContext
 name|context
