@@ -1506,6 +1506,13 @@ expr_stmt|;
 return|return;
 block|}
 block|}
+if|if
+condition|(
+name|object
+operator|!=
+literal|null
+condition|)
+block|{
 name|context
 operator|.
 name|append
@@ -1523,6 +1530,17 @@ argument_list|(
 literal|")"
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" NULL"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class
