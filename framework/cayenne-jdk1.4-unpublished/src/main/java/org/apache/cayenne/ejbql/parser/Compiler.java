@@ -225,7 +225,7 @@ name|joinVisitor
 decl_stmt|;
 specifier|private
 name|EJBQLExpressionVisitor
-name|whereClauseVisitor
+name|whereAndOrderByVisitor
 decl_stmt|;
 specifier|private
 name|EJBQLExpressionVisitor
@@ -285,10 +285,10 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|whereClauseVisitor
+name|whereAndOrderByVisitor
 operator|=
 operator|new
-name|WhereClauseVisitor
+name|WhereAndOrderByVisitor
 argument_list|()
 expr_stmt|;
 block|}
@@ -575,7 +575,31 @@ parameter_list|)
 block|{
 name|updateSubtreeDelegate
 argument_list|(
-name|whereClauseVisitor
+name|whereAndOrderByVisitor
+argument_list|,
+name|expression
+argument_list|,
+name|finishedChildIndex
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitOrderBy
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
+parameter_list|)
+block|{
+name|updateSubtreeDelegate
+argument_list|(
+name|whereAndOrderByVisitor
 argument_list|,
 name|expression
 argument_list|,
@@ -670,8 +694,9 @@ name|expression
 parameter_list|)
 block|{
 comment|// per JPA spec, 4.4.2, "Identification variables are case insensitive."
+name|String
 name|rootId
-operator|=
+init|=
 name|normalizeIdPath
 argument_list|(
 name|expression
@@ -679,7 +704,7 @@ operator|.
 name|getText
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|// resolve class descriptor
 name|ClassDescriptor
 name|descriptor
@@ -1014,7 +1039,7 @@ return|;
 block|}
 block|}
 class|class
-name|WhereClauseVisitor
+name|WhereAndOrderByVisitor
 extends|extends
 name|EJBQLBaseVisitor
 block|{
@@ -1227,10 +1252,13 @@ parameter_list|)
 block|{
 name|rootId
 operator|=
+name|normalizeIdPath
+argument_list|(
 name|expression
 operator|.
 name|getText
 argument_list|()
+argument_list|)
 expr_stmt|;
 return|return
 literal|true

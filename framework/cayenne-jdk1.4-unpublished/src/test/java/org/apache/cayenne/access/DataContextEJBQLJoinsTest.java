@@ -132,28 +132,117 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// createTestData("testThetaJoins");
-comment|//
-comment|// String ejbql = "SELECT DISTINCT a "
-comment|// + "FROM Artist a, Painting b "
-comment|// + "WHERE a.artistName = b.paintingTitle";
-comment|//
-comment|// EJBQLQuery query = new EJBQLQuery(ejbql);
-comment|//
-comment|// System.out.println(""
-comment|// + query.getExpression(getDomain().getEntityResolver()).getExpression());
-comment|// List artists = createDataContext().performQuery(query);
-comment|// assertEquals(2, artists.size());
-comment|//
-comment|// Set names = new HashSet(2);
-comment|// Iterator it = artists.iterator();
-comment|// while (it.hasNext()) {
-comment|// Artist a = (Artist) it.next();
-comment|// names.add(a.getArtistName());
-comment|// }
-comment|//
-comment|// assertTrue(names.contains("AA1"));
-comment|// assertTrue(names.contains("BB2"));
+name|createTestData
+argument_list|(
+literal|"testThetaJoins"
+argument_list|)
+expr_stmt|;
+name|String
+name|ejbql
+init|=
+literal|"SELECT DISTINCT a "
+operator|+
+literal|"FROM Artist a, Painting b "
+operator|+
+literal|"WHERE a.artistName = b.paintingTitle"
+decl_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+decl_stmt|;
+name|List
+name|artists
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|artists
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Set
+name|names
+init|=
+operator|new
+name|HashSet
+argument_list|(
+literal|2
+argument_list|)
+decl_stmt|;
+name|Iterator
+name|it
+init|=
+name|artists
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|it
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|Artist
+name|a
+init|=
+operator|(
+name|Artist
+operator|)
+name|it
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+name|names
+operator|.
+name|add
+argument_list|(
+name|a
+operator|.
+name|getArtistName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+name|assertTrue
+argument_list|(
+name|names
+operator|.
+name|contains
+argument_list|(
+literal|"AA1"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|names
+operator|.
+name|contains
+argument_list|(
+literal|"BB2"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void

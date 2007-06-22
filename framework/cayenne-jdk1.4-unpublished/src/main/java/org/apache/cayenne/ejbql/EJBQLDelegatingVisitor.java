@@ -1178,6 +1178,9 @@ name|visitIsNull
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1190,6 +1193,8 @@ operator|.
 name|visitIsNull
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 name|continueFlag
@@ -1599,6 +1604,9 @@ name|visitOrderBy
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1611,6 +1619,8 @@ operator|.
 name|visitOrderBy
 argument_list|(
 name|expression
+argument_list|,
+name|finishedChildIndex
 argument_list|)
 else|:
 name|continueFlag

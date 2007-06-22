@@ -414,9 +414,9 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST AS t0${marker0} WHERE t0.ARTIST_NAME "
+literal|" FROM ARTIST AS t0${marker0} WHERE t0.ARTIST_NAME ="
 operator|+
-literal|"#bindEqual('Dali' 'VARCHAR')"
+literal|" #bind('Dali' 'VARCHAR')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -732,7 +732,7 @@ name|endsWith
 argument_list|(
 literal|" WHERE NOT "
 operator|+
-literal|"t0.ARTIST_NAME #bindEqual('Dali' 'VARCHAR')"
+literal|"t0.ARTIST_NAME = #bind('Dali' 'VARCHAR')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -962,7 +962,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ARTIST_NAME #bindNotEqual('Dali' 'VARCHAR')"
+literal|" WHERE t0.ARTIST_NAME<> #bind('Dali' 'VARCHAR')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1200,7 +1200,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|"t0.ARTIST_NAME #bindEqual($id1) OR t0.ARTIST_NAME #bindEqual($id2)"
+literal|"t0.ARTIST_NAME = #bind($id1) OR t0.ARTIST_NAME = #bind($id2)"
 argument_list|)
 argument_list|)
 expr_stmt|;
