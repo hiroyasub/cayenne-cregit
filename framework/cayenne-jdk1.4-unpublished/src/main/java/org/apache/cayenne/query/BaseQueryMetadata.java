@@ -1374,6 +1374,16 @@ return|return
 name|classDescriptor
 return|;
 block|}
+comment|/**      * Always returns null, as this is not supported for most classic queries.      *       * @since 3.0      */
+specifier|public
+name|SQLResultSetMapping
+name|getResultSetMapping
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 comment|/**      * @since 1.2      */
 specifier|public
 name|PrefetchTreeNode

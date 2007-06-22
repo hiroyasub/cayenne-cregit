@@ -93,6 +93,15 @@ implements|implements
 name|QueryMetadata
 block|{
 specifier|public
+name|SQLResultSetMapping
+name|getResultSetMapping
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
 name|ObjEntity
 name|getObjEntity
 parameter_list|()

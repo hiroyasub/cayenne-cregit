@@ -324,6 +324,11 @@ name|PrefetchTreeNode
 name|getPrefetchTree
 parameter_list|()
 function_decl|;
+comment|/**      * Returns a mapping of the result set data rows. Can be null. If not null overrides      * prefetching and data row settings.      *       * @since 3.0      */
+name|SQLResultSetMapping
+name|getResultSetMapping
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

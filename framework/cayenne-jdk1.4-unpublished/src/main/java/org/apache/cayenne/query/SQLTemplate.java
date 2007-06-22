@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.  *<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *    SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *   *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.  *<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *          SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *   *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -1911,6 +1911,23 @@ operator|.
 name|columnNamesCapitalization
 operator|=
 name|columnNameCapitalization
+expr_stmt|;
+block|}
+comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResultSetMapping} rules.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setResultSetMapping
+parameter_list|(
+name|SQLResultSetMapping
+name|resultSetMapping
+parameter_list|)
+block|{
+name|selectInfo
+operator|.
+name|setResultSetMapping
+argument_list|(
+name|resultSetMapping
+argument_list|)
 expr_stmt|;
 block|}
 block|}

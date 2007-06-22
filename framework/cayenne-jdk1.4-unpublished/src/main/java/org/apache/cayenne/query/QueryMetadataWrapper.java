@@ -197,6 +197,19 @@ name|key
 argument_list|)
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|SQLResultSetMapping
+name|getResultSetMapping
+parameter_list|()
+block|{
+return|return
+name|info
+operator|.
+name|getResultSetMapping
+argument_list|()
+return|;
+block|}
 specifier|public
 name|DataMap
 name|getDataMap
