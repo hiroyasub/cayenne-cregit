@@ -402,9 +402,6 @@ name|visitInnerFetchJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -412,9 +409,6 @@ name|visitInnerJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -596,9 +590,6 @@ name|visitOuterFetchJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -606,9 +597,6 @@ name|visitOuterJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 comment|/**      * Called on visiting "path" expression and also after visiting every expression      * child.      *       * @param expression a "path" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */

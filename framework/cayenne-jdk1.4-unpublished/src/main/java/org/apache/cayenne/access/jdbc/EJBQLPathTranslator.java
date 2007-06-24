@@ -696,9 +696,6 @@ operator|.
 name|visitInnerJoin
 argument_list|(
 name|join
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|context

@@ -284,9 +284,6 @@ name|visitInnerFetchJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 comment|// TODO: andrus, 4/9/2007 - support for prefetching
@@ -294,8 +291,6 @@ return|return
 name|visitInnerJoin
 argument_list|(
 name|join
-argument_list|,
-name|finishedChildIndex
 argument_list|)
 return|;
 block|}
@@ -305,17 +300,7 @@ name|visitInnerJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
-block|{
-if|if
-condition|(
-name|finishedChildIndex
-operator|<
-literal|0
-condition|)
 block|{
 name|appendJoin
 argument_list|(
@@ -324,7 +309,6 @@ argument_list|,
 literal|"INNER JOIN"
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|false
 return|;
@@ -335,9 +319,6 @@ name|visitOuterFetchJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 comment|// TODO: andrus, 4/9/2007 - support for prefetching
@@ -345,8 +326,6 @@ return|return
 name|visitOuterJoin
 argument_list|(
 name|join
-argument_list|,
-name|finishedChildIndex
 argument_list|)
 return|;
 block|}
@@ -356,17 +335,7 @@ name|visitOuterJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
-block|{
-if|if
-condition|(
-name|finishedChildIndex
-operator|<
-literal|0
-condition|)
 block|{
 name|appendJoin
 argument_list|(
@@ -375,7 +344,6 @@ argument_list|,
 literal|"LEFT OUTER JOIN"
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|false
 return|;

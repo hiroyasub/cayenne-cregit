@@ -740,9 +740,6 @@ name|visitInnerFetchJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 name|join
@@ -762,9 +759,6 @@ name|visitInnerJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 name|join
@@ -784,9 +778,6 @@ name|visitOuterFetchJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 name|join
@@ -806,9 +797,6 @@ name|visitOuterJoin
 parameter_list|(
 name|EJBQLJoin
 name|join
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 name|join
