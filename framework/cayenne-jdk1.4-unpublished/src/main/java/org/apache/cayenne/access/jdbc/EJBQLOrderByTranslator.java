@@ -182,7 +182,7 @@ name|EJBQLExpressionVisitor
 name|childVisitor
 init|=
 operator|new
-name|EJBQLConditionPathTranslator
+name|EJBQLPathTranslator
 argument_list|(
 name|context
 argument_list|)

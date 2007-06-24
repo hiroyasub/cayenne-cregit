@@ -347,7 +347,7 @@ block|}
 class|class
 name|FieldPathTranslator
 extends|extends
-name|EJBQLConditionPathTranslator
+name|EJBQLPathTranslator
 block|{
 name|FieldPathTranslator
 parameter_list|()

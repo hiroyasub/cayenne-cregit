@@ -196,11 +196,11 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 block|{
-name|EJBQLConditionPathTranslator
+name|EJBQLPathTranslator
 name|pathTranslator
 init|=
 operator|new
-name|EJBQLConditionPathTranslator
+name|EJBQLPathTranslator
 argument_list|(
 name|context
 argument_list|)

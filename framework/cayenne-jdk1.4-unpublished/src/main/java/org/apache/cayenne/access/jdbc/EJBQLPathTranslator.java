@@ -261,10 +261,14 @@ name|ClassDescriptor
 import|;
 end_import
 
+begin_comment
+comment|/**  * A translator that walks the relationship/attribute path, appending joins to the query.  *   * @since 3.0  * @author Andrus Adamchik  */
+end_comment
+
 begin_class
 specifier|abstract
 class|class
-name|EJBQLConditionPathTranslator
+name|EJBQLPathTranslator
 extends|extends
 name|EJBQLBaseVisitor
 block|{
@@ -296,7 +300,7 @@ specifier|private
 name|EJBQLFromTranslator
 name|joinAppender
 decl_stmt|;
-name|EJBQLConditionPathTranslator
+name|EJBQLPathTranslator
 parameter_list|(
 name|EJBQLTranslationContext
 name|context
