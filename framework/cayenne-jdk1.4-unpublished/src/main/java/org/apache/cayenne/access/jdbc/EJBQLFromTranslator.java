@@ -322,8 +322,6 @@ argument_list|(
 name|join
 argument_list|,
 literal|"INNER JOIN"
-argument_list|,
-literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -375,8 +373,6 @@ argument_list|(
 name|join
 argument_list|,
 literal|"LEFT OUTER JOIN"
-argument_list|,
-literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -393,9 +389,6 @@ name|join
 parameter_list|,
 name|String
 name|semantics
-parameter_list|,
-name|boolean
-name|reusable
 parameter_list|)
 block|{
 name|String
@@ -657,26 +650,6 @@ argument_list|(
 literal|")"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|reusable
-condition|)
-block|{
-name|context
-operator|.
-name|registerReusableJoin
-argument_list|(
-name|lhsId
-argument_list|,
-name|joinRelationship
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|rhsId
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 specifier|private
 name|String
