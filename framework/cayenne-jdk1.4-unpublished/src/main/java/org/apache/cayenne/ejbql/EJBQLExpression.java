@@ -24,8 +24,8 @@ specifier|public
 interface|interface
 name|EJBQLExpression
 block|{
-comment|/**      * Accepts a visitor, calling appropriate visit method. If the visit method returns      * true, visits all children, otherwise stops. Returns true if self visitor method and      * all child methods returned true; false otherwise.      */
-name|boolean
+comment|/**      * Accepts a visitor, calling appropriate visitor method. If the visitor method      * returns true, visits all children, otherwise stops.      */
+name|void
 name|visit
 parameter_list|(
 name|EJBQLExpressionVisitor

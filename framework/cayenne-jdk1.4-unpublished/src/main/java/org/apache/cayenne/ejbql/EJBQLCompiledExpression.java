@@ -37,6 +37,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|SQLResultSetMapping
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -81,6 +95,11 @@ function_decl|;
 comment|/**      * Returns EJB QL source of the compiled expression if available.      */
 name|String
 name|getSource
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a mapping of the result set columns, or null if this is not a select      * expression.      */
+name|SQLResultSetMapping
+name|getResultSetMapping
 parameter_list|()
 function_decl|;
 block|}

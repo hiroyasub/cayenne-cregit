@@ -142,7 +142,7 @@ return|;
 block|}
 comment|/**      * A recursive visit method that passes a visitor to this node and all its children,      * depth first.      */
 specifier|public
-name|boolean
+name|void
 name|visit
 parameter_list|(
 name|EJBQLExpressionVisitor
@@ -151,17 +151,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
 name|visitNode
 argument_list|(
 name|visitor
 argument_list|)
 condition|)
 block|{
-return|return
-literal|false
-return|;
-block|}
 name|int
 name|len
 init|=
@@ -194,16 +189,12 @@ name|i
 argument_list|)
 condition|)
 block|{
-return|return
-literal|false
-return|;
+break|break;
 block|}
 block|}
-return|return
-literal|true
-return|;
 block|}
-comment|/**      * Visits this not without recursion. Default implementation simply returns true.      * Subclasses override this method to call an appropriate visitor method.      */
+block|}
+comment|/**      * Visits this node without recursion. Default implementation simply returns true.      * Subclasses override this method to call an appropriate visitor method.      */
 specifier|protected
 name|boolean
 name|visitNode
@@ -228,7 +219,6 @@ name|int
 name|childIndex
 parameter_list|)
 block|{
-return|return
 name|children
 index|[
 name|childIndex
@@ -238,6 +228,9 @@ name|visit
 argument_list|(
 name|visitor
 argument_list|)
+expr_stmt|;
+return|return
+literal|true
 return|;
 block|}
 specifier|public

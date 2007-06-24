@@ -272,7 +272,7 @@ specifier|private
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
-specifier|private
+specifier|protected
 name|ObjEntity
 name|currentEntity
 decl_stmt|;
@@ -280,11 +280,11 @@ specifier|private
 name|String
 name|lastPathComponent
 decl_stmt|;
-specifier|private
+specifier|protected
 name|String
 name|lastAlias
 decl_stmt|;
-specifier|private
+specifier|protected
 name|String
 name|idPath
 decl_stmt|;
@@ -556,7 +556,7 @@ name|lastAlias
 operator|=
 name|context
 operator|.
-name|getAlias
+name|getTableAlias
 argument_list|(
 name|oldPath
 argument_list|,
@@ -714,7 +714,7 @@ name|lastAlias
 operator|=
 name|context
 operator|.
-name|getAlias
+name|getTableAlias
 argument_list|(
 name|fullPath
 argument_list|,
@@ -852,7 +852,7 @@ name|lastPathComponent
 argument_list|)
 throw|;
 block|}
-specifier|private
+specifier|protected
 name|void
 name|processTerminatingAttribute
 parameter_list|(
@@ -881,7 +881,7 @@ name|lastAlias
 else|:
 name|context
 operator|.
-name|getAlias
+name|getTableAlias
 argument_list|(
 name|idPath
 argument_list|,
@@ -980,7 +980,7 @@ name|lastAlias
 else|:
 name|context
 operator|.
-name|getAlias
+name|getTableAlias
 argument_list|(
 name|idPath
 argument_list|,

@@ -278,9 +278,6 @@ name|visitSelect
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 name|EJBQLSelectTranslator
@@ -309,9 +306,6 @@ name|visitDelete
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 throw|throw
@@ -328,9 +322,6 @@ name|visitUpdate
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 block|{
 throw|throw

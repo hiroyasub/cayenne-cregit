@@ -27,6 +27,22 @@ name|ejbql
 operator|.
 name|parser
 operator|.
+name|EJBQLAggregateColumn
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|parser
+operator|.
 name|EJBQLFromItem
 import|;
 end_import
@@ -80,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A visitor interface to inspect the EJBQL expression tree.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A visitor interface to inspect the EJBQL expression tree. Visit methods return  * booleans, indicating whether the children of a given node should be visited.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
@@ -155,7 +171,7 @@ function_decl|;
 name|boolean
 name|visitAverage
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLAggregateColumn
 name|expression
 parameter_list|)
 function_decl|;
@@ -215,7 +231,7 @@ function_decl|;
 name|boolean
 name|visitCount
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLAggregateColumn
 name|expression
 parameter_list|)
 function_decl|;
@@ -247,15 +263,11 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting "delete" expression and also after visiting every expression      * child.      *       * @param expression a "delete" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitDelete
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -267,13 +279,6 @@ parameter_list|)
 function_decl|;
 name|boolean
 name|visitDistinct
-parameter_list|(
-name|EJBQLExpression
-name|expression
-parameter_list|)
-function_decl|;
-name|boolean
-name|visitDistinctPath
 parameter_list|(
 name|EJBQLExpression
 name|expression
@@ -493,7 +498,7 @@ function_decl|;
 name|boolean
 name|visitMax
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLAggregateColumn
 name|expression
 parameter_list|)
 function_decl|;
@@ -507,7 +512,7 @@ function_decl|;
 name|boolean
 name|visitMin
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLAggregateColumn
 name|expression
 parameter_list|)
 function_decl|;
@@ -577,9 +582,6 @@ name|visitOrderBy
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -634,19 +636,22 @@ name|EJBQLPositionalInputParameter
 name|expression
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting "select" and also after visiting every expression child.      *       * @param expression a "select" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitSelect
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
 name|visitSelectExpression
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
+name|boolean
+name|visitSelectExpressions
 parameter_list|(
 name|EJBQLExpression
 name|expression
@@ -701,7 +706,7 @@ function_decl|;
 name|boolean
 name|visitSum
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLAggregateColumn
 name|expression
 parameter_list|)
 function_decl|;
@@ -747,15 +752,11 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting "update" expression and also after visiting every expression      * child.      *       * @param expression a "update" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitUpdate
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -791,9 +792,6 @@ name|visitWhere
 parameter_list|(
 name|EJBQLExpression
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 block|}

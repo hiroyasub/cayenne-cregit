@@ -17,33 +17,20 @@ name|parser
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|ejbql
-operator|.
-name|EJBQLExpressionVisitor
-import|;
-end_import
-
 begin_comment
-comment|/**  * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An aggregate column expression.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
-name|EJBQLDistinctPath
+name|EJBQLAggregateColumn
 extends|extends
 name|SimpleNode
 block|{
 specifier|public
-name|EJBQLDistinctPath
+name|EJBQLAggregateColumn
 parameter_list|(
 name|int
 name|id
@@ -55,23 +42,21 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
-name|boolean
-name|visitNode
+specifier|public
+specifier|abstract
+name|String
+name|getFunction
+parameter_list|()
+function_decl|;
+specifier|public
+specifier|abstract
+name|String
+name|getJavaType
 parameter_list|(
-name|EJBQLExpressionVisitor
-name|visitor
+name|String
+name|pathType
 parameter_list|)
-block|{
-return|return
-name|visitor
-operator|.
-name|visitDistinctPath
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
+function_decl|;
 block|}
 end_class
 

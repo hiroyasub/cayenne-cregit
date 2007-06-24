@@ -31,7 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|Collections
 import|;
 end_import
 
@@ -41,7 +41,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
+name|List
 import|;
 end_import
 
@@ -63,7 +63,7 @@ name|String
 name|name
 decl_stmt|;
 specifier|protected
-name|Collection
+name|List
 name|columnResults
 decl_stmt|;
 specifier|public
@@ -111,7 +111,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns a collection of mapped columns.      */
 specifier|public
-name|Collection
+name|List
 name|getColumnResults
 parameter_list|()
 block|{
