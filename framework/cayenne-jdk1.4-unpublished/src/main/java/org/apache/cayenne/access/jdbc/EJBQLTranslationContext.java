@@ -101,13 +101,6 @@ begin_class
 class|class
 name|EJBQLTranslationContext
 block|{
-specifier|static
-specifier|final
-name|String
-name|FROM_TAIL_MARKER
-init|=
-literal|"FROM_TAIL_MARKER"
-decl_stmt|;
 specifier|private
 name|Map
 name|tableAliases
