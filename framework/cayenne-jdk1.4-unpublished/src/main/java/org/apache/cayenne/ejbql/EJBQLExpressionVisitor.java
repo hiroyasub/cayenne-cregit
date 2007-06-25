@@ -335,9 +335,6 @@ name|visitFromItem
 parameter_list|(
 name|EJBQLFromItem
 name|expression
-parameter_list|,
-name|int
-name|finishedChildIndex
 parameter_list|)
 function_decl|;
 comment|/**      * Called on visiting ">=" expression and also after visiting every expression child.      *       * @param expression an ">=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
