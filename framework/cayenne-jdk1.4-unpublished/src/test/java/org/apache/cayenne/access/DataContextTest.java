@@ -2035,7 +2035,7 @@ argument_list|(
 literal|0
 argument_list|)
 operator|instanceof
-name|Artist
+name|Map
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -2055,6 +2055,18 @@ literal|7
 argument_list|)
 operator|instanceof
 name|Map
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|objects
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|instanceof
+name|Artist
 argument_list|)
 expr_stmt|;
 block|}

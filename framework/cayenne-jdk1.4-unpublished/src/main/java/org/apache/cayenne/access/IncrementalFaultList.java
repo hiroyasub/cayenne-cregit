@@ -169,6 +169,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 import|;
 end_import
@@ -507,6 +521,11 @@ name|PersistentListHelper
 argument_list|()
 expr_stmt|;
 block|}
+name|boolean
+name|resolvesFirstPage
+init|=
+literal|true
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -542,18 +561,10 @@ name|getPrefetchTree
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|select
-operator|.
-name|getPrefetchTree
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-comment|// prefetching will blow iterated result, so strip prefetches... this is
-comment|// a bit of a hack
+comment|// optimize SelectQuery:
+comment|// * just select ID columns - this gives a 5-10x speedup
+comment|// * strip prefetches as they blow the iterated result, and are actually not
+comment|// needed
 name|SelectQuery
 name|clone
 init|=
@@ -573,11 +584,69 @@ operator|.
 name|clearPrefetches
 argument_list|()
 expr_stmt|;
+comment|// I guess this check is redundant, as custom attributes warrant data rows
+if|if
+condition|(
+operator|!
+name|select
+operator|.
+name|isFetchingCustomAttributes
+argument_list|()
+condition|)
+block|{
+name|Iterator
+name|pk
+init|=
+name|rootEntity
+operator|.
+name|getDbEntity
+argument_list|()
+operator|.
+name|getPrimaryKey
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|pk
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|DbAttribute
+name|attribute
+init|=
+operator|(
+name|DbAttribute
+operator|)
+name|pk
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+name|clone
+operator|.
+name|addCustomDbAttribute
+argument_list|(
+name|attribute
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|query
 operator|=
 name|clone
 expr_stmt|;
-block|}
+name|resolvesFirstPage
+operator|=
+literal|false
+expr_stmt|;
 block|}
 name|List
 name|elementsUnsynced
@@ -591,6 +660,8 @@ argument_list|(
 name|query
 argument_list|,
 name|elementsUnsynced
+argument_list|,
+name|resolvesFirstPage
 argument_list|)
 expr_stmt|;
 name|this
@@ -614,21 +685,6 @@ return|return
 name|internalQuery
 return|;
 block|}
-comment|/**      * Returns true if it is possible to read the first page of inflated objects from the      * ResultSet returned from the main query. False is returned for queries with      * prefetches as resolving prefetches is not possible in this situation.      */
-specifier|private
-name|boolean
-name|resolvesFirstPage
-parameter_list|()
-block|{
-return|return
-name|internalQuery
-operator|.
-name|getPrefetchTree
-argument_list|()
-operator|==
-literal|null
-return|;
-block|}
 comment|/**      * Performs initialization of the internal list of objects. Only the first page is      * fully resolved. For the rest of the list, only ObjectIds are read.      *       * @deprecated since 3.0 this method is not called and is deprecated in favor of      *             {@link #fillIn(Query, List)}, as this method performed unneeded      *             synchronization.      * @since 1.0.6      */
 specifier|protected
 name|void
@@ -648,6 +704,8 @@ argument_list|(
 name|query
 argument_list|,
 name|elements
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -662,6 +720,9 @@ name|query
 parameter_list|,
 name|List
 name|elementsList
+parameter_list|,
+name|boolean
+name|resolvesFirstPage
 parameter_list|)
 block|{
 name|QueryMetadata
@@ -733,7 +794,6 @@ comment|// resolve first page if we can
 if|if
 condition|(
 name|resolvesFirstPage
-argument_list|()
 condition|)
 block|{
 comment|// read first page completely, the rest as ObjectIds
@@ -927,7 +987,6 @@ name|unfetchedObjects
 operator|=
 operator|(
 name|resolvesFirstPage
-argument_list|()
 operator|)
 condition|?
 name|elementsList
