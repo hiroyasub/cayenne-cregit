@@ -436,7 +436,7 @@ name|encoder
 operator|.
 name|print
 argument_list|(
-literal|"\" className=\""
+literal|" className=\""
 argument_list|)
 expr_stmt|;
 name|encoder
