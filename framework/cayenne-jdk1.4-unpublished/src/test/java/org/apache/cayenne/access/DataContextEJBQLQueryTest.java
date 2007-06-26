@@ -330,6 +330,8 @@ name|aggregates
 index|[
 literal|2
 index|]
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -344,6 +346,8 @@ name|aggregates
 index|[
 literal|3
 index|]
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
@@ -626,6 +630,8 @@ name|row0
 index|[
 literal|0
 index|]
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -687,6 +693,8 @@ name|row1
 index|[
 literal|0
 index|]
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1290,6 +1298,8 @@ name|p
 operator|.
 name|getEstimatedPrice
 argument_list|()
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
@@ -1375,6 +1385,8 @@ name|p
 operator|.
 name|getEstimatedPrice
 argument_list|()
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
@@ -1460,6 +1472,8 @@ name|p
 operator|.
 name|getEstimatedPrice
 argument_list|()
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
@@ -1545,6 +1559,8 @@ name|p
 operator|.
 name|getEstimatedPrice
 argument_list|()
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
@@ -1678,6 +1694,8 @@ name|p
 operator|.
 name|getEstimatedPrice
 argument_list|()
+argument_list|,
+literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
