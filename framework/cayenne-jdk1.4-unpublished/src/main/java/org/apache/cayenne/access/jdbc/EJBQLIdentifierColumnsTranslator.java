@@ -806,6 +806,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|// TODO: andrus 6/27/2007 - the last parameter is an unofficial "jdbcType"
+comment|// pending CAY-813 implementation, switch to #column directive
 name|context
 operator|.
 name|append
@@ -833,7 +835,30 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|"')"
+literal|"' '"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|column
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"' "
+operator|+
+name|column
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|")"
 argument_list|)
 expr_stmt|;
 block|}

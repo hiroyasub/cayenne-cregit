@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to describe a ResultSet column. There are the following  * possible invocation formats inside the template:  *   *<pre>  *      #result(column_name) - e.g. #result('ARTIST_ID')  *      #result(column_name java_type) - e.g. #result('ARTIST_ID' 'String')  *      #result(column_name java_type column_alias) - e.g. #result('ARTIST_ID' 'String' 'ID')  *      #result(column_name java_type column_alias data_row_key) - e.g. #result('ARTIST_ID' 'String' 'ID' 'toArtist.ID')  *</pre>  *   *<p>  * 'data_row_key' is needed if SQL 'column_alias' is not appropriate as a DataRow key on  * the Cayenne side. One common case when this happens is when a DataRow retrieved from a  * query is mapped using joint prefetch keys. In this case DataRow must use DB_PATH  * expressions for joint column keys, and their format is incompatible with most databases  * alias format.  *</p>  *<p>  * Most common Java types used in JDBC can be specified without a package. This includes  * all numeric types, primitives, String, SQL dates, BigDecimal and BigInteger.  *</p>  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * A custom Velocity directive to describe a ResultSet column. There are the following  * possible invocation formats inside the template:  *   *<pre>  *       #result(column_name) - e.g. #result('ARTIST_ID')  *       #result(column_name java_type) - e.g. #result('ARTIST_ID' 'String')  *       #result(column_name java_type column_alias) - e.g. #result('ARTIST_ID' 'String' 'ID')  *       #result(column_name java_type column_alias data_row_key) - e.g. #result('ARTIST_ID' 'String' 'ID' 'toArtist.ID')  *</pre>  *   *<p>  * 'data_row_key' is needed if SQL 'column_alias' is not appropriate as a DataRow key on  * the Cayenne side. One common case when this happens is when a DataRow retrieved from a  * query is mapped using joint prefetch keys. In this case DataRow must use DB_PATH  * expressions for joint column keys, and their format is incompatible with most databases  * alias format.  *</p>  *<p>  * Most common Java types used in JDBC can be specified without a package. This includes  * all numeric types, primitives, String, SQL dates, BigDecimal and BigInteger.  *</p>  *   * @author Andrus Adamchik  * @since 1.1  */
 end_comment
 
 begin_class
@@ -713,6 +713,43 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|// TODO: andrus 6/27/2007 - this is an unofficial jdbcType parameter that is added
+comment|// temporarily pending CAY-813 implementation for the sake of EJBQL query...
+name|Object
+name|jdbcType
+init|=
+name|getChild
+argument_list|(
+name|context
+argument_list|,
+name|node
+argument_list|,
+literal|4
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|jdbcType
+operator|instanceof
+name|Number
+condition|)
+block|{
+name|columnDescriptor
+operator|.
+name|setJdbcType
+argument_list|(
+operator|(
+operator|(
+name|Number
+operator|)
+name|jdbcType
+operator|)
+operator|.
+name|intValue
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
