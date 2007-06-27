@@ -927,6 +927,13 @@ operator|+
 literal|"/>"
 argument_list|)
 expr_stmt|;
+name|pw
+operator|.
+name|print
+argument_list|(
+literal|"\t<login"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|info
@@ -941,8 +948,6 @@ name|pw
 operator|.
 name|print
 argument_list|(
-literal|"\t<login"
-operator|+
 name|attribute
 argument_list|(
 literal|"userName"
