@@ -365,6 +365,27 @@ name|getFile
 argument_list|()
 expr_stmt|;
 block|}
+if|else if
+condition|(
+name|e
+operator|.
+name|getSource
+argument_list|()
+operator|instanceof
+name|File
+condition|)
+block|{
+name|f
+operator|=
+operator|(
+name|File
+operator|)
+name|e
+operator|.
+name|getSource
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|f
