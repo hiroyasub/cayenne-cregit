@@ -528,7 +528,7 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
-comment|// extract and convert firts page
+comment|// extract and convert first page
 name|List
 name|sublist
 init|=
