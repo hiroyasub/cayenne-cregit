@@ -133,6 +133,19 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// this test requires BLOB support
+if|if
+condition|(
+operator|!
+name|getAccessStackAdapter
+argument_list|()
+operator|.
+name|supportsLobs
+argument_list|()
+condition|)
+block|{
+return|return;
+block|}
 name|DataContext
 name|context
 init|=
