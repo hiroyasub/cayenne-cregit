@@ -1468,11 +1468,27 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|// this is a hack to prevent execptions on DB's like Derby for expressions
+comment|// "X = NULL". The 'VARCHAR' parameter is totally bogus, but seems to work on
+comment|// all tested DB's... Also note what JPA spec, chapter 4.11 says: "Comparison
+comment|// or arithmetic operations with a NULL value always yield an unknown value."
+comment|// TODO: andrus 6/28/2007 Ideally we should track the type of the current
+comment|// expression to provide a meaningful type.
 name|context
 operator|.
 name|append
 argument_list|(
-literal|" NULL"
+literal|" #bind($"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|boundName
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" 'VARCHAR')"
 argument_list|)
 expr_stmt|;
 block|}
