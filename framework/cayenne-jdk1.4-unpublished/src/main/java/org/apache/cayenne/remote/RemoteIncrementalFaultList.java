@@ -169,6 +169,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|IDUtil
@@ -365,9 +379,49 @@ name|generateCacheKey
 argument_list|()
 expr_stmt|;
 block|}
-name|IncrementalQuery
+name|Query
 name|query
 init|=
+name|paginatedQuery
+decl_stmt|;
+if|if
+condition|(
+name|metadata
+operator|.
+name|getCacheKey
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+comment|// there are some serious pagination optimizations for SelectQuery on the
+comment|// server-side, so use a special wrapper that is itself a subclass of
+comment|// SelectQuery
+if|if
+condition|(
+name|query
+operator|instanceof
+name|SelectQuery
+condition|)
+block|{
+name|query
+operator|=
+operator|new
+name|IncrementalSelectQuery
+argument_list|(
+operator|(
+name|SelectQuery
+operator|)
+name|paginatedQuery
+argument_list|,
+name|cacheKey
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|query
+operator|=
 operator|new
 name|IncrementalQuery
 argument_list|(
@@ -375,7 +429,9 @@ name|paginatedQuery
 argument_list|,
 name|cacheKey
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+block|}
 comment|// select directly from the channel, bypassing the context. Otherwise our query
 comment|// wrapper can be intercepted incorrectly
 name|QueryResponse
