@@ -1440,6 +1440,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+operator|new
+name|DbGeneratorPostprocessor
+argument_list|()
+operator|.
+name|execute
+argument_list|(
+name|connection
+argument_list|)
+expr_stmt|;
 block|}
 finally|finally
 block|{
