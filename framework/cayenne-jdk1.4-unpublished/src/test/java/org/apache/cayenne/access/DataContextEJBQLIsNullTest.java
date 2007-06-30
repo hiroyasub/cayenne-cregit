@@ -123,25 +123,15 @@ literal|null
 argument_list|)
 expr_stmt|;
 comment|// unlike SelectQuery or SQLTemplate, EJBQL nulls are handled just like SQL.
-name|List
-name|results
-init|=
+comment|// note that some databases (notable Sybase) actually allow = NULL comparison,
+comment|// most do not; per JPA spec the result is undefined.. so we can't make any
+comment|// assertions about the result. Just making sure the query doesn't blow up
 name|createDataContext
 argument_list|()
 operator|.
 name|performQuery
 argument_list|(
 name|query1
-argument_list|)
-decl_stmt|;
-name|assertEquals
-argument_list|(
-literal|0
-argument_list|,
-name|results
-operator|.
-name|size
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
