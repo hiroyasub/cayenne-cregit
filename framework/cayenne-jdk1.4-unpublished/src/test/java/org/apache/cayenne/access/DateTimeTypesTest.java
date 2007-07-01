@@ -461,13 +461,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// OpenBase fails to store seconds for the time
-comment|// do an approximate match rounding to minutes
-name|assertTrue
-argument_list|(
-name|Math
-operator|.
-name|abs
-argument_list|(
+comment|// FrontBase returns time with 1 hour offset
+comment|// so this test is approximate...
+name|long
+name|delta
+init|=
 name|nowTime
 operator|.
 name|getTime
@@ -480,9 +478,23 @@ argument_list|()
 operator|.
 name|getTime
 argument_list|()
+decl_stmt|;
+name|assertTrue
+argument_list|(
+literal|""
+operator|+
+name|delta
+argument_list|,
+name|Math
+operator|.
+name|abs
+argument_list|(
+name|delta
 argument_list|)
-operator|<
+operator|<=
 literal|1000
+operator|*
+literal|60
 operator|*
 literal|60
 argument_list|)
