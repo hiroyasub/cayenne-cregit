@@ -461,7 +461,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// OpenBase fails to store seconds for the time
-comment|// FrontBase returns time with 1 hour offset
+comment|// FrontBase returns time with 1 hour offset (I guess "TIME WITH TIMEZONE" may
+comment|// need to be used as a default FB type?)
 comment|// so this test is approximate...
 name|long
 name|delta
