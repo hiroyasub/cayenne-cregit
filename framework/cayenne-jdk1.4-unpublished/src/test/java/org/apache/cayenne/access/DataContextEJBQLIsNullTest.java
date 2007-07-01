@@ -134,6 +134,7 @@ argument_list|(
 name|query1
 argument_list|)
 expr_stmt|;
+comment|// still this query can blow up on FrontBase. See CAY-819 for details.
 block|}
 specifier|public
 name|void
