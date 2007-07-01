@@ -111,6 +111,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|frontbase
+operator|.
+name|FrontBaseAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -235,7 +251,7 @@ decl_stmt|;
 name|String
 name|sql
 init|=
-literal|"SELECT count(1) AS C FROM ARTIST"
+literal|"SELECT count(1) AS X FROM ARTIST"
 decl_stmt|;
 name|DataMap
 name|map
@@ -261,6 +277,20 @@ argument_list|)
 decl_stmt|;
 name|query
 operator|.
+name|setTemplate
+argument_list|(
+name|FrontBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SELECT COUNT(ARTIST_ID) AS X FROM ARTIST"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
 name|setColumnNamesCapitalization
 argument_list|(
 name|SQLTemplate
@@ -279,7 +309,7 @@ name|rsMap
 operator|.
 name|addColumnResult
 argument_list|(
-literal|"C"
+literal|"X"
 argument_list|)
 expr_stmt|;
 name|query
