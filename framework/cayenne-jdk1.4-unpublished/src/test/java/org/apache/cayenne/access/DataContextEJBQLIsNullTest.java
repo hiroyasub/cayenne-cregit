@@ -91,6 +91,19 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// the query below can blow up on FrontBase. See CAY-819 for details.
+if|if
+condition|(
+operator|!
+name|getAccessStackAdapter
+argument_list|()
+operator|.
+name|supportsEqualNullSyntax
+argument_list|()
+condition|)
+block|{
+return|return;
+block|}
 name|deleteTestData
 argument_list|()
 expr_stmt|;
@@ -134,7 +147,6 @@ argument_list|(
 name|query1
 argument_list|)
 expr_stmt|;
-comment|// still this query can blow up on FrontBase. See CAY-819 for details.
 block|}
 specifier|public
 name|void

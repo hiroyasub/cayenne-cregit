@@ -594,6 +594,16 @@ return|return
 literal|true
 return|;
 block|}
+comment|/**      * Returns whether the database supports synatax like "X = NULL".      */
+specifier|public
+name|boolean
+name|supportsEqualNullSyntax
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 comment|/**      * Returns false if stored procedures are not supported or if it is a victim of      * CAY-148 (column name capitalization).      */
 specifier|public
 name|boolean

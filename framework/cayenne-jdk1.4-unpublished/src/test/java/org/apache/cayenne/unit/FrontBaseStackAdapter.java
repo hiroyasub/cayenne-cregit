@@ -106,6 +106,15 @@ literal|false
 return|;
 block|}
 specifier|public
+name|boolean
+name|supportsEqualNullSyntax
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+specifier|public
 name|void
 name|willDropTables
 parameter_list|(
