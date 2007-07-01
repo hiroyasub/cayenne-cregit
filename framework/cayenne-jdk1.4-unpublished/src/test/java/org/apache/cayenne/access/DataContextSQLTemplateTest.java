@@ -147,6 +147,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|frontbase
+operator|.
+name|FrontBaseAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -246,7 +262,7 @@ expr_stmt|;
 name|String
 name|sql
 init|=
-literal|"SELECT count(1) AS C FROM ARTIST"
+literal|"SELECT count(1) AS X FROM ARTIST"
 decl_stmt|;
 name|DataMap
 name|map
@@ -272,6 +288,20 @@ argument_list|)
 decl_stmt|;
 name|query
 operator|.
+name|setTemplate
+argument_list|(
+name|FrontBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SELECT COUNT(ARTIST_ID) X FROM ARTIST"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
 name|setColumnNamesCapitalization
 argument_list|(
 name|SQLTemplate
@@ -290,7 +320,7 @@ name|rsMap
 operator|.
 name|addColumnResult
 argument_list|(
-literal|"C"
+literal|"X"
 argument_list|)
 expr_stmt|;
 name|query
@@ -333,6 +363,10 @@ argument_list|)
 decl_stmt|;
 name|assertTrue
 argument_list|(
+literal|"Expected Number: "
+operator|+
+name|o
+argument_list|,
 name|o
 operator|instanceof
 name|Number
@@ -369,7 +403,7 @@ expr_stmt|;
 name|String
 name|sql
 init|=
-literal|"SELECT count(1) AS C, 77 AS D FROM ARTIST"
+literal|"SELECT count(1) AS X, 77 AS Y FROM ARTIST"
 decl_stmt|;
 name|DataMap
 name|map
@@ -395,6 +429,20 @@ argument_list|)
 decl_stmt|;
 name|query
 operator|.
+name|setTemplate
+argument_list|(
+name|FrontBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SELECT COUNT(ARTIST_ID) X, 77 Y FROM ARTIST GROUP BY Y"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
 name|setColumnNamesCapitalization
 argument_list|(
 name|SQLTemplate
@@ -413,14 +461,14 @@ name|rsMap
 operator|.
 name|addColumnResult
 argument_list|(
-literal|"C"
+literal|"X"
 argument_list|)
 expr_stmt|;
 name|rsMap
 operator|.
 name|addColumnResult
 argument_list|(
-literal|"D"
+literal|"Y"
 argument_list|)
 expr_stmt|;
 name|query
