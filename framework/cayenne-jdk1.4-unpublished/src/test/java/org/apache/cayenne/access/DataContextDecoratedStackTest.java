@@ -69,6 +69,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|frontbase
+operator|.
+name|FrontBaseAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|intercept
 operator|.
 name|DataChannelDecorator
@@ -196,7 +212,7 @@ name|Artist
 operator|.
 name|class
 argument_list|,
-literal|"select #result('count(1)' 'int' 'c') from ARTIST"
+literal|"select #result('count(1)' 'int' 'x') from ARTIST"
 argument_list|)
 decl_stmt|;
 name|query
@@ -204,6 +220,20 @@ operator|.
 name|setFetchingDataRows
 argument_list|(
 literal|true
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setTemplate
+argument_list|(
+name|FrontBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"select #result('COUNT(ARTIST_ID)' 'int' 'x') from ARTIST"
 argument_list|)
 expr_stmt|;
 name|Map
@@ -238,7 +268,7 @@ name|count
 operator|.
 name|get
 argument_list|(
-literal|"c"
+literal|"x"
 argument_list|)
 argument_list|)
 expr_stmt|;
