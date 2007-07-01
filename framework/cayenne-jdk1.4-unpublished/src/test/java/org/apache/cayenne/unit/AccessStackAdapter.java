@@ -252,7 +252,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API and a common superclass for testing various database features. Different  * databases support different feature sets that need to be tested differently. Many  * things implemented in subclasses may become future candidates for inclusin in the  * corresponding adapter code.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API and a common superclass for testing various database features. Different  * databases support different feature sets that need to be tested differently. Many  * things implemented in subclasses may become future candidates for inclusion in the  * corresponding adapter code.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -572,6 +572,26 @@ parameter_list|()
 block|{
 return|return
 literal|false
+return|;
+block|}
+comment|/**      * Returns whether the target database supports expressions in the WHERE clause in the      * form "VALUE = COLUMN".      */
+specifier|public
+name|boolean
+name|supportsReverseComparison
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
+comment|/**      * Returns whether an aggregate query like "SELECT min(X) FROM" returns a NULL row      * when no data matched the WHERE clause. Most DB's do.      */
+specifier|public
+name|boolean
+name|supportNullRowForAggregateFunctions
+parameter_list|()
+block|{
+return|return
+literal|true
 return|;
 block|}
 comment|/**      * Returns false if stored procedures are not supported or if it is a victim of      * CAY-148 (column name capitalization).      */

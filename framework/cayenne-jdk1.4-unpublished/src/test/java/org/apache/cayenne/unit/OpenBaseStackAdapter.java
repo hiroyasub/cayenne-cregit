@@ -114,6 +114,26 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsReverseComparison
+parameter_list|()
+block|{
+comment|// TODO: andrus, 7/1/2007 I am trying to follow up with openbase on this...
+return|return
+literal|false
+return|;
+block|}
+specifier|public
+name|boolean
+name|supportNullRowForAggregateFunctions
+parameter_list|()
+block|{
+comment|// TODO: andrus, 7/1/2007 I am trying to follow up with openbase on this...
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 

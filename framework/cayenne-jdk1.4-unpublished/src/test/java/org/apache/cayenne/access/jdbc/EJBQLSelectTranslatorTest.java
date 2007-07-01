@@ -294,7 +294,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST AS t0${marker0}"
+literal|" FROM ARTIST t0${marker0}"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -408,7 +408,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|"INNER JOIN PAINTING AS t1 ON (t0.ARTIST_ID = t1.ARTIST_ID)"
+literal|"INNER JOIN PAINTING t1 ON (t0.ARTIST_ID = t1.ARTIST_ID)"
 argument_list|)
 operator|>
 literal|0
@@ -422,7 +422,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|"INNER JOIN PAINTING AS t2 ON (t0.ARTIST_ID = t2.ARTIST_ID)"
+literal|"INNER JOIN PAINTING t2 ON (t0.ARTIST_ID = t2.ARTIST_ID)"
 argument_list|)
 operator|>
 literal|0
@@ -676,7 +676,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST AS t0${marker0} WHERE t0.ARTIST_NAME ="
+literal|" FROM ARTIST t0${marker0} WHERE t0.ARTIST_NAME ="
 operator|+
 literal|" #bind('Dali' 'VARCHAR')"
 argument_list|)
@@ -746,7 +746,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST AS t0${marker0} WHERE "
+literal|" FROM ARTIST t0${marker0} WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -791,7 +791,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST AS t0${marker0} WHERE "
+literal|" FROM ARTIST t0${marker0} WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -1535,7 +1535,7 @@ literal|"SELECT "
 operator|+
 literal|"#result('MAX(t0.ESTIMATED_PRICE)' 'java.math.BigDecimal' 'sc0') "
 operator|+
-literal|"FROM PAINTING AS t0"
+literal|"FROM PAINTING t0"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1573,7 +1573,7 @@ literal|"SELECT "
 operator|+
 literal|"#result('SUM(DISTINCT t0.ESTIMATED_PRICE)' 'java.math.BigDecimal' 'sc0') "
 operator|+
-literal|"FROM PAINTING AS t0"
+literal|"FROM PAINTING t0"
 argument_list|)
 argument_list|)
 expr_stmt|;
