@@ -697,6 +697,8 @@ argument_list|,
 name|tableName
 argument_list|)
 decl_stmt|;
+comment|// not using "AS" to separate table name and alias name - OpenBase doesn't support
+comment|// "AS", and the rest of the databases do not care
 name|context
 operator|.
 name|append
@@ -711,7 +713,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" AS "
+literal|' '
 argument_list|)
 operator|.
 name|append
