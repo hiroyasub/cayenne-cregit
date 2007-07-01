@@ -163,6 +163,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|openbase
+operator|.
+name|OpenBaseAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -291,6 +307,20 @@ operator|.
 name|setTemplate
 argument_list|(
 name|FrontBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SELECT COUNT(ARTIST_ID) X FROM ARTIST"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setTemplate
+argument_list|(
+name|OpenBaseAdapter
 operator|.
 name|class
 operator|.
@@ -439,6 +469,20 @@ name|getName
 argument_list|()
 argument_list|,
 literal|"SELECT COUNT(ARTIST_ID) X, 77 Y FROM ARTIST GROUP BY Y"
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setTemplate
+argument_list|(
+name|OpenBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SELECT COUNT(ARTIST_ID) X, 77 Y FROM ARTIST GROUP BY 77"
 argument_list|)
 expr_stmt|;
 name|query
@@ -1249,14 +1293,23 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
-name|assertEquals
+comment|// null comparison is unpredictable across DB's ... some would return true on null
+comment|//<> value, some - false
+name|assertTrue
 argument_list|(
-literal|1
-argument_list|,
 name|objects
 operator|.
 name|size
 argument_list|()
+operator|==
+literal|1
+operator|||
+name|objects
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|2
 argument_list|)
 expr_stmt|;
 name|Painting
@@ -1734,14 +1787,23 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
-name|assertEquals
+comment|// null comparison is unpredictable across DB's ... some would return true on null
+comment|//<> value, some - false
+name|assertTrue
 argument_list|(
-literal|1
-argument_list|,
 name|objects
 operator|.
 name|size
 argument_list|()
+operator|==
+literal|1
+operator|||
+name|objects
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|2
 argument_list|)
 expr_stmt|;
 name|Painting
