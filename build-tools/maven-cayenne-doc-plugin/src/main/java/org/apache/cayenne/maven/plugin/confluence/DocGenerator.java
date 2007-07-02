@@ -53,26 +53,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|InputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URL
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Iterator
@@ -444,9 +424,6 @@ block|{
 name|login
 argument_list|()
 expr_stmt|;
-comment|// only works for adminstrators
-comment|// String url = service.exportSite(token, true);
-comment|// URL foo = new URL(url);
 name|createPath
 argument_list|(
 name|docBase
