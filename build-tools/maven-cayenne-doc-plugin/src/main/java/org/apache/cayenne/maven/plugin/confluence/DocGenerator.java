@@ -414,6 +414,7 @@ name|template
 expr_stmt|;
 block|}
 block|}
+comment|/** 	 * Main worker method for documentation generation from Wiki. 	 */
 specifier|public
 name|void
 name|generateDocs
@@ -431,7 +432,7 @@ argument_list|)
 expr_stmt|;
 comment|// Build a page hierarchy first..
 name|DocPage
-name|page
+name|root
 init|=
 name|getPage
 argument_list|(
@@ -442,13 +443,12 @@ argument_list|)
 decl_stmt|;
 name|iterateChildren
 argument_list|(
-name|page
+name|root
 argument_list|)
 expr_stmt|;
-comment|// Now render the content nodes..
 name|renderPage
 argument_list|(
-name|page
+name|root
 argument_list|,
 name|docBase
 argument_list|)
