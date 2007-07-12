@@ -83,6 +83,15 @@ return|return
 name|lastChannel
 return|;
 block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"Mock message"
+return|;
+block|}
 block|}
 end_class
 

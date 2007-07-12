@@ -598,6 +598,19 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" of type "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|message
+operator|.
+name|toString
+argument_list|()
+argument_list|)
 expr_stmt|;
 name|String
 name|exceptionText
@@ -635,6 +648,8 @@ name|buffer
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+name|th
 argument_list|)
 throw|;
 block|}
