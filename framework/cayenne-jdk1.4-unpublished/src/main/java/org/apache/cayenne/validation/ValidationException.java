@@ -64,7 +64,12 @@ parameter_list|)
 block|{
 name|this
 argument_list|(
-literal|"Validation has failed."
+literal|"Validation failures: "
+operator|+
+name|result
+operator|.
+name|toString
+argument_list|()
 argument_list|,
 name|result
 argument_list|)
