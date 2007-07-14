@@ -327,7 +327,7 @@ name|query
 operator|.
 name|getMetaData
 argument_list|(
-name|originatingContext
+name|channel
 operator|.
 name|getEntityResolver
 argument_list|()
