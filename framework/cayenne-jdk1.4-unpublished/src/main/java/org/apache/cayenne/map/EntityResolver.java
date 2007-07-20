@@ -265,6 +265,34 @@ name|CompositeCollection
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike DataMap,  * EntityResolver is intended to work as a runtime container of mapping. DataMaps can be  * added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
@@ -286,6 +314,21 @@ init|=
 operator|new
 name|Object
 argument_list|()
+decl_stmt|;
+specifier|protected
+specifier|static
+specifier|final
+name|Log
+name|logger
+init|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|EntityResolver
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 specifier|protected
 name|boolean
@@ -2137,10 +2180,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// bad mapping?
-comment|// TODO (Andrus, 10/18/2005) it would be nice to log something
-comment|// here, but since EntityResolver is used on the client, log4J
-comment|// is a no-go...
+comment|// bad mapping? Or most likely some classloader issue
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"No super entity mapping for '"
+operator|+
+name|superOEName
+operator|+
+literal|"'"
+argument_list|)
+expr_stmt|;
 continue|continue;
 block|}
 block|}
