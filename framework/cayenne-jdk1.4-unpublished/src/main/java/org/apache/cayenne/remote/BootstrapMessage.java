@@ -26,6 +26,7 @@ name|BootstrapMessage
 implements|implements
 name|ClientMessage
 block|{
+comment|/**      * Returns a description of the type of message. In this case always "Bootstrap".      */
 specifier|public
 name|String
 name|toString

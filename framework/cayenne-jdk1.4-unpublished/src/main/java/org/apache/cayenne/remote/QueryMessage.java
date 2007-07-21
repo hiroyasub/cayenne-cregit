@@ -73,6 +73,7 @@ return|return
 name|query
 return|;
 block|}
+comment|/**      * Returns a description of the type of message. In this case always "Query".      */
 specifier|public
 name|String
 name|toString

@@ -35,14 +35,7 @@ interface|interface
 name|ClientMessage
 extends|extends
 name|Serializable
-block|{
-comment|/**      * Returns a description of the type of message.      */
-specifier|public
-name|String
-name|toString
-parameter_list|()
-function_decl|;
-block|}
+block|{  }
 end_interface
 
 end_unit
