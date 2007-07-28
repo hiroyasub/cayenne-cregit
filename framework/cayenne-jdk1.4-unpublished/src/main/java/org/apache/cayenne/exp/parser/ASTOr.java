@@ -151,6 +151,9 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
+name|connectChildren
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|ASTOr
@@ -211,6 +214,9 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
+name|connectChildren
+argument_list|()
+expr_stmt|;
 block|}
 specifier|protected
 name|Object

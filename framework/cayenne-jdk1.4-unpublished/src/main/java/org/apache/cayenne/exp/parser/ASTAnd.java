@@ -152,6 +152,9 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
+name|connectChildren
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|ASTAnd
@@ -212,6 +215,9 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
+name|connectChildren
+argument_list|()
+expr_stmt|;
 block|}
 specifier|protected
 name|Object

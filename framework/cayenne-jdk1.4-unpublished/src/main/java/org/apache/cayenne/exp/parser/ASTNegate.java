@@ -124,6 +124,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|connectChildren
+argument_list|()
+expr_stmt|;
 block|}
 comment|/**      * Creates a copy of this expression node, without copying children.      */
 specifier|public
