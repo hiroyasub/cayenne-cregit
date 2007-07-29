@@ -185,14 +185,6 @@ operator|new
 name|DataChannelCallbackInterceptor
 argument_list|()
 decl_stmt|;
-comment|// must call pre-persist and pre-remove on commit
-name|interceptor
-operator|.
-name|setContextCallbacksEnabled
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 name|interceptor
 operator|.
 name|setChannel
