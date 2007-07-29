@@ -163,20 +163,6 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|collections
-operator|.
-name|Predicate
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
 name|logging
 operator|.
 name|Log
@@ -243,32 +229,6 @@ specifier|protected
 specifier|static
 name|Configuration
 name|sharedConfiguration
-init|=
-literal|null
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|Predicate
-name|ACCEPT_ALL_DATAVIEWS
-init|=
-operator|new
-name|Predicate
-argument_list|()
-block|{
-specifier|public
-name|boolean
-name|evaluate
-parameter_list|(
-name|Object
-name|dataViewName
-parameter_list|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-block|}
 decl_stmt|;
 comment|/**      * Lookup map that stores DataDomains with names as keys.      */
 specifier|protected
@@ -639,6 +599,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
+comment|/**      * See 'https://svn.apache.org/repos/asf/cayenne/dataviews/trunk' for DataViews code,      * which is not a part of Cayenne since 3.0.      */
 specifier|protected
 specifier|abstract
 name|InputStream
@@ -1072,7 +1033,7 @@ operator|=
 name|dataViewLocations
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/**      * See 'https://svn.apache.org/repos/asf/cayenne/dataviews/trunk' for DataViews code,      * which is not a part of Cayenne since 3.0.      *       * @since 1.1      */
 specifier|public
 name|Map
 name|getDataViewLocations
