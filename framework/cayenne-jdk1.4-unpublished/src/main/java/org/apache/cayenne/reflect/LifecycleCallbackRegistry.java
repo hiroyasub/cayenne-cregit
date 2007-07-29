@@ -45,6 +45,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|CallbackMap
@@ -487,7 +499,7 @@ parameter_list|(
 name|int
 name|type
 parameter_list|,
-name|Object
+name|Persistent
 name|object
 parameter_list|)
 block|{

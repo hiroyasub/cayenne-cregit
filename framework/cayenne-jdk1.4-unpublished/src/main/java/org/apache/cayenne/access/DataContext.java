@@ -3061,7 +3061,7 @@ name|LifecycleListener
 operator|.
 name|PRE_PERSIST
 argument_list|,
-name|object
+name|persistent
 argument_list|)
 expr_stmt|;
 block|}
