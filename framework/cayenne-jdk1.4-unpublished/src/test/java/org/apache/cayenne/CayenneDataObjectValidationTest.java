@@ -503,10 +503,13 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupDbEntity
+name|lookupObjEntity
 argument_list|(
 name|artist
 argument_list|)
+operator|.
+name|getDbEntity
+argument_list|()
 decl_stmt|;
 name|int
 name|len
