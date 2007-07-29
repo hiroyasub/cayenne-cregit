@@ -317,7 +317,6 @@ block|{
 name|deleteTestData
 argument_list|()
 expr_stmt|;
-comment|// must enable callbacks
 name|ClientServerChannel
 name|csChannel
 init|=
@@ -328,13 +327,6 @@ name|getDomain
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|csChannel
-operator|.
-name|setLifecycleCallbacksEnabled
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 comment|// an exception was triggered within POST_LOAD callback
 name|LifecycleCallbackRegistry
 name|callbackRegistry
