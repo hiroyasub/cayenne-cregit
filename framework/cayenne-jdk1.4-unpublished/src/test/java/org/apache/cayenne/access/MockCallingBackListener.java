@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|intercept
+name|access
 package|;
 end_package
 

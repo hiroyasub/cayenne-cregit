@@ -2327,6 +2327,32 @@ name|int
 name|syncType
 parameter_list|)
 block|{
+name|DataChannelSyncCallbackAction
+name|callbackAction
+init|=
+operator|new
+name|DataChannelSyncCallbackAction
+argument_list|(
+name|this
+argument_list|,
+name|originatingContext
+operator|.
+name|getGraphManager
+argument_list|()
+argument_list|,
+name|changes
+argument_list|)
+decl_stmt|;
+name|callbackAction
+operator|.
+name|applyPreCommit
+argument_list|(
+name|syncType
+argument_list|)
+expr_stmt|;
+name|GraphDiff
+name|result
+decl_stmt|;
 switch|switch
 condition|(
 name|syncType
@@ -2337,12 +2363,14 @@ name|DataChannel
 operator|.
 name|ROLLBACK_CASCADE_SYNC
 case|:
-return|return
+name|result
+operator|=
 name|onSyncRollback
 argument_list|(
 name|originatingContext
 argument_list|)
-return|;
+expr_stmt|;
+break|break;
 comment|// "cascade" and "no_cascade" are the same from the DataDomain
 comment|// perspective,
 comment|// including transaction handling logic
@@ -2356,7 +2384,8 @@ name|DataChannel
 operator|.
 name|FLUSH_CASCADE_SYNC
 case|:
-return|return
+name|result
+operator|=
 operator|(
 name|GraphDiff
 operator|)
@@ -2385,7 +2414,8 @@ return|;
 block|}
 block|}
 argument_list|)
-return|;
+expr_stmt|;
+break|break;
 default|default:
 throw|throw
 operator|new
@@ -2397,6 +2427,16 @@ name|syncType
 argument_list|)
 throw|;
 block|}
+name|callbackAction
+operator|.
+name|applyPostCommit
+argument_list|(
+name|syncType
+argument_list|)
+expr_stmt|;
+return|return
+name|result
+return|;
 block|}
 name|GraphDiff
 name|onSyncRollback

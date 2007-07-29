@@ -23,7 +23,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|intercept
+name|access
 operator|.
 name|MockCallingBackListener
 import|;

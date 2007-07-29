@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|intercept
+name|access
 package|;
 end_package
 
@@ -121,15 +121,19 @@ name|GraphManager
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 3.0  * @author Andrus Adamchik  */
+end_comment
+
 begin_class
 class|class
-name|SyncCallbackProcessor
+name|DataChannelSyncCallbackAction
 implements|implements
 name|GraphChangeHandler
 block|{
-specifier|final
-name|DataChannelCallbackInterceptor
-name|interceptor
+specifier|private
+name|DataChannel
+name|channel
 decl_stmt|;
 specifier|private
 name|GraphManager
@@ -148,10 +152,10 @@ specifier|private
 name|Set
 name|seenIds
 decl_stmt|;
-name|SyncCallbackProcessor
+name|DataChannelSyncCallbackAction
 parameter_list|(
-name|DataChannelCallbackInterceptor
-name|interceptor
+name|DataChannel
+name|channel
 parameter_list|,
 name|GraphManager
 name|graphManager
@@ -162,9 +166,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|interceptor
+name|channel
 operator|=
-name|interceptor
+name|channel
 expr_stmt|;
 name|this
 operator|.
@@ -313,7 +317,10 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|interceptor
+name|channel
+operator|.
+name|getEntityResolver
+argument_list|()
 operator|.
 name|getCallbackRegistry
 argument_list|()
