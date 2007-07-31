@@ -280,7 +280,7 @@ literal|true
 return|;
 block|}
 comment|// TODO: andrus, 7/31/2007 - all literal processing (visitStringLiteral,
-comment|// visitIntegerLiteral, visitDecimalLiteral) is duplicated in
+comment|// visitIntegerLiteral, visitDecimalLiteral, visitBooleanLiteral) is duplicated in
 comment|// EJBQLConditionalTranslator - may need to refactor
 specifier|public
 name|boolean
@@ -330,6 +330,78 @@ operator|.
 name|append
 argument_list|(
 literal|" 'VARCHAR')"
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitBooleanLiteral
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+if|if
+condition|(
+name|expression
+operator|.
+name|getText
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|"null"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|Object
+name|value
+init|=
+operator|new
+name|Boolean
+argument_list|(
+name|expression
+operator|.
+name|getText
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|String
+name|var
+init|=
+name|context
+operator|.
+name|bindParameter
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" #bind($"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|var
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" 'BOOLEAN')"
 argument_list|)
 expr_stmt|;
 block|}
