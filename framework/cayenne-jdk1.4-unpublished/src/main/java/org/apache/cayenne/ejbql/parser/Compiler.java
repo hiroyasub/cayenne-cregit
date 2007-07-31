@@ -613,7 +613,7 @@ specifier|private
 name|void
 name|addPath
 parameter_list|(
-name|EJBQLPath
+name|EJBQLExpression
 name|path
 parameter_list|)
 block|{
@@ -1015,7 +1015,7 @@ specifier|public
 name|boolean
 name|visitPath
 parameter_list|(
-name|EJBQLPath
+name|EJBQLExpression
 name|expression
 parameter_list|,
 name|int
@@ -1038,7 +1038,12 @@ name|this
 operator|.
 name|id
 operator|=
+operator|(
+operator|(
+name|EJBQLPath
+operator|)
 name|expression
+operator|)
 operator|.
 name|getId
 argument_list|()
@@ -1257,7 +1262,7 @@ specifier|public
 name|boolean
 name|visitPath
 parameter_list|(
-name|EJBQLPath
+name|EJBQLExpression
 name|expression
 parameter_list|,
 name|int
@@ -1320,7 +1325,7 @@ specifier|public
 name|boolean
 name|visitPath
 parameter_list|(
-name|EJBQLPath
+name|EJBQLExpression
 name|expression
 parameter_list|,
 name|int

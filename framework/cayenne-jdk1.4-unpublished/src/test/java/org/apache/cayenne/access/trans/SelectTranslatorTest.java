@@ -756,7 +756,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|1
+literal|1d
 argument_list|)
 argument_list|)
 argument_list|)
@@ -774,7 +774,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|3
+literal|3d
 argument_list|)
 argument_list|)
 argument_list|)

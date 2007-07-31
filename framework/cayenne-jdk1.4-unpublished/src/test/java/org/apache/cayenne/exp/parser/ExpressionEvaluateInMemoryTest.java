@@ -1300,7 +1300,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|10000
+literal|10000d
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1423,7 +1423,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|10000
+literal|10000d
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1538,7 +1538,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|10000
+literal|10000d
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1653,7 +1653,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|10000
+literal|10000d
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1769,13 +1769,13 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|10
+literal|10d
 argument_list|)
 argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|20
+literal|20d
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1794,13 +1794,13 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|10
+literal|10d
 argument_list|)
 argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|20
+literal|20d
 argument_list|)
 argument_list|)
 decl_stmt|;
