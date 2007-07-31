@@ -132,6 +132,36 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|boolean
+name|visitWhere
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" WHERE"
+argument_list|)
+expr_stmt|;
+name|expression
+operator|.
+name|visit
+argument_list|(
+operator|new
+name|EJBQLConditionTranslator
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 
