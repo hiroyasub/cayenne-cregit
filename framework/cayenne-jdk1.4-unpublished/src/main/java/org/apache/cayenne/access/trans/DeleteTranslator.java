@@ -45,8 +45,22 @@ name|DbRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|DeleteQuery
+import|;
+end_import
+
 begin_comment
-comment|/** Class implements default translation mechanism of org.apache.cayenne.query.DeleteQuery  *  objects to SQL DELETE statements.  *  *  @author Andrus Adamchik  */
+comment|/** Class implements default translation mechanism of org.apache.cayenne.query.DeleteQuery  *  objects to SQL DELETE statements.  *  *  @author Andrus Adamchik  *  @deprecated since 3.0 since {@link DeleteQuery} is deprecacted.  */
 end_comment
 
 begin_class

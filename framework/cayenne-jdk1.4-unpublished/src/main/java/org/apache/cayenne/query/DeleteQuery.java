@@ -43,6 +43,10 @@ name|ObjEntity
 import|;
 end_import
 
+begin_comment
+comment|/**  * @deprecated since 3.0 in favor of EJBQL delete query.  * @author Andrus Adamchik  */
+end_comment
+
 begin_class
 specifier|public
 class|class
