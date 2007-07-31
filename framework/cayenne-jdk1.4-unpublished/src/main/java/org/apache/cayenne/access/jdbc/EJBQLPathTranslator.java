@@ -335,7 +335,7 @@ specifier|public
 name|boolean
 name|visitPath
 parameter_list|(
-name|EJBQLPath
+name|EJBQLExpression
 name|expression
 parameter_list|,
 name|int

@@ -73,22 +73,6 @@ name|EJBQLExpressionVisitor
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|ejbql
-operator|.
-name|parser
-operator|.
-name|EJBQLPath
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -171,7 +155,7 @@ specifier|public
 name|boolean
 name|visitPath
 parameter_list|(
-name|EJBQLPath
+name|EJBQLExpression
 name|expression
 parameter_list|,
 name|int
