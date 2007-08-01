@@ -363,6 +363,8 @@ comment|// TODO: andrus, 7/31/2007 - all literal processing (visitStringLiteral,
 comment|// visitIntegerLiteral, visitDecimalLiteral, visitBooleanLiteral,
 comment|// visitPositionalInputParameter, visitnamedInputParameter) is duplicated in
 comment|// EJBQLConditionalTranslator - may need to refactor
+comment|// one current difference is support of multi-column matching by
+comment|// EJBQLConditionalTranslator/
 specifier|public
 name|boolean
 name|visitStringLiteral
