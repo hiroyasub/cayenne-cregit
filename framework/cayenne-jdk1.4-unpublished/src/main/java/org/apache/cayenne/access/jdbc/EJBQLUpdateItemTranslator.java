@@ -351,6 +351,40 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|boolean
+name|visitUpdateValue
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+comment|// a criteria for NULL is UpdateValue with no children
+if|if
+condition|(
+name|expression
+operator|.
+name|getChildrenCount
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" NULL"
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
