@@ -163,7 +163,7 @@ specifier|protected
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
-specifier|private
+specifier|protected
 name|List
 name|multiColumnOperands
 decl_stmt|;

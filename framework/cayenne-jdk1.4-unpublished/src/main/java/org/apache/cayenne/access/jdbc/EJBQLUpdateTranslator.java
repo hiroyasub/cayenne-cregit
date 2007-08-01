@@ -165,6 +165,9 @@ name|visitUpdateItem
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 if|if
@@ -198,7 +201,7 @@ operator|.
 name|visit
 argument_list|(
 operator|new
-name|EJBQLUpdateFieldTranslator
+name|EJBQLUpdateItemTranslator
 argument_list|(
 name|context
 argument_list|)
