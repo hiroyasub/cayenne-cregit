@@ -159,7 +159,7 @@ name|EJBQLConditionTranslator
 extends|extends
 name|EJBQLBaseVisitor
 block|{
-specifier|private
+specifier|protected
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
