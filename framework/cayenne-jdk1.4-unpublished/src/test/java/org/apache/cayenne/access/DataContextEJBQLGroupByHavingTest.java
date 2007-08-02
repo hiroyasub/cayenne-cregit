@@ -456,6 +456,62 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testGroupByIdVariable
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"prepare"
+argument_list|)
+expr_stmt|;
+name|String
+name|ejbql
+init|=
+literal|"SELECT count(p), p FROM Painting p GROUP BY p"
+decl_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+decl_stmt|;
+name|List
+name|data
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|5
+argument_list|,
+name|data
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// TODO: andrus, 8/3/2007 the rest of the unit test fails as currently Cayenne
+comment|// does not allow mixed object and scalar results (see CAY-839)
+comment|// assertTrue(data.get(0) instanceof Object[]);
+comment|//
+comment|// for(int i = 0; i< data.size(); i++) {
+comment|// Object[] row = (Object[]) data.get(i);
+comment|// assertEquals(new Long(1), row[0]);
+comment|// }
+block|}
 block|}
 end_class
 
