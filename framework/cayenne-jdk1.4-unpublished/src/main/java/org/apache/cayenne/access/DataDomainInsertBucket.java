@@ -763,11 +763,21 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// treat numeric zero values as nulls requiring generation
+name|Class
+name|javaClass
+init|=
+name|objAttr
+operator|.
+name|getJavaClass
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
+name|javaClass
+operator|.
+name|isPrimitive
+argument_list|()
+operator|&&
 name|value
 operator|instanceof
 name|Number
@@ -783,8 +793,12 @@ name|intValue
 argument_list|()
 operator|==
 literal|0
-operator|)
 condition|)
+block|{
+comment|// primitive 0 has to be treated as NULL, or otherwise we
+comment|// can't generate PK for POJO's
+block|}
+else|else
 block|{
 name|idMap
 operator|.
