@@ -137,6 +137,12 @@ specifier|private
 name|int
 name|columnAliasPosition
 decl_stmt|;
+comment|// a flag indicating whether column expressions should be treated as result columns or
+comment|// not.
+specifier|private
+name|boolean
+name|appendingResultColumns
+decl_stmt|;
 name|EJBQLTranslationContext
 parameter_list|(
 name|EJBQLCompiledExpression
@@ -991,6 +997,28 @@ name|columnAliasPosition
 operator|++
 argument_list|)
 return|;
+block|}
+name|boolean
+name|isAppendingResultColumns
+parameter_list|()
+block|{
+return|return
+name|appendingResultColumns
+return|;
+block|}
+name|void
+name|setAppendingResultColumns
+parameter_list|(
+name|boolean
+name|appendingResultColumns
+parameter_list|)
+block|{
+name|this
+operator|.
+name|appendingResultColumns
+operator|=
+name|appendingResultColumns
+expr_stmt|;
 block|}
 block|}
 end_class

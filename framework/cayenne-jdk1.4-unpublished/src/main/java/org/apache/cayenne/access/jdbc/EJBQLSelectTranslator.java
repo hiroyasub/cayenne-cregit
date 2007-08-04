@@ -117,6 +117,13 @@ argument_list|(
 literal|" FROM"
 argument_list|)
 expr_stmt|;
+name|context
+operator|.
+name|setAppendingResultColumns
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|expression
 operator|.
 name|visit
@@ -220,6 +227,27 @@ argument_list|)
 expr_stmt|;
 return|return
 literal|false
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitSelect
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+comment|// this ensures that result columns are appeneded only in top-level select, but
+comment|// not subselect (as 'visitSelect' is not called on subselect)
+name|context
+operator|.
+name|setAppendingResultColumns
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
 return|;
 block|}
 specifier|public

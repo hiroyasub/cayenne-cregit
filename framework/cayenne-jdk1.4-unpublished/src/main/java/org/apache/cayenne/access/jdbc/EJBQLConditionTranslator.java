@@ -227,8 +227,6 @@ operator|new
 name|EJBQLAggregateColumnTranslator
 argument_list|(
 name|context
-argument_list|,
-literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1419,7 +1417,7 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|'('
+literal|" ("
 argument_list|)
 expr_stmt|;
 name|expression

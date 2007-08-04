@@ -176,8 +176,6 @@ operator|new
 name|EJBQLAggregateColumnTranslator
 argument_list|(
 name|context
-argument_list|,
-literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -281,12 +279,23 @@ operator|.
 name|nextColumnAlias
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|context
+operator|.
+name|isAppendingResultColumns
+argument_list|()
+condition|)
+block|{
 name|context
 operator|.
 name|append
 argument_list|(
 literal|" #result('"
 argument_list|)
+expr_stmt|;
+block|}
+name|context
 operator|.
 name|append
 argument_list|(
@@ -305,6 +314,16 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|context
+operator|.
+name|isAppendingResultColumns
+argument_list|()
+condition|)
+block|{
+name|context
 operator|.
 name|append
 argument_list|(
@@ -356,6 +375,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 decl_stmt|;
 name|expression
 operator|.
@@ -384,8 +404,6 @@ operator|new
 name|EJBQLIdentifierColumnsTranslator
 argument_list|(
 name|context
-argument_list|,
-literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
