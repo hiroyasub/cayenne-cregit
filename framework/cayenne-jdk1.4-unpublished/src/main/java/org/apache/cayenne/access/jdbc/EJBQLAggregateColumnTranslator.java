@@ -135,10 +135,17 @@ specifier|private
 name|String
 name|attributeType
 decl_stmt|;
+specifier|private
+name|boolean
+name|resultColumns
+decl_stmt|;
 name|EJBQLAggregateColumnTranslator
 parameter_list|(
 name|EJBQLTranslationContext
 name|context
+parameter_list|,
+name|boolean
+name|resultColumns
 parameter_list|)
 block|{
 name|this
@@ -146,6 +153,12 @@ operator|.
 name|context
 operator|=
 name|context
+expr_stmt|;
+name|this
+operator|.
+name|resultColumns
+operator|=
+name|resultColumns
 expr_stmt|;
 block|}
 specifier|public
@@ -264,12 +277,30 @@ name|EJBQLExpressionVisitor
 name|pathVisitor
 parameter_list|)
 block|{
+if|if
+condition|(
+name|resultColumns
+condition|)
+block|{
 name|context
 operator|.
 name|append
 argument_list|(
 literal|" #result('"
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|' '
+argument_list|)
+expr_stmt|;
+block|}
+name|context
 operator|.
 name|append
 argument_list|(
@@ -296,7 +327,19 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|")' '"
+literal|')'
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|resultColumns
+condition|)
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|"' '"
 argument_list|)
 operator|.
 name|append
@@ -327,6 +370,7 @@ argument_list|(
 literal|"')"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 class|class
 name|FieldPathTranslator
