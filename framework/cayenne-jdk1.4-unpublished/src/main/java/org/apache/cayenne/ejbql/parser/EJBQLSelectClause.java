@@ -17,6 +17,20 @@ name|parser
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|EJBQLExpressionVisitor
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -41,8 +55,23 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
-comment|// no visitor method for now, as this node is semantical and not important in
-comment|// analyzing the query
+specifier|protected
+name|boolean
+name|visitNode
+parameter_list|(
+name|EJBQLExpressionVisitor
+name|visitor
+parameter_list|)
+block|{
+return|return
+name|visitor
+operator|.
+name|visitSelectClause
+argument_list|(
+name|this
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 

@@ -613,6 +613,13 @@ name|expression
 parameter_list|)
 function_decl|;
 name|boolean
+name|visitSelectClause
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
+name|boolean
 name|visitSelectExpression
 parameter_list|(
 name|EJBQLExpression

@@ -822,8 +822,10 @@ argument_list|(
 name|pathVisitor
 argument_list|)
 expr_stmt|;
+comment|// continue with children as there may be subselects with their own id
+comment|// variable declarations
 return|return
-literal|false
+literal|true
 return|;
 block|}
 specifier|public
@@ -843,6 +845,23 @@ argument_list|)
 expr_stmt|;
 return|return
 literal|false
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitSubselect
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+return|return
+name|super
+operator|.
+name|visitSubselect
+argument_list|(
+name|expression
+argument_list|)
 return|;
 block|}
 block|}

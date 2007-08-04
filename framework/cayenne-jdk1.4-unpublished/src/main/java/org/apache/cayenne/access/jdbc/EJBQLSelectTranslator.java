@@ -224,7 +224,7 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|visitSelect
+name|visitSelectClause
 parameter_list|(
 name|EJBQLExpression
 name|expression
