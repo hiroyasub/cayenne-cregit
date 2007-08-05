@@ -149,6 +149,22 @@ name|EJBQLPositionalInputParameter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|parser
+operator|.
+name|EJBQLSubselect
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -993,7 +1009,49 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|" IN ("
+literal|" IN"
+argument_list|)
+expr_stmt|;
+comment|// a cosmetic hack for preventing extra pair of parenthesis from being
+comment|// appended in 'visitSubselect'
+if|if
+condition|(
+name|expression
+operator|.
+name|getChildrenCount
+argument_list|()
+operator|==
+literal|2
+operator|&&
+name|expression
+operator|.
+name|getChild
+argument_list|(
+literal|1
+argument_list|)
+operator|instanceof
+name|EJBQLSubselect
+condition|)
+block|{
+name|visitSubselect
+argument_list|(
+name|expression
+operator|.
+name|getChild
+argument_list|(
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" ("
 argument_list|)
 expr_stmt|;
 block|}
