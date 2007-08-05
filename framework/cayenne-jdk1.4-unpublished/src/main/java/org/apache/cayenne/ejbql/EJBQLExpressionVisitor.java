@@ -376,6 +376,9 @@ name|visitIn
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
