@@ -295,6 +295,16 @@ literal|" #result('"
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|' '
+argument_list|)
+expr_stmt|;
+block|}
 name|context
 operator|.
 name|append
