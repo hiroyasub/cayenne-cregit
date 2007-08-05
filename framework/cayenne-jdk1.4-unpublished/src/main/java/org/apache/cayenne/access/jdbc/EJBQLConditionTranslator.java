@@ -1238,15 +1238,30 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|visitPatternValue
+name|visitEscapeCharacter
 parameter_list|(
 name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
-comment|// TODO: andrus 3/25/2007 - implement me
+comment|// note that EscapeChar text is already wrapped in single quotes
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" ESCAPE "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|expression
+operator|.
+name|getText
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
-literal|true
+literal|false
 return|;
 block|}
 specifier|public
