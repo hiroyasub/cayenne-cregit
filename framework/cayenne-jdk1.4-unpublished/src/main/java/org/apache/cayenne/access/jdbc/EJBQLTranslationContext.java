@@ -292,12 +292,15 @@ name|current
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Switches the current buffer to a marked buffer. Note that this can be done even      * before the marker is inserted in the main buffer.      */
+comment|/**      * Switches the current buffer to a marked buffer. Note that this can be done even      * before the marker is inserted in the main buffer. If "reset" is true, any previous      * contents of the marker are cleared.      */
 name|void
 name|switchToMarker
 parameter_list|(
 name|String
 name|marker
+parameter_list|,
+name|boolean
+name|reset
 parameter_list|)
 block|{
 name|this
@@ -312,6 +315,28 @@ argument_list|(
 name|marker
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|reset
+condition|)
+block|{
+name|this
+operator|.
+name|currentBuffer
+operator|.
+name|delete
+argument_list|(
+literal|0
+argument_list|,
+name|this
+operator|.
+name|currentBuffer
+operator|.
+name|length
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|void
 name|switchToMainBuffer

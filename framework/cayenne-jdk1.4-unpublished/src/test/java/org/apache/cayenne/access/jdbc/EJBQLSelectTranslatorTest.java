@@ -240,7 +240,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -294,7 +294,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST t0${marker0}"
+literal|" FROM ARTIST t0${marker1}"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -311,7 +311,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"marker0"
+literal|"marker1"
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -365,7 +365,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -462,7 +462,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -480,7 +480,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"marker0"
+literal|"marker1"
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -594,7 +594,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT DISTINCT "
+literal|"SELECT${marker0} "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -628,7 +628,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -645,7 +645,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-literal|"marker0"
+literal|"marker1"
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -676,7 +676,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST t0${marker0} WHERE t0.ARTIST_NAME ="
+literal|" FROM ARTIST t0${marker1} WHERE t0.ARTIST_NAME ="
 operator|+
 literal|" #bind('Dali' 'VARCHAR')"
 argument_list|)
@@ -734,7 +734,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -746,7 +746,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST t0${marker0} WHERE "
+literal|" FROM ARTIST t0${marker1} WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -779,7 +779,7 @@ name|sql1
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -791,7 +791,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST t0${marker0} WHERE "
+literal|" FROM ARTIST t0${marker1} WHERE "
 argument_list|)
 operator|>
 literal|0
@@ -868,7 +868,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -913,7 +913,7 @@ name|sql1
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -980,7 +980,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1028,7 +1028,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1040,7 +1040,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE> #bind($id1 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE> #bind($id2 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1072,21 +1072,9 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE>= #bind($id1 'INTEGER')"
+literal|" WHERE t0.ESTIMATED_PRICE>= #bind($id2 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1118,21 +1106,9 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE< #bind($id1 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE< #bind($id2 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1164,21 +1140,9 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE<= #bind($id1 'DECIMAL')"
+literal|" WHERE t0.ESTIMATED_PRICE<= #bind($id2 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1204,18 +1168,6 @@ operator|.
 name|getDefaultTemplate
 argument_list|()
 decl_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|assertTrue
 argument_list|(
 name|sql
@@ -1256,23 +1208,11 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
 name|endsWith
 argument_list|(
 literal|" WHERE t0.ESTIMATED_PRICE "
 operator|+
-literal|"BETWEEN #bind($id1 'INTEGER') AND #bind($id2 'INTEGER')"
+literal|"BETWEEN #bind($id2 'INTEGER') AND #bind($id3 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1304,23 +1244,11 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
 name|endsWith
 argument_list|(
 literal|" WHERE t0.ESTIMATED_PRICE "
 operator|+
-literal|"NOT BETWEEN #bind($id1 'INTEGER') AND #bind($id2 'INTEGER')"
+literal|"NOT BETWEEN #bind($id2 'INTEGER') AND #bind($id3 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1346,18 +1274,6 @@ operator|.
 name|getDefaultTemplate
 argument_list|()
 decl_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|assertTrue
 argument_list|(
 name|sql
@@ -1394,18 +1310,6 @@ operator|.
 name|getDefaultTemplate
 argument_list|()
 decl_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|assertTrue
 argument_list|(
 name|sql
@@ -1483,21 +1387,9 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|startsWith
-argument_list|(
-literal|"SELECT "
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|sql
-argument_list|,
-name|sql
-operator|.
 name|endsWith
 argument_list|(
-literal|"t0.ARTIST_NAME = #bind($id1) OR t0.ARTIST_NAME = #bind($id2)"
+literal|"t0.ARTIST_NAME = #bind($id2) OR t0.ARTIST_NAME = #bind($id3)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1531,7 +1423,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT${marker0} "
 operator|+
 literal|"#result('MAX(t0.ESTIMATED_PRICE)' 'java.math.BigDecimal' 'sc0') "
 operator|+
@@ -1569,7 +1461,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT${marker0} "
 operator|+
 literal|"#result('SUM(DISTINCT t0.ESTIMATED_PRICE)' 'java.math.BigDecimal' 'sc0') "
 operator|+
@@ -1607,7 +1499,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT "
+literal|"SELECT${marker0} "
 operator|+
 literal|"#result('t0.ESTIMATED_PRICE' 'java.math.BigDecimal' 'sc0' 'sc0' 3), "
 operator|+

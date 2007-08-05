@@ -59,6 +59,15 @@ specifier|private
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
+specifier|static
+name|String
+name|makeDistinctMarker
+parameter_list|()
+block|{
+return|return
+literal|"DISTINCT_MARKER"
+return|;
+block|}
 name|EJBQLSelectTranslator
 parameter_list|(
 name|EJBQLTranslationContext
@@ -88,12 +97,29 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
+comment|// "distinct" is appended via a marker as sometimes a later match on to-many would
+comment|// require a DISTINCT insertion.
+name|context
+operator|.
+name|switchToMarker
+argument_list|(
+name|makeDistinctMarker
+argument_list|()
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 name|context
 operator|.
 name|append
 argument_list|(
 literal|" DISTINCT"
 argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|switchToMainBuffer
+argument_list|()
 expr_stmt|;
 return|return
 literal|true
@@ -263,6 +289,14 @@ operator|.
 name|append
 argument_list|(
 literal|"SELECT"
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|markCurrentPosition
+argument_list|(
+name|makeDistinctMarker
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
