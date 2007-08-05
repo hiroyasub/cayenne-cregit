@@ -61,9 +61,33 @@ name|org
 operator|.
 name|apache
 operator|.
+name|art
+operator|.
+name|Painting
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|cayenne
 operator|.
 name|DataObjectUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
 import|;
 end_import
 
@@ -1303,6 +1327,187 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testCollectionMemberOfParameter
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"prepareCollection"
+argument_list|)
+expr_stmt|;
+name|String
+name|ejbql
+init|=
+literal|"SELECT a FROM Artist a "
+operator|+
+literal|"WHERE :x MEMBER OF a.paintingArray"
+decl_stmt|;
+name|ObjectContext
+name|context
+init|=
+name|createDataContext
+argument_list|()
+decl_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+decl_stmt|;
+name|query
+operator|.
+name|setParameter
+argument_list|(
+literal|"x"
+argument_list|,
+name|DataObjectUtils
+operator|.
+name|objectForPK
+argument_list|(
+name|context
+argument_list|,
+name|Painting
+operator|.
+name|class
+argument_list|,
+literal|33010
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|List
+name|objects
+init|=
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|objects
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Set
+name|ids
+init|=
+operator|new
+name|HashSet
+argument_list|()
+decl_stmt|;
+name|Iterator
+name|it
+init|=
+name|objects
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|it
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|Object
+name|id
+init|=
+name|DataObjectUtils
+operator|.
+name|pkForObject
+argument_list|(
+operator|(
+name|Persistent
+operator|)
+name|it
+operator|.
+name|next
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|ids
+operator|.
+name|add
+argument_list|(
+name|id
+argument_list|)
+expr_stmt|;
+block|}
+name|assertTrue
+argument_list|(
+name|ids
+operator|.
+name|contains
+argument_list|(
+operator|new
+name|Integer
+argument_list|(
+literal|33001
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|//    public void testCollectionNotMemberOfParameter() throws Exception {
+comment|//        createTestData("prepareCollection");
+comment|//
+comment|//        String ejbql = "SELECT a FROM Artist a " + "WHERE :x NOT MEMBER a.paintingArray";
+comment|//
+comment|//        ObjectContext context = createDataContext();
+comment|//
+comment|//        EJBQLQuery query = new EJBQLQuery(ejbql);
+comment|//        query.setParameter("x", DataObjectUtils.objectForPK(
+comment|//                context,
+comment|//                Painting.class,
+comment|//                33010));
+comment|//        List objects = context.performQuery(query);
+comment|//        assertEquals(2, objects.size());
+comment|//
+comment|//        Set ids = new HashSet();
+comment|//        Iterator it = objects.iterator();
+comment|//        while (it.hasNext()) {
+comment|//            Object id = DataObjectUtils.pkForObject((Persistent) it.next());
+comment|//            ids.add(id);
+comment|//        }
+comment|//
+comment|//        assertTrue(ids.contains(new Integer(33002)));
+comment|//        assertTrue(ids.contains(new Integer(33003)));
+comment|//    }
+comment|//    public void testCollectionMemberOfThetaJoin() throws Exception {
+comment|//        createTestData("prepareCollection");
+comment|//
+comment|//        String ejbql = "SELECT p FROM Painting p, Artist a "
+comment|//                + "WHERE p MEMBER OF a.paintingArray AND a.artistName = 'B'";
+comment|//
+comment|//        EJBQLQuery query = new EJBQLQuery(ejbql);
+comment|//        List objects = createDataContext().performQuery(query);
+comment|//        assertEquals(2, objects.size());
+comment|//
+comment|//        Set ids = new HashSet();
+comment|//        Iterator it = objects.iterator();
+comment|//        while (it.hasNext()) {
+comment|//            Object id = DataObjectUtils.pkForObject((Persistent) it.next());
+comment|//            ids.add(id);
+comment|//        }
+comment|//
+comment|//        assertTrue(ids.contains(new Integer(33009)));
+comment|//        assertTrue(ids.contains(new Integer(33010)));
+comment|//    }
 block|}
 end_class
 
