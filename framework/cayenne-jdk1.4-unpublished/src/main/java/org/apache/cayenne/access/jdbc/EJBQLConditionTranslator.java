@@ -338,6 +338,25 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|visitAll
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" ALL"
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
 name|visitOr
 parameter_list|(
 name|EJBQLExpression

@@ -269,16 +269,6 @@ operator|.
 name|getDbAttribute
 argument_list|()
 decl_stmt|;
-comment|// TODO: andrus 6/27/2007 - the last parameter is an unofficial "jdbcType"
-comment|// pending CAY-813 implementation, switch to #column directive
-name|String
-name|columnAlias
-init|=
-name|context
-operator|.
-name|nextColumnAlias
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|context
@@ -333,6 +323,17 @@ name|isAppendingResultColumns
 argument_list|()
 condition|)
 block|{
+name|String
+name|columnAlias
+init|=
+name|context
+operator|.
+name|nextColumnAlias
+argument_list|()
+decl_stmt|;
+comment|// TODO: andrus 6/27/2007 - the last parameter is an unofficial
+comment|// "jdbcType"
+comment|// pending CAY-813 implementation, switch to #column directive
 name|context
 operator|.
 name|append
