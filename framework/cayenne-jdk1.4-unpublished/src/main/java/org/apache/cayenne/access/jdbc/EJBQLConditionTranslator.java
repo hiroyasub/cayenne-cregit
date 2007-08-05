@@ -357,6 +357,25 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|visitAny
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|" ANY"
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
 name|visitOr
 parameter_list|(
 name|EJBQLExpression
