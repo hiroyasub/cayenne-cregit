@@ -113,6 +113,11 @@ specifier|protected
 name|boolean
 name|toMany
 decl_stmt|;
+comment|/**      * A flag that specifies whether a Relationship was mapped by the user or added      * dynamically by Cayenne runtime.      *       * @since 3.0      */
+specifier|protected
+name|boolean
+name|runtime
+decl_stmt|;
 comment|/**      * Creates an unnamed relationship.      */
 specifier|public
 name|Relationship
@@ -382,6 +387,30 @@ operator|.
 name|toString
 argument_list|()
 return|;
+block|}
+specifier|public
+name|boolean
+name|isRuntime
+parameter_list|()
+block|{
+return|return
+name|runtime
+return|;
+block|}
+specifier|public
+name|void
+name|setRuntime
+parameter_list|(
+name|boolean
+name|synthetic
+parameter_list|)
+block|{
+name|this
+operator|.
+name|runtime
+operator|=
+name|synthetic
+expr_stmt|;
 block|}
 block|}
 end_class
