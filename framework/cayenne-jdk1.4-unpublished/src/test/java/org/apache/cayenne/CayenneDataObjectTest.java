@@ -31,8 +31,6 @@ name|apache
 operator|.
 name|art
 operator|.
-name|oneway
-operator|.
 name|Artist
 import|;
 end_import
