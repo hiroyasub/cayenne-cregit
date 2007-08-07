@@ -4866,6 +4866,16 @@ name|getEntityName
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// have to synchronize almost the entire method to prevent multiple threads from
+comment|// messing up dataobjects per CAY-845. Originally only parts of "else" were
+comment|// synchronized, but we had to expand the lock scope to ensure consistent
+comment|// behavior.
+synchronized|synchronized
+init|(
+name|getGraphManager
+argument_list|()
+init|)
+block|{
 name|Persistent
 name|cachedObject
 init|=
@@ -4984,12 +4994,6 @@ block|{
 name|Persistent
 name|localObject
 decl_stmt|;
-synchronized|synchronized
-init|(
-name|getGraphManager
-argument_list|()
-init|)
-block|{
 name|localObject
 operator|=
 operator|(
@@ -5024,7 +5028,6 @@ argument_list|,
 name|localObject
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|prototype
@@ -5087,6 +5090,7 @@ block|}
 return|return
 name|localObject
 return|;
+block|}
 block|}
 block|}
 block|}

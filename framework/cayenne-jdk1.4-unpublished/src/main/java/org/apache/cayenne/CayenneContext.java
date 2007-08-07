@@ -1209,6 +1209,12 @@ name|getEntityName
 argument_list|()
 argument_list|)
 decl_stmt|;
+synchronized|synchronized
+init|(
+name|getGraphManager
+argument_list|()
+init|)
+block|{
 name|Persistent
 name|cachedObject
 init|=
@@ -1318,22 +1324,20 @@ block|}
 comment|// create and merge into a new object
 else|else
 block|{
-comment|// Andrus, 1/26/2006 - note that there is a tricky case of a temporary object
-comment|// passed from peer DataContext... In the past we used to throw an exception
+comment|// Andrus, 1/26/2006 - note that there is a tricky case of a temporary
+comment|// object
+comment|// passed from peer DataContext... In the past we used to throw an
+comment|// exception
 comment|// or return null. Now that we can have a valid (but generally
 comment|// indistinguishible) case of such object passed from parent, we let it
-comment|// slip... Not sure what's the best way of handling it that does not involve
-comment|// breaking encapsulation of the DataChannel to detect where in the hierarchy
+comment|// slip... Not sure what's the best way of handling it that does not
+comment|// involve
+comment|// breaking encapsulation of the DataChannel to detect where in the
+comment|// hierarchy
 comment|// this context is.
 name|Persistent
 name|localObject
 decl_stmt|;
-synchronized|synchronized
-init|(
-name|getGraphManager
-argument_list|()
-init|)
-block|{
 name|localObject
 operator|=
 operator|(
@@ -1368,7 +1372,6 @@ argument_list|,
 name|localObject
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|prototype
@@ -1410,6 +1413,7 @@ block|}
 return|return
 name|localObject
 return|;
+block|}
 block|}
 comment|// ****** Copied from DataContext - end *******
 block|}
