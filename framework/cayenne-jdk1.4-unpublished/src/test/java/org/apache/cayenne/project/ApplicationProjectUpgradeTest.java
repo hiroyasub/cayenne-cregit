@@ -973,6 +973,16 @@ argument_list|()
 argument_list|)
 block|{
 specifier|protected
+name|void
+name|updateDefaults
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|)
+block|{
+comment|// do nothing...
+block|}
+specifier|protected
 name|DataNode
 name|createDataNode
 parameter_list|(

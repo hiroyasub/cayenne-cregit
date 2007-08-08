@@ -737,6 +737,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|protected
+name|void
+name|updateDefaults
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|)
+block|{
+comment|// do nothing...
+block|}
 specifier|public
 name|void
 name|shouldLoadDataDomain

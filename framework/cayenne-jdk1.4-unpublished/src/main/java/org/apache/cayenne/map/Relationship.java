@@ -388,6 +388,7 @@ name|toString
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|boolean
 name|isRuntime
@@ -397,6 +398,7 @@ return|return
 name|runtime
 return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|setRuntime
