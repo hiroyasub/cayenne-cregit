@@ -304,34 +304,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// validate reverse
-if|if
-condition|(
-name|rel
-operator|.
-name|getReverseRelationship
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
-name|validator
-operator|.
-name|registerWarning
-argument_list|(
-literal|"Missing reverse DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" (currently required by Cayenne)."
-argument_list|,
-name|path
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
