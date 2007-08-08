@@ -161,6 +161,16 @@ expr_stmt|;
 block|}
 specifier|protected
 name|void
+name|updateDefaults
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|)
+block|{
+comment|// do nothing...
+block|}
+specifier|protected
+name|void
 name|initAdapter
 parameter_list|(
 name|DataNode
