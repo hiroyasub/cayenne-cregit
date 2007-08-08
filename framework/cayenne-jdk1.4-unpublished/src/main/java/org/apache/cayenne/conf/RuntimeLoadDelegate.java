@@ -2134,6 +2134,25 @@ argument_list|(
 name|reverse
 argument_list|)
 expr_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"added runtime complimentary DbRelationship from "
+operator|+
+name|targetEntity
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|reverse
+operator|.
+name|getTargetEntityName
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -2288,6 +2307,25 @@ operator|.
 name|addRelationship
 argument_list|(
 name|reverse
+argument_list|)
+expr_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"added runtime complimentary ObjRelationship from "
+operator|+
+name|targetEntity
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" to "
+operator|+
+name|reverse
+operator|.
+name|getTargetEntityName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
