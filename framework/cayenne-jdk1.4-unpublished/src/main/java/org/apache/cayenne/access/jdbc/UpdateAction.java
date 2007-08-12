@@ -204,7 +204,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * @since 1.2  * @author Andrus Adamchik  * @deprecated since 3.0 as corresponding delete and update queries are deprecated.  */
 end_comment
 
 begin_class

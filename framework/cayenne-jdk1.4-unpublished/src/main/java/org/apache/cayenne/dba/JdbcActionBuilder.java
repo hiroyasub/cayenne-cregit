@@ -149,6 +149,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|DeleteQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|EJBQLQuery
 import|;
 end_import
@@ -234,6 +248,20 @@ operator|.
 name|query
 operator|.
 name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|UpdateQuery
 import|;
 end_import
 
@@ -390,6 +418,7 @@ name|adapter
 argument_list|)
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 as the corresponding {@link UpdateQuery} and      *             {@link DeleteQuery} queries are deprecated.      */
 specifier|public
 name|SQLAction
 name|updateAction

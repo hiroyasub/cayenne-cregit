@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|SQLActionVisitor
 block|{
-comment|/**      * Creates an action to execute a generic update query.      */
+comment|/**      * Creates an action to execute a generic update query.      *       * @deprecated since 3.0 as the corresponding {@link UpdateQuery} and      *             {@link DeleteQuery} queries are deprecated.      */
 name|SQLAction
 name|updateAction
 parameter_list|(

@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Object encapsulating an UPDATE statement. Note that updated attributes are expressed in  * terms of DbAttribute names.  */
+comment|/**  * Object encapsulating an UPDATE statement. Note that updated attributes are expressed in  * terms of DbAttribute names.  *   * @deprecated since 3.0. Should be replaced either with EJBQL update query or SQLTemplate.  */
 end_comment
 
 begin_class
