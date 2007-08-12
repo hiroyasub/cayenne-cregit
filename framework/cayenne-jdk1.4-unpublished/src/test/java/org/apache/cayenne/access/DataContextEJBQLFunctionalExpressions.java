@@ -109,6 +109,18 @@ name|org
 operator|.
 name|apache
 operator|.
+name|art
+operator|.
+name|Painting
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|cayenne
 operator|.
 name|ObjectContext
@@ -981,36 +993,203 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// public void testSIZE() {
-comment|// ObjectContext context = createDataContext();
-comment|//
-comment|// Artist a1 = (Artist) context.newObject(Artist.class);
-comment|// a1.setArtistName("a1");
-comment|//
-comment|// Artist a2 = (Artist) context.newObject(Artist.class);
-comment|// a2.setArtistName("a2");
-comment|//
-comment|// Painting p12 = (Painting) context.newObject(Painting.class);
-comment|// p12.setPaintingTitle("p12");
-comment|// a2.addToPaintingArray(p12);
-comment|// Painting p22 = (Painting) context.newObject(Painting.class);
-comment|// p22.setPaintingTitle("p22");
-comment|// a2.addToPaintingArray(p22);
-comment|//
-comment|// context.commitChanges();
-comment|//
-comment|// EJBQLQuery query = new EJBQLQuery(
-comment|// "SELECT d FROM Artist d WHERE SIZE(d.paintingArray) = 2");
-comment|// List objects = context.performQuery(query);
-comment|// assertEquals(1, objects.size());
-comment|// assertTrue(objects.contains(a2));
-comment|//
-comment|// EJBQLQuery query2 = new EJBQLQuery(
-comment|// "SELECT d FROM Artist d WHERE SIZE(d.paintingArray) = 0");
-comment|// List objects2 = context.performQuery(query2);
-comment|// assertEquals(1, objects2.size());
-comment|// assertTrue(objects2.contains(a1));
-comment|// }
+specifier|public
+name|void
+name|testSIZE
+parameter_list|()
+block|{
+name|ObjectContext
+name|context
+init|=
+name|createDataContext
+argument_list|()
+decl_stmt|;
+name|Artist
+name|a1
+init|=
+operator|(
+name|Artist
+operator|)
+name|context
+operator|.
+name|newObject
+argument_list|(
+name|Artist
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|a1
+operator|.
+name|setArtistName
+argument_list|(
+literal|"a1"
+argument_list|)
+expr_stmt|;
+name|Artist
+name|a2
+init|=
+operator|(
+name|Artist
+operator|)
+name|context
+operator|.
+name|newObject
+argument_list|(
+name|Artist
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|a2
+operator|.
+name|setArtistName
+argument_list|(
+literal|"a2"
+argument_list|)
+expr_stmt|;
+name|Painting
+name|p12
+init|=
+operator|(
+name|Painting
+operator|)
+name|context
+operator|.
+name|newObject
+argument_list|(
+name|Painting
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|p12
+operator|.
+name|setPaintingTitle
+argument_list|(
+literal|"p12"
+argument_list|)
+expr_stmt|;
+name|a2
+operator|.
+name|addToPaintingArray
+argument_list|(
+name|p12
+argument_list|)
+expr_stmt|;
+name|Painting
+name|p22
+init|=
+operator|(
+name|Painting
+operator|)
+name|context
+operator|.
+name|newObject
+argument_list|(
+name|Painting
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|p22
+operator|.
+name|setPaintingTitle
+argument_list|(
+literal|"p22"
+argument_list|)
+expr_stmt|;
+name|a2
+operator|.
+name|addToPaintingArray
+argument_list|(
+name|p22
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|commitChanges
+argument_list|()
+expr_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"SELECT d FROM Artist d WHERE SIZE(d.paintingArray) = 2"
+argument_list|)
+decl_stmt|;
+name|List
+name|objects
+init|=
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|objects
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|objects
+operator|.
+name|contains
+argument_list|(
+name|a2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|EJBQLQuery
+name|query2
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"SELECT d FROM Artist d WHERE SIZE(d.paintingArray) = 0"
+argument_list|)
+decl_stmt|;
+name|List
+name|objects2
+init|=
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query2
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|objects2
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|objects2
+operator|.
+name|contains
+argument_list|(
+name|a1
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|testCONCAT
