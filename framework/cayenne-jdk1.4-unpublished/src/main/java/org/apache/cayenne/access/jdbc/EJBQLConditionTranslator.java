@@ -635,6 +635,9 @@ parameter_list|)
 block|{
 comment|// run as a correlated subquery.
 comment|// see "visitMemberOf" for correlated subquery logic
+comment|// also note that the code below is mostly copy/paste from MEMBER OF method ...
+comment|// maybe there's enough commonality in building correlated subqueries to make it
+comment|// reusable???
 if|if
 condition|(
 name|expression
