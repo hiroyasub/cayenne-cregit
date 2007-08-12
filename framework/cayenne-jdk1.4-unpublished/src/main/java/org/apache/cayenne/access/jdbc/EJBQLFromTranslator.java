@@ -403,9 +403,6 @@ name|joinRelationship
 init|=
 name|context
 operator|.
-name|getCompiledExpression
-argument_list|()
-operator|.
 name|getIncomingRelationship
 argument_list|(
 name|rhsId
@@ -662,9 +659,6 @@ name|ClassDescriptor
 name|descriptor
 init|=
 name|context
-operator|.
-name|getCompiledExpression
-argument_list|()
 operator|.
 name|getEntityDescriptor
 argument_list|(

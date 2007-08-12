@@ -333,9 +333,6 @@ name|descriptor
 init|=
 name|context
 operator|.
-name|getCompiledExpression
-argument_list|()
-operator|.
 name|getEntityDescriptor
 argument_list|(
 name|idVar
