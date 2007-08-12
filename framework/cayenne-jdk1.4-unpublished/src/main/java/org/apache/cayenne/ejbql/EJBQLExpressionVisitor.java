@@ -93,6 +93,9 @@ name|visitAbs
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -189,6 +192,9 @@ name|visitConcat
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -424,6 +430,9 @@ name|visitLength
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 comment|/**      * Called on visiting "<=" expression and also after visiting every expression child.      *       * @param expression an "<=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
@@ -464,6 +473,9 @@ name|visitLocate
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -471,6 +483,9 @@ name|visitLower
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -499,6 +514,9 @@ name|visitMod
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 comment|/**      * Called on visiting "*" expression and also after visiting every expression child.      *       * @param expression an "*" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
@@ -648,6 +666,9 @@ name|visitSqrt
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -669,6 +690,9 @@ name|visitSubstring
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 comment|/**      * Called on visiting "subtract" expression and also after visiting every expression      * child.      *       * @param expression an "subtract" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
@@ -701,6 +725,9 @@ name|visitTrim
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean
@@ -770,6 +797,9 @@ name|visitUpper
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 function_decl|;
 name|boolean

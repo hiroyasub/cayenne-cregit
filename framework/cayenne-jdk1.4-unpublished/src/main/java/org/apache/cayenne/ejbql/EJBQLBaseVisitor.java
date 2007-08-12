@@ -124,6 +124,9 @@ name|visitAbs
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -277,6 +280,9 @@ name|visitConcat
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -658,6 +664,9 @@ name|visitLength
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -715,6 +724,9 @@ name|visitLocate
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -727,6 +739,9 @@ name|visitLower
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -775,6 +790,9 @@ name|visitMod
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1015,6 +1033,9 @@ name|visitSqrt
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1051,6 +1072,9 @@ name|visitSubstring
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1102,6 +1126,9 @@ name|visitTrim
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return
@@ -1216,6 +1243,9 @@ name|visitUpper
 parameter_list|(
 name|EJBQLExpression
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 return|return

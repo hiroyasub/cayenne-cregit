@@ -40,7 +40,7 @@ specifier|public
 class|class
 name|EJBQLTrimBoth
 extends|extends
-name|SimpleNode
+name|EJBQLTrimSpecification
 block|{
 specifier|public
 name|EJBQLTrimBoth
