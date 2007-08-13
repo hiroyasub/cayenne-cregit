@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcActionBuilder
 import|;
 end_import
 
@@ -83,7 +83,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|JdbcActionBuilder
+name|JdbcAdapter
 import|;
 end_import
 
@@ -141,7 +141,7 @@ name|JdbcActionBuilder
 block|{
 name|OpenBaseActionBuilder
 parameter_list|(
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver

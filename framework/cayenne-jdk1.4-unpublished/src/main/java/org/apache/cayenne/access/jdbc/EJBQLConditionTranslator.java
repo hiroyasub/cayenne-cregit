@@ -419,8 +419,12 @@ name|expression
 operator|.
 name|visit
 argument_list|(
-operator|new
-name|EJBQLAggregateColumnTranslator
+name|context
+operator|.
+name|getTranslatorFactory
+argument_list|()
+operator|.
+name|getAggregateColumnTranslator
 argument_list|(
 name|context
 argument_list|)

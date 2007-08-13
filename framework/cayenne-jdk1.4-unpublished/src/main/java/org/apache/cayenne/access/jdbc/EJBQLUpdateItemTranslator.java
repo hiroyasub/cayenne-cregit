@@ -65,7 +65,6 @@ name|EJBQLUpdateItemTranslator
 extends|extends
 name|EJBQLConditionTranslator
 block|{
-specifier|public
 name|EJBQLUpdateItemTranslator
 parameter_list|(
 name|EJBQLTranslationContext

@@ -187,6 +187,10 @@ argument_list|(
 name|select
 argument_list|,
 name|parameters
+argument_list|,
+operator|new
+name|JdbcEJBQLTranslatorFactory
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|select

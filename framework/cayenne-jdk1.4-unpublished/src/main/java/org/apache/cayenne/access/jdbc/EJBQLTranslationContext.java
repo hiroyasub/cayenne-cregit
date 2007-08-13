@@ -126,6 +126,7 @@ comment|/**  * A context used for translating of EJBQL to SQL.  *   * @since 3.0
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EJBQLTranslationContext
 block|{
@@ -169,12 +170,17 @@ specifier|private
 name|int
 name|columnAliasPosition
 decl_stmt|;
+specifier|private
+name|EJBQLTranslatorFactory
+name|translatorFactory
+decl_stmt|;
 comment|// a flag indicating whether column expressions should be treated as result columns or
 comment|// not.
 specifier|private
 name|boolean
 name|appendingResultColumns
 decl_stmt|;
+specifier|public
 name|EJBQLTranslationContext
 parameter_list|(
 name|EJBQLCompiledExpression
@@ -182,6 +188,9 @@ name|compiledExpression
 parameter_list|,
 name|Map
 name|parameters
+parameter_list|,
+name|EJBQLTranslatorFactory
+name|translatorFactory
 parameter_list|)
 block|{
 name|this
@@ -209,6 +218,12 @@ operator|.
 name|parameters
 operator|=
 name|parameters
+expr_stmt|;
+name|this
+operator|.
+name|translatorFactory
+operator|=
+name|translatorFactory
 expr_stmt|;
 block|}
 name|SQLTemplate
@@ -305,6 +320,14 @@ return|;
 block|}
 return|return
 name|id
+return|;
+block|}
+name|EJBQLTranslatorFactory
+name|getTranslatorFactory
+parameter_list|()
+block|{
+return|return
+name|translatorFactory
 return|;
 block|}
 comment|/**      * Looks up entity descriptor for an identifier that can be a compiled expression id      * or one of the aliases.      */
