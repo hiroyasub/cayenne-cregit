@@ -702,6 +702,26 @@ literal|' '
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|children
+index|[
+name|i
+index|]
+operator|==
+literal|null
+condition|)
+block|{
+name|pw
+operator|.
+name|print
+argument_list|(
+literal|"null"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 operator|(
 operator|(
 name|SimpleNode
@@ -717,6 +737,7 @@ argument_list|(
 name|pw
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
@@ -769,6 +790,8 @@ name|Object
 name|child
 parameter_list|)
 block|{
+comment|// when child is null, there's no way of telling whether this is a scalar or
+comment|// not... fuzzy... maybe we should stop using this method - it is too generic
 return|return
 operator|(
 name|child

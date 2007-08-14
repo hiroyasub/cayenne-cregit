@@ -151,6 +151,22 @@ name|exp
 operator|.
 name|parser
 operator|.
+name|ASTScalar
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
 name|ExpressionParser
 import|;
 end_import
@@ -953,6 +969,8 @@ name|name
 argument_list|)
 decl_stmt|;
 comment|// wrap lists (for now); also support null parameters
+comment|// TODO: andrus 8/14/2007 - shouldn't we also wrap non-null object
+comment|// values in ASTScalars?
 return|return
 operator|(
 name|value
@@ -967,7 +985,11 @@ argument_list|(
 name|value
 argument_list|)
 else|:
+operator|new
+name|ASTScalar
+argument_list|(
 literal|null
+argument_list|)
 return|;
 block|}
 block|}

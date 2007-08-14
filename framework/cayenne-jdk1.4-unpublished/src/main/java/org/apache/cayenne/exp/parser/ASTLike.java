@@ -112,7 +112,8 @@ argument_list|)
 expr_stmt|;
 name|jjtAddChild
 argument_list|(
-name|wrapChild
+operator|new
+name|ASTScalar
 argument_list|(
 name|pattern
 argument_list|)
