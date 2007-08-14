@@ -1637,6 +1637,22 @@ argument_list|()
 decl_stmt|;
 comment|// find committed snapshot - so we can't fetch from the context as it will return
 comment|// dirty snapshot; must go down the stack instead
+comment|// how do we handle this for NEW objects correctly? For now bail from the method
+if|if
+condition|(
+name|object
+operator|.
+name|getObjectId
+argument_list|()
+operator|.
+name|isTemporary
+argument_list|()
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|ObjectIdQuery
 name|query
 init|=
