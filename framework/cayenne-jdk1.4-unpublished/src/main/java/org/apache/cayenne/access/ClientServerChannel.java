@@ -152,6 +152,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Creates a ClientServerChannel that wraps a specified DataContext.      *       * @since 3.0      */
+specifier|public
 name|ClientServerChannel
 parameter_list|(
 name|DataContext
