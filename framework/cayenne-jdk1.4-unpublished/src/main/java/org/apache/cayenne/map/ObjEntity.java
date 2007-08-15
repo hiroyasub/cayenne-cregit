@@ -861,7 +861,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// copy relationships
+comment|// copy relationships; skip runtime generated relationships
 name|Iterator
 name|relationships
 init|=
@@ -890,6 +890,15 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|relationship
+operator|.
+name|isRuntime
+argument_list|()
+condition|)
+block|{
 name|entity
 operator|.
 name|addRelationship
@@ -900,6 +909,7 @@ name|getClientRelationship
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|// TODO: andrus 2/5/2007 - copy embeddables
 comment|// TODO: andrus 2/5/2007 - copy listeners and callback methods
