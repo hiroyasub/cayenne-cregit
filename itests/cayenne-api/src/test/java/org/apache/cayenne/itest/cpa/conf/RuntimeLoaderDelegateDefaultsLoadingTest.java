@@ -154,7 +154,8 @@ block|{
 name|DbEntity
 name|table1
 init|=
-name|context
+name|getContext
+argument_list|()
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -167,7 +168,8 @@ decl_stmt|;
 name|DbEntity
 name|table2
 init|=
-name|context
+name|getContext
+argument_list|()
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -222,7 +224,8 @@ block|{
 name|ObjEntity
 name|class1
 init|=
-name|context
+name|getContext
+argument_list|()
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -235,7 +238,8 @@ decl_stmt|;
 name|ObjEntity
 name|class2
 init|=
-name|context
+name|getContext
+argument_list|()
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -367,7 +371,8 @@ name|DataObjectUtils
 operator|.
 name|objectForPK
 argument_list|(
-name|context
+name|getContext
+argument_list|()
 argument_list|,
 name|DefaultsTable2
 operator|.
@@ -400,7 +405,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testUpdateImplicitToMany
+name|testUpdateImplicitToOne
 parameter_list|()
 throws|throws
 name|Exception
@@ -509,7 +514,8 @@ name|DataObjectUtils
 operator|.
 name|objectForPK
 argument_list|(
-name|context
+name|getContext
+argument_list|()
 argument_list|,
 name|DefaultsTable4
 operator|.
@@ -528,7 +534,8 @@ name|DataObjectUtils
 operator|.
 name|objectForPK
 argument_list|(
-name|context
+name|getContext
+argument_list|()
 argument_list|,
 name|DefaultsTable3
 operator|.
@@ -547,7 +554,8 @@ name|DataObjectUtils
 operator|.
 name|objectForPK
 argument_list|(
-name|context
+name|getContext
+argument_list|()
 argument_list|,
 name|DefaultsTable3
 operator|.
@@ -602,7 +610,8 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|getContext
+argument_list|()
 operator|.
 name|commitChanges
 argument_list|()
@@ -620,7 +629,8 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|getContext
+argument_list|()
 operator|.
 name|performQuery
 argument_list|(
