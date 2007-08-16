@@ -123,6 +123,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|DataObjectUtils
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectContext
 import|;
 end_import
@@ -138,6 +150,34 @@ operator|.
 name|query
 operator|.
 name|EJBQLQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryChain
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SQLTemplate
 import|;
 end_import
 
@@ -1907,55 +1947,89 @@ init|=
 name|createDataContext
 argument_list|()
 decl_stmt|;
-name|Artist
-name|a1
+comment|// insert via a SQL template to prevent adapter trimming and such...
+name|QueryChain
+name|inserts
 init|=
-operator|(
-name|Artist
-operator|)
-name|context
-operator|.
-name|newObject
-argument_list|(
-name|Artist
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-name|a1
-operator|.
-name|setArtistName
-argument_list|(
-literal|"  A"
-argument_list|)
-expr_stmt|;
-name|Artist
-name|a2
-init|=
-operator|(
-name|Artist
-operator|)
-name|context
-operator|.
-name|newObject
-argument_list|(
-name|Artist
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-name|a2
-operator|.
-name|setArtistName
-argument_list|(
-literal|"A  "
-argument_list|)
-expr_stmt|;
-name|context
-operator|.
-name|commitChanges
+operator|new
+name|QueryChain
 argument_list|()
+decl_stmt|;
+name|inserts
+operator|.
+name|addQuery
+argument_list|(
+operator|new
+name|SQLTemplate
+argument_list|(
+name|Artist
+operator|.
+name|class
+argument_list|,
+literal|"INSERT INTO ARTIST (ARTIST_ID,ARTIST_NAME) VALUES(1, '  A')"
+argument_list|)
+argument_list|)
 expr_stmt|;
+name|inserts
+operator|.
+name|addQuery
+argument_list|(
+operator|new
+name|SQLTemplate
+argument_list|(
+name|Artist
+operator|.
+name|class
+argument_list|,
+literal|"INSERT INTO ARTIST (ARTIST_ID,ARTIST_NAME) VALUES(2, 'A  ')"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|performGenericQuery
+argument_list|(
+name|inserts
+argument_list|)
+expr_stmt|;
+name|Artist
+name|a1
+init|=
+operator|(
+name|Artist
+operator|)
+name|DataObjectUtils
+operator|.
+name|objectForPK
+argument_list|(
+name|context
+argument_list|,
+name|Artist
+operator|.
+name|class
+argument_list|,
+literal|1
+argument_list|)
+decl_stmt|;
+name|Artist
+name|a2
+init|=
+operator|(
+name|Artist
+operator|)
+name|DataObjectUtils
+operator|.
+name|objectForPK
+argument_list|(
+name|context
+argument_list|,
+name|Artist
+operator|.
+name|class
+argument_list|,
+literal|2
+argument_list|)
+decl_stmt|;
 name|EJBQLQuery
 name|query
 init|=
@@ -2022,14 +2096,22 @@ argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
-name|assertEquals
+comment|// this is fuzzy cause some DB trim trailing data by default
+name|assertTrue
 argument_list|(
-literal|1
-argument_list|,
 name|objects
 operator|.
 name|size
 argument_list|()
+operator|==
+literal|1
+operator|||
+name|objects
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|2
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -2127,42 +2209,42 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|//    public void testTRIMChar() {
-comment|//        ObjectContext context = createDataContext();
+comment|// public void testTRIMChar() {
+comment|// ObjectContext context = createDataContext();
 comment|//
-comment|//        Artist a1 = (Artist) context.newObject(Artist.class);
-comment|//        a1.setArtistName("XXXA");
+comment|// Artist a1 = (Artist) context.newObject(Artist.class);
+comment|// a1.setArtistName("XXXA");
 comment|//
-comment|//        Artist a2 = (Artist) context.newObject(Artist.class);
-comment|//        a2.setArtistName("AXXX");
-comment|//        context.commitChanges();
+comment|// Artist a2 = (Artist) context.newObject(Artist.class);
+comment|// a2.setArtistName("AXXX");
+comment|// context.commitChanges();
 comment|//
-comment|//        EJBQLQuery query = new EJBQLQuery(
-comment|//                "SELECT a FROM Artist a WHERE TRIM('X' FROM a.artistName) = 'A'");
-comment|//        List objects = context.performQuery(query);
-comment|//        assertEquals(2, objects.size());
-comment|//        assertTrue(objects.contains(a1));
-comment|//        assertTrue(objects.contains(a2));
+comment|// EJBQLQuery query = new EJBQLQuery(
+comment|// "SELECT a FROM Artist a WHERE TRIM('X' FROM a.artistName) = 'A'");
+comment|// List objects = context.performQuery(query);
+comment|// assertEquals(2, objects.size());
+comment|// assertTrue(objects.contains(a1));
+comment|// assertTrue(objects.contains(a2));
 comment|//
-comment|//        query = new EJBQLQuery(
-comment|//                "SELECT a FROM Artist a WHERE TRIM(LEADING 'X' FROM a.artistName) = 'A'");
-comment|//        objects = context.performQuery(query);
-comment|//        assertEquals(1, objects.size());
-comment|//        assertTrue(objects.contains(a1));
+comment|// query = new EJBQLQuery(
+comment|// "SELECT a FROM Artist a WHERE TRIM(LEADING 'X' FROM a.artistName) = 'A'");
+comment|// objects = context.performQuery(query);
+comment|// assertEquals(1, objects.size());
+comment|// assertTrue(objects.contains(a1));
 comment|//
-comment|//        query = new EJBQLQuery(
-comment|//                "SELECT a FROM Artist a WHERE TRIM(TRAILING 'X' FROM a.artistName) = 'A'");
-comment|//        objects = context.performQuery(query);
-comment|//        assertEquals(1, objects.size());
-comment|//        assertTrue(objects.contains(a2));
+comment|// query = new EJBQLQuery(
+comment|// "SELECT a FROM Artist a WHERE TRIM(TRAILING 'X' FROM a.artistName) = 'A'");
+comment|// objects = context.performQuery(query);
+comment|// assertEquals(1, objects.size());
+comment|// assertTrue(objects.contains(a2));
 comment|//
-comment|//        query = new EJBQLQuery(
-comment|//                "SELECT a FROM Artist a WHERE TRIM(BOTH 'X' FROM a.artistName) = 'A'");
-comment|//        objects = context.performQuery(query);
-comment|//        assertEquals(2, objects.size());
-comment|//        assertTrue(objects.contains(a1));
-comment|//        assertTrue(objects.contains(a2));
-comment|//    }
+comment|// query = new EJBQLQuery(
+comment|// "SELECT a FROM Artist a WHERE TRIM(BOTH 'X' FROM a.artistName) = 'A'");
+comment|// objects = context.performQuery(query);
+comment|// assertEquals(2, objects.size());
+comment|// assertTrue(objects.contains(a1));
+comment|// assertTrue(objects.contains(a2));
+comment|// }
 block|}
 end_class
 
