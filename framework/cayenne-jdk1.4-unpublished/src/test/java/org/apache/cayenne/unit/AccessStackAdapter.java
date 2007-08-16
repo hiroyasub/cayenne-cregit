@@ -604,6 +604,16 @@ return|return
 literal|true
 return|;
 block|}
+comment|/**      * Returns whether the DB supports a TRIM function for an arbitrary character.      */
+specifier|public
+name|boolean
+name|supportsTrimChar
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 comment|/**      * Returns false if stored procedures are not supported or if it is a victim of      * CAY-148 (column name capitalization).      */
 specifier|public
 name|boolean

@@ -350,6 +350,7 @@ comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EJBQLConditionTranslator
 extends|extends
@@ -363,6 +364,7 @@ specifier|protected
 name|List
 name|multiColumnOperands
 decl_stmt|;
+specifier|public
 name|EJBQLConditionTranslator
 parameter_list|(
 name|EJBQLTranslationContext
@@ -3658,13 +3660,36 @@ name|expression
 parameter_list|)
 block|{
 comment|// this is expected to be overwritten in adapter-specific translators
+if|if
+condition|(
+operator|!
+literal|"' '"
+operator|.
+name|equals
+argument_list|(
+name|expression
+operator|.
+name|getText
+argument_list|()
+argument_list|)
+condition|)
+block|{
 throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"Not implemented in a generic translator"
+literal|"TRIM character other than space is not supported by a generic adapter: "
+operator|+
+name|expression
+operator|.
+name|getText
+argument_list|()
 argument_list|)
 throw|;
+block|}
+return|return
+literal|false
+return|;
 block|}
 specifier|public
 name|boolean

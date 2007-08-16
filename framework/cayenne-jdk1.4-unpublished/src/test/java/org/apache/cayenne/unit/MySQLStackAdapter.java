@@ -194,6 +194,15 @@ literal|true
 return|;
 block|}
 specifier|public
+name|boolean
+name|supportsTrimChar
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
+specifier|public
 name|void
 name|createdTables
 parameter_list|(
