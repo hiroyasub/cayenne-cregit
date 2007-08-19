@@ -456,9 +456,32 @@ literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 8/15/2007 this fails
-comment|// assertEquals(1, o2.getDefaultTable4s().size());
-comment|// assertEquals(0, o1.getDefaultTable4s().size());
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|o2
+operator|.
+name|getDefaultTable4s
+argument_list|()
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|0
+argument_list|,
+name|o1
+operator|.
+name|getDefaultTable4s
+argument_list|()
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
