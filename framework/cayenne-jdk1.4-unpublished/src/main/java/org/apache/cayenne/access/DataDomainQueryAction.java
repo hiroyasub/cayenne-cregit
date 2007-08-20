@@ -1227,6 +1227,16 @@ argument_list|()
 condition|)
 block|{
 comment|// not sending any events - peer contexts will not get refreshed
+if|if
+condition|(
+name|domain
+operator|.
+name|getSharedSnapshotCache
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|domain
 operator|.
 name|getSharedSnapshotCache
@@ -1235,6 +1245,7 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+block|}
 name|context
 operator|.
 name|getQueryCache
