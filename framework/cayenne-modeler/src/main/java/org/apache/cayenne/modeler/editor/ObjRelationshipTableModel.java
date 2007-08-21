@@ -208,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Table model to display ObjRelationships.   *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Table model to display ObjRelationships.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -386,7 +386,7 @@ case|:
 return|return
 literal|"Delete Rule"
 return|;
-default|default :
+default|default:
 return|return
 literal|null
 return|;
@@ -421,7 +421,7 @@ name|Boolean
 operator|.
 name|class
 return|;
-default|default :
+default|default:
 return|return
 name|String
 operator|.
@@ -565,6 +565,58 @@ operator|+=
 literal|", read-only"
 expr_stmt|;
 block|}
+name|String
+name|collection
+init|=
+literal|"list"
+decl_stmt|;
+if|if
+condition|(
+name|relationship
+operator|.
+name|getCollectionType
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|int
+name|dot
+init|=
+name|relationship
+operator|.
+name|getCollectionType
+argument_list|()
+operator|.
+name|lastIndexOf
+argument_list|(
+literal|'.'
+argument_list|)
+decl_stmt|;
+name|collection
+operator|=
+name|relationship
+operator|.
+name|getCollectionType
+argument_list|()
+operator|.
+name|substring
+argument_list|(
+name|dot
+operator|+
+literal|1
+argument_list|)
+operator|.
+name|toLowerCase
+argument_list|()
+expr_stmt|;
+block|}
+name|semantics
+operator|+=
+literal|", "
+operator|+
+name|collection
+expr_stmt|;
 return|return
 name|semantics
 return|;

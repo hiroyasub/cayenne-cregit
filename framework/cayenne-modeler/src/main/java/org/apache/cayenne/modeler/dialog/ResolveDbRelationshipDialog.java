@@ -43,6 +43,16 @@ name|java
 operator|.
 name|awt
 operator|.
+name|FlowLayout
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
 name|event
 operator|.
 name|ActionEvent
@@ -148,6 +158,16 @@ operator|.
 name|swing
 operator|.
 name|JOptionPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JPanel
 import|;
 end_import
 
@@ -679,7 +699,7 @@ argument_list|(
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:max(50dlu;pref), 3dlu, fill:min(150dlu;pref), 3dlu, fill:min(150dlu;pref)"
+literal|"right:max(50dlu;pref), 3dlu, fill:min(150dlu;pref), 3dlu, fill:min(50dlu;pref)"
 argument_list|,
 literal|"p, 3dlu, p, 3dlu, p, 9dlu, p, 3dlu, top:14dlu, 3dlu, top:p:grow"
 argument_list|)
@@ -828,11 +848,40 @@ literal|"fill, fill"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|builder
+name|JPanel
+name|buttons
+init|=
+operator|new
+name|JPanel
+argument_list|(
+operator|new
+name|FlowLayout
+argument_list|(
+name|FlowLayout
+operator|.
+name|LEADING
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|buttons
 operator|.
 name|add
 argument_list|(
 name|addButton
+argument_list|)
+expr_stmt|;
+name|buttons
+operator|.
+name|add
+argument_list|(
+name|removeButton
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|add
+argument_list|(
+name|buttons
 argument_list|,
 name|cc
 operator|.
@@ -844,27 +893,7 @@ literal|9
 argument_list|,
 literal|1
 argument_list|,
-literal|1
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|add
-argument_list|(
-name|removeButton
-argument_list|,
-name|cc
-operator|.
-name|xywh
-argument_list|(
-literal|5
-argument_list|,
-literal|11
-argument_list|,
-literal|1
-argument_list|,
-literal|1
+literal|3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -983,7 +1012,7 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// Once assigned, can reference relationship directly.  Would it be
+comment|// Once assigned, can reference relationship directly. Would it be
 comment|// OK to assign relationship at the very top of this method?
 name|relationship
 operator|=
