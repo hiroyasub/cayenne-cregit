@@ -539,6 +539,7 @@ name|Map
 name|properties
 parameter_list|)
 block|{
+comment|// keeping deprecated fault singletons for backwards compatibility
 name|DataContextFaults
 operator|.
 name|init

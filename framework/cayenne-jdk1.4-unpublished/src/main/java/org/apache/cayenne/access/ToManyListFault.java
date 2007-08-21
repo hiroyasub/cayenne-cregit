@@ -40,58 +40,17 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that initializes server-side fault singletons.  *   * @since 1.2  * @deprecated since 3.0 as the fault singletons are no longer static and are managed by  *             the Cayenne configuration.  * @author Andrus Adamchik  */
+comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
+specifier|public
 class|class
-name|DataContextFaults
+name|ToManyListFault
 extends|extends
 name|Fault
 block|{
-comment|/**      * Resets super singletons.      */
-specifier|static
-name|void
-name|init
-parameter_list|()
-block|{
-if|if
-condition|(
-name|Fault
-operator|.
-name|toManyFault
-operator|==
-literal|null
-condition|)
-block|{
-name|Fault
-operator|.
-name|toManyFault
-operator|=
-operator|new
-name|ToManyListFault
-argument_list|()
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|Fault
-operator|.
-name|toOneFault
-operator|==
-literal|null
-condition|)
-block|{
-name|Fault
-operator|.
-name|toOneFault
-operator|=
-operator|new
-name|ToOneFault
-argument_list|()
-expr_stmt|;
-block|}
-block|}
+comment|/**      * Resolves this fault to a List of objects.      */
 specifier|public
 name|Object
 name|resolveFault
@@ -103,11 +62,15 @@ name|String
 name|relationshipName
 parameter_list|)
 block|{
-throw|throw
+return|return
 operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+name|ToManyList
+argument_list|(
+name|sourceObject
+argument_list|,
+name|relationshipName
+argument_list|)
+return|;
 block|}
 block|}
 end_class

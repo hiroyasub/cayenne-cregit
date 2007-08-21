@@ -183,7 +183,35 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
+name|FaultFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|reflect
+operator|.
 name|LifecycleCallbackRegistry
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|reflect
+operator|.
+name|SingletonFaultFactory
 import|;
 end_import
 
@@ -2940,6 +2968,13 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+name|FaultFactory
+name|faultFactory
+init|=
+operator|new
+name|SingletonFaultFactory
+argument_list|()
+decl_stmt|;
 comment|// add factories in reverse of the desired chain order
 name|classDescriptorMap
 operator|.
@@ -2960,6 +2995,8 @@ operator|new
 name|EnhancedPojoDescriptorFactory
 argument_list|(
 name|classDescriptorMap
+argument_list|,
+name|faultFactory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2971,6 +3008,8 @@ operator|new
 name|DataObjectDescriptorFactory
 argument_list|(
 name|classDescriptorMap
+argument_list|,
+name|faultFactory
 argument_list|)
 argument_list|)
 expr_stmt|;

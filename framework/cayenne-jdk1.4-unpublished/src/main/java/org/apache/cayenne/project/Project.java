@@ -135,7 +135,7 @@ specifier|final
 name|String
 name|CURRENT_PROJECT_VERSION
 init|=
-literal|"2.0"
+literal|"3.0"
 decl_stmt|;
 specifier|static
 specifier|final

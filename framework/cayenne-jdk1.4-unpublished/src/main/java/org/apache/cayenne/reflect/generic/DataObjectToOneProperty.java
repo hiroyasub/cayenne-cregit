@@ -137,6 +137,10 @@ specifier|protected
 name|ClassDescriptor
 name|targetDescriptor
 decl_stmt|;
+specifier|protected
+name|Fault
+name|fault
+decl_stmt|;
 name|DataObjectToOneProperty
 parameter_list|(
 name|ObjRelationship
@@ -144,6 +148,9 @@ name|relationship
 parameter_list|,
 name|ClassDescriptor
 name|targetDescriptor
+parameter_list|,
+name|Fault
+name|fault
 parameter_list|)
 block|{
 name|this
@@ -166,6 +173,12 @@ name|relationship
 operator|.
 name|getReverseRelationshipName
 argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|fault
+operator|=
+name|fault
 expr_stmt|;
 block|}
 specifier|public
@@ -339,10 +352,7 @@ name|object
 argument_list|,
 literal|null
 argument_list|,
-name|Fault
-operator|.
-name|getToOneFault
-argument_list|()
+name|fault
 argument_list|)
 expr_stmt|;
 block|}

@@ -27,14 +27,6 @@ begin_comment
 comment|/**  * Represents a placeholder for an unresolved relationship from a source object. Fault is  * resolved via {@link #resolveFault(Persistent, String)}. Depending on the type of fault  * it is resolved differently. Each type of fault is a singleton that can be obtained via  * corresponding static method.  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
 
-begin_comment
-comment|// TODO: serialization of faults should take into account the fact that
-end_comment
-
-begin_comment
-comment|// they are used as singletons to avoid duplicate creation on deserialization
-end_comment
-
 begin_class
 specifier|public
 specifier|abstract
@@ -43,16 +35,19 @@ name|Fault
 implements|implements
 name|Serializable
 block|{
+comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
 specifier|protected
 specifier|static
 name|Fault
 name|toOneFault
 decl_stmt|;
+comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
 specifier|protected
 specifier|static
 name|Fault
 name|toManyFault
 decl_stmt|;
+comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
 specifier|public
 specifier|static
 name|Fault
@@ -63,6 +58,7 @@ return|return
 name|toOneFault
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
 specifier|public
 specifier|static
 name|Fault
