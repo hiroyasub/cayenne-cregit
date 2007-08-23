@@ -934,6 +934,14 @@ operator|.
 name|list
 argument_list|()
 decl_stmt|;
+comment|// list can be null if directory doesn't have an 'x' permission bit set for the user
+if|if
+condition|(
+name|list
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|int
@@ -973,6 +981,7 @@ condition|)
 return|return
 literal|false
 return|;
+block|}
 block|}
 return|return
 name|file
