@@ -451,7 +451,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|"jdbc:oracle:thin:@localhost:1521:database"
+literal|"jdbc:oracle:thin:@//localhost:1521/database"
 argument_list|)
 expr_stmt|;
 name|adapterToJDBCURLMap
