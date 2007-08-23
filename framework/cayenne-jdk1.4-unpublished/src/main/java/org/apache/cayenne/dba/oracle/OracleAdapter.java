@@ -378,7 +378,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  *<a target="_top" href="../../../../../../../developerguide/unit-tests.html">connection  * settings</a> to use with Oracle are shown below:  *   *<pre>  *          *           *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@192.168.0.20:1521:ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *            *           *</pre>  *   * @author Andrus Adamchik  */
+comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  *<a target="_top" href="../../../../../../../developerguide/unit-tests.html">connection  * settings</a> to use with Oracle are shown below:  *   *<pre>  *          *           *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *            *           *</pre>  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
