@@ -218,7 +218,7 @@ expr_stmt|;
 block|}
 comment|// perform maintenance of the given invocations set, as failure to do that can
 comment|// result in a memory leak per CAY-770. This seemed to happen when lots of
-comment|// invocations got registered, but no events where dispatched (hence the stale
+comment|// invocations got registered, but no events were dispatched (hence the stale
 comment|// inocation removal during dispatch did not happen)
 name|Iterator
 name|it
