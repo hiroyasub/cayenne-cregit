@@ -759,6 +759,9 @@ name|visitFromItem
 parameter_list|(
 name|EJBQLFromItem
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 name|expression
@@ -917,43 +920,27 @@ name|entityName
 decl_stmt|;
 specifier|public
 name|boolean
-name|visitIdentificationVariable
+name|visitFromItem
 parameter_list|(
-name|EJBQLExpression
+name|EJBQLFromItem
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
-name|entityName
-operator|=
+if|if
+condition|(
+name|finishedChildIndex
+operator|+
+literal|1
+operator|==
 name|expression
 operator|.
-name|getText
+name|getChildrenCount
 argument_list|()
-expr_stmt|;
-return|return
-literal|true
-return|;
-block|}
-specifier|public
-name|boolean
-name|visitIdentifier
-parameter_list|(
-name|EJBQLExpression
-name|expression
-parameter_list|)
+condition|)
 block|{
-comment|// per JPA spec, 4.4.2, "Identification variables are case insensitive."
-name|String
-name|rootId
-init|=
-name|normalizeIdPath
-argument_list|(
-name|expression
-operator|.
-name|getText
-argument_list|()
-argument_list|)
-decl_stmt|;
 comment|// resolve class descriptor
 name|ClassDescriptor
 name|descriptor
@@ -982,6 +969,18 @@ name|entityName
 argument_list|)
 throw|;
 block|}
+comment|// per JPA spec, 4.4.2, "Identification variables are case insensitive."
+name|String
+name|id
+init|=
+name|normalizeIdPath
+argument_list|(
+name|expression
+operator|.
+name|getId
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|ClassDescriptor
 name|old
 init|=
@@ -992,7 +991,7 @@ name|descriptorsById
 operator|.
 name|put
 argument_list|(
-name|rootId
+name|id
 argument_list|,
 name|descriptor
 argument_list|)
@@ -1014,7 +1013,7 @@ name|EJBQLException
 argument_list|(
 literal|"Duplicate identification variable definition: "
 operator|+
-name|rootId
+name|id
 operator|+
 literal|", it is already used for "
 operator|+
@@ -1028,7 +1027,8 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// if root wasn't detected in the Select Clause, use the first id var as root
+comment|// if root wasn't detected in the Select Clause, use the first id var as
+comment|// root
 if|if
 condition|(
 name|Compiler
@@ -1046,9 +1046,35 @@ name|this
 operator|.
 name|rootId
 operator|=
-name|rootId
+name|id
 expr_stmt|;
 block|}
+name|this
+operator|.
+name|entityName
+operator|=
+literal|null
+expr_stmt|;
+block|}
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitIdentificationVariable
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+name|entityName
+operator|=
+name|expression
+operator|.
+name|getText
+argument_list|()
+expr_stmt|;
 return|return
 literal|true
 return|;

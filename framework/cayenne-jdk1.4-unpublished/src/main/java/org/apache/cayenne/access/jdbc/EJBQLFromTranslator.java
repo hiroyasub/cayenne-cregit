@@ -259,6 +259,9 @@ name|visitFromItem
 parameter_list|(
 name|EJBQLFromItem
 name|expression
+parameter_list|,
+name|int
+name|finishedChildIndex
 parameter_list|)
 block|{
 name|String
