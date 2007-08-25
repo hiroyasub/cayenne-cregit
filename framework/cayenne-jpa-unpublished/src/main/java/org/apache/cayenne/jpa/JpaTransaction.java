@@ -107,9 +107,6 @@ decl_stmt|;
 specifier|public
 name|JpaTransaction
 parameter_list|(
-name|Transaction
-name|transaction
-parameter_list|,
 name|EntityManager
 name|entityManager
 parameter_list|)
@@ -120,11 +117,26 @@ name|entityManager
 operator|=
 name|entityManager
 expr_stmt|;
+name|reset
+argument_list|()
+expr_stmt|;
+block|}
+comment|/**      * Creates a new internal Cayenne transaction.      */
+specifier|protected
+name|void
+name|reset
+parameter_list|()
+block|{
 name|this
 operator|.
 name|transaction
 operator|=
-name|transaction
+name|Transaction
+operator|.
+name|internalTransaction
+argument_list|(
+literal|null
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Start a resource transaction.      *       * @throws IllegalStateException if isActive() is true.      */
@@ -225,6 +237,9 @@ name|e
 argument_list|)
 throw|;
 block|}
+name|reset
+argument_list|()
+expr_stmt|;
 block|}
 comment|/**      * Roll back the current transaction.      *       * @throws IllegalStateException if isActive() is false.      * @throws PersistenceException if an unexpected error condition is encountered.      */
 specifier|public
@@ -293,6 +308,9 @@ name|e
 argument_list|)
 throw|;
 block|}
+name|reset
+argument_list|()
+expr_stmt|;
 block|}
 comment|/**      * Indicate whether a transaction is in progress.      *       * @throws PersistenceException if an unexpected error condition is encountered.      */
 specifier|public
