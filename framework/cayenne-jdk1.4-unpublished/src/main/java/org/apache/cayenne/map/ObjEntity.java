@@ -911,6 +911,8 @@ operator|.
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
+comment|// note that 'isClientAllowed' also checks parent DataMap client policy
+comment|// that can be handy in case of cross-map relationships
 if|if
 condition|(
 name|targetEntity
