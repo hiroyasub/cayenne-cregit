@@ -200,7 +200,9 @@ name|ClassWriter
 argument_list|(
 name|reader
 argument_list|,
-literal|true
+name|ClassWriter
+operator|.
+name|COMPUTE_FRAMES
 argument_list|)
 decl_stmt|;
 name|ClassVisitor
@@ -242,7 +244,7 @@ name|accept
 argument_list|(
 name|visitor
 argument_list|,
-literal|true
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
