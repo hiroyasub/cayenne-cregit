@@ -192,6 +192,8 @@ argument_list|(
 name|classfileBuffer
 argument_list|)
 decl_stmt|;
+comment|// optimization note: per ASM docs COMPUTE_FRAMES makes code generation 2x slower,
+comment|// so we may investigate manual computation options, although that's likely a pain.
 name|ClassWriter
 name|writer
 init|=
