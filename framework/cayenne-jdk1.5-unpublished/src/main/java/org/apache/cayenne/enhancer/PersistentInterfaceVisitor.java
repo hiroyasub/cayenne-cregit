@@ -177,6 +177,15 @@ argument_list|,
 name|interfaces
 argument_list|)
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|visitEnd
+parameter_list|()
+block|{
+comment|// per ASM docs, 'visitEnd' is the only correct place to add class members
 name|helper
 operator|.
 name|createProperty
