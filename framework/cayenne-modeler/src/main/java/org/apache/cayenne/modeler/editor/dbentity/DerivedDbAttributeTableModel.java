@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Table model for derived DbAttributes.  *   * @author Andrus Adamchik  */
+comment|/**  * Table model for derived DbAttributes.  *   * @author Andrus Adamchik  * @deprecated since 3.0M2 (scheduled for removal in 3.0M3)  */
 end_comment
 
 begin_class

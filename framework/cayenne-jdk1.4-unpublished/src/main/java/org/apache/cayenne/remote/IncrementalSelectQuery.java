@@ -676,6 +676,7 @@ name|prefetchPath
 argument_list|)
 return|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|andParentQualifier
@@ -882,6 +883,7 @@ name|getPageSize
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|String
 name|getParentObjEntityName
@@ -894,6 +896,7 @@ name|getParentObjEntityName
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|Expression
 name|getParentQualifier
@@ -1006,6 +1009,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|boolean
 name|isQualifiedOnParent
@@ -1042,6 +1046,7 @@ name|isResolvingInherited
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|orParentQualifier
@@ -1284,6 +1289,7 @@ name|pageSize
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|setParentObjEntityName
@@ -1300,6 +1306,7 @@ name|parentObjEntityName
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|setParentQualifier

@@ -258,10 +258,12 @@ specifier|protected
 name|boolean
 name|distinct
 decl_stmt|;
+comment|/**      * since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|protected
 name|Expression
 name|parentQualifier
 decl_stmt|;
+comment|/**      * since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|protected
 name|String
 name|parentObjEntityName
@@ -1802,7 +1804,7 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Setter for query's parent entity qualifier. */
+comment|/**       * Setter for query's parent entity qualifier.       *       * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|setParentQualifier
@@ -1818,7 +1820,7 @@ operator|=
 name|parentQualifier
 expr_stmt|;
 block|}
-comment|/** Getter for query parent entity qualifier. */
+comment|/**       * Getter for query parent entity qualifier.       *       * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|Expression
 name|getParentQualifier
@@ -1828,7 +1830,7 @@ return|return
 name|parentQualifier
 return|;
 block|}
-comment|/**      * Adds specified parent entity qualifier to the existing parent entity qualifier      * joining it using "AND".      */
+comment|/**      * Adds specified parent entity qualifier to the existing parent entity qualifier      * joining it using "AND".      *       * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|andParentQualifier
@@ -1855,7 +1857,7 @@ else|:
 name|e
 expr_stmt|;
 block|}
-comment|/**      * Adds specified parent entity qualifier to the existing qualifier joining it using      * "OR".      */
+comment|/**      * Adds specified parent entity qualifier to the existing qualifier joining it using      * "OR".      *       * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|orParentQualifier
@@ -1882,7 +1884,7 @@ else|:
 name|e
 expr_stmt|;
 block|}
-comment|/**      * Returns the name of parent ObjEntity.      *       * @return String      */
+comment|/**      * Returns the name of parent ObjEntity.      *       * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|String
 name|getParentObjEntityName
@@ -1892,7 +1894,7 @@ return|return
 name|parentObjEntityName
 return|;
 block|}
-comment|/**      * Sets the name of parent ObjEntity. If query's root ObjEntity maps to a derived      * entity in the DataMap, this query qualifier will resolve to a HAVING clause of an      * SQL statement. To allow fine tuning the query before applying GROUP BY and HAVING,      * callers can setup the name of parent ObjEntity and parent qualifier that will be      * used to create WHERE clause preceeding GROUP BY.      *<p>      * For instance this is helpful to qualify the fetch on a related entity attributes,      * since HAVING does not allow joins.      *</p>      *       * @param parentObjEntityName The parentObjEntityName to set      */
+comment|/**      * Sets the name of parent ObjEntity. If query's root ObjEntity maps to a derived      * entity in the DataMap, this query qualifier will resolve to a HAVING clause of an      * SQL statement. To allow fine tuning the query before applying GROUP BY and HAVING,      * callers can setup the name of parent ObjEntity and parent qualifier that will be      * used to create WHERE clause preceeding GROUP BY.      *<p>      * For instance this is helpful to qualify the fetch on a related entity attributes,      * since HAVING does not allow joins.      *</p>      *       * @param parentObjEntityName The parentObjEntityName to set      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|void
 name|setParentObjEntityName
@@ -1908,7 +1910,7 @@ operator|=
 name|parentObjEntityName
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if this query has an extra qualifier that uses a parent      * entity of the query root entity for additional result filtering.      */
+comment|/**      * Returns<code>true</code> if this query has an extra qualifier that uses a parent      * entity of the query root entity for additional result filtering.      *       * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) as DerivedDbEntity is deprecated.      */
 specifier|public
 name|boolean
 name|isQualifiedOnParent

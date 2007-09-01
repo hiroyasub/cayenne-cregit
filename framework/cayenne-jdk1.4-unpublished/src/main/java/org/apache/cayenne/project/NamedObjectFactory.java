@@ -1513,6 +1513,7 @@ argument_list|)
 return|;
 block|}
 block|}
+comment|/**      * @deprecated since 3.0M2 (scheduled for removal in 3.0M3)      */
 specifier|static
 class|class
 name|DerivedDbAttributeFactory

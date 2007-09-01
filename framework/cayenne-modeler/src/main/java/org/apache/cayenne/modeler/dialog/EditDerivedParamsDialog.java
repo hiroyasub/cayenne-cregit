@@ -354,7 +354,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dialog window that alows selecting DbAttributes   * for derived attribute expression.  *    * @author Andrus Adamchik  */
+comment|/**  * Dialog window that alows selecting DbAttributes   * for derived attribute expression.  *    * @author Andrus Adamchik  * @deprecated since 3.0M2 (scheduled for removal in 3.0M3).  */
 end_comment
 
 begin_class

@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbEntity subclass that is based on another DbEntity  * and allows to define complex database expressions   * like GROUP BY and aggregate functions.  *   * @author Andrus Adamchik  */
+comment|/**  * DbEntity subclass that is based on another DbEntity  * and allows to define complex database expressions   * like GROUP BY and aggregate functions.  *   * @author Andrus Adamchik  * @deprecated since 3.0M2 (scheduled for removal in 3.0M3) this type of mapping is no longer supported.  */
 end_comment
 
 begin_class
