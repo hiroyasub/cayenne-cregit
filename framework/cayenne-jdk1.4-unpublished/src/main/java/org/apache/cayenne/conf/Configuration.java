@@ -77,6 +77,26 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|SortedMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeMap
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -124,20 +144,6 @@ operator|.
 name|event
 operator|.
 name|EventManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|CayenneMap
 import|;
 end_import
 
@@ -232,14 +238,12 @@ name|sharedConfiguration
 decl_stmt|;
 comment|/**      * Lookup map that stores DataDomains with names as keys.      */
 specifier|protected
-name|CayenneMap
+name|SortedMap
 name|dataDomains
 init|=
 operator|new
-name|CayenneMap
-argument_list|(
-name|this
-argument_list|)
+name|TreeMap
+argument_list|()
 decl_stmt|;
 specifier|protected
 name|DataSourceFactory
@@ -699,8 +703,27 @@ name|DataDomain
 name|domain
 parameter_list|)
 block|{
-name|this
+if|if
+condition|(
+name|domain
 operator|.
+name|getName
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Attempt to add DataDomain with no name."
+argument_list|)
+throw|;
+block|}
+name|Object
+name|old
+init|=
 name|dataDomains
 operator|.
 name|put
@@ -712,7 +735,43 @@ argument_list|()
 argument_list|,
 name|domain
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|old
+operator|!=
+literal|null
+operator|&&
+name|old
+operator|!=
+name|domain
+condition|)
+block|{
+name|dataDomains
+operator|.
+name|put
+argument_list|(
+name|domain
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|old
+argument_list|)
 expr_stmt|;
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Attempt to overwrite domain with name "
+operator|+
+name|domain
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+throw|;
+block|}
 comment|// inject EventManager
 if|if
 condition|(
@@ -756,8 +815,6 @@ return|return
 operator|(
 name|DataDomain
 operator|)
-name|this
-operator|.
 name|dataDomains
 operator|.
 name|get
@@ -775,8 +832,6 @@ block|{
 name|int
 name|size
 init|=
-name|this
-operator|.
 name|dataDomains
 operator|.
 name|size
@@ -804,8 +859,6 @@ return|return
 operator|(
 name|DataDomain
 operator|)
-name|this
-operator|.
 name|dataDomains
 operator|.
 name|values
@@ -866,17 +919,8 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-name|logObj
-operator|.
-name|debug
-argument_list|(
-literal|"removed domain: "
-operator|+
-name|name
-argument_list|)
-expr_stmt|;
 block|}
-comment|/**      * Returns an unmodifiable collection of registered {@link DataDomain}objects.      */
+comment|/**      * Returns an unmodifiable collection of registered DataDomains sorted by domain name.      */
 specifier|public
 name|Collection
 name|getDomains

@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A<code>CayenneMap</code> is a specialized double-linked sorted map class. Attempts  * to add objects using an already existing keys will result in IllegalArgumentExceptions.  * Any added entries that implement CayenneMapEntry interface will have their parent set  * to the parent of this map.  *<p>  * CayenneMap is not subclassed directly, but is rather used as an instance variable  * within another class. Enclosing instance would set itself as a parent of this map.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * A<code>CayenneMap</code> is a specialized double-linked sorted map class. Attempts  * to add objects using an already existing keys will result in IllegalArgumentExceptions.  * Any added entries that implement CayenneMapEntry interface will have their parent set  * to the parent of this map.  *<p>  * CayenneMap is not subclassed directly, but is rather used as an instance variable  * within another class. Enclosing instance would set itself as a parent of this map.  *</p>  *   * @author Andrus Adamchik  * @deprecated since 3.0 this map is not used by Cayenne internally.  */
 end_comment
 
 begin_comment
