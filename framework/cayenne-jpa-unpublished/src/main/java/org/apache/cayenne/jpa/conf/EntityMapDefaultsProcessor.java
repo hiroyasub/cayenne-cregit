@@ -119,6 +119,22 @@ name|jpa
 operator|.
 name|map
 operator|.
+name|JpaAbstractEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|map
+operator|.
 name|JpaAttribute
 import|;
 end_import
@@ -689,11 +705,11 @@ name|ProjectPath
 name|path
 parameter_list|)
 block|{
-name|JpaEntity
-name|entity
+name|JpaAbstractEntity
+name|abstractEntity
 init|=
 operator|(
-name|JpaEntity
+name|JpaAbstractEntity
 operator|)
 name|path
 operator|.
@@ -703,7 +719,7 @@ decl_stmt|;
 comment|// * entity name
 if|if
 condition|(
-name|entity
+name|abstractEntity
 operator|.
 name|getClassName
 argument_list|()
@@ -715,6 +731,21 @@ return|return
 literal|false
 return|;
 block|}
+if|if
+condition|(
+name|abstractEntity
+operator|instanceof
+name|JpaEntity
+condition|)
+block|{
+name|JpaEntity
+name|entity
+init|=
+operator|(
+name|JpaEntity
+operator|)
+name|abstractEntity
+decl_stmt|;
 if|if
 condition|(
 name|entity
@@ -729,7 +760,7 @@ comment|// use unqualified class name
 name|String
 name|fqName
 init|=
-name|entity
+name|abstractEntity
 operator|.
 name|getClassName
 argument_list|()
@@ -765,9 +796,54 @@ name|fqName
 argument_list|)
 expr_stmt|;
 block|}
+comment|// * default table (see @Table annotation defaults, JPA spec 9.1.1)
 if|if
 condition|(
 name|entity
+operator|.
+name|getTable
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|JpaTable
+name|table
+init|=
+operator|new
+name|JpaTable
+argument_list|(
+name|AnnotationPrototypes
+operator|.
+name|getTable
+argument_list|()
+argument_list|)
+decl_stmt|;
+comment|// unclear whether we need to apply any other name transformations ...
+comment|// or even if we need to uppercase the name. Per default examples looks
+comment|// like we need. table.setName(entity.getName().toUpperCase());
+name|table
+operator|.
+name|setName
+argument_list|(
+name|entity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|entity
+operator|.
+name|setTable
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|abstractEntity
 operator|.
 name|getAttributes
 argument_list|()
@@ -775,7 +851,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|entity
+name|abstractEntity
 operator|.
 name|setAttributes
 argument_list|(
@@ -789,7 +865,7 @@ comment|// * default persistent fields
 name|JpaClassDescriptor
 name|descriptor
 init|=
-name|entity
+name|abstractEntity
 operator|.
 name|getClassDescriptor
 argument_list|()
@@ -797,7 +873,7 @@ decl_stmt|;
 name|AccessType
 name|access
 init|=
-name|entity
+name|abstractEntity
 operator|.
 name|getAccess
 argument_list|()
@@ -824,7 +900,7 @@ operator|.
 name|getAccess
 argument_list|()
 expr_stmt|;
-name|entity
+name|abstractEntity
 operator|.
 name|setAccess
 argument_list|(
@@ -854,7 +930,7 @@ control|)
 block|{
 name|processProperty
 argument_list|(
-name|entity
+name|abstractEntity
 argument_list|,
 name|descriptor
 argument_list|,
@@ -879,7 +955,7 @@ control|)
 block|{
 name|processProperty
 argument_list|(
-name|entity
+name|abstractEntity
 argument_list|,
 name|descriptor
 argument_list|,
@@ -888,51 +964,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// * default table (see @Table annotation defaults, JPA spec 9.1.1)
-if|if
-condition|(
-name|entity
-operator|.
-name|getTable
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
-name|JpaTable
-name|table
-init|=
-operator|new
-name|JpaTable
-argument_list|(
-name|AnnotationPrototypes
-operator|.
-name|getTable
-argument_list|()
-argument_list|)
-decl_stmt|;
-comment|// unclear whether we need to apply any other name transformations ... or
-comment|// even if we need to upperclas the name. Per default examples looks like
-comment|// we need.
-comment|// table.setName(entity.getName().toUpperCase());
-name|table
-operator|.
-name|setName
-argument_list|(
-name|entity
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|entity
-operator|.
-name|setTable
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -940,7 +971,7 @@ block|}
 name|void
 name|processProperty
 parameter_list|(
-name|JpaEntity
+name|JpaAbstractEntity
 name|entity
 parameter_list|,
 name|JpaClassDescriptor
