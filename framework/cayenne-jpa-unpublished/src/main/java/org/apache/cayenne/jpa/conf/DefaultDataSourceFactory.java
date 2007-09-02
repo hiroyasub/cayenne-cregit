@@ -163,34 +163,6 @@ name|Util
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  * A {@link JpaDataSourceFactory} that attempts to create a DataSource based on Cayenne  * provider-specific properties. If such properties are not present, a DataSource is  * obtained via JNDI.  *<p>  * Properties are specified in the corresponding section of the<em>persistence.xml</em>  * file. The following properties are supported:  *</p>  *<ul>  *<li>org.apache.cayenne.datasource.jdbc.driver - (required) JDBC driver class</li>  *<li>org.apache.cayenne.datasource.jdbc.url - (required) Database URL</li>  *<li>org.apache.cayenne.datasource.jdbc.username - Database login id</li>  *<li>org.apache.cayenne.datasource.jdbc.password - Database password</li>  *<li>org.apache.cayenne.datasource.jdbc.minConnections - (optional) Minimal pool size</li>  *<li>org.apache.cayenne.datasource..jdbc.maxConnections - (optional) Maximum pool size</li>  *</ul>  *   * @author Andrus Adamchik  */
 end_comment
@@ -202,20 +174,6 @@ name|DefaultDataSourceFactory
 implements|implements
 name|JpaDataSourceFactory
 block|{
-specifier|static
-specifier|final
-name|Log
-name|logger
-init|=
-name|LogFactory
-operator|.
-name|getLog
-argument_list|(
-name|DefaultDataSourceFactory
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 specifier|public
 name|DataSource
 name|getJtaDataSource
@@ -392,13 +350,6 @@ name|driverName
 argument_list|)
 condition|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"Null DataSource driver"
-argument_list|)
-expr_stmt|;
 return|return
 literal|null
 return|;
@@ -425,13 +376,6 @@ name|url
 argument_list|)
 condition|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"Null DataSource URL"
-argument_list|)
-expr_stmt|;
 return|return
 literal|null
 return|;
