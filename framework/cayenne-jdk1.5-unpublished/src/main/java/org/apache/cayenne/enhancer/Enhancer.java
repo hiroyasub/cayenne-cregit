@@ -193,7 +193,8 @@ name|classfileBuffer
 argument_list|)
 decl_stmt|;
 comment|// optimization note: per ASM docs COMPUTE_FRAMES makes code generation 2x slower,
-comment|// so we may investigate manual computation options, although that's likely a pain.
+comment|// so we may investigate manual computation options, although that's likely a
+comment|// pain.
 name|ClassWriter
 name|writer
 init|=
@@ -240,6 +241,8 @@ operator|+
 name|className
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 name|reader
 operator|.
 name|accept
@@ -249,6 +252,26 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|DoubleEnhanceException
+name|e
+parameter_list|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"class already enhanced, skipping: "
+operator|+
+name|className
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 return|return
 name|writer
 operator|.
