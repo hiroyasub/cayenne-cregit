@@ -674,6 +674,15 @@ expr_stmt|;
 block|}
 block|}
 comment|// now detect potential managed classes from PU root and extra jars
+if|if
+condition|(
+operator|!
+name|persistenceUnit
+operator|.
+name|excludeUnlistedClasses
+argument_list|()
+condition|)
+block|{
 name|Collection
 argument_list|<
 name|String
@@ -787,6 +796,7 @@ argument_list|,
 name|managedClass
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
