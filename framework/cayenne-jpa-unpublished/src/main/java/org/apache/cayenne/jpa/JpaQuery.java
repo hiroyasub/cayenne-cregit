@@ -590,11 +590,16 @@ name|maxResult
 argument_list|)
 throw|;
 block|}
-comment|// TODO: use QueryMetadata?
+name|Object
+name|query
+init|=
+name|getQuery
+argument_list|()
+decl_stmt|;
+comment|// the first two types are probably the only queries anyone would run via JPA
 if|if
 condition|(
-name|getQuery
-argument_list|()
+name|query
 operator|instanceof
 name|EJBQLQuery
 condition|)
@@ -603,8 +608,7 @@ operator|(
 operator|(
 name|EJBQLQuery
 operator|)
-name|getQuery
-argument_list|()
+name|query
 operator|)
 operator|.
 name|setFetchLimit
@@ -615,30 +619,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|getQuery
-argument_list|()
-operator|instanceof
-name|SelectQuery
-condition|)
-block|{
-operator|(
-operator|(
-name|SelectQuery
-operator|)
-name|getQuery
-argument_list|()
-operator|)
-operator|.
-name|setFetchLimit
-argument_list|(
-name|maxResult
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|getQuery
-argument_list|()
+name|query
 operator|instanceof
 name|SQLTemplate
 condition|)
@@ -647,8 +628,7 @@ operator|(
 operator|(
 name|SQLTemplate
 operator|)
-name|getQuery
-argument_list|()
+name|query
 operator|)
 operator|.
 name|setFetchLimit
@@ -659,18 +639,16 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|getQuery
-argument_list|()
+name|query
 operator|instanceof
-name|ProcedureQuery
+name|SelectQuery
 condition|)
 block|{
 operator|(
 operator|(
-name|ProcedureQuery
+name|SelectQuery
 operator|)
-name|getQuery
-argument_list|()
+name|query
 operator|)
 operator|.
 name|setFetchLimit
@@ -679,13 +657,41 @@ name|maxResult
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+name|query
+operator|instanceof
+name|ProcedureQuery
+condition|)
+block|{
+operator|(
+operator|(
+name|ProcedureQuery
+operator|)
+name|query
+operator|)
+operator|.
+name|setFetchLimit
+argument_list|(
+name|maxResult
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"query does not support maxResult"
+literal|"query does not support maxResult: "
+operator|+
+name|query
 argument_list|)
 throw|;
+block|}
+return|return
+name|this
+return|;
 block|}
 specifier|public
 name|Query
