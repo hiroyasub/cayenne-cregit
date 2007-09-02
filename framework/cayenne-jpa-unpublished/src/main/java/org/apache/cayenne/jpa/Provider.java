@@ -948,6 +948,24 @@ return|return
 literal|null
 return|;
 block|}
+if|if
+condition|(
+name|logger
+operator|.
+name|isInfoEnabled
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Extra PersistenceUnitInfo properties: "
+operator|+
+name|map
+argument_list|)
+expr_stmt|;
+block|}
 comment|// override properties
 if|if
 condition|(
@@ -1075,6 +1093,28 @@ name|Map
 name|map
 parameter_list|)
 block|{
+if|if
+condition|(
+name|logger
+operator|.
+name|isInfoEnabled
+argument_list|()
+operator|&&
+name|map
+operator|!=
+literal|null
+condition|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Extra container PersistenceUnitInfo properties: "
+operator|+
+name|map
+argument_list|)
+expr_stmt|;
+block|}
 name|String
 name|name
 init|=
