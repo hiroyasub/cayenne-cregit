@@ -900,17 +900,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"*** Found under ROOT: "
-operator|+
-name|classes
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|URL
@@ -963,17 +952,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"*** + Found in jars: "
-operator|+
-name|classes
-argument_list|)
-expr_stmt|;
 return|return
 name|classes
 return|;
