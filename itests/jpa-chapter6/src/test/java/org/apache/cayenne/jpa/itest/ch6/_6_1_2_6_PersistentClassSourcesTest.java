@@ -31,6 +31,26 @@ name|EntityManagerCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|itest
+operator|.
+name|ch6
+operator|.
+name|entity
+operator|.
+name|UndeclaredEntity1
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -40,7 +60,7 @@ name|EntityManagerCase
 block|{
 specifier|public
 name|void
-name|testLoadUndeclared
+name|testLoadImplicitFromUnitRoot
 parameter_list|()
 throws|throws
 name|Exception
@@ -53,11 +73,43 @@ argument_list|(
 literal|"UndeclaredEntity1"
 argument_list|)
 expr_stmt|;
-comment|//		UndeclaredEntity1 e = new UndeclaredEntity1();
-comment|//		getEntityManager().persist(e);
-comment|//		getEntityManager().getTransaction().commit();
-comment|//
-comment|//		assertEquals(1, getDbHelper().getRowCount("UndeclaredEntity1"));
+name|UndeclaredEntity1
+name|e
+init|=
+operator|new
+name|UndeclaredEntity1
+argument_list|()
+decl_stmt|;
+name|getEntityManager
+argument_list|()
+operator|.
+name|persist
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
+name|getEntityManager
+argument_list|()
+operator|.
+name|getTransaction
+argument_list|()
+operator|.
+name|commit
+argument_list|()
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|getDbHelper
+argument_list|()
+operator|.
+name|getRowCount
+argument_list|(
+literal|"UndeclaredEntity1"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
