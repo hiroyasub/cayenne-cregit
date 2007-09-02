@@ -1772,7 +1772,7 @@ name|cachGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the fetchLimit.      *       * @return int      */
+comment|/**      * Returns the fetchLimit.      */
 specifier|public
 name|int
 name|getFetchLimit
@@ -1785,7 +1785,7 @@ name|getFetchLimit
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets the fetchLimit.      *       * @param fetchLimit The fetchLimit to set      */
+comment|/**      * Sets the fetchLimit.      */
 specifier|public
 name|void
 name|setFetchLimit

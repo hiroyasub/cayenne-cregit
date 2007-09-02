@@ -489,6 +489,38 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Returns the fetchLimit property indicating the maximum number of rows this query      * would return.      */
+specifier|public
+name|int
+name|getFetchLimit
+parameter_list|()
+block|{
+return|return
+name|metadata
+operator|.
+name|getFetchLimit
+argument_list|()
+return|;
+block|}
+comment|/**      * Sets the fetchLimit property indicating the maximum number of rows this query would      * return.      */
+specifier|public
+name|void
+name|setFetchLimit
+parameter_list|(
+name|int
+name|fetchLimit
+parameter_list|)
+block|{
+name|this
+operator|.
+name|metadata
+operator|.
+name|setFetchLimit
+argument_list|(
+name|fetchLimit
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
