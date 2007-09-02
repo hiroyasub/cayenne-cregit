@@ -820,7 +820,8 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// unclear whether we need to apply any other name transformations ...
-comment|// or even if we need to uppercase the name. Per default examples looks
+comment|// or even if we need to uppercase the name. Per default examples
+comment|// looks
 comment|// like we need. table.setName(entity.getName().toUpperCase());
 name|table
 operator|.
@@ -1181,17 +1182,17 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
-name|JpaEntity
+name|JpaAbstractEntity
 name|entity
 init|=
 operator|(
-name|JpaEntity
+name|JpaAbstractEntity
 operator|)
 name|path
 operator|.
 name|firstInstanceOf
 argument_list|(
-name|JpaEntity
+name|JpaAbstractEntity
 operator|.
 name|class
 argument_list|)
@@ -1618,6 +1619,14 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+comment|// parent can be a mapped superclass
+if|if
+condition|(
+name|entity
+operator|!=
+literal|null
+condition|)
+block|{
 name|column
 operator|.
 name|setTable
@@ -1631,6 +1640,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
