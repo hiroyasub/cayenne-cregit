@@ -3,7 +3,7 @@ begin_package
 package|package
 name|org
 operator|.
-name|pache
+name|apache
 operator|.
 name|cayenne
 operator|.
