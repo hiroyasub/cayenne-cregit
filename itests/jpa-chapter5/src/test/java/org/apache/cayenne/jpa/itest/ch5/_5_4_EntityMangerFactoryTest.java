@@ -88,7 +88,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|_5_4_EntityMnagerFactoryTest
+name|_5_4_EntityMangerFactoryTest
 extends|extends
 name|JpaTestCase
 block|{
