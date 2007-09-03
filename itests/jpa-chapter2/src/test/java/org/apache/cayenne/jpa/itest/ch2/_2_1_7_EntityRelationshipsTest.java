@@ -155,7 +155,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: andrus 8/10/2006 - fails because of pk handling issues
 specifier|public
 name|void
 name|testNonEmptyCollection
