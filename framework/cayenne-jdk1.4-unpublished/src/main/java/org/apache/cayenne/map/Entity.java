@@ -153,6 +153,22 @@ name|XMLSerializable
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|lang
+operator|.
+name|builder
+operator|.
+name|ToStringBuilder
+import|;
+end_import
+
 begin_comment
 comment|/**  * An Entity is an abstract descriptor for an entity mapping concept. Entity can represent  * either a descriptor of database table or a persistent object.  *   * @author Andrus Adamchik  */
 end_comment
@@ -233,6 +249,30 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ToStringBuilder
+argument_list|(
+name|this
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"name"
+argument_list|,
+name|getName
+argument_list|()
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+return|;
 block|}
 comment|/**      * Returns entity name. Name is a unique identifier of the entity within its DataMap.      */
 specifier|public
