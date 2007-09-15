@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -59,6 +49,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|_ClientMtTable1
 extends|extends
@@ -97,6 +88,10 @@ name|String
 name|serverAttribute1
 decl_stmt|;
 specifier|protected
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|table2Array
 decl_stmt|;
@@ -283,6 +278,10 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|getTable2Array
 parameter_list|()

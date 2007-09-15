@@ -21,6 +21,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|_MtTable2
 extends|extends

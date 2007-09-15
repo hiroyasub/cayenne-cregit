@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -71,6 +61,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|_ClientMtReflexive
 extends|extends
@@ -105,6 +96,10 @@ name|String
 name|name
 decl_stmt|;
 specifier|protected
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|children
 decl_stmt|;
@@ -204,6 +199,10 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|getChildren
 parameter_list|()

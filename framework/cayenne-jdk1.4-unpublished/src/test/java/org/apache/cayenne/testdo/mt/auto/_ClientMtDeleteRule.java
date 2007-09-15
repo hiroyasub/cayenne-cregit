@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -91,6 +81,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|_ClientMtDeleteRule
 extends|extends
@@ -133,14 +124,26 @@ name|String
 name|name
 decl_stmt|;
 specifier|protected
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|fromCascade
 decl_stmt|;
 specifier|protected
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|fromDeny
 decl_stmt|;
 specifier|protected
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|fromNullify
 decl_stmt|;
@@ -236,6 +239,10 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|getFromCascade
 parameter_list|()
@@ -338,6 +345,10 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|getFromDeny
 parameter_list|()
@@ -440,6 +451,10 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|getFromNullify
 parameter_list|()

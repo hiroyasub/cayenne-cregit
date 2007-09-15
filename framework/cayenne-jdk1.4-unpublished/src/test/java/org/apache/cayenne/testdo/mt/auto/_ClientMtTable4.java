@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -59,6 +49,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|_ClientMtTable4
 extends|extends
@@ -73,10 +64,18 @@ init|=
 literal|"table5s"
 decl_stmt|;
 specifier|protected
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|table5s
 decl_stmt|;
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
 name|List
 name|getTable5s
 parameter_list|()
