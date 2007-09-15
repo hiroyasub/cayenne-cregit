@@ -2052,6 +2052,13 @@ name|void
 name|stopListeners
 parameter_list|()
 block|{
+if|if
+condition|(
+name|eventManager
+operator|!=
+literal|null
+condition|)
+block|{
 name|eventManager
 operator|.
 name|removeListener
@@ -2059,6 +2066,7 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|remoteNotificationsHandler
@@ -2102,6 +2110,13 @@ parameter_list|()
 block|{
 if|if
 condition|(
+name|eventManager
+operator|!=
+literal|null
+condition|)
+block|{
+if|if
+condition|(
 name|remoteNotificationsHandler
 operator|!=
 literal|null
@@ -2110,9 +2125,12 @@ block|{
 try|try
 block|{
 comment|// listen to EventBridge ... must add itself as non-blocking listener
-comment|// otherwise a deadlock can occur as "processRemoteEvent" will attempt to
-comment|// obtain a lock on this object when the dispatch queue is locked... And
-comment|// another commit thread may have this object locked and attempt to lock
+comment|// otherwise a deadlock can occur as "processRemoteEvent" will attempt
+comment|// to
+comment|// obtain a lock on this object when the dispatch queue is locked...
+comment|// And
+comment|// another commit thread may have this object locked and attempt to
+comment|// lock
 comment|// dispatch queue
 name|eventManager
 operator|.
@@ -2161,6 +2179,7 @@ argument_list|,
 name|ex
 argument_list|)
 throw|;
+block|}
 block|}
 block|}
 block|}
