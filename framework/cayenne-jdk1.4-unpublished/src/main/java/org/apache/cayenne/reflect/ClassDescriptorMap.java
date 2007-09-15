@@ -269,6 +269,21 @@ name|String
 name|entityName
 parameter_list|)
 block|{
+if|if
+condition|(
+name|entityName
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null 'entityName'"
+argument_list|)
+throw|;
+block|}
 name|ClassDescriptor
 name|cached
 init|=
