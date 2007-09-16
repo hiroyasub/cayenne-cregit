@@ -1675,7 +1675,7 @@ name|column
 operator|.
 name|getLength
 argument_list|()
-operator|<
+operator|<=
 literal|0
 condition|)
 block|{
@@ -1683,7 +1683,9 @@ name|column
 operator|.
 name|setLength
 argument_list|(
-literal|255
+name|JpaColumn
+operator|.
+name|DEFAULT_LENGTH
 argument_list|)
 expr_stmt|;
 block|}
