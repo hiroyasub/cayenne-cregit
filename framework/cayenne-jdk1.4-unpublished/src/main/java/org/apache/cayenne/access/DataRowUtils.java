@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -60,6 +80,20 @@ operator|.
 name|cayenne
 operator|.
 name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbJoin
 import|;
 end_import
 
@@ -739,6 +773,18 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+comment|// must check before creating ObjectId because of partial
+comment|// snapshots
+if|if
+condition|(
+name|hasFK
+argument_list|(
+name|dbRelationship
+argument_list|,
+name|snapshot
+argument_list|)
+condition|)
+block|{
 name|ObjectId
 name|id
 init|=
@@ -811,7 +857,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// if inheritance is involved, we can't use 'localObject'
+comment|// if inheritance is involved, we can't use
+comment|// 'localObject'
 comment|// .. must turn to fault instead
 name|ObjEntity
 name|targetEntity
@@ -872,6 +919,7 @@ block|}
 block|}
 block|}
 block|}
+block|}
 return|return
 literal|true
 return|;
@@ -879,6 +927,70 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+block|}
+specifier|static
+name|boolean
+name|hasFK
+parameter_list|(
+name|DbRelationship
+name|relationship
+parameter_list|,
+name|Map
+name|snapshot
+parameter_list|)
+block|{
+name|Iterator
+name|joins
+init|=
+name|relationship
+operator|.
+name|getJoins
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|joins
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|DbJoin
+name|join
+init|=
+operator|(
+name|DbJoin
+operator|)
+name|joins
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|snapshot
+operator|.
+name|containsKey
+argument_list|(
+name|join
+operator|.
+name|getSourceName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+block|}
+return|return
+literal|true
+return|;
 block|}
 comment|/**      * Checks if an object has its to-one relationship target modified in memory.      */
 specifier|static
