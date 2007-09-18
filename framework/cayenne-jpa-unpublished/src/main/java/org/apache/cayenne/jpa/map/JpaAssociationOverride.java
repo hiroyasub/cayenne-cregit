@@ -240,7 +240,7 @@ argument_list|)
 expr_stmt|;
 name|encoder
 operator|.
-name|print
+name|println
 argument_list|(
 literal|"</association-override>"
 argument_list|)

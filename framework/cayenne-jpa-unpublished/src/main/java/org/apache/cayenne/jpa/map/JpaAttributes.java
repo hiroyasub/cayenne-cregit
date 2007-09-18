@@ -165,6 +165,16 @@ name|XMLEncoder
 name|encoder
 parameter_list|)
 block|{
+if|if
+condition|(
+name|size
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+return|return;
+block|}
 name|encoder
 operator|.
 name|println
