@@ -295,7 +295,7 @@ name|encoder
 operator|.
 name|print
 argument_list|(
-literal|" unique=\"false\""
+literal|" nullable=\"false\""
 argument_list|)
 expr_stmt|;
 block|}
