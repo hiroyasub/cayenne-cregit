@@ -419,7 +419,26 @@ name|getTargetEntityName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// assertEquals("key", or4.getMapKey());
+name|assertEquals
+argument_list|(
+literal|"key"
+argument_list|,
+name|or4
+operator|.
+name|getMapKey
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"java.util.Map"
+argument_list|,
+name|or4
+operator|.
+name|getCollectionType
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|DbEntity
 name|db3
 init|=
