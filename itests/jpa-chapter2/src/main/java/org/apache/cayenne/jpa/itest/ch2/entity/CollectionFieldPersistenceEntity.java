@@ -96,6 +96,11 @@ name|id
 decl_stmt|;
 annotation|@
 name|OneToMany
+argument_list|(
+name|mappedBy
+operator|=
+literal|"entity"
+argument_list|)
 specifier|protected
 name|Collection
 argument_list|<
@@ -105,6 +110,11 @@ name|collection
 decl_stmt|;
 annotation|@
 name|OneToMany
+argument_list|(
+name|mappedBy
+operator|=
+literal|"entity"
+argument_list|)
 specifier|protected
 name|Set
 argument_list|<
@@ -114,6 +124,11 @@ name|set
 decl_stmt|;
 annotation|@
 name|OneToMany
+argument_list|(
+name|mappedBy
+operator|=
+literal|"entity"
+argument_list|)
 specifier|protected
 name|List
 argument_list|<
