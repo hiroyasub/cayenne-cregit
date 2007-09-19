@@ -3256,6 +3256,17 @@ name|getMappedBy
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|jpaRelationship
+operator|.
+name|getMapKey
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+block|}
 block|}
 return|return
 name|relationship
