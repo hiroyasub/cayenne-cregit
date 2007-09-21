@@ -2783,7 +2783,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Can't find ObjEntity for DataObject class: "
+literal|"Can't find ObjEntity for Persistent class: "
 operator|+
 name|object
 operator|.
@@ -2844,7 +2844,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"DataObject is already registered with another DataContext. "
+literal|"Persistent is already registered with another DataContext. "
 operator|+
 literal|"Try using 'localObjects()' instead."
 argument_list|)
@@ -2978,20 +2978,44 @@ name|persistent
 argument_list|)
 condition|)
 block|{
-name|Iterator
-name|it
+name|Object
+name|value
 init|=
-operator|(
-operator|(
-name|Collection
-operator|)
 name|property
 operator|.
 name|readProperty
 argument_list|(
 name|persistent
 argument_list|)
+decl_stmt|;
+name|Collection
+name|collection
+init|=
+operator|(
+name|value
+operator|instanceof
+name|Map
 operator|)
+condition|?
+operator|(
+operator|(
+name|Map
+operator|)
+name|value
+operator|)
+operator|.
+name|entrySet
+argument_list|()
+else|:
+operator|(
+name|Collection
+operator|)
+name|value
+decl_stmt|;
+name|Iterator
+name|it
+init|=
+name|collection
 operator|.
 name|iterator
 argument_list|()
