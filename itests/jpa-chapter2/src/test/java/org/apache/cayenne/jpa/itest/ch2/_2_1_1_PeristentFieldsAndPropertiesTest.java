@@ -440,7 +440,7 @@ block|}
 comment|// TODO: andrus 8/30/2006 - fails
 specifier|public
 name|void
-name|_testMapProperties
+name|testMapProperties
 parameter_list|()
 block|{
 name|MapFieldPersistenceEntity

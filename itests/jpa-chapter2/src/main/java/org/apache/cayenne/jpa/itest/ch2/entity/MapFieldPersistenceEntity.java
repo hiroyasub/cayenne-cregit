@@ -76,6 +76,11 @@ name|id
 decl_stmt|;
 annotation|@
 name|OneToMany
+argument_list|(
+name|mappedBy
+operator|=
+literal|"entity"
+argument_list|)
 specifier|protected
 name|Map
 argument_list|<
