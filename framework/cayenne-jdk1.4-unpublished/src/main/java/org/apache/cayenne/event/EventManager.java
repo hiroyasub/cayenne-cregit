@@ -1350,7 +1350,7 @@ literal|3
 operator|*
 literal|60
 operator|*
-literal|10000
+literal|1000
 argument_list|)
 expr_stmt|;
 block|}
