@@ -506,6 +506,10 @@ specifier|protected
 name|QueryCache
 name|queryCache
 decl_stmt|;
+specifier|protected
+name|boolean
+name|stopped
+decl_stmt|;
 comment|/**      * Creates a DataDomain and assigns it a name.      */
 specifier|public
 name|DataDomain
@@ -555,6 +559,32 @@ argument_list|(
 name|properties
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * Checks that Domain is not stopped. Throws DomainStoppedException otherwise.      *       * @since 3.0      */
+specifier|protected
+name|void
+name|checkStopped
+parameter_list|()
+throws|throws
+name|DomainStoppedException
+block|{
+if|if
+condition|(
+name|stopped
+condition|)
+block|{
+throw|throw
+operator|new
+name|DomainStoppedException
+argument_list|(
+literal|"Domain "
+operator|+
+name|name
+operator|+
+literal|" was shutdown and can no longer be used to access the database"
+argument_list|)
+throw|;
+block|}
 block|}
 comment|/**      * @since 1.2      */
 comment|// TODO: andrus, 4/12/2006 - after 1.2 API freeze is over, replace DataNode
@@ -2127,11 +2157,17 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Shutdowns all owned data nodes. Invokes DataNode.shutdown().      */
+comment|/**      * Shutdowns all owned data nodes and marks this domain as stopped.      */
 specifier|public
 name|void
 name|shutdown
 parameter_list|()
+block|{
+if|if
+condition|(
+operator|!
+name|stopped
+condition|)
 block|{
 if|if
 condition|(
@@ -2197,6 +2233,11 @@ name|ex
 parameter_list|)
 block|{
 block|}
+block|}
+name|stopped
+operator|=
+literal|true
+expr_stmt|;
 block|}
 block|}
 comment|/**      * Routes queries to appropriate DataNodes for execution.      */
@@ -2269,6 +2310,9 @@ name|Query
 name|query
 parameter_list|)
 block|{
+name|checkStopped
+argument_list|()
+expr_stmt|;
 comment|// transaction note:
 comment|// we don't wrap this code in transaction to reduce transaction scope to
 comment|// just the DB operation for better performance ... query action will start a
@@ -2328,6 +2372,9 @@ name|int
 name|syncType
 parameter_list|)
 block|{
+name|checkStopped
+argument_list|()
+expr_stmt|;
 name|DataChannelSyncCallbackAction
 name|callbackAction
 init|=
