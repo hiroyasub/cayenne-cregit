@@ -129,8 +129,6 @@ begin_class
 specifier|public
 class|class
 name|EventManager
-extends|extends
-name|Object
 block|{
 specifier|private
 specifier|static
@@ -158,6 +156,10 @@ decl_stmt|;
 specifier|protected
 name|boolean
 name|singleThread
+decl_stmt|;
+specifier|protected
+name|boolean
+name|stopped
 decl_stmt|;
 comment|/**      * Returns the shared EventManager. It is created on demand on the first call to this      * method. Cayenne internally doesn't use default EventManager. Instead Configuration      * EventManager is propagated to DataDomains and DataContexts.      *       * @return EventManager the shared EventManager instance      */
 specifier|public
@@ -313,6 +315,20 @@ name|eventQueue
 argument_list|)
 return|;
 block|}
+block|}
+comment|/**      * Stops event threads. After the EventManager is stopped, it can not be restarted and      * should be discarded. Note that dispath threads may still run for a few more minutes      * after this method call until they time out.      *       * @since 3.0      */
+specifier|public
+name|void
+name|shutdown
+parameter_list|()
+block|{
+name|this
+operator|.
+name|stopped
+operator|=
+literal|true
+expr_stmt|;
+comment|// threads will time out eventually...
 block|}
 comment|/**      * Register an<code>EventListener</code> for events sent by any sender.      *       * @throws RuntimeException if<code>methodName</code> is not found      * @see #addListener(Object, String, Class, EventSubject, Object)      */
 specifier|public
@@ -1266,7 +1282,8 @@ parameter_list|()
 block|{
 while|while
 condition|(
-literal|true
+operator|!
+name|stopped
 condition|)
 block|{
 comment|// get event from the queue, if the queue
@@ -1320,6 +1337,7 @@ else|else
 block|{
 try|try
 block|{
+comment|// wake up occasionally to check whether EM has been stopped
 name|EventManager
 operator|.
 name|this
@@ -1327,7 +1345,13 @@ operator|.
 name|eventQueue
 operator|.
 name|wait
-argument_list|()
+argument_list|(
+literal|3
+operator|*
+literal|60
+operator|*
+literal|10000
+argument_list|)
 expr_stmt|;
 block|}
 catch|catch
@@ -1343,6 +1367,9 @@ block|}
 comment|// dispatch outside of synchronized block
 if|if
 condition|(
+operator|!
+name|stopped
+operator|&&
 name|dispatch
 operator|!=
 literal|null
