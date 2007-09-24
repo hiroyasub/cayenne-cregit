@@ -325,6 +325,16 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+name|Accessor
+name|mapKeyAccessor
+init|=
+name|createMapKeyAccessor
+argument_list|(
+name|relationship
+argument_list|,
+name|targetDescriptor
+argument_list|)
+decl_stmt|;
 name|Property
 name|property
 init|=
@@ -338,6 +348,8 @@ argument_list|,
 name|accessor
 argument_list|,
 name|reverseName
+argument_list|,
+name|mapKeyAccessor
 argument_list|)
 decl_stmt|;
 name|descriptor
