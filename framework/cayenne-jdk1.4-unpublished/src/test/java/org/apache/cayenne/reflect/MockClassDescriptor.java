@@ -166,6 +166,15 @@ literal|null
 return|;
 block|}
 specifier|public
+name|Iterator
+name|getMapArcProperties
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
 name|ClassDescriptor
 name|getSubclassDescriptor
 parameter_list|(

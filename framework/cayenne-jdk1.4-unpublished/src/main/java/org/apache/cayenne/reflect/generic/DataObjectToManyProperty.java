@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A list property that is intended to work with  * {@link org.apache.cayenne.access.ToManyList}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class

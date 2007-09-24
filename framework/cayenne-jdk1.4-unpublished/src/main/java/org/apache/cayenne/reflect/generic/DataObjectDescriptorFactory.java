@@ -419,7 +419,7 @@ operator|.
 name|addDeclaredProperty
 argument_list|(
 operator|new
-name|DataObjectToManyProperty
+name|DataObjectToManyMapProperty
 argument_list|(
 name|relationship
 argument_list|,
@@ -431,6 +431,8 @@ name|getMapFault
 argument_list|(
 name|mapKey
 argument_list|)
+argument_list|,
+name|mapKey
 argument_list|)
 argument_list|)
 expr_stmt|;
