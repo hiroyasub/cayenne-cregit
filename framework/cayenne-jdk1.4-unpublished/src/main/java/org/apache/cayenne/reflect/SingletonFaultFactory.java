@@ -103,20 +103,6 @@ name|ToOneFault
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|Expression
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -182,8 +168,8 @@ specifier|public
 name|Fault
 name|getMapFault
 parameter_list|(
-name|Expression
-name|mapKeyExpression
+name|Accessor
+name|mapKeyAccessor
 parameter_list|)
 block|{
 synchronized|synchronized
@@ -201,10 +187,7 @@ name|mapFaults
 operator|.
 name|get
 argument_list|(
-name|mapKeyExpression
-operator|.
-name|toString
-argument_list|()
+name|mapKeyAccessor
 argument_list|)
 decl_stmt|;
 if|if
@@ -219,14 +202,14 @@ operator|=
 operator|new
 name|ToManyMapFault
 argument_list|(
-name|mapKeyExpression
+name|mapKeyAccessor
 argument_list|)
 expr_stmt|;
 name|mapFaults
 operator|.
 name|put
 argument_list|(
-name|mapKeyExpression
+name|mapKeyAccessor
 argument_list|,
 name|fault
 argument_list|)

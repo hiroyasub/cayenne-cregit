@@ -119,9 +119,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|exp
+name|reflect
 operator|.
-name|Expression
+name|Accessor
 import|;
 end_import
 
@@ -145,8 +145,8 @@ name|Map
 name|objectMap
 decl_stmt|;
 specifier|protected
-name|Expression
-name|mapKeyExpression
+name|Accessor
+name|mapKeyAccessor
 decl_stmt|;
 comment|// exists for the benefit of manual serialization schemes such as the one in Hessian.
 specifier|private
@@ -154,7 +154,7 @@ name|PersistentObjectMap
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates PersistentObjectList initializing it with list owner persistent object and      * relationship name that this list maps to.      *       * @param relationshipOwner persistent object that owns this list.      * @param relationshipName a query used to resolve the list      * @param mapKeyExpression a Cayenne expression that resolves to a map key for the      *            target entity.      */
+comment|/**      * Creates PersistentObjectList initializing it with list owner persistent object and      * relationship name that this list maps to.      *       * @param relationshipOwner persistent object that owns this list.      * @param relationshipName a query used to resolve the list      * @param mapKeyAccessor an accessor that can read a map key from an object.      */
 specifier|public
 name|PersistentObjectMap
 parameter_list|(
@@ -164,8 +164,8 @@ parameter_list|,
 name|String
 name|relationshipName
 parameter_list|,
-name|Expression
-name|mapKeyExpression
+name|Accessor
+name|mapKeyAccessor
 parameter_list|)
 block|{
 name|super
@@ -177,9 +177,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|mapKeyExpression
+name|mapKeyAccessor
 operator|=
-name|mapKeyExpression
+name|mapKeyAccessor
 expr_stmt|;
 block|}
 specifier|public
@@ -501,9 +501,9 @@ decl_stmt|;
 name|Object
 name|key
 init|=
-name|mapKeyExpression
+name|mapKeyAccessor
 operator|.
-name|evaluate
+name|getValue
 argument_list|(
 name|next
 argument_list|)

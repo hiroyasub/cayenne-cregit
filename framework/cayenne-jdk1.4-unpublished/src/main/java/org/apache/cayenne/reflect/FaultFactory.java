@@ -27,20 +27,6 @@ name|Fault
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|Expression
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -69,8 +55,8 @@ function_decl|;
 name|Fault
 name|getMapFault
 parameter_list|(
-name|Expression
-name|mapKeyExpression
+name|Accessor
+name|mapKeyAccessor
 parameter_list|)
 function_decl|;
 block|}
