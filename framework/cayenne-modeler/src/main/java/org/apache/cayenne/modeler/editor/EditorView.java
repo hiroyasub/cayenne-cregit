@@ -576,6 +576,18 @@ specifier|protected
 name|CardLayout
 name|detailLayout
 decl_stmt|;
+name|ProjectTreeView
+name|treePanel
+decl_stmt|;
+specifier|public
+name|ProjectTreeView
+name|getProjectTreeView
+parameter_list|()
+block|{
+return|return
+name|treePanel
+return|;
+block|}
 specifier|public
 name|EditorView
 parameter_list|(
@@ -602,15 +614,14 @@ name|initView
 parameter_list|()
 block|{
 comment|// init widgets
-name|ProjectTreeView
 name|treePanel
-init|=
+operator|=
 operator|new
 name|ProjectTreeView
 argument_list|(
 name|eventController
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|treePanel
 operator|.
 name|setMinimumSize

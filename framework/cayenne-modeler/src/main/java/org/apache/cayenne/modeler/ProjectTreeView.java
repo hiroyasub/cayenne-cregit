@@ -3987,6 +3987,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
+name|TreeSelectionListener
+name|getTreeSelectionListener
+parameter_list|()
+block|{
+return|return
+name|treeSelectionListener
+return|;
+block|}
 block|}
 end_class
 
