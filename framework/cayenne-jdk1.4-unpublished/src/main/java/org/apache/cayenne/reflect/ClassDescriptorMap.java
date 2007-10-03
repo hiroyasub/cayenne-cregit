@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that holds class descriptors for mapped entities, compiling new descriptors  * on demand using an internal chain of descriptor factories.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An object that holds class descriptors for mapped entities, compiling new descriptors  * on demand using an internal chain of descriptor factories. Note that the object is ot  * synchronized internally, so it has to be prefilled with descriptors by the caller on  * initialization via calling 'getDescriptor' for all mapped entities.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
