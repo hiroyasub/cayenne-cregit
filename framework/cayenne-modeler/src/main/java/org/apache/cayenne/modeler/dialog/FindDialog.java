@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An instance of this class is responsible for displaying search results  * and navigating to the selected entity's representation.   */
+comment|/**  * An instance of this class is responsible for displaying search results  * and navigating to the selected entity's representation.  */
 end_comment
 
 begin_class
@@ -526,7 +526,7 @@ name|view
 operator|.
 name|setModal
 argument_list|(
-literal|true
+literal|false
 argument_list|)
 expr_stmt|;
 name|view
@@ -693,7 +693,6 @@ name|intValue
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|//            DbEntityTabbedView dbEntityTabbedView = editor.getDbDetailView();
 if|if
 condition|(
 name|path
@@ -1180,11 +1179,6 @@ name|event
 argument_list|)
 expr_stmt|;
 block|}
-name|view
-operator|.
-name|dispose
-argument_list|()
-expr_stmt|;
 block|}
 comment|/**          * Builds a tree path for a given path. Urgent for later selection.          * @param path          * @return tree path          */
 specifier|private
