@@ -208,6 +208,15 @@ name|SQLiteFloatType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|map
+operator|.
+name|registerType
+argument_list|(
+operator|new
+name|SQLiteByteArrayType
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|String
