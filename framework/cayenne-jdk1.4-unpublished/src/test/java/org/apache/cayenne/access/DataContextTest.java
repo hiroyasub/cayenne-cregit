@@ -965,7 +965,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|1000
+literal|1000d
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1057,7 +1057,7 @@ argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
-literal|1000
+literal|1000d
 argument_list|)
 argument_list|)
 argument_list|)
