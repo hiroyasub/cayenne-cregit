@@ -665,6 +665,24 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsFKConstraints
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|supportsColumnTypeReengineering
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 comment|/**      * Returns true if the target database has support for large objects (BLOB, CLOB).      */
 specifier|public
 name|boolean

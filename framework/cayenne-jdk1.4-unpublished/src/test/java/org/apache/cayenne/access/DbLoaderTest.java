@@ -485,6 +485,15 @@ operator|.
 name|supportsLobs
 argument_list|()
 decl_stmt|;
+name|boolean
+name|supportsFK
+init|=
+name|getAccessStackAdapter
+argument_list|()
+operator|.
+name|supportsFKConstraints
+argument_list|()
+decl_stmt|;
 name|DataMap
 name|map
 init|=
@@ -554,6 +563,11 @@ argument_list|(
 name|map
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|supportsFK
+condition|)
+block|{
 name|Collection
 name|rels
 init|=
@@ -692,6 +706,7 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 comment|// *** TESTING THIS ***
 name|loader
 operator|.
@@ -747,6 +762,11 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|supportsFK
+condition|)
+block|{
 name|Collection
 name|rels1
 init|=
@@ -770,14 +790,25 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 comment|// now when the map is loaded, test
 comment|// various things
 comment|// selectively check how different types were processed
+if|if
+condition|(
+name|getAccessStackAdapter
+argument_list|()
+operator|.
+name|supportsColumnTypeReengineering
+argument_list|()
+condition|)
+block|{
 name|checkTypes
 argument_list|(
 name|map
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 finally|finally
 block|{

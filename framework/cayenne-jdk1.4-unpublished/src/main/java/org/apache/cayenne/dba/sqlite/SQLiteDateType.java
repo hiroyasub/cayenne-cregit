@@ -77,6 +77,14 @@ begin_comment
 comment|/**  * Implements special date handling for SQLite. See  * http://www.zentus.com/sqlitejdbc/usage.html for details.  *   * @author Andrus Adamchik  * @since 3.0  */
 end_comment
 
+begin_comment
+comment|// TODO: andrus 10/10/2007 - most of this is bogus... see http://www.zentus.com/sqlitejdbc/usage.html
+end_comment
+
+begin_comment
+comment|// for how dates should be handled (without relying on the driver).
+end_comment
+
 begin_class
 class|class
 name|SQLiteDateType
