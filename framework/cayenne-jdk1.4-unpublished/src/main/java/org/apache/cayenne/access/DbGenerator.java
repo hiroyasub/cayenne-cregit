@@ -2162,7 +2162,7 @@ argument_list|(
 name|nextEntity
 argument_list|)
 expr_stmt|;
-comment|// check if an automatic PK generation can be potentailly supported
+comment|// check if an automatic PK generation can be potentially supported
 comment|// in this entity. For now simply check that the key is not propagated
 name|Iterator
 name|relationships
