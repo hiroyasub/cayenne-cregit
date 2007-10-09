@@ -43,6 +43,16 @@ name|java
 operator|.
 name|sql
 operator|.
+name|PreparedStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|ResultSet
 import|;
 end_import
@@ -104,24 +114,21 @@ throws|throws
 name|Exception
 block|{
 comment|// BigDecimals are not supported by the zentus driver... in addition the driver
-comment|// throws an NPE on 'getDouble' if the value is null, so must read it as an
-comment|// object.
-name|Number
-name|n
+comment|// throws an NPE on 'getDouble' if the value is null, and also there are rounding
+comment|// errors. So will read it as a String...
+name|String
+name|string
 init|=
-operator|(
-name|Number
-operator|)
 name|rs
 operator|.
-name|getObject
+name|getString
 argument_list|(
 name|index
 argument_list|)
 decl_stmt|;
 return|return
 operator|(
-name|n
+name|string
 operator|==
 literal|null
 operator|)
@@ -131,10 +138,7 @@ else|:
 operator|new
 name|BigDecimal
 argument_list|(
-name|n
-operator|.
-name|doubleValue
-argument_list|()
+name|string
 argument_list|)
 return|;
 block|}
@@ -155,24 +159,21 @@ throws|throws
 name|Exception
 block|{
 comment|// BigDecimals are not supported by the zentus driver... in addition the driver
-comment|// throws an NPE on 'getDouble' if the value is null, so must read it as an
-comment|// object.
-name|Number
-name|n
+comment|// throws an NPE on 'getDouble' if the value is null, and also there are rounding
+comment|// errors. So will read it as a String...
+name|String
+name|string
 init|=
-operator|(
-name|Number
-operator|)
 name|rs
 operator|.
-name|getObject
+name|getString
 argument_list|(
 name|index
 argument_list|)
 decl_stmt|;
 return|return
 operator|(
-name|n
+name|string
 operator|==
 literal|null
 operator|)
@@ -182,10 +183,7 @@ else|:
 operator|new
 name|BigDecimal
 argument_list|(
-name|n
-operator|.
-name|doubleValue
-argument_list|()
+name|string
 argument_list|)
 return|;
 block|}
