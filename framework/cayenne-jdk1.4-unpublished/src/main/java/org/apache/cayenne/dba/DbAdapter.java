@@ -246,7 +246,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */
+comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>entity</code> parameter.      */
 specifier|public
 name|String
 name|createTable
@@ -255,7 +255,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a DDL string to create a unique constraint over a set of columns.      *       * @since 1.1      */
+comment|/**      * Returns a DDL string to create a unique constraint over a set of columns, or null       * if the unique constraints are not supported.      *       * @since 1.1      */
 specifier|public
 name|String
 name|createUniqueConstraint
