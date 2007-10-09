@@ -308,15 +308,6 @@ name|adapter
 expr_stmt|;
 block|}
 specifier|public
-name|boolean
-name|usePooledDataSource
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
-specifier|public
 name|DbAdapter
 name|getAdapter
 parameter_list|()
