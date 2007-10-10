@@ -604,6 +604,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsAllAnySome
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 comment|/**      * Returns whether the DB supports a TRIM function for an arbitrary character.      */
 specifier|public
 name|boolean
