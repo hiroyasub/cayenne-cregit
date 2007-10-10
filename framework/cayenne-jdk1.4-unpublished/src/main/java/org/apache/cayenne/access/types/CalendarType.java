@@ -292,7 +292,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|// here the driver can "surpirse" us
+comment|// here the driver can "surprise" us
 comment|// check the type of returned value...
 name|Object
 name|object
