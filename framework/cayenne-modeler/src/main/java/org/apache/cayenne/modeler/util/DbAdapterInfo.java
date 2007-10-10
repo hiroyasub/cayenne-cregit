@@ -255,6 +255,22 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|sqlite
+operator|.
+name|SQLiteAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|sqlserver
 operator|.
 name|SQLServerAdapter
@@ -386,6 +402,13 @@ name|getName
 argument_list|()
 block|,
 name|IngresAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+block|,
+name|SQLiteAdapter
 operator|.
 name|class
 operator|.
@@ -574,6 +597,20 @@ name|getName
 argument_list|()
 argument_list|,
 literal|"Ingres Adapter"
+argument_list|)
+expr_stmt|;
+name|DEFAULT_ADAPTER_LABELS
+operator|.
+name|put
+argument_list|(
+name|SQLiteAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SQLite Adapter"
 argument_list|)
 expr_stmt|;
 block|}

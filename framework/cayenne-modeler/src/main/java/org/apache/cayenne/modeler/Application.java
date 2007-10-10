@@ -468,7 +468,7 @@ return|return
 name|instance
 return|;
 block|}
-comment|// static methods that should probabaly go away eventually...
+comment|// static methods that should probably go away eventually...
 specifier|public
 specifier|static
 name|CayenneModelerFrame
