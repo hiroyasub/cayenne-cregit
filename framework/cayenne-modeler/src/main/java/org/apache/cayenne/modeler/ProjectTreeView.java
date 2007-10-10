@@ -3836,6 +3836,13 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+name|this
+operator|.
+name|scrollPathToVisible
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Returns array of the user objects ending with this and starting with one under      * root. That is the array of actual objects rather than wrappers.      */
 specifier|private

@@ -88,6 +88,11 @@ specifier|protected
 name|Entity
 name|entity
 decl_stmt|;
+comment|/** True if the event is generated when an entity is beeing searched for */
+specifier|protected
+name|boolean
+name|searched
+decl_stmt|;
 comment|/** True if different from current entity */
 specifier|protected
 name|boolean
@@ -269,6 +274,31 @@ name|entity
 operator|=
 name|entity
 expr_stmt|;
+block|}
+comment|/**      * Sets the searched.      * @param searched      */
+specifier|public
+name|void
+name|setSearched
+parameter_list|(
+name|boolean
+name|searched
+parameter_list|)
+block|{
+name|this
+operator|.
+name|searched
+operator|=
+name|searched
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isSearched
+parameter_list|()
+block|{
+return|return
+name|searched
+return|;
 block|}
 block|}
 end_class

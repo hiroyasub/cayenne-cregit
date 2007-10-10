@@ -348,7 +348,7 @@ argument_list|(
 operator|new
 name|JLabel
 argument_list|(
-literal|"No matched entities found!"
+literal|"Nothing found!"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -463,7 +463,7 @@ name|okButton
 argument_list|)
 expr_stmt|;
 name|JComponent
-name|container
+name|contentPane
 init|=
 operator|(
 name|JComponent
@@ -471,7 +471,7 @@ operator|)
 name|getContentPane
 argument_list|()
 decl_stmt|;
-name|container
+name|contentPane
 operator|.
 name|setLayout
 argument_list|(
@@ -480,7 +480,7 @@ name|BorderLayout
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|container
+name|contentPane
 operator|.
 name|add
 argument_list|(
@@ -499,7 +499,7 @@ name|HORIZONTAL_SCROLLBAR_AS_NEEDED
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|container
+name|contentPane
 operator|.
 name|add
 argument_list|(
@@ -510,7 +510,7 @@ operator|.
 name|SOUTH
 argument_list|)
 expr_stmt|;
-name|container
+name|contentPane
 operator|.
 name|setPreferredSize
 argument_list|(
@@ -525,7 +525,7 @@ argument_list|)
 expr_stmt|;
 name|setTitle
 argument_list|(
-literal|"Found entities"
+literal|"Search results"
 argument_list|)
 expr_stmt|;
 block|}
