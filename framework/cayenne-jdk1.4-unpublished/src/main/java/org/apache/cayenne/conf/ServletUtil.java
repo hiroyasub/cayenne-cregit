@@ -136,12 +136,7 @@ block|{
 name|ResourceLocator
 name|locator
 init|=
-operator|(
-operator|(
-name|DefaultConfiguration
-operator|)
 name|oldConfig
-operator|)
 operator|.
 name|getResourceLocator
 argument_list|()

@@ -1144,9 +1144,6 @@ name|dataContext
 operator|.
 name|registerNewObject
 argument_list|(
-operator|(
-name|Persistent
-operator|)
 name|object
 argument_list|)
 expr_stmt|;

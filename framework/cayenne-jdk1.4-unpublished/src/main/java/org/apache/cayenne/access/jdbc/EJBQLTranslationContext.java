@@ -541,9 +541,6 @@ name|this
 operator|.
 name|currentBuffer
 operator|=
-operator|(
-name|StringBuffer
-operator|)
 name|findOrCreateMarkedBuffer
 argument_list|(
 name|marker

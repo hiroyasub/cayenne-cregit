@@ -1181,9 +1181,6 @@ else|:
 operator|new
 name|DataContext
 argument_list|(
-operator|(
-name|DataChannel
-operator|)
 name|this
 argument_list|,
 name|objectStore

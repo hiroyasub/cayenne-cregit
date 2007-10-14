@@ -265,9 +265,6 @@ decl_stmt|;
 name|DbAttribute
 name|dbAttribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|attribute
 operator|.
 name|getDbAttribute

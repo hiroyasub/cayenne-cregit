@@ -446,9 +446,6 @@ block|{
 name|Iterator
 name|it
 init|=
-operator|(
-name|Iterator
-operator|)
 name|defaultListeners
 operator|.
 name|iterator
@@ -622,9 +619,6 @@ block|{
 name|Iterator
 name|it
 init|=
-operator|(
-name|Iterator
-operator|)
 name|entityListeners
 operator|.
 name|iterator

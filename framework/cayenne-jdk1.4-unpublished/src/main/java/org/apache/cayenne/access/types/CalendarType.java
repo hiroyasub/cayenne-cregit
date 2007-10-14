@@ -638,9 +638,6 @@ block|{
 name|Calendar
 name|calendar
 init|=
-operator|(
-name|Calendar
-operator|)
 name|value
 decl_stmt|;
 if|if
