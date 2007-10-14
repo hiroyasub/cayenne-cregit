@@ -354,6 +354,21 @@ return|return
 name|resolver
 return|;
 block|}
+specifier|public
+name|void
+name|setEntityResolver
+parameter_list|(
+name|EntityResolver
+name|resolver
+parameter_list|)
+block|{
+name|this
+operator|.
+name|resolver
+operator|=
+name|resolver
+expr_stmt|;
+block|}
 block|}
 end_class
 

@@ -253,6 +253,10 @@ decl_stmt|;
 name|QueryCache
 name|queryCache
 decl_stmt|;
+comment|/**      * @since 3.0      */
+name|boolean
+name|propertyChangeCallbacksDisabled
+decl_stmt|;
 comment|/**      * Creates a new CayenneContext with no channel and disabled graph events.      */
 specifier|public
 name|CayenneContext
@@ -1434,6 +1438,13 @@ name|Object
 name|newValue
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|isPropertyChangeCallbacksDisabled
+argument_list|()
+condition|)
+block|{
 name|graphAction
 operator|.
 name|handlePropertyChange
@@ -1447,6 +1458,7 @@ argument_list|,
 name|newValue
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|Collection
@@ -1684,6 +1696,30 @@ block|}
 return|return
 name|object
 return|;
+block|}
+comment|/**      * @since 3.0      */
+name|boolean
+name|isPropertyChangeCallbacksDisabled
+parameter_list|()
+block|{
+return|return
+name|propertyChangeCallbacksDisabled
+return|;
+block|}
+comment|/**      * @since 3.0      */
+name|void
+name|setPropertyChangeCallbacksDisabled
+parameter_list|(
+name|boolean
+name|propertyChangeCallbacksDisabled
+parameter_list|)
+block|{
+name|this
+operator|.
+name|propertyChangeCallbacksDisabled
+operator|=
+name|propertyChangeCallbacksDisabled
+expr_stmt|;
 block|}
 block|}
 end_class
