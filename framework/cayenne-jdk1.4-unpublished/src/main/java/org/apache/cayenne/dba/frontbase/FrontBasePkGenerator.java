@@ -349,9 +349,15 @@ operator|.
 name|append
 argument_list|(
 literal|"SET UNIQUE = 1000000 FOR \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|entName
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\""
 argument_list|)
 expr_stmt|;
@@ -382,9 +388,15 @@ operator|.
 name|append
 argument_list|(
 literal|"SELECT UNIQUE FROM \""
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|entName
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\""
 argument_list|)
 expr_stmt|;

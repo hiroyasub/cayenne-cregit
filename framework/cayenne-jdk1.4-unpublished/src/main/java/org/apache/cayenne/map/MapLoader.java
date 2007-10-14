@@ -5348,13 +5348,25 @@ operator|.
 name|append
 argument_list|(
 literal|"Name: "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|name
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\tValue: "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|value
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
