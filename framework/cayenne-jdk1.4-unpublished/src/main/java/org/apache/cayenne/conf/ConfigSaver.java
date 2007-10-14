@@ -1074,10 +1074,6 @@ condition|(
 name|encoder
 operator|!=
 literal|null
-operator|&&
-name|passwordFile
-operator|!=
-literal|null
 condition|)
 block|{
 try|try

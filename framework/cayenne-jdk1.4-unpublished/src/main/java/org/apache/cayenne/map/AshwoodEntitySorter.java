@@ -1077,12 +1077,6 @@ index|[
 name|k
 index|]
 operator|=
-operator|(
-name|reflexiveRelName
-operator|!=
-literal|null
-operator|)
-condition|?
 name|descriptor
 operator|.
 name|getProperty
@@ -1094,8 +1088,6 @@ name|readProperty
 argument_list|(
 name|current
 argument_list|)
-else|:
-literal|null
 expr_stmt|;
 if|if
 condition|(

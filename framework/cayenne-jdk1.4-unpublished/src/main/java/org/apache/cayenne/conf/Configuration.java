@@ -706,6 +706,21 @@ block|{
 if|if
 condition|(
 name|domain
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Attempt to work with a null DataDomain."
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|domain
 operator|.
 name|getName
 argument_list|()
@@ -773,13 +788,6 @@ argument_list|)
 throw|;
 block|}
 comment|// inject EventManager
-if|if
-condition|(
-name|domain
-operator|!=
-literal|null
-condition|)
-block|{
 name|domain
 operator|.
 name|setEventManager
@@ -788,7 +796,6 @@ name|getEventManager
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 name|logObj
 operator|.
 name|debug

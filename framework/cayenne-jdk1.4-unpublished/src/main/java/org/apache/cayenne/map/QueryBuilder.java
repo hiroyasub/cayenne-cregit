@@ -645,6 +645,7 @@ name|path
 operator|==
 literal|null
 operator|||
+operator|(
 name|path
 operator|!=
 literal|null
@@ -658,6 +659,7 @@ name|length
 argument_list|()
 operator|==
 literal|0
+operator|)
 condition|)
 block|{
 comment|// throw??

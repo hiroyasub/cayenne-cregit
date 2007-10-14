@@ -223,10 +223,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|target
-operator|!=
-literal|null
-operator|&&
 name|setReverse
 condition|)
 block|{

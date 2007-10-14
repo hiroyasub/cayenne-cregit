@@ -388,6 +388,26 @@ decl_stmt|;
 if|if
 condition|(
 name|pathPart
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"ObjAttribute has no component: "
+operator|+
+name|oa
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+throw|;
+block|}
+if|else if
+condition|(
+name|pathPart
 operator|instanceof
 name|DbRelationship
 condition|)
@@ -410,26 +430,6 @@ name|DbAttribute
 operator|)
 name|pathPart
 decl_stmt|;
-if|if
-condition|(
-name|dbAttr
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"ObjAttribute has no DbAttribute: "
-operator|+
-name|oa
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
 name|appendColumn
 argument_list|(
 name|idVar

@@ -2671,13 +2671,6 @@ argument_list|(
 name|nodeId
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dataObject
-operator|!=
-literal|null
-condition|)
-block|{
 name|delegate
 operator|.
 name|finishedProcessDelete
@@ -2685,7 +2678,6 @@ argument_list|(
 name|dataObject
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 break|break;
 block|}

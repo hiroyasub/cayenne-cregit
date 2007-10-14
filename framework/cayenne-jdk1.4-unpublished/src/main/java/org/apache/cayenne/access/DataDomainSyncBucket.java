@@ -391,6 +391,21 @@ block|{
 if|if
 condition|(
 name|entity
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Entity must not be null."
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|entity
 operator|.
 name|isReadOnly
 argument_list|()
@@ -418,13 +433,6 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|entity
-operator|!=
-literal|null
-condition|)
-block|{
 name|message
 operator|.
 name|append
@@ -445,7 +453,6 @@ argument_list|(
 literal|"'"
 argument_list|)
 expr_stmt|;
-block|}
 name|message
 operator|.
 name|append
