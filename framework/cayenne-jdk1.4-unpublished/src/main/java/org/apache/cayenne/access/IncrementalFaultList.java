@@ -685,7 +685,7 @@ return|return
 name|internalQuery
 return|;
 block|}
-comment|/**      * Performs initialization of the internal list of objects. Only the first page is      * fully resolved. For the rest of the list, only ObjectIds are read.      *       * @deprecated since 3.0 this method is not called and is deprecated in favor of      *             {@link #fillIn(Query, List)}, as this method performed unneeded      *             synchronization.      * @since 1.0.6      */
+comment|/**      * Performs initialization of the internal list of objects. Only the first page is      * fully resolved. For the rest of the list, only ObjectIds are read.      *       * @deprecated since 3.0 this method is not called and is deprecated in favor of      *             {@link #fillIn(Query, List, boolean)}, as this method performed unneeded      *             synchronization.      * @since 1.0.6      */
 specifier|protected
 name|void
 name|fillIn

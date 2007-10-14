@@ -1006,7 +1006,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Sends a message via connector, getting a result as an instance of a specific class.      *       * @throws org.apache.cayenne.client.CayenneClientException if an underlying connector      *             exception occured, or a result is not of expected type.      */
+comment|/**      * Sends a message via connector, getting a result as an instance of a specific class.      *       * @throws org.apache.cayenne.CayenneRuntimeException if an underlying connector      *             exception occured, or a result is not of expected type.      */
 specifier|protected
 name|Object
 name|send

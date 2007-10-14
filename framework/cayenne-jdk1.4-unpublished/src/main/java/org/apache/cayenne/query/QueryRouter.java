@@ -66,7 +66,7 @@ name|Query
 name|substitutedQuery
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a QueryEngine that is configured to handle a given DataMap.      *       * @throws CayenneRuntimeException if an engine can't be found.      * @throws NullPointerException if a map parameter is null.      */
+comment|/**      * Returns a QueryEngine that is configured to handle a given DataMap.      *       * @throws org.apache.cayenne.CayenneRuntimeException if an engine can't be found.      * @throws NullPointerException if a map parameter is null.      */
 name|QueryEngine
 name|engineForDataMap
 parameter_list|(
