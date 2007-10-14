@@ -510,13 +510,6 @@ expr_stmt|;
 block|}
 comment|// notify of combined counts of all queries inside SQLTemplate multipled by the
 comment|// number of parameter sets...
-if|if
-condition|(
-name|counts
-operator|!=
-literal|null
-condition|)
-block|{
 name|int
 index|[]
 name|ints
@@ -577,7 +570,6 @@ argument_list|,
 name|ints
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|protected
 name|void
@@ -722,12 +714,9 @@ finally|finally
 block|{
 if|if
 condition|(
+operator|!
 name|iteratedResult
 condition|)
-block|{
-break|break;
-block|}
-else|else
 block|{
 name|resultSet
 operator|.

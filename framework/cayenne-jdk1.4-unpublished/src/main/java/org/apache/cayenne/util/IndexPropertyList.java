@@ -1082,10 +1082,6 @@ condition|(
 name|o1
 operator|==
 literal|null
-operator|&&
-name|o2
-operator|!=
-literal|null
 condition|)
 block|{
 return|return
@@ -1095,10 +1091,6 @@ return|;
 block|}
 if|else if
 condition|(
-name|o1
-operator|!=
-literal|null
-operator|&&
 name|o2
 operator|==
 literal|null

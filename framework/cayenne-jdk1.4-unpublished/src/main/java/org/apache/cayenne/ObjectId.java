@@ -805,9 +805,7 @@ literal|null
 condition|)
 block|{
 return|return
-name|o2
-operator|==
-literal|null
+literal|false
 return|;
 block|}
 if|if
