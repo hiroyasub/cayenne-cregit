@@ -709,9 +709,6 @@ argument_list|(
 name|guessType
 argument_list|(
 name|type
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
