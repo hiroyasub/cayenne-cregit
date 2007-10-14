@@ -925,6 +925,10 @@ name|queryCacheFactory
 operator|!=
 literal|null
 operator|&&
+name|dataContextFactory
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|Util
 operator|.
