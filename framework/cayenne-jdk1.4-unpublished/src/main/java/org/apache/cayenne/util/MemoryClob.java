@@ -187,6 +187,7 @@ operator|>
 name|dlen
 condition|)
 block|{
+throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
@@ -198,7 +199,7 @@ operator|+
 literal|1L
 operator|)
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
 if|if
 condition|(
