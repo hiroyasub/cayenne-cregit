@@ -1468,7 +1468,7 @@ name|Object
 operator|.
 name|class
 argument_list|,
-literal|"delete from ARTIST where ARTIST_NAME like 'A%'"
+literal|"delete from ARTIST where ARTIST_NAME like 'a%'"
 argument_list|)
 decl_stmt|;
 name|DbAdapter
