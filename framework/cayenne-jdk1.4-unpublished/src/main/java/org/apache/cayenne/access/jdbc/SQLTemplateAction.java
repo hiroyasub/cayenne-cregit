@@ -725,6 +725,15 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|// ignore possible following update counts and bail early on
+comment|// iterated results
+if|if
+condition|(
+name|iteratedResult
+condition|)
+block|{
+break|break;
+block|}
 block|}
 block|}
 else|else
