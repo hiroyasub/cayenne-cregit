@@ -711,7 +711,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error detecting database type"
+literal|"Error detecting database type: "
+operator|+
+name|e
+operator|.
+name|getLocalizedMessage
+argument_list|()
 argument_list|,
 name|e
 argument_list|)
