@@ -1115,7 +1115,7 @@ return|return
 operator|new
 name|Double
 argument_list|(
-literal|0d
+literal|0.0d
 argument_list|)
 return|;
 block|}
@@ -1133,7 +1133,7 @@ return|return
 operator|new
 name|Float
 argument_list|(
-literal|0f
+literal|0.0f
 argument_list|)
 return|;
 block|}
