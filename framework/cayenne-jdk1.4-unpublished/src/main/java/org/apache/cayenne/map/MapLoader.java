@@ -3578,9 +3578,6 @@ name|printAttributes
 argument_list|(
 name|atts
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -3905,9 +3902,6 @@ name|printAttributes
 argument_list|(
 name|atts
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -3966,9 +3960,6 @@ name|printAttributes
 argument_list|(
 name|atts
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
