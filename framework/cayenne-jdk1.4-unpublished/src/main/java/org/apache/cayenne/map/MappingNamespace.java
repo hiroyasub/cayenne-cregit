@@ -56,14 +56,6 @@ name|String
 name|className
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an {@link EntityListener} matching class name or null if such      * EntityListener is not mapped.      *       * @since 3.0      */
-name|EntityListener
-name|getEntityListener
-parameter_list|(
-name|String
-name|className
-parameter_list|)
-function_decl|;
 comment|/**      * Returns DbEntity for a given name, or null if no such DbEntity is found in the      * MappingNamespace.      */
 name|DbEntity
 name|getDbEntity

@@ -627,7 +627,7 @@ name|entityListeners
 init|=
 name|cayenneMap
 operator|.
-name|getEntityListeners
+name|getDefaultEntityListeners
 argument_list|()
 decl_stmt|;
 name|assertEquals
@@ -663,7 +663,7 @@ name|cl1
 init|=
 name|cayenneMap
 operator|.
-name|getEntityListener
+name|getDefaultEntityListener
 argument_list|(
 literal|"abc.C1"
 argument_list|)
