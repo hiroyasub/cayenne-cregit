@@ -324,6 +324,11 @@ name|GenerateDBAction
 operator|.
 name|getActionName
 argument_list|()
+block|,
+name|MigrateAction
+operator|.
+name|getActionName
+argument_list|()
 block|}
 argument_list|)
 argument_list|)
@@ -745,6 +750,15 @@ name|registerAction
 argument_list|(
 operator|new
 name|GenerateDBAction
+argument_list|(
+name|application
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|registerAction
+argument_list|(
+operator|new
+name|MigrateAction
 argument_list|(
 name|application
 argument_list|)
