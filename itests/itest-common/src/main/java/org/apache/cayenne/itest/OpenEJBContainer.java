@@ -113,9 +113,9 @@ name|geronimo
 operator|.
 name|transaction
 operator|.
-name|jta11
+name|manager
 operator|.
-name|GeronimoTransactionManagerJTA11
+name|GeronimoTransactionManager
 import|;
 end_import
 
@@ -176,7 +176,7 @@ name|File
 name|openEjbHome
 decl_stmt|;
 specifier|private
-name|GeronimoTransactionManagerJTA11
+name|GeronimoTransactionManager
 name|txManager
 decl_stmt|;
 specifier|private
@@ -436,7 +436,7 @@ operator|.
 name|txManager
 operator|=
 operator|new
-name|GeronimoTransactionManagerJTA11
+name|GeronimoTransactionManager
 argument_list|()
 expr_stmt|;
 operator|new
