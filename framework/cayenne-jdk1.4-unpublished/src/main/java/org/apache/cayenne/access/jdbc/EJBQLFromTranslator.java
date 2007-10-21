@@ -684,6 +684,14 @@ operator|.
 name|getFullyQualifiedName
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|context
+operator|.
+name|isUsingAliases
+argument_list|()
+condition|)
+block|{
 name|String
 name|alias
 init|=
@@ -696,7 +704,8 @@ argument_list|,
 name|tableName
 argument_list|)
 decl_stmt|;
-comment|// not using "AS" to separate table name and alias name - OpenBase doesn't support
+comment|// not using "AS" to separate table name and alias name - OpenBase doesn't
+comment|// support
 comment|// "AS", and the rest of the databases do not care
 name|context
 operator|.
@@ -723,6 +732,25 @@ expr_stmt|;
 return|return
 name|alias
 return|;
+block|}
+else|else
+block|{
+name|context
+operator|.
+name|append
+argument_list|(
+literal|' '
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|tableName
+argument_list|)
+expr_stmt|;
+return|return
+name|tableName
+return|;
+block|}
 block|}
 block|}
 end_class
