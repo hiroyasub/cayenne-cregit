@@ -174,6 +174,10 @@ specifier|private
 name|EJBQLTranslatorFactory
 name|translatorFactory
 decl_stmt|;
+specifier|private
+name|boolean
+name|usingAliases
+decl_stmt|;
 comment|// a flag indicating whether column expressions should be treated as result columns or
 comment|// not.
 specifier|private
@@ -224,6 +228,12 @@ operator|.
 name|translatorFactory
 operator|=
 name|translatorFactory
+expr_stmt|;
+name|this
+operator|.
+name|usingAliases
+operator|=
+literal|true
 expr_stmt|;
 block|}
 name|SQLTemplate
@@ -331,6 +341,7 @@ name|translatorFactory
 return|;
 block|}
 comment|/**      * Looks up entity descriptor for an identifier that can be a compiled expression id      * or one of the aliases.      */
+specifier|public
 name|ClassDescriptor
 name|getEntityDescriptor
 parameter_list|(
@@ -1051,6 +1062,7 @@ literal|null
 return|;
 block|}
 comment|/**      * Retrieves a SQL alias for the combination of EJBQL id variable and a table name. If      * such alias hasn't been used, it is created on the fly.      */
+specifier|protected
 name|String
 name|getTableAlias
 parameter_list|(
@@ -1061,6 +1073,17 @@ name|String
 name|tableName
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|isUsingAliases
+argument_list|()
+condition|)
+block|{
+return|return
+name|tableName
+return|;
+block|}
 name|StringBuffer
 name|keyBuffer
 init|=
@@ -1276,6 +1299,30 @@ operator|.
 name|appendingResultColumns
 operator|=
 name|appendingResultColumns
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isUsingAliases
+parameter_list|()
+block|{
+return|return
+name|usingAliases
+return|;
+block|}
+specifier|public
+name|void
+name|setUsingAliases
+parameter_list|(
+name|boolean
+name|useAliases
+parameter_list|)
+block|{
+name|this
+operator|.
+name|usingAliases
+operator|=
+name|useAliases
 expr_stmt|;
 block|}
 block|}

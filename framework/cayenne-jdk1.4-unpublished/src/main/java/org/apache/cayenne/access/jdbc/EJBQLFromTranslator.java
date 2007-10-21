@@ -162,12 +162,13 @@ comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EJBQLFromTranslator
 extends|extends
 name|EJBQLBaseVisitor
 block|{
-specifier|private
+specifier|protected
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
@@ -189,6 +190,7 @@ operator|+
 name|id
 return|;
 block|}
+specifier|public
 name|EJBQLFromTranslator
 parameter_list|(
 name|EJBQLTranslationContext
@@ -650,7 +652,7 @@ literal|")"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+specifier|protected
 name|String
 name|appendTable
 parameter_list|(
