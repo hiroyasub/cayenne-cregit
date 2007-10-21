@@ -89,6 +89,13 @@ name|EJBQLTranslationContext
 name|context
 parameter_list|)
 block|{
+name|context
+operator|.
+name|setUsingAliases
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 return|return
 operator|new
 name|EJBQLUpdateTranslator

@@ -316,6 +316,14 @@ return|;
 block|}
 block|}
 decl_stmt|;
+comment|// some DB's do not support aliases in SET (Postgresql)
+name|pathTranslator
+operator|.
+name|setUsingAliases
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|expression
 operator|.
 name|visit
