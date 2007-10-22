@@ -57,6 +57,10 @@ name|DbEntity
 import|;
 end_import
 
+begin_comment
+comment|/**  * A {@link MergerToken} to add a "allow null" clause to a column.  *   * @author halset  */
+end_comment
+
 begin_class
 specifier|public
 class|class

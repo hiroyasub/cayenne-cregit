@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A way to create {@link MergerToken}s that work for a specific {@link DbAdapter}  *   * @see DbAdapter#mergerFactory()  */
+comment|/**  * All {@link MergerToken}s should be created from a {@link MergerFactory} obtained from  * {@link DbAdapter#mergerFactory()} so that the {@link DbAdapter} are able to provide  * {@link MergerToken} subclasses.  *   * @see DbAdapter#mergerFactory()  */
 end_comment
 
 begin_class
