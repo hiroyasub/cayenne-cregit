@@ -340,6 +340,7 @@ comment|/**  * A translator that walks the relationship/attribute path, appendin
 end_comment
 
 begin_class
+specifier|public
 specifier|abstract
 class|class
 name|EJBQLPathTranslator
@@ -382,6 +383,7 @@ specifier|private
 name|boolean
 name|usingAliases
 decl_stmt|;
+specifier|public
 name|EJBQLPathTranslator
 parameter_list|(
 name|EJBQLTranslationContext

@@ -378,6 +378,7 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+specifier|protected
 name|void
 name|addMultiColumnOperand
 parameter_list|(

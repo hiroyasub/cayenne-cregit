@@ -117,6 +117,22 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|jdbc
+operator|.
+name|EJBQLTranslatorFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|trans
 operator|.
 name|QualifierTranslator
@@ -755,6 +771,18 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|protected
+name|EJBQLTranslatorFactory
+name|createEJBQLTranslatorFactory
+parameter_list|()
+block|{
+return|return
+operator|new
+name|OracleEJBQLTranslatorFactory
+argument_list|()
+return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
 specifier|protected
