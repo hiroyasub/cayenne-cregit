@@ -1151,11 +1151,11 @@ argument_list|(
 name|tableName
 argument_list|)
 decl_stmt|;
-name|AbstractMergerToken
+name|AbstractToDbToken
 name|t
 init|=
 operator|(
-name|AbstractMergerToken
+name|AbstractToDbToken
 operator|)
 name|node
 operator|.
@@ -1165,12 +1165,8 @@ operator|.
 name|mergerFactory
 argument_list|()
 operator|.
-name|createDropTable
+name|createDropTableToDb
 argument_list|(
-name|MergeDirection
-operator|.
-name|TO_DB
-argument_list|,
 name|entity
 argument_list|)
 decl_stmt|;

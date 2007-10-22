@@ -55,20 +55,6 @@ name|cayenne
 operator|.
 name|merge
 operator|.
-name|MergeDirection
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|merge
-operator|.
 name|MergerFactory
 import|;
 end_import
@@ -97,7 +83,7 @@ name|cayenne
 operator|.
 name|merge
 operator|.
-name|SetColumnType
+name|SetColumnTypeToDb
 import|;
 end_import
 
@@ -110,11 +96,8 @@ name|MergerFactory
 block|{
 specifier|public
 name|MergerToken
-name|createSetColumnType
+name|createSetColumnTypeToDb
 parameter_list|(
-name|MergeDirection
-name|direction
-parameter_list|,
 specifier|final
 name|DbEntity
 name|entity
@@ -129,10 +112,8 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|SetColumnType
+name|SetColumnTypeToDb
 argument_list|(
-name|direction
-argument_list|,
 name|entity
 argument_list|,
 name|columnOriginal
