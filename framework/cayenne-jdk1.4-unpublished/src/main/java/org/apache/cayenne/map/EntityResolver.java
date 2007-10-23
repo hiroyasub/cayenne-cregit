@@ -1018,6 +1018,22 @@ return|return
 name|callbackRegistry
 return|;
 block|}
+comment|/**      * Sets a lifecycle callbacks registry of the EntityResolver. Users rarely if ever      * need to call this method as Cayenne would instantiate a registry itself as needed      * based on mapped configuration.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setCallbackRegistry
+parameter_list|(
+name|LifecycleCallbackRegistry
+name|callbackRegistry
+parameter_list|)
+block|{
+name|this
+operator|.
+name|callbackRegistry
+operator|=
+name|callbackRegistry
+expr_stmt|;
+block|}
 comment|/**      * Returns ClientEntityResolver with mapping information that only includes entities      * available on CWS Client Tier.      *       * @since 1.2      */
 specifier|public
 name|EntityResolver

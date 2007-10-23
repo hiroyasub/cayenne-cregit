@@ -512,22 +512,37 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Persistent
+comment|// TODO: andrus, 10/23/2007 - aggregate queries can return Object[] results
+comment|// that are mixed Persistent and scalars... need to unwrap those... for now
+comment|// simply check for non-persistent first result and bail out...
+name|Object
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|it
 operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|object
+operator|instanceof
+name|Persistent
+condition|)
+block|{
 name|performCallbacks
 argument_list|(
+operator|(
+name|Persistent
+operator|)
 name|object
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+break|break;
+block|}
 block|}
 block|}
 comment|/**      * Invokes callbacks for the class hierarchy, starting from the most generic      * superclass.      */
