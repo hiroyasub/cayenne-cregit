@@ -31,47 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
+name|*
 import|;
 end_import
 
@@ -111,7 +71,7 @@ operator|.
 name|callbackMethods
 operator|=
 operator|new
-name|HashSet
+name|LinkedHashSet
 argument_list|(
 literal|3
 argument_list|)
@@ -129,7 +89,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns all callback methods for this callback event.      */
+comment|/**      * Returns all callback methods for this callback event.      * @return Returns all callback methods      */
 specifier|public
 name|Collection
 name|getCallbackMethods
