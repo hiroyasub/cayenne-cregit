@@ -165,6 +165,14 @@ name|LAST_PROJ_FILES
 init|=
 literal|"Editor.lastSeveralProjectFiles"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|LAST_PROJ_FILES_SIZE
+init|=
+literal|12
+decl_stmt|;
 comment|/** GUI layout */
 specifier|public
 specifier|static

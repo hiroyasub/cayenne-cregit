@@ -1221,7 +1221,7 @@ operator|=
 operator|new
 name|RecentFileMenu
 argument_list|(
-literal|"Recent Files"
+literal|"Recent Projects"
 argument_list|)
 expr_stmt|;
 name|recentFileMenu

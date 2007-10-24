@@ -1200,7 +1200,9 @@ operator|.
 name|size
 argument_list|()
 operator|>
-literal|4
+name|ModelerPreferences
+operator|.
+name|LAST_PROJ_FILES_SIZE
 condition|)
 block|{
 name|arr

@@ -206,7 +206,9 @@ operator|.
 name|size
 argument_list|()
 operator|>
-literal|4
+name|ModelerPreferences
+operator|.
+name|LAST_PROJ_FILES_SIZE
 condition|)
 block|{
 name|arr
@@ -309,6 +311,14 @@ init|=
 operator|new
 name|FileMenuItem
 argument_list|(
+operator|(
+name|i
+operator|+
+literal|1
+operator|)
+operator|+
+literal|". "
+operator|+
 name|name
 argument_list|)
 decl_stmt|;
