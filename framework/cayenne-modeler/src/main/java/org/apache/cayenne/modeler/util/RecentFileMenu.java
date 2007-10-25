@@ -311,14 +311,6 @@ init|=
 operator|new
 name|FileMenuItem
 argument_list|(
-operator|(
-name|i
-operator|+
-literal|1
-operator|)
-operator|+
-literal|". "
-operator|+
 name|name
 argument_list|)
 decl_stmt|;
