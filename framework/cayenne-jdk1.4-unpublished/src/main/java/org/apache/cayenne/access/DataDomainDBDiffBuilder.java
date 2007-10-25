@@ -814,20 +814,31 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|// check for situation when a substitute arc was created prior to deleting the
-comment|// old arc...
-if|else if
-condition|(
-name|targetNodeId
-operator|.
-name|equals
-argument_list|(
+else|else
+block|{
+comment|// skip deletion record if a substitute arc was created prior to deleting
+comment|// the old arc...
+name|Object
+name|existingTargetId
+init|=
 name|currentArcDiff
 operator|.
 name|get
 argument_list|(
 name|arcId
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|existingTargetId
+operator|==
+literal|null
+operator|||
+name|targetNodeId
+operator|.
+name|equals
+argument_list|(
+name|existingTargetId
 argument_list|)
 condition|)
 block|{
@@ -840,6 +851,7 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
