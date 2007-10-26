@@ -712,6 +712,34 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|isExcludingSuperclassListeners
+argument_list|()
+condition|)
+block|{
+name|encoder
+operator|.
+name|print
+argument_list|(
+literal|"\" exclude-superclass-listeners=\"true"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|isExcludingDefaultListeners
+argument_list|()
+condition|)
+block|{
+name|encoder
+operator|.
+name|print
+argument_list|(
+literal|"\" exclude-default-listeners=\"true"
+argument_list|)
+expr_stmt|;
+block|}
 name|encoder
 operator|.
 name|println
