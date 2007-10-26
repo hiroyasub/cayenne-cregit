@@ -19,9 +19,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|io
 operator|.
-name|List
+name|File
 import|;
 end_import
 
@@ -31,7 +31,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|FileNotFoundException
 import|;
 end_import
 
@@ -51,7 +51,17 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileNotFoundException
+name|PrintWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -144,6 +154,20 @@ operator|.
 name|embeddable
 operator|.
 name|Embeddable1
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|CayenneResources
 import|;
 end_import
 
@@ -755,7 +779,7 @@ parameter_list|()
 throws|throws
 name|FileNotFoundException
 block|{
-comment|//load map
+comment|// load map
 name|MapLoader
 name|mapLoader
 init|=
@@ -781,7 +805,24 @@ argument_list|(
 name|map
 argument_list|)
 expr_stmt|;
-comment|//endode map
+comment|// encode map
+name|File
+name|file
+init|=
+operator|new
+name|File
+argument_list|(
+name|CayenneResources
+operator|.
+name|getResources
+argument_list|()
+operator|.
+name|getTestDir
+argument_list|()
+argument_list|,
+literal|"testmap_generated.map.xml"
+argument_list|)
+decl_stmt|;
 name|PrintWriter
 name|pw
 init|=
@@ -791,7 +832,7 @@ argument_list|(
 operator|new
 name|FileOutputStream
 argument_list|(
-literal|"testmap_generated.map.xml"
+name|file
 argument_list|)
 argument_list|)
 decl_stmt|;
