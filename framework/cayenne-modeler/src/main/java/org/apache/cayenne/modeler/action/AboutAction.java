@@ -134,12 +134,7 @@ parameter_list|()
 block|{
 operator|new
 name|AboutDialog
-argument_list|(
-name|Application
-operator|.
-name|getFrame
 argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 block|}
