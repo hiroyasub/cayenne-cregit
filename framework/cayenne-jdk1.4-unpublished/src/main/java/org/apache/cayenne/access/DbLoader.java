@@ -1175,9 +1175,7 @@ literal|null
 condition|)
 block|{
 comment|// no delegate, don't know what to do, cancel import
-return|return
-literal|false
-return|;
+break|break;
 block|}
 try|try
 block|{
