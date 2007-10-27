@@ -493,12 +493,12 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|33002
-argument_list|)
 argument_list|,
+operator|(
+operator|(
+name|Number
+operator|)
 name|artist
 operator|.
 name|getObjectId
@@ -513,6 +513,10 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|)
+operator|)
+operator|.
+name|intValue
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
