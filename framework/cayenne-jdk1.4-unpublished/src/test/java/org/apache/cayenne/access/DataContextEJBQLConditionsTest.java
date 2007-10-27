@@ -854,7 +854,7 @@ name|Exception
 block|{
 name|createTestData
 argument_list|(
-literal|"prepareIn"
+literal|"prepareInSubquery"
 argument_list|)
 expr_stmt|;
 name|String
@@ -862,7 +862,7 @@ name|ejbql
 init|=
 literal|"SELECT p FROM Painting p WHERE p.paintingTitle IN ("
 operator|+
-literal|"SELECT a1.artistName FROM Artist a1"
+literal|"SELECT p1.paintingTitle FROM Painting p1 WHERE p1.paintingTitle = 'C'"
 operator|+
 literal|")"
 decl_stmt|;
@@ -952,7 +952,7 @@ argument_list|(
 operator|new
 name|Integer
 argument_list|(
-literal|33006
+literal|33012
 argument_list|)
 argument_list|)
 argument_list|)
@@ -966,7 +966,7 @@ argument_list|(
 operator|new
 name|Integer
 argument_list|(
-literal|33007
+literal|33014
 argument_list|)
 argument_list|)
 argument_list|)
