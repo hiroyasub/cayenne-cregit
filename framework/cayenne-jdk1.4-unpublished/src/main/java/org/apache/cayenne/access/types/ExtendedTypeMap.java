@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores ExtendedTypes, implementing an algorithm to determine the right type for a given  * Java class. See {@link #getRegisteredType(String)} documentation for lookup algorith  * details.  *   * @author Andrus Adamchik  */
+comment|/**  * Stores ExtendedTypes, implementing an algorithm to determine the right type for a given  * Java class. See {@link #getRegisteredType(String)} documentation for lookup algorithm  * details.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -311,7 +311,7 @@ name|factory
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a factory from the regsitered factories if it was previosly added.      *       * @since 1.2      */
+comment|/**      * Removes a factory from the registered factories if it was previously added.      *       * @since 1.2      */
 specifier|public
 name|void
 name|removeFactory
