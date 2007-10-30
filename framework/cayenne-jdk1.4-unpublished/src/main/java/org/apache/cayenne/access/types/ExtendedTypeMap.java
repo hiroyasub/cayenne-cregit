@@ -354,7 +354,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Adds a new type to the list of registered types. If there is another type      * registered for a class described by the<code>type</code> argument, the old      * handler is overwriden by the new one.      */
+comment|/**      * Adds a new type to the list of registered types. If there is another type      * registered for a class described by the<code>type</code> argument, the old      * handler is overridden by the new one.      */
 specifier|public
 name|void
 name|registerType
@@ -396,7 +396,7 @@ return|return
 name|defaultType
 return|;
 block|}
-comment|/**      * Returns a guranteed non-null ExtendedType instance for a given Java class name. The      * following lookup sequence is used to determine the type:      *<ul>      *<li>First the methods checks for an ExtendedType explicitly registered with the      * map for a given class name (most common types are registered by Cayenne internally;      * users can regsiter their own).</li>      *<li>Second, the method tries to obtain a type by iterating through      * {@link ExtendedTypeFactory} instances registered by users. If a factory returns a      * non-null type, it is returned to the user and the rest of the factories are      * ignored.</li>      *<li>Third, the method iterates through standard {@link ExtendedTypeFactory}      * instances that can dynamically construct extended types for serializable objects      * and JDK 1.5 enums.</li>      *<li>If all the methods above failed, the default type is returned that relies on      * default JDBC driver mapping to set and get objects.</li>      *</ul>      *<i>Note that for array types class name must be in the form 'MyClass[]'</i>.      */
+comment|/**      * Returns a guaranteed non-null ExtendedType instance for a given Java class name. The      * following lookup sequence is used to determine the type:      *<ul>      *<li>First the methods checks for an ExtendedType explicitly registered with the      * map for a given class name (most common types are registered by Cayenne internally;      * users can register their own).</li>      *<li>Second, the method tries to obtain a type by iterating through      * {@link ExtendedTypeFactory} instances registered by users. If a factory returns a      * non-null type, it is returned to the user and the rest of the factories are      * ignored.</li>      *<li>Third, the method iterates through standard {@link ExtendedTypeFactory}      * instances that can dynamically construct extended types for serializable objects      * and JDK 1.5 enums.</li>      *<li>If all the methods above failed, the default type is returned that relies on      * default JDBC driver mapping to set and get objects.</li>      *</ul>      *<i>Note that for array types class name must be in the form 'MyClass[]'</i>.      */
 specifier|public
 name|ExtendedType
 name|getRegisteredType
