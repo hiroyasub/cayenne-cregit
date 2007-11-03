@@ -765,7 +765,7 @@ name|Component
 name|dataMapView
 init|=
 operator|new
-name|DataMapView
+name|DataMapTabbedView
 argument_list|(
 name|eventController
 argument_list|)
