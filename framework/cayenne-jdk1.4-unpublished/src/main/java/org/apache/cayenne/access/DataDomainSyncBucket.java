@@ -119,6 +119,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Fault
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectId
 import|;
 end_import
@@ -1185,12 +1197,13 @@ operator|.
 name|getComplimentaryReverseArc
 argument_list|()
 decl_stmt|;
+comment|// must resolve faults... hopefully for to-one this will not cause extra fetches...
 name|Object
 name|source
 init|=
 name|arc
 operator|.
-name|readPropertyDirectly
+name|readProperty
 argument_list|(
 name|object
 argument_list|)
