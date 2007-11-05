@@ -652,6 +652,11 @@ argument_list|(
 name|causeMessage
 argument_list|)
 expr_stmt|;
+name|causeMessage
+operator|.
+name|flush
+argument_list|()
+expr_stmt|;
 name|Exception
 name|cause
 init|=
