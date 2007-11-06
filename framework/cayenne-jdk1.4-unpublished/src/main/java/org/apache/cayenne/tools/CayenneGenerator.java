@@ -130,7 +130,7 @@ specifier|public
 class|class
 name|CayenneGenerator
 extends|extends
-name|Task
+name|CayenneTask
 block|{
 specifier|protected
 name|String

@@ -142,7 +142,7 @@ specifier|public
 class|class
 name|DeploymentConfigurator
 extends|extends
-name|Task
+name|CayenneTask
 block|{
 specifier|protected
 name|ProjectConfigInfo
