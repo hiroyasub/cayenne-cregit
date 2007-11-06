@@ -397,6 +397,13 @@ name|getView
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|selected
+operator|instanceof
+name|ExistingSelectionProcessor
+condition|)
+block|{
 operator|(
 operator|(
 name|ExistingSelectionProcessor
@@ -409,6 +416,7 @@ argument_list|(
 name|e
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 argument_list|)

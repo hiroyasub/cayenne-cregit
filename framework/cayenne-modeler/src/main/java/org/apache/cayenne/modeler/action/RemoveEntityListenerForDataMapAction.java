@@ -167,6 +167,13 @@ operator|.
 name|getCurrentListenerClass
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|listenerClass
+operator|!=
+literal|null
+condition|)
+block|{
 name|getProjectController
 argument_list|()
 operator|.
@@ -186,10 +193,9 @@ argument_list|(
 operator|new
 name|EntityListenerEvent
 argument_list|(
-name|e
+name|RemoveEntityListenerForDataMapAction
 operator|.
-name|getSource
-argument_list|()
+name|this
 argument_list|,
 name|listenerClass
 argument_list|,
@@ -201,6 +207,7 @@ name|REMOVE
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_class

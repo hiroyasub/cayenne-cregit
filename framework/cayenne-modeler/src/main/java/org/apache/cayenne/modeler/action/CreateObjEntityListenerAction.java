@@ -316,10 +316,9 @@ argument_list|(
 operator|new
 name|EntityListenerEvent
 argument_list|(
-name|e
+name|CreateObjEntityListenerAction
 operator|.
-name|getSource
-argument_list|()
+name|this
 argument_list|,
 name|listenerClass
 argument_list|,

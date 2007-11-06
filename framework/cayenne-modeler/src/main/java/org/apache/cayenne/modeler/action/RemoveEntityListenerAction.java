@@ -205,10 +205,9 @@ argument_list|(
 operator|new
 name|EntityListenerEvent
 argument_list|(
-name|e
+name|RemoveEntityListenerAction
 operator|.
-name|getSource
-argument_list|()
+name|this
 argument_list|,
 name|listenerClass
 argument_list|,
