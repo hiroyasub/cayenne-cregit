@@ -267,8 +267,35 @@ argument_list|(
 name|projectFile
 argument_list|)
 decl_stmt|;
+name|ClassLoader
+name|threadContextClassLoader
+init|=
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|getContextClassLoader
+argument_list|()
+decl_stmt|;
 try|try
 block|{
+comment|// need to set context class loader so that cayenne can find jdbc driver and
+comment|// PasswordEncoder
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|setContextClassLoader
+argument_list|(
+name|getClass
+argument_list|()
+operator|.
+name|getClassLoader
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|configuration
 operator|.
 name|initialize
@@ -292,6 +319,20 @@ argument_list|,
 name|ex
 argument_list|)
 throw|;
+block|}
+finally|finally
+block|{
+comment|// set back to original ClassLoader
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|setContextClassLoader
+argument_list|(
+name|threadContextClassLoader
+argument_list|)
+expr_stmt|;
 block|}
 comment|// perform project validation
 name|DataNode
