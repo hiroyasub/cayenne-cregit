@@ -36,6 +36,11 @@ specifier|private
 name|String
 name|name
 decl_stmt|;
+comment|/**      * methods counter      */
+specifier|private
+name|int
+name|counter
+decl_stmt|;
 comment|/**      * constructor      * @param type type id      * @param name name      */
 specifier|public
 name|CallbackType
@@ -59,6 +64,12 @@ name|name
 operator|=
 name|name
 expr_stmt|;
+name|this
+operator|.
+name|counter
+operator|=
+literal|0
+expr_stmt|;
 block|}
 comment|/**      * @return callback type id      */
 specifier|public
@@ -80,15 +91,74 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * @return callback name      */
+comment|/**      * @return number of callback methods of this type.      */
+specifier|public
+name|int
+name|getCounter
+parameter_list|()
+block|{
+return|return
+name|counter
+return|;
+block|}
+comment|/**      * Method to specify counter value      * @param counter new coutner value      */
+specifier|public
+name|void
+name|setCounter
+parameter_list|(
+name|int
+name|counter
+parameter_list|)
+block|{
+name|this
+operator|.
+name|counter
+operator|=
+name|counter
+expr_stmt|;
+block|}
+comment|/**      * @return a human readable label representing for this callback.       */
 specifier|public
 name|String
 name|toString
 parameter_list|()
 block|{
+if|if
+condition|(
+name|counter
+operator|<=
+literal|0
+condition|)
+block|{
 return|return
 name|name
 return|;
+block|}
+if|else if
+condition|(
+name|counter
+operator|==
+literal|1
+condition|)
+block|{
+return|return
+name|name
+operator|+
+literal|" (1 method)"
+return|;
+block|}
+else|else
+block|{
+return|return
+name|name
+operator|+
+literal|" ("
+operator|+
+name|counter
+operator|+
+literal|" methods)"
+return|;
+block|}
 block|}
 specifier|public
 name|boolean

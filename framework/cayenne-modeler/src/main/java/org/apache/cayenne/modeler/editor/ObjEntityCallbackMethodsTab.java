@@ -165,6 +165,9 @@ name|getSelectedItem
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|updateCallbackTypeCounters
+argument_list|()
+expr_stmt|;
 name|rebuildTable
 argument_list|()
 expr_stmt|;
@@ -210,6 +213,9 @@ operator|.
 name|getSelectedItem
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|updateCallbackTypeCounters
+argument_list|()
 expr_stmt|;
 name|rebuildTable
 argument_list|()

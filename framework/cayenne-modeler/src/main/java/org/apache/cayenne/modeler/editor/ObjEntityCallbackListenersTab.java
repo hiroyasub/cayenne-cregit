@@ -256,6 +256,9 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
+name|updateCallbackTypeCounters
+argument_list|()
+expr_stmt|;
 name|mediator
 operator|.
 name|setCurrentCallbackType
