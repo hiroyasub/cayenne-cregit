@@ -261,9 +261,15 @@ block|{
 comment|// null value in the middle....
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|UnresolvablePathException
 argument_list|(
-literal|"Null value in the middle of the path"
+literal|"Null value in the middle of the path, failed on "
+operator|+
+name|nestedPropertyName
+operator|+
+literal|" from "
+operator|+
+name|object
 argument_list|)
 throw|;
 block|}
