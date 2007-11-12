@@ -337,10 +337,22 @@ operator|==
 literal|null
 condition|)
 block|{
+name|EntityListener
+name|listener
+init|=
 name|getEntityListener
 argument_list|(
 name|prevName
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|listener
+operator|!=
+literal|null
+condition|)
+block|{
+name|listener
 operator|.
 name|setClassName
 argument_list|(
@@ -366,6 +378,7 @@ name|CHANGE
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/**      * init listeners      */
