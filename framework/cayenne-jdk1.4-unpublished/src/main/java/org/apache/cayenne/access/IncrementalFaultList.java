@@ -3370,13 +3370,19 @@ name|Object
 name|o
 parameter_list|)
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+name|IncrementalFaultList
+operator|.
+name|this
+operator|.
+name|set
 argument_list|(
-literal|"set operation not supported"
+name|listIndex
+operator|-
+literal|1
+argument_list|,
+name|o
 argument_list|)
-throw|;
+expr_stmt|;
 block|}
 block|}
 block|}
