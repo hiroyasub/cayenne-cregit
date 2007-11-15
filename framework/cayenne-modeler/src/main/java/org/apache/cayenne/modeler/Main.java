@@ -991,7 +991,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns a file correspinding to $HOME/.cayenne/modeler.log      */
+comment|/**      * Returns a file corresponding to $HOME/.cayenne/modeler.log      */
 specifier|protected
 name|File
 name|getLogFile
