@@ -402,7 +402,7 @@ name|Class
 operator|.
 name|forName
 argument_list|(
-literal|"javax.swing.SpringLayout"
+literal|"java.lang.StringBuilder"
 argument_list|)
 expr_stmt|;
 return|return
@@ -419,7 +419,7 @@ name|logObj
 operator|.
 name|fatal
 argument_list|(
-literal|"CayenneModeler requires JDK 1.4."
+literal|"CayenneModeler requires JDK 1.5."
 argument_list|)
 expr_stmt|;
 name|logObj
@@ -460,7 +460,7 @@ argument_list|(
 literal|"java.home"
 argument_list|)
 operator|+
-literal|". Set JAVA_HOME to the JDK1.4 location."
+literal|". Set JAVA_HOME to the JDK1.5 location."
 argument_list|,
 literal|"Unsupported JDK Version"
 argument_list|,
