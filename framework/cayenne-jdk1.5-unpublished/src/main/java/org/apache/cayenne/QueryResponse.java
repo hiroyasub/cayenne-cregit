@@ -24,7 +24,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a result of query execution. It potentially contain a mix of update counts  * and lists of selected values. Provides API somewhat similar to java.util.Iterator or  * java.sql.ResultSet for scanning through the individual results.  *<p>  * An example of iterating through a response:  *</p>  *   *<pre>  * QueryResponse response = context.performGenericQuery(query);  * for (response.reset(); response.next();) {  *     if (response.isList()) {  *         List list = response.currentList();  *         // ...  *     }  *     else {  *         int[] updateCounts = reponse.currentUpdateCount();  *         // ...  *     }  * }  *</pre>  *   *<p>  * In case the structure of the result is known, and only a single list or an update count  * is expected, there is a simpler API to access them:  *</p>  *   *<pre>  * QueryResponse response = context.performGenericQuery(query);  * List list = response.firstList();  * int[] count = response.firstUpdateCount();  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Represents a result of query execution. It potentially contain a mix of update counts  * and lists of selected values. Provides API somewhat similar to java.util.Iterator or  * java.sql.ResultSet for scanning through the individual results.  *<p>  * An example of iterating through a response:  *</p>  *   *<pre>  * QueryResponse response = context.performGenericQuery(query);  * for (response.reset(); response.next();) {  *     if (response.isList()) {  *         List list = response.currentList();  *         // ...  *     }  *     else {  *         int[] updateCounts = response.currentUpdateCount();  *         // ...  *     }  * }  *</pre>  *   *<p>  * In case the structure of the result is known, and only a single list or an update count  * is expected, there is a simpler API to access them:  *</p>  *   *<pre>  * QueryResponse response = context.performGenericQuery(query);  * List list = response.firstList();  * int[] count = response.firstUpdateCount();  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
@@ -47,7 +47,7 @@ name|List
 name|currentList
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an update count under the current iterator position. Returned value is an      * int[] to accomodate batch queries. For a regular update result, the value will be      * an int[1]. Use {@link #isList()} to check the result type before calling this      * method.      */
+comment|/**      * Returns an update count under the current iterator position. Returned value is an      * int[] to accommodate batch queries. For a regular update result, the value will be      * an int[1]. Use {@link #isList()} to check the result type before calling this      * method.      */
 name|int
 index|[]
 name|currentUpdateCount
