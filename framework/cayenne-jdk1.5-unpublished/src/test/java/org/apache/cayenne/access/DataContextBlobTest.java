@@ -423,9 +423,6 @@ comment|// insert new clob
 name|BlobTestEntity
 name|blobObj1
 init|=
-operator|(
-name|BlobTestEntity
-operator|)
 name|ctxt
 operator|.
 name|newObject

@@ -1696,9 +1696,6 @@ block|{
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|ctxt
 operator|.
 name|newObject
@@ -1718,9 +1715,6 @@ expr_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|ctxt
 operator|.
 name|newObject
@@ -1737,7 +1731,7 @@ argument_list|(
 literal|"A Painting"
 argument_list|)
 expr_stmt|;
-comment|// converting double to stringn prevents rounding weirdness...
+comment|// converting double to string prevents rounding weirdness...
 name|p
 operator|.
 name|setEstimatedPrice

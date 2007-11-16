@@ -397,9 +397,6 @@ comment|// insert new clob
 name|ClobTestEntity
 name|clobObj1
 init|=
-operator|(
-name|ClobTestEntity
-operator|)
 name|ctxt
 operator|.
 name|newObject

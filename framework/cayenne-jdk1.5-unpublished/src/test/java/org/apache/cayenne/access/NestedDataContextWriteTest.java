@@ -510,9 +510,6 @@ expr_stmt|;
 name|Artist
 name|childNew
 init|=
-operator|(
-name|Artist
-operator|)
 name|childContext
 operator|.
 name|newObject

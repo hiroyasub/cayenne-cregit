@@ -183,9 +183,6 @@ decl_stmt|;
 name|Department
 name|d1
 init|=
-operator|(
-name|Department
-operator|)
 name|context
 operator|.
 name|newObject
@@ -205,9 +202,6 @@ expr_stmt|;
 name|Department
 name|d2
 init|=
-operator|(
-name|Department
-operator|)
 name|context
 operator|.
 name|newObject
@@ -227,9 +221,6 @@ expr_stmt|;
 name|Department
 name|d3
 init|=
-operator|(
-name|Department
-operator|)
 name|context
 operator|.
 name|newObject
@@ -254,9 +245,6 @@ expr_stmt|;
 name|Manager
 name|m1
 init|=
-operator|(
-name|Manager
-operator|)
 name|context
 operator|.
 name|newObject
@@ -283,9 +271,6 @@ expr_stmt|;
 name|Manager
 name|m2
 init|=
-operator|(
-name|Manager
-operator|)
 name|context
 operator|.
 name|newObject
@@ -312,9 +297,6 @@ expr_stmt|;
 name|Manager
 name|m3
 init|=
-operator|(
-name|Manager
-operator|)
 name|context
 operator|.
 name|newObject
@@ -341,9 +323,6 @@ expr_stmt|;
 name|Address
 name|a1
 init|=
-operator|(
-name|Address
-operator|)
 name|context
 operator|.
 name|newObject
@@ -363,9 +342,6 @@ expr_stmt|;
 name|Address
 name|a2
 init|=
-operator|(
-name|Address
-operator|)
 name|context
 operator|.
 name|newObject
@@ -385,9 +361,6 @@ expr_stmt|;
 name|Address
 name|a3
 init|=
-operator|(
-name|Address
-operator|)
 name|context
 operator|.
 name|newObject

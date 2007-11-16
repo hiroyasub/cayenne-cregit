@@ -1210,34 +1210,6 @@ name|entities
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// an invalid class should blow
-try|try
-block|{
-name|context
-operator|.
-name|newObject
-argument_list|(
-name|Object
-operator|.
-name|class
-argument_list|)
-expr_stmt|;
-name|fail
-argument_list|(
-literal|"ClientObjectContext created an object that is not persistent."
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneRuntimeException
-name|e
-parameter_list|)
-block|{
-comment|// expected
-block|}
-comment|// now try a good one... note that unlike 1.1 server side cayenne there is no
-comment|// entity checking performed; DataMap is not needed at this step
 name|Persistent
 name|object
 init|=

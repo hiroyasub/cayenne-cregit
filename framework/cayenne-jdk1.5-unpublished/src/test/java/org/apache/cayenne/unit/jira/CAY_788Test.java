@@ -269,9 +269,6 @@ block|{
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|ctxt
 operator|.
 name|newObject
@@ -302,9 +299,6 @@ expr_stmt|;
 name|PaintingInfo
 name|pi
 init|=
-operator|(
-name|PaintingInfo
-operator|)
 name|ctxt
 operator|.
 name|newObject

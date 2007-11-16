@@ -2457,10 +2457,18 @@ return|;
 block|}
 comment|/**      * Creates and registers a new persistent object.      *       * @since 1.2      */
 specifier|public
+parameter_list|<
+name|T
+extends|extends
 name|Persistent
+parameter_list|>
+name|T
 name|newObject
 parameter_list|(
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|persistentClass
 parameter_list|)
 block|{
@@ -2511,6 +2519,9 @@ argument_list|)
 throw|;
 block|}
 return|return
+operator|(
+name|T
+operator|)
 name|newObject
 argument_list|(
 name|entity

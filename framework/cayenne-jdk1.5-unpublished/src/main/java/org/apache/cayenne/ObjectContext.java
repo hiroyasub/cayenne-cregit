@@ -132,11 +132,19 @@ name|Object
 name|prototype
 parameter_list|)
 function_decl|;
-comment|/**      * Creates a new persistent object scheduled to be inserted to the database on next      * commit.      */
+comment|/**      * Creates a new persistent object of a given class scheduled to be inserted to the      * database on next commit.      */
+parameter_list|<
+name|T
+extends|extends
 name|Persistent
+parameter_list|>
+name|T
 name|newObject
 parameter_list|(
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|persistentClass
 parameter_list|)
 function_decl|;

@@ -268,7 +268,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new CayenneContext, initializaing it with a channel instance.      * CayenneContext created using this constructor WILL NOT broadcast graph change      * events.      */
+comment|/**      * Creates a new CayenneContext, initializing it with a channel instance.      * CayenneContext created using this constructor WILL NOT broadcast graph change      * events.      */
 specifier|public
 name|CayenneContext
 parameter_list|(
@@ -286,7 +286,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new CayenneContext, initializaing it with a channel. If      *<code>graphEventsEnabled</code> is true, this context will broadcast GraphEvents      * using ObjectContext.GRAPH_CHANGE_SUBJECT.      */
+comment|/**      * Creates a new CayenneContext, initializing it with a channel. If      *<code>graphEventsEnabled</code> is true, this context will broadcast GraphEvents      * using ObjectContext.GRAPH_CHANGE_SUBJECT.      */
 specifier|public
 name|CayenneContext
 parameter_list|(
@@ -930,10 +930,18 @@ expr_stmt|;
 block|}
 comment|/**      * Creates and registers a new Persistent object instance.      */
 specifier|public
+parameter_list|<
+name|T
+extends|extends
 name|Persistent
+parameter_list|>
+name|T
 name|newObject
 parameter_list|(
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|persistentClass
 parameter_list|)
 block|{
@@ -994,11 +1002,11 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Persistent
+name|T
 name|object
 init|=
 operator|(
-name|Persistent
+name|T
 operator|)
 name|descriptor
 operator|.
