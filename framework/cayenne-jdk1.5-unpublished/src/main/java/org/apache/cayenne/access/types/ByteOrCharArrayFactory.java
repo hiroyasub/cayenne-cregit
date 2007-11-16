@@ -49,6 +49,9 @@ name|ExtendedType
 name|getType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|)
 block|{
@@ -61,6 +64,9 @@ argument_list|()
 condition|)
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|elementType
 init|=
 name|objectClass

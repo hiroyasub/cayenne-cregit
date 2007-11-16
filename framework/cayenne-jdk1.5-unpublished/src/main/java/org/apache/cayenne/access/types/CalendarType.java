@@ -149,17 +149,28 @@ begin_class
 specifier|public
 class|class
 name|CalendarType
+parameter_list|<
+name|T
+extends|extends
+name|Calendar
+parameter_list|>
 implements|implements
 name|ExtendedType
 block|{
 specifier|protected
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|calendarClass
 decl_stmt|;
 specifier|public
 name|CalendarType
 parameter_list|(
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|calendarClass
 parameter_list|)
 block|{
@@ -449,7 +460,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|// here the driver can "surpirse" us
+comment|// here the driver can "surprise" us
 comment|// check the type of returned value...
 name|Object
 name|object

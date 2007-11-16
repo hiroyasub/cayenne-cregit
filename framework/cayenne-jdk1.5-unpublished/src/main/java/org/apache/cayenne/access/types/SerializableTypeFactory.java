@@ -111,6 +111,9 @@ name|ExtendedType
 name|getType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|)
 block|{
@@ -186,11 +189,17 @@ name|ExtendedTypeDecorator
 block|{
 specifier|private
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|javaClass
 decl_stmt|;
 name|SerializableType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|javaClass
 parameter_list|,
 name|ExtendedType

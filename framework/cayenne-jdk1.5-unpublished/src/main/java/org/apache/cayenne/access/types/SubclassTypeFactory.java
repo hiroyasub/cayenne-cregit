@@ -47,6 +47,9 @@ name|type
 decl_stmt|;
 specifier|private
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|javaClass
 decl_stmt|;
 name|SubclassTypeFactory
@@ -118,6 +121,9 @@ name|ExtendedType
 name|getType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|)
 block|{

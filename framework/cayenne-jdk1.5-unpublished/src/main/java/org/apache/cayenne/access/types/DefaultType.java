@@ -120,20 +120,40 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Method
+argument_list|>
 name|readMethods
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Method
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Method
+argument_list|>
 name|procReadMethods
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Method
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -151,6 +171,9 @@ block|{
 try|try
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|rsClass
 init|=
 name|ResultSet
@@ -158,6 +181,9 @@ operator|.
 name|class
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|paramTypes
 init|=
@@ -435,6 +461,9 @@ argument_list|)
 expr_stmt|;
 comment|// init procedure read methods
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|csClass
 init|=
 name|CallableStatement
@@ -722,10 +751,13 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** Returns an Iterator of supported default Java classes (as Strings) */
+comment|/**       * Returns an Iterator over the names of supported default Java classes.      */
 specifier|public
 specifier|static
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|defaultTypes
 parameter_list|()
 block|{
