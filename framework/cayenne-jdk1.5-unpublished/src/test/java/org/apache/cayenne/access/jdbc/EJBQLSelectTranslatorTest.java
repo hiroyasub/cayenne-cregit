@@ -151,6 +151,11 @@ name|String
 name|ejbql
 parameter_list|,
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 block|{
@@ -302,11 +307,11 @@ literal|" FROM ARTIST t0${marker1}"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|fromMarker
 init|=
 operator|(
-name|StringBuffer
+name|StringBuilder
 operator|)
 name|query
 operator|.
@@ -373,11 +378,11 @@ literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|fromMarker
 init|=
 operator|(
-name|StringBuffer
+name|StringBuilder
 operator|)
 name|query
 operator|.
@@ -471,11 +476,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check that overlapping implicit and explicit joins did not result in duplicates
-name|StringBuffer
+name|StringBuilder
 name|fromMarker
 init|=
 operator|(
-name|StringBuffer
+name|StringBuilder
 operator|)
 name|query
 operator|.
@@ -636,11 +641,11 @@ literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|fromMarker
 init|=
 operator|(
-name|StringBuffer
+name|StringBuilder
 operator|)
 name|query
 operator|.

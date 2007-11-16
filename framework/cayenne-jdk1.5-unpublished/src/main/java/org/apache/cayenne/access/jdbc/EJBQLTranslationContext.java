@@ -139,11 +139,11 @@ name|Map
 name|boundParameters
 decl_stmt|;
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|mainBuffer
 decl_stmt|;
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|currentBuffer
 decl_stmt|;
 specifier|private
@@ -208,7 +208,7 @@ operator|.
 name|mainBuffer
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 expr_stmt|;
 name|this
@@ -473,7 +473,7 @@ literal|"Failed to create id alias"
 argument_list|)
 throw|;
 block|}
-comment|/**      * Inserts a marker in the SQL, mapped to a StringBuffer that can be later filled with      * content.      */
+comment|/**      * Inserts a marker in the SQL, mapped to a StringBuilder that can be later filled with      * content.      */
 name|void
 name|markCurrentPosition
 parameter_list|(
@@ -499,7 +499,7 @@ name|marker
 argument_list|)
 decl_stmt|;
 comment|// make sure we mark the main buffer
-name|StringBuffer
+name|StringBuilder
 name|current
 init|=
 name|this
@@ -594,14 +594,14 @@ name|mainBuffer
 expr_stmt|;
 block|}
 specifier|private
-name|StringBuffer
+name|StringBuilder
 name|findOrCreateMarkedBuffer
 parameter_list|(
 name|String
 name|marker
 parameter_list|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|buffer
 decl_stmt|;
 name|String
@@ -625,7 +625,7 @@ block|{
 name|buffer
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 expr_stmt|;
 name|internalMarker
@@ -664,7 +664,7 @@ operator|!
 operator|(
 name|object
 operator|instanceof
-name|StringBuffer
+name|StringBuilder
 operator|)
 condition|)
 block|{
@@ -681,7 +681,7 @@ block|}
 name|buffer
 operator|=
 operator|(
-name|StringBuffer
+name|StringBuilder
 operator|)
 name|object
 expr_stmt|;
@@ -1084,11 +1084,11 @@ return|return
 name|tableName
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|keyBuffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 comment|// per JPA spec, 4.4.2, "Identification variables are case insensitive.", while
