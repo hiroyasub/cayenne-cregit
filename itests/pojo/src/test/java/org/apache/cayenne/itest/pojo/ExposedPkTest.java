@@ -46,9 +46,6 @@ block|{
 name|ExposedPkEntity1
 name|o1
 init|=
-operator|(
-name|ExposedPkEntity1
-operator|)
 name|context
 operator|.
 name|newObject
