@@ -494,9 +494,6 @@ block|}
 name|Domain
 name|childSubdomain
 init|=
-operator|(
-name|Domain
-operator|)
 name|getObjectContext
 argument_list|()
 operator|.
