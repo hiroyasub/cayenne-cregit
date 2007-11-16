@@ -808,6 +808,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getCustomDbAttributes
 parameter_list|()
 block|{
@@ -844,6 +847,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|Ordering
+argument_list|>
 name|getOrderings
 parameter_list|()
 block|{

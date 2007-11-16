@@ -103,21 +103,33 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns a collection of objects that are registered with this ObjectContext and      * have a state PersistenceState.NEW      */
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|newObjects
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a collection of objects that are registered with this ObjectContext and      * have a state PersistenceState.DELETED      */
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|deletedObjects
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a collection of objects that are registered with this ObjectContext and      * have a state PersistenceState.MODIFIED      */
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|modifiedObjects
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a collection of MODIFIED, DELETED or NEW objects.      */
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;

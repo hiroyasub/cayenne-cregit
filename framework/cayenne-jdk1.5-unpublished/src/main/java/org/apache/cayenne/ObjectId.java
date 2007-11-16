@@ -200,7 +200,7 @@ name|ObjectId
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a TEMPORARY ObjectId. Assignes a generated unique key.      *       * @since 1.2      */
+comment|/**      * Creates a TEMPORARY ObjectId. Assigns a generated unique key.      *       * @since 1.2      */
 specifier|public
 name|ObjectId
 parameter_list|(

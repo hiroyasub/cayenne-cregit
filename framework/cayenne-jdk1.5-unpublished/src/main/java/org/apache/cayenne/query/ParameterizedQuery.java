@@ -42,6 +42,11 @@ name|Query
 name|createQuery
 parameter_list|(
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 function_decl|;

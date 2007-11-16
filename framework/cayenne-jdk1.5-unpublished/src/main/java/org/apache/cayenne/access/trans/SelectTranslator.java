@@ -2331,6 +2331,9 @@ name|query
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|customAttributes
 init|=
 name|query
@@ -2377,9 +2380,6 @@ name|table
 operator|.
 name|getAttribute
 argument_list|(
-operator|(
-name|String
-operator|)
 name|customAttributes
 operator|.
 name|get
