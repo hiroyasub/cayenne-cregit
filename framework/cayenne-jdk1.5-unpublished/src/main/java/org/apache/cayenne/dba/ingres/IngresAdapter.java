@@ -35,11 +35,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|trans
 operator|.
-name|TrimmingQualifierTranslator
+name|QualifierTranslator
 import|;
 end_import
 
@@ -71,19 +83,7 @@ name|access
 operator|.
 name|trans
 operator|.
-name|QualifierTranslator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
+name|TrimmingQualifierTranslator
 import|;
 end_import
 
@@ -173,20 +173,6 @@ name|DbEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DerivedDbEntity
-import|;
-end_import
-
 begin_comment
 comment|/**  * DbAdapter implementation for<a href="http://opensource.ca.com/projects/ingres/">Ingres</a>.  * Sample<a target="_top"  * href="../../../../../../../developerguide/unit-tests.html">connection settings</a> to  * use with Ingres are shown below:  *   *<pre>  *  ingres.cayenne.adapter = org.apache.cayenne.dba.ingres.IngresAdapter  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
 end_comment
@@ -235,30 +221,6 @@ name|DbEntity
 name|ent
 parameter_list|)
 block|{
-comment|// later we may support view creation
-comment|// for derived DbEntities
-if|if
-condition|(
-name|ent
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Can't create table for derived DbEntity '"
-operator|+
-name|ent
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"'."
-argument_list|)
-throw|;
-block|}
 name|StringBuffer
 name|buf
 init|=

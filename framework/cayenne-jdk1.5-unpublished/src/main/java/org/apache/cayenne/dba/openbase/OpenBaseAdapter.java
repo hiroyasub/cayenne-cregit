@@ -269,20 +269,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|DerivedDbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|Query
@@ -512,30 +498,6 @@ name|DbEntity
 name|ent
 parameter_list|)
 block|{
-comment|// later we may support view creation
-comment|// for derived DbEntities
-if|if
-condition|(
-name|ent
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Can't create table for derived DbEntity '"
-operator|+
-name|ent
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"'."
-argument_list|)
-throw|;
-block|}
 name|StringBuffer
 name|buf
 init|=

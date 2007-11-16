@@ -125,20 +125,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|DerivedDbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|InsertBatchQuery
@@ -473,17 +459,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-comment|// skip derived DbEntities. Should we consult delegate ?
-comment|// Using derived entities may allow things like materialized views....
-if|if
-condition|(
-name|entity
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-continue|continue;
-block|}
 name|Query
 name|query
 init|=
@@ -674,16 +649,6 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-comment|// skip derived DbEntities...
-if|if
-condition|(
-name|entity
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-continue|continue;
-block|}
 name|SelectQuery
 name|select
 init|=

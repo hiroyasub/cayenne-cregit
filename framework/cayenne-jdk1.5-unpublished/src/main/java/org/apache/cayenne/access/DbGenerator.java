@@ -293,20 +293,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|DerivedDbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|validation
 operator|.
 name|SimpleValidationFailure
@@ -2036,16 +2022,6 @@ name|next
 argument_list|()
 decl_stmt|;
 comment|// do sanity checks...
-comment|// derived DbEntities are not included in generated SQL
-if|if
-condition|(
-name|nextEntity
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-continue|continue;
-block|}
 comment|// tables with no columns are not included
 if|if
 condition|(

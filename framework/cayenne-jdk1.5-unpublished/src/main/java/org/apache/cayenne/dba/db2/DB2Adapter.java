@@ -215,20 +215,6 @@ name|DbEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DerivedDbEntity
-import|;
-end_import
-
 begin_comment
 comment|/**  * DbAdapter implementation for the<a href="http://www.ibm.com/db2/"> DB2 RDBMS</a>.  * Sample<a target="_top"  * href="../../../../../../../developerguide/unit-tests.html">connection settings</a> to  * use with DB2 are shown below:  *   *<pre>  *    *       test-db2.cayenne.adapter = org.apache.cayenne.dba.db2.DB2Adapter  *       test-db2.jdbc.username = test  *       test-db2.jdbc.password = secret  *       test-db2.jdbc.url = jdbc:db2://servername:50000/databasename  *       test-db2.jdbc.driver = com.ibm.db2.jcc.DB2Driver  *     *</pre>  *   * @author Holger Hoffstaette  */
 end_comment
@@ -314,30 +300,6 @@ name|DbEntity
 name|ent
 parameter_list|)
 block|{
-comment|// later we may support view creation
-comment|// for derived DbEntities
-if|if
-condition|(
-name|ent
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Can't create table for derived DbEntity '"
-operator|+
-name|ent
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"'."
-argument_list|)
-throw|;
-block|}
 name|StringBuffer
 name|buf
 init|=

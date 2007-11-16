@@ -169,20 +169,6 @@ name|DbEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DerivedDbEntity
-import|;
-end_import
-
 begin_comment
 comment|/**  * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  * @since 1.1  */
 end_comment
@@ -645,17 +631,6 @@ name|DbEntity
 name|entity
 parameter_list|)
 block|{
-if|if
-condition|(
-name|entity
-operator|instanceof
-name|DerivedDbEntity
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
 name|List
 name|pk
 init|=
