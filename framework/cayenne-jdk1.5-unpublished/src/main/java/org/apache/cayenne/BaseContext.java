@@ -194,8 +194,6 @@ specifier|public
 specifier|abstract
 parameter_list|<
 name|T
-extends|extends
-name|Persistent
 parameter_list|>
 name|T
 name|newObject

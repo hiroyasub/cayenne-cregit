@@ -457,9 +457,6 @@ expr_stmt|;
 name|CollectionToMany
 name|o1
 init|=
-operator|(
-name|CollectionToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -604,9 +601,6 @@ expr_stmt|;
 name|CollectionToMany
 name|o1
 init|=
-operator|(
-name|CollectionToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -761,9 +755,6 @@ expr_stmt|;
 name|CollectionToMany
 name|o1
 init|=
-operator|(
-name|CollectionToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

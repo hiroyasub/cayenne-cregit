@@ -632,9 +632,6 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-operator|(
-name|MapToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -788,9 +785,6 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-operator|(
-name|MapToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -949,9 +943,6 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-operator|(
-name|MapToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1105,9 +1096,6 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-operator|(
-name|MapToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

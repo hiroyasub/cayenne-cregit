@@ -932,8 +932,6 @@ comment|/**      * Creates and registers a new Persistent object instance.      
 specifier|public
 parameter_list|<
 name|T
-extends|extends
-name|Persistent
 parameter_list|>
 name|T
 name|newObject
@@ -1015,6 +1013,9 @@ argument_list|()
 decl_stmt|;
 name|registerNewObject
 argument_list|(
+operator|(
+name|Persistent
+operator|)
 name|object
 argument_list|,
 name|entity

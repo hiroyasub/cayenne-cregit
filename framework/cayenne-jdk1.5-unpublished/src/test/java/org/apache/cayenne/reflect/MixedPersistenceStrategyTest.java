@@ -126,9 +126,6 @@ decl_stmt|;
 name|MixedPersistenceStrategy
 name|object
 init|=
-operator|(
-name|MixedPersistenceStrategy
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -191,9 +188,6 @@ decl_stmt|;
 name|MixedPersistenceStrategy2
 name|detail1
 init|=
-operator|(
-name|MixedPersistenceStrategy2
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -210,9 +204,6 @@ decl_stmt|;
 name|MixedPersistenceStrategy2
 name|detail2
 init|=
-operator|(
-name|MixedPersistenceStrategy2
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

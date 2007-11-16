@@ -2459,8 +2459,6 @@ comment|/**      * Creates and registers a new persistent object.      *       *
 specifier|public
 parameter_list|<
 name|T
-extends|extends
-name|Persistent
 parameter_list|>
 name|T
 name|newObject

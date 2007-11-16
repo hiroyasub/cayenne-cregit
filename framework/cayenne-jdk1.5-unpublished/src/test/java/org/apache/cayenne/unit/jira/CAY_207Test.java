@@ -265,9 +265,6 @@ comment|// M1
 name|Manager
 name|o1
 init|=
-operator|(
-name|Manager
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -356,9 +353,6 @@ block|{
 name|Manager
 name|o2
 init|=
-operator|(
-name|Manager
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -448,9 +442,6 @@ comment|// M1
 name|Manager
 name|o1
 init|=
-operator|(
-name|Manager
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -539,9 +530,6 @@ block|{
 name|Manager
 name|o2
 init|=
-operator|(
-name|Manager
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -625,9 +613,6 @@ block|{
 name|CAY_207Manager2
 name|o2
 init|=
-operator|(
-name|CAY_207Manager2
-operator|)
 name|context
 operator|.
 name|newObject
