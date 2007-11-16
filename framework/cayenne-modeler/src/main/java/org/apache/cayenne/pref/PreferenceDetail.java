@@ -532,9 +532,6 @@ argument_list|)
 decl_stmt|;
 name|domainPreference
 operator|=
-operator|(
-name|DomainPreference
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
