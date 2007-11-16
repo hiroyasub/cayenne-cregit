@@ -267,6 +267,9 @@ decl_stmt|;
 comment|/**      * Create and return a {@link List} of {@link MergerToken}s to alter the given      * {@link DataNode} to match the given {@link DataMap}      */
 specifier|public
 name|List
+argument_list|<
+name|MergerToken
+argument_list|>
 name|createMergeTokens
 parameter_list|(
 name|DataNode
@@ -296,6 +299,9 @@ block|}
 comment|/**      * Create and return a {@link List} of {@link MergerToken}s to alter the given      * {@link DataNode} to match the given {@link DataMap}      */
 specifier|public
 name|List
+argument_list|<
+name|MergerToken
+argument_list|>
 name|createMergeTokens
 parameter_list|(
 name|DbAdapter
@@ -316,10 +322,16 @@ name|mergerFactory
 argument_list|()
 expr_stmt|;
 name|List
+argument_list|<
+name|MergerToken
+argument_list|>
 name|tokens
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|MergerToken
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|Connection
@@ -553,6 +565,9 @@ name|void
 name|checkRows
 parameter_list|(
 name|List
+argument_list|<
+name|MergerToken
+argument_list|>
 name|tokens
 parameter_list|,
 name|DbEntity
