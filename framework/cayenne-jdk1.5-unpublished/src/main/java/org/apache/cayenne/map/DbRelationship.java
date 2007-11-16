@@ -409,7 +409,7 @@ literal|"</db-relationship>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a target of this relationship. If relationship is not attached to a      * DbEntity, and DbEntity doesn't have a namcespace, and exception is thrown.      */
+comment|/**      * Returns a target of this relationship. If relationship is not attached to a      * DbEntity, and DbEntity doesn't have a namespace, and exception is thrown.      */
 specifier|public
 name|Entity
 name|getTargetEntity
