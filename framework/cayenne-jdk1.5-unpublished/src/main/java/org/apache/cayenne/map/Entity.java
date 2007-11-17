@@ -743,6 +743,11 @@ block|}
 comment|/**      * Returns an unmodifiable map of relationships sorted by name.      */
 specifier|public
 name|SortedMap
+argument_list|<
+name|String
+argument_list|,
+name|Relationship
+argument_list|>
 name|getRelationshipMap
 parameter_list|()
 block|{
@@ -829,6 +834,9 @@ block|}
 comment|/**      * Returns an unmodifiable collection of Relationships that exist in this entity.      */
 specifier|public
 name|Collection
+argument_list|<
+name|Relationship
+argument_list|>
 name|getRelationships
 parameter_list|()
 block|{
@@ -849,6 +857,11 @@ block|}
 comment|/**      * Returns an unmodifiable sorted map of entity attributes.      */
 specifier|public
 name|SortedMap
+argument_list|<
+name|String
+argument_list|,
+name|Attribute
+argument_list|>
 name|getAttributeMap
 parameter_list|()
 block|{
@@ -866,6 +879,9 @@ block|}
 comment|/**      * Returns an unmodifiable collection of entity attributes.      */
 specifier|public
 name|Collection
+argument_list|<
+name|Attribute
+argument_list|>
 name|getAttributes
 parameter_list|()
 block|{
