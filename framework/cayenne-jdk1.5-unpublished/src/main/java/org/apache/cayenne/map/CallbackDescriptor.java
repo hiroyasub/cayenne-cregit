@@ -31,7 +31,67 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedHashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
 import|;
 end_import
 
@@ -52,6 +112,9 @@ name|callbackType
 decl_stmt|;
 specifier|protected
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|callbackMethods
 decl_stmt|;
 specifier|public
@@ -72,6 +135,9 @@ name|callbackMethods
 operator|=
 operator|new
 name|LinkedHashSet
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 literal|3
 argument_list|)
@@ -89,9 +155,12 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns all callback methods for this callback event.      * @return Returns all callback methods      */
+comment|/**      * Returns all callback methods for this callback event.      *       * @return Returns all callback methods      */
 specifier|public
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|getCallbackMethods
 parameter_list|()
 block|{
@@ -185,7 +254,7 @@ operator|=
 name|callbackType
 expr_stmt|;
 block|}
-comment|/**      * moves specified callback method to the specified position      *      * @param callbackMethod callbacm method name (should exist)      * @param destinationIndex destinationi index (should be valid)      * @return true if any changes were made      */
+comment|/**      * moves specified callback method to the specified position      *       * @param callbackMethod callbacm method name (should exist)      * @param destinationIndex destinationi index (should be valid)      * @return true if any changes were made      */
 specifier|public
 name|boolean
 name|moveMethod
@@ -198,10 +267,16 @@ name|destinationIndex
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|callbackMethodsList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 name|callbackMethods
 argument_list|)
@@ -318,7 +393,7 @@ return|return
 name|changed
 return|;
 block|}
-comment|/**      * replaces callback method at the specified position      * @param index callback method index      * @param method new callback method      */
+comment|/**      * Replaces a callback method at the specified position      *       * @param index callback method index      * @param method new callback method      */
 specifier|public
 name|void
 name|setCallbackMethodAt
@@ -331,10 +406,16 @@ name|method
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|callbackMethodsList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 name|callbackMethods
 argument_list|)

@@ -90,21 +90,33 @@ parameter_list|)
 function_decl|;
 comment|/**      * Returns all DbEntities in the namespace.      */
 name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
 name|getDbEntities
 parameter_list|()
 function_decl|;
 comment|/**      * Returns all ObjEntities in the namespace.      */
 name|Collection
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|getObjEntities
 parameter_list|()
 function_decl|;
 comment|/**      * Returns all Procedures in the namespace.      */
 name|Collection
+argument_list|<
+name|Procedure
+argument_list|>
 name|getProcedures
 parameter_list|()
 function_decl|;
 comment|/**      * Returns all Queries in the namespace.      */
 name|Collection
+argument_list|<
+name|Query
+argument_list|>
 name|getQueries
 parameter_list|()
 function_decl|;

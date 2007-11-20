@@ -611,7 +611,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 name|mapProperties
 decl_stmt|;
@@ -5155,7 +5155,7 @@ name|TreeMap
 argument_list|<
 name|String
 argument_list|,
-name|String
+name|Object
 argument_list|>
 argument_list|()
 expr_stmt|;

@@ -229,11 +229,19 @@ decl_stmt|;
 comment|// The columns through which the join is implemented.
 specifier|protected
 name|List
+argument_list|<
+name|DbJoin
+argument_list|>
 name|joins
 init|=
 operator|new
 name|ArrayList
-argument_list|()
+argument_list|<
+name|DbJoin
+argument_list|>
+argument_list|(
+literal|2
+argument_list|)
 decl_stmt|;
 comment|// Is relationship from source to target points to dependent primary
 comment|// key (primary key column of destination table that is also a FK to the source
@@ -1066,6 +1074,9 @@ block|}
 comment|/**      * Returns a list of joins. List is returned by reference, so any modifications of the      * list will affect this relationship.      */
 specifier|public
 name|List
+argument_list|<
+name|DbJoin
+argument_list|>
 name|getJoins
 parameter_list|()
 block|{
