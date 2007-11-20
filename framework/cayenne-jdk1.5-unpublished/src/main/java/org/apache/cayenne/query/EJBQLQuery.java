@@ -148,6 +148,11 @@ name|ejbqlStatement
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|parameters
 decl_stmt|;
 specifier|protected
@@ -349,6 +354,11 @@ block|}
 comment|/**      * Returns unmodifiable map of combined named and positional parameters. Positional      * parameter keys are Integers, while named parameter keys are strings.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|getParameters
 parameter_list|()
 block|{
@@ -417,6 +427,11 @@ name|parameters
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -472,6 +487,11 @@ name|parameters
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

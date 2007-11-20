@@ -422,10 +422,20 @@ name|objectContext
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|values
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * Returns a DataContext that holds this object. Object becomes associated with a      * DataContext either when the object is fetched using a query, or when a new object      * is registered explicitly with a DataContext.      *       * @deprecated since 3.0 use {@link #getObjectContext()}.      */
