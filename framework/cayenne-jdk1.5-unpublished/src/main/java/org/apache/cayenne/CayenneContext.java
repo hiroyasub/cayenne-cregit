@@ -1101,6 +1101,9 @@ block|}
 comment|/**      * Runs a query, returning result as list.      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|Query
@@ -1108,6 +1111,9 @@ name|query
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|result
 init|=
 name|onQuery
@@ -1129,6 +1135,9 @@ name|result
 else|:
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 literal|1
 argument_list|)
@@ -1471,6 +1480,9 @@ block|}
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|uncommittedObjects
 parameter_list|()
 block|{
@@ -1489,6 +1501,9 @@ block|}
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|deletedObjects
 parameter_list|()
 block|{
@@ -1511,6 +1526,9 @@ block|}
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|modifiedObjects
 parameter_list|()
 block|{
@@ -1533,6 +1551,9 @@ block|}
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|newObjects
 parameter_list|()
 block|{

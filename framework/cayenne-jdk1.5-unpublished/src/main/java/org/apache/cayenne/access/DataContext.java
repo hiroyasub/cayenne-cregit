@@ -1574,6 +1574,9 @@ block|}
 comment|/**      * Returns a list of objects that are registered with this DataContext and have a      * state PersistenceState.NEW      */
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|newObjects
 parameter_list|()
 block|{
@@ -1592,6 +1595,9 @@ block|}
 comment|/**      * Returns a list of objects that are registered with this DataContext and have a      * state PersistenceState.DELETED      */
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|deletedObjects
 parameter_list|()
 block|{
@@ -1610,6 +1616,9 @@ block|}
 comment|/**      * Returns a list of objects that are registered with this DataContext and have a      * state PersistenceState.MODIFIED      */
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|modifiedObjects
 parameter_list|()
 block|{
@@ -1628,6 +1637,9 @@ block|}
 comment|/**      * Returns a collection of all uncommitted registered objects.      *       * @since 1.2      */
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|uncommittedObjects
 parameter_list|()
 block|{
@@ -1655,10 +1667,16 @@ return|;
 block|}
 comment|// guess target collection size
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|objects
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|len
 operator|>
@@ -4166,6 +4184,9 @@ block|}
 comment|/**      * Performs a single selecting query. Various query setting control the behavior of      * this method and the results returned:      *<ul>      *<li>Query caching policy defines whether the results are retrieved from cache or      * fetched from the database. Note that queries that use caching must have a name that      * is used as a caching key.</li>      *<li>Query refreshing policy controls whether to refresh existing data objects and      * ignore any cached values.</li>      *<li>Query data rows policy defines whether the result should be returned as      * DataObjects or DataRows.</li>      *</ul>      *<p>      *<i>Since 1.2 takes any Query parameter, not just GenericSelectQuery</i>      *</p>      *       * @return A list of DataObjects or a DataRows, depending on the value returned by      *         {@link QueryMetadata#isFetchingDataRows()}.      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|Query
@@ -4194,12 +4215,18 @@ block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 literal|1
 argument_list|)
 return|;
 block|}
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|result
 init|=
 name|onQuery
@@ -4221,6 +4248,9 @@ name|result
 else|:
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 literal|1
 argument_list|)
@@ -4320,6 +4350,11 @@ name|String
 name|queryName
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 block|{
@@ -4339,6 +4374,9 @@ block|}
 comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param expireCachedLists A flag that determines whether refresh of<b>cached lists</b>      *            is required in case a query uses caching.      * @since 1.1      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|String
@@ -4364,6 +4402,9 @@ block|}
 comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param parameters A map of parameters to use with stored query.      * @param expireCachedLists A flag that determines whether refresh of<b>cached lists</b>      *            is required in case a query uses caching.      * @since 1.1      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|String

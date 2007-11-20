@@ -240,6 +240,9 @@ parameter_list|()
 function_decl|;
 comment|/**      * Executes a selecting query, returning a list of persistent objects or data rows.      */
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|Query

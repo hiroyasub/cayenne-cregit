@@ -148,6 +148,9 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|deletedObjects
 parameter_list|()
 function_decl|;
@@ -187,6 +190,9 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|modifiedObjects
 parameter_list|()
 function_decl|;
@@ -217,6 +223,9 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|newObjects
 parameter_list|()
 function_decl|;
@@ -232,6 +241,9 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|Query
@@ -295,6 +307,9 @@ name|getObjectId
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|performQuery
@@ -472,6 +487,9 @@ function_decl|;
 specifier|public
 specifier|abstract
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;
