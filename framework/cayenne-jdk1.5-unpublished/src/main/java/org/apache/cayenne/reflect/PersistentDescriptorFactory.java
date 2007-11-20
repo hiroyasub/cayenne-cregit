@@ -722,13 +722,27 @@ name|getJavaClass
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every property of
+comment|// embeddable; look up reusable descriptor instead.
+name|EmbeddableDescriptor
+name|embeddableDescriptor
+init|=
+operator|new
+name|FieldEmbeddableDescriptor
+argument_list|(
+name|embeddedAttribute
+operator|.
+name|getEmbeddable
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|Accessor
 name|accessor
 init|=
 operator|new
 name|EmbeddedFieldAccessor
 argument_list|(
-name|embeddableClass
+name|embeddableDescriptor
 argument_list|,
 name|embeddedAccessor
 argument_list|,
