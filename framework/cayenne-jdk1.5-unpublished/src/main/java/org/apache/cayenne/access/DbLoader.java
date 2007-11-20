@@ -2598,7 +2598,7 @@ name|getTargetEntity
 argument_list|()
 operator|)
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size

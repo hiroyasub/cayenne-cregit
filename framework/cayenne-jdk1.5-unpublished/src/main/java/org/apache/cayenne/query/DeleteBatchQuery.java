@@ -117,7 +117,10 @@ name|boolean
 name|usingOptimisticLocking
 decl_stmt|;
 specifier|private
-name|List
+name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 decl_stmt|;
 specifier|private
@@ -141,7 +144,7 @@ name|dbEntity
 argument_list|,
 name|dbEntity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 argument_list|,
 name|Collections
@@ -159,7 +162,10 @@ parameter_list|(
 name|DbEntity
 name|dbEntity
 parameter_list|,
-name|List
+name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 parameter_list|,
 name|Collection
@@ -273,19 +279,17 @@ operator|=
 name|usingOptimisticLocking
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/**      * @since 3.0 (since 3.0 changed to return collection instead of a list).      */
 specifier|public
-name|List
+name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getQualifierAttributes
 parameter_list|()
 block|{
 return|return
-name|Collections
-operator|.
-name|unmodifiableList
-argument_list|(
 name|qualifierAttributes
-argument_list|)
 return|;
 block|}
 specifier|public

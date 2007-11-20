@@ -675,7 +675,7 @@ name|it
 init|=
 name|dbEntity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|iterator

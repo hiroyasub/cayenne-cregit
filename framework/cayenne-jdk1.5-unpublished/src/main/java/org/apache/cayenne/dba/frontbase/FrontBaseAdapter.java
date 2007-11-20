@@ -750,7 +750,7 @@ name|pkit
 init|=
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|iterator

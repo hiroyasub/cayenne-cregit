@@ -2174,7 +2174,7 @@ name|ArrayList
 argument_list|(
 name|nextEntity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 argument_list|)
 decl_stmt|;

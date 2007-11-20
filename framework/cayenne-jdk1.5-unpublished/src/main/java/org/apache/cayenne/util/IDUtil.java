@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|net
 operator|.
 name|UnknownHostException
@@ -234,13 +244,13 @@ block|}
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Prints a byte value to a StringBuffer as a double digit hex value.      *       * @since 1.2      */
+comment|/**      * Prints a byte value to a StringBuffer as a double digit hex value.      *       * @since 1.2 Since 3.0 signature has changed to take Appendable argument.      */
 specifier|public
 specifier|static
 name|void
 name|appendFormattedByte
 parameter_list|(
-name|StringBuffer
+name|Appendable
 name|buffer
 parameter_list|,
 name|byte
@@ -253,6 +263,8 @@ name|digits
 init|=
 literal|"0123456789ABCDEF"
 decl_stmt|;
+try|try
+block|{
 name|buffer
 operator|.
 name|append
@@ -285,6 +297,23 @@ literal|0xF
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending data to buffer"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 block|}
 comment|/**      * @param length the length of returned byte[]      * @return A pseudo-unique byte array of the specified length. Length must be at least      *         16 bytes, or an exception is thrown.      * @since 1.0.2      */
 specifier|public

@@ -673,7 +673,7 @@ name|it
 init|=
 name|defaultEntity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|iterator

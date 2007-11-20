@@ -21,7 +21,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|Collection
 import|;
 end_import
 
@@ -171,7 +171,7 @@ name|assertNotNull
 argument_list|(
 name|d2
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -179,7 +179,7 @@ name|assertEquals
 argument_list|(
 name|entity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size
@@ -187,7 +187,7 @@ argument_list|()
 argument_list|,
 name|d2
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size
@@ -219,7 +219,7 @@ name|assertTrue
 argument_list|(
 name|d2
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|contains
@@ -373,7 +373,7 @@ name|assertNotNull
 argument_list|(
 name|d2
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -381,7 +381,7 @@ name|assertEquals
 argument_list|(
 name|entity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size
@@ -389,7 +389,7 @@ argument_list|()
 argument_list|,
 name|d2
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size
@@ -421,7 +421,7 @@ name|assertTrue
 argument_list|(
 name|d2
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|contains
@@ -765,12 +765,15 @@ argument_list|(
 name|a2
 argument_list|)
 expr_stmt|;
-name|List
+name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|pk
 init|=
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -794,10 +797,11 @@ name|a2
 argument_list|,
 name|pk
 operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -840,7 +844,7 @@ name|assertTrue
 argument_list|(
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|isEmpty
@@ -858,7 +862,7 @@ name|assertTrue
 argument_list|(
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|isEmpty
@@ -912,7 +916,7 @@ name|assertFalse
 argument_list|(
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|contains
@@ -932,7 +936,7 @@ name|assertTrue
 argument_list|(
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|contains
@@ -988,7 +992,7 @@ name|assertTrue
 argument_list|(
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|contains
@@ -1008,7 +1012,7 @@ name|assertFalse
 argument_list|(
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|contains

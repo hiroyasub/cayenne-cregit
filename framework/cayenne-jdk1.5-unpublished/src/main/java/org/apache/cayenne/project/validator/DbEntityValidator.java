@@ -182,7 +182,7 @@ literal|0
 operator|&&
 name|ent
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size

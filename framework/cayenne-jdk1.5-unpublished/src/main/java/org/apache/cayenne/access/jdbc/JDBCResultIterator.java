@@ -1247,7 +1247,7 @@ name|len
 init|=
 name|rootEntity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|size

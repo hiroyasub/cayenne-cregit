@@ -1560,7 +1560,7 @@ name|pk
 init|=
 name|table
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|iterator

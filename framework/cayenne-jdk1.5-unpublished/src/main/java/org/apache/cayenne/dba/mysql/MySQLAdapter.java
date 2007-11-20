@@ -727,7 +727,7 @@ name|ArrayList
 argument_list|(
 name|entity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 argument_list|)
 decl_stmt|;

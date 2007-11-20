@@ -44,6 +44,9 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns a List under the current iterator position. Use {@link #isList()} to check      * the result type before calling this method.      */
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|currentList
 parameter_list|()
 function_decl|;
@@ -65,6 +68,9 @@ parameter_list|()
 function_decl|;
 comment|/**      * A utility method for quickly retrieving the first list in the response. Returns      * null if the query has no lists. Note that this method resets current iterator to an      * undefined state.      */
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|firstList
 parameter_list|()
 function_decl|;
