@@ -1154,7 +1154,7 @@ name|it
 init|=
 name|entity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 operator|.
 name|iterator

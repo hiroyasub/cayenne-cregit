@@ -384,7 +384,7 @@ name|pkAttributes
 init|=
 name|entity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 decl_stmt|;
 comment|// by default check the only numeric PK
@@ -509,7 +509,7 @@ name|pkAttributes
 init|=
 name|entity
 operator|.
-name|getPrimaryKey
+name|getPrimaryKeys
 argument_list|()
 decl_stmt|;
 if|if
