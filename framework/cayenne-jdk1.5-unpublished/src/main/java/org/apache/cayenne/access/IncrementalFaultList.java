@@ -265,8 +265,14 @@ begin_class
 specifier|public
 class|class
 name|IncrementalFaultList
+parameter_list|<
+name|E
+parameter_list|>
 implements|implements
 name|List
+argument_list|<
+name|E
+argument_list|>
 block|{
 specifier|protected
 name|int
@@ -318,6 +324,9 @@ specifier|public
 name|IncrementalFaultList
 parameter_list|(
 name|IncrementalFaultList
+argument_list|<
+name|E
+argument_list|>
 name|list
 parameter_list|)
 block|{
@@ -385,6 +394,9 @@ name|synchronizedList
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -594,9 +606,11 @@ name|isFetchingCustomAttributes
 argument_list|()
 condition|)
 block|{
-name|Iterator
-name|pk
-init|=
+for|for
+control|(
+name|DbAttribute
+name|attribute
+range|:
 name|rootEntity
 operator|.
 name|getDbEntity
@@ -604,29 +618,8 @@ argument_list|()
 operator|.
 name|getPrimaryKeys
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|pk
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbAttribute
-name|attribute
-init|=
-operator|(
-name|DbAttribute
-operator|)
-name|pk
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|clone
 operator|.
 name|addCustomDbAttribute
@@ -649,10 +642,16 @@ literal|false
 expr_stmt|;
 block|}
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|elementsUnsynced
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|fillIn
@@ -685,7 +684,7 @@ return|return
 name|internalQuery
 return|;
 block|}
-comment|/**      * Performs initialization of the internal list of objects. Only the first page is      * fully resolved. For the rest of the list, only ObjectIds are read.      *       * @deprecated since 3.0 this method is not called and is deprecated in favor of      *             {@link #fillIn(Query, List, boolean)}, as this method performed unneeded      *             synchronization.      * @since 1.0.6      */
+comment|/**      * Performs initialization of the internal list of objects. Only the first page is      * fully resolved. For the rest of the list, only ObjectIds are read.      *       * @deprecated since 3.0 this method is not called and is deprecated in favor of      *             {@link #fillIn(Query, List, boolean)}, as this method performed      *             unneeded synchronization.      * @since 1.0.6      */
 specifier|protected
 name|void
 name|fillIn
@@ -1048,10 +1047,20 @@ block|{
 comment|// both unresolved and resolved objects are represented
 comment|// as Maps, so no instanceof check is possible.
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|map
 init|=
 operator|(
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|object
 decl_stmt|;
@@ -1204,19 +1213,31 @@ argument_list|()
 expr_stmt|;
 block|}
 name|List
+argument_list|<
+name|Expression
+argument_list|>
 name|quals
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Expression
+argument_list|>
 argument_list|(
 name|pageSize
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|ids
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|pageSize
 argument_list|)
@@ -1810,6 +1831,9 @@ block|}
 comment|/**      * Returns a list iterator for this list. DataObjects are resolved a page (according      * to getPageSize()) at a time as necessary - when retrieved with next() or      * previous().      */
 specifier|public
 name|ListIterator
+argument_list|<
+name|E
+argument_list|>
 name|listIterator
 parameter_list|()
 block|{
@@ -1824,6 +1848,9 @@ block|}
 comment|/**      * Returns a list iterator of the elements in this list (in proper sequence), starting      * at the specified position in this list. The specified index indicates the first      * element that would be returned by an initial call to the next method. An initial      * call to the previous method would return the element with the specified index minus      * one. DataObjects are resolved a page at a time (according to getPageSize()) as      * necessary - when retrieved with next() or previous().      */
 specifier|public
 name|ListIterator
+argument_list|<
+name|E
+argument_list|>
 name|listIterator
 parameter_list|(
 name|int
@@ -1863,6 +1890,9 @@ block|}
 comment|/**      * Return an iterator for this list. DataObjects are resolved a page (according to      * getPageSize()) at a time as necessary - when retrieved with next().      */
 specifier|public
 name|Iterator
+argument_list|<
+name|E
+argument_list|>
 name|iterator
 parameter_list|()
 block|{
@@ -1871,6 +1901,9 @@ comment|// objects will occur on pageSize boundaries as necessary.
 return|return
 operator|new
 name|Iterator
+argument_list|<
+name|E
+argument_list|>
 argument_list|()
 block|{
 name|int
@@ -1895,7 +1928,7 @@ operator|)
 return|;
 block|}
 specifier|public
-name|Object
+name|E
 name|next
 parameter_list|()
 block|{
@@ -2007,6 +2040,11 @@ name|boolean
 name|addAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|E
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -2034,6 +2072,11 @@ name|int
 name|index
 parameter_list|,
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|E
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -2102,6 +2145,9 @@ name|boolean
 name|containsAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -2120,9 +2166,8 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @see java.util.List#get(int)      */
 specifier|public
-name|Object
+name|E
 name|get
 parameter_list|(
 name|int
@@ -2173,6 +2218,9 @@ name|pageSize
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|E
+operator|)
 name|elements
 operator|.
 name|get
@@ -2184,6 +2232,9 @@ block|}
 else|else
 block|{
 return|return
+operator|(
+name|E
+operator|)
 name|o
 return|;
 block|}
@@ -2226,7 +2277,6 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @see java.util.List#lastIndexOf(Object)      */
 specifier|public
 name|int
 name|lastIndexOf
@@ -2244,9 +2294,8 @@ name|o
 argument_list|)
 return|;
 block|}
-comment|/**      * @see java.util.List#remove(int)      */
 specifier|public
-name|Object
+name|E
 name|remove
 parameter_list|(
 name|int
@@ -2258,17 +2307,27 @@ init|(
 name|elements
 init|)
 block|{
-return|return
+comment|// have to resolve the page to return correct object
+name|E
+name|object
+init|=
+name|get
+argument_list|(
+name|index
+argument_list|)
+decl_stmt|;
 name|elements
 operator|.
 name|remove
 argument_list|(
 name|index
 argument_list|)
+expr_stmt|;
+return|return
+name|object
 return|;
 block|}
 block|}
-comment|/**      * @see java.util.Collection#remove(Object)      */
 specifier|public
 name|boolean
 name|remove
@@ -2292,12 +2351,14 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @see java.util.Collection#removeAll(Collection)      */
 specifier|public
 name|boolean
 name|removeAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -2316,12 +2377,14 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @see java.util.Collection#retainAll(Collection)      */
 specifier|public
 name|boolean
 name|retainAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -2395,6 +2458,9 @@ block|}
 block|}
 specifier|public
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|subList
 parameter_list|(
 name|int
@@ -2444,13 +2510,15 @@ name|toArray
 argument_list|()
 return|;
 block|}
-comment|/**      * @see java.util.Collection#toArray(Object[])      */
 specifier|public
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 index|[]
 name|toArray
 parameter_list|(
-name|Object
+name|T
 index|[]
 name|a
 parameter_list|)
@@ -2459,6 +2527,10 @@ name|resolveAll
 argument_list|()
 expr_stmt|;
 return|return
+operator|(
+name|T
+index|[]
+operator|)
 name|elements
 operator|.
 name|toArray
@@ -3207,6 +3279,9 @@ class|class
 name|IncrementalListIterator
 implements|implements
 name|ListIterator
+argument_list|<
+name|E
+argument_list|>
 block|{
 comment|// by virtue of get(index)'s implementation, resolution of ids into
 comment|// objects will occur on pageSize boundaries as necessary.
@@ -3273,7 +3348,7 @@ operator|)
 return|;
 block|}
 specifier|public
-name|Object
+name|E
 name|next
 parameter_list|()
 block|{
@@ -3311,7 +3386,7 @@ name|listIndex
 return|;
 block|}
 specifier|public
-name|Object
+name|E
 name|previous
 parameter_list|()
 block|{
