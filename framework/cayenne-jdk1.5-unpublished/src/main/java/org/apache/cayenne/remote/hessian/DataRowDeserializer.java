@@ -148,6 +148,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getType
 parameter_list|()
 block|{
@@ -247,6 +250,9 @@ name|row
 operator|.
 name|put
 argument_list|(
+operator|(
+name|String
+operator|)
 name|in
 operator|.
 name|readObject

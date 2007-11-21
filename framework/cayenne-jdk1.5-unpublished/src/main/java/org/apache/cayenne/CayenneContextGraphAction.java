@@ -108,6 +108,9 @@ extends|extends
 name|ObjectContextGraphAction
 block|{
 name|ThreadLocal
+argument_list|<
+name|Boolean
+argument_list|>
 name|arcChangeInProcess
 decl_stmt|;
 name|CayenneContextGraphAction
@@ -127,7 +130,21 @@ name|arcChangeInProcess
 operator|=
 operator|new
 name|ThreadLocal
+argument_list|<
+name|Boolean
+argument_list|>
 argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|arcChangeInProcess
+operator|.
+name|set
+argument_list|(
+name|Boolean
+operator|.
+name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
@@ -331,8 +348,6 @@ name|arcChangeInProcess
 operator|.
 name|get
 argument_list|()
-operator|!=
-literal|null
 return|;
 block|}
 comment|/**      * Sets the flag indicating whether the current thread is in the process of changing      * the arc property. This method is used to prevent cycles when setting reverse      * relationships.      */
@@ -348,12 +363,6 @@ operator|.
 name|set
 argument_list|(
 name|flag
-condition|?
-name|Boolean
-operator|.
-name|TRUE
-else|:
-literal|null
 argument_list|)
 expr_stmt|;
 block|}

@@ -628,6 +628,9 @@ name|ValidationResult
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|graphManager

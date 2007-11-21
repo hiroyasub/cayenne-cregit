@@ -290,6 +290,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0 - unused.      */
 specifier|public
 name|void
 name|testCreateObjectId
@@ -368,6 +369,9 @@ name|at
 argument_list|)
 expr_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 init|=
 name|Number
@@ -459,6 +463,7 @@ name|oid
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0 - unused.      */
 specifier|public
 name|void
 name|testCreateObjectIdNulls

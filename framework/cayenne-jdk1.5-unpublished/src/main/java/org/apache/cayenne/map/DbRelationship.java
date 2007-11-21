@@ -1168,9 +1168,19 @@ block|}
 comment|/**      * Creates a snapshot of primary key attributes of a target object of this      * relationship based on a snapshot of a source. Only "to-one" relationships are      * supported. Returns null if relationship does not point to an object. Throws      * CayenneRuntimeException if relationship is "to many" or if snapshot is missing id      * components.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|targetPkSnapshotWithSrcSnapshot
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|srcSnapshot
 parameter_list|)
 block|{
@@ -1189,6 +1199,11 @@ argument_list|)
 throw|;
 block|}
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|idMap
 decl_stmt|;
 name|int
@@ -1280,6 +1295,11 @@ name|idMap
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|(
 name|numJoins
 operator|*

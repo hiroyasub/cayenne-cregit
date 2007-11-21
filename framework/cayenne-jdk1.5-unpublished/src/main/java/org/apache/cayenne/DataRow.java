@@ -39,16 +39,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -149,6 +139,11 @@ class|class
 name|DataRow
 extends|extends
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 block|{
 comment|// "volatile" is supposed to ensure consistency in read and increment operations;
 comment|// is this universally true?
@@ -184,6 +179,13 @@ specifier|public
 name|DataRow
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+extends|extends
+name|Object
+argument_list|>
 name|map
 parameter_list|)
 block|{
@@ -258,40 +260,24 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+name|entry
+range|:
 name|diff
 operator|.
 name|entrySet
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|merged
 operator|.
 name|put
@@ -327,39 +313,23 @@ name|diff
 init|=
 literal|null
 decl_stmt|;
-name|Iterator
-name|entries
-init|=
+for|for
+control|(
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+name|entry
+range|:
 name|entrySet
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|entries
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|entries
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-name|Object
+name|String
 name|key
 init|=
 name|entry
@@ -432,8 +402,7 @@ return|return
 name|diff
 return|;
 block|}
-comment|/**      * Creates an ObjectId from the values in the snapshot. If needed attributes are      * missing in a snapshot, CayenneRuntimeException is thrown.      */
-comment|// TODO: andrus, 5/25/2006 - deprecate this method - it is unused
+comment|/**      * Creates an ObjectId from the values in the snapshot. If needed attributes are      * missing in a snapshot, CayenneRuntimeException is thrown.      *       * @deprecated since 3.0 - unused      */
 specifier|public
 name|ObjectId
 name|createObjectId
@@ -457,7 +426,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|// TODO: andrus, 5/25/2006 - deprecate this method - it is unused
+comment|/**      * @deprecated since 3.0 - unused.      */
 specifier|public
 name|ObjectId
 name|createObjectId
@@ -509,6 +478,11 @@ argument_list|)
 throw|;
 block|}
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|target
 init|=
 name|relationship
@@ -536,8 +510,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Extracts PK columns prefixed with some path. If namePrefix is null or empty, no      * prefixing is done.      *<p>      * Prefixing is useful when extracting an ObjectId of a target row from a row obtained      * via prefetching. namePrefix must omit the "db:" prefix and must end with ".", e.g.      * "TO_ARTIST.PAINTING_ARRAY."      *</p>      *       * @since 1.2      */
-comment|// TODO: andrus, 5/25/2006 - deprecate this method - it is unused
+comment|/**      * Extracts PK columns prefixed with some path. If namePrefix is null or empty, no      * prefixing is done.      *<p>      * Prefixing is useful when extracting an ObjectId of a target row from a row obtained      * via prefetching. namePrefix must omit the "db:" prefix and must end with ".", e.g.      * "TO_ARTIST.PAINTING_ARRAY."      *</p>      *       * @since 1.2      * @deprecated since 3.0 - unused.      */
 specifier|public
 name|ObjectId
 name|createObjectId
@@ -672,10 +645,20 @@ return|;
 block|}
 comment|// ... handle generic case - PK.size> 1
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|idMap
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|(
 name|pk
 operator|.
