@@ -17,8 +17,22 @@ name|editor
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|LifecycleEvent
+import|;
+end_import
+
 begin_comment
-comment|/**  * Entity for callback type.  * Contains type and type name  *  * @author Vasil Tarasevich  * @version 1.0 Oct 26, 2007  */
+comment|/**  * Entity for callback type. Contains type and type name  *   * @author Vasil Tarasevich  * @version 1.0 Oct 26, 2007  */
 end_comment
 
 begin_class
@@ -26,9 +40,8 @@ specifier|public
 class|class
 name|CallbackType
 block|{
-comment|/**      * callback type ID      */
 specifier|private
-name|int
+name|LifecycleEvent
 name|type
 decl_stmt|;
 comment|/**      * callback type name      */
@@ -41,11 +54,11 @@ specifier|private
 name|int
 name|counter
 decl_stmt|;
-comment|/**      * constructor      * @param type type id      * @param name name      */
+comment|/**      * constructor      *       * @param type type id      * @param name name      */
 specifier|public
 name|CallbackType
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|,
 name|String
@@ -73,7 +86,7 @@ expr_stmt|;
 block|}
 comment|/**      * @return callback type id      */
 specifier|public
-name|int
+name|LifecycleEvent
 name|getType
 parameter_list|()
 block|{
@@ -101,7 +114,7 @@ return|return
 name|counter
 return|;
 block|}
-comment|/**      * Method to specify counter value      * @param counter new coutner value      */
+comment|/**      * Method to specify counter value      *       * @param counter new coutner value      */
 specifier|public
 name|void
 name|setCounter
@@ -117,7 +130,7 @@ operator|=
 name|counter
 expr_stmt|;
 block|}
-comment|/**      * @return a human readable label representing for this callback.       */
+comment|/**      * @return a human readable label representing for this callback.      */
 specifier|public
 name|String
 name|toString
@@ -224,6 +237,9 @@ parameter_list|()
 block|{
 return|return
 name|type
+operator|.
+name|hashCode
+argument_list|()
 return|;
 block|}
 block|}
