@@ -127,6 +127,9 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns an iterator over the arc properties whose reverse arcs are to-many maps.      * I.e. for each ArcProperty in the iterator, the following is true:      *       *<pre>      * arc.getComplimentaryReverseArc() instanceof ToManyMapProperty      *</pre>      *       * @since 3.0      */
 name|Iterator
+argument_list|<
+name|ArcProperty
+argument_list|>
 name|getMapArcProperties
 parameter_list|()
 function_decl|;

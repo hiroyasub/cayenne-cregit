@@ -320,6 +320,9 @@ name|CayenneContext
 name|context
 decl_stmt|;
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|deadIds
 decl_stmt|;
 name|boolean
@@ -465,6 +468,9 @@ argument_list|()
 return|;
 block|}
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|dirtyNodes
 parameter_list|()
 block|{
@@ -476,6 +482,9 @@ argument_list|()
 return|;
 block|}
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|dirtyNodes
 parameter_list|(
 name|int
@@ -651,6 +660,9 @@ name|remapTargets
 parameter_list|()
 block|{
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|stateLog
@@ -720,6 +732,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|ArcProperty
+argument_list|>
 name|mapArcProperties
 init|=
 name|descriptor
@@ -754,9 +769,6 @@ block|{
 name|ArcProperty
 name|arc
 init|=
-operator|(
-name|ArcProperty
-operator|)
 name|mapArcProperties
 operator|.
 name|next
@@ -842,10 +854,20 @@ throws|throws
 name|PropertyException
 block|{
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|map
 init|=
 operator|(
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 operator|)
 name|property
 operator|.
@@ -890,6 +912,9 @@ comment|// another object may be remapped later by the caller
 comment|// must do a slow map scan to ensure the object is not mapped under a different
 comment|// key...
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|map
@@ -911,12 +936,22 @@ block|{
 name|Map
 operator|.
 name|Entry
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|e
 init|=
 operator|(
 name|Map
 operator|.
 name|Entry
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|it
 operator|.
@@ -1344,6 +1379,9 @@ condition|)
 block|{
 comment|// unregister dead ids...
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|deadIds
@@ -1377,6 +1415,9 @@ expr_stmt|;
 block|}
 block|}
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|deadIds
 parameter_list|()
 block|{
@@ -1391,6 +1432,9 @@ name|deadIds
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

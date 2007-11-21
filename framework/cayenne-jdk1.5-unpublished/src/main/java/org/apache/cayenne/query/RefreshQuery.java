@@ -86,6 +86,9 @@ name|Query
 block|{
 specifier|protected
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|objects
 decl_stmt|;
 specifier|protected
@@ -108,6 +111,9 @@ specifier|public
 name|RefreshQuery
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|objects
 parameter_list|)
 block|{
@@ -259,6 +265,9 @@ return|;
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|getObjects
 parameter_list|()
 block|{

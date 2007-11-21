@@ -2002,6 +2002,9 @@ block|}
 comment|/**      * Returns a Collection of all attributes that belong to this ObjEntity, excluding      * inherited attributes.      *       * @since 1.1      */
 specifier|public
 name|Collection
+argument_list|<
+name|Attribute
+argument_list|>
 name|getDeclaredAttributes
 parameter_list|()
 block|{

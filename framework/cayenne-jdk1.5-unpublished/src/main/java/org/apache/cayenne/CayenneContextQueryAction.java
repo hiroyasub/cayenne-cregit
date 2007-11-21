@@ -343,7 +343,7 @@ name|CayenneContext
 operator|)
 name|actingContext
 decl_stmt|;
-comment|// handle 4 separate scenarious, but do not combine them as it will be
+comment|// handle 4 separate scenarios, but do not combine them as it will be
 comment|// unclear how to handle cascading behavior
 comment|// 1. refresh all
 if|if
@@ -389,6 +389,9 @@ return|;
 block|}
 comment|// 2. invalidate object collection
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|refreshQuery
@@ -569,6 +572,9 @@ name|CayenneContextGraphManager
 name|graphManager
 parameter_list|,
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 parameter_list|)
 block|{
