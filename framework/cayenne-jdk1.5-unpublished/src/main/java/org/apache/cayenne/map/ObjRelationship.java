@@ -653,6 +653,9 @@ name|getSourceEntity
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|target
@@ -693,6 +696,9 @@ name|src
 condition|)
 continue|continue;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|otherRels
 init|=
 name|rel

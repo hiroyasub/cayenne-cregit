@@ -47,7 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|LifecycleListener
+name|map
+operator|.
+name|EntityResolver
 import|;
 end_import
 
@@ -61,7 +63,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityResolver
+name|LifecycleEvent
 import|;
 end_import
 
@@ -192,7 +194,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -242,7 +244,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -410,7 +412,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -482,7 +484,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_REMOVE
 argument_list|,

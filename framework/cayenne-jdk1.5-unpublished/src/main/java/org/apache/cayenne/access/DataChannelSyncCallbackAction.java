@@ -75,18 +75,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|LifecycleListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|graph
 operator|.
 name|GraphChangeHandler
@@ -118,6 +106,20 @@ operator|.
 name|graph
 operator|.
 name|GraphManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|LifecycleEvent
 import|;
 end_import
 
@@ -303,10 +305,13 @@ function_decl|;
 name|void
 name|apply
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|callbackType
 parameter_list|,
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|objects
 parameter_list|)
 block|{
@@ -626,7 +631,7 @@ name|callbackRegistry
 operator|.
 name|isEmpty
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_UPDATE
 argument_list|)
@@ -635,7 +640,7 @@ name|callbackRegistry
 operator|.
 name|isEmpty
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_UPDATE
 argument_list|)
@@ -644,7 +649,7 @@ name|callbackRegistry
 operator|.
 name|isEmpty
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_REMOVE
 argument_list|)
@@ -653,7 +658,7 @@ name|callbackRegistry
 operator|.
 name|isEmpty
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_PERSIST
 argument_list|)
@@ -666,7 +671,7 @@ parameter_list|()
 block|{
 name|apply
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -680,7 +685,7 @@ parameter_list|()
 block|{
 name|apply
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -689,7 +694,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -698,7 +703,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -746,7 +751,7 @@ name|callbackRegistry
 operator|.
 name|isEmpty
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|)
@@ -764,7 +769,7 @@ parameter_list|()
 block|{
 name|apply
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -773,7 +778,7 @@ argument_list|)
 expr_stmt|;
 name|apply
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|,

@@ -35,18 +35,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|LifecycleListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectContext
 import|;
 end_import
@@ -74,6 +62,20 @@ operator|.
 name|map
 operator|.
 name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|LifecycleEvent
 import|;
 end_import
 
@@ -205,7 +207,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -227,7 +229,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -560,7 +562,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -615,7 +617,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -741,7 +743,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -796,7 +798,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -894,7 +896,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -916,7 +918,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -1022,7 +1024,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -1078,7 +1080,7 @@ name|registry
 operator|.
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_PERSIST
 argument_list|,

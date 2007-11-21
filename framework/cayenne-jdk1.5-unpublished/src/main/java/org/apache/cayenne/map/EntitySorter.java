@@ -49,6 +49,9 @@ name|void
 name|setDataMaps
 parameter_list|(
 name|Collection
+argument_list|<
+name|DataMap
+argument_list|>
 name|dataMaps
 parameter_list|)
 function_decl|;
@@ -57,6 +60,9 @@ name|void
 name|sortDbEntities
 parameter_list|(
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|,
 name|boolean
@@ -68,6 +74,9 @@ name|void
 name|sortObjEntities
 parameter_list|(
 name|List
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|objEntities
 parameter_list|,
 name|boolean
@@ -82,6 +91,9 @@ name|ObjEntity
 name|entity
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 parameter_list|,
 name|boolean

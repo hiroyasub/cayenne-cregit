@@ -59,7 +59,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|CallbackMap
+name|EntityResolver
 import|;
 end_import
 
@@ -73,12 +73,12 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityResolver
+name|LifecycleEvent
 import|;
 end_import
 
 begin_comment
-comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event types are  * {@link LifecycleListener#PRE_PERSIST}, {@link LifecycleListener#POST_PERSIST},  * {@link LifecycleListener#PRE_UPDATE}, {@link LifecycleListener#POST_UPDATE},  * {@link LifecycleListener#PRE_REMOVE}, {@link LifecycleListener#POST_REMOVE},  * {@link LifecycleListener#POST_LOAD}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event types are  * defined in {@link LifecycleEvent} enum.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -104,9 +104,10 @@ operator|=
 operator|new
 name|LifecycleCallbackEventHandler
 index|[
-name|CallbackMap
+name|LifecycleEvent
 operator|.
-name|CALLBACKS
+name|values
+argument_list|()
 operator|.
 name|length
 index|]
@@ -197,7 +198,7 @@ specifier|public
 name|boolean
 name|isEmpty
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|)
 block|{
@@ -205,6 +206,9 @@ return|return
 name|eventCallbacks
 index|[
 name|type
+operator|.
+name|ordinal
+argument_list|()
 index|]
 operator|.
 name|isEmpty
@@ -222,7 +226,7 @@ parameter_list|)
 block|{
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -233,7 +237,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -244,7 +248,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -255,7 +259,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -266,7 +270,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -277,7 +281,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -288,7 +292,7 @@ argument_list|)
 expr_stmt|;
 name|addDefaultListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -303,7 +307,7 @@ specifier|public
 name|void
 name|addDefaultListener
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|,
 name|Object
@@ -316,6 +320,9 @@ block|{
 name|eventCallbacks
 index|[
 name|type
+operator|.
+name|ordinal
+argument_list|()
 index|]
 operator|.
 name|addDefaultListener
@@ -332,6 +339,9 @@ name|void
 name|addListener
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 parameter_list|,
 name|LifecycleListener
@@ -340,7 +350,7 @@ parameter_list|)
 block|{
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_PERSIST
 argument_list|,
@@ -353,7 +363,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_PERSIST
 argument_list|,
@@ -366,7 +376,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_REMOVE
 argument_list|,
@@ -379,7 +389,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_REMOVE
 argument_list|,
@@ -392,7 +402,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|PRE_UPDATE
 argument_list|,
@@ -405,7 +415,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_UPDATE
 argument_list|,
@@ -418,7 +428,7 @@ argument_list|)
 expr_stmt|;
 name|addListener
 argument_list|(
-name|LifecycleListener
+name|LifecycleEvent
 operator|.
 name|POST_LOAD
 argument_list|,
@@ -435,10 +445,13 @@ specifier|public
 name|void
 name|addListener
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 parameter_list|,
 name|Object
@@ -451,6 +464,9 @@ block|{
 name|eventCallbacks
 index|[
 name|type
+operator|.
+name|ordinal
+argument_list|()
 index|]
 operator|.
 name|addListener
@@ -468,10 +484,13 @@ specifier|public
 name|void
 name|addListener
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 parameter_list|,
 name|String
@@ -481,6 +500,9 @@ block|{
 name|eventCallbacks
 index|[
 name|type
+operator|.
+name|ordinal
+argument_list|()
 index|]
 operator|.
 name|addListener
@@ -496,7 +518,7 @@ specifier|public
 name|void
 name|performCallbacks
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|,
 name|Persistent
@@ -506,6 +528,9 @@ block|{
 name|eventCallbacks
 index|[
 name|type
+operator|.
+name|ordinal
+argument_list|()
 index|]
 operator|.
 name|performCallbacks
@@ -519,16 +544,22 @@ specifier|public
 name|void
 name|performCallbacks
 parameter_list|(
-name|int
+name|LifecycleEvent
 name|type
 parameter_list|,
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|objects
 parameter_list|)
 block|{
 name|eventCallbacks
 index|[
 name|type
+operator|.
+name|ordinal
+argument_list|()
 index|]
 operator|.
 name|performCallbacks
