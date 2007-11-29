@@ -346,9 +346,6 @@ name|name
 parameter_list|)
 block|{
 return|return
-operator|(
-name|EmbeddableAttribute
-operator|)
 name|attributes
 operator|.
 name|get

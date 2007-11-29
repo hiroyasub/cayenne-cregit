@@ -166,6 +166,9 @@ block|}
 comment|/**      * Returns Java class of an object property described by this attribute. Wraps any      * thrown exceptions into CayenneRuntimeException.      */
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getJavaClass
 parameter_list|()
 block|{
@@ -394,6 +397,9 @@ name|getDbAttribute
 parameter_list|()
 block|{
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|pathIterator
 init|=
 name|getDbPathIterator
@@ -429,6 +435,9 @@ return|;
 block|}
 specifier|public
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|getDbPathIterator
 parameter_list|()
 block|{

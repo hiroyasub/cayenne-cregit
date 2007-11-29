@@ -1282,9 +1282,6 @@ block|{
 name|Embeddable
 name|result
 init|=
-operator|(
-name|Embeddable
-operator|)
 name|embeddableCache
 operator|.
 name|get
@@ -1306,9 +1303,6 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-operator|(
-name|Embeddable
-operator|)
 name|embeddableCache
 operator|.
 name|get
@@ -1699,9 +1693,6 @@ comment|// have no children to avoid unneeded cache rebuilding on lookup...
 name|EntityInheritanceTree
 name|node
 init|=
-operator|(
-name|EntityInheritanceTree
-operator|)
 name|entityInheritanceCache
 operator|.
 name|get
@@ -1758,9 +1749,6 @@ block|{
 name|EntityInheritanceTree
 name|superNode
 init|=
-operator|(
-name|EntityInheritanceTree
-operator|)
 name|entityInheritanceCache
 operator|.
 name|get
@@ -1779,9 +1767,6 @@ comment|// do direct entity lookup to avoid recursive cache rebuild
 name|ObjEntity
 name|superOE
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|objEntityCache
 operator|.
 name|get
@@ -2009,9 +1994,6 @@ block|{
 name|EntityInheritanceTree
 name|tree
 init|=
-operator|(
-name|EntityInheritanceTree
-operator|)
 name|entityInheritanceCache
 operator|.
 name|get
@@ -2038,9 +2020,6 @@ argument_list|()
 expr_stmt|;
 name|tree
 operator|=
-operator|(
-name|EntityInheritanceTree
-operator|)
 name|entityInheritanceCache
 operator|.
 name|get
@@ -2252,9 +2231,6 @@ block|{
 name|Procedure
 name|result
 init|=
-operator|(
-name|Procedure
-operator|)
 name|procedureCache
 operator|.
 name|get
@@ -2276,9 +2252,6 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-operator|(
-name|Procedure
-operator|)
 name|procedureCache
 operator|.
 name|get
@@ -2304,9 +2277,6 @@ block|{
 name|Query
 name|result
 init|=
-operator|(
-name|Query
-operator|)
 name|queryCache
 operator|.
 name|get
@@ -2328,9 +2298,6 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-operator|(
-name|Query
-operator|)
 name|queryCache
 operator|.
 name|get

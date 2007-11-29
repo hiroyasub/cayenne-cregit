@@ -903,9 +903,6 @@ block|{
 name|DbRelationship
 name|lastRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|dbRelationships
 operator|.
 name|get
@@ -1090,9 +1087,6 @@ block|{
 name|DbRelationship
 name|r
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|dbRelationships
 operator|.
 name|get
@@ -1231,9 +1225,6 @@ parameter_list|()
 block|{
 return|return
 operator|(
-operator|(
-name|DbRelationship
-operator|)
 name|getDbRelationships
 argument_list|()
 operator|.
@@ -1255,9 +1246,6 @@ parameter_list|()
 block|{
 return|return
 operator|(
-operator|(
-name|DbRelationship
-operator|)
 name|getDbRelationships
 argument_list|()
 operator|.
@@ -1472,6 +1460,9 @@ name|StringBuffer
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|it
 init|=
 name|getDbRelationships
@@ -1491,9 +1482,6 @@ block|{
 name|DbRelationship
 name|next
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|it
 operator|.
 name|next
@@ -1545,6 +1533,9 @@ throws|throws
 name|ExpressionException
 block|{
 name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|relationships
 init|=
 name|getDbRelationships
@@ -1575,6 +1566,9 @@ argument_list|()
 decl_stmt|;
 comment|// iterate in reverse order
 name|ListIterator
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|it
 init|=
 name|relationships
@@ -1598,9 +1592,6 @@ block|{
 name|DbRelationship
 name|relationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|it
 operator|.
 name|previous
@@ -1764,6 +1755,9 @@ decl_stmt|;
 try|try
 block|{
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|entity
@@ -1883,6 +1877,9 @@ argument_list|()
 decl_stmt|;
 comment|// remove existing relationships
 name|Iterator
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|removeIt
 init|=
 name|dbRelationships
@@ -1901,9 +1898,6 @@ block|{
 name|DbRelationship
 name|relationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|removeIt
 operator|.
 name|next
@@ -1965,6 +1959,9 @@ try|try
 block|{
 comment|// add new relationships from path
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|entity
@@ -2068,35 +2065,16 @@ comment|// If there is a single toMany along the path, then the flattend
 comment|// rel is toMany. If all are toOne, then the rel is toOne.
 comment|// Simple (non-flattened) relationships form the degenerate case
 comment|// taking the value of the single underlying dbrel.
-name|Iterator
-name|dbRelIterator
-init|=
+for|for
+control|(
+name|DbRelationship
+name|thisRel
+range|:
 name|this
 operator|.
 name|dbRelationships
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|dbRelIterator
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbRelationship
-name|thisRel
-init|=
-operator|(
-name|DbRelationship
-operator|)
-name|dbRelIterator
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|thisRel
@@ -2168,9 +2146,6 @@ block|}
 name|DbRelationship
 name|firstRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|dbRelationships
 operator|.
 name|get
@@ -2181,9 +2156,6 @@ decl_stmt|;
 name|DbRelationship
 name|secondRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|dbRelationships
 operator|.
 name|get

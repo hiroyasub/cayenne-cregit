@@ -203,10 +203,20 @@ name|dataMap
 decl_stmt|;
 specifier|protected
 name|SortedMap
+argument_list|<
+name|String
+argument_list|,
+name|Attribute
+argument_list|>
 name|attributes
 decl_stmt|;
 specifier|protected
 name|SortedMap
+argument_list|<
+name|String
+argument_list|,
+name|Relationship
+argument_list|>
 name|relationships
 decl_stmt|;
 comment|/**      * Creates an unnamed Entity.      */
@@ -228,20 +238,26 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|this
-operator|.
 name|attributes
 operator|=
 operator|new
 name|TreeMap
+argument_list|<
+name|String
+argument_list|,
+name|Attribute
+argument_list|>
 argument_list|()
 expr_stmt|;
-name|this
-operator|.
 name|relationships
 operator|=
 operator|new
 name|TreeMap
+argument_list|<
+name|String
+argument_list|,
+name|Relationship
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|setName
@@ -250,6 +266,8 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
@@ -330,7 +348,6 @@ operator|instanceof
 name|DataMap
 operator|)
 condition|)
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -340,7 +357,6 @@ operator|+
 name|parent
 argument_list|)
 throw|;
-block|}
 name|setDataMap
 argument_list|(
 operator|(
@@ -386,9 +402,6 @@ name|attributeName
 parameter_list|)
 block|{
 return|return
-operator|(
-name|Attribute
-operator|)
 name|attributes
 operator|.
 name|get
@@ -415,7 +428,6 @@ argument_list|()
 operator|==
 literal|null
 condition|)
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -423,7 +435,6 @@ argument_list|(
 literal|"Attempt to insert unnamed attribute."
 argument_list|)
 throw|;
-block|}
 comment|// block overrides
 comment|// TODO: change method signature to return replaced attribute and make sure the
 comment|// Modeler handles it...
@@ -453,11 +464,8 @@ name|existingAttribute
 operator|==
 name|attribute
 condition|)
-block|{
 return|return;
-block|}
 else|else
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -473,8 +481,8 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
-block|}
-comment|// Check that there aren't any relationships with the same name as the given attribute.
+comment|// Check that there aren't any relationships with the same name as the given
+comment|// attribute.
 name|Object
 name|existingRelationship
 init|=
@@ -494,7 +502,6 @@ name|existingRelationship
 operator|!=
 literal|null
 condition|)
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -509,7 +516,6 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
-block|}
 name|attributes
 operator|.
 name|put
@@ -568,9 +574,6 @@ name|relName
 parameter_list|)
 block|{
 return|return
-operator|(
-name|Relationship
-operator|)
 name|relationships
 operator|.
 name|get
@@ -597,7 +600,6 @@ argument_list|()
 operator|==
 literal|null
 condition|)
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -605,7 +607,6 @@ argument_list|(
 literal|"Attempt to insert unnamed relationship."
 argument_list|)
 throw|;
-block|}
 comment|// block overrides
 comment|// TODO: change method signature to return replaced attribute and make sure the
 comment|// Modeler handles it...
@@ -635,11 +636,8 @@ name|existingRelationship
 operator|==
 name|relationship
 condition|)
-block|{
 return|return;
-block|}
 else|else
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -655,8 +653,8 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
-block|}
-comment|// Check that there aren't any attributes with the same name as the given relationship.
+comment|// Check that there aren't any attributes with the same name as the given
+comment|// relationship.
 name|Object
 name|existingAttribute
 init|=
@@ -676,7 +674,6 @@ name|existingAttribute
 operator|!=
 literal|null
 condition|)
-block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -691,7 +688,6 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
-block|}
 name|relationships
 operator|.
 name|put
@@ -779,39 +775,18 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
-block|{
 return|return
 literal|null
 return|;
-block|}
-name|Iterator
-name|it
-init|=
-name|getRelationships
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|Relationship
 name|r
-init|=
-operator|(
-name|Relationship
-operator|)
-name|it
-operator|.
-name|next
+range|:
+name|getRelationships
 argument_list|()
-decl_stmt|;
+control|)
+block|{
 if|if
 condition|(
 name|r
@@ -821,11 +796,9 @@ argument_list|()
 operator|==
 name|targetEntity
 condition|)
-block|{
 return|return
 name|r
 return|;
-block|}
 block|}
 return|return
 literal|null
@@ -927,6 +900,9 @@ init|=
 literal|null
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|resolvePathComponents
@@ -958,6 +934,9 @@ comment|/**      * Processes expression<code>pathExp</code> and returns an Itera
 specifier|public
 specifier|abstract
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|resolvePathComponents
 parameter_list|(
 name|Expression
@@ -969,6 +948,9 @@ function_decl|;
 comment|/**      * Returns an Iterator over the path components that contains a sequence of Attributes      * and Relationships. Note that if path is invalid and can not be resolved from this      * entity, this method will still return an Iterator, but an attempt to read the first      * invalid path component will result in ExpressionException.      */
 specifier|public
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|resolvePathComponents
 parameter_list|(
 name|String
@@ -992,6 +974,9 @@ class|class
 name|PathIterator
 implements|implements
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 block|{
 specifier|private
 name|StringTokenizer
@@ -1014,16 +999,12 @@ block|{
 name|super
 argument_list|()
 expr_stmt|;
-name|this
-operator|.
 name|currentEnt
 operator|=
 name|Entity
 operator|.
 name|this
 expr_stmt|;
-name|this
-operator|.
 name|toks
 operator|=
 operator|new
@@ -1092,7 +1073,6 @@ operator|.
 name|hasMoreTokens
 argument_list|()
 condition|)
-block|{
 throw|throw
 operator|new
 name|ExpressionException
@@ -1108,7 +1088,6 @@ argument_list|,
 literal|null
 argument_list|)
 throw|;
-block|}
 return|return
 name|attr
 return|;
@@ -1225,7 +1204,6 @@ name|parent
 operator|==
 literal|null
 condition|)
-block|{
 throw|throw
 operator|new
 name|CayenneRuntimeException
@@ -1238,7 +1216,6 @@ operator|+
 literal|"' has no parent MappingNamespace (such as DataMap)"
 argument_list|)
 throw|;
-block|}
 return|return
 name|parent
 return|;

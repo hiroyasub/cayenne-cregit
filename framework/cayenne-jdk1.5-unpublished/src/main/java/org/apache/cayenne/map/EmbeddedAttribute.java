@@ -417,9 +417,6 @@ block|{
 name|String
 name|dbPath
 init|=
-operator|(
-name|String
-operator|)
 name|attributeOverrides
 operator|.
 name|get
