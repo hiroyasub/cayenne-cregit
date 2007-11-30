@@ -73,27 +73,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
 import|;
 end_import
 
@@ -106,6 +86,18 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|DataRow
 import|;
 end_import
 
@@ -681,7 +673,7 @@ name|currentTimeMillis
 argument_list|()
 decl_stmt|;
 comment|// build result row...
-name|Map
+name|DataRow
 name|result
 init|=
 literal|null
@@ -747,8 +739,10 @@ block|{
 name|result
 operator|=
 operator|new
-name|HashMap
-argument_list|()
+name|DataRow
+argument_list|(
+literal|2
+argument_list|)
 expr_stmt|;
 block|}
 name|ColumnDescriptor

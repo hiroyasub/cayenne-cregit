@@ -62,7 +62,7 @@ specifier|public
 interface|interface
 name|PkGenerator
 block|{
-comment|/**      * Generates necessary database objects to provide automatic primary key support.      *       * @param node node that provides access to a DataSource.      * @param dbEntities a list of entities that require primary key autogeneration      *            support      */
+comment|/**      * Generates necessary database objects to provide automatic primary key support.      *       * @param node node that provides access to a DataSource.      * @param dbEntities a list of entities that require primary key auto-generation      *            support      */
 name|void
 name|createAutoPk
 parameter_list|(
@@ -70,6 +70,9 @@ name|DataNode
 name|node
 parameter_list|,
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 throws|throws
@@ -77,13 +80,19 @@ name|Exception
 function_decl|;
 comment|/**      * Returns a list of SQL strings needed to generates database objects to provide      * automatic primary support for the list of entities. No actual database operations      * are performed.      */
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|createAutoPkStatements
 parameter_list|(
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 function_decl|;
-comment|/**      * Drops any common database objects associated with automatic primary key generation      * process. This may be lookup tables, special stored procedures or sequences.      *       * @param node node that provides access to a DataSource.      * @param dbEntities a list of entities whose primary key autogeneration support      *            should be dropped.      */
+comment|/**      * Drops any common database objects associated with automatic primary key generation      * process. This may be lookup tables, special stored procedures or sequences.      *       * @param node node that provides access to a DataSource.      * @param dbEntities a list of entities whose primary key auto-generation support      *            should be dropped.      */
 name|void
 name|dropAutoPk
 parameter_list|(
@@ -91,6 +100,9 @@ name|DataNode
 name|node
 parameter_list|,
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 throws|throws
@@ -98,9 +110,15 @@ name|Exception
 function_decl|;
 comment|/**      * Returns SQL string needed to drop database objects associated with automatic      * primary key generation. No actual database operations are performed.      */
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|dropAutoPkStatements
 parameter_list|(
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 function_decl|;
