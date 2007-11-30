@@ -39,6 +39,20 @@ name|EntityResolver
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|Query
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines methods used to run Cayenne queries.  *   * @author Andrus Adamchik  */
 end_comment
@@ -48,12 +62,19 @@ specifier|public
 interface|interface
 name|QueryEngine
 block|{
-comment|/**      * Executes a list of queries wrapping them in its own transaction. Results of      * execution are passed to {@link OperationObserver}object via its callback methods.      *       * @since 1.1 The signiture has changed from List to Collection.      */
-specifier|public
+comment|/**      * Executes a list of queries wrapping them in its own transaction. Results of      * execution are passed to {@link OperationObserver}object via its callback methods.      *       * @since 1.1 The signature has changed from List to Collection.      */
+parameter_list|<
+name|T
+extends|extends
+name|Query
+parameter_list|>
 name|void
 name|performQueries
 parameter_list|(
 name|Collection
+argument_list|<
+name|T
+argument_list|>
 name|queries
 parameter_list|,
 name|OperationObserver
@@ -61,7 +82,6 @@ name|resultConsumer
 parameter_list|)
 function_decl|;
 comment|/**      * Returns a resolver for this query engine that is capable of resolving between      * classes, entity names, and obj/db entities      */
-specifier|public
 name|EntityResolver
 name|getEntityResolver
 parameter_list|()

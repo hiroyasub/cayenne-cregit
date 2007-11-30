@@ -2243,11 +2243,19 @@ block|}
 block|}
 comment|/**      * Routes queries to appropriate DataNodes for execution.      */
 specifier|public
+parameter_list|<
+name|T
+extends|extends
+name|Query
+parameter_list|>
 name|void
 name|performQueries
 parameter_list|(
 specifier|final
 name|Collection
+argument_list|<
+name|T
+argument_list|>
 name|queries
 parameter_list|,
 specifier|final

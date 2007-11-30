@@ -1676,9 +1676,6 @@ operator|.
 name|getFreshSnapshot
 argument_list|(
 name|context
-operator|.
-name|getParentDataDomain
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -1792,9 +1789,6 @@ operator|.
 name|getFreshSnapshot
 argument_list|(
 name|context
-operator|.
-name|getParentDataDomain
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertNull
