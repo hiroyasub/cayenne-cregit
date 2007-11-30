@@ -278,6 +278,9 @@ name|DbEntity
 name|source
 parameter_list|,
 name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|columns
 parameter_list|)
 function_decl|;
