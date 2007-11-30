@@ -462,11 +462,14 @@ name|val
 argument_list|)
 expr_stmt|;
 block|}
+comment|// FIXME: compute proper attributes via callParams
 name|QueryLogger
 operator|.
 name|logQuery
 argument_list|(
 name|sqlStr
+argument_list|,
+literal|null
 argument_list|,
 name|loggableParameters
 argument_list|,

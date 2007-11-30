@@ -638,6 +638,11 @@ name|logQueryParameters
 argument_list|(
 literal|"batch bind"
 argument_list|,
+name|query
+operator|.
+name|getDbAttributes
+argument_list|()
+argument_list|,
 name|queryBuilder
 operator|.
 name|getParameterValues
@@ -874,6 +879,11 @@ operator|.
 name|logQueryParameters
 argument_list|(
 literal|"bind"
+argument_list|,
+name|query
+operator|.
+name|getDbAttributes
+argument_list|()
 argument_list|,
 name|queryBuilder
 operator|.

@@ -603,6 +603,8 @@ name|logQueryParameters
 argument_list|(
 literal|"bind"
 argument_list|,
+literal|null
+argument_list|,
 name|bindings
 argument_list|)
 expr_stmt|;
@@ -789,6 +791,8 @@ operator|.
 name|logQueryParameters
 argument_list|(
 literal|"write LOB"
+argument_list|,
+literal|null
 argument_list|,
 name|lobValues
 argument_list|)

@@ -141,10 +141,16 @@ decl_stmt|;
 comment|/**      * PreparedStatement attributes matching entries in<code>values</code> list.      */
 specifier|protected
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|attributes
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbAttribute
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/** Processes a join being added. */
@@ -259,6 +265,8 @@ operator|.
 name|logQuery
 argument_list|(
 name|sqlStr
+argument_list|,
+name|attributes
 argument_list|,
 name|values
 argument_list|,
