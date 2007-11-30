@@ -66,11 +66,11 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A facade for a collection of DbAdapterFactories. Can be configured to autodetect all  * adapters known to Cayenne or can work with custom factories.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A facade for a collection of DbAdapterFactories. Can be configured to auto-detect all  * adapters known to Cayenne or can work with custom factories.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_comment
-comment|// TODO, Andrus 11/01/2005, how can custom adapters be autodetected? I.e. is there a way
+comment|// TODO, Andrus 11/01/2005, how can custom adapters be auto-detected? I.e. is there a way
 end_comment
 
 begin_comment
@@ -88,11 +88,17 @@ implements|implements
 name|DbAdapterFactory
 block|{
 name|List
+argument_list|<
+name|DbAdapterFactory
+argument_list|>
 name|factories
 decl_stmt|;
 name|DbAdapterFactoryChain
 parameter_list|(
 name|Collection
+argument_list|<
+name|DbAdapterFactory
+argument_list|>
 name|factories
 parameter_list|)
 block|{
@@ -102,7 +108,15 @@ name|factories
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbAdapterFactory
+argument_list|>
+argument_list|(
+name|factories
+operator|.
+name|size
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -151,9 +165,6 @@ block|{
 name|DbAdapterFactory
 name|factory
 init|=
-operator|(
-name|DbAdapterFactory
-operator|)
 name|factories
 operator|.
 name|get
