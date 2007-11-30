@@ -304,7 +304,7 @@ name|boolean
 name|isResolvingInherited
 parameter_list|()
 function_decl|;
-comment|/**      * Returns query page size. Page size is a hint to Cayenne that query should be      * performed page by page, instead of retrieveing all results at once. If the value      * returned is less than or equal to zero, no paging should occur.      */
+comment|/**      * Returns query page size. Page size is a hint to Cayenne that query should be      * performed page by page, instead of retrieving all results at once. If the value      * returned is less than or equal to zero, no paging should occur.      */
 name|int
 name|getPageSize
 parameter_list|()
@@ -314,7 +314,7 @@ name|int
 name|getFetchStartIndex
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the limit on the maximium number of records that can be returned by this      * query. If the actual number of rows in the result exceeds the fetch limit, they      * will be discarded. One possible use of fetch limit is using it as a safeguard      * against large result sets that may lead to the application running out of memory,      * etc. If a fetch limit is greater or equal to zero, all rows will be returned.      *       * @return the limit on the maximium number of records that can be returned by this      *         query      */
+comment|/**      * Returns the limit on the maximum number of records that can be returned by this      * query. If the actual number of rows in the result exceeds the fetch limit, they      * will be discarded. One possible use of fetch limit is using it as a safeguard      * against large result sets that may lead to the application running out of memory,      * etc. If a fetch limit is greater or equal to zero, all rows will be returned.      *       * @return the limit on the maximum number of records that can be returned by this      *         query      */
 name|int
 name|getFetchLimit
 parameter_list|()
