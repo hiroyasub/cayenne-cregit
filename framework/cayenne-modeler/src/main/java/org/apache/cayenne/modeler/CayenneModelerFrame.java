@@ -1202,6 +1202,15 @@ argument_list|(
 name|recentFileMenu
 argument_list|)
 expr_stmt|;
+comment|// Mac OS X doesn't use File->Exit, it uses CayenneModeler->Quit (command-Q)
+if|if
+condition|(
+operator|!
+name|SystemUtils
+operator|.
+name|IS_OS_MAC_OSX
+condition|)
+block|{
 name|fileMenu
 operator|.
 name|addSeparator
@@ -1223,6 +1232,7 @@ name|buildMenu
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|projectMenu
 operator|.
 name|add
