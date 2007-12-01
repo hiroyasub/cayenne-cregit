@@ -210,9 +210,6 @@ expr_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -242,9 +239,6 @@ expr_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -334,9 +328,6 @@ expr_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -378,9 +369,6 @@ expr_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -503,9 +491,6 @@ decl_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -606,9 +591,6 @@ expr_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -714,9 +696,6 @@ decl_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -736,9 +715,6 @@ expr_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1007,9 +983,6 @@ block|{
 name|Artist
 name|artist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1029,9 +1002,6 @@ expr_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1089,9 +1059,6 @@ expr_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1203,9 +1170,6 @@ block|{
 name|Artist
 name|artist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1225,9 +1189,6 @@ expr_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1292,9 +1253,6 @@ expr_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

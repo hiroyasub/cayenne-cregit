@@ -321,9 +321,6 @@ comment|// testing Artist.groupArray relationship
 name|ArtGroup
 name|aGroup
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|context
 operator|.
 name|newObject
@@ -343,9 +340,6 @@ expr_stmt|;
 name|Artist
 name|anArtist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -495,9 +489,6 @@ comment|// testing ArtGroup.artistArray relationship
 name|ArtGroup
 name|aGroup
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|context
 operator|.
 name|newObject
@@ -517,9 +508,6 @@ expr_stmt|;
 name|Artist
 name|anArtist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject

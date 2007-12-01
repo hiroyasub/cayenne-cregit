@@ -117,9 +117,6 @@ comment|// insert
 name|CrossdbM1E1
 name|o1
 init|=
-operator|(
-name|CrossdbM1E1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -139,9 +136,6 @@ expr_stmt|;
 name|CrossdbM2E1
 name|o2
 init|=
-operator|(
-name|CrossdbM2E1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -161,9 +155,6 @@ expr_stmt|;
 name|CrossdbM2E2
 name|o3
 init|=
-operator|(
-name|CrossdbM2E2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -203,9 +194,6 @@ comment|// update
 name|CrossdbM1E1
 name|o11
 init|=
-operator|(
-name|CrossdbM1E1
-operator|)
 name|context
 operator|.
 name|newObject

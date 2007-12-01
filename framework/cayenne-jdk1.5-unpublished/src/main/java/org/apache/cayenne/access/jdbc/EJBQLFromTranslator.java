@@ -434,9 +434,6 @@ comment|// TODO: andrus, 4/8/2007 - support for flattened relationships
 name|DbRelationship
 name|incomingDB
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|joinRelationship
 operator|.
 name|getDbRelationships

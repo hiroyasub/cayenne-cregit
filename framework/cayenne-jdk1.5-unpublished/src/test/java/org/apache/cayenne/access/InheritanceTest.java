@@ -233,9 +233,6 @@ block|{
 name|ClientCompany
 name|company
 init|=
-operator|(
-name|ClientCompany
-operator|)
 name|context
 operator|.
 name|newObject
@@ -255,9 +252,6 @@ expr_stmt|;
 name|CustomerRepresentative
 name|rep
 init|=
-operator|(
-name|CustomerRepresentative
-operator|)
 name|context
 operator|.
 name|newObject
@@ -291,9 +285,6 @@ expr_stmt|;
 name|Employee
 name|employee
 init|=
-operator|(
-name|Employee
-operator|)
 name|context
 operator|.
 name|newObject

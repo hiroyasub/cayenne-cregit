@@ -242,9 +242,6 @@ name|index
 parameter_list|)
 block|{
 return|return
-operator|(
-name|EJBQLExpression
-operator|)
 name|jjtGetChild
 argument_list|(
 name|index
@@ -592,9 +589,6 @@ block|{
 name|SimpleNode
 name|n
 init|=
-operator|(
-name|SimpleNode
-operator|)
 name|children
 index|[
 name|i

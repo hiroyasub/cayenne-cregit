@@ -287,9 +287,6 @@ block|{
 name|LongEntity
 name|test
 init|=
-operator|(
-name|LongEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -394,9 +391,6 @@ block|{
 name|BigIntegerEntity
 name|test
 init|=
-operator|(
-name|BigIntegerEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -497,9 +491,6 @@ block|{
 name|BigDecimalEntity
 name|test
 init|=
-operator|(
-name|BigDecimalEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1334,9 +1325,6 @@ comment|// populate (testing insert as well)
 name|DecimalPKTestEntity
 name|object
 init|=
-operator|(
-name|DecimalPKTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1422,9 +1410,6 @@ comment|// populate (testing insert as well)
 name|DecimalPKTest1
 name|object
 init|=
-operator|(
-name|DecimalPKTest1
-operator|)
 name|context
 operator|.
 name|newObject

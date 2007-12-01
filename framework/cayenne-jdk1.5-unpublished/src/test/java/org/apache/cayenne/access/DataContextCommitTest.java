@@ -103,9 +103,6 @@ comment|// commit new object
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -235,9 +232,6 @@ comment|// commit a mix of new and modified
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

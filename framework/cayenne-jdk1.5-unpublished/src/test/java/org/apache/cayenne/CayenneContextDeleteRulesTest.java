@@ -242,9 +242,6 @@ decl_stmt|;
 name|ClientMtDeleteNullify
 name|object
 init|=
-operator|(
-name|ClientMtDeleteNullify
-operator|)
 name|context
 operator|.
 name|newObject
@@ -264,9 +261,6 @@ expr_stmt|;
 name|ClientMtDeleteRule
 name|related
 init|=
-operator|(
-name|ClientMtDeleteRule
-operator|)
 name|context
 operator|.
 name|newObject
@@ -344,9 +338,6 @@ decl_stmt|;
 name|ClientMtDeleteDeny
 name|object
 init|=
-operator|(
-name|ClientMtDeleteDeny
-operator|)
 name|context
 operator|.
 name|newObject
@@ -359,9 +350,6 @@ decl_stmt|;
 name|ClientMtDeleteRule
 name|related
 init|=
-operator|(
-name|ClientMtDeleteRule
-operator|)
 name|context
 operator|.
 name|newObject
@@ -440,9 +428,6 @@ decl_stmt|;
 name|ClientMtDeleteCascade
 name|object
 init|=
-operator|(
-name|ClientMtDeleteCascade
-operator|)
 name|context
 operator|.
 name|newObject
@@ -462,9 +447,6 @@ expr_stmt|;
 name|ClientMtDeleteRule
 name|related
 init|=
-operator|(
-name|ClientMtDeleteRule
-operator|)
 name|context
 operator|.
 name|newObject
@@ -546,9 +528,6 @@ decl_stmt|;
 name|ClientMtDeleteRule
 name|related
 init|=
-operator|(
-name|ClientMtDeleteRule
-operator|)
 name|context
 operator|.
 name|newObject
@@ -566,9 +545,6 @@ expr_stmt|;
 name|ClientMtDeleteCascade
 name|object
 init|=
-operator|(
-name|ClientMtDeleteCascade
-operator|)
 name|context
 operator|.
 name|newObject

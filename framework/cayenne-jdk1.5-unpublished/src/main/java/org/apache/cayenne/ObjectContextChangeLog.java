@@ -400,9 +400,6 @@ block|{
 name|Integer
 name|pos
 init|=
-operator|(
-name|Integer
-operator|)
 name|markers
 operator|.
 name|get
@@ -532,9 +529,6 @@ block|{
 name|Integer
 name|pos
 init|=
-operator|(
-name|Integer
-operator|)
 name|markers
 operator|.
 name|get

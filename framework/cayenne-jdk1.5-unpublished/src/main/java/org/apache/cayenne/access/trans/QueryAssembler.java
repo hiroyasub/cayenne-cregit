@@ -358,9 +358,6 @@ decl_stmt|;
 name|DbAttribute
 name|attr
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|attributes
 operator|.
 name|get

@@ -2456,9 +2456,6 @@ block|{
 name|DataNode
 name|node
 init|=
-operator|(
-name|DataNode
-operator|)
 name|context
 operator|.
 name|getParentDataDomain

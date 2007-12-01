@@ -1068,9 +1068,6 @@ decl_stmt|;
 name|Artist
 name|_new
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1083,9 +1080,6 @@ decl_stmt|;
 name|Painting
 name|_newP
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1557,9 +1551,6 @@ decl_stmt|;
 name|Painting
 name|hollowTargetSrc
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1584,9 +1575,6 @@ decl_stmt|;
 name|Painting
 name|modifiedTargetSrc
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1618,9 +1606,6 @@ expr_stmt|;
 name|Painting
 name|deletedTargetSrc
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1659,9 +1644,6 @@ expr_stmt|;
 name|Painting
 name|committedTargetSrc
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1691,9 +1673,6 @@ expr_stmt|;
 name|Painting
 name|newTargetSrc
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1710,9 +1689,6 @@ decl_stmt|;
 name|Artist
 name|newTarget
 init|=
-operator|(
-name|Artist
-operator|)
 name|parent
 operator|.
 name|newObject

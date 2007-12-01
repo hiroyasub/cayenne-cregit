@@ -229,9 +229,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -321,9 +318,6 @@ decl_stmt|;
 name|Painting
 name|childP1
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1068,9 +1062,6 @@ expr_stmt|;
 name|Artist
 name|childNew
 init|=
-operator|(
-name|Artist
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -1882,9 +1873,6 @@ decl_stmt|;
 name|Painting
 name|childMaster
 init|=
-operator|(
-name|Painting
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -1904,9 +1892,6 @@ expr_stmt|;
 name|PaintingInfo
 name|childDetail1
 init|=
-operator|(
-name|PaintingInfo
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -2088,9 +2073,6 @@ decl_stmt|;
 name|Artist
 name|childO1
 init|=
-operator|(
-name|Artist
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -2110,9 +2092,6 @@ expr_stmt|;
 name|ArtGroup
 name|childO2
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -2352,9 +2331,6 @@ decl_stmt|;
 name|Artist
 name|childO1
 init|=
-operator|(
-name|Artist
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -2374,9 +2350,6 @@ expr_stmt|;
 name|ArtGroup
 name|childO2
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|childContext
 operator|.
 name|newObject
@@ -2408,9 +2381,6 @@ expr_stmt|;
 name|ArtGroup
 name|childO3
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|childContext
 operator|.
 name|newObject

@@ -197,9 +197,6 @@ expr_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|createDataContext
 argument_list|()
 operator|.

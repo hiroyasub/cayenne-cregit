@@ -106,9 +106,6 @@ decl_stmt|;
 name|FkOfDifferentType
 name|root
 init|=
-operator|(
-name|FkOfDifferentType
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

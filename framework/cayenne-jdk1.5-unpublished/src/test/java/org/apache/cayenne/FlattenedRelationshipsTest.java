@@ -206,9 +206,6 @@ block|{
 name|FlattenedTest1
 name|obj01
 init|=
-operator|(
-name|FlattenedTest1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -221,9 +218,6 @@ decl_stmt|;
 name|FlattenedTest3
 name|obj11
 init|=
-operator|(
-name|FlattenedTest3
-operator|)
 name|context
 operator|.
 name|newObject
@@ -236,9 +230,6 @@ decl_stmt|;
 name|FlattenedTest3
 name|obj12
 init|=
-operator|(
-name|FlattenedTest3
-operator|)
 name|context
 operator|.
 name|newObject
@@ -306,9 +297,6 @@ expr_stmt|;
 name|FlattenedTest1
 name|fresh01
 init|=
-operator|(
-name|FlattenedTest1
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -417,9 +405,6 @@ expr_stmt|;
 name|FlattenedTest1
 name|ft1
 init|=
-operator|(
-name|FlattenedTest1
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -477,9 +462,6 @@ expr_stmt|;
 name|FlattenedTest3
 name|ft3
 init|=
-operator|(
-name|FlattenedTest3
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -554,9 +536,6 @@ block|{
 name|FlattenedTest1
 name|obj01
 init|=
-operator|(
-name|FlattenedTest1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -569,9 +548,6 @@ decl_stmt|;
 name|FlattenedTest2
 name|obj02
 init|=
-operator|(
-name|FlattenedTest2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -584,9 +560,6 @@ decl_stmt|;
 name|FlattenedTest3
 name|obj031
 init|=
-operator|(
-name|FlattenedTest3
-operator|)
 name|context
 operator|.
 name|newObject
@@ -599,9 +572,6 @@ decl_stmt|;
 name|FlattenedTest3
 name|obj032
 init|=
-operator|(
-name|FlattenedTest3
-operator|)
 name|context
 operator|.
 name|newObject
@@ -614,9 +584,6 @@ decl_stmt|;
 name|FlattenedTest1
 name|obj11
 init|=
-operator|(
-name|FlattenedTest1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -629,9 +596,6 @@ decl_stmt|;
 name|FlattenedTest2
 name|obj12
 init|=
-operator|(
-name|FlattenedTest2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -644,9 +608,6 @@ decl_stmt|;
 name|FlattenedTest3
 name|obj131
 init|=
-operator|(
-name|FlattenedTest3
-operator|)
 name|context
 operator|.
 name|newObject

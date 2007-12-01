@@ -829,9 +829,6 @@ name|this
 operator|.
 name|readMethod
 operator|=
-operator|(
-name|Method
-operator|)
 name|readMethods
 operator|.
 name|get
@@ -864,9 +861,6 @@ name|this
 operator|.
 name|procReadMethod
 operator|=
-operator|(
-name|Method
-operator|)
 name|procReadMethods
 operator|.
 name|get

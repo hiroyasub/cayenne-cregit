@@ -517,9 +517,6 @@ decl_stmt|;
 name|DbRelationship
 name|dbRelation
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|relation
 operator|.
 name|getDbRelationships

@@ -464,9 +464,6 @@ name|deleteTestData
 argument_list|(
 name|node
 argument_list|,
-operator|(
-name|DataMap
-operator|)
 name|node
 operator|.
 name|getDataMaps
@@ -523,9 +520,6 @@ name|dropSchema
 argument_list|(
 name|node
 argument_list|,
-operator|(
-name|DataMap
-operator|)
 name|node
 operator|.
 name|getDataMaps
@@ -582,9 +576,6 @@ name|createSchema
 argument_list|(
 name|node
 argument_list|,
-operator|(
-name|DataMap
-operator|)
 name|node
 operator|.
 name|getDataMaps
@@ -640,9 +631,6 @@ name|dropPKSupport
 argument_list|(
 name|node
 argument_list|,
-operator|(
-name|DataMap
-operator|)
 name|node
 operator|.
 name|getDataMaps
@@ -699,9 +687,6 @@ name|createPKSupport
 argument_list|(
 name|node
 argument_list|,
-operator|(
-name|DataMap
-operator|)
 name|node
 operator|.
 name|getDataMaps

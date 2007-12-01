@@ -866,9 +866,6 @@ comment|// TODO: andrus, 8/11/2007 flattened?
 name|DbRelationship
 name|correlatedJoinRelationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|relationship
 operator|.
 name|getDbRelationships
@@ -1231,9 +1228,6 @@ comment|// TODO: andrus, 8/11/2007 flattened?
 name|DbRelationship
 name|correlatedJoinRelationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|relationship
 operator|.
 name|getDbRelationships

@@ -1228,9 +1228,6 @@ argument_list|)
 decl_stmt|;
 name|ret
 operator|=
-operator|(
-name|Collection
-operator|)
 name|c
 operator|.
 name|getClass

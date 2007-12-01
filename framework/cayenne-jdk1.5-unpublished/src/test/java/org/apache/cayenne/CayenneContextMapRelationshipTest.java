@@ -470,9 +470,6 @@ expr_stmt|;
 name|ClientMtMapToManyTarget
 name|newTarget
 init|=
-operator|(
-name|ClientMtMapToManyTarget
-operator|)
 name|o1
 operator|.
 name|getObjectContext

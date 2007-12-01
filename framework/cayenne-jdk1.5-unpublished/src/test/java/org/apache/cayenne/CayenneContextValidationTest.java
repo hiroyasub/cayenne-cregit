@@ -216,9 +216,6 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|c
 operator|.
 name|newObject
@@ -246,9 +243,6 @@ comment|// this one is not validating
 name|ClientMtTable2
 name|o2
 init|=
-operator|(
-name|ClientMtTable2
-operator|)
 name|c
 operator|.
 name|newObject
@@ -390,9 +384,6 @@ expr_stmt|;
 name|ClientMtTable1
 name|o11
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|c
 operator|.
 name|newObject

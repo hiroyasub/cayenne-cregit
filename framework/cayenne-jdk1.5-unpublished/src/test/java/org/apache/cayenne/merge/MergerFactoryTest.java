@@ -209,9 +209,6 @@ expr_stmt|;
 name|DataNode
 name|node
 init|=
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.
@@ -268,9 +265,6 @@ expr_stmt|;
 name|DataNode
 name|node
 init|=
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.
@@ -416,9 +410,6 @@ expr_stmt|;
 name|DataNode
 name|node
 init|=
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.
@@ -590,9 +581,6 @@ expr_stmt|;
 name|DataNode
 name|node
 init|=
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.
@@ -816,9 +804,6 @@ expr_stmt|;
 name|DataNode
 name|node
 init|=
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.

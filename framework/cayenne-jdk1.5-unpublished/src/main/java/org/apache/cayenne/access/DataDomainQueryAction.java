@@ -1041,9 +1041,6 @@ comment|// "!isSourceIndependentFromTargetChange"
 name|DbRelationship
 name|dbRelationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|relationship
 operator|.
 name|getDbRelationships

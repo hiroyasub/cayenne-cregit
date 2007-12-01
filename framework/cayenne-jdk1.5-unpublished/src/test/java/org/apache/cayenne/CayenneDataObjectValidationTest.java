@@ -180,9 +180,6 @@ decl_stmt|;
 name|Exhibit
 name|exhibit
 init|=
-operator|(
-name|Exhibit
-operator|)
 name|context
 operator|.
 name|newObject
@@ -291,9 +288,6 @@ comment|// fix the problem and see if it goes away
 name|Gallery
 name|gallery
 init|=
-operator|(
-name|Gallery
-operator|)
 name|context
 operator|.
 name|newObject

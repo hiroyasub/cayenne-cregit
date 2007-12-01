@@ -1462,9 +1462,6 @@ decl_stmt|;
 name|Artist
 name|object
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1548,9 +1545,6 @@ expr_stmt|;
 name|Artist
 name|object2
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

@@ -410,9 +410,6 @@ expr_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -573,9 +570,6 @@ expr_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

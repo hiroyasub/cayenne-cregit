@@ -558,9 +558,6 @@ block|{
 name|DbRelationship
 name|firstRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|inverse
 operator|.
 name|getDbRelationships

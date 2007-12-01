@@ -88,9 +88,6 @@ decl_stmt|;
 name|Painting
 name|persistentDO
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -149,9 +146,6 @@ decl_stmt|;
 name|Painting
 name|transientDO
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -210,9 +204,6 @@ decl_stmt|;
 name|Painting
 name|doC1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context1
 operator|.
 name|newObject
@@ -231,9 +222,6 @@ decl_stmt|;
 name|Artist
 name|doC2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context2
 operator|.
 name|newObject
@@ -290,9 +278,6 @@ decl_stmt|;
 name|Painting
 name|doC1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context1
 operator|.
 name|newObject
@@ -311,9 +296,6 @@ decl_stmt|;
 name|Artist
 name|doC2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context2
 operator|.
 name|newObject
@@ -370,9 +352,6 @@ decl_stmt|;
 name|Painting
 name|transientDO
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -431,9 +410,6 @@ decl_stmt|;
 name|Painting
 name|persistentDO
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

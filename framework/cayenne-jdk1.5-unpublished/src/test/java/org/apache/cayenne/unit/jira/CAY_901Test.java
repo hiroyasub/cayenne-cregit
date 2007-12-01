@@ -141,9 +141,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -163,9 +160,6 @@ expr_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -185,9 +179,6 @@ expr_stmt|;
 name|Gallery
 name|g
 init|=
-operator|(
-name|Gallery
-operator|)
 name|context
 operator|.
 name|newObject

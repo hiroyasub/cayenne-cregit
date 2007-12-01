@@ -122,9 +122,6 @@ block|{
 name|ToOneFK2
 name|src
 init|=
-operator|(
-name|ToOneFK2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -137,9 +134,6 @@ decl_stmt|;
 name|ToOneFK1
 name|target
 init|=
-operator|(
-name|ToOneFK1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -666,9 +660,6 @@ block|{
 name|ToOneFK2
 name|src
 init|=
-operator|(
-name|ToOneFK2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -681,9 +672,6 @@ decl_stmt|;
 name|ToOneFK1
 name|target
 init|=
-operator|(
-name|ToOneFK1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -769,9 +757,6 @@ block|{
 name|ToOneFK2
 name|src
 init|=
-operator|(
-name|ToOneFK2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -784,9 +769,6 @@ decl_stmt|;
 name|ToOneFK1
 name|target
 init|=
-operator|(
-name|ToOneFK1
-operator|)
 name|context
 operator|.
 name|newObject

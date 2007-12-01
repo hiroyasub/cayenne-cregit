@@ -173,9 +173,6 @@ expr_stmt|;
 name|ClientMtTable1
 name|t1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -188,9 +185,6 @@ decl_stmt|;
 name|ClientMtTable2
 name|t2
 init|=
-operator|(
-name|ClientMtTable2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -234,9 +228,6 @@ comment|// do it again to make sure action can handle series of changes
 name|ClientMtTable1
 name|t3
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -249,9 +240,6 @@ decl_stmt|;
 name|ClientMtTable2
 name|t4
 init|=
-operator|(
-name|ClientMtTable2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -328,9 +316,6 @@ expr_stmt|;
 name|ClientMtTable1
 name|t1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -343,9 +328,6 @@ decl_stmt|;
 name|ClientMtTable2
 name|t2
 init|=
-operator|(
-name|ClientMtTable2
-operator|)
 name|context
 operator|.
 name|newObject

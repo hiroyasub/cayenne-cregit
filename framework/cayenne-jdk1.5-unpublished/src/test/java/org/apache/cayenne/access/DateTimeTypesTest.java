@@ -133,9 +133,6 @@ block|{
 name|CalendarEntity
 name|test
 init|=
-operator|(
-name|CalendarEntity
-operator|)
 name|context
 operator|.
 name|newObject

@@ -313,9 +313,6 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|newObject

@@ -149,9 +149,6 @@ block|{
 name|CompoundPkTestEntity
 name|master
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|ctxt
 operator|.
 name|newObject
@@ -164,9 +161,6 @@ decl_stmt|;
 name|CompoundFkTestEntity
 name|detail
 init|=
-operator|(
-name|CompoundFkTestEntity
-operator|)
 name|ctxt
 operator|.
 name|newObject

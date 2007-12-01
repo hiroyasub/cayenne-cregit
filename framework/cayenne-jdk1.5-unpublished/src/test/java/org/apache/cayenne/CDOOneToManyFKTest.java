@@ -133,9 +133,6 @@ decl_stmt|;
 name|ToManyRoot2
 name|src2
 init|=
-operator|(
-name|ToManyRoot2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -148,9 +145,6 @@ decl_stmt|;
 name|ToManyFkRoot
 name|src
 init|=
-operator|(
-name|ToManyFkRoot
-operator|)
 name|context
 operator|.
 name|newObject
@@ -175,9 +169,6 @@ expr_stmt|;
 name|ToManyFkDep
 name|target
 init|=
-operator|(
-name|ToManyFkDep
-operator|)
 name|context
 operator|.
 name|newObject

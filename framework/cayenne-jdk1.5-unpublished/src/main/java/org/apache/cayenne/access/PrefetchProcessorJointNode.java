@@ -740,9 +740,6 @@ block|{
 name|DbRelationship
 name|r
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|getIncoming
 argument_list|()
 operator|.
@@ -958,9 +955,6 @@ decl_stmt|;
 name|DbRelationship
 name|dbRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|rel
 operator|.
 name|getDbRelationships

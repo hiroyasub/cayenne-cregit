@@ -844,9 +844,6 @@ decl_stmt|;
 name|ClientMtTable1
 name|object
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1049,9 +1046,6 @@ decl_stmt|;
 name|ClientMtReflexive
 name|o1
 init|=
-operator|(
-name|ClientMtReflexive
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1071,9 +1065,6 @@ expr_stmt|;
 name|ClientMtReflexive
 name|o2
 init|=
-operator|(
-name|ClientMtReflexive
-operator|)
 name|context
 operator|.
 name|newObject
@@ -2324,9 +2315,6 @@ decl_stmt|;
 name|ClientMtTable1
 name|o
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|newObject

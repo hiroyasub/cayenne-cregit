@@ -92,9 +92,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -251,9 +248,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -266,9 +260,6 @@ decl_stmt|;
 name|Artist
 name|altA
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -281,9 +272,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -526,9 +514,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -548,9 +533,6 @@ expr_stmt|;
 name|Painting
 name|px
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -577,9 +559,6 @@ expr_stmt|;
 name|Painting
 name|py
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

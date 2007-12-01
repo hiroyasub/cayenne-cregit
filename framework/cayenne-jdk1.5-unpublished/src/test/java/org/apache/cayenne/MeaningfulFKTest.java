@@ -94,9 +94,6 @@ block|{
 name|MeaningfulFK
 name|testObject
 init|=
-operator|(
-name|MeaningfulFK
-operator|)
 name|createDataContext
 argument_list|()
 operator|.
@@ -157,9 +154,6 @@ block|{
 name|MeaningfulFK
 name|testObject
 init|=
-operator|(
-name|MeaningfulFK
-operator|)
 name|createDataContext
 argument_list|()
 operator|.
@@ -173,9 +167,6 @@ decl_stmt|;
 name|RelationshipHelper
 name|related
 init|=
-operator|(
-name|RelationshipHelper
-operator|)
 name|testObject
 operator|.
 name|getObjectContext

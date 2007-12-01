@@ -165,9 +165,6 @@ comment|// no callbacks
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -208,9 +205,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -260,9 +254,6 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -298,9 +289,6 @@ expr_stmt|;
 name|Painting
 name|p3
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -361,9 +349,6 @@ comment|// no callbacks
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -426,9 +411,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -500,9 +482,6 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -560,9 +539,6 @@ expr_stmt|;
 name|Painting
 name|p3
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

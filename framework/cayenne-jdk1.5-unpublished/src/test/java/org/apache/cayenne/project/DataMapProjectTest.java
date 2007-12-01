@@ -157,9 +157,6 @@ comment|// copy shared datamap to the test location
 name|DataMap
 name|m
 init|=
-operator|(
-name|DataMap
-operator|)
 name|getNode
 argument_list|()
 operator|.

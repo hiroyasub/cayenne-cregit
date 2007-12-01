@@ -119,20 +119,6 @@ name|BuildException
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Task
-import|;
-end_import
-
 begin_comment
 comment|/**  * A "cdeploy" Ant task providing an Ant frontend to  * org.apache.cayenne.project.ProjectConfigurator.  *   * @author Andrus Adamchik  */
 end_comment

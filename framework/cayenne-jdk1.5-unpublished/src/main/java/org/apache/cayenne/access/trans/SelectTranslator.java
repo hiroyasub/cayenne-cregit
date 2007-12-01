@@ -789,9 +789,6 @@ name|queryBuf
 operator|.
 name|append
 argument_list|(
-operator|(
-name|String
-operator|)
 name|selectColumnExpList
 operator|.
 name|get
@@ -827,9 +824,6 @@ name|queryBuf
 operator|.
 name|append
 argument_list|(
-operator|(
-name|String
-operator|)
 name|selectColumnExpList
 operator|.
 name|get
@@ -1077,10 +1071,6 @@ index|]
 return|;
 block|}
 return|return
-operator|(
-name|ColumnDescriptor
-index|[]
-operator|)
 name|resultColumns
 operator|.
 name|toArray
@@ -1440,9 +1430,6 @@ decl_stmt|;
 name|DbRelationship
 name|dbRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|rel
 operator|.
 name|getDbRelationships
@@ -2592,9 +2579,6 @@ block|{
 name|ColumnDescriptor
 name|column
 init|=
-operator|(
-name|ColumnDescriptor
-operator|)
 name|columns
 operator|.
 name|get
@@ -2722,9 +2706,6 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-operator|(
-name|String
-operator|)
 name|aliasList
 operator|.
 name|get
@@ -3056,9 +3037,6 @@ literal|0
 condition|)
 block|{
 return|return
-operator|(
-name|String
-operator|)
 name|aliasList
 operator|.
 name|get

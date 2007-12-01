@@ -1524,9 +1524,6 @@ comment|// change relationship and save... no optimistic lock failure expected
 name|SimpleLockingTestEntity
 name|object1
 init|=
-operator|(
-name|SimpleLockingTestEntity
-operator|)
 name|context
 operator|.
 name|newObject

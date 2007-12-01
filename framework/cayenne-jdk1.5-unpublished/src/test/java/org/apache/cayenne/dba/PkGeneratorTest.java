@@ -108,9 +108,6 @@ argument_list|()
 expr_stmt|;
 name|node
 operator|=
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.

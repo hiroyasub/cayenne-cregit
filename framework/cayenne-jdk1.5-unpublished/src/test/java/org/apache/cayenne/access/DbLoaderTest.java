@@ -1239,9 +1239,6 @@ name|originalMap
 parameter_list|()
 block|{
 return|return
-operator|(
-name|DataMap
-operator|)
 name|getNode
 argument_list|()
 operator|.

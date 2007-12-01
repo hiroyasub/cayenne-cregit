@@ -101,9 +101,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|childContext
 operator|.
 name|newObject

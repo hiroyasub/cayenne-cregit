@@ -487,9 +487,6 @@ name|getNode
 parameter_list|()
 block|{
 return|return
-operator|(
-name|DataNode
-operator|)
 name|getDomain
 argument_list|()
 operator|.

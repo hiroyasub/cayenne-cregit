@@ -748,9 +748,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject

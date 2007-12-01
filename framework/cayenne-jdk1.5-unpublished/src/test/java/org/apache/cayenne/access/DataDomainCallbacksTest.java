@@ -245,9 +245,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -506,9 +503,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -687,9 +681,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -868,9 +859,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -988,9 +976,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1096,9 +1081,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject

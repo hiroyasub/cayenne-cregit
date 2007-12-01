@@ -2086,9 +2086,6 @@ block|}
 name|DbRelationship
 name|dbRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|rel
 operator|.
 name|getDbRelationships

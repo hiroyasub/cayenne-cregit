@@ -162,9 +162,6 @@ decl_stmt|;
 name|ReflexiveAndToOne
 name|ox
 init|=
-operator|(
-name|ReflexiveAndToOne
-operator|)
 name|context
 operator|.
 name|newObject
@@ -184,9 +181,6 @@ expr_stmt|;
 name|ReflexiveAndToOne
 name|o1
 init|=
-operator|(
-name|ReflexiveAndToOne
-operator|)
 name|context
 operator|.
 name|newObject
@@ -206,9 +200,6 @@ expr_stmt|;
 name|ReflexiveAndToOne
 name|o2
 init|=
-operator|(
-name|ReflexiveAndToOne
-operator|)
 name|context
 operator|.
 name|newObject
@@ -342,9 +333,6 @@ decl_stmt|;
 name|ReflexiveAndToOne
 name|ox
 init|=
-operator|(
-name|ReflexiveAndToOne
-operator|)
 name|context
 operator|.
 name|newObject
@@ -364,9 +352,6 @@ expr_stmt|;
 name|ReflexiveAndToOne
 name|o1
 init|=
-operator|(
-name|ReflexiveAndToOne
-operator|)
 name|context
 operator|.
 name|newObject
@@ -386,9 +371,6 @@ expr_stmt|;
 name|ReflexiveAndToOne
 name|o2
 init|=
-operator|(
-name|ReflexiveAndToOne
-operator|)
 name|context
 operator|.
 name|newObject

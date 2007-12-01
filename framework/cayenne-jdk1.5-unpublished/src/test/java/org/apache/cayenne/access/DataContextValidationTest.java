@@ -176,9 +176,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -218,9 +215,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -290,9 +284,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getObjectContext
@@ -338,9 +329,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -369,9 +357,6 @@ comment|// object is committed
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject

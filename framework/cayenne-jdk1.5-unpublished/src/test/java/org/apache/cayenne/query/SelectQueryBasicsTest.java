@@ -427,9 +427,6 @@ expr_stmt|;
 name|Ordering
 name|ord
 init|=
-operator|(
-name|Ordering
-operator|)
 name|q
 operator|.
 name|getOrderings

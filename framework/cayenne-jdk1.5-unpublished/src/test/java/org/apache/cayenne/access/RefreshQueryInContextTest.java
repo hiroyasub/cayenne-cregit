@@ -942,9 +942,6 @@ comment|// fetch P1 separately from cached query
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1250,9 +1247,6 @@ comment|// fetch P1 separately from cached query
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1558,9 +1552,6 @@ comment|// fetch P1 separately from cached query
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

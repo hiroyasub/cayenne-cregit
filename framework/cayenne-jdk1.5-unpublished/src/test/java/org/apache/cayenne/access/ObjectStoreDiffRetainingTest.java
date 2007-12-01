@@ -113,9 +113,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -198,9 +195,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -246,9 +240,6 @@ name|a
 operator|.
 name|addToPaintingArray
 argument_list|(
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

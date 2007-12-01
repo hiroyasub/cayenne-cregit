@@ -888,9 +888,6 @@ expr_stmt|;
 name|Ordering
 name|artistNameOrdering
 init|=
-operator|(
-name|Ordering
-operator|)
 name|queryWithOrdering
 operator|.
 name|getOrderings
@@ -932,9 +929,6 @@ expr_stmt|;
 name|Ordering
 name|dobOrdering
 init|=
-operator|(
-name|Ordering
-operator|)
 name|queryWithOrdering
 operator|.
 name|getOrderings

@@ -74,9 +74,6 @@ decl_stmt|;
 name|PrimitivesTestEntity
 name|e
 init|=
-operator|(
-name|PrimitivesTestEntity
-operator|)
 name|context
 operator|.
 name|newObject

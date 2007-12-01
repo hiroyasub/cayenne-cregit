@@ -1324,9 +1324,6 @@ block|{
 name|Artist
 name|artist
 init|=
-operator|(
-name|Artist
-operator|)
 name|ctxt
 operator|.
 name|newObject

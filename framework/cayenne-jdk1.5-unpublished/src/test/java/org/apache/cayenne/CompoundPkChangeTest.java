@@ -140,9 +140,6 @@ decl_stmt|;
 name|CompoundPkTestEntity
 name|dao
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -428,9 +425,6 @@ decl_stmt|;
 name|CompoundPkTestEntity
 name|dao
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|context
 operator|.
 name|newObject

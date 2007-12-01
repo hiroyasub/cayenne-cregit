@@ -751,9 +751,6 @@ comment|// Create a gallery.
 name|Gallery
 name|g
 init|=
-operator|(
-name|Gallery
-operator|)
 name|context
 operator|.
 name|newObject
@@ -774,9 +771,6 @@ comment|// Create an artist in the same context.
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -797,9 +791,6 @@ comment|// Create a painting in the same context.
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

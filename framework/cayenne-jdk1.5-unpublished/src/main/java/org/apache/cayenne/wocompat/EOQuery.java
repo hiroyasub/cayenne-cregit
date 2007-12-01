@@ -1738,9 +1738,6 @@ argument_list|)
 expr_stmt|;
 name|comparisonValue
 operator|=
-operator|(
-name|String
-operator|)
 name|qualifierMap
 operator|.
 name|get
@@ -1883,9 +1880,6 @@ block|{
 comment|// comparison to NSNumber -- cast
 name|comparisonValue
 operator|=
-operator|(
-name|Number
-operator|)
 name|queryVal
 expr_stmt|;
 block|}

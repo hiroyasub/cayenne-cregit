@@ -2189,9 +2189,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -2402,9 +2399,6 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|a
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -2549,9 +2543,6 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|a
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -2684,9 +2675,6 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|a
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

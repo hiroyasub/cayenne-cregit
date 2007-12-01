@@ -70,9 +70,6 @@ decl_stmt|;
 name|Artist
 name|ac
 init|=
-operator|(
-name|Artist
-operator|)
 name|child1
 operator|.
 name|newObject

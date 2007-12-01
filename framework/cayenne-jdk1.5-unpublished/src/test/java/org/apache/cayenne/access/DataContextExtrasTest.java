@@ -291,9 +291,6 @@ decl_stmt|;
 name|Artist
 name|object
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -402,9 +399,6 @@ decl_stmt|;
 name|Artist
 name|o1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -760,9 +754,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1215,9 +1206,6 @@ block|{
 name|Artist
 name|newArtist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1629,9 +1617,6 @@ decl_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1842,9 +1827,6 @@ decl_stmt|;
 name|Artist
 name|newArtist
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1997,9 +1979,6 @@ decl_stmt|;
 name|Artist
 name|newArtist
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

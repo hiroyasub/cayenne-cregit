@@ -265,9 +265,6 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -449,9 +446,6 @@ comment|// insert, then delete - this shouldn't propagate via an event.
 name|ClientMtTable1
 name|o1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -479,9 +473,6 @@ comment|// introduce some other change so that commit can go ahead...
 name|ClientMtTable1
 name|o1x
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -620,9 +611,6 @@ expr_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -1302,9 +1290,6 @@ expr_stmt|;
 name|ClientMtTable2
 name|o1r
 init|=
-operator|(
-name|ClientMtTable2
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -1489,9 +1474,6 @@ expr_stmt|;
 name|ClientMtTable2
 name|o1r
 init|=
-operator|(
-name|ClientMtTable2
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -1886,9 +1868,6 @@ decl_stmt|;
 name|ClientMtTable4
 name|o1
 init|=
-operator|(
-name|ClientMtTable4
-operator|)
 name|c1
 operator|.
 name|newObject
@@ -1901,9 +1880,6 @@ decl_stmt|;
 name|ClientMtTable5
 name|o1r
 init|=
-operator|(
-name|ClientMtTable5
-operator|)
 name|c1
 operator|.
 name|newObject

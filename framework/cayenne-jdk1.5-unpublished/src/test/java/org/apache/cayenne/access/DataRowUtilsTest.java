@@ -426,9 +426,6 @@ decl_stmt|;
 name|Painting
 name|painting
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

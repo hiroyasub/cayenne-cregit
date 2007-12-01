@@ -1358,9 +1358,6 @@ block|{
 name|DbJoin
 name|join
 init|=
-operator|(
-name|DbJoin
-operator|)
 name|relationship
 operator|.
 name|getJoins

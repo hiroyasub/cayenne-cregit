@@ -177,9 +177,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -238,9 +235,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -580,9 +574,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -755,9 +746,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -864,9 +852,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

@@ -181,20 +181,6 @@ name|Project
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Task
-import|;
-end_import
-
 begin_comment
 comment|/**  * A "cdataport" Ant task implementing a frontend to DataPort allowing porting database  * data using Ant build scripts.  *   * @author Andrus Adamchik  * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
 end_comment

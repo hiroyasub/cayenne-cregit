@@ -247,9 +247,6 @@ decl_stmt|;
 name|DateTestEntity
 name|o1
 init|=
-operator|(
-name|DateTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -285,9 +282,6 @@ expr_stmt|;
 name|DateTestEntity
 name|o2
 init|=
-operator|(
-name|DateTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -399,9 +393,6 @@ decl_stmt|;
 name|DateTestEntity
 name|o1
 init|=
-operator|(
-name|DateTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -441,9 +432,6 @@ expr_stmt|;
 name|DateTestEntity
 name|o2
 init|=
-operator|(
-name|DateTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -583,9 +571,6 @@ decl_stmt|;
 name|DateTestEntity
 name|o1
 init|=
-operator|(
-name|DateTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -625,9 +610,6 @@ expr_stmt|;
 name|DateTestEntity
 name|o2
 init|=
-operator|(
-name|DateTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -723,9 +705,6 @@ decl_stmt|;
 name|BigDecimalEntity
 name|o1
 init|=
-operator|(
-name|BigDecimalEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -749,9 +728,6 @@ expr_stmt|;
 name|BigDecimalEntity
 name|o2
 init|=
-operator|(
-name|BigDecimalEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -831,9 +807,6 @@ decl_stmt|;
 name|BigDecimalEntity
 name|o1
 init|=
-operator|(
-name|BigDecimalEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -857,9 +830,6 @@ expr_stmt|;
 name|BigDecimalEntity
 name|o2
 init|=
-operator|(
-name|BigDecimalEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -939,9 +909,6 @@ decl_stmt|;
 name|BigIntegerEntity
 name|o1
 init|=
-operator|(
-name|BigIntegerEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -965,9 +932,6 @@ expr_stmt|;
 name|BigIntegerEntity
 name|o2
 init|=
-operator|(
-name|BigIntegerEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1047,9 +1011,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1069,9 +1030,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1091,9 +1049,6 @@ expr_stmt|;
 name|Painting
 name|p12
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1120,9 +1075,6 @@ expr_stmt|;
 name|Painting
 name|p22
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1244,9 +1196,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1266,9 +1215,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1344,9 +1290,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1366,9 +1309,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1444,9 +1384,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1466,9 +1403,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1493,9 +1427,6 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1581,9 +1512,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1603,9 +1531,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1630,9 +1555,6 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1718,9 +1640,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1740,9 +1659,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1762,9 +1678,6 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1850,9 +1763,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1872,9 +1782,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1995,9 +1902,6 @@ expr_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -2014,9 +1918,6 @@ decl_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -2235,9 +2136,6 @@ decl_stmt|;
 name|Artist
 name|a1
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject
@@ -2257,9 +2155,6 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject

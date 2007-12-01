@@ -1168,9 +1168,6 @@ comment|// TODO: andrus, 6/21/2007 - flattened support
 name|DbRelationship
 name|dbRelationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|relationship
 operator|.
 name|getDbRelationships
@@ -1302,9 +1299,6 @@ comment|// TODO: andrus, 6/21/2007 - flattened support
 name|DbRelationship
 name|dbRelationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|relationship
 operator|.
 name|getDbRelationships

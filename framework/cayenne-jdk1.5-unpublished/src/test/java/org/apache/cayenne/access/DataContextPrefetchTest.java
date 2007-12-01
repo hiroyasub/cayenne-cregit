@@ -2162,9 +2162,6 @@ block|{
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|context
 operator|.
 name|newObject

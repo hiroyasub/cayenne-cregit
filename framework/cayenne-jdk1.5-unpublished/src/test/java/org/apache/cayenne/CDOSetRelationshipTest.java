@@ -144,9 +144,6 @@ expr_stmt|;
 name|SetToMany
 name|o1
 init|=
-operator|(
-name|SetToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -497,9 +494,6 @@ expr_stmt|;
 name|SetToManyTarget
 name|newTarget
 init|=
-operator|(
-name|SetToManyTarget
-operator|)
 name|o1
 operator|.
 name|getObjectContext
@@ -601,9 +595,6 @@ expr_stmt|;
 name|SetToMany
 name|o1
 init|=
-operator|(
-name|SetToMany
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -639,9 +630,6 @@ expr_stmt|;
 name|SetToManyTarget
 name|target
 init|=
-operator|(
-name|SetToManyTarget
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -798,9 +786,6 @@ expr_stmt|;
 name|SetToManyTarget
 name|newTarget
 init|=
-operator|(
-name|SetToManyTarget
-operator|)
 name|o1
 operator|.
 name|getObjectContext

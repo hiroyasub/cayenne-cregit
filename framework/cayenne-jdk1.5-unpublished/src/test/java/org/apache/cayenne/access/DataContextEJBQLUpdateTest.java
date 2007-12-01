@@ -854,9 +854,6 @@ decl_stmt|;
 name|BooleanTestEntity
 name|o1
 init|=
-operator|(
-name|BooleanTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -878,9 +875,6 @@ expr_stmt|;
 name|BooleanTestEntity
 name|o2
 init|=
-operator|(
-name|BooleanTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -902,9 +896,6 @@ expr_stmt|;
 name|BooleanTestEntity
 name|o3
 init|=
-operator|(
-name|BooleanTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1063,9 +1054,6 @@ decl_stmt|;
 name|Artist
 name|object
 init|=
-operator|(
-name|Artist
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -1261,9 +1249,6 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|object
 init|=
-operator|(
-name|CompoundPkTestEntity
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK

@@ -213,9 +213,6 @@ decl_stmt|;
 name|GeneratedColumnTestEntity
 name|idObject
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -346,9 +343,6 @@ decl_stmt|;
 name|GeneratedColumnTestEntity
 name|idObject
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -417,9 +411,6 @@ expr_stmt|;
 name|GeneratedColumnTestEntity
 name|object
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -466,9 +457,6 @@ decl_stmt|;
 name|GeneratedColumnTestEntity
 name|m
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -488,9 +476,6 @@ expr_stmt|;
 name|GeneratedColumnDep
 name|d
 init|=
-operator|(
-name|GeneratedColumnDep
-operator|)
 name|context
 operator|.
 name|newObject
@@ -585,9 +570,6 @@ decl_stmt|;
 name|GeneratedColumnTestEntity
 name|idObject1
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -607,9 +589,6 @@ expr_stmt|;
 name|GeneratedColumnTest2
 name|idObject2
 init|=
-operator|(
-name|GeneratedColumnTest2
-operator|)
 name|context
 operator|.
 name|newObject
@@ -683,9 +662,6 @@ operator|new
 name|GeneratedColumnTestEntity
 index|[]
 block|{
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -695,9 +671,6 @@ operator|.
 name|class
 argument_list|)
 block|,
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -707,9 +680,6 @@ operator|.
 name|class
 argument_list|)
 block|,
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -843,9 +813,6 @@ block|{
 name|GeneratedColumnTestEntity
 name|object
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|DataObjectUtils
 operator|.
 name|objectForPK
@@ -942,9 +909,6 @@ decl_stmt|;
 name|GeneratedColumnCompMaster
 name|master
 init|=
-operator|(
-name|GeneratedColumnCompMaster
-operator|)
 name|context
 operator|.
 name|newObject
@@ -964,9 +928,6 @@ expr_stmt|;
 name|GeneratedColumnCompKey
 name|dep1
 init|=
-operator|(
-name|GeneratedColumnCompKey
-operator|)
 name|context
 operator|.
 name|newObject
@@ -993,9 +954,6 @@ expr_stmt|;
 name|GeneratedColumnCompKey
 name|dep2
 init|=
-operator|(
-name|GeneratedColumnCompKey
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1180,9 +1138,6 @@ decl_stmt|;
 name|GeneratedColumnTestEntity
 name|master1
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1202,9 +1157,6 @@ expr_stmt|;
 name|GeneratedColumnDep
 name|dependent
 init|=
-operator|(
-name|GeneratedColumnDep
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1237,9 +1189,6 @@ comment|// change master
 name|GeneratedColumnTestEntity
 name|master2
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1388,9 +1337,6 @@ decl_stmt|;
 name|GeneratedColumnTestEntity
 name|idObject
 init|=
-operator|(
-name|GeneratedColumnTestEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -1410,9 +1356,6 @@ expr_stmt|;
 name|GeneratedColumnDep
 name|dependent
 init|=
-operator|(
-name|GeneratedColumnDep
-operator|)
 name|idObject
 operator|.
 name|getObjectContext

@@ -851,9 +851,6 @@ block|{
 name|Artist
 name|artist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|newObject

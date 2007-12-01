@@ -457,9 +457,6 @@ block|{
 name|DeleteRuleFlatA
 name|a
 init|=
-operator|(
-name|DeleteRuleFlatA
-operator|)
 name|context
 operator|.
 name|newObject
@@ -472,9 +469,6 @@ decl_stmt|;
 name|DeleteRuleFlatB
 name|b
 init|=
-operator|(
-name|DeleteRuleFlatB
-operator|)
 name|context
 operator|.
 name|newObject
@@ -591,9 +585,6 @@ block|{
 name|DeleteRuleFlatA
 name|a
 init|=
-operator|(
-name|DeleteRuleFlatA
-operator|)
 name|context
 operator|.
 name|newObject
@@ -606,9 +597,6 @@ decl_stmt|;
 name|DeleteRuleFlatB
 name|b
 init|=
-operator|(
-name|DeleteRuleFlatB
-operator|)
 name|context
 operator|.
 name|newObject
