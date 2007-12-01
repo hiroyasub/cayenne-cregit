@@ -302,6 +302,9 @@ comment|/**      * Returns a list of DbAttributes describing batch parameters.  
 specifier|public
 specifier|abstract
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributes
 parameter_list|()
 function_decl|;
@@ -356,6 +359,11 @@ name|Object
 name|getValue
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|valueMap
 parameter_list|,
 name|DbAttribute

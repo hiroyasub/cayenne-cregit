@@ -78,6 +78,11 @@ name|GraphDiff
 name|senderChanges
 decl_stmt|;
 comment|// private constructor for Hessian deserialization
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|SyncMessage
 parameter_list|()

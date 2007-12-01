@@ -155,9 +155,6 @@ decl_stmt|;
 name|SerializableEntity
 name|test
 init|=
-operator|(
-name|SerializableEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -268,9 +265,6 @@ decl_stmt|;
 name|ArraysEntity
 name|test
 init|=
-operator|(
-name|ArraysEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -381,9 +375,6 @@ decl_stmt|;
 name|ArraysEntity
 name|test
 init|=
-operator|(
-name|ArraysEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -494,9 +485,6 @@ decl_stmt|;
 name|ArraysEntity
 name|test
 init|=
-operator|(
-name|ArraysEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -619,9 +607,6 @@ decl_stmt|;
 name|CharacterEntity
 name|test
 init|=
-operator|(
-name|CharacterEntity
-operator|)
 name|context
 operator|.
 name|newObject
@@ -725,9 +710,6 @@ decl_stmt|;
 name|ArraysEntity
 name|test
 init|=
-operator|(
-name|ArraysEntity
-operator|)
 name|context
 operator|.
 name|newObject

@@ -43,7 +43,7 @@ name|createQuery
 parameter_list|(
 name|Map
 argument_list|<
-name|?
+name|String
 argument_list|,
 name|?
 argument_list|>

@@ -63,17 +63,12 @@ interface|interface
 name|QueryEngine
 block|{
 comment|/**      * Executes a list of queries wrapping them in its own transaction. Results of      * execution are passed to {@link OperationObserver}object via its callback methods.      *       * @since 1.1 The signature has changed from List to Collection.      */
-parameter_list|<
-name|T
-extends|extends
-name|Query
-parameter_list|>
 name|void
 name|performQueries
 parameter_list|(
 name|Collection
 argument_list|<
-name|T
+name|Query
 argument_list|>
 name|queries
 parameter_list|,

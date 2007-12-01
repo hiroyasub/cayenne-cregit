@@ -119,6 +119,9 @@ block|{
 comment|/**      * @since 1.2      */
 specifier|protected
 name|List
+argument_list|<
+name|ObjectId
+argument_list|>
 name|objectIds
 decl_stmt|;
 specifier|protected
@@ -135,18 +138,30 @@ name|usingOptimisticLocking
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|updatedAttributes
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 decl_stmt|;
 specifier|private
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nullQualifierNames
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 decl_stmt|;
 comment|/**      * Creates new UpdateBatchQuery.      *       * @param dbEntity Table or view to update.      * @param qualifierAttributes DbAttributes used in the WHERE clause.      * @param nullQualifierNames DbAttribute names in the WHERE clause that have null      *            values.      * @param updatedAttribute DbAttributes describing updated columns.      * @param batchCapacity Estimated size of the batch.      */
@@ -157,12 +172,21 @@ name|DbEntity
 name|dbEntity
 parameter_list|,
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 parameter_list|,
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|updatedAttribute
 parameter_list|,
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nullQualifierNames
 parameter_list|,
 name|int
@@ -220,6 +244,9 @@ name|objectIds
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ObjectId
+argument_list|>
 argument_list|(
 name|batchCapacity
 argument_list|)
@@ -228,6 +255,9 @@ name|dbAttributes
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbAttribute
+argument_list|>
 argument_list|(
 name|updatedAttributes
 operator|.
@@ -313,9 +343,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get
@@ -436,6 +463,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributes
 parameter_list|()
 block|{
@@ -446,6 +476,9 @@ block|}
 comment|/**      * @since 1.1      */
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getUpdatedAttributes
 parameter_list|()
 block|{
@@ -461,6 +494,9 @@ block|}
 comment|/**      * @since 1.1      */
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getQualifierAttributes
 parameter_list|()
 block|{
@@ -498,9 +534,6 @@ name|getObjectId
 parameter_list|()
 block|{
 return|return
-operator|(
-name|ObjectId
-operator|)
 name|objectIds
 operator|.
 name|get

@@ -99,14 +99,23 @@ block|{
 comment|/**      * @since 1.2      */
 specifier|protected
 name|List
+argument_list|<
+name|ObjectId
+argument_list|>
 name|objectIds
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|Map
+argument_list|>
 name|objectSnapshots
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 decl_stmt|;
 comment|/**      * Creates new InsertBatchQuery for a given DbEntity and estimated capacity.      */
@@ -131,6 +140,9 @@ name|objectSnapshots
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Map
+argument_list|>
 argument_list|(
 name|batchCapacity
 argument_list|)
@@ -141,6 +153,9 @@ name|objectIds
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ObjectId
+argument_list|>
 argument_list|(
 name|batchCapacity
 argument_list|)
@@ -171,9 +186,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get
@@ -184,9 +196,6 @@ decl_stmt|;
 name|Map
 name|currentSnapshot
 init|=
-operator|(
-name|Map
-operator|)
 name|objectSnapshots
 operator|.
 name|get
@@ -261,6 +270,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributes
 parameter_list|()
 block|{
@@ -275,9 +287,6 @@ name|getObjectId
 parameter_list|()
 block|{
 return|return
-operator|(
-name|ObjectId
-operator|)
 name|objectIds
 operator|.
 name|get

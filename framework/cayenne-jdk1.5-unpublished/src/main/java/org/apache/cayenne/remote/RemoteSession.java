@@ -204,6 +204,11 @@ name|Map
 name|eventBridgeParameters
 decl_stmt|;
 comment|// private constructor used by hessian deserialization mechanism
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|RemoteSession
 parameter_list|()

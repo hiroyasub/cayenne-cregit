@@ -196,6 +196,11 @@ name|QueryMetadata
 name|metadata
 decl_stmt|;
 comment|// needed for hessian serialization
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|ObjectIdQuery
 parameter_list|()

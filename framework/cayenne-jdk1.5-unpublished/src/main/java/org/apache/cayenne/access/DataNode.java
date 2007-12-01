@@ -595,17 +595,12 @@ return|;
 block|}
 comment|/**      * Runs queries using Connection obtained from internal DataSource.      *       * @since 1.1      */
 specifier|public
-parameter_list|<
-name|T
-extends|extends
-name|Query
-parameter_list|>
 name|void
 name|performQueries
 parameter_list|(
 name|Collection
 argument_list|<
-name|T
+name|Query
 argument_list|>
 name|queries
 parameter_list|,

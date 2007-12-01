@@ -228,6 +228,11 @@ name|PrefetchTreeNode
 name|prefetchTree
 decl_stmt|;
 comment|// exists for hessian serialization.
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|RangeQuery
 parameter_list|()

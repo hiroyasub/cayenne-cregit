@@ -106,10 +106,16 @@ name|BatchQuery
 block|{
 specifier|protected
 name|List
+argument_list|<
+name|Map
+argument_list|>
 name|qualifierSnapshots
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 decl_stmt|;
 specifier|protected
@@ -125,6 +131,9 @@ name|qualifierAttributes
 decl_stmt|;
 specifier|private
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nullQualifierNames
 decl_stmt|;
 comment|/**      * Creates new DeleteBatchQuery. Used by      * ContextCommit.categorizeFlattenedDeletesAndCreateBatches for deleting flattenned      * relationships.      *       * @param dbEntity Table or view to delete.      * @param batchCapacity Estimated size of the batch.      */
@@ -169,6 +178,9 @@ argument_list|>
 name|qualifierAttributes
 parameter_list|,
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nullQualifierNames
 parameter_list|,
 name|int
@@ -204,6 +216,9 @@ name|qualifierSnapshots
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Map
+argument_list|>
 argument_list|(
 name|batchCapacity
 argument_list|)
@@ -212,6 +227,9 @@ name|dbAttributes
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbAttribute
+argument_list|>
 argument_list|(
 name|qualifierAttributes
 operator|.
@@ -303,9 +321,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get
@@ -356,6 +371,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributes
 parameter_list|()
 block|{
@@ -370,9 +388,6 @@ name|getCurrentQualifier
 parameter_list|()
 block|{
 return|return
-operator|(
-name|Map
-operator|)
 name|qualifierSnapshots
 operator|.
 name|get

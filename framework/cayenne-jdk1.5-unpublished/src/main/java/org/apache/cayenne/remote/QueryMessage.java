@@ -45,6 +45,11 @@ name|Query
 name|query
 decl_stmt|;
 comment|// for hessian serialization
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|QueryMessage
 parameter_list|()

@@ -190,6 +190,11 @@ name|ArcProperty
 name|arc
 decl_stmt|;
 comment|// exists for deserialization with Hessian
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|RelationshipQuery
 parameter_list|()

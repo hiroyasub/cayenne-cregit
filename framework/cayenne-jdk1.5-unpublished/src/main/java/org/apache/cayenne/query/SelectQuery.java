@@ -579,7 +579,7 @@ name|initWithProperties
 parameter_list|(
 name|Map
 argument_list|<
-name|?
+name|String
 argument_list|,
 name|?
 argument_list|>
@@ -977,7 +977,7 @@ name|queryWithParameters
 parameter_list|(
 name|Map
 argument_list|<
-name|?
+name|String
 argument_list|,
 name|?
 argument_list|>
@@ -1166,7 +1166,7 @@ name|createQuery
 parameter_list|(
 name|Map
 argument_list|<
-name|?
+name|String
 argument_list|,
 name|?
 argument_list|>

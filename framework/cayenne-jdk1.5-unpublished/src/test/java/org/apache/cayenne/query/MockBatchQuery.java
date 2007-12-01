@@ -35,7 +35,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbEntity
+name|DbAttribute
 import|;
 end_import
 
@@ -47,9 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|BatchQuery
+name|DbEntity
 import|;
 end_import
 
@@ -93,6 +93,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributes
 parameter_list|()
 block|{

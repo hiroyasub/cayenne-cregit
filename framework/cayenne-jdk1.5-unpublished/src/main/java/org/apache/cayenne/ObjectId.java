@@ -175,6 +175,7 @@ specifier|private
 name|Object
 name|singleValue
 decl_stmt|;
+comment|// key which is used for temporary ObjectIds only
 specifier|protected
 name|byte
 index|[]
@@ -195,6 +196,11 @@ name|int
 name|hashCode
 decl_stmt|;
 comment|// exists for deserialization with Hessian and similar
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|ObjectId
 parameter_list|()
@@ -209,19 +215,14 @@ name|entityName
 parameter_list|)
 block|{
 name|this
-operator|.
+argument_list|(
 name|entityName
-operator|=
-name|entityName
-expr_stmt|;
-name|this
-operator|.
-name|key
-operator|=
+argument_list|,
 name|IDUtil
 operator|.
 name|pseudoUniqueByteSequence8
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Creates a TEMPORARY id with a specified entity name and a binary key. It is a      * caller responsibility to provide a globally unique binary key.      *       * @since 1.2      */
@@ -249,7 +250,7 @@ operator|=
 name|key
 expr_stmt|;
 block|}
-comment|/**      * Creates a portable permanent ObjectId.      *       * @since 1.2      */
+comment|/**      * Creates a portable permanent ObjectId.      *       * @param entityName The entity name which this object id is for      * @param key A key describing this object id, usually the attribute name for the      *            primary key      * @param value The unique value for this object id      * @since 1.2      */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -277,7 +278,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a portable permanent ObjectId.      *       * @since 1.2      */
+comment|/**      * Creates a portable permanent ObjectId.      *       * @param entityName The entity name which this object id is for      * @param key A key describing this object id, usually the attribute name for the      *            primary key      * @param value The unique value for this object id      * @since 1.2      */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -310,7 +311,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Creates a portable permanent ObjectId.      *       * @since 1.2      */
+comment|/**      * Creates a portable permanent ObjectId as a compound primary key.      *       * @param entityName The entity name which this object id is for      * @param idMap Keys are usually the attribute names for each part of the primary key.      *            Values are unique when taken as a whole.      * @since 1.2      */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -424,6 +425,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Is this is temporary object id (used for objects which are not yet persisted to the      * data store).      */
 specifier|public
 name|boolean
 name|isTemporary
@@ -445,6 +447,7 @@ return|return
 name|entityName
 return|;
 block|}
+comment|/**      * Get the binary temporary object id. Null if this object id is permanent (persisted      * to the data store).      */
 specifier|public
 name|byte
 index|[]
