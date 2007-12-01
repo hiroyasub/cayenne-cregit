@@ -218,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/"> HSQLDB RDBMS  *</a>. Sample connection settings to use with HSQLDB are shown below:  *   *<pre>  *        test-hsqldb.cayenne.adapter = org.apache.cayenne.dba.hsqldb.HSQLDBAdapter  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *          *</pre>  *   * @author Holger Hoffstaette  */
+comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/"> HSQLDB RDBMS  *</a>. Sample connection settings to use with HSQLDB are shown below:  *   *<pre>  *        test-hsqldb.cayenne.adapter = org.apache.cayenne.dba.hsqldb.HSQLDBAdapter  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  *   * @author Holger Hoffstaette  */
 end_comment
 
 begin_class
@@ -359,6 +359,9 @@ name|DbEntity
 name|source
 parameter_list|,
 name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|columns
 parameter_list|)
 block|{
@@ -482,6 +485,9 @@ literal|" UNIQUE ("
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|it
 init|=
 name|columns
@@ -492,9 +498,6 @@ decl_stmt|;
 name|DbAttribute
 name|first
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next
@@ -521,9 +524,6 @@ block|{
 name|DbAttribute
 name|next
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next
@@ -708,41 +708,22 @@ argument_list|(
 literal|" FOREIGN KEY ("
 argument_list|)
 expr_stmt|;
-name|Iterator
-name|jit
-init|=
-name|rel
-operator|.
-name|getJoins
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
 name|boolean
 name|first
 init|=
 literal|true
 decl_stmt|;
-while|while
-condition|(
-name|jit
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|DbJoin
 name|join
-init|=
-operator|(
-name|DbJoin
-operator|)
-name|jit
+range|:
+name|rel
 operator|.
-name|next
+name|getJoins
 argument_list|()
-decl_stmt|;
+control|)
+block|{
 if|if
 condition|(
 operator|!

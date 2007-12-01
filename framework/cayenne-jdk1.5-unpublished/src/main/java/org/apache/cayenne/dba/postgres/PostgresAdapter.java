@@ -179,6 +179,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|Attribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbAttribute
 import|;
 end_import
@@ -469,6 +483,9 @@ argument_list|)
 expr_stmt|;
 comment|// columns
 name|Iterator
+argument_list|<
+name|Attribute
+argument_list|>
 name|it
 init|=
 name|ent
@@ -770,6 +787,9 @@ block|}
 block|}
 comment|// primary key clause
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|pkit
 init|=
 name|ent
@@ -843,9 +863,6 @@ expr_stmt|;
 name|DbAttribute
 name|at
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|pkit
 operator|.
 name|next

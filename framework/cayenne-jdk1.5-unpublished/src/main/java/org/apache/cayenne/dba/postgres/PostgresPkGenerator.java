@@ -422,6 +422,9 @@ block|}
 comment|/**      * Fetches a list of existing sequences that might match Cayenne generated ones.      */
 specifier|protected
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getExistingSequences
 parameter_list|(
 name|DataNode
@@ -483,10 +486,16 @@ decl_stmt|;
 try|try
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|sequenceList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 while|while

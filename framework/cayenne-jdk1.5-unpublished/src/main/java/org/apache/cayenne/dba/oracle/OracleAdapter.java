@@ -67,16 +67,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -394,7 +384,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample connection  * settings to use with Oracle are shown below:  *   *<pre>  *          *           *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *            *           *</pre>  *   * @author Andrus Adamchik  */
+comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample connection  * settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver     *</pre>  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -504,6 +494,9 @@ comment|// configure static information
 try|try
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|oraTypes
 init|=
 name|Class
@@ -644,6 +637,9 @@ literal|false
 return|;
 block|}
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|updatedAttributes
 init|=
 operator|(
@@ -665,34 +661,18 @@ operator|.
 name|getUpdatedAttributes
 argument_list|()
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|DbAttribute
+name|attr
+range|:
 name|updatedAttributes
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|int
 name|type
 init|=
-operator|(
-operator|(
-name|DbAttribute
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-operator|)
+name|attr
 operator|.
 name|getType
 argument_list|()
