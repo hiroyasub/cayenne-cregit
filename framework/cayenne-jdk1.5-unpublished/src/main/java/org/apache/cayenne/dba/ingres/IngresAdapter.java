@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://opensource.ca.com/projects/ingres/">Ingres</a>.  * Sample<a target="_top"  * href="../../../../../../../developerguide/unit-tests.html">connection settings</a> to  * use with Ingres are shown below:  *   *<pre>  *  ingres.cayenne.adapter = org.apache.cayenne.dba.ingres.IngresAdapter  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
+comment|/**  * DbAdapter implementation for<a href="http://opensource.ca.com/projects/ingres/">Ingres</a>.  * Sample connection settings to use with Ingres are shown below:  *   *<pre>  *  ingres.cayenne.adapter = org.apache.cayenne.dba.ingres.IngresAdapter  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
 end_comment
 
 begin_class

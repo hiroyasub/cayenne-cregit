@@ -290,7 +290,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample<a target="_top" href="../../../../../../../developerguide/unit-tests.html">connection   * settings</a> to use with OpenBase are shown below:  *<pre> test-openbase.cayenne.adapter = org.apache.cayenne.dba.openbase.OpenBaseAdapter test-openbase.jdbc.username = test test-openbase.jdbc.password = secret test-openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne test-openbase.jdbc.driver = com.openbase.jdbc.ObDriver</pre>  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  *   * @since 1.1  */
+comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<pre> test-openbase.cayenne.adapter = org.apache.cayenne.dba.openbase.OpenBaseAdapter test-openbase.jdbc.username = test test-openbase.jdbc.password = secret test-openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne test-openbase.jdbc.driver = com.openbase.jdbc.ObDriver</pre>  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  *   * @since 1.1  */
 end_comment
 
 begin_class

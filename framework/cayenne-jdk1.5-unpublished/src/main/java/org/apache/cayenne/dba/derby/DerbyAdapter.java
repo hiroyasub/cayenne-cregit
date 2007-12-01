@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for the<a href="http://incubator.apache.org/derby/"> Derby  * RDBMS</a>. Sample<a target="_top"  * href="../../../../../../../developerguide/unit-tests.html">connection settings</a> to  * use with Derby are shown below.  *<h3>Embedded</h3>  *   *<pre>  *  test-derby.cayenne.adapter = org.apache.cayenne.dba.derby.DerbyAdapter  *  test-derby.jdbc.url = jdbc:derby:testdb;create=true  *  test-derby.jdbc.driver = org.apache.derby.jdbc.EmbeddedDriver  *</pre>  *   *<h3>Network Server</h3>  *   *<pre>  *  derbynet.cayenne.adapter = org.apache.cayenne.dba.derby.DerbyAdapter  *  derbynet.jdbc.url = jdbc:derby://localhost/cayenne  *  derbynet.jdbc.driver = org.apache.derby.jdbc.ClientDriver  *  derbynet.jdbc.username = someuser  *  derbynet.jdbc.password = secret;  *</pre>  */
+comment|/**  * DbAdapter implementation for the<a href="http://db.apache.org/derby/"> Derby  * RDBMS</a>. Sample connection settings to use with Derby are shown below.  *<h3>Embedded</h3>  *   *<pre>  *  test-derby.cayenne.adapter = org.apache.cayenne.dba.derby.DerbyAdapter  *  test-derby.jdbc.url = jdbc:derby:testdb;create=true  *  test-derby.jdbc.driver = org.apache.derby.jdbc.EmbeddedDriver  *</pre>  *   *<h3>Network Server</h3>  *   *<pre>  *  derbynet.cayenne.adapter = org.apache.cayenne.dba.derby.DerbyAdapter  *  derbynet.jdbc.url = jdbc:derby://localhost/cayenne  *  derbynet.jdbc.driver = org.apache.derby.jdbc.ClientDriver  *  derbynet.jdbc.username = someuser  *  derbynet.jdbc.password = secret;  *</pre>  */
 end_comment
 
 begin_class

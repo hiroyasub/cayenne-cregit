@@ -240,7 +240,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.postgresql.org">PostgreSQL RDBMS</a>.  * Sample<a target="_top"  * href="../../../../../../../developerguide/unit-tests.html">connection settings</a> to  * use with PostgreSQL are shown below:  *   *<pre>  *      *      test-postgresql.cayenne.adapter = org.apache.cayenne.dba.postgres.PostgresAdapter  *      test-postgresql.jdbc.username = test  *      test-postgresql.jdbc.password = secret  *      test-postgresql.jdbc.url = jdbc:postgresql://serverhostname/cayenne  *      test-postgresql.jdbc.driver = org.postgresql.Driver  *       *</pre>  *   * @author Dirk Olmes  * @author Holger Hoffstaette  * @author Andrus Adamchik  */
+comment|/**  * DbAdapter implementation for<a href="http://www.postgresql.org">PostgreSQL RDBMS</a>.  * Sample connection settings to use with PostgreSQL are shown below:  *   *<pre>  *      *      test-postgresql.cayenne.adapter = org.apache.cayenne.dba.postgres.PostgresAdapter  *      test-postgresql.jdbc.username = test  *      test-postgresql.jdbc.password = secret  *      test-postgresql.jdbc.url = jdbc:postgresql://serverhostname/cayenne  *      test-postgresql.jdbc.driver = org.postgresql.Driver  *       *</pre>  *   * @author Dirk Olmes  * @author Holger Hoffstaette  * @author Andrus Adamchik  */
 end_comment
 
 begin_class

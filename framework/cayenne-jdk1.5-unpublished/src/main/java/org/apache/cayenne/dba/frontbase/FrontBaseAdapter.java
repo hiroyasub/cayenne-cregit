@@ -178,7 +178,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.frontbase.com/">FrontBase RDBMS</a>.  * Sample<a target="_top"  * href="../../../../../../../developerguide/unit-tests.html">connection settings</a> to  * use with FrontBase are shown below:  *   *<pre>  *          fb.cayenne.adapter = org.apache.cayenne.dba.frontbase.FrontBaseAdapter  *          fb.jdbc.username = _system  *          fb.jdbc.password = secret  *          fb.jdbc.url = jdbc:FrontBase://localhost/cayenne/  *          fb.jdbc.driver = jdbc.FrontBase.FBJDriver  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * DbAdapter implementation for<a href="http://www.frontbase.com/">FrontBase RDBMS</a>.  * Sample connection settings to use with FrontBase are shown below:  *   *<pre>  *          fb.cayenne.adapter = org.apache.cayenne.dba.frontbase.FrontBaseAdapter  *          fb.jdbc.username = _system  *          fb.jdbc.password = secret  *          fb.jdbc.url = jdbc:FrontBase://localhost/cayenne/  *          fb.jdbc.driver = jdbc.FrontBase.FBJDriver  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_comment
