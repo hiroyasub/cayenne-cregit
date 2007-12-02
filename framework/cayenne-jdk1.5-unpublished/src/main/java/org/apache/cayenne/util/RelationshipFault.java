@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract superlcass of lazily faulted to-one and to-many relationships.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An abstract superclass of lazily faulted to-one and to-many relationships.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_class

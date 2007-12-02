@@ -95,6 +95,11 @@ name|Object
 name|value
 decl_stmt|;
 comment|// exists for the benefit of manual serialization schemes such as the one in Hessian.
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|PersistentObjectHolder
 parameter_list|()

@@ -68,10 +68,16 @@ name|altProjectFile
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|DataNodeConfigInfo
+argument_list|>
 name|nodes
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DataNodeConfigInfo
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -113,6 +119,9 @@ block|}
 comment|/** 	 * Returns the nodes. 	 * @return List 	 */
 specifier|public
 name|List
+argument_list|<
+name|DataNodeConfigInfo
+argument_list|>
 name|getNodes
 parameter_list|()
 block|{
@@ -168,6 +177,9 @@ name|void
 name|setNodes
 parameter_list|(
 name|List
+argument_list|<
+name|DataNodeConfigInfo
+argument_list|>
 name|nodes
 parameter_list|)
 block|{

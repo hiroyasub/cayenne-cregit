@@ -25,6 +25,20 @@ name|Map
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DataMap
+import|;
+end_import
+
 begin_comment
 comment|/**  * Interface that defines callback API used by ConfigLoader to process loaded  * configuration. Main responsibility of ConfigLoaderDelegate is to create  * objects, while ConfigLoader is mainly concerned with XML parsing.   *   * @author Andrus Adamchik  */
 end_comment
@@ -85,6 +99,11 @@ name|String
 name|domainName
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|DataMap
+argument_list|>
 name|locations
 parameter_list|)
 function_decl|;

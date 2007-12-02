@@ -143,6 +143,11 @@ name|LinkedList
 name|removedFromUnresolved
 decl_stmt|;
 comment|// exists for the benefit of manual serialization schemes such as the one in Hessian.
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|PersistentObjectList
 parameter_list|()

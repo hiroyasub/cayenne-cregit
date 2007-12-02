@@ -186,6 +186,11 @@ decl_stmt|;
 try|try
 block|{
 name|Enumeration
+argument_list|<
+name|?
+extends|extends
+name|ZipEntry
+argument_list|>
 name|en
 init|=
 name|zip
@@ -211,9 +216,6 @@ block|{
 name|ZipEntry
 name|entry
 init|=
-operator|(
-name|ZipEntry
-operator|)
 name|en
 operator|.
 name|nextElement
