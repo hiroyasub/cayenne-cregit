@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to perform class generation from data map. This class is used by  * ant and Maven plugins.  *   * @author Andrus Adamchik, Kevin Menard  * @since 3.0  */
+comment|/**  * Utility class to perform class generation from data map. This class is used by ant and  * Maven plugins.  *   * @author Andrus Adamchik, Kevin Menard  * @since 3.0  */
 end_comment
 
 begin_class
@@ -396,6 +396,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Collection
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|allEntities
 init|=
 name|dataMap
@@ -404,10 +407,16 @@ name|getObjEntities
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|filteredEntities
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ObjEntity
+argument_list|>
 argument_list|(
 name|allEntities
 operator|.
@@ -432,33 +441,14 @@ name|isClientSupported
 argument_list|()
 condition|)
 block|{
-name|Iterator
-name|it
-init|=
-name|allEntities
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|ObjEntity
 name|entity
-init|=
-operator|(
-name|ObjEntity
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|allEntities
+control|)
+block|{
 if|if
 condition|(
 name|entity
