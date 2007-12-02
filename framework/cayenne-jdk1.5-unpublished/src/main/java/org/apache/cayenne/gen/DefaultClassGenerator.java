@@ -213,6 +213,9 @@ name|dataMap
 argument_list|,
 operator|new
 name|ArrayList
+argument_list|<
+name|ObjEntity
+argument_list|>
 argument_list|(
 name|dataMap
 operator|.
@@ -230,6 +233,9 @@ name|DataMap
 name|dataMap
 parameter_list|,
 name|List
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|selectedObjEntities
 parameter_list|)
 block|{
