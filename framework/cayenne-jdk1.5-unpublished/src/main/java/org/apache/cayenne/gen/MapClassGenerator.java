@@ -569,7 +569,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Runs class generation. Produces a pair of Java classes for each ObjEntity in the      * map. Uses default Cayenne templates for classes.      */
+comment|/**      * Runs class generation. Produces a pair of Java classes for each ObjEntity in the      * map. Uses default Cayenne templates for classes.      *       * @deprecated since 3.0 - unused      */
 specifier|public
 name|void
 name|generateClassPairs
