@@ -277,7 +277,7 @@ name|ClassGenerator
 operator|.
 name|VERSION_1_2
 decl_stmt|;
-specifier|protected
+specifier|public
 specifier|static
 specifier|final
 name|String
@@ -285,7 +285,7 @@ name|DEFAULT_VERSION
 init|=
 name|VERSION_1_1
 decl_stmt|;
-specifier|protected
+specifier|public
 specifier|static
 specifier|final
 name|String
@@ -293,7 +293,7 @@ name|MODE_DATAMAP
 init|=
 literal|"datamap"
 decl_stmt|;
-specifier|protected
+specifier|public
 specifier|static
 specifier|final
 name|String
