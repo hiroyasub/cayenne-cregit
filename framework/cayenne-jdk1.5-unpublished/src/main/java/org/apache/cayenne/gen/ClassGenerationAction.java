@@ -251,7 +251,7 @@ name|List
 argument_list|<
 name|ObjEntity
 argument_list|>
-name|objEntities
+name|entities
 decl_stmt|;
 specifier|protected
 name|String
@@ -623,7 +623,7 @@ operator|.
 name|entity
 operator|&&
 operator|!
-name|objEntities
+name|entities
 operator|.
 name|isEmpty
 argument_list|()
@@ -634,7 +634,7 @@ name|Collections
 operator|.
 name|singleton
 argument_list|(
-name|objEntities
+name|entities
 operator|.
 name|get
 argument_list|(
@@ -648,7 +648,7 @@ block|{
 return|return
 name|this
 operator|.
-name|objEntities
+name|entities
 return|;
 block|}
 block|}
@@ -1668,17 +1668,17 @@ name|List
 argument_list|<
 name|ObjEntity
 argument_list|>
-name|getObjEntities
+name|getEntities
 parameter_list|()
 block|{
 return|return
-name|objEntities
+name|entities
 return|;
 block|}
 comment|/**      * Initializes internal ObjEntities list. This method creates a copy of the provided      * list to allow its independent modification and also filters out entities that do      * not require class generation.      */
 specifier|public
 name|void
-name|setObjEntities
+name|setEntities
 parameter_list|(
 name|List
 argument_list|<
@@ -1689,7 +1689,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|objEntities
+name|entities
 operator|=
 name|objEntities
 operator|!=

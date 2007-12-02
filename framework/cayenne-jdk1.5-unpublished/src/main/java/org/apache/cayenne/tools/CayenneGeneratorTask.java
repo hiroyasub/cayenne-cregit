@@ -688,7 +688,7 @@ argument_list|)
 expr_stmt|;
 name|generatorAction
 operator|.
-name|setObjEntities
+name|setEntities
 argument_list|(
 operator|(
 name|List
