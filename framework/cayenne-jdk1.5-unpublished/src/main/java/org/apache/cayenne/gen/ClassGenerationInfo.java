@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -84,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class generation engine for ObjEntities based on<a  * href="http://jakarta.apache.org/velocity/" target="_blank">Velocity templates  *</a>. Instance of ClassGenerationInfo is available inside Velocity template under  * the key "classGen".  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * Class generation engine for ObjEntities based on<a  * href="http://jakarta.apache.org/velocity/" target="_blank">Velocity templates</a>.  * Instance of ClassGenerationInfo is available inside Velocity template under the key  * "classGen".  *   * @author Andrus Adamchik  * @since 1.2  */
 end_comment
 
 begin_class
@@ -147,7 +137,7 @@ operator|=
 name|packageName
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>superPackageName</code> property that defines a      * superclass's package name.      */
+comment|/**      * Returns<code>superPackageName</code> property that defines a superclass's      * package name.      */
 specifier|public
 name|String
 name|getSuperPackageName
@@ -157,7 +147,7 @@ return|return
 name|superPackageName
 return|;
 block|}
-comment|/**      * Sets<code>superPackageName</code> property that defines a superclass's      * package name.      */
+comment|/**      * Sets<code>superPackageName</code> property that defines a superclass's package      * name.      */
 specifier|protected
 name|void
 name|setSuperPackageName
@@ -173,7 +163,7 @@ operator|=
 name|superPackageName
 expr_stmt|;
 block|}
-comment|/**      * Returns class name (without a package) of the class associated with this      * generator.      */
+comment|/**      * Returns class name (without a package) of the class associated with this generator.      */
 specifier|public
 name|String
 name|getClassName
@@ -183,7 +173,7 @@ return|return
 name|className
 return|;
 block|}
-comment|/**      * Sets class name of the class associated with this      * generator. Class name must not include a package.      */
+comment|/**      * Sets class name of the class associated with this generator. Class name must not      * include a package.      */
 specifier|protected
 name|void
 name|setClassName
@@ -427,7 +417,7 @@ name|variableName
 return|;
 block|}
 block|}
-comment|/**      * Returns prefix used to distinguish between superclass and subclass when      * generating classes in pairs.      */
+comment|/**      * Returns prefix used to distinguish between superclass and subclass when generating      * classes in pairs.      */
 specifier|public
 name|String
 name|getSuperPrefix
@@ -437,7 +427,7 @@ return|return
 name|superPrefix
 return|;
 block|}
-comment|/**      * Sets current class property name. This method is called during template      * parsing for each of the class properties.      */
+comment|/**      * Sets current class property name. This method is called during template parsing for      * each of the class properties.      */
 specifier|public
 name|void
 name|setProp
@@ -576,7 +566,7 @@ name|prop
 argument_list|)
 return|;
 block|}
-comment|/**      * @return a current property name converted to a format used by java static      *         final variables - all capitalized with underscores.      *       * @since 1.0.3      */
+comment|/**      * @return a current property name converted to a format used by java static final      *         variables - all capitalized with underscores.      * @since 1.0.3      */
 specifier|public
 name|String
 name|getPropAsConstantName
@@ -606,36 +596,17 @@ return|return
 literal|false
 return|;
 block|}
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Relationship
+name|r
+range|:
 name|entity
 operator|.
 name|getDeclaredRelationships
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Relationship
-name|r
-init|=
-operator|(
-name|Relationship
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|r
@@ -670,36 +641,17 @@ return|return
 literal|false
 return|;
 block|}
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Relationship
+name|r
+range|:
 name|entity
 operator|.
 name|getRelationships
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Relationship
-name|r
-init|=
-operator|(
-name|Relationship
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|r
@@ -717,7 +669,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if a class associated with this generator is      * located in a package.      */
+comment|/**      * Returns<code>true</code> if a class associated with this generator is located in      * a package.      */
 specifier|public
 name|boolean
 name|isUsingPackage
@@ -729,7 +681,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if a superclass class associated with this      * generator is located in a package.      */
+comment|/**      * Returns<code>true</code> if a superclass class associated with this generator is      * located in a package.      */
 specifier|public
 name|boolean
 name|isUsingSuperPackage
@@ -767,7 +719,7 @@ operator|=
 name|entity
 expr_stmt|;
 block|}
-comment|/**      * Returns the fully qualified super class of the data object class      * associated with this generator      */
+comment|/**      * Returns the fully qualified super class of the data object class associated with      * this generator      */
 specifier|public
 name|String
 name|getSuperClassName
@@ -777,7 +729,7 @@ return|return
 name|superClassName
 return|;
 block|}
-comment|/**      * Sets the fully qualified super class of the data object class associated      * with this generator      */
+comment|/**      * Sets the fully qualified super class of the data object class associated with this      * generator      */
 specifier|protected
 name|void
 name|setSuperClassName
