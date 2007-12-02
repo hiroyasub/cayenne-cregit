@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Ant-specific extension of DefaultClassGenerator that provides logging functions.  *   * @author Andrus Adamchik  * @deprecated since 3.0 this class is replaced with a non-public class in the tools  *             package.  */
+comment|/**  * Ant-specific extension of DefaultClassGenerator that provides logging functions.  *   * @author Andrus Adamchik  * @deprecated since 3.0 this class is no longer relevant.  */
 end_comment
 
 begin_class

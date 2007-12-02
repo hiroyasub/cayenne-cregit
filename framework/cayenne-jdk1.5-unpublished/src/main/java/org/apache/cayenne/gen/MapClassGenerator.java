@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates Java source code for ObjEntities in the DataMap. This class is abstract and  * does not deal with filesystem issues directly. Concrete subclasses should provide ways  * to store generated files by implementing {@link #openWriter(ObjEntity, String, String)}  * and {@link #closeWriter(Writer)} methods.  *   * @author Andrus Adamchik  */
+comment|/**  * Generates Java source code for ObjEntities in the DataMap. This class is abstract and  * does not deal with filesystem issues directly. Concrete subclasses should provide ways  * to store generated files by implementing {@link #openWriter(ObjEntity, String, String)}  * and {@link #closeWriter(Writer)} methods.  *   * @author Andrus Adamchik  * @deprecated since 3.0 use {@link ClassGenerationAction} and subclasses.  */
 end_comment
 
 begin_class

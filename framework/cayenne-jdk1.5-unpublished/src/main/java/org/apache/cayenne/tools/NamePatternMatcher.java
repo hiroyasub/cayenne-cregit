@@ -93,6 +93,20 @@ name|CayenneMapEntry
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
 begin_comment
 comment|/**  * Provides name pattern matching functionality.  *   * @author Andrus Adamchik, Mike Kienenberger  * @since 1.2  */
 end_comment
@@ -103,7 +117,7 @@ class|class
 name|NamePatternMatcher
 block|{
 specifier|protected
-name|ILog
+name|Log
 name|logger
 decl_stmt|;
 specifier|protected
@@ -119,7 +133,7 @@ decl_stmt|;
 specifier|public
 name|NamePatternMatcher
 parameter_list|(
-name|ILog
+name|Log
 name|logger
 parameter_list|,
 name|String
@@ -235,7 +249,7 @@ condition|)
 block|{
 name|logger
 operator|.
-name|log
+name|warn
 argument_list|(
 literal|"Ignoring invalid pattern ["
 operator|+
@@ -250,10 +264,6 @@ name|e
 operator|.
 name|getMessage
 argument_list|()
-argument_list|,
-name|ILog
-operator|.
-name|MSG_WARN
 argument_list|)
 expr_stmt|;
 block|}

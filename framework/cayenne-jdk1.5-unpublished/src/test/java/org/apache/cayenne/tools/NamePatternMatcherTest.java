@@ -245,7 +245,7 @@ operator|new
 name|NamePatternMatcher
 argument_list|(
 operator|new
-name|AntTaskLogger
+name|AntLogger
 argument_list|(
 name|parentTask
 argument_list|)
@@ -378,7 +378,7 @@ operator|new
 name|NamePatternMatcher
 argument_list|(
 operator|new
-name|AntTaskLogger
+name|AntLogger
 argument_list|(
 name|parentTask
 argument_list|)
