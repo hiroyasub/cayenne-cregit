@@ -341,6 +341,7 @@ name|MapClassGenerator
 parameter_list|()
 block|{
 block|}
+comment|/**      * @deprecated since 3.0 - unused.      */
 specifier|public
 name|MapClassGenerator
 parameter_list|(
@@ -1330,7 +1331,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Runs class generation. Produces a single Java class for each ObjEntity in the map.      * Uses default Cayenne templates for classes.      */
+comment|/**      * Runs class generation. Produces a single Java class for each ObjEntity in the map.      * Uses default Cayenne templates for classes.      *       * @deprecated since 3.0 - unused.      */
 specifier|public
 name|void
 name|generateSingleClasses

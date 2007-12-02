@@ -17,73 +17,21 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|io
 operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|AbstractMojo
+name|File
 import|;
 end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|MojoExecutionException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|MojoFailureException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|project
-operator|.
-name|MavenProject
+name|List
 import|;
 end_import
 
@@ -103,16 +51,76 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|io
+name|apache
 operator|.
-name|File
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugin
+operator|.
+name|AbstractMojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugin
+operator|.
+name|MojoExecutionException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugin
+operator|.
+name|MojoFailureException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|project
+operator|.
+name|MavenProject
 import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven adapter to  * DefaultClassGenerator class.  *  * @author Andrus Adamchik, Kevin Menard  * @since 3.0  *  * @phase generate-sources  * @goal cgen  */
+comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @author Andrus Adamchik, Kevin Menard  * @since 3.0  *   * @phase generate-sources  * @goal cgen  */
 end_comment
 
 begin_class
@@ -122,87 +130,87 @@ name|CayenneGeneratorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * Project instance used to add generated source code to the build.      *      * @parameter default-value="${project}"      * @required      * @readonly      */
+comment|/** 	 * Project instance used to add generated source code to the build. 	 *  	 * @parameter default-value="${project}" 	 * @required 	 * @readonly 	 */
 specifier|private
 name|MavenProject
 name|project
 decl_stmt|;
-comment|/**      * Path to additional DataMap XML files to use for class generation.      *      * @parameter expression="${cgen.additionalMaps}"      */
+comment|/** 	 * Path to additional DataMap XML files to use for class generation. 	 *  	 * @parameter expression="${cgen.additionalMaps}" 	 */
 specifier|private
 name|File
 name|additionalMaps
 decl_stmt|;
-comment|/**      * Whether we are generating classes for the client tier in a      * Remote Object Persistence application. Default is<code>false</code>.      *      * @parameter expression="${cgen.client}" default-value="false"      */
+comment|/** 	 * Whether we are generating classes for the client tier in a Remote Object 	 * Persistence application. Default is<code>false</code>. 	 *  	 * @parameter expression="${cgen.client}" default-value="false" 	 */
 specifier|private
 name|boolean
 name|client
 decl_stmt|;
-comment|/**      * 	Destination directory for Java classes (ignoring their package names).      *      * @parameter expression="${cgen.destDir}" default-value="${project.build.sourceDirectory}/java/generated-sources/cayenne"      */
+comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter expression="${cgen.destDir}" 	 *            default-value="${project.build.sourceDirectory}/java/generated-sources/cayenne" 	 */
 specifier|private
 name|File
 name|destDir
 decl_stmt|;
-comment|/**      * Specify generated file encoding if different from the default on current platform.      * Target encoding must be supported by the JVM running Maven build. Standard encodings      * supported by Java on all platforms are US-ASCII, ISO-8859-1, UTF-8, UTF-16BE,      * UTF-16LE, UTF-16. See Sun Java Docs for java.nio.charset.Charset for more information.      *      * @parameter expression="${cgen.encoding}"      */
+comment|/** 	 * Specify generated file encoding if different from the default on current 	 * platform. Target encoding must be supported by the JVM running Maven 	 * build. Standard encodings supported by Java on all platforms are 	 * US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16. See Sun Java 	 * Docs for java.nio.charset.Charset for more information. 	 *  	 * @parameter expression="${cgen.encoding}" 	 */
 specifier|private
 name|String
 name|encoding
 decl_stmt|;
-comment|/**      * Entities (expressed as a perl5 regex) to exclude from template      * generation. (Default is to include all entities in the DataMap).      *      * @parameter expression="${cgen.excludeEntitiesPattern}"      */
+comment|/** 	 * Entities (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.excludeEntitiesPattern}" 	 */
 specifier|private
 name|String
 name|excludeEntitiesPattern
 decl_stmt|;
-comment|/**      * Entities (expressed as a perl5 regex) to include in template      * generation. (Default is to include all entities in the DataMap).      *      * @parameter expression="${cgen.includeEntitiesPattern}"      */
+comment|/** 	 * Entities (expressed as a perl5 regex) to include in template generation. 	 * (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.includeEntitiesPattern}" 	 */
 specifier|private
 name|String
 name|includeEntitiesPattern
 decl_stmt|;
-comment|/**      * If set to<code>true</code>, will generate subclass/superclass pairs,      * with all generated code included in superclass (default is<code>true</code>).      *      * @parameter expression="${cgen.makePairs}" default-value="true"      */
+comment|/** 	 * If set to<code>true</code>, will generate subclass/superclass pairs, 	 * with all generated code included in superclass (default is 	 *<code>true</code>). 	 *  	 * @parameter expression="${cgen.makePairs}" default-value="true" 	 */
 specifier|private
 name|boolean
 name|makePairs
 decl_stmt|;
-comment|/**      * DataMap XML file to use as a base for class generation.      *      * @parameter expression="${cgen.map}"      * @required      */
+comment|/** 	 * DataMap XML file to use as a base for class generation. 	 *  	 * @parameter expression="${cgen.map}" 	 * @required 	 */
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * Specifies generator iteration target.&quot;entity&quot; performs one iteration for each selected entity.      *&quot;datamap&quot; performs one iteration per datamap (This is always one iteration since cgen      * currently supports specifying one-and-only-one datamap). (Default is&quot;entity&quot;)      *      * @parameter expression="${cgen.mode}" default-value="entity"      */
+comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). (Default is 	 *&quot;entity&quot;) 	 *  	 * @parameter expression="${cgen.mode}" default-value="entity" 	 */
 specifier|private
 name|String
 name|mode
 decl_stmt|;
-comment|/**      * Name of file for generated output. (Default is&quot;*.java&quot;)      *      * @parameter expression="${cgen.outputPattern}" default-value="*.java"      */
+comment|/** 	 * Name of file for generated output. (Default is&quot;*.java&quot;) 	 *  	 * @parameter expression="${cgen.outputPattern}" default-value="*.java" 	 */
 specifier|private
 name|String
 name|outputPattern
 decl_stmt|;
-comment|/**      * 	If set to<code>true</code>, will overwrite older versions of generated classes.      *  Ignored unless makepairs is set to<code>false</code>.      *      * @parameter expression="${cgen.overwrite}" default-value="false"      */
+comment|/** 	 * If set to<code>true</code>, will overwrite older versions of 	 * generated classes. Ignored unless makepairs is set to<code>false</code>. 	 *  	 * @parameter expression="${cgen.overwrite}" default-value="false" 	 */
 specifier|private
 name|boolean
 name|overwrite
 decl_stmt|;
-comment|/**      * Java package name of generated superclasses. Ignored unless<code>makepairs</code>      * set to<code>true</code>.  If omitted, each superclass will be assigned the same      * package as subclass. Note that having superclass in a different package would only      * make sense when<code>usepkgpath</code> is set to<code>true</code>. Otherwise      * classes from different packages will end up in the same directory.      *      * @parameter expression="${cgen.superPkg}"      */
+comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise 	 * classes from different packages will end up in the same directory. 	 *  	 * @parameter expression="${cgen.superPkg}" 	 */
 specifier|private
 name|String
 name|superPkg
 decl_stmt|;
-comment|/**      * Location of Velocity template file for Java superclass generation. Ignored unless      *<code>makepairs</code> set to<code>true</code>. If omitted, default template is used.      *      * @parameter expression="${cgen.superTemplate}"      */
+comment|/** 	 * Location of Velocity template file for Java superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.superTemplate}" 	 */
 specifier|private
 name|String
 name|superTemplate
 decl_stmt|;
-comment|/**      * Location of Velocity template file for Java class generation. If omitted, default template is used.      *      * @parameter expression="${cgen.template}"      */
+comment|/** 	 * Location of Velocity template file for Java class generation. If omitted, 	 * default template is used. 	 *  	 * @parameter expression="${cgen.template}" 	 */
 specifier|private
 name|String
 name|template
 decl_stmt|;
-comment|/**      * If set to<code>true</code> (default), a directory tree will be generated in "destDir"      * corresponding to the class package structure, if set to<code>false</code>, classes will      * be generated in&quot;destDir&quot; ignoring their package.      *      * @parameter expression="${cgen.usePkgPath}" default-value="true"      */
+comment|/** 	 * If set to<code>true</code> (default), a directory tree will be 	 * generated in "destDir" corresponding to the class package structure, if 	 * set to<code>false</code>, classes will be generated in 	 *&quot;destDir&quot; ignoring their package. 	 *  	 * @parameter expression="${cgen.usePkgPath}" default-value="true" 	 */
 specifier|private
 name|boolean
 name|usePkgPath
 decl_stmt|;
-comment|/**      * Specifies template location and generator behavior.&quot;1.1&quot; is the old behavior,      * with templates located in&quot;dotemplates&quot; and&quot;classgen&quot; as the only      * velocity context attribute.&quot;1.2&quot; is the new behavior, with templates located      * in&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;,&quot;entityUtils&quot;,      *&quot;stringUtils&quot;, and&quot;importUtils&quot; in the velocity context. (Default is&quot;1.2&quot;.)      *      * @parameter expression="${cgen.version}" default-value="1.1"      */
+comment|/** 	 * Specifies template location and generator behavior.&quot;1.1&quot; is 	 * the old behavior, with templates located in&quot;dotemplates&quot; and 	 *&quot;classgen&quot; as the only velocity context attribute. 	 *&quot;1.2&quot; is the new behavior, with templates located in 	 *&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;, 	 *&quot;entityUtils&quot;,&quot;stringUtils&quot;, and 	 *&quot;importUtils&quot; in the velocity context. (Default is 	 *&quot;1.2&quot;.) 	 *  	 * @parameter expression="${cgen.version}" default-value="1.1" 	 */
 specifier|private
 name|String
 name|version
@@ -210,10 +218,6 @@ decl_stmt|;
 specifier|private
 name|DefaultClassGenerator
 name|generator
-decl_stmt|;
-specifier|protected
-name|CayenneGeneratorUtil
-name|generatorUtil
 decl_stmt|;
 specifier|public
 name|void
@@ -225,7 +229,8 @@ throws|,
 name|MojoFailureException
 block|{
 comment|// Create the destination directory if necessary.
-comment|// TODO: (KJM 11/2/06) The destDir really should be added as a compilation resource for maven.
+comment|// TODO: (KJM 11/2/06) The destDir really should be added as a
+comment|// compilation resource for maven.
 if|if
 condition|(
 operator|!
@@ -246,62 +251,96 @@ operator|=
 name|createGenerator
 argument_list|()
 expr_stmt|;
-name|generatorUtil
-operator|=
-operator|new
-name|CayenneGeneratorUtil
-argument_list|()
-expr_stmt|;
-name|generatorUtil
-operator|.
-name|setExcludeEntitiesPattern
-argument_list|(
-name|excludeEntitiesPattern
-argument_list|)
-expr_stmt|;
-name|generatorUtil
-operator|.
-name|setGenerator
-argument_list|(
-name|generator
-argument_list|)
-expr_stmt|;
-name|generatorUtil
-operator|.
-name|setIncludeEntitiesPattern
-argument_list|(
-name|includeEntitiesPattern
-argument_list|)
-expr_stmt|;
-name|generatorUtil
-operator|.
-name|setLogger
-argument_list|(
+name|ILog
+name|logger
+init|=
 operator|new
 name|MavenLogger
 argument_list|(
 name|this
 argument_list|)
+decl_stmt|;
+name|CayenneGenerationMapLoader
+name|mapLoader
+init|=
+operator|new
+name|CayenneGenerationMapLoader
+argument_list|()
+decl_stmt|;
+name|mapLoader
+operator|.
+name|setNameFilter
+argument_list|(
+operator|new
+name|NamePatternMatcher
+argument_list|(
+name|logger
+argument_list|,
+name|includeEntitiesPattern
+argument_list|,
+name|excludeEntitiesPattern
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|generatorUtil
+name|mapLoader
 operator|.
-name|setMap
+name|setMainDataMapFile
 argument_list|(
 name|map
 argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|generatorUtil
+name|mapLoader
 operator|.
-name|setAdditionalMaps
+name|setAdditionalDataMapFiles
 argument_list|(
 name|convertAdditionalDataMaps
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|generatorUtil
+name|generator
+operator|.
+name|setTimestamp
+argument_list|(
+name|map
+operator|.
+name|lastModified
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|generator
+operator|.
+name|setDataMap
+argument_list|(
+name|mapLoader
+operator|.
+name|getMainDataMap
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|generator
+operator|.
+name|setObjEntities
+argument_list|(
+operator|(
+name|List
+argument_list|<
+name|ObjEntity
+argument_list|>
+operator|)
+name|mapLoader
+operator|.
+name|getFilteredEntities
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|generator
+operator|.
+name|validateAttributes
+argument_list|()
+expr_stmt|;
+name|generator
 operator|.
 name|execute
 argument_list|()
@@ -324,7 +363,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Loads and returns DataMap based on<code>map</code> attribute.      */
+comment|/** 	 * Loads and returns DataMap based on<code>map</code> attribute. 	 */
 specifier|protected
 name|File
 index|[]
@@ -422,7 +461,7 @@ return|return
 name|dataMaps
 return|;
 block|}
-comment|/**      * Factory method to create internal class generator. Called from constructor.      */
+comment|/** 	 * Factory method to create internal class generator. Called from 	 * constructor. 	 */
 specifier|protected
 name|DefaultClassGenerator
 name|createGenerator
@@ -522,143 +561,6 @@ expr_stmt|;
 return|return
 name|gen
 return|;
-block|}
-block|}
-end_class
-
-begin_class
-class|class
-name|MavenLogger
-implements|implements
-name|ILog
-block|{
-specifier|private
-name|Log
-name|logger
-decl_stmt|;
-specifier|public
-name|MavenLogger
-parameter_list|(
-name|AbstractMojo
-name|parent
-parameter_list|)
-block|{
-name|this
-operator|.
-name|logger
-operator|=
-name|parent
-operator|.
-name|getLog
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|log
-parameter_list|(
-name|String
-name|msg
-parameter_list|)
-block|{
-name|logger
-operator|.
-name|debug
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|log
-parameter_list|(
-name|String
-name|msg
-parameter_list|,
-name|int
-name|msgLevel
-parameter_list|)
-block|{
-switch|switch
-condition|(
-name|msgLevel
-condition|)
-block|{
-case|case
-name|ILog
-operator|.
-name|MSG_DEBUG
-case|:
-name|logger
-operator|.
-name|debug
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|ILog
-operator|.
-name|MSG_ERR
-case|:
-name|logger
-operator|.
-name|error
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|ILog
-operator|.
-name|MSG_INFO
-case|:
-name|logger
-operator|.
-name|info
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|ILog
-operator|.
-name|MSG_VERBOSE
-case|:
-name|logger
-operator|.
-name|info
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|ILog
-operator|.
-name|MSG_WARN
-case|:
-name|logger
-operator|.
-name|warn
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-name|logger
-operator|.
-name|debug
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_class
