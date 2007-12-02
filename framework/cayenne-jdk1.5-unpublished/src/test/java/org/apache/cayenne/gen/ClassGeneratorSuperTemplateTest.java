@@ -57,6 +57,10 @@ name|ObjRelationship
 import|;
 end_import
 
+begin_comment
+comment|/**  * @deprecated since 3.0  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -79,9 +83,9 @@ name|MapClassGenerator
 operator|.
 name|SUPERCLASS_TEMPLATE
 argument_list|,
-name|MapClassGenerator
+name|ClassGenerator
 operator|.
-name|DEFAULT_VERSION
+name|VERSION_1_1
 argument_list|)
 return|;
 block|}

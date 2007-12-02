@@ -283,7 +283,7 @@ specifier|final
 name|String
 name|DEFAULT_VERSION
 init|=
-name|VERSION_1_1
+name|VERSION_1_2
 decl_stmt|;
 specifier|public
 specifier|static

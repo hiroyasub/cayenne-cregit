@@ -280,7 +280,7 @@ specifier|private
 name|boolean
 name|usePkgPath
 decl_stmt|;
-comment|/** 	 * Specifies template location and generator behavior.&quot;1.1&quot; is 	 * the old behavior, with templates located in&quot;dotemplates&quot; and 	 *&quot;classgen&quot; as the only velocity context attribute. 	 *&quot;1.2&quot; is the new behavior, with templates located in 	 *&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;, 	 *&quot;entityUtils&quot;,&quot;stringUtils&quot;, and 	 *&quot;importUtils&quot; in the velocity context. (Default is 	 *&quot;1.2&quot;.) 	 *  	 * @parameter expression="${cgen.version}" default-value="1.1" 	 */
+comment|/** 	 * Specifies template location and generator behavior.&quot;1.1&quot; is 	 * the old behavior, with templates located in&quot;dotemplates&quot; and 	 *&quot;classgen&quot; as the only velocity context attribute. 	 *&quot;1.2&quot; is the new behavior, with templates located in 	 *&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;, 	 *&quot;entityUtils&quot;,&quot;stringUtils&quot;, and 	 *&quot;importUtils&quot; in the velocity context. (Default is 	 *&quot;1.2&quot;.) 	 *  	 * @parameter expression="${cgen.version}" 	 */
 specifier|private
 name|String
 name|version

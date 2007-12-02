@@ -132,9 +132,6 @@ name|String
 name|fqnSubClass
 parameter_list|)
 block|{
-name|super
-argument_list|()
-expr_stmt|;
 name|StringUtils
 name|stringUtils
 init|=

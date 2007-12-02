@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Andrus Adamchik  */
+comment|/**  * @author Andrus Adamchik  * @deprecated since 3.0  */
 end_comment
 
 begin_class
@@ -83,9 +83,9 @@ name|MapClassGenerator
 operator|.
 name|SINGLE_CLASS_TEMPLATE
 argument_list|,
-name|MapClassGenerator
+name|ClassGenerator
 operator|.
-name|DEFAULT_VERSION
+name|VERSION_1_1
 argument_list|)
 return|;
 block|}
