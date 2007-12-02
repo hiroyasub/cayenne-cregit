@@ -101,6 +101,14 @@ begin_comment
 comment|/**  * Velocity template resource loader customized for Cayenne use. Supports loading  * templates from the thread ClassLoader and from relative and absolute paths.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
+begin_comment
+comment|// must be public top-level class as it is
+end_comment
+
+begin_comment
+comment|// instantiated via reflection by Velocity
+end_comment
+
 begin_class
 specifier|public
 class|class

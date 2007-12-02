@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|gen
+name|tools
 package|;
 end_package
 
@@ -31,6 +31,20 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|gen
+operator|.
+name|DefaultClassGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|tools
 operator|.
 name|ant
@@ -40,17 +54,16 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Ant-specific extension of DefaultClassGenerator that provides logging functions.  *   * @author Andrus Adamchik  * @deprecated since 3.0 this class is replaced with a non-public class in the tools  *             package.  */
+comment|/**  * Ant-specific extension of the class generation controller.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|AntClassGenerator
 extends|extends
 name|DefaultClassGenerator
 block|{
-specifier|protected
+specifier|private
 name|Task
 name|parentTask
 decl_stmt|;
@@ -152,7 +165,6 @@ return|return
 name|outFile
 return|;
 block|}
-specifier|public
 name|Task
 name|getParentTask
 parameter_list|()
@@ -162,7 +174,6 @@ name|parentTask
 return|;
 block|}
 comment|/**      * Sets the Ant task that uses this generator.      *       * @param parentTask An Ant task that provides Ant context to this generator.      */
-specifier|public
 name|void
 name|setParentTask
 parameter_list|(

@@ -35,20 +35,6 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|AntClassGenerator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|gen
-operator|.
 name|ClassGenerator
 import|;
 end_import
@@ -201,8 +187,7 @@ expr_stmt|;
 comment|// Take care of setting up VPP for the generator.
 if|if
 condition|(
-literal|false
-operator|==
+operator|!
 name|ClassGenerator
 operator|.
 name|VERSION_1_1
@@ -297,7 +282,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Validates atttributes that are not related to internal DefaultClassGenerator.      * Throws BuildException if attributes are invalid.      */
+comment|/**      * Validates attributes that are not related to internal DefaultClassGenerator.      * Throws BuildException if attributes are invalid.      */
 specifier|protected
 name|void
 name|validateAttributes

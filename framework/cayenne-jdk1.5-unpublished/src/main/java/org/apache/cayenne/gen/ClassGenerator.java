@@ -230,8 +230,7 @@ name|versionString
 expr_stmt|;
 if|if
 condition|(
-literal|false
-operator|==
+operator|!
 name|VERSION_1_1
 operator|.
 name|equals
@@ -491,8 +490,7 @@ name|Exception
 block|{
 if|if
 condition|(
-literal|false
-operator|==
+operator|!
 name|VERSION_1_1
 operator|.
 name|equals
@@ -556,8 +554,7 @@ name|Exception
 block|{
 if|if
 condition|(
-literal|false
-operator|==
+operator|!
 name|VERSION_1_2
 operator|.
 name|equals
