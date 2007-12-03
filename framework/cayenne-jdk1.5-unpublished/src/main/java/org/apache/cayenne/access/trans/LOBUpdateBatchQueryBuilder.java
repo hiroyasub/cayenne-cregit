@@ -164,6 +164,9 @@ name|len
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 init|=
 name|updateBatch
@@ -172,6 +175,9 @@ name|getQualifierAttributes
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|updatedDbAttributes
 init|=
 name|updateBatch
@@ -213,9 +219,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|updatedDbAttributes
 operator|.
 name|get
@@ -317,6 +320,9 @@ name|getFullyQualifiedName
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|idDbAttributes
 init|=
 name|updateBatch
@@ -325,6 +331,9 @@ name|getQualifierAttributes
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|updatedDbAttributes
 init|=
 name|updateBatch
@@ -394,9 +403,6 @@ block|}
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|updatedDbAttributes
 operator|.
 name|get
@@ -442,6 +448,9 @@ literal|" WHERE "
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|i
 init|=
 name|idDbAttributes
@@ -460,9 +469,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|i
 operator|.
 name|next

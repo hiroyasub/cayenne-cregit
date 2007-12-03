@@ -122,6 +122,9 @@ name|query
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 init|=
 name|query
@@ -174,9 +177,6 @@ decl_stmt|;
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get
@@ -230,6 +230,9 @@ name|getFullyQualifiedName
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 init|=
 name|batch
@@ -261,6 +264,9 @@ expr_stmt|;
 for|for
 control|(
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|i
 init|=
 name|dbAttributes
@@ -278,9 +284,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|i
 operator|.
 name|next
@@ -357,9 +360,6 @@ name|appendUpdatedParameter
 argument_list|(
 name|query
 argument_list|,
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get

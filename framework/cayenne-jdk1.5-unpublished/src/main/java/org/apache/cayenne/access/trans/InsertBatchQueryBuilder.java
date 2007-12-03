@@ -53,16 +53,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -152,6 +142,9 @@ throws|,
 name|Exception
 block|{
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 init|=
 name|query
@@ -190,9 +183,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get
@@ -248,6 +238,9 @@ block|}
 comment|/**      * Returns a list of values for the current batch iteration. Performs filtering of      * attributes based on column generation rules. Used primarily for logging.      *       * @since 1.2      */
 specifier|public
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getParameterValues
 parameter_list|(
 name|BatchQuery
@@ -255,6 +248,9 @@ name|query
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|attributes
 init|=
 name|query
@@ -271,10 +267,16 @@ name|size
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|values
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|len
 argument_list|)
@@ -297,9 +299,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|attributes
 operator|.
 name|get
@@ -353,6 +352,9 @@ name|getFullyQualifiedName
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 init|=
 name|batch
@@ -386,33 +388,14 @@ name|columnCount
 init|=
 literal|0
 decl_stmt|;
-name|Iterator
-name|it
-init|=
-name|dbAttributes
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|DbAttribute
 name|attribute
-init|=
-operator|(
-name|DbAttribute
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|dbAttributes
+control|)
+block|{
 comment|// attribute inclusion rule - one of the rules below must be true:
 comment|// (1) attribute not generated
 comment|// (2) attribute is generated and PK and adapter does not support generated

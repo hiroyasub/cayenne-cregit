@@ -290,6 +290,9 @@ throws|,
 name|Exception
 block|{
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 init|=
 name|query
@@ -333,9 +336,6 @@ decl_stmt|;
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get
@@ -371,6 +371,9 @@ block|}
 comment|/**      * Returns a list of values for the current batch iteration. Used primarily for      * logging.      *       * @since 1.2      */
 specifier|public
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getParameterValues
 parameter_list|(
 name|BatchQuery
@@ -389,10 +392,16 @@ name|size
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|values
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|len
 argument_list|)

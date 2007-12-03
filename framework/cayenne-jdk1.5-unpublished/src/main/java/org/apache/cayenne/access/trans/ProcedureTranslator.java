@@ -204,6 +204,9 @@ argument_list|)
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|ProcedureParameter
+argument_list|>
 name|callParams
 decl_stmt|;
 specifier|protected
@@ -549,6 +552,9 @@ literal|0
 condition|)
 block|{
 name|List
+argument_list|<
+name|ProcedureParameter
+argument_list|>
 name|params
 init|=
 name|getProcedure
@@ -583,9 +589,6 @@ block|{
 name|ProcedureParameter
 name|param
 init|=
-operator|(
-name|ProcedureParameter
-operator|)
 name|params
 operator|.
 name|get
@@ -662,33 +665,14 @@ decl_stmt|;
 comment|// match values with parameters in the correct order.
 comment|// make an assumption that a missing value is NULL
 comment|// Any reason why this is bad?
-name|Iterator
-name|it
-init|=
-name|callParams
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|ProcedureParameter
 name|param
-init|=
-operator|(
-name|ProcedureParameter
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|callParams
+control|)
+block|{
 if|if
 condition|(
 name|param

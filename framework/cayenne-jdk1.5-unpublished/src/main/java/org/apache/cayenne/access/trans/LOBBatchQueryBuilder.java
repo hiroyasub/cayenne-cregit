@@ -471,6 +471,9 @@ throws|,
 name|Exception
 block|{
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|dbAttributes
 init|=
 name|query
@@ -520,9 +523,6 @@ decl_stmt|;
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbAttributes
 operator|.
 name|get

@@ -132,10 +132,16 @@ block|{
 comment|/** PreparedStatement values. */
 specifier|protected
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|values
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * PreparedStatement attributes matching entries in<code>values</code> list.      */
@@ -211,7 +217,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Registers<code>anObject</code> as a PreparedStatement paramter.      *       * @param anObject object that represents a value of DbAttribute      * @param dbAttr DbAttribute being processed.      */
+comment|/**      * Registers<code>anObject</code> as a PreparedStatement parameter.      *       * @param anObject object that represents a value of DbAttribute      * @param dbAttr DbAttribute being processed.      */
 specifier|public
 name|void
 name|addToParamList
