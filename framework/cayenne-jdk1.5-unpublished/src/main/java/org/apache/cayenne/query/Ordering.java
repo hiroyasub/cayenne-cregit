@@ -246,7 +246,7 @@ name|orderList
 parameter_list|(
 name|List
 argument_list|<
-name|Object
+name|?
 argument_list|>
 name|objects
 parameter_list|,
@@ -613,7 +613,7 @@ name|orderList
 parameter_list|(
 name|List
 argument_list|<
-name|Object
+name|?
 argument_list|>
 name|objects
 parameter_list|)
