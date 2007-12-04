@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Data map editing tabs container  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Data map editing tabs container  *  * @author Vasil Tarasevich  */
 end_comment
 
 begin_class
