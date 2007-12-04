@@ -339,7 +339,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-specifier|public
+specifier|protected
 name|String
 name|defaultSingleClassTemplate
 parameter_list|()
@@ -350,7 +350,7 @@ operator|.
 name|SINGLE_CLASS_TEMPLATE
 return|;
 block|}
-specifier|public
+specifier|protected
 name|String
 name|defaultSubclassTemplate
 parameter_list|()
@@ -361,7 +361,7 @@ operator|.
 name|SUBCLASS_TEMPLATE
 return|;
 block|}
-specifier|public
+specifier|protected
 name|String
 name|defaultSuperclassTemplate
 parameter_list|()

@@ -512,6 +512,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// TODO: andrus, 12/5/2007 - this should also take a "pairs" parameter to correctly
+comment|// assign standard templates
 specifier|public
 name|String
 name|getTemplatePath
