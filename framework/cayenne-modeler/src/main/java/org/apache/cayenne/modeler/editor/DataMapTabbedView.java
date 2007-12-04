@@ -112,15 +112,6 @@ name|mediator
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|dataMapView
-operator|.
-name|setBackground
-argument_list|(
-name|Color
-operator|.
-name|WHITE
-argument_list|)
-expr_stmt|;
 name|addTab
 argument_list|(
 literal|"DataMap"
