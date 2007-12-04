@@ -35,6 +35,16 @@ name|javax
 operator|.
 name|swing
 operator|.
+name|JScrollPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
 name|JTabbedPane
 import|;
 end_import
@@ -111,6 +121,9 @@ argument_list|(
 literal|"Main"
 argument_list|,
 operator|new
+name|JScrollPane
+argument_list|(
+operator|new
 name|MainDataNodeEditor
 argument_list|(
 name|parent
@@ -118,6 +131,7 @@ argument_list|)
 operator|.
 name|getView
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|view

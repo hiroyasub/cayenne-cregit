@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|Color
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -102,6 +112,15 @@ name|mediator
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|dataMapView
+operator|.
+name|setBackground
+argument_list|(
+name|Color
+operator|.
+name|WHITE
+argument_list|)
+expr_stmt|;
 name|addTab
 argument_list|(
 literal|"DataMap"

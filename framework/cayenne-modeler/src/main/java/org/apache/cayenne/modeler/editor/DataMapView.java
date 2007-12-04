@@ -855,7 +855,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:70dlu, 3dlu, fill:110dlu, 3dlu, fill:90"
+literal|"right:70dlu, 3dlu, fill:110dlu, 3dlu, fill:100"
 argument_list|,
 literal|""
 argument_list|)

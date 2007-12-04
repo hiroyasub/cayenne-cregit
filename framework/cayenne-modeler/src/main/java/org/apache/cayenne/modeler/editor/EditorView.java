@@ -749,14 +749,10 @@ name|detailPanel
 operator|.
 name|add
 argument_list|(
-operator|new
-name|JScrollPane
-argument_list|(
 name|nodeController
 operator|.
 name|getView
 argument_list|()
-argument_list|)
 argument_list|,
 name|NODE_VIEW
 argument_list|)
@@ -774,11 +770,7 @@ name|detailPanel
 operator|.
 name|add
 argument_list|(
-operator|new
-name|JScrollPane
-argument_list|(
 name|dataMapView
-argument_list|)
 argument_list|,
 name|DATA_MAP_VIEW
 argument_list|)
