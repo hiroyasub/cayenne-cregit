@@ -80,7 +80,7 @@ literal|"dotemplates/v1_2/client-superclass.vm"
 decl_stmt|;
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|String
 name|defaultSingleClassTemplate
 parameter_list|()
@@ -95,7 +95,7 @@ throw|;
 block|}
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|String
 name|defaultSubclassTemplate
 parameter_list|()
@@ -108,7 +108,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|String
 name|defaultSuperclassTemplate
 parameter_list|()

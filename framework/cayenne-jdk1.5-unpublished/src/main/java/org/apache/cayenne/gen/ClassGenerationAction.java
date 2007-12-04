@@ -97,16 +97,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -247,7 +237,7 @@ init|=
 literal|"*"
 decl_stmt|;
 specifier|protected
-name|List
+name|Collection
 argument_list|<
 name|ObjEntity
 argument_list|>
@@ -349,7 +339,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|defaultSingleClassTemplate
 parameter_list|()
@@ -360,7 +350,7 @@ operator|.
 name|SINGLE_CLASS_TEMPLATE
 return|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|defaultSubclassTemplate
 parameter_list|()
@@ -371,7 +361,7 @@ operator|.
 name|SUBCLASS_TEMPLATE
 return|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|defaultSuperclassTemplate
 parameter_list|()
@@ -648,10 +638,11 @@ name|singleton
 argument_list|(
 name|entities
 operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -1676,7 +1667,7 @@ name|dataMap
 expr_stmt|;
 block|}
 specifier|public
-name|List
+name|Collection
 argument_list|<
 name|ObjEntity
 argument_list|>
@@ -1692,7 +1683,7 @@ specifier|public
 name|void
 name|setEntities
 parameter_list|(
-name|List
+name|Collection
 argument_list|<
 name|ObjEntity
 argument_list|>
@@ -1739,6 +1730,7 @@ operator|=
 name|mode
 expr_stmt|;
 block|}
+comment|/**      * Sets an optional shared VelocityContext. Useful with tools like VPP that can set      * custom values in the context, not known to Cayenne.      */
 specifier|public
 name|void
 name|setContext

@@ -39,7 +39,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|DefaultClassGenerator
+name|ClassGenerationAction
 import|;
 end_import
 
@@ -321,7 +321,7 @@ argument_list|)
 operator|.
 name|getSubdomain
 argument_list|(
-name|DefaultClassGenerator
+name|ClassGenerationAction
 operator|.
 name|class
 argument_list|)

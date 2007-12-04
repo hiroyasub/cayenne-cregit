@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class generation engine for ObjEntities based on<a  * href="http://jakarta.apache.org/velocity/" target="_blank">Velocity templates</a>.  * Instance of ClassGenerationInfo is available inside Velocity template under the key  * "classGen".  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * Class generation engine for ObjEntities based on<a  * href="http://jakarta.apache.org/velocity/" target="_blank">Velocity templates</a>.  * Instance of ClassGenerationInfo is available inside Velocity template under the key  * "classGen".  *   * @author Andrus Adamchik  * @since 1.2  * @deprecated since 3.0, as class generator version 1.1 is deprecated.  */
 end_comment
 
 begin_class
@@ -315,9 +315,6 @@ block|{
 name|String
 name|value
 init|=
-operator|(
-name|String
-operator|)
 name|ImportUtils
 operator|.
 name|classesForPrimitives

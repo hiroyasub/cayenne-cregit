@@ -59,7 +59,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|DefaultClassGenerator
+name|ClassGenerationAction
 import|;
 end_import
 
@@ -483,7 +483,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|DefaultClassGenerator
+name|ClassGenerationAction
 name|getGenerator
 parameter_list|()
 block|{

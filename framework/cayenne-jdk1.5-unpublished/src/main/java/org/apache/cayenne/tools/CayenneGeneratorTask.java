@@ -458,7 +458,7 @@ return|return
 name|action
 return|;
 block|}
-comment|/**      * Factory method to create internal class generator. Called from constructor.      *       * @deprecated since 3.0. Use {@link #createGeneratorAction()}.      */
+comment|/**      * @deprecated since 3.0. Use {@link #createGeneratorAction()}.      */
 specifier|protected
 name|DefaultClassGenerator
 name|createGenerator
