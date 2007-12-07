@@ -1282,7 +1282,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-comment|// check results
+comment|// check entity results
 name|File
 name|a
 init|=
@@ -1349,6 +1349,26 @@ argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
 expr_stmt|;
+comment|// check embeddable results
+comment|//        File e = new File(
+comment|//                mapDir,
+comment|//                convertPath("org/apache/cayenne/testdo/embeddable/Embeddable1.java"));
+comment|//        assertTrue(e.isFile());
+comment|//        assertContents(
+comment|//                e,
+comment|//                "Embeddable1",
+comment|//                "org.apache.cayenne.testdo.embeddable",
+comment|//                "_Embeddable1");
+comment|//
+comment|//        File _e = new File(
+comment|//                mapDir,
+comment|//                convertPath("org/apache/cayenne/testdo/embeddable/auto/_Embeddable1.java"));
+comment|//        assertTrue(_e.exists());
+comment|//        assertContents(
+comment|//                _e,
+comment|//                "_Embeddable1",
+comment|//                "org.apache.cayenne.testdo.embeddable.auto",
+comment|//                "Object");
 block|}
 specifier|private
 name|String
