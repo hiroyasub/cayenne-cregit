@@ -301,8 +301,6 @@ name|superOut
 init|=
 name|openWriter
 argument_list|(
-name|entity
-argument_list|,
 name|superPackageName
 argument_list|,
 name|superClassName
@@ -343,8 +341,6 @@ name|mainOut
 init|=
 name|openWriter
 argument_list|(
-name|entity
-argument_list|,
 name|subPackageName
 argument_list|,
 name|subClassName

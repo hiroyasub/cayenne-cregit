@@ -525,8 +525,6 @@ name|superOut
 init|=
 name|openWriter
 argument_list|(
-name|ent
-argument_list|,
 name|superPackageName
 argument_list|,
 name|superClassName
@@ -567,8 +565,6 @@ name|mainOut
 init|=
 name|openWriter
 argument_list|(
-name|ent
-argument_list|,
 name|subPackageName
 argument_list|,
 name|subClassName
@@ -782,8 +778,6 @@ name|out
 init|=
 name|openWriter
 argument_list|(
-name|ent
-argument_list|,
 name|subPackageName
 argument_list|,
 name|subClassName
@@ -1047,9 +1041,6 @@ specifier|protected
 name|Writer
 name|openWriter
 parameter_list|(
-name|ObjEntity
-name|entity
-parameter_list|,
 name|String
 name|pkgName
 parameter_list|,

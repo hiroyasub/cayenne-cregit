@@ -228,8 +228,6 @@ name|superOut
 init|=
 name|openWriter
 argument_list|(
-name|entity
-argument_list|,
 name|superGen
 operator|.
 name|getPackageName
@@ -289,8 +287,6 @@ name|mainOut
 init|=
 name|openWriter
 argument_list|(
-name|entity
-argument_list|,
 name|mainGen
 operator|.
 name|getPackageName
@@ -385,8 +381,6 @@ name|out
 init|=
 name|openWriter
 argument_list|(
-name|entity
-argument_list|,
 name|generator
 operator|.
 name|getClassGenerationInfo
