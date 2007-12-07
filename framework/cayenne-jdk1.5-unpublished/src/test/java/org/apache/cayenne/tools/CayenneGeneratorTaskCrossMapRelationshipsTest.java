@@ -158,7 +158,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|CayenneGeneratorvTask1_2Test
+name|CayenneGeneratorTaskCrossMapRelationshipsTest
 extends|extends
 name|TestCase
 block|{
@@ -221,7 +221,7 @@ name|UNKNOWN_LOCATION
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Test pairs generation with a cross-DataMap relationship (v1.1). */
+comment|/**      * Test pairs generation with a cross-DataMap relationship (v1.1).      *       * @deprecated since 3.0 1.1 version is deprecated.      */
 specifier|public
 name|void
 name|testCrossDataMapRelationships_v1_1
@@ -697,13 +697,6 @@ operator|.
 name|setAdditionalMaps
 argument_list|(
 name|additionalMapsPath
-argument_list|)
-expr_stmt|;
-name|task
-operator|.
-name|setVersion
-argument_list|(
-literal|"1.2"
 argument_list|)
 expr_stmt|;
 name|task
