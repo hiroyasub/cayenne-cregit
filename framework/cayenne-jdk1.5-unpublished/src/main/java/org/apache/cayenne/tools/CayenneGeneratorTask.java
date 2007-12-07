@@ -27,16 +27,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -116,20 +106,6 @@ operator|.
 name|gen
 operator|.
 name|DefaultClassGenerator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|ObjEntity
 import|;
 end_import
 
@@ -668,12 +644,6 @@ name|generatorAction
 operator|.
 name|setEntities
 argument_list|(
-operator|(
-name|List
-argument_list|<
-name|ObjEntity
-argument_list|>
-operator|)
 name|filterAction
 operator|.
 name|getFilteredEntities
