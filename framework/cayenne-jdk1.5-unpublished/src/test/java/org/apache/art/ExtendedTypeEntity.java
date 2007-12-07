@@ -9,21 +9,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
-operator|.
-name|unit
+name|art
 package|;
 end_package
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
 
 begin_import
 import|import
@@ -31,42 +19,22 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
+name|art
 operator|.
-name|query
+name|auto
 operator|.
-name|Query
+name|_ExtendedTypeEntity
 import|;
 end_import
 
-begin_comment
-comment|/**  * A class that manages sets of queries for Cayenne test cases.  *   * @author Andrus Adamchik  */
-end_comment
-
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|DataSetFactory
-block|{
-comment|/**      * Returns a query for creation of the data set.      */
-name|Query
-name|getDataSetQuery
-parameter_list|(
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|testCase
-parameter_list|,
-name|String
-name|testName
-parameter_list|,
-name|Map
-name|parameters
-parameter_list|)
-function_decl|;
-block|}
-end_interface
+class|class
+name|ExtendedTypeEntity
+extends|extends
+name|_ExtendedTypeEntity
+block|{  }
+end_class
 
 end_unit
 
