@@ -1137,8 +1137,7 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|(
-name|getEncoding
-argument_list|()
+name|encoding
 operator|!=
 literal|null
 operator|)
@@ -1148,8 +1147,7 @@ name|OutputStreamWriter
 argument_list|(
 name|out
 argument_list|,
-name|getEncoding
-argument_list|()
+name|encoding
 argument_list|)
 else|:
 operator|new
@@ -1405,8 +1403,7 @@ operator|.
 name|lastModified
 argument_list|()
 operator|<=
-name|getTimestamp
-argument_list|()
+name|timestamp
 return|;
 block|}
 comment|/**      * Returns a File object corresponding to a directory where files that belong to      *<code>pkgName</code> package should reside. Creates any missing diectories below      *<code>dest</code>.      */
@@ -1554,16 +1551,6 @@ name|defaultSuperclassTemplate
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns internal timestamp of this generator used to make decisions about      * overwriting individual files.      */
-specifier|public
-name|long
-name|getTimestamp
-parameter_list|()
-block|{
-return|return
-name|timestamp
-return|;
-block|}
 specifier|public
 name|void
 name|setTimestamp
@@ -1578,16 +1565,6 @@ name|timestamp
 operator|=
 name|timestamp
 expr_stmt|;
-block|}
-comment|/**      * Returns file encoding for the generated files.      */
-specifier|public
-name|String
-name|getEncoding
-parameter_list|()
-block|{
-return|return
-name|encoding
-return|;
 block|}
 comment|/**      * Sets file encoding. If set to null, default system encoding will be used.      */
 specifier|public
@@ -1605,16 +1582,6 @@ operator|=
 name|encoding
 expr_stmt|;
 block|}
-comment|/**      * Returns "superPkg" property value - a name of a superclass package that should be      * used for all generated superclasses.      */
-specifier|public
-name|String
-name|getSuperPkg
-parameter_list|()
-block|{
-return|return
-name|superPkg
-return|;
-block|}
 comment|/**      * Sets "superPkg" property value.      */
 specifier|public
 name|void
@@ -1631,16 +1598,6 @@ operator|=
 name|superPkg
 expr_stmt|;
 block|}
-comment|/**      * @return Returns the dataMap.      */
-specifier|public
-name|DataMap
-name|getDataMap
-parameter_list|()
-block|{
-return|return
-name|dataMap
-return|;
-block|}
 comment|/**      * @param dataMap The dataMap to set.      */
 specifier|public
 name|void
@@ -1656,18 +1613,6 @@ name|dataMap
 operator|=
 name|dataMap
 expr_stmt|;
-block|}
-specifier|public
-name|Collection
-argument_list|<
-name|ObjEntity
-argument_list|>
-name|getEntities
-parameter_list|()
-block|{
-return|return
-name|entities
-return|;
 block|}
 comment|/**      * Initializes internal ObjEntities list. This method creates a copy of the provided      * list to allow its independent modification and also filters out entities that do      * not require class generation.      */
 specifier|public

@@ -254,8 +254,7 @@ name|generateClass
 argument_list|(
 name|superOut
 argument_list|,
-name|getDataMap
-argument_list|()
+name|dataMap
 argument_list|,
 name|entity
 argument_list|,
@@ -311,8 +310,7 @@ name|generateClass
 argument_list|(
 name|mainOut
 argument_list|,
-name|getDataMap
-argument_list|()
+name|dataMap
 argument_list|,
 name|entity
 argument_list|,
@@ -413,8 +411,7 @@ name|generateClass
 argument_list|(
 name|out
 argument_list|,
-name|getDataMap
-argument_list|()
+name|dataMap
 argument_list|,
 name|entity
 argument_list|,
