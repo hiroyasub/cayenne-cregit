@@ -399,6 +399,25 @@ name|UNKNOWN_LOCATION
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|tearDown
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|super
+operator|.
+name|tearDown
+argument_list|()
+expr_stmt|;
+name|task
+operator|=
+literal|null
+expr_stmt|;
+block|}
 comment|/** Test single classes with a non-standard template. */
 specifier|public
 name|void
@@ -1350,25 +1369,25 @@ literal|"CayenneDataObject"
 argument_list|)
 expr_stmt|;
 comment|// check embeddable results
-comment|//        File e = new File(
-comment|//                mapDir,
-comment|//                convertPath("org/apache/cayenne/testdo/embeddable/Embeddable1.java"));
-comment|//        assertTrue(e.isFile());
-comment|//        assertContents(
-comment|//                e,
-comment|//                "Embeddable1",
-comment|//                "org.apache.cayenne.testdo.embeddable",
-comment|//                "_Embeddable1");
+comment|// File e = new File(
+comment|// mapDir,
+comment|// convertPath("org/apache/cayenne/testdo/embeddable/Embeddable1.java"));
+comment|// assertTrue(e.isFile());
+comment|// assertContents(
+comment|// e,
+comment|// "Embeddable1",
+comment|// "org.apache.cayenne.testdo.embeddable",
+comment|// "_Embeddable1");
 comment|//
-comment|//        File _e = new File(
-comment|//                mapDir,
-comment|//                convertPath("org/apache/cayenne/testdo/embeddable/auto/_Embeddable1.java"));
-comment|//        assertTrue(_e.exists());
-comment|//        assertContents(
-comment|//                _e,
-comment|//                "_Embeddable1",
-comment|//                "org.apache.cayenne.testdo.embeddable.auto",
-comment|//                "Object");
+comment|// File _e = new File(
+comment|// mapDir,
+comment|// convertPath("org/apache/cayenne/testdo/embeddable/auto/_Embeddable1.java"));
+comment|// assertTrue(_e.exists());
+comment|// assertContents(
+comment|// _e,
+comment|// "_Embeddable1",
+comment|// "org.apache.cayenne.testdo.embeddable.auto",
+comment|// "Object");
 block|}
 specifier|private
 name|String

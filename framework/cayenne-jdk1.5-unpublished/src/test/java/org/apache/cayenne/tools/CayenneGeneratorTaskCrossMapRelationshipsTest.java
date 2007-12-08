@@ -221,6 +221,25 @@ name|UNKNOWN_LOCATION
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|tearDown
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|super
+operator|.
+name|tearDown
+argument_list|()
+expr_stmt|;
+name|task
+operator|=
+literal|null
+expr_stmt|;
+block|}
 comment|/**      * Test pairs generation with a cross-DataMap relationship (v1.1).      *       * @deprecated since 3.0 1.1 version is deprecated.      */
 specifier|public
 name|void
