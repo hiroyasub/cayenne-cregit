@@ -275,7 +275,11 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|// Types forced to be FQN
+comment|// Types
+comment|// forced
+comment|// to
+comment|// be
+comment|// FQN
 specifier|protected
 name|String
 name|packageName
@@ -388,7 +392,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Reserve a fully-qualified data type class name so it cannot be used by another class.      * No import statements will be generated for reserved types.      * Typically, this is the fully-qualified class name of the class being generated.      * @param typeName FQ data type class name.      */
+comment|/**      * Reserve a fully-qualified data type class name so it cannot be used by another      * class. No import statements will be generated for reserved types. Typically, this      * is the fully-qualified class name of the class being generated.      *       * @param typeName FQ data type class name.      */
 specifier|public
 name|void
 name|addReservedType
@@ -434,7 +438,7 @@ name|typeName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Register a fully-qualified data type class name.      * For example, org.apache.cayenne.CayenneDataObject      * @param typeName FQ data type class name.      */
+comment|/**      * Register a fully-qualified data type class name. For example,      * org.apache.cayenne.CayenneDataObject.      *       * @param typeName FQ data type class name.      */
 specifier|public
 name|void
 name|addType
@@ -500,7 +504,7 @@ name|typeName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Add the package name to use for this importUtil invocation.      * @param packageName      */
+comment|/**      * Add the package name to use for this importUtil invocation.      *       * @param packageName      */
 specifier|public
 name|void
 name|setPackage
@@ -589,7 +593,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Removes registered package and non-reserved registered type name prefixes from java types       */
+comment|/**      * Removes registered package and non-reserved registered type name prefixes from java      * types      */
 specifier|public
 name|String
 name|formatJavaType
