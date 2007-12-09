@@ -77,7 +77,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|ClassGeneratorMode
+name|ArtifactsGenerationMode
 import|;
 end_import
 
@@ -256,7 +256,7 @@ name|this
 operator|.
 name|mode
 operator|=
-name|ClassGeneratorMode
+name|ArtifactsGenerationMode
 operator|.
 name|entity
 operator|.
@@ -378,13 +378,16 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|.
-name|setMode
+name|setArtifactsGenerationMode
 argument_list|(
-name|ClassGeneratorMode
+name|ArtifactsGenerationMode
 operator|.
 name|valueOf
 argument_list|(
 name|mode
+operator|.
+name|toLowerCase
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -642,7 +645,7 @@ argument_list|)
 expr_stmt|;
 name|generatorAction
 operator|.
-name|setEntities
+name|addEntities
 argument_list|(
 name|filterAction
 operator|.

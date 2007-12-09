@@ -141,7 +141,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|ClassGeneratorMode
+name|ArtifactsGenerationMode
 import|;
 end_import
 
@@ -1070,9 +1070,9 @@ argument_list|()
 decl_stmt|;
 name|generator
 operator|.
-name|setMode
+name|setArtifactsGenerationMode
 argument_list|(
-name|ClassGeneratorMode
+name|ArtifactsGenerationMode
 operator|.
 name|valueOf
 argument_list|(

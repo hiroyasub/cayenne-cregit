@@ -770,7 +770,7 @@ argument_list|)
 expr_stmt|;
 name|generator
 operator|.
-name|setEntities
+name|addEntities
 argument_list|(
 name|entities
 argument_list|)
