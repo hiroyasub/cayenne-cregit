@@ -261,13 +261,7 @@ argument_list|>
 name|embeddables
 parameter_list|)
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Embeddables are not supported in 1.1 mode"
-argument_list|)
-throw|;
+comment|// noop - no embeddables support
 block|}
 annotation|@
 name|Override

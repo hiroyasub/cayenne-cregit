@@ -1369,25 +1369,72 @@ literal|"CayenneDataObject"
 argument_list|)
 expr_stmt|;
 comment|// check embeddable results
-comment|// File e = new File(
-comment|// mapDir,
-comment|// convertPath("org/apache/cayenne/testdo/embeddable/Embeddable1.java"));
-comment|// assertTrue(e.isFile());
-comment|// assertContents(
-comment|// e,
-comment|// "Embeddable1",
-comment|// "org.apache.cayenne.testdo.embeddable",
-comment|// "_Embeddable1");
-comment|//
-comment|// File _e = new File(
-comment|// mapDir,
-comment|// convertPath("org/apache/cayenne/testdo/embeddable/auto/_Embeddable1.java"));
-comment|// assertTrue(_e.exists());
-comment|// assertContents(
-comment|// _e,
-comment|// "_Embeddable1",
-comment|// "org.apache.cayenne.testdo.embeddable.auto",
-comment|// "Object");
+name|File
+name|e
+init|=
+operator|new
+name|File
+argument_list|(
+name|mapDir
+argument_list|,
+name|convertPath
+argument_list|(
+literal|"org/apache/cayenne/testdo/embeddable/Embeddable1.java"
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|e
+operator|.
+name|isFile
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertContents
+argument_list|(
+name|e
+argument_list|,
+literal|"Embeddable1"
+argument_list|,
+literal|"org.apache.cayenne.testdo.embeddable"
+argument_list|,
+literal|"_Embeddable1"
+argument_list|)
+expr_stmt|;
+name|File
+name|_e
+init|=
+operator|new
+name|File
+argument_list|(
+name|mapDir
+argument_list|,
+name|convertPath
+argument_list|(
+literal|"org/apache/cayenne/testdo/embeddable/auto/_Embeddable1.java"
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|_e
+operator|.
+name|exists
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertContents
+argument_list|(
+name|_e
+argument_list|,
+literal|"_Embeddable1"
+argument_list|,
+literal|"org.apache.cayenne.testdo.embeddable.auto"
+argument_list|,
+literal|"Object"
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|String
