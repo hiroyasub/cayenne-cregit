@@ -168,7 +168,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class generation engine for ObjEntities based on<a  * href="http://jakarta.apache.org/velocity/" target="_blank">Velocity templates</a>.  * Instance of ClassGenerationInfo is available inside Velocity template under the key  * "classGen".  *   * @author Andrus Adamchik  * @deprecated since 3.0 use {@link TemplateProcessor}.  */
+comment|/**  * Class generation engine for ObjEntities based on<a  * href="http://jakarta.apache.org/velocity/" target="_blank">Velocity templates</a>.  * Instance of ClassGenerationInfo is available inside Velocity template under the key  * "classGen".  *   * @author Andrus Adamchik  * @deprecated since 3.0 template logic is merged into the code generation action.  */
 end_comment
 
 begin_class
