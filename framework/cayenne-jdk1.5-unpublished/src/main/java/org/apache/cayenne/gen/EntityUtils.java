@@ -79,6 +79,8 @@ begin_class
 specifier|public
 class|class
 name|EntityUtils
+implements|implements
+name|GenerationMetadata
 block|{
 comment|// template substitution values
 specifier|protected
