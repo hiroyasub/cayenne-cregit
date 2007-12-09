@@ -255,15 +255,25 @@ specifier|private
 name|String
 name|superPkg
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Java superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.superTemplate}" 	 */
+comment|/** 	 * Location of Velocity template file for Entity superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.superTemplate}" 	 */
 specifier|private
 name|String
 name|superTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Java class generation. If omitted, 	 * default template is used. 	 *  	 * @parameter expression="${cgen.template}" 	 */
+comment|/** 	 * Location of Velocity template file for Entity class generation. If omitted, 	 * default template is used. 	 *  	 * @parameter expression="${cgen.template}" 	 */
 specifier|private
 name|String
 name|template
+decl_stmt|;
+comment|/** 	 * Location of Velocity template file for Embeddable superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.embeddableSuperTemplate}" 	 */
+specifier|private
+name|String
+name|embeddableSuperTemplate
+decl_stmt|;
+comment|/** 	 * Location of Velocity template file for Embeddable class generation. If omitted, 	 * default template is used. 	 *  	 * @parameter expression="${cgen.embeddableTemplate}" 	 */
+specifier|private
+name|String
+name|embeddableTemplate
 decl_stmt|;
 comment|/** 	 * If set to<code>true</code> (default), a directory tree will be 	 * generated in "destDir" corresponding to the class package structure, if 	 * set to<code>false</code>, classes will be generated in 	 *&quot;destDir&quot; ignoring their package. 	 *  	 * @parameter expression="${cgen.usePkgPath}" default-value="true" 	 */
 specifier|private
@@ -673,6 +683,20 @@ operator|.
 name|setTemplate
 argument_list|(
 name|template
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setEmbeddableSuperTemplate
+argument_list|(
+name|embeddableSuperTemplate
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setEmbeddableTemplate
+argument_list|(
+name|embeddableTemplate
 argument_list|)
 expr_stmt|;
 name|action
