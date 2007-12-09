@@ -45,6 +45,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashSet
 import|;
 end_import
@@ -85,11 +95,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|map
 operator|.
-name|Predicate
+name|DataMap
 import|;
 end_import
 
@@ -103,7 +113,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DataMap
+name|Embeddable
 import|;
 end_import
 
@@ -162,6 +172,20 @@ operator|.
 name|validation
 operator|.
 name|ValidationResult
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|collections
+operator|.
+name|Predicate
 import|;
 end_import
 
@@ -432,6 +456,23 @@ expr_stmt|;
 block|}
 return|return
 name|modified
+return|;
+block|}
+specifier|public
+name|Collection
+argument_list|<
+name|Embeddable
+argument_list|>
+name|getSelectedEmbeddables
+parameter_list|()
+block|{
+comment|// TODO: andrus, 12/9/2007 - until Modeler filtering of embeddables is
+comment|// implemented, show all embeddables we have
+return|return
+name|dataMap
+operator|.
+name|getEmbeddables
+argument_list|()
 return|;
 block|}
 specifier|public
