@@ -260,7 +260,7 @@ specifier|private
 name|String
 name|superTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Entity class generation. If omitted, 	 * default template is used. 	 *  	 * @parameter expression="${cgen.template}" 	 */
+comment|/** 	 * Location of Velocity template file for Entity class generation. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.template}" 	 */
 specifier|private
 name|String
 name|template
@@ -270,7 +270,7 @@ specifier|private
 name|String
 name|embeddableSuperTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Embeddable class generation. If omitted, 	 * default template is used. 	 *  	 * @parameter expression="${cgen.embeddableTemplate}" 	 */
+comment|/** 	 * Location of Velocity template file for Embeddable class generation. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.embeddableTemplate}" 	 */
 specifier|private
 name|String
 name|embeddableTemplate
@@ -280,7 +280,7 @@ specifier|private
 name|boolean
 name|usePkgPath
 decl_stmt|;
-comment|/** 	 * Specifies template location and generator behavior.&quot;1.1&quot; is 	 * the old behavior, with templates located in&quot;dotemplates&quot; and 	 *&quot;classgen&quot; as the only velocity context attribute. 	 *&quot;1.2&quot; is the new behavior, with templates located in 	 *&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;, 	 *&quot;entityUtils&quot;,&quot;stringUtils&quot;, and 	 *&quot;importUtils&quot; in the velocity context. (Default is 	 *&quot;1.2&quot;.) 	 *  	 * @parameter expression="${cgen.version}" 	 */
+comment|/** 	 * Specifies template location and generator behavior.&quot;1.1&quot; is 	 * the old behavior, with templates located in&quot;dotemplates&quot; and 	 *&quot;classgen&quot; as the only velocity context attribute. 	 *&quot;1.2&quot; is the new behavior, with templates located in 	 *&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;, 	 *&quot;entityUtils&quot;,&quot;stringUtils&quot;, and 	 *&quot;importUtils&quot; in the velocity context. (Default is 	 *&quot;1.2&quot;.) 	 *  	 * @parameter expression="${cgen.version}" 	 * @deprecated since 3.0 as 1.1 mode is deprecated. 	 */
 specifier|private
 name|String
 name|version
