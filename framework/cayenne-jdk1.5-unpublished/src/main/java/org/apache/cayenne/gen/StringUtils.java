@@ -58,8 +58,6 @@ specifier|private
 specifier|static
 name|StringUtils
 name|sharedInstance
-init|=
-literal|null
 decl_stmt|;
 specifier|public
 specifier|static
@@ -85,15 +83,7 @@ return|return
 name|sharedInstance
 return|;
 block|}
-specifier|public
-name|StringUtils
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
-comment|/**      * Prepends underscore to variable name if necessary to remove conflict with reserved keywords.      */
+comment|/**      * Prepends underscore to variable name if necessary to remove conflict with reserved      * keywords.      */
 specifier|public
 name|String
 name|formatVariableName
@@ -199,7 +189,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**     * Removes base name, leaving package name.     *      * @since 1.2     */
+comment|/**      * Removes base name, leaving package name.      *       * @since 1.2      */
 specifier|public
 name|String
 name|stripClass
