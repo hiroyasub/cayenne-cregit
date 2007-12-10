@@ -94,6 +94,8 @@ name|PostgresMergerFactory
 extends|extends
 name|MergerFactory
 block|{
+annotation|@
+name|Override
 specifier|public
 name|MergerToken
 name|createSetColumnTypeToDb

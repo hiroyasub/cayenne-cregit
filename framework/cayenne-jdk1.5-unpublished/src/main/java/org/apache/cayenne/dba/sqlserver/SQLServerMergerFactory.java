@@ -108,6 +108,8 @@ name|SQLServerMergerFactory
 extends|extends
 name|MergerFactory
 block|{
+annotation|@
+name|Override
 specifier|public
 name|MergerToken
 name|createSetColumnTypeToDb
@@ -189,6 +191,8 @@ block|}
 block|}
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerToken
 name|createAddColumnToDb
