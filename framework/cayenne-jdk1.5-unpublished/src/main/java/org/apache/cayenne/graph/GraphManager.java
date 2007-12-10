@@ -44,7 +44,7 @@ name|Object
 name|nodeId
 parameter_list|)
 function_decl|;
-comment|/**      * "Registers" a graph node, usually striong the node in some internal map using its      * id as a key.      */
+comment|/**      * "Registers" a graph node, usually storing the node in some internal map using its      * id as a key.      */
 name|void
 name|registerNode
 parameter_list|(
@@ -63,7 +63,7 @@ name|Object
 name|nodeId
 parameter_list|)
 function_decl|;
-comment|/**      * Returns all graph nodes regsitered with GraphManager.      */
+comment|/**      * Returns all graph nodes registered with GraphManager.      */
 name|Collection
 name|registeredNodes
 parameter_list|()
