@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -173,7 +193,10 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+name|List
+argument_list|<
 name|String
+argument_list|>
 name|createSql
 parameter_list|(
 name|DbAdapter
@@ -392,10 +415,15 @@ block|}
 comment|// use separate token to set value and not null if needed
 comment|// sqlBuffer.append(" NULL");
 return|return
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
 name|sqlBuffer
 operator|.
 name|toString
 argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public
