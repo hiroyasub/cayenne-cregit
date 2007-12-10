@@ -295,7 +295,7 @@ operator|=
 name|objEntity
 expr_stmt|;
 block|}
-comment|/**      * Returns class name (without a package) of the sub class associated with this      * generator.      */
+comment|/**      * Returns class name (without a package) of the sub class associated with this      * generator.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
 specifier|public
 name|String
 name|getSubClassName
@@ -305,7 +305,7 @@ return|return
 name|subClassName
 return|;
 block|}
-comment|/**      * Returns the super class (without a package) of the data object class associated      * with this generator      */
+comment|/**      * Returns the super class (without a package) of the data object class associated      * with this generator      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
 specifier|public
 name|String
 name|getSuperClassName
@@ -315,7 +315,7 @@ return|return
 name|superClassName
 return|;
 block|}
-comment|/**      * Returns the base class (without a package) of the data object class associated with      * this generator. Class name must not include a package.      */
+comment|/**      * Returns the base class (without a package) of the data object class associated with      * this generator. Class name must not include a package.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
 specifier|public
 name|String
 name|getBaseClassName
@@ -325,7 +325,7 @@ return|return
 name|baseClassName
 return|;
 block|}
-comment|/**      * Returns Java package name of the class associated with this generator.      */
+comment|/**      * Returns Java package name of the class associated with this generator.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
 specifier|public
 name|String
 name|getSubPackageName
@@ -335,7 +335,7 @@ return|return
 name|subPackageName
 return|;
 block|}
-comment|/**      * Returns<code>superPackageName</code> property that defines a superclass's      * package name.      */
+comment|/**      * Returns<code>superPackageName</code> property that defines a superclass's      * package name.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
 specifier|public
 name|String
 name|getSuperPackageName
@@ -345,7 +345,7 @@ return|return
 name|superPackageName
 return|;
 block|}
-comment|/**      * Returns<code>basePackageName</code> property that defines a baseclass's      * (superclass superclass) package name.      */
+comment|/**      * Returns<code>basePackageName</code> property that defines a baseclass's      * (superclass superclass) package name.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
 specifier|public
 name|String
 name|getBasePackageName
