@@ -565,6 +565,14 @@ operator|+=
 literal|", read-only"
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|relationship
+operator|.
+name|isToMany
+argument_list|()
+condition|)
+block|{
 name|String
 name|collection
 init|=
@@ -617,6 +625,7 @@ literal|", "
 operator|+
 name|collection
 expr_stmt|;
+block|}
 return|return
 name|semantics
 return|;
