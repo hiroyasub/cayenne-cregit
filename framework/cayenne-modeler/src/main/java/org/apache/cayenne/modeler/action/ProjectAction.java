@@ -339,15 +339,6 @@ name|boolean
 name|checkSaveOnClose
 parameter_list|()
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"mrg mrg mrg 1"
-argument_list|)
-expr_stmt|;
 name|ProjectController
 name|projectController
 init|=
@@ -392,15 +383,6 @@ argument_list|()
 condition|)
 block|{
 comment|// discard changes and DO NOT close
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"mrg mrg mrg 2"
-argument_list|)
-expr_stmt|;
 name|Application
 operator|.
 name|getInstance
