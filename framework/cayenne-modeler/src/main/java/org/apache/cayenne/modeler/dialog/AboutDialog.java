@@ -762,6 +762,13 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
+name|setLocationRelativeTo
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
 name|setVisible
 argument_list|(
 literal|true
