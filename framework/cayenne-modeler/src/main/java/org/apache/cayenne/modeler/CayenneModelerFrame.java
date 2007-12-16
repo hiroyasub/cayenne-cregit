@@ -1509,6 +1509,15 @@ name|buildMenu
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// Mac OS X has it's own Preferences menu item under the application menu
+if|if
+condition|(
+operator|!
+name|SystemUtils
+operator|.
+name|IS_OS_MAC_OSX
+condition|)
+block|{
 name|toolMenu
 operator|.
 name|addSeparator
@@ -1530,6 +1539,15 @@ name|buildMenu
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+comment|// Mac OS X "About CayenneModeler" appears under the application menu, per Apple GUI standards
+if|if
+condition|(
+operator|!
+name|SystemUtils
+operator|.
+name|IS_OS_MAC_OSX
+condition|)
 name|helpMenu
 operator|.
 name|add

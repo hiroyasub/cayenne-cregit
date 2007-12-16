@@ -122,6 +122,15 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
+name|showPreferencesDialog
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|showPreferencesDialog
+parameter_list|()
+block|{
 operator|new
 name|PreferenceDialog
 argument_list|(
