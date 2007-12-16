@@ -1103,6 +1103,18 @@ name|i
 operator|++
 control|)
 block|{
+comment|// although nulls are expected to be wrapped in scalar, still doing a
+comment|// check here to make it more robust
+if|if
+condition|(
+name|children
+index|[
+name|i
+index|]
+operator|!=
+literal|null
+condition|)
+block|{
 name|children
 index|[
 name|i
@@ -1113,6 +1125,7 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
