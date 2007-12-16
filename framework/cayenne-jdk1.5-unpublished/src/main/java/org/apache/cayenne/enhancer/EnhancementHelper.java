@@ -206,6 +206,9 @@ index|[]
 name|interfaces
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|newInterface
 parameter_list|)
 block|{
@@ -289,6 +292,9 @@ name|void
 name|createField
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|fieldType
 parameter_list|,
 name|String
@@ -311,6 +317,9 @@ name|void
 name|createField
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|fieldType
 parameter_list|,
 name|String
@@ -364,6 +373,9 @@ name|void
 name|createProperty
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|propertyType
 parameter_list|,
 name|String
@@ -385,6 +397,9 @@ name|void
 name|createProperty
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|propertyType
 parameter_list|,
 name|String

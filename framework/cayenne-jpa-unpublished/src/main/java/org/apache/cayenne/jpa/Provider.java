@@ -1219,6 +1219,22 @@ argument_list|)
 decl_stmt|;
 comment|// add transformer before DataMapConverter starts loading the classes via app
 comment|// class loader
+name|ClassFileTransformer
+name|enhancer
+init|=
+operator|new
+name|Enhancer
+argument_list|(
+operator|new
+name|JpaEnhancerVisitorFactory
+argument_list|(
+name|loader
+operator|.
+name|getEntityMap
+argument_list|()
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -1234,19 +1250,6 @@ argument_list|()
 operator|.
 name|getMangedClasses
 argument_list|()
-decl_stmt|;
-name|ClassFileTransformer
-name|enhancer
-init|=
-operator|new
-name|Enhancer
-argument_list|(
-operator|new
-name|JpaEnhancerVisitorFactory
-argument_list|(
-name|managedClasses
-argument_list|)
-argument_list|)
 decl_stmt|;
 name|unit
 operator|.
@@ -1636,6 +1639,9 @@ name|map
 parameter_list|)
 block|{
 name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
 name|tables
 init|=
 name|map
@@ -1653,15 +1659,12 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// sniff a first table precense
+comment|// sniff a first table presence
 comment|// TODO: andrus 9/1/2006 - should we make this check a part of DbGenerator (and
 comment|// query - a part of DbAdapter)?
 name|DbEntity
 name|table
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|tables
 operator|.
 name|iterator

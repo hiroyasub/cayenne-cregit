@@ -19,11 +19,15 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Map
+name|cayenne
+operator|.
+name|enhancer
+operator|.
+name|EmbeddableVisitor
 import|;
 end_import
 
@@ -67,7 +71,39 @@ name|jpa
 operator|.
 name|map
 operator|.
-name|JpaClassDescriptor
+name|JpaEmbeddable
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|map
+operator|.
+name|JpaEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|map
+operator|.
+name|JpaEntityMap
 import|;
 end_import
 
@@ -109,31 +145,21 @@ implements|implements
 name|EnhancerVisitorFactory
 block|{
 specifier|private
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|JpaClassDescriptor
-argument_list|>
-name|managedClasses
+name|JpaEntityMap
+name|entityMap
 decl_stmt|;
 specifier|public
 name|JpaEnhancerVisitorFactory
 parameter_list|(
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|JpaClassDescriptor
-argument_list|>
-name|managedClasses
+name|JpaEntityMap
+name|entityMap
 parameter_list|)
 block|{
 name|this
 operator|.
-name|managedClasses
+name|entityMap
 operator|=
-name|managedClasses
+name|entityMap
 expr_stmt|;
 block|}
 specifier|public
@@ -147,13 +173,9 @@ name|ClassVisitor
 name|out
 parameter_list|)
 block|{
-name|JpaClassDescriptor
-name|descriptor
+name|String
+name|key
 init|=
-name|managedClasses
-operator|.
-name|get
-argument_list|(
 name|className
 operator|.
 name|replace
@@ -162,21 +184,24 @@ literal|'/'
 argument_list|,
 literal|'.'
 argument_list|)
+decl_stmt|;
+name|JpaEntity
+name|entity
+init|=
+name|entityMap
+operator|.
+name|entityForClass
+argument_list|(
+name|key
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|descriptor
-operator|==
+name|entity
+operator|!=
 literal|null
 condition|)
 block|{
-return|return
-literal|null
-return|;
-block|}
-comment|// from here the code is copied essentially verbatim
-comment|// from CayenneEnhancerVisitorFactory.
 comment|// create enhancer chain
 name|PersistentInterfaceVisitor
 name|e1
@@ -195,10 +220,14 @@ name|JpaAccessorVisitor
 argument_list|(
 name|e1
 argument_list|,
-name|descriptor
+name|entity
+operator|.
+name|getClassDescriptor
+argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// this ensures that both enhanced and original classes have compatible serialized
+comment|// this ensures that both enhanced and original classes have compatible
+comment|// serialized
 comment|// format even if no serialVersionUID is defined by the user
 name|SerialVersionUIDAdder
 name|e3
@@ -211,6 +240,54 @@ argument_list|)
 decl_stmt|;
 return|return
 name|e3
+return|;
+block|}
+name|JpaEmbeddable
+name|embeddable
+init|=
+name|entityMap
+operator|.
+name|embeddableForClass
+argument_list|(
+name|key
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|embeddable
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// create enhancer chain
+name|EmbeddableVisitor
+name|e1
+init|=
+operator|new
+name|EmbeddableVisitor
+argument_list|(
+name|out
+argument_list|)
+decl_stmt|;
+comment|// TODO: andrus 12/16/2007 - setter visitor...
+comment|// this ensures that both enhanced and original classes have compatible
+comment|// serialized
+comment|// format even if no serialVersionUID is defined by the user
+name|SerialVersionUIDAdder
+name|e2
+init|=
+operator|new
+name|SerialVersionUIDAdder
+argument_list|(
+name|e1
+argument_list|)
+decl_stmt|;
+return|return
+name|e2
+return|;
+block|}
+return|return
+literal|null
 return|;
 block|}
 block|}
