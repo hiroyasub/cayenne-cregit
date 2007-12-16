@@ -76,6 +76,12 @@ name|FieldEmbeddableDescriptor
 parameter_list|(
 name|Embeddable
 name|embeddable
+parameter_list|,
+name|String
+name|ownerProperty
+parameter_list|,
+name|String
+name|embeddedPropertyProperty
 parameter_list|)
 block|{
 name|this
@@ -136,7 +142,7 @@ name|FieldAccessor
 argument_list|(
 name|embeddableClass
 argument_list|,
-literal|"owner"
+name|ownerProperty
 argument_list|,
 name|Persistent
 operator|.
@@ -152,7 +158,7 @@ name|FieldAccessor
 argument_list|(
 name|embeddableClass
 argument_list|,
-literal|"embeddedProperty"
+name|embeddedPropertyProperty
 argument_list|,
 name|String
 operator|.

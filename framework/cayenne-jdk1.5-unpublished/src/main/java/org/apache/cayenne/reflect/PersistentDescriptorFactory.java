@@ -711,18 +711,12 @@ name|getJavaClass
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every property of
-comment|// embeddable; look up reusable descriptor instead.
 name|EmbeddableDescriptor
 name|embeddableDescriptor
 init|=
-operator|new
-name|FieldEmbeddableDescriptor
+name|createEmbeddableDescriptor
 argument_list|(
 name|embeddedAttribute
-operator|.
-name|getEmbeddable
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|Accessor
@@ -982,6 +976,31 @@ argument_list|,
 name|propertyName
 argument_list|,
 name|propertyType
+argument_list|)
+return|;
+block|}
+specifier|protected
+name|EmbeddableDescriptor
+name|createEmbeddableDescriptor
+parameter_list|(
+name|EmbeddedAttribute
+name|embeddedAttribute
+parameter_list|)
+block|{
+comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every property of
+comment|// embeddable; look up reusable descriptor instead.
+return|return
+operator|new
+name|FieldEmbeddableDescriptor
+argument_list|(
+name|embeddedAttribute
+operator|.
+name|getEmbeddable
+argument_list|()
+argument_list|,
+literal|"owner"
+argument_list|,
+literal|"embeddedProperty"
 argument_list|)
 return|;
 block|}

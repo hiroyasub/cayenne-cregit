@@ -142,7 +142,21 @@ operator|.
 name|commit
 argument_list|()
 expr_stmt|;
-comment|// assertEquals("p1", getDbHelper().getObject("EmbeddedEntity", "property1"));
+name|assertEquals
+argument_list|(
+literal|"p1"
+argument_list|,
+name|getDbHelper
+argument_list|()
+operator|.
+name|getObject
+argument_list|(
+literal|"EmbeddedEntity"
+argument_list|,
+literal|"property1"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

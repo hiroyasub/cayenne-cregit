@@ -98,7 +98,7 @@ parameter_list|()
 block|{
 name|helper
 operator|.
-name|createProperty
+name|createField
 argument_list|(
 name|Persistent
 operator|.
@@ -109,7 +109,7 @@ argument_list|)
 expr_stmt|;
 name|helper
 operator|.
-name|createProperty
+name|createField
 argument_list|(
 name|String
 operator|.
