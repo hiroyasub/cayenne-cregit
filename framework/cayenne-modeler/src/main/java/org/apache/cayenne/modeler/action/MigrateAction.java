@@ -71,7 +71,7 @@ name|dialog
 operator|.
 name|db
 operator|.
-name|MergerOptions
+name|DataSourceWizard
 import|;
 end_import
 
@@ -89,7 +89,7 @@ name|dialog
 operator|.
 name|db
 operator|.
-name|DataSourceWizard
+name|MergerOptions
 import|;
 end_import
 

@@ -19,11 +19,21 @@ end_package
 
 begin_import
 import|import
-name|java
+name|javax
 operator|.
-name|awt
+name|swing
 operator|.
-name|Color
+name|JScrollPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JTabbedPane
 import|;
 end_import
 
@@ -38,16 +48,6 @@ operator|.
 name|modeler
 operator|.
 name|ProjectController
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|*
 import|;
 end_import
 

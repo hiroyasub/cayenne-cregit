@@ -151,13 +151,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|util
 operator|.
-name|map
-operator|.
-name|SingletonMap
+name|Util
 import|;
 end_import
 
@@ -167,11 +165,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
+name|commons
 operator|.
-name|util
+name|collections
 operator|.
-name|Util
+name|map
+operator|.
+name|SingletonMap
 import|;
 end_import
 

@@ -142,10 +142,6 @@ import|;
 end_import
 
 begin_comment
-comment|//import org.apache.cayenne.modeler.util.ProjectUtil;
-end_comment
-
-begin_comment
 comment|/**  * Table model for DbRelationship table.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
 end_comment
 

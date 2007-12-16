@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|modeler
+name|map
 operator|.
-name|Application
+name|CallbackMap
 import|;
 end_import
 
@@ -39,9 +39,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|modeler
 operator|.
-name|CallbackMap
+name|Application
 import|;
 end_import
 

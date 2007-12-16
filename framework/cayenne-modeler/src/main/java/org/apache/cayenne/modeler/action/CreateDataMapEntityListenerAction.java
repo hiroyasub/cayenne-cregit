@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|modeler
+name|map
 operator|.
-name|Application
+name|EntityListener
 import|;
 end_import
 
@@ -39,9 +39,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|modeler
 operator|.
-name|EntityListener
+name|Application
 import|;
 end_import
 
