@@ -1577,9 +1577,6 @@ decl_stmt|;
 name|JpaAttribute
 name|parent
 init|=
-operator|(
-name|JpaAttribute
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -1623,9 +1620,6 @@ block|{
 name|JpaEntity
 name|entity
 init|=
-operator|(
-name|JpaEntity
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -1948,9 +1942,6 @@ block|{
 name|JpaEntity
 name|entity
 init|=
-operator|(
-name|JpaEntity
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -1984,9 +1975,6 @@ comment|// same type as the primary key of table B.
 name|JpaEntityMap
 name|map
 init|=
-operator|(
-name|JpaEntityMap
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -2486,6 +2474,9 @@ name|name
 argument_list|)
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|targetEntityType
 init|=
 name|property

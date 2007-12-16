@@ -142,8 +142,7 @@ operator|.
 name|commit
 argument_list|()
 expr_stmt|;
-comment|// TODO: andrus 8/10/2006 - fails
-comment|// assertEquals("p1", ItestDBUtils.getSingleValue("EmbeddedEntity", "property1"));
+comment|// assertEquals("p1", getDbHelper().getObject("EmbeddedEntity", "property1"));
 block|}
 block|}
 end_class

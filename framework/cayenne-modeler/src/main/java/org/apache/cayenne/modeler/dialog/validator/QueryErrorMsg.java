@@ -179,9 +179,6 @@ decl_stmt|;
 name|DataDomain
 name|domain
 init|=
-operator|(
-name|DataDomain
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -194,9 +191,6 @@ decl_stmt|;
 name|DataMap
 name|map
 init|=
-operator|(
-name|DataMap
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -209,9 +203,6 @@ decl_stmt|;
 name|Query
 name|query
 init|=
-operator|(
-name|Query
-operator|)
 name|path
 operator|.
 name|firstInstanceOf

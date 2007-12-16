@@ -132,10 +132,16 @@ return|;
 block|}
 comment|/**      * Scans path, looking for the first element that is an instanceof<code>aClass</code>.      */
 specifier|public
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|firstInstanceOf
 parameter_list|(
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|aClass
 parameter_list|)
 block|{
@@ -180,6 +186,9 @@ argument_list|)
 condition|)
 block|{
 return|return
+operator|(
+name|T
+operator|)
 name|path
 index|[
 name|i

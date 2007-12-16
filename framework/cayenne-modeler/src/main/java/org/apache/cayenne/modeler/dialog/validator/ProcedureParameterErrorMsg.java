@@ -209,9 +209,6 @@ decl_stmt|;
 name|DataDomain
 name|domain
 init|=
-operator|(
-name|DataDomain
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -224,9 +221,6 @@ decl_stmt|;
 name|DataMap
 name|map
 init|=
-operator|(
-name|DataMap
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -239,9 +233,6 @@ decl_stmt|;
 name|Procedure
 name|procedure
 init|=
-operator|(
-name|Procedure
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -254,9 +245,6 @@ decl_stmt|;
 name|ProcedureParameter
 name|procedureParameter
 init|=
-operator|(
-name|ProcedureParameter
-operator|)
 name|path
 operator|.
 name|firstInstanceOf

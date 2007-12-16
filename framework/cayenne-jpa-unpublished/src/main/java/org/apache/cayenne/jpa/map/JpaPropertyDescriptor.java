@@ -140,6 +140,9 @@ name|name
 decl_stmt|;
 specifier|protected
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 decl_stmt|;
 specifier|protected
@@ -148,6 +151,9 @@ name|genericType
 decl_stmt|;
 specifier|protected
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|targetEntityType
 decl_stmt|;
 specifier|public
@@ -332,6 +338,9 @@ name|targetEntityType
 operator|=
 operator|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|types
 index|[
@@ -400,6 +409,9 @@ name|targetEntityType
 operator|=
 operator|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|types
 index|[
@@ -438,6 +450,9 @@ return|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getType
 parameter_list|()
 block|{
@@ -447,6 +462,9 @@ return|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getTargetEntityType
 parameter_list|()
 block|{
@@ -499,6 +517,9 @@ name|boolean
 name|isDefaultNonRelationalType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 parameter_list|)
 block|{
