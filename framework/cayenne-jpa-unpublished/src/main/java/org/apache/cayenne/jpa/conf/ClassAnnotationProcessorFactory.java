@@ -601,6 +601,9 @@ argument_list|(
 operator|(
 operator|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|element
 operator|)
@@ -728,6 +731,9 @@ argument_list|(
 operator|(
 operator|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|element
 operator|)
@@ -830,6 +836,9 @@ argument_list|(
 operator|(
 operator|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|element
 operator|)

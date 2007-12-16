@@ -1239,6 +1239,9 @@ name|void
 name|loadClassMapping
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 parameter_list|)
 throws|throws
@@ -1895,6 +1898,9 @@ argument_list|>
 name|getEntityCallbacks
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 parameter_list|)
 block|{
@@ -1991,6 +1997,9 @@ block|{
 continue|continue;
 block|}
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|params
 init|=
@@ -2131,10 +2140,16 @@ implements|implements
 name|AnnotationProcessorStack
 block|{
 name|LinkedList
+argument_list|<
+name|Object
+argument_list|>
 name|stack
 init|=
 operator|new
 name|LinkedList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|JpaClassDescriptor
@@ -2284,6 +2299,9 @@ name|AnnotatedElement
 name|element
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|annotatedType
 parameter_list|,
 name|String

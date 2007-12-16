@@ -415,10 +415,16 @@ name|context
 argument_list|)
 decl_stmt|;
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|loadedLocations
 init|=
 operator|new
 name|HashSet
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|EntityMapXMLLoader
@@ -576,6 +582,9 @@ argument_list|<
 name|String
 argument_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|managedClassMap
 init|=
@@ -585,6 +594,9 @@ argument_list|<
 name|String
 argument_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -626,6 +638,9 @@ name|explicitClasses
 control|)
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 decl_stmt|;
 try|try
@@ -715,6 +730,9 @@ block|{
 continue|continue;
 block|}
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 decl_stmt|;
 try|try
@@ -820,6 +838,9 @@ decl_stmt|;
 for|for
 control|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 range|:
 name|managedClassMap

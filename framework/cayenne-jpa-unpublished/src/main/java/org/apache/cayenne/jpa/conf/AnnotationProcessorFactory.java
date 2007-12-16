@@ -122,9 +122,15 @@ decl_stmt|;
 comment|/**      * Dervies processor inner class name, applying naming conventions.      */
 specifier|static
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|processorClass
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|factoryClass
 parameter_list|,
 name|String
@@ -210,9 +216,15 @@ block|}
 comment|/**      * Returns an annotation class handled by the processor, applying naming conventions.      */
 specifier|static
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|annotationClass
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|processorClass
 parameter_list|)
 block|{
@@ -322,7 +334,7 @@ name|e
 parameter_list|)
 block|{
 comment|// there are a few unsupported annotations in the JPA package related
-comment|// to Java EE conatiners
+comment|// to Java EE containers
 return|return
 literal|null
 return|;
@@ -426,6 +438,9 @@ name|annotationFQN
 parameter_list|)
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|processorClass
 init|=
 name|processorClass

@@ -60,6 +60,9 @@ name|AnnotatedElement
 name|element
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|annotatedType
 parameter_list|,
 name|String

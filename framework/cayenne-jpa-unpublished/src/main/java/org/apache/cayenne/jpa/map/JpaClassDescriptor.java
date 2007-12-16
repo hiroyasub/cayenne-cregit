@@ -356,7 +356,7 @@ operator|=
 name|access
 expr_stmt|;
 block|}
-comment|/**      * Returns descriptor matching the property name. If the underlying entity map uses      * FIELD access, a descritor is looked up in the list of class fields, if it uses      * PROPERTY access - descriptor is looked up in the list of class properties.      */
+comment|/**      * Returns descriptor matching the property name. If the underlying entity map uses      * FIELD access, a descriptor is looked up in the list of class fields, if it uses      * PROPERTY access - descriptor is looked up in the list of class properties.      */
 specifier|public
 name|JpaPropertyDescriptor
 name|getProperty
