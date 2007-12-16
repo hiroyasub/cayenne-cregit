@@ -194,6 +194,9 @@ name|propertyDescriptors
 decl_stmt|;
 specifier|protected
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 decl_stmt|;
 specifier|protected
@@ -304,6 +307,9 @@ specifier|public
 name|JpaClassDescriptor
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|managedClass
 parameter_list|)
 block|{
@@ -316,6 +322,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getManagedClass
 parameter_list|()
 block|{
@@ -785,6 +794,9 @@ name|getName
 argument_list|()
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|parameters
 init|=
@@ -797,6 +809,9 @@ name|getParameterTypes
 argument_list|()
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|returnType
 init|=
 name|methods
