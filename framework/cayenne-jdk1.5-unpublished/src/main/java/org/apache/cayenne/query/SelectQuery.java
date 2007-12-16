@@ -1000,7 +1000,7 @@ name|queryWithParameters
 parameter_list|(
 name|Map
 argument_list|<
-name|?
+name|String
 argument_list|,
 name|?
 argument_list|>
@@ -1697,8 +1697,8 @@ name|void
 name|setCacheGroups
 parameter_list|(
 name|String
-index|[]
-name|cachGroups
+modifier|...
+name|cacheGroups
 parameter_list|)
 block|{
 name|this
@@ -1707,7 +1707,7 @@ name|selectInfo
 operator|.
 name|setCacheGroups
 argument_list|(
-name|cachGroups
+name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}

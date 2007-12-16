@@ -99,22 +99,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
-operator|.
-name|RowDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|EntityResolver
@@ -200,14 +184,27 @@ decl_stmt|;
 comment|/**      * @since 1.2      */
 specifier|protected
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|resultClass
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|parameters
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|ProcedureQueryMetadata
@@ -222,6 +219,10 @@ comment|// it in a DataMap
 comment|/**      * @since 1.2      */
 specifier|protected
 name|List
+argument_list|<
+name|ColumnDescriptor
+index|[]
+argument_list|>
 name|resultDescriptors
 decl_stmt|;
 comment|/**      * Creates an empty procedure query.      */
@@ -363,9 +364,13 @@ return|return
 name|metaData
 return|;
 block|}
-comment|/**      * Returns a List of #{@link RowDescriptor} objects describing query ResultSets in      * the order they are returned by the stored procedure.      *<p>      *<i>Note that if a procedure returns ResultSet in an OUT parameter, it is returned      * prior to any other result sets (though in practice database engines usually support      * only one mechanism for returning result sets.</i>      *</p>      *       * @since 1.2      */
+comment|/**      * Returns a List of descriptors for query ResultSets in the order they are returned      * by the stored procedure.      *<p>      *<i>Note that if a procedure returns ResultSet in an OUT parameter, it is returned      * prior to any other result sets (though in practice database engines usually support      * only one mechanism for returning result sets.</i>      *</p>      *       * @since 1.2      */
 specifier|public
 name|List
+argument_list|<
+name|ColumnDescriptor
+index|[]
+argument_list|>
 name|getResultDescriptors
 parameter_list|()
 block|{
@@ -403,6 +408,10 @@ name|resultDescriptors
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ColumnDescriptor
+index|[]
+argument_list|>
 argument_list|(
 literal|2
 argument_list|)
@@ -673,6 +682,11 @@ name|Query
 name|createQuery
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 block|{
@@ -981,6 +995,11 @@ block|}
 comment|/**      * Returns a map of procedure parameters.      *       * @since 1.1      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|getParameters
 parameter_list|()
 block|{
@@ -995,6 +1014,11 @@ name|void
 name|setParameters
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 block|{
@@ -1097,6 +1121,9 @@ name|void
 name|addPrefetches
 parameter_list|(
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|prefetches
 parameter_list|)
 block|{

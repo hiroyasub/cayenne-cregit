@@ -849,7 +849,9 @@ name|inExp
 argument_list|(
 literal|"abc"
 argument_list|,
-name|v
+literal|"a"
+argument_list|,
+literal|"b"
 argument_list|)
 decl_stmt|;
 name|assertEquals

@@ -173,6 +173,11 @@ argument_list|)
 return|;
 block|}
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|map
 init|=
 name|toMap
@@ -199,6 +204,11 @@ return|;
 block|}
 specifier|protected
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|toMap
 parameter_list|(
 name|Object
@@ -215,6 +225,11 @@ block|{
 return|return
 operator|(
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|o
 return|;
