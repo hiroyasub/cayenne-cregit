@@ -573,6 +573,10 @@ name|invoke
 argument_list|(
 name|object
 argument_list|,
+operator|(
+name|Object
+index|[]
+operator|)
 literal|null
 argument_list|)
 return|;
@@ -590,6 +594,11 @@ return|return
 operator|(
 operator|(
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|object
 operator|)
@@ -745,6 +754,11 @@ block|{
 operator|(
 operator|(
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 operator|)
 name|object
 operator|)
@@ -785,6 +799,9 @@ name|PropertyDescriptor
 name|getPropertyDescriptor
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|beanClass
 parameter_list|,
 name|String
@@ -862,9 +879,15 @@ block|}
 comment|/**      * "Normalizes" passed type, converting primitive types to their object counterparts.      */
 specifier|static
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|normalizeType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 parameter_list|)
 block|{
@@ -1007,6 +1030,9 @@ name|Object
 name|defaultNullValueForType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 parameter_list|)
 block|{

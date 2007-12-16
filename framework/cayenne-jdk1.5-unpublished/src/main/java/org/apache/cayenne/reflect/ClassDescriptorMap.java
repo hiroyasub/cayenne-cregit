@@ -106,10 +106,18 @@ name|resolver
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|ClassDescriptor
+argument_list|>
 name|descriptors
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|ClassDescriptorFactory
+argument_list|>
 name|factories
 decl_stmt|;
 specifier|public
@@ -125,6 +133,11 @@ name|descriptors
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|ClassDescriptor
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|this
@@ -139,6 +152,9 @@ name|factories
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ClassDescriptorFactory
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -287,9 +303,6 @@ block|}
 name|ClassDescriptor
 name|cached
 init|=
-operator|(
-name|ClassDescriptor
-operator|)
 name|descriptors
 operator|.
 name|get
@@ -359,6 +372,9 @@ comment|// scan the factory chain until some factory returns a non-null descript
 comment|// scanning is done in reverse order so that the factories added last take higher
 comment|// precedence...
 name|ListIterator
+argument_list|<
+name|ClassDescriptorFactory
+argument_list|>
 name|it
 init|=
 name|factories
@@ -382,9 +398,6 @@ block|{
 name|ClassDescriptorFactory
 name|factory
 init|=
-operator|(
-name|ClassDescriptorFactory
-operator|)
 name|it
 operator|.
 name|previous

@@ -55,6 +55,9 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns a class mapped by this descriptor.      */
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getObjectClass
 parameter_list|()
 function_decl|;
@@ -68,6 +71,9 @@ name|ClassDescriptor
 name|getSubclassDescriptor
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|)
 function_decl|;
@@ -117,11 +123,17 @@ parameter_list|)
 function_decl|;
 comment|/**      * Returns an Iterator over descriptor properties.      *       * @deprecated since 3.0. Use {@link #visitProperties(PropertyVisitor)} method      *             instead.      */
 name|Iterator
+argument_list|<
+name|Property
+argument_list|>
 name|getProperties
 parameter_list|()
 function_decl|;
 comment|/**      * Returns an iterator over the properties mapped to id columns.      *       * @since 3.0      */
 name|Iterator
+argument_list|<
+name|Property
+argument_list|>
 name|getIdProperties
 parameter_list|()
 function_decl|;

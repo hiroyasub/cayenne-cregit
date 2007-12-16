@@ -249,10 +249,13 @@ name|ObjEntity
 name|entity
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 parameter_list|)
 block|{
-comment|// check whether we are dealing with enhaced pojo
+comment|// check whether we are dealing with enhanced pojo
 try|try
 block|{
 name|Integer
