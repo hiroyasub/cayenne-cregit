@@ -316,24 +316,6 @@ if|if
 condition|(
 name|attribute
 operator|instanceof
-name|ObjAttribute
-condition|)
-block|{
-name|createAttributeProperty
-argument_list|(
-name|descriptor
-argument_list|,
-operator|(
-name|ObjAttribute
-operator|)
-name|attribute
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|attribute
-operator|instanceof
 name|EmbeddedAttribute
 condition|)
 block|{
@@ -366,6 +348,24 @@ name|objAttribute
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|else if
+condition|(
+name|attribute
+operator|instanceof
+name|ObjAttribute
+condition|)
+block|{
+name|createAttributeProperty
+argument_list|(
+name|descriptor
+argument_list|,
+operator|(
+name|ObjAttribute
+operator|)
+name|attribute
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 comment|// only include this entity relationships and skip superclasses...

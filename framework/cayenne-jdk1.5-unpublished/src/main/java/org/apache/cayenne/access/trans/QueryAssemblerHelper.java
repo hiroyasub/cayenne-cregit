@@ -189,6 +189,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|EmbeddableAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -1187,6 +1201,14 @@ argument_list|(
 name|expression
 argument_list|)
 decl_stmt|;
+comment|//TODO: handle EmbeddableAttribute
+if|if
+condition|(
+name|last
+operator|instanceof
+name|EmbeddableAttribute
+condition|)
+break|break;
 if|if
 condition|(
 name|last

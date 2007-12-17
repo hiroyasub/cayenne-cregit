@@ -195,6 +195,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|EmbeddedAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|EntityResolver
 import|;
 end_import
@@ -2401,12 +2415,9 @@ block|{
 comment|// TODO: andrus, 2/20/2007 - handle embedded attribute
 if|if
 condition|(
-operator|!
-operator|(
 name|next
 operator|instanceof
-name|ObjAttribute
-operator|)
+name|EmbeddedAttribute
 condition|)
 block|{
 continue|continue;
