@@ -45,6 +45,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|MultiNodeCase
 extends|extends
@@ -152,18 +153,6 @@ argument_list|(
 name|NODE2
 argument_list|)
 return|;
-block|}
-comment|// dummy test case so junit does not complain about missing tests
-specifier|public
-name|void
-name|testNoOperation
-parameter_list|()
-block|{
-name|assertTrue
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_class

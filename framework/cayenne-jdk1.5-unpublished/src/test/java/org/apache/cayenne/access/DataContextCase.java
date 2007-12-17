@@ -139,6 +139,7 @@ end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|DataContextCase
 extends|extends
@@ -583,18 +584,6 @@ expr_stmt|;
 return|return
 name|painting
 return|;
-block|}
-comment|// dummy test case so junit does not complain about missing tests
-specifier|public
-name|void
-name|testNoOperation
-parameter_list|()
-block|{
-name|assertTrue
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_class
