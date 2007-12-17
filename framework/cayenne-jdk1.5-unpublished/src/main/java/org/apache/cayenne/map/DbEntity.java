@@ -1038,7 +1038,7 @@ block|}
 specifier|public
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|resolvePathComponents
 parameter_list|(
@@ -2336,7 +2336,7 @@ argument_list|()
 decl_stmt|;
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|it
 init|=
@@ -2436,7 +2436,7 @@ block|}
 comment|// case (3)
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|pathIt
 init|=
@@ -2447,7 +2447,7 @@ argument_list|)
 decl_stmt|;
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|relationshipIt
 init|=
@@ -2499,9 +2499,6 @@ comment|// expression components may be attributes or relationships
 name|CayenneMapEntry
 name|next
 init|=
-operator|(
-name|CayenneMapEntry
-operator|)
 name|pathIt
 operator|.
 name|next
@@ -2575,9 +2572,6 @@ comment|// components may be attributes or relationships
 name|CayenneMapEntry
 name|next
 init|=
-operator|(
-name|CayenneMapEntry
-operator|)
 name|pathIt
 operator|.
 name|next

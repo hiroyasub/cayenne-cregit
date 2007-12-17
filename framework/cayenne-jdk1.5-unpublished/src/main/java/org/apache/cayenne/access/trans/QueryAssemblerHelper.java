@@ -235,6 +235,20 @@ name|ObjRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|CayenneMapEntry
+import|;
+end_import
+
 begin_comment
 comment|/**   * Translates parts of the query to SQL.  * Always works in the context of parent Translator.   *   * @author Andrus Adamchik  */
 end_comment
@@ -341,7 +355,7 @@ parameter_list|)
 block|{
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|it
 init|=
@@ -366,7 +380,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Object
+name|CayenneMapEntry
 name|pathComp
 init|=
 name|it
@@ -521,7 +535,7 @@ parameter_list|)
 block|{
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|it
 init|=
@@ -541,7 +555,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Object
+name|CayenneMapEntry
 name|pathComp
 init|=
 name|it

@@ -902,14 +902,14 @@ name|Expression
 name|pathExp
 parameter_list|)
 block|{
-name|Object
+name|CayenneMapEntry
 name|last
 init|=
 literal|null
 decl_stmt|;
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|it
 init|=
@@ -943,7 +943,7 @@ specifier|public
 specifier|abstract
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|resolvePathComponents
 parameter_list|(
@@ -957,7 +957,7 @@ comment|/**      * Returns an Iterator over the path components that contains a 
 specifier|public
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|resolvePathComponents
 parameter_list|(
@@ -983,7 +983,7 @@ name|PathIterator
 implements|implements
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 block|{
 specifier|private
@@ -1043,7 +1043,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Object
+name|CayenneMapEntry
 name|next
 parameter_list|()
 block|{

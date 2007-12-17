@@ -383,6 +383,20 @@ name|ToOneProperty
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|CayenneMapEntry
+import|;
+end_import
+
 begin_comment
 comment|/**  * A builder of JDBC PreparedStatements based on Cayenne SelectQueries. Translates  * SelectQuery to parameterized SQL string and wraps it in a PreparedStatement.  * SelectTranslator is stateful and thread-unsafe.  *   * @author Andrus Adamchik  */
 end_comment
@@ -1649,6 +1663,9 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|CayenneMapEntry
+argument_list|>
 name|it
 init|=
 name|table
@@ -1659,7 +1676,7 @@ name|pathExp
 argument_list|)
 decl_stmt|;
 comment|// add joins and find terminating element
-name|Object
+name|CayenneMapEntry
 name|pathComponent
 init|=
 literal|null
@@ -1840,9 +1857,11 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Iterator
-name|jointPrefetches
-init|=
+for|for
+control|(
+name|PrefetchTreeNode
+name|prefetch
+range|:
 name|query
 operator|.
 name|getPrefetchTree
@@ -1850,29 +1869,8 @@ argument_list|()
 operator|.
 name|adjacentJointNodes
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|jointPrefetches
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|PrefetchTreeNode
-name|prefetch
-init|=
-operator|(
-name|PrefetchTreeNode
-operator|)
-name|jointPrefetches
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 comment|// for each prefetch add all joins plus columns from the target entity
 name|Expression
 name|prefetchExp

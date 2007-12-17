@@ -2582,7 +2582,7 @@ block|}
 specifier|public
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|resolvePathComponents
 parameter_list|(
@@ -2844,7 +2844,7 @@ name|toDbPath
 parameter_list|(
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|objectPathComponents
 parameter_list|)

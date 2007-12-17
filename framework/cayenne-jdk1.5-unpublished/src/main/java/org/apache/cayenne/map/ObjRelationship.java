@@ -157,6 +157,20 @@ name|cayenne
 operator|.
 name|util
 operator|.
+name|CayenneMapEntry
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
 name|Util
 import|;
 end_import
@@ -1756,7 +1770,7 @@ try|try
 block|{
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|it
 init|=
@@ -1960,7 +1974,7 @@ block|{
 comment|// add new relationships from path
 name|Iterator
 argument_list|<
-name|Object
+name|CayenneMapEntry
 argument_list|>
 name|it
 init|=

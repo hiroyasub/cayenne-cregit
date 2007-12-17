@@ -41,6 +41,20 @@ name|Entity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|CayenneMapEntry
+import|;
+end_import
+
 begin_comment
 comment|/**  * Generic path expression.  *   * @author Andrus Adamchik  * @since 1.1  */
 end_comment
@@ -174,7 +188,7 @@ return|;
 block|}
 comment|/**      * Helper method to evaluate path expression with Cayenne Entity.      */
 specifier|protected
-name|Object
+name|CayenneMapEntry
 name|evaluateEntityNode
 parameter_list|(
 name|Entity
@@ -182,6 +196,9 @@ name|entity
 parameter_list|)
 block|{
 name|Iterator
+argument_list|<
+name|CayenneMapEntry
+argument_list|>
 name|path
 init|=
 name|entity
@@ -191,7 +208,7 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
-name|Object
+name|CayenneMapEntry
 name|next
 init|=
 literal|null
