@@ -724,6 +724,9 @@ comment|// handle meaningful PK
 name|ObjAttribute
 name|objAttr
 init|=
+operator|(
+name|ObjAttribute
+operator|)
 name|objEntity
 operator|.
 name|getAttributeForDbAttribute

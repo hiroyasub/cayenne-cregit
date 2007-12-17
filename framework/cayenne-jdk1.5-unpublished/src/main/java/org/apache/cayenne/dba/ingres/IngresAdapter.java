@@ -155,20 +155,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Attribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbAttribute
 import|;
 end_import
@@ -265,7 +251,7 @@ expr_stmt|;
 comment|// columns
 name|Iterator
 argument_list|<
-name|Attribute
+name|DbAttribute
 argument_list|>
 name|it
 init|=
@@ -294,14 +280,11 @@ if|if
 condition|(
 name|first
 condition|)
-block|{
 name|first
 operator|=
 literal|false
 expr_stmt|;
-block|}
 else|else
-block|{
 name|buf
 operator|.
 name|append
@@ -309,13 +292,9 @@ argument_list|(
 literal|", "
 argument_list|)
 expr_stmt|;
-block|}
 name|DbAttribute
 name|at
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next

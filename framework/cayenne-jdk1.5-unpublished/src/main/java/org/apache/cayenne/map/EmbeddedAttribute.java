@@ -124,7 +124,7 @@ specifier|public
 class|class
 name|EmbeddedAttribute
 extends|extends
-name|Attribute
+name|ObjAttribute
 block|{
 specifier|protected
 name|String

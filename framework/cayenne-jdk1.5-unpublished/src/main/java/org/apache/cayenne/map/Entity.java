@@ -742,6 +742,8 @@ name|SortedMap
 argument_list|<
 name|String
 argument_list|,
+name|?
+extends|extends
 name|Relationship
 argument_list|>
 name|getRelationshipMap
@@ -808,6 +810,8 @@ comment|/**      * Returns an unmodifiable collection of Relationships that exis
 specifier|public
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Relationship
 argument_list|>
 name|getRelationships
@@ -833,6 +837,8 @@ name|SortedMap
 argument_list|<
 name|String
 argument_list|,
+name|?
+extends|extends
 name|Attribute
 argument_list|>
 name|getAttributeMap
@@ -853,6 +859,8 @@ comment|/**      * Returns an unmodifiable collection of entity attributes.     
 specifier|public
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Attribute
 argument_list|>
 name|getAttributes

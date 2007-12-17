@@ -116,6 +116,9 @@ comment|// TODO, Andrus 11/17/2005 - i guess we should deprecate
 comment|// SelectQuery.customDbAttribute, replacing it with "resultPaths" mechanism.
 specifier|protected
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|resultPaths
 decl_stmt|;
 comment|/**      * Creates a new disjoint prefetch select query.      *       * @since 1.2      */
@@ -314,6 +317,9 @@ block|}
 comment|/**      * Returns extra result paths.      *       * @since 1.2      */
 specifier|public
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|getResultPaths
 parameter_list|()
 block|{
@@ -336,6 +342,9 @@ return|;
 block|}
 comment|/**      * Returns a Collection that internally stores extra result paths, creating it on      * demand.      *       * @since 1.2      */
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nonNullResultPaths
 parameter_list|()
 block|{
@@ -350,6 +359,9 @@ name|resultPaths
 operator|=
 operator|new
 name|HashSet
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

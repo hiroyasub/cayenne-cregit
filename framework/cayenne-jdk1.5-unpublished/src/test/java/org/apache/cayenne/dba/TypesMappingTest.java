@@ -600,9 +600,6 @@ block|{
 name|List
 name|vals
 init|=
-operator|(
-name|List
-operator|)
 name|map
 operator|.
 name|databaseTypes

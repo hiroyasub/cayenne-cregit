@@ -379,6 +379,9 @@ decl_stmt|;
 name|ObjAttribute
 name|oa
 init|=
+operator|(
+name|ObjAttribute
+operator|)
 name|entity
 operator|.
 name|getAttributeForDbAttribute
@@ -414,6 +417,9 @@ literal|true
 expr_stmt|;
 name|oa
 operator|=
+operator|(
+name|ObjAttribute
+operator|)
 name|entity
 operator|.
 name|getAttributeForDbAttribute

@@ -857,6 +857,9 @@ name|dbRelationshipsRefreshNeeded
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|resolvedPath
 init|=
 name|relationship
