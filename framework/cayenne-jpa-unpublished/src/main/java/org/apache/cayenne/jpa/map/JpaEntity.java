@@ -989,6 +989,9 @@ name|namedNativeQueries
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|JpaNamedNativeQuery
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1024,6 +1027,9 @@ name|namedQueries
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|JpaNamedQuery
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1060,6 +1066,9 @@ name|primaryKeyJoinColumns
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|JpaPrimaryKeyJoinColumn
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1095,6 +1104,9 @@ name|secondaryTables
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|JpaSecondaryTable
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
