@@ -105,7 +105,7 @@ parameter_list|)
 throws|throws
 name|PropertyException
 function_decl|;
-comment|/**      * Returns a property descriptor matching property name, or null if no such property      * is found. Lookup includes properties from this descriptor and all its superclass      * decsriptors. Returned property can be any one of {@link AttributeProperty},      * {@link ToManyProperty}, {@link ToOneProperty}.      */
+comment|/**      * Returns a property descriptor matching property name, or null if no such property      * is found. Lookup includes properties from this descriptor and all its superclass      * descriptors. Returned property can be any one of {@link AttributeProperty},      * {@link ToManyProperty}, {@link ToOneProperty}.      */
 name|Property
 name|getProperty
 parameter_list|(
