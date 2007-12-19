@@ -218,7 +218,7 @@ name|buf
 operator|.
 name|append
 argument_list|(
-literal|" DROP FOREIGN KEY "
+literal|" DROP CONSTRAINT "
 argument_list|)
 expr_stmt|;
 name|buf

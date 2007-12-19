@@ -137,6 +137,8 @@ argument_list|,
 name|columnNew
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendPrefix
@@ -215,6 +217,8 @@ argument_list|,
 name|column
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendPrefix
