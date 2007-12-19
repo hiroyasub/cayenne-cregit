@@ -255,10 +255,24 @@ name|CayenneCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
-name|MergerFactoryTest
+name|MergerFactoryTestDisabled
 extends|extends
 name|CayenneCase
 block|{
@@ -316,6 +330,19 @@ argument_list|(
 literal|"testmap"
 argument_list|)
 expr_stmt|;
+comment|// clone the DataMap so that we can manipulate it without worries
+name|map
+operator|=
+operator|(
+name|DataMap
+operator|)
+name|Util
+operator|.
+name|cloneViaSerialization
+argument_list|(
+name|map
+argument_list|)
+expr_stmt|;
 name|filterDataMap
 argument_list|(
 name|node
@@ -368,7 +395,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testAddAndDropColumnToDb
+name|XXtestAddAndDropColumnToDb
 parameter_list|()
 throws|throws
 name|Exception
@@ -484,7 +511,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testChangeVarcharSizeToDb
+name|XXtestChangeVarcharSizeToDb
 parameter_list|()
 throws|throws
 name|Exception
@@ -632,7 +659,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testMultipleTokensToDb
+name|XXtestMultipleTokensToDb
 parameter_list|()
 throws|throws
 name|Exception
@@ -1162,7 +1189,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testAddForeignKeyWithTable
+name|XXtestAddForeignKeyWithTable
 parameter_list|()
 throws|throws
 name|Exception
@@ -1565,7 +1592,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testAddForeignKeyAfterTable
+name|XXtestAddForeignKeyAfterTable
 parameter_list|()
 throws|throws
 name|Exception
