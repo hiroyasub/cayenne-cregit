@@ -23,6 +23,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectId
 import|;
 end_import
@@ -689,6 +701,17 @@ name|ObjRelationship
 name|relationship
 parameter_list|)
 block|{
+name|ObjEntity
+name|targetEntity
+init|=
+operator|(
+name|ObjEntity
+operator|)
+name|relationship
+operator|.
+name|getTargetEntity
+argument_list|()
+decl_stmt|;
 comment|// If the map key is null, then we're doing look-ups by actual object key.
 if|if
 condition|(
@@ -704,7 +727,7 @@ comment|// If it's a multi-column key, then the return type is always ObjectId.
 name|DbEntity
 name|dbEntity
 init|=
-name|objEntity
+name|targetEntity
 operator|.
 name|getDbEntity
 argument_list|()
@@ -739,7 +762,8 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|// If it's a single column key or no key exists at all, then we really don't know what the key type is,
+comment|// If it's a single column key or no key exists at all, then we really don't
+comment|// know what the key type is,
 comment|// so default to Object.
 return|return
 name|Object
@@ -750,15 +774,15 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|// If the map key is a non-default attribute, then fetch the attributue and return its type.
-specifier|final
+comment|// If the map key is a non-default attribute, then fetch the attribute and return
+comment|// its type.
 name|ObjAttribute
 name|attribute
 init|=
 operator|(
 name|ObjAttribute
 operator|)
-name|objEntity
+name|targetEntity
 operator|.
 name|getAttribute
 argument_list|(
@@ -768,6 +792,28 @@ name|getMapKey
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|attribute
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Invalid map key '"
+operator|+
+name|relationship
+operator|.
+name|getMapKey
+argument_list|()
+operator|+
+literal|"', no matching attribute found"
+argument_list|)
+throw|;
+block|}
 return|return
 name|attribute
 operator|.
