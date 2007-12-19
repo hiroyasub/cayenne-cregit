@@ -252,10 +252,7 @@ name|objects
 parameter_list|,
 name|List
 argument_list|<
-name|Comparator
-argument_list|<
-name|Object
-argument_list|>
+name|Ordering
 argument_list|>
 name|orderings
 parameter_list|)
