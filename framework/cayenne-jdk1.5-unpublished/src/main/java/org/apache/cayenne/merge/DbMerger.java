@@ -292,6 +292,18 @@ specifier|private
 name|MergerFactory
 name|factory
 decl_stmt|;
+specifier|public
+name|boolean
+name|includeTableName
+parameter_list|(
+name|String
+name|tableName
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
 comment|/**      * Create and return a {@link List} of {@link MergerToken}s to alter the given      * {@link DataNode} to match the given {@link DataMap}      */
 specifier|public
 name|List
@@ -453,6 +465,17 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|includeTableName
+argument_list|(
+name|tableName
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
 comment|// look for table
 name|DbEntity
 name|detectedEntity
@@ -545,7 +568,44 @@ expr_stmt|;
 block|}
 comment|// drop table
 comment|// TODO: support drop table. currently, too many tables are marked for drop
-comment|/*              * for (Iterator it = dbEntityToDropByName.values().iterator(); it.hasNext();) {              * DbEntity e = (DbEntity) it.next();              * tokens.addToken(factory.createDropTable(e)); }              */
+for|for
+control|(
+name|DbEntity
+name|e
+range|:
+name|dbEntityToDropByName
+operator|.
+name|values
+argument_list|()
+control|)
+block|{
+if|if
+condition|(
+operator|!
+name|includeTableName
+argument_list|(
+name|e
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
+name|tokens
+operator|.
+name|add
+argument_list|(
+name|factory
+operator|.
+name|createDropTableToDb
+argument_list|(
+name|e
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
