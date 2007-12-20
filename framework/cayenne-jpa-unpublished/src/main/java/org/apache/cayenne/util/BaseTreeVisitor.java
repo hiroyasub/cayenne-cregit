@@ -66,6 +66,11 @@ name|HierarchicalTreeVisitor
 block|{
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|HierarchicalTreeVisitor
+argument_list|>
 name|childVisitors
 decl_stmt|;
 specifier|protected
@@ -115,6 +120,9 @@ name|ProjectPath
 name|path
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|childType
 parameter_list|)
 block|{
@@ -136,9 +144,6 @@ block|}
 name|HierarchicalTreeVisitor
 name|childVisitor
 init|=
-operator|(
-name|HierarchicalTreeVisitor
-operator|)
 name|childVisitors
 operator|.
 name|get
@@ -189,6 +194,9 @@ name|void
 name|addChildVisitor
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|childClass
 parameter_list|,
 name|HierarchicalTreeVisitor
@@ -206,6 +214,11 @@ name|childVisitors
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|HierarchicalTreeVisitor
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

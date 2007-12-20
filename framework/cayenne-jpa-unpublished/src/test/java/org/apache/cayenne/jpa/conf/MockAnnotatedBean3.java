@@ -131,6 +131,9 @@ name|OneToMany
 comment|// no collection type - must result in a failure
 specifier|protected
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|toBean2s2
 decl_stmt|;
 comment|// date w/o Temporal annotation must resolve to TIMESTAMP

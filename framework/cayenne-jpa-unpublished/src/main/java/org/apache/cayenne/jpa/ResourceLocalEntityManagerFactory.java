@@ -228,6 +228,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Creates a new resource-local EntityManager with the specified map of properties.      * Returns a new EntityManager instance every time it is invoked. The      * {@link EntityManager#isOpen()} method will return true of the returned instance.      * Parameter map is ignored as Cayenne provider defines no properties for      * EntityManager as of now.      *       * @return a new EntityManager instance.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|EntityManager
 name|createEntityManager

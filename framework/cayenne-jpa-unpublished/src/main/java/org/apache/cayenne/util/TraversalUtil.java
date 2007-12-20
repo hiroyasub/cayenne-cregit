@@ -139,6 +139,9 @@ index|[]
 name|traversableGetters
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|nodeType
 parameter_list|)
 block|{
@@ -266,6 +269,9 @@ name|ClassTraversalDescriptor
 name|getDescriptor
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|nodeType
 parameter_list|)
 block|{
@@ -410,6 +416,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|childTypes
 init|=
@@ -499,10 +508,16 @@ name|Collection
 condition|)
 block|{
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|children
 init|=
 operator|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|child
 decl_stmt|;
@@ -568,6 +583,9 @@ class|class
 name|ClassTraversalDescriptor
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|traversableChildTypes
 decl_stmt|;
@@ -622,6 +640,9 @@ operator|++
 control|)
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 init|=
 name|traversableChildGetters
@@ -702,6 +723,9 @@ expr_stmt|;
 block|}
 block|}
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|getTraversableChildTypes
 parameter_list|()

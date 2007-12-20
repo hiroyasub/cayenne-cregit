@@ -155,6 +155,11 @@ name|parentEntity
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 decl_stmt|;
 specifier|public
@@ -162,6 +167,11 @@ name|Query
 name|createQuery
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 block|{

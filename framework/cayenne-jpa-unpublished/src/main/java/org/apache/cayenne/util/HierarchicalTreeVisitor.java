@@ -66,6 +66,9 @@ name|ProjectPath
 name|path
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|childType
 parameter_list|)
 function_decl|;

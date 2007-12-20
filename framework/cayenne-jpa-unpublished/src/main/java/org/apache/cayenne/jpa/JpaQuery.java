@@ -421,6 +421,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Execute a SELECT query and return the query results as a List.      *       * @return a list of the results      * @throws IllegalStateException if called for an EJB QL UPDATE or DELETE statement      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
 name|getResultList
@@ -518,6 +523,9 @@ name|getSingleResult
 parameter_list|()
 block|{
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|rows
 init|=
 name|getResultList

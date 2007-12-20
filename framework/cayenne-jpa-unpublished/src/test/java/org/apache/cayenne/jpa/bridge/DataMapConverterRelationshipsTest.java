@@ -790,6 +790,9 @@ name|DataMap
 name|load
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 modifier|...
 name|classes
 parameter_list|)
@@ -817,6 +820,9 @@ decl_stmt|;
 for|for
 control|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|c
 range|:
 name|classes
@@ -857,9 +863,6 @@ name|hasFailures
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// PrintWriter out = new PrintWriter(System.out);
-comment|// context.getEntityMap().encodeAsXML(new XMLEncoder(out, "\t"));
-comment|// out.flush();
 name|DataMap
 name|dataMap
 init|=

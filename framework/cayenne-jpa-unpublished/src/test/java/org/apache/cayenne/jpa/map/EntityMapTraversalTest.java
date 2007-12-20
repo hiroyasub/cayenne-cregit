@@ -308,10 +308,16 @@ name|HierarchicalTreeVisitor
 block|{
 specifier|protected
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|visitedNodes
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|public
@@ -322,6 +328,9 @@ name|ProjectPath
 name|path
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|childType
 parameter_list|)
 block|{

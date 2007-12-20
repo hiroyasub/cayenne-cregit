@@ -181,6 +181,9 @@ block|{
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|deletedObjects
 parameter_list|()
 block|{
@@ -232,6 +235,9 @@ return|;
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|modifiedObjects
 parameter_list|()
 block|{
@@ -240,10 +246,16 @@ literal|null
 return|;
 block|}
 specifier|public
-name|Persistent
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|newObject
 parameter_list|(
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|persistentClass
 parameter_list|)
 block|{
@@ -253,6 +265,9 @@ return|;
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|newObjects
 parameter_list|()
 block|{
@@ -274,6 +289,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|performQuery
 parameter_list|(
 name|Query
@@ -352,6 +370,9 @@ block|{
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|uncommittedObjects
 parameter_list|()
 block|{

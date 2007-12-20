@@ -125,6 +125,9 @@ argument_list|)
 return|;
 block|}
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|c
 init|=
 name|findLoadedClass

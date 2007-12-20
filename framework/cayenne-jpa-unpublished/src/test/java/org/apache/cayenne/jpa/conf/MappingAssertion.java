@@ -4434,6 +4434,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|CascadeType
+argument_list|>
 name|cascades1It
 init|=
 name|cascades
@@ -4560,6 +4563,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|CascadeType
+argument_list|>
 name|cascades2It
 init|=
 name|a3

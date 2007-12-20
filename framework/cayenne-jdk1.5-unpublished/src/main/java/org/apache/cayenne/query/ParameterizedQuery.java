@@ -37,7 +37,6 @@ extends|extends
 name|Query
 block|{
 comment|/**      * Creates a new query based on current query as a template, and using a Map of named      * parameters. In case of select queries, it is up to the implementing query to name      * the new query to avoid cache key conflicts.      */
-specifier|public
 name|Query
 name|createQuery
 parameter_list|(

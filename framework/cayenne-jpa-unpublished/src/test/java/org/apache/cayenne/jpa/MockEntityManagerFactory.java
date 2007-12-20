@@ -70,6 +70,11 @@ name|persistenceUnitName
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|properties
 decl_stmt|;
 specifier|protected
@@ -88,6 +93,11 @@ name|String
 name|persistenceUnitName
 parameter_list|,
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|properties
 parameter_list|)
 block|{
@@ -136,6 +146,11 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|EntityManager
 name|createEntityManager
@@ -174,6 +189,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|getProperties
 parameter_list|()
 block|{

@@ -178,6 +178,9 @@ literal|"xml-samples/persistence1.xml"
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|JpaUnit
+argument_list|>
 name|units
 init|=
 name|parser
@@ -388,6 +391,9 @@ literal|"xml-samples/persistence-schema-headers.xml"
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|JpaUnit
+argument_list|>
 name|units
 init|=
 name|parser
@@ -596,6 +602,9 @@ literal|"xml-samples/persistence2.xml"
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|JpaUnit
+argument_list|>
 name|units
 init|=
 name|parser
@@ -622,6 +631,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|JpaUnit
+argument_list|>
 name|it
 init|=
 name|units
@@ -647,9 +659,6 @@ block|{
 name|JpaUnit
 name|info
 init|=
-operator|(
-name|JpaUnit
-operator|)
 name|it
 operator|.
 name|next
@@ -764,6 +773,9 @@ literal|"xml-samples/persistence3.xml"
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|JpaUnit
+argument_list|>
 name|units
 init|=
 name|parser
@@ -792,9 +804,6 @@ expr_stmt|;
 name|JpaUnit
 name|info
 init|=
-operator|(
-name|JpaUnit
-operator|)
 name|units
 operator|.
 name|iterator
@@ -979,6 +988,9 @@ literal|"xml-samples/persistence-schema-headers.xml"
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|JpaUnit
+argument_list|>
 name|units
 init|=
 name|parser
@@ -1007,9 +1019,6 @@ expr_stmt|;
 name|JpaUnit
 name|info
 init|=
-operator|(
-name|JpaUnit
-operator|)
 name|units
 operator|.
 name|iterator
@@ -1028,7 +1037,7 @@ name|getPersistenceUnitName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// JTA is the default when type is ommitted
+comment|// JTA is the default when type is omitted
 name|assertEquals
 argument_list|(
 name|PersistenceUnitTransactionType

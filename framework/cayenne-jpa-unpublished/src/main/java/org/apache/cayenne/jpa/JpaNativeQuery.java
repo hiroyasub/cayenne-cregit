@@ -90,6 +90,9 @@ name|String
 name|sqlString
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|resultClass
 parameter_list|)
 block|{

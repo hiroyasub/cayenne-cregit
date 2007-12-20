@@ -758,6 +758,11 @@ name|void
 name|addProperties
 parameter_list|(
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|properties
 parameter_list|)
 block|{

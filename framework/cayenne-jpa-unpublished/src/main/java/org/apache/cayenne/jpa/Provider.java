@@ -918,6 +918,11 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Called by Persistence class when an EntityManagerFactory is to be created. Creates      * a {@link JpaUnit} and calls      * {@link #createContainerEntityManagerFactory(PersistenceUnitInfo, Map)}.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|EntityManagerFactory
 name|createEntityManagerFactory
@@ -1081,6 +1086,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Called by the container when an EntityManagerFactory is to be created. Returns a      * {@link EntityManagerFactory} which is a DataDomain wrapper. Note that Cayenne      * provider will ignore all but 'javax.persistence.transactionType' property in the      * passed property map.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|synchronized
 name|EntityManagerFactory
@@ -1566,6 +1576,11 @@ name|PersistenceUnitInfo
 name|unit
 parameter_list|,
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|overrides
 parameter_list|)
 block|{
@@ -1898,6 +1913,9 @@ try|try
 block|{
 comment|// adapter class is not enhanced, so use a normal class loader
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|dbAdapterClass
 init|=
 name|Class

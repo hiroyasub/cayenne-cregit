@@ -87,6 +87,9 @@ annotation_defn|@interface
 name|TreeNodeChild
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|type
 parameter_list|()
 default|default

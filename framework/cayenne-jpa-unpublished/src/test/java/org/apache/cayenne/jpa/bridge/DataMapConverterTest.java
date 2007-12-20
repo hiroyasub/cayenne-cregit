@@ -623,6 +623,9 @@ name|context
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|EntityListener
+argument_list|>
 name|entityListeners
 init|=
 name|cayenneMap
@@ -641,6 +644,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|EntityListener
+argument_list|>
 name|defaultListeners
 init|=
 name|cayenneMap
@@ -1121,6 +1127,9 @@ name|entity
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|EntityListener
+argument_list|>
 name|entityListeners
 init|=
 name|entity

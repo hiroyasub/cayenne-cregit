@@ -125,6 +125,9 @@ name|void
 name|checkEntityType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 parameter_list|)
 throws|throws
@@ -237,15 +240,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|protected
-name|void
-name|enhance
-parameter_list|(
-name|Class
-name|entityClass
-parameter_list|)
-block|{
-block|}
 specifier|public
 name|void
 name|clear
@@ -307,6 +301,11 @@ name|name
 argument_list|)
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|Query
 name|createNativeQuery

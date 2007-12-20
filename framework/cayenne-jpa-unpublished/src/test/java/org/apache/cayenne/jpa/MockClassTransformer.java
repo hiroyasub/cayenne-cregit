@@ -105,6 +105,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|getTransformed
 parameter_list|()
 block|{
