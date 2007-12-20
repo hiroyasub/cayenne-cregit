@@ -791,14 +791,13 @@ block|}
 comment|// take a shortcut for simple properties
 if|if
 condition|(
+operator|!
 name|path
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"."
 argument_list|)
-operator|<
-literal|0
 condition|)
 block|{
 return|return

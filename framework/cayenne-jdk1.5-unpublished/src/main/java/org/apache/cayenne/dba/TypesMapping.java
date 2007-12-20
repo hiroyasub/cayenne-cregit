@@ -2464,12 +2464,10 @@ if|if
 condition|(
 name|uppercase
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 name|jdbcName
 argument_list|)
-operator|>=
-literal|0
 condition|)
 return|return
 operator|(

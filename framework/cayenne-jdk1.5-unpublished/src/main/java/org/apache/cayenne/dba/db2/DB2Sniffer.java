@@ -104,12 +104,10 @@ operator|.
 name|toUpperCase
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"DB2"
 argument_list|)
-operator|>=
-literal|0
 condition|?
 operator|new
 name|DB2Adapter

@@ -214,12 +214,10 @@ if|else if
 condition|(
 name|oldServerName
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"UntitledObjEntity"
 argument_list|)
-operator|>=
-literal|0
 condition|)
 block|{
 comment|// update without user interaction
@@ -287,12 +285,10 @@ literal|0
 operator|||
 name|oldClientName
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"UntitledObjEntity"
 argument_list|)
-operator|>=
-literal|0
 condition|)
 block|{
 comment|// update without user interaction
