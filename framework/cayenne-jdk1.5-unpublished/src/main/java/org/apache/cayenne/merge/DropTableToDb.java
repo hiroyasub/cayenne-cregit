@@ -31,16 +31,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -124,26 +114,8 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-name|sqls
-operator|.
-name|addAll
-argument_list|(
-name|adapter
-operator|.
-name|getPkGenerator
-argument_list|()
-operator|.
-name|dropAutoPkStatements
-argument_list|(
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
-name|entity
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|// TODO: fix. some adapters drop the complete AUTO_PK_SUPPORT here
+comment|/*         sqls.addAll(adapter.getPkGenerator().dropAutoPkStatements(                 Collections.singletonList(entity)));          */
 name|sqls
 operator|.
 name|add
