@@ -344,7 +344,7 @@ operator|.
 name|toString
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"<url value=\""
 operator|+
@@ -355,8 +355,6 @@ argument_list|()
 operator|+
 literal|"\"/>"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -384,7 +382,7 @@ operator|.
 name|toString
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"<driver project-version=\""
 operator|+
@@ -401,8 +399,6 @@ argument_list|()
 operator|+
 literal|"\">"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -430,7 +426,7 @@ operator|.
 name|toString
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"userName=\""
 operator|+
@@ -441,8 +437,6 @@ argument_list|()
 operator|+
 literal|"\""
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -470,7 +464,7 @@ operator|.
 name|toString
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"password=\""
 operator|+
@@ -481,8 +475,6 @@ argument_list|()
 operator|+
 literal|"\""
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

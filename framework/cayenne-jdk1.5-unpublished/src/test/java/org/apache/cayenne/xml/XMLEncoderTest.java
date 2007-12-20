@@ -126,12 +126,10 @@ operator|.
 name|toUpperCase
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"WINDOWS"
 argument_list|)
-operator|>=
-literal|0
 condition|)
 block|{
 name|windows

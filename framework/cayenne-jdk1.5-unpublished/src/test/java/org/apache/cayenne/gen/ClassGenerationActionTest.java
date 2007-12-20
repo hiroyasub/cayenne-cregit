@@ -313,12 +313,10 @@ name|superclass
 argument_list|,
 name|superclass
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"package org.example.auto;"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -327,12 +325,10 @@ name|superclass
 argument_list|,
 name|superclass
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"import org.apache.cayenne.CayenneDataObject;"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 name|String
@@ -351,12 +347,10 @@ name|subclass
 argument_list|,
 name|subclass
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"package org.example;"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -365,12 +359,10 @@ name|subclass
 argument_list|,
 name|subclass
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"import org.example.auto._TestClass1;"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -514,12 +506,10 @@ name|superclass
 argument_list|,
 name|superclass
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"import java.util.Map;"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

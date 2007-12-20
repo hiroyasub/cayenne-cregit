@@ -170,12 +170,10 @@ operator|.
 name|getSubjectName
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"cacheXYZ"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 name|assertEquals

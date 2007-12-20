@@ -273,12 +273,10 @@ name|assertTrue
 argument_list|(
 name|contents
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 name|TABLE1_BY
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
