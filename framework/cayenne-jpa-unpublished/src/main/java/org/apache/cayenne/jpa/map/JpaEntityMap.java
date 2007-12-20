@@ -492,10 +492,10 @@ literal|"</entity-mappings>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns true if a given managed class is already loaded.      */
+comment|/**      * Returns an existing managed class, or null if no match is found.      */
 specifier|public
-name|boolean
-name|containsManagedClass
+name|JpaManagedClass
+name|getManagedClass
 parameter_list|(
 name|String
 name|className
@@ -545,7 +545,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|true
+name|object
 return|;
 block|}
 block|}
@@ -579,7 +579,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|true
+name|object
 return|;
 block|}
 block|}
@@ -613,13 +613,13 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|true
+name|object
 return|;
 block|}
 block|}
 block|}
 return|return
-literal|false
+literal|null
 return|;
 block|}
 comment|/**      * Compiles and returns a map of managed class descriptors that includes descriptors      * for entities, managed superclasses and embeddables. Note that class name key in the      * map uses slashes, not dots, to separate package components.      */

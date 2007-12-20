@@ -1255,13 +1255,15 @@ operator|.
 name|getEntityMap
 argument_list|()
 operator|.
-name|containsManagedClass
+name|getManagedClass
 argument_list|(
 name|managedClass
 operator|.
 name|getName
 argument_list|()
 argument_list|)
+operator|!=
+literal|null
 condition|)
 block|{
 name|context
