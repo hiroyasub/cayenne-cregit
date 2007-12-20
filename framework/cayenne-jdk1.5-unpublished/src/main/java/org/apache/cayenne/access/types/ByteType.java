@@ -169,8 +169,9 @@ operator|)
 condition|?
 literal|null
 else|:
-operator|new
 name|Byte
+operator|.
+name|valueOf
 argument_list|(
 name|b
 argument_list|)

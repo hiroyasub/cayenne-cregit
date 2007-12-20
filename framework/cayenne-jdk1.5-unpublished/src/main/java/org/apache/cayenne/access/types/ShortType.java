@@ -126,8 +126,9 @@ operator|)
 condition|?
 literal|null
 else|:
-operator|new
 name|Short
+operator|.
+name|valueOf
 argument_list|(
 name|s
 argument_list|)
@@ -169,8 +170,9 @@ operator|)
 condition|?
 literal|null
 else|:
-operator|new
 name|Short
+operator|.
+name|valueOf
 argument_list|(
 name|s
 argument_list|)

@@ -1226,8 +1226,9 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|new
 name|Byte
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|byte
@@ -1266,8 +1267,9 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|new
 name|Short
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|short
@@ -1287,8 +1289,9 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|char

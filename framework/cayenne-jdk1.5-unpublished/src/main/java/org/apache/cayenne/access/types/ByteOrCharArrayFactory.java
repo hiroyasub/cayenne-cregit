@@ -296,8 +296,9 @@ operator|>
 literal|0
 operator|)
 condition|?
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|string
 operator|.
@@ -564,8 +565,9 @@ index|[
 name|i
 index|]
 operator|=
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|string
 operator|.
@@ -754,8 +756,9 @@ index|[
 name|i
 index|]
 operator|=
-operator|new
 name|Byte
+operator|.
+name|valueOf
 argument_list|(
 name|bytes
 index|[

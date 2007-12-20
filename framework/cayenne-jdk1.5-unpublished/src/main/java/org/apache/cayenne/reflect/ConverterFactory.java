@@ -320,8 +320,9 @@ operator|.
 name|isPrimitive
 argument_list|()
 condition|?
-operator|new
 name|Byte
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|byte
@@ -386,8 +387,9 @@ operator|.
 name|isPrimitive
 argument_list|()
 condition|?
-operator|new
 name|Short
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|short
@@ -452,8 +454,9 @@ operator|.
 name|isPrimitive
 argument_list|()
 condition|?
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|char
@@ -484,8 +487,9 @@ name|toString
 argument_list|()
 decl_stmt|;
 return|return
-operator|new
 name|Character
+operator|.
+name|valueOf
 argument_list|(
 name|string
 operator|.
