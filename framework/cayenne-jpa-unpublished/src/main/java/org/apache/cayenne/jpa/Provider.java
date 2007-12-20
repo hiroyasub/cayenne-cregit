@@ -1248,7 +1248,7 @@ operator|.
 name|getEntityMap
 argument_list|()
 operator|.
-name|getMangedClasses
+name|getManagedClasses
 argument_list|()
 decl_stmt|;
 name|unit

@@ -630,7 +630,7 @@ name|String
 argument_list|,
 name|JpaClassDescriptor
 argument_list|>
-name|getMangedClasses
+name|getManagedClasses
 parameter_list|()
 block|{
 name|Map
