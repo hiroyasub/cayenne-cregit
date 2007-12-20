@@ -849,8 +849,9 @@ name|parameters
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|position
 argument_list|)

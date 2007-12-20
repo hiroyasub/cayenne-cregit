@@ -270,8 +270,9 @@ name|entityName
 argument_list|,
 name|key
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|value
 argument_list|)

@@ -438,8 +438,9 @@ name|context
 argument_list|,
 name|dataObjectClass
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|pk
 argument_list|)
@@ -593,8 +594,9 @@ name|context
 argument_list|,
 name|objEntityName
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|pk
 argument_list|)

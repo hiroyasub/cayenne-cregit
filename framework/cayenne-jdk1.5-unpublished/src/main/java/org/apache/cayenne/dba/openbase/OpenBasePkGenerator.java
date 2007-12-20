@@ -225,8 +225,9 @@ name|binPK
 return|;
 block|}
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|pkFromDatabase
 argument_list|(

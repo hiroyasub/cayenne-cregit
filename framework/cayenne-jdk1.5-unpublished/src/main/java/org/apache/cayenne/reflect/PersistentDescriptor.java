@@ -161,8 +161,9 @@ specifier|final
 name|Integer
 name|TRANSIENT_STATE
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|PersistenceState
 operator|.
@@ -174,8 +175,9 @@ specifier|final
 name|Integer
 name|HOLLOW_STATE
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|PersistenceState
 operator|.
@@ -187,8 +189,9 @@ specifier|final
 name|Integer
 name|COMMITTED_STATE
 init|=
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|PersistenceState
 operator|.

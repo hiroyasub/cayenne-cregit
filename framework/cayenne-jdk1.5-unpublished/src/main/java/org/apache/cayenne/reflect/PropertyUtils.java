@@ -1247,8 +1247,9 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|0
 argument_list|)

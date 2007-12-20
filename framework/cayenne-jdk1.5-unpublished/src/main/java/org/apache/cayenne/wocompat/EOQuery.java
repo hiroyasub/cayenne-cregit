@@ -1185,8 +1185,9 @@ name|put
 argument_list|(
 name|IS_EQUAL_TO
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1200,8 +1201,9 @@ name|put
 argument_list|(
 name|IS_NOT_EQUAL_TO
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1215,8 +1217,9 @@ name|put
 argument_list|(
 name|IS_LIKE
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1230,8 +1233,9 @@ name|put
 argument_list|(
 name|CASE_INSENSITIVE_LIKE
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1245,8 +1249,9 @@ name|put
 argument_list|(
 name|IS_LESS_THAN
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1260,8 +1265,9 @@ name|put
 argument_list|(
 name|IS_LESS_THAN_OR_EQUAL_TO
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1275,8 +1281,9 @@ name|put
 argument_list|(
 name|IS_GREATER_THAN
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.
@@ -1290,8 +1297,9 @@ name|put
 argument_list|(
 name|IS_GREATER_THAN_OR_EQUAL_TO
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|Expression
 operator|.

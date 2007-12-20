@@ -879,8 +879,9 @@ name|object
 argument_list|,
 name|indexProperty
 argument_list|,
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|index
 argument_list|)

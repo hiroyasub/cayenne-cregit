@@ -409,8 +409,9 @@ name|typesMap
 operator|.
 name|get
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|type
 argument_list|)
@@ -636,8 +637,9 @@ name|types
 operator|.
 name|put
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|currentType
 argument_list|)
