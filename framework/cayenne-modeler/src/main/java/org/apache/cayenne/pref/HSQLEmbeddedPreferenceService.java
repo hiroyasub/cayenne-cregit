@@ -1396,12 +1396,10 @@ operator|.
 name|toLowerCase
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"windows"
 argument_list|)
-operator|>=
-literal|0
 condition|)
 block|{
 name|lockFile
