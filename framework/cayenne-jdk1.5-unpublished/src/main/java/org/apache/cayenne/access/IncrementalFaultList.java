@@ -2405,7 +2405,7 @@ block|}
 block|}
 comment|/**      * @see java.util.List#set(int, Object)      */
 specifier|public
-name|Object
+name|E
 name|set
 parameter_list|(
 name|int
@@ -2426,6 +2426,9 @@ name|elements
 init|)
 block|{
 return|return
+operator|(
+name|E
+operator|)
 name|elements
 operator|.
 name|set
