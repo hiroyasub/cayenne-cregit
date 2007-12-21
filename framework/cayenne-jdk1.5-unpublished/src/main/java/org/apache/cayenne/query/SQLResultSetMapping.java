@@ -64,6 +64,9 @@ name|name
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|columnResults
 decl_stmt|;
 specifier|public
@@ -112,6 +115,9 @@ block|}
 comment|/**      * Returns a collection of mapped columns.      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getColumnResults
 parameter_list|()
 block|{
@@ -147,6 +153,9 @@ name|columnResults
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 literal|3
 argument_list|)

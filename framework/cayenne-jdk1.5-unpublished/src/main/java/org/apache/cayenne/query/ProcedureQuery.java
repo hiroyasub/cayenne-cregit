@@ -261,7 +261,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a ProcedureQuery based on a stored procedure.      *<p>      * Performance Note: with current EntityResolver implementation it is preferrable to      * use Procedure object instead of String as a query root. String root can cause      * unneeded EntityResolver reindexing on every call. See this mailing list thread:<a      * href="http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html">      * http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html</a>      *</p>      *       * @param procedureName A name of the stored procedure. For this query to work, a      *            procedure with this name must be mapped in Cayenne.      */
+comment|/**      * Creates a ProcedureQuery based on a stored procedure.      *<p>      * Performance Note: with current EntityResolver implementation it is preferable to      * use Procedure object instead of String as a query root. String root can cause      * unneeded EntityResolver reindexing on every call. See this mailing list thread:<a      * href="http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html">      * http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html</a>      *</p>      *       * @param procedureName A name of the stored procedure. For this query to work, a      *            procedure with this name must be mapped in Cayenne.      */
 specifier|public
 name|ProcedureQuery
 parameter_list|(
@@ -291,6 +291,9 @@ name|Procedure
 name|procedure
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|resultType
 parameter_list|)
 block|{
@@ -306,7 +309,7 @@ operator|=
 name|resultType
 expr_stmt|;
 block|}
-comment|/**      *<p>      * Performance Note: with current EntityResolver implementation it is preferrable to      * use Procedure object instead of String as a query root. String root can cause      * unneeded EntityResolver reindexing on every call. See this mailing list thread:<a      * href="http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html">      * http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html</a>      *</p>      *       * @since 1.1      */
+comment|/**      *<p>      * Performance Note: with current EntityResolver implementation it is preferable to      * use Procedure object instead of String as a query root. String root can cause      * unneeded EntityResolver reindexing on every call. See this mailing list thread:<a      * href="http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html">      * http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html</a>      *</p>      *       * @since 1.1      */
 specifier|public
 name|ProcedureQuery
 parameter_list|(
@@ -314,6 +317,9 @@ name|String
 name|procedureName
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|resultType
 parameter_list|)
 block|{
@@ -475,6 +481,11 @@ name|void
 name|initWithProperties
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|properties
 parameter_list|)
 block|{
