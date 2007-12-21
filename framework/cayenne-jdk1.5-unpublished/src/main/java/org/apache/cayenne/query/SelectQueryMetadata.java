@@ -119,11 +119,11 @@ else|else
 block|{
 comment|// create a unique key based on entity, qualifier, ordering and fetch
 comment|// limit
-name|StringBuffer
+name|StringBuilder
 name|key
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|ObjEntity

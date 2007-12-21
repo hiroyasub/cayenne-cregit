@@ -222,7 +222,7 @@ name|name
 operator|=
 name|name
 expr_stmt|;
-comment|// copy parameters map (among other things to make hessian serilaization work).
+comment|// copy parameters map (among other things to make hessian serialization work).
 if|if
 condition|(
 name|parameters
