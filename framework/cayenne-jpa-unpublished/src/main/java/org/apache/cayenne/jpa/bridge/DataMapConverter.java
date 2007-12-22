@@ -2970,7 +2970,7 @@ operator|.
 name|getAttributes
 argument_list|()
 operator|.
-name|getId
+name|getIdForColumnName
 argument_list|(
 name|jpaJoin
 operator|.
