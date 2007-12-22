@@ -461,7 +461,6 @@ name|commit
 argument_list|()
 expr_stmt|;
 block|}
-comment|// TODO: andrus 8/30/2006 - fails
 specifier|public
 name|void
 name|testMapProperties
