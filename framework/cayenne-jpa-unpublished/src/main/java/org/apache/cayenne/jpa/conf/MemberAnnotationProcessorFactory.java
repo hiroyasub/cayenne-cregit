@@ -2522,7 +2522,7 @@ condition|)
 block|{
 operator|(
 operator|(
-name|JpaManyToOne
+name|JpaManyToMany
 operator|)
 name|attribute
 operator|)
