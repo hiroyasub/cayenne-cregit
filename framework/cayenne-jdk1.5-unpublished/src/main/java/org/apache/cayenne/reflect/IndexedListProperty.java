@@ -115,10 +115,16 @@ throws|throws
 name|PropertyException
 block|{
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|unordered
 init|=
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|super
 operator|.

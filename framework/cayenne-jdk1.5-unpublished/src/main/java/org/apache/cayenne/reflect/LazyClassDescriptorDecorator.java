@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ClassDescriptor wrapper that compiles decoarated descriptor lazily on first access.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A ClassDescriptor wrapper that compiles decorated descriptor lazily on first access.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
