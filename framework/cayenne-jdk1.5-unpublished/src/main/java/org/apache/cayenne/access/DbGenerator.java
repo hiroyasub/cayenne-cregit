@@ -479,6 +479,9 @@ name|map
 argument_list|,
 name|Collections
 operator|.
+expr|<
+name|DbEntity
+operator|>
 name|emptyList
 argument_list|()
 argument_list|)
@@ -495,6 +498,9 @@ name|DataMap
 name|map
 parameter_list|,
 name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
 name|excludedEntities
 parameter_list|)
 block|{
@@ -521,6 +527,9 @@ name|DataMap
 name|map
 parameter_list|,
 name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
 name|excludedEntities
 parameter_list|,
 name|DataDomain
