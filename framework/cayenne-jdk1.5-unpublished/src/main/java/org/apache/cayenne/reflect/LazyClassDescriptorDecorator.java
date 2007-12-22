@@ -174,6 +174,9 @@ return|;
 block|}
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getObjectClass
 parameter_list|()
 block|{
@@ -190,6 +193,9 @@ block|}
 comment|/**      * @deprecated since 3.0. Use {@link #visitProperties(PropertyVisitor)} method      *             instead.      */
 specifier|public
 name|Iterator
+argument_list|<
+name|Property
+argument_list|>
 name|getProperties
 parameter_list|()
 block|{
@@ -205,6 +211,9 @@ return|;
 block|}
 specifier|public
 name|Iterator
+argument_list|<
+name|Property
+argument_list|>
 name|getIdProperties
 parameter_list|()
 block|{
@@ -220,6 +229,9 @@ return|;
 block|}
 specifier|public
 name|Iterator
+argument_list|<
+name|ArcProperty
+argument_list|>
 name|getMapArcProperties
 parameter_list|()
 block|{
@@ -258,6 +270,9 @@ name|ClassDescriptor
 name|getSubclassDescriptor
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|)
 block|{
