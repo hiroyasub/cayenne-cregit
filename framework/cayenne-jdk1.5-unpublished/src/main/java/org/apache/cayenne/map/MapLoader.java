@@ -565,7 +565,7 @@ name|Procedure
 name|procedure
 decl_stmt|;
 specifier|private
-name|QueryBuilder
+name|QueryLoader
 name|queryBuilder
 decl_stmt|;
 specifier|private
@@ -4898,7 +4898,7 @@ block|{
 name|queryBuilder
 operator|=
 operator|(
-name|QueryBuilder
+name|QueryLoader
 operator|)
 name|Class
 operator|.

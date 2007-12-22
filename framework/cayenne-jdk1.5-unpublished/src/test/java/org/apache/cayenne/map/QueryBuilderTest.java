@@ -55,7 +55,7 @@ extends|extends
 name|BasicCase
 block|{
 specifier|protected
-name|QueryBuilder
+name|QueryLoader
 name|builder
 decl_stmt|;
 specifier|protected
@@ -68,7 +68,7 @@ block|{
 name|builder
 operator|=
 operator|new
-name|QueryBuilder
+name|QueryLoader
 argument_list|()
 block|{
 specifier|public
@@ -145,7 +145,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|DB_ENTITY_ROOT
 argument_list|,
@@ -201,7 +201,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|OBJ_ENTITY_ROOT
 argument_list|,
@@ -241,7 +241,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|DATA_MAP_ROOT
 argument_list|,

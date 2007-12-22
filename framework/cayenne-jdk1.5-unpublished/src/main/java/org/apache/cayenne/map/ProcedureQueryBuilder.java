@@ -51,7 +51,7 @@ begin_class
 class|class
 name|ProcedureQueryBuilder
 extends|extends
-name|QueryBuilder
+name|QueryLoader
 block|{
 comment|/**      * Returns a ProcedureQuery.      */
 specifier|public

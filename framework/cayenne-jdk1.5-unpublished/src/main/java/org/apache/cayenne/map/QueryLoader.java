@@ -110,14 +110,14 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder that constructs Cayenne queries from abstract configuration information  * defined in cayenne-data-map*.dtd. This abstract builder supports values declared in the  * DTD, allowing subclasses to define their own Query creation logic.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A builder that constructs Cayenne queries from abstract configuration information  * defined in cayenne-data-map*.dtd. This abstract builder supports values declared in the  * DTD, allowing subclasses to define their own Query creation logic.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
 specifier|public
 specifier|abstract
 class|class
-name|QueryBuilder
+name|QueryLoader
 block|{
 specifier|public
 specifier|static

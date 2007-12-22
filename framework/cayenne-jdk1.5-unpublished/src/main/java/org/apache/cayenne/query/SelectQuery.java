@@ -145,7 +145,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|QueryBuilder
+name|QueryLoader
 import|;
 end_import
 
@@ -699,7 +699,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|OBJ_ENTITY_ROOT
 expr_stmt|;
@@ -720,7 +720,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|OBJ_ENTITY_ROOT
 expr_stmt|;
@@ -746,7 +746,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|DB_ENTITY_ROOT
 expr_stmt|;
@@ -772,7 +772,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|PROCEDURE_ROOT
 expr_stmt|;
@@ -798,7 +798,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryBuilder
+name|QueryLoader
 operator|.
 name|JAVA_CLASS_ROOT
 expr_stmt|;

@@ -61,7 +61,7 @@ begin_class
 class|class
 name|SQLTemplateBuilder
 extends|extends
-name|QueryBuilder
+name|QueryLoader
 block|{
 comment|/**      * Builds a SQLTemplate query.      */
 specifier|public

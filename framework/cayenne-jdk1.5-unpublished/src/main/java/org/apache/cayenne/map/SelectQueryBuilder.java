@@ -51,7 +51,7 @@ begin_class
 class|class
 name|SelectQueryBuilder
 extends|extends
-name|QueryBuilder
+name|QueryLoader
 block|{
 comment|/**      * Creates a SelectQuery.      */
 specifier|public
