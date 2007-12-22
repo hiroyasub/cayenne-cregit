@@ -55,7 +55,7 @@ name|cayenne
 operator|.
 name|enhancer
 operator|.
-name|PersistentInterfaceVisitor
+name|PojoVisitor
 import|;
 end_import
 
@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class enhancer used for JPA.  *   * @author Andrus Adamchik  */
+comment|/**  * EnhancerVisitorFactory implementation based on JPA mapping.  *   * @author Andrus Adamchik  * @since 3.0  */
 end_comment
 
 begin_class
@@ -203,13 +203,15 @@ literal|null
 condition|)
 block|{
 comment|// create enhancer chain
-name|PersistentInterfaceVisitor
+name|PojoVisitor
 name|e1
 init|=
 operator|new
-name|PersistentInterfaceVisitor
+name|JpaPojoVisitor
 argument_list|(
 name|out
+argument_list|,
+name|entity
 argument_list|)
 decl_stmt|;
 name|JpaAccessorVisitor
@@ -224,8 +226,7 @@ name|entity
 argument_list|)
 decl_stmt|;
 comment|// this ensures that both enhanced and original classes have compatible
-comment|// serialized
-comment|// format even if no serialVersionUID is defined by the user
+comment|// serialized format even if no serialVersionUID is defined by the user
 name|SerialVersionUIDAdder
 name|e3
 init|=
@@ -266,7 +267,6 @@ argument_list|(
 name|out
 argument_list|)
 decl_stmt|;
-comment|// TODO: andrus 12/16/2007 - setter visitor...
 comment|// this ensures that both enhanced and original classes have compatible
 comment|// serialized
 comment|// format even if no serialVersionUID is defined by the user

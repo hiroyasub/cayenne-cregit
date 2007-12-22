@@ -171,6 +171,7 @@ operator|+
 name|propertyName
 return|;
 block|}
+comment|/**      * Resets helper to process a given class. Must be called repeatedly before each class      * is processed.      */
 specifier|public
 name|void
 name|reset
@@ -196,6 +197,7 @@ literal|";"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Appends an interface to a String array of interfaces, returning the resulting      * expanded array.      */
 specifier|public
 name|String
 index|[]

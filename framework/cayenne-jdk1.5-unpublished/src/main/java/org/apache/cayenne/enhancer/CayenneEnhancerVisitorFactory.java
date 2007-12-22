@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory of enhacing visitors.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * EnhancerVisitorFactory implementation based on Cayenne mapping.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -272,13 +272,15 @@ literal|null
 condition|)
 block|{
 comment|// create enhancer chain
-name|PersistentInterfaceVisitor
+name|PojoVisitor
 name|e1
 init|=
 operator|new
-name|PersistentInterfaceVisitor
+name|CayennePojoVisitor
 argument_list|(
 name|out
+argument_list|,
+name|entity
 argument_list|)
 decl_stmt|;
 name|PersistentAccessorVisitor
@@ -335,7 +337,6 @@ argument_list|(
 name|out
 argument_list|)
 decl_stmt|;
-comment|// TODO: andrus 12/16/2007 - setter visitor...
 comment|// this ensures that both enhanced and original classes have compatible
 comment|// serialized
 comment|// format even if no serialVersionUID is defined by the user

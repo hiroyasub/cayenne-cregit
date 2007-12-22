@@ -352,22 +352,6 @@ name|property
 argument_list|)
 condition|)
 block|{
-comment|// inject fault flag field
-name|helper
-operator|.
-name|createField
-argument_list|(
-name|Boolean
-operator|.
-name|TYPE
-argument_list|,
-literal|"faultResolved_"
-operator|+
-name|property
-argument_list|,
-literal|true
-argument_list|)
-expr_stmt|;
 return|return
 operator|new
 name|GetterVisitor

@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -88,13 +98,14 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Enhances classes passed through the visitor to add {@link Persistent} interface to  * them, and fields and methods to support its implementation.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Enhances classes passed through the visitor, ensuring that the resulting class  * implements {@link Persistent} interface as well as supports lazy faulting.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
-name|PersistentInterfaceVisitor
+name|PojoVisitor
 extends|extends
 name|ClassAdapter
 block|{
@@ -116,7 +127,7 @@ name|EnhancementHelper
 name|helper
 decl_stmt|;
 specifier|public
-name|PersistentInterfaceVisitor
+name|PojoVisitor
 parameter_list|(
 name|ClassVisitor
 name|visitor
@@ -253,7 +264,6 @@ name|void
 name|visitEnd
 parameter_list|()
 block|{
-comment|// per ASM docs, 'visitEnd' is the only correct place to add class members
 name|helper
 operator|.
 name|createProperty
@@ -289,7 +299,41 @@ argument_list|,
 literal|"persistenceState"
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|String
+name|property
+range|:
+name|getLazilyFaultedProperties
+argument_list|()
+control|)
+block|{
+name|helper
+operator|.
+name|createField
+argument_list|(
+name|Boolean
+operator|.
+name|TYPE
+argument_list|,
+literal|"faultResolved_"
+operator|+
+name|property
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
+block|}
+specifier|protected
+specifier|abstract
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|getLazilyFaultedProperties
+parameter_list|()
+function_decl|;
 block|}
 end_class
 
