@@ -221,9 +221,6 @@ argument_list|(
 name|e1
 argument_list|,
 name|entity
-operator|.
-name|getClassDescriptor
-argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// this ensures that both enhanced and original classes have compatible

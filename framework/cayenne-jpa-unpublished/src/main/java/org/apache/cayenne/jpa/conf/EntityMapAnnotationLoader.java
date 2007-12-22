@@ -1317,7 +1317,7 @@ argument_list|(
 name|managedClass
 argument_list|)
 decl_stmt|;
-comment|// initially set access to the map level access - may be overriden below
+comment|// initially set access to the map level access - may be overridden below
 name|descriptor
 operator|.
 name|setAccess

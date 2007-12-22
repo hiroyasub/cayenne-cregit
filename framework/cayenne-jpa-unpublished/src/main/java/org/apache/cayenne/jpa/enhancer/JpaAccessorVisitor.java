@@ -59,7 +59,7 @@ name|jpa
 operator|.
 name|map
 operator|.
-name|JpaClassDescriptor
+name|JpaManagedClass
 import|;
 end_import
 
@@ -102,8 +102,8 @@ extends|extends
 name|AccessorVisitor
 block|{
 specifier|private
-name|JpaClassDescriptor
-name|descriptor
+name|JpaManagedClass
+name|managedClass
 decl_stmt|;
 specifier|public
 name|JpaAccessorVisitor
@@ -111,8 +111,8 @@ parameter_list|(
 name|ClassVisitor
 name|visitor
 parameter_list|,
-name|JpaClassDescriptor
-name|descriptor
+name|JpaManagedClass
+name|managedClass
 parameter_list|)
 block|{
 name|super
@@ -122,9 +122,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|descriptor
+name|managedClass
 operator|=
-name|descriptor
+name|managedClass
 expr_stmt|;
 block|}
 annotation|@
@@ -138,7 +138,7 @@ name|property
 parameter_list|)
 block|{
 return|return
-name|descriptor
+name|managedClass
 operator|.
 name|getAccess
 argument_list|()
@@ -147,9 +147,12 @@ name|AccessType
 operator|.
 name|PROPERTY
 operator|&&
-name|descriptor
+name|managedClass
 operator|.
-name|getProperty
+name|getAttributes
+argument_list|()
+operator|.
+name|getAttribute
 argument_list|(
 name|property
 argument_list|)
@@ -170,7 +173,10 @@ block|{
 name|JpaPropertyDescriptor
 name|propertyDescriptor
 init|=
-name|descriptor
+name|managedClass
+operator|.
+name|getClassDescriptor
+argument_list|()
 operator|.
 name|getProperty
 argument_list|(
