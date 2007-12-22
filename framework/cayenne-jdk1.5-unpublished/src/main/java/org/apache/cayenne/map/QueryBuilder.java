@@ -110,14 +110,55 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder that constructs Cayenne queries from abstract configuration information  * defined in cayenne-data-map*.dtd. This abstract builder supports values declared in the  * DTD, allowing subclasses to define their own Query creation logic.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A builder that constructs Cayenne queries from abstract configuration information  * defined in cayenne-data-map*.dtd. This abstract builder supports values declared in the  * DTD, allowing subclasses to define their own Query creation logic.  *   * @since 1.1  * @author Andrus Adamchik  * @deprecated since 3.0 replaced by a non-public class.  */
 end_comment
 
 begin_class
+specifier|public
 specifier|abstract
 class|class
-name|QueryLoader
+name|QueryBuilder
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|OBJ_ENTITY_ROOT
+init|=
+literal|"obj-entity"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DB_ENTITY_ROOT
+init|=
+literal|"db-entity"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROCEDURE_ROOT
+init|=
+literal|"procedure"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DATA_MAP_ROOT
+init|=
+literal|"data-map"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|JAVA_CLASS_ROOT
+init|=
+literal|"java-class"
+decl_stmt|;
 specifier|protected
 name|String
 name|name
@@ -179,11 +220,13 @@ name|String
 name|resultEntity
 decl_stmt|;
 comment|/**      * Builds a Query object based on internal configuration information.      */
+specifier|public
 specifier|abstract
 name|Query
 name|getQuery
 parameter_list|()
 function_decl|;
+specifier|public
 name|void
 name|setName
 parameter_list|(
@@ -215,8 +258,6 @@ name|rootType
 operator|==
 literal|null
 operator|||
-name|MapLoader
-operator|.
 name|DATA_MAP_ROOT
 operator|.
 name|equals
@@ -236,8 +277,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
-operator|.
 name|OBJ_ENTITY_ROOT
 operator|.
 name|equals
@@ -258,8 +297,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
-operator|.
 name|DB_ENTITY_ROOT
 operator|.
 name|equals
@@ -280,8 +317,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
-operator|.
 name|PROCEDURE_ROOT
 operator|.
 name|equals
@@ -302,8 +337,6 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
-operator|.
 name|JAVA_CLASS_ROOT
 operator|.
 name|equals
@@ -336,6 +369,7 @@ else|:
 name|dataMap
 return|;
 block|}
+specifier|public
 name|void
 name|setResultEntity
 parameter_list|(
@@ -351,6 +385,7 @@ name|resultEntity
 expr_stmt|;
 block|}
 comment|/**      * Sets the information pertaining to the root of the query.      */
+specifier|public
 name|void
 name|setRoot
 parameter_list|(
@@ -384,6 +419,7 @@ name|rootName
 expr_stmt|;
 block|}
 comment|/**      * Adds raw sql. If adapterClass parameter is not null, sets the SQL string to be      * adapter-specific. Otherwise it is used as a default SQL string.      */
+specifier|public
 name|void
 name|addSql
 parameter_list|(
@@ -440,6 +476,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
 name|void
 name|setQualifier
 parameter_list|(
@@ -489,6 +526,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
 name|void
 name|addProperty
 parameter_list|(
@@ -528,6 +566,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|void
 name|addOrdering
 parameter_list|(
@@ -617,6 +656,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|void
 name|addPrefetch
 parameter_list|(

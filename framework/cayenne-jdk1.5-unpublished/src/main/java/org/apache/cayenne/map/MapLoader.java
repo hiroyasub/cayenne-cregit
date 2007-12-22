@@ -523,6 +523,51 @@ name|DB_KEY_CACHE_SIZE_TAG
 init|=
 literal|"db-key-cache-size"
 decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|OBJ_ENTITY_ROOT
+init|=
+literal|"obj-entity"
+decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DB_ENTITY_ROOT
+init|=
+literal|"db-entity"
+decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROCEDURE_ROOT
+init|=
+literal|"procedure"
+decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DATA_MAP_ROOT
+init|=
+literal|"data-map"
+decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|JAVA_CLASS_ROOT
+init|=
+literal|"java-class"
+decl_stmt|;
 comment|// Reading from XML
 specifier|private
 name|DataMap

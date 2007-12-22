@@ -181,7 +181,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|QueryLoader
+name|MapLoader
 operator|.
 name|OBJ_ENTITY_ROOT
 argument_list|,

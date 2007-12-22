@@ -115,7 +115,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Procedure
+name|MapLoader
 import|;
 end_import
 
@@ -129,7 +129,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|QueryLoader
+name|Procedure
 import|;
 end_import
 
@@ -561,7 +561,7 @@ name|encoder
 operator|.
 name|print
 argument_list|(
-name|QueryLoader
+name|MapLoader
 operator|.
 name|PROCEDURE_ROOT
 argument_list|)

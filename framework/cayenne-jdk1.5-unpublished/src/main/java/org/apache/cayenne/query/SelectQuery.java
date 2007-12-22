@@ -117,6 +117,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|MapLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjEntity
 import|;
 end_import
@@ -132,20 +146,6 @@ operator|.
 name|map
 operator|.
 name|Procedure
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|QueryLoader
 import|;
 end_import
 
@@ -699,7 +699,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryLoader
+name|MapLoader
 operator|.
 name|OBJ_ENTITY_ROOT
 expr_stmt|;
@@ -720,7 +720,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryLoader
+name|MapLoader
 operator|.
 name|OBJ_ENTITY_ROOT
 expr_stmt|;
@@ -746,7 +746,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryLoader
+name|MapLoader
 operator|.
 name|DB_ENTITY_ROOT
 expr_stmt|;
@@ -772,7 +772,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryLoader
+name|MapLoader
 operator|.
 name|PROCEDURE_ROOT
 expr_stmt|;
@@ -798,7 +798,7 @@ condition|)
 block|{
 name|rootType
 operator|=
-name|QueryLoader
+name|MapLoader
 operator|.
 name|JAVA_CLASS_ROOT
 expr_stmt|;
