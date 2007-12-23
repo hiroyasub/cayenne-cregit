@@ -136,7 +136,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|DataContextCompoundOETest
+name|DataContextFlattenedAttributesTest
 extends|extends
 name|CayenneCase
 block|{
@@ -160,7 +160,7 @@ literal|8
 decl_stmt|;
 specifier|protected
 name|DataContext
-name|ctxt
+name|context
 decl_stmt|;
 specifier|protected
 name|void
@@ -177,7 +177,7 @@ expr_stmt|;
 name|deleteTestData
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -590,7 +590,7 @@ name|?
 argument_list|>
 name|objects
 init|=
-name|ctxt
+name|context
 operator|.
 name|performQuery
 argument_list|(
@@ -808,7 +808,7 @@ name|?
 argument_list|>
 name|objects
 init|=
-name|ctxt
+name|context
 operator|.
 name|performQuery
 argument_list|(
