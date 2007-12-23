@@ -165,20 +165,6 @@ name|Query
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|reflect
-operator|.
-name|ClassDescriptor
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 1.2  * @author Andrus Adamchik  */
 end_comment
@@ -312,7 +298,7 @@ control|)
 block|{
 name|Collection
 argument_list|<
-name|ClassDescriptor
+name|DbEntityClassDescriptor
 argument_list|>
 name|descriptors
 init|=
@@ -342,7 +328,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|ClassDescriptor
+name|DbEntityClassDescriptor
 name|descriptor
 range|:
 name|descriptors
@@ -353,27 +339,15 @@ operator|.
 name|reset
 argument_list|(
 name|descriptor
-operator|.
-name|getEntity
-argument_list|()
-argument_list|,
-name|dbEntity
 argument_list|)
 expr_stmt|;
 name|boolean
 name|isRootDbEntity
 init|=
-operator|(
 name|descriptor
 operator|.
-name|getEntity
+name|isMaster
 argument_list|()
-operator|.
-name|getDbEntity
-argument_list|()
-operator|==
-name|dbEntity
-operator|)
 decl_stmt|;
 comment|// remove object set for dependent entity, so that it does not show up
 comment|// on post processing
@@ -388,6 +362,9 @@ operator|.
 name|get
 argument_list|(
 name|descriptor
+operator|.
+name|getClassDescriptor
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

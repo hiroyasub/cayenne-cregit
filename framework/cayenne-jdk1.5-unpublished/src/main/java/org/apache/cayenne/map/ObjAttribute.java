@@ -692,7 +692,7 @@ name|isFlattened
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns whether this DbAttribute is "flattened", meaning that it points to a column      * from an entity other than the DbEntity mapped to the parent ObjEntity.      *       * @since 3.0      */
+comment|/**      * Returns whether this attribute is "flattened", meaning that it points to a column      * from an entity other than the DbEntity mapped to the parent ObjEntity.      *       * @since 3.0      */
 specifier|public
 name|boolean
 name|isFlattened
