@@ -681,13 +681,24 @@ return|return
 name|dbAttributePath
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 use 'isFlattened'.      */
 specifier|public
 name|boolean
 name|isCompound
 parameter_list|()
 block|{
 return|return
-operator|(
+name|isFlattened
+argument_list|()
+return|;
+block|}
+comment|/**      * Returns whether this DbAttribute is "flattened", meaning that it points to a column      * from an entity other than the DbEntity mapped to the parent ObjEntity.      *       * @since 3.0      */
+specifier|public
+name|boolean
+name|isFlattened
+parameter_list|()
+block|{
+return|return
 name|dbAttributePath
 operator|!=
 literal|null
@@ -700,7 +711,6 @@ literal|'.'
 argument_list|)
 operator|>=
 literal|0
-operator|)
 return|;
 block|}
 comment|/**      * Returns an ObjAttribute stripped of any server-side information, such as      * DbAttribute mapping.      *       * @since 1.2      */
