@@ -20,55 +20,20 @@ comment|/**  * A client version of ObjAttribute that has some properties from Db
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|ClientObjAttribute
 extends|extends
 name|ObjAttribute
 block|{
-specifier|protected
 name|boolean
 name|mandatory
 decl_stmt|;
-specifier|protected
 name|int
 name|maxLength
 init|=
 operator|-
 literal|1
 decl_stmt|;
-specifier|public
-name|ClientObjAttribute
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|ClientObjAttribute
-parameter_list|(
-name|String
-name|name
-parameter_list|,
-name|String
-name|type
-parameter_list|,
-name|ObjEntity
-name|entity
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|name
-argument_list|,
-name|type
-argument_list|,
-name|entity
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
 name|ClientObjAttribute
 parameter_list|(
 name|String
@@ -81,7 +46,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *       * @see DbAttribute#isMandatory()      */
+comment|/**      * @see DbAttribute#isMandatory()      */
 specifier|public
 name|boolean
 name|isMandatory
@@ -106,7 +71,7 @@ operator|=
 name|mandatory
 expr_stmt|;
 block|}
-comment|/**      *       * @see DbAttribute#getMaxLength()      */
+comment|/**      * @see DbAttribute#getMaxLength()      */
 specifier|public
 name|int
 name|getMaxLength
