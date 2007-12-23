@@ -139,7 +139,10 @@ name|entity
 argument_list|)
 expr_stmt|;
 name|Collection
-name|entities
+argument_list|<
+name|DataMap
+argument_list|>
+name|maps
 init|=
 name|Collections
 operator|.
@@ -154,7 +157,7 @@ init|=
 operator|new
 name|EntityResolver
 argument_list|(
-name|entities
+name|maps
 argument_list|)
 decl_stmt|;
 comment|// 1. simple case
@@ -339,7 +342,10 @@ name|entity
 argument_list|)
 expr_stmt|;
 name|Collection
-name|entities
+argument_list|<
+name|DataMap
+argument_list|>
+name|maps
 init|=
 name|Collections
 operator|.
@@ -354,7 +360,7 @@ init|=
 operator|new
 name|EntityResolver
 argument_list|(
-name|entities
+name|maps
 argument_list|)
 decl_stmt|;
 name|assertSame
@@ -478,7 +484,10 @@ name|subEntity
 argument_list|)
 expr_stmt|;
 name|Collection
-name|entities
+argument_list|<
+name|DataMap
+argument_list|>
+name|maps
 init|=
 name|Collections
 operator|.
@@ -490,7 +499,7 @@ decl_stmt|;
 operator|new
 name|EntityResolver
 argument_list|(
-name|entities
+name|maps
 argument_list|)
 expr_stmt|;
 comment|// after registration with resolver super entity should resolve just fine

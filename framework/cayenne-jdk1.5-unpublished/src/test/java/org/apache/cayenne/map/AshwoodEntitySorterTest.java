@@ -151,6 +151,9 @@ name|class
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|createDataContext
