@@ -585,6 +585,9 @@ name|class
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|ctxt
@@ -636,6 +639,9 @@ expr_stmt|;
 for|for
 control|(
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|i
 init|=
 name|objects
@@ -797,6 +803,9 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|ctxt
@@ -848,6 +857,9 @@ expr_stmt|;
 for|for
 control|(
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|i
 init|=
 name|objects

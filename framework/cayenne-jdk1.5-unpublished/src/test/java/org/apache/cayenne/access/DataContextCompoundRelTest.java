@@ -228,6 +228,9 @@ name|class
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objs
 init|=
 name|ctxt
@@ -270,6 +273,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|details
 init|=
 name|master
@@ -474,6 +480,9 @@ name|qual
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objs
 init|=
 name|ctxt
@@ -682,6 +691,9 @@ name|qual
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objs
 init|=
 name|ctxt
