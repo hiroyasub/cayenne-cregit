@@ -171,7 +171,7 @@ argument_list|)
 expr_stmt|;
 name|oa1
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 literal|null
 argument_list|)

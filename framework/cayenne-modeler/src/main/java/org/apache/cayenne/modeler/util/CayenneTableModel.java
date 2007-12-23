@@ -425,6 +425,9 @@ comment|/**      * Returns Java class of the internal list elements.      */
 specifier|public
 specifier|abstract
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getElementsClass
 parameter_list|()
 function_decl|;

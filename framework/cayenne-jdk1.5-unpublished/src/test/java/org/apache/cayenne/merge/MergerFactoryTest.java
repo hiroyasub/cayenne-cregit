@@ -1056,9 +1056,12 @@ argument_list|)
 decl_stmt|;
 name|oatr1
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 name|column2
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|oatr1

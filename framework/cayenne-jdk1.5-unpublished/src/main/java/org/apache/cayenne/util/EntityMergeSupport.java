@@ -525,9 +525,12 @@ argument_list|)
 decl_stmt|;
 name|oa
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 name|da
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|entity

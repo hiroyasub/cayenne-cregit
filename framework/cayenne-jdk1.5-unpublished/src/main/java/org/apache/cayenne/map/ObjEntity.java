@@ -2455,7 +2455,7 @@ condition|)
 block|{
 name|objAttr
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 literal|null
 argument_list|)

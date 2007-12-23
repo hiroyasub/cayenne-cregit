@@ -208,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Model for the Object Entity attributes and for Obj to   * DB Attribute Mapping tables. Allows adding/removing attributes,  * modifying the types and the names.  *   * @author Michael Misha Shengaout.   * @author Andrus Adamchik  */
+comment|/**  * Model for the Object Entity attributes and for Obj to DB Attribute Mapping tables.  * Allows adding/removing attributes, modifying the types and the names.  *   * @author Michael Misha Shengaout.  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -283,6 +283,9 @@ name|eventSource
 argument_list|,
 operator|new
 name|ArrayList
+argument_list|<
+name|Attribute
+argument_list|>
 argument_list|(
 name|entity
 operator|.
@@ -348,7 +351,7 @@ name|Boolean
 operator|.
 name|class
 return|;
-default|default :
+default|default:
 return|return
 name|String
 operator|.
@@ -357,8 +360,13 @@ return|;
 block|}
 block|}
 comment|/**      * Returns ObjAttribute class.      */
+annotation|@
+name|Override
 specifier|public
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|getElementsClass
 parameter_list|()
 block|{
@@ -412,7 +420,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/** Refreshes DbEntity to current db entity within ObjEntity.*/
+comment|/** Refreshes DbEntity to current db entity within ObjEntity. */
 specifier|public
 name|void
 name|resetDbEntity
@@ -527,7 +535,7 @@ case|:
 return|return
 literal|"Used for Locking"
 return|;
-default|default :
+default|default:
 return|return
 literal|""
 return|;
@@ -812,14 +820,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|DbAttribute
-name|dbAttribute
-init|=
-name|attribute
-operator|.
-name|getDbAttribute
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|column
@@ -835,8 +835,9 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|DbAttribute
 name|dbAttribute
-operator|=
+init|=
 operator|(
 name|DbAttribute
 operator|)
@@ -849,26 +850,43 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|String
+name|path
+init|=
+name|dbAttribute
+operator|!=
+literal|null
+condition|?
+name|dbAttribute
+operator|.
+name|getName
+argument_list|()
+else|:
+literal|null
+decl_stmt|;
 name|attribute
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
-name|dbAttribute
+name|path
 argument_list|)
 expr_stmt|;
 block|}
 comment|// If name is erased, remove db attribute from obj attribute.
 if|else if
 condition|(
-name|dbAttribute
+name|attribute
+operator|.
+name|getDbAttribute
+argument_list|()
 operator|!=
 literal|null
 condition|)
 block|{
 name|attribute
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 literal|null
 argument_list|)

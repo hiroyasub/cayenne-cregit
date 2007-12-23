@@ -1303,7 +1303,7 @@ condition|)
 block|{
 name|att
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 literal|null
 argument_list|)
@@ -1504,7 +1504,7 @@ condition|)
 block|{
 name|objAttr
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 literal|null
 argument_list|)

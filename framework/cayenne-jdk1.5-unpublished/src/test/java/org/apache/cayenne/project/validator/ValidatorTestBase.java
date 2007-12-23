@@ -580,9 +580,12 @@ argument_list|)
 expr_stmt|;
 name|oa1
 operator|.
-name|setDbAttribute
+name|setDbAttributePath
 argument_list|(
 name|a1
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
