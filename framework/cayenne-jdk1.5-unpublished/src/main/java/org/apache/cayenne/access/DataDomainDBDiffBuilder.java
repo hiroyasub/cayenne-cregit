@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Attribute
+name|DbAttribute
 import|;
 end_import
 
@@ -455,21 +455,26 @@ name|toString
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// this takes care of the flattened attributes, as 'getDbAttributeName'
-comment|// returns the last path component...
-name|Attribute
+comment|// in case of a flattened attribute, ensure that it belongs to this
+comment|// bucket...
+name|DbAttribute
 name|dbAttribute
 init|=
-name|dbEntity
-operator|.
-name|getAttribute
-argument_list|(
 name|attribute
 operator|.
-name|getDbAttributeName
+name|getDbAttribute
 argument_list|()
-argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|dbAttribute
+operator|.
+name|getEntity
+argument_list|()
+operator|==
+name|dbEntity
+condition|)
+block|{
 name|dbDiff
 operator|.
 name|put
@@ -485,6 +490,7 @@ name|getValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
