@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes navigational association between two Java classes, represented as source and  * target ObjEntity. Maps to a path of DbRelationships.  *   * @author Andrus Adamchik  */
+comment|/**  * Describes an association between two Java classes mapped as source and target  * ObjEntity. Maps to a path of DbRelationships.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -2439,7 +2439,7 @@ operator|=
 name|collectionType
 expr_stmt|;
 block|}
-comment|/**      * Returns a property name of a target entity used to create a relationship map. Only      * has effect if collectionType property is set to "java.util.Map".      *      * @return The attribute name used for the map key or<code>null</code> if the default (PK) is used      * as the map key.      *      * @since 3.0      */
+comment|/**      * Returns a property name of a target entity used to create a relationship map. Only      * has effect if collectionType property is set to "java.util.Map".      *       * @return The attribute name used for the map key or<code>null</code> if the      *         default (PK) is used as the map key.      * @since 3.0      */
 specifier|public
 name|String
 name|getMapKey
