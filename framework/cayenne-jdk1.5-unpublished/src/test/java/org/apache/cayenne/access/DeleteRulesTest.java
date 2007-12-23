@@ -1734,9 +1734,6 @@ block|{
 name|ObjectDiff
 name|changes
 init|=
-operator|(
-name|ObjectDiff
-operator|)
 name|context
 operator|.
 name|getObjectStore

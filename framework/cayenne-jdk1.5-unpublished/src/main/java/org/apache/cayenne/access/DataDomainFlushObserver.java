@@ -21,16 +21,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -226,6 +216,9 @@ parameter_list|)
 block|{
 comment|// read and close the iterator before doing anything else
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|keys
 decl_stmt|;
 try|try
@@ -339,9 +332,6 @@ block|}
 name|DataRow
 name|key
 init|=
-operator|(
-name|DataRow
-operator|)
 name|keys
 operator|.
 name|get
@@ -395,9 +385,11 @@ name|key
 argument_list|)
 throw|;
 block|}
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|DbAttribute
+name|attribute
+range|:
 name|batch
 operator|.
 name|getDbEntity
@@ -405,29 +397,8 @@ argument_list|()
 operator|.
 name|getGeneratedAttributes
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbAttribute
-name|attribute
-init|=
-operator|(
-name|DbAttribute
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 comment|// batch can have generated attributes that are not PKs, e.g. columns with
 comment|// DB DEFAULT values. Ignore those.
 if|if
@@ -506,6 +477,9 @@ name|Query
 name|query
 parameter_list|,
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|dataRows
 parameter_list|)
 block|{

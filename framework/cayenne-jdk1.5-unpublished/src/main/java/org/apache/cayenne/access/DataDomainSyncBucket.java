@@ -874,6 +874,11 @@ name|getResultDiff
 argument_list|()
 decl_stmt|;
 name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|DataRow
+argument_list|>
 name|modifiedSnapshots
 init|=
 name|parent

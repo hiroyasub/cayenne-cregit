@@ -122,7 +122,7 @@ name|ResultIterator
 name|it
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked after each batch of generated values is read durring an      * update.      *       * @since 1.2      */
+comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 1.2      */
 specifier|public
 name|void
 name|nextGeneratedDataRows
