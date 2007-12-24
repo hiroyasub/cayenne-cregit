@@ -522,6 +522,15 @@ name|DbRelationship
 name|createReverseRelationship
 parameter_list|()
 block|{
+name|DbEntity
+name|targetEntity
+init|=
+operator|(
+name|DbEntity
+operator|)
+name|getTargetEntity
+argument_list|()
+decl_stmt|;
 name|DbRelationship
 name|reverse
 init|=
@@ -533,8 +542,7 @@ name|reverse
 operator|.
 name|setSourceEntity
 argument_list|(
-name|getTargetEntity
-argument_list|()
+name|targetEntity
 argument_list|)
 expr_stmt|;
 name|reverse
@@ -548,8 +556,41 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// TODO: must set toDepPK correctly
-comment|// must set toMany correctly
+comment|// TODO: andrus 12/24/2007 - one more case to handle - set reverse toDepPK = true
+comment|// if this relationship toDepPK is false, but the entities are joined on a PK...
+comment|// on the other hand, these can still be two independent entities...
+if|if
+condition|(
+name|isToDependentPK
+argument_list|()
+operator|&&
+operator|!
+name|toMany
+operator|&&
+name|joins
+operator|.
+name|size
+argument_list|()
+operator|==
+name|targetEntity
+operator|.
+name|getPrimaryKeys
+argument_list|()
+operator|.
+name|size
+argument_list|()
+condition|)
+block|{
+name|reverse
+operator|.
+name|setToMany
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|reverse
 operator|.
 name|setToMany
@@ -558,6 +599,7 @@ operator|!
 name|toMany
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|DbJoin

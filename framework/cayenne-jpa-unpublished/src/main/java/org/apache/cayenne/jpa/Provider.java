@@ -1434,6 +1434,14 @@ argument_list|)
 expr_stmt|;
 name|domain
 operator|.
+name|getEntityResolver
+argument_list|()
+operator|.
+name|updateDefaults
+argument_list|()
+expr_stmt|;
+name|domain
+operator|.
 name|setUsingExternalTransactions
 argument_list|(
 name|isJTA
