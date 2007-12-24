@@ -681,6 +681,14 @@ operator|+
 literal|1
 argument_list|)
 decl_stmt|;
+name|EmbeddableDescriptor
+name|embeddableDescriptor
+init|=
+name|createEmbeddableDescriptor
+argument_list|(
+name|embeddedAttribute
+argument_list|)
+decl_stmt|;
 name|Accessor
 name|embeddedAccessor
 init|=
@@ -701,7 +709,7 @@ name|embeddedableAccessor
 init|=
 name|createEmbeddableAccessor
 argument_list|(
-name|embeddableClass
+name|embeddableDescriptor
 argument_list|,
 name|embeddableName
 argument_list|,
@@ -709,14 +717,6 @@ name|attribute
 operator|.
 name|getJavaClass
 argument_list|()
-argument_list|)
-decl_stmt|;
-name|EmbeddableDescriptor
-name|embeddableDescriptor
-init|=
-name|createEmbeddableDescriptor
-argument_list|(
-name|embeddedAttribute
 argument_list|)
 decl_stmt|;
 name|Accessor
@@ -951,11 +951,8 @@ specifier|protected
 name|Accessor
 name|createEmbeddableAccessor
 parameter_list|(
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|embeddableClass
+name|EmbeddableDescriptor
+name|descriptor
 parameter_list|,
 name|String
 name|propertyName
@@ -971,7 +968,10 @@ return|return
 operator|new
 name|FieldAccessor
 argument_list|(
-name|embeddableClass
+name|descriptor
+operator|.
+name|getObjectClass
+argument_list|()
 argument_list|,
 name|propertyName
 argument_list|,
@@ -979,6 +979,7 @@ name|propertyType
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates a descriptor of the embedded property.      */
 specifier|protected
 name|EmbeddableDescriptor
 name|createEmbeddableDescriptor
