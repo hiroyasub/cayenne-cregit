@@ -171,6 +171,20 @@ name|EJBQLQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|RefreshQuery
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -602,14 +616,25 @@ block|{
 name|checkClosed
 argument_list|()
 expr_stmt|;
-comment|// TODO: Andrus, 2/10/2006 - implement
-throw|throw
-operator|new
-name|UnsupportedOperationException
+name|Persistent
+name|p
+init|=
+operator|(
+name|Persistent
+operator|)
+name|entity
+decl_stmt|;
+name|context
+operator|.
+name|performGenericQuery
 argument_list|(
-literal|"TODO"
+operator|new
+name|RefreshQuery
+argument_list|(
+name|p
 argument_list|)
-throw|;
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Clear the persistence context, causing all managed entities to become detached.      * Changes made to entities that have not been flushed to the database will not be      * persisted.      */
 specifier|public
