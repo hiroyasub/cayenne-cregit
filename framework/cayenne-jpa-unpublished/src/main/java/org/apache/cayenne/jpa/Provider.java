@@ -1432,12 +1432,14 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+comment|// note that for now we do not apply object layer defaults, as that would
+comment|// require extra enhancement for runtime relationships...
 name|domain
 operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|updateDefaults
+name|applyDBLayerDefaults
 argument_list|()
 expr_stmt|;
 name|domain

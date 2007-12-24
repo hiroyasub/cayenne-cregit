@@ -562,7 +562,7 @@ block|}
 comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships, marking      * newly created relationships as "runtime".      *       * @since 3.0      */
 specifier|public
 name|void
-name|updateDefaults
+name|applyDBLayerDefaults
 parameter_list|()
 block|{
 comment|// connect DB layer
@@ -701,6 +701,13 @@ block|}
 block|}
 block|}
 block|}
+block|}
+comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships, marking      * newly created relationships as "runtime".      *       * @since 3.0      */
+specifier|public
+name|void
+name|applyObjectLayerDefaults
+parameter_list|()
+block|{
 comment|// connect object layer
 for|for
 control|(
