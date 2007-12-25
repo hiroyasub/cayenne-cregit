@@ -2065,7 +2065,6 @@ name|emptyList
 argument_list|()
 expr_stmt|;
 block|}
-comment|// remove derived db entities
 name|List
 argument_list|<
 name|DbEntity
@@ -2092,36 +2091,17 @@ name|DbEntity
 argument_list|>
 argument_list|()
 decl_stmt|;
-name|Iterator
-argument_list|<
+for|for
+control|(
 name|DbEntity
-argument_list|>
-name|it
-init|=
+name|nextEntity
+range|:
 name|map
 operator|.
 name|getDbEntities
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbEntity
-name|nextEntity
-init|=
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 comment|// do sanity checks...
 comment|// tables with no columns are not included
 if|if
@@ -2325,36 +2305,17 @@ block|}
 comment|// supposedly all source attributes of the relationship
 comment|// to master entity must be a part of primary key,
 comment|// so
-name|Iterator
-argument_list|<
+for|for
+control|(
 name|DbJoin
-argument_list|>
-name|joins
-init|=
+name|join
+range|:
 name|nextRelationship
 operator|.
 name|getJoins
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|joins
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbJoin
-name|join
-init|=
-name|joins
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|pkAttributes
 operator|.
 name|remove
