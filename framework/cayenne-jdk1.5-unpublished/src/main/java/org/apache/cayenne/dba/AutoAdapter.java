@@ -887,6 +887,7 @@ name|supportsBatchUpdates
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 as the deocarated method is deprecated.      */
 specifier|public
 name|String
 name|dropTable
@@ -902,6 +903,27 @@ operator|.
 name|dropTable
 argument_list|(
 name|entity
+argument_list|)
+return|;
+block|}
+specifier|public
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|dropTableStatements
+parameter_list|(
+name|DbEntity
+name|table
+parameter_list|)
+block|{
+return|return
+name|getAdapter
+argument_list|()
+operator|.
+name|dropTableStatements
+argument_list|(
+name|table
 argument_list|)
 return|;
 block|}

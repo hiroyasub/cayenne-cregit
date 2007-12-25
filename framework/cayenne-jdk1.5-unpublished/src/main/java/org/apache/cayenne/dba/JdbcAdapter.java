@@ -71,6 +71,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|GregorianCalendar
 import|;
 end_import
@@ -844,22 +854,52 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Returns a SQL string to drop a table corresponding to<code>ent</code> DbEntity.      */
+comment|/**      * Returns a SQL string to drop a table corresponding to table DbEntity.      *       * @deprecated since 3.0 in favor of "dropTableStatements"      */
 specifier|public
 name|String
 name|dropTable
 parameter_list|(
 name|DbEntity
-name|ent
+name|table
 parameter_list|)
 block|{
 return|return
+name|dropTableStatements
+argument_list|(
+name|table
+argument_list|)
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|dropTableStatements
+parameter_list|(
+name|DbEntity
+name|table
+parameter_list|)
+block|{
+return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
 literal|"DROP TABLE "
 operator|+
-name|ent
+name|table
 operator|.
 name|getFullyQualifiedName
 argument_list|()
+argument_list|)
 return|;
 block|}
 comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */

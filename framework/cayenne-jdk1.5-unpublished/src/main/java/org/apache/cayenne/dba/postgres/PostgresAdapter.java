@@ -33,6 +33,26 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Iterator
 import|;
 end_import
@@ -956,24 +976,34 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds the CASCADE option to the DROP TABLE clause.      *       * @see JdbcAdapter#dropTable(DbEntity)      */
+comment|/**      * Adds the CASCADE option to the DROP TABLE clause.      */
+annotation|@
+name|Override
 specifier|public
+name|Collection
+argument_list|<
 name|String
-name|dropTable
+argument_list|>
+name|dropTableStatements
 parameter_list|(
 name|DbEntity
-name|ent
+name|table
 parameter_list|)
 block|{
 return|return
-name|super
+name|Collections
 operator|.
-name|dropTable
+name|singleton
 argument_list|(
-name|ent
-argument_list|)
+literal|"DROP TABLE "
+operator|+
+name|table
+operator|.
+name|getFullyQualifiedName
+argument_list|()
 operator|+
 literal|" CASCADE"
+argument_list|)
 return|;
 block|}
 comment|/**      * Returns a trimming translator.      */

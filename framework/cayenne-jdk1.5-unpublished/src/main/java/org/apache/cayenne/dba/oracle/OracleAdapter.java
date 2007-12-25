@@ -67,6 +67,26 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -384,7 +404,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample connection  * settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver     *</pre>  *   * @author Andrus Adamchik  */
+comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  * connection settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver     *</pre>  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -877,24 +897,34 @@ name|OraclePkGenerator
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a query string to drop a table corresponding to<code>ent</code>      * DbEntity. Changes superclass behavior to drop all related foreign key constraints.      */
+comment|/**      * Returns a query string to drop a table corresponding to<code>ent</code>      * DbEntity. Changes superclass behavior to drop all related foreign key constraints.      *       * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
+name|Collection
+argument_list|<
 name|String
-name|dropTable
+argument_list|>
+name|dropTableStatements
 parameter_list|(
 name|DbEntity
-name|ent
+name|table
 parameter_list|)
 block|{
 return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
 literal|"DROP TABLE "
 operator|+
-name|ent
+name|table
 operator|.
 name|getFullyQualifiedName
 argument_list|()
 operator|+
 literal|" CASCADE CONSTRAINTS"
+argument_list|)
 return|;
 block|}
 comment|/**      * Fixes some reverse engineering problems. Namely if a columns is created as DECIMAL      * and has non-positive precision it is converted to INTEGER.      */

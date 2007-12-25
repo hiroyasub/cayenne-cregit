@@ -201,13 +201,11 @@ interface|interface
 name|DbAdapter
 block|{
 comment|/**      * Returns a String used to terminate a batch in command-line tools. E.g. ";" on      * Oracle or "go" on Sybase.      *       * @since 1.0.4      */
-specifier|public
 name|String
 name|getBatchTerminator
 parameter_list|()
 function_decl|;
 comment|// TODO: deprecate and move into SQLAction implementation
-specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
 parameter_list|(
@@ -216,7 +214,6 @@ name|queryAssembler
 parameter_list|)
 function_decl|;
 comment|/**      * Returns an instance of SQLAction that should handle the query.      *       * @since 1.2      */
-specifier|public
 name|SQLAction
 name|getAction
 parameter_list|(
@@ -228,31 +225,26 @@ name|node
 parameter_list|)
 function_decl|;
 comment|/**      * Returns true if a target database supports FK constraints.      *       * @deprecated since 3.0 - almost all DB's support FK's now and also this flag is less      *             relevant for Cayenne now.      */
-specifier|public
 name|boolean
 name|supportsFkConstraints
 parameter_list|()
 function_decl|;
 comment|/**      * Returns true if a target database supports UNIQUE constraints.      *       * @since 1.1      */
-specifier|public
 name|boolean
 name|supportsUniqueConstraints
 parameter_list|()
 function_decl|;
 comment|/**      * Returns true if a target database supports key autogeneration. This feature also      * requires JDBC3-compliant driver.      *       * @since 1.2      */
-specifier|public
 name|boolean
 name|supportsGeneratedKeys
 parameter_list|()
 function_decl|;
 comment|/**      * Returns<code>true</code> if the target database supports batch updates.      */
-specifier|public
 name|boolean
 name|supportsBatchUpdates
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a SQL string that can be used to drop a database table corresponding to      *<code>ent</code> parameter.      */
-specifier|public
+comment|/**      * Returns a SQL string that can be used to drop a database table corresponding to      * entity parameter.      *       * @deprecated since 3.0 Cayenne supports 'dropTableStatements' to allow multiple      *             statements to be executed when dropping the table.      */
 name|String
 name|dropTable
 parameter_list|(
@@ -260,8 +252,18 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
+comment|/**      * Returns a collection of SQL statements needed to drop a database table.      *       * @since 3.0      */
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|dropTableStatements
+parameter_list|(
+name|DbEntity
+name|table
+parameter_list|)
+function_decl|;
 comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>entity</code> parameter.      */
-specifier|public
 name|String
 name|createTable
 parameter_list|(
@@ -269,8 +271,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a DDL string to create a unique constraint over a set of columns, or null       * if the unique constraints are not supported.      *       * @since 1.1      */
-specifier|public
+comment|/**      * Returns a DDL string to create a unique constraint over a set of columns, or null      * if the unique constraints are not supported.      *       * @since 1.1      */
 name|String
 name|createUniqueConstraint
 parameter_list|(
@@ -285,7 +286,6 @@ name|columns
 parameter_list|)
 function_decl|;
 comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship, or null if foreign keys are not supported.      */
-specifier|public
 name|String
 name|createFkConstraint
 parameter_list|(
@@ -294,7 +294,6 @@ name|rel
 parameter_list|)
 function_decl|;
 comment|/**      * Returns an array of RDBMS types that can be used with JDBC<code>type</code>.      * Valid JDBC types are defined in java.sql.Types.      */
-specifier|public
 name|String
 index|[]
 name|externalTypesForJdbcType
@@ -303,20 +302,17 @@ name|int
 name|type
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a map of ExtendedTypes that is used to translate values between Java and      * JDBC layer.      *       * @see org.apache.cayenne.access.types.ExtendedType      */
-specifier|public
+comment|/**      * Returns a map of ExtendedTypes that is used to translate values between Java and      * JDBC layer.      */
 name|ExtendedTypeMap
 name|getExtendedTypes
 parameter_list|()
 function_decl|;
 comment|/**      * Returns primary key generator associated with this DbAdapter.      */
-specifier|public
 name|PkGenerator
 name|getPkGenerator
 parameter_list|()
 function_decl|;
 comment|/**      * Creates and returns a DbAttribute based on supplied parameters (usually obtained      * from database meta data).      *       * @param name database column name      * @param typeName database specific type name, may be used as a hint to determine the      *            right JDBC type.      * @param type JDBC column type      * @param size database column size (ignored if less than zero)      * @param scale database column scale, i.e. the number of decimal digits (ignored if      *            less than zero)      * @param allowNulls database column nullable parameter      */
-specifier|public
 name|DbAttribute
 name|buildAttribute
 parameter_list|(
@@ -340,7 +336,6 @@ name|allowNulls
 parameter_list|)
 function_decl|;
 comment|/**      * Binds an object value to PreparedStatement's numbered parameter.      */
-specifier|public
 name|void
 name|bindParameter
 parameter_list|(
@@ -365,18 +360,16 @@ throws|,
 name|Exception
 function_decl|;
 comment|/**      * Returns the name of the table type (as returned by      *<code>DatabaseMetaData.getTableTypes</code>) for a simple user table.      */
-specifier|public
 name|String
 name|tableTypeForTable
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the name of the table type (as returned by      *<code>DatabaseMetaData.getTableTypes</code>) for a view table.      */
-specifier|public
 name|String
 name|tableTypeForView
 parameter_list|()
 function_decl|;
-specifier|public
+comment|/**      * @since 3.0      */
 name|MergerFactory
 name|mergerFactory
 parameter_list|()

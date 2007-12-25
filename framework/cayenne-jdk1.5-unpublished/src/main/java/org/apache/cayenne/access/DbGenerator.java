@@ -382,7 +382,10 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
+name|Collection
+argument_list|<
 name|String
+argument_list|>
 argument_list|>
 name|dropTables
 decl_stmt|;
@@ -646,7 +649,10 @@ name|HashMap
 argument_list|<
 name|String
 argument_list|,
+name|Collection
+argument_list|<
 name|String
+argument_list|>
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -725,7 +731,7 @@ name|name
 argument_list|,
 name|adapter
 operator|.
-name|dropTable
+name|dropTableStatements
 argument_list|(
 name|dbe
 argument_list|)
@@ -909,7 +915,7 @@ argument_list|()
 decl_stmt|;
 name|list
 operator|.
-name|add
+name|addAll
 argument_list|(
 name|dropTables
 operator|.
@@ -1203,10 +1209,11 @@ operator|.
 name|previous
 argument_list|()
 decl_stmt|;
-name|safeExecute
-argument_list|(
-name|connection
-argument_list|,
+for|for
+control|(
+name|String
+name|statement
+range|:
 name|dropTables
 operator|.
 name|get
@@ -1216,8 +1223,16 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+control|)
+block|{
+name|safeExecute
+argument_list|(
+name|connection
+argument_list|,
+name|statement
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|// create tables

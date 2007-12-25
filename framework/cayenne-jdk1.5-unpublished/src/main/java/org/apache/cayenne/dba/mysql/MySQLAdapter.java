@@ -43,6 +43,26 @@ name|java
 operator|.
 name|util
 operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collections
 import|;
 end_import
@@ -268,7 +288,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.  *<h3>Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by MyISAM  * engine. This adapter by default assumes MyISAM, so  * {@link org.apache.cayenne.dba.JdbcAdapter#supportsFkConstraints()} will return  * false. Users can manually change this by calling  *<em>setSupportsFkConstraints(true)</em> or better by using an  * {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the adapter name at  * all for the DataNode, letting Cayenne guess it in runtime. In the later case Cayenne  * will check the<em>table_type</em> MySQL variable to detect whether InnoDB is the  * default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc: mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  *   * @author Andrus Adamchik  */
+comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.  *<h3>Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by MyISAM  * engine. This adapter by default assumes MyISAM, so  * {@link org.apache.cayenne.dba.JdbcAdapter#supportsFkConstraints()} will return false.  * Users can manually change this by calling<em>setSupportsFkConstraints(true)</em> or  * better by using an {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the  * adapter name at all for the DataNode, letting Cayenne guess it in runtime. In the later  * case Cayenne will check the<em>table_type</em> MySQL variable to detect whether  * InnoDB is the default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc: mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -335,23 +355,62 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|dropTable
 parameter_list|(
 name|DbEntity
-name|entity
+name|table
 parameter_list|)
 block|{
 return|return
 literal|"DROP TABLE IF EXISTS "
 operator|+
-name|entity
+name|table
 operator|.
 name|getFullyQualifiedName
 argument_list|()
 operator|+
 literal|" CASCADE"
+return|;
+block|}
+comment|/**      * @since 3.0      */
+annotation|@
+name|Override
+specifier|public
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|dropTableStatements
+parameter_list|(
+name|DbEntity
+name|table
+parameter_list|)
+block|{
+comment|// note that CASCADE is a noop as of MySQL 5.0, so we have to use FK checks
+comment|// statement
+return|return
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+literal|"SET FOREIGN_KEY_CHECKS=0"
+argument_list|,
+literal|"DROP TABLE IF EXISTS "
+operator|+
+name|table
+operator|.
+name|getFullyQualifiedName
+argument_list|()
+operator|+
+literal|" CASCADE"
+argument_list|,
+literal|"SET FOREIGN_KEY_CHECKS=1"
+argument_list|)
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes used as converters for passing values between      * JDBC and Java layers.      */

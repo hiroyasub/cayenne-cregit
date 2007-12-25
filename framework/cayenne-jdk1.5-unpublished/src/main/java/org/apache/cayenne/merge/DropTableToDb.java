@@ -118,11 +118,11 @@ comment|// TODO: fix. some adapters drop the complete AUTO_PK_SUPPORT here
 comment|/*         sqls.addAll(adapter.getPkGenerator().dropAutoPkStatements(                 Collections.singletonList(entity)));          */
 name|sqls
 operator|.
-name|add
+name|addAll
 argument_list|(
 name|adapter
 operator|.
-name|dropTable
+name|dropTableStatements
 argument_list|(
 name|entity
 argument_list|)
