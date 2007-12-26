@@ -498,6 +498,9 @@ literal|" ON ("
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|DbJoin
+argument_list|>
 name|it
 init|=
 name|incomingDB
@@ -519,9 +522,6 @@ block|{
 name|DbJoin
 name|dbJoin
 init|=
-operator|(
-name|DbJoin
-operator|)
 name|it
 operator|.
 name|next
@@ -589,9 +589,6 @@ expr_stmt|;
 name|DbJoin
 name|dbJoin
 init|=
-operator|(
-name|DbJoin
-operator|)
 name|it
 operator|.
 name|next
