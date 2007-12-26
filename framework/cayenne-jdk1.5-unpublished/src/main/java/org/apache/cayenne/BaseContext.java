@@ -238,12 +238,14 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|abstract
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|performQuery
 parameter_list|(
 name|Query

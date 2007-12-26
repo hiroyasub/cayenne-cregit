@@ -67,10 +67,12 @@ name|reset
 parameter_list|()
 function_decl|;
 comment|/**      * A utility method for quickly retrieving the first list in the response. Returns      * null if the query has no lists. Note that this method resets current iterator to an      * undefined state.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|firstList
 parameter_list|()
 function_decl|;

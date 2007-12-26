@@ -4150,11 +4150,13 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Performs a single selecting query. Various query setting control the behavior of      * this method and the results returned:      *<ul>      *<li>Query caching policy defines whether the results are retrieved from cache or      * fetched from the database. Note that queries that use caching must have a name that      * is used as a caching key.</li>      *<li>Query refreshing policy controls whether to refresh existing data objects and      * ignore any cached values.</li>      *<li>Query data rows policy defines whether the result should be returned as      * DataObjects or DataRows.</li>      *</ul>      *<p>      *<i>Since 1.2 takes any Query parameter, not just GenericSelectQuery</i>      *</p>      *       * @return A list of DataObjects or a DataRows, depending on the value returned by      *         {@link QueryMetadata#isFetchingDataRows()}.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|performQuery
 parameter_list|(
 name|Query
@@ -4192,9 +4194,6 @@ argument_list|)
 return|;
 block|}
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|result
 init|=
 name|onQuery

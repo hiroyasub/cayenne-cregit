@@ -1102,11 +1102,13 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Runs a query, returning result as list.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|performQuery
 parameter_list|(
 name|Query
@@ -1114,9 +1116,6 @@ name|query
 parameter_list|)
 block|{
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|result
 init|=
 name|onQuery
