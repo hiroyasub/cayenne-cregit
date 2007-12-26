@@ -355,9 +355,9 @@ comment|/**      * Returns unmodifiable map of combined named and positional par
 specifier|public
 name|Map
 argument_list|<
-name|String
+name|Object
 argument_list|,
-name|?
+name|Object
 argument_list|>
 name|getParameters
 parameter_list|()

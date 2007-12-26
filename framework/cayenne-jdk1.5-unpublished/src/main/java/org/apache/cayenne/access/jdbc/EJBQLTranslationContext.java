@@ -141,6 +141,11 @@ name|tableAliases
 decl_stmt|;
 specifier|private
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|boundParameters
 decl_stmt|;
 specifier|private
@@ -175,6 +180,11 @@ name|reusableJoins
 decl_stmt|;
 specifier|private
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|parameters
 decl_stmt|;
 specifier|private
@@ -211,6 +221,11 @@ name|EJBQLCompiledExpression
 name|compiledExpression
 parameter_list|,
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|parameters
 parameter_list|,
 name|EJBQLTranslatorFactory
@@ -495,7 +510,7 @@ literal|"Failed to create id alias"
 argument_list|)
 throw|;
 block|}
-comment|/**      * Inserts a marker in the SQL, mapped to a StringBuilder that can be later filled with      * content.      */
+comment|/**      * Inserts a marker in the SQL, mapped to a StringBuilder that can be later filled      * with content.      */
 name|void
 name|markCurrentPosition
 parameter_list|(
@@ -964,6 +979,11 @@ name|boundParameters
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

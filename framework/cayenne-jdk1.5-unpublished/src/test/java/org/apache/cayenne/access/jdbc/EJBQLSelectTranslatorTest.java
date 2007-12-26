@@ -152,9 +152,9 @@ name|ejbql
 parameter_list|,
 name|Map
 argument_list|<
-name|?
+name|Object
 argument_list|,
-name|?
+name|Object
 argument_list|>
 name|parameters
 parameter_list|)

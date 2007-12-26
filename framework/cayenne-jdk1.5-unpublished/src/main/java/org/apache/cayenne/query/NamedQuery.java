@@ -169,7 +169,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|?
+name|Object
 argument_list|>
 name|parameters
 decl_stmt|;
