@@ -1042,6 +1042,46 @@ block|}
 block|}
 specifier|public
 name|void
+name|testSelectEJQBQL
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+comment|//        populateTables();
+comment|//        EJBQLQuery query = new EJBQLQuery("SELECT a FROM CompoundPainting a WHERE a.artistName = 'artist2'");
+comment|//        List<?> objects = context.performQuery(query);
+comment|//
+comment|//        assertNotNull(objects);
+comment|//        assertEquals(1, objects.size());
+comment|//        assertTrue("CompoundPainting expected, got " + objects.get(0).getClass(), objects
+comment|//                .get(0) instanceof CompoundPainting);
+comment|//
+comment|//        for (Iterator<?> i = objects.iterator(); i.hasNext();) {
+comment|//            CompoundPainting painting = (CompoundPainting) i.next();
+comment|//            Number id = (Number) painting
+comment|//                    .getObjectId()
+comment|//                    .getIdSnapshot()
+comment|//                    .get("PAINTING_ID");
+comment|//            assertEquals("CompoundPainting.getObjectId(): " + id, id.intValue(), 2);
+comment|//            assertEquals("CompoundPainting.getPaintingTitle(): "
+comment|//                    + painting.getPaintingTitle(), "painting" + id, painting
+comment|//                    .getPaintingTitle());
+comment|//            assertEquals(
+comment|//                    "CompoundPainting.getTextReview(): " + painting.getTextReview(),
+comment|//                    "painting review" + id,
+comment|//                    painting.getTextReview());
+comment|//            assertEquals(
+comment|//                    "CompoundPainting.getArtistName(): " + painting.getArtistName(),
+comment|//                    "artist2",
+comment|//                    painting.getArtistName());
+comment|//            assertEquals(
+comment|//                    "CompoundPainting.getArtistName(): " + painting.getGalleryName(),
+comment|//                    painting.getToGallery().getGalleryName(),
+comment|//                    painting.getGalleryName());
+comment|//        }
+block|}
+specifier|public
+name|void
 name|testInsert
 parameter_list|()
 block|{

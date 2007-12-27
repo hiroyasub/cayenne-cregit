@@ -40,6 +40,13 @@ specifier|public
 interface|interface
 name|EJBQLTranslatorFactory
 block|{
+name|EJBQLJoinAppender
+name|getJoinAppender
+parameter_list|(
+name|EJBQLTranslationContext
+name|context
+parameter_list|)
+function_decl|;
 name|EJBQLExpressionVisitor
 name|getSelectTranslator
 parameter_list|(
