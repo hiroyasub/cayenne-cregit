@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -25,7 +35,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjRelationship
+name|DbRelationship
 import|;
 end_import
 
@@ -84,9 +94,12 @@ name|String
 name|identifier
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a relationship that joins identifier with a parent entity. Returns null if      * the identifier corresponds to one of the query roots.      */
-name|ObjRelationship
-name|getIncomingRelationship
+comment|/**      * Returns a collection of relationships that joins identifier with a parent entity.      * Returns null if the identifier corresponds to one of the query roots.      */
+name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
+name|getIncomingRelationships
 parameter_list|(
 name|String
 name|identifier
