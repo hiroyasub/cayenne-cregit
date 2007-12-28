@@ -426,6 +426,10 @@ specifier|transient
 name|LifecycleCallbackRegistry
 name|callbackRegistry
 decl_stmt|;
+specifier|protected
+name|EntityListenerFactory
+name|entityListenerFactory
+decl_stmt|;
 comment|/**      * Creates new EntityResolver.      */
 specifier|public
 name|EntityResolver
@@ -948,6 +952,8 @@ init|=
 name|createListener
 argument_list|(
 name|listener
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|CallbackDescriptor
@@ -1054,6 +1060,8 @@ init|=
 name|createListener
 argument_list|(
 name|listener
+argument_list|,
+name|entity
 argument_list|)
 decl_stmt|;
 name|CallbackDescriptor
@@ -1201,6 +1209,9 @@ name|createListener
 parameter_list|(
 name|EntityListener
 name|listener
+parameter_list|,
+name|ObjEntity
+name|entity
 parameter_list|)
 block|{
 name|Class
@@ -1244,6 +1255,24 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
+block|}
+if|if
+condition|(
+name|entityListenerFactory
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+name|entityListenerFactory
+operator|.
+name|createListener
+argument_list|(
+name|listenerClass
+argument_list|,
+name|entity
+argument_list|)
+return|;
 block|}
 try|try
 block|{
@@ -3008,6 +3037,22 @@ block|}
 return|return
 name|classDescriptorMap
 return|;
+block|}
+comment|/**      * Sets an optional {@link EntityListenerFactory} that should be used to create entity      * listeners. Note that changing the factory does not affect already created      * listeners. So refresh the existing listners, call "setCallbackRegistry(null)" after      * setting the listener.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setEntityListenerFactory
+parameter_list|(
+name|EntityListenerFactory
+name|entityListenerFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|entityListenerFactory
+operator|=
+name|entityListenerFactory
+expr_stmt|;
 block|}
 block|}
 end_class
