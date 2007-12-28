@@ -27,6 +27,11 @@ name|Converter
 block|{
 annotation|@
 name|Override
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|Object
 name|convert
 parameter_list|(

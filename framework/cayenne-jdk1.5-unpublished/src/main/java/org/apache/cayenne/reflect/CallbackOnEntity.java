@@ -82,6 +82,9 @@ decl_stmt|;
 name|CallbackOnEntity
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|String
@@ -118,6 +121,10 @@ name|invoke
 argument_list|(
 name|entity
 argument_list|,
+operator|(
+name|Object
+index|[]
+operator|)
 literal|null
 argument_list|)
 expr_stmt|;
@@ -149,6 +156,9 @@ name|Method
 name|findMethod
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|String

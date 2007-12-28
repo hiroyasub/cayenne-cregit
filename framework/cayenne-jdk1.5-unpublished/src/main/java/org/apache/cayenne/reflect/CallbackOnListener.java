@@ -115,6 +115,9 @@ name|String
 name|methodName
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityType
 parameter_list|)
 throws|throws
@@ -210,12 +213,18 @@ name|Method
 name|findMethod
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|String
 name|methodName
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityType
 parameter_list|)
 throws|throws
@@ -263,7 +272,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-comment|// must be non-static, void, with a single arg assinable to entity type
+comment|// must be non-static, void, with a single arg assignable to entity type
 comment|// JPA spec also requires it to be non-final, but we don't care
 name|int
 name|modifiers
@@ -277,6 +286,9 @@ name|getModifiers
 argument_list|()
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
 name|parameters
 init|=

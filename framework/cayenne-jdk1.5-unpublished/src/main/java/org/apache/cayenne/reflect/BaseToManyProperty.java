@@ -204,10 +204,16 @@ comment|// * changes object state to modified
 comment|// Now do the rest of the normal handling (regardless of whether it was
 comment|// flattened or not)
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|collection
 init|=
 operator|(
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|readProperty
 argument_list|(
@@ -257,10 +263,16 @@ comment|// * changes object state to modified
 comment|// Now do the rest of the normal handling (regardless of whether it was
 comment|// flattened or not)
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|collection
 init|=
 operator|(
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|readProperty
 argument_list|(
