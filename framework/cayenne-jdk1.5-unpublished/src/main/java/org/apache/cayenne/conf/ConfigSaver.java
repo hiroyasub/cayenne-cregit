@@ -1008,7 +1008,7 @@ argument_list|()
 argument_list|,
 name|info
 operator|.
-name|getPasswordEncoderSalt
+name|getPasswordEncoderKey
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1106,7 +1106,7 @@ argument_list|()
 argument_list|,
 name|info
 operator|.
-name|getPasswordEncoderSalt
+name|getPasswordEncoderKey
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1149,11 +1149,11 @@ argument_list|)
 operator|+
 name|attribute
 argument_list|(
-literal|"encoderSalt"
+literal|"encoderKey"
 argument_list|,
 name|info
 operator|.
-name|getPasswordEncoderSalt
+name|getPasswordEncoderKey
 argument_list|()
 argument_list|)
 operator|+

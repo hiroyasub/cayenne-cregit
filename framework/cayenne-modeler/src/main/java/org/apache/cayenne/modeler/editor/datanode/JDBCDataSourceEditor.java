@@ -349,10 +349,10 @@ name|bindToTextField
 argument_list|(
 name|view
 operator|.
-name|getPasswordSalt
+name|getPasswordKey
 argument_list|()
 argument_list|,
-literal|"node.dataSource.dataSourceInfo.passwordEncoderSalt"
+literal|"node.dataSource.dataSourceInfo.passwordEncoderKey"
 argument_list|)
 expr_stmt|;
 name|fieldAdapters

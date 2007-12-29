@@ -55,7 +55,7 @@ name|getName
 argument_list|()
 block|}
 decl_stmt|;
-comment|/**    * Decodes an encoded database password.    *     * @param encodedPassword - The encoded password to be decoded    * @param salt - An optional data element which can be used to salt the algorithm.    * @return The decoded normal/plain plassword.    */
+comment|/**    * Decodes an encoded database password.    *     * @param encodedPassword - The encoded password to be decoded    * @param key - An optional data element which can be used to unlock the password.    *        Some encoders may require the key.    * @return The decoded normal/plain plassword.    */
 specifier|public
 name|String
 name|decodePassword
@@ -64,10 +64,10 @@ name|String
 name|encodedPassword
 parameter_list|,
 name|String
-name|salt
+name|key
 parameter_list|)
 function_decl|;
-comment|/**    * Encodes a normal/plain database password.    *     * @param normalPassword - The normal/plain password to be encoded    * @param salt - An optional data element which can be used to salt the algorithm.    * @return The encoded password.    */
+comment|/**    * Encodes a normal/plain database password.    *     * @param normalPassword - The normal/plain password to be encoded    * @param key - An optional data element which can be used to lock the password.    *        Some encoders may require the key.    * @return The encoded password.    */
 specifier|public
 name|String
 name|encodePassword
@@ -76,7 +76,7 @@ name|String
 name|normalPassword
 parameter_list|,
 name|String
-name|salt
+name|key
 parameter_list|)
 function_decl|;
 block|}

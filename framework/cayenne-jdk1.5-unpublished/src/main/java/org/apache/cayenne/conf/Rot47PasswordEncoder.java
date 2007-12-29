@@ -35,7 +35,7 @@ name|String
 name|encodedPassword
 parameter_list|,
 name|String
-name|salt
+name|key
 parameter_list|)
 block|{
 return|return
@@ -54,7 +54,7 @@ name|String
 name|normalPassword
 parameter_list|,
 name|String
-name|salt
+name|key
 parameter_list|)
 block|{
 return|return

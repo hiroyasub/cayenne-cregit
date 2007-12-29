@@ -159,9 +159,15 @@ index|]
 decl_stmt|;
 specifier|protected
 name|String
-name|passwordEncoderSalt
+name|passwordEncoderKey
 init|=
 literal|""
+decl_stmt|;
+specifier|protected
+name|String
+name|passwordLocation
+init|=
+name|PASSWORD_LOCATION_MODEL
 decl_stmt|;
 specifier|protected
 name|String
@@ -186,12 +192,6 @@ name|String
 name|passwordSourceUrl
 init|=
 literal|""
-decl_stmt|;
-specifier|protected
-name|String
-name|passwordLocation
-init|=
-name|PASSWORD_LOCATION_MODEL
 decl_stmt|;
 specifier|public
 name|boolean
@@ -391,11 +391,11 @@ name|nullSafeEquals
 argument_list|(
 name|this
 operator|.
-name|passwordEncoderSalt
+name|passwordEncoderKey
 argument_list|,
 name|dsi
 operator|.
-name|passwordEncoderSalt
+name|passwordEncoderKey
 argument_list|)
 condition|)
 return|return
@@ -654,12 +654,12 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|"\n   encoder salt: "
+literal|"\n   encoder key: "
 argument_list|)
 operator|.
 name|append
 argument_list|(
-name|passwordEncoderSalt
+name|passwordEncoderKey
 argument_list|)
 expr_stmt|;
 block|}
@@ -1004,30 +1004,30 @@ operator|=
 name|passwordEncoderClass
 expr_stmt|;
 block|}
-comment|/**      * @return the passwordEncoderSalt      */
+comment|/**      * @return the passwordEncoderKey      */
 specifier|public
 name|String
-name|getPasswordEncoderSalt
+name|getPasswordEncoderKey
 parameter_list|()
 block|{
 return|return
-name|passwordEncoderSalt
+name|passwordEncoderKey
 return|;
 block|}
-comment|/**      * @param passwordEncoderSalt the passwordEncoderSalt to set      */
+comment|/**      * @param passwordEncoderKey the passwordEncoderKey to set      */
 specifier|public
 name|void
-name|setPasswordEncoderSalt
+name|setPasswordEncoderKey
 parameter_list|(
 name|String
-name|passwordEncoderSalt
+name|passwordEncoderKey
 parameter_list|)
 block|{
 name|this
 operator|.
-name|passwordEncoderSalt
+name|passwordEncoderKey
 operator|=
-name|passwordEncoderSalt
+name|passwordEncoderKey
 expr_stmt|;
 block|}
 comment|/**      * @return the passwordLocationFilename      */

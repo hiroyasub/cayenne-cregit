@@ -272,7 +272,7 @@ name|passwordLocation
 decl_stmt|;
 specifier|protected
 name|JTextField
-name|passwordSalt
+name|passwordKey
 decl_stmt|;
 specifier|protected
 name|JTextField
@@ -358,10 +358,20 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|passwordSourceLabels
 init|=
 operator|new
 name|TreeMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 static|static
@@ -521,7 +531,7 @@ operator|new
 name|JTextField
 argument_list|()
 expr_stmt|;
-name|passwordSalt
+name|passwordKey
 operator|=
 operator|new
 name|JTextField
@@ -862,7 +872,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Password Salt:"
+literal|"Password Encoder Key:"
 argument_list|,
 name|cc
 operator|.
@@ -878,7 +888,7 @@ name|builder
 operator|.
 name|add
 argument_list|(
-name|passwordSalt
+name|passwordKey
 argument_list|,
 name|cc
 operator|.
@@ -898,7 +908,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Cayenne supplied encoders do not require salting"
+literal|"Note: Cayenne supplied encoders do not use a key."
 argument_list|,
 name|cc
 operator|.
@@ -1175,14 +1185,14 @@ return|return
 name|passwordLocation
 return|;
 block|}
-comment|/**      * @return the passwordSalt      */
+comment|/**      * @return the passwordKey      */
 specifier|public
 name|JTextField
-name|getPasswordSalt
+name|getPasswordKey
 parameter_list|()
 block|{
 return|return
-name|passwordSalt
+name|passwordKey
 return|;
 block|}
 comment|/**      * @return the passwordSource      */
