@@ -404,6 +404,15 @@ name|DEFAULT_CLIENT_PACKAGE_PROPERTY
 init|=
 literal|"defaultClientPackage"
 decl_stmt|;
+comment|/**      * Defines the name of the property for default client Java superclass.      *      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_CLIENT_SUPERCLASS_PROPERTY
+init|=
+literal|"defaultClientSuperclass"
+decl_stmt|;
 comment|/**      * Defines the name of the property for default DB schema.      *       * @since 1.1      */
 specifier|public
 specifier|static
@@ -422,7 +431,7 @@ name|DEFAULT_PACKAGE_PROPERTY
 init|=
 literal|"defaultPackage"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default DB schema.      *       * @since 1.1      */
+comment|/**      * Defines the name of the property for default Java superclass.      *       * @since 1.1      */
 specifier|public
 specifier|static
 specifier|final
@@ -475,6 +484,10 @@ decl_stmt|;
 specifier|protected
 name|String
 name|defaultClientPackage
+decl_stmt|;
+specifier|protected
+name|String
+name|defaultClientSuperclass
 decl_stmt|;
 specifier|private
 name|SortedMap
@@ -738,6 +751,16 @@ argument_list|(
 name|DEFAULT_CLIENT_PACKAGE_PROPERTY
 argument_list|)
 decl_stmt|;
+name|Object
+name|clientSuperclass
+init|=
+name|properties
+operator|.
+name|get
+argument_list|(
+name|DEFAULT_CLIENT_SUPERCLASS_PROPERTY
+argument_list|)
+decl_stmt|;
 name|this
 operator|.
 name|defaultLockType
@@ -841,6 +864,23 @@ literal|null
 operator|)
 condition|?
 name|clientPackageName
+operator|.
+name|toString
+argument_list|()
+else|:
+literal|null
+expr_stmt|;
+name|this
+operator|.
+name|defaultClientSuperclass
+operator|=
+operator|(
+name|clientSuperclass
+operator|!=
+literal|null
+operator|)
+condition|?
+name|clientSuperclass
 operator|.
 name|toString
 argument_list|()
@@ -1159,6 +1199,27 @@ argument_list|(
 name|DEFAULT_CLIENT_PACKAGE_PROPERTY
 argument_list|,
 name|defaultClientPackage
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|Util
+operator|.
+name|isEmptyString
+argument_list|(
+name|defaultClientSuperclass
+argument_list|)
+condition|)
+block|{
+name|encoder
+operator|.
+name|printProperty
+argument_list|(
+name|DEFAULT_CLIENT_SUPERCLASS_PROPERTY
+argument_list|,
+name|defaultClientSuperclass
 argument_list|)
 expr_stmt|;
 block|}
@@ -3341,6 +3402,32 @@ operator|.
 name|defaultClientPackage
 operator|=
 name|defaultClientPackage
+expr_stmt|;
+block|}
+comment|/**      * Returns default client superclass.      *      * @since 3.0      */
+specifier|public
+name|String
+name|getDefaultClientSuperclass
+parameter_list|()
+block|{
+return|return
+name|defaultClientSuperclass
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setDefaultClientSuperclass
+parameter_list|(
+name|String
+name|defaultClientSuperclass
+parameter_list|)
+block|{
+name|this
+operator|.
+name|defaultClientSuperclass
+operator|=
+name|defaultClientSuperclass
 expr_stmt|;
 block|}
 comment|/**      * @since 1.1      */
