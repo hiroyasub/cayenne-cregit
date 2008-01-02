@@ -1055,21 +1055,10 @@ expr_stmt|;
 block|}
 comment|/**      * Returns {@link QueryCache} used by this DataContext, creating it on the fly if      * needed. Uses parent DataDomain {@link QueryCacheFactory} to initialize the cache      * for the first time.      *       * @since 3.0      */
 specifier|public
+specifier|synchronized
 name|QueryCache
 name|getQueryCache
 parameter_list|()
-block|{
-if|if
-condition|(
-name|queryCache
-operator|==
-literal|null
-condition|)
-block|{
-synchronized|synchronized
-init|(
-name|this
-init|)
 block|{
 if|if
 condition|(
@@ -1094,14 +1083,13 @@ name|EMPTY_MAP
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-block|}
 return|return
 name|queryCache
 return|;
 block|}
 comment|/**      * Sets a QueryCache to be used for storing cached query results.      *       * @since 3.0      */
 specifier|public
+specifier|synchronized
 name|void
 name|setQueryCache
 parameter_list|(
