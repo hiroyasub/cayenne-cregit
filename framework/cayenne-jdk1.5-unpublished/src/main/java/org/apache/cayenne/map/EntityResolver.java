@@ -1107,7 +1107,6 @@ name|getCallbackMethods
 argument_list|()
 control|)
 block|{
-comment|// note that callbacks[i].getCallbackType() == i
 name|callbackRegistry
 operator|.
 name|addListener
@@ -1173,7 +1172,6 @@ name|getCallbackMethods
 argument_list|()
 control|)
 block|{
-comment|// note that callbacks[i].getCallbackType() == i
 name|callbackRegistry
 operator|.
 name|addListener
