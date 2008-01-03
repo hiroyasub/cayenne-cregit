@@ -25,17 +25,11 @@ interface|interface
 name|EntityListenerFactory
 block|{
 comment|/**      * Creates an instance of entity listener of a given class. "entity" parameter denotes      * ObjEntity for which the listener is installed. It is null if this is a default      * listener.      *       * @return a listener of the given class. May return null to indicate that a      *         configured listener should be suppressed.      */
-parameter_list|<
-name|T
-parameter_list|>
-name|T
+name|Object
 name|createListener
 parameter_list|(
-name|Class
-argument_list|<
-name|T
-argument_list|>
-name|listenerClass
+name|EntityListener
+name|listenerMapping
 parameter_list|,
 name|ObjEntity
 name|entity
