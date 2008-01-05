@@ -852,7 +852,11 @@ name|context
 operator|.
 name|getIncomingRelationships
 argument_list|(
+operator|new
+name|EJBQLTableId
+argument_list|(
 name|id
+argument_list|)
 argument_list|)
 operator|.
 name|get
@@ -1206,7 +1210,11 @@ name|context
 operator|.
 name|getIncomingRelationships
 argument_list|(
+operator|new
+name|EJBQLTableId
+argument_list|(
 name|id
+argument_list|)
 argument_list|)
 operator|.
 name|get

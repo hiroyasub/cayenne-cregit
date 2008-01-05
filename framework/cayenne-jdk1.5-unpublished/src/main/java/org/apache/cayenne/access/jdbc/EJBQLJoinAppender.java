@@ -99,20 +99,6 @@ name|DbRelationship
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|reflect
-operator|.
-name|ClassDescriptor
-import|;
-end_import
-
 begin_comment
 comment|/**  * Handles appending joins to the content buffer at a marked position.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -250,10 +236,10 @@ parameter_list|(
 name|String
 name|marker
 parameter_list|,
-name|String
+name|EJBQLTableId
 name|lhsId
 parameter_list|,
-name|String
+name|EJBQLTableId
 name|rhsId
 parameter_list|)
 block|{
@@ -276,10 +262,10 @@ parameter_list|(
 name|String
 name|marker
 parameter_list|,
-name|String
+name|EJBQLTableId
 name|lhsId
 parameter_list|,
-name|String
+name|EJBQLTableId
 name|rhsId
 parameter_list|)
 block|{
@@ -302,10 +288,10 @@ parameter_list|(
 name|String
 name|marker
 parameter_list|,
-name|String
+name|EJBQLTableId
 name|lhsId
 parameter_list|,
-name|String
+name|EJBQLTableId
 name|rhsId
 parameter_list|,
 name|String
@@ -362,6 +348,9 @@ operator|.
 name|getTableAlias
 argument_list|(
 name|lhsId
+operator|.
+name|getEntityId
+argument_list|()
 argument_list|,
 name|incomingDB
 operator|.
@@ -588,30 +577,19 @@ specifier|public
 name|String
 name|appendTable
 parameter_list|(
-name|String
+name|EJBQLTableId
 name|id
 parameter_list|)
 block|{
-name|ClassDescriptor
-name|descriptor
-init|=
-name|context
-operator|.
-name|getEntityDescriptor
-argument_list|(
-name|id
-argument_list|)
-decl_stmt|;
 name|String
 name|tableName
 init|=
-name|descriptor
-operator|.
-name|getEntity
-argument_list|()
+name|id
 operator|.
 name|getDbEntity
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 operator|.
 name|getFullyQualifiedName
 argument_list|()
@@ -624,6 +602,8 @@ name|isUsingAliases
 argument_list|()
 condition|)
 block|{
+comment|// TODO: andrus 1/5/2007 - if the same table is joined more than once, this
+comment|// will create an incorrect alias.
 name|String
 name|alias
 init|=
@@ -632,6 +612,9 @@ operator|.
 name|getTableAlias
 argument_list|(
 name|id
+operator|.
+name|getEntityId
+argument_list|()
 argument_list|,
 name|tableName
 argument_list|)
