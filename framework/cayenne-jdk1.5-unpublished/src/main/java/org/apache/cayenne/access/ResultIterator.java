@@ -55,6 +55,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|DataRow
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbEntity
@@ -62,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result  * of SelectQuery execution. Usually a ResultIterator is supported by  * an open java.sql.ResultSet, therefore most of the methods would throw  * checked exceptions. ResultIterators must be explicitly closed when the  * user is done working with them.  *   *<p><i>For more information see<a href="../../../../../../userguide/index.html"  * target="_top">Cayenne User Guide.</a></i></p>  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_interface
@@ -70,9 +82,11 @@ specifier|public
 interface|interface
 name|ResultIterator
 block|{
-comment|/**      * Returns all unread data rows from ResultSet and closes this iterator      * if asked to do so.      */
-specifier|public
+comment|/**      * Returns all unread data rows from ResultSet and closes this iterator if asked to do      * so.      */
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|dataRows
 parameter_list|(
 name|boolean
@@ -81,25 +95,32 @@ parameter_list|)
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**  	 * Returns true if there is at least one more record 	 * that can be read from the iterator. 	 */
-specifier|public
+comment|/**      * Returns true if there is at least one more record that can be read from the      * iterator.      */
 name|boolean
 name|hasNextRow
 parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**  	 * Returns the next result row as a Map. 	 */
-specifier|public
+comment|/**      * Returns the next result row as a Map.      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|nextDataRow
 parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**      * Returns a map of ObjectId values from the next result row.      * Primary key columns are determined from the provided DbEntity.      *       * @since 1.1      */
-specifier|public
+comment|/**      * Returns a map of ObjectId values from the next result row. Primary key columns are      * determined from the provided DbEntity.      *       * @since 1.1      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|nextObjectId
 parameter_list|(
 name|DbEntity
@@ -109,15 +130,13 @@ throws|throws
 name|CayenneException
 function_decl|;
 comment|/**      * Skips current data row instead of reading it.      */
-specifier|public
 name|void
 name|skipDataRow
 parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**       * Closes ResultIterator and associated ResultSet. This method must be      * called explicitly when the user is finished processing the records.      * Otherwise unused database resources will not be released properly.      */
-specifier|public
+comment|/**      * Closes ResultIterator and associated ResultSet. This method must be called      * explicitly when the user is finished processing the records. Otherwise unused      * database resources will not be released properly.      */
 name|void
 name|close
 parameter_list|()
@@ -125,7 +144,6 @@ throws|throws
 name|CayenneException
 function_decl|;
 comment|/**      * Returns the number of columns in the result row.      *       * @since 1.0.6      */
-specifier|public
 name|int
 name|getDataRowWidth
 parameter_list|()

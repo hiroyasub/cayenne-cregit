@@ -200,6 +200,11 @@ name|ResourceManager
 block|{
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Template
+argument_list|>
 name|templateCache
 decl_stmt|;
 specifier|public
@@ -269,9 +274,6 @@ block|{
 name|Template
 name|resource
 init|=
-operator|(
-name|Template
-operator|)
 name|templateCache
 operator|.
 name|get

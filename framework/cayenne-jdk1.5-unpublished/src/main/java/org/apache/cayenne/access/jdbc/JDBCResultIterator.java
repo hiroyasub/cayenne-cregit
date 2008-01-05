@@ -465,6 +465,9 @@ block|}
 comment|/**      * Returns all unread data rows from ResultSet, closing this iterator if needed.      */
 specifier|public
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|dataRows
 parameter_list|(
 name|boolean
@@ -474,18 +477,22 @@ throws|throws
 name|CayenneException
 block|{
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DataRow
+argument_list|>
 argument_list|()
 decl_stmt|;
 try|try
 block|{
 while|while
 condition|(
-name|this
-operator|.
 name|hasNextRow
 argument_list|()
 condition|)
@@ -494,8 +501,9 @@ name|list
 operator|.
 name|add
 argument_list|(
-name|this
-operator|.
+operator|(
+name|DataRow
+operator|)
 name|nextDataRow
 argument_list|()
 argument_list|)
@@ -533,6 +541,11 @@ block|}
 comment|/**      * Returns the next result row as a Map.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|nextDataRow
 parameter_list|()
 throws|throws
@@ -555,6 +568,11 @@ throw|;
 block|}
 comment|// read
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|row
 init|=
 name|readDataRow
@@ -571,6 +589,11 @@ block|}
 comment|/**      * Returns a map of ObjectId values from the next result row. Primary key columns are      * determined from the provided DbEntity.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|nextObjectId
 parameter_list|(
 name|DbEntity
@@ -620,6 +643,11 @@ comment|// read ...
 comment|// TODO: note a mismatch with 1.1 API - ID positions are preset and are
 comment|// not affected by the entity specified (think of deprecating/replacing this)
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|row
 init|=
 name|readIdRow
@@ -934,6 +962,11 @@ block|}
 comment|/**      * Reads a row from the internal ResultSet at the current cursor position.      */
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|readDataRow
 parameter_list|()
 throws|throws
@@ -1075,6 +1108,11 @@ block|}
 comment|/**      * Reads a row from the internal ResultSet at the current cursor position, processing      * only columns that are part of the ObjectId of a target class.      */
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|readIdRow
 parameter_list|()
 throws|throws
