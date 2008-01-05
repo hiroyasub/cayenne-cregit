@@ -1386,8 +1386,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|DbEntity
-name|entity
+name|DataMap
+name|dataMap
 init|=
 name|targetPath
 operator|.
@@ -1397,6 +1397,11 @@ name|DataMap
 operator|.
 name|class
 argument_list|)
+decl_stmt|;
+name|DbEntity
+name|entity
+init|=
+name|dataMap
 operator|.
 name|getDbEntity
 argument_list|(
@@ -1410,15 +1415,23 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
+comment|// table may be defined in a superclass that is not processed yet... so create
+comment|// a barebone version, with all remaining properties to be set later
+name|entity
+operator|=
 operator|new
-name|JpaProviderException
+name|DbEntity
 argument_list|(
-literal|"No DbEntity defined for table  "
-operator|+
 name|tableName
 argument_list|)
-throw|;
+expr_stmt|;
+name|dataMap
+operator|.
+name|addDbEntity
+argument_list|(
+name|entity
+argument_list|)
+expr_stmt|;
 block|}
 name|entity
 operator|.
@@ -4070,6 +4083,18 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+name|DataMap
+name|dataMap
+init|=
+name|targetPath
+operator|.
+name|firstInstanceOf
+argument_list|(
+name|DataMap
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 name|ObjEntity
 name|cayenneEntity
 init|=
@@ -4082,13 +4107,23 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+comment|// as superentity may not be loaded yet, must lookup DbEntity via JPA
+comment|// mapping...
 name|DbEntity
 name|cayennePrimaryTable
 init|=
-name|cayenneEntity
+name|dataMap
 operator|.
 name|getDbEntity
+argument_list|(
+name|entity
+operator|.
+name|lookupTable
 argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -4106,10 +4141,7 @@ comment|// DbEntity...
 name|DbEntity
 name|cayenneSecondaryTable
 init|=
-name|cayennePrimaryTable
-operator|.
-name|getDataMap
-argument_list|()
+name|dataMap
 operator|.
 name|getDbEntity
 argument_list|(
@@ -5419,6 +5451,20 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|parentCayenneEntity
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|addDbEntity
+argument_list|(
+name|cayenneEntity
+argument_list|)
+expr_stmt|;
+block|}
+comment|// override catalog and schema even if this is an existing entity. See for
+comment|// instance JpaColumnVisitor for an example on how an entity without all
+comment|// properties is created early.
 name|cayenneEntity
 operator|.
 name|setCatalog
@@ -5439,17 +5485,6 @@ name|getSchema
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|parentCayenneEntity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|addDbEntity
-argument_list|(
-name|cayenneEntity
-argument_list|)
-expr_stmt|;
-block|}
 name|parentCayenneEntity
 operator|.
 name|setDbEntity
@@ -5532,6 +5567,17 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|parentCayenneEntity
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|addDbEntity
+argument_list|(
+name|secondaryEntity
+argument_list|)
+expr_stmt|;
+block|}
 name|secondaryEntity
 operator|.
 name|setCatalog
@@ -5552,17 +5598,6 @@ name|getSchema
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|parentCayenneEntity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|addDbEntity
-argument_list|(
-name|secondaryEntity
-argument_list|)
-expr_stmt|;
-block|}
 comment|// defer primary./secondary relationship creation till after parent entity's
 comment|// children are fully parsed...
 return|return
