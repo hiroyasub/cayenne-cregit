@@ -131,7 +131,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Call 'helper' to prepare insert"
+literal|"Call 'setColumns' to prepare insert"
 argument_list|)
 throw|;
 block|}
