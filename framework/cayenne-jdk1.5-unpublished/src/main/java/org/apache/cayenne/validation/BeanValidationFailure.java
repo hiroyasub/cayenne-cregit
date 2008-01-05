@@ -139,6 +139,9 @@ name|String
 name|attribute
 parameter_list|,
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|value
 parameter_list|)
 block|{
@@ -247,6 +250,9 @@ name|attribute
 argument_list|,
 operator|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|value
 argument_list|)

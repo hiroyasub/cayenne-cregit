@@ -45,6 +45,11 @@ interface|interface
 name|PlistDataStructureFactory
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|createMap
 parameter_list|(
 name|String
@@ -52,6 +57,9 @@ name|keyPath
 parameter_list|)
 function_decl|;
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|createCollection
 parameter_list|(
 name|String
