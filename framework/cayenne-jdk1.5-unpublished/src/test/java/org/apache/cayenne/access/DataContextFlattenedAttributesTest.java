@@ -119,6 +119,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|PersistenceState
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|exp
 operator|.
 name|ExpressionFactory
@@ -307,6 +319,21 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"artist real id: "
+operator|+
+operator|(
+name|i
+operator|+
+literal|1
+operator|)
+argument_list|)
+expr_stmt|;
 name|stmt
 operator|.
 name|setString
@@ -455,6 +482,27 @@ argument_list|,
 literal|"painting"
 operator|+
 name|i
+argument_list|)
+expr_stmt|;
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"artist id: "
+operator|+
+operator|(
+operator|(
+name|i
+operator|-
+literal|1
+operator|)
+operator|%
+name|artistCount
+operator|+
+literal|2
+operator|)
 argument_list|)
 expr_stmt|;
 name|stmt
@@ -814,6 +862,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// TODO: andrus 1/5/2007 -  CAY-952: SelectQuery uses INNER JOIN for flattened attributes, while
+comment|// EJBQLQuery does an OUTER JOIN... which seems like a better idea...
 specifier|public
 name|void
 name|testSelectCompound2
@@ -1047,38 +1097,102 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//        populateTables();
-comment|//        EJBQLQuery query = new EJBQLQuery("SELECT a FROM CompoundPainting a WHERE a.artistName = 'artist2'");
-comment|//        List<?> objects = context.performQuery(query);
-comment|//
-comment|//        assertNotNull(objects);
-comment|//        assertEquals(1, objects.size());
-comment|//        assertTrue("CompoundPainting expected, got " + objects.get(0).getClass(), objects
-comment|//                .get(0) instanceof CompoundPainting);
-comment|//
-comment|//        for (Iterator<?> i = objects.iterator(); i.hasNext();) {
-comment|//            CompoundPainting painting = (CompoundPainting) i.next();
-comment|//            Number id = (Number) painting
-comment|//                    .getObjectId()
-comment|//                    .getIdSnapshot()
-comment|//                    .get("PAINTING_ID");
-comment|//            assertEquals("CompoundPainting.getObjectId(): " + id, id.intValue(), 2);
-comment|//            assertEquals("CompoundPainting.getPaintingTitle(): "
-comment|//                    + painting.getPaintingTitle(), "painting" + id, painting
-comment|//                    .getPaintingTitle());
-comment|//            assertEquals(
-comment|//                    "CompoundPainting.getTextReview(): " + painting.getTextReview(),
-comment|//                    "painting review" + id,
-comment|//                    painting.getTextReview());
-comment|//            assertEquals(
-comment|//                    "CompoundPainting.getArtistName(): " + painting.getArtistName(),
-comment|//                    "artist2",
-comment|//                    painting.getArtistName());
-comment|//            assertEquals(
-comment|//                    "CompoundPainting.getArtistName(): " + painting.getGalleryName(),
-comment|//                    painting.getToGallery().getGalleryName(),
-comment|//                    painting.getGalleryName());
-comment|//        }
+name|populateTables
+argument_list|()
+expr_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"SELECT a FROM CompoundPainting a WHERE a.artistName = 'artist2'"
+argument_list|)
+decl_stmt|;
+name|List
+argument_list|<
+name|?
+argument_list|>
+name|objects
+init|=
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|objects
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|objects
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+literal|"CompoundPainting expected, got "
+operator|+
+name|objects
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getClass
+argument_list|()
+argument_list|,
+name|objects
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|instanceof
+name|CompoundPainting
+argument_list|)
+expr_stmt|;
+name|Iterator
+argument_list|<
+name|?
+argument_list|>
+name|i
+init|=
+name|objects
+operator|.
+name|iterator
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|i
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|CompoundPainting
+name|painting
+init|=
+operator|(
+name|CompoundPainting
+operator|)
+name|i
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+comment|// assertEquals(PersistenceState.COMMITTED, painting.getPersistenceState());
+block|}
 block|}
 specifier|public
 name|void
