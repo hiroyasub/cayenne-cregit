@@ -322,7 +322,8 @@ comment|// stored procedure may contain a mixture of update counts and result se
 comment|// and out parameters. Read out parameters first, then
 comment|// iterate until we exhaust all results
 comment|// TODO: andrus, 4/2/2007 - according to the docs we should store the boolean
-comment|// return value of this method and avoid calling 'getMoreResults' if it is true.
+comment|// return value of this method and avoid calling 'getMoreResults' if it is
+comment|// true.
 comment|// some db's handle this well, some don't (MySQL).
 name|statement
 operator|.
@@ -541,6 +542,10 @@ argument_list|)
 throw|;
 block|}
 name|List
+argument_list|<
+name|ColumnDescriptor
+index|[]
+argument_list|>
 name|descriptors
 init|=
 name|query
@@ -607,10 +612,6 @@ name|ColumnDescriptor
 index|[]
 name|columns
 init|=
-operator|(
-name|ColumnDescriptor
-index|[]
-operator|)
 name|descriptors
 operator|.
 name|get
@@ -679,6 +680,9 @@ init|=
 literal|null
 decl_stmt|;
 name|List
+argument_list|<
+name|ProcedureParameter
+argument_list|>
 name|parameters
 init|=
 name|getProcedure
@@ -708,9 +712,6 @@ block|{
 name|ProcedureParameter
 name|parameter
 init|=
-operator|(
-name|ProcedureParameter
-operator|)
 name|parameters
 operator|.
 name|get

@@ -401,15 +401,24 @@ else|:
 literal|1
 decl_stmt|;
 name|List
+argument_list|<
+name|Number
+argument_list|>
 name|counts
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Number
+argument_list|>
 argument_list|(
 name|batchSize
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 operator|(
@@ -508,7 +517,7 @@ name|counts
 argument_list|)
 expr_stmt|;
 block|}
-comment|// notify of combined counts of all queries inside SQLTemplate multipled by the
+comment|// notify of combined counts of all queries inside SQLTemplate multiplied by the
 comment|// number of parameter sets...
 name|int
 index|[]
@@ -545,17 +554,12 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
-operator|(
-name|Integer
-operator|)
 name|counts
 operator|.
 name|get
 argument_list|(
 name|i
 argument_list|)
-operator|)
 operator|.
 name|intValue
 argument_list|()
@@ -585,6 +589,9 @@ name|SQLStatement
 name|compiled
 parameter_list|,
 name|Collection
+argument_list|<
+name|Number
+argument_list|>
 name|updateCounts
 parameter_list|)
 throws|throws
