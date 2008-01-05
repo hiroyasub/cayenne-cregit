@@ -41,6 +41,20 @@ name|ItestDBUtils
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|itest
+operator|.
+name|ItestTableUtils
+import|;
+end_import
+
 begin_comment
 comment|/**  * Abstract test case that bootstraps default JPA unit called "itest" and a schema script  * called "schema-hsqldb.sql".  *   * @author Andrus Adamchik  */
 end_comment
@@ -66,6 +80,25 @@ argument_list|()
 operator|.
 name|getDbHelper
 argument_list|()
+return|;
+block|}
+specifier|protected
+name|ItestTableUtils
+name|getTableHelper
+parameter_list|(
+name|String
+name|tableName
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ItestTableUtils
+argument_list|(
+name|getDbHelper
+argument_list|()
+argument_list|,
+name|tableName
+argument_list|)
 return|;
 block|}
 block|}
