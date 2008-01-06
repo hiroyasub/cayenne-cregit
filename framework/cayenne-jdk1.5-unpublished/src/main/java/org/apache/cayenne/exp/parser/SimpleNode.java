@@ -135,6 +135,9 @@ name|pw
 parameter_list|,
 name|Object
 name|scalar
+parameter_list|,
+name|char
+name|quoteChar
 parameter_list|)
 block|{
 name|boolean
@@ -153,7 +156,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-literal|'\"'
+name|quoteChar
 argument_list|)
 expr_stmt|;
 block|}
@@ -213,7 +216,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-literal|'\"'
+name|quoteChar
 argument_list|)
 expr_stmt|;
 block|}

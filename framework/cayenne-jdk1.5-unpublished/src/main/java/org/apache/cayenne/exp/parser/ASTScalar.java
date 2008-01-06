@@ -155,6 +155,8 @@ argument_list|(
 name|pw
 argument_list|,
 name|value
+argument_list|,
+literal|'\"'
 argument_list|)
 expr_stmt|;
 block|}
@@ -179,6 +181,8 @@ argument_list|(
 name|pw
 argument_list|,
 name|value
+argument_list|,
+literal|'\''
 argument_list|)
 expr_stmt|;
 block|}

@@ -346,6 +346,8 @@ name|values
 index|[
 name|i
 index|]
+argument_list|,
+literal|'\"'
 argument_list|)
 expr_stmt|;
 block|}
