@@ -558,6 +558,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|it
 init|=
 name|objectMatchTranslator
@@ -596,9 +599,6 @@ block|}
 name|String
 name|key
 init|=
-operator|(
-name|String
-operator|)
 name|it
 operator|.
 name|next
@@ -1525,6 +1525,9 @@ name|paramDesc
 parameter_list|)
 block|{
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 literal|null
@@ -1551,6 +1554,9 @@ operator|=
 operator|(
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|list
 operator|)
