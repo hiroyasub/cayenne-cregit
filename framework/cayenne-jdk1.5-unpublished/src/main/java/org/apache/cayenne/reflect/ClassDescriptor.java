@@ -35,6 +35,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjEntity
 import|;
 end_import
@@ -135,6 +149,14 @@ argument_list|<
 name|Property
 argument_list|>
 name|getIdProperties
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a collection of DbAttributes for the described class, its superclasses and      * subclasses, that participate in inheritance qualifier, but are not mapped as object      * properties.      *       * @since 3.0      */
+name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
+name|getDiscriminatorColumns
 parameter_list|()
 function_decl|;
 comment|/**      * Returns an iterator over the arc properties whose reverse arcs are to-many maps.      * I.e. for each ArcProperty in the iterator, the following is true:      *       *<pre>      * arc.getComplimentaryReverseArc() instanceof ToManyMapProperty      *</pre>      *       * @since 3.0      */

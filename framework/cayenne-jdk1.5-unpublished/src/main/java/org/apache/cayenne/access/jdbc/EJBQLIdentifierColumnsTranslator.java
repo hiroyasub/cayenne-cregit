@@ -621,7 +621,7 @@ block|}
 block|}
 block|}
 decl_stmt|;
-comment|// EJBQL queries are polimorphic by definition - there is no distinction between
+comment|// EJBQL queries are polymorphic by definition - there is no distinction between
 comment|// inheritance/no-inheritance fetch
 name|descriptor
 operator|.
@@ -660,6 +660,39 @@ argument_list|,
 literal|null
 argument_list|,
 name|pk
+argument_list|)
+expr_stmt|;
+block|}
+comment|// append inheritance discriminator columns...
+name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
+name|discriminatorColumns
+init|=
+name|descriptor
+operator|.
+name|getDiscriminatorColumns
+argument_list|()
+decl_stmt|;
+while|while
+condition|(
+name|discriminatorColumns
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|appendColumn
+argument_list|(
+name|idVar
+argument_list|,
+literal|null
+argument_list|,
+name|discriminatorColumns
+operator|.
+name|next
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
