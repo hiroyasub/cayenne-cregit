@@ -101,11 +101,11 @@ return|return
 literal|null
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|jjtGetChild
 argument_list|(
@@ -179,11 +179,11 @@ return|return
 literal|null
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|jjtGetChild
 argument_list|(

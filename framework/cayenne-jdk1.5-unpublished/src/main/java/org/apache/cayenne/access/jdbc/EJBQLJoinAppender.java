@@ -368,6 +368,7 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+comment|// TODO: andrus, 1/6/2008 - move reusable join check here...
 name|String
 name|sourceAlias
 init|=
