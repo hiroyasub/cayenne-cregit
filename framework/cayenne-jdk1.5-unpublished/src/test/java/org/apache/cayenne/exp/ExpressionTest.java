@@ -154,12 +154,13 @@ name|Expression
 operator|.
 name|fromString
 argument_list|(
-literal|"artistName = 'bla'"
+literal|"artistName = \"bla\""
 argument_list|)
 decl_stmt|;
+comment|// note single quotes - EJBQL does not support doublequotes...
 name|assertEquals
 argument_list|(
-literal|"x.artistName = \"bla\""
+literal|"x.artistName = 'bla'"
 argument_list|,
 name|e
 operator|.
@@ -230,7 +231,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"x.artistName = \"bla\""
+literal|"x.artistName = 'bla'"
 argument_list|,
 name|ejbql
 argument_list|)
