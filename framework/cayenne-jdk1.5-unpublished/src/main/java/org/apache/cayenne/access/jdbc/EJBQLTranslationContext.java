@@ -942,7 +942,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
 name|StringBuilder
 name|findOrCreateMarkedBuffer
 parameter_list|(
