@@ -158,9 +158,6 @@ expr_stmt|;
 name|EJBQLMultiColumnOperand
 name|lhs
 init|=
-operator|(
-name|EJBQLMultiColumnOperand
-operator|)
 name|multiColumnOperands
 operator|.
 name|get
@@ -171,9 +168,6 @@ decl_stmt|;
 name|EJBQLMultiColumnOperand
 name|rhs
 init|=
-operator|(
-name|EJBQLMultiColumnOperand
-operator|)
 name|multiColumnOperands
 operator|.
 name|get
@@ -182,6 +176,9 @@ literal|1
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|lhs
