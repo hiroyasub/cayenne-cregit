@@ -65,6 +65,48 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ejbql
+operator|.
+name|EJBQLBaseVisitor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|EJBQLExpression
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ejbql
+operator|.
+name|EJBQLParserFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|exp
 operator|.
 name|Expression
@@ -72,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A tree structure representing inheritance hierarchy   * of an ObjEntity and its subentities.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A tree structure representing inheritance hierarchy of an ObjEntity and its  * subentities.  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -109,7 +151,7 @@ operator|=
 name|entity
 expr_stmt|;
 block|}
-comment|/**      * Returns a qualifier Expression that matches root entity      * of this tree and all its subentities.      */
+comment|/**      * Returns a qualifier Expression that matches root entity of this tree and all its      * subentities.      */
 specifier|public
 name|Expression
 name|qualifierForEntityAndSubclasses
@@ -158,7 +200,8 @@ operator|.
 name|qualifierForEntityAndSubclasses
 argument_list|()
 decl_stmt|;
-comment|// if any child qualifier is null, just return null, since no filtering is possible
+comment|// if any child qualifier is null, just return null, since no filtering is
+comment|// possible
 if|if
 condition|(
 name|childQualifier
@@ -185,7 +228,117 @@ return|return
 name|qualifier
 return|;
 block|}
-comment|/**      * Returns the deepest possible entity in the inheritance hierarchy       * that can be used to create objects from a given DataRow.      */
+comment|/**      * @since 3.0      */
+specifier|public
+name|EJBQLExpression
+name|ejbqlQualifierForEntityAndSubclass
+parameter_list|(
+name|String
+name|entityId
+parameter_list|)
+block|{
+name|Expression
+name|qualifier
+init|=
+name|qualifierForEntityAndSubclasses
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|qualifier
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+comment|// TODO: andrus 1/6/2008 - extremely inefficient, cache inheritance qualifier in
+comment|// the ClassDescriptor
+comment|// parser only works on full queries, so prepend a dummy query and then strip it
+comment|// out...
+name|String
+name|ejbqlChunk
+init|=
+name|qualifier
+operator|.
+name|toEJBQL
+argument_list|(
+name|entityId
+argument_list|)
+decl_stmt|;
+name|EJBQLExpression
+name|expression
+init|=
+name|EJBQLParserFactory
+operator|.
+name|getParser
+argument_list|()
+operator|.
+name|parse
+argument_list|(
+literal|"DELETE FROM DUMMY WHERE "
+operator|+
+name|ejbqlChunk
+argument_list|)
+decl_stmt|;
+specifier|final
+name|EJBQLExpression
+index|[]
+name|result
+init|=
+operator|new
+name|EJBQLExpression
+index|[
+literal|1
+index|]
+decl_stmt|;
+name|expression
+operator|.
+name|visit
+argument_list|(
+operator|new
+name|EJBQLBaseVisitor
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|visitWhere
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+block|{
+name|result
+index|[
+literal|0
+index|]
+operator|=
+name|expression
+operator|.
+name|getChild
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+literal|false
+return|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+return|return
+name|result
+index|[
+literal|0
+index|]
+return|;
+block|}
+comment|/**      * Returns the deepest possible entity in the inheritance hierarchy that can be used      * to create objects from a given DataRow.      */
 specifier|public
 name|ObjEntity
 name|entityMatchingRow
