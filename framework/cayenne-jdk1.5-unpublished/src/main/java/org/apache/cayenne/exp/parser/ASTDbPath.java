@@ -369,6 +369,13 @@ name|pw
 operator|.
 name|print
 argument_list|(
+literal|"db:"
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|print
+argument_list|(
 name|rootId
 argument_list|)
 expr_stmt|;
@@ -376,7 +383,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-literal|".db:"
+literal|'.'
 argument_list|)
 expr_stmt|;
 name|pw
