@@ -158,6 +158,26 @@ literal|"false"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|encodeAsEJBQL
+parameter_list|(
+name|PrintWriter
+name|pw
+parameter_list|,
+name|String
+name|rootId
+parameter_list|)
+block|{
+name|encodeAsString
+argument_list|(
+name|pw
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
