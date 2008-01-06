@@ -33,6 +33,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|exp
+operator|.
+name|Expression
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -157,6 +171,11 @@ argument_list|<
 name|DbAttribute
 argument_list|>
 name|getDiscriminatorColumns
+parameter_list|()
+function_decl|;
+comment|/**      * Returns entity qualifier as a Cayenne expression that includes qualifiers for this      * entity and all subentities.      *       * @since 3.0      */
+name|Expression
+name|getEntityQualifier
 parameter_list|()
 function_decl|;
 comment|/**      * Returns an iterator over the arc properties whose reverse arcs are to-many maps.      * I.e. for each ArcProperty in the iterator, the following is true:      *       *<pre>      * arc.getComplimentaryReverseArc() instanceof ToManyMapProperty      *</pre>      *       * @since 3.0      */

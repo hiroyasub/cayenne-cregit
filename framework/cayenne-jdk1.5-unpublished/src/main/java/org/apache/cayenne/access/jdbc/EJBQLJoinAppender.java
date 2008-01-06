@@ -155,34 +155,6 @@ name|DbRelationship
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntityInheritanceTree
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|ObjEntity
-import|;
-end_import
-
 begin_comment
 comment|/**  * Handles appending joins to the content buffer at a marked position.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -760,11 +732,8 @@ name|isPrimaryTable
 argument_list|()
 condition|)
 block|{
-comment|// TODO: andrus 1/6/2008 - this is *extremely* inefficient, especially
-comment|// 'ejbqlQualifierForEntityAndSubclasses'. Cache inheritance qualifier in
-comment|// the ClassDescriptor
-name|ObjEntity
-name|entity
+name|Expression
+name|qualifier
 init|=
 name|context
 operator|.
@@ -776,37 +745,7 @@ name|getEntityId
 argument_list|()
 argument_list|)
 operator|.
-name|getEntity
-argument_list|()
-decl_stmt|;
-name|EntityInheritanceTree
-name|inheritanceTree
-init|=
-name|context
-operator|.
-name|getEntityResolver
-argument_list|()
-operator|.
-name|lookupInheritanceTree
-argument_list|(
-name|entity
-argument_list|)
-decl_stmt|;
-name|Expression
-name|qualifier
-init|=
-name|inheritanceTree
-operator|!=
-literal|null
-condition|?
-name|inheritanceTree
-operator|.
-name|qualifierForEntityAndSubclasses
-argument_list|()
-else|:
-name|entity
-operator|.
-name|getDeclaredQualifier
+name|getEntityQualifier
 argument_list|()
 decl_stmt|;
 if|if
