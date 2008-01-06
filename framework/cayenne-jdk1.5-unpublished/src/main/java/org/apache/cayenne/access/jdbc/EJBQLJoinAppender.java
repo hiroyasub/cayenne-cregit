@@ -99,6 +99,34 @@ name|DbRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EntityInheritanceTree
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
 begin_comment
 comment|/**  * Handles appending joins to the content buffer at a marked position.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -594,6 +622,9 @@ operator|.
 name|getFullyQualifiedName
 argument_list|()
 decl_stmt|;
+name|String
+name|alias
+decl_stmt|;
 if|if
 condition|(
 name|context
@@ -604,9 +635,8 @@ condition|)
 block|{
 comment|// TODO: andrus 1/5/2007 - if the same table is joined more than once, this
 comment|// will create an incorrect alias.
-name|String
 name|alias
-init|=
+operator|=
 name|context
 operator|.
 name|getTableAlias
@@ -618,7 +648,7 @@ argument_list|()
 argument_list|,
 name|tableName
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 comment|// not using "AS" to separate table name and alias name - OpenBase doesn't
 comment|// support
 comment|// "AS", and the rest of the databases do not care
@@ -644,9 +674,6 @@ argument_list|(
 name|alias
 argument_list|)
 expr_stmt|;
-return|return
-name|alias
-return|;
 block|}
 else|else
 block|{
@@ -662,10 +689,66 @@ argument_list|(
 name|tableName
 argument_list|)
 expr_stmt|;
-return|return
+name|alias
+operator|=
 name|tableName
-return|;
+expr_stmt|;
 block|}
+comment|// append inheritance qualifier...
+if|if
+condition|(
+name|id
+operator|.
+name|isPrimaryTable
+argument_list|()
+condition|)
+block|{
+name|ObjEntity
+name|entity
+init|=
+name|context
+operator|.
+name|getEntityDescriptor
+argument_list|(
+name|id
+operator|.
+name|getEntityId
+argument_list|()
+argument_list|)
+operator|.
+name|getEntity
+argument_list|()
+decl_stmt|;
+name|EntityInheritanceTree
+name|inheritanceTree
+init|=
+name|context
+operator|.
+name|getEntityResolver
+argument_list|()
+operator|.
+name|lookupInheritanceTree
+argument_list|(
+name|entity
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|inheritanceTree
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// TODO: andrus, 1/6/2008 - access to entity qualifier is pending CAY-956
+comment|// implementation...
+comment|// context.pushMarker(EJBQLSelectTranslator.makeWhereMarker(), true);
+comment|// context.append(" WHERE");
+comment|// context.popMarker();
+block|}
+block|}
+return|return
+name|alias
+return|;
 block|}
 block|}
 end_class

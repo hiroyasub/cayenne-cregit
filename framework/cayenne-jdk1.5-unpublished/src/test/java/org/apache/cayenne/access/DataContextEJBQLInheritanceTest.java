@@ -319,12 +319,16 @@ argument_list|(
 name|subclass
 argument_list|)
 decl_stmt|;
-comment|//        assertEquals(4, subclassResult.size());
+comment|// assertEquals(4, subclassResult.size());
 comment|//
-comment|//        assertEquals(Employee.class.getName(), subclassResult.get(0).getClass().getName());
-comment|//        assertEquals(Employee.class.getName(), subclassResult.get(1).getClass().getName());
-comment|//        assertEquals(Manager.class.getName(), subclassResult.get(2).getClass().getName());
-comment|//        assertEquals(Manager.class.getName(), subclassResult.get(3).getClass().getName());
+comment|// assertEquals(Employee.class.getName(),
+comment|// subclassResult.get(0).getClass().getName());
+comment|// assertEquals(Employee.class.getName(),
+comment|// subclassResult.get(1).getClass().getName());
+comment|// assertEquals(Manager.class.getName(),
+comment|// subclassResult.get(2).getClass().getName());
+comment|// assertEquals(Manager.class.getName(),
+comment|// subclassResult.get(3).getClass().getName());
 block|}
 block|}
 end_class

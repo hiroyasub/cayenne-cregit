@@ -226,6 +226,16 @@ operator|=
 name|dbPath
 expr_stmt|;
 block|}
+name|boolean
+name|isPrimaryTable
+parameter_list|()
+block|{
+return|return
+name|dbPath
+operator|==
+literal|null
+return|;
+block|}
 comment|/**      * Returns a DbEntity corresponding to the ID, that could be a root entity for the id,      * or a joined entity.      */
 name|DbEntity
 name|getDbEntity
