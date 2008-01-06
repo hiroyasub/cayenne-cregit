@@ -21,6 +21,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|persistence
+operator|.
+name|Query
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -46,6 +66,66 @@ operator|.
 name|jpa
 operator|.
 name|EntityManagerCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|itest
+operator|.
+name|ch2
+operator|.
+name|entity
+operator|.
+name|SingleTableInheritanceSub1
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|itest
+operator|.
+name|ch2
+operator|.
+name|entity
+operator|.
+name|SingleTableInheritanceSub2
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|jpa
+operator|.
+name|itest
+operator|.
+name|ch2
+operator|.
+name|entity
+operator|.
+name|SingleTableInheritanceSuper1
 import|;
 end_import
 
@@ -151,27 +231,130 @@ argument_list|,
 literal|"CX"
 argument_list|)
 expr_stmt|;
-comment|//        Query query = getEntityManager().createQuery(
-comment|//                "select a FROM SingleTableInheritanceSuper1 a ORDER BY a.propertyA");
-comment|//        List<?> results = query.getResultList();
-comment|//        assertEquals(4, results.size());
-comment|//
-comment|//        assertEquals(SingleTableInheritanceSuper1.class.getName(), results
-comment|//                .get(0)
-comment|//                .getClass()
-comment|//                .getName());
-comment|//        assertEquals(SingleTableInheritanceSuper1.class.getName(), results
-comment|//                .get(1)
-comment|//                .getClass()
-comment|//                .getName());
-comment|//        assertEquals(SingleTableInheritanceSub1.class.getName(), results
-comment|//                .get(2)
-comment|//                .getClass()
-comment|//                .getName());
-comment|//        assertEquals(SingleTableInheritanceSub2.class.getName(), results
-comment|//                .get(3)
-comment|//                .getClass()
-comment|//                .getName());
+name|Query
+name|query
+init|=
+name|getEntityManager
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select a FROM SingleTableInheritanceSuper1 a ORDER BY a.propertyA"
+argument_list|)
+decl_stmt|;
+name|List
+argument_list|<
+name|?
+argument_list|>
+name|results
+init|=
+name|query
+operator|.
+name|getResultList
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|4
+argument_list|,
+name|results
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|SingleTableInheritanceSuper1
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|results
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|SingleTableInheritanceSuper1
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|results
+operator|.
+name|get
+argument_list|(
+literal|1
+argument_list|)
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|SingleTableInheritanceSub1
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|results
+operator|.
+name|get
+argument_list|(
+literal|2
+argument_list|)
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|SingleTableInheritanceSub2
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|results
+operator|.
+name|get
+argument_list|(
+literal|3
+argument_list|)
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -268,15 +451,61 @@ argument_list|,
 literal|"CX"
 argument_list|)
 expr_stmt|;
-comment|//        Query query = getEntityManager().createQuery(
-comment|//                "select a FROM SingleTableInheritanceSub1 a ORDER BY a.propertyA");
-comment|//        List<?> results = query.getResultList();
-comment|//        assertEquals(1, results.size());
-comment|//
-comment|//        assertEquals(SingleTableInheritanceSub1.class.getName(), results
-comment|//                .get(0)
-comment|//                .getClass()
-comment|//                .getName());
+name|Query
+name|query
+init|=
+name|getEntityManager
+argument_list|()
+operator|.
+name|createQuery
+argument_list|(
+literal|"select a FROM SingleTableInheritanceSub1 a ORDER BY a.propertyA"
+argument_list|)
+decl_stmt|;
+name|List
+argument_list|<
+name|?
+argument_list|>
+name|results
+init|=
+name|query
+operator|.
+name|getResultList
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
+name|results
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|SingleTableInheritanceSub1
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|results
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
