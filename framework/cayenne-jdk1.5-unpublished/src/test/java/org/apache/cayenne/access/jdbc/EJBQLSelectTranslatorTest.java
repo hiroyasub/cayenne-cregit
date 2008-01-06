@@ -303,7 +303,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST t0${marker1}"
+literal|" FROM ARTIST t0${marker1}${marker2}"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -685,7 +685,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" FROM ARTIST t0${marker1} WHERE t0.ARTIST_NAME ="
+literal|" FROM ARTIST t0${marker1}${marker2} t0.ARTIST_NAME ="
 operator|+
 literal|" #bind('Dali' 'VARCHAR')"
 argument_list|)
@@ -755,7 +755,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST t0${marker1} WHERE "
+literal|" FROM ARTIST t0${marker1}${marker2} "
 argument_list|)
 operator|>
 literal|0
@@ -775,7 +775,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|"WHERE "
+literal|"${marker2}"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -800,7 +800,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" FROM ARTIST t0${marker1} WHERE "
+literal|" FROM ARTIST t0${marker1}${marker2} "
 argument_list|)
 operator|>
 literal|0
@@ -820,7 +820,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|"WHERE "
+literal|"${marker2}"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -889,7 +889,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|" WHERE "
+literal|"${marker2} "
 argument_list|)
 operator|>
 literal|0
@@ -909,7 +909,7 @@ name|sql
 operator|.
 name|indexOf
 argument_list|(
-literal|"WHERE "
+literal|"${marker2}"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -934,7 +934,7 @@ name|sql1
 operator|.
 name|indexOf
 argument_list|(
-literal|" WHERE "
+literal|"${marker2} "
 argument_list|)
 operator|>
 literal|0
@@ -954,7 +954,7 @@ name|sql1
 operator|.
 name|indexOf
 argument_list|(
-literal|"WHERE "
+literal|"${marker2}"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1001,7 +1001,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE NOT "
+literal|"${marker2} NOT "
 operator|+
 literal|"t0.ARTIST_NAME = #bind('Dali' 'VARCHAR')"
 argument_list|)
@@ -1049,7 +1049,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE> #bind($id2 'DECIMAL')"
+literal|"${marker2} t0.ESTIMATED_PRICE> #bind($id3 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1083,7 +1083,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE>= #bind($id2 'INTEGER')"
+literal|"${marker2} t0.ESTIMATED_PRICE>= #bind($id3 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1117,7 +1117,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE< #bind($id2 'DECIMAL')"
+literal|"${marker2} t0.ESTIMATED_PRICE< #bind($id3 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1151,7 +1151,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE<= #bind($id2 'DECIMAL')"
+literal|"${marker2} t0.ESTIMATED_PRICE<= #bind($id3 'DECIMAL')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1185,7 +1185,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ARTIST_NAME<> #bind('Dali' 'VARCHAR')"
+literal|"${marker2} t0.ARTIST_NAME<> #bind('Dali' 'VARCHAR')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1219,9 +1219,9 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE "
+literal|"${marker2} t0.ESTIMATED_PRICE "
 operator|+
-literal|"BETWEEN #bind($id2 'INTEGER') AND #bind($id3 'INTEGER')"
+literal|"BETWEEN #bind($id3 'INTEGER') AND #bind($id4 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1255,9 +1255,9 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.ESTIMATED_PRICE "
+literal|"${marker2} t0.ESTIMATED_PRICE "
 operator|+
-literal|"NOT BETWEEN #bind($id2 'INTEGER') AND #bind($id3 'INTEGER')"
+literal|"NOT BETWEEN #bind($id3 'INTEGER') AND #bind($id4 'INTEGER')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1291,7 +1291,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.PAINTING_TITLE "
+literal|"${marker2} t0.PAINTING_TITLE "
 operator|+
 literal|"LIKE #bind('Stuff' 'VARCHAR')"
 argument_list|)
@@ -1327,7 +1327,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|" WHERE t0.PAINTING_TITLE "
+literal|"${marker2} t0.PAINTING_TITLE "
 operator|+
 literal|"NOT LIKE #bind('Stuff' 'VARCHAR')"
 argument_list|)
@@ -1398,7 +1398,7 @@ name|sql
 operator|.
 name|endsWith
 argument_list|(
-literal|"t0.ARTIST_NAME = #bind($id2) OR t0.ARTIST_NAME = #bind($id3)"
+literal|"t0.ARTIST_NAME = #bind($id3) OR t0.ARTIST_NAME = #bind($id4)"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -53,6 +53,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|LinkedList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -243,6 +253,13 @@ specifier|private
 name|boolean
 name|usingAliases
 decl_stmt|;
+specifier|protected
+name|LinkedList
+argument_list|<
+name|StringBuilder
+argument_list|>
+name|bufferStack
+decl_stmt|;
 comment|// a flag indicating whether column expressions should be treated as result columns or
 comment|// not.
 specifier|private
@@ -304,6 +321,17 @@ operator|.
 name|usingAliases
 operator|=
 literal|true
+expr_stmt|;
+name|this
+operator|.
+name|bufferStack
+operator|=
+operator|new
+name|LinkedList
+argument_list|<
+name|StringBuilder
+argument_list|>
+argument_list|()
 expr_stmt|;
 block|}
 name|SQLTemplate
@@ -707,19 +735,11 @@ argument_list|(
 name|marker
 argument_list|)
 decl_stmt|;
-comment|// make sure we mark the main buffer
-name|StringBuilder
-name|current
-init|=
+comment|// append directly to the main buffer, bypassing the stack and the current buffer
 name|this
 operator|.
-name|currentBuffer
-decl_stmt|;
-try|try
-block|{
-name|switchToMainBuffer
-argument_list|()
-expr_stmt|;
+name|mainBuffer
+operator|.
 name|append
 argument_list|(
 literal|"${"
@@ -736,19 +756,9 @@ literal|"}"
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-name|this
-operator|.
-name|currentBuffer
-operator|=
-name|current
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Switches the current buffer to a marked buffer. Note that this can be done even      * before the marker is inserted in the main buffer. If "reset" is true, any previous      * contents of the marker are cleared.      */
+comment|/**      * Switches the current buffer to a marked buffer, pushing the currently used buffer      * on the stack. Note that this can be done even before the marker is inserted in the      * main buffer. If "reset" is true, any previous contents of the marker are cleared.      */
 name|void
-name|switchToMarker
+name|pushMarker
 parameter_list|(
 name|String
 name|marker
@@ -757,6 +767,13 @@ name|boolean
 name|reset
 parameter_list|)
 block|{
+name|bufferStack
+operator|.
+name|add
+argument_list|(
+name|currentBuffer
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|currentBuffer
@@ -789,17 +806,19 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Pops a marker stack, switching to the previously used marker.      */
 name|void
-name|switchToMainBuffer
+name|popMarker
 parameter_list|()
 block|{
 name|this
 operator|.
 name|currentBuffer
 operator|=
-name|this
+name|bufferStack
 operator|.
-name|mainBuffer
+name|removeLast
+argument_list|()
 expr_stmt|;
 block|}
 specifier|private

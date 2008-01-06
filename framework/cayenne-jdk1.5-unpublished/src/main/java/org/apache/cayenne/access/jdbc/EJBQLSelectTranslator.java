@@ -68,6 +68,15 @@ return|return
 literal|"DISTINCT_MARKER"
 return|;
 block|}
+specifier|static
+name|String
+name|makeWhereMarker
+parameter_list|()
+block|{
+return|return
+literal|"WHERE_MARKER"
+return|;
+block|}
 name|EJBQLSelectTranslator
 parameter_list|(
 name|EJBQLTranslationContext
@@ -101,7 +110,7 @@ comment|// "distinct" is appended via a marker as sometimes a later match on to-
 comment|// require a DISTINCT insertion.
 name|context
 operator|.
-name|switchToMarker
+name|pushMarker
 argument_list|(
 name|makeDistinctMarker
 argument_list|()
@@ -118,7 +127,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|switchToMainBuffer
+name|popMarker
 argument_list|()
 expr_stmt|;
 return|return
@@ -163,6 +172,14 @@ name|getFromTranslator
 argument_list|(
 name|context
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|markCurrentPosition
+argument_list|(
+name|makeWhereMarker
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -354,12 +371,29 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
+comment|// "WHERE" is appended via a marker as it may have been already appended when an
+comment|// entity inheritance qualifier was applied.
+name|context
+operator|.
+name|pushMarker
+argument_list|(
+name|makeWhereMarker
+argument_list|()
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 name|context
 operator|.
 name|append
 argument_list|(
 literal|" WHERE"
 argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|popMarker
+argument_list|()
 expr_stmt|;
 name|expression
 operator|.

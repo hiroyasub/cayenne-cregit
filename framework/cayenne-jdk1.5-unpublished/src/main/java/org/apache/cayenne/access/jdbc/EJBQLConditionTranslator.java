@@ -561,7 +561,7 @@ condition|)
 block|{
 name|context
 operator|.
-name|switchToMarker
+name|pushMarker
 argument_list|(
 name|EJBQLSelectTranslator
 operator|.
@@ -580,7 +580,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|switchToMainBuffer
+name|popMarker
 argument_list|()
 expr_stmt|;
 block|}

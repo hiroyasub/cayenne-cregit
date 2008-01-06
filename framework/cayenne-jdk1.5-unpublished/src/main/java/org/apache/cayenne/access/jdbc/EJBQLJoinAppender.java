@@ -370,7 +370,7 @@ condition|)
 block|{
 name|context
 operator|.
-name|switchToMarker
+name|pushMarker
 argument_list|(
 name|marker
 argument_list|,
@@ -567,7 +567,7 @@ condition|)
 block|{
 name|context
 operator|.
-name|switchToMainBuffer
+name|popMarker
 argument_list|()
 expr_stmt|;
 block|}
