@@ -187,9 +187,6 @@ name|ObjectDiff
 name|diff
 init|=
 operator|(
-name|ObjectDiff
-operator|)
-operator|(
 operator|(
 name|DataContext
 operator|)

@@ -384,9 +384,6 @@ block|{
 name|DataMap
 name|map
 init|=
-operator|(
-name|DataMap
-operator|)
 name|path
 operator|.
 name|firstInstanceOf
@@ -516,9 +513,6 @@ block|{
 name|QueryEngine
 name|parent
 init|=
-operator|(
-name|QueryEngine
-operator|)
 name|path
 operator|.
 name|firstInstanceOf

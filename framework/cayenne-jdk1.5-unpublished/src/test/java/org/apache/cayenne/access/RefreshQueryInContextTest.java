@@ -1874,9 +1874,6 @@ decl_stmt|;
 name|Painting
 name|p1
 init|=
-operator|(
-name|Painting
-operator|)
 name|a1
 operator|.
 name|getPaintingArray
@@ -1890,9 +1887,6 @@ decl_stmt|;
 name|Painting
 name|p2
 init|=
-operator|(
-name|Painting
-operator|)
 name|a1
 operator|.
 name|getPaintingArray

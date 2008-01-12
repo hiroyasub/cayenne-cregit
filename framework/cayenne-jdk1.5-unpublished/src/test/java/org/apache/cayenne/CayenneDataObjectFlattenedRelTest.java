@@ -762,9 +762,6 @@ decl_stmt|;
 name|ArtGroup
 name|group
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|a1
 operator|.
 name|getGroupArray
@@ -868,9 +865,6 @@ decl_stmt|;
 name|ArtGroup
 name|group
 init|=
-operator|(
-name|ArtGroup
-operator|)
 name|a1
 operator|.
 name|getGroupArray

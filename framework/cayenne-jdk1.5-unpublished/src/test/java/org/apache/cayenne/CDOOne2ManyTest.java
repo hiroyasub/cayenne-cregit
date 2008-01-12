@@ -461,9 +461,6 @@ argument_list|(
 name|paintingName
 argument_list|,
 operator|(
-operator|(
-name|Painting
-operator|)
 name|a2
 operator|.
 name|getPaintingArray

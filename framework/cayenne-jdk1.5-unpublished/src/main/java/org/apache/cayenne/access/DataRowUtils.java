@@ -559,9 +559,6 @@ specifier|final
 name|ObjectDiff
 name|diff
 init|=
-operator|(
-name|ObjectDiff
-operator|)
 name|context
 operator|.
 name|getObjectStore

@@ -419,9 +419,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getPaintingArray
@@ -579,9 +576,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getPaintingArray
@@ -726,9 +720,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getPaintingArray
@@ -886,9 +877,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getPaintingArray
@@ -1060,9 +1048,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getPaintingArray
@@ -1333,9 +1318,6 @@ decl_stmt|;
 name|Painting
 name|p
 init|=
-operator|(
-name|Painting
-operator|)
 name|a
 operator|.
 name|getPaintingArray
