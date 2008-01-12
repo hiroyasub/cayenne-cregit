@@ -3205,9 +3205,6 @@ name|void
 name|deleteObjects
 parameter_list|(
 name|Collection
-argument_list|<
-name|Persistent
-argument_list|>
 name|objects
 parameter_list|)
 block|{
