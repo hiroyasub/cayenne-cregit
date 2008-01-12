@@ -150,6 +150,9 @@ specifier|public
 name|JavaGroupsBridge
 parameter_list|(
 name|Collection
+argument_list|<
+name|EventSubject
+argument_list|>
 name|localSubjects
 parameter_list|,
 name|String

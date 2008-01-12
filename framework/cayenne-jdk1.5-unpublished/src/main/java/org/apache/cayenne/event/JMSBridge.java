@@ -280,6 +280,9 @@ specifier|public
 name|JMSBridge
 parameter_list|(
 name|Collection
+argument_list|<
+name|EventSubject
+argument_list|>
 name|localSubjects
 parameter_list|,
 name|String

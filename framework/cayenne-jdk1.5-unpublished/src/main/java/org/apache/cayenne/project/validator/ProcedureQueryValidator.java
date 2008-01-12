@@ -180,9 +180,6 @@ block|{
 name|DataMap
 name|map
 init|=
-operator|(
-name|DataMap
-operator|)
 name|path
 operator|.
 name|firstInstanceOf

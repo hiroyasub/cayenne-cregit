@@ -82,6 +82,11 @@ comment|// a Map that will allow the values to be GC'ed
 specifier|private
 specifier|static
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|EventSubject
+argument_list|>
 name|_registeredSubjects
 init|=
 operator|new
@@ -108,6 +113,9 @@ name|EventSubject
 name|getSubject
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|subjectOwner
 parameter_list|,
 name|String
@@ -170,9 +178,6 @@ decl_stmt|;
 name|EventSubject
 name|newSubject
 init|=
-operator|(
-name|EventSubject
-operator|)
 name|_registeredSubjects
 operator|.
 name|get
@@ -213,6 +218,11 @@ name|newSubject
 return|;
 block|}
 comment|/**      * Private constructor to force use of #getSubject(Class, String)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|private
 name|EventSubject
 parameter_list|()
