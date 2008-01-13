@@ -982,6 +982,8 @@ parameter_list|)
 block|{
 comment|// do nothing...
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|DataNode
 name|createDataNode
@@ -997,6 +999,8 @@ argument_list|(
 name|nodeName
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|DataSource
 name|getDataSource

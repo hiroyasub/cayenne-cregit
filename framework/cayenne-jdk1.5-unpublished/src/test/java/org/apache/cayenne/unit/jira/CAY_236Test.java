@@ -431,6 +431,8 @@ operator|=
 name|file
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLocationSuffix
@@ -442,6 +444,8 @@ operator|.
 name|LOCATION_SUFFIX
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canHandle
@@ -454,6 +458,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getObject
@@ -463,6 +469,8 @@ return|return
 name|map
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getObjectName
@@ -472,6 +480,8 @@ return|return
 name|location
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|save
@@ -490,6 +500,8 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|File
 name|tempFileForFile
@@ -504,6 +516,8 @@ return|return
 name|file
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|File
 name|resolveFile

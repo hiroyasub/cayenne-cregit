@@ -267,6 +267,8 @@ operator|=
 name|savedConfig
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canInitialize
@@ -276,6 +278,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|initialize
@@ -284,12 +288,16 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|didInitialize
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ResourceLocator
 name|getResourceLocator
@@ -299,6 +307,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getDomainConfiguration
@@ -308,6 +318,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getMapConfiguration
@@ -320,6 +332,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getViewConfiguration

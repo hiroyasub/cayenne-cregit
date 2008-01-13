@@ -94,6 +94,8 @@ name|OracleUtilDateType
 extends|extends
 name|UtilDateType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -154,6 +156,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject

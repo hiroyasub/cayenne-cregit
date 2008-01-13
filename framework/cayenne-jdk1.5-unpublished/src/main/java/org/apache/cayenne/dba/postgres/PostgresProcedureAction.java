@@ -135,6 +135,8 @@ expr_stmt|;
 block|}
 comment|/**      * Creates a translator that adds parenthesis to no-param queries.      */
 comment|// see CAY-750 for the problem description
+annotation|@
+name|Override
 specifier|protected
 name|ProcedureTranslator
 name|createTranslator
@@ -190,6 +192,8 @@ name|PostgresProcedureTranslator
 extends|extends
 name|ProcedureTranslator
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|createSqlString

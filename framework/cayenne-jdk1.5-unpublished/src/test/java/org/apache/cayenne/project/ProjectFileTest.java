@@ -55,6 +55,8 @@ name|ProjectFile
 name|pf
 decl_stmt|;
 comment|/**     * @see junit.framework.TestCase#setUp()     */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -207,6 +209,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#getObject()          */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getObject
@@ -217,6 +221,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#getObjectName()          */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getObjectName
@@ -227,6 +233,8 @@ name|OBJ_NAME
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#saveToFile(File)          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|save
@@ -255,6 +263,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#isObjectSupported(Object)          */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canHandle

@@ -192,6 +192,8 @@ name|TRIM_FUNCTION
 init|=
 literal|"TRIM"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -213,6 +215,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -654,6 +658,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -680,6 +686,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @see JdbcAdapter#createPkGenerator()      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator

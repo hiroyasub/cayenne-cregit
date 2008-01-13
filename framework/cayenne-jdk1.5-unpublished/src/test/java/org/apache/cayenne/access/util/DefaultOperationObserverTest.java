@@ -60,6 +60,8 @@ specifier|protected
 name|DefaultOperationObserver
 name|observer
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

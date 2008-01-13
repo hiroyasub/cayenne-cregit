@@ -436,6 +436,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -496,6 +498,8 @@ return|;
 block|}
 block|}
 comment|/**      * Routes itself and if there are any prefetches configured, creates prefetch queries      * and routes them as well.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|route
@@ -555,6 +559,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Calls "makeSelect" on the visitor.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction

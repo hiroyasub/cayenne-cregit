@@ -547,6 +547,8 @@ name|TstTypeMap
 extends|extends
 name|ExtendedTypeMap
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|initDefaultTypes

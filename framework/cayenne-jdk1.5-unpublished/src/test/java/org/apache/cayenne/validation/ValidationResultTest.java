@@ -48,6 +48,8 @@ specifier|private
 name|Object
 name|obj2
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

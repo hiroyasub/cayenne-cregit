@@ -268,6 +268,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -280,6 +282,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -334,6 +338,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Appends SQL for column creation to CREATE TABLE buffer. Only change for Derby is      * that " NULL" is not supported.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createTableAppendColumn
@@ -678,6 +684,8 @@ return|;
 block|}
 block|}
 comment|/**      * Returns a trimming translator.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -696,6 +704,8 @@ literal|"RTRIM"
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerFactory
 name|mergerFactory

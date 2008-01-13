@@ -130,6 +130,8 @@ operator|new
 name|MockTransactionDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|willAddConnection
@@ -152,6 +154,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|willCommit
@@ -171,6 +175,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|didCommit

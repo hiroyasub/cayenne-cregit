@@ -116,6 +116,8 @@ operator|new
 name|BaseRemoteService
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|ServerSession
 name|createServerSession
@@ -135,6 +137,8 @@ literal|null
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|ServerSession
 name|createServerSession
@@ -148,6 +152,8 @@ name|createServerSession
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|ServerSession
 name|getServerSession
@@ -172,6 +178,8 @@ argument_list|(
 literal|null
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getQuery
@@ -219,6 +227,8 @@ argument_list|(
 literal|null
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getQuery

@@ -514,6 +514,8 @@ operator|=
 name|outputPattern
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|closeWriter
@@ -531,6 +533,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Opens a Writer to write generated output. Writer encoding is determined from the      * value of the "encoding" property.      */
+annotation|@
+name|Override
 specifier|public
 name|Writer
 name|openWriter

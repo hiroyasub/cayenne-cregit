@@ -59,6 +59,8 @@ argument_list|,
 literal|""
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startMaintenanceThread
@@ -124,6 +126,8 @@ argument_list|,
 literal|""
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startMaintenanceThread

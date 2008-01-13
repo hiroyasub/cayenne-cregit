@@ -109,6 +109,8 @@ operator|=
 name|projectDir
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataSource
 name|getDataSource
@@ -148,6 +150,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|DataSourceInfo
 name|getDriverInfo

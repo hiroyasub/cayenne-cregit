@@ -144,6 +144,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Translates query Ordering list to SQL ORDER BY clause.       *  Ordering list is obtained from<code>queryAssembler</code>'s query object.       *  In a process of building of ORDER BY clause,<code>queryAssembler</code>       *  is notified when a join needs to be added. */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|doTranslation

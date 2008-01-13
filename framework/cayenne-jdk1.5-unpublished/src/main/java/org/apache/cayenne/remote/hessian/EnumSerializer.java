@@ -65,6 +65,8 @@ name|EnumSerializer
 extends|extends
 name|AbstractSerializer
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|writeObject

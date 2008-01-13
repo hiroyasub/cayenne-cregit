@@ -176,6 +176,8 @@ name|EMBEDDING_ACCESS_STACK
 init|=
 literal|"EmbeddingStack"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack

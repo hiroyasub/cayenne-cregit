@@ -619,6 +619,8 @@ name|changes
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|hasListeners
@@ -665,6 +667,8 @@ argument_list|)
 operator|)
 return|;
 block|}
+annotation|@
+name|Override
 name|void
 name|applyPreCommit
 parameter_list|()
@@ -679,6 +683,8 @@ name|updated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 name|void
 name|applyPostCommit
 parameter_list|()
@@ -740,6 +746,8 @@ name|changes
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|hasListeners
@@ -757,12 +765,16 @@ name|POST_LOAD
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 name|void
 name|applyPreCommit
 parameter_list|()
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 name|void
 name|applyPostCommit
 parameter_list|()

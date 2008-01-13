@@ -138,6 +138,8 @@ name|newValue
 expr_stmt|;
 block|}
 comment|/**      * Returns true if both old and new value are equal.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isNoop
@@ -154,6 +156,8 @@ name|newValue
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -176,6 +180,8 @@ name|newValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo

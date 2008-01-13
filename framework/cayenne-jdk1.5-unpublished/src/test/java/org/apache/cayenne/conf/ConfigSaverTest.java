@@ -480,6 +480,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * @see junit.framework.TestCase#setUp()      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

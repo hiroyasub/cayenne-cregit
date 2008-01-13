@@ -84,6 +84,8 @@ name|DataContextCrossDBTest
 extends|extends
 name|MultiNodeCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

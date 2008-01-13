@@ -228,6 +228,8 @@ throw|;
 block|}
 block|}
 comment|/**      * Prints itself as XML to the provided XMLEncoder.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML

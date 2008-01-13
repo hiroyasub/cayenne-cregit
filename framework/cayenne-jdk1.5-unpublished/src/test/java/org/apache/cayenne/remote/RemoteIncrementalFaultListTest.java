@@ -251,6 +251,8 @@ specifier|protected
 name|SelectQuery
 name|query
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack

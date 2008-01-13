@@ -228,6 +228,8 @@ name|connectChildren
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|evaluateNode
@@ -324,6 +326,8 @@ name|result
 return|;
 block|}
 comment|/**      * Creates a copy of this expression node, without copying children.      */
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|shallowCopy
@@ -337,6 +341,8 @@ name|id
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getExpressionOperator
@@ -349,6 +355,8 @@ return|return
 literal|"-"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getType
@@ -360,6 +368,8 @@ operator|.
 name|SUBTRACT
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|jjtClose

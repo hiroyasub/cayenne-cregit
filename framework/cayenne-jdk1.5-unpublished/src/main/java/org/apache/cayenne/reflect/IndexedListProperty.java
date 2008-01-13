@@ -104,6 +104,8 @@ name|indexPropertyName
 expr_stmt|;
 block|}
 comment|/**      * Creates a List indexed on a specified property.      */
+annotation|@
+name|Override
 specifier|protected
 name|ValueHolder
 name|createCollectionValueHolder

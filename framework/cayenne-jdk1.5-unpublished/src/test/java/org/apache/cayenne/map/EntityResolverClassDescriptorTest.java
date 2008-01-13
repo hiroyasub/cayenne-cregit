@@ -181,6 +181,8 @@ extends|extends
 name|CayenneCase
 block|{
 comment|/**      * Configures multi-tier stack as we want to access descriptors in different tiers...      */
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack

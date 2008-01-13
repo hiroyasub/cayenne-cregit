@@ -105,6 +105,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Creates a List for an object. Expects an object to be an instance of Persistent.      */
+annotation|@
+name|Override
 specifier|protected
 name|ValueHolder
 name|createCollectionValueHolder
@@ -151,6 +153,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isFault

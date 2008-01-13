@@ -104,6 +104,8 @@ specifier|private
 name|File
 name|fTmpFileCopy
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -167,6 +169,8 @@ literal|".copy"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|tearDown

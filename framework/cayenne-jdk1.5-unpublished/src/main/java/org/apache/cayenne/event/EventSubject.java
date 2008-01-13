@@ -241,6 +241,8 @@ operator|=
 name|fullSubjectName
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -277,6 +279,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -310,6 +314,8 @@ name|_fullyQualifiedSubjectName
 return|;
 block|}
 comment|/**      * @return a String in the form<code>&lt;ClassName 0x123456&gt; SomeName</code>      * @see Object#toString()      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

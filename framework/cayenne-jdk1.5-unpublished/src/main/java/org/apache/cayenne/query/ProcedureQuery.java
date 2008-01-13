@@ -336,6 +336,8 @@ name|resultType
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -458,6 +460,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Calls "makeProcedure" on the visitor.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction

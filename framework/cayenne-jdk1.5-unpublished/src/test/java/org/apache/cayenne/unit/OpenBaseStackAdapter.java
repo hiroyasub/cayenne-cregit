@@ -87,6 +87,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willDropTables
@@ -105,6 +107,8 @@ name|Exception
 block|{
 comment|// avoid dropping constraints...
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsHaving
@@ -114,6 +118,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsReverseComparison
@@ -124,6 +130,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportNullRowForAggregateFunctions

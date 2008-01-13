@@ -192,6 +192,8 @@ specifier|protected
 name|DbLoader
 name|loader
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

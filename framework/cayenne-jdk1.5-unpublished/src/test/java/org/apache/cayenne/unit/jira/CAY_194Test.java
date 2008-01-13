@@ -132,6 +132,8 @@ name|CAY_194Test
 extends|extends
 name|RelationshipCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

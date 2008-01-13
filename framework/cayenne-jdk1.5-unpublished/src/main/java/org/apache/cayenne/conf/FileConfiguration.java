@@ -343,6 +343,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** 	 * Only returns<code>true</code> when {@link #getProjectFile} does not 	 * return<code>null</code>. 	 */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canInitialize

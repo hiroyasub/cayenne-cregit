@@ -1147,6 +1147,8 @@ operator|new
 name|JdbcPkGenerator
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|generatePkForDbEntity

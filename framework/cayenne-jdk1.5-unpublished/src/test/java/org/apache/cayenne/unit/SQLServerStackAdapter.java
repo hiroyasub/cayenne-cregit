@@ -87,6 +87,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|handlesNullVsEmptyLOBs
@@ -96,6 +98,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willDropTables

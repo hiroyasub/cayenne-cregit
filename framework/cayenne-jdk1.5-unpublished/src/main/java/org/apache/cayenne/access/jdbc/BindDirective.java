@@ -186,6 +186,8 @@ name|BindDirective
 extends|extends
 name|Directive
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -195,6 +197,8 @@ return|return
 literal|"bind"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getType
@@ -205,6 +209,8 @@ name|LINE
 return|;
 block|}
 comment|/**      * Extracts the value of the object property to render and passes      * control to {@link #render(InternalContextAdapter, Writer, ParameterBinding)}       * to do the actual rendering.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|render

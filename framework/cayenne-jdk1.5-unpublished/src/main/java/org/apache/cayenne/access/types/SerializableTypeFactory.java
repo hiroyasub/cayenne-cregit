@@ -218,6 +218,8 @@ operator|=
 name|javaClass
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -230,6 +232,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|fromJavaObject
 parameter_list|(
@@ -245,6 +249,8 @@ name|ByteArrayOutputStream
 argument_list|()
 block|{
 comment|// avoid unneeded array copy...
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|byte
@@ -305,6 +311,8 @@ name|toByteArray
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|toJavaObject
 parameter_list|(

@@ -218,6 +218,8 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|execute
@@ -279,6 +281,8 @@ name|response
 return|;
 block|}
 comment|/**      * Overrides super implementation to property handle data row fetches.      */
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|interceptOIDQuery
@@ -447,6 +451,8 @@ operator|!
 name|DONE
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|QueryCache
 name|getQueryCache

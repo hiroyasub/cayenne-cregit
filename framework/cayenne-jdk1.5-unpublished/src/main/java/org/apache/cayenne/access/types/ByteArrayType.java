@@ -342,6 +342,8 @@ operator|=
 name|trimmingBytes
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -352,6 +354,8 @@ literal|"byte[]"
 return|;
 block|}
 comment|/**      * Validates byte[] property.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|validateProperty
@@ -466,6 +470,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -563,6 +569,8 @@ return|return
 name|bytes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -663,6 +671,8 @@ return|return
 name|bytes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

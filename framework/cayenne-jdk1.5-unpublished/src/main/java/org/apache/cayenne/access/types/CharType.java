@@ -224,6 +224,8 @@ name|usingClobs
 expr_stmt|;
 block|}
 comment|/**      * Returns "java.lang.String".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -239,6 +241,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Validates string property.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|validateProperty
@@ -353,6 +357,8 @@ literal|true
 return|;
 block|}
 comment|/** Return trimmed string. */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -451,6 +457,8 @@ name|val
 return|;
 block|}
 comment|/** Return trimmed string. */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -551,6 +559,8 @@ return|return
 name|val
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

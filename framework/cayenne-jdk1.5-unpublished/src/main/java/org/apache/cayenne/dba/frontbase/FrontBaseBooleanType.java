@@ -63,6 +63,8 @@ name|FrontBaseBooleanType
 extends|extends
 name|BooleanType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

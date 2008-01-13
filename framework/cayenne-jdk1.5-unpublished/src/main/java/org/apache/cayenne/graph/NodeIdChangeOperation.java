@@ -79,6 +79,8 @@ operator|=
 name|newNodeId
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -97,6 +99,8 @@ name|newNodeId
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo

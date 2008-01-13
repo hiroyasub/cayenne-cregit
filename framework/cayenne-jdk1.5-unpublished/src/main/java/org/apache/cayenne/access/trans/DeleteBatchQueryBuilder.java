@@ -127,6 +127,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString
@@ -253,6 +255,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Binds BatchQuery parameters to the PreparedStatement.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|bindParameters

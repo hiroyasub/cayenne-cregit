@@ -305,6 +305,8 @@ name|segmentPath
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 name|void
 name|afterInit
 parameter_list|()

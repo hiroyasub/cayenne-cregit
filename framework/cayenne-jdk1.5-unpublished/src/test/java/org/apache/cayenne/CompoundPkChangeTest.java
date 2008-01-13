@@ -108,6 +108,8 @@ name|key2v3
 init|=
 literal|"-key2-v3-"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

@@ -237,6 +237,8 @@ return|return
 name|targetDescriptor
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -380,6 +382,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|injectValueHolder
@@ -439,6 +443,8 @@ operator|instanceof
 name|Fault
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visit

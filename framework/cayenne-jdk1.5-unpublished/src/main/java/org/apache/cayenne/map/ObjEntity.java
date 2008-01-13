@@ -1709,6 +1709,8 @@ literal|null
 expr_stmt|;
 block|}
 comment|/**      * Returns a named attribute that either belongs to this ObjEntity or is inherited.      * Returns null if no matching attribute is found.      */
+annotation|@
+name|Override
 specifier|public
 name|Attribute
 name|getAttribute
@@ -1844,6 +1846,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Returns a SortedMap of all attributes that either belong to this ObjEntity or      * inherited.      */
+annotation|@
+name|Override
 specifier|public
 name|SortedMap
 argument_list|<
@@ -1957,6 +1961,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns a Collection of all attributes that either belong to this ObjEntity or      * inherited.      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -2016,6 +2022,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a named Relationship that either belongs to this ObjEntity or is inherited.      * Returns null if no matching attribute is found.      */
+annotation|@
+name|Override
 specifier|public
 name|Relationship
 name|getRelationship
@@ -2082,6 +2090,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SortedMap
 argument_list|<
@@ -2194,6 +2204,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -2579,6 +2591,8 @@ else|:
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -2733,6 +2747,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Transforms an Expression rooted in this entity to an analogous expression rooted in      * related entity.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|translateToRelatedEntity

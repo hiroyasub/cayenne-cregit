@@ -118,6 +118,8 @@ specifier|protected
 name|ObjRelationship
 name|relationship3
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

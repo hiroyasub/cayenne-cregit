@@ -93,6 +93,8 @@ specifier|transient
 name|Procedure
 name|procedure
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|Procedure
 name|getProcedure
@@ -102,6 +104,8 @@ return|return
 name|procedure
 return|;
 block|}
+annotation|@
+name|Override
 name|void
 name|copyFromInfo
 parameter_list|(

@@ -163,6 +163,8 @@ name|lastPrefetchHint
 expr_stmt|;
 block|}
 comment|/**      * Overrides super implementation to suppress disjoint prefetch routing, as the parent      * query should take care of that.      *       * @since 1.2      */
+annotation|@
+name|Override
 name|void
 name|routePrefetches
 parameter_list|(

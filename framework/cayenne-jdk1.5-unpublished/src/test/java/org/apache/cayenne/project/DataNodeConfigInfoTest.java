@@ -55,6 +55,8 @@ name|DataNodeConfigInfo
 name|test
 decl_stmt|;
 comment|/**      * @see junit.framework.TestCase#setUp()      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

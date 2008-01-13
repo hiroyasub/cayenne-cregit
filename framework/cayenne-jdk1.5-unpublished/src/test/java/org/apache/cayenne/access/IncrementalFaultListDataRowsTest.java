@@ -160,6 +160,8 @@ specifier|protected
 name|Query
 name|query
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

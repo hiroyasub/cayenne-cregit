@@ -111,6 +111,8 @@ name|Deserializer
 argument_list|>
 name|cachedDeserializerMap
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|Serializer
 name|getSerializer
@@ -134,6 +136,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Deserializer
 name|getDeserializer

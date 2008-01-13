@@ -88,6 +88,8 @@ init|=
 literal|"service-class"
 decl_stmt|;
 comment|/**      * Installs {@link HessianService} to respond to {@link RemoteService} requests.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|init

@@ -192,6 +192,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Uses SQLServerActionBuilder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -222,6 +224,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a trimming translator.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -243,6 +247,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Overrides super implementation to correctly set up identity columns.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createTableAppendColumn
@@ -281,6 +287,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerFactory
 name|mergerFactory

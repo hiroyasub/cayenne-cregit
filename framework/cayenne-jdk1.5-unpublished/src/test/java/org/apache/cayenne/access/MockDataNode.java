@@ -372,6 +372,8 @@ name|result
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performQueries
@@ -474,6 +476,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addDataMap
@@ -490,6 +494,8 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -507,6 +513,8 @@ name|obj
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAdapter
 name|getAdapter
@@ -519,6 +527,8 @@ name|getAdapter
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 name|getDataMaps
@@ -531,6 +541,8 @@ name|getDataMaps
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataSource
 name|getDataSource
@@ -543,6 +555,8 @@ name|getDataSource
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getDataSourceFactory
@@ -555,6 +569,8 @@ name|getDataSourceFactory
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getDataSourceLocation
@@ -567,6 +583,8 @@ name|getDataSourceLocation
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getEntityResolver
@@ -579,6 +597,8 @@ name|getEntityResolver
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|EntitySorter
 name|getEntitySorter
@@ -591,6 +611,8 @@ name|getEntitySorter
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -603,6 +625,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeDataMap
@@ -619,6 +643,8 @@ name|mapName
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setAdapter
@@ -635,6 +661,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setDataMaps
@@ -651,6 +679,8 @@ name|dataMaps
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setDataSource
@@ -667,6 +697,8 @@ name|dataSource
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setDataSourceFactory
@@ -683,6 +715,8 @@ name|dataSourceFactory
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setDataSourceLocation
@@ -699,6 +733,8 @@ name|dataSourceLocation
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setEntityResolver
@@ -715,6 +751,8 @@ name|entityResolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setEntitySorter
@@ -731,6 +769,8 @@ name|entitySorter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setName
@@ -747,6 +787,8 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|shutdown
@@ -758,6 +800,8 @@ name|shutdown
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

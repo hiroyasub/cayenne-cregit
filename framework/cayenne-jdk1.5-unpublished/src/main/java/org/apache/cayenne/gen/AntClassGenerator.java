@@ -54,6 +54,8 @@ specifier|protected
 name|Task
 name|parentTask
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|File
 name|fileForSuperclass
@@ -103,6 +105,8 @@ return|return
 name|outFile
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|File
 name|fileForClass

@@ -55,6 +55,8 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|visitNode

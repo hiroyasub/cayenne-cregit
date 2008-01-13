@@ -203,6 +203,8 @@ name|context
 return|;
 block|}
 comment|/**      * Looks for resources relative to /WEB-INF/ directory or any extra context paths      * configured. Internal ServletContext is used to find resources.      */
+annotation|@
+name|Override
 specifier|public
 name|URL
 name|findResource
@@ -371,6 +373,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Override ResourceLocator.addFilesystemPath(String) to intercept context paths      * starting with "/WEB-INF/" to place in additionalContextPaths.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addFilesystemPath

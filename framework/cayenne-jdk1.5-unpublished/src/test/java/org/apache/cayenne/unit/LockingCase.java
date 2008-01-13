@@ -35,6 +35,8 @@ name|LOCKING_ACCESS_STACK
 init|=
 literal|"LockingStack"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack

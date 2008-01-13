@@ -111,6 +111,8 @@ extends|extends
 name|Fault
 block|{
 comment|/**      * Resolves this fault to a DataObject.      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|resolveFault

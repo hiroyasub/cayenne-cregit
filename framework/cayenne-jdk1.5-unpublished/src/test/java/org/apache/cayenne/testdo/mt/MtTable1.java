@@ -65,6 +65,8 @@ specifier|transient
 name|boolean
 name|prePersisted
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity

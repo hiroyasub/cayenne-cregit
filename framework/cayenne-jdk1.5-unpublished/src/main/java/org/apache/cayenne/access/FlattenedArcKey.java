@@ -738,6 +738,8 @@ operator|new
 name|DefaultOperationObserver
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextDataRows
@@ -777,6 +779,8 @@ operator|!=
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -801,6 +805,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Defines equal based on whether the relationship is bidirectional.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals

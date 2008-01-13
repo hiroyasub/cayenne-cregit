@@ -58,6 +58,8 @@ specifier|protected
 name|QueryLoader
 name|builder
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -71,6 +73,8 @@ operator|new
 name|QueryLoader
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getQuery

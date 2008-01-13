@@ -126,6 +126,8 @@ name|IncrementalFaultListPrefetchTest
 extends|extends
 name|DataContextCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

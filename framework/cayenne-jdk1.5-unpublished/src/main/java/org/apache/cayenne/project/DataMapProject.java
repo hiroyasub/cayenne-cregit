@@ -149,6 +149,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|upgrade
@@ -166,6 +168,8 @@ argument_list|)
 throw|;
 block|}
 comment|/**      * Does nothing.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|checkForUpgrades
@@ -174,6 +178,8 @@ block|{
 comment|// do nothing
 block|}
 comment|/**      * Initializes internal<code>map</code> object and then calls super.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|postInitialize
@@ -326,6 +332,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a list that contains project DataMap as a single object.      */
+annotation|@
+name|Override
 specifier|public
 name|List
 name|getChildren
@@ -350,6 +358,8 @@ name|entities
 return|;
 block|}
 comment|/**      * Returns appropriate ProjectFile or null if object does not require a file of its      * own. In case of DataMapProject, the only object that requires a file is the project      * itself.      */
+annotation|@
+name|Override
 specifier|public
 name|ProjectFile
 name|projectFileForObject
@@ -380,6 +390,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Always returns empty status. Map projects do not support status tracking yet.      */
+annotation|@
+name|Override
 specifier|public
 name|ConfigStatus
 name|getLoadStatus

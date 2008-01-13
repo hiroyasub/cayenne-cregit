@@ -111,6 +111,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsBinaryPK
@@ -121,6 +123,8 @@ literal|false
 return|;
 block|}
 comment|/**      * Ingres doesn't support LONGVARCHAR comparisions ('like', '=', etc.)      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willCreateTables

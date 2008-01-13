@@ -1213,6 +1213,8 @@ operator|=
 name|target
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 name|void
 name|fire
 parameter_list|()
@@ -1288,6 +1290,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|run

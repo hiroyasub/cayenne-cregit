@@ -55,6 +55,8 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getFunction
@@ -64,6 +66,8 @@ return|return
 literal|"COUNT"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getJavaType
@@ -76,6 +80,8 @@ return|return
 literal|"java.lang.Long"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|visitNode

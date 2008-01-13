@@ -155,6 +155,8 @@ block|{
 comment|// ignore.. jdk 1.4
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Serializer
 name|getSerializer
@@ -180,6 +182,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Deserializer
 name|getDeserializer

@@ -200,6 +200,8 @@ operator|new
 name|DefaultQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|DbEntity
 name|getDbEntity

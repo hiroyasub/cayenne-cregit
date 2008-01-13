@@ -114,6 +114,8 @@ operator|new
 name|DefaultConfiguration
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getDomainConfiguration
@@ -134,6 +136,8 @@ literal|"cay743/cayenne.xml"
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getMapConfiguration

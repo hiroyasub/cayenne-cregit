@@ -734,6 +734,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a Collection of all attributes that either belong to this DbEntity or      * inherited.      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -811,6 +813,8 @@ expr_stmt|;
 block|}
 comment|/**      * Overrides super to fire an AttributeEvent.      *       * @deprecated in favour of {@link #addAttribute(DbAttribute attr)}. Scheduled for      *             removal in Cayenne 4.      */
 annotation|@
+name|Override
+annotation|@
 name|Deprecated
 specifier|public
 name|void
@@ -848,6 +852,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Removes attribute from the entity, removes any relationship joins containing this      * attribute. Does nothing if the attribute name is not found.      *       * @see org.apache.cayenne.map.Entity#removeAttribute(String)      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeAttribute
@@ -992,6 +998,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|clearAttributes
@@ -1074,6 +1082,8 @@ name|getRelationshipMap
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -2172,6 +2182,8 @@ literal|true
 return|;
 block|}
 comment|/**      * Transforms Expression rooted in this entity to an analogous expression rooted in      * related entity.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|translateToRelatedEntity

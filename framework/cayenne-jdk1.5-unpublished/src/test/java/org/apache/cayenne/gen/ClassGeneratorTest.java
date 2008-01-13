@@ -72,6 +72,8 @@ specifier|protected
 name|ClassGenerationInfo
 name|cgen
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -351,6 +353,8 @@ argument_list|(
 literal|"tomany"
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isToMany

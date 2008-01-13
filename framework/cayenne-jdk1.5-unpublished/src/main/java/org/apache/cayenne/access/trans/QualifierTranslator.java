@@ -240,6 +240,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Translates query qualifier to SQL WHERE clause.       *  Qualifier is obtained from<code>queryAssembler</code> object.       */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|doTranslation
@@ -1674,6 +1676,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendLiteral
@@ -1764,6 +1768,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|processRelTermination

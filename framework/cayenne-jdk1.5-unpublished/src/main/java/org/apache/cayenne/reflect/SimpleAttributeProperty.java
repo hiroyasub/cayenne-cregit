@@ -97,6 +97,8 @@ operator|=
 name|attribute
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visit
@@ -123,6 +125,8 @@ return|return
 name|attribute
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|readProperty
@@ -147,6 +151,8 @@ name|object
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|writeProperty

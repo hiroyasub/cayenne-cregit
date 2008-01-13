@@ -167,6 +167,8 @@ extends|extends
 name|JdbcAdapter
 block|{
 comment|/**      * Returns word "go".      *       * @since 1.0.4      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getBatchTerminator
@@ -177,6 +179,8 @@ literal|"go"
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes as converters for passing values      * between JDBC and Java layers.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -245,6 +249,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**       * Creates and returns a primary key generator.       * Overrides superclass implementation to return an      * instance of SybasePkGenerator.      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -256,6 +262,8 @@ name|SybasePkGenerator
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|bindParameter

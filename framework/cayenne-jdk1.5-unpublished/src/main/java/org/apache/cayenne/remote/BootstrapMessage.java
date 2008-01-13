@@ -27,6 +27,8 @@ implements|implements
 name|ClientMessage
 block|{
 comment|/**      * Returns a description of the type of message. In this case always "Bootstrap".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

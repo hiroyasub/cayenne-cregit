@@ -107,6 +107,8 @@ return|return
 name|context
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitDistinct
@@ -143,6 +145,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitFrom
@@ -203,6 +207,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitGroupBy
@@ -237,6 +243,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitHaving
@@ -271,6 +279,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitOrderBy
@@ -305,6 +315,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelect
@@ -326,6 +338,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelectClause
@@ -353,6 +367,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelectExpressions
@@ -380,6 +396,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitWhere

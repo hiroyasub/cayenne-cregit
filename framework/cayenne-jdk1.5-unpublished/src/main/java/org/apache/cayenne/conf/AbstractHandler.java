@@ -140,6 +140,8 @@ name|parser
 return|;
 block|}
 comment|/**      * Handles the start of an element. This base implementation just throws an exception.      *       * @exception SAXException if this method is not overridden, or in case of error in an      *                overridden version      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement
@@ -180,6 +182,8 @@ argument_list|)
 throw|;
 block|}
 comment|/**      * Handles text within an element. This base implementation just throws an exception.      *       * @param buf A character array of the text within the element. Will not be      *<code>null</code>.      * @param start The start element in the array.      * @param count The number of characters to read from the array.      * @exception SAXException if this method is not overridden, or in case of error in an      *                overridden version      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|characters
@@ -252,6 +256,8 @@ parameter_list|()
 block|{
 block|}
 comment|/**      * Handles the end of an element. Any required clean-up is performed by the finished()      * method and then the original handler is restored to the parser.      *       * @see #finished()      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|endElement

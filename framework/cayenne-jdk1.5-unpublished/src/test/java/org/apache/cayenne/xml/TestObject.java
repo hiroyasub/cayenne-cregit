@@ -314,6 +314,8 @@ return|return
 name|children
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -410,6 +412,8 @@ operator|)
 operator|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML
@@ -488,6 +492,8 @@ name|children
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|decodeFromXML
@@ -593,6 +599,8 @@ literal|"children"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

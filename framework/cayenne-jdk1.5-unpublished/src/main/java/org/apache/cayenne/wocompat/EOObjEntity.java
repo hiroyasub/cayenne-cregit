@@ -348,6 +348,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Overrides super to support translation of EO attributes that have no ObjAttributes.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|translateToDbPath

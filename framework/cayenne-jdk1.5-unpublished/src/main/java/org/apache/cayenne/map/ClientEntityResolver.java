@@ -43,6 +43,8 @@ name|ClientEntityResolver
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getClientEntityResolver

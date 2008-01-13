@@ -490,6 +490,8 @@ name|lifecycleEventsEnabled
 return|;
 block|}
 comment|/**      * Returns an EntityResolver that provides mapping information needed for      * CayenneContext operation. If EntityResolver is not set, this method would obtain      * and cache one from the underlying DataChannel.      */
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getEntityResolver
@@ -545,6 +547,8 @@ operator|=
 name|entityResolver
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|GraphManager
 name|getGraphManager
@@ -571,6 +575,8 @@ name|graphAction
 return|;
 block|}
 comment|/**      * Commits changes to uncommitted objects. First checks if there are changes in this      * context and if any changes are detected, sends a commit message to remote Cayenne      * service via an internal instance of CayenneConnector.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commitChanges
@@ -823,6 +829,8 @@ return|return
 name|commitDiff
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commitChangesToParent
@@ -834,6 +842,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|rollbackChanges
@@ -881,6 +891,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|rollbackChangesLocally
@@ -908,6 +920,8 @@ block|}
 block|}
 block|}
 comment|/**      * Deletes an object locally, scheduling it for future deletion from the external data      * store.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|deleteObject
@@ -932,6 +946,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Creates and registers a new Persistent object instance.      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -1034,6 +1050,8 @@ name|object
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|registerNewObject
@@ -1103,6 +1121,8 @@ expr_stmt|;
 block|}
 comment|/**      * Runs a query, returning result as list.      */
 annotation|@
+name|Override
+annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
@@ -1145,6 +1165,8 @@ literal|1
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|performGenericQuery
@@ -1190,6 +1212,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Converts a list of Persistent objects registered in some other ObjectContext to a      * list of objects local to this ObjectContext.      *<p>      *<i>Current limitation: all objects in the source list must be either in COMMITTED      * or in HOLLOW state.</i>      *</p>      */
+annotation|@
+name|Override
 specifier|public
 name|Persistent
 name|localObject
@@ -1441,6 +1465,8 @@ block|}
 block|}
 comment|// ****** Copied from DataContext - end *******
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|propertyChanged
@@ -1480,6 +1506,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -1501,6 +1529,8 @@ argument_list|()
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -1526,6 +1556,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -1551,6 +1583,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<

@@ -133,6 +133,8 @@ extends|extends
 name|AbstractType
 block|{
 comment|/**      * Returns "java.util.Date".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -148,6 +150,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Always returns true indicating no validation failures. There is no date-specific      * validations at the moment.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|validateProperty
@@ -287,6 +291,8 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -434,6 +440,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -603,6 +611,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

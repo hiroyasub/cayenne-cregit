@@ -77,6 +77,8 @@ name|JJTFALSE
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|evaluateNode
@@ -93,6 +95,8 @@ operator|.
 name|FALSE
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getExpressionOperator
@@ -118,6 +122,8 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|shallowCopy
@@ -131,6 +137,8 @@ name|id
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getType
@@ -142,6 +150,8 @@ operator|.
 name|FALSE
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsString

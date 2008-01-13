@@ -42,6 +42,8 @@ name|importUtils
 init|=
 literal|null
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

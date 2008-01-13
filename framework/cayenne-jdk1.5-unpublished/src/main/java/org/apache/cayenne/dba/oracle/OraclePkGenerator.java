@@ -198,6 +198,8 @@ name|_SEQUENCE_PREFIX
 init|=
 literal|"pk_"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createAutoPk
@@ -274,6 +276,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 name|createAutoPkStatements
@@ -331,6 +335,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dropAutoPk
@@ -409,6 +415,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 name|dropAutoPkStatements
@@ -560,6 +568,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Generates primary key by calling Oracle sequence corresponding to the      *<code>dbEntity</code>. Executed SQL looks like this:      *       *<pre>      *   SELECT pk_table_name.nextval FROM DUAL      *</pre>      */
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase

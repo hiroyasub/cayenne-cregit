@@ -96,6 +96,8 @@ specifier|private
 name|EventManager
 name|_eventManager
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp
@@ -1728,6 +1730,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -1775,6 +1779,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult

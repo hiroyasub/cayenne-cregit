@@ -122,6 +122,8 @@ name|ProcedureQueryValidator
 extends|extends
 name|TreeNodeValidator
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|validateObject

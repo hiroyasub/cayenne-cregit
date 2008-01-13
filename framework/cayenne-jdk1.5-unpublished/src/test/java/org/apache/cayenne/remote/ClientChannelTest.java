@@ -1040,6 +1040,8 @@ operator|new
 name|MockClientConnection
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|EventBridge
 name|getServerEventBridge
@@ -1058,6 +1060,8 @@ argument_list|,
 literal|"ext"
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|sendExternalEvent
@@ -1069,6 +1073,8 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|shutdownExternal
@@ -1077,6 +1083,8 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startupExternal

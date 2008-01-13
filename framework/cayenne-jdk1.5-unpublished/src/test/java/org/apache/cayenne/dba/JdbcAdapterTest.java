@@ -50,6 +50,8 @@ specifier|protected
 name|JdbcAdapter
 name|adapter
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

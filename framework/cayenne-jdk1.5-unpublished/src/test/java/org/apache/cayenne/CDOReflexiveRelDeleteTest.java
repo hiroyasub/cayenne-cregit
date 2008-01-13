@@ -48,6 +48,8 @@ specifier|private
 name|ArtGroup
 name|childGroup3
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

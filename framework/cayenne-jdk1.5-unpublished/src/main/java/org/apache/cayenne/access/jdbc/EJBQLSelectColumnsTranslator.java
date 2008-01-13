@@ -132,6 +132,8 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelectExpression
@@ -160,6 +162,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAggregate
@@ -187,6 +191,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -207,6 +213,8 @@ argument_list|(
 name|context
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendMultiColumnPath
@@ -223,6 +231,8 @@ literal|"Can't use multi-column paths in column clause"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|processTerminatingAttribute
@@ -400,6 +410,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentifier

@@ -54,6 +54,8 @@ extends|extends
 name|QueryLoader
 block|{
 comment|/**      * Creates a SelectQuery.      */
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getQuery

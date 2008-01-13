@@ -502,6 +502,8 @@ operator|=
 name|sessionHandle
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startupExternal
@@ -725,6 +727,8 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|shutdownExternal
@@ -771,6 +775,8 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|sendExternalEvent

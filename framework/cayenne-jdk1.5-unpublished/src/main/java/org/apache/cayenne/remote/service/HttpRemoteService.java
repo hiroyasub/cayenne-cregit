@@ -168,6 +168,8 @@ name|create
 parameter_list|)
 function_decl|;
 comment|/**      * Returns a ServerSession object that represents Cayenne-related state associated      * with the current session. If ServerSession hasn't been previously saved, returns      * null.      */
+annotation|@
+name|Override
 specifier|protected
 name|ServerSession
 name|getServerSession
@@ -194,6 +196,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Creates a new ServerSession with a dedicated DataChannel. Returned ServerSession is      * stored in HttpSession for future reuse.      */
+annotation|@
+name|Override
 specifier|protected
 name|ServerSession
 name|createServerSession
@@ -253,6 +257,8 @@ name|serverSession
 return|;
 block|}
 comment|/**      * Creates a new ServerSession based on a shared DataChannel. Returned ServerSession      * is stored in HttpSession for future reuse.      *       * @param name shared session name used to lookup a shared DataChannel.      */
+annotation|@
+name|Override
 specifier|protected
 name|ServerSession
 name|createServerSession

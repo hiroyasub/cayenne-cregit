@@ -148,6 +148,8 @@ name|ObjectDetachOperationTest
 extends|extends
 name|CayenneCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack

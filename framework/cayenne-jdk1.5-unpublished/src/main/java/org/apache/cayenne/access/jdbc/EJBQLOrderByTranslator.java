@@ -104,6 +104,8 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitOrderByItem
@@ -132,6 +134,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitDescending
@@ -151,6 +155,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -171,6 +177,8 @@ argument_list|(
 name|context
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendMultiColumnPath

@@ -591,6 +591,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -635,6 +637,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey

@@ -392,6 +392,8 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|pruneNodeForPrunedChild
@@ -405,6 +407,8 @@ literal|true
 return|;
 block|}
 comment|/**      * Implemented for backwards compatibility with exp package.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|expName
@@ -420,6 +424,8 @@ index|]
 return|;
 block|}
 comment|/**      * Flattens the tree under this node by eliminating any children that are of the same      * class as this node and copying their children to this node.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|flattenTree
@@ -761,6 +767,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getOperand
@@ -848,6 +856,8 @@ else|:
 name|child
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getOperandCount
@@ -858,6 +868,8 @@ name|jjtGetNumChildren
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setOperand
@@ -1164,6 +1176,8 @@ name|o
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|notExp
@@ -1177,6 +1191,8 @@ name|this
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|evaluate

@@ -447,6 +447,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -471,6 +473,8 @@ name|selectInfo
 return|;
 block|}
 comment|/**      * Calls<em>sqlAction(this)</em> on the visitor.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction

@@ -360,6 +360,8 @@ name|session
 return|;
 block|}
 comment|/**      * Establishes server session if needed.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|beforeSendMessage
@@ -384,6 +386,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Sends a message to remote Cayenne Hessian service.      */
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|doSendMessage

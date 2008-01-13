@@ -773,6 +773,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|protected
 name|EJBQLTranslatorFactory
 name|createEJBQLTranslatorFactory
@@ -785,6 +787,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -886,6 +890,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of OraclePkGenerator.      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -928,6 +934,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Fixes some reverse engineering problems. Namely if a columns is created as DECIMAL      * and has non-positive precision it is converted to INTEGER.      */
+annotation|@
+name|Override
 specifier|public
 name|DbAttribute
 name|buildAttribute
@@ -1110,6 +1118,8 @@ name|attr
 return|;
 block|}
 comment|/**      * Returns a trimming translator.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -1131,6 +1141,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Uses OracleActionBuilder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -1182,6 +1194,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -1271,6 +1285,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

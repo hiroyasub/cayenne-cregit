@@ -84,6 +84,8 @@ name|lastChannel
 return|;
 block|}
 comment|/**      * Returns a description of the type of message. In this case always "Mock message".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

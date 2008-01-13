@@ -272,6 +272,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns true if the batch query uses optimistic locking.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isUsingOptimisticLocking
@@ -310,6 +312,8 @@ return|return
 name|qualifierAttributes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getValue
@@ -357,6 +361,8 @@ name|dataObjectId
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size
@@ -369,6 +375,8 @@ name|size
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<

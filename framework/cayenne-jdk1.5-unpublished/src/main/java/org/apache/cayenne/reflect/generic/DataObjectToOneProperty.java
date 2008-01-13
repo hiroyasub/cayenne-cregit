@@ -213,6 +213,8 @@ return|return
 name|targetDescriptor
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -234,6 +236,8 @@ return|return
 name|relationship
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|injectValueHolder
@@ -304,6 +308,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visit

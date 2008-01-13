@@ -40,6 +40,8 @@ specifier|protected
 name|Procedure
 name|procedure
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

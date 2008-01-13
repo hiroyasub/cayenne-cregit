@@ -163,6 +163,8 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|execute
@@ -261,6 +263,8 @@ operator|!
 name|DONE
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|QueryCache
 name|getQueryCache
@@ -278,6 +282,8 @@ name|getQueryCache
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|QueryCacheEntryFactory
 name|getCacheObjectFactory

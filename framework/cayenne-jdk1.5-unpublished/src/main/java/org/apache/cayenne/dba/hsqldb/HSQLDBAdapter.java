@@ -228,6 +228,8 @@ name|HSQLDBAdapter
 extends|extends
 name|JdbcAdapter
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -321,6 +323,8 @@ literal|""
 return|;
 block|}
 comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -351,6 +355,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a DDL string to create a unique constraint over a set of columns.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createUniqueConstraint
@@ -562,6 +568,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Adds an ADD CONSTRAINT clause to a relationship constraint.      *       * @see JdbcAdapter#createFkConstraint(DbRelationship)      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createFkConstraint
@@ -825,6 +833,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Uses "CREATE CACHED TABLE" instead of "CREATE TABLE".      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -880,6 +890,8 @@ return|return
 name|sql
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerFactory
 name|mergerFactory
@@ -911,6 +923,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -1003,6 +1017,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

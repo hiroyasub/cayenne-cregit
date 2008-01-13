@@ -62,6 +62,8 @@ name|BindEqualDirective
 extends|extends
 name|BindDirective
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -71,6 +73,8 @@ return|return
 literal|"bindEqual"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|render

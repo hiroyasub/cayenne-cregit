@@ -139,6 +139,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willDropTables
@@ -157,6 +159,8 @@ name|Exception
 block|{
 comment|// avoid dropping constraints...
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsLobs
@@ -166,6 +170,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsStoredProcedures
@@ -175,6 +181,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canMakeObjectsOutOfProcedures
@@ -185,6 +193,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createdTables
@@ -249,6 +259,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|tweakProcedure

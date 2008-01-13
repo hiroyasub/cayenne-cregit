@@ -183,6 +183,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Overrides super implementation to guess whether the query is selecting or not and      * execute it appropriately. Super implementation relied on generic JDBC mechanism,      * common for selecting and updating statements that does not work in Oracle 8.*      * drivers.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|execute

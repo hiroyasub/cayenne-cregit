@@ -424,6 +424,8 @@ name|name
 expr_stmt|;
 block|}
 comment|/**      * Starts up JMS machinery for "publish/subscribe" model.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startupExternal
@@ -615,6 +617,8 @@ name|ex
 throw|;
 block|}
 comment|/**      * Closes all resources used to communicate via JMS.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|shutdownExternal
@@ -794,6 +798,8 @@ name|lastException
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|sendExternalEvent

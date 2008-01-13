@@ -169,6 +169,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns suffix to append to object name when creating a file name. Default      * implementation returns empty string.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLocationSuffix
@@ -179,6 +181,8 @@ literal|".xml"
 return|;
 block|}
 comment|/**      * Returns a project.      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getObject
@@ -190,6 +194,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.ProjectFile#getObjectName()      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getObjectName
@@ -201,6 +207,8 @@ operator|.
 name|objectName
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|save
@@ -248,6 +256,8 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canHandle

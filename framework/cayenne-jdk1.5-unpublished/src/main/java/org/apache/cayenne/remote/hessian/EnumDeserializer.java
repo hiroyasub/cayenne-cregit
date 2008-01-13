@@ -81,6 +81,8 @@ operator|=
 name|enumClass
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|readMap

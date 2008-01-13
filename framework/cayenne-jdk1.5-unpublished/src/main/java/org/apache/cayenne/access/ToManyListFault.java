@@ -51,6 +51,8 @@ extends|extends
 name|Fault
 block|{
 comment|/**      * Resolves this fault to a List of objects.      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|resolveFault

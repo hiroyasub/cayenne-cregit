@@ -91,6 +91,8 @@ name|reverseName
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|readProperty
@@ -109,6 +111,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Wraps list in a value holder that performs lazy faulting.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|writePropertyDirectly
@@ -306,6 +310,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visit
@@ -324,6 +330,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Injects a List in the object if it hasn't been done yet.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|injectValueHolder

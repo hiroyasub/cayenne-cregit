@@ -500,6 +500,8 @@ name|state
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|Object
@@ -1047,6 +1049,8 @@ block|}
 block|}
 comment|// ****** GraphChangeHandler API ******
 comment|// =====================================================
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1080,6 +1084,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1106,6 +1112,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1132,6 +1140,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1179,6 +1189,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1219,6 +1231,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void

@@ -319,6 +319,8 @@ argument_list|(
 literal|false
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelect
@@ -348,6 +350,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitDelete
@@ -377,6 +381,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdate

@@ -35,6 +35,8 @@ name|ONEWAY_ACCESS_STACK
 init|=
 literal|"OneWayStack"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack

@@ -428,6 +428,8 @@ argument_list|(
 literal|"r1"
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Entity
 name|getTargetEntity

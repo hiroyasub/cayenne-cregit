@@ -91,6 +91,8 @@ name|dbEntity
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -103,12 +105,16 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|reset
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|next
@@ -118,6 +124,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getValue
@@ -130,6 +138,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size

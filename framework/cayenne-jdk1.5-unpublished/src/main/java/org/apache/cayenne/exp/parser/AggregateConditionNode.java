@@ -69,6 +69,8 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|pruneNodeForPrunedChild
@@ -81,6 +83,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|transformExpression
@@ -154,6 +158,8 @@ name|condition
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|jjtSetParent
@@ -222,6 +228,8 @@ name|n
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|jjtAddChild

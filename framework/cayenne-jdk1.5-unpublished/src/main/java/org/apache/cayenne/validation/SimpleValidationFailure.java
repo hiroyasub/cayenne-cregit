@@ -92,6 +92,8 @@ name|error
 return|;
 block|}
 comment|/**      * Returns a String representation of the failure.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

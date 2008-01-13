@@ -127,6 +127,8 @@ argument_list|(
 name|adapter
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString
@@ -180,6 +182,8 @@ argument_list|(
 name|adapter
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString
@@ -305,6 +309,8 @@ argument_list|(
 name|adapter
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

@@ -1389,6 +1389,8 @@ block|}
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataChannel
 name|getChannel
@@ -1564,6 +1566,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a list of objects that are registered with this DataContext and have a      * state PersistenceState.NEW      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -1585,6 +1589,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a list of objects that are registered with this DataContext and have a      * state PersistenceState.DELETED      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -1606,6 +1612,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a list of objects that are registered with this DataContext and have a      * state PersistenceState.MODIFIED      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -1627,6 +1635,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a collection of all uncommitted registered objects.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -2430,6 +2440,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Creates and registers a new persistent object.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -2718,6 +2730,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Registers a transient object with the context, recursively registering all      * transient persistent objects attached to this object via relationships.<p/><i>Note      * that since 3.0 this method takes Object as an argument instead of a      * {@link DataObject}.</i>      *       * @param object new object that needs to be made persistent.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|registerNewObject
@@ -3243,6 +3257,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Schedules an object for deletion on the next commit of this DataContext. Object's      * persistence state is changed to PersistenceState.DELETED; objects related to this      * object are processed according to delete rules, i.e. relationships can be unset      * ("nullify" rule), deletion operation is cascaded (cascade rule).      *       * @param object a persistent object that we want to delete.      * @throws DeleteDenyException if a DENY delete rule is applicable for object      *             deletion.      * @throws NullPointerException if object is null.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|deleteObject
@@ -3394,6 +3410,8 @@ name|object
 return|;
 block|}
 comment|/**      * If the parent channel is a DataContext, reverts local changes to make this context      * look like the parent, if the parent channel is a DataDomain, reverts all changes.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|rollbackChangesLocally
@@ -3432,6 +3450,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Reverts any changes that have occurred to objects registered with DataContext; also      * performs cascading rollback of all parent DataContexts.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|rollbackChanges
@@ -3519,6 +3539,8 @@ block|}
 block|}
 block|}
 comment|/**      * "Flushes" the changes to the parent {@link DataChannel}. If the parent channel is      * a DataContext, it updates its objects with this context's changes, without a      * database update. If it is a DataDomain (the most common case), the changes are      * written to the database. To cause cascading commit all the way to the database, one      * must use {@link #commitChanges()}.      *       * @since 1.2      * @see #commitChanges()      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commitChangesToParent
@@ -3531,6 +3553,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Synchronizes object graph with the database. Executes needed insert, update and      * delete queries (generated internally).      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commitChanges
@@ -4095,6 +4119,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Executes a query returning a generic response.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|performGenericQuery
@@ -4156,6 +4182,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Performs a single selecting query. Various query setting control the behavior of      * this method and the results returned:      *<ul>      *<li>Query caching policy defines whether the results are retrieved from cache or      * fetched from the database. Note that queries that use caching must have a name that      * is used as a caching key.</li>      *<li>Query refreshing policy controls whether to refresh existing data objects and      * ignore any cached values.</li>      *<li>Query data rows policy defines whether the result should be returned as      * DataObjects or DataRows.</li>      *</ul>      *<p>      *<i>Since 1.2 takes any Query parameter, not just GenericSelectQuery</i>      *</p>      *       * @return A list of DataObjects or a DataRows, depending on the value returned by      *         {@link QueryMetadata#isFetchingDataRows()}.      */
+annotation|@
+name|Override
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -4416,6 +4444,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns EntityResolver. EntityResolver can be null if DataContext has not been      * attached to an DataChannel.      */
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getEntityResolver
@@ -4916,6 +4946,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|propertyChanged
@@ -4948,6 +4980,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns this context's ObjectStore.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|GraphManager
 name|getGraphManager
@@ -4958,6 +4992,8 @@ name|objectStore
 return|;
 block|}
 comment|/**      * Returns an object local to this DataContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * In case you pass a non-null second parameter, you are responsible for setting      * correct persistence state of the returned local object, as generally there is no      * way for Cayenne to determine the resulting local object state.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|Persistent
 name|localObject

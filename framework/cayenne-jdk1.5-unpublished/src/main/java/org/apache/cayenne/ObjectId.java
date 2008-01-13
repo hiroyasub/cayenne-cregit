@@ -530,6 +530,8 @@ operator|.
 name|EMPTY_MAP
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -882,6 +884,8 @@ name|o2
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -1222,6 +1226,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * A standard toString method used for debugging. It is guaranteed to produce the same      * string if two ObjectIds are equal.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

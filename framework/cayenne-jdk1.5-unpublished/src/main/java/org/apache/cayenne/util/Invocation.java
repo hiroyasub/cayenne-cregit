@@ -632,6 +632,8 @@ return|;
 block|}
 block|}
 comment|/**      * @see Object#equals(java.lang.Object)      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -773,6 +775,8 @@ return|;
 block|}
 block|}
 comment|/**      * @see Object#hashCode()      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode

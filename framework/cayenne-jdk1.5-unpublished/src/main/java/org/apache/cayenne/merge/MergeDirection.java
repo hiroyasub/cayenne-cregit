@@ -108,6 +108,8 @@ return|return
 name|name
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -124,6 +126,8 @@ name|this
 operator|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -135,6 +139,8 @@ operator|*
 literal|17
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

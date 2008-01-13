@@ -122,6 +122,8 @@ specifier|protected
 name|DataContext
 name|context
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -208,6 +210,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|shouldMergeChanges
@@ -319,6 +323,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -378,6 +384,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|shouldMergeChanges
@@ -516,6 +524,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|shouldProcessDelete
@@ -624,6 +634,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -686,6 +698,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|shouldProcessDelete
@@ -794,6 +808,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult

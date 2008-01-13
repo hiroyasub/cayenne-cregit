@@ -116,6 +116,8 @@ name|UpdateTranslator
 extends|extends
 name|QueryAssembler
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|aliasForTable
@@ -132,6 +134,8 @@ literal|"aliases not supported"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -149,6 +153,8 @@ argument_list|)
 throw|;
 block|}
 comment|/** Method that converts an update query into SQL string */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

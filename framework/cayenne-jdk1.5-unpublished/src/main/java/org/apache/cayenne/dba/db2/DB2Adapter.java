@@ -227,6 +227,8 @@ extends|extends
 name|JdbcAdapter
 block|{
 comment|/**      * Creates a DB2 specific PK Generator.      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -238,6 +240,8 @@ name|DB2PkGenerator
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -292,6 +296,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -733,6 +739,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a trimming translator.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -757,6 +765,8 @@ name|DB2BooleanType
 extends|extends
 name|BooleanType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

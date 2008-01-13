@@ -144,6 +144,8 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|evaluateNode
@@ -301,6 +303,8 @@ return|;
 block|}
 block|}
 comment|/**      * Creates a copy of this expression node, without copying children.      */
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|shallowCopy
@@ -394,6 +398,8 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getType

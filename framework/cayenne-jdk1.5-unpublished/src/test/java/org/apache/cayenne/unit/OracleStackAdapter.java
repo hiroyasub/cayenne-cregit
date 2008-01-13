@@ -214,6 +214,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsStoredProcedures
@@ -223,6 +225,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willDropTables
@@ -242,6 +246,8 @@ block|{
 comment|// avoid dropping constraints...
 block|}
 comment|/**      * Oracle 8i does not support more then 1 "LONG xx" column per table PAINTING_INFO      * need to be fixed.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willCreateTables
@@ -301,6 +307,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createdTables
@@ -374,6 +382,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsLobs
@@ -383,6 +393,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|tweakProcedure

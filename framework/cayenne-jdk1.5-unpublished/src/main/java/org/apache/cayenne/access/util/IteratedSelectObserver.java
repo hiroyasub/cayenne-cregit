@@ -124,6 +124,8 @@ specifier|protected
 name|ResultIterator
 name|resultIterator
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIteratedResult
@@ -133,6 +135,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextDataRows
@@ -152,6 +156,8 @@ literal|"Results unexpectedly returned as list."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextDataRows

@@ -102,6 +102,8 @@ name|CAY_207StringType2
 extends|extends
 name|AbstractType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -116,6 +118,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -145,6 +149,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -174,6 +180,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -231,6 +239,8 @@ name|precision
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|validateProperty

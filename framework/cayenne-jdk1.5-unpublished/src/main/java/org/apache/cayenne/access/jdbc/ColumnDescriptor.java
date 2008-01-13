@@ -559,6 +559,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns true if another object is a ColumnDescriptor with the same name, name      * prefix, table and procedure names. Other fields are ignored in the equality test.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -644,6 +646,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -688,6 +692,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

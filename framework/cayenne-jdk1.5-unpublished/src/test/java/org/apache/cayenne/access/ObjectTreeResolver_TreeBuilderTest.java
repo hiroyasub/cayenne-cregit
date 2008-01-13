@@ -294,6 +294,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -303,6 +305,8 @@ return|return
 name|descriptor
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -315,6 +319,8 @@ name|getEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -328,6 +334,8 @@ name|getDbEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataMap
 name|getDataMap
@@ -341,6 +349,8 @@ name|getDataMap
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -350,6 +360,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isResolvingInherited
@@ -609,6 +621,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -618,6 +632,8 @@ return|return
 name|descriptor
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -630,6 +646,8 @@ name|getEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -643,6 +661,8 @@ name|getDbEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataMap
 name|getDataMap
@@ -656,6 +676,8 @@ name|getDataMap
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -665,6 +687,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isResolvingInherited

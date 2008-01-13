@@ -90,6 +90,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns message that includes Cayenne version label and the actual exception      * message.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getMessage

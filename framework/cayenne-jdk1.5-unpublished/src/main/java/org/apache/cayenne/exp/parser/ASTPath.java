@@ -83,6 +83,8 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getOperandCount
@@ -92,6 +94,8 @@ return|return
 literal|1
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getOperand
@@ -119,6 +123,8 @@ name|index
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setOperand
@@ -233,6 +239,8 @@ return|return
 name|next
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getExpressionOperator

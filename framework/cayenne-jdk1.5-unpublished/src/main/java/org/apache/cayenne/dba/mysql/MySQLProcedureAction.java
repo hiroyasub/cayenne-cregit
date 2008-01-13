@@ -208,6 +208,8 @@ name|entityResolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction
@@ -470,6 +472,8 @@ return|;
 block|}
 comment|/**      * Creates a translator that adds parenthesis to no-param queries.      */
 comment|// see CAY-750 for the problem description
+annotation|@
+name|Override
 specifier|protected
 name|ProcedureTranslator
 name|createTranslator
@@ -526,6 +530,8 @@ name|MySQLProcedureTranslator
 extends|extends
 name|ProcedureTranslator
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|createSqlString

@@ -272,6 +272,8 @@ block|}
 comment|/**      * Returns query metadata object.      */
 comment|// return metadata without creating replacement, as this is not always possible to
 comment|// create replacement (one-way relationships, etc.)
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -317,6 +319,8 @@ return|return
 name|relationshipName
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Query
 name|createReplacementQuery
@@ -519,6 +523,8 @@ operator|new
 name|DefaultQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -528,6 +534,8 @@ return|return
 name|refreshing
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -543,6 +551,8 @@ name|getEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -566,6 +576,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Overrides toString() outputting a short string with query class and relationship      * name.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

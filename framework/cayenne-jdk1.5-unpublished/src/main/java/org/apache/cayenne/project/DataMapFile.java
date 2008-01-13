@@ -96,6 +96,8 @@ name|map
 expr_stmt|;
 block|}
 comment|/**      * Returns DataMap associated with this project.      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getObject
@@ -106,6 +108,8 @@ name|map
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.ProjectFile#getObjectName()      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getObjectName
@@ -118,6 +122,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|save
@@ -137,6 +143,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.ProjectFile#canHandle(Object)      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canHandle
@@ -152,6 +160,8 @@ name|DataMap
 return|;
 block|}
 comment|/**      * Updates map location to match the name before save.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willSave
@@ -180,6 +190,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns ".map.xml" that should be used as a file suffix for DataMaps.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLocationSuffix

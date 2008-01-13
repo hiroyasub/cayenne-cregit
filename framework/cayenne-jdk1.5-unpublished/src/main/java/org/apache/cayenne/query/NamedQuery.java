@@ -289,6 +289,8 @@ name|values
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -468,6 +470,8 @@ return|return
 name|wrapper
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Query
 name|createReplacementQuery
@@ -686,6 +690,8 @@ name|query
 return|;
 block|}
 comment|/**      * Overrides toString() outputting a short string with query class and name.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
@@ -756,6 +762,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * An object is considered equal to this NamedQuery if it is a NamedQuery with the      * same queryName and same parameters.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -986,6 +994,8 @@ literal|true
 return|;
 block|}
 comment|/**      * Implements a standard hashCode contract considering custom 'equals' implementation.      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode

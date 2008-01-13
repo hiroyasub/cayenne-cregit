@@ -166,6 +166,8 @@ name|ChainDirective
 extends|extends
 name|Directive
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -175,6 +177,8 @@ return|return
 literal|"chain"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getType
@@ -184,6 +188,8 @@ return|return
 name|BLOCK
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|render

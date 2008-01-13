@@ -183,6 +183,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Maps specified key-value pair. If value is a CayenneMapEntry, sets its parent to      * this map.      *       * @see java.util.Map#put(Object, Object)      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|put
@@ -356,6 +358,8 @@ literal|null
 return|;
 block|}
 comment|/**      * @see java.util.Map#putAll(Map)      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|putAll

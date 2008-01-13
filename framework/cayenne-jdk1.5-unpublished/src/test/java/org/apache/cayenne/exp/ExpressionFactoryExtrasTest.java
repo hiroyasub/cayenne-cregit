@@ -80,6 +80,8 @@ specifier|protected
 name|TstTraversalHandler
 name|handler
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

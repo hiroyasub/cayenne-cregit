@@ -77,6 +77,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsLobs
@@ -87,6 +89,8 @@ literal|true
 return|;
 block|}
 comment|/**      * Note that out of all SP tests HSQLDB (as of 8.0.2) supports only updates that do      * not return a ResultSet (see HSQL CallableStatement JavaDocs). Once HSQL implements      * the rest of callable statement we can enable our unit test.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsStoredProcedures
@@ -96,6 +100,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsHaving
@@ -105,6 +111,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createdTables

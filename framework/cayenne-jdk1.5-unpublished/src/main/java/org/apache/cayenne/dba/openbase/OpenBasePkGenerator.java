@@ -191,6 +191,8 @@ extends|extends
 name|JdbcPkGenerator
 block|{
 comment|/**      * Returns a non-repeating primary key for a given entity. Since OpenBase-specific      * mechanism is used, key caching is disabled. Instead a database operation is      * performed on every call.      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|generatePkForDbEntity
@@ -239,6 +241,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      * Executed SQL looks like this:      *       *<pre>      *  NEWID FOR Table Column      *</pre>      *       * COLUMN must be marked as UNIQUE in order for this to work properly.      */
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase
@@ -466,6 +470,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createAutoPk
@@ -545,6 +551,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      *       */
+annotation|@
+name|Override
 specifier|public
 name|List
 name|createAutoPkStatements
@@ -653,6 +661,8 @@ literal|0
 return|;
 block|}
 comment|/**      *       */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dropAutoPk
@@ -673,6 +683,8 @@ comment|// is attached to the table itself, so if a table is dropped,
 comment|// it will be dropped as well
 block|}
 comment|/**      * Returns an empty list, since OpenBase doesn't support this operation.      */
+annotation|@
+name|Override
 specifier|public
 name|List
 name|dropAutoPkStatements
@@ -1002,6 +1014,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|reset
@@ -1010,6 +1024,8 @@ block|{
 comment|// noop
 block|}
 comment|/**      * Returns zero, since PK caching is not feasible with OpenBase PK generation      * mechanism.      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getPkCacheSize
@@ -1019,6 +1035,8 @@ return|return
 literal|0
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setPkCacheSize

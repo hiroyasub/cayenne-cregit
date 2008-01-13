@@ -43,6 +43,8 @@ name|OpenBaseSelectTranslator
 extends|extends
 name|SelectTranslator
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

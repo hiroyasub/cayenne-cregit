@@ -421,6 +421,8 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|get
@@ -447,6 +449,8 @@ name|index
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size
@@ -468,6 +472,8 @@ name|size
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|set
@@ -567,6 +573,8 @@ return|return
 name|removed
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|add
@@ -629,6 +637,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|remove

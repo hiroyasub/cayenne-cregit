@@ -138,6 +138,8 @@ specifier|protected
 name|Artist
 name|artist
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -231,6 +233,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|willPerformGenericQuery
@@ -340,6 +344,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|willPerformGenericQuery
@@ -448,6 +454,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|willPerformQuery
@@ -562,6 +570,8 @@ operator|new
 name|MockDataContextDelegate
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|willPerformQuery

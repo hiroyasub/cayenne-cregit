@@ -162,6 +162,8 @@ specifier|protected
 name|CayenneContext
 name|context
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack
@@ -179,6 +181,8 @@ name|MULTI_TIER_ACCESS_STACK
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

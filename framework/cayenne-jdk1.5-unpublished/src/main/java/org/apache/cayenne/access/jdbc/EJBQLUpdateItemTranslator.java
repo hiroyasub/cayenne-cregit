@@ -77,6 +77,8 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -93,6 +95,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdateItem
@@ -253,6 +257,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdateField
@@ -273,6 +279,8 @@ argument_list|(
 name|context
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendMultiColumnPath
@@ -291,6 +299,8 @@ name|operand
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdateField
@@ -332,6 +342,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitEquals
@@ -355,6 +367,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdateValue

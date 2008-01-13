@@ -186,6 +186,8 @@ specifier|protected
 name|ApplicationProject
 name|project
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

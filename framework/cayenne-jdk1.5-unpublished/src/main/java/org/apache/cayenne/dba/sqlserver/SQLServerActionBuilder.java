@@ -146,6 +146,8 @@ name|resolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|batchAction
@@ -199,6 +201,8 @@ return|return
 name|action
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|procedureAction

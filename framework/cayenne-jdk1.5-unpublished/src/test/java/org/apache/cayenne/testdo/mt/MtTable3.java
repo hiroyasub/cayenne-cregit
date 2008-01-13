@@ -60,6 +60,8 @@ specifier|protected
 name|ObjEntity
 name|entity
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity

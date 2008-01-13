@@ -183,6 +183,8 @@ extends|extends
 name|OraclePkGenerator
 block|{
 comment|/**      * Generates primary key by calling Oracle sequence corresponding to the      *<code>dbEntity</code>. Executed SQL looks like this:      *       *<pre>      *     SELECT nextval(pk_table_name)      *</pre>      */
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase
@@ -361,6 +363,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|List
 argument_list|<

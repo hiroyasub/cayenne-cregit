@@ -499,6 +499,8 @@ operator|new
 name|ByteArrayOutputStream
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|byte

@@ -65,6 +65,8 @@ operator|new
 name|MockAccessor
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName

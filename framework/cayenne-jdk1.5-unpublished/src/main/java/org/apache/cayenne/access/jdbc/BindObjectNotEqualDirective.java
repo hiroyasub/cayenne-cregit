@@ -62,6 +62,8 @@ name|BindObjectNotEqualDirective
 extends|extends
 name|BindObjectEqualDirective
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -71,6 +73,8 @@ return|return
 literal|"bindObjectNotEqual"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|renderColumn
@@ -116,6 +120,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|render

@@ -153,6 +153,8 @@ extends|extends
 name|CayenneCase
 block|{
 comment|/**      * Overrides super implementation to ensure that created DataContext's ObjectStore      * retains unreferenced registered objects.      */
+annotation|@
+name|Override
 specifier|protected
 name|DataContext
 name|createDataContext

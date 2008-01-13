@@ -101,6 +101,8 @@ specifier|protected
 name|XMLDecoder
 name|decoder
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

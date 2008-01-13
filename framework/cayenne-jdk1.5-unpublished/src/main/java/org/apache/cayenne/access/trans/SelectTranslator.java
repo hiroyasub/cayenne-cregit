@@ -554,6 +554,8 @@ name|boolean
 name|forcingDistinct
 decl_stmt|;
 comment|/**      * Returns query translated to SQL. This is a main work method of the      * SelectTranslator.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString
@@ -2857,6 +2859,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Stores a new relationship in an internal list. Later it will be used to create      * joins to relationship destination table.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -2966,6 +2970,8 @@ return|return
 name|newAlias
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|aliasForTable
@@ -2990,6 +2996,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Overrides superclass implementation. Will return an alias that should be used for a      * specified DbEntity in the query (or null if this DbEntity is not included in the      * FROM clause).      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|aliasForTable
@@ -3149,6 +3157,8 @@ throw|;
 block|}
 block|}
 comment|/**      * Always returns true.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsTableAliases

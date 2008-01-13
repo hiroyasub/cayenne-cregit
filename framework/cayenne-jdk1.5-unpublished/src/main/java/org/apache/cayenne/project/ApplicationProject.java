@@ -335,6 +335,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|upgrade
@@ -354,6 +356,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Initializes internal<code>Configuration</code> object and then calls super.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|postInitialize
@@ -470,6 +474,8 @@ operator|=
 name|config
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|checkForUpgrades
@@ -493,6 +499,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#getChildren()      */
+annotation|@
+name|Override
 specifier|public
 name|List
 name|getChildren
@@ -513,6 +521,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns appropriate ProjectFile or null if object does not require a file of its      * own. In case of ApplicationProject, the nodes that require separate filed are: the      * project itself, each DataMap, each driver DataNode.      */
+annotation|@
+name|Override
 specifier|public
 name|ProjectFile
 name|projectFileForObject
@@ -691,6 +701,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ConfigStatus
 name|getLoadStatus
@@ -747,6 +759,8 @@ parameter_list|)
 block|{
 comment|// do nothing...
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|shouldLoadDataDomain
@@ -796,6 +810,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|shouldLoadDataDomainProperties

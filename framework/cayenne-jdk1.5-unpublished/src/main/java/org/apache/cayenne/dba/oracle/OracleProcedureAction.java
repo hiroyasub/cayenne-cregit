@@ -260,6 +260,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Helper method that reads OUT parameters of a CallableStatement.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|readProcedureOutParameters

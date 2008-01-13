@@ -287,6 +287,8 @@ name|UpgradeHandler_3_0
 extends|extends
 name|UpgradeHandler_2_0
 block|{
+annotation|@
+name|Override
 name|String
 name|supportedVersion
 parameter_list|()
@@ -302,6 +304,8 @@ name|UpgradeHandler_2_0
 extends|extends
 name|UpgradeHandler_1_1
 block|{
+annotation|@
+name|Override
 name|String
 name|supportedVersion
 parameter_list|()
@@ -317,6 +321,8 @@ name|UpgradeHandler_1_1
 extends|extends
 name|ApplicationUpgradeHandler
 block|{
+annotation|@
+name|Override
 name|String
 name|supportedVersion
 parameter_list|()
@@ -325,6 +331,8 @@ return|return
 literal|"1.1"
 return|;
 block|}
+annotation|@
+name|Override
 name|void
 name|performUpgrade
 parameter_list|(
@@ -358,6 +366,8 @@ name|save
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 name|int
 name|checkForUpgrades
 parameter_list|(

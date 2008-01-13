@@ -327,6 +327,8 @@ extends|extends
 name|DefaultHandler
 block|{
 comment|/**          * Handles the start of a datadomains element. A domains handler is created and          * initialised with the element name and attributes.          *           * @exception SAXException if the tag given is not<code>"domains"</code>          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement
@@ -424,6 +426,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**          * Handles the start of a top-level element within the project. An appropriate          * handler is created and initialised with the details of the element.          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement
@@ -664,6 +668,8 @@ name|domainName
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement
@@ -802,6 +808,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|finished
@@ -1055,6 +1063,8 @@ literal|"location"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement
@@ -1120,6 +1130,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|finished
@@ -1252,6 +1264,8 @@ name|factoryName
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement

@@ -731,6 +731,8 @@ name|list
 return|;
 block|}
 comment|/**      * Overrides superclass implementation to rethrow an exception immediately.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextQueryException
@@ -767,6 +769,8 @@ argument_list|)
 throw|;
 block|}
 comment|/**      * Overrides superclass implementation to rethrow an exception immediately.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGlobalException
@@ -798,6 +802,8 @@ argument_list|)
 throw|;
 block|}
 comment|/**      * Always returns<code>false</code>, iterated results are not supported.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIteratedResult
@@ -807,6 +813,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextBatchCount
@@ -865,6 +873,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextCount
@@ -936,6 +946,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextDataRows
@@ -1002,6 +1014,8 @@ name|dataRows
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextDataRows

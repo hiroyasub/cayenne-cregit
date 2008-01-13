@@ -313,6 +313,8 @@ name|EJBQLMultiColumnOperand
 name|operand
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -358,6 +360,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentifier
@@ -438,6 +442,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentificationVariable

@@ -381,6 +381,8 @@ name|MockupRootQueryBuilder
 extends|extends
 name|SQLTemplateBuilder
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getRoot

@@ -314,6 +314,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -343,6 +345,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -379,6 +383,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAttribute
 name|buildAttribute
@@ -440,6 +446,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns word "go".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getBatchTerminator
@@ -450,6 +458,8 @@ literal|"go"
 return|;
 block|}
 comment|/**       * Returns null, since views are not yet supported in openbase.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForView
@@ -461,6 +471,8 @@ literal|null
 return|;
 block|}
 comment|/**       * Returns OpenBase-specific translator for queries.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -478,6 +490,8 @@ argument_list|)
 return|;
 block|}
 comment|/**       * Creates and returns a primary key generator. Overrides superclass        * implementation to return an       * instance of OpenBasePkGenerator that uses built-in multi-server primary key generation.       */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -490,6 +504,8 @@ argument_list|()
 return|;
 block|}
 comment|/**       * Returns a SQL string that can be used to create database table       * corresponding to<code>ent</code> parameter.       */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -843,6 +859,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a SQL string that can be used to create      * a foreign key constraint for the relationship.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createFkConstraint
@@ -1078,6 +1096,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -1144,6 +1164,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

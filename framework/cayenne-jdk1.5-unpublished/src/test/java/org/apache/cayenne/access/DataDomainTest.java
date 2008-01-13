@@ -1753,6 +1753,8 @@ argument_list|(
 literal|"N1"
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1778,6 +1780,8 @@ argument_list|(
 literal|"N2"
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -1872,6 +1876,8 @@ name|EventManager
 argument_list|()
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|shutdown

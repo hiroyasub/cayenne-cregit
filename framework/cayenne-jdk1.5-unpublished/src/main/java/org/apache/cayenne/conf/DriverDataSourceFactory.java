@@ -587,6 +587,8 @@ extends|extends
 name|DefaultHandler
 block|{
 comment|/**          * Handles the start of a "driver" element. A driver handler is created and          * initialized with the element name and attributes.          *           * @exception SAXException if the tag given is not<code>"driver"</code>          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement
@@ -731,6 +733,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**          * Handles the start of a driver child element. An appropriate handler is created          * and initialized with the element name and attributes.          *           * @exception SAXException if the tag given is not recognized.          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startElement

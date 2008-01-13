@@ -302,6 +302,8 @@ specifier|protected
 name|MockOperationObserver
 name|opObserver
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

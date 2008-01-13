@@ -255,6 +255,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Does nothing.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|beforeSendMessage
@@ -266,6 +268,8 @@ block|{
 comment|// noop
 block|}
 comment|/**      * Dispatches a message to an internal handler.      */
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|doSendMessage

@@ -73,6 +73,8 @@ name|OracleEJBQLTranslatorFactory
 extends|extends
 name|JdbcEJBQLTranslatorFactory
 block|{
+annotation|@
+name|Override
 specifier|public
 name|EJBQLExpressionVisitor
 name|getConditionTranslator

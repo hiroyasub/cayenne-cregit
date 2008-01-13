@@ -54,6 +54,8 @@ extends|extends
 name|QueryLoader
 block|{
 comment|/**      * Returns a ProcedureQuery.      */
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getQuery

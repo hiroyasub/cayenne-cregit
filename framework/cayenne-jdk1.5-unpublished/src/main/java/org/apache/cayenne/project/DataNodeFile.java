@@ -124,6 +124,8 @@ name|node
 expr_stmt|;
 block|}
 comment|/**      * @see ProjectFile#getObject()      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getObject
@@ -134,6 +136,8 @@ name|nodeObj
 return|;
 block|}
 comment|/**      * @see ProjectFile#getObjectName()      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getObjectName
@@ -146,6 +150,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|save
@@ -186,6 +192,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.ProjectFile#canHandle(Object)      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canHandle
@@ -238,6 +246,8 @@ literal|false
 return|;
 block|}
 comment|/**      * Updates node location to match the name before save.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|willSave
@@ -271,6 +281,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns ".driver.xml" that should be used as a file suffix       * for DataNode driver files.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLocationSuffix

@@ -118,6 +118,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Exposing super as a public method.      */
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|execute
@@ -130,6 +132,8 @@ name|execute
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 name|void
 name|runQueryInTransaction
 parameter_list|()

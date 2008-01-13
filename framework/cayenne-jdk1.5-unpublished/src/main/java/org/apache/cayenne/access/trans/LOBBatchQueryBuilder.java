@@ -455,6 +455,8 @@ block|}
 block|}
 block|}
 comment|/**      * Binds BatchQuery parameters to the PreparedStatement.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|bindParameters

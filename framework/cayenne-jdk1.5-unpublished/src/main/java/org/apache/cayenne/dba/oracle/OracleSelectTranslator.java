@@ -138,6 +138,8 @@ literal|100
 argument_list|)
 block|}
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString
@@ -278,6 +280,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Translates internal query into PreparedStatement, applying Oracle optimizations if      * possible.      */
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|createStatement

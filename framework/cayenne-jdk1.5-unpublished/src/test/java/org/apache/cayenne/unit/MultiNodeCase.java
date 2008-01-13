@@ -73,6 +73,8 @@ name|MULTINODE_ACCESS_STACK
 init|=
 literal|"MultiNodeStack"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack
@@ -90,6 +92,8 @@ name|MULTINODE_ACCESS_STACK
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataNode
 name|getNode
@@ -105,6 +109,8 @@ literal|"use getNode1() or getNode2()"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Connection
 name|getConnection

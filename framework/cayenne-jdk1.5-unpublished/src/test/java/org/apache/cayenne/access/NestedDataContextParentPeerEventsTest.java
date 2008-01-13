@@ -196,6 +196,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -462,6 +464,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -716,6 +720,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult

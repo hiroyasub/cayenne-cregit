@@ -316,6 +316,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Default implementation of {@link Configuration#canInitialize}. Creates a      * ResourceLocator suitable for loading from the CLASSPATH, unless it has already been      * set in a subclass. Always returns<code>true</code>.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canInitialize
@@ -334,6 +336,8 @@ literal|true
 return|;
 block|}
 comment|/**      * Initializes all Cayenne resources. Loads all configured domains and their data      * maps, initializes all domain Nodes and their DataSources.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|initialize
@@ -493,6 +497,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Default implementation of {@link Configuration#didInitialize}. Currently does      * nothing except logging.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|didInitialize
@@ -508,6 +514,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns the default ResourceLocator configured for CLASSPATH lookups.      */
+annotation|@
+name|Override
 specifier|protected
 name|ResourceLocator
 name|getResourceLocator
@@ -536,6 +544,8 @@ name|locator
 expr_stmt|;
 block|}
 comment|/**      * Returns the domain configuration as a stream or<code>null</code> if it cannot be      * found. Uses the configured {@link ResourceLocator} to find the file.      */
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getDomainConfiguration
@@ -554,6 +564,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns the {@link org.apache.cayenne.map.DataMap} configuration from a      * specified location or<code>null</code> if it cannot be found. Uses the      * configured {@link ResourceLocator} to find the file.      */
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getMapConfiguration
@@ -571,6 +583,8 @@ name|location
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getViewConfiguration
@@ -589,6 +603,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @see Object#toString()      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

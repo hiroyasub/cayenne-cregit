@@ -175,6 +175,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getValue
@@ -256,6 +258,8 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size
@@ -268,6 +272,8 @@ name|size
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -281,6 +287,8 @@ name|dbAttributes
 return|;
 block|}
 comment|/**      * Returns an ObjectId associated with the current batch iteration. Used internally by      * Cayenne to match current iteration with a specific object and assign it generated      * keys.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|ObjectId
 name|getObjectId

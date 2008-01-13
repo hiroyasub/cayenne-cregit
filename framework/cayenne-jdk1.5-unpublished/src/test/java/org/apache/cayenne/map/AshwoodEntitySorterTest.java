@@ -94,6 +94,8 @@ specifier|protected
 name|AshwoodEntitySorter
 name|sorter
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

@@ -326,6 +326,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -414,6 +416,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes used as converters for passing values between      * JDBC and Java layers.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -460,6 +464,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAttribute
 name|buildAttribute
@@ -717,6 +723,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns null, since views are not yet supported in MySQL. Views are available on      * newer versions of MySQL.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForView
@@ -727,6 +735,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of MySQLPkGenerator that does the correct table locking.      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -739,6 +749,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|protected
 name|EJBQLTranslatorFactory
 name|createEJBQLTranslatorFactory
@@ -751,6 +763,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Overrides super implementation to explicitly set table engine to InnoDB if FK      * constraints are supported by this adapter.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -780,6 +794,8 @@ return|;
 block|}
 comment|/**      * Customizes PK clause semantics to ensure that generated columns are in the      * beginning of the PK definition, as this seems to be a requirement for InnoDB      * tables.      *       * @since 1.2      */
 comment|// See CAY-358 for details of the InnoDB problem
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createTableAppendPKClause
@@ -1037,6 +1053,8 @@ block|}
 block|}
 block|}
 comment|/**      * Appends AUTO_INCREMENT clause to the column definition for generated columns.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createTableAppendColumn

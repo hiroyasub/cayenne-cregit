@@ -142,6 +142,8 @@ specifier|protected
 name|DataContext
 name|context
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -294,6 +296,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -500,6 +504,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -763,6 +769,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -1008,6 +1016,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -1286,6 +1296,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -1579,6 +1591,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -1800,6 +1814,8 @@ operator|new
 name|MockQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey

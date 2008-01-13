@@ -43,6 +43,8 @@ extends|extends
 name|HSQLDBAdapter
 block|{
 comment|/**      * Generate unqualified name without schema.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getTableName
@@ -59,6 +61,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Generate unqualified name.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getSchemaName
@@ -72,6 +76,8 @@ literal|""
 return|;
 block|}
 comment|/**      * Returns a SQL string to drop a table corresponding to<code>ent</code> DbEntity.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|dropTable
@@ -91,6 +97,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Uses unqualified entity names.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable

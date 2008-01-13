@@ -145,6 +145,8 @@ literal|"SELECT NEXT_ID FROM AUTO_PK_SUPPORT"
 operator|+
 literal|" WHERE TABLE_NAME = ? FOR UPDATE"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase

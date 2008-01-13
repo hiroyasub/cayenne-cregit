@@ -235,6 +235,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|visitNode
@@ -255,6 +257,8 @@ literal|1
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|visitChild

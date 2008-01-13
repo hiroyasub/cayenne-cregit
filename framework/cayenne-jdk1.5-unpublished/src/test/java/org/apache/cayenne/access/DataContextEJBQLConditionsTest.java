@@ -138,6 +138,8 @@ name|DataContextEJBQLConditionsTest
 extends|extends
 name|CayenneCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

@@ -316,6 +316,8 @@ name|CayenneContextTest
 extends|extends
 name|CayenneCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack
@@ -969,6 +971,8 @@ operator|new
 name|MockDataChannel
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|GraphDiff
 name|onSync
@@ -988,6 +992,8 @@ name|diff
 return|;
 block|}
 comment|// must provide a channel with working event manager
+annotation|@
+name|Override
 specifier|public
 name|EventManager
 name|getEventManager
@@ -1782,6 +1788,8 @@ argument_list|(
 name|channel
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|List
 name|performQuery

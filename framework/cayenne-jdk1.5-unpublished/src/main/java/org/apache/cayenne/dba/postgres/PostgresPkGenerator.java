@@ -182,6 +182,8 @@ name|PostgresPkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|createSequenceString
@@ -241,6 +243,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Generates primary key by calling Oracle sequence corresponding to the      *<code>dbEntity</code>. Executed SQL looks like this:      *       *<pre>      *     SELECT nextval(pk_table_name)      *</pre>      */
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase
@@ -420,6 +424,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Fetches a list of existing sequences that might match Cayenne generated ones.      */
+annotation|@
+name|Override
 specifier|protected
 name|List
 argument_list|<

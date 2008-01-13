@@ -72,6 +72,8 @@ specifier|protected
 name|Project
 name|pr
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

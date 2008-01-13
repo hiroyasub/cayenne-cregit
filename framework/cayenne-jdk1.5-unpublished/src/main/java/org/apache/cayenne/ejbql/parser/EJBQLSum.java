@@ -148,6 +148,8 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|boolean
 name|visitNode
@@ -165,6 +167,8 @@ name|this
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getFunction
@@ -174,6 +178,8 @@ return|return
 literal|"SUM"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getJavaType

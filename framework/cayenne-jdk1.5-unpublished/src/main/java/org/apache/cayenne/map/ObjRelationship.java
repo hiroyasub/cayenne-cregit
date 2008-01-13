@@ -511,6 +511,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a target ObjEntity of this relationship. Entity is looked up in the parent      * DataMap using "targetEntityName".      */
+annotation|@
+name|Override
 specifier|public
 name|Entity
 name|getTargetEntity
@@ -1304,6 +1306,8 @@ return|return
 name|readOnly
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isToMany
@@ -2293,6 +2297,8 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

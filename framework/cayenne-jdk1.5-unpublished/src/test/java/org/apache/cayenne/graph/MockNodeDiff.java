@@ -53,6 +53,8 @@ name|diffId
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -62,6 +64,8 @@ name|tracker
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo

@@ -75,6 +75,8 @@ operator|=
 name|reverseRelationshipName
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isToMany
@@ -84,6 +86,8 @@ return|return
 name|clientToMany
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isReadOnly
@@ -93,6 +97,8 @@ return|return
 name|clientReadOnly
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getReverseRelationshipName
@@ -102,6 +108,8 @@ return|return
 name|reverseRelationshipName
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjRelationship
 name|getReverseRelationship

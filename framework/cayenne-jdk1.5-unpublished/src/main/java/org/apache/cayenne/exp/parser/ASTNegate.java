@@ -129,6 +129,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Creates a copy of this expression node, without copying children.      */
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|shallowCopy
@@ -142,6 +144,8 @@ name|id
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Object
 name|evaluateNode
@@ -197,6 +201,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsString
@@ -407,6 +413,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|getExpressionOperator
@@ -432,6 +440,8 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getType
@@ -443,6 +453,8 @@ operator|.
 name|NEGATIVE
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getOperandCount

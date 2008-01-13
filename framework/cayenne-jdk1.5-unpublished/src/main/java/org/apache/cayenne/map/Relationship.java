@@ -356,6 +356,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Overrides Object.toString() to return informative description.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

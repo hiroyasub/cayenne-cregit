@@ -220,6 +220,8 @@ operator|=
 name|faultFactory
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|ClassDescriptor
 name|getDescriptor
@@ -259,6 +261,8 @@ name|entityClass
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|PersistentDescriptor
 name|createDescriptor
@@ -270,6 +274,8 @@ name|DataObjectDescriptor
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createAttributeProperty
@@ -293,6 +299,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManyListProperty
@@ -336,6 +344,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManyMapProperty
@@ -393,6 +403,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManySetProperty
@@ -436,6 +448,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManyCollectionProperty
@@ -479,6 +493,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToOneProperty
@@ -522,6 +538,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Accessor
 name|createAccessor

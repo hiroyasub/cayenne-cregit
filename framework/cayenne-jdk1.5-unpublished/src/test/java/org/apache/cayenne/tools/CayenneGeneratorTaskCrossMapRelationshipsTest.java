@@ -186,6 +186,8 @@ specifier|protected
 name|CayenneGeneratorTask
 name|task
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

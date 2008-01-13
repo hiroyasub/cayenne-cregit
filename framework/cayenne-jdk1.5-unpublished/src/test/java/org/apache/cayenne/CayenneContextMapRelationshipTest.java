@@ -192,6 +192,8 @@ name|CayenneContextMapRelationshipTest
 extends|extends
 name|CayenneCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack
@@ -250,6 +252,8 @@ name|clientChannel
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

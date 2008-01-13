@@ -3494,6 +3494,8 @@ decl_stmt|;
 name|long
 name|precision
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

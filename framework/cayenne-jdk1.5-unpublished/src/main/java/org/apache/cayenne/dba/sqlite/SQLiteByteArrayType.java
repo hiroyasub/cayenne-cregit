@@ -73,6 +73,8 @@ name|SQLiteByteArrayType
 extends|extends
 name|AbstractType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -82,6 +84,8 @@ return|return
 literal|"byte[]"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -145,6 +149,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -170,6 +176,8 @@ name|index
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject

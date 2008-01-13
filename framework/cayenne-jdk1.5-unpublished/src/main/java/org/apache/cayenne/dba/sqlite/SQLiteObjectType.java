@@ -79,6 +79,8 @@ name|SQLiteObjectType
 extends|extends
 name|AbstractType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -93,6 +95,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -118,6 +122,8 @@ name|index
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject

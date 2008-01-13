@@ -181,6 +181,8 @@ name|senderChanges
 return|;
 block|}
 comment|/**      * Returns a description of the type of message.      * Possibilities are "flush-sync", "flush-cascade-sync", "rollback-cascade-sync" or "unknown-sync".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

@@ -820,6 +820,8 @@ literal|0x000000ff
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|read
@@ -835,6 +837,8 @@ name|doRead
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|available

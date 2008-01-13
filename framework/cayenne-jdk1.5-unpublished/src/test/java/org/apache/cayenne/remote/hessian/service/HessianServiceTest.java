@@ -169,6 +169,8 @@ operator|new
 name|HessianService
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|initCayenneStack
@@ -188,6 +190,8 @@ literal|"test"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|HttpSession
 name|getSession

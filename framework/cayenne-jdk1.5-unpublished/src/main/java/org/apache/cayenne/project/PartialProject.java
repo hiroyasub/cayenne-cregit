@@ -235,6 +235,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|upgrade
@@ -458,6 +460,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|prepareSave
@@ -479,6 +483,8 @@ name|files
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|postInitialize
@@ -573,6 +579,8 @@ name|projectFile
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 name|getChildren
@@ -589,6 +597,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|checkForUpgrades
@@ -597,6 +607,8 @@ block|{
 comment|// do nothing...
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#buildFileList()      */
+annotation|@
+name|Override
 specifier|public
 name|List
 name|buildFileList
@@ -624,6 +636,8 @@ name|list
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#getLoadStatus()      */
+annotation|@
+name|Override
 specifier|public
 name|ConfigStatus
 name|getLoadStatus
@@ -636,6 +650,8 @@ name|getStatus
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ProjectFile
 name|projectFileForObject

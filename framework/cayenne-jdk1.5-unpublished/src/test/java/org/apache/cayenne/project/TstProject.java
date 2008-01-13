@@ -95,6 +95,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#checkForUpgrades()      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|checkForUpgrades
@@ -102,6 +104,8 @@ parameter_list|()
 block|{
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#treeNodes()      */
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 name|treeNodes
@@ -117,6 +121,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#getChildren()      */
+annotation|@
+name|Override
 specifier|public
 name|List
 name|getChildren
@@ -129,6 +135,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#projectFileForObject(Object)      */
+annotation|@
+name|Override
 specifier|public
 name|ProjectFile
 name|projectFileForObject
@@ -142,6 +150,8 @@ literal|null
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#projectLoadStatus()      */
+annotation|@
+name|Override
 specifier|public
 name|ConfigStatus
 name|getLoadStatus
@@ -151,6 +161,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|upgrade

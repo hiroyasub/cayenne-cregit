@@ -84,6 +84,8 @@ return|return
 name|context
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdate
@@ -103,6 +105,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitWhere
@@ -137,6 +141,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitFrom
@@ -167,6 +173,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitUpdateItem

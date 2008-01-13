@@ -70,6 +70,8 @@ operator|=
 name|mockObjEntity
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|ObjEntity
@@ -109,6 +111,8 @@ return|return
 name|mockObjEntity
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|ObjEntity

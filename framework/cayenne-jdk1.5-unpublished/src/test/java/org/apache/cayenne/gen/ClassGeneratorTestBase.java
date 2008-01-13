@@ -69,6 +69,8 @@ specifier|protected
 name|ClassGenerator
 name|cgen
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

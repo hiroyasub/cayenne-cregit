@@ -68,6 +68,8 @@ name|MockQualifiedQuery
 extends|extends
 name|QualifiedQuery
 block|{
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction

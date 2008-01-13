@@ -221,6 +221,8 @@ name|stringType
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -230,6 +232,8 @@ return|return
 literal|"java.lang.Character"
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|fromJavaObject
 parameter_list|(
@@ -260,6 +264,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|toJavaObject
 parameter_list|(
@@ -330,6 +336,8 @@ name|stringType
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -339,6 +347,8 @@ return|return
 literal|"char[]"
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|fromJavaObject
 parameter_list|(
@@ -364,6 +374,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|toJavaObject
 parameter_list|(
@@ -408,6 +420,8 @@ name|stringType
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -417,6 +431,8 @@ return|return
 literal|"java.lang.Character[]"
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|fromJavaObject
 parameter_list|(
@@ -503,6 +519,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|toJavaObject
 parameter_list|(
@@ -601,6 +619,8 @@ name|byteArrayType
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -610,6 +630,8 @@ return|return
 literal|"java.lang.Byte[]"
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|fromJavaObject
 parameter_list|(
@@ -694,6 +716,8 @@ return|return
 name|buffer
 return|;
 block|}
+annotation|@
+name|Override
 name|Object
 name|toJavaObject
 parameter_list|(

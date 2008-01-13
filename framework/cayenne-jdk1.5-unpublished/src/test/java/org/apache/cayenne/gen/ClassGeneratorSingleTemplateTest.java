@@ -68,6 +68,8 @@ name|ClassGeneratorSingleTemplateTest
 extends|extends
 name|ClassGeneratorTestBase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|ClassGenerator
 name|createGenerator
@@ -198,6 +200,8 @@ argument_list|(
 literal|"tomany"
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isToMany

@@ -59,6 +59,8 @@ extends|extends
 name|ProcedureTranslator
 block|{
 comment|/**      * Creates HSQLDB-compliant SQL to execute a stored procedure.      */
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|createSqlString

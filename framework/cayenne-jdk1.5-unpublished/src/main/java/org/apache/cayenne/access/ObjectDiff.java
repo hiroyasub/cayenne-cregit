@@ -802,6 +802,8 @@ argument_list|,
 name|diffId
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -816,6 +818,8 @@ name|tracker
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo
@@ -1116,6 +1120,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Checks whether at least a single property is modified.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isNoop
@@ -1378,6 +1384,8 @@ literal|0
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo
@@ -1392,6 +1400,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -1706,6 +1716,8 @@ return|return
 name|delete
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -1726,6 +1738,8 @@ operator|+
 literal|5
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -1801,6 +1815,8 @@ name|targetNodeId
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -1841,6 +1857,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo

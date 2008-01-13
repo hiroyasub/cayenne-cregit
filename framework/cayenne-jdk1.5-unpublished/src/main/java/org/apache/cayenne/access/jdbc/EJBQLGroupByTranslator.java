@@ -104,6 +104,8 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentifier
@@ -131,6 +133,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -167,6 +171,8 @@ argument_list|(
 name|context
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendMultiColumnPath

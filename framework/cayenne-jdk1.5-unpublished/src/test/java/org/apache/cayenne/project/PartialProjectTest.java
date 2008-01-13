@@ -96,6 +96,8 @@ specifier|protected
 name|PartialProject
 name|project
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

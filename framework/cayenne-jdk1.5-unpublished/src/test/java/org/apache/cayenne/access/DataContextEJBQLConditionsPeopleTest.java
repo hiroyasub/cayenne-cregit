@@ -164,6 +164,8 @@ name|DataContextEJBQLConditionsPeopleTest
 extends|extends
 name|PeopleCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -430,6 +432,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|tearDown

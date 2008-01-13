@@ -99,6 +99,8 @@ operator|=
 name|attribute
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -120,6 +122,8 @@ return|return
 name|attribute
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|injectValueHolder
@@ -131,6 +135,8 @@ throws|throws
 name|PropertyException
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visit

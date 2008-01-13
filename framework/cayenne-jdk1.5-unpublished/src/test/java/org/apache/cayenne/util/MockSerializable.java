@@ -32,6 +32,8 @@ name|MockSerializable
 implements|implements
 name|Serializable
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals

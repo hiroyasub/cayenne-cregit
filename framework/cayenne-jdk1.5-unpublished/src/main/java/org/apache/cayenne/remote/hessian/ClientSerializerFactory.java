@@ -151,6 +151,8 @@ specifier|private
 name|Deserializer
 name|dataRowDeserializer
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|Serializer
 name|getSerializer
@@ -165,6 +167,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Deserializer
 name|getDeserializer

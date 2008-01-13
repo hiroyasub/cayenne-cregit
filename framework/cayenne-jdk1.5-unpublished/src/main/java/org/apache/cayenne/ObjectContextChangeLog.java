@@ -764,6 +764,8 @@ operator|-
 name|fromIndex
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|GraphDiff
 name|get
@@ -788,6 +790,8 @@ name|offset
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size

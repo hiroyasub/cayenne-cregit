@@ -86,6 +86,8 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canInitialize
@@ -95,12 +97,16 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|didInitialize
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getDomainConfiguration
@@ -114,6 +120,8 @@ literal|"this is an in-memory mockup...'getDomainConfiguration' is not implement
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getMapConfiguration
@@ -126,6 +134,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|ResourceLocator
 name|getResourceLocator
@@ -135,6 +145,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|InputStream
 name|getViewConfiguration
@@ -147,6 +159,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|initialize

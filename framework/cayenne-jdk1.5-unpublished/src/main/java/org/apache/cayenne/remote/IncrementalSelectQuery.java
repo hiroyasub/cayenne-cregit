@@ -327,6 +327,8 @@ operator|=
 name|cacheKey
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -548,6 +550,8 @@ block|}
 block|}
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addCustomDbAttribute
@@ -564,6 +568,8 @@ name|attributePath
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addCustomDbAttributes
@@ -580,6 +586,8 @@ name|attrPaths
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addOrdering
@@ -596,6 +604,8 @@ name|ordering
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addOrdering
@@ -622,6 +632,8 @@ name|ignoreCase
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addOrdering
@@ -643,6 +655,8 @@ name|isAscending
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addOrderings
@@ -659,6 +673,8 @@ name|orderings
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PrefetchTreeNode
 name|addPrefetch
@@ -676,6 +692,8 @@ name|prefetchPath
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|andQualifier
@@ -692,6 +710,8 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|clearOrderings
@@ -703,6 +723,8 @@ name|clearOrderings
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|clearPrefetches
@@ -714,6 +736,8 @@ name|clearPrefetches
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|createQuery
@@ -731,6 +755,8 @@ name|parameters
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction
@@ -748,6 +774,8 @@ name|visitor
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML
@@ -764,6 +792,8 @@ name|encoder
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -781,6 +811,8 @@ name|obj
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 index|[]
@@ -794,6 +826,8 @@ name|getCacheGroups
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCachePolicy
@@ -806,6 +840,8 @@ name|getCachePolicy
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -821,6 +857,8 @@ name|getCustomDbAttributes
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getFetchLimit
@@ -833,6 +871,8 @@ name|getFetchLimit
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -845,6 +885,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -860,6 +902,8 @@ name|getOrderings
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getPageSize
@@ -872,6 +916,8 @@ name|getPageSize
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PrefetchTreeNode
 name|getPrefetchTree
@@ -884,6 +930,8 @@ name|getPrefetchTree
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Expression
 name|getQualifier
@@ -896,6 +944,8 @@ name|getQualifier
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getRoot
@@ -908,6 +958,8 @@ name|getRoot
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode
@@ -920,6 +972,8 @@ name|hashCode
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|initWithProperties
@@ -936,6 +990,8 @@ name|properties
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isDistinct
@@ -948,6 +1004,8 @@ name|isDistinct
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isFetchingCustomAttributes
@@ -960,6 +1018,8 @@ name|isFetchingCustomAttributes
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isFetchingDataRows
@@ -972,6 +1032,8 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -984,6 +1046,8 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isResolvingInherited
@@ -996,6 +1060,8 @@ name|isResolvingInherited
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|orQualifier
@@ -1012,6 +1078,8 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SelectQuery
 name|queryWithParameters
@@ -1034,6 +1102,8 @@ name|pruneMissing
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SelectQuery
 name|queryWithParameters
@@ -1051,6 +1121,8 @@ name|parameters
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeOrdering
@@ -1067,6 +1139,8 @@ name|ordering
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removePrefetch
@@ -1083,6 +1157,8 @@ name|prefetchPath
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|route
@@ -1109,6 +1185,8 @@ name|substitutedQuery
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setCacheGroups
@@ -1126,6 +1204,8 @@ name|cachGroups
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setCachePolicy
@@ -1142,6 +1222,8 @@ name|policy
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setDistinct
@@ -1158,6 +1240,8 @@ name|distinct
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setFetchingDataRows
@@ -1174,6 +1258,8 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setFetchLimit
@@ -1190,6 +1276,8 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setName
@@ -1206,6 +1294,8 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setPageSize
@@ -1222,6 +1312,8 @@ name|pageSize
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setPrefetchTree
@@ -1238,6 +1330,8 @@ name|prefetchTree
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setQualifier
@@ -1254,6 +1348,8 @@ name|qualifier
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setRefreshingObjects
@@ -1270,6 +1366,8 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setResolvingInherited
@@ -1286,6 +1384,8 @@ name|b
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setRoot
@@ -1302,6 +1402,8 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

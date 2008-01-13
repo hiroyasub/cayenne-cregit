@@ -134,6 +134,8 @@ name|MySQLPkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|dropAutoPkString
@@ -144,6 +146,8 @@ literal|"DROP TABLE IF EXISTS AUTO_PK_SUPPORT"
 return|;
 block|}
 comment|/**      * Overrides superclass's implementation to perform locking of the primary key lookup      * table.      */
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase
@@ -414,6 +418,8 @@ return|return
 name|parent
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|pkTableCreateString

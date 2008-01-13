@@ -85,6 +85,8 @@ operator|=
 name|resultSetMapping
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLResultSetMapping
 name|getResultSetMapping

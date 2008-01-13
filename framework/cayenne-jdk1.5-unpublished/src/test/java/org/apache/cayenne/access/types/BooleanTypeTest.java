@@ -116,6 +116,8 @@ argument_list|(
 literal|""
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|getBoolean

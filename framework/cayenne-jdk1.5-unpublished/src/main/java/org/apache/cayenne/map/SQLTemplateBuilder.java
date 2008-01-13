@@ -64,6 +64,8 @@ extends|extends
 name|QueryLoader
 block|{
 comment|/**      * Builds a SQLTemplate query.      */
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getQuery

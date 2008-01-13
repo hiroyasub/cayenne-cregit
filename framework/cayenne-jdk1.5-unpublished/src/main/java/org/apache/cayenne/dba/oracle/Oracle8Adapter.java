@@ -81,6 +81,8 @@ extends|extends
 name|OracleAdapter
 block|{
 comment|/**      * Uses OracleActionBuilder to create the right action.      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -110,6 +112,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|URL
 name|findAdapterResource

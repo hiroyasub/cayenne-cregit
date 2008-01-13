@@ -203,6 +203,8 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML
@@ -792,6 +794,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a type of this attribute that must be an {@link Embeddable} object.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getType
@@ -802,6 +806,8 @@ name|type
 return|;
 block|}
 comment|/**      * Returns Java class of an object property described by this attribute. Wraps any      * thrown exceptions into CayenneRuntimeException.      */
+annotation|@
+name|Override
 specifier|public
 name|Class
 argument_list|<
@@ -866,6 +872,8 @@ throw|;
 block|}
 block|}
 comment|/**      * Sets a type of this attribute that must be an {@link Embeddable} object.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setType

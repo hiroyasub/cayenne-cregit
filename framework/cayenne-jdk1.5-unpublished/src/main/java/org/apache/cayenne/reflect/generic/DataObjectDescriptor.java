@@ -79,6 +79,8 @@ name|DataObjectDescriptor
 extends|extends
 name|PersistentDescriptor
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|shallowMerge

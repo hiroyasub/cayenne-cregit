@@ -193,6 +193,8 @@ name|SEQUENCE_PREFIX
 init|=
 literal|"S_"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase
@@ -328,6 +330,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createAutoPk
@@ -393,6 +397,8 @@ block|}
 block|}
 block|}
 comment|/**      * Creates a list of CREATE SEQUENCE statements for the list of DbEntities.      */
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -449,6 +455,8 @@ name|list
 return|;
 block|}
 comment|/**      * Drops PK sequences for all specified DbEntities.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dropAutoPk
@@ -511,6 +519,8 @@ block|}
 block|}
 block|}
 comment|/**      * Creates a list of DROP SEQUENCE statements for the list of DbEntities.      */
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<

@@ -693,6 +693,8 @@ name|CompilationVisitor
 extends|extends
 name|EJBQLBaseVisitor
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelect
@@ -709,6 +711,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitFrom
@@ -728,6 +732,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSelectExpression
@@ -747,6 +753,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitFromItem
@@ -769,6 +777,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitInnerFetchJoin
@@ -788,6 +798,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitInnerJoin
@@ -807,6 +819,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitOuterFetchJoin
@@ -826,6 +840,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitOuterJoin
@@ -845,6 +861,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitWhere
@@ -866,6 +884,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitOrderBy
@@ -885,6 +905,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSubselect
@@ -912,6 +934,8 @@ specifier|private
 name|String
 name|entityName
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitFromItem
@@ -1051,6 +1075,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentificationVariable
@@ -1088,6 +1114,8 @@ specifier|private
 name|ClassDescriptor
 name|descriptor
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -1158,6 +1186,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentificationVariable
@@ -1230,6 +1260,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentifier
@@ -1329,6 +1361,8 @@ name|PathVisitor
 extends|extends
 name|EJBQLBaseVisitor
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath
@@ -1358,6 +1392,8 @@ name|SelectExpressionVisitor
 extends|extends
 name|EJBQLBaseVisitor
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentifier
@@ -1380,6 +1416,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAggregate
@@ -1395,6 +1433,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath

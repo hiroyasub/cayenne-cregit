@@ -72,6 +72,8 @@ specifier|protected
 name|DbGenerator
 name|gen
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

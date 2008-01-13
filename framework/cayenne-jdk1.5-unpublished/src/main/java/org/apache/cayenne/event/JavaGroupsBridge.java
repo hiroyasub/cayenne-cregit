@@ -314,6 +314,8 @@ comment|// TODO: Andrus, 2/8/2006 logging... Log4J was removed to make this usab
 comment|// the client
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startupExternal
@@ -462,6 +464,8 @@ operator|+
 literal|"shun=true;print_local_addr=false)"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|shutdownExternal
@@ -502,6 +506,8 @@ literal|null
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|sendExternalEvent

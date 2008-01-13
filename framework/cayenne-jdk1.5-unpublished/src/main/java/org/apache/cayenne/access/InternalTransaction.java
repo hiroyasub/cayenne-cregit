@@ -79,6 +79,8 @@ name|delegate
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|begin
@@ -97,6 +99,8 @@ literal|"transaction started."
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 name|void
 name|fixConnectionState
 parameter_list|(
@@ -137,6 +141,8 @@ comment|// Can't set autocommit, ignoring...
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 name|void
 name|processCommit
 parameter_list|()
@@ -298,6 +304,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 name|void
 name|processRollback
 parameter_list|()

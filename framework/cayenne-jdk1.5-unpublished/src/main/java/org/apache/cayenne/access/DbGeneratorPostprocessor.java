@@ -238,6 +238,8 @@ name|HSQLDBPostprocessor
 extends|extends
 name|Postprocessor
 block|{
+annotation|@
+name|Override
 name|void
 name|execute
 parameter_list|(

@@ -216,6 +216,8 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -232,6 +234,8 @@ name|dbRel
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|aliasForTable
@@ -244,6 +248,8 @@ return|return
 literal|"ta"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsTableAliases
@@ -253,6 +259,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

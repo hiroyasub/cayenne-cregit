@@ -173,6 +173,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Retruns zero as PK caching is not supported by FrontBaseAdapter.      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getPkCacheSize
@@ -182,6 +184,8 @@ return|return
 literal|0
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createAutoPk
@@ -222,6 +226,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -275,6 +281,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dropAutoPk
@@ -292,6 +300,8 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|pkTableCreateString
@@ -301,6 +311,8 @@ return|return
 literal|""
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|pkDeleteString
@@ -316,6 +328,8 @@ return|return
 literal|"-- The 'Drop Primary Key Support' option is unavailable"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|pkCreateString
@@ -355,6 +369,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|pkSelectString
@@ -394,6 +410,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|pkUpdateString
@@ -406,6 +424,8 @@ return|return
 literal|""
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|String
 name|dropAutoPkString
@@ -415,6 +435,8 @@ return|return
 literal|""
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase

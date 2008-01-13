@@ -98,6 +98,8 @@ specifier|protected
 name|SelectQuery
 name|q
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

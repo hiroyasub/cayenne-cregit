@@ -281,6 +281,8 @@ block|}
 comment|/**      * Returns query metadata object.      */
 comment|// return metadata without creating replacement, as it is not always possible to
 comment|// create replacement (e.g. temp ObjectId).
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -310,6 +312,8 @@ operator|new
 name|DefaultQueryMetadata
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -327,6 +331,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -340,6 +346,8 @@ name|getEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isFetchingDataRows
@@ -371,6 +379,8 @@ return|return
 name|objectId
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|Query
 name|createReplacementQuery
@@ -504,6 +514,8 @@ name|fetchingDataRows
 return|;
 block|}
 comment|/**      * Overrides toString() outputting a short string with query class and ObjectId.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString
@@ -529,6 +541,8 @@ name|objectId
 return|;
 block|}
 comment|/**      * An object is considered equal to this query if it is also a SingleObjectQuery with      * an equal ObjectId.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals
@@ -585,6 +599,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Implements a standard hashCode contract considering custom 'equals' implementation.      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|hashCode

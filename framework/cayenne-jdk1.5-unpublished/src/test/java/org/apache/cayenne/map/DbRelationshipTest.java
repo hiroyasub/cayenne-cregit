@@ -68,6 +68,8 @@ specifier|protected
 name|DbEntity
 name|galleryEnt
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

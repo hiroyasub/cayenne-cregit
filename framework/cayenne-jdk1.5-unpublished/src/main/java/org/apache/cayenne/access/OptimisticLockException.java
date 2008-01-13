@@ -541,6 +541,8 @@ return|;
 block|}
 block|}
 comment|/**      * Returns descriptive message for this exception.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getMessage

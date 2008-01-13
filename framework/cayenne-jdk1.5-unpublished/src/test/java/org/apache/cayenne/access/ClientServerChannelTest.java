@@ -392,6 +392,8 @@ name|ClientServerChannelTest
 extends|extends
 name|CayenneCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|AccessStack
 name|buildAccessStack
@@ -1095,6 +1097,8 @@ name|EntityResolver
 argument_list|()
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|onQuery

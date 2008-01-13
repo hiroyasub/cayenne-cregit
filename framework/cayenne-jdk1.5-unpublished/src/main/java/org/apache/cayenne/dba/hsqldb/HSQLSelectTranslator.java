@@ -50,6 +50,8 @@ name|SELECT_PREFIX
 init|=
 literal|"SELECT"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

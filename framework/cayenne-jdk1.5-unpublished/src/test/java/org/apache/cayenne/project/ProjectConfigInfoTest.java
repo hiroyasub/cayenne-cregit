@@ -54,6 +54,8 @@ specifier|protected
 name|ProjectConfigInfo
 name|config
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

@@ -77,6 +77,8 @@ name|Project
 name|pr
 decl_stmt|;
 comment|/**      * @see junit.framework.TestCase#setUp()      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

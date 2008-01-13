@@ -245,6 +245,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**       * Translates internal query into PreparedStatement.       */
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|createStatement

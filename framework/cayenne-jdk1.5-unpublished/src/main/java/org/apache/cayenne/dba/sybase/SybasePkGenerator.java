@@ -147,6 +147,8 @@ extends|extends
 name|JdbcPkGenerator
 block|{
 comment|/** Generates database objects to provide      *  automatic primary key support. Method will execute the following      *  SQL statements:      *       *<p>1. Executed only if a corresponding table does not exist in the      * database.</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID INTEGER NOT NULL      *    )      *</pre>      *       *<p>2. Executed under any circumstances.</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *       *<p>3. Executed under any circumstances.</p>      * CREATE PROCEDURE auto_pk_for_table @tname VARCHAR(32), @pkbatchsize INT AS      * BEGIN      *      BEGIN TRANSACTION      *         UPDATE AUTO_PK_SUPPORT set NEXT_ID = NEXT_ID + @pkbatchsize       *         WHERE TABLE_NAME = @tname      *       *         SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID = @tname      *      COMMIT      * END      *</pre>      *      *  @param node node that provides access to a DataSource.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createAutoPk
@@ -193,6 +195,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -243,6 +247,8 @@ name|list
 return|;
 block|}
 comment|/**       * Drops database objects related to automatic primary      * key support. Method will execute the following SQL      * statements:      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'AUTO_PK_SUPPORT')      * BEGIN      *    DROP TABLE AUTO_PK_SUPPORT      * END      *       *       * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *      *  @param node node that provides access to a DataSource.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dropAutoPk
@@ -280,6 +286,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -327,6 +335,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|int
 name|pkFromDatabase

@@ -36,6 +36,8 @@ name|DataContextQueryCachingOSCacheTest
 extends|extends
 name|DataContextQueryCachingTest
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testLocalCacheDataObjectsNoRefresh
@@ -68,6 +70,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testLocalCacheDataObjectsRefresh
@@ -100,6 +104,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testLocalCacheDataRowsNoRefresh
@@ -132,6 +138,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testLocalCacheDataRowsRefresh
@@ -164,6 +172,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testLocalCacheRefreshObjectsRefresh
@@ -196,6 +206,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testSharedCacheDataObjectsNoRefresh
@@ -228,6 +240,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testSharedCacheDataRowsNoRefresh
@@ -260,6 +274,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|testSharedCacheDataRowsRefresh

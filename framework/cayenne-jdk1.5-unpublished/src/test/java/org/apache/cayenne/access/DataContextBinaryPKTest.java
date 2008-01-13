@@ -94,6 +94,8 @@ specifier|protected
 name|DataContext
 name|context
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

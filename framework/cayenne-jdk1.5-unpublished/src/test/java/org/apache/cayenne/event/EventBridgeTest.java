@@ -467,6 +467,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -551,6 +553,8 @@ operator|new
 name|ThreadedTestHelper
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|assertResult
@@ -622,6 +626,8 @@ name|externalSubject
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|sendExternalEvent
@@ -635,6 +641,8 @@ operator|=
 name|event
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|shutdownExternal
@@ -646,6 +654,8 @@ name|shutdownCalls
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startupExternal

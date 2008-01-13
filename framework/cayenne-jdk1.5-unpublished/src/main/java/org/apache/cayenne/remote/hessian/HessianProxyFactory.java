@@ -103,6 +103,8 @@ operator|=
 name|clientConnection
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|URLConnection
 name|openConnection

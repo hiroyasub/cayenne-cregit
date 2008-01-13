@@ -103,6 +103,8 @@ name|trimFunction
 expr_stmt|;
 block|}
 comment|/**      * Adds special handling of CHAR columns.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|processColumn
@@ -169,6 +171,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Adds special handling of CHAR columns.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|processColumn

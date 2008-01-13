@@ -126,6 +126,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Binds parameters for the current batch iteration to the PreparedStatement. Performs      * filtering of attributes based on column generation rules.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|bindParameters
@@ -236,6 +238,8 @@ block|}
 block|}
 block|}
 comment|/**      * Returns a list of values for the current batch iteration. Performs filtering of      * attributes based on column generation rules. Used primarily for logging.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -332,6 +336,8 @@ return|return
 name|values
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

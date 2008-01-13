@@ -408,6 +408,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a target of this relationship. If relationship is not attached to a      * DbEntity, and DbEntity doesn't have a namespace, and exception is thrown.      */
+annotation|@
+name|Override
 specifier|public
 name|Entity
 name|getTargetEntity
@@ -1785,6 +1787,8 @@ name|relationship
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|equals

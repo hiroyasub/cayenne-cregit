@@ -204,6 +204,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Calls "makeUpdate" on the visitor.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction

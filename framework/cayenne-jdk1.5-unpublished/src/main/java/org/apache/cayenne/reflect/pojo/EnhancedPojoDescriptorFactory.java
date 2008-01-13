@@ -311,6 +311,8 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|ClassDescriptor
 name|getDescriptor
@@ -367,6 +369,8 @@ name|entityClass
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManyListProperty
@@ -439,6 +443,8 @@ name|property
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManyMapProperty
@@ -523,6 +529,8 @@ name|property
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManySetProperty
@@ -595,6 +603,8 @@ name|property
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToManyCollectionProperty
@@ -667,6 +677,8 @@ name|property
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createToOneProperty

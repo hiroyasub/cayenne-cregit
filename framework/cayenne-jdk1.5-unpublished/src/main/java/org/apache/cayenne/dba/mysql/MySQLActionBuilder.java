@@ -170,6 +170,8 @@ name|resolver
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|objectSelectAction
@@ -189,6 +191,8 @@ argument_list|,
 name|entityResolver
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|SelectTranslator
 name|createTranslator
@@ -240,6 +244,8 @@ block|}
 block|}
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|procedureAction

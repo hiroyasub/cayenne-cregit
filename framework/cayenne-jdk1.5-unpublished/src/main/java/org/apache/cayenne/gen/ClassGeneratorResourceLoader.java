@@ -117,6 +117,8 @@ extends|extends
 name|FileResourceLoader
 block|{
 comment|/**      * Returns resource as InputStream. First calls super implementation. If resource      * wasn't found, it attempts to load it from current directory or as an absolute path.      */
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|InputStream

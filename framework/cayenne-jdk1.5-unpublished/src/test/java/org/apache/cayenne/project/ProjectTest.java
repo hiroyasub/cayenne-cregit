@@ -105,6 +105,8 @@ name|File
 name|f
 decl_stmt|;
 comment|/**       * @see junit.framework.TestCase#setUp()       */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -409,6 +411,8 @@ name|shouldFail
 expr_stmt|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#canHandle(Object)          */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canHandle
@@ -438,6 +442,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#getObject()          */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getObject
@@ -448,6 +454,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#getObjectName()          */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getObjectName
@@ -458,6 +466,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#saveToFile(File)          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|save
@@ -470,6 +480,8 @@ name|Exception
 block|{
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#saveCommit()          */
+annotation|@
+name|Override
 specifier|public
 name|File
 name|saveCommit
@@ -501,6 +513,8 @@ name|shouldFail
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#saveTemp()          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|saveTemp
@@ -526,6 +540,8 @@ throw|;
 block|}
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#saveUndo()          */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|saveUndo
@@ -536,6 +552,8 @@ operator|++
 expr_stmt|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#getFileName()          */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getLocation
@@ -546,6 +564,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#getOldFileName()          */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getOldLocation
@@ -556,6 +576,8 @@ literal|null
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#resolveFile()          */
+annotation|@
+name|Override
 specifier|public
 name|File
 name|resolveFile
@@ -570,6 +592,8 @@ argument_list|)
 return|;
 block|}
 comment|/**          * @see org.apache.cayenne.project.ProjectFile#resolveOldFile()          */
+annotation|@
+name|Override
 specifier|public
 name|File
 name|resolveOldFile

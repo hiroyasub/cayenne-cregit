@@ -85,6 +85,8 @@ name|MockupRuntimeServices
 extends|extends
 name|RuntimeInstance
 block|{
+annotation|@
+name|Override
 specifier|public
 name|SimpleNode
 name|parse
@@ -109,6 +111,8 @@ literal|1
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SimpleNode
 name|parse

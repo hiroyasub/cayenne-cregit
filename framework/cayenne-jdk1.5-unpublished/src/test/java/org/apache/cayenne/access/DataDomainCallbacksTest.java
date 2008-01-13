@@ -142,6 +142,8 @@ name|DataDomainCallbacksTest
 extends|extends
 name|CayenneCase
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp
@@ -153,6 +155,8 @@ name|deleteTestData
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|tearDown
@@ -1027,6 +1031,8 @@ operator|new
 name|MockCallingBackListener
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|publicCallback

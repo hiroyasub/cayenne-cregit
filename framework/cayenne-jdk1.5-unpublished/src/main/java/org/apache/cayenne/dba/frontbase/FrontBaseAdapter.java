@@ -243,6 +243,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Uses special action builder to create the right action.      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -272,6 +274,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForTable
@@ -281,6 +285,8 @@ return|return
 literal|"BASE TABLE"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -325,6 +331,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Customizes table creating procedure for FrontBase.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -906,6 +914,8 @@ literal|" CASCADE"
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator

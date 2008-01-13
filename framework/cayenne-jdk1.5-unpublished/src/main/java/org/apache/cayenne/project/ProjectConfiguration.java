@@ -152,6 +152,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Override parent implementation to prevent loading of nonexisting files.      *       * @see FileConfiguration#canInitialize()      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|canInitialize
@@ -175,6 +177,8 @@ operator|)
 return|;
 block|}
 comment|/**      * Override parent implementation to allow for null files.      *       * @see FileConfiguration#setProjectFile(File)      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setProjectFile
@@ -227,6 +231,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns a DataSource factory for projects.      *       * @see org.apache.cayenne.project.ProjectDataSourceFactory      */
+annotation|@
+name|Override
 specifier|public
 name|DataSourceFactory
 name|getDataSourceFactory

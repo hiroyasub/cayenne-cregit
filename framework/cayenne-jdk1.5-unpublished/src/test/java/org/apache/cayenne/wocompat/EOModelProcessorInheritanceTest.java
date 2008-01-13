@@ -86,6 +86,8 @@ specifier|protected
 name|EOModelProcessor
 name|processor
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

@@ -104,6 +104,8 @@ specifier|protected
 name|EOModelHelper
 name|helper
 decl_stmt|;
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setUp

@@ -122,6 +122,8 @@ name|Boolean
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|protected
 specifier|synchronized
 name|Boolean
@@ -148,6 +150,8 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleArcPropertyChange
@@ -297,6 +301,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|handleSimplePropertyChange

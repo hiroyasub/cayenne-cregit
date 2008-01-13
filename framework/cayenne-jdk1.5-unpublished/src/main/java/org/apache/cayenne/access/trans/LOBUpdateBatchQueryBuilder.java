@@ -127,6 +127,8 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 name|getValuesForLOBUpdateParameters
@@ -292,6 +294,8 @@ return|return
 name|values
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createSqlString

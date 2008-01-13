@@ -281,6 +281,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Uses PostgresActionBuilder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -311,6 +313,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -353,6 +357,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAttribute
 name|buildAttribute
@@ -452,6 +458,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Customizes table creating procedure for PostgreSQL. One difference with generic      * implementation is that "bytea" type has no explicit length unlike similar binary      * types in other databases.      *       * @since 1.0.2      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -1007,6 +1015,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a trimming translator.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -1024,6 +1034,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @see JdbcAdapter#createPkGenerator()      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -1035,6 +1047,8 @@ name|PostgresPkGenerator
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerFactory
 name|mergerFactory

@@ -148,6 +148,8 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitCount
@@ -169,6 +171,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAverage
@@ -190,6 +194,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitMax
@@ -211,6 +217,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitMin
@@ -232,6 +240,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitSum
@@ -383,6 +393,8 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitDistinct
@@ -402,6 +414,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|appendMultiColumnPath
@@ -418,6 +432,8 @@ literal|"Can't use multi-column paths in column clause"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|processTerminatingAttribute
@@ -495,6 +511,8 @@ name|CountColumnVisitor
 extends|extends
 name|EJBQLBaseVisitor
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitDistinct
@@ -514,6 +532,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitIdentifier
@@ -533,6 +553,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitPath

@@ -100,6 +100,8 @@ operator|=
 name|properties
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|startupExternal
@@ -108,6 +110,8 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|shutdownExternal
@@ -116,6 +120,8 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|sendExternalEvent
