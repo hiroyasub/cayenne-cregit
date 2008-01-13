@@ -3394,7 +3394,6 @@ name|object
 return|;
 block|}
 comment|/**      * If the parent channel is a DataContext, reverts local changes to make this context      * look like the parent, if the parent channel is a DataDomain, reverts all changes.      *       * @since 1.2      */
-comment|// TODO: Andrus, 1/19/2006: implement for nested DataContexts
 specifier|public
 name|void
 name|rollbackChangesLocally
