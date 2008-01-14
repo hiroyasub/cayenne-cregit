@@ -24,7 +24,7 @@ specifier|public
 class|class
 name|MergeDirection
 block|{
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|int
@@ -32,7 +32,7 @@ name|TO_DB_ID
 init|=
 literal|1
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|int
