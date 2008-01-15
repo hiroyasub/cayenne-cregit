@@ -606,6 +606,10 @@ argument_list|,
 literal|null
 argument_list|,
 name|bindings
+argument_list|,
+name|query
+operator|instanceof
+name|InsertBatchQuery
 argument_list|)
 expr_stmt|;
 block|}
@@ -795,6 +799,8 @@ argument_list|,
 literal|null
 argument_list|,
 name|lobValues
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}

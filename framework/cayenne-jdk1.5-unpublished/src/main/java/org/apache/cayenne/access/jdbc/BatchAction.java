@@ -649,6 +649,10 @@ name|getParameterValues
 argument_list|(
 name|query
 argument_list|)
+argument_list|,
+name|query
+operator|instanceof
+name|InsertBatchQuery
 argument_list|)
 expr_stmt|;
 block|}
@@ -891,6 +895,10 @@ name|getParameterValues
 argument_list|(
 name|query
 argument_list|)
+argument_list|,
+name|query
+operator|instanceof
+name|InsertBatchQuery
 argument_list|)
 expr_stmt|;
 block|}
