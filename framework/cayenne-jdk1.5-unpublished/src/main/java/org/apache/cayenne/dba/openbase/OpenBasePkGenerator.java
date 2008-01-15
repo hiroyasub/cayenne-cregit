@@ -214,7 +214,7 @@ name|OpenBasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
-comment|/**      * Returns a non-repeating primary key for a given entity. Since OpenBase-specific      * mechanism is used, key caching is disabled. Instead a database operation is      * performed on every call.      */
+comment|/**      * Returns a non-repeating primary key for a given entity. Since OpenBase-specific      * mechanism is used, key caching is disabled. Instead a database operation is      * performed on every call.      *       * @deprecated since 3.0      */
 annotation|@
 name|Override
 specifier|public

@@ -1460,7 +1460,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @return a binary PK if DbEntity has a BINARY or VARBINARY pk, null otherwise. This      *         method will likely be deprecated in 1.1 in favor of a more generic      *         solution.      * @since 1.0.2      */
+comment|/**      * @return a binary PK if DbEntity has a BINARY or VARBINARY pk, null otherwise. This      *         method will likely be deprecated in 1.1 in favor of a more generic      *         solution.      * @since 1.0.2      * @deprecated since 3.0      */
 specifier|protected
 name|byte
 index|[]
