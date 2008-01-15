@@ -537,7 +537,7 @@ name|generatePkForDbEntity
 argument_list|(
 name|node
 argument_list|,
-name|joinEntity
+name|dbAttr
 argument_list|)
 decl_stmt|;
 name|snapshot

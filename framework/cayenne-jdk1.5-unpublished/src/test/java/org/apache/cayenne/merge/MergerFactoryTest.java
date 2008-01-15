@@ -1354,7 +1354,7 @@ literal|"ARTIST_ID"
 argument_list|,
 name|Types
 operator|.
-name|INTEGER
+name|BIGINT
 argument_list|,
 name|dbEntity
 argument_list|)
@@ -1768,7 +1768,7 @@ literal|"ARTIST_ID"
 argument_list|,
 name|Types
 operator|.
-name|INTEGER
+name|BIGINT
 argument_list|,
 name|dbEntity
 argument_list|)

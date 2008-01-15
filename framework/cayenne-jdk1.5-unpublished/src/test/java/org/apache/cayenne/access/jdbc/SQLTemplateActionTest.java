@@ -378,9 +378,9 @@ argument_list|(
 literal|"id"
 argument_list|,
 operator|new
-name|Integer
+name|Long
 argument_list|(
-literal|33005
+literal|33005l
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1222,7 +1222,7 @@ argument_list|(
 literal|"id"
 argument_list|,
 operator|new
-name|Integer
+name|Long
 argument_list|(
 literal|1
 argument_list|)
@@ -1621,7 +1621,7 @@ argument_list|(
 literal|"id"
 argument_list|,
 operator|new
-name|Integer
+name|Long
 argument_list|(
 literal|1
 argument_list|)
@@ -1666,7 +1666,7 @@ argument_list|(
 literal|"id"
 argument_list|,
 operator|new
-name|Integer
+name|Long
 argument_list|(
 literal|33
 argument_list|)

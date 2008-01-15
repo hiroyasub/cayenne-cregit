@@ -49,6 +49,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 import|;
 end_import
@@ -122,7 +136,7 @@ argument_list|>
 name|dbEntities
 parameter_list|)
 function_decl|;
-comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      *       * @param ent DbEntity for which automatic PK is generated.      */
+comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      *       * @param ent DbEntity for which automatic PK is generated.      * @deprecated since 3.0 use {@link #generatePkForDbEntity(DataNode, DbAttribute)}.      */
 name|Object
 name|generatePkForDbEntity
 parameter_list|(
@@ -131,6 +145,19 @@ name|dataNode
 parameter_list|,
 name|DbEntity
 name|ent
+parameter_list|)
+throws|throws
+name|Exception
+function_decl|;
+comment|/**      * Generates a unique and non-repeating primary key for specified DbEntity.      *       * @since 3.0      */
+name|Object
+name|generatePkForDbEntity
+parameter_list|(
+name|DataNode
+name|dataNode
+parameter_list|,
+name|DbAttribute
+name|pk
 parameter_list|)
 throws|throws
 name|Exception

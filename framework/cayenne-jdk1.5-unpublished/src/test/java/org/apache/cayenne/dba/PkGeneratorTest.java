@@ -242,6 +242,15 @@ argument_list|(
 name|node
 argument_list|,
 name|paintEnt
+operator|.
+name|getPrimaryKeys
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertNotNull

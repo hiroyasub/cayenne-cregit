@@ -16,30 +16,27 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represents data structure to maintain a range of cached primary keys.  *   * @author Andrus Adamchik  * @deprecated since 3.0 repalced with a non-public LongPkRange.  */
+comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
-specifier|public
-specifier|final
 class|class
-name|PkRange
+name|LongPkRange
 block|{
 specifier|private
-name|int
+name|long
 name|curValue
 decl_stmt|;
 specifier|private
-name|int
+name|long
 name|maxValue
 decl_stmt|;
-specifier|public
-name|PkRange
+name|LongPkRange
 parameter_list|(
-name|int
+name|long
 name|curValue
 parameter_list|,
-name|int
+name|long
 name|maxValue
 parameter_list|)
 block|{
@@ -51,14 +48,13 @@ name|maxValue
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
 name|void
 name|reset
 parameter_list|(
-name|int
+name|long
 name|curValue
 parameter_list|,
-name|int
+name|long
 name|maxValue
 parameter_list|)
 block|{
@@ -75,7 +71,6 @@ operator|=
 name|maxValue
 expr_stmt|;
 block|}
-specifier|public
 name|boolean
 name|isExhausted
 parameter_list|()
@@ -86,8 +81,7 @@ operator|>
 name|maxValue
 return|;
 block|}
-specifier|public
-name|Integer
+name|long
 name|getNextPrimaryKey
 parameter_list|()
 block|{
@@ -107,13 +101,8 @@ argument_list|)
 throw|;
 block|}
 return|return
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 name|curValue
 operator|++
-argument_list|)
 return|;
 block|}
 block|}

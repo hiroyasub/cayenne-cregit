@@ -1629,7 +1629,7 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 operator|new
-name|Integer
+name|Long
 argument_list|(
 literal|33001
 argument_list|)

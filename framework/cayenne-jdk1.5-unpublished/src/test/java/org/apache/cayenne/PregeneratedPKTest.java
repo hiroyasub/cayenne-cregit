@@ -124,7 +124,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testIntPk
+name|testLongPk
 parameter_list|()
 throws|throws
 name|Exception
@@ -191,15 +191,11 @@ name|assertEquals
 argument_list|(
 name|pk
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 name|DataObjectUtils
 operator|.
-name|intPKForObject
+name|longPKForObject
 argument_list|(
 name|a
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -291,9 +287,17 @@ argument_list|(
 name|node
 argument_list|,
 name|entity
+operator|.
+name|getPrimaryKeys
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// throws Exception!!
 name|id
 operator|.
 name|getReplacementIdMap

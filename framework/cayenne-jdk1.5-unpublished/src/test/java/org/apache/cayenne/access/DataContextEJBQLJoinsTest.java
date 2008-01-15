@@ -414,11 +414,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
-literal|33001
-argument_list|)
+literal|33001l
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -428,11 +424,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
-literal|33005
-argument_list|)
+literal|33005l
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -756,7 +756,7 @@ name|generatePkForDbEntity
 argument_list|(
 name|node
 argument_list|,
-name|entity
+name|dbAttr
 argument_list|)
 decl_stmt|;
 name|idMap

@@ -958,11 +958,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
-literal|33002
-argument_list|)
+literal|33002l
 argument_list|,
 name|row2
 operator|.
@@ -2594,7 +2590,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|int
+name|long
 name|i
 init|=
 literal|0
@@ -2630,13 +2626,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
-literal|33000
+literal|33000l
 operator|+
 name|i
-argument_list|)
 argument_list|,
 name|row
 operator|.
