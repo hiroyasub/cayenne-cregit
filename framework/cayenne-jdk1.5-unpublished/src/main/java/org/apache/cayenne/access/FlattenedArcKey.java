@@ -533,7 +533,7 @@ name|pkValue
 init|=
 name|pkGenerator
 operator|.
-name|generatePkForDbEntity
+name|generatePk
 argument_list|(
 name|node
 argument_list|,

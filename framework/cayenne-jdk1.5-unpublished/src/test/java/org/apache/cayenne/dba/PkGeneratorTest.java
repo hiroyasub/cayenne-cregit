@@ -237,7 +237,7 @@ name|pk
 init|=
 name|pkGen
 operator|.
-name|generatePkForDbEntity
+name|generatePk
 argument_list|(
 name|node
 argument_list|,
@@ -331,6 +331,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testBinaryPK1
@@ -374,6 +375,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testBinaryPK2

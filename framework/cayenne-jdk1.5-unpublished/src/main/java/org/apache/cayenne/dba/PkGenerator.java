@@ -136,7 +136,7 @@ argument_list|>
 name|dbEntities
 parameter_list|)
 function_decl|;
-comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      *       * @param ent DbEntity for which automatic PK is generated.      * @deprecated since 3.0 use {@link #generatePkForDbEntity(DataNode, DbAttribute)}.      */
+comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      *       * @param ent DbEntity for which automatic PK is generated.      * @deprecated since 3.0 use {@link #generatePk(DataNode, DbAttribute)}.      */
 name|Object
 name|generatePkForDbEntity
 parameter_list|(
@@ -151,7 +151,7 @@ name|Exception
 function_decl|;
 comment|/**      * Generates a unique and non-repeating primary key for specified DbEntity.      *       * @since 3.0      */
 name|Object
-name|generatePkForDbEntity
+name|generatePk
 parameter_list|(
 name|DataNode
 name|dataNode

@@ -282,7 +282,7 @@ operator|.
 name|getPkGenerator
 argument_list|()
 operator|.
-name|generatePkForDbEntity
+name|generatePk
 argument_list|(
 name|node
 argument_list|,

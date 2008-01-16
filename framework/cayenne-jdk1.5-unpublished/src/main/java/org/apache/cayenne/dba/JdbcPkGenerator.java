@@ -593,7 +593,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|"  NEXT_ID INTEGER NOT NULL,"
+literal|"  NEXT_ID BIGINT NOT NULL,"
 argument_list|)
 operator|.
 name|append
@@ -1035,7 +1035,7 @@ block|}
 comment|/**      * Generates a unique and non-repeating primary key for specified dbEntity.      *<p>      * This implementation is naive since it does not lock the database rows when      * executing select and subsequent update. Adapter-specific implementations are more      * robust.      *</p>      *       * @since 3.0      */
 specifier|public
 name|Object
-name|generatePkForDbEntity
+name|generatePk
 parameter_list|(
 name|DataNode
 name|node

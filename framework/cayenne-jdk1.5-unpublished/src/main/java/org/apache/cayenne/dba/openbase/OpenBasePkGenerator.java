@@ -269,7 +269,7 @@ annotation|@
 name|Override
 specifier|public
 name|Object
-name|generatePkForDbEntity
+name|generatePk
 parameter_list|(
 name|DataNode
 name|node
