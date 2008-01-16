@@ -114,6 +114,9 @@ name|controller
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|MergerToken
+argument_list|>
 name|tokens
 decl_stmt|;
 specifier|public
