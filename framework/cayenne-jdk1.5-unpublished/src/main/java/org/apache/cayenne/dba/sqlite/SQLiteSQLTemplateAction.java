@@ -200,6 +200,9 @@ name|SQLStatement
 name|compiled
 parameter_list|,
 name|Collection
+argument_list|<
+name|Number
+argument_list|>
 name|updateCounts
 parameter_list|)
 throws|throws
