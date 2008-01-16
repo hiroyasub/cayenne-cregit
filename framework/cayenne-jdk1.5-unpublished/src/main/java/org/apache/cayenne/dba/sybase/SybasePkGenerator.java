@@ -146,7 +146,55 @@ name|SybasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
-comment|/**      * Generates database objects to provide automatic primary key support. Method will      * execute the following SQL statements:      *<p>      * 1. Executed only if a corresponding table does not exist in the database.      *</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID INTEGER NOT NULL      *    )      *</pre>      *       *<p>      * 2. Executed under any circumstances.      *</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *       *<p>      * 3. Executed under any circumstances.      *</p>      * CREATE PROCEDURE auto_pk_for_table      *       * @tname VARCHAR(32),      * @pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID =      *              NEXT_ID +      * @pkbatchsize WHERE TABLE_NAME =      * @tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID =      * @tname COMMIT END      *       *</pre>      *       * @param node node that provides access to a DataSource.      */
+annotation|@
+name|Override
+specifier|protected
+name|String
+name|pkTableCreateString
+parameter_list|()
+block|{
+name|StringBuffer
+name|buf
+init|=
+operator|new
+name|StringBuffer
+argument_list|()
+decl_stmt|;
+name|buf
+operator|.
+name|append
+argument_list|(
+literal|"CREATE TABLE AUTO_PK_SUPPORT ("
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"  TABLE_NAME CHAR(100) NOT NULL,"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"  NEXT_ID DECIMAL(19,0) NOT NULL,"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"  PRIMARY KEY(TABLE_NAME)"
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|")"
+argument_list|)
+expr_stmt|;
+return|return
+name|buf
+operator|.
+name|toString
+argument_list|()
+return|;
+block|}
+comment|/**      * Generates database objects to provide automatic primary key support. Method will      * execute the following SQL statements:      *<p>      * 1. Executed only if a corresponding table does not exist in the database.      *</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID DECIMAL(19,0) NOT NULL      *    )      *</pre>      *       *<p>      * 2. Executed under any circumstances.      *</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *       *<p>      * 3. Executed under any circumstances.      *</p>      * CREATE PROCEDURE auto_pk_for_table      *       * @tname VARCHAR(32),      * @pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID =      *              NEXT_ID +      * @pkbatchsize WHERE TABLE_NAME =      * @tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID =      * @tname COMMIT END      *       *</pre>      *       * @param node node that provides access to a DataSource.      */
 annotation|@
 name|Override
 specifier|public

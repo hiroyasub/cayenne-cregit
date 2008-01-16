@@ -149,7 +149,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Generates a unique and non-repeating primary key for specified DbEntity.      *       * @since 3.0      */
+comment|/**      * Generates a unique and non-repeating primary key for specified PK attribute.      *       * @since 3.0      */
 name|Object
 name|generatePk
 parameter_list|(

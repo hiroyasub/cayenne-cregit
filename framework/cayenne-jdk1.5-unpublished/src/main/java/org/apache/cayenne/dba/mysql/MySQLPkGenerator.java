@@ -685,7 +685,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|"  NEXT_ID INTEGER NOT NULL, UNIQUE (TABLE_NAME)"
+literal|"  NEXT_ID BIGINT NOT NULL, UNIQUE (TABLE_NAME)"
 argument_list|)
 operator|.
 name|append
