@@ -28,6 +28,7 @@ implements|implements
 name|MergerToken
 block|{
 specifier|public
+specifier|final
 name|MergeDirection
 name|getDirection
 parameter_list|()
