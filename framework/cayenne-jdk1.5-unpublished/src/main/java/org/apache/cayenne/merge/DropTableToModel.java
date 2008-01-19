@@ -43,8 +43,22 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
 begin_comment
-comment|/**  * A {@link MergerToken} to remove a {@link DbEntity} from a {@link DataMap}  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to remove a {@link DbEntity} from a {@link DataMap}. Any  * {@link ObjEntity} mapped to the {@link DbEntity} will also be removed.  *   * @author halset  */
 end_comment
 
 begin_class
@@ -97,7 +111,34 @@ name|MergerContext
 name|mergerContext
 parameter_list|)
 block|{
-name|mergerContext
+for|for
+control|(
+name|ObjEntity
+name|objEntity
+range|:
+name|objEntitiesMappedToDbEntity
+argument_list|(
+name|entity
+argument_list|)
+control|)
+block|{
+name|objEntity
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|removeObjEntity
+argument_list|(
+name|objEntity
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+name|entity
 operator|.
 name|getDataMap
 argument_list|()
