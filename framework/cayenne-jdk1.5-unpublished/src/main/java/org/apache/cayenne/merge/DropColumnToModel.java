@@ -146,27 +146,11 @@ control|(
 name|ObjEntity
 name|objEntity
 range|:
-name|entity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|getObjEntities
-argument_list|()
-control|)
-block|{
-if|if
-condition|(
-name|objEntity
-operator|.
-name|getDbEntity
-argument_list|()
-operator|.
-name|equals
+name|objEntitiesMappedToDbEntity
 argument_list|(
 name|entity
 argument_list|)
-condition|)
+control|)
 block|{
 name|ObjAttribute
 name|objAttribute
@@ -195,7 +179,6 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|// remove DbAttribute
