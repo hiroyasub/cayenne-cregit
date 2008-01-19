@@ -43,8 +43,36 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|EntityMergeSupport
+import|;
+end_import
+
 begin_comment
-comment|/**  * A {@link MergerToken} to add a {@link DbAttribute} to a {@link DbEntity}  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to add a {@link DbAttribute} to a {@link DbEntity}. The  * {@link EntityMergeSupport} will be used to update the mapped {@link ObjEntity}  *   * @author halset  */
 end_comment
 
 begin_class
@@ -117,6 +145,11 @@ operator|.
 name|addAttribute
 argument_list|(
 name|column
+argument_list|)
+expr_stmt|;
+name|synchronizeWithObjEntity
+argument_list|(
+name|entity
 argument_list|)
 expr_stmt|;
 block|}
