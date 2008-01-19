@@ -126,7 +126,7 @@ name|getTokenName
 parameter_list|()
 block|{
 return|return
-literal|null
+literal|"Set Not Null"
 return|;
 block|}
 specifier|public
@@ -135,7 +135,17 @@ name|getTokenValue
 parameter_list|()
 block|{
 return|return
-literal|null
+name|entity
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"."
+operator|+
+name|column
+operator|.
+name|getName
+argument_list|()
 return|;
 block|}
 block|}
