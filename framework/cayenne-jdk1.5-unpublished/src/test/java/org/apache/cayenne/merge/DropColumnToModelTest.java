@@ -142,7 +142,7 @@ name|MergeCase
 block|{
 specifier|public
 name|void
-name|XXtestSimpleColumn
+name|testSimpleColumn
 parameter_list|()
 throws|throws
 name|Exception
