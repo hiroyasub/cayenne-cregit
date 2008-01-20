@@ -260,7 +260,7 @@ argument_list|,
 literal|"NEW_TABLE2"
 argument_list|)
 decl_stmt|;
-specifier|public
+specifier|protected
 name|DbMerger
 name|createMerger
 parameter_list|()
@@ -295,7 +295,7 @@ block|}
 block|}
 return|;
 block|}
-specifier|public
+specifier|protected
 name|List
 argument_list|<
 name|MergerToken
@@ -1085,7 +1085,9 @@ operator|.
 name|tearDown
 argument_list|()
 expr_stmt|;
-comment|// TODO: make this work deleteTestData();
+name|deleteTestData
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
