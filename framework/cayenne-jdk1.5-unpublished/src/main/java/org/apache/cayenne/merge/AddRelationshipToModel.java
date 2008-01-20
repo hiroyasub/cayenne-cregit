@@ -115,7 +115,12 @@ argument_list|(
 name|rel
 argument_list|)
 expr_stmt|;
-comment|// TODO: add reverse as well?
+comment|// TODO: add reverse relationship as well if it does not exist
+name|synchronizeWithObjEntity
+argument_list|(
+name|entity
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|String
