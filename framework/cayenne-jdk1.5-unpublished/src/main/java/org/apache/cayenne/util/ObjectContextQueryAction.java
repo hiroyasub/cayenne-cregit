@@ -310,7 +310,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Worker method that perfomrs internal query.      */
+comment|/**      * Worker method that performs internal query.      */
 specifier|public
 name|QueryResponse
 name|execute
@@ -334,7 +334,23 @@ condition|)
 block|{
 if|if
 condition|(
+name|interceptRefreshQuery
+argument_list|()
+operator|!=
+name|DONE
+condition|)
+block|{
+if|if
+condition|(
 name|interceptLocalCache
+argument_list|()
+operator|!=
+name|DONE
+condition|)
+block|{
+if|if
+condition|(
+name|interceptPaginatedQuery
 argument_list|()
 operator|!=
 name|DONE
@@ -343,6 +359,8 @@ block|{
 name|runQuery
 argument_list|()
 expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 block|}
@@ -845,6 +863,20 @@ operator|!
 name|DONE
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|protected
+specifier|abstract
+name|boolean
+name|interceptPaginatedQuery
+parameter_list|()
+function_decl|;
+comment|/**      * @since 3.0      */
+specifier|protected
+specifier|abstract
+name|boolean
+name|interceptRefreshQuery
+parameter_list|()
+function_decl|;
 comment|/**      * @since 3.0      */
 specifier|protected
 name|boolean
