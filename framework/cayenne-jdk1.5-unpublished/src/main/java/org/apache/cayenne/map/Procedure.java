@@ -733,9 +733,6 @@ operator|>
 literal|0
 operator|)
 condition|?
-operator|(
-name|ProcedureParameter
-operator|)
 name|callParameters
 operator|.
 name|get

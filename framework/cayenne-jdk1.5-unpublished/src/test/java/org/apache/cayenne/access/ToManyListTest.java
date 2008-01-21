@@ -300,15 +300,10 @@ argument_list|()
 decl_stmt|;
 comment|// immediately tag Artist as MODIFIED, since we are messing up with relationship
 comment|// bypassing normal CayenneDataObject methods
-operator|(
-operator|(
-name|Artist
-operator|)
 name|list
 operator|.
 name|getRelationshipOwner
 argument_list|()
-operator|)
 operator|.
 name|setPersistenceState
 argument_list|(
@@ -534,15 +529,10 @@ argument_list|()
 expr_stmt|;
 comment|// immediately tag Artist as MODIFIED, since we are messing up with relationship
 comment|// bypassing normal CayenneDataObject methods
-operator|(
-operator|(
-name|Artist
-operator|)
 name|list
 operator|.
 name|getRelationshipOwner
 argument_list|()
-operator|)
 operator|.
 name|setPersistenceState
 argument_list|(
@@ -773,15 +763,10 @@ argument_list|()
 expr_stmt|;
 comment|// immediately tag Artist as MODIFIED, since we are messing up with relationship
 comment|// bypassing normal CayenneDataObject methods
-operator|(
-operator|(
-name|Artist
-operator|)
 name|list
 operator|.
 name|getRelationshipOwner
 argument_list|()
-operator|)
 operator|.
 name|setPersistenceState
 argument_list|(

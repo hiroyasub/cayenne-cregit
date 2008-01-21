@@ -837,9 +837,6 @@ operator|!=
 literal|null
 operator|)
 condition|?
-operator|(
-name|Object
-operator|)
 name|originatingContext
 else|:
 name|this

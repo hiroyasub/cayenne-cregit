@@ -338,9 +338,6 @@ name|isFetchingDataRows
 argument_list|()
 operator|)
 condition|?
-operator|(
-name|ListHelper
-operator|)
 operator|new
 name|DataRowListHelper
 argument_list|()

@@ -356,9 +356,6 @@ name|resultClass
 operator|!=
 literal|null
 condition|?
-operator|(
-name|Object
-operator|)
 name|resultClass
 else|:
 name|resultEntityName
