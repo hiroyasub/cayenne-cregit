@@ -244,18 +244,13 @@ argument_list|)
 operator|.
 name|getConstructor
 argument_list|(
-operator|new
-name|Class
-index|[]
-block|{
 name|Collection
 operator|.
 name|class
-block|,
+argument_list|,
 name|String
 operator|.
 name|class
-block|}
 argument_list|)
 decl_stmt|;
 name|Object
@@ -265,14 +260,9 @@ name|c
 operator|.
 name|newInstance
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 name|localSubjects
-block|,
+argument_list|,
 name|externalSubject
-block|}
 argument_list|)
 decl_stmt|;
 comment|// configure properties

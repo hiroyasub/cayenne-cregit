@@ -336,12 +336,7 @@ name|invoke
 argument_list|(
 name|object
 argument_list|,
-operator|new
-name|Object
-index|[]
-block|{
 name|newValue
-block|}
 argument_list|)
 expr_stmt|;
 block|}

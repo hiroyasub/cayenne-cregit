@@ -390,14 +390,9 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 name|p
-block|,
+argument_list|,
 name|pi
-block|}
 argument_list|)
 argument_list|)
 expr_stmt|;

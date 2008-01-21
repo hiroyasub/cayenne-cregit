@@ -557,12 +557,6 @@ operator|.
 name|getMethod
 argument_list|(
 literal|"getBinaryOutputStream"
-argument_list|,
-operator|new
-name|Class
-index|[
-literal|0
-index|]
 argument_list|)
 expr_stmt|;
 name|writerFromClobMethod
@@ -577,12 +571,6 @@ operator|.
 name|getMethod
 argument_list|(
 literal|"getCharacterOutputStream"
-argument_list|,
-operator|new
-name|Class
-index|[
-literal|0
-index|]
 argument_list|)
 expr_stmt|;
 name|supportsOracleLOB

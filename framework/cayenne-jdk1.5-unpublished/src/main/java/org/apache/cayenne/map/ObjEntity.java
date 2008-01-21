@@ -366,12 +366,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 name|CAYENNE_DATA_OBJECT_CLASS
-block|}
 argument_list|)
 decl_stmt|;
 specifier|protected

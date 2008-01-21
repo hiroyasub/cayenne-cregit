@@ -903,14 +903,9 @@ name|objectClass
 operator|.
 name|getConstructor
 argument_list|(
-operator|new
-name|Class
-index|[]
-block|{
 name|String
 operator|.
 name|class
-block|}
 argument_list|)
 decl_stmt|;
 return|return
@@ -918,12 +913,7 @@ name|c
 operator|.
 name|newInstance
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 name|text
-block|}
 argument_list|)
 return|;
 block|}

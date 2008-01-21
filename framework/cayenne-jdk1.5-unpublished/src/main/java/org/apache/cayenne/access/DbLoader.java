@@ -444,15 +444,10 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 literal|"auto_pk_for_table"
-block|,
+argument_list|,
 literal|"auto_pk_for_table;1"
 comment|/*                                                          * the last name is some Mac OS X                                                          * Sybase artifact                                                          */
-block|}
 argument_list|)
 decl_stmt|;
 specifier|public

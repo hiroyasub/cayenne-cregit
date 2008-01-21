@@ -1725,12 +1725,7 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 name|inflated
-block|}
 argument_list|)
 argument_list|)
 argument_list|)

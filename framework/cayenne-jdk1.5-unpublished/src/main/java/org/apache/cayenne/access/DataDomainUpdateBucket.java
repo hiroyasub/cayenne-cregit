@@ -514,14 +514,9 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 name|snapshotSet
-block|,
+argument_list|,
 name|nullQualifierNames
-block|}
 argument_list|)
 decl_stmt|;
 name|UpdateBatchQuery

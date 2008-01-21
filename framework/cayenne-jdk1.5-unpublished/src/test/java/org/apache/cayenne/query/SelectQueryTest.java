@@ -1312,11 +1312,6 @@ operator|.
 name|inExp
 argument_list|(
 literal|"artistName"
-argument_list|,
-operator|new
-name|Object
-index|[]
-block|{}
 argument_list|)
 decl_stmt|;
 name|query
@@ -1375,11 +1370,6 @@ operator|.
 name|notInExp
 argument_list|(
 literal|"artistName"
-argument_list|,
-operator|new
-name|Object
-index|[]
-block|{}
 argument_list|)
 decl_stmt|;
 name|query
