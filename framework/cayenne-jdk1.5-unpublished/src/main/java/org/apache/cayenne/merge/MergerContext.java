@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object passed as an argument to {@link MergerToken#execute(MergerContext)}s that a  * {@link MergerToken} can do its work.  *   * @author  */
+comment|/**  * An object passed as an argument to {@link MergerToken#execute(MergerContext)}s that a  * {@link MergerToken} can do its work.  *   */
 end_comment
 
 begin_interface
