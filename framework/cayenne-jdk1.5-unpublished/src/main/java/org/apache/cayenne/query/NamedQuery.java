@@ -1067,19 +1067,10 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|Object
+name|key
+range|:
 name|keys
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 comment|// HashCodeBuilder will take care of processing object if it
@@ -1088,10 +1079,7 @@ name|builder
 operator|.
 name|append
 argument_list|(
-name|keys
-index|[
-name|i
-index|]
+name|key
 argument_list|)
 operator|.
 name|append
@@ -1100,10 +1088,7 @@ name|parameters
 operator|.
 name|get
 argument_list|(
-name|keys
-index|[
-name|i
-index|]
+name|key
 argument_list|)
 argument_list|)
 expr_stmt|;

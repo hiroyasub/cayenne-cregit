@@ -962,19 +962,10 @@ condition|)
 block|{
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|type
+range|:
 name|types
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|logObj
@@ -983,10 +974,7 @@ name|debug
 argument_list|(
 literal|"Read tables: table type="
 operator|+
-name|types
-index|[
-name|i
-index|]
+name|type
 argument_list|)
 expr_stmt|;
 block|}

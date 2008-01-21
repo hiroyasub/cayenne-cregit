@@ -154,19 +154,10 @@ condition|)
 block|{
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|String
+name|factoryName
+range|:
 name|factoryNames
-operator|.
-name|length
-condition|;
-name|i
-operator|++
 control|)
 block|{
 try|try
@@ -177,10 +168,7 @@ name|addFactory
 argument_list|(
 name|loadFactory
 argument_list|(
-name|factoryNames
-index|[
-name|i
-index|]
+name|factoryName
 argument_list|,
 name|resolver
 argument_list|)
@@ -199,10 +187,7 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"Error configuring factory class "
 operator|+
-name|factoryNames
-index|[
-name|i
-index|]
+name|factoryName
 argument_list|,
 name|e
 argument_list|)

@@ -544,20 +544,10 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
+name|Object
+name|name
+range|:
 name|names
-operator|.
-name|size
-argument_list|()
-condition|;
-name|i
-operator|++
 control|)
 block|{
 name|executeDDL
@@ -570,12 +560,7 @@ name|tableName
 operator|+
 literal|" drop constraint "
 operator|+
-name|names
-operator|.
-name|get
-argument_list|(
-name|i
-argument_list|)
+name|name
 argument_list|)
 expr_stmt|;
 block|}
