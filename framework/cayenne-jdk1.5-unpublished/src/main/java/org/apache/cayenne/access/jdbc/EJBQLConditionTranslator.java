@@ -2757,8 +2757,9 @@ block|{
 name|Object
 name|value
 init|=
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|expression
 operator|.

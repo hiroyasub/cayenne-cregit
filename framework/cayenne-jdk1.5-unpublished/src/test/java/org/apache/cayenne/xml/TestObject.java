@@ -475,8 +475,9 @@ name|encodeProperty
 argument_list|(
 literal|"open"
 argument_list|,
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|open
 argument_list|)

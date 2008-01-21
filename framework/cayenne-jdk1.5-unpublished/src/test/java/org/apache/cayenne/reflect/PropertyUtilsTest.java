@@ -451,8 +451,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|o1
 operator|.
@@ -585,8 +586,9 @@ name|o2
 argument_list|,
 literal|"booleanField"
 argument_list|,
-operator|new
 name|Boolean
+operator|.
+name|valueOf
 argument_list|(
 name|o1
 operator|.
