@@ -285,9 +285,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|result
 argument_list|)
@@ -501,9 +498,6 @@ condition|(
 operator|!
 name|comp
 operator|.
-name|toString
-argument_list|()
-operator|.
 name|equals
 argument_list|(
 name|result
@@ -521,9 +515,6 @@ block|}
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|result
 argument_list|)
@@ -604,9 +595,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|result
 argument_list|)
@@ -758,9 +746,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|result
 argument_list|)
@@ -897,9 +882,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|xml
 argument_list|)
@@ -1023,9 +1005,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|result
 argument_list|)
@@ -1115,9 +1094,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|xml
 argument_list|)
@@ -1219,9 +1195,6 @@ decl_stmt|;
 name|assertEquals
 argument_list|(
 name|comp
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|xml
 argument_list|)
