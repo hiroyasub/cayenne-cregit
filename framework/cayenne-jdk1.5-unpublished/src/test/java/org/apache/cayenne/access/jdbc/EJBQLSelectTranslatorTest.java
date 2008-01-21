@@ -426,12 +426,10 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"INNER JOIN GALLERY"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -440,12 +438,10 @@ name|sql
 argument_list|,
 name|sql
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"INNER JOIN PAINTING"
 argument_list|)
-operator|>=
-literal|0
 argument_list|)
 expr_stmt|;
 name|int

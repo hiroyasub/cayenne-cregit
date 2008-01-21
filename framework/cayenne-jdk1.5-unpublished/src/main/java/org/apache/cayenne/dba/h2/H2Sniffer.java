@@ -104,12 +104,10 @@ operator|.
 name|toUpperCase
 argument_list|()
 operator|.
-name|indexOf
+name|contains
 argument_list|(
 literal|"H2"
 argument_list|)
-operator|>=
-literal|0
 condition|?
 operator|new
 name|H2Adapter
