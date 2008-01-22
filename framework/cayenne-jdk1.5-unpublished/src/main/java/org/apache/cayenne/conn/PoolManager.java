@@ -177,10 +177,16 @@ name|userName
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|PooledConnection
+argument_list|>
 name|unusedPool
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|PooledConnection
+argument_list|>
 name|usedPool
 decl_stmt|;
 specifier|private
@@ -523,12 +529,18 @@ name|usedPool
 operator|=
 operator|new
 name|LinkedList
+argument_list|<
+name|PooledConnection
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|unusedPool
 operator|=
 operator|new
 name|LinkedList
+argument_list|<
+name|PooledConnection
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|growPool
@@ -634,6 +646,9 @@ init|)
 block|{
 comment|// clean connections from the pool
 name|ListIterator
+argument_list|<
+name|PooledConnection
+argument_list|>
 name|unusedIterator
 init|=
 name|unusedPool
@@ -652,9 +667,6 @@ block|{
 name|PooledConnection
 name|con
 init|=
-operator|(
-name|PooledConnection
-operator|)
 name|unusedIterator
 operator|.
 name|next
@@ -675,6 +687,9 @@ expr_stmt|;
 block|}
 comment|// clean used connections
 name|ListIterator
+argument_list|<
+name|PooledConnection
+argument_list|>
 name|usedIterator
 init|=
 name|usedPool
@@ -693,9 +708,6 @@ block|{
 name|PooledConnection
 name|con
 init|=
-operator|(
-name|PooledConnection
-operator|)
 name|usedIterator
 operator|.
 name|next
@@ -869,9 +881,6 @@ block|{
 name|PooledConnection
 name|con
 init|=
-operator|(
-name|PooledConnection
-operator|)
 name|unusedPool
 operator|.
 name|remove
@@ -1300,9 +1309,6 @@ block|}
 block|}
 comment|// get first connection... lets cycle them in FIFO manner
 return|return
-operator|(
-name|PooledConnection
-operator|)
 name|unusedPool
 operator|.
 name|remove

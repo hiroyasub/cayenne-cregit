@@ -132,6 +132,9 @@ name|connectionObj
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|ConnectionEventListener
+argument_list|>
 name|connectionEventListeners
 decl_stmt|;
 specifier|private
@@ -167,6 +170,9 @@ name|synchronizedList
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|ConnectionEventListener
+argument_list|>
 argument_list|(
 literal|10
 argument_list|)
@@ -506,6 +512,9 @@ name|exception
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|ConnectionEventListener
+argument_list|>
 name|listeners
 init|=
 name|connectionEventListeners
@@ -524,9 +533,6 @@ block|{
 name|ConnectionEventListener
 name|nextListener
 init|=
-operator|(
-name|ConnectionEventListener
-operator|)
 name|listeners
 operator|.
 name|next
@@ -573,6 +579,9 @@ name|this
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|ConnectionEventListener
+argument_list|>
 name|listeners
 init|=
 name|connectionEventListeners
@@ -591,9 +600,6 @@ block|{
 name|ConnectionEventListener
 name|nextListener
 init|=
-operator|(
-name|ConnectionEventListener
-operator|)
 name|listeners
 operator|.
 name|next

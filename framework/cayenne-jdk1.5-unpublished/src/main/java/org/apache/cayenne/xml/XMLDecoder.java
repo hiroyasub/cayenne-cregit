@@ -363,10 +363,16 @@ decl_stmt|;
 comment|// TODO: H to the A to the C to the K
 specifier|private
 name|List
+argument_list|<
+name|Element
+argument_list|>
 name|decodedCollections
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Element
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * Default constructor. This will create an XMLDecoder instance that will decode      * objects from XML, but will not register them with any DataContext.      *       * @see XMLDecoder#XMLDecoder(DataContext)      */
