@@ -1402,6 +1402,11 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
+if|if
+condition|(
+name|appendingResultColumns
+condition|)
+block|{
 name|rootId
 operator|=
 name|normalizeIdPath
@@ -1412,6 +1417,7 @@ name|getText
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 literal|false
 return|;
