@@ -423,6 +423,16 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+comment|// Log the generated PK
+name|QueryLogger
+operator|.
+name|logGeneratedKey
+argument_list|(
+name|attribute
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
 comment|// I guess we should override any existing value,
 comment|// as generated key is the latest thing that exists in the DB.
 name|id
