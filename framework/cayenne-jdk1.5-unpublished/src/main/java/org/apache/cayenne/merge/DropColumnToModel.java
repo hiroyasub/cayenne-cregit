@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -168,16 +188,32 @@ name|MergerContext
 name|mergerContext
 parameter_list|)
 block|{
-comment|// remove relationships mapped to column
+comment|// remove relationships mapped to column. duplicate List to prevent
+comment|// ConcurrentModificationException
+name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
+name|dbRelationships
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|DbRelationship
+argument_list|>
+argument_list|(
+name|entity
+operator|.
+name|getRelationships
+argument_list|()
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|DbRelationship
 name|dbRelationship
 range|:
-name|entity
-operator|.
-name|getRelationships
-argument_list|()
+name|dbRelationships
 control|)
 block|{
 for|for
