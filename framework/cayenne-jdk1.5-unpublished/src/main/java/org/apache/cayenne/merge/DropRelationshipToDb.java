@@ -97,11 +97,9 @@ class|class
 name|DropRelationshipToDb
 extends|extends
 name|AbstractToDbToken
+operator|.
+name|Entity
 block|{
-specifier|private
-name|DbEntity
-name|entity
-decl_stmt|;
 specifier|private
 name|DbRelationship
 name|rel
@@ -116,11 +114,10 @@ name|DbRelationship
 name|rel
 parameter_list|)
 block|{
-name|this
-operator|.
+name|super
+argument_list|(
 name|entity
-operator|=
-name|entity
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -208,7 +205,8 @@ name|buf
 operator|.
 name|append
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 operator|.
 name|getFullyQualifiedName
 argument_list|()
@@ -253,7 +251,8 @@ name|factory
 operator|.
 name|createAddRelationshipToModel
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|,
 name|rel
 argument_list|)
@@ -268,6 +267,8 @@ return|return
 literal|"Drop Relationship"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTokenValue

@@ -49,11 +49,9 @@ class|class
 name|AddRelationshipToModel
 extends|extends
 name|AbstractToModelToken
+operator|.
+name|Entity
 block|{
-specifier|private
-name|DbEntity
-name|entity
-decl_stmt|;
 specifier|private
 name|DbRelationship
 name|rel
@@ -68,11 +66,10 @@ name|DbRelationship
 name|rel
 parameter_list|)
 block|{
-name|this
-operator|.
+name|super
+argument_list|(
 name|entity
-operator|=
-name|entity
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -94,7 +91,8 @@ name|factory
 operator|.
 name|createDropRelationshipToDb
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|,
 name|rel
 argument_list|)
@@ -108,7 +106,8 @@ name|MergerContext
 name|mergerContext
 parameter_list|)
 block|{
-name|entity
+name|getEntity
+argument_list|()
 operator|.
 name|addRelationship
 argument_list|(
@@ -118,7 +117,8 @@ expr_stmt|;
 comment|// TODO: add reverse relationship as well if it does not exist
 name|synchronizeWithObjEntity
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -131,6 +131,8 @@ return|return
 literal|"Add Relationship"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTokenValue

@@ -107,11 +107,9 @@ class|class
 name|CreateTableToModel
 extends|extends
 name|AbstractToModelToken
+operator|.
+name|Entity
 block|{
-specifier|private
-name|DbEntity
-name|entity
-decl_stmt|;
 specifier|private
 name|String
 name|objEntityClassName
@@ -130,11 +128,10 @@ name|DbEntity
 name|entity
 parameter_list|)
 block|{
-name|this
-operator|.
+name|super
+argument_list|(
 name|entity
-operator|=
-name|entity
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Set the {@link ObjEntity} className if {@link ObjEntity} should be generated with a      * special class name. Set to null if the {@link ObjEntity} should be created with a      * name based on {@link DataMap#getDefaultPackage()} and {@link ObjEntity#getName()}      *<p>      * The default value is the class name of {@link CayenneDataObject}      */
@@ -171,7 +168,8 @@ name|map
 operator|.
 name|addDbEntity
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// create a ObjEntity
@@ -182,7 +180,8 @@ name|NameConverter
 operator|.
 name|underscoredToJava
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 operator|.
 name|getName
 argument_list|()
@@ -241,7 +240,8 @@ name|objEntity
 operator|.
 name|setDbEntity
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// try to find a class name for the ObjEntity
@@ -322,7 +322,8 @@ argument_list|)
 expr_stmt|;
 name|synchronizeWithObjEntity
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -333,18 +334,6 @@ parameter_list|()
 block|{
 return|return
 literal|"Create Table"
-return|;
-block|}
-specifier|public
-name|String
-name|getTokenValue
-parameter_list|()
-block|{
-return|return
-name|entity
-operator|.
-name|getName
-argument_list|()
 return|;
 block|}
 specifier|public
@@ -360,7 +349,8 @@ name|factory
 operator|.
 name|createDropTableToDb
 argument_list|(
-name|entity
+name|getEntity
+argument_list|()
 argument_list|)
 return|;
 block|}
