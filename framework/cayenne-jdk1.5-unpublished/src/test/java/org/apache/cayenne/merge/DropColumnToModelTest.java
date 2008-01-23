@@ -1276,8 +1276,6 @@ operator|instanceof
 name|DropColumnToModel
 argument_list|)
 expr_stmt|;
-comment|//assertTrue(((DropColumnToModel)token0).getEntity() == dbEntity2);
-comment|//assertTrue(((DropColumnToModel)token0).getAttribute() == e2col2);
 name|assertTrue
 argument_list|(
 name|token1
