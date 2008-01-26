@@ -429,6 +429,22 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
+comment|// fix psql case issue
+name|map
+operator|.
+name|removeDbEntity
+argument_list|(
+name|objEntity
+operator|.
+name|getDbEntity
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 name|ctxt
 operator|.
 name|getEntityResolver
