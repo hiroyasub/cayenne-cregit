@@ -171,6 +171,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|DataContext
@@ -355,10 +367,10 @@ specifier|private
 name|Element
 name|root
 decl_stmt|;
-comment|/** The data context to register decoded DataObjects with. */
+comment|/** The context to register decoded DataObjects with. */
 specifier|private
-name|DataContext
-name|dataContext
+name|ObjectContext
+name|objectContext
 decl_stmt|;
 comment|// TODO: H to the A to the C to the K
 specifier|private
@@ -375,7 +387,7 @@ name|Element
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Default constructor. This will create an XMLDecoder instance that will decode      * objects from XML, but will not register them with any DataContext.      *       * @see XMLDecoder#XMLDecoder(DataContext)      */
+comment|/**      * Default constructor. This will create an XMLDecoder instance that will decode      * objects from XML, but will not register them with any context.      *       * @see XMLDecoder#XMLDecoder(ObjectContext)      */
 specifier|public
 name|XMLDecoder
 parameter_list|()
@@ -386,19 +398,19 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates an XMLDecoder that will register decoded DataObjects with the specified      * DataContext.      *       * @param dc The DataContext to register decoded DataObjects with.      */
+comment|/**      * Creates an XMLDecoder that will register decoded DataObjects with the specified      * context.      *       * @param objectContext The context to register decoded DataObjects with.      */
 specifier|public
 name|XMLDecoder
 parameter_list|(
-name|DataContext
-name|dc
+name|ObjectContext
+name|objectContext
 parameter_list|)
 block|{
 name|this
 operator|.
-name|dataContext
+name|objectContext
 operator|=
-name|dc
+name|objectContext
 expr_stmt|;
 block|}
 comment|/**      * Decodes an XML element to a Boolean.      *       * @param xmlTag The tag identifying the element.      * @return The tag's value.      */
@@ -1061,14 +1073,14 @@ operator|.
 name|getDocumentElement
 argument_list|()
 argument_list|,
-name|dataContext
+name|objectContext
 argument_list|)
 decl_stmt|;
 return|return
 name|ret
 return|;
 block|}
-comment|/**      * Decodes the XML element to an object. If the supplied DataContext is not null, the      * object will be registered with it and committed to the database.      *       * @param element The XML element.      * @return The decoded object.      * @throws CayenneRuntimeException      */
+comment|/**      * Decodes the XML element to an object. If the supplied context is not null, the      * object will be registered with it and committed to the database.      *       * @param element The XML element.      * @return The decoded object.      * @throws CayenneRuntimeException      */
 specifier|private
 name|Object
 name|decodeElement
@@ -1126,7 +1138,7 @@ condition|(
 operator|(
 literal|null
 operator|!=
-name|dataContext
+name|objectContext
 operator|)
 operator|&&
 operator|(
@@ -1136,7 +1148,7 @@ name|Persistent
 operator|)
 condition|)
 block|{
-name|dataContext
+name|objectContext
 operator|.
 name|registerNewObject
 argument_list|(
@@ -1157,7 +1169,7 @@ return|return
 name|object
 return|;
 block|}
-comment|/**      * Decodes a Collection represented by XML wrapped by a Reader into a List of objects.      * Each object will be registered with the supplied DataContext.      *       * @param xml The XML element representing the elements in the collection to decode.      * @return A List of all the decoded objects.      * @throws CayenneRuntimeException      */
+comment|/**      * Decodes a Collection represented by XML wrapped by a Reader into a List of objects.      * Each object will be registered with the supplied context.      *       * @param xml The XML element representing the elements in the collection to decode.      * @return A List of all the decoded objects.      * @throws CayenneRuntimeException      */
 specifier|private
 name|Collection
 name|decodeCollection
@@ -1344,7 +1356,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Decodes a list of DataObjects, registering them the supplied DataContext.      *       * @param xml The wrapped XML encoding of the list of DataObjects.      * @param dc The DataContext to register the decode DataObjects with.      * @return The list of decoded DataObjects.      * @throws CayenneRuntimeException      */
+comment|/**      * Decodes a list of DataObjects, registering them the supplied context.      *       * @param xml The wrapped XML encoding of the list of DataObjects.      * @param objectContext The context to register the decode DataObjects with.      * @return The list of decoded DataObjects.      * @throws CayenneRuntimeException      */
 specifier|public
 specifier|static
 name|List
@@ -1353,8 +1365,8 @@ parameter_list|(
 name|Reader
 name|xml
 parameter_list|,
-name|DataContext
-name|dc
+name|ObjectContext
+name|objectContext
 parameter_list|)
 throws|throws
 name|CayenneRuntimeException
@@ -1366,7 +1378,7 @@ name|xml
 argument_list|,
 literal|null
 argument_list|,
-name|dc
+name|objectContext
 argument_list|)
 return|;
 block|}
@@ -1396,7 +1408,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Decodes a list of DataObjects using the supplied mapping file to guide the decoding      * process, registering them the supplied DataContext.      *       * @param xml The wrapped XML encoding of the list of objects.      * @param mappingUrl Mapping file describing how the XML elements and object      *            properties correlate.      * @param dataContext The DataContext to register the decode DataObjects with.      * @return The list of decoded DataObjects.      * @throws CayenneRuntimeException      */
+comment|/**      * Decodes a list of DataObjects using the supplied mapping file to guide the decoding      * process, registering them the supplied context.      *       * @param xml The wrapped XML encoding of the list of objects.      * @param mappingUrl Mapping file describing how the XML elements and object      *            properties correlate.      * @param objectContext The context to register the decode DataObjects with.      * @return The list of decoded DataObjects.      * @throws CayenneRuntimeException      */
 specifier|public
 specifier|static
 name|List
@@ -1408,8 +1420,8 @@ parameter_list|,
 name|String
 name|mappingUrl
 parameter_list|,
-name|DataContext
-name|dataContext
+name|ObjectContext
+name|objectContext
 parameter_list|)
 throws|throws
 name|CayenneRuntimeException
@@ -1420,7 +1432,7 @@ init|=
 operator|new
 name|XMLDecoder
 argument_list|(
-name|dataContext
+name|objectContext
 argument_list|)
 decl_stmt|;
 name|Element
@@ -1566,13 +1578,13 @@ name|decode
 argument_list|(
 name|e
 argument_list|,
-name|dataContext
+name|objectContext
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-comment|// decoder will do DataContext registration if needed.
+comment|// The decoder will do context registration if needed.
 name|o
 operator|=
 name|decoder

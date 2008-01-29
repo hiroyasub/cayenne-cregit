@@ -99,6 +99,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|DataContext
@@ -190,8 +202,8 @@ argument_list|>
 name|entities
 decl_stmt|;
 specifier|private
-name|DataContext
-name|dataContext
+name|ObjectContext
+name|objectContext
 decl_stmt|;
 comment|/**      * Creates new XMLMappingDescriptor using a URL that points to the mapping file.      *       * @param mappingUrl A URL to the mapping file that specifies the mapping model.      * @throws CayenneRuntimeException      */
 name|XMLMappingDescriptor
@@ -388,8 +400,8 @@ parameter_list|(
 name|Element
 name|xml
 parameter_list|,
-name|DataContext
-name|dataContext
+name|ObjectContext
+name|objectContext
 parameter_list|)
 throws|throws
 name|CayenneRuntimeException
@@ -399,9 +411,9 @@ comment|// data file.
 comment|// Store a local copy of the data context.
 name|this
 operator|.
-name|dataContext
+name|objectContext
 operator|=
-name|dataContext
+name|objectContext
 expr_stmt|;
 comment|// Create the object to be returned.
 name|Object
@@ -869,7 +881,7 @@ condition|(
 operator|(
 literal|null
 operator|!=
-name|dataContext
+name|objectContext
 operator|)
 operator|&&
 operator|(
@@ -879,7 +891,7 @@ name|Persistent
 operator|)
 condition|)
 block|{
-name|dataContext
+name|objectContext
 operator|.
 name|registerNewObject
 argument_list|(
