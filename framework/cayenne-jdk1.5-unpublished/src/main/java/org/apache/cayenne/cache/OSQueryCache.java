@@ -495,6 +495,16 @@ expr_stmt|;
 block|}
 comment|// now check for per-query settings
 name|Iterator
+argument_list|<
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
+argument_list|>
 name|it
 init|=
 name|properties
@@ -516,13 +526,13 @@ block|{
 name|Map
 operator|.
 name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|entry
 init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
 name|it
 operator|.
 name|next
