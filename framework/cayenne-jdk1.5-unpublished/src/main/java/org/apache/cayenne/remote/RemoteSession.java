@@ -149,6 +149,20 @@ name|EventBridgeFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|event
+operator|.
+name|EventSubject
+import|;
+end_import
+
 begin_comment
 comment|/**  * A descriptor used by default service implementation to pass session parameters to the  * client. It provides the client with details on how to invoke the service and how to  * listen for the server events.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
@@ -163,6 +177,9 @@ block|{
 specifier|static
 specifier|final
 name|Collection
+argument_list|<
+name|EventSubject
+argument_list|>
 name|SUBJECTS
 init|=
 name|Arrays

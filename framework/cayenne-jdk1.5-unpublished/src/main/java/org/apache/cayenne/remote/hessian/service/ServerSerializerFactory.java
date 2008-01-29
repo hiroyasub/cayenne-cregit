@@ -173,6 +173,11 @@ name|dataRowSerilaizer
 decl_stmt|;
 specifier|private
 name|Map
+argument_list|<
+name|Class
+argument_list|,
+name|Deserializer
+argument_list|>
 name|deserializers
 decl_stmt|;
 name|ServerSerializerFactory
@@ -301,9 +306,6 @@ condition|)
 block|{
 name|deserializer
 operator|=
-operator|(
-name|Deserializer
-operator|)
 name|deserializers
 operator|.
 name|get
@@ -343,6 +345,11 @@ name|deserializers
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|Class
+argument_list|,
+name|Deserializer
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
