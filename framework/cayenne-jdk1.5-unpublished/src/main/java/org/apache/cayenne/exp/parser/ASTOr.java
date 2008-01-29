@@ -160,6 +160,8 @@ name|ASTOr
 parameter_list|(
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Node
 argument_list|>
 name|nodes
@@ -182,6 +184,8 @@ argument_list|()
 decl_stmt|;
 name|Iterator
 argument_list|<
+name|?
+extends|extends
 name|Node
 argument_list|>
 name|it
