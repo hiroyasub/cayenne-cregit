@@ -81,6 +81,9 @@ block|}
 comment|/**      * Returns flat tree view.      */
 specifier|public
 name|List
+argument_list|<
+name|ProjectPath
+argument_list|>
 name|flattenProjectTree
 parameter_list|(
 name|Object
@@ -88,10 +91,16 @@ name|rootNode
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|ProjectPath
+argument_list|>
 name|nodes
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ProjectPath
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|TraversalHelper
@@ -126,12 +135,18 @@ name|ProjectTraversalHandler
 block|{
 specifier|protected
 name|List
+argument_list|<
+name|ProjectPath
+argument_list|>
 name|nodes
 decl_stmt|;
 specifier|public
 name|TraversalHelper
 parameter_list|(
 name|List
+argument_list|<
+name|ProjectPath
+argument_list|>
 name|nodes
 parameter_list|)
 block|{

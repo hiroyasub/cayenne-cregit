@@ -380,11 +380,6 @@ operator|.
 name|DomainMetaData
 name|d2
 init|=
-operator|(
-name|PartialProject
-operator|.
-name|DomainMetaData
-operator|)
 name|project
 operator|.
 name|domains

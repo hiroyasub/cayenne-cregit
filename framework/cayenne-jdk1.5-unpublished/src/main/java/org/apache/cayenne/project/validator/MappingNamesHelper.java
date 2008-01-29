@@ -60,6 +60,9 @@ comment|// TODO: used by StringUtils and ClassGenerationInfo... need to refactor
 specifier|static
 specifier|final
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|RESERVED_JAVA_KEYWORDS
 init|=
 name|Arrays

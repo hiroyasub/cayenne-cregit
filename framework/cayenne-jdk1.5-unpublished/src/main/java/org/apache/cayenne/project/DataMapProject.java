@@ -340,10 +340,16 @@ name|getChildren
 parameter_list|()
 block|{
 name|List
+argument_list|<
+name|DataMap
+argument_list|>
 name|entities
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DataMap
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|entities

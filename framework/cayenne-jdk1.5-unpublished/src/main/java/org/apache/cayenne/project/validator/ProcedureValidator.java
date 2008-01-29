@@ -23,16 +23,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -62,6 +52,20 @@ operator|.
 name|map
 operator|.
 name|Procedure
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ProcedureParameter
 import|;
 end_import
 
@@ -147,6 +151,9 @@ argument_list|()
 condition|)
 block|{
 name|List
+argument_list|<
+name|ProcedureParameter
+argument_list|>
 name|parameters
 init|=
 name|procedure

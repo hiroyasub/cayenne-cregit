@@ -386,6 +386,9 @@ else|else
 block|{
 comment|// check for missing DbRelationship mappings
 name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|dbRels
 init|=
 name|rel
@@ -457,9 +460,6 @@ decl_stmt|;
 if|if
 condition|(
 operator|(
-operator|(
-name|DbRelationship
-operator|)
 name|dbRels
 operator|.
 name|get
@@ -474,9 +474,6 @@ operator|!=
 name|expectedSrc
 operator|||
 operator|(
-operator|(
-name|DbRelationship
-operator|)
 name|dbRels
 operator|.
 name|get
@@ -571,6 +568,9 @@ literal|0
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|DbJoin
+argument_list|>
 name|attributePairIterator
 init|=
 name|firstRel
@@ -598,9 +598,6 @@ block|{
 name|DbJoin
 name|pair
 init|=
-operator|(
-name|DbJoin
-operator|)
 name|attributePairIterator
 operator|.
 name|next

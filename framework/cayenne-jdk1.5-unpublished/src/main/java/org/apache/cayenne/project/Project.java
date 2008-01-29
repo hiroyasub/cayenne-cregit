@@ -183,6 +183,9 @@ name|upgradeStatus
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|upgradeMessages
 decl_stmt|;
 specifier|protected
@@ -405,6 +408,9 @@ name|synchronizedList
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -438,6 +444,9 @@ block|}
 comment|/**      * Returns a list of upgrade messages.      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getUpgradeMessages
 parameter_list|()
 block|{

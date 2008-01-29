@@ -309,6 +309,9 @@ literal|null
 condition|)
 block|{
 name|Iterator
+argument_list|<
+name|PrefetchTreeNode
+argument_list|>
 name|prefetches
 init|=
 name|query
@@ -335,9 +338,6 @@ argument_list|(
 name|root
 argument_list|,
 operator|(
-operator|(
-name|PrefetchTreeNode
-operator|)
 name|prefetches
 operator|.
 name|next

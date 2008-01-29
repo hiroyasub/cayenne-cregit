@@ -383,6 +383,9 @@ block|}
 block|}
 comment|// copy driver files, delete unused
 name|Iterator
+argument_list|<
+name|DataNodeConfigInfo
+argument_list|>
 name|it
 init|=
 name|info
@@ -412,9 +415,6 @@ block|{
 name|DataNodeConfigInfo
 name|nodeInfo
 init|=
-operator|(
-name|DataNodeConfigInfo
-operator|)
 name|it
 operator|.
 name|next

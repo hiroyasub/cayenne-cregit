@@ -104,10 +104,16 @@ name|project
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|validationResults
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ValidationInfo
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|protected
@@ -163,6 +169,9 @@ name|project
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|it
 init|=
 name|status
@@ -183,9 +192,6 @@ condition|)
 block|{
 name|registerError
 argument_list|(
-operator|(
-name|String
-operator|)
 name|it
 operator|.
 name|next
@@ -357,6 +363,9 @@ name|validationResults
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ValidationInfo
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -474,6 +483,9 @@ block|}
 comment|/** Return collection of ValidationInfo objects from last validation. */
 specifier|public
 name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|validationResults
 parameter_list|()
 block|{
