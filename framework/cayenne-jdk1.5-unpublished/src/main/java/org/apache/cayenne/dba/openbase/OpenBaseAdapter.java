@@ -543,6 +543,9 @@ argument_list|)
 expr_stmt|;
 comment|// columns
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|it
 init|=
 name|ent
@@ -589,9 +592,6 @@ block|}
 name|DbAttribute
 name|at
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next

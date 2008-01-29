@@ -515,6 +515,9 @@ name|query
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 init|=
 name|selectQuery
@@ -692,6 +695,9 @@ name|LOBBatchQueryWrapper
 name|selectQuery
 parameter_list|,
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 parameter_list|)
 throws|throws
@@ -700,6 +706,9 @@ throws|,
 name|Exception
 block|{
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|lobAttributes
 init|=
 name|selectQuery
@@ -844,9 +853,6 @@ decl_stmt|;
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|qualifierAttributes
 operator|.
 name|get
@@ -924,9 +930,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|lobAttributes
 operator|.
 name|get

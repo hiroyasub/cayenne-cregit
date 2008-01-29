@@ -292,6 +292,9 @@ init|=
 literal|null
 decl_stmt|;
 name|List
+argument_list|<
+name|ProcedureParameter
+argument_list|>
 name|parameters
 init|=
 name|getProcedure
@@ -321,9 +324,6 @@ block|{
 name|ProcedureParameter
 name|parameter
 init|=
-operator|(
-name|ProcedureParameter
-operator|)
 name|parameters
 operator|.
 name|get

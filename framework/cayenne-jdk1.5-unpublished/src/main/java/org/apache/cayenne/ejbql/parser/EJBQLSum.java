@@ -67,6 +67,11 @@ comment|// here...
 specifier|static
 specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|typeMap
 decl_stmt|;
 static|static
@@ -75,6 +80,11 @@ name|typeMap
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|typeMap
@@ -204,9 +214,6 @@ comment|// if no mapping exists, return the argument passed to this method.
 name|String
 name|mappedType
 init|=
-operator|(
-name|String
-operator|)
 name|typeMap
 operator|.
 name|get
