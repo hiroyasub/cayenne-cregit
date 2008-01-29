@@ -213,6 +213,9 @@ name|callParams
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|NotInParam
+argument_list|>
 name|values
 decl_stmt|;
 comment|/**      * Creates an SQL String for the stored procedure call.      */
@@ -375,6 +378,9 @@ name|values
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|NotInParam
+argument_list|>
 argument_list|(
 name|callParams
 operator|.
@@ -423,6 +429,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|NotInParam
+argument_list|>
 name|it
 init|=
 name|values
@@ -658,8 +667,21 @@ name|initValues
 parameter_list|()
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|NotInParam
+argument_list|>
 name|queryValues
 init|=
+operator|(
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|NotInParam
+argument_list|>
+operator|)
 name|getProcedureQuery
 argument_list|()
 operator|.

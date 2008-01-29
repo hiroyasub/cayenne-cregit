@@ -48,6 +48,9 @@ function_decl|;
 comment|/**      * @since 1.1      */
 specifier|public
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|viewNames
 parameter_list|()
 function_decl|;

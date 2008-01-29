@@ -215,6 +215,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|views
 init|=
 name|delegate
@@ -234,9 +237,6 @@ name|storeDataView
 argument_list|(
 name|pw
 argument_list|,
-operator|(
-name|String
-operator|)
 name|views
 operator|.
 name|next

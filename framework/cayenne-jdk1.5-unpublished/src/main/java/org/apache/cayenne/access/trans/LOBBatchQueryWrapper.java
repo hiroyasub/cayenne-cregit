@@ -635,6 +635,9 @@ block|}
 comment|/**      * Returns a list of DbAttributes used in the qualifier of the query that selects a      * LOB row for LOB update.      */
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributesForLOBSelectQualifier
 parameter_list|()
 block|{
@@ -708,6 +711,9 @@ block|}
 comment|/**      * Returns a list of DbAttributes that correspond to the LOB columns updated in the      * current row in the batch query. The list will not include LOB attributes that are      * null or empty.      */
 specifier|public
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|getDbAttributesForUpdatedLOBColumns
 parameter_list|()
 block|{

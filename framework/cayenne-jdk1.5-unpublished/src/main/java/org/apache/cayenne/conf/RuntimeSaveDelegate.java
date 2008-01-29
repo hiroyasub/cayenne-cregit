@@ -386,6 +386,9 @@ block|}
 comment|/**      * @since 1.1      */
 specifier|public
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|viewNames
 parameter_list|()
 block|{
@@ -512,10 +515,16 @@ parameter_list|)
 block|{
 comment|// sort maps by name
 name|List
+argument_list|<
+name|DataMap
+argument_list|>
 name|maps
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DataMap
+argument_list|>
 argument_list|(
 name|findDomain
 argument_list|(
@@ -783,10 +792,16 @@ block|}
 decl_stmt|;
 comment|// sort nodes by name
 name|List
+argument_list|<
+name|DataNode
+argument_list|>
 name|nodes
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DataNode
+argument_list|>
 argument_list|(
 name|findDomain
 argument_list|(
@@ -930,6 +945,9 @@ block|}
 block|}
 decl_stmt|;
 name|Collection
+argument_list|<
+name|DataMap
+argument_list|>
 name|maps
 init|=
 name|findNode

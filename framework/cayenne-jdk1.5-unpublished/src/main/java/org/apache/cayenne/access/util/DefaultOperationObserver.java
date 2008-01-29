@@ -158,18 +158,34 @@ name|OperationObserver
 block|{
 specifier|protected
 name|List
+argument_list|<
+name|Throwable
+argument_list|>
 name|globalExceptions
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Throwable
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|Query
+argument_list|,
+name|Throwable
+argument_list|>
 name|queryExceptions
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|Query
+argument_list|,
+name|Throwable
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * Prints the information about query and global exceptions.      */
@@ -220,6 +236,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Iterator
+argument_list|<
+name|Throwable
+argument_list|>
 name|it
 init|=
 name|globalExceptions
@@ -238,9 +257,6 @@ block|{
 name|Throwable
 name|th
 init|=
-operator|(
-name|Throwable
-operator|)
 name|it
 operator|.
 name|next
@@ -294,6 +310,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Iterator
+argument_list|<
+name|Query
+argument_list|>
 name|it
 init|=
 name|queryExceptions
@@ -315,9 +334,6 @@ block|{
 name|Throwable
 name|th
 init|=
-operator|(
-name|Throwable
-operator|)
 name|queryExceptions
 operator|.
 name|get
@@ -341,6 +357,9 @@ block|}
 comment|/** Returns a list of global exceptions that occured during data operation run. */
 specifier|public
 name|List
+argument_list|<
+name|Throwable
+argument_list|>
 name|getGlobalExceptions
 parameter_list|()
 block|{
@@ -351,6 +370,11 @@ block|}
 comment|/** Returns a list of exceptions that occured during data operation run by query. */
 specifier|public
 name|Map
+argument_list|<
+name|Query
+argument_list|,
+name|Throwable
+argument_list|>
 name|getQueryExceptions
 parameter_list|()
 block|{

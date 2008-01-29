@@ -276,6 +276,11 @@ name|sharedInstance
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|DataSourceInfo
+argument_list|>
 name|connectionInfos
 init|=
 name|Collections
@@ -284,6 +289,11 @@ name|synchronizedMap
 argument_list|(
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|DataSourceInfo
+argument_list|>
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -645,6 +655,9 @@ name|props
 parameter_list|)
 block|{
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|names
 init|=
 name|extractNames
@@ -666,9 +679,6 @@ block|{
 name|String
 name|name
 init|=
-operator|(
-name|String
-operator|)
 name|names
 operator|.
 name|next
@@ -770,9 +780,6 @@ name|connectionInfos
 init|)
 block|{
 return|return
-operator|(
-name|DataSourceInfo
-operator|)
 name|connectionInfos
 operator|.
 name|get
@@ -888,6 +895,9 @@ block|}
 comment|/**      * Returns a list of connection names configured in the properties object.      */
 specifier|protected
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|extractNames
 parameter_list|(
 name|ExtendedProperties
@@ -903,10 +913,16 @@ name|getKeys
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 while|while
