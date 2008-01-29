@@ -169,6 +169,9 @@ specifier|public
 name|ASTSubtract
 parameter_list|(
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|nodes
 parameter_list|)
 block|{
@@ -188,6 +191,9 @@ name|size
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|nodes

@@ -160,6 +160,9 @@ specifier|public
 name|ASTAnd
 parameter_list|(
 name|Collection
+argument_list|<
+name|Node
+argument_list|>
 name|nodes
 parameter_list|)
 block|{
@@ -179,6 +182,9 @@ name|size
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|Node
+argument_list|>
 name|it
 init|=
 name|nodes
@@ -203,9 +209,6 @@ control|)
 block|{
 name|jjtAddChild
 argument_list|(
-operator|(
-name|Node
-operator|)
 name|it
 operator|.
 name|next
