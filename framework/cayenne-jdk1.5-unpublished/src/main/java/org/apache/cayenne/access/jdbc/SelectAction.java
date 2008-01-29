@@ -225,6 +225,18 @@ name|SelectQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|DataRow
+import|;
+end_import
+
 begin_comment
 comment|/**  * A SQLAction that handles SelectQuery execution.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
@@ -591,6 +603,9 @@ block|{
 comment|// note that we don't need to close ResultIterator
 comment|// since "dataRows" will do it internally
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|resultRows
 init|=
 name|it

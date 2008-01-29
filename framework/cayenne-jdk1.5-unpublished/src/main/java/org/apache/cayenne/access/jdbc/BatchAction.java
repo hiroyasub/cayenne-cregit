@@ -93,16 +93,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -1133,6 +1123,9 @@ condition|)
 block|{
 comment|// attempt to figure out the right descriptor from the mapping...
 name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|generated
 init|=
 name|query
@@ -1156,9 +1149,6 @@ block|{
 name|DbAttribute
 name|key
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|generated
 operator|.
 name|iterator

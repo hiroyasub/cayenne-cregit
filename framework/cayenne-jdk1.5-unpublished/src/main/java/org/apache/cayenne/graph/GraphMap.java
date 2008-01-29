@@ -68,6 +68,11 @@ name|GraphManager
 block|{
 specifier|protected
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|nodes
 decl_stmt|;
 comment|/**      * Creates a new GraphMap.      */
@@ -81,6 +86,11 @@ name|nodes
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

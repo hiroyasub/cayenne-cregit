@@ -368,6 +368,9 @@ argument_list|<
 name|DbEntity
 argument_list|,
 name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
 argument_list|>
 name|reflexiveDbEntities
 decl_stmt|;
@@ -473,6 +476,9 @@ argument_list|<
 name|DbEntity
 argument_list|,
 name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
 argument_list|>
 argument_list|(
 literal|32
@@ -876,6 +882,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|reflexiveRels
 init|=
 name|reflexiveDbEntities
@@ -918,9 +927,6 @@ block|{
 name|DbRelationship
 name|dbRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|reflexiveRels
 operator|.
 name|get
@@ -966,10 +972,16 @@ operator|)
 expr_stmt|;
 block|}
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|sorted
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|size
 argument_list|)
