@@ -166,6 +166,9 @@ name|dbAttributes
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbAttribute
+argument_list|>
 argument_list|(
 name|getDbEntity
 argument_list|()

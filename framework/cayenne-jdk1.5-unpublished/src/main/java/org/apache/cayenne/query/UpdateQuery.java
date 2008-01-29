@@ -76,10 +76,20 @@ name|QualifiedQuery
 block|{
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|updAttributes
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/** Creates empty UpdateQuery. */
@@ -259,6 +269,11 @@ block|}
 comment|/** Returns a map of updated attributes */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|getUpdAttributes
 parameter_list|()
 block|{
