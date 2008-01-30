@@ -614,6 +614,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|ObjRelationship
+argument_list|>
 name|it
 init|=
 name|descriptor
@@ -638,9 +641,6 @@ block|{
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|it
 operator|.
 name|next

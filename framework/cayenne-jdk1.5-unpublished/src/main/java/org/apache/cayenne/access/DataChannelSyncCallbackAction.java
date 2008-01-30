@@ -233,6 +233,9 @@ name|removed
 decl_stmt|;
 specifier|private
 name|Set
+argument_list|<
+name|Object
+argument_list|>
 name|seenIds
 decl_stmt|;
 specifier|private
@@ -275,6 +278,9 @@ name|seenIds
 operator|=
 operator|new
 name|HashSet
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|changes

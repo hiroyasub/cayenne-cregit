@@ -648,6 +648,11 @@ name|it
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|ObjectDiff
+argument_list|>
 name|diffMap
 init|=
 name|objectStore

@@ -760,6 +760,11 @@ decl_stmt|;
 comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 1.2      */
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|userProperties
 decl_stmt|;
 comment|/**      * Stores the name of parent DataDomain. Used to defer initialization of the parent      * QueryEngine after deserialization. This helps avoid an issue with certain servlet      * engines (e.g. Tomcat) where HttpSessions with DataContext's are deserialized at      * startup before Cayenne stack is fully initialized.      */
@@ -1107,6 +1112,11 @@ block|}
 comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *       * @since 1.2      */
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|getUserProperties
 parameter_list|()
 block|{
@@ -1123,6 +1133,11 @@ name|userProperties
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -2056,6 +2071,11 @@ operator|)
 name|targetObject
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|idParts
 init|=
 name|target
@@ -2095,6 +2115,11 @@ literal|0
 argument_list|)
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|fk
 init|=
 name|dbRel
@@ -2265,6 +2290,11 @@ name|Class
 name|objectClass
 parameter_list|,
 name|List
+argument_list|<
+name|?
+extends|extends
+name|DataRow
+argument_list|>
 name|dataRows
 parameter_list|,
 name|boolean
@@ -2983,6 +3013,11 @@ name|persistent
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|Map
+operator|.
+name|Entry
+argument_list|>
 name|collection
 init|=
 operator|(
@@ -3007,6 +3042,11 @@ operator|)
 name|value
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|Map
+operator|.
+name|Entry
+argument_list|>
 name|it
 init|=
 name|collection
