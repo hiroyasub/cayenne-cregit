@@ -438,6 +438,9 @@ specifier|private
 specifier|static
 specifier|final
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|EXCLUDED_PROCEDURES
 init|=
 name|Arrays
@@ -461,19 +464,31 @@ decl_stmt|;
 comment|/** List of db entities to process. */
 specifier|private
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntityList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbEntity
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/**      * CAY-479 - need to track which entities are skipped in       * the loader so that relationships to non-skipped entities can be loaded       */
 specifier|private
 name|Set
+argument_list|<
+name|DbEntity
+argument_list|>
 name|skippedEntities
 init|=
 operator|new
 name|HashSet
+argument_list|<
+name|DbEntity
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|/** Creates default name for loaded relationship */
@@ -704,16 +719,25 @@ block|}
 comment|/**      * Retrieves catalogues for the database associated with this DbLoader.      *       * @return List with the catalog names, empty Array if none found.      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getCatalogs
 parameter_list|()
 throws|throws
 name|SQLException
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|catalogs
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|ResultSet
@@ -769,16 +793,25 @@ block|}
 comment|/**      * Retrieves the schemas for the database.      *       * @return List with the schema names, empty Array if none found.      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getSchemas
 parameter_list|()
 throws|throws
 name|SQLException
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|schemas
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|ResultSet
@@ -834,16 +867,25 @@ block|}
 comment|/**      * Returns all the table types for the given database. Types may be such as "TABLE",      * "VIEW", "SYSTEM TABLE", etc.      *       * @return List of Strings, empty array if nothing found.      */
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getTableTypes
 parameter_list|()
 throws|throws
 name|SQLException
 block|{
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|types
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|ResultSet
@@ -897,6 +939,9 @@ block|}
 comment|/**      * Returns all table names for given combination of the criteria.      *       * @param catalog The name of the catalog, may be null.      * @param schemaPattern The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
 specifier|public
 name|List
+argument_list|<
+name|Table
+argument_list|>
 name|getTables
 parameter_list|(
 name|String
@@ -916,10 +961,16 @@ throws|throws
 name|SQLException
 block|{
 name|List
+argument_list|<
+name|Table
+argument_list|>
 name|tables
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Table
+argument_list|>
 argument_list|()
 decl_stmt|;
 if|if
@@ -1102,6 +1153,11 @@ name|DataMap
 name|map
 parameter_list|,
 name|List
+argument_list|<
+name|?
+extends|extends
+name|Table
+argument_list|>
 name|tables
 parameter_list|)
 throws|throws
@@ -1113,9 +1169,17 @@ name|dbEntityList
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbEntity
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|?
+extends|extends
+name|Table
+argument_list|>
 name|iter
 init|=
 name|tables
@@ -1134,9 +1198,6 @@ block|{
 name|Table
 name|table
 init|=
-operator|(
-name|Table
-operator|)
 name|iter
 operator|.
 name|next
@@ -1570,6 +1631,9 @@ block|}
 block|}
 comment|// get primary keys for each table and store it in dbEntity
 name|Iterator
+argument_list|<
+name|DbEntity
+argument_list|>
 name|i
 init|=
 name|map
@@ -1591,9 +1655,6 @@ block|{
 name|DbEntity
 name|dbEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|i
 operator|.
 name|next
@@ -1700,6 +1761,9 @@ block|}
 block|}
 comment|// cay-479 - iterate skipped DbEntities to populate exported keys
 name|Iterator
+argument_list|<
+name|DbEntity
+argument_list|>
 name|skippedEntityIter
 init|=
 name|skippedEntities
@@ -1718,9 +1782,6 @@ block|{
 name|DbEntity
 name|skippedEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|skippedEntityIter
 operator|.
 name|next
@@ -1748,6 +1809,9 @@ name|map
 parameter_list|)
 block|{
 name|Iterator
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 init|=
 name|dbEntityList
@@ -1767,10 +1831,16 @@ block|{
 return|return;
 block|}
 name|List
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|loadedEntities
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|ObjEntity
+argument_list|>
 argument_list|(
 name|dbEntityList
 operator|.
@@ -1831,9 +1901,6 @@ block|{
 name|DbEntity
 name|dbEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|dbEntities
 operator|.
 name|next
@@ -1841,6 +1908,9 @@ argument_list|()
 decl_stmt|;
 comment|// check if there are existing entities
 name|Collection
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|existing
 init|=
 name|map
@@ -2014,6 +2084,9 @@ throws|throws
 name|SQLException
 block|{
 name|Iterator
+argument_list|<
+name|DbEntity
+argument_list|>
 name|it
 init|=
 name|dbEntityList
@@ -2032,9 +2105,6 @@ block|{
 name|DbEntity
 name|pkEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|it
 operator|.
 name|next
@@ -2528,6 +2598,9 @@ init|=
 literal|true
 decl_stmt|;
 name|List
+argument_list|<
+name|DbJoin
+argument_list|>
 name|joins
 init|=
 name|relationship
@@ -2536,6 +2609,9 @@ name|getJoins
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|DbJoin
+argument_list|>
 name|joinsIt
 init|=
 name|joins
@@ -2554,9 +2630,6 @@ block|{
 name|DbJoin
 name|join
 init|=
-operator|(
-name|DbJoin
-operator|)
 name|joinsIt
 operator|.
 name|next
@@ -2721,10 +2794,16 @@ argument_list|()
 decl_stmt|;
 comment|// use types that are not null
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 if|if
@@ -2924,6 +3003,11 @@ throws|throws
 name|SQLException
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Procedure
+argument_list|>
 name|procedures
 init|=
 literal|null
@@ -3087,6 +3171,11 @@ name|procedures
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Procedure
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -3248,9 +3337,6 @@ block|}
 name|Procedure
 name|procedure
 init|=
-operator|(
-name|Procedure
-operator|)
 name|procedures
 operator|.
 name|get
@@ -3507,6 +3593,9 @@ argument_list|()
 expr_stmt|;
 block|}
 name|Iterator
+argument_list|<
+name|Procedure
+argument_list|>
 name|it
 init|=
 name|procedures
@@ -3529,9 +3618,6 @@ comment|// overwrite existing procedures...
 name|Procedure
 name|procedure
 init|=
-operator|(
-name|Procedure
-operator|)
 name|it
 operator|.
 name|next

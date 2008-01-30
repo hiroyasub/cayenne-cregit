@@ -121,6 +121,11 @@ specifier|private
 specifier|static
 specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|HSQLDBPostprocessor
+argument_list|>
 name|postprocessors
 decl_stmt|;
 static|static
@@ -129,6 +134,11 @@ name|postprocessors
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|HSQLDBPostprocessor
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|postprocessors
@@ -183,9 +193,6 @@ block|{
 name|Postprocessor
 name|postprocessor
 init|=
-operator|(
-name|Postprocessor
-operator|)
 name|postprocessors
 operator|.
 name|get

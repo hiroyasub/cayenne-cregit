@@ -561,6 +561,11 @@ name|CompoundDiff
 argument_list|()
 decl_stmt|;
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|ObjectDiff
+argument_list|>
 name|changes
 init|=
 name|getChangesByObjectId
@@ -590,6 +595,9 @@ literal|2
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|ObjectDiff
+argument_list|>
 name|it
 init|=
 name|changes
@@ -609,9 +617,6 @@ argument_list|()
 condition|)
 block|{
 operator|(
-operator|(
-name|ObjectDiff
-operator|)
 name|it
 operator|.
 name|next
@@ -756,6 +761,11 @@ literal|null
 condition|)
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|replacement
 init|=
 name|id

@@ -384,6 +384,9 @@ name|PrefetchProcessorNode
 name|root
 decl_stmt|;
 name|LinkedList
+argument_list|<
+name|PrefetchProcessorNode
+argument_list|>
 name|nodeStack
 decl_stmt|;
 name|List
@@ -428,6 +431,9 @@ name|nodeStack
 operator|=
 operator|new
 name|LinkedList
+argument_list|<
+name|PrefetchProcessorNode
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|this
@@ -933,9 +939,6 @@ operator|)
 condition|?
 literal|null
 else|:
-operator|(
-name|PrefetchProcessorNode
-operator|)
 name|nodeStack
 operator|.
 name|getLast

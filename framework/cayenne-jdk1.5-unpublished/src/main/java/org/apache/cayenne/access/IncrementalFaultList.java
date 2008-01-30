@@ -1527,6 +1527,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|Object
+argument_list|>
 name|idsIt
 init|=
 name|ids

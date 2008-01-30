@@ -283,9 +283,17 @@ name|int
 name|rowCapacity
 decl_stmt|;
 name|Map
+argument_list|<
+name|Map
+argument_list|,
+name|Persistent
+argument_list|>
 name|resolved
 decl_stmt|;
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|resolvedRows
 decl_stmt|;
 name|PrefetchProcessorJointNode
@@ -359,6 +367,11 @@ name|resolved
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|Map
+argument_list|,
+name|Persistent
+argument_list|>
 argument_list|(
 name|capacity
 argument_list|)
@@ -367,6 +380,9 @@ name|resolvedRows
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DataRow
+argument_list|>
 argument_list|(
 name|capacity
 argument_list|)
@@ -379,6 +395,9 @@ argument_list|()
 expr_stmt|;
 block|}
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|getResolvedRows
 parameter_list|()
 block|{
@@ -413,6 +432,11 @@ expr_stmt|;
 block|}
 comment|/**      * Returns an ObjectId map from the flat row.      */
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|idFromFlatRow
 parameter_list|(
 name|DataRow
@@ -423,10 +447,20 @@ comment|// TODO: should we also check for nulls in ID (and skip such rows) - thi
 comment|// likely be an indicator of an outer join ... and considering SQLTemplate,
 comment|// this is reasonable to expect...
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|id
 init|=
 operator|new
 name|TreeMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 for|for
@@ -482,9 +516,6 @@ name|id
 parameter_list|)
 block|{
 return|return
-operator|(
-name|Persistent
-operator|)
 name|resolved
 operator|.
 name|get
@@ -574,10 +605,20 @@ name|buildRowMapping
 parameter_list|()
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|ColumnDescriptor
+argument_list|>
 name|targetSource
 init|=
 operator|new
 name|TreeMap
+argument_list|<
+name|String
+argument_list|,
+name|ColumnDescriptor
+argument_list|>
 argument_list|()
 decl_stmt|;
 comment|// build a DB path .. find parent node that terminates the joint group...
@@ -1000,6 +1041,11 @@ name|ColumnDescriptor
 name|appendColumn
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|ColumnDescriptor
+argument_list|>
 name|map
 parameter_list|,
 name|String
@@ -1012,9 +1058,6 @@ block|{
 name|ColumnDescriptor
 name|column
 init|=
-operator|(
-name|ColumnDescriptor
-operator|)
 name|map
 operator|.
 name|get

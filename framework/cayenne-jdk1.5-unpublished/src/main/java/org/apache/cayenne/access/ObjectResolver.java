@@ -437,6 +437,9 @@ expr_stmt|;
 block|}
 comment|/**      * Properly synchronized version of 'objectsFromDataRows'.      */
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|synchronizedObjectsFromDataRows
 parameter_list|(
 name|List
@@ -461,6 +464,9 @@ block|}
 block|}
 comment|/**      * Converts rows to objects.      *<p>      * Synchronization note. This method requires EXTERNAL synchronization on ObjectStore      * and DataRowStore.      *</p>      */
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|objectsFromDataRows
 parameter_list|(
 name|List
@@ -484,16 +490,25 @@ block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<
+name|Persistent
+argument_list|>
 argument_list|(
 literal|1
 argument_list|)
 return|;
 block|}
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|results
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Persistent
+argument_list|>
 argument_list|(
 name|rows
 operator|.
@@ -552,6 +567,9 @@ return|;
 block|}
 comment|/**      * Processes a list of rows for a result set that has objects related to a set of      * parent objects via some relationship defined in PrefetchProcessorNode parameter.      * Relationships are linked in this method, assuming that parent PK columns are      * included in each row and are prefixed with DB relationship name.      *<p>      * Synchronization note. This method requires EXTERNAL synchronization on ObjectStore      * and DataRowStore.      *</p>      */
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|relatedObjectsFromDataRows
 parameter_list|(
 name|List
@@ -578,6 +596,9 @@ block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<
+name|Persistent
+argument_list|>
 argument_list|(
 literal|1
 argument_list|)
@@ -617,10 +638,16 @@ operator|+
 literal|"."
 decl_stmt|;
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|results
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Persistent
+argument_list|>
 argument_list|(
 name|rows
 operator|.
@@ -1156,10 +1183,20 @@ return|;
 block|}
 comment|// ... handle generic case - PK.size> 1
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|idMap
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|(
 name|pk
 operator|.
@@ -1170,6 +1207,9 @@ literal|2
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|it
 init|=
 name|pk
@@ -1188,9 +1228,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next
