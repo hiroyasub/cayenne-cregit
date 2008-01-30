@@ -308,7 +308,6 @@ operator|.
 name|remove
 argument_list|()
 expr_stmt|;
-continue|continue;
 block|}
 block|}
 name|namePatternMatcher

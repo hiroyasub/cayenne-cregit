@@ -273,14 +273,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-continue|continue;
 block|}
 block|}
 return|return
-operator|(
-name|Pattern
-index|[]
-operator|)
 name|patterns
 operator|.
 name|toArray
@@ -483,10 +478,6 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
-name|String
-index|[]
-operator|)
 name|patterns
 operator|.
 name|toArray
@@ -689,7 +680,6 @@ operator|.
 name|remove
 argument_list|()
 expr_stmt|;
-continue|continue;
 block|}
 block|}
 return|return

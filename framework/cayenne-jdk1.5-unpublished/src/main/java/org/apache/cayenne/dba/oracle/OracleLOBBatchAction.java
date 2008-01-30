@@ -1195,8 +1195,6 @@ operator|.
 name|invoke
 argument_list|(
 name|blob
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 try|try
@@ -1301,8 +1299,6 @@ operator|.
 name|invoke
 argument_list|(
 name|clob
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 try|try
@@ -1406,8 +1402,6 @@ operator|.
 name|invoke
 argument_list|(
 name|clob
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 try|try

@@ -551,9 +551,6 @@ name|getCurrentQualifier
 parameter_list|()
 block|{
 return|return
-operator|(
-name|Map
-operator|)
 name|qualifierSnapshots
 operator|.
 name|get

@@ -71,8 +71,6 @@ begin_class
 specifier|public
 class|class
 name|Invocation
-extends|extends
-name|Object
 block|{
 specifier|private
 name|WeakReference

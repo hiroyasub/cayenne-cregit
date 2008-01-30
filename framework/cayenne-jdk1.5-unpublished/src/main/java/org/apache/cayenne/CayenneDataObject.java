@@ -2875,7 +2875,6 @@ argument_list|(
 name|failure
 argument_list|)
 expr_stmt|;
-continue|continue;
 block|}
 block|}
 block|}
