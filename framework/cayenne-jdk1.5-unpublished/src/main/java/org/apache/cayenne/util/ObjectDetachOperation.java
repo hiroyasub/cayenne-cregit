@@ -228,6 +228,11 @@ name|targetResolver
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
 name|seen
 decl_stmt|;
 specifier|public
@@ -249,6 +254,11 @@ name|seen
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}

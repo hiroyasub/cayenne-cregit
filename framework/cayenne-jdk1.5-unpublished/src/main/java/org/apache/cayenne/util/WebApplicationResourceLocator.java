@@ -134,6 +134,9 @@ name|context
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|additionalContextPaths
 decl_stmt|;
 comment|/**      * @since 1.2      */
@@ -147,6 +150,9 @@ name|additionalContextPaths
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|this
@@ -259,6 +265,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|Iterator
+argument_list|<
+name|String
+argument_list|>
 name|cpi
 init|=
 name|this
@@ -279,9 +288,6 @@ block|{
 name|String
 name|prefix
 init|=
-operator|(
-name|String
-operator|)
 name|cpi
 operator|.
 name|next

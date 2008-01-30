@@ -140,6 +140,9 @@ name|addedToUnresolved
 decl_stmt|;
 specifier|protected
 name|LinkedList
+argument_list|<
+name|Object
+argument_list|>
 name|removedFromUnresolved
 decl_stmt|;
 comment|// exists for the benefit of manual serialization schemes such as the one in Hessian.
@@ -1237,6 +1240,9 @@ name|removedFromUnresolved
 operator|=
 operator|new
 name|LinkedList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
