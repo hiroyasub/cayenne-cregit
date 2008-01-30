@@ -551,10 +551,16 @@ name|EMPTY_LIST
 return|;
 block|}
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|size
 argument_list|)

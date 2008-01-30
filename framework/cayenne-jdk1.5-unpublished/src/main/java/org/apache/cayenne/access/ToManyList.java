@@ -169,6 +169,9 @@ name|LinkedList
 name|addedToUnresolved
 decl_stmt|;
 name|LinkedList
+argument_list|<
+name|Object
+argument_list|>
 name|removedFromUnresolved
 decl_stmt|;
 comment|/**      * Creates ToManyList.      *       * @since 1.1      */
@@ -1257,6 +1260,9 @@ name|removedFromUnresolved
 operator|=
 operator|new
 name|LinkedList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
