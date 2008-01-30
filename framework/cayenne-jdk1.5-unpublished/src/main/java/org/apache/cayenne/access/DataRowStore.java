@@ -730,6 +730,9 @@ name|newInstance
 argument_list|()
 decl_stmt|;
 name|Collection
+argument_list|<
+name|EventSubject
+argument_list|>
 name|subjects
 init|=
 name|Collections

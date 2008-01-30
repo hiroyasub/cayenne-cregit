@@ -182,11 +182,17 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|Collection
+argument_list|<
+name|FlattenedArcKey
+argument_list|>
 name|flattenedInserts
 decl_stmt|;
 specifier|private
 specifier|final
 name|Collection
+argument_list|<
+name|FlattenedArcKey
+argument_list|>
 name|flattenedDeletes
 decl_stmt|;
 name|DataDomainIndirectDiffBuilder
@@ -228,6 +234,9 @@ name|flattenedInserts
 operator|=
 operator|new
 name|HashSet
+argument_list|<
+name|FlattenedArcKey
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|this
@@ -236,6 +245,9 @@ name|flattenedDeletes
 operator|=
 operator|new
 name|HashSet
+argument_list|<
+name|FlattenedArcKey
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -264,6 +276,9 @@ argument_list|()
 condition|)
 block|{
 name|Iterator
+argument_list|<
+name|FlattenedArcKey
+argument_list|>
 name|it
 init|=
 name|flattenedInserts
@@ -282,9 +297,6 @@ block|{
 name|FlattenedArcKey
 name|key
 init|=
-operator|(
-name|FlattenedArcKey
-operator|)
 name|it
 operator|.
 name|next
@@ -319,6 +331,9 @@ argument_list|()
 condition|)
 block|{
 name|Iterator
+argument_list|<
+name|FlattenedArcKey
+argument_list|>
 name|it
 init|=
 name|flattenedDeletes
@@ -337,9 +352,6 @@ block|{
 name|FlattenedArcKey
 name|key
 init|=
-operator|(
-name|FlattenedArcKey
-operator|)
 name|it
 operator|.
 name|next

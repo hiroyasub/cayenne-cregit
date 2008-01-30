@@ -808,6 +808,11 @@ name|currentRow
 operator|++
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|nextRow
 init|=
 name|result
