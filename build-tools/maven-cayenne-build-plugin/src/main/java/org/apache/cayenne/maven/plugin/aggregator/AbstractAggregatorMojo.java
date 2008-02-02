@@ -381,7 +381,9 @@ name|AbstractAggregatorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|// by default exclude maven entries from other jars and overlapping manifests
+comment|// by default exclude maven entries from other jars and overlapping manifests.
+comment|// note that excludes for the top package Java files and jj artifacts is done as a
+comment|// hack to remove generated JJTree parser classes placed in the wrong location
 specifier|static
 specifier|final
 name|String
@@ -395,6 +397,12 @@ block|{
 literal|"META-INF/maven/**"
 block|,
 literal|"META-INF/MANIFEST.MF"
+block|,
+literal|"**/.svn/**"
+block|,
+literal|"*.java"
+block|,
+literal|"*.jj"
 block|}
 decl_stmt|;
 comment|/**      * Used to look up Artifacts in the remote repository.      *       * @parameter expression="${component.org.apache.maven.artifact.factory.ArtifactFactory}"      * @required      * @readonly      */
