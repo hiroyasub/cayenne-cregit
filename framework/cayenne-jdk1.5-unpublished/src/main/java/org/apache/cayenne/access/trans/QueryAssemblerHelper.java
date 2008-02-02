@@ -936,11 +936,11 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|msg
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|msg
@@ -1539,11 +1539,11 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|msg
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|msg

@@ -230,11 +230,11 @@ literal|"Empty pattern."
 argument_list|)
 throw|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 comment|// convert * into regex syntax

@@ -669,11 +669,11 @@ name|toString
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|wrapperMessage
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|wrapperMessage

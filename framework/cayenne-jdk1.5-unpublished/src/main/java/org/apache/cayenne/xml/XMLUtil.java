@@ -328,11 +328,11 @@ return|return
 literal|null
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|text
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 for|for

@@ -183,11 +183,11 @@ return|;
 block|}
 comment|// leave the first dot, and treat remaining as a fraction
 comment|// remove all non digit chars
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|version
 operator|.

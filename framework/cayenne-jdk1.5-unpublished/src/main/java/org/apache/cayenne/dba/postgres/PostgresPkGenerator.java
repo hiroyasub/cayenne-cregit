@@ -195,11 +195,11 @@ block|{
 comment|// note that PostgreSQL 7.4 and newer supports INCREMENT BY and START WITH
 comment|// however 7.3 doesn't like BY and WITH, so using older more neutral syntax
 comment|// that works with all tested versions.
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|buf

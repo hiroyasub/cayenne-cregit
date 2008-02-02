@@ -418,11 +418,11 @@ condition|)
 block|{
 comment|// TODO: andrus, 3/29/2006 this is taken from SelectQuery...probably need a
 comment|// central place for converting parameters to a cache key
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|name
 argument_list|)

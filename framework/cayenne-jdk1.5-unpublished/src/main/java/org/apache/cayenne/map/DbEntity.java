@@ -2654,11 +2654,11 @@ argument_list|>
 name|path
 parameter_list|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|converted
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|int

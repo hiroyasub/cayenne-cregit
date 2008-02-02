@@ -679,11 +679,11 @@ name|input
 return|;
 block|}
 comment|// convert obj_path to db_path
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|EOObjEntity

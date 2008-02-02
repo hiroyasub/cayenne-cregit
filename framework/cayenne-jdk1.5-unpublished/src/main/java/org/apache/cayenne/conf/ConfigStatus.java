@@ -445,11 +445,11 @@ return|return
 literal|"[No failures]"
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 for|for

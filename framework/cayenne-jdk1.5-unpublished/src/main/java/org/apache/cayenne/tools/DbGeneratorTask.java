@@ -472,11 +472,11 @@ parameter_list|()
 throws|throws
 name|BuildException
 block|{
-name|StringBuffer
+name|StringBuilder
 name|error
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|""
 argument_list|)

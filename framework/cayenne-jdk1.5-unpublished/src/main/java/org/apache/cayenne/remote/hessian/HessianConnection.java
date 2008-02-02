@@ -481,11 +481,11 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|log
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"Connecting to ["
 argument_list|)
@@ -787,11 +787,11 @@ name|Throwable
 name|th
 parameter_list|)
 block|{
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|message
 argument_list|)

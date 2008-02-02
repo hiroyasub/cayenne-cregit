@@ -1075,11 +1075,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|StringBuffer
+name|StringBuilder
 name|path
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 for|for
@@ -1470,11 +1470,11 @@ return|return
 literal|null
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|path
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1575,11 +1575,11 @@ return|return
 literal|null
 return|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 comment|// iterate in reverse order
@@ -1763,11 +1763,11 @@ literal|"Can't resolve DbRelationships, null source ObjEntity"
 argument_list|)
 throw|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|validPath
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 try|try

@@ -1484,11 +1484,11 @@ argument_list|()
 condition|)
 block|{
 comment|// find missing ids
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|buf

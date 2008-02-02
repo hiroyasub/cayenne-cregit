@@ -1129,11 +1129,11 @@ name|rel
 return|;
 block|}
 comment|// build error message
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|buf

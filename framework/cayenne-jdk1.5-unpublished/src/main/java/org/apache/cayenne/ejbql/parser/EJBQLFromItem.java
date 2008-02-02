@@ -172,11 +172,11 @@ block|}
 comment|// id's are case insensitive, while entity names are. Using simple encoding to
 comment|// transform the entity name in such way that two entities that differ only in
 comment|// capitalization would produce different lowercase ids
-name|StringBuffer
+name|StringBuilder
 name|id
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|entityNames
 index|[
