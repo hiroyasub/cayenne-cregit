@@ -227,6 +227,9 @@ decl_stmt|;
 comment|// if the node was inserted in the same transaction and later deleted,
 comment|// remove all its ops. Otherwise preserve arc ops (since delete rules
 comment|// depend on them), and delete operation itself.
+comment|// TODO: andrus 2008/02/04 - this doesn't take into account a
+comment|// possibility that a deleted node was re-inserted... Although I don't
+comment|// see how this could possibly happen with the present Cayenne API.
 if|if
 condition|(
 name|createdNodes
