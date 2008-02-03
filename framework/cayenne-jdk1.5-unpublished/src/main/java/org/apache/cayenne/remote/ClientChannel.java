@@ -203,6 +203,20 @@ name|cayenne
 operator|.
 name|graph
 operator|.
+name|GraphDiffCompressor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|graph
+operator|.
 name|GraphEvent
 import|;
 end_import
@@ -304,6 +318,10 @@ specifier|protected
 name|boolean
 name|channelEventsEnabled
 decl_stmt|;
+specifier|protected
+name|GraphDiffCompressor
+name|diffCompressor
+decl_stmt|;
 name|EventBridge
 name|remoteChannelListener
 decl_stmt|;
@@ -398,6 +416,14 @@ operator|.
 name|connection
 operator|=
 name|connection
+expr_stmt|;
+name|this
+operator|.
+name|diffCompressor
+operator|=
+operator|new
+name|GraphDiffCompressor
+argument_list|()
 expr_stmt|;
 name|this
 operator|.
@@ -673,6 +699,15 @@ name|int
 name|syncType
 parameter_list|)
 block|{
+name|changes
+operator|=
+name|diffCompressor
+operator|.
+name|compress
+argument_list|(
+name|changes
+argument_list|)
+expr_stmt|;
 name|GraphDiff
 name|replyDiff
 init|=
@@ -1003,7 +1038,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Sends a message via connector, getting a result as an instance of a specific class.      *       * @throws org.apache.cayenne.CayenneRuntimeException if an underlying connector      *             exception occured, or a result is not of expected type.      */
+comment|/**      * Sends a message via connector, getting a result as an instance of a specific class.      *       * @throws org.apache.cayenne.CayenneRuntimeException if an underlying connector      *             exception occurred, or a result is not of expected type.      */
 specifier|protected
 name|Object
 name|send
@@ -1012,6 +1047,9 @@ name|ClientMessage
 name|message
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|resultClass
 parameter_list|)
 block|{

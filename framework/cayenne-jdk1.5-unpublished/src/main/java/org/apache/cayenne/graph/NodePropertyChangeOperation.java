@@ -137,6 +137,31 @@ operator|=
 name|newValue
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|String
+name|getProperty
+parameter_list|()
+block|{
+return|return
+name|property
+return|;
+block|}
+comment|/**      * Chnages the 'newValue'.      *       * @since 3.0      */
+name|void
+name|setNewValue
+parameter_list|(
+name|Object
+name|newValue
+parameter_list|)
+block|{
+name|this
+operator|.
+name|newValue
+operator|=
+name|newValue
+expr_stmt|;
+block|}
 comment|/**      * Returns true if both old and new value are equal.      */
 annotation|@
 name|Override
