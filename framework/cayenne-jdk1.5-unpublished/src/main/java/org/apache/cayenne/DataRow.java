@@ -183,8 +183,6 @@ argument_list|<
 name|String
 argument_list|,
 name|?
-extends|extends
-name|Object
 argument_list|>
 name|map
 parameter_list|)
