@@ -98,7 +98,7 @@ name|boolean
 name|postPersisted
 decl_stmt|;
 specifier|protected
-name|boolean
+name|int
 name|postLoaded
 decl_stmt|;
 specifier|protected
@@ -174,7 +174,7 @@ literal|false
 expr_stmt|;
 name|postLoaded
 operator|=
-literal|false
+literal|0
 expr_stmt|;
 block|}
 annotation|@
@@ -282,8 +282,7 @@ name|postLoadCallback
 parameter_list|()
 block|{
 name|postLoaded
-operator|=
-literal|true
+operator|++
 expr_stmt|;
 block|}
 specifier|public
@@ -341,8 +340,8 @@ name|postPersisted
 return|;
 block|}
 specifier|public
-name|boolean
-name|isPostLoaded
+name|int
+name|getPostLoaded
 parameter_list|()
 block|{
 return|return
