@@ -182,7 +182,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns entity result fields nrmalized to represent DbAttributes.      */
+comment|/**      * Returns entity result fields normalized to represent DbAttributes.      */
 specifier|public
 name|FieldResult
 index|[]
