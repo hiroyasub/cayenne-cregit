@@ -335,6 +335,37 @@ throw|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|finishedLoading
+parameter_list|()
+block|{
+comment|// execute a simplified version of the super method to avoid runtime relationships
+comment|// and other runtime artifacts...
+comment|// load missing relationships and update configuration object
+for|for
+control|(
+name|DataDomain
+name|domain
+range|:
+name|getDomains
+argument_list|()
+operator|.
+name|values
+argument_list|()
+control|)
+block|{
+name|config
+operator|.
+name|addDomain
+argument_list|(
+name|domain
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|/**      * Creates a subclass of the DataNode that does not decorate its DataSource, exposing      * the version that was set on it.      */
 specifier|protected
 name|DataNode
