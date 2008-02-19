@@ -36,10 +36,13 @@ comment|/**  * A metadata object that maps a result set column to an ObjAttribut
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|FieldResult
 block|{
+specifier|protected
+name|String
+name|entityName
+decl_stmt|;
 specifier|protected
 name|String
 name|attributeName
@@ -52,9 +55,11 @@ specifier|protected
 name|boolean
 name|dbAttribute
 decl_stmt|;
-specifier|public
 name|FieldResult
 parameter_list|(
+name|String
+name|entityName
+parameter_list|,
 name|String
 name|attributeName
 parameter_list|,
@@ -67,6 +72,12 @@ parameter_list|)
 block|{
 name|this
 operator|.
+name|entityName
+operator|=
+name|entityName
+expr_stmt|;
+name|this
+operator|.
 name|attributeName
 operator|=
 name|attributeName
@@ -83,6 +94,15 @@ name|dbAttribute
 operator|=
 name|dbAttribute
 expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getEntityName
+parameter_list|()
+block|{
+return|return
+name|entityName
+return|;
 block|}
 specifier|public
 name|String

@@ -293,25 +293,136 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|//        createTestData("prepare");
-comment|//
-comment|//        String ejbql = "SELECT count(p), a, sum(p.estimatedPrice) "
-comment|//                + "FROM Artist a LEFT JOIN a.paintingArray p "
-comment|//                + "GROUP BY a ORDER BY a.artistName";
-comment|//
-comment|//        EJBQLQuery query = new EJBQLQuery(ejbql);
-comment|//
-comment|//        List objects = createDataContext().performQuery(query);
-comment|//        assertEquals(4, objects.size());
-comment|//
-comment|//        Object o1 = objects.get(0);
-comment|//        assertTrue("Expected Object[]: " + o1, o1 instanceof Object[]);
-comment|//        Object[] array1 = (Object[]) o1;
-comment|//        assertEquals(3, array1.length);
-comment|//
-comment|//        assertEquals(new Long(1), array1[0]);
-comment|//        assertTrue("Expected Artist, got: " + array1[1], array1[1] instanceof Artist);
-comment|//        assertEquals(new BigDecimal(3000), array1[1]);
+name|createTestData
+argument_list|(
+literal|"prepare"
+argument_list|)
+expr_stmt|;
+name|String
+name|ejbql
+init|=
+literal|"SELECT count(p), a, sum(p.estimatedPrice) "
+operator|+
+literal|"FROM Artist a LEFT JOIN a.paintingArray p "
+operator|+
+literal|"GROUP BY a ORDER BY a.artistName"
+decl_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+name|ejbql
+argument_list|)
+decl_stmt|;
+name|List
+name|objects
+init|=
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|4
+argument_list|,
+name|objects
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Object
+name|o1
+init|=
+name|objects
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+literal|"Expected Object[]: "
+operator|+
+name|o1
+argument_list|,
+name|o1
+operator|instanceof
+name|Object
+index|[]
+argument_list|)
+expr_stmt|;
+name|Object
+index|[]
+name|array1
+init|=
+operator|(
+name|Object
+index|[]
+operator|)
+name|o1
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|3
+argument_list|,
+name|array1
+operator|.
+name|length
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+operator|new
+name|Long
+argument_list|(
+literal|1
+argument_list|)
+argument_list|,
+name|array1
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+literal|"Expected Artist, got: "
+operator|+
+name|array1
+index|[
+literal|1
+index|]
+argument_list|,
+name|array1
+index|[
+literal|1
+index|]
+operator|instanceof
+name|Artist
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+operator|new
+name|BigDecimal
+argument_list|(
+literal|3000
+argument_list|)
+argument_list|,
+name|array1
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
