@@ -348,6 +348,10 @@ operator|!=
 name|DONE
 condition|)
 block|{
+comment|// when changing the flow below, make sure to update
+comment|// 'getCacheObjectFactory' method that mimics the interceptors
+comment|// below 'interceptLocalCache'. See comment in an inner class
+comment|// factory in this method...
 if|if
 condition|(
 name|interceptPaginatedQuery
@@ -1035,9 +1039,20 @@ name|Object
 name|createObject
 parameter_list|()
 block|{
+comment|// must follow the same logic as 'execute' below locla cache interceptor
+comment|// method... reuse that code somehow???
+if|if
+condition|(
+name|interceptPaginatedQuery
+argument_list|()
+operator|!=
+name|DONE
+condition|)
+block|{
 name|runQuery
 argument_list|()
 expr_stmt|;
+block|}
 return|return
 name|response
 operator|.
