@@ -2793,7 +2793,10 @@ argument_list|)
 decl_stmt|;
 name|entity
 operator|.
-name|setSqlResultSetMapping
+name|getSqlResultSetMappings
+argument_list|()
+operator|.
+name|add
 argument_list|(
 operator|new
 name|JpaSqlResultSetMapping

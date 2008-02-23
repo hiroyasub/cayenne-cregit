@@ -1359,7 +1359,13 @@ name|assertSqlResultSetMapping
 argument_list|(
 name|entity1
 operator|.
-name|getSqlResultSetMapping
+name|getSqlResultSetMappings
+argument_list|()
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
 argument_list|()
 argument_list|)
 expr_stmt|;

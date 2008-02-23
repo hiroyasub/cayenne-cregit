@@ -207,16 +207,60 @@ argument_list|,
 literal|"Y"
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 2/18/2008 map named JPA SQLResultSetMappings to Cayenne
-comment|// EntityManager em = getEntityManager();
-comment|// Query query = em.createNativeQuery(
-comment|// "SELECT ID as X, ID + 5 as Y, ID + 6 as Z FROM SimpleEntity ORDER BY ID",
-comment|// "rs1");
-comment|//
-comment|// List result = query.getResultList();
-comment|// assertNotNull(result);
-comment|// assertEquals(2, result.size());
-comment|// assertTrue(result.get(0) instanceof Object[]);
+name|EntityManager
+name|em
+init|=
+name|getEntityManager
+argument_list|()
+decl_stmt|;
+name|Query
+name|query
+init|=
+name|em
+operator|.
+name|createNativeQuery
+argument_list|(
+literal|"SELECT ID as X, ID + 5 as Y, ID + 6 as Z FROM SimpleEntity ORDER BY ID"
+argument_list|,
+literal|"rs1"
+argument_list|)
+decl_stmt|;
+name|List
+name|result
+init|=
+name|query
+operator|.
+name|getResultList
+argument_list|()
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|result
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|result
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|instanceof
+name|Object
+index|[]
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
