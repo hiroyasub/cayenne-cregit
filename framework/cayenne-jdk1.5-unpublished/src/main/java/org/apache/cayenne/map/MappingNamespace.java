@@ -39,6 +39,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SQLResultSetMapping
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries and other  * mapping objects.  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
@@ -54,6 +68,14 @@ name|getEmbeddable
 parameter_list|(
 name|String
 name|className
+parameter_list|)
+function_decl|;
+comment|/**      * Returns a named result set mapping.      *       * @since 3.0      */
+name|SQLResultSetMapping
+name|getResultSetMapping
+parameter_list|(
+name|String
+name|name
 parameter_list|)
 function_decl|;
 comment|/**      * Returns DbEntity for a given name, or null if no such DbEntity is found in the      * MappingNamespace.      */
