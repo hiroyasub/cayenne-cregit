@@ -772,7 +772,7 @@ name|context
 operator|.
 name|pushMarker
 argument_list|(
-name|EJBQLSelectTranslator
+name|context
 operator|.
 name|makeWhereMarker
 argument_list|()
@@ -796,7 +796,7 @@ name|context
 operator|.
 name|pushMarker
 argument_list|(
-name|EJBQLSelectTranslator
+name|context
 operator|.
 name|makeEntityQualifierMarker
 argument_list|()

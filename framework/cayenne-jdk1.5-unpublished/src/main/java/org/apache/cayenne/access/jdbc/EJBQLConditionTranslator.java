@@ -573,7 +573,7 @@ name|context
 operator|.
 name|pushMarker
 argument_list|(
-name|EJBQLSelectTranslator
+name|context
 operator|.
 name|makeDistinctMarker
 argument_list|()
@@ -2866,6 +2866,11 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
+name|context
+operator|.
+name|onSubselect
+argument_list|()
+expr_stmt|;
 name|context
 operator|.
 name|append
