@@ -271,10 +271,10 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertEquals
 argument_list|(
 literal|0
-operator|==
+argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
@@ -417,10 +417,10 @@ operator|instanceof
 name|Artist
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertEquals
 argument_list|(
 literal|0
-operator|==
+argument_list|,
 operator|new
 name|BigDecimal
 argument_list|(
