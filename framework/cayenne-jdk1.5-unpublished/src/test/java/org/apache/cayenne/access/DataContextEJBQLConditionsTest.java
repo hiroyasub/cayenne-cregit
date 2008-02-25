@@ -153,6 +153,38 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testArithmetics
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createTestData
+argument_list|(
+literal|"prepareLike"
+argument_list|)
+expr_stmt|;
+comment|// TODO: andrus 02/25/2008 - fails on HSQLDB / succeeds on MySQL. HSQLDB error is
+comment|// "Unresolved parameter type : as both operands of aritmetic operator in
+comment|// statement"
+comment|// String ejbql = "SELECT p FROM Painting p WHERE p.estimatedPrice< (1 + - 4.0 *
+comment|// - 1000.0)";
+comment|//
+comment|// EJBQLQuery query = new EJBQLQuery(ejbql);
+comment|// List<?> objects = createDataContext().performQuery(query);
+comment|// assertEquals(2, objects.size());
+comment|//
+comment|// Set<Object> ids = new HashSet<Object>();
+comment|// Iterator<?> it = objects.iterator();
+comment|// while (it.hasNext()) {
+comment|// Object id = DataObjectUtils.pkForObject((Persistent) it.next());
+comment|// ids.add(id);
+comment|// }
+comment|//
+comment|// assertTrue(ids.contains(new Integer(33001)));
+comment|// assertTrue(ids.contains(new Integer(33002)));
+block|}
+specifier|public
+name|void
 name|testLike1
 parameter_list|()
 throws|throws

@@ -74,6 +74,25 @@ name|this
 argument_list|)
 return|;
 block|}
+specifier|public
+name|boolean
+name|isNegative
+parameter_list|()
+block|{
+return|return
+name|getChildrenCount
+argument_list|()
+operator|==
+literal|1
+operator|&&
+name|getChild
+argument_list|(
+literal|0
+argument_list|)
+operator|instanceof
+name|EJBQLNegative
+return|;
+block|}
 block|}
 end_class
 
