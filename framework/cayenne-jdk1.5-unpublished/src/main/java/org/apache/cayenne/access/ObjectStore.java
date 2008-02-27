@@ -561,6 +561,11 @@ block|{
 comment|/**      * Factory method to create default Map for storing registered objects.      *       * @since 3.0      * @return a map with hard referenced keys and weak referenced values.      */
 specifier|static
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
 name|createObjectMap
 parameter_list|()
 block|{
@@ -580,6 +585,11 @@ return|;
 block|}
 specifier|protected
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
 name|objectMap
 decl_stmt|;
 specifier|protected
@@ -645,6 +655,11 @@ name|DataRowStore
 name|dataRowCache
 parameter_list|,
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
 name|objectMap
 parameter_list|)
 block|{
@@ -730,9 +745,6 @@ block|{
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|objectMap
 operator|.
 name|get
@@ -1547,9 +1559,6 @@ block|{
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|objectMap
 operator|.
 name|get
@@ -1587,6 +1596,16 @@ name|parentChanges
 parameter_list|)
 block|{
 name|Iterator
+argument_list|<
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
+argument_list|>
 name|entries
 init|=
 name|objectMap
@@ -1609,13 +1628,13 @@ block|{
 name|Map
 operator|.
 name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
 name|entry
 init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
 name|entries
 operator|.
 name|next
@@ -1624,9 +1643,6 @@ decl_stmt|;
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|entry
 operator|.
 name|getValue
@@ -1863,6 +1879,9 @@ name|oid
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|results
 init|=
 name|context
@@ -2096,7 +2115,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * Return a subset of registered objects that are in a certian persistence state.      * Collection is returned by copy.      */
+comment|/**      * Return a subset of registered objects that are in a certain persistence state.      * Collection is returned by copy.      */
 specifier|public
 specifier|synchronized
 name|List
@@ -2122,39 +2141,20 @@ name|Persistent
 argument_list|>
 argument_list|()
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Persistent
+name|object
+range|:
 name|objectMap
 operator|.
 name|values
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Persistent
-name|nextObj
-init|=
-operator|(
-name|Persistent
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|nextObj
+name|object
 operator|.
 name|getPersistenceState
 argument_list|()
@@ -2166,7 +2166,7 @@ name|filteredObjects
 operator|.
 name|add
 argument_list|(
-name|nextObj
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -2435,9 +2435,6 @@ block|{
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|objectMap
 operator|.
 name|remove
@@ -2513,9 +2510,6 @@ comment|// context...
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|objectMap
 operator|.
 name|get
@@ -3095,7 +3089,7 @@ name|DataRow
 name|diff
 parameter_list|)
 block|{
-comment|// access object map directly - the method should be called ina synchronized
+comment|// access object map directly - the method should be called in a synchronized
 comment|// context...
 name|DataObject
 name|object
@@ -3387,6 +3381,9 @@ block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<
+name|Persistent
+argument_list|>
 argument_list|(
 name|objectMap
 operator|.
@@ -3414,6 +3411,9 @@ name|put
 argument_list|(
 name|nodeId
 argument_list|,
+operator|(
+name|Persistent
+operator|)
 name|nodeObject
 argument_list|)
 expr_stmt|;
