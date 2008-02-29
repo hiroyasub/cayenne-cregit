@@ -2287,6 +2287,9 @@ name|List
 name|objectsFromDataRows
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|List
@@ -2353,6 +2356,9 @@ name|DataObject
 name|objectFromDataRow
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|DataRow
@@ -2363,6 +2369,9 @@ name|refresh
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|list
 init|=
 name|objectsFromDataRows
@@ -2420,6 +2429,9 @@ name|entityName
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|list
 init|=
 name|objectsFromDataRows
