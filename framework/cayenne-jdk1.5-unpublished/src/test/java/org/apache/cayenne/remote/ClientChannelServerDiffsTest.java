@@ -652,6 +652,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+name|o
+operator|.
+name|setServerAttribute1
+argument_list|(
+literal|"YY"
+argument_list|)
+expr_stmt|;
 name|context
 operator|.
 name|commitChanges

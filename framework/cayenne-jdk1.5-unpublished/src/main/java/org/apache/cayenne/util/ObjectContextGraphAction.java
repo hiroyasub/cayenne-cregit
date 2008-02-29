@@ -133,7 +133,7 @@ operator|=
 name|context
 expr_stmt|;
 block|}
-comment|/**      * Handles property change in a Peristent object, routing to either      * {@link #handleArcPropertyChange(Persistent, ArcProperty, Object, Object)} or      * {@link #handleSimplePropertyChange(Persistent, String, Object, Object)}.      */
+comment|/**      * Handles property change in a Persistent object, routing to either      * {@link #handleArcPropertyChange(Persistent, ArcProperty, Object, Object)} or      * {@link #handleSimplePropertyChange(Persistent, String, Object, Object)}.      */
 specifier|public
 name|void
 name|handlePropertyChange

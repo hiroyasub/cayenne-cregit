@@ -687,6 +687,20 @@ name|cayenne
 operator|.
 name|util
 operator|.
+name|ObjectContextGraphAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
 name|Util
 import|;
 end_import
@@ -754,7 +768,7 @@ specifier|transient
 name|DataContextMergeHandler
 name|mergeHandler
 decl_stmt|;
-name|DataContextGraphAction
+name|ObjectContextGraphAction
 name|graphAction
 decl_stmt|;
 comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 1.2      */
