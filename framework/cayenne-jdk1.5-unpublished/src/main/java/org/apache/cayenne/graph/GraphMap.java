@@ -98,6 +98,9 @@ comment|// *** GraphMap methods
 comment|/**      * Returns an immutable collection of registered nodes.      */
 specifier|public
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|registeredNodes
 parameter_list|()
 block|{

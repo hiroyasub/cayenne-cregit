@@ -65,6 +65,9 @@ parameter_list|)
 function_decl|;
 comment|/**      * Returns all graph nodes registered with GraphManager.      */
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|registeredNodes
 parameter_list|()
 function_decl|;

@@ -3375,6 +3375,9 @@ comment|/**      * Returns all registered DataObjects. List is returned by copy 
 specifier|public
 specifier|synchronized
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|registeredNodes
 parameter_list|()
 block|{
@@ -3382,7 +3385,7 @@ return|return
 operator|new
 name|ArrayList
 argument_list|<
-name|Persistent
+name|Object
 argument_list|>
 argument_list|(
 name|objectMap
