@@ -255,7 +255,7 @@ name|Object
 name|newValue
 parameter_list|)
 function_decl|;
-comment|/**      * Changes object state to MODIFIED if needed, returning true if the change has      * occured, false if not.      */
+comment|/**      * Changes object state to MODIFIED if needed, returning true if the change has      * occurred, false if not.      */
 specifier|protected
 name|boolean
 name|markAsDirty
