@@ -263,12 +263,13 @@ name|join
 parameter_list|)
 block|{
 comment|// TODO: andrus, 4/9/2007 - support for prefetching
-return|return
-name|visitInnerJoin
+throw|throw
+operator|new
+name|UnsupportedOperationException
 argument_list|(
-name|join
+literal|"Fetch joins are not yet supported"
 argument_list|)
-return|;
+throw|;
 block|}
 annotation|@
 name|Override
@@ -320,12 +321,13 @@ name|join
 parameter_list|)
 block|{
 comment|// TODO: andrus, 4/9/2007 - support for prefetching
-return|return
-name|visitOuterJoin
+throw|throw
+operator|new
+name|UnsupportedOperationException
 argument_list|(
-name|join
+literal|"Fetch joins are not yet supported"
 argument_list|)
-return|;
+throw|;
 block|}
 annotation|@
 name|Override
