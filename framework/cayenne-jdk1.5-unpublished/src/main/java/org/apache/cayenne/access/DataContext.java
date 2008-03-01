@@ -3756,8 +3756,9 @@ name|boolean
 name|cascade
 parameter_list|)
 block|{
-if|if
-condition|(
+name|boolean
+name|childContext
+init|=
 name|this
 operator|!=
 name|originatingContext
@@ -3765,8 +3766,20 @@ operator|&&
 name|changes
 operator|!=
 literal|null
+decl_stmt|;
+try|try
+block|{
+if|if
+condition|(
+name|childContext
 condition|)
 block|{
+name|getObjectStore
+argument_list|()
+operator|.
+name|childContextSyncStarted
+argument_list|()
+expr_stmt|;
 name|changes
 operator|.
 name|apply
@@ -3800,6 +3813,22 @@ operator|new
 name|CompoundDiff
 argument_list|()
 return|;
+block|}
+finally|finally
+block|{
+if|if
+condition|(
+name|childContext
+condition|)
+block|{
+name|getObjectStore
+argument_list|()
+operator|.
+name|childContextSyncStopped
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 block|}
 comment|/**      * Synchronizes with the parent channel, performing a flush or a commit.      *       * @since 1.2      */
 name|GraphDiff
@@ -3846,6 +3875,11 @@ init|=
 name|getObjectStore
 argument_list|()
 decl_stmt|;
+name|GraphDiff
+name|parentChanges
+init|=
+literal|null
+decl_stmt|;
 comment|// prevent multiple commits occuring simulteneously
 synchronized|synchronized
 init|(
@@ -3887,17 +3921,13 @@ operator|.
 name|postprocessAfterPhantomCommit
 argument_list|()
 expr_stmt|;
-return|return
-operator|new
-name|CompoundDiff
-argument_list|()
-return|;
 block|}
+else|else
+block|{
 try|try
 block|{
-name|GraphDiff
-name|returnChanges
-init|=
+name|parentChanges
+operator|=
 name|getChannel
 argument_list|()
 operator|.
@@ -3909,11 +3939,15 @@ name|changes
 argument_list|,
 name|syncType
 argument_list|)
-decl_stmt|;
-comment|// note that this is a hack resulting from a fix to CAY-766... To support
-comment|// valid object state in PostPersist callback, 'postprocessAfterCommit' is
-comment|// invoked by DataDomain.onSync(..). Unless the parent is DataContext, and
-comment|// this method is not invoked!! As a result, PostPersist will contain temp
+expr_stmt|;
+comment|// note that this is a hack resulting from a fix to CAY-766... To
+comment|// support
+comment|// valid object state in PostPersist callback,
+comment|// 'postprocessAfterCommit' is
+comment|// invoked by DataDomain.onSync(..). Unless the parent is DataContext,
+comment|// and
+comment|// this method is not invoked!! As a result, PostPersist will contain
+comment|// temp
 comment|// ObjectIds in nested contexts and perm ones in flat contexts.
 comment|// Pending better callback design .....
 if|if
@@ -3928,7 +3962,7 @@ name|objectStore
 operator|.
 name|postprocessAfterCommit
 argument_list|(
-name|returnChanges
+name|parentChanges
 argument_list|)
 expr_stmt|;
 block|}
@@ -3941,29 +3975,6 @@ argument_list|,
 name|changes
 argument_list|)
 expr_stmt|;
-comment|// this event is caught by child DataContexts to update temporary
-comment|// ObjectIds with permanent
-if|if
-condition|(
-operator|!
-name|returnChanges
-operator|.
-name|isNoop
-argument_list|()
-condition|)
-block|{
-name|fireDataChannelCommitted
-argument_list|(
-name|getChannel
-argument_list|()
-argument_list|,
-name|returnChanges
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|returnChanges
-return|;
 block|}
 comment|// "catch" is needed to unwrap OptimisticLockExceptions
 catch|catch
@@ -4009,6 +4020,64 @@ argument_list|)
 throw|;
 block|}
 block|}
+block|}
+comment|// merge changes from parent as well as changes caused by lifecycle event
+comment|// callbacks/listeners...
+name|CompoundDiff
+name|diff
+init|=
+operator|new
+name|CompoundDiff
+argument_list|()
+decl_stmt|;
+name|diff
+operator|.
+name|addAll
+argument_list|(
+name|objectStore
+operator|.
+name|getLifecycleEventInducedChanges
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parentChanges
+operator|!=
+literal|null
+condition|)
+block|{
+name|diff
+operator|.
+name|add
+argument_list|(
+name|parentChanges
+argument_list|)
+expr_stmt|;
+block|}
+comment|// this event is caught by child DataContexts to update temporary
+comment|// ObjectIds with permanent
+if|if
+condition|(
+operator|!
+name|diff
+operator|.
+name|isNoop
+argument_list|()
+condition|)
+block|{
+name|fireDataChannelCommitted
+argument_list|(
+name|getChannel
+argument_list|()
+argument_list|,
+name|diff
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|diff
+return|;
 block|}
 block|}
 comment|/**      * Performs a single database select query returning result as a ResultIterator. It is      * caller's responsibility to explicitly close the ResultIterator. A failure to do so      * will result in a database connection not being released. Another side effect of an      * open ResultIterator is that an internal Cayenne transaction that originated in this      * method stays open until the iterator is closed. So users should normally close the      * iterator within the same thread that opened it.      */
