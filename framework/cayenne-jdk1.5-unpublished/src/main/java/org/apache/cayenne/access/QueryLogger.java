@@ -65,11 +65,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
-operator|.
-name|ParameterBinding
+name|ExtendedEnumeration
 import|;
 end_import
 
@@ -83,9 +79,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|types
+name|jdbc
 operator|.
-name|ExtendedEnumeration
+name|ParameterBinding
 import|;
 end_import
 

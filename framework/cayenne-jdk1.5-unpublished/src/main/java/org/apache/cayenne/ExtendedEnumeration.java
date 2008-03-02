@@ -10,10 +10,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|access
-operator|.
-name|types
 package|;
 end_package
 
