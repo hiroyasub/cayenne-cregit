@@ -18,8 +18,7 @@ specifier|public
 interface|interface
 name|ExtendedEnumeration
 block|{
-comment|// Return the value to be stored in the database for this enumeration.  In
-comment|// actuallity, this should be an Integer or a String.
+comment|/**      * Return the value to be stored in the database for this enumeration.  In      * actuality, this should be an Integer or a String.      */
 specifier|public
 name|Object
 name|getDatabaseValue
