@@ -49,10 +49,6 @@ begin_comment
 comment|/**  * A metadata object that defines how a DataRow can be converted to result objects. This  * object provides mapping in a JPA-compliant manner, i.e. the DataRow is mapped either to  * a single Object or an Object[]. Each object (single result object or an array element  * object) can be a scalar or a Persistent object.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
-begin_comment
-comment|// TODO: andrus, 6/22/2007 - support entity results mapping.
-end_comment
-
 begin_class
 specifier|public
 class|class
