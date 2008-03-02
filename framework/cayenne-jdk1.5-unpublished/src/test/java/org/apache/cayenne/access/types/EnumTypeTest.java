@@ -102,50 +102,17 @@ name|length
 argument_list|,
 name|type
 operator|.
-name|values
-operator|.
-name|length
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|MockEnum
-operator|.
-name|values
+name|getEnumerationMappings
 argument_list|()
 operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|assertSame
-argument_list|(
-name|MockEnum
-operator|.
-name|values
+name|size
 argument_list|()
-index|[
-name|i
-index|]
-argument_list|,
-name|type
-operator|.
-name|values
-index|[
-name|i
-index|]
 argument_list|)
 expr_stmt|;
-block|}
+comment|//        assertEquals(MockEnum.values().length, type.values.length);
+comment|//        for(int i = 0; i< MockEnum.values().length; i++) {
+comment|//            assertSame(MockEnum.values()[i], type.values[i]);
+comment|//        }
 block|}
 specifier|public
 name|void
