@@ -268,6 +268,18 @@ name|getObjEntity
 argument_list|()
 return|;
 block|}
+specifier|public
+name|Query
+name|getOrginatingQuery
+parameter_list|()
+block|{
+return|return
+name|info
+operator|.
+name|getOrginatingQuery
+argument_list|()
+return|;
+block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|ClassDescriptor

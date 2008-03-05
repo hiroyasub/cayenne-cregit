@@ -1531,6 +1531,15 @@ return|return
 name|pageSize
 return|;
 block|}
+specifier|public
+name|Query
+name|getOrginatingQuery
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 comment|/**      * Always returns -1.      */
 specifier|public
 name|int

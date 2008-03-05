@@ -172,6 +172,16 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Query
+name|getOrginatingQuery
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 specifier|public
 name|DbEntity
 name|getDbEntity

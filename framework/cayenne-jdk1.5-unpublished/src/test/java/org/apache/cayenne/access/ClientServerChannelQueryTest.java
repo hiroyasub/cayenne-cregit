@@ -450,7 +450,18 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// assertTrue(results.get(3) instanceof ClientMtTable1);
+name|assertTrue
+argument_list|(
+name|results
+operator|.
+name|get
+argument_list|(
+literal|3
+argument_list|)
+operator|instanceof
+name|ClientMtTable1
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void

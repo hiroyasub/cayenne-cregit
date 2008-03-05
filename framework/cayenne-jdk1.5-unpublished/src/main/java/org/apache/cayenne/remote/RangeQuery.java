@@ -198,7 +198,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An Query wrapper that triggers pagination processing on the server. This query is  * client-only and can't be executed on the server.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Query that fetches a range of objects from a previously fetched server-side paginated  * list. This query is client-only and can't be executed on the server.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -220,12 +220,8 @@ name|int
 name|fetchLimit
 decl_stmt|;
 specifier|private
-name|boolean
-name|fetchingDataRows
-decl_stmt|;
-specifier|private
-name|PrefetchTreeNode
-name|prefetchTree
+name|Query
+name|originatingQuery
 decl_stmt|;
 comment|// exists for hessian serialization.
 annotation|@
@@ -238,8 +234,7 @@ name|RangeQuery
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a PaginatedQuery that returns a single page from an existing cached      * server-side result list.      */
-specifier|public
+comment|/**      * Creates a query that returns a single page from an existing cached server-side      * result list.      */
 name|RangeQuery
 parameter_list|(
 name|String
@@ -251,8 +246,8 @@ parameter_list|,
 name|int
 name|fetchLimit
 parameter_list|,
-name|QueryMetadata
-name|rootMetadata
+name|Query
+name|originatingQuery
 parameter_list|)
 block|{
 name|this
@@ -275,21 +270,9 @@ name|fetchLimit
 expr_stmt|;
 name|this
 operator|.
-name|fetchingDataRows
+name|originatingQuery
 operator|=
-name|rootMetadata
-operator|.
-name|isFetchingDataRows
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|prefetchTree
-operator|=
-name|rootMetadata
-operator|.
-name|getPrefetchTree
-argument_list|()
+name|originatingQuery
 expr_stmt|;
 block|}
 specifier|public
@@ -300,11 +283,31 @@ name|EntityResolver
 name|resolver
 parameter_list|)
 block|{
+specifier|final
+name|QueryMetadata
+name|originatingMetadata
+init|=
+name|originatingQuery
+operator|.
+name|getMetaData
+argument_list|(
+name|resolver
+argument_list|)
+decl_stmt|;
 return|return
 operator|new
 name|QueryMetadata
 argument_list|()
 block|{
+specifier|public
+name|Query
+name|getOrginatingQuery
+parameter_list|()
+block|{
+return|return
+name|originatingQuery
+return|;
+block|}
 specifier|public
 name|SQLResultSetMapping
 name|getResultSetMapping
@@ -357,7 +360,10 @@ name|isFetchingDataRows
 parameter_list|()
 block|{
 return|return
-name|fetchingDataRows
+name|originatingMetadata
+operator|.
+name|isFetchingDataRows
+argument_list|()
 return|;
 block|}
 specifier|public
@@ -386,7 +392,10 @@ name|getPrefetchTree
 parameter_list|()
 block|{
 return|return
-name|prefetchTree
+name|originatingMetadata
+operator|.
+name|getPrefetchTree
+argument_list|()
 return|;
 block|}
 specifier|public

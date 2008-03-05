@@ -254,8 +254,8 @@ name|int
 name|unfetchedObjects
 decl_stmt|;
 specifier|protected
-name|QueryMetadata
-name|metadata
+name|Query
+name|paginatedQuery
 decl_stmt|;
 specifier|protected
 specifier|transient
@@ -281,10 +281,9 @@ name|Query
 name|paginatedQuery
 parameter_list|)
 block|{
-name|this
-operator|.
+name|QueryMetadata
 name|metadata
-operator|=
+init|=
 name|paginatedQuery
 operator|.
 name|getMetaData
@@ -294,7 +293,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|metadata
@@ -429,6 +428,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// ensure that originating query is wrapped to include the right cache key....
+name|this
+operator|.
+name|paginatedQuery
+operator|=
+name|query
+expr_stmt|;
 comment|// select directly from the channel, bypassing the context. Otherwise our query
 comment|// wrapper can be intercepted incorrectly
 name|QueryResponse
@@ -933,7 +939,7 @@ name|fromIndex
 argument_list|,
 name|fetchLimit
 argument_list|,
-name|metadata
+name|paginatedQuery
 argument_list|)
 decl_stmt|;
 name|List

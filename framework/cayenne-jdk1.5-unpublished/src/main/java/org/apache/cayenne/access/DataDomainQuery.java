@@ -247,6 +247,15 @@ literal|null
 return|;
 block|}
 specifier|public
+name|Query
+name|getOrginatingQuery
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
 name|String
 name|getName
 parameter_list|()
