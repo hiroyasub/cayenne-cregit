@@ -585,6 +585,11 @@ name|list
 argument_list|)
 expr_stmt|;
 comment|// extract and convert first page
+comment|// TODO: andrus, 2008/03/05 - we no longer resolve the first page
+comment|// automatically on the server... probably should not do it for the client
+comment|// either... One rare case when this is completely undesirable is
+comment|// subaction execution from 'interceptSinglePageQuery', as it doesn't even
+comment|// care about the first page...
 name|List
 name|sublist
 init|=
