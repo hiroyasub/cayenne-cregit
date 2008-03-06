@@ -129,6 +129,16 @@ parameter_list|)
 throws|throws
 name|CayenneException
 function_decl|;
+comment|/**      * Reads and returns an id column or columns for the DbEntity. If an entity has a      * single column id, the return value is an Object matching the column type (e.g.      * java.lang.Long). If an entity has a compound PK, the return value is a DataRow      * (i.e. equivalent to {@link #nextObjectId(DbEntity)}).      *       * @since 3.0      */
+name|Object
+name|nextId
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|)
+throws|throws
+name|CayenneException
+function_decl|;
 comment|/**      * Skips current data row instead of reading it.      */
 name|void
 name|skipDataRow

@@ -1823,6 +1823,9 @@ argument_list|(
 operator|(
 operator|(
 name|IncrementalFaultList
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|objects
 operator|)
@@ -1834,7 +1837,7 @@ argument_list|(
 literal|0
 argument_list|)
 operator|instanceof
-name|Map
+name|Long
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -1842,6 +1845,9 @@ argument_list|(
 operator|(
 operator|(
 name|IncrementalFaultList
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|objects
 operator|)
@@ -1853,7 +1859,7 @@ argument_list|(
 literal|7
 argument_list|)
 operator|instanceof
-name|Map
+name|Long
 argument_list|)
 expr_stmt|;
 name|assertTrue
