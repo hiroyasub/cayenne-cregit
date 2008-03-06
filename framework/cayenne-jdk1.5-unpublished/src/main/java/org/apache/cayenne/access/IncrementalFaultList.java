@@ -319,7 +319,7 @@ comment|// the where clause generation that is necessary to fetch specific recor
 comment|// at a time. Some JDBC Drivers/Databases may have limits on statement length
 comment|// or complexity of the where clause - e.g., PostgreSQL having a default limit of
 comment|// 10,000 nested expressions.
-comment|/**      * Creates a new list copying settings from another list. Elements WILL NOT be copied      * or fetched.      */
+comment|/**      * Creates a new list copying settings from another list. Elements WILL NOT be copied      * or fetched.      *       * @deprecated since 3.0 - unused      */
 specifier|public
 name|IncrementalFaultList
 parameter_list|(
@@ -509,6 +509,18 @@ name|isResolvingInherited
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
+name|internalQuery
+operator|.
+name|setPrefetchTree
+argument_list|(
+name|metadata
+operator|.
+name|getPrefetchTree
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|metadata
@@ -561,18 +573,6 @@ name|SelectQuery
 operator|)
 name|query
 decl_stmt|;
-name|this
-operator|.
-name|internalQuery
-operator|.
-name|setPrefetchTree
-argument_list|(
-name|select
-operator|.
-name|getPrefetchTree
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|// optimize SelectQuery:
 comment|// * just select ID columns - this gives a 5-10x speedup
 comment|// * strip prefetches as they blow the iterated result, and are actually not
