@@ -380,16 +380,9 @@ name|query
 init|=
 name|paginatedQuery
 decl_stmt|;
-if|if
-condition|(
-name|metadata
-operator|.
-name|getCacheKey
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
+comment|// always wrap a query in a Incremental*Query, to ensure cache key is
+comment|// client-generated (e.g. see CAY-1003 - client and server can be in different
+comment|// timezones, so the key can be messed up)
 comment|// there are some serious pagination optimizations for SelectQuery on the
 comment|// server-side, so use a special wrapper that is itself a subclass of
 comment|// SelectQuery
@@ -426,7 +419,6 @@ argument_list|,
 name|cacheKey
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|// ensure that originating query is wrapped to include the right cache key....
 name|this
