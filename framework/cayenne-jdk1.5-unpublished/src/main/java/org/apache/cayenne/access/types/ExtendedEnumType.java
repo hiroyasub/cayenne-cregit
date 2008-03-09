@@ -177,6 +177,8 @@ specifier|private
 name|Object
 index|[]
 name|values
+init|=
+literal|null
 decl_stmt|;
 comment|// Contains a mapping of database values (Integer or String) and the
 comment|// Enum for that value.  This is to facilitate mapping database values
@@ -210,7 +212,7 @@ name|ExtendedEnumType
 parameter_list|(
 name|Class
 argument_list|<
-name|ExtendedEnumeration
+name|T
 argument_list|>
 name|enumerationClass
 parameter_list|)
@@ -232,12 +234,6 @@ name|this
 operator|.
 name|enumerationClass
 operator|=
-operator|(
-name|Class
-argument_list|<
-name|T
-argument_list|>
-operator|)
 name|enumerationClass
 expr_stmt|;
 try|try
