@@ -649,24 +649,7 @@ operator|instanceof
 name|Enum
 condition|)
 block|{
-name|buffer
-operator|.
-name|append
-argument_list|(
-name|object
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"."
-argument_list|)
-expr_stmt|;
+comment|//            buffer.append(object.getClass().getName()).append(".");
 name|buffer
 operator|.
 name|append

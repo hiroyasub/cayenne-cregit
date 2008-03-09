@@ -17,6 +17,18 @@ name|types
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ExtendedEnumeration
+import|;
+end_import
+
 begin_comment
 comment|/**  * ExtendedTypeFactory for handling JDK 1.5 Enums.  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
@@ -30,7 +42,7 @@ block|{
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"all"
+literal|"unchecked"
 argument_list|)
 specifier|public
 name|ExtendedType
@@ -45,12 +57,29 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|ExtendedEnumeration
+operator|.
+name|class
+operator|.
+name|isAssignableFrom
+argument_list|(
+name|objectClass
+argument_list|)
+condition|)
+return|return
+operator|new
+name|ExtendedEnumType
+argument_list|(
+name|objectClass
+argument_list|)
+return|;
+if|else if
+condition|(
 name|objectClass
 operator|.
 name|isEnum
 argument_list|()
 condition|)
-block|{
 return|return
 operator|new
 name|EnumType
@@ -58,13 +87,10 @@ argument_list|(
 name|objectClass
 argument_list|)
 return|;
-block|}
 else|else
-block|{
 return|return
 literal|null
 return|;
-block|}
 block|}
 block|}
 end_class
