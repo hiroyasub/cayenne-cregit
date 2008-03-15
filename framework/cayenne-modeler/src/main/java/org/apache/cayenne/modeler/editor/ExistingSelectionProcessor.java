@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Callback interface for panes of detail views to process existing   * selections. When tab is selected processExistingSelection() is   * called to reset the state if the tab has any rows selected.  * For example, this is useful when we want to reset the state of the   * "Remove" button if the tab has attributes (relationships) already   * selected.   */
+comment|/**   * Callback interface for panels of detail views to process existing   * selections. When tab is selected processExistingSelection() is   * called to reset the state if the tab has any rows selected.  * For example, this is useful when we want to reset the state of the   * "Remove" button if the tab has attributes (relationships) already   * selected.   */
 end_comment
 
 begin_interface

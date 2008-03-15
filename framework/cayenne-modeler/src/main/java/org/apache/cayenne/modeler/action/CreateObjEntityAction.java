@@ -578,6 +578,13 @@ name|getCurrentDataDomain
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|displayEvent
+operator|.
+name|setMainTabFocus
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|mediator
 operator|.
 name|fireObjEntityDisplayEvent

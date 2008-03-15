@@ -672,7 +672,7 @@ if|if
 condition|(
 name|e
 operator|.
-name|isSearched
+name|isMainTabFocus
 argument_list|()
 operator|&&
 name|entity

@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a display event of an Entity.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Represents a display event of an Entity.  */
 end_comment
 
 begin_class
@@ -88,12 +88,12 @@ specifier|protected
 name|Entity
 name|entity
 decl_stmt|;
-comment|/** True if the event is generated when an entity is beeing searched for */
+comment|/**      * If true, the event causes entity editor to switch to the main entity tab.      */
 specifier|protected
 name|boolean
-name|searched
+name|mainTabFocus
 decl_stmt|;
-comment|/** True if different from current entity */
+comment|/**      * True if different from current entity.      */
 specifier|protected
 name|boolean
 name|entityChanged
@@ -200,7 +200,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**       * Returns entity associated with this event.       */
+comment|/**      * Returns entity associated with this event.      */
 specifier|public
 name|Entity
 name|getEntity
@@ -233,7 +233,6 @@ operator|=
 name|temp
 expr_stmt|;
 block|}
-comment|/** 	 * Returns the unselectAttributes. 	 * @return boolean 	 */
 specifier|public
 name|boolean
 name|isUnselectAttributes
@@ -243,7 +242,6 @@ return|return
 name|unselectAttributes
 return|;
 block|}
-comment|/** 	 * Sets the unselectAttributes. 	 * @param unselectAttributes The unselectAttributes to set 	 */
 specifier|public
 name|void
 name|setUnselectAttributes
@@ -259,7 +257,6 @@ operator|=
 name|unselectAttributes
 expr_stmt|;
 block|}
-comment|/** 	 * Sets the entity. 	 * @param entity The entity to set 	 */
 specifier|public
 name|void
 name|setEntity
@@ -275,10 +272,9 @@ operator|=
 name|entity
 expr_stmt|;
 block|}
-comment|/**      * Sets the searched.      * @param searched      */
 specifier|public
 name|void
-name|setSearched
+name|setMainTabFocus
 parameter_list|(
 name|boolean
 name|searched
@@ -286,18 +282,18 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|searched
+name|mainTabFocus
 operator|=
 name|searched
 expr_stmt|;
 block|}
 specifier|public
 name|boolean
-name|isSearched
+name|isMainTabFocus
 parameter_list|()
 block|{
 return|return
-name|searched
+name|mainTabFocus
 return|;
 block|}
 block|}

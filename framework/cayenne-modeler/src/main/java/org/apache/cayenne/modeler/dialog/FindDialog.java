@@ -963,7 +963,7 @@ argument_list|)
 decl_stmt|;
 name|event
 operator|.
-name|setSearched
+name|setMainTabFocus
 argument_list|(
 literal|true
 argument_list|)
@@ -1175,7 +1175,7 @@ argument_list|)
 decl_stmt|;
 name|event
 operator|.
-name|setSearched
+name|setMainTabFocus
 argument_list|(
 literal|true
 argument_list|)
@@ -1267,7 +1267,7 @@ argument_list|)
 decl_stmt|;
 name|event
 operator|.
-name|setSearched
+name|setMainTabFocus
 argument_list|(
 literal|true
 argument_list|)
@@ -1359,7 +1359,7 @@ argument_list|)
 decl_stmt|;
 name|event
 operator|.
-name|setSearched
+name|setMainTabFocus
 argument_list|(
 literal|true
 argument_list|)
@@ -1452,7 +1452,7 @@ argument_list|)
 decl_stmt|;
 name|event
 operator|.
-name|setSearched
+name|setMainTabFocus
 argument_list|(
 literal|true
 argument_list|)

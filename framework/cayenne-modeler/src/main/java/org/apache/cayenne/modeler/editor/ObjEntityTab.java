@@ -578,7 +578,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Detail view of the ObjEntity properties.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Detail view of the ObjEntity properties.  */
 end_comment
 
 begin_class
@@ -1205,7 +1205,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-comment|//add callback-related stuff
+comment|// add callback-related stuff
 name|builder
 operator|.
 name|append
@@ -1945,7 +1945,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates the view from the current model state. Invoked when a currently displayed      * ObjEntity is changed.      *      * @param entity current entity      */
+comment|/**      * Updates the view from the current model state. Invoked when a currently displayed      * ObjEntity is changed.      *       * @param entity current entity      */
 specifier|private
 name|void
 name|initFromModel
@@ -3226,6 +3226,14 @@ name|initFromModel
 argument_list|(
 name|entity
 argument_list|)
+expr_stmt|;
+name|name
+operator|.
+name|getComponent
+argument_list|()
+operator|.
+name|requestFocusInWindow
+argument_list|()
 expr_stmt|;
 block|}
 block|}
