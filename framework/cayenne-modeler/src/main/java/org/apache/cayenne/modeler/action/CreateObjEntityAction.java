@@ -462,7 +462,7 @@ name|clientPkg
 init|=
 name|dataMap
 operator|.
-name|getDefaultPackage
+name|getDefaultClientPackage
 argument_list|()
 decl_stmt|;
 if|if
