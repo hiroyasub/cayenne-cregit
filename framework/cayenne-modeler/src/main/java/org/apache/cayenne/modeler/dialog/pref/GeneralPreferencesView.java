@@ -35,27 +35,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JLabel
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JPanel
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JTextField
+name|*
 import|;
 end_import
 
@@ -128,6 +108,10 @@ specifier|protected
 name|JLabel
 name|encodingSelectorLabel
 decl_stmt|;
+specifier|protected
+name|JCheckBox
+name|deletePromptBox
+decl_stmt|;
 specifier|public
 name|GeneralPreferencesView
 parameter_list|()
@@ -168,6 +152,16 @@ argument_list|(
 literal|"File Encoding:"
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
+name|deletePromptBox
+operator|=
+operator|new
+name|JCheckBox
+argument_list|(
+literal|"Always delete items without prompt."
+argument_list|)
+expr_stmt|;
 name|FormLayout
 name|layout
 init|=
@@ -176,7 +170,7 @@ name|FormLayout
 argument_list|(
 literal|"right:pref, 3dlu, 30dlu, 3dlu, fill:70dlu"
 argument_list|,
-literal|"p, 3dlu, p, 12dlu, p, 3dlu, fill:40dlu:grow"
+literal|"p, 3dlu, p, 12dlu, p, 40dlu, p, 3dlu, p, 3dlu, fill:40dlu:grow"
 argument_list|)
 decl_stmt|;
 name|CellConstraints
@@ -288,6 +282,42 @@ literal|3
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|builder
+operator|.
+name|addSeparator
+argument_list|(
+literal|"Editor Preferences"
+argument_list|,
+name|cc
+operator|.
+name|xywh
+argument_list|(
+literal|1
+argument_list|,
+literal|7
+argument_list|,
+literal|5
+argument_list|,
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|add
+argument_list|(
+name|deletePromptBox
+argument_list|,
+name|cc
+operator|.
+name|xy
+argument_list|(
+literal|1
+argument_list|,
+literal|9
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|setLayout
@@ -372,6 +402,15 @@ parameter_list|()
 block|{
 return|return
 name|encodingSelector
+return|;
+block|}
+specifier|public
+name|JCheckBox
+name|getDeletePrompt
+parameter_list|()
+block|{
+return|return
+name|deletePromptBox
 return|;
 block|}
 block|}

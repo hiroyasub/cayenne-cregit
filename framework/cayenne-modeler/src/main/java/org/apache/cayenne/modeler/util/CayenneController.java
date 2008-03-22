@@ -446,7 +446,7 @@ return|return
 name|path
 return|;
 block|}
-comment|/**      * Returns preference domaing for this component view.      */
+comment|/**      * Returns preference domain for this component view.      */
 specifier|protected
 name|Domain
 name|getViewDomain

@@ -97,6 +97,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|dialog
+operator|.
+name|ConfirmDeleteDialog
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|editor
 operator|.
 name|CallbackType
@@ -145,7 +161,7 @@ specifier|abstract
 class|class
 name|AbstractRemoveCallbackMethodAction
 extends|extends
-name|CayenneAction
+name|RemoveAction
 block|{
 comment|/**      * Constructor.      *      * @param actionName unique action name      * @param application Application instance      */
 specifier|public
@@ -193,6 +209,12 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
+name|ConfirmDeleteDialog
+name|dialog
+init|=
+name|getConfirmDeleteDialog
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|getProjectController
@@ -204,11 +226,28 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+name|dialog
+operator|.
+name|shouldDelete
+argument_list|(
+literal|"callback method"
+argument_list|,
+name|getProjectController
+argument_list|()
+operator|.
+name|getCurrentCallbackMethod
+argument_list|()
+argument_list|)
+condition|)
+block|{
 name|removeCallbackMethod
 argument_list|(
 name|e
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/**      * base logic for callback method removing      * @param actionEvent event      */

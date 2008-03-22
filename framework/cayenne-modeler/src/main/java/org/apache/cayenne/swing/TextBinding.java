@@ -234,9 +234,16 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|modelUpdateDisabled
+condition|)
+block|{
 name|updateModel
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 argument_list|)
