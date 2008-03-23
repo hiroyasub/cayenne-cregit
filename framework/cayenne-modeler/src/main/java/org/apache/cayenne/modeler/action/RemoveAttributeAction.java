@@ -171,7 +171,7 @@ name|modeler
 operator|.
 name|dialog
 operator|.
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 import|;
 end_import
 
@@ -286,7 +286,7 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 name|dialog
 init|=
 name|getConfirmDeleteDialog

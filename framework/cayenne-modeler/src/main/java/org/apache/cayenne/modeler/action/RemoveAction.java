@@ -373,7 +373,7 @@ name|modeler
 operator|.
 name|dialog
 operator|.
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 import|;
 end_import
 
@@ -538,13 +538,13 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 name|getConfirmDeleteDialog
 parameter_list|()
 block|{
 return|return
 operator|new
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 argument_list|()
 return|;
 block|}
@@ -562,7 +562,7 @@ init|=
 name|getProjectController
 argument_list|()
 decl_stmt|;
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 name|dialog
 init|=
 name|getConfirmDeleteDialog

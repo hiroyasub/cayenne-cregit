@@ -85,7 +85,7 @@ name|modeler
 operator|.
 name|dialog
 operator|.
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 import|;
 end_import
 
@@ -102,22 +102,6 @@ operator|.
 name|event
 operator|.
 name|EntityListenerEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|CayenneAction
 import|;
 end_import
 
@@ -188,7 +172,7 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
-name|ConfirmDeleteDialog
+name|ConfirmRemoveDialog
 name|dialog
 init|=
 name|getConfirmDeleteDialog
