@@ -110,6 +110,10 @@ name|encodingSelectorLabel
 decl_stmt|;
 specifier|protected
 name|JCheckBox
+name|autoLoadProjectBox
+decl_stmt|;
+specifier|protected
+name|JCheckBox
 name|deletePromptBox
 decl_stmt|;
 specifier|public
@@ -154,6 +158,16 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
+name|autoLoadProjectBox
+operator|=
+operator|new
+name|JCheckBox
+argument_list|(
+literal|"Automatically load last opened project."
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
 name|deletePromptBox
 operator|=
 operator|new
@@ -170,7 +184,7 @@ name|FormLayout
 argument_list|(
 literal|"right:pref, 3dlu, 30dlu, 3dlu, fill:70dlu"
 argument_list|,
-literal|"p, 3dlu, p, 12dlu, p, 40dlu, p, 3dlu, p, 3dlu, fill:40dlu:grow"
+literal|"p, 3dlu, p, 12dlu, p, 30dlu, p, 12dlu, p, 3dlu, p, 3dlu, fill:40dlu:grow"
 argument_list|)
 decl_stmt|;
 name|CellConstraints
@@ -284,6 +298,22 @@ argument_list|)
 expr_stmt|;
 name|builder
 operator|.
+name|add
+argument_list|(
+name|autoLoadProjectBox
+argument_list|,
+name|cc
+operator|.
+name|xy
+argument_list|(
+literal|1
+argument_list|,
+literal|7
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
 name|addSeparator
 argument_list|(
 literal|"Editor Preferences"
@@ -294,7 +324,7 @@ name|xywh
 argument_list|(
 literal|1
 argument_list|,
-literal|7
+literal|9
 argument_list|,
 literal|5
 argument_list|,
@@ -314,7 +344,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|9
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -385,6 +415,20 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
+name|autoLoadProjectBox
+operator|.
+name|setEnabled
+argument_list|(
+name|b
+argument_list|)
+expr_stmt|;
+name|deletePromptBox
+operator|.
+name|setEnabled
+argument_list|(
+name|b
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|JTextField
@@ -402,6 +446,15 @@ parameter_list|()
 block|{
 return|return
 name|encodingSelector
+return|;
+block|}
+specifier|public
+name|JCheckBox
+name|getAutoLoadProject
+parameter_list|()
+block|{
+return|return
+name|autoLoadProjectBox
 return|;
 block|}
 specifier|public
