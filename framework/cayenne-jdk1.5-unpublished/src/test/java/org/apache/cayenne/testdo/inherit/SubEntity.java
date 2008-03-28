@@ -31,16 +31,16 @@ name|inherit
 operator|.
 name|auto
 operator|.
-name|_HomeAddress
+name|_SubEntity
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|HomeAddress
+name|SubEntity
 extends|extends
-name|_HomeAddress
+name|_SubEntity
 block|{  }
 end_class
 
