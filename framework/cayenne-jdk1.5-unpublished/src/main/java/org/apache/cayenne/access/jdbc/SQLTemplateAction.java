@@ -350,6 +350,30 @@ specifier|protected
 name|ObjEntity
 name|entity
 decl_stmt|;
+comment|/**      * @deprecated since 3.0 use a      *             {@link #SQLTemplateAction(SQLTemplate, DbAdapter, EntityResolver)}      *             constructor.      */
+specifier|public
+name|SQLTemplateAction
+parameter_list|(
+name|SQLTemplate
+name|query
+parameter_list|,
+name|DbAdapter
+name|adapter
+parameter_list|)
+block|{
+name|this
+operator|.
+name|query
+operator|=
+name|query
+expr_stmt|;
+name|this
+operator|.
+name|adapter
+operator|=
+name|adapter
+expr_stmt|;
+block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|SQLTemplateAction
