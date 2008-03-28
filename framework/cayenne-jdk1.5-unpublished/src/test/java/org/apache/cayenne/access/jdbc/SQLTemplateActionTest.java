@@ -294,6 +294,12 @@ argument_list|(
 name|template
 argument_list|,
 name|adapter
+argument_list|,
+name|getDomain
+argument_list|()
+operator|.
+name|getEntityResolver
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertSame
@@ -2043,6 +2049,12 @@ name|getAccessStackAdapter
 argument_list|()
 operator|.
 name|getAdapter
+argument_list|()
+argument_list|,
+name|getDomain
+argument_list|()
+operator|.
+name|getEntityResolver
 argument_list|()
 argument_list|)
 decl_stmt|;

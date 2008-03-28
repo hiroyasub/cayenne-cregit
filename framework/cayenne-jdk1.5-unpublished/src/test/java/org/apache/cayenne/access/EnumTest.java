@@ -360,7 +360,18 @@ argument_list|(
 name|e
 argument_list|)
 expr_stmt|;
-comment|// assertSame(Enum1.one, e.getEnumAttribute());
+name|assertSame
+argument_list|(
+name|Enum1
+operator|.
+name|one
+argument_list|,
+name|e
+operator|.
+name|getEnumAttribute
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

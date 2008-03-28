@@ -462,6 +462,8 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|entityResolver
 argument_list|)
 return|;
 block|}
@@ -491,6 +493,8 @@ operator|)
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|entityResolver
 argument_list|)
 return|;
 block|}

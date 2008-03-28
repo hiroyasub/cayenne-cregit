@@ -131,6 +131,9 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|getEntityResolver
+argument_list|()
 argument_list|)
 return|;
 block|}
