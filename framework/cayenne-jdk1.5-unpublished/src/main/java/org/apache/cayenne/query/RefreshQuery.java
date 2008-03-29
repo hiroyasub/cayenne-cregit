@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that allows to clear both object and list caches either via refetch (eager  * refresh) or invalidate (lazy refresh).  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A query that allows to explicitly clear both object and list caches either via refetch  * (eager refresh) or invalidate (lazy refresh).   *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -163,7 +163,7 @@ specifier|public
 name|RefreshQuery
 parameter_list|(
 name|String
-index|[]
+modifier|...
 name|groupKeys
 parameter_list|)
 block|{
