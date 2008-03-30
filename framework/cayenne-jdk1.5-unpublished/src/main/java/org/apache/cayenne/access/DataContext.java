@@ -752,10 +752,6 @@ specifier|protected
 name|ObjectStore
 name|objectStore
 decl_stmt|;
-specifier|protected
-name|QueryCache
-name|queryCache
-decl_stmt|;
 comment|// note that entity resolver is initialized from the parent channel the first time it
 comment|// is accessed, and later cached in the context
 specifier|protected
@@ -1073,6 +1069,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns {@link QueryCache} used by this DataContext, creating it on the fly if      * needed. Uses parent DataDomain {@link QueryCacheFactory} to initialize the cache      * for the first time.      *       * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|QueryCache
@@ -1105,23 +1103,6 @@ block|}
 return|return
 name|queryCache
 return|;
-block|}
-comment|/**      * Sets a QueryCache to be used for storing cached query results.      *       * @since 3.0      */
-specifier|public
-specifier|synchronized
-name|void
-name|setQueryCache
-parameter_list|(
-name|QueryCache
-name|queryCache
-parameter_list|)
-block|{
-name|this
-operator|.
-name|queryCache
-operator|=
-name|queryCache
-expr_stmt|;
 block|}
 comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *       * @since 1.2      */
 specifier|protected

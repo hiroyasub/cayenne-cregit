@@ -320,9 +320,10 @@ name|Exception
 block|{
 name|context
 operator|.
-name|queryCache
-operator|=
+name|setQueryCache
+argument_list|(
 literal|null
+argument_list|)
 expr_stmt|;
 name|getDomain
 argument_list|()
