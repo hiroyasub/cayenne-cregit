@@ -120,6 +120,11 @@ literal|2000
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|CacheEntry
+argument_list|>
 name|map
 decl_stmt|;
 specifier|public
@@ -187,9 +192,6 @@ init|)
 block|{
 name|entry
 operator|=
-operator|(
-name|CacheEntry
-operator|)
 name|map
 operator|.
 name|get
@@ -431,6 +433,9 @@ name|this
 init|)
 block|{
 name|Iterator
+argument_list|<
+name|CacheEntry
+argument_list|>
 name|it
 init|=
 name|map
@@ -452,9 +457,6 @@ block|{
 name|CacheEntry
 name|entry
 init|=
-operator|(
-name|CacheEntry
-operator|)
 name|it
 operator|.
 name|next
@@ -550,6 +552,9 @@ class|class
 name|CacheEntry
 block|{
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|list
 decl_stmt|;
 name|String

@@ -49,6 +49,11 @@ name|QueryCache
 name|getQueryCache
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 block|{
@@ -59,7 +64,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Object
+name|String
 name|size
 init|=
 name|properties
@@ -87,9 +92,6 @@ operator|.
 name|parseInt
 argument_list|(
 name|size
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 argument_list|)
 return|;

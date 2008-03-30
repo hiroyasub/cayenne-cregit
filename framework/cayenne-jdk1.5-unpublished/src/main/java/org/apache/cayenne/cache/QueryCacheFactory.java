@@ -39,6 +39,11 @@ name|QueryCache
 name|getQueryCache
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 function_decl|;
