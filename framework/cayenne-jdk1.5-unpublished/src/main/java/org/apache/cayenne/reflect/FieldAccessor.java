@@ -458,16 +458,18 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"'. Property: "
+literal|"'. Property: '"
 operator|+
 name|beanClass
 operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"."
+literal|"'.'"
 operator|+
 name|propertyName
+operator|+
+literal|"'"
 argument_list|)
 throw|;
 block|}

@@ -39,6 +39,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -455,7 +465,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|List
+name|Set
 operator|.
 name|class
 argument_list|)
