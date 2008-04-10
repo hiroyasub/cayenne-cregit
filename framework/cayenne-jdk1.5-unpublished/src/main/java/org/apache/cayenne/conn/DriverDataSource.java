@@ -143,6 +143,9 @@ throws|throws
 name|SQLException
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|driverClass
 decl_stmt|;
 try|try
@@ -226,7 +229,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Creates a new DriverDataSource.      */
+comment|/**      * Creates a new DriverDataSource. If "driverClassName" is null, DriverDataSource will      * consult DriverManager for a registered driver for the given URL. So when specifying      * null, a user must take care of registering the driver. "connectionUrl" on the other      * hand must NOT be null.      */
 specifier|public
 name|DriverDataSource
 parameter_list|(
@@ -251,7 +254,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * Creates a new DriverDataSource. If "driverClassName" is null, DriverDataSource will      * consult DriverManager for a registered driver for the given URL. So when specifying      * null, a user must take care of registering the driver. "connectionUrl" on the other      * hand must NOT be null.      *       * @since 3.0      */
 specifier|public
 name|DriverDataSource
 parameter_list|(
@@ -294,7 +297,7 @@ operator|=
 name|password
 expr_stmt|;
 block|}
-comment|/**      * Creates a new DriverDataSource wrapping a given Driver.      *       * @since 1.1      */
+comment|/**      * Creates a new DriverDataSource wrapping a given Driver. If "driver" is null,      * DriverDataSource will consult DriverManager for a registered driver for the given      * URL. So when specifying null, a user must take care of registering the driver.      * "connectionUrl" on the other hand must NOT be null.      *       * @since 1.1      */
 specifier|public
 name|DriverDataSource
 parameter_list|(
