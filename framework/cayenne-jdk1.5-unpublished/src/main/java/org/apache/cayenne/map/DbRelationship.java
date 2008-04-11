@@ -198,7 +198,7 @@ name|DbRelationship
 extends|extends
 name|Relationship
 block|{
-comment|// DbRelationship events
+comment|/**      * @deprecated since 3.0 - unused      */
 specifier|public
 specifier|static
 specifier|final
@@ -936,25 +936,12 @@ name|boolean
 name|toDependentPK
 parameter_list|)
 block|{
-if|if
-condition|(
-name|this
-operator|.
-name|toDependentPK
-operator|!=
-name|toDependentPK
-condition|)
-block|{
 name|this
 operator|.
 name|toDependentPK
 operator|=
 name|toDependentPK
 expr_stmt|;
-name|firePropertyDidChange
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 comment|/**      * @since 1.1      */
 specifier|public
@@ -1637,28 +1624,14 @@ name|boolean
 name|toMany
 parameter_list|)
 block|{
-if|if
-condition|(
-name|this
-operator|.
-name|toMany
-operator|!=
-name|toMany
-condition|)
-block|{
 name|this
 operator|.
 name|toMany
 operator|=
 name|toMany
 expr_stmt|;
-name|this
-operator|.
-name|firePropertyDidChange
-argument_list|()
-expr_stmt|;
 block|}
-block|}
+comment|/**      * @deprecated since 3.0 - unused.      */
 specifier|protected
 name|void
 name|firePropertyDidChange
