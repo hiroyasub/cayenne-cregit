@@ -55,20 +55,6 @@ name|ResourceLocator
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|NotImplementedException
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -106,7 +92,7 @@ parameter_list|()
 block|{
 throw|throw
 operator|new
-name|NotImplementedException
+name|UnsupportedOperationException
 argument_list|(
 literal|"this is an in-memory mockup...'getDomainConfiguration' is not implemented."
 argument_list|)
