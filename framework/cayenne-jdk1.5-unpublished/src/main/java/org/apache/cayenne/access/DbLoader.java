@@ -395,20 +395,6 @@ name|LogFactory
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|objectstyle
-operator|.
-name|ashwood
-operator|.
-name|dbutil
-operator|.
-name|Table
-import|;
-end_import
-
 begin_comment
 comment|/**  * Utility class that does reverse engineering of the database. It can create DataMaps  * using database meta data obtained via JDBC driver.  *   * @author Michael Shengaout  * @author Andrus Adamchik  */
 end_comment
@@ -936,16 +922,16 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Returns all table names for given combination of the criteria.      *       * @param catalog The name of the catalog, may be null.      * @param schemaPattern The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
+comment|/**      * Returns all tables for given combination of the criteria. Tables returned as      * DbEntities without any attributes or relationships.      *       * @param catalogPattern The name of the catalog, may be null.      * @param schemaPattern The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
 specifier|public
 name|List
 argument_list|<
-name|Table
+name|DbEntity
 argument_list|>
 name|getTables
 parameter_list|(
 name|String
-name|catalog
+name|catalogPattern
 parameter_list|,
 name|String
 name|schemaPattern
@@ -962,14 +948,14 @@ name|SQLException
 block|{
 name|List
 argument_list|<
-name|Table
+name|DbEntity
 argument_list|>
 name|tables
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|Table
+name|DbEntity
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -987,7 +973,7 @@ name|debug
 argument_list|(
 literal|"Read tables: catalog="
 operator|+
-name|catalog
+name|catalogPattern
 operator|+
 literal|", schema="
 operator|+
@@ -1039,7 +1025,7 @@ argument_list|()
 operator|.
 name|getTables
 argument_list|(
-name|catalog
+name|catalogPattern
 argument_list|,
 name|schemaPattern
 argument_list|,
@@ -1059,7 +1045,7 @@ argument_list|()
 condition|)
 block|{
 name|String
-name|cat
+name|catalog
 init|=
 name|rs
 operator|.
@@ -1110,24 +1096,34 @@ condition|)
 block|{
 continue|continue;
 block|}
-name|Table
-name|info
+name|DbEntity
+name|table
 init|=
 operator|new
-name|Table
+name|DbEntity
 argument_list|(
-name|cat
-argument_list|,
-name|schema
-argument_list|,
 name|name
 argument_list|)
 decl_stmt|;
+name|table
+operator|.
+name|setCatalog
+argument_list|(
+name|catalog
+argument_list|)
+expr_stmt|;
+name|table
+operator|.
+name|setSchema
+argument_list|(
+name|schema
+argument_list|)
+expr_stmt|;
 name|tables
 operator|.
 name|add
 argument_list|(
-name|info
+name|table
 argument_list|)
 expr_stmt|;
 block|}
@@ -1156,7 +1152,7 @@ name|List
 argument_list|<
 name|?
 extends|extends
-name|Table
+name|DbEntity
 argument_list|>
 name|tables
 parameter_list|)
@@ -1176,9 +1172,8 @@ argument_list|()
 expr_stmt|;
 for|for
 control|(
-specifier|final
-name|Table
-name|table
+name|DbEntity
+name|dbEntity
 range|:
 name|tables
 control|)
@@ -1192,7 +1187,7 @@ name|map
 operator|.
 name|getDbEntity
 argument_list|(
-name|table
+name|dbEntity
 operator|.
 name|getName
 argument_list|()
@@ -1304,43 +1299,6 @@ literal|false
 return|;
 block|}
 block|}
-name|DbEntity
-name|dbEntity
-init|=
-operator|new
-name|DbEntity
-argument_list|()
-decl_stmt|;
-name|dbEntity
-operator|.
-name|setName
-argument_list|(
-name|table
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|dbEntity
-operator|.
-name|setSchema
-argument_list|(
-name|table
-operator|.
-name|getSchema
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|dbEntity
-operator|.
-name|setCatalog
-argument_list|(
-name|table
-operator|.
-name|getCatalog
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|// Create DbAttributes from column information --
 name|ResultSet
 name|rs
@@ -1350,17 +1308,17 @@ argument_list|()
 operator|.
 name|getColumns
 argument_list|(
-name|table
+name|dbEntity
 operator|.
 name|getCatalog
 argument_list|()
 argument_list|,
-name|table
+name|dbEntity
 operator|.
 name|getSchema
 argument_list|()
 argument_list|,
-name|table
+name|dbEntity
 operator|.
 name|getName
 argument_list|()
@@ -1581,15 +1539,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// delegate might have thrown this entity out... so check if it is still
-comment|// around
-comment|// before continuing processing
+comment|// around  before continuing processing
 if|if
 condition|(
 name|map
 operator|.
 name|getDbEntity
 argument_list|(
-name|table
+name|dbEntity
 operator|.
 name|getName
 argument_list|()

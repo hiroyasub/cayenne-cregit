@@ -1587,7 +1587,7 @@ condition|)
 block|{
 name|attr
 operator|.
-name|setDbAttributeName
+name|setDbAttributePath
 argument_list|(
 name|newName
 argument_list|)
