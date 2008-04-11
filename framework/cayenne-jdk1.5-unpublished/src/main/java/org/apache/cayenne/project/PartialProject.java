@@ -101,20 +101,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|Validate
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|cayenne
 operator|.
 name|conf
@@ -194,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PartialProject is a "lightweight" project implementation. It can work with  * projects even when some of the resources are missing. It never instantiates  * Cayenne stack objects, using other, lightweight, data structures instead.  *   * @author Andrus Adamchik  */
+comment|/**  * PartialProject is a "lightweight" project implementation. It can work with projects  * even when some of the resources are missing. It never instantiates Cayenne stack  * objects, using other, lightweight, data structures instead.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -230,7 +216,7 @@ name|String
 argument_list|>
 name|dataViewLocations
 decl_stmt|;
-comment|/**      * Constructor PartialProjectHandler.      * @param projectFile      */
+comment|/**      * Constructor PartialProjectHandler.      *       * @param projectFile      */
 specifier|public
 name|PartialProject
 parameter_list|(
@@ -263,7 +249,7 @@ literal|"'PartialProject' does not support upgrades."
 argument_list|)
 throw|;
 block|}
-comment|/**      * Loads internal project and rewrites its nodes according to the list of      * DataNodeConfigInfo objects. Only main project file gets updated, the rest      * are assumed to be in place.      */
+comment|/**      * Loads internal project and rewrites its nodes according to the list of      * DataNodeConfigInfo objects. Only main project file gets updated, the rest are      * assumed to be in place.      */
 specifier|public
 name|void
 name|updateNodes
@@ -1457,20 +1443,36 @@ name|String
 name|dataViewLocation
 parameter_list|)
 block|{
-name|Validate
-operator|.
-name|notNull
-argument_list|(
+if|if
+condition|(
 name|dataViewName
-argument_list|)
-expr_stmt|;
-name|Validate
-operator|.
-name|notNull
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
 argument_list|(
-name|dataViewLocation
+literal|"Null dataViewName"
 argument_list|)
-expr_stmt|;
+throw|;
+block|}
+if|if
+condition|(
+name|dataViewLocation
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null dataViewLocation"
+argument_list|)
+throw|;
+block|}
 if|if
 condition|(
 name|dataViewLocations
