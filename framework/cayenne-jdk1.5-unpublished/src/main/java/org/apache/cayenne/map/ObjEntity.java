@@ -203,39 +203,7 @@ name|map
 operator|.
 name|event
 operator|.
-name|ObjAttributeListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
 name|ObjEntityListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|ObjRelationshipListener
 import|;
 end_import
 
@@ -323,10 +291,6 @@ extends|extends
 name|Entity
 implements|implements
 name|ObjEntityListener
-implements|,
-name|ObjAttributeListener
-implements|,
-name|ObjRelationshipListener
 block|{
 specifier|final
 specifier|public
@@ -3363,7 +3327,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Attribute property changed. */
+comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
 specifier|public
 name|void
 name|objAttributeChanged
@@ -3374,7 +3338,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** New attribute has been created/added. */
+comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
 specifier|public
 name|void
 name|objAttributeAdded
@@ -3385,7 +3349,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Attribute has been removed. */
+comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
 specifier|public
 name|void
 name|objAttributeRemoved
@@ -3396,7 +3360,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship property changed. */
+comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
 specifier|public
 name|void
 name|objRelationshipChanged
@@ -3407,7 +3371,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship has been created/added. */
+comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
 specifier|public
 name|void
 name|objRelationshipAdded
@@ -3418,7 +3382,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship has been removed. */
+comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
 specifier|public
 name|void
 name|objRelationshipRemoved

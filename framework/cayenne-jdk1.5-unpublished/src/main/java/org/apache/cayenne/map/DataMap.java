@@ -143,39 +143,7 @@ name|map
 operator|.
 name|event
 operator|.
-name|DbAttributeListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
 name|DbEntityListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|DbRelationshipListener
 import|;
 end_import
 
@@ -207,39 +175,7 @@ name|map
 operator|.
 name|event
 operator|.
-name|ObjAttributeListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
 name|ObjEntityListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|ObjRelationshipListener
 import|;
 end_import
 
@@ -374,7 +310,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores a collection of related mapping objects that describe database and object layers  * of an application. DataMap contains DbEntities mapping database tables, ObjEntities -  * mapping persistent Java classes, Procedures - mapping database stored procedures.  *   * @author Michael Shengaout  * @author Andrus Adamchik  * @author Craig Miskell  */
+comment|/**  * Stores a collection of related mapping objects that describe database and object layers  * of an application. DataMap contains DbEntities mapping database tables, ObjEntities -  * mapping persistent Java classes, Procedures - mapping database stored procedures.  */
 end_comment
 
 begin_class
@@ -390,15 +326,7 @@ name|MappingNamespace
 implements|,
 name|DbEntityListener
 implements|,
-name|DbAttributeListener
-implements|,
-name|DbRelationshipListener
-implements|,
 name|ObjEntityListener
-implements|,
-name|ObjAttributeListener
-implements|,
-name|ObjRelationshipListener
 block|{
 comment|/**      * Defines whether a DataMap supports client entities.      *       * @since 1.2      */
 specifier|public
@@ -3882,7 +3810,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Attribute property changed. */
+comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
 specifier|public
 name|void
 name|dbAttributeChanged
@@ -3920,7 +3848,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** New attribute has been created/added. */
+comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
 specifier|public
 name|void
 name|dbAttributeAdded
@@ -3931,7 +3859,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Attribute has been removed. */
+comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
 specifier|public
 name|void
 name|dbAttributeRemoved
@@ -3942,7 +3870,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship property changed. */
+comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
 specifier|public
 name|void
 name|dbRelationshipChanged
@@ -3980,7 +3908,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** Relationship has been created/added. */
+comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -3991,7 +3919,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship has been removed. */
+comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
 specifier|public
 name|void
 name|dbRelationshipRemoved
@@ -4125,7 +4053,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Attribute property changed. */
+comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
 specifier|public
 name|void
 name|objAttributeChanged
@@ -4136,7 +4064,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** New attribute has been created/added. */
+comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
 specifier|public
 name|void
 name|objAttributeAdded
@@ -4147,7 +4075,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Attribute has been removed. */
+comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
 specifier|public
 name|void
 name|objAttributeRemoved
@@ -4158,7 +4086,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship property changed. */
+comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
 specifier|public
 name|void
 name|objRelationshipChanged
@@ -4169,7 +4097,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship has been created/added. */
+comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
 specifier|public
 name|void
 name|objRelationshipAdded
@@ -4180,7 +4108,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/** Relationship has been removed. */
+comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
 specifier|public
 name|void
 name|objRelationshipRemoved
