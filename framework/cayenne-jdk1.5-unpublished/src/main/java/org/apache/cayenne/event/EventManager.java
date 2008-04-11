@@ -166,7 +166,7 @@ name|DispatchThread
 argument_list|>
 name|dispatchThreads
 decl_stmt|;
-comment|/**      * Returns the shared EventManager. It is created on demand on the first call to this      * method. Cayenne internally doesn't use default EventManager. Instead Configuration      * EventManager is propagated to DataDomains and DataContexts.      *       * @return EventManager the shared EventManager instance      */
+comment|/**      * Returns the shared EventManager. It is created on demand on the first call to this      * method. Cayenne internally doesn't use default EventManager. Instead Configuration      * EventManager is propagated to DataDomains and DataContexts.      *       * @return EventManager the shared EventManager instance      * @deprecated since 3.0 users should create their own instances of EventManager using      *             constructor and share them as appropriate for their target use.      */
 specifier|public
 specifier|static
 name|EventManager
