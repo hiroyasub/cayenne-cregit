@@ -182,6 +182,7 @@ init|=
 literal|""
 decl_stmt|;
 specifier|protected
+specifier|final
 name|String
 name|passwordSourceModel
 init|=
