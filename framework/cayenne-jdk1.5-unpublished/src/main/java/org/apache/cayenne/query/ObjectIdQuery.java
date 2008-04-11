@@ -21,20 +21,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|StringUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
@@ -138,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that matches zero or one object or data row corresponding to the ObjectId. Used  * internally by Cayenne to lookup objects by id. Notice that cache policies of  * ObjectIdQuery are different from generic {@link QueryMetadata} cache policies.  * ObjectIdQuery is special - it is the only query that can be done against Cayenne main  * cache, thus cache handling is singnificantly different from all other of the queries.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A query that matches zero or one object or data row corresponding to the ObjectId. Used  * internally by Cayenne to lookup objects by id. Notice that cache policies of  * ObjectIdQuery are different from generic {@link QueryMetadata} cache policies.  * ObjectIdQuery is special - it is the only query that can be done against Cayenne main  * cache, thus cache handling is significantly different from all other of the queries.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -522,17 +508,15 @@ name|toString
 parameter_list|()
 block|{
 return|return
-name|StringUtils
+name|Util
 operator|.
-name|substringAfterLast
+name|stripPackageName
 argument_list|(
 name|getClass
 argument_list|()
 operator|.
 name|getName
 argument_list|()
-argument_list|,
-literal|"."
 argument_list|)
 operator|+
 literal|":"
