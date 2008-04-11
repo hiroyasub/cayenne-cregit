@@ -1717,6 +1717,9 @@ comment|/**      * Returns a collection of DbRelationships that use this attribu
 specifier|public
 specifier|static
 name|Collection
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|getRelationshipsUsingAttributeAsSource
 parameter_list|(
 name|DbAttribute
@@ -1820,6 +1823,9 @@ comment|/**      * Returns a collection of DbRelationships that use this attribu
 specifier|public
 specifier|static
 name|Collection
+argument_list|<
+name|DbRelationship
+argument_list|>
 name|getRelationshipsUsingAttributeAsTarget
 parameter_list|(
 name|DbAttribute
