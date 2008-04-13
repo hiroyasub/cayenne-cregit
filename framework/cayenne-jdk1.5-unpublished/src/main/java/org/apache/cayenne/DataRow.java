@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|Util
+name|ToStringBuilder
 import|;
 end_import
 
@@ -119,13 +119,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|builder
-operator|.
-name|ToStringBuilder
+name|Util
 import|;
 end_import
 

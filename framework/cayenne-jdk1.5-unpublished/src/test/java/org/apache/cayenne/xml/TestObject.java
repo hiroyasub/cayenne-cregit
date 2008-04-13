@@ -41,13 +41,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
-operator|.
-name|builder
-operator|.
-name|ToStringBuilder
+name|CayenneDataObject
 import|;
 end_import
 
@@ -59,7 +55,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneDataObject
+name|util
+operator|.
+name|ToStringBuilder
 import|;
 end_import
 
@@ -104,10 +102,16 @@ name|open
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|TestObject
+argument_list|>
 name|children
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|TestObject
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|protected
@@ -263,6 +267,9 @@ name|void
 name|setChildren
 parameter_list|(
 name|List
+argument_list|<
+name|TestObject
+argument_list|>
 name|children
 parameter_list|)
 block|{
@@ -307,6 +314,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|TestObject
+argument_list|>
 name|getChildren
 parameter_list|()
 block|{
@@ -591,6 +601,9 @@ name|children
 operator|=
 operator|(
 name|List
+argument_list|<
+name|TestObject
+argument_list|>
 operator|)
 name|decoder
 operator|.

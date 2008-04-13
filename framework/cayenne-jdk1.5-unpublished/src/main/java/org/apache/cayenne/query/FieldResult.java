@@ -21,11 +21,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
-operator|.
-name|builder
+name|util
 operator|.
 name|ToStringBuilder
 import|;

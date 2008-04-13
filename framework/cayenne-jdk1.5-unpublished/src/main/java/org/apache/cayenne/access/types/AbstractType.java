@@ -53,13 +53,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|map
 operator|.
-name|builder
-operator|.
-name|ToStringBuilder
+name|DbAttribute
 import|;
 end_import
 
@@ -71,9 +69,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|util
 operator|.
-name|DbAttribute
+name|ToStringBuilder
 import|;
 end_import
 
