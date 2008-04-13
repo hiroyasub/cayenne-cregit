@@ -103,7 +103,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|Util
+name|EqualsBuilder
 import|;
 end_import
 
@@ -113,13 +113,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|builder
-operator|.
-name|EqualsBuilder
+name|Util
 import|;
 end_import
 
