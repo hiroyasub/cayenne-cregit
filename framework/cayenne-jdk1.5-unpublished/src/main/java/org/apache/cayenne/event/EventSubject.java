@@ -41,13 +41,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|util
 operator|.
-name|map
-operator|.
-name|ReferenceMap
+name|HashCodeBuilder
 import|;
 end_import
 
@@ -59,11 +57,11 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|lang
+name|collections
 operator|.
-name|builder
+name|map
 operator|.
-name|HashCodeBuilder
+name|ReferenceMap
 import|;
 end_import
 

@@ -117,7 +117,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|Util
+name|HashCodeBuilder
 import|;
 end_import
 
@@ -127,13 +127,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|builder
-operator|.
-name|HashCodeBuilder
+name|Util
 import|;
 end_import
 

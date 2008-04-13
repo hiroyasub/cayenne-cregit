@@ -141,7 +141,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|ToStringBuilder
+name|HashCodeBuilder
 import|;
 end_import
 
@@ -151,13 +151,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|builder
-operator|.
-name|HashCodeBuilder
+name|ToStringBuilder
 import|;
 end_import
 
@@ -411,7 +409,8 @@ name|Collections
 operator|.
 name|EMPTY_MAP
 decl_stmt|;
-comment|// must use "name", not the sessionId as an external subject for the event bridge
+comment|// must use "name", not the sessionId as an external subject for the event
+comment|// bridge
 return|return
 name|factory
 operator|.
