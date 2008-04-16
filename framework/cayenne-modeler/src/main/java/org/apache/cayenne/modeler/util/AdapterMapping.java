@@ -473,7 +473,7 @@ name|jdbcDriverToAdapterMap
 operator|.
 name|put
 argument_list|(
-literal|"com.microsoft.jdbc.sqlserver.SQLServerDriver"
+literal|"com.microsoft.sqlserver.jdbc.SQLServerDriver"
 argument_list|,
 name|SQLServerAdapter
 operator|.
