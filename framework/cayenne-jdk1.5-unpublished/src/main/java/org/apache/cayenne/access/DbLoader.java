@@ -702,6 +702,19 @@ return|return
 name|adapter
 return|;
 block|}
+comment|/**      * A method that return true if the given table name should be included. The default      * implemntation include all tables.      */
+specifier|public
+name|boolean
+name|includeTableName
+parameter_list|(
+name|String
+name|tableName
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
 comment|/**      * Retrieves catalogues for the database associated with this DbLoader.      *       * @return List with the catalog names, empty Array if none found.      */
 specifier|public
 name|List
@@ -1091,6 +1104,17 @@ operator|.
 name|startsWith
 argument_list|(
 literal|"BIN$"
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
+if|if
+condition|(
+operator|!
+name|includeTableName
+argument_list|(
+name|name
 argument_list|)
 condition|)
 block|{
@@ -2166,6 +2190,17 @@ argument_list|(
 literal|"FK_NAME"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|includeTableName
+argument_list|(
+name|fkEntityName
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
 name|fkEntity
 operator|=
 name|map
