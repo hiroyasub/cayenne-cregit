@@ -1137,6 +1137,21 @@ return|return
 name|cacheStrategy
 return|;
 block|}
+comment|/**      * @since 3.0      */
+name|void
+name|setCacheStrategy
+parameter_list|(
+name|QueryCacheStrategy
+name|cacheStrategy
+parameter_list|)
+block|{
+name|this
+operator|.
+name|cacheStrategy
+operator|=
+name|cacheStrategy
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|encodeAsXML
@@ -1548,6 +1563,7 @@ operator|=
 name|prefetchTree
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
 specifier|public
 name|String
 name|getCachePolicy
@@ -1557,6 +1573,7 @@ return|return
 name|cachePolicy
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 {@link #setCacheStrategy(QueryCacheStrategy)} replaces this method.      */
 name|void
 name|setCachePolicy
 parameter_list|(

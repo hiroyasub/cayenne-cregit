@@ -757,6 +757,7 @@ return|return
 name|query
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
 specifier|public
 name|String
 name|getCachePolicy
@@ -769,6 +770,7 @@ name|getCachePolicy
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 {@link #setCacheStrategy(QueryCacheStrategy)} replaces this      *             method.      */
 specifier|public
 name|void
 name|setCachePolicy
@@ -777,13 +779,41 @@ name|String
 name|policy
 parameter_list|)
 block|{
-name|this
-operator|.
 name|metaData
 operator|.
 name|setCachePolicy
 argument_list|(
 name|policy
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
+parameter_list|()
+block|{
+return|return
+name|metaData
+operator|.
+name|getCacheStrategy
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setCacheStrategy
+parameter_list|(
+name|QueryCacheStrategy
+name|strategy
+parameter_list|)
+block|{
+name|metaData
+operator|.
+name|setCacheStrategy
+argument_list|(
+name|strategy
 argument_list|)
 expr_stmt|;
 block|}

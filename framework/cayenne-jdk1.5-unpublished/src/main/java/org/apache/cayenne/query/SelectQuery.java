@@ -241,7 +241,7 @@ name|boolean
 name|distinct
 decl_stmt|;
 name|SelectQueryMetadata
-name|selectInfo
+name|metaData
 init|=
 operator|new
 name|SelectQueryMetadata
@@ -446,7 +446,7 @@ name|EntityResolver
 name|resolver
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|resolve
 argument_list|(
@@ -470,7 +470,7 @@ init|=
 operator|new
 name|QueryMetadataWrapper
 argument_list|(
-name|selectInfo
+name|metaData
 argument_list|)
 decl_stmt|;
 name|wrapper
@@ -493,7 +493,7 @@ block|}
 else|else
 block|{
 return|return
-name|selectInfo
+name|metaData
 return|;
 block|}
 block|}
@@ -640,7 +640,7 @@ argument_list|)
 else|:
 name|DISTINCT_DEFAULT
 expr_stmt|;
-name|selectInfo
+name|metaData
 operator|.
 name|initWithProperties
 argument_list|(
@@ -892,7 +892,7 @@ name|distinct
 argument_list|)
 expr_stmt|;
 block|}
-name|selectInfo
+name|metaData
 operator|.
 name|encodeAsXML
 argument_list|(
@@ -1033,13 +1033,13 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|selectInfo
+name|metaData
 operator|.
 name|copyFromInfo
 argument_list|(
 name|this
 operator|.
-name|selectInfo
+name|metaData
 argument_list|)
 expr_stmt|;
 name|query
@@ -1512,7 +1512,7 @@ name|getPrefetchTree
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|getPrefetchTree
 argument_list|()
@@ -1527,7 +1527,7 @@ name|PrefetchTreeNode
 name|prefetchTree
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|setPrefetchTree
 argument_list|(
@@ -1545,7 +1545,7 @@ name|prefetchPath
 parameter_list|)
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|addPrefetch
 argument_list|(
@@ -1563,7 +1563,7 @@ name|void
 name|clearPrefetches
 parameter_list|()
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|clearPrefetches
 argument_list|()
@@ -1578,7 +1578,7 @@ name|String
 name|prefetchPath
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|removePrefetch
 argument_list|(
@@ -1598,7 +1598,7 @@ operator|.
 name|isFetchingCustomAttributes
 argument_list|()
 operator|||
-name|selectInfo
+name|metaData
 operator|.
 name|isFetchingDataRows
 argument_list|()
@@ -1613,7 +1613,7 @@ name|boolean
 name|flag
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|setFetchingDataRows
 argument_list|(
@@ -1628,7 +1628,7 @@ name|isRefreshingObjects
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|isRefreshingObjects
 argument_list|()
@@ -1643,7 +1643,7 @@ name|boolean
 name|flag
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|setRefreshingObjects
 argument_list|(
@@ -1651,20 +1651,20 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/**      * @since 1.1      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
 specifier|public
 name|String
 name|getCachePolicy
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|getCachePolicy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/**      * @since 1.1      * @deprecated since 3.0 {@link #setCacheStrategy(QueryCacheStrategy)} replaces this      *             method.      */
 specifier|public
 name|void
 name|setCachePolicy
@@ -1673,13 +1673,41 @@ name|String
 name|policy
 parameter_list|)
 block|{
-name|this
-operator|.
-name|selectInfo
+name|metaData
 operator|.
 name|setCachePolicy
 argument_list|(
 name|policy
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
+parameter_list|()
+block|{
+return|return
+name|metaData
+operator|.
+name|getCacheStrategy
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setCacheStrategy
+parameter_list|(
+name|QueryCacheStrategy
+name|strategy
+parameter_list|)
+block|{
+name|metaData
+operator|.
+name|setCacheStrategy
+argument_list|(
+name|strategy
 argument_list|)
 expr_stmt|;
 block|}
@@ -1691,7 +1719,7 @@ name|getCacheGroups
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|getCacheGroups
 argument_list|()
@@ -1709,7 +1737,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|selectInfo
+name|metaData
 operator|.
 name|setCacheGroups
 argument_list|(
@@ -1724,7 +1752,7 @@ name|getFetchLimit
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|getFetchLimit
 argument_list|()
@@ -1741,7 +1769,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|selectInfo
+name|metaData
 operator|.
 name|setFetchLimit
 argument_list|(
@@ -1756,7 +1784,7 @@ name|getPageSize
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|getPageSize
 argument_list|()
@@ -1771,7 +1799,7 @@ name|int
 name|pageSize
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|setPageSize
 argument_list|(
@@ -1786,7 +1814,7 @@ name|isResolvingInherited
 parameter_list|()
 block|{
 return|return
-name|selectInfo
+name|metaData
 operator|.
 name|isResolvingInherited
 argument_list|()
@@ -1801,7 +1829,7 @@ name|boolean
 name|b
 parameter_list|)
 block|{
-name|selectInfo
+name|metaData
 operator|.
 name|setResolvingInherited
 argument_list|(
