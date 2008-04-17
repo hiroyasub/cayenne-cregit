@@ -271,6 +271,14 @@ name|QueryMetadata
 operator|.
 name|CACHE_POLICY_DEFAULT
 decl_stmt|;
+name|QueryCacheStrategy
+name|cacheStrategy
+init|=
+name|QueryCacheStrategy
+operator|.
+name|getDefaultStrategy
+argument_list|()
+decl_stmt|;
 name|PrefetchTreeNode
 name|prefetchTree
 decl_stmt|;
@@ -1071,6 +1079,16 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
+parameter_list|()
+block|{
+return|return
+name|cacheStrategy
+return|;
 block|}
 specifier|public
 name|void

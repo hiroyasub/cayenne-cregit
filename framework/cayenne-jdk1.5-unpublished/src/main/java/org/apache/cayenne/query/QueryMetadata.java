@@ -94,7 +94,7 @@ specifier|public
 interface|interface
 name|QueryMetadata
 block|{
-comment|/**      * A cache policy that disables caching of query results.      */
+comment|/**      * A cache policy that disables caching of query results.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
 specifier|public
 specifier|static
 specifier|final
@@ -103,7 +103,7 @@ name|NO_CACHE
 init|=
 literal|"nocache"
 decl_stmt|;
-comment|/**      * A cache policy ruling that query results shall be cached separately for each      * DataContext.      */
+comment|/**      * A cache policy ruling that query results shall be cached separately for each      * DataContext.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
 specifier|public
 specifier|static
 specifier|final
@@ -112,7 +112,7 @@ name|LOCAL_CACHE
 init|=
 literal|"localcache"
 decl_stmt|;
-comment|/**      * Same as {@link #LOCAL_CACHE}, only forcing any current cache expiration.      */
+comment|/**      * Same as {@link #LOCAL_CACHE}, only forcing any current cache expiration.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
 specifier|public
 specifier|static
 specifier|final
@@ -121,7 +121,7 @@ name|LOCAL_CACHE_REFRESH
 init|=
 literal|"localcache_refresh"
 decl_stmt|;
-comment|/**      * A cache policy ruling that query results shall be stored in a shared cache      * accessible by all DataContexts.      */
+comment|/**      * A cache policy ruling that query results shall be stored in a shared cache      * accessible by all DataContexts.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
 specifier|public
 specifier|static
 specifier|final
@@ -130,7 +130,7 @@ name|SHARED_CACHE
 init|=
 literal|"sharedcache"
 decl_stmt|;
-comment|/**      * Same as {@link #SHARED_CACHE}, only forcing any current cache expiration.      */
+comment|/**      * Same as {@link #SHARED_CACHE}, only forcing any current cache expiration.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
 specifier|public
 specifier|static
 specifier|final
@@ -223,6 +223,7 @@ name|RESOLVING_INHERITED_DEFAULT
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * @deprecated since 3.0 use {@value #CACHE_STRATEGY_PROPERTY}      */
 specifier|public
 specifier|static
 specifier|final
@@ -236,10 +237,20 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|CACHE_STRATEGY_PROPERTY
+init|=
+literal|"cayenne.GenericSelectQuery.cacheStrategy"
+decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|CACHE_GROUPS_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.cacheGroups"
 decl_stmt|;
+comment|/**      * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
 specifier|public
 specifier|static
 specifier|final
@@ -273,9 +284,14 @@ name|DataMap
 name|getDataMap
 parameter_list|()
 function_decl|;
-comment|/**      * Returns query cache policy, which can be one of {@link #NO_CACHE},      * {@link #LOCAL_CACHE}, or {@link #SHARED_CACHE}. NO_CACHE is generally a default      * policy.      */
+comment|/**      * Returns query cache policy, which can be one of {@link #NO_CACHE},      * {@link #LOCAL_CACHE}, or {@link #SHARED_CACHE}. NO_CACHE is generally a default      * policy.      *       * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
 name|String
 name|getCachePolicy
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a caching strategy for this query.      * @since 3.0      */
+name|QueryCacheStrategy
+name|getCacheStrategy
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a String that uniquely identifies this query for the purposes of result      * caching. If null is returned, no caching is performed.      */

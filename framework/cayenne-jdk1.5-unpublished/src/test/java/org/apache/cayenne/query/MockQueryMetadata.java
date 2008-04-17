@@ -137,9 +137,19 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|String
 name|getCachePolicy
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
 parameter_list|()
 block|{
 return|return

@@ -421,6 +421,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|QueryCacheStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|QueryMetadata
 import|;
 end_import
@@ -3956,6 +3970,7 @@ argument_list|()
 throw|;
 block|}
 block|}
+comment|/**      * @deprecated since 3.0 as this inner class is used to provide backwards      *             compatibility for some deprecated methods.      */
 specifier|final
 class|class
 name|CacheQueryMetadata
@@ -4019,6 +4034,15 @@ block|}
 specifier|public
 name|String
 name|getCachePolicy
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
 parameter_list|()
 block|{
 return|return

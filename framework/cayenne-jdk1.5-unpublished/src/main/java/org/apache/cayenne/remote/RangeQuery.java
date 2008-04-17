@@ -123,6 +123,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|QueryCacheStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|QueryMetadata
 import|;
 end_import
@@ -375,6 +389,7 @@ return|return
 literal|0
 return|;
 block|}
+comment|/**              * @deprecated since 3.0 in favor of 'getCacheStrategy'.              */
 specifier|public
 name|String
 name|getCachePolicy
@@ -384,6 +399,19 @@ return|return
 name|QueryMetadata
 operator|.
 name|NO_CACHE
+return|;
+block|}
+comment|/**              * @since 3.0              */
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
+parameter_list|()
+block|{
+return|return
+name|QueryCacheStrategy
+operator|.
+name|getDefaultStrategy
+argument_list|()
 return|;
 block|}
 specifier|public

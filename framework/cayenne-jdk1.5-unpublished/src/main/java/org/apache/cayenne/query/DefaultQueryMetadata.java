@@ -182,6 +182,19 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|QueryCacheStrategy
+name|getCacheStrategy
+parameter_list|()
+block|{
+return|return
+name|QueryCacheStrategy
+operator|.
+name|getDefaultStrategy
+argument_list|()
+return|;
+block|}
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -237,6 +250,7 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
 specifier|public
 name|String
 name|getCachePolicy
