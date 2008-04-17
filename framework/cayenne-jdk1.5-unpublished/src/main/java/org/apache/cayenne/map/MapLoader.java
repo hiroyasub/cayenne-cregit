@@ -222,7 +222,7 @@ name|DefaultHandler
 block|{
 comment|// TODO: andrus, 7/17/2006 - these variables, and project upgrade logic should be
 comment|// refactored out of the MapLoader. In fact we should either modify raw XML during the
-comment|// upgrade, or implement some consistent upgrade API across variou loaders
+comment|// upgrade, or implement some consistent upgrade API across various loaders
 specifier|final
 specifier|static
 name|String
