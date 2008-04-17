@@ -249,7 +249,7 @@ name|builder
 operator|.
 name|add
 argument_list|(
-name|cachePolicy
+name|cacheStrategy
 argument_list|,
 name|cc
 operator|.
