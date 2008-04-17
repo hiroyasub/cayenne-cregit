@@ -225,7 +225,7 @@ index|[]
 argument_list|>
 name|resultDescriptors
 decl_stmt|;
-comment|/**      * Creates an empty procedure query.      */
+comment|/**      * Creates an empty procedure query. The query would fetch DataRows. Use      * {@link #setFetchingDataRows(boolean)} method to fetch objects.      */
 specifier|public
 name|ProcedureQuery
 parameter_list|()
@@ -239,7 +239,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a ProcedureQuery based on a Procedure object.      */
+comment|/**      * Creates a ProcedureQuery based on a Procedure object. The query would fetch      * DataRows. Use {@link #setFetchingDataRows(boolean)} method to fetch objects.      */
 specifier|public
 name|ProcedureQuery
 parameter_list|(
@@ -261,7 +261,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a ProcedureQuery based on a stored procedure.      *<p>      * Performance Note: with current EntityResolver implementation it is preferable to      * use Procedure object instead of String as a query root. String root can cause      * unneeded EntityResolver reindexing on every call. See this mailing list thread:<a      * href="http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html">      * http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0109.html</a>      *</p>      *       * @param procedureName A name of the stored procedure. For this query to work, a      *            procedure with this name must be mapped in Cayenne.      */
+comment|/**      * Creates a ProcedureQuery based on a stored procedure. The query would fetch      * DataRows. Use {@link #setFetchingDataRows(boolean)} method to fetch objects.      *       * @param procedureName A name of the stored procedure. For this query to work, a      *            procedure with this name must be mapped in Cayenne.      */
 specifier|public
 name|ProcedureQuery
 parameter_list|(
