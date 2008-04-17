@@ -83,15 +83,12 @@ block|{
 comment|// generate unique cache key...
 if|if
 condition|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|NO_CACHE
-operator|.
-name|equals
-argument_list|(
-name|getCachePolicy
+operator|==
+name|getCacheStrategy
 argument_list|()
-argument_list|)
 condition|)
 block|{
 block|}

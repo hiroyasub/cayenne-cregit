@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that allows to explicitly clear both object and list caches either via refetch  * (eager refresh) or invalidate (lazy refresh).   *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A query that allows to explicitly clear both object and list caches either via refetch  * (eager refresh) or invalidate (lazy refresh).  *   * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -337,17 +337,14 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE
-operator|.
-name|equals
-argument_list|(
+operator|==
 name|md
 operator|.
-name|getCachePolicy
+name|getCacheStrategy
 argument_list|()
-argument_list|)
 condition|)
 block|{
 name|wrappedMd
@@ -356,9 +353,9 @@ name|override
 argument_list|(
 name|QueryMetadata
 operator|.
-name|CACHE_POLICY_PROPERTY
+name|CACHE_STRATEGY_PROPERTY
 argument_list|,
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE_REFRESH
 argument_list|)
@@ -366,17 +363,14 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|SHARED_CACHE
-operator|.
-name|equals
-argument_list|(
+operator|==
 name|md
 operator|.
-name|getCachePolicy
+name|getCacheStrategy
 argument_list|()
-argument_list|)
 condition|)
 block|{
 name|wrappedMd
@@ -385,9 +379,9 @@ name|override
 argument_list|(
 name|QueryMetadata
 operator|.
-name|CACHE_POLICY_PROPERTY
+name|CACHE_STRATEGY_PROPERTY
 argument_list|,
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|SHARED_CACHE_REFRESH
 argument_list|)

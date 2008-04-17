@@ -367,13 +367,13 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|NO_CACHE
 argument_list|,
 name|md
 operator|.
-name|getCachePolicy
+name|getCacheStrategy
 argument_list|()
 argument_list|)
 expr_stmt|;
