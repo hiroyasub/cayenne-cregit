@@ -72,6 +72,7 @@ argument_list|()
 return|;
 block|}
 block|}
+comment|/**      * Returns the default strategy - {@link #NO_CACHE}.      */
 specifier|public
 specifier|static
 name|QueryCacheStrategy
