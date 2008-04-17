@@ -252,6 +252,10 @@ name|QueryMetadata
 name|metadata
 decl_stmt|;
 specifier|protected
+name|boolean
+name|queryOriginator
+decl_stmt|;
+specifier|protected
 specifier|transient
 name|QueryResponse
 name|response
@@ -280,6 +284,22 @@ operator|.
 name|query
 operator|=
 name|query
+expr_stmt|;
+comment|// this means that a caller must pass self as both acting context and target
+comment|// context to indicate that a query originated here... null (ROP) or differing
+comment|// context indicates that the query was originated elsewhere, which has
+comment|// consequences in LOCAL_CACHE handling
+name|this
+operator|.
+name|queryOriginator
+operator|=
+name|targetContext
+operator|!=
+literal|null
+operator|&&
+name|targetContext
+operator|==
+name|actingContext
 expr_stmt|;
 comment|// no special target context and same target context as acting context mean the
 comment|// same thing. "normalize" the internal state to avoid confusion
@@ -895,6 +915,18 @@ name|getCacheKey
 argument_list|()
 operator|==
 literal|null
+condition|)
+block|{
+return|return
+operator|!
+name|DONE
+return|;
+block|}
+comment|// ignore local cache unless this context originated the query...
+if|if
+condition|(
+operator|!
+name|queryOriginator
 condition|)
 block|{
 return|return

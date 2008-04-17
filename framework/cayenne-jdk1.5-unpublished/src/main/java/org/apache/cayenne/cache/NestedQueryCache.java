@@ -231,6 +231,16 @@ operator|+
 literal|":"
 expr_stmt|;
 block|}
+comment|/**      * Returns the actual implementation of the query cache that is wrapped by this      * NestedQueryCache.      */
+specifier|public
+name|QueryCache
+name|getDelegate
+parameter_list|()
+block|{
+return|return
+name|delegate
+return|;
+block|}
 comment|/**      * Clears the underlying shared cache.      */
 specifier|public
 name|void
