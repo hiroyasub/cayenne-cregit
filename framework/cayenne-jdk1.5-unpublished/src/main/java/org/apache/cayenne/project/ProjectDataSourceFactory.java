@@ -143,8 +143,6 @@ return|return
 operator|new
 name|ProjectDataSource
 argument_list|(
-name|this
-operator|.
 name|getDriverInfo
 argument_list|()
 argument_list|)
@@ -158,7 +156,7 @@ name|getDriverInfo
 parameter_list|()
 block|{
 name|DataSourceInfo
-name|temp
+name|info
 init|=
 name|super
 operator|.
@@ -167,12 +165,12 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-literal|null
+name|info
 operator|==
-name|temp
+literal|null
 condition|)
 block|{
-name|temp
+name|info
 operator|=
 operator|new
 name|DataSourceInfo
@@ -180,7 +178,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|temp
+name|info
 return|;
 block|}
 block|}

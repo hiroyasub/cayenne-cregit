@@ -510,8 +510,6 @@ expr_stmt|;
 name|InputStream
 name|in
 init|=
-name|this
-operator|.
 name|getInputStream
 argument_list|(
 name|location

@@ -230,7 +230,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a DataSource factory for projects.      *       * @see org.apache.cayenne.project.ProjectDataSourceFactory      */
+comment|/**      * Returns an instance of {@link ProjectDataSourceFactory}.      */
 annotation|@
 name|Override
 specifier|public
