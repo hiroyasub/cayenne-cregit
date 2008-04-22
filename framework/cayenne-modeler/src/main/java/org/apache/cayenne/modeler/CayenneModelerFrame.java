@@ -863,7 +863,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|RecentFileMenu
+name|OperatingSystem
 import|;
 end_import
 
@@ -873,11 +873,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|modeler
 operator|.
-name|SystemUtils
+name|util
+operator|.
+name|RecentFileMenu
 import|;
 end_import
 
@@ -1021,10 +1023,14 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|!
-name|SystemUtils
+name|OperatingSystem
 operator|.
-name|IS_OS_MAC_OSX
+name|getOS
+argument_list|()
+operator|!=
+name|OperatingSystem
+operator|.
+name|MAC_OS_X
 condition|)
 block|{
 name|fileMenu
@@ -1221,10 +1227,14 @@ expr_stmt|;
 comment|// Mac OS X doesn't use File->Exit, it uses CayenneModeler->Quit (command-Q)
 if|if
 condition|(
-operator|!
-name|SystemUtils
+name|OperatingSystem
 operator|.
-name|IS_OS_MAC_OSX
+name|getOS
+argument_list|()
+operator|!=
+name|OperatingSystem
+operator|.
+name|MAC_OS_X
 condition|)
 block|{
 name|fileMenu
@@ -1512,10 +1522,14 @@ expr_stmt|;
 comment|// Mac OS X has it's own Preferences menu item under the application menu
 if|if
 condition|(
-operator|!
-name|SystemUtils
+name|OperatingSystem
 operator|.
-name|IS_OS_MAC_OSX
+name|getOS
+argument_list|()
+operator|!=
+name|OperatingSystem
+operator|.
+name|MAC_OS_X
 condition|)
 block|{
 name|toolMenu
@@ -1543,10 +1557,14 @@ block|}
 comment|// Mac OS X "About CayenneModeler" appears under the application menu, per Apple GUI standards
 if|if
 condition|(
-operator|!
-name|SystemUtils
+name|OperatingSystem
 operator|.
-name|IS_OS_MAC_OSX
+name|getOS
+argument_list|()
+operator|!=
+name|OperatingSystem
+operator|.
+name|MAC_OS_X
 condition|)
 name|helpMenu
 operator|.

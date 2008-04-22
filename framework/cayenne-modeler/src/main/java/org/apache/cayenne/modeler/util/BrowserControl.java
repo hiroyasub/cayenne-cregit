@@ -29,20 +29,6 @@ name|Method
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|SystemUtils
-import|;
-end_import
-
 begin_comment
 comment|/**  * Opens a URL in the system default browser.  *   * @author Andrus Adamchik  */
 end_comment
@@ -90,9 +76,14 @@ try|try
 block|{
 if|if
 condition|(
-name|SystemUtils
+name|OperatingSystem
 operator|.
-name|IS_OS_WINDOWS
+name|getOS
+argument_list|()
+operator|==
+name|OperatingSystem
+operator|.
+name|WINDOWS
 condition|)
 block|{
 comment|// cmd = 'rundll32 url.dll,FileProtocolHandler http://...'
@@ -122,9 +113,14 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|SystemUtils
+name|OperatingSystem
 operator|.
-name|IS_OS_MAC_OSX
+name|getOS
+argument_list|()
+operator|==
+name|OperatingSystem
+operator|.
+name|MAC_OS_X
 condition|)
 block|{
 name|Class
