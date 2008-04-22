@@ -220,7 +220,8 @@ condition|(
 name|loadFromXML
 condition|)
 block|{
-comment|// try {
+try|try
+block|{
 name|info
 operator|=
 operator|new
@@ -232,10 +233,15 @@ argument_list|(
 name|location
 argument_list|)
 expr_stmt|;
-comment|//            }
-comment|//            catch (ConfigurationException e) {
-comment|//                // ignoring...
-comment|//            }
+block|}
+catch|catch
+parameter_list|(
+name|ConfigurationException
+name|e
+parameter_list|)
+block|{
+comment|// ignoring...
+block|}
 block|}
 return|return
 name|info
