@@ -678,18 +678,30 @@ operator|=
 name|projectVersion
 expr_stmt|;
 block|}
-comment|/**      * Returns an internal property for the DataSource factory that will override any      * settings configured in XML. Subclasses may override this method to provide a      * special factory for DataSource creation that will take precedence over any      * factories configured in a cayenne project.      */
+comment|/**      * Returns a DataSourceFactory that should override a given factory specified by      * caller. Returns null if the user factory should not be overriden.      *       * @since 3.0      */
+specifier|public
+name|DataSourceFactory
+name|getDataSourceFactory
+parameter_list|(
+name|String
+name|userFactoryName
+parameter_list|)
+block|{
+return|return
+name|overrideFactory
+return|;
+block|}
+comment|/**      * Returns an internal DataSourceFactory that will override any settings configured in      * XML. Subclasses may override this method to provide a special factory for      * DataSource creation that will take precedence over any factories configured in a      * Cayenne project.      *       * @deprecated since 3.0 this method is no longer called when configuration is loaded.      *             Instead {@link #getDataSourceFactory(String)} is invoked, and this is      *             the method that should be overriden.      */
 specifier|public
 name|DataSourceFactory
 name|getDataSourceFactory
 parameter_list|()
 block|{
 return|return
-name|this
-operator|.
 name|overrideFactory
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 as a more flexible mechanism for customizing      *             DataSourceFactory is implemented. Note that the factory set via this      *             method would still work, although using this method is discouraged.      */
 specifier|public
 name|void
 name|setDataSourceFactory

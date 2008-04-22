@@ -183,6 +183,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testOverrideFactory

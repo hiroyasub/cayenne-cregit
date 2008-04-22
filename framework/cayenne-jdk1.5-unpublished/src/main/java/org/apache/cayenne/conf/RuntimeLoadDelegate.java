@@ -1115,7 +1115,9 @@ condition|(
 name|config
 operator|.
 name|getDataSourceFactory
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|!=
 literal|null
 condition|)
@@ -1180,7 +1182,9 @@ init|=
 name|config
 operator|.
 name|getDataSourceFactory
-argument_list|()
+argument_list|(
+name|factory
+argument_list|)
 decl_stmt|;
 name|DataSourceFactory
 name|localFactory

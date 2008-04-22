@@ -486,6 +486,9 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Loads driver information from the file at<code>location</code>. Called      * internally from "getDataSource"      */
+comment|// TODO: andrus 2008/04/22, while this never caused any troubles, storing loaded
+comment|// DataSourceInfo in an ivar clearly violates the scope logic, as "location" is a
+comment|// local variable.
 specifier|protected
 name|void
 name|load
