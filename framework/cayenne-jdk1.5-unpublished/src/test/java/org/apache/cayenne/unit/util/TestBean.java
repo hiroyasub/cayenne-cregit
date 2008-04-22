@@ -47,22 +47,6 @@ name|Date
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|builder
-operator|.
-name|ToStringBuilder
-import|;
-end_import
-
 begin_comment
 comment|/**  * A non-persistent Java Bean. Useful for testing Cayenne operations that rely on  * introspection.  *   * @since 1.1  * @author Andrus Adamchik  */
 end_comment
@@ -205,22 +189,6 @@ argument_list|(
 name|intValue
 argument_list|)
 expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|String
-name|toString
-parameter_list|()
-block|{
-return|return
-name|ToStringBuilder
-operator|.
-name|reflectionToString
-argument_list|(
-name|this
-argument_list|)
-return|;
 block|}
 specifier|public
 name|TestBean
