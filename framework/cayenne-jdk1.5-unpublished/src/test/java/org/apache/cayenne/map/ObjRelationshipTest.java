@@ -285,11 +285,23 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+name|String
+name|lineBreak
+init|=
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"line.separator"
+argument_list|)
+decl_stmt|;
 name|assertEquals
 argument_list|(
 literal|"<obj-relationship name=\"X\" source=\"S\" target=\"T\" "
 operator|+
-literal|"collection-type=\"java.util.Map\" map-key=\"bla\"/>\n"
+literal|"collection-type=\"java.util.Map\" map-key=\"bla\"/>"
+operator|+
+name|lineBreak
 argument_list|,
 name|buffer
 operator|.
