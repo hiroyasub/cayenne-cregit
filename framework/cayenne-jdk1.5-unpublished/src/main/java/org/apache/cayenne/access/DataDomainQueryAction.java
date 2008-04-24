@@ -1063,13 +1063,31 @@ return|return
 name|DONE
 return|;
 block|}
-comment|// a hack to prevent passing partial snapshots to ObjectResolver ... See
-comment|// CAY-724 for details.
-if|else if
+name|ObjEntity
+name|targetEntity
+init|=
+operator|(
+name|ObjEntity
+operator|)
+name|relationship
+operator|.
+name|getTargetEntity
+argument_list|()
+decl_stmt|;
+comment|// do not create a target hollow object for qualified entities or entities
+comment|// involved in inheritance, as the target object may be null even for non-null
+comment|// FK.
+if|if
 condition|(
 name|context
 operator|!=
 literal|null
+operator|&&
+operator|!
+name|isQualifiedEntity
+argument_list|(
+name|targetEntity
+argument_list|)
 operator|&&
 name|domain
 operator|.
@@ -1078,18 +1096,14 @@ argument_list|()
 operator|.
 name|lookupInheritanceTree
 argument_list|(
-operator|(
-name|ObjEntity
-operator|)
-name|relationship
-operator|.
-name|getTargetEntity
-argument_list|()
+name|targetEntity
 argument_list|)
 operator|==
 literal|null
 condition|)
 block|{
+comment|// prevent passing partial snapshots to ObjectResolver per CAY-724. Create
+comment|// a hollow object right here and skip object conversion downstream
 name|this
 operator|.
 name|noObjectConversion
@@ -2450,6 +2464,54 @@ parameter_list|()
 block|{
 return|return
 literal|false
+return|;
+block|}
+comment|/**      * Returns true if the entity or its super entities have a limiting qualifier.      */
+specifier|private
+name|boolean
+name|isQualifiedEntity
+parameter_list|(
+name|ObjEntity
+name|entity
+parameter_list|)
+block|{
+if|if
+condition|(
+name|entity
+operator|.
+name|getDeclaredQualifier
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+name|entity
+operator|=
+name|entity
+operator|.
+name|getSuperEntity
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|entity
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+return|return
+name|isQualifiedEntity
+argument_list|(
+name|entity
+argument_list|)
 return|;
 block|}
 specifier|abstract
