@@ -755,9 +755,6 @@ name|query
 operator|.
 name|setParameters
 argument_list|(
-operator|(
-name|Map
-operator|)
 literal|null
 argument_list|)
 expr_stmt|;
