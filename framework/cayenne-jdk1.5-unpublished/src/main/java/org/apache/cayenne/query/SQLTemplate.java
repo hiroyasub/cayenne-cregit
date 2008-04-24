@@ -1747,7 +1747,7 @@ operator|.
 name|EMPTY_MAP
 return|;
 block|}
-comment|/**      * Utility method to initialize query with only a single set of parameters. Useful,      * since most queries will only have one set. Internally calls      * {@link #setParameters(Map[])}.      */
+comment|/**      * Utility method to initialize query with one or more sets of parameters.      */
 specifier|public
 name|void
 name|setParameters
@@ -1758,37 +1758,7 @@ name|String
 argument_list|,
 name|?
 argument_list|>
-name|map
-parameter_list|)
-block|{
-name|setParameters
-argument_list|(
-name|map
-operator|!=
-literal|null
-condition|?
-operator|new
-name|Map
-index|[]
-block|{
-name|map
-block|}
-else|:
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|setParameters
-parameter_list|(
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|?
-argument_list|>
-index|[]
+modifier|...
 name|parameters
 parameter_list|)
 block|{
