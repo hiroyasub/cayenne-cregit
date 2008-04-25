@@ -13,13 +13,16 @@ name|cayenne
 package|;
 end_package
 
+begin_comment
+comment|/**  * An interface that Enum classes may implement to map enum instances to arbitrary DB  * values that do not match the enum names or positions.  *   * @since 3.0  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
 name|ExtendedEnumeration
 block|{
-comment|/**      * Return the value to be stored in the database for this enumeration.  In      * actuality, this should be an Integer or a String.      */
-specifier|public
+comment|/**      * Return the value to be stored in the database for this enumeration. In actuality,      * this should be an Integer or a String.      */
 name|Object
 name|getDatabaseValue
 parameter_list|()
