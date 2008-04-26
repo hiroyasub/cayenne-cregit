@@ -105,10 +105,6 @@ begin_comment
 comment|/**  * A descriptor of a result row obtained from a database.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
-begin_comment
-comment|// replaces 1.1 ResultDescriptor
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -130,7 +126,33 @@ name|RowDescriptor
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a RowDescriptor for an array of columns.      */
+comment|/**      * Creates a fully initialized RowDescriptor.      *       * @since 3.0      */
+specifier|public
+name|RowDescriptor
+parameter_list|(
+name|ColumnDescriptor
+index|[]
+name|columns
+parameter_list|,
+name|ExtendedType
+index|[]
+name|converters
+parameter_list|)
+block|{
+name|this
+operator|.
+name|columns
+operator|=
+name|columns
+expr_stmt|;
+name|this
+operator|.
+name|converters
+operator|=
+name|converters
+expr_stmt|;
+block|}
+comment|/**      * Creates a RowDescriptor for an array of columns.      *       * @deprecated since 3.0 use {@link RowDescriptorBuilder}.      */
 specifier|public
 name|RowDescriptor
 parameter_list|(
@@ -154,7 +176,7 @@ name|types
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates new RowDescriptor using ResultSet metadata to determine the columns.      */
+comment|/**      * Creates new RowDescriptor using ResultSet metadata to determine the columns.      *       * @deprecated since 3.0 use {@link RowDescriptorBuilder}.      */
 specifier|public
 name|RowDescriptor
 parameter_list|(
@@ -175,7 +197,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates new RowDescriptor using ResultSet metadata to determine the columns. Note      * that if javaTypeOverrides array is null, default JDBC to Java types mapping is      * used.      */
+comment|/**      * Creates new RowDescriptor using ResultSet metadata to determine the columns. Note      * that if javaTypeOverrides array is null, default JDBC to Java types mapping is      * used.      *       * @deprecated since 3.0 use {@link RowDescriptorBuilder}.      */
 specifier|public
 name|RowDescriptor
 parameter_list|(
@@ -213,65 +235,7 @@ name|types
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Converts result column labels to uppercase using the default Locale.      *       * @since 3.0       */
-specifier|public
-name|void
-name|forceUpperCaseColumnNames
-parameter_list|()
-block|{
-for|for
-control|(
-name|ColumnDescriptor
-name|column
-range|:
-name|columns
-control|)
-block|{
-name|column
-operator|.
-name|setLabel
-argument_list|(
-name|column
-operator|.
-name|getLabel
-argument_list|()
-operator|.
-name|toUpperCase
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Converts result column labels to lowercase using the default Locale.      *       * @since 3.0       */
-specifier|public
-name|void
-name|forceLowerCaseColumnNames
-parameter_list|()
-block|{
-for|for
-control|(
-name|ColumnDescriptor
-name|column
-range|:
-name|columns
-control|)
-block|{
-name|column
-operator|.
-name|setLabel
-argument_list|(
-name|column
-operator|.
-name|getLabel
-argument_list|()
-operator|.
-name|toLowerCase
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Initializes converters for columns.      */
+comment|/**      * Initializes converters for columns.      *       * @deprecated since 3.0 use {@link RowDescriptorBuilder}.      */
 specifier|protected
 name|void
 name|indexTypes
@@ -329,7 +293,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Builds columns list from ResultSet metadata.      */
+comment|/**      * Builds columns list from ResultSet metadata.      *       * @deprecated since 3.0 use {@link RowDescriptorBuilder}.      */
 specifier|protected
 name|void
 name|initFromResultSet
@@ -430,7 +394,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Overrides Java types of result columns. Keys in the map must correspond to the      * names of the columns.      */
+comment|/**      * Overrides Java types of result columns. Keys in the map must correspond to the      * names of the columns.      *       * @deprecated since 3.0 use {@link RowDescriptorBuilder}.      */
 specifier|protected
 name|void
 name|overrideJavaTypes
