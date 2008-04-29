@@ -141,6 +141,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|JoinType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjEntity
 import|;
 end_import
@@ -188,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @author Andrus Adamchik  */
+comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -239,7 +253,7 @@ name|queryAssembler
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Translates query qualifier to SQL WHERE clause.       *  Qualifier is obtained from<code>queryAssembler</code> object.       */
+comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is obtained from      *<code>queryAssembler</code> object.      */
 annotation|@
 name|Override
 specifier|public
@@ -518,7 +532,8 @@ literal|"An invalid attempt to append object match."
 argument_list|)
 throw|;
 block|}
-comment|// turn off special handling, so that all the methods behave as a superclass's impl.
+comment|// turn off special handling, so that all the methods behave as a superclass's
+comment|// impl.
 name|matchingObject
 operator|=
 literal|false
@@ -556,6 +571,10 @@ operator|.
 name|dbRelationshipAdded
 argument_list|(
 name|relationship
+argument_list|,
+name|JoinType
+operator|.
+name|INNER
 argument_list|)
 expr_stmt|;
 block|}
@@ -1230,7 +1249,7 @@ argument_list|)
 expr_stmt|;
 comment|// ignore POSITIVE - it is a NOOP
 comment|// else if(node.getType() == Expression.POSITIVE)
-comment|//     qualBuf.append('+');
+comment|// qualBuf.append('+');
 if|else if
 condition|(
 name|node
@@ -1779,6 +1798,9 @@ name|buf
 parameter_list|,
 name|DbRelationship
 name|rel
+parameter_list|,
+name|JoinType
+name|joinType
 parameter_list|)
 block|{
 if|if
@@ -1794,6 +1816,8 @@ argument_list|(
 name|buf
 argument_list|,
 name|rel
+argument_list|,
+name|joinType
 argument_list|)
 expr_stmt|;
 block|}
@@ -1813,6 +1837,8 @@ operator|.
 name|dbRelationshipAdded
 argument_list|(
 name|rel
+argument_list|,
+name|joinType
 argument_list|)
 expr_stmt|;
 block|}

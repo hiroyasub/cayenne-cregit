@@ -53,6 +53,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|JoinType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|DeleteQuery
@@ -60,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/** Class implements default translation mechanism of org.apache.cayenne.query.DeleteQuery  *  objects to SQL DELETE statements.  *  *  @author Andrus Adamchik  *  @deprecated since 3.0 since {@link DeleteQuery} is deprecated.  */
+comment|/**  * Class implements default translation mechanism of org.apache.cayenne.query.DeleteQuery  * objects to SQL DELETE statements.  *   * @author Andrus Adamchik  * @deprecated since 3.0 since {@link DeleteQuery} is deprecated.  */
 end_comment
 
 begin_class
@@ -106,7 +120,28 @@ literal|"db relationships not supported"
 argument_list|)
 throw|;
 block|}
-comment|/** Main method of DeleteTranslator class. Translates DeleteQuery      *  into a JDBC PreparedStatement      */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|dbRelationshipAdded
+parameter_list|(
+name|DbRelationship
+name|relationship
+parameter_list|,
+name|JoinType
+name|joinType
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"db relationships not supported"
+argument_list|)
+throw|;
+block|}
+comment|/**      * Main method of DeleteTranslator class. Translates DeleteQuery into a JDBC      * PreparedStatement      */
 annotation|@
 name|Override
 specifier|public

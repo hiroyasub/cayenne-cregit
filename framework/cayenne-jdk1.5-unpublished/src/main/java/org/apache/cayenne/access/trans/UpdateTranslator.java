@@ -99,6 +99,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|JoinType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|UpdateQuery
@@ -106,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/** Class implements default translation mechanism of    * org.apache.cayenne.query.UpdateQuery   * objects to SQL UPDATE statements.   *   * @author Andrus Adamchik   */
+comment|/**  * Class implements default translation mechanism of org.apache.cayenne.query.UpdateQuery  * objects to SQL UPDATE statements.  *   * @author Andrus Adamchik  * @deprecated since 3.0 use EJBQL or SQLTemplate  */
 end_comment
 
 begin_class
@@ -142,6 +156,27 @@ name|dbRelationshipAdded
 parameter_list|(
 name|DbRelationship
 name|dbRel
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"db relationships not supported"
+argument_list|)
+throw|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|dbRelationshipAdded
+parameter_list|(
+name|DbRelationship
+name|relationship
+parameter_list|,
+name|JoinType
+name|joinType
 parameter_list|)
 block|{
 throw|throw
@@ -246,7 +281,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** Translate updated values and relationships into      *  "SET ATTR1 = Val1, ..." SQL statement.      */
+comment|/**      * Translate updated values and relationships into "SET ATTR1 = Val1, ..." SQL      * statement.      */
 specifier|private
 name|void
 name|buildSetClause

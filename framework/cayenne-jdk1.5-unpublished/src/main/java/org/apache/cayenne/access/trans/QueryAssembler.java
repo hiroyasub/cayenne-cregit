@@ -117,6 +117,20 @@ name|DbRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|JoinType
+import|;
+end_import
+
 begin_comment
 comment|/**  * Abstract superclass of Query translators.  *   * @author Andrus Adamchik  */
 end_comment
@@ -159,7 +173,7 @@ name|DbAttribute
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/** Processes a join being added. */
+comment|/**      * Processes a join being added.      *       * @deprecated since 3.0 use {@link #dbRelationshipAdded(DbRelationship, JoinType)}.      */
 specifier|public
 specifier|abstract
 name|void
@@ -167,6 +181,19 @@ name|dbRelationshipAdded
 parameter_list|(
 name|DbRelationship
 name|dbRel
+parameter_list|)
+function_decl|;
+comment|/**      * Appends a join with given semantics to the query.      *       * @since 3.0      */
+specifier|public
+specifier|abstract
+name|void
+name|dbRelationshipAdded
+parameter_list|(
+name|DbRelationship
+name|relationship
+parameter_list|,
+name|JoinType
+name|joinType
 parameter_list|)
 function_decl|;
 comment|/**      * Translates query into sql string. This is a workhorse method of QueryAssembler. It      * is called internally from<code>createStatement</code>. Usually there is no need      * to invoke it explicitly.      */
@@ -244,7 +271,7 @@ name|anObject
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**       * Translates internal query into PreparedStatement.       */
+comment|/**      * Translates internal query into PreparedStatement.      */
 annotation|@
 name|Override
 specifier|public
