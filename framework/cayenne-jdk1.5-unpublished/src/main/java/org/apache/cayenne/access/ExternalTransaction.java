@@ -220,8 +220,6 @@ name|SQLException
 throws|,
 name|CayenneException
 block|{
-try|try
-block|{
 if|if
 condition|(
 name|status
@@ -300,13 +298,9 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
 name|close
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Override
