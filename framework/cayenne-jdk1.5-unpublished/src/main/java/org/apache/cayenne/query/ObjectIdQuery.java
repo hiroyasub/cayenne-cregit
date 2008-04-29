@@ -524,7 +524,7 @@ operator|+
 name|objectId
 return|;
 block|}
-comment|/**      * An object is considered equal to this query if it is also a SingleObjectQuery with      * an equal ObjectId.      */
+comment|/**      * An object is considered equal to this query if it is also a ObjectIdQuery with      * an equal ObjectId.      */
 annotation|@
 name|Override
 specifier|public
