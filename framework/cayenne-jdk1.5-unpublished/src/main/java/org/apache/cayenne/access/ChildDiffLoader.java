@@ -691,6 +691,17 @@ argument_list|(
 name|targetNodeId
 argument_list|)
 decl_stmt|;
+comment|// if a target was later deleted, the diff for arcCreated is still preserved and
+comment|// can result in NULL target here.
+if|if
+condition|(
+name|target
+operator|==
+literal|null
+condition|)
+block|{
+return|return;
+block|}
 name|ClassDescriptor
 name|descriptor
 init|=
