@@ -837,8 +837,8 @@ name|void
 name|setCacheGroups
 parameter_list|(
 name|String
-index|[]
-name|cachGroups
+modifier|...
+name|cacheGroups
 parameter_list|)
 block|{
 name|this
@@ -847,7 +847,7 @@ name|metaData
 operator|.
 name|setCacheGroups
 argument_list|(
-name|cachGroups
+name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}

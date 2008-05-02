@@ -1736,7 +1736,7 @@ name|void
 name|setCacheGroups
 parameter_list|(
 name|String
-index|[]
+modifier|...
 name|groups
 parameter_list|)
 block|{
