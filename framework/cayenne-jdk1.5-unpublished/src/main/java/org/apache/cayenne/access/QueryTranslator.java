@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for translation Cayenne queries to JDBC PreparedStatements.  *<p>  *<i>For more information see<a href="../../../../../../userguide/index.html"  * target="_top">Cayenne User Guide.</a></i>  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API for translation Cayenne queries to JDBC PreparedStatements.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -129,7 +129,7 @@ specifier|abstract
 class|class
 name|QueryTranslator
 block|{
-comment|/** Query being translated. */
+comment|/**       * Query being translated.       */
 specifier|protected
 name|Query
 name|query
@@ -158,7 +158,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/** Returns query object being processed. */
+comment|/**       * Returns query object being processed.       */
 specifier|public
 name|Query
 name|getQuery
