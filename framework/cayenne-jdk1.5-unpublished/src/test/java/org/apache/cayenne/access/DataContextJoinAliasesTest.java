@@ -41,16 +41,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -265,18 +255,72 @@ argument_list|,
 literal|2
 argument_list|)
 decl_stmt|;
-comment|//        SelectQuery query = new SelectQuery(Gallery.class);
-comment|//        String path = "exhibitArray.artistExhibitArray";
-comment|//        query.aliasJoin("p", path);
-comment|//        query.aliasJoin("d", path);
+name|SelectQuery
+name|query
+init|=
+operator|new
+name|SelectQuery
+argument_list|(
+name|Gallery
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|String
+name|path
+init|=
+literal|"exhibitArray.artistExhibitArray"
+decl_stmt|;
+name|query
+operator|.
+name|aliasJoin
+argument_list|(
+literal|"p"
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|aliasJoin
+argument_list|(
+literal|"d"
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|andQualifier
+argument_list|(
+name|ExpressionFactory
+operator|.
+name|matchExp
+argument_list|(
+literal|"p.toArtist"
+argument_list|,
+name|picasso
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|andQualifier
+argument_list|(
+name|ExpressionFactory
+operator|.
+name|matchExp
+argument_list|(
+literal|"d.toArtist"
+argument_list|,
+name|dali
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// List<Gallery> galleries = context.performQuery(query);
 comment|//
-comment|//        query.andQualifier(ExpressionFactory.matchExp("p.toArtist", picasso));
-comment|//        query.andQualifier(ExpressionFactory.matchExp("d.toArtist", dali));
-comment|//
-comment|//        List<Gallery> galleries = context.performQuery(query);
-comment|//
-comment|//        assertEquals(1, galleries.size());
-comment|//        assertEquals("G1", galleries.get(0).getGalleryName());
+comment|// assertEquals(1, galleries.size());
+comment|// assertEquals("G1", galleries.get(0).getGalleryName());
 block|}
 block|}
 end_class

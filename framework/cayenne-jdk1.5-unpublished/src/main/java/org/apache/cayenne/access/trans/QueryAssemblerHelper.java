@@ -355,7 +355,7 @@ name|getRootDbEntity
 argument_list|()
 return|;
 block|}
-comment|/** Processes parts of the OBJ_PATH expression. */
+comment|/**       * Processes parts of the OBJ_PATH expression.       */
 specifier|protected
 name|void
 name|appendObjPath
@@ -388,6 +388,11 @@ operator|.
 name|pathComponents
 argument_list|(
 name|pathExp
+argument_list|,
+name|queryAssembler
+operator|.
+name|getJoinAliases
+argument_list|()
 argument_list|)
 control|)
 block|{
@@ -561,6 +566,11 @@ operator|.
 name|pathComponents
 argument_list|(
 name|pathExp
+argument_list|,
+name|queryAssembler
+operator|.
+name|getJoinAliases
+argument_list|()
 argument_list|)
 control|)
 block|{
@@ -1418,7 +1428,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Processes case when an OBJ_PATH expression ends with relationship. If this is a "to      * many" relationship, a join is added and a column expression for the target entity      * primary key. If this is a "to one" relationship, column expression for the source      * foreign key is added.      *       * @deprecated since 3.0 use {@link #processRelTermination(StringBuffer, ObjRelationship, JoinType)}.      */
+comment|/**      * Processes case when an OBJ_PATH expression ends with relationship. If this is a "to      * many" relationship, a join is added and a column expression for the target entity      * primary key. If this is a "to one" relationship, column expression for the source      * foreign key is added.      *       * @deprecated since 3.0 use      *             {@link #processRelTermination(StringBuffer, ObjRelationship, JoinType)}.      */
 specifier|protected
 name|void
 name|processRelTermination
@@ -1524,7 +1534,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Handles case when a DB_NAME expression ends with relationship. If this is a "to      * many" relationship, a join is added and a column expression for the target entity      * primary key. If this is a "to one" relationship, column expression for the source      * foreign key is added.      *       * @deprecated since 3.0 use {@link #processRelTermination(StringBuffer, DbRelationship, JoinType)}.      */
+comment|/**      * Handles case when a DB_NAME expression ends with relationship. If this is a "to      * many" relationship, a join is added and a column expression for the target entity      * primary key. If this is a "to one" relationship, column expression for the source      * foreign key is added.      *       * @deprecated since 3.0 use      *             {@link #processRelTermination(StringBuffer, DbRelationship, JoinType)}.      */
 specifier|protected
 name|void
 name|processRelTermination

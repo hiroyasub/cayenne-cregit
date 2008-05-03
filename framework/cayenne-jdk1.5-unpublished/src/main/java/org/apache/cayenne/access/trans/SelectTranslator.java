@@ -1594,6 +1594,9 @@ operator|.
 name|pathComponents
 argument_list|(
 name|pathExp
+argument_list|,
+name|getJoinAliases
+argument_list|()
 argument_list|)
 control|)
 block|{
@@ -1836,6 +1839,9 @@ operator|.
 name|pathComponents
 argument_list|(
 name|dbPrefetch
+argument_list|,
+name|getJoinAliases
+argument_list|()
 argument_list|)
 control|)
 block|{

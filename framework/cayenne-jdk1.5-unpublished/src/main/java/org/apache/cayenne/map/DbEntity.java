@@ -1085,6 +1085,11 @@ block|}
 comment|/**      * Returns an Iterable instance over expression path components based on this entity.      *       * @since 3.0      */
 annotation|@
 name|Override
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|Iterable
 argument_list|<
@@ -1100,6 +1105,10 @@ parameter_list|(
 specifier|final
 name|Expression
 name|pathExp
+parameter_list|,
+specifier|final
+name|Map
+name|aliasMap
 parameter_list|)
 block|{
 if|if
@@ -1127,13 +1136,6 @@ argument_list|>
 argument_list|>
 argument_list|()
 block|{
-comment|// suppress warning until we parameterize Entity as Entity<T extends
-comment|// Attribute, U extends Relationship>
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|Iterator
 name|iterator
@@ -1156,6 +1158,8 @@ name|getOperand
 argument_list|(
 literal|0
 argument_list|)
+argument_list|,
+name|aliasMap
 argument_list|)
 return|;
 block|}

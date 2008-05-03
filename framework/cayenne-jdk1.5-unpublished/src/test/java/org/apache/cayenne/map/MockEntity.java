@@ -27,6 +27,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -50,20 +60,6 @@ operator|.
 name|exp
 operator|.
 name|ExpressionException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|Entity
 import|;
 end_import
 
@@ -171,6 +167,9 @@ name|pathComponents
 parameter_list|(
 name|Expression
 name|pathExp
+parameter_list|,
+name|Map
+name|joinAliases
 parameter_list|)
 block|{
 return|return

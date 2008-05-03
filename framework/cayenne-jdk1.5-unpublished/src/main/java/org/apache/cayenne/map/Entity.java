@@ -61,6 +61,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|SortedMap
 import|;
 end_import
@@ -922,6 +932,10 @@ range|:
 name|pathComponents
 argument_list|(
 name|pathExp
+argument_list|,
+name|Collections
+operator|.
+name|EMPTY_MAP
 argument_list|)
 control|)
 block|{
@@ -957,7 +971,12 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Processes expression argument and returns an Iterable over the path components.      * Note that if path is invalid and can not be resolved from this entity, this method      * will still return an Iterator, but an attempt to read the first invalid path      * component will result in ExpressionException.      *       * @since 3.0      */
+comment|/**      * Processes expression argument and returns an Iterable over the path components.      * Path expression can use aliases. In this case an optional aliasMap parameter will      * be consulted to resolve them.      *<p>      * This method is lazy in a sense that if path is invalid and can not be resolved from      * this entity, this method will still return an Iterator, but an attempt to read the      * first invalid path component will result in ExpressionException.      *</p>      *       * @since 3.0      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|abstract
 parameter_list|<
@@ -982,6 +1001,9 @@ name|pathComponents
 parameter_list|(
 name|Expression
 name|pathExp
+parameter_list|,
+name|Map
+name|aliasMap
 parameter_list|)
 function_decl|;
 comment|/**      * Processes expression<code>pathExp</code> and returns an Iterator of path      * components that contains a sequence of Attributes and Relationships. Note that if      * path is invalid and can not be resolved from this entity, this method will still      * return an Iterator, but an attempt to read the first invalid path component will      * result in ExpressionException.      */

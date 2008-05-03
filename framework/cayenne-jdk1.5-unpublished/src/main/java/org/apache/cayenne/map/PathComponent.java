@@ -54,6 +54,24 @@ name|boolean
 name|isLast
 parameter_list|()
 function_decl|;
+comment|/**      * Returns true if this component is an alias for a different path. Only the first      * path component can be an alias. Aliased path can be obtained by calling      * {@link #getAliasedPath()}.      */
+name|boolean
+name|isAlias
+parameter_list|()
+function_decl|;
+comment|/**      * Returns an aliased path or null if this component is not an alias.      */
+name|Iterable
+argument_list|<
+name|PathComponent
+argument_list|<
+name|T
+argument_list|,
+name|U
+argument_list|>
+argument_list|>
+name|getAliasedPath
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
