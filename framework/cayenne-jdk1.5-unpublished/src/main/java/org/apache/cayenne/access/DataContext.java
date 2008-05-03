@@ -3861,7 +3861,7 @@ name|parentChanges
 init|=
 literal|null
 decl_stmt|;
-comment|// prevent multiple commits occuring simulteneously
+comment|// prevent multiple commits occurring simultaneously
 synchronized|synchronized
 init|(
 name|objectStore
