@@ -687,8 +687,10 @@ name|String
 name|userFactoryName
 parameter_list|)
 block|{
+comment|// call the old implementation for backwards compatibility
 return|return
-name|overrideFactory
+name|getDataSourceFactory
+argument_list|()
 return|;
 block|}
 comment|/**      * Returns an internal DataSourceFactory that will override any settings configured in      * XML. Subclasses may override this method to provide a special factory for      * DataSource creation that will take precedence over any factories configured in a      * Cayenne project.      *       * @deprecated since 3.0 this method is no longer called when configuration is loaded.      *             Instead {@link #getDataSourceFactory(String)} is invoked, and this is      *             the method that should be overriden.      */
