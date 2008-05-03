@@ -124,6 +124,33 @@ name|String
 name|relationshipName
 parameter_list|)
 block|{
+if|if
+condition|(
+name|sourceObject
+operator|.
+name|getObjectContext
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Null ObjectContext. Can't read a to-one relationshup '"
+operator|+
+name|relationshipName
+operator|+
+literal|"' for an object with ID: "
+operator|+
+name|sourceObject
+operator|.
+name|getObjectId
+argument_list|()
+argument_list|)
+throw|;
+block|}
 name|int
 name|state
 init|=
