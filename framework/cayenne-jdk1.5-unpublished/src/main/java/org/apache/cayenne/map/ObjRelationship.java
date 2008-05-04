@@ -1737,7 +1737,7 @@ name|pathComponent
 range|:
 name|dbEntity
 operator|.
-name|pathComponents
+name|resolvePath
 argument_list|(
 operator|new
 name|ASTDbPath

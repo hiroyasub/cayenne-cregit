@@ -1591,7 +1591,7 @@ name|component
 range|:
 name|table
 operator|.
-name|pathComponents
+name|resolvePath
 argument_list|(
 name|pathExp
 argument_list|,
@@ -1836,7 +1836,7 @@ name|component
 range|:
 name|table
 operator|.
-name|pathComponents
+name|resolvePath
 argument_list|(
 name|dbPrefetch
 argument_list|,

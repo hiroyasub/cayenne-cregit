@@ -385,7 +385,7 @@ range|:
 name|getObjEntity
 argument_list|()
 operator|.
-name|pathComponents
+name|resolvePath
 argument_list|(
 name|pathExp
 argument_list|,
@@ -563,7 +563,7 @@ range|:
 name|getDbEntity
 argument_list|()
 operator|.
-name|pathComponents
+name|resolvePath
 argument_list|(
 name|pathExp
 argument_list|,

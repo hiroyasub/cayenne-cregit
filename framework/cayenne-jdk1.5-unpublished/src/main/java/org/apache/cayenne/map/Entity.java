@@ -911,6 +911,7 @@ name|relationshipPath
 parameter_list|)
 function_decl|;
 comment|/**      * Convenience method returning the last component in the path iterator, either an      * {@link ObjAttribute} or an {@link ObjRelationship}.      *       * @since 1.1      */
+comment|// TODO: andrus 2008/05/03 - support aliases?
 specifier|public
 name|Object
 name|lastPathComponent
@@ -929,7 +930,7 @@ name|Relationship
 argument_list|>
 name|component
 range|:
-name|pathComponents
+name|resolvePath
 argument_list|(
 name|pathExp
 argument_list|,
@@ -971,7 +972,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Processes expression argument and returns an Iterable over the path components.      * Path expression can use aliases. In this case an optional aliasMap parameter will      * be consulted to resolve them.      *<p>      * This method is lazy in a sense that if path is invalid and can not be resolved from      * this entity, this method will still return an Iterator, but an attempt to read the      * first invalid path component will result in ExpressionException.      *</p>      *       * @since 3.0      */
+comment|/**      * Returns an Iterable over the path components with elements represented as      * {@link PathComponent} instances, encapsulating a relationship, an attribute or a      * subpath alias. An optional "aliasMap" parameter is used to resolve subpaths from      * aliases.      *<p>      * This method is lazy: if path is invalid and can not be resolved from this entity,      * this method will still return an Iterator, but an attempt to read the first invalid      * path component will result in ExpressionException.      *</p>      *       * @since 3.0      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -997,7 +998,7 @@ argument_list|,
 name|U
 argument_list|>
 argument_list|>
-name|pathComponents
+name|resolvePath
 parameter_list|(
 name|Expression
 name|pathExp

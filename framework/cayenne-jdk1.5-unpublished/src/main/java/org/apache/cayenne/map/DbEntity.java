@@ -1100,7 +1100,7 @@ argument_list|,
 name|DbRelationship
 argument_list|>
 argument_list|>
-name|pathComponents
+name|resolvePath
 parameter_list|(
 specifier|final
 name|Expression

@@ -163,7 +163,7 @@ argument_list|,
 name|U
 argument_list|>
 argument_list|>
-name|pathComponents
+name|resolvePath
 parameter_list|(
 name|Expression
 name|pathExp
