@@ -630,7 +630,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** Appends column name of a column in a root entity. */
+comment|/**       * Appends column name of a column in a root entity.      *       *  @deprecated since 3.0 - unused      */
 specifier|protected
 name|void
 name|processColumn
