@@ -202,6 +202,10 @@ specifier|protected
 name|DbRelationship
 name|relationship
 decl_stmt|;
+specifier|protected
+name|String
+name|joinSplitAlias
+decl_stmt|;
 specifier|public
 name|Expression
 name|getExpression
@@ -252,13 +256,16 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Initializes itself to do translation of the match ending       * with a DbRelationship.      */
+comment|/**      * Initializes itself to do translation of the match ending with a DbRelationship.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setRelationship
 parameter_list|(
 name|DbRelationship
 name|rel
+parameter_list|,
+name|String
+name|joinSplitAlias
 parameter_list|)
 block|{
 name|this
@@ -266,6 +273,12 @@ operator|.
 name|relationship
 operator|=
 name|rel
+expr_stmt|;
+name|this
+operator|.
+name|joinSplitAlias
+operator|=
+name|joinSplitAlias
 expr_stmt|;
 name|attributes
 operator|=
@@ -493,6 +506,16 @@ argument_list|()
 operator|.
 name|iterator
 argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|String
+name|getJoinSplitAlias
+parameter_list|()
+block|{
+return|return
+name|joinSplitAlias
 return|;
 block|}
 specifier|public

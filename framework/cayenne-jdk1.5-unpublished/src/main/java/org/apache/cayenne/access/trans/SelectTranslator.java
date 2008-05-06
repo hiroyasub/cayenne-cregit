@@ -1231,6 +1231,8 @@ argument_list|,
 name|JoinType
 operator|.
 name|INNER
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -1565,6 +1567,8 @@ name|component
 operator|.
 name|getJoinType
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -1628,6 +1632,8 @@ argument_list|,
 name|JoinType
 operator|.
 name|INNER
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -1799,6 +1805,8 @@ argument_list|,
 name|JoinType
 operator|.
 name|INNER
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -2035,6 +2043,8 @@ argument_list|,
 name|JoinType
 operator|.
 name|INNER
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -2491,7 +2501,7 @@ name|resetStack
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Stores a new relationship in an internal list. Later it will be used to create      * joins to relationship destination table.      *       * @since 3.0      */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2503,6 +2513,9 @@ name|relationship
 parameter_list|,
 name|JoinType
 name|joinType
+parameter_list|,
+name|String
+name|joinSplitAlias
 parameter_list|)
 block|{
 if|if
@@ -2526,7 +2539,7 @@ name|relationship
 argument_list|,
 name|joinType
 argument_list|,
-literal|null
+name|joinSplitAlias
 argument_list|)
 expr_stmt|;
 block|}

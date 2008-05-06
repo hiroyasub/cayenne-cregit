@@ -95,6 +95,9 @@ name|relationship
 parameter_list|,
 name|JoinType
 name|joinType
+parameter_list|,
+name|String
+name|joinAplitAlias
 parameter_list|)
 block|{
 throw|throw

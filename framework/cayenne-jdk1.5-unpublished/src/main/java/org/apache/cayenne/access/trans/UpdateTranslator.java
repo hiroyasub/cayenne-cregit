@@ -141,6 +141,9 @@ name|relationship
 parameter_list|,
 name|JoinType
 name|joinType
+parameter_list|,
+name|String
+name|joinSplitAlias
 parameter_list|)
 block|{
 throw|throw

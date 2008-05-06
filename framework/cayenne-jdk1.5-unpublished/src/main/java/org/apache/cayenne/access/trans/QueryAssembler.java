@@ -255,6 +255,9 @@ name|relationship
 parameter_list|,
 name|JoinType
 name|joinType
+parameter_list|,
+name|String
+name|joinSplitAlias
 parameter_list|)
 function_decl|;
 comment|/**      * Translates query into sql string. This is a workhorse method of QueryAssembler. It      * is called internally from<code>createStatement</code>. Usually there is no need      * to invoke it explicitly.      */

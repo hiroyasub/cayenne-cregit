@@ -557,6 +557,11 @@ argument_list|,
 name|JoinType
 operator|.
 name|INNER
+argument_list|,
+name|objectMatchTranslator
+operator|.
+name|getJoinSplitAlias
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1841,6 +1846,9 @@ name|rel
 parameter_list|,
 name|JoinType
 name|joinType
+parameter_list|,
+name|String
+name|joinSplitAlias
 parameter_list|)
 throws|throws
 name|IOException
@@ -1858,6 +1866,8 @@ argument_list|(
 name|rel
 argument_list|,
 name|joinType
+argument_list|,
+name|joinSplitAlias
 argument_list|)
 expr_stmt|;
 block|}
@@ -1879,6 +1889,8 @@ argument_list|(
 name|rel
 argument_list|,
 name|joinType
+argument_list|,
+name|joinSplitAlias
 argument_list|)
 expr_stmt|;
 block|}
@@ -1887,6 +1899,8 @@ operator|.
 name|setRelationship
 argument_list|(
 name|rel
+argument_list|,
+name|joinSplitAlias
 argument_list|)
 expr_stmt|;
 block|}
