@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -289,7 +299,7 @@ name|String
 name|getCachePolicy
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a caching strategy for this query.      * @since 3.0      */
+comment|/**      * Returns a caching strategy for this query.      *       * @since 3.0      */
 name|QueryCacheStrategy
 name|getCacheStrategy
 parameter_list|()
@@ -343,6 +353,16 @@ function_decl|;
 comment|/**      * Returns a root node of prefetch tree used by this query, or null of no prefetches      * are configured.      */
 name|PrefetchTreeNode
 name|getPrefetchTree
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a map of aliases vs. expression subpaths that is used to build split joins.      *       * @since 3.0      */
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getPathSplitAliases
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a mapping of the result set data rows. Can be null. If not null overrides      * prefetching and data row settings.      *       * @since 3.0      */

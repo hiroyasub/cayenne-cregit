@@ -1363,6 +1363,29 @@ operator|=
 name|distinct
 expr_stmt|;
 block|}
+comment|/**      * Adds one or more aliases for the qualifier expression path.      *       * @since 3.0      */
+specifier|public
+name|void
+name|addPathSplitAliases
+parameter_list|(
+name|String
+name|path
+parameter_list|,
+name|String
+modifier|...
+name|aliases
+parameter_list|)
+block|{
+name|metaData
+operator|.
+name|addPathSplitAliases
+argument_list|(
+name|path
+argument_list|,
+name|aliases
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Returns a list of attributes that will be included in the results of this query.      */
 specifier|public
 name|List

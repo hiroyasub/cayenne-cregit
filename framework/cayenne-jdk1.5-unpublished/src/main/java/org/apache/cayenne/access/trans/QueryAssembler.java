@@ -43,16 +43,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -137,20 +127,6 @@ name|JoinType
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QualifiedQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * Abstract superclass of Query translators.  *   * @author Andrus Adamchik  */
 end_comment
@@ -163,7 +139,7 @@ name|QueryAssembler
 extends|extends
 name|QueryTranslator
 block|{
-comment|/** PreparedStatement values. */
+comment|/**      * Holds PreparedStatement values.      */
 specifier|protected
 name|List
 argument_list|<
@@ -204,29 +180,16 @@ argument_list|>
 name|getPathAliases
 parameter_list|()
 block|{
-if|if
-condition|(
-name|query
-operator|instanceof
-name|QualifiedQuery
-condition|)
-block|{
 return|return
-operator|(
-operator|(
-name|QualifiedQuery
-operator|)
 name|query
-operator|)
 operator|.
-name|getJoinAliases
+name|getMetaData
+argument_list|(
+name|getEntityResolver
 argument_list|()
-return|;
-block|}
-return|return
-name|Collections
+argument_list|)
 operator|.
-name|emptyMap
+name|getPathSplitAliases
 argument_list|()
 return|;
 block|}

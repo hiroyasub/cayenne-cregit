@@ -1374,6 +1374,29 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getPathSplitAliases
+parameter_list|()
+block|{
+return|return
+name|Collections
+operator|.
+expr|<
+name|String
+operator|,
+name|String
+operator|>
+name|emptyMap
+argument_list|()
+return|;
+block|}
 comment|/**      * @since 1.2      */
 specifier|public
 name|DbEntity

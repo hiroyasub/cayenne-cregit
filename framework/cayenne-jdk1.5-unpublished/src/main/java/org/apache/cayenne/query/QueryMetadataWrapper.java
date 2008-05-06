@@ -244,6 +244,24 @@ name|getProcedure
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getPathSplitAliases
+parameter_list|()
+block|{
+return|return
+name|info
+operator|.
+name|getPathSplitAliases
+argument_list|()
+return|;
+block|}
 specifier|public
 name|DbEntity
 name|getDbEntity

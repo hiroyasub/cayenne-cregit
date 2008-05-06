@@ -569,6 +569,18 @@ argument_list|)
 throw|;
 block|}
 block|}
+comment|/**      * Returns a map of path aliases for this expression. It returns a non-empty map only      * if this is a path expression and the aliases are known at the expression creation      * time. Otherwise an empty map is returned.      *       * @since 3.0      */
+specifier|public
+specifier|abstract
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getPathAliases
+parameter_list|()
+function_decl|;
 comment|/**      * Returns String label for this expression. Used for debugging.      */
 specifier|public
 name|String
