@@ -125,8 +125,6 @@ index|[]
 name|tokenImage
 decl_stmt|;
 comment|/**    * This method has the standard behavior when this object has been    * created using the standard constructors.  Otherwise, it uses    * "currentToken" and "expectedTokenSequences" to generate a parse    * error message and returns it.  If this object has been created    * due to a parse error, and you do not catch it (it gets thrown    * from the parser), then this method is called during the printing    * of the final stack trace, and hence the correct error message    * gets displayed.    */
-annotation|@
-name|Override
 specifier|public
 name|String
 name|getMessage
@@ -145,10 +143,12 @@ name|getMessage
 argument_list|()
 return|;
 block|}
-name|String
+name|StringBuffer
 name|expected
 init|=
-literal|""
+operator|new
+name|StringBuffer
+argument_list|()
 decl_stmt|;
 name|int
 name|maxSize
@@ -215,7 +215,9 @@ operator|++
 control|)
 block|{
 name|expected
-operator|+=
+operator|.
+name|append
+argument_list|(
 name|tokenImage
 index|[
 name|expectedTokenSequences
@@ -226,8 +228,12 @@ index|[
 name|j
 index|]
 index|]
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" "
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -251,15 +257,24 @@ literal|0
 condition|)
 block|{
 name|expected
-operator|+=
+operator|.
+name|append
+argument_list|(
 literal|"..."
+argument_list|)
 expr_stmt|;
 block|}
 name|expected
-operator|+=
+operator|.
+name|append
+argument_list|(
 name|eol
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"    "
+argument_list|)
 expr_stmt|;
 block|}
 name|String
@@ -389,6 +404,9 @@ block|}
 name|retval
 operator|+=
 name|expected
+operator|.
+name|toString
+argument_list|()
 expr_stmt|;
 return|return
 name|retval

@@ -26,6 +26,7 @@ comment|/**  * Describes the input token stream.  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|Token
 block|{
@@ -61,8 +62,6 @@ name|Token
 name|specialToken
 decl_stmt|;
 comment|/**    * Returns the image.    */
-annotation|@
-name|Override
 specifier|public
 name|String
 name|toString
