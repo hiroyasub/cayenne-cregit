@@ -67,16 +67,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Random
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -582,23 +572,12 @@ name|typeLookup
 decl_stmt|;
 specifier|private
 specifier|static
-specifier|final
-name|Random
-name|random
+specifier|volatile
+name|int
+name|autoAliasId
 decl_stmt|;
 static|static
 block|{
-name|random
-operator|=
-operator|new
-name|Random
-argument_list|(
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|// make sure all types are small integers, then we can use
 comment|// them as indexes in lookup array
 name|int
@@ -1839,14 +1818,8 @@ name|aliasBase
 init|=
 literal|"split"
 operator|+
-name|random
-operator|.
-name|nextInt
-argument_list|(
-name|Integer
-operator|.
-name|MAX_VALUE
-argument_list|)
+name|autoAliasId
+operator|++
 operator|+
 literal|"_"
 decl_stmt|;
