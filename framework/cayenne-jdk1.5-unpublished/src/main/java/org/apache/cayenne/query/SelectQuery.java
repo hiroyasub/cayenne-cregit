@@ -87,6 +87,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|exp
+operator|.
+name|ExpressionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbEntity
@@ -1363,10 +1377,10 @@ operator|=
 name|distinct
 expr_stmt|;
 block|}
-comment|/**      * Adds one or more aliases for the qualifier expression path.      *       * @since 3.0      */
+comment|/**      * Adds one or more aliases for the qualifier expression path. Aliases serve to      * instruct Cayenne to generate separate sets of joins for overlapping paths, that      * maybe needed for complex conditions. An example of an<i>implicit<i> splits is      * this method: {@link ExpressionFactory#matchAllExp(String, Object...)}.      *       * @since 3.0      */
 specifier|public
 name|void
-name|addPathSplitAliases
+name|aliasPathSplits
 parameter_list|(
 name|String
 name|path
