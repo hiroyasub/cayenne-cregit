@@ -151,6 +151,21 @@ name|resetStack
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * Returns the number of configured joins.      */
+name|int
+name|size
+parameter_list|()
+block|{
+comment|// do not count root as a join
+return|return
+name|root
+operator|.
+name|size
+argument_list|()
+operator|-
+literal|1
+return|;
+block|}
 comment|/**      * Appends all configured joins to the provided output object.      */
 name|void
 name|appendJoins
@@ -161,13 +176,26 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// skip root, recursively append its children
+for|for
+control|(
+name|JoinTreeNode
+name|child
+range|:
+name|root
+operator|.
+name|getChildren
+argument_list|()
+control|)
+block|{
 name|appendJoinSubtree
 argument_list|(
 name|out
 argument_list|,
-name|root
+name|child
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|void
@@ -401,6 +429,25 @@ argument_list|(
 literal|')'
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|JoinTreeNode
+name|child
+range|:
+name|node
+operator|.
+name|getChildren
+argument_list|()
+control|)
+block|{
+name|appendJoinSubtree
+argument_list|(
+name|out
+argument_list|,
+name|child
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Pops the stack all the way to the root node.      */
 name|void
