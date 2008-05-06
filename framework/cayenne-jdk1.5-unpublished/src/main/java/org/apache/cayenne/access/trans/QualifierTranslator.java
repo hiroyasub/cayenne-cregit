@@ -650,8 +650,6 @@ argument_list|(
 name|qualBuf
 argument_list|,
 name|attr
-argument_list|,
-name|relationship
 argument_list|)
 expr_stmt|;
 name|qualBuf

@@ -41,16 +41,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -327,10 +317,10 @@ name|dali
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//        List<Gallery> galleries = context.performQuery(query);
+comment|// List<Gallery> galleries = context.performQuery(query);
 comment|//
-comment|//        assertEquals(1, galleries.size());
-comment|//        assertEquals("G1", galleries.get(0).getGalleryName());
+comment|// assertEquals(1, galleries.size());
+comment|// assertEquals("G1", galleries.get(0).getGalleryName());
 block|}
 block|}
 end_class

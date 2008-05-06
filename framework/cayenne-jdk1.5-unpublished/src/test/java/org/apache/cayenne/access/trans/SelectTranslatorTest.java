@@ -53,16 +53,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -861,6 +851,8 @@ argument_list|)
 decl_stmt|;
 name|assertTrue
 argument_list|(
+name|generatedSql
+argument_list|,
 name|ind2
 operator|<
 literal|0
@@ -1724,7 +1716,7 @@ literal|1
 argument_list|,
 name|transl
 operator|.
-name|dbRelList
+name|joinStack
 operator|.
 name|size
 argument_list|()
@@ -1813,7 +1805,7 @@ literal|1
 argument_list|,
 name|transl
 operator|.
-name|dbRelList
+name|joinStack
 operator|.
 name|size
 argument_list|()
@@ -1993,7 +1985,7 @@ literal|1
 argument_list|,
 name|transl
 operator|.
-name|dbRelList
+name|joinStack
 operator|.
 name|size
 argument_list|()

@@ -87,42 +87,6 @@ block|{
 annotation|@
 name|Override
 specifier|public
-name|String
-name|aliasForTable
-parameter_list|(
-name|DbEntity
-name|dbEnt
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"aliases not supported"
-argument_list|)
-throw|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|void
-name|dbRelationshipAdded
-parameter_list|(
-name|DbRelationship
-name|dbRel
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|RuntimeException
-argument_list|(
-literal|"db relationships not supported"
-argument_list|)
-throw|;
-block|}
-annotation|@
-name|Override
-specifier|public
 name|void
 name|dbRelationshipAdded
 parameter_list|(
@@ -135,11 +99,35 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|RuntimeException
+name|UnsupportedOperationException
 argument_list|(
 literal|"db relationships not supported"
 argument_list|)
 throw|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getCurrentAlias
+parameter_list|()
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"aliases not supported"
+argument_list|)
+throw|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|resetJoinStack
+parameter_list|()
+block|{
+comment|// noop - joins are not supported
 block|}
 comment|/**      * Main method of DeleteTranslator class. Translates DeleteQuery into a JDBC      * PreparedStatement      */
 annotation|@

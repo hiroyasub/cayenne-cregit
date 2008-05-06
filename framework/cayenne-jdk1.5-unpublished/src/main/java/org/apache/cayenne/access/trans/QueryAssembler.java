@@ -119,20 +119,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbRelationship
 import|;
 end_import
@@ -207,17 +193,7 @@ name|DbAttribute
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Processes a join being added.      *       * @deprecated since 3.0 use {@link #dbRelationshipAdded(DbRelationship, JoinType)}.      */
-specifier|public
-specifier|abstract
-name|void
-name|dbRelationshipAdded
-parameter_list|(
-name|DbRelationship
-name|dbRel
-parameter_list|)
-function_decl|;
-comment|/**      * Returns aliases for the joins defined in the query.      *       * @since 3.0      */
+comment|/**      * Returns aliases for the path splits defined in the query.      *       * @since 3.0      */
 specifier|protected
 name|Map
 argument_list|<
@@ -225,7 +201,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|getJoinAliases
+name|getPathAliases
 parameter_list|()
 block|{
 if|if
@@ -254,6 +230,20 @@ name|emptyMap
 argument_list|()
 return|;
 block|}
+comment|/**      * A callback invoked by a child qualifier or ordering processor allowing query      * assembler to reset its join stack.      *       * @since 3.0      */
+specifier|public
+specifier|abstract
+name|void
+name|resetJoinStack
+parameter_list|()
+function_decl|;
+comment|/**      * Returns an alias of the table which is currently at the top of the join stack.      *       * @since 3.0      */
+specifier|public
+specifier|abstract
+name|String
+name|getCurrentAlias
+parameter_list|()
+function_decl|;
 comment|/**      * Appends a join with given semantics to the query.      *       * @since 3.0      */
 specifier|public
 specifier|abstract
@@ -275,35 +265,6 @@ name|createSqlString
 parameter_list|()
 throws|throws
 name|Exception
-function_decl|;
-specifier|public
-name|String
-name|aliasForTable
-parameter_list|(
-name|DbEntity
-name|ent
-parameter_list|,
-name|DbRelationship
-name|rel
-parameter_list|)
-block|{
-return|return
-name|aliasForTable
-argument_list|(
-name|ent
-argument_list|)
-return|;
-comment|// Default implementation
-block|}
-comment|/**      * Returns a name that can be used as column alias. This can be one of the following:      *<ul>      *<li>an alias for this table, if it uses aliases</li>      *<li>a fully qualified table name, if not.</li>      *</ul>      * CayenneRuntimeException is thrown if a table alias can not be created.      */
-specifier|public
-specifier|abstract
-name|String
-name|aliasForTable
-parameter_list|(
-name|DbEntity
-name|dbEnt
-parameter_list|)
 function_decl|;
 comment|/**      * Returns<code>true</code> if table aliases are supported. Default implementation      * returns false.      */
 specifier|public

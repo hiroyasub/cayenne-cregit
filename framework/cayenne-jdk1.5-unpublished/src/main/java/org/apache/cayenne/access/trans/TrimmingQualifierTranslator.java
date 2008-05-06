@@ -41,22 +41,8 @@ name|DbAttribute
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbRelationship
-import|;
-end_import
-
 begin_comment
-comment|/**   * QualifierTranslator that allows translation of qualifiers that perform  * comparison with CHAR columns. Some databases require trimming the values for  * this to work.  *   * @author Andrus Adamchik  */
+comment|/**  * QualifierTranslator that allows translation of qualifiers that perform comparison with  * CHAR columns. Some databases require trimming the values for this to work.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -170,82 +156,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds special handling of CHAR columns.      */
-annotation|@
-name|Override
-specifier|protected
-name|void
-name|processColumn
-parameter_list|(
-name|StringBuffer
-name|buf
-parameter_list|,
-name|DbAttribute
-name|dbAttr
-parameter_list|,
-name|DbRelationship
-name|rel
-parameter_list|)
-block|{
-if|if
-condition|(
-name|dbAttr
-operator|.
-name|getType
-argument_list|()
-operator|==
-name|Types
-operator|.
-name|CHAR
-condition|)
-block|{
-name|buf
-operator|.
-name|append
-argument_list|(
-name|trimFunction
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"("
-argument_list|)
-expr_stmt|;
-name|super
-operator|.
-name|processColumn
-argument_list|(
-name|buf
-argument_list|,
-name|dbAttr
-argument_list|,
-name|rel
-argument_list|)
-expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|')'
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|super
-operator|.
-name|processColumn
-argument_list|(
-name|buf
-argument_list|,
-name|dbAttr
-argument_list|,
-name|rel
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Returns the trimFunction.      * @return String      */
+comment|/**      * Returns the trimFunction.      *       * @return String      */
 specifier|public
 name|String
 name|getTrimFunction
@@ -255,7 +166,7 @@ return|return
 name|trimFunction
 return|;
 block|}
-comment|/**      * Sets the trimFunction.      * @param trimFunction The trimFunction to set      */
+comment|/**      * Sets the trimFunction.      *       * @param trimFunction The trimFunction to set      */
 specifier|public
 name|void
 name|setTrimFunction
