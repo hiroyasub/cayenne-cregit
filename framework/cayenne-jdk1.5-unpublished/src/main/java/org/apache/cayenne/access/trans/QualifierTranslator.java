@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Iterator
@@ -34,6 +44,18 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -215,14 +237,6 @@ implements|implements
 name|TraversalHandler
 block|{
 specifier|protected
-name|StringBuffer
-name|qualBuf
-init|=
-operator|new
-name|StringBuffer
-argument_list|()
-decl_stmt|;
-specifier|protected
 name|DataObjectMatchTranslator
 name|objectMatchTranslator
 decl_stmt|;
@@ -230,16 +244,6 @@ specifier|protected
 name|boolean
 name|matchingObject
 decl_stmt|;
-specifier|public
-name|QualifierTranslator
-parameter_list|()
-block|{
-name|this
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
 specifier|public
 name|QualifierTranslator
 parameter_list|(
@@ -253,21 +257,16 @@ name|queryAssembler
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is obtained from      *<code>queryAssembler</code> object.      */
+comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is obtained from the      * parent queryAssembler.      *       * @since 3.0      */
 annotation|@
 name|Override
-specifier|public
-name|String
-name|doTranslation
+specifier|protected
+name|void
+name|doAppendPart
 parameter_list|()
+throws|throws
+name|IOException
 block|{
-name|qualBuf
-operator|.
-name|setLength
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
 name|Expression
 name|rootNode
 init|=
@@ -281,12 +280,8 @@ operator|==
 literal|null
 condition|)
 block|{
-return|return
-literal|null
-return|;
+return|return;
 block|}
-comment|// build SQL where clause string based on expression
-comment|// (using '?' for object values)
 name|rootNode
 operator|.
 name|traverse
@@ -294,21 +289,6 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
-return|return
-name|qualBuf
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
-condition|?
-name|qualBuf
-operator|.
-name|toString
-argument_list|()
-else|:
-literal|null
-return|;
 block|}
 specifier|protected
 name|Expression
@@ -513,6 +493,8 @@ specifier|protected
 name|void
 name|appendObjectMatch
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -609,7 +591,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -647,12 +629,10 @@ argument_list|)
 decl_stmt|;
 name|processColumn
 argument_list|(
-name|qualBuf
-argument_list|,
 name|attr
 argument_list|)
 expr_stmt|;
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -664,8 +644,6 @@ argument_list|)
 expr_stmt|;
 name|appendLiteral
 argument_list|(
-name|qualBuf
-argument_list|,
 name|val
 argument_list|,
 name|attr
@@ -683,7 +661,6 @@ name|reset
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** Opportunity to insert an operation */
 specifier|public
 name|void
 name|finishedChild
@@ -706,19 +683,23 @@ condition|)
 block|{
 return|return;
 block|}
-name|StringBuffer
-name|buf
+name|Appendable
+name|out
 init|=
 operator|(
 name|matchingObject
 operator|)
 condition|?
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 else|:
-name|qualBuf
+name|this
+operator|.
+name|out
 decl_stmt|;
+try|try
+block|{
 switch|switch
 condition|(
 name|node
@@ -732,7 +713,7 @@ name|Expression
 operator|.
 name|AND
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -745,7 +726,7 @@ name|Expression
 operator|.
 name|OR
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -782,7 +763,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -792,7 +773,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -830,7 +811,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -840,7 +821,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -854,7 +835,7 @@ name|Expression
 operator|.
 name|LESS_THAN
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -867,7 +848,7 @@ name|Expression
 operator|.
 name|GREATER_THAN
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -880,7 +861,7 @@ name|Expression
 operator|.
 name|LESS_THAN_EQUAL_TO
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -893,7 +874,7 @@ name|Expression
 operator|.
 name|GREATER_THAN_EQUAL_TO
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -906,7 +887,7 @@ name|Expression
 operator|.
 name|IN
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -919,7 +900,7 @@ name|Expression
 operator|.
 name|NOT_IN
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -932,7 +913,7 @@ name|Expression
 operator|.
 name|LIKE
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -945,7 +926,7 @@ name|Expression
 operator|.
 name|NOT_LIKE
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -958,7 +939,7 @@ name|Expression
 operator|.
 name|LIKE_IGNORE_CASE
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -971,7 +952,7 @@ name|Expression
 operator|.
 name|NOT_LIKE_IGNORE_CASE
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -984,7 +965,7 @@ name|Expression
 operator|.
 name|ADD
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -997,7 +978,7 @@ name|Expression
 operator|.
 name|SUBTRACT
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1010,7 +991,7 @@ name|Expression
 operator|.
 name|MULTIPLY
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1023,7 +1004,7 @@ name|Expression
 operator|.
 name|DIVIDE
 case|:
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1042,7 +1023,7 @@ name|childIndex
 operator|==
 literal|0
 condition|)
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1055,7 +1036,7 @@ name|childIndex
 operator|==
 literal|1
 condition|)
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1074,7 +1055,7 @@ name|childIndex
 operator|==
 literal|0
 condition|)
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1087,7 +1068,7 @@ name|childIndex
 operator|==
 literal|1
 condition|)
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1095,6 +1076,23 @@ literal|" AND "
 argument_list|)
 expr_stmt|;
 break|break;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
 block|}
 if|if
 condition|(
@@ -1105,7 +1103,7 @@ name|objectMatchTranslator
 operator|.
 name|setOperation
 argument_list|(
-name|buf
+name|out
 operator|.
 name|toString
 argument_list|()
@@ -1153,6 +1151,8 @@ name|node
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+block|{
 if|if
 condition|(
 name|parenthesisNeeded
@@ -1163,7 +1163,7 @@ name|parentNode
 argument_list|)
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1191,7 +1191,7 @@ operator|.
 name|TRUE
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1211,7 +1211,7 @@ operator|.
 name|FALSE
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1238,7 +1238,7 @@ name|Expression
 operator|.
 name|NEGATIVE
 condition|)
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1259,7 +1259,7 @@ name|Expression
 operator|.
 name|NOT
 condition|)
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1288,13 +1288,30 @@ operator|.
 name|NOT_LIKE_IGNORE_CASE
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
 literal|"UPPER("
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
 block|}
 block|}
 comment|/**      * @since 1.1      */
@@ -1309,7 +1326,10 @@ name|Expression
 name|parentNode
 parameter_list|)
 block|{
-comment|// check if we need to use objectMatchTranslator to finish building the expression
+try|try
+block|{
+comment|// check if we need to use objectMatchTranslator to finish building the
+comment|// expression
 if|if
 condition|(
 name|node
@@ -1336,7 +1356,7 @@ name|parentNode
 argument_list|)
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1365,13 +1385,30 @@ operator|.
 name|NOT_LIKE_IGNORE_CASE
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
 literal|')'
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
 block|}
 block|}
 specifier|public
@@ -1384,6 +1421,8 @@ parameter_list|,
 name|Expression
 name|parentNode
 parameter_list|)
+block|{
+try|try
 block|{
 if|if
 condition|(
@@ -1399,8 +1438,6 @@ condition|)
 block|{
 name|appendObjPath
 argument_list|(
-name|qualBuf
-argument_list|,
 name|parentNode
 argument_list|)
 expr_stmt|;
@@ -1419,8 +1456,6 @@ condition|)
 block|{
 name|appendDbPath
 argument_list|(
-name|qualBuf
-argument_list|,
 name|parentNode
 argument_list|)
 expr_stmt|;
@@ -1452,8 +1487,6 @@ else|else
 block|{
 name|appendLiteral
 argument_list|(
-name|qualBuf
-argument_list|,
 name|leaf
 argument_list|,
 name|paramsDbType
@@ -1464,6 +1497,23 @@ argument_list|,
 name|parentNode
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
 block|}
 block|}
 specifier|protected
@@ -1542,6 +1592,8 @@ parameter_list|,
 name|DbAttribute
 name|paramDesc
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 name|Iterator
 argument_list|<
@@ -1648,8 +1700,6 @@ argument_list|()
 condition|)
 name|appendLiteral
 argument_list|(
-name|qualBuf
-argument_list|,
 name|it
 operator|.
 name|next
@@ -1670,7 +1720,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -1679,8 +1729,6 @@ argument_list|)
 expr_stmt|;
 name|appendLiteral
 argument_list|(
-name|qualBuf
-argument_list|,
 name|it
 operator|.
 name|next
@@ -1699,9 +1747,6 @@ specifier|protected
 name|void
 name|appendLiteral
 parameter_list|(
-name|StringBuffer
-name|buf
-parameter_list|,
 name|Object
 name|val
 parameter_list|,
@@ -1711,6 +1756,8 @@ parameter_list|,
 name|Expression
 name|parentExpression
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -1722,8 +1769,6 @@ name|super
 operator|.
 name|appendLiteral
 argument_list|(
-name|buf
-argument_list|,
 name|val
 argument_list|,
 name|attr
@@ -1791,15 +1836,14 @@ specifier|protected
 name|void
 name|processRelTermination
 parameter_list|(
-name|StringBuffer
-name|buf
-parameter_list|,
 name|DbRelationship
 name|rel
 parameter_list|,
 name|JoinType
 name|joinType
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -1811,8 +1855,6 @@ name|super
 operator|.
 name|processRelTermination
 argument_list|(
-name|buf
-argument_list|,
 name|rel
 argument_list|,
 name|joinType

@@ -19,6 +19,28 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -78,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  *   * @since 1.1  */
+comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  * @since 1.1  */
 end_comment
 
 begin_class
@@ -88,16 +110,6 @@ name|OpenBaseQualifierTranslator
 extends|extends
 name|QualifierTranslator
 block|{
-specifier|public
-name|OpenBaseQualifierTranslator
-parameter_list|()
-block|{
-name|this
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
 specifier|public
 name|OpenBaseQualifierTranslator
 parameter_list|(
@@ -140,6 +152,8 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|parenthesisNeeded
@@ -150,7 +164,7 @@ name|parentNode
 argument_list|)
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -162,6 +176,23 @@ comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// OpenBase is case-insensitive by default
 comment|// ...
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
+block|}
 block|}
 else|else
 block|{
@@ -199,7 +230,10 @@ operator|==
 literal|2
 condition|)
 block|{
-comment|// check if we need to use objectMatchTranslator to finish building the expression
+try|try
+block|{
+comment|// check if we need to use objectMatchTranslator to finish building the
+comment|// expression
 if|if
 condition|(
 name|matchingObject
@@ -218,7 +252,7 @@ argument_list|,
 name|parentNode
 argument_list|)
 condition|)
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -229,6 +263,23 @@ comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// OpenBase is case-insensitive by default
 comment|// ...
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
+block|}
 block|}
 else|else
 block|{
@@ -249,9 +300,6 @@ specifier|protected
 name|void
 name|appendLiteralDirect
 parameter_list|(
-name|StringBuffer
-name|buf
-parameter_list|,
 name|Object
 name|val
 parameter_list|,
@@ -261,6 +309,8 @@ parameter_list|,
 name|Expression
 name|parentExpression
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 comment|// Special handling of string matching is needed:
 comment|// Case-sensitive LIKE must be converted to [x][Y][z] format
@@ -306,8 +356,6 @@ name|super
 operator|.
 name|appendLiteralDirect
 argument_list|(
-name|buf
-argument_list|,
 name|val
 argument_list|,
 name|attr
@@ -443,6 +491,8 @@ comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// OpenBase is case-insensitive by default
 comment|// ...
+try|try
+block|{
 switch|switch
 condition|(
 name|node
@@ -477,7 +527,7 @@ literal|" NOT LIKE "
 argument_list|)
 expr_stmt|;
 break|break;
-default|default :
+default|default:
 name|super
 operator|.
 name|finishedChild
@@ -491,6 +541,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
+block|}
+block|}
 specifier|private
 name|void
 name|finishedChildNodeAppendExpression
@@ -501,21 +568,25 @@ parameter_list|,
 name|String
 name|operation
 parameter_list|)
+throws|throws
+name|IOException
 block|{
-name|StringBuffer
-name|buf
+name|Appendable
+name|out
 init|=
 operator|(
 name|matchingObject
 operator|)
 condition|?
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 else|:
-name|qualBuf
+name|this
+operator|.
+name|out
 decl_stmt|;
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -531,7 +602,7 @@ name|objectMatchTranslator
 operator|.
 name|setOperation
 argument_list|(
-name|buf
+name|out
 operator|.
 name|toString
 argument_list|()

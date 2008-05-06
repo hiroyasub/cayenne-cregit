@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|sql
 operator|.
 name|Types
@@ -57,15 +67,6 @@ name|String
 name|trimFunction
 decl_stmt|;
 comment|/**      * Constructor for TrimmingQualifierTranslator.      */
-specifier|protected
-name|TrimmingQualifierTranslator
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
-comment|/**      * Constructor for TrimmingQualifierTranslator.      */
 specifier|public
 name|TrimmingQualifierTranslator
 parameter_list|(
@@ -95,12 +96,11 @@ specifier|protected
 name|void
 name|processColumn
 parameter_list|(
-name|StringBuffer
-name|buf
-parameter_list|,
 name|DbAttribute
 name|dbAttr
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -114,7 +114,7 @@ operator|.
 name|CHAR
 condition|)
 block|{
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -130,12 +130,10 @@ name|super
 operator|.
 name|processColumn
 argument_list|(
-name|buf
-argument_list|,
 name|dbAttr
 argument_list|)
 expr_stmt|;
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -149,8 +147,6 @@ name|super
 operator|.
 name|processColumn
 argument_list|(
-name|buf
-argument_list|,
 name|dbAttr
 argument_list|)
 expr_stmt|;

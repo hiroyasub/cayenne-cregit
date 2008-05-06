@@ -21,9 +21,29 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Iterator
 import|;
 end_import
 
@@ -106,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Translates query ordering to SQL.   *   * @author Andrus Adamchik  * @author Craig Miskell  */
+comment|/**  * Translates query ordering to SQL.  */
 end_comment
 
 begin_class
@@ -143,13 +163,15 @@ name|queryAssembler
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Translates query Ordering list to SQL ORDER BY clause.       *  Ordering list is obtained from<code>queryAssembler</code>'s query object.       *  In a process of building of ORDER BY clause,<code>queryAssembler</code>       *  is notified when a join needs to be added. */
+comment|/**      * Translates query Ordering list to SQL ORDER BY clause. Ordering list is obtained      * from<code>queryAssembler</code>'s query object. In a process of building of      * ORDER BY clause,<code>queryAssembler</code> is notified when a join needs to be      * added.      *       * @since 3.0      */
 annotation|@
 name|Override
-specifier|public
-name|String
-name|doTranslation
+specifier|protected
+name|void
+name|doAppendPart
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Query
 name|q
@@ -173,21 +195,15 @@ operator|instanceof
 name|SelectQuery
 operator|)
 condition|)
-return|return
-literal|null
-return|;
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-for|for
-control|(
+block|{
+return|return;
+block|}
+name|Iterator
+argument_list|<
 name|Ordering
-name|ord
-range|:
+argument_list|>
+name|it
+init|=
 operator|(
 operator|(
 name|SelectQuery
@@ -197,34 +213,26 @@ operator|)
 operator|.
 name|getOrderings
 argument_list|()
-control|)
-block|{
-if|if
-condition|(
-name|buf
 operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
-condition|)
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|", "
-argument_list|)
-expr_stmt|;
-name|StringBuffer
-name|ordComp
-init|=
-operator|new
-name|StringBuffer
+name|iterator
 argument_list|()
 decl_stmt|;
-comment|//UPPER is (I think) part of the SQL99 standard, and I'm not convinced it's universally available
-comment|// - should the syntax used here be defined by the Db specific adaptor perhaps, or at least
-comment|// possibly specified by the db adaptor (a DB specific OrderingTranslator hook)?
+while|while
+condition|(
+name|it
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|Ordering
+name|ord
+init|=
+name|it
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|ord
@@ -233,7 +241,7 @@ name|isCaseInsensitive
 argument_list|()
 condition|)
 block|{
-name|ordComp
+name|out
 operator|.
 name|append
 argument_list|(
@@ -263,8 +271,6 @@ condition|)
 block|{
 name|appendObjPath
 argument_list|(
-name|ordComp
-argument_list|,
 name|exp
 argument_list|)
 expr_stmt|;
@@ -283,8 +289,6 @@ condition|)
 block|{
 name|appendDbPath
 argument_list|(
-name|ordComp
-argument_list|,
 name|exp
 argument_list|)
 expr_stmt|;
@@ -301,7 +305,7 @@ name|exp
 argument_list|)
 throw|;
 block|}
-comment|//Close UPPER() modifier
+comment|// Close UPPER() modifier
 if|if
 condition|(
 name|ord
@@ -310,7 +314,7 @@ name|isCaseInsensitive
 argument_list|()
 condition|)
 block|{
-name|ordComp
+name|out
 operator|.
 name|append
 argument_list|(
@@ -322,17 +326,7 @@ name|orderByColumnList
 operator|.
 name|add
 argument_list|(
-name|ordComp
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-name|ordComp
+name|out
 operator|.
 name|toString
 argument_list|()
@@ -348,7 +342,7 @@ name|isAscending
 argument_list|()
 condition|)
 block|{
-name|buf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -356,24 +350,25 @@ literal|" DESC"
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-return|return
-name|buf
+if|if
+condition|(
+name|it
 operator|.
-name|length
+name|hasNext
 argument_list|()
-operator|>
-literal|0
-condition|?
-name|buf
+condition|)
+block|{
+name|out
 operator|.
-name|toString
-argument_list|()
-else|:
-literal|null
-return|;
+name|append
+argument_list|(
+literal|", "
+argument_list|)
+expr_stmt|;
 block|}
-comment|/**      * Returns the column expressions (not Expressions) used in      * the order by clause.  E.g., in the case of an case-insensitive       * order by, an element of the list would be       *<code>UPPER(&lt;column reference&gt;)</code>      */
+block|}
+block|}
+comment|/**      * Returns the column expressions (not Expressions) used in the order by clause. E.g.,      * in the case of an case-insensitive order by, an element of the list would be      *<code>UPPER(&lt;column reference&gt;)</code>      */
 specifier|public
 name|List
 argument_list|<

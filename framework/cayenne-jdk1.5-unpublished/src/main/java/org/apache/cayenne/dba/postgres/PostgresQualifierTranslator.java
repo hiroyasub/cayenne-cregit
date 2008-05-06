@@ -19,6 +19,28 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -64,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Uses Postgres extensions to optimize various translations.   *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Uses Postgres extensions to optimize various translations.  *   * @author Andrus Adamchik  * @since 1.1  */
 end_comment
 
 begin_class
@@ -118,6 +140,8 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 if|if
 condition|(
 name|parenthesisNeeded
@@ -128,7 +152,7 @@ name|parentNode
 argument_list|)
 condition|)
 block|{
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -140,6 +164,23 @@ comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// Postgres uses ILIKE
 comment|// ...
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
+block|}
 block|}
 else|else
 block|{
@@ -177,7 +218,10 @@ operator|==
 literal|2
 condition|)
 block|{
-comment|// check if we need to use objectMatchTranslator to finish building the expression
+try|try
+block|{
+comment|// check if we need to use objectMatchTranslator to finish building the
+comment|// expression
 if|if
 condition|(
 name|matchingObject
@@ -196,7 +240,7 @@ argument_list|,
 name|parentNode
 argument_list|)
 condition|)
-name|qualBuf
+name|out
 operator|.
 name|append
 argument_list|(
@@ -207,6 +251,23 @@ comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// Postgres uses ILIKE
 comment|// ...
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
+block|}
 block|}
 else|else
 block|{
@@ -245,6 +306,8 @@ condition|)
 block|{
 return|return;
 block|}
+try|try
+block|{
 comment|// use ILIKE
 switch|switch
 condition|(
@@ -280,7 +343,7 @@ literal|" NOT ILIKE "
 argument_list|)
 expr_stmt|;
 break|break;
-default|default :
+default|default:
 name|super
 operator|.
 name|finishedChild
@@ -294,6 +357,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|ioex
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Error appending content"
+argument_list|,
+name|ioex
+argument_list|)
+throw|;
+block|}
+block|}
 specifier|private
 name|void
 name|finishedChildNodeAppendExpression
@@ -304,8 +384,10 @@ parameter_list|,
 name|String
 name|operation
 parameter_list|)
+throws|throws
+name|IOException
 block|{
-name|StringBuffer
+name|Appendable
 name|buf
 init|=
 operator|(
@@ -313,10 +395,12 @@ name|matchingObject
 operator|)
 condition|?
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 else|:
-name|qualBuf
+name|this
+operator|.
+name|out
 decl_stmt|;
 name|buf
 operator|.

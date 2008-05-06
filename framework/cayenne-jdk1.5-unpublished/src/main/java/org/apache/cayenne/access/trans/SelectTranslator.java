@@ -562,25 +562,26 @@ operator|=
 name|buildResultColumns
 argument_list|()
 expr_stmt|;
-name|QualifierTranslator
-name|tr
+comment|// build qualifier
+name|StringBuilder
+name|qualifierBuffer
 init|=
+operator|new
+name|StringBuilder
+argument_list|()
+decl_stmt|;
 name|adapter
 operator|.
 name|getQualifierTranslator
 argument_list|(
 name|this
 argument_list|)
-decl_stmt|;
-comment|// build qualifier
-name|String
-name|qualifierStr
-init|=
-name|tr
 operator|.
-name|doTranslation
-argument_list|()
-decl_stmt|;
+name|appendPart
+argument_list|(
+name|qualifierBuffer
+argument_list|)
+expr_stmt|;
 comment|// build ORDER BY
 name|OrderingTranslator
 name|orderingTranslator
@@ -591,14 +592,20 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
-name|String
-name|orderByStr
+name|StringBuilder
+name|orderingBuffer
 init|=
-name|orderingTranslator
-operator|.
-name|doTranslation
+operator|new
+name|StringBuilder
 argument_list|()
 decl_stmt|;
+name|orderingTranslator
+operator|.
+name|appendPart
+argument_list|(
+name|orderingBuffer
+argument_list|)
+expr_stmt|;
 comment|// assemble
 name|StringBuilder
 name|queryBuf
@@ -845,9 +852,12 @@ expr_stmt|;
 comment|// append qualifier
 if|if
 condition|(
-name|qualifierStr
-operator|!=
-literal|null
+name|qualifierBuffer
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|queryBuf
@@ -861,16 +871,19 @@ name|queryBuf
 operator|.
 name|append
 argument_list|(
-name|qualifierStr
+name|qualifierBuffer
 argument_list|)
 expr_stmt|;
 block|}
 comment|// append prebuilt ordering
 if|if
 condition|(
-name|orderByStr
-operator|!=
-literal|null
+name|orderingBuffer
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 name|queryBuf
@@ -882,7 +895,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|orderByStr
+name|orderingBuffer
 argument_list|)
 expr_stmt|;
 block|}
