@@ -21,31 +21,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|lang
-operator|.
-name|reflect
-operator|.
-name|Method
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|sql
 operator|.
 name|PreparedStatement
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Statement
 import|;
 end_import
 
@@ -104,40 +82,6 @@ name|OracleSelectTranslator
 extends|extends
 name|SelectTranslator
 block|{
-specifier|private
-specifier|static
-name|boolean
-name|testedDriver
-decl_stmt|;
-specifier|private
-specifier|static
-name|boolean
-name|useOptimizations
-decl_stmt|;
-specifier|private
-specifier|static
-name|Method
-name|statementSetRowPrefetch
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|Object
-index|[]
-name|rowPrefetchArgs
-init|=
-operator|new
-name|Object
-index|[]
-block|{
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
-literal|100
-argument_list|)
-block|}
-decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -195,90 +139,6 @@ return|return
 name|sqlString
 return|;
 block|}
-comment|/**      * Determines if we can use Oracle optimizations. If yes, configure this object to use      * them via reflection.      */
-specifier|private
-specifier|static
-specifier|final
-specifier|synchronized
-name|void
-name|testDriver
-parameter_list|(
-name|Statement
-name|st
-parameter_list|)
-block|{
-if|if
-condition|(
-name|testedDriver
-condition|)
-block|{
-return|return;
-block|}
-comment|// invalid call.. give it another chance later
-if|if
-condition|(
-name|st
-operator|==
-literal|null
-condition|)
-block|{
-return|return;
-block|}
-name|testedDriver
-operator|=
-literal|true
-expr_stmt|;
-try|try
-block|{
-comment|// search for matching methods in class and its superclasses
-name|Class
-index|[]
-name|args2
-init|=
-operator|new
-name|Class
-index|[]
-block|{
-name|Integer
-operator|.
-name|TYPE
-block|}
-decl_stmt|;
-name|statementSetRowPrefetch
-operator|=
-name|st
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getMethod
-argument_list|(
-literal|"setRowPrefetch"
-argument_list|,
-name|args2
-argument_list|)
-expr_stmt|;
-name|useOptimizations
-operator|=
-literal|true
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-name|useOptimizations
-operator|=
-literal|false
-expr_stmt|;
-name|statementSetRowPrefetch
-operator|=
-literal|null
-expr_stmt|;
-block|}
-block|}
 comment|/**      * Translates internal query into PreparedStatement, applying Oracle optimizations if      * possible.      */
 annotation|@
 name|Override
@@ -319,46 +179,6 @@ argument_list|(
 name|stmt
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|testedDriver
-condition|)
-block|{
-name|testDriver
-argument_list|(
-name|stmt
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|useOptimizations
-condition|)
-block|{
-comment|// apply Oracle optimization of the statement
-comment|// Performance tests conducted by Arndt (bug #699966) show
-comment|// that using explicit "defineColumnType" slows things down,
-comment|// so this is disabled now
-comment|// 1. name result columns
-comment|/*              * List columns = getColumns(); int len = columns.size(); Object[] args = new              * Object[2]; for (int i = 0; i< len; i++) { DbAttribute attr = (DbAttribute)              * columns.get(i); args[0] = new Integer(i + 1); args[1] = new              * Integer(attr.getType()); statementDefineColumnType.invoke(stmt, args); }              */
-comment|// 2. prefetch bigger batches of rows
-comment|// [This optimization didn't give any measurable performance
-comment|// increase. Keeping it for the future research]
-comment|// Note that this is done by statement,
-comment|// instead of Connection, since we do not want to mess
-comment|// with Connection that is potentially used by
-comment|// other people.
-name|statementSetRowPrefetch
-operator|.
-name|invoke
-argument_list|(
-name|stmt
-argument_list|,
-name|rowPrefetchArgs
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|stmt
 return|;
