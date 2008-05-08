@@ -153,8 +153,19 @@ name|supportFK
 init|=
 literal|false
 decl_stmt|;
+name|String
+name|adapterStorageEngine
+init|=
+name|MySQLAdapter
+operator|.
+name|DEFAULT_STORAGE_ENGINE
+decl_stmt|;
 try|try
 block|{
+comment|// http://dev.mysql.com/doc/refman/5.0/en/storage-engines.html
+comment|// per link above "table type" concept is deprecated in favor of "storage
+comment|// engine". Not sure if we should check "storage_engine" variable and in what
+comment|// version of MySQL it got introduced...
 name|ResultSet
 name|rs
 init|=
@@ -176,7 +187,7 @@ argument_list|()
 condition|)
 block|{
 name|String
-name|tableType
+name|storageEngine
 init|=
 name|rs
 operator|.
@@ -185,13 +196,20 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
-name|supportFK
-operator|=
-name|tableType
+if|if
+condition|(
+name|storageEngine
 operator|!=
 literal|null
-operator|&&
-name|tableType
+condition|)
+block|{
+name|adapterStorageEngine
+operator|=
+name|storageEngine
+expr_stmt|;
+name|supportFK
+operator|=
+name|storageEngine
 operator|.
 name|toUpperCase
 argument_list|()
@@ -201,6 +219,7 @@ argument_list|(
 literal|"INNODB"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 finally|finally
@@ -232,6 +251,13 @@ operator|.
 name|setSupportsFkConstraints
 argument_list|(
 name|supportFK
+argument_list|)
+expr_stmt|;
+name|adapter
+operator|.
+name|setStorageEngine
+argument_list|(
+name|adapterStorageEngine
 argument_list|)
 expr_stmt|;
 return|return

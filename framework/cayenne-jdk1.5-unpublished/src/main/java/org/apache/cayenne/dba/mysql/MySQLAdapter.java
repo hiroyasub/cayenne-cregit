@@ -312,6 +312,17 @@ name|MySQLAdapter
 extends|extends
 name|JdbcAdapter
 block|{
+specifier|final
+specifier|static
+name|String
+name|DEFAULT_STORAGE_ENGINE
+init|=
+literal|"InnoDB"
+decl_stmt|;
+specifier|protected
+name|String
+name|storageEngine
+decl_stmt|;
 specifier|public
 name|MySQLAdapter
 parameter_list|()
@@ -319,20 +330,20 @@ block|{
 comment|// init defaults
 name|this
 operator|.
+name|storageEngine
+operator|=
+name|DEFAULT_STORAGE_ENGINE
+expr_stmt|;
 name|setSupportsFkConstraints
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
 name|setSupportsUniqueConstraints
 argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
 name|setSupportsGeneratedKeys
 argument_list|(
 literal|true
@@ -797,11 +808,20 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
-comment|// force InnoDB tables - by default constraints are enabled
+if|if
+condition|(
+name|storageEngine
+operator|!=
+literal|null
+condition|)
+block|{
 name|ddlSQL
 operator|+=
-literal|" ENGINE=InnoDB"
+literal|" ENGINE="
+operator|+
+name|storageEngine
 expr_stmt|;
+block|}
 return|return
 name|ddlSQL
 return|;
@@ -1182,6 +1202,32 @@ argument_list|)
 return|;
 block|}
 block|}
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|String
+name|getStorageEngine
+parameter_list|()
+block|{
+return|return
+name|storageEngine
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setStorageEngine
+parameter_list|(
+name|String
+name|engine
+parameter_list|)
+block|{
+name|this
+operator|.
+name|storageEngine
+operator|=
+name|engine
+expr_stmt|;
 block|}
 block|}
 end_class
