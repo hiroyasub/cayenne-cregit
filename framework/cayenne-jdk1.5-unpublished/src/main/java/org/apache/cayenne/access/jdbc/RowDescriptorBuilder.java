@@ -836,6 +836,27 @@ return|return
 name|this
 return|;
 block|}
+specifier|public
+name|boolean
+name|isOverriden
+parameter_list|(
+name|String
+name|columnName
+parameter_list|)
+block|{
+return|return
+name|typeOverrides
+operator|!=
+literal|null
+operator|&&
+name|typeOverrides
+operator|.
+name|containsKey
+argument_list|(
+name|columnName
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 
