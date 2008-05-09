@@ -937,6 +937,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecate since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -949,6 +950,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecate since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
 specifier|public
 name|void
 name|setRefreshingObjects
