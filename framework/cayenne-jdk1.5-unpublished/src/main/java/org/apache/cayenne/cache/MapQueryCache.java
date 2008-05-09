@@ -550,6 +550,8 @@ block|}
 specifier|final
 class|class
 name|CacheEntry
+implements|implements
+name|Serializable
 block|{
 name|List
 argument_list|<
