@@ -3011,7 +3011,7 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 block|{
 if|if
@@ -3022,7 +3022,7 @@ name|Types
 operator|.
 name|NUMERIC
 operator|&&
-name|precision
+name|scale
 operator|==
 literal|0
 condition|)
