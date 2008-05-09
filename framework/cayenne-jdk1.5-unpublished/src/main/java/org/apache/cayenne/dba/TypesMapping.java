@@ -2974,7 +2974,7 @@ return|return
 name|NOT_DEFINED
 return|;
 block|}
-comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart.      *       * @return Fully qualified Java type name or null if not found.      */
+comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      */
 specifier|public
 specifier|static
 name|String
@@ -2998,7 +2998,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart.      *       * @return Fully qualified Java type name or null if not found.      */
+comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      */
 specifier|public
 specifier|static
 name|String
@@ -3014,6 +3014,9 @@ name|int
 name|scale
 parameter_list|)
 block|{
+comment|// this does not always produce the correct result. See for instance CAY-1052 - PG
+comment|// drivers from 8.2 and newer decided that the scale of "0" means "undefined", not
+comment|// really zero.
 if|if
 condition|(
 name|type
@@ -3048,9 +3051,6 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|// *************************************************************
-comment|// non-static code
-comment|// *************************************************************
 specifier|protected
 name|Map
 argument_list|<
