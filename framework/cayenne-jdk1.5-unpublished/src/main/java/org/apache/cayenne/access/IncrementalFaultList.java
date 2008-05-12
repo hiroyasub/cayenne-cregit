@@ -2809,16 +2809,24 @@ literal|true
 return|;
 block|}
 name|Persistent
-name|dataObj
+name|persistent
 init|=
 operator|(
 name|Persistent
 operator|)
 name|object
 decl_stmt|;
+comment|// NULL ObjectContext can be a result of a delete/commit operation
 if|if
 condition|(
-name|dataObj
+name|persistent
+operator|.
+name|getObjectContext
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|persistent
 operator|.
 name|getObjectContext
 argument_list|()
@@ -2833,7 +2841,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|dataObj
+name|persistent
 operator|.
 name|getObjectId
 argument_list|()
