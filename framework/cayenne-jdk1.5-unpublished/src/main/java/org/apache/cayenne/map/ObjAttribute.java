@@ -752,6 +752,26 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// expose PK attribute names - the client may need those to build ObjectIds
+if|if
+condition|(
+name|dbAttribute
+operator|.
+name|isPrimaryKey
+argument_list|()
+condition|)
+block|{
+name|attribute
+operator|.
+name|setDbAttributePath
+argument_list|(
+name|dbAttribute
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|attribute
 operator|.
 name|setMandatory
