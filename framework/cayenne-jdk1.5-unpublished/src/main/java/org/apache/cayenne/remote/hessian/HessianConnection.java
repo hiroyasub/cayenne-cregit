@@ -350,7 +350,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Retunrs internal RemoteSession instance.      */
+comment|/**      * Returns internal RemoteSession instance.      */
 name|RemoteSession
 name|getSession
 parameter_list|()
