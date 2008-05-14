@@ -351,6 +351,7 @@ literal|null
 return|;
 block|}
 comment|/**      * Returns internal RemoteSession instance.      */
+specifier|public
 name|RemoteSession
 name|getSession
 parameter_list|()
