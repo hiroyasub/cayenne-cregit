@@ -410,16 +410,6 @@ if|if
 condition|(
 name|attribute
 operator|.
-name|getDbAttributeName
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|attribute
-operator|.
-name|getDbAttribute
-argument_list|()
-operator|.
 name|isPrimaryKey
 argument_list|()
 condition|)
