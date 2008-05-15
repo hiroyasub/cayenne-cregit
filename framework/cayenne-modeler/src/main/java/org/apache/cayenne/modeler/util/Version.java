@@ -37,6 +37,9 @@ class|class
 name|Version
 implements|implements
 name|Comparable
+argument_list|<
+name|Object
+argument_list|>
 block|{
 specifier|protected
 name|String
