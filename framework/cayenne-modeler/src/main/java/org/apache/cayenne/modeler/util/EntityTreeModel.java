@@ -172,6 +172,12 @@ name|root
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+index|[]
+argument_list|>
 name|sortedChildren
 decl_stmt|;
 comment|// TODO: in the future replace with a more generic filter
@@ -201,6 +207,12 @@ name|synchronizedMap
 argument_list|(
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+index|[]
+argument_list|>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -447,6 +459,11 @@ literal|null
 condition|)
 block|{
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Attribute
+argument_list|>
 name|attributes
 init|=
 name|entity
@@ -455,6 +472,11 @@ name|getAttributes
 argument_list|()
 decl_stmt|;
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Relationship
+argument_list|>
 name|relationships
 init|=
 name|entity
@@ -502,6 +524,11 @@ name|hideAttributes
 condition|)
 block|{
 name|Iterator
+argument_list|<
+name|?
+extends|extends
+name|Attribute
+argument_list|>
 name|ait
 init|=
 name|attributes
@@ -537,6 +564,11 @@ expr_stmt|;
 block|}
 block|}
 name|Iterator
+argument_list|<
+name|?
+extends|extends
+name|Relationship
+argument_list|>
 name|rit
 init|=
 name|relationships
