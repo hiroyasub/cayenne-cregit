@@ -103,16 +103,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -356,6 +346,9 @@ name|preferredColumnSize
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|BrowserPanel
+argument_list|>
 name|columns
 decl_stmt|;
 specifier|private
@@ -364,6 +357,9 @@ name|browserSelector
 decl_stmt|;
 specifier|private
 name|List
+argument_list|<
+name|TreeSelectionListener
+argument_list|>
 name|treeSelectionListeners
 decl_stmt|;
 specifier|public
@@ -428,6 +424,9 @@ name|synchronizedList
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|TreeSelectionListener
+argument_list|>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -531,33 +530,13 @@ init|(
 name|treeSelectionListeners
 init|)
 block|{
-name|Iterator
-name|it
-init|=
-name|treeSelectionListeners
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|TreeSelectionListener
 name|listener
-init|=
-operator|(
-name|TreeSelectionListener
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|treeSelectionListeners
+control|)
 name|listener
 operator|.
 name|valueChanged
@@ -565,7 +544,11 @@ argument_list|(
 name|e
 argument_list|)
 expr_stmt|;
-block|}
+comment|//            Iterator<TreeSelectionListener> it = treeSelectionListeners.iterator();
+comment|//            while (it.hasNext()) {
+comment|//                TreeSelectionListener listener = (TreeSelectionListener) it.next();
+comment|//                listener.valueChanged(e);
+comment|//            }
 block|}
 block|}
 comment|/**      * Returns current selection path or null if no selection is made.      */
@@ -711,33 +694,13 @@ operator|>
 literal|0
 condition|)
 block|{
-name|Iterator
-name|it
-init|=
-name|columns
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|JList
 name|column
-init|=
-operator|(
-name|JList
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|columns
+control|)
 name|column
 operator|.
 name|setCellRenderer
@@ -745,7 +708,11 @@ argument_list|(
 name|renderer
 argument_list|)
 expr_stmt|;
-block|}
+comment|//                Iterator it = columns.iterator();
+comment|//                while (it.hasNext()) {
+comment|//                    JList column = (JList) it.next();
+comment|//                    column.setCellRenderer(renderer);
+comment|//                }
 block|}
 block|}
 block|}
@@ -842,6 +809,9 @@ name|synchronizedList
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<
+name|BrowserPanel
+argument_list|>
 argument_list|(
 name|minColumns
 argument_list|)
