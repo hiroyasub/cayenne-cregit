@@ -103,16 +103,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -489,10 +479,16 @@ name|getRegisteredTypeNames
 argument_list|()
 decl_stmt|;
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|nonPrimitives
 init|=
 operator|new
 name|HashSet
+argument_list|<
+name|String
+argument_list|>
 argument_list|(
 name|Arrays
 operator|.
@@ -720,6 +716,9 @@ name|map
 parameter_list|)
 block|{
 name|Collection
+argument_list|<
+name|DataNode
+argument_list|>
 name|nodes
 init|=
 name|domain
@@ -730,33 +729,13 @@ decl_stmt|;
 comment|// go via an iterator in an indexed loop, since
 comment|// we already obtained the size
 comment|// (and index is required to initialize array)
-name|Iterator
-name|nodesIt
-init|=
-name|nodes
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|nodesIt
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|DataNode
 name|node
-init|=
-operator|(
-name|DataNode
-operator|)
-name|nodesIt
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|nodes
+control|)
 if|if
 condition|(
 name|node
@@ -769,12 +748,17 @@ argument_list|(
 name|map
 argument_list|)
 condition|)
-block|{
 return|return
 name|node
 return|;
-block|}
-block|}
+comment|//        Iterator nodesIt = nodes.iterator();
+comment|//        while (nodesIt.hasNext()) {
+comment|//            DataNode node = (DataNode) nodesIt.next();
+comment|//
+comment|//            if (node.getDataMaps().contains(map)) {
+comment|//                return node;
+comment|//            }
+comment|//        }
 return|return
 literal|null
 return|;
