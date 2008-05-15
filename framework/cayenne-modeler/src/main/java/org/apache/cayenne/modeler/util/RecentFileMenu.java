@@ -173,7 +173,7 @@ name|menuItem
 argument_list|)
 return|;
 block|}
-comment|/**      * Rebuilds internal menu items list with the files stored in CayenneModeler      * properences.      */
+comment|/**      * Rebuilds internal menu items list with the files stored in CayenneModeler      * preferences.      */
 specifier|public
 name|void
 name|rebuildFromPreferences
@@ -188,6 +188,9 @@ name|getPreferences
 argument_list|()
 decl_stmt|;
 name|Vector
+argument_list|<
+name|?
+argument_list|>
 name|arr
 init|=
 name|pref
@@ -224,7 +227,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|// readd menus
+comment|// read menus
 name|Component
 index|[]
 name|comps
