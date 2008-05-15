@@ -339,6 +339,15 @@ return|return
 literal|false
 return|;
 block|}
+name|getProjectController
+argument_list|()
+operator|.
+name|getProjectWatcher
+argument_list|()
+operator|.
+name|pauseWatching
+argument_list|()
+expr_stmt|;
 name|p
 operator|.
 name|save
@@ -374,6 +383,16 @@ operator|.
 name|getAbsolutePath
 argument_list|()
 argument_list|)
+expr_stmt|;
+comment|/**          * Reset the watcher now          */
+name|getProjectController
+argument_list|()
+operator|.
+name|getProjectWatcher
+argument_list|()
+operator|.
+name|reconfigure
+argument_list|()
 expr_stmt|;
 return|return
 literal|true

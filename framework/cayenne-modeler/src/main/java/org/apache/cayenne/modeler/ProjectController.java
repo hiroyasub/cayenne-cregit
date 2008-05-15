@@ -1599,6 +1599,11 @@ name|maxHistorySize
 init|=
 literal|20
 decl_stmt|;
+comment|/**      * Project files watcher. When project file is changed, user will be asked to confirm      * loading the changes      */
+specifier|protected
+name|ProjectWatchdog
+name|watchdog
+decl_stmt|;
 specifier|public
 name|ProjectController
 parameter_list|(
@@ -1663,6 +1668,18 @@ name|Project
 name|currentProject
 parameter_list|)
 block|{
+if|if
+condition|(
+name|this
+operator|.
+name|project
+operator|!=
+name|currentProject
+condition|)
+comment|// strange enough, this method is called twice
+comment|// during project opening. Not to disturb
+comment|// watchdog extra time, adding this check
+block|{
 name|this
 operator|.
 name|project
@@ -1675,6 +1692,62 @@ name|projectPreferences
 operator|=
 literal|null
 expr_stmt|;
+if|if
+condition|(
+name|project
+operator|==
+literal|null
+condition|)
+comment|// null project -> no files to watch
+block|{
+if|if
+condition|(
+name|watchdog
+operator|!=
+literal|null
+condition|)
+block|{
+name|watchdog
+operator|.
+name|interrupt
+argument_list|()
+expr_stmt|;
+name|watchdog
+operator|=
+literal|null
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|watchdog
+operator|==
+literal|null
+condition|)
+block|{
+name|watchdog
+operator|=
+operator|new
+name|ProjectWatchdog
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+name|watchdog
+operator|.
+name|start
+argument_list|()
+expr_stmt|;
+block|}
+name|watchdog
+operator|.
+name|reconfigure
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 block|}
 comment|/**      * Returns top preferences Domain for the application.      */
 specifier|public
@@ -7430,7 +7503,7 @@ operator|=
 name|callbackMethod
 expr_stmt|;
 block|}
-comment|/**      * adds callback method manipulation listener      * @param listener listener      */
+comment|/**      * adds callback method manipulation listener      *       * @param listener listener      */
 specifier|public
 name|void
 name|addCallbackMethodListener
@@ -7451,7 +7524,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * fires callback method manipulation event      * @param e event      */
+comment|/**      * fires callback method manipulation event      *       * @param e event      */
 specifier|public
 name|void
 name|fireCallbackMethodEvent
@@ -7569,7 +7642,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * adds listener class manipulation listener      * @param listener listener      */
+comment|/**      * adds listener class manipulation listener      *       * @param listener listener      */
 specifier|public
 name|void
 name|addEntityListenerListener
@@ -7590,7 +7663,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * fires entity listener manipulation event      * @param e event      */
+comment|/**      * fires entity listener manipulation event      *       * @param e event      */
 specifier|public
 name|void
 name|fireEntityListenerEvent
@@ -7707,6 +7780,16 @@ argument_list|)
 throw|;
 block|}
 block|}
+block|}
+comment|/**      * @return the project files' watcher      */
+specifier|public
+name|ProjectWatchdog
+name|getProjectWatcher
+parameter_list|()
+block|{
+return|return
+name|watchdog
+return|;
 block|}
 block|}
 end_class
