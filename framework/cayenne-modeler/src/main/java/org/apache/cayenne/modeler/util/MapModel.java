@@ -81,6 +81,11 @@ name|BasicModel
 block|{
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|map
 decl_stmt|;
 specifier|public
@@ -122,6 +127,11 @@ name|void
 name|storeProperties
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|map
 parameter_list|)
 block|{
@@ -178,6 +188,11 @@ name|void
 name|setMap
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|map
 parameter_list|)
 block|{
