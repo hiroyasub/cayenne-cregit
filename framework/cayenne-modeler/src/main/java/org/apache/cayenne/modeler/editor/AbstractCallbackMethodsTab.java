@@ -147,6 +147,16 @@ name|javax
 operator|.
 name|swing
 operator|.
+name|JPopupMenu
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
 name|JTable
 import|;
 end_import
@@ -383,6 +393,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|event
+operator|.
+name|TablePopupHandler
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|CayenneAction
@@ -466,7 +492,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base abstract class for all calback methids editing tabs Contains logic for callback  * methods displaying, creating, removing, esiting, reordering  *   * @author Vasil Tarasevich  * @version 1.0 Oct 23, 2007  */
+comment|/**  * Base abstract class for all calback methids editing tabs Contains logic for callback  * methods displaying, creating, removing, esiting, reordering  *   * @author Vasil Tarasevich  */
 end_comment
 
 begin_class
@@ -996,6 +1022,34 @@ block|{
 comment|// System.out.println("c");
 block|}
 block|}
+argument_list|)
+expr_stmt|;
+comment|/**          * Create and install a popup          */
+name|JPopupMenu
+name|popup
+init|=
+operator|new
+name|JPopupMenu
+argument_list|()
+decl_stmt|;
+name|popup
+operator|.
+name|add
+argument_list|(
+name|getRemoveCallbackMethodAction
+argument_list|()
+operator|.
+name|buildMenu
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|TablePopupHandler
+operator|.
+name|install
+argument_list|(
+name|table
+argument_list|,
+name|popup
 argument_list|)
 expr_stmt|;
 name|auxPanel

@@ -15,6 +15,36 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JCheckBox
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JDialog
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JOptionPane
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -56,16 +86,6 @@ operator|.
 name|pref
 operator|.
 name|PreferenceDetail
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|*
 import|;
 end_import
 
@@ -152,7 +172,7 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
-literal|"File exists"
+literal|"Confirm Remove"
 argument_list|)
 decl_stmt|;
 name|dialog
