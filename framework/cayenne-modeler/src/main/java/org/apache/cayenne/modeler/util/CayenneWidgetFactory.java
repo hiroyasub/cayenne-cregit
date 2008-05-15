@@ -184,6 +184,9 @@ name|JComboBox
 name|createComboBox
 parameter_list|(
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|model
 parameter_list|,
 name|boolean
