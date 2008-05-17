@@ -292,7 +292,7 @@ specifier|private
 name|MergerFactory
 name|factory
 decl_stmt|;
-comment|/**      * A method that return true if the given table name should be included. The default      * implemntation include all tables.      */
+comment|/**      * A method that return true if the given table name should be included. The default      * implementation include all tables.      */
 specifier|public
 name|boolean
 name|includeTableName
