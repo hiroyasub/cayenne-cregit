@@ -160,6 +160,7 @@ name|fTmpFileInCurrentDir
 argument_list|)
 throw|;
 block|}
+comment|/**      * @deprecated since 3.0 unused      */
 specifier|public
 name|void
 name|testFindResourceInCurrentDirectory
@@ -198,6 +199,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|void
 name|testClassBaseUrl
@@ -249,6 +251,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0 unused      */
 specifier|public
 name|void
 name|testFindResourceInClasspath

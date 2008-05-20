@@ -183,7 +183,7 @@ specifier|protected
 name|ClassLoader
 name|classLoader
 decl_stmt|;
-comment|/**      * Returns a resource as InputStream if it is found in CLASSPATH or<code>null</code>      * otherwise. Lookup is normally performed in all JAR and ZIP files and directories      * available to the ClassLoader.      */
+comment|/**      * Returns a resource as InputStream if it is found in CLASSPATH or<code>null</code>      * otherwise. Lookup is normally performed in all JAR and ZIP files and directories      * available to the ClassLoader.      *       * @deprecated since 3.0 unused.      */
 specifier|public
 specifier|static
 name|InputStream
@@ -253,7 +253,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Returns a resource as InputStream if it is found in the filesystem or      *<code>null</code> otherwise. Lookup is first performed relative to the user's      * home directory (as defined by "user.home" system property), and then relative to      * the current directory.      */
+comment|/**      * Returns a resource as InputStream if it is found in the filesystem or      *<code>null</code> otherwise. Lookup is first performed relative to the user's      * home directory (as defined by "user.home" system property), and then relative to      * the current directory.      *       * @deprecated since 3.0 unused      */
 specifier|public
 specifier|static
 name|InputStream
@@ -696,7 +696,7 @@ return|return
 name|url
 return|;
 block|}
-comment|/**      * Returns a base URL as a String from which this class was loaded. This is normally a      * JAR or a file URL, but it is ClassLoader dependent.      */
+comment|/**      * Returns a base URL as a String from which this class was loaded. This is normally a      * JAR or a file URL, but it is ClassLoader dependent.      *       * @deprecated since 3.0 unused.      */
 specifier|public
 specifier|static
 name|String
