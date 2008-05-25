@@ -311,17 +311,6 @@ annotation|@
 name|Override
 specifier|protected
 name|InputStream
-name|getDomainConfiguration
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|InputStream
 name|getMapConfiguration
 parameter_list|(
 name|String

@@ -87,19 +87,6 @@ block|{
 block|}
 specifier|protected
 name|InputStream
-name|getDomainConfiguration
-parameter_list|()
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"this is an in-memory mockup...'getDomainConfiguration' is not implemented."
-argument_list|)
-throw|;
-block|}
-specifier|protected
-name|InputStream
 name|getMapConfiguration
 parameter_list|(
 name|String

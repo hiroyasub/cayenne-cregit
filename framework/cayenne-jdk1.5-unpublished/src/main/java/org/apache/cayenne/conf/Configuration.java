@@ -595,15 +595,18 @@ name|ResourceLocator
 name|getResourceLocator
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a DataDomain as a stream or<code>null</code> if it cannot be found.      */
-comment|// TODO: this method is only used in sublcass (DefaultConfiguration),
-comment|// should we remove it from here?
+comment|/**      * Returns a DataDomain as a stream or<code>null</code> if it cannot be found.      *       * @deprecated since 3.0 This method is specific to subclass, so it should not be in the      *             superclass.      */
 specifier|protected
-specifier|abstract
 name|InputStream
 name|getDomainConfiguration
 parameter_list|()
-function_decl|;
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
 comment|/**      * Returns a DataMap with the given name or<code>null</code> if it cannot be found.      */
 specifier|protected
 specifier|abstract
