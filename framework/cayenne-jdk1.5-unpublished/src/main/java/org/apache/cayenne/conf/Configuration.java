@@ -565,13 +565,16 @@ name|EventManager
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Indicates whether {@link #initialize}can be called. Returning<code>false</code>      * allows new instances to delay or refuse the initialization process.      */
+comment|/**      * Indicates whether {@link #initialize}can be called. Returning<code>false</code>      * allows new instances to delay or refuse the initialization process. This      * impementation returns true unconditionally.      *       * @deprecated since 3.0 - this method is redundant, as subclasses can prevent      *             initialization by overriding {@link #initialize()} and throwing an      *             exception.      */
 specifier|public
-specifier|abstract
 name|boolean
 name|canInitialize
 parameter_list|()
-function_decl|;
+block|{
+return|return
+literal|true
+return|;
+block|}
 comment|/**      * Initializes the new instance.      *       * @throws Exception      */
 specifier|public
 specifier|abstract
@@ -581,13 +584,14 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Called after successful completion of {@link #initialize}.      */
+comment|/**      * Called after successful completion of {@link #initialize}. This implementation is      * a noop.      *       * @deprecated since 3.0 subclasses are recommended to override {@link #initialize()}.      */
 specifier|public
-specifier|abstract
 name|void
 name|didInitialize
 parameter_list|()
-function_decl|;
+block|{
+comment|// noop
+block|}
 comment|/**      * Returns the resource locator used for finding and loading resources.      */
 specifier|protected
 specifier|abstract
@@ -595,7 +599,7 @@ name|ResourceLocator
 name|getResourceLocator
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a DataDomain as a stream or<code>null</code> if it cannot be found.      *       * @deprecated since 3.0 This method is specific to subclass, so it should not be in the      *             superclass.      */
+comment|/**      * Returns a DataDomain as a stream or<code>null</code> if it cannot be found.      *       * @deprecated since 3.0 This method is specific to subclass, so it should not be in      *             the superclass.      */
 specifier|protected
 name|InputStream
 name|getDomainConfiguration

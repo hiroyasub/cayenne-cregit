@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FileConfiguration loads a Cayenne configuraton file from a given  * location in the file system.  *  * @author Holger Hoffstaette  */
+comment|/**  * FileConfiguration loads a Cayenne configuraton file from a given location in the file  * system.  *   * @author Holger Hoffstaette  */
 end_comment
 
 begin_class
@@ -105,12 +105,12 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/** 	 * The domain file used for this configuration 	 */
+comment|/**      * The domain file used for this configuration      */
 specifier|protected
 name|File
 name|projectFile
 decl_stmt|;
-comment|/** 	 * Default constructor. 	 * Simply calls {@link FileConfiguration#FileConfiguration(String)} 	 * with {@link Configuration#DEFAULT_DOMAIN_FILE} as argument. 	 * @see DefaultConfiguration#DefaultConfiguration() 	 */
+comment|/**      * Default constructor. Simply calls      * {@link FileConfiguration#FileConfiguration(String)} with      * {@link Configuration#DEFAULT_DOMAIN_FILE} as argument.      *       * @see DefaultConfiguration#DefaultConfiguration()      */
 specifier|public
 name|FileConfiguration
 parameter_list|()
@@ -123,7 +123,7 @@ name|DEFAULT_DOMAIN_FILE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates a configuration that uses the provided file name 	 * as the main project file, ignoring any other lookup strategies. 	 * The file name is<b>not</b> checked for existence and must not 	 * contain relative or absolute paths, i.e. only the file name. 	 * 	 * @throws ConfigurationException when projectFile is<code>null</code>. 	 * @see DefaultConfiguration#DefaultConfiguration(String) 	 */
+comment|/**      * Creates a configuration that uses the provided file name as the main project file,      * ignoring any other lookup strategies. The file name is<b>not</b> checked for      * existence and must not contain relative or absolute paths, i.e. only the file name.      *       * @throws ConfigurationException when projectFile is<code>null</code>.      * @see DefaultConfiguration#DefaultConfiguration(String)      */
 specifier|public
 name|FileConfiguration
 parameter_list|(
@@ -212,7 +212,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Creates a configuration that uses the provided file  	 * as the main project file, ignoring any other lookup strategies. 	 *  	 * @throws ConfigurationException when projectFile is<code>null</code>, 	 * a directory or not readable. 	 */
+comment|/**      * Creates a configuration that uses the provided file as the main project file,      * ignoring any other lookup strategies.      *       * @throws ConfigurationException when projectFile is<code>null</code>, a      *             directory or not readable.      */
 specifier|public
 name|FileConfiguration
 parameter_list|(
@@ -302,7 +302,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Adds the given String as a custom path for filesystem lookups. 	 * The path can be relative or absolute and is<i>not</i> checked 	 * for existence. 	 * 	 * This allows for easy customization of resource search paths after 	 * Constructor invocation: 	 *<pre> 	 * conf = new FileConfiguration("myconfig-cayenne.xml"); 	 * conf.addFilesystemPath(new File("a/relative/path")); 	 * conf.addFilesystemPath(new File("/an/absolute/search/path")); 	 * Configuration.initializeSharedConfiguration(conf); 	 *</pre> 	 *  	 * Alternatively use {@link FileConfiguration#addFilesystemPath(File)} 	 * for adding a path that is checked for existence. 	 *  	 * @throws IllegalArgumentException if<code>path</code> is<code>null</code>. 	 */
+comment|/**      * Adds the given String as a custom path for filesystem lookups. The path can be      * relative or absolute and is<i>not</i> checked for existence. This allows for easy      * customization of resource search paths after Constructor invocation:      *       *<pre>      * conf = new FileConfiguration(&quot;myconfig-cayenne.xml&quot;);      * conf.addFilesystemPath(new File(&quot;a/relative/path&quot;));      * conf.addFilesystemPath(new File(&quot;/an/absolute/search/path&quot;));      * Configuration.initializeSharedConfiguration(conf);      *</pre>      *       * Alternatively use {@link FileConfiguration#addFilesystemPath(File)} for adding a      * path that is checked for existence.      *       * @throws IllegalArgumentException if<code>path</code> is<code>null</code>.      */
 specifier|public
 name|void
 name|addFilesystemPath
@@ -322,7 +322,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Adds the given directory as a path for filesystem lookups. 	 * The directory is checked for existence. 	 *  	 * @throws IllegalArgumentException if<code>path</code> is<code>null</code>, 	 * not a directory or not readable. 	 */
+comment|/**      * Adds the given directory as a path for filesystem lookups. The directory is checked      * for existence.      *       * @throws IllegalArgumentException if<code>path</code> is<code>null</code>,      *             not a directory or not readable.      */
 specifier|public
 name|void
 name|addFilesystemPath
@@ -342,7 +342,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Only returns<code>true</code> when {@link #getProjectFile} does not 	 * return<code>null</code>. 	 */
+comment|/**      * Only returns<code>true</code> when {@link #getProjectFile} does not return      *<code>null</code>.      *       * @deprecated since 3.0 - superclass method is deprecated.      */
 annotation|@
 name|Override
 specifier|public
@@ -350,19 +350,17 @@ name|boolean
 name|canInitialize
 parameter_list|()
 block|{
-comment|// I can only initialize myself when I have a valid file
+comment|// TODO: move this to "initialize" once the deprecated method is removed
 return|return
-operator|(
 name|this
 operator|.
 name|getProjectFile
 argument_list|()
 operator|!=
 literal|null
-operator|)
 return|;
 block|}
-comment|/** 	 * Returns the main domain file used for this configuration.  	 */
+comment|/**      * Returns the main domain file used for this configuration.      */
 specifier|public
 name|File
 name|getProjectFile
@@ -372,7 +370,7 @@ return|return
 name|projectFile
 return|;
 block|}
-comment|/** 	 * Sets the main domain file used for this configuration. 	 * @throws ConfigurationException if<code>projectFile</code> is null, 	 * a directory or not readable. 	 */
+comment|/**      * Sets the main domain file used for this configuration.      *       * @throws ConfigurationException if<code>projectFile</code> is null, a directory      *             or not readable.      */
 specifier|protected
 name|void
 name|setProjectFile
@@ -439,7 +437,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * Returns the directory of the current project file as 	 * returned by {@link #getProjectFile}. 	 */
+comment|/**      * Returns the directory of the current project file as returned by      * {@link #getProjectFile}.      */
 specifier|public
 name|File
 name|getProjectDirectory
