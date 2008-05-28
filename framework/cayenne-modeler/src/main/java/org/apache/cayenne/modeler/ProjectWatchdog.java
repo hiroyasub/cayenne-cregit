@@ -325,6 +325,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+else|else
+name|mediator
+operator|.
+name|setDirty
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -344,22 +352,7 @@ name|getProject
 argument_list|()
 operator|!=
 literal|null
-operator|&&
-name|fileInfo
-operator|.
-name|getFile
-argument_list|()
-operator|.
-name|equals
-argument_list|(
-name|mediator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getMainFile
-argument_list|()
-argument_list|)
+comment|/*&& fileInfo.getFile().equals(mediator.getProject().getMainFile()) */
 condition|)
 block|{
 name|FileDeletedDialog
@@ -431,10 +424,15 @@ name|projectClosedAction
 argument_list|()
 expr_stmt|;
 block|}
-block|}
 else|else
-empty_stmt|;
-comment|// pretend that nothing happened by now
+name|mediator
+operator|.
+name|setDirty
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Shows confirmation dialog      */
 specifier|private

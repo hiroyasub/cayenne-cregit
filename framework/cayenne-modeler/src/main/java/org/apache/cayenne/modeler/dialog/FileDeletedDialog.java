@@ -133,7 +133,7 @@ init|=
 operator|new
 name|JOptionPane
 argument_list|(
-literal|"Main project file was deleted or renamed. "
+literal|"One or more project files were deleted or renamed. "
 operator|+
 literal|"Do you want to save the changes or close the project?"
 argument_list|,
