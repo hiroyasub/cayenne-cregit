@@ -156,7 +156,7 @@ init|=
 literal|"modeler.log"
 decl_stmt|;
 comment|// Keys for the preference file.
-comment|/** List of the last 4 opened project files. */
+comment|/** List of the last 12 opened project files. */
 specifier|public
 specifier|static
 specifier|final
@@ -206,6 +206,15 @@ name|String
 name|EDITOR_LOGFILE
 init|=
 literal|"Editor.logfile"
+decl_stmt|;
+comment|/*      * Number of items in combobox visible without scrolling       */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|COMBOBOX_MAX_VISIBLE_SIZE
+init|=
+literal|12
 decl_stmt|;
 specifier|protected
 specifier|static

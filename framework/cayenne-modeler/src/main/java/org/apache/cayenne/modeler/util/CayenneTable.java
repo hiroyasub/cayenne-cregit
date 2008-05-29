@@ -75,6 +75,18 @@ name|javax
 operator|.
 name|swing
 operator|.
+name|event
+operator|.
+name|TableModelEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
 name|table
 operator|.
 name|TableCellEditor
@@ -94,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**    * Common superclass of tables used in Cayenne. Contains some common configuration  * settings and utility methods.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Common superclass of tables used in Cayenne. Contains some common configuration  * settings and utility methods.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -126,6 +138,8 @@ literal|3
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|createDefaultEditors
@@ -195,8 +209,8 @@ name|getModel
 argument_list|()
 return|;
 block|}
-comment|/**      * Cancels editing of any cells that maybe currently edited.      * This method should be called before updating any selections.      */
-specifier|protected
+comment|/**      * Cancels editing of any cells that maybe currently edited. This method should be      * called before updating any selections.      */
+specifier|public
 name|void
 name|cancelEditing
 parameter_list|()
@@ -228,9 +242,6 @@ condition|)
 block|{
 return|return;
 block|}
-name|cancelEditing
-argument_list|()
-expr_stmt|;
 name|CayenneTableModel
 name|model
 init|=
@@ -277,9 +288,6 @@ name|int
 name|index
 parameter_list|)
 block|{
-name|cancelEditing
-argument_list|()
-expr_stmt|;
 name|CayenneTableModel
 name|model
 init|=
@@ -413,6 +421,27 @@ block|}
 return|return
 literal|null
 return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|tableChanged
+parameter_list|(
+name|TableModelEvent
+name|e
+parameter_list|)
+block|{
+name|cancelEditing
+argument_list|()
+expr_stmt|;
+name|super
+operator|.
+name|tableChanged
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

@@ -53,16 +53,22 @@ end_import
 
 begin_import
 import|import
-name|javax
+name|org
 operator|.
-name|swing
+name|apache
 operator|.
-name|JTable
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|CayenneTable
 import|;
 end_import
 
 begin_comment
-comment|/**  * A class to handle mouse right-click on table and show popup  * after selecting specified table row  */
+comment|/**  * A class to handle mouse right-click on table and show popup after selecting specified  * table row  */
 end_comment
 
 begin_class
@@ -73,18 +79,20 @@ extends|extends
 name|MouseAdapter
 block|{
 specifier|private
-name|JTable
+specifier|final
+name|CayenneTable
 name|table
 decl_stmt|;
 specifier|private
+specifier|final
 name|JPopupMenu
 name|popup
 decl_stmt|;
-comment|/**      * Creates new mouse handler for table, which shows specified      * popupmenu on right-click       */
+comment|/**      * Creates new mouse handler for table, which shows specified popupmenu on right-click      */
 specifier|public
 name|TablePopupHandler
 parameter_list|(
-name|JTable
+name|CayenneTable
 name|table
 parameter_list|,
 name|JPopupMenu
@@ -104,13 +112,13 @@ operator|=
 name|popup
 expr_stmt|;
 block|}
-comment|/**      * Creates and installs mouse listener for a table       */
+comment|/**      * Creates and installs mouse listener for a table      */
 specifier|public
 specifier|static
 name|void
 name|install
 parameter_list|(
-name|JTable
+name|CayenneTable
 name|table
 parameter_list|,
 name|JPopupMenu
@@ -132,6 +140,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Invoked when a mouse button has been pressed on a component.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|mousePressed
@@ -147,6 +157,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Invoked when a mouse button has been released on a component.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|mouseReleased
@@ -163,6 +175,11 @@ name|isPopupTrigger
 argument_list|()
 condition|)
 block|{
+name|table
+operator|.
+name|cancelEditing
+argument_list|()
+expr_stmt|;
 name|int
 name|row
 init|=
