@@ -73,7 +73,7 @@ name|modeler
 operator|.
 name|action
 operator|.
-name|SaveAsAction
+name|SaveAction
 import|;
 end_import
 
@@ -387,7 +387,7 @@ argument_list|()
 operator|.
 name|getAction
 argument_list|(
-name|SaveAsAction
+name|SaveAction
 operator|.
 name|getActionName
 argument_list|()
