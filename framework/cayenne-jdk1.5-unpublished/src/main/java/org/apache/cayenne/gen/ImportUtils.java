@@ -826,35 +826,14 @@ argument_list|(
 name|packageName
 argument_list|)
 expr_stmt|;
+comment|// Using UNIX line endings intentionally - generated Java files should look
+comment|// the same regardless of platform to prevent developer teams working on
+comment|// multiple OS's to override each other's work
 name|outputBuffer
 operator|.
 name|append
 argument_list|(
-literal|';'
-argument_list|)
-expr_stmt|;
-name|outputBuffer
-operator|.
-name|append
-argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|outputBuffer
-operator|.
-name|append
-argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
+literal|";\n\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1008,12 +987,7 @@ name|outputBuffer
 operator|.
 name|append
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
+literal|'\n'
 argument_list|)
 expr_stmt|;
 block|}
@@ -1075,17 +1049,12 @@ name|lastStringPrefix
 argument_list|)
 condition|)
 block|{
-comment|// output a newline
+comment|// output a newline; force UNIX style per comment above
 name|outputBuffer
 operator|.
 name|append
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
+literal|"\n"
 argument_list|)
 expr_stmt|;
 block|}
