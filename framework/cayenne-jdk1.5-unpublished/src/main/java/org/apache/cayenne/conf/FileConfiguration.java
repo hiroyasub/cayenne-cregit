@@ -43,20 +43,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|ResourceLocator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|commons
 operator|.
 name|logging
@@ -148,14 +134,6 @@ name|domainConfigurationName
 argument_list|)
 expr_stmt|;
 comment|// configure the ResourceLocator for plain files
-name|ResourceLocator
-name|locator
-init|=
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
-decl_stmt|;
 name|locator
 operator|.
 name|setSkipAbsolutePath
@@ -233,22 +211,12 @@ name|domainConfigurationFile
 argument_list|)
 expr_stmt|;
 comment|// set the project file
-name|this
-operator|.
 name|setProjectFile
 argument_list|(
 name|domainConfigurationFile
 argument_list|)
 expr_stmt|;
 comment|// configure the ResourceLocator for plain files
-name|ResourceLocator
-name|locator
-init|=
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
-decl_stmt|;
 name|locator
 operator|.
 name|setSkipAbsolutePath
@@ -311,10 +279,7 @@ name|String
 name|path
 parameter_list|)
 block|{
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
+name|locator
 operator|.
 name|addFilesystemPath
 argument_list|(
@@ -331,10 +296,7 @@ name|File
 name|path
 parameter_list|)
 block|{
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
+name|locator
 operator|.
 name|addFilesystemPath
 argument_list|(

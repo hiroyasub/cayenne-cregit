@@ -118,8 +118,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * the default ResourceLocator used for CLASSPATH loading      */
-specifier|private
+specifier|protected
 name|ResourceLocator
 name|locator
 decl_stmt|;
@@ -284,10 +283,7 @@ name|String
 name|customPath
 parameter_list|)
 block|{
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
+name|locator
 operator|.
 name|addClassPath
 argument_list|(
@@ -304,10 +300,7 @@ name|String
 name|path
 parameter_list|)
 block|{
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
+name|locator
 operator|.
 name|addFilesystemPath
 argument_list|(

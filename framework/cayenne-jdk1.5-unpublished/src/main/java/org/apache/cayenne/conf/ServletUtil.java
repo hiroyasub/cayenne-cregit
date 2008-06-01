@@ -133,12 +133,12 @@ operator|instanceof
 name|DefaultConfiguration
 condition|)
 block|{
-name|ResourceLocator
+name|ResourceFinder
 name|locator
 init|=
 name|oldConfig
 operator|.
-name|getResourceLocator
+name|getResourceFinder
 argument_list|()
 decl_stmt|;
 if|if

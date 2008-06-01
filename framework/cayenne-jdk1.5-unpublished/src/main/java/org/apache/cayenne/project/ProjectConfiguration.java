@@ -81,20 +81,6 @@ name|FileConfiguration
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|ResourceLocator
-import|;
-end_import
-
 begin_comment
 comment|/**  * Subclass of FileConfiguration used in the project model.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
 end_comment
@@ -128,14 +114,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 comment|// configure deterministic file opening rules
-name|ResourceLocator
-name|locator
-init|=
-name|this
-operator|.
-name|getResourceLocator
-argument_list|()
-decl_stmt|;
 name|locator
 operator|.
 name|setSkipAbsolutePath
