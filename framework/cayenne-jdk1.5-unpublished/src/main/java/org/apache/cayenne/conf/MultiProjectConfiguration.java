@@ -121,7 +121,7 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"initialize starting."
+literal|"loading configuration"
 argument_list|)
 expr_stmt|;
 name|InputStream

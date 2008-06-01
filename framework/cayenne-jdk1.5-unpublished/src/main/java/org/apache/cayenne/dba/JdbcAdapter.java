@@ -321,6 +321,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|conf
+operator|.
+name|ClasspathResourceFinder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -524,7 +538,7 @@ name|TypesHandler
 operator|.
 name|getHandler
 argument_list|(
-name|findAdapterResource
+name|findResource
 argument_list|(
 literal|"/types.xml"
 argument_list|)
@@ -563,10 +577,26 @@ return|return
 literal|";"
 return|;
 block|}
-comment|/**      * Locates and returns a named adapter resource. A resource can be an XML file, etc.      *<p>      * This implementation is based on the premise that each adapter is located in its own      * Java package and all resources are in the same package as well. Resource lookup is      * recursive, so that if DbAdapter is a subclass of another adapter, parent adapter      * package is searched as a failover.      *</p>      *       * @since 1.1      */
+comment|/**      * Locates and returns a named adapter resource. A resource can be an XML file, etc.      *<p>      * This implementation is based on the premise that each adapter is located in its own      * Java package and all resources are in the same package as well. Resource lookup is      * recursive, so that if DbAdapter is a subclass of another adapter, parent adapter      * package is searched as a failover.      *</p>      *       * @since 1.1      * @deprecated since 3.0 replaced with protected method {@link #findResource(String)}.      */
 specifier|public
 name|URL
 name|findAdapterResource
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+name|findResource
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
+comment|/**      * * Locates and returns a named adapter resource. A resource can be an XML file, etc.      *<p>      * This implementation is based on the premise that each adapter is located in its own      * Java package and all resources are in the same package as well. Resource lookup is      * recursive, so that if DbAdapter is a subclass of another adapter, parent adapter      * package is searched as a failover.      *</p>      *       * @since 3.0      */
+specifier|protected
+name|URL
+name|findResource
 parameter_list|(
 name|String
 name|name
@@ -578,8 +608,6 @@ name|?
 argument_list|>
 name|adapterClass
 init|=
-name|this
-operator|.
 name|getClass
 argument_list|()
 decl_stmt|;
@@ -617,9 +645,11 @@ decl_stmt|;
 name|URL
 name|url
 init|=
-name|ResourceLocator
+operator|new
+name|ClasspathResourceFinder
+argument_list|()
 operator|.
-name|findURLInClasspath
+name|getResource
 argument_list|(
 name|path
 argument_list|)

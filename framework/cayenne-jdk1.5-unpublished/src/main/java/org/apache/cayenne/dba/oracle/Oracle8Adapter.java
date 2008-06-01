@@ -114,9 +114,9 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|URL
-name|findAdapterResource
+name|findResource
 parameter_list|(
 name|String
 name|name
@@ -140,7 +140,7 @@ block|}
 return|return
 name|super
 operator|.
-name|findAdapterResource
+name|findResource
 argument_list|(
 name|name
 argument_list|)

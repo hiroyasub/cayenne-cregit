@@ -39,6 +39,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|HashMap
@@ -74,6 +84,20 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|conf
+operator|.
+name|ResourceFinder
 import|;
 end_import
 
@@ -369,7 +393,7 @@ name|PROCEDURE_PARAMETER_TAG
 init|=
 literal|"procedure-parameter"
 decl_stmt|;
-comment|//lifecycle listeners and callbacks related
+comment|// lifecycle listeners and callbacks related
 specifier|public
 specifier|static
 specifier|final
@@ -2108,7 +2132,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//we are inside of obj-entity tag
+comment|// we are inside of obj-entity tag
 name|objEntity
 operator|.
 name|addEntityListener
@@ -2124,7 +2148,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//we are inside of datamap tag
+comment|// we are inside of datamap tag
 name|dataMap
 operator|.
 name|addDefaultEntityListener
@@ -2171,7 +2195,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//new "entity-listener" tag as a child of "obj-entity"
+comment|// new "entity-listener" tag as a child of "obj-entity"
 name|entityListener
 operator|.
 name|getCallbackMap
@@ -2193,7 +2217,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//new callback tags - children of "obj-entity"
+comment|// new callback tags - children of "obj-entity"
 name|objEntity
 operator|.
 name|getCallbackMap
@@ -2735,25 +2759,25 @@ throws|throws
 name|CayenneRuntimeException
 block|{
 comment|// configure resource locator
-name|ResourceLocator
+name|ResourceFinder
 name|locator
 init|=
-name|configLocator
+name|createResourceFinder
 argument_list|()
 decl_stmt|;
-name|InputStream
-name|in
+name|URL
+name|url
 init|=
 name|locator
 operator|.
-name|findResourceStream
+name|getResource
 argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|in
+name|url
 operator|==
 literal|null
 condition|)
@@ -2765,6 +2789,33 @@ argument_list|(
 literal|"Can't find data map "
 operator|+
 name|uri
+argument_list|)
+throw|;
+block|}
+name|InputStream
+name|in
+decl_stmt|;
+try|try
+block|{
+name|in
+operator|=
+name|url
+operator|.
+name|openStream
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+name|e
 argument_list|)
 throw|;
 block|}
@@ -2925,10 +2976,24 @@ return|return
 name|location
 return|;
 block|}
-comment|/**      * Creates, configures and returns ResourceLocator object used to lookup DataMap      * files.      */
+comment|/**      * Creates, configures and returns ResourceLocator object used to lookup DataMap      * files.      * @deprecated since 3.0 use {@link #createResourceFinder()}.      */
 specifier|protected
 name|ResourceLocator
 name|configLocator
+parameter_list|()
+block|{
+return|return
+operator|(
+name|ResourceLocator
+operator|)
+name|createResourceFinder
+argument_list|()
+return|;
+block|}
+comment|/**      * Creates, configures and returns a default ResourceFinder.      *       * @since 3.0      */
+specifier|protected
+name|ResourceFinder
+name|createResourceFinder
 parameter_list|()
 block|{
 name|ResourceLocator
