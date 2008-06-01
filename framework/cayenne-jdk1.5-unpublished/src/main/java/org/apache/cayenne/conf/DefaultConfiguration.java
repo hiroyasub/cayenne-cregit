@@ -123,7 +123,7 @@ specifier|private
 name|ResourceLocator
 name|locator
 decl_stmt|;
-comment|/**      * Default constructor. Simply calls      * {@link DefaultConfiguration#DefaultConfiguration(String)} with      * {@link Configuration#DEFAULT_DOMAIN_FILE} as argument.      *       * @see Configuration#Configuration()      */
+comment|/**      * Default constructor. Simply calls      * {@link DefaultConfiguration#DefaultConfiguration(String)} with      * {@link Configuration#DEFAULT_DOMAIN_FILE} as argument.      */
 specifier|public
 name|DefaultConfiguration
 parameter_list|()
@@ -315,6 +315,21 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|InputStream
+name|getDomainConfiguration
+parameter_list|()
+block|{
+comment|// deprecation in superclass does not affect subclass...
+return|return
+name|super
+operator|.
+name|getDomainConfiguration
+argument_list|()
+return|;
+block|}
 comment|/**      * Initializes all Cayenne resources. Loads all configured domains and their data      * maps, initializes all domain Nodes and their DataSources.      */
 annotation|@
 name|Override
@@ -335,8 +350,6 @@ expr_stmt|;
 name|InputStream
 name|in
 init|=
-name|this
-operator|.
 name|getDomainConfiguration
 argument_list|()
 decl_stmt|;
@@ -476,7 +489,7 @@ literal|"initialize finished."
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the default ResourceLocator configured for CLASSPATH lookups.      */
+comment|/**      * Returns the default ResourceLocator configured for CLASSPATH lookups.      *       * @deprecated since 3.0 as super is deprecated.      */
 annotation|@
 name|Override
 specifier|protected
@@ -485,8 +498,18 @@ name|getResourceLocator
 parameter_list|()
 block|{
 return|return
-name|this
-operator|.
+name|locator
+return|;
+block|}
+comment|/**      * @since 3.0      */
+annotation|@
+name|Override
+specifier|protected
+name|ResourceFinder
+name|getResourceFinder
+parameter_list|()
+block|{
+return|return
 name|locator
 return|;
 block|}
@@ -506,66 +529,6 @@ operator|=
 name|locator
 expr_stmt|;
 block|}
-comment|/**      * Returns the domain configuration as a stream or<code>null</code> if it cannot be      * found. Uses the configured {@link ResourceLocator} to find the file.      */
-annotation|@
-name|Override
-specifier|protected
-name|InputStream
-name|getDomainConfiguration
-parameter_list|()
-block|{
-return|return
-name|locator
-operator|.
-name|findResourceStream
-argument_list|(
-name|this
-operator|.
-name|getDomainConfigurationName
-argument_list|()
-argument_list|)
-return|;
-block|}
-comment|/**      * Returns the {@link org.apache.cayenne.map.DataMap} configuration from a specified      * location or<code>null</code> if it cannot be found. Uses the configured      * {@link ResourceLocator} to find the file.      */
-annotation|@
-name|Override
-specifier|protected
-name|InputStream
-name|getMapConfiguration
-parameter_list|(
-name|String
-name|location
-parameter_list|)
-block|{
-return|return
-name|locator
-operator|.
-name|findResourceStream
-argument_list|(
-name|location
-argument_list|)
-return|;
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|InputStream
-name|getViewConfiguration
-parameter_list|(
-name|String
-name|location
-parameter_list|)
-block|{
-return|return
-name|locator
-operator|.
-name|findResourceStream
-argument_list|(
-name|location
-argument_list|)
-return|;
-block|}
-comment|/**      * @see Object#toString()      */
 annotation|@
 name|Override
 specifier|public
