@@ -1788,6 +1788,7 @@ name|toString
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|String
 name|toEJBQL
