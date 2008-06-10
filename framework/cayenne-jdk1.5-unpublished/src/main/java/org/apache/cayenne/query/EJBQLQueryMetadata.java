@@ -68,6 +68,7 @@ extends|extends
 name|BaseQueryMetadata
 block|{
 specifier|private
+specifier|transient
 name|SQLResultSetMapping
 name|resultSetMapping
 decl_stmt|;
