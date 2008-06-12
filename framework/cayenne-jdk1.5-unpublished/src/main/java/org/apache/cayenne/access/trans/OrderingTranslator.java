@@ -217,6 +217,15 @@ operator|.
 name|iterator
 argument_list|()
 decl_stmt|;
+name|Appendable
+name|mainBuffer
+init|=
+name|this
+operator|.
+name|out
+decl_stmt|;
+try|try
+block|{
 while|while
 condition|(
 name|it
@@ -233,6 +242,15 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+comment|// reset buffer to collect SQL for the single column, that we'll be reusing
+name|this
+operator|.
+name|out
+operator|=
+operator|new
+name|StringBuilder
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|ord
@@ -322,14 +340,26 @@ literal|")"
 argument_list|)
 expr_stmt|;
 block|}
-name|orderByColumnList
-operator|.
-name|add
-argument_list|(
+name|String
+name|columnSQL
+init|=
 name|out
 operator|.
 name|toString
 argument_list|()
+decl_stmt|;
+name|mainBuffer
+operator|.
+name|append
+argument_list|(
+name|columnSQL
+argument_list|)
+expr_stmt|;
+name|orderByColumnList
+operator|.
+name|add
+argument_list|(
+name|columnSQL
 argument_list|)
 expr_stmt|;
 comment|// "ASC" is a noop, omit it from the query
@@ -342,7 +372,7 @@ name|isAscending
 argument_list|()
 condition|)
 block|{
-name|out
+name|mainBuffer
 operator|.
 name|append
 argument_list|(
@@ -358,7 +388,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|out
+name|mainBuffer
 operator|.
 name|append
 argument_list|(
@@ -366,6 +396,16 @@ literal|", "
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+finally|finally
+block|{
+name|this
+operator|.
+name|out
+operator|=
+name|mainBuffer
+expr_stmt|;
 block|}
 block|}
 comment|/**      * Returns the column expressions (not Expressions) used in the order by clause. E.g.,      * in the case of an case-insensitive order by, an element of the list would be      *<code>UPPER(&lt;column reference&gt;)</code>      */
