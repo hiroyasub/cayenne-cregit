@@ -651,6 +651,22 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return;
+case|case
+name|KeyEvent
+operator|.
+name|VK_CONTROL
+case|:
+case|case
+name|KeyEvent
+operator|.
+name|VK_ALT
+case|:
+case|case
+name|KeyEvent
+operator|.
+name|VK_SHIFT
+case|:
+return|return;
 default|default:
 comment|//invoke in end of AWT thread so that information in textEditor would update
 name|SwingUtilities

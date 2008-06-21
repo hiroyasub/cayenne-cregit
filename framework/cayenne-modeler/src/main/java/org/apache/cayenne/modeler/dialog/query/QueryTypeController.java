@@ -288,6 +288,8 @@ name|getCurrentDataDomain
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|doHandleControl
@@ -364,6 +366,8 @@ comment|// do nothing... need to match control
 block|}
 block|}
 comment|/**      * Creates and runs QueryTypeDialog.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|startup
@@ -469,6 +473,8 @@ argument_list|,
 name|MapEvent
 operator|.
 name|ADD
+argument_list|,
+name|dataMap
 argument_list|)
 argument_list|)
 expr_stmt|;

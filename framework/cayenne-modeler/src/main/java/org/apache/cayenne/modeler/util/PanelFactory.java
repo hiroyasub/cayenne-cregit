@@ -539,7 +539,7 @@ name|setSelectionMode
 argument_list|(
 name|ListSelectionModel
 operator|.
-name|SINGLE_SELECTION
+name|MULTIPLE_INTERVAL_SELECTION
 argument_list|)
 expr_stmt|;
 name|table

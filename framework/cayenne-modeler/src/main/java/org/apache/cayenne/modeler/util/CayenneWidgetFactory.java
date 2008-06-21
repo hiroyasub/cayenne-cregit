@@ -368,6 +368,24 @@ return|return
 name|comboBox
 return|;
 block|}
+comment|/**      * Creates cell editor for text field      */
+specifier|public
+specifier|static
+name|DefaultCellEditor
+name|createCellEditor
+parameter_list|(
+name|JTextField
+name|textField
+parameter_list|)
+block|{
+return|return
+operator|new
+name|CayenneCellEditor
+argument_list|(
+name|textField
+argument_list|)
+return|;
+block|}
 comment|/**      * Creates cell editor for a table with combo as editor component. Type of this editor      * depends on auto-completion behavior of JComboBox      *       * @param combo JComboBox to be used as editor component      */
 specifier|public
 specifier|static

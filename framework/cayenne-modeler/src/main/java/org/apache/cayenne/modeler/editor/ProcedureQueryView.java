@@ -446,6 +446,8 @@ name|JTextField
 argument_list|()
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|updateModel
@@ -487,6 +489,8 @@ argument_list|(
 name|mediator
 argument_list|)
 block|{
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|setEntity
@@ -505,6 +509,8 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getEntity
@@ -1047,6 +1053,8 @@ name|query
 operator|.
 name|getName
 argument_list|()
+argument_list|,
+name|map
 argument_list|)
 decl_stmt|;
 name|ProjectUtil

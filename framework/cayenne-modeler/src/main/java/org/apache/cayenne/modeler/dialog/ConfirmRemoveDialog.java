@@ -109,9 +109,6 @@ name|void
 name|showDialog
 parameter_list|(
 name|String
-name|type
-parameter_list|,
-name|String
 name|name
 parameter_list|)
 block|{
@@ -133,9 +130,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"Are you sure you would like to delete the %s named '%s'?"
-argument_list|,
-name|type
+literal|"Are you sure you would like to delete the %s?"
 argument_list|,
 name|name
 argument_list|)
@@ -265,6 +260,30 @@ name|String
 name|name
 parameter_list|)
 block|{
+return|return
+name|shouldDelete
+argument_list|(
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"%s named '%s'?"
+argument_list|,
+name|type
+argument_list|,
+name|name
+argument_list|)
+argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|shouldDelete
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
 name|PreferenceDetail
 name|pref
 init|=
@@ -310,8 +329,6 @@ condition|)
 block|{
 name|showDialog
 argument_list|(
-name|type
-argument_list|,
 name|name
 argument_list|)
 expr_stmt|;

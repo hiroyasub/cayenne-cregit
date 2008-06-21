@@ -240,7 +240,7 @@ return|return
 literal|"Create Attribute"
 return|;
 block|}
-comment|/**      * Constructor for CreateAttributeAction.      * @param name      */
+comment|/**      * Constructor for CreateAttributeAction.      */
 specifier|public
 name|CreateAttributeAction
 parameter_list|(
@@ -257,6 +257,8 @@ name|application
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getIconName
@@ -267,6 +269,8 @@ literal|"icon-attribute.gif"
 return|;
 block|}
 comment|/**      * Creates ObjAttribute, DbAttribute depending on context.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction
@@ -494,6 +498,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns<code>true</code> if path contains an Entity object.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|enableForPath

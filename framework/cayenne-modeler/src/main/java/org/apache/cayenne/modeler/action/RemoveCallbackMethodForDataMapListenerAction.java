@@ -65,6 +65,15 @@ name|ACTION_NAME
 init|=
 literal|"Remove callback method for data map entity listener"
 decl_stmt|;
+comment|/**      * action name for multiple selection      */
+specifier|private
+specifier|final
+specifier|static
+name|String
+name|ACTION_NAME_MULTIPLE
+init|=
+literal|"Remove callback methods for data map entity listener"
+decl_stmt|;
 comment|/**      * Constructor.      *      * @param application Application instance      */
 specifier|public
 name|RemoveCallbackMethodForDataMapListenerAction
@@ -82,6 +91,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @return CallbackMap fom which remove callback method      */
+annotation|@
+name|Override
 specifier|public
 name|CallbackMap
 name|getCallbackMap
@@ -110,6 +121,24 @@ argument_list|)
 operator|.
 name|getCallbackMap
 argument_list|()
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|getActionName
+parameter_list|(
+name|boolean
+name|multiple
+parameter_list|)
+block|{
+return|return
+name|multiple
+condition|?
+name|ACTION_NAME_MULTIPLE
+else|:
+name|ACTION_NAME
 return|;
 block|}
 block|}

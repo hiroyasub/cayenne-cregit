@@ -25,6 +25,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|DataDomain
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|event
 operator|.
 name|CayenneEvent
@@ -97,6 +111,11 @@ decl_stmt|;
 specifier|protected
 name|boolean
 name|oldNameSet
+decl_stmt|;
+comment|/**      * Domain of event object. Might be null      */
+specifier|protected
+name|DataDomain
+name|domain
 decl_stmt|;
 comment|/**      * Constructor for MapEvent.      *       * @param source event source      */
 specifier|public
@@ -219,6 +238,32 @@ name|oldNameSet
 operator|=
 literal|true
 expr_stmt|;
+block|}
+comment|/**      * Sets domain of event object.      */
+specifier|public
+name|void
+name|setDomain
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|)
+block|{
+name|this
+operator|.
+name|domain
+operator|=
+name|domain
+expr_stmt|;
+block|}
+comment|/**      * @return Domain of event object. Might be null      */
+specifier|public
+name|DataDomain
+name|getDomain
+parameter_list|()
+block|{
+return|return
+name|domain
+return|;
 block|}
 block|}
 end_class

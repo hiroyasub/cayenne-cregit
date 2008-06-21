@@ -199,7 +199,19 @@ name|row
 operator|!=
 operator|-
 literal|1
+operator|&&
+operator|!
+name|table
+operator|.
+name|getSelectionModel
+argument_list|()
+operator|.
+name|isSelectedIndex
+argument_list|(
+name|row
+argument_list|)
 condition|)
+block|{
 name|table
 operator|.
 name|setRowSelectionInterval
@@ -209,6 +221,7 @@ argument_list|,
 name|row
 argument_list|)
 expr_stmt|;
+block|}
 name|popup
 operator|.
 name|show
