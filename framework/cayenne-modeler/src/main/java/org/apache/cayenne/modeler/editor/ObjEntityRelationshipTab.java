@@ -1484,7 +1484,7 @@ name|rels
 operator|.
 name|length
 operator|==
-literal|0
+literal|1
 operator|&&
 name|rels
 index|[
