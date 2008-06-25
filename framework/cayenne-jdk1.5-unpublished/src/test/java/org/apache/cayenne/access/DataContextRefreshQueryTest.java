@@ -172,7 +172,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|RefreshQueryInContextTest
+name|DataContextRefreshQueryTest
 extends|extends
 name|CayenneCase
 block|{
