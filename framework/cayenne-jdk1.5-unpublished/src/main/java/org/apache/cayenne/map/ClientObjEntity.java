@@ -128,7 +128,7 @@ name|add
 argument_list|(
 name|attribute
 operator|.
-name|getName
+name|getDbAttributePath
 argument_list|()
 argument_list|)
 expr_stmt|;

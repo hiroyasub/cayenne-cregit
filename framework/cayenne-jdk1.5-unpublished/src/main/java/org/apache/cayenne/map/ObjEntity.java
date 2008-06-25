@@ -2566,7 +2566,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * Returns the names of DbAtributes that comprise the primary key of the parent      * DbEntity.      *       * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
