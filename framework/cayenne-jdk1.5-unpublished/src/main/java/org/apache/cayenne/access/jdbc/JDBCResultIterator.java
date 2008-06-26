@@ -195,34 +195,6 @@ name|Util
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  * A ResultIterator over the underlying JDBC ResultSet.  *   * @since 1.2  * @author Andrus Adamchik  */
 end_comment
@@ -238,20 +210,6 @@ name|JDBCResultIterator
 implements|implements
 name|ResultIterator
 block|{
-specifier|private
-specifier|static
-name|Log
-name|logger
-init|=
-name|LogFactory
-operator|.
-name|getLog
-argument_list|(
-name|JDBCResultIterator
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 comment|// Connection information
 specifier|protected
 name|Connection
