@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper JavaBean class that holds DataSource login information.  *<p>  *<i>For more information see<a href="../../../../../../userguide/index.html"  * target="_top">Cayenne User Guide.</a></i>  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Helper JavaBean class that holds DataSource login information.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
