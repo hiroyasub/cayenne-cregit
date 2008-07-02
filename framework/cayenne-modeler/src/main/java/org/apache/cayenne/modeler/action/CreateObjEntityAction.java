@@ -19,18 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -171,6 +159,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|DeleteRuleUpdater
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|NamedObjectFactory
@@ -219,6 +223,18 @@ name|NameConverter
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
+name|ActionEvent
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Andrus Adamchik  */
 end_comment
@@ -257,6 +273,8 @@ name|application
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getIconName
@@ -267,6 +285,8 @@ literal|"icon-new_objentity.gif"
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction
@@ -533,6 +553,16 @@ argument_list|)
 decl_stmt|;
 name|merger
 operator|.
+name|addEntityMergeListener
+argument_list|(
+name|DeleteRuleUpdater
+operator|.
+name|getEntityMergeListener
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|merger
+operator|.
 name|synchronizeWithDbEntity
 argument_list|(
 name|entity
@@ -594,6 +624,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns<code>true</code> if path contains a DataMap object.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|enableForPath
