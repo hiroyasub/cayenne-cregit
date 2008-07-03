@@ -94,6 +94,7 @@ comment|/**  * @since 3.0  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
+specifier|public
 specifier|final
 class|class
 name|JoinTreeNode
@@ -218,6 +219,7 @@ return|return
 name|i
 return|;
 block|}
+specifier|public
 name|Collection
 argument_list|<
 name|JoinTreeNode
@@ -387,6 +389,7 @@ name|alias
 argument_list|)
 return|;
 block|}
+specifier|public
 name|String
 name|getTargetTableAlias
 parameter_list|()
@@ -409,6 +412,7 @@ operator|=
 name|targetTableAlias
 expr_stmt|;
 block|}
+specifier|public
 name|String
 name|getSourceTableAlias
 parameter_list|()
@@ -431,6 +435,7 @@ operator|=
 name|sourceTableAlias
 expr_stmt|;
 block|}
+specifier|public
 name|DbRelationship
 name|getRelationship
 parameter_list|()
@@ -447,6 +452,7 @@ return|return
 name|alias
 return|;
 block|}
+specifier|public
 name|JoinType
 name|getJoinType
 parameter_list|()

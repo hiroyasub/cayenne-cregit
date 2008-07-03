@@ -269,6 +269,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|merge
+operator|.
+name|MergerFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|Query
@@ -290,7 +304,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<pre> test-openbase.cayenne.adapter = org.apache.cayenne.dba.openbase.OpenBaseAdapter test-openbase.jdbc.username = test test-openbase.jdbc.password = secret test-openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne test-openbase.jdbc.driver = com.openbase.jdbc.ObDriver</pre>  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  *   * @since 1.1  */
+comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<pre> openbase.cayenne.adapter = org.apache.cayenne.dba.openbase.OpenBaseAdapter openbase.jdbc.username = test openbase.jdbc.password = secret openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne openbase.jdbc.driver = com.openbase.jdbc.ObDriver</pre>  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -1237,6 +1251,19 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|MergerFactory
+name|mergerFactory
+parameter_list|()
+block|{
+return|return
+operator|new
+name|OpenBaseMergerFactory
+argument_list|()
+return|;
 block|}
 block|}
 end_class
