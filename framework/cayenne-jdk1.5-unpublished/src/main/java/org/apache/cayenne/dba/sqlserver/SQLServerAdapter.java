@@ -249,7 +249,7 @@ block|}
 comment|/**      * Overrides super implementation to correctly set up identity columns.      *       * @since 1.2      */
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(
