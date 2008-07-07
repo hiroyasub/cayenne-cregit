@@ -647,6 +647,7 @@ block|{
 comment|// ignoring...
 block|}
 block|}
+comment|/**      * @deprecated since 3.0, as a generic BLOB method is used to write BLOBs.      */
 specifier|public
 specifier|static
 name|Method
@@ -769,6 +770,7 @@ return|return
 literal|false
 return|;
 block|}
+comment|/**      * @deprecated since 3.0, as a generic CLOB method is used to write CLOBs.      */
 specifier|public
 specifier|static
 name|Method
