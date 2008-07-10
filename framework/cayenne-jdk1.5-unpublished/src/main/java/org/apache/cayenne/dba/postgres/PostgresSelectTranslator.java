@@ -33,11 +33,26 @@ name|SelectTranslator
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryMetadata
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|PostgresSelectTranslator
 extends|extends
@@ -60,9 +75,8 @@ operator|.
 name|createSqlString
 argument_list|()
 decl_stmt|;
-comment|// limit results
-name|int
-name|limit
+name|QueryMetadata
+name|metadata
 init|=
 name|getQuery
 argument_list|()
@@ -72,24 +86,61 @@ argument_list|(
 name|getEntityResolver
 argument_list|()
 argument_list|)
+decl_stmt|;
+comment|// limit results
+name|int
+name|offset
+init|=
+name|metadata
+operator|.
+name|getFetchStartIndex
+argument_list|()
+decl_stmt|;
+name|int
+name|limit
+init|=
+name|metadata
 operator|.
 name|getFetchLimit
 argument_list|()
 decl_stmt|;
 if|if
 condition|(
+name|offset
+operator|>
+literal|0
+operator|||
 name|limit
 operator|>
 literal|0
 condition|)
 block|{
-return|return
 name|sql
-operator|+
+operator|+=
 literal|" LIMIT "
-operator|+
+expr_stmt|;
+if|if
+condition|(
 name|limit
-return|;
+operator|==
+literal|0
+condition|)
+block|{
+name|limit
+operator|=
+name|Integer
+operator|.
+name|MAX_VALUE
+expr_stmt|;
+block|}
+name|sql
+operator|+=
+name|limit
+operator|+
+literal|" OFFSET "
+operator|+
+name|offset
+expr_stmt|;
 block|}
 return|return
 name|sql

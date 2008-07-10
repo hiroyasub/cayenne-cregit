@@ -119,19 +119,66 @@ name|getFetchLimit
 argument_list|()
 operator|>
 literal|0
+operator|||
+name|info
+operator|.
+name|getFetchStartIndex
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
-name|sqlString
-operator|=
-literal|"SELECT * FROM ("
-operator|+
-name|sqlString
-operator|+
-literal|") WHERE rownum<= "
-operator|+
+name|int
+name|max
+init|=
+operator|(
 name|info
 operator|.
 name|getFetchLimit
+argument_list|()
+operator|==
+literal|0
+operator|)
+condition|?
+name|Integer
+operator|.
+name|MAX_VALUE
+else|:
+operator|(
+name|info
+operator|.
+name|getFetchLimit
+argument_list|()
+operator|+
+name|info
+operator|.
+name|getFetchStartIndex
+argument_list|()
+operator|)
+decl_stmt|;
+name|sqlString
+operator|=
+literal|"select * "
+operator|+
+literal|"from ( select "
+operator|+
+literal|"tid.*, ROWNUM rnum "
+operator|+
+literal|"from ("
+operator|+
+name|sqlString
+operator|+
+literal|") tid "
+operator|+
+literal|"where ROWNUM<="
+operator|+
+name|max
+operator|+
+literal|") where rnum> "
+operator|+
+name|info
+operator|.
+name|getFetchStartIndex
 argument_list|()
 expr_stmt|;
 block|}

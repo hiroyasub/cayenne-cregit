@@ -1782,6 +1782,19 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Returns the fetchOffset.      */
+specifier|public
+name|int
+name|getFetchOffset
+parameter_list|()
+block|{
+return|return
+name|metaData
+operator|.
+name|getFetchStartIndex
+argument_list|()
+return|;
+block|}
 comment|/**      * Returns the fetchLimit.      */
 specifier|public
 name|int
@@ -1811,6 +1824,24 @@ operator|.
 name|setFetchLimit
 argument_list|(
 name|fetchLimit
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setFetchOffset
+parameter_list|(
+name|int
+name|fetchOffset
+parameter_list|)
+block|{
+name|this
+operator|.
+name|metaData
+operator|.
+name|setFetchStartIndex
+argument_list|(
+name|fetchOffset
 argument_list|)
 expr_stmt|;
 block|}

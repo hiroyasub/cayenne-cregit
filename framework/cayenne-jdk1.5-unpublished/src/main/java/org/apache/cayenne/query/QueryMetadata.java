@@ -167,6 +167,15 @@ name|FETCH_LIMIT_DEFAULT
 init|=
 literal|0
 decl_stmt|;
+comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows selected starting from the first.      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|FETCH_START_INDEX_DEFAULT
+init|=
+literal|0
+decl_stmt|;
 comment|/**      * Defines the name of the property for the query {@link #getPageSize() page size}.      */
 specifier|public
 specifier|static
