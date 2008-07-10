@@ -237,7 +237,7 @@ name|cacheKey
 decl_stmt|;
 specifier|private
 name|int
-name|fetchStartIndex
+name|fetchOffset
 decl_stmt|;
 specifier|private
 name|int
@@ -282,7 +282,7 @@ name|cacheKey
 expr_stmt|;
 name|this
 operator|.
-name|fetchStartIndex
+name|fetchOffset
 operator|=
 name|fetchStartIndex
 expr_stmt|;
@@ -362,11 +362,22 @@ return|;
 block|}
 specifier|public
 name|int
+name|getFetchOffset
+parameter_list|()
+block|{
+return|return
+name|fetchOffset
+return|;
+block|}
+comment|/**              * @deprecated since 3.0              */
+specifier|public
+name|int
 name|getFetchStartIndex
 parameter_list|()
 block|{
 return|return
-name|fetchStartIndex
+name|getFetchOffset
+argument_list|()
 return|;
 block|}
 specifier|public

@@ -341,7 +341,7 @@ if|if
 condition|(
 name|serverMetadata
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 operator|>=
 literal|0
@@ -452,7 +452,7 @@ name|startIndex
 init|=
 name|serverMetadata
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 decl_stmt|;
 name|int

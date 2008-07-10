@@ -122,7 +122,7 @@ literal|0
 operator|||
 name|info
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 operator|>
 literal|0
@@ -152,7 +152,7 @@ argument_list|()
 operator|+
 name|info
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 operator|)
 decl_stmt|;
@@ -178,7 +178,7 @@ literal|") where rnum> "
 operator|+
 name|info
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 expr_stmt|;
 block|}

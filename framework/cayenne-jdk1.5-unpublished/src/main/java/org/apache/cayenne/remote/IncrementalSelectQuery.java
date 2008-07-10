@@ -477,6 +477,19 @@ return|;
 block|}
 specifier|public
 name|int
+name|getFetchOffset
+parameter_list|()
+block|{
+return|return
+name|metadata
+operator|.
+name|getFetchOffset
+argument_list|()
+return|;
+block|}
+comment|/**              * @deprecated since 3.0              */
+specifier|public
+name|int
 name|getFetchStartIndex
 parameter_list|()
 block|{

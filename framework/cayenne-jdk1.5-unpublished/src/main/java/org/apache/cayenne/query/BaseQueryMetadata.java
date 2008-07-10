@@ -1813,13 +1813,25 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|int
+name|getFetchOffset
+parameter_list|()
+block|{
+return|return
+name|fetchStartIndex
+return|;
+block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|int
 name|getFetchStartIndex
 parameter_list|()
 block|{
 return|return
-name|fetchStartIndex
+name|getFetchOffset
+argument_list|()
 return|;
 block|}
 specifier|public

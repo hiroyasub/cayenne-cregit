@@ -93,7 +93,7 @@ name|offset
 init|=
 name|metadata
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 decl_stmt|;
 name|int

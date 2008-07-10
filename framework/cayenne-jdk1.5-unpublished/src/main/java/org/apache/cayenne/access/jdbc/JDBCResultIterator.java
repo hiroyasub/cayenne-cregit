@@ -278,7 +278,7 @@ name|int
 index|[]
 name|types
 decl_stmt|;
-comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      */
+comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      *       * @since 3.0      */
 specifier|public
 name|JDBCResultIterator
 parameter_list|(

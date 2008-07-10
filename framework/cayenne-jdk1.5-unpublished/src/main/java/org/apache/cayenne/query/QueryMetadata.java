@@ -167,7 +167,7 @@ name|FETCH_LIMIT_DEFAULT
 init|=
 literal|0
 decl_stmt|;
-comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows selected starting from the first.      */
+comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows      * selected starting from the first.      *       * @since 3.0      */
 specifier|public
 specifier|static
 specifier|final
@@ -344,7 +344,12 @@ name|int
 name|getPageSize
 parameter_list|()
 function_decl|;
-comment|/**      * Specifies a start of a range when fetching a subset of records. The last index is      * determined by {@link #getFetchLimit()}.      */
+comment|/**      * Specifies a start of a range when fetching a subset of records.      *       * @since 3.0      */
+name|int
+name|getFetchOffset
+parameter_list|()
+function_decl|;
+comment|/**      * @deprecated since 3.0, renamed to {@link #getFetchOffset()}.      */
 name|int
 name|getFetchStartIndex
 parameter_list|()

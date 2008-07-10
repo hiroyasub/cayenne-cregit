@@ -1782,7 +1782,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the fetchOffset.      */
+comment|/**      * Returns the fetchOffset.      *       * @since 3.0      */
 specifier|public
 name|int
 name|getFetchOffset
@@ -1791,7 +1791,7 @@ block|{
 return|return
 name|metaData
 operator|.
-name|getFetchStartIndex
+name|getFetchOffset
 argument_list|()
 return|;
 block|}
@@ -1827,6 +1827,7 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|setFetchOffset
