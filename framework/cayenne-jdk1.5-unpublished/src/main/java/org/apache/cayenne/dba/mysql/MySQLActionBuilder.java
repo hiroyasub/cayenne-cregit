@@ -182,7 +182,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|SelectAction
+name|MySQLSelectAction
 argument_list|(
 name|query
 argument_list|,
