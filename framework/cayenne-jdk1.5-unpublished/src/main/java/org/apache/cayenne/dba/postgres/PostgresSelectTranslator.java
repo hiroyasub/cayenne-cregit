@@ -106,10 +106,6 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|offset
-operator|>
-literal|0
-operator|||
 name|limit
 operator|>
 literal|0
@@ -118,25 +114,19 @@ block|{
 name|sql
 operator|+=
 literal|" LIMIT "
+operator|+
+name|limit
 expr_stmt|;
+block|}
 if|if
 condition|(
-name|limit
-operator|==
+name|offset
+operator|>
 literal|0
 condition|)
 block|{
-name|limit
-operator|=
-name|Integer
-operator|.
-name|MAX_VALUE
-expr_stmt|;
-block|}
 name|sql
 operator|+=
-name|limit
-operator|+
 literal|" OFFSET "
 operator|+
 name|offset
