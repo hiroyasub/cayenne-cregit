@@ -445,6 +445,16 @@ name|getFetchLimit
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|sqlQuery
+operator|.
+name|setFetchOffset
+argument_list|(
+name|md
+operator|.
+name|getFetchOffset
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|actionFactory
 operator|.
 name|sqlAction

@@ -172,7 +172,7 @@ specifier|public
 specifier|static
 specifier|final
 name|int
-name|FETCH_START_INDEX_DEFAULT
+name|FETCH_OFFSET_DEFAULT
 init|=
 literal|0
 decl_stmt|;

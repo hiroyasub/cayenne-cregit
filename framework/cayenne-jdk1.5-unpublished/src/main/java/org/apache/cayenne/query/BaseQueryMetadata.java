@@ -237,11 +237,11 @@ operator|.
 name|FETCH_LIMIT_DEFAULT
 decl_stmt|;
 name|int
-name|fetchStartIndex
+name|fetchOffset
 init|=
 name|QueryMetadata
 operator|.
-name|FETCH_START_INDEX_DEFAULT
+name|FETCH_OFFSET_DEFAULT
 decl_stmt|;
 name|int
 name|pageSize
@@ -1820,7 +1820,7 @@ name|getFetchOffset
 parameter_list|()
 block|{
 return|return
-name|fetchStartIndex
+name|fetchOffset
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
@@ -1877,13 +1877,13 @@ name|i
 expr_stmt|;
 block|}
 name|void
-name|setFetchStartIndex
+name|setFetchOffset
 parameter_list|(
 name|int
 name|i
 parameter_list|)
 block|{
-name|fetchStartIndex
+name|fetchOffset
 operator|=
 name|i
 expr_stmt|;

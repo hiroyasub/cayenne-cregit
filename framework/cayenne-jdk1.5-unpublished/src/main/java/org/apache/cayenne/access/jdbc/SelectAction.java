@@ -377,7 +377,7 @@ decl_stmt|;
 name|int
 name|i
 init|=
-name|getInitialCursorPosition
+name|getFetchOffset
 argument_list|()
 decl_stmt|;
 while|while
@@ -708,9 +708,10 @@ throw|;
 block|}
 block|}
 block|}
+comment|/**      * @since 3.0      */
 specifier|protected
 name|int
-name|getInitialCursorPosition
+name|getFetchOffset
 parameter_list|()
 block|{
 return|return

@@ -1840,7 +1840,7 @@ name|this
 operator|.
 name|metaData
 operator|.
-name|setFetchStartIndex
+name|setFetchOffset
 argument_list|(
 name|fetchOffset
 argument_list|)

@@ -881,6 +881,36 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|int
+name|getFetchOffset
+parameter_list|()
+block|{
+return|return
+name|metaData
+operator|.
+name|getFetchOffset
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setFetchOffset
+parameter_list|(
+name|int
+name|fetchOffset
+parameter_list|)
+block|{
+name|metaData
+operator|.
+name|setFetchOffset
+argument_list|(
+name|fetchOffset
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|int
 name|getPageSize
