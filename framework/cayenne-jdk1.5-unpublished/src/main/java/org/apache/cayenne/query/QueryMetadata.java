@@ -167,6 +167,15 @@ name|FETCH_LIMIT_DEFAULT
 init|=
 literal|0
 decl_stmt|;
+comment|/**      * Defines the name of the property for the query {@link #getFetchOffset() fetch offset}.      *       * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|FETCH_OFFSET_PROPERTY
+init|=
+literal|"cayenne.GenericSelectQuery.fetchOffset"
+decl_stmt|;
 comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows      * selected starting from the first.      *       * @since 3.0      */
 specifier|public
 specifier|static

@@ -1178,7 +1178,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|15
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1194,7 +1194,7 @@ name|xywh
 argument_list|(
 literal|3
 argument_list|,
-literal|15
+literal|17
 argument_list|,
 literal|5
 argument_list|,

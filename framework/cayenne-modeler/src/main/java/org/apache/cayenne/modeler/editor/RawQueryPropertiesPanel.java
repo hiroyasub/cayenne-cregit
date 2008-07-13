@@ -390,7 +390,7 @@ literal|"right:max(80dlu;pref), 3dlu, left:max(10dlu;pref), "
 operator|+
 literal|"3dlu, left:max(37dlu;pref), 3dlu, fill:max(147dlu;pref)"
 argument_list|,
-literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
+literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
 argument_list|)
 decl_stmt|;
 name|PanelBuilder
@@ -551,7 +551,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Fetch Limit, Rows:"
+literal|"Fetch Offset, Rows:"
 argument_list|,
 name|cc
 operator|.
@@ -567,7 +567,7 @@ name|builder
 operator|.
 name|add
 argument_list|(
-name|fetchLimit
+name|fetchOffset
 operator|.
 name|getComponent
 argument_list|()
@@ -590,7 +590,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Page Size:"
+literal|"Fetch Limit, Rows:"
 argument_list|,
 name|cc
 operator|.
@@ -599,6 +599,45 @@ argument_list|(
 literal|1
 argument_list|,
 literal|13
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|add
+argument_list|(
+name|fetchLimit
+operator|.
+name|getComponent
+argument_list|()
+argument_list|,
+name|cc
+operator|.
+name|xywh
+argument_list|(
+literal|3
+argument_list|,
+literal|13
+argument_list|,
+literal|3
+argument_list|,
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|addLabel
+argument_list|(
+literal|"Page Size:"
+argument_list|,
+name|cc
+operator|.
+name|xy
+argument_list|(
+literal|1
+argument_list|,
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -617,7 +656,7 @@ name|xywh
 argument_list|(
 literal|3
 argument_list|,
-literal|13
+literal|15
 argument_list|,
 literal|3
 argument_list|,
