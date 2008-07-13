@@ -377,8 +377,13 @@ decl_stmt|;
 name|int
 name|i
 init|=
+name|getInitialCursorPosition
+argument_list|(
+name|query
+operator|.
 name|getFetchOffset
 argument_list|()
+argument_list|)
 decl_stmt|;
 while|while
 condition|(
@@ -707,19 +712,6 @@ name|ex
 throw|;
 block|}
 block|}
-block|}
-comment|/**      * Returns a value of the offset that will be used to rewind the ResultSet before      * starting reading the result rows. If the adapter supports setting offset at the SQL      * level, this method must be overridden to return zero for no manual offset.      *       * @since 3.0      */
-specifier|protected
-name|int
-name|getFetchOffset
-parameter_list|()
-block|{
-return|return
-name|query
-operator|.
-name|getFetchOffset
-argument_list|()
-return|;
 block|}
 block|}
 end_class

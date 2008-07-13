@@ -111,8 +111,11 @@ annotation|@
 name|Override
 specifier|protected
 name|int
-name|getFetchOffset
-parameter_list|()
+name|getInitialCursorPosition
+parameter_list|(
+name|int
+name|queryOffset
+parameter_list|)
 block|{
 return|return
 literal|0
