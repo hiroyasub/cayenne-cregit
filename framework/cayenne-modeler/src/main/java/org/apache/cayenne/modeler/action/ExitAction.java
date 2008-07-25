@@ -19,18 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -65,9 +53,37 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|modeler
+operator|.
+name|dialog
+operator|.
+name|LogConsole
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|ProjectPath
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
+name|ActionEvent
 import|;
 end_import
 
@@ -142,6 +158,15 @@ name|getPreferences
 argument_list|()
 operator|.
 name|storePreferences
+argument_list|()
+expr_stmt|;
+comment|//stop logging before JVM shutdown to prevent hanging
+name|LogConsole
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|stopLogging
 argument_list|()
 expr_stmt|;
 comment|// goodbye
