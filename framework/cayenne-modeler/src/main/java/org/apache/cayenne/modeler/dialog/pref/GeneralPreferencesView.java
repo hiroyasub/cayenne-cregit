@@ -21,26 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|BorderLayout
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|*
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|jgoodies
@@ -78,6 +58,26 @@ operator|.
 name|layout
 operator|.
 name|FormLayout
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|*
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|*
 import|;
 end_import
 
@@ -184,7 +184,7 @@ name|FormLayout
 argument_list|(
 literal|"right:pref, 3dlu, 30dlu, 3dlu, fill:70dlu"
 argument_list|,
-literal|"p, 3dlu, p, 12dlu, p, 30dlu, p, 12dlu, p, 3dlu, p, 3dlu, fill:40dlu:grow"
+literal|"p, 3dlu, p, 12dlu, p, 30dlu, p, 12dlu, p, 3dlu, p, fill:40dlu:grow"
 argument_list|)
 decl_stmt|;
 name|CellConstraints
@@ -216,15 +216,13 @@ literal|"General Preferences"
 argument_list|,
 name|cc
 operator|.
-name|xywh
+name|xyw
 argument_list|(
 literal|1
 argument_list|,
 literal|1
 argument_list|,
 literal|5
-argument_list|,
-literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -309,6 +307,14 @@ argument_list|(
 literal|1
 argument_list|,
 literal|7
+argument_list|,
+name|CellConstraints
+operator|.
+name|LEFT
+argument_list|,
+name|CellConstraints
+operator|.
+name|DEFAULT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -320,15 +326,13 @@ literal|"Editor Preferences"
 argument_list|,
 name|cc
 operator|.
-name|xywh
+name|xyw
 argument_list|(
 literal|1
 argument_list|,
 literal|9
 argument_list|,
 literal|5
-argument_list|,
-literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -345,6 +349,14 @@ argument_list|(
 literal|1
 argument_list|,
 literal|11
+argument_list|,
+name|CellConstraints
+operator|.
+name|LEFT
+argument_list|,
+name|CellConstraints
+operator|.
+name|DEFAULT
 argument_list|)
 argument_list|)
 expr_stmt|;
