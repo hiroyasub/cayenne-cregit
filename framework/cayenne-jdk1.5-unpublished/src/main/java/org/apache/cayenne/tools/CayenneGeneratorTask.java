@@ -280,7 +280,7 @@ name|mode
 operator|=
 name|ArtifactsGenerationMode
 operator|.
-name|RUN_PER_ARTIFACT
+name|ENTITY
 operator|.
 name|getLabel
 argument_list|()
@@ -700,6 +700,16 @@ name|getFilteredEmbeddables
 argument_list|(
 name|dataMap
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|generatorAction
+operator|.
+name|addQueries
+argument_list|(
+name|dataMap
+operator|.
+name|getQueries
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|generatorAction

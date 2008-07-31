@@ -25,14 +25,19 @@ enum|enum
 name|ArtifactsGenerationMode
 block|{
 comment|// TODO: andrus 12/9/2007 - label names are old... need to call it something else...
-name|SINGLE_RUN
+name|DATAMAP
 argument_list|(
 literal|"datamap"
 argument_list|)
 block|,
-name|RUN_PER_ARTIFACT
+name|ENTITY
 argument_list|(
 literal|"entity"
+argument_list|)
+block|,
+name|ALL
+argument_list|(
+literal|"all"
 argument_list|)
 block|;
 specifier|private

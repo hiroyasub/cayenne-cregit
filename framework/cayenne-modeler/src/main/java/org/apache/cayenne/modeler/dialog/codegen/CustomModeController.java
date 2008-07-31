@@ -250,16 +250,30 @@ decl_stmt|;
 specifier|static
 specifier|final
 name|String
+name|MODE_ALL
+init|=
+literal|"all"
+decl_stmt|;
+specifier|static
+specifier|final
+name|String
 name|DATA_MAP_MODE_LABEL
 init|=
-literal|"One run per DataMap"
+literal|"DataMap generation"
 decl_stmt|;
 specifier|static
 specifier|final
 name|String
 name|ENTITY_MODE_LABEL
 init|=
-literal|"One run per each selected Entity"
+literal|"Entity and Embeddable generation"
+decl_stmt|;
+specifier|static
+specifier|final
+name|String
+name|ALL_MODE_LABEL
+init|=
+literal|"Generate all"
 decl_stmt|;
 specifier|static
 specifier|final
@@ -298,6 +312,15 @@ argument_list|(
 name|ENTITY_MODE_LABEL
 argument_list|,
 name|MODE_ENTITY
+argument_list|)
+expr_stmt|;
+name|modesByLabel
+operator|.
+name|put
+argument_list|(
+name|ALL_MODE_LABEL
+argument_list|,
+name|MODE_ALL
 argument_list|)
 expr_stmt|;
 block|}
@@ -340,6 +363,8 @@ block|{
 name|ENTITY_MODE_LABEL
 block|,
 name|DATA_MAP_MODE_LABEL
+block|,
+name|ALL_MODE_LABEL
 block|}
 decl_stmt|;
 name|view
@@ -1027,17 +1052,8 @@ name|ClassGenerationAction
 name|createGenerator
 parameter_list|()
 block|{
-name|ClassGenerationAction
-name|generator
-init|=
-name|super
-operator|.
-name|createGenerator
-argument_list|()
-decl_stmt|;
-name|String
 name|mode
-init|=
+operator|=
 name|modesByLabel
 operator|.
 name|get
@@ -1053,14 +1069,15 @@ argument_list|)
 operator|.
 name|toString
 argument_list|()
-decl_stmt|;
-name|generator
-operator|.
-name|setArtifactsGenerationMode
-argument_list|(
-name|mode
-argument_list|)
 expr_stmt|;
+name|ClassGenerationAction
+name|generator
+init|=
+name|super
+operator|.
+name|createGenerator
+argument_list|()
+decl_stmt|;
 name|String
 name|version
 init|=

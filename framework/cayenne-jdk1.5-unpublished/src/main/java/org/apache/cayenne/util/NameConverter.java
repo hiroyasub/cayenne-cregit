@@ -498,6 +498,7 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Replaces special chars with human-readable and Java-id-compatible symbols.      */
+specifier|public
 specifier|static
 name|String
 name|specialCharsToJava
