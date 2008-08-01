@@ -163,7 +163,7 @@ operator|=
 operator|new
 name|JCheckBox
 argument_list|(
-literal|"Automatically load last opened project."
+literal|"Automatically Load Last Opened Project"
 argument_list|)
 expr_stmt|;
 name|this
@@ -173,7 +173,7 @@ operator|=
 operator|new
 name|JCheckBox
 argument_list|(
-literal|"Always delete items without prompt."
+literal|"Always Delete Items Without Prompt"
 argument_list|)
 expr_stmt|;
 name|FormLayout
