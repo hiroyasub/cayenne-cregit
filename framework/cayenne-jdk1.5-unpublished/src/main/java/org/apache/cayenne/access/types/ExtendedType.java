@@ -126,7 +126,7 @@ name|int
 name|type
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 throws|throws
 name|Exception

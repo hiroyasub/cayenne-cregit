@@ -194,14 +194,14 @@ name|int
 name|type
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 throws|throws
 name|Exception
 block|{
 if|if
 condition|(
-name|precision
+name|scale
 operator|!=
 operator|-
 literal|1
@@ -217,7 +217,7 @@ name|val
 argument_list|,
 name|type
 argument_list|,
-name|precision
+name|scale
 argument_list|)
 expr_stmt|;
 block|}
