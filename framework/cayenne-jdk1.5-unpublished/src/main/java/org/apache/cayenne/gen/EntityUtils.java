@@ -444,6 +444,44 @@ name|getNamespace
 argument_list|()
 return|;
 block|}
+comment|/**      * Returns true if current ObjEntity is defined as abstract.      */
+specifier|public
+name|boolean
+name|isAbstract
+parameter_list|()
+block|{
+return|return
+name|isAbstract
+argument_list|(
+name|objEntity
+argument_list|)
+return|;
+block|}
+comment|/**      * Returns true if current ObjEntity is defined as abstract.      */
+specifier|public
+name|boolean
+name|isAbstract
+parameter_list|(
+name|ObjEntity
+name|anObjEntity
+parameter_list|)
+block|{
+if|if
+condition|(
+name|anObjEntity
+operator|==
+literal|null
+condition|)
+return|return
+literal|false
+return|;
+return|return
+name|objEntity
+operator|.
+name|getIsAbstract
+argument_list|()
+return|;
+block|}
 comment|/**      * Returns true if current ObjEntity contains at least one toMany relationship.      */
 specifier|public
 name|boolean

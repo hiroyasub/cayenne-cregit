@@ -167,6 +167,12 @@ name|getDbEntity
 argument_list|()
 operator|==
 literal|null
+operator|&&
+operator|!
+name|ent
+operator|.
+name|getIsAbstract
+argument_list|()
 condition|)
 block|{
 name|validator

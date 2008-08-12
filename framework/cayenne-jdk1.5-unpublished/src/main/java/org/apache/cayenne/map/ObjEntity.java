@@ -391,6 +391,10 @@ name|lockType
 decl_stmt|;
 specifier|protected
 name|boolean
+name|isAbstract
+decl_stmt|;
+specifier|protected
+name|boolean
 name|serverOnly
 decl_stmt|;
 specifier|protected
@@ -521,6 +525,20 @@ name|print
 argument_list|(
 name|getSuperEntityName
 argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|getIsAbstract
+argument_list|()
+condition|)
+block|{
+name|encoder
+operator|.
+name|print
+argument_list|(
+literal|"\" abstract=\"true"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1450,6 +1468,31 @@ operator|.
 name|isClientSupported
 argument_list|()
 return|;
+block|}
+specifier|public
+name|boolean
+name|getIsAbstract
+parameter_list|()
+block|{
+return|return
+name|isAbstract
+return|;
+block|}
+comment|/**      * Sets whether this entity is abstract only.      *       */
+specifier|public
+name|void
+name|setIsAbstract
+parameter_list|(
+name|boolean
+name|isAbstract
+parameter_list|)
+block|{
+name|this
+operator|.
+name|isAbstract
+operator|=
+name|isAbstract
+expr_stmt|;
 block|}
 comment|/**      * Returns true if this entity is not available on the client.      *       * @since 1.2      */
 specifier|public
