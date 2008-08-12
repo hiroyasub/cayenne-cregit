@@ -70,7 +70,7 @@ specifier|final
 name|String
 name|CLOSE_WITHOUT_SAVE
 init|=
-literal|"Ignore Changes"
+literal|"Discard Changes"
 decl_stmt|;
 specifier|private
 specifier|static
