@@ -439,7 +439,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"IncrementalFaultList does not support unpaged queries. Query page size is "
+literal|"Not a paginated query; page size: "
 operator|+
 name|metadata
 operator|.
@@ -472,6 +472,21 @@ operator|.
 name|getObjEntity
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|rootEntity
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Pagination is not supported for queries not rooted in an ObjEntity"
+argument_list|)
+throw|;
+block|}
 comment|// create an internal query, it is a partial replica of
 comment|// the original query and will serve as a value holder for
 comment|// various parameters
