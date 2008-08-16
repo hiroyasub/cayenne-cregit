@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Driver
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -173,6 +153,26 @@ name|InputSource
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Driver
+import|;
+end_import
+
 begin_comment
 comment|/**  * An Ant Task that is a frontend to Cayenne DbGenerator allowing schema generation from  * DataMap using Ant.  *   * @author Kevin Menard, Andrus Adamchik  * @since 1.2  */
 end_comment
@@ -264,19 +264,18 @@ expr_stmt|;
 block|}
 name|log
 argument_list|(
-literal|"connection settings - [driver: "
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"connection settings - [driver: %s, url: %s, username: %s]"
+argument_list|,
 name|driver
-operator|+
-literal|", url: "
-operator|+
+argument_list|,
 name|url
-operator|+
-literal|", username: "
-operator|+
+argument_list|,
 name|userName
-operator|+
-literal|"]"
+argument_list|)
 argument_list|,
 name|Project
 operator|.
@@ -285,27 +284,22 @@ argument_list|)
 expr_stmt|;
 name|log
 argument_list|(
-literal|"generator options - [dropTables: "
-operator|+
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"generator options - [dropTables: %s, dropPK: %s, createTables: %s, createPK: %s, createFK: %s]"
+argument_list|,
 name|dropTables
-operator|+
-literal|", dropPK: "
-operator|+
+argument_list|,
 name|dropPK
-operator|+
-literal|", createTables: "
-operator|+
+argument_list|,
 name|createTables
-operator|+
-literal|", createPK: "
-operator|+
+argument_list|,
 name|createPK
-operator|+
-literal|", createFK: "
-operator|+
+argument_list|,
 name|createFK
-operator|+
-literal|"]"
+argument_list|)
 argument_list|,
 name|Project
 operator|.

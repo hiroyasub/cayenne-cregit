@@ -17,30 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|gen
-operator|.
-name|ArtifactsGenerationMode
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -179,6 +155,16 @@ name|MavenProject
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
 begin_comment
 comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @author Andrus Adamchik, Kevin Menard  * @since 3.0  *   * @phase generate-sources  * @goal cgen  */
 end_comment
@@ -295,8 +281,7 @@ throws|,
 name|MojoFailureException
 block|{
 comment|// Create the destination directory if necessary.
-comment|// TODO: (KJM 11/2/06) The destDir really should be added as a
-comment|// compilation resource for maven.
+comment|// TODO: (KJM 11/2/06) The destDir really should be added as a compilation resource for maven.
 if|if
 condition|(
 operator|!
