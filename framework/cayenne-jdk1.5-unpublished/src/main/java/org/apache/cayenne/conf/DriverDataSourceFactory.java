@@ -1279,6 +1279,20 @@ argument_list|(
 literal|"passwordSource"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|passwordSource
+operator|==
+literal|null
+condition|)
+block|{
+name|passwordSource
+operator|=
+name|DataSourceInfo
+operator|.
+name|PASSWORD_LOCATION_MODEL
+expr_stmt|;
+block|}
 name|String
 name|username
 init|=
@@ -1359,8 +1373,6 @@ name|passwordLocation
 operator|!=
 literal|null
 condition|)
-comment|// New style model (v1.2), process extra
-comment|// locations
 block|{
 if|if
 condition|(
