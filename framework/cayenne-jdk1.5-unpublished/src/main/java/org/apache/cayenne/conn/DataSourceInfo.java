@@ -938,15 +938,9 @@ return|return
 operator|(
 name|PasswordEncoding
 operator|)
-name|Thread
+name|Util
 operator|.
-name|currentThread
-argument_list|()
-operator|.
-name|getContextClassLoader
-argument_list|()
-operator|.
-name|loadClass
+name|getJavaClass
 argument_list|(
 name|getPasswordEncoderClass
 argument_list|()
