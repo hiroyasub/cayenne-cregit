@@ -1004,6 +1004,13 @@ condition|(
 name|encoder
 operator|!=
 literal|null
+operator|&&
+name|info
+operator|.
+name|getPassword
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|pw
