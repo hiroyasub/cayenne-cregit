@@ -113,7 +113,7 @@ block|{
 return|return
 name|factory
 operator|.
-name|createDropColumToDb
+name|createDropColumnToDb
 argument_list|(
 name|getEntity
 argument_list|()

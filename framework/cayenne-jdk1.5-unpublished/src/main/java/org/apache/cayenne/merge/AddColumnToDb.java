@@ -448,7 +448,7 @@ block|{
 return|return
 name|factory
 operator|.
-name|createDropColumToModel
+name|createDropColumnToModel
 argument_list|(
 name|getEntity
 argument_list|()

@@ -765,7 +765,7 @@ name|add
 argument_list|(
 name|factory
 operator|.
-name|createDropColumToDb
+name|createDropColumnToDb
 argument_list|(
 name|dbEntity
 argument_list|,

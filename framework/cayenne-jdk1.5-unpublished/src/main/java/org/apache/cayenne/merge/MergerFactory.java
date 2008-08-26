@@ -188,7 +188,7 @@ return|;
 block|}
 specifier|public
 name|MergerToken
-name|createDropColumToModel
+name|createDropColumnToModel
 parameter_list|(
 name|DbEntity
 name|entity
@@ -209,7 +209,7 @@ return|;
 block|}
 specifier|public
 name|MergerToken
-name|createDropColumToDb
+name|createDropColumnToDb
 parameter_list|(
 name|DbEntity
 name|entity
