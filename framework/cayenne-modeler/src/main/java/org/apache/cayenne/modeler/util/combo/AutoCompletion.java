@@ -620,6 +620,17 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+comment|//reset the item (value == null) only if user values are not supported
+if|if
+condition|(
+name|value
+operator|!=
+literal|null
+operator|||
+operator|!
+name|allowsUserValues
+condition|)
+block|{
 name|comboBox
 operator|.
 name|setSelectedItem
@@ -627,6 +638,7 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 name|suggestionList
 operator|.
 name|hide
