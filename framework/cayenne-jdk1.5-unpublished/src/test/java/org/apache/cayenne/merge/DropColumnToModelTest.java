@@ -352,7 +352,7 @@ init|=
 name|mergerFactory
 argument_list|()
 operator|.
-name|createDropColumToDb
+name|createDropColumnToDb
 argument_list|(
 name|dbEntity
 argument_list|,
@@ -804,7 +804,7 @@ argument_list|(
 name|mergerFactory
 argument_list|()
 operator|.
-name|createDropColumToDb
+name|createDropColumnToDb
 argument_list|(
 name|dbEntity2
 argument_list|,
