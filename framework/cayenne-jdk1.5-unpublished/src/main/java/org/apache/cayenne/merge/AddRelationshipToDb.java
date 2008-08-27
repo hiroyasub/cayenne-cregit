@@ -275,6 +275,15 @@ name|toString
 argument_list|()
 return|;
 block|}
+specifier|public
+name|DbRelationship
+name|getRelationship
+parameter_list|()
+block|{
+return|return
+name|rel
+return|;
+block|}
 block|}
 end_class
 

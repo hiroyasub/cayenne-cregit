@@ -723,6 +723,24 @@ name|columnOriginal
 argument_list|)
 return|;
 block|}
+specifier|public
+name|DbAttribute
+name|getColumnOriginal
+parameter_list|()
+block|{
+return|return
+name|columnOriginal
+return|;
+block|}
+specifier|public
+name|DbAttribute
+name|getColumnNew
+parameter_list|()
+block|{
+return|return
+name|columnNew
+return|;
+block|}
 block|}
 end_class
 
