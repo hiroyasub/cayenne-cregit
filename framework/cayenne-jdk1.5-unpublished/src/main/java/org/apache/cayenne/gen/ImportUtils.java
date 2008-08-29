@@ -141,6 +141,8 @@ block|,
 literal|"short"
 block|,
 literal|"int"
+block|,
+literal|"char"
 block|}
 decl_stmt|;
 specifier|static
@@ -196,6 +198,13 @@ name|getName
 argument_list|()
 block|,
 name|Integer
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+block|,
+name|Character
 operator|.
 name|class
 operator|.
