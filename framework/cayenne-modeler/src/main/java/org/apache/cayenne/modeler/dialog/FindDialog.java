@@ -905,7 +905,7 @@ operator|.
 name|getSelectionModel
 argument_list|()
 operator|.
-name|addSelectionPath
+name|setSelectionPath
 argument_list|(
 name|buildTreePath
 argument_list|(
@@ -1091,7 +1091,7 @@ operator|.
 name|getSelectionModel
 argument_list|()
 operator|.
-name|addSelectionPath
+name|setSelectionPath
 argument_list|(
 name|buildTreePath
 argument_list|(

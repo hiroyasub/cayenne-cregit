@@ -781,6 +781,12 @@ name|getSelectedComponent
 argument_list|()
 operator|!=
 name|relationshipsPanel
+operator|&&
+name|objRels
+operator|.
+name|length
+operator|>
+literal|0
 condition|)
 block|{
 name|setSelectedComponent
@@ -867,6 +873,12 @@ name|getSelectedComponent
 argument_list|()
 operator|!=
 name|attributesPanel
+operator|&&
+name|objAttrs
+operator|.
+name|length
+operator|>
+literal|0
 condition|)
 block|{
 name|setSelectedComponent
