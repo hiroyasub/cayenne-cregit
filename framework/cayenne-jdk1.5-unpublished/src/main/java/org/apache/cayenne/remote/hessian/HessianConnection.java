@@ -452,6 +452,9 @@ name|message
 argument_list|)
 return|;
 block|}
+comment|//catch (CayenneRuntimeException e) {
+comment|//    throw e;
+comment|//}
 catch|catch
 parameter_list|(
 name|Throwable
