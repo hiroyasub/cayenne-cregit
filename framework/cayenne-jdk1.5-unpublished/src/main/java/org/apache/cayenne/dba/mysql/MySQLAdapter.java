@@ -1089,7 +1089,7 @@ block|}
 comment|/**      * Appends AUTO_INCREMENT clause to the column definition for generated columns.      */
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(

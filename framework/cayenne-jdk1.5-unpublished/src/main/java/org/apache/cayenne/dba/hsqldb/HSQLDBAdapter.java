@@ -902,7 +902,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(

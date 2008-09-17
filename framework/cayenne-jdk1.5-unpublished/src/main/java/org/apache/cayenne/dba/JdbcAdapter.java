@@ -435,20 +435,6 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|ResourceLocator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
 name|Util
 import|;
 end_import
@@ -1199,7 +1185,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Appends SQL for column creation to CREATE TABLE buffer.      *       * @since 1.2      */
-specifier|protected
+specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(

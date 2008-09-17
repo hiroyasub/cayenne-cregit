@@ -577,6 +577,18 @@ return|return
 literal|null
 return|;
 block|}
+specifier|public
+name|void
+name|createTableAppendColumn
+parameter_list|(
+name|StringBuffer
+name|sqlBuffer
+parameter_list|,
+name|DbAttribute
+name|column
+parameter_list|)
+block|{
+block|}
 block|}
 end_class
 

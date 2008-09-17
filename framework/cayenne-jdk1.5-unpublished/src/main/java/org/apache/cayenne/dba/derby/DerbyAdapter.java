@@ -340,7 +340,7 @@ block|}
 comment|/**      * Appends SQL for column creation to CREATE TABLE buffer. Only change for Derby is      * that " NULL" is not supported.      *       * @since 1.2      */
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(

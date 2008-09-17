@@ -374,6 +374,18 @@ name|MergerFactory
 name|mergerFactory
 parameter_list|()
 function_decl|;
+comment|/**      * Append the column type part of a "create table" to the given {@link StringBuffer}      *       * @param sqlBuffer the {@link StringBuffer} to append the column type to      * @param column the {@link DbAttribute} defining the column to append type for      * @since 3.0      */
+specifier|public
+name|void
+name|createTableAppendColumn
+parameter_list|(
+name|StringBuffer
+name|sqlBuffer
+parameter_list|,
+name|DbAttribute
+name|column
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
