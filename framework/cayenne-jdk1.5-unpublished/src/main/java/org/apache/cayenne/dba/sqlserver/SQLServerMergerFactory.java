@@ -403,15 +403,7 @@ argument_list|(
 literal|" ALTER COLUMN "
 argument_list|)
 expr_stmt|;
-name|SQLServerAdapter
-name|sqladapter
-init|=
-operator|(
-name|SQLServerAdapter
-operator|)
 name|adapter
-decl_stmt|;
-name|sqladapter
 operator|.
 name|createTableAppendColumn
 argument_list|(
