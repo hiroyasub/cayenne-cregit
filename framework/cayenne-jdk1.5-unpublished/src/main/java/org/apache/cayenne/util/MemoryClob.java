@@ -41,6 +41,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|Reader
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|StringReader
 import|;
 end_import
@@ -852,6 +862,37 @@ operator|/
 literal|2
 return|;
 block|}
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|free
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|Reader
+name|getCharacterStream
+parameter_list|(
+name|long
+name|pos
+parameter_list|,
+name|long
+name|length
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
 block|}
 end_class

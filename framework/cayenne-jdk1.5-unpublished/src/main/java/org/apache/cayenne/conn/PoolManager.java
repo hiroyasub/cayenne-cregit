@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PoolManager is a pooling DataSource impementation.   * Internally to obtain connections PoolManager uses either a JDBC driver   * or another pooling datasource.  *   * @author Andrus Adamchik  */
+comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  *   * @author Andrus Adamchik  */
 end_comment
 
 begin_class
@@ -138,7 +138,7 @@ name|DataSource
 implements|,
 name|ConnectionEventListener
 block|{
-comment|/**       * Defines a maximum time in milliseconds that a connection      * request could wait in the connection queue. After this period      * expires, an exception will be thrown in the calling method.      * In the future this parameter should be made configurable.      */
+comment|/**      * Defines a maximum time in milliseconds that a connection request could wait in the      * connection queue. After this period expires, an exception will be thrown in the      * calling method. In the future this parameter should be made configurable.      */
 specifier|public
 specifier|static
 specifier|final
@@ -193,7 +193,7 @@ specifier|private
 name|PoolMaintenanceThread
 name|poolMaintenanceThread
 decl_stmt|;
-comment|/**       * Creates new PoolManager using org.apache.cayenne.conn.PoolDataSource      * for an underlying ConnectionPoolDataSource.       */
+comment|/**      * Creates new PoolManager using org.apache.cayenne.conn.PoolDataSource for an      * underlying ConnectionPoolDataSource.      */
 specifier|public
 name|PoolManager
 parameter_list|(
@@ -380,7 +380,7 @@ name|password
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Creates new PoolManager with the specified policy for      *  connection pooling and a ConnectionPoolDataSource object.      *      *  @param poolDataSource data source for pooled connections      *  @param minCons Non-negative integer that specifies a minimum number of open connections      *  to keep in the pool at all times      *  @param maxCons Non-negative integer that specifies maximum number of simultaneuosly open connections      *      *  @throws SQLException if pool manager can not be created.      */
+comment|/**      * Creates new PoolManager with the specified policy for connection pooling and a      * ConnectionPoolDataSource object.      *       * @param poolDataSource data source for pooled connections      * @param minCons Non-negative integer that specifies a minimum number of open      *            connections to keep in the pool at all times      * @param maxCons Non-negative integer that specifies maximum number of simultaneuosly      *            open connections      * @throws SQLException if pool manager can not be created.      */
 specifier|public
 name|PoolManager
 parameter_list|(
@@ -583,7 +583,7 @@ name|start
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**       * Creates and returns new PooledConnection object, adding itself as a listener       * for connection events.       */
+comment|/**      * Creates and returns new PooledConnection object, adding itself as a listener for      * connection events.      */
 specifier|protected
 name|PooledConnection
 name|newPooledConnection
@@ -774,7 +774,7 @@ operator|<
 name|maxConnections
 return|;
 block|}
-comment|/**       * Increases connection pool by the specified number of connections.      *       * @return the actual number of created connections.       * @throws SQLException if an error happens when creating a new connection.      */
+comment|/**      * Increases connection pool by the specified number of connections.      *       * @return the actual number of created connections.      * @throws SQLException if an error happens when creating a new connection.      */
 specifier|protected
 specifier|synchronized
 name|int
@@ -906,7 +906,7 @@ comment|// ignore
 block|}
 block|}
 block|}
-comment|/**       * Returns maximum number of connections this pool can keep.      * This parameter when configured allows to limit the number of simultaneously      * open connections.      */
+comment|/**      * Returns maximum number of connections this pool can keep. This parameter when      * configured allows to limit the number of simultaneously open connections.      */
 specifier|public
 name|int
 name|getMaxConnections
@@ -931,7 +931,7 @@ operator|=
 name|maxConnections
 expr_stmt|;
 block|}
-comment|/** Returns the absolute minimum number of connections allowed        * in this pool at any moment in time. */
+comment|/**      * Returns the absolute minimum number of connections allowed in this pool at any      * moment in time.      */
 specifier|public
 name|int
 name|getMinConnections
@@ -956,7 +956,7 @@ operator|=
 name|minConnections
 expr_stmt|;
 block|}
-comment|/** Returns a database URL used to initialize this pool.       * Will return null if the pool was initialized with ConnectionPoolDataSource. */
+comment|/**      * Returns a database URL used to initialize this pool. Will return null if the pool      * was initialized with ConnectionPoolDataSource.      */
 specifier|public
 name|String
 name|getDataSourceUrl
@@ -966,7 +966,7 @@ return|return
 name|dataSourceUrl
 return|;
 block|}
-comment|/** Returns a name of a JDBC driver used to initialize this pool.       * Will return null if the pool was initialized with ConnectionPoolDataSource. */
+comment|/**      * Returns a name of a JDBC driver used to initialize this pool. Will return null if      * the pool was initialized with ConnectionPoolDataSource.      */
 specifier|public
 name|String
 name|getJdbcDriver
@@ -1015,7 +1015,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**       * Returns the number of connections obtained via this DataSource      * that are currently in use by the DataSource clients.       */
+comment|/**      * Returns the number of connections obtained via this DataSource that are currently      * in use by the DataSource clients.      */
 specifier|public
 specifier|synchronized
 name|int
@@ -1029,7 +1029,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**       * Returns the number of connections maintained in the       * pool that are currently not used by any clients and are      * available immediately via<code>getConnection</code> method.       */
+comment|/**      * Returns the number of connections maintained in the pool that are currently not      * used by any clients and are available immediately via<code>getConnection</code>      * method.      */
 specifier|public
 specifier|synchronized
 name|int
@@ -1043,7 +1043,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**       * Returns connection from the pool using internal values of user name      * and password. Eqivalent to calling:       *       *<p><code>ds.getConnection(ds.getUserName(), ds.getPassword())</code></p>       */
+comment|/**      * Returns connection from the pool using internal values of user name and password.      * Eqivalent to calling:      *<p>      *<code>ds.getConnection(ds.getUserName(), ds.getPassword())</code>      *</p>      */
 specifier|public
 name|Connection
 name|getConnection
@@ -1397,7 +1397,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**       * Returns closed connection to the pool.       */
+comment|/**      * Returns closed connection to the pool.      */
 specifier|public
 specifier|synchronized
 name|void
@@ -1458,10 +1458,11 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|// else ....
-comment|// other possibility is that this is a bad connection, so just ignore its closing event,
+comment|// other possibility is that this is a bad connection, so just ignore its closing
+comment|// event,
 comment|// since it was unregistered in "connectionErrorOccurred"
 block|}
-comment|/**       * Removes connection with an error from the pool. This method      * is called by PoolManager connections on connection errors      * to notify PoolManager that connection is in invalid state.      */
+comment|/**      * Removes connection with an error from the pool. This method is called by      * PoolManager connections on connection errors to notify PoolManager that connection      * is in invalid state.      */
 specifier|public
 specifier|synchronized
 name|void
@@ -1709,6 +1710,51 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|boolean
+name|isWrapperFor
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|iface
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|unwrap
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|iface
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
 block|}
 end_class

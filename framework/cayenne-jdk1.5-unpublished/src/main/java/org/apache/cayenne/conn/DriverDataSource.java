@@ -743,6 +743,51 @@ literal|null
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|boolean
+name|isWrapperFor
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|iface
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|unwrap
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|iface
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
 block|}
 end_class
 

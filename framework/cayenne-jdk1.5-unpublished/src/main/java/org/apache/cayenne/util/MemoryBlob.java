@@ -152,7 +152,7 @@ operator|.
 name|length
 return|;
 block|}
-comment|/**      * Retrieves all or part of the<code>BLOB</code> value that this<code>Blob</code>      * object represents, as an array of bytes. This<code>byte</code> array contains up      * to<code>length</code> consecutive bytes starting at position<code>pos</code>.      *<p>      * The official specification is ambiguous in that it does not precisely indicate the      * policy to be observed when pos> this.length() - length. One policy would be to      * retrieve the octets from pos to this.length(). Another would be to throw an      * exception. This implementation observes the later policy.      *       * @param pos the ordinal position of the first byte in the<code>BLOB</code> value      *            to be extracted; the first byte is at position 1      * @param length the number of consecutive bytes to be copied      * @return a byte array containing up to<code>length</code> consecutive bytes from      *         the<code>BLOB</code> value designated by this<code>Blob</code>      *         object, starting with the byte at position<code>pos</code>      * @exception SQLException if there is an error accessing the<code>BLOB</code>      *                value      */
+comment|/**      * Retrieves all or part of the<code>BLOB</code> value that this<code>Blob</code>      * object represents, as an array of bytes. This<code>byte</code> array contains up      * to<code>length</code> consecutive bytes starting at position<code>pos</code>.      *<p>      * The official specification is ambiguous in that it does not precisely indicate the      * policy to be observed when pos> this.length() - length. One policy would be to      * retrieve the octets from pos to this.length(). Another would be to throw an      * exception. This implementation observes the later policy.      *       * @param pos the ordinal position of the first byte in the<code>BLOB</code> value to      *            be extracted; the first byte is at position 1      * @param length the number of consecutive bytes to be copied      * @return a byte array containing up to<code>length</code> consecutive bytes from      *         the<code>BLOB</code> value designated by this<code>Blob</code> object,      *         starting with the byte at position<code>pos</code>      * @exception SQLException if there is an error accessing the<code>BLOB</code> value      */
 specifier|public
 name|byte
 index|[]
@@ -267,7 +267,7 @@ return|return
 name|out
 return|;
 block|}
-comment|/**      * Retrieves the<code>BLOB</code> value designated by this<code>Blob</code>      * instance as a stream.      *       * @return a stream containing the<code>BLOB</code> data      * @exception SQLException if there is an error accessing the<code>BLOB</code>      *                value      */
+comment|/**      * Retrieves the<code>BLOB</code> value designated by this<code>Blob</code> instance      * as a stream.      *       * @return a stream containing the<code>BLOB</code> data      * @exception SQLException if there is an error accessing the<code>BLOB</code> value      */
 specifier|public
 name|InputStream
 name|getBinaryStream
@@ -477,7 +477,7 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/**      * Retrieves the byte position in the<code>BLOB</code> value designated by this      *<code>Blob</code> object at which<code>pattern</code> begins. The search      * begins at position<code>start</code>.      *       * @param pattern the<code>Blob</code> object designating the<code>BLOB</code>      *            value for which to search      * @param start the position in the<code>BLOB</code> value at which to begin      *            searching; the first position is 1      * @return the position at which the pattern begins, else -1      * @exception SQLException if there is an error accessing the<code>BLOB</code>      *                value      */
+comment|/**      * Retrieves the byte position in the<code>BLOB</code> value designated by this      *<code>Blob</code> object at which<code>pattern</code> begins. The search begins at      * position<code>start</code>.      *       * @param pattern the<code>Blob</code> object designating the<code>BLOB</code> value      *            for which to search      * @param start the position in the<code>BLOB</code> value at which to begin      *            searching; the first position is 1      * @return the position at which the pattern begins, else -1      * @exception SQLException if there is an error accessing the<code>BLOB</code> value      */
 specifier|public
 name|long
 name|position
@@ -789,7 +789,7 @@ literal|"Not supported"
 argument_list|)
 throw|;
 block|}
-comment|/**      * Truncates the<code>BLOB</code> value that this<code>Blob</code> object      * represents to be<code>len</code> bytes in length.      *       * @param len the length, in bytes, to which the<code>BLOB</code> value that this      *<code>Blob</code> object represents should be truncated      * @exception SQLException if there is an error accessing the<code>BLOB</code>      *                value      */
+comment|/**      * Truncates the<code>BLOB</code> value that this<code>Blob</code> object represents      * to be<code>len</code> bytes in length.      *       * @param len the length, in bytes, to which the<code>BLOB</code> value that this      *<code>Blob</code> object represents should be truncated      * @exception SQLException if there is an error accessing the<code>BLOB</code> value      */
 specifier|public
 name|void
 name|truncate
@@ -882,6 +882,35 @@ name|data
 operator|=
 name|newData
 expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|free
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|InputStream
+name|getBinaryStream
+parameter_list|(
+name|long
+name|arg0
+parameter_list|,
+name|long
+name|arg1
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+return|return
+literal|null
+return|;
 block|}
 block|}
 end_class
