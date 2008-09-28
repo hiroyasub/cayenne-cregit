@@ -865,6 +865,8 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Array
 name|createArrayOf
@@ -879,10 +881,14 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Blob
 name|createBlob
@@ -890,10 +896,14 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Clob
 name|createClob
@@ -901,10 +911,14 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Struct
 name|createStruct
@@ -919,10 +933,14 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Properties
 name|getClientInfo
@@ -930,10 +948,14 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|String
 name|getClientInfo
@@ -944,10 +966,14 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|boolean
 name|isValid
@@ -958,9 +984,11 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-return|return
-literal|false
-return|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
 comment|/**      * @since 3.0      */
 comment|// JDBC 4 compatibility under Java 1.5
