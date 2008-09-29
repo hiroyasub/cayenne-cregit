@@ -2454,6 +2454,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|addAttributeOverride
