@@ -81,7 +81,27 @@ name|java
 operator|.
 name|sql
 operator|.
+name|NClob
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|PreparedStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLClientInfoException
 import|;
 end_import
 
@@ -102,6 +122,16 @@ operator|.
 name|sql
 operator|.
 name|SQLWarning
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLXML
 import|;
 end_import
 
@@ -241,7 +271,7 @@ name|e
 throw|;
 block|}
 block|}
-comment|/**       * Creates new ConnectionWrapper       */
+comment|/**      * Creates new ConnectionWrapper      */
 specifier|public
 name|ConnectionWrapper
 parameter_list|(
@@ -1211,6 +1241,14 @@ block|}
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
 name|getTypeMap
 parameter_list|()
 throws|throws
@@ -1841,6 +1879,75 @@ name|iface
 parameter_list|)
 throws|throws
 name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|NClob
+name|createNClob
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|SQLXML
+name|createSQLXML
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|setClientInfo
+parameter_list|(
+name|Properties
+name|properties
+parameter_list|)
+throws|throws
+name|SQLClientInfoException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|setClientInfo
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|String
+name|value
+parameter_list|)
+throws|throws
+name|SQLClientInfoException
 block|{
 throw|throw
 operator|new

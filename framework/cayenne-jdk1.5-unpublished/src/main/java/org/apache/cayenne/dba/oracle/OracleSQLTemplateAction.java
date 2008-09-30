@@ -113,6 +113,16 @@ name|java
 operator|.
 name|sql
 operator|.
+name|NClob
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|Ref
 import|;
 end_import
@@ -143,6 +153,16 @@ name|java
 operator|.
 name|sql
 operator|.
+name|RowId
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|SQLException
 import|;
 end_import
@@ -154,6 +174,16 @@ operator|.
 name|sql
 operator|.
 name|SQLWarning
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLXML
 import|;
 end_import
 
@@ -3364,6 +3394,8 @@ name|wasNull
 argument_list|()
 return|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|int
 name|getHoldability
@@ -3377,6 +3409,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Reader
 name|getNCharacterStream
@@ -3393,6 +3427,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|Reader
 name|getNCharacterStream
@@ -3409,12 +3445,14 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|String
 name|getNString
 parameter_list|(
 name|int
-name|arg0
+name|columnIndex
 parameter_list|)
 throws|throws
 name|SQLException
@@ -3425,6 +3463,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|String
 name|getNString
@@ -3441,6 +3481,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|boolean
 name|isClosed
@@ -3454,6 +3496,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateAsciiStream
@@ -3473,6 +3517,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateAsciiStream
@@ -3492,6 +3538,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateAsciiStream
@@ -3514,6 +3562,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateAsciiStream
@@ -3536,6 +3586,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBinaryStream
@@ -3555,6 +3607,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBinaryStream
@@ -3574,6 +3628,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBinaryStream
@@ -3596,6 +3652,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBinaryStream
@@ -3618,6 +3676,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBlob
@@ -3637,6 +3697,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBlob
@@ -3656,6 +3718,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBlob
@@ -3678,6 +3742,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateBlob
@@ -3700,6 +3766,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateCharacterStream
@@ -3719,6 +3787,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateCharacterStream
@@ -3738,6 +3808,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateCharacterStream
@@ -3760,6 +3832,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateCharacterStream
@@ -3782,6 +3856,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateClob
@@ -3801,6 +3877,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateClob
@@ -3820,6 +3898,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateClob
@@ -3842,6 +3922,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateClob
@@ -3864,6 +3946,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNCharacterStream
@@ -3883,6 +3967,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNCharacterStream
@@ -3902,6 +3988,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNCharacterStream
@@ -3924,6 +4012,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNCharacterStream
@@ -3946,6 +4036,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNClob
@@ -3965,6 +4057,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNClob
@@ -3984,6 +4078,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNClob
@@ -4006,6 +4102,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNClob
@@ -4028,6 +4126,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNString
@@ -4047,6 +4147,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|void
 name|updateNString
@@ -4066,6 +4168,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|boolean
 name|isWrapperFor
@@ -4085,6 +4189,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 parameter_list|<
 name|T
@@ -4097,6 +4203,240 @@ argument_list|<
 name|T
 argument_list|>
 name|iface
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|NClob
+name|getNClob
+parameter_list|(
+name|int
+name|arg0
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|NClob
+name|getNClob
+parameter_list|(
+name|String
+name|columnLabel
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|RowId
+name|getRowId
+parameter_list|(
+name|int
+name|columnIndex
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|RowId
+name|getRowId
+parameter_list|(
+name|String
+name|columnLabel
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|SQLXML
+name|getSQLXML
+parameter_list|(
+name|int
+name|columnIndex
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|SQLXML
+name|getSQLXML
+parameter_list|(
+name|String
+name|columnLabel
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|updateNClob
+parameter_list|(
+name|int
+name|columnIndex
+parameter_list|,
+name|NClob
+name|clob
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|updateNClob
+parameter_list|(
+name|String
+name|columnLabel
+parameter_list|,
+name|NClob
+name|clob
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|updateRowId
+parameter_list|(
+name|int
+name|columnIndex
+parameter_list|,
+name|RowId
+name|x
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|updateRowId
+parameter_list|(
+name|String
+name|columnLabel
+parameter_list|,
+name|RowId
+name|x
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|updateSQLXML
+parameter_list|(
+name|int
+name|columnIndex
+parameter_list|,
+name|SQLXML
+name|xmlObject
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**          * @since 3.0          */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|updateSQLXML
+parameter_list|(
+name|String
+name|columnLabel
+parameter_list|,
+name|SQLXML
+name|xmlObject
 parameter_list|)
 throws|throws
 name|SQLException

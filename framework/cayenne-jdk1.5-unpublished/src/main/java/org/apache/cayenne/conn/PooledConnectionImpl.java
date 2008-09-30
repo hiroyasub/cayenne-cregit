@@ -105,6 +105,16 @@ name|PooledConnection
 import|;
 end_import
 
+begin_import
+import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|StatementEventListener
+import|;
+end_import
+
 begin_comment
 comment|/**  * PooledConnectionImpl is an implementation of a pooling wrapper for the database  * connection as per JDBC3 spec. Most of the modern JDBC drivers should have its own  * implementation that may be used instead of this class.  *   * @author Andrus Adamchik  */
 end_comment
@@ -568,6 +578,38 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|addStatementEventListener
+parameter_list|(
+name|StatementEventListener
+name|listener
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// JDBC 4 compatibility under Java 1.5
+specifier|public
+name|void
+name|removeStatementEventListener
+parameter_list|(
+name|StatementEventListener
+name|listener
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
 block|}
 end_class
