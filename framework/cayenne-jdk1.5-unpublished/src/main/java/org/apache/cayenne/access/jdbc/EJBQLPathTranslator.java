@@ -559,7 +559,10 @@ name|oldPath
 argument_list|,
 name|currentEntity
 operator|.
-name|getDbEntityName
+name|getDbEntity
+argument_list|()
+operator|.
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -603,7 +606,10 @@ name|fullPath
 argument_list|,
 name|currentEntity
 operator|.
-name|getDbEntityName
+name|getDbEntity
+argument_list|()
+operator|.
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -662,7 +668,10 @@ name|fullPath
 argument_list|,
 name|targetEntity
 operator|.
-name|getDbEntityName
+name|getDbEntity
+argument_list|()
+operator|.
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;

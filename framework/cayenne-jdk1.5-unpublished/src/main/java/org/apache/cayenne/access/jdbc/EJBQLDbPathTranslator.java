@@ -509,7 +509,7 @@ name|oldPath
 argument_list|,
 name|currentEntity
 operator|.
-name|getName
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -553,7 +553,7 @@ name|fullPath
 argument_list|,
 name|currentEntity
 operator|.
-name|getName
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -612,7 +612,7 @@ name|fullPath
 argument_list|,
 name|targetEntity
 operator|.
-name|getName
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
