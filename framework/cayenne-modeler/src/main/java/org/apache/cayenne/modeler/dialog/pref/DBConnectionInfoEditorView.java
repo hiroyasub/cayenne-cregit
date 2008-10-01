@@ -172,6 +172,10 @@ specifier|protected
 name|Collection
 name|labels
 decl_stmt|;
+specifier|protected
+name|DefaultFormBuilder
+name|builder
+decl_stmt|;
 specifier|public
 name|DBConnectionInfoEditorView
 parameter_list|()
@@ -231,15 +235,14 @@ argument_list|,
 literal|""
 argument_list|)
 decl_stmt|;
-name|DefaultFormBuilder
 name|builder
-init|=
+operator|=
 operator|new
 name|DefaultFormBuilder
 argument_list|(
 name|layout
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|builder
 operator|.
 name|setDefaultDialogBorder
@@ -382,6 +385,16 @@ parameter_list|()
 block|{
 return|return
 name|userName
+return|;
+block|}
+comment|/**      * @return Builder of the view (to allow dynamic extending of the component)      */
+specifier|public
+name|DefaultFormBuilder
+name|getBuilder
+parameter_list|()
+block|{
+return|return
+name|builder
 return|;
 block|}
 specifier|public

@@ -266,7 +266,7 @@ argument_list|(
 operator|new
 name|FormLayout
 argument_list|(
-literal|"20dlu:grow, pref, 3dlu, fill:max(50dlu;pref), 3dlu, fill:20dlu"
+literal|"20dlu:grow, pref, 3dlu, fill:max(150dlu;pref), 3dlu, fill:20dlu"
 argument_list|,
 literal|"p"
 argument_list|)

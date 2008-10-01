@@ -261,11 +261,8 @@ name|this
 operator|.
 name|view
 operator|=
-operator|new
-name|DataSourceWizardView
-argument_list|(
-name|this
-argument_list|)
+name|createView
+argument_list|()
 expr_stmt|;
 name|this
 operator|.
@@ -299,6 +296,20 @@ expr_stmt|;
 name|initBindings
 argument_list|()
 expr_stmt|;
+block|}
+comment|/**      * Creates swing dialog for this wizard       */
+specifier|protected
+name|DataSourceWizardView
+name|createView
+parameter_list|()
+block|{
+return|return
+operator|new
+name|DataSourceWizardView
+argument_list|(
+name|this
+argument_list|)
+return|;
 block|}
 specifier|protected
 name|void
