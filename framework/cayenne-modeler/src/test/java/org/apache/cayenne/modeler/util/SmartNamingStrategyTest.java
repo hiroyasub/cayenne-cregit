@@ -212,7 +212,7 @@ literal|null
 argument_list|,
 literal|"ADDRESS"
 argument_list|,
-literal|"SHIPPING_ADDRESS"
+literal|"SHIPPING_ADDRESS_ID"
 argument_list|,
 literal|null
 argument_list|)
