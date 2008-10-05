@@ -104,6 +104,25 @@ name|shouldDelete
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * If false, no question will be asked no matter what settings are      */
+specifier|private
+name|boolean
+name|allowAsking
+decl_stmt|;
+specifier|public
+name|ConfirmRemoveDialog
+parameter_list|(
+name|boolean
+name|allowAsking
+parameter_list|)
+block|{
+name|this
+operator|.
+name|allowAsking
+operator|=
+name|allowAsking
+expr_stmt|;
+block|}
 specifier|private
 name|void
 name|showDialog
@@ -284,6 +303,11 @@ name|String
 name|name
 parameter_list|)
 block|{
+if|if
+condition|(
+name|allowAsking
+condition|)
+block|{
 name|PreferenceDetail
 name|pref
 init|=
@@ -332,6 +356,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|shouldDelete

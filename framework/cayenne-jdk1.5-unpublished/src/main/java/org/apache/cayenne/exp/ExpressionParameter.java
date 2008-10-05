@@ -29,6 +29,16 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
 begin_comment
 comment|/**  * Named parameter for paramterized expressions.  *   * @author Andrus Adamchik  */
 end_comment
@@ -37,6 +47,8 @@ begin_class
 specifier|public
 class|class
 name|ExpressionParameter
+implements|implements
+name|Serializable
 block|{
 specifier|protected
 name|String

@@ -414,6 +414,24 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * Returns datamap with specified name, null if none present      */
+specifier|public
+name|DataMap
+name|getDataMap
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+name|dataMaps
+operator|.
+name|get
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
 specifier|public
 name|void
 name|setDataMaps

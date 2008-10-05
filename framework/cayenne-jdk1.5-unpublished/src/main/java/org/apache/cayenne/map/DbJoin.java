@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -79,6 +89,8 @@ class|class
 name|DbJoin
 implements|implements
 name|XMLSerializable
+implements|,
+name|Serializable
 block|{
 specifier|protected
 name|DbRelationship

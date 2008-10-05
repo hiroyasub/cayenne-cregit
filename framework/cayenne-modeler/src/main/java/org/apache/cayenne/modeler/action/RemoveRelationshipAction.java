@@ -215,6 +215,8 @@ class|class
 name|RemoveRelationshipAction
 extends|extends
 name|RemoveAction
+implements|implements
+name|MultipleObjectsAction
 block|{
 specifier|private
 specifier|final
@@ -244,7 +246,6 @@ name|ACTION_NAME
 return|;
 block|}
 specifier|public
-specifier|static
 name|String
 name|getActionName
 parameter_list|(
@@ -314,13 +315,18 @@ name|performAction
 parameter_list|(
 name|ActionEvent
 name|e
+parameter_list|,
+name|boolean
+name|allowAsking
 parameter_list|)
 block|{
 name|ConfirmRemoveDialog
 name|dialog
 init|=
 name|getConfirmDeleteDialog
-argument_list|()
+argument_list|(
+name|allowAsking
+argument_list|)
 decl_stmt|;
 name|ObjRelationship
 index|[]
