@@ -129,6 +129,20 @@ name|SwingConstants
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|Application
+import|;
+end_import
+
 begin_comment
 comment|/**  * @author Andrus Adamchik  */
 end_comment
@@ -166,6 +180,14 @@ name|Component
 name|entitySelectorPanel
 parameter_list|)
 block|{
+name|super
+argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|tabs

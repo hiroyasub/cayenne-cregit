@@ -19,6 +19,30 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
+name|WindowAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
+name|WindowEvent
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -47,30 +71,6 @@ name|CayenneDialog
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|WindowAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|WindowEvent
-import|;
-end_import
-
 begin_comment
 comment|/**  * LogConsoleWindow is used to show log in a separate dialog   * @author Andrey Razumovsky  */
 end_comment
@@ -91,6 +91,14 @@ name|LogConsole
 name|controller
 parameter_list|)
 block|{
+name|super
+argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|setTitle
 argument_list|(
 literal|"Cayenne Modeler Console"

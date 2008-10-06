@@ -161,6 +161,20 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|Application
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|jgoodies
@@ -243,6 +257,14 @@ name|Component
 name|tables
 parameter_list|)
 block|{
+name|super
+argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// create widgets
 name|this
 operator|.
