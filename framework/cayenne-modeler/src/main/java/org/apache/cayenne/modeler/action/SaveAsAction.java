@@ -384,6 +384,14 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+operator|.
+name|fireRecentFileListChanged
+argument_list|()
+expr_stmt|;
 comment|/**          * Reset the watcher now          */
 name|getProjectController
 argument_list|()
@@ -580,9 +588,6 @@ block|}
 name|Project
 name|project
 init|=
-operator|(
-name|Project
-operator|)
 name|path
 operator|.
 name|firstInstanceOf

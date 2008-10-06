@@ -1031,6 +1031,12 @@ name|?
 argument_list|>
 name|arr
 init|=
+operator|(
+name|Vector
+argument_list|<
+name|?
+argument_list|>
+operator|)
 name|pref
 operator|.
 name|getVector
@@ -1039,6 +1045,9 @@ name|ModelerPreferences
 operator|.
 name|LAST_PROJ_FILES
 argument_list|)
+operator|.
+name|clone
+argument_list|()
 decl_stmt|;
 name|recentsList
 operator|.
