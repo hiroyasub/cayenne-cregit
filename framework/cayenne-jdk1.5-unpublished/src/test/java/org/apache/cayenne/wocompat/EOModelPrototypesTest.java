@@ -463,7 +463,7 @@ argument_list|)
 decl_stmt|;
 name|assertSame
 argument_list|(
-name|documentOE
+name|estimateOE
 argument_list|,
 name|estimateOE
 operator|.
