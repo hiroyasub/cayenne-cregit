@@ -978,6 +978,9 @@ name|ent
 operator|.
 name|getName
 argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
 argument_list|)
 condition|)
 block|{
