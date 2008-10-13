@@ -989,6 +989,15 @@ name|getDescriptor
 argument_list|(
 name|types
 argument_list|)
+argument_list|)
+decl_stmt|;
+name|LimitResultIterator
+name|it
+init|=
+operator|new
+name|LimitResultIterator
+argument_list|(
+name|result
 argument_list|,
 name|query
 operator|.
@@ -1008,7 +1017,7 @@ name|DataRow
 argument_list|>
 name|resultRows
 init|=
-name|result
+name|it
 operator|.
 name|dataRows
 argument_list|(
@@ -1059,7 +1068,7 @@ name|nextDataRows
 argument_list|(
 name|query
 argument_list|,
-name|result
+name|it
 argument_list|)
 expr_stmt|;
 block|}
@@ -1069,7 +1078,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|result
+name|it
 operator|.
 name|close
 argument_list|()

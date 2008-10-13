@@ -214,7 +214,16 @@ argument_list|(
 name|resultRows
 argument_list|)
 expr_stmt|;
-comment|// assertEquals(25, resultRows.size());
+name|assertEquals
+argument_list|(
+literal|25
+argument_list|,
+name|resultRows
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 specifier|protected
 name|void

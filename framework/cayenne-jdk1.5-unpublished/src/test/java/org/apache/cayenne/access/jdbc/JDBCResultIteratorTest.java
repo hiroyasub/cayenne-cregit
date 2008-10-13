@@ -313,8 +313,6 @@ argument_list|,
 name|rs
 argument_list|,
 name|descriptor
-argument_list|,
-literal|0
 argument_list|)
 decl_stmt|;
 name|assertFalse
@@ -457,8 +455,6 @@ argument_list|,
 name|rs
 argument_list|,
 name|descriptor
-argument_list|,
-literal|0
 argument_list|)
 return|;
 block|}

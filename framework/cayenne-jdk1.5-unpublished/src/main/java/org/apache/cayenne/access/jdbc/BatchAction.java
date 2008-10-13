@@ -1270,8 +1270,6 @@ argument_list|,
 name|keysRS
 argument_list|,
 name|keyRowDescriptor
-argument_list|,
-literal|0
 argument_list|)
 decl_stmt|;
 name|observer
