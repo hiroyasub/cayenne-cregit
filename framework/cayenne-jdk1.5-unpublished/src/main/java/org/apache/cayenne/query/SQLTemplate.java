@@ -1138,6 +1138,16 @@ argument_list|(
 name|parameters
 argument_list|)
 expr_stmt|;
+name|query
+operator|.
+name|setColumnNamesCapitalization
+argument_list|(
+name|this
+operator|.
+name|getColumnNamesCapitalization
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// The following algorithm is for building the new query name based
 comment|// on the original query name and a hashcode of the map of parameters.
 comment|// This way the query clone can take advantage of caching. Fixes
