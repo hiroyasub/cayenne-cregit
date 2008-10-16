@@ -144,6 +144,7 @@ name|Artifact
 block|{
 specifier|public
 specifier|static
+specifier|final
 name|String
 name|DATAMAP_UTILS_KEY
 init|=
