@@ -358,7 +358,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"XYZ"
+literal|"proc:"
 argument_list|,
 name|md1
 operator|.

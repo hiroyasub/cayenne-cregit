@@ -161,26 +161,6 @@ argument_list|()
 condition|)
 block|{
 block|}
-if|else if
-condition|(
-name|query
-operator|.
-name|getName
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-name|this
-operator|.
-name|cacheKey
-operator|=
-name|query
-operator|.
-name|getName
-argument_list|()
-expr_stmt|;
-block|}
 else|else
 block|{
 comment|// create a unique key based on entity, SQL, and parameters

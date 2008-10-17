@@ -222,13 +222,8 @@ operator|instanceof
 name|SQLTemplate
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-name|q1
-operator|.
-name|getName
-argument_list|()
-argument_list|,
 name|q2
 operator|.
 name|getName
@@ -264,7 +259,7 @@ argument_list|,
 name|q3
 argument_list|)
 expr_stmt|;
-name|assertNotNull
+name|assertNull
 argument_list|(
 name|q3
 operator|.
