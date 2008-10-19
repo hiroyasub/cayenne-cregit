@@ -17,13 +17,21 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|velocity
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
 operator|.
-name|VelocityContext
+name|util
+operator|.
+name|LinkedList
 import|;
 end_import
 
@@ -51,7 +59,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|ProcedureQuery
 import|;
 end_import
 
@@ -65,7 +73,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|Query
 import|;
 end_import
 
@@ -93,7 +101,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|ProcedureQuery
+name|SelectQuery
 import|;
 end_import
 
@@ -113,26 +121,18 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
+name|velocity
 operator|.
-name|util
-operator|.
-name|LinkedList
+name|VelocityContext
 import|;
 end_import
 
 begin_comment
-comment|/**  * {@link Artifact} facade for a DataMap.  *  * @author Dzmitry Rusak  * @since 3.0  */
+comment|/**  * {@link Artifact} facade for a DataMap.  *   * @author Dzmitry Rusak  * @since 3.0  */
 end_comment
 
 begin_class
@@ -246,13 +246,37 @@ name|String
 name|getQualifiedClassName
 parameter_list|()
 block|{
-return|return
+name|String
+name|pkg
+init|=
 name|dataMap
 operator|.
 name|getDefaultPackage
 argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|pkg
+operator|==
+literal|null
+condition|)
+block|{
+name|pkg
+operator|=
+literal|""
+expr_stmt|;
+block|}
+else|else
+block|{
+name|pkg
+operator|=
+name|pkg
 operator|+
 literal|'.'
+expr_stmt|;
+block|}
+return|return
+name|pkg
 operator|+
 name|NameConverter
 operator|.
@@ -431,6 +455,20 @@ parameter_list|()
 block|{
 return|return
 name|selectQueries
+return|;
+block|}
+specifier|public
+name|boolean
+name|hasQueries
+parameter_list|()
+block|{
+return|return
+name|selectQueries
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|0
 return|;
 block|}
 block|}
