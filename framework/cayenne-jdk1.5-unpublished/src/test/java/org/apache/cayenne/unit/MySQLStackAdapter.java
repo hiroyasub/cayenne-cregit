@@ -252,15 +252,6 @@ argument_list|,
 literal|"create-out-sp.sql"
 argument_list|)
 expr_stmt|;
-name|executeDDL
-argument_list|(
-name|con
-argument_list|,
-literal|"mysql"
-argument_list|,
-literal|"create-smallint-unsigned.sql"
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 annotation|@
