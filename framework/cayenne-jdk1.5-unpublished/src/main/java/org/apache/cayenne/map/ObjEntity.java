@@ -658,6 +658,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|getDbEntityName
+argument_list|()
+operator|!=
+literal|null
+operator|&&
 name|getDbEntity
 argument_list|()
 operator|!=
