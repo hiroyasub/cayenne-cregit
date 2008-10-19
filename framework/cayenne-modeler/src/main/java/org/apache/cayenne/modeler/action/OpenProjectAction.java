@@ -468,6 +468,42 @@ parameter_list|)
 block|{
 try|try
 block|{
+if|if
+condition|(
+operator|!
+name|file
+operator|.
+name|exists
+argument_list|()
+condition|)
+block|{
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|,
+literal|"Can't open project - file \""
+operator|+
+name|file
+operator|.
+name|getPath
+argument_list|()
+operator|+
+literal|"\" does not exist"
+argument_list|,
+literal|"Can't Open Project"
+argument_list|,
+name|JOptionPane
+operator|.
+name|OK_OPTION
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|getApplication
 argument_list|()
 operator|.
