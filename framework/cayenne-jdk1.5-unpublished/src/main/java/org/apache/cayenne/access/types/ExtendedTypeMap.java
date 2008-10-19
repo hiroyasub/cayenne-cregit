@@ -348,6 +348,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|registerType
+argument_list|(
+operator|new
+name|UUIDType
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Registers default factories for creating enum types and serializable types. Note      * that user-defined factories are consulted before any default factory.      *       * @since 3.0      */
 specifier|protected
