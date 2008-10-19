@@ -1835,12 +1835,14 @@ name|isRefreshingObjects
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+comment|// run 'connectToParents' even if the object list is empty. This is needed to
+comment|// refresh stale relationships e.g. when some related objects got deleted.
 name|processorNode
 operator|.
 name|connectToParents
 argument_list|()
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
