@@ -99,6 +99,13 @@ operator|.
 name|createSqlString
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|isSuppressingDistinct
+argument_list|()
+condition|)
+block|{
 name|QueryMetadata
 name|info
 init|=
@@ -181,6 +188,7 @@ operator|.
 name|getFetchOffset
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 return|return
 name|sqlString

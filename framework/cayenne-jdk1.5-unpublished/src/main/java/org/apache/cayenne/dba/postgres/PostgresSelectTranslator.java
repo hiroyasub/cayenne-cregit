@@ -75,6 +75,13 @@ operator|.
 name|createSqlString
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|isSuppressingDistinct
+argument_list|()
+condition|)
+block|{
 name|QueryMetadata
 name|metadata
 init|=
@@ -131,6 +138,7 @@ literal|" OFFSET "
 operator|+
 name|offset
 expr_stmt|;
+block|}
 block|}
 return|return
 name|sql

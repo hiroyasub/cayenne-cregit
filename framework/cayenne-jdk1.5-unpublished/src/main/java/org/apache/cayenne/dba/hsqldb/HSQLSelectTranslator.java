@@ -75,6 +75,14 @@ operator|.
 name|createSqlString
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|isSuppressingDistinct
+argument_list|()
+condition|)
+block|{
+comment|// limit results
 name|QueryMetadata
 name|metadata
 init|=
@@ -87,14 +95,6 @@ name|getEntityResolver
 argument_list|()
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|isSuppressingDistinct
-argument_list|()
-condition|)
-block|{
-comment|// limit results
 name|int
 name|offset
 init|=

@@ -89,6 +89,13 @@ operator|.
 name|createSqlString
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|isSuppressingDistinct
+argument_list|()
+condition|)
+block|{
 comment|// limit results
 name|int
 name|limit
@@ -119,6 +126,7 @@ literal|" RETURN RESULTS "
 operator|+
 name|limit
 return|;
+block|}
 block|}
 return|return
 name|sql
