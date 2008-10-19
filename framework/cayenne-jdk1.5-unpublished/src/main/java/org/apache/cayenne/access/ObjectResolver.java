@@ -1315,6 +1315,7 @@ argument_list|(
 name|key
 argument_list|)
 decl_stmt|;
+comment|// this is possible when processing left outer joint prefetches
 if|if
 condition|(
 name|val
@@ -1322,23 +1323,9 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Null value for '"
-operator|+
-name|key
-operator|+
-literal|"'. Snapshot: "
-operator|+
-name|dataRow
-operator|+
-literal|". Prefix: "
-operator|+
-name|namePrefix
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 comment|// PUT without a prefix
 name|idMap
