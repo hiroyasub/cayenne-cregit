@@ -1358,6 +1358,34 @@ argument_list|,
 name|relatedIdPrefix
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|id
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Can't build ObjectId from row: "
+operator|+
+name|snapshot
+operator|+
+literal|", entity: "
+operator|+
+name|sourceObjEntity
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|", prefix: "
+operator|+
+name|relatedIdPrefix
+argument_list|)
+throw|;
+block|}
 name|sourceObject
 operator|=
 operator|(
@@ -1592,6 +1620,18 @@ argument_list|(
 name|row
 argument_list|)
 expr_stmt|;
+comment|// LEFT OUTER JOIN produced no matches...
+if|if
+condition|(
+name|object
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
 name|processorNode
 operator|.
 name|putResolved

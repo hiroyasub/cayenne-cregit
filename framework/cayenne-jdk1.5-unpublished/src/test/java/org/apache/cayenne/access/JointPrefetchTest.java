@@ -1264,10 +1264,9 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-comment|// without OUTER join we will get fewer objects...
 name|assertEquals
 argument_list|(
-literal|2
+literal|3
 argument_list|,
 name|objects
 operator|.
@@ -1326,16 +1325,6 @@ operator|)
 operator|.
 name|isFault
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|list
-operator|.
-name|size
-argument_list|()
-operator|>
-literal|0
 argument_list|)
 expr_stmt|;
 name|Iterator
@@ -1712,10 +1701,9 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-comment|// without OUTER join we will get fewer objects...
 name|assertEquals
 argument_list|(
-literal|2
+literal|3
 argument_list|,
 name|objects
 operator|.

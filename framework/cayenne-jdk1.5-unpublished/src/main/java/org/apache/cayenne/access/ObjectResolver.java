@@ -532,12 +532,9 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|results
-operator|.
-name|add
-argument_list|(
-name|objectFromDataRow
-argument_list|(
+name|DataRow
+name|row
+init|=
 operator|(
 name|DataRow
 operator|)
@@ -545,7 +542,37 @@ name|it
 operator|.
 name|next
 argument_list|()
+decl_stmt|;
+name|Persistent
+name|object
+init|=
+name|objectFromDataRow
+argument_list|(
+name|row
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|object
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Can't build Object from row: "
+operator|+
+name|row
+argument_list|)
+throw|;
+block|}
+name|results
+operator|.
+name|add
+argument_list|(
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -690,6 +717,23 @@ argument_list|(
 name|row
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|object
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Can't build Object from row: "
+operator|+
+name|row
+argument_list|)
+throw|;
+block|}
 name|results
 operator|.
 name|add
@@ -712,6 +756,34 @@ argument_list|,
 name|relatedIdPrefix
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|id
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Can't build ObjectId from row: "
+operator|+
+name|row
+operator|+
+literal|", entity: "
+operator|+
+name|sourceObjEntity
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|", prefix: "
+operator|+
+name|relatedIdPrefix
+argument_list|)
+throw|;
+block|}
 name|Persistent
 name|parentObject
 init|=
@@ -848,6 +920,18 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
+comment|// this condition is valid - see comments on 'createObjectId' for details
+if|if
+condition|(
+name|anId
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 comment|// this will create a HOLLOW object if it is not registered yet
 name|Persistent
 name|object
@@ -1137,6 +1221,7 @@ argument_list|(
 name|key
 argument_list|)
 decl_stmt|;
+comment|// this is possible when processing left outer joint prefetches
 if|if
 condition|(
 name|val
@@ -1144,23 +1229,9 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Null value for '"
-operator|+
-name|key
-operator|+
-literal|"'. Snapshot: "
-operator|+
-name|dataRow
-operator|+
-literal|". Prefix: "
-operator|+
-name|namePrefix
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 comment|// PUT without a prefix
 return|return

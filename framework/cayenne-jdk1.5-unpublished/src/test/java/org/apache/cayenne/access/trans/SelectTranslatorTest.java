@@ -1801,7 +1801,7 @@ expr_stmt|;
 comment|// assert we only have one join
 name|assertEquals
 argument_list|(
-literal|1
+literal|2
 argument_list|,
 name|transl
 operator|.
