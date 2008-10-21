@@ -279,6 +279,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -304,6 +307,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -330,6 +336,9 @@ name|QueryMetadata
 name|metadata
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|results
 parameter_list|)
 block|{

@@ -51,16 +51,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -212,6 +202,11 @@ name|RefreshSpecification
 name|defaultRefreshSpecification
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|RefreshSpecification
+argument_list|>
 name|refreshSpecifications
 decl_stmt|;
 name|Properties
@@ -260,6 +255,9 @@ block|}
 comment|/**      * Returns a collection of group names that have been configured explicitly via      * properties.      */
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|getGroupNames
 parameter_list|()
 block|{
@@ -305,9 +303,6 @@ condition|)
 block|{
 name|spec
 operator|=
-operator|(
-name|RefreshSpecification
-operator|)
 name|refreshSpecifications
 operator|.
 name|get
@@ -356,9 +351,6 @@ condition|)
 block|{
 name|spec
 operator|=
-operator|(
-name|RefreshSpecification
-operator|)
 name|refreshSpecifications
 operator|.
 name|get
@@ -718,15 +710,17 @@ name|refreshSpecifications
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|RefreshSpecification
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
 name|RefreshSpecification
 name|spec
 init|=
-operator|(
-name|RefreshSpecification
-operator|)
 name|refreshSpecifications
 operator|.
 name|get
@@ -779,6 +773,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -817,6 +814,9 @@ block|{
 return|return
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|osCache
 operator|.
@@ -855,6 +855,9 @@ block|}
 comment|/**      * Returns a non-null cached value. If it is not present in the cache, it is obtained      * by calling {@link QueryCacheEntryFactory#createObject()}. Whether the cache provider      * will block on the entry update or not is controlled by "cache.blocking"      * configuration property and is "false" by default.      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -896,6 +899,9 @@ block|{
 return|return
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|osCache
 operator|.
@@ -984,10 +990,16 @@ throw|;
 block|}
 block|}
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|list
 init|=
 operator|(
 name|List
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|result
 decl_stmt|;
@@ -1071,9 +1083,6 @@ condition|)
 block|{
 name|refresh
 operator|=
-operator|(
-name|RefreshSpecification
-operator|)
 name|refreshSpecifications
 operator|.
 name|get
@@ -1104,6 +1113,9 @@ name|QueryMetadata
 name|metadata
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|results
 parameter_list|)
 block|{
@@ -1303,6 +1315,7 @@ block|}
 block|}
 block|}
 specifier|final
+specifier|static
 class|class
 name|OSCacheAdministrator
 extends|extends
