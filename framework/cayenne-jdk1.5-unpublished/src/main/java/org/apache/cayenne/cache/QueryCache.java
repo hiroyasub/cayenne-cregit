@@ -49,10 +49,12 @@ interface|interface
 name|QueryCache
 block|{
 comment|/**      * Returns a cached query result for the given QueryMetadata or null if the result is      * not cached or is expired.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -60,10 +62,12 @@ name|metadata
 parameter_list|)
 function_decl|;
 comment|/**      * Returns a cached query result for the given QueryMetadata. If the result is not      * cached or is expired, cache will use provided factory to rebuild the value and      * store it in the cache. A corollary is that this method never returns null.      *<p/>Compared to {@link #get(QueryMetadata)}, this method allows the cache to do      * appropriate synchronization when refreshing the entry, preventing multiple threads      * from running the same query when a missing entry is requested by multiple threads      * simultaneously.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -73,6 +77,11 @@ name|QueryCacheEntryFactory
 name|factory
 parameter_list|)
 function_decl|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|void
 name|put
 parameter_list|(
@@ -80,9 +89,6 @@ name|QueryMetadata
 name|metadata
 parameter_list|,
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|results
 parameter_list|)
 function_decl|;

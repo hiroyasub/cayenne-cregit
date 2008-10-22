@@ -155,11 +155,13 @@ name|maxSize
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -218,11 +220,13 @@ literal|null
 return|;
 block|}
 comment|/**      * Returns a non-null cached value. If it is not present in the cache, it is obtained      * by calling {@link QueryCacheEntryFactory#createObject()} without blocking the cache. As      * a result there is a potential of multiple threads to be updating cache in parallel -      * this wouldn't lead to corruption of the cache, but can be suboptimal.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|get
 parameter_list|(
 name|QueryMetadata
@@ -233,9 +237,6 @@ name|factory
 parameter_list|)
 block|{
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|result
 init|=
 name|get
@@ -311,9 +312,6 @@ name|result
 operator|=
 operator|(
 name|List
-argument_list|<
-name|?
-argument_list|>
 operator|)
 name|newObject
 expr_stmt|;
@@ -329,6 +327,11 @@ return|return
 name|result
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|void
 name|put
@@ -337,9 +340,6 @@ name|QueryMetadata
 name|metadata
 parameter_list|,
 name|List
-argument_list|<
-name|?
-argument_list|>
 name|results
 parameter_list|)
 block|{
