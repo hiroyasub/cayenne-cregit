@@ -425,8 +425,6 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-operator|-
-literal|1
 decl_stmt|;
 name|Iterator
 name|it
@@ -457,6 +455,10 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
+literal|""
+operator|+
+name|row
+argument_list|,
 name|rowWidth
 argument_list|,
 name|row

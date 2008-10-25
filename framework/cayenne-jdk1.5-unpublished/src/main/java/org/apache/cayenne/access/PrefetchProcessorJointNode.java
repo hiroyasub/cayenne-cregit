@@ -852,6 +852,8 @@ operator|.
 name|getTargetName
 argument_list|()
 argument_list|,
+name|prefix
+operator|+
 name|source
 argument_list|)
 expr_stmt|;
