@@ -188,7 +188,7 @@ annotation|@
 name|Override
 specifier|protected
 name|int
-name|getInitialCursorPosition
+name|getInMemoryOffset
 parameter_list|(
 name|int
 name|queryOffset

@@ -374,30 +374,6 @@ operator|.
 name|executeQuery
 argument_list|()
 decl_stmt|;
-name|int
-name|i
-init|=
-name|getInitialCursorPosition
-argument_list|(
-name|query
-operator|.
-name|getFetchOffset
-argument_list|()
-argument_list|)
-decl_stmt|;
-while|while
-condition|(
-name|i
-operator|--
-operator|>
-literal|0
-operator|&&
-name|rs
-operator|.
-name|next
-argument_list|()
-condition|)
-empty_stmt|;
 name|RowDescriptor
 name|descriptor
 init|=
@@ -618,8 +594,6 @@ comment|// wrap iterator in a fetch limit checker ... there are a few cases when
 comment|// fetch limit is a noop, however in a geberal case this is needed, as teh SQL
 comment|// result count does not directly correspind to the number of objects returned
 comment|// from Cayenne.
-comment|// TODO: andrus, 11/2/2008 - shoudn't we apply the same rules to OFFSET
-comment|// processing?
 name|int
 name|fetchLimit
 init|=
@@ -628,9 +602,24 @@ operator|.
 name|getFetchLimit
 argument_list|()
 decl_stmt|;
+name|int
+name|offset
+init|=
+name|getInMemoryOffset
+argument_list|(
+name|query
+operator|.
+name|getFetchOffset
+argument_list|()
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|fetchLimit
+operator|>
+literal|0
+operator|||
+name|offset
 operator|>
 literal|0
 condition|)
@@ -641,6 +630,8 @@ operator|new
 name|LimitResultIterator
 argument_list|(
 name|it
+argument_list|,
+name|offset
 argument_list|,
 name|fetchLimit
 argument_list|)
