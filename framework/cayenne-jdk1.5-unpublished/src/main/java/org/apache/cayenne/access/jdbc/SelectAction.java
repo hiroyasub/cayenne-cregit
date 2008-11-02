@@ -613,6 +613,28 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
+block|}
+comment|// wrap iterator in a fetch limit checker ... there are a few cases when in-memory
+comment|// fetch limit is a noop, however in a geberal case this is needed, as teh SQL
+comment|// result count does not directly correspind to the number of objects returned
+comment|// from Cayenne.
+comment|// TODO: andrus, 11/2/2008 - shoudn't we apply the same rules to OFFSET
+comment|// processing?
+name|int
+name|fetchLimit
+init|=
+name|query
+operator|.
+name|getFetchLimit
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|fetchLimit
+operator|>
+literal|0
+condition|)
+block|{
 name|it
 operator|=
 operator|new
@@ -620,10 +642,7 @@ name|LimitResultIterator
 argument_list|(
 name|it
 argument_list|,
-name|query
-operator|.
-name|getFetchLimit
-argument_list|()
+name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
