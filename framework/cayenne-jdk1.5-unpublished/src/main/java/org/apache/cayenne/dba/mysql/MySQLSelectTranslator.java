@@ -52,7 +52,6 @@ comment|/**  * @since 1.2  * @author Andrus Adamchik  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|MySQLSelectTranslator
 extends|extends
@@ -60,29 +59,14 @@ name|SelectTranslator
 block|{
 annotation|@
 name|Override
-specifier|public
-name|String
-name|createSqlString
-parameter_list|()
-throws|throws
-name|Exception
+specifier|protected
+name|void
+name|appendLimitAndOffsetClauses
+parameter_list|(
+name|StringBuilder
+name|buffer
+parameter_list|)
 block|{
-name|String
-name|sql
-init|=
-name|super
-operator|.
-name|createSqlString
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|isSuppressingDistinct
-argument_list|()
-condition|)
-block|{
-comment|// limit results
 name|QueryMetadata
 name|metadata
 init|=
@@ -122,10 +106,15 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sql
-operator|+=
+name|buffer
+operator|.
+name|append
+argument_list|(
 literal|" LIMIT "
+argument_list|)
 expr_stmt|;
+comment|// both OFFSET and LIMIT must be present, so come up with defaults if one of
+comment|// them is not set by the user
 if|if
 condition|(
 name|limit
@@ -140,19 +129,24 @@ operator|.
 name|MAX_VALUE
 expr_stmt|;
 block|}
-name|sql
-operator|+=
+name|buffer
+operator|.
+name|append
+argument_list|(
 name|limit
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|" OFFSET "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|offset
+argument_list|)
 expr_stmt|;
 block|}
-block|}
-return|return
-name|sql
-return|;
 block|}
 block|}
 end_class

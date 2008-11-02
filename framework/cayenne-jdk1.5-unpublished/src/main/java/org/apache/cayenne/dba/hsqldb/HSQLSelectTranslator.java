@@ -113,7 +113,8 @@ argument_list|(
 literal|" LIMIT "
 argument_list|)
 expr_stmt|;
-comment|// OFFSET can't be speciafied without LIMIT
+comment|// both OFFSET and LIMIT must be present, so come up with defaults if one of
+comment|// them is not set by the user
 if|if
 condition|(
 name|limit
