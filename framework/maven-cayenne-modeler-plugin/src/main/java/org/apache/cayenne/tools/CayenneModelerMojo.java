@@ -21,6 +21,20 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|Main
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|maven
 operator|.
 name|plugin
@@ -57,32 +71,8 @@ name|MojoFailureException
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|Main
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
 begin_comment
-comment|/**  * Maven mojo to start up the Cayenne modeler from the command-line.  *   * @author Kevin Menard  * @since 3.0  *  * @prefix cayenne  * @goal modeler  */
+comment|/**  * Maven mojo to start up the Cayenne modeler from the command-line.  *   * @author Kevin Menard  * @since 3.0  *   * @prefix cayenne  * @goal modeler  */
 end_comment
 
 begin_class
