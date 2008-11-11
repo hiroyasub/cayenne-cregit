@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  */
 end_comment
 
 begin_interface

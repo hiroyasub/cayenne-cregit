@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A label that works like an HTML hyperlink, generating ActionEvents on click.  *   * @author Andrus Adamchik  */
+comment|/**  * A label that works like an HTML hyperlink, generating ActionEvents on click.  *   */
 end_comment
 
 begin_class

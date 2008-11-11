@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Abstract test case that bootstraps default JPA unit called "itest" and a schema script  * called "schema-hsqldb.sql".  *   * @author Andrus Adamchik  */
+comment|/**  * Abstract test case that bootstraps default JPA unit called "itest" and a schema script  * called "schema-hsqldb.sql".  *   */
 end_comment
 
 begin_class

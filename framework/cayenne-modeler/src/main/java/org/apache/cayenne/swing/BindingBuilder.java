@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder for component bindings that delegates the creation of the binding to the  * underlying factory, and itself configures a number of binding parameters.  *   * @author Andrus Adamchik  */
+comment|/**  * A builder for component bindings that delegates the creation of the binding to the  * underlying factory, and itself configures a number of binding parameters.  *   */
 end_comment
 
 begin_class

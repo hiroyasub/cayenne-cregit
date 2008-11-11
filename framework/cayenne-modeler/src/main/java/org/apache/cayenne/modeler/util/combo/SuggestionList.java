@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * SuggestionList is a combo-popup displaying all items matching for  * autocompletion.  *   * @author Andrey Razumovsky  */
+comment|/**  * SuggestionList is a combo-popup displaying all items matching for  * autocompletion.  *   */
 end_comment
 
 begin_class

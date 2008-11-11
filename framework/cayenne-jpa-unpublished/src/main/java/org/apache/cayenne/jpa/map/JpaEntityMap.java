@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that stores JPA mapping information. This is a root object in the hierarchy  * defined in the<em>orm_1_0.xsd</em> schema.  *   * @author Andrus Adamchik  */
+comment|/**  * An object that stores JPA mapping information. This is a root object in the hierarchy  * defined in the<em>orm_1_0.xsd</em> schema.  *   */
 end_comment
 
 begin_class

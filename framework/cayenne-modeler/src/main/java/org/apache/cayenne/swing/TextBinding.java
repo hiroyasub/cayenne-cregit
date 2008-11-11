@@ -168,7 +168,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic text adapter that is bound to a bean property.  *   * @author Andrus Adamchik  */
+comment|/**  * A generic text adapter that is bound to a bean property.  *   */
 end_comment
 
 begin_class

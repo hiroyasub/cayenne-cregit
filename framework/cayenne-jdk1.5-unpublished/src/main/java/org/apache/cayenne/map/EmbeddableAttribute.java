@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A persistent attribute of an embeddable object.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A persistent attribute of an embeddable object.  *   * @since 3.0  */
 end_comment
 
 begin_class

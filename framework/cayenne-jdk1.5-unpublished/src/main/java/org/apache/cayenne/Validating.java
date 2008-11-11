@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a number of callback methods that allow an object to be validated before safe.  * Entity class can implement this interface and its methods will be called automatically.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Defines a number of callback methods that allow an object to be validated before safe.  * Entity class can implement this interface and its methods will be called automatically.  *   * @since 3.0  */
 end_comment
 
 begin_interface

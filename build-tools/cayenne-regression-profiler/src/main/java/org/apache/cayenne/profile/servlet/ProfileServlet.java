@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A main servlet of the profiler web app. Accepts URLs like  * "/servlet-path/nosession/CaseClass" and "/servlet-path/session/CaseClass".  *   * @author Andrus Adamchik  */
+comment|/**  * A main servlet of the profiler web app. Accepts URLs like  * "/servlet-path/nosession/CaseClass" and "/servlet-path/session/CaseClass".  *   */
 end_comment
 
 begin_class

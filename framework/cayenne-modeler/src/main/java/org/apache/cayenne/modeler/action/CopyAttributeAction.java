@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for copying attribute(s)  * @author Andrey Razumovsky  */
+comment|/**  * Action for copying attribute(s)  */
 end_comment
 
 begin_class

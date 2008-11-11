@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements utility methods used inside Velocity templates  * when rendering SQLTemplates.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Implements utility methods used inside Velocity templates  * when rendering SQLTemplates.  *   * @since 1.1  */
 end_comment
 
 begin_class

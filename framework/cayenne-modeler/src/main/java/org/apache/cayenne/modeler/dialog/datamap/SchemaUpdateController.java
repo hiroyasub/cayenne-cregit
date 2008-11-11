@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for batch DbEntities schema update.  *   * @author Andrus Adamchik  */
+comment|/**  * A controller for batch DbEntities schema update.  *   */
 end_comment
 
 begin_class

@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLTemplateAction that addresses Oracle 8 driver limitations.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A SQLTemplateAction that addresses Oracle 8 driver limitations.  *   * @since 1.2  */
 end_comment
 
 begin_class

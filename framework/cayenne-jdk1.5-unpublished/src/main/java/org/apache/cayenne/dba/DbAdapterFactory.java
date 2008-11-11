@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a conditional factory for a specific DbAdapter. Note that the factory can  * potentially return different (or differently configured) DbAdapters for the same  * database based on version information and other metadata.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Defines a conditional factory for a specific DbAdapter. Note that the factory can  * potentially return different (or differently configured) DbAdapters for the same  * database based on version information and other metadata.  *   * @since 1.2  */
 end_comment
 
 begin_interface

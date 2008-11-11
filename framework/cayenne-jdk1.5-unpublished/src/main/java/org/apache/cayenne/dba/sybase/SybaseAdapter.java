@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * DbAdapter implementation for<a href="http://www.sybase.com">Sybase RDBMS</a>.  *  * @author Andrus Adamchik  */
+comment|/**   * DbAdapter implementation for<a href="http://www.sybase.com">Sybase RDBMS</a>.  *  */
 end_comment
 
 begin_class

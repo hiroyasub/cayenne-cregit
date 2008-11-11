@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dialog for CayenneModeler warnings.  *   * @author Andrus Adamchik  */
+comment|/**  * Dialog for CayenneModeler warnings.  *   */
 end_comment
 
 begin_class

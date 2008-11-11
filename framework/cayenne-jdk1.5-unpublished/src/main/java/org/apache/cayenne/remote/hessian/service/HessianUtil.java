@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Hessian related utilities.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Hessian related utilities.  *   * @since 1.2  */
 end_comment
 
 begin_class

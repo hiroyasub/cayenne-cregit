@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Displays CayenneModeler exceptions and warning messages.  *   * @author Andrus Adamchik  */
+comment|/**  * Displays CayenneModeler exceptions and warning messages.  *   */
 end_comment
 
 begin_class

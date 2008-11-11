@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataRowUtils contains a number of static methods to work with DataRows. This is a  * helper class for DataContext and ObjectStore.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * DataRowUtils contains a number of static methods to work with DataRows. This is a  * helper class for DataContext and ObjectStore.  *   * @since 1.1  */
 end_comment
 
 begin_class

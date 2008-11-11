@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A factory interface to create standard SQLActions for a set of standard queries.  * Instances of SQLActionVisitor are passed by Cayenne to a Query in  * {@link org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)}, allowing  * query to choose the action type and convert itself to a "standard" query if needed.  * Individual DbAdapters would provide special visitors, thus allowing for DB-dependent  * execution algorithms.  *   * @see org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)  * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A factory interface to create standard SQLActions for a set of standard queries.  * Instances of SQLActionVisitor are passed by Cayenne to a Query in  * {@link org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)}, allowing  * query to choose the action type and convert itself to a "standard" query if needed.  * Individual DbAdapters would provide special visitors, thus allowing for DB-dependent  * execution algorithms.  *   * @see org.apache.cayenne.query.Query#createSQLAction(SQLActionVisitor)  * @since 1.2  */
 end_comment
 
 begin_interface

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A "synthetic" server-side ObjAttribute used to describe unmapped PK>.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A "synthetic" server-side ObjAttribute used to describe unmapped PK>.  *   * @since 3.0  */
 end_comment
 
 begin_class

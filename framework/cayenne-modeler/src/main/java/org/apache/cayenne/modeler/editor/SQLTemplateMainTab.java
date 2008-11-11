@@ -360,7 +360,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A main panel for editing a SQLTemplate.  *   * @author Andrus Adamchik  */
+comment|/**  * A main panel for editing a SQLTemplate.  *   */
 end_comment
 
 begin_class

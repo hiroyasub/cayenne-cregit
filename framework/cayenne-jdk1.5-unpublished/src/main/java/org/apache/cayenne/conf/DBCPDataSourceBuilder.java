@@ -164,7 +164,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that loads DBCP DataSource from properties.  *   * @author Andrus Adamchik  * @since 2.0  */
+comment|/**  * A helper class that loads DBCP DataSource from properties.  *   * @since 2.0  */
 end_comment
 
 begin_class

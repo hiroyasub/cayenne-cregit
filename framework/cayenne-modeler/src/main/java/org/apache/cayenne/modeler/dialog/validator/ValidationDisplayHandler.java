@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Superclass of CayenneModeler validation messages.  *   * @author Michael Misha Shengaout   * @author Andrus Adamchik  */
+comment|/**   * Superclass of CayenneModeler validation messages.  *   */
 end_comment
 
 begin_class

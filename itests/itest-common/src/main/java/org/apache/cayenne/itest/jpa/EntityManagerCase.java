@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A TestCase superclass that provides an entity manager and transaction management.  *   * @author Andrus Adamchik  */
+comment|/**  * A TestCase superclass that provides an entity manager and transaction management.  *   */
 end_comment
 
 begin_class

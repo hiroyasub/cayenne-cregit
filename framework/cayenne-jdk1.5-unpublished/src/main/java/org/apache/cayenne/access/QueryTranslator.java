@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for translation Cayenne queries to JDBC PreparedStatements.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API for translation Cayenne queries to JDBC PreparedStatements.  *   */
 end_comment
 
 begin_class

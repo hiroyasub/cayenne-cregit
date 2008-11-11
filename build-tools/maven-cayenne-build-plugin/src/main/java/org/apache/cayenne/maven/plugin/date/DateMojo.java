@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Exports the "project.build.date" and "project.build.time" properties to the  * environment.  *   * @author Andrus Adamchik  * @goal date  * @phase generate-resources  * @requiresProject  */
+comment|/**  * Exports the "project.build.date" and "project.build.time" properties to the  * environment.  *   * @goal date  * @phase generate-resources  * @requiresProject  */
 end_comment
 
 begin_class

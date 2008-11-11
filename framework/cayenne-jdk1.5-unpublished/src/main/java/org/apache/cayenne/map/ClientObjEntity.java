@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A client version of ObjEntity that overrides server entity algorithms for accessing  * some pieces of information  *   * @since 3.0  * @author Kevin Menard  */
+comment|/**  * A client version of ObjEntity that overrides server entity algorithms for accessing  * some pieces of information  *   * @since 3.0  */
 end_comment
 
 begin_class

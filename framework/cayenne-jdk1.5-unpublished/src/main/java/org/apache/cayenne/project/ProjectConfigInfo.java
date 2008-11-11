@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores project information necessary to reconfigure existing projects.   *    * @author Andrus Adamchik  */
+comment|/**  * Stores project information necessary to reconfigure existing projects.   *    */
 end_comment
 
 begin_class

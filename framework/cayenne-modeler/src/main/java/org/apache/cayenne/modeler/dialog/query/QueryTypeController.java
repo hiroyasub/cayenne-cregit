@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Scope controller for QueryTypeDialog.  *   * @author Andrus Adamchik  */
+comment|/**  * A Scope controller for QueryTypeDialog.  *   */
 end_comment
 
 begin_class

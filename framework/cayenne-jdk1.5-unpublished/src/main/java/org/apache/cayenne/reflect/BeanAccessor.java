@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A property accessor that uses set/get methods following JavaBean naming conventions.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A property accessor that uses set/get methods following JavaBean naming conventions.  *   * @since 1.2  */
 end_comment
 
 begin_class

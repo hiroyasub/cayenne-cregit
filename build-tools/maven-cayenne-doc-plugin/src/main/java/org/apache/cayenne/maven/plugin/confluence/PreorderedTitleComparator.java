@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A comparator of pages based on preset case-insensitive ordering of titles.  *   * @author Andrus Adamchik  */
+comment|/**  * A comparator of pages based on preset case-insensitive ordering of titles.  *   */
 end_comment
 
 begin_class

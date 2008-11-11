@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Case insensitive like" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Case insensitive like" expression.  *   */
 end_comment
 
 begin_class

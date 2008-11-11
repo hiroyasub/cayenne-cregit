@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Query that fetches a range of objects from a previously fetched server-side paginated  * list. This query is client-only and can't be executed on the server.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Query that fetches a range of objects from a previously fetched server-side paginated  * list. This query is client-only and can't be executed on the server.  *   * @since 1.2  */
 end_comment
 
 begin_class

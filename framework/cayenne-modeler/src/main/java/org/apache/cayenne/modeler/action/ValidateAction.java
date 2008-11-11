@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * UI action that performs full project validation.  *   * @author Craig Miskell  */
+comment|/**  * UI action that performs full project validation.  *   */
 end_comment
 
 begin_class

@@ -188,7 +188,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for editing Modeler preferences.  *   * @author Andrus Adamchik  */
+comment|/**  * A controller for editing Modeler preferences.  *   */
 end_comment
 
 begin_class

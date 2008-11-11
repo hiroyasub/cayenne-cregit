@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for the custom generation mode.  *   * @author Andrus Adamchik  */
+comment|/**  * A controller for the custom generation mode.  *   */
 end_comment
 
 begin_class

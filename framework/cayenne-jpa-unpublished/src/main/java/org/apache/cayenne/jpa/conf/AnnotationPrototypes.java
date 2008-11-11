@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class that provides access to default JPA annotation instances.  *   * @author Andrus Adamchik  */
+comment|/**  * A utility class that provides access to default JPA annotation instances.  *   */
 end_comment
 
 begin_class

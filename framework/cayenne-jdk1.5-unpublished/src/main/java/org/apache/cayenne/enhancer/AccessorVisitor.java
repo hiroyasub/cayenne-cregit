@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An enhancer that adds interceptor code to the getters and setters.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An enhancer that adds interceptor code to the getters and setters.  *   * @since 3.0  */
 end_comment
 
 begin_class

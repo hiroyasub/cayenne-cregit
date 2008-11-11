@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines basic methods for a persistent object in Cayenne.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines basic methods for a persistent object in Cayenne.  *   */
 end_comment
 
 begin_interface

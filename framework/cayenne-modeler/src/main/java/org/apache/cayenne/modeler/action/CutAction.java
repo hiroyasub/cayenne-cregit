@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for cutting entities, queries etc.  * @author Andrey Razumovsky  */
+comment|/**  * Action for cutting entities, queries etc.  */
 end_comment
 
 begin_class

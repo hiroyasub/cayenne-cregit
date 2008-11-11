@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple implementation of OperationObserver interface. Useful as a superclass of other  * implementations of OperationObserver. This implementation only tracks transaction  * events and exceptions.  *<p>  *<i>This operation observer is unsafe to use in application, since it doesn't rethrow  * the exceptions immediately, and may cause the database to hang.</i>  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Simple implementation of OperationObserver interface. Useful as a superclass of other  * implementations of OperationObserver. This implementation only tracks transaction  * events and exceptions.  *<p>  *<i>This operation observer is unsafe to use in application, since it doesn't rethrow  * the exceptions immediately, and may cause the database to hang.</i>  *</p>  *   */
 end_comment
 
 begin_class

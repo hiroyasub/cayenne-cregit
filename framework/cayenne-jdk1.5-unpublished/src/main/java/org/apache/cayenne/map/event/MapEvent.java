@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of CayenneModeler events.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of CayenneModeler events.  *   */
 end_comment
 
 begin_class

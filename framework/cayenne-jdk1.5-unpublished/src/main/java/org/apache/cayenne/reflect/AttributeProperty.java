@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a simple object property.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Represents a simple object property.  *   * @since 3.0  */
 end_comment
 
 begin_interface

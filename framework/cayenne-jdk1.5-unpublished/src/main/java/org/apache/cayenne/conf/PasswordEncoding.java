@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Password encoders are used to translate the text of the database password,  * on loading and on saving, from one form to another.  It can facilitate  * the obscuring of the password text to make database connection information  * less obvious to someone who stumbles onto the password.  *   * Cayenne only includes facilities to obscure, not encrypt, the database  * password.  The mechanism is user-extensible, though, so should stronger  * security features be required, they can be added and integrated into  * both the modeler and framework.  *   * @since 3.0  * @author Michael Gentry  */
+comment|/**  * Password encoders are used to translate the text of the database password,  * on loading and on saving, from one form to another.  It can facilitate  * the obscuring of the password text to make database connection information  * less obvious to someone who stumbles onto the password.  *   * Cayenne only includes facilities to obscure, not encrypt, the database  * password.  The mechanism is user-extensible, though, so should stronger  * security features be required, they can be added and integrated into  * both the modeler and framework.  *   * @since 3.0  */
 end_comment
 
 begin_interface

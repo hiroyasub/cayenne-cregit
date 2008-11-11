@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines minimal API of a query descriptor that is executable via Cayenne.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines minimal API of a query descriptor that is executable via Cayenne.  *   */
 end_comment
 
 begin_interface

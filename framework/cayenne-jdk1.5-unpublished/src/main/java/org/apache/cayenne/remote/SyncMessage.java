@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A message used for synchronization of the child with parent. It defines a few types of  * synchronization: "flush" (when the child sends its changes without a commit), "commit"  * (cascading flush with ultimate commit to the database), and "rollback" - cascading  * reverting of all uncommitted changes.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A message used for synchronization of the child with parent. It defines a few types of  * synchronization: "flush" (when the child sends its changes without a commit), "commit"  * (cascading flush with ultimate commit to the database), and "rollback" - cascading  * reverting of all uncommitted changes.  *   * @since 1.2  */
 end_comment
 
 begin_class

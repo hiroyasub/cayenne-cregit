@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A simple non-editable tree browser with multiple columns   * for display and navigation of a tree structure. This type of  * browser is ideal for showing deeply (or infinitely) nested   * trees/graphs. The most famous example of its use is Mac OS X   * Finder column view.   *   *<p>  * MultiColumnBrowser starts at the root of the tree  * and automatically expands to the right as navigation goes deeper.   * MultiColumnBrowser uses the same TreeModel as a regular JTree   * for its navigation model.  *</p>  *   *<p>  * Users are notified of selection changes via a TreeSelectionEvents.  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A simple non-editable tree browser with multiple columns   * for display and navigation of a tree structure. This type of  * browser is ideal for showing deeply (or infinitely) nested   * trees/graphs. The most famous example of its use is Mac OS X   * Finder column view.   *   *<p>  * MultiColumnBrowser starts at the root of the tree  * and automatically expands to the right as navigation goes deeper.   * MultiColumnBrowser uses the same TreeModel as a regular JTree   * for its navigation model.  *</p>  *   *<p>  * Users are notified of selection changes via a TreeSelectionEvents.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class

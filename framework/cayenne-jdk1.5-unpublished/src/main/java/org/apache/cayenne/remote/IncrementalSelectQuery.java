@@ -302,7 +302,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SelectQuery decorator that overrides the metadata to ensure that query result is  * cached on the server, so that subranges could be retrieved at a later time. Note that a  * special decorator that is a subclass of SelectQuery is needed so that  * {@link IncrementalFaultList} on the server-side could apply SelectQuery-specific  * optimizations.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A SelectQuery decorator that overrides the metadata to ensure that query result is  * cached on the server, so that subranges could be retrieved at a later time. Note that a  * special decorator that is a subclass of SelectQuery is needed so that  * {@link IncrementalFaultList} on the server-side could apply SelectQuery-specific  * optimizations.  *   * @since 3.0  */
 end_comment
 
 begin_class

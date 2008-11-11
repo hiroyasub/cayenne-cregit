@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An interface that allows to access Cayenne runtime hidden behind standard JPA classes.  * To do that, simply cast an EntityManager returned by Cayenne provider to  * "CayenneEntityManager". Note that a regular JPA application shouldn't normally attempt  * to do that. Otherwise it will not be portable across JPA providers.  *   * @author Andrus Adamchik  */
+comment|/**  * An interface that allows to access Cayenne runtime hidden behind standard JPA classes.  * To do that, simply cast an EntityManager returned by Cayenne provider to  * "CayenneEntityManager". Note that a regular JPA application shouldn't normally attempt  * to do that. Otherwise it will not be portable across JPA providers.  *   */
 end_comment
 
 begin_interface

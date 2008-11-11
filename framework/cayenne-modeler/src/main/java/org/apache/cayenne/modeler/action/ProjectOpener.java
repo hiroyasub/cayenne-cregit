@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * File chooser panel used to select a directory to store project files.  *   * @author Andrus Adamchik  */
+comment|/**  * File chooser panel used to select a directory to store project files.  *   */
 end_comment
 
 begin_class

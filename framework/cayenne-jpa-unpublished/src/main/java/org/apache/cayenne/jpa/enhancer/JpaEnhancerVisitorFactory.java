@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * EnhancerVisitorFactory implementation based on JPA mapping.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * EnhancerVisitorFactory implementation based on JPA mapping.  *   * @since 3.0  */
 end_comment
 
 begin_class

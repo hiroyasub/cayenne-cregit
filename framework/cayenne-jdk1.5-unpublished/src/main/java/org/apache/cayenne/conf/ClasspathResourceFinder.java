@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ResourceFinder that looks up resources in the classpath.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A ResourceFinder that looks up resources in the classpath.  *   * @since 3.0  */
 end_comment
 
 begin_class

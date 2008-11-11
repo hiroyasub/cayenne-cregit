@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A subclass of {@link DbRelationship} to hold some extra runtime information.  *   * @author halset  */
+comment|/**  * A subclass of {@link DbRelationship} to hold some extra runtime information.  *   */
 end_comment
 
 begin_class

@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataRow a map that holds values retrieved from the database for a given query row.  * DataRows are used to cache raw database data and as a reference point for tracking  * DataObject changes.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * DataRow a map that holds values retrieved from the database for a given query row.  * DataRows are used to cache raw database data and as a reference point for tracking  * DataObject changes.  *   * @since 1.1  */
 end_comment
 
 begin_class

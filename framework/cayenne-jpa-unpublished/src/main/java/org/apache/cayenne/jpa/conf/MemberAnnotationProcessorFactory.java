@@ -566,7 +566,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory of member annotation processors.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory of member annotation processors.  *   */
 end_comment
 
 begin_class

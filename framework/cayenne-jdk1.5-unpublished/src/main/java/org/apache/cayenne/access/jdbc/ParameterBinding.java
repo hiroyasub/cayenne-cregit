@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Describes PreparedStatement parameter binding.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Describes PreparedStatement parameter binding.  *   * @since 1.1  */
 end_comment
 
 begin_class

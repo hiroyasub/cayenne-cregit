@@ -178,7 +178,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests peer context synchronization via ClientChannel events.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests peer context synchronization via ClientChannel events.  *   */
 end_comment
 
 begin_class

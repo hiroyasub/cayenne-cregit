@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of rules for validating java and db mapping identifiers.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Defines a set of rules for validating java and db mapping identifiers.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ExtendedType that can work with any Java class, providing JDBC-to-Java mapping  * exactly per JDBC specification.  *   * @author Andrus Adamchik  */
+comment|/**  * An ExtendedType that can work with any Java class, providing JDBC-to-Java mapping  * exactly per JDBC specification.  *   */
 end_comment
 
 begin_class

@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action that creates new DataMap in the project.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Action that creates new DataMap in the project.  *   */
 end_comment
 
 begin_class

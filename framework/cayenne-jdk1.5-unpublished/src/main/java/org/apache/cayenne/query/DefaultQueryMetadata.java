@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A QueryMetadata implementation that returns all the defaults.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A QueryMetadata implementation that returns all the defaults.  *   * @since 1.2  */
 end_comment
 
 begin_class

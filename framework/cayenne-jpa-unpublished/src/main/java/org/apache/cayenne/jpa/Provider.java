@@ -564,7 +564,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A PersistenceProvider implementation based on Cayenne stack. Wraps a Cayenne  * Configuration instance.  *   * @author Andrus Adamchik  */
+comment|/**  * A PersistenceProvider implementation based on Cayenne stack. Wraps a Cayenne  * Configuration instance.  *   */
 end_comment
 
 begin_class

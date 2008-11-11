@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Represents events resulted from Attribute changes   * in CayenneModeler. This event is used for both ObjAttributes  * and DbAttributes.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**   * Represents events resulted from Attribute changes   * in CayenneModeler. This event is used for both ObjAttributes  * and DbAttributes.  *   */
 end_comment
 
 begin_class

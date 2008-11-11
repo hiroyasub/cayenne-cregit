@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A property representing a map of objects keyed by one of the object properties.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A property representing a map of objects keyed by one of the object properties.  *   * @since 3.0  */
 end_comment
 
 begin_interface

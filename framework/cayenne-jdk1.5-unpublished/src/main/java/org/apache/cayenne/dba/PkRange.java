@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represents data structure to maintain a range of cached primary keys.  *   * @author Andrus Adamchik  * @deprecated since 3.0 repalced with a non-public LongPkRange.  */
+comment|/**  * Represents data structure to maintain a range of cached primary keys.  *   * @deprecated since 3.0 repalced with a non-public LongPkRange.  */
 end_comment
 
 begin_class

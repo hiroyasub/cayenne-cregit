@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ClassDescriptorFactory} that creates descriptors for classes implementing  * {@link DataObject}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A {@link ClassDescriptorFactory} that creates descriptors for classes implementing  * {@link DataObject}.  *   * @since 3.0  */
 end_comment
 
 begin_class

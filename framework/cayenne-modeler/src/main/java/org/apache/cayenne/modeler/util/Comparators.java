@@ -154,7 +154,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A collection of useful Comparators used by the modeler.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A collection of useful Comparators used by the modeler.  *   * @since 1.1  */
 end_comment
 
 begin_class

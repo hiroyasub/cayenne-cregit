@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * An event generated when a Procedure object is added to a DataMap,   * removed from a DataMap, or changed within a DataMap.  *   * @author Andrus Adamchik  */
+comment|/**   * An event generated when a Procedure object is added to a DataMap,   * removed from a DataMap, or changed within a DataMap.  *   */
 end_comment
 
 begin_class

@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DeleteRuleUpdater is responsible for auto-setting delete rules for object relationships  * @author Andrey Razumovsky  */
+comment|/**  * DeleteRuleUpdater is responsible for auto-setting delete rules for object relationships  */
 end_comment
 
 begin_class

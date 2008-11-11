@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory that integrates the test environment with Cayenne JPA provider.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory that integrates the test environment with Cayenne JPA provider.  *   */
 end_comment
 
 begin_class

@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class providing access to DBCP properties.  *   * @author Andrus Adamchik  * @since 2.0  */
+comment|/**  * A helper class providing access to DBCP properties.  *   * @since 2.0  */
 end_comment
 
 begin_class

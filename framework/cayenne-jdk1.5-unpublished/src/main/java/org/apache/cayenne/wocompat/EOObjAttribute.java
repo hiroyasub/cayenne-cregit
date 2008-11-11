@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ObjAttribute extension that accomodates EOModel attributes.  *   * @author Andrus Adamchik  */
+comment|/**  * An ObjAttribute extension that accomodates EOModel attributes.  *   */
 end_comment
 
 begin_class

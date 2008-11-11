@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that handles postprocessing after the schema generation operation. E.g.  * some databases require a checkpoint command to be run for the schema changes to be  * flushed to disk.  *   * @author Andrus Adamchik  */
+comment|/**  * A helper class that handles postprocessing after the schema generation operation. E.g.  * some databases require a checkpoint command to be run for the schema changes to be  * flushed to disk.  *   */
 end_comment
 
 begin_class

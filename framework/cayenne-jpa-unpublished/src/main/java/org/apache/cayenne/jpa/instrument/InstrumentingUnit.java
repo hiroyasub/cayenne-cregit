@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A unit that loads all transformers into a shared Instrumentation instance.  *   * @author Andrus Adamchik  */
+comment|/**  * A unit that loads all transformers into a shared Instrumentation instance.  *   */
 end_comment
 
 begin_class

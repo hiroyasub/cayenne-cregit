@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Contains access stack events related utility methods.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Contains access stack events related utility methods.  *   * @since 1.2  */
 end_comment
 
 begin_class

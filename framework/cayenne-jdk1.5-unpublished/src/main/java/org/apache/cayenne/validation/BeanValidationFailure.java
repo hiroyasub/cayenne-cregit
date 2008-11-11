@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ValidationFailure implementation that described a failure of a single named property of  * a Java Bean object.  *   * @author Fabricio Voznika  * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * ValidationFailure implementation that described a failure of a single named property of  * a Java Bean object.  *   * @since 1.1  */
 end_comment
 
 begin_class

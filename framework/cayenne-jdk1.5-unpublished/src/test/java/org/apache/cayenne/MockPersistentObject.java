@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Concrete ClientDataObject used for unit testing.  *   * @author Andrus Adamchik  */
+comment|/**  * Concrete ClientDataObject used for unit testing.  *   */
 end_comment
 
 begin_class

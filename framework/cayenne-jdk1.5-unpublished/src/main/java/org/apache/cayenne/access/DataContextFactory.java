@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An interface for creating DataContexts.  *   * @since 1.2  * @author Mike Kienenberger  */
+comment|/**  * An interface for creating DataContexts.  *   * @since 1.2  */
 end_comment
 
 begin_interface

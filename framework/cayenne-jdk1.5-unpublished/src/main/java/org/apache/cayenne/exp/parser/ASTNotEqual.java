@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Not equal to" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Not equal to" expression.  *   */
 end_comment
 
 begin_class

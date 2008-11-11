@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs entity filtering to build a collection of entities that should be used in  * class generation.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Performs entity filtering to build a collection of entities that should be used in  * class generation.  *   * @since 3.0  */
 end_comment
 
 begin_class

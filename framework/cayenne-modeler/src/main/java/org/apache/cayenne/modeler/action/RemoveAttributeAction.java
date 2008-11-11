@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Removes currently selected attribute from either the DbEntity or ObjEntity.  *   * @author Garry Watkins  */
+comment|/**  * Removes currently selected attribute from either the DbEntity or ObjEntity.  *   */
 end_comment
 
 begin_class

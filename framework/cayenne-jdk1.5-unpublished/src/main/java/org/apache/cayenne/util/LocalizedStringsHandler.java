@@ -56,7 +56,7 @@ comment|// customizable bundle location.
 end_comment
 
 begin_comment
-comment|/**  * Provides access to various modeler resources (mainly strings) obtained via a  * ResourceBundle.  *   * @author Andrus Adamchik  */
+comment|/**  * Provides access to various modeler resources (mainly strings) obtained via a  * ResourceBundle.  *   */
 end_comment
 
 begin_class

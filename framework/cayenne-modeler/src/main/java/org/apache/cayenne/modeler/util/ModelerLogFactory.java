@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory for creating ModelerLogger instances. LogFactoryImpl is   * subclassed to save default behavior   * @author Andrey Razumovsky  */
+comment|/**  * Factory for creating ModelerLogger instances. LogFactoryImpl is   * subclassed to save default behavior   */
 end_comment
 
 begin_class

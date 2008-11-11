@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ConnectionWrapper is a<code>java.sql.Connection</code> implementation that wraps  * another Connection, delegating method calls to this connection. It works in conjunction  * with PooledConnectionImpl, to generate pool events, provide limited automated  * reconnection functionality, etc.  *   * @author Andrus Adamchik  */
+comment|/**  * ConnectionWrapper is a<code>java.sql.Connection</code> implementation that wraps  * another Connection, delegating method calls to this connection. It works in conjunction  * with PooledConnectionImpl, to generate pool events, provide limited automated  * reconnection functionality, etc.  *   */
 end_comment
 
 begin_class

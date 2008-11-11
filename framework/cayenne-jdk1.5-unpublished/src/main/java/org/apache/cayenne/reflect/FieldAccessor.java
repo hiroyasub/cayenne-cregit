@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A PropertyAccessor that performs direct Field access.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A PropertyAccessor that performs direct Field access.  *   * @since 1.2  */
 end_comment
 
 begin_class

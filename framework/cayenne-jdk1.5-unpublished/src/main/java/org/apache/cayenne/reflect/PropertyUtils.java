@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility methods to quickly access object properties. This class supports simple and  * nested properties and also conversion of property values to match property type. No  * converter customization is provided yet, so only basic converters for Strings, Numbers  * and primitives are available.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Utility methods to quickly access object properties. This class supports simple and  * nested properties and also conversion of property values to match property type. No  * converter customization is provided yet, so only basic converters for Strings, Numbers  * and primitives are available.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Main class responsible for starting CayenneModeler.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Main class responsible for starting CayenneModeler.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to add a {@link DbAttribute} to a {@link DbEntity}. The  * {@link EntityMergeSupport} will be used to update the mapped {@link ObjEntity}  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to add a {@link DbAttribute} to a {@link DbEntity}. The  * {@link EntityMergeSupport} will be used to update the mapped {@link ObjEntity}  *   */
 end_comment
 
 begin_class

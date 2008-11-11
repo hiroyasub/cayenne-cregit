@@ -292,7 +292,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphMap extension that works together with ObjectContext to track persistent object  * changes and send events.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A GraphMap extension that works together with ObjectContext to track persistent object  * changes and send events.  *   * @since 1.2  */
 end_comment
 
 begin_class

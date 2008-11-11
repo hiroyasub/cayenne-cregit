@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Used as an observer for DataContext commit operations.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Used as an observer for DataContext commit operations.  *   * @since 1.2  */
 end_comment
 
 begin_class

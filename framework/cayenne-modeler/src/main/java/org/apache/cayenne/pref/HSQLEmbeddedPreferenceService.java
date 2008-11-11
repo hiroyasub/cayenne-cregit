@@ -196,7 +196,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of preference service that stores the data using embedded HSQL DB  * database with Cayenne.  *   * @author Andrus Adamchik  */
+comment|/**  * An implementation of preference service that stores the data using embedded HSQL DB  * database with Cayenne.  *   */
 end_comment
 
 begin_class

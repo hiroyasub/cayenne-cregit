@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectTraversal allows to traverse Cayenne project tree in a "depth-first" order  * starting from an arbitrary level to its children.  *<p>  *<i>Current implementation is not very efficient and would actually first read the whole  * tree, before returning the first element from the iterator.</i>  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * ProjectTraversal allows to traverse Cayenne project tree in a "depth-first" order  * starting from an arbitrary level to its children.  *<p>  *<i>Current implementation is not very efficient and would actually first read the whole  * tree, before returning the first element from the iterator.</i>  *</p>  *   */
 end_comment
 
 begin_class

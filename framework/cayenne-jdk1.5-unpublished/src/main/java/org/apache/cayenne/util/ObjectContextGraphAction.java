@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A base implementation of a helper class to handle  * {@link ObjectContext#propertyChanged(org.apache.cayenne.Persistent, String, Object, Object)}  * processing on behalf of an ObjectContext.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A base implementation of a helper class to handle  * {@link ObjectContext#propertyChanged(org.apache.cayenne.Persistent, String, Object, Object)}  * processing on behalf of an ObjectContext.  *   * @since 3.0  */
 end_comment
 
 begin_class

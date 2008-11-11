@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstraction of a single physical data storage. This is usually a database server,  * but can potentially be some other storage type like an LDAP server, etc.  *   * @author Andrus Adamchik  */
+comment|/**  * An abstraction of a single physical data storage. This is usually a database server,  * but can potentially be some other storage type like an LDAP server, etc.  *   */
 end_comment
 
 begin_class

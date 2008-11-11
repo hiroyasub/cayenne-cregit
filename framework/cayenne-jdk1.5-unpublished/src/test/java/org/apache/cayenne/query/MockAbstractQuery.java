@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @author Andrus Adamchik  */
+comment|/**  */
 end_comment
 
 begin_class

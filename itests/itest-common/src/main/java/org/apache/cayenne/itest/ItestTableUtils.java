@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JDBC utilities for integration testing that bypass Cayenne for DB access.  *   * @author Andrus Adamchik  */
+comment|/**  * JDBC utilities for integration testing that bypass Cayenne for DB access.  *   */
 end_comment
 
 begin_class

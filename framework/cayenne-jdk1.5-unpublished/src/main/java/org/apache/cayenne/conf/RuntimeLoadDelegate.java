@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of ConfigLoaderDelegate that creates Cayenne access objects stack.  *   * @author Andrus Adamchik  */
+comment|/**  * Implementation of ConfigLoaderDelegate that creates Cayenne access objects stack.  *   */
 end_comment
 
 begin_class

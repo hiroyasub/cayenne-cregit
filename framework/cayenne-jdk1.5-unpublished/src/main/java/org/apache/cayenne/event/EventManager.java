@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class acts as bridge between an Object that wants to inform others about its  * current state or a change thereof (Publisher) and a list of objects interested in the  * Subject (Listeners).  *   * @author Dirk Olmes  * @author Holger Hoffstaette  * @author Andrus Adamchik  */
+comment|/**  * This class acts as bridge between an Object that wants to inform others about its  * current state or a change thereof (Publisher) and a list of objects interested in the  * Subject (Listeners).  *   */
 end_comment
 
 begin_class

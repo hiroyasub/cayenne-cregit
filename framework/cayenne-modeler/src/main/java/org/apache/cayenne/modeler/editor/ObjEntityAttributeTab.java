@@ -576,7 +576,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Detail view of the ObjEntity attributes.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Detail view of the ObjEntity attributes.  *   */
 end_comment
 
 begin_class

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**   * Noop implementation of TraversalHandler.   * Useful as a superclass for partial implementations   * of TraversalHandler.   *   * @author Andrus Adamchik  */
+comment|/**   * Noop implementation of TraversalHandler.   * Useful as a superclass for partial implementations   * of TraversalHandler.   *   */
 end_comment
 
 begin_class

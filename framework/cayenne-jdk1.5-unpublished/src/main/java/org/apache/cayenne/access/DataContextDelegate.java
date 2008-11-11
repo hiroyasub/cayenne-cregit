@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for a DataContext "delegate" - an object that is temporarily passed control  * by DataContext at some critical points in the normal flow of execution. A delegate thus  * can modify the flow, abort an operation, modify the objects participating in an  * operation, or perform any other tasks it deems necessary. DataContextDelegate is shared  * by DataContext and its ObjectStore.  *   * @see org.apache.cayenne.access.DataContext  * @author Mike Kienenberger  * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Defines API for a DataContext "delegate" - an object that is temporarily passed control  * by DataContext at some critical points in the normal flow of execution. A delegate thus  * can modify the flow, abort an operation, modify the objects participating in an  * operation, or perform any other tasks it deems necessary. DataContextDelegate is shared  * by DataContext and its ObjectStore.  *   * @see org.apache.cayenne.access.DataContext  * @since 1.1  */
 end_comment
 
 begin_interface

@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides access to a property implemented as a List Field.  *   * @since 1.2  * @author Andrus Adamchik  * @deprecated since 3.0 replaced by non-public classes.  */
+comment|/**  * Provides access to a property implemented as a List Field.  *   * @since 1.2  * @deprecated since 3.0 replaced by non-public classes.  */
 end_comment
 
 begin_class

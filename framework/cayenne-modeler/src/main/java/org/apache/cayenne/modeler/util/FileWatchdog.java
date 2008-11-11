@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FileWatchdog is a watcher for files' change. If one of the files has changed or been  * removed, a {@link #doOnChange(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo)}  * or {@link #doOnRemove(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo) method}  * will be called  *   * Original code taken from Log4J project  *   * @author Ceki G&uuml;lc&uuml;  * @author Andrey Razumovsky  */
+comment|/**  * FileWatchdog is a watcher for files' change. If one of the files has changed or been  * removed, a {@link #doOnChange(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo)}  * or {@link #doOnRemove(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo) method}  * will be called  *   * Original code taken from Log4J project  *   */
 end_comment
 
 begin_class

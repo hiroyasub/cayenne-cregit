@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests for horizontal inheritance implementation.  *   * @author Dzmitry Rusak  */
+comment|/**  * Tests for horizontal inheritance implementation.  *   */
 end_comment
 
 begin_class

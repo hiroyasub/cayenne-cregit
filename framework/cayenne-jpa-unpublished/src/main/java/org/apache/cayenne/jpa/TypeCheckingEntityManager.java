@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An EntityManager decorator that checks that only properly enhanced entities are passwed  * to the underlying EntityManager.  *   * @author Andrus Adamchik  */
+comment|/**  * An EntityManager decorator that checks that only properly enhanced entities are passwed  * to the underlying EntityManager.  *   */
 end_comment
 
 begin_comment

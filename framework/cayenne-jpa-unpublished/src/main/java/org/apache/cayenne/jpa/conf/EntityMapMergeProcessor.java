@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements an algorithm for merging two JpaEntityMaps.  *   * @author Andrus Adamchik  */
+comment|/**  * Implements an algorithm for merging two JpaEntityMaps.  *   */
 end_comment
 
 begin_class

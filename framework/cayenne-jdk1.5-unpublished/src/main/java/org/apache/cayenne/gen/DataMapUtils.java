@@ -298,7 +298,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Attributes and Methods for working with Queries.  *  * @author Dzmitry Rusak  * @since 3.0  */
+comment|/**  * Attributes and Methods for working with Queries.  *  * @since 3.0  */
 end_comment
 
 begin_class

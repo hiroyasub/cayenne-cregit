@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An exception thrown on unsuccessful validation.  *   * @author Fabricio Voznika  * @since 1.1  */
+comment|/**  * An exception thrown on unsuccessful validation.  *   * @since 1.1  */
 end_comment
 
 begin_class

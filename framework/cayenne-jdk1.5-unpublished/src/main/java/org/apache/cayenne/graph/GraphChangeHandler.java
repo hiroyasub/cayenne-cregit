@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines callback API that can be used by object graph nodes to notify of their state  * changes. Graph nodes can be any objects as long as each node supports a notion of a  * unique id within the graph and each directional arc has a unique identifier within its  * source node.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Defines callback API that can be used by object graph nodes to notify of their state  * changes. Graph nodes can be any objects as long as each node supports a notion of a  * unique id within the graph and each directional arc has a unique identifier within its  * source node.  *   * @since 1.2  */
 end_comment
 
 begin_interface

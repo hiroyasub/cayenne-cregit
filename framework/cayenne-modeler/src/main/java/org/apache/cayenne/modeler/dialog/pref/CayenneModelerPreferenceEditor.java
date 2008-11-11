@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Specialized preferences editor for CayenneModeler.  *   * @author Andrus Adamchik  */
+comment|/**  * Specialized preferences editor for CayenneModeler.  *   */
 end_comment
 
 begin_class

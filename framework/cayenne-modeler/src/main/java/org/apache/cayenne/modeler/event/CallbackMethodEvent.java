@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Event for creating/removing/modifying callback methods  *  * @author Vasil Tarasevich  * @version 1.0 Oct 25, 2007  */
+comment|/**  * Event for creating/removing/modifying callback methods  *  * @version 1.0 Oct 25, 2007  */
 end_comment
 
 begin_class

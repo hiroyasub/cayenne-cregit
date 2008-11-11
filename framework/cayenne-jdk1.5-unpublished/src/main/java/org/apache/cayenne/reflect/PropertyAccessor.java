@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A utility accessor class that wraps a simple property.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A utility accessor class that wraps a simple property.  *   * @since 3.0  */
 end_comment
 
 begin_class

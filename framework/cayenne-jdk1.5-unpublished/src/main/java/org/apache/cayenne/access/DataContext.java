@@ -706,7 +706,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The most common implementation of {@link ObjectContext}. DataContext is an isolated  * container of an object graph, in a sense that any uncommitted changes to persistent  * objects that are registered with the context, are not visible to the users of other  * contexts.  *   * @author Andrus Adamchik  */
+comment|/**  * The most common implementation of {@link ObjectContext}. DataContext is an isolated  * container of an object graph, in a sense that any uncommitted changes to persistent  * objects that are registered with the context, are not visible to the users of other  * contexts.  *   */
 end_comment
 
 begin_class

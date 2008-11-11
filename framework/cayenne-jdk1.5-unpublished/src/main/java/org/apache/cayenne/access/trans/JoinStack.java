@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Encapsulates join reuse/split logic used in SelectQuery processing. All expression  * path's that exist in the query (in the qualifier, etc.) are processed to produce a  * combined join tree.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Encapsulates join reuse/split logic used in SelectQuery processing. All expression  * path's that exist in the query (in the qualifier, etc.) are processed to produce a  * combined join tree.  *   * @since 3.0  */
 end_comment
 
 begin_class

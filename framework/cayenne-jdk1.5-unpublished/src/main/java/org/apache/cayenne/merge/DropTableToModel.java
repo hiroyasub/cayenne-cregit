@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to remove a {@link DbEntity} from a {@link DataMap}. Any  * {@link ObjEntity} mapped to the {@link DbEntity} will also be removed.  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to remove a {@link DbEntity} from a {@link DataMap}. Any  * {@link ObjEntity} mapped to the {@link DbEntity} will also be removed.  *   */
 end_comment
 
 begin_class

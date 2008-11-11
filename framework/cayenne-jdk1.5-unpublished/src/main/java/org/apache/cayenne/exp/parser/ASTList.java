@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A leaf expression representing an immutable collection of values.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A leaf expression representing an immutable collection of values.  *   * @since 1.1  */
 end_comment
 
 begin_class

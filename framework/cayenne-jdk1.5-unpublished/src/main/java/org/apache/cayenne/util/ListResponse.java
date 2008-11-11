@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A QueryResponse optimized to hold a single object or data row list.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A QueryResponse optimized to hold a single object or data row list.  *   * @since 1.2  */
 end_comment
 
 begin_class

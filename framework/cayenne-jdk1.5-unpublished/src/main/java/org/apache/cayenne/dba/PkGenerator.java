@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines methods to support automatic primary key generation.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines methods to support automatic primary key generation.  *   */
 end_comment
 
 begin_interface

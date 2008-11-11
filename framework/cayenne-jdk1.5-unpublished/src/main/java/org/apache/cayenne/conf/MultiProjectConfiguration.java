@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Configuration implementation that creates a single virtual runtime project out of  * multiple Cayenne configurations.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A Configuration implementation that creates a single virtual runtime project out of  * multiple Cayenne configurations.  *   * @since 3.0  */
 end_comment
 
 begin_class

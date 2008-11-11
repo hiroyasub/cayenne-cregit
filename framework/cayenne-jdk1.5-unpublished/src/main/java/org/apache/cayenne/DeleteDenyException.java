@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An exception thrown during an attempt to delete an object that has a relationship to a  * non-null related object, that has a DENY delete rule.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An exception thrown during an attempt to delete an object that has a relationship to a  * non-null related object, that has a DENY delete rule.  *   * @since 1.2  */
 end_comment
 
 begin_class

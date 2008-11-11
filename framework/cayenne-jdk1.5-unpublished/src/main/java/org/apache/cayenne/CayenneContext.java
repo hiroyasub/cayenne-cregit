@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default generic implementation of ObjectContext suitable for accessing Cayenne from  * either an ORM or a client tiers. Communicates with Cayenne via a  * {@link org.apache.cayenne.DataChannel}.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A default generic implementation of ObjectContext suitable for accessing Cayenne from  * either an ORM or a client tiers. Communicates with Cayenne via a  * {@link org.apache.cayenne.DataChannel}.  *   * @since 1.2  */
 end_comment
 
 begin_class

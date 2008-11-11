@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphDiff facade for the ObjectStore changes. Provides a way for the lower layers of  * the access stack to speed up processing of presorted ObjectStore diffs.  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * A GraphDiff facade for the ObjectStore changes. Provides a way for the lower layers of  * the access stack to speed up processing of presorted ObjectStore diffs.  *   * @since 1.2  */
 end_comment
 
 begin_class

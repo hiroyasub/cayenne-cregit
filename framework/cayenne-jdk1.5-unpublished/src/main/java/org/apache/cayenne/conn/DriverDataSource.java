@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A non-pooling DataSource implementation wrapping a JDBC driver.  *   * @author Andrus Adamchik  */
+comment|/**  * A non-pooling DataSource implementation wrapping a JDBC driver.  *   */
 end_comment
 
 begin_class

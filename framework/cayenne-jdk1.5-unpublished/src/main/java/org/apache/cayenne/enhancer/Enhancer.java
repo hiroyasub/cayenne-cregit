@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ClassFileTransformer that delegates class enhancement to a chain of ASM transformers  * provided by the {@link EnhancerVisitorFactory}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A ClassFileTransformer that delegates class enhancement to a chain of ASM transformers  * provided by the {@link EnhancerVisitorFactory}.  *   * @since 3.0  */
 end_comment
 
 begin_class

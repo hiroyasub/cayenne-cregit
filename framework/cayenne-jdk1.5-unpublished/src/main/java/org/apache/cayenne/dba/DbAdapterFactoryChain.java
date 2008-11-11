@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A facade for a collection of DbAdapterFactories. Can be configured to auto-detect all  * adapters known to Cayenne or can work with custom factories.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A facade for a collection of DbAdapterFactories. Can be configured to auto-detect all  * adapters known to Cayenne or can work with custom factories.  *   * @since 1.2  */
 end_comment
 
 begin_comment

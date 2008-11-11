@@ -308,7 +308,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ObjEntity is a mapping descriptor for a DataObject Java class. It contains the  * information about the Java class itself, as well as its mapping to the DbEntity layer.  *   * @author Misha Shengaout  * @author Andrus Adamchik  * @author Dzmitry Rusak  */
+comment|/**  * ObjEntity is a mapping descriptor for a DataObject Java class. It contains the  * information about the Java class itself, as well as its mapping to the DbEntity layer.  *   */
 end_comment
 
 begin_class

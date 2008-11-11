@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A proxy factory that handles HTTP sessions.  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * A proxy factory that handles HTTP sessions.  *   * @since 1.2  */
 end_comment
 
 begin_class

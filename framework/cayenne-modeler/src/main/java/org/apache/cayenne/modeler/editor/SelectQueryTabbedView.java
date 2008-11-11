@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A tabbed view for configuring a select query.  *   * @author Andrus Adamchik  */
+comment|/**  * A tabbed view for configuring a select query.  *   */
 end_comment
 
 begin_class

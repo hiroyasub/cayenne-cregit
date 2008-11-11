@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A holder of multi-column match condition operand.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * A holder of multi-column match condition operand.  *   * @since 3.0  */
 end_comment
 
 begin_class

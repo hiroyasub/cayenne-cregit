@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Spring-compatible factory to load DataMaps.  *   * @author Andrus Adamchik  */
+comment|/**  * A Spring-compatible factory to load DataMaps.  *   */
 end_comment
 
 begin_class

@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A translator of EJBQL SELECT statements into SQL.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A translator of EJBQL SELECT statements into SQL.  *   * @since 3.0  */
 end_comment
 
 begin_class

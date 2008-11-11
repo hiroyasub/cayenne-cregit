@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that defines a strategy for locating stream resources.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An object that defines a strategy for locating stream resources.  *   * @since 3.0  */
 end_comment
 
 begin_interface

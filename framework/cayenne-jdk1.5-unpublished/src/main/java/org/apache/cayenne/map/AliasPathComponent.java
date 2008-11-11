@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents an alias for the relationship path.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Represents an alias for the relationship path.  *   * @since 3.0  */
 end_comment
 
 begin_class

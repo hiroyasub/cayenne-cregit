@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * ProjectTraversalHandler defines callback methods that are  * invoked during project tree traversal.  *   * @author Andrus Adamchik  */
+comment|/**  * ProjectTraversalHandler defines callback methods that are  * invoked during project tree traversal.  *   */
 end_comment
 
 begin_interface

@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements special date handling for SQLite. As SQLite has no native date type and the  * JDBC driver does not standardize it either.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Implements special date handling for SQLite. As SQLite has no native date type and the  * JDBC driver does not standardize it either.  *   * @since 3.0  */
 end_comment
 
 begin_comment

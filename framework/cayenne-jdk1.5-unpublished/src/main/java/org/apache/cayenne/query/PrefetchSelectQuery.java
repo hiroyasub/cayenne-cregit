@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SelectQuery to perform a prefetch based on another query. Used internally by Cayenne  * and is normally never used directly.  *   * @author Craig Miskell, Andrus Adamchik  */
+comment|/**  * A SelectQuery to perform a prefetch based on another query. Used internally by Cayenne  * and is normally never used directly.  *   */
 end_comment
 
 begin_class

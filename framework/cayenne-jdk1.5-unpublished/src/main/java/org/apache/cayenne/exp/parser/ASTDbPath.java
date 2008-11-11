@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Path expression traversing DB relationships and attributes.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Path expression traversing DB relationships and attributes.  *   * @since 1.1  */
 end_comment
 
 begin_class

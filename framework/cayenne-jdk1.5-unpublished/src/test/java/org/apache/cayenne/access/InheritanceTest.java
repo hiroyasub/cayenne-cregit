@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing Cayenne behavior with DataObject inheritance hierarchies.  *   * @author Andrus Adamchik  */
+comment|/**  * Testing Cayenne behavior with DataObject inheritance hierarchies.  *   */
 end_comment
 
 begin_class

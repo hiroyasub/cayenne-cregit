@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataMapFile is a ProjectFile abstraction of the   * DataMap file in a Cayenne project.   *   * @author Andrus Adamchik  */
+comment|/**  * DataMapFile is a ProjectFile abstraction of the   * DataMap file in a Cayenne project.   *   */
 end_comment
 
 begin_class

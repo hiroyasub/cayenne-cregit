@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * MultipleObjectsAction is an action, which can be applied to multiple objects at once.  * Therefore the name of the action might change  * @author Andrey Razumovsky  */
+comment|/**  * MultipleObjectsAction is an action, which can be applied to multiple objects at once.  * Therefore the name of the action might change  */
 end_comment
 
 begin_interface

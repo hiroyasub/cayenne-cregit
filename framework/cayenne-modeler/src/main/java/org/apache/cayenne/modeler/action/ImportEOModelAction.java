@@ -560,7 +560,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action handler for WebObjects EOModel import function.  *   * @author Andrus Adamchik  */
+comment|/**  * Action handler for WebObjects EOModel import function.  *   */
 end_comment
 
 begin_class

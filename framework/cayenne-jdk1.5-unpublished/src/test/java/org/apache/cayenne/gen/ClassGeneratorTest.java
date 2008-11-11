@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ClassGenerationInfo tests that are not template-specific.  *   * @author Andrus Adamchik  */
+comment|/**  * ClassGenerationInfo tests that are not template-specific.  *   */
 end_comment
 
 begin_class

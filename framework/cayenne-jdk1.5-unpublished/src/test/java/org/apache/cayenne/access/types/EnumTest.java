@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A test case checking Cayenne handling of 1.5 Enums.  *   * @author Andrus Adamchik  */
+comment|/**  * A test case checking Cayenne handling of 1.5 Enums.  *   */
 end_comment
 
 begin_class

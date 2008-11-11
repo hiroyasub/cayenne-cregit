@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action that synchronizes all ObjEntities with the current state of the selected  * DbEntity.  *   * @author Garry Watkins  */
+comment|/**  * Action that synchronizes all ObjEntities with the current state of the selected  * DbEntity.  *   */
 end_comment
 
 begin_class

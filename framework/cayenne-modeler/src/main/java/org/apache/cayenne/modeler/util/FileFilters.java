@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A collection of common file filters used by CayenneModeler JFileChoosers.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A collection of common file filters used by CayenneModeler JFileChoosers.  *   * @since 1.1  */
 end_comment
 
 begin_class

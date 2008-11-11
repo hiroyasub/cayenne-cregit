@@ -262,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A specialized PrefetchTreeNode used for joint prefetch resolving.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A specialized PrefetchTreeNode used for joint prefetch resolving.  *   * @since 1.2  */
 end_comment
 
 begin_class

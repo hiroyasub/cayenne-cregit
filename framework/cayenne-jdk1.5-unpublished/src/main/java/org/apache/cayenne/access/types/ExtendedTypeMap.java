@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores ExtendedTypes, implementing an algorithm to determine the right type for a given  * Java class. See {@link #getRegisteredType(String)} documentation for lookup algorithm  * details.  *   * @author Andrus Adamchik  */
+comment|/**  * Stores ExtendedTypes, implementing an algorithm to determine the right type for a given  * Java class. See {@link #getRegisteredType(String)} documentation for lookup algorithm  * details.  *   */
 end_comment
 
 begin_comment

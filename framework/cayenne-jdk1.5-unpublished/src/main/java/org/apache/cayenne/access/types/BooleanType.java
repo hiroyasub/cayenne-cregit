@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>java.lang.Boolean</code> mapping. Note that "materialize*" methods  * return either Boolean.TRUE or Boolean.FALSE, instead of creating new Boolean instances  * using contructor. This makes possible identity comparison such as  *<code>object.getBooleanProperty() == Boolean.TRUE</code>.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Handles<code>java.lang.Boolean</code> mapping. Note that "materialize*" methods  * return either Boolean.TRUE or Boolean.FALSE, instead of creating new Boolean instances  * using contructor. This makes possible identity comparison such as  *<code>object.getBooleanProperty() == Boolean.TRUE</code>.  *   * @since 1.2  */
 end_comment
 
 begin_class

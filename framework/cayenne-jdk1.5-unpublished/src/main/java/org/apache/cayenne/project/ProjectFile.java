@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectFile is an adapter from an object in Cayenne project  * to its representation in the file system.  *   * @author Andrus Adamchik  */
+comment|/**  * ProjectFile is an adapter from an object in Cayenne project  * to its representation in the file system.  *   */
 end_comment
 
 begin_class

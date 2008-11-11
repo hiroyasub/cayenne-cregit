@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class for processing listener class selection  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Class for processing listener class selection  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class

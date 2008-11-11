@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that initializes server-side fault singletons.  *   * @since 1.2  * @deprecated since 3.0 as the fault singletons are no longer static and are managed by  *             the Cayenne configuration.  * @author Andrus Adamchik  */
+comment|/**  * A helper class that initializes server-side fault singletons.  *   * @since 1.2  * @deprecated since 3.0 as the fault singletons are no longer static and are managed by  *             the Cayenne configuration.  */
 end_comment
 
 begin_class

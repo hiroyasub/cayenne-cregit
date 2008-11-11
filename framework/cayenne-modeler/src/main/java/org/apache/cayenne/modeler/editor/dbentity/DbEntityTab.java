@@ -390,7 +390,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Detail view of the DbEntity properties.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Detail view of the DbEntity properties.  *   */
 end_comment
 
 begin_class

@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Like" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Like" expression.  *   */
 end_comment
 
 begin_class

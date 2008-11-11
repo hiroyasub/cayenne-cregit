@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Named parameter for paramterized expressions.  *   * @author Andrus Adamchik  */
+comment|/**  * Named parameter for paramterized expressions.  *   */
 end_comment
 
 begin_class

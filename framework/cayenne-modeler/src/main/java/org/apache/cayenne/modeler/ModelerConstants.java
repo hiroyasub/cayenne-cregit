@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines constants used in the modeler.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines constants used in the modeler.  *   */
 end_comment
 
 begin_interface

@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Looks up DataSource objects via JNDI.  *   * @author Andrus Adamchik  */
+comment|/**  * Looks up DataSource objects via JNDI.  *   */
 end_comment
 
 begin_class

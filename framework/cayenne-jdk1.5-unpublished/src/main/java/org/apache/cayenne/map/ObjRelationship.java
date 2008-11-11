@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes an association between two Java classes mapped as source and target  * ObjEntity. Maps to a path of DbRelationships.  *   * @author Andrus Adamchik  */
+comment|/**  * Describes an association between two Java classes mapped as source and target  * ObjEntity. Maps to a path of DbRelationships.  *   */
 end_comment
 
 begin_class

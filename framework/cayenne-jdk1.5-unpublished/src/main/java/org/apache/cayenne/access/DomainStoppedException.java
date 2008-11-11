@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An exception thrown on attempts to access a DataDomain after it was explicitly shut  * down by the user.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An exception thrown on attempts to access a DataDomain after it was explicitly shut  * down by the user.  *   * @since 3.0  */
 end_comment
 
 begin_class

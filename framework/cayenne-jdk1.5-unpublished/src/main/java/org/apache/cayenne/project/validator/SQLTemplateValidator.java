@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator for SQLTemplate queries.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Validator for SQLTemplate queries.  *   * @since 1.1  */
 end_comment
 
 begin_class

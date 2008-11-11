@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of a class property that may or may not be persistent.  *   * @author Andrus Adamchik  */
+comment|/**  * A descriptor of a class property that may or may not be persistent.  *   */
 end_comment
 
 begin_class

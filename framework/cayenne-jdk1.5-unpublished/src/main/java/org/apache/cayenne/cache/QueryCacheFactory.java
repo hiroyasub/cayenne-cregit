@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates QueryCache.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Creates QueryCache.  *   * @since 3.0  */
 end_comment
 
 begin_interface

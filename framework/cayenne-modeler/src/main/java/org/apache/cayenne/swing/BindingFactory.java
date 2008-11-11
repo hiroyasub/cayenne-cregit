@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory for a number of common bindings.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory for a number of common bindings.  *   */
 end_comment
 
 begin_class

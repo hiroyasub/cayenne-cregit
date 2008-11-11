@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Common superclass of tables used in Cayenne. Contains some common configuration  * settings and utility methods.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Common superclass of tables used in Cayenne. Contains some common configuration  * settings and utility methods.  *   */
 end_comment
 
 begin_class

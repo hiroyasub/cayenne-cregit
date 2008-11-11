@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience superclass of the queries that resolve into some other queries during the  * routing phase. Provides caching of a replacement query.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A convenience superclass of the queries that resolve into some other queries during the  * routing phase. Provides caching of a replacement query.  *   * @since 1.2  */
 end_comment
 
 begin_class

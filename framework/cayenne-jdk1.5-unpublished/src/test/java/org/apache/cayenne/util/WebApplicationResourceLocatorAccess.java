@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides access to protected fields of WebApplicationResourceLocator.  *   * @author Andrus Adamchik  */
+comment|/**  * Provides access to protected fields of WebApplicationResourceLocator.  *   */
 end_comment
 
 begin_class

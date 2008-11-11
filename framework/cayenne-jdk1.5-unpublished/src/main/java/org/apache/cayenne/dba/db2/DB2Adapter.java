@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for the<a href="http://www.ibm.com/db2/"> DB2 RDBMS</a>.  * Sample connection settings to use with DB2 are shown below:  *   *<pre>  *    *       test-db2.cayenne.adapter = org.apache.cayenne.dba.db2.DB2Adapter  *       test-db2.jdbc.username = test  *       test-db2.jdbc.password = secret  *       test-db2.jdbc.url = jdbc:db2://servername:50000/databasename  *       test-db2.jdbc.driver = com.ibm.db2.jcc.DB2Driver  *     *</pre>  *   * @author Holger Hoffstaette  */
+comment|/**  * DbAdapter implementation for the<a href="http://www.ibm.com/db2/"> DB2 RDBMS</a>.  * Sample connection settings to use with DB2 are shown below:  *   *<pre>  *    *       test-db2.cayenne.adapter = org.apache.cayenne.dba.db2.DB2Adapter  *       test-db2.jdbc.username = test  *       test-db2.jdbc.password = secret  *       test-db2.jdbc.url = jdbc:db2://servername:50000/databasename  *       test-db2.jdbc.driver = com.ibm.db2.jcc.DB2Driver  *     *</pre>  *   */
 end_comment
 
 begin_class

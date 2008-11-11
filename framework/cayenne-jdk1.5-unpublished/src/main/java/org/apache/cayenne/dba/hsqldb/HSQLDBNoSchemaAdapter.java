@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A flavor of HSQLDBAdapter that implements workarounds for some old driver limitations.  *   * @since 1.2  * @author Mike Kienenberger  */
+comment|/**  * A flavor of HSQLDBAdapter that implements workarounds for some old driver limitations.  *   * @since 1.2  */
 end_comment
 
 begin_class

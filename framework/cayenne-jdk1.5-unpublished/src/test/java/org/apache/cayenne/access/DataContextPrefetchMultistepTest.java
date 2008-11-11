@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing chained prefetches...  *   * @author Andrus Adamchik  */
+comment|/**  * Testing chained prefetches...  *   */
 end_comment
 
 begin_class

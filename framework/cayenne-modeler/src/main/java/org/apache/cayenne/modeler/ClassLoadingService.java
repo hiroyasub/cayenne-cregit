@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An interface defining a service for locating external Java resources.  *   * @author Andrus Adamchik  */
+comment|/**  * An interface defining a service for locating external Java resources.  *   */
 end_comment
 
 begin_interface

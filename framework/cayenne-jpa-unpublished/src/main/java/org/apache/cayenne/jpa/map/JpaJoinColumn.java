@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Join column specifies a mapped column for joining an entity association, aka flattened  * attribute.  *   * @author Andrus Adamchik  */
+comment|/**  * Join column specifies a mapped column for joining an entity association, aka flattened  * attribute.  *   */
 end_comment
 
 begin_class

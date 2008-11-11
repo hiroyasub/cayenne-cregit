@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class exists solely to enable testing of arbitrary superclasses for ObjEntities.    * It has no functionality at this stage (nor is any likely)  *   * @author cmiskell  */
+comment|/**  * This class exists solely to enable testing of arbitrary superclasses for ObjEntities.    * It has no functionality at this stage (nor is any likely)  *   */
 end_comment
 
 begin_class

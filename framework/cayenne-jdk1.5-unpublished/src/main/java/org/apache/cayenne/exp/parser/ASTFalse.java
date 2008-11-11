@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Boolean false expression element  *   * Notice that there is one ASTTrue and one ASTFalse instead of a ASTBoolean with a  * Boolean value. The main reason for doing this is that a common ASTBoolean will have  * operand count of 1 and that will default to a prepared statmenet like " where ? and  * (...)", but we only need " where true and (...)".  *   * @see ASTTrue  * @author halset  * @since 3.0  */
+comment|/**  * Boolean false expression element  *   * Notice that there is one ASTTrue and one ASTFalse instead of a ASTBoolean with a  * Boolean value. The main reason for doing this is that a common ASTBoolean will have  * operand count of 1 and that will default to a prepared statmenet like " where ? and  * (...)", but we only need " where true and (...)".  *   * @see ASTTrue  * @since 3.0  */
 end_comment
 
 begin_class

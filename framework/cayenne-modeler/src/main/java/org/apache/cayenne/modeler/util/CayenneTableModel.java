@@ -204,7 +204,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of CayenneModeler table model classes.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of CayenneModeler table model classes.  *   */
 end_comment
 
 begin_class

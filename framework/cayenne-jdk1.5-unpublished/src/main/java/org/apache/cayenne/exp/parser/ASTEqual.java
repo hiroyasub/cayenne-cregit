@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Equal To" expression.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * "Equal To" expression.  *   * @since 1.1  */
 end_comment
 
 begin_class

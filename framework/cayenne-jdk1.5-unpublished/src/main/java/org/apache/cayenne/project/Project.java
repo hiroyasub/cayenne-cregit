@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes a model of Cayenne project. Project is a set of files in the filesystem  * describing storing Cayenne DataMaps, DataNodes and other information.  *<p>  * Project has a project directory, which is a canonical directory. All project files are  * relative to the project directory.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Describes a model of Cayenne project. Project is a set of files in the filesystem  * describing storing Cayenne DataMaps, DataNodes and other information.  *<p>  * Project has a project directory, which is a canonical directory. All project files are  * relative to the project directory.  *</p>  *   */
 end_comment
 
 begin_class

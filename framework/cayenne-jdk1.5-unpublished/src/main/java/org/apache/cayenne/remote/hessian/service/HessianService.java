@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of RemoteService using binary Hessian protocol. For more info on  * Hessian see http://www.caucho.com/resin-3.0/protocols/hessian.xtp.  *   * @see org.apache.cayenne.remote.hessian.service.HessianServlet  * @see org.apache.cayenne.remote.RemoteService  * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An implementation of RemoteService using binary Hessian protocol. For more info on  * Hessian see http://www.caucho.com/resin-3.0/protocols/hessian.xtp.  *   * @see org.apache.cayenne.remote.hessian.service.HessianServlet  * @see org.apache.cayenne.remote.RemoteService  * @since 1.2  */
 end_comment
 
 begin_class

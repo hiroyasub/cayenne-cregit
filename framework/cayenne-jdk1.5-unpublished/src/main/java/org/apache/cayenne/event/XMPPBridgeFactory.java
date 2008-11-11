@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory of XMPPBridge. Note that to deploy an XMPPBridge, you need to have  *<em>smack.jar</em> library in the runtime.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A factory of XMPPBridge. Note that to deploy an XMPPBridge, you need to have  *<em>smack.jar</em> library in the runtime.  *   * @since 1.2  */
 end_comment
 
 begin_class

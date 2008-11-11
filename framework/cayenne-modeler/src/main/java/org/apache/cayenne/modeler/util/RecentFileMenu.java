@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Menu that contains a list of previously used files. It is built from CayenneModeler  * preferences by calling<code>rebuildFromPreferences</code>.  *   * @author Andrus Adamchik  */
+comment|/**  * Menu that contains a list of previously used files. It is built from CayenneModeler  * preferences by calling<code>rebuildFromPreferences</code>.  *   */
 end_comment
 
 begin_class

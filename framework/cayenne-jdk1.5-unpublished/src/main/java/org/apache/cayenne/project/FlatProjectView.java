@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FlatProjectView converts a project tree into a list of nodes,  * thus flattening the tree. Normally used as a singleton.  *   * @author Andrus Adamchik  */
+comment|/**  * FlatProjectView converts a project tree into a list of nodes,  * thus flattening the tree. Normally used as a singleton.  *   */
 end_comment
 
 begin_class

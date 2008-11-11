@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Parses an EJBQL statement, converting it to SQL. Executes the resulting SQL.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Parses an EJBQL statement, converting it to SQL. Executes the resulting SQL.  *   * @since 3.0  */
 end_comment
 
 begin_class

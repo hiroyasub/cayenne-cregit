@@ -178,7 +178,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An Entity is an abstract descriptor for an entity mapping concept. Entity can represent  * either a descriptor of database table or a persistent object.  *   * @author Andrus Adamchik  */
+comment|/**  * An Entity is an abstract descriptor for an entity mapping concept. Entity can represent  * either a descriptor of database table or a persistent object.  *   */
 end_comment
 
 begin_class

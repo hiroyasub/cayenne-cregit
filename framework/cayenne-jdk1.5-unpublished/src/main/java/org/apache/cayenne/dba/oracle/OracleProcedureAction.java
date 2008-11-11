@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Oracle-specific ProcedureAction that supports ResultSet OUT parameters.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Oracle-specific ProcedureAction that supports ResultSet OUT parameters.  *   * @since 1.2  */
 end_comment
 
 begin_class

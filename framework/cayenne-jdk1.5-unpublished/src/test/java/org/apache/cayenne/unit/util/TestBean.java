@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A non-persistent Java Bean. Useful for testing Cayenne operations that rely on  * introspection.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A non-persistent Java Bean. Useful for testing Cayenne operations that rely on  * introspection.  *   * @since 1.1  */
 end_comment
 
 begin_class

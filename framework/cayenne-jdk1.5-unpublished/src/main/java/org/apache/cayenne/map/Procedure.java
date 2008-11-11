@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor for a database stored procedure.  *   * @author Andrus Adamchik  */
+comment|/**  * A mapping descriptor for a database stored procedure.  *   */
 end_comment
 
 begin_class

@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An noop profiling case.  *   * @author Andrus Adamchik  */
+comment|/**  * An noop profiling case.  *   */
 end_comment
 
 begin_class

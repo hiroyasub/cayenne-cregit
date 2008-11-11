@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Swing TreeModel for Entity attributes and relationships  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Swing TreeModel for Entity attributes and relationships  *   * @since 1.1  */
 end_comment
 
 begin_class

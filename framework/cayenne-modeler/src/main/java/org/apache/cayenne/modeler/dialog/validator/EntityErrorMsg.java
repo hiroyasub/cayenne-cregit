@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain validation message.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * DataDomain validation message.  *   */
 end_comment
 
 begin_class

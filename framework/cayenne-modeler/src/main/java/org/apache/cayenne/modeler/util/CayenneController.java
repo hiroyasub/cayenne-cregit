@@ -264,7 +264,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of CayenneModeler controllers.  *   * @author Andrus Adamchik  */
+comment|/**  * A superclass of CayenneModeler controllers.  *   */
 end_comment
 
 begin_class

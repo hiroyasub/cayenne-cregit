@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * RuntimeException subclass thrown in cases of errors during   * expressions creation/parsing.  *   * @author Andrus Adamchik  */
+comment|/**   * RuntimeException subclass thrown in cases of errors during   * expressions creation/parsing.  *   */
 end_comment
 
 begin_class

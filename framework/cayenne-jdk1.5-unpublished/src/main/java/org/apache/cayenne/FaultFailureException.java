@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A runtime exception thrown when<code>DataObject.resolveFault()</code> finds that no  * matching row exists in the database for an<code>ObjectId</code>.  *   * @author Mike Kienenberger  */
+comment|/**  * A runtime exception thrown when<code>DataObject.resolveFault()</code> finds that no  * matching row exists in the database for an<code>ObjectId</code>.  *   */
 end_comment
 
 begin_class

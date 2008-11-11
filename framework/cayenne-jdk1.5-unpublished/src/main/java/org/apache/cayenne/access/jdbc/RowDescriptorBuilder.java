@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder class that helps to assemble {@link RowDescriptor} instances from various  * types of inputs.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A builder class that helps to assemble {@link RowDescriptor} instances from various  * types of inputs.  *   * @since 3.0  */
 end_comment
 
 begin_class

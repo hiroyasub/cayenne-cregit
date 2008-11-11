@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of callback methods that provide information  * to ConfigSaver when Cayenne project is saved.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines a set of callback methods that provide information  * to ConfigSaver when Cayenne project is saved.  *   */
 end_comment
 
 begin_interface

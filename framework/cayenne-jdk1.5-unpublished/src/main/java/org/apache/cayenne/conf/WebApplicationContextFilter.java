@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Servlet Filter that binds session DataContext to the current request thread. During  * the request application code without any knowledge of the servlet environment can  * access DataContext via {@link DataContext#getThreadDataContext()} method.<p/> To  * enable the filter add XML similar to this in the<code>web.xml</code> descriptor of a  * web application:  *   *<pre>  *&lt;filter&gt;  *&lt;filter-name&gt;CayenneFilter&lt;/filter-name&gt;  *&lt;filter-class&gt;org.apache.cayenne.conf.WebApplicationContextFilter&lt;/filter-class&gt;  *&lt;/filter&gt;  *&lt;filter-mapping&gt;  *&lt;filter-name&gt;CayenneFilter&lt;/filter-name&gt;  *&lt;url-pattern&gt;/*&lt;/url-pattern&gt;  *&lt;/filter-mapping&gt;  *</pre>  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * A Servlet Filter that binds session DataContext to the current request thread. During  * the request application code without any knowledge of the servlet environment can  * access DataContext via {@link DataContext#getThreadDataContext()} method.<p/> To  * enable the filter add XML similar to this in the<code>web.xml</code> descriptor of a  * web application:  *   *<pre>  *&lt;filter&gt;  *&lt;filter-name&gt;CayenneFilter&lt;/filter-name&gt;  *&lt;filter-class&gt;org.apache.cayenne.conf.WebApplicationContextFilter&lt;/filter-class&gt;  *&lt;/filter&gt;  *&lt;filter-mapping&gt;  *&lt;filter-name&gt;CayenneFilter&lt;/filter-name&gt;  *&lt;url-pattern&gt;/*&lt;/url-pattern&gt;  *&lt;/filter-mapping&gt;  *</pre>  *   * @since 1.2  */
 end_comment
 
 begin_class

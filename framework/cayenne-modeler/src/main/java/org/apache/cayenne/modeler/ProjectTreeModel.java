@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectTreeModel is a model of Cayenne project tree.  *   * @author Andrus Adamchik  */
+comment|/**  * ProjectTreeModel is a model of Cayenne project tree.  *   */
 end_comment
 
 begin_class

@@ -160,7 +160,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link org.apache.cayenne.jpa.map.JpaEntityMap} loader that reads mapping information  * from the XML sources compatible with the JPA ORM schema.  *   * @author Andrus Adamchik  */
+comment|/**  * {@link org.apache.cayenne.jpa.map.JpaEntityMap} loader that reads mapping information  * from the XML sources compatible with the JPA ORM schema.  *   */
 end_comment
 
 begin_class

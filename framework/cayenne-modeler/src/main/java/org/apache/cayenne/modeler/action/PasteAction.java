@@ -428,7 +428,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for pasting entities, queries etc. from the system buffer  * @author Andrey Razumovsky  */
+comment|/**  * Action for pasting entities, queries etc. from the system buffer  */
 end_comment
 
 begin_class

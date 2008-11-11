@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to find resources (files, etc.), using a preconfigured strategy.  *   * @author Andrus Adamchik  */
+comment|/**  * Utility class to find resources (files, etc.), using a preconfigured strategy.  *   */
 end_comment
 
 begin_class

@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event types are  * defined in {@link LifecycleEvent} enum.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event types are  * defined in {@link LifecycleEvent} enum.  *   * @since 3.0  */
 end_comment
 
 begin_class

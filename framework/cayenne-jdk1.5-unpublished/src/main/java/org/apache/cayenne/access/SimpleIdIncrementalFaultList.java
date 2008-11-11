@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A paginated list that implements a strategy for retrieval of entities with a single PK  * column. It is much more memory-efficient compared to the superclass.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A paginated list that implements a strategy for retrieval of entities with a single PK  * column. It is much more memory-efficient compared to the superclass.  *   * @since 3.0  */
 end_comment
 
 begin_class

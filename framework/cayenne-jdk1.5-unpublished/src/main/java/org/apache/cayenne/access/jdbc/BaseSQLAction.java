@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience superclass for SQLAction implementations.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A convenience superclass for SQLAction implementations.  *   * @since 1.2  */
 end_comment
 
 begin_class

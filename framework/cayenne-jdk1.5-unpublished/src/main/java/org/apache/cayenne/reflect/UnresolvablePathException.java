@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A runtime exception thrown when<code>PropertyUtils.getProperty()</code> finds that  * there is a null value in middle of the resolved path.  *   * @author Marcin Skladaniec  */
+comment|/**  * A runtime exception thrown when<code>PropertyUtils.getProperty()</code> finds that  * there is a null value in middle of the resolved path.  *   */
 end_comment
 
 begin_class

@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An attribute of the ObjEntity that maps to an embeddable class.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An attribute of the ObjEntity that maps to an embeddable class.  *   * @since 3.0  */
 end_comment
 
 begin_class

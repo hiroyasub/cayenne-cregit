@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ClientConnection that passes messages to a remotely deployed HessianService. It  * supports HTTP BASIC authentication. HessianConnection serializes messages using Hessian  * binary web service protocol over HTTP. For more info on Hessian see Caucho site at<a  * href="http://www.caucho.com/resin-3.0/protocols/hessian.xtp">http://www.caucho.com/resin-3.0/protocols/hessian.xtp</a>.  * HessianConnection supports logging of message traffic via Jakarta commons-logging API.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An ClientConnection that passes messages to a remotely deployed HessianService. It  * supports HTTP BASIC authentication. HessianConnection serializes messages using Hessian  * binary web service protocol over HTTP. For more info on Hessian see Caucho site at<a  * href="http://www.caucho.com/resin-3.0/protocols/hessian.xtp">http://www.caucho.com/resin-3.0/protocols/hessian.xtp</a>.  * HessianConnection supports logging of message traffic via Jakarta commons-logging API.  *   * @since 1.2  */
 end_comment
 
 begin_class

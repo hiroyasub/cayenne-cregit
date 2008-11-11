@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries and other  * mapping objects.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries and other  * mapping objects.  *   * @since 1.1  */
 end_comment
 
 begin_interface

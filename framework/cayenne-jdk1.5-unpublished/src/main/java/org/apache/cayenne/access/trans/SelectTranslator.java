@@ -416,7 +416,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder of JDBC PreparedStatements based on Cayenne SelectQueries. Translates  * SelectQuery to parameterized SQL string and wraps it in a PreparedStatement.  * SelectTranslator is stateful and thread-unsafe.  *   * @author Andrus Adamchik  */
+comment|/**  * A builder of JDBC PreparedStatements based on Cayenne SelectQueries. Translates  * SelectQuery to parameterized SQL string and wraps it in a PreparedStatement.  * SelectTranslator is stateful and thread-unsafe.  *   */
 end_comment
 
 begin_class

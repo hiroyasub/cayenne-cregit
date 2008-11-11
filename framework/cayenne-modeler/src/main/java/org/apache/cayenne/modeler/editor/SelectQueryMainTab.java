@@ -504,7 +504,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A tabbed pane that contains editors for various SelectQuery parts.  *   * @author Andrus Adamchik  */
+comment|/**  * A tabbed pane that contains editors for various SelectQuery parts.  *   */
 end_comment
 
 begin_class

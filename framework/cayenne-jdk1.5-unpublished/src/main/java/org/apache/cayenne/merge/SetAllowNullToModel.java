@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to set the mandatory field of a {@link DbAttribute} to false  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to set the mandatory field of a {@link DbAttribute} to false  *   */
 end_comment
 
 begin_class

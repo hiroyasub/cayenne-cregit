@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translator of the EJBQL select clause.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Translator of the EJBQL select clause.  *   * @since 3.0  */
 end_comment
 
 begin_class

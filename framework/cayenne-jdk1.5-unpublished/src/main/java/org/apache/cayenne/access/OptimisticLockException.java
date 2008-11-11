@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An exception thrown on optimistic lock failure.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * An exception thrown on optimistic lock failure.  *   * @since 1.1  */
 end_comment
 
 begin_class

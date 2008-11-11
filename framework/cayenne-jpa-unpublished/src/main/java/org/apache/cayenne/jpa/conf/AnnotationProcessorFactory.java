@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory for annotation processors. Concrete subclasses can simply define inner  * classes for the each type of annotation processors they support.  * {@link #createProcessor(String)} method will use naming conventions to determine the  * type of the processor.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory for annotation processors. Concrete subclasses can simply define inner  * classes for the each type of annotation processors they support.  * {@link #createProcessor(String)} method will use naming conventions to determine the  * type of the processor.  *   */
 end_comment
 
 begin_class

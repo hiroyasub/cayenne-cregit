@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Overrides default BooleanType behavior to bind BOOLEAN type to PreparedStatements via  * "setObject", as binding via "setBoolean" only works for BIT.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Overrides default BooleanType behavior to bind BOOLEAN type to PreparedStatements via  * "setObject", as binding via "setBoolean" only works for BIT.  *   * @since 1.2  */
 end_comment
 
 begin_class

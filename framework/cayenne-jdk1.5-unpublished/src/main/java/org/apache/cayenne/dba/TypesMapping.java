@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class that handles mappings of JDBC data types to the database types and Java  * types. Also contains methods that provide information about JDBC types.  *   * @author Michael Shengaout  * @author Andrus Adamchik  */
+comment|/**  * A utility class that handles mappings of JDBC data types to the database types and Java  * types. Also contains methods that provide information about JDBC types.  *   */
 end_comment
 
 begin_class

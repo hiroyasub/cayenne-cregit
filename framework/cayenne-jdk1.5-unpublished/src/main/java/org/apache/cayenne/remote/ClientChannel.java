@@ -290,7 +290,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link org.apache.cayenne.DataChannel} implementation that accesses a remote server  * via a ClientConnection.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A {@link org.apache.cayenne.DataChannel} implementation that accesses a remote server  * via a ClientConnection.  *   * @since 1.2  */
 end_comment
 
 begin_class

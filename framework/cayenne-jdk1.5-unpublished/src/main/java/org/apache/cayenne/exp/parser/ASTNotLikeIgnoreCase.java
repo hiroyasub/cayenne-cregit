@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Not like, ignore case" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Not like, ignore case" expression.  *   */
 end_comment
 
 begin_class

@@ -422,7 +422,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for the main tab of the DataNode editor panel.  *   * @author Andrus Adamchik  */
+comment|/**  * A controller for the main tab of the DataNode editor panel.  *   */
 end_comment
 
 begin_class

@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines methods used to run Cayenne queries.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines methods used to run Cayenne queries.  *   */
 end_comment
 
 begin_interface

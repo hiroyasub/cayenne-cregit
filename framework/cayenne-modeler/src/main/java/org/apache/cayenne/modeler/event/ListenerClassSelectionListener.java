@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Listener for listener class selection  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Listener for listener class selection  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_interface

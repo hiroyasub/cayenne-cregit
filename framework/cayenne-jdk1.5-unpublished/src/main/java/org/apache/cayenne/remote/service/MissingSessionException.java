@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An exception that are thrown by the ROP server if the client are missing a session.  *   * @since 3.0  * @author Tore Halset  */
+comment|/**  * An exception that are thrown by the ROP server if the client are missing a session.  *   * @since 3.0  */
 end_comment
 
 begin_class

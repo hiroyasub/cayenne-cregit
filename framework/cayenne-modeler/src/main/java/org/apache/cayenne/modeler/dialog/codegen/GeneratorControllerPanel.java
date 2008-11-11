@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic panel that is a superclass of generator panels, defining common fields.  *   * @author Andrus Adamchik  */
+comment|/**  * A generic panel that is a superclass of generator panels, defining common fields.  *   */
 end_comment
 
 begin_class

@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A portable global identifier for persistent objects. ObjectId can be temporary (used  * for transient or new uncommitted objects) or permanent (used for objects that have been  * already stored in DB). A temporary ObjectId stores object entity name and a  * pseudo-unique binary key; permanent id stores a map of values from an external  * persistent store (aka "primary key").  *   * @author Andrus Adamchik  */
+comment|/**  * A portable global identifier for persistent objects. ObjectId can be temporary (used  * for transient or new uncommitted objects) or permanent (used for objects that have been  * already stored in DB). A temporary ObjectId stores object entity name and a  * pseudo-unique binary key; permanent id stores a map of values from an external  * persistent store (aka "primary key").  *   */
 end_comment
 
 begin_class

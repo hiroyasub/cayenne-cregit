@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for query execution strategy over JDBC connection (as in Strategy Pattern).  * SQLAction unified interface allows a high degree of customization for JDBC  * interactions.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Defines API for query execution strategy over JDBC connection (as in Strategy Pattern).  * SQLAction unified interface allows a high degree of customization for JDBC  * interactions.  *   * @since 1.2  */
 end_comment
 
 begin_interface

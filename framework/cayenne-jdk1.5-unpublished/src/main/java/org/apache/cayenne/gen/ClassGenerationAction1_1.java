@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A backwards compatible class generation action that delegates to the deprecated  * {@link DefaultClassGenerator}.  *   * @since 3.0  * @author Andrus Adamchik  * @deprecated since 3.0  */
+comment|/**  * A backwards compatible class generation action that delegates to the deprecated  * {@link DefaultClassGenerator}.  *   * @since 3.0  * @deprecated since 3.0  */
 end_comment
 
 begin_class

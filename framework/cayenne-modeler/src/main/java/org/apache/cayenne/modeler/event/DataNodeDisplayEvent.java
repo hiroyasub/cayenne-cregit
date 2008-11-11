@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a display event of a DataNode.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Represents a display event of a DataNode.  *   */
 end_comment
 
 begin_class

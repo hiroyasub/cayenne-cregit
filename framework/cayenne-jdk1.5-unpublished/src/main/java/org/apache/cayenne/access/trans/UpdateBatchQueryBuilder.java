@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A translator for UpdateBatchQueries that produces parameterized SQL.  *   * @author Andriy Shapochka, Andrus Adamchik, Mike Kienenberger  */
+comment|/**  * A translator for UpdateBatchQueries that produces parameterized SQL.  *   */
 end_comment
 
 begin_class

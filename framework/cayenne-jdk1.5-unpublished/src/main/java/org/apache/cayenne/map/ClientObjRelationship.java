@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A read-only ObjRelationship relationship that caches some information that is  * dynamically calculated in a superclass.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A read-only ObjRelationship relationship that caches some information that is  * dynamically calculated in a superclass.  *   * @since 1.2  */
 end_comment
 
 begin_class

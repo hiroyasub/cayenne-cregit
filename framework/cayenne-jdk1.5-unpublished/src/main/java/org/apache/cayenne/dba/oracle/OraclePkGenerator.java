@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Sequence-based primary key generator implementation for Oracle. Uses Oracle sequences  * to generate primary key values. This approach is at least 50% faster when tested with  * Oracle compared to the lookup table approach.  *<p>  * When using Cayenne key caching mechanism, make sure that sequences in the database have  * "INCREMENT BY" greater or equal to OraclePkGenerator "pkCacheSize" property value. If  * this is not the case, you will need to adjust PkGenerator value accordingly. For  * example when sequence is incremented by 1 each time, use the following code:  *</p>  *   *<pre>  * dataNode.getAdapter().getPkGenerator().setPkCacheSize(1);  *</pre>  *   * @author Andrus Adamchik  */
+comment|/**  * Sequence-based primary key generator implementation for Oracle. Uses Oracle sequences  * to generate primary key values. This approach is at least 50% faster when tested with  * Oracle compared to the lookup table approach.  *<p>  * When using Cayenne key caching mechanism, make sure that sequences in the database have  * "INCREMENT BY" greater or equal to OraclePkGenerator "pkCacheSize" property value. If  * this is not the case, you will need to adjust PkGenerator value accordingly. For  * example when sequence is incremented by 1 each time, use the following code:  *</p>  *   *<pre>  * dataNode.getAdapter().getPkGenerator().setPkCacheSize(1);  *</pre>  *   */
 end_comment
 
 begin_class

@@ -164,7 +164,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A<b>PropertyListSerialization</b> is a utility class that reads and stores files in  * NeXT/Apple property list format. Unlike corresponding WebObjects class,  *<code>PropertyListSerialization</code> uses standard Java collections (lists and  * maps) to store property lists.  *   * @author Andrus Adamchik  */
+comment|/**  * A<b>PropertyListSerialization</b> is a utility class that reads and stores files in  * NeXT/Apple property list format. Unlike corresponding WebObjects class,  *<code>PropertyListSerialization</code> uses standard Java collections (lists and  * maps) to store property lists.  *   */
 end_comment
 
 begin_class

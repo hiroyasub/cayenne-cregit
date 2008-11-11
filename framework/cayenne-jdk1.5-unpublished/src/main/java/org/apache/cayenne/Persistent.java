@@ -24,7 +24,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines minimal API of an object that can be persisted via Cayenne.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Defines minimal API of an object that can be persisted via Cayenne.  *   * @since 1.2  */
 end_comment
 
 begin_comment

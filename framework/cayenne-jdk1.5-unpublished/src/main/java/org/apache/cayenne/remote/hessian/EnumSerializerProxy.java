@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A JDK14 compatible wrapper for JDK15 EnumSerializer proxy. Under JDK 1.4 this object  * does nothing.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A JDK14 compatible wrapper for JDK15 EnumSerializer proxy. Under JDK 1.4 this object  * does nothing.  *   * @since 1.2  */
 end_comment
 
 begin_class

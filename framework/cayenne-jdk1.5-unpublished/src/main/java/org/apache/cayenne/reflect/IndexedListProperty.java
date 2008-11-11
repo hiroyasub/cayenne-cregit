@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A CollectionProperty that uses IndexPropertyList.  *   * @since 1.2  * @author Andrus Adamchik  * @deprecated since 3.0 (no substitute exists in Cayenne)  */
+comment|/**  * A CollectionProperty that uses IndexPropertyList.  *   * @since 1.2  * @deprecated since 3.0 (no substitute exists in Cayenne)  */
 end_comment
 
 begin_class

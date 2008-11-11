@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Table model to display ObjRelationships.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Table model to display ObjRelationships.  *   */
 end_comment
 
 begin_class

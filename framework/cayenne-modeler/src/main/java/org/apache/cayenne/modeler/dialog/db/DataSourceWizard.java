@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A subclass of ConnectionWizard that tests configured DataSource, but does not keep an  * open connection.  *   * @author Andrus Adamchik  */
+comment|/**  * A subclass of ConnectionWizard that tests configured DataSource, but does not keep an  * open connection.  *   */
 end_comment
 
 begin_class

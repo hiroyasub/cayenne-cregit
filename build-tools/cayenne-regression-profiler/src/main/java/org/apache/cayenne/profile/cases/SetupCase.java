@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs initial database setup before running other tests. Essentially drops and  * recreates the database.  *   * @author Andrus Adamchik  */
+comment|/**  * Performs initial database setup before running other tests. Essentially drops and  * recreates the database.  *   */
 end_comment
 
 begin_class

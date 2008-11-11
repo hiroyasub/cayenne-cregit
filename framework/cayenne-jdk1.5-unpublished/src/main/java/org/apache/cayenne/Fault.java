@@ -24,7 +24,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a placeholder for an unresolved relationship from a source object. Fault is  * resolved via {@link #resolveFault(Persistent, String)}. Depending on the type of fault  * it is resolved differently. Each type of fault is a singleton that can be obtained via  * corresponding static method.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Represents a placeholder for an unresolved relationship from a source object. Fault is  * resolved via {@link #resolveFault(Persistent, String)}. Depending on the type of fault  * it is resolved differently. Each type of fault is a singleton that can be obtained via  * corresponding static method.  *   * @since 1.1  */
 end_comment
 
 begin_class

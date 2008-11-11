@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A binding that registers for action events of an arbitrary Component JavaBean that  * provides a way to add an ActionListener via BeanDescriptor.  *   * @author Andrus Adamchik  */
+comment|/**  * A binding that registers for action events of an arbitrary Component JavaBean that  * provides a way to add an ActionListener via BeanDescriptor.  *   */
 end_comment
 
 begin_class

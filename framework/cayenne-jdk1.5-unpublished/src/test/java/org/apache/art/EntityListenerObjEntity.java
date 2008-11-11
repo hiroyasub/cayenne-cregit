@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Class for testing callbacks on ObjEntity level  *  * @author Vasil Tarasevich  */
+comment|/**  * Class for testing callbacks on ObjEntity level  *  */
 end_comment
 
 begin_class

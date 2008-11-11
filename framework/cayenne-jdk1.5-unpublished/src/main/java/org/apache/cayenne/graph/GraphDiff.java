@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a change in an object graph. This can be a simple change (like a node  * property update) or a composite change that consists of a number of smaller changes.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Represents a change in an object graph. This can be a simple change (like a node  * property update) or a composite change that consists of a number of smaller changes.  *   * @since 1.2  */
 end_comment
 
 begin_interface

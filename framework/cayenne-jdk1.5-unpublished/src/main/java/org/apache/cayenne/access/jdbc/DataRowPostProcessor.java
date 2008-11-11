@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Deals with DataRow type conversion in inheritance situations.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Deals with DataRow type conversion in inheritance situations.  *   * @since 1.2  */
 end_comment
 
 begin_class

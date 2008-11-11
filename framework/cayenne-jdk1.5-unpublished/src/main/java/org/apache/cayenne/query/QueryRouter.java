@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An interface used by Queries to route themselves to an appropriate QueryEngine. As of  * 1.2 QueryRouter only supports routing by DataMap.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An interface used by Queries to route themselves to an appropriate QueryEngine. As of  * 1.2 QueryRouter only supports routing by DataMap.  *   * @since 1.2  */
 end_comment
 
 begin_interface

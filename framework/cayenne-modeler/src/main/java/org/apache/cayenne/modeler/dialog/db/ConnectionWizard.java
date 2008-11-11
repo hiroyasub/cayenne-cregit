@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A component for choosing a DataSource. Users can choose from the DataSources configured  * in preferences, and one extra set of connection settings. This object will create and  * keep open a JDBC connection. It is caller responsibility to dispose of it properly.  *   * @author Andrus Adamchik  */
+comment|/**  * A component for choosing a DataSource. Users can choose from the DataSources configured  * in preferences, and one extra set of connection settings. This object will create and  * keep open a JDBC connection. It is caller responsibility to dispose of it properly.  *   */
 end_comment
 
 begin_comment

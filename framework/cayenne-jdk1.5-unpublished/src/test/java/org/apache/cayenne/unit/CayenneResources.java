@@ -286,7 +286,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Initializes connections for Cayenne unit tests.  *   * @author Andrus Adamchik  */
+comment|/**  * Initializes connections for Cayenne unit tests.  *   */
 end_comment
 
 begin_comment

@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Event for callback type selection change  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Event for callback type selection change  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class

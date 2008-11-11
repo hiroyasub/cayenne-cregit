@@ -594,7 +594,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link org.apache.cayenne.jpa.map.JpaEntityMap} loader that reads mapping information  * from the class annotations per JPA specification.  *<h3>Specification Documentation, persistence_1_0.xsd, "class" element.</h3>  *<p>  * [Each managed class] should be annotated with either \@Entity, \@Embeddable or  * \@MappedSuperclass  *   * @author Andrus Adamchik  */
+comment|/**  * {@link org.apache.cayenne.jpa.map.JpaEntityMap} loader that reads mapping information  * from the class annotations per JPA specification.  *<h3>Specification Documentation, persistence_1_0.xsd, "class" element.</h3>  *<p>  * [Each managed class] should be annotated with either \@Entity, \@Embeddable or  * \@MappedSuperclass  *   */
 end_comment
 
 begin_class

@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to add a {@link DbEntity} to a {@link DataMap}  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to add a {@link DbEntity} to a {@link DataMap}  *   */
 end_comment
 
 begin_class

@@ -936,7 +936,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A converter between {@link org.apache.cayenne.jpa.map.JpaEntityMap} and Cayenne  * {@link org.apache.cayenne.map.DataMap}.  *   * @author Andrus Adamchik  */
+comment|/**  * A converter between {@link org.apache.cayenne.jpa.map.JpaEntityMap} and Cayenne  * {@link org.apache.cayenne.map.DataMap}.  *   */
 end_comment
 
 begin_class

@@ -280,7 +280,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Traverse a {@link DataNode} and a {@link DataMap} and create a group of  * {@link MergerToken}s to alter the {@link DataNode} datastore to match the  * {@link DataMap}.  *   * @author halset  */
+comment|/**  * Traverse a {@link DataNode} and a {@link DataMap} and create a group of  * {@link MergerToken}s to alter the {@link DataNode} datastore to match the  * {@link DataMap}.  *   */
 end_comment
 
 begin_class

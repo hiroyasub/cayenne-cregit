@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing relationships with compound keys.  *   * @author Andrus Adamchik  */
+comment|/**  * Testing relationships with compound keys.  *   */
 end_comment
 
 begin_class

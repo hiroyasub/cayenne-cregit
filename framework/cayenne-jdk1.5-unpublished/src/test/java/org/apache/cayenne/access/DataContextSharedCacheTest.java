@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test suite for testing behavior of multiple DataContexts that share the same underlying  * DataDomain.  *   * @author Andrus Adamchik  */
+comment|/**  * Test suite for testing behavior of multiple DataContexts that share the same underlying  * DataDomain.  *   */
 end_comment
 
 begin_class

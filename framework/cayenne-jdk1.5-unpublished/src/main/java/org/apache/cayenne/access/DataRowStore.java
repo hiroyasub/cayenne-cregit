@@ -308,7 +308,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A fixed size cache of DataRows keyed by ObjectId.  *<p>  *<strong>Synchronization Note:</strong> DataRowStore synchronizes most operations on  * its own instance.  *</p>  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * A fixed size cache of DataRows keyed by ObjectId.  *<p>  *<strong>Synchronization Note:</strong> DataRowStore synchronizes most operations on  * its own instance.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class

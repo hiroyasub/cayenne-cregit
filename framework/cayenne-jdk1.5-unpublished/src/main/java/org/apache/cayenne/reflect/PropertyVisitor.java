@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A visitor for various types of properties in a ClassDescriptor. Helpful in defining  * operations that should be performed differently on different properties.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A visitor for various types of properties in a ClassDescriptor. Helpful in defining  * operations that should be performed differently on different properties.  *   * @since 3.0  */
 end_comment
 
 begin_interface

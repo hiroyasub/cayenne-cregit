@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Deserializer that overrides query roots with server classes on deserialization.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Deserializer that overrides query roots with server classes on deserialization.  *   * @since 1.2  */
 end_comment
 
 begin_class

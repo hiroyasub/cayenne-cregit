@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A convenience base superclass for {@link ToOneProperty} implementors.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A convenience base superclass for {@link ToOneProperty} implementors.  *   * @since 3.0  */
 end_comment
 
 begin_class

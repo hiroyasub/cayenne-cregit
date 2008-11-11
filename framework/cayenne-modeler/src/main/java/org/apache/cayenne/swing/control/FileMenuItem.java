@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A menu item that points to a file.  *   * @author Andrus Adamchik  */
+comment|/**  * A menu item that points to a file.  *   */
 end_comment
 
 begin_class

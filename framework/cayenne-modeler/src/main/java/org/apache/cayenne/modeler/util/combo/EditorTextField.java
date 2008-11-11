@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * EditorTextField is a text field to be used in combobox editor. It paints self normally  * when focused, otherwise combo's renderer is used.  *   * @author Andrey Razumovsky  */
+comment|/**  * EditorTextField is a text field to be used in combobox editor. It paints self normally  * when focused, otherwise combo's renderer is used.  *   */
 end_comment
 
 begin_class

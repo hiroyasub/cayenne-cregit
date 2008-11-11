@@ -344,7 +344,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that serves as a factory for various project renderers.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Utility class that serves as a factory for various project renderers.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -270,7 +270,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A main modeler application class that provides a number of services to the Modeler  * components. Configuration properties:  *<ul>  *<li>cayenne.modeler.application.name - name of the application, 'CayenneModeler' is  * default. Used to locate prerferences domain among other things.</li>  *<li>cayenne.modeler.pref.version - a version of the preferences DB schema. Default is  * "1.1".</li>  *</ul>  *   * @author Andrus Adamchik  */
+comment|/**  * A main modeler application class that provides a number of services to the Modeler  * components. Configuration properties:  *<ul>  *<li>cayenne.modeler.application.name - name of the application, 'CayenneModeler' is  * default. Used to locate prerferences domain among other things.</li>  *<li>cayenne.modeler.pref.version - a version of the preferences DB schema. Default is  * "1.1".</li>  *</ul>  *   */
 end_comment
 
 begin_class

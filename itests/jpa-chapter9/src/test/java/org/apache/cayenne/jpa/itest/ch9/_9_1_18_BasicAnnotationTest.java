@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests not included here: (1) supported types are tested in chapter 2; (2) there is no  * good way to test optionality, as it is only a hint to the schema generator that is used  * outside the JPA spec. It should be tested at the provider level.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests not included here: (1) supported types are tested in chapter 2; (2) there is no  * good way to test optionality, as it is only a hint to the schema generator that is used  * outside the JPA spec. It should be tested at the provider level.  *   */
 end_comment
 
 begin_class

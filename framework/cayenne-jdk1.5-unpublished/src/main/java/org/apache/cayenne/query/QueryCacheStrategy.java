@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines query result caching policy.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Defines query result caching policy.  *   * @since 3.0  */
 end_comment
 
 begin_enum

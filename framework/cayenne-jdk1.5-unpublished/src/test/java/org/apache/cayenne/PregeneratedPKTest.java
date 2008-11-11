@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This test case ensures that PK pre-generated for the entity manually before commit is  * used during commit as well.  *   * @author Andrus Adamchik  */
+comment|/**  * This test case ensures that PK pre-generated for the entity manually before commit is  * used during commit as well.  *   */
 end_comment
 
 begin_comment

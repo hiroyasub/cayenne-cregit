@@ -324,7 +324,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements dependency sorting algorithms for ObjEntities, DbEntities and DataObjects.  * Presently it works for acyclic database schemas with possible multi-reflexive tables.  * The class uses topological sorting from the<a  * href="http://objectstyle.org/ashwood/">Ashwood library</a>.  *   * @author Andriy Shapochka, Andrus Adamchik  * @since 1.1  */
+comment|/**  * Implements dependency sorting algorithms for ObjEntities, DbEntities and DataObjects.  * Presently it works for acyclic database schemas with possible multi-reflexive tables.  * The class uses topological sorting from the<a  * href="http://objectstyle.org/ashwood/">Ashwood library</a>.  *   * @since 1.1  */
 end_comment
 
 begin_class

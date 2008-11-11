@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Garry Watkins  */
+comment|/**  */
 end_comment
 
 begin_class

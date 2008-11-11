@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Works around HSQLDB's pickiness about stored procedure syntax.  *   * @since 1.2  * @author Cristopher Daniluk  */
+comment|/**  * Works around HSQLDB's pickiness about stored procedure syntax.  *   * @since 1.2  */
 end_comment
 
 begin_class

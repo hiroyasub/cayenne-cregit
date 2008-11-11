@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a generic callback operation executed via reflection on a persistent object.  * Note that the method must be declared in the class itself. Callback will not look up  * the class hierarchy.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Defines a generic callback operation executed via reflection on a persistent object.  * Note that the method must be declared in the class itself. Callback will not look up  * the class hierarchy.  *   * @since 3.0  */
 end_comment
 
 begin_class

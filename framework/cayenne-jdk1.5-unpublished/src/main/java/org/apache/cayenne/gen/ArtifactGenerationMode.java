@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Code generator execution mode for a single artifact.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Code generator execution mode for a single artifact.  *   * @since 3.0  */
 end_comment
 
 begin_enum

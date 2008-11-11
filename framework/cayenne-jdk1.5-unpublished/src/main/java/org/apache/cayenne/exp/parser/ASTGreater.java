@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Greate Than" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Greate Than" expression.  *   */
 end_comment
 
 begin_class

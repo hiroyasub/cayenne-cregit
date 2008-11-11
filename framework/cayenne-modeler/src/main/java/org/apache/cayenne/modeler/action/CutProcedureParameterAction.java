@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for cutting procedure parameter(s)  * @author Andrey Razumovsky  */
+comment|/**  * Action for cutting procedure parameter(s)  */
 end_comment
 
 begin_class

@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tracks dirty Persistent objects.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Tracks dirty Persistent objects.  *   * @since 1.2  */
 end_comment
 
 begin_class

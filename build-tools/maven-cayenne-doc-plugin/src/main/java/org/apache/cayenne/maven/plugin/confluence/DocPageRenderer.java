@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Extracts embedded links from Confluence documentation and converts them to local fs  * references  *   * @author Cris Daniluk  */
+comment|/**  * Extracts embedded links from Confluence documentation and converts them to local fs  * references  *   */
 end_comment
 
 begin_class

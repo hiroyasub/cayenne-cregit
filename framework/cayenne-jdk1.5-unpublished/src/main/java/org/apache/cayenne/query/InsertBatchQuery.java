@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Batched INSERT query. Allows inserting multiple object snapshots (DataRows) for a given  * DbEntity in a single query. InsertBatchQuery normally is not used directly. Rather  * DataContext creates one internally when committing DataObjects.  *   * @author Andriy Shapochka  */
+comment|/**  * Batched INSERT query. Allows inserting multiple object snapshots (DataRows) for a given  * DbEntity in a single query. InsertBatchQuery normally is not used directly. Rather  * DataContext creates one internally when committing DataObjects.  *   */
 end_comment
 
 begin_class

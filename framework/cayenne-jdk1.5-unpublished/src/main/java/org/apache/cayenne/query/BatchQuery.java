@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * BatchQuery and its descendants allow to group similar data for the batch database  * modifications, including inserts, updates and deletes. Single BatchQuery corresponds to  * a parameterized PreparedStatement and a matrix of values.  *   * @author Andriy Shapochka  * @author Andrus Adamchik  */
+comment|/**  * BatchQuery and its descendants allow to group similar data for the batch database  * modifications, including inserts, updates and deletes. Single BatchQuery corresponds to  * a parameterized PreparedStatement and a matrix of values.  *   */
 end_comment
 
 begin_class

@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop ClassTransformer that logs all classes that were passed through it.  *   * @author Andrus Adamchik  */
+comment|/**  * A noop ClassTransformer that logs all classes that were passed through it.  *   */
 end_comment
 
 begin_class

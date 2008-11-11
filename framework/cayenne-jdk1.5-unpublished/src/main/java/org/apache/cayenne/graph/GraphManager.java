@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a generic "managed" graph with nodes mapped by their ids. Inherited  * GraphChangeHandler methods are intended as callbacks for graph node objects to notify  * graph of their changes.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Represents a generic "managed" graph with nodes mapped by their ids. Inherited  * GraphChangeHandler methods are intended as callbacks for graph node objects to notify  * graph of their changes.  *   * @since 1.2  */
 end_comment
 
 begin_interface

@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FileConfiguration loads a Cayenne configuraton file from a given location in the file  * system.  *   * @author Holger Hoffstaette  */
+comment|/**  * FileConfiguration loads a Cayenne configuraton file from a given location in the file  * system.  *   */
 end_comment
 
 begin_class

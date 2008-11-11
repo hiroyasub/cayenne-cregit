@@ -232,7 +232,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLAction that runs a stored procedure. Note that ProcedureAction has internal state  * and is not thread-safe.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A SQLAction that runs a stored procedure. Note that ProcedureAction has internal state  * and is not thread-safe.  *   * @since 1.2  */
 end_comment
 
 begin_class

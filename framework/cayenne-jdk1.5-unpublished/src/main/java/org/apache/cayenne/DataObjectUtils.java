@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A collection of utility methods to work with DataObjects.  *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A collection of utility methods to work with DataObjects.  *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class

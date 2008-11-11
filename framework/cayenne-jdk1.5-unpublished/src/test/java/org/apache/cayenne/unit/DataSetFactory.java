@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class that manages sets of queries for Cayenne test cases.  *   * @author Andrus Adamchik  */
+comment|/**  * A class that manages sets of queries for Cayenne test cases.  *   */
 end_comment
 
 begin_interface

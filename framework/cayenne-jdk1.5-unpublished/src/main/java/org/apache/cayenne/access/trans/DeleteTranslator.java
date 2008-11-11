@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class implements default translation mechanism of org.apache.cayenne.query.DeleteQuery  * objects to SQL DELETE statements.  *   * @author Andrus Adamchik  * @deprecated since 3.0 since {@link DeleteQuery} is deprecated.  */
+comment|/**  * Class implements default translation mechanism of org.apache.cayenne.query.DeleteQuery  * objects to SQL DELETE statements.  *   * @deprecated since 3.0 since {@link DeleteQuery} is deprecated.  */
 end_comment
 
 begin_class

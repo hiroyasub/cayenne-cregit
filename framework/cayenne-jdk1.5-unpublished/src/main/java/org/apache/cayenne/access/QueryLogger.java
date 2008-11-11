@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * QueryLogger is intended to log special events that happen whenever Cayenne interacts  * with a database. This includes execution of generated SQL statements, result counts,  * connection events, etc. Normally QueryLogger methods are not invoked directly by the  * . Rather it is a single logging point used by the framework.  *<p>  * Internally QueryLogger uses commons-logging at the "info" level.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * QueryLogger is intended to log special events that happen whenever Cayenne interacts  * with a database. This includes execution of generated SQL statements, result counts,  * connection events, etc. Normally QueryLogger methods are not invoked directly by the  * . Rather it is a single logging point used by the framework.  *<p>  * Internally QueryLogger uses commons-logging at the "info" level.  *</p>  *   */
 end_comment
 
 begin_class

@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel for file encoding selection.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel for file encoding selection.  *   */
 end_comment
 
 begin_class

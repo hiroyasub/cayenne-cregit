@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that stores server side objects for the client session.  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * An object that stores server side objects for the client session.  *   * @since 1.2  */
 end_comment
 
 begin_class

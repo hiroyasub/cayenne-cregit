@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne EntityManagerFactory that supports resource-local transactions.  *   * @author Andrus Adamchik  */
+comment|/**  * A Cayenne EntityManagerFactory that supports resource-local transactions.  *   */
 end_comment
 
 begin_class

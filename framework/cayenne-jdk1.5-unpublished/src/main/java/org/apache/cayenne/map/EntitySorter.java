@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for sorting of Cayenne entities based on their mutual dependencies.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Defines API for sorting of Cayenne entities based on their mutual dependencies.  *   * @since 1.1  */
 end_comment
 
 begin_interface

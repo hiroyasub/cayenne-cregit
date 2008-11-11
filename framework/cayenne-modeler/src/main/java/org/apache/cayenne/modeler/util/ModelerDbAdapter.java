@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbAdapter wrapper used in CayenneModeler.  *   * @author Andrus Adamchik  */
+comment|/**  * A DbAdapter wrapper used in CayenneModeler.  *   */
 end_comment
 
 begin_class

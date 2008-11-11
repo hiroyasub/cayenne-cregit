@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents Cayenne application project.  *   * @author Andrus Adamchik  */
+comment|/**  * Represents Cayenne application project.  *   */
 end_comment
 
 begin_class

@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link QueryCache} wrapper that introduces a key namespace on top of a delegate  * shared cache. This way multiple cache users can share the same underlying cache without  * a possibility of key conflicts, yet refresh the cache groups in a coordinated fashion.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A {@link QueryCache} wrapper that introduces a key namespace on top of a delegate  * shared cache. This way multiple cache users can share the same underlying cache without  * a possibility of key conflicts, yet refresh the cache groups in a coordinated fashion.  *   * @since 3.0  */
 end_comment
 
 begin_class

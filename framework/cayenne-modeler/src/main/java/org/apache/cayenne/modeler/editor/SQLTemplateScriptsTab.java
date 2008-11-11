@@ -440,7 +440,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel for configuring SQL scripts of a SQL template.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel for configuring SQL scripts of a SQL template.  *   */
 end_comment
 
 begin_class

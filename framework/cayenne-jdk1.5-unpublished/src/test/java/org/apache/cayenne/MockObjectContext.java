@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop ObjectContext used for unit testing.  *   * @author Andrus Adamchik  */
+comment|/**  * A noop ObjectContext used for unit testing.  *   */
 end_comment
 
 begin_class

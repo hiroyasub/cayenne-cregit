@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Detects SQLite database from JDBC metadata.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Detects SQLite database from JDBC metadata.  *   * @since 3.0  */
 end_comment
 
 begin_class

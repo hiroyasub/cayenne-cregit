@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic panel for entering DataSource information.  *   * @author Andrus Adamchik  */
+comment|/**  * A generic panel for entering DataSource information.  *   */
 end_comment
 
 begin_class

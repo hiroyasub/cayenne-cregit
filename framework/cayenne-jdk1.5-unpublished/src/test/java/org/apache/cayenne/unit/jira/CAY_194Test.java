@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing qualifier translator correctness on reflexive relationships.  *   * @author Andrus Adamchik  */
+comment|/**  * Testing qualifier translator correctness on reflexive relationships.  *   */
 end_comment
 
 begin_comment

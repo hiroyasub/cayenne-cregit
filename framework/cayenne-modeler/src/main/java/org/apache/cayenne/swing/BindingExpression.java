@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class for expression evaluation using a designated scripting language (now - OGNL).  *   * @author Andrus Adamchik  */
+comment|/**  * A class for expression evaluation using a designated scripting language (now - OGNL).  *   */
 end_comment
 
 begin_class

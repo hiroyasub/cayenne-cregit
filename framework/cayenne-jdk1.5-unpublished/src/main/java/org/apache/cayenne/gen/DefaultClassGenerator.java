@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Extends MapClassGenerator to allow target-specific filesystem locations where the files  * should go. Adds "execute" method that performs class generation based on the internal  * state of this object.  *   * @author Andrus Adamchik  * @deprecated since 3.0 use {@link ClassGenerationAction} and subclasses.  */
+comment|/**  * Extends MapClassGenerator to allow target-specific filesystem locations where the files  * should go. Adds "execute" method that performs class generation based on the internal  * state of this object.  *   * @deprecated since 3.0 use {@link ClassGenerationAction} and subclasses.  */
 end_comment
 
 begin_class

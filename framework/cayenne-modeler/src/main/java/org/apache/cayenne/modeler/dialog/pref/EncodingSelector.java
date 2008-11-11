@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for stream encoding picker component.  *   * @author Andrus Adamchik  */
+comment|/**  * A controller for stream encoding picker component.  *   */
 end_comment
 
 begin_class

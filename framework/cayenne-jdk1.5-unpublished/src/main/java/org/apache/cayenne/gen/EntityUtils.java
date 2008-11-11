@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Attributes and Methods for working with ObjEntities.  *   * @since 1.2  * @author Mike Kienenberger  */
+comment|/**  * Attributes and Methods for working with ObjEntities.  *   * @since 1.2  */
 end_comment
 
 begin_class

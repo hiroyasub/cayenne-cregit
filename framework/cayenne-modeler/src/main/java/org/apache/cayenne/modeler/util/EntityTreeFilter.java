@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * EntityTreeFilter is an interface for deciding which attributes or  * relationships should appear in the tree  * @author Andrey Razumovsky  */
+comment|/**  * EntityTreeFilter is an interface for deciding which attributes or  * relationships should appear in the tree  */
 end_comment
 
 begin_interface

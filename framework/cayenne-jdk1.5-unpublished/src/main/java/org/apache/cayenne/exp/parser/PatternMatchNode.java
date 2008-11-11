@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of pattern matching nodes. Assumes that subclass is a binary expression with  * the second operand being a pattern.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Superclass of pattern matching nodes. Assumes that subclass is a binary expression with  * the second operand being a pattern.  *   * @since 1.1  */
 end_comment
 
 begin_class

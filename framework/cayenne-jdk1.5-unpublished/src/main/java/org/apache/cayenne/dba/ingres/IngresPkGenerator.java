@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Ingres-specific sequence based PK generator.  *   * @since 1.2  * @author Tore Halset  */
+comment|/**  * Ingres-specific sequence based PK generator.  *   * @since 1.2  */
 end_comment
 
 begin_class

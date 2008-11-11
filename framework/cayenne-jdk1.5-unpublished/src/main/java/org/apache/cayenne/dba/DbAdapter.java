@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API needed to handle differences between various databases accessed via JDBC.  * Implementing classed are intended to be pluggable database-specific adapters.  * DbAdapter-based architecture is introduced to solve the following problems:  *<ul>  *<li>Make Cayenne code independent from SQL syntax differences between different RDBMS.  *<li>Allow for vendor-specific tuning of JDBC access.  *</ul>  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API needed to handle differences between various databases accessed via JDBC.  * Implementing classed are intended to be pluggable database-specific adapters.  * DbAdapter-based architecture is introduced to solve the following problems:  *<ul>  *<li>Make Cayenne code independent from SQL syntax differences between different RDBMS.  *<li>Allow for vendor-specific tuning of JDBC access.  *</ul>  *   */
 end_comment
 
 begin_interface

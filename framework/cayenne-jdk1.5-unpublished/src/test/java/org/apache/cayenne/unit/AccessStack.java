@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain wrapper used for testing a specific Cayenne stack configuration.  *   * @author Andrus Adamchik  */
+comment|/**  * DataDomain wrapper used for testing a specific Cayenne stack configuration.  *   */
 end_comment
 
 begin_interface

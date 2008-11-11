@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Manages code generation templates.  *   * @author Andrus Adamchik  */
+comment|/**  * Manages code generation templates.  *   */
 end_comment
 
 begin_class

@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**    * @author Michael Misha Shengaout   */
+comment|/**    */
 end_comment
 
 begin_class

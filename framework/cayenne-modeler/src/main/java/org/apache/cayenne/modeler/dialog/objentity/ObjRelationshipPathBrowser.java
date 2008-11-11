@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Multi-column browser for obj relationships  * @author Andrey Razumovsky  */
+comment|/**  * Multi-column browser for obj relationships  */
 end_comment
 
 begin_class

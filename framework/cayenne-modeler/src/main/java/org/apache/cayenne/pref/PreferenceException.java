@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An exception describing a problem with preferences operations.  *   * @author Andrus Adamchik  */
+comment|/**  * An exception describing a problem with preferences operations.  *   */
 end_comment
 
 begin_class

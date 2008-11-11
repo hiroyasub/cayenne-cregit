@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for copying procedure parameter(s)  * @author Andrey Razumovsky  */
+comment|/**  * Action for copying procedure parameter(s)  */
 end_comment
 
 begin_class

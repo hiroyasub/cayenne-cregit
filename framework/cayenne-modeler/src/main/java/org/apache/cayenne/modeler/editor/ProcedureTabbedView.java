@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tabbed panel for stored procedure editing.  *   * @author Andrus Adamchik  */
+comment|/**  * Tabbed panel for stored procedure editing.  *   */
 end_comment
 
 begin_class

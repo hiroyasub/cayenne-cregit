@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Not Between" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Not Between" expression.  *   */
 end_comment
 
 begin_class

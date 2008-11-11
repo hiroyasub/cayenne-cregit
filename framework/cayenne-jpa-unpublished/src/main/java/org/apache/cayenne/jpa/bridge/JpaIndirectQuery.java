@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of indirect queries that map JPA to Cayenne queries.  *   * @author Andrus Adamchik  */
+comment|/**  * A superclass of indirect queries that map JPA to Cayenne queries.  *   */
 end_comment
 
 begin_class

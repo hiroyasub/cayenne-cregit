@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ArcProperty for accessing to-one relationships.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An ArcProperty for accessing to-one relationships.  *   * @since 3.0  */
 end_comment
 
 begin_class

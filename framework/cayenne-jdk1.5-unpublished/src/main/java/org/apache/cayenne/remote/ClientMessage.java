@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A tag interface representing a message sent by a remote client to Cayenne service.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A tag interface representing a message sent by a remote client to Cayenne service.  *   * @since 1.2  */
 end_comment
 
 begin_interface

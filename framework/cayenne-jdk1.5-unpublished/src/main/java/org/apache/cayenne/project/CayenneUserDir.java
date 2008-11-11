@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * CayenneUserDir represents a directory where all Cayenne-related information   * is stored on the user machine. This is normally a<code>$HOME/.cayenne</code>  * directory.  *   * @author Andrus Adamchik  */
+comment|/**  * CayenneUserDir represents a directory where all Cayenne-related information   * is stored on the user machine. This is normally a<code>$HOME/.cayenne</code>  * directory.  *   */
 end_comment
 
 begin_class

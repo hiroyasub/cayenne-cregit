@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a TOC entry. This has a lot of tree-like search functions, but I did not  * find a tree implementation that I thought was worth using for this.  *   * @author Cris Daniluk  */
+comment|/**  * Represents a TOC entry. This has a lot of tree-like search functions, but I did not  * find a tree implementation that I thought was worth using for this.  *   */
 end_comment
 
 begin_class

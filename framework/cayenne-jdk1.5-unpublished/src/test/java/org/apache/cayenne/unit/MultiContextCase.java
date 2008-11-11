@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of test cases requiring multiple DataContexts with   * the same parent DataDomain.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of test cases requiring multiple DataContexts with   * the same parent DataDomain.  *   */
 end_comment
 
 begin_class

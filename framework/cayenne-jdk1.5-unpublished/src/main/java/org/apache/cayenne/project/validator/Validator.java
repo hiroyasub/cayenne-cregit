@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Validator is used to validate Cayenne projects.  *   * @author Andrus Adamchik  */
+comment|/**   * Validator is used to validate Cayenne projects.  *   */
 end_comment
 
 begin_class

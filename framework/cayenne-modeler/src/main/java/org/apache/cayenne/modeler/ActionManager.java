@@ -1042,7 +1042,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that manages CayenneModeler actions.  *   * @author Andrus Adamchik  */
+comment|/**  * An object that manages CayenneModeler actions.  *   */
 end_comment
 
 begin_class

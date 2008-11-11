@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of test cases that require multiple DataNodes.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of test cases that require multiple DataNodes.  *   */
 end_comment
 
 begin_class

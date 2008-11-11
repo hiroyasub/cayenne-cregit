@@ -246,7 +246,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Contains mappings for guessing defaults for various adapter and JDBC settings.  *   * @author Andrus Adamchik  */
+comment|/**  * Contains mappings for guessing defaults for various adapter and JDBC settings.  *   */
 end_comment
 
 begin_class

@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to describe a conditional chunk of a {@link ChainDirective chain}.  * Usage of chunk is the following:  *   *<pre>  * #chunk()...#end - e.g. #chunk()A = 5#end  * #chunk(condition)...#end - e.g. #chunk($a)A = $a#end</pre>  *   *<p>If condition is evaluated to false, chunk is not included in the chain,  * if it is true, chunk is included, and if it is not the first chunk, it is  * prefixed with chain join.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A custom Velocity directive to describe a conditional chunk of a {@link ChainDirective chain}.  * Usage of chunk is the following:  *   *<pre>  * #chunk()...#end - e.g. #chunk()A = 5#end  * #chunk(condition)...#end - e.g. #chunk($a)A = $a#end</pre>  *   *<p>If condition is evaluated to false, chunk is not included in the chain,  * if it is true, chunk is included, and if it is not the first chunk, it is  * prefixed with chain join.  *   * @since 1.1  */
 end_comment
 
 begin_class

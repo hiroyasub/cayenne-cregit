@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processes object diffs, generating DB diffs. Can be used for both UPDATE and INSERT.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Processes object diffs, generating DB diffs. Can be used for both UPDATE and INSERT.  *   * @since 1.2  */
 end_comment
 
 begin_class

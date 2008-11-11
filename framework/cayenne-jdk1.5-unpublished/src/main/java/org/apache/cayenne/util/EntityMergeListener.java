@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * EntityMergeListener interface defines API useful for listening to  * EntityMergeSupport processing.  *    * @author Andrey Razumovsky  */
+comment|/**  * EntityMergeListener interface defines API useful for listening to  * EntityMergeSupport processing.  *    */
 end_comment
 
 begin_interface

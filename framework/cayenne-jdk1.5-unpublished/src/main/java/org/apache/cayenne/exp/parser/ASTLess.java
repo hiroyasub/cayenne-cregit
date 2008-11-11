@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Less Then" expression.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * "Less Then" expression.  *   * @since 1.1  */
 end_comment
 
 begin_class

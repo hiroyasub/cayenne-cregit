@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * CayenneTransferable is a data holder of Cayenne object(s), like  * Entities, Attributes, Relationships etc.  * @author Andrey Razumovsky  */
+comment|/**  * CayenneTransferable is a data holder of Cayenne object(s), like  * Entities, Attributes, Relationships etc.  */
 end_comment
 
 begin_class

@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A generic unchecked exception that may be thrown by Cayenne framework. All runtime  * exceptions in Cayenne inherit from this class.  *   * @author Andrus Adamchik  */
+comment|/**  * A generic unchecked exception that may be thrown by Cayenne framework. All runtime  * exceptions in Cayenne inherit from this class.  *   */
 end_comment
 
 begin_class

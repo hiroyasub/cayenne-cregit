@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to conditionally join a number of {@link ChunkDirective chunks}.  * Usage of chain is the following:  *   *<pre>  * #chain(operator) - e.g. #chain(' AND ')  * #chain(operator prefix) - e.g. #chain(' AND ' 'WHERE ')</pre>  *   *<p><code>operator</code> (e.g. AND, OR, etc.) is used to join chunks that are included  * in a chain.<code>prefix</code> is inserted if a chain contains at least one chunk.  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A custom Velocity directive to conditionally join a number of {@link ChunkDirective chunks}.  * Usage of chain is the following:  *   *<pre>  * #chain(operator) - e.g. #chain(' AND ')  * #chain(operator prefix) - e.g. #chain(' AND ' 'WHERE ')</pre>  *   *<p><code>operator</code> (e.g. AND, OR, etc.) is used to join chunks that are included  * in a chain.<code>prefix</code> is inserted if a chain contains at least one chunk.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class

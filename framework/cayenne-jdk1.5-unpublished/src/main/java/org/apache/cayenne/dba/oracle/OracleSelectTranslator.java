@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Select translator that implements Oracle-specific optimizations.  *   * @author Andrus Adamchik  */
+comment|/**  * Select translator that implements Oracle-specific optimizations.  *   */
 end_comment
 
 begin_class

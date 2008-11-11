@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<i>Just like Base64 codec, this test case is borrowed from Apache.</i>  *   * @author Andrus Adamchik  */
+comment|/**  *<i>Just like Base64 codec, this test case is borrowed from Apache.</i>  *   */
 end_comment
 
 begin_class

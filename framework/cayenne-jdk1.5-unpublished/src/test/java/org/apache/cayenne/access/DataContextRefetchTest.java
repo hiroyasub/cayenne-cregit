@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Andrus Adamchik  * @deprecated since 3.0  */
+comment|/**  * @deprecated since 3.0  */
 end_comment
 
 begin_class

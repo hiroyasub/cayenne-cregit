@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test cases for DomainHelper class.  *   * @author Andrus Adamchik  */
+comment|/**  * Test cases for DomainHelper class.  *   */
 end_comment
 
 begin_class

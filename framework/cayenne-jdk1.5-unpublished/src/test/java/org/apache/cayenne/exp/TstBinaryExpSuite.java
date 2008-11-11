@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A suite of binary expression tests.  *   * @author Andrus Adamchik  */
+comment|/**  * A suite of binary expression tests.  *   */
 end_comment
 
 begin_class

@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class that configures Hessian serialization properties using reflection.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A utility class that configures Hessian serialization properties using reflection.  *   * @since 1.2  */
 end_comment
 
 begin_class

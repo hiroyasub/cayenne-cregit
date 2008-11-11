@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Filters diffs before returning them to the client. Ensures that no server-only data  * leaks to the client and also that all diff objects returned to the client are public  * classes available on the client.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Filters diffs before returning them to the client. Ensures that no server-only data  * leaks to the client and also that all diff objects returned to the client are public  * classes available on the client.  *   * @since 3.0  */
 end_comment
 
 begin_comment

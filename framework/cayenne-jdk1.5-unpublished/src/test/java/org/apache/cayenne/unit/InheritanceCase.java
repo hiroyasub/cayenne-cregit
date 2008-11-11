@@ -12,7 +12,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A superclass of test cases using "inheritance" DataMap for its access stack.  *   * @author Dzmitry Rusak  */
+comment|/**  * A superclass of test cases using "inheritance" DataMap for its access stack.  *   */
 end_comment
 
 begin_class

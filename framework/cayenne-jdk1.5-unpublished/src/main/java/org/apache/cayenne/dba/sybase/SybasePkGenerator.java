@@ -136,7 +136,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Primary key generator implementation for Sybase. Uses a lookup table named  * "AUTO_PK_SUPPORT" and a stored procedure "auto_pk_for_table" to search and increment  * primary keys for tables.  *   * @author Andrus Adamchik  */
+comment|/**  * Primary key generator implementation for Sybase. Uses a lookup table named  * "AUTO_PK_SUPPORT" and a stored procedure "auto_pk_for_table" to search and increment  * primary keys for tables.  *   */
 end_comment
 
 begin_class

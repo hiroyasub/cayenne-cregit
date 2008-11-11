@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JUnit case to test ROP functionality  * @author Andrey Razumovsky  */
+comment|/**  * JUnit case to test ROP functionality  */
 end_comment
 
 begin_class

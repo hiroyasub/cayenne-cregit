@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class for creating entity listeners on an ObjEntity  *  * @author Vasil Tarasevich  * @version 1.0 Oct 30, 2007  */
+comment|/**  * Action class for creating entity listeners on an ObjEntity  *  * @version 1.0 Oct 30, 2007  */
 end_comment
 
 begin_class

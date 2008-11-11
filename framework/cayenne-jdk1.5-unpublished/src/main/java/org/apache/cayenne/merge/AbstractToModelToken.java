@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Common abstract superclass for all {@link MergerToken}s going from the database to the  * model.  *   * @author halset  */
+comment|/**  * Common abstract superclass for all {@link MergerToken}s going from the database to the  * model.  *   */
 end_comment
 
 begin_class

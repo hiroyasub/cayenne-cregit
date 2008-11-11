@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object for the {@link EJBQLQuery}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A metadata object for the {@link EJBQLQuery}.  *   * @since 3.0  */
 end_comment
 
 begin_class

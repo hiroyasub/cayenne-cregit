@@ -224,7 +224,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to create standard Swing widgets following default look-and-feel of  * CayenneModeler.  *   * @author Andrus Adamchik  */
+comment|/**  * Utility class to create standard Swing widgets following default look-and-feel of  * CayenneModeler.  *   */
 end_comment
 
 begin_comment

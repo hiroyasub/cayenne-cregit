@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A factory that dynamically creates ExtendedTypes for Character, Character[], Byte[] and  * char[] based on adapter configured types for String and byte[].  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A factory that dynamically creates ExtendedTypes for Character, Character[], Byte[] and  * char[] based on adapter configured types for String and byte[].  *   * @since 3.0  */
 end_comment
 
 begin_class

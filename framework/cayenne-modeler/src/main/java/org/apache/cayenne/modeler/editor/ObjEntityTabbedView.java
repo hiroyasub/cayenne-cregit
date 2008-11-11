@@ -338,7 +338,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tabbed ObjEntity editor panel.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Tabbed ObjEntity editor panel.  *   */
 end_comment
 
 begin_class

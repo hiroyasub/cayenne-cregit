@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link Artifact} facade for an {@link Embeddable}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * {@link Artifact} facade for an {@link Embeddable}.  *   * @since 3.0  */
 end_comment
 
 begin_class

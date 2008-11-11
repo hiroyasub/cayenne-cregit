@@ -270,7 +270,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Subclass of the SelectQueryOrderingTab configured to work with prefetches.  *   * @author Andrus Adamchik  */
+comment|/**  * Subclass of the SelectQueryOrderingTab configured to work with prefetches.  *   */
 end_comment
 
 begin_class

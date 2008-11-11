@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A listener of {@link org.apache.cayenne.DataChannel} lifecycle events. Changes  * related to an event are attached as a GraphDiff. If a listener needs to process these  * changes, the easiest way to do that is via GraphChangeHandler "visitor":  *   *<pre>  *   public void graphChanged(GraphEvent event) {  *       GraphChangeHandler handler = ..;  *       event.getDiff().apply(handler);  *   }  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A listener of {@link org.apache.cayenne.DataChannel} lifecycle events. Changes  * related to an event are attached as a GraphDiff. If a listener needs to process these  * changes, the easiest way to do that is via GraphChangeHandler "visitor":  *   *<pre>  *   public void graphChanged(GraphEvent event) {  *       GraphChangeHandler handler = ..;  *       event.getDiff().apply(handler);  *   }  *</pre>  *   * @since 1.2  */
 end_comment
 
 begin_interface

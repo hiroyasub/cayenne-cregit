@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Uses Postgres extensions to optimize various translations.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Uses Postgres extensions to optimize various translations.  *   * @since 1.1  */
 end_comment
 
 begin_class

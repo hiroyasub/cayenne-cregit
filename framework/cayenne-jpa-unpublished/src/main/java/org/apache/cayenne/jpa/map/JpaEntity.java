@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A JPA-compliant entity.  *   * @author Andrus Adamchik  */
+comment|/**  * A JPA-compliant entity.  *   */
 end_comment
 
 begin_class

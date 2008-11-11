@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  *   * @author Andrus Adamchik  */
+comment|/**  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  *   */
 end_comment
 
 begin_class

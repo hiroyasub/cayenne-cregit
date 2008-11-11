@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Invocation represents a dynamic method invocation bound to a specific target. The  * target is kept with a WeakReference and can therefore be reclaimed by the Garbage  * Collector.  *   * @author Holger Hoffstaette  * @author Dirk Olmes  */
+comment|/**  * Invocation represents a dynamic method invocation bound to a specific target. The  * target is kept with a WeakReference and can therefore be reclaimed by the Garbage  * Collector.  *   */
 end_comment
 
 begin_class

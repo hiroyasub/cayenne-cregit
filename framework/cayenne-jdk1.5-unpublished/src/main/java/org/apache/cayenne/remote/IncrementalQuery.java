@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A client wrapper for the incremental query that overrides the metadata to ensure that  * query result is cached on the server, so that subranges could be retrieved at a later  * time.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A client wrapper for the incremental query that overrides the metadata to ensure that  * query result is cached on the server, so that subranges could be retrieved at a later  * time.  *   * @since 1.2  */
 end_comment
 
 begin_class

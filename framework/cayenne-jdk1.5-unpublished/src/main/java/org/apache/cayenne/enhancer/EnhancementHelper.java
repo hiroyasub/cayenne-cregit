@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper for the ASM ClassVisitor that encapsulates common class enhancement  * operations.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A helper for the ASM ClassVisitor that encapsulates common class enhancement  * operations.  *   * @since 3.0  */
 end_comment
 
 begin_class

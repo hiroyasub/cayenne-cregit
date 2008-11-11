@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An EntityManagerFactory that registers all EntityManagers that it creates with an  * active JTA Transaction so that they could flush the object state to the database during  * commit.  *   * @author Andrus Adamchik  */
+comment|/**  * An EntityManagerFactory that registers all EntityManagers that it creates with an  * active JTA Transaction so that they could flush the object state to the database during  * commit.  *   */
 end_comment
 
 begin_class

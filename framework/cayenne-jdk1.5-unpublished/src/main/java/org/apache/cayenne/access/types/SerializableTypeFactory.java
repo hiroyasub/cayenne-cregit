@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ExtendedTypeFactory for handling serializable objects. Returned ExtendedType is simply  * an object serialization wrapper on top of byte[] ExtendedType.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * ExtendedTypeFactory for handling serializable objects. Returned ExtendedType is simply  * an object serialization wrapper on top of byte[] ExtendedType.  *   * @since 3.0  */
 end_comment
 
 begin_class

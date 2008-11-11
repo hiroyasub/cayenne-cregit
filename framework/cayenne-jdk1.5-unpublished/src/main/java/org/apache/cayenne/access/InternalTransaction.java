@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a Cayenne-managed local Transaction.  *   * @since 1.2 moved to a top-level class.  * @author Andrus Adamchik  */
+comment|/**  * Represents a Cayenne-managed local Transaction.  *   * @since 1.2 moved to a top-level class.  */
 end_comment
 
 begin_class

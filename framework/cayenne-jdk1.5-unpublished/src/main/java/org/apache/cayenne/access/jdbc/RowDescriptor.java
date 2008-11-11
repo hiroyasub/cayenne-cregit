@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of a result row obtained from a database.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A descriptor of a result row obtained from a database.  *   * @since 1.2  */
 end_comment
 
 begin_class

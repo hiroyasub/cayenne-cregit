@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Add" Expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "Add" Expression.  *   */
 end_comment
 
 begin_class

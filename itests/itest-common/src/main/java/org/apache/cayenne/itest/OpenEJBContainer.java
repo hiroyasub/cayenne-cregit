@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A test OpenEJB container object that provides JNDI and JTA environment to the  * integration tests.  *   * @author Andrus Adamchik  */
+comment|/**  * A test OpenEJB container object that provides JNDI and JTA environment to the  * integration tests.  *   */
 end_comment
 
 begin_class

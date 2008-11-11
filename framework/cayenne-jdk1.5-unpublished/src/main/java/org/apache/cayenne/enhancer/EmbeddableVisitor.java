@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Enhances classes passed through the visitor to add embeddable fields and methods needed  * by Cayenne.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Enhances classes passed through the visitor to add embeddable fields and methods needed  * by Cayenne.  *   * @since 3.0  */
 end_comment
 
 begin_class

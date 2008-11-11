@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Display event for Stored Procedures.  *   * @author Andrus Adamchik  */
+comment|/**  * Display event for Stored Procedures.  *   */
 end_comment
 
 begin_class

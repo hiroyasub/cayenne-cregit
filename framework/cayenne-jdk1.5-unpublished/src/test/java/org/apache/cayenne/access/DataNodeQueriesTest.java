@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataNode test cases.  *   * @author Andrus Adamchik  */
+comment|/**  * DataNode test cases.  *   */
 end_comment
 
 begin_class

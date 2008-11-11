@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Abstract superclass of Query translators.  *   * @author Andrus Adamchik  */
+comment|/**  * Abstract superclass of Query translators.  *   */
 end_comment
 
 begin_class

@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A reusable editor for DBConnectionInfo object.  *   * @author Andrus Adamchik  */
+comment|/**  * A reusable editor for DBConnectionInfo object.  *   */
 end_comment
 
 begin_class

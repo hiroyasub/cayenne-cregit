@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ComboBoxCellEditor class is a workaround of collision between DefaultCellEditor and   * AutoCompletion behavior. Using DefaultCellEditor will cause combo popup to close  * out of time.  *  * @author Andrey Razumovsky  */
+comment|/**  * ComboBoxCellEditor class is a workaround of collision between DefaultCellEditor and   * AutoCompletion behavior. Using DefaultCellEditor will cause combo popup to close  * out of time.  *  */
 end_comment
 
 begin_class

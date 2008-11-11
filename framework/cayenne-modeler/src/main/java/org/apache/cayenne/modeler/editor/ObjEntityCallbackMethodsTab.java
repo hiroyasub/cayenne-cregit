@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tab for editing callback methods on an ObjEntity  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Tab for editing callback methods on an ObjEntity  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class

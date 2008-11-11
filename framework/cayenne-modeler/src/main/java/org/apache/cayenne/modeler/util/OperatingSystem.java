@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An enum that provides high-level information about the host OS.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * An enum that provides high-level information about the host OS.  *   * @since 3.0  */
 end_comment
 
 begin_enum

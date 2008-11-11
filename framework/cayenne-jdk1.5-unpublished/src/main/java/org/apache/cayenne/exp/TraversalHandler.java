@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Expression visitor interface. Defines callback methods invoked when   * walking the expression using {@link Expression#traverse(TraversalHandler)}.  *   * @author Andrus Adamchik  */
+comment|/**  * Expression visitor interface. Defines callback methods invoked when   * walking the expression using {@link Expression#traverse(TraversalHandler)}.  *   */
 end_comment
 
 begin_interface

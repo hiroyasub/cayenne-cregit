@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of aggregated conditional nodes such as NOT, AND, OR. Performs  * extra checks on parent and child expressions to validate conditions that  * are not addressed in the Cayenne expressions grammar.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Superclass of aggregated conditional nodes such as NOT, AND, OR. Performs  * extra checks on parent and child expressions to validate conditions that  * are not addressed in the Cayenne expressions grammar.  *   * @since 1.1  */
 end_comment
 
 begin_class

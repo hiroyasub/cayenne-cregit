@@ -530,7 +530,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Detail view of the DbEntity attributes.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Detail view of the DbEntity attributes.  *   */
 end_comment
 
 begin_class

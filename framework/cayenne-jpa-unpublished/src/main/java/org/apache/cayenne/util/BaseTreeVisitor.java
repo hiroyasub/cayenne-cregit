@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A common superclass for specialized tree visitors. Can also be used as a noop  * pass-through visitor for nodes that need no processing by themselves.  *   * @author Andrus Adamchik  */
+comment|/**  * A common superclass for specialized tree visitors. Can also be used as a noop  * pass-through visitor for nodes that need no processing by themselves.  *   */
 end_comment
 
 begin_comment

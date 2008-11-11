@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides name pattern matching functionality.  *   * @author Andrus Adamchik, Mike Kienenberger  * @since 1.2  */
+comment|/**  * Provides name pattern matching functionality.  *   * @since 1.2  */
 end_comment
 
 begin_class

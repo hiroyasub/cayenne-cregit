@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for opening log console window (See CAY-366)  * @author Andrey Razumovsky  */
+comment|/**  * Action for opening log console window (See CAY-366)  */
 end_comment
 
 begin_class

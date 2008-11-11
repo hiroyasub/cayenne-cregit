@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>PoolDataSource allows to generate pooled connections.</p>  *  *<p>It is implemented as a wrapper around a non-pooled data source object.   * Delegates all method calls except for "getPooledConnection" to the underlying   * datasource.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  *<p>PoolDataSource allows to generate pooled connections.</p>  *  *<p>It is implemented as a wrapper around a non-pooled data source object.   * Delegates all method calls except for "getPooledConnection" to the underlying   * datasource.  *</p>  *   */
 end_comment
 
 begin_class

@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A list that holds objects for to-many relationships. All operations, except for  * resolving the list from DB, are not synchronized. The safest way to implement custom  * synchronization is to synchronize on parent ObjectStore.  *   * @author Andrus Adamchik  */
+comment|/**  * A list that holds objects for to-many relationships. All operations, except for  * resolving the list from DB, are not synchronized. The safest way to implement custom  * synchronization is to synchronize on parent ObjectStore.  *   */
 end_comment
 
 begin_class

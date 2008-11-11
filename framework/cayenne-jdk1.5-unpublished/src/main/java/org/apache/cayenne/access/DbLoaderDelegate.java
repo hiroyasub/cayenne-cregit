@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbLoaderDelegate defines API that allows to control the behavior of DbLoader during the  * database reverse-engineering. Delegate is also notified of the progress of  * reverse-engineering.  *   * @author Andrus Adamchik  */
+comment|/**  * DbLoaderDelegate defines API that allows to control the behavior of DbLoader during the  * database reverse-engineering. Delegate is also notified of the progress of  * reverse-engineering.  *   */
 end_comment
 
 begin_interface

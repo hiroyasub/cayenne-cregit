@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * LogConsoleWindow is used to show log in a separate dialog   * @author Andrey Razumovsky  */
+comment|/**  * LogConsoleWindow is used to show log in a separate dialog   */
 end_comment
 
 begin_class

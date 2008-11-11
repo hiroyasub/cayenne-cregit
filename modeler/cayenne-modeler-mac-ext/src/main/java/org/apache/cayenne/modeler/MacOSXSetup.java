@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Configures Modeler to better integrate into Mac OS X environment. Has no effect on  * other platforms.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Configures Modeler to better integrate into Mac OS X environment. Has no effect on  * other platforms.  *   * @since 1.1  */
 end_comment
 
 begin_class

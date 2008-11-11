@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A PreparedStatement descriptor containing a String of SQL and an array of parameters.  * SQLStatement is essentially a "compiled" version of any single query.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A PreparedStatement descriptor containing a String of SQL and an array of parameters.  * SQLStatement is essentially a "compiled" version of any single query.  *   * @since 1.1  */
 end_comment
 
 begin_class

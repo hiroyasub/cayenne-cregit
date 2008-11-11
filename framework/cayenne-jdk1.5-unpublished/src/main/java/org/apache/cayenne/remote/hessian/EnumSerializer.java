@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Hessian serializer that enables serialization of JDK 1.5 Enums.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Hessian serializer that enables serialization of JDK 1.5 Enums.  *   * @since 1.2  */
 end_comment
 
 begin_class

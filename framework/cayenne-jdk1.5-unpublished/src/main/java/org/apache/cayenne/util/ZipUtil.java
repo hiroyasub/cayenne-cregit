@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to perform zip/unzip operations on files and directories.  *    * @author Andrus Adamchik  */
+comment|/**  * Utility class to perform zip/unzip operations on files and directories.  *    */
 end_comment
 
 begin_class

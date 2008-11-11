@@ -248,7 +248,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Mike Kienenberger  */
+comment|/**  */
 end_comment
 
 begin_class

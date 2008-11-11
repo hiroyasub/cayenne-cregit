@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a result of a validation execution. Contains a set of  * {@link ValidationFailure ValidationFailures}that occured in a given context. All  * failures are kept in the same order they were added.  *   * @author Fabricio Voznika  * @since 1.1  */
+comment|/**  * Represents a result of a validation execution. Contains a set of  * {@link ValidationFailure ValidationFailures}that occured in a given context. All  * failures are kept in the same order they were added.  *   * @since 1.1  */
 end_comment
 
 begin_class

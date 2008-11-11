@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query engine used for unit testing. Returns canned results instead of doing the  * actual query.  *   * @author Andrus Adamchik  */
+comment|/**  * A query engine used for unit testing. Returns canned results instead of doing the  * actual query.  *   */
 end_comment
 
 begin_class

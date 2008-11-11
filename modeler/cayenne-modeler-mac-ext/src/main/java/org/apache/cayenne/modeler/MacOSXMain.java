@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Main class to start CayenneModeler on MacOSX.  *   * @since 1.2  * @author Michael Gentry  * @author Andrus Adamchik  */
+comment|/**  * Main class to start CayenneModeler on MacOSX.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -232,7 +232,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic implementation of an RemoteService. Subclasses can be customized to work with  * different remoting mechanisms, such as Hessian or JAXRPC.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A generic implementation of an RemoteService. Subclasses can be customized to work with  * different remoting mechanisms, such as Hessian or JAXRPC.  *   * @since 1.2  */
 end_comment
 
 begin_class

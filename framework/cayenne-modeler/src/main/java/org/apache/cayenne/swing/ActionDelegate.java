@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of BindingDelegate that invokes a no-argument context action on every  * model update.  *   * @author Andrus Adamchik  */
+comment|/**  * An implementation of BindingDelegate that invokes a no-argument context action on every  * model update.  *   */
 end_comment
 
 begin_class

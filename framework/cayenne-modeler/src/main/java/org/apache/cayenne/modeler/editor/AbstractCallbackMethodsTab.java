@@ -492,7 +492,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base abstract class for all calback methids editing tabs Contains logic for callback  * methods displaying, creating, removing, esiting, reordering  *   * @author Vasil Tarasevich  */
+comment|/**  * Base abstract class for all calback methids editing tabs Contains logic for callback  * methods displaying, creating, removing, esiting, reordering  *   */
 end_comment
 
 begin_class

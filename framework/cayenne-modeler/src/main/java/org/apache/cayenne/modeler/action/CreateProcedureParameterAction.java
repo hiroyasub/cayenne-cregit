@@ -178,7 +178,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Garry Watkins  * @author Andrus Adamchik  */
+comment|/**  */
 end_comment
 
 begin_class

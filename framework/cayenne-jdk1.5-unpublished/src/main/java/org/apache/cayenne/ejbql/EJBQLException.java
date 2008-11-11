@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An exception thrown on errors during parsing EJBQL statements.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An exception thrown on errors during parsing EJBQL statements.  *   * @since 3.0  */
 end_comment
 
 begin_class

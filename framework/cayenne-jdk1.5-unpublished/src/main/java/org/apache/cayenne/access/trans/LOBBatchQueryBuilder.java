@@ -136,7 +136,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of query builders for the DML operations involving LOBs.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of query builders for the DML operations involving LOBs.  *   */
 end_comment
 
 begin_class

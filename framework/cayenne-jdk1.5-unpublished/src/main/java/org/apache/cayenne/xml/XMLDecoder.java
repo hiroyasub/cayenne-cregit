@@ -254,7 +254,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * XMLDecoder is used to decode XML into objects.  *   * @author Kevin J. Menard, Jr.  * @since 1.2  */
+comment|/**  * XMLDecoder is used to decode XML into objects.  *   * @since 1.2  */
 end_comment
 
 begin_class

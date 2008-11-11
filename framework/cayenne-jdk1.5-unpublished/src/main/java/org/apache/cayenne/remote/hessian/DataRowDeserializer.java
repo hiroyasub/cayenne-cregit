@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Client side deserilaizer of DataRows.  *   * @author Andrus Adamchik  * @since 1.2  */
+comment|/**  * Client side deserilaizer of DataRows.  *   * @since 1.2  */
 end_comment
 
 begin_class

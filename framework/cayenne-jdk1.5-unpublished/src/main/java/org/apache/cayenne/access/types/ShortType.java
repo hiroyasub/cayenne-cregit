@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>java.lang.Short</code> type mapping. Can be configured to recast  * java.lang.Short to java.lang.Integer when binding values to PreparedStatement. This is  * a workaround for bugs in certain drivers. Drivers that are proven to have issues with  * short values are Sybase and Oracle (Mac OS X only).  *   * @author Andrus Adamchik  * @since 1.0.2  */
+comment|/**  * Handles<code>java.lang.Short</code> type mapping. Can be configured to recast  * java.lang.Short to java.lang.Integer when binding values to PreparedStatement. This is  * a workaround for bugs in certain drivers. Drivers that are proven to have issues with  * short values are Sybase and Oracle (Mac OS X only).  *   * @since 1.0.2  */
 end_comment
 
 begin_class

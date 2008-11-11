@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An accessor for fields storing embedded objects. This accessor will initialize null  * fields with appropriate embeddable objects when needed during get and set calls.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An accessor for fields storing embedded objects. This accessor will initialize null  * fields with appropriate embeddable objects when needed during get and set calls.  *   * @since 3.0  */
 end_comment
 
 begin_class

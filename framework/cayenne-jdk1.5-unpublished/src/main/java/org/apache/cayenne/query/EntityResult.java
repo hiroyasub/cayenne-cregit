@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResultSetMapping}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResultSetMapping}.  *   * @since 3.0  */
 end_comment
 
 begin_class

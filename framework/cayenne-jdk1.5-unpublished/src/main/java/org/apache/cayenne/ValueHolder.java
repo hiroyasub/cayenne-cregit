@@ -24,7 +24,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides a level of indirection for property value access, most often used for deferred  * faulting of to-one relationships. A ValueHolder abstracts how a property value is  * obtained (fetched from DB, etc.), thus simplifying design of an object that uses it.  *<p>  * Here is an example of a bean property implemented using ValueHolder:  *</p>  *   *<pre>  * protected ValueHolder someProperty;  *   * public SomeClass getSomeProperty() {  *     return (SomeClass) somePropertyHolder.getValue(SomeClass.class);  * }  *   * public void setSomeProperty(SomeClass newValue) {  *     somePropertyHolder.setValue(SomeClass.class, newValue);  * }  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Provides a level of indirection for property value access, most often used for deferred  * faulting of to-one relationships. A ValueHolder abstracts how a property value is  * obtained (fetched from DB, etc.), thus simplifying design of an object that uses it.  *<p>  * Here is an example of a bean property implemented using ValueHolder:  *</p>  *   *<pre>  * protected ValueHolder someProperty;  *   * public SomeClass getSomeProperty() {  *     return (SomeClass) somePropertyHolder.getValue(SomeClass.class);  * }  *   * public void setSomeProperty(SomeClass newValue) {  *     somePropertyHolder.setValue(SomeClass.class, newValue);  * }  *</pre>  *   * @since 1.2  */
 end_comment
 
 begin_interface

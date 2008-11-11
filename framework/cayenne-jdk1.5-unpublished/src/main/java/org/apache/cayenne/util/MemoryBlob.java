@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Blob implementation that stores content in memory.  *<p>  *<i>This implementation is based on jdbcBlob from HSQLDB (copyright HSQL Development  * Group).</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik, based on HSQLDB jdbcBlob.  */
+comment|/**  * A Blob implementation that stores content in memory.  *<p>  *<i>This implementation is based on jdbcBlob from HSQLDB (copyright HSQL Development  * Group).</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

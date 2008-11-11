@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maps<code>java.util.Date</code> to any of the three database date/time types: TIME,  * DATE, TIMESTAMP.  *   * @author Andrus Adamchik  */
+comment|/**  * Maps<code>java.util.Date</code> to any of the three database date/time types: TIME,  * DATE, TIMESTAMP.  *   */
 end_comment
 
 begin_class

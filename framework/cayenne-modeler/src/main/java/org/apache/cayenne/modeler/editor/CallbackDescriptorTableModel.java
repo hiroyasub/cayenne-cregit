@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Table model for displaying methods list for a particular CallbackDescriptor  *  * @author Vasil Tarasevich  * @version 1.0 Oct 23, 2007  */
+comment|/**  * Table model for displaying methods list for a particular CallbackDescriptor  *  * @version 1.0 Oct 23, 2007  */
 end_comment
 
 begin_class

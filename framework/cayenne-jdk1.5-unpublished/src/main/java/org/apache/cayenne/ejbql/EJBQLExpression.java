@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract EJBQL expression interface.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An abstract EJBQL expression interface.  *   * @since 3.0  */
 end_comment
 
 begin_interface

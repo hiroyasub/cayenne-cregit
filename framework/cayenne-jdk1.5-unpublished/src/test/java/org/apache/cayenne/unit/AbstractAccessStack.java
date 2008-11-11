@@ -288,7 +288,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of algorithms useful for a generic AccessStack.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines a set of algorithms useful for a generic AccessStack.  *   */
 end_comment
 
 begin_class

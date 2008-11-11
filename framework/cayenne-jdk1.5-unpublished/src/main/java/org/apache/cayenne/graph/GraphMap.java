@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A base implementation of GraphManager that stores graph nodes keyed by their ids.  *<h3>Tracking Object Changes</h3>  *<p>  * Registered objects may choose to notify GraphMap of their changes by using callback  * methods defined in GraphChangeHandler interface. GraphMap itself implements as noops,  * leaving it up to subclasses to handle object updates.  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A base implementation of GraphManager that stores graph nodes keyed by their ids.  *<h3>Tracking Object Changes</h3>  *<p>  * Registered objects may choose to notify GraphMap of their changes by using callback  * methods defined in GraphChangeHandler interface. GraphMap itself implements as noops,  * leaving it up to subclasses to handle object updates.  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -136,7 +136,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of the AccessStack that has a single DataNode per DataMap.  *   * @author Andrus Adamchik  */
+comment|/**  * Default implementation of the AccessStack that has a single DataNode per DataMap.  *   */
 end_comment
 
 begin_class

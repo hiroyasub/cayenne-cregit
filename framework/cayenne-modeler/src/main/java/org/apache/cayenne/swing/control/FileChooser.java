@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A control that renders as a text field and a button to choose a file. Fires a property  * change event when a current directory is changed, either explictly or during a file  * selection by the user.  *   * @author Andrus Adamchik  */
+comment|/**  * A control that renders as a text field and a button to choose a file. Fires a property  * change event when a current directory is changed, either explictly or during a file  * selection by the user.  *   */
 end_comment
 
 begin_class

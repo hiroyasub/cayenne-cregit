@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A test case checking that TestDataDomain query blocking works.  *   * @author Andrus Adamchik  */
+comment|/**  * A test case checking that TestDataDomain query blocking works.  *   */
 end_comment
 
 begin_class

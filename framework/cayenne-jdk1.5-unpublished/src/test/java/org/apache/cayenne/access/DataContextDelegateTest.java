@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests various DataContextDelegate methods invocation and consequences on DataContext  * behavior.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests various DataContextDelegate methods invocation and consequences on DataContext  * behavior.  *   */
 end_comment
 
 begin_class

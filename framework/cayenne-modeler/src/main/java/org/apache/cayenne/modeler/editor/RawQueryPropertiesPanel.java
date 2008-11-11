@@ -258,7 +258,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel that supports editing the properties a query not based on ObjEntity, but still  * supporting DataObjects retrieval.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel that supports editing the properties a query not based on ObjEntity, but still  * supporting DataObjects retrieval.  *   */
 end_comment
 
 begin_class

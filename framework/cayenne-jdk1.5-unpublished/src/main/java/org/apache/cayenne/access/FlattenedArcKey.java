@@ -252,7 +252,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A holder of flattened relationship modification data.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A holder of flattened relationship modification data.  *   * @since 1.2  */
 end_comment
 
 begin_class

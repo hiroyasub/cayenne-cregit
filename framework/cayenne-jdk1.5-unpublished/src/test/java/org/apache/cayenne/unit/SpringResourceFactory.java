@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A bean that loads other Spring beans from the specified location.  *   * @author Andrus Adamchik  */
+comment|/**  * A bean that loads other Spring beans from the specified location.  *   */
 end_comment
 
 begin_class

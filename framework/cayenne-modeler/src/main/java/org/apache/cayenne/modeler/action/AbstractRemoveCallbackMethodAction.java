@@ -136,7 +136,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for removing callback methofs  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Base class for removing callback methofs  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class

@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * SmartNamingStrategy is a new strategy for generating names of  * entities, attributes etc.  *   * Advantages of this strategy are:  * -Using of FK names at generating relationship names  * -Dropping 'to' prefix for obj relationships and therefore for generated class methods' names  * -Using pluralized form instead-of "ARRAY" suffix for to-many relationships (i.e. 'adresses'   *   instead-of 'addressArray')  *   * @since 3.0  * @author Andrey Razumovsky  */
+comment|/**  * SmartNamingStrategy is a new strategy for generating names of  * entities, attributes etc.  *   * Advantages of this strategy are:  * -Using of FK names at generating relationship names  * -Dropping 'to' prefix for obj relationships and therefore for generated class methods' names  * -Using pluralized form instead-of "ARRAY" suffix for to-many relationships (i.e. 'adresses'   *   instead-of 'addressArray')  *   * @since 3.0  */
 end_comment
 
 begin_class

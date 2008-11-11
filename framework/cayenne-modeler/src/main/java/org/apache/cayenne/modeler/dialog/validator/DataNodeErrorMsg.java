@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataNode validation message.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * DataNode validation message.  *   */
 end_comment
 
 begin_class

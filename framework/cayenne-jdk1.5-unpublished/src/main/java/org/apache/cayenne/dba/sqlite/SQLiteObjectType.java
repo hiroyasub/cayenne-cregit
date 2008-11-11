@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This ExtendedType is used by SQLite as often the types of columns of the result sets  * can't be determined on the fly, and {@link DefaultType} for Object class throws on  * NULLs.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * This ExtendedType is used by SQLite as often the types of columns of the result sets  * can't be determined on the fly, and {@link DefaultType} for Object class throws on  * NULLs.  *   * @since 3.0  */
 end_comment
 
 begin_class

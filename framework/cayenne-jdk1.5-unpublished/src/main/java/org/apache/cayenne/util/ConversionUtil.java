@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A collection of static conversion utility methods.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A collection of static conversion utility methods.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A runtime exception thrown on various problems in the provider code.  *   * @author Andrus Adamchik  */
+comment|/**  * A runtime exception thrown on various problems in the provider code.  *   */
 end_comment
 
 begin_class

@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory to create JavaGroupsBridge instances. If JavaGroups library is not installed  * this factory will return a noop EventBridge as a failover mechanism.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Factory to create JavaGroupsBridge instances. If JavaGroups library is not installed  * this factory will return a noop EventBridge as a failover mechanism.  *   * @since 1.1  */
 end_comment
 
 begin_class

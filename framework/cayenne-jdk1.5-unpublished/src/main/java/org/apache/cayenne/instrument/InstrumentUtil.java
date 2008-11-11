@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Instrumentation utilities.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Instrumentation utilities.  *   * @since 3.0  */
 end_comment
 
 begin_class

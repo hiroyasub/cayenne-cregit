@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A factory of {@link ClassDescriptor} instances.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A factory of {@link ClassDescriptor} instances.  *   * @since 1.2  */
 end_comment
 
 begin_interface

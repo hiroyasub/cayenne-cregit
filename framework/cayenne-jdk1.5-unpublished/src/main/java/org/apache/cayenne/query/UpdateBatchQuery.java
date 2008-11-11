@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Batched UPDATE query.  *   * @author Andriy Shapochka  */
+comment|/**  * Batched UPDATE query.  *   */
 end_comment
 
 begin_class

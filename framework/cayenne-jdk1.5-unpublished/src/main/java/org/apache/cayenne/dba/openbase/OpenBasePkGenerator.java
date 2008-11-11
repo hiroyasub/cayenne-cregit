@@ -204,7 +204,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * @since 1.1  */
 end_comment
 
 begin_class

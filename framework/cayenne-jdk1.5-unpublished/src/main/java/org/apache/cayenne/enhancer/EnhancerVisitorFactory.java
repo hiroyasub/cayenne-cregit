@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory for the ASM ClassVisitors used during class enhancement.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A factory for the ASM ClassVisitors used during class enhancement.  *   * @since 3.0  */
 end_comment
 
 begin_interface

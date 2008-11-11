@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop CayenneConnector used for unit testing. Accumulates commands sent via this  * connector without doing anything with them.  *   * @author Andrus Adamchik  */
+comment|/**  * A noop CayenneConnector used for unit testing. Accumulates commands sent via this  * connector without doing anything with them.  *   */
 end_comment
 
 begin_class

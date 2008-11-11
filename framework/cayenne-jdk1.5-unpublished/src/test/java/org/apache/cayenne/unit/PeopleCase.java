@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A superclass of test cases using "people" DataMap for its access stack.  *   * @author Andrus Adamchik  */
+comment|/**  * A superclass of test cases using "people" DataMap for its access stack.  *   */
 end_comment
 
 begin_class

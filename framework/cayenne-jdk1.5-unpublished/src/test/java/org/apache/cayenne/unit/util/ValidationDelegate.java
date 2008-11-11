@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A callback interface used by unit tests to implement custom validation logic.  *   * @author Andrus Adamchik  */
+comment|/**  * A callback interface used by unit tests to implement custom validation logic.  *   */
 end_comment
 
 begin_interface

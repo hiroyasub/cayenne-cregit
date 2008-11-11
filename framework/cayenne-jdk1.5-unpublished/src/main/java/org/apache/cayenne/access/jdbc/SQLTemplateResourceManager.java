@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of the Velocity ResourceManager and ResourceLoader that  * creates templates from in-memory Strings.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * An implementation of the Velocity ResourceManager and ResourceLoader that  * creates templates from in-memory Strings.  *   * @since 1.1  */
 end_comment
 
 begin_comment

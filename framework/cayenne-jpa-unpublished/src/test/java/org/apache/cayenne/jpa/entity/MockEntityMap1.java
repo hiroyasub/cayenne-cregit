@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Annotations shared by the entore map.  *   * @author Andrus Adamchik  */
+comment|/**  * Annotations shared by the entore map.  *   */
 end_comment
 
 begin_class

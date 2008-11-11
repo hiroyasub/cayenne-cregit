@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Listener for manipulations on entity listeners  *  * @author tarasevichv  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Listener for manipulations on entity listeners  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_interface

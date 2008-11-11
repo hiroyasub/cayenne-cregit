@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A goal to export Confluence documentation.  *   * @author<a href="mailto:bdudney@apache.org">Bill Dudney</a>  *   * @goal confluence-export  */
+comment|/**  * A goal to export Confluence documentation.  *   *   * @goal confluence-export  */
 end_comment
 
 begin_class

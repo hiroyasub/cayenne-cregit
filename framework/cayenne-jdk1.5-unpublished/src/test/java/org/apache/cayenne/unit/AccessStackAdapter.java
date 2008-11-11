@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API and a common superclass for testing various database features. Different  * databases support different feature sets that need to be tested differently. Many  * things implemented in subclasses may become future candidates for inclusion in the  * corresponding adapter code.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API and a common superclass for testing various database features. Different  * databases support different feature sets that need to be tested differently. Many  * things implemented in subclasses may become future candidates for inclusion in the  * corresponding adapter code.  *   */
 end_comment
 
 begin_class

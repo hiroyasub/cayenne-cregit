@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query handler used by ClientServerChannel.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A query handler used by ClientServerChannel.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A runtime descriptor of an persistent class.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A runtime descriptor of an persistent class.  *   * @since 1.2  */
 end_comment
 
 begin_interface

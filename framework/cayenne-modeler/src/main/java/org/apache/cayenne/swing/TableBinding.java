@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A binding for a JTable.  *   * @author Andrus Adamchik  */
+comment|/**  * A binding for a JTable.  *   */
 end_comment
 
 begin_class

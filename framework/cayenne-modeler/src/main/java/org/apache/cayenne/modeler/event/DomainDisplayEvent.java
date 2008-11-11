@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a display event of a DataDomain.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Represents a display event of a DataDomain.  *   */
 end_comment
 
 begin_class

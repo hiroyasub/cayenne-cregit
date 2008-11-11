@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A collection of utility methods related to regular expressions processing.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A collection of utility methods related to regular expressions processing.  *   * @since 1.2  */
 end_comment
 
 begin_class

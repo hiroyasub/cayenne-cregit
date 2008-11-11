@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Decorates another ExtendedType, converting objects to other Java types.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Decorates another ExtendedType, converting objects to other Java types.  *   * @since 3.0  */
 end_comment
 
 begin_class

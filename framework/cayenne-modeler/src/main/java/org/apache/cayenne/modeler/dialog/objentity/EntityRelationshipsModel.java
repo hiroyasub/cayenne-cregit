@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A model representing an Entity with a set of Relationships, with zero or one selected  * Relationship.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A model representing an Entity with a set of Relationships, with zero or one selected  * Relationship.  *   * @since 1.1  */
 end_comment
 
 begin_class

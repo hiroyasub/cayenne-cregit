@@ -476,7 +476,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbAdapter that automatically detects the kind of database it is running on and  * instantiates an appropriate DB-specific adapter, delegating all subsequent method calls  * to this adapter.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A DbAdapter that automatically detects the kind of database it is running on and  * instantiates an appropriate DB-specific adapter, delegating all subsequent method calls  * to this adapter.  *   * @since 1.2  */
 end_comment
 
 begin_class

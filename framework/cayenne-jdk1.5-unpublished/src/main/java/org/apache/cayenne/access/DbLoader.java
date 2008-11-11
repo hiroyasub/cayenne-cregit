@@ -430,7 +430,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that does reverse engineering of the database. It can create DataMaps  * using database meta data obtained via JDBC driver.  *   * @author Michael Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Utility class that does reverse engineering of the database. It can create DataMaps  * using database meta data obtained via JDBC driver.  *   */
 end_comment
 
 begin_class

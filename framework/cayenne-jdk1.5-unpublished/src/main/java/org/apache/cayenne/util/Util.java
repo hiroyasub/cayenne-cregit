@@ -362,7 +362,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Contains various unorganized static utility methods used across Cayenne.  *   * @author Andrus Adamchik  */
+comment|/**  * Contains various unorganized static utility methods used across Cayenne.  *   */
 end_comment
 
 begin_class

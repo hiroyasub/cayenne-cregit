@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Loads annotations from the entity listener class. Only deals with non-entity formats of  * annotation methods.  *<h3>JPA Spec, 3.4.1:</h3>  *<p>  * Callback methods defined on an entity class have the following signature:<em>void  *<METHOD>()</em>  * Callback methods defined on an entity listener class have the following signature:  *<em>void<METHOD>(Object)</em> The Object argument is the entity instance for which  * the callback method is invoked. It maybe declared as the actual entity type. The  * callback methods can have public, private, protected, or package level access, but must  * not be static or final.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Loads annotations from the entity listener class. Only deals with non-entity formats of  * annotation methods.  *<h3>JPA Spec, 3.4.1:</h3>  *<p>  * Callback methods defined on an entity class have the following signature:<em>void  *<METHOD>()</em>  * Callback methods defined on an entity listener class have the following signature:  *<em>void<METHOD>(Object)</em> The Object argument is the entity instance for which  * the callback method is invoked. It maybe declared as the actual entity type. The  * callback methods can have public, private, protected, or package level access, but must  * not be static or final.  *</p>  *   */
 end_comment
 
 begin_class

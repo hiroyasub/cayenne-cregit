@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Editor for the local DataSources configured in preferences.  *   * @author Andrus Adamchik  */
+comment|/**  * Editor for the local DataSources configured in preferences.  *   */
 end_comment
 
 begin_class

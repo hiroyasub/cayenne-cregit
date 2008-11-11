@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Helper class allowing unit tests to wait till a code in question  * executes in a separate thread. There is still some element of uncertainty remains,  * since this implementation simply tries to give other threads enough time to execute,  * instead of watching for threads activity.   *   *<p>Note that result sampling is done every 300 ms., so if the test succeeds earlier,  * test case wouldn't have to wait for the whole time period specified by timeout.</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Helper class allowing unit tests to wait till a code in question  * executes in a separate thread. There is still some element of uncertainty remains,  * since this implementation simply tries to give other threads enough time to execute,  * instead of watching for threads activity.   *   *<p>Note that result sampling is done every 300 ms., so if the test succeeds earlier,  * test case wouldn't have to wait for the whole time period specified by timeout.</p>  *   */
 end_comment
 
 begin_class

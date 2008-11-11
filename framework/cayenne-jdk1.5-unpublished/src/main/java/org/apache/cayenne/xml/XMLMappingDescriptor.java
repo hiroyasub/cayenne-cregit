@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience class for dealing with the mapping file. This can encode and decode  * objects based upon the schema given by the map file.  *   * @author Kevin J. Menard, Jr.  * @since 1.2  */
+comment|/**  * A convenience class for dealing with the mapping file. This can encode and decode  * objects based upon the schema given by the map file.  *   * @since 1.2  */
 end_comment
 
 begin_class

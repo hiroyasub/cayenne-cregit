@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator for ProcedureQueries.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Validator for ProcedureQueries.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to customize SQLTemplate queries used in test cases per adapter.  *   * @author Andrus Adamchik  */
+comment|/**  * Helper class to customize SQLTemplate queries used in test cases per adapter.  *   */
 end_comment
 
 begin_class

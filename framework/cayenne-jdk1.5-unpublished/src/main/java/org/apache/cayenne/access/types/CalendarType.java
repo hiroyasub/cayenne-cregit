@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ExtendedType that handles {@link java.util.Calendar} fields.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * ExtendedType that handles {@link java.util.Calendar} fields.  *   * @since 3.0  */
 end_comment
 
 begin_class

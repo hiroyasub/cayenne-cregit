@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience superclass of ExtendedType implementations. Implements  * {@link #setJdbcObject(PreparedStatement, Object, int, int, int)}in a generic fashion  * by calling "setObject(..)" on PreparedStatement. Some adapters may need to override  * this behavior as it doesn't work consistently across all JDBC drivers.  *   * @author Andrus Adamchik  */
+comment|/**  * A convenience superclass of ExtendedType implementations. Implements  * {@link #setJdbcObject(PreparedStatement, Object, int, int, int)}in a generic fashion  * by calling "setObject(..)" on PreparedStatement. Some adapters may need to override  * this behavior as it doesn't work consistently across all JDBC drivers.  *   */
 end_comment
 
 begin_class

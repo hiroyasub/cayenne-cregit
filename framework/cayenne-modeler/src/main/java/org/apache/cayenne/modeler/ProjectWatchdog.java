@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectWatchdog class is responsible for tracking changes in cayenne.xml and other  * Cayenne project files  *   * @author Andrey Razumovsky  */
+comment|/**  * ProjectWatchdog class is responsible for tracking changes in cayenne.xml and other  * Cayenne project files  *   */
 end_comment
 
 begin_class

@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class that does saving of Cayenne configuration.  *   * @author Andrus Adamchik  */
+comment|/**  * Class that does saving of Cayenne configuration.  *   */
 end_comment
 
 begin_class

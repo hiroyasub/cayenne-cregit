@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic superclass of CollectionProperty implementations.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A generic superclass of CollectionProperty implementations.  *   * @since 1.2  */
 end_comment
 
 begin_class

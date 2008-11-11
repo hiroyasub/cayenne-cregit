@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a property descriptor that is a part of an Entity. Two examples of things that  * are described by attributes are Java class properties and database table columns.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines a property descriptor that is a part of an Entity. Two examples of things that  * are described by attributes are Java class properties and database table columns.  *   */
 end_comment
 
 begin_class

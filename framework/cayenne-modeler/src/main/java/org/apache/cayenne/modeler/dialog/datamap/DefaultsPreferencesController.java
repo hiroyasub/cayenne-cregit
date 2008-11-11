@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract controller for the DataMap defaults updates.  *   * @author Andrus Adamchik  */
+comment|/**  * An abstract controller for the DataMap defaults updates.  *   */
 end_comment
 
 begin_class

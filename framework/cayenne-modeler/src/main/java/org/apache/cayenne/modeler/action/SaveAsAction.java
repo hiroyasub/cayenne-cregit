@@ -218,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A "Save As" action that allows user to pick save location.  *   * @author Andrus Adamchik  */
+comment|/**  * A "Save As" action that allows user to pick save location.  *   */
 end_comment
 
 begin_class

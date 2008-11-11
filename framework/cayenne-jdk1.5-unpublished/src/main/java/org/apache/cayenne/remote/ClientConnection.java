@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A connection object used to interact with a remote Cayenne server. Connection supports  * synchronous interaction via {@link #sendMessage(ClientMessage)} and asynchronous  * listening for server events.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A connection object used to interact with a remote Cayenne server. Connection supports  * synchronous interaction via {@link #sendMessage(ClientMessage)} and asynchronous  * listening for server events.  *   * @since 1.2  */
 end_comment
 
 begin_interface

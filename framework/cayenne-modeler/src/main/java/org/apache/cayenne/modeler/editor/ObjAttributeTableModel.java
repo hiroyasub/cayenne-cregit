@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Model for the Object Entity attributes and for Obj to DB Attribute Mapping tables.  * Allows adding/removing attributes, modifying the types and the names.  *   * @author Michael Misha Shengaout.  * @author Andrus Adamchik  * @author Dzmitry Rusak  */
+comment|/**  * Model for the Object Entity attributes and for Obj to DB Attribute Mapping tables.  * Allows adding/removing attributes, modifying the types and the names.  *   */
 end_comment
 
 begin_class

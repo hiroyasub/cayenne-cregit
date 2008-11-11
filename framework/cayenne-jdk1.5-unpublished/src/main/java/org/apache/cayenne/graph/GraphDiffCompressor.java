@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class that removes redundant and mutually exclusive graph changes from the  * graph diff.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * A utility class that removes redundant and mutually exclusive graph changes from the  * graph diff.  *   * @since 3.0  */
 end_comment
 
 begin_class

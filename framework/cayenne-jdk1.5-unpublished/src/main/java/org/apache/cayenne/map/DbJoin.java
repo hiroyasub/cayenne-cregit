@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a join between two attributes of a given relationship.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Defines a join between two attributes of a given relationship.  *   * @since 1.1  */
 end_comment
 
 begin_class

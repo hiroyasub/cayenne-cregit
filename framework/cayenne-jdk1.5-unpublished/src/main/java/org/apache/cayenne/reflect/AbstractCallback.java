@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines a callback operation.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Defines a callback operation.  *   * @since 3.0  */
 end_comment
 
 begin_class

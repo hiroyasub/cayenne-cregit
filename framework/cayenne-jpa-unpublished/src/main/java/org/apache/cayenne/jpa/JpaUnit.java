@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A<code>javax.persistence.spi.PersistenceUnitInfo</code> implementor used by Cayenne  * JPA provider.  *   * @author Andrus Adamchik  */
+comment|/**  * A<code>javax.persistence.spi.PersistenceUnitInfo</code> implementor used by Cayenne  * JPA provider.  *   */
 end_comment
 
 begin_class

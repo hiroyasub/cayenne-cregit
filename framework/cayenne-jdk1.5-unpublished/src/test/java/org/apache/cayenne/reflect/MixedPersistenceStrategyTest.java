@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests conflicts between field and map-based persistence.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests conflicts between field and map-based persistence.  *   */
 end_comment
 
 begin_class

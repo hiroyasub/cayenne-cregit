@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A named expression parameter.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A named expression parameter.  *   * @since 1.1  */
 end_comment
 
 begin_class

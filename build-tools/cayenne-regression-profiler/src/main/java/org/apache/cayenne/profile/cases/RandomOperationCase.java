@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Does a random insert/delete/update based on the current object count.  *   * @author Andrus Adamchik  */
+comment|/**  * Does a random insert/delete/update based on the current object count.  *   */
 end_comment
 
 begin_class

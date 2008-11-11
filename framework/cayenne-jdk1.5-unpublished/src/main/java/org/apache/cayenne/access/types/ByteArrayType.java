@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>byte[]</code>, mapping it as either of JDBC types - BLOB or  * (VAR)BINARY. Can be configured to trim trailing zero bytes.  *   * @author Andrus Adamchik  */
+comment|/**  * Handles<code>byte[]</code>, mapping it as either of JDBC types - BLOB or  * (VAR)BINARY. Can be configured to trim trailing zero bytes.  *   */
 end_comment
 
 begin_class

@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Or" expression.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * "Or" expression.  *   * @since 1.1  */
 end_comment
 
 begin_class

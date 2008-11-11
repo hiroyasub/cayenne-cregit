@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ExtendedType that handles an enum class. If Enum is mapped to a character column,  * its name is used as persistent value; if it is mapped to a numeric column, its ordinal  * (i.e. a position in enum class) is used.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An ExtendedType that handles an enum class. If Enum is mapped to a character column,  * its name is used as persistent value; if it is mapped to a numeric column, its ordinal  * (i.e. a position in enum class) is used.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

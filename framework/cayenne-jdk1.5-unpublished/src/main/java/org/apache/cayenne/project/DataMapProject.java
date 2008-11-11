@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Cayenne project that consists of a single DataMap.  *   * @author Andrus Adamchik  */
+comment|/**  * Cayenne project that consists of a single DataMap.  *   */
 end_comment
 
 begin_class

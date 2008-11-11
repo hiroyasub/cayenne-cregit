@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests parameterized expressions of the new form introduced in 1.1  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Tests parameterized expressions of the new form introduced in 1.1  *   * @since 1.1  */
 end_comment
 
 begin_class

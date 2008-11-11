@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An indirect query that resolves to Cayenne ProcedureQuery using information from JPA  * query hints.  *   * @author Andrus Adamchik  */
+comment|/**  * An indirect query that resolves to Cayenne ProcedureQuery using information from JPA  * query hints.  *   */
 end_comment
 
 begin_class

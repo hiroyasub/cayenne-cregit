@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that manages test DataSource.  *   * @author Andrus Adamchik  */
+comment|/**  * A helper class that manages test DataSource.  *   */
 end_comment
 
 begin_class

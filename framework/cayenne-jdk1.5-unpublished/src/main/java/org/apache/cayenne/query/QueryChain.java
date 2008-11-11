@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Query decorator for a collection of other queries. Note that QueryChain will always  * return DataRows (that is if it returns data), as it has no way of knowing how to  * convert the results to objects.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Query decorator for a collection of other queries. Note that QueryChain will always  * return DataRows (that is if it returns data), as it has no way of knowing how to  * convert the results to objects.  *   * @since 1.2  */
 end_comment
 
 begin_class

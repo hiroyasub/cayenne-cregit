@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A stateless read-only accessor of the map key value that is based on the Persistent  * object id. For single-column ID's the accessor returns a single value (e.g. an  * Integer). For multi-column ID's it returns the ObjectId.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A stateless read-only accessor of the map key value that is based on the Persistent  * object id. For single-column ID's the accessor returns a single value (e.g. an  * Integer). For multi-column ID's it returns the ObjectId.  *   * @since 3.0  */
 end_comment
 
 begin_class

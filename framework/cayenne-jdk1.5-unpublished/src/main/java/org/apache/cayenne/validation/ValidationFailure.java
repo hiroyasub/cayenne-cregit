@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Definea a single failure during the validation process. Implementing classes may  * store any extra information to help callers to identify the source and reasons   * for the failure.  *  * @see BeanValidationFailure  * @author Fabricio Voznika  * @since 1.1  */
+comment|/**  * Definea a single failure during the validation process. Implementing classes may  * store any extra information to help callers to identify the source and reasons   * for the failure.  *  * @see BeanValidationFailure  * @since 1.1  */
 end_comment
 
 begin_interface

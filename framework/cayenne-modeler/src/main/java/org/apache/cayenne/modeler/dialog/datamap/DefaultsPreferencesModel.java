@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A model that describes entity update preferences when pushing DataMap defaults to the  * entities. Used by multiple views.  *   * @author Andrus Adamchik  */
+comment|/**  * A model that describes entity update preferences when pushing DataMap defaults to the  * entities. Used by multiple views.  *   */
 end_comment
 
 begin_class

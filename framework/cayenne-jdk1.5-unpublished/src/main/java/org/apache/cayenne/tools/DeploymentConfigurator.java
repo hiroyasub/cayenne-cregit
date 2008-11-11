@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A "cdeploy" Ant task providing an Ant frontend to  * org.apache.cayenne.project.ProjectConfigurator.  *   * @author Andrus Adamchik  */
+comment|/**  * A "cdeploy" Ant task providing an Ant frontend to  * org.apache.cayenne.project.ProjectConfigurator.  *   */
 end_comment
 
 begin_class

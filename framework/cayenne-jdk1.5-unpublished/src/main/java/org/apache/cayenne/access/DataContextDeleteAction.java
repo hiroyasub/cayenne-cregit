@@ -240,7 +240,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class that implements DataObject deletion strategy.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Helper class that implements DataObject deletion strategy.  *   * @since 1.2  */
 end_comment
 
 begin_class

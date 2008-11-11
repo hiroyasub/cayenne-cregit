@@ -764,7 +764,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Displays ObjRelationships for the edited ObjEntity.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Displays ObjRelationships for the edited ObjEntity.  *   */
 end_comment
 
 begin_class

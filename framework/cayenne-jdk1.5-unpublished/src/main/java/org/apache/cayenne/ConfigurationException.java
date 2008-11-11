@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A runtime exception thrown on failures in Cayenne configuration.  *   * @author Andrus Adamchik  */
+comment|/**  * A runtime exception thrown on failures in Cayenne configuration.  *   */
 end_comment
 
 begin_class

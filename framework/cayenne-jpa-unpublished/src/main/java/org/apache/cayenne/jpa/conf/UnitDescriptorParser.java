@@ -258,7 +258,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A parser of persistence descriptor files. Can be used in serial processing of multiple  * documents.  *   * @author Andrus Adamchik  */
+comment|/**  * A parser of persistence descriptor files. Can be used in serial processing of multiple  * documents.  *   */
 end_comment
 
 begin_class

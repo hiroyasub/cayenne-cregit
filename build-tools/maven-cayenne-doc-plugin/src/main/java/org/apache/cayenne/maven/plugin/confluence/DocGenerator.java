@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Generates standalone documentation for Cayenne based on Confluence content.  *   * @author Cris Daniluk  */
+comment|/**  * Generates standalone documentation for Cayenne based on Confluence content.  *   */
 end_comment
 
 begin_class

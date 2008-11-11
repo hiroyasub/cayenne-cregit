@@ -316,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for copying entities, queries etc. into system buffer  * @author Andrey Razumovsky  */
+comment|/**  * Action for copying entities, queries etc. into system buffer  */
 end_comment
 
 begin_class

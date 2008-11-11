@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processor for SQL velocity templates.  *   * @see org.apache.cayenne.query.SQLTemplate  * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Processor for SQL velocity templates.  *   * @see org.apache.cayenne.query.SQLTemplate  * @since 1.1  */
 end_comment
 
 begin_class

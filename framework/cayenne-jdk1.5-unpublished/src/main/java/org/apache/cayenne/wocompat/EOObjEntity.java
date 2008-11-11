@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An extension of ObjEntity used to accomodate extra EOModel entity properties.  *   * @author Andrus Adamchik  */
+comment|/**  * An extension of ObjEntity used to accomodate extra EOModel entity properties.  *   */
 end_comment
 
 begin_class

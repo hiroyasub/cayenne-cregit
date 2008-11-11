@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defining a double-linked named entry in CayenneMap.   *   * @author Andrus Adamchik  */
+comment|/**  * Defining a double-linked named entry in CayenneMap.   *   */
 end_comment
 
 begin_interface

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines possible object lifecycle events for which callbacks are supported.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Defines possible object lifecycle events for which callbacks are supported.  *   * @since 3.0  */
 end_comment
 
 begin_enum

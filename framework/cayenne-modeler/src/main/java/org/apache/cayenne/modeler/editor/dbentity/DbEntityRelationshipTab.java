@@ -692,7 +692,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Displays DbRelationships for the current DbEntity.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Displays DbRelationships for the current DbEntity.  *   */
 end_comment
 
 begin_class

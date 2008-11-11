@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Factory class that generates various Cayenne objects with   * default names that are unique in their corresponding context.   * Supports creation of the following  * objects:  *<ul>  *<li>DataMap</li>  *<li>ObjEntity</li>  *<li>ObjAttribute</li>  *<li>ObjRelationship</li>  *<li>DbEntity</li>  *<li>DerivedDbEntity</li>  *<li>DbAttribute</li>  *<li>DerivedDbAttribute</li>  *<li>DbRelationship</li>  *<li>DataNode</li>  *<li>DataDomain</li>  *<li>Query</li>  *<li>Procedure</li>  *<li>ProcedureParameter</li>  *</ul>  *   * This is a helper class used mostly by GUI and database   * reengineering classes.  *   * @author Andrus Adamchik  */
+comment|/**   * Factory class that generates various Cayenne objects with   * default names that are unique in their corresponding context.   * Supports creation of the following  * objects:  *<ul>  *<li>DataMap</li>  *<li>ObjEntity</li>  *<li>ObjAttribute</li>  *<li>ObjRelationship</li>  *<li>DbEntity</li>  *<li>DerivedDbEntity</li>  *<li>DbAttribute</li>  *<li>DerivedDbAttribute</li>  *<li>DbRelationship</li>  *<li>DataNode</li>  *<li>DataDomain</li>  *<li>Query</li>  *<li>Procedure</li>  *<li>ProcedureParameter</li>  *</ul>  *   * This is a helper class used mostly by GUI and database   * reengineering classes.  *   */
 end_comment
 
 begin_class

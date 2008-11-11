@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Preferences "domain" is logical area for preferences storage. Domains are organized in  * a tree hierarchy allowing cascading preferences lookup.  *   * @author Andrus Adamchik  */
+comment|/**  * Preferences "domain" is logical area for preferences storage. Domains are organized in  * a tree hierarchy allowing cascading preferences lookup.  *   */
 end_comment
 
 begin_class

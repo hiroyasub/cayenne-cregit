@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Accessor enhancer that enhances getters and setters mapped in a given {@link ObjEntity}.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Accessor enhancer that enhances getters and setters mapped in a given {@link ObjEntity}.  *   * @since 3.0  */
 end_comment
 
 begin_class

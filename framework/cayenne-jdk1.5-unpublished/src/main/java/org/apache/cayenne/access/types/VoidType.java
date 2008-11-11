@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop type that is sometimes useful to suppress extended types operations. It will set  * and get null values.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A noop type that is sometimes useful to suppress extended types operations. It will set  * and get null values.  *   * @since 1.2  */
 end_comment
 
 begin_class

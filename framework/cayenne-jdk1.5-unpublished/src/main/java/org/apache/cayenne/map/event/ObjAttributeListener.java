@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Listener for ObjAttribute events.  *   * @author Andrus Adamchik  * @author Misha Shengaout  */
+comment|/**   * Listener for ObjAttribute events.  *   */
 end_comment
 
 begin_interface

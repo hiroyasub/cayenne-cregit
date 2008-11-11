@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An unchecked exception thrown on errors during property access, either within a  * Accessor or a Property.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An unchecked exception thrown on errors during property access, either within a  * Accessor or a Property.  *   * @since 3.0  */
 end_comment
 
 begin_class

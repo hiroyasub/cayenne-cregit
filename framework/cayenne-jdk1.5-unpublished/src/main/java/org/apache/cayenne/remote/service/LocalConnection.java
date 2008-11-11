@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ClientConnection that connects to a DataChannel. Used as an emulator of a remote  * service. Emulation includes serialization/deserialization of objects.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A ClientConnection that connects to a DataChannel. Used as an emulator of a remote  * service. Emulation includes serialization/deserialization of objects.  *   * @since 1.2  */
 end_comment
 
 begin_class

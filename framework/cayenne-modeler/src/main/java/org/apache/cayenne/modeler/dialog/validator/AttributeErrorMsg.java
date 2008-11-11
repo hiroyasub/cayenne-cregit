@@ -160,7 +160,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Attribute validation message.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Attribute validation message.  *   */
 end_comment
 
 begin_class

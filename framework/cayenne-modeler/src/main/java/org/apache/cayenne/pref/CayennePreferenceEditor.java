@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An editor for modifying CayennePreferenceService.  *   * @author Andrus Adamchik  */
+comment|/**  * An editor for modifying CayennePreferenceService.  *   */
 end_comment
 
 begin_class

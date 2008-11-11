@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * OperationObserver that is used to track the execution  * of SelectQueries with results returned as ResultIterator.  *    * @author Andrus Adamchik  */
+comment|/**  * OperationObserver that is used to track the execution  * of SelectQueries with results returned as ResultIterator.  *    */
 end_comment
 
 begin_class

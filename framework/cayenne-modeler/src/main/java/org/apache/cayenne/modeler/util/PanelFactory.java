@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Implements a set of utility methods for laying out components on the panels.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**   * Implements a set of utility methods for laying out components on the panels.  *   */
 end_comment
 
 begin_comment

@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class for testing callbacks  *  * @author Vasil Tarasevich  */
+comment|/**  * Class for testing callbacks  *  */
 end_comment
 
 begin_class

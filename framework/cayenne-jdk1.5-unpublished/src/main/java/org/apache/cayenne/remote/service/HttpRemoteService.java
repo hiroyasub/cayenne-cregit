@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link org.apache.cayenne.remote.RemoteService} implementation that stores  * server context information in HTTP sessions.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A {@link org.apache.cayenne.remote.RemoteService} implementation that stores  * server context information in HTTP sessions.  *   * @since 1.2  */
 end_comment
 
 begin_class

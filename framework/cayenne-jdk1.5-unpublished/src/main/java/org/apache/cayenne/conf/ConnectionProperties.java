@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects using information stored  * in $HOME/.cayenne/connection.properties. As of now this is purely a utility class. Its  * features are not used in deployment.  *   * @author Andrus Adamchik  */
+comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects using information stored  * in $HOME/.cayenne/connection.properties. As of now this is purely a utility class. Its  * features are not used in deployment.  *   */
 end_comment
 
 begin_class

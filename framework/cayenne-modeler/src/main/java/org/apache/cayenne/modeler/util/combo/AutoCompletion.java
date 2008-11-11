@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * AutoCompletion class handles user input and suggests matching variants (see CAY-911)  *  * @author Andrey Razumovsky  */
+comment|/**  * AutoCompletion class handles user input and suggests matching variants (see CAY-911)  *  */
 end_comment
 
 begin_class

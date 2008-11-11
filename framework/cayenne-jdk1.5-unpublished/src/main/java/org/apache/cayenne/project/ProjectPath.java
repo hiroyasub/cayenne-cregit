@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Immutable holder of a selection path within a Cayenne project. Mostly used  * by various tools (CayenneModeler comes to mind) to navigate Cayenne  * projects. Contains a number of convenience methods to access path elements.  *   *<p>  * For instance, given a path<code>Project -> DataMap -> ObjEntity -> ObjAttribute</code>,  *<code>getObject</code> will return ObjAttribute,<code>getObjectParent</code>-  * ObjEntity,<code>getRoot</code>- Project.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * Immutable holder of a selection path within a Cayenne project. Mostly used  * by various tools (CayenneModeler comes to mind) to navigate Cayenne  * projects. Contains a number of convenience methods to access path elements.  *   *<p>  * For instance, given a path<code>Project -> DataMap -> ObjEntity -> ObjAttribute</code>,  *<code>getObject</code> will return ObjAttribute,<code>getObjectParent</code>-  * ObjEntity,<code>getRoot</code>- Project.  *</p>  *   */
 end_comment
 
 begin_class

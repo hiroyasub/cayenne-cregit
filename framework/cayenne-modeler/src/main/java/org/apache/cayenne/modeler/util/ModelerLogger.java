@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ModelerLogger is a Log implementation, which performs output  * to the LogConsole. Default behavior is saved since they are delegated  * to default Log instance.   * @author Andrey Razumovsky  */
+comment|/**  * ModelerLogger is a Log implementation, which performs output  * to the LogConsole. Default behavior is saved since they are delegated  * to default Log instance.   */
 end_comment
 
 begin_class

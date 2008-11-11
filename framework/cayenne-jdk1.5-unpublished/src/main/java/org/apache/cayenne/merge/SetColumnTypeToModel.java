@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} that modifies one original {@link DbAttribute} to match another  * new {@link DbAttribute}s type, maxLength and precision. The name and mandatory fields  * are not modified by this token.  *   * @author halset  */
+comment|/**  * A {@link MergerToken} that modifies one original {@link DbAttribute} to match another  * new {@link DbAttribute}s type, maxLength and precision. The name and mandatory fields  * are not modified by this token.  *   */
 end_comment
 
 begin_class

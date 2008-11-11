@@ -96,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides a common interface for accessing query metadata.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Provides a common interface for accessing query metadata.  *   * @since 1.2  */
 end_comment
 
 begin_interface

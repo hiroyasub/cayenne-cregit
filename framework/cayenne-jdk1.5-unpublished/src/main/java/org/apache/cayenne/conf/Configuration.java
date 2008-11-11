@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is an entry point to Cayenne. It loads all configuration files and  * instantiates main Cayenne objects. Used as a singleton via the  * {@link #getSharedConfiguration}method.  *<p>  * To use a custom subclass of Configuration, Java applications must call  * {@link #initializeSharedConfiguration}with the subclass as argument. This will create  * and initialize a Configuration singleton instance of the specified class. By default  * {@link DefaultConfiguration}is instantiated.  *</p>  *   * @author Andrus Adamchik  * @author Holger Hoffstaette  */
+comment|/**  * This class is an entry point to Cayenne. It loads all configuration files and  * instantiates main Cayenne objects. Used as a singleton via the  * {@link #getSharedConfiguration}method.  *<p>  * To use a custom subclass of Configuration, Java applications must call  * {@link #initializeSharedConfiguration}with the subclass as argument. This will create  * and initialize a Configuration singleton instance of the specified class. By default  * {@link DefaultConfiguration}is instantiated.  *</p>  *   */
 end_comment
 
 begin_class

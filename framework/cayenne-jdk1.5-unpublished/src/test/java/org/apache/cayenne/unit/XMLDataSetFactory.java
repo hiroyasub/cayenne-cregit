@@ -164,7 +164,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataSetFactory that loads DataSets from XML using Spring.  *   * @author Andrus Adamchik  */
+comment|/**  * DataSetFactory that loads DataSets from XML using Spring.  *   */
 end_comment
 
 begin_class

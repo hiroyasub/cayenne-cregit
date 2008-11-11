@@ -248,7 +248,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base abstract class for editing callback mapping on listener class  * Adds entity listener class processing logic  *  * @author Vasil Tarasevich  * @version 1.0 Oct 29, 2007  */
+comment|/**  * Base abstract class for editing callback mapping on listener class  * Adds entity listener class processing logic  *  * @version 1.0 Oct 29, 2007  */
 end_comment
 
 begin_class

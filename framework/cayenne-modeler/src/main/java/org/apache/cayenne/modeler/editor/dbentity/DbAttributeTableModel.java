@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Model for DbEntity attributes. Allows adding/removing attributes, modifying types and  * names.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Model for DbEntity attributes. Allows adding/removing attributes, modifying types and  * names.  *   */
 end_comment
 
 begin_class

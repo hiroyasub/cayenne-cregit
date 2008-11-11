@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataChannel is an abstraction used by ObjectContexts to obtain mapping metadata and  * access a persistent store. There is rarely a need to use it directly.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * DataChannel is an abstraction used by ObjectContexts to obtain mapping metadata and  * access a persistent store. There is rarely a need to use it directly.  *   * @since 1.2  */
 end_comment
 
 begin_interface

@@ -204,7 +204,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An EventBridge implementation based on XMPP protocol and Smack XMPP client library.  * What's good about XMPP (Extensible Messaging and Presence Protocol, an IETF standard  * protocol that grew up from Jabber IM) is that generally it has fewer or no deployment  * limitations (unlike JMS and JGroups that are generally a good solution for local  * controlled networks). Also it provides lots of additional information for free, such as  * presence, and much more.  *<p>  * This implementation is based on Smack XMPP client library from JiveSoftware.  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An EventBridge implementation based on XMPP protocol and Smack XMPP client library.  * What's good about XMPP (Extensible Messaging and Presence Protocol, an IETF standard  * protocol that grew up from Jabber IM) is that generally it has fewer or no deployment  * limitations (unlike JMS and JGroups that are generally a good solution for local  * controlled networks). Also it provides lots of additional information for free, such as  * presence, and much more.  *<p>  * This implementation is based on Smack XMPP client library from JiveSoftware.  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

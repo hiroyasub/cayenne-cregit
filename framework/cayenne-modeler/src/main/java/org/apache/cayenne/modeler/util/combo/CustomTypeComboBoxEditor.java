@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * CustomTypeComboBoxEditor is used as an editor of a combobox, when  * custom type (such as Entity) is to be used. BasicComboBoxEditor  * cannot be used, because it converts String values to other types  * incorrectly (in fact, only classes with valueOf(String) methods  * are supported).  *   * @author Andrey Razumovsky  */
+comment|/**  * CustomTypeComboBoxEditor is used as an editor of a combobox, when  * custom type (such as Entity) is to be used. BasicComboBoxEditor  * cannot be used, because it converts String values to other types  * incorrectly (in fact, only classes with valueOf(String) methods  * are supported).  *   */
 end_comment
 
 begin_class

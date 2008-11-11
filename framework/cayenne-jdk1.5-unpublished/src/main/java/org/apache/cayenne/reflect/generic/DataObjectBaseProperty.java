@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of DataObject properties that accesses object via DataObject methods.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A superclass of DataObject properties that accesses object via DataObject methods.  *   * @since 3.0  */
 end_comment
 
 begin_class

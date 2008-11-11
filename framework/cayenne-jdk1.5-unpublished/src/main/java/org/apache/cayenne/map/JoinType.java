@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Enumerates supported JOIN types.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Enumerates supported JOIN types.  *   * @since 3.0  */
 end_comment
 
 begin_enum

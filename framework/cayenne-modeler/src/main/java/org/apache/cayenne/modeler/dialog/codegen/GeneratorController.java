@@ -430,7 +430,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mode-specific part of the code generation dialog.  *   * @author Andrus Adamchik  */
+comment|/**  * A mode-specific part of the code generation dialog.  *   */
 end_comment
 
 begin_class

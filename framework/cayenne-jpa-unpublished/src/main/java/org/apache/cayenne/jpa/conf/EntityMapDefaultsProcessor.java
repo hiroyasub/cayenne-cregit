@@ -596,7 +596,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Initializes JPA specification compatible mapping defaults.  *   * @author Andrus Adamchik  */
+comment|/**  * Initializes JPA specification compatible mapping defaults.  *   */
 end_comment
 
 begin_class

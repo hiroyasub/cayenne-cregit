@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>java.lang.String</code>, mapping it as either of JDBC types - CLOB or  * (VAR)CHAR. Can be configured to trim trailing spaces.  *   * @author Andrus Adamchik  */
+comment|/**  * Handles<code>java.lang.String</code>, mapping it as either of JDBC types - CLOB or  * (VAR)CHAR. Can be configured to trim trailing spaces.  *   */
 end_comment
 
 begin_class

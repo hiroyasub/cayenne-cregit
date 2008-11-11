@@ -196,7 +196,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator for SelectQueries.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Validator for SelectQueries.  *   * @since 1.1  */
 end_comment
 
 begin_class

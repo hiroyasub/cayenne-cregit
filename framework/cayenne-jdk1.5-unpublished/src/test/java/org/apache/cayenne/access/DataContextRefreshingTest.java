@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test suite covering possible scenarios of refreshing updated objects. This includes  * refreshing relationships and attributes changed outside of Cayenne with and witout  * prefetching.  *   * @author Andrus Adamchik  */
+comment|/**  * Test suite covering possible scenarios of refreshing updated objects. This includes  * refreshing relationships and attributes changed outside of Cayenne with and witout  * prefetching.  *   */
 end_comment
 
 begin_class

@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Event sent on modification of the DataRowStore.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Event sent on modification of the DataRowStore.  *   * @since 1.1  */
 end_comment
 
 begin_class

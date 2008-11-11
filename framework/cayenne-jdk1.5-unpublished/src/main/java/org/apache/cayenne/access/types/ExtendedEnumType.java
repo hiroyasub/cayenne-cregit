@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ExtendedType that handles a Java Enum based upon the Cayenne  * ExtendedEnumeration interface.  The ExtendedEnumeration interface  * requires the developer to specify the database values for the Enum  * being mapped.  This ExtendedType is used to auto-register those  * Enums found in the model.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 3.0  * @author Michael Gentry  */
+comment|/**  * An ExtendedType that handles a Java Enum based upon the Cayenne  * ExtendedEnumeration interface.  The ExtendedEnumeration interface  * requires the developer to specify the database values for the Enum  * being mapped.  This ExtendedType is used to auto-register those  * Enums found in the model.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 3.0  */
 end_comment
 
 begin_class

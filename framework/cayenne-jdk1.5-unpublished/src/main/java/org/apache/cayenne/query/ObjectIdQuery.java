@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that matches zero or one object or data row corresponding to the ObjectId. Used  * internally by Cayenne to lookup objects by id. Notice that cache policies of  * ObjectIdQuery are different from generic {@link QueryMetadata} cache policies.  * ObjectIdQuery is special - it is the only query that can be done against Cayenne main  * cache, thus cache handling is significantly different from all other of the queries.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A query that matches zero or one object or data row corresponding to the ObjectId. Used  * internally by Cayenne to lookup objects by id. Notice that cache policies of  * ObjectIdQuery are different from generic {@link QueryMetadata} cache policies.  * ObjectIdQuery is special - it is the only query that can be done against Cayenne main  * cache, thus cache handling is significantly different from all other of the queries.  *   * @since 1.2  */
 end_comment
 
 begin_class

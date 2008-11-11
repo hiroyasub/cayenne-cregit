@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A base superclass of a top controller for the code generator. Defines all common model  * parts used in class generation.  *   * @author Andrus Adamchik  */
+comment|/**  * A base superclass of a top controller for the code generator. Defines all common model  * parts used in class generation.  *   */
 end_comment
 
 begin_class

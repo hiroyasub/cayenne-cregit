@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A JPA wrapper for {@link EJBQLQuery}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A JPA wrapper for {@link EJBQLQuery}.  *   * @since 3.0  */
 end_comment
 
 begin_class

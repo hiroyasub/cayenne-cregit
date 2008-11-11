@@ -188,7 +188,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides information about a class relevant to JPA, such potential persistence fields,  * etc.  *   * @author Andrus Adamchik  */
+comment|/**  * Provides information about a class relevant to JPA, such potential persistence fields,  * etc.  *   */
 end_comment
 
 begin_class

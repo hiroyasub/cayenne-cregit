@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Annotates a public getter for the child property during the tree traversal.  *   * @author Andrus Adamchik  */
+comment|/**  * Annotates a public getter for the child property during the tree traversal.  *   */
 end_comment
 
 begin_annotation_defn

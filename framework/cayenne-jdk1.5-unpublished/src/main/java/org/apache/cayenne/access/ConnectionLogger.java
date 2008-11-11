@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Adapts {@link org.apache.cayenne.access.QueryLogger} to be used as a  * {@link org.apache.cayenne.conn.ConnectionEventLoggingDelegate} with Cayenne  * connection pools.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Adapts {@link org.apache.cayenne.access.QueryLogger} to be used as a  * {@link org.apache.cayenne.conn.ConnectionEventLoggingDelegate} with Cayenne  * connection pools.  *   * @since 1.2  */
 end_comment
 
 begin_class

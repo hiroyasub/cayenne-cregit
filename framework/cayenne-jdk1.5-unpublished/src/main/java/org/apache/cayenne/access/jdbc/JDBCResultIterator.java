@@ -196,7 +196,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ResultIterator over the underlying JDBC ResultSet.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A ResultIterator over the underlying JDBC ResultSet.  *   * @since 1.2  */
 end_comment
 
 begin_comment

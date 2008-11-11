@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A dialog rendering a progress bar. It is normally controlled by a subclass of  * LongRunningTask.  *   * @author Andrus Adamchik  */
+comment|/**  * A dialog rendering a progress bar. It is normally controlled by a subclass of  * LongRunningTask.  *   */
 end_comment
 
 begin_class

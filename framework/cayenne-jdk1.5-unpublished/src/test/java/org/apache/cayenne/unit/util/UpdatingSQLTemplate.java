@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLTemplate simplified for Spring configuration.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A SQLTemplate simplified for Spring configuration.  *   * @since 1.2  */
 end_comment
 
 begin_class

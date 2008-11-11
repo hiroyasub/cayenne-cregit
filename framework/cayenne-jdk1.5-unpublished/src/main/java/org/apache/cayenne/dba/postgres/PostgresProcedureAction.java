@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Current implementation simply relies on SQLServerProcedureAction superclass behavior.  * Namely that CallableStatement.execute() rewinds result set pointer so  * CallableStatement.getMoreResults() shouldn't be invoked until the first result set is  * processed.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Current implementation simply relies on SQLServerProcedureAction superclass behavior.  * Namely that CallableStatement.execute() rewinds result set pointer so  * CallableStatement.getMoreResults() shouldn't be invoked until the first result set is  * processed.  *   * @since 1.2  */
 end_comment
 
 begin_class

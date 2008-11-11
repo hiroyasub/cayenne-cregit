@@ -224,7 +224,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @author Andrus Adamchik  */
+comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   */
 end_comment
 
 begin_class

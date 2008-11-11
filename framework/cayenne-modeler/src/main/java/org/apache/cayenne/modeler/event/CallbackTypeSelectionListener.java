@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Listener for callback type selection  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Listener for callback type selection  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_interface

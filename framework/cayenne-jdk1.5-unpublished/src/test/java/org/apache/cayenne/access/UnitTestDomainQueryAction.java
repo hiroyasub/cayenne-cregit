@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataDomainQueryAction that can be configured to block queries that are not run from  * cache.  *   * @author Andrus Adamchik  */
+comment|/**  * A DataDomainQueryAction that can be configured to block queries that are not run from  * cache.  *   */
 end_comment
 
 begin_class

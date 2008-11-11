@@ -342,7 +342,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that generates database schema based on Cayenne mapping. It is a logical  * counterpart of DbLoader class.  *   * @author Andrus Adamchik  */
+comment|/**  * Utility class that generates database schema based on Cayenne mapping. It is a logical  * counterpart of DbLoader class.  *   */
 end_comment
 
 begin_class

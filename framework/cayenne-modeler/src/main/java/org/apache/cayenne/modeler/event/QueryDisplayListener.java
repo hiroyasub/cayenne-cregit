@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * @since 1.1  */
 end_comment
 
 begin_interface

@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A common superclass of Cayenne queries.  *   * @author Andrus Adamchik  */
+comment|/**  * A common superclass of Cayenne queries.  *   */
 end_comment
 
 begin_class

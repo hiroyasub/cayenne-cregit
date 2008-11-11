@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represent a merge direction that can be one of two. Either from the model to the db or  * from the db to the model.  *   * @author halset  */
+comment|/**  * Represent a merge direction that can be one of two. Either from the model to the db or  * from the db to the model.  *   */
 end_comment
 
 begin_class

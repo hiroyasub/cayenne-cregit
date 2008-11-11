@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests Date handling in Cayenne.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests Date handling in Cayenne.  *   */
 end_comment
 
 begin_class

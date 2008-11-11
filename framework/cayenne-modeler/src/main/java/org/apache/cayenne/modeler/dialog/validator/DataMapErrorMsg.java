@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataMap validation message.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * DataMap validation message.  *   */
 end_comment
 
 begin_class

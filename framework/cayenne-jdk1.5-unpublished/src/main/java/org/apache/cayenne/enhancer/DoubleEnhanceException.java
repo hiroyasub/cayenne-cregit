@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An exception thrown from within enhancer visitors to indicate that the class is already  * enhanced and enhancement run should be stopped.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An exception thrown from within enhancer visitors to indicate that the class is already  * enhanced and enhancement run should be stopped.  *   * @since 3.0  */
 end_comment
 
 begin_class

@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne-based PreferenceService.  *   * @author Andrus Adamchik  */
+comment|/**  * A Cayenne-based PreferenceService.  *   */
 end_comment
 
 begin_class

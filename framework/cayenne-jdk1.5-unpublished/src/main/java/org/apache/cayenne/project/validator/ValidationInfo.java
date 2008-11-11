@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ValidationInfo encapsulates information about a single node validation  * on the project tree.  *   * @author Andrus Adamchik  */
+comment|/**  * ValidationInfo encapsulates information about a single node validation  * on the project tree.  *   */
 end_comment
 
 begin_class

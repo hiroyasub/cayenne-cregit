@@ -166,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @author Andrus Adamchik, Kevin Menard  * @since 3.0  *   * @phase generate-sources  * @goal cgen  */
+comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  *   * @phase generate-sources  * @goal cgen  */
 end_comment
 
 begin_class

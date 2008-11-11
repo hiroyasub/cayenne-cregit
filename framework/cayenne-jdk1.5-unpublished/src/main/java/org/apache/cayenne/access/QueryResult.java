@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * QueryResult encapsulates a result of execution of zero or more queries using  * QueryEngine. QueryResult supports queries with multiple mixed selects and updates, such  * as ProcedureQueries.  *   * @author Andrus Adamchik  */
+comment|/**  * QueryResult encapsulates a result of execution of zero or more queries using  * QueryEngine. QueryResult supports queries with multiple mixed selects and updates, such  * as ProcedureQueries.  *   */
 end_comment
 
 begin_class

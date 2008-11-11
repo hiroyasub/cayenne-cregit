@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class to simplify implementation of Object toString methods. This  * implementation is a trimmed version of commons-lang ToStringBuilder.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A utility class to simplify implementation of Object toString methods. This  * implementation is a trimmed version of commons-lang ToStringBuilder.  *   * @since 3.0  */
 end_comment
 
 begin_class

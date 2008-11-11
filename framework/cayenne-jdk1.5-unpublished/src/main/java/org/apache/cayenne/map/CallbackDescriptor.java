@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor of a single callback event.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A mapping descriptor of a single callback event.  *   * @since 3.0  */
 end_comment
 
 begin_class

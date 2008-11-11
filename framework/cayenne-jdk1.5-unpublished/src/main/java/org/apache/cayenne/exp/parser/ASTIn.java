@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "In" expression.  *   * @author Andrus Adamchik  */
+comment|/**  * "In" expression.  *   */
 end_comment
 
 begin_class

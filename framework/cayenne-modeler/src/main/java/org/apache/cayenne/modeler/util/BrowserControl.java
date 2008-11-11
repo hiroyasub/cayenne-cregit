@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Opens a URL in the system default browser.  *   * @author Andrus Adamchik  */
+comment|/**  * Opens a URL in the system default browser.  *   */
 end_comment
 
 begin_class

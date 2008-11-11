@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to remove a {@link DbAttribute} from a {@link DbEntity}.  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to remove a {@link DbAttribute} from a {@link DbEntity}.  *   */
 end_comment
 
 begin_class

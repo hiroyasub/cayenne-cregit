@@ -280,7 +280,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel for editing stored procedure general settings, such as name, schema, etc.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel for editing stored procedure general settings, such as name, schema, etc.  *   */
 end_comment
 
 begin_class

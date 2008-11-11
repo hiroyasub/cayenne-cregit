@@ -96,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper JavaBean class that holds DataSource login information.  *   * @author Andrus Adamchik  */
+comment|/**  * Helper JavaBean class that holds DataSource login information.  *   */
 end_comment
 
 begin_class

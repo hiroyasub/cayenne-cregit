@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Enhances classes passed through the visitor, ensuring that the resulting class  * implements {@link Persistent} interface as well as supports lazy faulting.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Enhances classes passed through the visitor, ensuring that the resulting class  * implements {@link Persistent} interface as well as supports lazy faulting.  *   * @since 3.0  */
 end_comment
 
 begin_class

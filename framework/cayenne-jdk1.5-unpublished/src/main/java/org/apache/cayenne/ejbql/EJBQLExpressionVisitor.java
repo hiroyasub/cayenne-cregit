@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A visitor interface to inspect the EJBQL expression tree. Visit methods return  * booleans, indicating whether the children of a given node should be visited.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A visitor interface to inspect the EJBQL expression tree. Visit methods return  * booleans, indicating whether the children of a given node should be visited.  *   * @since 3.0  */
 end_comment
 
 begin_interface

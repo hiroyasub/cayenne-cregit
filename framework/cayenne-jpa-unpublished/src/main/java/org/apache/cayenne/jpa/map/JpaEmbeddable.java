@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of a persistent class whose instances are stored as an intrinsic part of  * an owning entity and share the identity of that entity.  *   * @author Andrus Adamchik  */
+comment|/**  * A descriptor of a persistent class whose instances are stored as an intrinsic part of  * an owning entity and share the identity of that entity.  *   */
 end_comment
 
 begin_class

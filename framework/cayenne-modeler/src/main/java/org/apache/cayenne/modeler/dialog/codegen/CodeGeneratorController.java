@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for the class generator dialog.  *   * @author Andrus Adamchik  */
+comment|/**  * A controller for the class generator dialog.  *   */
 end_comment
 
 begin_class

@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to add a "not null" clause to a column.  *   * @author halset  */
+comment|/**  * A {@link MergerToken} to add a "not null" clause to a column.  *   */
 end_comment
 
 begin_class

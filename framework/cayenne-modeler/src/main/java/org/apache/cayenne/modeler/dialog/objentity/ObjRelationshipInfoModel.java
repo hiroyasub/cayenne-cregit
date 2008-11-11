@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Scope model for mapping an ObjRelationship to one or more DbRelationships.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A Scope model for mapping an ObjRelationship to one or more DbRelationships.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An attribute container.  *   * @author Andrus Adamchik  */
+comment|/**  * An attribute container.  *   */
 end_comment
 
 begin_class

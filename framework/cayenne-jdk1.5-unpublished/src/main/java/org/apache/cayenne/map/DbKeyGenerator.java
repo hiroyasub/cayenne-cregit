@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbKeyGenerator is an abstraction of a primary key generator It configures the primary  * key generation per DbEntity in a RDBMS independent manner. DbAdapter generates actual  * key values based on the configuration. For more details see data-map.dtd  *   * @author Andriy Shapochka  */
+comment|/**  * DbKeyGenerator is an abstraction of a primary key generator It configures the primary  * key generation per DbEntity in a RDBMS independent manner. DbAdapter generates actual  * key values based on the configuration. For more details see data-map.dtd  *   */
 end_comment
 
 begin_class

@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class for removing callback methods from DataMap's entity listener  *  * @author Vasil Tarasevich  * @version 1.0 Oct 30, 2007  */
+comment|/**  * Action class for removing callback methods from DataMap's entity listener  *  * @version 1.0 Oct 30, 2007  */
 end_comment
 
 begin_class

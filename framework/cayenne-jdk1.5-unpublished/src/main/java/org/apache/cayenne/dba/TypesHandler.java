@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * TypesHandler provides JDBC-RDBMS types mapping. Loads types info from   * an XML file.  *   * @author Andrus Adamchik  */
+comment|/**   * TypesHandler provides JDBC-RDBMS types mapping. Loads types info from   * an XML file.  *   */
 end_comment
 
 begin_class

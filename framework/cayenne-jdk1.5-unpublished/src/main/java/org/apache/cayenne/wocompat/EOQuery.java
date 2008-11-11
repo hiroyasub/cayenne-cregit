@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal "decorator" of  * Cayenne SelectQuery to provide access to the extra information of WebObjects  * EOFetchSpecification.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal "decorator" of  * Cayenne SelectQuery to provide access to the extra information of WebObjects  * EOFetchSpecification.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -1100,7 +1100,7 @@ name|qualifierMap
 argument_list|)
 return|;
 block|}
-comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a WebObjects-style      * EOModel. It recursively builds Cayenne Expression objects and assembles them into      * the final aggregate Expression.      *       * @author Travis Cripps      */
+comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a WebObjects-style      * EOModel. It recursively builds Cayenne Expression objects and assembles them into      * the final aggregate Expression.      *       */
 specifier|static
 class|class
 name|EOFetchSpecificationParser

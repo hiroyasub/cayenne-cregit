@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents an EJB QL expression "compiled" in the context of a certain mapping.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * Represents an EJB QL expression "compiled" in the context of a certain mapping.  *   * @since 3.0  */
 end_comment
 
 begin_interface

@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action for cutting attribute(s)  * @author Andrey Razumovsky  */
+comment|/**  * Action for cutting attribute(s)  */
 end_comment
 
 begin_class

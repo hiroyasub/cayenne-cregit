@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A GraphDiff representing a change in node ID.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A GraphDiff representing a change in node ID.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Modeler action that imports a DataMap into a project from an arbitrary location.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Modeler action that imports a DataMap into a project from an arbitrary location.  *   * @since 1.1  */
 end_comment
 
 begin_class

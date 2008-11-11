@@ -188,7 +188,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based on one or  * more primary key/foreign key pairs.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based on one or  * more primary key/foreign key pairs.  *   */
 end_comment
 
 begin_class

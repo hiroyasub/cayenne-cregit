@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A java.util.List wrapper that stores objects prefetched together with the main list.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A java.util.List wrapper that stores objects prefetched together with the main list.  *   * @since 1.2  */
 end_comment
 
 begin_comment

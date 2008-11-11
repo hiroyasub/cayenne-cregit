@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Scope active model that has an internal map of properties,   * firing change events when a value in the map changes.  *   * @author Andrus Adamchik  */
+comment|/**  * Scope active model that has an internal map of properties,   * firing change events when a value in the map changes.  *   */
 end_comment
 
 begin_class

@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Subclass of FileConfiguration used in the project model.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Subclass of FileConfiguration used in the project model.  *   */
 end_comment
 
 begin_class

@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of DataContextDelegate that serves as a superclass for mockup  * test delegates.  *   * @author Andrus Adamchik  */
+comment|/**  * Default implementation of DataContextDelegate that serves as a superclass for mockup  * test delegates.  *   */
 end_comment
 
 begin_class

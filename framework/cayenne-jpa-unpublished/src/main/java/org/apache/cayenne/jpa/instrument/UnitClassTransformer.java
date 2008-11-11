@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ClassFileTransformer decorator that wraps a Java instrumentation ClassFileTransformer  * instance in a JPA ClassTransformer. UnitClassTranformer would only do transformation of  * the mapped classes.  *   * @author Andrus Adamchik  */
+comment|/**  * A ClassFileTransformer decorator that wraps a Java instrumentation ClassFileTransformer  * instance in a JPA ClassTransformer. UnitClassTranformer would only do transformation of  * the mapped classes.  *   */
 end_comment
 
 begin_class

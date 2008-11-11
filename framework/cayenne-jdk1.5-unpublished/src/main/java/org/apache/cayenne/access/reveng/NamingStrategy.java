@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * NamingStrategy is a strategy for creating names for entities, attributes, relationships  * during reverse engineering.  *   * @since 3.0  * @author Andrey Razumovsky  */
+comment|/**  * NamingStrategy is a strategy for creating names for entities, attributes, relationships  * during reverse engineering.  *   * @since 3.0  */
 end_comment
 
 begin_interface

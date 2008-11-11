@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Interface for Cayenne objects that can be saved to XML.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Interface for Cayenne objects that can be saved to XML.  *   * @since 1.1  */
 end_comment
 
 begin_interface

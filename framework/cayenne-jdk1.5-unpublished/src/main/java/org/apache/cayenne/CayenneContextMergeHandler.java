@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that merges "backdoor" modifications of the object graph coming from the  * underlying DataChannel. When doing an update, CayenneContextMergeHandler blocks  * broadcasting of GraphManager events.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An object that merges "backdoor" modifications of the object graph coming from the  * underlying DataChannel. When doing an update, CayenneContextMergeHandler blocks  * broadcasting of GraphManager events.  *   * @since 1.2  */
 end_comment
 
 begin_class

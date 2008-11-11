@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A translator that walks the relationship/attribute path, appending joins to the query.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A translator that walks the relationship/attribute path, appending joins to the query.  *   * @since 3.0  */
 end_comment
 
 begin_class

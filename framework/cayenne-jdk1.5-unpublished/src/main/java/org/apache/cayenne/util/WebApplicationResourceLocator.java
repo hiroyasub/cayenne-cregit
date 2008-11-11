@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ResourceLocator that can find resources relative to web application context.  *   * @author Andrus Adamchik  */
+comment|/**  * A ResourceLocator that can find resources relative to web application context.  *   */
 end_comment
 
 begin_class

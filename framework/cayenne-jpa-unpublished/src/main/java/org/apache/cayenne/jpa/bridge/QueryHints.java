@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines QueryHints recognized by Cayenne provider.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines QueryHints recognized by Cayenne provider.  *   */
 end_comment
 
 begin_interface

@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Represents events resulted from DataDomain changes   * in CayenneModeler.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**   * Represents events resulted from DataDomain changes   * in CayenneModeler.  *   */
 end_comment
 
 begin_class

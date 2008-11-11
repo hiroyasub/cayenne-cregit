@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests IncrementalFaultList behavior when fetching data rows.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests IncrementalFaultList behavior when fetching data rows.  *   */
 end_comment
 
 begin_class

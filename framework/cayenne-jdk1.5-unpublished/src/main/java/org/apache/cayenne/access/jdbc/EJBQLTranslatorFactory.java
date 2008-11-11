@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a factory for translation visitors of EJBQL. DbAdapters can customize EJBQL  * translation by providing their own factory implementation.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Defines a factory for translation visitors of EJBQL. DbAdapters can customize EJBQL  * translation by providing their own factory implementation.  *   * @since 3.0  */
 end_comment
 
 begin_interface

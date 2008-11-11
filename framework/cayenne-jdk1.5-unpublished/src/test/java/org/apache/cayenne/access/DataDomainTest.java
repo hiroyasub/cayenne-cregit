@@ -196,7 +196,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain unit tests.  *   * @author Andrus Adamchik  */
+comment|/**  * DataDomain unit tests.  *   */
 end_comment
 
 begin_class

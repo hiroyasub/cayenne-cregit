@@ -178,7 +178,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class to create a new stored procedure mapping.  *   * @author Andrus Adamchik  */
+comment|/**  * Action class to create a new stored procedure mapping.  *   */
 end_comment
 
 begin_class

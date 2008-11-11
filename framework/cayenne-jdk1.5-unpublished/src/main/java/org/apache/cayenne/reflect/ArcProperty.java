@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Property that represents an "arc" connecting source node to the target node in the  * graph.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Property that represents an "arc" connecting source node to the target node in the  * graph.  *   * @since 1.2  */
 end_comment
 
 begin_interface

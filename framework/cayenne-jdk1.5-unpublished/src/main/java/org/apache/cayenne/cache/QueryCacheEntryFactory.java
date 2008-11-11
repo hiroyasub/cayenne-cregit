@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A factory that is used by the cache to rebuild expired entries.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A factory that is used by the cache to rebuild expired entries.  *   * @since 3.0  */
 end_comment
 
 begin_interface

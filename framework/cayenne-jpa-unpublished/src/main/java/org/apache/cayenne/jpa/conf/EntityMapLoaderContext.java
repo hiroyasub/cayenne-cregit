@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A common context shared by different loaders during JPA mapping information processing.  *   * @author Andrus Adamchik  */
+comment|/**  * A common context shared by different loaders during JPA mapping information processing.  *   */
 end_comment
 
 begin_class

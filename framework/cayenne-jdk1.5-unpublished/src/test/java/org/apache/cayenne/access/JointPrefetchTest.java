@@ -284,7 +284,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests joint prefetch handling by Cayenne access stack.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests joint prefetch handling by Cayenne access stack.  *   */
 end_comment
 
 begin_class

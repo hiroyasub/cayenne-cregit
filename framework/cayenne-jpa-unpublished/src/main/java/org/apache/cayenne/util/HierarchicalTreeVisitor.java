@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A hierarchical visitor interface used for tree structures traversal.  *   * @author Andrus Adamchik  */
+comment|/**  * A hierarchical visitor interface used for tree structures traversal.  *   */
 end_comment
 
 begin_comment

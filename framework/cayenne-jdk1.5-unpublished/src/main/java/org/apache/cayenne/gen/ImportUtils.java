@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Methods for mangling strings.  *   * @author Mike Kienenberger  */
+comment|/**  * Methods for mangling strings.  *   */
 end_comment
 
 begin_class

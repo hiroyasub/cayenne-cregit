@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract property descriptor that delegates property access to an {@link Accessor}.  * Used as a superclass for other implementations.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An abstract property descriptor that delegates property access to an {@link Accessor}.  * Used as a superclass for other implementations.  *   * @since 3.0  */
 end_comment
 
 begin_class

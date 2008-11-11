@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain query action that relies on externally provided OperationObserver to process  * the results.  *   * @since 1.2  * @author Andrus Adamchik  * @deprecated since 3.0 - this class should not be public  */
+comment|/**  * DataDomain query action that relies on externally provided OperationObserver to process  * the results.  *   * @since 1.2  * @deprecated since 3.0 - this class should not be public  */
 end_comment
 
 begin_comment

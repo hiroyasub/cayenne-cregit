@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An event generated when a Query object is added to a DataMap,   * removed from a DataMap, or changed within a DataMap.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * An event generated when a Query object is added to a DataMap,   * removed from a DataMap, or changed within a DataMap.  *   * @since 1.1  */
 end_comment
 
 begin_class

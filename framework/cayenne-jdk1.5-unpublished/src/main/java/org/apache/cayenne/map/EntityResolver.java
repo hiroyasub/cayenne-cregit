@@ -316,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike DataMap,  * EntityResolver is intended to work as a runtime container of mapping. DataMaps can be  * added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike DataMap,  * EntityResolver is intended to work as a runtime container of mapping. DataMaps can be  * added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class

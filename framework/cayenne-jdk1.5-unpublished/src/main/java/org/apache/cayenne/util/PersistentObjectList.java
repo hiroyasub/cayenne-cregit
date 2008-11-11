@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A list of persistent objects lazily resolved on the first access.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A list of persistent objects lazily resolved on the first access.  *   * @since 1.2  */
 end_comment
 
 begin_class

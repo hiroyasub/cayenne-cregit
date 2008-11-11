@@ -314,7 +314,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dialog for resolving name collision.  *   * @author Dzmitry Rusak  */
+comment|/**  * Dialog for resolving name collision.  *   */
 end_comment
 
 begin_class

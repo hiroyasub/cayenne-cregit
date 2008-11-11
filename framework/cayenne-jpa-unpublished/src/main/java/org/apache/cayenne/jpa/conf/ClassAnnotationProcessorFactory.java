@@ -548,7 +548,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory of class annotation processors.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory of class annotation processors.  *   */
 end_comment
 
 begin_class

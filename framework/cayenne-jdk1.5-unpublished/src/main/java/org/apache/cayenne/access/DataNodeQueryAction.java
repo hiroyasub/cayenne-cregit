@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper that executes a sequence of queries, providing correct mapping of the results  * to the original query. Note that this class is not thread-safe as it stores current  * query execution state.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A helper that executes a sequence of queries, providing correct mapping of the results  * to the original query. Note that this class is not thread-safe as it stores current  * query execution state.  *   * @since 1.2  */
 end_comment
 
 begin_class

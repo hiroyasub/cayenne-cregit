@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Extracts a list of JPA unit names available in the environment.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Extracts a list of JPA unit names available in the environment.  *   * @since 3.0  */
 end_comment
 
 begin_comment

@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Subclass of Configuration that uses the System CLASSPATH to locate resources.  *   * @author Andrus Adamchik  */
+comment|/**  * Subclass of Configuration that uses the System CLASSPATH to locate resources.  *   */
 end_comment
 
 begin_class

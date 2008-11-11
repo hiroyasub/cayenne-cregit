@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs on the fly reconfiguration of Cayenne projects.  *    * @author Andrus Adamchik  */
+comment|/**  * Performs on the fly reconfiguration of Cayenne projects.  *    */
 end_comment
 
 begin_class

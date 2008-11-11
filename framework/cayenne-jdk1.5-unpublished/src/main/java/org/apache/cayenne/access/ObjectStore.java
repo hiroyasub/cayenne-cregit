@@ -570,7 +570,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ObjectStore stores objects using their ObjectId as a key. It works as a dedicated  * object cache for a DataContext. Users rarely need to access ObjectStore directly, as  * DataContext serves as a facade, providing cover methods for most ObjectStore  * operations.  *   * @since 1.0  * @author Andrus Adamchik  */
+comment|/**  * ObjectStore stores objects using their ObjectId as a key. It works as a dedicated  * object cache for a DataContext. Users rarely need to access ObjectStore directly, as  * DataContext serves as a facade, providing cover methods for most ObjectStore  * operations.  *   * @since 1.0  */
 end_comment
 
 begin_comment

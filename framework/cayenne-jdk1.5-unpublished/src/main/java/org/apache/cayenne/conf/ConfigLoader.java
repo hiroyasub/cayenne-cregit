@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class that performs runtime loading of Cayenne configuration.  *   * @author Andrus Adamchik  */
+comment|/**  * Class that performs runtime loading of Cayenne configuration.  *   */
 end_comment
 
 begin_class

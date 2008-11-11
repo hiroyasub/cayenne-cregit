@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of CayenneModeler dialogs. Adds support for popping hyperlinks   * in the default system browser.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of CayenneModeler dialogs. Adds support for popping hyperlinks   * in the default system browser.  *   */
 end_comment
 
 begin_class

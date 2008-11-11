@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Represents events resulted from Relationship changes   * in CayenneModeler. This event is used for both ObjRelationships  * and DbRelationships.  *   *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**   * Represents events resulted from Relationship changes   * in CayenneModeler. This event is used for both ObjRelationships  * and DbRelationships.  *   *   */
 end_comment
 
 begin_class

@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A message passed to a DataChannel to request a query execution with result returned as  * QueryResponse.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A message passed to a DataChannel to request a query execution with result returned as  * QueryResponse.  *   * @since 1.2  */
 end_comment
 
 begin_class

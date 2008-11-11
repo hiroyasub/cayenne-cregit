@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Listener for manipulation on a callback method  *  * @author Vasil Tarasevich  * @version 1.0 Oct 25, 2007  */
+comment|/**  * Listener for manipulation on a callback method  *  * @version 1.0 Oct 25, 2007  */
 end_comment
 
 begin_interface

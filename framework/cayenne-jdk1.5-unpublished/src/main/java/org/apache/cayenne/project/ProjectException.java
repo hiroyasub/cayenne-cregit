@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Runtime exception thrown on various errors within project model.  *   * @author Andrus Adamchik  */
+comment|/**  * Runtime exception thrown on various errors within project model.  *   */
 end_comment
 
 begin_class

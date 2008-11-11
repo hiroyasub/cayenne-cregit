@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Velocity template resource loader customized for Cayenne use. Supports loading  * templates from the thread ClassLoader and from relative and absolute paths.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Velocity template resource loader customized for Cayenne use. Supports loading  * templates from the thread ClassLoader and from relative and absolute paths.  *   * @since 1.2  */
 end_comment
 
 begin_comment

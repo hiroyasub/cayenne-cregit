@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator for DataMaps.  *   * @author Andrus Adamchik  */
+comment|/**  * Validator for DataMaps.  *   */
 end_comment
 
 begin_class

@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base task for all Cayenne ant tasks, providing support for common configuration items.  *  * @author Kevin Menard  * @since 1.2  */
+comment|/**  * Base task for all Cayenne ant tasks, providing support for common configuration items.  *  * @since 1.2  */
 end_comment
 
 begin_class

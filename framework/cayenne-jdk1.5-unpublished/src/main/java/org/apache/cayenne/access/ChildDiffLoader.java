@@ -270,7 +270,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent DataContext.  * Graph node ids are expected to be ObjectIds.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent DataContext.  * Graph node ids are expected to be ObjectIds.  *   * @since 1.2  */
 end_comment
 
 begin_class

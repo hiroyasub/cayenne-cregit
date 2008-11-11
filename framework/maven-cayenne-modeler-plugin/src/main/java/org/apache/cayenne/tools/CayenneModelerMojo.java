@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to start up the Cayenne modeler from the command-line.  *   * @author Kevin Menard  * @since 3.0  *   * @prefix cayenne-modeler  * @goal run  */
+comment|/**  * Maven mojo to start up the Cayenne modeler from the command-line.  *   * @since 3.0  *   * @prefix cayenne-modeler  * @goal run  */
 end_comment
 
 begin_class

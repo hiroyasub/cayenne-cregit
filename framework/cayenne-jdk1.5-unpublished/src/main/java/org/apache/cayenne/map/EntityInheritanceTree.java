@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A tree structure representing inheritance hierarchy of an ObjEntity and its  * subentities.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A tree structure representing inheritance hierarchy of an ObjEntity and its  * subentities.  *   * @since 1.1  */
 end_comment
 
 begin_class

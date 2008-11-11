@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder for a JTable binding.  *   * @author Andrus Adamchik  */
+comment|/**  * A builder for a JTable binding.  *   */
 end_comment
 
 begin_class

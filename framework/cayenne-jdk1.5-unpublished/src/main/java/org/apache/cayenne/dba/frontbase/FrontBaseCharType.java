@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A char type that uses a real clob for insertion.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A char type that uses a real clob for insertion.  *   * @since 1.2  */
 end_comment
 
 begin_comment

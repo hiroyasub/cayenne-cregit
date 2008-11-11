@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A view for the main DataNode editor tab.  *   * @author Andrus Adamchik  */
+comment|/**  * A view for the main DataNode editor tab.  *   */
 end_comment
 
 begin_class

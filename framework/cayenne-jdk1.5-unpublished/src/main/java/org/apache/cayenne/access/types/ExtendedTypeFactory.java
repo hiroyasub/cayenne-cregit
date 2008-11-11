@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * ExtendedType factory interface.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * ExtendedType factory interface.  *   * @since 1.2  */
 end_comment
 
 begin_interface

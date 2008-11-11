@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Concrete subclass of Project used for testing purposes.  *   * @author Andrus Adamchik  */
+comment|/**  * Concrete subclass of Project used for testing purposes.  *   */
 end_comment
 
 begin_class

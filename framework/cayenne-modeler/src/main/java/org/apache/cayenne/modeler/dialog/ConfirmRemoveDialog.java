@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Used to confirm deleting items in the model.  *  * @author Kevin Menard  */
+comment|/**  * Used to confirm deleting items in the model.  *  */
 end_comment
 
 begin_class

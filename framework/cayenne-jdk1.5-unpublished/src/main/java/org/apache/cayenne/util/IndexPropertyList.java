@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A List implementation that would maintain its internal ordering based on some object  * numeric "index" property. When objects are added to the list at a certain index, an  * "index" property is modified to reflect list order, when objects are removed, their  * index property is set to the negative number.  *<p>  * For performance reasons this implementation does not guarantee that there is no gaps in  * the integer ordering sequence (i.e. generally  *<code>object.getIndexProperty() != list.indexOf(object)</code>). However it  * guarantees the right ordering based on index property.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A List implementation that would maintain its internal ordering based on some object  * numeric "index" property. When objects are added to the list at a certain index, an  * "index" property is modified to reflect list order, when objects are removed, their  * index property is set to the negative number.  *<p>  * For performance reasons this implementation does not guarantee that there is no gaps in  * the integer ordering sequence (i.e. generally  *<code>object.getIndexProperty() != list.indexOf(object)</code>). However it  * guarantees the right ordering based on index property.  *   * @since 1.2  */
 end_comment
 
 begin_class

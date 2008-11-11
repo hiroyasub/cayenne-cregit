@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom SaveDelegate that adds some special handling when saving is done from the  * Modeler.  *   * @author Andrus Adamchik  */
+comment|/**  * A custom SaveDelegate that adds some special handling when saving is done from the  * Modeler.  *   */
 end_comment
 
 begin_class

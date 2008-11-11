@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a class generation "artifact" which is a facade to a metadata object used  * for a given single generation template run.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Represents a class generation "artifact" which is a facade to a metadata object used  * for a given single generation template run.  *   * @since 3.0  */
 end_comment
 
 begin_interface

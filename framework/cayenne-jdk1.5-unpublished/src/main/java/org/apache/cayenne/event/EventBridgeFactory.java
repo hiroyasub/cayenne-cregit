@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a factory to dynamically create EventBridge instances.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Defines a factory to dynamically create EventBridge instances.  *   * @since 1.1  */
 end_comment
 
 begin_interface

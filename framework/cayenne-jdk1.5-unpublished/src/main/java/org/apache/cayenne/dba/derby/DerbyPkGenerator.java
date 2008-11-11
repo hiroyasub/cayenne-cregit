@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default PK generator for Derby that uses updateable ResultSet to get the next id from  * the lookup table.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Default PK generator for Derby that uses updateable ResultSet to get the next id from  * the lookup table.  *   * @since 1.2  */
 end_comment
 
 begin_class

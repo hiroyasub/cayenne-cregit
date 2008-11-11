@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class implements default translation mechanism of org.apache.cayenne.query.UpdateQuery  * objects to SQL UPDATE statements.  *   * @author Andrus Adamchik  * @deprecated since 3.0 use EJBQL or SQLTemplate  */
+comment|/**  * Class implements default translation mechanism of org.apache.cayenne.query.UpdateQuery  * objects to SQL UPDATE statements.  *   * @deprecated since 3.0 use EJBQL or SQLTemplate  */
 end_comment
 
 begin_class

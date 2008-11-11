@@ -50,7 +50,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * LogConsole is a window with text area filled with log messages of the  * application.   * @author Andrey Razumovsky  */
+comment|/**  * LogConsole is a window with text area filled with log messages of the  * application.   */
 end_comment
 
 begin_class

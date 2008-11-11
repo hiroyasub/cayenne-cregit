@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests traversal annotations.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests traversal annotations.  *   */
 end_comment
 
 begin_class

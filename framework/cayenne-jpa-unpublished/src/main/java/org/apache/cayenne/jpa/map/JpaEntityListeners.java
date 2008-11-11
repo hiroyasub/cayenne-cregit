@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A collection of entity listener descriptors.  *   * @author Andrus Adamchik  */
+comment|/**  * A collection of entity listener descriptors.  *   */
 end_comment
 
 begin_comment

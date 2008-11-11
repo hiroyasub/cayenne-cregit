@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A helper class to do property type conversions.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A helper class to do property type conversions.  *   * @since 1.2  */
 end_comment
 
 begin_comment

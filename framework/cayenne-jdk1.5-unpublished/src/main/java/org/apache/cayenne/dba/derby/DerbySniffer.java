@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates a DerbyAdapter if Apache Derby database is detected.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Creates a DerbyAdapter if Apache Derby database is detected.  *   * @since 1.2  */
 end_comment
 
 begin_class

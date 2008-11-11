@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Serializer for PersistentObjectLists.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Serializer for PersistentObjectLists.  *   * @since 1.2  */
 end_comment
 
 begin_class

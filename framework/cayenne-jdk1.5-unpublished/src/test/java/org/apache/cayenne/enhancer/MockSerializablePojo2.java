@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A serializable pojo without "serialVersionId" defined.  *   * @author Andrus Adamchik  */
+comment|/**  * A serializable pojo without "serialVersionId" defined.  *   */
 end_comment
 
 begin_class

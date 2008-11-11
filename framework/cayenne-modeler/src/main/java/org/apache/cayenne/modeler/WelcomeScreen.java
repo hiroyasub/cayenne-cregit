@@ -316,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Welcome screen (CAY-894) is a panel shown when no project is open.  * User can quickly create new project or open an existing one.  * @author Andrey Razumovsky  */
+comment|/**  * Welcome screen (CAY-894) is a panel shown when no project is open.  * User can quickly create new project or open an existing one.  */
 end_comment
 
 begin_class

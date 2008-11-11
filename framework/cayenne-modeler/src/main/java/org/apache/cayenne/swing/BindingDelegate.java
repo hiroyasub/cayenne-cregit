@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines an API of a delegate notified by bindings whenever values are pushed from the  * view to the model. The value of delegate is that it allows to track changes to the  * model properties that themselves do not fire property change events.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines an API of a delegate notified by bindings whenever values are pushed from the  * view to the model. The value of delegate is that it allows to track changes to the  * model properties that themselves do not fire property change events.  *   */
 end_comment
 
 begin_interface

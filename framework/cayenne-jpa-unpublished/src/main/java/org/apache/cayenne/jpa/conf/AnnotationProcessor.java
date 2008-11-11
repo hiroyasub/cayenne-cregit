@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract JPA annotation processor.  *   * @author Andrus Adamchik  */
+comment|/**  * An abstract JPA annotation processor.  *   */
 end_comment
 
 begin_interface

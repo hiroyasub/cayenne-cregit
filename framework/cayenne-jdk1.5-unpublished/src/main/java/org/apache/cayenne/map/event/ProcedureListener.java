@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Listener for Procedure events.  *   * @author Andrus Adamchik  */
+comment|/**   * Listener for Procedure events.  *   */
 end_comment
 
 begin_interface

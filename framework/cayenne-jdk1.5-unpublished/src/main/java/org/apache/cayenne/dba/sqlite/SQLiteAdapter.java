@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLite database adapter that works with Zentus JDBC driver. See  * http://www.zentus.com/sqlitejdbc/ for the driver information.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A SQLite database adapter that works with Zentus JDBC driver. See  * http://www.zentus.com/sqlitejdbc/ for the driver information.  *   * @since 3.0  */
 end_comment
 
 begin_comment

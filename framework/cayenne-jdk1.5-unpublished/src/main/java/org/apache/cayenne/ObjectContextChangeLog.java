@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores graph operations in the order they were performed, optionally allowing to set  * named markers.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Stores graph operations in the order they were performed, optionally allowing to set  * named markers.  *   * @since 1.2  */
 end_comment
 
 begin_class

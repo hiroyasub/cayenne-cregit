@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A QueryResponse that contains a sublist of the query result. Also contains extra  * information about the full list.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A QueryResponse that contains a sublist of the query result. Also contains extra  * information about the full list.  *   * @since 1.2  */
 end_comment
 
 begin_class

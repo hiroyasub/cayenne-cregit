@@ -312,7 +312,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel that supports editing the properties of a GenericSelectQuery.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel that supports editing the properties of a GenericSelectQuery.  *   */
 end_comment
 
 begin_class

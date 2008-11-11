@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Andrus Adamchik  * @author Craig Miskell  */
+comment|/**  */
 end_comment
 
 begin_class

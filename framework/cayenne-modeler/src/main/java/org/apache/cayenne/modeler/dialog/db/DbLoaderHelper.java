@@ -430,7 +430,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stateful helper class that encapsulates access to DbLoader.  *   * @author Andrus Adamchik  */
+comment|/**  * Stateful helper class that encapsulates access to DbLoader.  *   */
 end_comment
 
 begin_class

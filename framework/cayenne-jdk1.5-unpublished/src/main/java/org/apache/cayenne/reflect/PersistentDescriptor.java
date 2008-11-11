@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default ClassDescriptor implementation for persistent objects.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A default ClassDescriptor implementation for persistent objects.  *   * @since 3.0  */
 end_comment
 
 begin_class

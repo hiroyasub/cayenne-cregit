@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A scalar value wrapper expression.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A scalar value wrapper expression.  *   * @since 1.1  */
 end_comment
 
 begin_class

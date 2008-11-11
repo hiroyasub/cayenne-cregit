@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that allows to explicitly clear both object and list caches either via refetch  * (eager refresh) or invalidate (lazy refresh).  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A query that allows to explicitly clear both object and list caches either via refetch  * (eager refresh) or invalidate (lazy refresh).  *   * @since 3.0  */
 end_comment
 
 begin_class

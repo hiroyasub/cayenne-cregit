@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of batch query translators.  *   * @author Andriy Shapochka, Andrus Adamchik  */
+comment|/**  * Superclass of batch query translators.  *   */
 end_comment
 
 begin_class

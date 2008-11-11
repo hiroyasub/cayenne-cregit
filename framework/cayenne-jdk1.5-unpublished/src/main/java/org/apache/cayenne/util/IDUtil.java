@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * helper class to generate pseudo-GUID sequences.  *   * @author Andrus Adamchik  */
+comment|/**  * helper class to generate pseudo-GUID sequences.  *   */
 end_comment
 
 begin_class

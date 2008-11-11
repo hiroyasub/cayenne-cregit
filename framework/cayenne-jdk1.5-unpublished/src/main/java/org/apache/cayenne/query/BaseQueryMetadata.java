@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default mutable implementation of {@link QueryMetadata}.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Default mutable implementation of {@link QueryMetadata}.  *   * @since 1.1  */
 end_comment
 
 begin_class

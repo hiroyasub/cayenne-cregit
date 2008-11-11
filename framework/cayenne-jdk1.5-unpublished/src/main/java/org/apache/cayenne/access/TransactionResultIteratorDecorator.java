@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Decorates ResultIterator to close active transaction when the iterator is closed.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Decorates ResultIterator to close active transaction when the iterator is closed.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @author Fabricio Voznika  */
+comment|/**  */
 end_comment
 
 begin_class

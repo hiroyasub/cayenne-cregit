@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class to encode objects to XML.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A helper class to encode objects to XML.  *   * @since 1.1  */
 end_comment
 
 begin_class

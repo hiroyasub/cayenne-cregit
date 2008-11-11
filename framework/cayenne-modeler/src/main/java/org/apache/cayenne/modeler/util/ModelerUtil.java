@@ -286,7 +286,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Various unorganized utility methods used by CayenneModeler.  *   * @author Andrus Adamchik  */
+comment|/**  * Various unorganized utility methods used by CayenneModeler.  *   */
 end_comment
 
 begin_class

@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A circular array is an array of fixed size as objects are added it will push objects  * off of the end to allow space for new objects to be added. This is useful for things  * like a fixed history size for a navigation tool.  *   * @author Garry Watkins  * @since 1.2  */
+comment|/**  * A circular array is an array of fixed size as objects are added it will push objects  * off of the end to allow space for new objects to be added. This is useful for things  * like a fixed history size for a navigation tool.  *   * @since 1.2  */
 end_comment
 
 begin_class

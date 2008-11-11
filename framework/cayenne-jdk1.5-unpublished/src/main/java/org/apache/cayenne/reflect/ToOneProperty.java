@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An ArcProperty that points to a single graph node.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An ArcProperty that points to a single graph node.  *   * @since 3.0  */
 end_comment
 
 begin_interface

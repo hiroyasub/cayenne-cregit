@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines a set of object states from the point of view of persistence. I.e.  * PersistenceState is the state of data stored in an object relative to the external  * persistence store. If an object's state matches the state of the persistence store, the  * object is COMMITTED. If object is not intended to be persistent or is not explicitly  * made persistent, the state is TRANSIENT, and so on.  *<p>  * Object persistence states should not be modified directly. Rather it is a  * responsibility of a ObjectContext/DataContext to maintain correct state of the managed  * objects.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines a set of object states from the point of view of persistence. I.e.  * PersistenceState is the state of data stored in an object relative to the external  * persistence store. If an object's state matches the state of the persistence store, the  * object is COMMITTED. If object is not intended to be persistent or is not explicitly  * made persistent, the state is TRANSIENT, and so on.  *<p>  * Object persistence states should not be modified directly. Rather it is a  * responsibility of a ObjectContext/DataContext to maintain correct state of the managed  * objects.  *   */
 end_comment
 
 begin_class

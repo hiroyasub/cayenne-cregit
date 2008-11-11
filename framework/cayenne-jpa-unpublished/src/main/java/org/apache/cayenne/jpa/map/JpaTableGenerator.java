@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A primary key generator based on a database table.  *   * @author Andrus Adamchik  */
+comment|/**  * A primary key generator based on a database table.  *   */
 end_comment
 
 begin_class

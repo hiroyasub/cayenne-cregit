@@ -370,7 +370,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dialog for displaying validation errors.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Dialog for displaying validation errors.  *   */
 end_comment
 
 begin_class

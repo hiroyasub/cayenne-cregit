@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Binds a checkbox state to an int or boolean property.  *   * @author Andrus Adamchik  */
+comment|/**  * Binds a checkbox state to an int or boolean property.  *   */
 end_comment
 
 begin_class

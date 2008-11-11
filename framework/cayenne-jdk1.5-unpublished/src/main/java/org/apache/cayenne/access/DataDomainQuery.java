@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that allows DataContext to retrieve parent DataDomain through a chain of  * decorator DataChannels.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * A query that allows DataContext to retrieve parent DataDomain through a chain of  * decorator DataChannels.  *   * @since 3.0  */
 end_comment
 
 begin_class

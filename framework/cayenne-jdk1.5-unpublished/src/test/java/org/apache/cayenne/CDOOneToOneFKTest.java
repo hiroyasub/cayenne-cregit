@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests the behavior of one-to-one relationship where to-one is pointing to an FK.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Tests the behavior of one-to-one relationship where to-one is pointing to an FK.  *   * @since 1.1  */
 end_comment
 
 begin_class

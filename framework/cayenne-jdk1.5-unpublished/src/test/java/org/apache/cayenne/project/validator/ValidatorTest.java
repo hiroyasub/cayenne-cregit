@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test cases for the Validator class.  *   * @author Andrus Adamchik  */
+comment|/**  * Test cases for the Validator class.  *   */
 end_comment
 
 begin_class

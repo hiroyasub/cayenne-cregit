@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An action object that processes graph change calls from Persistent objects. It handles  * GraphManager notifications and bi-directional graph consistency. The main difference  * with CayenneContextGraph action is that reverse relationships are handled by the  * objects themselves.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An action object that processes graph change calls from Persistent objects. It handles  * GraphManager notifications and bi-directional graph consistency. The main difference  * with CayenneContextGraph action is that reverse relationships are handled by the  * objects themselves.  *   * @since 3.0  */
 end_comment
 
 begin_class

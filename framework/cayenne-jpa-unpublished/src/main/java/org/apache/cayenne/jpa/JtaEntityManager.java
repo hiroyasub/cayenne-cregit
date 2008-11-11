@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An EntityManager that can participate in JTA transactions.  *   * @author Andrus Adamchik  */
+comment|/**  * An EntityManager that can participate in JTA transactions.  *   */
 end_comment
 
 begin_class

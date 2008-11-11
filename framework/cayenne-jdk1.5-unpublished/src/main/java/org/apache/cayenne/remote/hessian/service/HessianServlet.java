@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An extension of the<code>com.caucho.hessian.server.HessianServlet</code> that  * installs default Cayenne handlers, simplifying<code>web.xml</code> configuration.  * Here is a sample configuration:  *   *<pre>  *&lt;servlet&gt;  *&lt;servlet-name&gt;cayenne&lt;/servlet-name&gt;  *&lt;servlet-class&gt;org.apache.cayenne.remote.hessian.service.HessianServlet&lt;/servlet-class&gt;  *&lt;/servlet&gt;  *                          *&lt;servlet-mapping&gt;  *&lt;servlet-name&gt;cayenne&lt;/servlet-name&gt;  *&lt;url-pattern&gt;/cayenne&lt;/url-pattern&gt;  *&lt;/servlet-mapping&gt;  *</pre>  *   * Custom service class and interface can be specified in a manner compatible with Hessian  * recommendations, namely via<em>service-class</em> and<em>api-class</em> servlet  * parameters.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An extension of the<code>com.caucho.hessian.server.HessianServlet</code> that  * installs default Cayenne handlers, simplifying<code>web.xml</code> configuration.  * Here is a sample configuration:  *   *<pre>  *&lt;servlet&gt;  *&lt;servlet-name&gt;cayenne&lt;/servlet-name&gt;  *&lt;servlet-class&gt;org.apache.cayenne.remote.hessian.service.HessianServlet&lt;/servlet-class&gt;  *&lt;/servlet&gt;  *                          *&lt;servlet-mapping&gt;  *&lt;servlet-name&gt;cayenne&lt;/servlet-name&gt;  *&lt;url-pattern&gt;/cayenne&lt;/url-pattern&gt;  *&lt;/servlet-mapping&gt;  *</pre>  *   * Custom service class and interface can be specified in a manner compatible with Hessian  * recommendations, namely via<em>service-class</em> and<em>api-class</em> servlet  * parameters.  *   * @since 1.2  */
 end_comment
 
 begin_class

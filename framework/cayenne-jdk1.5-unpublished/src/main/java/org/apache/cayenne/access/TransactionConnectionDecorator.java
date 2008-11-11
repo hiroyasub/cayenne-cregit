@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A wrapper of a JDBC connection that is attached to a transaction. The behavior of this  * object to delegate all method calls to the underlying connection, except for the  * 'close' method that is implemented as noop in hope that a transaction originator will  * close the underlying Connection object.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A wrapper of a JDBC connection that is attached to a transaction. The behavior of this  * object to delegate all method calls to the underlying connection, except for the  * 'close' method that is implemented as noop in hope that a transaction originator will  * close the underlying Connection object.  *   * @since 1.2  */
 end_comment
 
 begin_class

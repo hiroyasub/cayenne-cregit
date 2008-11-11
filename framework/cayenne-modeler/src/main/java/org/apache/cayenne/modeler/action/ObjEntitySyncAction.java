@@ -214,7 +214,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action that synchronizes a given ObjEntity with the current state of the underlying  * DbEntity.  *   * @author Andrus Adamchik  */
+comment|/**  * Action that synchronizes a given ObjEntity with the current state of the underlying  * DbEntity.  *   */
 end_comment
 
 begin_class

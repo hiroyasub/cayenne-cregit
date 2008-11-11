@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores a set of Invocation objects, organizing them by sender. Listeners have an option  * to receive events for a particular sender or to receive all events. EventManager  * creates one DispatchQueue per EventSubject. DispatchQueue is thread-safe - all methods  * that read/modify internal collections are synchronized.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Stores a set of Invocation objects, organizing them by sender. Listeners have an option  * to receive events for a particular sender or to receive all events. EventManager  * creates one DispatchQueue per EventSubject. DispatchQueue is thread-safe - all methods  * that read/modify internal collections are synchronized.  *   * @since 1.1  */
 end_comment
 
 begin_class

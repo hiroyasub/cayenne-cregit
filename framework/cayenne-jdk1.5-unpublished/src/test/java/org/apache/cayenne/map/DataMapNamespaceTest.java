@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test case for recursive lookup of DataMap resources via a parent  * namespace.  *   * @author Andrus Adamchik  */
+comment|/**  * Test case for recursive lookup of DataMap resources via a parent  * namespace.  *   */
 end_comment
 
 begin_class

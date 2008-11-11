@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Display event for callback method  *  * @author Vasil Tarasevich  * @version 1.0 Oct 24, 2007  */
+comment|/**  * Display event for callback method  *  * @version 1.0 Oct 24, 2007  */
 end_comment
 
 begin_class

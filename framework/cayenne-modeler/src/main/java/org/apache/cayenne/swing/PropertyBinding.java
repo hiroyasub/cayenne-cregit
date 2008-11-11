@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A binding for connecting to children that implement BoundComponent.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A binding for connecting to children that implement BoundComponent.  *   * @since 1.2  */
 end_comment
 
 begin_class

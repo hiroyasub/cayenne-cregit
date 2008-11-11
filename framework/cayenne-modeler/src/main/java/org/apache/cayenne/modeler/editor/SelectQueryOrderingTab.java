@@ -458,7 +458,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel for picking SelectQuery orderings.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel for picking SelectQuery orderings.  *   */
 end_comment
 
 begin_class

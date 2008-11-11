@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines API that allows QueryEngine to obtain information about query execution  * strategy.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API that allows QueryEngine to obtain information about query execution  * strategy.  *   */
 end_comment
 
 begin_interface

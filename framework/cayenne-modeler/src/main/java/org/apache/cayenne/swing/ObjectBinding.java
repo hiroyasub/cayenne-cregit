@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of a binding sitting between a Swing widget and domain model, synchronizing  * the values between the two. Parent part of the binding is called "context"as it is used  * as a context of binding expressions. Child of the binding is a bound component that is  * being synchronized with the context.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines API of a binding sitting between a Swing widget and domain model, synchronizing  * the values between the two. Parent part of the binding is called "context"as it is used  * as a context of binding expressions. Child of the binding is a bound component that is  * being synchronized with the context.  *   */
 end_comment
 
 begin_interface

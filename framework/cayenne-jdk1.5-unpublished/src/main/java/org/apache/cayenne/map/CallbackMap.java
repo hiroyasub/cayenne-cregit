@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic descriptor of a set of standard lifecycle callbacks.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * A generic descriptor of a set of standard lifecycle callbacks.  *   * @since 3.0  */
 end_comment
 
 begin_class

@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class encapsulates the String that is used to identify the<em>subject</em> that  * a listener is interested in. Using plain Strings causes several severe problems:  *<ul>  *<li>it's easy to misspell a subject, leading to undesired behaviour at runtime that is  * hard to debug.</li>  *<li>in systems with many different subjects there is no safeguard for defining the  * same subject twice for different purposes. This is especially true in a distributed  * setting.  *</ul>  *   * @author Dirk Olmes  * @author Holger Hoffstaette  */
+comment|/**  * This class encapsulates the String that is used to identify the<em>subject</em> that  * a listener is interested in. Using plain Strings causes several severe problems:  *<ul>  *<li>it's easy to misspell a subject, leading to undesired behaviour at runtime that is  * hard to debug.</li>  *<li>in systems with many different subjects there is no safeguard for defining the  * same subject twice for different purposes. This is especially true in a distributed  * setting.  *</ul>  *   */
 end_comment
 
 begin_class

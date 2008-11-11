@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation for modeler log console functionality  * @author Andrey Razumovsky  */
+comment|/**  * Implementation for modeler log console functionality  */
 end_comment
 
 begin_class

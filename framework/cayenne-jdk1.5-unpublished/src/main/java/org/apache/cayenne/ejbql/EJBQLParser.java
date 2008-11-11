@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract definition of EJBQL query parser. The actual parser implementing this  * interface is generated from JavaCC grammar.  *   * @author andrus  * @since 3.0  */
+comment|/**  * An abstract definition of EJBQL query parser. The actual parser implementing this  * interface is generated from JavaCC grammar.  *   * @since 3.0  */
 end_comment
 
 begin_interface

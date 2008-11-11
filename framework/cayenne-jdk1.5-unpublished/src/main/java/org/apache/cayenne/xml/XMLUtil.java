@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Static utility methods to work with DOM trees.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Static utility methods to work with DOM trees.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * The ROT-47 password encoder passes the text of the database password  * through a simple Caesar cipher to obscure the password text.  The ROT-47  * cipher is similar to the ROT-13 cipher, but processes numbers and symbols  * as well. See the Wikipedia entry on  *<a href="http://en.wikipedia.org/wiki/Rot-13">ROT13</a>  * for more information on this topic.  *  * @since 3.0  * @author Michael Gentry  */
+comment|/**  * The ROT-47 password encoder passes the text of the database password  * through a simple Caesar cipher to obscure the password text.  The ROT-47  * cipher is similar to the ROT-13 cipher, but processes numbers and symbols  * as well. See the Wikipedia entry on  *<a href="http://en.wikipedia.org/wiki/Rot-13">ROT13</a>  * for more information on this topic.  *  * @since 3.0  */
 end_comment
 
 begin_class

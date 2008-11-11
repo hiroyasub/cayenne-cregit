@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of EventBridge that passes and receives events via JavaGroups  * communication software.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Implementation of EventBridge that passes and receives events via JavaGroups  * communication software.  *   * @since 1.1  */
 end_comment
 
 begin_class

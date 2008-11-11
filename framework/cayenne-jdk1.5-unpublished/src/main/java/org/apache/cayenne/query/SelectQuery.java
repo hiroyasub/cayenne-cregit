@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that selects persistent objects of a certain type or "raw data" (aka DataRows).  * Supports expression qualifier, multiple orderings and a number of other parameters that  * serve as runtime hints to Cayenne on how to optimize the fetch and result processing.  *   * @author Andrus Adamchik  */
+comment|/**  * A query that selects persistent objects of a certain type or "raw data" (aka DataRows).  * Supports expression qualifier, multiple orderings and a number of other parameters that  * serve as runtime hints to Cayenne on how to optimize the fetch and result processing.  *   */
 end_comment
 
 begin_class

@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a query that can serve as a template for other queries. ParameterizedQuery  * interface is used mainly in DataContext convenience methods, simplifying execution of  * the mapped queries.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Defines a query that can serve as a template for other queries. ParameterizedQuery  * interface is used mainly in DataContext convenience methods, simplifying execution of  * the mapped queries.  *   * @since 1.1  */
 end_comment
 
 begin_interface

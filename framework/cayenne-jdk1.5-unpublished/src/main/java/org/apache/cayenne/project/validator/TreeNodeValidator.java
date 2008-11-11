@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator of a single node in a project object tree.<i>Do not confuse with  * org.apache.cayenne.access.DataNode.</i>  *   * @author Andrus Adamchik  */
+comment|/**  * Validator of a single node in a project object tree.<i>Do not confuse with  * org.apache.cayenne.access.DataNode.</i>  *   */
 end_comment
 
 begin_class

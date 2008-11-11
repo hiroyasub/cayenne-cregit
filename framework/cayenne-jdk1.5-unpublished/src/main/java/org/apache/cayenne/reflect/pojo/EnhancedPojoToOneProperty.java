@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A property descriptor for the to-one relationship property of an enhanced pojo. Assumes  * a class in question has a field called "$cay_faultResolved_propertyName" that stores a  * boolean flag indicating whether the property in question is not yet resolved.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A property descriptor for the to-one relationship property of an enhanced pojo. Assumes  * a class in question has a field called "$cay_faultResolved_propertyName" that stores a  * boolean flag indicating whether the property in question is not yet resolved.  *   * @since 3.0  */
 end_comment
 
 begin_class

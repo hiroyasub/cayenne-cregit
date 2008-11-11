@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Overrides CellEditor to allow multiple selection in table  * without bothering the editor.  *   * @author Andrey Razumovsky  */
+comment|/**  * Overrides CellEditor to allow multiple selection in table  * without bothering the editor.  *   */
 end_comment
 
 begin_class

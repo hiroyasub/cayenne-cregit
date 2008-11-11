@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Text adapter with live validation, which is fired in  * VALIDATION_DELAY time.  * @author Andrey Razumovsky  */
+comment|/**  * Text adapter with live validation, which is fired in  * VALIDATION_DELAY time.  */
 end_comment
 
 begin_class

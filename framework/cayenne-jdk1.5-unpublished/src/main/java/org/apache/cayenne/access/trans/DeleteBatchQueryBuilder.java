@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translator for delete BatchQueries. Creates parametrized DELETE SQL statements.  *   * @author Andriy Shapochka, Andrus Adamchik, Mike Kienenberger  */
+comment|/**  * Translator for delete BatchQueries. Creates parametrized DELETE SQL statements.  *   */
 end_comment
 
 begin_class

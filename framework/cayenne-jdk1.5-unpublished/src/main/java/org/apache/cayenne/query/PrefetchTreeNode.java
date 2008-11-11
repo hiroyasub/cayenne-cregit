@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a node in a prefetch tree.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Defines a node in a prefetch tree.  *   * @since 1.2  */
 end_comment
 
 begin_class

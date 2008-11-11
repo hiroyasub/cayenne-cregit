@@ -608,7 +608,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper test class that checks loaded entity map for processed annotations.  *   * @author Andrus Adamchik  */
+comment|/**  * A helper test class that checks loaded entity map for processed annotations.  *   */
 end_comment
 
 begin_class

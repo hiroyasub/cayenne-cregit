@@ -178,7 +178,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A dialog to select a type of newly created query.  *   * @author Andrus Adamchik  */
+comment|/**  * A dialog to select a type of newly created query.  *   */
 end_comment
 
 begin_class

@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProcedureAction for SQLServer MS JDBC driver. Customizes OUT parameter processing - it  * has to be done AFTER the ResultSets are read (note that jTDS driver works fine with  * normal ProcedureAction).  *<p>  *<i>See JIRA CAY-251 for details.</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * ProcedureAction for SQLServer MS JDBC driver. Customizes OUT parameter processing - it  * has to be done AFTER the ResultSets are read (note that jTDS driver works fine with  * normal ProcedureAction).  *<p>  *<i>See JIRA CAY-251 for details.</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

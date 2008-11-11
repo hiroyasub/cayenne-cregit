@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Data map editing tabs container  *  * @author Vasil Tarasevich  */
+comment|/**  * Data map editing tabs container  *  */
 end_comment
 
 begin_class

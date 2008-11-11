@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An API for a binding child that allows to establish bindings to custom Swing  * components.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An API for a binding child that allows to establish bindings to custom Swing  * components.  *   * @since 1.2  */
 end_comment
 
 begin_interface

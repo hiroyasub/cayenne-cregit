@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class in combination with the ASM Eclipse plugin is used as a reference for  * building parts of the ASM enhancer. It demonstrates how a pojo should look like after  * the enhancement.  *   * @author Andrus Adamchik  */
+comment|/**  * This class in combination with the ASM Eclipse plugin is used as a reference for  * building parts of the ASM enhancer. It demonstrates how a pojo should look like after  * the enhancement.  *   */
 end_comment
 
 begin_class

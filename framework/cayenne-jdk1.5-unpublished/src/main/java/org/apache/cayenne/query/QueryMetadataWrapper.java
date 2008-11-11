@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A wrapper for a QueryMetadata instance allowing that may override a subset of metadata  * properties.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A wrapper for a QueryMetadata instance allowing that may override a subset of metadata  * properties.  *   * @since 1.2  */
 end_comment
 
 begin_class

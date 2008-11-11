@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Removes currently selected parameter from the current procedure.  *   * @author Garry Watkins  */
+comment|/**  * Removes currently selected parameter from the current procedure.  *   */
 end_comment
 
 begin_class

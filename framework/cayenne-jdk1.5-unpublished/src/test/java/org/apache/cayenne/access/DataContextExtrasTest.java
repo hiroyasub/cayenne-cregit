@@ -276,7 +276,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Lightweight" test cases for DataContext. These tests do not require any additional  * database setup.  *   * @author Andrus Adamchik  */
+comment|/**  * "Lightweight" test cases for DataContext. These tests do not require any additional  * database setup.  *   */
 end_comment
 
 begin_class

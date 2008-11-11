@@ -370,7 +370,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of aggregator mojos.  *   * @author Andrus Adamchik  */
+comment|/**  * A superclass of aggregator mojos.  *   */
 end_comment
 
 begin_class

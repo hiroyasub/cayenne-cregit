@@ -96,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines tree traversal utility methods. Object tree sematics is determined using  * {@link org.apache.cayenne.util.TreeNodeChild} property getter annotation.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines tree traversal utility methods. Object tree sematics is determined using  * {@link org.apache.cayenne.util.TreeNodeChild} property getter annotation.  *   */
 end_comment
 
 begin_class

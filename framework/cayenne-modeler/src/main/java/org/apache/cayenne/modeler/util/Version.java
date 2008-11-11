@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to deal with version strings.  *   * @author Andrus Adamchik  */
+comment|/**  * Helper class to deal with version strings.  *   */
 end_comment
 
 begin_class

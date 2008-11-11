@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The common superclass for all SAX event handlers used to parse the configuration file.  * Each method just throws an exception, so subclasses should override what they can  * handle. Each type of XML element (map, node, etc.) has a specific subclass. In the  * constructor, this class takes over the handling of SAX events from the parent handler  * and returns control back to the parent in the endElement method.  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * The common superclass for all SAX event handlers used to parse the configuration file.  * Each method just throws an exception, so subclasses should override what they can  * handle. Each type of XML element (map, node, etc.) has a specific subclass. In the  * constructor, this class takes over the handling of SAX events from the parent handler  * and returns control back to the parent in the endElement method.  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

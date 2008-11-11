@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PooledConnectionImpl is an implementation of a pooling wrapper for the database  * connection as per JDBC3 spec. Most of the modern JDBC drivers should have its own  * implementation that may be used instead of this class.  *   * @author Andrus Adamchik  */
+comment|/**  * PooledConnectionImpl is an implementation of a pooling wrapper for the database  * connection as per JDBC3 spec. Most of the modern JDBC drivers should have its own  * implementation that may be used instead of this class.  *   */
 end_comment
 
 begin_class

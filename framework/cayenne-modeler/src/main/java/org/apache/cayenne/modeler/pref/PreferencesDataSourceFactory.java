@@ -286,7 +286,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataSourceFactory that loads DataSources from CayenneModeler preferences. Allows  * integrating Cayenne runtime with preferences engine. Currently JNDIDataSourceFactory  * uses this factory as a failover loading mechanism, instantiating it via reflection.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A DataSourceFactory that loads DataSources from CayenneModeler preferences. Allows  * integrating Cayenne runtime with preferences engine. Currently JNDIDataSourceFactory  * uses this factory as a failover loading mechanism, instantiating it via reflection.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -318,7 +318,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements a strategy for execution of SQLTemplates.  *   * @author Andrus Adamchik  * @since 1.2 replaces SQLTemplateExecutionPlan  */
+comment|/**  * Implements a strategy for execution of SQLTemplates.  *   * @since 1.2 replaces SQLTemplateExecutionPlan  */
 end_comment
 
 begin_class

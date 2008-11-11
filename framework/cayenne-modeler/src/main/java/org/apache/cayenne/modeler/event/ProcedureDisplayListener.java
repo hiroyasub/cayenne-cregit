@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Interface for classes that are interested in Procedure   * display events.   *   * @author Andrus Adamchik  */
+comment|/**   * Interface for classes that are interested in Procedure   * display events.   *   */
 end_comment
 
 begin_interface

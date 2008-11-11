@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Listens to changes in recent file list   * @author Andrey Razumovsky  */
+comment|/**  * Listens to changes in recent file list   */
 end_comment
 
 begin_interface

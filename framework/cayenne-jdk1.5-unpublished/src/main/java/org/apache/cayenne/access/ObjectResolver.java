@@ -218,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataRows-to-objects converter for a specific ObjEntity.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * DataRows-to-objects converter for a specific ObjEntity.  *   * @since 1.2  */
 end_comment
 
 begin_class

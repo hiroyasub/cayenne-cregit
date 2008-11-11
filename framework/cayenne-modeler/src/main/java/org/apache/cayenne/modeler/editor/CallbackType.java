@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Entity for callback type. Contains type and type name  *   * @author Vasil Tarasevich  * @version 1.0 Oct 26, 2007  */
+comment|/**  * Entity for callback type. Contains type and type name  *   * @version 1.0 Oct 26, 2007  */
 end_comment
 
 begin_class

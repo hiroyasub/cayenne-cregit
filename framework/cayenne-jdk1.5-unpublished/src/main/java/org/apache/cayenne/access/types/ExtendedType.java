@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines methods to read Java objects from JDBC ResultSets and write as parameters of  * PreparedStatements.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines methods to read Java objects from JDBC ResultSets and write as parameters of  * PreparedStatements.  *   */
 end_comment
 
 begin_interface

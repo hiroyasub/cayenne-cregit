@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Table model for DbRelationship table.  *   * @author Michael Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * Table model for DbRelationship table.  *   */
 end_comment
 
 begin_class

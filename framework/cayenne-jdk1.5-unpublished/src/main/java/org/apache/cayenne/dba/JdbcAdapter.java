@@ -440,7 +440,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic DbAdapter implementation. Can be used as a default adapter or as a superclass  * of a concrete adapter implementation.  *   * @author Andrus Adamchik  */
+comment|/**  * A generic DbAdapter implementation. Can be used as a default adapter or as a superclass  * of a concrete adapter implementation.  *   */
 end_comment
 
 begin_class

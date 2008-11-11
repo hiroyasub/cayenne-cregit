@@ -160,7 +160,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor used by default service implementation to pass session parameters to the  * client. It provides the client with details on how to invoke the service and how to  * listen for the server events.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A descriptor used by default service implementation to pass session parameters to the  * client. It provides the client with details on how to invoke the service and how to  * listen for the server events.  *   * @since 1.2  */
 end_comment
 
 begin_class

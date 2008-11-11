@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ValueHolder implementation that holds a single Persistent object related to an object  * used to initialize PersistentObjectHolder. Value is resolved on first access.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A ValueHolder implementation that holds a single Persistent object related to an object  * used to initialize PersistentObjectHolder. Value is resolved on first access.  *   * @since 1.2  */
 end_comment
 
 begin_class

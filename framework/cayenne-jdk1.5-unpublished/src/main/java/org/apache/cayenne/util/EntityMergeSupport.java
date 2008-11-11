@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements methods for entity merging.  *   * @author Andrus Adamchik  */
+comment|/**  * Implements methods for entity merging.  *   */
 end_comment
 
 begin_class

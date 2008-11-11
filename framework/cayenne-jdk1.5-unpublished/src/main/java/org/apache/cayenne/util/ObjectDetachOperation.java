@@ -214,7 +214,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An operation that creates a subgraph of detached objects, using the PrefetchTree to  * delineate the graph boundaries. Target objects can be described by a different set of  * descriptors, thus allowing server-to-client conversion to happen in the process.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An operation that creates a subgraph of detached objects, using the PrefetchTree to  * delineate the graph boundaries. Target objects can be described by a different set of  * descriptors, thus allowing server-to-client conversion to happen in the process.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Scope convertor that allows to display expressions in text fields.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A Scope convertor that allows to display expressions in text fields.  *   * @since 1.1  */
 end_comment
 
 begin_class

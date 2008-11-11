@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An engine to port data between two DataNodes. These nodes can potentially connect to  * databases from different vendors. The only assumption is that all of the DbEntities  * (tables) being ported are present in both source and destination databases and are  * adequately described by Cayenne mapping.  *<p>  * DataPort implements a Cayenne-based algorithm to read data from source DataNode and  * write to destination DataNode. It uses DataPortDelegate interface to externalize  * various things, such as determining what entities to port (include/exclude from port  * based on some criteria), logging the progress of port operation, qualifying the  * queries, etc.  *</p>  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  * @author Andrus Adamchik  */
+comment|/**  * An engine to port data between two DataNodes. These nodes can potentially connect to  * databases from different vendors. The only assumption is that all of the DbEntities  * (tables) being ported are present in both source and destination databases and are  * adequately described by Cayenne mapping.  *<p>  * DataPort implements a Cayenne-based algorithm to read data from source DataNode and  * write to destination DataNode. It uses DataPortDelegate interface to externalize  * various things, such as determining what entities to port (include/exclude from port  * based on some criteria), logging the progress of port operation, qualifying the  * queries, etc.  *</p>  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
 end_comment
 
 begin_class

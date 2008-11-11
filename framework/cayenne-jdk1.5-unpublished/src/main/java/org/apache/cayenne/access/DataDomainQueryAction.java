@@ -496,7 +496,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs query routing and execution. During execution phase intercepts callbacks to  * the OperationObserver, remapping results to the original pre-routed queries.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Performs query routing and execution. During execution phase intercepts callbacks to  * the OperationObserver, remapping results to the original pre-routed queries.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A simple serializable implementation of QueryResponse.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A simple serializable implementation of QueryResponse.  *   * @since 1.2  */
 end_comment
 
 begin_class

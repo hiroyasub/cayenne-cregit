@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataChannel that throws on all query or update attempts.  *   * @author Andrus Adamchik  */
+comment|/**  * A DataChannel that throws on all query or update attempts.  *   */
 end_comment
 
 begin_class

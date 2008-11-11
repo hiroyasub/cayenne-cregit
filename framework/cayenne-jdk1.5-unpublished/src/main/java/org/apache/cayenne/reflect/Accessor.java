@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An accessor of a property value. Abstracts the actual property implementation. E.g. it  * can be a Field, a pair of get/set methods or a map/DataObject.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * An accessor of a property value. Abstracts the actual property implementation. E.g. it  * can be a Field, a pair of get/set methods or a map/DataObject.  *   * @since 3.0  */
 end_comment
 
 begin_interface

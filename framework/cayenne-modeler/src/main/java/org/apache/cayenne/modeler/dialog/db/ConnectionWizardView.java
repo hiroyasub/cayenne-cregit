@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Dialog special for reverse engineering. Has one special combobox for  * choosing naming strategy   * @author Andrey Razumovsky  */
+comment|/**  * Dialog special for reverse engineering. Has one special combobox for  * choosing naming strategy   */
 end_comment
 
 begin_class

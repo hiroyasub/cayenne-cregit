@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface defines API to check the status of Cayenne configuration.  *   * @author Andrus Adamchik  */
+comment|/**  * Interface defines API to check the status of Cayenne configuration.  *   */
 end_comment
 
 begin_class

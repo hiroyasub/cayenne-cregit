@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class to match message types with DataChannel methods.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A helper class to match message types with DataChannel methods.  *   * @since 1.2  */
 end_comment
 
 begin_class

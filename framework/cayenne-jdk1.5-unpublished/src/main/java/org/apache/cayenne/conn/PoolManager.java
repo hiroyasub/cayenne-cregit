@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  *   * @author Andrus Adamchik  */
+comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  *   */
 end_comment
 
 begin_class

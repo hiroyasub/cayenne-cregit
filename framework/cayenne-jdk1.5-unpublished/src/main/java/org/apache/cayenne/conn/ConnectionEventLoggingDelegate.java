@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A callback API to used by {@link org.apache.cayenne.conn.DriverDataSource} and  * {@link org.apache.cayenne.conn.PoolManager} to notify of connection events. Used  * mainly for logging.  *   * @author Andrus Adamchik  */
+comment|/**  * A callback API to used by {@link org.apache.cayenne.conn.DriverDataSource} and  * {@link org.apache.cayenne.conn.PoolManager} to notify of connection events. Used  * mainly for logging.  *   */
 end_comment
 
 begin_interface

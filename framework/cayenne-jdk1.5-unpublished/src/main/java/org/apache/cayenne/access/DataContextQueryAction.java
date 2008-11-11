@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataContext-specific version of  * {@link org.apache.cayenne.util.ObjectContextQueryAction}.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A DataContext-specific version of  * {@link org.apache.cayenne.util.ObjectContextQueryAction}.  *   * @since 1.2  */
 end_comment
 
 begin_class

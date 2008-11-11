@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataSource wrapper around Cayenne DataNode. Helpful for lazy initialization, i.e.  * when node's DataSource is needed to initialize some other object BEFORE it is  * initialized itself.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A DataSource wrapper around Cayenne DataNode. Helpful for lazy initialization, i.e.  * when node's DataSource is needed to initialize some other object BEFORE it is  * initialized itself.  *   * @since 1.2  */
 end_comment
 
 begin_class

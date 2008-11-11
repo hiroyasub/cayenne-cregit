@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that maps a result set column to an ObjAttribute or DbAttribute. Used  * by {@link EntityResult}.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A metadata object that maps a result set column to an ObjAttribute or DbAttribute. Used  * by {@link EntityResult}.  *   * @since 3.0  */
 end_comment
 
 begin_class

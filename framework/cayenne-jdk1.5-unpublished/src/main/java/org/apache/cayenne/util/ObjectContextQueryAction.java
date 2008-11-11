@@ -232,7 +232,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that implements  * {@link org.apache.cayenne.DataChannel#onQuery(ObjectContext, Query)} logic on behalf of  * an ObjectContext.  *<p>  *<i>Intended for internal use only.</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A helper class that implements  * {@link org.apache.cayenne.DataChannel#onQuery(ObjectContext, Query)} logic on behalf of  * an ObjectContext.  *<p>  *<i>Intended for internal use only.</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

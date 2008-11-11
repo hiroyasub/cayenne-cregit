@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores all messages passed via this handler.  *   * @author Andrus Adamchik  */
+comment|/**  * Stores all messages passed via this handler.  *   */
 end_comment
 
 begin_class

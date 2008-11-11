@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A goal to build an aggregated source artifact from multiple source artifacts.  *   * @author Andrus Adamchik  * @goal aggregate-sources  */
+comment|/**  * A goal to build an aggregated source artifact from multiple source artifacts.  *   * @goal aggregate-sources  */
 end_comment
 
 begin_class

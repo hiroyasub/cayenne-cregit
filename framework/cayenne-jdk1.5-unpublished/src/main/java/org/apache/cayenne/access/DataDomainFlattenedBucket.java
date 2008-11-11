@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A sync bucket that holds flattened queries.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A sync bucket that holds flattened queries.  *   * @since 1.2  */
 end_comment
 
 begin_class

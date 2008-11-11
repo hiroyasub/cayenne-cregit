@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Batched delete query.  *   * @author Andriy Shapochka  */
+comment|/**  * Batched delete query.  *   */
 end_comment
 
 begin_class

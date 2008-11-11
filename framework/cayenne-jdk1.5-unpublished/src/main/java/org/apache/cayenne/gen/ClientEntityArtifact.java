@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Client code generation artifact based on ObjEntity.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Client code generation artifact based on ObjEntity.  *   * @since 3.0  */
 end_comment
 
 begin_class

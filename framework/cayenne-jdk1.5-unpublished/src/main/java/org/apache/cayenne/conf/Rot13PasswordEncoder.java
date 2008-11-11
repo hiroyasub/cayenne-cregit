@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * The ROT-13 password encoder passes the text of the database password  * through a simple Caesar cipher to obscure the password text.  The ROT-13  * cipher only processes letters -- numbers and symbols are left untouched.  * ROT-13 is also a symmetrical cipher and therefore provides no real  * encryption since applying the cipher to the encrypted text produces the  * original source text.  See the Wikipedia entry on  *<a href="http://en.wikipedia.org/wiki/Rot-13">ROT13</a>  * for more information on this topic.  *   * @since 3.0  * @author Michael Gentry  */
+comment|/**  * The ROT-13 password encoder passes the text of the database password  * through a simple Caesar cipher to obscure the password text.  The ROT-13  * cipher only processes letters -- numbers and symbols are left untouched.  * ROT-13 is also a symmetrical cipher and therefore provides no real  * encryption since applying the cipher to the encrypted text produces the  * original source text.  See the Wikipedia entry on  *<a href="http://en.wikipedia.org/wiki/Rot-13">ROT13</a>  * for more information on this topic.  *   * @since 3.0  */
 end_comment
 
 begin_class

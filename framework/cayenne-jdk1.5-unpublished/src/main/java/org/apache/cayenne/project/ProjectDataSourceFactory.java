@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory of DataSource objects used by the project model. Always tries to locate file  * with direct connection info.  *   * @author Andrus Adamchik  */
+comment|/**  * Factory of DataSource objects used by the project model. Always tries to locate file  * with direct connection info.  *   */
 end_comment
 
 begin_class

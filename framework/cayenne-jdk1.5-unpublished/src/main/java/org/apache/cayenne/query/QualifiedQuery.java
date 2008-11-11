@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract superclass of queries with Expression qualifiers.  *   * @author Andrus Adamchik  */
+comment|/**  * An abstract superclass of queries with Expression qualifiers.  *   */
 end_comment
 
 begin_class

@@ -270,7 +270,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates DataSource objects from XML configuration files that describe a JDBC driver.  * Wraps JDBC driver in a generic DataSource implementation.  *   * @author Andrus Adamchik  */
+comment|/**  * Creates DataSource objects from XML configuration files that describe a JDBC driver.  * Wraps JDBC driver in a generic DataSource implementation.  *   */
 end_comment
 
 begin_comment

@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An operation that performs object graph deep merge, terminating merge at unresolved  * nodes.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An operation that performs object graph deep merge, terminating merge at unresolved  * nodes.  *   * @since 1.2  */
 end_comment
 
 begin_class

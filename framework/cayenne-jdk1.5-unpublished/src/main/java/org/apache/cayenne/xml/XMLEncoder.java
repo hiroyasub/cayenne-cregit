@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class to encode objects to XML.  *   * @since 1.2  * @author Kevin J. Menard, Jr., Andrus Adamchik  */
+comment|/**  * A helper class to encode objects to XML.  *   * @since 1.2  */
 end_comment
 
 begin_class

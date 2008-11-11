@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JUnit tests for ValidationDisplayHandler class.  *   * @author Andrus Adamchik  */
+comment|/**  * JUnit tests for ValidationDisplayHandler class.  *   */
 end_comment
 
 begin_class

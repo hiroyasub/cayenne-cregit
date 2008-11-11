@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An action object that processes graph change calls from Persistent object. It handles  * GraphManager notifications and bi-directional graph consistency.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An action object that processes graph change calls from Persistent object. It handles  * GraphManager notifications and bi-directional graph consistency.  *   * @since 1.2  */
 end_comment
 
 begin_class

@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @deprecated since 3.0. Should be replaced either with EJBQL update query or SQLTemplate.  * @author Andrus Adamchik  */
+comment|/**  * @deprecated since 3.0. Should be replaced either with EJBQL update query or SQLTemplate.  */
 end_comment
 
 begin_class

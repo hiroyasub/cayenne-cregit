@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines an API of a preferences editor used for editing preferences without affecting  * the rest of the application until the editing is finished.  *   * @author Andrus Adamchik  */
+comment|/**  * Defines an API of a preferences editor used for editing preferences without affecting  * the rest of the application until the editing is finished.  *   */
 end_comment
 
 begin_interface

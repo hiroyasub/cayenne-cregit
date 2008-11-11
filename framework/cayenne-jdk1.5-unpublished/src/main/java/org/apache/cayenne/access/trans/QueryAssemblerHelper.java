@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translates parts of the query to SQL. Always works in the context of parent Translator.  *   * @author Andrus Adamchik  */
+comment|/**  * Translates parts of the query to SQL. Always works in the context of parent Translator.  *   */
 end_comment
 
 begin_class

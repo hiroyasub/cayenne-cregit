@@ -154,7 +154,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A processor of ObjectStore indirect changes, such as flattened relationships and  * to-many relationships.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A processor of ObjectStore indirect changes, such as flattened relationships and  * to-many relationships.  *   * @since 1.2  */
 end_comment
 
 begin_class

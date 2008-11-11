@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines bean property API used by Cayenne to access object data, do faulting and graph  * maintenance tasks.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Defines bean property API used by Cayenne to access object data, do faulting and graph  * maintenance tasks.  *   * @since 1.2  */
 end_comment
 
 begin_interface

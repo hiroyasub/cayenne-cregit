@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbAttribute defines a descriptor for a single database table column.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * A DbAttribute defines a descriptor for a single database table column.  *   */
 end_comment
 
 begin_class

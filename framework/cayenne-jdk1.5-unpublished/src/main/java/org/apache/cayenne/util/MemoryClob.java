@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Clob implementation that stores contents in memory.  *<p>  *<i>This implementation is based on jdbcClob from HSQLDB (copyright HSQL Development  * Group).</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Clob implementation that stores contents in memory.  *<p>  *<i>This implementation is based on jdbcClob from HSQLDB (copyright HSQL Development  * Group).</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

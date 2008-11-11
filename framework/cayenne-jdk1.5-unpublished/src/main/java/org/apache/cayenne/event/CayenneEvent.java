@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Common superclass for events passed from the EventManager to Listeners; encapsulates  * optional event information.  *   * @author Dirk Olmes  * @author Holger Hoffstaette  */
+comment|/**  * Common superclass for events passed from the EventManager to Listeners; encapsulates  * optional event information.  *   */
 end_comment
 
 begin_class

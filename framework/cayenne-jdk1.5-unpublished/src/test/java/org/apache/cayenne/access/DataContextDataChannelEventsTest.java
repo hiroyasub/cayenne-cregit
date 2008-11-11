@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests that DataContext sends DataChannel events.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests that DataContext sends DataChannel events.  *   */
 end_comment
 
 begin_class

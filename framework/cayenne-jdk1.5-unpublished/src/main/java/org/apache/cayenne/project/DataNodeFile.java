@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataNodeFile is a ProjectFile abstraction of the   * DataNode file in a Cayenne project.   *   * @author Andrus Adamchik  */
+comment|/**  * DataNodeFile is a ProjectFile abstraction of the   * DataNode file in a Cayenne project.   *   */
 end_comment
 
 begin_class

@@ -194,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A CayenneContext helper that processes object deletion.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A CayenneContext helper that processes object deletion.  *   * @since 1.2  */
 end_comment
 
 begin_class

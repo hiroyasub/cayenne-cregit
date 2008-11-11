@@ -148,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests objects registration in DataContext, transferring objects between contexts and  * such.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests objects registration in DataContext, transferring objects between contexts and  * such.  *   */
 end_comment
 
 begin_class

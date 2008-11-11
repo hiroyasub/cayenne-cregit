@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines callback methods for tracking and customizing Transactions execution.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Defines callback methods for tracking and customizing Transactions execution.  *   * @since 1.1  */
 end_comment
 
 begin_interface

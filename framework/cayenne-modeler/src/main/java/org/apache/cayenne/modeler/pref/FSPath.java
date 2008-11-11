@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a preferred directory or file.  *   * @author Andrus Adamchik  */
+comment|/**  * Represents a preferred directory or file.  *   */
 end_comment
 
 begin_class

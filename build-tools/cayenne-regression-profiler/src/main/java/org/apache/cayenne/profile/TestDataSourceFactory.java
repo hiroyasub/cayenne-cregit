@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataSourceFactory that loads connection info from connection properties, the same way  * unit tests do.  *   * @author Andrus Adamchik  */
+comment|/**  * A DataSourceFactory that loads connection info from connection properties, the same way  * unit tests do.  *   */
 end_comment
 
 begin_class

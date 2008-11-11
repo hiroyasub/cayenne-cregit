@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class for removing callback methods from ObjEntity's entity listener  *  * @author Vasil Tarasevich  * @version 1.0 Oct 30, 2007  */
+comment|/**  * Action class for removing callback methods from ObjEntity's entity listener  *  * @version 1.0 Oct 30, 2007  */
 end_comment
 
 begin_class

@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to create a set of SQL conditions to match an ObjectId of  * an object. Usage in Velocity template is "WHERE #bindObjectEqual($object)" or "WHERE  * #bindObjectEqual($object $columns $idValues)".  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A custom Velocity directive to create a set of SQL conditions to match an ObjectId of  * an object. Usage in Velocity template is "WHERE #bindObjectEqual($object)" or "WHERE  * #bindObjectEqual($object $columns $idValues)".  *   * @since 3.0  */
 end_comment
 
 begin_class

@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of SQLTemplate loaded from EOModel. It is an informal "decorator" of  * Cayenne SQLTemplate to provide access to the extra information of WebObjects  * EOFetchSpecification.  *   * @author Travis Cripps  * @since 1.2  */
+comment|/**  * A descriptor of SQLTemplate loaded from EOModel. It is an informal "decorator" of  * Cayenne SQLTemplate to provide access to the extra information of WebObjects  * EOFetchSpecification.  *   * @since 1.2  */
 end_comment
 
 begin_class

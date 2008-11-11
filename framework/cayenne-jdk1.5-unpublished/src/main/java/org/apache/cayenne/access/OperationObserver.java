@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of callback methods that allow QueryEngine to pass back query results and  * notify caller about exceptions.  *   * @see org.apache.cayenne.access.QueryEngine  * @author Andrus Adamchik  */
+comment|/**  * Defines a set of callback methods that allow QueryEngine to pass back query results and  * notify caller about exceptions.  *   * @see org.apache.cayenne.access.QueryEngine  */
 end_comment
 
 begin_comment

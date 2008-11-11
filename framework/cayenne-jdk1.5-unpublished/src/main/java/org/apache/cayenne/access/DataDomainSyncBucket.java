@@ -318,7 +318,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of batch query wrappers.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A superclass of batch query wrappers.  *   * @since 1.2  */
 end_comment
 
 begin_class

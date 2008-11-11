@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ExportedKey is an representation of relationship between two tables   * in database. It can be used for creating names for relationships  *   * @author Andrey Razumovsky  */
+comment|/**  * ExportedKey is an representation of relationship between two tables   * in database. It can be used for creating names for relationships  *   */
 end_comment
 
 begin_class

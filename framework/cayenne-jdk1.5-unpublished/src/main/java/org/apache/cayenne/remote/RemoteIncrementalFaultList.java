@@ -218,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A list that serves as a container of Persistent objects. It is usually returned by an  * ObjectContext when a paginated query is performed. Initially only the first "page" of  * objects is fully resolved. Pages following the first page are resolved on demand. When  * a list element is accessed, the list would ensure that this element as well as all its  * siblings on the same page are fully resolved.  *<p>  * The list can hold DataRows or Persistent objects. Attempts to add any other object  * types will result in an exception.  *</p>  *<p>  * Certain operations like<code>toArray</code> would trigger full list fetch.  *</p>  *<p>  * Synchronization Note: this list is not synchronized. All access to it should follow  * synchronization rules applicable for ArrayList.  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A list that serves as a container of Persistent objects. It is usually returned by an  * ObjectContext when a paginated query is performed. Initially only the first "page" of  * objects is fully resolved. Pages following the first page are resolved on demand. When  * a list element is accessed, the list would ensure that this element as well as all its  * siblings on the same page are fully resolved.  *<p>  * The list can hold DataRows or Persistent objects. Attempts to add any other object  * types will result in an exception.  *</p>  *<p>  * Certain operations like<code>toArray</code> would trigger full list fetch.  *</p>  *<p>  * Synchronization Note: this list is not synchronized. All access to it should follow  * synchronization rules applicable for ArrayList.  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

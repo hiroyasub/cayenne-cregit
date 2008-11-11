@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * {@link Artifact} facade for a DataMap.  *   * @author Dzmitry Rusak  * @since 3.0  */
+comment|/**  * {@link Artifact} facade for a DataMap.  *   * @since 3.0  */
 end_comment
 
 begin_class

@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests DataObjects with no reverse relationships.  *   * @author Andrus Adamchik  */
+comment|/**  * Tests DataObjects with no reverse relationships.  *   */
 end_comment
 
 begin_class

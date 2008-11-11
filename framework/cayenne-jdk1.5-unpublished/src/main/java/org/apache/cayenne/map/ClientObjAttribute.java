@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A client version of ObjAttribute that has some properties from DbAttribute that the  * client may want.  *   * @since 3.0  * @author Tore Halset  */
+comment|/**  * A client version of ObjAttribute that has some properties from DbAttribute that the  * client may want.  *   * @since 3.0  */
 end_comment
 
 begin_class

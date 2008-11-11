@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that selects objects related to a given object via a mapped relationship.  * RelationshipQuery is used by Cayenne internally to resolve relationships, and is rarely  * executed by the application directly, although this of course is possible too.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A query that selects objects related to a given object via a mapped relationship.  * RelationshipQuery is used by Cayenne internally to resolve relationships, and is rarely  * executed by the application directly, although this of course is possible too.  *   * @since 1.2  */
 end_comment
 
 begin_class

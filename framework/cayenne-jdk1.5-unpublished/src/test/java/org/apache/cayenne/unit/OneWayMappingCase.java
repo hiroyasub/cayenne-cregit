@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Super class of test cases that use DataMap with   * one-way relationships.  *   * @author Andrus Adamchik  */
+comment|/**  * Super class of test cases that use DataMap with   * one-way relationships.  *   */
 end_comment
 
 begin_class

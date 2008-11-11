@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A special class loader that uses parent loader to get resources, but does not load any  * classes though the parent to avoid parent pollution with un-enhanced classes.  *   * @author Andrus Adamchik  */
+comment|/**  * A special class loader that uses parent loader to get resources, but does not load any  * classes though the parent to avoid parent pollution with un-enhanced classes.  *   */
 end_comment
 
 begin_class

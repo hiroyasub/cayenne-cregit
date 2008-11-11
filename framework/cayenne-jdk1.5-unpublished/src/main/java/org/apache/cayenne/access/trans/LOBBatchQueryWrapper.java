@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to extract the information from BatchQueries, essential for LOB columns  * processing.  *   * @author Andrus Adamchik  */
+comment|/**  * Helper class to extract the information from BatchQueries, essential for LOB columns  * processing.  *   */
 end_comment
 
 begin_class

@@ -330,7 +330,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbEntity is a mapping descriptor that defines a structure of a database table.  *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**  * A DbEntity is a mapping descriptor that defines a structure of a database table.  *   */
 end_comment
 
 begin_class

@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * QueryBuilder for SelectQueries.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * QueryBuilder for SelectQueries.  *   * @since 1.1  */
 end_comment
 
 begin_class

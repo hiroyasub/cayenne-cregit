@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop implementation of the EJBQL visitor that returns same preset boolean value from  * all methods. Intended for subclassing.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A noop implementation of the EJBQL visitor that returns same preset boolean value from  * all methods. Intended for subclassing.  *   * @since 3.0  */
 end_comment
 
 begin_class

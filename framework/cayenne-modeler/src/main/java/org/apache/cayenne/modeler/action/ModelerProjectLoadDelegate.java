@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Project loader delegate customized for use in CayenneModeler.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Project loader delegate customized for use in CayenneModeler.  *   * @since 1.2  */
 end_comment
 
 begin_class

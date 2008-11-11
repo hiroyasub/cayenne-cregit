@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ClientConnection that allows to block/unblock test client/server communications.  *   * @author Andrus Adamchik  */
+comment|/**  * A ClientConnection that allows to block/unblock test client/server communications.  *   */
 end_comment
 
 begin_class

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract superclass of operations on individual nodes and arcs in a digraph.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An abstract superclass of operations on individual nodes and arcs in a digraph.  *   * @since 1.2  */
 end_comment
 
 begin_class

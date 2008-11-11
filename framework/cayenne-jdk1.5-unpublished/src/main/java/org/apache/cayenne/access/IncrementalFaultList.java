@@ -258,7 +258,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A synchronized list that serves as a container of DataObjects. It is returned when a  * paged query is performed by DataContext. On creation, only the first "page" is fully  * resolved, for the rest of the objects only their ObjectIds are read. Pages following  * the first page are resolved on demand only. On access to an element, the list would  * ensure that this element as well as all its siblings on the same page are fully  * resolved.  *<p>  * The list can hold DataRows or DataObjects. Attempts to add any other object types will  * result in an exception.  *</p>  *<p>  * Performance note: certain operations like<code>toArray</code> would trigger full  * list fetch.  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * A synchronized list that serves as a container of DataObjects. It is returned when a  * paged query is performed by DataContext. On creation, only the first "page" is fully  * resolved, for the rest of the objects only their ObjectIds are read. Pages following  * the first page are resolved on demand only. On access to an element, the list would  * ensure that this element as well as all its siblings on the same page are fully  * resolved.  *<p>  * The list can hold DataRows or DataObjects. Attempts to add any other object types will  * result in an exception.  *</p>  *<p>  * Performance note: certain operations like<code>toArray</code> would trigger full  * list fetch.  *</p>  *   */
 end_comment
 
 begin_class

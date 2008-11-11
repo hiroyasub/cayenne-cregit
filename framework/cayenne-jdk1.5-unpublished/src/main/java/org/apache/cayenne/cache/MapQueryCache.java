@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of the {@link QueryCache} interface that stores data in a  * non-expiring LRUMap.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A default implementation of the {@link QueryCache} interface that stores data in a  * non-expiring LRUMap.  *   * @since 3.0  */
 end_comment
 
 begin_class

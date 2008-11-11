@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Ant task to perform class generation from data map. This class is an Ant adapter to  * DefaultClassGenerator class.  *   * @deprecated since 3.0 renamed to CayenneGeneratorTask  * @author Andrus Adamchik, Kevin Menard  */
+comment|/**  * Ant task to perform class generation from data map. This class is an Ant adapter to  * DefaultClassGenerator class.  *   * @deprecated since 3.0 renamed to CayenneGeneratorTask  */
 end_comment
 
 begin_class

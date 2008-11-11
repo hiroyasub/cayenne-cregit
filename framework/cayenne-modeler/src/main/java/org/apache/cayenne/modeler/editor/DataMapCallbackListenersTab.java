@@ -212,7 +212,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tab for editing default entity listeners of a DataMap  *  * @author Vasil Tarasevich  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Tab for editing default entity listeners of a DataMap  *  * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class

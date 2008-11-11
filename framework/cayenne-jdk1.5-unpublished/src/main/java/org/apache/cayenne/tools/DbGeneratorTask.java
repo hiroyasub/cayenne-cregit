@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An Ant Task that is a frontend to Cayenne DbGenerator allowing schema generation from  * DataMap using Ant.  *   * @author Kevin Menard, Andrus Adamchik  * @since 1.2  */
+comment|/**  * An Ant Task that is a frontend to Cayenne DbGenerator allowing schema generation from  * DataMap using Ant.  *   * @since 1.2  */
 end_comment
 
 begin_comment

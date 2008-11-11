@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A "cdataport" Ant task implementing a frontend to DataPort allowing porting database  * data using Ant build scripts.  *   * @author Andrus Adamchik  * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
+comment|/**  * A "cdataport" Ant task implementing a frontend to DataPort allowing porting database  * data using Ant build scripts.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
 end_comment
 
 begin_class

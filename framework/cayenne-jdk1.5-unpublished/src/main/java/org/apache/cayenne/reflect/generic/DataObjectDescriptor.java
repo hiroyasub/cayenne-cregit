@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ClassDescriptor for "generic" persistent classes implementing {@link DataObject}  * interface.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A ClassDescriptor for "generic" persistent classes implementing {@link DataObject}  * interface.  *   * @since 3.0  */
 end_comment
 
 begin_comment

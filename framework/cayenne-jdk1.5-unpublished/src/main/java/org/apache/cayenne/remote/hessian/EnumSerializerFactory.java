@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Hessian SerializerFactory extension that supports serializing Enums.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A Hessian SerializerFactory extension that supports serializing Enums.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

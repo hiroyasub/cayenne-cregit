@@ -166,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A sequence-based PK generator used by {@link DB2Adapter}.  *   * @author Andrus Adamchik  */
+comment|/**  * A sequence-based PK generator used by {@link DB2Adapter}.  *   */
 end_comment
 
 begin_class

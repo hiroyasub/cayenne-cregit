@@ -210,7 +210,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processes a number of DataRow sets corresponding to a given prefetch tree, resolving  * DataRows to an object tree. Can process any combination of joint and disjoint sets, per  * prefetch tree.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Processes a number of DataRow sets corresponding to a given prefetch tree, resolving  * DataRows to an object tree. Can process any combination of joint and disjoint sets, per  * prefetch tree.  *   * @since 1.2  */
 end_comment
 
 begin_class

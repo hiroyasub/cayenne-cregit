@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A message sent to a remote service to request Cayenne mapping info.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A message sent to a remote service to request Cayenne mapping info.  *   * @since 1.2  */
 end_comment
 
 begin_class

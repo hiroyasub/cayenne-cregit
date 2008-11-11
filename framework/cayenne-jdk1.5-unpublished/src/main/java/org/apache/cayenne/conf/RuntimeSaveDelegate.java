@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Save delegate used for saving Cayenne access stack.  *   * @author Andrus Adamchik  */
+comment|/**  * Save delegate used for saving Cayenne access stack.  *   */
 end_comment
 
 begin_class

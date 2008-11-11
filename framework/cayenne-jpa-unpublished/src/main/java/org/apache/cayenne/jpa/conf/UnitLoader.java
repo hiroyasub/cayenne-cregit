@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class that locates persistent units in the environment and loads their definitions.  *   * @author Andrus Adamchik  */
+comment|/**  * A class that locates persistent units in the environment and loads their definitions.  *   */
 end_comment
 
 begin_class

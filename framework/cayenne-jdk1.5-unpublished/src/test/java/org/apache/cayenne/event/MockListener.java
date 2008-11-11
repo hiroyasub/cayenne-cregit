@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A test event listener that reacts to an event by registering another listener.  *   * @author Andrus Adamchik  */
+comment|/**  * A test event listener that reacts to an event by registering another listener.  *   */
 end_comment
 
 begin_class

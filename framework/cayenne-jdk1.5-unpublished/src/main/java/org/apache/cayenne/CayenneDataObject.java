@@ -396,7 +396,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of DataObject interface. It is normally used as a superclass  * of Cayenne persistent objects.  *   * @author Andrus Adamchik  */
+comment|/**  * A default implementation of DataObject interface. It is normally used as a superclass  * of Cayenne persistent objects.  *   */
 end_comment
 
 begin_class

@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor of an entity listener class that declares one or more callback  * methods to be notified of the entity events.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A mapping descriptor of an entity listener class that declares one or more callback  * methods to be notified of the entity events.  *   * @since 3.0  */
 end_comment
 
 begin_class

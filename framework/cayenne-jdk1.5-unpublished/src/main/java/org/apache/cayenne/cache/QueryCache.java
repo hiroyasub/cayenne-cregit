@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An interface that defines generic QueryCache.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * An interface that defines generic QueryCache.  *   * @since 3.0  */
 end_comment
 
 begin_interface

@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor of an embeddable class. Embeddable is a persistent class that  * doesn't have its own identity and is embedded in other persistent classes. It can be  * viewed as a custom type mapped to one or more database columns. Embeddable mapping can  * include optional default column names that can be overriden by the owning entity.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * A mapping descriptor of an embeddable class. Embeddable is a persistent class that  * doesn't have its own identity and is embedded in other persistent classes. It can be  * viewed as a custom type mapped to one or more database columns. Embeddable mapping can  * include optional default column names that can be overriden by the owning entity.  *   * @since 3.0  */
 end_comment
 
 begin_class

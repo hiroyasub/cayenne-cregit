@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic adapter that binds a check box to a bean property.  *  * @author Kevin Menard  */
+comment|/**  * A generic adapter that binds a check box to a bean property.  *  */
 end_comment
 
 begin_class

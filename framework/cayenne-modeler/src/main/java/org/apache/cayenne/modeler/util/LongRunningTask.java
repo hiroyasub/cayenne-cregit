@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A base class for monitoring progress of long running tasks. It can runshowing the exact  * percentage of the task progress or in "indeterminate" mode.  *<p>  *<i>Warning: If the task started via "startAndWait()", caller must ensure that she is  * not running in the Swing EventDispatchThread, otherwise an exception is thrown, as the  * EvenDispatchThread will be blocked, preventing LongRunningTask from showing progress  * dialog.</i>  *</p>  *   * @author Andrus Adamchik  */
+comment|/**  * A base class for monitoring progress of long running tasks. It can runshowing the exact  * percentage of the task progress or in "indeterminate" mode.  *<p>  *<i>Warning: If the task started via "startAndWait()", caller must ensure that she is  * not running in the Swing EventDispatchThread, otherwise an exception is thrown, as the  * EvenDispatchThread will be blocked, preventing LongRunningTask from showing progress  * dialog.</i>  *</p>  *   */
 end_comment
 
 begin_class

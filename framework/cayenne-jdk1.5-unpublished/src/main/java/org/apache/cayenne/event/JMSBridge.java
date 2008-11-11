@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of EventBridge that passes and receives events via JMS (Java Messaging  * Service). JMSBridge uses "publish/subscribe" model for communication with external  * agents.  *   * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Implementation of EventBridge that passes and receives events via JMS (Java Messaging  * Service). JMSBridge uses "publish/subscribe" model for communication with external  * agents.  *   * @since 1.1  */
 end_comment
 
 begin_class

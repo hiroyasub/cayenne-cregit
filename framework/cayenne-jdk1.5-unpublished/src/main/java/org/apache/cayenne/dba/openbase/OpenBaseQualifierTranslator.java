@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @author<a href="mailto:mkienenb@alaska.net">Mike Kienenberger</a>  * @author Andrus Adamchik  * @since 1.1  */
+comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @since 1.1  */
 end_comment
 
 begin_class

@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A test case that requires no DB access.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * A test case that requires no DB access.  *   * @since 1.1  */
 end_comment
 
 begin_class

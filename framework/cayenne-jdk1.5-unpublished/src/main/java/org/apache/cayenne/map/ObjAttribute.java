@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ObjAttribute is a mapping descriptor of a Java class property.  *   * @author Misha Shengaout  * @author Andrus Adamchik  * @author Dzmitry Rusak  */
+comment|/**  * An ObjAttribute is a mapping descriptor of a Java class property.  *   */
 end_comment
 
 begin_class

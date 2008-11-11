@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory that provides DataSources to PersistenceUnitInfo instances.  *   * @author Andrus Adamchik  */
+comment|/**  * A factory that provides DataSources to PersistenceUnitInfo instances.  *   */
 end_comment
 
 begin_interface

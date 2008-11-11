@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represents a generic validation failure that contains  * failed object and a message describing the failure.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Represents a generic validation failure that contains  * failed object and a message describing the failure.  *   * @since 1.1  */
 end_comment
 
 begin_class

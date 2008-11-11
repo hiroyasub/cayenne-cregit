@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides access to a property implemented as a {@link ValueHolder} Field. This  * implementation hides the fact of the ValueHolder existence. I.e. it never returns it  * from 'readPropertyDirectly', returning held value instead.  *   * @since 3.0  * @author Andrus Adamchik  */
+comment|/**  * Provides access to a property implemented as a {@link ValueHolder} Field. This  * implementation hides the fact of the ValueHolder existence. I.e. it never returns it  * from 'readPropertyDirectly', returning held value instead.  *   * @since 3.0  */
 end_comment
 
 begin_class

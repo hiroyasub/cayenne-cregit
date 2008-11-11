@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test case for objects with flattened relationships.  *   * @author Andrus Adamchik  */
+comment|/**  * Test case for objects with flattened relationships.  *   */
 end_comment
 
 begin_comment

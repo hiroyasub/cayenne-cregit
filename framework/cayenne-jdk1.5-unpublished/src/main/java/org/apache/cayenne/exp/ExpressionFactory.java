@@ -544,7 +544,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to build expressions. Alternatively expressions can be built using  * {@link org.apache.cayenne.exp.Expression#fromString(String)} method.  *   * @author Andrus Adamchik  */
+comment|/**  * Helper class to build expressions. Alternatively expressions can be built using  * {@link org.apache.cayenne.exp.Expression#fromString(String)} method.  *   */
 end_comment
 
 begin_class

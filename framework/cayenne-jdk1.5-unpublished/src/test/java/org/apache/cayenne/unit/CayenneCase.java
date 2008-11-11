@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of Cayenne test cases. Provides access to shared connection resources.  *   * @author Andrus Adamchik  */
+comment|/**  * Superclass of Cayenne test cases. Provides access to shared connection resources.  *   */
 end_comment
 
 begin_class

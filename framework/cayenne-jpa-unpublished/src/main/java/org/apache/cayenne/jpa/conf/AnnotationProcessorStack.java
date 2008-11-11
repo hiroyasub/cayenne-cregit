@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A context for the annotation processor with methods to inspect and modify the processor  * stack and record conflicts.  *   * @author Andrus Adamchik  */
+comment|/**  * A context for the annotation processor with methods to inspect and modify the processor  * stack and record conflicts.  *   */
 end_comment
 
 begin_interface

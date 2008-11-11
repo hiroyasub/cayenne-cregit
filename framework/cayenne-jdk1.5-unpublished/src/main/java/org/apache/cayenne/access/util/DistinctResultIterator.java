@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ResultIterator that does in-memory filtering of rows to return only distinct rows.  * Distinct comparison is done by comparing ObjectIds created from each row. Internally  * DistinctResultIterator wraps another ResultIterator that provides the actual rows. The  * current limitation is that once switched to reading ids instead of rows (i.e. when  * "nextObjectId()" is called for the first time), it can't be used to read data rows  * again. This is pretty sensible for most things in Cayenne.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A ResultIterator that does in-memory filtering of rows to return only distinct rows.  * Distinct comparison is done by comparing ObjectIds created from each row. Internally  * DistinctResultIterator wraps another ResultIterator that provides the actual rows. The  * current limitation is that once switched to reading ids instead of rows (i.e. when  * "nextObjectId()" is called for the first time), it can't be used to read data rows  * again. This is pretty sensible for most things in Cayenne.  *   * @since 1.2  */
 end_comment
 
 begin_class

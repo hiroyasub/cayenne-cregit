@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of conditional expressions.  *   * @since 1.1  * @author Andrus Adamchik  */
+comment|/**  * Superclass of conditional expressions.  *   * @since 1.1  */
 end_comment
 
 begin_class

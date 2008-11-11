@@ -98,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator for stored procedures.  *   * @author Andrus Adamchik  */
+comment|/**  * Validator for stored procedures.  *   */
 end_comment
 
 begin_class

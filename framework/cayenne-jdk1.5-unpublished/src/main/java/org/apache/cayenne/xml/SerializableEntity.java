@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A flyweight wrapper for serializing with XML mapping. This object is NOT thread-safe.  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * A flyweight wrapper for serializing with XML mapping. This object is NOT thread-safe.  *   * @since 1.2  */
 end_comment
 
 begin_class

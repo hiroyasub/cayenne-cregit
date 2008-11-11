@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel that supports editing the properties of a query based on ObjEntity.  *   * @author Andrus Adamchik  */
+comment|/**  * A panel that supports editing the properties of a query based on ObjEntity.  *   */
 end_comment
 
 begin_class

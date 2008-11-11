@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Provides Base64 encoding and decoding as defined by RFC 2045.  *<p>  *<i>This codec is based on Apache commons.codec implementation, copyright The Apache  * Software Foundation.</i>  *</p>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * Provides Base64 encoding and decoding as defined by RFC 2045.  *<p>  *<i>This codec is based on Apache commons.codec implementation, copyright The Apache  * Software Foundation.</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

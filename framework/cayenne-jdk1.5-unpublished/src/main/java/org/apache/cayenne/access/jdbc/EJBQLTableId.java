@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class representing an "id" of a database table during EJBQL translation. EJBQL  * "ids" point to ObjEntities, but during translation we need id's that represent both  * "root" tables that map back to an ObjEntity, as well as joined tables for flattened  * attributes and relationships. EJBQLTableId is intended to represent both types of  * tables.  *   * @author Andrus Adamchik  * @since 3.0  */
+comment|/**  * A helper class representing an "id" of a database table during EJBQL translation. EJBQL  * "ids" point to ObjEntities, but during translation we need id's that represent both  * "root" tables that map back to an ObjEntity, as well as joined tables for flattened  * attributes and relationships. EJBQLTableId is intended to represent both types of  * tables.  *   * @since 3.0  */
 end_comment
 
 begin_class

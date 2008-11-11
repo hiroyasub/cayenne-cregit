@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A goal to build aggregated jar artifacts from multiple other artifacts.  *   * @author Andrus Adamchik  * @goal aggregate-bin  * @phase package  * @requiresProject  */
+comment|/**  * A goal to build aggregated jar artifacts from multiple other artifacts.  *   * @goal aggregate-bin  * @phase package  * @requiresProject  */
 end_comment
 
 begin_class

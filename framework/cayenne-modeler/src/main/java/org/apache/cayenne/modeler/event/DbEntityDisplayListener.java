@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Interface for classes that are interested in DbEntity   * display events.   *   * @author Misha Shengaout  * @author Andrus Adamchik  */
+comment|/**   * Interface for classes that are interested in DbEntity   * display events.   *   */
 end_comment
 
 begin_interface

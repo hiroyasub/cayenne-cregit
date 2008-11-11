@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An event indicating a change in the object graph. A change is expressed as a GraphDiff,  * so the easiest way to process the event is the following:  *   *<pre>  *    GraphChangeHandler handler = ..;  *    event.getDiff().apply(handler);  *</pre>  *   * @since 1.2  * @author Andrus Adamchik  */
+comment|/**  * An event indicating a change in the object graph. A change is expressed as a GraphDiff,  * so the easiest way to process the event is the following:  *   *<pre>  *    GraphChangeHandler handler = ..;  *    event.getDiff().apply(handler);  *</pre>  *   * @since 1.2  */
 end_comment
 
 begin_class

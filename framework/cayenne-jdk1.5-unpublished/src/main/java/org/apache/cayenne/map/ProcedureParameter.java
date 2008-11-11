@@ -96,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor for the Procedure parameter.  *   * @author Andrus Adamchik  */
+comment|/**  * A descriptor for the Procedure parameter.  *   */
 end_comment
 
 begin_class

@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface that defines callback API used by ConfigLoader to process loaded  * configuration. Main responsibility of ConfigLoaderDelegate is to create  * objects, while ConfigLoader is mainly concerned with XML parsing.   *   * @author Andrus Adamchik  */
+comment|/**  * Interface that defines callback API used by ConfigLoader to process loaded  * configuration. Main responsibility of ConfigLoaderDelegate is to create  * objects, while ConfigLoader is mainly concerned with XML parsing.   *   */
 end_comment
 
 begin_interface

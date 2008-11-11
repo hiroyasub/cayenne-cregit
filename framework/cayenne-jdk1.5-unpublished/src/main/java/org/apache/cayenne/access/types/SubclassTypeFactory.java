@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ExtendedTypeFactory} that makes a {@link ExtendedType} usable for subclasses  * of the className in the {@link ExtendedType}.  *   * @since 3.0  * @author halset  */
+comment|/**  * A {@link ExtendedTypeFactory} that makes a {@link ExtendedType} usable for subclasses  * of the className in the {@link ExtendedType}.  *   * @since 3.0  */
 end_comment
 
 begin_class
