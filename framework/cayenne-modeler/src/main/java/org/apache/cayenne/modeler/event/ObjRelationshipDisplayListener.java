@@ -28,10 +28,17 @@ import|;
 end_import
 
 begin_comment
-comment|/** Used to display ObjRelationship.  public interface ObjRelationshipDisplayListener extends EventListener { 	/** Current obj entity used as a model has changed.*/
+comment|/** * Used to display ObjRelationship.  */
 end_comment
 
-begin_function_decl
+begin_interface
+specifier|public
+interface|interface
+name|ObjRelationshipDisplayListener
+extends|extends
+name|EventListener
+block|{
+comment|/** Current obj entity used as a model has changed.*/
 specifier|public
 name|void
 name|currentObjRelationshipChanged
@@ -40,8 +47,8 @@ name|RelationshipDisplayEvent
 name|e
 parameter_list|)
 function_decl|;
-end_function_decl
+block|}
+end_interface
 
-unit|}
 end_unit
 
