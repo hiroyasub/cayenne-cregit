@@ -1569,7 +1569,7 @@ return|return
 name|isAbstract
 return|;
 block|}
-comment|/**      * Sets whether this entity is abstract only.      *       */
+comment|/**      * Sets whether this entity is abstract only.      */
 specifier|public
 name|void
 name|setIsAbstract
@@ -3108,7 +3108,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if this ObjEntity represents a set of read-only      * objects.      *       * @return boolean      */
+comment|/**      * Returns<code>true</code> if this ObjEntity represents a set of read-only objects.      *       * @return boolean      */
 specifier|public
 name|boolean
 name|isReadOnly
