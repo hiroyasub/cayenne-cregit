@@ -163,7 +163,7 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** @since 3.0 */
+comment|/**      * Creates a clone of an ObjAttribute argument.      *       * @since 3.0      */
 specifier|public
 name|ObjAttribute
 parameter_list|(
@@ -652,16 +652,24 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Return<code>true</code> if attribute inhertit from parent {@link ObjEntity}.      *        * @since 3.0       */
+comment|/**      * Returns<code>true</code> if attribute inherited from a super entity.      *       * @since 3.0      */
 specifier|public
 name|boolean
 name|isInherited
 parameter_list|()
 block|{
-if|if
-condition|(
+name|ObjEntity
+name|owningEntity
+init|=
+operator|(
+name|ObjEntity
+operator|)
 name|getEntity
 argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|owningEntity
 operator|==
 literal|null
 condition|)
@@ -671,22 +679,16 @@ literal|false
 return|;
 block|}
 name|ObjEntity
-name|parent
+name|superEntity
 init|=
-operator|(
-operator|(
-name|ObjEntity
-operator|)
-name|getEntity
-argument_list|()
-operator|)
+name|owningEntity
 operator|.
 name|getSuperEntity
 argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|parent
+name|superEntity
 operator|==
 literal|null
 condition|)
@@ -696,7 +698,7 @@ literal|false
 return|;
 block|}
 return|return
-name|parent
+name|superEntity
 operator|.
 name|getAttribute
 argument_list|(

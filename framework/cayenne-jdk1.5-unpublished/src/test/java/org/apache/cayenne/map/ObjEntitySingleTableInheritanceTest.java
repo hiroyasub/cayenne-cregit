@@ -46,7 +46,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|ObjEntityInheritanceTest
+name|ObjEntitySingleTableInheritanceTest
 extends|extends
 name|BasicCase
 block|{
