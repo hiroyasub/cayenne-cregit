@@ -429,8 +429,10 @@ argument_list|()
 expr_stmt|;
 name|view
 operator|.
-name|show
-argument_list|()
+name|setVisible
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 block|}
 return|return

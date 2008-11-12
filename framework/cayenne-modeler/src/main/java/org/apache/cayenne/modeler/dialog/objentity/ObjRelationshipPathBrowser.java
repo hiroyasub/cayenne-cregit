@@ -21,17 +21,37 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|awt
 operator|.
-name|cayenne
+name|event
 operator|.
-name|modeler
+name|MouseAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
 operator|.
-name|util
+name|awt
 operator|.
-name|MultiColumnBrowser
+name|event
+operator|.
+name|MouseEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
+name|MouseListener
 import|;
 end_import
 
@@ -41,7 +61,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|SwingUtilities
 import|;
 end_import
 
@@ -83,37 +103,17 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|awt
+name|apache
 operator|.
-name|event
+name|cayenne
 operator|.
-name|MouseAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|java
+name|modeler
 operator|.
-name|awt
+name|util
 operator|.
-name|event
-operator|.
-name|MouseEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|MouseListener
+name|MultiColumnBrowser
 import|;
 end_import
 
@@ -171,13 +171,6 @@ name|BrowserPanel
 name|panel
 parameter_list|)
 block|{
-name|panel
-operator|.
-name|setToolTipText
-argument_list|(
-literal|"Double-click on row to extend path"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|panelOpener
@@ -341,7 +334,7 @@ block|{
 comment|/**          * Invoked when the mouse has been clicked on a component.          */
 specifier|public
 name|void
-name|mouseClicked
+name|mouseReleased
 parameter_list|(
 name|MouseEvent
 name|e
@@ -355,13 +348,6 @@ name|isLeftMouseButton
 argument_list|(
 name|e
 argument_list|)
-operator|&&
-name|e
-operator|.
-name|getClickCount
-argument_list|()
-operator|==
-literal|2
 condition|)
 block|{
 name|process
