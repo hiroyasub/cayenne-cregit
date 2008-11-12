@@ -51,20 +51,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|text
-operator|.
-name|StyledEditorKit
-operator|.
-name|BoldAction
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache

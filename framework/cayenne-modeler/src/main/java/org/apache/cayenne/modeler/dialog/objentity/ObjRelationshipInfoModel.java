@@ -530,6 +530,11 @@ name|DbEntity
 argument_list|>
 name|newRelTargets
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|ObjRelationshipInfoModel
 parameter_list|(

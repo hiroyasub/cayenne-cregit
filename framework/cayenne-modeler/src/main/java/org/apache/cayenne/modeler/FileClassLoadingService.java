@@ -122,6 +122,9 @@ name|classLoader
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|pathFiles
 decl_stmt|;
 specifier|public
@@ -134,6 +137,9 @@ name|pathFiles
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|File
+argument_list|>
 argument_list|(
 literal|15
 argument_list|)
@@ -176,6 +182,9 @@ comment|/**      * Returns an unmodifiable list of configured CLASSPATH location
 specifier|public
 specifier|synchronized
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|getPathFiles
 parameter_list|()
 block|{
@@ -194,6 +203,9 @@ name|void
 name|setPathFiles
 parameter_list|(
 name|Collection
+argument_list|<
+name|File
+argument_list|>
 name|files
 parameter_list|)
 block|{
@@ -277,6 +289,9 @@ operator|.
 name|addURL
 argument_list|(
 name|file
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -405,6 +420,9 @@ block|{
 name|addURL
 argument_list|(
 name|file
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

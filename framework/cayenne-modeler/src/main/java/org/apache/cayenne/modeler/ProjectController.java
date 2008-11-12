@@ -2524,11 +2524,17 @@ operator|.
 name|size
 argument_list|()
 decl_stmt|;
-name|ArrayList
+name|List
+argument_list|<
+name|Object
+argument_list|>
 name|removeList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 for|for
@@ -8325,6 +8331,11 @@ name|watchdog
 return|;
 block|}
 comment|/**      * Returns currently selected object, null if there are none, List if there are several      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|Object
 name|getCurrentObject

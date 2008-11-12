@@ -13,25 +13,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|awt
 operator|.
-name|cayenne
-operator|.
-name|validation
-operator|.
-name|ValidationException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -41,7 +27,9 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|event
+operator|.
+name|ActionEvent
 import|;
 end_import
 
@@ -59,13 +47,11 @@ end_import
 
 begin_import
 import|import
-name|java
+name|javax
 operator|.
-name|awt
+name|swing
 operator|.
-name|event
-operator|.
-name|ActionEvent
+name|JCheckBox
 import|;
 end_import
 
