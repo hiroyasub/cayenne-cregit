@@ -291,7 +291,7 @@ specifier|protected
 name|Appendable
 name|out
 decl_stmt|;
-comment|/**      * Creates QueryAssemblerHelper initializaing with parent {@link QueryAssembler} and      * output buffer object.      */
+comment|/**      * Creates QueryAssemblerHelper initializing with parent {@link QueryAssembler} and      * output buffer object.      */
 specifier|public
 name|QueryAssemblerHelper
 parameter_list|(
