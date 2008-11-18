@@ -155,7 +155,10 @@ comment|// 1. append table name
 name|DbEntity
 name|dbEnt
 init|=
-name|getRootDbEntity
+name|getRootEntity
+argument_list|()
+operator|.
+name|getDbEntity
 argument_list|()
 decl_stmt|;
 name|queryBuf

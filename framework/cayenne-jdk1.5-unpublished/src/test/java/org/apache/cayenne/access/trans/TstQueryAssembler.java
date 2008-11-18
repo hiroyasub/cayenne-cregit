@@ -207,10 +207,7 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-name|super
-operator|.
-name|getConnection
-argument_list|()
+name|connection
 operator|.
 name|close
 argument_list|()

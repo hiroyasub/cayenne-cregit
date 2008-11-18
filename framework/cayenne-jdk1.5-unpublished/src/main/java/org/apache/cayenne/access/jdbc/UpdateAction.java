@@ -97,7 +97,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryTranslator
+name|trans
+operator|.
+name|DeleteTranslator
 import|;
 end_import
 
@@ -113,7 +115,7 @@ name|access
 operator|.
 name|trans
 operator|.
-name|DeleteTranslator
+name|QueryAssembler
 import|;
 end_import
 
@@ -246,14 +248,14 @@ name|query
 expr_stmt|;
 block|}
 specifier|protected
-name|QueryTranslator
+name|QueryAssembler
 name|createTranslator
 parameter_list|(
 name|Connection
 name|connection
 parameter_list|)
 block|{
-name|QueryTranslator
+name|QueryAssembler
 name|translator
 decl_stmt|;
 if|if
@@ -345,7 +347,7 @@ name|SQLException
 throws|,
 name|Exception
 block|{
-name|QueryTranslator
+name|QueryAssembler
 name|translator
 init|=
 name|createTranslator

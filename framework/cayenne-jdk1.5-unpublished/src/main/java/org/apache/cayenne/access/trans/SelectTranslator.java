@@ -1177,8 +1177,7 @@ name|query
 operator|.
 name|getMetaData
 argument_list|(
-name|getEntityResolver
-argument_list|()
+name|entityResolver
 argument_list|)
 operator|.
 name|getClassDescriptor

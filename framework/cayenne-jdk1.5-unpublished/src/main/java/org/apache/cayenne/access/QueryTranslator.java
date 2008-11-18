@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for translation Cayenne queries to JDBC PreparedStatements.  *   */
+comment|/**  * Defines API for translation Cayenne queries to JDBC PreparedStatements.  *   * @deprecated since 3.0, as a part of translator inheritance hierarchy reorganization.  *             This class is no longer in use as a common superclass.  */
 end_comment
 
 begin_class
@@ -129,27 +129,23 @@ specifier|abstract
 class|class
 name|QueryTranslator
 block|{
-comment|/**       * Query being translated.       */
 specifier|protected
 name|Query
 name|query
 decl_stmt|;
-comment|/**      * JDBC database connection needed to create PreparedStatement. Prior to 1.2 this      * property was called "con".      */
 specifier|protected
 name|Connection
 name|connection
 decl_stmt|;
-comment|/** Adapter helping to do SQL literal conversions, etc. */
 specifier|protected
 name|DbAdapter
 name|adapter
 decl_stmt|;
-comment|/**      * Provides access to Cayenne mapping info.      *       * @since 1.2      */
 specifier|protected
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
-comment|/**      * Creates PreparedStatement.<code>logLevel</code> parameter is supplied to allow      * control of logging of produced SQL.      */
+comment|/**      * Creates and binds a PreparedStatement to execute query SQL via JDBC.      */
 specifier|public
 specifier|abstract
 name|PreparedStatement
@@ -158,7 +154,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**       * Returns query object being processed.       */
+comment|/**      * Returns query object being processed.      */
 specifier|public
 name|Query
 name|getQuery
