@@ -1267,7 +1267,7 @@ return|return
 operator|!
 operator|(
 operator|!
-name|prev
+name|rel
 operator|.
 name|isToMany
 argument_list|()
