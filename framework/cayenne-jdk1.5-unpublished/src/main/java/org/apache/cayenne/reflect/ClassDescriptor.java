@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Iterator
 import|;
 end_import
@@ -63,6 +73,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjEntity
 import|;
 end_import
@@ -79,6 +103,14 @@ block|{
 comment|/**      * Returns an ObjEntity associated with this descriptor.      *       * @since 3.0      */
 name|ObjEntity
 name|getEntity
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a collection of DbEntities that are the root tables for this descriptor's      * ObjEntity. Usually such collection would contain only one entity, however in cases      * involving subclass horizontal inheritance, it will be more than one, and in cases      * of abstract entities with no subclasses, the collection will be empty.      *       * @since 3.0      */
+name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
+name|getRootDbEntities
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a class mapped by this descriptor.      */
