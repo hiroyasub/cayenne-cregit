@@ -130,9 +130,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|SAVE_CONTROL
+name|CONTINUE_CONTROL
 init|=
-literal|"cayenne.modeler.mapObjRelationship.save.button"
+literal|"cayenne.modeler.mapObjRelationship.continue.button"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -246,7 +246,7 @@ name|control
 operator|.
 name|matchesID
 argument_list|(
-name|SAVE_CONTROL
+name|CONTINUE_CONTROL
 argument_list|)
 condition|)
 block|{

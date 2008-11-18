@@ -287,7 +287,7 @@ name|SAction
 argument_list|(
 name|DbRelationshipTargetController
 operator|.
-name|SAVE_CONTROL
+name|CONTINUE_CONTROL
 argument_list|)
 argument_list|)
 decl_stmt|;
