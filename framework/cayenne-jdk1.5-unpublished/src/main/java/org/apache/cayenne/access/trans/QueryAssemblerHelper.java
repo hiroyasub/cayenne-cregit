@@ -330,11 +330,17 @@ name|getRootDbEntity
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
-name|void
+parameter_list|<
+name|T
+extends|extends
+name|Appendable
+parameter_list|>
+name|T
 name|appendPart
 parameter_list|(
-name|Appendable
+name|T
 name|out
 parameter_list|)
 throws|throws
@@ -349,7 +355,11 @@ expr_stmt|;
 name|doAppendPart
 argument_list|()
 expr_stmt|;
+return|return
+name|out
+return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|protected
 specifier|abstract
 name|void
