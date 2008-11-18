@@ -91,7 +91,39 @@ name|testdo
 operator|.
 name|horizontalinherit
 operator|.
+name|AbstractSuperEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|horizontalinherit
+operator|.
 name|SubEntity1
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|horizontalinherit
+operator|.
+name|SubEntity2
 import|;
 end_import
 
@@ -110,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests for horizontal inheritance implementation.  *   */
+comment|/**  * Tests for horizontal inheritance implementation.  */
 end_comment
 
 begin_class
@@ -136,6 +168,109 @@ argument_list|()
 expr_stmt|;
 name|deleteTestData
 argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testDatabaseUnionCapabilities
+parameter_list|()
+block|{
+name|QueryChain
+name|inserts
+init|=
+operator|new
+name|QueryChain
+argument_list|()
+decl_stmt|;
+name|inserts
+operator|.
+name|addQuery
+argument_list|(
+operator|new
+name|SQLTemplate
+argument_list|(
+name|SubEntity1
+operator|.
+name|class
+argument_list|,
+literal|"INSERT INTO INHERITANCE_SUB_ENTITY1 "
+operator|+
+literal|"(ID, SUBENTITY_STRING_DB_ATTR, SUPER_INT_DB_ATTR, SUPER_STRING_DB_ATTR) "
+operator|+
+literal|"VALUES (1, 'V11', 1, 'V21')"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|inserts
+operator|.
+name|addQuery
+argument_list|(
+operator|new
+name|SQLTemplate
+argument_list|(
+name|SubEntity1
+operator|.
+name|class
+argument_list|,
+literal|"INSERT INTO INHERITANCE_SUB_ENTITY2 "
+operator|+
+literal|"(ID, OVERRIDDEN_STRING_DB_ATTR, SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR) "
+operator|+
+literal|"VALUES (1, 'VX11', 101, '201')"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|createDataContext
+argument_list|()
+operator|.
+name|performGenericQuery
+argument_list|(
+name|inserts
+argument_list|)
+expr_stmt|;
+name|SQLTemplate
+name|unionSql
+init|=
+operator|new
+name|SQLTemplate
+argument_list|(
+name|SubEntity1
+operator|.
+name|class
+argument_list|,
+literal|"SELECT ID, SUBENTITY_STRING_DB_ATTR, SUPER_STRING_DB_ATTR, SUPER_INT_DB_ATTR, NULL, 'INHERITANCE_SUB_ENTITY1'"
+operator|+
+literal|" FROM INHERITANCE_SUB_ENTITY1"
+operator|+
+literal|" UNION ALL"
+operator|+
+literal|" SELECT ID, OVERRIDDEN_STRING_DB_ATTR, NULL, SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR, 'INHERITANCE_SUB_ENTITY2'"
+operator|+
+literal|" FROM INHERITANCE_SUB_ENTITY2"
+argument_list|)
+decl_stmt|;
+name|unionSql
+operator|.
+name|setFetchingDataRows
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|createDataContext
+argument_list|()
+operator|.
+name|performQuery
+argument_list|(
+name|unionSql
+argument_list|)
+operator|.
+name|size
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -180,11 +315,11 @@ name|SubEntity1
 operator|.
 name|class
 argument_list|,
-literal|"INSERT INTO INHERITANCE_SUB_ENTITY1 "
+literal|"INSERT INTO INHERITANCE_SUB_ENTITY2 "
 operator|+
-literal|"(ID, SUBENTITY_STRING_DB_ATTR, SUPER_INT_DB_ATTR, SUPER_STRING_DB_ATTR) "
+literal|"(ID, OVERRIDDEN_STRING_DB_ATTR, SUBENTITY_INT_DB_ATTR, SUPER_INT_DB_ATTR) "
 operator|+
-literal|"VALUES (2, 'V12',2, 'V22')"
+literal|"VALUES (2, 'V21', 3, 4)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -309,7 +444,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testDatabaseUnionCapabilities
+name|testSelectQueryOnAbstractEntity
 parameter_list|()
 block|{
 name|QueryChain
@@ -334,7 +469,7 @@ literal|"INSERT INTO INHERITANCE_SUB_ENTITY1 "
 operator|+
 literal|"(ID, SUBENTITY_STRING_DB_ATTR, SUPER_INT_DB_ATTR, SUPER_STRING_DB_ATTR) "
 operator|+
-literal|"VALUES (1, 'V11', 1, 'V21')"
+literal|"VALUES (1, 'V11', 1, 'V12')"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -351,61 +486,143 @@ name|class
 argument_list|,
 literal|"INSERT INTO INHERITANCE_SUB_ENTITY2 "
 operator|+
-literal|"(ID, OVERRIDDEN_STRING_DB_ATTR, SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR) "
+literal|"(ID, SUBENTITY_STRING_DB_ATTR, SUPER_INT_DB_ATTR, SUPER_STRING_DB_ATTR) "
 operator|+
-literal|"VALUES (1, 'VX11', 101, '201')"
+literal|"VALUES (2, 'V21',2, 'V22')"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|createDataContext
-argument_list|()
-operator|.
-name|performGenericQuery
-argument_list|(
-name|inserts
-argument_list|)
-expr_stmt|;
-name|SQLTemplate
-name|unionSql
+name|SelectQuery
+name|select
 init|=
 operator|new
-name|SQLTemplate
+name|SelectQuery
 argument_list|(
-name|SubEntity1
+name|AbstractSuperEntity
 operator|.
 name|class
-argument_list|,
-literal|"SELECT ID, SUBENTITY_STRING_DB_ATTR, SUPER_STRING_DB_ATTR, SUPER_INT_DB_ATTR, NULL, 'INHERITANCE_SUB_ENTITY1'"
-operator|+
-literal|" FROM INHERITANCE_SUB_ENTITY1"
-operator|+
-literal|" UNION ALL"
-operator|+
-literal|" SELECT ID, OVERRIDDEN_STRING_DB_ATTR, NULL, SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR, 'INHERITANCE_SUB_ENTITY2'"
-operator|+
-literal|" FROM INHERITANCE_SUB_ENTITY2"
 argument_list|)
 decl_stmt|;
-name|unionSql
+name|select
 operator|.
-name|setFetchingDataRows
+name|addOrdering
 argument_list|(
+name|AbstractSuperEntity
+operator|.
+name|SUPER_STRING_ATTR_PROPERTY
+argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|2
-argument_list|,
+name|List
+argument_list|<
+name|AbstractSuperEntity
+argument_list|>
+name|result
+init|=
 name|createDataContext
 argument_list|()
 operator|.
 name|performQuery
 argument_list|(
-name|unionSql
+name|select
 argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|result
 operator|.
 name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|result
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|instanceof
+name|SubEntity1
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|PersistenceState
+operator|.
+name|COMMITTED
+argument_list|,
+name|result
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getPersistenceState
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"V12"
+argument_list|,
+name|result
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|getSuperStringAttr
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|result
+operator|.
+name|get
+argument_list|(
+literal|1
+argument_list|)
+operator|instanceof
+name|SubEntity2
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|PersistenceState
+operator|.
+name|COMMITTED
+argument_list|,
+name|result
+operator|.
+name|get
+argument_list|(
+literal|1
+argument_list|)
+operator|.
+name|getPersistenceState
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"V22"
+argument_list|,
+name|result
+operator|.
+name|get
+argument_list|(
+literal|1
+argument_list|)
+operator|.
+name|getSuperStringAttr
 argument_list|()
 argument_list|)
 expr_stmt|;
