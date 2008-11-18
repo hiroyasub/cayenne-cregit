@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translates parts of the query to SQL. Always works in the context of parent Translator.  *   */
+comment|/**  * Translates parts of the query to SQL. Always works in the context of parent Translator.  */
 end_comment
 
 begin_class
@@ -950,7 +950,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Appends SQL code to the query buffer to handle<code>val</code> as a parameter to      * the PreparedStatement being built. Adds<code>val</code> into QueryAssembler      * parameter list.      *<p>      * If<code>val</code> is null, "NULL" is appended to the query.      *</p>      *<p>      * If<code>val</code> is a DataObject, its primary key value is used as a      * parameter.<i>Only objects with a single column primary key can be used.</i>      *       * @param val object that should be appended as a literal to the query. Must be of one      *            of "standard JDBC" types, null or a DataObject.      * @param attr DbAttribute that has information on what type of parameter is being      *            appended.      */
+comment|/**      * Appends SQL code to the query buffer to handle<code>val</code> as a parameter to      * the PreparedStatement being built. Adds<code>val</code> into QueryAssembler      * parameter list.      *<p>      * If<code>val</code> is null, "NULL" is appended to the query.      *</p>      *<p>      * If<code>val</code> is a DataObject, its primary key value is used as a parameter.      *<i>Only objects with a single column primary key can be used.</i>      *       * @param val object that should be appended as a literal to the query. Must be of one      *            of "standard JDBC" types, null or a DataObject.      * @param attr DbAttribute that has information on what type of parameter is being      *            appended.      */
 specifier|protected
 name|void
 name|appendLiteral

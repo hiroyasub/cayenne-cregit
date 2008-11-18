@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Abstract superclass of Query translators.  *   */
+comment|/**  * Abstract superclass of Query translators.  */
 end_comment
 
 begin_class
@@ -223,7 +223,7 @@ name|String
 name|joinSplitAlias
 parameter_list|)
 function_decl|;
-comment|/**      * Translates query into sql string. This is a workhorse method of QueryAssembler. It      * is called internally from<code>createStatement</code>. Usually there is no need      * to invoke it explicitly.      */
+comment|/**      * Translates query into sql string. This is a workhorse method of QueryAssembler. It      * is called internally from<code>createStatement</code>. Usually there is no need to      * invoke it explicitly.      */
 specifier|public
 specifier|abstract
 name|String

@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stored procedure query translator.  *   */
+comment|/**  * Stored procedure query translator.  */
 end_comment
 
 begin_class
