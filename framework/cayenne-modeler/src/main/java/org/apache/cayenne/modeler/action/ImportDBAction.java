@@ -61,22 +61,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|reveng
-operator|.
-name|NamingStrategy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|DbAdapter
@@ -277,14 +261,6 @@ operator|.
 name|getConnectionInfo
 argument_list|()
 decl_stmt|;
-name|NamingStrategy
-name|strategy
-init|=
-name|connectWizard
-operator|.
-name|getNamingStrategy
-argument_list|()
-decl_stmt|;
 comment|// from here pass control to DbLoaderHelper, running it from a thread separate
 comment|// from EventDispatch
 specifier|final
@@ -305,8 +281,6 @@ name|dataSourceInfo
 operator|.
 name|getUserName
 argument_list|()
-argument_list|,
-name|strategy
 argument_list|)
 decl_stmt|;
 name|Thread
