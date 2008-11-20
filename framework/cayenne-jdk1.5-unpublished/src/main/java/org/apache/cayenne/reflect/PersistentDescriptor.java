@@ -376,6 +376,7 @@ name|ClassDescriptor
 argument_list|>
 argument_list|()
 expr_stmt|;
+comment|// must be a set as duplicate addition attempts are expected...
 name|this
 operator|.
 name|rootDbEntities

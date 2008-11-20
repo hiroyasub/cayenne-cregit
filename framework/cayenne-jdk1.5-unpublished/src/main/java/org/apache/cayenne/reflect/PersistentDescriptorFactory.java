@@ -1045,35 +1045,13 @@ name|ObjEntity
 name|entity
 parameter_list|)
 block|{
-comment|// since we don't want the entity to look up its super DbEntity (which is
-comment|// already registered), lookup DbEntity ourselves by name
-name|String
-name|dbEntityName
-init|=
-name|entity
-operator|.
-name|getDbEntityName
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|dbEntityName
-operator|!=
-literal|null
-condition|)
-block|{
 name|DbEntity
 name|dbEntity
 init|=
 name|entity
 operator|.
-name|getDataMap
-argument_list|()
-operator|.
 name|getDbEntity
-argument_list|(
-name|dbEntityName
-argument_list|)
+argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -1082,8 +1060,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// descriptor takes care of weeding off duplicates, although the duplicate
-comment|// here is highly unlikely
+comment|// descriptor takes care of weeding off duplicates, which are likely in cases
+comment|// of non-horizontal inheritance
 name|descriptor
 operator|.
 name|addRootDbEntity
@@ -1091,7 +1069,6 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|protected
