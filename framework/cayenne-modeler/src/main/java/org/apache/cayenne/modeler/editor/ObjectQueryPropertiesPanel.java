@@ -301,38 +301,6 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Refresh Results:"
-argument_list|,
-name|cc
-operator|.
-name|xy
-argument_list|(
-literal|1
-argument_list|,
-literal|9
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|add
-argument_list|(
-name|refreshesResults
-argument_list|,
-name|cc
-operator|.
-name|xy
-argument_list|(
-literal|3
-argument_list|,
-literal|9
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|addLabel
-argument_list|(
 literal|"Fetch Offset, Rows:"
 argument_list|,
 name|cc
@@ -341,7 +309,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|11
+literal|9
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -360,7 +328,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|11
+literal|9
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -376,7 +344,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|13
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -395,7 +363,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|13
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -411,7 +379,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|15
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -430,7 +398,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|15
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
