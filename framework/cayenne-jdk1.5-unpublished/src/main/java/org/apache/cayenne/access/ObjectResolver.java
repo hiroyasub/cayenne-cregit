@@ -243,9 +243,6 @@ decl_stmt|;
 name|boolean
 name|refreshObjects
 decl_stmt|;
-name|boolean
-name|resolveInheritance
-decl_stmt|;
 name|DataRowStore
 name|cache
 decl_stmt|;
@@ -259,9 +256,6 @@ name|descriptor
 parameter_list|,
 name|boolean
 name|refresh
-parameter_list|,
-name|boolean
-name|resolveInheritanceHierarchy
 parameter_list|)
 block|{
 name|init
@@ -271,8 +265,6 @@ argument_list|,
 name|descriptor
 argument_list|,
 name|refresh
-argument_list|,
-name|resolveInheritanceHierarchy
 argument_list|)
 expr_stmt|;
 block|}
@@ -287,9 +279,6 @@ name|descriptor
 parameter_list|,
 name|boolean
 name|refresh
-parameter_list|,
-name|boolean
-name|resolveInheritanceHierarchy
 parameter_list|)
 block|{
 comment|// sanity check
@@ -419,20 +408,6 @@ operator|.
 name|getEntity
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|resolveInheritance
-operator|=
-operator|(
-name|inheritanceTree
-operator|!=
-literal|null
-operator|)
-condition|?
-name|resolveInheritanceHierarchy
-else|:
-literal|false
 expr_stmt|;
 block|}
 comment|/**      * Properly synchronized version of 'objectsFromDataRows'.      */
@@ -858,7 +833,9 @@ name|classDescriptor
 decl_stmt|;
 if|if
 condition|(
-name|resolveInheritance
+name|inheritanceTree
+operator|!=
+literal|null
 condition|)
 block|{
 name|ObjEntity

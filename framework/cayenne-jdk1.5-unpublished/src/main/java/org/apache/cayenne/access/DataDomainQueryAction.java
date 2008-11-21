@@ -2576,11 +2576,6 @@ name|metadata
 operator|.
 name|isRefreshingObjects
 argument_list|()
-argument_list|,
-name|metadata
-operator|.
-name|isResolvingInherited
-argument_list|()
 argument_list|)
 operator|.
 name|synchronizedObjectsFromDataRows

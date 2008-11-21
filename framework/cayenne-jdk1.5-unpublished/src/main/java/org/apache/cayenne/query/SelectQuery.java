@@ -173,20 +173,6 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|Util
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
 name|XMLEncoder
 import|;
 end_import
@@ -1599,7 +1585,7 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns refresh policy of this query. Default is<code>true</code>.      *       * @since 1.1      * @deprecate since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * Returns refresh policy of this query. Default is<code>true</code>.      *       * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -1612,7 +1598,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 1.1      * @deprecate since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
 specifier|public
 name|void
 name|setRefreshingObjects
@@ -1817,20 +1803,17 @@ name|pageSize
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @since 1.1      */
+comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @since 1.1      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 specifier|public
 name|boolean
 name|isResolvingInherited
 parameter_list|()
 block|{
 return|return
-name|metaData
-operator|.
-name|isResolvingInherited
-argument_list|()
+literal|true
 return|;
 block|}
-comment|/**      * Sets whether the objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @since 1.1      */
+comment|/**      * Sets whether the objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @since 1.1      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 specifier|public
 name|void
 name|setResolvingInherited
@@ -1839,13 +1822,7 @@ name|boolean
 name|b
 parameter_list|)
 block|{
-name|metaData
-operator|.
-name|setResolvingInherited
-argument_list|(
-name|b
-argument_list|)
-expr_stmt|;
+comment|// noop
 block|}
 comment|/**      * Returns a list that internally stores custom db attributes, creating it on demand.      *       * @since 1.2      */
 name|List

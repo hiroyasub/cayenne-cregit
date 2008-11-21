@@ -149,7 +149,7 @@ name|SHARED_CACHE_REFRESH
 init|=
 literal|"sharedcache_refresh"
 decl_stmt|;
-comment|/**      * Defines the name of the property for the query {@link #getFetchLimit() fetch limit}.      */
+comment|/**      * Defines the name of the property for the query {@link #getFetchLimit() fetch limit}      * .      */
 specifier|public
 specifier|static
 specifier|final
@@ -167,7 +167,7 @@ name|FETCH_LIMIT_DEFAULT
 init|=
 literal|0
 decl_stmt|;
-comment|/**      * Defines the name of the property for the query {@link #getFetchOffset() fetch offset}.      *       * @since 3.0      */
+comment|/**      * Defines the name of the property for the query {@link #getFetchOffset() fetch      * offset}.      *       * @since 3.0      */
 specifier|public
 specifier|static
 specifier|final
@@ -235,6 +235,7 @@ name|REFRESHING_OBJECTS_DEFAULT
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 specifier|public
 specifier|static
 specifier|final
@@ -243,6 +244,7 @@ name|RESOLVING_INHERITED_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.resolvingInherited"
 decl_stmt|;
+comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 specifier|public
 specifier|static
 specifier|final
@@ -338,12 +340,12 @@ name|boolean
 name|isFetchingDataRows
 parameter_list|()
 function_decl|;
-comment|/**      * Returns<code>true</code> if the query results should replace any currently      * cached values, returns<code>false</code> otherwise. If      * {@link #isFetchingDataRows()}returns<code>true</code>, this setting is not      * applicable and has no effect.      *       * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
+comment|/**      * Returns<code>true</code> if the query results should replace any currently cached      * values, returns<code>false</code> otherwise. If {@link #isFetchingDataRows()}      * returns<code>true</code>, this setting is not applicable and has no effect.      *       * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 name|boolean
 name|isRefreshingObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      */
+comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 name|boolean
 name|isResolvingInherited
 parameter_list|()

@@ -967,7 +967,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecate since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -980,7 +980,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecate since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
 specifier|public
 name|void
 name|setRefreshingObjects
@@ -997,18 +997,17 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 specifier|public
 name|boolean
 name|isResolvingInherited
 parameter_list|()
 block|{
 return|return
-name|metaData
-operator|.
-name|isResolvingInherited
-argument_list|()
+literal|true
 return|;
 block|}
+comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 specifier|public
 name|void
 name|setResolvingInherited
@@ -1017,13 +1016,7 @@ name|boolean
 name|b
 parameter_list|)
 block|{
-name|metaData
-operator|.
-name|setResolvingInherited
-argument_list|(
-name|b
-argument_list|)
-expr_stmt|;
+comment|// noop
 block|}
 comment|/**      * Adds a named parameter to the internal map of parameters.      *       * @since 1.1      */
 specifier|public

@@ -258,7 +258,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A synchronized list that serves as a container of DataObjects. It is returned when a  * paged query is performed by DataContext. On creation, only the first "page" is fully  * resolved, for the rest of the objects only their ObjectIds are read. Pages following  * the first page are resolved on demand only. On access to an element, the list would  * ensure that this element as well as all its siblings on the same page are fully  * resolved.  *<p>  * The list can hold DataRows or DataObjects. Attempts to add any other object types will  * result in an exception.  *</p>  *<p>  * Performance note: certain operations like<code>toArray</code> would trigger full  * list fetch.  *</p>  *   */
+comment|/**  * A synchronized list that serves as a container of DataObjects. It is returned when a  * paged query is performed by DataContext. On creation, only the first "page" is fully  * resolved, for the rest of the objects only their ObjectIds are read. Pages following  * the first page are resolved on demand only. On access to an element, the list would  * ensure that this element as well as all its siblings on the same page are fully  * resolved.  *<p>  * The list can hold DataRows or DataObjects. Attempts to add any other object types will  * result in an exception.  *</p>  *<p>  * Performance note: certain operations like<code>toArray</code> would trigger full list  * fetch.  *</p>  */
 end_comment
 
 begin_class
@@ -509,18 +509,6 @@ argument_list|(
 name|metadata
 operator|.
 name|isFetchingDataRows
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|internalQuery
-operator|.
-name|setResolvingInherited
-argument_list|(
-name|metadata
-operator|.
-name|isResolvingInherited
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -938,7 +926,10 @@ name|dataContext
 operator|.
 name|objectsFromDataRows
 argument_list|(
-name|rootEntity
+name|info
+operator|.
+name|getClassDescriptor
+argument_list|()
 argument_list|,
 name|elementsList
 operator|.
@@ -948,16 +939,6 @@ literal|0
 argument_list|,
 name|lastResolved
 argument_list|)
-argument_list|,
-name|info
-operator|.
-name|isRefreshingObjects
-argument_list|()
-argument_list|,
-name|info
-operator|.
-name|isResolvingInherited
-argument_list|()
 argument_list|)
 decl_stmt|;
 for|for

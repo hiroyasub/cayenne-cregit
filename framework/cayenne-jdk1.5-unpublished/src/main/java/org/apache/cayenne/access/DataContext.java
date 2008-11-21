@@ -706,7 +706,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The most common implementation of {@link ObjectContext}. DataContext is an isolated  * container of an object graph, in a sense that any uncommitted changes to persistent  * objects that are registered with the context, are not visible to the users of other  * contexts.  *   */
+comment|/**  * The most common implementation of {@link ObjectContext}. DataContext is an isolated  * container of an object graph, in a sense that any uncommitted changes to persistent  * objects that are registered with the context, are not visible to the users of other  * contexts.  */
 end_comment
 
 begin_class
@@ -785,7 +785,7 @@ name|getThreadObjectContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Binds a DataContext to the current thread. DataContext can later be retrieved by      * users in the same thread by calling {@link DataContext#getThreadDataContext}.      * Using null parameter will unbind currently bound DataContext.      *       * @since 1.1      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
+comment|/**      * Binds a DataContext to the current thread. DataContext can later be retrieved by      * users in the same thread by calling {@link DataContext#getThreadDataContext}. Using      * null parameter will unbind currently bound DataContext.      *       * @since 1.1      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
 specifier|public
 specifier|static
 name|void
@@ -2188,7 +2188,7 @@ return|return
 name|snapshot
 return|;
 block|}
-comment|/**      * Converts a list of data rows to a list of DataObjects.      *       * @since 1.1      */
+comment|/**      * Converts a list of data rows to a list of DataObjects.      *       * @since 1.1      * @deprecated since 3.0 as refreshing and resolvingInheritanceHierarchy flags are      *             deprecated. Use {@link #objectsFromDataRows(ClassDescriptor, List)}      *             instead.      */
 specifier|public
 name|List
 name|objectsFromDataRows
@@ -2206,9 +2206,6 @@ name|boolean
 name|resolveInheritanceHierarchy
 parameter_list|)
 block|{
-comment|// TODO: andrus, 10/11/2006 - instead of doing ClassDescriptor lookup, deprecate
-comment|// this method, replacing it with the one that takes CD as argument. Or get rid of
-comment|// it all together
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -2224,6 +2221,32 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 return|return
+name|objectsFromDataRows
+argument_list|(
+name|descriptor
+argument_list|,
+name|dataRows
+argument_list|)
+return|;
+block|}
+comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext.      *       * @since 3.0      */
+specifier|public
+name|List
+name|objectsFromDataRows
+parameter_list|(
+name|ClassDescriptor
+name|descriptor
+parameter_list|,
+name|List
+argument_list|<
+name|?
+extends|extends
+name|DataRow
+argument_list|>
+name|dataRows
+parameter_list|)
+block|{
+return|return
 operator|new
 name|ObjectResolver
 argument_list|(
@@ -2231,9 +2254,7 @@ name|this
 argument_list|,
 name|descriptor
 argument_list|,
-name|refresh
-argument_list|,
-name|resolveInheritanceHierarchy
+literal|true
 argument_list|)
 operator|.
 name|synchronizedObjectsFromDataRows
@@ -2242,7 +2263,7 @@ name|dataRows
 argument_list|)
 return|;
 block|}
-comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext. Internally calls      * {@link #objectsFromDataRows(ObjEntity,List,boolean,boolean)}.      *       * @since 1.1      * @see DataRow      */
+comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext.      *       * @deprecated since 3.0 as refresh and resolveInheritanceHierarchy flags are      *             deprecated. Use {@link #objectsFromDataRows(ClassDescriptor, List)}      *             instead.      * @since 1.1      * @see DataRow      */
 specifier|public
 name|List
 name|objectsFromDataRows
@@ -2298,27 +2319,42 @@ name|objectClass
 argument_list|)
 throw|;
 block|}
+name|ClassDescriptor
+name|descriptor
+init|=
+name|getEntityResolver
+argument_list|()
+operator|.
+name|getClassDescriptor
+argument_list|(
+name|entity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 return|return
 name|objectsFromDataRows
 argument_list|(
-name|entity
+name|descriptor
 argument_list|,
 name|dataRows
-argument_list|,
-name|refresh
-argument_list|,
-name|resolveInheritanceHierarchy
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a DataObject from DataRow. This is a convenience shortcut to      * {@link #objectsFromDataRows(Class,java.util.List,boolean,boolean)}.      *       * @see DataRow      */
+comment|/**      * Creates a DataObject from DataRow.      *       * @see DataRow      */
 specifier|public
+parameter_list|<
+name|T
+extends|extends
 name|DataObject
+parameter_list|>
+name|T
 name|objectFromDataRow
 parameter_list|(
 name|Class
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|objectClass
 parameter_list|,
@@ -2329,15 +2365,59 @@ name|boolean
 name|refresh
 parameter_list|)
 block|{
+name|ObjEntity
+name|entity
+init|=
+name|this
+operator|.
+name|getEntityResolver
+argument_list|()
+operator|.
+name|lookupObjEntity
+argument_list|(
+name|objectClass
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|entity
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Unmapped Java class: "
+operator|+
+name|objectClass
+argument_list|)
+throw|;
+block|}
+name|ClassDescriptor
+name|descriptor
+init|=
+name|getEntityResolver
+argument_list|()
+operator|.
+name|getClassDescriptor
+argument_list|(
+name|entity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|List
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|list
 init|=
 name|objectsFromDataRows
 argument_list|(
-name|objectClass
+name|descriptor
 argument_list|,
 name|Collections
 operator|.
@@ -2345,16 +2425,9 @@ name|singletonList
 argument_list|(
 name|dataRow
 argument_list|)
-argument_list|,
-name|refresh
-argument_list|,
-literal|true
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
-name|DataObject
-operator|)
 name|list
 operator|.
 name|get
@@ -2378,13 +2451,13 @@ name|boolean
 name|refresh
 parameter_list|)
 block|{
-name|ObjEntity
-name|entity
+name|ClassDescriptor
+name|descriptor
 init|=
 name|getEntityResolver
 argument_list|()
 operator|.
-name|getObjEntity
+name|getClassDescriptor
 argument_list|(
 name|entityName
 argument_list|)
@@ -2397,7 +2470,7 @@ name|list
 init|=
 name|objectsFromDataRows
 argument_list|(
-name|entity
+name|descriptor
 argument_list|,
 name|Collections
 operator|.
@@ -2405,10 +2478,6 @@ name|singletonList
 argument_list|(
 name|dataRow
 argument_list|)
-argument_list|,
-name|refresh
-argument_list|,
-literal|true
 argument_list|)
 decl_stmt|;
 return|return
@@ -2518,7 +2587,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Instantiates a new object and registers it with this context. Object class is      * determined from the mapped entity. Object class must have a default constructor.      *<p/><i>Note: in most cases {@link #newObject(Class)} method should be used,      * however this method is helpful when generic persistent classes are used.</i>      *       * @since 3.0      */
+comment|/**      * Instantiates a new object and registers it with this context. Object class is      * determined from the mapped entity. Object class must have a default constructor.      *<p/>      *<i>Note: in most cases {@link #newObject(Class)} method should be used, however      * this method is helpful when generic persistent classes are used.</i>      *       * @since 3.0      */
 specifier|public
 name|Persistent
 name|newObject
@@ -2732,7 +2801,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Registers a transient object with the context, recursively registering all      * transient persistent objects attached to this object via relationships.<p/><i>Note      * that since 3.0 this method takes Object as an argument instead of a      * {@link DataObject}.</i>      *       * @param object new object that needs to be made persistent.      */
+comment|/**      * Registers a transient object with the context, recursively registering all      * transient persistent objects attached to this object via relationships.      *<p/>      *<i>Note that since 3.0 this method takes Object as an argument instead of a      * {@link DataObject}.</i>      *       * @param object new object that needs to be made persistent.      */
 annotation|@
 name|Override
 specifier|public
@@ -3297,7 +3366,7 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Refetches object data for ObjectId. This method is used internally by Cayenne to      * resolve objects in state<code>PersistenceState.HOLLOW</code>. It can also be      * used to refresh certain objects.      *       * @throws CayenneRuntimeException if object id doesn't match any records, or if there      *             is more than one object is fetched.      * @deprecated since 3.0 use {@link ObjectIdQuery} with appropriate refresh settings.      */
+comment|/**      * Refetches object data for ObjectId. This method is used internally by Cayenne to      * resolve objects in state<code>PersistenceState.HOLLOW</code>. It can also be used      * to refresh certain objects.      *       * @throws CayenneRuntimeException if object id doesn't match any records, or if there      *             is more than one object is fetched.      * @deprecated since 3.0 use {@link ObjectIdQuery} with appropriate refresh settings.      */
 specifier|public
 name|DataObject
 name|refetchObject
@@ -3551,7 +3620,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * "Flushes" the changes to the parent {@link DataChannel}. If the parent channel is      * a DataContext, it updates its objects with this context's changes, without a      * database update. If it is a DataDomain (the most common case), the changes are      * written to the database. To cause cascading commit all the way to the database, one      * must use {@link #commitChanges()}.      *       * @since 1.2      * @see #commitChanges()      */
+comment|/**      * "Flushes" the changes to the parent {@link DataChannel}. If the parent channel is a      * DataContext, it updates its objects with this context's changes, without a database      * update. If it is a DataDomain (the most common case), the changes are written to      * the database. To cause cascading commit all the way to the database, one must use      * {@link #commitChanges()}.      *       * @since 1.2      * @see #commitChanges()      */
 annotation|@
 name|Override
 specifier|public
@@ -4454,7 +4523,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param expireCachedLists A flag that determines whether refresh of<b>cached lists</b>      *            is required in case a query uses caching.      * @since 1.1      */
+comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param expireCachedLists A flag that determines whether refresh of<b>cached      *            lists</b> is required in case a query uses caching.      * @since 1.1      */
 specifier|public
 name|List
 argument_list|<
@@ -4482,7 +4551,7 @@ name|expireCachedLists
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param parameters A map of parameters to use with stored query.      * @param expireCachedLists A flag that determines whether refresh of<b>cached lists</b>      *            is required in case a query uses caching.      * @since 1.1      */
+comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param parameters A map of parameters to use with stored query.      * @param expireCachedLists A flag that determines whether refresh of<b>cached      *            lists</b> is required in case a query uses caching.      * @since 1.1      */
 specifier|public
 name|List
 argument_list|<

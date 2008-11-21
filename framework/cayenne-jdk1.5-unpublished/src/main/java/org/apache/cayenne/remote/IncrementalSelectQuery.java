@@ -1098,6 +1098,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1112,6 +1113,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
 annotation|@
 name|Override
 specifier|public

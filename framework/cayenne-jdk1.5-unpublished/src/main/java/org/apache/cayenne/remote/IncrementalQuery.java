@@ -508,6 +508,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
+comment|/**              * @deprecated since 3.0              */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -520,6 +521,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
+comment|/**              * @deprecated since 3.0. Inheritance resolving is not optional anymore.              */
 specifier|public
 name|boolean
 name|isResolvingInherited

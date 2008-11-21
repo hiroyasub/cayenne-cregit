@@ -1491,14 +1491,6 @@ block|}
 block|}
 block|}
 decl_stmt|;
-if|if
-condition|(
-name|query
-operator|.
-name|isResolvingInherited
-argument_list|()
-condition|)
-block|{
 name|descriptor
 operator|.
 name|visitAllProperties
@@ -1506,17 +1498,6 @@ argument_list|(
 name|visitor
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|descriptor
-operator|.
-name|visitProperties
-argument_list|(
-name|visitor
-argument_list|)
-expr_stmt|;
-block|}
 comment|// add remaining needed attrs from DbEntity
 name|DbEntity
 name|table
