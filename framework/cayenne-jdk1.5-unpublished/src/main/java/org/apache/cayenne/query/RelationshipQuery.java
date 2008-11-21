@@ -381,9 +381,7 @@ argument_list|,
 name|objectId
 argument_list|)
 decl_stmt|;
-name|SelectQuery
-name|query
-init|=
+return|return
 operator|new
 name|SelectQuery
 argument_list|(
@@ -397,16 +395,6 @@ argument_list|()
 argument_list|,
 name|qualifier
 argument_list|)
-decl_stmt|;
-name|query
-operator|.
-name|setRefreshingObjects
-argument_list|(
-name|refreshing
-argument_list|)
-expr_stmt|;
-return|return
-name|query
 return|;
 block|}
 comment|/**      * Returns a non-null relationship object for this query.      */

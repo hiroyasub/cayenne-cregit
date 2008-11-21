@@ -219,6 +219,7 @@ name|FETCHING_DATA_ROWS_DEFAULT
 init|=
 literal|false
 decl_stmt|;
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 specifier|static
 specifier|final
@@ -227,6 +228,7 @@ name|REFRESHING_OBJECTS_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.refreshingObjects"
 decl_stmt|;
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 specifier|static
 specifier|final

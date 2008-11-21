@@ -860,11 +860,6 @@ argument_list|(
 name|context
 argument_list|,
 name|descriptor
-argument_list|,
-name|queryMetadata
-operator|.
-name|isRefreshingObjects
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1080,11 +1075,6 @@ name|processorNode
 operator|)
 operator|.
 name|getResolvedRows
-argument_list|()
-argument_list|,
-name|queryMetadata
-operator|.
-name|isRefreshingObjects
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1822,11 +1812,6 @@ argument_list|,
 name|processorNode
 operator|.
 name|getResolvedRows
-argument_list|()
-argument_list|,
-name|queryMetadata
-operator|.
-name|isRefreshingObjects
 argument_list|()
 argument_list|)
 expr_stmt|;

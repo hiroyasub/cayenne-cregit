@@ -2253,8 +2253,6 @@ argument_list|(
 name|this
 argument_list|,
 name|descriptor
-argument_list|,
-literal|true
 argument_list|)
 operator|.
 name|synchronizedObjectsFromDataRows

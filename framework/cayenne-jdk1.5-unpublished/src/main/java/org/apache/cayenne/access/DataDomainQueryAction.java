@@ -2571,11 +2571,6 @@ argument_list|(
 name|context
 argument_list|,
 name|descriptor
-argument_list|,
-name|metadata
-operator|.
-name|isRefreshingObjects
-argument_list|()
 argument_list|)
 operator|.
 name|synchronizedObjectsFromDataRows

@@ -1597,9 +1597,7 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Updates snapshots in the underlying DataRowStore. If<code>refresh</code> is      * true, all snapshots in<code>snapshots</code> will be loaded into DataRowStore,      * regardless of the existing cache state. If<code>refresh</code> is false, only      * missing snapshots are loaded. This method is normally called internally by the      * DataContext owning the ObjectStore to update the caches after a select query.      *       * @param objects a list of object whose snapshots need to be updated.      * @param snapshots a list of snapshots. Must be of the same length and use the same      *            order as<code>objects</code> list.      * @param refresh controls whether existing cached snapshots should be replaced with      *            the new ones.      * @since 1.1      */
-comment|// TODO:, andrus 5/25/2006 - mark as deprecated after 1.2 - this method is no longer
-comment|// used.
+comment|/**      * Updates snapshots in the underlying DataRowStore. If<code>refresh</code> is      * true, all snapshots in<code>snapshots</code> will be loaded into DataRowStore,      * regardless of the existing cache state. If<code>refresh</code> is false, only      * missing snapshots are loaded. This method is normally called internally by the      * DataContext owning the ObjectStore to update the caches after a select query.      *       * @param objects a list of object whose snapshots need to be updated.      * @param snapshots a list of snapshots. Must be of the same length and use the same      *            order as<code>objects</code> list.      * @param refresh controls whether existing cached snapshots should be replaced with      *            the new ones.      * @since 1.1      * @deprecated since 3.0 unused      */
 specifier|public
 name|void
 name|snapshotsUpdatedForObjects
@@ -1639,8 +1637,6 @@ argument_list|(
 name|objects
 argument_list|,
 name|snapshots
-argument_list|,
-name|refresh
 argument_list|)
 expr_stmt|;
 block|}

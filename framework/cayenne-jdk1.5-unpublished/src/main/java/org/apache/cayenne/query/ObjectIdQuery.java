@@ -443,13 +443,6 @@ decl_stmt|;
 comment|// if we got to the point of fetch, always force refresh....
 name|query
 operator|.
-name|setRefreshingObjects
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-name|query
-operator|.
 name|setFetchingDataRows
 argument_list|(
 name|fetchingDataRows

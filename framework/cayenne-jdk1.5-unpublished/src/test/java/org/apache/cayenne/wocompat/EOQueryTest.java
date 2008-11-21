@@ -280,14 +280,6 @@ name|isDistinct
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertFalse
-argument_list|(
-name|query
-operator|.
-name|isRefreshingObjects
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_class

@@ -791,7 +791,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Updates cached snapshots for the list of objects.      *       * @since 1.2      */
+comment|/**      * Updates cached snapshots for the list of objects.      *       * @since 3.0      */
 name|void
 name|snapshotsUpdatedForObjects
 parameter_list|(
@@ -800,9 +800,6 @@ name|objects
 parameter_list|,
 name|List
 name|snapshots
-parameter_list|,
-name|boolean
-name|refresh
 parameter_list|)
 block|{
 name|int
@@ -929,15 +926,6 @@ argument_list|(
 name|oid
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|refresh
-operator|||
-name|cachedSnapshot
-operator|==
-literal|null
-condition|)
-block|{
 name|DataRow
 name|newSnapshot
 init|=
@@ -1037,7 +1025,6 @@ argument_list|,
 name|newSnapshot
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
