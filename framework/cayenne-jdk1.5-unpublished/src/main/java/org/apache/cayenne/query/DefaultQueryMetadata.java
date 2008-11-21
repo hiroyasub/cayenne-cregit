@@ -293,26 +293,24 @@ operator|.
 name|FETCHING_DATA_ROWS_DEFAULT
 return|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
 parameter_list|()
 block|{
 return|return
-name|QueryMetadata
-operator|.
-name|REFRESHING_OBJECTS_DEFAULT
+literal|true
 return|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|boolean
 name|isResolvingInherited
 parameter_list|()
 block|{
 return|return
-name|QueryMetadata
-operator|.
-name|RESOLVING_INHERITED_DEFAULT
+literal|true
 return|;
 block|}
 specifier|public

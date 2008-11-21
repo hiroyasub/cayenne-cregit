@@ -1416,6 +1416,7 @@ name|qualifier
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0 as wrapped method is also deprecated.      */
 annotation|@
 name|Override
 specifier|public
@@ -1434,6 +1435,7 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0 as wrapped method is also deprecated.      */
 annotation|@
 name|Override
 specifier|public

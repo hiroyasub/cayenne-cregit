@@ -957,13 +957,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|query
-operator|.
-name|setResolvingInherited
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 comment|// must pass through the serialization pipe before running query as
 comment|// HessianSerializer has needed preprocessing hooks...
 name|Query
