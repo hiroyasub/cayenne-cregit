@@ -947,6 +947,15 @@ name|OracleBooleanType
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|map
+operator|.
+name|registerType
+argument_list|(
+operator|new
+name|OracleUUIDType
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of OraclePkGenerator.      */
 annotation|@
