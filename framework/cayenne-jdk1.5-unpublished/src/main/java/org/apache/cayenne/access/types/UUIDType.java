@@ -309,6 +309,9 @@ argument_list|(
 name|pos
 argument_list|,
 name|value
+operator|.
+name|toString
+argument_list|()
 argument_list|,
 name|type
 argument_list|)
