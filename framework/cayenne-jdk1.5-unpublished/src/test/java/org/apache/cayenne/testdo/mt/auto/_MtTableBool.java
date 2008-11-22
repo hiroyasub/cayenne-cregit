@@ -61,7 +61,7 @@ specifier|final
 name|String
 name|ID_PK_COLUMN
 init|=
-literal|"id"
+literal|"ID"
 decl_stmt|;
 specifier|public
 name|void
