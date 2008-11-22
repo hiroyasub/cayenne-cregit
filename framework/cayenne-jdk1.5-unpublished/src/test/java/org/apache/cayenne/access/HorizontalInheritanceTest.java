@@ -91,22 +91,6 @@ name|testdo
 operator|.
 name|horizontalinherit
 operator|.
-name|AbstractSuperEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|testdo
-operator|.
-name|horizontalinherit
-operator|.
 name|SubEntity1
 import|;
 end_import
@@ -198,9 +182,9 @@ name|class
 argument_list|,
 literal|"INSERT INTO INHERITANCE_SUB_ENTITY2 "
 operator|+
-literal|"(ID, OVERRIDDEN_STRING_DB_ATTR, SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR) "
+literal|"(ID, OVERRIDDEN_STRING_DB_ATTR, SUPER_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR) "
 operator|+
-literal|"VALUES (1, 'VX11', 101, '201')"
+literal|"VALUES (1, 'VX11', 101, 201)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -222,13 +206,13 @@ name|SubEntity1
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ID, SUBENTITY_STRING_DB_ATTR, SUPER_STRING_DB_ATTR, SUPER_INT_DB_ATTR, NULL, 'INHERITANCE_SUB_ENTITY1'"
+literal|"SELECT ID, SUBENTITY_STRING_DB_ATTR, SUPER_STRING_DB_ATTR, SUPER_INT_DB_ATTR, 0, 'INHERITANCE_SUB_ENTITY1'"
 operator|+
 literal|" FROM INHERITANCE_SUB_ENTITY1"
 operator|+
 literal|" UNION ALL"
 operator|+
-literal|" SELECT ID, OVERRIDDEN_STRING_DB_ATTR, NULL, SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR, 'INHERITANCE_SUB_ENTITY2'"
+literal|" SELECT ID, OVERRIDDEN_STRING_DB_ATTR, '', SUBENTITY_INT_DB_ATTR, SUBENTITY_INT_DB_ATTR, 'INHERITANCE_SUB_ENTITY2'"
 operator|+
 literal|" FROM INHERITANCE_SUB_ENTITY2"
 argument_list|)
