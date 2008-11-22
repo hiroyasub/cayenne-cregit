@@ -309,6 +309,8 @@ argument_list|(
 name|pos
 argument_list|,
 name|value
+argument_list|,
+name|type
 argument_list|)
 expr_stmt|;
 block|}

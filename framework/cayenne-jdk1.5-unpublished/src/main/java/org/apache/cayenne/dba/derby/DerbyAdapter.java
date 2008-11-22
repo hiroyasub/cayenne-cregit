@@ -336,6 +336,15 @@ literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|map
+operator|.
+name|registerType
+argument_list|(
+operator|new
+name|DerbyUUIDType
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Appends SQL for column creation to CREATE TABLE buffer. Only change for Derby is      * that " NULL" is not supported.      *       * @since 1.2      */
 annotation|@
