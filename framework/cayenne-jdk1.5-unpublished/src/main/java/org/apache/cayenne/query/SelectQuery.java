@@ -1607,13 +1607,7 @@ name|boolean
 name|flag
 parameter_list|)
 block|{
-name|metaData
-operator|.
-name|setRefreshingObjects
-argument_list|(
-name|flag
-argument_list|)
-expr_stmt|;
+comment|// noop
 block|}
 comment|/**      * @since 1.1      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
 specifier|public
