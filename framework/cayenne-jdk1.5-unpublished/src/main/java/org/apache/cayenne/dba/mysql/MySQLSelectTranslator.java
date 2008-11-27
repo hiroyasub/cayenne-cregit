@@ -33,20 +33,6 @@ name|SelectTranslator
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QueryMetadata
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 1.2  */
 end_comment
@@ -67,22 +53,10 @@ name|StringBuilder
 name|buffer
 parameter_list|)
 block|{
-name|QueryMetadata
-name|metadata
-init|=
-name|getQuery
-argument_list|()
-operator|.
-name|getMetaData
-argument_list|(
-name|getEntityResolver
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|int
 name|offset
 init|=
-name|metadata
+name|queryMetadata
 operator|.
 name|getFetchOffset
 argument_list|()
@@ -90,7 +64,7 @@ decl_stmt|;
 name|int
 name|limit
 init|=
-name|metadata
+name|queryMetadata
 operator|.
 name|getFetchLimit
 argument_list|()

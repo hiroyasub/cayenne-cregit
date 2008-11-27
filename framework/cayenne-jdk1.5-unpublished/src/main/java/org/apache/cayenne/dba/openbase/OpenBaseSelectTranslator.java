@@ -85,14 +85,7 @@ block|{
 name|int
 name|limit
 init|=
-name|getQuery
-argument_list|()
-operator|.
-name|getMetaData
-argument_list|(
-name|getEntityResolver
-argument_list|()
-argument_list|)
+name|queryMetadata
 operator|.
 name|getFetchLimit
 argument_list|()
