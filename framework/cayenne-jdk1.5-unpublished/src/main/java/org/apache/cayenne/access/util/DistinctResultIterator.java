@@ -425,7 +425,7 @@ return|return
 name|row
 return|;
 block|}
-comment|/**      * Returns a Map for the next ObjectId. After calling this method, calls to      * "nextDataRow()" will result in exceptions.      */
+comment|/**      * Returns a Map for the next ObjectId. After calling this method, calls to      * "nextDataRow()" will result in exceptions.      *       * @deprecated since 3.0 in favor of {@link #nextId(DbEntity)}.      */
 specifier|public
 name|Map
 name|nextObjectId

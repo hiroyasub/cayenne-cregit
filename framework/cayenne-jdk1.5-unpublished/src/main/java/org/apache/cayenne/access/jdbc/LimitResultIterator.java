@@ -459,6 +459,7 @@ return|return
 name|id
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 in favor of {@link #nextId(DbEntity)}.      */
 specifier|public
 name|Map
 argument_list|<

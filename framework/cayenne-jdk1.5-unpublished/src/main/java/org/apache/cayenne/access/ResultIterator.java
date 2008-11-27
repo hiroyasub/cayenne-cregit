@@ -114,7 +114,7 @@ parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**      * Returns a map of ObjectId values from the next result row. Primary key columns are      * determined from the provided DbEntity.      *       * @since 1.1      */
+comment|/**      * Returns a map of ObjectId values from the next result row. Primary key columns are      * determined from the provided DbEntity.      *       * @since 1.1      * @deprecated since 3.0 in favor of {@link #nextId(DbEntity)}.      */
 name|Map
 argument_list|<
 name|String
