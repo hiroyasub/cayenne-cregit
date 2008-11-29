@@ -275,6 +275,9 @@ name|String
 index|[]
 name|cacheGroups
 decl_stmt|;
+name|SQLResultSetMapping
+name|resultSetMapping
+decl_stmt|;
 specifier|transient
 name|DbEntity
 name|dbEntity
@@ -376,6 +379,15 @@ operator|=
 name|info
 operator|.
 name|getCacheKey
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|resultSetMapping
+operator|=
+name|info
+operator|.
+name|getResultSetMapping
 argument_list|()
 expr_stmt|;
 name|setPrefetchTree
@@ -1354,14 +1366,29 @@ return|return
 name|classDescriptor
 return|;
 block|}
-comment|/**      * Always returns null, as this is not supported for most classic queries.      *       * @since 3.0      */
+comment|/**      * @since 3.0      */
+name|void
+name|setResultSetMapping
+parameter_list|(
+name|SQLResultSetMapping
+name|resultSetMapping
+parameter_list|)
+block|{
+name|this
+operator|.
+name|resultSetMapping
+operator|=
+name|resultSetMapping
+expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|SQLResultSetMapping
 name|getResultSetMapping
 parameter_list|()
 block|{
 return|return
-literal|null
+name|resultSetMapping
 return|;
 block|}
 comment|/**      * @since 1.2      */
