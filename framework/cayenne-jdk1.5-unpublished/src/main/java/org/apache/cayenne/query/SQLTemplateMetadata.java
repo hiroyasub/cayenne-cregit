@@ -124,7 +124,7 @@ name|resultSetMapping
 operator|=
 name|query
 operator|.
-name|getResultSet
+name|getResult
 argument_list|()
 operator|!=
 literal|null
@@ -134,7 +134,7 @@ name|DefaultResultSetMetadata
 argument_list|(
 name|query
 operator|.
-name|getResultSet
+name|getResult
 argument_list|()
 argument_list|,
 name|resolver

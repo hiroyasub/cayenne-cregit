@@ -211,8 +211,8 @@ literal|null
 return|;
 block|}
 specifier|public
-name|SQLResultSet
-name|getResultSet
+name|SQLResult
+name|getResult
 parameter_list|(
 name|String
 name|name

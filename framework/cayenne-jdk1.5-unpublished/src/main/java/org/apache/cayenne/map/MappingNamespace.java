@@ -57,8 +57,8 @@ name|className
 parameter_list|)
 function_decl|;
 comment|/**      * Returns a named result set mapping.      *       * @since 3.0      */
-name|SQLResultSet
-name|getResultSet
+name|SQLResult
+name|getResult
 parameter_list|(
 name|String
 name|name

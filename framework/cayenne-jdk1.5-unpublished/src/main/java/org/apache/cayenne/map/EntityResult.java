@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResultSet}.  *   * @since 3.0  */
+comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResult}.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -468,26 +468,6 @@ parameter_list|()
 block|{
 return|return
 name|entityClass
-return|;
-block|}
-specifier|public
-name|Collection
-argument_list|<
-name|FieldResult
-argument_list|>
-name|getFields
-parameter_list|()
-block|{
-return|return
-name|fields
-operator|!=
-literal|null
-condition|?
-name|fields
-else|:
-name|Collections
-operator|.
-name|EMPTY_LIST
 return|;
 block|}
 class|class

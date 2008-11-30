@@ -233,11 +233,11 @@ condition|)
 block|{
 name|query
 operator|.
-name|setResultSet
+name|setResult
 argument_list|(
 name|map
 operator|.
-name|getResultSet
+name|getResult
 argument_list|(
 name|resultSetMappingName
 argument_list|)

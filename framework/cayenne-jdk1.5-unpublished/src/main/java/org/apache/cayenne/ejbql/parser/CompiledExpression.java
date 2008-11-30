@@ -113,7 +113,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
@@ -172,7 +172,7 @@ name|EJBQLExpression
 name|expression
 decl_stmt|;
 specifier|private
-name|SQLResultSet
+name|SQLResult
 name|resultSetMapping
 decl_stmt|;
 specifier|public
@@ -209,8 +209,8 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|SQLResultSet
-name|getResultSet
+name|SQLResult
+name|getResult
 parameter_list|()
 block|{
 return|return
@@ -378,7 +378,7 @@ block|}
 name|void
 name|setResultSetMapping
 parameter_list|(
-name|SQLResultSet
+name|SQLResult
 name|resultSetMapping
 parameter_list|)
 block|{

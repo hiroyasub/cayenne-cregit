@@ -847,7 +847,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
@@ -3618,11 +3618,11 @@ operator|.
 name|getObject
 argument_list|()
 decl_stmt|;
-name|SQLResultSet
+name|SQLResult
 name|mapping
 init|=
 operator|new
-name|SQLResultSet
+name|SQLResult
 argument_list|(
 name|jpaMapping
 operator|.
@@ -3716,7 +3716,7 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|addResultSet
+name|addResult
 argument_list|(
 name|mapping
 argument_list|)

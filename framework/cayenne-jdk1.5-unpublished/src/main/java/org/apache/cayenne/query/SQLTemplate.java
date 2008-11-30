@@ -159,7 +159,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
@@ -321,8 +321,8 @@ name|String
 name|columnNamesCapitalization
 decl_stmt|;
 specifier|protected
-name|SQLResultSet
-name|resultSet
+name|SQLResult
+name|result
 decl_stmt|;
 name|SQLTemplateMetadata
 name|metaData
@@ -1894,30 +1894,30 @@ operator|=
 name|columnNameCapitalization
 expr_stmt|;
 block|}
-comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResultSet} rules.      *       * @since 3.0      */
+comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResult} rules.      *       * @since 3.0      */
 specifier|public
 name|void
-name|setResultSet
+name|setResult
 parameter_list|(
-name|SQLResultSet
+name|SQLResult
 name|resultSet
 parameter_list|)
 block|{
 name|this
 operator|.
-name|resultSet
+name|result
 operator|=
 name|resultSet
 expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSet
-name|getResultSet
+name|SQLResult
+name|getResult
 parameter_list|()
 block|{
 return|return
-name|resultSet
+name|result
 return|;
 block|}
 block|}

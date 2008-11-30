@@ -159,7 +159,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
@@ -344,11 +344,11 @@ operator|.
 name|UPPERCASE_COLUMN_NAMES
 argument_list|)
 expr_stmt|;
-name|SQLResultSet
+name|SQLResult
 name|rsMap
 init|=
 operator|new
-name|SQLResultSet
+name|SQLResult
 argument_list|()
 decl_stmt|;
 name|rsMap
@@ -360,7 +360,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setResultSet
+name|setResult
 argument_list|(
 name|rsMap
 argument_list|)

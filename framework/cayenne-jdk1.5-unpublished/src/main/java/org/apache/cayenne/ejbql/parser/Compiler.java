@@ -275,7 +275,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
@@ -445,7 +445,7 @@ name|List
 argument_list|<
 name|Object
 argument_list|>
-name|resultSetMappings
+name|resultComponents
 decl_stmt|;
 name|Compiler
 parameter_list|(
@@ -766,16 +766,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|resultSetMappings
+name|resultComponents
 operator|!=
 literal|null
 condition|)
 block|{
-name|SQLResultSet
+name|SQLResult
 name|mapping
 init|=
 operator|new
-name|SQLResultSet
+name|SQLResult
 argument_list|()
 decl_stmt|;
 for|for
@@ -787,7 +787,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|resultSetMappings
+name|resultComponents
 operator|.
 name|size
 argument_list|()
@@ -799,7 +799,7 @@ block|{
 name|Object
 name|nextMapping
 init|=
-name|resultSetMappings
+name|resultComponents
 operator|.
 name|get
 argument_list|(
@@ -2104,12 +2104,12 @@ condition|)
 block|{
 if|if
 condition|(
-name|resultSetMappings
+name|resultComponents
 operator|==
 literal|null
 condition|)
 block|{
-name|resultSetMappings
+name|resultComponents
 operator|=
 operator|new
 name|ArrayList
@@ -2120,7 +2120,7 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|// defer EntityResult creation until we resolve all ids...
-name|resultSetMappings
+name|resultComponents
 operator|.
 name|add
 argument_list|(
@@ -2141,12 +2141,12 @@ condition|)
 block|{
 if|if
 condition|(
-name|resultSetMappings
+name|resultComponents
 operator|==
 literal|null
 condition|)
 block|{
-name|resultSetMappings
+name|resultComponents
 operator|=
 operator|new
 name|ArrayList
@@ -2161,12 +2161,12 @@ name|column
 init|=
 literal|"sc"
 operator|+
-name|resultSetMappings
+name|resultComponents
 operator|.
 name|size
 argument_list|()
 decl_stmt|;
-name|resultSetMappings
+name|resultComponents
 operator|.
 name|add
 argument_list|(

@@ -465,9 +465,9 @@ name|SortedMap
 argument_list|<
 name|String
 argument_list|,
-name|SQLResultSet
+name|SQLResult
 argument_list|>
-name|resultSets
+name|results
 decl_stmt|;
 specifier|private
 name|List
@@ -586,14 +586,14 @@ argument_list|(
 literal|3
 argument_list|)
 expr_stmt|;
-name|resultSets
+name|results
 operator|=
 operator|new
 name|TreeMap
 argument_list|<
 name|String
 argument_list|,
-name|SQLResultSet
+name|SQLResult
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -1815,7 +1815,7 @@ name|void
 name|clearResultSets
 parameter_list|()
 block|{
-name|resultSets
+name|results
 operator|.
 name|clear
 argument_list|()
@@ -2015,15 +2015,15 @@ block|}
 comment|/**      * Adds a named SQLResultSet to the DataMap.      *       * @since 3.0      */
 specifier|public
 name|void
-name|addResultSet
+name|addResult
 parameter_list|(
-name|SQLResultSet
-name|resultSet
+name|SQLResult
+name|result
 parameter_list|)
 block|{
 if|if
 condition|(
-name|resultSet
+name|result
 operator|==
 literal|null
 condition|)
@@ -2032,13 +2032,13 @@ throw|throw
 operator|new
 name|NullPointerException
 argument_list|(
-literal|"Null resultSet"
+literal|"Null result"
 argument_list|)
 throw|;
 block|}
 if|if
 condition|(
-name|resultSet
+name|result
 operator|.
 name|getName
 argument_list|()
@@ -2057,11 +2057,11 @@ block|}
 name|Object
 name|existing
 init|=
-name|resultSets
+name|results
 operator|.
 name|get
 argument_list|(
-name|resultSet
+name|result
 operator|.
 name|getName
 argument_list|()
@@ -2078,7 +2078,7 @@ if|if
 condition|(
 name|existing
 operator|==
-name|resultSet
+name|result
 condition|)
 block|{
 return|return;
@@ -2091,7 +2091,7 @@ name|IllegalArgumentException
 argument_list|(
 literal|"An attempt to override resultSetMapping '"
 operator|+
-name|resultSet
+name|result
 operator|.
 name|getName
 argument_list|()
@@ -2099,16 +2099,16 @@ argument_list|)
 throw|;
 block|}
 block|}
-name|resultSets
+name|results
 operator|.
 name|put
 argument_list|(
-name|resultSet
+name|result
 operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|resultSet
+name|result
 argument_list|)
 expr_stmt|;
 block|}
@@ -2368,9 +2368,9 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|SQLResultSet
+name|SQLResult
 argument_list|>
-name|getResultSetsMap
+name|getResultsMap
 parameter_list|()
 block|{
 return|return
@@ -2378,7 +2378,7 @@ name|Collections
 operator|.
 name|unmodifiableMap
 argument_list|(
-name|resultSets
+name|results
 argument_list|)
 return|;
 block|}
@@ -2386,9 +2386,9 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
-name|SQLResultSet
+name|SQLResult
 argument_list|>
-name|getResultSets
+name|getResults
 parameter_list|()
 block|{
 return|return
@@ -2396,7 +2396,7 @@ name|Collections
 operator|.
 name|unmodifiableCollection
 argument_list|(
-name|resultSets
+name|results
 operator|.
 name|values
 argument_list|()
@@ -2450,17 +2450,17 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSet
-name|getResultSet
+name|SQLResult
+name|getResult
 parameter_list|(
 name|String
 name|name
 parameter_list|)
 block|{
-name|SQLResultSet
+name|SQLResult
 name|rsMapping
 init|=
-name|resultSets
+name|results
 operator|.
 name|get
 argument_list|(
@@ -2485,7 +2485,7 @@ literal|null
 condition|?
 name|namespace
 operator|.
-name|getResultSet
+name|getResult
 argument_list|(
 name|name
 argument_list|)
@@ -2949,13 +2949,13 @@ block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|void
-name|removeResultSet
+name|removeResult
 parameter_list|(
 name|String
 name|name
 parameter_list|)
 block|{
-name|resultSets
+name|results
 operator|.
 name|remove
 argument_list|(

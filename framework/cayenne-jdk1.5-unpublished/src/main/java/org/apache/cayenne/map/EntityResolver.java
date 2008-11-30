@@ -375,9 +375,9 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|SQLResultSet
+name|SQLResult
 argument_list|>
-name|resultSetCache
+name|resultsCache
 decl_stmt|;
 specifier|protected
 specifier|transient
@@ -544,14 +544,14 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|resultSetCache
+name|resultsCache
 operator|=
 operator|new
 name|HashMap
 argument_list|<
 name|String
 argument_list|,
-name|SQLResultSet
+name|SQLResult
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -1540,7 +1540,7 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
-name|SQLResultSet
+name|SQLResult
 argument_list|>
 name|getResultSets
 parameter_list|()
@@ -1567,7 +1567,7 @@ name|addComposited
 argument_list|(
 name|map
 operator|.
-name|getResultSets
+name|getResults
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1761,17 +1761,17 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSet
-name|getResultSet
+name|SQLResult
+name|getResult
 parameter_list|(
 name|String
 name|name
 parameter_list|)
 block|{
-name|SQLResultSet
+name|SQLResult
 name|result
 init|=
-name|resultSetCache
+name|resultsCache
 operator|.
 name|get
 argument_list|(
@@ -1792,7 +1792,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|resultSetCache
+name|resultsCache
 operator|.
 name|get
 argument_list|(
@@ -1910,7 +1910,7 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-name|resultSetCache
+name|resultsCache
 operator|.
 name|clear
 argument_list|()

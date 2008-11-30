@@ -83,7 +83,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLResultSetMetadata implementation based on {@link SQLResultSet}.  *   * @since 3.0  */
+comment|/**  * A SQLResultSetMetadata implementation based on {@link SQLResult}.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -130,8 +130,8 @@ name|entitySegments
 decl_stmt|;
 name|DefaultResultSetMetadata
 parameter_list|(
-name|SQLResultSet
-name|resultSet
+name|SQLResult
+name|result
 parameter_list|,
 name|EntityResolver
 name|resolver
@@ -143,9 +143,9 @@ name|Object
 argument_list|>
 name|descriptors
 init|=
-name|resultSet
+name|result
 operator|.
-name|getResultDescriptors
+name|getComponents
 argument_list|()
 decl_stmt|;
 name|this

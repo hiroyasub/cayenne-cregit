@@ -25,12 +25,12 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|SQLResultSet
+name|SQLResult
 import|;
 end_import
 
 begin_comment
-comment|/**  * A "compiled" version of a {@link SQLResultSet} descriptor.  *   * @since 3.0  */
+comment|/**  * A "compiled" version of a {@link SQLResult} descriptor.  *   * @since 3.0  */
 end_comment
 
 begin_interface

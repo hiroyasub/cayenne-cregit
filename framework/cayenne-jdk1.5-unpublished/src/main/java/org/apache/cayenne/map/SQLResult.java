@@ -46,13 +46,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that defines how a row in a result set can be converted to result  * objects. SQLResultSet can map to a single scalar, a single entity or a mix of scalars  * and entities that is represented as an Object[].  *   * @since 3.0  */
+comment|/**  * A metadata object that defines how a row in a result set can be converted to result  * objects. SQLResult can be mapped to a single scalar, a single entity or a mix of  * scalars and entities that is represented as an Object[].  *   * @since 3.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|SQLResultSet
+name|SQLResult
 block|{
 specifier|protected
 name|String
@@ -67,13 +67,13 @@ name|resultDescriptors
 decl_stmt|;
 comment|/**      * Creates an unnamed SQLResultSet.      */
 specifier|public
-name|SQLResultSet
+name|SQLResult
 parameter_list|()
 block|{
 block|}
 comment|/**      * Creates a named SQLResultSet.      */
 specifier|public
-name|SQLResultSet
+name|SQLResult
 parameter_list|(
 name|String
 name|name
@@ -116,7 +116,7 @@ name|List
 argument_list|<
 name|Object
 argument_list|>
-name|getResultDescriptors
+name|getComponents
 parameter_list|()
 block|{
 return|return
