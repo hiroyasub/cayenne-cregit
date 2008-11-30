@@ -39,20 +39,6 @@ name|Query
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SQLResultSetMapping
-import|;
-end_import
-
 begin_comment
 comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries and other  * mapping objects.  *   * @since 1.1  */
 end_comment
@@ -71,8 +57,8 @@ name|className
 parameter_list|)
 function_decl|;
 comment|/**      * Returns a named result set mapping.      *       * @since 3.0      */
-name|SQLResultSetMapping
-name|getResultSetMapping
+name|SQLResultSet
+name|getResultSet
 parameter_list|(
 name|String
 name|name

@@ -145,7 +145,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
 name|EntityResult
 import|;
@@ -159,9 +159,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|SQLResultSetMapping
+name|SQLResultSet
 import|;
 end_import
 
@@ -1490,12 +1490,12 @@ name|EntityResult
 name|nextEntityResult
 parameter_list|()
 block|{
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 init|=
 name|compiledExpression
 operator|.
-name|getResultSetMapping
+name|getResultSet
 argument_list|()
 decl_stmt|;
 if|if
@@ -1528,12 +1528,12 @@ name|String
 name|nextColumnAlias
 parameter_list|()
 block|{
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 init|=
 name|compiledExpression
 operator|.
-name|getResultSetMapping
+name|getResultSet
 argument_list|()
 decl_stmt|;
 if|if

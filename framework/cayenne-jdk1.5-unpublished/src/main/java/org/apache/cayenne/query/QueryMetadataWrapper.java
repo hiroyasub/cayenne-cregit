@@ -99,6 +99,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|SQLResultSet
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -209,7 +223,7 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSetMapping
+name|SQLResultSet
 name|getResultSetMapping
 parameter_list|()
 block|{

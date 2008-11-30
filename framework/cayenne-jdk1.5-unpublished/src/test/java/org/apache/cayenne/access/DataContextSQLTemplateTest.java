@@ -193,7 +193,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
 name|EntityResult
 import|;
@@ -207,9 +207,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|SQLResultSetMapping
+name|SQLResultSet
 import|;
 end_import
 
@@ -377,11 +377,11 @@ argument_list|,
 literal|"Z"
 argument_list|)
 expr_stmt|;
-name|SQLResultSetMapping
+name|SQLResultSet
 name|rsMap
 init|=
 operator|new
-name|SQLResultSetMapping
+name|SQLResultSet
 argument_list|()
 decl_stmt|;
 name|rsMap
@@ -400,7 +400,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setResultSetMapping
+name|setResultSet
 argument_list|(
 name|rsMap
 argument_list|)
@@ -689,11 +689,11 @@ operator|.
 name|UPPERCASE_COLUMN_NAMES
 argument_list|)
 expr_stmt|;
-name|SQLResultSetMapping
+name|SQLResultSet
 name|rsMap
 init|=
 operator|new
-name|SQLResultSetMapping
+name|SQLResultSet
 argument_list|()
 decl_stmt|;
 name|rsMap
@@ -705,7 +705,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setResultSetMapping
+name|setResultSet
 argument_list|(
 name|rsMap
 argument_list|)
@@ -844,11 +844,11 @@ operator|.
 name|UPPERCASE_COLUMN_NAMES
 argument_list|)
 expr_stmt|;
-name|SQLResultSetMapping
+name|SQLResultSet
 name|rsMap
 init|=
 operator|new
-name|SQLResultSetMapping
+name|SQLResultSet
 argument_list|()
 decl_stmt|;
 name|rsMap
@@ -867,7 +867,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setResultSetMapping
+name|setResultSet
 argument_list|(
 name|rsMap
 argument_list|)

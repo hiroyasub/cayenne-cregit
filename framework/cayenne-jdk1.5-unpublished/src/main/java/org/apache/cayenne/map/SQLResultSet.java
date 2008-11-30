@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 package|;
 end_package
 
@@ -46,13 +46,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that defines how a DataRow can be converted to result objects. This  * object provides mapping in a JPA-compliant manner, i.e. the DataRow is mapped either to  * a single Object or an Object[]. Each object (single result object or an array element  * object) can be a scalar or a Persistent object.  *   * @since 3.0  */
+comment|/**  * A metadata object that defines how a row in a result set can be converted to result  * objects. SQLResultSet can map to a single scalar, a single entity or a mix of scalars  * and entities that is represented as an Object[].  *   * @since 3.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|SQLResultSetMapping
+name|SQLResultSet
 block|{
 specifier|protected
 name|String
@@ -65,13 +65,15 @@ name|Object
 argument_list|>
 name|resultDescriptors
 decl_stmt|;
+comment|/**      * Creates an unnamed SQLResultSet.      */
 specifier|public
-name|SQLResultSetMapping
+name|SQLResultSet
 parameter_list|()
 block|{
 block|}
+comment|/**      * Creates a named SQLResultSet.      */
 specifier|public
-name|SQLResultSetMapping
+name|SQLResultSet
 parameter_list|(
 name|String
 name|name

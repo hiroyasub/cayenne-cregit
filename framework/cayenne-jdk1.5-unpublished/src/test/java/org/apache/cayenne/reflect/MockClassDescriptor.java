@@ -97,7 +97,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
+name|EntityResult
 import|;
 end_import
 
@@ -109,9 +109,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|EntityResult
+name|ObjEntity
 import|;
 end_import
 

@@ -167,6 +167,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|SQLResultSet
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -275,7 +289,7 @@ name|String
 index|[]
 name|cacheGroups
 decl_stmt|;
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 decl_stmt|;
 specifier|transient
@@ -1370,7 +1384,7 @@ comment|/**      * @since 3.0      */
 name|void
 name|setResultSetMapping
 parameter_list|(
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 parameter_list|)
 block|{
@@ -1383,7 +1397,7 @@ expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSetMapping
+name|SQLResultSet
 name|getResultSetMapping
 parameter_list|()
 block|{

@@ -115,20 +115,6 @@ name|Query
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SQLResultSetMapping
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -225,8 +211,8 @@ literal|null
 return|;
 block|}
 specifier|public
-name|SQLResultSetMapping
-name|getResultSetMapping
+name|SQLResultSet
+name|getResultSet
 parameter_list|(
 name|String
 name|name

@@ -157,6 +157,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|SQLResultSet
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|XMLEncoder
@@ -1876,12 +1890,12 @@ operator|=
 name|columnNameCapitalization
 expr_stmt|;
 block|}
-comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResultSetMapping} rules.      *       * @since 3.0      */
+comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResultSet} rules.      *       * @since 3.0      */
 specifier|public
 name|void
-name|setResultSetMapping
+name|setResultSet
 parameter_list|(
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 parameter_list|)
 block|{

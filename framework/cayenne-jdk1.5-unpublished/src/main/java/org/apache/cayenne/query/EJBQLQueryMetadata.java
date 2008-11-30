@@ -57,6 +57,20 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|SQLResultSet
+import|;
+end_import
+
 begin_comment
 comment|/**  * A metadata object for the {@link EJBQLQuery}.  *   * @since 3.0  */
 end_comment
@@ -69,13 +83,13 @@ name|BaseQueryMetadata
 block|{
 specifier|private
 specifier|transient
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 decl_stmt|;
 name|void
 name|setResultSetMapping
 parameter_list|(
-name|SQLResultSetMapping
+name|SQLResultSet
 name|resultSetMapping
 parameter_list|)
 block|{
@@ -89,7 +103,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|SQLResultSetMapping
+name|SQLResultSet
 name|getResultSetMapping
 parameter_list|()
 block|{
@@ -121,7 +135,7 @@ name|setResultSetMapping
 argument_list|(
 name|expression
 operator|.
-name|getResultSetMapping
+name|getResultSet
 argument_list|()
 argument_list|)
 expr_stmt|;

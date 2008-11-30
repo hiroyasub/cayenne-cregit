@@ -47,9 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|SQLResultSetMapping
+name|SQLResultSet
 import|;
 end_import
 
@@ -111,8 +111,8 @@ name|getSource
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a mapping of the result set columns, or null if this is not a select      * expression.      */
-name|SQLResultSetMapping
-name|getResultSetMapping
+name|SQLResultSet
+name|getResultSet
 parameter_list|()
 function_decl|;
 block|}
