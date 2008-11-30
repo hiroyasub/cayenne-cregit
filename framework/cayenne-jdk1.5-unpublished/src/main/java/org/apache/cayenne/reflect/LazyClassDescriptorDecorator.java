@@ -91,6 +91,20 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EntityResult
+import|;
+end_import
+
 begin_comment
 comment|/**  * A ClassDescriptor wrapper that compiles decorated descriptor lazily on first access.  *   * @since 3.0  */
 end_comment
@@ -239,6 +253,21 @@ return|return
 name|descriptor
 operator|.
 name|getRootDbEntities
+argument_list|()
+return|;
+block|}
+specifier|public
+name|EntityResult
+name|getEntityResult
+parameter_list|()
+block|{
+name|checkDescriptorInitialized
+argument_list|()
+expr_stmt|;
+return|return
+name|descriptor
+operator|.
+name|getEntityResult
 argument_list|()
 return|;
 block|}

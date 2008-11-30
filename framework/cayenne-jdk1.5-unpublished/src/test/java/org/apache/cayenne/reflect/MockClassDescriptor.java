@@ -101,6 +101,20 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EntityResult
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -120,6 +134,15 @@ block|}
 specifier|public
 name|ObjEntity
 name|getEntity
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|EntityResult
+name|getEntityResult
 parameter_list|()
 block|{
 return|return

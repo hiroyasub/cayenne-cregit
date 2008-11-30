@@ -1109,8 +1109,6 @@ return|;
 block|}
 block|}
 decl_stmt|;
-comment|// EJBQL queries are polymorphic by definition - there is no distinction between
-comment|// inheritance/no-inheritance fetch
 name|descriptor
 operator|.
 name|visitAllProperties

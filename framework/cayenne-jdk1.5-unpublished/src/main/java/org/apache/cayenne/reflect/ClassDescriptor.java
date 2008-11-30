@@ -91,6 +91,20 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EntityResult
+import|;
+end_import
+
 begin_comment
 comment|/**  * A runtime descriptor of an persistent class.  *   * @since 1.2  */
 end_comment
@@ -111,6 +125,11 @@ argument_list|<
 name|DbEntity
 argument_list|>
 name|getRootDbEntities
+parameter_list|()
+function_decl|;
+comment|/**      * Returns the EntityResult that describes the mapping of the ResultSet when entity      * data is fetched.      *       * @since 3.0      */
+name|EntityResult
+name|getEntityResult
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a class mapped by this descriptor.      */
@@ -218,7 +237,7 @@ argument_list|>
 name|getMapArcProperties
 parameter_list|()
 function_decl|;
-comment|/**      * Passes the visitor to the properties "visit" method for all properties declared in      * this descriptor and all its subdescriptors. Properties that are overridden in      * subdescriptors will include overridden information. Walkthrough is terminated in      * case one of the properties returns false. Returns true if all visited properties      * returned true, false - if one property returned false.      */
+comment|/**      * Passes the visitor to the properties "visit" method for all properties declared in      * this descriptor and all its super-decsriptors. Properties that are overridden in      * subdescriptors will include overridden information. Walkthrough is terminated in      * case one of the properties returns false. Returns true if all visited properties      * returned true, false - if one property returned false.      */
 name|boolean
 name|visitProperties
 parameter_list|(

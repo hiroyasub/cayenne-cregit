@@ -308,7 +308,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ObjEntity is a mapping descriptor for a DataObject Java class. It contains the  * information about the Java class itself, as well as its mapping to the DbEntity layer.  *   */
+comment|/**  * ObjEntity is a mapping descriptor for a DataObject Java class. It contains the  * information about the Java class itself, as well as its mapping to the DbEntity layer.  */
 end_comment
 
 begin_class
@@ -2870,24 +2870,26 @@ argument_list|>
 name|getPrimaryKeyNames
 parameter_list|()
 block|{
-if|if
-condition|(
+name|DbEntity
+name|dbEntity
+init|=
 name|getDbEntity
 argument_list|()
+decl_stmt|;
+comment|// abstract entities may have no DbEntity mapping
+if|if
+condition|(
+name|dbEntity
 operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"No DbEntity for ObjEntity: "
-operator|+
-name|getName
+return|return
+name|Collections
+operator|.
+name|emptyList
 argument_list|()
-argument_list|)
-throw|;
+return|;
 block|}
 name|Collection
 argument_list|<
@@ -2895,8 +2897,7 @@ name|DbAttribute
 argument_list|>
 name|pkAttributes
 init|=
-name|getDbEntity
-argument_list|()
+name|dbEntity
 operator|.
 name|getPrimaryKeys
 argument_list|()
