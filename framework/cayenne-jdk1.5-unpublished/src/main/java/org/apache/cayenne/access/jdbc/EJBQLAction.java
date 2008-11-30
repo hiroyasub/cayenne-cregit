@@ -296,12 +296,9 @@ name|EJBQLTranslationContext
 argument_list|(
 name|entityResolver
 argument_list|,
-name|compiledExpression
-argument_list|,
 name|query
-operator|.
-name|getParameters
-argument_list|()
+argument_list|,
+name|compiledExpression
 argument_list|,
 name|translatorFactory
 argument_list|)

@@ -348,13 +348,8 @@ operator|.
 name|nextEntityResult
 argument_list|()
 operator|.
-name|getDbFields
-argument_list|(
-name|context
-operator|.
-name|getEntityResolver
+name|getFields
 argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 comment|// assign whatever we have to a final ivar so that it can be accessed within

@@ -167,20 +167,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|SQLResultSet
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -289,7 +275,8 @@ name|String
 index|[]
 name|cacheGroups
 decl_stmt|;
-name|SQLResultSet
+specifier|transient
+name|SQLResultSetMetadata
 name|resultSetMapping
 decl_stmt|;
 specifier|transient
@@ -1381,23 +1368,8 @@ name|classDescriptor
 return|;
 block|}
 comment|/**      * @since 3.0      */
-name|void
-name|setResultSetMapping
-parameter_list|(
-name|SQLResultSet
-name|resultSetMapping
-parameter_list|)
-block|{
-name|this
-operator|.
-name|resultSetMapping
-operator|=
-name|resultSetMapping
-expr_stmt|;
-block|}
-comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSet
+name|SQLResultSetMetadata
 name|getResultSetMapping
 parameter_list|()
 block|{

@@ -87,7 +87,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityResult
+name|ObjEntity
 import|;
 end_import
 
@@ -99,9 +99,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|query
 operator|.
-name|ObjEntity
+name|EntityResultMetadata
 import|;
 end_import
 
@@ -257,8 +257,8 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|EntityResult
-name|getEntityResult
+name|EntityResultMetadata
+name|getEntityResultMetadata
 parameter_list|()
 block|{
 name|checkDescriptorInitialized
@@ -267,7 +267,7 @@ expr_stmt|;
 return|return
 name|descriptor
 operator|.
-name|getEntityResult
+name|getEntityResultMetadata
 argument_list|()
 return|;
 block|}

@@ -105,6 +105,20 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EntityResultMetadata
+import|;
+end_import
+
 begin_comment
 comment|/**  * A runtime descriptor of an persistent class.  *   * @since 1.2  */
 end_comment
@@ -127,9 +141,9 @@ argument_list|>
 name|getRootDbEntities
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the EntityResult that describes the mapping of the ResultSet when entity      * data is fetched.      *       * @since 3.0      */
-name|EntityResult
-name|getEntityResult
+comment|/**      * Returns the EntityResultMetadata that describes the mapping of the ResultSet when      * entity data is fetched.      *       * @since 3.0      */
+name|EntityResultMetadata
+name|getEntityResultMetadata
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a class mapped by this descriptor.      */

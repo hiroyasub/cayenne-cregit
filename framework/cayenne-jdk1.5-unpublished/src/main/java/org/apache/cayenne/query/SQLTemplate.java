@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.  *<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *                  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *   *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  */
+comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *                  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -319,6 +319,10 @@ decl_stmt|;
 specifier|protected
 name|String
 name|columnNamesCapitalization
+decl_stmt|;
+specifier|protected
+name|SQLResultSet
+name|resultSet
 decl_stmt|;
 name|SQLTemplateMetadata
 name|metaData
@@ -1383,7 +1387,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -1396,7 +1400,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 specifier|public
 name|void
 name|setRefreshingObjects
@@ -1874,7 +1878,7 @@ return|return
 name|columnNamesCapitalization
 return|;
 block|}
-comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p/> Note that while a non-default setting is useful for queries that do not rely      * on a #result directive to describe columns, it works for all SQLTemplates the same      * way.      *       * @param columnNameCapitalization Can be null of one of      *            {@link #LOWERCASE_COLUMN_NAMES} or {@link #UPPERCASE_COLUMN_NAMES}.      * @since 3.0      */
+comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p/>      * Note that while a non-default setting is useful for queries that do not rely on a      * #result directive to describe columns, it works for all SQLTemplates the same way.      *       * @param columnNameCapitalization Can be null of one of      *            {@link #LOWERCASE_COLUMN_NAMES} or {@link #UPPERCASE_COLUMN_NAMES}.      * @since 3.0      */
 specifier|public
 name|void
 name|setColumnNamesCapitalization
@@ -1896,16 +1900,25 @@ name|void
 name|setResultSet
 parameter_list|(
 name|SQLResultSet
-name|resultSetMapping
+name|resultSet
 parameter_list|)
 block|{
-name|metaData
+name|this
 operator|.
-name|setResultSetMapping
-argument_list|(
-name|resultSetMapping
-argument_list|)
+name|resultSet
+operator|=
+name|resultSet
 expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|SQLResultSet
+name|getResultSet
+parameter_list|()
+block|{
+return|return
+name|resultSet
+return|;
 block|}
 block|}
 end_class
