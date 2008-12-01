@@ -539,7 +539,7 @@ return|return
 name|row
 return|;
 block|}
-comment|/**      * Returns a map of ObjectId values from the next result row. Primary key columns are      * determined from the provided DbEntity.      */
+comment|/**      * Returns a map of ObjectId values from the next result row. Primary key columns are      * determined from the provided DbEntity.      *       * @deprecated since 3.0 in favor of {@link #nextId(DbEntity)}.      */
 specifier|public
 name|Map
 argument_list|<
