@@ -456,6 +456,16 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
+literal|"Object class: "
+operator|+
+name|object
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|object
 operator|instanceof
 name|Number

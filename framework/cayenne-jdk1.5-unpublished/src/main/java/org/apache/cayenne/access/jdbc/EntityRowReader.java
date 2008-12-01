@@ -263,7 +263,7 @@ block|{
 try|try
 block|{
 name|DataRow
-name|idRow
+name|row
 init|=
 operator|new
 name|DataRow
@@ -271,7 +271,7 @@ argument_list|(
 name|mapCapacity
 argument_list|)
 decl_stmt|;
-name|idRow
+name|row
 operator|.
 name|setEntityName
 argument_list|(
@@ -332,7 +332,7 @@ name|index
 index|]
 argument_list|)
 decl_stmt|;
-name|idRow
+name|row
 operator|.
 name|put
 argument_list|(
@@ -358,12 +358,12 @@ name|postprocessRow
 argument_list|(
 name|resultSet
 argument_list|,
-name|idRow
+name|row
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|idRow
+name|row
 return|;
 block|}
 catch|catch

@@ -452,6 +452,16 @@ name|getFetchOffset
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|sqlQuery
+operator|.
+name|setResult
+argument_list|(
+name|compiledExpression
+operator|.
+name|getResult
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|actionFactory
 operator|.
 name|sqlAction

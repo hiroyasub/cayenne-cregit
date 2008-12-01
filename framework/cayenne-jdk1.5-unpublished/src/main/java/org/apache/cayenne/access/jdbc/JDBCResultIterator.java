@@ -479,10 +479,7 @@ name|rsMapping
 operator|.
 name|getEntitySegment
 argument_list|(
-name|entitySegments
-index|[
 name|i
-index|]
 argument_list|)
 argument_list|)
 argument_list|)
@@ -511,10 +508,7 @@ name|rsMapping
 operator|.
 name|getScalarSegment
 argument_list|(
-name|scalarSegments
-index|[
 name|i
-index|]
 argument_list|)
 argument_list|)
 argument_list|)
