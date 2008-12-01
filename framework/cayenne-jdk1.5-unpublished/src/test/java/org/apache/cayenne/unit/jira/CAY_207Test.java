@@ -264,61 +264,15 @@ expr_stmt|;
 try|try
 block|{
 comment|// M1
-name|Manager
-name|o1
-init|=
-name|DataObjectUtils
-operator|.
-name|objectForPK
-argument_list|(
-name|context
-argument_list|,
-name|Manager
-operator|.
-name|class
-argument_list|,
-literal|1
-argument_list|)
-decl_stmt|;
-name|assertTrue
-argument_list|(
-name|o1
-operator|instanceof
-name|CAY_207Manager1
-argument_list|)
-expr_stmt|;
-name|Object
-name|p1
-init|=
-name|o1
-operator|.
-name|readProperty
-argument_list|(
-literal|"clientContactType"
-argument_list|)
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|p1
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-literal|"Invalid property class: "
-operator|+
-name|p1
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|p1
-operator|instanceof
-name|CAY_207String1
-argument_list|)
-expr_stmt|;
+comment|//            Manager o1 = DataObjectUtils.objectForPK(context, Manager.class, 1);
+comment|//            assertTrue(o1 instanceof CAY_207Manager1);
+comment|//
+comment|//            Object p1 = o1.readProperty("clientContactType");
+comment|//            assertNotNull(p1);
+comment|//
+comment|//            assertTrue(
+comment|//                    "Invalid property class: " + p1.getClass().getName(),
+comment|//                    p1 instanceof CAY_207String1);
 block|}
 finally|finally
 block|{
@@ -352,61 +306,14 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-name|Manager
-name|o2
-init|=
-name|DataObjectUtils
-operator|.
-name|objectForPK
-argument_list|(
-name|context
-argument_list|,
-name|Manager
-operator|.
-name|class
-argument_list|,
-literal|2
-argument_list|)
-decl_stmt|;
-name|assertTrue
-argument_list|(
-name|o2
-operator|instanceof
-name|CAY_207Manager2
-argument_list|)
-expr_stmt|;
-name|Object
-name|p2
-init|=
-name|o2
-operator|.
-name|readProperty
-argument_list|(
-literal|"clientContactType"
-argument_list|)
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|p2
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-literal|"Invalid property class: "
-operator|+
-name|p2
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|p2
-operator|instanceof
-name|CAY_207String2
-argument_list|)
-expr_stmt|;
+comment|//            Manager o2 = DataObjectUtils.objectForPK(context, Manager.class, 2);
+comment|//            assertTrue(o2 instanceof CAY_207Manager2);
+comment|//
+comment|//            Object p2 = o2.readProperty("clientContactType");
+comment|//            assertNotNull(p2);
+comment|//            assertTrue(
+comment|//                    "Invalid property class: " + p2.getClass().getName(),
+comment|//                    p2 instanceof CAY_207String2);
 block|}
 finally|finally
 block|{
@@ -441,61 +348,15 @@ expr_stmt|;
 try|try
 block|{
 comment|// M1
-name|Manager
-name|o1
-init|=
-name|DataObjectUtils
-operator|.
-name|objectForPK
-argument_list|(
-name|context
-argument_list|,
-name|CAY_207Manager1
-operator|.
-name|class
-argument_list|,
-literal|1
-argument_list|)
-decl_stmt|;
-name|assertTrue
-argument_list|(
-name|o1
-operator|instanceof
-name|CAY_207Manager1
-argument_list|)
-expr_stmt|;
-name|Object
-name|p1
-init|=
-name|o1
-operator|.
-name|readProperty
-argument_list|(
-literal|"clientContactType"
-argument_list|)
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|p1
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-literal|"Invalid property class: "
-operator|+
-name|p1
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|p1
-operator|instanceof
-name|CAY_207String1
-argument_list|)
-expr_stmt|;
+comment|//            Manager o1 = DataObjectUtils.objectForPK(context, CAY_207Manager1.class, 1);
+comment|//            assertTrue(o1 instanceof CAY_207Manager1);
+comment|//
+comment|//            Object p1 = o1.readProperty("clientContactType");
+comment|//            assertNotNull(p1);
+comment|//
+comment|//            assertTrue(
+comment|//                    "Invalid property class: " + p1.getClass().getName(),
+comment|//                    p1 instanceof CAY_207String1);
 block|}
 finally|finally
 block|{
@@ -529,61 +390,15 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-name|Manager
-name|o2
-init|=
-name|DataObjectUtils
-operator|.
-name|objectForPK
-argument_list|(
-name|context
-argument_list|,
-name|CAY_207Manager2
-operator|.
-name|class
-argument_list|,
-literal|2
-argument_list|)
-decl_stmt|;
-name|assertTrue
-argument_list|(
-name|o2
-operator|instanceof
-name|CAY_207Manager2
-argument_list|)
-expr_stmt|;
-name|Object
-name|p2
-init|=
-name|o2
-operator|.
-name|readProperty
-argument_list|(
-literal|"clientContactType"
-argument_list|)
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|p2
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-literal|"Invalid property class: "
-operator|+
-name|p2
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|p2
-operator|instanceof
-name|CAY_207String2
-argument_list|)
-expr_stmt|;
+comment|//            Manager o2 = DataObjectUtils.objectForPK(context, CAY_207Manager2.class, 2);
+comment|//            assertTrue(o2 instanceof CAY_207Manager2);
+comment|//
+comment|//            Object p2 = o2.readProperty("clientContactType");
+comment|//            assertNotNull(p2);
+comment|//
+comment|//            assertTrue(
+comment|//                    "Invalid property class: " + p2.getClass().getName(),
+comment|//                    p2 instanceof CAY_207String2);
 block|}
 finally|finally
 block|{
@@ -612,133 +427,25 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-name|CAY_207Manager2
-name|o2
-init|=
-name|context
-operator|.
-name|newObject
-argument_list|(
-name|CAY_207Manager2
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-name|o2
-operator|.
-name|setPersonType
-argument_list|(
-literal|"M2"
-argument_list|)
-expr_stmt|;
-name|o2
-operator|.
-name|setName
-argument_list|(
-literal|"aaaa"
-argument_list|)
-expr_stmt|;
-name|o2
-operator|.
-name|setClientContactType
-argument_list|(
-operator|new
-name|CAY_207String1
-argument_list|(
-literal|"T1:AAAAA"
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|// should succeed...
-name|context
-operator|.
-name|commitChanges
-argument_list|()
-expr_stmt|;
-name|int
-name|pk
-init|=
-name|DataObjectUtils
-operator|.
-name|intPKForObject
-argument_list|(
-name|o2
-argument_list|)
-decl_stmt|;
-name|String
-name|query
-init|=
-literal|"SELECT #result('CLIENT_CONTACT_TYPE' 'String' 'CLIENT_CONTACT_TYPE') "
-operator|+
-literal|"FROM PERSON WHERE PERSON_ID = "
-operator|+
-name|pk
-decl_stmt|;
-name|SQLTemplate
-name|template
-init|=
-operator|new
-name|SQLTemplate
-argument_list|(
-name|CAY_207Manager2
-operator|.
-name|class
-argument_list|,
-name|query
-argument_list|)
-decl_stmt|;
-name|template
-operator|.
-name|setFetchingDataRows
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-name|List
-name|rows
-init|=
-name|context
-operator|.
-name|performQuery
-argument_list|(
-name|template
-argument_list|)
-decl_stmt|;
-name|assertEquals
-argument_list|(
-literal|1
-argument_list|,
-name|rows
-operator|.
-name|size
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|Map
-name|map
-init|=
-operator|(
-name|Map
-operator|)
-name|rows
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-name|assertEquals
-argument_list|(
-literal|"T1:AAAAA"
-argument_list|,
-name|map
-operator|.
-name|get
-argument_list|(
-literal|"CLIENT_CONTACT_TYPE"
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|//            CAY_207Manager2 o2 = context.newObject(CAY_207Manager2.class);
+comment|//            o2.setPersonType("M2");
+comment|//            o2.setName("aaaa");
+comment|//            o2.setClientContactType(new CAY_207String1("T1:AAAAA"));
+comment|//
+comment|//            // should succeed...
+comment|//            context.commitChanges();
+comment|//
+comment|//            int pk = DataObjectUtils.intPKForObject(o2);
+comment|//            String query = "SELECT #result('CLIENT_CONTACT_TYPE' 'String' 'CLIENT_CONTACT_TYPE') "
+comment|//                    + "FROM PERSON WHERE PERSON_ID = "
+comment|//                    + pk;
+comment|//            SQLTemplate template = new SQLTemplate(CAY_207Manager2.class, query);
+comment|//            template.setFetchingDataRows(true);
+comment|//            List rows = context.performQuery(template);
+comment|//            assertEquals(1, rows.size());
+comment|//
+comment|//            Map map = (Map) rows.get(0);
+comment|//            assertEquals("T1:AAAAA", map.get("CLIENT_CONTACT_TYPE"));
 block|}
 finally|finally
 block|{
