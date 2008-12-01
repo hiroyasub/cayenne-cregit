@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResult}.  *   * @since 3.0  */
+comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResult}. Note that fields in the EntityResult are not required to  * follow the order of columns in the actual query, and can be added in the arbitrary  * order.  *   * @since 3.0  */
 end_comment
 
 begin_class

@@ -1573,6 +1573,9 @@ argument_list|(
 name|resultDescriptorPosition
 operator|++
 argument_list|)
+operator|.
+name|getColumn
+argument_list|()
 return|;
 block|}
 name|boolean

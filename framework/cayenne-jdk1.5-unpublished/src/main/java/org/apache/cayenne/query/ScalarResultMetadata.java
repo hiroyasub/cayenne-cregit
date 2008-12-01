@@ -15,74 +15,18 @@ name|query
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntityResult
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|reflect
-operator|.
-name|ClassDescriptor
-import|;
-end_import
-
 begin_comment
-comment|/**  * A "compiled" version of a {@link EntityResult} descriptor.  *   * @since 3.0  */
+comment|/**  * @since 3.0  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|EntityResultMetadata
+name|ScalarResultMetadata
 block|{
-name|ClassDescriptor
-name|getClassDescriptor
+name|String
+name|getColumn
 parameter_list|()
-function_decl|;
-comment|/**      * Returns a map of ResultSet labels keyed by column paths. Note that ordering of      * fields in the returned map is generally undefined and should not be relied upon      * when processing query result sets.      */
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|getFields
-parameter_list|()
-function_decl|;
-comment|/**      * Performs a reverse lookup of the column path for a given ResultSet label.      */
-name|String
-name|getColumnPath
-parameter_list|(
-name|String
-name|resultSetLabel
-parameter_list|)
 function_decl|;
 comment|/**      * Returns a zero-based column index of the first column of this segment in the      * ResultSet.      */
 name|int
