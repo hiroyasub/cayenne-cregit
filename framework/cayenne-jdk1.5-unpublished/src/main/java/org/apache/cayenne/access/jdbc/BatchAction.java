@@ -1270,6 +1270,14 @@ argument_list|,
 name|keysRS
 argument_list|,
 name|keyRowDescriptor
+argument_list|,
+name|query
+operator|.
+name|getMetaData
+argument_list|(
+name|getEntityResolver
+argument_list|()
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|observer

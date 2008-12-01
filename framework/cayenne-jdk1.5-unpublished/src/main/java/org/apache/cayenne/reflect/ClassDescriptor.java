@@ -87,7 +87,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityResult
+name|EntityInheritanceTree
 import|;
 end_import
 
@@ -139,6 +139,11 @@ argument_list|<
 name|DbEntity
 argument_list|>
 name|getRootDbEntities
+parameter_list|()
+function_decl|;
+comment|/**      * @since 3.0      */
+name|EntityInheritanceTree
+name|getEntityInheritanceTree
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the EntityResultMetadata that describes the mapping of the ResultSet when      * entity data is fetched.      *       * @since 3.0      */

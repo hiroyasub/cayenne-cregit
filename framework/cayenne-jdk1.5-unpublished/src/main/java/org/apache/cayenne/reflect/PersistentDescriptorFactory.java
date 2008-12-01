@@ -639,6 +639,13 @@ name|getEntity
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|descriptor
+operator|.
+name|setEntityInheritanceTree
+argument_list|(
+name|inheritanceTree
+argument_list|)
+expr_stmt|;
 name|indexSubclassDescriptors
 argument_list|(
 name|descriptor

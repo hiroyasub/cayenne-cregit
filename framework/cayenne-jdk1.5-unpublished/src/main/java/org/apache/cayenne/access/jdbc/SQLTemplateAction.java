@@ -271,6 +271,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|QueryMetadata
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|SQLAction
 import|;
 end_import
@@ -337,8 +351,8 @@ name|SQLTemplate
 name|query
 decl_stmt|;
 specifier|protected
-name|ObjEntity
-name|entity
+name|QueryMetadata
+name|queryMetadata
 decl_stmt|;
 comment|/**      * @deprecated since 3.0 use a      *             {@link #SQLTemplateAction(SQLTemplate, DbAdapter, EntityResolver)}      *             constructor.      */
 specifier|public
@@ -392,7 +406,7 @@ name|adapter
 expr_stmt|;
 name|this
 operator|.
-name|entity
+name|queryMetadata
 operator|=
 name|query
 operator|.
@@ -400,9 +414,6 @@ name|getMetaData
 argument_list|(
 name|entityResolver
 argument_list|)
-operator|.
-name|getObjEntity
-argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Returns DbAdapter associated with this execution plan object.      */
@@ -970,6 +981,8 @@ name|getDescriptor
 argument_list|(
 name|types
 argument_list|)
+argument_list|,
+name|queryMetadata
 argument_list|)
 decl_stmt|;
 name|LimitResultIterator
@@ -1128,6 +1141,14 @@ argument_list|(
 name|resultSet
 argument_list|)
 expr_stmt|;
+name|ObjEntity
+name|entity
+init|=
+name|queryMetadata
+operator|.
+name|getObjEntity
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|entity

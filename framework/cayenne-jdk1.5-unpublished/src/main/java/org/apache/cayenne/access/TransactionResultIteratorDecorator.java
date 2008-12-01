@@ -306,10 +306,7 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|Object
 name|nextId
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
+parameter_list|()
 throws|throws
 name|CayenneException
 block|{
@@ -317,9 +314,7 @@ return|return
 name|result
 operator|.
 name|nextId
-argument_list|(
-name|entity
-argument_list|)
+argument_list|()
 return|;
 block|}
 specifier|public

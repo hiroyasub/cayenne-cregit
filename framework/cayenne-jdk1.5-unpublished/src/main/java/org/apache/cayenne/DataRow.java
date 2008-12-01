@@ -173,6 +173,11 @@ name|DataObject
 operator|.
 name|DEFAULT_VERSION
 decl_stmt|;
+comment|/**      * @since 3.0      */
+specifier|protected
+name|String
+name|entityName
+decl_stmt|;
 specifier|public
 name|DataRow
 parameter_list|(
@@ -294,7 +299,7 @@ return|return
 name|merged
 return|;
 block|}
-comment|/**      * Creates a DataRow that contains only the keys that have values that differ between      * this object and<code>row</code> parameter. Diff values are taken from the      *<code>row</code> parameter. It is assumed that key sets are compatible in both      * rows (e.g. they represent snapshots for the same entity). Returns null if no      * differences are found.      */
+comment|/**      * Creates a DataRow that contains only the keys that have values that differ between      * this object and<code>row</code> parameter. Diff values are taken from the      *<code>row</code> parameter. It is assumed that key sets are compatible in both rows      * (e.g. they represent snapshots for the same entity). Returns null if no differences      * are found.      */
 specifier|public
 name|DataRow
 name|createDiff
@@ -791,6 +796,32 @@ operator|.
 name|toString
 argument_list|()
 return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|String
+name|getEntityName
+parameter_list|()
+block|{
+return|return
+name|entityName
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setEntityName
+parameter_list|(
+name|String
+name|entityName
+parameter_list|)
+block|{
+name|this
+operator|.
+name|entityName
+operator|=
+name|entityName
+expr_stmt|;
 block|}
 block|}
 end_class

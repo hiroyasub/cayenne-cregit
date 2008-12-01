@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  *   */
+comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  */
 end_comment
 
 begin_interface
@@ -129,13 +129,10 @@ parameter_list|)
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**      * Reads and returns an id column or columns for the DbEntity. If an entity has a      * single column id, the return value is an Object matching the column type (e.g.      * java.lang.Long). If an entity has a compound PK, the return value is a DataRow      * (i.e. equivalent to {@link #nextObjectId(DbEntity)}).      *       * @since 3.0      */
+comment|/**      * Reads and returns an id column or columns for the current row DbEntity. If an      * entity has a single column id, the return value is an Object matching the column      * type (e.g. java.lang.Long). If an entity has a compound PK, the return value is a      * DataRow.      *       * @since 3.0      */
 name|Object
 name|nextId
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
+parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;

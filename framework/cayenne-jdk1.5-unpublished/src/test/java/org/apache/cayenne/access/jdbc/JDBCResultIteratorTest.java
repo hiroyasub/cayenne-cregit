@@ -65,7 +65,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|access
+operator|.
+name|types
+operator|.
+name|ExtendedTypeMap
 import|;
 end_import
 
@@ -77,11 +81,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|query
 operator|.
-name|types
-operator|.
-name|ExtendedTypeMap
+name|MockQueryMetadata
 import|;
 end_import
 
@@ -313,6 +315,10 @@ argument_list|,
 name|rs
 argument_list|,
 name|descriptor
+argument_list|,
+operator|new
+name|MockQueryMetadata
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertFalse
@@ -455,6 +461,10 @@ argument_list|,
 name|rs
 argument_list|,
 name|descriptor
+argument_list|,
+operator|new
+name|MockQueryMetadata
+argument_list|()
 argument_list|)
 return|;
 block|}

@@ -284,6 +284,8 @@ argument_list|,
 name|resultSet
 argument_list|,
 name|descriptor
+argument_list|,
+name|metadata
 argument_list|)
 decl_stmt|;
 name|LimitResultIterator

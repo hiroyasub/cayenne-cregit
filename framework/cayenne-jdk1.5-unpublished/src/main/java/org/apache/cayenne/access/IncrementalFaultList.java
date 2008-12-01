@@ -183,20 +183,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjEntity
 import|;
 end_import
@@ -852,14 +838,6 @@ block|}
 comment|// defer DataRows -> Objects conversion till we are completely done.
 block|}
 comment|// continue reading ids
-name|DbEntity
-name|entity
-init|=
-name|rootEntity
-operator|.
-name|getDbEntity
-argument_list|()
-decl_stmt|;
 while|while
 condition|(
 name|it
@@ -875,9 +853,7 @@ argument_list|(
 name|it
 operator|.
 name|nextId
-argument_list|(
-name|entity
-argument_list|)
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
