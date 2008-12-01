@@ -2023,7 +2023,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Returns a translator factory for EJBQL to SQL translation. This property is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be overriden by calling      * {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *       * @since 3.0      */
+comment|/**      * Returns a translator factory for EJBQL to SQL translation. This property is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be overridden by calling      * {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *       * @since 3.0      */
 specifier|public
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory

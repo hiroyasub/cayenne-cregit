@@ -1163,8 +1163,7 @@ comment|// fetched attributes include attributes that are either:
 comment|//
 comment|// * class properties
 comment|// * PK
-comment|// * FK used in relationships
-comment|// * GROUP BY
+comment|// * FK used in relationship
 comment|// * joined prefetch PK
 name|ClassDescriptor
 name|descriptor
