@@ -327,7 +327,7 @@ name|resultRows
 init|=
 name|it
 operator|.
-name|dataRows
+name|allRows
 argument_list|(
 literal|false
 argument_list|)

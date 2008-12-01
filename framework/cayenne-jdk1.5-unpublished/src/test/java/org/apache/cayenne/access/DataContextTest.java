@@ -2307,7 +2307,7 @@ condition|)
 block|{
 name|it
 operator|.
-name|nextDataRow
+name|nextRow
 argument_list|()
 expr_stmt|;
 name|count
@@ -2385,7 +2385,7 @@ name|DataRow
 operator|)
 name|it
 operator|.
-name|nextDataRow
+name|nextRow
 argument_list|()
 decl_stmt|;
 comment|// try instantiating an object and fetching its relationships

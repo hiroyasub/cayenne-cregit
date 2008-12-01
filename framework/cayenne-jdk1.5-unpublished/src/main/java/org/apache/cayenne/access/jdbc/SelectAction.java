@@ -593,8 +593,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// wrap iterator in a fetch limit checker ... there are a few cases when in-memory
-comment|// fetch limit is a noop, however in a geberal case this is needed, as teh SQL
-comment|// result count does not directly correspind to the number of objects returned
+comment|// fetch limit is a noop, however in a general case this is needed, as the SQL
+comment|// result count does not directly correspond to the number of objects returned
 comment|// from Cayenne.
 name|int
 name|fetchLimit
@@ -660,7 +660,7 @@ name|resultRows
 init|=
 name|it
 operator|.
-name|dataRows
+name|allRows
 argument_list|(
 literal|true
 argument_list|)

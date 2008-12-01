@@ -791,7 +791,7 @@ name|rowWidth
 operator|=
 name|it
 operator|.
-name|getDataRowWidth
+name|getResultSetWidth
 argument_list|()
 expr_stmt|;
 comment|// resolve first page if we can
@@ -827,7 +827,7 @@ name|add
 argument_list|(
 name|it
 operator|.
-name|nextDataRow
+name|nextRow
 argument_list|()
 argument_list|)
 expr_stmt|;

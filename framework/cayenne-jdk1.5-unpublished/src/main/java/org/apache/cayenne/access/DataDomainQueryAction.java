@@ -2379,7 +2379,7 @@ name|query
 argument_list|,
 name|keysIterator
 operator|.
-name|dataRows
+name|allRows
 argument_list|(
 literal|true
 argument_list|)

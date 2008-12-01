@@ -185,6 +185,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * @deprecated since 3.0 in favor of {@link #allRows(boolean)}.      */
 specifier|public
 name|List
 name|dataRows
@@ -195,16 +196,31 @@ parameter_list|)
 throws|throws
 name|CayenneException
 block|{
+return|return
+name|allRows
+argument_list|(
+name|close
+argument_list|)
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
 name|List
-argument_list|<
-name|Map
-argument_list|>
+name|allRows
+parameter_list|(
+name|boolean
+name|close
+parameter_list|)
+throws|throws
+name|CayenneException
+block|{
+name|List
 name|list
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|Map
+name|Object
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -220,7 +236,7 @@ name|list
 operator|.
 name|add
 argument_list|(
-name|nextDataRow
+name|nextRow
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -242,6 +258,7 @@ return|return
 name|list
 return|;
 block|}
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|int
 name|getDataRowWidth
@@ -251,6 +268,19 @@ return|return
 name|result
 operator|.
 name|getDataRowWidth
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|int
+name|getResultSetWidth
+parameter_list|()
+block|{
+return|return
+name|result
+operator|.
+name|getResultSetWidth
 argument_list|()
 return|;
 block|}
@@ -268,8 +298,14 @@ name|hasNextRow
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 in favor of {@link #nextRow()}.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|nextDataRow
 parameter_list|()
 throws|throws
@@ -279,6 +315,21 @@ return|return
 name|result
 operator|.
 name|nextDataRow
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Object
+name|nextRow
+parameter_list|()
+throws|throws
+name|CayenneException
+block|{
+return|return
+name|result
+operator|.
+name|nextRow
 argument_list|()
 return|;
 block|}
@@ -317,6 +368,7 @@ name|nextId
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 in favor of {@link #skipRow()}.      */
 specifier|public
 name|void
 name|skipDataRow
@@ -327,6 +379,20 @@ block|{
 name|result
 operator|.
 name|skipDataRow
+argument_list|()
+expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|skipRow
+parameter_list|()
+throws|throws
+name|CayenneException
+block|{
+name|result
+operator|.
+name|skipRow
 argument_list|()
 expr_stmt|;
 block|}

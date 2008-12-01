@@ -3142,12 +3142,15 @@ block|{
 name|i
 operator|++
 expr_stmt|;
-name|Map
+name|DataRow
 name|row
 init|=
+operator|(
+name|DataRow
+operator|)
 name|it
 operator|.
-name|nextDataRow
+name|nextRow
 argument_list|()
 decl_stmt|;
 name|assertEquals

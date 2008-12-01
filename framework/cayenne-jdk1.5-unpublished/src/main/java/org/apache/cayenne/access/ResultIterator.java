@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  */
+comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  *<p>  * Result "rows", depending on the query, may be represented as scalar values, DataRows,  * or Object[] arrays containing a mix of scalars and DataRows.  *</p>  */
 end_comment
 
 begin_interface
@@ -82,12 +82,22 @@ specifier|public
 interface|interface
 name|ResultIterator
 block|{
-comment|/**      * Returns all unread data rows from ResultSet and closes this iterator if asked to do      * so.      */
+comment|/**      * Returns all unread data rows from ResultSet and closes this iterator if asked to do      * so.      *       * @deprecated since 3.0 use {@link #allRows(boolean)}.      */
 name|List
 argument_list|<
 name|DataRow
 argument_list|>
 name|dataRows
+parameter_list|(
+name|boolean
+name|close
+parameter_list|)
+throws|throws
+name|CayenneException
+function_decl|;
+comment|/**      * Returns all yet unread rows from ResultSet and closes this iterator if asked to do      * so.      *       * @since 3.0      */
+name|List
+name|allRows
 parameter_list|(
 name|boolean
 name|close
@@ -102,7 +112,7 @@ parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**      * Returns the next result row as a Map.      */
+comment|/**      * Returns the next result row as a Map.      *       * @deprecated since 3.0 use {@link #nextRow()}.      */
 name|Map
 argument_list|<
 name|String
@@ -110,6 +120,13 @@ argument_list|,
 name|Object
 argument_list|>
 name|nextDataRow
+parameter_list|()
+throws|throws
+name|CayenneException
+function_decl|;
+comment|/**      * Returns the next result row that is, depending on the query, may be a scalar value,      * a DataRow, or an Object[] array containing a mix of scalars and DataRows.      *       * @since 3.0      */
+name|Object
+name|nextRow
 parameter_list|()
 throws|throws
 name|CayenneException
@@ -136,9 +153,16 @@ parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**      * Skips current data row instead of reading it.      */
+comment|/**      * Skips current data row instead of reading it.      *       * @deprecated since 3.0 use {@link #skipRow()} instead.      */
 name|void
 name|skipDataRow
+parameter_list|()
+throws|throws
+name|CayenneException
+function_decl|;
+comment|/**      * @since 3.0      */
+name|void
+name|skipRow
 parameter_list|()
 throws|throws
 name|CayenneException
@@ -150,9 +174,14 @@ parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;
-comment|/**      * Returns the number of columns in the result row.      *       * @since 1.0.6      */
+comment|/**      * Returns the number of columns in the result row.      *       * @since 1.0.6      * @deprecated since 3.0 in favor of {@link #getResultSetWidth()}.      */
 name|int
 name|getDataRowWidth
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a number of columns in the underlying ResultSet.      *       * @since 3.0      */
+name|int
+name|getResultSetWidth
 parameter_list|()
 function_decl|;
 block|}
