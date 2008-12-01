@@ -850,7 +850,7 @@ block|}
 block|}
 name|compiled
 operator|.
-name|setResultSetMapping
+name|setResult
 argument_list|(
 name|mapping
 argument_list|)

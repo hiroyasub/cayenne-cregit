@@ -173,7 +173,7 @@ name|expression
 decl_stmt|;
 specifier|private
 name|SQLResult
-name|resultSetMapping
+name|result
 decl_stmt|;
 specifier|public
 name|ClassDescriptor
@@ -214,7 +214,7 @@ name|getResult
 parameter_list|()
 block|{
 return|return
-name|resultSetMapping
+name|result
 return|;
 block|}
 specifier|public
@@ -376,7 +376,7 @@ name|rootId
 expr_stmt|;
 block|}
 name|void
-name|setResultSetMapping
+name|setResult
 parameter_list|(
 name|SQLResult
 name|resultSetMapping
@@ -384,7 +384,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|resultSetMapping
+name|result
 operator|=
 name|resultSetMapping
 expr_stmt|;
