@@ -71,7 +71,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResult
+name|EntityResultMetadata
 import|;
 end_import
 
@@ -133,7 +133,7 @@ parameter_list|,
 name|QueryMetadata
 name|queryMetadata
 parameter_list|,
-name|EntityResult
+name|EntityResultMetadata
 name|entityResult
 parameter_list|)
 block|{
@@ -154,7 +154,7 @@ name|fields
 init|=
 name|entityResult
 operator|.
-name|getDbFields
+name|getFields
 argument_list|()
 decl_stmt|;
 name|this
