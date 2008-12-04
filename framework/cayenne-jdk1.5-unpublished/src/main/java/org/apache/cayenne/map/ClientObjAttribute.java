@@ -62,6 +62,8 @@ name|primaryKey
 return|;
 block|}
 comment|/**      * @see DbAttribute#isMandatory()      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isMandatory
@@ -87,6 +89,8 @@ name|mandatory
 expr_stmt|;
 block|}
 comment|/**      * @see DbAttribute#getMaxLength()      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getMaxLength

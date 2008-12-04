@@ -848,6 +848,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Set mapped DbAttribute.      *       * @deprecated since 3.0 - this method only works for non-flattened attributes.      *             'setDbAttributePath' should be used instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDbAttribute
@@ -931,6 +933,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Sets the name of the mapped DbAttribute.      *       * @deprecated since 3.0 use {@link #setDbAttributePath(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDbAttributeName
@@ -993,6 +997,8 @@ name|dbAttributePath
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 use 'isFlattened'.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isCompound
@@ -1022,6 +1028,57 @@ literal|'.'
 argument_list|)
 operator|>=
 literal|0
+return|;
+block|}
+comment|/**      * Returns whether this attribute is mandatory      * @see DbAttribute#isMandatory()      */
+specifier|public
+name|boolean
+name|isMandatory
+parameter_list|()
+block|{
+name|DbAttribute
+name|dbAttribute
+init|=
+name|getDbAttribute
+argument_list|()
+decl_stmt|;
+return|return
+name|dbAttribute
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|dbAttribute
+operator|.
+name|isMandatory
+argument_list|()
+return|;
+block|}
+comment|/**      * Returns this attribute's maximum allowed length      * @see DbAttribute#getMaxLength()      */
+specifier|public
+name|int
+name|getMaxLength
+parameter_list|()
+block|{
+name|DbAttribute
+name|dbAttribute
+init|=
+name|getDbAttribute
+argument_list|()
+decl_stmt|;
+return|return
+name|dbAttribute
+operator|==
+literal|null
+condition|?
+operator|-
+literal|1
+else|:
+name|dbAttribute
+operator|.
+name|getMaxLength
+argument_list|()
 return|;
 block|}
 comment|/**      * Returns an ObjAttribute stripped of any server-side information, such as      * DbAttribute mapping.      *       * @since 1.2      */
@@ -1092,8 +1149,6 @@ name|attribute
 operator|.
 name|setMandatory
 argument_list|(
-name|dbAttribute
-operator|.
 name|isMandatory
 argument_list|()
 argument_list|)
@@ -1102,8 +1157,6 @@ name|attribute
 operator|.
 name|setMaxLength
 argument_list|(
-name|dbAttribute
-operator|.
 name|getMaxLength
 argument_list|()
 argument_list|)
