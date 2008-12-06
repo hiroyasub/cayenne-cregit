@@ -3041,11 +3041,13 @@ operator|new
 name|ResourceLocator
 argument_list|()
 decl_stmt|;
+comment|// absolute paths are usually passed by the Modeler
+comment|// while runtime would use classpath
 name|locator
 operator|.
 name|setSkipAbsolutePath
 argument_list|(
-literal|true
+literal|false
 argument_list|)
 expr_stmt|;
 name|locator
@@ -3066,7 +3068,7 @@ name|locator
 operator|.
 name|setSkipHomeDirectory
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 return|return
