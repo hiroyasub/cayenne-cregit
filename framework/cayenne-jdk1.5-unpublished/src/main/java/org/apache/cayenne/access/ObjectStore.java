@@ -1637,6 +1637,8 @@ argument_list|(
 name|objects
 argument_list|,
 name|snapshots
+argument_list|,
+name|refresh
 argument_list|)
 expr_stmt|;
 block|}

@@ -293,7 +293,6 @@ operator|.
 name|FETCHING_DATA_ROWS_DEFAULT
 return|;
 block|}
-comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
