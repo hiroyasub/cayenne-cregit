@@ -35,7 +35,31 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|DataChannel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|DataChannelListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
 import|;
 end_import
 
@@ -98,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests that DataContext sends DataChannel events.  *   */
+comment|/**  * Tests that DataContext sends DataChannel events.  *  */
 end_comment
 
 begin_class
@@ -329,12 +353,12 @@ argument_list|,
 name|listener
 argument_list|)
 expr_stmt|;
-name|DataContext
+name|ObjectContext
 name|child
 init|=
 name|context
 operator|.
-name|createChildDataContext
+name|createChildObjectContext
 argument_list|()
 decl_stmt|;
 name|Artist
@@ -540,12 +564,12 @@ init|=
 name|createDataContext
 argument_list|()
 decl_stmt|;
-name|DataContext
+name|ObjectContext
 name|childPeer1
 init|=
 name|context
 operator|.
-name|createChildDataContext
+name|createChildObjectContext
 argument_list|()
 decl_stmt|;
 name|Artist
@@ -584,17 +608,20 @@ name|EventUtil
 operator|.
 name|listenForChannelEvents
 argument_list|(
+operator|(
+name|DataChannel
+operator|)
 name|childPeer1
 argument_list|,
 name|listener
 argument_list|)
 expr_stmt|;
-name|DataContext
+name|ObjectContext
 name|childPeer2
 init|=
 name|context
 operator|.
-name|createChildDataContext
+name|createChildObjectContext
 argument_list|()
 decl_stmt|;
 name|Artist
