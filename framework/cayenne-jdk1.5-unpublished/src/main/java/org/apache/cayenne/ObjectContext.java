@@ -85,6 +85,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|RefreshQuery
+import|;
+end_import
+
 begin_comment
 comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  */
 end_comment
@@ -191,6 +205,8 @@ name|lazyFaulting
 parameter_list|)
 function_decl|;
 comment|/**      * @deprecated since 3.0 use {@link #prepareForAccess(Persistent, String, boolean)}.      */
+annotation|@
+name|Deprecated
 name|void
 name|prepareForAccess
 parameter_list|(
@@ -268,6 +284,24 @@ comment|/**      * Returns an DataChannel used by this context.      */
 name|DataChannel
 name|getChannel
 parameter_list|()
+function_decl|;
+comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
+name|ObjectContext
+name|createChildObjectContext
+parameter_list|()
+function_decl|;
+comment|/**      * Returns<code>true</code> if there are any modified, deleted or new objects      * registered with this ObjectContext,<code>false</code> otherwise.      *       * @since 3.0      */
+name|boolean
+name|hasChanges
+parameter_list|()
+function_decl|;
+comment|/**      * "Invalidates" a Collection of persistent objects. This operation would remove each      * object's snapshot from cache and change object's state to HOLLOW. On the next      * access to this object, it will be refetched.      *       * @see RefreshQuery      */
+name|void
+name|invalidateObjects
+parameter_list|(
+name|Collection
+name|objects
+parameter_list|)
 function_decl|;
 block|}
 end_interface

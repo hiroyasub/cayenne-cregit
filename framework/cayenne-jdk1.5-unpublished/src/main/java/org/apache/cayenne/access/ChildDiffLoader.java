@@ -270,10 +270,11 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent DataContext.  * Graph node ids are expected to be ObjectIds.  *   * @since 1.2  */
+comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent ObjectContext.  * Graph node ids are expected to be ObjectIds.  * This class is made public since 3.0 to be used in ObjectContext synchronizing  *   * @since 1.2  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|ChildDiffLoader
 implements|implements
@@ -344,6 +345,7 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|ChildDiffLoader
 parameter_list|(
 name|ObjectContext
