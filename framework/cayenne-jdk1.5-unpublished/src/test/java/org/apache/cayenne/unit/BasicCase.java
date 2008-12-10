@@ -72,8 +72,23 @@ name|double
 name|delta
 parameter_list|)
 block|{
+name|assertNotNull
+argument_list|(
+name|d2
+argument_list|)
+expr_stmt|;
 name|assertTrue
 argument_list|(
+literal|"d2: "
+operator|+
+name|d2
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|d2
 operator|instanceof
 name|BigDecimal
