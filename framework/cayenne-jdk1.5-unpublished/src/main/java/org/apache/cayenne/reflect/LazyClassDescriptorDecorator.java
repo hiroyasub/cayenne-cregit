@@ -119,6 +119,20 @@ name|EntityResultMetadata
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|ToStringBuilder
+import|;
+end_import
+
 begin_comment
 comment|/**  * A ClassDescriptor wrapper that compiles decorated descriptor lazily on first access.  *   * @since 3.0  */
 end_comment
@@ -164,6 +178,31 @@ name|entityName
 operator|=
 name|entityName
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ToStringBuilder
+argument_list|(
+name|this
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"entity"
+argument_list|,
+name|entityName
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+return|;
 block|}
 comment|/**      * Checks whether decorated descriptor is initialized, and if not, creates it using      * parent {@link ClassDescriptorMap}.      */
 specifier|protected
