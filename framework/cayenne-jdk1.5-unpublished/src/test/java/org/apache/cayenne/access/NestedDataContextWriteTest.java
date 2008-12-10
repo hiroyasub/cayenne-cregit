@@ -221,7 +221,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Artist
@@ -318,7 +318,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ObjectContext
@@ -326,7 +326,7 @@ name|childContextPeer
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Painting
@@ -466,7 +466,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// make sure we fetch in predictable order
@@ -858,7 +858,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// make sure we fetch in predictable order
@@ -1027,7 +1027,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// make sure we fetch in predictable order
@@ -1467,7 +1467,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// make sure we fetch in predictable order
@@ -1881,7 +1881,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Painting
@@ -2081,7 +2081,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Artist
@@ -2339,7 +2339,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Artist
@@ -2953,7 +2953,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Artist

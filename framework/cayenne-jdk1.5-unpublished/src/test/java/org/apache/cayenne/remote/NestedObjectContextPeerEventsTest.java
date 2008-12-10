@@ -93,7 +93,7 @@ name|peer1
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -128,7 +128,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -236,7 +236,7 @@ name|peer1
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -262,7 +262,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -410,7 +410,7 @@ name|peer1
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable2
@@ -454,7 +454,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable2
@@ -638,7 +638,7 @@ name|peer1
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable2
@@ -682,7 +682,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable2

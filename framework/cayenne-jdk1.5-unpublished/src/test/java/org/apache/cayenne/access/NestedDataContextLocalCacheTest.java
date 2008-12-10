@@ -164,7 +164,7 @@ name|child1
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertNull

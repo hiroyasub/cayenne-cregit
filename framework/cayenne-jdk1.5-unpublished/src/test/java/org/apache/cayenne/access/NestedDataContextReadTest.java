@@ -203,7 +203,7 @@ name|child1
 init|=
 name|parent
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -246,7 +246,7 @@ name|child2
 init|=
 name|parent
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -283,7 +283,7 @@ name|child21
 init|=
 name|child2
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -341,7 +341,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Persistent
@@ -897,7 +897,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|int
@@ -1089,7 +1089,7 @@ name|childContext
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|Artist
@@ -1215,7 +1215,7 @@ name|child
 init|=
 name|parent
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// test how different object states appear in the child on select
@@ -1546,7 +1546,7 @@ name|child
 init|=
 name|parent
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// test how different object states appear in the child on select
@@ -2201,7 +2201,7 @@ name|child
 init|=
 name|parent
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ObjectId
@@ -2408,7 +2408,7 @@ name|child
 init|=
 name|parent
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|SelectQuery

@@ -1807,7 +1807,7 @@ block|}
 comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
 specifier|public
 name|ObjectContext
-name|createChildObjectContext
+name|createChildContext
 parameter_list|()
 block|{
 return|return

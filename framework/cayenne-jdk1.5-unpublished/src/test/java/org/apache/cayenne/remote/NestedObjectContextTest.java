@@ -186,7 +186,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -210,7 +210,7 @@ name|grandchild
 init|=
 name|child
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -244,7 +244,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -734,7 +734,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -896,7 +896,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -1011,7 +1011,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -1319,7 +1319,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|SelectQuery
@@ -1569,7 +1569,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|SelectQuery
@@ -1808,7 +1808,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -1949,7 +1949,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ObjectContext
@@ -1957,7 +1957,7 @@ name|childPeer
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable2
@@ -2128,7 +2128,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|SelectQuery
@@ -2516,7 +2516,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// make sure we fetch in predictable order
@@ -2704,7 +2704,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 comment|// make sure we fetch in predictable order
@@ -3103,7 +3103,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -3218,7 +3218,7 @@ name|child
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1

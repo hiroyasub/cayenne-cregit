@@ -349,7 +349,7 @@ return|;
 block|}
 specifier|public
 name|ObjectContext
-name|createChildObjectContext
+name|createChildContext
 parameter_list|()
 block|{
 return|return

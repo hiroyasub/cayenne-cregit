@@ -1085,7 +1085,7 @@ block|}
 comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
 specifier|public
 name|ObjectContext
-name|createChildObjectContext
+name|createChildContext
 parameter_list|()
 block|{
 return|return
@@ -1093,7 +1093,7 @@ name|createChildDataContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Creates and returns a new child DataContext.      *       * @since 1.2      * @deprecated since 3.0 use {@link #createChildObjectContext()}.      */
+comment|/**      * Creates and returns a new child DataContext.      *       * @since 1.2      * @deprecated since 3.0 use {@link #createChildContext()}.      */
 annotation|@
 name|Deprecated
 specifier|public

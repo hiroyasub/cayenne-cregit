@@ -160,7 +160,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 specifier|final
@@ -381,7 +381,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 specifier|final
@@ -649,7 +649,7 @@ name|peer2
 init|=
 name|context
 operator|.
-name|createChildObjectContext
+name|createChildContext
 argument_list|()
 decl_stmt|;
 specifier|final
