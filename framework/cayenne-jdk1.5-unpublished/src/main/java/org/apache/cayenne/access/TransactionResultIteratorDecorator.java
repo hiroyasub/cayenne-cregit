@@ -37,16 +37,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -54,20 +44,6 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbEntity
 import|;
 end_import
 
@@ -258,32 +234,6 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * @deprecated since 3.0      */
-specifier|public
-name|int
-name|getDataRowWidth
-parameter_list|()
-block|{
-return|return
-name|result
-operator|.
-name|getDataRowWidth
-argument_list|()
-return|;
-block|}
-comment|/**      * @since 3.0      */
-specifier|public
-name|int
-name|getResultSetWidth
-parameter_list|()
-block|{
-return|return
-name|result
-operator|.
-name|getResultSetWidth
-argument_list|()
-return|;
-block|}
 specifier|public
 name|boolean
 name|hasNextRow
@@ -298,26 +248,6 @@ name|hasNextRow
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 in favor of {@link #nextRow()}.      */
-specifier|public
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-name|nextDataRow
-parameter_list|()
-throws|throws
-name|CayenneException
-block|{
-return|return
-name|result
-operator|.
-name|nextDataRow
-argument_list|()
-return|;
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|Object
@@ -332,55 +262,6 @@ operator|.
 name|nextRow
 argument_list|()
 return|;
-block|}
-comment|/**      * @deprecated since 3.0 in favor of {@link #nextId(DbEntity)}.      */
-specifier|public
-name|Map
-name|nextObjectId
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
-throws|throws
-name|CayenneException
-block|{
-return|return
-name|result
-operator|.
-name|nextObjectId
-argument_list|(
-name|entity
-argument_list|)
-return|;
-block|}
-comment|/**      * @since 3.0      */
-specifier|public
-name|Object
-name|nextId
-parameter_list|()
-throws|throws
-name|CayenneException
-block|{
-return|return
-name|result
-operator|.
-name|nextId
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 3.0 in favor of {@link #skipRow()}.      */
-specifier|public
-name|void
-name|skipDataRow
-parameter_list|()
-throws|throws
-name|CayenneException
-block|{
-name|result
-operator|.
-name|skipDataRow
-argument_list|()
-expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public

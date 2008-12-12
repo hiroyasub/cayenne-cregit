@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that selects persistent objects of a certain type or "raw data" (aka DataRows).  * Supports expression qualifier, multiple orderings and a number of other parameters that  * serve as runtime hints to Cayenne on how to optimize the fetch and result processing.  *   */
+comment|/**  * A query that selects persistent objects of a certain type or "raw data" (aka DataRows).  * Supports expression qualifier, multiple orderings and a number of other parameters that  * serve as runtime hints to Cayenne on how to optimize the fetch and result processing.  */
 end_comment
 
 begin_class
@@ -525,6 +525,18 @@ argument_list|,
 name|substitutedQuery
 argument_list|)
 expr_stmt|;
+comment|// suppress prefetches for paginated queries.. instead prefetches will be resolved
+comment|// per row...
+if|if
+condition|(
+name|metaData
+operator|.
+name|getPageSize
+argument_list|()
+operator|<=
+literal|0
+condition|)
+block|{
 name|routePrefetches
 argument_list|(
 name|router
@@ -532,6 +544,7 @@ argument_list|,
 name|resolver
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * Creates and routes extra disjoint prefetch queries.      *       * @since 1.2      */
 name|void
@@ -1304,7 +1317,7 @@ operator|=
 name|distinct
 expr_stmt|;
 block|}
-comment|/**      * Adds one or more aliases for the qualifier expression path. Aliases serve to      * instruct Cayenne to generate separate sets of joins for overlapping paths, that      * maybe needed for complex conditions. An example of an<i>implicit<i> splits is      * this method: {@link ExpressionFactory#matchAllExp(String, Object...)}.      *       * @since 3.0      */
+comment|/**      * Adds one or more aliases for the qualifier expression path. Aliases serve to      * instruct Cayenne to generate separate sets of joins for overlapping paths, that      * maybe needed for complex conditions. An example of an<i>implicit<i> splits is this      * method: {@link ExpressionFactory#matchAllExp(String, Object...)}.      *       * @since 3.0      */
 specifier|public
 name|void
 name|aliasPathSplits
@@ -1443,7 +1456,7 @@ name|attrPaths
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if there is at least one custom query attribute      * specified, otherwise returns<code>false</code> for the case when the query      * results will contain only the root entity attributes.      *<p>      * Note that queries that are fetching custom attributes always return data rows      * instead of DataObjects.      *</p>      */
+comment|/**      * Returns<code>true</code> if there is at least one custom query attribute      * specified, otherwise returns<code>false</code> for the case when the query results      * will contain only the root entity attributes.      *<p>      * Note that queries that are fetching custom attributes always return data rows      * instead of DataObjects.      *</p>      */
 specifier|public
 name|boolean
 name|isFetchingCustomAttributes
@@ -1568,7 +1581,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets query result type. If<code>flag</code> parameter is<code>true</code>,      * then results will be in the form of data rows.      *<p>      *<i>Note that if<code>isFetchingCustAttributes()</code> returns<code>true</code>,      * this setting has no effect, and data rows are always fetched.</i>      *</p>      */
+comment|/**      * Sets query result type. If<code>flag</code> parameter is<code>true</code>, then      * results will be in the form of data rows.      *<p>      *<i>Note that if<code>isFetchingCustAttributes()</code> returns<code>true</code>,      * this setting has no effect, and data rows are always fetched.</i>      *</p>      */
 specifier|public
 name|void
 name|setFetchingDataRows
@@ -1585,7 +1598,7 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns refresh policy of this query. Default is<code>true</code>.      *       * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * Returns refresh policy of this query. Default is<code>true</code>.      *       * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -1598,7 +1611,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 specifier|public
 name|void
 name|setRefreshingObjects
