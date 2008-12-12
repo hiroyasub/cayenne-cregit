@@ -1900,7 +1900,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns an unmodifiable collection of ObjAttributes representing the primary key of      * the table described by this DbEntity. Note that since PK is very often not an      * object property, the returned collection may contain "synthetic" ObjAttributes that      * are created on the fly and are not a part of ObjEntity and will not be a part of      * entity.getAttributes(). Real meaningful PK attributes      *       * @since 3.0      */
+comment|/**      * Returns an unmodifiable collection of ObjAttributes representing the primary key of      * the table described by this DbEntity. Note that since PK is very often not an      * object property, the returned collection may contain "synthetic" ObjAttributes that      * are created on the fly and are not a part of ObjEntity and will not be a part of      * entity.getAttributes().      *       * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
