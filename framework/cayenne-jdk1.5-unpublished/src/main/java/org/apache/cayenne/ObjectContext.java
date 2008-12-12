@@ -303,6 +303,27 @@ name|Collection
 name|objects
 parameter_list|)
 function_decl|;
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *      * @since 3.0      */
+specifier|public
+name|Object
+name|getUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|)
+function_decl|;
+comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *      * @since 3.0      */
+specifier|public
+name|void
+name|setUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|Object
+name|value
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

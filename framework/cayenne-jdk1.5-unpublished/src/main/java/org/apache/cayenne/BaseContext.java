@@ -39,7 +39,27 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
 import|;
 end_import
 
@@ -282,7 +302,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A common base superclass for Cayenne ObjectContext implementors.  *   * @since 3.0  */
+comment|/**  * A common base superclass for Cayenne ObjectContext implementors.  *  * @since 3.0  */
 end_comment
 
 begin_class
@@ -376,6 +396,16 @@ decl_stmt|;
 specifier|protected
 name|QueryCache
 name|queryCache
+decl_stmt|;
+comment|/**      * Stores user defined properties associated with this DataContext.      *      * @since 3.0      */
+specifier|protected
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+name|userProperties
 decl_stmt|;
 specifier|public
 specifier|abstract
@@ -1031,7 +1061,7 @@ operator|=
 name|queryCache
 expr_stmt|;
 block|}
-comment|/**      * Returns EventManager associated with the ObjectStore.      *       * @since 1.2      */
+comment|/**      * Returns EventManager associated with the ObjectStore.      *      * @since 1.2      */
 specifier|public
 name|EventManager
 name|getEventManager
@@ -1306,7 +1336,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * "Invalidates" a Collection of persistent objects. This operation would remove each      * object's snapshot from cache and change object's state to HOLLOW. On the next      * access to this object, it will be refetched.      *       * @see #unregisterObjects(Collection)      * @see RefreshQuery      */
+comment|/**      * "Invalidates" a Collection of persistent objects. This operation would remove each      * object's snapshot from cache and change object's state to HOLLOW. On the next      * access to this object, it will be refetched.      *      * @see #unregisterObjects(Collection)      * @see RefreshQuery      */
 specifier|public
 name|void
 name|invalidateObjects
@@ -1322,6 +1352,84 @@ name|RefreshQuery
 argument_list|(
 name|objects
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *      * @since 3.0      */
+specifier|protected
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+name|getUserProperties
+parameter_list|()
+block|{
+comment|// as not all users will take advantage of properties, creating the
+comment|// map on demand to keep DataContext lean...
+if|if
+condition|(
+name|userProperties
+operator|==
+literal|null
+condition|)
+block|{
+name|userProperties
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+name|userProperties
+return|;
+block|}
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *      * @since 3.0      */
+specifier|public
+name|Object
+name|getUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|)
+block|{
+return|return
+name|getUserProperties
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|key
+argument_list|)
+return|;
+block|}
+comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *      * @since 3.0      */
+specifier|public
+name|void
+name|setUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|Object
+name|value
+parameter_list|)
+block|{
+name|getUserProperties
+argument_list|()
+operator|.
+name|put
+argument_list|(
+name|key
+argument_list|,
+name|value
 argument_list|)
 expr_stmt|;
 block|}

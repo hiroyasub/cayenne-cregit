@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop ObjectContext used for unit testing.  *   */
+comment|/**  * A noop ObjectContext used for unit testing.  *  */
 end_comment
 
 begin_class
@@ -389,6 +389,30 @@ name|invalidateObjects
 parameter_list|(
 name|Collection
 name|objects
+parameter_list|)
+block|{
+block|}
+specifier|public
+name|Object
+name|getUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|void
+name|setUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|Object
+name|value
 parameter_list|)
 block|{
 block|}

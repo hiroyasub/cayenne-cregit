@@ -81,16 +81,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
 import|;
 end_import
@@ -722,23 +712,13 @@ decl_stmt|;
 name|ObjectContextGraphAction
 name|graphAction
 decl_stmt|;
-comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 1.2      */
-specifier|protected
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-name|userProperties
-decl_stmt|;
 comment|/**      * Stores the name of parent DataDomain. Used to defer initialization of the parent      * QueryEngine after deserialization. This helps avoid an issue with certain servlet      * engines (e.g. Tomcat) where HttpSessions with DataContext's are deserialized at      * startup before Cayenne stack is fully initialized.      */
 specifier|protected
 specifier|transient
 name|String
 name|lazyInitParentDomainName
 decl_stmt|;
-comment|/**      * Returns the DataContext bound to the current thread.      *       * @since 1.1      * @return the DataContext associated with caller thread.      * @throws IllegalStateException if there is no DataContext bound to the current      *             thread.      * @see org.apache.cayenne.conf.WebApplicationContextFilter      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
+comment|/**      * Returns the DataContext bound to the current thread.      *      * @since 1.1      * @return the DataContext associated with caller thread.      * @throws IllegalStateException if there is no DataContext bound to the current      *             thread.      * @see org.apache.cayenne.conf.WebApplicationContextFilter      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -759,7 +739,7 @@ name|getThreadObjectContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Binds a DataContext to the current thread. DataContext can later be retrieved by      * users in the same thread by calling {@link DataContext#getThreadDataContext}. Using      * null parameter will unbind currently bound DataContext.      *       * @since 1.1      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
+comment|/**      * Binds a DataContext to the current thread. DataContext can later be retrieved by      * users in the same thread by calling {@link DataContext#getThreadDataContext}. Using      * null parameter will unbind currently bound DataContext.      *      * @since 1.1      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -799,7 +779,7 @@ name|createDataContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Factory method that creates and returns a new instance of DataContext based on      * default domain. If more than one domain exists in the current configuration,      * {@link DataContext#createDataContext(String, boolean)} must be used instead.      * ObjectStore associated with newly created DataContext will have a cache stack      * configured according to the specified policy, overriding a parent domain setting.      *       * @since 1.1      */
+comment|/**      * Factory method that creates and returns a new instance of DataContext based on      * default domain. If more than one domain exists in the current configuration,      * {@link DataContext#createDataContext(String, boolean)} must be used instead.      * ObjectStore associated with newly created DataContext will have a cache stack      * configured according to the specified policy, overriding a parent domain setting.      *      * @since 1.1      */
 specifier|public
 specifier|static
 name|DataContext
@@ -871,7 +851,7 @@ name|createDataContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Creates and returns new DataContext that will use a named DataDomain as its parent.      * ObjectStore associated with newly created DataContext will have a cache stack      * configured according to the specified policy, overriding a parent domain setting.      *       * @since 1.1      */
+comment|/**      * Creates and returns new DataContext that will use a named DataDomain as its parent.      * ObjectStore associated with newly created DataContext will have a cache stack      * configured according to the specified policy, overriding a parent domain setting.      *      * @since 1.1      */
 specifier|public
 specifier|static
 name|DataContext
@@ -936,7 +916,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new DataContext with parent DataChannel and ObjectStore.      *       * @since 1.2      */
+comment|/**      * Creates a new DataContext with parent DataChannel and ObjectStore.      *      * @since 1.2      */
 specifier|public
 name|DataContext
 parameter_list|(
@@ -1010,7 +990,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns {@link QueryCache} used by this DataContext, creating it on the fly if      * needed. Uses parent DataDomain {@link QueryCacheFactory} to initialize the cache      * for the first time.      *       * @since 3.0      */
+comment|/**      * Returns {@link QueryCache} used by this DataContext, creating it on the fly if      * needed. Uses parent DataDomain {@link QueryCacheFactory} to initialize the cache      * for the first time.      *      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1046,43 +1026,7 @@ return|return
 name|queryCache
 return|;
 block|}
-comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *       * @since 1.2      */
-specifier|protected
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-name|getUserProperties
-parameter_list|()
-block|{
-comment|// as not all users will take advantage of properties, creating the
-comment|// map on demand to keep DataContext lean...
-if|if
-condition|(
-name|userProperties
-operator|==
-literal|null
-condition|)
-block|{
-name|userProperties
-operator|=
-operator|new
-name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-argument_list|()
-expr_stmt|;
-block|}
-return|return
-name|userProperties
-return|;
-block|}
-comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
+comment|/**      * Creates and returns a new child ObjectContext.      *      * @since 3.0      */
 specifier|public
 name|ObjectContext
 name|createChildContext
@@ -1093,7 +1037,7 @@ name|createChildDataContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Creates and returns a new child DataContext.      *       * @since 1.2      * @deprecated since 3.0 use {@link #createChildContext()}.      */
+comment|/**      * Creates and returns a new child DataContext.      *      * @since 1.2      * @deprecated since 3.0 use {@link #createChildContext()}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1161,48 +1105,6 @@ expr_stmt|;
 return|return
 name|child
 return|;
-block|}
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *       * @since 1.2      */
-specifier|public
-name|Object
-name|getUserProperty
-parameter_list|(
-name|String
-name|key
-parameter_list|)
-block|{
-return|return
-name|getUserProperties
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|key
-argument_list|)
-return|;
-block|}
-comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *       * @since 1.2      */
-specifier|public
-name|void
-name|setUserProperty
-parameter_list|(
-name|String
-name|key
-parameter_list|,
-name|Object
-name|value
-parameter_list|)
-block|{
-name|getUserProperties
-argument_list|()
-operator|.
-name|put
-argument_list|(
-name|key
-argument_list|,
-name|value
-argument_list|)
-expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
 specifier|public
@@ -1371,7 +1273,7 @@ name|getChannel
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a DataDomain used by this DataContext. DataDomain is looked up in the      * DataChannel hierarchy. If a channel is not a DataDomain or a DataContext, null is      * returned.      *       * @return DataDomain that is a direct or indirect parent of this DataContext in the      *         DataChannel hierarchy.      * @since 1.1      */
+comment|/**      * Returns a DataDomain used by this DataContext. DataDomain is looked up in the      * DataChannel hierarchy. If a channel is not a DataDomain or a DataContext, null is      * returned.      *      * @return DataDomain that is a direct or indirect parent of this DataContext in the      *         DataChannel hierarchy.      * @since 1.1      */
 specifier|public
 name|DataDomain
 name|getParentDataDomain
@@ -1461,7 +1363,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Sets a DataContextDelegate for this context. Delegate is notified of certain events      * in the DataContext lifecycle and can customize DataContext behavior.      *       * @since 1.1      */
+comment|/**      * Sets a DataContextDelegate for this context. Delegate is notified of certain events      * in the DataContext lifecycle and can customize DataContext behavior.      *      * @since 1.1      */
 specifier|public
 name|void
 name|setDelegate
@@ -1477,7 +1379,7 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
-comment|/**      * Returns a delegate currently associated with this DataContext.      *       * @since 1.1      */
+comment|/**      * Returns a delegate currently associated with this DataContext.      *      * @since 1.1      */
 specifier|public
 name|DataContextDelegate
 name|getDelegate
@@ -1599,7 +1501,7 @@ name|MODIFIED
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of all uncommitted registered objects.      *       * @since 1.2      */
+comment|/**      * Returns a collection of all uncommitted registered objects.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -1726,7 +1628,7 @@ return|return
 name|objects
 return|;
 block|}
-comment|/**      * Returns a DataRow reflecting current, possibly uncommitted, object state.      *<p>      *<strong>Warning:</strong> This method will return a partial snapshot if an object      * or one of its related objects that propagate their keys to this object have      * temporary ids. DO NOT USE this method if you expect a DataRow to represent a      * complete object state.      *</p>      *       * @since 1.1      */
+comment|/**      * Returns a DataRow reflecting current, possibly uncommitted, object state.      *<p>      *<strong>Warning:</strong> This method will return a partial snapshot if an object      * or one of its related objects that propagate their keys to this object have      * temporary ids. DO NOT USE this method if you expect a DataRow to represent a      * complete object state.      *</p>      *      * @since 1.1      */
 specifier|public
 name|DataRow
 name|currentSnapshot
@@ -2177,7 +2079,7 @@ return|return
 name|snapshot
 return|;
 block|}
-comment|/**      * Converts a list of data rows to a list of DataObjects.      *       * @since 1.1      * @deprecated since 3.0 as refreshing and resolvingInheritanceHierarchy flags are      *             deprecated. Use {@link #objectsFromDataRows(ClassDescriptor, List)}      *             instead.      */
+comment|/**      * Converts a list of data rows to a list of DataObjects.      *      * @since 1.1      * @deprecated since 3.0 as refreshing and resolvingInheritanceHierarchy flags are      *             deprecated. Use {@link #objectsFromDataRows(ClassDescriptor, List)}      *             instead.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2220,7 +2122,7 @@ name|dataRows
 argument_list|)
 return|;
 block|}
-comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext.      *       * @since 3.0      */
+comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext.      *      * @since 3.0      */
 specifier|public
 name|List
 name|objectsFromDataRows
@@ -2254,7 +2156,7 @@ name|dataRows
 argument_list|)
 return|;
 block|}
-comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext.      *       * @deprecated since 3.0 as refresh and resolveInheritanceHierarchy flags are      *             deprecated. Use {@link #objectsFromDataRows(ClassDescriptor, List)}      *             instead.      * @since 1.1      * @see DataRow      */
+comment|/**      * Converts a list of DataRows to a List of DataObject registered with this      * DataContext.      *      * @deprecated since 3.0 as refresh and resolveInheritanceHierarchy flags are      *             deprecated. Use {@link #objectsFromDataRows(ClassDescriptor, List)}      *             instead.      * @since 1.1      * @see DataRow      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2335,7 +2237,7 @@ name|dataRows
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a DataObject from DataRow.      *       * @see DataRow      */
+comment|/**      * Creates a DataObject from DataRow.      *      * @see DataRow      */
 specifier|public
 parameter_list|<
 name|T
@@ -2429,7 +2331,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a DataObject from DataRow. This variety of the 'objectFromDataRow' method      * is normally used for generic classes.      *       * @see DataRow      * @since 3.0      */
+comment|/**      * Creates a DataObject from DataRow. This variety of the 'objectFromDataRow' method      * is normally used for generic classes.      *      * @see DataRow      * @since 3.0      */
 specifier|public
 name|DataObject
 name|objectFromDataRow
@@ -2506,7 +2408,7 @@ name|objEntityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and registers a new persistent object.      *       * @since 1.2      */
+comment|/**      * Creates and registers a new persistent object.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -2582,7 +2484,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Instantiates a new object and registers it with this context. Object class is      * determined from the mapped entity. Object class must have a default constructor.      *<p/>      *<i>Note: in most cases {@link #newObject(Class)} method should be used, however      * this method is helpful when generic persistent classes are used.</i>      *       * @since 3.0      */
+comment|/**      * Instantiates a new object and registers it with this context. Object class is      * determined from the mapped entity. Object class must have a default constructor.      *<p/>      *<i>Note: in most cases {@link #newObject(Class)} method should be used, however      * this method is helpful when generic persistent classes are used.</i>      *      * @since 3.0      */
 specifier|public
 name|Persistent
 name|newObject
@@ -2731,7 +2633,7 @@ return|return
 name|object
 return|;
 block|}
-comment|/**      * Instantiates new object and registers it with itself. Object class must have a      * default constructor.      *       * @since 1.1      * @deprecated since 3.0, use {@link #newObject(Class)} instead.      */
+comment|/**      * Instantiates new object and registers it with itself. Object class must have a      * default constructor.      *      * @since 1.1      * @deprecated since 3.0, use {@link #newObject(Class)} instead.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2798,7 +2700,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Registers a transient object with the context, recursively registering all      * transient persistent objects attached to this object via relationships.      *<p/>      *<i>Note that since 3.0 this method takes Object as an argument instead of a      * {@link DataObject}.</i>      *       * @param object new object that needs to be made persistent.      */
+comment|/**      * Registers a transient object with the context, recursively registering all      * transient persistent objects attached to this object via relationships.      *<p/>      *<i>Note that since 3.0 this method takes Object as an argument instead of a      * {@link DataObject}.</i>      *      * @param object new object that needs to be made persistent.      */
 annotation|@
 name|Override
 specifier|public
@@ -3255,7 +3157,7 @@ name|persistent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Unregisters a Collection of DataObjects from the DataContext and the underlying      * ObjectStore. This operation also unsets DataContext and ObjectId for each object      * and changes its state to TRANSIENT.      *       * @see #invalidateObjects(Collection)      */
+comment|/**      * Unregisters a Collection of DataObjects from the DataContext and the underlying      * ObjectStore. This operation also unsets DataContext and ObjectId for each object      * and changes its state to TRANSIENT.      *      * @see #invalidateObjects(Collection)      */
 specifier|public
 name|void
 name|unregisterObjects
@@ -3273,7 +3175,7 @@ name|dataObjects
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Schedules all objects in the collection for deletion on the next commit of this      * DataContext. Object's persistence state is changed to PersistenceState.DELETED;      * objects related to this object are processed according to delete rules, i.e.      * relationships can be unset ("nullify" rule), deletion operation is cascaded      * (cascade rule).      *<p>      *<i>"Nullify" delete rule side effect:</i> passing a collection representing      * to-many relationship with nullify delete rule may result in objects being removed      * from collection.      *</p>      *       * @since 1.2      */
+comment|/**      * Schedules all objects in the collection for deletion on the next commit of this      * DataContext. Object's persistence state is changed to PersistenceState.DELETED;      * objects related to this object are processed according to delete rules, i.e.      * relationships can be unset ("nullify" rule), deletion operation is cascaded      * (cascade rule).      *<p>      *<i>"Nullify" delete rule side effect:</i> passing a collection representing      * to-many relationship with nullify delete rule may result in objects being removed      * from collection.      *</p>      *      * @since 1.2      */
 specifier|public
 name|void
 name|deleteObjects
@@ -3316,7 +3218,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Schedules an object for deletion on the next commit of this DataContext. Object's      * persistence state is changed to PersistenceState.DELETED; objects related to this      * object are processed according to delete rules, i.e. relationships can be unset      * ("nullify" rule), deletion operation is cascaded (cascade rule).      *       * @param object a persistent object that we want to delete.      * @throws DeleteDenyException if a DENY delete rule is applicable for object      *             deletion.      * @throws NullPointerException if object is null.      */
+comment|/**      * Schedules an object for deletion on the next commit of this DataContext. Object's      * persistence state is changed to PersistenceState.DELETED; objects related to this      * object are processed according to delete rules, i.e. relationships can be unset      * ("nullify" rule), deletion operation is cascaded (cascade rule).      *      * @param object a persistent object that we want to delete.      * @throws DeleteDenyException if a DENY delete rule is applicable for object      *             deletion.      * @throws NullPointerException if object is null.      */
 annotation|@
 name|Override
 specifier|public
@@ -3344,7 +3246,7 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Refetches object data for ObjectId. This method is used internally by Cayenne to      * resolve objects in state<code>PersistenceState.HOLLOW</code>. It can also be used      * to refresh certain objects.      *       * @throws CayenneRuntimeException if object id doesn't match any records, or if there      *             is more than one object is fetched.      * @deprecated since 3.0 use {@link ObjectIdQuery} with appropriate refresh settings.      */
+comment|/**      * Refetches object data for ObjectId. This method is used internally by Cayenne to      * resolve objects in state<code>PersistenceState.HOLLOW</code>. It can also be used      * to refresh certain objects.      *      * @throws CayenneRuntimeException if object id doesn't match any records, or if there      *             is more than one object is fetched.      * @deprecated since 3.0 use {@link ObjectIdQuery} with appropriate refresh settings.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3471,7 +3373,7 @@ return|return
 name|object
 return|;
 block|}
-comment|/**      * If the parent channel is a DataContext, reverts local changes to make this context      * look like the parent, if the parent channel is a DataDomain, reverts all changes.      *       * @since 1.2      */
+comment|/**      * If the parent channel is a DataContext, reverts local changes to make this context      * look like the parent, if the parent channel is a DataDomain, reverts all changes.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -3600,7 +3502,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * "Flushes" the changes to the parent {@link DataChannel}. If the parent channel is a      * DataContext, it updates its objects with this context's changes, without a database      * update. If it is a DataDomain (the most common case), the changes are written to      * the database. To cause cascading commit all the way to the database, one must use      * {@link #commitChanges()}.      *       * @since 1.2      * @see #commitChanges()      */
+comment|/**      * "Flushes" the changes to the parent {@link DataChannel}. If the parent channel is a      * DataContext, it updates its objects with this context's changes, without a database      * update. If it is a DataDomain (the most common case), the changes are written to      * the database. To cause cascading commit all the way to the database, one must use      * {@link #commitChanges()}.      *      * @since 1.2      * @see #commitChanges()      */
 annotation|@
 name|Override
 specifier|public
@@ -3720,7 +3622,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Synchronizes with the parent channel, performing a flush or a commit.      *       * @since 1.2      */
+comment|/**      * Synchronizes with the parent channel, performing a flush or a commit.      *      * @since 1.2      */
 name|GraphDiff
 name|flushToParent
 parameter_list|(
@@ -4102,7 +4004,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Runs an iterated query in transactional context provided by the caller.      *       * @since 1.2      */
+comment|/**      * Runs an iterated query in transactional context provided by the caller.      *      * @since 1.2      */
 name|ResultIterator
 name|internalPerformIteratedQuery
 parameter_list|(
@@ -4143,7 +4045,7 @@ name|getResultIterator
 argument_list|()
 return|;
 block|}
-comment|/**      * Executes a query returning a generic response.      *       * @since 1.2      */
+comment|/**      * Executes a query returning a generic response.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -4206,7 +4108,7 @@ name|query
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs a single selecting query. Various query setting control the behavior of      * this method and the results returned:      *<ul>      *<li>Query caching policy defines whether the results are retrieved from cache or      * fetched from the database. Note that queries that use caching must have a name that      * is used as a caching key.</li>      *<li>Query refreshing policy controls whether to refresh existing data objects and      * ignore any cached values.</li>      *<li>Query data rows policy defines whether the result should be returned as      * DataObjects or DataRows.</li>      *</ul>      *<p>      *<i>Since 1.2 takes any Query parameter, not just GenericSelectQuery</i>      *</p>      *       * @return A list of DataObjects or a DataRows, depending on the value returned by      *         {@link QueryMetadata#isFetchingDataRows()}.      */
+comment|/**      * Performs a single selecting query. Various query setting control the behavior of      * this method and the results returned:      *<ul>      *<li>Query caching policy defines whether the results are retrieved from cache or      * fetched from the database. Note that queries that use caching must have a name that      * is used as a caching key.</li>      *<li>Query refreshing policy controls whether to refresh existing data objects and      * ignore any cached values.</li>      *<li>Query data rows policy defines whether the result should be returned as      * DataObjects or DataRows.</li>      *</ul>      *<p>      *<i>Since 1.2 takes any Query parameter, not just GenericSelectQuery</i>      *</p>      *      * @return A list of DataObjects or a DataRows, depending on the value returned by      *         {@link QueryMetadata#isFetchingDataRows()}.      */
 annotation|@
 name|Override
 annotation|@
@@ -4282,7 +4184,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      * An implementation of a {@link DataChannel} method that is used by child contexts to      * execute queries. Not intended for direct use.      *       * @since 1.2      */
+comment|/**      * An implementation of a {@link DataChannel} method that is used by child contexts to      * execute queries. Not intended for direct use.      *      * @since 1.2      */
 specifier|public
 name|QueryResponse
 name|onQuery
@@ -4309,7 +4211,7 @@ name|execute
 argument_list|()
 return|;
 block|}
-comment|/**      * Performs a single database query that does not select rows. Returns an array of      * update counts.      *       * @since 1.1      */
+comment|/**      * Performs a single database query that does not select rows. Returns an array of      * update counts.      *      * @since 1.1      */
 specifier|public
 name|int
 index|[]
@@ -4345,7 +4247,7 @@ literal|0
 index|]
 return|;
 block|}
-comment|/**      * Performs a named mapped query that does not select rows. Returns an array of update      * counts.      *       * @since 1.1      */
+comment|/**      * Performs a named mapped query that does not select rows. Returns an array of update      * counts.      *      * @since 1.1      */
 specifier|public
 name|int
 index|[]
@@ -4366,7 +4268,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs a named mapped non-selecting query using a map of parameters. Returns an      * array of update counts.      *       * @since 1.1      */
+comment|/**      * Performs a named mapped non-selecting query using a map of parameters. Returns an      * array of update counts.      *      * @since 1.1      */
 specifier|public
 name|int
 index|[]
@@ -4397,7 +4299,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param expireCachedLists A flag that determines whether refresh of<b>cached      *            lists</b> is required in case a query uses caching.      * @since 1.1      */
+comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *      * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param expireCachedLists A flag that determines whether refresh of<b>cached      *            lists</b> is required in case a query uses caching.      * @since 1.1      */
 specifier|public
 name|List
 argument_list|<
@@ -4425,7 +4327,7 @@ name|expireCachedLists
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *       * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param parameters A map of parameters to use with stored query.      * @param expireCachedLists A flag that determines whether refresh of<b>cached      *            lists</b> is required in case a query uses caching.      * @since 1.1      */
+comment|/**      * Returns a list of objects or DataRows for a named query stored in one of the      * DataMaps. Internally Cayenne uses a caching policy defined in the named query. If      * refresh flag is true, a refresh is forced no matter what the caching policy is.      *      * @param queryName a name of a GenericSelectQuery defined in one of the DataMaps. If      *            no such query is defined, this method will throw a      *            CayenneRuntimeException.      * @param parameters A map of parameters to use with stored query.      * @param expireCachedLists A flag that determines whether refresh of<b>cached      *            lists</b> is required in case a query uses caching.      * @since 1.1      */
 specifier|public
 name|List
 argument_list|<
@@ -4483,7 +4385,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if the ObjectStore uses shared cache of a parent      * DataDomain.      *       * @since 1.1      */
+comment|/**      * Returns<code>true</code> if the ObjectStore uses shared cache of a parent      * DataDomain.      *      * @since 1.1      */
 specifier|public
 name|boolean
 name|isUsingSharedSnapshotCache
@@ -4493,7 +4395,7 @@ return|return
 name|usingSharedSnaphsotCache
 return|;
 block|}
-comment|/**      * Returns whether this DataContext performs object validation before commit is      * executed.      *       * @since 1.1      */
+comment|/**      * Returns whether this DataContext performs object validation before commit is      * executed.      *      * @since 1.1      */
 specifier|public
 name|boolean
 name|isValidatingObjectsOnCommit
@@ -4503,7 +4405,7 @@ return|return
 name|validatingObjectsOnCommit
 return|;
 block|}
-comment|/**      * Sets the property defining whether this DataContext should perform object      * validation before commit is executed.      *       * @since 1.1      */
+comment|/**      * Sets the property defining whether this DataContext should perform object      * validation before commit is executed.      *      * @since 1.1      */
 specifier|public
 name|void
 name|setValidatingObjectsOnCommit
@@ -4854,7 +4756,7 @@ name|newValue
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns this context's ObjectStore.      *       * @since 1.2      */
+comment|/**      * Returns this context's ObjectStore.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -4866,7 +4768,7 @@ return|return
 name|objectStore
 return|;
 block|}
-comment|/**      * Returns an object local to this DataContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * In case you pass a non-null second parameter, you are responsible for setting      * correct persistence state of the returned local object, as generally there is no      * way for Cayenne to determine the resulting local object state.      *       * @since 1.2      */
+comment|/**      * Returns an object local to this DataContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * In case you pass a non-null second parameter, you are responsible for setting      * correct persistence state of the returned local object, as generally there is no      * way for Cayenne to determine the resulting local object state.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public

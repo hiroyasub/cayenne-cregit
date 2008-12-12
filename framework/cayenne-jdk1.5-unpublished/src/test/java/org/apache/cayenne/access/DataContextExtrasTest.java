@@ -47,16 +47,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -276,7 +266,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Lightweight" test cases for DataContext. These tests do not require any additional  * database setup.  *   */
+comment|/**  * "Lightweight" test cases for DataContext. These tests do not require any additional  * database setup.  *  */
 end_comment
 
 begin_class
@@ -567,48 +557,6 @@ name|ex
 parameter_list|)
 block|{
 block|}
-block|}
-specifier|public
-name|void
-name|testUserPropertiesLazyInit
-parameter_list|()
-block|{
-name|DataContext
-name|context
-init|=
-name|createDataContext
-argument_list|()
-decl_stmt|;
-name|assertNull
-argument_list|(
-name|context
-operator|.
-name|userProperties
-argument_list|)
-expr_stmt|;
-name|Map
-name|properties
-init|=
-name|context
-operator|.
-name|getUserProperties
-argument_list|()
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|properties
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|properties
-argument_list|,
-name|context
-operator|.
-name|getUserProperties
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -1070,9 +1018,6 @@ expr_stmt|;
 name|Artist
 name|obj
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|objectFromDataRow
