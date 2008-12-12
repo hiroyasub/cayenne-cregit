@@ -431,7 +431,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getLabel
+name|getDataRowKey
 argument_list|()
 expr_stmt|;
 block|}

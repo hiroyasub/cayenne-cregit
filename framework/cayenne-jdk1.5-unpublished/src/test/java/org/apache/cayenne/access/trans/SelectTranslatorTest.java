@@ -2270,7 +2270,7 @@ argument_list|)
 decl_stmt|;
 name|c
 operator|.
-name|setLabel
+name|setDataRowKey
 argument_list|(
 literal|"toArtist."
 operator|+

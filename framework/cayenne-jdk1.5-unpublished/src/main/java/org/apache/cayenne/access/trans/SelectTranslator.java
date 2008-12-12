@@ -2305,7 +2305,7 @@ condition|)
 block|{
 name|column
 operator|.
-name|setLabel
+name|setDataRowKey
 argument_list|(
 name|label
 argument_list|)

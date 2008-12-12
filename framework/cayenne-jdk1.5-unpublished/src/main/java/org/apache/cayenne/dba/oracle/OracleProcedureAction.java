@@ -485,7 +485,7 @@ name|put
 argument_list|(
 name|descriptor
 operator|.
-name|getLabel
+name|getDataRowKey
 argument_list|()
 argument_list|,
 name|val

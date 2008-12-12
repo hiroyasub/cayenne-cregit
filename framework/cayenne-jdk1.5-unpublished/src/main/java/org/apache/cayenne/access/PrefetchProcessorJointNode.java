@@ -483,7 +483,7 @@ index|[
 name|idIndex
 index|]
 operator|.
-name|getLabel
+name|getDataRowKey
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -586,7 +586,7 @@ name|get
 argument_list|(
 name|column
 operator|.
-name|getLabel
+name|getDataRowKey
 argument_list|()
 argument_list|)
 argument_list|)
@@ -1028,7 +1028,7 @@ argument_list|)
 expr_stmt|;
 name|column
 operator|.
-name|setLabel
+name|setDataRowKey
 argument_list|(
 name|label
 argument_list|)

@@ -388,7 +388,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getLabel
+name|getDataRowKey
 argument_list|()
 decl_stmt|;
 name|String
@@ -420,7 +420,7 @@ index|[
 name|i
 index|]
 operator|.
-name|setLabel
+name|setDataRowKey
 argument_list|(
 name|newLabel
 argument_list|)

@@ -392,7 +392,7 @@ literal|"B"
 argument_list|,
 name|column
 operator|.
-name|getLabel
+name|getDataRowKey
 argument_list|()
 argument_list|)
 expr_stmt|;
