@@ -207,7 +207,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResultMetadata
+name|EntityResultSegment
 import|;
 end_import
 
@@ -333,7 +333,7 @@ argument_list|>
 name|rootDbEntities
 decl_stmt|;
 specifier|protected
-name|EntityResultMetadata
+name|EntityResultSegment
 name|entityResultMetadata
 decl_stmt|;
 specifier|protected
@@ -789,7 +789,7 @@ name|rootDbEntities
 return|;
 block|}
 specifier|public
-name|EntityResultMetadata
+name|EntityResultSegment
 name|getEntityResultMetadata
 parameter_list|()
 block|{
@@ -801,7 +801,7 @@ specifier|public
 name|void
 name|setEntityResultMetadata
 parameter_list|(
-name|EntityResultMetadata
+name|EntityResultSegment
 name|entityResultMetadata
 parameter_list|)
 block|{

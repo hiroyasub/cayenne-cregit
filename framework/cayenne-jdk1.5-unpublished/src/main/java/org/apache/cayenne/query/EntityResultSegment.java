@@ -60,7 +60,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|EntityResultMetadata
+name|EntityResultSegment
 block|{
 name|ClassDescriptor
 name|getClassDescriptor

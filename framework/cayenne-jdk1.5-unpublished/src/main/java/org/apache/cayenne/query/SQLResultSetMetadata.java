@@ -53,14 +53,14 @@ index|[]
 name|getEntitySegments
 parameter_list|()
 function_decl|;
-name|EntityResultMetadata
+name|EntityResultSegment
 name|getEntitySegment
 parameter_list|(
 name|int
 name|position
 parameter_list|)
 function_decl|;
-name|ScalarResultMetadata
+name|ScalarResultSegment
 name|getScalarSegment
 parameter_list|(
 name|int

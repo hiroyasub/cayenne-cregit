@@ -22,7 +22,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|ScalarResultMetadata
+name|ScalarResultSegment
 block|{
 name|String
 name|getColumn

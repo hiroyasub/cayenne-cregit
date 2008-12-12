@@ -73,7 +73,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResultMetadata
+name|EntityResultSegment
 import|;
 end_import
 
@@ -85,7 +85,7 @@ begin_class
 class|class
 name|PersistentDescriptorResultMetadata
 implements|implements
-name|EntityResultMetadata
+name|EntityResultSegment
 block|{
 name|ClassDescriptor
 name|classDescriptor

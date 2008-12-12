@@ -161,7 +161,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResultMetadata
+name|EntityResultSegment
 import|;
 end_import
 
@@ -1516,7 +1516,7 @@ name|alias
 return|;
 block|}
 comment|/**      * Returns a positional EntityResult, incrementing position index on each call.      */
-name|EntityResultMetadata
+name|EntityResultSegment
 name|nextEntityResult
 parameter_list|()
 block|{

@@ -45,9 +45,9 @@ end_comment
 
 begin_class
 class|class
-name|DefaultEntityResultMetadata
+name|DefaultEntityResultSegment
 implements|implements
-name|EntityResultMetadata
+name|EntityResultSegment
 block|{
 specifier|private
 name|ClassDescriptor
@@ -66,7 +66,7 @@ specifier|private
 name|int
 name|offset
 decl_stmt|;
-name|DefaultEntityResultMetadata
+name|DefaultEntityResultSegment
 parameter_list|(
 name|ClassDescriptor
 name|classDescriptor

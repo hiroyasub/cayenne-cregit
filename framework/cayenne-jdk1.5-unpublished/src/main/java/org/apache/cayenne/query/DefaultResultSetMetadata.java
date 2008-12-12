@@ -244,7 +244,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|DefaultScalarResultMetadata
+name|DefaultScalarResultSegment
 argument_list|(
 operator|(
 name|String
@@ -346,7 +346,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|DefaultEntityResultMetadata
+name|DefaultEntityResultSegment
 argument_list|(
 name|classDescriptor
 argument_list|,
@@ -453,7 +453,7 @@ name|trimmed
 return|;
 block|}
 specifier|public
-name|EntityResultMetadata
+name|EntityResultSegment
 name|getEntitySegment
 parameter_list|(
 name|int
@@ -474,12 +474,12 @@ if|if
 condition|(
 name|result
 operator|instanceof
-name|EntityResultMetadata
+name|EntityResultSegment
 condition|)
 block|{
 return|return
 operator|(
-name|EntityResultMetadata
+name|EntityResultSegment
 operator|)
 name|result
 return|;
@@ -507,7 +507,7 @@ name|entitySegments
 return|;
 block|}
 specifier|public
-name|ScalarResultMetadata
+name|ScalarResultSegment
 name|getScalarSegment
 parameter_list|(
 name|int
@@ -528,12 +528,12 @@ if|if
 condition|(
 name|result
 operator|instanceof
-name|ScalarResultMetadata
+name|ScalarResultSegment
 condition|)
 block|{
 return|return
 operator|(
-name|ScalarResultMetadata
+name|ScalarResultSegment
 operator|)
 name|result
 return|;

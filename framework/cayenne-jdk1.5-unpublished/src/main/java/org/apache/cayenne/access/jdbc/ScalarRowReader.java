@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|ScalarResultMetadata
+name|ScalarResultSegment
 import|;
 end_import
 
@@ -113,7 +113,7 @@ parameter_list|(
 name|RowDescriptor
 name|descriptor
 parameter_list|,
-name|ScalarResultMetadata
+name|ScalarResultSegment
 name|segmentMetadata
 parameter_list|)
 block|{

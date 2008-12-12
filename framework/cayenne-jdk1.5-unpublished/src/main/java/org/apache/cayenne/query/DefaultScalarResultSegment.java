@@ -21,9 +21,9 @@ end_comment
 
 begin_class
 class|class
-name|DefaultScalarResultMetadata
+name|DefaultScalarResultSegment
 implements|implements
-name|ScalarResultMetadata
+name|ScalarResultSegment
 block|{
 specifier|private
 name|String
@@ -33,7 +33,7 @@ specifier|private
 name|int
 name|offset
 decl_stmt|;
-name|DefaultScalarResultMetadata
+name|DefaultScalarResultSegment
 parameter_list|(
 name|String
 name|column

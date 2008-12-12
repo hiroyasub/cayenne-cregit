@@ -115,7 +115,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResultMetadata
+name|EntityResultSegment
 import|;
 end_import
 
@@ -147,7 +147,7 @@ name|getEntityInheritanceTree
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the EntityResultMetadata that describes the mapping of the ResultSet when      * entity data is fetched.      *       * @since 3.0      */
-name|EntityResultMetadata
+name|EntityResultSegment
 name|getEntityResultMetadata
 parameter_list|()
 function_decl|;

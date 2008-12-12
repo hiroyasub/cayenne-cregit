@@ -125,7 +125,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResultMetadata
+name|EntityResultSegment
 import|;
 end_import
 
@@ -155,7 +155,7 @@ literal|null
 return|;
 block|}
 specifier|public
-name|EntityResultMetadata
+name|EntityResultSegment
 name|getEntityResultMetadata
 parameter_list|()
 block|{

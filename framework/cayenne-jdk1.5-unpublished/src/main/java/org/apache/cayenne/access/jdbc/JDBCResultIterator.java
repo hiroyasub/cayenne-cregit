@@ -161,7 +161,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EntityResultMetadata
+name|EntityResultSegment
 import|;
 end_import
 
@@ -543,7 +543,7 @@ parameter_list|(
 name|RowDescriptor
 name|descriptor
 parameter_list|,
-name|EntityResultMetadata
+name|EntityResultSegment
 name|resultMetadata
 parameter_list|)
 block|{
