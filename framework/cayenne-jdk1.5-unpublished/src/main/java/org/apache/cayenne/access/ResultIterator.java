@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  *<p>  * Result "rows", depending on the query, may be represented as scalar values, DataRows,  * or Object[] arrays containing a mix of scalars and DataRows.  *</p>  */
+comment|/**  * Defines API of an iterator over the records returned as a result of SelectQuery  * execution. Usually a ResultIterator is supported by an open java.sql.ResultSet,  * therefore most of the methods would throw checked exceptions. ResultIterators must be  * explicitly closed when the user is done working with them.  *<p>  * Result "rows", depending on the query, may be represented as scalar values, DataRows,  * or Object[] arrays containing a mix of scalars and DataRows.  */
 end_comment
 
 begin_interface
@@ -46,13 +46,13 @@ specifier|public
 interface|interface
 name|ResultIterator
 block|{
-comment|/**      * Returns all yet unread rows from ResultSet and closes this iterator if asked to do      * so.      *       * @since 3.0      */
+comment|/**      * Returns all yet unread rows from ResultSet without closing it.      *       * @since 3.0      */
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|allRows
-parameter_list|(
-name|boolean
-name|close
-parameter_list|)
+parameter_list|()
 throws|throws
 name|CayenneException
 function_decl|;

@@ -623,11 +623,11 @@ block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|allRows
-parameter_list|(
-name|boolean
-name|close
-parameter_list|)
+parameter_list|()
 throws|throws
 name|CayenneException
 block|{
@@ -644,8 +644,6 @@ name|Object
 argument_list|>
 argument_list|()
 decl_stmt|;
-try|try
-block|{
 while|while
 condition|(
 name|hasNextRow
@@ -660,21 +658,6 @@ name|nextRow
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-if|if
-condition|(
-name|close
-condition|)
-block|{
-name|this
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 return|return
 name|list

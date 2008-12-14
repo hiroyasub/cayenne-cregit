@@ -1008,18 +1008,25 @@ operator|!
 name|iteratedResult
 condition|)
 block|{
+comment|// note that we are not closing the iterator here, relying on caller to close
+comment|// the underlying ResultSet on its own... this is a hack, maybe a cleaner flow
+comment|// is due here.
 name|List
 argument_list|<
 name|DataRow
 argument_list|>
 name|resultRows
 init|=
+operator|(
+name|List
+argument_list|<
+name|DataRow
+argument_list|>
+operator|)
 name|it
 operator|.
 name|allRows
-argument_list|(
-literal|false
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|QueryLogger
 operator|.
