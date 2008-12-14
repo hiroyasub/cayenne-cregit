@@ -459,7 +459,7 @@ argument_list|()
 decl_stmt|;
 name|resultConsumer
 operator|.
-name|nextDataRows
+name|nextRows
 argument_list|(
 name|query
 argument_list|,

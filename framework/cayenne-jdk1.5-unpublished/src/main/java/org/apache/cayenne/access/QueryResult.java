@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * QueryResult encapsulates a result of execution of zero or more queries using  * QueryEngine. QueryResult supports queries with multiple mixed selects and updates, such  * as ProcedureQueries.  *   */
+comment|/**  * QueryResult encapsulates a result of execution of zero or more queries using  * QueryEngine. QueryResult supports queries with multiple mixed selects and updates, such  * as ProcedureQueries.  */
 end_comment
 
 begin_class
@@ -215,7 +215,7 @@ operator|.
 name|EMPTY_LIST
 return|;
 block|}
-comment|/**      * Returns the first update count for the query. This is a shortcut for      *<code>(Integer)getUpdates(query).get(0)<code>, kind of like Google's "I'm feeling lucky".      * Returns -1 if no update count is found for the query.      */
+comment|/**      * Returns the first update count for the query. This is a shortcut for<code>(Integer)getUpdates(query).get(0)<code>, kind of like Google's "I'm feeling lucky".      * Returns -1 if no update count is found for the query.      */
 specifier|public
 name|int
 name|getFirstUpdateCount
@@ -442,7 +442,7 @@ literal|0
 index|]
 return|;
 block|}
-comment|/**      * Returns the first results for the query. This is a shortcut for      *<code>(List)getRows(query).get(0)<code>, kind of like Google's "I'm feeling lucky".      */
+comment|/**      * Returns the first results for the query. This is a shortcut for<code>(List)getRows(query).get(0)<code>, kind of like Google's "I'm feeling lucky".      */
 specifier|public
 name|List
 name|getFirstRows
@@ -515,6 +515,9 @@ block|}
 comment|/**      * Returns a List that itself contains Lists of data rows for each ResultSet returned      * by the query. ResultSets are returned in the oder they were obtained. Any updates      * that were performed are not included.      */
 specifier|public
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|getRows
 parameter_list|(
 name|Query
@@ -944,18 +947,21 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|dataRows
 parameter_list|)
 block|{
 name|super
 operator|.
-name|nextDataRows
+name|nextRows
 argument_list|(
 name|query
 argument_list|,
@@ -1012,7 +1018,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q

@@ -212,12 +212,15 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|dataRows
 parameter_list|)
 block|{
@@ -290,7 +293,7 @@ throw|;
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q
@@ -302,7 +305,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 parameter_list|(
 name|Query
 name|query

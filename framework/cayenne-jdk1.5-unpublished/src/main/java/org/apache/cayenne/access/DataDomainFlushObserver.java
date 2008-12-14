@@ -205,7 +205,7 @@ block|}
 comment|/**      * Processes generated keys.      *       * @since 1.2      */
 specifier|public
 name|void
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 parameter_list|(
 name|Query
 name|query
@@ -517,14 +517,14 @@ block|{
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 name|dataRows
 parameter_list|)
@@ -532,7 +532,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q

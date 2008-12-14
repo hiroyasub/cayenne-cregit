@@ -1872,14 +1872,14 @@ return|;
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 name|dataRows
 parameter_list|)
@@ -1932,6 +1932,9 @@ block|}
 name|DataRow
 name|lastPk
 init|=
+operator|(
+name|DataRow
+operator|)
 name|dataRows
 operator|.
 name|get
@@ -2000,7 +2003,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 parameter_list|(
 name|Query
 name|query
@@ -2012,7 +2015,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q

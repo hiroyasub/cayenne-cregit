@@ -752,7 +752,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query

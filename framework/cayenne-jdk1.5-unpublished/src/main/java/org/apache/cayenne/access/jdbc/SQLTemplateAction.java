@@ -1047,7 +1047,7 @@ argument_list|)
 expr_stmt|;
 name|callback
 operator|.
-name|nextDataRows
+name|nextRows
 argument_list|(
 name|query
 argument_list|,
@@ -1068,7 +1068,7 @@ argument_list|)
 expr_stmt|;
 name|callback
 operator|.
-name|nextDataRows
+name|nextRows
 argument_list|(
 name|query
 argument_list|,

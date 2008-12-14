@@ -53,16 +53,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -400,12 +390,15 @@ block|{
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|dataRows
 parameter_list|)
 block|{
@@ -414,7 +407,7 @@ block|}
 comment|/**      * Closes ResultIterator without reading its data. If you implement a custom subclass,      * only call super if closing the iterator is what you need.      */
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
@@ -455,10 +448,10 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Closes ResultIterator without reading its data. If you implement a custom subclass,      * only call super if closing the iterator is what you need.      *       * @since 1.2      */
+comment|/**      * Closes ResultIterator without reading its data. If you implement a custom subclass,      * only call super if closing the iterator is what you need.      *       * @since 3.0      */
 specifier|public
 name|void
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 parameter_list|(
 name|Query
 name|query

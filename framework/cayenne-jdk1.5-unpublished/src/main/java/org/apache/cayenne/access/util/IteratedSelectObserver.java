@@ -139,12 +139,15 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|dataRows
 parameter_list|)
 block|{
@@ -160,7 +163,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q

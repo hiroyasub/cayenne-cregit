@@ -85,18 +85,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataRow
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|access
 operator|.
 name|OperationObserver
@@ -485,7 +473,7 @@ name|List
 argument_list|<
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 argument_list|>
 name|results
@@ -530,7 +518,7 @@ for|for
 control|(
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 name|result
 range|:
@@ -539,7 +527,7 @@ control|)
 block|{
 name|observer
 operator|.
-name|nextDataRows
+name|nextRows
 argument_list|(
 name|query
 argument_list|,
@@ -650,14 +638,14 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 name|dataRows
 parameter_list|)
@@ -678,7 +666,7 @@ name|ArrayList
 argument_list|<
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 argument_list|>
 argument_list|()
@@ -694,7 +682,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q
@@ -705,7 +693,7 @@ parameter_list|)
 block|{
 name|observer
 operator|.
-name|nextDataRows
+name|nextRows
 argument_list|(
 name|q
 argument_list|,
@@ -731,7 +719,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 parameter_list|(
 name|Query
 name|query
@@ -742,7 +730,7 @@ parameter_list|)
 block|{
 name|observer
 operator|.
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 argument_list|(
 name|query
 argument_list|,

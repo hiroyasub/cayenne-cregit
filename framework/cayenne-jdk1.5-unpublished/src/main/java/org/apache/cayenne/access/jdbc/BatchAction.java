@@ -1282,7 +1282,7 @@ argument_list|)
 decl_stmt|;
 name|observer
 operator|.
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 argument_list|(
 name|query
 argument_list|,

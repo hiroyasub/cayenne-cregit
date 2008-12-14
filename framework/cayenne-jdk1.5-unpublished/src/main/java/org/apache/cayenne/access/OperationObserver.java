@@ -33,18 +33,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataRow
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|Query
@@ -52,15 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of callback methods that allow QueryEngine to pass back query results and  * notify caller about exceptions.  *   * @see org.apache.cayenne.access.QueryEngine  */
-end_comment
-
-begin_comment
-comment|// TODO: need a name that better reflects the functionality,
-end_comment
-
-begin_comment
-comment|// e.g. OperationContext or QueryContext
+comment|/**  * Defines a set of callback methods that allow {@link QueryEngine} to pass back query  * results and notify caller about exceptions.  */
 end_comment
 
 begin_interface
@@ -71,7 +51,6 @@ extends|extends
 name|OperationHints
 block|{
 comment|/**      * Callback method invoked after an updating query is executed.      */
-specifier|public
 name|void
 name|nextCount
 parameter_list|(
@@ -83,7 +62,6 @@ name|resultCount
 parameter_list|)
 function_decl|;
 comment|/**      * Callback method invoked after a batch update is executed.      */
-specifier|public
 name|void
 name|nextBatchCount
 parameter_list|(
@@ -95,25 +73,23 @@ index|[]
 name|resultCount
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked for each processed ResultSet.      */
-specifier|public
+comment|/**      * Callback method invoked for each processed ResultSet.      *       * @since 3.0      */
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
 name|List
 argument_list|<
-name|DataRow
+name|?
 argument_list|>
 name|dataRows
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked for each opened ResultIterator. If this observer requested      * results to be returned as a ResultIterator, this method is invoked instead of      * "nextDataRows(Query,List)". OperationObserver is responsible for closing the      * ResultIterators passed via this method.      */
-specifier|public
+comment|/**      * Callback method invoked for each opened ResultIterator. If this observer requested      * results to be returned as a ResultIterator, this method is invoked instead of      * {@link #nextRows(Query, List)}.      *       * @since 3.0      */
 name|void
-name|nextDataRows
+name|nextRows
 parameter_list|(
 name|Query
 name|q
@@ -122,10 +98,9 @@ name|ResultIterator
 name|it
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 1.2      */
-specifier|public
+comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 3.0      */
 name|void
-name|nextGeneratedDataRows
+name|nextGeneratedRows
 parameter_list|(
 name|Query
 name|query
