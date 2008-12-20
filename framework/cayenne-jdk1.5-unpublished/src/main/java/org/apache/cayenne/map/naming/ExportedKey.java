@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|reveng
+name|naming
 package|;
 end_package
 
