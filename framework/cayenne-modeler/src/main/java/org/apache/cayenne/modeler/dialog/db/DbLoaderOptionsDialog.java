@@ -229,9 +229,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|reveng
+name|naming
 operator|.
 name|NamingStrategy
 import|;
@@ -409,7 +409,7 @@ name|PREDEFINED_STRATEGIES
 operator|.
 name|add
 argument_list|(
-literal|"org.apache.cayenne.access.reveng.BasicNamingStrategy"
+literal|"org.apache.cayenne.map.naming.BasicNamingStrategy"
 argument_list|)
 expr_stmt|;
 name|PREDEFINED_STRATEGIES

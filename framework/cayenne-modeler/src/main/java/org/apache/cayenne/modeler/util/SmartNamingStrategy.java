@@ -35,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|reveng
+name|naming
 operator|.
 name|BasicNamingStrategy
 import|;
@@ -51,9 +51,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|reveng
+name|naming
 operator|.
 name|ExportedKey
 import|;
