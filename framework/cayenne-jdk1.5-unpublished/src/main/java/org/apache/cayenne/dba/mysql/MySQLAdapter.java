@@ -747,18 +747,6 @@ name|allowNulls
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns null, since views are not yet supported in MySQL. Views are available on      * newer versions of MySQL.      */
-annotation|@
-name|Override
-specifier|public
-name|String
-name|tableTypeForView
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of MySQLPkGenerator that does the correct table locking.      */
 annotation|@
 name|Override
