@@ -847,7 +847,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|"com.microsoft.jdbc.sqlserver.SQLServerDriver"
+literal|"com.microsoft.sqlserver.jdbc.SQLServerDriver"
 argument_list|)
 expr_stmt|;
 name|adapterToJDBCDriverMap
