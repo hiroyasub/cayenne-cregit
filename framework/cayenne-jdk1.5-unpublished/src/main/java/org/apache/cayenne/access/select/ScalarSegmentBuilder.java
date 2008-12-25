@@ -118,7 +118,10 @@ operator|=
 name|metadata
 expr_stmt|;
 block|}
-name|SelectSegment
+name|SelectDescriptor
+argument_list|<
+name|Object
+argument_list|>
 name|getSegment
 parameter_list|(
 name|int

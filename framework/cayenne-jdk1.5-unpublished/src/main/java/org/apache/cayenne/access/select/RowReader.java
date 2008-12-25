@@ -61,6 +61,14 @@ parameter_list|)
 throws|throws
 name|CayenneException
 function_decl|;
+comment|/**      * Sets an absolute offset of the first column processed by the reader from the      * begginging of the result set row.      */
+name|void
+name|setColumnOffset
+parameter_list|(
+name|int
+name|offset
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

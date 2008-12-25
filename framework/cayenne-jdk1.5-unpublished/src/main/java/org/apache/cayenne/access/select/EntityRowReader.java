@@ -279,6 +279,7 @@ literal|1
 expr_stmt|;
 block|}
 block|}
+specifier|public
 name|void
 name|setColumnOffset
 parameter_list|(
