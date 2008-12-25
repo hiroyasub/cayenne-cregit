@@ -2231,7 +2231,7 @@ return|return
 name|columns
 return|;
 block|}
-comment|/**      * Appends custom columns from SelectQuery to the provided list.      */
+comment|/**      * Appends custom columns from SelectQuery to the provided list.      *       * @deprecated since 3.0. Will likely be removed after 3.0M6. Can be replaced with      *             EJBQL.      */
 name|List
 argument_list|<
 name|ColumnDescriptor

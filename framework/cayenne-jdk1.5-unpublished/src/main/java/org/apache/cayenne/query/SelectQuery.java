@@ -1340,7 +1340,7 @@ name|aliases
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a list of attributes that will be included in the results of this query.      */
+comment|/**      * Returns a list of attributes that will be included in the results of this query.      *       * @deprecated since 3.0. Will likely be removed after 3.0M6. Can be replaced with      *             EJBQL.      */
 specifier|public
 name|List
 argument_list|<
@@ -1418,7 +1418,7 @@ name|EMPTY_LIST
 return|;
 block|}
 block|}
-comment|/**      * Adds a path to the DbAttribute that should be included in the results of this      * query. Valid paths would look like<code>ARTIST_NAME</code>,      *<code>PAINTING_ARRAY.PAINTING_ID</code>, etc.      */
+comment|/**      * Adds a path to the DbAttribute that should be included in the results of this      * query. Valid paths would look like<code>ARTIST_NAME</code>,      *<code>PAINTING_ARRAY.PAINTING_ID</code>, etc.      *       * @deprecated since 3.0. Will likely be removed after 3.0M6. Can be replaced with      *             EJBQL.      */
 specifier|public
 name|void
 name|addCustomDbAttribute
@@ -1436,6 +1436,7 @@ name|attributePath
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.0. Will likely be removed after 3.0M6. Can be replaced with      *             EJBQL.      */
 specifier|public
 name|void
 name|addCustomDbAttributes
