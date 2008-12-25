@@ -1161,7 +1161,7 @@ block|}
 comment|// append inheritance discriminator columns...
 name|Iterator
 argument_list|<
-name|DbAttribute
+name|ObjAttribute
 argument_list|>
 name|discriminatorColumns
 init|=
@@ -1178,7 +1178,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|DbAttribute
+name|ObjAttribute
 name|column
 init|=
 name|discriminatorColumns
@@ -1205,7 +1205,7 @@ name|addDbField
 argument_list|(
 name|column
 operator|.
-name|getName
+name|getDbAttributePath
 argument_list|()
 argument_list|,
 name|prefix

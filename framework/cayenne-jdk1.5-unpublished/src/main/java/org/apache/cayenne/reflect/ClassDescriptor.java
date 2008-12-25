@@ -59,20 +59,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbAttribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbEntity
 import|;
 end_import
@@ -101,7 +87,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
+name|ObjAttribute
 import|;
 end_import
 
@@ -113,9 +99,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|EntityResultSegment
+name|ObjEntity
 import|;
 end_import
 
@@ -144,11 +130,6 @@ function_decl|;
 comment|/**      * @since 3.0      */
 name|EntityInheritanceTree
 name|getEntityInheritanceTree
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the EntityResultMetadata that describes the mapping of the ResultSet when      * entity data is fetched.      *       * @since 3.0      */
-name|EntityResultSegment
-name|getEntityResultMetadata
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a class mapped by this descriptor.      */
@@ -235,10 +216,10 @@ argument_list|>
 name|getIdProperties
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a collection of DbAttributes for the described class, its superclasses and      * subclasses, that participate in inheritance qualifier, but are not mapped as object      * properties.      *       * @since 3.0      */
+comment|/**      * Returns a collection of ObjAttribute for the described class, its superclasses and      * subclasses, that participate in inheritance qualifier. If a discriminator      * expression specifies a DbAttribute instead of an ObjAttribute, a synthetic      * ObjAttribute is created and returned.      *       * @since 3.0      */
 name|Iterator
 argument_list|<
-name|DbAttribute
+name|ObjAttribute
 argument_list|>
 name|getDiscriminatorColumns
 parameter_list|()

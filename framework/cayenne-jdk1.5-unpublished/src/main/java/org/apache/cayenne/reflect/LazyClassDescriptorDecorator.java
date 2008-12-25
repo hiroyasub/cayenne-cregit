@@ -59,20 +59,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbAttribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbEntity
 import|;
 end_import
@@ -101,7 +87,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
+name|ObjAttribute
 import|;
 end_import
 
@@ -113,9 +99,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|EntityResultSegment
+name|ObjEntity
 import|;
 end_import
 
@@ -325,21 +311,6 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|EntityResultSegment
-name|getEntityResultMetadata
-parameter_list|()
-block|{
-name|checkDescriptorInitialized
-argument_list|()
-expr_stmt|;
-return|return
-name|descriptor
-operator|.
-name|getEntityResultMetadata
-argument_list|()
-return|;
-block|}
-specifier|public
 name|Class
 argument_list|<
 name|?
@@ -434,7 +405,7 @@ block|}
 specifier|public
 name|Iterator
 argument_list|<
-name|DbAttribute
+name|ObjAttribute
 argument_list|>
 name|getDiscriminatorColumns
 parameter_list|()

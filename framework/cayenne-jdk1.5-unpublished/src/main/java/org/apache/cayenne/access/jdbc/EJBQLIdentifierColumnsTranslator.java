@@ -727,7 +727,7 @@ block|}
 comment|// append inheritance discriminator columns...
 name|Iterator
 argument_list|<
-name|DbAttribute
+name|ObjAttribute
 argument_list|>
 name|discriminatorColumns
 init|=
@@ -744,15 +744,23 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
+name|ObjAttribute
+name|attribute
+init|=
+name|discriminatorColumns
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
 name|appendColumn
 argument_list|(
 name|idVar
 argument_list|,
-literal|null
+name|attribute
 argument_list|,
-name|discriminatorColumns
+name|attribute
 operator|.
-name|next
+name|getDbAttribute
 argument_list|()
 argument_list|,
 name|fields
