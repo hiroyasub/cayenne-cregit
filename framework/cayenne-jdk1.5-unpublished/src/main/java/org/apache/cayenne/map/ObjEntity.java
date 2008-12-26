@@ -431,7 +431,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|overriddenAttributes
+name|attributeOverrides
 decl_stmt|;
 specifier|public
 name|ObjEntity
@@ -484,7 +484,7 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|overriddenAttributes
+name|attributeOverrides
 operator|=
 operator|new
 name|TreeMap
@@ -840,7 +840,7 @@ name|String
 argument_list|>
 name|override
 range|:
-name|overriddenAttributes
+name|attributeOverrides
 operator|.
 name|entrySet
 argument_list|()
@@ -2218,7 +2218,7 @@ expr_stmt|;
 name|String
 name|pathOverride
 init|=
-name|overriddenAttributes
+name|attributeOverrides
 operator|.
 name|get
 argument_list|(
@@ -2392,7 +2392,7 @@ block|{
 name|String
 name|overridedDbPath
 init|=
-name|overriddenAttributes
+name|attributeOverrides
 operator|.
 name|get
 argument_list|(
@@ -2459,7 +2459,7 @@ name|String
 name|dbPath
 parameter_list|)
 block|{
-name|overriddenAttributes
+name|attributeOverrides
 operator|.
 name|put
 argument_list|(
@@ -2468,6 +2468,26 @@ argument_list|,
 name|dbPath
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getDeclaredAttributeOverrides
+parameter_list|()
+block|{
+return|return
+name|Collections
+operator|.
+name|unmodifiableMap
+argument_list|(
+name|attributeOverrides
+argument_list|)
+return|;
 block|}
 comment|/**      * Returns a Collection of all attributes that either belong to this ObjEntity or      * inherited.      */
 annotation|@
