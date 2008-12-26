@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -392,8 +402,11 @@ argument_list|>
 name|getPathSplitAliases
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a mapping of the result set data rows. Can be null. If not null overrides      * prefetching and data row settings.      *       * @since 3.0      */
-name|SQLResultSetMetadata
+comment|/**      * Returns an optional list of result set mapping hints. Elements in the list can be      * either {@link EntityResultSegment} or {@link ScalarResultSegment}. The returned      * list can be null.      *       * @since 3.0      */
+name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getResultSetMapping
 parameter_list|()
 function_decl|;

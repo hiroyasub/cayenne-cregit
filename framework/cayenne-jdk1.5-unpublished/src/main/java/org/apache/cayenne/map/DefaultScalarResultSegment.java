@@ -11,9 +11,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|ScalarResultSegment
+import|;
+end_import
 
 begin_comment
 comment|/**  * @since 3.0  */

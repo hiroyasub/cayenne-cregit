@@ -461,20 +461,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
-operator|.
-name|SQLResultSetMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|reflect
 operator|.
 name|AttributeProperty
@@ -1597,7 +1583,7 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Updates snapshots in the underlying DataRowStore. If<code>refresh</code> is      * true, all snapshots in<code>snapshots</code> will be loaded into DataRowStore,      * regardless of the existing cache state. If<code>refresh</code> is false, only      * missing snapshots are loaded. This method is normally called internally by the      * DataContext owning the ObjectStore to update the caches after a select query.      *       * @param objects a list of object whose snapshots need to be updated.      * @param snapshots a list of snapshots. Must be of the same length and use the same      *            order as<code>objects</code> list.      * @param refresh controls whether existing cached snapshots should be replaced with      *            the new ones.      * @since 1.1      * @deprecated since 3.0 unused      */
+comment|/**      * Updates snapshots in the underlying DataRowStore. If<code>refresh</code> is true,      * all snapshots in<code>snapshots</code> will be loaded into DataRowStore,      * regardless of the existing cache state. If<code>refresh</code> is false, only      * missing snapshots are loaded. This method is normally called internally by the      * DataContext owning the ObjectStore to update the caches after a select query.      *       * @param objects a list of object whose snapshots need to be updated.      * @param snapshots a list of snapshots. Must be of the same length and use the same      *            order as<code>objects</code> list.      * @param refresh controls whether existing cached snapshots should be replaced with      *            the new ones.      * @since 1.1      * @deprecated since 3.0 unused      */
 specifier|public
 name|void
 name|snapshotsUpdatedForObjects
@@ -4002,7 +3988,10 @@ name|cacheKey
 return|;
 block|}
 specifier|public
-name|SQLResultSetMetadata
+name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getResultSetMapping
 parameter_list|()
 block|{

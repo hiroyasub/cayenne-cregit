@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 package|;
 end_package
 
@@ -22,6 +22,20 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EntityResultSegment
 import|;
 end_import
 

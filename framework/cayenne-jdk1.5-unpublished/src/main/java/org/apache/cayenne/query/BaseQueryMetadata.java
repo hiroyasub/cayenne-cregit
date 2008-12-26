@@ -51,6 +51,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -276,7 +286,10 @@ index|[]
 name|cacheGroups
 decl_stmt|;
 specifier|transient
-name|SQLResultSetMetadata
+name|List
+argument_list|<
+name|Object
+argument_list|>
 name|resultSetMapping
 decl_stmt|;
 specifier|transient
@@ -1369,7 +1382,10 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|SQLResultSetMetadata
+name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getResultSetMapping
 parameter_list|()
 block|{

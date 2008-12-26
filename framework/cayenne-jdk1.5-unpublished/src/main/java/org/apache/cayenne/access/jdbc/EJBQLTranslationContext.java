@@ -175,7 +175,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLResultSetMetadata
+name|SQLTemplate
 import|;
 end_import
 
@@ -189,7 +189,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLTemplate
+name|ScalarResultSegment
 import|;
 end_import
 
@@ -238,7 +238,10 @@ name|EntityResolver
 name|entityResolver
 decl_stmt|;
 specifier|private
-name|SQLResultSetMetadata
+name|List
+argument_list|<
+name|Object
+argument_list|>
 name|resultSetMetadata
 decl_stmt|;
 specifier|private
@@ -1536,9 +1539,12 @@ argument_list|)
 throw|;
 block|}
 return|return
+operator|(
+name|EntityResultSegment
+operator|)
 name|resultSetMetadata
 operator|.
-name|getEntitySegment
+name|get
 argument_list|(
 name|resultDescriptorPosition
 operator|++
@@ -1566,13 +1572,18 @@ argument_list|)
 throw|;
 block|}
 return|return
+operator|(
+operator|(
+name|ScalarResultSegment
+operator|)
 name|resultSetMetadata
 operator|.
-name|getScalarSegment
+name|get
 argument_list|(
 name|resultDescriptorPosition
 operator|++
 argument_list|)
+operator|)
 operator|.
 name|getColumn
 argument_list|()

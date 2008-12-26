@@ -96,14 +96,13 @@ argument_list|()
 operator|!=
 literal|null
 condition|?
-operator|new
-name|DefaultResultSetMetadata
-argument_list|(
 name|expression
 operator|.
 name|getResult
 argument_list|()
-argument_list|,
+operator|.
+name|getResolvedComponents
+argument_list|(
 name|resolver
 argument_list|)
 else|:
