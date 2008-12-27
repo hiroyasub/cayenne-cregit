@@ -171,7 +171,7 @@ operator|&&
 operator|!
 name|ent
 operator|.
-name|getIsAbstract
+name|isAbstract
 argument_list|()
 condition|)
 block|{

@@ -2190,7 +2190,7 @@ condition|)
 block|{
 name|entity
 operator|.
-name|setIsAbstract
+name|setAbstract
 argument_list|(
 name|isAbstract
 operator|.
@@ -2286,7 +2286,7 @@ name|setSelected
 argument_list|(
 name|entity
 operator|.
-name|getIsAbstract
+name|isAbstract
 argument_list|()
 argument_list|)
 expr_stmt|;

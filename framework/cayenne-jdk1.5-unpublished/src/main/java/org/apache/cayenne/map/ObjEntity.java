@@ -391,7 +391,7 @@ name|lockType
 decl_stmt|;
 specifier|protected
 name|boolean
-name|isAbstract
+name|_abstract
 decl_stmt|;
 specifier|protected
 name|boolean
@@ -552,7 +552,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|getIsAbstract
+name|isAbstract
 argument_list|()
 condition|)
 block|{
@@ -1562,17 +1562,17 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|getIsAbstract
+name|isAbstract
 parameter_list|()
 block|{
 return|return
-name|isAbstract
+name|_abstract
 return|;
 block|}
 comment|/**      * Sets whether this entity is abstract only.      */
 specifier|public
 name|void
-name|setIsAbstract
+name|setAbstract
 parameter_list|(
 name|boolean
 name|isAbstract
@@ -1580,7 +1580,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|isAbstract
+name|_abstract
 operator|=
 name|isAbstract
 expr_stmt|;

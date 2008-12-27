@@ -3802,7 +3802,7 @@ argument_list|)
 decl_stmt|;
 name|objEntity
 operator|.
-name|setIsAbstract
+name|setAbstract
 argument_list|(
 name|TRUE
 operator|.

@@ -278,7 +278,7 @@ name|getEntity
 argument_list|()
 operator|)
 operator|.
-name|getIsAbstract
+name|isAbstract
 argument_list|()
 condition|)
 block|{

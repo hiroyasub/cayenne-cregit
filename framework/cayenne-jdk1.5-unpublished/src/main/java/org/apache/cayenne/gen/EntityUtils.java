@@ -478,7 +478,7 @@ return|;
 return|return
 name|objEntity
 operator|.
-name|getIsAbstract
+name|isAbstract
 argument_list|()
 return|;
 block|}
