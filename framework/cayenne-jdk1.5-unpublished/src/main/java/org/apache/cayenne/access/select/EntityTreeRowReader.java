@@ -86,7 +86,7 @@ decl_stmt|;
 specifier|private
 name|Expression
 index|[]
-name|discriminatorExpressions
+name|entityQualifiers
 decl_stmt|;
 specifier|private
 name|RowReader
@@ -94,7 +94,7 @@ argument_list|<
 name|Object
 argument_list|>
 index|[]
-name|rowReaders
+name|entityReaders
 decl_stmt|;
 name|EntityTreeRowReader
 parameter_list|(
@@ -106,14 +106,14 @@ name|discriminatorReader
 parameter_list|,
 name|Expression
 index|[]
-name|discriminatorExpressions
+name|entityQualifiers
 parameter_list|,
 name|RowReader
 argument_list|<
 name|Object
 argument_list|>
 index|[]
-name|rowReaders
+name|entityReaders
 parameter_list|)
 block|{
 name|this
@@ -124,15 +124,15 @@ name|discriminatorReader
 expr_stmt|;
 name|this
 operator|.
-name|discriminatorExpressions
+name|entityQualifiers
 operator|=
-name|discriminatorExpressions
+name|entityQualifiers
 expr_stmt|;
 name|this
 operator|.
-name|rowReaders
+name|entityReaders
 operator|=
-name|rowReaders
+name|entityReaders
 expr_stmt|;
 block|}
 specifier|public
@@ -184,10 +184,13 @@ argument_list|(
 name|resultSet
 argument_list|)
 decl_stmt|;
+comment|// read qualifiers list in reverse order to ensure that for each superclass,
+comment|// subclass qualifiers are run first... This way we can even support empty
+comment|// qualifier superclasses.
 name|int
 name|len
 init|=
-name|discriminatorExpressions
+name|entityQualifiers
 operator|.
 name|length
 decl_stmt|;
@@ -196,14 +199,16 @@ control|(
 name|int
 name|i
 init|=
-literal|0
+name|len
+operator|-
+literal|1
 init|;
 name|i
-operator|<
-name|len
+operator|>=
+literal|0
 condition|;
 name|i
-operator|++
+operator|--
 control|)
 block|{
 comment|// TODO: andrus, 12/25/2008 - Expression in-memory evaluation for each row in
@@ -211,7 +216,7 @@ comment|// a ResultSet will be a very slow operation. This procedure should be
 comment|// optimized somehow...
 if|if
 condition|(
-name|discriminatorExpressions
+name|entityQualifiers
 index|[
 name|i
 index|]
@@ -223,7 +228,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|rowReaders
+name|entityReaders
 index|[
 name|i
 index|]
