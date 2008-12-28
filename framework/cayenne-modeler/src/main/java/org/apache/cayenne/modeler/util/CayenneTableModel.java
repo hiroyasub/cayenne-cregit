@@ -905,8 +905,6 @@ operator|.
 name|invoke
 argument_list|(
 name|o1
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|Comparable
@@ -920,8 +918,6 @@ operator|.
 name|invoke
 argument_list|(
 name|o2
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 return|return
