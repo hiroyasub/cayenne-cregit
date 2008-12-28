@@ -202,10 +202,6 @@ argument_list|(
 name|component
 argument_list|,
 operator|new
-name|Object
-index|[]
-block|{
-operator|new
 name|ActionListener
 argument_list|()
 block|{
@@ -220,14 +216,14 @@ block|{
 name|fireAction
 argument_list|()
 expr_stmt|;
-block_content|}
-block|}                         }
-block|)
-empty_stmt|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
 name|foundActionEvents
 operator|=
 literal|true
-argument_list|;
+expr_stmt|;
 break|break;
 block|}
 block|}

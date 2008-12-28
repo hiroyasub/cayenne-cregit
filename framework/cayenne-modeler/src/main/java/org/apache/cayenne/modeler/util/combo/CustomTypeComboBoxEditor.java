@@ -383,12 +383,7 @@ name|invoke
 argument_list|(
 literal|null
 argument_list|,
-operator|new
-name|Object
-index|[]
-block|{
 name|value
-block|}
 argument_list|)
 return|;
 block|}

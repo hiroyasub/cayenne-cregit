@@ -156,12 +156,7 @@ name|invoke
 argument_list|(
 literal|null
 argument_list|,
-operator|new
-name|Object
-index|[]
-block|{
 name|url
-block|}
 argument_list|)
 expr_stmt|;
 block|}

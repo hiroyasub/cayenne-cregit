@@ -432,14 +432,9 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
 literal|"AUTO_PK_SUPPORT"
-block|,
+argument_list|,
 literal|"auto_pk_support"
-block|}
 argument_list|)
 decl_stmt|;
 specifier|static
