@@ -160,7 +160,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Builder of the non-leaf entity segment that has at least one subclass or superclass or  * any combination of them.  *   * @since 3.0  */
+comment|/**  * Builder of an entity segment that has at least one subclass or superclass or any  * combination of them.  *   * @since 3.0  */
 end_comment
 
 begin_class
