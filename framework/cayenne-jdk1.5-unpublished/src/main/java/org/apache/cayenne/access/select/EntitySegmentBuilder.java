@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * Builder of the leaf entity segment that has no persistent subclasses or superclasses.  *   * @since 3.0  */
 end_comment
 
 begin_class

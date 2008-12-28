@@ -497,6 +497,13 @@ name|getEntityInheritanceTree
 argument_list|()
 operator|!=
 literal|null
+operator|||
+name|classDescriptor
+operator|.
+name|getSuperclassDescriptor
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 return|return
@@ -510,7 +517,7 @@ argument_list|,
 name|classDescriptor
 argument_list|)
 operator|.
-name|getDescriptor
+name|buildSegment
 argument_list|()
 return|;
 block|}
