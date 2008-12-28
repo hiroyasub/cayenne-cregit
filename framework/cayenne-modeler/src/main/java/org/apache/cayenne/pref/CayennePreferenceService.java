@@ -403,9 +403,6 @@ block|}
 name|Domain
 name|domain
 init|=
-operator|(
-name|Domain
-operator|)
 name|getDataContext
 argument_list|()
 operator|.

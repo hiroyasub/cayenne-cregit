@@ -190,9 +190,6 @@ expr_stmt|;
 name|DomainPreference
 name|preference
 init|=
-operator|(
-name|DomainPreference
-operator|)
 name|getEditingContext
 argument_list|()
 operator|.
@@ -248,9 +245,6 @@ expr_stmt|;
 name|DomainPreference
 name|preferenceLink
 init|=
-operator|(
-name|DomainPreference
-operator|)
 name|getEditingContext
 argument_list|()
 operator|.

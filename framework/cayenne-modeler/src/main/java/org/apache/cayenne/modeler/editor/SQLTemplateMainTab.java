@@ -946,9 +946,6 @@ name|entity
 operator|!=
 literal|null
 condition|?
-operator|(
-name|Object
-operator|)
 name|entity
 else|:
 name|mediator

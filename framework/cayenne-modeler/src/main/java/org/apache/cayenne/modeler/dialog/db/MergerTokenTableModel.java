@@ -269,9 +269,6 @@ name|rowIndex
 parameter_list|)
 block|{
 return|return
-operator|(
-name|MergerToken
-operator|)
 name|tokens
 operator|.
 name|get

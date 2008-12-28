@@ -324,9 +324,6 @@ block|}
 name|Project
 name|project
 init|=
-operator|(
-name|Project
-operator|)
 name|path
 operator|.
 name|firstInstanceOf

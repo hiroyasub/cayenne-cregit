@@ -662,9 +662,6 @@ name|JOptionPane
 operator|.
 name|showMessageDialog
 argument_list|(
-operator|(
-name|Component
-operator|)
 name|this
 operator|.
 name|getView
@@ -697,9 +694,6 @@ name|JOptionPane
 operator|.
 name|showMessageDialog
 argument_list|(
-operator|(
-name|Component
-operator|)
 name|this
 operator|.
 name|getView
@@ -730,9 +724,6 @@ name|JOptionPane
 operator|.
 name|showMessageDialog
 argument_list|(
-operator|(
-name|Component
-operator|)
 name|this
 operator|.
 name|getView

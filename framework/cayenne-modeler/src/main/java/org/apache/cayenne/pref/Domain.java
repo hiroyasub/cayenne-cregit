@@ -961,9 +961,6 @@ return|;
 block|}
 name|preferenceLink
 operator|=
-operator|(
-name|DomainPreference
-operator|)
 name|getObjectContext
 argument_list|()
 operator|.

@@ -487,9 +487,6 @@ block|{
 name|FSPath
 name|path
 init|=
-operator|(
-name|FSPath
-operator|)
 name|entry
 operator|.
 name|getValue

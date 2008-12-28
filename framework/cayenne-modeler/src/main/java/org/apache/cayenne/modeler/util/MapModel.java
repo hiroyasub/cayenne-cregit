@@ -281,9 +281,6 @@ operator|!=
 literal|null
 operator|)
 condition|?
-operator|(
-name|String
-operator|)
 name|map
 operator|.
 name|get
