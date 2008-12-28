@@ -302,6 +302,9 @@ operator|.
 name|util
 operator|.
 name|List
+argument_list|<
+name|JButton
+argument_list|>
 name|entityButtons
 decl_stmt|;
 specifier|private
@@ -713,6 +716,9 @@ operator|.
 name|util
 operator|.
 name|List
+argument_list|<
+name|JButton
+argument_list|>
 name|getEntityButtons
 parameter_list|()
 block|{

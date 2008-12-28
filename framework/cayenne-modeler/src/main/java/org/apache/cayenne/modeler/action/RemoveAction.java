@@ -1423,28 +1423,23 @@ expr_stmt|;
 comment|// remove queries that depend on entity
 comment|// TODO: (Andrus, 09/09/2005) show warning dialog?
 comment|// clone to be able to remove within iterator...
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Query
+name|query
+range|:
 operator|new
 name|ArrayList
+argument_list|<
+name|Query
+argument_list|>
 argument_list|(
 name|map
 operator|.
 name|getQueries
 argument_list|()
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|AbstractQuery
 name|next
@@ -1452,10 +1447,7 @@ init|=
 operator|(
 name|AbstractQuery
 operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|query
 decl_stmt|;
 name|Object
 name|root

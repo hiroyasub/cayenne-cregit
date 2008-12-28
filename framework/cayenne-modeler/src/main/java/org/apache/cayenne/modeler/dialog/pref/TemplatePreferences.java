@@ -208,6 +208,9 @@ name|editor
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|FSPath
+argument_list|>
 name|templateEntries
 decl_stmt|;
 specifier|protected
@@ -404,6 +407,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|FSPath
+argument_list|>
 name|getTemplateEntries
 parameter_list|()
 block|{
