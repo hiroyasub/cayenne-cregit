@@ -398,7 +398,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testBuildSegmentRowReaderInheritanceLeaf
+name|testBuildSegmentRowReaderLeaf
 parameter_list|()
 throws|throws
 name|Exception
@@ -594,7 +594,10 @@ name|column
 operator|.
 name|getColumnName
 argument_list|(
-literal|0
+name|md
+operator|.
+name|getDbEntity
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)
@@ -678,7 +681,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testBuildSegmentColumns
+name|testBuildSegmentColumnsSuper
 parameter_list|()
 block|{
 name|SelectQuery
@@ -850,7 +853,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testBuildSegmentRowReader
+name|testBuildSegmentRowReaderSuper
 parameter_list|()
 throws|throws
 name|Exception
@@ -1204,7 +1207,10 @@ name|column
 operator|.
 name|getColumnName
 argument_list|(
-literal|0
+name|md
+operator|.
+name|getDbEntity
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)
