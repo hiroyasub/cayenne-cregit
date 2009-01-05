@@ -2392,6 +2392,11 @@ argument_list|)
 expr_stmt|;
 name|toolBar
 operator|.
+name|addSeparator
+argument_list|()
+expr_stmt|;
+name|toolBar
+operator|.
 name|add
 argument_list|(
 name|getAction
