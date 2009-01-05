@@ -495,13 +495,6 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
-comment|//        Iterator allNodes = domain.getDataNodes().iterator();
-comment|//        while (allNodes.hasNext()) {
-comment|//            DataNode node = (DataNode) allNodes.next();
-comment|//            if (node.getDataMaps().contains(map)) {
-comment|//                nodes.add(node);
-comment|//            }
-comment|//        }
 name|domain
 operator|.
 name|removeMap
@@ -546,12 +539,6 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-comment|//        Iterator relinkNodes = nodes.iterator();
-comment|//        while (relinkNodes.hasNext()) {
-comment|//            DataNode node = (DataNode) relinkNodes.next();
-comment|//            node.removeDataMap(oldName);
-comment|//            node.addDataMap(map);
-comment|//        }
 block|}
 specifier|public
 specifier|static
@@ -1202,9 +1189,6 @@ expr_stmt|;
 continue|continue;
 block|}
 comment|// check individual attributes
-comment|//            Iterator atts = entity.getAttributes().iterator();
-comment|//            while (atts.hasNext()) {
-comment|//                ObjAttribute att = (ObjAttribute) atts.next();
 for|for
 control|(
 name|ObjAttribute
@@ -1257,9 +1241,6 @@ block|}
 block|}
 block|}
 comment|// check individual relationships
-comment|//            Iterator rels = entity.getRelationships().iterator();
-comment|//            while (rels.hasNext()) {
-comment|//                ObjRelationship rel = (ObjRelationship) rels.next();
 for|for
 control|(
 name|ObjRelationship
@@ -1271,18 +1252,30 @@ name|getRelationships
 argument_list|()
 control|)
 block|{
-comment|//                Iterator dbRels = new ArrayList(rel.getDbRelationships()).iterator();
-comment|//                while (dbRels.hasNext()) {
-comment|//                    DbRelationship dbRel = (DbRelationship) dbRels.next();
+name|List
+argument_list|<
+name|DbRelationship
+argument_list|>
+name|dbRelList
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|DbRelationship
+argument_list|>
+argument_list|(
+name|rel
+operator|.
+name|getDbRelationships
+argument_list|()
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|DbRelationship
 name|dbRel
 range|:
-name|rel
-operator|.
-name|getDbRelationships
-argument_list|()
+name|dbRelList
 control|)
 block|{
 name|Entity
@@ -1363,9 +1356,6 @@ condition|)
 block|{
 return|return;
 block|}
-comment|//        Iterator it = entity.getAttributeMap().values().iterator();
-comment|//        while (it.hasNext()) {
-comment|//            ObjAttribute objAttr = (ObjAttribute) it.next();
 for|for
 control|(
 name|ObjAttribute
@@ -1404,9 +1394,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|//        Iterator rel_it = entity.getRelationships().iterator();
-comment|//        while (rel_it.hasNext()) {
-comment|//            ObjRelationship obj_rel = (ObjRelationship) rel_it.next();
 for|for
 control|(
 name|ObjRelationship
@@ -1462,9 +1449,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|//        Iterator it = relationship.getJoins().iterator();
-comment|//        while (it.hasNext()) {
-comment|//            DbJoin join = (DbJoin) it.next();
 for|for
 control|(
 name|DbJoin
@@ -1525,9 +1509,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|//        Iterator it = relationship.getJoins().iterator();
-comment|//        while (it.hasNext()) {
-comment|//            DbJoin join = (DbJoin) it.next();
 for|for
 control|(
 name|DbJoin
@@ -1627,9 +1608,9 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|//        Iterator it = parentRelationships.iterator();
-comment|//        while (it.hasNext()) {
-comment|//            DbRelationship relationship = (DbRelationship) it.next();
+comment|// Iterator it = parentRelationships.iterator();
+comment|// while (it.hasNext()) {
+comment|// DbRelationship relationship = (DbRelationship) it.next();
 for|for
 control|(
 name|DbRelationship
@@ -1731,9 +1712,6 @@ name|DbRelationship
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|//        Iterator it = map.getDbEntities().iterator();
-comment|//        while (it.hasNext()) {
-comment|//            Entity entity = (Entity) it.next();
 for|for
 control|(
 name|Entity
@@ -1771,9 +1749,6 @@ operator|.
 name|getRelationships
 argument_list|()
 decl_stmt|;
-comment|//            Iterator relationshipsIt = entityRelationships.iterator();
-comment|//            while (relationshipsIt.hasNext()) {
-comment|//                DbRelationship relationship = (DbRelationship) relationshipsIt.next();
 for|for
 control|(
 name|DbRelationship
