@@ -833,7 +833,7 @@ operator|=
 operator|new
 name|JScrollPane
 argument_list|(
-comment|//panel
+comment|// panel
 name|table
 argument_list|,
 name|JScrollPane
@@ -1313,9 +1313,6 @@ name|getIcon
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|int
-name|thickness
-decl_stmt|;
 name|lbl
 operator|.
 name|setBorder
@@ -1326,12 +1323,19 @@ name|createLineBorder
 argument_list|(
 name|Color
 operator|.
-name|LIGHT_GRAY
+name|WHITE
 argument_list|,
-name|thickness
-operator|=
 literal|0
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|lbl
+operator|.
+name|setBackground
+argument_list|(
+name|Color
+operator|.
+name|WHITE
 argument_list|)
 expr_stmt|;
 name|lbl
@@ -1343,7 +1347,6 @@ operator|.
 name|LEFT
 argument_list|)
 expr_stmt|;
-block|{
 name|lbl
 operator|.
 name|setFont
@@ -1361,7 +1364,6 @@ name|getFont
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|lbl
 return|;
