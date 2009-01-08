@@ -167,7 +167,7 @@ parameter_list|,
 specifier|final
 name|Map
 argument_list|<
-name|Object
+name|Integer
 argument_list|,
 name|Object
 argument_list|>
@@ -212,11 +212,11 @@ name|Override
 specifier|public
 name|Map
 argument_list|<
-name|Object
+name|Integer
 argument_list|,
 name|Object
 argument_list|>
-name|getParameters
+name|getPositionalParameters
 parameter_list|()
 block|{
 return|return
@@ -1240,7 +1240,7 @@ parameter_list|()
 block|{
 name|Map
 argument_list|<
-name|Object
+name|Integer
 argument_list|,
 name|Object
 argument_list|>
@@ -1249,7 +1249,7 @@ init|=
 operator|new
 name|HashMap
 argument_list|<
-name|Object
+name|Integer
 argument_list|,
 name|Object
 argument_list|>
