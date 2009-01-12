@@ -363,7 +363,7 @@ name|SHARED_CACHE_LABEL
 init|=
 literal|"Shared Cache"
 decl_stmt|;
-specifier|private
+specifier|protected
 specifier|static
 specifier|final
 name|Object

@@ -136,6 +136,10 @@ name|String
 name|sql
 decl_stmt|;
 specifier|protected
+name|String
+name|ejbql
+decl_stmt|;
+specifier|protected
 name|Map
 argument_list|<
 name|String
@@ -381,6 +385,20 @@ operator|.
 name|rootName
 operator|=
 name|rootName
+expr_stmt|;
+block|}
+name|void
+name|setEjbql
+parameter_list|(
+name|String
+name|ejbql
+parameter_list|)
+block|{
+name|this
+operator|.
+name|ejbql
+operator|=
+name|ejbql
 expr_stmt|;
 block|}
 comment|/**      * Adds raw sql. If adapterClass parameter is not null, sets the SQL string to be      * adapter-specific. Otherwise it is used as a default SQL string.      */
