@@ -920,11 +920,7 @@ name|detailPanel
 operator|.
 name|add
 argument_list|(
-operator|new
-name|JScrollPane
-argument_list|(
 name|ejbqlQueryView
-argument_list|)
 argument_list|,
 name|EJBQL_QUERY_VIEW
 argument_list|)
