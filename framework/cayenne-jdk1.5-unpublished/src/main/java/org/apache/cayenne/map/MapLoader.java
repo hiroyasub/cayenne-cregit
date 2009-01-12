@@ -234,7 +234,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default MapLoader. Its responsibilities include reading DataMaps from XML files and  * saving DataMap objects back to XML.  *   */
+comment|/**  * Default MapLoader. Its responsibilities include reading DataMaps from XML files and  * saving DataMap objects back to XML.  */
 end_comment
 
 begin_class
@@ -2087,7 +2087,6 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-comment|//////////////////////////////////////////
 name|endTagOpMap
 operator|.
 name|put
@@ -3088,7 +3087,7 @@ return|return
 name|location
 return|;
 block|}
-comment|/**      * Creates, configures and returns ResourceLocator object used to lookup DataMap      * files.      * @deprecated since 3.0 use {@link #createResourceFinder()}.      */
+comment|/**      * Creates, configures and returns ResourceLocator object used to lookup DataMap      * files.      *       * @deprecated since 3.0 use {@link #createResourceFinder()}.      */
 specifier|protected
 name|ResourceLocator
 name|configLocator
@@ -3811,7 +3810,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|///////////////////////////////
 specifier|private
 name|void
 name|processStartEjbqlQuery
@@ -5653,7 +5651,6 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|///////////////////////////////////////////////
 specifier|private
 name|void
 name|processEndEjbqlQuery
