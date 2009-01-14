@@ -501,6 +501,20 @@ name|SelectQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * Main display area split into the project navigation tree on the left and selected  * object editor on the right.  */
 end_comment
@@ -1055,6 +1069,9 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+comment|/**          * Moving this to try-catch block per CAY-940.          * Exception will be stack-traced            */
+try|try
+block|{
 name|Domain
 name|domain
 init|=
@@ -1103,6 +1120,29 @@ argument_list|,
 literal|150
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ex
+parameter_list|)
+block|{
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|getClass
+argument_list|()
+argument_list|)
+operator|.
+name|error
+argument_list|(
+literal|"Cannot bind divider property"
+argument_list|,
+name|ex
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void

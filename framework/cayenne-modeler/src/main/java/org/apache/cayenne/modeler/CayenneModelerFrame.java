@@ -1129,6 +1129,20 @@ name|Domain
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * Main frame of CayenneModeler. Responsibilities include coordination of  * enabling/disabling of menu and toolbar.  */
 end_comment
@@ -2128,6 +2142,9 @@ argument_list|(
 literal|0.7
 argument_list|)
 expr_stmt|;
+comment|/**          * Moving this to try-catch block per CAY-940.          * Exception will be stack-traced            */
+try|try
+block|{
 name|Domain
 name|domain
 init|=
@@ -2179,6 +2196,29 @@ argument_list|,
 literal|400
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|ex
+parameter_list|)
+block|{
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|getClass
+argument_list|()
+argument_list|)
+operator|.
+name|error
+argument_list|(
+literal|"Cannot bind divider property"
+argument_list|,
+name|ex
+argument_list|)
+expr_stmt|;
+block|}
 name|JPanel
 name|statusBar
 init|=
