@@ -860,6 +860,18 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|token
+operator|.
+name|getDirection
+argument_list|()
+operator|==
+name|MergeDirection
+operator|.
+name|TO_DB
+condition|)
+block|{
 name|token
 operator|.
 name|execute
@@ -867,6 +879,7 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
+block|}
 comment|// buf.append(token.createSql(adapter)).append(lineEnd);
 block|}
 name|textForSQL

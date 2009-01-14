@@ -923,6 +923,15 @@ name|reverse
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**          * Repaint, so that "Operation" column updates properly          */
+name|view
+operator|.
+name|getTokens
+argument_list|()
+operator|.
+name|repaint
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|void
