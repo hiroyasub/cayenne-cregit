@@ -55,16 +55,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -202,8 +192,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|modeler
 operator|.
 name|util
 operator|.
@@ -1627,9 +1615,6 @@ name|relationship
 operator|.
 name|addDbRelationship
 argument_list|(
-operator|(
-name|DbRelationship
-operator|)
 name|nextPathComponent
 argument_list|)
 expr_stmt|;

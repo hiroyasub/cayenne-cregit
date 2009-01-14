@@ -75,16 +75,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -124,22 +114,6 @@ operator|.
 name|util
 operator|.
 name|CayenneController
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|DeleteRuleUpdater
 import|;
 end_import
 
@@ -266,16 +240,6 @@ name|getDataMap
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|merger
-operator|.
-name|addEntityMergeListener
-argument_list|(
-name|DeleteRuleUpdater
-operator|.
-name|getEntityMergeListener
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|// see if we need to remove meaningful attributes...
 name|boolean
 name|showDialog

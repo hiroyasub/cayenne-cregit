@@ -1015,7 +1015,6 @@ name|boolean
 name|remove
 parameter_list|)
 block|{
-comment|// System.out.println("c");
 block|}
 block|}
 argument_list|)
