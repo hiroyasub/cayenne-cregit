@@ -386,6 +386,29 @@ argument_list|(
 literal|"<font size='-2' face='Arial,Helvetica'>"
 argument_list|)
 expr_stmt|;
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|"<br>JVM: "
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"java.vm.name"
+argument_list|)
+operator|+
+literal|" "
+operator|+
+name|System
+operator|.
+name|getProperty
+argument_list|(
+literal|"java.version"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|String
 name|version
 init|=
