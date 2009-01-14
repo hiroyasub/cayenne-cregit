@@ -91,6 +91,28 @@ name|DENY_NAME
 init|=
 literal|"Deny"
 decl_stmt|;
+comment|/**      * Default delete rule for one-to-many relationships. It is used when new rels are      * created via modeler, or when synchrozining Obj- and DbEntities      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|DEFAULT_DELETE_RULE_TO_MANY
+init|=
+name|DeleteRule
+operator|.
+name|DENY
+decl_stmt|;
+comment|/**      * Default delete rule for many-to-one relationships. It is used when new rels are      * created via modeler, or when synchrozining Obj- and DbEntities      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|DEFAULT_DELETE_RULE_TO_ONE
+init|=
+name|DeleteRule
+operator|.
+name|NULLIFY
+decl_stmt|;
 comment|/**       * Returns String label for a delete rule state. Used for save/load (xml),      * display in modeler etc. Must remain the same, or else great care taken      * with loading old maps.      */
 specifier|public
 specifier|static

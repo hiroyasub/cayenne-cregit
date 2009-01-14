@@ -327,6 +327,15 @@ name|namingStrategy
 operator|=
 name|namingStrategy
 expr_stmt|;
+comment|/**          * Adding a listener, so that all created ObjRelationships would have default delete rule          */
+name|addEntityMergeListener
+argument_list|(
+name|DeleteRuleUpdater
+operator|.
+name|getEntityMergeListener
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Updates each one of the collection of ObjEntities, adding attributes and      * relationships based on the current state of its DbEntity.      *       * @return true if any ObjEntity has changed as a result of synchronization.      *       * @since 1.2 changed signature to use Collection instead of List.      */
 specifier|public
