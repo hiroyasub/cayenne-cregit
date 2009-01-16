@@ -771,7 +771,7 @@ return|return
 literal|false
 return|;
 block|}
-specifier|private
+specifier|public
 name|void
 name|appendColumn
 parameter_list|(
@@ -807,7 +807,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+specifier|public
 name|void
 name|appendColumn
 parameter_list|(

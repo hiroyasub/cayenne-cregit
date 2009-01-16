@@ -462,6 +462,16 @@ name|getResult
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|sqlQuery
+operator|.
+name|setPageSize
+argument_list|(
+name|md
+operator|.
+name|getPageSize
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|actionFactory
 operator|.
 name|sqlAction

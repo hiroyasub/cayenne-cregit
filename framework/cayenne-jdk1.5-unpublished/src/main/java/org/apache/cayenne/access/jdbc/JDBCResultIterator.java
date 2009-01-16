@@ -506,6 +506,26 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|queryMetadata
+operator|.
+name|getPageSize
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+return|return
+operator|new
+name|IdRowReader
+argument_list|(
+name|descriptor
+argument_list|,
+name|queryMetadata
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
 name|resultMetadata
 operator|.
 name|getClassDescriptor

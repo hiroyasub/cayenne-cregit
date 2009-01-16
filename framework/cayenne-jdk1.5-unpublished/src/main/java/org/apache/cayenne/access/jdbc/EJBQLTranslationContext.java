@@ -175,6 +175,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|QueryMetadata
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|SQLTemplate
 import|;
 end_import
@@ -319,6 +333,10 @@ specifier|private
 name|int
 name|subselectCount
 decl_stmt|;
+specifier|private
+name|QueryMetadata
+name|queryMetadata
+decl_stmt|;
 comment|// a flag indicating whether column expressions should be treated as result columns or
 comment|// not.
 specifier|private
@@ -396,6 +414,17 @@ operator|.
 name|usingAliases
 operator|=
 literal|true
+expr_stmt|;
+name|this
+operator|.
+name|queryMetadata
+operator|=
+name|query
+operator|.
+name|getMetaData
+argument_list|(
+name|entityResolver
+argument_list|)
 expr_stmt|;
 comment|// buffer stack will hold named buffers during translation in the order they were
 comment|// requested
@@ -533,6 +562,15 @@ argument_list|)
 expr_stmt|;
 return|return
 name|query
+return|;
+block|}
+specifier|public
+name|QueryMetadata
+name|getMetadata
+parameter_list|()
+block|{
+return|return
+name|queryMetadata
 return|;
 block|}
 specifier|private
