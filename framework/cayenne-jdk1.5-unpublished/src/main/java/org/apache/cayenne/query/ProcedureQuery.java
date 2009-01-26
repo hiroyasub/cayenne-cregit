@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query based on Procedure. Can be used as a select query, or as a query of an  * arbitrary complexity, performing data modification, selecting data (possibly with  * multiple result sets per call), returning values via OUT parameters.  *<h3>Execution with DataContext</h3>  *<h4>Reading OUT parameters</h4>  *<p>  * If a ProcedureQuery has OUT parameters, they are wrapped in a separate List in the  * query result. Such list will contain a single Map with OUT parameter values.  *</p>  *<h4>Using ProcedureQuery as a GenericSelectQuery</h4>  *<p>  * Executing ProcedureQuery via  * {@link org.apache.cayenne.access.DataContext#performQuery(Query)} makes sense only if  * the stored procedure returns a single result set (or alternatively returns a result via  * OUT parameters and no other result sets). It is still OK if data modification occurs as  * a side effect. However if the query returns more then one result set, a more generic  * form should be used:  * {@link org.apache.cayenne.access.DataContext#performGenericQuery(Query)}.  *</p>  *   */
+comment|/**  * A query based on Procedure. Can be used as a select query, or as a query of an  * arbitrary complexity, performing data modification, selecting data (possibly with  * multiple result sets per call), returning values via OUT parameters.<h3>Execution with  * DataContext</h3><h4>Reading OUT parameters</h4>  *<p>  * If a ProcedureQuery has OUT parameters, they are wrapped in a separate List in the  * query result. Such list will contain a single Map with OUT parameter values.  *</p>  *<h4>Using ProcedureQuery as a GenericSelectQuery</h4>  *<p>  * Executing ProcedureQuery via  * {@link org.apache.cayenne.access.DataContext#performQuery(Query)} makes sense only if  * the stored procedure returns a single result set (or alternatively returns a result via  * OUT parameters and no other result sets). It is still OK if data modification occurs as  * a side effect. However if the query returns more then one result set, a more generic  * form should be used:  * {@link org.apache.cayenne.access.DataContext#performGenericQuery(Query)}.  *</p>  */
 end_comment
 
 begin_class
@@ -183,24 +183,6 @@ name|COLUMN_NAME_CAPITALIZATION_PROPERTY
 init|=
 literal|"cayenne.ProcedureQuery.columnNameCapitalization"
 decl_stmt|;
-comment|/**      * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|UPPERCASE_COLUMN_NAMES
-init|=
-literal|"upper"
-decl_stmt|;
-comment|/**      * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LOWERCASE_COLUMN_NAMES
-init|=
-literal|"lower"
-decl_stmt|;
 comment|/**      * @since 1.2      */
 specifier|protected
 name|String
@@ -215,7 +197,7 @@ argument_list|>
 name|resultClass
 decl_stmt|;
 specifier|protected
-name|String
+name|CapsStrategy
 name|columnNamesCapitalization
 decl_stmt|;
 specifier|protected
@@ -554,10 +536,18 @@ operator|!=
 literal|null
 operator|)
 condition|?
+name|CapsStrategy
+operator|.
+name|valueOf
+argument_list|(
 name|columnNamesCapitalization
 operator|.
 name|toString
 argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
+argument_list|)
 else|:
 literal|null
 expr_stmt|;
@@ -733,7 +723,9 @@ condition|(
 name|getColumnNamesCapitalization
 argument_list|()
 operator|!=
-literal|null
+name|CapsStrategy
+operator|.
+name|DEFAULT
 condition|)
 block|{
 name|encoder
@@ -743,6 +735,9 @@ argument_list|(
 name|COLUMN_NAME_CAPITALIZATION_PROPERTY
 argument_list|,
 name|getColumnNamesCapitalization
+argument_list|()
+operator|.
+name|name
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1042,7 +1037,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -1055,7 +1050,7 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *            redundant, although it is still being taken into account. It will be      *            removed in the later versions of Cayenne.      */
+comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
 specifier|public
 name|void
 name|setRefreshingObjects
@@ -1313,20 +1308,30 @@ operator|=
 name|resultEntityName
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
-name|String
+name|CapsStrategy
 name|getColumnNamesCapitalization
 parameter_list|()
 block|{
 return|return
 name|columnNamesCapitalization
+operator|!=
+literal|null
+condition|?
+name|columnNamesCapitalization
+else|:
+name|CapsStrategy
+operator|.
+name|DEFAULT
 return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|setColumnNamesCapitalization
 parameter_list|(
-name|String
+name|CapsStrategy
 name|columnNameCapitalization
 parameter_list|)
 block|{

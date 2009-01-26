@@ -241,24 +241,6 @@ name|COLUMN_NAME_CAPITALIZATION_PROPERTY
 init|=
 literal|"cayenne.SQLTemplate.columnNameCapitalization"
 decl_stmt|;
-comment|/**      * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|UPPERCASE_COLUMN_NAMES
-init|=
-literal|"upper"
-decl_stmt|;
-comment|/**      * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LOWERCASE_COLUMN_NAMES
-init|=
-literal|"lower"
-decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -317,7 +299,7 @@ index|[]
 name|parameters
 decl_stmt|;
 specifier|protected
-name|String
+name|CapsStrategy
 name|columnNamesCapitalization
 decl_stmt|;
 specifier|protected
@@ -760,7 +742,9 @@ condition|(
 name|getColumnNamesCapitalization
 argument_list|()
 operator|!=
-literal|null
+name|CapsStrategy
+operator|.
+name|DEFAULT
 condition|)
 block|{
 name|encoder
@@ -770,6 +754,9 @@ argument_list|(
 name|COLUMN_NAME_CAPITALIZATION_PROPERTY
 argument_list|,
 name|getColumnNamesCapitalization
+argument_list|()
+operator|.
+name|name
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -993,10 +980,18 @@ operator|!=
 literal|null
 operator|)
 condition|?
+name|CapsStrategy
+operator|.
+name|valueOf
+argument_list|(
 name|columnNamesCapitalization
 operator|.
 name|toString
 argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
+argument_list|)
 else|:
 literal|null
 expr_stmt|;
@@ -1870,20 +1865,28 @@ expr_stmt|;
 block|}
 comment|/**      * Returns a column name capitalization policy applied to selecting queries. This is      * used to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a      * chosen Cayenne column mapping strategy (e.g. all column names in uppercase) is      * portable across database engines that can have varying default capitalization.      * Default (null) value indicates that column names provided in result set are used      * unchanged.      *       * @since 3.0      */
 specifier|public
-name|String
+name|CapsStrategy
 name|getColumnNamesCapitalization
 parameter_list|()
 block|{
 return|return
 name|columnNamesCapitalization
+operator|!=
+literal|null
+condition|?
+name|columnNamesCapitalization
+else|:
+name|CapsStrategy
+operator|.
+name|DEFAULT
 return|;
 block|}
-comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p/>      * Note that while a non-default setting is useful for queries that do not rely on a      * #result directive to describe columns, it works for all SQLTemplates the same way.      *       * @param columnNameCapitalization Can be null of one of      *            {@link #LOWERCASE_COLUMN_NAMES} or {@link #UPPERCASE_COLUMN_NAMES}.      * @since 3.0      */
+comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p/>      * Note that while a non-default setting is useful for queries that do not rely on a      * #result directive to describe columns, it works for all SQLTemplates the same way.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setColumnNamesCapitalization
 parameter_list|(
-name|String
+name|CapsStrategy
 name|columnNameCapitalization
 parameter_list|)
 block|{
