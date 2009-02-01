@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements methods for entity merging.  *   */
+comment|/**  * Implements methods for entity merging.  */
 end_comment
 
 begin_class
@@ -258,12 +258,16 @@ specifier|protected
 name|boolean
 name|removeMeaningfulFKs
 decl_stmt|;
+specifier|protected
+name|boolean
+name|removeMeaningfulPKs
+decl_stmt|;
 comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
 specifier|protected
 name|NamingStrategy
 name|namingStrategy
 decl_stmt|;
-comment|/**      * Listeners of merge process.       */
+comment|/**      * Listeners of merge process.      */
 specifier|protected
 name|List
 argument_list|<
@@ -285,9 +289,12 @@ argument_list|,
 operator|new
 name|BasicNamingStrategy
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|EntityMergeSupport
 parameter_list|(
@@ -296,6 +303,9 @@ name|map
 parameter_list|,
 name|NamingStrategy
 name|namingStrategy
+parameter_list|,
+name|boolean
+name|removeMeaningfulPKs
 parameter_list|)
 block|{
 name|this
@@ -323,11 +333,17 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
+name|removeMeaningfulPKs
+operator|=
+name|removeMeaningfulPKs
+expr_stmt|;
+name|this
+operator|.
 name|namingStrategy
 operator|=
 name|namingStrategy
 expr_stmt|;
-comment|/**          * Adding a listener, so that all created ObjRelationships would have default delete rule          */
+comment|/**          * Adding a listener, so that all created ObjRelationships would have default          * delete rule          */
 name|addEntityMergeListener
 argument_list|(
 name|DeleteRuleUpdater
@@ -337,7 +353,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates each one of the collection of ObjEntities, adding attributes and      * relationships based on the current state of its DbEntity.      *       * @return true if any ObjEntity has changed as a result of synchronization.      *       * @since 1.2 changed signature to use Collection instead of List.      */
+comment|/**      * Updates each one of the collection of ObjEntities, adding attributes and      * relationships based on the current state of its DbEntity.      *       * @return true if any ObjEntity has changed as a result of synchronization.      * @since 1.2 changed signature to use Collection instead of List.      */
 specifier|public
 name|boolean
 name|synchronizeWithDbEntities
@@ -848,6 +864,27 @@ block|}
 comment|// check if adding it makes sense at all
 if|if
 condition|(
+operator|!
+name|removeMeaningfulPKs
+condition|)
+block|{
+if|if
+condition|(
+name|dba
+operator|.
+name|getName
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
 name|dba
 operator|.
 name|getName
@@ -862,6 +899,7 @@ argument_list|()
 condition|)
 block|{
 continue|continue;
+block|}
 block|}
 comment|// check FK's
 name|boolean
@@ -930,10 +968,33 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
+name|removeMeaningfulPKs
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|dba
+operator|.
+name|isPrimaryKey
+argument_list|()
+operator|&&
 name|isFK
 condition|)
 block|{
 continue|continue;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|isFK
+condition|)
+block|{
+continue|continue;
+block|}
 block|}
 comment|// check incoming relationships
 name|rit
@@ -993,10 +1054,33 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
+name|removeMeaningfulPKs
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|dba
+operator|.
+name|isPrimaryKey
+argument_list|()
+operator|&&
 name|isFK
 condition|)
 block|{
 continue|continue;
+block|}
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|isFK
+condition|)
+block|{
+continue|continue;
+block|}
 block|}
 name|missing
 operator|.

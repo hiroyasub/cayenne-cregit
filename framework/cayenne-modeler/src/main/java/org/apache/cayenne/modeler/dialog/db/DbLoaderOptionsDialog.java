@@ -79,16 +79,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Vector
 import|;
 end_import
@@ -454,6 +444,10 @@ name|JCheckBox
 name|loadProcedures
 decl_stmt|;
 specifier|protected
+name|JCheckBox
+name|meaningfulPk
+decl_stmt|;
+specifier|protected
 name|JTextField
 name|procNamePatternField
 decl_stmt|;
@@ -587,6 +581,12 @@ operator|new
 name|JCheckBox
 argument_list|()
 expr_stmt|;
+name|meaningfulPk
+operator|=
+operator|new
+name|JCheckBox
+argument_list|()
+expr_stmt|;
 name|strategyCombo
 operator|=
 operator|new
@@ -673,6 +673,15 @@ argument_list|(
 literal|"Naming Strategy:"
 argument_list|,
 name|strategyCombo
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
+literal|"Meaningful PK"
+argument_list|,
+name|meaningfulPk
 argument_list|)
 expr_stmt|;
 name|JPanel
@@ -1258,6 +1267,18 @@ parameter_list|()
 block|{
 return|return
 name|loadProcedures
+operator|.
+name|isSelected
+argument_list|()
+return|;
+block|}
+specifier|public
+name|boolean
+name|isMeaningfulPk
+parameter_list|()
+block|{
+return|return
+name|meaningfulPk
 operator|.
 name|isSelected
 argument_list|()

@@ -430,7 +430,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that does reverse engineering of the database. It can create DataMaps  * using database meta data obtained via JDBC driver.  *   */
+comment|/**  * Utility class that does reverse engineering of the database. It can create DataMaps  * using database meta data obtained via JDBC driver.  */
 end_comment
 
 begin_class
@@ -470,7 +470,7 @@ argument_list|(
 literal|"auto_pk_for_table"
 argument_list|,
 literal|"auto_pk_for_table;1"
-comment|/*                                                          * the last name is some Mac OS X                                                          * Sybase artifact                                                          */
+comment|/*                                    * the last name is some Mac OS X Sybase artifact                                    */
 argument_list|)
 decl_stmt|;
 specifier|public
@@ -496,7 +496,7 @@ name|DbEntity
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * CAY-479 - need to track which entities are skipped in       * the loader so that relationships to non-skipped entities can be loaded       */
+comment|/**      * CAY-479 - need to track which entities are skipped in the loader so that      * relationships to non-skipped entities can be loaded      */
 specifier|private
 name|Set
 argument_list|<
@@ -571,7 +571,7 @@ return|;
 block|}
 specifier|protected
 name|Connection
-name|con
+name|connection
 decl_stmt|;
 specifier|protected
 name|DbAdapter
@@ -589,17 +589,21 @@ specifier|protected
 name|String
 name|genericClassName
 decl_stmt|;
+specifier|protected
+name|boolean
+name|creatingMeaningfulPK
+decl_stmt|;
 comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
 specifier|protected
 name|NamingStrategy
 name|namingStrategy
 decl_stmt|;
-comment|/** Creates new DbLoader. */
+comment|/**      * Creates new DbLoader.      */
 specifier|public
 name|DbLoader
 parameter_list|(
 name|Connection
-name|con
+name|connection
 parameter_list|,
 name|DbAdapter
 name|adapter
@@ -610,7 +614,7 @@ parameter_list|)
 block|{
 name|this
 argument_list|(
-name|con
+name|connection
 argument_list|,
 name|adapter
 argument_list|,
@@ -622,12 +626,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Creates new DbLoader with specified naming strategy. */
+comment|/**      * Creates new DbLoader with specified naming strategy.      *       * @since 3.0      */
 specifier|public
 name|DbLoader
 parameter_list|(
 name|Connection
-name|con
+name|connection
 parameter_list|,
 name|DbAdapter
 name|adapter
@@ -647,9 +651,9 @@ name|adapter
 expr_stmt|;
 name|this
 operator|.
-name|con
+name|connection
 operator|=
-name|con
+name|connection
 expr_stmt|;
 name|this
 operator|.
@@ -679,7 +683,7 @@ name|metaData
 condition|)
 name|metaData
 operator|=
-name|con
+name|connection
 operator|.
 name|getMetaData
 argument_list|()
@@ -688,17 +692,53 @@ return|return
 name|metaData
 return|;
 block|}
-comment|/**      * Returns database connection used by this DbLoader.      */
+specifier|public
+name|void
+name|setCreatingMeaningfulPK
+parameter_list|(
+name|boolean
+name|check
+parameter_list|)
+block|{
+name|this
+operator|.
+name|creatingMeaningfulPK
+operator|=
+name|check
+expr_stmt|;
+block|}
+comment|/**      * Returns true if the generator should map all primary key columns as ObjAttributes.      *       * @since 3.0      */
+specifier|public
+name|boolean
+name|isCreatingMeaningfulPK
+parameter_list|()
+block|{
+return|return
+name|creatingMeaningfulPK
+return|;
+block|}
+comment|/**      * Returns database connection used by this DbLoader.      *       * @since 3.0      */
+specifier|public
+name|Connection
+name|getConnection
+parameter_list|()
+block|{
+return|return
+name|connection
+return|;
+block|}
+comment|/**      * @deprecated since 3.0 in favor of {@link #getConnection()}.      */
 specifier|public
 name|Connection
 name|getCon
 parameter_list|()
 block|{
 return|return
-name|con
+name|getConnection
+argument_list|()
 return|;
 block|}
-comment|/**      * Returns a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If      * generic class name is null (which is the default), DbLoader will assign each entity      * a unique class name derived from the table name.      *       * @since 1.2      */
+comment|/**      * Returns a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If generic      * class name is null (which is the default), DbLoader will assign each entity a      * unique class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|String
 name|getGenericClassName
@@ -708,7 +748,7 @@ return|return
 name|genericClassName
 return|;
 block|}
-comment|/**      * Sets a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If      * generic class name is set to null (which is the default), DbLoader will assign each      * entity a unique class name derived from the table name.      *       * @since 1.2      */
+comment|/**      * Sets a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If generic      * class name is set to null (which is the default), DbLoader will assign each entity      * a unique class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|void
 name|setGenericClassName
@@ -734,7 +774,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * A method that return true if the given table name should be included. The default      * implemntation include all tables.      */
+comment|/**      * A method that return true if the given table name should be included. The default      * implementation include all tables.      */
 specifier|public
 name|boolean
 name|includeTableName
@@ -1595,7 +1635,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// delegate might have thrown this entity out... so check if it is still
-comment|// around  before continuing processing
+comment|// around before continuing processing
 if|if
 condition|(
 name|map
@@ -2018,6 +2058,9 @@ argument_list|(
 name|map
 argument_list|,
 name|namingStrategy
+argument_list|,
+operator|!
+name|creatingMeaningfulPK
 argument_list|)
 operator|.
 name|synchronizeWithDbEntities
@@ -2169,7 +2212,7 @@ literal|null
 decl_stmt|;
 do|do
 block|{
-comment|//extract data from resultset
+comment|// extract data from resultset
 name|key
 operator|=
 name|ExportedKey
@@ -3577,7 +3620,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets new naming strategy for reverse engineering      */
+comment|/**      * Sets new naming strategy for reverse engineering      *       * @since 3.0      */
 specifier|public
 name|void
 name|setNamingStrategy
@@ -3586,7 +3629,7 @@ name|NamingStrategy
 name|strategy
 parameter_list|)
 block|{
-comment|//null values are not allowed
+comment|// null values are not allowed
 if|if
 condition|(
 name|strategy
@@ -3609,7 +3652,7 @@ operator|=
 name|strategy
 expr_stmt|;
 block|}
-comment|/**      * @return naming strategy for reverse engineering      */
+comment|/**      * @return naming strategy for reverse engineering      * @since 3.0      */
 specifier|public
 name|NamingStrategy
 name|getNamingStrategy

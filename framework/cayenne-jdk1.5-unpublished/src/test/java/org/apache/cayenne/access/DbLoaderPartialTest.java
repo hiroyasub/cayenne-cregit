@@ -444,7 +444,7 @@ finally|finally
 block|{
 name|loader
 operator|.
-name|getCon
+name|getConnection
 argument_list|()
 operator|.
 name|close

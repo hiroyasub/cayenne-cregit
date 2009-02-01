@@ -68,8 +68,7 @@ specifier|public
 interface|interface
 name|NamingStrategy
 block|{
-comment|/**      * Creates new name for Obj Entity       */
-specifier|public
+comment|/**      * Creates new name for Obj Entity      */
 name|String
 name|createObjEntityName
 parameter_list|(
@@ -77,8 +76,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Creates new name for Obj Attribute       */
-specifier|public
+comment|/**      * Creates new name for Obj Attribute      */
 name|String
 name|createObjAttributeName
 parameter_list|(
@@ -86,8 +84,7 @@ name|DbAttribute
 name|attr
 parameter_list|)
 function_decl|;
-comment|/**      * Creates new name for Db Relationship       */
-specifier|public
+comment|/**      * Creates new name for Db Relationship      */
 name|String
 name|createDbRelationshipName
 parameter_list|(
@@ -98,8 +95,7 @@ name|boolean
 name|toMany
 parameter_list|)
 function_decl|;
-comment|/**      * Creates new name for Obj Relationship       */
-specifier|public
+comment|/**      * Creates new name for Obj Relationship      */
 name|String
 name|createObjRelationshipName
 parameter_list|(
