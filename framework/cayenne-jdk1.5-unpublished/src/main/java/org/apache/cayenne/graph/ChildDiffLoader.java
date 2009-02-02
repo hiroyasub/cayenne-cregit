@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|graph
 package|;
 end_package
 
@@ -112,20 +112,6 @@ operator|.
 name|cayenne
 operator|.
 name|QueryResponse
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|graph
-operator|.
-name|GraphChangeHandler
 import|;
 end_import
 
@@ -316,6 +302,7 @@ name|ObjectContext
 name|context
 decl_stmt|;
 comment|/**      * Returns whether child diff processing is in progress.      *       * @since 3.0      */
+specifier|public
 specifier|static
 name|boolean
 name|isProcessingChildDiff
@@ -329,6 +316,7 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Sets whether child diff processing is in progress.      *       * @since 3.0      */
+specifier|public
 specifier|static
 name|void
 name|setExternalChange

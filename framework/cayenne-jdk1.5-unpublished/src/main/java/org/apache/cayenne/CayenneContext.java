@@ -61,9 +61,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|event
 operator|.
-name|ChildDiffLoader
+name|EventManager
 import|;
 end_import
 
@@ -75,9 +75,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|event
+name|graph
 operator|.
-name|EventManager
+name|ChildDiffLoader
 import|;
 end_import
 
