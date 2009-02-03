@@ -43,7 +43,7 @@ name|cayenne
 operator|.
 name|cache
 operator|.
-name|QueryCacheEntryFactory
+name|QueryCache
 import|;
 end_import
 
@@ -57,7 +57,7 @@ name|cayenne
 operator|.
 name|cache
 operator|.
-name|QueryCache
+name|QueryCacheEntryFactory
 import|;
 end_import
 

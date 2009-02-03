@@ -133,10 +133,6 @@ name|CayenneCase
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 specifier|abstract
@@ -408,7 +404,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Temporary workaround for current inability to store dates in test       * fixture XML files.      */
+comment|/**      * Temporary workaround for current inability to store dates in test fixture XML      * files.      */
 specifier|public
 name|void
 name|populateExhibits
@@ -537,7 +533,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Helper method that takes one of the artists from the standard      * dataset (always the same one) and creates a new painting for this artist,      * committing it to the database. Both Painting and Artist will be cached in current      * DataContext.      */
+comment|/**      * Helper method that takes one of the artists from the standard dataset (always the      * same one) and creates a new painting for this artist, committing it to the      * database. Both Painting and Artist will be cached in current DataContext.      */
 specifier|protected
 name|Painting
 name|insertPaintingInContext

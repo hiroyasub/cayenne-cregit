@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API needed to handle differences between various databases accessed via JDBC.  * Implementing classed are intended to be pluggable database-specific adapters.  * DbAdapter-based architecture is introduced to solve the following problems:  *<ul>  *<li>Make Cayenne code independent from SQL syntax differences between different RDBMS.  *<li>Allow for vendor-specific tuning of JDBC access.  *</ul>  *   */
+comment|/**  * Defines API needed to handle differences between various databases accessed via JDBC.  * Implementing classed are intended to be pluggable database-specific adapters.  * DbAdapter-based architecture is introduced to solve the following problems:  *<ul>  *<li>Make Cayenne code independent from SQL syntax differences between different RDBMS.  *<li>Allow for vendor-specific tuning of JDBC access.  *</ul>  */
 end_comment
 
 begin_interface
@@ -293,7 +293,7 @@ name|DbRelationship
 name|rel
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an array of RDBMS types that can be used with JDBC<code>type</code>.      * Valid JDBC types are defined in java.sql.Types.      */
+comment|/**      * Returns an array of RDBMS types that can be used with JDBC<code>type</code>. Valid      * JDBC types are defined in java.sql.Types.      */
 name|String
 index|[]
 name|externalTypesForJdbcType
@@ -375,7 +375,6 @@ name|mergerFactory
 parameter_list|()
 function_decl|;
 comment|/**      * Append the column type part of a "create table" to the given {@link StringBuffer}      *       * @param sqlBuffer the {@link StringBuffer} to append the column type to      * @param column the {@link DbAttribute} defining the column to append type for      * @since 3.0      */
-specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(
@@ -385,6 +384,16 @@ parameter_list|,
 name|DbAttribute
 name|column
 parameter_list|)
+function_decl|;
+comment|/**      * @since 3.0      */
+name|String
+name|getIdentifiersStartQuote
+parameter_list|()
+function_decl|;
+comment|/**      * @since 3.0      */
+name|String
+name|getIdentifiersEndQuote
+parameter_list|()
 function_decl|;
 block|}
 end_interface

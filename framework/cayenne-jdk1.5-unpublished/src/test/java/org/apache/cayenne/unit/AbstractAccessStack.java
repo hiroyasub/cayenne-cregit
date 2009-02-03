@@ -288,7 +288,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of algorithms useful for a generic AccessStack.  *   */
+comment|/**  * Defines a set of algorithms useful for a generic AccessStack.  */
 end_comment
 
 begin_class
@@ -300,7 +300,7 @@ block|{
 specifier|private
 specifier|static
 name|Log
-name|logObj
+name|logger
 init|=
 name|LogFactory
 operator|.
@@ -1004,7 +1004,7 @@ control|)
 block|{
 try|try
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -1025,7 +1025,7 @@ name|SQLException
 name|sqe
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|warn
 argument_list|(

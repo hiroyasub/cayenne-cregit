@@ -533,6 +533,24 @@ name|column
 parameter_list|)
 block|{
 block|}
+specifier|public
+name|String
+name|getIdentifiersStartQuote
+parameter_list|()
+block|{
+return|return
+literal|"\""
+return|;
+block|}
+specifier|public
+name|String
+name|getIdentifiersEndQuote
+parameter_list|()
+block|{
+return|return
+literal|"\""
+return|;
+block|}
 block|}
 end_class
 

@@ -107,6 +107,20 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|JdbcAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|JdbcPkGenerator
 import|;
 end_import
@@ -164,12 +178,26 @@ name|FrontBasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+comment|/**      * @deprecated since 3.0      */
 specifier|public
 name|FrontBasePkGenerator
 parameter_list|()
 block|{
 name|super
 argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|FrontBasePkGenerator
+parameter_list|(
+name|JdbcAdapter
+name|adapter
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|adapter
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Retruns zero as PK caching is not supported by FrontBaseAdapter.      */
