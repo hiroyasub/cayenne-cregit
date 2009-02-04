@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|sql
 operator|.
 name|PreparedStatement
@@ -89,6 +99,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|QuotingStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -110,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of batch query translators.  *   */
+comment|/**  * Superclass of batch query translators.  */
 end_comment
 
 begin_class
@@ -146,7 +170,7 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-comment|/**      * Translates BatchQuery into an SQL string formatted to use in a PreparedStatement.      */
+comment|/**      * Translates BatchQuery into an SQL string formatted to use in a PreparedStatement.      *       * @throws IOException      */
 specifier|public
 specifier|abstract
 name|String
@@ -155,6 +179,8 @@ parameter_list|(
 name|BatchQuery
 name|batch
 parameter_list|)
+throws|throws
+name|IOException
 function_decl|;
 comment|/**      * Appends the name of the column to the query buffer. Subclasses use this method to      * append column names in the WHERE clause, i.e. for the columns that are not being      * updated.      */
 specifier|protected
@@ -203,14 +229,69 @@ literal|'('
 argument_list|)
 expr_stmt|;
 block|}
+name|boolean
+name|status
+decl_stmt|;
+if|if
+condition|(
+name|dbAttribute
+operator|.
+name|getEntity
+argument_list|()
+operator|.
+name|getDataMap
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|dbAttribute
+operator|.
+name|getEntity
+argument_list|()
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|isQuotingSQLIdentifiers
+argument_list|()
+condition|)
+block|{
+name|status
+operator|=
+literal|true
+expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+literal|false
+expr_stmt|;
+block|}
+name|QuotingStrategy
+name|strategy
+init|=
+name|getAdapter
+argument_list|()
+operator|.
+name|getQuotingStrategy
+argument_list|(
+name|status
+argument_list|)
+decl_stmt|;
 name|buf
 operator|.
 name|append
+argument_list|(
+name|strategy
+operator|.
+name|quoteString
 argument_list|(
 name|dbAttribute
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -1317,6 +1317,24 @@ return|return
 name|DEFAULT_QUOTE_SQL_IDENTIFIERS_CHAR_END
 return|;
 block|}
+specifier|public
+name|QuotingStrategy
+name|getQuotingStrategy
+parameter_list|(
+name|boolean
+name|isQuoteStrategy
+parameter_list|)
+block|{
+return|return
+name|getAdapter
+argument_list|()
+operator|.
+name|getQuotingStrategy
+argument_list|(
+name|isQuoteStrategy
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 

@@ -551,6 +551,18 @@ return|return
 literal|"\""
 return|;
 block|}
+specifier|public
+name|QuotingStrategy
+name|getQuotingStrategy
+parameter_list|(
+name|boolean
+name|isQuoteStrategy
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 

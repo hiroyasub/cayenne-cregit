@@ -386,14 +386,13 @@ name|column
 parameter_list|)
 function_decl|;
 comment|/**      * @since 3.0      */
-name|String
-name|getIdentifiersStartQuote
-parameter_list|()
-function_decl|;
-comment|/**      * @since 3.0      */
-name|String
-name|getIdentifiersEndQuote
-parameter_list|()
+specifier|public
+name|QuotingStrategy
+name|getQuotingStrategy
+parameter_list|(
+name|boolean
+name|needQuotes
+parameter_list|)
 function_decl|;
 block|}
 end_interface

@@ -995,11 +995,14 @@ block|{
 name|QuotingStrategy
 name|context
 init|=
-name|getContextQuoteStrategy
+name|getQuotingStrategy
 argument_list|(
 name|table
 operator|.
 name|getDataMap
+argument_list|()
+operator|.
+name|isQuotingSQLIdentifiers
 argument_list|()
 argument_list|)
 decl_stmt|;
