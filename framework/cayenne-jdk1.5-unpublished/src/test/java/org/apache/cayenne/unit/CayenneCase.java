@@ -235,6 +235,14 @@ name|QUALIFIED_ACCESS_STACK
 init|=
 literal|"QualifiedStack"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|QUOTEMAP_ACCESS_STACK
+init|=
+literal|"QuoteMapStack"
+decl_stmt|;
 static|static
 block|{
 comment|// create dummy shared config

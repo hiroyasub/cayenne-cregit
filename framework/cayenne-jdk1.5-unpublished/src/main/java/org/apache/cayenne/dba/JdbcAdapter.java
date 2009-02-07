@@ -2456,9 +2456,13 @@ return|return
 operator|new
 name|QuoteStrategy
 argument_list|(
+name|this
+operator|.
 name|getIdentifiersStartQuote
 argument_list|()
 argument_list|,
+name|this
+operator|.
 name|getIdentifiersEndQuote
 argument_list|()
 argument_list|)
