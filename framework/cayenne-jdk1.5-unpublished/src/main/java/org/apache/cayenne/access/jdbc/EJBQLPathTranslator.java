@@ -255,7 +255,7 @@ specifier|protected
 name|ObjEntity
 name|currentEntity
 decl_stmt|;
-specifier|private
+specifier|protected
 name|String
 name|lastPathComponent
 decl_stmt|;
@@ -684,7 +684,7 @@ name|newPath
 expr_stmt|;
 block|}
 block|}
-specifier|private
+specifier|protected
 name|void
 name|processIntermediatePathComponent
 parameter_list|()
@@ -741,7 +741,7 @@ name|getTargetEntity
 argument_list|()
 expr_stmt|;
 block|}
-specifier|private
+specifier|protected
 name|void
 name|processLastPathComponent
 parameter_list|()
