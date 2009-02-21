@@ -57,6 +57,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|QuotingStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -78,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to add a "not null" clause to a column.  *   */
+comment|/**  * A {@link MergerToken} to add a "not null" clause to a column.  */
 end_comment
 
 begin_class
@@ -128,6 +142,23 @@ operator|new
 name|StringBuilder
 argument_list|()
 decl_stmt|;
+name|QuotingStrategy
+name|context
+init|=
+name|adapter
+operator|.
+name|getQuotingStrategy
+argument_list|(
+name|getEntity
+argument_list|()
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|isQuotingSQLIdentifiers
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|sqlBuffer
 operator|.
 name|append
@@ -139,11 +170,13 @@ name|sqlBuffer
 operator|.
 name|append
 argument_list|(
+name|context
+operator|.
+name|quoteFullyQualifiedName
+argument_list|(
 name|getEntity
 argument_list|()
-operator|.
-name|getFullyQualifiedName
-argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sqlBuffer
@@ -157,11 +190,16 @@ name|sqlBuffer
 operator|.
 name|append
 argument_list|(
+name|context
+operator|.
+name|quoteString
+argument_list|(
 name|getColumn
 argument_list|()
 operator|.
 name|getName
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sqlBuffer

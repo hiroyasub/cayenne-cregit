@@ -452,6 +452,16 @@ name|DataMap
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|detectedDataMap
+operator|.
+name|setQuotingSQLIdentifiers
+argument_list|(
+name|dataMap
+operator|.
+name|isQuotingSQLIdentifiers
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|String
