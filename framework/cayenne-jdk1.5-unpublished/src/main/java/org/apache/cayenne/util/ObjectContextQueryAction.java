@@ -53,6 +53,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|BaseContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectContext
 import|;
 end_import
@@ -232,7 +244,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that implements  * {@link org.apache.cayenne.DataChannel#onQuery(ObjectContext, Query)} logic on behalf of  * an ObjectContext.  *<p>  *<i>Intended for internal use only.</i>  *</p>  *   * @since 1.2  */
+comment|/**  * A helper class that implements  * {@link org.apache.cayenne.DataChannel#onQuery(ObjectContext, Query)} logic on behalf of  * an ObjectContext.  *<p>  *<i>Intended for internal use only.</i>  *</p>  *  * @since 1.2  */
 end_comment
 
 begin_class
@@ -887,6 +899,46 @@ name|ListResponse
 argument_list|(
 name|result
 argument_list|)
+expr_stmt|;
+return|return
+name|DONE
+return|;
+block|}
+comment|/**                          * Workaround for CAY-1183. If a Relationship query is being sent from                          * child context, we assure that local object is not NEW and relationship - unresolved                          * (this way exception will occur). This helps when faulting objects that                          * were committed to parent context (this), but not to database.                          *                          * Checking type of context's channel is the only way to ensure that we are                          * on the top level of context hierarchy (there might be more than one-level-deep                          * nested contexts).                          */
+if|if
+condition|(
+operator|(
+operator|(
+name|Persistent
+operator|)
+name|object
+operator|)
+operator|.
+name|getPersistenceState
+argument_list|()
+operator|==
+name|PersistenceState
+operator|.
+name|NEW
+operator|&&
+operator|!
+operator|(
+name|actingContext
+operator|.
+name|getChannel
+argument_list|()
+operator|instanceof
+name|BaseContext
+operator|)
+condition|)
+block|{
+name|this
+operator|.
+name|response
+operator|=
+operator|new
+name|ListResponse
+argument_list|()
 expr_stmt|;
 return|return
 name|DONE
