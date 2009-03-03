@@ -426,13 +426,29 @@ name|MojoExecutionException
 throws|,
 name|MojoFailureException
 block|{
+comment|//setup the system property to tell the modeler where to generate the java source files.
+name|System
+operator|.
+name|setProperty
+argument_list|(
+literal|"cayenne.cgen.destdir"
+argument_list|,
+name|project
+operator|.
+name|getBuild
+argument_list|()
+operator|.
+name|getSourceDirectory
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|//start the modeler with the provided model file, if it exists.
 name|File
 name|f
 init|=
 name|lookupModelFile
 argument_list|()
 decl_stmt|;
-comment|//start the modeler with the provided model file, if it exists.
 if|if
 condition|(
 name|f
