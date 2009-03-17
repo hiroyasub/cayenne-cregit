@@ -221,6 +221,18 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
 begin_comment
 comment|/**  * Model for the Object Entity attributes and for Obj to DB Attribute Mapping tables.  * Allows adding/removing attributes, modifying the types and the names.  *   */
 end_comment
@@ -745,6 +757,8 @@ name|EmbeddedAttribute
 operator|)
 condition|)
 block|{
+try|try
+block|{
 name|type
 operator|=
 name|TypesMapping
@@ -760,6 +774,19 @@ name|getJavaClass
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//have to catch the exception here to make sure that exceptional situations
+comment|//(class doesn't exist, for example) don't prevent the gui from properly updating.
+block|}
+catch|catch
+parameter_list|(
+name|CayenneRuntimeException
+name|cre
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 else|else
 block|{
@@ -1071,19 +1098,10 @@ name|isInherited
 argument_list|()
 condition|)
 block|{
-if|if
-condition|(
+return|return
 name|col
 operator|==
 name|DB_ATTRIBUTE
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-return|return
-literal|false
 return|;
 block|}
 return|return
