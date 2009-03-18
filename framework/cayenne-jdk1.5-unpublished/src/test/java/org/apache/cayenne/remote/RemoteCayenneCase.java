@@ -161,6 +161,17 @@ operator|=
 name|createDataContext
 argument_list|()
 expr_stmt|;
+name|context
+operator|=
+name|createROPContext
+argument_list|()
+expr_stmt|;
+block|}
+specifier|protected
+name|CayenneContext
+name|createROPContext
+parameter_list|()
+block|{
 name|ClientServerChannel
 name|clientServerChannel
 init|=
@@ -192,8 +203,7 @@ argument_list|(
 name|connection
 argument_list|)
 decl_stmt|;
-name|context
-operator|=
+return|return
 operator|new
 name|CayenneContext
 argument_list|(
@@ -203,7 +213,7 @@ literal|true
 argument_list|,
 literal|true
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 annotation|@
 name|Override

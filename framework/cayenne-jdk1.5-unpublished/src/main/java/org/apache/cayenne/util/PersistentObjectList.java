@@ -1018,6 +1018,7 @@ return|return
 name|objectList
 return|;
 block|}
+specifier|protected
 name|void
 name|clearLocalChanges
 parameter_list|()
@@ -1031,6 +1032,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
+specifier|protected
 name|void
 name|mergeLocalChanges
 parameter_list|(
@@ -1158,6 +1160,7 @@ name|clearLocalChanges
 argument_list|()
 expr_stmt|;
 block|}
+specifier|protected
 name|boolean
 name|addLocal
 parameter_list|(
@@ -1207,6 +1210,7 @@ return|return
 literal|true
 return|;
 block|}
+specifier|protected
 name|boolean
 name|removeLocal
 parameter_list|(
@@ -1259,6 +1263,7 @@ return|return
 literal|true
 return|;
 block|}
+specifier|protected
 name|void
 name|postprocessAdd
 parameter_list|(
@@ -1292,6 +1297,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
 name|void
 name|postprocessRemove
 parameter_list|(
@@ -1325,6 +1331,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
 name|void
 name|postprocessAdd
 parameter_list|(
@@ -1361,6 +1368,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
 name|void
 name|postprocessRemove
 parameter_list|(
