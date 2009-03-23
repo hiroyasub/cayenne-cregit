@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *  * @since 1.2  */
+comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  */
 end_comment
 
 begin_interface
@@ -172,7 +172,7 @@ argument_list|>
 name|persistentClass
 parameter_list|)
 function_decl|;
-comment|/**      * Registers a transient object with the context. The difference with      * {@link #newObject(Class)} is that a user creates an object herself, before      * attaching it to the context, instead of relying on Cayenne to do that.      *      * @param object new object that needs to be made persistent.      * @since 3.0      */
+comment|/**      * Registers a transient object with the context. The difference with      * {@link #newObject(Class)} is that a user creates an object herself, before      * attaching it to the context, instead of relying on Cayenne to do that.      *       * @param object new object that needs to be made persistent.      * @since 3.0      */
 name|void
 name|registerNewObject
 parameter_list|(
@@ -180,7 +180,7 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
-comment|/**      * Schedules a persistent object for deletion on next commit.      *      * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      */
+comment|/**      * Schedules a persistent object for deletion on next commit.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      */
 name|void
 name|deleteObject
 parameter_list|(
@@ -190,7 +190,7 @@ parameter_list|)
 throws|throws
 name|DeleteDenyException
 function_decl|;
-comment|/**      * A callback method that child Persistent objects are expected to call before      * accessing property values. This callback allows ObjectContext to "inflate"      * unresolved objects on demand and also resolve properties that rely on lazy      * faulting.      *      * @since 3.0      */
+comment|/**      * A callback method that child Persistent objects are expected to call before      * accessing property values. This callback allows ObjectContext to "inflate"      * unresolved objects on demand and also resolve properties that rely on lazy      * faulting.      *       * @since 3.0      */
 name|void
 name|prepareForAccess
 parameter_list|(
@@ -285,17 +285,17 @@ name|DataChannel
 name|getChannel
 parameter_list|()
 function_decl|;
-comment|/**      * Creates and returns a new child ObjectContext.      *      * @since 3.0      */
+comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
 name|ObjectContext
 name|createChildContext
 parameter_list|()
 function_decl|;
-comment|/**      * Returns<code>true</code> if there are any modified, deleted or new objects      * registered with this ObjectContext,<code>false</code> otherwise.      *      * @since 3.0      */
+comment|/**      * Returns<code>true</code> if there are any modified, deleted or new objects      * registered with this ObjectContext,<code>false</code> otherwise.      *       * @since 3.0      */
 name|boolean
 name|hasChanges
 parameter_list|()
 function_decl|;
-comment|/**      * "Invalidates" a Collection of persistent objects. This operation would remove each      * object's snapshot from cache and change object's state to HOLLOW. On the next      * access to this object, it will be refetched.      *      * @see RefreshQuery      */
+comment|/**      * Invalidates a Collection of persistent objects. This operation only applies to the      * objects already committed to the database and does nothing to the NEW objects. It      * would remove each object's snapshot from caches and change object's state to      * HOLLOW. On the next access to this object, the object will be refetched.      *       * @see RefreshQuery      */
 name|void
 name|invalidateObjects
 parameter_list|(
@@ -303,7 +303,7 @@ name|Collection
 name|objects
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *      * @since 3.0      */
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *       * @since 3.0      */
 specifier|public
 name|Object
 name|getUserProperty
@@ -312,7 +312,7 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *      * @since 3.0      */
+comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setUserProperty
