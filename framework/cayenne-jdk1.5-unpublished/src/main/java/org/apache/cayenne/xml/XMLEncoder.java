@@ -57,16 +57,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|xml
@@ -433,6 +423,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Resets the encoder to process a new object tree.      */
+specifier|protected
 name|void
 name|initDocument
 parameter_list|(
@@ -493,6 +484,7 @@ literal|true
 expr_stmt|;
 block|}
 comment|/**      * Returns a root DOM node of the encoder.      */
+specifier|protected
 name|Node
 name|getRootNode
 parameter_list|(
@@ -548,6 +540,7 @@ return|return
 name|root
 return|;
 block|}
+specifier|protected
 name|String
 name|nodeToString
 parameter_list|(
@@ -669,6 +662,7 @@ literal|"line.separator"
 argument_list|)
 return|;
 block|}
+specifier|protected
 name|void
 name|setRoot
 parameter_list|(
@@ -750,6 +744,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
 name|void
 name|encodeProperty
 parameter_list|(
@@ -839,6 +834,9 @@ name|xmlTag
 argument_list|,
 operator|(
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|value
 argument_list|,
@@ -859,6 +857,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
 name|void
 name|encodeSimple
 parameter_list|(
@@ -961,6 +960,7 @@ name|pop
 argument_list|()
 expr_stmt|;
 block|}
+specifier|protected
 name|void
 name|encodeSerializable
 parameter_list|(
@@ -1004,6 +1004,7 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Encodes a collection of objects, attaching them to the current root.      *       * @param xmlTag The name of the root XML element for the encoded collection.      * @param c The collection to encode.      */
+specifier|protected
 name|void
 name|encodeCollection
 parameter_list|(
@@ -1011,38 +1012,30 @@ name|String
 name|xmlTag
 parameter_list|,
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|c
 parameter_list|,
 name|boolean
 name|useType
 parameter_list|)
 block|{
-name|Iterator
-name|it
-init|=
-name|c
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
 comment|// encode collection without doing push/pop so that its elements are encoded
 comment|// without an intermediate grouping node.
+for|for
+control|(
+name|Object
+name|o
+range|:
+name|c
+control|)
+block|{
 name|encodeProperty
 argument_list|(
 name|xmlTag
 argument_list|,
-name|it
-operator|.
-name|next
-argument_list|()
+name|o
 argument_list|,
 name|useType
 argument_list|)

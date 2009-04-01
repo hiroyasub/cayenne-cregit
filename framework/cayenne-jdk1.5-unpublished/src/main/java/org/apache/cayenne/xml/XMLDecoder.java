@@ -103,16 +103,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -159,18 +149,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|Persistent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectContext
 import|;
 end_import
@@ -183,9 +161,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|DataContext
+name|Persistent
 import|;
 end_import
 
@@ -265,10 +241,26 @@ block|{
 specifier|static
 specifier|final
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
 name|classMapping
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
 argument_list|()
 decl_stmt|;
 static|static
@@ -591,7 +583,7 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Decodes an XML element to an Object.      *       * @param child The XML element.      * @return The tag's value.      */
-specifier|private
+specifier|protected
 name|Object
 name|decodeObject
 parameter_list|(
@@ -648,11 +640,11 @@ throw|;
 block|}
 comment|// temp hack to support primitives...
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 init|=
-operator|(
-name|Class
-operator|)
 name|classMapping
 operator|.
 name|get
@@ -915,6 +907,9 @@ block|}
 block|}
 comment|// handle all other primitive types...
 name|Constructor
+argument_list|<
+name|?
+argument_list|>
 name|c
 init|=
 name|objectClass
@@ -1081,7 +1076,7 @@ name|ret
 return|;
 block|}
 comment|/**      * Decodes the XML element to an object. If the supplied context is not null, the      * object will be registered with it and committed to the database.      *       * @param element The XML element.      * @return The decoded object.      * @throws CayenneRuntimeException      */
-specifier|private
+specifier|protected
 name|Object
 name|decodeElement
 parameter_list|(
@@ -1170,8 +1165,11 @@ name|object
 return|;
 block|}
 comment|/**      * Decodes a Collection represented by XML wrapped by a Reader into a List of objects.      * Each object will be registered with the supplied context.      *       * @param xml The XML element representing the elements in the collection to decode.      * @return A List of all the decoded objects.      * @throws CayenneRuntimeException      */
-specifier|private
+specifier|protected
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|decodeCollection
 parameter_list|(
 name|Element
@@ -1181,6 +1179,9 @@ throws|throws
 name|CayenneRuntimeException
 block|{
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|ret
 decl_stmt|;
 try|try
@@ -1217,10 +1218,16 @@ name|newInstance
 argument_list|()
 decl_stmt|;
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|c
 init|=
 operator|(
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|PropertyUtils
 operator|.
@@ -1264,9 +1271,11 @@ block|}
 comment|// Each child of the root corresponds to an XML representation of
 comment|// the object. The idea is decode each of those into an object and add them to the
 comment|// list to be returned.
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Element
+name|e
+range|:
 name|XMLUtil
 operator|.
 name|getChildren
@@ -1281,30 +1290,9 @@ operator|.
 name|getNodeName
 argument_list|()
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 comment|// Decode the object.
-name|Element
-name|e
-init|=
-operator|(
-name|Element
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|decodedCollections
 operator|.
 name|add
@@ -1337,6 +1325,9 @@ comment|/**      * Decodes a list of DataObjects.      *       * @param xml The 
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|decodeList
 parameter_list|(
 name|Reader
@@ -1360,6 +1351,9 @@ comment|/**      * Decodes a list of DataObjects, registering them the supplied 
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|decodeList
 parameter_list|(
 name|Reader
@@ -1386,6 +1380,9 @@ comment|/**      * Decodes a list of DataObjects using the supplied mapping file
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|decodeList
 parameter_list|(
 name|Reader
@@ -1412,6 +1409,9 @@ comment|/**      * Decodes a list of DataObjects using the supplied mapping file
 specifier|public
 specifier|static
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|decodeList
 parameter_list|(
 name|Reader
@@ -1447,6 +1447,9 @@ name|getDocumentElement
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|ret
 decl_stmt|;
 try|try
@@ -1465,6 +1468,9 @@ name|ret
 operator|=
 operator|(
 name|List
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|Class
 operator|.
@@ -1517,39 +1523,20 @@ block|}
 comment|// Each child of the root corresponds to an XML representation of
 comment|// the object. The idea is decode each of those into an object and add them to the
 comment|// list to be returned.
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Element
+name|e
+range|:
 name|XMLUtil
 operator|.
 name|getChildren
 argument_list|(
 name|listRoot
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 comment|// Decode the object.
-name|Element
-name|e
-init|=
-operator|(
-name|Element
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|decoder
 operator|.
 name|decodedCollections
