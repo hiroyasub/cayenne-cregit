@@ -209,7 +209,7 @@ argument_list|)
 expr_stmt|;
 name|addTab
 argument_list|(
-literal|"EJBQL Scripts"
+literal|"EJBQL"
 argument_list|,
 name|scriptsTab
 argument_list|)
