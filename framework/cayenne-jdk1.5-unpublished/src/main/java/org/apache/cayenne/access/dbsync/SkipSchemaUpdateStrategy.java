@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * A SchemaUpdateStrategy that does nothing. This is usually the default strategy, as in  * most cases DB schema management is outside the scope of Cayenne.  *   * @since 3.0  */
 end_comment
 
 begin_class

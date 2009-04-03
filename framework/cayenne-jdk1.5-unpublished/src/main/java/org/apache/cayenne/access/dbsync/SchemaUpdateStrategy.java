@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * A strategy for auto generating a database schema on the application startup.  *   * @since 3.0  */
 end_comment
 
 begin_interface

@@ -220,7 +220,6 @@ return|return
 name|currentSchema
 return|;
 block|}
-comment|/**      * @since 3.0      */
 specifier|public
 name|CreateIfNoSchemaStrategy
 parameter_list|()
@@ -230,7 +229,6 @@ operator|=
 name|this
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|updateSchema
@@ -248,7 +246,6 @@ name|dataNode
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|generateUpdateSchema
@@ -481,7 +478,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/*      * Returns all the table names in database      */
+comment|/**      * Returns all the table names in database.      */
 specifier|protected
 name|Map
 argument_list|<
