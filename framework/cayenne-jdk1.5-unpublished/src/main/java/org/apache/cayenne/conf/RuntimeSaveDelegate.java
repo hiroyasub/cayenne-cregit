@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Save delegate used for saving Cayenne access stack.  *   */
+comment|/**  * Save delegate used for saving Cayenne access stack.  */
 end_comment
 
 begin_class
@@ -750,6 +750,30 @@ name|nodeName
 argument_list|)
 operator|.
 name|getDataSourceFactory
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|String
+name|nodeSchemaUpdateStrategyName
+parameter_list|(
+name|String
+name|domainName
+parameter_list|,
+name|String
+name|nodeName
+parameter_list|)
+block|{
+return|return
+name|findNode
+argument_list|(
+name|domainName
+argument_list|,
+name|nodeName
+argument_list|)
+operator|.
+name|getSchemaUpdateStrategyName
 argument_list|()
 return|;
 block|}

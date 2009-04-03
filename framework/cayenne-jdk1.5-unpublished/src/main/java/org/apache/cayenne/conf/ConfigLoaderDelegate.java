@@ -137,6 +137,9 @@ name|adapter
 parameter_list|,
 name|String
 name|factory
+parameter_list|,
+name|String
+name|schemaUpdateStrategy
 parameter_list|)
 function_decl|;
 specifier|public

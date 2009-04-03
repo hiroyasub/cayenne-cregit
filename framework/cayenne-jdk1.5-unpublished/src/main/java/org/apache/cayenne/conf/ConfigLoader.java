@@ -77,6 +77,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|dbsync
+operator|.
+name|SkipSchemaUpdateStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -170,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class that performs runtime loading of Cayenne configuration.  *   */
+comment|/**  * Class that performs runtime loading of Cayenne configuration.  */
 end_comment
 
 begin_class
@@ -1292,6 +1308,35 @@ argument_list|,
 literal|"factory"
 argument_list|)
 decl_stmt|;
+name|String
+name|schemaUpdateStrategyName
+init|=
+name|attrs
+operator|.
+name|getValue
+argument_list|(
+literal|""
+argument_list|,
+literal|"schema-update-strategy"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|schemaUpdateStrategyName
+operator|==
+literal|null
+condition|)
+block|{
+name|schemaUpdateStrategyName
+operator|=
+name|SkipSchemaUpdateStrategy
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+expr_stmt|;
+block|}
 name|delegate
 operator|.
 name|shouldLoadDataNode
@@ -1305,6 +1350,8 @@ argument_list|,
 name|adapterClass
 argument_list|,
 name|factoryName
+argument_list|,
+name|schemaUpdateStrategyName
 argument_list|)
 expr_stmt|;
 block|}

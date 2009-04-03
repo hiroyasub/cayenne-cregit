@@ -103,6 +103,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|dbsync
+operator|.
+name|SchemaUpdateStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|AutoAdapter
@@ -192,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of ConfigLoaderDelegate that creates Cayenne access objects stack.  *   */
+comment|/**  * Implementation of ConfigLoaderDelegate that creates Cayenne access objects stack.  */
 end_comment
 
 begin_class
@@ -1034,6 +1050,9 @@ name|adapter
 parameter_list|,
 name|String
 name|factory
+parameter_list|,
+name|String
+name|schemaUpdateStrategy
 parameter_list|)
 block|{
 name|logger
@@ -1051,6 +1070,10 @@ operator|+
 literal|"' factory='"
 operator|+
 name|factory
+operator|+
+literal|"' schema-update-strategy='"
+operator|+
+name|schemaUpdateStrategy
 operator|+
 literal|"'>."
 argument_list|)
@@ -1082,6 +1105,13 @@ operator|=
 name|convertClassNameFromV1_2
 argument_list|(
 name|adapter
+argument_list|)
+expr_stmt|;
+name|schemaUpdateStrategy
+operator|=
+name|convertClassNameFromV1_2
+argument_list|(
+name|schemaUpdateStrategy
 argument_list|)
 expr_stmt|;
 if|if
@@ -1149,6 +1179,25 @@ argument_list|)
 throw|;
 block|}
 block|}
+if|if
+condition|(
+name|schemaUpdateStrategy
+operator|==
+literal|null
+condition|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Warning:<node> '"
+operator|+
+name|nodeName
+operator|+
+literal|"' has no 'schema-update-strategy'."
+argument_list|)
+expr_stmt|;
+block|}
 name|DataNode
 name|node
 init|=
@@ -1171,9 +1220,70 @@ argument_list|(
 name|dataSource
 argument_list|)
 expr_stmt|;
+name|node
+operator|.
+name|setSchemaUpdateStrategyName
+argument_list|(
+name|schemaUpdateStrategy
+argument_list|)
+expr_stmt|;
 comment|// load DataSource
 try|try
 block|{
+name|SchemaUpdateStrategy
+name|confSchema
+init|=
+name|config
+operator|.
+name|getSchemaUpdateStrategy
+argument_list|()
+decl_stmt|;
+name|ClassLoader
+name|classLoader
+init|=
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|getContextClassLoader
+argument_list|()
+decl_stmt|;
+name|SchemaUpdateStrategy
+name|localSchema
+init|=
+operator|(
+name|confSchema
+operator|!=
+literal|null
+operator|)
+condition|?
+name|confSchema
+else|:
+operator|(
+name|SchemaUpdateStrategy
+operator|)
+name|Class
+operator|.
+name|forName
+argument_list|(
+name|schemaUpdateStrategy
+argument_list|,
+literal|true
+argument_list|,
+name|classLoader
+argument_list|)
+operator|.
+name|newInstance
+argument_list|()
+decl_stmt|;
+name|node
+operator|.
+name|setSchemaUpdateStrategy
+argument_list|(
+name|localSchema
+argument_list|)
+expr_stmt|;
 comment|// use DomainHelper factory if it exists, if not - use factory specified
 comment|// in configuration data
 name|DataSourceFactory

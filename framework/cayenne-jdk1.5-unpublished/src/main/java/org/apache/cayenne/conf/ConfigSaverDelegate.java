@@ -153,6 +153,18 @@ name|String
 name|nodeName
 parameter_list|)
 function_decl|;
+comment|/**      * @since 3.0      */
+specifier|public
+name|String
+name|nodeSchemaUpdateStrategyName
+parameter_list|(
+name|String
+name|domainName
+parameter_list|,
+name|String
+name|nodeName
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

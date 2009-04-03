@@ -95,6 +95,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|dbsync
+operator|.
+name|SkipSchemaUpdateStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|conn
 operator|.
 name|DataSourceInfo
@@ -130,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class that does saving of Cayenne configuration.  *   */
+comment|/**  * Class that does saving of Cayenne configuration.  */
 end_comment
 
 begin_class
@@ -627,6 +643,18 @@ argument_list|,
 name|nodeName
 argument_list|)
 decl_stmt|;
+name|String
+name|schemaUpdateStrategy
+init|=
+name|delegate
+operator|.
+name|nodeSchemaUpdateStrategyName
+argument_list|(
+name|domainName
+argument_list|,
+name|nodeName
+argument_list|)
+decl_stmt|;
 name|Iterator
 name|mapNames
 init|=
@@ -719,6 +747,47 @@ argument_list|(
 literal|"\t\t factory=\""
 operator|+
 name|factory
+operator|.
+name|trim
+argument_list|()
+operator|+
+literal|"\""
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|schemaUpdateStrategy
+operator|!=
+literal|null
+operator|&&
+operator|!
+operator|(
+name|schemaUpdateStrategy
+operator|==
+name|SkipSchemaUpdateStrategy
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+operator|)
+condition|)
+block|{
+name|pw
+operator|.
+name|println
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|pw
+operator|.
+name|print
+argument_list|(
+literal|"\t\t schema-update-strategy=\""
+operator|+
+name|schemaUpdateStrategy
 operator|.
 name|trim
 argument_list|()
