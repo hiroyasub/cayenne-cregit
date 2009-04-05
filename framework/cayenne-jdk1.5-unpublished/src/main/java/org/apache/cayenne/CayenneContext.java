@@ -77,20 +77,6 @@ name|cayenne
 operator|.
 name|graph
 operator|.
-name|ChildDiffLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|graph
-operator|.
 name|CompoundDiff
 import|;
 end_import
@@ -232,6 +218,37 @@ name|CayenneContext
 extends|extends
 name|BaseContext
 block|{
+comment|/**      * @since 3.0      */
+specifier|private
+specifier|static
+name|ThreadLocal
+argument_list|<
+name|PropertyChangeProcessingStrategy
+argument_list|>
+name|PROPERTY_CHANGE_PROCESSING_STRATEGY
+init|=
+operator|new
+name|ThreadLocal
+argument_list|<
+name|PropertyChangeProcessingStrategy
+argument_list|>
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|protected
+name|PropertyChangeProcessingStrategy
+name|initialValue
+parameter_list|()
+block|{
+return|return
+name|PropertyChangeProcessingStrategy
+operator|.
+name|RECORD_AND_PROCESS_REVERSE_ARCS
+return|;
+block|}
+block|}
+decl_stmt|;
 specifier|protected
 name|EntityResolver
 name|entityResolver
@@ -249,10 +266,6 @@ decl_stmt|;
 comment|// object that merges "backdoor" changes that come from the channel.
 name|CayenneContextMergeHandler
 name|mergeHandler
-decl_stmt|;
-comment|/**      * @since 3.0      */
-name|boolean
-name|propertyChangeCallbacksDisabled
 decl_stmt|;
 comment|/**      * Creates a new CayenneContext with no channel and disabled graph events.      */
 specifier|public
@@ -324,6 +337,38 @@ expr_stmt|;
 name|setChannel
 argument_list|(
 name|channel
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// accesses a static thread local variable... still keeping the method non-static for
+comment|// better future portability...
+name|PropertyChangeProcessingStrategy
+name|getPropertyChangeProcessingStrategy
+parameter_list|()
+block|{
+return|return
+name|PROPERTY_CHANGE_PROCESSING_STRATEGY
+operator|.
+name|get
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.0      */
+comment|// accesses a static thread local variable... still keeping the method non-static for
+comment|// better future portability...
+name|void
+name|setPropertyChangeProcessingStrategy
+parameter_list|(
+name|PropertyChangeProcessingStrategy
+name|strategy
+parameter_list|)
+block|{
+name|PROPERTY_CHANGE_PROCESSING_STRATEGY
+operator|.
+name|set
+argument_list|(
+name|strategy
 argument_list|)
 expr_stmt|;
 block|}
@@ -435,7 +480,7 @@ operator|.
 name|changeEventsEnabled
 return|;
 block|}
-comment|/**      * Returns true if this context posts lifecycle events. Subjects used for these events      * are      *<code>ObjectContext.GRAPH_COMMIT_STARTED_SUBJECT, ObjectContext.GRAPH_COMMITTED_SUBJECT,      * ObjectContext.GRAPH_COMMIT_ABORTED_SUBJECT, ObjectContext.GRAPH_ROLLEDBACK_SUBJECT.</code>.      */
+comment|/**      * Returns true if this context posts lifecycle events. Subjects used for these events      * are      *<code>ObjectContext.GRAPH_COMMIT_STARTED_SUBJECT, ObjectContext.GRAPH_COMMITTED_SUBJECT,      * ObjectContext.GRAPH_COMMIT_ABORTED_SUBJECT, ObjectContext.GRAPH_ROLLEDBACK_SUBJECT.</code>      * .      */
 specifier|public
 name|boolean
 name|isLifecycleEventsEnabled
@@ -1493,9 +1538,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|isPropertyChangeCallbacksDisabled
+name|getPropertyChangeProcessingStrategy
 argument_list|()
+operator|!=
+name|PropertyChangeProcessingStrategy
+operator|.
+name|IGNORE
 condition|)
 block|{
 name|graphAction
@@ -1631,7 +1679,7 @@ name|ClassDescriptor
 name|descriptor
 parameter_list|)
 block|{
-comment|/**          * We should create new id only if it is not set for this object.          * It could have been created, for instance, in child context          */
+comment|/**          * We should create new id only if it is not set for this object. It could have          * been created, for instance, in child context          */
 name|ObjectId
 name|id
 init|=
@@ -1780,30 +1828,6 @@ return|return
 name|object
 return|;
 block|}
-comment|/**      * @since 3.0      */
-name|boolean
-name|isPropertyChangeCallbacksDisabled
-parameter_list|()
-block|{
-return|return
-name|propertyChangeCallbacksDisabled
-return|;
-block|}
-comment|/**      * @since 3.0      */
-name|void
-name|setPropertyChangeCallbacksDisabled
-parameter_list|(
-name|boolean
-name|propertyChangeCallbacksDisabled
-parameter_list|)
-block|{
-name|this
-operator|.
-name|propertyChangeCallbacksDisabled
-operator|=
-name|propertyChangeCallbacksDisabled
-expr_stmt|;
-block|}
 comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
 specifier|public
 name|ObjectContext
@@ -1858,6 +1882,21 @@ condition|(
 name|childContext
 condition|)
 block|{
+name|PropertyChangeProcessingStrategy
+name|oldStrategy
+init|=
+name|getPropertyChangeProcessingStrategy
+argument_list|()
+decl_stmt|;
+name|setPropertyChangeProcessingStrategy
+argument_list|(
+name|PropertyChangeProcessingStrategy
+operator|.
+name|RECORD
+argument_list|)
+expr_stmt|;
+try|try
+block|{
 name|changes
 operator|.
 name|apply
@@ -1869,6 +1908,15 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|setPropertyChangeProcessingStrategy
+argument_list|(
+name|oldStrategy
+argument_list|)
+expr_stmt|;
+block|}
 name|fireDataChannelChanged
 argument_list|(
 name|originatingContext
@@ -1904,84 +1952,6 @@ operator|.
 name|hasChanges
 argument_list|()
 return|;
-block|}
-comment|/**      * Class for loading child's CayenneContext changes to parent context.      * Required to register diffs in CayenneContext's graph manager when node's simple property changes:      * CayenneContext's way of setting properties differs from DataContext's, and method of notifying      * graph manager is sealed in every 'set' method of Cayenne Client Data Object class.      * So here we should notify graph manager too, so that objects's state will update and they will      * be marked as dirty.         */
-class|class
-name|CayenneContextChildDiffLoader
-extends|extends
-name|ChildDiffLoader
-block|{
-specifier|public
-name|CayenneContextChildDiffLoader
-parameter_list|(
-name|ObjectContext
-name|context
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|void
-name|nodePropertyChanged
-parameter_list|(
-name|Object
-name|nodeId
-parameter_list|,
-name|String
-name|property
-parameter_list|,
-name|Object
-name|oldValue
-parameter_list|,
-name|Object
-name|newValue
-parameter_list|)
-block|{
-name|super
-operator|.
-name|nodePropertyChanged
-argument_list|(
-name|nodeId
-argument_list|,
-name|property
-argument_list|,
-name|oldValue
-argument_list|,
-name|newValue
-argument_list|)
-expr_stmt|;
-name|Persistent
-name|object
-init|=
-operator|(
-name|Persistent
-operator|)
-name|getGraphManager
-argument_list|()
-operator|.
-name|getNode
-argument_list|(
-name|nodeId
-argument_list|)
-decl_stmt|;
-name|propertyChanged
-argument_list|(
-name|object
-argument_list|,
-name|property
-argument_list|,
-name|oldValue
-argument_list|,
-name|newValue
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_class

@@ -140,7 +140,7 @@ block|}
 decl_stmt|;
 name|CayenneContextGraphAction
 parameter_list|(
-name|ObjectContext
+name|CayenneContext
 name|context
 parameter_list|)
 block|{
@@ -177,6 +177,23 @@ condition|)
 block|{
 return|return;
 block|}
+name|boolean
+name|processsReverse
+init|=
+operator|(
+operator|(
+name|CayenneContext
+operator|)
+name|context
+operator|)
+operator|.
+name|getPropertyChangeProcessingStrategy
+argument_list|()
+operator|==
+name|PropertyChangeProcessingStrategy
+operator|.
+name|RECORD_AND_PROCESS_REVERSE_ARCS
+decl_stmt|;
 comment|// prevent reverse actions down the stack
 name|setArcChangeInProcess
 argument_list|(
@@ -220,6 +237,11 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|processsReverse
+condition|)
+block|{
 name|unsetReverse
 argument_list|(
 name|property
@@ -232,6 +254,7 @@ operator|)
 name|oldValue
 argument_list|)
 expr_stmt|;
+block|}
 name|markAsDirty
 argument_list|(
 name|object
@@ -273,6 +296,11 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|processsReverse
+condition|)
+block|{
 name|setReverse
 argument_list|(
 name|property
@@ -285,6 +313,7 @@ operator|)
 name|newValue
 argument_list|)
 expr_stmt|;
+block|}
 name|markAsDirty
 argument_list|(
 name|object

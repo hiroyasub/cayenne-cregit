@@ -256,7 +256,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent ObjectContext.  * Graph node ids are expected to be ObjectIds.  * This class is made public since 3.0 to be used in ObjectContext synchronizing  *   * @since 1.2  */
+comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent ObjectContext.  * Graph node ids are expected to be ObjectIds. This class is made public since 3.0 to be  * used in ObjectContext synchronizing  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -266,6 +266,8 @@ name|ChildDiffLoader
 implements|implements
 name|GraphChangeHandler
 block|{
+comment|// TODO: andrus 04/05/2009 - replace with PropertyChangeProcessingStrategy enum used
+comment|// in ROP?
 specifier|static
 specifier|final
 name|ThreadLocal
@@ -297,7 +299,7 @@ return|;
 block|}
 block|}
 decl_stmt|;
-specifier|private
+specifier|protected
 name|ObjectContext
 name|context
 decl_stmt|;
@@ -1074,6 +1076,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|protected
 name|Persistent
 name|findObject
 parameter_list|(
@@ -1223,6 +1226,7 @@ literal|0
 argument_list|)
 return|;
 block|}
+specifier|protected
 name|Persistent
 name|findObjectInCollection
 parameter_list|(

@@ -621,8 +621,8 @@ name|lifecycleEventsEnabled
 condition|)
 block|{
 comment|// include all diffs after the commit start marker.
-comment|//We fire event as if it was posted by parent channel, so that
-comment|//nested contexts could catch it
+comment|// We fire event as if it was posted by parent channel, so that
+comment|// nested contexts could catch it
 name|context
 operator|.
 name|fireDataChannelCommitted
@@ -666,19 +666,21 @@ name|getEntityResolver
 argument_list|()
 decl_stmt|;
 comment|// avoid processing callbacks when updating the map...
-name|boolean
-name|changeCallbacks
+name|PropertyChangeProcessingStrategy
+name|oldChangeStrategy
 init|=
 name|context
 operator|.
-name|isPropertyChangeCallbacksDisabled
+name|getPropertyChangeProcessingStrategy
 argument_list|()
 decl_stmt|;
 name|context
 operator|.
-name|setPropertyChangeCallbacksDisabled
+name|setPropertyChangeProcessingStrategy
 argument_list|(
-literal|true
+name|PropertyChangeProcessingStrategy
+operator|.
+name|IGNORE
 argument_list|)
 expr_stmt|;
 try|try
@@ -812,9 +814,9 @@ finally|finally
 block|{
 name|context
 operator|.
-name|setPropertyChangeCallbacksDisabled
+name|setPropertyChangeProcessingStrategy
 argument_list|(
-name|changeCallbacks
+name|oldChangeStrategy
 argument_list|)
 expr_stmt|;
 block|}
@@ -1550,7 +1552,7 @@ name|newId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Need to write property directly to this context           */
+comment|/**          * Need to write property directly to this context          */
 specifier|public
 name|void
 name|nodePropertyChanged
