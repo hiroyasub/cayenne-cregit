@@ -79,9 +79,6 @@ name|primaryKeys
 operator|=
 name|Collections
 operator|.
-expr|<
-name|ObjAttribute
-operator|>
 name|emptyList
 argument_list|()
 expr_stmt|;

@@ -961,9 +961,6 @@ literal|null
 condition|?
 name|Collections
 operator|.
-expr|<
-name|URL
-operator|>
 name|singleton
 argument_list|(
 name|resource

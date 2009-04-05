@@ -390,11 +390,6 @@ block|{
 return|return
 name|Collections
 operator|.
-expr|<
-name|String
-operator|,
-name|String
-operator|>
 name|emptyMap
 argument_list|()
 return|;

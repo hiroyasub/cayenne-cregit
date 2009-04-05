@@ -1781,12 +1781,7 @@ init|=
 operator|new
 name|RefreshQuery
 argument_list|(
-operator|new
-name|String
-index|[]
-block|{
 literal|"X"
-block|}
 argument_list|)
 decl_stmt|;
 comment|// this should invalidate results for the next query run
