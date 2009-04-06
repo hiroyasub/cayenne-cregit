@@ -1512,9 +1512,6 @@ block|{
 name|Integer
 name|expType
 init|=
-operator|(
-name|Integer
-operator|)
 name|selectorToExpressionBridge
 argument_list|()
 operator|.

@@ -2508,9 +2508,6 @@ comment|// try instantiating an object and fetching its relationships
 name|Artist
 name|artist
 init|=
-operator|(
-name|Artist
-operator|)
 name|context
 operator|.
 name|objectFromDataRow

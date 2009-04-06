@@ -368,9 +368,6 @@ expr_stmt|;
 name|RefreshSpecification
 name|abc
 init|=
-operator|(
-name|RefreshSpecification
-operator|)
 name|cache
 operator|.
 name|refreshSpecifications
@@ -406,9 +403,6 @@ expr_stmt|;
 name|RefreshSpecification
 name|xyz
 init|=
-operator|(
-name|RefreshSpecification
-operator|)
 name|cache
 operator|.
 name|refreshSpecifications

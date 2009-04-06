@@ -3206,10 +3206,6 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|(
-operator|(
-name|Persistent
-operator|)
 name|localParentMt
 operator|.
 name|getPaintingArray
@@ -3219,7 +3215,6 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-operator|)
 operator|.
 name|getObjectContext
 argument_list|()
@@ -3247,10 +3242,6 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|(
-operator|(
-name|Persistent
-operator|)
 name|artist
 operator|.
 name|getPaintingArray
@@ -3260,7 +3251,6 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-operator|)
 operator|.
 name|getObjectContext
 argument_list|()

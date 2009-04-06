@@ -714,9 +714,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|ctxt
 operator|.
 name|objectFromDataRow
@@ -871,9 +868,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|ctxt
 operator|.
 name|objectFromDataRow
@@ -1042,9 +1036,6 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-operator|(
-name|Artist
-operator|)
 name|ctxt
 operator|.
 name|objectFromDataRow

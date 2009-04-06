@@ -646,9 +646,6 @@ argument_list|)
 expr_stmt|;
 name|address
 operator|=
-operator|(
-name|Address
-operator|)
 name|e
 operator|.
 name|getAddresses
