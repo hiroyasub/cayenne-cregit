@@ -457,6 +457,23 @@ argument_list|,
 name|dataMap
 argument_list|)
 expr_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"New datamap:\n%s"
+argument_list|,
+name|dataMap
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
