@@ -274,7 +274,7 @@ name|AbstractMojo
 block|{
 comment|/** 	 * DataMap XML file to use as a base for DB importing. 	 * 	 * @parameter expression="${cdbimport.map}" 	 * @required 	 */
 specifier|private
-name|File
+name|String
 name|map
 decl_stmt|;
 comment|/**      * DB schema to use for DB importing.      */
@@ -315,6 +315,10 @@ decl_stmt|;
 specifier|private
 name|Log
 name|logger
+decl_stmt|;
+specifier|private
+name|File
+name|mapFile
 decl_stmt|;
 specifier|public
 name|void
@@ -434,12 +438,6 @@ name|password
 argument_list|)
 decl_stmt|;
 comment|// Load the data map and run the db importer.
-name|DataMap
-name|dataMap
-init|=
-name|loadDataMap
-argument_list|()
-decl_stmt|;
 specifier|final
 name|DbLoader
 name|loader
@@ -459,6 +457,29 @@ name|LoaderDelegate
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|mapFile
+operator|=
+operator|new
+name|File
+argument_list|(
+name|map
+argument_list|)
+expr_stmt|;
+name|DataMap
+name|dataMap
+init|=
+name|mapFile
+operator|.
+name|exists
+argument_list|()
+condition|?
+name|loadDataMap
+argument_list|()
+else|:
+operator|new
+name|DataMap
+argument_list|()
+decl_stmt|;
 name|loader
 operator|.
 name|loadDataMapFromDB
@@ -470,19 +491,7 @@ argument_list|,
 name|dataMap
 argument_list|)
 expr_stmt|;
-name|File
-name|f
-init|=
-operator|new
-name|File
-argument_list|(
-name|map
-operator|.
-name|getAbsolutePath
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|f
+name|mapFile
 operator|.
 name|delete
 argument_list|()
@@ -493,7 +502,7 @@ init|=
 operator|new
 name|PrintWriter
 argument_list|(
-name|f
+name|mapFile
 argument_list|)
 decl_stmt|;
 name|dataMap
@@ -502,11 +511,6 @@ name|encodeAsXML
 argument_list|(
 name|pw
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|pw
 operator|.
@@ -738,7 +742,7 @@ init|=
 operator|new
 name|InputSource
 argument_list|(
-name|map
+name|mapFile
 operator|.
 name|getCanonicalPath
 argument_list|()
