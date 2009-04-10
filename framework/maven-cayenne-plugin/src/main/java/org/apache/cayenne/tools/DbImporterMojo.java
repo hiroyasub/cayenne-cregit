@@ -465,6 +465,7 @@ argument_list|(
 name|map
 argument_list|)
 expr_stmt|;
+specifier|final
 name|DataMap
 name|dataMap
 init|=
@@ -520,10 +521,12 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
+specifier|final
 name|Exception
 name|ex
 parameter_list|)
 block|{
+specifier|final
 name|Throwable
 name|th
 init|=
@@ -587,6 +590,7 @@ specifier|public
 name|boolean
 name|overwriteDbEntity
 parameter_list|(
+specifier|final
 name|DbEntity
 name|ent
 parameter_list|)
@@ -601,6 +605,7 @@ specifier|public
 name|void
 name|dbEntityAdded
 parameter_list|(
+specifier|final
 name|DbEntity
 name|ent
 parameter_list|)
@@ -632,6 +637,7 @@ specifier|public
 name|void
 name|dbEntityRemoved
 parameter_list|(
+specifier|final
 name|DbEntity
 name|ent
 parameter_list|)
@@ -666,6 +672,7 @@ specifier|public
 name|void
 name|objEntityAdded
 parameter_list|(
+specifier|final
 name|ObjEntity
 name|ent
 parameter_list|)
@@ -697,6 +704,7 @@ specifier|public
 name|void
 name|objEntityRemoved
 parameter_list|(
+specifier|final
 name|ObjEntity
 name|ent
 parameter_list|)
@@ -736,6 +744,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+specifier|final
 name|InputSource
 name|in
 init|=
