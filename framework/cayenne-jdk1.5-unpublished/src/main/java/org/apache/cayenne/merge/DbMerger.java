@@ -280,7 +280,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Traverse a {@link DataNode} and a {@link DataMap} and create a group of  * {@link MergerToken}s to alter the {@link DataNode} datastore to match the  * {@link DataMap}.  *   */
+comment|/**  * Traverse a {@link DataNode} and a {@link DataMap} and create a group of  * {@link MergerToken}s to alter the {@link DataNode} data store to match the  * {@link DataMap}.  *   */
 end_comment
 
 begin_class
@@ -292,6 +292,28 @@ specifier|private
 name|MergerFactory
 name|factory
 decl_stmt|;
+specifier|private
+name|ValueForNullProvider
+name|valueForNull
+init|=
+operator|new
+name|EmptyValueForNullProvider
+argument_list|()
+decl_stmt|;
+comment|/**      * Set a {@link ValueForNullProvider} that will be used to set value for null on not      * null columns      */
+specifier|public
+name|void
+name|setValueForNullProvider
+parameter_list|(
+name|ValueForNullProvider
+name|valueProvider
+parameter_list|)
+block|{
+name|valueForNull
+operator|=
+name|valueProvider
+expr_stmt|;
+block|}
 comment|/**      * A method that return true if the given table name should be included. The default      * implementation include all tables.      */
 specifier|public
 name|boolean
@@ -847,7 +869,35 @@ name|isMandatory
 argument_list|()
 condition|)
 block|{
-comment|// TODO: default value
+if|if
+condition|(
+name|valueForNull
+operator|.
+name|hasValueFor
+argument_list|(
+name|dbEntity
+argument_list|,
+name|attr
+argument_list|)
+condition|)
+block|{
+name|tokens
+operator|.
+name|add
+argument_list|(
+name|factory
+operator|.
+name|createSetValueForNullToDb
+argument_list|(
+name|dbEntity
+argument_list|,
+name|attr
+argument_list|,
+name|valueForNull
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|tokens
 operator|.
 name|add
@@ -887,6 +937,35 @@ name|isMandatory
 argument_list|()
 condition|)
 block|{
+if|if
+condition|(
+name|valueForNull
+operator|.
+name|hasValueFor
+argument_list|(
+name|dbEntity
+argument_list|,
+name|attr
+argument_list|)
+condition|)
+block|{
+name|tokens
+operator|.
+name|add
+argument_list|(
+name|factory
+operator|.
+name|createSetValueForNullToDb
+argument_list|(
+name|dbEntity
+argument_list|,
+name|attr
+argument_list|,
+name|valueForNull
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|tokens
 operator|.
 name|add
