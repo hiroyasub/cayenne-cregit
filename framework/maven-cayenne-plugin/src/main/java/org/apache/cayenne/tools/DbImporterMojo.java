@@ -277,15 +277,25 @@ specifier|private
 name|String
 name|map
 decl_stmt|;
-comment|/**      * DB schema to use for DB importing.      */
+comment|/**      * DB schema to use for DB importing.      *      * @parameter expression="${cdbimport.schemaName}"      */
 specifier|private
 name|String
 name|schemaName
 decl_stmt|;
-comment|/**      * Pattern for tables to import from DB.      */
+comment|/**      * Pattern for tables to import from DB.      *      * The default is to match against all tables.      *      * @parameter expression="${cdbimport.tablePattern}"      */
 specifier|private
 name|String
 name|tablePattern
+decl_stmt|;
+comment|/**      * Indicates whether stored procedures should be imported.      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.importProcedures}" default-value="false"      */
+specifier|private
+name|boolean
+name|importProcedures
+decl_stmt|;
+comment|/**      * Pattern for stored procedures to import from DB.  This is only meaningful if      *<code>importProcedures</code> is set to<code>true</code>.      *      * The default is to match against all stored procedures.      *      * @parameter expression="${cdbimport.procedurePattern}"      */
+specifier|private
+name|String
+name|procedurePattern
 decl_stmt|;
 comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter.      * While this attribute is optional (a generic JdbcAdapter is used if not set),      * it is highly recommended to specify correct target adapter.      *      * @parameter expression="${cdbimport.adapter}"      */
 specifier|private
@@ -492,6 +502,24 @@ argument_list|,
 name|dataMap
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|importProcedures
+condition|)
+block|{
+name|loader
+operator|.
+name|loadProceduresFromDB
+argument_list|(
+name|schemaName
+argument_list|,
+name|procedurePattern
+argument_list|,
+name|dataMap
+argument_list|)
+expr_stmt|;
+block|}
+comment|// Write the new DataMap out to disk.
 name|mapFile
 operator|.
 name|delete
