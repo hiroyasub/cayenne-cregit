@@ -49,12 +49,16 @@ operator|.
 name|MIN_VALUE
 decl_stmt|;
 comment|/**      * Returns a data context this object is registered with, or null if this object has      * no associated DataContext.      *       * @deprecated since 3.0 use {@link #getObjectContext()}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataContext
 name|getDataContext
 parameter_list|()
 function_decl|;
 comment|/**      * Sets object DataContext.      *       * @deprecated since 3.0 use {@link #setObjectContext(ObjectContext)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataContext
@@ -84,7 +88,7 @@ name|String
 name|propertyName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)artist.readNestedProperty("name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)paintingInfo.readNestedProperty("toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)painting.readNestedProperty("toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)painting.readNestedProperty("toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path<b>(throws exception)</b>:<br>      *<code>String name = (String)artist.readNestedProperty("paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      *       * @since 1.0.5      */
+comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)artist.readNestedProperty("name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)paintingInfo.readNestedProperty("toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)painting.readNestedProperty("toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)painting.readNestedProperty("toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)artist.readNestedProperty("paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      *       * @since 1.0.5      */
 specifier|public
 name|Object
 name|readNestedProperty
@@ -160,6 +164,8 @@ name|setReverse
 parameter_list|)
 function_decl|;
 comment|/**      * @deprecated since 3.0 users must use callbacks instead. This method is no longer      *             invoked by Cayenne runtime.      * @see LifecycleListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|fetchFinished
