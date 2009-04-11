@@ -78,6 +78,11 @@ class|class
 name|AbstractToDbToken
 implements|implements
 name|MergerToken
+implements|,
+name|Comparable
+argument_list|<
+name|MergerToken
+argument_list|>
 block|{
 specifier|public
 specifier|final
@@ -238,6 +243,19 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
+return|;
+block|}
+specifier|public
+name|int
+name|compareTo
+parameter_list|(
+name|MergerToken
+name|o
+parameter_list|)
+block|{
+comment|// default order as tokens are created
+return|return
+literal|0
 return|;
 block|}
 block|}
