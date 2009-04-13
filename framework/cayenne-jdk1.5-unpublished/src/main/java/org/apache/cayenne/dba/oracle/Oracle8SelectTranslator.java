@@ -38,7 +38,6 @@ comment|/**  * @since 3.0  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|Oracle8SelectTranslator
 extends|extends
