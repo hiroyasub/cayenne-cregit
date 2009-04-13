@@ -236,7 +236,7 @@ name|Appendable
 name|out
 parameter_list|,
 name|boolean
-name|firstQualifyerElement
+name|firstQualifierElement
 parameter_list|)
 throws|throws
 name|IOException
@@ -244,7 +244,7 @@ block|{
 name|boolean
 name|first
 init|=
-name|firstQualifyerElement
+name|firstQualifierElement
 decl_stmt|;
 for|for
 control|(

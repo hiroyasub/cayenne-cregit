@@ -783,7 +783,7 @@ name|Appendable
 name|out
 parameter_list|,
 name|boolean
-name|firstQualifyerElement
+name|firstQualifierElement
 parameter_list|)
 throws|throws
 name|IOException

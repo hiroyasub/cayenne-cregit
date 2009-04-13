@@ -597,7 +597,7 @@ throws|throws
 name|Exception
 block|{
 name|JoinStack
-name|jStack
+name|joins
 init|=
 name|getJoinStack
 argument_list|()
@@ -926,7 +926,7 @@ literal|" FROM "
 argument_list|)
 expr_stmt|;
 comment|// append tables and joins
-name|jStack
+name|joins
 operator|.
 name|appendRootWithQuoteSqlIdentifiers
 argument_list|(
@@ -936,14 +936,14 @@ name|getRootDbEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|jStack
+name|joins
 operator|.
 name|appendJoins
 argument_list|(
 name|queryBuf
 argument_list|)
 expr_stmt|;
-name|jStack
+name|joins
 operator|.
 name|appendQualifier
 argument_list|(
