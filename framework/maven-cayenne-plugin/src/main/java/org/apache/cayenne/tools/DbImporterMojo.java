@@ -187,6 +187,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|util
+operator|.
+name|DeleteRuleUpdater
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|conn
 operator|.
 name|DriverDataSource
@@ -261,6 +275,26 @@ name|Driver
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
 begin_comment
 comment|/**  * Maven mojo to reverse engineer datamap from DB.  *  * @since 3.0  *  * @phase generate-sources  * @goal cdbimport  */
 end_comment
@@ -276,6 +310,11 @@ comment|/** 	 * DataMap XML file to use as a base for DB importing. 	 * 	 * @par
 specifier|private
 name|String
 name|map
+decl_stmt|;
+comment|/**      * Indicates whether existing DB and object entities should be overwritten.      * This is an all-or-nothing setting.  If you need finer granularity, please      * use the Cayenne Modeler.      *      * @parameter expression="${cdbimport.overwriteExisting}" default-value="true"      */
+specifier|private
+name|boolean
+name|overwriteExisting
 decl_stmt|;
 comment|/**      * DB schema to use for DB importing.      *      * @parameter expression="${cdbimport.schemaName}"      */
 specifier|private
@@ -322,13 +361,29 @@ specifier|private
 name|String
 name|password
 decl_stmt|;
+comment|/**      * Maven logger.      */
 specifier|private
 name|Log
 name|logger
 decl_stmt|;
+comment|/**      * The DataMap file to use for importing.      */
 specifier|private
 name|File
 name|mapFile
+decl_stmt|;
+specifier|private
+name|List
+argument_list|<
+name|ObjEntity
+argument_list|>
+name|addedObjEntities
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|ObjEntity
+argument_list|>
+argument_list|()
 decl_stmt|;
 specifier|public
 name|void
@@ -502,6 +557,22 @@ argument_list|,
 name|dataMap
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|ObjEntity
+name|addedObjEntity
+range|:
+name|addedObjEntities
+control|)
+block|{
+name|DeleteRuleUpdater
+operator|.
+name|updateObjEntity
+argument_list|(
+name|addedObjEntity
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|importProcedures
@@ -626,7 +697,7 @@ throws|throws
 name|CayenneException
 block|{
 return|return
-literal|true
+name|overwriteExisting
 return|;
 block|}
 specifier|public
@@ -715,6 +786,13 @@ name|ent
 operator|.
 name|getName
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|addedObjEntities
+operator|.
+name|add
+argument_list|(
+name|ent
 argument_list|)
 expr_stmt|;
 name|ent
