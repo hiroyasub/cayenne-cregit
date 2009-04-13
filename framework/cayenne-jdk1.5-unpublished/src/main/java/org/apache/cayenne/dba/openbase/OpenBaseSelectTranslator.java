@@ -69,7 +69,15 @@ block|{
 return|return
 operator|new
 name|OpenBaseJoinStack
+argument_list|(
+name|getAdapter
 argument_list|()
+argument_list|,
+name|queryMetadata
+operator|.
+name|getDataMap
+argument_list|()
+argument_list|)
 return|;
 block|}
 annotation|@

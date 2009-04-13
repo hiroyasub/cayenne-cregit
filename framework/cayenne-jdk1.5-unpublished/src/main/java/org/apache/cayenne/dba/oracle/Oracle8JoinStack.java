@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|openbase
+name|oracle
 package|;
 end_package
 
@@ -140,17 +140,20 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * OpenBase does not support standard JOIN keyword and have strange syntax for defining  * inner/outer joins  *   * @see http  *      ://www.openbase.com/help/KnowledgeBase/400_OpenBaseSQL/401_SelectStatements.html  * @since 3.0  */
+comment|/**  * @since 3.0  */
+end_comment
+
+begin_comment
+comment|// cloned from OpenBaseJoin stack... need better strategies of reuse...
 end_comment
 
 begin_class
 class|class
-name|OpenBaseJoinStack
+name|Oracle8JoinStack
 extends|extends
 name|JoinStack
 block|{
-specifier|protected
-name|OpenBaseJoinStack
+name|Oracle8JoinStack
 parameter_list|(
 name|DbAdapter
 name|dbAdapter
