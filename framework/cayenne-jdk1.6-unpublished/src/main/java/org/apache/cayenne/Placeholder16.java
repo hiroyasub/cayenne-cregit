@@ -18,7 +18,6 @@ comment|/**  * This class is a placeholder class for the Java 1.6 module. Once w
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|Placeholder16
 block|{  }
