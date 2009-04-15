@@ -311,7 +311,7 @@ specifier|private
 name|String
 name|map
 decl_stmt|;
-comment|/**      * Indicates whether existing DB and object entities should be overwritten.      * This is an all-or-nothing setting.  If you need finer granularity, please      * use the Cayenne Modeler.      *      * @parameter expression="${cdbimport.overwriteExisting}" default-value="true"      */
+comment|/**      * Indicates whether existing DB and object entities should be overwritten.      * This is an all-or-nothing setting.  If you need finer granularity, please      * use the Cayenne Modeler.      *      * Default is<code>true</code>.      *      * @parameter expression="${cdbimport.overwriteExisting}" default-value="true"      */
 specifier|private
 name|boolean
 name|overwriteExisting
@@ -326,7 +326,7 @@ specifier|private
 name|String
 name|tablePattern
 decl_stmt|;
-comment|/**      * Indicates whether stored procedures should be imported.      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.importProcedures}" default-value="false"      */
+comment|/**      * Indicates whether stored procedures should be imported.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.importProcedures}" default-value="false"      */
 specifier|private
 name|boolean
 name|importProcedures
@@ -335,6 +335,11 @@ comment|/**      * Pattern for stored procedures to import from DB.  This is onl
 specifier|private
 name|String
 name|procedurePattern
+decl_stmt|;
+comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes in the object entities.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      */
+specifier|private
+name|boolean
+name|meaningfulPk
 decl_stmt|;
 comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter.      * While this attribute is optional (a generic JdbcAdapter is used if not set),      * it is highly recommended to specify correct target adapter.      *      * @parameter expression="${cdbimport.adapter}"      */
 specifier|private
@@ -410,13 +415,15 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"connection settings - [driver: %s, url: %s, username: %s]"
+literal|"connection settings - [driver: %s, url: %s, username: %s, password: %s]"
 argument_list|,
 name|driver
 argument_list|,
 name|url
 argument_list|,
 name|username
+argument_list|,
+name|password
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -428,21 +435,21 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"importer options - [map: %s, schemaName: %s, tablePattern: %s, driver: %s, url: %s, username: %s, password: %s]"
+literal|"importer options - [map: %s, overwriteExisting: %s, schemaName: %s, tablePattern: %s, importProcedures: %s, procedurePattern: %s, meaningfulPk: %s]"
 argument_list|,
 name|map
+argument_list|,
+name|overwriteExisting
 argument_list|,
 name|schemaName
 argument_list|,
 name|tablePattern
 argument_list|,
-name|driver
+name|importProcedures
 argument_list|,
-name|url
+name|procedurePattern
 argument_list|,
-name|username
-argument_list|,
-name|password
+name|meaningfulPk
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -546,6 +553,13 @@ operator|new
 name|DataMap
 argument_list|()
 decl_stmt|;
+name|loader
+operator|.
+name|setCreatingMeaningfulPK
+argument_list|(
+name|meaningfulPk
+argument_list|)
+expr_stmt|;
 name|loader
 operator|.
 name|loadDataMapFromDB
