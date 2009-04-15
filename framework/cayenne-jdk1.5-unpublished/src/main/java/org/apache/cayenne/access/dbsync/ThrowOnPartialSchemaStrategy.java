@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -147,15 +157,13 @@ begin_class
 specifier|public
 class|class
 name|ThrowOnPartialSchemaStrategy
-implements|implements
-name|SchemaUpdateStrategy
+extends|extends
+name|BaseSchemaUpdateStrategy
 block|{
-specifier|protected
-name|SchemaUpdateStrategy
-name|currentSchema
-decl_stmt|;
-specifier|protected
-name|SchemaUpdateStrategy
+annotation|@
+name|Override
+specifier|public
+name|BaseSchemaUpdateStrategy
 name|getSchema
 parameter_list|()
 block|{
@@ -173,7 +181,7 @@ operator|=
 name|this
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @throws SQLException       * @since 3.0      */
 specifier|public
 name|void
 name|updateSchema
@@ -181,9 +189,10 @@ parameter_list|(
 name|DataNode
 name|dataNode
 parameter_list|)
+throws|throws
+name|SQLException
 block|{
-name|getSchema
-argument_list|()
+name|super
 operator|.
 name|generateUpdateSchema
 argument_list|(
@@ -192,6 +201,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|generateUpdateSchema
@@ -455,12 +466,6 @@ name|errorMessage
 argument_list|,
 name|entitiesSize
 argument_list|)
-expr_stmt|;
-name|currentSchema
-operator|=
-operator|new
-name|SkipSchemaUpdateStrategy
-argument_list|()
 expr_stmt|;
 block|}
 specifier|protected

@@ -42,25 +42,56 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A strategy for auto generating a database schema on the application startup.  *   * @since 3.0  */
+comment|/**  * @since 3.0  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
+specifier|abstract
+class|class
+name|BaseSchemaUpdateStrategy
+implements|implements
 name|SchemaUpdateStrategy
 block|{
+specifier|protected
+name|BaseSchemaUpdateStrategy
+name|currentSchema
+decl_stmt|;
+specifier|protected
+specifier|abstract
+name|BaseSchemaUpdateStrategy
+name|getSchema
+parameter_list|()
+function_decl|;
+comment|/**      * @since 3.0      */
+specifier|public
 name|void
-name|updateSchema
+name|generateUpdateSchema
 parameter_list|(
 name|DataNode
 name|dataNode
 parameter_list|)
 throws|throws
 name|SQLException
-function_decl|;
+block|{
+name|getSchema
+argument_list|()
+operator|.
+name|generateUpdateSchema
+argument_list|(
+name|dataNode
+argument_list|)
+expr_stmt|;
+name|currentSchema
+operator|=
+operator|new
+name|SkipSchemaUpdateStrategy
+argument_list|()
+expr_stmt|;
 block|}
-end_interface
+empty_stmt|;
+block|}
+end_class
 
 end_unit
 

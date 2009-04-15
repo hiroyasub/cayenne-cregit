@@ -1227,9 +1227,6 @@ argument_list|(
 name|schemaUpdateStrategy
 argument_list|)
 expr_stmt|;
-comment|// load DataSource
-try|try
-block|{
 name|SchemaUpdateStrategy
 name|confSchema
 init|=
@@ -1251,7 +1248,11 @@ argument_list|()
 decl_stmt|;
 name|SchemaUpdateStrategy
 name|localSchema
-init|=
+decl_stmt|;
+try|try
+block|{
+name|localSchema
+operator|=
 operator|(
 name|confSchema
 operator|!=
@@ -1276,7 +1277,7 @@ argument_list|)
 operator|.
 name|newInstance
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 name|node
 operator|.
 name|setSchemaUpdateStrategy
@@ -1284,6 +1285,58 @@ argument_list|(
 name|localSchema
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|InstantiationException
+name|e
+parameter_list|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Error: "
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalAccessException
+name|e
+parameter_list|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Error: "
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|ClassNotFoundException
+name|e
+parameter_list|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Error: "
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+block|}
+comment|// load DataSource
+try|try
+block|{
 comment|// use DomainHelper factory if it exists, if not - use factory specified
 comment|// in configuration data
 name|DataSourceFactory
