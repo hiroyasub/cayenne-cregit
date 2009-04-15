@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs on the fly reconfiguration of Cayenne projects.  *    */
+comment|/**  * Performs on the fly reconfiguration of Cayenne projects.  *   * @deprecated since 3.0. {@link ProjectConfigurator} approach turned out to be not  *             usable, and is in fact rarely used (if ever). It will be removed in  *             subsequent releases.  */
 end_comment
 
 begin_class
@@ -316,7 +316,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Performs reconfiguration of the unjarred project.      *       * @param projectDir a directory where a working copy of the project is      * located.      */
+comment|/**      * Performs reconfiguration of the unjarred project.      *       * @param projectDir a directory where a working copy of the project is located.      */
 specifier|protected
 name|void
 name|reconfigureProject
@@ -696,7 +696,7 @@ literal|"Problems creating temporary file."
 argument_list|)
 throw|;
 block|}
-comment|/**      *  Deletes a temporary directories and files created.      */
+comment|/**      * Deletes a temporary directories and files created.      */
 specifier|protected
 name|void
 name|cleanup

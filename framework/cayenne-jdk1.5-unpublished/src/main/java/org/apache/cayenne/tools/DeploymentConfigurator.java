@@ -109,8 +109,22 @@ name|BuildException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|Project
+import|;
+end_import
+
 begin_comment
-comment|/**  * A "cdeploy" Ant task providing an Ant frontend to  * org.apache.cayenne.project.ProjectConfigurator.  *   */
+comment|/**  * A "cdeploy" Ant task providing an Ant frontend to  * org.apache.cayenne.project.ProjectConfigurator.  *   * @deprecated since 3.0. This task turned out to be not usable, and is in fact rarely  *             used (if ever). It will be removed in subsequent releases.  */
 end_comment
 
 begin_class
@@ -158,6 +172,15 @@ parameter_list|()
 throws|throws
 name|BuildException
 block|{
+name|log
+argument_list|(
+literal|"*** cdeploy is deprecated in Cayenne 3.0 and will be removed in subsequent releases"
+argument_list|,
+name|Project
+operator|.
+name|MSG_WARN
+argument_list|)
+expr_stmt|;
 name|validateAttributes
 argument_list|()
 expr_stmt|;

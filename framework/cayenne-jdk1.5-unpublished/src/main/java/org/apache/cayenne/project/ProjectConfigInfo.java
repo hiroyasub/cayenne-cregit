@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores project information necessary to reconfigure existing projects.   *    */
+comment|/**  * Stores project information necessary to reconfigure existing projects.  *   * @deprecated since 3.0. {@link ProjectConfigurator} approach turned out to be not  *             usable, and is in fact rarely used (if ever). It will be removed in  *             subsequent releases.  */
 end_comment
 
 begin_class
@@ -96,7 +96,7 @@ name|nodeInfo
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns the altProjectFile. 	 * @return File 	 */
+comment|/**      * Returns the altProjectFile.      *       * @return File      */
 specifier|public
 name|File
 name|getAltProjectFile
@@ -106,7 +106,7 @@ return|return
 name|altProjectFile
 return|;
 block|}
-comment|/** 	 * Returns the destJar. 	 * @return File 	 */
+comment|/**      * Returns the destJar.      *       * @return File      */
 specifier|public
 name|File
 name|getDestJar
@@ -116,7 +116,7 @@ return|return
 name|destJar
 return|;
 block|}
-comment|/** 	 * Returns the nodes. 	 * @return List 	 */
+comment|/**      * Returns the nodes.      *       * @return List      */
 specifier|public
 name|List
 argument_list|<
@@ -129,7 +129,7 @@ return|return
 name|nodes
 return|;
 block|}
-comment|/** 	 * Returns the sourceJar. 	 * @return File 	 */
+comment|/**      * Returns the sourceJar.      *       * @return File      */
 specifier|public
 name|File
 name|getSourceJar
@@ -139,7 +139,7 @@ return|return
 name|sourceJar
 return|;
 block|}
-comment|/** 	 * Sets the altProjectFile. 	 * @param altProjectFile The altProjectFile to set 	 */
+comment|/**      * Sets the altProjectFile.      *       * @param altProjectFile The altProjectFile to set      */
 specifier|public
 name|void
 name|setAltProjectFile
@@ -155,7 +155,7 @@ operator|=
 name|altProjectFile
 expr_stmt|;
 block|}
-comment|/** 	 * Sets the destJar. 	 * @param destJar The destJar to set 	 */
+comment|/**      * Sets the destJar.      *       * @param destJar The destJar to set      */
 specifier|public
 name|void
 name|setDestJar
@@ -171,7 +171,7 @@ operator|=
 name|destJar
 expr_stmt|;
 block|}
-comment|/** 	 * Sets the nodes. 	 * @param nodes The nodes to set 	 */
+comment|/**      * Sets the nodes.      *       * @param nodes The nodes to set      */
 specifier|public
 name|void
 name|setNodes
@@ -190,7 +190,7 @@ operator|=
 name|nodes
 expr_stmt|;
 block|}
-comment|/** 	 * Sets the sourceJar. 	 * @param sourceJar The sourceJar to set 	 */
+comment|/**      * Sets the sourceJar.      *       * @param sourceJar The sourceJar to set      */
 specifier|public
 name|void
 name|setSourceJar

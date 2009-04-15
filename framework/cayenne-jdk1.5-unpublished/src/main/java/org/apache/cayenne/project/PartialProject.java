@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PartialProject is a "lightweight" project implementation. It can work with projects  * even when some of the resources are missing. It never instantiates Cayenne stack  * objects, using other, lightweight, data structures instead.  *   */
+comment|/**  * PartialProject is a "lightweight" project implementation. It can work with projects  * even when some of the resources are missing. It never instantiates Cayenne stack  * objects, using other, lightweight, data structures instead.  *   * @deprecated since 3.0. {@link ProjectConfigurator} approach turned out to be not  *             usable, and is in fact rarely used (if ever). It will be removed in  *             subsequent releases.  */
 end_comment
 
 begin_class

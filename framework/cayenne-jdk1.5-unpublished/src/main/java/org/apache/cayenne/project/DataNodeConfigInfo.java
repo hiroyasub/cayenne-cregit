@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores information necessary to reconfigure nodes of existing projects.  *    */
+comment|/**  * Stores information necessary to reconfigure nodes of existing projects.  *   * @deprecated since 3.0. {@link ProjectConfigurator} approach turned out to be not  *             usable, and is in fact rarely used (if ever). It will be removed in  *             subsequent releases.  */
 end_comment
 
 begin_class
@@ -96,7 +96,7 @@ specifier|protected
 name|File
 name|driverFile
 decl_stmt|;
-comment|/**      * Searches for the DataNode described by this DataNodeConfigInfo in the      * provided configuration object. Throws ProjectException if there is no      * matching DataNode.      */
+comment|/**      * Searches for the DataNode described by this DataNodeConfigInfo in the provided      * configuration object. Throws ProjectException if there is no matching DataNode.      */
 specifier|public
 name|DataNode
 name|findDataNode
@@ -231,7 +231,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Returns the adapter.      * @return String      */
+comment|/**      * Returns the adapter.      *       * @return String      */
 specifier|public
 name|String
 name|getAdapter
@@ -241,7 +241,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * Returns the dataSource.      * @return String      */
+comment|/**      * Returns the dataSource.      *       * @return String      */
 specifier|public
 name|String
 name|getDataSource
@@ -251,7 +251,7 @@ return|return
 name|dataSource
 return|;
 block|}
-comment|/**      * Returns the domain.      * @return String      */
+comment|/**      * Returns the domain.      *       * @return String      */
 specifier|public
 name|String
 name|getDomain
@@ -261,7 +261,7 @@ return|return
 name|domain
 return|;
 block|}
-comment|/**      * Returns the driverFile.      * @return File      */
+comment|/**      * Returns the driverFile.      *       * @return File      */
 specifier|public
 name|File
 name|getDriverFile
@@ -271,7 +271,7 @@ return|return
 name|driverFile
 return|;
 block|}
-comment|/**      * Returns the name.      * @return String      */
+comment|/**      * Returns the name.      *       * @return String      */
 specifier|public
 name|String
 name|getName
@@ -281,7 +281,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Sets the adapter.      * @param adapter The adapter to set      */
+comment|/**      * Sets the adapter.      *       * @param adapter The adapter to set      */
 specifier|public
 name|void
 name|setAdapter
@@ -297,7 +297,7 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-comment|/**      * Sets the dataSource.      * @param dataSource The dataSource to set      */
+comment|/**      * Sets the dataSource.      *       * @param dataSource The dataSource to set      */
 specifier|public
 name|void
 name|setDataSource
@@ -313,7 +313,7 @@ operator|=
 name|dataSource
 expr_stmt|;
 block|}
-comment|/**      * Sets the domain.      * @param domain The domain to set      */
+comment|/**      * Sets the domain.      *       * @param domain The domain to set      */
 specifier|public
 name|void
 name|setDomain
@@ -329,7 +329,7 @@ operator|=
 name|domain
 expr_stmt|;
 block|}
-comment|/**      * Sets the driverFile.      * @param driverFile The driverFile to set      */
+comment|/**      * Sets the driverFile.      *       * @param driverFile The driverFile to set      */
 specifier|public
 name|void
 name|setDriverFile
@@ -345,7 +345,7 @@ operator|=
 name|driverFile
 expr_stmt|;
 block|}
-comment|/**      * Sets the name.      * @param name The name to set      */
+comment|/**      * Sets the name.      *       * @param name The name to set      */
 specifier|public
 name|void
 name|setName

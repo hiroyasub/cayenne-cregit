@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  */
+comment|/**  * @deprecated since 3.0. {@link ProjectConfigurator} approach turned out to be not  *             usable, and is in fact rarely used (if ever). It will be removed in  *             subsequent releases.  */
 end_comment
 
 begin_class
