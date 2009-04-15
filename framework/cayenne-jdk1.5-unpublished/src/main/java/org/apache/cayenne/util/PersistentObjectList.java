@@ -1250,6 +1250,14 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|shouldAddToRemovedFromUnresolvedList
+argument_list|(
+name|object
+argument_list|)
+condition|)
+block|{
 name|removedFromUnresolved
 operator|.
 name|addLast
@@ -1257,8 +1265,22 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+block|}
 comment|// this is really meaningless, since we don't know
 comment|// if an object was present in the list
+return|return
+literal|true
+return|;
+block|}
+comment|/**      * @return whether object should be added to {@link #removedFromUnresolved} during removal      */
+specifier|protected
+name|boolean
+name|shouldAddToRemovedFromUnresolvedList
+parameter_list|(
+name|Object
+name|object
+parameter_list|)
+block|{
 return|return
 literal|true
 return|;
