@@ -498,6 +498,67 @@ expr_stmt|;
 if|if
 condition|(
 name|entity
+operator|==
+literal|null
+condition|)
+block|{
+comment|//entity not found, try to resolve it with client resolver
+name|EntityResolver
+name|clientResolver
+init|=
+name|resolver
+operator|.
+name|getClientEntityResolver
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|clientResolver
+operator|!=
+name|resolver
+condition|)
+block|{
+name|ObjEntity
+name|clientEntity
+init|=
+name|clientResolver
+operator|.
+name|lookupObjEntity
+argument_list|(
+operator|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+operator|)
+name|root
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|clientEntity
+operator|!=
+literal|null
+condition|)
+block|{
+name|entity
+operator|=
+name|resolver
+operator|.
+name|getObjEntity
+argument_list|(
+name|clientEntity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+if|if
+condition|(
+name|entity
 operator|!=
 literal|null
 condition|)
@@ -1464,6 +1525,8 @@ name|prefetchTree
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -1536,6 +1599,8 @@ return|;
 block|}
 block|}
 comment|/**      * @deprecated since 3.0 {@link #setCacheStrategy(QueryCacheStrategy)} replaces this      *             method.      */
+annotation|@
+name|Deprecated
 name|void
 name|setCachePolicy
 parameter_list|(
@@ -1759,6 +1824,8 @@ name|fetchOffset
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -1779,6 +1846,8 @@ literal|true
 return|;
 block|}
 comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isResolvingInherited
