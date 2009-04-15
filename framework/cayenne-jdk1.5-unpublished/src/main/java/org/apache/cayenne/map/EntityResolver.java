@@ -21,6 +21,26 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|ObjectInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|Serializable
 import|;
 end_import
@@ -443,6 +463,16 @@ decl_stmt|;
 comment|/**      * Creates new EntityResolver.      */
 specifier|public
 name|EntityResolver
+parameter_list|()
+block|{
+name|init
+argument_list|()
+expr_stmt|;
+block|}
+comment|/**      * Initialization of EntityResolver. Used in constructor and in Java deserialization process      */
+specifier|private
+name|void
+name|init
 parameter_list|()
 block|{
 name|this
@@ -2428,6 +2458,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Looks in the DataMap's that this object was created with for the DbEntity that      * services the specified class      *       * @return the required DbEntity, or null if none matches the specifier      * @deprecated since 3.0 - lookup DbEntity via ObjEntity instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|DbEntity
@@ -2462,6 +2494,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Looks in the DataMap's that this object was created with for the DbEntity that      * services the specified data Object      *       * @return the required DbEntity, or null if none matches the specifier      * @deprecated since 3.0 - lookup DbEntity via ObjEntity instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|DbEntity
@@ -2683,6 +2717,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Looks in the DataMap's that this object was created with for the ObjEntity that      * maps to the services the class with the given name      *       * @return the required ObjEntity or null if there is none that matches the specifier      * @deprecated since 3.0 - use getObjEntity() instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|ObjEntity
@@ -3141,6 +3177,28 @@ operator|.
 name|entityListenerFactory
 operator|=
 name|entityListenerFactory
+expr_stmt|;
+block|}
+comment|/**      * Java default deserialization seems not to invoke constructor by default -       * invoking it manually      */
+specifier|private
+name|void
+name|readObject
+parameter_list|(
+name|ObjectInputStream
+name|in
+parameter_list|)
+throws|throws
+name|IOException
+throws|,
+name|ClassNotFoundException
+block|{
+name|init
+argument_list|()
+expr_stmt|;
+name|in
+operator|.
+name|defaultReadObject
+argument_list|()
 expr_stmt|;
 block|}
 block|}
