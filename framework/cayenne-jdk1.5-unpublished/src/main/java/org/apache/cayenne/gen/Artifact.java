@@ -100,13 +100,6 @@ name|BASE_PACKAGE_KEY
 init|=
 literal|"basePackageName"
 decl_stmt|;
-specifier|public
-specifier|static
-name|String
-name|CALLBACK_NAMES_KEY
-init|=
-literal|"callbackNames"
-decl_stmt|;
 name|TemplateType
 index|[]
 name|getTemplateTypes
