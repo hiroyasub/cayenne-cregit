@@ -406,7 +406,7 @@ name|PREDEFINED_STRATEGIES
 operator|.
 name|add
 argument_list|(
-literal|"org.apache.cayenne.modeler.util.SmartNamingStrategy"
+literal|"org.apache.cayenne.map.naming.SmartNamingStrategy"
 argument_list|)
 expr_stmt|;
 block|}
