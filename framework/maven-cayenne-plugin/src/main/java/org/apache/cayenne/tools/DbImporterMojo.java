@@ -357,7 +357,7 @@ specifier|private
 name|boolean
 name|meaningfulPk
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported DB schema.      *      * The default is a basic naming strategy.      *      * @parameter expression="${cdbimport.namingStrategy}"      */
+comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported DB schema.      *      * The default is a basic naming strategy.      *      * @parameter expression="${cdbimport.namingStrategy}" default-value="org.apache.cayenne.map.naming.SmartNamingStrategy"      */
 specifier|private
 name|String
 name|namingStrategy
