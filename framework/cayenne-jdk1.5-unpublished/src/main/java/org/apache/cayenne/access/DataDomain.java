@@ -334,7 +334,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain performs query routing functions in Cayenne. DataDomain creates single data  * source abstraction hiding multiple physical data sources from the user. When a child  * DataContext sends a query to the DataDomain, it is transparently routed to an  * appropriate DataNode.  *   */
+comment|/**  * DataDomain performs query routing functions in Cayenne. DataDomain creates single data  * source abstraction hiding multiple physical data sources from the user. When a child  * DataContext sends a query to the DataDomain, it is transparently routed to an  * appropriate DataNode.  */
 end_comment
 
 begin_class
@@ -462,6 +462,11 @@ decl_stmt|;
 comment|/**      * Properties configured for DataDomain. These include properties of the DataRowStore      * and remote notifications.      */
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 init|=
 name|Collections
@@ -470,6 +475,11 @@ name|synchronizedMap
 argument_list|(
 operator|new
 name|TreeMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -736,15 +746,30 @@ name|void
 name|initWithProperties
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 block|{
 comment|// create map with predictable modification and synchronization behavior
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|localMap
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|()
 decl_stmt|;
 if|if
@@ -768,7 +793,7 @@ name|properties
 operator|=
 name|localMap
 expr_stmt|;
-name|Object
+name|String
 name|sharedCacheEnabled
 init|=
 name|localMap
@@ -778,7 +803,7 @@ argument_list|(
 name|SHARED_CACHE_ENABLED_PROPERTY
 argument_list|)
 decl_stmt|;
-name|Object
+name|String
 name|validatingObjectsOnCommit
 init|=
 name|localMap
@@ -788,7 +813,7 @@ argument_list|(
 name|VALIDATING_OBJECTS_ON_COMMIT_PROPERTY
 argument_list|)
 decl_stmt|;
-name|Object
+name|String
 name|usingExternalTransactions
 init|=
 name|localMap
@@ -798,7 +823,7 @@ argument_list|(
 name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
 argument_list|)
 decl_stmt|;
-name|Object
+name|String
 name|dataContextFactory
 init|=
 name|localMap
@@ -808,8 +833,8 @@ argument_list|(
 name|DATA_CONTEXT_FACTORY_PROPERTY
 argument_list|)
 decl_stmt|;
-name|Object
-name|queryCacheFactory
+name|String
+name|queryCacheFactoryName
 init|=
 name|localMap
 operator|.
@@ -834,9 +859,6 @@ operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|sharedCacheEnabled
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 else|:
 name|SHARED_CACHE_ENABLED_DEFAULT
@@ -856,9 +878,6 @@ operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|validatingObjectsOnCommit
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 else|:
 name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
@@ -878,9 +897,6 @@ operator|.
 name|equalsIgnoreCase
 argument_list|(
 name|usingExternalTransactions
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 else|:
 name|USING_EXTERNAL_TRANSACTIONS_DEFAULT
@@ -897,9 +913,6 @@ operator|.
 name|isEmptyString
 argument_list|(
 name|dataContextFactory
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -907,15 +920,9 @@ name|this
 operator|.
 name|dataContextFactory
 operator|=
-operator|(
-name|DataContextFactory
-operator|)
 name|createInstance
 argument_list|(
 name|dataContextFactory
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 name|DataContextFactory
 operator|.
@@ -934,7 +941,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|queryCacheFactory
+name|queryCacheFactoryName
 operator|!=
 literal|null
 operator|&&
@@ -948,9 +955,6 @@ operator|.
 name|isEmptyString
 argument_list|(
 name|dataContextFactory
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -958,10 +962,7 @@ name|queryCacheFactory
 operator|=
 name|createInstance
 argument_list|(
-name|queryCacheFactory
-operator|.
-name|toString
-argument_list|()
+name|queryCacheFactoryName
 argument_list|,
 name|QueryCacheFactory
 operator|.
@@ -978,7 +979,10 @@ expr_stmt|;
 block|}
 block|}
 specifier|private
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|createInstance
 parameter_list|(
 name|String
@@ -986,7 +990,7 @@ name|className
 parameter_list|,
 name|Class
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|implementedInterface
 parameter_list|)
@@ -1067,6 +1071,9 @@ block|}
 try|try
 block|{
 return|return
+operator|(
+name|T
+operator|)
 name|aClass
 operator|.
 name|newInstance
@@ -1177,7 +1184,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if DataContexts produced by this DataDomain are using      * shared DataRowStore. Returns<code>false</code> if each DataContext would work      * with its own DataRowStore. Note that this setting can be overwritten per      * DataContext. See {@link #createDataContext(boolean)}.      */
+comment|/**      * Returns<code>true</code> if DataContexts produced by this DataDomain are using      * shared DataRowStore. Returns<code>false</code> if each DataContext would work with      * its own DataRowStore. Note that this setting can be overwritten per DataContext.      * See {@link #createDataContext(boolean)}.      */
 specifier|public
 name|boolean
 name|isSharedCacheEnabled
@@ -1257,6 +1264,11 @@ block|}
 comment|/**      * @since 1.1      * @return a Map of properties for this DataDomain. There is no guarantees of specific      *         synchronization behavior of this map.      */
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getProperties
 parameter_list|()
 block|{
@@ -2699,7 +2711,7 @@ operator|=
 name|queryCacheFactory
 expr_stmt|;
 block|}
-comment|/**      * Returns shared {@link QueryCache} used by this DataDomain, creating it on the fly      * if needed. Uses factory obtained via {@link #getQueryCacheFactory()} to initialize      * the cache for the first time.      *       * @since 3.0      */
+comment|/**      * Returns shared {@link QueryCache} used by this DataDomain, creating it on the fly      * if needed. Uses factory obtained via {@link #getQueryCacheFactory()} to initialize      * the cache for the first time. This domain properties are passed to the      * {@link QueryCacheFactory#getQueryCache(Map)} method.      *       * @since 3.0      */
 specifier|public
 name|QueryCache
 name|getQueryCache
@@ -2731,9 +2743,8 @@ argument_list|()
 operator|.
 name|getQueryCache
 argument_list|(
-name|Collections
-operator|.
-name|EMPTY_MAP
+name|getProperties
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

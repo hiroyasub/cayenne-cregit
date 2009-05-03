@@ -254,21 +254,36 @@ name|String
 name|domainName
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 block|{
-comment|// remove factory property to avoid instatiation attempts for unknown/invalid
+comment|// remove factory property to avoid instantiation attempts for unknown/invalid
 comment|// classes
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|propertiesClone
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|(
 name|properties
 argument_list|)
 decl_stmt|;
-name|Object
+name|String
 name|dataContextFactory
 init|=
 name|propertiesClone

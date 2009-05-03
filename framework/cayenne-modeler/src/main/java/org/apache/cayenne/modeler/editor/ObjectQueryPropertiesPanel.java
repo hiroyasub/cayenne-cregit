@@ -192,7 +192,7 @@ name|FormLayout
 argument_list|(
 literal|"right:max(80dlu;pref), 3dlu, left:max(50dlu;pref), fill:max(150dlu;pref)"
 argument_list|,
-literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
+literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
 argument_list|)
 decl_stmt|;
 name|PanelBuilder
@@ -265,11 +265,13 @@ literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|cacheGroupsLabel
+operator|=
 name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Fetch Data Rows:"
+literal|"Cache Groups:"
 argument_list|,
 name|cc
 operator|.
@@ -285,6 +287,45 @@ name|builder
 operator|.
 name|add
 argument_list|(
+name|cacheGroups
+operator|.
+name|getComponent
+argument_list|()
+argument_list|,
+name|cc
+operator|.
+name|xywh
+argument_list|(
+literal|3
+argument_list|,
+literal|7
+argument_list|,
+literal|2
+argument_list|,
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|addLabel
+argument_list|(
+literal|"Fetch Data Rows:"
+argument_list|,
+name|cc
+operator|.
+name|xy
+argument_list|(
+literal|1
+argument_list|,
+literal|9
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|add
+argument_list|(
 name|dataRows
 argument_list|,
 name|cc
@@ -293,7 +334,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|7
+literal|9
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -309,7 +350,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|9
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -328,7 +369,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|9
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -344,7 +385,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -363,7 +404,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|11
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -379,7 +420,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|13
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -398,7 +439,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|13
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;

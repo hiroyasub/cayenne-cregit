@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface that defines callback API used by ConfigLoader to process loaded  * configuration. Main responsibility of ConfigLoaderDelegate is to create  * objects, while ConfigLoader is mainly concerned with XML parsing.   *   */
+comment|/**  * Interface that defines callback API used by ConfigLoader to process loaded  * configuration. Main responsibility of ConfigLoaderDelegate is to create objects, while  * ConfigLoader is mainly concerned with XML parsing.  */
 end_comment
 
 begin_interface
@@ -48,7 +48,7 @@ specifier|public
 interface|interface
 name|ConfigLoaderDelegate
 block|{
-comment|/**      * Callback methods invoked in the beginning of the configuration      * processing.      */
+comment|/**      * Callback methods invoked in the beginning of the configuration processing.      */
 specifier|public
 name|void
 name|startedLoading
@@ -60,7 +60,7 @@ name|void
 name|finishedLoading
 parameter_list|()
 function_decl|;
-comment|/**      * Callback method invoked when a project version is read.      * @since 1.1      */
+comment|/**      * Callback method invoked when a project version is read.      *       * @since 1.1      */
 specifier|public
 name|void
 name|shouldLoadProjectVersion
@@ -69,7 +69,7 @@ name|String
 name|version
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked when a domain is encountered in the configuration      * file.      * @param name domain name.      */
+comment|/**      * Callback method invoked when a domain is encountered in the configuration file.      *       * @param name domain name.      */
 specifier|public
 name|void
 name|shouldLoadDataDomain
@@ -78,7 +78,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked when a DataView reference is encountered in the configuration      * file.      *       * @since 1.1      */
+comment|/**      * Callback method invoked when a DataView reference is encountered in the      * configuration file.      *       * @since 1.1      */
 specifier|public
 name|void
 name|shouldRegisterDataView
@@ -116,6 +116,11 @@ name|String
 name|domainName
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 function_decl|;
@@ -156,7 +161,7 @@ name|String
 name|mapName
 parameter_list|)
 function_decl|;
-comment|/**      * Gives delegate an opportunity to process the error.      *       * @param th      * @return boolean indicating whether ConfigLoader should proceed with      * further processing. Ultimately it is up to the ConfigLoader to make this      * decision.      */
+comment|/**      * Gives delegate an opportunity to process the error.      *       * @param th      * @return boolean indicating whether ConfigLoader should proceed with further      *         processing. Ultimately it is up to the ConfigLoader to make this decision.      */
 specifier|public
 name|boolean
 name|loadError

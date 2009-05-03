@@ -302,7 +302,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A common base superclass for Cayenne ObjectContext implementors.  *  * @since 3.0  */
+comment|/**  * A common base superclass for Cayenne ObjectContext implementors.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -315,7 +315,7 @@ name|ObjectContext
 implements|,
 name|DataChannel
 block|{
-comment|/**      * A holder of a ObjectContext bound to the current thread.      *      * @since 3.0      */
+comment|/**      * A holder of a ObjectContext bound to the current thread.      *       * @since 3.0      */
 specifier|protected
 specifier|static
 specifier|final
@@ -332,7 +332,7 @@ name|ObjectContext
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Returns the ObjectContext bound to the current thread.      *      * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException if there is no ObjectContext bound to the current      *             thread.      * @see org.apache.cayenne.conf.WebApplicationContextFilter      */
+comment|/**      * Returns the ObjectContext bound to the current thread.      *       * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException if there is no ObjectContext bound to the current      *             thread.      * @see org.apache.cayenne.conf.WebApplicationContextFilter      */
 specifier|public
 specifier|static
 name|ObjectContext
@@ -368,7 +368,7 @@ return|return
 name|context
 return|;
 block|}
-comment|/**      * Binds a ObjectContext to the current thread. ObjectContext can later be retrieved by      * users in the same thread by calling {@link BaseContext#getThreadObjectContext}.      * Using null parameter will unbind currently bound ObjectContext.      *      * @since 3.0      */
+comment|/**      * Binds a ObjectContext to the current thread. ObjectContext can later be retrieved      * by users in the same thread by calling {@link BaseContext#getThreadObjectContext}.      * Using null parameter will unbind currently bound ObjectContext.      *       * @since 3.0      */
 specifier|public
 specifier|static
 name|void
@@ -397,7 +397,7 @@ specifier|protected
 name|QueryCache
 name|queryCache
 decl_stmt|;
-comment|/**      * Stores user defined properties associated with this DataContext.      *      * @since 3.0      */
+comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 3.0      */
 specifier|protected
 name|Map
 argument_list|<
@@ -1005,7 +1005,6 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns {@link QueryCache}, creating it on the fly if needed.      */
 specifier|public
-specifier|synchronized
 name|QueryCache
 name|getQueryCache
 parameter_list|()
@@ -1046,7 +1045,6 @@ return|;
 block|}
 comment|/**      * Sets a QueryCache to be used for storing cached query results.      */
 specifier|public
-specifier|synchronized
 name|void
 name|setQueryCache
 parameter_list|(
@@ -1061,7 +1059,7 @@ operator|=
 name|queryCache
 expr_stmt|;
 block|}
-comment|/**      * Returns EventManager associated with the ObjectStore.      *      * @since 1.2      */
+comment|/**      * Returns EventManager associated with the ObjectStore.      *       * @since 1.2      */
 specifier|public
 name|EventManager
 name|getEventManager
@@ -1354,7 +1352,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *      * @since 3.0      */
+comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *       * @since 3.0      */
 specifier|protected
 name|Map
 argument_list|<
@@ -1390,7 +1388,7 @@ return|return
 name|userProperties
 return|;
 block|}
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *      * @since 3.0      */
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *       * @since 3.0      */
 specifier|public
 name|Object
 name|getUserProperty
@@ -1409,7 +1407,7 @@ name|key
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *      * @since 3.0      */
+comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setUserProperty
