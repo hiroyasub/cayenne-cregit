@@ -3500,14 +3500,6 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
-name|name
-operator|.
-name|getComponent
-argument_list|()
-operator|.
-name|requestFocusInWindow
-argument_list|()
-expr_stmt|;
 block|}
 specifier|private
 name|List
