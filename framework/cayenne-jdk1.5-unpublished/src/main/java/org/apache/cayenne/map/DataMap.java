@@ -383,6 +383,15 @@ name|DEFAULT_QUOTE_SQL_IDENTIFIERS_PROPERTY
 init|=
 literal|"quoteSqlIdentifiers"
 decl_stmt|;
+comment|/**      * The namespace in which the data map XML file will be created. This is also the URI to locate a copy of the schema document.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SCHEMA_XSD
+init|=
+literal|"http://cayenne.apache.org/schema/3.0/modelMap"
+decl_stmt|;
 specifier|protected
 name|String
 name|name
@@ -1066,29 +1075,43 @@ parameter_list|)
 block|{
 name|encoder
 operator|.
-name|print
+name|println
 argument_list|(
-literal|"<data-map project-version=\""
-argument_list|)
-expr_stmt|;
-name|encoder
-operator|.
-name|print
-argument_list|(
-name|String
-operator|.
-name|valueOf
-argument_list|(
-name|Project
-operator|.
-name|CURRENT_PROJECT_VERSION
-argument_list|)
+literal|"<data-map xmlns=\"http://cayenne.apache.org/schema/3.0/modelMap\""
 argument_list|)
 expr_stmt|;
 name|encoder
 operator|.
 name|println
 argument_list|(
+literal|"  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
+argument_list|)
+expr_stmt|;
+name|encoder
+operator|.
+name|println
+argument_list|(
+literal|"  xsi:schemaLocation=\""
+operator|+
+name|SCHEMA_XSD
+operator|+
+literal|" "
+operator|+
+name|SCHEMA_XSD
+operator|+
+literal|"\""
+argument_list|)
+expr_stmt|;
+name|encoder
+operator|.
+name|println
+argument_list|(
+literal|"  project-version=\""
+operator|+
+name|Project
+operator|.
+name|CURRENT_PROJECT_VERSION
+operator|+
 literal|"\">"
 argument_list|)
 expr_stmt|;
