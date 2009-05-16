@@ -632,6 +632,18 @@ range|:
 name|rows
 control|)
 block|{
+if|if
+condition|(
+name|row
+operator|>=
+literal|0
+operator|&&
+name|row
+operator|<
+name|getRowCount
+argument_list|()
+condition|)
+block|{
 name|addRowSelectionInterval
 argument_list|(
 name|row
@@ -639,6 +651,7 @@ argument_list|,
 name|row
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|fireForbidden
 operator|=
