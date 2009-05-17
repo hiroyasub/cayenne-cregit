@@ -98,6 +98,8 @@ argument_list|,
 name|dbEntity
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|column
 operator|.
 name|setMandatory
@@ -175,6 +177,9 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|// clean up
+block|}
+finally|finally
+block|{
 name|dbEntity
 operator|.
 name|removeAttribute
@@ -207,6 +212,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_class
