@@ -86,7 +86,7 @@ operator|!
 name|run
 condition|)
 block|{
-name|generateUpdateSchema
+name|processSchemaUpdate
 argument_list|(
 name|dataNode
 argument_list|)
@@ -103,7 +103,7 @@ comment|/**      * @since 3.0      */
 specifier|protected
 specifier|abstract
 name|void
-name|generateUpdateSchema
+name|processSchemaUpdate
 parameter_list|(
 name|DataNode
 name|dataNode

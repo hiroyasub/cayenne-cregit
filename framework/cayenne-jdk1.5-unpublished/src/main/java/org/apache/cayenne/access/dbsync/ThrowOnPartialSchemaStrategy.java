@@ -167,8 +167,9 @@ extends|extends
 name|BaseSchemaUpdateStrategy
 block|{
 specifier|final
+specifier|static
 name|Log
-name|log
+name|logger
 init|=
 name|LogFactory
 operator|.
@@ -182,9 +183,9 @@ decl_stmt|;
 comment|/**      * @since 3.0      */
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|void
-name|generateUpdateSchema
+name|processSchemaUpdate
 parameter_list|(
 name|DataNode
 name|dataNode
@@ -254,7 +255,7 @@ argument_list|()
 condition|)
 block|{
 name|String
-name|schema_name
+name|schemaName
 init|=
 name|rs
 operator|.
@@ -267,7 +268,7 @@ name|schemas
 operator|.
 name|add
 argument_list|(
-name|schema_name
+name|schemaName
 argument_list|)
 expr_stmt|;
 block|}
@@ -301,7 +302,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|log
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -365,7 +366,7 @@ name|SQLException
 name|e
 parameter_list|)
 block|{
-name|log
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -376,7 +377,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|analyze
+name|processSchemaUpdate
 argument_list|(
 name|dataNode
 argument_list|,
@@ -399,7 +400,7 @@ expr_stmt|;
 block|}
 specifier|protected
 name|void
-name|analyze
+name|processSchemaUpdate
 parameter_list|(
 name|DataNode
 name|dataNode
@@ -431,13 +432,31 @@ operator|==
 literal|null
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Full schema is present"
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
-name|String
-name|err
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Error - missing or partial schema detected"
+argument_list|)
+expr_stmt|;
+name|StringBuilder
+name|buffer
 init|=
-literal|"Partial schema detected: "
+operator|new
+name|StringBuilder
+argument_list|(
+literal|"Schema mismatch detected"
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -446,9 +465,17 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|err
-operator|+=
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|": "
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|errorMessage
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
@@ -461,9 +488,12 @@ operator|==
 name|entitiesSize
 condition|)
 block|{
-name|err
-operator|+=
-literal|"no schema in database"
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|": no schema found"
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -478,15 +508,26 @@ operator|>
 literal|0
 condition|)
 block|{
-name|err
-operator|+=
-literal|"expect table "
-operator|+
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|": missing table '"
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|mergerOnlyTable
 operator|.
 name|get
 argument_list|(
 literal|0
+argument_list|)
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|'\''
 argument_list|)
 expr_stmt|;
 block|}
@@ -495,7 +536,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|err
+name|buffer
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 throw|;
 block|}

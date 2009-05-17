@@ -101,6 +101,34 @@ name|DataMap
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -112,11 +140,25 @@ name|ThrowOnPartialOrCreateSchemaStrategy
 extends|extends
 name|ThrowOnPartialSchemaStrategy
 block|{
+specifier|final
+specifier|static
+name|Log
+name|logger
+init|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|ThrowOnPartialOrCreateSchemaStrategy
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Override
 specifier|protected
 name|void
-name|analyze
+name|processSchemaUpdate
 parameter_list|(
 name|DataNode
 name|dataNode
@@ -148,6 +190,13 @@ operator|==
 literal|null
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Full schema is present"
+argument_list|)
+expr_stmt|;
 block|}
 if|else if
 condition|(
@@ -159,6 +208,13 @@ operator|==
 name|entitiesSize
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"No schema detected, will create mapped tables"
+argument_list|)
+expr_stmt|;
 name|generate
 argument_list|(
 name|dataNode
@@ -167,10 +223,21 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|String
-name|err
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Error - partial schema detected"
+argument_list|)
+expr_stmt|;
+name|StringBuilder
+name|buffer
 init|=
-literal|"Partial schema detected: "
+operator|new
+name|StringBuilder
+argument_list|(
+literal|"Schema mismatch detected"
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -179,9 +246,17 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|err
-operator|+=
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|": "
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|errorMessage
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -196,15 +271,26 @@ operator|>
 literal|0
 condition|)
 block|{
-name|err
-operator|+=
-literal|"expect table "
-operator|+
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|": missing table '"
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|mergerOnlyTable
 operator|.
 name|get
 argument_list|(
 literal|0
+argument_list|)
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|'\''
 argument_list|)
 expr_stmt|;
 block|}
@@ -213,7 +299,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|err
+name|buffer
+operator|.
+name|toString
+argument_list|()
 argument_list|)
 throw|;
 block|}

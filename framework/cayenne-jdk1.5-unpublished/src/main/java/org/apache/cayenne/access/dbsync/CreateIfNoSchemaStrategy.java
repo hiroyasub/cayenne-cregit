@@ -195,8 +195,9 @@ extends|extends
 name|BaseSchemaUpdateStrategy
 block|{
 specifier|final
+specifier|static
 name|Log
-name|logObj
+name|logger
 init|=
 name|LogFactory
 operator|.
@@ -211,7 +212,7 @@ annotation|@
 name|Override
 specifier|public
 name|void
-name|generateUpdateSchema
+name|processSchemaUpdate
 parameter_list|(
 name|DataNode
 name|dataNode
@@ -300,6 +301,13 @@ condition|(
 name|generate
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"No schema detected, will create mapped tables"
+argument_list|)
+expr_stmt|;
 name|generate
 argument_list|(
 name|dataNode
@@ -308,11 +316,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Full or partial schema is present, skipping schema generation"
+literal|"Full or partial schema detected, skipping tables creation"
 argument_list|)
 expr_stmt|;
 block|}
