@@ -39,8 +39,8 @@ begin_class
 specifier|public
 class|class
 name|SkipSchemaUpdateStrategy
-extends|extends
-name|BaseSchemaUpdateStrategy
+implements|implements
+name|SchemaUpdateStrategy
 block|{
 comment|/**      * @since 3.0      */
 specifier|public
@@ -52,30 +52,6 @@ name|dataNode
 parameter_list|)
 block|{
 comment|// does nothing
-block|}
-comment|/**      * @since 3.0      */
-annotation|@
-name|Override
-specifier|public
-name|void
-name|generateUpdateSchema
-parameter_list|(
-name|DataNode
-name|dataNode
-parameter_list|)
-block|{
-comment|// does nothing
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|BaseSchemaUpdateStrategy
-name|getSchema
-parameter_list|()
-block|{
-return|return
-name|this
-return|;
 block|}
 block|}
 end_class

@@ -101,34 +101,6 @@ name|DataMap
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -140,35 +112,11 @@ name|ThrowOnPartialOrCreateSchemaStrategy
 extends|extends
 name|ThrowOnPartialSchemaStrategy
 block|{
-specifier|final
-name|Log
-name|logObj
-init|=
-name|LogFactory
-operator|.
-name|getLog
-argument_list|(
-name|ThrowOnPartialOrCreateSchemaStrategy
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-comment|/**      * @since 3.0      */
-specifier|public
-name|ThrowOnPartialOrCreateSchemaStrategy
-parameter_list|()
-block|{
-name|currentSchema
-operator|=
-name|this
-expr_stmt|;
-block|}
 annotation|@
 name|Override
 specifier|protected
-specifier|synchronized
 name|void
-name|analyser
+name|analyze
 parameter_list|(
 name|DataNode
 name|dataNode
@@ -222,7 +170,7 @@ block|{
 name|String
 name|err
 init|=
-literal|"Parser schema detected: "
+literal|"Partial schema detected: "
 decl_stmt|;
 if|if
 condition|(
@@ -271,7 +219,6 @@ throw|;
 block|}
 block|}
 specifier|private
-specifier|synchronized
 name|void
 name|generate
 parameter_list|(
