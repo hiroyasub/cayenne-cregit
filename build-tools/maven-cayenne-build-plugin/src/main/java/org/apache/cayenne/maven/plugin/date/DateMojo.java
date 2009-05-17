@@ -101,8 +101,22 @@ name|MojoFailureException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|project
+operator|.
+name|MavenProject
+import|;
+end_import
+
 begin_comment
-comment|/**  * Exports the "project.build.date" and "project.build.time" properties to the  * environment.  *   * @goal date  * @phase generate-resources  * @requiresProject  */
+comment|/**  * Exports the "project.build.date" and "project.build.time" properties to the  * environment.  *   * @goal date  * @phase initialize  * @requiresProject  */
 end_comment
 
 begin_class
@@ -146,6 +160,11 @@ name|String
 name|BUILD_TIME_FORMAT
 init|=
 literal|"HH:mm:ss"
+decl_stmt|;
+comment|/**      * POM      *       * @parameter expression="${project}"      * @readonly      * @required      */
+specifier|protected
+name|MavenProject
+name|project
 decl_stmt|;
 specifier|public
 name|void
@@ -215,9 +234,12 @@ operator|.
 name|getTime
 argument_list|()
 decl_stmt|;
-name|System
+name|project
 operator|.
-name|setProperty
+name|getProperties
+argument_list|()
+operator|.
+name|put
 argument_list|(
 name|BUILD_DATE_PROPERTY
 argument_list|,
@@ -229,9 +251,12 @@ name|gmtTime
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|System
+name|project
 operator|.
-name|setProperty
+name|getProperties
+argument_list|()
+operator|.
+name|put
 argument_list|(
 name|BUILD_TIME_PROPERTY
 argument_list|,
@@ -243,9 +268,12 @@ name|gmtTime
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|System
+name|project
 operator|.
-name|setProperty
+name|getProperties
+argument_list|()
+operator|.
+name|put
 argument_list|(
 name|BUILD_YEAR_PROPERTY
 argument_list|,
