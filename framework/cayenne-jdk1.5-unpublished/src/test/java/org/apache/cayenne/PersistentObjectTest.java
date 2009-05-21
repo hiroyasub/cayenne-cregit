@@ -15,16 +15,6 @@ end_package
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -43,9 +33,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|unit
 operator|.
-name|DataContext
+name|CayenneCase
 import|;
 end_import
 
@@ -58,7 +48,7 @@ specifier|public
 class|class
 name|PersistentObjectTest
 extends|extends
-name|TestCase
+name|CayenneCase
 block|{
 specifier|public
 name|void
@@ -222,8 +212,6 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-name|DataContext
-operator|.
 name|createDataContext
 argument_list|()
 operator|.
