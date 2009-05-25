@@ -1675,6 +1675,16 @@ name|getDbEntities
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+name|tables
+operator|.
+name|contains
+argument_list|(
+name|dbEntity
+argument_list|)
+condition|)
+block|{
 name|String
 name|tableName
 init|=
@@ -1751,7 +1761,8 @@ block|}
 else|else
 block|{
 comment|// why an attribute might be null is not quiet clear
-comment|// but there is a bug report 731406 indicating that it is possible
+comment|// but there is a bug report 731406 indicating that it is
+comment|// possible
 comment|// so just print the warning, and ignore
 name|logObj
 operator|.
@@ -1772,6 +1783,7 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|// cay-479 - iterate skipped DbEntities to populate exported keys
@@ -2533,6 +2545,13 @@ argument_list|)
 expr_stmt|;
 continue|continue;
 block|}
+if|if
+condition|(
+name|forwardRelationship
+operator|!=
+literal|null
+condition|)
+block|{
 name|forwardRelationship
 operator|.
 name|addJoin
@@ -2548,6 +2567,14 @@ name|fkName
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|reverseRelationship
+operator|!=
+literal|null
+condition|)
+block|{
 name|reverseRelationship
 operator|.
 name|addJoin
@@ -2563,6 +2590,7 @@ name|pkName
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 do|while
