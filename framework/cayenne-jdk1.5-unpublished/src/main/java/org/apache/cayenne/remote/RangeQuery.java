@@ -369,6 +369,8 @@ name|fetchOffset
 return|;
 block|}
 comment|/**              * @deprecated since 3.0              */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -410,6 +412,8 @@ literal|0
 return|;
 block|}
 comment|/**              * @deprecated since 3.0 in favor of 'getCacheStrategy'.              */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -538,6 +542,15 @@ operator|new
 name|UnsupportedOperationException
 argument_list|()
 throw|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+literal|0
+return|;
 block|}
 block|}
 return|;

@@ -355,6 +355,8 @@ name|QueryMetadata
 name|queryMetadata
 decl_stmt|;
 comment|/**      * @deprecated since 3.0 use a      *             {@link #SQLTemplateAction(SQLTemplate, DbAdapter, EntityResolver)}      *             constructor.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|SQLTemplateAction
 parameter_list|(
@@ -1373,8 +1375,31 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|queryMetadata
+operator|.
+name|getStatementFetchSize
+argument_list|()
+operator|!=
+literal|0
+condition|)
+block|{
+name|preparedStatement
+operator|.
+name|setFetchSize
+argument_list|(
+name|queryMetadata
+operator|.
+name|getStatementFetchSize
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Always returns true.      *       * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isRemovingLineBreaks
@@ -1385,6 +1410,8 @@ literal|true
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 - does nothing      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setRemovingLineBreaks

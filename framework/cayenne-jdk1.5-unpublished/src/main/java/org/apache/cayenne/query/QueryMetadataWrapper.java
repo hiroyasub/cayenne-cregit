@@ -354,6 +354,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -506,6 +508,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 as super is deprecated.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -516,6 +520,8 @@ literal|true
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 inheritance resolving is not optional.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isResolvingInherited
@@ -589,6 +595,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -660,6 +668,57 @@ name|info
 operator|.
 name|getPrefetchTree
 argument_list|()
+return|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+if|if
+condition|(
+operator|!
+name|overrideExists
+argument_list|(
+name|QueryMetadata
+operator|.
+name|STATEMENT_FETCH_SIZE_PROPERTY
+argument_list|)
+condition|)
+block|{
+return|return
+name|info
+operator|.
+name|getPageSize
+argument_list|()
+return|;
+block|}
+name|Number
+name|n
+init|=
+operator|(
+name|Number
+operator|)
+name|overrides
+operator|.
+name|get
+argument_list|(
+name|QueryMetadata
+operator|.
+name|STATEMENT_FETCH_SIZE_PROPERTY
+argument_list|)
+decl_stmt|;
+return|return
+name|n
+operator|!=
+literal|null
+condition|?
+name|n
+operator|.
+name|intValue
+argument_list|()
+else|:
+literal|0
 return|;
 block|}
 block|}

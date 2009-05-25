@@ -318,6 +318,11 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+name|initStatement
+argument_list|(
+name|statement
+argument_list|)
+expr_stmt|;
 comment|// stored procedure may contain a mixture of update counts and result sets,
 comment|// and out parameters. Read out parameters first, then
 comment|// iterate until we exhaust all results
@@ -882,6 +887,46 @@ name|singletonList
 argument_list|(
 name|result
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Initializes statement with query parameters      * @throws Exception       */
+name|void
+name|initStatement
+parameter_list|(
+name|CallableStatement
+name|statement
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|int
+name|statementFetchSize
+init|=
+name|query
+operator|.
+name|getMetaData
+argument_list|(
+name|getEntityResolver
+argument_list|()
+argument_list|)
+operator|.
+name|getStatementFetchSize
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|statementFetchSize
+operator|!=
+literal|0
+condition|)
+block|{
+name|statement
+operator|.
+name|setFetchSize
+argument_list|(
+name|statementFetchSize
 argument_list|)
 expr_stmt|;
 block|}

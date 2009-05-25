@@ -175,6 +175,8 @@ literal|null
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -268,6 +270,8 @@ literal|1
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -303,6 +307,15 @@ parameter_list|()
 block|{
 return|return
 literal|null
+return|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+literal|0
 return|;
 block|}
 block|}

@@ -332,6 +332,8 @@ argument_list|()
 return|;
 block|}
 comment|/**              * @deprecated since 3.0 in favor of 'getCacheStrategy'.              */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -406,6 +408,8 @@ argument_list|()
 return|;
 block|}
 comment|/**              * @deprecated since 3.0              */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -508,6 +512,8 @@ argument_list|()
 return|;
 block|}
 comment|/**              * @deprecated since 3.0              */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -521,6 +527,8 @@ argument_list|()
 return|;
 block|}
 comment|/**              * @deprecated since 3.0. Inheritance resolving is not optional anymore.              */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isResolvingInherited
@@ -530,6 +538,18 @@ return|return
 name|metadata
 operator|.
 name|isResolvingInherited
+argument_list|()
+return|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|metadata
+operator|.
+name|getStatementFetchSize
 argument_list|()
 return|;
 block|}

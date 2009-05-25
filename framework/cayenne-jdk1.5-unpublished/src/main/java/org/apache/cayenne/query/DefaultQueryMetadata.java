@@ -284,6 +284,8 @@ literal|null
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -316,6 +318,8 @@ literal|true
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isResolvingInherited
@@ -347,6 +351,8 @@ literal|1
 return|;
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -392,6 +398,17 @@ name|Collections
 operator|.
 name|emptyMap
 argument_list|()
+return|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|QueryMetadata
+operator|.
+name|STATEMENT_FETCH_SIZE_DEFAULT
 return|;
 block|}
 block|}

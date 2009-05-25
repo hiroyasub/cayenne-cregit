@@ -115,6 +115,8 @@ interface|interface
 name|QueryMetadata
 block|{
 comment|/**      * A cache policy that disables caching of query results.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -124,6 +126,8 @@ init|=
 literal|"nocache"
 decl_stmt|;
 comment|/**      * A cache policy ruling that query results shall be cached separately for each      * DataContext.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -133,6 +137,8 @@ init|=
 literal|"localcache"
 decl_stmt|;
 comment|/**      * Same as {@link #LOCAL_CACHE}, only forcing any current cache expiration.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -142,6 +148,8 @@ init|=
 literal|"localcache_refresh"
 decl_stmt|;
 comment|/**      * A cache policy ruling that query results shall be stored in a shared cache      * accessible by all DataContexts.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -151,6 +159,8 @@ init|=
 literal|"sharedcache"
 decl_stmt|;
 comment|/**      * Same as {@link #SHARED_CACHE}, only forcing any current cache expiration.      *       * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -230,6 +240,8 @@ init|=
 literal|false
 decl_stmt|;
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -239,6 +251,8 @@ init|=
 literal|"cayenne.GenericSelectQuery.refreshingObjects"
 decl_stmt|;
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -248,6 +262,8 @@ init|=
 literal|true
 decl_stmt|;
 comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -257,6 +273,8 @@ init|=
 literal|"cayenne.GenericSelectQuery.resolvingInherited"
 decl_stmt|;
 comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -266,6 +284,8 @@ init|=
 literal|true
 decl_stmt|;
 comment|/**      * @deprecated since 3.0 use {@value #CACHE_STRATEGY_PROPERTY}      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -293,6 +313,8 @@ init|=
 literal|"cayenne.GenericSelectQuery.cacheGroups"
 decl_stmt|;
 comment|/**      * @deprecated since 3.0 use {@link QueryCacheStrategy} enum.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -300,6 +322,24 @@ name|String
 name|CACHE_POLICY_DEFAULT
 init|=
 name|NO_CACHE
+decl_stmt|;
+comment|/**      * Defines the name of the property for the query {@link #getStatementFetchSize() fetch      * size}.      *       * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|STATEMENT_FETCH_SIZE_PROPERTY
+init|=
+literal|"cayenne.GenericSelectQuery.statementFetchSize"
+decl_stmt|;
+comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows      * selected starting from the first.      *       * @since 3.0      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|STATEMENT_FETCH_SIZE_DEFAULT
+init|=
+literal|0
 decl_stmt|;
 comment|/**      * @since 3.0      */
 name|ClassDescriptor
@@ -327,6 +367,8 @@ name|getDataMap
 parameter_list|()
 function_decl|;
 comment|/**      * Returns query cache policy, which can be one of {@link #NO_CACHE},      * {@link #LOCAL_CACHE}, or {@link #SHARED_CACHE}. NO_CACHE is generally a default      * policy.      *       * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
+annotation|@
+name|Deprecated
 name|String
 name|getCachePolicy
 parameter_list|()
@@ -358,6 +400,8 @@ name|isRefreshingObjects
 parameter_list|()
 function_decl|;
 comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
+annotation|@
+name|Deprecated
 name|boolean
 name|isResolvingInherited
 parameter_list|()
@@ -373,6 +417,8 @@ name|getFetchOffset
 parameter_list|()
 function_decl|;
 comment|/**      * @deprecated since 3.0, renamed to {@link #getFetchOffset()}.      */
+annotation|@
+name|Deprecated
 name|int
 name|getFetchStartIndex
 parameter_list|()
@@ -408,6 +454,12 @@ argument_list|<
 name|Object
 argument_list|>
 name|getResultSetMapping
+parameter_list|()
+function_decl|;
+comment|/**      * @return statement's fetch size      * @since 3.0      */
+specifier|public
+name|int
+name|getStatementFetchSize
 parameter_list|()
 function_decl|;
 block|}

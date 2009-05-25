@@ -485,6 +485,8 @@ argument_list|)
 return|;
 block|}
 comment|/**          * @deprecated since 3.0 in favor of 'getCacheStrategy'.          */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -570,6 +572,8 @@ argument_list|()
 return|;
 block|}
 comment|/**          * @deprecated since 3.0          */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -707,6 +711,18 @@ return|return
 name|mdDelegate
 operator|.
 name|isResolvingInherited
+argument_list|()
+return|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|mdDelegate
+operator|.
+name|getStatementFetchSize
 argument_list|()
 return|;
 block|}

@@ -909,6 +909,36 @@ name|pageSize
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Sets statement's fetch size (0 for no default size)      * @since 3.0       */
+specifier|public
+name|void
+name|setStatementFetchSize
+parameter_list|(
+name|int
+name|size
+parameter_list|)
+block|{
+name|metadata
+operator|.
+name|setStatementFetchSize
+argument_list|(
+name|size
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @return statement's fetch size      * @since 3.0      */
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|metadata
+operator|.
+name|getStatementFetchSize
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

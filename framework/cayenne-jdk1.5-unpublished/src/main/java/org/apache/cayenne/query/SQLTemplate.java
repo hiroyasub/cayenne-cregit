@@ -1173,6 +1173,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getCachePolicy
@@ -1186,6 +1188,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 3.0 {@link #setCacheStrategy(QueryCacheStrategy)} replaces this      *             method.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setCachePolicy
@@ -1383,6 +1387,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -1396,6 +1402,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setRefreshingObjects
@@ -1407,6 +1415,8 @@ block|{
 comment|// noop
 block|}
 comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isResolvingInherited
@@ -1417,6 +1427,8 @@ literal|true
 return|;
 block|}
 comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setResolvingInherited
@@ -1921,6 +1933,36 @@ parameter_list|()
 block|{
 return|return
 name|result
+return|;
+block|}
+comment|/**      * Sets statement's fetch size (0 for no default size)      * @since 3.0       */
+specifier|public
+name|void
+name|setStatementFetchSize
+parameter_list|(
+name|int
+name|size
+parameter_list|)
+block|{
+name|metaData
+operator|.
+name|setStatementFetchSize
+argument_list|(
+name|size
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @return statement's fetch size      * @since 3.0      */
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|metaData
+operator|.
+name|getStatementFetchSize
+argument_list|()
 return|;
 block|}
 block|}

@@ -1112,6 +1112,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a number of query results cached by this object store. Note that each      * result is a list and can possibly contain a large number of entries.      *       * @since 1.2      * @deprecated since 3.0. See {@link DataContext#getQueryCache()}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|cachedQueriesCount
@@ -1318,6 +1320,8 @@ literal|null
 expr_stmt|;
 block|}
 comment|/**      * Invalidates a collection of DataObjects. Changes objects state to HOLLOW.      *       * @deprecated since 3.0, use {@link DataContext#invalidateObjects(Collection)} or      *             {@link RefreshQuery}.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|void
@@ -1627,6 +1631,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Updates snapshots in the underlying DataRowStore. If<code>refresh</code> is true,      * all snapshots in<code>snapshots</code> will be loaded into DataRowStore,      * regardless of the existing cache state. If<code>refresh</code> is false, only      * missing snapshots are loaded. This method is normally called internally by the      * DataContext owning the ObjectStore to update the caches after a select query.      *       * @param objects a list of object whose snapshots need to be updated.      * @param snapshots a list of snapshots. Must be of the same length and use the same      *            order as<code>objects</code> list.      * @param refresh controls whether existing cached snapshots should be replaced with      *            the new ones.      * @since 1.1      * @deprecated since 3.0 unused      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|snapshotsUpdatedForObjects
@@ -1989,6 +1995,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Starts tracking the registration of new objects from this ObjectStore. Used in      * conjunction with unregisterNewObjects() to control garbage collection when an      * instance of ObjectStore is used over a longer time for batch processing.      *       * @deprecated since 3.0 as ObjectStore holds weak reference to unmodified objects and      *             this feature is useless.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|void
@@ -1998,6 +2006,8 @@ block|{
 comment|// noop
 block|}
 comment|/**      * Unregisters the newly registered DataObjects from this objectStore. Used in      * conjunction with startTrackingNewObjects() to control garbage collection when an      * instance of ObjectStore is used over a longer time for batch processing.      *       * @deprecated since 3.0 as ObjectStore holds weak reference to unmodified objects and      *             this feature is useless.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|void
@@ -2086,6 +2096,8 @@ return|;
 block|}
 block|}
 comment|/**      * Returns cached query results for a given query, or null if no results are cached.      * Note that ObjectStore will only lookup results in its local cache, and not the      * shared cache associated with the underlying DataRowStore.      *       * @since 1.1      * @deprecated since 3.0. See {@link DataContext#getQueryCache()}.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|List
@@ -2125,6 +2137,8 @@ literal|null
 return|;
 block|}
 comment|/**      * Caches a list of query results.      *       * @since 1.1      * @deprecated since 3.0. See {@link DataContext#getQueryCache()}.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|void
@@ -2567,6 +2581,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Initializes object with data from cache or from the database, if this object is not      * fully resolved.      *       * @since 1.1      * @deprecated since 3.0 use      *             {@link ObjectContext#prepareForAccess(Persistent, String, boolean)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|resolveHollow
@@ -3998,6 +4014,8 @@ throw|;
 block|}
 block|}
 comment|/**      * @deprecated since 3.0 as this inner class is used to provide backwards      *             compatibility for some deprecated methods.      */
+annotation|@
+name|Deprecated
 specifier|final
 class|class
 name|CacheQueryMetadata
@@ -4116,6 +4134,8 @@ literal|0
 return|;
 block|}
 comment|/**          * @deprecated since 3.0          */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getFetchStartIndex
@@ -4210,6 +4230,15 @@ parameter_list|()
 block|{
 return|return
 literal|false
+return|;
+block|}
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+literal|0
 return|;
 block|}
 block|}

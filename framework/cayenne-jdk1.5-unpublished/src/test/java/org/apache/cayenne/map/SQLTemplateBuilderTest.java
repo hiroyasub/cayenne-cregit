@@ -49,7 +49,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLTemplate
+name|QueryMetadata
 import|;
 end_import
 
@@ -63,7 +63,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|QueryMetadata
+name|SQLTemplate
 import|;
 end_import
 
@@ -244,6 +244,17 @@ argument_list|,
 literal|"5"
 argument_list|)
 expr_stmt|;
+name|builder
+operator|.
+name|addProperty
+argument_list|(
+name|QueryMetadata
+operator|.
+name|STATEMENT_FETCH_SIZE_PROPERTY
+argument_list|,
+literal|"6"
+argument_list|)
+expr_stmt|;
 name|Query
 name|query
 init|=
@@ -271,6 +282,21 @@ name|query
 operator|)
 operator|.
 name|getFetchLimit
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|6
+argument_list|,
+operator|(
+operator|(
+name|SQLTemplate
+operator|)
+name|query
+operator|)
+operator|.
+name|getStatementFetchSize
 argument_list|()
 argument_list|)
 expr_stmt|;
