@@ -3903,6 +3903,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dbAttributeChanged
@@ -3941,6 +3943,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dbAttributeAdded
@@ -3952,6 +3956,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dbAttributeRemoved
@@ -3963,6 +3969,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dbRelationshipChanged
@@ -4001,6 +4009,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -4012,6 +4022,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dbRelationshipRemoved
@@ -4146,6 +4158,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objAttributeChanged
@@ -4157,6 +4171,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objAttributeAdded
@@ -4168,6 +4184,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objAttributeRemoved
@@ -4179,6 +4197,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objRelationshipChanged
@@ -4190,6 +4210,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objRelationshipAdded
@@ -4201,6 +4223,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objRelationshipRemoved

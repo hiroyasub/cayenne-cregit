@@ -131,6 +131,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|BatchQueryBuilderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|cache
 operator|.
 name|MapQueryCacheFactory
@@ -537,6 +553,11 @@ decl_stmt|;
 specifier|protected
 name|boolean
 name|stopped
+decl_stmt|;
+comment|/**      * Factory for creating QueryBuilders. Might be null, then default one will be used.       * Server-only.      */
+specifier|private
+name|BatchQueryBuilderFactory
+name|queryBuilderFactory
 decl_stmt|;
 comment|/**      * Creates a DataDomain and assigns it a name.      */
 specifier|public
@@ -2761,6 +2782,32 @@ parameter_list|()
 block|{
 return|return
 name|queryCache
+return|;
+block|}
+comment|/**      * Sets factory for creating QueryBuilders      */
+specifier|public
+name|void
+name|setQueryBuilderFactory
+parameter_list|(
+name|BatchQueryBuilderFactory
+name|queryBuilderFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|queryBuilderFactory
+operator|=
+name|queryBuilderFactory
+expr_stmt|;
+block|}
+comment|/**      * @return factory for creating QueryBuilders. Might be null      */
+specifier|public
+name|BatchQueryBuilderFactory
+name|getQueryBuilderFactory
+parameter_list|()
+block|{
+return|return
+name|queryBuilderFactory
 return|;
 block|}
 block|}

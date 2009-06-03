@@ -528,8 +528,13 @@ block|{
 name|batch
 operator|=
 operator|new
-name|DeleteBatchQuery
+name|DataDomainDeleteQuery
 argument_list|(
+name|parent
+operator|.
+name|getDomain
+argument_list|()
+argument_list|,
 name|dbEntity
 argument_list|,
 name|qualifierBuilder
