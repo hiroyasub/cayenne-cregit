@@ -75,6 +75,11 @@ name|sql
 parameter_list|)
 function_decl|;
 specifier|public
+name|ModelMergeDelegate
+name|getModelMergeDelegate
+parameter_list|()
+function_decl|;
+specifier|public
 name|DbAdapter
 name|getAdapter
 parameter_list|()

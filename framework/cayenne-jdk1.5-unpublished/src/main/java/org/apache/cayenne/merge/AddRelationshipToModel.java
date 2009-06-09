@@ -117,8 +117,20 @@ expr_stmt|;
 comment|// TODO: add reverse relationship as well if it does not exist
 name|synchronizeWithObjEntity
 argument_list|(
+name|mergerContext
+argument_list|,
 name|getEntity
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|mergerContext
+operator|.
+name|getModelMergeDelegate
+argument_list|()
+operator|.
+name|dbRelationshipAdded
+argument_list|(
+name|rel
 argument_list|)
 expr_stmt|;
 block|}

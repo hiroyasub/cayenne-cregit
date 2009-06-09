@@ -505,6 +505,11 @@ argument_list|,
 name|th
 argument_list|)
 expr_stmt|;
+name|th
+operator|.
+name|printStackTrace
+argument_list|()
+expr_stmt|;
 name|JOptionPane
 operator|.
 name|showMessageDialog

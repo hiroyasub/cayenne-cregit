@@ -111,6 +111,17 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|mergerContext
+operator|.
+name|getModelMergeDelegate
+argument_list|()
+operator|.
+name|dbAttributeModified
+argument_list|(
+name|getColumn
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|String

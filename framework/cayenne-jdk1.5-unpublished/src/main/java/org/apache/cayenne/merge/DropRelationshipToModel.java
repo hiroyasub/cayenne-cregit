@@ -108,6 +108,8 @@ parameter_list|)
 block|{
 name|remove
 argument_list|(
+name|mergerContext
+argument_list|,
 name|rel
 argument_list|,
 literal|true

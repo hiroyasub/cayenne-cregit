@@ -240,6 +240,8 @@ condition|)
 block|{
 name|remove
 argument_list|(
+name|mergerContext
+argument_list|,
 name|dbRelationship
 argument_list|,
 literal|true
@@ -289,6 +291,16 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|mergerContext
+operator|.
+name|getModelMergeDelegate
+argument_list|()
+operator|.
+name|objAttributeRemoved
+argument_list|(
+name|objAttribute
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 comment|// remove DbAttribute
@@ -301,6 +313,17 @@ name|getColumn
 argument_list|()
 operator|.
 name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|mergerContext
+operator|.
+name|getModelMergeDelegate
+argument_list|()
+operator|.
+name|dbAttributeRemoved
+argument_list|(
+name|getColumn
 argument_list|()
 argument_list|)
 expr_stmt|;
