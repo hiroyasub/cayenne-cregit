@@ -989,6 +989,24 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+name|QueryLogger
+operator|.
+name|logQueryError
+argument_list|(
+operator|new
+name|RuntimeException
+argument_list|(
+literal|"AUTO_PK_SUPPORT exist: "
+operator|+
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|exists
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|exists
 return|;
