@@ -1099,7 +1099,7 @@ literal|" "
 operator|+
 name|SCHEMA_XSD
 operator|+
-literal|"\""
+literal|".xsd\""
 argument_list|)
 expr_stmt|;
 name|encoder
