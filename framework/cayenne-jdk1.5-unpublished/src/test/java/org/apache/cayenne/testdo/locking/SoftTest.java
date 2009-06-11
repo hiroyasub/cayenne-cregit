@@ -37,7 +37,21 @@ class|class
 name|SoftTest
 extends|extends
 name|_SoftTest
-block|{  }
+block|{
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|onPrePersist
+parameter_list|()
+block|{
+name|setDeleted
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 end_class
 
 end_unit

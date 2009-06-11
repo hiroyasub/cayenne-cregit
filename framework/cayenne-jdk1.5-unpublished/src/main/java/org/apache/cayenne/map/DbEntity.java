@@ -373,6 +373,11 @@ specifier|protected
 name|DbKeyGenerator
 name|primaryKeyGenerator
 decl_stmt|;
+comment|/**      * Qualifier, that will be applied to all select queries and joins with this DbEntity      */
+specifier|protected
+name|String
+name|qualifier
+decl_stmt|;
 comment|/**      * Creates an unnamed DbEntity.      */
 specifier|public
 name|DbEntity
@@ -599,6 +604,48 @@ operator|.
 name|encodeAsXML
 argument_list|(
 name|encoder
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|getQualifier
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getQualifier
+argument_list|()
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|encoder
+operator|.
+name|print
+argument_list|(
+literal|"<qualifier><![CDATA["
+argument_list|)
+expr_stmt|;
+name|encoder
+operator|.
+name|print
+argument_list|(
+name|getQualifier
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|encoder
+operator|.
+name|println
+argument_list|(
+literal|"]]></qualifier>"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2144,6 +2191,32 @@ name|e
 parameter_list|)
 block|{
 comment|// does nothing currently
+block|}
+comment|/**      * @return qualifier that will be ANDed to all select queries with this entity      */
+specifier|public
+name|String
+name|getQualifier
+parameter_list|()
+block|{
+return|return
+name|qualifier
+return|;
+block|}
+comment|/**      * Sets qualifier for this entity      */
+specifier|public
+name|void
+name|setQualifier
+parameter_list|(
+name|String
+name|qualifier
+parameter_list|)
+block|{
+name|this
+operator|.
+name|qualifier
+operator|=
+name|qualifier
+expr_stmt|;
 block|}
 comment|/**      * Returns true if there is full replacement id is attached to an ObjectId. "Full"      * means that all PK columns are present and only PK columns are present.      *       * @since 1.2      */
 specifier|public

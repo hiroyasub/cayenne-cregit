@@ -3088,6 +3088,8 @@ name|location
 return|;
 block|}
 comment|/**      * Creates, configures and returns ResourceLocator object used to lookup DataMap      * files.      *       * @deprecated since 3.0 use {@link #createResourceFinder()}.      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|ResourceLocator
 name|configLocator
@@ -5723,7 +5725,7 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// qualifier can belong to ObjEntity or a query
+comment|// qualifier can belong to ObjEntity, DbEntity or a query
 if|if
 condition|(
 name|objEntity
@@ -5741,6 +5743,21 @@ name|fromString
 argument_list|(
 name|qualifier
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|dbEntity
+operator|!=
+literal|null
+condition|)
+block|{
+name|dbEntity
+operator|.
+name|setQualifier
+argument_list|(
+name|qualifier
 argument_list|)
 expr_stmt|;
 block|}
