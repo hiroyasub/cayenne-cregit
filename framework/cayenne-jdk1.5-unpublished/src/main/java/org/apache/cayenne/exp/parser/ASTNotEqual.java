@@ -31,20 +31,6 @@ name|Expression
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
 begin_comment
 comment|/**  * "Not equal to" expression.  *   */
 end_comment
@@ -172,22 +158,15 @@ name|o
 argument_list|)
 decl_stmt|;
 return|return
-name|Util
+operator|!
+name|ASTEqual
 operator|.
-name|nullSafeEquals
+name|evaluateImpl
 argument_list|(
 name|o1
 argument_list|,
 name|o2
 argument_list|)
-condition|?
-name|Boolean
-operator|.
-name|FALSE
-else|:
-name|Boolean
-operator|.
-name|TRUE
 return|;
 block|}
 comment|/**      * Creates a copy of this expression node, without copying children.      */
