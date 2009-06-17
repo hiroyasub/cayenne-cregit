@@ -583,6 +583,8 @@ name|queryMetadata
 operator|.
 name|getDataMap
 argument_list|()
+argument_list|,
+name|this
 argument_list|)
 return|;
 block|}
@@ -659,8 +661,8 @@ name|buildResultColumns
 argument_list|()
 expr_stmt|;
 comment|// build qualifier
-name|StringBuilder
-name|qualifierBuffer
+name|QualifierTranslator
+name|qualifierTranslator
 init|=
 name|adapter
 operator|.
@@ -668,6 +670,11 @@ name|getQualifierTranslator
 argument_list|(
 name|this
 argument_list|)
+decl_stmt|;
+name|StringBuilder
+name|qualifierBuffer
+init|=
+name|qualifierTranslator
 operator|.
 name|appendPart
 argument_list|(
@@ -2326,6 +2333,8 @@ name|columns
 return|;
 block|}
 comment|/**      * Appends custom columns from SelectQuery to the provided list.      *       * @deprecated since 3.0. Will likely be removed after 3.0M6. Can be replaced with      *             EJBQL.      */
+annotation|@
+name|Deprecated
 name|List
 argument_list|<
 name|ColumnDescriptor

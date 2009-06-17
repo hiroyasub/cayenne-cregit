@@ -375,7 +375,7 @@ name|primaryKeyGenerator
 decl_stmt|;
 comment|/**      * Qualifier, that will be applied to all select queries and joins with this DbEntity      */
 specifier|protected
-name|String
+name|Expression
 name|qualifier
 decl_stmt|;
 comment|/**      * Creates an unnamed DbEntity.      */
@@ -613,17 +613,6 @@ name|getQualifier
 argument_list|()
 operator|!=
 literal|null
-operator|&&
-name|getQualifier
-argument_list|()
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
 condition|)
 block|{
 name|encoder
@@ -633,12 +622,12 @@ argument_list|(
 literal|"<qualifier><![CDATA["
 argument_list|)
 expr_stmt|;
-name|encoder
-operator|.
-name|print
-argument_list|(
 name|getQualifier
 argument_list|()
+operator|.
+name|encodeAsXML
+argument_list|(
+name|encoder
 argument_list|)
 expr_stmt|;
 name|encoder
@@ -2194,7 +2183,7 @@ comment|// does nothing currently
 block|}
 comment|/**      * @return qualifier that will be ANDed to all select queries with this entity      */
 specifier|public
-name|String
+name|Expression
 name|getQualifier
 parameter_list|()
 block|{
@@ -2207,7 +2196,7 @@ specifier|public
 name|void
 name|setQualifier
 parameter_list|(
-name|String
+name|Expression
 name|qualifier
 parameter_list|)
 block|{

@@ -5757,7 +5757,12 @@ name|dbEntity
 operator|.
 name|setQualifier
 argument_list|(
+name|Expression
+operator|.
+name|fromString
+argument_list|(
 name|qualifier
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

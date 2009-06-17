@@ -474,14 +474,24 @@ name|entity
 operator|.
 name|setQualifier
 argument_list|(
+name|Expression
+operator|.
+name|fromString
+argument_list|(
 literal|"ARTIST_NAME = \"123\""
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|middleEntity
 operator|.
 name|setQualifier
 argument_list|(
-literal|"ARTIST_GROUP_ID = 1987"
+name|Expression
+operator|.
+name|fromString
+argument_list|(
+literal|"GROUP_ID = 1987"
+argument_list|)
 argument_list|)
 expr_stmt|;
 try|try
@@ -546,10 +556,7 @@ name|generatedSql
 operator|.
 name|indexOf
 argument_list|(
-name|entity
-operator|.
-name|getQualifier
-argument_list|()
+literal|"ARTIST_NAME = "
 argument_list|)
 operator|>
 literal|0
@@ -636,10 +643,7 @@ argument_list|()
 operator|.
 name|indexOf
 argument_list|(
-name|middleEntity
-operator|.
-name|getQualifier
-argument_list|()
+literal|"GROUP_ID = "
 argument_list|)
 operator|>
 literal|0

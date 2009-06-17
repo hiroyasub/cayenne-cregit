@@ -428,6 +428,30 @@ return|return
 name|out
 return|;
 block|}
+comment|/**      * Sets ouput buffer      */
+name|void
+name|setOut
+parameter_list|(
+name|Appendable
+name|out
+parameter_list|)
+block|{
+name|this
+operator|.
+name|out
+operator|=
+name|out
+expr_stmt|;
+block|}
+comment|/**      * @return output buffer      */
+name|Appendable
+name|getOut
+parameter_list|()
+block|{
+return|return
+name|out
+return|;
+block|}
 comment|/**      * @since 3.0      */
 specifier|protected
 specifier|abstract

@@ -130,6 +130,11 @@ specifier|private
 name|JoinStack
 name|joinProcessor
 decl_stmt|;
+comment|/**      * Parent join      */
+specifier|private
+name|JoinTreeNode
+name|parent
+decl_stmt|;
 name|JoinTreeNode
 parameter_list|(
 name|JoinStack
@@ -156,6 +161,9 @@ name|joinType
 parameter_list|,
 name|String
 name|alias
+parameter_list|,
+name|JoinTreeNode
+name|parent
 parameter_list|)
 block|{
 name|this
@@ -180,6 +188,12 @@ operator|.
 name|joinType
 operator|=
 name|joinType
+expr_stmt|;
+name|this
+operator|.
+name|parent
+operator|=
+name|parent
 expr_stmt|;
 block|}
 name|int
@@ -318,6 +332,8 @@ argument_list|,
 name|joinType
 argument_list|,
 name|alias
+argument_list|,
+name|this
 argument_list|)
 decl_stmt|;
 name|child
@@ -459,6 +475,16 @@ parameter_list|()
 block|{
 return|return
 name|joinType
+return|;
+block|}
+comment|/**      * @return parent join      */
+specifier|public
+name|JoinTreeNode
+name|getParent
+parameter_list|()
+block|{
+return|return
+name|parent
 return|;
 block|}
 block|}
