@@ -281,6 +281,11 @@ name|DbAttribute
 argument_list|>
 argument_list|()
 decl_stmt|;
+comment|/**      * The index parameter will be inserted at in parameter list      */
+specifier|protected
+name|int
+name|parameterIndex
+decl_stmt|;
 comment|/**      * Returns aliases for the path splits defined in the query.      *       * @since 3.0      */
 specifier|protected
 name|Map
@@ -547,6 +552,8 @@ name|attributes
 operator|.
 name|add
 argument_list|(
+name|parameterIndex
+argument_list|,
 name|dbAttr
 argument_list|)
 expr_stmt|;
@@ -554,6 +561,9 @@ name|values
 operator|.
 name|add
 argument_list|(
+name|parameterIndex
+operator|++
+argument_list|,
 name|anObject
 argument_list|)
 expr_stmt|;

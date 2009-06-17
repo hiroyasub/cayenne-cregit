@@ -943,6 +943,11 @@ name|getRootDbEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//join parameters will be added to head of query
+name|parameterIndex
+operator|=
+literal|0
+expr_stmt|;
 name|joins
 operator|.
 name|appendJoins
