@@ -50,15 +50,17 @@ comment|/**  * A translator of EJBQL SELECT statements into SQL.  *   * @since 3
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EJBQLSelectTranslator
 extends|extends
 name|EJBQLBaseVisitor
 block|{
-specifier|private
+specifier|protected
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
+specifier|protected
 name|EJBQLSelectTranslator
 parameter_list|(
 name|EJBQLTranslationContext

@@ -972,6 +972,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Switches the current buffer to a marked buffer, pushing the currently used buffer      * on the stack. Note that this can be done even before the marker is inserted in the      * main buffer. If "reset" is true, any previous contents of the marker are cleared.      */
+specifier|public
 name|void
 name|pushMarker
 parameter_list|(
@@ -1640,6 +1641,7 @@ name|getColumn
 argument_list|()
 return|;
 block|}
+specifier|public
 name|boolean
 name|isAppendingResultColumns
 parameter_list|()
@@ -1686,6 +1688,7 @@ operator|=
 name|useAliases
 expr_stmt|;
 block|}
+specifier|public
 name|void
 name|onSubselect
 parameter_list|()
@@ -1694,6 +1697,7 @@ name|subselectCount
 operator|++
 expr_stmt|;
 block|}
+specifier|public
 name|String
 name|makeDistinctMarker
 parameter_list|()

@@ -1225,6 +1225,15 @@ name|status
 argument_list|)
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsNullBoolean
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 

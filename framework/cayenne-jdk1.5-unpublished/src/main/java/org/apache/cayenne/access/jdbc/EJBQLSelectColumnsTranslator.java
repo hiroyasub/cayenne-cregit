@@ -106,12 +106,13 @@ comment|/**  * Translator of the EJBQL select clause.  *   * @since 3.0  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EJBQLSelectColumnsTranslator
 extends|extends
 name|EJBQLBaseVisitor
 block|{
-specifier|private
+specifier|protected
 name|EJBQLTranslationContext
 name|context
 decl_stmt|;
@@ -119,6 +120,7 @@ specifier|private
 name|int
 name|expressionsCount
 decl_stmt|;
+specifier|protected
 name|EJBQLSelectColumnsTranslator
 parameter_list|(
 name|EJBQLTranslationContext
