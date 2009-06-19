@@ -31,6 +31,16 @@ end_import
 
 begin_import
 import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JOptionPane
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -531,7 +541,7 @@ condition|)
 block|{
 name|label
 operator|=
-literal|"No entities selected"
+literal|"No DbRelationships selected"
 expr_stmt|;
 block|}
 if|else if
@@ -543,7 +553,7 @@ condition|)
 block|{
 name|label
 operator|=
-literal|"One entity selected"
+literal|"One DbRelationships selected"
 expr_stmt|;
 block|}
 else|else
@@ -552,7 +562,7 @@ name|label
 operator|=
 name|size
 operator|+
-literal|" entities selected"
+literal|" DbRelationships selected"
 expr_stmt|;
 block|}
 name|view
@@ -724,6 +734,26 @@ name|rel
 argument_list|)
 expr_stmt|;
 block|}
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|this
+operator|.
+name|getView
+argument_list|()
+argument_list|,
+name|getSelectedEntitiesSize
+argument_list|()
+operator|+
+literal|" relationships generated"
+argument_list|)
+expr_stmt|;
+name|view
+operator|.
+name|dispose
+argument_list|()
+expr_stmt|;
 block|}
 specifier|private
 name|String

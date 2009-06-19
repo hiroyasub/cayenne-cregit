@@ -184,7 +184,7 @@ operator|=
 operator|new
 name|JButton
 argument_list|(
-literal|"Generate"
+literal|"Create DbRelationships"
 argument_list|)
 expr_stmt|;
 name|this
@@ -204,7 +204,7 @@ operator|=
 operator|new
 name|JLabel
 argument_list|(
-literal|"No Relationships selected"
+literal|"No DbRelationships selected"
 argument_list|)
 expr_stmt|;
 name|entityCount

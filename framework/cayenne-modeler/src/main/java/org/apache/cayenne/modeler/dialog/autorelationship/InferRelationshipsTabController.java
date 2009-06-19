@@ -346,6 +346,23 @@ argument_list|,
 literal|"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 argument_list|)
 expr_stmt|;
+name|tableBuilder
+operator|.
+name|addColumn
+argument_list|(
+literal|"To Many"
+argument_list|,
+literal|"parent.getToMany(#item)"
+argument_list|,
+name|String
+operator|.
+name|class
+argument_list|,
+literal|false
+argument_list|,
+literal|"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|tableBinding
