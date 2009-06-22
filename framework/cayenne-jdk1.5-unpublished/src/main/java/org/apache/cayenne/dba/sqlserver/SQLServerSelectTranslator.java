@@ -91,6 +91,41 @@ operator|>
 literal|0
 condition|)
 block|{
+name|String
+name|sql
+init|=
+name|buffer
+operator|.
+name|toString
+argument_list|()
+decl_stmt|;
+comment|// If contains distinct insert top limit after
+if|if
+condition|(
+name|sql
+operator|.
+name|startsWith
+argument_list|(
+literal|"SELECT DISTINCT "
+argument_list|)
+condition|)
+block|{
+name|buffer
+operator|.
+name|replace
+argument_list|(
+literal|0
+argument_list|,
+literal|15
+argument_list|,
+literal|"SELECT DISTINCT TOP "
+operator|+
+name|limit
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|buffer
 operator|.
 name|replace
@@ -104,6 +139,7 @@ operator|+
 name|limit
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
