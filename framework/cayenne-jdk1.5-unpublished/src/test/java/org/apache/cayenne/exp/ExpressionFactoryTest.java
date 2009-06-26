@@ -1766,7 +1766,7 @@ name|setQualifier
 argument_list|(
 name|ExpressionFactory
 operator|.
-name|matchObjectExp
+name|matchExp
 argument_list|(
 name|a2
 argument_list|)
@@ -1811,7 +1811,7 @@ name|setQualifier
 argument_list|(
 name|ExpressionFactory
 operator|.
-name|matchObjectsExp
+name|matchAnyExp
 argument_list|(
 name|a1
 argument_list|,
@@ -1910,7 +1910,7 @@ argument_list|()
 argument_list|,
 name|ExpressionFactory
 operator|.
-name|matchObjectsExp
+name|matchAnyExp
 argument_list|(
 name|Arrays
 operator|.
