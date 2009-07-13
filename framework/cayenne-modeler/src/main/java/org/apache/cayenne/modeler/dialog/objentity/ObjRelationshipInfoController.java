@@ -433,7 +433,7 @@ name|void
 name|startup
 parameter_list|()
 block|{
-comment|/**          * Some workaround: need to save target first, because even if it is null,          * first item will be displayed in combobox. Also we do not want to have empty item          * in the combobox.          */
+comment|/**          * Some workaround: need to save target first, because even if it is null, first          * item will be displayed in combobox. Also we do not want to have empty item in          * the combobox.          */
 name|ObjRelationshipInfoModel
 name|model
 init|=
@@ -589,7 +589,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Saves selected path       */
+comment|/**      * Saves selected path      */
 specifier|protected
 name|void
 name|selectPath

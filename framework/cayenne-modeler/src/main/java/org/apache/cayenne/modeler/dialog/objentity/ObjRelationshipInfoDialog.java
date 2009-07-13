@@ -419,7 +419,7 @@ argument_list|,
 literal|200
 argument_list|)
 decl_stmt|;
-comment|/**      * Browser to select path for flattened relationship       */
+comment|/**      * Browser to select path for flattened relationship      */
 specifier|protected
 name|MultiColumnBrowser
 name|pathBrowser
@@ -1224,7 +1224,7 @@ name|Attribute
 name|attr
 parameter_list|)
 block|{
-comment|//attrs not allowed here
+comment|// attrs not allowed here
 return|return
 literal|false
 return|;
@@ -1254,7 +1254,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**                              * We do not allow A->B->A chains, where relationships are to-one                              */
+comment|/**                      * We do not allow A->B->A chains, where relationships are to-one                      */
 name|DbRelationship
 name|prev
 init|=
@@ -1382,7 +1382,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates 'collection type' and 'map keys' comboboxes       */
+comment|/**      * Updates 'collection type' and 'map keys' comboboxes      */
 name|boolean
 name|updateCollectionChoosers
 parameter_list|()

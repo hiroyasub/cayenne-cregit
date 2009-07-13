@@ -63,16 +63,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -541,7 +531,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns dialog for delete prompt      * @param allowAsking If false, no question will be asked no matter what settings are       */
+comment|/**      * Creates and returns dialog for delete prompt      *       * @param allowAsking If false, no question will be asked no matter what settings are      */
 specifier|public
 name|ConfirmRemoveDialog
 name|getConfirmDeleteDialog
@@ -576,7 +566,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Performs delete action      * @param allowAsking If false, no question will be asked no matter what settings are       */
+comment|/**      * Performs delete action      *       * @param allowAsking If false, no question will be asked no matter what settings are      */
 specifier|public
 name|void
 name|performAction
@@ -937,7 +927,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//multiple deletion
+comment|// multiple deletion
 if|if
 condition|(
 name|dialog
@@ -1748,7 +1738,7 @@ name|lastObject
 argument_list|)
 expr_stmt|;
 else|else
-comment|//if(parent instanceof DataNode)
+comment|// if(parent instanceof DataNode)
 name|removeDataMapFromDataNode
 argument_list|(
 operator|(

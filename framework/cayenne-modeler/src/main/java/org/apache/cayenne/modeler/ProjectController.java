@@ -1464,7 +1464,7 @@ name|procedure
 operator|=
 literal|null
 expr_stmt|;
-comment|//life is much easier if these guys are never null
+comment|// life is much easier if these guys are never null
 name|dbAttrs
 operator|=
 operator|new
@@ -7886,7 +7886,7 @@ return|return
 name|watchdog
 return|;
 block|}
-comment|/**      * Returns currently selected object, null if there are none, List if there are several      */
+comment|/**      * Returns currently selected object, null if there are none, List if there are      * several      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -7996,7 +7996,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//multiple objects
+comment|// multiple objects
 name|ProjectPath
 index|[]
 name|paths
@@ -8052,7 +8052,7 @@ name|lastObject
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**              * Here we sort the list of objects to minimize the risk that objects will be              * pasted incorrectly. For instance, ObjEntity should go before Query, to increase              * chances that Query's root would be set.               */
+comment|/**              * Here we sort the list of objects to minimize the risk that objects will be              * pasted incorrectly. For instance, ObjEntity should go before Query, to              * increase chances that Query's root would be set.              */
 name|Collections
 operator|.
 name|sort

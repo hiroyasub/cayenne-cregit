@@ -744,7 +744,7 @@ return|return
 name|relationship
 return|;
 block|}
-comment|/**      * @return list of DB Relationships current ObjRelationship is mapped to       */
+comment|/**      * @return list of DB Relationships current ObjRelationship is mapped to      */
 specifier|public
 name|List
 argument_list|<
@@ -757,7 +757,7 @@ return|return
 name|dbRelationships
 return|;
 block|}
-comment|/**      * @return list of saved DB Relationships       */
+comment|/**      * @return list of saved DB Relationships      */
 specifier|public
 name|List
 argument_list|<
@@ -1292,7 +1292,7 @@ operator|!=
 name|lastEntity
 condition|)
 block|{
-comment|/**                  * Entities in combobox and path browser do not match.                  * In this case, we rely on the browser and automatically select one                  * of lastEntity's ObjEntities                  */
+comment|/**                  * Entities in combobox and path browser do not match. In this case, we                  * rely on the browser and automatically select one of lastEntity's                  * ObjEntities                  */
 name|Collection
 argument_list|<
 name|ObjEntity
@@ -1785,7 +1785,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Checks if the entity can be edited with this inspector.      * NOTE: As of CAY-1077, relationship inspector can be opened even if no target entity       * was set.      */
+comment|/**      * Checks if the entity can be edited with this inspector. NOTE: As of CAY-1077,      * relationship inspector can be opened even if no target entity was set.      */
 specifier|private
 name|void
 name|validateCanMap
