@@ -239,20 +239,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjRelationship
 import|;
 end_import
@@ -959,8 +945,7 @@ name|DONE
 return|;
 block|}
 comment|// we can assume that there is one and only one DbRelationship as
-comment|// we previously checked that
-comment|// "!isSourceIndependentFromTargetChange"
+comment|// we previously checked that "!isSourceIndependentFromTargetChange"
 name|DbRelationship
 name|dbRelationship
 init|=
@@ -1049,20 +1034,8 @@ return|return
 name|DONE
 return|;
 block|}
-name|ObjEntity
-name|targetEntity
-init|=
-operator|(
-name|ObjEntity
-operator|)
-name|relationship
-operator|.
-name|getTargetEntity
-argument_list|()
-decl_stmt|;
-comment|// do not create a target hollow object for qualified entities or entities
-comment|// involved in inheritance, as the target object may be null even for non-null
-comment|// FK.
+comment|// check whether a non-null FK is enough to assume non-null target, and if so,
+comment|// create a fault
 if|if
 condition|(
 name|context
@@ -1070,22 +1043,10 @@ operator|!=
 literal|null
 operator|&&
 operator|!
-name|isQualifiedEntity
-argument_list|(
-name|targetEntity
-argument_list|)
-operator|&&
-name|domain
+name|relationship
 operator|.
-name|getEntityResolver
+name|isOptional
 argument_list|()
-operator|.
-name|lookupInheritanceTree
-argument_list|(
-name|targetEntity
-argument_list|)
-operator|==
-literal|null
 condition|)
 block|{
 comment|// prevent passing partial snapshots to ObjectResolver per CAY-724. Create
@@ -2441,54 +2402,6 @@ parameter_list|()
 block|{
 return|return
 literal|false
-return|;
-block|}
-comment|/**      * Returns true if the entity or its super entities have a limiting qualifier.      */
-specifier|private
-name|boolean
-name|isQualifiedEntity
-parameter_list|(
-name|ObjEntity
-name|entity
-parameter_list|)
-block|{
-if|if
-condition|(
-name|entity
-operator|.
-name|getDeclaredQualifier
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-name|entity
-operator|=
-name|entity
-operator|.
-name|getSuperEntity
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|entity
-operator|==
-literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
-name|isQualifiedEntity
-argument_list|(
-name|entity
-argument_list|)
 return|;
 block|}
 specifier|abstract
