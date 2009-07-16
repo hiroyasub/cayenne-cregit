@@ -1162,11 +1162,11 @@ expr_stmt|;
 block|}
 specifier|public
 name|boolean
-name|isChange
+name|setPath
 parameter_list|()
 block|{
 name|StringBuilder
-name|attriburePathStr
+name|attributePath
 init|=
 operator|new
 name|StringBuilder
@@ -1202,7 +1202,7 @@ condition|)
 block|{
 name|Object
 index|[]
-name|ob
+name|pathComponents
 init|=
 name|path
 operator|.
@@ -1218,7 +1218,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|ob
+name|pathComponents
 operator|.
 name|length
 condition|;
@@ -1233,7 +1233,7 @@ literal|true
 decl_stmt|;
 if|if
 condition|(
-name|ob
+name|pathComponents
 index|[
 name|i
 index|]
@@ -1249,7 +1249,7 @@ operator|(
 operator|(
 name|DbAttribute
 operator|)
-name|ob
+name|pathComponents
 index|[
 name|i
 index|]
@@ -1259,7 +1259,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|attriburePathStr
+name|attributePath
 operator|.
 name|append
 argument_list|(
@@ -1267,7 +1267,7 @@ operator|(
 operator|(
 name|DbAttribute
 operator|)
-name|ob
+name|pathComponents
 index|[
 name|i
 index|]
@@ -1280,7 +1280,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|ob
+name|pathComponents
 index|[
 name|i
 index|]
@@ -1296,7 +1296,7 @@ operator|(
 operator|(
 name|DbRelationship
 operator|)
-name|ob
+name|pathComponents
 index|[
 name|i
 index|]
@@ -1306,7 +1306,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|attriburePathStr
+name|attributePath
 operator|.
 name|append
 argument_list|(
@@ -1314,7 +1314,7 @@ operator|(
 operator|(
 name|DbRelationship
 operator|)
-name|ob
+name|pathComponents
 index|[
 name|i
 index|]
@@ -1336,7 +1336,7 @@ if|if
 condition|(
 name|i
 operator|!=
-name|ob
+name|pathComponents
 operator|.
 name|length
 operator|-
@@ -1352,7 +1352,7 @@ argument_list|(
 literal|" -> "
 argument_list|)
 expr_stmt|;
-name|attriburePathStr
+name|attributePath
 operator|.
 name|append
 argument_list|(
@@ -1373,10 +1373,6 @@ name|setText
 argument_list|(
 literal|""
 argument_list|)
-expr_stmt|;
-name|attriburePathStr
-operator|=
-literal|null
 expr_stmt|;
 block|}
 name|view
@@ -1412,7 +1408,7 @@ argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|attriburePathStr
+name|attributePath
 operator|.
 name|toString
 argument_list|()
@@ -1440,7 +1436,7 @@ name|attributeSaved
 operator|.
 name|setDbAttributePath
 argument_list|(
-name|attriburePathStr
+name|attributePath
 operator|.
 name|toString
 argument_list|()
@@ -1464,22 +1460,11 @@ literal|true
 return|;
 block|}
 block|}
-if|else if
-condition|(
-name|attribute
-operator|.
-name|getDbAttributePath
-argument_list|()
-operator|==
-literal|null
-condition|)
+else|else
 block|{
 if|if
 condition|(
-name|attriburePathStr
-operator|.
-name|toString
-argument_list|()
+name|attributePath
 operator|.
 name|length
 argument_list|()
@@ -1508,7 +1493,7 @@ name|attributeSaved
 operator|.
 name|setDbAttributePath
 argument_list|(
-name|attriburePathStr
+name|attributePath
 operator|.
 name|toString
 argument_list|()
@@ -1543,7 +1528,7 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|isChange
+name|setPath
 argument_list|()
 condition|)
 block|{
