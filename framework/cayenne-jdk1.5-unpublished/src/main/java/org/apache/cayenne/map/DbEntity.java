@@ -619,7 +619,7 @@ name|encoder
 operator|.
 name|print
 argument_list|(
-literal|"<qualifier><![CDATA["
+literal|"<qualifier>"
 argument_list|)
 expr_stmt|;
 name|getQualifier
@@ -634,7 +634,7 @@ name|encoder
 operator|.
 name|println
 argument_list|(
-literal|"]]></qualifier>"
+literal|"</qualifier>"
 argument_list|)
 expr_stmt|;
 block|}
