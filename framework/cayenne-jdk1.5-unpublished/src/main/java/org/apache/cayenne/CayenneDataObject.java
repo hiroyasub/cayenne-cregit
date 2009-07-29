@@ -2432,6 +2432,9 @@ argument_list|(
 literal|"ObjAttribute '"
 operator|+
 name|objAttribute
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|"' does not have a corresponding DbAttribute"
 argument_list|)
