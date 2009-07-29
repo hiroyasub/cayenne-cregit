@@ -2418,6 +2418,25 @@ operator|.
 name|getDbAttribute
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|dbAttribute
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"ObjAttribute '"
+operator|+
+name|objAttribute
+operator|+
+literal|"' does not have a corresponding DbAttribute"
+argument_list|)
+throw|;
+block|}
 comment|// pk may still be generated
 if|if
 condition|(
