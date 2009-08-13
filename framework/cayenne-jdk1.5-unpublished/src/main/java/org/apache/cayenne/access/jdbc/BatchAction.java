@@ -316,6 +316,11 @@ specifier|protected
 name|RowDescriptor
 name|keyRowDescriptor
 decl_stmt|;
+comment|/**      * Custom BatchQueryBuilderFactory. Can be null, then default will be used.      */
+specifier|protected
+name|BatchQueryBuilderFactory
+name|queryBuilderFactory
+decl_stmt|;
 specifier|public
 name|BatchAction
 parameter_list|(
@@ -438,14 +443,29 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * @return factory that creates BatchQueryBuilders      */
-specifier|protected
+specifier|public
 name|BatchQueryBuilderFactory
-name|getBatchQueryBuilderFactory
+name|getQueryBuilderFactory
 parameter_list|()
 block|{
 return|return
-literal|null
+name|queryBuilderFactory
 return|;
+block|}
+specifier|public
+name|void
+name|setQueryBuilderFactory
+parameter_list|(
+name|BatchQueryBuilderFactory
+name|queryBuilderFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|queryBuilderFactory
+operator|=
+name|queryBuilderFactory
+expr_stmt|;
 block|}
 specifier|protected
 name|BatchQueryBuilder
@@ -457,7 +477,7 @@ block|{
 name|BatchQueryBuilderFactory
 name|factory
 init|=
-name|getBatchQueryBuilderFactory
+name|getQueryBuilderFactory
 argument_list|()
 decl_stmt|;
 if|if
