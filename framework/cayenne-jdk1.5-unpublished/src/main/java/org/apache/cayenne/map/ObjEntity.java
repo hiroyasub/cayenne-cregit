@@ -979,6 +979,14 @@ name|getSuperEntityName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|entity
+operator|.
+name|setDeclaredQualifier
+argument_list|(
+name|getDeclaredQualifier
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// TODO: should we also copy lock type?
 name|Collection
 argument_list|<
@@ -4026,6 +4034,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objAttributeChanged
@@ -4037,6 +4047,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objAttributeAdded
@@ -4048,6 +4060,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objAttributeRemoved
@@ -4059,6 +4073,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objRelationshipChanged
@@ -4070,6 +4086,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objRelationshipAdded
@@ -4081,6 +4099,8 @@ block|{
 comment|// does nothing currently
 block|}
 comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|objRelationshipRemoved

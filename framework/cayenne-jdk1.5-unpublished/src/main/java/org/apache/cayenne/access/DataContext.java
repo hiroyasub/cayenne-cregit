@@ -81,16 +81,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
 import|;
 end_import
@@ -296,20 +286,6 @@ operator|.
 name|util
 operator|.
 name|IteratedSelectObserver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|cache
-operator|.
-name|MapQueryCache
 import|;
 end_import
 
@@ -2670,6 +2646,11 @@ argument_list|(
 name|id
 argument_list|)
 expr_stmt|;
+name|injectInitialValue
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 comment|// invoke callbacks
 name|getEntityResolver
 argument_list|()
@@ -3195,6 +3176,11 @@ literal|true
 return|;
 block|}
 block|}
+argument_list|)
+expr_stmt|;
+name|injectInitialValue
+argument_list|(
+name|object
 argument_list|)
 expr_stmt|;
 comment|// invoke callbacks

@@ -1751,6 +1751,11 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
+name|injectInitialValue
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 name|Persistent
 name|createFault
