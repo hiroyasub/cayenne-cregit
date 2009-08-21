@@ -55,6 +55,32 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SQLTemplate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|SelectQuery
@@ -201,6 +227,22 @@ name|testdo
 operator|.
 name|inherit
 operator|.
+name|PersonNotes
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|inherit
+operator|.
 name|RelatedEntity
 import|;
 end_import
@@ -236,7 +278,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing Cayenne behavior with DataObject inheritance hierarchies.  *   */
+comment|/**  * Testing Cayenne behavior with DataObject inheritance hierarchies.  */
 end_comment
 
 begin_class
@@ -271,6 +313,81 @@ name|context
 operator|=
 name|createDataContext
 argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|testRelationshipToAbstractSuper
+parameter_list|()
+block|{
+name|context
+operator|.
+name|performGenericQuery
+argument_list|(
+operator|new
+name|SQLTemplate
+argument_list|(
+name|AbstractPerson
+operator|.
+name|class
+argument_list|,
+literal|"INSERT INTO PERSON (PERSON_ID, NAME, PERSON_TYPE) VALUES (1, 'AA', 'EE')"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|performGenericQuery
+argument_list|(
+operator|new
+name|SQLTemplate
+argument_list|(
+name|PersonNotes
+operator|.
+name|class
+argument_list|,
+literal|"INSERT INTO PERSON_NOTES (ID, NOTES, PERSON_ID) VALUES (1, 'AA', 1)"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|PersonNotes
+name|note
+init|=
+name|DataObjectUtils
+operator|.
+name|objectForPK
+argument_list|(
+name|context
+argument_list|,
+name|PersonNotes
+operator|.
+name|class
+argument_list|,
+literal|1
+argument_list|)
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|note
+argument_list|)
+expr_stmt|;
+name|assertNotNull
+argument_list|(
+name|note
+operator|.
+name|getPerson
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|note
+operator|.
+name|getPerson
+argument_list|()
+operator|instanceof
+name|Employee
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -1107,8 +1224,8 @@ comment|// sub.setToDirectToSubEntity(direct);
 comment|//
 comment|// assertEquals(1, direct.getSubEntities().size());
 comment|//
-comment|//        context.deleteObject(sub);
-comment|//        assertEquals(0, direct.getSubEntities().size());
+comment|// context.deleteObject(sub);
+comment|// assertEquals(0, direct.getSubEntities().size());
 block|}
 comment|/**      * Returns a number of objects of a particular class and subclasses in the list.      */
 specifier|protected

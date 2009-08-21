@@ -239,6 +239,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjRelationship
 import|;
 end_import
@@ -1049,7 +1063,36 @@ name|isOptional
 argument_list|()
 condition|)
 block|{
-comment|// prevent passing partial snapshots to ObjectResolver per CAY-724. Create
+comment|// final check (how do we do it in relationship.isOptional()??) - is
+comment|// inheritance involved
+name|ObjEntity
+name|targetEntity
+init|=
+operator|(
+name|ObjEntity
+operator|)
+name|relationship
+operator|.
+name|getTargetEntity
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|domain
+operator|.
+name|getEntityResolver
+argument_list|()
+operator|.
+name|lookupInheritanceTree
+argument_list|(
+name|targetEntity
+argument_list|)
+operator|==
+literal|null
+condition|)
+block|{
+comment|// prevent passing partial snapshots to ObjectResolver per CAY-724.
+comment|// Create
 comment|// a hollow object right here and skip object conversion downstream
 name|this
 operator|.
@@ -1087,6 +1130,7 @@ expr_stmt|;
 return|return
 name|DONE
 return|;
+block|}
 block|}
 block|}
 return|return

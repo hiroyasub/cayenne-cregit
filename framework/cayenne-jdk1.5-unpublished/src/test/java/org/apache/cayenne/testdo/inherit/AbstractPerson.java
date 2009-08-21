@@ -19,6 +19,7 @@ end_package
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|AbstractPerson
 extends|extends
