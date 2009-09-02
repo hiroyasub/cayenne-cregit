@@ -231,6 +231,34 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|Embeddable
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EmbeddableAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -474,7 +502,8 @@ argument_list|,
 name|application
 argument_list|)
 expr_stmt|;
-comment|//add listener, so that button state would update event if clipboard was filled by other app
+comment|// add listener, so that button state would update event if clipboard was filled
+comment|// by other app
 name|Toolkit
 operator|.
 name|getDefaultToolkit
@@ -622,7 +651,7 @@ name|UnsupportedFlavorException
 name|ufe
 parameter_list|)
 block|{
-comment|//do nothing
+comment|// do nothing
 block|}
 catch|catch
 parameter_list|(
@@ -667,7 +696,7 @@ operator|.
 name|getCurrentDataDomain
 argument_list|()
 decl_stmt|;
-comment|/**          * Add a little intelligence - if a tree leaf is selected, we can paste to a parent datamap          */
+comment|/**          * Add a little intelligence - if a tree leaf is selected, we can paste to a          * parent datamap          */
 if|if
 condition|(
 name|isTreeLeaf
@@ -706,7 +735,7 @@ operator|instanceof
 name|DataMap
 condition|)
 block|{
-comment|//paste DataMap to DataDomain or DataNode
+comment|// paste DataMap to DataDomain or DataNode
 name|DataMap
 name|dataMap
 init|=
@@ -736,8 +765,9 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**              * Update all names in the new DataMap, so that they would not conflict with names from              * other datamaps of this domain              */
-comment|//add some intelligence - if we rename an entity, we should rename all links to it as well
+comment|/**              * Update all names in the new DataMap, so that they would not conflict with              * names from other datamaps of this domain              */
+comment|// add some intelligence - if we rename an entity, we should rename all links
+comment|// to it as well
 name|Map
 argument_list|<
 name|String
@@ -762,6 +792,23 @@ argument_list|,
 name|String
 argument_list|>
 name|renamedObjEntities
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|()
+decl_stmt|;
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|renamedEmbeddables
 init|=
 operator|new
 name|HashMap
@@ -899,6 +946,72 @@ argument_list|,
 name|objEntity
 operator|.
 name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+for|for
+control|(
+name|Embeddable
+name|embeddable
+range|:
+name|dataMap
+operator|.
+name|getEmbeddables
+argument_list|()
+control|)
+block|{
+name|String
+name|oldName
+init|=
+name|embeddable
+operator|.
+name|getClassName
+argument_list|()
+decl_stmt|;
+name|embeddable
+operator|.
+name|setClassName
+argument_list|(
+name|getFreeName
+argument_list|(
+operator|new
+name|EmbeddableNameChecker
+argument_list|(
+name|domain
+argument_list|)
+argument_list|,
+name|embeddable
+operator|.
+name|getClassName
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|oldName
+operator|.
+name|equals
+argument_list|(
+name|embeddable
+operator|.
+name|getClassName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|renamedEmbeddables
+operator|.
+name|put
+argument_list|(
+name|oldName
+argument_list|,
+name|embeddable
+operator|.
+name|getClassName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1153,7 +1266,7 @@ operator|instanceof
 name|DataMap
 condition|)
 block|{
-comment|//paste DbEntity to DataMap
+comment|// paste DbEntity to DataMap
 specifier|final
 name|DataMap
 name|dataMap
@@ -1225,7 +1338,7 @@ operator|instanceof
 name|ObjEntity
 condition|)
 block|{
-comment|//paste ObjEntity to DataMap
+comment|// paste ObjEntity to DataMap
 name|ObjEntity
 name|objEntity
 init|=
@@ -1278,10 +1391,66 @@ if|else if
 condition|(
 name|content
 operator|instanceof
+name|Embeddable
+condition|)
+block|{
+comment|// paste Embeddable to DataMap
+name|Embeddable
+name|embeddable
+init|=
+operator|(
+name|Embeddable
+operator|)
+name|content
+decl_stmt|;
+name|embeddable
+operator|.
+name|setClassName
+argument_list|(
+name|getFreeName
+argument_list|(
+operator|new
+name|EmbeddableNameChecker
+argument_list|(
+name|domain
+argument_list|)
+argument_list|,
+name|embeddable
+operator|.
+name|getClassName
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dataMap
+operator|.
+name|addEmbeddable
+argument_list|(
+name|embeddable
+argument_list|)
+expr_stmt|;
+name|CreateEmbeddableAction
+operator|.
+name|fireEmbeddableEvent
+argument_list|(
+name|this
+argument_list|,
+name|mediator
+argument_list|,
+name|dataMap
+argument_list|,
+name|embeddable
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|content
+operator|instanceof
 name|Query
 condition|)
 block|{
-comment|//paste Query to DataMap
+comment|// paste Query to DataMap
 name|AbstractQuery
 name|query
 init|=
@@ -1458,7 +1627,7 @@ operator|instanceof
 name|Procedure
 condition|)
 block|{
-comment|//paste Procedure to DataMap
+comment|// paste Procedure to DataMap
 name|Procedure
 name|procedure
 init|=
@@ -1524,7 +1693,7 @@ name|DbEntity
 operator|)
 name|where
 decl_stmt|;
-comment|//attrs and rels must be unique in entity namespace
+comment|// attrs and rels must be unique in entity namespace
 name|FreeNameChecker
 name|checker
 init|=
@@ -1681,7 +1850,7 @@ name|ObjEntity
 operator|)
 name|where
 decl_stmt|;
-comment|//attrs and rels must be unique in entity namespace
+comment|// attrs and rels must be unique in entity namespace
 name|FreeNameChecker
 name|checker
 init|=
@@ -1826,10 +1995,107 @@ if|else if
 condition|(
 name|where
 operator|instanceof
+name|Embeddable
+condition|)
+block|{
+specifier|final
+name|Embeddable
+name|embeddable
+init|=
+operator|(
+name|Embeddable
+operator|)
+name|where
+decl_stmt|;
+comment|// attrs and rels must be unique in entity namespace
+name|FreeNameChecker
+name|checker
+init|=
+operator|new
+name|FreeNameChecker
+argument_list|()
+block|{
+specifier|public
+name|boolean
+name|isNameFree
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+name|embeddable
+operator|.
+name|getAttribute
+argument_list|(
+name|name
+argument_list|)
+operator|==
+literal|null
+return|;
+block|}
+block|}
+decl_stmt|;
+if|if
+condition|(
+name|content
+operator|instanceof
+name|EmbeddableAttribute
+condition|)
+block|{
+name|EmbeddableAttribute
+name|attr
+init|=
+operator|(
+name|EmbeddableAttribute
+operator|)
+name|content
+decl_stmt|;
+name|attr
+operator|.
+name|setName
+argument_list|(
+name|getFreeName
+argument_list|(
+name|checker
+argument_list|,
+name|attr
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|embeddable
+operator|.
+name|addAttribute
+argument_list|(
+name|attr
+argument_list|)
+expr_stmt|;
+name|CreateAttributeAction
+operator|.
+name|fireEmbeddableAttributeEvent
+argument_list|(
+name|this
+argument_list|,
+name|mediator
+argument_list|,
+name|embeddable
+argument_list|,
+name|attr
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|else if
+condition|(
+name|where
+operator|instanceof
 name|Procedure
 condition|)
 block|{
-comment|//paste param to procedure
+comment|// paste param to procedure
 specifier|final
 name|Procedure
 name|procedure
@@ -2105,7 +2371,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**              * Checking all avaliable pairs source-pasting object               */
+comment|/**              * Checking all avaliable pairs source-pasting object              */
 return|return
 operator|(
 operator|(
@@ -2179,6 +2445,23 @@ operator|||
 operator|(
 name|currentObject
 operator|instanceof
+name|Embeddable
+operator|&&
+operator|(
+name|content
+operator|instanceof
+name|EmbeddableAttribute
+operator|||
+name|isTreeLeaf
+argument_list|(
+name|content
+argument_list|)
+operator|)
+operator|)
+operator|||
+operator|(
+name|currentObject
+operator|instanceof
 name|Procedure
 operator|&&
 operator|(
@@ -2236,6 +2519,10 @@ name|ObjEntity
 operator|||
 name|content
 operator|instanceof
+name|Embeddable
+operator|||
+name|content
+operator|instanceof
 name|Procedure
 operator|||
 name|content
@@ -2255,7 +2542,7 @@ name|updateState
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Interface for checking that specified name is free in superior DataMap, Entity etc. and      * therefore can be used for new object       */
+comment|/**      * Interface for checking that specified name is free in superior DataMap, Entity etc.      * and therefore can be used for new object      */
 interface|interface
 name|FreeNameChecker
 block|{
@@ -2267,7 +2554,7 @@ name|name
 parameter_list|)
 function_decl|;
 block|}
-comment|/**      * FreeNameChecker implementation for choosing DataMap names       */
+comment|/**      * FreeNameChecker implementation for choosing DataMap names      */
 class|class
 name|DataMapNameChecker
 implements|implements
@@ -2310,7 +2597,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * FreeNameChecker implementation for choosing DbEntity names       */
+comment|/**      * FreeNameChecker implementation for choosing DbEntity names      */
 class|class
 name|DbEntityNameChecker
 implements|implements
@@ -2375,7 +2662,7 @@ literal|true
 return|;
 block|}
 block|}
-comment|/**      * FreeNameChecker implementation for choosing ObjEntity names       */
+comment|/**      * FreeNameChecker implementation for choosing ObjEntity names      */
 class|class
 name|ObjEntityNameChecker
 implements|implements
@@ -2440,7 +2727,71 @@ literal|true
 return|;
 block|}
 block|}
-comment|/**      * FreeNameChecker implementation for choosing Procedure names       */
+class|class
+name|EmbeddableNameChecker
+implements|implements
+name|FreeNameChecker
+block|{
+name|DataDomain
+name|domain
+decl_stmt|;
+specifier|public
+name|EmbeddableNameChecker
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|)
+block|{
+name|this
+operator|.
+name|domain
+operator|=
+name|domain
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isNameFree
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+comment|/**              * Name mast be unique through all DataDomain, for EntityResolver to work              * correctly              */
+for|for
+control|(
+name|DataMap
+name|map
+range|:
+name|domain
+operator|.
+name|getDataMaps
+argument_list|()
+control|)
+block|{
+if|if
+condition|(
+name|map
+operator|.
+name|getEmbeddable
+argument_list|(
+name|name
+argument_list|)
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+block|}
+return|return
+literal|true
+return|;
+block|}
+block|}
+comment|/**      * FreeNameChecker implementation for choosing Procedure names      */
 class|class
 name|ProcedureNameChecker
 implements|implements
@@ -2508,7 +2859,7 @@ literal|true
 return|;
 block|}
 block|}
-comment|/**      * FreeNameChecker implementation for choosing Query names       */
+comment|/**      * FreeNameChecker implementation for choosing Query names      */
 class|class
 name|QueryNameChecker
 implements|implements
