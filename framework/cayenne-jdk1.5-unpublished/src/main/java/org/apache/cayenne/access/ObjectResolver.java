@@ -663,6 +663,28 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// here we can get the same object repeated multiple times in case of
+comment|// many-to-many between prefetched and main entity... this is needed to
+comment|// connect prefetched objects to the main objects. To avoid needlessly refreshing
+comment|// the same object multiple times, track which objectids area alrady loaded in
+comment|// this pass
+name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
+name|seen
+init|=
+operator|new
+name|HashMap
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
+argument_list|()
+decl_stmt|;
 name|Iterator
 name|it
 init|=
@@ -690,14 +712,62 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|Persistent
-name|object
+comment|// determine entity to use
+name|ClassDescriptor
+name|classDescriptor
 init|=
-name|objectFromDataRow
+name|descriptorResolutionStrategy
+operator|.
+name|descriptorForRow
 argument_list|(
 name|row
 argument_list|)
 decl_stmt|;
+comment|// not using DataRow.createObjectId for performance reasons - ObjectResolver
+comment|// has all needed metadata already cached.
+name|ObjectId
+name|anId
+init|=
+name|createObjectId
+argument_list|(
+name|row
+argument_list|,
+name|classDescriptor
+operator|.
+name|getEntity
+argument_list|()
+argument_list|,
+literal|null
+argument_list|)
+decl_stmt|;
+name|Persistent
+name|object
+init|=
+name|seen
+operator|.
+name|get
+argument_list|(
+name|anId
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|object
+operator|==
+literal|null
+condition|)
+block|{
+name|object
+operator|=
+name|objectFromDataRow
+argument_list|(
+name|row
+argument_list|,
+name|anId
+argument_list|,
+name|classDescriptor
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|object
@@ -714,6 +784,16 @@ operator|+
 name|row
 argument_list|)
 throw|;
+block|}
+name|seen
+operator|.
+name|put
+argument_list|(
+name|anId
+argument_list|,
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 name|results
 operator|.
@@ -825,7 +905,6 @@ return|return
 name|results
 return|;
 block|}
-comment|/**      * Processes a single row. This method does not synchronize on ObjectStore and doesn't      * send snapshot updates. These are responsibilities of the caller.      */
 name|Persistent
 name|objectFromDataRow
 parameter_list|(
@@ -844,8 +923,8 @@ argument_list|(
 name|row
 argument_list|)
 decl_stmt|;
-comment|// not using DataRow.createObjectId for performance reasons - ObjectResolver has
-comment|// all needed metadata already cached.
+comment|// not using DataRow.createObjectId for performance reasons - ObjectResolver
+comment|// has all needed metadata already cached.
 name|ObjectId
 name|anId
 init|=
@@ -861,6 +940,30 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
+return|return
+name|objectFromDataRow
+argument_list|(
+name|row
+argument_list|,
+name|anId
+argument_list|,
+name|classDescriptor
+argument_list|)
+return|;
+block|}
+name|Persistent
+name|objectFromDataRow
+parameter_list|(
+name|DataRow
+name|row
+parameter_list|,
+name|ObjectId
+name|anId
+parameter_list|,
+name|ClassDescriptor
+name|classDescriptor
+parameter_list|)
+block|{
 comment|// this condition is valid - see comments on 'createObjectId' for details
 if|if
 condition|(
