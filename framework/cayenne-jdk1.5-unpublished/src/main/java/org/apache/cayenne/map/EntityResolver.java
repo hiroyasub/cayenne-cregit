@@ -469,7 +469,7 @@ name|init
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Initialization of EntityResolver. Used in constructor and in Java deserialization process      */
+comment|/**      * Initialization of EntityResolver. Used in constructor and in Java deserialization      * process      */
 specifier|private
 name|void
 name|init
@@ -2524,6 +2524,25 @@ name|ObjEntity
 name|entity
 parameter_list|)
 block|{
+return|return
+name|lookupInheritanceTree
+argument_list|(
+name|entity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+return|;
+block|}
+comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities. If ObjEntity has no      * known subentities, null is returned.      *       * @since 3.0      */
+specifier|public
+name|EntityInheritanceTree
+name|lookupInheritanceTree
+parameter_list|(
+name|String
+name|entityName
+parameter_list|)
+block|{
 name|EntityInheritanceTree
 name|tree
 init|=
@@ -2531,10 +2550,7 @@ name|entityInheritanceCache
 operator|.
 name|get
 argument_list|(
-name|entity
-operator|.
-name|getName
-argument_list|()
+name|entityName
 argument_list|)
 decl_stmt|;
 if|if
@@ -2557,10 +2573,7 @@ name|entityInheritanceCache
 operator|.
 name|get
 argument_list|(
-name|entity
-operator|.
-name|getName
-argument_list|()
+name|entityName
 argument_list|)
 expr_stmt|;
 block|}
@@ -3179,7 +3192,7 @@ operator|=
 name|entityListenerFactory
 expr_stmt|;
 block|}
-comment|/**      * Java default deserialization seems not to invoke constructor by default -       * invoking it manually      */
+comment|/**      * Java default deserialization seems not to invoke constructor by default - invoking      * it manually      */
 specifier|private
 name|void
 name|readObject

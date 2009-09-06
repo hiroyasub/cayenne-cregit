@@ -180,7 +180,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes an association between two Java classes mapped as source and target  * ObjEntity. Maps to a path of DbRelationships.  *   */
+comment|/**  * Describes an association between two Java classes mapped as source and target  * ObjEntity. Maps to a path of DbRelationships.  */
 end_comment
 
 begin_class
@@ -1098,6 +1098,31 @@ block|}
 block|}
 return|return
 literal|true
+return|;
+block|}
+comment|/**      * Returns true if the relationship is non-optional and target has no subclasses.      *       * @since 3.0      */
+specifier|public
+name|boolean
+name|isSourceDefiningTargetPrecenseAndType
+parameter_list|(
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|!
+name|isOptional
+argument_list|()
+operator|&&
+name|entityResolver
+operator|.
+name|lookupInheritanceTree
+argument_list|(
+name|getTargetEntityName
+argument_list|()
+argument_list|)
+operator|==
+literal|null
 return|;
 block|}
 comment|/**      * Returns true if the entity or its super entities have a limiting qualifier.      */
@@ -2272,7 +2297,7 @@ operator|=
 name|collectionType
 expr_stmt|;
 block|}
-comment|/**      * Returns a property name of a target entity used to create a relationship map. Only      * has effect if collectionType property is set to "java.util.Map".      *       * @return The attribute name used for the map key or<code>null</code> if the      *         default (PK) is used as the map key.      * @since 3.0      */
+comment|/**      * Returns a property name of a target entity used to create a relationship map. Only      * has effect if collectionType property is set to "java.util.Map".      *       * @return The attribute name used for the map key or<code>null</code> if the default      *         (PK) is used as the map key.      * @since 3.0      */
 specifier|public
 name|String
 name|getMapKey
