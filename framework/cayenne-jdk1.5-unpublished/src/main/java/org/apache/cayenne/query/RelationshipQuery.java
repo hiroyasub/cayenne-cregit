@@ -175,6 +175,10 @@ name|boolean
 name|refreshing
 decl_stmt|;
 specifier|protected
+name|int
+name|statementFetchSize
+decl_stmt|;
+specifier|protected
 specifier|transient
 name|EntityResolver
 name|metadataResolver
@@ -381,7 +385,9 @@ argument_list|,
 name|objectId
 argument_list|)
 decl_stmt|;
-return|return
+name|SelectQuery
+name|query
+init|=
 operator|new
 name|SelectQuery
 argument_list|(
@@ -395,6 +401,16 @@ argument_list|()
 argument_list|,
 name|qualifier
 argument_list|)
+decl_stmt|;
+name|query
+operator|.
+name|setStatementFetchSize
+argument_list|(
+name|statementFetchSize
+argument_list|)
+expr_stmt|;
+return|return
+name|query
 return|;
 block|}
 comment|/**      * Returns a non-null relationship object for this query.      */
@@ -553,6 +569,17 @@ name|getTargetDescriptor
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|statementFetchSize
+return|;
+block|}
 block|}
 expr_stmt|;
 name|this
@@ -562,6 +589,32 @@ operator|=
 name|resolver
 expr_stmt|;
 block|}
+block|}
+comment|/**      * Sets statement's fetch size (0 for no default size)      *       * @since 3.0      */
+specifier|public
+name|void
+name|setStatementFetchSize
+parameter_list|(
+name|int
+name|size
+parameter_list|)
+block|{
+name|this
+operator|.
+name|statementFetchSize
+operator|=
+name|size
+expr_stmt|;
+block|}
+comment|/**      * @return statement's fetch size      * @since 3.0      */
+specifier|public
+name|int
+name|getStatementFetchSize
+parameter_list|()
+block|{
+return|return
+name|statementFetchSize
+return|;
 block|}
 comment|/**      * Overrides toString() outputting a short string with query class and relationship      * name.      */
 annotation|@
