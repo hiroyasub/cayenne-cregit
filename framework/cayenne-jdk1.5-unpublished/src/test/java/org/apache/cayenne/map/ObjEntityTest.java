@@ -2306,7 +2306,7 @@ name|Expression
 operator|.
 name|fromString
 argument_list|(
-literal|"db:toExhibit"
+literal|"db:toArtist.artistExhibitArray.toExhibit"
 argument_list|)
 argument_list|,
 name|translated
@@ -2368,7 +2368,7 @@ name|Expression
 operator|.
 name|fromString
 argument_list|(
-literal|"db:paintingArray.toPaintingInfo.TEXT_REVIEW"
+literal|"db:paintingArray.toArtist.paintingArray.toPaintingInfo.TEXT_REVIEW"
 argument_list|)
 argument_list|,
 name|translated
@@ -2430,7 +2430,7 @@ name|Expression
 operator|.
 name|fromString
 argument_list|(
-literal|"db:artistExhibitArray.toExhibit"
+literal|"db:artistExhibitArray.toArtist.artistExhibitArray.toExhibit"
 argument_list|)
 argument_list|,
 name|translated
@@ -2492,7 +2492,9 @@ name|Expression
 operator|.
 name|fromString
 argument_list|(
-literal|"db:toArtist.paintingArray = $p and db:toExhibit.CLOSING_DATE = $d"
+literal|"db:toArtist.paintingArray = $p "
+operator|+
+literal|"and db:toArtist.artistExhibitArray.toExhibit.CLOSING_DATE = $d"
 argument_list|)
 argument_list|,
 name|translated

@@ -330,7 +330,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbEntity is a mapping descriptor that defines a structure of a database table.  *   */
+comment|/**  * A DbEntity is a mapping descriptor that defines a structure of a database table.  */
 end_comment
 
 begin_class
@@ -2357,6 +2357,9 @@ block|{
 name|String
 name|relationshipPath
 decl_stmt|;
+name|boolean
+name|toMany
+decl_stmt|;
 name|RelationshipPathConverter
 parameter_list|(
 name|String
@@ -2369,6 +2372,52 @@ name|relationshipPath
 operator|=
 name|relationshipPath
 expr_stmt|;
+name|Iterator
+argument_list|<
+name|CayenneMapEntry
+argument_list|>
+name|relationshipIt
+init|=
+name|resolvePathComponents
+argument_list|(
+name|relationshipPath
+argument_list|)
+decl_stmt|;
+while|while
+condition|(
+name|relationshipIt
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+comment|// relationship path components must be DbRelationships
+name|DbRelationship
+name|nextDBR
+init|=
+operator|(
+name|DbRelationship
+operator|)
+name|relationshipIt
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|nextDBR
+operator|.
+name|isToMany
+argument_list|()
+condition|)
+block|{
+name|toMany
+operator|=
+literal|true
+expr_stmt|;
+break|break;
+block|}
+block|}
 block|}
 specifier|public
 name|Object
@@ -2470,6 +2519,8 @@ name|path
 parameter_list|)
 block|{
 comment|// algorithm to determine the translated path:
+comment|// 0. If relationship has at least one to-many component, travel all the way
+comment|// back, and then all the way forward
 comment|// 1. If relationship path equals to input, travel one step back, and then one
 comment|// step forward.
 comment|// 2. If input completely includes relationship path, use input's remaining
@@ -2479,6 +2530,108 @@ comment|// common,
 comment|// (a) strip common leading part;
 comment|// (b) reverse the remaining relationship part;
 comment|// (c) append remaining input to the reversed remaining relationship.
+comment|// case (0)
+if|if
+condition|(
+name|toMany
+condition|)
+block|{
+name|Iterator
+argument_list|<
+name|CayenneMapEntry
+argument_list|>
+name|pathIt
+init|=
+name|resolvePathComponents
+argument_list|(
+name|path
+argument_list|)
+decl_stmt|;
+name|Iterator
+argument_list|<
+name|CayenneMapEntry
+argument_list|>
+name|relationshipIt
+init|=
+name|resolvePathComponents
+argument_list|(
+name|relationshipPath
+argument_list|)
+decl_stmt|;
+comment|// for inserts from the both ends use LinkedList
+name|LinkedList
+argument_list|<
+name|String
+argument_list|>
+name|finalPath
+init|=
+operator|new
+name|LinkedList
+argument_list|<
+name|String
+argument_list|>
+argument_list|()
+decl_stmt|;
+comment|// append remainder of the relationship, reversing it
+while|while
+condition|(
+name|relationshipIt
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+name|DbRelationship
+name|nextDBR
+init|=
+operator|(
+name|DbRelationship
+operator|)
+name|relationshipIt
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+name|prependReversedPath
+argument_list|(
+name|finalPath
+argument_list|,
+name|nextDBR
+argument_list|)
+expr_stmt|;
+block|}
+while|while
+condition|(
+name|pathIt
+operator|.
+name|hasNext
+argument_list|()
+condition|)
+block|{
+comment|// components may be attributes or relationships
+name|CayenneMapEntry
+name|next
+init|=
+name|pathIt
+operator|.
+name|next
+argument_list|()
+decl_stmt|;
+name|appendPath
+argument_list|(
+name|finalPath
+argument_list|,
+name|next
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|convertToPath
+argument_list|(
+name|finalPath
+argument_list|)
+return|;
+block|}
 comment|// case (1)
 if|if
 condition|(
