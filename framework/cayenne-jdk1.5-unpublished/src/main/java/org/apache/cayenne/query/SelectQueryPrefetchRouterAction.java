@@ -400,6 +400,14 @@ name|prefetchPath
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|relationship
+operator|.
+name|isSourceIndependentFromTargetChange
+argument_list|()
+condition|)
+block|{
 comment|// setup extra result columns to be able to relate result rows to the parent
 comment|// result objects.
 name|prefetchQuery
@@ -414,6 +422,7 @@ name|getReverseDbRelationshipPath
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 comment|// pass prefetch subtree to enable joint prefetches...
 name|prefetchQuery
 operator|.

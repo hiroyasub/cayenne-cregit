@@ -178,7 +178,19 @@ name|NoopParentAttachmentStrategy
 argument_list|()
 expr_stmt|;
 block|}
-else|else
+if|else if
+condition|(
+name|node
+operator|.
+name|getIncoming
+argument_list|()
+operator|.
+name|getRelationship
+argument_list|()
+operator|.
+name|isSourceIndependentFromTargetChange
+argument_list|()
+condition|)
 block|{
 name|this
 operator|.
@@ -192,6 +204,19 @@ operator|.
 name|getGraphManager
 argument_list|()
 argument_list|,
+name|node
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|this
+operator|.
+name|parentAttachmentStrategy
+operator|=
+operator|new
+name|ResultScanParentAttachmentStrategy
+argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
@@ -260,7 +285,7 @@ decl_stmt|;
 comment|// here we can get the same object repeated multiple times in case of
 comment|// many-to-many between prefetched and main entity... this is needed to
 comment|// connect prefetched objects to the main objects. To avoid needlessly refreshing
-comment|// the same object multiple times, track which objectids area alrady loaded in
+comment|// the same object multiple times, track which objectids area already loaded in
 comment|// this pass
 name|Map
 argument_list|<
