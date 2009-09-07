@@ -402,28 +402,6 @@ argument_list|)
 expr_stmt|;
 comment|// setup extra result columns to be able to relate result rows to the parent
 comment|// result objects.
-if|if
-condition|(
-name|relationship
-operator|.
-name|isFlattened
-argument_list|()
-operator|||
-operator|(
-name|relationship
-operator|.
-name|isToMany
-argument_list|()
-operator|&&
-name|relationship
-operator|.
-name|getReverseRelationship
-argument_list|()
-operator|==
-literal|null
-operator|)
-condition|)
-block|{
 name|prefetchQuery
 operator|.
 name|addResultPath
@@ -436,7 +414,6 @@ name|getReverseDbRelationshipPath
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 comment|// pass prefetch subtree to enable joint prefetches...
 name|prefetchQuery
 operator|.

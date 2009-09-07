@@ -41,6 +41,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -186,6 +196,20 @@ operator|.
 name|map
 operator|.
 name|EntityInheritanceTree
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EntityResolver
 import|;
 end_import
 
@@ -612,26 +636,66 @@ literal|1
 argument_list|)
 return|;
 block|}
-name|ObjEntity
-name|sourceObjEntity
+name|boolean
+name|linkToParent
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|node
 operator|.
-name|getIncoming
+name|getParent
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|node
+operator|.
+name|getParent
 argument_list|()
 operator|.
-name|getRelationship
-argument_list|()
-operator|.
-name|getSourceEntity
+name|isPhantom
 argument_list|()
 decl_stmt|;
 name|String
 name|relatedIdPrefix
 init|=
+literal|null
+decl_stmt|;
+comment|// since we do not add descriptor columns for the source entity in the result,
+comment|// will need to try all subentities to find parent object...
+name|Collection
+argument_list|<
+name|ObjEntity
+argument_list|>
+name|sourceEntities
+init|=
+literal|null
+decl_stmt|;
+if|if
+condition|(
+name|linkToParent
+condition|)
+block|{
+name|ClassDescriptor
+name|parentDescriptor
+init|=
+operator|(
+operator|(
+name|PrefetchProcessorNode
+operator|)
+name|node
+operator|.
+name|getParent
+argument_list|()
+operator|)
+operator|.
+name|getResolver
+argument_list|()
+operator|.
+name|getDescriptor
+argument_list|()
+decl_stmt|;
+name|relatedIdPrefix
+operator|=
 name|node
 operator|.
 name|getIncoming
@@ -644,7 +708,44 @@ name|getReverseDbRelationshipPath
 argument_list|()
 operator|+
 literal|"."
-decl_stmt|;
+expr_stmt|;
+if|if
+condition|(
+name|parentDescriptor
+operator|.
+name|getEntityInheritanceTree
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|sourceEntities
+operator|=
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
+name|parentDescriptor
+operator|.
+name|getEntity
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|sourceEntities
+operator|=
+name|parentDescriptor
+operator|.
+name|getEntityInheritanceTree
+argument_list|()
+operator|.
+name|allSubEntities
+argument_list|()
+expr_stmt|;
+block|}
+block|}
 name|List
 argument_list|<
 name|Persistent
@@ -795,6 +896,8 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
+comment|// keep the dupe objects (and data rows) around, as there maybe an attached
+comment|// joint prefetch...
 name|results
 operator|.
 name|add
@@ -802,9 +905,34 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-comment|// link with parent
-comment|// The algorithm below of building an ID doesn't take inheritance into
-comment|// account, so there maybe a miss...
+if|if
+condition|(
+name|linkToParent
+condition|)
+block|{
+name|Persistent
+name|parentObject
+init|=
+literal|null
+decl_stmt|;
+for|for
+control|(
+name|ObjEntity
+name|entity
+range|:
+name|sourceEntities
+control|)
+block|{
+if|if
+condition|(
+name|entity
+operator|.
+name|isAbstract
+argument_list|()
+condition|)
+block|{
+continue|continue;
+block|}
 name|ObjectId
 name|id
 init|=
@@ -812,7 +940,7 @@ name|createObjectId
 argument_list|(
 name|row
 argument_list|,
-name|sourceObjEntity
+name|entity
 argument_list|,
 name|relatedIdPrefix
 argument_list|)
@@ -834,7 +962,7 @@ name|row
 operator|+
 literal|", entity: "
 operator|+
-name|sourceObjEntity
+name|entity
 operator|.
 name|getName
 argument_list|()
@@ -845,9 +973,8 @@ name|relatedIdPrefix
 argument_list|)
 throw|;
 block|}
-name|Persistent
 name|parentObject
-init|=
+operator|=
 operator|(
 name|Persistent
 operator|)
@@ -860,7 +987,17 @@ name|getNode
 argument_list|(
 name|id
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+if|if
+condition|(
+name|parentObject
+operator|!=
+literal|null
+condition|)
+block|{
+break|break;
+block|}
+block|}
 comment|// don't attach to hollow objects
 if|if
 condition|(
@@ -889,7 +1026,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 comment|// now deal with snapshots
+comment|// TODO: refactoring: dupes will clutter the lists and cause extra processing...
+comment|// removal of dupes happens only downstream, as we need the objects matching
+comment|// fetched rows for joint prefetch resolving... maybe pushback unique and
+comment|// non-unique lists to the "node", instead of returning a single list from this
+comment|// method
 name|cache
 operator|.
 name|snapshotsUpdatedForObjects
@@ -1157,6 +1300,17 @@ parameter_list|()
 block|{
 return|return
 name|descriptor
+return|;
+block|}
+name|EntityResolver
+name|getEntityResolver
+parameter_list|()
+block|{
+return|return
+name|context
+operator|.
+name|getEntityResolver
+argument_list|()
 return|;
 block|}
 name|ObjectId

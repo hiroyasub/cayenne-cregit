@@ -41,6 +41,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashSet
 import|;
 end_import
@@ -156,6 +166,18 @@ operator|.
 name|cayenne
 operator|.
 name|PersistenceState
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Persistent
 import|;
 end_import
 
@@ -284,7 +306,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests joint prefetch handling by Cayenne access stack.  *   */
+comment|/**  * Tests joint prefetch handling by Cayenne access stack.  */
 end_comment
 
 begin_class
@@ -1169,6 +1191,17 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
+name|a
+operator|.
+name|getDateOfBirth
+argument_list|()
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|Date
 operator|.
 name|class
@@ -1656,6 +1689,23 @@ init|=
 name|createDataContext
 argument_list|()
 decl_stmt|;
+comment|// make sure phantomly prefetched objects are not deallocated
+name|context
+operator|.
+name|getObjectStore
+argument_list|()
+operator|.
+name|objectMap
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
+argument_list|()
+expr_stmt|;
 comment|// sanity check...
 name|DataObject
 name|g1

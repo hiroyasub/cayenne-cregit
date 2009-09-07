@@ -831,7 +831,7 @@ name|isPhantom
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertTrue
 argument_list|(
 name|n3
 operator|.

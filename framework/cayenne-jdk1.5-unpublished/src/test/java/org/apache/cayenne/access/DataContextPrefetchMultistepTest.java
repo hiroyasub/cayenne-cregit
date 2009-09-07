@@ -135,6 +135,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ValueHolder
 import|;
 end_import
@@ -182,7 +194,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing chained prefetches...  *   */
+comment|/**  * Testing chained prefetches...  */
 end_comment
 
 begin_class
@@ -227,6 +239,25 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// since objects for the phantom prefetches are not retained explicitly, they may
+comment|// get garbage collected, and we won't be able to detect them
+comment|// so ensure ObjectStore uses a regular map just for this test
+name|context
+operator|.
+name|getObjectStore
+argument_list|()
+operator|.
+name|objectMap
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|Object
+argument_list|,
+name|Persistent
+argument_list|>
+argument_list|()
+expr_stmt|;
 comment|// Check the target ArtistExhibit objects do not exist yet
 name|Map
 name|id1
