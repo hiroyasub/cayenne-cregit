@@ -364,11 +364,11 @@ operator|new
 name|PrefetchTreeNode
 argument_list|()
 decl_stmt|;
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 name|resolver
 init|=
 operator|new
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 argument_list|(
 name|createDataContext
 argument_list|()
@@ -684,11 +684,11 @@ return|;
 block|}
 block|}
 decl_stmt|;
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 name|resolver
 init|=
 operator|new
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 argument_list|(
 name|createDataContext
 argument_list|()

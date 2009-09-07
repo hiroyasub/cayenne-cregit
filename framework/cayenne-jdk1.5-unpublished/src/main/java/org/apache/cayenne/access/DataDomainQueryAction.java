@@ -2484,11 +2484,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 name|resolver
 init|=
 operator|new
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 argument_list|(
 name|context
 argument_list|,
@@ -2823,11 +2823,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 name|resolver
 init|=
 operator|new
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 argument_list|(
 name|context
 argument_list|,

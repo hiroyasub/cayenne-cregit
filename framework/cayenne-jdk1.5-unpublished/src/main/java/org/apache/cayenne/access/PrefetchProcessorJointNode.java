@@ -396,7 +396,7 @@ name|resolvedRows
 decl_stmt|;
 name|PrefetchProcessorJointNode
 parameter_list|(
-name|PrefetchTreeNode
+name|PrefetchProcessorNode
 name|parent
 parameter_list|,
 name|String

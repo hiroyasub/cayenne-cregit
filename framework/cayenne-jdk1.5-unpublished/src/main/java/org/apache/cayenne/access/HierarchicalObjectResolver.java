@@ -154,12 +154,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processes a number of DataRow sets corresponding to a given prefetch tree, resolving  * DataRows to an object tree. Can process any combination of joint and disjoint sets, per  * prefetch tree.  *   * @since 1.2  */
+comment|/**  * Processes a number of DataRow sets corresponding to a given prefetch tree, resolving  * DataRows to an object tree. Can process any combination of joint and disjoint sets, per  * prefetch tree.  */
 end_comment
 
 begin_class
 class|class
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 block|{
 name|DataContext
 name|context
@@ -170,7 +170,7 @@ decl_stmt|;
 name|DataRowStore
 name|cache
 decl_stmt|;
-name|ObjectTreeResolver
+name|HierarchicalObjectResolver
 parameter_list|(
 name|DataContext
 name|context
@@ -244,6 +244,7 @@ return|;
 block|}
 block|}
 block|}
+specifier|private
 name|List
 name|resolveObjectTree
 parameter_list|(
@@ -372,42 +373,6 @@ return|return
 literal|true
 return|;
 block|}
-if|if
-condition|(
-name|processorNode
-operator|.
-name|isPartitionedByParent
-argument_list|()
-condition|)
-block|{
-name|List
-name|objects
-init|=
-name|processorNode
-operator|.
-name|getResolver
-argument_list|()
-operator|.
-name|relatedObjectsFromDataRows
-argument_list|(
-name|processorNode
-operator|.
-name|getDataRows
-argument_list|()
-argument_list|,
-name|processorNode
-argument_list|)
-decl_stmt|;
-name|processorNode
-operator|.
-name|setObjects
-argument_list|(
-name|objects
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|List
 name|objects
 init|=
@@ -431,7 +396,6 @@ argument_list|(
 name|objects
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -479,10 +443,7 @@ init|=
 operator|new
 name|JointProcessor
 argument_list|(
-operator|(
-name|PrefetchProcessorJointNode
-operator|)
-name|node
+name|processorNode
 argument_list|)
 decl_stmt|;
 name|PrefetchProcessorNode

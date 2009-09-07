@@ -1713,8 +1713,7 @@ operator|instanceof
 name|PrefetchSelectQuery
 condition|)
 block|{
-comment|// for each relationship path add closest FK or PK, for each attribute path,
-comment|// add specified column
+comment|// for each relationship path add PK of the target entity...
 for|for
 control|(
 name|String

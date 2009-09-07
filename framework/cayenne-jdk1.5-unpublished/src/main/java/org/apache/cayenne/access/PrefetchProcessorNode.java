@@ -202,7 +202,7 @@ name|lastResolved
 decl_stmt|;
 name|PrefetchProcessorNode
 parameter_list|(
-name|PrefetchTreeNode
+name|PrefetchProcessorNode
 name|parent
 parameter_list|,
 name|String
