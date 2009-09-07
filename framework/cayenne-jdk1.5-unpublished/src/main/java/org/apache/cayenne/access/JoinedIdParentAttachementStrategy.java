@@ -359,23 +359,6 @@ block|{
 break|break;
 block|}
 block|}
-comment|// don't attach to hollow objects
-if|if
-condition|(
-name|parentObject
-operator|!=
-literal|null
-operator|&&
-name|parentObject
-operator|.
-name|getPersistenceState
-argument_list|()
-operator|!=
-name|PersistenceState
-operator|.
-name|HOLLOW
-condition|)
-block|{
 name|node
 operator|.
 name|linkToParent
@@ -385,7 +368,6 @@ argument_list|,
 name|parentObject
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_class
