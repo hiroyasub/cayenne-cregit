@@ -309,6 +309,22 @@ name|access
 operator|.
 name|types
 operator|.
+name|IntegerType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
 name|UtilDateType
 import|;
 end_import
@@ -717,6 +733,15 @@ name|ExtendedTypeMap
 name|map
 parameter_list|)
 block|{
+name|map
+operator|.
+name|registerType
+argument_list|(
+operator|new
+name|IntegerType
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// use BooleanType to ensure that returned booleans are an enum of Boolean.TRUE
 comment|// and Boolean.FALSE
 name|map
