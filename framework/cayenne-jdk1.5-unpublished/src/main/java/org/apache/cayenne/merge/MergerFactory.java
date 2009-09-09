@@ -502,6 +502,9 @@ argument_list|<
 name|DbAttribute
 argument_list|>
 name|primaryKeyNew
+parameter_list|,
+name|String
+name|detectedPrimaryKeyName
 parameter_list|)
 block|{
 return|return
@@ -513,6 +516,8 @@ argument_list|,
 name|primaryKeyOriginal
 argument_list|,
 name|primaryKeyNew
+argument_list|,
+name|detectedPrimaryKeyName
 argument_list|)
 return|;
 block|}
@@ -534,6 +539,9 @@ argument_list|<
 name|DbAttribute
 argument_list|>
 name|primaryKeyNew
+parameter_list|,
+name|String
+name|detectedPrimaryKeyName
 parameter_list|)
 block|{
 return|return
@@ -545,6 +553,8 @@ argument_list|,
 name|primaryKeyOriginal
 argument_list|,
 name|primaryKeyNew
+argument_list|,
+name|detectedPrimaryKeyName
 argument_list|)
 return|;
 block|}

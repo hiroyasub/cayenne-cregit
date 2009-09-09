@@ -113,11 +113,15 @@ argument_list|>
 name|primaryKeyNew
 decl_stmt|;
 specifier|private
+name|String
+name|detectedPrimaryKeyName
+decl_stmt|;
+specifier|private
 name|Set
 argument_list|<
 name|String
 argument_list|>
-name|primaryKeyNewNames
+name|primaryKeyNewAttributeNames
 init|=
 operator|new
 name|HashSet
@@ -143,6 +147,9 @@ argument_list|<
 name|DbAttribute
 argument_list|>
 name|primaryKeyNew
+parameter_list|,
+name|String
+name|detectedPrimaryKeyName
 parameter_list|)
 block|{
 name|super
@@ -162,6 +169,12 @@ name|primaryKeyNew
 operator|=
 name|primaryKeyNew
 expr_stmt|;
+name|this
+operator|.
+name|detectedPrimaryKeyName
+operator|=
+name|detectedPrimaryKeyName
+expr_stmt|;
 for|for
 control|(
 name|DbAttribute
@@ -170,7 +183,7 @@ range|:
 name|primaryKeyNew
 control|)
 block|{
-name|primaryKeyNewNames
+name|primaryKeyNewAttributeNames
 operator|.
 name|add
 argument_list|(
@@ -204,6 +217,8 @@ argument_list|,
 name|primaryKeyNew
 argument_list|,
 name|primaryKeyOriginal
+argument_list|,
+name|detectedPrimaryKeyName
 argument_list|)
 return|;
 block|}
@@ -243,7 +258,7 @@ decl_stmt|;
 name|boolean
 name|willBePrimaryKey
 init|=
-name|primaryKeyNewNames
+name|primaryKeyNewAttributeNames
 operator|.
 name|contains
 argument_list|(
