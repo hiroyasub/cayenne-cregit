@@ -205,22 +205,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
-operator|.
-name|TrimmingQualifierTranslator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|types
 operator|.
 name|ByteArrayType
@@ -333,20 +317,6 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|QuotingStrategy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
 name|JdbcAdapter
 import|;
 end_import
@@ -362,6 +332,20 @@ operator|.
 name|dba
 operator|.
 name|PkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|QuotingStrategy
 import|;
 end_import
 
@@ -676,6 +660,8 @@ comment|// ignoring...
 block|}
 block|}
 comment|/**      * @deprecated since 3.0, as a generic BLOB method is used to write BLOBs.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Method
@@ -799,6 +785,8 @@ literal|false
 return|;
 block|}
 comment|/**      * @deprecated since 3.0, as a generic CLOB method is used to write CLOBs.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Method
@@ -1346,13 +1334,9 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|TrimmingQualifierTranslator
+name|OracleQualifierTranslator
 argument_list|(
 name|queryAssembler
-argument_list|,
-name|OracleAdapter
-operator|.
-name|TRIM_FUNCTION
 argument_list|)
 return|;
 block|}
@@ -1592,6 +1576,8 @@ argument_list|()
 return|;
 block|}
 comment|/**          * @deprecated since 3.0 as validation should not be done at the DataNode level.          */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|validateProperty
