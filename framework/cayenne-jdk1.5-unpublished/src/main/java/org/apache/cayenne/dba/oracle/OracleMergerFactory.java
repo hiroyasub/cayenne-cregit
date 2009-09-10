@@ -565,15 +565,7 @@ argument_list|(
 literal|" MODIFY "
 argument_list|)
 expr_stmt|;
-name|OracleAdapter
-name|oradapter
-init|=
-operator|(
-name|OracleAdapter
-operator|)
 name|adapter
-decl_stmt|;
-name|oradapter
 operator|.
 name|createTableAppendColumn
 argument_list|(
