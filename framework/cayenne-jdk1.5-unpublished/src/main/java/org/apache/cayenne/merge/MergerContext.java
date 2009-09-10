@@ -80,16 +80,6 @@ specifier|public
 interface|interface
 name|MergerContext
 block|{
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|executeSql
-parameter_list|(
-name|String
-name|sql
-parameter_list|)
-function_decl|;
 specifier|public
 name|ModelMergeDelegate
 name|getModelMergeDelegate
