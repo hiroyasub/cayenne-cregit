@@ -241,7 +241,7 @@ name|pos
 argument_list|,
 operator|(
 operator|(
-name|Integer
+name|Number
 operator|)
 name|value
 operator|)

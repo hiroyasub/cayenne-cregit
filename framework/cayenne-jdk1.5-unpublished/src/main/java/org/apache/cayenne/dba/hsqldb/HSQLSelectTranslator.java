@@ -33,20 +33,6 @@ name|SelectTranslator
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QueryMetadata
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 1.2  */
 end_comment

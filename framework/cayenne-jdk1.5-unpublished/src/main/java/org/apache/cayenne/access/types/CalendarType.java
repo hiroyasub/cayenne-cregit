@@ -360,10 +360,9 @@ break|break;
 block|}
 if|if
 condition|(
-name|rs
-operator|.
-name|wasNull
-argument_list|()
+name|val
+operator|==
+literal|null
 condition|)
 block|{
 return|return
@@ -517,10 +516,9 @@ break|break;
 block|}
 if|if
 condition|(
-name|rs
-operator|.
-name|wasNull
-argument_list|()
+name|val
+operator|==
+literal|null
 condition|)
 block|{
 return|return

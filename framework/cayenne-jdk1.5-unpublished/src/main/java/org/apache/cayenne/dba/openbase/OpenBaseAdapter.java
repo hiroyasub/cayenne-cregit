@@ -23,6 +23,16 @@ name|java
 operator|.
 name|sql
 operator|.
+name|CallableStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|PreparedStatement
 import|;
 end_import
@@ -127,7 +137,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|CharType
+name|ByteType
 import|;
 end_import
 
@@ -143,7 +153,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|DefaultType
+name|CharType
 import|;
 end_import
 
@@ -318,7 +328,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<pre> openbase.cayenne.adapter = org.apache.cayenne.dba.openbase.OpenBaseAdapter openbase.jdbc.username = test openbase.jdbc.password = secret openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne openbase.jdbc.driver = com.openbase.jdbc.ObDriver</pre>  *   *   * @since 1.1  */
+comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>. Sample  * connection settings to use with OpenBase are shown below:  *   *<pre>  * openbase.cayenne.adapter = org.apache.cayenne.dba.openbase.OpenBaseAdapter  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -485,7 +495,7 @@ return|return
 literal|"go"
 return|;
 block|}
-comment|/**       * Returns null, since views are not yet supported in openbase.      */
+comment|/**      * Returns null, since views are not yet supported in openbase.      */
 annotation|@
 name|Override
 specifier|public
@@ -498,7 +508,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**       * Returns OpenBase-specific translator for queries.      */
+comment|/**      * Returns OpenBase-specific translator for queries.      */
 annotation|@
 name|Override
 specifier|public
@@ -517,7 +527,7 @@ name|queryAssembler
 argument_list|)
 return|;
 block|}
-comment|/**       * Creates and returns a primary key generator. Overrides superclass        * implementation to return an       * instance of OpenBasePkGenerator that uses built-in multi-server primary key generation.       */
+comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of OpenBasePkGenerator that uses built-in multi-server primary      * key generation.      */
 annotation|@
 name|Override
 specifier|protected
@@ -533,7 +543,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**       * Returns a SQL string that can be used to create database table       * corresponding to<code>ent</code> parameter.       */
+comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */
 annotation|@
 name|Override
 specifier|public
@@ -913,7 +923,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a SQL string that can be used to create      * a foreign key constraint for the relationship.      */
+comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship.      */
 annotation|@
 name|Override
 specifier|public
@@ -1135,19 +1145,14 @@ specifier|static
 class|class
 name|OpenBaseByteType
 extends|extends
-name|DefaultType
+name|ByteType
 block|{
 name|OpenBaseByteType
 parameter_list|()
 block|{
 name|super
 argument_list|(
-name|Byte
-operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -1158,6 +1163,56 @@ name|Object
 name|materializeObject
 parameter_list|(
 name|ResultSet
+name|rs
+parameter_list|,
+name|int
+name|index
+parameter_list|,
+name|int
+name|type
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+comment|// read value as int, and then narrow it down
+name|int
+name|val
+init|=
+name|rs
+operator|.
+name|getInt
+argument_list|(
+name|index
+argument_list|)
+decl_stmt|;
+return|return
+operator|(
+name|rs
+operator|.
+name|wasNull
+argument_list|()
+operator|)
+condition|?
+literal|null
+else|:
+name|Byte
+operator|.
+name|valueOf
+argument_list|(
+operator|(
+name|byte
+operator|)
+name|val
+argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|Object
+name|materializeObject
+parameter_list|(
+name|CallableStatement
 name|rs
 parameter_list|,
 name|int

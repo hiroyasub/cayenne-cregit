@@ -172,15 +172,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>java.lang.String</code>, mapping it as either of JDBC types - CLOB or  * (VAR)CHAR. Can be configured to trim trailing spaces.  *   */
+comment|/**  * Handles<code>java.lang.String</code>, mapping it as either of JDBC types - CLOB or  * (VAR)CHAR. Can be configured to trim trailing spaces.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
 name|CharType
-extends|extends
-name|AbstractType
+implements|implements
+name|ExtendedType
 block|{
 specifier|private
 specifier|static
@@ -224,8 +224,6 @@ name|usingClobs
 expr_stmt|;
 block|}
 comment|/**      * Returns "java.lang.String".      */
-annotation|@
-name|Override
 specifier|public
 name|String
 name|getClassName
@@ -241,8 +239,6 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Validates string property.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|validateProperty
@@ -357,8 +353,6 @@ literal|true
 return|;
 block|}
 comment|/** Return trimmed string. */
-annotation|@
-name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -457,8 +451,6 @@ name|val
 return|;
 block|}
 comment|/** Return trimmed string. */
-annotation|@
-name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -559,8 +551,6 @@ return|return
 name|val
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -583,17 +573,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// if this is a CLOB column, set the value as "String"
-comment|// instead. This should work with most drivers
-if|if
-condition|(
-name|type
-operator|==
-name|Types
-operator|.
-name|CLOB
-condition|)
-block|{
 name|st
 operator|.
 name|setString
@@ -606,25 +585,6 @@ operator|)
 name|val
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|super
-operator|.
-name|setJdbcObject
-argument_list|(
-name|st
-argument_list|,
-name|val
-argument_list|,
-name|pos
-argument_list|,
-name|type
-argument_list|,
-name|precision
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 specifier|protected
 name|String
@@ -886,7 +846,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if 'materializeObject' method should trim trailing      * spaces from the CHAR columns. This addresses an issue with some JDBC drivers (e.g.      * Oracle), that return Strings for CHAR columsn padded with spaces.      */
+comment|/**      * Returns<code>true</code> if 'materializeObject' method should trim trailing spaces      * from the CHAR columns. This addresses an issue with some JDBC drivers (e.g.      * Oracle), that return Strings for CHAR columsn padded with spaces.      */
 specifier|public
 name|boolean
 name|isTrimmingChars

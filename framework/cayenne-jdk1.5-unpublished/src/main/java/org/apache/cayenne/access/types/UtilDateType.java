@@ -122,19 +122,17 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maps<code>java.util.Date</code> to any of the three database date/time types: TIME,  * DATE, TIMESTAMP.  *   */
+comment|/**  * Maps<code>java.util.Date</code> to any of the three database date/time types: TIME,  * DATE, TIMESTAMP.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
 name|UtilDateType
-extends|extends
-name|AbstractType
+implements|implements
+name|ExtendedType
 block|{
 comment|/**      * Returns "java.util.Date".      */
-annotation|@
-name|Override
 specifier|public
 name|String
 name|getClassName
@@ -150,8 +148,6 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Always returns true indicating no validation failures. There is no date-specific      * validations at the moment.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|validateProperty
@@ -291,8 +287,6 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -421,12 +415,9 @@ expr_stmt|;
 break|break;
 block|}
 return|return
-operator|(
-name|rs
-operator|.
-name|wasNull
-argument_list|()
-operator|)
+name|val
+operator|==
+literal|null
 condition|?
 literal|null
 else|:
@@ -440,8 +431,6 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -579,12 +568,9 @@ comment|// so lets cast it to Date,
 comment|// if it is not date, ClassCastException will be thrown,
 comment|// which is what we want
 return|return
-operator|(
-name|cs
-operator|.
-name|wasNull
-argument_list|()
-operator|)
+name|val
+operator|==
+literal|null
 condition|?
 literal|null
 else|:
@@ -611,17 +597,15 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|setJdbcObject
 parameter_list|(
 name|PreparedStatement
-name|st
+name|statement
 parameter_list|,
 name|Object
-name|val
+name|value
 parameter_list|,
 name|int
 name|pos
@@ -630,31 +614,47 @@ name|int
 name|type
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|super
+if|if
+condition|(
+name|value
+operator|==
+literal|null
+condition|)
+block|{
+name|statement
 operator|.
-name|setJdbcObject
+name|setNull
 argument_list|(
-name|st
-argument_list|,
-name|convertToJdbcObject
-argument_list|(
-name|val
-argument_list|,
-name|type
-argument_list|)
-argument_list|,
 name|pos
 argument_list|,
 name|type
-argument_list|,
-name|precision
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|statement
+operator|.
+name|setObject
+argument_list|(
+name|pos
+argument_list|,
+name|convertToJdbcObject
+argument_list|(
+name|value
+argument_list|,
+name|type
+argument_list|)
+argument_list|,
+name|type
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class

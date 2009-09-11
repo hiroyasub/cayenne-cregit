@@ -152,10 +152,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|rs
-operator|.
-name|wasNull
-argument_list|()
+name|object
+operator|==
+literal|null
 condition|)
 block|{
 return|return
@@ -201,10 +200,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|rs
-operator|.
-name|wasNull
-argument_list|()
+name|object
+operator|==
+literal|null
 condition|)
 block|{
 return|return

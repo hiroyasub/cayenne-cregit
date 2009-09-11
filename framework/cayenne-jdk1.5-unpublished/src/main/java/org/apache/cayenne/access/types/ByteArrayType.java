@@ -186,15 +186,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>byte[]</code>, mapping it as either of JDBC types - BLOB or  * (VAR)BINARY. Can be configured to trim trailing zero bytes.  *   */
+comment|/**  * Handles<code>byte[]</code>, mapping it as either of JDBC types - BLOB or (VAR)BINARY.  * Can be configured to trim trailing zero bytes.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
 name|ByteArrayType
-extends|extends
-name|AbstractType
+implements|implements
+name|ExtendedType
 block|{
 specifier|private
 specifier|static
@@ -342,8 +342,6 @@ operator|=
 name|trimmingBytes
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|String
 name|getClassName
@@ -354,8 +352,6 @@ literal|"byte[]"
 return|;
 block|}
 comment|/**      * Validates byte[] property.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|validateProperty
@@ -470,8 +466,6 @@ return|return
 literal|true
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -569,8 +563,6 @@ return|return
 name|bytes
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -671,8 +663,6 @@ return|return
 name|bytes
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -690,7 +680,7 @@ name|int
 name|type
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 throws|throws
 name|Exception
@@ -748,21 +738,42 @@ block|}
 block|}
 else|else
 block|{
-name|super
-operator|.
-name|setJdbcObject
-argument_list|(
+if|if
+condition|(
+name|scale
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
 name|st
+operator|.
+name|setObject
+argument_list|(
+name|pos
 argument_list|,
 name|val
 argument_list|,
-name|pos
-argument_list|,
 name|type
 argument_list|,
-name|precision
+name|scale
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|st
+operator|.
+name|setObject
+argument_list|(
+name|pos
+argument_list|,
+name|val
+argument_list|,
+name|type
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 specifier|protected

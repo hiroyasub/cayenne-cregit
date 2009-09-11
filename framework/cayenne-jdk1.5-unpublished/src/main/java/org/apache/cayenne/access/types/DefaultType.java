@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ExtendedType that can work with any Java class, providing JDBC-to-Java mapping  * exactly per JDBC specification.  *   */
+comment|/**  * An ExtendedType that can work with any Java class, providing JDBC-to-Java mapping  * exactly per JDBC specification.  *   * @deprecated since 3.0, as explicit type mappings are created for each JDBC spec type.  */
 end_comment
 
 begin_class
@@ -751,7 +751,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**       * Returns an Iterator over the names of supported default Java classes.      */
+comment|/**      * Returns an Iterator over the names of supported default Java classes.      */
 specifier|public
 specifier|static
 name|Iterator
