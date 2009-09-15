@@ -3046,12 +3046,36 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|//SQL integer's max value is 2^31-1, which has length of 10
+if|if
+condition|(
+name|length
+operator|<
+literal|10
+condition|)
+block|{
 name|type
 operator|=
 name|Types
 operator|.
 name|INTEGER
 expr_stmt|;
+block|}
+if|else if
+condition|(
+name|length
+operator|<
+literal|19
+condition|)
+block|{
+comment|//SQL's BIGINT max value is 2^63-1, which has length of 19
+name|type
+operator|=
+name|Types
+operator|.
+name|BIGINT
+expr_stmt|;
+block|}
 block|}
 return|return
 name|sqlEnumJava
