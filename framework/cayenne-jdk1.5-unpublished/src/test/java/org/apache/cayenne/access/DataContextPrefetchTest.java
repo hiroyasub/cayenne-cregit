@@ -2301,6 +2301,19 @@ name|TO_PAINTING_INFO_PROPERTY
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// there was a bug marking an object as dirty when clearing the relationships
+name|assertEquals
+argument_list|(
+name|PersistenceState
+operator|.
+name|COMMITTED
+argument_list|,
+name|p4
+operator|.
+name|getPersistenceState
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 finally|finally
 block|{

@@ -508,7 +508,7 @@ condition|)
 block|{
 name|incoming
 operator|.
-name|writeProperty
+name|writePropertyDirectly
 argument_list|(
 name|object
 argument_list|,
