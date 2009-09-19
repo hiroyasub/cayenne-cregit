@@ -753,7 +753,7 @@ name|getThreadObjectContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Binds a DataContext to the current thread. DataContext can later be retrieved by      * users in the same thread by calling {@link DataContext#getThreadDataContext}. Using      * null parameter will unbind currently bound DataContext.      *       * @since 1.1      * @deprecated since 3.0, replaced by BaseContex#getThreadObjectContext().      */
+comment|/**      * Binds a DataContext to the current thread. DataContext can later be retrieved by      * users in the same thread by calling {@link DataContext#getThreadDataContext}. Using      * null parameter will unbind currently bound DataContext.      *       * @since 1.1      * @deprecated since 3.0, replaced by BaseContex#bindThreadObjectContext().      */
 annotation|@
 name|Deprecated
 specifier|public
