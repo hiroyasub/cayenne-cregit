@@ -230,6 +230,10 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
+comment|/**      * Db-relationships path that is set but not yet parsed (turned into List<DbRelationship>)      * Used during map loading      */
+name|String
+name|deferredPath
+decl_stmt|;
 comment|/**      * Stores the type of collection mapped by a to-many relationship. Null for to-one      * relationships.      *       * @since 3.0      */
 specifier|protected
 name|String
@@ -824,6 +828,9 @@ argument_list|>
 name|getDbRelationships
 parameter_list|()
 block|{
+name|refreshFromDeferredPath
+argument_list|()
+expr_stmt|;
 return|return
 name|Collections
 operator|.
@@ -842,6 +849,9 @@ name|DbRelationship
 name|dbRel
 parameter_list|)
 block|{
+name|refreshFromDeferredPath
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|dbRel
@@ -958,6 +968,9 @@ name|DbRelationship
 name|dbRel
 parameter_list|)
 block|{
+name|refreshFromDeferredPath
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|dbRelationships
@@ -985,6 +998,10 @@ name|void
 name|clearDbRelationships
 parameter_list|()
 block|{
+name|deferredPath
+operator|=
+literal|null
+expr_stmt|;
 name|this
 operator|.
 name|dbRelationships
@@ -1260,6 +1277,9 @@ name|boolean
 name|isReadOnly
 parameter_list|()
 block|{
+name|refreshFromDeferredPath
+argument_list|()
+expr_stmt|;
 name|recalculateReadOnlyValue
 argument_list|()
 expr_stmt|;
@@ -1274,6 +1294,9 @@ name|boolean
 name|isToMany
 parameter_list|()
 block|{
+name|refreshFromDeferredPath
+argument_list|()
+expr_stmt|;
 name|recalculateToManyValue
 argument_list|()
 expr_stmt|;
@@ -1407,6 +1430,9 @@ name|String
 name|getDbRelationshipPath
 parameter_list|()
 block|{
+name|refreshFromDeferredPath
+argument_list|()
+expr_stmt|;
 comment|// build path on the fly
 if|if
 condition|(
@@ -1656,6 +1682,58 @@ name|refreshFromPath
 argument_list|(
 name|relationshipPath
 argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Sets relationship path, but does not trigger its conversion to List<DbRelationship>      * For internal purposes, primarily datamap loading      */
+name|void
+name|setDeferredDbRelationshipPath
+parameter_list|(
+name|String
+name|relationshipPath
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|Util
+operator|.
+name|nullSafeEquals
+argument_list|(
+name|getDbRelationshipPath
+argument_list|()
+argument_list|,
+name|relationshipPath
+argument_list|)
+condition|)
+block|{
+name|deferredPath
+operator|=
+name|relationshipPath
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Loads path from "deferredPath" variable (if specified)      */
+specifier|synchronized
+name|void
+name|refreshFromDeferredPath
+parameter_list|()
+block|{
+if|if
+condition|(
+name|deferredPath
+operator|!=
+literal|null
+condition|)
+block|{
+name|refreshFromPath
+argument_list|(
+name|deferredPath
+argument_list|)
+expr_stmt|;
+name|deferredPath
+operator|=
+literal|null
 expr_stmt|;
 block|}
 block|}

@@ -4939,7 +4939,7 @@ argument_list|)
 expr_stmt|;
 name|objRelationship
 operator|.
-name|setDbRelationshipPath
+name|setDeferredDbRelationshipPath
 argument_list|(
 operator|(
 name|atts

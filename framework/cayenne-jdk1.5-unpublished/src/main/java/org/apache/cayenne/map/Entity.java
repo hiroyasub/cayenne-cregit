@@ -911,6 +911,8 @@ name|relationshipPath
 parameter_list|)
 function_decl|;
 comment|/**      * Convenience method returning the last component in the path iterator, either an      * {@link ObjAttribute} or an {@link ObjRelationship}.      *       * @since 1.1      * @deprecated since 3.0 use {@link #lastPathComponent(Expression, Map)} method that      *             supports aliases.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Object
 name|lastPathComponent
@@ -1323,9 +1325,24 @@ operator|.
 name|getTargetEntity
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|currentEnt
+operator|!=
+literal|null
+operator|||
+operator|!
+name|toks
+operator|.
+name|hasMoreTokens
+argument_list|()
+condition|)
+block|{
+comment|//otherwise an exception will be thrown
 return|return
 name|rel
 return|;
+block|}
 block|}
 comment|// build error message
 name|StringBuilder
