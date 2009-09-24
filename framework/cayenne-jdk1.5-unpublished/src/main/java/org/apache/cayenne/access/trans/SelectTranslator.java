@@ -1672,6 +1672,10 @@ argument_list|(
 name|visitor
 argument_list|)
 expr_stmt|;
+comment|//stack should be reset, because all root table attributes go with "t0" table alias
+name|resetJoinStack
+argument_list|()
+expr_stmt|;
 comment|// add remaining needed attrs from DbEntity
 name|DbEntity
 name|table
