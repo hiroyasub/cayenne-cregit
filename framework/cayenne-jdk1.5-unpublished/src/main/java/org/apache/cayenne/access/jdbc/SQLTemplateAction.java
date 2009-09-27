@@ -1496,7 +1496,7 @@ index|[
 name|i
 index|]
 operator|.
-name|getPrecision
+name|getScale
 argument_list|()
 argument_list|)
 expr_stmt|;

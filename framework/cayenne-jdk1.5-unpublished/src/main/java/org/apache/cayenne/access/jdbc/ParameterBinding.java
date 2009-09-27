@@ -32,7 +32,7 @@ name|jdbcType
 decl_stmt|;
 specifier|protected
 name|int
-name|precision
+name|scale
 decl_stmt|;
 specifier|protected
 name|Object
@@ -48,7 +48,7 @@ name|int
 name|jdbcType
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 block|{
 name|this
@@ -65,9 +65,9 @@ name|jdbcType
 expr_stmt|;
 name|this
 operator|.
-name|precision
+name|scale
 operator|=
-name|precision
+name|scale
 expr_stmt|;
 block|}
 specifier|public
@@ -79,13 +79,26 @@ return|return
 name|jdbcType
 return|;
 block|}
+comment|/**      * @deprecated since 3.0 use {@link #getScale()}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getPrecision
 parameter_list|()
 block|{
 return|return
-name|precision
+name|scale
+return|;
+block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|int
+name|getScale
+parameter_list|()
+block|{
+return|return
+name|scale
 return|;
 block|}
 specifier|public
@@ -110,6 +123,23 @@ operator|=
 name|i
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|void
+name|setScale
+parameter_list|(
+name|int
+name|i
+parameter_list|)
+block|{
+name|scale
+operator|=
+name|i
+expr_stmt|;
+block|}
+comment|/**      * @deprecated since 3.0 use {@link #setScale(int)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setPrecision
@@ -118,7 +148,7 @@ name|int
 name|i
 parameter_list|)
 block|{
-name|precision
+name|scale
 operator|=
 name|i
 expr_stmt|;

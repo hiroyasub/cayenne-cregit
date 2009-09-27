@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text. There are the  * following possible invocation formats inside the template:  *   *<pre>  * #bind(value) - e.g. #bind($xyz)  * #bind(value jdbc_type_name) - e.g. #bind($xyz 'VARCHAR'). This is the most common and useful form.  * #bind(value jdbc_type_name, precision) - e.g. #bind($xyz 'VARCHAR' 2)  *</pre>  *<p>  * Other examples:  *</p>  *<p>  *<strong>Binding literal parameter value:</strong>  *</p>  *<p>  *<code>"WHERE SOME_COLUMN> #bind($xyz)"</code> produces  *<code>"WHERE SOME_COLUMN> ?"</code> and also places the value of the "xyz" parameter  * in the context "bindings" collection.  *</p>  *<p>  *<strong>Binding ID column of a DataObject value:</strong>  *</p>  *<p>  *<code>"WHERE ID_COL1 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))   * AND ID_COL2 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))"</code> produces<code>"WHERE ID_COL1 = ? AND ID_COL2 = ?"</code> and also places the  * values of id columns of the DataObject parameter "xyz" in the context "bindings"  * collection.  *</p>  *   * @since 1.1  */
+comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text. There are the  * following possible invocation formats inside the template:  *   *<pre>  * #bind(value) - e.g. #bind($xyz)  * #bind(value jdbc_type_name) - e.g. #bind($xyz 'VARCHAR'). This is the most common and useful form.  * #bind(value jdbc_type_name, scale) - e.g. #bind($xyz 'VARCHAR' 2)  *</pre>  *<p>  * Other examples:  *</p>  *<p>  *<strong>Binding literal parameter value:</strong>  *</p>  *<p>  *<code>"WHERE SOME_COLUMN> #bind($xyz)"</code> produces  *<code>"WHERE SOME_COLUMN> ?"</code> and also places the value of the "xyz" parameter  * in the context "bindings" collection.  *</p>  *<p>  *<strong>Binding ID column of a DataObject value:</strong>  *</p>  *<p>  *<code>"WHERE ID_COL1 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))   * AND ID_COL2 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))"</code> produces<code>"WHERE ID_COL1 = ? AND ID_COL2 = ?"</code> and also places the  * values of id columns of the DataObject parameter "xyz" in the context "bindings"  * collection.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -258,7 +258,7 @@ literal|1
 argument_list|)
 decl_stmt|;
 name|int
-name|precision
+name|scale
 init|=
 name|ConversionUtil
 operator|.
@@ -337,7 +337,7 @@ argument_list|()
 argument_list|,
 name|typeString
 argument_list|,
-name|precision
+name|scale
 argument_list|)
 expr_stmt|;
 if|if
@@ -372,7 +372,7 @@ name|value
 argument_list|,
 name|typeString
 argument_list|,
-name|precision
+name|scale
 argument_list|)
 expr_stmt|;
 block|}
@@ -401,7 +401,7 @@ name|String
 name|typeString
 parameter_list|,
 name|int
-name|precision
+name|scale
 parameter_list|)
 throws|throws
 name|IOException
@@ -517,7 +517,7 @@ name|value
 argument_list|,
 name|jdbcType
 argument_list|,
-name|precision
+name|scale
 argument_list|)
 argument_list|)
 expr_stmt|;
