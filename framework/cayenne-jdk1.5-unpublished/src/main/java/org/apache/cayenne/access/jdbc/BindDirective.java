@@ -452,6 +452,21 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+comment|// value is null, set JDBC type to NULL
+name|jdbcType
+operator|=
+name|TypesMapping
+operator|.
+name|getSqlTypeByName
+argument_list|(
+name|TypesMapping
+operator|.
+name|SQL_NULL
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|jdbcType
