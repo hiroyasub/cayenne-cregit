@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines object sorting criteria, used either for in-memory sorting of object lists or  * as a specification for building<em>ORDER BY</em> clause of a SelectQuery query. Note  * that in case of in-memory sorting, Ordering can be used with any JavaBeans, not just  * DataObjects.  *   */
+comment|/**  * Defines object sorting criteria, used either for in-memory sorting of object lists or  * as a specification for building<em>ORDER BY</em> clause of a SelectQuery query. Note  * that in case of in-memory sorting, Ordering can be used with any JavaBeans, not just  * DataObjects.  */
 end_comment
 
 begin_class
@@ -191,7 +191,9 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
-comment|/**      * Symbolic representation of ascending ordering criterion.      */
+comment|/**      * Symbolic representation of ascending ordering criterion.      *       * @deprecated Use SortOrder.ASCENDING instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -200,7 +202,9 @@ name|ASC
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * Symbolic representation of descending ordering criterion.      */
+comment|/**      * Symbolic representation of descending ordering criterion.      *       * @deprecated Use SortOrder.DESCENDING instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -219,13 +223,11 @@ name|Expression
 name|sortSpec
 decl_stmt|;
 specifier|protected
-name|boolean
-name|ascending
+name|SortOrder
+name|sortOrder
 decl_stmt|;
-specifier|protected
-name|boolean
-name|caseInsensitive
-decl_stmt|;
+comment|//    protected boolean ascending;
+comment|//    protected boolean caseInsensitive;
 specifier|protected
 name|boolean
 name|pathExceptionSuppressed
@@ -277,6 +279,8 @@ name|Ordering
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|Ordering
 parameter_list|(
@@ -297,6 +301,30 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.0      */
+specifier|public
+name|Ordering
+parameter_list|(
+name|String
+name|sortPathSpec
+parameter_list|,
+name|SortOrder
+name|sortOrder
+parameter_list|)
+block|{
+name|setSortSpecString
+argument_list|(
+name|sortPathSpec
+argument_list|)
+expr_stmt|;
+name|setSortOrder
+argument_list|(
+name|sortOrder
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|Ordering
 parameter_list|(
@@ -315,19 +343,21 @@ argument_list|(
 name|sortPathSpec
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
+name|setAscending
+argument_list|(
 name|ascending
-operator|=
-name|ascending
+argument_list|)
 expr_stmt|;
-name|this
-operator|.
+name|setCaseInsensitive
+argument_list|(
 name|caseInsensitive
-operator|=
-name|caseInsensitive
+argument_list|)
 expr_stmt|;
+comment|//        this.ascending = ascending;
+comment|//        this.caseInsensitive = caseInsensitive;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|Ordering
 parameter_list|(
@@ -348,6 +378,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|Ordering
 parameter_list|(
@@ -366,18 +398,18 @@ argument_list|(
 name|sortExpression
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
+name|setAscending
+argument_list|(
 name|ascending
-operator|=
-name|ascending
+argument_list|)
 expr_stmt|;
-name|this
-operator|.
+name|setCaseInsensitive
+argument_list|(
 name|caseInsensitive
-operator|=
-name|caseInsensitive
+argument_list|)
 expr_stmt|;
+comment|//        this.ascending = ascending;
+comment|//        this.caseInsensitive = caseInsensitive;
 block|}
 comment|/**      * Sets sortSpec to be an expression represented by string argument.      *       * @since 1.1      */
 specifier|public
@@ -479,6 +511,22 @@ return|return
 name|sortSpecString
 return|;
 block|}
+comment|/**      * Sets the sort order for this ordering.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setSortOrder
+parameter_list|(
+name|SortOrder
+name|order
+parameter_list|)
+block|{
+name|this
+operator|.
+name|sortOrder
+operator|=
+name|order
+expr_stmt|;
+block|}
 comment|/** Returns true if sorting is done in ascending order. */
 specifier|public
 name|boolean
@@ -486,10 +534,38 @@ name|isAscending
 parameter_list|()
 block|{
 return|return
-name|ascending
+name|sortOrder
+operator|==
+literal|null
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|ASCENDING
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|ASCENDING_INSENSITIVE
 return|;
 block|}
-comment|/** Sets<code>ascending</code> property of this Ordering. */
+comment|/**      * Returns true if the sorting is done in descending order.      *       * @since 3.0      */
+specifier|public
+name|boolean
+name|isDescending
+parameter_list|()
+block|{
+return|return
+operator|!
+name|isAscending
+argument_list|()
+return|;
+block|}
+comment|/**      * Sets<code>ascending</code> property of this Ordering.      *       * @deprecated Use setSortOrder() or setAscending() or setDescending().      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setAscending
@@ -498,11 +574,98 @@ name|boolean
 name|ascending
 parameter_list|)
 block|{
-name|this
+if|if
+condition|(
+name|ascending
+condition|)
+name|setAscending
+argument_list|()
+expr_stmt|;
+else|else
+name|setDescending
+argument_list|()
+expr_stmt|;
+block|}
+comment|/**      * If the sort order is DESCENDING or DESCENDING_INSENSITIVE, sets      * the sort order to ASCENDING or ASCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setAscending
+parameter_list|()
+block|{
+if|if
+condition|(
+name|sortOrder
+operator|==
+literal|null
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
 operator|.
-name|ascending
-operator|=
-name|ascending
+name|DESCENDING
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|ASCENDING
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|DESCENDING_INSENSITIVE
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|ASCENDING_INSENSITIVE
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * If the sort order is ASCENDING or ASCENDING_INSENSITIVE, sets      * the sort order to DESCENDING or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setDescending
+parameter_list|()
+block|{
+if|if
+condition|(
+name|sortOrder
+operator|==
+literal|null
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|ASCENDING
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|DESCENDING
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|ASCENDING_INSENSITIVE
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|DESCENDING_INSENSITIVE
+argument_list|)
 expr_stmt|;
 block|}
 comment|/** Returns true if the sorting is case insensitive */
@@ -512,10 +675,38 @@ name|isCaseInsensitive
 parameter_list|()
 block|{
 return|return
-name|caseInsensitive
+operator|!
+name|isCaseSensitive
+argument_list|()
 return|;
 block|}
-comment|/** Sets<code>caseInsensitive</code> property of this Ordering. */
+comment|/**      * Returns true if the sorting is case sensitive.      *       * @since 3.0      */
+specifier|public
+name|boolean
+name|isCaseSensitive
+parameter_list|()
+block|{
+return|return
+name|sortOrder
+operator|==
+literal|null
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|ASCENDING
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|DESCENDING
+return|;
+block|}
+comment|/**      * Sets<code>caseInsensitive</code> property of this Ordering.      *       * @deprecated Use setSortOrder() or setCaseInsensitive() or setCaseSensitive().      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setCaseInsensitive
@@ -524,11 +715,98 @@ name|boolean
 name|caseInsensitive
 parameter_list|)
 block|{
-name|this
+if|if
+condition|(
+name|caseInsensitive
+condition|)
+name|setCaseInsensitive
+argument_list|()
+expr_stmt|;
+else|else
+name|setCaseSensitive
+argument_list|()
+expr_stmt|;
+block|}
+comment|/**      * If the sort order is ASCENDING or DESCENDING, sets the sort order to      * ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setCaseInsensitive
+parameter_list|()
+block|{
+if|if
+condition|(
+name|sortOrder
+operator|==
+literal|null
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
 operator|.
-name|caseInsensitive
-operator|=
-name|caseInsensitive
+name|ASCENDING
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|ASCENDING_INSENSITIVE
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|DESCENDING
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|DESCENDING_INSENSITIVE
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * If the sort order is ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE,      * sets the sort order to ASCENDING or DESCENDING, respectively.      *       * @since 3.0      */
+specifier|public
+name|void
+name|setCaseSensitive
+parameter_list|()
+block|{
+if|if
+condition|(
+name|sortOrder
+operator|==
+literal|null
+operator|||
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|ASCENDING_INSENSITIVE
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|ASCENDING
+argument_list|)
+expr_stmt|;
+if|else if
+condition|(
+name|sortOrder
+operator|==
+name|SortOrder
+operator|.
+name|DESCENDING_INSENSITIVE
+condition|)
+name|setSortOrder
+argument_list|(
+name|SortOrder
+operator|.
+name|DESCENDING
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns the expression defining a ordering Java Bean property.      */
@@ -695,7 +973,7 @@ comment|//do nothing, we expect this
 block|}
 else|else
 block|{
-comment|//rethrow
+comment|//re-throw
 throw|throw
 name|e
 throw|;
@@ -798,9 +1076,8 @@ return|;
 block|}
 if|if
 condition|(
-name|this
-operator|.
-name|caseInsensitive
+name|isCaseInsensitive
+argument_list|()
 condition|)
 block|{
 comment|// TODO: to upper case should probably be defined as a separate expression
@@ -846,7 +1123,8 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|(
-name|ascending
+name|isAscending
+argument_list|()
 operator|)
 condition|?
 name|compareResult
@@ -873,8 +1151,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|ascending
+name|isDescending
+argument_list|()
 condition|)
 block|{
 name|encoder
@@ -887,7 +1165,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|caseInsensitive
+name|isCaseInsensitive
+argument_list|()
 condition|)
 block|{
 name|encoder
