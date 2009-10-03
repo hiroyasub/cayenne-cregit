@@ -48,7 +48,7 @@ name|validateForSaveCalled
 decl_stmt|;
 specifier|protected
 name|boolean
-name|prePersisted
+name|preAdded
 decl_stmt|;
 specifier|protected
 name|boolean
@@ -63,7 +63,7 @@ name|void
 name|resetCallbackFlags
 parameter_list|()
 block|{
-name|prePersisted
+name|preAdded
 operator|=
 literal|false
 expr_stmt|;
@@ -78,10 +78,10 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|prePersistCallback
+name|preAddCallback
 parameter_list|()
 block|{
-name|prePersisted
+name|preAdded
 operator|=
 literal|true
 expr_stmt|;
@@ -108,11 +108,11 @@ expr_stmt|;
 block|}
 specifier|public
 name|boolean
-name|isPrePersisted
+name|isPreAdded
 parameter_list|()
 block|{
 return|return
-name|prePersisted
+name|preAdded
 return|;
 block|}
 specifier|public

@@ -535,6 +535,16 @@ name|CallbackType
 argument_list|(
 name|LifecycleEvent
 operator|.
+name|PRE_PERSIST
+argument_list|,
+literal|"pre-persist"
+argument_list|)
+block|,
+operator|new
+name|CallbackType
+argument_list|(
+name|LifecycleEvent
+operator|.
 name|POST_PERSIST
 argument_list|,
 literal|"post-persist"
