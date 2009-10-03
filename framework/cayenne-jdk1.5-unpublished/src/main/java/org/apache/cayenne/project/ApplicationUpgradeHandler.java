@@ -40,23 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 1.1  */
-end_comment
-
-begin_comment
-comment|// TODO: andrus, 7/16/2006 - upgrade handler is rather primitive and relies on individual
-end_comment
-
-begin_comment
-comment|// loaders to be able to read older versions and convert them to the latest one in memory.
-end_comment
-
-begin_comment
-comment|// So this handler simply checks the version to trigger the update in the calling UI, and
-end_comment
-
-begin_comment
-comment|// saves what's been already loaded.
+comment|/**  * A Cayenne project upgrade handler that relies on individual loaders to be able to read  * older versions and convert them to the latest version in memory. This handler simply  * checks the version to trigger the update in the calling UI, and saves what's been  * already loaded.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -71,7 +55,7 @@ name|ApplicationUpgradeHandler
 name|sharedInstance
 init|=
 operator|new
-name|UpgradeHandler_3_0
+name|UpgradeHandler_3_0_0_1
 argument_list|()
 decl_stmt|;
 specifier|static
@@ -280,6 +264,23 @@ name|toString
 argument_list|()
 argument_list|)
 return|;
+block|}
+specifier|static
+class|class
+name|UpgradeHandler_3_0_0_1
+extends|extends
+name|UpgradeHandler_3_0
+block|{
+annotation|@
+name|Override
+name|String
+name|supportedVersion
+parameter_list|()
+block|{
+return|return
+literal|"3.0.0.1"
+return|;
+block|}
 block|}
 specifier|static
 class|class

@@ -1715,7 +1715,7 @@ operator|.
 name|getCallbackMap
 argument_list|()
 operator|.
-name|getPrePersist
+name|getPreAdd
 argument_list|()
 operator|.
 name|addCallbackMethod
@@ -4235,7 +4235,7 @@ operator|.
 name|getCallbackMap
 argument_list|()
 operator|.
-name|getPrePersist
+name|getPreAdd
 argument_list|()
 operator|.
 name|addCallbackMethod

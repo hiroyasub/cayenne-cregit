@@ -99,6 +99,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * An initialization callback.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|prePersist

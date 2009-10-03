@@ -525,9 +525,9 @@ name|CallbackType
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_PERSIST
+name|PRE_ADD
 argument_list|,
-literal|"pre-persist"
+literal|"pre-add"
 argument_list|)
 block|,
 operator|new

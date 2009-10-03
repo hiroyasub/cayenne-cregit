@@ -1140,7 +1140,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|prePersist
+name|preAdd
 parameter_list|(
 name|Object
 name|entity
@@ -1306,7 +1306,7 @@ name|addListener
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_PERSIST
+name|PRE_ADD
 argument_list|,
 name|MtTable1
 operator|.
@@ -1492,7 +1492,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|prePersist
+name|preAdd
 parameter_list|(
 name|Object
 name|entity
@@ -1701,7 +1701,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|prePersist
+name|preAdd
 parameter_list|(
 name|Object
 name|entity

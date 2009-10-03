@@ -2662,7 +2662,7 @@ name|performCallbacks
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_PERSIST
+name|PRE_ADD
 argument_list|,
 name|object
 argument_list|)
@@ -3194,7 +3194,7 @@ name|performCallbacks
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_PERSIST
+name|PRE_ADD
 argument_list|,
 name|persistent
 argument_list|)
