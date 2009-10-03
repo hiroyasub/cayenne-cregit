@@ -37,7 +37,7 @@ interface|interface
 name|LifecycleListener
 block|{
 name|void
-name|preAdd
+name|postAdd
 parameter_list|(
 name|Object
 name|entity

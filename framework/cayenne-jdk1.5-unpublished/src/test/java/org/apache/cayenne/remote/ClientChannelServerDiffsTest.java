@@ -576,7 +576,7 @@ name|addListener
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 argument_list|,
 name|MtTable1
 operator|.

@@ -74,7 +74,7 @@ name|CallbackDescriptor
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 argument_list|)
 decl_stmt|;
 name|assertEquals

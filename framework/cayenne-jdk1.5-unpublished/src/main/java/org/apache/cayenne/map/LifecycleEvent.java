@@ -24,7 +24,7 @@ specifier|public
 enum|enum
 name|LifecycleEvent
 block|{
-name|PRE_ADD
+name|POST_ADD
 block|,
 name|PRE_REMOVE
 block|,

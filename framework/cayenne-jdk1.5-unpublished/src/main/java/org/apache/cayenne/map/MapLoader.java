@@ -412,9 +412,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|PRE_ADD_TAG
+name|POST_ADD_TAG
 init|=
-literal|"pre-add"
+literal|"post-add"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -1469,7 +1469,7 @@ name|startTagOpMap
 operator|.
 name|put
 argument_list|(
-name|PRE_ADD_TAG
+name|POST_ADD_TAG
 argument_list|,
 operator|new
 name|StartClosure
@@ -1486,7 +1486,7 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-name|processStartPreAdd
+name|processStartPostAdd
 argument_list|(
 name|attributes
 argument_list|)
@@ -2368,7 +2368,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|processStartPreAdd
+name|processStartPostAdd
 parameter_list|(
 name|Attributes
 name|attributes
@@ -2399,7 +2399,7 @@ operator|.
 name|getCallbackMap
 argument_list|()
 operator|.
-name|getPreAdd
+name|getPostAdd
 argument_list|()
 operator|.
 name|addCallbackMethod
@@ -2421,7 +2421,7 @@ operator|.
 name|getCallbackMap
 argument_list|()
 operator|.
-name|getPreAdd
+name|getPostAdd
 argument_list|()
 operator|.
 name|addCallbackMethod
@@ -2439,8 +2439,8 @@ name|Attributes
 name|attributes
 parameter_list|)
 block|{
-comment|// 3.0 -> 3.0.0.1 upgrade hack... treat pre-persist as pre-add
-comment|// only 3.0 used "pre-persist" in a "pre-add" sense
+comment|// 3.0 -> 3.0.0.1 upgrade hack... treat pre-persist as post-add
+comment|// only 3.0 used "pre-persist" in a "post-add" sense
 if|if
 condition|(
 literal|"3.0"
@@ -2451,7 +2451,7 @@ name|mapVersion
 argument_list|)
 condition|)
 block|{
-name|processStartPreAdd
+name|processStartPostAdd
 argument_list|(
 name|attributes
 argument_list|)

@@ -1050,7 +1050,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testPreAddCallback
+name|testPostAddCallback
 parameter_list|()
 throws|throws
 name|Exception
@@ -1140,7 +1140,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|preAdd
+name|postAdd
 parameter_list|(
 name|Object
 name|entity
@@ -1271,7 +1271,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testPreAddOnObjectCallback
+name|testPostAddOnObjectCallback
 parameter_list|()
 throws|throws
 name|Exception
@@ -1306,7 +1306,7 @@ name|addListener
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 argument_list|,
 name|MtTable1
 operator|.
@@ -1492,7 +1492,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|preAdd
+name|postAdd
 parameter_list|(
 name|Object
 name|entity
@@ -1701,7 +1701,7 @@ block|{
 block|}
 specifier|public
 name|void
-name|preAdd
+name|postAdd
 parameter_list|(
 name|Object
 name|entity

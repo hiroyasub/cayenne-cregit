@@ -222,7 +222,7 @@ return|;
 block|}
 specifier|public
 name|CallbackDescriptor
-name|getPreAdd
+name|getPostAdd
 parameter_list|()
 block|{
 return|return
@@ -230,7 +230,7 @@ name|callbacks
 index|[
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 operator|.
 name|ordinal
 argument_list|()
@@ -298,10 +298,10 @@ parameter_list|)
 block|{
 name|printMethods
 argument_list|(
-name|getPreAdd
+name|getPostAdd
 argument_list|()
 argument_list|,
-literal|"pre-add"
+literal|"post-add"
 argument_list|,
 name|encoder
 argument_list|)

@@ -525,9 +525,9 @@ name|CallbackType
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 argument_list|,
-literal|"pre-add"
+literal|"post-add"
 argument_list|)
 block|,
 operator|new

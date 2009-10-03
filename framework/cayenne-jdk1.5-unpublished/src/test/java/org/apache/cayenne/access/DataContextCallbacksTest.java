@@ -144,7 +144,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testPreAddCallbacks
+name|testPostAddCallbacks
 parameter_list|()
 block|{
 name|LifecycleCallbackRegistry
@@ -187,7 +187,7 @@ name|assertFalse
 argument_list|(
 name|a1
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -197,13 +197,13 @@ name|addListener
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 argument_list|,
 name|Artist
 operator|.
 name|class
 argument_list|,
-literal|"preAddCallback"
+literal|"postAddCallback"
 argument_list|)
 expr_stmt|;
 name|Artist
@@ -227,7 +227,7 @@ name|assertTrue
 argument_list|(
 name|a2
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -244,7 +244,7 @@ name|addListener
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|PRE_ADD
+name|POST_ADD
 argument_list|,
 name|Artist
 operator|.
@@ -276,7 +276,7 @@ name|assertTrue
 argument_list|(
 name|a3
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -311,7 +311,7 @@ name|assertFalse
 argument_list|(
 name|p3
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -571,7 +571,7 @@ name|assertFalse
 argument_list|(
 name|a1
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -633,7 +633,7 @@ name|assertFalse
 argument_list|(
 name|a2
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -704,7 +704,7 @@ name|assertFalse
 argument_list|(
 name|a3
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -761,7 +761,7 @@ name|assertFalse
 argument_list|(
 name|p3
 operator|.
-name|isPreAdded
+name|isPostAdded
 argument_list|()
 argument_list|)
 expr_stmt|;
