@@ -220,7 +220,7 @@ name|PRE_ADD
 argument_list|,
 name|listener
 argument_list|,
-literal|"prePersist"
+literal|"preAdd"
 argument_list|)
 expr_stmt|;
 name|addDefaultListener

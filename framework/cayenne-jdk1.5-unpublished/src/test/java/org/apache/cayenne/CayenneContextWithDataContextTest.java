@@ -1050,7 +1050,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testPrePersistCallback
+name|testPreAddCallback
 parameter_list|()
 throws|throws
 name|Exception
@@ -1271,7 +1271,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testPrePersistOnObjectCallback
+name|testPreAddOnObjectCallback
 parameter_list|()
 throws|throws
 name|Exception
