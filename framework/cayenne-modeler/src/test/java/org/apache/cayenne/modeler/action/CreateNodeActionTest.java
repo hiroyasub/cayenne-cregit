@@ -120,7 +120,7 @@ name|node
 init|=
 name|action
 operator|.
-name|createDataNode
+name|buildDataNode
 argument_list|(
 operator|new
 name|DataDomain

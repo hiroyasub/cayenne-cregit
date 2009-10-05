@@ -681,7 +681,7 @@ name|nodeSelector
 operator|=
 name|CayenneWidgetFactory
 operator|.
-name|createComboBox
+name|createUndoableComboBox
 argument_list|()
 expr_stmt|;
 name|nodeSelector

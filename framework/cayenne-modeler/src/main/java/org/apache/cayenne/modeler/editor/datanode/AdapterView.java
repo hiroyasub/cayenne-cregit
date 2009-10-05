@@ -51,6 +51,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|CayenneWidgetFactory
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|jgoodies
@@ -96,8 +112,9 @@ name|this
 operator|.
 name|customAdapter
 operator|=
-operator|new
-name|JTextField
+name|CayenneWidgetFactory
+operator|.
+name|createUndoableTextField
 argument_list|()
 expr_stmt|;
 comment|// assemble

@@ -324,6 +324,14 @@ operator|.
 name|getFrameController
 argument_list|()
 decl_stmt|;
+name|application
+operator|.
+name|getUndoManager
+argument_list|()
+operator|.
+name|discardAllEdits
+argument_list|()
+expr_stmt|;
 name|controller
 operator|.
 name|projectClosedAction

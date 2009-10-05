@@ -117,6 +117,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|modeler
+operator|.
+name|undo
+operator|.
+name|CreateQueryUndoableEdit
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|NamedObjectFactory
@@ -399,7 +415,7 @@ block|{
 comment|// do nothing... need to match control
 block|}
 block|}
-comment|/**      * Creates and runs QueryTypeDialog.      */
+comment|/** 	 * Creates and runs QueryTypeDialog. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -430,7 +446,7 @@ name|showView
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Action method that creates a query for the specified query type.      */
+comment|/** 	 * Action method that creates a query for the specified query type. 	 */
 specifier|public
 name|void
 name|createQuery
@@ -520,6 +536,27 @@ argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
+name|mediator
+operator|.
+name|getApplication
+argument_list|()
+operator|.
+name|getUndoManager
+argument_list|()
+operator|.
+name|addEdit
+argument_list|(
+operator|new
+name|CreateQueryUndoableEdit
+argument_list|(
+name|domain
+argument_list|,
+name|dataMap
+argument_list|,
+name|query
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|// notify listeners
 name|fireQueryEvent
 argument_list|(
@@ -538,7 +575,7 @@ name|shutdown
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Fires events when a query was added      */
+comment|/** 	 * Fires events when a query was added 	 */
 specifier|public
 specifier|static
 name|void

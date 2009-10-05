@@ -335,22 +335,6 @@ name|LogFactory
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|velocity
-operator|.
-name|texen
-operator|.
-name|util
-operator|.
-name|PropertiesUtil
-import|;
-end_import
-
 begin_comment
 comment|/**  * A panel that supports editing the properties of a GenericSelectQuery.  *   */
 end_comment
@@ -634,7 +618,7 @@ name|cacheStrategy
 operator|=
 name|CayenneWidgetFactory
 operator|.
-name|createComboBox
+name|createUndoableComboBox
 argument_list|()
 expr_stmt|;
 name|cacheStrategy

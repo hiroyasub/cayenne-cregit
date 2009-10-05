@@ -1764,14 +1764,6 @@ name|JTextPaneScrollable
 extends|extends
 name|JTextPane
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|1L
-decl_stmt|;
 specifier|public
 name|JTextPaneScrollable
 parameter_list|(

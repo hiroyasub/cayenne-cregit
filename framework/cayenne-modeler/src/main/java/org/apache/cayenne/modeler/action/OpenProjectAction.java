@@ -456,6 +456,14 @@ name|f
 argument_list|)
 expr_stmt|;
 block|}
+name|application
+operator|.
+name|getUndoManager
+argument_list|()
+operator|.
+name|discardAllEdits
+argument_list|()
+expr_stmt|;
 block|}
 comment|/** Opens specified project file. File must already exist. */
 specifier|public

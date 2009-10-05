@@ -129,6 +129,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|undo
+operator|.
+name|CreateCallbackMethodUndoableEdit
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|CayenneAction
@@ -150,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for creating callback methods  *  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Base class for creating callback methods  *   * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class
@@ -161,7 +177,7 @@ name|AbstractCreateCallbackMethodAction
 extends|extends
 name|CayenneAction
 block|{
-comment|/**      * Constructor.      *      * @param actionName unique action name      * @param application Application instance      */
+comment|/**      * Constructor.      *       * @param actionName unique action name      * @param application Application instance      */
 specifier|public
 name|AbstractCreateCallbackMethodAction
 parameter_list|(
@@ -197,7 +213,7 @@ return|return
 literal|"icon-create-method.gif"
 return|;
 block|}
-comment|/**      * performs adding new callback method      * @param e event      */
+comment|/**      * performs adding new callback method      *       * @param e event      */
 specifier|public
 specifier|final
 name|void
@@ -216,7 +232,7 @@ operator|.
 name|getCurrentCallbackType
 argument_list|()
 decl_stmt|;
-comment|//generate methodName
+comment|// generate methodName
 name|String
 name|methodNamePrefix
 init|=
@@ -231,8 +247,9 @@ decl_stmt|;
 name|String
 name|methodName
 decl_stmt|;
-comment|//now that we're generating the method names based on the callback type, check to see if the
-comment|//raw prefix, no numbers, is taken.
+comment|// now that we're generating the method names based on the callback type, check to
+comment|// see if the
+comment|// raw prefix, no numbers, is taken.
 if|if
 condition|(
 operator|!
@@ -303,8 +320,51 @@ argument_list|)
 condition|)
 do|;
 block|}
+name|createCallbackMethod
+argument_list|(
 name|getCallbackMap
 argument_list|()
+argument_list|,
+name|callbackType
+argument_list|,
+name|methodName
+argument_list|)
+expr_stmt|;
+name|application
+operator|.
+name|getUndoManager
+argument_list|()
+operator|.
+name|addEdit
+argument_list|(
+operator|new
+name|CreateCallbackMethodUndoableEdit
+argument_list|(
+name|getCallbackMap
+argument_list|()
+argument_list|,
+name|callbackType
+argument_list|,
+name|methodName
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|createCallbackMethod
+parameter_list|(
+name|CallbackMap
+name|map
+parameter_list|,
+name|CallbackType
+name|callbackType
+parameter_list|,
+name|String
+name|methodName
+parameter_list|)
+block|{
+name|map
 operator|.
 name|getCallbackDescriptor
 argument_list|(
@@ -325,10 +385,7 @@ init|=
 operator|new
 name|CallbackMethodEvent
 argument_list|(
-name|e
-operator|.
-name|getSource
-argument_list|()
+name|this
 argument_list|,
 literal|null
 argument_list|,

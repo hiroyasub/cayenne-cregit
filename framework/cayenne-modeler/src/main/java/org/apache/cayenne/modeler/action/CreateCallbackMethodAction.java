@@ -65,6 +65,16 @@ name|ACTION_NAME
 init|=
 literal|"Create callback method"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|getActionName
+parameter_list|()
+block|{
+return|return
+name|ACTION_NAME
+return|;
+block|}
 comment|/**      * Constructor.      *      * @param application Application instance      */
 specifier|public
 name|CreateCallbackMethodAction

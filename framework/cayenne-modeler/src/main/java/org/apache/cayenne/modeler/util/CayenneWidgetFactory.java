@@ -197,6 +197,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|undo
+operator|.
+name|JComboBoxUndoListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|combo
@@ -428,6 +444,87 @@ argument_list|)
 expr_stmt|;
 return|return
 name|comboBox
+return|;
+block|}
+comment|/**      * Creates undoable JComboBox.      *       */
+specifier|public
+specifier|static
+name|JComboBox
+name|createUndoableComboBox
+parameter_list|()
+block|{
+name|JComboBox
+name|comboBox
+init|=
+operator|new
+name|JComboBox
+argument_list|()
+decl_stmt|;
+name|initFormWidget
+argument_list|(
+name|comboBox
+argument_list|)
+expr_stmt|;
+name|comboBox
+operator|.
+name|addItemListener
+argument_list|(
+operator|new
+name|JComboBoxUndoListener
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|comboBox
+operator|.
+name|setBackground
+argument_list|(
+name|Color
+operator|.
+name|WHITE
+argument_list|)
+expr_stmt|;
+name|comboBox
+operator|.
+name|setMaximumRowCount
+argument_list|(
+name|ModelerPreferences
+operator|.
+name|COMBOBOX_MAX_VISIBLE_SIZE
+argument_list|)
+expr_stmt|;
+return|return
+name|comboBox
+return|;
+block|}
+comment|/**      * Creates undoable JTextField.      *       */
+specifier|public
+specifier|static
+name|JTextField
+name|createUndoableTextField
+parameter_list|()
+block|{
+return|return
+operator|new
+name|JTextFieldUndoable
+argument_list|()
+return|;
+block|}
+comment|/**      * Creates undoable JTextField.      *       */
+specifier|public
+specifier|static
+name|JTextField
+name|createUndoableTextField
+parameter_list|(
+name|int
+name|size
+parameter_list|)
+block|{
+return|return
+operator|new
+name|JTextFieldUndoable
+argument_list|(
+name|size
+argument_list|)
 return|;
 block|}
 comment|/**      * Creates cell editor for text field      */
@@ -749,10 +846,10 @@ return|return
 name|area
 return|;
 block|}
-comment|//    public static JSQLTextPane createJSQLTextPane() {
-comment|//        JSQLTextPane area = new JSQLTextPane();
-comment|//        return area;
-comment|//    }
+comment|// public static JSQLTextPane createJSQLTextPane() {
+comment|// JSQLTextPane area = new JSQLTextPane();
+comment|// return area;
+comment|// }
 specifier|public
 specifier|static
 name|JCayenneTextPane
@@ -963,7 +1060,7 @@ argument_list|,
 name|PREV_WORD
 argument_list|)
 expr_stmt|;
-comment|//option + left
+comment|// option + left
 name|addKeyBinding
 argument_list|(
 literal|"AS+LEFT"
@@ -971,7 +1068,7 @@ argument_list|,
 name|SELECT_PREV_WORD
 argument_list|)
 expr_stmt|;
-comment|//option + shift + left
+comment|// option + shift + left
 name|addKeyBinding
 argument_list|(
 literal|"RIGHT"
@@ -993,7 +1090,7 @@ argument_list|,
 name|NEXT_WORD
 argument_list|)
 expr_stmt|;
-comment|//option + right
+comment|// option + right
 name|addKeyBinding
 argument_list|(
 literal|"AS+RIGHT"
@@ -1001,7 +1098,7 @@ argument_list|,
 name|SELECT_NEXT_WORD
 argument_list|)
 expr_stmt|;
-comment|//option + shift + right
+comment|// option + shift + right
 name|addKeyBinding
 argument_list|(
 literal|"UP"
@@ -1045,7 +1142,7 @@ argument_list|,
 name|CLIP_COPY
 argument_list|)
 expr_stmt|;
-comment|//command + c
+comment|// command + c
 name|addKeyBinding
 argument_list|(
 literal|"M+V"
@@ -1053,7 +1150,7 @@ argument_list|,
 name|CLIP_PASTE
 argument_list|)
 expr_stmt|;
-comment|//command + v
+comment|// command + v
 name|addKeyBinding
 argument_list|(
 literal|"M+X"
@@ -1061,7 +1158,7 @@ argument_list|,
 name|CLIP_CUT
 argument_list|)
 expr_stmt|;
-comment|//command + x
+comment|// command + x
 block|}
 block|}
 block|}

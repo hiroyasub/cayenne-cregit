@@ -63,6 +63,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|event
 operator|.
 name|MapEvent
@@ -109,6 +123,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|undo
+operator|.
+name|CreateEntityListenerUndoableEdit
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|CayenneAction
@@ -116,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class for creating entity listeners on an ObjEntity  *  * @version 1.0 Oct 30, 2007  */
+comment|/**  * Action class for creating entity listeners on an ObjEntity  *   * @version 1.0 Oct 30, 2007  */
 end_comment
 
 begin_class
@@ -135,7 +165,7 @@ name|CREATE_ENTITY_LISTENER
 init|=
 literal|"Create objentity entity listener"
 decl_stmt|;
-comment|/**      * Constructor.      *      * @param application Application instance      */
+comment|/**      * Constructor.      *       * @param application Application instance      */
 specifier|public
 name|CreateObjEntityListenerAction
 parameter_list|(
@@ -152,7 +182,7 @@ name|application
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructor for extending classes.      *      * @param actionName unique action name      * @param application Application instance      */
+comment|/**      * Constructor for extending classes.      *       * @param actionName unique action name      * @param application Application instance      */
 specifier|protected
 name|CreateObjEntityListenerAction
 parameter_list|(
@@ -192,7 +222,7 @@ return|return
 literal|"icon-create-listener.gif"
 return|;
 block|}
-comment|/**      * checks whether the new name of listener class already exists      *      * @param className entered class name      * @return true or false      */
+comment|/**      * checks whether the new name of listener class already exists      *       * @param className entered class name      * @return true or false      */
 specifier|protected
 name|boolean
 name|isListenerClassAlreadyExists
@@ -216,28 +246,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * adds new entity listener      * @param listener new EntityListener instance      */
-specifier|protected
-name|void
-name|addEntityListener
-parameter_list|(
-name|EntityListener
-name|listener
-parameter_list|)
-block|{
-name|getProjectController
-argument_list|()
-operator|.
-name|getCurrentObjEntity
-argument_list|()
-operator|.
-name|addEntityListener
-argument_list|(
-name|listener
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * base entity listenre creation logic      *      * @param e event      */
+comment|/**      * base entity listenre creation logic      *       * @param e event      */
 specifier|public
 name|void
 name|performAction
@@ -299,13 +308,66 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|addEntityListener
-argument_list|(
+name|ObjEntity
+name|objEntity
+init|=
+name|getProjectController
+argument_list|()
+operator|.
+name|getCurrentObjEntity
+argument_list|()
+decl_stmt|;
+name|EntityListener
+name|listener
+init|=
 operator|new
 name|EntityListener
 argument_list|(
 name|listenerClass
 argument_list|)
+decl_stmt|;
+name|createEntityListener
+argument_list|(
+name|objEntity
+argument_list|,
+name|listener
+argument_list|)
+expr_stmt|;
+name|application
+operator|.
+name|getUndoManager
+argument_list|()
+operator|.
+name|addEdit
+argument_list|(
+operator|new
+name|CreateEntityListenerUndoableEdit
+argument_list|(
+name|objEntity
+argument_list|,
+name|listener
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+specifier|public
+name|void
+name|createEntityListener
+parameter_list|(
+name|ObjEntity
+name|objEntity
+parameter_list|,
+name|EntityListener
+name|listener
+parameter_list|)
+block|{
+name|objEntity
+operator|.
+name|addEntityListener
+argument_list|(
+name|listener
 argument_list|)
 expr_stmt|;
 name|getProjectController
@@ -320,9 +382,15 @@ name|CreateObjEntityListenerAction
 operator|.
 name|this
 argument_list|,
-name|listenerClass
+name|listener
+operator|.
+name|getClassName
+argument_list|()
 argument_list|,
-name|listenerClass
+name|listener
+operator|.
+name|getClassName
+argument_list|()
 argument_list|,
 name|MapEvent
 operator|.
@@ -330,8 +398,6 @@ name|ADD
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 block|}
 block|}
 end_class

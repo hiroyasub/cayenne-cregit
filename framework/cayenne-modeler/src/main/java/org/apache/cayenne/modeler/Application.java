@@ -107,6 +107,18 @@ end_import
 
 begin_import
 import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|undo
+operator|.
+name|UndoManager
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -474,6 +486,10 @@ specifier|protected
 name|AdapterMapping
 name|adapterMapping
 decl_stmt|;
+specifier|protected
+name|UndoManager
+name|undoManager
+decl_stmt|;
 comment|// This is for OS X support
 specifier|private
 name|boolean
@@ -688,6 +704,16 @@ return|return
 name|actionManager
 return|;
 block|}
+comment|/**      * Returns undo-edits controller.      */
+specifier|public
+name|UndoManager
+name|getUndoManager
+parameter_list|()
+block|{
+return|return
+name|undoManager
+return|;
+block|}
 comment|/**      * Returns controller for the main frame.      */
 specifier|public
 name|CayenneModelerController
@@ -752,6 +778,26 @@ name|actionManager
 operator|=
 operator|new
 name|ActionManager
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|undoManager
+operator|=
+operator|new
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|undo
+operator|.
+name|CayenneUndoManager
 argument_list|(
 name|this
 argument_list|)

@@ -282,6 +282,14 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+name|application
+operator|.
+name|getUndoManager
+argument_list|()
+operator|.
+name|discardAllEdits
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
