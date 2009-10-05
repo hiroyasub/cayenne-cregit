@@ -643,7 +643,7 @@ name|FormLayout
 argument_list|(
 literal|"fill:200dlu:grow"
 argument_list|,
-literal|"pref, 3dlu, top:40dlu:grow"
+literal|"pref, 3dlu, fill:40dlu:grow"
 argument_list|)
 argument_list|)
 decl_stmt|;
