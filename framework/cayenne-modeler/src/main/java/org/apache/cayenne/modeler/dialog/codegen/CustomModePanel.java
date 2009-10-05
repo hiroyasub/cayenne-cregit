@@ -337,7 +337,7 @@ argument_list|(
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:70dlu, 3dlu, 150dlu, 3dlu, pref"
+literal|"right:70dlu, 3dlu, fill:150dlu:grow, 3dlu, pref"
 argument_list|,
 literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
 argument_list|)
