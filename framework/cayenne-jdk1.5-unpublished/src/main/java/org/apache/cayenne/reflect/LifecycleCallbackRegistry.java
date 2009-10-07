@@ -227,6 +227,17 @@ name|addDefaultListener
 argument_list|(
 name|LifecycleEvent
 operator|.
+name|PRE_PERSIST
+argument_list|,
+name|listener
+argument_list|,
+literal|"prePersist"
+argument_list|)
+expr_stmt|;
+name|addDefaultListener
+argument_list|(
+name|LifecycleEvent
+operator|.
 name|POST_PERSIST
 argument_list|,
 name|listener
