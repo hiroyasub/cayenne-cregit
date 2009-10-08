@@ -1239,6 +1239,8 @@ name|dataRowCache
 operator|!=
 literal|null
 operator|&&
+name|this
+operator|.
 name|dataRowCache
 operator|.
 name|getEventManager
@@ -1247,6 +1249,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|this
+operator|.
 name|dataRowCache
 operator|.
 name|getEventManager
