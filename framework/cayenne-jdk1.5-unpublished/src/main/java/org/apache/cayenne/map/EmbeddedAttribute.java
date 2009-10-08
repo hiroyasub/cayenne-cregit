@@ -127,10 +127,6 @@ extends|extends
 name|ObjAttribute
 block|{
 specifier|protected
-name|String
-name|type
-decl_stmt|;
-specifier|protected
 name|SortedMap
 argument_list|<
 name|String

@@ -205,6 +205,20 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationException
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|jgoodies
@@ -520,7 +534,37 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// completely new name, set new name for entity
+if|if
+condition|(
+name|newClassName
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|ValidationException
+argument_list|(
+literal|"Entity name is required."
+argument_list|)
+throw|;
+block|}
+if|else if
+condition|(
+name|embeddable
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|getEmbeddable
+argument_list|(
+name|newClassName
+argument_list|)
+operator|==
+literal|null
+condition|)
+block|{
+comment|// completely new name, set new name for embeddable
 name|EmbeddableEvent
 name|e
 init|=
@@ -556,6 +600,22 @@ name|getCurrentDataMap
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|// there is an embeddable with the same name
+throw|throw
+operator|new
+name|ValidationException
+argument_list|(
+literal|"There is another embeddable with name '"
+operator|+
+name|newClassName
+operator|+
+literal|"'."
+argument_list|)
+throw|;
+block|}
 block|}
 specifier|public
 name|void

@@ -5001,7 +5001,7 @@ name|add
 argument_list|(
 name|buildMenu
 argument_list|(
-name|CreateDbEntityAction
+name|CreateEmbeddableAction
 operator|.
 name|getActionName
 argument_list|()
@@ -5014,7 +5014,7 @@ name|add
 argument_list|(
 name|buildMenu
 argument_list|(
-name|CreateEmbeddableAction
+name|CreateDbEntityAction
 operator|.
 name|getActionName
 argument_list|()

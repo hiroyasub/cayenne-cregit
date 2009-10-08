@@ -2119,6 +2119,13 @@ argument_list|,
 name|embeddable
 argument_list|)
 expr_stmt|;
+name|embeddable
+operator|.
+name|setDataMap
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Adds a named SQLResultSet to the DataMap.      *       * @since 3.0      */
 specifier|public
