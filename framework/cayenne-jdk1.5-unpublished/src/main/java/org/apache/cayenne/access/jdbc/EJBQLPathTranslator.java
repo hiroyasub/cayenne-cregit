@@ -480,7 +480,7 @@ return|return
 literal|true
 return|;
 block|}
-specifier|private
+specifier|protected
 name|void
 name|resolveJoin
 parameter_list|(
@@ -948,7 +948,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
+specifier|protected
 name|void
 name|processTerminatingRelationship
 parameter_list|(
