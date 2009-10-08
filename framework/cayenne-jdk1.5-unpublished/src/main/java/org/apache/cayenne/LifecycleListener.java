@@ -44,6 +44,13 @@ name|entity
 parameter_list|)
 function_decl|;
 name|void
+name|prePersist
+parameter_list|(
+name|Object
+name|entity
+parameter_list|)
+function_decl|;
+name|void
 name|postPersist
 parameter_list|(
 name|Object
