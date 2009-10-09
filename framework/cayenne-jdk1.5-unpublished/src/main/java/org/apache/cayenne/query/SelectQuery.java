@@ -1149,6 +1149,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Adds ordering specification to this query orderings. */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|addOrdering
@@ -1173,6 +1175,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Adds ordering specification to this query orderings. */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|addOrdering
@@ -1197,6 +1201,30 @@ argument_list|,
 name|isAscending
 argument_list|,
 name|ignoreCase
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Adds ordering specification to this query orderings.      * @since 3.0      */
+specifier|public
+name|void
+name|addOrdering
+parameter_list|(
+name|String
+name|sortPathSpec
+parameter_list|,
+name|SortOrder
+name|order
+parameter_list|)
+block|{
+name|addOrdering
+argument_list|(
+operator|new
+name|Ordering
+argument_list|(
+name|sortPathSpec
+argument_list|,
+name|order
 argument_list|)
 argument_list|)
 expr_stmt|;
