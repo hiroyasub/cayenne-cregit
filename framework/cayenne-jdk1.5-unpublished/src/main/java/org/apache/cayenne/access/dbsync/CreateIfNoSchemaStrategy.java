@@ -398,14 +398,14 @@ name|gen
 operator|.
 name|setShouldCreateFKConstraints
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 name|gen
 operator|.
 name|setShouldCreatePKSupport
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 name|gen
