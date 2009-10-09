@@ -190,6 +190,19 @@ parameter_list|)
 throws|throws
 name|DeleteDenyException
 function_decl|;
+comment|/**      * Deletes a collection of objects by repeatedly calling deleteObject safely      * (avoiding a concurrent modification exception).      */
+name|void
+name|deleteObjects
+parameter_list|(
+name|Collection
+argument_list|<
+name|?
+argument_list|>
+name|objects
+parameter_list|)
+throws|throws
+name|DeleteDenyException
+function_decl|;
 comment|/**      * A callback method that child Persistent objects are expected to call before      * accessing property values. This callback allows ObjectContext to "inflate"      * unresolved objects on demand and also resolve properties that rely on lazy      * faulting.      *       * @since 3.0      */
 name|void
 name|prepareForAccess
