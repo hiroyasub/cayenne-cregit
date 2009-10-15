@@ -865,7 +865,7 @@ return|return
 name|jdbcType
 return|;
 block|}
-comment|/**      * Retunrs column name. Name is an unqualified column name in a query.      */
+comment|/**      * Returns column name. Name is an unqualified column name in a query.      */
 specifier|public
 name|String
 name|getName

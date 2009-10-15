@@ -1178,6 +1178,13 @@ operator|new
 name|RowDescriptorBuilder
 argument_list|()
 decl_stmt|;
+name|builder
+operator|.
+name|setResultSet
+argument_list|(
+name|resultSet
+argument_list|)
+expr_stmt|;
 comment|// SQLTemplate #result columns take precedence over other ways to determine the
 comment|// type
 if|if
@@ -1203,15 +1210,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|builder
-operator|.
-name|setResultSet
-argument_list|(
-name|resultSet
-argument_list|)
-expr_stmt|;
 name|ObjEntity
 name|entity
 init|=
@@ -1345,7 +1343,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
