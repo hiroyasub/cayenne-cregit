@@ -57,20 +57,6 @@ name|SelectTranslator
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QueryMetadata
-import|;
-end_import
-
 begin_comment
 comment|/**  * Select translator that implements Oracle-specific optimizations.  *   */
 end_comment

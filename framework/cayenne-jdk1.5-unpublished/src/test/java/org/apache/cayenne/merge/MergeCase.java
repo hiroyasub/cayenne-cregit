@@ -630,19 +630,8 @@ parameter_list|)
 block|{
 comment|// copied from AbstractAccessStack.dbEntitiesInInsertOrder
 name|boolean
-name|excludeLOB
-init|=
-operator|!
-name|getAccessStackAdapter
-argument_list|()
-operator|.
-name|supportsLobs
-argument_list|()
-decl_stmt|;
-name|boolean
 name|excludeBinPK
 init|=
-operator|!
 name|getAccessStackAdapter
 argument_list|()
 operator|.
@@ -652,11 +641,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-operator|(
-name|excludeLOB
-operator|||
 name|excludeBinPK
-operator|)
 condition|)
 block|{
 return|return;
@@ -684,11 +669,6 @@ operator|.
 name|getDbEntities
 argument_list|()
 control|)
-block|{
-if|if
-condition|(
-name|excludeBinPK
-condition|)
 block|{
 for|for
 control|(
@@ -753,7 +733,6 @@ name|ent
 argument_list|)
 expr_stmt|;
 break|break;
-block|}
 block|}
 block|}
 block|}
