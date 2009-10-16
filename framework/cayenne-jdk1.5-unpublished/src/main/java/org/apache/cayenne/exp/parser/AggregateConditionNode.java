@@ -138,6 +138,19 @@ block|{
 case|case
 literal|1
 case|:
+if|if
+condition|(
+name|condition
+operator|instanceof
+name|ASTNot
+condition|)
+block|{
+return|return
+name|condition
+return|;
+block|}
+else|else
+block|{
 return|return
 name|condition
 operator|.
@@ -146,6 +159,7 @@ argument_list|(
 literal|0
 argument_list|)
 return|;
+block|}
 case|case
 literal|0
 case|:
