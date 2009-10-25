@@ -95,6 +95,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|EmbeddableAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|Entity
 import|;
 end_import
@@ -228,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Superclass of CayenneModeler validation messages.  *   */
+comment|/**  * Superclass of CayenneModeler validation messages.  *   */
 end_comment
 
 begin_class
@@ -322,6 +336,22 @@ name|msg
 operator|=
 operator|new
 name|AttributeErrorMsg
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|validatedObj
+operator|instanceof
+name|EmbeddableAttribute
+condition|)
+block|{
+name|msg
+operator|=
+operator|new
+name|EmbeddableAttributeErrorMsg
 argument_list|(
 name|result
 argument_list|)
@@ -494,7 +524,7 @@ operator|=
 name|validationInfo
 expr_stmt|;
 block|}
-comment|/**       * Fires event to display the screen where error should be corrected.       */
+comment|/**      * Fires event to display the screen where error should be corrected.      */
 specifier|public
 specifier|abstract
 name|void
@@ -520,7 +550,7 @@ name|getMessage
 argument_list|()
 return|;
 block|}
-comment|/** Returns the severity of the error message.*/
+comment|/** Returns the severity of the error message. */
 specifier|public
 name|int
 name|getSeverity

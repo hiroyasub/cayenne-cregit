@@ -448,7 +448,7 @@ operator|=
 operator|new
 name|JButton
 argument_list|(
-literal|"Close"
+literal|"Cancel"
 argument_list|)
 expr_stmt|;
 name|this

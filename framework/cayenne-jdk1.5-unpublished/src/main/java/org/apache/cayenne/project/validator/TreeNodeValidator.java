@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EmbeddedAttribute
+name|EmbeddableAttribute
 import|;
 end_import
 
@@ -256,7 +256,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Validator of a single node in a project object tree.<i>Do not confuse with  * org.apache.cayenne.access.DataNode.</i>  *   */
+comment|/**  * Validator of a single node in a project object tree.<i>Do not confuse with  * org.apache.cayenne.access.DataNode.</i>  */
 end_comment
 
 begin_class
@@ -359,6 +359,16 @@ decl_stmt|;
 specifier|protected
 specifier|static
 specifier|final
+name|EmbeddableAttributeValidator
+name|embeddableAttributeValidator
+init|=
+operator|new
+name|EmbeddableAttributeValidator
+argument_list|()
+decl_stmt|;
+specifier|protected
+specifier|static
+specifier|final
 name|ProcedureValidator
 name|procedureValidator
 init|=
@@ -446,13 +456,15 @@ if|if
 condition|(
 name|validatedObj
 operator|instanceof
-name|EmbeddedAttribute
+name|EmbeddableAttribute
 condition|)
 block|{
-comment|//TODO
-return|return;
+name|validatorObj
+operator|=
+name|embeddableAttributeValidator
+expr_stmt|;
 block|}
-if|if
+if|else if
 condition|(
 name|validatedObj
 operator|instanceof
