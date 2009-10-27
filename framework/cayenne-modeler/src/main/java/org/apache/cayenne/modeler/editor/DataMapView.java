@@ -2880,6 +2880,16 @@ name|size
 argument_list|()
 operator|>
 literal|0
+operator|||
+name|dataMap
+operator|.
+name|getEmbeddables
+argument_list|()
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|0
 condition|)
 block|{
 operator|new

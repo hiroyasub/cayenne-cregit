@@ -314,7 +314,7 @@ name|view
 operator|.
 name|setTitle
 argument_list|(
-literal|"Update ObjEntities Java Package"
+literal|"Update ObjEntities and Embeddables Java Package"
 argument_list|)
 expr_stmt|;
 name|setView
