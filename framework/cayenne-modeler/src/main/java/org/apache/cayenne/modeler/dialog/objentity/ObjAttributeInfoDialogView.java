@@ -591,9 +591,7 @@ argument_list|(
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:max(50dlu;pref), 3dlu, fill:min(200dlu;pref), 15dlu, right:max(30dlu;pref), 3dlu, 185dlu, "
-operator|+
-literal|"3dlu, 20dlu, 3dlu, fill:min(70dlu;pref)"
+literal|"right:max(50dlu;pref), 3dlu, 200dlu, 15dlu, right:max(30dlu;pref), 3dlu, 200dlu"
 argument_list|,
 literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 6dlu, p, 6dlu, p, 3dlu, fill:p:grow"
 argument_list|)
@@ -618,7 +616,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|11
+literal|7
 argument_list|,
 literal|1
 argument_list|)
@@ -818,7 +816,7 @@ literal|1
 argument_list|,
 literal|13
 argument_list|,
-literal|10
+literal|7
 argument_list|,
 literal|1
 argument_list|)
@@ -846,7 +844,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"483dlu "
+literal|"493dlu "
 argument_list|,
 literal|"p, 3dlu, fill:min(128dlu;pref):grow"
 argument_list|)
@@ -966,7 +964,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"483dlu "
+literal|"493dlu "
 argument_list|,
 literal|"fill:min(140dlu;pref):grow"
 argument_list|)
@@ -1051,7 +1049,7 @@ literal|1
 argument_list|,
 literal|15
 argument_list|,
-literal|11
+literal|7
 argument_list|,
 literal|1
 argument_list|)
