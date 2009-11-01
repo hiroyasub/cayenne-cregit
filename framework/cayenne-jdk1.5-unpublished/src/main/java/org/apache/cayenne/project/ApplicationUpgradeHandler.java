@@ -402,28 +402,11 @@ operator|<
 literal|0
 condition|)
 block|{
-name|String
-name|versionLabel
-init|=
-operator|(
-name|loadedVersion
-operator|!=
-literal|null
-operator|)
-condition|?
-name|loadedVersion
-else|:
-literal|"?"
-decl_stmt|;
 name|appendMessages
 operator|.
 name|add
 argument_list|(
-literal|"Newer Project Version Detected: \""
-operator|+
-name|versionLabel
-operator|+
-literal|"\""
+literal|"Newer Project Version Detected"
 argument_list|)
 expr_stmt|;
 return|return
@@ -439,28 +422,11 @@ operator|>
 literal|0
 condition|)
 block|{
-name|String
-name|versionLabel
-init|=
-operator|(
-name|loadedVersion
-operator|!=
-literal|null
-operator|)
-condition|?
-name|loadedVersion
-else|:
-literal|"?"
-decl_stmt|;
 name|appendMessages
 operator|.
 name|add
 argument_list|(
-literal|"Older Project Version Detected: \""
-operator|+
-name|versionLabel
-operator|+
-literal|"\""
+literal|"Older Project Version Detected"
 argument_list|)
 expr_stmt|;
 return|return
