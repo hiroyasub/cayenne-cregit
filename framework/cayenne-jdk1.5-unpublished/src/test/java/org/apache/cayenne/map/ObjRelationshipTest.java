@@ -720,6 +720,8 @@ operator|.
 name|refreshFromPath
 argument_list|(
 literal|"dummy.path"
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|fail
@@ -857,6 +859,8 @@ operator|.
 name|refreshFromPath
 argument_list|(
 literal|"dummy.path"
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|List

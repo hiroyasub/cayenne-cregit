@@ -1681,6 +1681,8 @@ block|{
 name|refreshFromPath
 argument_list|(
 name|relationshipPath
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
@@ -1729,6 +1731,8 @@ block|{
 name|refreshFromPath
 argument_list|(
 name|deferredPath
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|deferredPath
@@ -1891,6 +1895,9 @@ name|refreshFromPath
 parameter_list|(
 name|String
 name|dbRelationshipPath
+parameter_list|,
+name|boolean
+name|stripInvalid
 parameter_list|)
 block|{
 synchronized|synchronized
@@ -1989,9 +1996,16 @@ name|ExpressionException
 name|ex
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|stripInvalid
+condition|)
+block|{
 throw|throw
 name|ex
 throw|;
+block|}
 block|}
 block|}
 name|recalculateToManyValue
