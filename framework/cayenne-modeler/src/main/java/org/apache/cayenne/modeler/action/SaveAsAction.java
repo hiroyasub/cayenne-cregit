@@ -415,6 +415,16 @@ operator|.
 name|save
 argument_list|()
 expr_stmt|;
+comment|/**          * Save graph data as well          */
+name|getProjectController
+argument_list|()
+operator|.
+name|getGraphBuilderRegistry
+argument_list|()
+operator|.
+name|save
+argument_list|()
+expr_stmt|;
 comment|// update preferences domain key
 name|preference
 operator|.

@@ -199,6 +199,8 @@ extends|extends
 name|Relationship
 block|{
 comment|/**      * @deprecated since 3.0 - unused      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -1685,6 +1687,8 @@ name|toMany
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.0 - unused.      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|void
 name|firePropertyDidChange
@@ -1718,6 +1722,46 @@ argument_list|,
 name|PROPERTY_DID_CHANGE
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @return whether the relationship is mandatory      * @since 3.1      */
+specifier|public
+name|boolean
+name|isMandatory
+parameter_list|()
+block|{
+for|for
+control|(
+name|DbJoin
+name|join
+range|:
+name|getJoins
+argument_list|()
+control|)
+block|{
+name|DbAttribute
+name|source
+init|=
+name|join
+operator|.
+name|getSource
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|source
+operator|.
+name|isMandatory
+argument_list|()
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+block|}
+return|return
+literal|false
+return|;
 block|}
 specifier|final
 specifier|static

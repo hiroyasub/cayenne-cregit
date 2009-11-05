@@ -1317,7 +1317,9 @@ argument_list|)
 operator|.
 name|replace
 argument_list|(
-literal|'/'
+name|File
+operator|.
+name|separatorChar
 argument_list|,
 literal|'.'
 argument_list|)
@@ -1447,7 +1449,9 @@ argument_list|)
 operator|.
 name|replace
 argument_list|(
-literal|'/'
+name|File
+operator|.
+name|separatorChar
 argument_list|,
 literal|'.'
 argument_list|)
