@@ -843,7 +843,7 @@ name|Component
 name|domainView
 init|=
 operator|new
-name|DataDomainTabbedView
+name|DataDomainView
 argument_list|(
 name|eventController
 argument_list|)
@@ -852,7 +852,11 @@ name|detailPanel
 operator|.
 name|add
 argument_list|(
+operator|new
+name|JScrollPane
+argument_list|(
 name|domainView
+argument_list|)
 argument_list|,
 name|DOMAIN_VIEW
 argument_list|)

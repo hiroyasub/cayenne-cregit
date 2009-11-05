@@ -414,20 +414,6 @@ operator|=
 name|synthetic
 expr_stmt|;
 block|}
-comment|/**      * @return whether the relationship is mandatory      * @since 3.1      */
-specifier|public
-specifier|abstract
-name|boolean
-name|isMandatory
-parameter_list|()
-function_decl|;
-comment|/**      * @return "Complimentary" relationship for this relationship,<code>null</code> if not found      */
-specifier|public
-specifier|abstract
-name|Relationship
-name|getReverseRelationship
-parameter_list|()
-function_decl|;
 block|}
 end_class
 
