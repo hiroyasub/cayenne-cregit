@@ -207,18 +207,6 @@ name|DbEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|omg
-operator|.
-name|PortableServer
-operator|.
-name|AdapterActivator
-import|;
-end_import
-
 begin_comment
 comment|/**  * A sequence-based PK generator used by {@link DB2Adapter}.  *   */
 end_comment
@@ -231,6 +219,8 @@ extends|extends
 name|JdbcPkGenerator
 block|{
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|DB2PkGenerator
 parameter_list|()
@@ -260,6 +250,8 @@ init|=
 literal|"S_"
 decl_stmt|;
 comment|/**      * @deprecated since 2.0 - other generators do not expose the default prefix.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -407,6 +399,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|protected
