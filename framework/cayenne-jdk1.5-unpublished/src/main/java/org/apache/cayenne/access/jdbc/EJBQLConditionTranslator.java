@@ -417,6 +417,20 @@ name|ClassDescriptor
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|reflect
+operator|.
+name|Property
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -3351,12 +3365,9 @@ name|translator
 operator|.
 name|lastPathComponent
 decl_stmt|;
-name|AttributeProperty
+name|Property
 name|property
 init|=
-operator|(
-name|AttributeProperty
-operator|)
 name|descriptor
 operator|.
 name|getProperty
@@ -3364,10 +3375,22 @@ argument_list|(
 name|pathChunk
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|property
+operator|instanceof
+name|AttributeProperty
+condition|)
+block|{
 name|String
 name|atrType
 init|=
+operator|(
+operator|(
+name|AttributeProperty
+operator|)
 name|property
+operator|)
 operator|.
 name|getAttribute
 argument_list|()
@@ -3389,6 +3412,7 @@ name|atrType
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|context
 operator|.
