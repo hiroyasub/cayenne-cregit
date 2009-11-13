@@ -383,7 +383,7 @@ name|DEFAULT_QUOTE_SQL_IDENTIFIERS_PROPERTY
 init|=
 literal|"quoteSqlIdentifiers"
 decl_stmt|;
-comment|/**      * The namespace in which the data map XML file will be created. This is also the URI to locate a copy of the schema document.      */
+comment|/**      * The namespace in which the data map XML file will be created. This is also the URI      * to locate a copy of the schema document.      */
 specifier|public
 specifier|static
 specifier|final
@@ -3229,29 +3229,6 @@ name|getRelationships
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
-name|getObjEntity
-argument_list|(
-name|rel
-operator|.
-name|getTargetEntityName
-argument_list|()
-argument_list|)
-operator|.
-name|getDbEntityName
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
-name|objEnt
-operator|.
-name|clearDbMapping
-argument_list|()
-expr_stmt|;
-break|break;
-block|}
 for|for
 control|(
 name|DbRelationship

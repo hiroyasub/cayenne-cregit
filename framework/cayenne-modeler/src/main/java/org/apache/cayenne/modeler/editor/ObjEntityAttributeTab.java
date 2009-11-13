@@ -695,20 +695,6 @@ name|AutoCompletion
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|ProjectPath
-import|;
-end_import
-
 begin_comment
 comment|/**  * Detail view of the ObjEntity attributes.  *   */
 end_comment
