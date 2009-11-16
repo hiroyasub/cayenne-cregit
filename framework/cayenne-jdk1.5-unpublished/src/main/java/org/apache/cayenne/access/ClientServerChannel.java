@@ -167,43 +167,6 @@ operator|=
 name|serverContext
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.0 as DataChannel events (incorrectly called "lifecycleEvents"      *             in 2.0) are no longer posted by ClientServerChannel.      */
-specifier|public
-name|ClientServerChannel
-parameter_list|(
-name|DataDomain
-name|domain
-parameter_list|,
-name|boolean
-name|lifecycleEventsEnabled
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|domain
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @deprecated Since 3.0 - always returns false. This method was a misnomer referring      *             to DataChannel events, not lifecycle events introduced in 3.0.      *             Currently ClientServerChannel posts no channel events.      */
-specifier|public
-name|boolean
-name|isLifecycleEventsEnabled
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
-comment|/**      * @deprecated Since 3.0 - does nothing. This method was a misnomer referring to      *             DataChannel events, not lifecycle events introduced in 3.0. Currently      *             ClientServerChannel posts no channel events.      */
-specifier|public
-name|void
-name|setLifecycleEventsEnabled
-parameter_list|(
-name|boolean
-name|lifecycleEventsEnabled
-parameter_list|)
-block|{
-block|}
 specifier|public
 name|QueryResponse
 name|onQuery

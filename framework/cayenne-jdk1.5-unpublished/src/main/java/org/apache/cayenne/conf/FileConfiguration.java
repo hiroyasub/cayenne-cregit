@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FileConfiguration loads a Cayenne configuraton file from a given location in the file  * system.  *   */
+comment|/**  * FileConfiguration loads a Cayenne configuraton file from a given location in the file  * system.  */
 end_comment
 
 begin_class
@@ -303,24 +303,6 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * Only returns<code>true</code> when {@link #getProjectFile} does not return      *<code>null</code>.      *       * @deprecated since 3.0 - superclass method is deprecated.      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|canInitialize
-parameter_list|()
-block|{
-comment|// TODO: move this to "initialize" once the deprecated method is removed
-return|return
-name|this
-operator|.
-name|getProjectFile
-argument_list|()
-operator|!=
-literal|null
-return|;
 block|}
 comment|/**      * Returns the main domain file used for this configuration.      */
 specifier|public

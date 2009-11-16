@@ -143,20 +143,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|DataContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|conf
 operator|.
 name|Configuration
@@ -374,7 +360,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of DataObject interface. It is normally used as a superclass  * of Cayenne persistent objects.  *   */
+comment|/**  * A default implementation of DataObject interface. It is normally used as a superclass  * of Cayenne persistent objects.  */
 end_comment
 
 begin_class
@@ -414,76 +400,6 @@ name|Object
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Returns a DataContext that holds this object. Object becomes associated with a      * DataContext either when the object is fetched using a query, or when a new object      * is registered explicitly with a DataContext.      *       * @deprecated since 3.0 use {@link #getObjectContext()}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|DataContext
-name|getDataContext
-parameter_list|()
-block|{
-if|if
-condition|(
-name|objectContext
-operator|==
-literal|null
-operator|||
-name|objectContext
-operator|instanceof
-name|DataContext
-condition|)
-block|{
-return|return
-operator|(
-name|DataContext
-operator|)
-name|objectContext
-return|;
-block|}
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"ObjectContext is not a DataContext: "
-operator|+
-name|objectContext
-argument_list|)
-throw|;
-block|}
-comment|/**      * Sets object DataContext.      *       * @deprecated since 3.0 use {@link #setObjectContext(ObjectContext)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDataContext
-parameter_list|(
-name|DataContext
-name|dataContext
-parameter_list|)
-block|{
-name|this
-operator|.
-name|objectContext
-operator|=
-name|dataContext
-expr_stmt|;
-if|if
-condition|(
-name|dataContext
-operator|==
-literal|null
-condition|)
-block|{
-name|this
-operator|.
-name|persistenceState
-operator|=
-name|PersistenceState
-operator|.
-name|TRANSIENT
-expr_stmt|;
-block|}
-block|}
 annotation|@
 name|Override
 specifier|public
@@ -542,7 +458,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * Recursively resolves nested property path       */
+comment|/**      * Recursively resolves nested property path      */
 specifier|private
 specifier|static
 name|Object
@@ -589,7 +505,7 @@ operator|-
 literal|1
 condition|)
 block|{
-comment|//last component
+comment|// last component
 return|return
 name|property
 return|;
@@ -725,7 +641,7 @@ operator|instanceof
 name|Collection
 condition|)
 block|{
-comment|/**                          * We don't want nested collections.                          * E.g. readNestedProperty("paintingArray.paintingTitle") should return List<String>                          */
+comment|/**                          * We don't want nested collections. E.g.                          * readNestedProperty("paintingArray.paintingTitle") should return                          * List<String>                          */
 name|result
 operator|.
 name|addAll
@@ -1711,7 +1627,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes current object from reverse relationship of object<code>val</code> to      * this object.      */
+comment|/**      * Removes current object from reverse relationship of object<code>val</code> to this      * object.      */
 specifier|protected
 name|void
 name|unsetReverseRelationship
@@ -2114,15 +2030,6 @@ operator|.
 name|toString
 argument_list|()
 return|;
-block|}
-comment|/**      * Default implementation does nothing.      *       * @deprecated since 3.0 use callbacks.      * @see LifecycleListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|fetchFinished
-parameter_list|()
-block|{
 block|}
 specifier|private
 name|void

@@ -13,22 +13,8 @@ name|cayenne
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|DataContext
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines basic methods for a persistent object in Cayenne.  *   */
+comment|/**  * Defines basic methods for a persistent object in Cayenne.  */
 end_comment
 
 begin_interface
@@ -48,25 +34,6 @@ name|Long
 operator|.
 name|MIN_VALUE
 decl_stmt|;
-comment|/**      * Returns a data context this object is registered with, or null if this object has      * no associated DataContext.      *       * @deprecated since 3.0 use {@link #getObjectContext()}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|DataContext
-name|getDataContext
-parameter_list|()
-function_decl|;
-comment|/**      * Sets object DataContext.      *       * @deprecated since 3.0 use {@link #setObjectContext(ObjectContext)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDataContext
-parameter_list|(
-name|DataContext
-name|ctxt
-parameter_list|)
-function_decl|;
 comment|/**      * Modifies a value of a named property without altering the object state in any way,      * and without triggering any database operations. This method is intended mostly for      * internal use by Cayenne framework, and shouldn't be called from the application      * code.      */
 specifier|public
 name|void
@@ -162,14 +129,6 @@ parameter_list|,
 name|boolean
 name|setReverse
 parameter_list|)
-function_decl|;
-comment|/**      * @deprecated since 3.0 users must use callbacks instead. This method is no longer      *             invoked by Cayenne runtime.      * @see LifecycleListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|fetchFinished
-parameter_list|()
 function_decl|;
 comment|/**      * Returns a version of a DataRow snapshot that was used to create this object.      *       * @since 1.1      */
 specifier|public

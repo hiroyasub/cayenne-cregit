@@ -21,7 +21,27 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|InputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URL
 import|;
 end_import
 
@@ -94,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Subclass of Configuration that uses the System CLASSPATH to locate resources.  *   */
+comment|/**  * Subclass of Configuration that uses the System CLASSPATH to locate resources.  */
 end_comment
 
 begin_class
@@ -308,20 +328,56 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|protected
 name|InputStream
 name|getDomainConfiguration
 parameter_list|()
 block|{
-comment|// deprecation in superclass does not affect subclass...
-return|return
-name|super
-operator|.
-name|getDomainConfiguration
+name|URL
+name|url
+init|=
+name|getResourceFinder
 argument_list|()
+operator|.
+name|getResource
+argument_list|(
+name|getDomainConfigurationName
+argument_list|()
+argument_list|)
+decl_stmt|;
+try|try
+block|{
+return|return
+name|url
+operator|!=
+literal|null
+condition|?
+name|url
+operator|.
+name|openStream
+argument_list|()
+else|:
+literal|null
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|ConfigurationException
+argument_list|(
+literal|"Can't open config file URL: "
+operator|+
+name|url
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 block|}
 comment|/**      * Initializes all Cayenne resources. Loads all configured domains and their data      * maps, initializes all domain Nodes and their DataSources.      */
 annotation|@
@@ -481,18 +537,6 @@ argument_list|(
 literal|"initialize finished."
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * Returns the default ResourceLocator configured for CLASSPATH lookups.      *       * @deprecated since 3.0 as super is deprecated.      */
-annotation|@
-name|Override
-specifier|protected
-name|ResourceLocator
-name|getResourceLocator
-parameter_list|()
-block|{
-return|return
-name|locator
-return|;
 block|}
 comment|/**      * @since 3.0      */
 annotation|@

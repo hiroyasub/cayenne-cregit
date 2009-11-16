@@ -49,34 +49,6 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|ClassGenerationAction1_1
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|gen
-operator|.
-name|ClassGenerator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|gen
-operator|.
 name|ClientClassGenerationAction
 import|;
 end_import
@@ -191,7 +163,7 @@ specifier|private
 name|boolean
 name|client
 decl_stmt|;
-comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter expression="${cgen.destDir}" 	 *            default-value="${project.build.sourceDirectory}/java/generated-sources/cayenne" 	 */
+comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter expression="${cgen.destDir}" default-value= 	 *            "${project.build.sourceDirectory}/java/generated-sources/cayenne" 	 */
 specifier|private
 name|File
 name|destDir
@@ -231,12 +203,12 @@ specifier|private
 name|String
 name|outputPattern
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will overwrite older versions of 	 * generated classes. Ignored unless makepairs is set to<code>false</code>. 	 *  	 * @parameter expression="${cgen.overwrite}" default-value="false" 	 */
+comment|/** 	 * If set to<code>true</code>, will overwrite older versions of generated 	 * classes. Ignored unless makepairs is set to<code>false</code>. 	 *  	 * @parameter expression="${cgen.overwrite}" default-value="false" 	 */
 specifier|private
 name|boolean
 name|overwrite
 decl_stmt|;
-comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise 	 * classes from different packages will end up in the same directory. 	 *  	 * @parameter expression="${cgen.superPkg}" 	 */
+comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 *  	 * @parameter expression="${cgen.superPkg}" 	 */
 specifier|private
 name|String
 name|superPkg
@@ -261,15 +233,10 @@ specifier|private
 name|String
 name|embeddableTemplate
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code> (default), a directory tree will be 	 * generated in "destDir" corresponding to the class package structure, if 	 * set to<code>false</code>, classes will be generated in 	 *&quot;destDir&quot; ignoring their package. 	 *  	 * @parameter expression="${cgen.usePkgPath}" default-value="true" 	 */
+comment|/** 	 * If set to<code>true</code> (default), a directory tree will be generated 	 * in "destDir" corresponding to the class package structure, if set to 	 *<code>false</code>, classes will be generated in&quot;destDir&quot; 	 * ignoring their package. 	 *  	 * @parameter expression="${cgen.usePkgPath}" default-value="true" 	 */
 specifier|private
 name|boolean
 name|usePkgPath
-decl_stmt|;
-comment|/** 	 * Specifies template location and generator behavior.&quot;1.1&quot; is 	 * the old behavior, with templates located in&quot;dotemplates&quot; and 	 *&quot;classgen&quot; as the only velocity context attribute. 	 *&quot;1.2&quot; is the new behavior, with templates located in 	 *&quot;dotemplates/v1.2&quot; and&quot;objEntity&quot;, 	 *&quot;entityUtils&quot;,&quot;stringUtils&quot;, and 	 *&quot;importUtils&quot; in the velocity context. (Default is 	 *&quot;1.2&quot;.) 	 *  	 * @parameter expression="${cgen.version}" 	 * @deprecated since 3.0 as 1.1 mode is deprecated. 	 */
-specifier|private
-name|String
-name|version
 decl_stmt|;
 specifier|public
 name|void
@@ -281,7 +248,8 @@ throws|,
 name|MojoFailureException
 block|{
 comment|// Create the destination directory if necessary.
-comment|// TODO: (KJM 11/2/06) The destDir really should be added as a compilation resource for maven.
+comment|// TODO: (KJM 11/2/06) The destDir really should be added as a
+comment|// compilation resource for maven.
 if|if
 condition|(
 operator|!
@@ -560,25 +528,6 @@ name|action
 operator|=
 operator|new
 name|ClientClassGenerationAction
-argument_list|()
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|ClassGenerator
-operator|.
-name|VERSION_1_1
-operator|.
-name|equals
-argument_list|(
-name|version
-argument_list|)
-condition|)
-block|{
-name|action
-operator|=
-operator|new
-name|ClassGenerationAction1_1
 argument_list|()
 expr_stmt|;
 block|}

@@ -406,11 +406,6 @@ name|ex
 argument_list|)
 throw|;
 block|}
-name|configuration
-operator|.
-name|didInitialize
-argument_list|()
-expr_stmt|;
 name|this
 operator|.
 name|configuration

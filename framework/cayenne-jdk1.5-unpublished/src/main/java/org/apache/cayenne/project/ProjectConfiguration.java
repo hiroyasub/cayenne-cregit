@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Subclass of FileConfiguration used in the project model.  *   */
+comment|/**  * Subclass of FileConfiguration used in the project model.  */
 end_comment
 
 begin_class
@@ -143,30 +143,30 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Override parent implementation to prevent loading of nonexisting files.      *       * @see FileConfiguration#canInitialize()      */
 annotation|@
 name|Override
 specifier|public
-name|boolean
-name|canInitialize
+name|void
+name|initialize
 parameter_list|()
+throws|throws
+name|Exception
 block|{
-return|return
-operator|(
-name|super
-operator|.
-name|canInitialize
-argument_list|()
-operator|&&
-name|this
-operator|.
+if|if
+condition|(
 name|getProjectFile
 argument_list|()
 operator|.
 name|isFile
 argument_list|()
-operator|)
-return|;
+condition|)
+block|{
+name|super
+operator|.
+name|initialize
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Override parent implementation to allow for null files.      *       * @see FileConfiguration#setProjectFile(File)      */
 annotation|@
@@ -267,42 +267,6 @@ decl_stmt|;
 return|return
 name|factory
 return|;
-block|}
-comment|/**      * Returns an instance of {@link ProjectDataSourceFactory}.      *       * @deprecated since 3.0 as the super method is deprecated as well.      */
-annotation|@
-name|Override
-specifier|public
-name|DataSourceFactory
-name|getDataSourceFactory
-parameter_list|()
-block|{
-try|try
-block|{
-return|return
-operator|new
-name|ProjectDataSourceFactory
-argument_list|(
-name|getProjectDirectory
-argument_list|()
-argument_list|)
-return|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|ProjectException
-argument_list|(
-literal|"Error creating DataSourceFactory."
-argument_list|,
-name|e
-argument_list|)
-throw|;
-block|}
 block|}
 block|}
 end_class

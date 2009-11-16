@@ -383,15 +383,6 @@ name|void
 name|loadProject
 parameter_list|()
 block|{
-comment|// try to initialize configuration
-if|if
-condition|(
-name|configuration
-operator|.
-name|canInitialize
-argument_list|()
-condition|)
-block|{
 try|try
 block|{
 name|configuration
@@ -415,12 +406,6 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
-block|}
-name|configuration
-operator|.
-name|didInitialize
-argument_list|()
-expr_stmt|;
 block|}
 comment|// set default version
 if|if

@@ -977,32 +977,6 @@ operator|=
 name|procedureName
 expr_stmt|;
 block|}
-comment|/**      * Returns "label" used in a DataRow for column value.      *       * @since 1.2      * @deprecated since 3.0 use {@link #getDataRowKey()}      */
-specifier|public
-name|String
-name|getLabel
-parameter_list|()
-block|{
-return|return
-name|getDataRowKey
-argument_list|()
-return|;
-block|}
-comment|/**      * @since 1.2      * @deprecated since 3.0 use {@link #setDataRowKey(String)}.      */
-specifier|public
-name|void
-name|setLabel
-parameter_list|(
-name|String
-name|label
-parameter_list|)
-block|{
-name|setDataRowKey
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|String

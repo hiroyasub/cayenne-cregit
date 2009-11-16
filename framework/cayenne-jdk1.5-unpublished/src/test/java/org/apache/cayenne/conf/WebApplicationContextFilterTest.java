@@ -115,6 +115,30 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|BaseContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|DataContext
@@ -280,9 +304,9 @@ expr_stmt|;
 comment|// check no thread DC before
 try|try
 block|{
-name|DataContext
+name|BaseContext
 operator|.
-name|getThreadDataContext
+name|getThreadObjectContext
 argument_list|()
 expr_stmt|;
 name|fail
@@ -320,9 +344,9 @@ expr_stmt|;
 comment|// check no thread DC after
 try|try
 block|{
-name|DataContext
+name|BaseContext
 operator|.
-name|getThreadDataContext
+name|getThreadObjectContext
 argument_list|()
 expr_stmt|;
 name|fail
@@ -345,7 +369,7 @@ name|TestFilter
 implements|implements
 name|Filter
 block|{
-name|DataContext
+name|ObjectContext
 name|threadContext
 decl_stmt|;
 specifier|public
@@ -374,9 +398,9 @@ name|ServletException
 block|{
 name|threadContext
 operator|=
-name|DataContext
+name|BaseContext
 operator|.
-name|getThreadDataContext
+name|getThreadObjectContext
 argument_list|()
 expr_stmt|;
 block|}

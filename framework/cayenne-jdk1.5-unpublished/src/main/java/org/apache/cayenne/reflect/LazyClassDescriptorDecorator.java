@@ -365,25 +365,6 @@ name|getObjectClass
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. Use {@link #visitProperties(PropertyVisitor)} method      *             instead.      */
-specifier|public
-name|Iterator
-argument_list|<
-name|Property
-argument_list|>
-name|getProperties
-parameter_list|()
-block|{
-name|checkDescriptorInitialized
-argument_list|()
-expr_stmt|;
-return|return
-name|descriptor
-operator|.
-name|getProperties
-argument_list|()
-return|;
-block|}
 specifier|public
 name|Iterator
 argument_list|<

@@ -185,10 +185,6 @@ name|JCheckBox
 name|pairs
 decl_stmt|;
 specifier|protected
-name|JComboBox
-name|generatorVersion
-decl_stmt|;
-specifier|protected
 name|JCheckBox
 name|overwrite
 decl_stmt|;
@@ -238,14 +234,6 @@ name|pairs
 operator|=
 operator|new
 name|JCheckBox
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|generatorVersion
-operator|=
-operator|new
-name|JComboBox
 argument_list|()
 expr_stmt|;
 name|this
@@ -339,7 +327,7 @@ name|FormLayout
 argument_list|(
 literal|"right:70dlu, 3dlu, fill:150dlu:grow, 3dlu, pref"
 argument_list|,
-literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
+literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -471,38 +459,6 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Generator Version:"
-argument_list|,
-name|cc
-operator|.
-name|xy
-argument_list|(
-literal|1
-argument_list|,
-literal|7
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|add
-argument_list|(
-name|generatorVersion
-argument_list|,
-name|cc
-operator|.
-name|xy
-argument_list|(
-literal|3
-argument_list|,
-literal|7
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|addLabel
-argument_list|(
 literal|"Subclass Template:"
 argument_list|,
 name|cc
@@ -511,7 +467,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|9
+literal|7
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -527,7 +483,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|9
+literal|7
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -543,7 +499,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|11
+literal|9
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -559,7 +515,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|11
+literal|9
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -575,7 +531,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|13
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -591,7 +547,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|13
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -607,7 +563,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|15
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -623,7 +579,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|15
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -639,7 +595,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|17
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -655,7 +611,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|17
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -671,7 +627,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|19
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -687,7 +643,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|19
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -776,15 +732,6 @@ parameter_list|()
 block|{
 return|return
 name|superclassTemplate
-return|;
-block|}
-specifier|public
-name|JComboBox
-name|getGeneratorVersion
-parameter_list|()
-block|{
-return|return
-name|generatorVersion
 return|;
 block|}
 specifier|public

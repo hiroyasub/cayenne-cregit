@@ -177,19 +177,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. Use {@link #visitProperties(PropertyVisitor)} method      *             instead.      */
-specifier|public
-name|Iterator
-argument_list|<
-name|Property
-argument_list|>
-name|getProperties
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 specifier|public
 name|Expression
 name|getEntityQualifier
