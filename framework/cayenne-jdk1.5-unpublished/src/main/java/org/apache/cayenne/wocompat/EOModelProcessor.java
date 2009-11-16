@@ -2169,7 +2169,7 @@ block|}
 comment|// set name instead of the actual attribute, as it may be inherited....
 name|attr
 operator|.
-name|setDbAttributeName
+name|setDbAttributePath
 argument_list|(
 name|dbAttrName
 argument_list|)

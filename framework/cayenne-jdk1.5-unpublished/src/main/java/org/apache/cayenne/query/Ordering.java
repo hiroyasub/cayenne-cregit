@@ -191,28 +191,6 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
-comment|/**      * Symbolic representation of ascending ordering criterion.      *       * @deprecated Use SortOrder.ASCENDING instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|boolean
-name|ASC
-init|=
-literal|true
-decl_stmt|;
-comment|/**      * Symbolic representation of descending ordering criterion.      *       * @deprecated Use SortOrder.DESCENDING instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|boolean
-name|DESC
-init|=
-literal|false
-decl_stmt|;
 specifier|protected
 name|String
 name|sortSpecString
@@ -226,8 +204,6 @@ specifier|protected
 name|SortOrder
 name|sortOrder
 decl_stmt|;
-comment|//    protected boolean ascending;
-comment|//    protected boolean caseInsensitive;
 specifier|protected
 name|boolean
 name|pathExceptionSuppressed
@@ -240,7 +216,7 @@ name|nullSortedFirst
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * Orders a given list of objects, using a List of Orderings applied according the      * default iteration order of the Orderings list. I.e. each Ordering with lower index      * is more significant than any other Ordering with higher index. List being ordered is      * modified in place.      */
+comment|/**      * Orders a given list of objects, using a List of Orderings applied according the      * default iteration order of the Orderings list. I.e. each Ordering with lower index      * is more significant than any other Ordering with higher index. List being ordered      * is modified in place.      */
 specifier|public
 specifier|static
 name|void
@@ -279,28 +255,6 @@ name|Ordering
 parameter_list|()
 block|{
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|Ordering
-parameter_list|(
-name|String
-name|sortPathSpec
-parameter_list|,
-name|boolean
-name|ascending
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|sortPathSpec
-argument_list|,
-name|ascending
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|Ordering
@@ -322,94 +276,6 @@ argument_list|(
 name|sortOrder
 argument_list|)
 expr_stmt|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|Ordering
-parameter_list|(
-name|String
-name|sortPathSpec
-parameter_list|,
-name|boolean
-name|ascending
-parameter_list|,
-name|boolean
-name|caseInsensitive
-parameter_list|)
-block|{
-name|setSortSpecString
-argument_list|(
-name|sortPathSpec
-argument_list|)
-expr_stmt|;
-name|setAscending
-argument_list|(
-name|ascending
-argument_list|)
-expr_stmt|;
-name|setCaseInsensitive
-argument_list|(
-name|caseInsensitive
-argument_list|)
-expr_stmt|;
-comment|//        this.ascending = ascending;
-comment|//        this.caseInsensitive = caseInsensitive;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|Ordering
-parameter_list|(
-name|Expression
-name|sortExpression
-parameter_list|,
-name|boolean
-name|ascending
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|sortExpression
-argument_list|,
-name|ascending
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|Ordering
-parameter_list|(
-name|Expression
-name|sortExpression
-parameter_list|,
-name|boolean
-name|ascending
-parameter_list|,
-name|boolean
-name|caseInsensitive
-parameter_list|)
-block|{
-name|setSortSpec
-argument_list|(
-name|sortExpression
-argument_list|)
-expr_stmt|;
-name|setAscending
-argument_list|(
-name|ascending
-argument_list|)
-expr_stmt|;
-name|setCaseInsensitive
-argument_list|(
-name|caseInsensitive
-argument_list|)
-expr_stmt|;
-comment|//        this.ascending = ascending;
-comment|//        this.caseInsensitive = caseInsensitive;
 block|}
 comment|/**      * Sets sortSpec to be an expression represented by string argument.      *       * @since 1.1      */
 specifier|public
@@ -449,7 +315,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets sort order for whether nulls are at the top or bottom of the resulting list. Default is true.      *       * @param nullSortedFirst true sorts nulls to the top of the list, false sorts nulls to the bottom      */
+comment|/**      * Sets sort order for whether nulls are at the top or bottom of the resulting list.      * Default is true.      *       * @param nullSortedFirst true sorts nulls to the top of the list, false sorts nulls      *            to the bottom      */
 specifier|public
 name|void
 name|setNullSortedFirst
@@ -465,7 +331,7 @@ operator|=
 name|nullSortedFirst
 expr_stmt|;
 block|}
-comment|/**       * Get sort order for nulls.      *       *  @return true if nulls are sorted to the top of the list, false if sorted to the bottom      */
+comment|/**      * Get sort order for nulls.      *       * @return true if nulls are sorted to the top of the list, false if sorted to the      *         bottom      */
 specifier|public
 name|boolean
 name|isNullSortedFirst
@@ -475,7 +341,7 @@ return|return
 name|nullSortedFirst
 return|;
 block|}
-comment|/**      * Sets whether a path with a null in the middle is ignored. For example, a sort from<code>painting</code>      * on<code>artist.name</code> would by default throw an exception if the artist was null.      * If set to true, then this is treated just like a null value.      * Default is false.      *       * @param pathExceptionSuppressed true to suppress exceptions and sort as null      */
+comment|/**      * Sets whether a path with a null in the middle is ignored. For example, a sort from      *<code>painting</code> on<code>artist.name</code> would by default throw an      * exception if the artist was null. If set to true, then this is treated just like a      * null value. Default is false.      *       * @param pathExceptionSuppressed true to suppress exceptions and sort as null      */
 specifier|public
 name|void
 name|setPathExceptionSupressed
@@ -491,7 +357,7 @@ operator|=
 name|pathExceptionSuppressed
 expr_stmt|;
 block|}
-comment|/**       * Is a path with a null in the middle is ignored.      *       * @return true is exception is suppressed and sorted as null      */
+comment|/**      * Is a path with a null in the middle is ignored.      *       * @return true is exception is suppressed and sorted as null      */
 specifier|public
 name|boolean
 name|isPathExceptionSuppressed
@@ -563,30 +429,7 @@ name|isAscending
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets<code>ascending</code> property of this Ordering.      *       * @deprecated Use setSortOrder() or setAscending() or setDescending().      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setAscending
-parameter_list|(
-name|boolean
-name|ascending
-parameter_list|)
-block|{
-if|if
-condition|(
-name|ascending
-condition|)
-name|setAscending
-argument_list|()
-expr_stmt|;
-else|else
-name|setDescending
-argument_list|()
-expr_stmt|;
-block|}
-comment|/**      * If the sort order is DESCENDING or DESCENDING_INSENSITIVE, sets      * the sort order to ASCENDING or ASCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+comment|/**      * If the sort order is DESCENDING or DESCENDING_INSENSITIVE, sets the sort order to      * ASCENDING or ASCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setAscending
@@ -627,7 +470,7 @@ name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If the sort order is ASCENDING or ASCENDING_INSENSITIVE, sets      * the sort order to DESCENDING or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+comment|/**      * If the sort order is ASCENDING or ASCENDING_INSENSITIVE, sets the sort order to      * DESCENDING or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setDescending
@@ -704,29 +547,6 @@ operator|.
 name|DESCENDING
 return|;
 block|}
-comment|/**      * Sets<code>caseInsensitive</code> property of this Ordering.      *       * @deprecated Use setSortOrder() or setCaseInsensitive() or setCaseSensitive().      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setCaseInsensitive
-parameter_list|(
-name|boolean
-name|caseInsensitive
-parameter_list|)
-block|{
-if|if
-condition|(
-name|caseInsensitive
-condition|)
-name|setCaseInsensitive
-argument_list|()
-expr_stmt|;
-else|else
-name|setCaseSensitive
-argument_list|()
-expr_stmt|;
-block|}
 comment|/**      * If the sort order is ASCENDING or DESCENDING, sets the sort order to      * ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
 specifier|public
 name|void
@@ -768,7 +588,7 @@ name|DESCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If the sort order is ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE,      * sets the sort order to ASCENDING or DESCENDING, respectively.      *       * @since 3.0      */
+comment|/**      * If the sort order is ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, sets the sort      * order to ASCENDING or DESCENDING, respectively.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setCaseSensitive
@@ -969,11 +789,11 @@ operator|.
 name|UnresolvablePathException
 condition|)
 block|{
-comment|//do nothing, we expect this
+comment|// do nothing, we expect this
 block|}
 else|else
 block|{
-comment|//re-throw
+comment|// re-throw
 throw|throw
 name|e
 throw|;
@@ -1017,11 +837,11 @@ operator|.
 name|UnresolvablePathException
 condition|)
 block|{
-comment|//do nothing, we expect this
+comment|// do nothing, we expect this
 block|}
 else|else
 block|{
-comment|//rethrow
+comment|// rethrow
 throw|throw
 name|e
 throw|;

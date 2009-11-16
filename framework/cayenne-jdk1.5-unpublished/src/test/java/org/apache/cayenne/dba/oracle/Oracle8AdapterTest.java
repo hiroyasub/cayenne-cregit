@@ -115,7 +115,7 @@ operator|new
 name|Oracle8Adapter
 argument_list|()
 operator|.
-name|findAdapterResource
+name|findResource
 argument_list|(
 literal|"/types.xml"
 argument_list|)

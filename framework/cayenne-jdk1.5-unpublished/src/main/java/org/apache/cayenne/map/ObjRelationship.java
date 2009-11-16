@@ -115,22 +115,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|RelationshipEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|util
 operator|.
 name|CayenneMapEntry
@@ -230,7 +214,7 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
-comment|/**      * Db-relationships path that is set but not yet parsed (turned into List<DbRelationship>)      * Used during map loading      */
+comment|/**      * Db-relationships path that is set but not yet parsed (turned into      * List<DbRelationship>) Used during map loading      */
 name|String
 name|deferredPath
 decl_stmt|;
@@ -1378,24 +1362,6 @@ operator|.
 name|deleteRule
 operator|=
 name|value
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 3.0 as ObjRelationship no longer reacts to DbRelationship events.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbRelationshipDidChange
-parameter_list|(
-name|RelationshipEvent
-name|event
-parameter_list|)
-block|{
-name|recalculateToManyValue
-argument_list|()
-expr_stmt|;
-name|recalculateReadOnlyValue
-argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Returns whether this attribute should be used for locking.      *       * @since 1.1      */

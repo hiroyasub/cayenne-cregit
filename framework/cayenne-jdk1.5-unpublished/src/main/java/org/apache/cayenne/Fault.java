@@ -35,40 +35,6 @@ name|Fault
 implements|implements
 name|Serializable
 block|{
-comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
-specifier|protected
-specifier|static
-name|Fault
-name|toOneFault
-decl_stmt|;
-comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
-specifier|protected
-specifier|static
-name|Fault
-name|toManyFault
-decl_stmt|;
-comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
-specifier|public
-specifier|static
-name|Fault
-name|getToOneFault
-parameter_list|()
-block|{
-return|return
-name|toOneFault
-return|;
-block|}
-comment|/**      * @deprecated since 3.0 as the fault singletons are no longer static and are managed      *             by the Cayenne configuration.      */
-specifier|public
-specifier|static
-name|Fault
-name|getToManyFault
-parameter_list|()
-block|{
-return|return
-name|toManyFault
-return|;
-block|}
 specifier|protected
 name|Fault
 parameter_list|()

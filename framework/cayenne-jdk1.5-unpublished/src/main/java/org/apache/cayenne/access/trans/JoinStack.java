@@ -269,37 +269,6 @@ specifier|private
 name|QualifierTranslator
 name|qualifierTranslator
 decl_stmt|;
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|JoinStack
-parameter_list|()
-block|{
-name|this
-operator|.
-name|rootNode
-operator|=
-operator|new
-name|JoinTreeNode
-argument_list|(
-name|this
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|rootNode
-operator|.
-name|setTargetTableAlias
-argument_list|(
-name|newAlias
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|resetStack
-argument_list|()
-expr_stmt|;
-block|}
 specifier|protected
 name|JoinStack
 parameter_list|(
@@ -1022,7 +991,7 @@ name|aliasCounter
 operator|++
 return|;
 block|}
-comment|/**      * Class to translate *joined* DB Entity qualifiers annotation to       * *current* Obj-entity qualifiers annotation      * This is done by changing all Obj-paths to concatenated Db-paths to root entity      * and rejecting all original Db-paths      */
+comment|/**      * Class to translate *joined* DB Entity qualifiers annotation to *current* Obj-entity      * qualifiers annotation This is done by changing all Obj-paths to concatenated      * Db-paths to root entity and rejecting all original Db-paths      */
 class|class
 name|JoinedDbEntityQualifierTransformer
 implements|implements
@@ -1068,7 +1037,7 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-comment|/**                  * We must be in the same join as 'node',                  * otherwise incorrect join statement like                   * JOIN t1 ... ON (t0.id=t1.id AND t2.qualifier=0) could be generated                  */
+comment|/**                  * We must be in the same join as 'node', otherwise incorrect join                  * statement like JOIN t1 ... ON (t0.id=t1.id AND t2.qualifier=0) could be                  * generated                  */
 if|if
 condition|(
 name|node

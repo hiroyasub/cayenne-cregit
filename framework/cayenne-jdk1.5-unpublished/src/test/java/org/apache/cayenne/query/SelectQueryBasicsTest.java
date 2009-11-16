@@ -406,9 +406,9 @@ name|addOrdering
 argument_list|(
 name|path
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -454,9 +454,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Ordering
-operator|.
-name|DESC
+literal|false
 argument_list|,
 name|ord
 operator|.

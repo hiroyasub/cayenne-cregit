@@ -303,18 +303,6 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isResolvingInherited
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
 specifier|public
 name|int
 name|getPageSize
@@ -334,19 +322,6 @@ block|{
 return|return
 operator|-
 literal|1
-return|;
-block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getFetchStartIndex
-parameter_list|()
-block|{
-return|return
-name|getFetchOffset
-argument_list|()
 return|;
 block|}
 specifier|public

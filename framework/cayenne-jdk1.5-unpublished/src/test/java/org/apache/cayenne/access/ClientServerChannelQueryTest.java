@@ -113,7 +113,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Ordering
+name|SelectQuery
 import|;
 end_import
 
@@ -127,7 +127,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SortOrder
 import|;
 end_import
 
@@ -377,9 +377,9 @@ name|ClientMtTable1
 operator|.
 name|GLOBAL_ATTRIBUTE1_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|query
@@ -797,7 +797,9 @@ name|ClientMtTable1
 operator|.
 name|GLOBAL_ATTRIBUTE1_PROPERTY
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List
@@ -882,7 +884,9 @@ name|ClientMtTable1
 operator|.
 name|GLOBAL_ATTRIBUTE1_PROPERTY
 argument_list|,
-literal|false
+name|SortOrder
+operator|.
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|List

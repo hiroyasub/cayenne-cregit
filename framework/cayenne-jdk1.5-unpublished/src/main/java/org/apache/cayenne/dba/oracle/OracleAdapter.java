@@ -629,19 +629,6 @@ block|{
 comment|// ignoring...
 block|}
 block|}
-comment|/**      * @deprecated since 3.0, as a generic BLOB method is used to write BLOBs.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|Method
-name|getOutputStreamFromBlobMethod
-parameter_list|()
-block|{
-return|return
-name|outputStreamFromBlobMethod
-return|;
-block|}
 comment|// TODO: rename to something that looks like English ...
 specifier|public
 specifier|static
@@ -752,19 +739,6 @@ block|}
 block|}
 return|return
 literal|false
-return|;
-block|}
-comment|/**      * @deprecated since 3.0, as a generic CLOB method is used to write CLOBs.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|Method
-name|getWriterFromClobMethod
-parameter_list|()
-block|{
-return|return
-name|writerFromClobMethod
 return|;
 block|}
 comment|/**      * Returns an Oracle JDBC extension type defined in      * oracle.jdbc.driver.OracleTypes.CURSOR. This value is determined from Oracle driver      * classes via reflection in runtime, so that Cayenne code has no compile dependency      * on the driver. This means that calling this method when the driver is not available      * will result in an exception.      */

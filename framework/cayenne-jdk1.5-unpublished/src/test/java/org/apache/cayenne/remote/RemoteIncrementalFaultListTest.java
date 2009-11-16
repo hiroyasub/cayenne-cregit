@@ -121,7 +121,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Ordering
+name|SelectQuery
 import|;
 end_import
 
@@ -135,7 +135,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SortOrder
 import|;
 end_import
 
@@ -319,9 +319,9 @@ name|MtTable1
 operator|.
 name|TABLE1_ID_PK_COLUMN
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|ClientServerChannel

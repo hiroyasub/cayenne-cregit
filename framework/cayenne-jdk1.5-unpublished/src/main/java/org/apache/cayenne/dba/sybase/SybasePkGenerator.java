@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Primary key generator implementation for Sybase. Uses a lookup table named  * "AUTO_PK_SUPPORT" and a stored procedure "auto_pk_for_table" to search and increment  * primary keys for tables.  *   */
+comment|/**  * Primary key generator implementation for Sybase. Uses a lookup table named  * "AUTO_PK_SUPPORT" and a stored procedure "auto_pk_for_table" to search and increment  * primary keys for tables.  */
 end_comment
 
 begin_class
@@ -160,15 +160,6 @@ name|SybasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
-comment|/**      * @deprecated since 3.0      */
-specifier|protected
-name|SybasePkGenerator
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
 specifier|protected
 name|SybasePkGenerator
 parameter_list|(
@@ -230,7 +221,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Generates database objects to provide automatic primary key support. Method will      * execute the following SQL statements:      *<p>      * 1. Executed only if a corresponding table does not exist in the database.      *</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID DECIMAL(19,0) NOT NULL      *    )      *</pre>      *       *<p>      * 2. Executed under any circumstances.      *</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *       *<p>      * 3. Executed under any circumstances.      *</p>      * CREATE PROCEDURE auto_pk_for_table      *       *<pre>      * @tname VARCHAR(32),      * @pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID =      *              NEXT_ID +      * @pkbatchsize WHERE TABLE_NAME =      * @tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID =      * @tname COMMIT END       *</pre>      *       * @param node node that provides access to a DataSource.      */
+comment|/**      * Generates database objects to provide automatic primary key support. Method will      * execute the following SQL statements:      *<p>      * 1. Executed only if a corresponding table does not exist in the database.      *</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID DECIMAL(19,0) NOT NULL      *    )      *</pre>      *<p>      * 2. Executed under any circumstances.      *</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *<p>      * 3. Executed under any circumstances.      *</p>      * CREATE PROCEDURE auto_pk_for_table      *       *<pre>      *&#064;tname VARCHAR(32),      *&#064;pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID =      *              NEXT_ID +      *&#064;pkbatchsize WHERE TABLE_NAME =      *&#064;tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID =      *&#064;tname COMMIT END      *</pre>      *       * @param node node that provides access to a DataSource.      */
 annotation|@
 name|Override
 specifier|public
@@ -583,208 +574,6 @@ argument_list|(
 literal|"Error generating pk for DbEntity "
 operator|+
 name|entity
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|", no result set from stored procedure."
-argument_list|)
-throw|;
-block|}
-block|}
-finally|finally
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|Transaction
-operator|.
-name|bindThreadTransaction
-argument_list|(
-name|transaction
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Override
-specifier|protected
-name|int
-name|pkFromDatabase
-parameter_list|(
-name|DataNode
-name|node
-parameter_list|,
-name|DbEntity
-name|ent
-parameter_list|)
-throws|throws
-name|Exception
-block|{
-comment|// handle CAY-588 - get connection that is separate from the connection in the
-comment|// current transaction.
-comment|// TODO (andrus, 7/6/2006) Note that this will still work in a pool with a single
-comment|// connection, as PK generator is invoked early in the transaction, before the
-comment|// connection is grabbed for commit... So maybe promote this to other adapters in
-comment|// 3.0?
-name|Transaction
-name|transaction
-init|=
-name|Transaction
-operator|.
-name|getThreadTransaction
-argument_list|()
-decl_stmt|;
-name|Transaction
-operator|.
-name|bindThreadTransaction
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-try|try
-block|{
-name|Connection
-name|connection
-init|=
-name|node
-operator|.
-name|getDataSource
-argument_list|()
-operator|.
-name|getConnection
-argument_list|()
-decl_stmt|;
-try|try
-block|{
-name|CallableStatement
-name|statement
-init|=
-name|connection
-operator|.
-name|prepareCall
-argument_list|(
-literal|"{call auto_pk_for_table(?, ?)}"
-argument_list|)
-decl_stmt|;
-try|try
-block|{
-name|statement
-operator|.
-name|setString
-argument_list|(
-literal|1
-argument_list|,
-name|ent
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|statement
-operator|.
-name|setInt
-argument_list|(
-literal|2
-argument_list|,
-name|super
-operator|.
-name|getPkCacheSize
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|// can't use "executeQuery"
-comment|// per http://jtds.sourceforge.net/faq.html#expectingResultSet
-name|statement
-operator|.
-name|execute
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|statement
-operator|.
-name|getMoreResults
-argument_list|()
-condition|)
-block|{
-name|ResultSet
-name|rs
-init|=
-name|statement
-operator|.
-name|getResultSet
-argument_list|()
-decl_stmt|;
-try|try
-block|{
-if|if
-condition|(
-name|rs
-operator|.
-name|next
-argument_list|()
-condition|)
-block|{
-return|return
-name|rs
-operator|.
-name|getInt
-argument_list|(
-literal|1
-argument_list|)
-return|;
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error generating pk for DbEntity "
-operator|+
-name|ent
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
-block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error generating pk for DbEntity "
-operator|+
-name|ent
 operator|.
 name|getName
 argument_list|()

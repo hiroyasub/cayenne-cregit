@@ -127,22 +127,6 @@ name|map
 operator|.
 name|event
 operator|.
-name|AttributeEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
 name|DbEntityListener
 import|;
 end_import
@@ -176,22 +160,6 @@ operator|.
 name|event
 operator|.
 name|ObjEntityListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|RelationshipEvent
 import|;
 end_import
 
@@ -3915,138 +3883,6 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbAttributeChanged
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-name|Entity
-name|entity
-init|=
-name|e
-operator|.
-name|getEntity
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|entity
-operator|instanceof
-name|DbEntity
-condition|)
-block|{
-operator|(
-operator|(
-name|DbEntity
-operator|)
-name|entity
-operator|)
-operator|.
-name|dbAttributeChanged
-argument_list|(
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbAttributeAdded
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 DataMap no longer implements DbAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbAttributeRemoved
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbRelationshipChanged
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-name|Entity
-name|entity
-init|=
-name|e
-operator|.
-name|getEntity
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|entity
-operator|instanceof
-name|DbEntity
-condition|)
-block|{
-operator|(
-operator|(
-name|DbEntity
-operator|)
-name|entity
-operator|)
-operator|.
-name|dbRelationshipChanged
-argument_list|(
-name|e
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbRelationshipAdded
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 DataMap no longer implements DbRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|dbRelationshipRemoved
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
 comment|/**      * ObjEntity property changed. May be name, attribute or relationship added or      * removed, etc. Attribute and relationship property changes are handled in respective      * listeners.      *       * @since 1.2      */
 specifier|public
 name|void
@@ -4165,84 +4001,6 @@ name|void
 name|objEntityRemoved
 parameter_list|(
 name|EntityEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objAttributeChanged
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objAttributeAdded
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 DataMap no longer implements ObjAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objAttributeRemoved
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objRelationshipChanged
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objRelationshipAdded
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 DataMap no longer implements ObjRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objRelationshipRemoved
-parameter_list|(
-name|RelationshipEvent
 name|e
 parameter_list|)
 block|{

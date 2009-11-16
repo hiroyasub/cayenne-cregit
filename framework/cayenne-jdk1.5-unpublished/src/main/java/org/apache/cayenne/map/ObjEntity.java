@@ -185,22 +185,6 @@ name|map
 operator|.
 name|event
 operator|.
-name|AttributeEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
 name|EntityEvent
 import|;
 end_import
@@ -218,22 +202,6 @@ operator|.
 name|event
 operator|.
 name|ObjEntityListener
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|RelationshipEvent
 import|;
 end_import
 
@@ -4028,84 +3996,6 @@ name|void
 name|objEntityRemoved
 parameter_list|(
 name|EntityEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Attribute property changed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objAttributeChanged
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * New attribute has been created/added.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objAttributeAdded
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Attribute has been removed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjAttributeListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objAttributeRemoved
-parameter_list|(
-name|AttributeEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship property changed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objRelationshipChanged
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship has been created/added.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objRelationshipAdded
-parameter_list|(
-name|RelationshipEvent
-name|e
-parameter_list|)
-block|{
-comment|// does nothing currently
-block|}
-comment|/**      * Relationship has been removed.      *       * @deprecated since 3.0 ObjEntity no longer implements ObjRelationshipListener      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|objRelationshipRemoved
-parameter_list|(
-name|RelationshipEvent
 name|e
 parameter_list|)
 block|{

@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ObjAttribute extension that accomodates EOModel attributes.  *   */
+comment|/**  * An ObjAttribute extension that accomodates EOModel attributes.  */
 end_comment
 
 begin_class
@@ -98,17 +98,6 @@ argument_list|,
 name|parent
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * @deprecated since 2.0 use isReadOnly().      */
-specifier|public
-name|boolean
-name|getReadOnly
-parameter_list|()
-block|{
-return|return
-name|isReadOnly
-argument_list|()
-return|;
 block|}
 specifier|public
 name|boolean

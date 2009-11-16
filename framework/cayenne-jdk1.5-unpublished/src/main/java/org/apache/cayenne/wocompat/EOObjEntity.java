@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An extension of ObjEntity used to accomodate extra EOModel entity properties.  *   */
+comment|/**  * An extension of ObjEntity used to accomodate extra EOModel entity properties.  */
 end_comment
 
 begin_class
@@ -225,86 +225,6 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * @deprecated since 2.0 use setSubclass()      */
-specifier|public
-name|void
-name|setHasSuperClass
-parameter_list|(
-name|boolean
-name|value
-parameter_list|)
-block|{
-name|setSubclass
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 2.0 use isSubclass()      */
-specifier|public
-name|boolean
-name|getHasSuperClass
-parameter_list|()
-block|{
-return|return
-name|isSubclass
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 2.0 use setServerOnly()      */
-specifier|public
-name|void
-name|setIsClientEntity
-parameter_list|(
-name|boolean
-name|value
-parameter_list|)
-block|{
-name|setServerOnly
-argument_list|(
-operator|!
-name|value
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 2.0 use !isServerOnly()      */
-specifier|public
-name|boolean
-name|getIsClientEntity
-parameter_list|()
-block|{
-return|return
-operator|!
-name|isServerOnly
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 2.0 use setAbstractEntity()      */
-specifier|public
-name|void
-name|setIsAbstractEntity
-parameter_list|(
-name|boolean
-name|value
-parameter_list|)
-block|{
-name|setAbstractEntity
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 2.0 use isAbstractEntity()      */
-specifier|public
-name|boolean
-name|getIsAbstractEntity
-parameter_list|()
-block|{
-return|return
-name|isAbstractEntity
-argument_list|()
-return|;
 block|}
 comment|/**      * Returns stored EOQuery.      *       * @since 1.1      */
 specifier|public

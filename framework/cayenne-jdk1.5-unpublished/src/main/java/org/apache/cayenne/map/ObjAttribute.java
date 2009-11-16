@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ObjAttribute is a mapping descriptor of a Java class property.  *   */
+comment|/**  * An ObjAttribute is a mapping descriptor of a Java class property.  */
 end_comment
 
 begin_class
@@ -847,42 +847,6 @@ name|dbAttributePath
 argument_list|)
 return|;
 block|}
-comment|/**      * Set mapped DbAttribute.      *       * @deprecated since 3.0 - this method only works for non-flattened attributes.      *             'setDbAttributePath' should be used instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDbAttribute
-parameter_list|(
-name|DbAttribute
-name|dbAttribute
-parameter_list|)
-block|{
-if|if
-condition|(
-name|dbAttribute
-operator|==
-literal|null
-condition|)
-block|{
-name|setDbAttributePath
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|setDbAttributePath
-argument_list|(
-name|dbAttribute
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 comment|/**      * Returns the the name of the mapped DbAttribute. This value is the same as      * "dbAttributePath" for regular attributes mapped to columns. It is equql to the last      * path component for the flattened attributes.      */
 specifier|public
 name|String
@@ -932,23 +896,6 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets the name of the mapped DbAttribute.      *       * @deprecated since 3.0 use {@link #setDbAttributePath(String)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDbAttributeName
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-name|setDbAttributePath
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-block|}
 specifier|public
 name|void
 name|setDbAttributePath
@@ -996,19 +943,6 @@ return|return
 name|dbAttributePath
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 use 'isFlattened'.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isCompound
-parameter_list|()
-block|{
-return|return
-name|isFlattened
-argument_list|()
-return|;
-block|}
 comment|/**      * Returns whether this attribute is "flattened", meaning that it points to a column      * from an entity other than the DbEntity mapped to the parent ObjEntity.      *       * @since 3.0      */
 specifier|public
 name|boolean
@@ -1030,7 +964,7 @@ operator|>=
 literal|0
 return|;
 block|}
-comment|/**      * Returns whether this attribute is mandatory      * @see DbAttribute#isMandatory()      */
+comment|/**      * Returns whether this attribute is mandatory      *       * @see DbAttribute#isMandatory()      */
 specifier|public
 name|boolean
 name|isMandatory
@@ -1055,7 +989,7 @@ name|isMandatory
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns this attribute's maximum allowed length      * @see DbAttribute#getMaxLength()      */
+comment|/**      * Returns this attribute's maximum allowed length      *       * @see DbAttribute#getMaxLength()      */
 specifier|public
 name|int
 name|getMaxLength

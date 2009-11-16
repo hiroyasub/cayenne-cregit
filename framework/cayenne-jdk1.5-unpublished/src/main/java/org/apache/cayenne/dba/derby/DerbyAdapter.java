@@ -312,7 +312,9 @@ block|{
 return|return
 operator|new
 name|DerbyPkGenerator
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 return|;
 block|}
 comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */

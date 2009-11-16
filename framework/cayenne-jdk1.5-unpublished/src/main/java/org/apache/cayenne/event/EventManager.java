@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class acts as bridge between an Object that wants to inform others about its  * current state or a change thereof (Publisher) and a list of objects interested in the  * Subject (Listeners).  *   */
+comment|/**  * This class acts as bridge between an Object that wants to inform others about its  * current state or a change thereof (Publisher) and a list of objects interested in the  * Subject (Listeners).  */
 end_comment
 
 begin_class
@@ -120,12 +120,6 @@ specifier|public
 class|class
 name|EventManager
 block|{
-specifier|private
-specifier|static
-specifier|volatile
-name|EventManager
-name|defaultManager
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -166,49 +160,6 @@ name|DispatchThread
 argument_list|>
 name|dispatchThreads
 decl_stmt|;
-comment|/**      * Returns the shared EventManager. It is created on demand on the first call to this      * method. Cayenne internally doesn't use default EventManager. Instead Configuration      * EventManager is propagated to DataDomains and DataContexts.      *       * @return EventManager the shared EventManager instance      * @deprecated since 3.0 users should create their own instances of EventManager using      *             constructor and share them as appropriate for their target use.      */
-specifier|public
-specifier|static
-name|EventManager
-name|getDefaultManager
-parameter_list|()
-block|{
-if|if
-condition|(
-name|defaultManager
-operator|==
-literal|null
-condition|)
-block|{
-synchronized|synchronized
-init|(
-name|EventManager
-operator|.
-name|class
-init|)
-block|{
-if|if
-condition|(
-name|defaultManager
-operator|==
-literal|null
-condition|)
-block|{
-name|defaultManager
-operator|=
-operator|new
-name|EventManager
-argument_list|(
-literal|2
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-return|return
-name|defaultManager
-return|;
-block|}
 comment|/**      * Creates a multithreaded EventManager using default thread count.      */
 specifier|public
 name|EventManager
@@ -833,7 +784,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Unregister the specified listener for the events about the given subject.      *       * @param listener the object to be unregistered      * @param subject the subject from which the listener is to be unregistered      * @return<code>true</code> if<code>listener</code> could be removed for the      *         given subject, else returns<code>false</code>.      */
+comment|/**      * Unregister the specified listener for the events about the given subject.      *       * @param listener the object to be unregistered      * @param subject the subject from which the listener is to be unregistered      * @return<code>true</code> if<code>listener</code> could be removed for the given      *         subject, else returns<code>false</code>.      */
 specifier|public
 name|boolean
 name|removeListener
@@ -858,7 +809,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Unregister the specified listener for the events about the given subject and the      * given sender.      *       * @param listener the object to be unregistered      * @param subject the subject from which the listener is to be unregistered      * @param sender the object whose events the listener was interested in;      *<code>null</code> means 'any sender'.      * @return<code>true</code> if<code>listener</code> could be removed for the      *         given subject, else returns<code>false</code>.      */
+comment|/**      * Unregister the specified listener for the events about the given subject and the      * given sender.      *       * @param listener the object to be unregistered      * @param subject the subject from which the listener is to be unregistered      * @param sender the object whose events the listener was interested in;      *<code>null</code> means 'any sender'.      * @return<code>true</code> if<code>listener</code> could be removed for the given      *         subject, else returns<code>false</code>.      */
 specifier|public
 name|boolean
 name|removeListener

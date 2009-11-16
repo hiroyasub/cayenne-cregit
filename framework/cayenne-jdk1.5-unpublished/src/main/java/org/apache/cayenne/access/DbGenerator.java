@@ -1508,25 +1508,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns an array of queries to create foreign key constraints for a particular      * DbEntity.      *       * @deprecated since 3.0 as this method is used to generate both FK and UNIQUE      *             constraints, use 'createConstraintsQueries' instead.      */
-specifier|public
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|createFkConstraintsQueries
-parameter_list|(
-name|DbEntity
-name|table
-parameter_list|)
-block|{
-return|return
-name|createConstraintsQueries
-argument_list|(
-name|table
-argument_list|)
-return|;
-block|}
 comment|/**      * Creates FK and UNIQUE constraint statements for a given table.      *       * @since 3.0      */
 specifier|public
 name|List

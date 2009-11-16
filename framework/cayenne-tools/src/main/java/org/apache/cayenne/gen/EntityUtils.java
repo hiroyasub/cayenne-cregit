@@ -376,66 +376,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns class name (without a package) of the sub class associated with this      * generator.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
-specifier|public
-name|String
-name|getSubClassName
-parameter_list|()
-block|{
-return|return
-name|subClassName
-return|;
-block|}
-comment|/**      * Returns the super class (without a package) of the data object class associated      * with this generator      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
-specifier|public
-name|String
-name|getSuperClassName
-parameter_list|()
-block|{
-return|return
-name|superClassName
-return|;
-block|}
-comment|/**      * Returns the base class (without a package) of the data object class associated with      * this generator. Class name must not include a package.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
-specifier|public
-name|String
-name|getBaseClassName
-parameter_list|()
-block|{
-return|return
-name|baseClassName
-return|;
-block|}
-comment|/**      * Returns Java package name of the class associated with this generator.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
-specifier|public
-name|String
-name|getSubPackageName
-parameter_list|()
-block|{
-return|return
-name|subPackageName
-return|;
-block|}
-comment|/**      * Returns<code>superPackageName</code> property that defines a superclass's      * package name.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
-specifier|public
-name|String
-name|getSuperPackageName
-parameter_list|()
-block|{
-return|return
-name|superPackageName
-return|;
-block|}
-comment|/**      * Returns<code>basePackageName</code> property that defines a baseclass's      * (superclass superclass) package name.      *       * @deprecated since 3.0 This value is a part of velocity context and therefore is      *             redundant here.      */
-specifier|public
-name|String
-name|getBasePackageName
-parameter_list|()
-block|{
-return|return
-name|basePackageName
-return|;
-block|}
 comment|/**      * @return Returns the primary DataMap.      * @since 1.2      */
 specifier|public
 name|DataMap
@@ -744,7 +684,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns the map key type for a collection relationship of type java.util.Map.      *      * @param relationship The relationship to look up type information for.      *      * @return The type of the attribute keyed on.      */
+comment|/**      * Returns the map key type for a collection relationship of type java.util.Map.      *       * @param relationship The relationship to look up type information for.      * @return The type of the attribute keyed on.      */
 specifier|public
 name|String
 name|getMapKeyType
@@ -874,7 +814,7 @@ name|getType
 argument_list|()
 return|;
 block|}
-comment|/**      *      * @return the list of all callback names registered for the entity.      * @since 3.0      */
+comment|/**      * @return the list of all callback names registered for the entity.      * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<

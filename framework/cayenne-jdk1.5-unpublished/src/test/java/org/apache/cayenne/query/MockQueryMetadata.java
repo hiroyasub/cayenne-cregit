@@ -174,18 +174,6 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getCachePolicy
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy
@@ -267,19 +255,6 @@ block|{
 return|return
 operator|-
 literal|1
-return|;
-block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getFetchStartIndex
-parameter_list|()
-block|{
-return|return
-name|getFetchOffset
-argument_list|()
 return|;
 block|}
 specifier|public

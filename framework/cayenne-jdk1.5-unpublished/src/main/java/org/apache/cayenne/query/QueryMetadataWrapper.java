@@ -471,24 +471,9 @@ name|booleanValue
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 as super is deprecated.      */
-annotation|@
-name|Deprecated
 specifier|public
 name|boolean
 name|isRefreshingObjects
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
-comment|/**      * @deprecated since 3.0 inheritance resolving is not optional.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isResolvingInherited
 parameter_list|()
 block|{
 return|return
@@ -554,19 +539,6 @@ block|{
 return|return
 name|info
 operator|.
-name|getFetchOffset
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getFetchStartIndex
-parameter_list|()
-block|{
-return|return
 name|getFetchOffset
 argument_list|()
 return|;

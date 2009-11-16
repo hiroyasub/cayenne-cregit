@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * DbAdapter implementation for<a href="http://www.sybase.com">Sybase RDBMS</a>.  *  */
+comment|/**  * DbAdapter implementation for<a href="http://www.sybase.com">Sybase RDBMS</a>.  */
 end_comment
 
 begin_class
@@ -210,7 +210,7 @@ name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_END
 init|=
 literal|"]"
 decl_stmt|;
-comment|/**     *      * @since 3.0     */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -257,7 +257,7 @@ return|return
 literal|"go"
 return|;
 block|}
-comment|/**      * Installs appropriate ExtendedTypes as converters for passing values      * between JDBC and Java layers.      */
+comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
 annotation|@
 name|Override
 specifier|protected
@@ -327,7 +327,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**       * Creates and returns a primary key generator.       * Overrides superclass implementation to return an      * instance of SybasePkGenerator.      */
+comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of SybasePkGenerator.      */
 annotation|@
 name|Override
 specifier|protected
@@ -338,7 +338,9 @@ block|{
 return|return
 operator|new
 name|SybasePkGenerator
-argument_list|()
+argument_list|(
+name|this
+argument_list|)
 return|;
 block|}
 annotation|@

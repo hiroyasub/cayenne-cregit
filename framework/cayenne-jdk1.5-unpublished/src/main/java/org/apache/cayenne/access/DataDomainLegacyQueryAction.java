@@ -134,19 +134,10 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataDomain query action that relies on externally provided OperationObserver to process  * the results.  *   * @since 1.2  * @deprecated since 3.0 - this class should not be public  */
-end_comment
-
-begin_comment
-comment|// TODO: andrus, 7/19/2006 - why is this public? should probably be deprecated and/or
-end_comment
-
-begin_comment
-comment|// removed.
+comment|/**  * DataDomain query action that relies on externally provided OperationObserver to process  * the results.  *   * @since 1.2  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|DataDomainLegacyQueryAction
 implements|implements

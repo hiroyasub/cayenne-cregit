@@ -368,19 +368,6 @@ return|return
 name|fetchOffset
 return|;
 block|}
-comment|/**              * @deprecated since 3.0              */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getFetchStartIndex
-parameter_list|()
-block|{
-return|return
-name|getFetchOffset
-argument_list|()
-return|;
-block|}
 specifier|public
 name|int
 name|getFetchLimit
@@ -510,17 +497,6 @@ block|}
 specifier|public
 name|boolean
 name|isRefreshingObjects
-parameter_list|()
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
-block|}
-specifier|public
-name|boolean
-name|isResolvingInherited
 parameter_list|()
 block|{
 throw|throw

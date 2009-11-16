@@ -474,7 +474,7 @@ name|JPanel
 implements|implements
 name|PropertyChangeListener
 block|{
-comment|//property for split pane divider size
+comment|// property for split pane divider size
 specifier|private
 specifier|static
 specifier|final
@@ -655,7 +655,7 @@ argument_list|)
 else|:
 name|defLocation
 decl_stmt|;
-comment|/**          * As of CAY-888 #3 main pane is now a JSplitPane.          * Top component is a bit larger.          */
+comment|/**          * As of CAY-888 #3 main pane is now a JSplitPane. Top component is a bit larger.          */
 name|JSplitPane
 name|mainPanel
 init|=
@@ -1069,8 +1069,8 @@ operator|.
 name|CENTER
 argument_list|)
 expr_stmt|;
-comment|//setting minimal size, otherwise scrolling looks awful, because of
-comment|//VERTICAL_SCROLLBAR_NEVER strategy
+comment|// setting minimal size, otherwise scrolling looks awful, because of
+comment|// VERTICAL_SCROLLBAR_NEVER strategy
 name|panel
 operator|.
 name|setMinimumSize
@@ -1804,10 +1804,8 @@ block|{
 case|case
 literal|1
 case|:
-name|ordering
-operator|.
-name|setAscending
-argument_list|(
+if|if
+condition|(
 operator|(
 operator|(
 name|Boolean
@@ -1817,31 +1815,28 @@ operator|)
 operator|.
 name|booleanValue
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|mediator
+condition|)
+block|{
+name|ordering
 operator|.
-name|fireQueryEvent
-argument_list|(
-operator|new
-name|QueryEvent
-argument_list|(
-name|SelectQueryOrderingTab
-operator|.
-name|this
-argument_list|,
-name|selectQuery
-argument_list|)
-argument_list|)
+name|setAscending
+argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+name|ordering
+operator|.
+name|setDescending
+argument_list|()
+expr_stmt|;
+block|}
 break|break;
 case|case
 literal|2
 case|:
-name|ordering
-operator|.
-name|setCaseInsensitive
-argument_list|(
+if|if
+condition|(
 operator|(
 operator|(
 name|Boolean
@@ -1851,23 +1846,22 @@ operator|)
 operator|.
 name|booleanValue
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|mediator
+condition|)
+block|{
+name|ordering
 operator|.
-name|fireQueryEvent
-argument_list|(
-operator|new
-name|QueryEvent
-argument_list|(
-name|SelectQueryOrderingTab
-operator|.
-name|this
-argument_list|,
-name|selectQuery
-argument_list|)
-argument_list|)
+name|setCaseInsensitive
+argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+name|ordering
+operator|.
+name|setCaseSensitive
+argument_list|()
+expr_stmt|;
+block|}
 break|break;
 default|default:
 throw|throw
@@ -1880,9 +1874,24 @@ name|column
 argument_list|)
 throw|;
 block|}
+name|mediator
+operator|.
+name|fireQueryEvent
+argument_list|(
+operator|new
+name|QueryEvent
+argument_list|(
+name|SelectQueryOrderingTab
+operator|.
+name|this
+argument_list|,
+name|selectQuery
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
-comment|/**      * Updates split pane divider location in properties       */
+comment|/**      * Updates split pane divider location in properties      */
 specifier|public
 name|void
 name|propertyChange
@@ -1943,7 +1952,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns name of a property for divider location.       */
+comment|/**      * Returns name of a property for divider location.      */
 specifier|protected
 name|String
 name|getDividerLocationProperty
@@ -1958,7 +1967,7 @@ name|Domain
 name|getDomain
 parameter_list|()
 block|{
-comment|//note: getClass() returns different values for Orderings and Prefetches tabs
+comment|// note: getClass() returns different values for Orderings and Prefetches tabs
 return|return
 name|Application
 operator|.

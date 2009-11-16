@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines methods to support automatic primary key generation.  *   */
+comment|/**  * Defines methods to support automatic primary key generation.  */
 end_comment
 
 begin_interface
@@ -135,19 +135,6 @@ name|DbEntity
 argument_list|>
 name|dbEntities
 parameter_list|)
-function_decl|;
-comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      *       * @param ent DbEntity for which automatic PK is generated.      * @deprecated since 3.0 use {@link #generatePk(DataNode, DbAttribute)}.      */
-name|Object
-name|generatePkForDbEntity
-parameter_list|(
-name|DataNode
-name|dataNode
-parameter_list|,
-name|DbEntity
-name|ent
-parameter_list|)
-throws|throws
-name|Exception
 function_decl|;
 comment|/**      * Generates a unique and non-repeating primary key for specified PK attribute.      *       * @since 3.0      */
 name|Object

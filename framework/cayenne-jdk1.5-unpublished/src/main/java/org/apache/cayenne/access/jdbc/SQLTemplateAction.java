@@ -400,32 +400,6 @@ specifier|protected
 name|DbEntity
 name|dbEntity
 decl_stmt|;
-comment|/**      * @deprecated since 3.0 use a      *             {@link #SQLTemplateAction(SQLTemplate, DbAdapter, EntityResolver)}      *             constructor.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|SQLTemplateAction
-parameter_list|(
-name|SQLTemplate
-name|query
-parameter_list|,
-name|DbAdapter
-name|adapter
-parameter_list|)
-block|{
-name|this
-operator|.
-name|query
-operator|=
-name|query
-expr_stmt|;
-name|this
-operator|.
-name|adapter
-operator|=
-name|adapter
-expr_stmt|;
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|SQLTemplateAction
@@ -1520,30 +1494,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-comment|/**      * Always returns true.      *       * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isRemovingLineBreaks
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
-comment|/**      * @deprecated since 3.0 - does nothing      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setRemovingLineBreaks
-parameter_list|(
-name|boolean
-name|removingLineBreaks
-parameter_list|)
-block|{
 block|}
 comment|/**      * Returns a SQLTemplate for this action.      */
 specifier|public

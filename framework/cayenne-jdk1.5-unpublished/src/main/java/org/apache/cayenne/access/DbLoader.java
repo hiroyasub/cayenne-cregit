@@ -741,17 +741,6 @@ return|return
 name|connection
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 in favor of {@link #getConnection()}.      */
-specifier|public
-name|Connection
-name|getCon
-parameter_list|()
-block|{
-return|return
-name|getConnection
-argument_list|()
-return|;
-block|}
 comment|/**      * Returns a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If generic      * class name is null (which is the default), DbLoader will assign each entity a      * unique class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|String

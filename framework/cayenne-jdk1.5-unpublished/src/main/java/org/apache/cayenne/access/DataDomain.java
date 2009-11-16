@@ -567,11 +567,6 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|DataContextFaults
-operator|.
-name|init
-argument_list|()
-expr_stmt|;
 name|setName
 argument_list|(
 name|name
@@ -592,12 +587,6 @@ name|Map
 name|properties
 parameter_list|)
 block|{
-comment|// keeping deprecated fault singletons for backwards compatibility
-name|DataContextFaults
-operator|.
-name|init
-argument_list|()
-expr_stmt|;
 name|setName
 argument_list|(
 name|name

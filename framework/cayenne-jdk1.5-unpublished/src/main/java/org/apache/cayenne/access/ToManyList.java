@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A list that holds objects for to-many relationships. All operations, except for  * resolving the list from DB, are not synchronized. The safest way to implement custom  * synchronization is to synchronize on parent ObjectStore.  *   */
+comment|/**  * A list that holds objects for to-many relationships. All operations, except for  * resolving the list from DB, are not synchronized. The safest way to implement custom  * synchronization is to synchronize on parent ObjectStore.  */
 end_comment
 
 begin_class
@@ -138,19 +138,6 @@ name|LinkedList
 argument_list|()
 expr_stmt|;
 block|}
-block|}
-comment|/**      * Returns a name of relationship for this list.      *       * @since 1.1      * @deprecated use {@link #getRelationshipName()} method      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getRelationship
-parameter_list|()
-block|{
-return|return
-name|getRelationshipName
-argument_list|()
-return|;
 block|}
 comment|// ====================================================
 comment|// Standard List Methods.
@@ -271,7 +258,7 @@ name|Collection
 name|collection
 parameter_list|)
 block|{
-comment|//no need for this operation for DataObjects...
+comment|// no need for this operation for DataObjects...
 block|}
 annotation|@
 name|Override
@@ -283,7 +270,7 @@ name|Collection
 name|collection
 parameter_list|)
 block|{
-comment|//no need for this operation for DataObjects...
+comment|// no need for this operation for DataObjects...
 block|}
 annotation|@
 name|Override
@@ -295,7 +282,7 @@ name|Object
 name|addedObject
 parameter_list|)
 block|{
-comment|//no need for this operation for DataObjects...
+comment|// no need for this operation for DataObjects...
 block|}
 annotation|@
 name|Override
@@ -307,7 +294,7 @@ name|Object
 name|removedObject
 parameter_list|)
 block|{
-comment|//no need for this operation for DataObjects...
+comment|// no need for this operation for DataObjects...
 block|}
 annotation|@
 name|Override
@@ -319,7 +306,7 @@ name|List
 name|resolved
 parameter_list|)
 block|{
-comment|//no need for this operation for DataObjects...
+comment|// no need for this operation for DataObjects...
 block|}
 block|}
 end_class

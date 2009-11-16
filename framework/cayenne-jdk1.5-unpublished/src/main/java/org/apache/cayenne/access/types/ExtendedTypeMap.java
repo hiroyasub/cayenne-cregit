@@ -43,16 +43,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|GregorianCalendar
 import|;
 end_import
@@ -557,24 +547,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns ExtendedTypeFactories registered with this instance.      *       * @since 1.2      * @deprecated since 3.0 unused      */
-specifier|public
-name|Collection
-argument_list|<
-name|ExtendedTypeFactory
-argument_list|>
-name|getFactories
-parameter_list|()
-block|{
-return|return
-name|Collections
-operator|.
-name|unmodifiableCollection
-argument_list|(
-name|extendedTypeFactories
-argument_list|)
-return|;
-block|}
 comment|/**      * Adds an ExtendedTypeFactory that will be consulted if no direct mapping for a given      * class exists. This feature can be used to map interfaces.      *<p>      *<i>Note that the order in which factories are added is important, as factories are      * consulted in turn when an ExtendedType is looked up, and lookup is stopped when any      * factory provides a non-null type.</i>      *</p>      *       * @since 1.2      */
 specifier|public
 name|void
@@ -944,22 +916,6 @@ expr_stmt|;
 block|}
 return|return
 name|types
-return|;
-block|}
-comment|/**      * @deprecated since 3.0 - use {@link #createType(String)} instead.      * @since 1.2      */
-specifier|protected
-name|ExtendedType
-name|getDefaultType
-parameter_list|(
-name|String
-name|javaClassName
-parameter_list|)
-block|{
-return|return
-name|createType
-argument_list|(
-name|javaClassName
-argument_list|)
 return|;
 block|}
 comment|/**      * Returns an ExtendedType for specific Java classes. Uses user-provided and      * Cayenne-provided {@link ExtendedTypeFactory} factories to instantiate the      * ExtendedType. All primitive classes must be converted to the corresponding Java      * classes by the callers.      *       * @return a default type for a given class or null if a class has no default type      *         mapping.      * @since 1.2      */

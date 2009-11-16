@@ -93,7 +93,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Ordering
+name|SelectQuery
 import|;
 end_import
 
@@ -107,7 +107,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SortOrder
 import|;
 end_import
 
@@ -306,9 +306,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|query
@@ -319,9 +319,9 @@ name|Artist
 operator|.
 name|DATE_OF_BIRTH_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|List
@@ -631,9 +631,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|query1
@@ -644,9 +644,9 @@ name|Artist
 operator|.
 name|DATE_OF_BIRTH_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|List

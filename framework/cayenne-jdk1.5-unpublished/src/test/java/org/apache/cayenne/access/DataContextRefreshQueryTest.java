@@ -490,7 +490,9 @@ name|addOrdering
 argument_list|(
 literal|"db:PAINTING_ID"
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List
@@ -740,7 +742,9 @@ name|addOrdering
 argument_list|(
 literal|"db:ARTIST_ID"
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List

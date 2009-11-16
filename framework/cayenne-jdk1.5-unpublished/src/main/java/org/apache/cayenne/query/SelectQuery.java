@@ -1148,64 +1148,7 @@ name|orderings
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Adds ordering specification to this query orderings. */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|addOrdering
-parameter_list|(
-name|String
-name|sortPathSpec
-parameter_list|,
-name|boolean
-name|isAscending
-parameter_list|)
-block|{
-name|addOrdering
-argument_list|(
-operator|new
-name|Ordering
-argument_list|(
-name|sortPathSpec
-argument_list|,
-name|isAscending
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-comment|/** Adds ordering specification to this query orderings. */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|addOrdering
-parameter_list|(
-name|String
-name|sortPathSpec
-parameter_list|,
-name|boolean
-name|isAscending
-parameter_list|,
-name|boolean
-name|ignoreCase
-parameter_list|)
-block|{
-name|addOrdering
-argument_list|(
-operator|new
-name|Ordering
-argument_list|(
-name|sortPathSpec
-argument_list|,
-name|isAscending
-argument_list|,
-name|ignoreCase
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Adds ordering specification to this query orderings.      * @since 3.0      */
+comment|/**      * Adds ordering specification to this query orderings.      *       * @since 3.0      */
 specifier|public
 name|void
 name|addOrdering
@@ -1454,34 +1397,6 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns refresh policy of this query. Default is<code>true</code>.      *       * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isRefreshingObjects
-parameter_list|()
-block|{
-return|return
-name|metaData
-operator|.
-name|isRefreshingObjects
-argument_list|()
-return|;
-block|}
-comment|/**      * @since 1.1      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setRefreshingObjects
-parameter_list|(
-name|boolean
-name|flag
-parameter_list|)
-block|{
-comment|// noop
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|QueryCacheStrategy
@@ -1639,31 +1554,6 @@ argument_list|(
 name|pageSize
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @since 1.1      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isResolvingInherited
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
-comment|/**      * Sets whether the objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @since 1.1      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setResolvingInherited
-parameter_list|(
-name|boolean
-name|b
-parameter_list|)
-block|{
-comment|// noop
 block|}
 comment|/**      * Returns a list that internally stores orderings, creating it on demand.      *       * @since 1.2      */
 name|List

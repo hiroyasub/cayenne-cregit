@@ -434,47 +434,6 @@ specifier|transient
 name|EventSubject
 name|eventSubject
 decl_stmt|;
-comment|/**      * Creates new named DataRowStore with default configuration.      *       * @deprecated since 3.0 as it instantiates an EventManager internally that can lead      *             to dispatch thread leaks.      */
-specifier|public
-name|DataRowStore
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|name
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_MAP
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Creates new DataRowStore with a specified name and a set of properties. If no      * properties are defined, default values are used.      *       * @param name DataRowStore name. Used to idenitfy this DataRowStore in events, etc.      *            Can't be null.      * @param properties Properties map used to configure DataRowStore parameters. Can be      *            null.      * @deprecated since 3.0 as it instantiates an EventManager internally that can lead      *             to dispatch thread leaks.      */
-specifier|public
-name|DataRowStore
-parameter_list|(
-name|String
-name|name
-parameter_list|,
-name|Map
-name|properties
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|name
-argument_list|,
-name|properties
-argument_list|,
-operator|new
-name|EventManager
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Creates new DataRowStore with a specified name and a set of properties. If no      * properties are defined, default values are used.      *       * @param name DataRowStore name. Used to idenitfy this DataRowStore in events, etc.      *            Can't be null.      * @param properties Properties map used to configure DataRowStore parameters. Can be      *            null.      * @param eventManager EventManager that should be used for posting and receiving      *            events.      * @since 1.2      */
 specifier|public
 name|DataRowStore

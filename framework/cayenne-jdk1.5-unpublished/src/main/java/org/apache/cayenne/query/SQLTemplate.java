@@ -1352,59 +1352,6 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isRefreshingObjects
-parameter_list|()
-block|{
-return|return
-name|metaData
-operator|.
-name|isRefreshingObjects
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 3.0. With introduction of the cache strategies this setting is      *             redundant, although it is still being taken into account. It will be      *             removed in the later versions of Cayenne.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setRefreshingObjects
-parameter_list|(
-name|boolean
-name|flag
-parameter_list|)
-block|{
-comment|// noop
-block|}
-comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isResolvingInherited
-parameter_list|()
-block|{
-return|return
-literal|true
-return|;
-block|}
-comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setResolvingInherited
-parameter_list|(
-name|boolean
-name|b
-parameter_list|)
-block|{
-comment|// noop
-block|}
 comment|/**      * Returns default SQL template for this query.      */
 specifier|public
 name|String
@@ -1901,7 +1848,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Sets statement's fetch size (0 for no default size)      * @since 3.0       */
+comment|/**      * Sets statement's fetch size (0 for no default size)      *       * @since 3.0      */
 specifier|public
 name|void
 name|setStatementFetchSize

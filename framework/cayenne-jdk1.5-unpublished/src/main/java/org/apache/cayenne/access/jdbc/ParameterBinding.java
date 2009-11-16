@@ -79,18 +79,6 @@ return|return
 name|jdbcType
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 use {@link #getScale()}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getPrecision
-parameter_list|()
-block|{
-return|return
-name|scale
-return|;
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|int
@@ -127,22 +115,6 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|setScale
-parameter_list|(
-name|int
-name|i
-parameter_list|)
-block|{
-name|scale
-operator|=
-name|i
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 3.0 use {@link #setScale(int)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setPrecision
 parameter_list|(
 name|int
 name|i

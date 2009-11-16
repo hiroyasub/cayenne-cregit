@@ -3367,22 +3367,6 @@ return|return
 name|location
 return|;
 block|}
-comment|/**      * Creates, configures and returns ResourceLocator object used to lookup DataMap      * files.      *       * @deprecated since 3.0 use {@link #createResourceFinder()}.      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|ResourceLocator
-name|configLocator
-parameter_list|()
-block|{
-return|return
-operator|(
-name|ResourceLocator
-operator|)
-name|createResourceFinder
-argument_list|()
-return|;
-block|}
 comment|/**      * Creates, configures and returns a default ResourceFinder.      *       * @since 3.0      */
 specifier|protected
 name|ResourceFinder

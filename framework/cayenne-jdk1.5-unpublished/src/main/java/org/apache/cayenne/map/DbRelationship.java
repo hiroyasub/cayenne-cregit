@@ -95,50 +95,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|event
-operator|.
-name|EventManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|event
-operator|.
-name|EventSubject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|event
-operator|.
-name|RelationshipEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|util
 operator|.
 name|Util
@@ -188,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based on one or  * more primary key/foreign key pairs.  *   */
+comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based on one or  * more primary key/foreign key pairs.  */
 end_comment
 
 begin_class
@@ -198,24 +154,6 @@ name|DbRelationship
 extends|extends
 name|Relationship
 block|{
-comment|/**      * @deprecated since 3.0 - unused      */
-specifier|public
-specifier|static
-specifier|final
-name|EventSubject
-name|PROPERTY_DID_CHANGE
-init|=
-name|EventSubject
-operator|.
-name|getSubject
-argument_list|(
-name|DbRelationship
-operator|.
-name|class
-argument_list|,
-literal|"PropertyDidChange"
-argument_list|)
-decl_stmt|;
 comment|// The columns through which the join is implemented.
 specifier|protected
 name|List
@@ -971,7 +909,7 @@ else|:
 literal|false
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if relationship from source to target points to      * dependent primary key. Dependent PK is a primary key column of the destination      * table that is also a FK to the source column.      */
+comment|/**      * Returns<code>true</code> if relationship from source to target points to dependent      * primary key. Dependent PK is a primary key column of the destination table that is      * also a FK to the source column.      */
 specifier|public
 name|boolean
 name|isToDependentPK
@@ -1682,41 +1620,6 @@ operator|.
 name|toMany
 operator|=
 name|toMany
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 3.0 - unused.      */
-specifier|protected
-name|void
-name|firePropertyDidChange
-parameter_list|()
-block|{
-name|RelationshipEvent
-name|event
-init|=
-operator|new
-name|RelationshipEvent
-argument_list|(
-name|this
-argument_list|,
-name|this
-argument_list|,
-name|this
-operator|.
-name|getSourceEntity
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|EventManager
-operator|.
-name|getDefaultManager
-argument_list|()
-operator|.
-name|postEvent
-argument_list|(
-name|event
-argument_list|,
-name|PROPERTY_DID_CHANGE
-argument_list|)
 expr_stmt|;
 block|}
 specifier|final

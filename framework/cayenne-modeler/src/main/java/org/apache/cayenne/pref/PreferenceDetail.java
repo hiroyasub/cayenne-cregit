@@ -696,10 +696,13 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupDbEntity
+name|lookupObjEntity
 argument_list|(
 name|domainPreference
 argument_list|)
+operator|.
+name|getDbEntity
+argument_list|()
 decl_stmt|;
 name|DataNode
 name|node

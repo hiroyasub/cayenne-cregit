@@ -227,6 +227,20 @@ name|SelectQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SortOrder
+import|;
+end_import
+
 begin_comment
 comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal "decorator" of  * Cayenne SelectQuery to provide access to the extra information of WebObjects  * EOFetchSpecification.  *   * @since 1.1  */
 end_comment
@@ -474,6 +488,14 @@ argument_list|(
 name|key
 argument_list|,
 name|asc
+condition|?
+name|SortOrder
+operator|.
+name|ASCENDING
+else|:
+name|SortOrder
+operator|.
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 block|}
@@ -1093,13 +1115,13 @@ name|qualifierMap
 argument_list|)
 return|;
 block|}
-comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a WebObjects-style      * EOModel. It recursively builds Cayenne Expression objects and assembles them into      * the final aggregate Expression.      *       */
+comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a WebObjects-style      * EOModel. It recursively builds Cayenne Expression objects and assembles them into      * the final aggregate Expression.      */
 specifier|static
 class|class
 name|EOFetchSpecificationParser
 block|{
 comment|// Xcode/EOModeler expressions have a colon at the end of the selector name
-comment|// (just like standard Objective-C syntax).  WOLips does not.  Add both
+comment|// (just like standard Objective-C syntax). WOLips does not. Add both
 comment|// sets to the hash map to handle both types of models.
 comment|// Selector strings (Java-base).
 specifier|static

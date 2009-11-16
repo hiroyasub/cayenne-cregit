@@ -111,21 +111,6 @@ return|return
 name|mockObjEntity
 return|;
 block|}
-annotation|@
-name|Override
-specifier|public
-specifier|synchronized
-name|ObjEntity
-name|lookupObjEntity
-parameter_list|(
-name|String
-name|entityName
-parameter_list|)
-block|{
-return|return
-name|mockObjEntity
-return|;
-block|}
 block|}
 end_class
 

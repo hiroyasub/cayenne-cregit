@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A noop ObjectContext used for unit testing.  *  */
+comment|/**  * A noop ObjectContext used for unit testing.  */
 end_comment
 
 begin_class
@@ -257,21 +257,6 @@ name|registerNewObject
 parameter_list|(
 name|Object
 name|object
-parameter_list|)
-block|{
-block|}
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|prepareForAccess
-parameter_list|(
-name|Persistent
-name|persistent
-parameter_list|,
-name|String
-name|property
 parameter_list|)
 block|{
 block|}

@@ -137,7 +137,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|Persistent
+name|query
+operator|.
+name|SelectQuery
 import|;
 end_import
 
@@ -151,7 +153,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SortOrder
 import|;
 end_import
 
@@ -501,7 +503,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME_PROPERTY
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List
@@ -893,7 +897,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME_PROPERTY
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List
@@ -1062,7 +1068,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME_PROPERTY
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List
@@ -1502,7 +1510,9 @@ name|Painting
 operator|.
 name|PAINTING_TITLE_PROPERTY
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List

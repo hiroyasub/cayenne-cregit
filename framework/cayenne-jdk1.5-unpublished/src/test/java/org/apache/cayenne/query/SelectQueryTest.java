@@ -350,7 +350,9 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|query
@@ -491,7 +493,9 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|query

@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Ordering
+name|SelectQuery
 import|;
 end_import
 
@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SortOrder
 import|;
 end_import
 
@@ -115,9 +115,9 @@ name|addOrdering
 argument_list|(
 literal|"artistName"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|TstQueryAssembler
@@ -220,9 +220,9 @@ name|addOrdering
 argument_list|(
 literal|"artistName"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|TstQueryAssembler
@@ -300,7 +300,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Tests ascending caese-insensitive ordering on string attribute.      */
+comment|/**      * Tests ascending case-insensitive ordering on string attribute.      */
 specifier|public
 name|void
 name|testDoTranslation4
@@ -325,11 +325,9 @@ name|addOrdering
 argument_list|(
 literal|"artistName"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
-argument_list|,
-literal|true
+name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 name|TstQueryAssembler
@@ -446,11 +444,9 @@ name|addOrdering
 argument_list|(
 literal|"artistName"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
-argument_list|,
-literal|true
+name|DESCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 name|q
@@ -459,9 +455,9 @@ name|addOrdering
 argument_list|(
 literal|"paintingArray.estimatedPrice"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|TstQueryAssembler
@@ -605,11 +601,9 @@ name|addOrdering
 argument_list|(
 literal|"artistName"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
-argument_list|,
-literal|true
+name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 name|q
@@ -618,11 +612,9 @@ name|addOrdering
 argument_list|(
 literal|"paintingArray.estimatedPrice"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
-argument_list|,
-literal|true
+name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 name|TstQueryAssembler
@@ -766,9 +758,9 @@ name|addOrdering
 argument_list|(
 literal|"artistName"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|DESC
+name|DESCENDING
 argument_list|)
 expr_stmt|;
 name|q
@@ -777,9 +769,9 @@ name|addOrdering
 argument_list|(
 literal|"paintingArray.estimatedPrice"
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|TstQueryAssembler

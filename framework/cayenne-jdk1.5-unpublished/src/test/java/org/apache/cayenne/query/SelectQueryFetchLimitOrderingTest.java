@@ -90,7 +90,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME_PROPERTY
 argument_list|,
-literal|true
+name|SortOrder
+operator|.
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|query

@@ -159,7 +159,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Ordering
+name|SelectQuery
 import|;
 end_import
 
@@ -173,7 +173,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SortOrder
 import|;
 end_import
 
@@ -267,9 +267,9 @@ name|CharPkTestEntity
 operator|.
 name|OTHER_COL_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|List

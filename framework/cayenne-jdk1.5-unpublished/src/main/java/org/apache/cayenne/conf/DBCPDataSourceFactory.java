@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataSourceFactory that creates a connection pool based on Apache Jakarta<a  * href="http://jakarta.apache.org/commons/dbcp/">commons-dbcp</a>. If you are using this  * factory, commons-pool and commons-dbcp jars must be present in runtime.<p/>  * DBCPDataSourceFactory can be selected in the Modeler for a DataNode. DBCP pool  * configuration is done via a properties file that is specified in the modeler. See this  *<a href="http://cwiki.apache.org/CAYDOC/DBCPDataSourceFactory">wiki page</a> for the  * list of supported properties.  *   * @since 1.2  */
+comment|/**  * A DataSourceFactory that creates a connection pool based on Apache Jakarta<a  * href="http://jakarta.apache.org/commons/dbcp/">commons-dbcp</a>. If you are using this  * factory, commons-pool and commons-dbcp jars must be present in runtime.  *<p/>  * DBCPDataSourceFactory can be selected in the Modeler for a DataNode. DBCP pool  * configuration is done via a properties file that is specified in the modeler. See this  *<a href="http://cwiki.apache.org/CAYDOC/DBCPDataSourceFactory">wiki page</a> for the  * list of supported properties.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -92,26 +92,6 @@ name|DBCPDataSourceFactory
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-comment|/**      * @deprecated since 2.0 - this information is now private.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PROPERTY_PREFIX
-init|=
-literal|"cayenne.dbcp."
-decl_stmt|;
-comment|/**      * @deprecated since 2.0 - this information is now private.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PS_PROPERTY_PREFIX
-init|=
-name|PROPERTY_PREFIX
-operator|+
-literal|"ps."
 decl_stmt|;
 specifier|protected
 name|Configuration

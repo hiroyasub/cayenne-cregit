@@ -495,7 +495,7 @@ argument_list|)
 decl_stmt|;
 name|oa
 operator|.
-name|setDbAttributeName
+name|setDbAttributePath
 argument_list|(
 name|dbPath
 argument_list|)
