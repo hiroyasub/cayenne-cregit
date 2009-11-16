@@ -184,50 +184,6 @@ name|FETCHING_DATA_ROWS_DEFAULT
 init|=
 literal|false
 decl_stmt|;
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|REFRESHING_OBJECTS_PROPERTY
-init|=
-literal|"cayenne.GenericSelectQuery.refreshingObjects"
-decl_stmt|;
-comment|/**      * @deprecated since 3.0      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|boolean
-name|REFRESHING_OBJECTS_DEFAULT
-init|=
-literal|true
-decl_stmt|;
-comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|RESOLVING_INHERITED_PROPERTY
-init|=
-literal|"cayenne.GenericSelectQuery.resolvingInherited"
-decl_stmt|;
-comment|/**      * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|boolean
-name|RESOLVING_INHERITED_DEFAULT
-init|=
-literal|true
-decl_stmt|;
 comment|/**      * @since 3.0      */
 specifier|public
 specifier|static
@@ -315,13 +271,6 @@ name|boolean
 name|isRefreshingObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if objects fetched via this query should be fully resolved according      * to the inheritance hierarchy.      *       * @deprecated since 3.0. Inheritance resolving is not optional anymore.      */
-annotation|@
-name|Deprecated
-name|boolean
-name|isResolvingInherited
-parameter_list|()
-function_decl|;
 comment|/**      * Returns query page size. Page size is a hint to Cayenne that query should be      * performed page by page, instead of retrieving all results at once. If the value      * returned is less than or equal to zero, no paging should occur.      */
 name|int
 name|getPageSize
@@ -330,13 +279,6 @@ function_decl|;
 comment|/**      * Specifies a start of a range when fetching a subset of records.      *       * @since 3.0      */
 name|int
 name|getFetchOffset
-parameter_list|()
-function_decl|;
-comment|/**      * @deprecated since 3.0, renamed to {@link #getFetchOffset()}.      */
-annotation|@
-name|Deprecated
-name|int
-name|getFetchStartIndex
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the limit on the maximum number of records that can be returned by this      * query. If the actual number of rows in the result exceeds the fetch limit, they      * will be discarded. One possible use of fetch limit is using it as a safeguard      * against large result sets that may lead to the application running out of memory,      * etc. If a fetch limit is greater or equal to zero, all rows will be returned.      *       * @return the limit on the maximum number of records that can be returned by this      *         query      */

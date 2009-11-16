@@ -1039,14 +1039,6 @@ name|isRefreshingObjects
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
-name|md
-operator|.
-name|isResolvingInherited
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|assertEquals
 argument_list|(
 name|QueryCacheStrategy
