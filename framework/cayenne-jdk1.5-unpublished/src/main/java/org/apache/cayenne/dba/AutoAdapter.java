@@ -920,20 +920,6 @@ name|node
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 - almost all DB's support FK's now and also this flag is less      *             relevant for Cayenne now.      */
-specifier|public
-name|boolean
-name|supportsFkConstraints
-parameter_list|()
-block|{
-return|return
-name|getAdapter
-argument_list|()
-operator|.
-name|supportsFkConstraints
-argument_list|()
-return|;
-block|}
 specifier|public
 name|boolean
 name|supportsUniqueConstraints
@@ -971,25 +957,6 @@ argument_list|()
 operator|.
 name|supportsBatchUpdates
 argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 3.0 as the decorated method is deprecated.      */
-specifier|public
-name|String
-name|dropTable
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
-block|{
-return|return
-name|getAdapter
-argument_list|()
-operator|.
-name|dropTable
-argument_list|(
-name|entity
-argument_list|)
 return|;
 block|}
 specifier|public

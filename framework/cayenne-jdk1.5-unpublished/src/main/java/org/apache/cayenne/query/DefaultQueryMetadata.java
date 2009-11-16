@@ -283,20 +283,6 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getCachePolicy
-parameter_list|()
-block|{
-return|return
-name|QueryMetadata
-operator|.
-name|CACHE_POLICY_DEFAULT
-return|;
-block|}
 specifier|public
 name|boolean
 name|isFetchingDataRows

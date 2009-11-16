@@ -47,36 +47,8 @@ name|ResultSet
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbAttribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|validation
-operator|.
-name|ValidationResult
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines methods to read Java objects from JDBC ResultSets and write as parameters of  * PreparedStatements.  *   */
+comment|/**  * Defines methods to read Java objects from JDBC ResultSets and write as parameters of  * PreparedStatements.  */
 end_comment
 
 begin_interface
@@ -88,26 +60,6 @@ comment|/**      * Returns a full name of Java class that this ExtendedType supp
 name|String
 name|getClassName
 parameter_list|()
-function_decl|;
-comment|/**      * Performs validation of an object property. Property is considered valid if this it      * satisfies the database constraints known to this ExtendedType. In case of      * validation failure, failures are appended to the ValidationResult object and      *<code>false</code> is returned.      *       * @since 1.1      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
-name|boolean
-name|validateProperty
-parameter_list|(
-name|Object
-name|source
-parameter_list|,
-name|String
-name|property
-parameter_list|,
-name|Object
-name|value
-parameter_list|,
-name|DbAttribute
-name|dbAttribute
-parameter_list|,
-name|ValidationResult
-name|validationResult
-parameter_list|)
 function_decl|;
 comment|/**      * Initializes a single parameter of a PreparedStatement with object value.      */
 name|void
@@ -131,7 +83,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Reads an object from JDBC ResultSet column, converting it to class returned by      * 'getClassName' method.      *       * @throws Exception if read error ocurred, or an object can't be converted to a      *             target Java class.      */
+comment|/**      * Reads an object from JDBC ResultSet column, converting it to class returned by      * 'getClassName' method.      *       * @throws Exception if read error occurred, or an object can't be converted to a      *             target Java class.      */
 name|Object
 name|materializeObject
 parameter_list|(

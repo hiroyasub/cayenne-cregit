@@ -127,7 +127,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|QueryMetadata
+name|QueryCacheStrategy
 import|;
 end_import
 
@@ -509,9 +509,9 @@ argument_list|)
 decl_stmt|;
 name|query
 operator|.
-name|setCachePolicy
+name|setCacheStrategy
 argument_list|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE
 argument_list|)

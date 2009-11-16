@@ -224,11 +224,6 @@ name|DataNode
 name|node
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if a target database supports FK constraints.      *       * @deprecated since 3.0 - almost all DB's support FK's now and also this flag is less      *             relevant for Cayenne now.      */
-name|boolean
-name|supportsFkConstraints
-parameter_list|()
-function_decl|;
 comment|/**      * Returns true if a target database supports UNIQUE constraints.      *       * @since 1.1      */
 name|boolean
 name|supportsUniqueConstraints
@@ -243,14 +238,6 @@ comment|/**      * Returns<code>true</code> if the target database supports batc
 name|boolean
 name|supportsBatchUpdates
 parameter_list|()
-function_decl|;
-comment|/**      * Returns a SQL string that can be used to drop a database table corresponding to      * entity parameter.      *       * @deprecated since 3.0 Cayenne supports 'dropTableStatements' to allow multiple      *             statements to be executed when dropping the table.      */
-name|String
-name|dropTable
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
 function_decl|;
 comment|/**      * Returns a collection of SQL statements needed to drop a database table.      *       * @since 3.0      */
 name|Collection

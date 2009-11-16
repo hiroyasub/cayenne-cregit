@@ -484,21 +484,6 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**          * @deprecated since 3.0 in favor of 'getCacheStrategy'.          */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getCachePolicy
-parameter_list|()
-block|{
-return|return
-name|mdDelegate
-operator|.
-name|getCachePolicy
-argument_list|()
-return|;
-block|}
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy

@@ -286,15 +286,6 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|supportsFkConstraints
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
-specifier|public
-name|boolean
 name|supportsUniqueConstraints
 parameter_list|()
 block|{

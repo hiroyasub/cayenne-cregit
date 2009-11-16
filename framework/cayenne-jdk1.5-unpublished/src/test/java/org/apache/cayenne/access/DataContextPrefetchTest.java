@@ -279,7 +279,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|QueryMetadata
+name|QueryCacheStrategy
 import|;
 end_import
 
@@ -2540,9 +2540,9 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setCachePolicy
+name|setCacheStrategy
 argument_list|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|SHARED_CACHE
 argument_list|)
@@ -2702,9 +2702,9 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|setCachePolicy
+name|setCacheStrategy
 argument_list|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE
 argument_list|)

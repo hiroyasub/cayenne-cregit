@@ -445,22 +445,8 @@ name|UpdateBatchQuery
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|validation
-operator|.
-name|ValidationResult
-import|;
-end_import
-
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  * connection settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver     *</pre>  *   */
+comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  * connection settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.cayenne.adapter = org.apache.cayenne.dba.oracle.OracleAdapter  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *</pre>  */
 end_comment
 
 begin_class
@@ -667,7 +653,7 @@ return|return
 name|supportsOracleLOB
 return|;
 block|}
-comment|/**      * Utility method that returns<code>true</code> if the query will update at least      * one BLOB or CLOB DbAttribute.      *       * @since 1.2      */
+comment|/**      * Utility method that returns<code>true</code> if the query will update at least one      * BLOB or CLOB DbAttribute.      *       * @since 1.2      */
 specifier|static
 name|boolean
 name|updatesLOBColumns
@@ -941,7 +927,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a query string to drop a table corresponding to<code>ent</code>      * DbEntity. Changes superclass behavior to drop all related foreign key constraints.      *       * @since 3.0      */
+comment|/**      * Returns a query string to drop a table corresponding to<code>ent</code> DbEntity.      * Changes superclass behavior to drop all related foreign key constraints.      *       * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1352,33 +1338,6 @@ name|class
 operator|.
 name|getName
 argument_list|()
-return|;
-block|}
-comment|/**          * @deprecated since 3.0 as validation should not be done at the DataNode level.          */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|validateProperty
-parameter_list|(
-name|Object
-name|source
-parameter_list|,
-name|String
-name|property
-parameter_list|,
-name|Object
-name|value
-parameter_list|,
-name|DbAttribute
-name|dbAttribute
-parameter_list|,
-name|ValidationResult
-name|validationResult
-parameter_list|)
-block|{
-return|return
-literal|true
 return|;
 block|}
 specifier|public

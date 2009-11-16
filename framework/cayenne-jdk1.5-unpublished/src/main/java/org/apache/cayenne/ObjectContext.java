@@ -217,19 +217,6 @@ name|boolean
 name|lazyFaulting
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 3.0 use {@link #prepareForAccess(Persistent, String, boolean)}.      */
-annotation|@
-name|Deprecated
-name|void
-name|prepareForAccess
-parameter_list|(
-name|Persistent
-name|object
-parameter_list|,
-name|String
-name|property
-parameter_list|)
-function_decl|;
 comment|/**      * A callback method that child Persistent objects are expected to call from inside      * the setter after modifying a value of a persistent property, including "simple" and      * "arc" properties.      */
 name|void
 name|propertyChanged

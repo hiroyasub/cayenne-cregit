@@ -1482,40 +1482,6 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
-comment|/**      * @since 1.1      * @deprecated since 3.0 {@link #getCacheStrategy()} replaces this method.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getCachePolicy
-parameter_list|()
-block|{
-return|return
-name|metaData
-operator|.
-name|getCachePolicy
-argument_list|()
-return|;
-block|}
-comment|/**      * @since 1.1      * @deprecated since 3.0 {@link #setCacheStrategy(QueryCacheStrategy)} replaces this      *             method.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setCachePolicy
-parameter_list|(
-name|String
-name|policy
-parameter_list|)
-block|{
-name|metaData
-operator|.
-name|setCachePolicy
-argument_list|(
-name|policy
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|QueryCacheStrategy

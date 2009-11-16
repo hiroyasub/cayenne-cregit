@@ -19,6 +19,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -75,24 +95,31 @@ return|return
 literal|""
 return|;
 block|}
-comment|/**      * Returns a SQL string to drop a table corresponding to<code>ent</code> DbEntity.      *       * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
+name|Collection
+argument_list|<
 name|String
-name|dropTable
+argument_list|>
+name|dropTableStatements
 parameter_list|(
 name|DbEntity
-name|ent
+name|table
 parameter_list|)
 block|{
 comment|// hsqldb doesn't support schema namespaces, so remove if found
 return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
 literal|"DROP TABLE "
 operator|+
 name|getTableName
 argument_list|(
-name|ent
+name|table
+argument_list|)
 argument_list|)
 return|;
 block|}

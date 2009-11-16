@@ -117,36 +117,8 @@ name|TypesMapping
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbAttribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|validation
-operator|.
-name|ValidationResult
-import|;
-end_import
-
 begin_comment
-comment|/**  * An ExtendedType that handles a Java Enum based upon the Cayenne  * ExtendedEnumeration interface.  The ExtendedEnumeration interface  * requires the developer to specify the database values for the Enum  * being mapped.  This ExtendedType is used to auto-register those  * Enums found in the model.  *<p>  *<i>Requires Java 1.5 or newer</i>  *</p>  *   * @since 3.0  */
+comment|/**  * An ExtendedType that handles a Java Enum based upon the Cayenne ExtendedEnumeration  * interface. The ExtendedEnumeration interface requires the developer to specify the  * database values for the Enum being mapped. This ExtendedType is used to auto-register  * those Enums found in the model.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -181,7 +153,7 @@ init|=
 literal|null
 decl_stmt|;
 comment|// Contains a mapping of database values (Integer or String) and the
-comment|// Enum for that value.  This is to facilitate mapping database values
+comment|// Enum for that value. This is to facilitate mapping database values
 comment|// back to the Enum upon reading them from the database.
 specifier|private
 name|Map
@@ -596,44 +568,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.0 as validation should not be done at the DataNode level.      */
-specifier|public
-name|boolean
-name|validateProperty
-parameter_list|(
-name|Object
-name|source
-parameter_list|,
-name|String
-name|property
-parameter_list|,
-name|Object
-name|value
-parameter_list|,
-name|DbAttribute
-name|dbAttribute
-parameter_list|,
-name|ValidationResult
-name|validationResult
-parameter_list|)
-block|{
-return|return
-name|AbstractType
-operator|.
-name|validateNull
-argument_list|(
-name|source
-argument_list|,
-name|property
-argument_list|,
-name|value
-argument_list|,
-name|dbAttribute
-argument_list|,
-name|validationResult
-argument_list|)
-return|;
-block|}
 comment|/**      * Register the given enum with the mapped database value.      */
 specifier|private
 name|void
@@ -708,7 +642,7 @@ operator|==
 literal|false
 condition|)
 block|{
-comment|// All integers enums are mapped.  Not necessarily all strings.
+comment|// All integers enums are mapped. Not necessarily all strings.
 if|if
 condition|(
 name|databaseValue
@@ -756,7 +690,7 @@ name|databaseValue
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the enumeration mapping for this enumerated data type.  The      * key is the database value, the value is the actual enum.      */
+comment|/**      * Returns the enumeration mapping for this enumerated data type. The key is the      * database value, the value is the actual enum.      */
 specifier|public
 name|Map
 argument_list|<

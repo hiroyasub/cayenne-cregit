@@ -411,20 +411,6 @@ return|return
 literal|0
 return|;
 block|}
-comment|/**              * @deprecated since 3.0 in favor of 'getCacheStrategy'.              */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getCachePolicy
-parameter_list|()
-block|{
-return|return
-name|QueryMetadata
-operator|.
-name|NO_CACHE
-return|;
-block|}
 comment|/**              * @since 3.0              */
 specifier|public
 name|QueryCacheStrategy

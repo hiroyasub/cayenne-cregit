@@ -366,10 +366,6 @@ name|supportsBatchUpdates
 decl_stmt|;
 specifier|protected
 name|boolean
-name|supportsFkConstraints
-decl_stmt|;
-specifier|protected
-name|boolean
 name|supportsUniqueConstraints
 decl_stmt|;
 specifier|protected
@@ -424,13 +420,6 @@ expr_stmt|;
 name|this
 operator|.
 name|setSupportsUniqueConstraints
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|setSupportsFkConstraints
 argument_list|(
 literal|true
 argument_list|)
@@ -655,32 +644,6 @@ operator|=
 name|pkGenerator
 expr_stmt|;
 block|}
-comment|/**      * Returns true.      */
-specifier|public
-name|boolean
-name|supportsFkConstraints
-parameter_list|()
-block|{
-return|return
-name|supportsFkConstraints
-return|;
-block|}
-comment|/**      * @since 1.1      */
-specifier|public
-name|void
-name|setSupportsFkConstraints
-parameter_list|(
-name|boolean
-name|flag
-parameter_list|)
-block|{
-name|this
-operator|.
-name|supportsFkConstraints
-operator|=
-name|flag
-expr_stmt|;
-block|}
 comment|/**      * Returns true.      *       * @since 1.1      */
 specifier|public
 name|boolean
@@ -706,28 +669,6 @@ name|supportsUniqueConstraints
 operator|=
 name|flag
 expr_stmt|;
-block|}
-comment|/**      * Returns a SQL string to drop a table corresponding to table DbEntity.      *       * @deprecated since 3.0 in favor of "dropTableStatements"      */
-specifier|public
-name|String
-name|dropTable
-parameter_list|(
-name|DbEntity
-name|table
-parameter_list|)
-block|{
-return|return
-name|dropTableStatements
-argument_list|(
-name|table
-argument_list|)
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
-return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
@@ -755,11 +696,11 @@ name|isQuotingSQLIdentifiers
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"DROP TABLE "
 argument_list|)

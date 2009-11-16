@@ -47,21 +47,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Ordering
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QueryMetadata
+name|QueryCacheStrategy
 import|;
 end_import
 
@@ -76,6 +62,20 @@ operator|.
 name|query
 operator|.
 name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SortOrder
 import|;
 end_import
 
@@ -303,9 +303,9 @@ name|ClientMtTable1
 operator|.
 name|GLOBAL_ATTRIBUTE1_PROPERTY
 argument_list|,
-name|Ordering
+name|SortOrder
 operator|.
-name|ASC
+name|ASCENDING
 argument_list|)
 expr_stmt|;
 name|query
@@ -317,9 +317,9 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setCachePolicy
+name|setCacheStrategy
 argument_list|(
-name|QueryMetadata
+name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE
 argument_list|)
