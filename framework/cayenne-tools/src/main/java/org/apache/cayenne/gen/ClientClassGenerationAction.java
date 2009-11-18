@@ -86,7 +86,7 @@ specifier|final
 name|String
 name|DMAP_SINGLE_CLASS_TEMPLATE
 init|=
-literal|"dotemplates/v1_2/datamap-singleclass.vm"
+literal|"dotemplates/v1_2/client-datamap-singleclass.vm"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -94,7 +94,7 @@ specifier|final
 name|String
 name|DMAP_SUBCLASS_TEMPLATE
 init|=
-literal|"dotemplates/v1_2/datamap-subclass.vm"
+literal|"dotemplates/v1_2/client-datamap-subclass.vm"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -102,7 +102,7 @@ specifier|final
 name|String
 name|DMAP_SUPERCLASS_TEMPLATE
 init|=
-literal|"dotemplates/v1_2/datamap-superclass.vm"
+literal|"dotemplates/v1_2/client-datamap-superclass.vm"
 decl_stmt|;
 specifier|public
 specifier|static

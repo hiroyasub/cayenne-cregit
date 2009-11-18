@@ -75,7 +75,7 @@ name|testdo
 operator|.
 name|mt
 operator|.
-name|MtTable1
+name|ClientMtTable1
 import|;
 end_import
 
@@ -115,7 +115,7 @@ decl_stmt|;
 specifier|public
 name|List
 argument_list|<
-name|MtTable1
+name|ClientMtTable1
 argument_list|>
 name|performAllMtTable1
 parameter_list|(
@@ -139,7 +139,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|MtTable1
+name|ClientMtTable1
 argument_list|>
 name|performMtQueryWithLocalCache
 parameter_list|(
@@ -163,7 +163,7 @@ block|}
 specifier|public
 name|List
 argument_list|<
-name|MtTable1
+name|ClientMtTable1
 argument_list|>
 name|performParameterizedMtQueryWithLocalCache
 parameter_list|(
