@@ -10,8 +10,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|access
 package|;
 end_package
 
@@ -52,18 +50,6 @@ operator|.
 name|util
 operator|.
 name|Set
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|DataChannel
 import|;
 end_import
 
@@ -138,16 +124,18 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * @since 3.0  * note: made public in 3.1 to be used in all tiers  */
 end_comment
 
 begin_class
+specifier|public
 specifier|abstract
 class|class
 name|DataChannelSyncCallbackAction
 implements|implements
 name|GraphChangeHandler
 block|{
+specifier|public
 specifier|static
 name|DataChannelSyncCallbackAction
 name|getCallbackAction
@@ -298,11 +286,13 @@ name|boolean
 name|hasListeners
 parameter_list|()
 function_decl|;
+specifier|public
 specifier|abstract
 name|void
 name|applyPreCommit
 parameter_list|()
 function_decl|;
+specifier|public
 specifier|abstract
 name|void
 name|applyPostCommit
@@ -684,6 +674,7 @@ return|;
 block|}
 annotation|@
 name|Override
+specifier|public
 name|void
 name|applyPreCommit
 parameter_list|()
@@ -709,6 +700,7 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
+specifier|public
 name|void
 name|applyPostCommit
 parameter_list|()
@@ -791,6 +783,7 @@ return|;
 block|}
 annotation|@
 name|Override
+specifier|public
 name|void
 name|applyPreCommit
 parameter_list|()
@@ -799,6 +792,7 @@ comment|// noop
 block|}
 annotation|@
 name|Override
+specifier|public
 name|void
 name|applyPostCommit
 parameter_list|()
