@@ -24,13 +24,16 @@ specifier|public
 enum|enum
 name|SortOrder
 block|{
-comment|/**      * ASCENDING = Ascending order, case sensitive.<br/>      * ASCENDING_INSENSITIVE = Ascending order, case insensitive<br/>      * DESCENDING = Descending order, case sensitive.<br>      * DESCENDING_INSENSITIVE = Descending order, case insensitive.<br>      */
+comment|/**      * Ascending order, case sensitive      */
 name|ASCENDING
 block|,
+comment|/**      * Ascending order, case insensitive      */
 name|ASCENDING_INSENSITIVE
 block|,
+comment|/**      * Descending order, case sensitive      */
 name|DESCENDING
 block|,
+comment|/**      * Descending order, case insensitive      */
 name|DESCENDING_INSENSITIVE
 block|}
 end_enum
