@@ -328,7 +328,7 @@ specifier|final
 name|String
 name|CONNECTION_NAME_KEY
 init|=
-literal|"cayenne.test.connection"
+literal|"cayenneTestConnection"
 decl_stmt|;
 specifier|public
 specifier|static
