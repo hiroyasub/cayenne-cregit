@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
+name|unit
 package|;
 end_package
 
@@ -157,34 +157,6 @@ name|ExtendedProperties
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects using information stored  * in $HOME/.cayenne/connection.properties. As of now this is purely a utility class. Its  * features are not used in deployment.  */
 end_comment
@@ -194,20 +166,6 @@ specifier|public
 class|class
 name|ConnectionProperties
 block|{
-specifier|private
-specifier|static
-name|Log
-name|logObj
-init|=
-name|LogFactory
-operator|.
-name|getLog
-argument_list|(
-name|ConnectionProperties
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -1395,7 +1353,7 @@ return|;
 block|}
 block|}
 comment|/**      * Creates a DataSourceInfo object from a set of properties.      */
-specifier|protected
+specifier|public
 name|DataSourceInfo
 name|buildDataSourceInfo
 parameter_list|(
@@ -1498,7 +1456,7 @@ name|dsi
 return|;
 block|}
 comment|/**      * Returns a list of connection names configured in the properties object.      */
-specifier|protected
+specifier|public
 name|List
 argument_list|<
 name|String

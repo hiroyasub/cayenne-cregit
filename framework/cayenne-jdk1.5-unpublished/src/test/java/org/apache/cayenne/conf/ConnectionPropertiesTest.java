@@ -63,6 +63,20 @@ name|DataSourceInfo
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|ConnectionProperties
+import|;
+end_import
+
 begin_comment
 comment|/**  */
 end_comment

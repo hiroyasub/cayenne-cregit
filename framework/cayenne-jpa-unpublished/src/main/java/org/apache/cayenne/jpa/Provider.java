@@ -235,20 +235,6 @@ name|cayenne
 operator|.
 name|conf
 operator|.
-name|ConnectionProperties
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|conf
-operator|.
 name|ResourceFinder
 import|;
 end_import
@@ -648,7 +634,7 @@ name|DATA_SOURCE_FACTORY_PROPERTY
 init|=
 literal|"org.apache.cayenne.jpa.jpaDataSourceFactory"
 decl_stmt|;
-comment|// ... DataSource
+comment|// ... DataSource see ConnectionProperties
 specifier|public
 specifier|static
 specifier|final
@@ -657,9 +643,7 @@ name|ADAPTER_PROPERTY
 init|=
 literal|"org.apache.cayenne."
 operator|+
-name|ConnectionProperties
-operator|.
-name|ADAPTER_KEY
+literal|"adapter"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -669,9 +653,7 @@ name|DATA_SOURCE_DRIVER_PROPERTY
 init|=
 literal|"org.apache.cayenne.datasource."
 operator|+
-name|ConnectionProperties
-operator|.
-name|DRIVER_KEY
+literal|"jdbc.driver"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -681,9 +663,7 @@ name|DATA_SOURCE_URL_PROPERTY
 init|=
 literal|"org.apache.cayenne.datasource."
 operator|+
-name|ConnectionProperties
-operator|.
-name|URL_KEY
+literal|"jdbc.url"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -693,9 +673,7 @@ name|DATA_SOURCE_USER_NAME_PROPERTY
 init|=
 literal|"org.apache.cayenne.datasource."
 operator|+
-name|ConnectionProperties
-operator|.
-name|USER_NAME_KEY
+literal|"jdbc.username"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -705,9 +683,7 @@ name|DATA_SOURCE_PASSWORD_PROPERTY
 init|=
 literal|"org.apache.cayenne.datasource."
 operator|+
-name|ConnectionProperties
-operator|.
-name|PASSWORD_KEY
+literal|"jdbc.password"
 decl_stmt|;
 specifier|public
 specifier|static
