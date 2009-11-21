@@ -154,8 +154,11 @@ name|Exception
 block|{
 if|if
 condition|(
-name|getProjectFile
-argument_list|()
+name|projectFile
+operator|!=
+literal|null
+operator|&&
+name|projectFile
 operator|.
 name|isFile
 argument_list|()
