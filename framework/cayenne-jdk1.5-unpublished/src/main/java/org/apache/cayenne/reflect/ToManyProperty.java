@@ -56,6 +56,32 @@ parameter_list|)
 throws|throws
 name|PropertyException
 function_decl|;
+comment|/**      * Adds value to collection, without triggering changing events      * This method is mostly for internal use      * @since 3.1      */
+name|void
+name|addTargetDirectly
+parameter_list|(
+name|Object
+name|source
+parameter_list|,
+name|Object
+name|target
+parameter_list|)
+throws|throws
+name|PropertyException
+function_decl|;
+comment|/**      * Removes value from collection, without triggering changing events      * This method is mostly for internal use      * @since 3.1      */
+name|void
+name|removeTargetDirectly
+parameter_list|(
+name|Object
+name|source
+parameter_list|,
+name|Object
+name|target
+parameter_list|)
+throws|throws
+name|PropertyException
+function_decl|;
 block|}
 end_interface
 

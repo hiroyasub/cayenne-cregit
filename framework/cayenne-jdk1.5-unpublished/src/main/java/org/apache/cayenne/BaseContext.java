@@ -343,6 +343,20 @@ name|ToOneProperty
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|ObjectContextGraphAction
+import|;
+end_import
+
 begin_comment
 comment|/**  * A common base superclass for Cayenne ObjectContext implementors.  *   * @since 3.0  */
 end_comment
@@ -439,6 +453,11 @@ specifier|protected
 name|QueryCache
 name|queryCache
 decl_stmt|;
+comment|/**      * Graph action that handles property changes      * @since 3.1      */
+specifier|protected
+name|ObjectContextGraphAction
+name|graphAction
+decl_stmt|;
 comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 3.0      */
 specifier|protected
 name|Map
@@ -449,6 +468,19 @@ name|Object
 argument_list|>
 name|userProperties
 decl_stmt|;
+specifier|protected
+name|BaseContext
+parameter_list|()
+block|{
+name|graphAction
+operator|=
+operator|new
+name|ObjectContextGraphAction
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 specifier|abstract
 name|void
@@ -972,7 +1004,6 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
-specifier|abstract
 name|void
 name|propertyChanged
 parameter_list|(
@@ -988,7 +1019,21 @@ parameter_list|,
 name|Object
 name|newValue
 parameter_list|)
-function_decl|;
+block|{
+name|graphAction
+operator|.
+name|handlePropertyChange
+argument_list|(
+name|object
+argument_list|,
+name|property
+argument_list|,
+name|oldValue
+argument_list|,
+name|newValue
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 specifier|abstract
 name|void

@@ -10,27 +10,52 @@ operator|.
 name|apache
 operator|.
 name|cayenne
+operator|.
+name|util
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
 begin_comment
-comment|/**  * Defines how ObjectContext should behave in response to  * {@link ObjectContext#propertyChanged(Persistent, String, Object, Object)} calls.  *   * @since 3.0  */
+comment|/**  * Simple interface to unify PersistentObject* collections in way of  * setting properties directly  * @see org.apache.cayenne.reflect.ToManyMapProperty  * @since 3.1  */
 end_comment
 
-begin_enum
-enum|enum
-name|PropertyChangeProcessingStrategy
+begin_interface
+specifier|public
+interface|interface
+name|PersistentObjectCollection
+extends|extends
+name|Collection
 block|{
-comment|/**      * A strategy that does no extra processing of property changes. Usually used when      * already committed changes are merged from a downstream channel.      */
-name|IGNORE
-block|,
-comment|/**      * A strategy that records the change in the change log and marks participating      * objects as dirty, but no attempt is made to process reverse relationships. Usually      * used when processing changes from an upstream (child) context.      */
-name|RECORD
-block|,
-comment|/**      * A strategy that records the change in the change log and marks participating      * objects as dirty, and then initiates a complimentary change to the reverse      * relationships. The default operation mode used for changes initiated by the user.      */
-name|RECORD_AND_PROCESS_REVERSE_ARCS
-block|; }
-end_enum
+comment|/**      * Adds an object without triggering an event       */
+specifier|public
+name|void
+name|addDirectly
+parameter_list|(
+name|Object
+name|target
+parameter_list|)
+function_decl|;
+comment|/**      * Removes an object without triggering an event       */
+specifier|public
+name|void
+name|removeDirectly
+parameter_list|(
+name|Object
+name|target
+parameter_list|)
+function_decl|;
+block|}
+end_interface
 
 end_unit
 

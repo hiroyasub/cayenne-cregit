@@ -218,50 +218,12 @@ name|CayenneContext
 extends|extends
 name|BaseContext
 block|{
-comment|/**      * @since 3.0      */
-specifier|private
-specifier|static
-name|ThreadLocal
-argument_list|<
-name|PropertyChangeProcessingStrategy
-argument_list|>
-name|PROPERTY_CHANGE_PROCESSING_STRATEGY
-init|=
-operator|new
-name|ThreadLocal
-argument_list|<
-name|PropertyChangeProcessingStrategy
-argument_list|>
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|protected
-name|PropertyChangeProcessingStrategy
-name|initialValue
-parameter_list|()
-block|{
-return|return
-name|PropertyChangeProcessingStrategy
-operator|.
-name|RECORD_AND_PROCESS_REVERSE_ARCS
-return|;
-block|}
-block|}
-decl_stmt|;
 specifier|protected
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
 name|CayenneContextGraphManager
 name|graphManager
-decl_stmt|;
-comment|// note that it is important to reuse the same action within the property change
-comment|// thread to avoid a loop of "propertyChange" calls on handling reverse relationships.
-comment|// Here we go further and make action a thread-safe ivar that tracks its own thread
-comment|// state.
-name|CayenneContextGraphAction
-name|graphAction
 decl_stmt|;
 comment|// object that merges "backdoor" changes that come from the channel.
 name|CayenneContextMergeHandler
@@ -312,16 +274,6 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|graphAction
-operator|=
-operator|new
-name|CayenneContextGraphAction
-argument_list|(
-name|this
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
 name|graphManager
 operator|=
 operator|new
@@ -337,38 +289,6 @@ expr_stmt|;
 name|setChannel
 argument_list|(
 name|channel
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @since 3.0      */
-comment|// accesses a static thread local variable... still keeping the method non-static for
-comment|// better future portability...
-name|PropertyChangeProcessingStrategy
-name|getPropertyChangeProcessingStrategy
-parameter_list|()
-block|{
-return|return
-name|PROPERTY_CHANGE_PROCESSING_STRATEGY
-operator|.
-name|get
-argument_list|()
-return|;
-block|}
-comment|/**      * @since 3.0      */
-comment|// accesses a static thread local variable... still keeping the method non-static for
-comment|// better future portability...
-name|void
-name|setPropertyChangeProcessingStrategy
-parameter_list|(
-name|PropertyChangeProcessingStrategy
-name|strategy
-parameter_list|)
-block|{
-name|PROPERTY_CHANGE_PROCESSING_STRATEGY
-operator|.
-name|set
-argument_list|(
-name|strategy
 argument_list|)
 expr_stmt|;
 block|}
@@ -567,14 +487,6 @@ parameter_list|()
 block|{
 return|return
 name|graphManager
-return|;
-block|}
-name|CayenneContextGraphAction
-name|internalGraphAction
-parameter_list|()
-block|{
-return|return
-name|graphAction
 return|;
 block|}
 comment|/**      * Commits changes to uncommitted objects. First checks if there are changes in this      * context and if any changes are detected, sends a commit message to remote Cayenne      * service via an internal instance of CayenneConnector.      */
@@ -1494,50 +1406,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|void
-name|propertyChanged
-parameter_list|(
-name|Persistent
-name|object
-parameter_list|,
-name|String
-name|property
-parameter_list|,
-name|Object
-name|oldValue
-parameter_list|,
-name|Object
-name|newValue
-parameter_list|)
-block|{
-if|if
-condition|(
-name|getPropertyChangeProcessingStrategy
-argument_list|()
-operator|!=
-name|PropertyChangeProcessingStrategy
-operator|.
-name|IGNORE
-condition|)
-block|{
-name|graphAction
-operator|.
-name|handlePropertyChange
-argument_list|(
-name|object
-argument_list|,
-name|property
-argument_list|,
-name|oldValue
-argument_list|,
-name|newValue
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-annotation|@
-name|Override
-specifier|public
 name|Collection
 argument_list|<
 name|?
@@ -1821,19 +1689,8 @@ condition|(
 name|childContext
 condition|)
 block|{
-name|PropertyChangeProcessingStrategy
-name|oldStrategy
-init|=
-name|getPropertyChangeProcessingStrategy
-argument_list|()
-decl_stmt|;
-name|setPropertyChangeProcessingStrategy
-argument_list|(
-name|PropertyChangeProcessingStrategy
-operator|.
-name|RECORD
-argument_list|)
-expr_stmt|;
+comment|//            PropertyChangeProcessingStrategy oldStrategy = getPropertyChangeProcessingStrategy();
+comment|//            setPropertyChangeProcessingStrategy(PropertyChangeProcessingStrategy.RECORD);
 try|try
 block|{
 name|changes
@@ -1850,11 +1707,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|setPropertyChangeProcessingStrategy
-argument_list|(
-name|oldStrategy
-argument_list|)
-expr_stmt|;
+comment|//                setPropertyChangeProcessingStrategy(oldStrategy);
 block|}
 name|fireDataChannelChanged
 argument_list|(

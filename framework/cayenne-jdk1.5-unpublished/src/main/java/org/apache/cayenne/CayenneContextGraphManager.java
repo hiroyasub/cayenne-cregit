@@ -665,26 +665,6 @@ operator|.
 name|getEntityResolver
 argument_list|()
 decl_stmt|;
-comment|// avoid processing callbacks when updating the map...
-name|PropertyChangeProcessingStrategy
-name|oldChangeStrategy
-init|=
-name|context
-operator|.
-name|getPropertyChangeProcessingStrategy
-argument_list|()
-decl_stmt|;
-name|context
-operator|.
-name|setPropertyChangeProcessingStrategy
-argument_list|(
-name|PropertyChangeProcessingStrategy
-operator|.
-name|IGNORE
-argument_list|)
-expr_stmt|;
-try|try
-block|{
 while|while
 condition|(
 name|it
@@ -808,17 +788,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
-block|}
-finally|finally
-block|{
-name|context
-operator|.
-name|setPropertyChangeProcessingStrategy
-argument_list|(
-name|oldChangeStrategy
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 comment|// clone of DataDomainSyncBucket.remapTarget

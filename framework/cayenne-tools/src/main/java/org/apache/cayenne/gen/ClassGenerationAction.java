@@ -375,6 +375,17 @@ name|TEMPLATES_DIR_NAME
 operator|+
 literal|"datamap-superclass.vm"
 decl_stmt|;
+comment|//light classes template - it is for server, but extends PeristentObject
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|LIGHT_SUPERCLASS_TEMPLATE
+init|=
+name|TEMPLATES_DIR_NAME
+operator|+
+literal|"light-superclass.vm"
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
