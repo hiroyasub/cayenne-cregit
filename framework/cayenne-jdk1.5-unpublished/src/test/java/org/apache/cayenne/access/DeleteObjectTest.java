@@ -89,18 +89,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|PersistenceState
 import|;
 end_import
@@ -161,6 +149,20 @@ name|CayenneCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_comment
 comment|/**  */
 end_comment
@@ -214,7 +216,7 @@ expr_stmt|;
 name|Artist
 name|artist
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -552,7 +554,7 @@ expr_stmt|;
 name|Artist
 name|artist
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -742,7 +744,7 @@ expr_stmt|;
 name|Artist
 name|artist
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

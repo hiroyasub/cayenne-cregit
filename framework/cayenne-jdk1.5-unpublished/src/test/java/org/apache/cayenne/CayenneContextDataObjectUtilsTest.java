@@ -129,6 +129,20 @@ name|CayenneResources
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -238,7 +252,7 @@ expr_stmt|;
 name|ClientMtTable1
 name|o
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

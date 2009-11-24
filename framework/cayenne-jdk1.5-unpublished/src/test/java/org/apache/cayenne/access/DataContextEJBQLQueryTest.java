@@ -141,18 +141,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectContext
 import|;
 end_import
@@ -222,6 +210,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -2191,7 +2193,7 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -2264,7 +2266,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -2342,7 +2344,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -2411,7 +2413,7 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|a
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -2484,7 +2486,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -2565,7 +2567,7 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|a
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -2638,7 +2640,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -2707,7 +2709,7 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|a
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -2780,7 +2782,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(

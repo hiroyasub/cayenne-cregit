@@ -177,6 +177,20 @@ name|CayenneResources
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_comment
 comment|/**  * Tests peer context synchronization via ClientChannel events.  *   */
 end_comment
@@ -801,7 +815,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -828,7 +842,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -982,7 +996,7 @@ init|=
 operator|(
 name|ClientMtTable2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1009,7 +1023,7 @@ init|=
 operator|(
 name|ClientMtTable2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1062,7 +1076,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1215,7 +1229,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1242,7 +1256,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1437,7 +1451,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1545,7 +1559,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1648,7 +1662,7 @@ init|=
 operator|(
 name|ClientMtTable4
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1675,7 +1689,7 @@ init|=
 operator|(
 name|ClientMtTable4
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1728,7 +1742,7 @@ init|=
 operator|(
 name|ClientMtTable5
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(

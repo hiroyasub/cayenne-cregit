@@ -107,18 +107,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectContext
 import|;
 end_import
@@ -174,6 +162,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -352,7 +354,7 @@ comment|//
 comment|// Set<Object> ids = new HashSet<Object>();
 comment|// Iterator<?> it = objects.iterator();
 comment|// while (it.hasNext()) {
-comment|// Object id = DataObjectUtils.pkForObject((Persistent) it.next());
+comment|// Object id = Cayenne.pkForObject((Persistent) it.next());
 comment|// ids.add(id);
 comment|// }
 comment|//
@@ -444,7 +446,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -565,7 +567,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -686,7 +688,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -835,7 +837,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -956,7 +958,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1091,7 +1093,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1216,7 +1218,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1351,7 +1353,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1472,7 +1474,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1599,7 +1601,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1679,7 +1681,7 @@ name|setParameter
 argument_list|(
 literal|"x"
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1751,7 +1753,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1959,7 +1961,7 @@ name|setParameter
 argument_list|(
 literal|"x"
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -2031,7 +2033,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -2160,7 +2162,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(

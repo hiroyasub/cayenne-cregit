@@ -101,18 +101,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|DataRow
 import|;
 end_import
@@ -248,6 +236,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -1778,7 +1780,7 @@ decl_stmt|;
 name|Artist
 name|newArtist
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1930,7 +1932,7 @@ decl_stmt|;
 name|Artist
 name|newArtist
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

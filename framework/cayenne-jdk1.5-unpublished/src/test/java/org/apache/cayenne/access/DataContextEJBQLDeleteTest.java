@@ -57,18 +57,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|QueryResponse
 import|;
 end_import
@@ -98,6 +86,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -347,7 +349,7 @@ argument_list|)
 expr_stmt|;
 name|assertNotNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -364,7 +366,7 @@ argument_list|)
 expr_stmt|;
 name|assertNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

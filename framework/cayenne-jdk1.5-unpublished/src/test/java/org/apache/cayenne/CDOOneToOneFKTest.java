@@ -97,6 +97,20 @@ name|RelationshipCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_comment
 comment|/**  * Tests the behavior of one-to-one relationship where to-one is pointing to an FK.  *   * @since 1.1  */
 end_comment
@@ -191,7 +205,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -248,7 +262,7 @@ init|=
 operator|(
 name|ToOneFK1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -337,7 +351,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -410,7 +424,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -540,7 +554,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -675,7 +689,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -796,7 +810,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -930,7 +944,7 @@ init|=
 operator|(
 name|ToOneFK2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(

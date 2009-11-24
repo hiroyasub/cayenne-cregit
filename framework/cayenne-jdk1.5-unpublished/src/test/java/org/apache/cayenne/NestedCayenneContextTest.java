@@ -191,6 +191,20 @@ name|ClientMtTooneMaster
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_comment
 comment|/**  * Tests nested object contexts  */
 end_comment
@@ -786,7 +800,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1084,7 +1098,7 @@ expr_stmt|;
 name|int
 name|modifiedid
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1236,7 +1250,7 @@ expr_stmt|;
 name|int
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1874,7 +1888,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1994,7 +2008,7 @@ init|=
 operator|(
 name|ClientMtTable2
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -2007,7 +2021,7 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// trigger object creation in the peer nested DC
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -3768,7 +3782,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

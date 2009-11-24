@@ -113,18 +113,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectId
 import|;
 end_import
@@ -166,6 +154,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -383,7 +385,7 @@ comment|// this will throw an exception if id wasn't generated one way or anothe
 name|int
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -413,7 +415,7 @@ expr_stmt|;
 name|GeneratedColumnTestEntity
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -757,7 +759,7 @@ index|[
 name|i
 index|]
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -810,7 +812,7 @@ block|{
 name|GeneratedColumnTestEntity
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -982,7 +984,7 @@ expr_stmt|;
 name|int
 name|masterId
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1098,7 +1100,7 @@ expr_stmt|;
 name|Object
 name|fetchedDep2
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1213,7 +1215,7 @@ expr_stmt|;
 name|int
 name|id1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1230,7 +1232,7 @@ expr_stmt|;
 name|int
 name|id2
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1267,7 +1269,7 @@ argument_list|)
 expr_stmt|;
 name|assertNotNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1283,7 +1285,7 @@ argument_list|)
 expr_stmt|;
 name|assertNotNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1378,7 +1380,7 @@ comment|// this will throw an exception if id wasn't generated
 name|int
 name|id1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1395,7 +1397,7 @@ expr_stmt|;
 name|int
 name|id2
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1433,7 +1435,7 @@ argument_list|)
 expr_stmt|;
 name|assertNotNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1449,7 +1451,7 @@ argument_list|)
 expr_stmt|;
 name|assertNotNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

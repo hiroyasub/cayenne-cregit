@@ -181,6 +181,20 @@ name|RelationshipCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_comment
 comment|/**  * Test case for objects with flattened relationships.  *   */
 end_comment
@@ -300,7 +314,7 @@ expr_stmt|;
 name|int
 name|pk
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -315,7 +329,7 @@ expr_stmt|;
 name|FlattenedTest1
 name|fresh01
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -423,7 +437,7 @@ expr_stmt|;
 name|FlattenedTest1
 name|ft1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -480,7 +494,7 @@ expr_stmt|;
 name|FlattenedTest3
 name|ft3
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1219,7 +1233,7 @@ expr_stmt|;
 name|FlattenedCircular
 name|fc1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

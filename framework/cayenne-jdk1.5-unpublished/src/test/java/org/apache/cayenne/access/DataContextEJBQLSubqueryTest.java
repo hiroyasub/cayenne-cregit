@@ -75,18 +75,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|Persistent
 import|;
 end_import
@@ -116,6 +104,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -230,7 +232,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -347,7 +349,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -483,7 +485,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -626,7 +628,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -769,7 +771,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -926,7 +928,7 @@ block|{
 name|Object
 name|id
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(

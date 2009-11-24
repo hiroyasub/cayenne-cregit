@@ -123,7 +123,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|CayenneCase
+name|CaseDataFactory
 import|;
 end_import
 
@@ -137,7 +137,21 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|CaseDataFactory
+name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -1547,7 +1561,7 @@ expr_stmt|;
 name|Artist
 name|object2
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

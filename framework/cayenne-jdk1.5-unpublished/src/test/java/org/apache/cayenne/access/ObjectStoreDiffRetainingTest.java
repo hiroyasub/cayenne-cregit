@@ -47,7 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
+name|unit
+operator|.
+name|CayenneCase
 import|;
 end_import
 
@@ -59,9 +61,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|util
 operator|.
-name|CayenneCase
+name|Cayenne
 import|;
 end_import
 
@@ -115,7 +117,7 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -197,7 +199,7 @@ decl_stmt|;
 name|Artist
 name|a
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

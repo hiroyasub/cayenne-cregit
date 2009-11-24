@@ -79,18 +79,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectContext
 import|;
 end_import
@@ -132,6 +120,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -187,7 +189,7 @@ decl_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -266,7 +268,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -319,7 +321,7 @@ decl_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -398,7 +400,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -451,7 +453,7 @@ decl_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -530,7 +532,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -560,7 +562,7 @@ comment|//
 comment|//        EJBQLQuery check = new EJBQLQuery("select count(p) from Painting p "
 comment|//                + "WHERE p.paintingTitle is NULL or p.estimatedPrice<= 5000");
 comment|//
-comment|//        Object notUpdated = DataObjectUtils.objectForQuery(context, check);
+comment|//        Object notUpdated = Cayenne.objectForQuery(context, check);
 comment|//        assertEquals(new Long(2l), notUpdated);
 comment|//
 comment|//        String ejbql = "UPDATE Painting AS p SET p.estimatedPrice = p.estimatedPrice * 2";
@@ -573,7 +575,7 @@ comment|//        assertNotNull(count);
 comment|//        assertEquals(1, count.length);
 comment|//        assertEquals(2, count[0]);
 comment|//
-comment|//        notUpdated = DataObjectUtils.objectForQuery(context, check);
+comment|//        notUpdated = Cayenne.objectForQuery(context, check);
 comment|//        assertEquals(new Long(0l), notUpdated);
 comment|//    }
 specifier|public
@@ -608,7 +610,7 @@ decl_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -687,7 +689,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -740,7 +742,7 @@ decl_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -819,7 +821,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -935,7 +937,7 @@ decl_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1014,7 +1016,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1056,7 +1058,7 @@ decl_stmt|;
 name|Artist
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1092,7 +1094,7 @@ expr_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1180,7 +1182,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1261,7 +1263,7 @@ expr_stmt|;
 name|CompoundPkTestEntity
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1295,7 +1297,7 @@ expr_stmt|;
 name|Object
 name|notUpdated
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1383,7 +1385,7 @@ argument_list|)
 expr_stmt|;
 name|notUpdated
 operator|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(

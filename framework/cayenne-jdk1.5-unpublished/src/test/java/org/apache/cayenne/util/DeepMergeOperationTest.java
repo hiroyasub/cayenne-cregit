@@ -297,7 +297,7 @@ init|=
 operator|(
 name|Artist
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

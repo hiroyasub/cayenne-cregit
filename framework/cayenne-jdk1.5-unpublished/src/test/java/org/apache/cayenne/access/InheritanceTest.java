@@ -53,18 +53,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|PrefetchTreeNode
@@ -303,6 +291,20 @@ name|PeopleCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_comment
 comment|/**  * Testing Cayenne behavior with DataObject inheritance hierarchies.  */
 end_comment
@@ -379,7 +381,7 @@ expr_stmt|;
 name|PersonNotes
 name|note
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -499,7 +501,7 @@ init|=
 operator|(
 name|AbstractPerson
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -697,7 +699,7 @@ init|=
 operator|(
 name|AbstractPerson
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1030,7 +1032,7 @@ init|=
 operator|(
 name|PersonNotes
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -1425,7 +1427,7 @@ operator|=
 operator|(
 name|Employee
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

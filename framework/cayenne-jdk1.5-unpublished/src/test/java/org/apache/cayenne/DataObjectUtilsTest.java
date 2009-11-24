@@ -173,7 +173,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EJBQLQuery
+name|CapsStrategy
 import|;
 end_import
 
@@ -187,7 +187,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|CapsStrategy
+name|EJBQLQuery
 import|;
 end_import
 
@@ -244,6 +244,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -382,7 +396,7 @@ expr_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -454,7 +468,7 @@ decl_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -554,7 +568,7 @@ expr_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -630,7 +644,7 @@ decl_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -671,7 +685,7 @@ comment|// use bogus non-existent PK
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -731,7 +745,7 @@ name|assertSame
 argument_list|(
 name|o1
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -748,7 +762,7 @@ name|assertSame
 argument_list|(
 name|o2
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -765,7 +779,7 @@ try|try
 block|{
 name|assertNull
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -828,7 +842,7 @@ decl_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -900,7 +914,7 @@ decl_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -962,7 +976,7 @@ decl_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1040,7 +1054,7 @@ decl_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1131,7 +1145,7 @@ expr_stmt|;
 name|Object
 name|object
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1232,7 +1246,7 @@ decl_stmt|;
 name|Map
 name|pk
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|compoundPKForObject
 argument_list|(
@@ -1342,7 +1356,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1422,7 +1436,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1502,7 +1516,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1584,7 +1598,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1658,7 +1672,7 @@ argument_list|(
 literal|33001
 argument_list|)
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(
@@ -1728,7 +1742,7 @@ name|assertEquals
 argument_list|(
 literal|"CPK"
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|pkForObject
 argument_list|(

@@ -23,18 +23,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ObjectContext
 import|;
 end_import
@@ -83,6 +71,20 @@ name|RelationshipCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -118,7 +120,7 @@ decl_stmt|;
 name|FlattenedTest1
 name|ft
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -157,7 +159,7 @@ comment|//
 comment|// Set<Object> ids = new HashSet<Object>();
 comment|// Iterator<?> it = objects.iterator();
 comment|// while (it.hasNext()) {
-comment|// Object id = DataObjectUtils.pkForObject((Persistent) it.next());
+comment|// Object id = Cayenne.pkForObject((Persistent) it.next());
 comment|// ids.add(id);
 comment|// }
 comment|//

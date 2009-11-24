@@ -111,6 +111,20 @@ name|RelationshipCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -146,7 +160,7 @@ expr_stmt|;
 name|SetToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -202,7 +216,7 @@ name|targets
 operator|.
 name|contains
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -226,7 +240,7 @@ name|targets
 operator|.
 name|contains
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -250,7 +264,7 @@ name|targets
 operator|.
 name|contains
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -322,7 +336,7 @@ init|=
 operator|(
 name|SetToMany
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -374,7 +388,7 @@ name|targets
 operator|.
 name|contains
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -398,7 +412,7 @@ name|targets
 operator|.
 name|contains
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -422,7 +436,7 @@ name|targets
 operator|.
 name|contains
 argument_list|(
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -456,7 +470,7 @@ expr_stmt|;
 name|SetToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -597,7 +611,7 @@ expr_stmt|;
 name|SetToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -632,7 +646,7 @@ expr_stmt|;
 name|SetToManyTarget
 name|target
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -748,7 +762,7 @@ expr_stmt|;
 name|SetToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

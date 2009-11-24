@@ -264,7 +264,7 @@ expr_stmt|;
 try|try
 block|{
 comment|// M1
-comment|//            Manager o1 = DataObjectUtils.objectForPK(context, Manager.class, 1);
+comment|//            Manager o1 = Cayenne.objectForPK(context, Manager.class, 1);
 comment|//            assertTrue(o1 instanceof CAY_207Manager1);
 comment|//
 comment|//            Object p1 = o1.readProperty("clientContactType");
@@ -306,7 +306,7 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-comment|//            Manager o2 = DataObjectUtils.objectForPK(context, Manager.class, 2);
+comment|//            Manager o2 = Cayenne.objectForPK(context, Manager.class, 2);
 comment|//            assertTrue(o2 instanceof CAY_207Manager2);
 comment|//
 comment|//            Object p2 = o2.readProperty("clientContactType");
@@ -348,7 +348,7 @@ expr_stmt|;
 try|try
 block|{
 comment|// M1
-comment|//            Manager o1 = DataObjectUtils.objectForPK(context, CAY_207Manager1.class, 1);
+comment|//            Manager o1 = Cayenne.objectForPK(context, CAY_207Manager1.class, 1);
 comment|//            assertTrue(o1 instanceof CAY_207Manager1);
 comment|//
 comment|//            Object p1 = o1.readProperty("clientContactType");
@@ -390,7 +390,7 @@ argument_list|()
 expr_stmt|;
 try|try
 block|{
-comment|//            Manager o2 = DataObjectUtils.objectForPK(context, CAY_207Manager2.class, 2);
+comment|//            Manager o2 = Cayenne.objectForPK(context, CAY_207Manager2.class, 2);
 comment|//            assertTrue(o2 instanceof CAY_207Manager2);
 comment|//
 comment|//            Object p2 = o2.readProperty("clientContactType");
@@ -435,7 +435,7 @@ comment|//
 comment|//            // should succeed...
 comment|//            context.commitChanges();
 comment|//
-comment|//            int pk = DataObjectUtils.intPKForObject(o2);
+comment|//            int pk = Cayenne.intPKForObject(o2);
 comment|//            String query = "SELECT #result('CLIENT_CONTACT_TYPE' 'String' 'CLIENT_CONTACT_TYPE') "
 comment|//                    + "FROM PERSON WHERE PERSON_ID = "
 comment|//                    + pk;

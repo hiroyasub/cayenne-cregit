@@ -63,7 +63,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
+name|PersistenceState
 import|;
 end_import
 
@@ -75,7 +75,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|PersistenceState
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -292,7 +294,7 @@ comment|// detail object PK must match...
 name|int
 name|pk
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -305,7 +307,7 @@ init|=
 operator|(
 name|PreferenceDetail
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(

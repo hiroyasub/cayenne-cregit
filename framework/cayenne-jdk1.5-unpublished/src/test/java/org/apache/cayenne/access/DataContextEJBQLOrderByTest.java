@@ -33,18 +33,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|Persistent
 import|;
 end_import
@@ -74,6 +62,20 @@ operator|.
 name|unit
 operator|.
 name|CayenneCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
 import|;
 end_import
 
@@ -138,7 +140,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -158,7 +160,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -178,7 +180,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -233,7 +235,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -253,7 +255,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -273,7 +275,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -344,7 +346,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -364,7 +366,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -384,7 +386,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -439,7 +441,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -459,7 +461,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -479,7 +481,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -550,7 +552,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -570,7 +572,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -590,7 +592,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -645,7 +647,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -665,7 +667,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -685,7 +687,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -756,7 +758,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -776,7 +778,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -831,7 +833,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -851,7 +853,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -922,7 +924,7 @@ name|assertEquals
 argument_list|(
 literal|33003
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -942,7 +944,7 @@ name|assertEquals
 argument_list|(
 literal|33004
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -962,7 +964,7 @@ name|assertEquals
 argument_list|(
 literal|33002
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -982,7 +984,7 @@ name|assertEquals
 argument_list|(
 literal|33001
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1053,7 +1055,7 @@ name|assertEquals
 argument_list|(
 literal|33005
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1073,7 +1075,7 @@ name|assertEquals
 argument_list|(
 literal|33006
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1128,7 +1130,7 @@ name|assertEquals
 argument_list|(
 literal|33006
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -1148,7 +1150,7 @@ name|assertEquals
 argument_list|(
 literal|33005
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(

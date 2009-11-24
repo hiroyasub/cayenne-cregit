@@ -127,6 +127,20 @@ name|RelationshipCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Cayenne
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -162,7 +176,7 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -246,7 +260,7 @@ name|assertEquals
 argument_list|(
 literal|1
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -266,7 +280,7 @@ name|assertEquals
 argument_list|(
 literal|2
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -286,7 +300,7 @@ name|assertEquals
 argument_list|(
 literal|3
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -318,7 +332,7 @@ expr_stmt|;
 name|IdMapToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -414,7 +428,7 @@ name|assertEquals
 argument_list|(
 literal|1
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -438,7 +452,7 @@ name|assertEquals
 argument_list|(
 literal|2
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -462,7 +476,7 @@ name|assertEquals
 argument_list|(
 literal|3
 argument_list|,
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|intPKForObject
 argument_list|(
@@ -536,7 +550,7 @@ init|=
 operator|(
 name|MapToMany
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(
@@ -628,7 +642,7 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -778,7 +792,7 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -936,7 +950,7 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
@@ -1086,7 +1100,7 @@ expr_stmt|;
 name|MapToMany
 name|o1
 init|=
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForPK
 argument_list|(
