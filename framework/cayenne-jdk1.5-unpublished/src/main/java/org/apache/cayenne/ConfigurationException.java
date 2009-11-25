@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A runtime exception thrown on failures in Cayenne configuration.  *   */
+comment|/**  * A runtime exception thrown on failures in Cayenne configuration.  */
 end_comment
 
 begin_class
@@ -30,21 +30,27 @@ name|ConfigurationException
 parameter_list|()
 block|{
 block|}
-comment|/**      * Constructs an<code>ConfigurationException</code> with the specified detail      * message.      *       * @param message the detail message.      */
+comment|/**      * Constructs an exception with the specified message with an optional list of message      * formatting arguments. Message formatting rules follow "String.format(..)"      * conventions.      */
 specifier|public
 name|ConfigurationException
 parameter_list|(
 name|String
-name|message
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|message
+name|messageFormat
+argument_list|,
+name|messageArgs
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructs an<code>ConfigurationException</code> that wraps      *<code>exception</code> thrown elsewhere.      */
+comment|/**      * Constructs an exception wrapping another exception thrown elsewhere.      */
 specifier|public
 name|ConfigurationException
 parameter_list|(
@@ -62,17 +68,23 @@ specifier|public
 name|ConfigurationException
 parameter_list|(
 name|String
-name|message
+name|messageFormat
 parameter_list|,
 name|Throwable
 name|cause
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|message
+name|messageFormat
 argument_list|,
 name|cause
+argument_list|,
+name|messageArgs
 argument_list|)
 expr_stmt|;
 block|}

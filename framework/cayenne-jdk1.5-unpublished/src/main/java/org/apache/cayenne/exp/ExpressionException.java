@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * RuntimeException subclass thrown in cases of errors during   * expressions creation/parsing.  *   */
+comment|/**  * RuntimeException thrown on errors during expressions creation/parsing.  */
 end_comment
 
 begin_class
@@ -42,7 +42,6 @@ specifier|protected
 name|String
 name|expressionString
 decl_stmt|;
-comment|/**      * Constructor for ExpressionException.      */
 specifier|public
 name|ExpressionException
 parameter_list|()
@@ -51,50 +50,59 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Constructor for ExpressionException.      * @param msg      */
 specifier|public
 name|ExpressionException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
+name|messageFormat
+argument_list|,
+name|messageArgs
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructor for ExpressionException.      * @param th      */
-specifier|public
-name|ExpressionException
-parameter_list|(
-name|Throwable
-name|th
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|th
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Constructor for ExpressionException.      * @param msg      * @param th      */
 specifier|public
 name|ExpressionException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
 parameter_list|,
 name|Throwable
-name|th
+name|cause
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
+name|messageFormat
 argument_list|,
-name|th
+name|cause
+argument_list|,
+name|messageArgs
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|ExpressionException
+parameter_list|(
+name|Throwable
+name|cause
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|cause
 argument_list|)
 expr_stmt|;
 block|}
@@ -103,20 +111,26 @@ specifier|public
 name|ExpressionException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
 parameter_list|,
 name|String
 name|expressionString
 parameter_list|,
 name|Throwable
 name|th
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
+name|messageFormat
 argument_list|,
 name|th
+argument_list|,
+name|messageArgs
 argument_list|)
 expr_stmt|;
 name|this

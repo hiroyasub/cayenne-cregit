@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A runtime exception thrown when<code>DataObject.resolveFault()</code> finds that no  * matching row exists in the database for an<code>ObjectId</code>.  *   */
+comment|/**  * A runtime exception thrown when during lazy object initialization Cayenne finds that no  * matching row exists in the database for a given ObjectId.  */
 end_comment
 
 begin_class
@@ -24,7 +24,6 @@ name|FaultFailureException
 extends|extends
 name|CayenneRuntimeException
 block|{
-comment|/**      * Creates new FaultFailureException without detail message.      */
 specifier|public
 name|FaultFailureException
 parameter_list|()
@@ -33,31 +32,22 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Constructs an FaultFailureException with the specified detail message.      *       * @param msg the detail message.      */
 specifier|public
 name|FaultFailureException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Constructs an FaultFailureException that wraps a<code>Throwable</code> thrown      * elsewhere.      */
-specifier|public
-name|FaultFailureException
-parameter_list|(
-name|Throwable
-name|th
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|th
+name|messageFormat
+argument_list|,
+name|messageArgs
 argument_list|)
 expr_stmt|;
 block|}
@@ -65,17 +55,36 @@ specifier|public
 name|FaultFailureException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
 parameter_list|,
 name|Throwable
-name|th
+name|cause
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
+name|messageFormat
 argument_list|,
-name|th
+name|cause
+argument_list|,
+name|messageArgs
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|FaultFailureException
+parameter_list|(
+name|Throwable
+name|cause
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|cause
 argument_list|)
 expr_stmt|;
 block|}

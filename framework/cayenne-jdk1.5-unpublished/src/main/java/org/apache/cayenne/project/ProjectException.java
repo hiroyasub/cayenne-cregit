@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Runtime exception thrown on various errors within project model.  *   */
+comment|/**  * Runtime exception thrown on various errors within project model.  */
 end_comment
 
 begin_class
@@ -38,7 +38,6 @@ name|ProjectException
 extends|extends
 name|CayenneRuntimeException
 block|{
-comment|/**      * Constructor for ProjectException.      */
 specifier|public
 name|ProjectException
 parameter_list|()
@@ -47,50 +46,59 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Constructor for ProjectException.      */
 specifier|public
 name|ProjectException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
+name|messageFormat
+argument_list|,
+name|messageArgs
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructor for ProjectException.      */
-specifier|public
-name|ProjectException
-parameter_list|(
-name|Throwable
-name|th
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|th
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Constructor for ProjectException.      */
 specifier|public
 name|ProjectException
 parameter_list|(
 name|String
-name|msg
+name|messageFormat
 parameter_list|,
 name|Throwable
-name|th
+name|cause
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|msg
+name|messageFormat
 argument_list|,
-name|th
+name|cause
+argument_list|,
+name|messageArgs
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|ProjectException
+parameter_list|(
+name|Throwable
+name|cause
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|cause
 argument_list|)
 expr_stmt|;
 block|}

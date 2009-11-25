@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  *   */
+comment|/**  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  */
 end_comment
 
 begin_class
@@ -118,16 +118,27 @@ specifier|public
 name|CayenneException
 parameter_list|(
 name|String
-name|message
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|message
+name|String
+operator|.
+name|format
+argument_list|(
+name|messageFormat
+argument_list|,
+name|messageArgs
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructs an<code>CayenneException</code> that wraps a<code>cause</code>      * thrown elsewhere.      */
+comment|/**      * Constructs an<code>CayenneException</code> that wraps a<code>cause</code> thrown      * elsewhere.      */
 specifier|public
 name|CayenneException
 parameter_list|(
@@ -145,15 +156,26 @@ specifier|public
 name|CayenneException
 parameter_list|(
 name|String
-name|message
+name|messageFormat
 parameter_list|,
 name|Throwable
 name|cause
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|message
+name|String
+operator|.
+name|format
+argument_list|(
+name|messageFormat
+argument_list|,
+name|messageArgs
+argument_list|)
 argument_list|,
 name|cause
 argument_list|)

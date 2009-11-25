@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A generic unchecked exception that may be thrown by Cayenne framework. All runtime  * exceptions in Cayenne inherit from this class.  *   */
+comment|/**  * A generic unchecked exception that may be thrown by Cayenne framework. All runtime  * exceptions in Cayenne inherit from this class.  */
 end_comment
 
 begin_class
@@ -30,17 +30,28 @@ name|CayenneRuntimeException
 parameter_list|()
 block|{
 block|}
-comment|/**      * Constructs an<code>CayenneRuntimeException</code> with the specified detail      * message.      *       * @param message the detail message.      */
+comment|/**      * Constructs an exception with the specified message and an optional list of message      * formatting arguments. Message formatting rules follow "String.format(..)"      * conventions.      */
 specifier|public
 name|CayenneRuntimeException
 parameter_list|(
 name|String
-name|message
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|message
+name|String
+operator|.
+name|format
+argument_list|(
+name|messageFormat
+argument_list|,
+name|messageArgs
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -58,19 +69,31 @@ name|cause
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Constructs an exception with the specified message and exception cause and an      * optional list of message formatting arguments. Message formatting rules follow      * "String.format(..)" conventions.      */
 specifier|public
 name|CayenneRuntimeException
 parameter_list|(
 name|String
-name|message
+name|messageFormat
 parameter_list|,
 name|Throwable
 name|cause
+parameter_list|,
+name|Object
+modifier|...
+name|messageArgs
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|message
+name|String
+operator|.
+name|format
+argument_list|(
+name|messageFormat
+argument_list|,
+name|messageArgs
+argument_list|)
 argument_list|,
 name|cause
 argument_list|)
