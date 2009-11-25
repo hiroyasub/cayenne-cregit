@@ -1138,7 +1138,7 @@ block|}
 block|}
 block|}
 comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done using Oracle      * driver utilities, using reflection.      */
-specifier|private
+specifier|protected
 name|void
 name|writeBlob
 parameter_list|(
@@ -1209,7 +1209,7 @@ throw|;
 block|}
 block|}
 comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done using Oracle      * driver utilities.      */
-specifier|private
+specifier|protected
 name|void
 name|writeClob
 parameter_list|(
@@ -1280,7 +1280,7 @@ throw|;
 block|}
 block|}
 comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done using Oracle      * driver utilities.      */
-specifier|private
+specifier|protected
 name|void
 name|writeClob
 parameter_list|(
