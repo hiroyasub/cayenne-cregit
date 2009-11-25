@@ -291,6 +291,20 @@ name|ToManyMapProperty
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|PersistentObjectMap
+import|;
+end_import
+
 begin_comment
 comment|/**  * A GraphMap extension that works together with ObjectContext to track persistent object  * changes and send events.  *   * @since 1.2  */
 end_comment
@@ -923,6 +937,7 @@ operator|==
 name|target
 condition|)
 block|{
+comment|//this remove does not trigger event in PersistentObjectMap
 name|it
 operator|.
 name|remove
@@ -931,9 +946,17 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+comment|//TODO: (andrey, 25/11/09 - this is a hack to prevent event triggering
+comment|// (and concurrent exceptions)
+comment|//should find a way to get rid of type casting
+operator|(
+operator|(
+name|PersistentObjectMap
+operator|)
 name|map
+operator|)
 operator|.
-name|put
+name|putDirectly
 argument_list|(
 name|newKey
 argument_list|,
