@@ -55,18 +55,8 @@ name|Map
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
 begin_comment
-comment|/**  * Interface defines API to check the status of Cayenne configuration.  *   */
+comment|/**  * Interface defines API to check the status of Cayenne configuration.  */
 end_comment
 
 begin_class
