@@ -47,9 +47,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
-operator|.
-name|CayenneCase
+name|Cayenne
 import|;
 end_import
 
@@ -61,9 +59,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
+name|unit
 operator|.
-name|Cayenne
+name|CayenneCase
 import|;
 end_import
 

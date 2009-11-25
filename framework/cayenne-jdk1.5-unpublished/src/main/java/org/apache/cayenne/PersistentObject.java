@@ -83,20 +83,6 @@ name|ToManyMapProperty
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Cayenne
-import|;
-end_import
-
 begin_comment
 comment|/**  * A convenience base superclass for concrete Persistent objects. Provides implementation  * of properties declared in Persistent interface.  *<h4>POJO Note</h4>  *<p>  * If having PersistentObject as a superclass presents a problem in an application, source  * code of this class can be copied verbatim to a custom class generation template.  * Desired superclass can be set in CayenneModeler.  *</p>  *   * @since 1.2  */
 end_comment
@@ -414,7 +400,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns mapped ObjEntity for this object. If an object is transient or is not      * mapped returns null.      *       * @since 1.2      * @deprecated since 3.1 {@link org.apache.cayenne.util.Cayenne#getObjEntity(Persistent)} is used      */
+comment|/**      * Returns mapped ObjEntity for this object. If an object is transient or is not      * mapped returns null.      *       * @since 1.2      * @deprecated since 3.1 {@link org.apache.cayenne.Cayenne#getObjEntity(Persistent)} is used      */
 annotation|@
 name|Deprecated
 specifier|public

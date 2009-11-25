@@ -622,7 +622,7 @@ operator|instanceof
 name|Persistent
 condition|)
 block|{
-name|Cayenne
+name|Util
 operator|.
 name|setReverse
 argument_list|(
@@ -715,7 +715,7 @@ operator|instanceof
 name|Persistent
 condition|)
 block|{
-name|Cayenne
+name|Util
 operator|.
 name|unsetReverse
 argument_list|(

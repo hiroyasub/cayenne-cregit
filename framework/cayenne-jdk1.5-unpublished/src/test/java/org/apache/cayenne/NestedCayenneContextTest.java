@@ -191,20 +191,6 @@ name|ClientMtTooneMaster
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Cayenne
-import|;
-end_import
-
 begin_comment
 comment|/**  * Tests nested object contexts  */
 end_comment

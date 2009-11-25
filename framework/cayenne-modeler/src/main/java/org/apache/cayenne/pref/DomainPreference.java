@@ -63,7 +63,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|PersistenceState
+name|Cayenne
 import|;
 end_import
 
@@ -75,9 +75,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
-operator|.
-name|Cayenne
+name|PersistenceState
 import|;
 end_import
 

@@ -496,14 +496,6 @@ name|ToManyProperty
 name|property
 parameter_list|)
 block|{
-name|ArcProperty
-name|reverseArc
-init|=
-name|property
-operator|.
-name|getComplimentaryReverseArc
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|target

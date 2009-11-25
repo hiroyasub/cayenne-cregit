@@ -99,20 +99,6 @@ name|RelationshipCase
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Cayenne
-import|;
-end_import
-
 begin_comment
 comment|// TODO: this mapping scenario is really unsupported ... this is just an attempt at
 end_comment

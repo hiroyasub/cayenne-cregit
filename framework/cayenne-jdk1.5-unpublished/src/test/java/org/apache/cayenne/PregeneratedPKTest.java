@@ -81,20 +81,6 @@ name|CayenneCase
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Cayenne
-import|;
-end_import
-
 begin_comment
 comment|/**  * This test case ensures that PK pre-generated for the entity manually before commit is  * used during commit as well.  *   */
 end_comment

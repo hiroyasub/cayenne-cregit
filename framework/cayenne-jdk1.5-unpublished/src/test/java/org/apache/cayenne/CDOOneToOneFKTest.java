@@ -97,20 +97,6 @@ name|RelationshipCase
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Cayenne
-import|;
-end_import
-
 begin_comment
 comment|/**  * Tests the behavior of one-to-one relationship where to-one is pointing to an FK.  *   * @since 1.1  */
 end_comment
