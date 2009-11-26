@@ -11,8 +11,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
-operator|.
 name|resource
 package|;
 end_package
@@ -21,30 +19,32 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|net
 operator|.
-name|Collection
+name|URL
 import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * An abstraction of a resource whose data can be accessed via a URL.  *   * @since 3.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ResourceLocator
-block|{
-comment|/**      * Finds a collection of matching resources for a given name. The name components must      * be separated by forward slashes.      */
-name|Collection
-argument_list|<
 name|Resource
-argument_list|>
-name|findResources
+block|{
+comment|/**      * Returns a resource URL to read (and possibly write) the resource data.      */
+name|URL
+name|getURL
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a resource resolved relatively to the current resource. E.g. DataMap files      * can be resolved relatively to cayenne.xml.      */
+name|Resource
+name|getRelativeResource
 parameter_list|(
 name|String
-name|name
+name|relativePath
 parameter_list|)
 function_decl|;
 block|}

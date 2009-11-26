@@ -387,8 +387,8 @@ name|constructor
 expr_stmt|;
 block|}
 block|}
-comment|// the cast is lame, but Class.getDeclaredConstructors() is not using proper
-comment|// generics
+comment|// the cast is lame, but Class.getDeclaredConstructors() is not using
+comment|// generics in Java 5 and using<?> in Java 6, creating compilation problems.
 name|this
 operator|.
 name|constructor
