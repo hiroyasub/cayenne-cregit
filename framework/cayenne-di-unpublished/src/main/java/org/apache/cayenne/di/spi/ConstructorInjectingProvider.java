@@ -234,8 +234,6 @@ block|{
 name|Constructor
 argument_list|<
 name|?
-extends|extends
-name|T
 argument_list|>
 index|[]
 name|constructors
@@ -248,8 +246,6 @@ decl_stmt|;
 name|Constructor
 argument_list|<
 name|?
-extends|extends
-name|T
 argument_list|>
 name|lastMatch
 init|=
@@ -269,8 +265,6 @@ control|(
 name|Constructor
 argument_list|<
 name|?
-extends|extends
-name|T
 argument_list|>
 name|constructor
 range|:
@@ -393,10 +387,20 @@ name|constructor
 expr_stmt|;
 block|}
 block|}
+comment|// the cast is lame, but Class.getDeclaredConstructors() is not using proper
+comment|// generics
 name|this
 operator|.
 name|constructor
 operator|=
+operator|(
+name|Constructor
+argument_list|<
+name|?
+extends|extends
+name|T
+argument_list|>
+operator|)
 name|lastMatch
 expr_stmt|;
 block|}
