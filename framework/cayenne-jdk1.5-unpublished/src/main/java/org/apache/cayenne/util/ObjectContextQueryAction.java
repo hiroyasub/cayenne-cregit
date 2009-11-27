@@ -1110,11 +1110,22 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|protected
-specifier|abstract
 name|QueryCache
 name|getQueryCache
 parameter_list|()
-function_decl|;
+block|{
+return|return
+operator|(
+operator|(
+name|BaseContext
+operator|)
+name|actingContext
+operator|)
+operator|.
+name|getQueryCache
+argument_list|()
+return|;
+block|}
 comment|/**      * @since 3.0      */
 specifier|protected
 name|QueryCacheEntryFactory
