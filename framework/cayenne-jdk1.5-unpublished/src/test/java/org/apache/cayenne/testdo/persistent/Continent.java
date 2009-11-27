@@ -5,7 +5,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|persistent
 package|;
 end_package
 
@@ -15,7 +19,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|persistent
 operator|.
 name|auto
 operator|.
