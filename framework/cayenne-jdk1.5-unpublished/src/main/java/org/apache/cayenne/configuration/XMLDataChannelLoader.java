@@ -208,11 +208,6 @@ specifier|private
 name|ResourceLocator
 name|resourceLocator
 decl_stmt|;
-specifier|public
-name|XMLDataChannelLoader
-parameter_list|()
-block|{
-block|}
 specifier|protected
 name|String
 name|getResourceName
@@ -430,14 +425,11 @@ name|logger
 operator|.
 name|info
 argument_list|(
-name|String
-operator|.
-name|format
-argument_list|(
-literal|"failure closing input stream for %s, ignoring"
-argument_list|,
+literal|"failure closing input stream for "
+operator|+
 name|configurationURL
-argument_list|)
+operator|+
+literal|", ignoring"
 argument_list|,
 name|ioex
 argument_list|)

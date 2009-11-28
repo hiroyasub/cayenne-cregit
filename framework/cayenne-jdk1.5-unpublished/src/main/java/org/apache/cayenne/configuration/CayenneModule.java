@@ -141,6 +141,7 @@ argument_list|,
 name|runtimeName
 argument_list|)
 expr_stmt|;
+comment|// configure various services
 name|binder
 operator|.
 name|bind
