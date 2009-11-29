@@ -50,7 +50,7 @@ name|DefaultRuntimeProperties
 implements|implements
 name|RuntimeProperties
 block|{
-specifier|private
+specifier|protected
 name|Map
 argument_list|<
 name|String

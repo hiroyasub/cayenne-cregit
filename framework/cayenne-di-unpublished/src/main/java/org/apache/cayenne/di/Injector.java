@@ -112,6 +112,14 @@ argument_list|>
 name|type
 parameter_list|)
 function_decl|;
+comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly. One possible use is in unit tests to test a specific object that requires      * field injection.      */
+name|void
+name|injectMembers
+parameter_list|(
+name|Object
+name|object
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

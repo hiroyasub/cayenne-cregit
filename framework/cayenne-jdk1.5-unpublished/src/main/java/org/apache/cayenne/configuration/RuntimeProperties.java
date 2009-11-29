@@ -24,6 +24,7 @@ specifier|public
 interface|interface
 name|RuntimeProperties
 block|{
+comment|/**      * A property defining the name of the current runtime.      */
 specifier|public
 specifier|static
 specifier|final

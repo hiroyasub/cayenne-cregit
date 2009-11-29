@@ -17,79 +17,37 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|InputStream
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|DataDomain
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|xml
-operator|.
-name|sax
-operator|.
-name|helpers
-operator|.
-name|DefaultHandler
+name|CayenneRuntimeException
 import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * An object that can load a named {@link DataChannelDescriptor} from some configuration  * source.  *   * @since 3.1  */
 end_comment
 
-begin_class
-class|class
-name|DomainLoaderAction
-extends|extends
-name|DefaultHandler
+begin_interface
+specifier|public
+interface|interface
+name|DataChannelDescriptorLoader
 block|{
-name|DataDomain
-name|loadDomain
+comment|/**      * Loads a DataChannelDescriptor from some configuration source, usually an XML file      * found on classpath.      *       * @param runtimeName the name of {@link CayenneRuntime} that invoked this method.      *            Configuration resource names are normally derived from the runtime name.      */
+name|DataChannelDescriptor
+name|load
 parameter_list|(
-name|InputStream
-name|in
+name|String
+name|runtimeName
 parameter_list|)
-block|{
-comment|// try {
-comment|// XMLReader parser = Util.createXmlReader();
-comment|//
-comment|// parser.setContentHandler(this);
-comment|// parser.setErrorHandler(this);
-comment|// parser.parse(new InputSource(in));
-comment|// }
-comment|// catch (Exception ex) {
-comment|//
-comment|// }
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"TODO"
-argument_list|)
-throw|;
+throws|throws
+name|CayenneRuntimeException
+function_decl|;
 block|}
-block|}
-end_class
+end_interface
 
 end_unit
 

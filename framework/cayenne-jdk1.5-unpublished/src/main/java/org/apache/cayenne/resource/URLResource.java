@@ -48,10 +48,11 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * A {@link Resource} implementation wrapping a resource URL.  *   * @since 3.1  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|URLResource
 implements|implements
@@ -61,6 +62,7 @@ specifier|private
 name|URL
 name|url
 decl_stmt|;
+specifier|public
 name|URLResource
 parameter_list|(
 name|URL
