@@ -27,6 +27,20 @@ name|CayenneRuntimeException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|runtime
+operator|.
+name|CayenneRuntime
+import|;
+end_import
+
 begin_comment
 comment|/**  * An object that can load a named {@link DataChannelDescriptor} from some configuration  * source.  *   * @since 3.1  */
 end_comment

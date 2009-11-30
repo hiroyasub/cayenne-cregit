@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|runtime
 package|;
 end_package
 
@@ -97,20 +97,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|Binder
@@ -184,6 +170,20 @@ operator|.
 name|query
 operator|.
 name|Query
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|runtime
+operator|.
+name|CayenneRuntime
 import|;
 end_import
 

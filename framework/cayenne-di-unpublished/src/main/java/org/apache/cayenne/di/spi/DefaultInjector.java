@@ -208,6 +208,31 @@ operator|new
 name|InjectionStack
 argument_list|()
 expr_stmt|;
+name|DefaultBinder
+name|binder
+init|=
+operator|new
+name|DefaultBinder
+argument_list|(
+name|this
+argument_list|)
+decl_stmt|;
+comment|// bind self for injector injection...
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|Injector
+operator|.
+name|class
+argument_list|)
+operator|.
+name|toInstance
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+comment|// bind modules
 if|if
 condition|(
 name|modules
@@ -221,15 +246,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|DefaultBinder
-name|binder
-init|=
-operator|new
-name|DefaultBinder
-argument_list|(
-name|this
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|Module

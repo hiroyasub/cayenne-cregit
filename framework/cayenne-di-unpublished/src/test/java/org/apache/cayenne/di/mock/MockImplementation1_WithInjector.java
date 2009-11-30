@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|di
+operator|.
+name|mock
 package|;
 end_package
 
@@ -23,40 +25,56 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|di
 operator|.
-name|CayenneRuntime
+name|Inject
 import|;
 end_import
 
-begin_comment
-comment|/**  * Represents a properties map for a given {@link CayenneRuntime}.  *   * @since 3.1  */
-end_comment
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Injector
+import|;
+end_import
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|RuntimeProperties
+class|class
+name|MockImplementation1_WithInjector
+implements|implements
+name|MockInterface1
 block|{
-comment|/**      * A property defining the name of the current runtime.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|CAYENNE_RUNTIME_NAME
-init|=
-literal|"cayenne.runtime.name"
+annotation|@
+name|Inject
+specifier|private
+name|Injector
+name|injector
 decl_stmt|;
-comment|/**      * Returns property value for a given key.      */
+specifier|public
 name|String
-name|get
-parameter_list|(
-name|String
-name|key
-parameter_list|)
-function_decl|;
+name|getName
+parameter_list|()
+block|{
+return|return
+name|injector
+operator|!=
+literal|null
+condition|?
+literal|"injector_not_null"
+else|:
+literal|"injector_null"
+return|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

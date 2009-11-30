@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|runtime
 package|;
 end_package
 
@@ -36,6 +36,20 @@ operator|.
 name|cayenne
 operator|.
 name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|CayenneModule
 import|;
 end_import
 
