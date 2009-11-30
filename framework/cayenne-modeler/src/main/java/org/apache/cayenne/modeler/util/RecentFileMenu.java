@@ -33,7 +33,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Vector
+name|List
 import|;
 end_import
 
@@ -197,9 +197,9 @@ name|void
 name|rebuildFromPreferences
 parameter_list|()
 block|{
-name|Vector
+name|List
 argument_list|<
-name|?
+name|String
 argument_list|>
 name|arr
 init|=

@@ -21,7 +21,17 @@ name|java
 operator|.
 name|util
 operator|.
-name|Vector
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -319,7 +329,10 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|Vector
+name|List
+argument_list|<
+name|String
+argument_list|>
 name|getLastProjFiles
 parameter_list|()
 block|{
@@ -329,11 +342,14 @@ init|=
 name|getLastProjFilesPref
 argument_list|()
 decl_stmt|;
-name|Vector
+name|ArrayList
+argument_list|<
+name|String
+argument_list|>
 name|arrayLastProjFiles
 init|=
 operator|new
-name|Vector
+name|ArrayList
 argument_list|<
 name|String
 argument_list|>

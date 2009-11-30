@@ -135,7 +135,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Vector
+name|List
 import|;
 end_import
 
@@ -1016,26 +1016,16 @@ name|void
 name|recentFileListChanged
 parameter_list|()
 block|{
-comment|// Preferences pref = ModelerPreferences.getPreferences();
 specifier|final
-name|Vector
+name|List
 argument_list|<
-name|?
+name|String
 argument_list|>
 name|arr
 init|=
-operator|(
-name|Vector
-argument_list|<
-name|?
-argument_list|>
-operator|)
 name|ModelerPreferences
 operator|.
 name|getLastProjFiles
-argument_list|()
-operator|.
-name|clone
 argument_list|()
 decl_stmt|;
 name|recentsList
@@ -1069,7 +1059,7 @@ block|{
 return|return
 name|arr
 operator|.
-name|elementAt
+name|get
 argument_list|(
 name|i
 argument_list|)

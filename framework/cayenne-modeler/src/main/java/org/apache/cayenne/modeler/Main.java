@@ -61,16 +61,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Vector
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|prefs
 operator|.
 name|Preferences
@@ -467,7 +457,7 @@ operator|.
 name|getLastProjFilesPref
 argument_list|()
 decl_stmt|;
-name|Vector
+name|List
 argument_list|<
 name|String
 argument_list|>
