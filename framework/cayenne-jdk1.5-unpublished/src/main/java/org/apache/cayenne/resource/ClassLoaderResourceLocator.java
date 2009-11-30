@@ -155,6 +155,9 @@ name|hasMoreElements
 argument_list|()
 condition|)
 block|{
+comment|// TODO: andrus 11/30/2009 - replace URLResource that resolves relative URL's
+comment|// as truly relative with some kind of ClasspathResource that creates a
+comment|// relative *path* and then resolves it against the entire classpath space.
 name|resources
 operator|.
 name|add
