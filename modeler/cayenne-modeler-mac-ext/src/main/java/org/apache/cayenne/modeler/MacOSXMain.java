@@ -25,6 +25,18 @@ name|File
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|prefs
+operator|.
+name|Preferences
+import|;
+end_import
+
 begin_comment
 comment|/**  * Main class to start CayenneModeler on MacOSX.  *   * @since 1.2  */
 end_comment
