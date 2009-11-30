@@ -1016,14 +1016,7 @@ name|void
 name|recentFileListChanged
 parameter_list|()
 block|{
-name|ModelerPreferences
-name|pref
-init|=
-name|ModelerPreferences
-operator|.
-name|getPreferences
-argument_list|()
-decl_stmt|;
+comment|// Preferences pref = ModelerPreferences.getPreferences();
 specifier|final
 name|Vector
 argument_list|<
@@ -1037,14 +1030,10 @@ argument_list|<
 name|?
 argument_list|>
 operator|)
-name|pref
-operator|.
-name|getVector
-argument_list|(
 name|ModelerPreferences
 operator|.
-name|LAST_PROJ_FILES
-argument_list|)
+name|getLastProjFiles
+argument_list|()
 operator|.
 name|clone
 argument_list|()

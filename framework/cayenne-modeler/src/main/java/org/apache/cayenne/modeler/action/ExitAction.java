@@ -152,14 +152,7 @@ block|{
 return|return;
 block|}
 comment|// write prefs to persistent store
-name|ModelerPreferences
-operator|.
-name|getPreferences
-argument_list|()
-operator|.
-name|storePreferences
-argument_list|()
-expr_stmt|;
+comment|//		ModelerPreferences.storePreferences();
 comment|//stop logging before JVM shutdown to prevent hanging
 name|LogConsole
 operator|.
