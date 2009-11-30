@@ -723,7 +723,7 @@ argument_list|)
 expr_stmt|;
 name|nodeDescriptor
 operator|.
-name|setAdapterClass
+name|setAdapterType
 argument_list|(
 name|attributes
 operator|.
@@ -757,7 +757,7 @@ argument_list|)
 expr_stmt|;
 name|nodeDescriptor
 operator|.
-name|setDataSourceFactoryClass
+name|setDataSourceFactoryType
 argument_list|(
 name|attributes
 operator|.
@@ -771,7 +771,7 @@ argument_list|)
 expr_stmt|;
 name|nodeDescriptor
 operator|.
-name|setSchemaUpdateStrategyClass
+name|setSchemaUpdateStrategyType
 argument_list|(
 name|attributes
 operator|.

@@ -1198,7 +1198,7 @@ literal|"org.example.test.Adapter"
 argument_list|,
 name|node1
 operator|.
-name|getAdapterClass
+name|getAdapterType
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1208,7 +1208,7 @@ literal|"org.example.test.DataSourceFactory"
 argument_list|,
 name|node1
 operator|.
-name|getDataSourceFactoryClass
+name|getDataSourceFactoryType
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1218,7 +1218,7 @@ literal|"org.example.test.SchemaUpdateStartegy"
 argument_list|,
 name|node1
 operator|.
-name|getSchemaUpdateStrategyClass
+name|getSchemaUpdateStrategyType
 argument_list|()
 argument_list|)
 expr_stmt|;
