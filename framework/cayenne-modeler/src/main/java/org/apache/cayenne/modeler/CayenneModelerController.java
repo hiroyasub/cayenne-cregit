@@ -1153,7 +1153,7 @@ expr_stmt|;
 block|}
 name|arr
 operator|.
-name|set
+name|add
 argument_list|(
 literal|0
 argument_list|,
