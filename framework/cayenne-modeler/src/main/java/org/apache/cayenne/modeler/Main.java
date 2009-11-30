@@ -478,6 +478,16 @@ operator|.
 name|getLastProjFiles
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|arr
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
 return|return
 operator|new
 name|File
@@ -493,6 +503,7 @@ literal|0
 argument_list|)
 argument_list|)
 return|;
+block|}
 block|}
 return|return
 literal|null
