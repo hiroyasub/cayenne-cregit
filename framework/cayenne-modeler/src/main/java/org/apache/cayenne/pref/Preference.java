@@ -39,7 +39,7 @@ specifier|final
 name|String
 name|CAYENNE_PREFERENCES
 init|=
-literal|"cayennePreferences"
+literal|"org/apache/cayenne"
 decl_stmt|;
 comment|/**  node name for editor */
 specifier|public
