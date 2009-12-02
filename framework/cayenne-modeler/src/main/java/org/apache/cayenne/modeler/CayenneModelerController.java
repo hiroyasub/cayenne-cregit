@@ -327,7 +327,7 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|Project
+name|ApplicationProject
 import|;
 end_import
 
@@ -940,7 +940,7 @@ specifier|public
 name|void
 name|projectOpenedAction
 parameter_list|(
-name|Project
+name|ApplicationProject
 name|project
 parameter_list|)
 block|{

@@ -414,6 +414,20 @@ operator|=
 name|synthetic
 expr_stmt|;
 block|}
+comment|/**      * Returns a "complimentary" relationship going in the opposite direction. Returns      * null if no such relationship is found.      * @since 3.1      */
+specifier|public
+specifier|abstract
+name|Relationship
+name|getReverseRelationship
+parameter_list|()
+function_decl|;
+comment|/**      * Returns if relationship is mandatory      * @since 3.1      */
+specifier|public
+specifier|abstract
+name|boolean
+name|isMandatory
+parameter_list|()
+function_decl|;
 block|}
 end_class
 

@@ -239,7 +239,7 @@ name|ProjectConfiguration
 name|config
 init|=
 operator|new
-name|ProjectConfiguration
+name|ModelerProjectConfiguration
 argument_list|(
 name|projectFile
 argument_list|)
