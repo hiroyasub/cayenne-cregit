@@ -203,7 +203,7 @@ condition|)
 block|{
 name|graphTab
 operator|.
-name|rebuild
+name|refresh
 argument_list|()
 expr_stmt|;
 block|}

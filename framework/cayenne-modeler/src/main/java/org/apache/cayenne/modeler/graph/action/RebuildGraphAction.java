@@ -80,7 +80,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|RefreshGraphAction
+name|RebuildGraphAction
 extends|extends
 name|CayenneAction
 block|{
@@ -90,7 +90,7 @@ name|DataDomainGraphTab
 name|dataDomainGraphTab
 decl_stmt|;
 specifier|public
-name|RefreshGraphAction
+name|RebuildGraphAction
 parameter_list|(
 name|DataDomainGraphTab
 name|dataDomainGraphTab
@@ -101,7 +101,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-literal|"Refresh"
+literal|"Rebuild"
 argument_list|,
 name|application
 argument_list|)
@@ -143,10 +143,8 @@ name|this
 operator|.
 name|dataDomainGraphTab
 operator|.
-name|itemStateChanged
-argument_list|(
-literal|null
-argument_list|)
+name|rebuild
+argument_list|()
 expr_stmt|;
 block|}
 block|}
