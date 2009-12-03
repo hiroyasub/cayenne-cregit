@@ -87,7 +87,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|List
+name|LinkedList
 import|;
 end_import
 
@@ -97,7 +97,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|LinkedList
+name|List
 import|;
 end_import
 
@@ -257,7 +257,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
+name|ObjAttribute
 import|;
 end_import
 
@@ -271,7 +271,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjAttribute
+name|ObjEntity
 import|;
 end_import
 
@@ -432,6 +432,24 @@ operator|.
 name|event
 operator|.
 name|ObjEntityDisplayListener
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|graph
+operator|.
+name|action
+operator|.
+name|ShowGraphEntityAction
 import|;
 end_import
 
@@ -887,6 +905,29 @@ operator|.
 name|getAction
 argument_list|(
 name|CreateRelationshipAction
+operator|.
+name|getActionName
+argument_list|()
+argument_list|)
+operator|.
+name|buildButton
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|toolBar
+operator|.
+name|addSeparator
+argument_list|()
+expr_stmt|;
+name|toolBar
+operator|.
+name|add
+argument_list|(
+name|app
+operator|.
+name|getAction
+argument_list|(
+name|ShowGraphEntityAction
 operator|.
 name|getActionName
 argument_list|()
