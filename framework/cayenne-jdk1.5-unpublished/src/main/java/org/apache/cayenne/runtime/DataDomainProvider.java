@@ -260,7 +260,7 @@ name|DataDomainProvider
 implements|implements
 name|Provider
 argument_list|<
-name|DataChannel
+name|DataDomain
 argument_list|>
 block|{
 annotation|@
@@ -301,11 +301,11 @@ name|objectFactory
 decl_stmt|;
 specifier|protected
 specifier|volatile
-name|DataChannel
-name|dataChannel
+name|DataDomain
+name|dataDomain
 decl_stmt|;
 specifier|public
-name|DataChannel
+name|DataDomain
 name|get
 parameter_list|()
 throws|throws
@@ -313,7 +313,7 @@ name|DIException
 block|{
 if|if
 condition|(
-name|dataChannel
+name|dataDomain
 operator|==
 literal|null
 condition|)
@@ -325,7 +325,7 @@ init|)
 block|{
 if|if
 condition|(
-name|dataChannel
+name|dataDomain
 operator|==
 literal|null
 condition|)
@@ -371,7 +371,7 @@ block|}
 block|}
 block|}
 return|return
-name|dataChannel
+name|dataDomain
 return|;
 block|}
 specifier|protected
@@ -404,7 +404,7 @@ name|runtimeName
 argument_list|)
 decl_stmt|;
 name|DataDomain
-name|dataChannel
+name|dataDomain
 init|=
 operator|new
 name|DataDomain
@@ -415,7 +415,7 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|dataChannel
+name|dataDomain
 operator|.
 name|initWithProperties
 argument_list|(
@@ -436,7 +436,7 @@ name|getDataMaps
 argument_list|()
 control|)
 block|{
-name|dataChannel
+name|dataDomain
 operator|.
 name|addMap
 argument_list|(
@@ -613,7 +613,7 @@ name|dataNode
 operator|.
 name|addDataMap
 argument_list|(
-name|dataChannel
+name|dataDomain
 operator|.
 name|getMap
 argument_list|(
@@ -622,7 +622,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|dataChannel
+name|dataDomain
 operator|.
 name|addNode
 argument_list|(
@@ -632,9 +632,9 @@ expr_stmt|;
 block|}
 name|this
 operator|.
-name|dataChannel
+name|dataDomain
 operator|=
-name|dataChannel
+name|dataDomain
 expr_stmt|;
 block|}
 block|}

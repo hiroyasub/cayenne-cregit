@@ -185,6 +185,22 @@ parameter_list|)
 throws|throws
 name|CayenneRuntimeException
 block|{
+name|long
+name|t0
+init|=
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|logger
+operator|.
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
 name|logger
 operator|.
 name|debug
@@ -194,6 +210,7 @@ operator|+
 name|runtimeName
 argument_list|)
 expr_stmt|;
+block|}
 name|String
 name|resourceName
 init|=
@@ -288,6 +305,8 @@ operator|new
 name|XMLDataChannelDescriptorLoaderAction
 argument_list|(
 name|dataMapLoader
+argument_list|,
+name|logger
 argument_list|)
 operator|.
 name|load
@@ -302,6 +321,22 @@ argument_list|(
 name|runtimeName
 argument_list|)
 expr_stmt|;
+name|long
+name|t1
+init|=
+name|System
+operator|.
+name|currentTimeMillis
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|logger
+operator|.
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
 name|logger
 operator|.
 name|debug
@@ -309,8 +344,19 @@ argument_list|(
 literal|"finished configuration loading: "
 operator|+
 name|runtimeName
+operator|+
+literal|" in "
+operator|+
+operator|(
+name|t1
+operator|-
+name|t0
+operator|)
+operator|+
+literal|" ms."
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|descriptor
 return|;

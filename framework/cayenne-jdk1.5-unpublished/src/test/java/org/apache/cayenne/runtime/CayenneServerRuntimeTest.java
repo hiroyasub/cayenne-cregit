@@ -85,7 +85,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|CayenneModule
+name|CayenneServerModule
 import|;
 end_import
 
@@ -173,24 +173,10 @@ name|Query
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|runtime
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
-name|CayenneRuntimeTest
+name|CayenneServerRuntimeTest
 extends|extends
 name|TestCase
 block|{
@@ -199,11 +185,11 @@ name|void
 name|testDefaultConstructor
 parameter_list|()
 block|{
-name|CayenneRuntime
+name|CayenneServerRuntime
 name|runtime
 init|=
 operator|new
-name|CayenneRuntime
+name|CayenneServerRuntime
 argument_list|(
 literal|"xxxx"
 argument_list|)
@@ -240,7 +226,7 @@ index|[
 literal|0
 index|]
 operator|instanceof
-name|CayenneModule
+name|CayenneServerModule
 argument_list|)
 expr_stmt|;
 block|}
@@ -310,11 +296,11 @@ expr_stmt|;
 block|}
 block|}
 decl_stmt|;
-name|CayenneRuntime
+name|CayenneServerRuntime
 name|runtime
 init|=
 operator|new
-name|CayenneRuntime
+name|CayenneServerRuntime
 argument_list|(
 literal|"yyyy"
 argument_list|,
@@ -470,11 +456,11 @@ expr_stmt|;
 block|}
 block|}
 decl_stmt|;
-name|CayenneRuntime
+name|CayenneServerRuntime
 name|runtime
 init|=
 operator|new
-name|CayenneRuntime
+name|CayenneServerRuntime
 argument_list|(
 literal|"name"
 argument_list|,
@@ -537,11 +523,11 @@ expr_stmt|;
 block|}
 block|}
 decl_stmt|;
-name|CayenneRuntime
+name|CayenneServerRuntime
 name|runtime
 init|=
 operator|new
-name|CayenneRuntime
+name|CayenneServerRuntime
 argument_list|(
 literal|"name"
 argument_list|,
@@ -554,7 +540,7 @@ name|context
 argument_list|,
 name|runtime
 operator|.
-name|newObjectContext
+name|newContext
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -564,7 +550,7 @@ name|context
 argument_list|,
 name|runtime
 operator|.
-name|newObjectContext
+name|newContext
 argument_list|()
 argument_list|)
 expr_stmt|;

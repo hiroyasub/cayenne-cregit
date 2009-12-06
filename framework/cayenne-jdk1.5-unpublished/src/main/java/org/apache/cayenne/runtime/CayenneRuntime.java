@@ -47,20 +47,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|CayenneModule
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|DIBootstrap
@@ -96,11 +82,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents the main access point to a given Cayenne stack. Provides a default Cayenne  * configuration as well as a way to customize this configuration via a built in  * dependency injection container.  *   * @since 3.1  */
+comment|/**  * A superclass of possible Cayenne runtime objects. A CayenneRuntime is the main access  * point to a given Cayenne stack. It provides a default Cayenne configuration as well as  * a way to customize this configuration via a built in dependency injection container.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
+specifier|abstract
 class|class
 name|CayenneRuntime
 block|{
@@ -117,26 +104,6 @@ name|Module
 index|[]
 name|modules
 decl_stmt|;
-comment|/**      * Initializes Cayenne runtime instance with a default configuration provided by      * {@link CayenneModule}.      *       * @param name Runtime name. By default a configuration file name contains a runtime      *            name in it, to allow multiple runtimes in a single JVM. E.g. a typical      *            config file name has the form of "cayenne-<name>.xml".      */
-specifier|public
-name|CayenneRuntime
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|name
-argument_list|,
-operator|new
-name|CayenneModule
-argument_list|(
-name|name
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Initializes Cayenne runtime with an array of DI modules.      */
 specifier|public
 name|CayenneRuntime
@@ -245,7 +212,7 @@ block|}
 comment|/**      * Creates and returns an ObjectContext based on the runtime DataChannel.      */
 specifier|public
 name|ObjectContext
-name|newObjectContext
+name|newContext
 parameter_list|()
 block|{
 return|return

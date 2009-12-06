@@ -210,7 +210,7 @@ argument_list|)
 decl_stmt|;
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|void
 name|processSchemaUpdate
 parameter_list|(
