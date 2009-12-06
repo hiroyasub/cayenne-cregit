@@ -11,17 +11,27 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|configuration
 package|;
 end_package
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
 name|sql
 operator|.
-name|DataSource
+name|DatabaseMetaData
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
 import|;
 end_import
 
@@ -33,49 +43,33 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|dba
 operator|.
-name|DataNodeDescriptor
+name|DbAdapter
 import|;
 end_import
 
-begin_import
-import|import
-name|com
-operator|.
-name|mockrunner
-operator|.
-name|mock
-operator|.
-name|jdbc
-operator|.
-name|MockDataSource
-import|;
-end_import
+begin_comment
+comment|/**  * A factory interface providing DbAdapter based on JDBC metadata. It allows custom  * DbAdapters to contribute database detection algorithms to  * {@link DefaultDbAdapterFactory}.  *   * @since 3.1  */
+end_comment
 
-begin_class
+begin_interface
 specifier|public
-class|class
-name|MockDataSourceFactory2
-implements|implements
-name|DataSourceFactory
+interface|interface
+name|DbAdapterDetector
 block|{
-specifier|public
-name|DataSource
-name|getDataSource
+comment|/**      * Returns an instance of DbAdapter if the factory detects that it knows how to handle      * the database or null if the database is not known to the factory, thus allowing      * multiple factories to be chained.      */
+name|DbAdapter
+name|createAdapter
 parameter_list|(
-name|DataNodeDescriptor
-name|nodeDescriptor
+name|DatabaseMetaData
+name|md
 parameter_list|)
-block|{
-return|return
-operator|new
-name|MockDataSource
-argument_list|()
-return|;
+throws|throws
+name|SQLException
+function_decl|;
 block|}
-block|}
-end_class
+end_interface
 
 end_unit
 

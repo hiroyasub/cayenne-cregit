@@ -11,63 +11,40 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|configuration
 package|;
 end_package
 
-begin_import
-import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|DataNodeDescriptor
-import|;
-end_import
-
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * Creates objects for user-provided String class names, injecting dependencies into them.  *   * @since 3.1  */
 end_comment
 
-begin_class
+begin_interface
 specifier|public
-class|class
-name|DriverDataSourceFactory
-implements|implements
-name|DataSourceFactory
+interface|interface
+name|AdhocObjectFactory
 block|{
-specifier|public
-name|DataSource
-name|getDataSource
+comment|/**      * Returns an instance of "className" that implements "superType", injecting      * dependencies from the registry into it.      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|newInstance
 parameter_list|(
-name|DataNodeDescriptor
-name|nodeDescriptor
+name|Class
+argument_list|<
+name|?
+super|super
+name|T
+argument_list|>
+name|superType
+parameter_list|,
+name|String
+name|className
 parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"TODO"
-argument_list|)
-throw|;
+function_decl|;
 block|}
-block|}
-end_class
+end_interface
 
 end_unit
 

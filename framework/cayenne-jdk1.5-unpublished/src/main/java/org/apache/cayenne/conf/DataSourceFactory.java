@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A pluggable factory for javax.sql.DataSource instances used by Cayenne runtime.  */
+comment|/**  * A pluggable factory for {@link DataSource} instances used by Cayenne runtime.  *   * @deprecated since 3.1, replaced by  *             {@link org.apache.cayenne.configuration.DataSourceFactory}  */
 end_comment
 
 begin_interface
@@ -35,7 +35,6 @@ interface|interface
 name|DataSourceFactory
 block|{
 comment|/**      * Initializes factory with the parent configuration object.      */
-specifier|public
 name|void
 name|initializeWithParentConfiguration
 parameter_list|(
@@ -44,7 +43,6 @@ name|conf
 parameter_list|)
 function_decl|;
 comment|/**      * Returns DataSource object corresponding to<code>location</code>. Concrete      * implementations may treat location differently - as a file path, JNDI location,      * etc.      */
-specifier|public
 name|DataSource
 name|getDataSource
 parameter_list|(

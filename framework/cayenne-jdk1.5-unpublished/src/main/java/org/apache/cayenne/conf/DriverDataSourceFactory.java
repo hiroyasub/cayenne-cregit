@@ -161,6 +161,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Util
@@ -270,19 +284,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates DataSource objects from XML configuration files that describe a JDBC driver.  * Wraps JDBC driver in a generic DataSource implementation.  *   */
-end_comment
-
-begin_comment
-comment|// TODO: factory shouldn't contain any state specific to location ("driverInfo" ivar
-end_comment
-
-begin_comment
-comment|// should go, and probably "parser" too)... Otherwise the API doesn't make sense -
-end_comment
-
-begin_comment
-comment|// sequential invocations of getDataSource() will have side effects....
+comment|/**  * Creates DataSource objects from XML configuration files that describe a JDBC driver.  * Wraps JDBC driver in a generic DataSource implementation.  *   * @deprecated since 3.1 {@link org.apache.cayenne.configuration.XMLPoolingDataSourceFactory}  *             replaces this class.  */
 end_comment
 
 begin_class
@@ -308,16 +310,18 @@ name|class
 argument_list|)
 decl_stmt|;
 specifier|protected
+name|Configuration
+name|parentConfiguration
+decl_stmt|;
+comment|// TODO: andrus 12.5.2009: non-thread-safe local ivars... SInce this class is
+comment|// deprecated, I guess we don't have to fix it here...
+specifier|protected
 name|XMLReader
 name|parser
 decl_stmt|;
 specifier|protected
 name|DataSourceInfo
 name|driverInfo
-decl_stmt|;
-specifier|protected
-name|Configuration
-name|parentConfiguration
 decl_stmt|;
 comment|/**      * Creates new DriverDataSourceFactory.      */
 specifier|public
@@ -362,8 +366,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|this
-operator|.
 name|load
 argument_list|(
 name|location
@@ -518,10 +520,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Loads driver information from the file at<code>location</code>. Called      * internally from "getDataSource"      */
-comment|// TODO: andrus 2008/04/22, while this never caused any troubles, storing loaded
-comment|// DataSourceInfo in an ivar clearly violates the scope logic, as "location" is a
-comment|// local variable.
+comment|/**      * Loads driver information from the file at<code>location</code>. Called internally      * from "getDataSource"      *       * @deprecated since 3.1      */
 specifier|protected
 name|void
 name|load

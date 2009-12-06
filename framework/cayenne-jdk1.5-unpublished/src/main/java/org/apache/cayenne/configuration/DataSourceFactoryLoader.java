@@ -11,48 +11,26 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
+name|configuration
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|DatabaseMetaData
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines a conditional factory for a specific DbAdapter. Note that the factory can  * potentially return different (or differently configured) DbAdapters for the same  * database based on version information and other metadata.  *   * @since 1.2  * @deprecated since 3.1 in favor of  *             {@link org.apache.cayenne.configuration.DbAdapterFactory} configured via  *             dependency injection.  */
+comment|/**  * Provides instances of {@link DataSourceFactory} for DataNodes.  *   * @since 3.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DbAdapterFactory
+name|DataSourceFactoryLoader
 block|{
-comment|/**      * Returns an instance of DbAdapter if the factory detects that it knows how to handle      * the database. Returns null if the database is not known to the factory, thus      * allowing multiple factories to be chained.      */
-name|DbAdapter
-name|createAdapter
+comment|/**      * Returns a DataSourceFactory for a given {@link DataNodeDescriptor} configuration      * object. The factory should be specified in the node descriptor explicitly by the      * user. Cayenne will inject dependencies in all user-provided factories.      */
+name|DataSourceFactory
+name|getDataSourceFactory
 parameter_list|(
-name|DatabaseMetaData
-name|md
+name|DataNodeDescriptor
+name|nodeDescriptor
 parameter_list|)
-throws|throws
-name|SQLException
 function_decl|;
 block|}
 end_interface
