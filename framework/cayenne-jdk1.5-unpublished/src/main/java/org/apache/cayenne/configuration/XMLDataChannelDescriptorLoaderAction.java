@@ -780,7 +780,7 @@ literal|"schema-update-strategy"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// this may be bogus for nodes other than driver nodes, but here we can't
+comment|// this may be bogus for some nodes, such as JNDI, but here we can't
 comment|// tell for sure
 if|if
 condition|(

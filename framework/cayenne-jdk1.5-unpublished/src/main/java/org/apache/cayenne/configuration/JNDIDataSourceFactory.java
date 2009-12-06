@@ -176,7 +176,7 @@ block|}
 try|try
 block|{
 return|return
-name|loadViaJNDI
+name|lookupViaJNDI
 argument_list|(
 name|location
 argument_list|)
@@ -212,7 +212,7 @@ throw|;
 block|}
 block|}
 name|DataSource
-name|loadViaJNDI
+name|lookupViaJNDI
 parameter_list|(
 name|String
 name|location
