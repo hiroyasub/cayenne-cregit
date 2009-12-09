@@ -17,12 +17,24 @@ name|undo
 package|;
 end_package
 
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|undo
+operator|.
+name|CompoundEdit
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|RemoveCompoundUndoableEdit
 extends|extends
-name|CayenneCompoundEdit
+name|CompoundEdit
 block|{
 annotation|@
 name|Override

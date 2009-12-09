@@ -55,6 +55,18 @@ name|*
 import|;
 end_import
 
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|text
+operator|.
+name|JTextComponent
+import|;
+end_import
+
 begin_comment
 comment|/**  * A builder for component bindings that delegates the creation of the binding to the  * underlying factory, and itself configures a number of binding parameters.  *   */
 end_comment

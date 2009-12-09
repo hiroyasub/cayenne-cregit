@@ -657,7 +657,7 @@ name|centerWindow
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * Creates graphical components. 	 */
+comment|/**      * Creates graphical components.      */
 specifier|private
 name|void
 name|initView
@@ -2048,14 +2048,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|undo
-operator|.
-name|hasEdits
-argument_list|()
-condition|)
-block|{
 name|Application
 operator|.
 name|getInstance
@@ -2069,7 +2061,6 @@ argument_list|(
 name|undo
 argument_list|)
 expr_stmt|;
-block|}
 name|getMediator
 argument_list|()
 operator|.

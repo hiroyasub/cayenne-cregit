@@ -143,6 +143,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|undo
+operator|.
+name|CayenneUndoManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|AdapterMapping
@@ -487,7 +503,7 @@ name|AdapterMapping
 name|adapterMapping
 decl_stmt|;
 specifier|protected
-name|UndoManager
+name|CayenneUndoManager
 name|undoManager
 decl_stmt|;
 comment|// This is for OS X support
@@ -706,7 +722,7 @@ return|;
 block|}
 comment|/**      * Returns undo-edits controller.      */
 specifier|public
-name|UndoManager
+name|CayenneUndoManager
 name|getUndoManager
 parameter_list|()
 block|{

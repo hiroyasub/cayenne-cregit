@@ -31,16 +31,6 @@ name|java
 operator|.
 name|awt
 operator|.
-name|Component
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
 name|Cursor
 import|;
 end_import
@@ -214,6 +204,18 @@ operator|.
 name|text
 operator|.
 name|Highlighter
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|text
+operator|.
+name|JTextComponent
 import|;
 end_import
 
@@ -432,7 +434,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Component
+name|JTextComponent
 name|getPane
 parameter_list|()
 block|{

@@ -235,9 +235,6 @@ parameter_list|()
 throws|throws
 name|CannotRedoException
 block|{
-name|restoreSelections
-argument_list|()
-expr_stmt|;
 name|CreateAttributeAction
 name|action
 init|=
@@ -306,9 +303,6 @@ parameter_list|()
 throws|throws
 name|CannotUndoException
 block|{
-name|restoreSelections
-argument_list|()
-expr_stmt|;
 name|RemoveAttributeAction
 name|action
 init|=
