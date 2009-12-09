@@ -59,6 +59,9 @@ begin_class
 specifier|abstract
 class|class
 name|ResultSetTemplate
+parameter_list|<
+name|T
+parameter_list|>
 block|{
 name|ItestDBUtils
 name|parent
@@ -78,7 +81,7 @@ name|parent
 expr_stmt|;
 block|}
 specifier|abstract
-name|void
+name|T
 name|readResultSet
 parameter_list|(
 name|ResultSet
@@ -90,7 +93,7 @@ parameter_list|)
 throws|throws
 name|SQLException
 function_decl|;
-name|void
+name|T
 name|execute
 parameter_list|(
 name|String
@@ -131,13 +134,14 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+return|return
 name|readResultSet
 argument_list|(
 name|rs
 argument_list|,
 name|sql
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 finally|finally
 block|{
