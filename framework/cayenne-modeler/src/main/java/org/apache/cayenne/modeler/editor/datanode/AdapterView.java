@@ -61,21 +61,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|TextAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|validation
-operator|.
-name|ValidationException
+name|CayenneWidgetFactory
 import|;
 end_import
 
@@ -115,7 +101,7 @@ extends|extends
 name|JPanel
 block|{
 specifier|protected
-name|TextAdapter
+name|JTextField
 name|customAdapter
 decl_stmt|;
 specifier|public
@@ -126,28 +112,10 @@ name|this
 operator|.
 name|customAdapter
 operator|=
-operator|new
-name|TextAdapter
-argument_list|(
-operator|new
-name|JTextField
+name|CayenneWidgetFactory
+operator|.
+name|createUndoableTextField
 argument_list|()
-argument_list|)
-block|{
-annotation|@
-name|Override
-specifier|protected
-name|void
-name|updateModel
-parameter_list|(
-name|String
-name|text
-parameter_list|)
-throws|throws
-name|ValidationException
-block|{
-block|}
-block|}
 expr_stmt|;
 comment|// assemble
 name|DefaultFormBuilder
@@ -184,9 +152,6 @@ argument_list|(
 literal|"Custom Adapter (optional):"
 argument_list|,
 name|customAdapter
-operator|.
-name|getComponent
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|setLayout
@@ -215,13 +180,7 @@ name|getCustomAdapter
 parameter_list|()
 block|{
 return|return
-operator|(
-name|JTextField
-operator|)
 name|customAdapter
-operator|.
-name|getComponent
-argument_list|()
 return|;
 block|}
 block|}

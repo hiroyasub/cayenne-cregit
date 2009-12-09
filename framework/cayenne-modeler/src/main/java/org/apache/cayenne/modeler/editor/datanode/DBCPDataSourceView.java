@@ -61,21 +61,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|TextAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|validation
-operator|.
-name|ValidationException
+name|CayenneWidgetFactory
 import|;
 end_import
 
@@ -119,7 +105,7 @@ extends|extends
 name|JPanel
 block|{
 specifier|protected
-name|TextAdapter
+name|JTextField
 name|propertiesFile
 decl_stmt|;
 specifier|public
@@ -128,28 +114,10 @@ parameter_list|()
 block|{
 name|propertiesFile
 operator|=
-operator|new
-name|TextAdapter
-argument_list|(
-operator|new
-name|JTextField
+name|CayenneWidgetFactory
+operator|.
+name|createUndoableTextField
 argument_list|()
-argument_list|)
-block|{
-annotation|@
-name|Override
-specifier|protected
-name|void
-name|updateModel
-parameter_list|(
-name|String
-name|text
-parameter_list|)
-throws|throws
-name|ValidationException
-block|{
-block|}
-block|}
 expr_stmt|;
 comment|// assemble
 name|FormLayout
@@ -190,8 +158,7 @@ name|append
 argument_list|(
 literal|"DBCP Properties File:"
 argument_list|,
-name|getPropertiesFile
-argument_list|()
+name|propertiesFile
 argument_list|)
 expr_stmt|;
 name|setLayout
@@ -220,13 +187,7 @@ name|getPropertiesFile
 parameter_list|()
 block|{
 return|return
-operator|(
-name|JTextField
-operator|)
 name|propertiesFile
-operator|.
-name|getComponent
-argument_list|()
 return|;
 block|}
 block|}

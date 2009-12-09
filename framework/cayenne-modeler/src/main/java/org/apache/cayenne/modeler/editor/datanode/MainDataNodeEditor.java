@@ -603,7 +603,13 @@ name|view
 operator|=
 operator|new
 name|MainDataNodeView
+argument_list|(
+operator|(
+name|ProjectController
+operator|)
+name|getParent
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
