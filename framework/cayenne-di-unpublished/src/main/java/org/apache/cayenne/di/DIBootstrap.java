@@ -23,6 +23,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ConfigurationException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|spi
@@ -51,7 +63,7 @@ modifier|...
 name|modules
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 return|return
 operator|new

@@ -45,9 +45,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -118,7 +116,7 @@ argument_list|>
 name|get
 parameter_list|()
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|List
 argument_list|<

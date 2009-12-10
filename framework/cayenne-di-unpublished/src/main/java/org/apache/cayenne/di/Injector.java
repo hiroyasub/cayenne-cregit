@@ -35,6 +35,18 @@ name|Map
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ConfigurationException
+import|;
+end_import
+
 begin_comment
 comment|/**  * A facade to the Cayenne DI container. To create an injector use {@link DIBootstrap}  * static methods.  *   * @since 3.1  */
 end_comment
@@ -58,7 +70,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 parameter_list|<
 name|T
@@ -76,7 +88,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 parameter_list|<
 name|T
@@ -95,6 +107,8 @@ name|T
 argument_list|>
 name|type
 parameter_list|)
+throws|throws
+name|ConfigurationException
 function_decl|;
 parameter_list|<
 name|T
@@ -111,6 +125,8 @@ name|T
 argument_list|>
 name|type
 parameter_list|)
+throws|throws
+name|ConfigurationException
 function_decl|;
 comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly. One possible use is in unit tests to test a specific object that requires      * field injection.      */
 name|void

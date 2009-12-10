@@ -15,6 +15,18 @@ name|di
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ConfigurationException
+import|;
+end_import
+
 begin_comment
 comment|/**  * A DI object factory interface.  *   * @param<T> Type of object the provider creates.  * @since 3.1  */
 end_comment
@@ -31,7 +43,7 @@ name|T
 name|get
 parameter_list|()
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 block|}
 end_interface

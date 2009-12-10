@@ -25,9 +25,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|BindingBuilder
+name|ConfigurationException
 import|;
 end_import
 
@@ -41,7 +39,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|DIException
+name|BindingBuilder
 import|;
 end_import
 
@@ -174,7 +172,7 @@ argument_list|>
 name|implementation
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|Provider
 argument_list|<
@@ -232,7 +230,7 @@ name|T
 name|instance
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|Provider
 argument_list|<

@@ -35,9 +35,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|Binder
+name|ConfigurationException
 import|;
 end_import
 
@@ -51,7 +49,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|DIException
+name|Binder
 import|;
 end_import
 
@@ -271,7 +269,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|DIException
+name|ConfigurationException
 name|e
 parameter_list|)
 block|{
@@ -460,7 +458,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|DIException
+name|ConfigurationException
 name|e
 parameter_list|)
 block|{

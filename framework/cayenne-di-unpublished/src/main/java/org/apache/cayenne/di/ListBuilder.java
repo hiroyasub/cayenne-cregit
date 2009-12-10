@@ -15,6 +15,18 @@ name|di
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ConfigurationException
+import|;
+end_import
+
 begin_comment
 comment|/**  * A binding builder for list configurations.  *   * @param<T> A type of the service for which the configuration is created.  * @since 3.1  */
 end_comment
@@ -45,7 +57,7 @@ argument_list|>
 name|interfaceType
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 parameter_list|<
 name|E
@@ -60,7 +72,7 @@ name|E
 name|value
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 block|}
 end_interface

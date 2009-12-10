@@ -15,6 +15,18 @@ name|di
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ConfigurationException
+import|;
+end_import
+
 begin_comment
 comment|/**  * A binding builder that helps with fluent binding creation.  *   * @param<T> An interface type of the service being bound.  * @since 3.1  */
 end_comment
@@ -42,7 +54,7 @@ argument_list|>
 name|implementation
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 name|BindingBuilder
 argument_list|<
@@ -54,7 +66,7 @@ name|T
 name|instance
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 name|BindingBuilder
 argument_list|<
@@ -76,7 +88,7 @@ argument_list|>
 name|providerType
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 name|BindingBuilder
 argument_list|<
@@ -93,7 +105,7 @@ argument_list|>
 name|provider
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 function_decl|;
 name|void
 name|in

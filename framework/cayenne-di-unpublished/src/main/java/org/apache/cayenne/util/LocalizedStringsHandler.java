@@ -35,28 +35,8 @@ name|ResourceBundle
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
 begin_comment
-comment|// TODO: Merge with ModelerStrings (avoid code duplication). Allow
-end_comment
-
-begin_comment
-comment|// customizable bundle location.
-end_comment
-
-begin_comment
-comment|/**  * Provides access to various modeler resources (mainly strings) obtained via a  * ResourceBundle.  *   */
+comment|/**  * Provides access to various modeler resources (mainly strings) obtained via a  * ResourceBundle.  */
 end_comment
 
 begin_class
@@ -154,9 +134,11 @@ name|MissingResourceException
 name|e
 parameter_list|)
 block|{
+comment|// do not throw Cayenne exceptions, as they rely on
+comment|// LocalizedStringsHandler, and we can get into infinite loop
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|RuntimeException
 argument_list|(
 literal|"Can't load properties: "
 operator|+

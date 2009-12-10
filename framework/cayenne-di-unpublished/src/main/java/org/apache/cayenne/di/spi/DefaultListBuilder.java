@@ -25,9 +25,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -116,7 +114,7 @@ argument_list|>
 name|interfaceType
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|ListProvider
 name|listProvider
@@ -187,7 +185,7 @@ name|E
 name|value
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|InstanceProvider
 argument_list|<

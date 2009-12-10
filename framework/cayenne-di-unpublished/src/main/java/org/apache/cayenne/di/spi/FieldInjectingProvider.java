@@ -57,9 +57,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -250,7 +248,7 @@ name|T
 name|get
 parameter_list|()
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|T
 name|object
@@ -365,7 +363,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Provider field %s.%s of type %s must be "
 operator|+
@@ -479,7 +477,7 @@ argument_list|)
 decl_stmt|;
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 name|message
 argument_list|,

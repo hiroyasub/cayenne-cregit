@@ -55,9 +55,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -156,7 +154,7 @@ modifier|...
 name|modules
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|this
 operator|.
@@ -328,7 +326,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 return|return
 name|getProvider
@@ -401,7 +399,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Type '%s' has no bound list configuration in the DI container."
 operator|+
@@ -486,7 +484,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Type '%s' has no bound map configuration in the DI container."
 operator|+
@@ -525,7 +523,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 if|if
 condition|(
@@ -580,7 +578,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Type '%s' is not bound in the DI container."
 argument_list|,

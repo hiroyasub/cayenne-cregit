@@ -23,6 +23,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ConfigurationException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|DataContext
@@ -40,20 +52,6 @@ operator|.
 name|access
 operator|.
 name|DataDomain
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|DIException
 import|;
 end_import
 
@@ -110,7 +108,7 @@ name|DataContext
 name|get
 parameter_list|()
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 comment|// TODO: andrus 12.5.2009 - deprecate 'createDataContext' in DataDomain and move
 comment|// it to this provider instead

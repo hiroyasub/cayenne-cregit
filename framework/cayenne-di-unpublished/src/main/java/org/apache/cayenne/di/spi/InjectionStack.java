@@ -45,9 +45,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -123,7 +121,7 @@ name|String
 name|bindingKey
 parameter_list|)
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 name|LinkedList
 argument_list|<
@@ -172,7 +170,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Circular dependency detected when binding a key \"%s\". Nested keys: %s"
 operator|+

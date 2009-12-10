@@ -25,9 +25,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -113,7 +111,7 @@ argument_list|>
 name|get
 parameter_list|()
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 try|try
 block|{
@@ -133,7 +131,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Error instantiating provider '%s'"
 argument_list|,

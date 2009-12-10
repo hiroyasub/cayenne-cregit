@@ -81,9 +81,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIException
+name|ConfigurationException
 import|;
 end_import
 
@@ -185,7 +183,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Can't find approprate constructor for implementation class '%s'"
 argument_list|,
@@ -571,7 +569,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Constructor provider parameter %s must be "
 operator|+
@@ -655,7 +653,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Error instantiating class '%s'"
 argument_list|,

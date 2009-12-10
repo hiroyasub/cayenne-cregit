@@ -33,6 +33,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ConfigurationException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|DataChannel
 import|;
 end_import
@@ -203,20 +215,6 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|DIException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
 name|Inject
 import|;
 end_import
@@ -309,7 +307,7 @@ name|DataDomain
 name|get
 parameter_list|()
 throws|throws
-name|DIException
+name|ConfigurationException
 block|{
 if|if
 condition|(
@@ -338,7 +336,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|DIException
+name|ConfigurationException
 name|e
 parameter_list|)
 block|{
@@ -354,7 +352,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|DIException
+name|ConfigurationException
 argument_list|(
 literal|"Error loading DataChannel: '%s'"
 argument_list|,
