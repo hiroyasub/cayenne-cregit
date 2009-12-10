@@ -802,6 +802,16 @@ name|OracleUtilDateType
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// add Oracle specific oracle.sql.TIMESTAMP handler
+name|map
+operator|.
+name|registerType
+argument_list|(
+operator|new
+name|OracleTimestampType
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// At least on MacOS X, driver does not handle Short and Byte properly
 name|map
 operator|.

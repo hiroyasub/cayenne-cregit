@@ -83,7 +83,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Object
+name|Timestamp
 name|materializeObject
 parameter_list|(
 name|ResultSet
@@ -108,11 +108,11 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|Object
+name|Timestamp
 name|materializeObject
 parameter_list|(
 name|CallableStatement
-name|rs
+name|cs
 parameter_list|,
 name|int
 name|index
@@ -124,7 +124,7 @@ throws|throws
 name|Exception
 block|{
 return|return
-name|rs
+name|cs
 operator|.
 name|getTimestamp
 argument_list|(

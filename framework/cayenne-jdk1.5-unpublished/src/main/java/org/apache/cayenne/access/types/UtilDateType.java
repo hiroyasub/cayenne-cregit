@@ -75,18 +75,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|TypesMapping
@@ -235,7 +223,7 @@ argument_list|)
 throw|;
 block|}
 specifier|public
-name|Object
+name|Date
 name|materializeObject
 parameter_list|(
 name|ResultSet
@@ -306,61 +294,18 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|// here the driver can "surprise" us
-comment|// check the type of returned value...
-name|Object
-name|object
-init|=
-name|rs
-operator|.
-name|getObject
-argument_list|(
-name|index
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|object
-operator|!=
-literal|null
-operator|&&
-operator|!
-operator|(
-name|object
-operator|instanceof
-name|Date
-operator|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Expected an instance of java.util.Date, instead got "
-operator|+
-name|object
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|", column index: "
-operator|+
-name|index
-argument_list|)
-throw|;
-block|}
 name|val
 operator|=
-operator|(
-name|Date
-operator|)
-name|object
+name|rs
+operator|.
+name|getTimestamp
+argument_list|(
+name|index
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
+comment|// return java.util.Date instead of subclass
 return|return
 name|val
 operator|==
@@ -379,7 +324,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|Object
+name|Date
 name|materializeObject
 parameter_list|(
 name|CallableStatement
@@ -394,7 +339,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Object
+name|Date
 name|val
 init|=
 literal|null
@@ -454,66 +399,14 @@ name|val
 operator|=
 name|cs
 operator|.
-name|getObject
+name|getTimestamp
 argument_list|(
 name|index
 argument_list|)
 expr_stmt|;
-comment|// check if value was properly converted by the driver
-if|if
-condition|(
-name|val
-operator|!=
-literal|null
-operator|&&
-operator|!
-operator|(
-name|val
-operator|instanceof
-name|java
-operator|.
-name|util
-operator|.
-name|Date
-operator|)
-condition|)
-block|{
-name|String
-name|typeName
-init|=
-name|TypesMapping
-operator|.
-name|getSqlNameByType
-argument_list|(
-name|type
-argument_list|)
-decl_stmt|;
-throw|throw
-operator|new
-name|ClassCastException
-argument_list|(
-literal|"Expected a java.util.Date or subclass, instead fetched '"
-operator|+
-name|val
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"' for JDBC type "
-operator|+
-name|typeName
-argument_list|)
-throw|;
-block|}
 break|break;
 block|}
-comment|// all sql time/date classes are subclasses of java.util.Date,
-comment|// so lets cast it to Date,
-comment|// if it is not date, ClassCastException will be thrown,
-comment|// which is what we want
+comment|// return java.util.Date instead of subclass
 return|return
 name|val
 operator|==
@@ -522,22 +415,9 @@ condition|?
 literal|null
 else|:
 operator|new
-name|java
-operator|.
-name|util
-operator|.
 name|Date
 argument_list|(
-operator|(
-operator|(
-name|java
-operator|.
-name|util
-operator|.
-name|Date
-operator|)
 name|val
-operator|)
 operator|.
 name|getTime
 argument_list|()

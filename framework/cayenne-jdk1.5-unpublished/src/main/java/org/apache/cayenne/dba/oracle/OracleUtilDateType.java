@@ -97,7 +97,7 @@ block|{
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|Date
 name|materializeObject
 parameter_list|(
 name|CallableStatement
@@ -112,7 +112,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Object
+name|Date
 name|date
 init|=
 name|super
@@ -148,9 +148,6 @@ block|{
 return|return
 name|normalizeDate
 argument_list|(
-operator|(
-name|Date
-operator|)
 name|date
 argument_list|)
 return|;
@@ -159,7 +156,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|Date
 name|materializeObject
 parameter_list|(
 name|ResultSet
@@ -174,7 +171,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Object
+name|Date
 name|date
 init|=
 name|super
@@ -210,9 +207,6 @@ block|{
 return|return
 name|normalizeDate
 argument_list|(
-operator|(
-name|Date
-operator|)
 name|date
 argument_list|)
 return|;

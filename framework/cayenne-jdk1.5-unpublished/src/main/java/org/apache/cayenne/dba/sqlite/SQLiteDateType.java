@@ -175,7 +175,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|Date
 name|materializeObject
 parameter_list|(
 name|ResultSet
@@ -284,7 +284,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|Date
 name|materializeObject
 parameter_list|(
 name|CallableStatement
