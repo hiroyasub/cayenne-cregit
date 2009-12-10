@@ -34,11 +34,10 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is handler for Oracle specific type "oracle.sql.TIMESTAMP"  * Oracle official JDBC Driver is mapping SQL TIMESTAMP to this type  * Created to solve CAY-1323.  */
+comment|/**  * This is handler for Oracle specific type "oracle.sql.TIMESTAMP" Oracle official JDBC  * Driver is mapping SQL TIMESTAMP to this type.  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|OracleTimestampType
 extends|extends
