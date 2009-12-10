@@ -23,7 +23,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
+name|ConfigurationException
 import|;
 end_import
 
@@ -35,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|resource
 operator|.
-name|CayenneRuntime
+name|Resource
 import|;
 end_import
 
@@ -50,15 +50,15 @@ specifier|public
 interface|interface
 name|DataChannelDescriptorLoader
 block|{
-comment|/**      * Loads a DataChannelDescriptor from some configuration source, usually an XML file      * found on classpath.      *       * @param runtimeName the name of {@link CayenneRuntime} that invoked this method.      *            Configuration resource names are normally derived from the runtime name.      */
+comment|/**      * Loads a DataChannelDescriptor from some configuration resource, usually an XML file      * found on classpath.      */
 name|DataChannelDescriptor
 name|load
 parameter_list|(
-name|String
-name|runtimeName
+name|Resource
+name|configurationResource
 parameter_list|)
 throws|throws
-name|CayenneRuntimeException
+name|ConfigurationException
 function_decl|;
 block|}
 end_interface

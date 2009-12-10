@@ -380,10 +380,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
+name|String
+name|message
+init|=
 literal|"Null configuration resource for node descriptor with location '"
 operator|+
 name|nodeDescriptor
@@ -392,18 +391,19 @@ name|getLocation
 argument_list|()
 operator|+
 literal|"'"
+decl_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+name|message
 argument_list|)
 expr_stmt|;
 throw|throw
 operator|new
 name|ConfigurationException
 argument_list|(
-literal|"Null configuration resource for node descriptor with location '%s'"
-argument_list|,
-name|nodeDescriptor
-operator|.
-name|getLocation
-argument_list|()
+name|message
 argument_list|)
 throw|;
 block|}
