@@ -134,7 +134,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|UpgradeCayennePreferenceDecorator
+name|UpgradeCayennePreference
 extends|extends
 name|CayennePreferenceDecorator
 block|{
@@ -190,7 +190,7 @@ init|=
 literal|"Editor.logfile"
 decl_stmt|;
 specifier|public
-name|UpgradeCayennePreferenceDecorator
+name|UpgradeCayennePreference
 parameter_list|(
 name|Preference
 name|decoratedPreference
@@ -219,7 +219,7 @@ argument_list|()
 operator|.
 name|nodeExists
 argument_list|(
-name|CAYENNE_PREFERENCES
+name|CAYENNE_PREFERENCE
 argument_list|)
 condition|)
 block|{
@@ -273,7 +273,7 @@ argument_list|()
 operator|.
 name|node
 argument_list|(
-name|CAYENNE_PREFERENCES
+name|CAYENNE_PREFERENCE
 argument_list|)
 operator|.
 name|node
@@ -506,6 +506,21 @@ return|return
 name|decoratedPreference
 operator|.
 name|getRootPreference
+argument_list|()
+return|;
+block|}
+specifier|public
+name|Preferences
+name|getCayennePreference
+parameter_list|()
+block|{
+name|upgrade
+argument_list|()
+expr_stmt|;
+return|return
+name|decoratedPreference
+operator|.
+name|getCayennePreference
 argument_list|()
 return|;
 block|}

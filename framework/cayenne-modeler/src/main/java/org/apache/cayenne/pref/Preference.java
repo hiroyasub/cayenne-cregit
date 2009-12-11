@@ -37,7 +37,7 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|CAYENNE_PREFERENCES
+name|CAYENNE_PREFERENCE
 init|=
 literal|"org/apache/cayenne"
 decl_stmt|;
@@ -62,6 +62,11 @@ decl_stmt|;
 specifier|public
 name|Preferences
 name|getRootPreference
+parameter_list|()
+function_decl|;
+specifier|public
+name|Preferences
+name|getCayennePreference
 parameter_list|()
 function_decl|;
 block|}

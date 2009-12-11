@@ -121,7 +121,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|UpgradeCayennePreferenceDecorator
+name|UpgradeCayennePreference
 import|;
 end_import
 
@@ -263,7 +263,7 @@ name|Preference
 name|decoratedPref
 init|=
 operator|new
-name|UpgradeCayennePreferenceDecorator
+name|UpgradeCayennePreference
 argument_list|(
 operator|new
 name|CayennePreference
@@ -274,7 +274,7 @@ name|cayennePrefs
 operator|=
 name|decoratedPref
 operator|.
-name|getRootPreference
+name|getCayennePreference
 argument_list|()
 expr_stmt|;
 name|cayennePrefs

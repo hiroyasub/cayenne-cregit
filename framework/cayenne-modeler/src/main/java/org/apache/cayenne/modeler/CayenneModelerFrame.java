@@ -1287,7 +1287,7 @@ specifier|protected
 name|JCheckBoxMenuItem
 name|logMenu
 decl_stmt|;
-comment|/**      * Split panel, where main project editor and external component, like log console,       * are located       */
+comment|/**      * Split panel, where main project editor and external component, like log console,      * are located      */
 specifier|protected
 name|JSplitPane
 name|splitPane
@@ -1367,7 +1367,7 @@ expr_stmt|;
 name|fireRecentFileListChanged
 argument_list|()
 expr_stmt|;
-comment|//start filling list in welcome screen and in menu
+comment|// start filling list in welcome screen and in menu
 name|setView
 argument_list|(
 literal|null
@@ -2078,6 +2078,49 @@ operator|.
 name|buildCheckBoxMenu
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|LogConsole
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|getConsoleProperty
+argument_list|(
+name|LogConsole
+operator|.
+name|DOCKED_PROPERTY
+argument_list|)
+operator|&&
+name|LogConsole
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|getConsoleProperty
+argument_list|(
+name|LogConsole
+operator|.
+name|SHOW_CONSOLE_PROPERTY
+argument_list|)
+condition|)
+block|{
+name|LogConsole
+operator|.
+name|getInstance
+argument_list|()
+operator|.
+name|setConsoleProperty
+argument_list|(
+name|LogConsole
+operator|.
+name|SHOW_CONSOLE_PROPERTY
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
 name|updateLogConsoleMenu
 argument_list|()
 expr_stmt|;
@@ -2123,7 +2166,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Mac OS X "About CayenneModeler" appears under the application menu, per Apple GUI standards
+comment|// Mac OS X "About CayenneModeler" appears under the application menu, per Apple
+comment|// GUI standards
 if|if
 condition|(
 name|OperatingSystem
@@ -2215,7 +2259,7 @@ name|menuBar
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Selects/deselects menu item, depending on status of log console       */
+comment|/**      * Selects/deselects menu item, depending on status of log console      */
 specifier|public
 name|void
 name|updateLogConsoleMenu
@@ -2304,45 +2348,21 @@ argument_list|(
 literal|0.7
 argument_list|)
 expr_stmt|;
-comment|/**          * Moving this to try-catch block per CAY-940.          * Exception will be stack-traced            */
+comment|/**          * Moving this to try-catch block per CAY-940. Exception will be stack-traced          */
 try|try
 block|{
-name|Domain
-name|domain
+name|ComponentGeometry
+name|geometry
 init|=
-name|Application
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|getPreferenceDomain
-argument_list|()
-operator|.
-name|getSubdomain
+operator|new
+name|ComponentGeometry
 argument_list|(
 name|this
 operator|.
 name|getClass
 argument_list|()
-argument_list|)
-decl_stmt|;
-name|ComponentGeometry
-name|geometry
-init|=
-operator|(
-name|ComponentGeometry
-operator|)
-name|domain
-operator|.
-name|getDetail
-argument_list|(
-literal|"splitPane.divider"
 argument_list|,
-name|ComponentGeometry
-operator|.
-name|class
-argument_list|,
-literal|true
+literal|"splitPane/divider"
 argument_list|)
 decl_stmt|;
 name|geometry
@@ -2894,7 +2914,9 @@ name|BorderLayout
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// is used to place search feature components the most right on a toolbar
+comment|// is used to place search feature
+comment|// components the most right on a
+comment|// toolbar
 specifier|final
 name|JTextField
 name|findField
