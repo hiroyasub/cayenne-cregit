@@ -267,9 +267,11 @@ operator|.
 name|TIME
 case|:
 return|return
+name|rs
+operator|.
 name|getTime
 argument_list|(
-name|string
+name|index
 argument_list|)
 return|;
 default|default:
