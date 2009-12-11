@@ -285,7 +285,7 @@ literal|"SELECT a FROM Artist a"
 operator|+
 literal|" WHERE EXISTS ("
 operator|+
-literal|" SELECT DISTINCT p1 FROM Painting p1"
+literal|" SELECT DISTINCT p1.paintingTitle FROM Painting p1"
 operator|+
 literal|" WHERE p1.toArtist = a"
 operator|+
@@ -419,7 +419,7 @@ literal|"SELECT p FROM Painting p"
 operator|+
 literal|" WHERE EXISTS ("
 operator|+
-literal|" SELECT DISTINCT p1 FROM Painting p1"
+literal|" SELECT DISTINCT p1.paintingTitle FROM Painting p1"
 operator|+
 literal|" WHERE p1.paintingTitle = p.paintingTitle"
 operator|+
