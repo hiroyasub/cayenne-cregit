@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLite database adapter that works with Zentus JDBC driver. See  * http://www.zentus.com/sqlitejdbc/ for the driver information.  *   *<pre>  *      sqlite.cayenne.adapter = org.apache.cayenne.dba.sqlite.SQLiteAdapter  *      sqlite.jdbc.url = jdbc:sqlite:sqlitetest.db  *      sqlite.jdbc.driver = org.sqlite.JDBC  *</pre>  *   * @since 3.0  */
+comment|/**  * A SQLite database adapter that works with Zentus JDBC driver. See  * http://www.zentus.com/sqlitejdbc/ for the driver information.  *  * Also look at http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC for another adaptor option.  *   *<pre>  *      sqlite.cayenne.adapter = org.apache.cayenne.dba.sqlite.SQLiteAdapter  *      sqlite.jdbc.url = jdbc:sqlite:sqlitetest.db  *      sqlite.jdbc.driver = org.sqlite.JDBC  *</pre>  *   * @since 3.0  */
 end_comment
 
 begin_comment
