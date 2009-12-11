@@ -1005,10 +1005,13 @@ name|DefaultGraphCell
 operator|)
 name|cell
 operator|.
-name|addPort
-argument_list|()
+name|getChildAt
+argument_list|(
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//port
 block|}
 block|}
 comment|/**          * 2. Add all relationships          */
@@ -1454,6 +1457,11 @@ argument_list|()
 argument_list|,
 name|cell
 argument_list|)
+expr_stmt|;
+name|cell
+operator|.
+name|addPort
+argument_list|()
 expr_stmt|;
 return|return
 name|cell
