@@ -211,13 +211,6 @@ name|class
 operator|.
 name|getName
 argument_list|()
-block|,
-name|EnumSerializerProxy
-operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
 block|}
 decl_stmt|;
 specifier|protected
