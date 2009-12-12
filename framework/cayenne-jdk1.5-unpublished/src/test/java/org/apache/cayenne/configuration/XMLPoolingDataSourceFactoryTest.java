@@ -150,7 +150,7 @@ argument_list|()
 decl_stmt|;
 name|nodeDescriptor
 operator|.
-name|setConfigurationResource
+name|setConfigurationSource
 argument_list|(
 operator|new
 name|URLResource

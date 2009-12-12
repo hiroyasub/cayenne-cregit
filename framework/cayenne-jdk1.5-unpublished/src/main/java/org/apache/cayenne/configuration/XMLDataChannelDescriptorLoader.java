@@ -384,7 +384,7 @@ argument_list|()
 decl_stmt|;
 name|descriptor
 operator|.
-name|setConfigurationResource
+name|setConfigurationSource
 argument_list|(
 name|configurationResource
 argument_list|)
@@ -822,7 +822,7 @@ name|baseResource
 init|=
 name|descriptor
 operator|.
-name|getConfigurationResource
+name|getConfigurationSource
 argument_list|()
 decl_stmt|;
 name|Resource
@@ -857,6 +857,13 @@ operator|.
 name|setLocation
 argument_list|(
 name|dataMapLocation
+argument_list|)
+expr_stmt|;
+name|dataMap
+operator|.
+name|setConfigurationSource
+argument_list|(
+name|dataMapResource
 argument_list|)
 expr_stmt|;
 name|descriptor
@@ -1011,11 +1018,11 @@ condition|)
 block|{
 name|nodeDescriptor
 operator|.
-name|setConfigurationResource
+name|setConfigurationSource
 argument_list|(
 name|descriptor
 operator|.
-name|getConfigurationResource
+name|getConfigurationSource
 argument_list|()
 operator|.
 name|getRelativeResource

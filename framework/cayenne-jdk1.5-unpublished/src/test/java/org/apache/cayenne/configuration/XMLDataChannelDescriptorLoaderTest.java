@@ -838,7 +838,7 @@ name|assertNotNull
 argument_list|(
 name|node1
 operator|.
-name|getConfigurationResource
+name|getConfigurationSource
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -846,7 +846,7 @@ name|assertEquals
 argument_list|(
 name|descriptor
 operator|.
-name|getConfigurationResource
+name|getConfigurationSource
 argument_list|()
 operator|.
 name|getRelativeResource
@@ -859,7 +859,7 @@ argument_list|()
 argument_list|,
 name|node1
 operator|.
-name|getConfigurationResource
+name|getConfigurationSource
 argument_list|()
 operator|.
 name|getURL

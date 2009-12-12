@@ -210,7 +210,7 @@ name|dbcpConfiguration
 init|=
 name|nodeDescriptor
 operator|.
-name|getConfigurationResource
+name|getConfigurationSource
 argument_list|()
 decl_stmt|;
 if|if
