@@ -704,6 +704,16 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"6"
+argument_list|,
+name|descriptor
+operator|.
+name|getVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|Collection
 argument_list|<
 name|DataMap
