@@ -101,16 +101,6 @@ name|java
 operator|.
 name|net
 operator|.
-name|URISyntaxException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
 name|URL
 import|;
 end_import
@@ -228,6 +218,20 @@ operator|.
 name|resource
 operator|.
 name|URLResource
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
 import|;
 end_import
 
@@ -620,19 +624,17 @@ name|unit
 operator|.
 name|targetFile
 operator|=
-operator|new
-name|File
+name|Util
+operator|.
+name|toFile
 argument_list|(
 name|targetUrl
-operator|.
-name|toURI
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|URISyntaxException
+name|IllegalArgumentException
 name|e
 parameter_list|)
 block|{
@@ -642,7 +644,7 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"Can't save configuration to the following location: '%s'. "
 operator|+
-literal|"Only file locations are supported. (%s)"
+literal|"Is this a valid file location?. (%s)"
 argument_list|,
 name|e
 argument_list|,
@@ -1322,19 +1324,17 @@ try|try
 block|{
 name|sourceFile
 operator|=
-operator|new
-name|File
+name|Util
+operator|.
+name|toFile
 argument_list|(
 name|sourceUrl
-operator|.
-name|toURI
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|URISyntaxException
+name|IllegalArgumentException
 name|e
 parameter_list|)
 block|{

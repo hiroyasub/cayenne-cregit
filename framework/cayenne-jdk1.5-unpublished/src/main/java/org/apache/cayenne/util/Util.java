@@ -195,6 +195,26 @@ name|java
 operator|.
 name|net
 operator|.
+name|URI
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URISyntaxException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
 name|URL
 import|;
 end_import
@@ -468,7 +488,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Contains various unorganized static utility methods used across Cayenne.  *   */
+comment|/**  * Contains various unorganized static utility methods used across Cayenne.  */
 end_comment
 
 begin_class
@@ -476,6 +496,76 @@ specifier|public
 class|class
 name|Util
 block|{
+comment|/**      * Converts URL to file. Throws {@link IllegalArgumentException} if the URL is not a      * "file://" URL.      */
+specifier|public
+specifier|static
+name|File
+name|toFile
+parameter_list|(
+name|URL
+name|url
+parameter_list|)
+throws|throws
+name|IllegalArgumentException
+block|{
+comment|// must convert spaces to %20, or URL->URI conversion may fail
+name|String
+name|urlString
+init|=
+name|url
+operator|.
+name|toExternalForm
+argument_list|()
+decl_stmt|;
+name|URI
+name|uri
+decl_stmt|;
+try|try
+block|{
+name|uri
+operator|=
+operator|new
+name|URI
+argument_list|(
+name|urlString
+operator|.
+name|replace
+argument_list|(
+literal|" "
+argument_list|,
+literal|"%20"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|URISyntaxException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"URL "
+operator|+
+name|urlString
+operator|+
+literal|" can't be converted to URI"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+return|return
+operator|new
+name|File
+argument_list|(
+name|uri
+argument_list|)
+return|;
+block|}
 comment|/**      * Reads file contents, returning it as a String, using System default line separator.      */
 specifier|public
 specifier|static
