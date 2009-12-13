@@ -72,7 +72,7 @@ specifier|public
 class|class
 name|DataNodeDescriptor
 implements|implements
-name|Configurable
+name|ConfigurationNode
 block|{
 specifier|protected
 name|String
@@ -126,7 +126,7 @@ parameter_list|>
 name|T
 name|acceptVisitor
 parameter_list|(
-name|ConfigurationVisitor
+name|ConfigurationNodeVisitor
 argument_list|<
 name|T
 argument_list|>

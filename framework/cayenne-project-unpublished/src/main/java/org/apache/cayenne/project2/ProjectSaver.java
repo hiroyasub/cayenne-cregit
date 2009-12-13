@@ -11,30 +11,50 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|project2
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|Resource
+import|;
+end_import
+
 begin_comment
-comment|/**  * Implemented by the "nodes" on the Cayenne configuration tree. Allows to extract  * information from the nodes or manipulate them in a consistent fashion.  *   * @since 3.1  */
+comment|/**  * Defines API of a project saver.  *   * @since 3.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|Configurable
+name|ProjectSaver
 block|{
-parameter_list|<
-name|T
-parameter_list|>
-name|T
-name|acceptVisitor
+comment|/**      * Saves project in the location of its current configuration sources. Since resource      * names are determined using a naming convention based on the project node names, if      * any of the nodes were renamed, the old locations will be deleted. After saving,      * resets configuration sources of all project objects to the new Resources.      */
+name|void
+name|save
 parameter_list|(
-name|ConfigurationVisitor
-argument_list|<
-name|T
-argument_list|>
-name|visitor
+name|Project
+name|project
+parameter_list|)
+function_decl|;
+comment|/**      * Saves project in a location defined by the 'baseDirectory' Resource. Does not      * delete the old resource locations. After saving, resets configuration sources of      * all project objects to the new Resources.      */
+name|void
+name|saveAs
+parameter_list|(
+name|Project
+name|project
+parameter_list|,
+name|Resource
+name|baseDirectory
 parameter_list|)
 function_decl|;
 block|}

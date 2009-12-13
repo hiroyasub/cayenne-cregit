@@ -130,6 +130,31 @@ return|return
 name|url
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+name|String
+name|urlString
+init|=
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|url
+argument_list|)
+decl_stmt|;
+return|return
+literal|"<URLResource: "
+operator|+
+name|urlString
+operator|+
+literal|">"
+return|;
+block|}
 block|}
 end_class
 

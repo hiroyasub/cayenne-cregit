@@ -125,7 +125,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Configurable
+name|ConfigurationNode
 import|;
 end_import
 
@@ -139,7 +139,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationVisitor
+name|ConfigurationNodeVisitor
 import|;
 end_import
 
@@ -314,7 +314,7 @@ name|DataMap
 implements|implements
 name|Serializable
 implements|,
-name|Configurable
+name|ConfigurationNode
 implements|,
 name|XMLSerializable
 implements|,
@@ -654,7 +654,7 @@ parameter_list|>
 name|T
 name|acceptVisitor
 parameter_list|(
-name|ConfigurationVisitor
+name|ConfigurationNodeVisitor
 argument_list|<
 name|T
 argument_list|>

@@ -11,39 +11,30 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|configuration
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|resource
-operator|.
-name|Resource
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines API of a project loader.  *   * @since 3.1  */
+comment|/**  * Implemented by the "nodes" on the Cayenne configuration tree. Allows to extract  * information from the nodes or manipulate them in a consistent fashion.  *   * @since 3.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ProjectLoader
+name|ConfigurationNode
 block|{
-comment|/**      * Loads the project from the given configuration source.      */
-name|Project
-name|loadProject
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|acceptVisitor
 parameter_list|(
-name|Resource
-name|source
+name|ConfigurationNodeVisitor
+argument_list|<
+name|T
+argument_list|>
+name|visitor
 parameter_list|)
 function_decl|;
 block|}

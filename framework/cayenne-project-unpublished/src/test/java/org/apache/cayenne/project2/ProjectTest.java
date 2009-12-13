@@ -35,7 +35,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Configurable
+name|ConfigurationNode
 import|;
 end_import
 
@@ -49,7 +49,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationVisitor
+name|ConfigurationNodeVisitor
 import|;
 end_import
 
@@ -65,11 +65,11 @@ name|void
 name|testRootNode
 parameter_list|()
 block|{
-name|Configurable
+name|ConfigurationNode
 name|object
 init|=
 operator|new
-name|Configurable
+name|ConfigurationNode
 argument_list|()
 block|{
 specifier|public
@@ -79,7 +79,7 @@ parameter_list|>
 name|T
 name|acceptVisitor
 parameter_list|(
-name|ConfigurationVisitor
+name|ConfigurationNodeVisitor
 argument_list|<
 name|T
 argument_list|>
@@ -93,16 +93,10 @@ block|}
 block|}
 decl_stmt|;
 name|Project
-argument_list|<
-name|Configurable
-argument_list|>
 name|project
 init|=
 operator|new
 name|Project
-argument_list|<
-name|Configurable
-argument_list|>
 argument_list|(
 name|object
 argument_list|)
@@ -123,11 +117,11 @@ name|void
 name|testVersion
 parameter_list|()
 block|{
-name|Configurable
+name|ConfigurationNode
 name|object
 init|=
 operator|new
-name|Configurable
+name|ConfigurationNode
 argument_list|()
 block|{
 specifier|public
@@ -137,7 +131,7 @@ parameter_list|>
 name|T
 name|acceptVisitor
 parameter_list|(
-name|ConfigurationVisitor
+name|ConfigurationNodeVisitor
 argument_list|<
 name|T
 argument_list|>
@@ -151,16 +145,10 @@ block|}
 block|}
 decl_stmt|;
 name|Project
-argument_list|<
-name|Configurable
-argument_list|>
 name|project
 init|=
 operator|new
 name|Project
-argument_list|<
-name|Configurable
-argument_list|>
 argument_list|(
 name|object
 argument_list|)

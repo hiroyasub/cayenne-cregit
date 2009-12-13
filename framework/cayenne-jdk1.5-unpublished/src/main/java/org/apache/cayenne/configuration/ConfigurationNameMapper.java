@@ -23,43 +23,59 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|resource
 operator|.
-name|DataMap
+name|Resource
 import|;
 end_import
 
 begin_comment
-comment|/**  * A visitor interface for implementing operations on configurable objects.  *   * @since 3.1  */
+comment|/**  * A service that maps the names of configuration objects to the resource names.  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ConfigurationVisitor
-parameter_list|<
-name|T
-parameter_list|>
+name|ConfigurationNameMapper
 block|{
-name|T
-name|visitDataChannelDescriptor
+comment|/**      * Returns the name of a configuration resource based on a naming convention for a      * given node type.      */
+name|String
+name|configurationLocation
 parameter_list|(
-name|DataChannelDescriptor
-name|descriptor
+name|ConfigurationNode
+name|node
 parameter_list|)
 function_decl|;
-name|T
-name|visitDataNodeDescriptor
+comment|/**      * Returns the name of a configuration resource based on a naming convention for a      * given node type.      */
+name|String
+name|configurationLocation
 parameter_list|(
-name|DataNodeDescriptor
-name|descriptor
+name|Class
+argument_list|<
+name|?
+extends|extends
+name|ConfigurationNode
+argument_list|>
+name|type
+parameter_list|,
+name|String
+name|nodeName
 parameter_list|)
 function_decl|;
-name|T
-name|visitDataMap
+comment|/**      * Returns a node name for a given configuration type and a configuration resource.      * This operation is the opposite of the {@link #configurationLocation(Class, String)}      * . May return null if the resource name is not following the expected naming format.      */
+name|String
+name|configurationNodeName
 parameter_list|(
-name|DataMap
-name|dataMap
+name|Class
+argument_list|<
+name|?
+extends|extends
+name|ConfigurationNode
+argument_list|>
+name|type
+parameter_list|,
+name|Resource
+name|resource
 parameter_list|)
 function_decl|;
 block|}

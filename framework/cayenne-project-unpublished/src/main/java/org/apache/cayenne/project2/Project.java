@@ -25,7 +25,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Configurable
+name|ConfigurationNode
 import|;
 end_import
 
@@ -37,24 +37,19 @@ begin_class
 specifier|public
 class|class
 name|Project
-parameter_list|<
-name|T
-extends|extends
-name|Configurable
-parameter_list|>
 block|{
 specifier|protected
 name|String
 name|version
 decl_stmt|;
 specifier|protected
-name|T
+name|ConfigurationNode
 name|rootNode
 decl_stmt|;
 specifier|public
 name|Project
 parameter_list|(
-name|T
+name|ConfigurationNode
 name|rootNode
 parameter_list|)
 block|{
@@ -90,7 +85,7 @@ name|version
 expr_stmt|;
 block|}
 specifier|public
-name|T
+name|ConfigurationNode
 name|getRootNode
 parameter_list|()
 block|{
