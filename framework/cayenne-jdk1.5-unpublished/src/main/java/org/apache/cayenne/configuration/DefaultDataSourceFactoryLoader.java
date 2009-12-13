@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataSourceFactoryLoader} that loads factories explicitly configured in the  * {@link DataNodeDescriptor}. If the factory class is not explicitly configured, and the  * descriptor has a configuration resource attached to it, {@link XMLPoolingDataSourceFactory}  * is returned.  *   * @since 3.1  */
+comment|/**  * A {@link DataSourceFactoryLoader} that loads factories explicitly configured in the  * {@link DataNodeDescriptor}. If the factory class is not explicitly configured, and the  * descriptor has a configuration resource attached to it,  * {@link XMLPoolingDataSourceFactory} is returned.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -85,7 +85,7 @@ if|if
 condition|(
 name|nodeDescriptor
 operator|.
-name|getConfigurationSource
+name|getDataSourceDescriptor
 argument_list|()
 operator|!=
 literal|null
@@ -115,7 +115,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"DataNodeDescriptor '%s' has no explicit DataSourceFactoryType set and has no configuration resource"
+literal|"DataNodeDescriptor '%s' has null 'dataSourceFactoryType' and 'dataSourceDescriptor' properties"
 argument_list|,
 name|nodeDescriptor
 operator|.

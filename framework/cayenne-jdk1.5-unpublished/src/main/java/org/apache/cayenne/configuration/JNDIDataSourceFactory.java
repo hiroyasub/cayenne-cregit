@@ -150,7 +150,7 @@ name|location
 init|=
 name|nodeDescriptor
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 decl_stmt|;
 if|if

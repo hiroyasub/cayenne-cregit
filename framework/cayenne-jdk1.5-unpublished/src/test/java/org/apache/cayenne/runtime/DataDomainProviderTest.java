@@ -614,7 +614,7 @@ argument_list|)
 expr_stmt|;
 name|nodeDescriptor1
 operator|.
-name|setLocation
+name|setParameters
 argument_list|(
 literal|"jdbc/testDataNode1"
 argument_list|)
@@ -667,7 +667,7 @@ argument_list|)
 expr_stmt|;
 name|nodeDescriptor2
 operator|.
-name|setLocation
+name|setParameters
 argument_list|(
 literal|"testDataNode2.driver.xml"
 argument_list|)
@@ -1158,7 +1158,7 @@ name|assertEquals
 argument_list|(
 name|nodeDescriptor1
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|,
 name|node1
@@ -1306,7 +1306,7 @@ name|assertEquals
 argument_list|(
 name|nodeDescriptor2
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|,
 name|node2

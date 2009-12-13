@@ -49,13 +49,6 @@ name|node
 parameter_list|)
 function_decl|;
 name|T
-name|visitDataNodeDescriptor
-parameter_list|(
-name|DataNodeDescriptor
-name|node
-parameter_list|)
-function_decl|;
-name|T
 name|visitDataMap
 parameter_list|(
 name|DataMap

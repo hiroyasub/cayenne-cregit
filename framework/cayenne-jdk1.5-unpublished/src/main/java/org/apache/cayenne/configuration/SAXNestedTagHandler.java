@@ -124,6 +124,7 @@ comment|/**  * A superclass of nested tag handlers for parsing of XML documents 
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|SAXNestedTagHandler
 extends|extends
@@ -191,6 +192,7 @@ specifier|protected
 name|Locator
 name|locator
 decl_stmt|;
+specifier|public
 name|SAXNestedTagHandler
 parameter_list|(
 name|XMLReader

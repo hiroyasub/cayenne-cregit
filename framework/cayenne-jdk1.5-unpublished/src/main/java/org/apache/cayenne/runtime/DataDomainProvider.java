@@ -726,7 +726,7 @@ name|setDataSourceLocation
 argument_list|(
 name|nodeDescriptor
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|)
 expr_stmt|;

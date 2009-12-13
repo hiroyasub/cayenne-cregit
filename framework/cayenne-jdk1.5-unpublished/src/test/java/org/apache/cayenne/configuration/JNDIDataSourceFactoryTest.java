@@ -96,7 +96,7 @@ argument_list|()
 decl_stmt|;
 name|descriptor
 operator|.
-name|setLocation
+name|setParameters
 argument_list|(
 literal|"jdbc/TestDS"
 argument_list|)
@@ -126,7 +126,7 @@ name|bind
 argument_list|(
 name|descriptor
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|,
 name|dataSource
@@ -163,7 +163,7 @@ name|unbind
 argument_list|(
 name|descriptor
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -185,7 +185,7 @@ argument_list|()
 decl_stmt|;
 name|descriptor
 operator|.
-name|setLocation
+name|setParameters
 argument_list|(
 literal|"jdbc/TestDS"
 argument_list|)
@@ -217,7 +217,7 @@ literal|"java:comp/env/"
 operator|+
 name|descriptor
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|,
 name|dataSource
@@ -256,7 +256,7 @@ literal|"java:comp/env/"
 operator|+
 name|descriptor
 operator|.
-name|getLocation
+name|getParameters
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -278,7 +278,7 @@ argument_list|()
 decl_stmt|;
 name|descriptor
 operator|.
-name|setLocation
+name|setParameters
 argument_list|(
 literal|"jdbc/TestDS"
 argument_list|)
