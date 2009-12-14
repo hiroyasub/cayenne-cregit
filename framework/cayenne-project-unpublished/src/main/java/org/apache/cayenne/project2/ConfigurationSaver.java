@@ -130,11 +130,9 @@ argument_list|,
 literal|"\t"
 argument_list|)
 decl_stmt|;
-name|encoder
-operator|.
-name|println
+name|printXMLHeader
 argument_list|(
-literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+name|encoder
 argument_list|)
 expr_stmt|;
 name|node
@@ -167,11 +165,9 @@ argument_list|,
 literal|"\t"
 argument_list|)
 decl_stmt|;
-name|encoder
-operator|.
-name|println
+name|printXMLHeader
 argument_list|(
-literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+name|encoder
 argument_list|)
 expr_stmt|;
 name|node
@@ -184,6 +180,22 @@ expr_stmt|;
 return|return
 literal|null
 return|;
+block|}
+specifier|private
+name|void
+name|printXMLHeader
+parameter_list|(
+name|XMLEncoder
+name|encoder
+parameter_list|)
+block|{
+name|encoder
+operator|.
+name|println
+argument_list|(
+literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

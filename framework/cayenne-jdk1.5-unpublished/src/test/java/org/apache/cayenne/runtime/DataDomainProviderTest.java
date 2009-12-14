@@ -633,7 +633,7 @@ argument_list|)
 expr_stmt|;
 name|testDescriptor
 operator|.
-name|getDataNodeDescriptors
+name|getNodeDescriptors
 argument_list|()
 operator|.
 name|add
@@ -674,7 +674,7 @@ argument_list|)
 expr_stmt|;
 name|testDescriptor
 operator|.
-name|getDataNodeDescriptors
+name|getNodeDescriptors
 argument_list|()
 operator|.
 name|add

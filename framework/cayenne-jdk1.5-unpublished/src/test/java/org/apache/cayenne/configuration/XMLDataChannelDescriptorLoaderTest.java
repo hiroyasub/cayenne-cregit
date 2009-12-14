@@ -860,7 +860,7 @@ name|nodes
 init|=
 name|descriptor
 operator|.
-name|getDataNodeDescriptors
+name|getNodeDescriptors
 argument_list|()
 decl_stmt|;
 name|assertEquals

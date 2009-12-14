@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Password encoders are used to translate the text of the database password,  * on loading and on saving, from one form to another.  It can facilitate  * the obscuring of the password text to make database connection information  * less obvious to someone who stumbles onto the password.  *   * Cayenne only includes facilities to obscure, not encrypt, the database  * password.  The mechanism is user-extensible, though, so should stronger  * security features be required, they can be added and integrated into  * both the modeler and framework.  *   * @since 3.0  */
+comment|/**  * Password encoders are used to translate the text of the database password, on loading  * and on saving, from one form to another. It can facilitate the obscuring of the  * password text to make database connection information less obvious to someone who  * stumbles onto the password. Cayenne only includes facilities to obscure, not encrypt,  * the database password. The mechanism is user-extensible, though, so should stronger  * security features be required, they can be added and integrated into both the modeler  * and framework.  *   * @since 3.0  */
 end_comment
 
 begin_interface
@@ -55,8 +55,7 @@ name|getName
 argument_list|()
 block|}
 decl_stmt|;
-comment|/**    * Decodes an encoded database password.    *     * @param encodedPassword - The encoded password to be decoded    * @param key - An optional data element which can be used to unlock the password.    *        Some encoders may require the key.    * @return The decoded normal/plain plassword.    */
-specifier|public
+comment|/**      * Decodes an encoded database password.      *       * @param encodedPassword - The encoded password to be decoded      * @param key - An optional data element which can be used to unlock the password.      *            Some encoders may require the key.      * @return The decoded normal/plain plassword.      */
 name|String
 name|decodePassword
 parameter_list|(
@@ -67,8 +66,7 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
-comment|/**    * Encodes a normal/plain database password.    *     * @param normalPassword - The normal/plain password to be encoded    * @param key - An optional data element which can be used to lock the password.    *        Some encoders may require the key.    * @return The encoded password.    */
-specifier|public
+comment|/**      * Encodes a normal/plain database password.      *       * @param normalPassword - The normal/plain password to be encoded      * @param key - An optional data element which can be used to lock the password. Some      *            encoders may require the key.      * @return The encoded password.      */
 name|String
 name|encodePassword
 parameter_list|(

@@ -51,6 +51,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|DataNodeDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -72,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * Updates ConfigurationNode's configuration sources.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -116,6 +130,26 @@ argument_list|(
 name|configurationSource
 argument_list|)
 expr_stmt|;
+comment|// update child configurations
+for|for
+control|(
+name|DataNodeDescriptor
+name|childDescriptor
+range|:
+name|node
+operator|.
+name|getNodeDescriptors
+argument_list|()
+control|)
+block|{
+name|childDescriptor
+operator|.
+name|setConfigurationSource
+argument_list|(
+name|configurationSource
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 literal|null
 return|;

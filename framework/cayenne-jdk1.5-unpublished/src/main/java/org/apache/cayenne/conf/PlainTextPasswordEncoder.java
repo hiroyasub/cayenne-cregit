@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * The plain text password encoder passes the text of the database password  * straight-through without any alteration.  This is identical to the  * behavior of pre-3.0 versions of Cayenne, where the password was stored  * in the XML model in clear text.  *   * @since 3.0  */
+comment|/**  * The plain text password encoder passes the text of the database password  * straight-through without any alteration. This is identical to the behavior of pre-3.0  * versions of Cayenne, where the password was stored in the XML model in clear text.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -26,7 +26,6 @@ name|PlainTextPasswordEncoder
 implements|implements
 name|PasswordEncoding
 block|{
-comment|/* (non-Javadoc)    * @see org.apache.cayenne.conf.PasswordEncoding#decodePassword(java.lang.String, java.lang.String)    */
 specifier|public
 name|String
 name|decodePassword
@@ -42,7 +41,6 @@ return|return
 name|encodedPassword
 return|;
 block|}
-comment|/* (non-Javadoc)    * @see org.apache.cayenne.conf.PasswordEncoding#encodePassword(java.lang.String, java.lang.String)    */
 specifier|public
 name|String
 name|encodePassword

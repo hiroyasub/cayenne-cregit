@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * The ROT-13 password encoder passes the text of the database password  * through a simple Caesar cipher to obscure the password text.  The ROT-13  * cipher only processes letters -- numbers and symbols are left untouched.  * ROT-13 is also a symmetrical cipher and therefore provides no real  * encryption since applying the cipher to the encrypted text produces the  * original source text.  See the Wikipedia entry on  *<a href="http://en.wikipedia.org/wiki/Rot-13">ROT13</a>  * for more information on this topic.  *   * @since 3.0  */
+comment|/**  * The ROT-13 password encoder passes the text of the database password through a simple  * Caesar cipher to obscure the password text. The ROT-13 cipher only processes letters --  * numbers and symbols are left untouched. ROT-13 is also a symmetrical cipher and  * therefore provides no real encryption since applying the cipher to the encrypted text  * produces the original source text. See the Wikipedia entry on<a  * href="http://en.wikipedia.org/wiki/Rot-13">ROT13</a> for more information on this  * topic.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -26,7 +26,6 @@ name|Rot13PasswordEncoder
 implements|implements
 name|PasswordEncoding
 block|{
-comment|/* (non-Javadoc)    * @see org.apache.cayenne.conf.PasswordEncoding#decodePassword(java.lang.String, java.lang.String)    */
 specifier|public
 name|String
 name|decodePassword
@@ -45,7 +44,6 @@ name|encodedPassword
 argument_list|)
 return|;
 block|}
-comment|/* (non-Javadoc)    * @see org.apache.cayenne.conf.PasswordEncoding#encodePassword(java.lang.String, java.lang.String)    */
 specifier|public
 name|String
 name|encodePassword
@@ -64,7 +62,7 @@ name|normalPassword
 argument_list|)
 return|;
 block|}
-comment|/**    * Applies a ROT-13 Caesar cipher to the supplied value.  Each letter in    * the supplied value is substituted with a new value rotated by 13 places    * in the alphabet.  See<a href="http://en.wikipedia.org/wiki/ROT13">ROT13</a>    * for more information.    *<p>    * A Unix command to perform a ROT-13 cipher is:    *<pre>tr "[a-m][n-z][A-M][N-Z]" "[n-z][a-m][N-Z][A-M]"</pre>    *       * @param value The text to be rotated.    * @return The rotated text.    */
+comment|/**      * Applies a ROT-13 Caesar cipher to the supplied value. Each letter in the supplied      * value is substituted with a new value rotated by 13 places in the alphabet. See<a      * href="http://en.wikipedia.org/wiki/ROT13">ROT13</a> for more information.      *<p>      * A Unix command to perform a ROT-13 cipher is:      *       *<pre>      * tr "[a-m][n-z][A-M][N-Z]" "[n-z][a-m][N-Z][A-M]"      *</pre>      *       * @param value The text to be rotated.      * @return The rotated text.      */
 specifier|public
 name|String
 name|rotate
@@ -73,6 +71,17 @@ name|String
 name|value
 parameter_list|)
 block|{
+if|if
+condition|(
+name|value
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 name|int
 name|length
 init|=
@@ -113,7 +122,7 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
-comment|// If c is a letter, rotate it by 13.  Numbers/symbols are untouched.
+comment|// If c is a letter, rotate it by 13. Numbers/symbols are untouched.
 if|if
 condition|(
 operator|(
@@ -183,7 +192,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**    * Small test program to run text through the ROT-13 cipher.  This program    * can also be run by hand to encode/decode values manually.  The values    * passed on the command line are printed to standard out.    *       * @param args The array of text values (on the command-line) to be run    *             through the ROT-13 cipher.    */
+comment|/**      * Small test program to run text through the ROT-13 cipher. This program can also be      * run by hand to encode/decode values manually. The values passed on the command line      * are printed to standard out.      *       * @param args The array of text values (on the command-line) to be run through the      *            ROT-13 cipher.      */
 specifier|public
 specifier|static
 name|void

@@ -704,7 +704,7 @@ name|nodeDescriptor
 range|:
 name|descriptor
 operator|.
-name|getDataNodeDescriptors
+name|getNodeDescriptors
 argument_list|()
 control|)
 block|{

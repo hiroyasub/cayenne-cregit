@@ -242,21 +242,38 @@ operator|=
 name|DBCP_PROPERTIES
 expr_stmt|;
 block|}
-name|DataChannelDescriptor
-name|parent
+name|Resource
+name|baseConfiguration
 init|=
 name|nodeDescriptor
 operator|.
-name|getParent
+name|getConfigurationSource
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|baseConfiguration
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Null 'configurationSource' for nodeDescriptor '%s'"
+argument_list|,
+name|nodeDescriptor
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+throw|;
+block|}
 name|Resource
 name|dbcpConfiguration
 init|=
-name|parent
-operator|.
-name|getConfigurationSource
-argument_list|()
+name|baseConfiguration
 operator|.
 name|getRelativeResource
 argument_list|(
@@ -274,7 +291,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null 'configurationResource' for nodeDescriptor '%s'"
+literal|"Missing DBCP configuration '%s' for nodeDescriptor '%s'"
+argument_list|,
+name|location
 argument_list|,
 name|nodeDescriptor
 operator|.

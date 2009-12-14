@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ProjectSaver saving project configuration to the filesystem.  *   * @since 3.1  */
+comment|/**  * A ProjectSaver saving project configuration to the file system.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -289,6 +289,7 @@ operator|new
 name|ConfigurationNodesGetter
 argument_list|()
 expr_stmt|;
+comment|// this is not configurable yet... probably doesn't have to be
 name|fileEncoding
 operator|=
 literal|"UTF-8"
