@@ -1586,6 +1586,10 @@ init|=
 operator|(
 name|superEntity
 operator|==
+literal|null
+operator|||
+name|superEntity
+operator|==
 name|noInheritance
 operator|)
 condition|?
