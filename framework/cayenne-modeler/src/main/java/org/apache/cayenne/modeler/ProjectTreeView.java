@@ -1457,17 +1457,6 @@ argument_list|(
 name|treeSelectionListener
 argument_list|)
 expr_stmt|;
-name|addTreeSelectionListener
-argument_list|(
-name|mediator
-operator|.
-name|getApplication
-argument_list|()
-operator|.
-name|getUndoManager
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|addMouseListener
 argument_list|(
 operator|new
