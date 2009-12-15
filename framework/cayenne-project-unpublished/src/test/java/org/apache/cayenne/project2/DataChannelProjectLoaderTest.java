@@ -387,16 +387,6 @@ argument_list|(
 name|project
 argument_list|)
 expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|"6"
-argument_list|,
-name|project
-operator|.
-name|getVersion
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|DataChannelDescriptor
 name|rootNode
 init|=

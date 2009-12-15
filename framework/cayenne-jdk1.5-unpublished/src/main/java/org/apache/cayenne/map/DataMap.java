@@ -211,20 +211,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
-operator|.
-name|Project
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|NamedQuery
@@ -1135,16 +1121,23 @@ argument_list|)
 expr_stmt|;
 name|encoder
 operator|.
-name|println
+name|indent
 argument_list|(
-literal|"  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
+literal|1
 argument_list|)
 expr_stmt|;
 name|encoder
 operator|.
 name|println
 argument_list|(
-literal|"  xsi:schemaLocation=\""
+literal|" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
+argument_list|)
+expr_stmt|;
+name|encoder
+operator|.
+name|println
+argument_list|(
+literal|" xsi:schemaLocation=\""
 operator|+
 name|SCHEMA_XSD
 operator|+
@@ -1157,22 +1150,14 @@ argument_list|)
 expr_stmt|;
 name|encoder
 operator|.
-name|println
-argument_list|(
-literal|"  project-version=\""
-operator|+
-name|Project
-operator|.
-name|CURRENT_PROJECT_VERSION
-operator|+
-literal|"\">"
-argument_list|)
+name|printProjectVersion
+argument_list|()
 expr_stmt|;
 name|encoder
 operator|.
-name|indent
+name|println
 argument_list|(
-literal|1
+literal|">"
 argument_list|)
 expr_stmt|;
 comment|// properties

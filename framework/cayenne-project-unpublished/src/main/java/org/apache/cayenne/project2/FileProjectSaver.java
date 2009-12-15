@@ -296,6 +296,15 @@ literal|"UTF-8"
 expr_stmt|;
 block|}
 specifier|public
+name|String
+name|getSupportedVersion
+parameter_list|()
+block|{
+return|return
+literal|"6"
+return|;
+block|}
+specifier|public
 name|void
 name|save
 parameter_list|(
@@ -1020,6 +1029,9 @@ operator|new
 name|ConfigurationSaver
 argument_list|(
 name|printWriter
+argument_list|,
+name|getSupportedVersion
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

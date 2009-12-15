@@ -33,16 +33,24 @@ begin_comment
 comment|/**  * A model of a Cayenne mapping project. A project consists of descriptors for  * DataChannel, DataNodes and DataMaps and associated filesystem files they are loaded  * from and saved to.  *   * @since 3.1  */
 end_comment
 
+begin_comment
+comment|// do we even need a project wrapper around ConfigurationNode, as currently it does
+end_comment
+
+begin_comment
+comment|// nothing?? Maybe in the future make it store configuration Resources for the project
+end_comment
+
+begin_comment
+comment|// nodes to avoid attaching them to descriptors?
+end_comment
+
 begin_class
 specifier|public
 class|class
 name|Project
 block|{
 specifier|protected
-name|String
-name|version
-decl_stmt|;
-specifier|protected
 name|ConfigurationNode
 name|rootNode
 decl_stmt|;
@@ -58,30 +66,6 @@ operator|.
 name|rootNode
 operator|=
 name|rootNode
-expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getVersion
-parameter_list|()
-block|{
-return|return
-name|version
-return|;
-block|}
-specifier|public
-name|void
-name|setVersion
-parameter_list|(
-name|String
-name|version
-parameter_list|)
-block|{
-name|this
-operator|.
-name|version
-operator|=
-name|version
 expr_stmt|;
 block|}
 specifier|public

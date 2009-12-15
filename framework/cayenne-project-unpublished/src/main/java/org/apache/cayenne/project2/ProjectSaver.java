@@ -38,6 +38,11 @@ specifier|public
 interface|interface
 name|ProjectSaver
 block|{
+comment|/**      * Returns a version of the project configuration supported by the current runtime.      */
+name|String
+name|getSupportedVersion
+parameter_list|()
+function_decl|;
 comment|/**      * Saves project in the location of its current configuration sources. Since resource      * names are determined using a naming convention based on the project node names, if      * any of the nodes were renamed, the old locations will be deleted. After saving,      * resets configuration sources of all project objects to the new Resources.      */
 name|void
 name|save
