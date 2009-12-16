@@ -290,7 +290,7 @@ case|case
 name|UPGRADE_NEEDED
 case|:
 return|return
-name|performNeededUpgrade
+name|doPerformUpgrade
 argument_list|()
 return|;
 default|default:
@@ -300,14 +300,16 @@ argument_list|()
 return|;
 block|}
 block|}
+comment|/**      * Does the actual project upgrade, assuming the caller already verified that the      * upgrade is possible.      */
 specifier|protected
 specifier|abstract
 name|Resource
-name|performNeededUpgrade
+name|doPerformUpgrade
 parameter_list|()
 throws|throws
 name|ConfigurationException
 function_decl|;
+comment|/**      * Creates a metadata object describing the type of upgrade needed.      */
 specifier|protected
 specifier|abstract
 name|UpgradeMetaData
