@@ -35,7 +35,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationNodeVisitor
+name|BaseConfigurationNodeVisitor
 import|;
 end_import
 
@@ -88,8 +88,8 @@ end_comment
 begin_class
 class|class
 name|ConfigurationSaver
-implements|implements
-name|ConfigurationNodeVisitor
+extends|extends
+name|BaseConfigurationNodeVisitor
 argument_list|<
 name|Void
 argument_list|>
@@ -124,6 +124,8 @@ operator|=
 name|version
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Void
 name|visitDataChannelDescriptor
@@ -161,6 +163,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Void
 name|visitDataMap

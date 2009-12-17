@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Implemented by the "nodes" on the Cayenne configuration tree. Allows to extract  * information from the nodes or manipulate them in a consistent fashion.  *   * @since 3.1  */
+comment|/**  * Implemented by the "nodes" on the Cayenne configuration tree. Allows to extract  * information from the nodes or manipulate them in a consistent manner.  *   * @since 3.1  */
 end_comment
 
 begin_interface

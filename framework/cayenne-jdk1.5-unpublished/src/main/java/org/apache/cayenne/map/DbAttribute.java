@@ -23,6 +23,34 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ConfigurationNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ConfigurationNodeVisitor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|TypesMapping
@@ -90,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbAttribute defines a descriptor for a single database table column.  *   */
+comment|/**  * A DbAttribute defines a descriptor for a single database table column.  */
 end_comment
 
 begin_class
@@ -99,6 +127,8 @@ class|class
 name|DbAttribute
 extends|extends
 name|Attribute
+implements|implements
+name|ConfigurationNode
 block|{
 comment|/**      * Defines JDBC type of the column.      */
 specifier|protected
@@ -204,6 +234,29 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|acceptVisitor
+parameter_list|(
+name|ConfigurationNodeVisitor
+argument_list|<
+name|T
+argument_list|>
+name|visitor
+parameter_list|)
+block|{
+return|return
+name|visitor
+operator|.
+name|visitDbAttribute
+argument_list|(
+name|this
+argument_list|)
+return|;
 block|}
 comment|/**      * Prints itself as XML to the provided XMLEncoder.      *       * @since 1.1      */
 annotation|@

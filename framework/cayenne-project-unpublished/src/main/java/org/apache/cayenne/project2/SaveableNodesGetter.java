@@ -55,7 +55,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationNode
+name|BaseConfigurationNodeVisitor
 import|;
 end_import
 
@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationNodeVisitor
+name|ConfigurationNode
 import|;
 end_import
 
@@ -107,9 +107,9 @@ end_comment
 
 begin_class
 class|class
-name|ConfigurationNodesGetter
-implements|implements
-name|ConfigurationNodeVisitor
+name|SaveableNodesGetter
+extends|extends
+name|BaseConfigurationNodeVisitor
 argument_list|<
 name|Collection
 argument_list|<
@@ -117,6 +117,8 @@ name|ConfigurationNode
 argument_list|>
 argument_list|>
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -171,6 +173,8 @@ return|return
 name|nodes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<

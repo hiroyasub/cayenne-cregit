@@ -33,6 +33,34 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ConfigurationNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ConfigurationNodeVisitor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|TypesMapping
@@ -96,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor for the Procedure parameter.  *   */
+comment|/**  * A descriptor for the Procedure parameter.  */
 end_comment
 
 begin_class
@@ -104,6 +132,8 @@ specifier|public
 class|class
 name|ProcedureParameter
 implements|implements
+name|ConfigurationNode
+implements|,
 name|CayenneMapEntry
 implements|,
 name|XMLSerializable
@@ -220,6 +250,29 @@ argument_list|(
 name|direction
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|acceptVisitor
+parameter_list|(
+name|ConfigurationNodeVisitor
+argument_list|<
+name|T
+argument_list|>
+name|visitor
+parameter_list|)
+block|{
+return|return
+name|visitor
+operator|.
+name|visitProcedureParameter
+argument_list|(
+name|this
+argument_list|)
+return|;
 block|}
 specifier|public
 name|String

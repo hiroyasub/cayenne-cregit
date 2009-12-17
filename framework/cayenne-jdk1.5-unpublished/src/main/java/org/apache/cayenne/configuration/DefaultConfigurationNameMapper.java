@@ -89,8 +89,6 @@ specifier|public
 name|DefaultConfigurationNameMapper
 parameter_list|()
 block|{
-name|this
-operator|.
 name|nameMapper
 operator|=
 operator|new
@@ -451,12 +449,14 @@ block|}
 specifier|final
 class|class
 name|NameMapper
-implements|implements
-name|ConfigurationNodeVisitor
+extends|extends
+name|BaseConfigurationNodeVisitor
 argument_list|<
 name|String
 argument_list|>
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|visitDataChannelDescriptor
@@ -475,6 +475,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|visitDataMap

@@ -25,7 +25,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationNodeVisitor
+name|BaseConfigurationNodeVisitor
 import|;
 end_import
 
@@ -78,12 +78,14 @@ end_comment
 begin_class
 class|class
 name|ConfigurationSourceGetter
-implements|implements
-name|ConfigurationNodeVisitor
+extends|extends
+name|BaseConfigurationNodeVisitor
 argument_list|<
 name|Resource
 argument_list|>
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Resource
 name|visitDataChannelDescriptor
@@ -99,6 +101,8 @@ name|getConfigurationSource
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Resource
 name|visitDataMap

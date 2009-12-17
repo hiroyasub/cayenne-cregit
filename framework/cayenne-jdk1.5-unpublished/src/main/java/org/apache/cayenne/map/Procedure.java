@@ -63,6 +63,34 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ConfigurationNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ConfigurationNodeVisitor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|CayenneMapEntry
@@ -112,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor for a database stored procedure.  *   */
+comment|/**  * A mapping descriptor for a database stored procedure.  */
 end_comment
 
 begin_class
@@ -120,6 +148,8 @@ specifier|public
 class|class
 name|Procedure
 implements|implements
+name|ConfigurationNode
+implements|,
 name|CayenneMapEntry
 implements|,
 name|XMLSerializable
@@ -179,6 +209,30 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|acceptVisitor
+parameter_list|(
+name|ConfigurationNodeVisitor
+argument_list|<
+name|T
+argument_list|>
+name|visitor
+parameter_list|)
+block|{
+return|return
+name|visitor
+operator|.
+name|visitProcedure
+argument_list|(
+name|this
+argument_list|)
+return|;
 block|}
 specifier|public
 name|String
