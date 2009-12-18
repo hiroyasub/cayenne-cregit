@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * ProjectTraversalHandler defines callback methods that are  * invoked during project tree traversal.  *   */
+comment|/**  * ProjectTraversalHandler defines callback methods that are invoked during project tree  * traversal.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_interface
@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|ProjectTraversalHandler
 block|{
-comment|/**       * Invoked when a node is read during project tree traversal.      */
+comment|/**      * Invoked when a node is read during project tree traversal.      */
 specifier|public
 name|void
 name|projectNode
@@ -33,7 +33,7 @@ name|ProjectPath
 name|nodePath
 parameter_list|)
 function_decl|;
-comment|/**      * Invoked when the children of a project node are      * about to be scanned. If handler returns false, children      * of the node (and trheir children) will be skipped. This      * allows handler to control traversal behavior by eliminating       * subtrees.      */
+comment|/**      * Invoked when the children of a project node are about to be scanned. If handler      * returns false, children of the node (and trheir children) will be skipped. This      * allows handler to control traversal behavior by eliminating subtrees.      */
 specifier|public
 name|boolean
 name|shouldReadChildren

@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ApplicationProjectFile is a ProjectFile abstraction of the main project file in a  * Cayenne project. Right now Cayenne projects can not be renamed, so all the name  * tracking functionality is pretty much noop.  */
+comment|/**  * ApplicationProjectFile is a ProjectFile abstraction of the main project file in a  * Cayenne project. Right now Cayenne projects can not be renamed, so all the name  * tracking functionality is pretty much noop.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class

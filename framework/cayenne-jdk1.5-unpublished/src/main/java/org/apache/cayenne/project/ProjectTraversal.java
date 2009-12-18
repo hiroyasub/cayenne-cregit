@@ -167,7 +167,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Relationship
+name|ProcedureParameter
 import|;
 end_import
 
@@ -181,7 +181,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ProcedureParameter
+name|Relationship
 import|;
 end_import
 
@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectTraversal allows to traverse Cayenne project tree in a "depth-first" order  * starting from an arbitrary level to its children.  *<p>  *<i>Current implementation is not very efficient and would actually first read the whole  * tree, before returning the first element from the iterator.</i>  *</p>  */
+comment|/**  * ProjectTraversal allows to traverse Cayenne project tree in a "depth-first" order  * starting from an arbitrary level to its children.  *<p>  *<i>Current implementation is not very efficient and would actually first read the whole  * tree, before returning the first element from the iterator.</i>  *</p>  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
@@ -628,7 +628,7 @@ throw|;
 block|}
 block|}
 comment|/**      * Performs traversal starting from the Project and down to its children.      */
-specifier|public
+specifier|private
 name|void
 name|traverseProject
 parameter_list|(
@@ -703,7 +703,7 @@ block|}
 block|}
 block|}
 comment|/**      * Performs traversal starting from a list of domains.      */
-specifier|public
+specifier|private
 name|void
 name|traverseDomains
 parameter_list|(
@@ -814,7 +814,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseNodes
 parameter_list|(
@@ -910,7 +910,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseMaps
 parameter_list|(
@@ -1066,7 +1066,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseEmbeddable
 parameter_list|(
@@ -1163,7 +1163,7 @@ block|}
 block|}
 block|}
 comment|/**      * Performs recursive traversal of an Iterator of Cayenne Query objects.      */
-specifier|public
+specifier|private
 name|void
 name|traverseQueries
 parameter_list|(
@@ -1232,7 +1232,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Performs recusrive traversal of an Iterator of Cayenne Procedure objects.      */
-specifier|public
+specifier|private
 name|void
 name|traverseProcedures
 parameter_list|(
@@ -1328,7 +1328,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseEntities
 parameter_list|(
@@ -1439,7 +1439,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseAttributes
 parameter_list|(
@@ -1494,7 +1494,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseEmbeddableAttributes
 parameter_list|(
@@ -1549,7 +1549,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseRelationships
 parameter_list|(
@@ -1604,7 +1604,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
+specifier|private
 name|void
 name|traverseProcedureParameters
 parameter_list|(

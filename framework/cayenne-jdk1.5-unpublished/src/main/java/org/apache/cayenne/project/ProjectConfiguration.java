@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Subclass of FileConfiguration used in the project model.  */
+comment|/**  * Subclass of FileConfiguration used in the project model.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class

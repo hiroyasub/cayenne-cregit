@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectDataSource is a DataSource implementation used by the project model.  */
+comment|/**  * ProjectDataSource is a DataSource implementation used by the project model.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class

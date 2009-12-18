@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Describes a model of Cayenne project. Project is a set of files in the filesystem  * describing storing Cayenne DataMaps, DataNodes and other information.  *<p>  * Project has a project directory, which is a canonical directory. All project files are  * relative to the project directory.  *</p>  *   */
+comment|/**  * Describes a model of Cayenne project. Project is a set of files in the filesystem  * describing storing Cayenne DataMaps, DataNodes and other information.  *<p>  * Project has a project directory, which is a canonical directory. All project files are  * relative to the project directory.  *</p>  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
@@ -136,28 +136,6 @@ name|String
 name|CURRENT_PROJECT_VERSION
 init|=
 literal|"3.0.0.1"
-decl_stmt|;
-specifier|static
-specifier|final
-name|int
-name|UPGRADE_STATUS_OLD
-init|=
-operator|-
-literal|1
-decl_stmt|;
-specifier|static
-specifier|final
-name|int
-name|UPGRADE_STATUS_CURRENT
-init|=
-literal|0
-decl_stmt|;
-specifier|static
-specifier|final
-name|int
-name|UPGRADE_STATUS_NEW
-init|=
-literal|1
 decl_stmt|;
 specifier|protected
 name|File
@@ -176,10 +154,6 @@ argument_list|<
 name|ProjectFile
 argument_list|>
 argument_list|()
-decl_stmt|;
-specifier|protected
-name|int
-name|upgradeStatus
 decl_stmt|;
 specifier|protected
 name|List
@@ -225,26 +199,6 @@ block|{
 return|return
 operator|new
 name|ApplicationProject
-argument_list|(
-name|projectFile
-argument_list|)
-return|;
-block|}
-if|else if
-condition|(
-name|fileName
-operator|.
-name|endsWith
-argument_list|(
-name|DataMapFile
-operator|.
-name|LOCATION_SUFFIX
-argument_list|)
-condition|)
-block|{
-return|return
-operator|new
-name|DataMapProject
 argument_list|(
 name|projectFile
 argument_list|)
@@ -437,8 +391,9 @@ name|int
 name|getUpgradeStatus
 parameter_list|()
 block|{
+comment|// hardcoded pending switch to project2 framework
 return|return
-name|upgradeStatus
+literal|0
 return|;
 block|}
 comment|/**      * Returns a list of upgrade messages.      */

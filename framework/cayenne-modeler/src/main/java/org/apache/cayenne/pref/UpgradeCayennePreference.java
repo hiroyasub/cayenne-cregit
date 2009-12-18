@@ -111,7 +111,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|modeler
+operator|.
+name|util
 operator|.
 name|CayenneUserDir
 import|;

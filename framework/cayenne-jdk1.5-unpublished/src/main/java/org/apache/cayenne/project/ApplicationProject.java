@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents Cayenne application project.  */
+comment|/**  * Represents Cayenne application project.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
@@ -344,16 +344,7 @@ parameter_list|()
 throws|throws
 name|ProjectException
 block|{
-name|ApplicationUpgradeHandler
-operator|.
-name|sharedHandler
-argument_list|()
-operator|.
-name|performUpgrade
-argument_list|(
-name|this
-argument_list|)
-expr_stmt|;
+comment|// noop - pending switch to project2 package and removal of this code
 block|}
 comment|/**      * Initializes internal<code>Configuration</code> object and then calls super.      */
 annotation|@
@@ -422,13 +413,9 @@ name|configuration
 operator|.
 name|setProjectVersion
 argument_list|(
-name|ApplicationUpgradeHandler
+name|Project
 operator|.
-name|sharedHandler
-argument_list|()
-operator|.
-name|supportedVersion
-argument_list|()
+name|CURRENT_PROJECT_VERSION
 argument_list|)
 expr_stmt|;
 block|}
@@ -466,22 +453,8 @@ name|void
 name|checkForUpgrades
 parameter_list|()
 block|{
-name|this
-operator|.
-name|upgradeStatus
-operator|=
-name|ApplicationUpgradeHandler
-operator|.
-name|sharedHandler
-argument_list|()
-operator|.
-name|checkForUpgrades
-argument_list|(
-name|configuration
-argument_list|,
-name|upgradeMessages
-argument_list|)
-expr_stmt|;
+comment|// noop - waiting for upgrade to project2 package that has its own upgrade
+comment|// framework
 block|}
 comment|/**      * @see org.apache.cayenne.project.Project#getChildren()      */
 annotation|@

@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory of DataSource objects used by the project model. Always tries to locate file  * with direct connection info.  *   */
+comment|/**  * Factory of DataSource objects used by the project model. Always tries to locate file  * with direct connection info.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class

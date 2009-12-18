@@ -50,11 +50,10 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FlatProjectView converts a project tree into a list of nodes,  * thus flattening the tree. Normally used as a singleton.  *   */
+comment|/**  * FlatProjectView converts a project tree into a list of nodes, thus flattening the tree.  * Normally used as a singleton.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|FlatProjectView
 block|{
@@ -67,8 +66,7 @@ operator|new
 name|FlatProjectView
 argument_list|()
 decl_stmt|;
-comment|/**       * Returns a FlatProjectView singleton.      */
-specifier|public
+comment|/**      * Returns a FlatProjectView singleton.      */
 specifier|static
 name|FlatProjectView
 name|getInstance
@@ -79,7 +77,6 @@ name|instance
 return|;
 block|}
 comment|/**      * Returns flat tree view.      */
-specifier|public
 name|List
 argument_list|<
 name|ProjectPath
@@ -128,6 +125,7 @@ name|nodes
 return|;
 block|}
 comment|/**      * Helper class that serves as project traversal helper.      */
+specifier|private
 class|class
 name|TraversalHelper
 implements|implements

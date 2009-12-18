@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|modeler
+operator|.
+name|util
 package|;
 end_package
 
@@ -26,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * CayenneUserDir represents a directory where all Cayenne-related information   * is stored on the user machine. This is normally a<code>$HOME/.cayenne</code>  * directory.  *   */
+comment|/**  * CayenneUserDir represents a directory where all Cayenne-related information is stored  * on the user machine. This is normally a<code>$HOME/.cayenne</code> directory.  */
 end_comment
 
 begin_class
@@ -47,7 +49,7 @@ name|CAYENNE_DIR
 init|=
 literal|".cayenne"
 decl_stmt|;
-comment|/**      * A property name for the property that allows to define an alternative      * location of Cayenne User Directory (instead of default "$HOME/.cayenne").      *        * @since 1.1      */
+comment|/**      * A property name for the property that allows to define an alternative location of      * Cayenne User Directory (instead of default "$HOME/.cayenne").      *       * @since 1.1      */
 specifier|public
 specifier|static
 specifier|final
@@ -232,7 +234,7 @@ return|return
 name|cayenneUserDir
 return|;
 block|}
-comment|/**      * Return false if the directory is not accessible for      * any reason at least for reading.      */
+comment|/**      * Return false if the directory is not accessible for any reason at least for      * reading.      */
 specifier|public
 name|boolean
 name|canRead
@@ -244,7 +246,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Return false if the directory is not accessible for      * any reason at least for reading.      */
+comment|/**      * Return false if the directory is not accessible for any reason at least for      * reading.      */
 specifier|public
 name|boolean
 name|canWrite

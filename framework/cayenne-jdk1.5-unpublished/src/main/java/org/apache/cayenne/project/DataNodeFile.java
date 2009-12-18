@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataNodeFile is a ProjectFile abstraction of the   * DataNode file in a Cayenne project.   *   */
+comment|/**  * DataNodeFile is a ProjectFile abstraction of the DataNode file in a Cayenne project.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
@@ -280,7 +280,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns ".driver.xml" that should be used as a file suffix       * for DataNode driver files.      */
+comment|/**      * Returns ".driver.xml" that should be used as a file suffix for DataNode driver      * files.      */
 annotation|@
 name|Override
 specifier|public

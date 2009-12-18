@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Immutable holder of a selection path within a Cayenne project. Mostly used  * by various tools (CayenneModeler comes to mind) to navigate Cayenne  * projects. Contains a number of convenience methods to access path elements.  *   *<p>  * For instance, given a path<code>Project -> DataMap -> ObjEntity -> ObjAttribute</code>,  *<code>getObject</code> will return ObjAttribute,<code>getObjectParent</code>-  * ObjEntity,<code>getRoot</code>- Project.  *</p>  *   */
+comment|/**  * Immutable holder of a selection path within a Cayenne project. Mostly used by various  * tools (CayenneModeler comes to mind) to navigate Cayenne projects. Contains a number of  * convenience methods to access path elements.  *<p>  * For instance, given a path<code>Project -> DataMap -> ObjEntity -> ObjAttribute</code>,<code>getObject</code> will return ObjAttribute,<code>getObjectParent</code>-  * ObjEntity,<code>getRoot</code>- Project.  *</p>  */
 end_comment
 
 begin_class
@@ -130,7 +130,7 @@ operator|==
 literal|0
 return|;
 block|}
-comment|/**      * Scans path, looking for the first element that is an instanceof<code>aClass</code>.      */
+comment|/**      * Scans path, looking for the first element that is an instanceof<code>aClass</code>      * .      */
 specifier|public
 parameter_list|<
 name|T
@@ -182,7 +182,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns an instance of the path, expanding this one by appending an      * object at the end.      */
+comment|/**      * Returns an instance of the path, expanding this one by appending an object at the      * end.      */
 specifier|public
 name|ProjectPath
 name|appendToPath
@@ -263,150 +263,6 @@ name|this
 return|;
 block|}
 block|}
-comment|/**      *       * @since 1.1      */
-specifier|public
-name|ProjectPath
-name|subpathWithSize
-parameter_list|(
-name|int
-name|subpathSize
-parameter_list|)
-block|{
-if|if
-condition|(
-name|subpathSize
-operator|<=
-literal|0
-condition|)
-block|{
-return|return
-operator|new
-name|ProjectPath
-argument_list|()
-return|;
-block|}
-if|else if
-condition|(
-name|subpathSize
-operator|==
-name|path
-operator|.
-name|length
-condition|)
-block|{
-return|return
-name|this
-return|;
-block|}
-if|if
-condition|(
-name|subpathSize
-operator|>
-name|path
-operator|.
-name|length
-condition|)
-block|{
-throw|throw
-operator|new
-name|ArrayIndexOutOfBoundsException
-argument_list|(
-literal|"Subpath is longer than this path "
-operator|+
-name|subpathSize
-operator|+
-literal|" components. Path size: "
-operator|+
-name|path
-operator|.
-name|length
-argument_list|)
-throw|;
-block|}
-name|Object
-index|[]
-name|newPath
-init|=
-operator|new
-name|Object
-index|[
-name|subpathSize
-index|]
-decl_stmt|;
-name|System
-operator|.
-name|arraycopy
-argument_list|(
-name|path
-argument_list|,
-literal|0
-argument_list|,
-name|newPath
-argument_list|,
-literal|0
-argument_list|,
-name|subpathSize
-argument_list|)
-expr_stmt|;
-return|return
-operator|new
-name|ProjectPath
-argument_list|(
-name|newPath
-argument_list|)
-return|;
-block|}
-comment|/**      * Returns a subpath to the first occurance of an object.      *       * @since 1.1      */
-specifier|public
-name|ProjectPath
-name|subpathOfObject
-parameter_list|(
-name|Object
-name|object
-parameter_list|)
-block|{
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|path
-operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
-if|if
-condition|(
-name|path
-index|[
-name|i
-index|]
-operator|==
-name|object
-condition|)
-block|{
-comment|// strip remaining objects
-return|return
-name|subpathWithSize
-argument_list|(
-name|i
-operator|+
-literal|1
-argument_list|)
-return|;
-block|}
-block|}
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * Returns the root or starting object of the path.      */
 specifier|public
 name|Object
@@ -464,7 +320,7 @@ literal|1
 index|]
 return|;
 block|}
-comment|/**      * Returns an object corresponding to the parent node of the node      * represented by the path. This is the object next to last object in the      * path.      */
+comment|/**      * Returns an object corresponding to the parent node of the node represented by the      * path. This is the object next to last object in the path.      */
 specifier|public
 name|Object
 name|getObjectParent

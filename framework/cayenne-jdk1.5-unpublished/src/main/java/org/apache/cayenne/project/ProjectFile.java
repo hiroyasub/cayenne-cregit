@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProjectFile is an adapter from an object in Cayenne project  * to its representation in the file system.  *   */
+comment|/**  * ProjectFile is an adapter from an object in Cayenne project to its representation in  * the file system.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
@@ -164,7 +164,7 @@ name|getLocationSuffix
 argument_list|()
 return|;
 block|}
-comment|/**     * Returns saved location of a file.     */
+comment|/**      * Returns saved location of a file.      */
 specifier|public
 name|String
 name|getOldLocation
@@ -174,7 +174,7 @@ return|return
 name|location
 return|;
 block|}
-comment|/**      * Returns suffix to append to object name when       * creating a file name. Default implementation       * returns empty string.      */
+comment|/**      * Returns suffix to append to object name when creating a file name. Default      * implementation returns empty string.      */
 specifier|public
 name|String
 name|getLocationSuffix
@@ -191,14 +191,14 @@ name|Object
 name|getObject
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a name of associated object, that is also       * used as a file name.      */
+comment|/**      * Returns a name of associated object, that is also used as a file name.      */
 specifier|public
 specifier|abstract
 name|String
 name|getObjectName
 parameter_list|()
 function_decl|;
-comment|/**      * Saves an underlying object to the file.       * The procedure is dependent on the type of      * object and is implemented by concrete subclasses.      */
+comment|/**      * Saves an underlying object to the file. The procedure is dependent on the type of      * object and is implemented by concrete subclasses.      */
 specifier|public
 specifier|abstract
 name|void
@@ -210,7 +210,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Returns true if this file wrapper can handle a      * specified object.      */
+comment|/**      * Returns true if this file wrapper can handle a specified object.      */
 specifier|public
 specifier|abstract
 name|boolean
@@ -220,7 +220,7 @@ name|Object
 name|obj
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if this file wrapper can handle an      * internally stored object.      */
+comment|/**      * Returns true if this file wrapper can handle an internally stored object.      */
 specifier|public
 name|boolean
 name|canHandleObject
@@ -246,14 +246,14 @@ name|getLocation
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * This method is called by project to let file know that      * it will be saved. Default implementation is a noop.      */
+comment|/**      * This method is called by project to let file know that it will be saved. Default      * implementation is a noop.      */
 specifier|public
 name|void
 name|willSave
 parameter_list|()
 block|{
 block|}
-comment|/**      * Saves ProjectFile's underlying object to a temporary       * file, returning this file to the caller. If any problems are       * encountered during saving, an Exception is thrown.      */
+comment|/**      * Saves ProjectFile's underlying object to a temporary file, returning this file to      * the caller. If any problems are encountered during saving, an Exception is thrown.      */
 specifier|public
 name|void
 name|saveTemp
@@ -362,7 +362,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a file which is a canonical representation of the       * file to store a wrapped object. If an object was renamed,       * the<b>new</b> name is returned.      */
+comment|/**      * Returns a file which is a canonical representation of the file to store a wrapped      * object. If an object was renamed, the<b>new</b> name is returned.      */
 specifier|public
 name|File
 name|resolveFile
@@ -379,7 +379,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a file which is a canonical representation of the       * file to store a wrapped object. If an object was renamed,       * the<b>old</b> name is returned. Returns null if this file       * has never been saved before.       */
+comment|/**      * Returns a file which is a canonical representation of the file to store a wrapped      * object. If an object was renamed, the<b>old</b> name is returned. Returns null if      * this file has never been saved before.      */
 specifier|public
 name|File
 name|resolveOldFile
@@ -521,7 +521,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**       * Returns the project.       * @return Project       */
+comment|/**      * Returns the project.      *       * @return Project      */
 specifier|public
 name|Project
 name|getProject
@@ -549,7 +549,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**       * Creates a temporary file for the master file.      */
+comment|/**      * Creates a temporary file for the master file.      */
 specifier|protected
 name|File
 name|tempFileForFile

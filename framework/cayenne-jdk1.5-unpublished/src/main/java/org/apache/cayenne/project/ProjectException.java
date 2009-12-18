@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Runtime exception thrown on various errors within project model.  */
+comment|/**  * Runtime exception thrown on various errors within project model.  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
 
 begin_class
