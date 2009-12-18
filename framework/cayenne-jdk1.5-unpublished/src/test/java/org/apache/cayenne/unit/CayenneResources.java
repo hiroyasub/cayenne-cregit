@@ -272,11 +272,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Initializes connections for Cayenne unit tests.  *   */
-end_comment
-
-begin_comment
-comment|// TODO: switch to Spring
+comment|/**  * Initializes connections for Cayenne unit tests.  */
 end_comment
 
 begin_class
