@@ -198,7 +198,8 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|currentPreference
+name|getCurrentPreference
+argument_list|()
 operator|==
 literal|null
 condition|)
@@ -215,7 +216,8 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|currentPreference
+name|getCurrentPreference
+argument_list|()
 return|;
 block|}
 comment|/**      * Binds this preference object to synchronize its state with a given component,      * allowing to specify an initial offset compared to the stored position.      */

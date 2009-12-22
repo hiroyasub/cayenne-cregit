@@ -138,6 +138,11 @@ name|application
 operator|.
 name|getPreferenceService
 argument_list|()
+argument_list|,
+name|application
+operator|.
+name|getCayenneProjectPreferences
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|this

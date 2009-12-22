@@ -69,6 +69,11 @@ name|Preferences
 name|getCayennePreference
 parameter_list|()
 function_decl|;
+specifier|public
+name|Preferences
+name|getCurrentPreference
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

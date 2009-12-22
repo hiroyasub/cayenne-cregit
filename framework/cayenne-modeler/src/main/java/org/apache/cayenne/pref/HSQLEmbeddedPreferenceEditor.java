@@ -45,11 +45,16 @@ name|HSQLEmbeddedPreferenceEditor
 parameter_list|(
 name|HSQLEmbeddedPreferenceService
 name|service
+parameter_list|,
+name|CayenneProjectPreferences
+name|cayenneProjectPreferences
 parameter_list|)
 block|{
 name|super
 argument_list|(
 name|service
+argument_list|,
+name|cayenneProjectPreferences
 argument_list|)
 expr_stmt|;
 block|}

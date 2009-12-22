@@ -297,7 +297,7 @@ name|initBindings
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Creates swing dialog for this wizard       */
+comment|/**      * Creates swing dialog for this wizard      */
 specifier|protected
 name|DataSourceWizardView
 name|createView
@@ -686,15 +686,18 @@ operator|=
 name|getApplication
 argument_list|()
 operator|.
-name|getPreferenceDomain
+name|getCayenneProjectPreferences
 argument_list|()
 operator|.
-name|getDetailsMap
+name|getDetailObject
 argument_list|(
 name|DBConnectionInfo
 operator|.
 name|class
 argument_list|)
+operator|.
+name|getChildrenPreferences
+argument_list|()
 expr_stmt|;
 comment|// 1.2 migration fix - update data source adapter names
 name|Iterator

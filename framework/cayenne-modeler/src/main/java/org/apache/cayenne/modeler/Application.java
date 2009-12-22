@@ -237,6 +237,20 @@ name|cayenne
 operator|.
 name|pref
 operator|.
+name|CayenneProjectPreferences
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|pref
+operator|.
 name|Domain
 import|;
 end_import
@@ -521,6 +535,10 @@ decl_stmt|;
 specifier|protected
 name|CayenneUndoManager
 name|undoManager
+decl_stmt|;
+specifier|protected
+name|CayenneProjectPreferences
+name|cayenneProjectPreferences
 decl_stmt|;
 comment|// This is for OS X support
 specifier|private
@@ -939,6 +957,15 @@ return|return
 name|preferenceService
 return|;
 block|}
+specifier|public
+name|CayenneProjectPreferences
+name|getCayenneProjectPreferences
+parameter_list|()
+block|{
+return|return
+name|cayenneProjectPreferences
+return|;
+block|}
 comment|/**      * Returns top preferences Domain for the application.      */
 specifier|public
 name|Domain
@@ -1157,6 +1184,14 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|this
+operator|.
+name|cayenneProjectPreferences
+operator|=
+operator|new
+name|CayenneProjectPreferences
+argument_list|()
+expr_stmt|;
 name|service
 operator|.
 name|stopOnShutdown

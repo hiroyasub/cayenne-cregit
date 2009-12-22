@@ -526,6 +526,21 @@ name|getCayennePreference
 argument_list|()
 return|;
 block|}
+specifier|public
+name|Preferences
+name|getCurrentPreference
+parameter_list|()
+block|{
+name|upgrade
+argument_list|()
+expr_stmt|;
+return|return
+name|decoratedPreference
+operator|.
+name|getCayennePreference
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
