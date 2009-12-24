@@ -136,7 +136,7 @@ name|SerializerFactory
 name|factory
 init|=
 operator|new
-name|SerializerFactory
+name|CayenneSerializerFactory
 argument_list|()
 decl_stmt|;
 if|if
