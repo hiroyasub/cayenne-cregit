@@ -3,9 +3,11 @@ begin_package
 package|package
 name|org
 operator|.
-name|example
+name|apache
 operator|.
 name|cayenne
+operator|.
+name|tutorial
 operator|.
 name|persistent
 operator|.
@@ -49,9 +51,11 @@ begin_import
 import|import
 name|org
 operator|.
-name|example
+name|apache
 operator|.
 name|cayenne
+operator|.
+name|tutorial
 operator|.
 name|persistent
 operator|.
