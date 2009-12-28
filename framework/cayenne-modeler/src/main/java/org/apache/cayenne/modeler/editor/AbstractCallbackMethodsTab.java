@@ -399,6 +399,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|pref
+operator|.
+name|TableColumnPreferences
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|CayenneAction
@@ -506,6 +522,11 @@ comment|/**      * table for displaying callback method names      */
 specifier|protected
 name|CayenneTable
 name|table
+decl_stmt|;
+comment|/**      * preferences for the callback methods table      */
+specifier|protected
+name|TableColumnPreferences
+name|tablePreferences
 decl_stmt|;
 comment|/**      * Dropdown for callback type selection. Contains fixed list of 7 callback types.      */
 specifier|protected
@@ -1029,6 +1050,9 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
+name|initTablePreferences
+argument_list|()
+expr_stmt|;
 comment|/**          * Create and install a popup          */
 name|JPopupMenu
 name|popup
@@ -1085,6 +1109,13 @@ name|CENTER
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Inits the {@link TableColumnPreferences} object according to callback table name.      */
+specifier|protected
+specifier|abstract
+name|void
+name|initTablePreferences
+parameter_list|()
+function_decl|;
 comment|/**      * listeners initialization      */
 specifier|protected
 name|void
@@ -1608,28 +1639,6 @@ argument_list|(
 literal|3
 argument_list|)
 expr_stmt|;
-name|TableColumn
-name|methodNameColumn
-init|=
-name|table
-operator|.
-name|getColumnModel
-argument_list|()
-operator|.
-name|getColumn
-argument_list|(
-name|CallbackDescriptorTableModel
-operator|.
-name|METHOD_NAME
-argument_list|)
-decl_stmt|;
-name|methodNameColumn
-operator|.
-name|setMinWidth
-argument_list|(
-literal|424
-argument_list|)
-expr_stmt|;
 name|mediator
 operator|.
 name|setCurrentCallbackMethods
@@ -1639,6 +1648,17 @@ name|String
 index|[
 literal|0
 index|]
+argument_list|)
+expr_stmt|;
+name|tablePreferences
+operator|.
+name|bind
+argument_list|(
+name|table
+argument_list|,
+literal|null
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
