@@ -2125,6 +2125,17 @@ name|proc
 argument_list|)
 expr_stmt|;
 block|}
+comment|// index embeddables
+name|embeddableCache
+operator|.
+name|putAll
+argument_list|(
+name|map
+operator|.
+name|getEmbeddableMap
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// index queries
 for|for
 control|(
