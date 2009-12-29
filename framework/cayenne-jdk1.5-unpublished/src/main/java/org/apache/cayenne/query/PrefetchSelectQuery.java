@@ -143,6 +143,14 @@ name|getTargetEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|setStatementFetchSize
+argument_list|(
+name|parentQuery
+operator|.
+name|getStatementFetchSize
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|parentQuery
