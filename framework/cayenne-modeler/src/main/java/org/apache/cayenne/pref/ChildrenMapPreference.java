@@ -174,6 +174,42 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
+name|ChildrenMapPreference
+parameter_list|(
+name|CayennePreference
+name|decoratedPreference
+parameter_list|,
+name|Preferences
+name|preferences
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|decoratedPreference
+argument_list|)
+expr_stmt|;
+name|decoratedPreference
+operator|.
+name|setCurrentPreference
+argument_list|(
+name|preferences
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|childrens
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
 name|Preferences
 name|getCayennePreference
 parameter_list|()
@@ -662,9 +698,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// Ð½Ð°Ð²ÐµÑÐ½Ð¾Ðµ ÑÑÐ¾Ð¸Ñ ÐºÐ°Ðº-ÑÐ¾ Ð¿Ð¾Ð¼ÐµÑÐ°ÑÑ ÑÑÐ¾Ð±Ñ Ð½Ðµ Ð²ÑÐµ Ð¿ÐµÑÐµÑÐ¾ÑÑÐ°Ð½ÑÑÑ
-comment|// ÐºÐ°Ðº?
-comment|// !!!!!!!!!!!!!!!!!
 name|Iterator
 name|it
 init|=

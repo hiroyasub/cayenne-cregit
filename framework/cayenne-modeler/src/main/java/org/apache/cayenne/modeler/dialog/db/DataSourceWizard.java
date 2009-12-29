@@ -776,14 +776,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|info
-operator|.
-name|getObjectContext
-argument_list|()
-operator|.
-name|commitChanges
-argument_list|()
-expr_stmt|;
+comment|// info.getObjectContext().commitChanges();
 block|}
 block|}
 if|if
