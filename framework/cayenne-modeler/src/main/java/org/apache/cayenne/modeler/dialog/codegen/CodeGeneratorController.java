@@ -407,7 +407,7 @@ literal|null
 condition|?
 name|controller
 operator|.
-name|getDefaultEntityFilter
+name|getDefaultClassFilter
 argument_list|()
 else|:
 name|PredicateUtils

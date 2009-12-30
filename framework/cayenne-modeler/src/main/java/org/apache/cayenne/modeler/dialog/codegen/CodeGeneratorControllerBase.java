@@ -297,6 +297,8 @@ name|getObjEntities
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|classes
 operator|.
 name|addAll
@@ -605,7 +607,7 @@ name|modified
 return|;
 block|}
 specifier|public
-name|Collection
+name|List
 argument_list|<
 name|Embeddable
 argument_list|>
