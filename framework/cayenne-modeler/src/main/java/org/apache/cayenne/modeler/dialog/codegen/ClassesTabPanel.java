@@ -140,7 +140,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|EntitiesTabPanel
+name|ClassesTabPanel
 extends|extends
 name|JPanel
 block|{
@@ -157,7 +157,7 @@ name|JLabel
 name|checkAllLabel
 decl_stmt|;
 specifier|public
-name|EntitiesTabPanel
+name|ClassesTabPanel
 parameter_list|()
 block|{
 name|this
@@ -185,7 +185,7 @@ operator|=
 operator|new
 name|JLabel
 argument_list|(
-literal|"Check All Entities"
+literal|"Check All Classes"
 argument_list|)
 expr_stmt|;
 name|checkAll
@@ -216,7 +216,7 @@ name|checkAllLabel
 operator|.
 name|setText
 argument_list|(
-literal|"Uncheck All Entities"
+literal|"Uncheck All Classess"
 argument_list|)
 expr_stmt|;
 block|}
@@ -226,7 +226,7 @@ name|checkAllLabel
 operator|.
 name|setText
 argument_list|(
-literal|"Check All Entities"
+literal|"Check All Classes"
 argument_list|)
 expr_stmt|;
 block|}

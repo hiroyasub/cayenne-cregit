@@ -200,8 +200,8 @@ name|CodeGeneratorDialog
 name|view
 decl_stmt|;
 specifier|protected
-name|EntitiesTabController
-name|entitySelector
+name|ClassesTabController
+name|clessSelector
 decl_stmt|;
 specifier|protected
 name|GeneratorTabController
@@ -226,10 +226,10 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|entitySelector
+name|clessSelector
 operator|=
 operator|new
-name|EntitiesTabController
+name|ClassesTabController
 argument_list|(
 name|this
 argument_list|)
@@ -273,7 +273,7 @@ operator|.
 name|getView
 argument_list|()
 argument_list|,
-name|entitySelector
+name|clessSelector
 operator|.
 name|getView
 argument_list|()
@@ -358,7 +358,7 @@ name|bindToAction
 argument_list|(
 name|this
 argument_list|,
-literal|"entitySelectedAction()"
+literal|"classesSelectedAction()"
 argument_list|,
 name|SELECTED_PROPERTY
 argument_list|)
@@ -420,15 +420,15 @@ argument_list|(
 name|predicate
 argument_list|)
 expr_stmt|;
-name|entitySelector
+name|clessSelector
 operator|.
-name|entitySelectedAction
+name|classSelectedAction
 argument_list|()
 expr_stmt|;
 block|}
 specifier|public
 name|void
-name|entitySelectedAction
+name|classesSelectedAction
 parameter_list|()
 block|{
 name|int
@@ -473,9 +473,63 @@ operator|+
 literal|" entities selected"
 expr_stmt|;
 block|}
+name|label
+operator|=
+name|label
+operator|.
+name|concat
+argument_list|(
+literal|"; "
+argument_list|)
+expr_stmt|;
+name|int
+name|sizeEmb
+init|=
+name|getSelectedEmbeddablesSize
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|sizeEmb
+operator|==
+literal|0
+condition|)
+block|{
+name|label
+operator|=
+name|label
+operator|+
+literal|"No embeddables selected"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|sizeEmb
+operator|==
+literal|1
+condition|)
+block|{
+name|label
+operator|=
+name|label
+operator|+
+literal|"One embeddable selected"
+expr_stmt|;
+block|}
+else|else
+block|{
+name|label
+operator|=
+name|label
+operator|+
+name|sizeEmb
+operator|+
+literal|" embeddables selected"
+expr_stmt|;
+block|}
 name|view
 operator|.
-name|getEntityCount
+name|getClassesCount
 argument_list|()
 operator|.
 name|setText

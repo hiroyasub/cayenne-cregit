@@ -118,7 +118,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|EntitiesTabController
+name|ClassesTabController
 extends|extends
 name|CayenneController
 block|{
@@ -131,7 +131,7 @@ init|=
 literal|"generate"
 decl_stmt|;
 specifier|protected
-name|EntitiesTabPanel
+name|ClassesTabPanel
 name|view
 decl_stmt|;
 specifier|protected
@@ -139,7 +139,7 @@ name|ObjectBinding
 name|tableBinding
 decl_stmt|;
 specifier|public
-name|EntitiesTabController
+name|ClassesTabController
 parameter_list|(
 name|CodeGeneratorControllerBase
 name|parent
@@ -155,7 +155,7 @@ operator|.
 name|view
 operator|=
 operator|new
-name|EntitiesTabPanel
+name|ClassesTabPanel
 argument_list|()
 expr_stmt|;
 name|initBindings
@@ -231,7 +231,7 @@ name|addColumn
 argument_list|(
 literal|""
 argument_list|,
-literal|"parent.setCurrentEntity(#item), selected"
+literal|"parent.setCurrentClass(#item), selected"
 argument_list|,
 name|Boolean
 operator|.
@@ -248,9 +248,9 @@ name|tableBuilder
 operator|.
 name|addColumn
 argument_list|(
-literal|"Entity"
+literal|"Class"
 argument_list|,
-literal|"#item.name"
+literal|"parent.getItemName(#item)"
 argument_list|,
 name|String
 operator|.
@@ -267,7 +267,7 @@ name|addColumn
 argument_list|(
 literal|"Comments, Warnings"
 argument_list|,
-literal|"parent.getProblem(#item.name)"
+literal|"parent.getProblem(#item)"
 argument_list|,
 name|String
 operator|.
@@ -291,7 +291,7 @@ operator|.
 name|getTable
 argument_list|()
 argument_list|,
-literal|"parent.entities"
+literal|"parent.classes"
 argument_list|)
 expr_stmt|;
 block|}
@@ -324,14 +324,14 @@ argument_list|(
 name|selected
 argument_list|)
 expr_stmt|;
-name|entitySelectedAction
+name|classSelectedAction
 argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * A callback action that updates the state of Select All checkbox.      */
 specifier|public
 name|void
-name|entitySelectedAction
+name|classSelectedAction
 parameter_list|()
 block|{
 name|int
@@ -341,6 +341,12 @@ name|getParentController
 argument_list|()
 operator|.
 name|getSelectedEntitiesSize
+argument_list|()
+operator|+
+name|getParentController
+argument_list|()
+operator|.
+name|getSelectedEmbeddablesSize
 argument_list|()
 decl_stmt|;
 if|if
@@ -368,7 +374,7 @@ operator|==
 name|getParentController
 argument_list|()
 operator|.
-name|getEntities
+name|getClasses
 argument_list|()
 operator|.
 name|size

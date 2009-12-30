@@ -168,7 +168,7 @@ name|cancelButton
 decl_stmt|;
 specifier|protected
 name|JLabel
-name|entityCount
+name|classesCount
 decl_stmt|;
 specifier|public
 name|CodeGeneratorDialog
@@ -222,19 +222,19 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|entityCount
+name|classesCount
 operator|=
 operator|new
 name|JLabel
 argument_list|(
-literal|"No entities selected"
+literal|"No classes selected"
 argument_list|)
 expr_stmt|;
-name|entityCount
+name|classesCount
 operator|.
 name|setFont
 argument_list|(
-name|entityCount
+name|classesCount
 operator|.
 name|getFont
 argument_list|()
@@ -259,7 +259,7 @@ name|tabs
 operator|.
 name|addTab
 argument_list|(
-literal|"Entities"
+literal|"Classes"
 argument_list|,
 name|entitySelectorPanel
 argument_list|)
@@ -279,7 +279,7 @@ name|messages
 operator|.
 name|add
 argument_list|(
-name|entityCount
+name|classesCount
 argument_list|,
 name|BorderLayout
 operator|.
@@ -305,7 +305,7 @@ name|buttons
 operator|.
 name|add
 argument_list|(
-name|entityCount
+name|classesCount
 argument_list|)
 expr_stmt|;
 name|buttons
@@ -397,11 +397,11 @@ return|;
 block|}
 specifier|public
 name|JLabel
-name|getEntityCount
+name|getClassesCount
 parameter_list|()
 block|{
 return|return
-name|entityCount
+name|classesCount
 return|;
 block|}
 block|}
