@@ -18,11 +18,10 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * This is handler for Oracle specific type "oracle.sql.DATE" Oracle official JDBC  * Driver is mapping SQL DATE to this type.  */
+comment|/**  * This is handler for Oracle specific type "oracle.sql.DATE" Oracle official JDBC Driver  * is mapping SQL DATE to this type.  *   * @since 3.1  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|OracleDateType
 extends|extends

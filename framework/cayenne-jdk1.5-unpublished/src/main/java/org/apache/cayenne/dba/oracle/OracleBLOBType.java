@@ -34,17 +34,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is handler for Oracle specific type "oracle.sql.BLOB" Oracle official JDBC  * Driver is mapping SQL BLOB to this type.  */
+comment|/**  * This is handler for Oracle specific type "oracle.sql.BLOB" Oracle official JDBC Driver  * is mapping SQL BLOB to this type.  *   * @since 3.1  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|OracleBLOBType
 extends|extends
 name|ByteArrayType
 block|{
-specifier|public
 name|OracleBLOBType
 parameter_list|(
 name|boolean

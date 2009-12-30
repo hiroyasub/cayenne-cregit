@@ -34,17 +34,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is handler for Oracle specific type "oracle.sql.CHAR" Oracle official JDBC  * Driver is mapping SQL CHAR to this type.  */
+comment|/**  * This is handler for Oracle specific type "oracle.sql.CHAR" Oracle official JDBC Driver  * is mapping SQL CHAR to this type.  *   * @since 3.1  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|OracleCharType
 extends|extends
 name|CharType
 block|{
-specifier|public
 name|OracleCharType
 parameter_list|(
 name|boolean
