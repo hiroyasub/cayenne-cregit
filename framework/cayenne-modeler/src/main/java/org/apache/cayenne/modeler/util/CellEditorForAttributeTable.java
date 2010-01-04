@@ -230,6 +230,15 @@ name|int
 name|column
 parameter_list|)
 block|{
+name|column
+operator|=
+name|table
+operator|.
+name|convertColumnIndexToView
+argument_list|(
+name|column
+argument_list|)
+expr_stmt|;
 return|return
 name|editor
 operator|.

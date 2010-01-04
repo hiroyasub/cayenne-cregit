@@ -134,7 +134,15 @@ specifier|final
 name|int
 name|COLUMN_COUNT
 init|=
-literal|1
+literal|2
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|METHOD_NUMBER
+init|=
+literal|0
 decl_stmt|;
 specifier|public
 specifier|static
@@ -142,7 +150,7 @@ specifier|final
 name|int
 name|METHOD_NAME
 init|=
-literal|0
+literal|1
 decl_stmt|;
 specifier|protected
 name|ObjEntity
@@ -263,6 +271,14 @@ name|columnIndex
 condition|)
 block|{
 case|case
+name|METHOD_NUMBER
+case|:
+return|return
+name|rowIndex
+operator|+
+literal|1
+return|;
+case|case
 name|METHOD_NAME
 case|:
 return|return
@@ -299,6 +315,12 @@ name|column
 condition|)
 block|{
 case|case
+name|METHOD_NUMBER
+case|:
+return|return
+literal|"No."
+return|;
+case|case
 name|METHOD_NAME
 case|:
 return|return
@@ -325,7 +347,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * stores edited value      *      * @param newVal new value      * @param row row      * @param col column      */
+comment|/**      * stores edited value      *       * @param newVal new value      * @param row row      * @param col column      */
 specifier|public
 name|void
 name|setValueAt
@@ -339,6 +361,13 @@ parameter_list|,
 name|int
 name|col
 parameter_list|)
+block|{
+if|if
+condition|(
+name|col
+operator|!=
+name|METHOD_NUMBER
+condition|)
 block|{
 name|String
 name|method
@@ -391,7 +420,7 @@ operator|>
 literal|0
 condition|)
 block|{
-comment|//check that method changed and name is not duplicate
+comment|// check that method changed and name is not duplicate
 if|if
 condition|(
 operator|!
@@ -415,7 +444,7 @@ name|method
 argument_list|)
 condition|)
 block|{
-comment|//update model
+comment|// update model
 name|getObjectList
 argument_list|()
 operator|.
@@ -426,7 +455,7 @@ argument_list|,
 name|method
 argument_list|)
 expr_stmt|;
-comment|//update entity
+comment|// update entity
 name|getCallbackDescriptor
 argument_list|()
 operator|.
@@ -466,6 +495,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 comment|/**      * @return CallbackDescriptor of the model      */
 specifier|public
 name|CallbackDescriptor
@@ -475,6 +505,34 @@ block|{
 return|return
 name|callbackDescriptor
 return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isColumnSortable
+parameter_list|(
+name|int
+name|sortCol
+parameter_list|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|sortByColumn
+parameter_list|(
+name|int
+name|sortCol
+parameter_list|,
+name|boolean
+name|isAscent
+parameter_list|)
+block|{
 block|}
 block|}
 end_class

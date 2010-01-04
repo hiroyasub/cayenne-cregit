@@ -2072,7 +2072,7 @@ block|{
 name|int
 name|inheritanceColumnWidth
 init|=
-literal|20
+literal|30
 decl_stmt|;
 name|Map
 argument_list|<
@@ -2144,6 +2144,14 @@ argument_list|,
 name|minSizes
 argument_list|,
 name|maxSizes
+argument_list|,
+literal|null
+argument_list|,
+name|ObjAttributeTableModel
+operator|.
+name|OBJ_ATTRIBUTE
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}

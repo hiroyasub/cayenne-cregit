@@ -199,18 +199,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|table
-operator|.
-name|TableColumn
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -865,16 +853,6 @@ name|StringRenderer
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|table
-operator|.
-name|getTableHeader
-argument_list|()
-operator|.
-name|setReorderingAllowed
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
 comment|// drag-and-drop initialization
 name|table
 operator|.
@@ -954,7 +932,9 @@ name|getValueAt
 argument_list|(
 name|rowIndex
 argument_list|,
-literal|0
+name|CallbackDescriptorTableModel
+operator|.
+name|METHOD_NAME
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1182,7 +1162,9 @@ argument_list|()
 operator|-
 literal|1
 argument_list|,
-literal|0
+name|CallbackDescriptorTableModel
+operator|.
+name|METHOD_NAME
 argument_list|)
 operator|&&
 name|table
@@ -1383,7 +1365,14 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|0
+name|table
+operator|.
+name|convertColumnIndexToView
+argument_list|(
+name|CallbackDescriptorTableModel
+operator|.
+name|METHOD_NAME
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1655,6 +1644,8 @@ operator|.
 name|bind
 argument_list|(
 name|table
+argument_list|,
+literal|null
 argument_list|,
 literal|null
 argument_list|,

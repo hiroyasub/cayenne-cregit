@@ -1207,6 +1207,14 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+literal|null
+argument_list|,
+name|EmbeddableAttributeTableModel
+operator|.
+name|OBJ_ATTRIBUTE
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
