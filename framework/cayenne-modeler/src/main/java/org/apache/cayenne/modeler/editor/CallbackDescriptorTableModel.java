@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Table model for displaying methods list for a particular CallbackDescriptor  *  * @version 1.0 Oct 23, 2007  */
+comment|/**  * Table model for displaying methods list for a particular CallbackDescriptor  *   * @version 1.0 Oct 23, 2007  */
 end_comment
 
 begin_class
@@ -160,7 +160,7 @@ specifier|protected
 name|CallbackDescriptor
 name|callbackDescriptor
 decl_stmt|;
-comment|/**      * constructor      *      * @param mediator mediator instance      * @param eventSource event source      * @param objectList default objects list      * @param callbackDescriptor callback descriptor instance      */
+comment|/**      * constructor      *       * @param mediator mediator instance      * @param eventSource event source      * @param objectList default objects list      * @param callbackDescriptor callback descriptor instance      */
 specifier|public
 name|CallbackDescriptorTableModel
 parameter_list|(
@@ -193,7 +193,7 @@ operator|=
 name|callbackDescriptor
 expr_stmt|;
 block|}
-comment|/**      * does nothing      * @param newVal newVal      * @param row row      * @param col col      */
+comment|/**      * does nothing      *       * @param newVal newVal      * @param row row      * @param col col      */
 specifier|public
 name|void
 name|setUpdatedValueAt
@@ -208,7 +208,7 @@ name|int
 name|col
 parameter_list|)
 block|{
-comment|//do nothing
+comment|// do nothing
 block|}
 comment|/**      * Returns Java class of the internal list elements.      */
 specifier|public
@@ -243,7 +243,7 @@ name|rowIndex
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the number of columns in the model. A      *<code>JTable</code> uses this method to determine how many columns it      * should create and display by default.      *      * @return the number of columns in the model      * @see #getRowCount      */
+comment|/**      * Returns the number of columns in the model. A<code>JTable</code> uses this method      * to determine how many columns it should create and display by default.      *       * @return the number of columns in the model      * @see #getRowCount      */
 specifier|public
 name|int
 name|getColumnCount
@@ -253,7 +253,7 @@ return|return
 name|COLUMN_COUNT
 return|;
 block|}
-comment|/**      * Returns the value for the cell at<code>columnIndex</code> and      *<code>rowIndex</code>.      *      * @param	rowIndex	the row whose value is to be queried      * @param	columnIndex 	the column whose value is to be queried      * @return	the value Object at the specified cell      */
+comment|/**      * Returns the value for the cell at<code>columnIndex</code> and      *<code>rowIndex</code>.      *       * @param rowIndex the row whose value is to be queried      * @param columnIndex the column whose value is to be queried      * @return the value Object at the specified cell      */
 specifier|public
 name|Object
 name|getValueAt
@@ -331,7 +331,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * all cells are editable      *      * @param rowIndex row index      * @param columnIndex column index      * @return true      */
+comment|/**      * all cells are editable      *       * @param rowIndex row index      * @param columnIndex column index      * @return true      */
 specifier|public
 name|boolean
 name|isCellEditable
@@ -343,6 +343,24 @@ name|int
 name|columnIndex
 parameter_list|)
 block|{
+switch|switch
+condition|(
+name|columnIndex
+condition|)
+block|{
+case|case
+name|METHOD_NAME
+case|:
+return|return
+literal|true
+return|;
+case|case
+name|METHOD_NUMBER
+case|:
+return|return
+literal|false
+return|;
+block|}
 return|return
 literal|true
 return|;
@@ -361,13 +379,6 @@ parameter_list|,
 name|int
 name|col
 parameter_list|)
-block|{
-if|if
-condition|(
-name|col
-operator|!=
-name|METHOD_NUMBER
-condition|)
 block|{
 name|String
 name|method
@@ -492,7 +503,6 @@ name|CHANGE
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}

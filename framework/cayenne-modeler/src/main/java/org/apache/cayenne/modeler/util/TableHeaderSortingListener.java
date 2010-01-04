@@ -132,9 +132,11 @@ name|getTable
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
-name|mousePressed
+name|mouseClicked
 parameter_list|(
 name|MouseEvent
 name|e
