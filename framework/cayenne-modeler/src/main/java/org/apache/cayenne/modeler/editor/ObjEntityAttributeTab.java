@@ -1856,6 +1856,17 @@ name|AttributeEvent
 name|e
 parameter_list|)
 block|{
+name|rebuildTable
+argument_list|(
+operator|(
+name|ObjEntity
+operator|)
+name|e
+operator|.
+name|getEntity
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|table
 operator|.
 name|select
