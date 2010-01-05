@@ -2674,6 +2674,7 @@ name|getArtistName
 argument_list|()
 decl_stmt|;
 comment|// create alternative context
+specifier|final
 name|DataContext
 name|altContext
 init|=
@@ -2739,14 +2740,6 @@ name|artist
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// wait long enough for non-blocking events to be processed
-name|Thread
-operator|.
-name|sleep
-argument_list|(
-literal|10
-argument_list|)
-expr_stmt|;
 comment|// original context
 name|assertEquals
 argument_list|(
@@ -2780,6 +2773,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// alternate context
+operator|new
+name|ThreadedTestHelper
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|assertResult
+parameter_list|()
+throws|throws
+name|Exception
+block|{
 name|assertEquals
 argument_list|(
 name|PersistenceState
@@ -2809,6 +2815,14 @@ operator|.
 name|getObjectId
 argument_list|()
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+operator|.
+name|assertWithTimeout
+argument_list|(
+literal|5000
 argument_list|)
 expr_stmt|;
 comment|// resolve object
