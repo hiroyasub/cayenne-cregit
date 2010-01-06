@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 package|;
@@ -25,32 +25,52 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|DataDomain
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|event
+operator|.
+name|MapEvent
 import|;
 end_import
 
 begin_comment
-comment|/**   * Represents events resulted from DataDomain changes   * in CayenneModeler.  *   */
+comment|/**   * An events describing a DataMap change.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|DomainEvent
+name|DataMapEvent
 extends|extends
 name|MapEvent
 block|{
-comment|/** Creates a domain change event. */
+specifier|protected
+name|DataMap
+name|dataMap
+decl_stmt|;
+comment|/** Creates a DataMap change event. */
 specifier|public
-name|DomainEvent
+name|DataMapEvent
 parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataMap
+name|dataMap
 parameter_list|)
 block|{
 name|super
@@ -58,21 +78,22 @@ argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
-name|setDomain
-argument_list|(
-name|domain
-argument_list|)
+name|this
+operator|.
+name|dataMap
+operator|=
+name|dataMap
 expr_stmt|;
 block|}
-comment|/** Creates a domain event of a specified type. */
+comment|/** Creates a DataMap event of a specified type. */
 specifier|public
-name|DomainEvent
+name|DataMapEvent
 parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataMap
+name|dataMap
 parameter_list|,
 name|int
 name|id
@@ -82,7 +103,7 @@ name|this
 argument_list|(
 name|src
 argument_list|,
-name|domain
+name|dataMap
 argument_list|)
 expr_stmt|;
 name|setId
@@ -91,15 +112,15 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Creates a domain name change event.*/
+comment|/** Creates a DataMap name change event.*/
 specifier|public
-name|DomainEvent
+name|DataMapEvent
 parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataMap
+name|dataMap
 parameter_list|,
 name|String
 name|oldName
@@ -109,13 +130,39 @@ name|this
 argument_list|(
 name|src
 argument_list|,
-name|domain
+name|dataMap
 argument_list|)
 expr_stmt|;
 name|setOldName
 argument_list|(
 name|oldName
 argument_list|)
+expr_stmt|;
+block|}
+comment|/**  	 * Returns DataMap associated with this event.  	 */
+specifier|public
+name|DataMap
+name|getDataMap
+parameter_list|()
+block|{
+return|return
+name|dataMap
+return|;
+block|}
+comment|/** 	 * Sets DataMap associated with this event. 	 *  	 * @param dataMap The dataMap to set 	 */
+specifier|public
+name|void
+name|setDataMap
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataMap
+operator|=
+name|dataMap
 expr_stmt|;
 block|}
 annotation|@
@@ -127,12 +174,12 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|domain
+name|dataMap
 operator|!=
 literal|null
 operator|)
 condition|?
-name|domain
+name|dataMap
 operator|.
 name|getName
 argument_list|()

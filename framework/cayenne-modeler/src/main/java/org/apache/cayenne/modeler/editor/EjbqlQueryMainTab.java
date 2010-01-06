@@ -55,9 +55,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
-name|DataMap
+name|event
+operator|.
+name|QueryEvent
 import|;
 end_import
 
@@ -71,9 +73,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|event
-operator|.
-name|QueryEvent
+name|DataMap
 import|;
 end_import
 

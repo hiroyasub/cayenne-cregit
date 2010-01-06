@@ -109,9 +109,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
-name|Procedure
+name|event
+operator|.
+name|ProcedureEvent
 import|;
 end_import
 
@@ -125,9 +127,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|event
-operator|.
-name|ProcedureEvent
+name|Procedure
 import|;
 end_import
 

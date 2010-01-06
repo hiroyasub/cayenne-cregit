@@ -249,9 +249,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
-name|Entity
+name|event
+operator|.
+name|QueryEvent
 import|;
 end_import
 
@@ -265,9 +267,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|event
-operator|.
-name|QueryEvent
+name|Entity
 import|;
 end_import
 

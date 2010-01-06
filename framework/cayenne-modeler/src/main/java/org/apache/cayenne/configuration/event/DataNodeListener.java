@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 package|;
@@ -28,40 +28,40 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Listener for QueryEvents.  *   * @since 1.1  */
+comment|/** For managing the changes in the DataNode */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|QueryListener
+name|DataNodeListener
 extends|extends
 name|EventListener
 block|{
-comment|/**       * Query changed.       */
+comment|/** DataNode property (usually - name) changed. */
 specifier|public
 name|void
-name|queryChanged
+name|dataNodeChanged
 parameter_list|(
-name|QueryEvent
+name|DataNodeEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/**       * New Query has been created.       */
+comment|/** New data map has been created/added.*/
 specifier|public
 name|void
-name|queryAdded
+name|dataNodeAdded
 parameter_list|(
-name|QueryEvent
+name|DataNodeEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/**       * Query has been removed.      */
+comment|/** DataNode has been removed.*/
 specifier|public
 name|void
-name|queryRemoved
+name|dataNodeRemoved
 parameter_list|(
-name|QueryEvent
+name|DataNodeEvent
 name|e
 parameter_list|)
 function_decl|;

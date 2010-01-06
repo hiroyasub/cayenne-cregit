@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 package|;
@@ -28,40 +28,40 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Listener for Procedure events.  *   */
+comment|/**  * Listener for QueryEvents.  *   * @since 1.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ProcedureListener
+name|QueryListener
 extends|extends
 name|EventListener
 block|{
-comment|/**       * Procedure changed.       */
+comment|/**       * Query changed.       */
 specifier|public
 name|void
-name|procedureChanged
+name|queryChanged
 parameter_list|(
-name|ProcedureEvent
+name|QueryEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/**       * New Procedure has been created.       */
+comment|/**       * New Query has been created.       */
 specifier|public
 name|void
-name|procedureAdded
+name|queryAdded
 parameter_list|(
-name|ProcedureEvent
+name|QueryEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/**       * Procedure has been removed.      */
+comment|/**       * Query has been removed.      */
 specifier|public
 name|void
-name|procedureRemoved
+name|queryRemoved
 parameter_list|(
-name|ProcedureEvent
+name|QueryEvent
 name|e
 parameter_list|)
 function_decl|;

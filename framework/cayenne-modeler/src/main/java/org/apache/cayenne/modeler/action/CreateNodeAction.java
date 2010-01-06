@@ -105,9 +105,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|event
+operator|.
+name|DataNodeEvent
 import|;
 end_import
 
@@ -119,11 +121,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|conn
 operator|.
-name|event
-operator|.
-name|DataNodeEvent
+name|DataSourceInfo
 import|;
 end_import
 

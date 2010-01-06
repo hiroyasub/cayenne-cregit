@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 package|;
@@ -28,40 +28,40 @@ import|;
 end_import
 
 begin_comment
-comment|/** For managing the changes in the Domain */
+comment|/**   * Listener for ProcedureParameterEvents.  *   */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DomainListener
+name|ProcedureParameterListener
 extends|extends
 name|EventListener
 block|{
-comment|/** Domain property (usually - name) changed. */
+comment|/**        *  Called when procedure parameter has changed.        */
 specifier|public
 name|void
-name|domainChanged
+name|procedureParameterChanged
 parameter_list|(
-name|DomainEvent
+name|ProcedureParameterEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/** New data map has been created/added.*/
+comment|/**       *  Called when new procedure parameter has been created.       */
 specifier|public
 name|void
-name|domainAdded
+name|procedureParameterAdded
 parameter_list|(
-name|DomainEvent
+name|ProcedureParameterEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/** Domain has been removed.*/
+comment|/**       * Called when procedure parameter has been removed.      */
 specifier|public
 name|void
-name|domainRemoved
+name|procedureParameterRemoved
 parameter_list|(
-name|DomainEvent
+name|ProcedureParameterEvent
 name|e
 parameter_list|)
 function_decl|;

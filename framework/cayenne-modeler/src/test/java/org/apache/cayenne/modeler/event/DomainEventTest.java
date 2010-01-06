@@ -49,7 +49,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 operator|.

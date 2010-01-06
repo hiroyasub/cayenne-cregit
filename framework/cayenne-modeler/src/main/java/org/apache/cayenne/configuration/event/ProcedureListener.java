@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 package|;
@@ -28,40 +28,40 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Listener for ProcedureParameterEvents.  *   */
+comment|/**   * Listener for Procedure events.  *   */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ProcedureParameterListener
+name|ProcedureListener
 extends|extends
 name|EventListener
 block|{
-comment|/**        *  Called when procedure parameter has changed.        */
+comment|/**       * Procedure changed.       */
 specifier|public
 name|void
-name|procedureParameterChanged
+name|procedureChanged
 parameter_list|(
-name|ProcedureParameterEvent
+name|ProcedureEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/**       *  Called when new procedure parameter has been created.       */
+comment|/**       * New Procedure has been created.       */
 specifier|public
 name|void
-name|procedureParameterAdded
+name|procedureAdded
 parameter_list|(
-name|ProcedureParameterEvent
+name|ProcedureEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/**       * Called when procedure parameter has been removed.      */
+comment|/**       * Procedure has been removed.      */
 specifier|public
 name|void
-name|procedureParameterRemoved
+name|procedureRemoved
 parameter_list|(
-name|ProcedureParameterEvent
+name|ProcedureEvent
 name|e
 parameter_list|)
 function_decl|;

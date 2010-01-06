@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
 name|event
 package|;
@@ -28,40 +28,40 @@ import|;
 end_import
 
 begin_comment
-comment|/** For managing the changes in the DataNode */
+comment|/** For managing the changes in the Domain */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DataNodeListener
+name|DomainListener
 extends|extends
 name|EventListener
 block|{
-comment|/** DataNode property (usually - name) changed. */
+comment|/** Domain property (usually - name) changed. */
 specifier|public
 name|void
-name|dataNodeChanged
+name|domainChanged
 parameter_list|(
-name|DataNodeEvent
+name|DomainEvent
 name|e
 parameter_list|)
 function_decl|;
 comment|/** New data map has been created/added.*/
 specifier|public
 name|void
-name|dataNodeAdded
+name|domainAdded
 parameter_list|(
-name|DataNodeEvent
+name|DomainEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/** DataNode has been removed.*/
+comment|/** Domain has been removed.*/
 specifier|public
 name|void
-name|dataNodeRemoved
+name|domainRemoved
 parameter_list|(
-name|DataNodeEvent
+name|DomainEvent
 name|e
 parameter_list|)
 function_decl|;
