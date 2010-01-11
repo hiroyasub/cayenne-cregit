@@ -1604,6 +1604,50 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testJoinAndCount
+parameter_list|()
+block|{
+name|ObjectContext
+name|context
+init|=
+name|createDataContext
+argument_list|()
+decl_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"select count(p) from Painting p where p.toGallery.galleryName LIKE '%a%' AND ("
+operator|+
+literal|"p.paintingTitle like '%a%' or "
+operator|+
+literal|"p.toArtist.artistName like '%a%'"
+operator|+
+literal|")"
+argument_list|)
+decl_stmt|;
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+expr_stmt|;
+block|}
+comment|//    SELECT COUNT(p) from Product p where p.vsCatalog.id = 1 and
+comment|//    (
+comment|//    p.displayName like '%rimadyl%'
+comment|//    or p.manufacturer.name like '%rimadyl%'
+comment|//    or p.description like '%rimadyl%'
+comment|//    or p.longdescription like '%rimadyl%'
+comment|//    or p.longdescription2 like '%rimadyl%'
+comment|//    or p.manufacturerPartNumber like '%rimadyl%'
+comment|//    or p.partNumber like '%rimadyl%'
+comment|//    )
+specifier|public
+name|void
 name|testRelationshipWhereClause
 parameter_list|()
 throws|throws
