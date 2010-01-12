@@ -445,7 +445,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-name|getExpressionOperator
+name|getEJBQLExpressionOperator
 argument_list|(
 name|i
 argument_list|)

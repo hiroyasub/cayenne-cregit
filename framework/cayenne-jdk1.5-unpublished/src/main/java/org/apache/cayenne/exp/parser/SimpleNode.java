@@ -432,6 +432,22 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
+comment|/**      * Returns operator for ebjql statements, which can differ for Cayenne expression operator      */
+specifier|protected
+name|String
+name|getEJBQLExpressionOperator
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+return|return
+name|getExpressionOperator
+argument_list|(
+name|index
+argument_list|)
+return|;
+block|}
 annotation|@
 name|Override
 specifier|protected
@@ -1332,7 +1348,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-name|getExpressionOperator
+name|getEJBQLExpressionOperator
 argument_list|(
 name|i
 argument_list|)
