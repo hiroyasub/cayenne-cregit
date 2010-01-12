@@ -751,6 +751,7 @@ decl_stmt|;
 name|int
 name|scale
 init|=
+operator|(
 name|TypesMapping
 operator|.
 name|isDecimal
@@ -760,6 +761,17 @@ operator|.
 name|getType
 argument_list|()
 argument_list|)
+operator|&&
+name|at
+operator|.
+name|getType
+argument_list|()
+operator|!=
+name|Types
+operator|.
+name|FLOAT
+operator|)
+comment|// Postgress don't support notations float(a, b)
 condition|?
 name|at
 operator|.
