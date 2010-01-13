@@ -1223,7 +1223,9 @@ init|=
 operator|new
 name|EJBQLQuery
 argument_list|(
-literal|"SELECT a FROM CompoundPainting a WHERE a.artistName LIKE 'artist%'"
+literal|"SELECT a FROM CompoundPainting a WHERE a.artistName LIKE 'artist%' "
+operator|+
+literal|"ORDER BY a.paintingTitle"
 argument_list|)
 decl_stmt|;
 name|List
@@ -1322,7 +1324,11 @@ init|=
 operator|new
 name|EJBQLQuery
 argument_list|(
-literal|"SELECT a FROM CompoundPainting a WHERE a.artistName BETWEEN 'artist1' AND 'artist4'"
+literal|"SELECT a FROM CompoundPainting a "
+operator|+
+literal|"WHERE a.artistName BETWEEN 'artist1' AND 'artist4' "
+operator|+
+literal|"ORDER BY a.paintingTitle"
 argument_list|)
 decl_stmt|;
 name|List
