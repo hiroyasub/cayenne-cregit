@@ -1493,7 +1493,7 @@ name|rel
 argument_list|,
 name|JoinType
 operator|.
-name|INNER
+name|LEFT_OUTER
 argument_list|,
 literal|null
 argument_list|)

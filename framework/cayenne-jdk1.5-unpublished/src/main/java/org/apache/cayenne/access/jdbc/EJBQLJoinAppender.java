@@ -734,7 +734,7 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|" JOIN "
+literal|" LEFT OUTER JOIN "
 argument_list|)
 expr_stmt|;
 name|context
@@ -1413,7 +1413,7 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|" JOIN "
+literal|" LEFT OUTER JOIN "
 argument_list|)
 expr_stmt|;
 name|String

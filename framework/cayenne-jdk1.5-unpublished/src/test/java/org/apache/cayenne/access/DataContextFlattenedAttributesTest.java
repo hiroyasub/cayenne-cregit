@@ -672,7 +672,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|3
+literal|8
 argument_list|,
 name|objects
 operator|.
@@ -773,6 +773,27 @@ name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|painting
+operator|.
+name|getToPaintingInfo
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|assertNull
+argument_list|(
+name|painting
+operator|.
+name|getTextReview
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|assertEquals
 argument_list|(
 literal|"CompoundPainting.getTextReview(): "
@@ -792,6 +813,7 @@ name|getTextReview
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|assertEquals
 argument_list|(
 literal|"CompoundPainting.getArtistName(): "
@@ -815,9 +837,30 @@ name|getArtistName
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|painting
+operator|.
+name|getToGallery
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|assertNull
+argument_list|(
+name|painting
+operator|.
+name|getGalleryName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|assertEquals
 argument_list|(
-literal|"CompoundPainting.getArtistName(): "
+literal|"CompoundPainting.getGalleryName(): "
 operator|+
 name|painting
 operator|.
@@ -840,8 +883,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 comment|// TODO: andrus 1/5/2007 -  CAY-952: SelectQuery uses INNER JOIN for flattened attributes, while
 comment|// EJBQLQuery does an OUTER JOIN... which seems like a better idea...
+comment|// 14/01/2010 now it uses LEFT JOIN
 specifier|public
 name|void
 name|testSelectCompound2
@@ -892,7 +937,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|1
+literal|2
 argument_list|,
 name|objects
 operator|.
@@ -964,77 +1009,6 @@ argument_list|,
 name|painting
 operator|.
 name|getPersistenceState
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|Number
-name|id
-init|=
-operator|(
-name|Number
-operator|)
-name|painting
-operator|.
-name|getObjectId
-argument_list|()
-operator|.
-name|getIdSnapshot
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|"PAINTING_ID"
-argument_list|)
-decl_stmt|;
-name|assertEquals
-argument_list|(
-literal|"CompoundPainting.getObjectId(): "
-operator|+
-name|id
-argument_list|,
-name|id
-operator|.
-name|intValue
-argument_list|()
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|"CompoundPainting.getPaintingTitle(): "
-operator|+
-name|painting
-operator|.
-name|getPaintingTitle
-argument_list|()
-argument_list|,
-literal|"painting"
-operator|+
-name|id
-argument_list|,
-name|painting
-operator|.
-name|getPaintingTitle
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|"CompoundPainting.getTextReview(): "
-operator|+
-name|painting
-operator|.
-name|getTextReview
-argument_list|()
-argument_list|,
-literal|"painting review"
-operator|+
-name|id
-argument_list|,
-name|painting
-operator|.
-name|getTextReview
 argument_list|()
 argument_list|)
 expr_stmt|;
