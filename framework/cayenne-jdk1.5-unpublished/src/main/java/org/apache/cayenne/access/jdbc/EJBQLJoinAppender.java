@@ -465,8 +465,6 @@ name|rhsId
 argument_list|)
 throw|;
 block|}
-comment|// TODO: andrus, 4/8/2007 - support for flattened relationships
-comment|// 11/01/2010 support for flattened relationships is represented below
 name|DbRelationship
 name|incomingDB
 init|=

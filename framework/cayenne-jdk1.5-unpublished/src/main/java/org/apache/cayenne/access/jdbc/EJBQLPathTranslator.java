@@ -1021,8 +1021,6 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus, 6/21/2007 - flattened support
-comment|// 11/01/2010 flattened support added in chooseDbRelationship
 name|DbRelationship
 name|dbRelationship
 init|=
@@ -1148,8 +1146,6 @@ block|}
 else|else
 block|{
 comment|// match FK against the target object
-comment|// TODO: andrus, 6/21/2007 - flattened support
-comment|// 11/01/2010 flattened support added in chooseDbRelationship
 name|DbRelationship
 name|dbRelationship
 init|=

@@ -1022,8 +1022,6 @@ argument_list|(
 literal|" WHERE"
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus, 8/11/2007 flattened?
-comment|// 11/01/2010 flattened relationship are processing earlier
 name|DbRelationship
 name|correlatedJoinRelationship
 init|=
@@ -1429,8 +1427,6 @@ argument_list|(
 literal|" WHERE"
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus, 8/11/2007 flattened?
-comment|// 11/01/2010 flattened relationship are processing earlier
 name|DbRelationship
 name|correlatedJoinRelationship
 init|=
