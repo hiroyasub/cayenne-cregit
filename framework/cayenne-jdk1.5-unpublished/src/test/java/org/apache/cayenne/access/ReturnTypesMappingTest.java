@@ -3255,7 +3255,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|10000
+literal|500
 condition|;
 name|i
 operator|++
@@ -3265,7 +3265,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"LONGVARCHAR very large string for tests!!!!\n"
+literal|"LONGVARCHAR large string for tests!!!!\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3386,7 +3386,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|10000
+literal|500
 condition|;
 name|i
 operator|++
@@ -3396,7 +3396,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"LONGVARCHAR very large string for tests!!!!\n"
+literal|"LONGVARCHAR large string for tests!!!!\n"
 argument_list|)
 expr_stmt|;
 block|}
