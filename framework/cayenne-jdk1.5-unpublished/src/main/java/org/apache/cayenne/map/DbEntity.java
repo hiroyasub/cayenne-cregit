@@ -3146,10 +3146,9 @@ argument_list|>
 name|pathComponent
 parameter_list|)
 block|{
-name|String
-name|name
+name|CayenneMapEntry
+name|mapEntry
 init|=
-operator|(
 name|pathComponent
 operator|.
 name|getAttribute
@@ -3166,7 +3165,11 @@ name|pathComponent
 operator|.
 name|getRelationship
 argument_list|()
-operator|)
+decl_stmt|;
+name|String
+name|name
+init|=
+name|mapEntry
 operator|.
 name|getName
 argument_list|()
