@@ -54,7 +54,7 @@ specifier|public
 class|class
 name|ASTNotLikeIgnoreCase
 extends|extends
-name|PatternMatchNode
+name|IgnoreCaseNode
 block|{
 name|ASTNotLikeIgnoreCase
 parameter_list|(
@@ -227,6 +227,20 @@ parameter_list|)
 block|{
 return|return
 literal|"not likeIgnoreCase"
+return|;
+block|}
+annotation|@
+name|Override
+specifier|protected
+name|String
+name|getEJBQLExpressionOperator
+parameter_list|(
+name|int
+name|index
+parameter_list|)
+block|{
+return|return
+literal|"not like"
 return|;
 block|}
 annotation|@

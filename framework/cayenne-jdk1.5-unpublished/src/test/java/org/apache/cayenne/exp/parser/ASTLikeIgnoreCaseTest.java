@@ -88,7 +88,7 @@ argument_list|(
 literal|"p"
 argument_list|)
 argument_list|,
-literal|"upper(p.a) like upper('%b%')"
+literal|"upper(p.a) like '%B%'"
 argument_list|)
 expr_stmt|;
 block|}
