@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|itest
+name|test
 package|;
 end_package
 
@@ -96,20 +96,20 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JDBC utilities for integration testing that bypass Cayenne for DB access.  *   */
+comment|/**  * JDBC utilities class for setting up and analyzing the DB data sets. DBHelper  * intentionally bypasses Cayenne stack.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ItestDBUtils
+name|DBHelper
 block|{
 specifier|protected
 name|DataSource
 name|dataSource
 decl_stmt|;
 specifier|public
-name|ItestDBUtils
+name|DBHelper
 parameter_list|(
 name|DataSource
 name|dataSource

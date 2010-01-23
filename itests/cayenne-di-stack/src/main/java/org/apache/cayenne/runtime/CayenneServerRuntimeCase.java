@@ -109,9 +109,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|itest
+name|test
 operator|.
-name|ItestDBUtils
+name|DBHelper
 import|;
 end_import
 
@@ -123,9 +123,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|itest
+name|test
 operator|.
-name|ItestTableUtils
+name|TableHelper
 import|;
 end_import
 
@@ -261,13 +261,13 @@ name|getRuntimeName
 parameter_list|()
 function_decl|;
 specifier|protected
-name|ItestDBUtils
+name|DBHelper
 name|getDbUtils
 parameter_list|()
 block|{
 return|return
 operator|new
-name|ItestDBUtils
+name|DBHelper
 argument_list|(
 name|getDataNode
 argument_list|()
@@ -278,7 +278,7 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|ItestTableUtils
+name|TableHelper
 name|getTableHelper
 parameter_list|(
 name|String
@@ -287,7 +287,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|ItestTableUtils
+name|TableHelper
 argument_list|(
 name|getDbUtils
 argument_list|()

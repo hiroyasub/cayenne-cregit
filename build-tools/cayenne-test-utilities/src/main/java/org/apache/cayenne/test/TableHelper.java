@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|itest
+name|test
 package|;
 end_package
 
@@ -26,21 +26,21 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JDBC utilities for integration testing that bypass Cayenne for DB access.  */
+comment|/**  * JDBC utilities class for setting up and analyzing the DB data sets for a single table.  * TableHelper intentionally bypasses Cayenne stack.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ItestTableUtils
+name|TableHelper
 block|{
 specifier|protected
 name|String
 name|tableName
 decl_stmt|;
 specifier|protected
-name|ItestDBUtils
-name|dbUtils
+name|DBHelper
+name|dbHelper
 decl_stmt|;
 specifier|protected
 name|String
@@ -48,10 +48,10 @@ index|[]
 name|columns
 decl_stmt|;
 specifier|public
-name|ItestTableUtils
+name|TableHelper
 parameter_list|(
-name|ItestDBUtils
-name|dbUtils
+name|DBHelper
+name|dbHelper
 parameter_list|,
 name|String
 name|tableName
@@ -59,9 +59,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|dbUtils
+name|dbHelper
 operator|=
-name|dbUtils
+name|dbHelper
 expr_stmt|;
 name|this
 operator|.
@@ -71,13 +71,40 @@ name|tableName
 expr_stmt|;
 block|}
 specifier|public
-name|ItestTableUtils
+name|TableHelper
+parameter_list|(
+name|DBHelper
+name|dbHelper
+parameter_list|,
+name|String
+name|tableName
+parameter_list|,
+name|String
+modifier|...
+name|columns
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|dbHelper
+argument_list|,
+name|tableName
+argument_list|)
+expr_stmt|;
+name|setColumns
+argument_list|(
+name|columns
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|TableHelper
 name|deleteAll
 parameter_list|()
 throws|throws
 name|SQLException
 block|{
-name|dbUtils
+name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
@@ -89,7 +116,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|ItestTableUtils
+name|TableHelper
 name|setColumns
 parameter_list|(
 name|String
@@ -108,7 +135,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|ItestTableUtils
+name|TableHelper
 name|insert
 parameter_list|(
 name|Object
@@ -156,7 +183,7 @@ literal|"Columns and values arrays are of different size"
 argument_list|)
 throw|;
 block|}
-name|dbUtils
+name|dbHelper
 operator|.
 name|insert
 argument_list|(
