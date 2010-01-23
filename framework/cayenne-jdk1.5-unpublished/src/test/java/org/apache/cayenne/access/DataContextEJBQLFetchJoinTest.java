@@ -1618,7 +1618,7 @@ literal|"SELECT DISTINCT a, a.artistName , g "
 operator|+
 literal|"FROM Artist a LEFT JOIN FETCH a.paintingArray, Gallery g LEFT JOIN FETCH g.exhibitArray "
 operator|+
-literal|"ORDER BY a.artistName"
+literal|"ORDER BY a.artistName, g.galleryName"
 decl_stmt|;
 name|EJBQLQuery
 name|query
@@ -2086,7 +2086,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|g2
+name|g1
 argument_list|,
 name|row
 index|[
@@ -2132,7 +2132,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|g1
+name|g2
 argument_list|,
 name|row
 index|[
