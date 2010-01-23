@@ -187,10 +187,8 @@ block|{
 name|DataContext
 name|altContext
 init|=
-name|mirrorDataContext
-argument_list|(
-name|context
-argument_list|)
+name|createDataContext
+argument_list|()
 decl_stmt|;
 specifier|final
 name|boolean
@@ -236,13 +234,6 @@ return|;
 block|}
 block|}
 decl_stmt|;
-name|altContext
-operator|.
-name|setDelegate
-argument_list|(
-name|delegate
-argument_list|)
-expr_stmt|;
 comment|// make sure we have a fully resolved copy of an artist object
 comment|// in the second context
 name|Artist
@@ -253,15 +244,14 @@ name|Artist
 operator|)
 name|altContext
 operator|.
-name|getGraphManager
-argument_list|()
-operator|.
-name|getNode
+name|localObject
 argument_list|(
 name|artist
 operator|.
 name|getObjectId
 argument_list|()
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -299,6 +289,13 @@ name|altArtist
 operator|.
 name|getPersistenceState
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|altContext
+operator|.
+name|setDelegate
+argument_list|(
+name|delegate
 argument_list|)
 expr_stmt|;
 comment|// Update and save artist in peer context

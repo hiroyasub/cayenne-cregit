@@ -58,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of test cases requiring multiple DataContexts with   * the same parent DataDomain.  *   */
+comment|/**  * Superclass of test cases requiring multiple DataContexts with the same parent  * DataDomain.  */
 end_comment
 
 begin_class
@@ -147,7 +147,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Helper method to create a new DataContext with the ObjectStore      * state being the mirror of the given context. This is done by      * serializing/deserializing the DataContext.      */
+comment|/**      * Helper method to create a new DataContext with the ObjectStore state being the      * mirror of the given context. This is done by serializing/deserializing the      * DataContext.      *       * @deprecated Unsafe to assume that all cloned objects will be preserved, due to the      *             weak references. Should probably use 'localObject' as an alternative to      *             get object clones.      */
 specifier|protected
 name|DataContext
 name|mirrorDataContext
