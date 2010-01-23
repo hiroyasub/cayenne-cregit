@@ -127,6 +127,14 @@ argument_list|(
 name|resolver
 argument_list|)
 decl_stmt|;
+name|setPrefetchTree
+argument_list|(
+name|expression
+operator|.
+name|getPrefetchTree
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|resultSetMapping
 operator|=
 name|expression

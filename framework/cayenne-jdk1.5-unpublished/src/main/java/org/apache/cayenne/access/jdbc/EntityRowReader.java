@@ -303,6 +303,43 @@ expr_stmt|;
 comment|// query translator may change the order of fields compare to the entity
 comment|// result, so figure out DataRow labels by doing reverse lookup of
 comment|// RowDescriptor labels...
+if|if
+condition|(
+name|columns
+index|[
+name|startIndex
+operator|+
+name|i
+index|]
+operator|.
+name|getDataRowKey
+argument_list|()
+operator|.
+name|contains
+argument_list|(
+literal|"."
+argument_list|)
+condition|)
+block|{
+comment|// if the dataRowKey contains ".", it is prefetched column and we can use it instead of search the name by alias
+name|labels
+index|[
+name|i
+index|]
+operator|=
+name|columns
+index|[
+name|startIndex
+operator|+
+name|i
+index|]
+operator|.
+name|getDataRowKey
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
 name|labels
 index|[
 name|i
@@ -323,6 +360,7 @@ name|getDataRowKey
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public

@@ -61,6 +61,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|PrefetchTreeNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -113,6 +127,11 @@ function_decl|;
 comment|/**      * Returns a mapping of the result set columns, or null if this is not a select      * expression.      */
 name|SQLResult
 name|getResult
+parameter_list|()
+function_decl|;
+comment|/**      * Returns prefetched columns tree for fetch joins.      */
+name|PrefetchTreeNode
+name|getPrefetchTree
 parameter_list|()
 function_decl|;
 block|}

@@ -197,6 +197,16 @@ name|field
 operator|.
 name|isDbAttribute
 argument_list|()
+operator|||
+name|field
+operator|.
+name|getAttributeName
+argument_list|()
+operator|.
+name|startsWith
+argument_list|(
+literal|"fetch."
+argument_list|)
 condition|)
 block|{
 name|dbFields
