@@ -40,7 +40,7 @@ specifier|public
 class|class
 name|EJBQLOr
 extends|extends
-name|SimpleNode
+name|AggregateConditionNode
 block|{
 specifier|public
 name|EJBQLOr
@@ -108,6 +108,17 @@ name|this
 argument_list|,
 name|childIndex
 argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|getPriority
+parameter_list|()
+block|{
+return|return
+name|OR_PRIORITY
 return|;
 block|}
 block|}

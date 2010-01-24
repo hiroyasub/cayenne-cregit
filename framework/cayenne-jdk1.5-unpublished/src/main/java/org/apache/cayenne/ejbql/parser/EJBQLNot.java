@@ -40,7 +40,7 @@ specifier|public
 class|class
 name|EJBQLNot
 extends|extends
-name|SimpleNode
+name|AggregateConditionNode
 block|{
 specifier|public
 name|EJBQLNot
@@ -72,6 +72,17 @@ name|visitNot
 argument_list|(
 name|this
 argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|getPriority
+parameter_list|()
+block|{
+return|return
+name|NOT_PRIORITY
 return|;
 block|}
 block|}

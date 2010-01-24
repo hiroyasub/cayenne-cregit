@@ -1886,6 +1886,162 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testOrBrackets
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|deleteTestData
+argument_list|()
+expr_stmt|;
+name|ObjectContext
+name|context
+init|=
+name|createDataContext
+argument_list|()
+decl_stmt|;
+name|Artist
+name|a
+init|=
+name|context
+operator|.
+name|newObject
+argument_list|(
+name|Artist
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|a
+operator|.
+name|setArtistName
+argument_list|(
+literal|"testOrBrackets"
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|commitChanges
+argument_list|()
+expr_stmt|;
+comment|//this query is equivalent to (false and (false or true)) and
+comment|//should always return 0 rows
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"select a from Artist a "
+operator|+
+literal|"where a.artistName<> a.artistName and "
+operator|+
+literal|"(a.artistName<> a.artistName or a.artistName = a.artistName)"
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+operator|.
+name|size
+argument_list|()
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|//on the other hand, the following is equivalent to (false and false) or true) and
+comment|//should return>0 rows
+name|query
+operator|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"select a from Artist a "
+operator|+
+literal|"where a.artistName<> a.artistName and "
+operator|+
+literal|"a.artistName<> a.artistName or a.artistName = a.artistName"
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+comment|//checking brackets around not
+name|query
+operator|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"select a from Artist a "
+operator|+
+literal|"where not(a.artistName<> a.artistName and "
+operator|+
+literal|"a.artistName<> a.artistName or a.artistName = a.artistName)"
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+operator|.
+name|size
+argument_list|()
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|//not is first to process
+name|query
+operator|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"select a from Artist a "
+operator|+
+literal|"where not a.artistName<> a.artistName or "
+operator|+
+literal|"a.artistName = a.artistName"
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
