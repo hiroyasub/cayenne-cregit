@@ -848,6 +848,16 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
+comment|// skip null objects... possible since 3.0 in some EJBQL results
+if|if
+condition|(
+name|object
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
 comment|// skip HOLLOW objects as they likely were created from partial snapshots
 if|if
 condition|(
