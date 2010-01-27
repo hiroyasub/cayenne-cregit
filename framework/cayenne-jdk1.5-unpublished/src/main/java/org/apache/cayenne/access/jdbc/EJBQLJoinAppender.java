@@ -732,7 +732,7 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|" LEFT OUTER JOIN "
+literal|" JOIN "
 argument_list|)
 expr_stmt|;
 name|context
