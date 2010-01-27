@@ -63,6 +63,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|EntityResolver
 import|;
 end_import
@@ -113,6 +127,11 @@ function_decl|;
 comment|/**      * Returns a symbolic name of the query. The name may be used as a key to find queries      * stored in the DataMap. Some query implementors reuse the name as a QueryMetadata      * cache key. Generally the name can be null.      *       * @since 1.1      */
 name|String
 name|getName
+parameter_list|()
+function_decl|;
+comment|/**      * @since 3.1      */
+name|DataMap
+name|getDataMap
 parameter_list|()
 function_decl|;
 block|}

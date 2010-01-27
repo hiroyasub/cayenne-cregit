@@ -108,6 +108,13 @@ argument_list|)
 expr_stmt|;
 name|template
 operator|.
+name|setDataMap
+argument_list|(
+name|dataMap
+argument_list|)
+expr_stmt|;
+name|template
+operator|.
 name|initWithProperties
 argument_list|(
 name|properties

@@ -83,6 +83,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbAttribute
 import|;
 end_import
@@ -155,6 +169,11 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|protected
+name|DataMap
+name|dataMap
+decl_stmt|;
 specifier|public
 name|BatchQuery
 parameter_list|(
@@ -221,6 +240,32 @@ operator|.
 name|name
 operator|=
 name|name
+expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|DataMap
+name|getDataMap
+parameter_list|()
+block|{
+return|return
+name|dataMap
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setDataMap
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataMap
+operator|=
+name|dataMap
 expr_stmt|;
 block|}
 comment|/**      * Returns default select parameters.      *       * @since 1.2      */

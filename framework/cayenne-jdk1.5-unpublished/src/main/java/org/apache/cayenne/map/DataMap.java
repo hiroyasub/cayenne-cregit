@@ -1115,6 +1115,13 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|proxy
+operator|.
+name|setDataMap
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
 comment|// resolve metadata so that client can have access to it without knowing about
 comment|// the server query.
 name|proxy

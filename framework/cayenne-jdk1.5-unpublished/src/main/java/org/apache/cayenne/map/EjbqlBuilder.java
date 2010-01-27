@@ -74,6 +74,13 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
+name|setDataMap
+argument_list|(
+name|dataMap
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
 name|initWithProperties
 argument_list|(
 name|properties

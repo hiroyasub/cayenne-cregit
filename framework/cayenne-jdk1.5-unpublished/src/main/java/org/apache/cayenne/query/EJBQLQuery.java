@@ -187,6 +187,10 @@ name|String
 name|name
 decl_stmt|;
 specifier|protected
+name|DataMap
+name|dataMap
+decl_stmt|;
+specifier|protected
 name|String
 name|ejbqlStatement
 decl_stmt|;
@@ -238,6 +242,32 @@ specifier|public
 name|EJBQLQuery
 parameter_list|()
 block|{
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|DataMap
+name|getDataMap
+parameter_list|()
+block|{
+return|return
+name|dataMap
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setDataMap
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataMap
+operator|=
+name|dataMap
+expr_stmt|;
 block|}
 specifier|public
 parameter_list|<
