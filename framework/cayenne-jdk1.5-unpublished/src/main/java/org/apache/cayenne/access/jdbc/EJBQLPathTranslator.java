@@ -1015,7 +1015,11 @@ name|isSourceIndependentFromTargetChange
 argument_list|()
 condition|)
 block|{
-comment|// use an outer join for to-many matches
+comment|// (andrus) use an outer join for to-many matches.. This is somewhat different
+comment|// from traditional Cayenne SelectQuery, as EJBQL spec does not allow regular
+comment|// path matches done against to-many relationships, and instead provides
+comment|// MEMBER OF and IS EMPTY operators. Outer join is needed for IS EMPTY... I
+comment|// guess MEMBER OF could've been done with an inner join though..
 name|resolveJoin
 argument_list|(
 literal|false
