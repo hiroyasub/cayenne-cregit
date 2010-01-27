@@ -1119,7 +1119,7 @@ name|proxy
 operator|.
 name|setDataMap
 argument_list|(
-name|this
+name|clientMap
 argument_list|)
 expr_stmt|;
 comment|// resolve metadata so that client can have access to it without knowing about
