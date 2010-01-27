@@ -363,7 +363,10 @@ operator|.
 name|getEntity
 argument_list|()
 operator|.
-name|getDbEntityName
+name|getDbEntity
+argument_list|()
+operator|.
+name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
