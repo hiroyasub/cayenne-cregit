@@ -2008,31 +2008,17 @@ operator|==
 literal|2
 condition|)
 block|{
-for|for
-control|(
-name|int
-name|j
-init|=
-literal|0
-init|;
-name|j
-operator|<
-name|expression
-operator|.
-name|getChildrenCount
-argument_list|()
-condition|;
-name|j
-operator|++
-control|)
-block|{
+comment|// We rewrite expression "parameter = :x" where x=null
+comment|// as "parameter IS NULL"
+comment|// BUT in such as ":x = parameter" (where x=null) we don't do anything
+comment|// as a result it can be unsupported in some DB
 if|if
 condition|(
 name|expression
 operator|.
 name|getChild
 argument_list|(
-name|j
+literal|1
 argument_list|)
 operator|instanceof
 name|EJBQLNamedInputParameter
@@ -2048,7 +2034,7 @@ name|expression
 operator|.
 name|getChild
 argument_list|(
-name|j
+literal|1
 argument_list|)
 decl_stmt|;
 if|if
@@ -2090,7 +2076,6 @@ expr_stmt|;
 return|return
 literal|false
 return|;
-block|}
 block|}
 block|}
 block|}
