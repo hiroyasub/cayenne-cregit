@@ -336,7 +336,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is a method parameter     *       * @since 3.0      */
+comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is a method parameter.      *       * @since 3.0      */
 specifier|protected
 name|void
 name|doAppendPart
@@ -2032,7 +2032,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Class to translate DB Entity qualifiers annotation to Obj-entity qualifiers annotation      * This is done by changing all Obj-paths to Db-paths and rejecting all original Db-paths      */
+comment|/**      * Class to translate DB Entity qualifiers annotation to Obj-entity qualifiers      * annotation This is done by changing all Obj-paths to Db-paths and rejecting all      * original Db-paths      */
 class|class
 name|DbEntityQualifierTransformer
 implements|implements
