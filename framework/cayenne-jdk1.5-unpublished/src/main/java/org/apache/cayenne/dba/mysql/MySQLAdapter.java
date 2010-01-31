@@ -422,7 +422,7 @@ name|this
 operator|.
 name|supportsFkConstraints
 operator|=
-name|supportsFkConstraints
+name|flag
 expr_stmt|;
 block|}
 annotation|@
