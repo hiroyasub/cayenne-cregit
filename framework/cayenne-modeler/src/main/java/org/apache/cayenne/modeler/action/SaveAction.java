@@ -190,6 +190,20 @@ init|=
 name|getCurrentProject
 argument_list|()
 decl_stmt|;
+name|String
+name|oldPath
+init|=
+name|p
+operator|.
+name|getConfigurationResource
+argument_list|()
+operator|.
+name|getURL
+argument_list|()
+operator|.
+name|getPath
+argument_list|()
+decl_stmt|;
 comment|// obtain preference object before save, when the project path may change.....
 name|Domain
 name|preference
@@ -271,8 +285,10 @@ operator|.
 name|getFrameController
 argument_list|()
 operator|.
-name|addToLastProjListAction
+name|changePathInLastProjListAction
 argument_list|(
+name|oldPath
+argument_list|,
 name|p
 operator|.
 name|getConfigurationResource
