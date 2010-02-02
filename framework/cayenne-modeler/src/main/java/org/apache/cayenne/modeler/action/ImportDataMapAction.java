@@ -77,9 +77,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -386,13 +386,19 @@ name|getAbsolutePath
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 init|=
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|getProjectController
 argument_list|()
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 decl_stmt|;
 if|if

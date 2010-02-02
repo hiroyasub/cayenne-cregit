@@ -49,9 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -211,7 +211,7 @@ name|ObjAttribute
 name|objAttr
 decl_stmt|;
 specifier|private
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|private
@@ -262,8 +262,6 @@ name|action
 operator|.
 name|createObjAttribute
 argument_list|(
-name|domain
-argument_list|,
 name|dataMap
 argument_list|,
 name|objEntity
@@ -283,8 +281,6 @@ name|action
 operator|.
 name|createDbAttribute
 argument_list|(
-name|domain
-argument_list|,
 name|dataMap
 argument_list|,
 name|dbEntity
@@ -403,7 +399,7 @@ block|}
 specifier|public
 name|CreateAttributeUndoableEdit
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap
@@ -444,7 +440,7 @@ block|}
 specifier|public
 name|CreateAttributeUndoableEdit
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap

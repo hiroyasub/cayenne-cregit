@@ -35,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -59,14 +59,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|DataDomain
+name|DataChannelDescriptor
 name|d
 init|=
 operator|new
-name|DataDomain
-argument_list|(
-literal|"abc"
-argument_list|)
+name|DataChannelDescriptor
+argument_list|()
 decl_stmt|;
 name|DomainDisplayEvent
 name|e

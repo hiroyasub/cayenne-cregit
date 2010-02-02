@@ -130,7 +130,7 @@ name|get
 argument_list|(
 name|LOCAL_DATA_SOURCE_PROPERTY
 argument_list|,
-literal|null
+literal|""
 argument_list|)
 expr_stmt|;
 block|}

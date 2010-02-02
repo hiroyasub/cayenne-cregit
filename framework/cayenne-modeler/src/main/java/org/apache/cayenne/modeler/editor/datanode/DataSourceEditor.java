@@ -27,9 +27,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -137,7 +137,7 @@ index|[]
 name|fieldAdapters
 decl_stmt|;
 specifier|protected
-name|DataNode
+name|DataNodeDescriptor
 name|node
 decl_stmt|;
 specifier|protected
@@ -170,7 +170,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|DataNode
+name|DataNodeDescriptor
 name|getNode
 parameter_list|()
 block|{
@@ -182,7 +182,7 @@ specifier|public
 name|void
 name|setNode
 parameter_list|(
-name|DataNode
+name|DataNodeDescriptor
 name|node
 parameter_list|)
 block|{

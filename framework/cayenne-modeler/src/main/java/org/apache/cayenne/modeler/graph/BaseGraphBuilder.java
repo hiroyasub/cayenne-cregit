@@ -233,9 +233,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -625,7 +625,7 @@ decl_stmt|;
 comment|/**      * Domain      */
 specifier|protected
 specifier|transient
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 comment|/**      * Created entity cells.      * Maps to entity name, since GraphBuilder can be serialized      */
@@ -682,7 +682,7 @@ parameter_list|(
 name|ProjectController
 name|mediator
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|boolean
@@ -1555,7 +1555,7 @@ specifier|protected
 name|boolean
 name|isIsolated
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|Entity
@@ -2602,20 +2602,6 @@ name|labelPositions
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
-name|boolean
-name|isInCurrentDomain
-parameter_list|()
-block|{
-return|return
-name|mediator
-operator|.
-name|getCurrentDataDomain
-argument_list|()
-operator|==
-name|domain
-return|;
-block|}
 specifier|public
 name|JGraph
 name|getGraph
@@ -2698,7 +2684,7 @@ specifier|public
 name|void
 name|setDataDomain
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{
@@ -2710,7 +2696,7 @@ name|domain
 expr_stmt|;
 block|}
 specifier|public
-name|DataDomain
+name|DataChannelDescriptor
 name|getDataDomain
 parameter_list|()
 block|{

@@ -49,9 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -63,9 +63,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -134,11 +134,11 @@ literal|"Create DataNode"
 return|;
 block|}
 specifier|private
-name|DataNode
+name|DataNodeDescriptor
 name|node
 decl_stmt|;
 specifier|private
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|public
@@ -147,10 +147,7 @@ parameter_list|(
 name|Application
 name|application
 parameter_list|,
-name|DataDomain
-name|domain
-parameter_list|,
-name|DataNode
+name|DataNodeDescriptor
 name|node
 parameter_list|)
 block|{
@@ -158,8 +155,18 @@ name|this
 operator|.
 name|domain
 operator|=
-name|domain
+operator|(
+name|DataChannelDescriptor
+operator|)
+name|application
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
+argument_list|()
 expr_stmt|;
+empty_stmt|;
 name|this
 operator|.
 name|node
@@ -196,14 +203,10 @@ name|action
 operator|.
 name|removeDataNode
 argument_list|(
-name|domain
-argument_list|,
 name|node
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|redo
@@ -213,7 +216,10 @@ name|CannotRedoException
 block|{
 name|domain
 operator|.
-name|addNode
+name|getNodeDescriptors
+argument_list|()
+operator|.
+name|add
 argument_list|(
 name|node
 argument_list|)
@@ -238,8 +244,6 @@ name|action
 operator|.
 name|createDataNode
 argument_list|(
-name|domain
-argument_list|,
 name|node
 argument_list|)
 expr_stmt|;

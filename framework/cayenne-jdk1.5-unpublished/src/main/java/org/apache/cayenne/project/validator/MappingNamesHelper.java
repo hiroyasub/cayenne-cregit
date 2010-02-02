@@ -232,6 +232,7 @@ name|sharedInstance
 return|;
 block|}
 comment|/**      * This is more of a sanity check than a real validation. As different DBs allow      * different chars in identifiers, here we simply check for dots.      */
+specifier|public
 name|String
 name|invalidCharsInDbPathComponent
 parameter_list|(
@@ -257,6 +258,7 @@ literal|null
 return|;
 block|}
 comment|/**      * Scans a name of ObjAttribute or ObjRelationship for invalid characters.      */
+specifier|public
 name|String
 name|invalidCharsInObjPathComponent
 parameter_list|(
@@ -289,6 +291,7 @@ else|:
 literal|null
 return|;
 block|}
+specifier|public
 name|String
 name|invalidCharsInJavaClassName
 parameter_list|(
@@ -359,6 +362,7 @@ else|:
 literal|null
 return|;
 block|}
+specifier|public
 name|boolean
 name|invalidDataObjectClass
 parameter_list|(
@@ -571,6 +575,7 @@ name|invalidChars
 return|;
 block|}
 comment|/**      * Returns whether a given String is a valid DataObject property. A property is      * considered invalid if there is a getter or a setter for it in java.lang.Object or      * CayenneDataObject.      */
+specifier|public
 name|boolean
 name|invalidDataObjectProperty
 parameter_list|(

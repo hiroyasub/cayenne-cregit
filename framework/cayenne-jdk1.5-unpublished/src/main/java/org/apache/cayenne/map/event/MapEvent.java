@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -114,7 +114,7 @@ name|oldNameSet
 decl_stmt|;
 comment|/**      * Domain of event object. Might be null      */
 specifier|protected
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 comment|/**      * Constructor for MapEvent.      *       * @param source event source      */
@@ -244,7 +244,7 @@ specifier|public
 name|void
 name|setDomain
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{
@@ -257,7 +257,7 @@ expr_stmt|;
 block|}
 comment|/**      * @return Domain of event object. Might be null      */
 specifier|public
-name|DataDomain
+name|DataChannelDescriptor
 name|getDomain
 parameter_list|()
 block|{

@@ -153,7 +153,7 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|Project
+name|ProjectPath
 import|;
 end_import
 
@@ -165,9 +165,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|ProjectPath
+name|Project
 import|;
 end_import
 

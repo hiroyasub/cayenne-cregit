@@ -155,9 +155,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -169,9 +169,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -535,7 +535,7 @@ if|if
 condition|(
 name|object
 operator|instanceof
-name|DataDomain
+name|DataChannelDescriptor
 condition|)
 block|{
 return|return
@@ -546,7 +546,7 @@ if|else if
 condition|(
 name|object
 operator|instanceof
-name|DataNode
+name|DataNodeDescriptor
 condition|)
 block|{
 return|return

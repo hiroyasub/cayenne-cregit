@@ -65,9 +65,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -96,6 +96,20 @@ operator|.
 name|map
 operator|.
 name|Entity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EntityResolver
 import|;
 end_import
 
@@ -342,13 +356,36 @@ specifier|protected
 name|boolean
 name|isIsolated
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|Entity
 name|entity
 parameter_list|)
 block|{
+name|EntityResolver
+name|entRes
+init|=
+operator|new
+name|EntityResolver
+argument_list|(
+operator|(
+operator|(
+name|DataChannelDescriptor
+operator|)
+name|mediator
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
+argument_list|()
+operator|)
+operator|.
+name|getDataMaps
+argument_list|()
+argument_list|)
+decl_stmt|;
 return|return
 name|super
 operator|.
@@ -371,10 +408,7 @@ argument_list|()
 operator|==
 literal|null
 operator|&&
-name|domain
-operator|.
-name|getEntityResolver
-argument_list|()
+name|entRes
 operator|.
 name|lookupInheritanceTree
 argument_list|(
@@ -715,12 +749,6 @@ name|EntityEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
-block|{
 name|insertEntityCell
 argument_list|(
 name|e
@@ -730,7 +758,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|objEntityChanged
@@ -738,12 +765,6 @@ parameter_list|(
 name|EntityEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|remapEntity
 argument_list|(
@@ -758,7 +779,7 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//maybe super entity was changed
+comment|// maybe super entity was changed
 name|ObjEntity
 name|entity
 init|=
@@ -909,7 +930,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
 specifier|public
 name|void
 name|objEntityRemoved
@@ -917,12 +937,6 @@ parameter_list|(
 name|EntityEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|removeEntityCell
 argument_list|(
@@ -933,7 +947,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|objAttributeAdded
@@ -941,12 +954,6 @@ parameter_list|(
 name|AttributeEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|updateEntityCell
 argument_list|(
@@ -956,7 +963,6 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 name|void
@@ -966,12 +972,6 @@ name|AttributeEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
-block|{
 name|updateEntityCell
 argument_list|(
 name|e
@@ -980,7 +980,6 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 name|void
@@ -990,12 +989,6 @@ name|AttributeEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
-block|{
 name|updateEntityCell
 argument_list|(
 name|e
@@ -1005,7 +998,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|objRelationshipAdded
@@ -1014,7 +1006,7 @@ name|RelationshipEvent
 name|e
 parameter_list|)
 block|{
-comment|//nothing because relationship does not have target yet
+comment|// nothing because relationship does not have target yet
 block|}
 specifier|public
 name|void
@@ -1023,12 +1015,6 @@ parameter_list|(
 name|RelationshipEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|remapRelationship
 argument_list|(
@@ -1044,7 +1030,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|objRelationshipRemoved
@@ -1052,12 +1037,6 @@ parameter_list|(
 name|RelationshipEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|removeRelationshipCell
 argument_list|(
@@ -1067,7 +1046,6 @@ name|getRelationship
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Override

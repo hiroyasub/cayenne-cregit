@@ -37,9 +37,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -260,7 +260,7 @@ specifier|public
 name|void
 name|createQuery
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap
@@ -305,7 +305,7 @@ parameter_list|,
 name|ProjectController
 name|mediator
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap

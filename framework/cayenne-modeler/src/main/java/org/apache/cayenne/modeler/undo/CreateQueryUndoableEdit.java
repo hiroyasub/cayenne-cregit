@@ -49,9 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -123,7 +123,7 @@ extends|extends
 name|CayenneUndoableEdit
 block|{
 specifier|private
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|private
@@ -137,7 +137,7 @@ decl_stmt|;
 specifier|public
 name|CreateQueryUndoableEdit
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap

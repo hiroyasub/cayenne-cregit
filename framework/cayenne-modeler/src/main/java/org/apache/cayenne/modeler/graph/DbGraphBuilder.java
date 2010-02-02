@@ -478,12 +478,6 @@ name|EntityEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
-block|{
 name|insertEntityCell
 argument_list|(
 name|e
@@ -493,7 +487,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|dbEntityChanged
@@ -501,12 +494,6 @@ parameter_list|(
 name|EntityEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|remapEntity
 argument_list|(
@@ -522,7 +509,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|dbEntityRemoved
@@ -530,12 +516,6 @@ parameter_list|(
 name|EntityEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|removeEntityCell
 argument_list|(
@@ -546,7 +526,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|dbAttributeAdded
@@ -554,12 +533,6 @@ parameter_list|(
 name|AttributeEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|updateEntityCell
 argument_list|(
@@ -569,7 +542,6 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 name|void
@@ -579,12 +551,6 @@ name|AttributeEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
-block|{
 name|updateEntityCell
 argument_list|(
 name|e
@@ -593,7 +559,6 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 name|void
@@ -603,12 +568,6 @@ name|AttributeEvent
 name|e
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
-block|{
 name|updateEntityCell
 argument_list|(
 name|e
@@ -618,7 +577,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -627,7 +585,7 @@ name|RelationshipEvent
 name|e
 parameter_list|)
 block|{
-comment|//nothing because relationship does not have target yet
+comment|// nothing because relationship does not have target yet
 block|}
 specifier|public
 name|void
@@ -636,12 +594,6 @@ parameter_list|(
 name|RelationshipEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|updateRelationshipCell
 argument_list|(
@@ -652,7 +604,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 specifier|public
 name|void
 name|dbRelationshipRemoved
@@ -660,12 +611,6 @@ parameter_list|(
 name|RelationshipEvent
 name|e
 parameter_list|)
-block|{
-if|if
-condition|(
-name|isInCurrentDomain
-argument_list|()
-condition|)
 block|{
 name|remapRelationship
 argument_list|(
@@ -680,7 +625,6 @@ name|getRelationship
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|public
 name|GraphType

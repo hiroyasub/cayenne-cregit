@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -43,7 +43,7 @@ extends|extends
 name|DisplayEvent
 block|{
 specifier|protected
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|protected
@@ -58,7 +58,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{
@@ -76,7 +76,7 @@ expr_stmt|;
 block|}
 comment|/** Get domain for this data map. */
 specifier|public
-name|DataDomain
+name|DataChannelDescriptor
 name|getDomain
 parameter_list|()
 block|{
@@ -89,7 +89,7 @@ specifier|public
 name|void
 name|setDomain
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{

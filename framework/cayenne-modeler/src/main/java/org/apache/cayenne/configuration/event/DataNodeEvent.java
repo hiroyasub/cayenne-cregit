@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -59,7 +59,7 @@ extends|extends
 name|MapEvent
 block|{
 specifier|protected
-name|DataNode
+name|DataNodeDescriptor
 name|dataNode
 decl_stmt|;
 comment|/** Creates a node change event. */
@@ -69,8 +69,8 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataNode
-name|node
+name|DataNodeDescriptor
+name|nextNode
 parameter_list|)
 block|{
 name|super
@@ -80,7 +80,7 @@ argument_list|)
 expr_stmt|;
 name|setDataNode
 argument_list|(
-name|node
+name|nextNode
 argument_list|)
 expr_stmt|;
 block|}
@@ -91,7 +91,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataNode
+name|DataNodeDescriptor
 name|node
 parameter_list|,
 name|int
@@ -118,7 +118,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataNode
+name|DataNodeDescriptor
 name|node
 parameter_list|,
 name|String
@@ -140,7 +140,7 @@ expr_stmt|;
 block|}
 comment|/** Returns node object associated with this event. */
 specifier|public
-name|DataNode
+name|DataNodeDescriptor
 name|getDataNode
 parameter_list|()
 block|{
@@ -153,7 +153,7 @@ specifier|public
 name|void
 name|setDataNode
 parameter_list|(
-name|DataNode
+name|DataNodeDescriptor
 name|dataNode
 parameter_list|)
 block|{

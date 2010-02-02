@@ -77,6 +77,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|ProjectPath
@@ -104,7 +118,6 @@ name|EJBQLQueryValidator
 extends|extends
 name|TreeNodeValidator
 block|{
-comment|// private DataDomain dd;
 annotation|@
 name|Override
 specifier|public
@@ -144,6 +157,9 @@ name|DataDomain
 operator|.
 name|class
 argument_list|)
+operator|.
+name|getEntityResolver
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -178,8 +194,8 @@ parameter_list|(
 name|EJBQLQuery
 name|query
 parameter_list|,
-name|DataDomain
-name|dd
+name|EntityResolver
+name|er
 parameter_list|)
 block|{
 if|if
@@ -220,10 +236,7 @@ name|queryTemp
 operator|.
 name|getExpression
 argument_list|(
-name|dd
-operator|.
-name|getEntityResolver
-argument_list|()
+name|er
 argument_list|)
 expr_stmt|;
 block|}

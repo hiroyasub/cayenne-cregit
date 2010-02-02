@@ -294,6 +294,7 @@ name|CayenneController
 name|parent
 decl_stmt|;
 specifier|protected
+specifier|static
 name|Application
 name|application
 decl_stmt|;
@@ -347,6 +348,7 @@ name|application
 expr_stmt|;
 block|}
 specifier|public
+specifier|static
 name|Application
 name|getApplication
 parameter_list|()

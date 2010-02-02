@@ -49,9 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -136,7 +136,7 @@ literal|"Create DataMap"
 return|;
 block|}
 specifier|private
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|private
@@ -146,7 +146,7 @@ decl_stmt|;
 specifier|public
 name|CreateDataMapUndoableEdit
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap
@@ -195,8 +195,6 @@ name|action
 operator|.
 name|createDataMap
 argument_list|(
-name|domain
-argument_list|,
 name|map
 argument_list|)
 expr_stmt|;
@@ -243,8 +241,6 @@ name|action
 operator|.
 name|removeDataMap
 argument_list|(
-name|domain
-argument_list|,
 name|map
 argument_list|)
 expr_stmt|;

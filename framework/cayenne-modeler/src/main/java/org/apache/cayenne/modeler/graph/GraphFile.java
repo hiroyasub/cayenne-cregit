@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|Project
+name|ProjectFile
 import|;
 end_import
 
@@ -49,9 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|ProjectFile
+name|Project
 import|;
 end_import
 
@@ -101,13 +101,7 @@ name|GraphMap
 name|graphMap
 parameter_list|)
 block|{
-name|super
-argument_list|(
-name|project
-argument_list|,
-literal|null
-argument_list|)
-expr_stmt|;
+comment|//super(project, null);
 name|this
 operator|.
 name|graphMap

@@ -47,9 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -132,13 +132,13 @@ name|GraphType
 name|selectedType
 decl_stmt|;
 comment|/**      * Domain      */
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|public
 name|GraphMap
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{
@@ -151,7 +151,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns domain      */
 specifier|public
-name|DataDomain
+name|DataChannelDescriptor
 name|getDomain
 parameter_list|()
 block|{

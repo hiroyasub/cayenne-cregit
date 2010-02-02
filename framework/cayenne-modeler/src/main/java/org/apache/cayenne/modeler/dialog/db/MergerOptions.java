@@ -161,9 +161,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -175,9 +175,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -555,9 +555,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
 name|Project
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|Resource
 import|;
 end_import
 
@@ -1210,17 +1224,23 @@ init|=
 name|this
 decl_stmt|;
 specifier|final
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 init|=
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|getProjectController
 argument_list|()
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 decl_stmt|;
 specifier|final
-name|DataNode
+name|DataNodeDescriptor
 name|node
 init|=
 name|getProjectController
@@ -2122,7 +2142,7 @@ argument_list|(
 literal|"Save SQL Script"
 argument_list|)
 expr_stmt|;
-name|File
+name|Resource
 name|projectDir
 init|=
 name|Application
@@ -2130,7 +2150,7 @@ operator|.
 name|getProject
 argument_list|()
 operator|.
-name|getProjectDirectory
+name|getConfigurationResource
 argument_list|()
 decl_stmt|;
 if|if
@@ -2144,9 +2164,20 @@ name|fc
 operator|.
 name|setCurrentDirectory
 argument_list|(
+operator|new
+name|File
+argument_list|(
 name|projectDir
+operator|.
+name|getURL
+argument_list|()
+operator|.
+name|getPath
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//projectDir);
 block|}
 if|if
 condition|(

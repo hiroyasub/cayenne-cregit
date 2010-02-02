@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -95,13 +95,13 @@ name|Embeddable
 name|embeddable
 parameter_list|,
 name|EmbeddableAttribute
-name|attr
+name|attrs
 parameter_list|,
 name|DataMap
 name|dataMap
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataChannelDescriptor
+name|dataChannelDescriptor
 parameter_list|)
 block|{
 name|super
@@ -112,7 +112,7 @@ name|embeddable
 argument_list|,
 name|dataMap
 argument_list|,
-name|domain
+name|dataChannelDescriptor
 argument_list|)
 expr_stmt|;
 name|embeddableAttributes
@@ -121,7 +121,7 @@ operator|new
 name|EmbeddableAttribute
 index|[]
 block|{
-name|attr
+name|attrs
 block|}
 expr_stmt|;
 block|}
@@ -141,7 +141,7 @@ parameter_list|,
 name|DataMap
 name|dataMap
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{

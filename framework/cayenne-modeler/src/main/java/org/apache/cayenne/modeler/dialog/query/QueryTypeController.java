@@ -27,9 +27,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -287,7 +287,7 @@ name|DataMap
 name|dataMap
 decl_stmt|;
 specifier|protected
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|protected
@@ -320,9 +320,15 @@ name|this
 operator|.
 name|domain
 operator|=
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|mediator
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 expr_stmt|;
 block|}
@@ -588,8 +594,6 @@ name|this
 argument_list|,
 name|mediator
 argument_list|,
-name|domain
-argument_list|,
 name|dataMap
 argument_list|,
 name|query
@@ -610,9 +614,6 @@ name|src
 parameter_list|,
 name|ProjectController
 name|mediator
-parameter_list|,
-name|DataDomain
-name|domain
 parameter_list|,
 name|DataMap
 name|dataMap
@@ -653,7 +654,16 @@ name|query
 argument_list|,
 name|dataMap
 argument_list|,
-name|domain
+operator|(
+name|DataChannelDescriptor
+operator|)
+name|mediator
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

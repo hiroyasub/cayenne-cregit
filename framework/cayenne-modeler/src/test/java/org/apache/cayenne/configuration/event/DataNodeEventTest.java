@@ -35,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -86,7 +86,7 @@ name|Object
 argument_list|()
 argument_list|,
 operator|new
-name|DataNode
+name|DataNodeDescriptor
 argument_list|(
 literal|"someName"
 argument_list|)
@@ -121,7 +121,7 @@ name|Object
 argument_list|()
 argument_list|,
 operator|new
-name|DataNode
+name|DataNodeDescriptor
 argument_list|(
 literal|"someName"
 argument_list|)
@@ -169,7 +169,7 @@ name|Object
 argument_list|()
 argument_list|,
 operator|new
-name|DataNode
+name|DataNodeDescriptor
 argument_list|(
 literal|"someName"
 argument_list|)

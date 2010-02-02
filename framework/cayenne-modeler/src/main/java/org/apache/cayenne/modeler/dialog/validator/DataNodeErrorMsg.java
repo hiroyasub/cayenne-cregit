@@ -37,9 +37,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -51,9 +51,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -115,7 +115,7 @@ extends|extends
 name|ValidationDisplayHandler
 block|{
 specifier|protected
-name|DataNode
+name|DataNodeDescriptor
 name|node
 decl_stmt|;
 comment|/**      * Constructor for DataNodeErrorMsg.      * @param result      */
@@ -160,7 +160,7 @@ block|{
 name|node
 operator|=
 operator|(
-name|DataNode
+name|DataNodeDescriptor
 operator|)
 name|path
 index|[
@@ -180,7 +180,7 @@ block|{
 name|domain
 operator|=
 operator|(
-name|DataDomain
+name|DataChannelDescriptor
 operator|)
 name|path
 index|[

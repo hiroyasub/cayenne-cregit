@@ -35,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -421,7 +421,7 @@ if|else if
 condition|(
 name|o
 operator|instanceof
-name|DataNode
+name|DataNodeDescriptor
 condition|)
 block|{
 return|return

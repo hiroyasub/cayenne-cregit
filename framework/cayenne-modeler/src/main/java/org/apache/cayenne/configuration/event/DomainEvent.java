@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -65,7 +65,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{
@@ -87,7 +87,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|int
@@ -114,7 +114,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|String

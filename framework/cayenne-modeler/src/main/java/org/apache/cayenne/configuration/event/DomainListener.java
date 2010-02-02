@@ -47,24 +47,6 @@ name|DomainEvent
 name|e
 parameter_list|)
 function_decl|;
-comment|/** New data map has been created/added.*/
-specifier|public
-name|void
-name|domainAdded
-parameter_list|(
-name|DomainEvent
-name|e
-parameter_list|)
-function_decl|;
-comment|/** Domain has been removed.*/
-specifier|public
-name|void
-name|domainRemoved
-parameter_list|(
-name|DomainEvent
-name|e
-parameter_list|)
-function_decl|;
 block|}
 end_interface
 

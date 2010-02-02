@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -39,9 +39,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -57,7 +57,7 @@ extends|extends
 name|DomainDisplayEvent
 block|{
 specifier|protected
-name|DataNode
+name|DataNodeDescriptor
 name|dataNode
 decl_stmt|;
 comment|/** True if data node is different from the current data node. */
@@ -74,10 +74,10 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataChannelDescriptor
+name|dataChannelDescriptor
 parameter_list|,
-name|DataNode
+name|DataNodeDescriptor
 name|node
 parameter_list|)
 block|{
@@ -85,7 +85,7 @@ name|super
 argument_list|(
 name|src
 argument_list|,
-name|domain
+name|dataChannelDescriptor
 argument_list|)
 expr_stmt|;
 name|this
@@ -102,7 +102,7 @@ expr_stmt|;
 block|}
 comment|/** Get data node (data source) associated with this data map. */
 specifier|public
-name|DataNode
+name|DataNodeDescriptor
 name|getDataNode
 parameter_list|()
 block|{
@@ -138,7 +138,7 @@ specifier|public
 name|void
 name|setDataNode
 parameter_list|(
-name|DataNode
+name|DataNodeDescriptor
 name|dataNode
 parameter_list|)
 block|{

@@ -199,9 +199,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -1768,12 +1768,18 @@ argument_list|)
 expr_stmt|;
 comment|// fire both EntityEvent and EntityDisplayEvent;
 comment|// the later is to update attribute and relationship display
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 init|=
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|mediator
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 decl_stmt|;
 name|DataMap
@@ -1854,12 +1860,18 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|DataDomain
+name|DataChannelDescriptor
 name|dom
 init|=
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|mediator
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 decl_stmt|;
 name|mediator
@@ -2450,9 +2462,6 @@ name|dbEntities
 init|=
 name|map
 operator|.
-name|getNamespace
-argument_list|()
-operator|.
 name|getDbEntities
 argument_list|()
 operator|.
@@ -2599,9 +2608,6 @@ operator|.
 name|select
 argument_list|(
 name|map
-operator|.
-name|getNamespace
-argument_list|()
 operator|.
 name|getObjEntities
 argument_list|()
@@ -3508,9 +3514,15 @@ operator|.
 name|getCurrentDataMap
 argument_list|()
 argument_list|,
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|mediator
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 argument_list|)
 decl_stmt|;

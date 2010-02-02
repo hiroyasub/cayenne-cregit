@@ -335,22 +335,6 @@ name|modeler
 operator|.
 name|action
 operator|.
-name|CreateDomainAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|action
-operator|.
 name|CreateEmbeddableAction
 import|;
 end_import
@@ -1178,11 +1162,6 @@ operator|.
 name|getActionName
 argument_list|()
 argument_list|,
-name|CreateDomainAction
-operator|.
-name|getActionName
-argument_list|()
-argument_list|,
 name|ProjectAction
 operator|.
 name|getActionName
@@ -1691,15 +1670,6 @@ name|registerAction
 argument_list|(
 operator|new
 name|RemoveAction
-argument_list|(
-name|application
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|registerAction
-argument_list|(
-operator|new
-name|CreateDomainAction
 argument_list|(
 name|application
 argument_list|)
@@ -2370,8 +2340,6 @@ argument_list|(
 literal|"DataMap"
 argument_list|)
 expr_stmt|;
-comment|// reset
-comment|// getAction(CreateAttributeAction.getActionName()).setName("Create Attribute");
 block|}
 specifier|public
 name|void

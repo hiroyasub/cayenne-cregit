@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -39,9 +39,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -90,8 +90,8 @@ parameter_list|,
 name|DataMap
 name|map
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataChannelDescriptor
+name|dataChannelDescriptor
 parameter_list|)
 block|{
 name|this
@@ -100,7 +100,7 @@ name|src
 argument_list|,
 name|map
 argument_list|,
-name|domain
+name|dataChannelDescriptor
 argument_list|,
 literal|null
 argument_list|)
@@ -115,10 +115,10 @@ parameter_list|,
 name|DataMap
 name|map
 parameter_list|,
-name|DataDomain
-name|domain
+name|DataChannelDescriptor
+name|dataChannelDescriptor
 parameter_list|,
-name|DataNode
+name|DataNodeDescriptor
 name|node
 parameter_list|)
 block|{
@@ -126,7 +126,7 @@ name|super
 argument_list|(
 name|src
 argument_list|,
-name|domain
+name|dataChannelDescriptor
 argument_list|,
 name|node
 argument_list|)

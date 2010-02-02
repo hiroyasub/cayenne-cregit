@@ -37,9 +37,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -284,7 +284,7 @@ block|{
 name|domain
 operator|=
 operator|(
-name|DataDomain
+name|DataChannelDescriptor
 operator|)
 name|path
 index|[

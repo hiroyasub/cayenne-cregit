@@ -47,9 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -148,7 +148,7 @@ parameter_list|(
 name|ProjectController
 name|mediator
 parameter_list|,
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|boolean
@@ -169,7 +169,7 @@ parameter_list|()
 function_decl|;
 comment|/**      * Returns domain.      */
 specifier|public
-name|DataDomain
+name|DataChannelDescriptor
 name|getDataDomain
 parameter_list|()
 function_decl|;

@@ -49,9 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -63,9 +63,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -297,7 +297,7 @@ extends|extends
 name|CayenneUndoableEdit
 block|{
 specifier|private
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 decl_stmt|;
 specifier|private
@@ -315,7 +315,7 @@ decl_stmt|;
 specifier|public
 name|PasteUndoableEdit
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap
@@ -524,18 +524,13 @@ if|if
 condition|(
 name|where
 operator|instanceof
-name|DataDomain
+name|DataChannelDescriptor
 condition|)
 block|{
 name|rAction
 operator|.
 name|removeDataMap
 argument_list|(
-operator|(
-name|DataDomain
-operator|)
-name|where
-argument_list|,
 operator|(
 name|DataMap
 operator|)
@@ -547,7 +542,7 @@ if|else if
 condition|(
 name|where
 operator|instanceof
-name|DataNode
+name|DataNodeDescriptor
 condition|)
 block|{
 name|rAction
@@ -555,7 +550,7 @@ operator|.
 name|removeDataMapFromDataNode
 argument_list|(
 operator|(
-name|DataNode
+name|DataNodeDescriptor
 operator|)
 name|where
 argument_list|,

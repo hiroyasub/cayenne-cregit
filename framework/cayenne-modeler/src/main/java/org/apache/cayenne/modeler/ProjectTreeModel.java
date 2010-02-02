@@ -99,9 +99,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -113,9 +113,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataNode
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -130,20 +130,6 @@ operator|.
 name|map
 operator|.
 name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|Project
 import|;
 end_import
 
@@ -186,6 +172,20 @@ operator|.
 name|project
 operator|.
 name|ProjectTraversalHandler
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project2
+operator|.
+name|Project
 import|;
 end_import
 
@@ -247,9 +247,14 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ProjectTreeFactory
+operator|.
 name|wrapProjectNode
 argument_list|(
 name|project
+operator|.
+name|getRootNode
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -322,6 +327,13 @@ operator|.
 name|getUserObject
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|parent
+operator|!=
+literal|null
+condition|)
+block|{
 name|int
 name|len
 init|=
@@ -474,6 +486,7 @@ argument_list|,
 name|ins
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * Returns root node cast into DefaultMutableTreeNode.      */
 specifier|public
@@ -807,7 +820,7 @@ operator|.
 name|getObject
 argument_list|()
 operator|instanceof
-name|DataNode
+name|DataNodeDescriptor
 operator|)
 condition|)
 block|{
@@ -825,7 +838,7 @@ operator|||
 operator|(
 name|node
 operator|instanceof
-name|DataDomain
+name|DataChannelDescriptor
 operator|)
 operator|||
 operator|(
@@ -837,7 +850,7 @@ operator|||
 operator|(
 name|node
 operator|instanceof
-name|DataNode
+name|DataNodeDescriptor
 operator|)
 return|;
 block|}

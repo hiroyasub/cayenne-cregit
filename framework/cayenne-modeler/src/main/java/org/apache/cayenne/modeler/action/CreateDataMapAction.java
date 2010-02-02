@@ -37,9 +37,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -145,6 +145,20 @@ name|ProjectPath
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|Resource
+import|;
+end_import
+
 begin_comment
 comment|/**  * Action that creates new DataMap in the project.  *   */
 end_comment
@@ -196,9 +210,6 @@ specifier|public
 name|void
 name|createDataMap
 parameter_list|(
-name|DataDomain
-name|domain
-parameter_list|,
 name|DataMap
 name|map
 parameter_list|)
@@ -233,12 +244,18 @@ init|=
 name|getProjectController
 argument_list|()
 decl_stmt|;
-name|DataDomain
+name|DataChannelDescriptor
 name|currentDomain
 init|=
+operator|(
+name|DataChannelDescriptor
+operator|)
 name|mediator
 operator|.
-name|getCurrentDataDomain
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
 argument_list|()
 decl_stmt|;
 comment|// use domain name as DataMap base, as map names must be unique across the
@@ -267,10 +284,37 @@ operator|+
 literal|"Map"
 argument_list|)
 decl_stmt|;
+comment|// set configuration source for new dataMap
+name|Resource
+name|baseResource
+init|=
+name|currentDomain
+operator|.
+name|getConfigurationSource
+argument_list|()
+decl_stmt|;
+name|Resource
+name|dataMapResource
+init|=
+name|baseResource
+operator|.
+name|getRelativeResource
+argument_list|(
+name|map
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|map
+operator|.
+name|setConfigurationSource
+argument_list|(
+name|dataMapResource
+argument_list|)
+expr_stmt|;
 name|createDataMap
 argument_list|(
-name|currentDomain
-argument_list|,
 name|map
 argument_list|)
 expr_stmt|;
@@ -316,7 +360,7 @@ name|path
 operator|.
 name|firstInstanceOf
 argument_list|(
-name|DataDomain
+name|DataChannelDescriptor
 operator|.
 name|class
 argument_list|)

@@ -23,16 +23,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|Serializable
 import|;
 end_import
@@ -147,34 +137,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|DataDomain
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|DataNode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|types
 operator|.
 name|ExtendedTypeMap
@@ -189,9 +151,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
+name|configuration
 operator|.
-name|Configuration
+name|DataChannelDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -261,20 +237,6 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ModelerProject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
 name|ProjectController
 import|;
 end_import
@@ -292,20 +254,6 @@ operator|.
 name|action
 operator|.
 name|MultipleObjectsAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|ApplicationProject
 import|;
 end_import
 
@@ -787,10 +735,10 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|DataNode
+name|DataNodeDescriptor
 name|getNodeLinkedToMap
 parameter_list|(
-name|DataDomain
+name|DataChannelDescriptor
 name|domain
 parameter_list|,
 name|DataMap
@@ -799,13 +747,13 @@ parameter_list|)
 block|{
 name|Collection
 argument_list|<
-name|DataNode
+name|DataNodeDescriptor
 argument_list|>
 name|nodes
 init|=
 name|domain
 operator|.
-name|getDataNodes
+name|getNodeDescriptors
 argument_list|()
 decl_stmt|;
 comment|// go via an iterator in an indexed loop, since
@@ -813,7 +761,7 @@ comment|// we already obtained the size
 comment|// (and index is required to initialize array)
 for|for
 control|(
-name|DataNode
+name|DataNodeDescriptor
 name|node
 range|:
 name|nodes
@@ -822,25 +770,20 @@ if|if
 condition|(
 name|node
 operator|.
-name|getDataMaps
+name|getDataMapNames
 argument_list|()
 operator|.
 name|contains
 argument_list|(
 name|map
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 condition|)
 return|return
 name|node
 return|;
-comment|//        Iterator nodesIt = nodes.iterator();
-comment|//        while (nodesIt.hasNext()) {
-comment|//            DataNode node = (DataNode) nodesIt.next();
-comment|//
-comment|//            if (node.getDataMaps().contains(map)) {
-comment|//                return node;
-comment|//            }
-comment|//        }
 return|return
 literal|null
 return|;
@@ -917,32 +860,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-comment|/**      * Factory method to create modeler-specific project      */
-specifier|public
-specifier|static
-name|ApplicationProject
-name|createModelerProject
-parameter_list|(
-name|File
-name|projectFile
-parameter_list|,
-name|Configuration
-name|configuration
-parameter_list|,
-name|ProjectController
-name|mediator
-parameter_list|)
-block|{
-return|return
-operator|new
-name|ModelerProject
-argument_list|(
-name|projectFile
-argument_list|,
-name|configuration
-argument_list|)
-return|;
 block|}
 block|}
 end_class

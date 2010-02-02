@@ -57,9 +57,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -373,7 +373,7 @@ name|path
 operator|.
 name|firstInstanceOf
 argument_list|(
-name|DataDomain
+name|DataChannelDescriptor
 operator|.
 name|class
 argument_list|)

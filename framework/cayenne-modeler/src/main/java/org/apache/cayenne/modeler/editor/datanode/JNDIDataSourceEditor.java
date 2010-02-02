@@ -165,7 +165,7 @@ operator|.
 name|getJndiPath
 argument_list|()
 argument_list|,
-literal|"node.dataSourceLocation"
+literal|"node.parameters"
 argument_list|)
 expr_stmt|;
 block|}

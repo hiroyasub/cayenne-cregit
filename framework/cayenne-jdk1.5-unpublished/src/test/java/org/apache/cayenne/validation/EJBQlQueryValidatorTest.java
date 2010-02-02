@@ -358,6 +358,9 @@ name|queryError
 argument_list|,
 name|getDomain
 argument_list|()
+operator|.
+name|getEntityResolver
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertEquals
