@@ -5266,7 +5266,6 @@ operator|.
 name|getRootNode
 argument_list|()
 block|,
-comment|//mediator.findDomain(map),
 name|map
 block|}
 argument_list|)
