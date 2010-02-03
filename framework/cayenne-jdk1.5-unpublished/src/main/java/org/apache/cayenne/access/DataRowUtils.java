@@ -125,20 +125,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjRelationship
 import|;
 end_import
@@ -841,33 +827,21 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// if inheritance is involved, we can't use
-comment|// 'localObject'
+comment|// we can't use 'localObject' if relationship is
+comment|// optional or inheritance is involved
 comment|// .. must turn to fault instead
-name|ObjEntity
-name|targetEntity
-init|=
-operator|(
-name|ObjEntity
-operator|)
-name|relationship
-operator|.
-name|getTargetEntity
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
+operator|!
+name|relationship
+operator|.
+name|isSourceDefiningTargetPrecenseAndType
+argument_list|(
 name|context
 operator|.
 name|getEntityResolver
 argument_list|()
-operator|.
-name|lookupInheritanceTree
-argument_list|(
-name|targetEntity
 argument_list|)
-operator|!=
-literal|null
 condition|)
 block|{
 name|property
