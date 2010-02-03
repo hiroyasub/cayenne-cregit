@@ -331,6 +331,31 @@ operator|==
 literal|null
 condition|)
 block|{
+name|double
+name|bytes
+init|=
+name|Runtime
+operator|.
+name|getRuntime
+argument_list|()
+operator|.
+name|maxMemory
+argument_list|()
+decl_stmt|;
+name|long
+name|mBytes
+init|=
+name|Math
+operator|.
+name|round
+argument_list|(
+name|bytes
+operator|/
+literal|1024
+operator|/
+literal|1024
+argument_list|)
+decl_stmt|;
 name|StringBuffer
 name|buffer
 init|=
@@ -399,6 +424,24 @@ name|getProperty
 argument_list|(
 literal|"java.version"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|"<font size='-2' face='Arial,Helvetica'>"
+argument_list|)
+expr_stmt|;
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|"<br>Max Heap Size: "
+operator|+
+name|mBytes
+operator|+
+literal|" MB"
 argument_list|)
 expr_stmt|;
 name|String
