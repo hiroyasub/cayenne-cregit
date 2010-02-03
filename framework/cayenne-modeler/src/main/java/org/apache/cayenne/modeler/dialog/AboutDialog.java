@@ -430,13 +430,6 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"<font size='-2' face='Arial,Helvetica'>"
-argument_list|)
-expr_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
 literal|"<br>Max Heap Size: "
 operator|+
 name|mBytes
