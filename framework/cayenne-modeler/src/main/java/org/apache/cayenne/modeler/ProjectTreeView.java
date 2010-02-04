@@ -2288,7 +2288,6 @@ operator|new
 name|Object
 index|[]
 block|{
-comment|// mediator.findDomain(e.getProcedure().getDataMap()),
 operator|(
 name|DataChannelDescriptor
 operator|)
