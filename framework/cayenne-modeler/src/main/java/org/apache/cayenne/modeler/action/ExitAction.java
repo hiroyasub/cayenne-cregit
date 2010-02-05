@@ -55,6 +55,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|pref
+operator|.
+name|CayennePreferenceForProject
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|ProjectPath
@@ -137,8 +151,6 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// write prefs to persistent store
-comment|//		ModelerPreferences.storePreferences();
 comment|//stop logging before JVM shutdown to prevent hanging
 name|LogConsole
 operator|.
@@ -146,6 +158,11 @@ name|getInstance
 argument_list|()
 operator|.
 name|stopLogging
+argument_list|()
+expr_stmt|;
+name|CayennePreferenceForProject
+operator|.
+name|removeNewPreferences
 argument_list|()
 expr_stmt|;
 comment|// goodbye

@@ -2523,7 +2523,7 @@ argument_list|)
 expr_stmt|;
 name|pref
 operator|.
-name|rename
+name|copyPreferences
 argument_list|(
 name|newName
 argument_list|)
