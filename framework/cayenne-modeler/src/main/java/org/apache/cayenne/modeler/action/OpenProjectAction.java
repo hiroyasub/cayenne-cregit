@@ -970,14 +970,7 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
-literal|"Project needs an upgrade to a newer version. "
-operator|+
-name|md
-operator|.
-name|getSupportedVersion
-argument_list|()
-operator|+
-literal|". Upgrade?"
+literal|"Project needs an upgrade to a newer version. Upgrade?"
 argument_list|,
 literal|"Upgrade Needed"
 argument_list|,
