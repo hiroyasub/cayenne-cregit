@@ -3342,6 +3342,11 @@ name|isNameChange
 argument_list|()
 condition|)
 block|{
+name|mediator
+operator|.
+name|updateEntityResolver
+argument_list|()
+expr_stmt|;
 name|positionNode
 argument_list|(
 name|path
