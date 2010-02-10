@@ -1322,7 +1322,7 @@ argument_list|)
 expr_stmt|;
 name|processInvalidatedIDs
 argument_list|(
-name|deletedSnapshotIds
+name|invalidatedSnapshotIds
 argument_list|)
 expr_stmt|;
 name|processUpdateDiffs
