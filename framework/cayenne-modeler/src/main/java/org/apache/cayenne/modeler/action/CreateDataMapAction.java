@@ -293,6 +293,13 @@ operator|.
 name|getConfigurationSource
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|baseResource
+operator|!=
+literal|null
+condition|)
+block|{
 name|Resource
 name|dataMapResource
 init|=
@@ -313,6 +320,7 @@ argument_list|(
 name|dataMapResource
 argument_list|)
 expr_stmt|;
+block|}
 name|createDataMap
 argument_list|(
 name|map

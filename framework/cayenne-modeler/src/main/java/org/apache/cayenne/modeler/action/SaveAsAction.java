@@ -407,6 +407,20 @@ decl_stmt|;
 name|String
 name|oldPath
 init|=
+literal|null
+decl_stmt|;
+if|if
+condition|(
+name|p
+operator|.
+name|getConfigurationResource
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|oldPath
+operator|=
 name|p
 operator|.
 name|getConfigurationResource
@@ -417,7 +431,8 @@ argument_list|()
 operator|.
 name|getPath
 argument_list|()
-decl_stmt|;
+expr_stmt|;
+block|}
 comment|// obtain preference object before save, when the project path may change.....
 name|Domain
 name|preference
