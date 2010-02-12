@@ -205,6 +205,26 @@ name|saveObjectPreference
 parameter_list|()
 block|{
 block|}
+specifier|public
+specifier|static
+name|String
+name|filePathToPrefereceNodePath
+parameter_list|(
+name|String
+name|path
+parameter_list|)
+block|{
+return|return
+name|path
+operator|.
+name|replace
+argument_list|(
+literal|".xml"
+argument_list|,
+literal|""
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 
