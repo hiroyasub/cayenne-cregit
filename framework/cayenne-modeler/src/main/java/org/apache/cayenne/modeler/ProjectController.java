@@ -2194,6 +2194,13 @@ operator|.
 name|reconfigure
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|entityResolver
+operator|==
+literal|null
+condition|)
+block|{
 name|entityResolver
 operator|=
 operator|new
@@ -2213,6 +2220,7 @@ name|getDataMaps
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|Iterator
 argument_list|<
 name|DataMap
