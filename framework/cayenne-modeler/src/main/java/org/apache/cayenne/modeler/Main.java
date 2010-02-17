@@ -119,9 +119,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|pref
+name|gen
 operator|.
-name|PreferenceDetail
+name|ClassGenerationAction
 import|;
 end_import
 
@@ -409,7 +409,7 @@ parameter_list|()
 block|{
 comment|// This must be run after the application has already been bootstrapped.  Otherwise, the returned
 comment|// app instance will be null.
-name|PreferenceDetail
+name|Preferences
 name|autoLoadPref
 init|=
 name|Application
@@ -417,16 +417,13 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
-name|getPreferenceDomain
-argument_list|()
-operator|.
-name|getDetail
+name|getPreferencesNode
 argument_list|(
-name|GeneralPreferences
+name|ClassGenerationAction
 operator|.
-name|AUTO_LOAD_PROJECT_PREFERENCE
+name|class
 argument_list|,
-literal|true
+literal|""
 argument_list|)
 decl_stmt|;
 if|if
@@ -442,31 +439,17 @@ literal|true
 operator|==
 name|autoLoadPref
 operator|.
-name|getBooleanProperty
+name|getBoolean
 argument_list|(
 name|GeneralPreferences
 operator|.
 name|AUTO_LOAD_PROJECT_PREFERENCE
+argument_list|,
+literal|false
 argument_list|)
 operator|)
 condition|)
 block|{
-name|Preferences
-name|modelerPreferences
-init|=
-name|ModelerPreferences
-operator|.
-name|getEditorPreferences
-argument_list|()
-decl_stmt|;
-name|Preferences
-name|lastProjFilesPref
-init|=
-name|ModelerPreferences
-operator|.
-name|getLastProjFilesPref
-argument_list|()
-decl_stmt|;
 name|List
 argument_list|<
 name|String
