@@ -219,7 +219,7 @@ name|project2
 operator|.
 name|validate
 operator|.
-name|EJBQLQueryValidator
+name|EJBQLStatementValidator
 import|;
 end_import
 
@@ -235,7 +235,7 @@ name|project2
 operator|.
 name|validate
 operator|.
-name|EJBQLQueryValidator
+name|EJBQLStatementValidator
 operator|.
 name|PositionException
 import|;
@@ -323,11 +323,11 @@ name|boolean
 name|updateDisabled
 decl_stmt|;
 specifier|protected
-name|EJBQLQueryValidator
+name|EJBQLStatementValidator
 name|ejbqlQueryValidator
 init|=
 operator|new
-name|EJBQLQueryValidator
+name|EJBQLStatementValidator
 argument_list|()
 decl_stmt|;
 specifier|public

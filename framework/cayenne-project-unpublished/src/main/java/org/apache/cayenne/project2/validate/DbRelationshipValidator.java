@@ -25,20 +25,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbJoin
@@ -56,20 +42,6 @@ operator|.
 name|map
 operator|.
 name|DbRelationship
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|ProjectPath
 import|;
 end_import
 
@@ -104,13 +76,9 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
 name|DbRelationshipValidator
-implements|implements
-name|Validator
 block|{
-specifier|public
 name|void
 name|validate
 parameter_list|(
@@ -128,44 +96,6 @@ operator|(
 name|DbRelationship
 operator|)
 name|object
-decl_stmt|;
-name|ProjectPath
-name|path
-init|=
-operator|new
-name|ProjectPath
-argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|validator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-block|,
-name|rel
-operator|.
-name|getTargetEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-block|,
-name|rel
-operator|.
-name|getTargetEntity
-argument_list|()
-block|,
-name|rel
-block|}
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -190,7 +120,7 @@ argument_list|)
 operator|+
 literal|" has no target entity."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -220,7 +150,7 @@ argument_list|)
 operator|+
 literal|" has no joins."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -269,7 +199,7 @@ argument_list|)
 operator|+
 literal|" join has no source and target attributes selected."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -296,7 +226,7 @@ argument_list|)
 operator|+
 literal|" join has no source attribute selected."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -323,7 +253,7 @@ argument_list|)
 operator|+
 literal|" join has no target attribute selected."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -348,7 +278,7 @@ name|registerError
 argument_list|(
 literal|"Unnamed DbRelationship."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -384,7 +314,7 @@ argument_list|)
 operator|+
 literal|" has the same name as one of DbAttributes"
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -433,13 +363,12 @@ literal|" name contains invalid characters: "
 operator|+
 name|invalidChars
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
-specifier|public
 name|String
 name|dbRelationshipIdentifier
 parameter_list|(

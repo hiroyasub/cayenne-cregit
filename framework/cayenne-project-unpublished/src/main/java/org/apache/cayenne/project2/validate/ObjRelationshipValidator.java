@@ -45,20 +45,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbEntity
@@ -145,20 +131,6 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|ProjectPath
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
 name|validator
 operator|.
 name|MappingNamesHelper
@@ -180,13 +152,9 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
 name|ObjRelationshipValidator
-implements|implements
-name|Validator
 block|{
-specifier|public
 name|void
 name|validate
 parameter_list|(
@@ -204,44 +172,6 @@ operator|(
 name|ObjRelationship
 operator|)
 name|object
-decl_stmt|;
-name|ProjectPath
-name|path
-init|=
-operator|new
-name|ProjectPath
-argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|validator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-block|,
-name|rel
-operator|.
-name|getSourceEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-block|,
-name|rel
-operator|.
-name|getSourceEntity
-argument_list|()
-block|,
-name|rel
-block|}
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -262,7 +192,7 @@ name|registerError
 argument_list|(
 literal|"Unnamed ObjRelationship."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -298,7 +228,7 @@ argument_list|)
 operator|+
 literal|" has the same name as one of ObjAttributes"
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -347,7 +277,7 @@ literal|" name contains invalid characters: "
 operator|+
 name|invalidChars
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -377,7 +307,7 @@ argument_list|)
 operator|+
 literal|" name is invalid."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -405,7 +335,7 @@ argument_list|)
 operator|+
 literal|" has no target entity."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -446,7 +376,7 @@ argument_list|)
 operator|+
 literal|" has no DbRelationship mapping."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -533,7 +463,7 @@ argument_list|)
 operator|+
 literal|" has incomplete DbRelationship mapping."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -668,14 +598,13 @@ argument_list|)
 operator|+
 literal|" has a Nullify delete rule and a mandatory reverse relationship "
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
 block|}
-specifier|public
 name|String
 name|objRelationshipIdentifier
 parameter_list|(

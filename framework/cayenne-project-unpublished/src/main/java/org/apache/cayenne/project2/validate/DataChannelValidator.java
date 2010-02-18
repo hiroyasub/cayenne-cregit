@@ -39,20 +39,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
-operator|.
-name|ProjectPath
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|util
 operator|.
 name|Util
@@ -60,13 +46,9 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
 name|DataChannelValidator
-implements|implements
-name|Validator
 block|{
-specifier|public
 name|void
 name|validate
 parameter_list|(
@@ -104,28 +86,13 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|Object
-index|[]
-name|path
-init|=
-operator|new
-name|Object
-index|[]
-block|{
-name|domain
-block|}
-decl_stmt|;
 name|configurationValidationVisitor
 operator|.
 name|registerError
 argument_list|(
 literal|"Unnamed DataDomain."
 argument_list|,
-operator|new
-name|ProjectPath
-argument_list|(
-name|path
-argument_list|)
+name|object
 argument_list|)
 expr_stmt|;
 comment|// no more name assertions

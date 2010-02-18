@@ -265,22 +265,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
-operator|.
-name|validator
-operator|.
-name|ValidationInfo
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|project2
 operator|.
 name|Project
@@ -363,8 +347,14 @@ class|class
 name|ConfigurationValidationVisitor
 implements|implements
 name|ConfigurationNodeVisitor
+argument_list|<
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
+argument_list|>
 block|{
-specifier|protected
+specifier|private
 name|List
 argument_list|<
 name|ValidationInfo
@@ -378,16 +368,15 @@ name|ValidationInfo
 argument_list|>
 argument_list|()
 decl_stmt|;
-specifier|protected
+specifier|private
 name|int
 name|maxSeverity
 decl_stmt|;
-specifier|protected
+specifier|private
 name|Project
 name|project
 decl_stmt|;
 comment|/* Validators */
-specifier|protected
 name|DataChannelValidator
 name|dataChannelValidator
 init|=
@@ -395,7 +384,6 @@ operator|new
 name|DataChannelValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|DataNodeValidator
 name|nodeValidator
 init|=
@@ -403,7 +391,6 @@ operator|new
 name|DataNodeValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|DataMapValidator
 name|mapValidator
 init|=
@@ -411,7 +398,6 @@ operator|new
 name|DataMapValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|ObjEntityValidator
 name|objEntityValidator
 init|=
@@ -419,7 +405,6 @@ operator|new
 name|ObjEntityValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|ObjAttributeValidator
 name|objAttrValidator
 init|=
@@ -427,7 +412,6 @@ operator|new
 name|ObjAttributeValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|ObjRelationshipValidator
 name|objRelValidator
 init|=
@@ -435,7 +419,6 @@ operator|new
 name|ObjRelationshipValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|DbEntityValidator
 name|dbEntityValidator
 init|=
@@ -443,7 +426,6 @@ operator|new
 name|DbEntityValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|DbAttributeValidator
 name|dbAttrValidator
 init|=
@@ -451,7 +433,6 @@ operator|new
 name|DbAttributeValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|DbRelationshipValidator
 name|dbRelValidator
 init|=
@@ -459,7 +440,6 @@ operator|new
 name|DbRelationshipValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|EmbeddableAttributeValidator
 name|embeddableAttributeValidator
 init|=
@@ -467,7 +447,6 @@ operator|new
 name|EmbeddableAttributeValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|EmbeddableValidator
 name|embeddableValidator
 init|=
@@ -475,7 +454,6 @@ operator|new
 name|EmbeddableValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|ProcedureValidator
 name|procedureValidator
 init|=
@@ -483,7 +461,6 @@ operator|new
 name|ProcedureValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|ProcedureParameterValidator
 name|procedureParameterValidator
 init|=
@@ -491,7 +468,6 @@ operator|new
 name|ProcedureParameterValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|SelectQueryValidator
 name|selectQueryValidator
 init|=
@@ -499,7 +475,6 @@ operator|new
 name|SelectQueryValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|ProcedureQueryValidator
 name|procedureQueryValidator
 init|=
@@ -507,7 +482,6 @@ operator|new
 name|ProcedureQueryValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|EJBQLQueryValidator
 name|ejbqlQueryValidator
 init|=
@@ -515,7 +489,6 @@ operator|new
 name|EJBQLQueryValidator
 argument_list|()
 decl_stmt|;
-specifier|protected
 name|SQLTemplateValidator
 name|sqlTemplateValidator
 init|=
@@ -556,7 +529,7 @@ name|project
 return|;
 block|}
 specifier|public
-name|Object
+name|List
 name|visitDataChannelDescriptor
 parameter_list|(
 name|DataChannelDescriptor
@@ -649,7 +622,7 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
 name|visitDataMap
 parameter_list|(
 name|DataMap
@@ -850,7 +823,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitDataNodeDescriptor
 parameter_list|(
 name|DataNodeDescriptor
@@ -871,7 +847,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitDbAttribute
 parameter_list|(
 name|DbAttribute
@@ -892,7 +871,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitDbEntity
 parameter_list|(
 name|DbEntity
@@ -985,7 +967,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitDbRelationship
 parameter_list|(
 name|DbRelationship
@@ -997,7 +982,10 @@ literal|null
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitEmbeddable
 parameter_list|(
 name|Embeddable
@@ -1054,7 +1042,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitEmbeddableAttribute
 parameter_list|(
 name|EmbeddableAttribute
@@ -1075,7 +1066,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitObjAttribute
 parameter_list|(
 name|ObjAttribute
@@ -1096,7 +1090,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitObjEntity
 parameter_list|(
 name|ObjEntity
@@ -1189,7 +1186,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitObjRelationship
 parameter_list|(
 name|ObjRelationship
@@ -1210,7 +1210,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitProcedure
 parameter_list|(
 name|Procedure
@@ -1316,7 +1319,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitProcedureParameter
 parameter_list|(
 name|ProcedureParameter
@@ -1337,7 +1343,10 @@ name|validationResults
 return|;
 block|}
 specifier|public
-name|Object
+name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|visitQuery
 parameter_list|(
 name|Query
@@ -1423,7 +1432,7 @@ return|return
 name|validationResults
 return|;
 block|}
-comment|/**      * Registers validation result.       * Increases internally stored max severity if       *<code>result</code> parameter has a higher severity then the current value.       * Leaves current value unchanged otherwise.      */
+comment|/**      * Registers validation result. Increases internally stored max severity if      *<code>result</code> parameter has a higher severity then the current value. Leaves      * current value unchanged otherwise.      */
 specifier|public
 name|void
 name|registerValidated
@@ -1434,8 +1443,8 @@ parameter_list|,
 name|String
 name|message
 parameter_list|,
-name|ProjectPath
-name|treeNodePath
+name|Object
+name|object
 parameter_list|)
 block|{
 name|ValidationInfo
@@ -1448,7 +1457,7 @@ name|severity
 argument_list|,
 name|message
 argument_list|,
-name|treeNodePath
+name|object
 argument_list|)
 decl_stmt|;
 name|validationResults
@@ -1478,8 +1487,8 @@ parameter_list|(
 name|String
 name|message
 parameter_list|,
-name|ProjectPath
-name|treeNodePath
+name|Object
+name|object
 parameter_list|)
 block|{
 name|registerValidated
@@ -1490,7 +1499,7 @@ name|ERROR
 argument_list|,
 name|message
 argument_list|,
-name|treeNodePath
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -1501,8 +1510,8 @@ parameter_list|(
 name|String
 name|message
 parameter_list|,
-name|ProjectPath
-name|treeNodePath
+name|Object
+name|object
 parameter_list|)
 block|{
 name|registerValidated
@@ -1513,7 +1522,7 @@ name|WARNING
 argument_list|,
 name|message
 argument_list|,
-name|treeNodePath
+name|object
 argument_list|)
 expr_stmt|;
 block|}

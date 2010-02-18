@@ -127,20 +127,6 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|ProjectPath
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
 name|validator
 operator|.
 name|MappingNamesHelper
@@ -162,13 +148,9 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
 name|ObjAttributeValidator
-implements|implements
-name|Validator
 block|{
-specifier|public
 name|void
 name|validate
 parameter_list|(
@@ -186,41 +168,6 @@ operator|(
 name|ObjAttribute
 operator|)
 name|object
-decl_stmt|;
-name|ProjectPath
-name|path
-init|=
-operator|new
-name|ProjectPath
-argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
-name|validator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-block|,
-name|attribute
-operator|.
-name|getEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-block|,
-name|attribute
-operator|.
-name|getEntity
-argument_list|()
-block|,
-name|attribute
-block|}
-argument_list|)
 decl_stmt|;
 comment|// Must have name
 if|if
@@ -242,7 +189,7 @@ name|registerError
 argument_list|(
 literal|"Unnamed ObjAttribute."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -284,7 +231,7 @@ literal|"ObjAttribute name contains invalid characters: "
 operator|+
 name|invalidChars
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -312,7 +259,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -337,7 +284,7 @@ name|registerWarning
 argument_list|(
 literal|"ObjAttribute has no type."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -429,7 +376,7 @@ name|registerWarning
 argument_list|(
 literal|"EmbeddedAttribute has incorrect Embeddable."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -458,7 +405,7 @@ name|registerWarning
 argument_list|(
 literal|"EmbeddedAttribute has no Embeddable."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -573,7 +520,7 @@ name|registerWarning
 argument_list|(
 literal|"EmbeddedAttribute has no DbAttribute mapping."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -606,7 +553,7 @@ name|registerWarning
 argument_list|(
 literal|"EmbeddedAttribute has incorrect DbAttribute mapping."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -629,7 +576,7 @@ name|registerWarning
 argument_list|(
 literal|"ObjAttribute has no DbAttribute mapping."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -665,7 +612,7 @@ operator|.
 name|getDbAttributeName
 argument_list|()
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}

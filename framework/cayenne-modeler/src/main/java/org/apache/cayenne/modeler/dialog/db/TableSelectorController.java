@@ -205,11 +205,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|validator
+name|validate
 operator|.
-name|ValidationInfo
+name|ConfigurationValidationVisitor
 import|;
 end_import
 
@@ -225,7 +225,7 @@ name|project2
 operator|.
 name|validate
 operator|.
-name|ConfigurationValidationVisitor
+name|ValidationInfo
 import|;
 end_import
 

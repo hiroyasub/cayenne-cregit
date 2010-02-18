@@ -25,20 +25,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|TypesMapping
@@ -67,20 +53,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
-operator|.
-name|ProjectPath
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|util
 operator|.
 name|Util
@@ -88,13 +60,9 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
 name|ProcedureParameterValidator
-implements|implements
-name|Validator
 block|{
-specifier|public
 name|void
 name|validate
 parameter_list|(
@@ -112,44 +80,6 @@ operator|(
 name|ProcedureParameter
 operator|)
 name|object
-decl_stmt|;
-name|ProjectPath
-name|path
-init|=
-operator|new
-name|ProjectPath
-argument_list|(
-operator|new
-name|Object
-index|[]
-block|{
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|validator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-block|,
-name|parameter
-operator|.
-name|getProcedure
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-block|,
-name|parameter
-operator|.
-name|getProcedure
-argument_list|()
-block|,
-name|parameter
-block|}
-argument_list|)
 decl_stmt|;
 comment|// Must have name
 if|if
@@ -171,7 +101,7 @@ name|registerError
 argument_list|(
 literal|"Unnamed ProcedureParameter."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -194,7 +124,7 @@ name|registerWarning
 argument_list|(
 literal|"ProcedureParameter has no type."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -243,7 +173,7 @@ name|registerWarning
 argument_list|(
 literal|"Character procedure parameter doesn't have max length."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -264,7 +194,7 @@ name|registerWarning
 argument_list|(
 literal|"ProcedureParameter has no direction."
 argument_list|,
-name|path
+name|object
 argument_list|)
 expr_stmt|;
 block|}

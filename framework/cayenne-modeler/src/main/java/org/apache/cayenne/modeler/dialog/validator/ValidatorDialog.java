@@ -303,9 +303,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|validator
+name|validate
 operator|.
 name|ValidationInfo
 import|;
