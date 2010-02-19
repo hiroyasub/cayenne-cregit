@@ -343,7 +343,7 @@ name|project2
 operator|.
 name|validate
 operator|.
-name|DefaultValidator
+name|Validator
 import|;
 end_import
 
@@ -1128,7 +1128,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|DefaultValidator
+name|Validator
 name|validator
 init|=
 name|getApplication
@@ -1139,7 +1139,7 @@ argument_list|()
 operator|.
 name|getInstance
 argument_list|(
-name|DefaultValidator
+name|Validator
 operator|.
 name|class
 argument_list|)

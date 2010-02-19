@@ -215,14 +215,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|DefaultValidator
+name|Validator
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|Validator
+name|DefaultValidator
 operator|.
 name|class
 argument_list|)
