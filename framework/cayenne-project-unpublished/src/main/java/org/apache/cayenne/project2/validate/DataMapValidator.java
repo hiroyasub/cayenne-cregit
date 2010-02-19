@@ -83,8 +83,8 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidationVisitor
-name|configurationValidationVisitor
+name|ConfigurationValidator
+name|configurationValidator
 parameter_list|)
 block|{
 name|DataMap
@@ -101,7 +101,7 @@ name|map
 argument_list|,
 name|object
 argument_list|,
-name|configurationValidationVisitor
+name|configurationValidator
 argument_list|)
 expr_stmt|;
 comment|// check if data map is not attached to any nodes
@@ -111,7 +111,7 @@ name|map
 argument_list|,
 name|object
 argument_list|,
-name|configurationValidationVisitor
+name|configurationValidator
 argument_list|)
 expr_stmt|;
 block|}
@@ -124,7 +124,7 @@ parameter_list|,
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -228,7 +228,7 @@ parameter_list|,
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{

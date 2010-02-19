@@ -83,7 +83,7 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -123,7 +123,7 @@ parameter_list|(
 name|SQLTemplate
 name|query
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -189,7 +189,7 @@ parameter_list|(
 name|SQLTemplate
 name|query
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -232,7 +232,7 @@ parameter_list|(
 name|SQLTemplate
 name|query
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{

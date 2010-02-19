@@ -415,6 +415,9 @@ name|refreshButton
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|ValidationInfo
+argument_list|>
 name|validationObjects
 decl_stmt|;
 specifier|public

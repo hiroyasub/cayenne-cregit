@@ -139,7 +139,7 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -261,7 +261,7 @@ parameter_list|,
 name|String
 name|path
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -275,7 +275,7 @@ parameter_list|,
 name|Ordering
 name|ordering
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -289,7 +289,7 @@ parameter_list|,
 name|Expression
 name|qualifier
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -300,7 +300,7 @@ parameter_list|(
 name|SelectQuery
 name|query
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
@@ -473,7 +473,7 @@ parameter_list|(
 name|SelectQuery
 name|query
 parameter_list|,
-name|ConfigurationValidationVisitor
+name|ConfigurationValidator
 name|validator
 parameter_list|)
 block|{
