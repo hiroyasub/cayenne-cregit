@@ -243,7 +243,7 @@ block|{
 specifier|private
 specifier|static
 name|Log
-name|logObj
+name|logger
 init|=
 name|LogFactory
 operator|.
@@ -407,7 +407,8 @@ name|File
 name|projectFileFromPrefs
 parameter_list|()
 block|{
-comment|// This must be run after the application has already been bootstrapped.  Otherwise, the returned
+comment|// This must be run after the application has already been bootstrapped.
+comment|// Otherwise, the returned
 comment|// app instance will be null.
 name|Preferences
 name|autoLoadPref
@@ -501,7 +502,7 @@ name|File
 name|projectFile
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -617,14 +618,14 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|fatal
 argument_list|(
 literal|"CayenneModeler requires JDK 1.5."
 argument_list|)
 expr_stmt|;
-name|logObj
+name|logger
 operator|.
 name|fatal
 argument_list|(
@@ -824,8 +825,6 @@ argument_list|,
 name|logfilePath
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus, 8/16/2006 - redirect STDOUT and STDERR to file??
-comment|// TODO: andrus, 8/16/2006 - use Java logging API with comons-logging
 block|}
 block|}
 catch|catch
@@ -834,7 +833,7 @@ name|IOException
 name|ioex
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|warn
 argument_list|(
@@ -972,7 +971,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|warn
 argument_list|(
@@ -1027,7 +1026,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|warn
 argument_list|(

@@ -138,7 +138,7 @@ specifier|public
 class|class
 name|UpgradeCayennePreference
 extends|extends
-name|CayennePreferenceDecorator
+name|PreferenceDecorator
 block|{
 comment|/** Name of the preferences file. */
 specifier|public
@@ -195,12 +195,12 @@ specifier|public
 name|UpgradeCayennePreference
 parameter_list|(
 name|Preference
-name|decoratedPreference
+name|delegate
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|decoratedPreference
+name|delegate
 argument_list|)
 expr_stmt|;
 block|}
@@ -221,7 +221,7 @@ argument_list|()
 operator|.
 name|nodeExists
 argument_list|(
-name|CAYENNE_PREFERENCE
+name|CAYENNE_PREFERENCES_PATH
 argument_list|)
 condition|)
 block|{
@@ -275,7 +275,7 @@ argument_list|()
 operator|.
 name|node
 argument_list|(
-name|CAYENNE_PREFERENCE
+name|CAYENNE_PREFERENCES_PATH
 argument_list|)
 operator|.
 name|node
@@ -496,6 +496,8 @@ name|getDirectory
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Preferences
 name|getRootPreference
@@ -505,12 +507,14 @@ name|upgrade
 argument_list|()
 expr_stmt|;
 return|return
-name|decoratedPreference
+name|delegate
 operator|.
 name|getRootPreference
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Preferences
 name|getCayennePreference
@@ -520,12 +524,14 @@ name|upgrade
 argument_list|()
 expr_stmt|;
 return|return
-name|decoratedPreference
+name|delegate
 operator|.
 name|getCayennePreference
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Preferences
 name|getCurrentPreference
@@ -535,7 +541,7 @@ name|upgrade
 argument_list|()
 expr_stmt|;
 return|return
-name|decoratedPreference
+name|delegate
 operator|.
 name|getCayennePreference
 argument_list|()

@@ -113,7 +113,7 @@ argument_list|()
 operator|.
 name|node
 argument_list|(
-name|CAYENNE_PREFERENCE
+name|CAYENNE_PREFERENCES_PATH
 argument_list|)
 expr_stmt|;
 block|}

@@ -236,7 +236,7 @@ name|EDITOR_LOGFILE
 init|=
 literal|"logfile"
 decl_stmt|;
-comment|/*      * Number of items in combobox visible without scrolling       */
+comment|/*      * Number of items in combobox visible without scrolling      */
 specifier|public
 specifier|static
 specifier|final

@@ -32,16 +32,16 @@ specifier|public
 interface|interface
 name|Preference
 block|{
-comment|/** Key for preferences. */
+comment|/**      * Key for preferences.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|CAYENNE_PREFERENCE
+name|CAYENNE_PREFERENCES_PATH
 init|=
 literal|"org/apache/cayenne"
 decl_stmt|;
-comment|/**  node name for editor */
+comment|/**      * Preferences node name for the editor      */
 specifier|public
 specifier|static
 specifier|final
@@ -50,7 +50,7 @@ name|EDITOR
 init|=
 literal|"editor"
 decl_stmt|;
-comment|/** node name for list of the last 12 opened project files. */
+comment|/**      * Preferences node name for list of the last 12 opened project files.      */
 specifier|public
 specifier|static
 specifier|final
@@ -59,17 +59,14 @@ name|LAST_PROJ_FILES
 init|=
 literal|"lastSeveralProjectFiles"
 decl_stmt|;
-specifier|public
 name|Preferences
 name|getRootPreference
 parameter_list|()
 function_decl|;
-specifier|public
 name|Preferences
 name|getCayennePreference
 parameter_list|()
 function_decl|;
-specifier|public
 name|Preferences
 name|getCurrentPreference
 parameter_list|()
