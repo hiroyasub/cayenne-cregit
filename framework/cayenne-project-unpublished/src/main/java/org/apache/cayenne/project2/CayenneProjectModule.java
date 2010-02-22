@@ -226,6 +226,13 @@ name|DefaultValidator
 operator|.
 name|class
 argument_list|)
+operator|.
+name|in
+argument_list|(
+name|Scopes
+operator|.
+name|SINGLETON
+argument_list|)
 expr_stmt|;
 block|}
 block|}

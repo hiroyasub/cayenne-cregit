@@ -153,13 +153,13 @@ name|frame
 parameter_list|)
 block|{
 name|Object
-name|path
+name|object
 init|=
 name|super
 operator|.
 name|validationInfo
 operator|.
-name|getPath
+name|getValidatedObject
 argument_list|()
 decl_stmt|;
 name|DataChannelDescriptor
@@ -182,7 +182,7 @@ init|=
 operator|(
 name|Query
 operator|)
-name|path
+name|object
 decl_stmt|;
 name|DataMap
 name|map

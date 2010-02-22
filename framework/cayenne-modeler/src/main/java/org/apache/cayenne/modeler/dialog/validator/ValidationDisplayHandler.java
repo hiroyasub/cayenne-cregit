@@ -617,13 +617,13 @@ return|;
 block|}
 specifier|public
 name|Object
-name|getPath
+name|getObject
 parameter_list|()
 block|{
 return|return
 name|validationInfo
 operator|.
-name|getPath
+name|getValidatedObject
 argument_list|()
 return|;
 block|}

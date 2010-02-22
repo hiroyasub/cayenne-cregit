@@ -343,7 +343,7 @@ name|project2
 operator|.
 name|validate
 operator|.
-name|Validator
+name|ConfigurationValidator
 import|;
 end_import
 
@@ -359,7 +359,7 @@ name|project2
 operator|.
 name|validate
 operator|.
-name|ValidationInfo
+name|Validator
 import|;
 end_import
 
@@ -1144,11 +1144,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|List
-argument_list|<
-name|ValidationInfo
-argument_list|>
-name|object
+name|ConfigurationValidator
+name|configurationValidator
 init|=
 name|validator
 operator|.
@@ -1169,7 +1166,10 @@ name|showDialog
 argument_list|(
 name|frame
 argument_list|,
-name|object
+name|configurationValidator
+operator|.
+name|getValidationResults
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

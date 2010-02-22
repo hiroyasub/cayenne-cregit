@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -61,10 +51,7 @@ interface|interface
 name|Validator
 block|{
 specifier|public
-name|List
-argument_list|<
-name|ValidationInfo
-argument_list|>
+name|ConfigurationValidator
 name|validate
 parameter_list|(
 name|ConfigurationNode

@@ -177,11 +177,11 @@ name|result
 argument_list|)
 expr_stmt|;
 name|Object
-name|path
+name|object
 init|=
 name|result
 operator|.
-name|getPath
+name|getValidatedObject
 argument_list|()
 decl_stmt|;
 name|embeddableAttribute
@@ -189,7 +189,7 @@ operator|=
 operator|(
 name|EmbeddableAttribute
 operator|)
-name|path
+name|object
 expr_stmt|;
 name|embeddable
 operator|=

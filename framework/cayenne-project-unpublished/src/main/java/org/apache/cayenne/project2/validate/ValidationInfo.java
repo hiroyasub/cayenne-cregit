@@ -52,7 +52,7 @@ literal|2
 decl_stmt|;
 specifier|protected
 name|Object
-name|path
+name|object
 decl_stmt|;
 specifier|protected
 name|String
@@ -73,7 +73,7 @@ name|String
 name|message
 parameter_list|,
 name|Object
-name|path
+name|object
 parameter_list|)
 block|{
 name|this
@@ -90,18 +90,19 @@ name|message
 expr_stmt|;
 name|this
 operator|.
-name|path
+name|object
 operator|=
-name|path
+name|object
 expr_stmt|;
 block|}
+comment|/**      * Returns the object identifing a location described by this ValidationInfo.      */
 specifier|public
 name|Object
 name|getValidatedObject
 parameter_list|()
 block|{
 return|return
-name|path
+name|object
 return|;
 block|}
 annotation|@
@@ -134,16 +135,6 @@ parameter_list|()
 block|{
 return|return
 name|severity
-return|;
-block|}
-comment|/**      * Returns the object identifing a location described by this ValidationInfo.      */
-specifier|public
-name|Object
-name|getPath
-parameter_list|()
-block|{
-return|return
-name|path
 return|;
 block|}
 block|}
