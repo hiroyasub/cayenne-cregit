@@ -158,7 +158,7 @@ operator|=
 operator|(
 name|DataChannelDescriptor
 operator|)
-name|application
+name|Application
 operator|.
 name|getProject
 argument_list|()
@@ -166,7 +166,6 @@ operator|.
 name|getRootNode
 argument_list|()
 expr_stmt|;
-empty_stmt|;
 name|this
 operator|.
 name|node

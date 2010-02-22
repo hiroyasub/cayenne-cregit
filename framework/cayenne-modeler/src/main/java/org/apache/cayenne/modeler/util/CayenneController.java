@@ -276,7 +276,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of CayenneModeler controllers.  *   */
+comment|/**  * A superclass of CayenneModeler controllers.  */
 end_comment
 
 begin_class
@@ -306,7 +306,6 @@ name|CayenneController
 name|parent
 decl_stmt|;
 specifier|protected
-specifier|static
 name|Application
 name|application
 decl_stmt|;
@@ -360,7 +359,6 @@ name|application
 expr_stmt|;
 block|}
 specifier|public
-specifier|static
 name|Application
 name|getApplication
 parameter_list|()

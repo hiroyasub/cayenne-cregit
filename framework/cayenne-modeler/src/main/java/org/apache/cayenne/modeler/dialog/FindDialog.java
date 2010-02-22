@@ -1285,8 +1285,7 @@ init|=
 operator|(
 name|DataChannelDescriptor
 operator|)
-name|getApplication
-argument_list|()
+name|Application
 operator|.
 name|getInstance
 argument_list|()

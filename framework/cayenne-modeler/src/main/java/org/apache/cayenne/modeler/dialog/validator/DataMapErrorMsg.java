@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataMap validation message.  *   */
+comment|/**  * DataMap validation message.  */
 end_comment
 
 begin_class
@@ -132,7 +132,6 @@ specifier|protected
 name|DataMap
 name|map
 decl_stmt|;
-comment|/**      * Constructor for DataMapErrorMsg.      *       * @param result      */
 specifier|public
 name|DataMapErrorMsg
 parameter_list|(
@@ -166,9 +165,6 @@ operator|(
 name|DataChannelDescriptor
 operator|)
 name|Application
-operator|.
-name|getInstance
-argument_list|()
 operator|.
 name|getProject
 argument_list|()
