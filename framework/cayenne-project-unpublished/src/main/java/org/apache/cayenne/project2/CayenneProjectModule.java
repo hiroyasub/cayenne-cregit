@@ -101,9 +101,9 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
-name|DefaultValidator
+name|DefaultProjectValidator
 import|;
 end_import
 
@@ -117,9 +117,9 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
-name|Validator
+name|ProjectValidator
 import|;
 end_import
 
@@ -215,14 +215,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|Validator
+name|ProjectValidator
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|DefaultValidator
+name|DefaultProjectValidator
 operator|.
 name|class
 argument_list|)

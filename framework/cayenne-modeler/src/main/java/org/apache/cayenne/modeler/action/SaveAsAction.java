@@ -261,9 +261,9 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
-name|ConfigurationValidator
+name|ValidationResults
 import|;
 end_import
 
@@ -277,9 +277,9 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
-name|Validator
+name|ProjectValidator
 import|;
 end_import
 
@@ -771,8 +771,8 @@ name|int
 name|warningLevel
 parameter_list|)
 block|{
-name|Validator
-name|validator
+name|ProjectValidator
+name|projectValidator
 init|=
 name|getApplication
 argument_list|()
@@ -782,15 +782,15 @@ argument_list|()
 operator|.
 name|getInstance
 argument_list|(
-name|Validator
+name|ProjectValidator
 operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|ConfigurationValidator
-name|configurationValidator
+name|ValidationResults
+name|validationResults
 init|=
-name|validator
+name|projectValidator
 operator|.
 name|validate
 argument_list|(
@@ -807,7 +807,7 @@ decl_stmt|;
 name|int
 name|validationCode
 init|=
-name|configurationValidator
+name|validationResults
 operator|.
 name|getMaxSeverity
 argument_list|()
@@ -877,7 +877,7 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
-name|configurationValidator
+name|validationResults
 operator|.
 name|getValidationResults
 argument_list|()

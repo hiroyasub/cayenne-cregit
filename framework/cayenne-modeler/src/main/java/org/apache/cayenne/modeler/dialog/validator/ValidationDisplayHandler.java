@@ -195,7 +195,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
 name|ValidationInfo
 import|;
@@ -319,7 +319,7 @@ name|validatedObj
 init|=
 name|result
 operator|.
-name|getValidatedObject
+name|getObject
 argument_list|()
 decl_stmt|;
 name|ValidationDisplayHandler
@@ -623,7 +623,7 @@ block|{
 return|return
 name|validationInfo
 operator|.
-name|getValidatedObject
+name|getObject
 argument_list|()
 return|;
 block|}

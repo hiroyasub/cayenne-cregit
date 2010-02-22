@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 
@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|map
 operator|.
-name|ConfigurationNode
+name|EmbeddableAttribute
 import|;
 end_import
 
@@ -39,30 +39,85 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|util
 operator|.
-name|Project
+name|Util
 import|;
 end_import
 
-begin_interface
-specifier|public
-interface|interface
-name|Validator
+begin_class
+class|class
+name|EmbeddableAttributeValidator
 block|{
-specifier|public
-name|ConfigurationValidator
+name|void
 name|validate
 parameter_list|(
-name|ConfigurationNode
-name|node
+name|Object
+name|object
 parameter_list|,
-name|Project
-name|project
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
-function_decl|;
+block|{
+name|EmbeddableAttribute
+name|emAttribute
+init|=
+operator|(
+name|EmbeddableAttribute
+operator|)
+name|object
+decl_stmt|;
+comment|// Must have name
+if|if
+condition|(
+name|Util
+operator|.
+name|isEmptyString
+argument_list|(
+name|emAttribute
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|validationVisitor
+operator|.
+name|registerError
+argument_list|(
+literal|"Unnamed ObjAttribute."
+argument_list|,
+name|object
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+comment|// all attributes must have type
+if|if
+condition|(
+name|Util
+operator|.
+name|isEmptyString
+argument_list|(
+name|emAttribute
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|validationVisitor
+operator|.
+name|registerWarning
+argument_list|(
+literal|"EmbeddableAttribute has no type."
+argument_list|,
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+end_class
 
 end_unit
 

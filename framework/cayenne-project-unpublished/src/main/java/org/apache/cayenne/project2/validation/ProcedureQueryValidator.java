@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 
@@ -97,8 +97,8 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 name|ProcedureQuery
@@ -113,14 +113,14 @@ name|validateName
 argument_list|(
 name|query
 argument_list|,
-name|validator
+name|validationVisitor
 argument_list|)
 expr_stmt|;
 name|validateRoot
 argument_list|(
 name|query
 argument_list|,
-name|validator
+name|validationVisitor
 argument_list|)
 expr_stmt|;
 block|}
@@ -130,8 +130,8 @@ parameter_list|(
 name|ProcedureQuery
 name|query
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 name|DataMap
@@ -161,7 +161,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -207,7 +207,7 @@ operator|!=
 name|procedure
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -250,7 +250,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -270,8 +270,8 @@ parameter_list|(
 name|ProcedureQuery
 name|query
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 name|String
@@ -293,7 +293,7 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerError
 argument_list|(
@@ -356,7 +356,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerError
 argument_list|(

@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 
@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
-name|EmbeddableAttribute
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -47,7 +47,7 @@ end_import
 
 begin_class
 class|class
-name|EmbeddableAttributeValidator
+name|DataChannelValidator
 block|{
 name|void
 name|validate
@@ -55,65 +55,48 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
-name|EmbeddableAttribute
-name|emAttribute
+comment|// check for empty name
+name|DataChannelDescriptor
+name|domain
 init|=
 operator|(
-name|EmbeddableAttribute
+name|DataChannelDescriptor
 operator|)
 name|object
 decl_stmt|;
-comment|// Must have name
-if|if
-condition|(
-name|Util
-operator|.
-name|isEmptyString
-argument_list|(
-name|emAttribute
+name|String
+name|name
+init|=
+name|domain
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-condition|)
-block|{
-name|validator
-operator|.
-name|registerError
-argument_list|(
-literal|"Unnamed ObjAttribute."
-argument_list|,
-name|object
-argument_list|)
-expr_stmt|;
-block|}
-comment|// all attributes must have type
+decl_stmt|;
 if|if
 condition|(
 name|Util
 operator|.
 name|isEmptyString
 argument_list|(
-name|emAttribute
-operator|.
-name|getType
-argument_list|()
+name|name
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
-name|registerWarning
+name|registerError
 argument_list|(
-literal|"EmbeddableAttribute has no type."
+literal|"Unnamed DataDomain."
 argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
+comment|// no more name assertions
+return|return;
 block|}
 block|}
 block|}

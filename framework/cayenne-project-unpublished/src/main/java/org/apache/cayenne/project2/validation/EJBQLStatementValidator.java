@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 

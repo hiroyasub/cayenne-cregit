@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 
@@ -98,7 +98,7 @@ block|}
 comment|/**      * Returns the object identifing a location described by this ValidationInfo.      */
 specifier|public
 name|Object
-name|getValidatedObject
+name|getObject
 parameter_list|()
 block|{
 return|return

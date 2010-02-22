@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 
@@ -161,8 +161,8 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 name|ObjRelationship
@@ -186,7 +186,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerError
 argument_list|(
@@ -215,7 +215,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -262,7 +262,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -294,7 +294,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -322,7 +322,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -363,7 +363,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -450,7 +450,7 @@ operator|!=
 name|expectedTarget
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -585,7 +585,7 @@ condition|(
 name|check
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(

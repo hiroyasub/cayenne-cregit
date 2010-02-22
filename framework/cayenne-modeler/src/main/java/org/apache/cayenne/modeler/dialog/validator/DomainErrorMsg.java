@@ -83,7 +83,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
 name|ValidationInfo
 import|;
@@ -118,7 +118,7 @@ name|object
 init|=
 name|result
 operator|.
-name|getValidatedObject
+name|getObject
 argument_list|()
 decl_stmt|;
 name|domain

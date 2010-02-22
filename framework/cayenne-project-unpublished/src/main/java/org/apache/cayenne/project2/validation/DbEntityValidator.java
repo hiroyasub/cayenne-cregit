@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 package|;
 end_package
 
@@ -83,8 +83,8 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 name|DbEntity
@@ -101,7 +101,7 @@ name|ent
 argument_list|,
 name|object
 argument_list|,
-name|validator
+name|validationVisitor
 argument_list|)
 expr_stmt|;
 name|validateAttributes
@@ -110,7 +110,7 @@ name|ent
 argument_list|,
 name|object
 argument_list|,
-name|validator
+name|validationVisitor
 argument_list|)
 expr_stmt|;
 name|validatePK
@@ -119,7 +119,7 @@ name|ent
 argument_list|,
 name|object
 argument_list|,
-name|validator
+name|validationVisitor
 argument_list|)
 expr_stmt|;
 block|}
@@ -133,8 +133,8 @@ parameter_list|,
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 if|if
@@ -188,7 +188,7 @@ literal|0
 condition|)
 block|{
 comment|// there is an objentity, so complain about no pk
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -217,8 +217,8 @@ parameter_list|,
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 if|if
@@ -235,7 +235,7 @@ literal|0
 condition|)
 block|{
 comment|// complain about missing attributes
-name|validator
+name|validationVisitor
 operator|.
 name|registerWarning
 argument_list|(
@@ -262,8 +262,8 @@ parameter_list|,
 name|Object
 name|object
 parameter_list|,
-name|ConfigurationValidator
-name|validator
+name|ValidationVisitor
+name|validationVisitor
 parameter_list|)
 block|{
 name|String
@@ -285,7 +285,7 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerError
 argument_list|(
@@ -360,7 +360,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validator
+name|validationVisitor
 operator|.
 name|registerError
 argument_list|(

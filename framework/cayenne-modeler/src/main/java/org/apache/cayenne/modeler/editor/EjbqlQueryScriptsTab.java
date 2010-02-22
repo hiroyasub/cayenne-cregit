@@ -217,7 +217,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
 name|EJBQLStatementValidator
 import|;
@@ -233,7 +233,7 @@ name|cayenne
 operator|.
 name|project2
 operator|.
-name|validate
+name|validation
 operator|.
 name|EJBQLStatementValidator
 operator|.
