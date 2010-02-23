@@ -252,7 +252,7 @@ name|SHIFT_MASK
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Validates project for possible conflicts and incomplete mappings. 	 */
+comment|/**      * Validates project for possible conflicts and incomplete mappings.      */
 specifier|public
 name|void
 name|performAction
@@ -288,9 +288,6 @@ name|getCurrentProject
 argument_list|()
 operator|.
 name|getRootNode
-argument_list|()
-argument_list|,
-name|getCurrentProject
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -342,7 +339,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	* Returns<code>true</code> if path contains a Project object  	* and the project is modified. 	*/
+comment|/**      * Returns<code>true</code> if path contains a Project object and the project is      * modified.      */
 specifier|public
 name|boolean
 name|enableForPath

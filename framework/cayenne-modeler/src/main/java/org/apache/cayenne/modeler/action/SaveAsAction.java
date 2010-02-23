@@ -799,9 +799,6 @@ argument_list|()
 operator|.
 name|getRootNode
 argument_list|()
-argument_list|,
-name|getCurrentProject
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|int

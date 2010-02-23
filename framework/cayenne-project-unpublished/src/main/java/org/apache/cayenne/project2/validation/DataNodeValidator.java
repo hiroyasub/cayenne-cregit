@@ -247,15 +247,9 @@ block|}
 name|DataChannelDescriptor
 name|dataChannelDescriptor
 init|=
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|validationVisitor
+name|node
 operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
+name|getDataChannelDescriptor
 argument_list|()
 decl_stmt|;
 comment|// check for duplicate names in the parent context

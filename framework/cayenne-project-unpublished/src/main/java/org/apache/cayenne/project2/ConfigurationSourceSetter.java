@@ -146,6 +146,13 @@ control|)
 block|{
 name|childDescriptor
 operator|.
+name|setDataChannelDescriptor
+argument_list|(
+name|node
+argument_list|)
+expr_stmt|;
+name|childDescriptor
+operator|.
 name|setConfigurationSource
 argument_list|(
 name|configurationSource

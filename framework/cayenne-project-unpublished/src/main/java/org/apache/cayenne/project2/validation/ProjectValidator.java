@@ -31,20 +31,6 @@ name|ConfigurationNode
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project2
-operator|.
-name|Project
-import|;
-end_import
-
 begin_interface
 specifier|public
 interface|interface
@@ -56,9 +42,6 @@ name|validate
 parameter_list|(
 name|ConfigurationNode
 name|node
-parameter_list|,
-name|Project
-name|project
 parameter_list|)
 function_decl|;
 block|}

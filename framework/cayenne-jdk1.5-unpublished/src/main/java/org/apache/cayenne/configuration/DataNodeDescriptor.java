@@ -180,6 +180,11 @@ specifier|protected
 name|Resource
 name|configurationSource
 decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|protected
+name|DataChannelDescriptor
+name|dataChannelDescriptor
+decl_stmt|;
 specifier|public
 name|DataNodeDescriptor
 parameter_list|()
@@ -213,6 +218,32 @@ operator|.
 name|name
 operator|=
 name|name
+expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|DataChannelDescriptor
+name|getDataChannelDescriptor
+parameter_list|()
+block|{
+return|return
+name|dataChannelDescriptor
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setDataChannelDescriptor
+parameter_list|(
+name|DataChannelDescriptor
+name|dataChannelDescriptor
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataChannelDescriptor
+operator|=
+name|dataChannelDescriptor
 expr_stmt|;
 block|}
 specifier|public

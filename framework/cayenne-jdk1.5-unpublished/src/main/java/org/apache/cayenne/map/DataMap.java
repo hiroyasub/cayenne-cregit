@@ -163,6 +163,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|DataChannelDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|event
@@ -517,6 +531,11 @@ specifier|protected
 name|Resource
 name|configurationSource
 decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|protected
+name|DataChannelDescriptor
+name|dataChannelDescriptor
+decl_stmt|;
 comment|/**      * Creates a new unnamed DataMap.      */
 specifier|public
 name|DataMap
@@ -647,6 +666,32 @@ name|initWithProperties
 argument_list|(
 name|properties
 argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|DataChannelDescriptor
+name|getDataChannelDescriptor
+parameter_list|()
+block|{
+return|return
+name|dataChannelDescriptor
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setDataChannelDescriptor
+parameter_list|(
+name|DataChannelDescriptor
+name|dataChannelDescriptor
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataChannelDescriptor
+operator|=
+name|dataChannelDescriptor
 expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */

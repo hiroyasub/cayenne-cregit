@@ -31,20 +31,6 @@ name|ConfigurationNode
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project2
-operator|.
-name|Project
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -52,10 +38,6 @@ name|DefaultProjectValidator
 implements|implements
 name|ProjectValidator
 block|{
-specifier|private
-name|ValidationResults
-name|validateVisitor
-decl_stmt|;
 comment|/* Validators */
 specifier|private
 name|DataChannelValidator
@@ -237,9 +219,6 @@ name|validate
 parameter_list|(
 name|ConfigurationNode
 name|node
-parameter_list|,
-name|Project
-name|project
 parameter_list|)
 block|{
 name|ValidationResults
@@ -249,8 +228,6 @@ operator|new
 name|ValidationResults
 argument_list|(
 name|node
-argument_list|,
-name|project
 argument_list|,
 name|this
 argument_list|)

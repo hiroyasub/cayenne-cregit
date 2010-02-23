@@ -947,7 +947,7 @@ literal|"Project Closed..."
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Handles project opening control. Updates main frame, then delegates control to      * child controllers.      * @param config       */
+comment|/**      * Handles project opening control. Updates main frame, then delegates control to      * child controllers.      *       * @param config      */
 specifier|public
 name|void
 name|projectOpenedAction
@@ -1155,8 +1155,6 @@ name|project
 operator|.
 name|getRootNode
 argument_list|()
-argument_list|,
-name|project
 argument_list|)
 decl_stmt|;
 comment|// show warning dialog

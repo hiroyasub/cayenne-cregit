@@ -802,8 +802,6 @@ name|project
 operator|.
 name|getRootNode
 argument_list|()
-argument_list|,
-name|project
 argument_list|)
 decl_stmt|;
 name|int

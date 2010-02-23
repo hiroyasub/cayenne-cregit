@@ -8279,6 +8279,15 @@ name|boolean
 name|makeCurrent
 parameter_list|)
 block|{
+name|map
+operator|.
+name|setDataChannelDescriptor
+argument_list|(
+name|currentState
+operator|.
+name|domain
+argument_list|)
+expr_stmt|;
 comment|// new map was added.. link it to domain (and node if possible)
 name|currentState
 operator|.

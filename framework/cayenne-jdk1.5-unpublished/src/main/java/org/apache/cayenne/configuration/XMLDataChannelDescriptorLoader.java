@@ -967,6 +967,13 @@ argument_list|(
 name|dataMapResource
 argument_list|)
 expr_stmt|;
+name|dataMap
+operator|.
+name|setDataChannelDescriptor
+argument_list|(
+name|descriptor
+argument_list|)
+expr_stmt|;
 name|descriptor
 operator|.
 name|getDataMaps
@@ -1113,6 +1120,13 @@ literal|""
 argument_list|,
 literal|"schema-update-strategy"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|nodeDescriptor
+operator|.
+name|setDataChannelDescriptor
+argument_list|(
+name|descriptor
 argument_list|)
 expr_stmt|;
 return|return
