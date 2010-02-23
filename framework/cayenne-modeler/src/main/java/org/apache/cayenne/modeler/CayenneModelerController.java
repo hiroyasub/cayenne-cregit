@@ -343,7 +343,7 @@ name|project2
 operator|.
 name|validation
 operator|.
-name|ValidationResults
+name|ProjectValidator
 import|;
 end_import
 
@@ -355,11 +355,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
-operator|.
 name|validation
 operator|.
-name|ProjectValidator
+name|ValidationResult
 import|;
 end_import
 
@@ -1144,7 +1142,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|ValidationResults
+name|ValidationResult
 name|validationResults
 init|=
 name|projectValidator
@@ -1166,7 +1164,7 @@ name|frame
 argument_list|,
 name|validationResults
 operator|.
-name|getValidationResults
+name|getFailures
 argument_list|()
 argument_list|)
 expr_stmt|;

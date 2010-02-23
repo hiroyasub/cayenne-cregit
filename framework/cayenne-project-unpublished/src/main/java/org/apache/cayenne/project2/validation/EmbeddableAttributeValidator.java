@@ -85,7 +85,7 @@ name|validationVisitor
 operator|.
 name|registerError
 argument_list|(
-literal|"Unnamed ObjAttribute."
+literal|"Unnamed EmbeddableAttribute."
 argument_list|,
 name|object
 argument_list|)

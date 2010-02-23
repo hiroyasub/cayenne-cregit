@@ -165,11 +165,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
-operator|.
 name|validation
 operator|.
-name|ValidationInfo
+name|ValidationFailure
 import|;
 end_import
 
@@ -200,7 +198,7 @@ comment|/**      * Constructor for AttributeErrorMsg.      *       * @param resu
 specifier|public
 name|AttributeErrorMsg
 parameter_list|(
-name|ValidationInfo
+name|ValidationFailure
 name|result
 parameter_list|)
 block|{
@@ -214,7 +212,7 @@ name|object
 init|=
 name|result
 operator|.
-name|getObject
+name|getSource
 argument_list|()
 decl_stmt|;
 name|attribute

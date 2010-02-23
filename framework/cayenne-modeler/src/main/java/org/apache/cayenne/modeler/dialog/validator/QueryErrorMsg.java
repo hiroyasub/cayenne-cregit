@@ -95,11 +95,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|query
 operator|.
-name|validation
-operator|.
-name|ValidationInfo
+name|Query
 import|;
 end_import
 
@@ -111,9 +109,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|validation
 operator|.
-name|Query
+name|ValidationFailure
 import|;
 end_import
 
@@ -131,13 +129,13 @@ block|{
 specifier|public
 name|QueryErrorMsg
 parameter_list|(
-name|ValidationInfo
-name|validationInfo
+name|ValidationFailure
+name|result
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|validationInfo
+name|result
 argument_list|)
 expr_stmt|;
 block|}
@@ -157,9 +155,9 @@ name|object
 init|=
 name|super
 operator|.
-name|validationInfo
+name|validationFailure
 operator|.
-name|getObject
+name|getSource
 argument_list|()
 decl_stmt|;
 name|DataChannelDescriptor
