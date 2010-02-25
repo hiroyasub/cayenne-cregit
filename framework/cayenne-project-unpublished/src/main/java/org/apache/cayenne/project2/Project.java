@@ -75,10 +75,6 @@ decl_stmt|;
 specifier|private
 name|ConfigurationSourceGetter
 name|configurationSourceGetter
-init|=
-operator|new
-name|ConfigurationSourceGetter
-argument_list|()
 decl_stmt|;
 specifier|public
 name|Project
@@ -92,6 +88,14 @@ operator|.
 name|rootNode
 operator|=
 name|rootNode
+expr_stmt|;
+name|this
+operator|.
+name|configurationSourceGetter
+operator|=
+operator|new
+name|ConfigurationSourceGetter
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public
