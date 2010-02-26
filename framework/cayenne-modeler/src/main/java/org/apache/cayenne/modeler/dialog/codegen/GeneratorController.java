@@ -844,13 +844,6 @@ name|class
 argument_list|,
 literal|""
 argument_list|)
-operator|.
-name|node
-argument_list|(
-name|GeneralPreferences
-operator|.
-name|ENCODING_PREFERENCE
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
