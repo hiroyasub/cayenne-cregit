@@ -462,7 +462,7 @@ name|runtimeName
 argument_list|)
 expr_stmt|;
 comment|// configure known DbAdapter detectors in reverse order of popularity. Users can
-comment|// add their own for their own to install custom adapters automatically
+comment|// add their own to install custom adapters automatically
 name|binder
 operator|.
 name|bindList
