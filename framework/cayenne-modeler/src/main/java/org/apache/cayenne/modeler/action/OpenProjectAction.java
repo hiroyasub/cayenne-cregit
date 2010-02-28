@@ -751,14 +751,19 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
-literal|"Can't upgrade project. Use the Modeller "
+literal|"Can't upgrade project. Open the project in the Modeler v."
 operator|+
 name|md
 operator|.
 name|getIntermediateUpgradeVersion
 argument_list|()
 operator|+
-literal|" and do an intermediate upgrade before doing 3.1 upgrade."
+literal|" to do an intermediate upgrade before doing upgrade to "
+operator|+
+name|md
+operator|.
+name|getSupportedVersion
+argument_list|()
 argument_list|,
 literal|"Can't Upgrade Project"
 argument_list|,

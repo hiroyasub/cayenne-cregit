@@ -60,7 +60,6 @@ comment|/**  * QueryFormatter is utility class for formatting queries.  */
 end_comment
 
 begin_class
-specifier|public
 specifier|final
 class|class
 name|QueryFormatter
@@ -211,7 +210,6 @@ literal|"CASE"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
 specifier|static
 name|String
 name|formatQuery

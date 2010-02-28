@@ -11,25 +11,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|validation
-package|;
-end_package
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|project
 operator|.
 name|validator
-operator|.
-name|EJBQLQueryValidator
-import|;
-end_import
+package|;
+end_package
 
 begin_import
 import|import
@@ -80,7 +66,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|EJBQlQueryValidatorTest
+name|EJBQLQueryValidatorTest
 extends|extends
 name|CayenneCase
 block|{
