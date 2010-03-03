@@ -322,7 +322,7 @@ block|{
 name|String
 name|idVariableAbsolutePath
 init|=
-name|idPath
+name|fullPath
 operator|+
 literal|"."
 operator|+
@@ -379,6 +379,16 @@ name|expression
 operator|.
 name|getText
 argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|fullPath
+operator|=
+name|fullPath
+operator|+
+literal|'.'
+operator|+
+name|lastPathComponent
 expr_stmt|;
 return|return
 literal|true

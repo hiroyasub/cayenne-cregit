@@ -271,7 +271,7 @@ specifier|protected
 name|String
 name|joinMarker
 decl_stmt|;
-specifier|private
+specifier|protected
 name|String
 name|fullPath
 decl_stmt|;
