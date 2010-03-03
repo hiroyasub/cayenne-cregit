@@ -482,7 +482,7 @@ argument_list|()
 operator|.
 name|getProjectDetailObject
 argument_list|(
-name|DataMapDefaults
+name|FSPath
 operator|.
 name|class
 argument_list|,
