@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|net
 operator|.
 name|URL
@@ -33,6 +43,8 @@ begin_interface
 specifier|public
 interface|interface
 name|Resource
+extends|extends
+name|Serializable
 block|{
 comment|/**      * Returns a resource URL to read (and possibly write) the resource data.      */
 name|URL
