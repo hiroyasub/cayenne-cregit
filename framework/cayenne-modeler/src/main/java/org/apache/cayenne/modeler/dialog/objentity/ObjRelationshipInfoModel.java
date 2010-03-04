@@ -1176,14 +1176,10 @@ control|)
 block|{
 if|if
 condition|(
-name|this
-operator|.
 name|relationship
 operator|!=
 literal|null
 operator|&&
-name|this
-operator|.
 name|relationship
 operator|.
 name|isToMany
