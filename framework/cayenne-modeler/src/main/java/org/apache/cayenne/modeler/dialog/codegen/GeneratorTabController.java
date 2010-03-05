@@ -103,7 +103,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|PrefDetail
+name|PreferenceDetail
 import|;
 end_import
 
@@ -205,7 +205,7 @@ name|Map
 name|controllers
 decl_stmt|;
 specifier|protected
-name|PrefDetail
+name|PreferenceDetail
 name|preferences
 decl_stmt|;
 specifier|public
@@ -406,13 +406,13 @@ operator|.
 name|preferences
 operator|=
 operator|(
-name|PrefDetail
+name|PreferenceDetail
 operator|)
 name|cayPrPref
 operator|.
 name|getProjectDetailObject
 argument_list|(
-name|PrefDetail
+name|PreferenceDetail
 operator|.
 name|class
 argument_list|,
@@ -470,7 +470,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|PrefDetail
+name|PreferenceDetail
 name|getPreferences
 parameter_list|()
 block|{

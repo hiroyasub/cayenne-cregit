@@ -203,20 +203,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|pref
-operator|.
-name|Domain
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|project
 operator|.
 name|ProjectPath
@@ -433,16 +419,6 @@ name|getPath
 argument_list|()
 expr_stmt|;
 block|}
-comment|// obtain preference object before save, when the project path may change.....
-name|Domain
-name|preference
-init|=
-name|getProjectController
-argument_list|()
-operator|.
-name|getPreferenceDomainForProject
-argument_list|()
-decl_stmt|;
 name|File
 name|projectDir
 init|=
@@ -562,17 +538,6 @@ argument_list|(
 name|p
 argument_list|,
 name|res
-argument_list|)
-expr_stmt|;
-comment|// update preferences domain key
-name|preference
-operator|.
-name|rename
-argument_list|(
-name|projectDir
-operator|.
-name|getPath
-argument_list|()
 argument_list|)
 expr_stmt|;
 if|if

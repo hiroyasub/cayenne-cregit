@@ -268,17 +268,6 @@ name|isSelected
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|Application
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|getPreferenceService
-argument_list|()
-operator|.
-name|savePreferences
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 specifier|public
