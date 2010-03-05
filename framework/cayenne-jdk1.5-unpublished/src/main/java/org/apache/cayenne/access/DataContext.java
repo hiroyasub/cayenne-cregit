@@ -3959,14 +3959,14 @@ name|DataChannel
 condition|)
 block|{
 comment|// A real QueryEngine object - use it
-name|this
-operator|.
-name|channel
-operator|=
+comment|// call a setter to initialize EntityResolver
+name|setChannel
+argument_list|(
 operator|(
 name|DataChannel
 operator|)
 name|value
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
