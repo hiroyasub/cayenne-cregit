@@ -1285,15 +1285,6 @@ name|String
 name|nameBase
 parameter_list|()
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"nameBase"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|getNameBase

@@ -530,25 +530,24 @@ operator|+
 literal|"Node"
 argument_list|)
 decl_stmt|;
-comment|// ensure that DataNode exposes DataSource directly, so that UI widgets could work
-comment|// with it.
-return|return
+name|DataNodeDescriptor
+name|node
+init|=
 operator|new
 name|DataNodeDescriptor
 argument_list|(
 name|name
 argument_list|)
-block|{
-specifier|public
-name|DataSourceInfo
-name|getDataSourceDescriptor
-parameter_list|()
-block|{
+decl_stmt|;
+name|node
+operator|.
+name|setDataChannelDescriptor
+argument_list|(
+name|domain
+argument_list|)
+expr_stmt|;
 return|return
-name|dataSourceDescriptor
-return|;
-block|}
-block|}
+name|node
 return|;
 block|}
 block|}
