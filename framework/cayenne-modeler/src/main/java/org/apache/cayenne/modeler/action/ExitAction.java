@@ -57,7 +57,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|CayennePreferenceForProject
+name|RenamedPreferences
 import|;
 end_import
 
@@ -160,7 +160,7 @@ operator|.
 name|stopLogging
 argument_list|()
 expr_stmt|;
-name|CayennePreferenceForProject
+name|RenamedPreferences
 operator|.
 name|removeNewPreferences
 argument_list|()

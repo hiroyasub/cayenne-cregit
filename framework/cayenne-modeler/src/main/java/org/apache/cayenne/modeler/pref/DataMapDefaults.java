@@ -53,7 +53,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|CayennePreferenceForProject
+name|RenamedPreferences
 import|;
 end_import
 
@@ -76,7 +76,7 @@ specifier|public
 class|class
 name|DataMapDefaults
 extends|extends
-name|CayennePreferenceForProject
+name|RenamedPreferences
 block|{
 specifier|private
 name|boolean

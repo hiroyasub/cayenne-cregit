@@ -53,7 +53,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|CayennePreferenceForProject
+name|RenamedPreferences
 import|;
 end_import
 
@@ -62,7 +62,7 @@ specifier|public
 class|class
 name|DBGeneratorDefaults
 extends|extends
-name|CayennePreferenceForProject
+name|RenamedPreferences
 block|{
 specifier|public
 specifier|static

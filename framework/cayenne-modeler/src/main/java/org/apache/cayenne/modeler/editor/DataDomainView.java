@@ -355,7 +355,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|CayennePreferenceForProject
+name|RenamedPreferences
 import|;
 end_import
 
@@ -1957,7 +1957,7 @@ name|oldPref
 init|=
 name|prefs
 decl_stmt|;
-name|CayennePreferenceForProject
+name|RenamedPreferences
 operator|.
 name|copyPreferences
 argument_list|(

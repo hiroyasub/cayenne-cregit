@@ -73,7 +73,7 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|CayennePreferenceForProject
+name|RenamedPreferences
 import|;
 end_import
 
@@ -259,7 +259,7 @@ argument_list|(
 name|p
 argument_list|)
 expr_stmt|;
-name|CayennePreferenceForProject
+name|RenamedPreferences
 operator|.
 name|removeOldPreferences
 argument_list|()
@@ -341,7 +341,7 @@ argument_list|,
 literal|""
 argument_list|)
 decl_stmt|;
-name|CayennePreferenceForProject
+name|RenamedPreferences
 operator|.
 name|copyPreferences
 argument_list|(
@@ -354,7 +354,7 @@ name|getPreferenceForProject
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|CayennePreferenceForProject
+name|RenamedPreferences
 operator|.
 name|removeOldPreferences
 argument_list|()
