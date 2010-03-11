@@ -197,6 +197,14 @@ name|LIGHT_SERVER_SUPERCLASS
 init|=
 literal|"Light Server Superclass"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|NODE_NAME
+init|=
+literal|"codeTemplateManager"
+decl_stmt|;
 specifier|protected
 name|List
 argument_list|<
@@ -244,7 +252,6 @@ name|class
 argument_list|)
 decl_stmt|;
 specifier|public
-specifier|static
 name|Preferences
 name|getTemplatePreferences
 parameter_list|(
@@ -255,12 +262,14 @@ block|{
 return|return
 name|application
 operator|.
-name|getMainPreferenceForProject
-argument_list|()
-operator|.
-name|node
+name|getPreferencesNode
 argument_list|(
-literal|"CodeTemplateManager"
+name|this
+operator|.
+name|getClass
+argument_list|()
+argument_list|,
+name|NODE_NAME
 argument_list|)
 return|;
 block|}
