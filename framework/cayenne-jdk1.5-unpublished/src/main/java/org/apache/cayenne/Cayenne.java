@@ -191,6 +191,14 @@ specifier|final
 class|class
 name|Cayenne
 block|{
+comment|/**      * A special property denoting a size of the to-many collection, when encountered at      * the end of the path</p>      *       * @since 3.1      */
+specifier|final
+specifier|static
+name|String
+name|PROPERTY_COLLECTION_SIZE
+init|=
+literal|"@size"
+decl_stmt|;
 comment|/**      * Returns mapped ObjEntity for object. If an object is transient or is not      * mapped returns null.      */
 specifier|public
 specifier|static
@@ -455,7 +463,52 @@ operator|instanceof
 name|Collection
 condition|)
 block|{
-comment|/**              * Support for collection property in the middle of the path              */
+name|Collection
+argument_list|<
+name|?
+argument_list|>
+name|collection
+init|=
+operator|(
+name|Collection
+operator|)
+name|property
+decl_stmt|;
+if|if
+condition|(
+name|tokenIndex
+operator|<
+name|tokenizedPath
+operator|.
+name|length
+operator|-
+literal|1
+condition|)
+block|{
+if|if
+condition|(
+name|tokenizedPath
+index|[
+name|tokenIndex
+operator|+
+literal|1
+index|]
+operator|.
+name|equals
+argument_list|(
+name|PROPERTY_COLLECTION_SIZE
+argument_list|)
+condition|)
+block|{
+return|return
+name|collection
+operator|.
+name|size
+argument_list|()
+return|;
+block|}
+block|}
+comment|// Support for collection property in the middle of the path
 name|Collection
 argument_list|<
 name|Object
@@ -483,33 +536,27 @@ decl_stmt|;
 for|for
 control|(
 name|Object
-name|obj
+name|object
 range|:
-operator|(
-name|Collection
-argument_list|<
-name|?
-argument_list|>
-operator|)
-name|property
+name|collection
 control|)
 block|{
 if|if
 condition|(
-name|obj
+name|object
 operator|instanceof
 name|CayenneDataObject
 condition|)
 block|{
 name|Object
-name|rest
+name|tail
 init|=
 name|readNestedProperty
 argument_list|(
 operator|(
 name|CayenneDataObject
 operator|)
-name|obj
+name|object
 argument_list|,
 name|path
 argument_list|,
@@ -524,12 +571,14 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|rest
+name|tail
 operator|instanceof
 name|Collection
 condition|)
 block|{
-comment|/**                          * We don't want nested collections. E.g.                          * readNestedProperty("paintingArray.paintingTitle") should return                          * List<String>                          */
+comment|// We don't want nested collections. E.g.
+comment|// readNestedProperty("paintingArray.paintingTitle")
+comment|// should return List<String>
 name|result
 operator|.
 name|addAll
@@ -540,7 +589,7 @@ argument_list|<
 name|?
 argument_list|>
 operator|)
-name|rest
+name|tail
 argument_list|)
 expr_stmt|;
 block|}
@@ -550,7 +599,7 @@ name|result
 operator|.
 name|add
 argument_list|(
-name|rest
+name|tail
 argument_list|)
 expr_stmt|;
 block|}
