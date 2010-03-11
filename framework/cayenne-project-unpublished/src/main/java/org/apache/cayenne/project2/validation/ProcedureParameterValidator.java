@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -59,28 +69,36 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|ProcedureParameterValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
-parameter_list|)
-block|{
 name|ProcedureParameter
 name|parameter
-init|=
-operator|(
-name|ProcedureParameter
-operator|)
-name|object
-decl_stmt|;
+parameter_list|,
+name|ValidationResult
+name|validationResult
+parameter_list|)
+block|{
 comment|// Must have name
 if|if
 condition|(
@@ -95,13 +113,13 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed ProcedureParameter."
+name|validationResult
 argument_list|,
-name|object
+name|parameter
+argument_list|,
+literal|"Unnamed ProcedureParameter"
 argument_list|)
 expr_stmt|;
 block|}
@@ -118,13 +136,18 @@ operator|.
 name|NOT_DEFINED
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ProcedureParameter has no type."
+name|validationResult
 argument_list|,
-name|object
+name|parameter
+argument_list|,
+literal|"ProcedureParameter '%s' has no type"
+argument_list|,
+name|parameter
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -144,10 +167,6 @@ operator|.
 name|getType
 argument_list|()
 operator|==
-name|java
-operator|.
-name|sql
-operator|.
 name|Types
 operator|.
 name|VARCHAR
@@ -157,23 +176,24 @@ operator|.
 name|getType
 argument_list|()
 operator|==
-name|java
-operator|.
-name|sql
-operator|.
 name|Types
 operator|.
 name|CHAR
 operator|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"Character procedure parameter doesn't have max length."
+name|validationResult
 argument_list|,
-name|object
+name|parameter
+argument_list|,
+literal|"Character ProcedureParameter '%s' doesn't have max length"
+argument_list|,
+name|parameter
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -188,13 +208,18 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ProcedureParameter has no direction."
+name|validationResult
 argument_list|,
-name|object
+name|parameter
+argument_list|,
+literal|"ProcedureParameter '%s' has no direction"
+argument_list|,
+name|parameter
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

@@ -59,28 +59,36 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|DbAttributeValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
-parameter_list|)
-block|{
 name|DbAttribute
 name|attribute
-init|=
-operator|(
-name|DbAttribute
-operator|)
-name|object
-decl_stmt|;
+parameter_list|,
+name|ValidationResult
+name|validationResult
+parameter_list|)
+block|{
 comment|// Must have name
 if|if
 condition|(
@@ -95,13 +103,13 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed DbAttribute."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"Unnamed DbAttribute"
 argument_list|)
 expr_stmt|;
 block|}
@@ -135,15 +143,20 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbAttribute name contains invalid characters: "
-operator|+
-name|invalidChars
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"DbAttribute name '%s' contains invalid characters: %s"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|invalidChars
 argument_list|)
 expr_stmt|;
 block|}
@@ -161,13 +174,13 @@ operator|.
 name|NOT_DEFINED
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbAttribute has no type."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"DbAttribute has no type"
 argument_list|)
 expr_stmt|;
 block|}
@@ -210,13 +223,18 @@ name|CHAR
 operator|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"Character DbAttribute doesn't have max length."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"Character DbAttribute '%s' doesn't have max length"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

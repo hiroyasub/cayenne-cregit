@@ -59,31 +59,39 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|DbRelationshipValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
+name|DbRelationship
+name|relationship
 parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
-name|DbRelationship
-name|rel
-init|=
-operator|(
-name|DbRelationship
-operator|)
-name|object
-decl_stmt|;
 if|if
 condition|(
-name|rel
+name|relationship
 operator|.
 name|getTargetEntity
 argument_list|()
@@ -91,50 +99,44 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" has no target entity."
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"DbRelationship '%s' has no target entity"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|rel
+name|relationship
 operator|.
 name|getJoins
 argument_list|()
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|==
-literal|0
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" has no joins."
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"DbRelationship '%s' has no joins"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -143,11 +145,10 @@ block|{
 comment|// validate joins
 for|for
 control|(
-specifier|final
 name|DbJoin
 name|join
 range|:
-name|rel
+name|relationship
 operator|.
 name|getJoins
 argument_list|()
@@ -170,20 +171,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" join has no source and target attributes selected."
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"DbRelationship '%s' has a join with no source and target attributes selected"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -197,20 +196,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" join has no source attribute selected."
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"DbRelationship '%s' has a join with no source attribute selected"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -224,20 +221,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" join has no target attribute selected."
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"DbRelationship '%s' has a join with no target attribute selected"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -249,34 +244,34 @@ name|Util
 operator|.
 name|isEmptyString
 argument_list|(
-name|rel
+name|relationship
 operator|.
 name|getName
 argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed DbRelationship."
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"Unnamed DbRelationship"
 argument_list|)
 expr_stmt|;
 block|}
 comment|// check if there are attributes having the same name
 if|else if
 condition|(
-name|rel
+name|relationship
 operator|.
 name|getSourceEntity
 argument_list|()
 operator|.
 name|getAttribute
 argument_list|(
-name|rel
+name|relationship
 operator|.
 name|getName
 argument_list|()
@@ -285,20 +280,18 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" has the same name as one of DbAttributes"
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"Name of DbRelationship '%s' conflicts with the name of one of DbAttributes in the same entity"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -319,7 +312,7 @@ name|helper
 operator|.
 name|invalidCharsInDbPathComponent
 argument_list|(
-name|rel
+name|relationship
 operator|.
 name|getName
 argument_list|()
@@ -332,59 +325,54 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DbRelationship "
-operator|+
-name|dbRelationshipIdentifier
-argument_list|(
-name|rel
-argument_list|)
-operator|+
-literal|" name contains invalid characters: "
-operator|+
-name|invalidChars
+name|validationResult
 argument_list|,
-name|object
+name|relationship
+argument_list|,
+literal|"Name of DbRelationship '%s' contains invalid characters: %s"
+argument_list|,
+name|toString
+argument_list|(
+name|relationship
+argument_list|)
+argument_list|,
+name|invalidChars
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
+specifier|private
 name|String
-name|dbRelationshipIdentifier
+name|toString
 parameter_list|(
 name|DbRelationship
-name|rel
+name|relationship
 parameter_list|)
 block|{
 if|if
 condition|(
-literal|null
-operator|==
-name|rel
+name|relationship
 operator|.
 name|getSourceEntity
 argument_list|()
+operator|==
+literal|null
 condition|)
 block|{
 return|return
-literal|"<[null source entity]."
+literal|"[null source entity]."
 operator|+
-name|rel
+name|relationship
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|">"
 return|;
 block|}
 return|return
-literal|"<"
-operator|+
-name|rel
+name|relationship
 operator|.
 name|getSourceEntity
 argument_list|()
@@ -394,12 +382,10 @@ argument_list|()
 operator|+
 literal|"."
 operator|+
-name|rel
+name|relationship
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|">"
 return|;
 block|}
 block|}

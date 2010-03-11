@@ -25,9 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|validation
 operator|.
-name|ConfigurationNode
+name|SimpleValidationFailure
 import|;
 end_import
 
@@ -46,23 +46,59 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A project validating service.  *   * @since 3.1  */
+comment|/**  * A base superclass of various node validators.  *   * @since 3.1  */
 end_comment
 
-begin_interface
-specifier|public
-interface|interface
-name|ProjectValidator
+begin_class
+specifier|abstract
+class|class
+name|ConfigurationNodeValidator
 block|{
-name|ValidationResult
-name|validate
+name|void
+name|addFailure
 parameter_list|(
-name|ConfigurationNode
-name|node
+name|ValidationResult
+name|validationResult
+parameter_list|,
+name|Object
+name|source
+parameter_list|,
+name|String
+name|messageFormat
+parameter_list|,
+name|Object
+modifier|...
+name|messageParameters
 parameter_list|)
-function_decl|;
+block|{
+name|String
+name|message
+init|=
+name|String
+operator|.
+name|format
+argument_list|(
+name|messageFormat
+argument_list|,
+name|messageParameters
+argument_list|)
+decl_stmt|;
+name|validationResult
+operator|.
+name|addFailure
+argument_list|(
+operator|new
+name|SimpleValidationFailure
+argument_list|(
+name|source
+argument_list|,
+name|message
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

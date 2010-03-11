@@ -45,29 +45,36 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|DataChannelValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
-parameter_list|)
-block|{
-comment|// check for empty name
 name|DataChannelDescriptor
 name|domain
-init|=
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|object
-decl_stmt|;
+parameter_list|,
+name|ValidationResult
+name|validationResult
+parameter_list|)
+block|{
 name|String
 name|name
 init|=
@@ -86,17 +93,15 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed DataDomain."
+name|validationResult
 argument_list|,
-name|object
+name|domain
+argument_list|,
+literal|"Unnamed DataDomain"
 argument_list|)
 expr_stmt|;
-comment|// no more name assertions
-return|return;
 block|}
 block|}
 block|}

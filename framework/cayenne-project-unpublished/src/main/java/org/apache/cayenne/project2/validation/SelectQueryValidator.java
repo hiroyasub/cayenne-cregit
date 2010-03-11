@@ -129,33 +129,41 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|SelectQueryValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
-parameter_list|)
-block|{
 name|SelectQuery
 name|query
-init|=
-operator|(
-name|SelectQuery
-operator|)
-name|object
-decl_stmt|;
+parameter_list|,
+name|ValidationResult
+name|validationResult
+parameter_list|)
+block|{
 name|validateName
 argument_list|(
 name|query
 argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 expr_stmt|;
 comment|// Resolve root to Entity for further validation
@@ -166,7 +174,7 @@ name|validateRoot
 argument_list|(
 name|query
 argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 decl_stmt|;
 comment|// validate path-based parts
@@ -186,7 +194,7 @@ operator|.
 name|getQualifier
 argument_list|()
 argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 expr_stmt|;
 for|for
@@ -207,7 +215,7 @@ name|root
 argument_list|,
 name|ordering
 argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
@@ -223,7 +231,6 @@ condition|)
 block|{
 for|for
 control|(
-specifier|final
 name|PrefetchTreeNode
 name|prefetchTreeNode
 range|:
@@ -245,7 +252,7 @@ operator|.
 name|getPath
 argument_list|()
 argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
@@ -261,10 +268,11 @@ parameter_list|,
 name|String
 name|path
 parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
+comment|// TODO: andrus 03/10/2010 - should this be implemented?
 block|}
 name|void
 name|validateOrdering
@@ -275,10 +283,11 @@ parameter_list|,
 name|Ordering
 name|ordering
 parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
+comment|// TODO: andrus 03/10/2010 - should this be implemented?
 block|}
 name|void
 name|validateQualifier
@@ -289,10 +298,11 @@ parameter_list|,
 name|Expression
 name|qualifier
 parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
+comment|// TODO: andrus 03/10/2010 - should this be implemented?
 block|}
 name|Entity
 name|validateRoot
@@ -300,8 +310,8 @@ parameter_list|(
 name|SelectQuery
 name|query
 parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
 name|DataMap
@@ -326,13 +336,18 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"Query has no root"
+name|validationResult
 argument_list|,
 name|query
+argument_list|,
+literal|"Query '%s' has no root"
+argument_list|,
+name|query
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -412,6 +427,9 @@ name|getRoot
 argument_list|()
 operator|instanceof
 name|Class
+argument_list|<
+name|?
+argument_list|>
 condition|)
 block|{
 return|return
@@ -473,8 +491,8 @@ parameter_list|(
 name|SelectQuery
 name|query
 parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
 name|String
@@ -496,13 +514,13 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed SelectQuery."
+name|validationResult
 argument_list|,
 name|query
+argument_list|,
+literal|"Unnamed SelectQuery"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -559,17 +577,15 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Duplicate Query name: "
-operator|+
-name|name
-operator|+
-literal|"."
+name|validationResult
 argument_list|,
 name|query
+argument_list|,
+literal|"Duplicate query name: %s"
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 break|break;

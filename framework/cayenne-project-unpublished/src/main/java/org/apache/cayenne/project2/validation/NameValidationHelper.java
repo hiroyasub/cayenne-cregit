@@ -74,6 +74,8 @@ literal|"assert"
 argument_list|,
 literal|"default"
 argument_list|,
+literal|"enum"
+argument_list|,
 literal|"if"
 argument_list|,
 literal|"private"

@@ -23,26 +23,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -131,28 +111,36 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|ObjAttributeValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
-parameter_list|)
-block|{
 name|ObjAttribute
 name|attribute
-init|=
-operator|(
-name|ObjAttribute
-operator|)
-name|object
-decl_stmt|;
+parameter_list|,
+name|ValidationResult
+name|validationResult
+parameter_list|)
+block|{
 comment|// Must have name
 if|if
 condition|(
@@ -167,13 +155,13 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed ObjAttribute."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"Unnamed ObjAttribute"
 argument_list|)
 expr_stmt|;
 block|}
@@ -207,15 +195,20 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ObjAttribute name contains invalid characters: "
-operator|+
-name|invalidChars
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"ObjAttribute name '%s' contains invalid characters: %s"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|invalidChars
 argument_list|)
 expr_stmt|;
 block|}
@@ -232,18 +225,18 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ObjAttribute name is invalid: "
-operator|+
+name|validationResult
+argument_list|,
+name|attribute
+argument_list|,
+literal|"ObjAttribute name '%s' is invalid"
+argument_list|,
 name|attribute
 operator|.
 name|getName
 argument_list|()
-argument_list|,
-name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -262,13 +255,18 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ObjAttribute has no type."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"ObjAttribute '%s' has no Java type"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -323,7 +321,7 @@ name|getAttributeOverrides
 argument_list|()
 decl_stmt|;
 name|Embeddable
-name|emb
+name|embeddable
 init|=
 operator|(
 operator|(
@@ -337,7 +335,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|emb
+name|embeddable
 operator|==
 literal|null
 operator|&&
@@ -354,19 +352,24 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"EmbeddedAttribute has incorrect Embeddable."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"EmbeddedAttribute '%s' has incorrect Embeddable"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 if|else if
 condition|(
-name|emb
+name|embeddable
 operator|==
 literal|null
 operator|&&
@@ -383,64 +386,39 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"EmbeddedAttribute has no Embeddable."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"EmbeddedAttribute '%s' has no Embeddable"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|emb
+name|embeddable
 operator|!=
 literal|null
 condition|)
 block|{
-name|Collection
-argument_list|<
+for|for
+control|(
 name|EmbeddableAttribute
-argument_list|>
-name|embAttributes
-init|=
-name|emb
+name|embeddableAttribute
+range|:
+name|embeddable
 operator|.
 name|getAttributes
 argument_list|()
-decl_stmt|;
-name|Iterator
-argument_list|<
-name|EmbeddableAttribute
-argument_list|>
-name|it
-init|=
-name|embAttributes
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|EmbeddableAttribute
-name|embAttr
-init|=
-operator|(
-name|EmbeddableAttribute
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|String
 name|dbAttributeName
 decl_stmt|;
@@ -457,7 +435,7 @@ name|attrOverrides
 operator|.
 name|containsKey
 argument_list|(
-name|embAttr
+name|embeddableAttribute
 operator|.
 name|getName
 argument_list|()
@@ -470,7 +448,7 @@ name|attrOverrides
 operator|.
 name|get
 argument_list|(
-name|embAttr
+name|embeddableAttribute
 operator|.
 name|getName
 argument_list|()
@@ -481,7 +459,7 @@ else|else
 block|{
 name|dbAttributeName
 operator|=
-name|embAttr
+name|embeddableAttribute
 operator|.
 name|getDbAttributeName
 argument_list|()
@@ -498,13 +476,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"EmbeddedAttribute has no DbAttribute mapping."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"EmbeddedAttribute '%s' has no DbAttribute mapping"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -531,13 +514,18 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"EmbeddedAttribute has incorrect DbAttribute mapping."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"EmbeddedAttribute '%s' has incorrect DbAttribute mapping"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -554,18 +542,24 @@ operator|==
 literal|null
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ObjAttribute has no DbAttribute mapping."
+name|validationResult
 argument_list|,
-name|object
+name|attribute
+argument_list|,
+literal|"ObjAttribute '%s' has no DbAttribute mapping"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 comment|// can't support generated meaningful attributes for now; besides they don't make
 comment|// sense.
+comment|// TODO: andrus 03/10/2010 - is that really so? I think those are supported...
 if|else if
 condition|(
 name|attribute
@@ -585,18 +579,23 @@ name|isGenerated
 argument_list|()
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"ObjAttribute is mapped to a generated PK: "
-operator|+
+name|validationResult
+argument_list|,
+name|attribute
+argument_list|,
+literal|"ObjAttribute '%s' is mapped to a generated PK: %s"
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|attribute
 operator|.
 name|getDbAttributeName
 argument_list|()
-argument_list|,
-name|object
 argument_list|)
 expr_stmt|;
 block|}

@@ -73,45 +73,48 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|validation
+operator|.
+name|ValidationResult
+import|;
+end_import
+
 begin_class
 class|class
 name|DataMapValidator
+extends|extends
+name|ConfigurationNodeValidator
 block|{
 name|void
 name|validate
 parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
-parameter_list|)
-block|{
 name|DataMap
 name|map
-init|=
-operator|(
-name|DataMap
-operator|)
-name|object
-decl_stmt|;
+parameter_list|,
+name|ValidationResult
+name|validationResult
+parameter_list|)
+block|{
 name|validateName
 argument_list|(
 name|map
 argument_list|,
-name|object
-argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 expr_stmt|;
-comment|// check if data map is not attached to any nodes
 name|validateNodeLinks
 argument_list|(
 name|map
 argument_list|,
-name|object
-argument_list|,
-name|validationVisitor
+name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
@@ -121,11 +124,8 @@ parameter_list|(
 name|DataMap
 name|map
 parameter_list|,
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
 name|DataChannelDescriptor
@@ -157,7 +157,6 @@ literal|0
 decl_stmt|;
 for|for
 control|(
-specifier|final
 name|DataNodeDescriptor
 name|node
 range|:
@@ -202,13 +201,13 @@ operator|>
 literal|0
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerWarning
+name|addFailure
 argument_list|(
-literal|"DataMap is not linked to any DataNodes."
+name|validationResult
 argument_list|,
-name|object
+name|map
+argument_list|,
+literal|"DataMap is not linked to any DataNodes"
 argument_list|)
 expr_stmt|;
 block|}
@@ -219,11 +218,8 @@ parameter_list|(
 name|DataMap
 name|map
 parameter_list|,
-name|Object
-name|object
-parameter_list|,
-name|ValidationVisitor
-name|validationVisitor
+name|ValidationResult
+name|validationResult
 parameter_list|)
 block|{
 name|String
@@ -244,13 +240,13 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Unnamed DataMap."
+name|validationResult
 argument_list|,
-name|object
+name|map
+argument_list|,
+literal|"Unnamed DataMap"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -275,7 +271,6 @@ block|}
 comment|// check for duplicate names in the parent context
 for|for
 control|(
-specifier|final
 name|DataMap
 name|otherMap
 range|:
@@ -307,17 +302,15 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|validationVisitor
-operator|.
-name|registerError
+name|addFailure
 argument_list|(
-literal|"Duplicate DataMap name: "
-operator|+
-name|name
-operator|+
-literal|"."
+name|validationResult
 argument_list|,
-name|object
+name|map
+argument_list|,
+literal|"Duplicate DataMap name: %s"
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 return|return;
