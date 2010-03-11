@@ -168,6 +168,17 @@ specifier|transient
 name|int
 name|hashCode
 decl_stmt|;
+comment|//to enable serialization
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
+specifier|private
+name|NamedQuery
+parameter_list|()
+block|{
+block|}
 specifier|public
 name|NamedQuery
 parameter_list|(
