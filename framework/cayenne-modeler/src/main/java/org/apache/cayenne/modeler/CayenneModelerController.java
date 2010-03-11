@@ -147,6 +147,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -1098,7 +1108,7 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|// for validation purposes combine load failures with post-load validation (not
-comment|// usre if that'll cause duplicate messages?).
+comment|// sure if that'll cause duplicate messages?).
 name|List
 argument_list|<
 name|ValidationFailure
@@ -1112,13 +1122,16 @@ name|ValidationFailure
 argument_list|>
 argument_list|()
 decl_stmt|;
-name|List
+name|Collection
 argument_list|<
 name|ValidationFailure
 argument_list|>
 name|loadFailures
 init|=
 name|project
+operator|.
+name|getConfigurationTree
+argument_list|()
 operator|.
 name|getLoadFailures
 argument_list|()

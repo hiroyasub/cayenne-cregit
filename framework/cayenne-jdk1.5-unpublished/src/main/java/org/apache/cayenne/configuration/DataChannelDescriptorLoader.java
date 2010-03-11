@@ -51,7 +51,10 @@ interface|interface
 name|DataChannelDescriptorLoader
 block|{
 comment|/**      * Loads a DataChannelDescriptor from some configuration resource, usually an XML file      * found on classpath.      */
+name|ConfigurationTree
+argument_list|<
 name|DataChannelDescriptor
+argument_list|>
 name|load
 parameter_list|(
 name|Resource

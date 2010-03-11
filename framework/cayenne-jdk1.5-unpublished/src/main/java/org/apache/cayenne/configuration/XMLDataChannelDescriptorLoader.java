@@ -485,7 +485,10 @@ name|ConfigurationNameMapper
 name|nameMapper
 decl_stmt|;
 specifier|public
+name|ConfigurationTree
+argument_list|<
 name|DataChannelDescriptor
+argument_list|>
 name|load
 parameter_list|(
 name|Resource
@@ -665,8 +668,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// TODO: andrus 03/10/2010 - actually provide load failures here...
 return|return
+operator|new
+name|ConfigurationTree
+argument_list|<
+name|DataChannelDescriptor
+argument_list|>
+argument_list|(
 name|descriptor
+argument_list|,
+literal|null
+argument_list|)
 return|;
 block|}
 specifier|final
