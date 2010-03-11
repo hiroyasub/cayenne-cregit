@@ -69,20 +69,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|configuration
 operator|.
 name|DataChannelDescriptor
@@ -267,14 +253,6 @@ condition|)
 block|{
 return|return;
 block|}
-name|Configuration
-name|config
-init|=
-name|buildProjectConfiguration
-argument_list|(
-literal|null
-argument_list|)
-decl_stmt|;
 name|DataChannelDescriptor
 name|domain
 init|=
@@ -317,8 +295,6 @@ operator|.
 name|projectOpenedAction
 argument_list|(
 name|project
-argument_list|,
-name|config
 argument_list|)
 expr_stmt|;
 comment|// select default domain

@@ -31,30 +31,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -211,23 +187,6 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * Creates a configuration suitable for use in the Modeler. Used mainly by subclasses.      *       * @since 1.2      */
-specifier|protected
-name|Configuration
-name|buildProjectConfiguration
-parameter_list|(
-name|File
-name|projectFile
-parameter_list|)
-block|{
-return|return
-operator|new
-name|ModelerProjectConfiguration
-argument_list|(
-name|projectFile
-argument_list|)
-return|;
 block|}
 comment|/** Returns true if successfully closed project, false otherwise. */
 specifier|public
