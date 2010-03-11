@@ -23,11 +23,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|validator
+name|validation
 operator|.
-name|MappingNamesHelper
+name|NameValidationHelper
 import|;
 end_import
 
@@ -108,7 +108,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|MappingNamesHelper
+name|NameValidationHelper
 operator|.
 name|getInstance
 argument_list|()

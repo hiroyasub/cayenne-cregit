@@ -103,22 +103,6 @@ name|Configuration
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|validator
-operator|.
-name|Validator
-import|;
-end_import
-
 begin_comment
 comment|/**  * Describes a model of Cayenne project. Project is a set of files in the filesystem  * describing storing Cayenne DataMaps, DataNodes and other information.  *<p>  * Project has a project directory, which is a canonical directory. All project files are  * relative to the project directory.  *</p>  *   * @deprecated since 3.1 - use org.apache.cayenne.project2 module for projects  *             manipulation.  */
 end_comment
@@ -538,20 +522,6 @@ block|}
 block|}
 return|return
 name|projectFiles
-return|;
-block|}
-comment|/**      * Creates an instance of Validator for validating this project.      */
-specifier|public
-name|Validator
-name|getValidator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|Validator
-argument_list|(
-name|this
-argument_list|)
 return|;
 block|}
 comment|/**      * Looks up and returns a file wrapper for a project object. Returns null if no file      * exists.      */

@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|validator
+name|validation
 package|;
 end_package
 
@@ -54,9 +54,8 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|MappingNamesHelper
+name|NameValidationHelper
 block|{
-comment|// TODO: used by StringUtils and ClassGenerationInfo... need to refactor..
 specifier|static
 specifier|final
 name|Collection
@@ -190,6 +189,9 @@ comment|// java.lang.Object or CayenneDataObject
 specifier|static
 specifier|final
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|INVALID_JAVA_PROPERTIES
 init|=
 name|Arrays
@@ -213,17 +215,17 @@ argument_list|)
 decl_stmt|;
 specifier|static
 specifier|final
-name|MappingNamesHelper
+name|NameValidationHelper
 name|sharedInstance
 init|=
 operator|new
-name|MappingNamesHelper
+name|NameValidationHelper
 argument_list|()
 decl_stmt|;
 comment|/**      * Returns shared instance of the validator.      */
 specifier|public
 specifier|static
-name|MappingNamesHelper
+name|NameValidationHelper
 name|getInstance
 parameter_list|()
 block|{
@@ -433,7 +435,8 @@ name|String
 name|invalidChars
 parameter_list|)
 block|{
-comment|// TODO: Java spec seems to allow "$" char in identifiers... Cayenne expressions do
+comment|// TODO: Java spec seems to allow "$" char in identifiers... Cayenne expressions
+comment|// do
 comment|// not, so we should probably check for this char presence...
 name|int
 name|len
