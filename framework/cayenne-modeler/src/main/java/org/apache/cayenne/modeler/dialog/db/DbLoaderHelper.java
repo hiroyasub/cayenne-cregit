@@ -347,9 +347,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|util
 operator|.
-name|NamedObjectFactory
+name|DeleteRuleUpdater
 import|;
 end_import
 
@@ -363,7 +363,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|DeleteRuleUpdater
+name|NamedObjectFactory
 import|;
 end_import
 

@@ -285,7 +285,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|util
 operator|.
 name|NamedObjectFactory
 import|;

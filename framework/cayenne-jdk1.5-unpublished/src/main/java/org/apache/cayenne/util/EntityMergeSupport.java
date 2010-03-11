@@ -227,20 +227,6 @@ name|NamingStrategy
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|NamedObjectFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  * Implements methods for entity merging.  */
 end_comment

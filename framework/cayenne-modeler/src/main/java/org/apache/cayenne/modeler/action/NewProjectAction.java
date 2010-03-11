@@ -141,9 +141,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|NamedObjectFactory
+name|Project
 import|;
 end_import
 
@@ -155,9 +155,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|util
 operator|.
-name|Project
+name|NamedObjectFactory
 import|;
 end_import
 
