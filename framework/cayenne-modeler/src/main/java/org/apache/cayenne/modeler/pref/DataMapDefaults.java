@@ -770,7 +770,12 @@ block|{
 if|if
 condition|(
 name|property
-operator|==
+operator|!=
+literal|null
+operator|&&
+name|getCurrentPreference
+argument_list|()
+operator|!=
 literal|null
 condition|)
 block|{
@@ -863,7 +868,12 @@ block|{
 if|if
 condition|(
 name|property
-operator|==
+operator|!=
+literal|null
+operator|&&
+name|getCurrentPreference
+argument_list|()
+operator|!=
 literal|null
 condition|)
 block|{
