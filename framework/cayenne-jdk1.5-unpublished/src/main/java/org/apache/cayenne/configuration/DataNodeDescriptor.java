@@ -125,6 +125,16 @@ name|XMLSerializable
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
 begin_comment
 comment|/**  * A descriptor of {@link DataNode} configuration.  *   * @since 3.1  */
 end_comment
@@ -137,6 +147,8 @@ implements|implements
 name|ConfigurationNode
 implements|,
 name|XMLSerializable
+implements|,
+name|Serializable
 implements|,
 name|Comparable
 argument_list|<
