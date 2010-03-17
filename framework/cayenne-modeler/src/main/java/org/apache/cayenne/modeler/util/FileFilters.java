@@ -39,20 +39,6 @@ name|FileFilter
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|MapLoader
-import|;
-end_import
-
 begin_comment
 comment|/**  * A collection of common file filters used by CayenneModeler JFileChoosers.  *   * @since 1.1  */
 end_comment
@@ -122,6 +108,14 @@ operator|new
 name|JavaClassArchiveFilter
 argument_list|()
 decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|DATA_MAP_LOCATION_SUFFIX
+init|=
+literal|".map.xml"
+decl_stmt|;
 comment|/**      * Returns a FileFilter for java class archive files, such as JAR and ZIP.      */
 specifier|public
 specifier|static
@@ -155,7 +149,7 @@ return|return
 name|dataMapFilter
 return|;
 block|}
-comment|/**      * Returns a FileFilter used to select Velocity template files.       * Filters files with ".vm" extension.      */
+comment|/**      * Returns a FileFilter used to select Velocity template files. Filters files with      * ".vm" extension.      */
 specifier|public
 specifier|static
 name|FileFilter
@@ -177,7 +171,7 @@ return|return
 name|eomodelFilter
 return|;
 block|}
-comment|/**      * Returns FileFilter that defines the rules for EOModel selection.      * This filter will only allow selection of the following       * files/directories:      *<ul>      *<li>Directories with name matching<code>*.eomodeld</code>      *   that contain<code>index.eomodeld</code>.</li>      *<li><code>index.eomodeld</code> files contained within       *<code>*.eomodeld</code> directory.</li>      *</ul>      */
+comment|/**      * Returns FileFilter that defines the rules for EOModel selection. This filter will      * only allow selection of the following files/directories:      *<ul>      *<li>Directories with name matching<code>*.eomodeld</code> that contain      *<code>index.eomodeld</code>.</li>      *<li><code>index.eomodeld</code> files contained within<code>*.eomodeld</code>      * directory.</li>      *</ul>      */
 specifier|public
 specifier|static
 name|FileFilter
@@ -396,7 +390,7 @@ argument_list|)
 operator|)
 return|;
 block|}
-comment|/**          *  Returns description of this filter.          */
+comment|/**          * Returns description of this filter.          */
 specifier|public
 name|String
 name|getDescription
@@ -453,9 +447,7 @@ name|name
 operator|.
 name|endsWith
 argument_list|(
-name|MapLoader
-operator|.
-name|LOCATION_SUFFIX
+name|DATA_MAP_LOCATION_SUFFIX
 argument_list|)
 operator|&&
 operator|!
@@ -463,9 +455,7 @@ name|name
 operator|.
 name|equals
 argument_list|(
-name|MapLoader
-operator|.
-name|LOCATION_SUFFIX
+name|DATA_MAP_LOCATION_SUFFIX
 argument_list|)
 condition|)
 block|{
@@ -477,7 +467,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**          *  Returns description of this filter.          */
+comment|/**          * Returns description of this filter.          */
 specifier|public
 name|String
 name|getDescription
@@ -486,9 +476,7 @@ block|{
 return|return
 literal|"DataMaps (*"
 operator|+
-name|MapLoader
-operator|.
-name|LOCATION_SUFFIX
+name|DATA_MAP_LOCATION_SUFFIX
 operator|+
 literal|")"
 return|;
@@ -591,7 +579,7 @@ name|EOModelSelectFilter
 extends|extends
 name|FileFilter
 block|{
-comment|/**          * Accepts all directories and<code>*.eomodeld/index.eomodeld</code> files.          *          * @see EOModelSelectFilter#accept(File)          */
+comment|/**          * Accepts all directories and<code>*.eomodeld/index.eomodeld</code> files.          *           * @see EOModelSelectFilter#accept(File)          */
 specifier|public
 name|boolean
 name|accept

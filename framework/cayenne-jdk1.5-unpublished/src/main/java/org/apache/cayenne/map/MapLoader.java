@@ -600,11 +600,11 @@ name|JAVA_CLASS_ROOT
 init|=
 literal|"java-class"
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|String
-name|LOCATION_SUFFIX
+name|DATA_MAP_LOCATION_SUFFIX
 init|=
 literal|".map.xml"
 decl_stmt|;
@@ -3329,7 +3329,7 @@ name|location
 operator|.
 name|endsWith
 argument_list|(
-name|LOCATION_SUFFIX
+name|DATA_MAP_LOCATION_SUFFIX
 argument_list|)
 condition|)
 block|{
@@ -3346,7 +3346,7 @@ operator|.
 name|length
 argument_list|()
 operator|-
-name|LOCATION_SUFFIX
+name|DATA_MAP_LOCATION_SUFFIX
 operator|.
 name|length
 argument_list|()
