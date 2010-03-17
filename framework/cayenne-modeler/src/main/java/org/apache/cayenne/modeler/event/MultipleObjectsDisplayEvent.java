@@ -35,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|configuration
 operator|.
-name|ProjectPath
+name|ConfigurationNode
 import|;
 end_import
 
@@ -53,9 +53,9 @@ extends|extends
 name|EventObject
 block|{
 specifier|private
-name|ProjectPath
+name|ConfigurationNode
 index|[]
-name|paths
+name|nodes
 decl_stmt|;
 specifier|public
 name|MultipleObjectsDisplayEvent
@@ -63,9 +63,9 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|ProjectPath
+name|ConfigurationNode
 index|[]
-name|paths
+name|objects
 parameter_list|)
 block|{
 name|super
@@ -75,20 +75,24 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|paths
+name|nodes
 operator|=
-name|paths
+operator|(
+name|ConfigurationNode
+index|[]
+operator|)
+name|objects
 expr_stmt|;
 block|}
 comment|/**      * @return all paths of this event      */
 specifier|public
-name|ProjectPath
+name|ConfigurationNode
 index|[]
-name|getPaths
+name|getNodes
 parameter_list|()
 block|{
 return|return
-name|paths
+name|nodes
 return|;
 block|}
 block|}

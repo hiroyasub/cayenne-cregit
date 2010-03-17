@@ -11,21 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|modeler
-operator|.
-name|event
+name|project2
 package|;
 end_package
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|EventListener
-import|;
-end_import
 
 begin_import
 import|import
@@ -35,33 +23,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|modeler
+name|configuration
 operator|.
-name|Application
+name|ConfigurationNode
 import|;
 end_import
-
-begin_comment
-comment|/**  * Listener for multiple objects selections   */
-end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|MultipleObjectsDisplayListener
-extends|extends
-name|EventListener
+name|ConfigurationNodeParentGetter
 block|{
-comment|/**      * Invoked when a new set of objects was displayed      * @param application       */
-specifier|public
-name|void
-name|currentObjectsChanged
+name|ConfigurationNode
+name|getParent
 parameter_list|(
-name|MultipleObjectsDisplayEvent
-name|e
-parameter_list|,
-name|Application
-name|application
+name|ConfigurationNode
+name|node
 parameter_list|)
 function_decl|;
 block|}

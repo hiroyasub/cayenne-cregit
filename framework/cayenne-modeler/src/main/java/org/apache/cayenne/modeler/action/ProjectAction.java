@@ -103,20 +103,6 @@ name|CayenneAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|ProjectPath
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -389,8 +375,8 @@ specifier|public
 name|boolean
 name|enableForPath
 parameter_list|(
-name|ProjectPath
-name|path
+name|Object
+name|object
 parameter_list|)
 block|{
 return|return

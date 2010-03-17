@@ -123,6 +123,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ConfigurationNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|modeler
 operator|.
 name|action
@@ -1101,9 +1115,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|project2
 operator|.
-name|ProjectPath
+name|ConfigurationNodeParentGetter
 import|;
 end_import
 
@@ -2442,9 +2456,12 @@ specifier|public
 name|void
 name|multipleObjectsSelected
 parameter_list|(
-name|ProjectPath
+name|ConfigurationNode
 index|[]
-name|paths
+name|objects
+parameter_list|,
+name|Application
+name|application
 parameter_list|)
 block|{
 name|processActionsState
@@ -2473,7 +2490,8 @@ name|canCopy
 init|=
 literal|true
 decl_stmt|;
-comment|// cut/copy can be performed if selected objects are on the same level
+comment|// cut/copy can be performed if selected objects are on
+comment|// the same level
 if|if
 condition|(
 operator|!
@@ -2481,7 +2499,10 @@ name|cutAction
 operator|.
 name|enableForPath
 argument_list|(
-name|paths
+operator|(
+name|ConfigurationNode
+operator|)
+name|objects
 index|[
 literal|0
 index|]
@@ -2495,16 +2516,33 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|ConfigurationNodeParentGetter
+name|parentGetter
+init|=
+name|application
+operator|.
+name|getInjector
+argument_list|()
+operator|.
+name|getInstance
+argument_list|(
+name|ConfigurationNodeParentGetter
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 name|Object
 name|parent
 init|=
-name|paths
+name|parentGetter
+operator|.
+name|getParent
+argument_list|(
+name|objects
 index|[
 literal|0
 index|]
-operator|.
-name|getObjectParent
-argument_list|()
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -2515,7 +2553,7 @@ literal|1
 init|;
 name|i
 operator|<
-name|paths
+name|objects
 operator|.
 name|length
 condition|;
@@ -2525,13 +2563,15 @@ control|)
 block|{
 if|if
 condition|(
-name|paths
+name|parentGetter
+operator|.
+name|getParent
+argument_list|(
+name|objects
 index|[
 name|i
 index|]
-operator|.
-name|getObjectParent
-argument_list|()
+argument_list|)
 operator|!=
 name|parent
 operator|||
@@ -2540,7 +2580,10 @@ name|cutAction
 operator|.
 name|enableForPath
 argument_list|(
-name|paths
+operator|(
+name|ConfigurationNode
+operator|)
+name|objects
 index|[
 name|i
 index|]
@@ -2729,7 +2772,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Replaces standard Cut, Copy and Paste action maps, so that accelerators like       * Ctrl+X, Ctrl+C, Ctrl+V would work       */
+comment|/**      * Replaces standard Cut, Copy and Paste action maps, so that accelerators like      * Ctrl+X, Ctrl+C, Ctrl+V would work      */
 specifier|public
 name|void
 name|setupCCP

@@ -3188,6 +3188,9 @@ name|currentObjectsChanged
 parameter_list|(
 name|MultipleObjectsDisplayEvent
 name|e
+parameter_list|,
+name|Application
+name|application
 parameter_list|)
 block|{
 name|actionManager
@@ -3196,8 +3199,10 @@ name|multipleObjectsSelected
 argument_list|(
 name|e
 operator|.
-name|getPaths
+name|getNodes
 argument_list|()
+argument_list|,
+name|application
 argument_list|)
 expr_stmt|;
 block|}

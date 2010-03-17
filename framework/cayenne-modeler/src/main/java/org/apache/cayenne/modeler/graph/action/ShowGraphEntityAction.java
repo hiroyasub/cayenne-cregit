@@ -41,6 +41,20 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|ConfigurationNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
 name|DataChannelDescriptor
 import|;
 end_import
@@ -162,20 +176,6 @@ operator|.
 name|util
 operator|.
 name|CayenneAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|project
-operator|.
-name|ProjectPath
 import|;
 end_import
 
@@ -311,15 +311,12 @@ specifier|public
 name|boolean
 name|enableForPath
 parameter_list|(
-name|ProjectPath
-name|obj
+name|ConfigurationNode
+name|object
 parameter_list|)
 block|{
 return|return
-name|obj
-operator|.
-name|getObject
-argument_list|()
+name|object
 operator|instanceof
 name|Entity
 return|;
@@ -331,7 +328,7 @@ name|Entity
 name|entity
 parameter_list|)
 block|{
-comment|//we're always in same domain
+comment|// we're always in same domain
 name|EditorView
 name|editor
 init|=
