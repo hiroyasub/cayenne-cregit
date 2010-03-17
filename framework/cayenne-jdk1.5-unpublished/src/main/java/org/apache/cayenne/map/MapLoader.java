@@ -137,20 +137,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
-operator|.
-name|DataMapFile
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|util
 operator|.
 name|ResourceLocator
@@ -613,6 +599,14 @@ name|String
 name|JAVA_CLASS_ROOT
 init|=
 literal|"java-class"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|LOCATION_SUFFIX
+init|=
+literal|".map.xml"
 decl_stmt|;
 comment|// Reading from XML
 specifier|private
@@ -3335,8 +3329,6 @@ name|location
 operator|.
 name|endsWith
 argument_list|(
-name|DataMapFile
-operator|.
 name|LOCATION_SUFFIX
 argument_list|)
 condition|)
@@ -3354,8 +3346,6 @@ operator|.
 name|length
 argument_list|()
 operator|-
-name|DataMapFile
-operator|.
 name|LOCATION_SUFFIX
 operator|.
 name|length

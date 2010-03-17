@@ -47,9 +47,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|map
 operator|.
-name|DataMapFile
+name|MapLoader
 import|;
 end_import
 
@@ -453,7 +453,7 @@ name|name
 operator|.
 name|endsWith
 argument_list|(
-name|DataMapFile
+name|MapLoader
 operator|.
 name|LOCATION_SUFFIX
 argument_list|)
@@ -463,7 +463,7 @@ name|name
 operator|.
 name|equals
 argument_list|(
-name|DataMapFile
+name|MapLoader
 operator|.
 name|LOCATION_SUFFIX
 argument_list|)
@@ -486,7 +486,7 @@ block|{
 return|return
 literal|"DataMaps (*"
 operator|+
-name|DataMapFile
+name|MapLoader
 operator|.
 name|LOCATION_SUFFIX
 operator|+
