@@ -721,9 +721,11 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-name|Preference
+name|getApplication
+argument_list|()
 operator|.
-name|CAYENNE_TEMP_PREFERENCE_NODE_NAME_FOR_PROJ
+name|getId
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -739,9 +741,11 @@ name|replace
 argument_list|(
 literal|"/"
 operator|+
-name|Preference
+name|getApplication
+argument_list|()
 operator|.
-name|CAYENNE_TEMP_PREFERENCE_NODE_NAME_FOR_PROJ
+name|getId
+argument_list|()
 argument_list|,
 literal|""
 argument_list|)
