@@ -41,6 +41,14 @@ name|CAYENNE_PREFERENCES_PATH
 init|=
 literal|"org/apache/cayenne"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CAYENNE_TEMP_PREFERENCE_NODE_NAME_FOR_PROJ
+init|=
+literal|"*temp"
+decl_stmt|;
 comment|/**      * Preferences node name for the editor      */
 specifier|public
 specifier|static

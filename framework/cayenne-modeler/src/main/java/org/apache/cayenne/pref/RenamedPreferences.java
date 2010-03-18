@@ -815,6 +815,13 @@ name|Preferences
 name|pref
 parameter_list|)
 block|{
+if|if
+condition|(
+name|listPref
+operator|!=
+literal|null
+condition|)
+block|{
 name|Iterator
 argument_list|<
 name|Preferences
@@ -877,6 +884,7 @@ block|{
 return|return
 literal|true
 return|;
+block|}
 block|}
 block|}
 return|return
