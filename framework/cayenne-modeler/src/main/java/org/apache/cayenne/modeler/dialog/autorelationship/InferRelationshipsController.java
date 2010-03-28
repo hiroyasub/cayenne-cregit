@@ -785,7 +785,7 @@ argument_list|(
 name|strategy
 argument_list|)
 expr_stmt|;
-name|createName
+name|createNames
 argument_list|()
 expr_stmt|;
 name|entitySelector
@@ -846,7 +846,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|InferRelationships
+name|InferredRelationship
 name|temp
 range|:
 name|selectedEntities

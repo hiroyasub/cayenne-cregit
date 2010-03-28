@@ -50,7 +50,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|InferRelationships
+name|InferredRelationship
 block|{
 specifier|private
 name|DbEntity
