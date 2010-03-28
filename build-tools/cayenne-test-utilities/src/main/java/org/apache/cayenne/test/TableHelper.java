@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JDBC utilities class for setting up and analyzing the DB data sets for a single table.  * TableHelper intentionally bypasses Cayenne stack.  */
+comment|/**  * JDBC utility class for setting up and analyzing the DB data sets for a single table.  * TableHelper intentionally bypasses Cayenne stack.  */
 end_comment
 
 begin_class
@@ -239,9 +239,6 @@ name|Object
 name|getObject
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -262,9 +259,6 @@ specifier|public
 name|byte
 name|getByte
 parameter_list|(
-name|String
-name|table
-parameter_list|,
 name|String
 name|column
 parameter_list|)
@@ -288,9 +282,6 @@ index|[]
 name|getBytes
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -311,9 +302,6 @@ specifier|public
 name|int
 name|getInt
 parameter_list|(
-name|String
-name|table
-parameter_list|,
 name|String
 name|column
 parameter_list|)
@@ -336,9 +324,6 @@ name|long
 name|getLong
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -360,9 +345,6 @@ name|double
 name|getDouble
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -383,9 +365,6 @@ specifier|public
 name|boolean
 name|getBoolean
 parameter_list|(
-name|String
-name|table
-parameter_list|,
 name|String
 name|column
 parameter_list|)
@@ -412,9 +391,6 @@ name|Date
 name|getUtilDate
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -440,9 +416,6 @@ name|Date
 name|getSqlDate
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -464,9 +437,6 @@ name|Time
 name|getTime
 parameter_list|(
 name|String
-name|table
-parameter_list|,
-name|String
 name|column
 parameter_list|)
 throws|throws
@@ -487,9 +457,6 @@ specifier|public
 name|Timestamp
 name|getTimestamp
 parameter_list|(
-name|String
-name|table
-parameter_list|,
 name|String
 name|column
 parameter_list|)

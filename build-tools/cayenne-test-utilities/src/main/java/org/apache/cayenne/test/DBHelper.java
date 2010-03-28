@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * JDBC utilities class for setting up and analyzing the DB data sets. DBHelper  * intentionally bypasses Cayenne stack.  */
+comment|/**  * JDBC utility class for setting up and analyzing the DB data sets. DBHelper  * intentionally bypasses Cayenne stack.  */
 end_comment
 
 begin_class
