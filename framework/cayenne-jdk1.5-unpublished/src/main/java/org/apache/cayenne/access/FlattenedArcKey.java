@@ -131,7 +131,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|PkGenerator
+name|DbAdapter
 import|;
 end_import
 
@@ -493,6 +493,31 @@ condition|)
 block|{
 continue|continue;
 block|}
+name|DbAdapter
+name|adapter
+init|=
+name|node
+operator|.
+name|getAdapter
+argument_list|()
+decl_stmt|;
+comment|// skip db-generated... looks like we don't care about the actual PK value
+comment|// here, so no need to retrieve db-generated pk back to Java.
+if|if
+condition|(
+name|adapter
+operator|.
+name|supportsGeneratedKeys
+argument_list|()
+operator|&&
+name|dbAttr
+operator|.
+name|isGenerated
+argument_list|()
+condition|)
+block|{
+continue|continue;
+block|}
 if|if
 condition|(
 name|autoPkDone
@@ -509,21 +534,13 @@ block|}
 comment|// finally, use database generation mechanism
 try|try
 block|{
-name|PkGenerator
-name|pkGenerator
-init|=
-name|node
-operator|.
-name|getAdapter
-argument_list|()
-operator|.
-name|getPkGenerator
-argument_list|()
-decl_stmt|;
 name|Object
 name|pkValue
 init|=
-name|pkGenerator
+name|adapter
+operator|.
+name|getPkGenerator
+argument_list|()
 operator|.
 name|generatePk
 argument_list|(
