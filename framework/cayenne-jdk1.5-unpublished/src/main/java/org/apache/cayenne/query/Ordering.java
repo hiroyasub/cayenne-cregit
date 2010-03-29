@@ -1083,6 +1083,16 @@ name|toString
 argument_list|()
 return|;
 block|}
+comment|/**      * Returns sort order for this ordering      * @since 3.1      */
+specifier|public
+name|SortOrder
+name|getSortOrder
+parameter_list|()
+block|{
+return|return
+name|sortOrder
+return|;
+block|}
 block|}
 end_class
 
