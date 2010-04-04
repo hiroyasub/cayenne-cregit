@@ -476,7 +476,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A main modeler application class that provides a number of services to the Modeler  * components. Configuration properties:  *<ul>  *<li>cayenne.modeler.application.name - name of the application, 'CayenneModeler' is  * default. Used to locate preferences domain among other things.</li>  *<li>cayenne.modeler.pref.version - a version of the preferences DB schema. Default is  * "1.1".</li>  *</ul>  *   */
+comment|/**  * A main modeler application class that provides a number of services to the Modeler  * components. Configuration properties:  *<ul>  *<li>cayenne.modeler.application.name - name of the application, 'CayenneModeler' is  * default. Used to locate preferences domain among other things.</li>  *<li>cayenne.modeler.pref.version - a version of the preferences DB schema. Default is  * "1.1".</li>  *</ul>  */
 end_comment
 
 begin_class
@@ -484,30 +484,6 @@ specifier|public
 class|class
 name|Application
 block|{
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PREFERENCES_VERSION
-init|=
-literal|"1.2"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PREFERENCES_DB_SUBDIRECTORY
-init|=
-literal|"prefs"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PREFERENCES_MAP_PACKAGE
-init|=
-literal|"pref"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -520,19 +496,10 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|PREFERENCES_VERSION_PROPERTY
-init|=
-literal|"cayenne.modeler.pref.version"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
 name|DEFAULT_APPLICATION_NAME
 init|=
 literal|"CayenneModeler"
 decl_stmt|;
-comment|// TODO: implement cleaner IoC approach to avoid using this singleton...
 specifier|protected
 specifier|static
 name|Application
