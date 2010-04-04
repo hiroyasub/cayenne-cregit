@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action that displays one of the objects in main tree,   * and then fires another action (if specified)  */
+comment|/**  * Action that displays one of the objects in main tree, and then fires another action (if  * specified)  */
 end_comment
 
 begin_class
@@ -359,7 +359,7 @@ init|=
 name|getProjectController
 argument_list|()
 decl_stmt|;
-comment|//we're always in same domain
+comment|// we're always in same domain
 name|FindDialog
 operator|.
 name|jumpToResult
@@ -368,7 +368,8 @@ operator|new
 name|Object
 index|[]
 block|{
-name|Application
+name|getApplication
+argument_list|()
 operator|.
 name|getProject
 argument_list|()

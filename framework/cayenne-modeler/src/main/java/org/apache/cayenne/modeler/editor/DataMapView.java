@@ -2408,6 +2408,9 @@ name|DataChannelDescriptor
 operator|)
 name|Application
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|getProject
 argument_list|()
 operator|.
@@ -2582,11 +2585,6 @@ condition|)
 block|{
 return|return;
 block|}
-name|boolean
-name|hasChanges
-init|=
-literal|false
-decl_stmt|;
 comment|// unlink map from any nodes
 for|for
 control|(
@@ -2659,10 +2657,6 @@ name|nextNode
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|hasChanges
-operator|=
-literal|true
-expr_stmt|;
 block|}
 block|}
 comment|// link to a selected node
@@ -2685,10 +2679,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|hasChanges
-operator|=
-literal|true
 expr_stmt|;
 comment|// announce DataNode change
 name|eventController

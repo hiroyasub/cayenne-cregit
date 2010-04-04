@@ -1912,6 +1912,9 @@ name|DataChannelDescriptor
 operator|)
 name|Application
 operator|.
+name|getInstance
+argument_list|()
+operator|.
 name|getProject
 argument_list|()
 operator|.

@@ -205,20 +205,6 @@ name|cayenne
 operator|.
 name|pref
 operator|.
-name|Preference
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|pref
-operator|.
 name|RenamedPreferences
 import|;
 end_import
@@ -528,7 +514,6 @@ argument_list|(
 name|url
 argument_list|)
 decl_stmt|;
-comment|// /!!!!!!!!!!!!!!!!!!! SAVE AS!!!!!!!!!!!!!!
 name|ProjectSaver
 name|saver
 init|=
@@ -721,8 +706,7 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-name|getApplication
-argument_list|()
+name|Application
 operator|.
 name|getId
 argument_list|()
@@ -741,8 +725,7 @@ name|replace
 argument_list|(
 literal|"/"
 operator|+
-name|getApplication
-argument_list|()
+name|Application
 operator|.
 name|getId
 argument_list|()

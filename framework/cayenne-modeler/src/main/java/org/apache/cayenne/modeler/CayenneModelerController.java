@@ -382,7 +382,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Controller of the main application frame.  *   */
+comment|/**  * Controller of the main application frame.  */
 end_comment
 
 begin_class

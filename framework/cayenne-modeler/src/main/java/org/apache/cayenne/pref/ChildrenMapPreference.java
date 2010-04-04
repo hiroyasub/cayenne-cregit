@@ -367,7 +367,9 @@ block|{
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error initing preference"
+literal|"Error initializing preference"
+argument_list|,
+name|e
 argument_list|)
 expr_stmt|;
 block|}

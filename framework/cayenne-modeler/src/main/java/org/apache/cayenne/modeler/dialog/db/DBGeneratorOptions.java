@@ -195,20 +195,6 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|Application
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
 name|ProjectController
 import|;
 end_import
@@ -887,7 +873,7 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|// ===============
-comment|//    Actions
+comment|// Actions
 comment|// ===============
 comment|/**      * Starts options dialog.      */
 specifier|public
@@ -1121,7 +1107,8 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|Application
+name|getApplication
+argument_list|()
 operator|.
 name|getProject
 argument_list|()
