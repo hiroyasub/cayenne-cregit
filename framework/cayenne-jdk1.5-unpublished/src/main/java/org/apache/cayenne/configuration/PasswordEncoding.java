@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
+name|configuration
 package|;
 end_package
 

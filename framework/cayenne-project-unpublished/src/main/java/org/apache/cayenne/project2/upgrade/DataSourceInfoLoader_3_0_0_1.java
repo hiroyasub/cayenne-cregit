@@ -97,7 +97,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
+name|configuration
 operator|.
 name|PasswordEncoding
 import|;
