@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A facade for a collection of DbAdapterFactories. Can be configured to auto-detect all  * adapters known to Cayenne or can work with custom factories.  *   * @since 1.2  * @deprecated since 3.1 in favor of  *             {@link org.apache.cayenne.configuration.DbAdapterFactory} configured via  *             dependency injection.  */
+comment|/**  * A facade for a collection of DbAdapterFactories. Can be configured to auto-detect all  * adapters known to Cayenne or can work with custom factories.  *   * @since 1.2  * @deprecated since 3.1 in favor of  *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured via  *             dependency injection.  */
 end_comment
 
 begin_class

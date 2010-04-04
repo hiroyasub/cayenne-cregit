@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|configuration
+operator|.
+name|server
 package|;
 end_package
 
@@ -42,6 +44,36 @@ operator|.
 name|framework
 operator|.
 name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DataNodeDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|JNDIDataSourceFactory
 import|;
 end_import
 

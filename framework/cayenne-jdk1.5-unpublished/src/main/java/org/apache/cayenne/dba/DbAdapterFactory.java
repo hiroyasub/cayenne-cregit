@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a conditional factory for a specific DbAdapter. Note that the factory can  * potentially return different (or differently configured) DbAdapters for the same  * database based on version information and other metadata.  *   * @since 1.2  * @deprecated since 3.1 in favor of  *             {@link org.apache.cayenne.configuration.DbAdapterFactory} configured via  *             dependency injection.  */
+comment|/**  * Defines a conditional factory for a specific DbAdapter. Note that the factory can  * potentially return different (or differently configured) DbAdapters for the same  * database based on version information and other metadata.  *   * @since 1.2  * @deprecated since 3.1 in favor of  *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured via  *             dependency injection.  */
 end_comment
 
 begin_interface

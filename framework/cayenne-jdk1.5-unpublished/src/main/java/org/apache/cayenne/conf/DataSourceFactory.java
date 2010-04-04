@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A pluggable factory for {@link DataSource} instances used by Cayenne runtime.  *   * @deprecated since 3.1, replaced by  *             {@link org.apache.cayenne.configuration.DataSourceFactory}  */
+comment|/**  * A pluggable factory for {@link DataSource} instances used by Cayenne runtime.  *   * @deprecated since 3.1, replaced by  *             {@link org.apache.cayenne.configuration.server.DataSourceFactory}  */
 end_comment
 
 begin_interface

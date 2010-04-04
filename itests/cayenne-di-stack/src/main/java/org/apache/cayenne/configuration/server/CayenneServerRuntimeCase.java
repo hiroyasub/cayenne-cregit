@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|configuration
+operator|.
+name|server
 package|;
 end_package
 
@@ -98,6 +100,22 @@ operator|.
 name|dbsync
 operator|.
 name|SchemaUpdateStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|CayenneServerRuntime
 import|;
 end_import
 

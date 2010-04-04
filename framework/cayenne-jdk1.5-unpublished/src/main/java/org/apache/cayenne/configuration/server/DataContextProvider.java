@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|configuration
+operator|.
+name|server
 package|;
 end_package
 
@@ -23,7 +25,21 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannel
+name|ConfigurationException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|DataContext
 import|;
 end_import
 
@@ -70,17 +86,17 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is a default implementation of a DataChannel provider that simply returns a  * DataDomain for a given runtime.  *   * @since 3.1  */
+comment|/**  * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|DomainDataChannelProvider
+name|DataContextProvider
 implements|implements
 name|Provider
 argument_list|<
-name|DataChannel
+name|DataContext
 argument_list|>
 block|{
 annotation|@
@@ -90,12 +106,19 @@ name|DataDomain
 name|dataDomain
 decl_stmt|;
 specifier|public
-name|DataChannel
+name|DataContext
 name|get
 parameter_list|()
+throws|throws
+name|ConfigurationException
 block|{
+comment|// TODO: andrus 12.5.2009 - deprecate 'createDataContext' in DataDomain and move
+comment|// it to this provider instead
 return|return
 name|dataDomain
+operator|.
+name|createDataContext
+argument_list|()
 return|;
 block|}
 block|}

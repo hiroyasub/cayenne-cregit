@@ -97,7 +97,9 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|XMLPoolingDataSourceFactory
+name|event
+operator|.
+name|DataNodeEvent
 import|;
 end_import
 
@@ -111,9 +113,9 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|event
+name|server
 operator|.
-name|DataNodeEvent
+name|XMLPoolingDataSourceFactory
 import|;
 end_import
 

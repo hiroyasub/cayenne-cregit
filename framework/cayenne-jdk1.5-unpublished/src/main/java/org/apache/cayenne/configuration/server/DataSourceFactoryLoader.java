@@ -11,18 +11,45 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|configuration
+operator|.
+name|server
 package|;
 end_package
 
-begin_enum
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DataNodeDescriptor
+import|;
+end_import
+
+begin_comment
+comment|/**  * Provides instances of {@link DataSourceFactory} for DataNodes.  *   * @since 3.1  */
+end_comment
+
+begin_interface
 specifier|public
-enum|enum
-name|RuntimeName
+interface|interface
+name|DataSourceFactoryLoader
 block|{
-name|DEFAULT
+comment|/**      * Returns a DataSourceFactory for a given {@link DataNodeDescriptor} configuration      * object. The factory should be specified in the node descriptor explicitly by the      * user. Cayenne will inject dependencies in all user-provided factories.      */
+name|DataSourceFactory
+name|getDataSourceFactory
+parameter_list|(
+name|DataNodeDescriptor
+name|nodeDescriptor
+parameter_list|)
+function_decl|;
 block|}
-end_enum
+end_interface
 
 end_unit
 

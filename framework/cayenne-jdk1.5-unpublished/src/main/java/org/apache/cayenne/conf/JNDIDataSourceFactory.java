@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Looks up DataSource objects via JNDI.  *   * @deprecated since 3.1, replaced by  *             {@link org.apache.cayenne.configuration.JNDIDataSourceFactory}.  */
+comment|/**  * Looks up DataSource objects via JNDI.  *   * @deprecated since 3.1, replaced by  *             {@link org.apache.cayenne.configuration.server.JNDIDataSourceFactory}.  */
 end_comment
 
 begin_class

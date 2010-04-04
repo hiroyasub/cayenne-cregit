@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|configuration
+operator|.
+name|server
 package|;
 end_package
 
@@ -32,6 +34,22 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|PropertyDataSourceFactory
 import|;
 end_import
 

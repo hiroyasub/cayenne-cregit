@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|configuration
+operator|.
+name|server
 package|;
 end_package
 
@@ -39,7 +41,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|CayenneServerModule
+name|CayenneRuntime
 import|;
 end_import
 

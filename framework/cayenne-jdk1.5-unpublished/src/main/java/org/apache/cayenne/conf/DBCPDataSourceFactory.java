@@ -68,7 +68,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DataSourceFactory that creates a connection pool based on Apache Jakarta<a  * href="http://jakarta.apache.org/commons/dbcp/">commons-dbcp</a>. If you are using this  * factory, commons-pool and commons-dbcp jars must be present in runtime.  *<p/>  * DBCPDataSourceFactory can be selected in the Modeler for a DataNode. DBCP pool  * configuration is done via a properties file that is specified in the modeler. See this  *<a href="http://cwiki.apache.org/CAYDOC/DBCPDataSourceFactory">wiki page</a> for the  * list of supported properties.  *   * @since 1.2  * @deprecated since 3.1 replaced with {@link org.apache.cayenne.configuration.DBCPDataSourceFactory}  */
+comment|/**  * A DataSourceFactory that creates a connection pool based on Apache Jakarta<a  * href="http://jakarta.apache.org/commons/dbcp/">commons-dbcp</a>. If you are using this  * factory, commons-pool and commons-dbcp jars must be present in runtime.  *<p/>  * DBCPDataSourceFactory can be selected in the Modeler for a DataNode. DBCP pool  * configuration is done via a properties file that is specified in the modeler. See this  *<a href="http://cwiki.apache.org/CAYDOC/DBCPDataSourceFactory">wiki page</a> for the  * list of supported properties.  *   * @since 1.2  * @deprecated since 3.1 replaced with {@link org.apache.cayenne.configuration.server.DBCPDataSourceFactory}  */
 end_comment
 
 begin_class

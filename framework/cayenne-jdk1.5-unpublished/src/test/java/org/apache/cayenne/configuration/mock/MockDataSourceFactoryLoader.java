@@ -41,6 +41,8 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|server
+operator|.
 name|DataSourceFactory
 import|;
 end_import
@@ -54,6 +56,8 @@ operator|.
 name|cayenne
 operator|.
 name|configuration
+operator|.
+name|server
 operator|.
 name|DataSourceFactoryLoader
 import|;

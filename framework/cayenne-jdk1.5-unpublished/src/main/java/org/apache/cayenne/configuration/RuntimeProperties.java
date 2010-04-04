@@ -15,20 +15,6 @@ name|configuration
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|runtime
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
 begin_comment
 comment|/**  * Represents a properties map for a given {@link CayenneRuntime}.  *   * @since 3.1  */
 end_comment

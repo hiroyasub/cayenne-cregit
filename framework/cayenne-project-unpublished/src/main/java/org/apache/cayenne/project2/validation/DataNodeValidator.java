@@ -55,6 +55,8 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|server
+operator|.
 name|XMLPoolingDataSourceFactory
 import|;
 end_import

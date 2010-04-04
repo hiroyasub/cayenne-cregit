@@ -67,6 +67,8 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|server
+operator|.
 name|DbAdapterDetector
 import|;
 end_import

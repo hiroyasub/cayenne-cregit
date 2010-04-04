@@ -139,7 +139,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|CayenneServerModule
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -153,7 +153,9 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|DataChannelDescriptor
+name|server
+operator|.
+name|CayenneServerModule
 import|;
 end_import
 
