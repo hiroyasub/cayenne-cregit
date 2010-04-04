@@ -70,7 +70,7 @@ name|CayenneServerRuntime
 extends|extends
 name|CayenneRuntime
 block|{
-comment|/**      * Creates a server runtime object based on XML configuration file called      * "cayenne-<name>.xml" and configured the runtime with a standard set of services      * contained in {@link CayenneServerModule}.      */
+comment|/**      * Creates a server runtime object based on XML configuration file called      * "cayenne-<name>.xml" and configures the runtime with a standard set of services      * contained in {@link CayenneServerModule}.      */
 specifier|public
 name|CayenneServerRuntime
 parameter_list|(
