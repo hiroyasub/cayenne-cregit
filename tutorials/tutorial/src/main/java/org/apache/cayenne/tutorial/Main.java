@@ -63,7 +63,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObjectUtils
+name|Cayenne
 import|;
 end_import
 
@@ -556,7 +556,7 @@ init|=
 operator|(
 name|Artist
 operator|)
-name|DataObjectUtils
+name|Cayenne
 operator|.
 name|objectForQuery
 argument_list|(

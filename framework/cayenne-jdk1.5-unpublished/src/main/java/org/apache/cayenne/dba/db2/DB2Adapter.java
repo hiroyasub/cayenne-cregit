@@ -275,6 +275,8 @@ extends|extends
 name|JdbcAdapter
 block|{
 comment|/**      * Creates a DB2 specific PK Generator.      */
+annotation|@
+name|Override
 specifier|protected
 name|PkGenerator
 name|createPkGenerator

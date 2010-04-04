@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API needed to handle differences between various databases accessed via JDBC.  * Implementing classed are intended to be pluggable database-specific adapters.  * DbAdapter-based architecture is introduced to solve the following problems:  *<ul>  *<li>Make Cayenne code independent from SQL syntax differences between different RDBMS.  *<li>Allow for vendor-specific tuning of JDBC access.  *</ul>  */
+comment|/**  * A Cayenne extension point that abstracts the differences between specifics of JDBC  * interfaces to various databases. Cayenne already ships with a number of built-in  * adapters for most common databases and users can provide their own custom adapters.  */
 end_comment
 
 begin_interface
@@ -373,7 +373,6 @@ name|column
 parameter_list|)
 function_decl|;
 comment|/**      * @since 3.0      */
-specifier|public
 name|QuotingStrategy
 name|getQuotingStrategy
 parameter_list|(

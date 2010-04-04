@@ -107,6 +107,20 @@ name|ObjRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|CayenneMapEntry
+import|;
+end_import
+
 begin_comment
 comment|/**  * Preprocessor and router of SelectQuery prefetches.  *   * @since 1.2  */
 end_comment
@@ -262,6 +276,9 @@ argument_list|()
 decl_stmt|;
 comment|// find last relationship
 name|Iterator
+argument_list|<
+name|CayenneMapEntry
+argument_list|>
 name|it
 init|=
 name|entity

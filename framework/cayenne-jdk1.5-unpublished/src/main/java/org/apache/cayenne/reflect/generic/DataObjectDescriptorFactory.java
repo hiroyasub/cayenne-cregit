@@ -230,6 +230,9 @@ name|ObjEntity
 name|entity
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|entityClass
 parameter_list|)
 block|{
@@ -551,6 +554,9 @@ name|String
 name|propertyName
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|propertyType
 parameter_list|)
 throws|throws

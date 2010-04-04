@@ -226,6 +226,9 @@ condition|(
 name|value
 operator|instanceof
 name|Enum
+argument_list|<
+name|?
+argument_list|>
 condition|)
 block|{
 name|Enum

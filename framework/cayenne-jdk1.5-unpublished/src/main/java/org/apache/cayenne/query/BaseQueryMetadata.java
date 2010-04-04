@@ -494,6 +494,9 @@ condition|(
 name|root
 operator|instanceof
 name|Class
+argument_list|<
+name|?
+argument_list|>
 condition|)
 block|{
 name|entity

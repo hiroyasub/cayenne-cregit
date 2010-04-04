@@ -500,21 +500,7 @@ name|AutoAdapter
 implements|implements
 name|DbAdapter
 block|{
-specifier|final
-specifier|static
-name|String
-name|DEFAULT_QUOTE_SQL_IDENTIFIERS_CHAR_START
-init|=
-literal|"\""
-decl_stmt|;
-specifier|final
-specifier|static
-name|String
-name|DEFAULT_QUOTE_SQL_IDENTIFIERS_CHAR_END
-init|=
-literal|"\""
-decl_stmt|;
-comment|/**      * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured      *             via dependency injection.      */
+comment|/**      * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */
 specifier|static
 specifier|final
 name|List
@@ -598,7 +584,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Allows application code to add a sniffer to detect a custom adapter.      *       * @since 3.0      * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured      *             via dependency injection.      */
+comment|/**      * Allows application code to add a sniffer to detect a custom adapter.      *       * @since 3.0      * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */
 specifier|public
 specifier|static
 name|void
@@ -616,7 +602,7 @@ name|factory
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a DbAdapterFactory configured to detect all databases officially supported      * by Cayenne.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured      *             via dependency injection.      */
+comment|/**      * Returns a DbAdapterFactory configured to detect all databases officially supported      * by Cayenne.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */
 specifier|public
 specifier|static
 name|DbAdapterFactory
@@ -647,7 +633,7 @@ specifier|volatile
 name|DbAdapter
 name|adapter
 decl_stmt|;
-comment|/**      * Creates an AutoAdapter that can detect adapters known to Cayenne.      *       * @deprecated since 3.1 as {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             parameter is required.      */
+comment|/**      * Creates an AutoAdapter that can detect adapters known to Cayenne.      *       * @deprecated since 3.1 as      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             parameter is required.      */
 specifier|public
 name|AutoAdapter
 parameter_list|(
@@ -666,7 +652,7 @@ name|dataSource
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates an AutoAdapter with specified adapter factory and DataSource. If      * adapterFactory is null, default factory is used.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured      *             via dependency injection.      */
+comment|/**      * Creates an AutoAdapter with specified adapter factory and DataSource. If      * adapterFactory is null, default factory is used.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */
 specifier|public
 name|AutoAdapter
 parameter_list|(
@@ -871,7 +857,7 @@ operator|=
 name|adapterProvider
 expr_stmt|;
 block|}
-comment|/**      * Called from constructor to initialize factory in case no factory was specified by      * the object creator.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory} configured      *             via dependency injection.      */
+comment|/**      * Called from constructor to initialize factory in case no factory was specified by      * the object creator.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */
 specifier|protected
 name|DbAdapterFactory
 name|createDefaultFactory
@@ -1325,24 +1311,6 @@ argument_list|,
 name|column
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getIdentifiersStartQuote
-parameter_list|()
-block|{
-return|return
-name|DEFAULT_QUOTE_SQL_IDENTIFIERS_CHAR_START
-return|;
-block|}
-specifier|public
-name|String
-name|getIdentifiersEndQuote
-parameter_list|()
-block|{
-return|return
-name|DEFAULT_QUOTE_SQL_IDENTIFIERS_CHAR_END
-return|;
 block|}
 specifier|public
 name|QuotingStrategy
