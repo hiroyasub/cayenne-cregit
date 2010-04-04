@@ -104,7 +104,7 @@ name|Module
 index|[]
 name|modules
 decl_stmt|;
-comment|/**      * Initializes Cayenne runtime with an array of DI modules.      */
+comment|/**      * Creates a CayenneRuntime with configuration based on supplied array of DI modules.      */
 specifier|public
 name|CayenneRuntime
 parameter_list|(
@@ -171,7 +171,7 @@ name|modules
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns runtime name. By default a configuration file name contains a runtime name      * in it, to allow multiple runtimes in a single JVM. E.g. a typical config file name      * has the form of "cayenne-<name>.xml".      */
+comment|/**      * Returns runtime name. By default a name of Cayenne project XML file contains a      * runtime name in it in the form "cayenne-<name>.xml".      */
 specifier|public
 name|String
 name|getName

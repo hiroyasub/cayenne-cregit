@@ -68,6 +68,7 @@ name|CayenneServerRuntime
 extends|extends
 name|CayenneRuntime
 block|{
+comment|/**      * Creates a server runtime object based on XML configuration file called      * "cayenne-<name>.xml" and configured the runtime with a standard set of services      * contained in {@link CayenneServerModule}.      */
 specifier|public
 name|CayenneServerRuntime
 parameter_list|(
@@ -87,6 +88,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Creates a server runtime object based on a set of custom DI modules. When      * implementing custom modules, refer to {@link CayenneServerModule} for the minimal      * set of services required by Cayenne. The easiest way to do it is to pass      * {@link CayenneServerModule} or its subclass as one of the modules to this      * constructor.      */
 specifier|public
 name|CayenneServerRuntime
 parameter_list|(
