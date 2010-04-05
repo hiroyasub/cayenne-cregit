@@ -2406,6 +2406,15 @@ operator|.
 name|absolutePath
 argument_list|()
 argument_list|)
+operator|.
+name|node
+argument_list|(
+name|getApplication
+argument_list|()
+operator|.
+name|getNewProjectTemporaryName
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 block|}
