@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -90,7 +100,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a server runtime object based on a set of custom DI modules. When      * implementing custom modules, refer to {@link CayenneServerModule} for the minimal      * set of services required by Cayenne. The easiest way to do it is to pass      * {@link CayenneServerModule} or its subclass as one of the modules to this      * constructor.      */
+comment|/**      * Creates a server runtime object based on an array of custom DI modules. When      * implementing custom modules, refer to {@link CayenneServerModule} for the minimal      * set of services required by Cayenne. The easiest way to do it is to pass      * {@link CayenneServerModule} or its subclass as one of the modules to this      * constructor.      */
 specifier|public
 name|CayenneServerRuntime
 parameter_list|(
@@ -99,6 +109,28 @@ name|name
 parameter_list|,
 name|Module
 modifier|...
+name|modules
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|name
+argument_list|,
+name|modules
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Creates a server runtime object based on a collection of DI modules. When      * implementing custom modules, refer to {@link CayenneServerModule} for the minimal      * set of services required by Cayenne. The easiest way to do it is to pass      * {@link CayenneServerModule} or its subclass as one of the modules to this      * constructor.      */
+specifier|public
+name|CayenneServerRuntime
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|Collection
+argument_list|<
+name|Module
+argument_list|>
 name|modules
 parameter_list|)
 block|{
