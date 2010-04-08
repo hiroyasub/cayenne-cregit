@@ -240,10 +240,7 @@ literal|"is not"
 return|;
 block|}
 return|return
-name|getExpressionOperator
-argument_list|(
-name|index
-argument_list|)
+literal|"<>"
 return|;
 block|}
 annotation|@
