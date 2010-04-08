@@ -74,18 +74,6 @@ name|this
 argument_list|)
 return|;
 block|}
-specifier|public
-name|EJBQLEquals
-name|getParent
-parameter_list|()
-block|{
-return|return
-operator|(
-name|EJBQLEquals
-operator|)
-name|parent
-return|;
-block|}
 block|}
 end_class
 
