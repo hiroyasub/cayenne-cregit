@@ -96,7 +96,7 @@ name|assertTrue
 argument_list|(
 name|handler
 operator|instanceof
-name|DefaultRequestHandler
+name|SessionContextRequestHandler
 argument_list|)
 expr_stmt|;
 name|RequestHandler

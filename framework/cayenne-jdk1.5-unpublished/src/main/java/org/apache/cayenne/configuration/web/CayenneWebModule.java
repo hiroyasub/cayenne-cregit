@@ -75,7 +75,7 @@ argument_list|)
 operator|.
 name|to
 argument_list|(
-name|DefaultRequestHandler
+name|SessionContextRequestHandler
 operator|.
 name|class
 argument_list|)
