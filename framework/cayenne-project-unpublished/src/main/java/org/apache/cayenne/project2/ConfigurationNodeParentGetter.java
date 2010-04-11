@@ -29,6 +29,10 @@ name|ConfigurationNode
 import|;
 end_import
 
+begin_comment
+comment|/**  * A service to retrieve parents of configuration nodes.  *   * @since 3.1  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
