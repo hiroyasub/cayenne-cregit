@@ -95,7 +95,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventManager
+name|DefaultEventManager
 operator|.
 name|Dispatch
 import|;

@@ -91,7 +91,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventManager
+name|DefaultEventManager
 import|;
 end_import
 
@@ -138,7 +138,7 @@ operator|.
 name|EMPTY_MAP
 argument_list|,
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -231,7 +231,7 @@ argument_list|,
 name|props
 argument_list|,
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -277,7 +277,7 @@ operator|.
 name|EMPTY_MAP
 argument_list|,
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -359,7 +359,7 @@ argument_list|,
 name|props
 argument_list|,
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 argument_list|)
 decl_stmt|;

@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventManager
+name|MockEventManager
 import|;
 end_import
 
@@ -136,7 +136,7 @@ argument_list|,
 name|TEST_DEFAULTS
 argument_list|,
 operator|new
-name|EventManager
+name|MockEventManager
 argument_list|()
 argument_list|)
 expr_stmt|;

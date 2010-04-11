@@ -105,7 +105,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventManager
+name|DefaultEventManager
 import|;
 end_import
 
@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of the AccessStack that has a single DataNode per DataMap.  *   */
+comment|/**  * Default implementation of the AccessStack that has a single DataNode per DataMap.  */
 end_comment
 
 begin_class
@@ -215,7 +215,7 @@ operator|.
 name|setEventManager
 argument_list|(
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|(
 literal|2
 argument_list|)

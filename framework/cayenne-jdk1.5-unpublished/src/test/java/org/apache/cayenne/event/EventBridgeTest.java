@@ -195,7 +195,7 @@ name|EventManager
 name|manager
 init|=
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 decl_stmt|;
 name|bridge
@@ -241,7 +241,7 @@ name|EventManager
 name|newManager
 init|=
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 decl_stmt|;
 name|bridge
@@ -324,7 +324,7 @@ name|EventManager
 name|manager
 init|=
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 decl_stmt|;
 name|bridge
@@ -412,7 +412,7 @@ name|EventManager
 name|manager
 init|=
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|(
 literal|2
 argument_list|)

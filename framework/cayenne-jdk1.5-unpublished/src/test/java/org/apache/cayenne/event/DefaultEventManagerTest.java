@@ -74,7 +74,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|EventManagerTest
+name|DefaultEventManagerTest
 extends|extends
 name|TestCase
 implements|implements
@@ -84,17 +84,17 @@ comment|// used for counting received events on the class
 specifier|public
 specifier|static
 name|int
-name|_numberOfReceivedEventsForClass
+name|numberOfReceivedEventsForClass
 decl_stmt|;
 comment|// used for counting received events per listener instance
 specifier|public
 name|int
-name|_numberOfReceivedEvents
+name|numberOfReceivedEvents
 decl_stmt|;
 comment|// the event manager used for testing
 specifier|private
 name|EventManager
-name|_eventManager
+name|eventManager
 decl_stmt|;
 annotation|@
 name|Override
@@ -103,17 +103,17 @@ name|void
 name|setUp
 parameter_list|()
 block|{
-name|_eventManager
+name|eventManager
 operator|=
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|()
 expr_stmt|;
-name|_numberOfReceivedEvents
+name|numberOfReceivedEvents
 operator|=
 literal|0
 expr_stmt|;
-name|_numberOfReceivedEventsForClass
+name|numberOfReceivedEventsForClass
 operator|=
 literal|0
 expr_stmt|;
@@ -129,10 +129,10 @@ init|=
 operator|new
 name|MockListener
 argument_list|(
-name|_eventManager
+name|eventManager
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -153,14 +153,14 @@ comment|// test concurrent modification of the queue ... on event listener would
 comment|// adding another listener
 comment|// add more than one listener to see that dispatch can proceed after one of the
 comment|// listeners recats to event
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
 operator|new
 name|MockListener
 argument_list|(
-name|_eventManager
+name|eventManager
 argument_list|)
 argument_list|,
 literal|"processEvent"
@@ -174,7 +174,7 @@ operator|.
 name|mockSubject
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -201,12 +201,12 @@ init|=
 operator|new
 name|MockListener
 argument_list|(
-name|_eventManager
+name|eventManager
 argument_list|,
 name|this
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -229,14 +229,14 @@ comment|// test concurrent modification of the queue ... on event listener would
 comment|// adding another listener
 comment|// add more than one listener to see that dispatch can proceed after one of the
 comment|// listeners recats to event
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
 operator|new
 name|MockListener
 argument_list|(
-name|_eventManager
+name|eventManager
 argument_list|,
 name|this
 argument_list|)
@@ -254,7 +254,7 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -292,7 +292,7 @@ argument_list|,
 literal|"hansi"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -328,7 +328,7 @@ block|{
 comment|// null notification
 try|try
 block|{
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -375,7 +375,7 @@ argument_list|,
 literal|""
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -420,7 +420,7 @@ argument_list|,
 literal|""
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -472,7 +472,7 @@ argument_list|,
 literal|"hansi"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -524,7 +524,7 @@ argument_list|,
 literal|"hansi"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -574,12 +574,12 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
 operator|new
-name|EventManagerTest
+name|DefaultEventManagerTest
 argument_list|()
 argument_list|,
 literal|"seeNotification"
@@ -602,7 +602,7 @@ operator|.
 name|gc
 argument_list|()
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -621,7 +621,7 @@ name|assertEquals
 argument_list|(
 literal|0
 argument_list|,
-name|_numberOfReceivedEventsForClass
+name|numberOfReceivedEventsForClass
 argument_list|)
 expr_stmt|;
 block|}
@@ -647,7 +647,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -662,7 +662,7 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -706,7 +706,7 @@ literal|"XXX"
 argument_list|)
 decl_stmt|;
 comment|// we register a method that takes a CayenneEvent or subclass thereof..
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -722,7 +722,7 @@ name|subject
 argument_list|)
 expr_stmt|;
 comment|// ..but post a subclass of EventObject that is not compatible with CayenneEvent
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -750,16 +750,16 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|EventManagerTest
+name|DefaultEventManagerTest
 name|listener1
 init|=
 name|this
 decl_stmt|;
-name|EventManagerTest
+name|DefaultEventManagerTest
 name|listener2
 init|=
 operator|new
-name|EventManagerTest
+name|DefaultEventManagerTest
 argument_list|()
 decl_stmt|;
 name|EventSubject
@@ -777,7 +777,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -792,7 +792,7 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -807,7 +807,7 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -862,7 +862,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -879,7 +879,7 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -927,7 +927,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -942,7 +942,7 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -959,7 +959,7 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -992,16 +992,16 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|EventManagerTest
+name|DefaultEventManagerTest
 name|listener1
 init|=
 name|this
 decl_stmt|;
-name|EventManagerTest
+name|DefaultEventManagerTest
 name|listener2
 init|=
 operator|new
-name|EventManagerTest
+name|DefaultEventManagerTest
 argument_list|()
 decl_stmt|;
 name|EventSubject
@@ -1019,7 +1019,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1036,7 +1036,7 @@ argument_list|,
 name|listener1
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1051,7 +1051,7 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|postEvent
 argument_list|(
@@ -1108,7 +1108,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1128,7 +1128,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1159,7 +1159,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1178,7 +1178,7 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1192,7 +1192,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1221,7 +1221,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1242,7 +1242,7 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1256,7 +1256,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1285,7 +1285,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1306,7 +1306,7 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1322,7 +1322,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1351,7 +1351,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1372,7 +1372,7 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1388,7 +1388,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1417,7 +1417,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1438,7 +1438,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1454,7 +1454,7 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1513,7 +1513,7 @@ argument_list|,
 literal|"XXX3"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1528,7 +1528,7 @@ argument_list|,
 name|subject1
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1543,7 +1543,7 @@ argument_list|,
 name|subject2
 argument_list|)
 expr_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1564,7 +1564,7 @@ name|Assert
 operator|.
 name|assertTrue
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1576,7 +1576,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1588,7 +1588,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1602,7 +1602,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1616,7 +1616,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1647,7 +1647,7 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|_eventManager
+name|eventManager
 operator|.
 name|addListener
 argument_list|(
@@ -1681,7 +1681,7 @@ name|Assert
 operator|.
 name|assertFalse
 argument_list|(
-name|_eventManager
+name|eventManager
 operator|.
 name|removeListener
 argument_list|(
@@ -1699,10 +1699,10 @@ name|CayenneEvent
 name|event
 parameter_list|)
 block|{
-name|_numberOfReceivedEvents
+name|numberOfReceivedEvents
 operator|++
 expr_stmt|;
-name|_numberOfReceivedEventsForClass
+name|numberOfReceivedEventsForClass
 operator|++
 expr_stmt|;
 block|}
@@ -1717,7 +1717,7 @@ name|int
 name|expected
 parameter_list|,
 specifier|final
-name|EventManagerTest
+name|DefaultEventManagerTest
 name|listener
 parameter_list|)
 throws|throws
@@ -1745,7 +1745,7 @@ name|expected
 argument_list|,
 name|listener
 operator|.
-name|_numberOfReceivedEvents
+name|numberOfReceivedEvents
 argument_list|)
 expr_stmt|;
 block|}
@@ -1792,7 +1792,7 @@ name|assertEquals
 argument_list|(
 name|expected
 argument_list|,
-name|_numberOfReceivedEventsForClass
+name|numberOfReceivedEventsForClass
 argument_list|)
 expr_stmt|;
 block|}

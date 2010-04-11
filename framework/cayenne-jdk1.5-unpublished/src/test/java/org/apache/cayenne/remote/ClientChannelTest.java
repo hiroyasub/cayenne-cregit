@@ -163,7 +163,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventBridge
+name|DefaultEventManager
 import|;
 end_import
 
@@ -177,7 +177,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventManager
+name|EventBridge
 import|;
 end_import
 
@@ -234,20 +234,6 @@ operator|.
 name|query
 operator|.
 name|SelectQuery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|remote
-operator|.
-name|ClientChannel
 import|;
 end_import
 
@@ -1124,7 +1110,7 @@ argument_list|,
 literal|false
 argument_list|,
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|(
 literal|2
 argument_list|)
@@ -1156,7 +1142,7 @@ argument_list|,
 literal|false
 argument_list|,
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|(
 literal|2
 argument_list|)

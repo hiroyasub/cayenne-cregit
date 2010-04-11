@@ -73,6 +73,20 @@ name|cayenne
 operator|.
 name|event
 operator|.
+name|DefaultEventManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|event
+operator|.
 name|EventManager
 import|;
 end_import
@@ -199,7 +213,7 @@ name|cayenne
 operator|.
 name|remote
 operator|.
-name|MockClientConnection
+name|ClientChannel
 import|;
 end_import
 
@@ -213,7 +227,7 @@ name|cayenne
 operator|.
 name|remote
 operator|.
-name|ClientChannel
+name|MockClientConnection
 import|;
 end_import
 
@@ -957,7 +971,7 @@ name|EventManager
 name|eventManager
 init|=
 operator|new
-name|EventManager
+name|DefaultEventManager
 argument_list|(
 literal|0
 argument_list|)
