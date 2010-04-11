@@ -91,6 +91,20 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
 begin_comment
 comment|/**  * A superclass of possible Cayenne runtime objects. A CayenneRuntime is the main access  * point to a given Cayenne stack. It provides a default Cayenne configuration as well as  * a way to customize this configuration via a built in dependency injection container.  *   * @since 3.1  */
 end_comment
@@ -103,7 +117,7 @@ name|CayenneRuntime
 block|{
 specifier|protected
 name|String
-name|name
+name|configurationLocation
 decl_stmt|;
 specifier|protected
 name|Injector
@@ -119,7 +133,7 @@ specifier|public
 name|CayenneRuntime
 parameter_list|(
 name|String
-name|name
+name|configurationLocation
 parameter_list|,
 name|Module
 modifier|...
@@ -128,7 +142,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|name
+name|configurationLocation
 operator|==
 literal|null
 condition|)
@@ -137,7 +151,7 @@ throw|throw
 operator|new
 name|NullPointerException
 argument_list|(
-literal|"Null runtime name"
+literal|"Null runtime configurationLocation"
 argument_list|)
 throw|;
 block|}
@@ -159,9 +173,9 @@ expr_stmt|;
 block|}
 name|this
 operator|.
-name|name
+name|configurationLocation
 operator|=
-name|name
+name|configurationLocation
 expr_stmt|;
 name|this
 operator|.
@@ -186,7 +200,7 @@ specifier|public
 name|CayenneRuntime
 parameter_list|(
 name|String
-name|name
+name|configurationLocation
 parameter_list|,
 name|Collection
 argument_list|<
@@ -197,7 +211,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|name
+name|configurationLocation
 operator|==
 literal|null
 condition|)
@@ -206,15 +220,15 @@ throw|throw
 operator|new
 name|NullPointerException
 argument_list|(
-literal|"Null runtime name"
+literal|"Null runtime configurationLocation"
 argument_list|)
 throw|;
 block|}
 name|this
 operator|.
-name|name
+name|configurationLocation
 operator|=
-name|name
+name|configurationLocation
 expr_stmt|;
 if|if
 condition|(
@@ -269,14 +283,14 @@ name|modules
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns runtime name. By default a name of Cayenne project XML file contains a      * runtime name in it in the form "cayenne-<name>.xml".      */
+comment|/**      * Returns location of the runtime configuration resource. E.g. "cayenne-xyz.xml".      * Configuration URL is passing this location to {@link ResourceLocator}.      */
 specifier|public
 name|String
-name|getName
+name|getConfigurationLocation
 parameter_list|()
 block|{
 return|return
-name|name
+name|configurationLocation
 return|;
 block|}
 comment|/**      * Returns an array of modules used to initialize this runtime.      */

@@ -202,7 +202,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A filter that creates a Cayenne server runtime, possibly including custom modules. By  * default runtime includes {@link CayenneServerModule} and {@link CayenneWebModule}. Any  * custom modules are loaded after the two standard ones to allow custom service  * overrides. Filter initialization parameters:  *<ul>  *<li>runtime-name - (optional) a name of Cayenne runtime. When looking for a Cayenne  * configuration XML file in the classpath, Cayenne derives the name of the file from the  * value of this parameter. If "runtime-name" is "foo", configuration file name is assumed  * to be "cayenne-foo.xml". By default filter name is used as runtime name.  *<li>extra-modules - (optional) a comma or space-separated list of class names, with  * each class implementing {@link Module} interface. These are the custom modules loaded  * after the two standard ones that allow users to override any Cayenne runtime aspects,  * e.g. {@link RequestHandler}. Each custom module must have a no-arg constructor.  *</ul>  *<p>  * CayenneFilter is a great utility to quickly start a Cayenne application. More advanced  * apps most likely will not use it, relying on their own configuration mechanism (such as  * Guice, Spring, etc.)  *   * @since 3.1  */
+comment|/**  * A filter that creates a Cayenne server runtime, possibly including custom modules. By  * default runtime includes {@link CayenneServerModule} and {@link CayenneWebModule}. Any  * custom modules are loaded after the two standard ones to allow custom service  * overrides. Filter initialization parameters:  *<ul>  *<li>configuration-location - (optional) a name of Cayenne configuration XML file that  * will be used to load Cayenne stack. If missing, the filter name will be used to derive  * the location using the following naming convention: if filter name is "foo",  * configuration file name is name is "cayenne-foo.xml".  *<li>extra-modules - (optional) a comma or space-separated list of class names, with  * each class implementing {@link Module} interface. These are the custom modules loaded  * after the two standard ones that allow users to override any Cayenne runtime aspects,  * e.g. {@link RequestHandler}. Each custom module must have a no-arg constructor.  *</ul>  *<p>  * CayenneFilter is a great utility to quickly start a Cayenne application. More advanced  * apps most likely will not use it, relying on their own configuration mechanism (such as  * Guice, Spring, etc.)  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -215,9 +215,9 @@ block|{
 specifier|static
 specifier|final
 name|String
-name|RUNTIME_NAME_PARAMETER
+name|CONFIGURATION_LOCATION_PARAMETER
 init|=
-literal|"runtime-name"
+literal|"configuration-location"
 decl_stmt|;
 specifier|static
 specifier|final
@@ -250,33 +250,37 @@ name|getServletContext
 argument_list|()
 expr_stmt|;
 name|String
-name|runtimeName
+name|configurationLocation
 init|=
 name|config
 operator|.
 name|getInitParameter
 argument_list|(
-name|RUNTIME_NAME_PARAMETER
+name|CONFIGURATION_LOCATION_PARAMETER
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|runtimeName
+name|configurationLocation
 operator|==
 literal|null
 condition|)
 block|{
-name|runtimeName
+name|configurationLocation
 operator|=
+literal|"cayenne-"
+operator|+
 name|config
 operator|.
 name|getFilterName
 argument_list|()
+operator|+
+literal|".xml"
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|runtimeName
+name|configurationLocation
 operator|==
 literal|null
 condition|)
@@ -287,7 +291,7 @@ name|ServletException
 argument_list|(
 literal|"Can't initialize Cayenne runtime. CayenneFilter has no name and no '"
 operator|+
-name|RUNTIME_NAME_PARAMETER
+name|CONFIGURATION_LOCATION_PARAMETER
 operator|+
 literal|"' parameter"
 argument_list|)
@@ -315,7 +319,7 @@ argument_list|(
 operator|new
 name|CayenneServerModule
 argument_list|(
-name|runtimeName
+name|configurationLocation
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -447,7 +451,7 @@ init|=
 operator|new
 name|CayenneServerRuntime
 argument_list|(
-name|runtimeName
+name|configurationLocation
 argument_list|,
 name|modules
 argument_list|)

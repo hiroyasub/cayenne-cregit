@@ -129,20 +129,6 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationNameMapper
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
 name|ConfigurationTree
 import|;
 end_import
@@ -371,12 +357,6 @@ specifier|protected
 name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
-annotation|@
-name|Inject
-specifier|protected
-name|ConfigurationNameMapper
-name|nameMapper
-decl_stmt|;
 specifier|protected
 specifier|volatile
 name|DataDomain
@@ -460,7 +440,7 @@ throws|throws
 name|Exception
 block|{
 name|String
-name|runtimeName
+name|configurationLocation
 init|=
 name|configurationProperties
 operator|.
@@ -468,9 +448,32 @@ name|get
 argument_list|(
 name|RuntimeProperties
 operator|.
-name|CAYENNE_RUNTIME_NAME
+name|CONFIGURATION_LOCATION
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|configurationLocation
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|DataDomainLoadException
+argument_list|(
+literal|"No configuration location available. "
+operator|+
+literal|"You can specify when creating Cayenne runtime "
+operator|+
+literal|"or via a system property '%s'"
+argument_list|,
+name|RuntimeProperties
+operator|.
+name|CONFIGURATION_LOCATION
+argument_list|)
+throw|;
+block|}
 name|long
 name|t0
 init|=
@@ -493,24 +496,10 @@ name|debug
 argument_list|(
 literal|"starting configuration loading: "
 operator|+
-name|runtimeName
+name|configurationLocation
 argument_list|)
 expr_stmt|;
 block|}
-name|String
-name|resourceName
-init|=
-name|nameMapper
-operator|.
-name|configurationLocation
-argument_list|(
-name|DataChannelDescriptor
-operator|.
-name|class
-argument_list|,
-name|runtimeName
-argument_list|)
-decl_stmt|;
 name|Collection
 argument_list|<
 name|Resource
@@ -521,7 +510,7 @@ name|resourceLocator
 operator|.
 name|findResources
 argument_list|(
-name|resourceName
+name|configurationLocation
 argument_list|)
 decl_stmt|;
 if|if
@@ -538,7 +527,7 @@ name|DataDomainLoadException
 argument_list|(
 literal|"Configuration file \"%s\" is not found."
 argument_list|,
-name|resourceName
+name|configurationLocation
 argument_list|)
 throw|;
 block|}
@@ -642,7 +631,7 @@ name|debug
 argument_list|(
 literal|"finished configuration loading: "
 operator|+
-name|runtimeName
+name|configurationLocation
 operator|+
 literal|" in "
 operator|+

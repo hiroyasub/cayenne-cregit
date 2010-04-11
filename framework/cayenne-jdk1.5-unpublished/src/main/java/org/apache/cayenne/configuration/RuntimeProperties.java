@@ -29,9 +29,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|CAYENNE_RUNTIME_NAME
+name|CONFIGURATION_LOCATION
 init|=
-literal|"cayenne.runtime.name"
+literal|"cayenne.config.location"
 decl_stmt|;
 comment|/**      * Returns property value for a given key.      */
 name|String

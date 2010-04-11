@@ -80,22 +80,22 @@ name|CayenneServerRuntime
 extends|extends
 name|CayenneRuntime
 block|{
-comment|/**      * Creates a server runtime object based on XML configuration file called      * "cayenne-<name>.xml" and configures the runtime with a standard set of services      * contained in {@link CayenneServerModule}.      */
+comment|/**      * Creates a server runtime object based on XML configuration file specified via      * 'configurationLocation' parameter. Configures the runtime with a standard set of      * services contained in {@link CayenneServerModule}.      */
 specifier|public
 name|CayenneServerRuntime
 parameter_list|(
 name|String
-name|name
+name|configurationLocation
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|name
+name|configurationLocation
 argument_list|,
 operator|new
 name|CayenneServerModule
 argument_list|(
-name|name
+name|configurationLocation
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -105,7 +105,7 @@ specifier|public
 name|CayenneServerRuntime
 parameter_list|(
 name|String
-name|name
+name|configurationLocation
 parameter_list|,
 name|Module
 modifier|...
@@ -114,7 +114,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|name
+name|configurationLocation
 argument_list|,
 name|modules
 argument_list|)
@@ -125,7 +125,7 @@ specifier|public
 name|CayenneServerRuntime
 parameter_list|(
 name|String
-name|name
+name|configurationLocation
 parameter_list|,
 name|Collection
 argument_list|<
@@ -136,7 +136,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|name
+name|configurationLocation
 argument_list|,
 name|modules
 argument_list|)

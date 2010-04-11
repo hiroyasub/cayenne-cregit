@@ -532,20 +532,20 @@ name|Module
 block|{
 specifier|protected
 name|String
-name|runtimeName
+name|configurationLocation
 decl_stmt|;
 specifier|public
 name|CayenneServerModule
 parameter_list|(
 name|String
-name|runtimeName
+name|configurationLocation
 parameter_list|)
 block|{
 name|this
 operator|.
-name|runtimeName
+name|configurationLocation
 operator|=
-name|runtimeName
+name|configurationLocation
 expr_stmt|;
 block|}
 specifier|public
@@ -570,9 +570,9 @@ name|put
 argument_list|(
 name|RuntimeProperties
 operator|.
-name|CAYENNE_RUNTIME_NAME
+name|CONFIGURATION_LOCATION
 argument_list|,
-name|runtimeName
+name|configurationLocation
 argument_list|)
 expr_stmt|;
 comment|// configure known DbAdapter detectors in reverse order of popularity. Users can

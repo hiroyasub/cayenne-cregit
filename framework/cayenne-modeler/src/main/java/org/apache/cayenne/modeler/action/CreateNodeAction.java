@@ -260,7 +260,7 @@ return|return
 literal|"Create DataNode"
 return|;
 block|}
-comment|/**      * Constructor for CreateNodeAction.      *       * @param name      */
+comment|/**      * Constructor for CreateNodeAction.      *       * @param location      */
 specifier|public
 name|CreateNodeAction
 parameter_list|(

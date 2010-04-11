@@ -204,7 +204,7 @@ literal|"xxxx"
 argument_list|,
 name|runtime
 operator|.
-name|getName
+name|getConfigurationLocation
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -319,7 +319,7 @@ literal|"yyyy"
 argument_list|,
 name|runtime
 operator|.
-name|getName
+name|getConfigurationLocation
 argument_list|()
 argument_list|)
 expr_stmt|;

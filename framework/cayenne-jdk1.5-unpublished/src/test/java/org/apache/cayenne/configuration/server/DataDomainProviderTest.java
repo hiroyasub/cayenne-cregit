@@ -707,11 +707,7 @@ parameter_list|)
 block|{
 name|assertEquals
 argument_list|(
-literal|"cayenne-"
-operator|+
 name|testConfigName
-operator|+
-literal|".xml"
 argument_list|,
 name|name
 argument_list|)
@@ -781,7 +777,7 @@ name|singletonMap
 argument_list|(
 name|RuntimeProperties
 operator|.
-name|CAYENNE_RUNTIME_NAME
+name|CONFIGURATION_LOCATION
 argument_list|,
 name|testConfigName
 argument_list|)
