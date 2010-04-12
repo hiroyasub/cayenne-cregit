@@ -35,16 +35,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Map
 import|;
 end_import
@@ -90,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A server-side DataRow Hessian serializer.  *   */
+comment|/**  * A server-side DataRow Hessian serializer.  */
 end_comment
 
 begin_class
