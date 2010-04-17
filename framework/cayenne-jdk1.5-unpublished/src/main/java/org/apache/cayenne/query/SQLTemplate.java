@@ -340,6 +340,12 @@ argument_list|(
 name|rootMap
 argument_list|)
 expr_stmt|;
+name|setFetchingDataRows
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+comment|// ObjEntity not passed, so it's DataRow query
 block|}
 comment|/**      * @since 1.2      */
 specifier|public
@@ -1834,6 +1840,12 @@ name|SQLResult
 name|resultSet
 parameter_list|)
 block|{
+name|setFetchingDataRows
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+comment|// turn off mapping to DataRows, use explicit
 name|this
 operator|.
 name|result
