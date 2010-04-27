@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is a legacy version of the filter  *   * @since 1.2  * @deprecated since 3.0 see {@link CayenneFilter}  */
+comment|/**  * This is a legacy Cayenne bootstrapping filter kept for backwards compatibility of  * web.xml files. It should be replaced with {@link CayenneFilter} instead.  *   * @since 1.2  * @deprecated since 3.0 {@link CayenneFilter} should be used.  */
 end_comment
 
 begin_class
