@@ -1190,6 +1190,7 @@ name|getQuery
 argument_list|()
 return|;
 block|}
+specifier|protected
 name|List
 argument_list|<
 name|ColumnDescriptor
