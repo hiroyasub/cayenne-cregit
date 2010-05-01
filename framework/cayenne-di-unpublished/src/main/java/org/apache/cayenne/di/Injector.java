@@ -72,6 +72,22 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
+comment|/**      * Returns a service instance bound in the container for a specific binding key.      * Throws {@link DIException} if the key is not bound, or an instance can not be      * created.      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|getInstance
+parameter_list|(
+name|Key
+argument_list|<
+name|T
+argument_list|>
+name|key
+parameter_list|)
+throws|throws
+name|ConfigurationException
+function_decl|;
 parameter_list|<
 name|T
 parameter_list|>
@@ -86,6 +102,24 @@ argument_list|<
 name|T
 argument_list|>
 name|type
+parameter_list|)
+throws|throws
+name|ConfigurationException
+function_decl|;
+parameter_list|<
+name|T
+parameter_list|>
+name|Provider
+argument_list|<
+name|T
+argument_list|>
+name|getProvider
+parameter_list|(
+name|Key
+argument_list|<
+name|T
+argument_list|>
+name|key
 parameter_list|)
 throws|throws
 name|ConfigurationException
@@ -128,7 +162,7 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
-comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly. One possible use is in unit tests to test a specific object that requires      * field injection.      */
+comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly. One possible use is in custom DI providers, another is in unit tests to      * initialize tested objects that are relying on field injecton.      */
 name|void
 name|injectMembers
 parameter_list|(

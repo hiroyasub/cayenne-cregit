@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|Binder
 block|{
-comment|/**      * Starts a binding of a specific interface. Binding should continue using returned      * BindingBuilder.      */
+comment|/**      * Starts an unnamed binding of a specific interface. Binding should continue using      * returned BindingBuilder.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -39,6 +39,23 @@ argument_list|<
 name|T
 argument_list|>
 name|interfaceType
+parameter_list|)
+function_decl|;
+comment|/**      * Starts a binding of a specific interface based on a provided binding key. This      * method is more generic than {@link #bind(Class)} and allows to create named      * bindings in addition to default ones. Binding should continue using returned      * BindingBuilder.      */
+parameter_list|<
+name|T
+parameter_list|>
+name|BindingBuilder
+argument_list|<
+name|T
+argument_list|>
+name|bind
+parameter_list|(
+name|Key
+argument_list|<
+name|T
+argument_list|>
+name|key
 parameter_list|)
 function_decl|;
 comment|/**      * Starts a binding of a map "configuration" that will be injected into an      * implementation class for the specified "interfaceType" parameter. Configurations      * can only be injected via a constructor. An object can take at most one      * configuration object via a constructor.      */

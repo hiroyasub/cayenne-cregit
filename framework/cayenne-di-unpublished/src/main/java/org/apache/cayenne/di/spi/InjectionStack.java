@@ -49,6 +49,20 @@ name|ConfigurationException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Key
+import|;
+end_import
+
 begin_comment
 comment|/**  * A helper object that tracks the injection stack to prevent circular dependencies.  *   * @since 3.1  */
 end_comment
@@ -62,7 +76,10 @@ name|ThreadLocal
 argument_list|<
 name|LinkedList
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 argument_list|>
 name|stack
@@ -79,7 +96,10 @@ name|ThreadLocal
 argument_list|<
 name|LinkedList
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 argument_list|>
 argument_list|()
@@ -91,7 +111,10 @@ parameter_list|()
 block|{
 name|List
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|localStack
 init|=
@@ -117,7 +140,10 @@ block|}
 name|void
 name|push
 parameter_list|(
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 name|bindingKey
 parameter_list|)
 throws|throws
@@ -125,7 +151,10 @@ name|ConfigurationException
 block|{
 name|LinkedList
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|localStack
 init|=
@@ -146,7 +175,10 @@ operator|=
 operator|new
 name|LinkedList
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -196,7 +228,10 @@ parameter_list|()
 block|{
 name|LinkedList
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|localStack
 init|=
@@ -238,7 +273,10 @@ parameter_list|()
 block|{
 name|List
 argument_list|<
-name|String
+name|Key
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|localStack
 init|=
