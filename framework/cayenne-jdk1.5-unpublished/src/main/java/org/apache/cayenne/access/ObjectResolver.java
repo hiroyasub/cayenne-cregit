@@ -275,6 +275,28 @@ name|refresh
 parameter_list|)
 block|{
 comment|// sanity check
+if|if
+condition|(
+name|descriptor
+operator|==
+literal|null
+operator|||
+name|descriptor
+operator|.
+name|getEntity
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Set up Object entity or use rowFetchingQuery"
+argument_list|)
+throw|;
+block|}
 name|DbEntity
 name|dbEntity
 init|=

@@ -841,6 +841,8 @@ name|sql
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+literal|true
 argument_list|)
 decl_stmt|;
 name|query
@@ -848,13 +850,6 @@ operator|.
 name|setParameters
 argument_list|(
 name|snapshot
-argument_list|)
-expr_stmt|;
-name|query
-operator|.
-name|setFetchingDataRows
-argument_list|(
-literal|true
 argument_list|)
 expr_stmt|;
 specifier|final

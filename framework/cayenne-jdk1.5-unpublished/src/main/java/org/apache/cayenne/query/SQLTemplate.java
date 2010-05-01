@@ -319,7 +319,9 @@ name|SQLTemplate
 parameter_list|()
 block|{
 block|}
-comment|/**      * @since 1.2      */
+comment|/**      * @since 1.2      * @deprecated since 3.1, use SQLTemplate(DataMap rootMap, String defaultTemplate,      *             boolean isFetchingDataRows) instead      */
+annotation|@
+name|Deprecated
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -328,6 +330,30 @@ name|rootMap
 parameter_list|,
 name|String
 name|defaultTemplate
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|rootMap
+argument_list|,
+name|defaultTemplate
+argument_list|,
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|SQLTemplate
+parameter_list|(
+name|DataMap
+name|rootMap
+parameter_list|,
+name|String
+name|defaultTemplate
+parameter_list|,
+name|boolean
+name|isFetchingDataRows
 parameter_list|)
 block|{
 name|setDefaultTemplate
@@ -342,10 +368,9 @@ argument_list|)
 expr_stmt|;
 name|setFetchingDataRows
 argument_list|(
-literal|true
+name|isFetchingDataRows
 argument_list|)
 expr_stmt|;
-comment|// ObjEntity not passed, so it's DataRow query
 block|}
 comment|/**      * @since 1.2      */
 specifier|public
@@ -1840,12 +1865,6 @@ name|SQLResult
 name|resultSet
 parameter_list|)
 block|{
-name|setFetchingDataRows
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-comment|// turn off mapping to DataRows, use explicit
 name|this
 operator|.
 name|result

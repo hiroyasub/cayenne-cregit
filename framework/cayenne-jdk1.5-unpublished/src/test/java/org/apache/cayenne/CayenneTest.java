@@ -512,6 +512,8 @@ argument_list|(
 name|map
 argument_list|,
 name|sql
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|query
