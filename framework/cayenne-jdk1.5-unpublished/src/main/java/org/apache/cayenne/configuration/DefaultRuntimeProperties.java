@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of {@link RuntimeProperties} that returns properties that were  * injected via a map in constructor. Each property can be overridden via -D command line  * option.  *   * @since 3.1  */
+comment|/**  * An implementation of {@link RuntimeProperties} that returns properties that were  * injected via a map in constructor. Each property can be overridden via -D command line  * option (i.e. in this implementation JVM system properties take precedence over any  * other property configuration mechanism).  *   * @since 3.1  */
 end_comment
 
 begin_class
