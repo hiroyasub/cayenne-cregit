@@ -706,13 +706,6 @@ name|DefaultAdhocObjectFactory
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 name|binder
 operator|.
@@ -729,13 +722,6 @@ name|DefaultConfigurationNameMapper
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 name|binder
 operator|.
@@ -751,13 +737,6 @@ argument_list|(
 name|EventManagerProvider
 operator|.
 name|class
-argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
 argument_list|)
 expr_stmt|;
 comment|// a service to provide the main stack DataDomain
@@ -776,13 +755,6 @@ name|DataDomainProvider
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 comment|// will return DataDomain for request for a DataChannel
 name|binder
@@ -800,13 +772,6 @@ name|DomainDataChannelProvider
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 name|binder
 operator|.
@@ -822,6 +787,13 @@ argument_list|(
 name|DataContextProvider
 operator|.
 name|class
+argument_list|)
+operator|.
+name|in
+argument_list|(
+name|Scopes
+operator|.
+name|NO_SCOPE
 argument_list|)
 expr_stmt|;
 comment|// a service to load project XML descriptors
@@ -840,13 +812,6 @@ name|XMLDataChannelDescriptorLoader
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 comment|// a service to load DataMap XML descriptors
 name|binder
@@ -863,13 +828,6 @@ argument_list|(
 name|XMLDataMapLoader
 operator|.
 name|class
-argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
 argument_list|)
 expr_stmt|;
 comment|// a locator of resources, such as XML descriptors
@@ -888,13 +846,6 @@ name|ClassLoaderResourceLocator
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 comment|// a global properties object
 name|binder
@@ -911,13 +862,6 @@ argument_list|(
 name|DefaultRuntimeProperties
 operator|.
 name|class
-argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
 argument_list|)
 expr_stmt|;
 comment|// a service to load DataSourceFactories
@@ -936,13 +880,6 @@ name|DefaultDataSourceFactoryLoader
 operator|.
 name|class
 argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
-argument_list|)
 expr_stmt|;
 comment|// a default SchemaUpdateStrategy (used when no explicit strategy is specified in
 comment|// XML)
@@ -960,13 +897,6 @@ argument_list|(
 name|SkipSchemaUpdateStrategy
 operator|.
 name|class
-argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
 argument_list|)
 expr_stmt|;
 comment|// a default DBAdapterFactory used to load custom and automatic DbAdapters

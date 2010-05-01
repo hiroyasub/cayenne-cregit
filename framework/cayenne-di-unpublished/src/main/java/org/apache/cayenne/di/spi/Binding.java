@@ -91,6 +91,9 @@ argument_list|<
 name|T
 argument_list|>
 name|provider
+parameter_list|,
+name|Scope
+name|initialScope
 parameter_list|)
 block|{
 name|this
@@ -103,6 +106,17 @@ name|this
 operator|.
 name|scoped
 operator|=
+name|initialScope
+operator|!=
+literal|null
+condition|?
+name|initialScope
+operator|.
+name|scope
+argument_list|(
+name|provider
+argument_list|)
+else|:
 name|provider
 expr_stmt|;
 block|}

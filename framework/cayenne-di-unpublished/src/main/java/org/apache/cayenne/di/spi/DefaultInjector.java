@@ -163,6 +163,10 @@ specifier|private
 name|InjectionStack
 name|injectionStack
 decl_stmt|;
+specifier|private
+name|Scope
+name|defaultScope
+decl_stmt|;
 specifier|public
 name|DefaultInjector
 parameter_list|(
@@ -173,6 +177,15 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 block|{
+comment|// this is intentionally hardcoded and is not configurable
+name|this
+operator|.
+name|defaultScope
+operator|=
+name|Scopes
+operator|.
+name|SINGLETON
+expr_stmt|;
 name|this
 operator|.
 name|bindings
@@ -346,6 +359,8 @@ name|T
 argument_list|>
 argument_list|(
 name|provider
+argument_list|,
+name|defaultScope
 argument_list|)
 argument_list|)
 expr_stmt|;

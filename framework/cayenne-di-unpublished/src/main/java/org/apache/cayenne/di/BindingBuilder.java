@@ -107,6 +107,7 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
+comment|/**      * Sets the scope of a bound instance. This method is used to change the default scope      * (which is normally {@link Scopes#SINGLETON}) to something else, e.g.      * {@link Scopes#NO_SCOPE}.      */
 name|void
 name|in
 parameter_list|(
