@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A binding builder for map configurations.  *   * @param<T> A type of the service for which the configuration is created.  * @since 3.1  */
+comment|/**  * A binding builder for map configurations. Creates a parameterized map of type<String,  * T>.  *   * @param<T> A type of the map values.  * @since 3.1  */
 end_comment
 
 begin_interface
@@ -39,9 +39,6 @@ parameter_list|<
 name|T
 parameter_list|>
 block|{
-parameter_list|<
-name|E
-parameter_list|>
 name|MapBuilder
 argument_list|<
 name|T
@@ -55,16 +52,13 @@ name|Class
 argument_list|<
 name|?
 extends|extends
-name|E
+name|T
 argument_list|>
 name|interfaceType
 parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
-parameter_list|<
-name|E
-parameter_list|>
 name|MapBuilder
 argument_list|<
 name|T
@@ -74,11 +68,18 @@ parameter_list|(
 name|String
 name|key
 parameter_list|,
-name|E
+name|T
 name|value
 parameter_list|)
 throws|throws
 name|ConfigurationException
+function_decl|;
+name|void
+name|in
+parameter_list|(
+name|Scope
+name|scope
+parameter_list|)
 function_decl|;
 block|}
 end_interface

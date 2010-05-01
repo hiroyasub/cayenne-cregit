@@ -55,26 +55,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -144,13 +124,6 @@ name|T
 argument_list|>
 block|{
 specifier|private
-name|Class
-argument_list|<
-name|T
-argument_list|>
-name|interfaceType
-decl_stmt|;
-specifier|private
 name|Constructor
 argument_list|<
 name|?
@@ -170,12 +143,6 @@ name|bindingNames
 decl_stmt|;
 name|ConstructorInjectingProvider
 parameter_list|(
-name|Class
-argument_list|<
-name|T
-argument_list|>
-name|interfaceType
-parameter_list|,
 name|Class
 argument_list|<
 name|?
@@ -227,12 +194,6 @@ operator|.
 name|injector
 operator|=
 name|injector
-expr_stmt|;
-name|this
-operator|.
-name|interfaceType
-operator|=
-name|interfaceType
 expr_stmt|;
 block|}
 specifier|private
@@ -603,63 +564,7 @@ index|[
 name|i
 index|]
 decl_stmt|;
-comment|// parameter must be declared as "java.util.Map". Use of specific map
-comment|// implementations in the declaration will make the injection much more
-comment|// complicated
 if|if
-condition|(
-name|Map
-operator|.
-name|class
-operator|.
-name|equals
-argument_list|(
-name|parameter
-argument_list|)
-condition|)
-block|{
-name|args
-index|[
-name|i
-index|]
-operator|=
-name|injector
-operator|.
-name|getMapConfiguration
-argument_list|(
-name|interfaceType
-argument_list|)
-expr_stmt|;
-block|}
-comment|// parameter must be declared as "java.util.List". Use of specific list
-comment|// implementations in the declaration will make the injection much more
-comment|// complicated
-if|else if
-condition|(
-name|List
-operator|.
-name|class
-operator|.
-name|equals
-argument_list|(
-name|parameter
-argument_list|)
-condition|)
-block|{
-name|args
-index|[
-name|i
-index|]
-operator|=
-name|injector
-operator|.
-name|getListConfiguration
-argument_list|(
-name|interfaceType
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
 condition|(
 name|Provider
 operator|.

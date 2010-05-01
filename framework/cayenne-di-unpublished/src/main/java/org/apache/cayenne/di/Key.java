@@ -42,6 +42,7 @@ specifier|protected
 name|String
 name|bindingName
 decl_stmt|;
+comment|/**      * Creates a key for a nameless binding of a given type.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -73,6 +74,7 @@ literal|null
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates a key for a named binding of a given type. 'bindingName' that is an empty      * String is treated the same way as a null 'bindingName'. In both cases a nameless      * binding key is created.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -183,6 +185,16 @@ parameter_list|()
 block|{
 return|return
 name|type
+return|;
+block|}
+comment|/**      * Returns an optional name of the binding used to distinguish multiple bindings of      * the same object type.      */
+specifier|public
+name|String
+name|getBindingName
+parameter_list|()
+block|{
+return|return
+name|bindingName
 return|;
 block|}
 annotation|@

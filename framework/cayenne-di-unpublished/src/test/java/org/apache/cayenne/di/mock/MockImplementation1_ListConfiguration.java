@@ -60,6 +60,9 @@ name|MockImplementation1_ListConfiguration
 parameter_list|(
 annotation|@
 name|Inject
+argument_list|(
+literal|"xyz"
+argument_list|)
 name|List
 argument_list|<
 name|Object

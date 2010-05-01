@@ -58,7 +58,7 @@ argument_list|>
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Starts a binding of a map "configuration" that will be injected into an      * implementation class for the specified "interfaceType" parameter. Configurations      * can only be injected via a constructor. An object can take at most one      * configuration object via a constructor.      */
+comment|/**      * Starts a binding of a java.util.Map<String, ?> distinguished by its binding name.      * Map binding should continue using returned MapBuilder. This is somewhat equivalent      * of using "bind(Map.class, bindingName)", however returned MapBuilder provides extra      * DI capabilities.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -68,14 +68,11 @@ name|T
 argument_list|>
 name|bindMap
 parameter_list|(
-name|Class
-argument_list|<
-name|T
-argument_list|>
-name|interfaceType
+name|String
+name|bindingName
 parameter_list|)
 function_decl|;
-comment|/**      * Starts a binding of a list "configuration" that will be injected into an      * implementation class for the specified "interfaceType" parameter. Configurations      * can only be injected via a constructor. An object can take at most one      * configuration object via a constructor.      */
+comment|/**      * Starts a binding of a java.util.List<?> distinguished by its binding name. List      * binding should continue using returned ListBuilder. This is somewhat equivalent of      * using "bind(List.class, bindingName)", however returned ListBuilder provides extra      * DI capabilities.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -85,11 +82,8 @@ name|T
 argument_list|>
 name|bindList
 parameter_list|(
-name|Class
-argument_list|<
-name|T
-argument_list|>
-name|interfaceType
+name|String
+name|bindingName
 parameter_list|)
 function_decl|;
 block|}

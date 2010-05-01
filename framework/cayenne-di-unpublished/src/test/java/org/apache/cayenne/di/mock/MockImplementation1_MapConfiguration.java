@@ -92,6 +92,9 @@ name|MockImplementation1_MapConfiguration
 parameter_list|(
 annotation|@
 name|Inject
+argument_list|(
+literal|"xyz"
+argument_list|)
 name|Map
 argument_list|<
 name|String

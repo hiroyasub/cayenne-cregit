@@ -575,9 +575,9 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
-name|RuntimeProperties
+name|DefaultRuntimeProperties
 operator|.
-name|class
+name|PROPERTIES_MAP
 argument_list|)
 operator|.
 name|put
@@ -595,9 +595,9 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
-name|DbAdapterFactory
+name|DefaultDbAdapterFactory
 operator|.
-name|class
+name|DETECTORS_LIST
 argument_list|)
 operator|.
 name|add

@@ -1075,9 +1075,7 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
-name|MockInterface1
-operator|.
-name|class
+literal|"xyz"
 argument_list|)
 operator|.
 name|put
@@ -1181,9 +1179,7 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
-name|MockInterface1
-operator|.
-name|class
+literal|"xyz"
 argument_list|)
 operator|.
 name|add
@@ -1292,9 +1288,7 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
-name|MockInterface1
-operator|.
-name|class
+literal|"xyz"
 argument_list|)
 operator|.
 name|add

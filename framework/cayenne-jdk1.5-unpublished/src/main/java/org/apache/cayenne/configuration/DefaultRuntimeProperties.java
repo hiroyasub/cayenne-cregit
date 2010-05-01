@@ -50,6 +50,14 @@ name|DefaultRuntimeProperties
 implements|implements
 name|RuntimeProperties
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PROPERTIES_MAP
+init|=
+literal|"org.apache.cayenne.configuration.DefaultRuntimeProperties.properties"
+decl_stmt|;
 specifier|protected
 name|Map
 argument_list|<
@@ -64,6 +72,9 @@ name|DefaultRuntimeProperties
 parameter_list|(
 annotation|@
 name|Inject
+argument_list|(
+name|PROPERTIES_MAP
+argument_list|)
 name|Map
 argument_list|<
 name|String

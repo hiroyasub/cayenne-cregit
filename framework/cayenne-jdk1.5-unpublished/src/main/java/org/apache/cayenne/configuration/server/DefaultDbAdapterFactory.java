@@ -202,6 +202,14 @@ name|DefaultDbAdapterFactory
 implements|implements
 name|DbAdapterFactory
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DETECTORS_LIST
+init|=
+literal|"org.apache.cayenne.configuration.server.DefaultDbAdapterFactory.detectors"
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
@@ -220,6 +228,9 @@ name|DefaultDbAdapterFactory
 parameter_list|(
 annotation|@
 name|Inject
+argument_list|(
+name|DETECTORS_LIST
+argument_list|)
 name|List
 argument_list|<
 name|DbAdapterDetector
