@@ -99,6 +99,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|web
+operator|.
+name|CayenneFilter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|event
 operator|.
 name|EventManager
@@ -388,7 +404,24 @@ name|ObjectContext
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Returns the ObjectContext bound to the current thread.      *       * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException if there is no ObjectContext bound to the current      *             thread.      * @see org.apache.cayenne.conf.WebApplicationContextFilter      */
+comment|/**      * A holder of a DataChannel bound to the current thread. Used mainly for proper      * contexts and objects deserialization.      *       * @since 3.1      */
+specifier|protected
+specifier|static
+specifier|final
+name|ThreadLocal
+argument_list|<
+name|DataChannel
+argument_list|>
+name|threadDeserializationChannel
+init|=
+operator|new
+name|ThreadLocal
+argument_list|<
+name|DataChannel
+argument_list|>
+argument_list|()
+decl_stmt|;
+comment|/**      * Returns the ObjectContext bound to the current thread.      *       * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException if there is no ObjectContext bound to the current      *             thread.      */
 specifier|public
 specifier|static
 name|ObjectContext
@@ -442,6 +475,38 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Binds a DataChannel to the current thread that should be used for deserializing of      * ObjectContexts. An ObjectContext implementation may call      * {@link #getThreadDeserializationChannel()} from its deserialization method to      * attach to the currently active channel.      *<p>      * {@link CayenneFilter} will automatically bind the right channel to each request      * thread. If you are not using CayenneFilter, your application is responsible for      * calling this method at appropriate points of the lifecycle.      *       * @since 3.1      */
+specifier|public
+specifier|static
+name|void
+name|bindThreadDeserializationChannel
+parameter_list|(
+name|DataChannel
+name|dataChannel
+parameter_list|)
+block|{
+name|threadDeserializationChannel
+operator|.
+name|set
+argument_list|(
+name|dataChannel
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Returns the DataChannel bound to the current thread. May return null if none is      * bound (unlike {@link #getThreadObjectContext()} that throws if a context is not      * bound).      *       * @since 3.1      */
+specifier|public
+specifier|static
+name|DataChannel
+name|getThreadDeserializationChannel
+parameter_list|()
+block|{
+return|return
+name|threadDeserializationChannel
+operator|.
+name|get
+argument_list|()
+return|;
+block|}
 comment|// if we are to pass the context around, channel should be left alone and
 comment|// reinjected later if needed
 specifier|protected
@@ -453,7 +518,7 @@ specifier|protected
 name|QueryCache
 name|queryCache
 decl_stmt|;
-comment|/**      * Graph action that handles property changes      * @since 3.1      */
+comment|/**      * Graph action that handles property changes      *       * @since 3.1      */
 specifier|protected
 name|ObjectContextGraphAction
 name|graphAction
@@ -1482,7 +1547,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If ObjEntity qualifier is set, asks it to inject initial value to an object.      * Also performs all Persistent initialization operations      */
+comment|/**      * If ObjEntity qualifier is set, asks it to inject initial value to an object. Also      * performs all Persistent initialization operations      */
 specifier|protected
 name|void
 name|injectInitialValue
@@ -1576,7 +1641,7 @@ name|CayenneRuntimeException
 name|ex
 parameter_list|)
 block|{
-comment|//ObjEntity cannot be fetched, ignored
+comment|// ObjEntity cannot be fetched, ignored
 name|entity
 operator|=
 literal|null

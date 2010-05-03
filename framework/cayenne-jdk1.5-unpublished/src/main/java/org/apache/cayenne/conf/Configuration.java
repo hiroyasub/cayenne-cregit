@@ -216,7 +216,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class is an entry point to Cayenne. It loads all configuration files and  * instantiates main Cayenne objects. Used as a singleton via the  * {@link #getSharedConfiguration}method.  *<p>  * To use a custom subclass of Configuration, Java applications must call  * {@link #initializeSharedConfiguration}with the subclass as argument. This will create  * and initialize a Configuration singleton instance of the specified class. By default  * {@link DefaultConfiguration}is instantiated.  *</p>  *   */
+comment|/**  * This class is an entry point to Cayenne. It loads all configuration files and  * instantiates main Cayenne objects. Used as a singleton via the  * {@link #getSharedConfiguration}method.  *<p>  * To use a custom subclass of Configuration, Java applications must call  * {@link #initializeSharedConfiguration}with the subclass as argument. This will create  * and initialize a Configuration singleton instance of the specified class. By default  * {@link DefaultConfiguration}is instantiated.  *</p>  */
 end_comment
 
 begin_class
@@ -259,11 +259,6 @@ init|=
 name|DefaultConfiguration
 operator|.
 name|class
-decl_stmt|;
-specifier|protected
-specifier|static
-name|Configuration
-name|sharedConfiguration
 decl_stmt|;
 comment|/**      * Lookup map that stores DataDomains with names as keys.      */
 specifier|protected
@@ -349,35 +344,6 @@ specifier|protected
 name|EventManager
 name|eventManager
 decl_stmt|;
-comment|/**      * Use this method as an entry point to all Cayenne access objects.      *<p>      * Note that if you want to provide a custom Configuration, make sure you call one of      * the {@link #initializeSharedConfiguration}methods before your application code has      * a chance to call this method.      */
-specifier|public
-specifier|synchronized
-specifier|static
-name|Configuration
-name|getSharedConfiguration
-parameter_list|()
-block|{
-if|if
-condition|(
-name|Configuration
-operator|.
-name|sharedConfiguration
-operator|==
-literal|null
-condition|)
-block|{
-name|Configuration
-operator|.
-name|initializeSharedConfiguration
-argument_list|()
-expr_stmt|;
-block|}
-return|return
-name|Configuration
-operator|.
-name|sharedConfiguration
-return|;
-block|}
 comment|/**      * Returns EventManager used by this configuration.      *       * @since 1.2      */
 specifier|public
 name|EventManager
@@ -403,137 +369,6 @@ name|eventManager
 operator|=
 name|eventManager
 expr_stmt|;
-block|}
-comment|/**      * Creates and initializes shared Configuration object. By default      * {@link DefaultConfiguration}will be instantiated and assigned to a singleton      * instance of Configuration.      */
-specifier|public
-specifier|static
-name|void
-name|initializeSharedConfiguration
-parameter_list|()
-block|{
-name|Configuration
-operator|.
-name|initializeSharedConfiguration
-argument_list|(
-name|DEFAULT_CONFIGURATION_CLASS
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Creates and initializes a shared Configuration object of a custom Configuration      * subclass.      */
-specifier|public
-specifier|static
-name|void
-name|initializeSharedConfiguration
-parameter_list|(
-name|Class
-argument_list|<
-name|?
-extends|extends
-name|Configuration
-argument_list|>
-name|configurationClass
-parameter_list|)
-block|{
-name|Configuration
-name|conf
-init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|conf
-operator|=
-name|configurationClass
-operator|.
-name|newInstance
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-name|logObj
-operator|.
-name|error
-argument_list|(
-literal|"Error creating shared Configuration: "
-argument_list|,
-name|ex
-argument_list|)
-expr_stmt|;
-throw|throw
-operator|new
-name|ConfigurationException
-argument_list|(
-literal|"Error creating shared Configuration."
-operator|+
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|,
-name|ex
-argument_list|)
-throw|;
-block|}
-name|Configuration
-operator|.
-name|initializeSharedConfiguration
-argument_list|(
-name|conf
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Sets the shared Configuration object to a new Configuration object. First calls      * {@link #canInitialize}and - if permitted -{@link #initialize}followed by      * {@link #didInitialize}.      */
-specifier|public
-specifier|static
-name|void
-name|initializeSharedConfiguration
-parameter_list|(
-name|Configuration
-name|conf
-parameter_list|)
-block|{
-try|try
-block|{
-comment|// initialize configuration
-name|conf
-operator|.
-name|initialize
-argument_list|()
-expr_stmt|;
-comment|// set the initialized Configuration only after success
-name|Configuration
-operator|.
-name|sharedConfiguration
-operator|=
-name|conf
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|ConfigurationException
-argument_list|(
-literal|"Error during Configuration initialization. "
-operator|+
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|,
-name|ex
-argument_list|)
-throw|;
-block|}
 block|}
 comment|/**      * Default constructor for new Configuration instances. Simply calls      * {@link Configuration#Configuration(String)}.      *       * @see Configuration#Configuration(String)      */
 specifier|protected

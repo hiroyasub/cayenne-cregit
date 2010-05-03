@@ -117,34 +117,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|conf
-operator|.
-name|DefaultConfiguration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|conn
 operator|.
 name|DataSourceInfo
@@ -224,7 +196,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of Cayenne test cases. Provides access to shared connection resources.  *   */
+comment|/**  * Superclass of Cayenne test cases. Provides access to shared connection resources.  */
 end_comment
 
 begin_class
@@ -267,34 +239,6 @@ name|QUOTEMAP_ACCESS_STACK
 init|=
 literal|"QuoteMapStack"
 decl_stmt|;
-static|static
-block|{
-comment|// create dummy shared config
-name|Configuration
-name|config
-init|=
-operator|new
-name|DefaultConfiguration
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|initialize
-parameter_list|()
-block|{
-block|}
-block|}
-decl_stmt|;
-name|Configuration
-operator|.
-name|initializeSharedConfiguration
-argument_list|(
-name|config
-argument_list|)
-expr_stmt|;
-block|}
 specifier|protected
 name|AccessStack
 name|accessStack

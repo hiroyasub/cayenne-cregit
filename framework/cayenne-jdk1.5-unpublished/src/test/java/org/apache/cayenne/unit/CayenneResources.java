@@ -285,7 +285,7 @@ block|{
 specifier|private
 specifier|static
 name|Log
-name|logObj
+name|logger
 init|=
 name|LogFactory
 operator|.
@@ -394,7 +394,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|error
 argument_list|(
@@ -515,7 +515,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|error
 argument_list|(
@@ -754,7 +754,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -825,7 +825,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -868,7 +868,7 @@ name|connectionKey
 argument_list|)
 throw|;
 block|}
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -1158,7 +1158,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|error
 argument_list|(
@@ -1204,7 +1204,7 @@ name|testDirName
 operator|=
 name|DEFAULT_TEST_DIR
 expr_stmt|;
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(

@@ -301,20 +301,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|event
 operator|.
 name|EventManager
@@ -628,7 +614,6 @@ name|BaseContext
 implements|implements
 name|DataChannel
 block|{
-comment|// Set of DataContextDelegates to be notified.
 specifier|private
 name|DataContextDelegate
 name|delegate
@@ -657,156 +642,6 @@ specifier|transient
 name|DataContextMergeHandler
 name|mergeHandler
 decl_stmt|;
-comment|/**      * Stores the name of parent DataDomain. Used to defer initialization of the parent      * QueryEngine after deserialization. This helps avoid an issue with certain servlet      * engines (e.g. Tomcat) where HttpSessions with DataContext's are deserialized at      * startup before Cayenne stack is fully initialized.      */
-specifier|protected
-specifier|transient
-name|String
-name|lazyInitParentDomainName
-decl_stmt|;
-comment|/**      * Factory method that creates and returns a new instance of DataContext based on      * default domain. If more than one domain exists in the current configuration,      * {@link DataContext#createDataContext(String)} must be used instead. ObjectStore      * associated with created DataContext will have a cache stack configured using parent      * domain settings.      */
-specifier|public
-specifier|static
-name|DataContext
-name|createDataContext
-parameter_list|()
-block|{
-return|return
-name|Configuration
-operator|.
-name|getSharedConfiguration
-argument_list|()
-operator|.
-name|getDomain
-argument_list|()
-operator|.
-name|createDataContext
-argument_list|()
-return|;
-block|}
-comment|/**      * Factory method that creates and returns a new instance of DataContext based on      * default domain. If more than one domain exists in the current configuration,      * {@link DataContext#createDataContext(String, boolean)} must be used instead.      * ObjectStore associated with newly created DataContext will have a cache stack      * configured according to the specified policy, overriding a parent domain setting.      *       * @since 1.1      */
-specifier|public
-specifier|static
-name|DataContext
-name|createDataContext
-parameter_list|(
-name|boolean
-name|useSharedCache
-parameter_list|)
-block|{
-return|return
-name|Configuration
-operator|.
-name|getSharedConfiguration
-argument_list|()
-operator|.
-name|getDomain
-argument_list|()
-operator|.
-name|createDataContext
-argument_list|(
-name|useSharedCache
-argument_list|)
-return|;
-block|}
-comment|/**      * Factory method that creates and returns a new instance of DataContext using named      * domain as its parent. If there is no domain matching the name argument, an      * exception is thrown.      */
-specifier|public
-specifier|static
-name|DataContext
-name|createDataContext
-parameter_list|(
-name|String
-name|domainName
-parameter_list|)
-block|{
-name|DataDomain
-name|domain
-init|=
-name|Configuration
-operator|.
-name|getSharedConfiguration
-argument_list|()
-operator|.
-name|getDomain
-argument_list|(
-name|domainName
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|domain
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Non-existent domain: "
-operator|+
-name|domainName
-argument_list|)
-throw|;
-block|}
-return|return
-name|domain
-operator|.
-name|createDataContext
-argument_list|()
-return|;
-block|}
-comment|/**      * Creates and returns new DataContext that will use a named DataDomain as its parent.      * ObjectStore associated with newly created DataContext will have a cache stack      * configured according to the specified policy, overriding a parent domain setting.      *       * @since 1.1      */
-specifier|public
-specifier|static
-name|DataContext
-name|createDataContext
-parameter_list|(
-name|String
-name|domainName
-parameter_list|,
-name|boolean
-name|useSharedCache
-parameter_list|)
-block|{
-name|DataDomain
-name|domain
-init|=
-name|Configuration
-operator|.
-name|getSharedConfiguration
-argument_list|()
-operator|.
-name|getDomain
-argument_list|(
-name|domainName
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|domain
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Non-existent domain: "
-operator|+
-name|domainName
-argument_list|)
-throw|;
-block|}
-return|return
-name|domain
-operator|.
-name|createDataContext
-argument_list|(
-name|useSharedCache
-argument_list|)
-return|;
-block|}
 comment|/**      * Creates a new DataContext that is not attached to the Cayenne stack.      */
 specifier|public
 name|DataContext
@@ -3833,76 +3668,6 @@ operator|.
 name|defaultWriteObject
 argument_list|()
 expr_stmt|;
-comment|// If the "parent" of this datacontext is a DataDomain, then just write the
-comment|// name of it. Then when deserialization happens, we can get back the DataDomain
-comment|// by name, from the shared configuration (which will either load it if need be,
-comment|// or return an existing one.
-if|if
-condition|(
-name|this
-operator|.
-name|channel
-operator|==
-literal|null
-operator|&&
-name|this
-operator|.
-name|lazyInitParentDomainName
-operator|!=
-literal|null
-condition|)
-block|{
-name|out
-operator|.
-name|writeObject
-argument_list|(
-name|lazyInitParentDomainName
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|this
-operator|.
-name|channel
-operator|instanceof
-name|DataDomain
-condition|)
-block|{
-name|DataDomain
-name|domain
-init|=
-operator|(
-name|DataDomain
-operator|)
-name|this
-operator|.
-name|channel
-decl_stmt|;
-name|out
-operator|.
-name|writeObject
-argument_list|(
-name|domain
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|// Hope that whatever this.parent is, that it is Serializable
-name|out
-operator|.
-name|writeObject
-argument_list|(
-name|this
-operator|.
-name|channel
-argument_list|)
-expr_stmt|;
-block|}
 comment|// Serialize local snapshots cache
 if|if
 condition|(
@@ -3942,66 +3707,7 @@ operator|.
 name|defaultReadObject
 argument_list|()
 expr_stmt|;
-comment|// 2. read parent or its name
-name|Object
-name|value
-init|=
-name|in
-operator|.
-name|readObject
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|value
-operator|instanceof
-name|DataChannel
-condition|)
-block|{
-comment|// A real QueryEngine object - use it
-comment|// call a setter to initialize EntityResolver
-name|setChannel
-argument_list|(
-operator|(
-name|DataChannel
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|value
-operator|instanceof
-name|String
-condition|)
-block|{
-comment|// The name of a DataDomain - use it
-name|this
-operator|.
-name|lazyInitParentDomainName
-operator|=
-operator|(
-name|String
-operator|)
-name|value
-expr_stmt|;
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Parent attribute of DataContext was neither a QueryEngine nor "
-operator|+
-literal|"the name of a valid DataDomain:"
-operator|+
-name|value
-argument_list|)
-throw|;
-block|}
-comment|// 3. Deserialize local snapshots cache
+comment|// 2. Deserialize local snapshots cache
 if|if
 condition|(
 operator|!
@@ -4077,12 +3783,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// Re-attaches itself to the parent domain with previously stored name.
-comment|//
-comment|// TODO: Andrus 11/7/2005 - this is one of the places where Cayenne
-comment|// serialization relies on shared config... This is bad. We need some
-comment|// sort of thread-local solution that would allow to use an alternative configuration.
-comment|//
+comment|/**      * Re-attaches itself to a DataChannel attached to the current thread. The DataChannel      * is taken from {@link BaseContext#getThreadDeserializationChannel()}.      */
 specifier|private
 specifier|final
 name|void
@@ -4094,24 +3795,15 @@ condition|(
 name|channel
 operator|==
 literal|null
-operator|&&
-name|lazyInitParentDomainName
-operator|!=
-literal|null
 condition|)
 block|{
-comment|// call a setter to ensure EntityResolver is extracted from channel
+comment|// call a channel setter to ensure EntityResolver is extracted from channel
 name|setChannel
 argument_list|(
-name|Configuration
+name|BaseContext
 operator|.
-name|getSharedConfiguration
+name|getThreadDeserializationChannel
 argument_list|()
-operator|.
-name|getDomain
-argument_list|(
-name|lazyInitParentDomainName
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

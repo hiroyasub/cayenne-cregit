@@ -113,20 +113,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -2475,20 +2461,33 @@ name|XMLDecoder
 name|decoder
 parameter_list|)
 block|{
-comment|// TODO: (andrus, long time ago) relying on singleton Configuration and a single
-comment|// DataDomain is a very bad idea... Decoder itself can optionally store a
-comment|// DataContext or an EntityResolver to provide the context appropriate for a given
-comment|// environment
+name|DataChannel
+name|channel
+init|=
+name|BaseContext
+operator|.
+name|getThreadDeserializationChannel
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|channel
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Can't perform deserialization - no DataChannel bound to the current thread."
+argument_list|)
+throw|;
+block|}
 name|EntityResolver
 name|resolver
 init|=
-name|Configuration
-operator|.
-name|getSharedConfiguration
-argument_list|()
-operator|.
-name|getDomain
-argument_list|()
+name|channel
 operator|.
 name|getEntityResolver
 argument_list|()
