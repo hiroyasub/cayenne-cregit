@@ -107,34 +107,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|conf
-operator|.
-name|DefaultConfiguration
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|remote
 operator|.
 name|ClientMessage
@@ -212,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic implementation of an RemoteService. Subclasses can be customized to work with  * different remoting mechanisms, such as Hessian or JAXRPC.  *   * @since 1.2  */
+comment|/**  * A generic implementation of an RemoteService. Can be subclassed to work with different  * remoting mechanisms, such as Hessian or JAXRPC.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -231,20 +203,11 @@ name|EVENT_BRIDGE_FACTORY_PROPERTY
 init|=
 literal|"cayenne.RemoteService.EventBridge.factory"
 decl_stmt|;
-comment|// keep logger non-static so that it could be garbage collected with this instance..
-specifier|private
+comment|// keep logger non-static so that it could be garbage collected with this instance.
+specifier|protected
 specifier|final
 name|Log
-name|logObj
-init|=
-name|LogFactory
-operator|.
-name|getLog
-argument_list|(
-name|BaseRemoteService
-operator|.
-name|class
-argument_list|)
+name|logger
 decl_stmt|;
 specifier|protected
 name|DataDomain
@@ -256,8 +219,72 @@ name|eventBridgeFactoryName
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|eventBridgeParameters
 decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|public
+name|BaseRemoteService
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|,
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|eventBridgeProperties
+parameter_list|)
+block|{
+name|logger
+operator|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|getClass
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// start Cayenne service
+name|logger
+operator|.
+name|debug
+argument_list|(
+literal|"ROP service is starting"
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|domain
+operator|=
+name|domain
+expr_stmt|;
+name|initEventBridgeParameters
+argument_list|(
+name|eventBridgeProperties
+argument_list|)
+expr_stmt|;
+name|logger
+operator|.
+name|debug
+argument_list|(
+name|getClass
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" started"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|String
 name|getEventBridgeFactoryName
@@ -269,6 +296,11 @@ return|;
 block|}
 specifier|public
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|getEventBridgeParameters
 parameter_list|()
 block|{
@@ -289,78 +321,7 @@ operator|.
 name|EMPTY_MAP
 return|;
 block|}
-comment|/**      * A method that sets up a service, initializing Cayenne stack. Should be invoked by      * subclasses from their appropriate service lifecycle methods.      */
-specifier|protected
-name|void
-name|initService
-parameter_list|(
-name|Map
-name|properties
-parameter_list|)
-throws|throws
-name|CayenneRuntimeException
-block|{
-comment|// start Cayenne service
-name|logObj
-operator|.
-name|debug
-argument_list|(
-name|this
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" is starting"
-argument_list|)
-expr_stmt|;
-name|initCayenneStack
-argument_list|(
-name|properties
-argument_list|)
-expr_stmt|;
-name|initEventBridgeParameters
-argument_list|(
-name|properties
-argument_list|)
-expr_stmt|;
-name|logObj
-operator|.
-name|debug
-argument_list|(
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" started"
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Shuts down this service. Should be invoked by subclasses from their appropriate      * service lifecycle methods.      */
-specifier|protected
-name|void
-name|destroyService
-parameter_list|()
-block|{
-name|logObj
-operator|.
-name|debug
-argument_list|(
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" destroyed"
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Returns a DataChannel that is a parent of all session DataChannels.      */
+comment|/**      * Returns a DataChannel that is a parent of all session DataChannels.      *       * @deprecated unused since 3.1      */
 specifier|public
 name|DataChannel
 name|getRootChannel
@@ -399,7 +360,7 @@ name|RemoteSession
 name|establishSession
 parameter_list|()
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -415,7 +376,7 @@ operator|.
 name|getSession
 argument_list|()
 decl_stmt|;
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -436,7 +397,7 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -516,7 +477,7 @@ literal|"No session associated with request."
 argument_list|)
 throw|;
 block|}
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -597,7 +558,7 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -684,7 +645,7 @@ return|return
 name|session
 return|;
 block|}
-comment|/**      * Creates a server-side channel that will handle all client requests. For shared      * sessions the same channel instance is reused for the entire group of clients. For      * dedicated sessions, one channel per client is created.<p/> This implementation      * returns {@link ClientServerChannel} instance wrapping a DataContext. Subclasses may      * override the method to customize channel creation. For instance they may wrap      * channel in the custom interceptors to handle transactions or security.      */
+comment|/**      * Creates a server-side channel that will handle all client requests. For shared      * sessions the same channel instance is reused for the entire group of clients. For      * dedicated sessions, one channel per client is created.      *<p/>      * This implementation returns {@link ClientServerChannel} instance wrapping a      * DataContext. Subclasses may override the method to customize channel creation. For      * instance they may wrap channel in the custom interceptors to handle transactions or      * security.      */
 specifier|protected
 name|DataChannel
 name|createChannel
@@ -698,77 +659,23 @@ name|domain
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets up Cayenne stack.      */
-specifier|protected
-name|void
-name|initCayenneStack
-parameter_list|(
-name|Map
-name|properties
-parameter_list|)
-block|{
-name|Configuration
-name|cayenneConfig
-init|=
-operator|new
-name|DefaultConfiguration
-argument_list|(
-name|Configuration
-operator|.
-name|DEFAULT_DOMAIN_FILE
-argument_list|)
-decl_stmt|;
-try|try
-block|{
-name|cayenneConfig
-operator|.
-name|initialize
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error starting Cayenne"
-argument_list|,
-name|ex
-argument_list|)
-throw|;
-block|}
-comment|// TODO (Andrus 10/15/2005) this assumes that mapping has a single domain...
-comment|// do something about multiple domains
-name|this
-operator|.
-name|domain
-operator|=
-name|cayenneConfig
-operator|.
-name|getDomain
-argument_list|()
-expr_stmt|;
-block|}
 comment|/**      * Initializes EventBridge parameters for remote clients peer-to-peer communications.      */
 specifier|protected
 name|void
 name|initEventBridgeParameters
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 block|{
 name|String
 name|eventBridgeFactoryName
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -786,10 +693,20 @@ literal|null
 condition|)
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|eventBridgeParameters
 init|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 argument_list|(
 name|properties
 argument_list|)
