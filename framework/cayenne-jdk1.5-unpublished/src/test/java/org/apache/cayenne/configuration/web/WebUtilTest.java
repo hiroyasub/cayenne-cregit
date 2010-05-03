@@ -89,9 +89,7 @@ name|runtime
 init|=
 operator|new
 name|CayenneRuntime
-argument_list|(
-literal|"xx"
-argument_list|)
+argument_list|()
 block|{         }
 decl_stmt|;
 name|WebUtil
@@ -120,9 +118,7 @@ name|runtime1
 init|=
 operator|new
 name|CayenneRuntime
-argument_list|(
-literal|"yy"
-argument_list|)
+argument_list|()
 block|{         }
 decl_stmt|;
 name|WebUtil

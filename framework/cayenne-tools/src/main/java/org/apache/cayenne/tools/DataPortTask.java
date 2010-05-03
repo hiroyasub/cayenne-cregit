@@ -371,8 +371,6 @@ init|=
 operator|new
 name|CayenneServerRuntime
 argument_list|(
-name|projectFileLocation
-argument_list|,
 name|module
 argument_list|)
 decl_stmt|;

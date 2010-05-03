@@ -198,7 +198,7 @@ name|context1
 init|=
 name|runtime
 operator|.
-name|newContext
+name|getContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -211,7 +211,7 @@ name|context2
 init|=
 name|runtime
 operator|.
-name|newContext
+name|getContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -288,7 +288,7 @@ name|context1
 init|=
 name|runtime
 operator|.
-name|newContext
+name|getContext
 argument_list|()
 decl_stmt|;
 name|ObjectContext
@@ -296,7 +296,7 @@ name|context2
 init|=
 name|runtime
 operator|.
-name|newContext
+name|getContext
 argument_list|()
 decl_stmt|;
 name|Table1

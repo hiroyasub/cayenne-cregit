@@ -91,20 +91,6 @@ name|Module
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|resource
-operator|.
-name|ResourceLocator
-import|;
-end_import
-
 begin_comment
 comment|/**  * A superclass of possible Cayenne runtime objects. A CayenneRuntime is the main access  * point to a given Cayenne stack. It provides a default Cayenne configuration as well as  * a way to customize this configuration via a built in dependency injection container.  *   * @since 3.1  */
 end_comment
@@ -116,10 +102,6 @@ class|class
 name|CayenneRuntime
 block|{
 specifier|protected
-name|String
-name|configurationLocation
-decl_stmt|;
-specifier|protected
 name|Injector
 name|injector
 decl_stmt|;
@@ -128,33 +110,15 @@ name|Module
 index|[]
 name|modules
 decl_stmt|;
-comment|/**      * Creates a CayenneRuntime with configuration based on supplied array of DI modules.      */
+comment|/**      * Creates a CayenneRuntime with configuration based on the supplied array of DI      * modules.      */
 specifier|public
 name|CayenneRuntime
 parameter_list|(
-name|String
-name|configurationLocation
-parameter_list|,
 name|Module
 modifier|...
 name|modules
 parameter_list|)
 block|{
-if|if
-condition|(
-name|configurationLocation
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|NullPointerException
-argument_list|(
-literal|"Null runtime configurationLocation"
-argument_list|)
-throw|;
-block|}
 if|if
 condition|(
 name|modules
@@ -173,12 +137,6 @@ expr_stmt|;
 block|}
 name|this
 operator|.
-name|configurationLocation
-operator|=
-name|configurationLocation
-expr_stmt|;
-name|this
-operator|.
 name|modules
 operator|=
 name|modules
@@ -195,13 +153,10 @@ name|modules
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a CayenneRuntime with configuration based on supplied array of DI modules.      */
+comment|/**      * Creates a CayenneRuntime with configuration based on the supplied collection of DI      * modules.      */
 specifier|public
 name|CayenneRuntime
 parameter_list|(
-name|String
-name|configurationLocation
-parameter_list|,
 name|Collection
 argument_list|<
 name|Module
@@ -209,27 +164,6 @@ argument_list|>
 name|modules
 parameter_list|)
 block|{
-if|if
-condition|(
-name|configurationLocation
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|NullPointerException
-argument_list|(
-literal|"Null runtime configurationLocation"
-argument_list|)
-throw|;
-block|}
-name|this
-operator|.
-name|configurationLocation
-operator|=
-name|configurationLocation
-expr_stmt|;
 if|if
 condition|(
 name|modules
@@ -283,16 +217,6 @@ name|modules
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns location of the runtime configuration resource. E.g. "cayenne-xyz.xml".      * Configuration URL is passing this location to {@link ResourceLocator}.      */
-specifier|public
-name|String
-name|getConfigurationLocation
-parameter_list|()
-block|{
-return|return
-name|configurationLocation
-return|;
-block|}
 comment|/**      * Returns an array of modules used to initialize this runtime.      */
 specifier|public
 name|Module
@@ -331,10 +255,10 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns an ObjectContext based on the runtime DataChannel.      */
+comment|/**      * Returns an ObjectContext based on the runtime DataChannel. Default configuration      * will return a new instance of the ObjectContext on every call, as the corresponding      * factory is bound using NO_SCOPE scope. Custom modules may change this behavior.      */
 specifier|public
 name|ObjectContext
-name|newContext
+name|getContext
 parameter_list|()
 block|{
 return|return

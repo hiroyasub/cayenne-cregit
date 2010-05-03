@@ -324,8 +324,6 @@ init|=
 operator|new
 name|CayenneServerRuntime
 argument_list|(
-name|configurationLocation
-argument_list|,
 name|modules
 argument_list|)
 decl_stmt|;
