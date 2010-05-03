@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A "lightweight" DataRowStore.  *   */
+comment|/**  * A "lightweight" DataRowStore.  */
 end_comment
 
 begin_class

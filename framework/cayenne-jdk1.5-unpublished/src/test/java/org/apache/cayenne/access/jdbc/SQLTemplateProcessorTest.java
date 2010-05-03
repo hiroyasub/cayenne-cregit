@@ -69,6 +69,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -103,20 +113,6 @@ name|ObjectId
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|BasicCase
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -126,7 +122,7 @@ specifier|public
 class|class
 name|SQLTemplateProcessorTest
 extends|extends
-name|BasicCase
+name|TestCase
 block|{
 specifier|public
 name|void

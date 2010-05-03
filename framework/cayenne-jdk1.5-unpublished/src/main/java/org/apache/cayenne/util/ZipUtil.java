@@ -142,10 +142,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to perform zip/unzip operations on files and directories.  *    */
+comment|/**  * Utility class to perform zip/unzip operations on files and directories.  *   * @deprecated since 3.1. This class is unused and will be removed in the future  *             versions..  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ZipUtil
@@ -159,7 +161,7 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**       * Unpacks a zip file to the target directory.       *       * @param zipFile       * @param destDir       * @throws IOException       */
+comment|/**      * Unpacks a zip file to the target directory.      *       * @param zipFile      * @param destDir      * @throws IOException      */
 specifier|public
 specifier|static
 name|void
@@ -391,7 +393,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**       * Recursively zips a set of root entries into a zipfile, compressing the       * contents.       *       * @param zipFile target zip file.       * @param parentDir a directory containing source files to zip.       * @param sources an array of files and/or directories to zip.       * @param pathSeparator path separator for zip entries.       *        * @throws IOException       */
+comment|/**      * Recursively zips a set of root entries into a zipfile, compressing the contents.      *       * @param zipFile target zip file.      * @param parentDir a directory containing source files to zip.      * @param sources an array of files and/or directories to zip.      * @param pathSeparator path separator for zip entries.      * @throws IOException      */
 specifier|public
 specifier|static
 name|void
@@ -553,7 +555,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Uses code fragments from Jakarta-Ant, Copyright: Apache Software      * Foundation.      */
+comment|/**      * Uses code fragments from Jakarta-Ant, Copyright: Apache Software Foundation.      */
 specifier|private
 specifier|static
 name|void
@@ -654,7 +656,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Uses code fragments from Jakarta-Ant, Copyright: Apache Software      * Foundation.      */
+comment|/**      * Uses code fragments from Jakarta-Ant, Copyright: Apache Software Foundation.      */
 specifier|private
 specifier|static
 name|void

@@ -67,6 +67,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -75,7 +85,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|BasicCase
+name|CayenneResources
 import|;
 end_import
 
@@ -84,7 +94,7 @@ specifier|public
 class|class
 name|FilesystemResourceLocatorTest
 extends|extends
-name|BasicCase
+name|TestCase
 block|{
 specifier|public
 name|void
@@ -132,6 +142,11 @@ expr_stmt|;
 name|File
 name|base
 init|=
+name|CayenneResources
+operator|.
+name|getResources
+argument_list|()
+operator|.
 name|getTestDir
 argument_list|()
 decl_stmt|;
@@ -270,6 +285,11 @@ expr_stmt|;
 name|File
 name|base
 init|=
+name|CayenneResources
+operator|.
+name|getResources
+argument_list|()
+operator|.
 name|getTestDir
 argument_list|()
 decl_stmt|;
@@ -372,6 +392,11 @@ init|=
 operator|new
 name|File
 argument_list|(
+name|CayenneResources
+operator|.
+name|getResources
+argument_list|()
+operator|.
 name|getTestDir
 argument_list|()
 argument_list|,

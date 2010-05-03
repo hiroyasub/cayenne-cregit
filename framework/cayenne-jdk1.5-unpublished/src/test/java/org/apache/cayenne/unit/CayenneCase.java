@@ -47,6 +47,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -223,7 +233,7 @@ specifier|abstract
 class|class
 name|CayenneCase
 extends|extends
-name|BasicCase
+name|TestCase
 block|{
 specifier|public
 specifier|static

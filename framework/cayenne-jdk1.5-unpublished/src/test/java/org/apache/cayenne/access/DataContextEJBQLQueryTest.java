@@ -219,6 +219,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|test
+operator|.
+name|AssertExtras
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|unit
 operator|.
 name|CayenneCase
@@ -492,6 +506,8 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -508,6 +524,8 @@ argument_list|,
 literal|0.01
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -804,6 +822,8 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -867,6 +887,8 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -1539,6 +1561,8 @@ name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -1626,6 +1650,8 @@ name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -1713,6 +1739,8 @@ name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -1800,6 +1828,8 @@ name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -1935,6 +1965,8 @@ name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new

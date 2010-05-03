@@ -49,28 +49,20 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|BasicCase
+name|TestCase
 import|;
 end_import
-
-begin_comment
-comment|/**  */
-end_comment
 
 begin_class
 specifier|public
 class|class
 name|SQLTemplateProcessorChainTest
 extends|extends
-name|BasicCase
+name|TestCase
 block|{
 specifier|public
 name|void

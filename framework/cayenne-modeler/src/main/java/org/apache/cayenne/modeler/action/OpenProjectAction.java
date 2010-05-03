@@ -729,6 +729,9 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
+comment|// TODO: andrus 05/02/2010 - this message shows intermediate
+comment|// version of the project XML, not the Modeler code version that
+comment|// can be used for upgrade
 literal|"Can't upgrade project. Open the project in the Modeler v."
 operator|+
 name|md
@@ -736,7 +739,7 @@ operator|.
 name|getIntermediateUpgradeVersion
 argument_list|()
 operator|+
-literal|" to do an intermediate upgrade before doing upgrade to "
+literal|" to do an intermediate upgrade before you can upgrade to v."
 operator|+
 name|md
 operator|.

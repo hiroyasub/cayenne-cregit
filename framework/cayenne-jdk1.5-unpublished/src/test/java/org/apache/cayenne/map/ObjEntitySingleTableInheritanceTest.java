@@ -27,15 +27,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|BasicCase
+name|TestCase
 import|;
 end_import
 
@@ -48,7 +44,7 @@ specifier|public
 class|class
 name|ObjEntitySingleTableInheritanceTest
 extends|extends
-name|BasicCase
+name|TestCase
 block|{
 specifier|protected
 name|DataMap

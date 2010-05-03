@@ -111,6 +111,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|test
+operator|.
+name|AssertExtras
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|unit
 operator|.
 name|CayenneCase
@@ -216,6 +230,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -261,6 +277,8 @@ argument_list|(
 literal|1
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -371,6 +389,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -426,6 +446,8 @@ argument_list|(
 literal|1
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -481,6 +503,8 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -780,6 +804,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -890,6 +916,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
@@ -1000,6 +1028,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
+name|AssertExtras
+operator|.
 name|assertEquals
 argument_list|(
 operator|new
