@@ -327,6 +327,8 @@ operator|new
 name|MapLoader
 argument_list|()
 block|{
+annotation|@
+name|Deprecated
 specifier|protected
 name|ResourceLocator
 name|configLocator

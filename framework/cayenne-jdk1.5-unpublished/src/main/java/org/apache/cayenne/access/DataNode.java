@@ -706,7 +706,7 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-comment|/**      * Returns a DataNode that should hanlde queries for all DataMap components.      *       * @since 1.1      */
+comment|/**      * Returns a DataNode that should handle queries for all DataMap components.      *       * @since 1.1      */
 specifier|public
 name|DataNode
 name|lookupDataNode

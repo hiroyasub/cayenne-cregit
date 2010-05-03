@@ -87,9 +87,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataContext
+name|server
+operator|.
+name|CayenneServerRuntime
 import|;
 end_import
 
@@ -198,13 +200,23 @@ index|[]
 name|args
 parameter_list|)
 block|{
+comment|// starting Cayenne
+name|CayenneServerRuntime
+name|cayenneRuntime
+init|=
+operator|new
+name|CayenneServerRuntime
+argument_list|(
+literal|"cayenne-UntitledDomain.xml"
+argument_list|)
+decl_stmt|;
 comment|// getting a hold of ObjectContext
 name|ObjectContext
 name|context
 init|=
-name|DataContext
+name|cayenneRuntime
 operator|.
-name|createDataContext
+name|getContext
 argument_list|()
 decl_stmt|;
 name|newObjectsTutorial

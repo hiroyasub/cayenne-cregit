@@ -49,20 +49,6 @@ name|TestCase
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|conf
-operator|.
-name|Configuration
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -131,9 +117,7 @@ argument_list|(
 operator|new
 name|File
 argument_list|(
-name|Configuration
-operator|.
-name|DEFAULT_DOMAIN_FILE
+literal|"cayenne.xml"
 argument_list|)
 argument_list|)
 argument_list|)

@@ -148,10 +148,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to find resources (files, etc.), using a preconfigured strategy.  */
+comment|/**  * Utility class to find resources (files, etc.), using a preconfigured strategy.  *   * @deprecated since 3.1 deprecated in favor of injectable  *             org.apache.cayenne.resource.ResourceLocator.  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ResourceLocator

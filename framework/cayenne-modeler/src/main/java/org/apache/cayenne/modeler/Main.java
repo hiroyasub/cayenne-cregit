@@ -105,9 +105,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conf
+name|gen
 operator|.
-name|Configuration
+name|ClassGenerationAction
 import|;
 end_import
 
@@ -119,9 +119,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|gen
+name|modeler
 operator|.
-name|ClassGenerationAction
+name|action
+operator|.
+name|OpenProjectAction
 import|;
 end_import
 
@@ -156,22 +158,6 @@ operator|.
 name|util
 operator|.
 name|CayenneUserDir
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|action
-operator|.
-name|OpenProjectAction
 import|;
 end_import
 
@@ -343,27 +329,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|f
-operator|.
-name|isDirectory
-argument_list|()
-condition|)
-block|{
-name|f
-operator|=
-operator|new
-name|File
-argument_list|(
-name|f
-argument_list|,
-name|Configuration
-operator|.
-name|DEFAULT_DOMAIN_FILE
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|f

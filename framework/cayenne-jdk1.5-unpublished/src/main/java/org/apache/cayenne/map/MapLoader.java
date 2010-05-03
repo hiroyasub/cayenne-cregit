@@ -3132,7 +3132,9 @@ return|return
 name|sb
 return|;
 block|}
-comment|/**      * Loads DataMap from file specified by<code>uri</code> parameter.      *       * @throws CayenneRuntimeException if source URI does not resolve to a valid map files      */
+comment|/**      * Loads DataMap from file specified by<code>uri</code> parameter.      *       * @throws CayenneRuntimeException if source URI does not resolve to a valid map files      * @deprecated since 3.1 {@link #loadDataMap(InputSource)} should be used.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|loadDataMap
@@ -3357,7 +3359,9 @@ return|return
 name|location
 return|;
 block|}
-comment|/**      * Creates, configures and returns a default ResourceFinder.      *       * @since 3.0      */
+comment|/**      * Creates, configures and returns a default ResourceFinder.      *       * @since 3.0      * @deprecated since 3.1 as MapLoader should not bother itself with looking up      *             resources.      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|ResourceFinder
 name|createResourceFinder
