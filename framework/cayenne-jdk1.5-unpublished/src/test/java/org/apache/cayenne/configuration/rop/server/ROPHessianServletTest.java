@@ -220,7 +220,7 @@ name|config
 operator|.
 name|setServletName
 argument_list|(
-literal|"org.apache.cayenne.configuration.rop.server.test-config"
+literal|"cayenne-org.apache.cayenne.configuration.rop.server.test-config"
 argument_list|)
 expr_stmt|;
 name|MockServletContext
@@ -414,7 +414,7 @@ block|{
 name|String
 name|name
 init|=
-literal|"org.apache.cayenne.configuration.rop.server.test-config"
+literal|"cayenne-org.apache.cayenne.configuration.rop.server.test-config"
 decl_stmt|;
 name|MockServletConfig
 name|config
@@ -475,8 +475,6 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"cayenne-"
-operator|+
 name|name
 operator|+
 literal|".xml"
@@ -565,7 +563,7 @@ block|{
 name|String
 name|name
 init|=
-literal|"org.apache.cayenne.configuration.rop.server.test-config"
+literal|"cayenne-org.apache.cayenne.configuration.rop.server.test-config"
 decl_stmt|;
 name|MockServletConfig
 name|config

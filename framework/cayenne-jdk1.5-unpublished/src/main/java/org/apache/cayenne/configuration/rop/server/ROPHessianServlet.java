@@ -173,6 +173,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|event
+operator|.
+name|EventBridge
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|remote
 operator|.
 name|RemoteService
@@ -242,7 +256,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A servlet that bootstraps a Hessian-based ROP server. Servlet initialization  * parameters:  *<ul>  *<li>configuration-location (optional) - a name of Cayenne configuration XML file that  * will be used to load Cayenne stack. If missing, the servlet name will be used to derive  * the location using the following naming convention: if servlet name is "foo",  * configuration file name is name is "cayenne-foo.xml".  *<li>extra-modules (optional) - a comma or space-separated list of class names, with  * each class implementing {@link Module} interface. These are the custom modules loaded  * after the two standard ones that allow users to override any Cayenne runtime aspects,  * e.g. {@link RequestHandler}. Each custom module must have a no-arg constructor.  *</ul>  *<p>  *   * @since 3.1  */
+comment|/**  * A servlet that bootstraps a Hessian-based ROP server. Servlet initialization  * parameters:  *<ul>  *<li>configuration-location (optional) - a name of Cayenne configuration XML file that  * will be used to load Cayenne stack. If missing, the servlet name will be used to derive  * the location. ".xml" extension will be appended to the servlet name to get the  * location, so a servlet named "cayenne-foo" will result in location "cayenne-foo.xml".  *<li>extra-modules (optional) - a comma or space-separated list of class names, with  * each class implementing {@link Module} interface. These are the custom modules loaded  * after the two standard ones that allow users to override any Cayenne runtime aspects,  * e.g. {@link RequestHandler}. Each custom module must have a no-arg constructor.  *</ul>  * All other parameters passed to the servlet are considered to be related to the  * {@link EventBridge} initialization.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -279,7 +293,7 @@ name|configurationLocation
 init|=
 name|configAdapter
 operator|.
-name|getCayenneConfigurationLocation
+name|getConfigurationLocation
 argument_list|()
 decl_stmt|;
 name|Map
@@ -292,7 +306,7 @@ name|eventBridgeParameters
 init|=
 name|configAdapter
 operator|.
-name|getOtherInitializationParameters
+name|getOtherParameters
 argument_list|()
 decl_stmt|;
 name|Collection

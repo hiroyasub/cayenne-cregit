@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class that provides access to common Cayenne web configuration parameters retrieved  * either from a filter or servlet configuration.  *   * @since 3.1  */
+comment|/**  * A class that provides access to common Cayenne web configuration parameters retrieved  * either from a FilterConfig or a ServletConfig configuration.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -293,10 +293,10 @@ operator|=
 name|filterConfiguration
 expr_stmt|;
 block|}
-comment|/**      * Returns a non-null location of a Cayenne configuration, extracted from the filter      * or servlet configuration parameters.      */
+comment|/**      * Returns a non-null location of an XML Cayenne configuration, extracted from the      * filter or servlet configuration parameters.      */
 specifier|public
 name|String
-name|getCayenneConfigurationLocation
+name|getConfigurationLocation
 parameter_list|()
 block|{
 name|String
@@ -309,23 +309,56 @@ argument_list|(
 name|CONFIGURATION_LOCATION_PARAMETER
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|configurationLocation
+operator|!=
+literal|null
+condition|)
+block|{
 return|return
 name|configurationLocation
-operator|==
-literal|null
-condition|?
-name|configurationLocation
-operator|=
-literal|"cayenne-"
-operator|+
+return|;
+block|}
+name|String
+name|name
+init|=
 name|configuration
 operator|.
 name|getFilterName
 argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|name
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+if|if
+condition|(
+operator|!
+name|name
+operator|.
+name|endsWith
+argument_list|(
+literal|".xml"
+argument_list|)
+condition|)
+block|{
+name|name
+operator|=
+name|name
 operator|+
 literal|".xml"
-else|:
-name|configurationLocation
+expr_stmt|;
+block|}
+return|return
+name|name
 return|;
 block|}
 comment|/**      * Creates and returns a collection of modules made of provided standard modules and      * extra custom modules specified via an optional "extra-modules" init parameter. The      * value of the parameter is expected to be a comma or space-separated list of class      * names, with each class implementing {@link Module} interface. Each custom module      * must have a no-arg constructor. If a module of this type is already in the modules      * collection, such module is skipped.      */
@@ -536,7 +569,7 @@ return|return
 name|modules
 return|;
 block|}
-comment|/**      * Returns a map of parameters from the underlying FilterConfig or ServletConfig      * object.      */
+comment|/**      * Returns a map of all init parameters from the underlying FilterConfig or      * ServletConfig object.      */
 specifier|public
 name|Map
 argument_list|<
@@ -544,7 +577,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|getInitializationParameters
+name|getParameters
 parameter_list|()
 block|{
 name|Enumeration
@@ -628,7 +661,7 @@ return|return
 name|parameters
 return|;
 block|}
-comment|/**      * Returns servlet or filter configuration parameters, excluding those recognized by      * WebConfiguration. Namely 'configuration-location' and 'extra-modules' parameters      * are removed.      */
+comment|/**      * Returns servlet or filter init parameters, excluding those recognized by      * WebConfiguration. Namely 'configuration-location' and 'extra-modules' parameters      * are removed from the returned map.      */
 specifier|public
 name|Map
 argument_list|<
@@ -636,7 +669,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|getOtherInitializationParameters
+name|getOtherParameters
 parameter_list|()
 block|{
 name|Map
@@ -647,7 +680,7 @@ name|String
 argument_list|>
 name|parameters
 init|=
-name|getInitializationParameters
+name|getParameters
 argument_list|()
 decl_stmt|;
 if|if

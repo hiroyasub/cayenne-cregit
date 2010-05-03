@@ -224,7 +224,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"cayenne-abc.xml"
+literal|"abc.xml"
 argument_list|,
 name|runtime
 operator|.
@@ -365,7 +365,7 @@ name|config
 operator|.
 name|setFilterName
 argument_list|(
-literal|"abc"
+literal|"cayenne-abc"
 argument_list|)
 expr_stmt|;
 name|MockServletContext
