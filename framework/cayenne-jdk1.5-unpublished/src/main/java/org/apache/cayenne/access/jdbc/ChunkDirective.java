@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to describe a conditional chunk of a {@link ChainDirective chain}.  * Usage of chunk is the following:  *   *<pre>  * #chunk()...#end - e.g. #chunk()A = 5#end  * #chunk(condition)...#end - e.g. #chunk($a)A = $a#end</pre>  *   *<p>If condition is evaluated to false, chunk is not included in the chain,  * if it is true, chunk is included, and if it is not the first chunk, it is  * prefixed with chain join.  *   * @since 1.1  */
+comment|/**  * A custom Velocity directive to describe a conditional chunk of a {@link ChainDirective chain}.  * Usage of chunk is the following:  *   *<pre>  * #chunk()...#end - e.g. #chunk()A = 5#end  * #chunk($paramKey)...#end - e.g. #chunk($a)A = $a#end  *</pre>  *<p>  * If context contains paramKey and it's value isn't null, chunk is included in the  * chain, and if it is not the first chunk, it is prefixed with chain join (OR/AND).  * If context doesn't contain paramKey or it's value is null, chunk is skipped.  * @since 1.1  */
 end_comment
 
 begin_class
@@ -194,7 +194,6 @@ argument_list|()
 operator|>
 literal|1
 operator|&&
-operator|!
 name|node
 operator|.
 name|jjtGetChild
@@ -202,13 +201,15 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
-name|evaluate
+name|value
 argument_list|(
 name|context
 argument_list|)
+operator|==
+literal|null
 condition|)
 block|{
-comment|// return value is really meaningless in Velocity...whatever
+comment|// skip this chunk
 return|return
 literal|false
 return|;

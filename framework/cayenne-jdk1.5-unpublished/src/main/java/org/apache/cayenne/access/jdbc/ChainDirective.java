@@ -386,10 +386,12 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
-name|evaluate
+name|value
 argument_list|(
 name|context
 argument_list|)
+operator|!=
+literal|null
 condition|)
 block|{
 if|if
