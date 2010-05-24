@@ -1654,7 +1654,7 @@ operator|.
 name|TINYINT
 argument_list|)
 argument_list|,
-name|JAVA_BYTE
+name|JAVA_SHORT
 argument_list|)
 expr_stmt|;
 name|sqlEnumJava
@@ -1925,7 +1925,7 @@ name|valueOf
 argument_list|(
 name|Types
 operator|.
-name|TINYINT
+name|SMALLINT
 argument_list|)
 argument_list|)
 expr_stmt|;
