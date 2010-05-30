@@ -25,32 +25,6 @@ name|EventObject
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|event
-operator|.
-name|DefaultEventManager
-operator|.
-name|Dispatch
-import|;
-end_import
-
 begin_comment
 comment|/**  * This class acts as bridge between an Object that wants to inform others about its  * current state or a change thereof (Publisher) and a list of objects interested in the  * Subject (Listeners).  *   * @since 3.1 before 3.1 this was a concrete class.  */
 end_comment
@@ -63,14 +37,6 @@ block|{
 comment|/**      * Returns true if this EventManager is single-threaded. If so it will throw an      * exception on any attempt to register an unblocking listener or dispatch a      * non-blocking event.      *       * @since 1.2      */
 name|boolean
 name|isSingleThreaded
-parameter_list|()
-function_decl|;
-comment|/**      * Returns a list of currently queued events. Queue is returned by copy. This method      * is useful for inspecting the state of the event queue at any particular moment, but      * doesn't allow callers to alter the queue state.      *       * @since 1.1      */
-name|List
-argument_list|<
-name|Dispatch
-argument_list|>
-name|getEventQueue
 parameter_list|()
 function_decl|;
 comment|/**      * Stops event threads. After the EventManager is stopped, it can not be restarted and      * should be discarded.      *       * @since 3.0      */

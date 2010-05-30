@@ -311,32 +311,6 @@ return|return
 name|singleThread
 return|;
 block|}
-comment|/**      * Returns a list of currently queued events. Queue is returned by copy. This method      * is useful for inspecting the state of the event queue at any particular moment, but      * doesn't allow callers to alter the queue state.      *       * @since 1.1      */
-specifier|public
-name|List
-argument_list|<
-name|Dispatch
-argument_list|>
-name|getEventQueue
-parameter_list|()
-block|{
-synchronized|synchronized
-init|(
-name|eventQueue
-init|)
-block|{
-return|return
-operator|new
-name|ArrayList
-argument_list|<
-name|Dispatch
-argument_list|>
-argument_list|(
-name|eventQueue
-argument_list|)
-return|;
-block|}
-block|}
 comment|/**      * Stops event threads. After the EventManager is stopped, it can not be restarted and      * should be discarded.      *       * @since 3.0      */
 specifier|public
 name|void

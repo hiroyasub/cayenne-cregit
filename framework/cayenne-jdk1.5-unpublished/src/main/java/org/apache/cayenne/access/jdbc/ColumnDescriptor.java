@@ -206,7 +206,7 @@ name|ColumnDescriptor
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a column descriptor with user-specified parameters.      *       * @since 1.2      * @deprecated use ColumnDescriptor(String columnName, int jdbcType) instead      */
+comment|/**      * Creates a column descriptor with user-specified parameters.      *       * @since 1.2      * @deprecated since 3.1 use ColumnDescriptor(String columnName, int jdbcType) instead      */
 annotation|@
 name|Deprecated
 specifier|public

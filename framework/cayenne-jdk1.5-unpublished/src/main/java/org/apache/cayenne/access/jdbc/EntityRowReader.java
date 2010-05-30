@@ -321,7 +321,8 @@ literal|"."
 argument_list|)
 condition|)
 block|{
-comment|// if the dataRowKey contains ".", it is prefetched column and we can use it instead of search the name by alias
+comment|// if the dataRowKey contains ".", it is prefetched column and we can use
+comment|// it instead of search the name by alias
 name|labels
 index|[
 name|i
