@@ -395,7 +395,7 @@ return|return
 name|entity
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * Returns a collection containing this inheritance tree node entity and all its      * subentities.      *       * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<

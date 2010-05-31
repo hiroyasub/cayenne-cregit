@@ -1547,6 +1547,26 @@ operator|=
 name|entityInheritanceTree
 expr_stmt|;
 block|}
+specifier|public
+name|boolean
+name|hasSubclasses
+parameter_list|()
+block|{
+return|return
+name|entityInheritanceTree
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|entityInheritanceTree
+operator|.
+name|getChildren
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

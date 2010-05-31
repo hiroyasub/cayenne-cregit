@@ -147,20 +147,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityInheritanceTree
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|EntityResolver
 import|;
 end_import
@@ -325,23 +311,6 @@ parameter_list|()
 block|{
 return|return
 name|adapter
-return|;
-block|}
-comment|/**      * Returns an EntityInheritanceTree for the root entity.      *       * @since 1.1      */
-specifier|public
-name|EntityInheritanceTree
-name|getRootInheritanceTree
-parameter_list|()
-block|{
-return|return
-name|getEntityResolver
-argument_list|()
-operator|.
-name|lookupInheritanceTree
-argument_list|(
-name|getRootEntity
-argument_list|()
-argument_list|)
 return|;
 block|}
 comment|/**      * Returns query object being processed.      */

@@ -348,6 +348,15 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|hasSubclasses
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+specifier|public
+name|boolean
 name|visitAllProperties
 parameter_list|(
 name|PropertyVisitor

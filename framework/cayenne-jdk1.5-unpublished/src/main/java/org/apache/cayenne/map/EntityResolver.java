@@ -2212,8 +2212,7 @@ name|getObjEntities
 argument_list|()
 control|)
 block|{
-comment|// build inheritance tree... include nodes that
-comment|// have no children to avoid unneeded cache rebuilding on lookup...
+comment|// build inheritance tree
 name|EntityInheritanceTree
 name|node
 init|=
@@ -2452,7 +2451,7 @@ name|maps
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities. If ObjEntity has no      * known subentities, null is returned.      */
+comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities.      *       * @deprecated since 3.1 use {@link #lookupInheritanceTree(String)}.      */
 specifier|public
 name|EntityInheritanceTree
 name|lookupInheritanceTree
@@ -2471,7 +2470,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities. If ObjEntity has no      * known subentities, null is returned.      *       * @since 3.0      */
+comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities. Returns non-null object      * for all existing entities, even those that don't have super or subclasses.      *       * @since 3.0      */
 specifier|public
 name|EntityInheritanceTree
 name|lookupInheritanceTree
@@ -2514,23 +2513,7 @@ name|entityName
 argument_list|)
 expr_stmt|;
 block|}
-comment|// don't return "trivial" trees
 return|return
-operator|(
-name|tree
-operator|==
-literal|null
-operator|||
-name|tree
-operator|.
-name|getChildrenCount
-argument_list|()
-operator|==
-literal|0
-operator|)
-condition|?
-literal|null
-else|:
 name|tree
 return|;
 block|}

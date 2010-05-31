@@ -538,10 +538,8 @@ operator|.
 name|getClassDescriptor
 argument_list|()
 operator|.
-name|getEntityInheritanceTree
+name|hasSubclasses
 argument_list|()
-operator|!=
-literal|null
 condition|)
 block|{
 return|return
@@ -615,10 +613,8 @@ operator|.
 name|getClassDescriptor
 argument_list|()
 operator|.
-name|getEntityInheritanceTree
+name|hasSubclasses
 argument_list|()
-operator|!=
-literal|null
 condition|)
 block|{
 return|return

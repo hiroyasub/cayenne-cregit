@@ -613,6 +613,9 @@ name|descriptor
 operator|.
 name|getEntity
 argument_list|()
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|descriptor

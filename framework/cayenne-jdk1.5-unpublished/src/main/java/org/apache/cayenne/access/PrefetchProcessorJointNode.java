@@ -229,20 +229,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityInheritanceTree
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -692,11 +678,6 @@ expr_stmt|;
 block|}
 comment|// since JDBC row reader won't inject JOINED entity name, we have to
 comment|// detect it here...
-name|ObjEntity
-name|entity
-init|=
-literal|null
-decl_stmt|;
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -705,46 +686,19 @@ operator|.
 name|getDescriptor
 argument_list|()
 decl_stmt|;
-name|EntityInheritanceTree
-name|entityInheritanceTree
+name|ObjEntity
+name|entity
 init|=
 name|descriptor
 operator|.
 name|getEntityInheritanceTree
 argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|entityInheritanceTree
-operator|!=
-literal|null
-condition|)
-block|{
-name|entity
-operator|=
-name|entityInheritanceTree
 operator|.
 name|entityMatchingRow
 argument_list|(
 name|row
 argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|entity
-operator|==
-literal|null
-condition|)
-block|{
-name|entity
-operator|=
-name|descriptor
-operator|.
-name|getEntity
-argument_list|()
-expr_stmt|;
-block|}
+decl_stmt|;
 name|row
 operator|.
 name|setEntityName
@@ -759,8 +713,6 @@ return|return
 name|row
 return|;
 block|}
-comment|// ***** private methods *****
-comment|// ========================================================
 comment|/**      * Configures row columns mapping for this node entity.      */
 specifier|private
 name|void

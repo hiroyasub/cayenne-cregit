@@ -61,20 +61,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityInheritanceTree
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|EntityResolver
 import|;
 end_import
@@ -89,7 +75,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjEntity
+name|ObjRelationship
 import|;
 end_import
 
@@ -101,9 +87,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|reflect
 operator|.
-name|ObjRelationship
+name|ClassDescriptor
 import|;
 end_import
 
@@ -140,11 +126,8 @@ decl_stmt|;
 name|EntityResolver
 name|resolver
 decl_stmt|;
-name|ObjEntity
-name|entity
-decl_stmt|;
-name|EntityInheritanceTree
-name|inheritanceTree
+name|ClassDescriptor
+name|classDescriptor
 decl_stmt|;
 comment|/**      * Routes query prefetches, but not the query itself.      */
 name|void
@@ -196,7 +179,7 @@ name|resolver
 expr_stmt|;
 name|this
 operator|.
-name|entity
+name|classDescriptor
 operator|=
 name|query
 operator|.
@@ -205,19 +188,8 @@ argument_list|(
 name|resolver
 argument_list|)
 operator|.
-name|getObjEntity
+name|getClassDescriptor
 argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|inheritanceTree
-operator|=
-name|resolver
-operator|.
-name|lookupInheritanceTree
-argument_list|(
-name|entity
-argument_list|)
 expr_stmt|;
 name|query
 operator|.
@@ -281,7 +253,10 @@ name|CayenneMapEntry
 argument_list|>
 name|it
 init|=
-name|entity
+name|classDescriptor
+operator|.
+name|getEntity
+argument_list|()
 operator|.
 name|resolvePathComponents
 argument_list|(
@@ -323,13 +298,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid prefetch '"
-operator|+
+literal|"Invalid prefetch '%s' for entity '%s'"
+argument_list|,
 name|prefetchPath
-operator|+
-literal|"' for entity: "
-operator|+
-name|entity
+argument_list|,
+name|classDescriptor
+operator|.
+name|getEntity
+argument_list|()
 operator|.
 name|getName
 argument_list|()
@@ -348,20 +324,12 @@ decl_stmt|;
 name|Expression
 name|entityQualifier
 init|=
-operator|(
-name|inheritanceTree
-operator|!=
-literal|null
-operator|)
-condition|?
-name|inheritanceTree
+name|classDescriptor
+operator|.
+name|getEntityInheritanceTree
+argument_list|()
 operator|.
 name|qualifierForEntityAndSubclasses
-argument_list|()
-else|:
-name|entity
-operator|.
-name|getDeclaredQualifier
 argument_list|()
 decl_stmt|;
 if|if
@@ -407,7 +375,10 @@ name|prefetchQuery
 operator|.
 name|setQualifier
 argument_list|(
-name|entity
+name|classDescriptor
+operator|.
+name|getEntity
+argument_list|()
 operator|.
 name|translateToRelatedEntity
 argument_list|(

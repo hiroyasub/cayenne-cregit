@@ -132,6 +132,11 @@ name|EntityInheritanceTree
 name|getEntityInheritanceTree
 parameter_list|()
 function_decl|;
+comment|/**      * Returns whether this class has persistent subclasses.      *       * @since 3.1      */
+name|boolean
+name|hasSubclasses
+parameter_list|()
+function_decl|;
 comment|/**      * Returns a class mapped by this descriptor.      */
 name|Class
 argument_list|<
