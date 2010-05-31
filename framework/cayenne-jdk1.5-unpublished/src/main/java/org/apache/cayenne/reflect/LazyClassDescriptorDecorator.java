@@ -27,16 +27,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -381,9 +371,9 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Iterator
+name|Collection
 argument_list|<
-name|Property
+name|AttributeProperty
 argument_list|>
 name|getIdProperties
 parameter_list|()
@@ -399,7 +389,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Iterator
+name|Collection
 argument_list|<
 name|ObjAttribute
 argument_list|>
@@ -432,7 +422,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Iterator
+name|Collection
 argument_list|<
 name|ArcProperty
 argument_list|>

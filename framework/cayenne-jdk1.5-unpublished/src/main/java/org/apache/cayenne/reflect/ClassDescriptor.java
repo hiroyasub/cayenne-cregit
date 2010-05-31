@@ -27,16 +27,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -205,16 +195,16 @@ name|String
 name|propertyName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an iterator over the properties mapped to id columns.      *       * @since 3.0      */
-name|Iterator
+comment|/**      * Returns a collection of the properties mapped to id columns.      *       * @since 3.1      */
+name|Collection
 argument_list|<
-name|Property
+name|AttributeProperty
 argument_list|>
 name|getIdProperties
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a collection of ObjAttribute for the described class, its superclasses and      * subclasses, that participate in inheritance qualifier. If a discriminator      * expression specifies a DbAttribute instead of an ObjAttribute, a synthetic      * ObjAttribute is created and returned.      *       * @since 3.0      */
-name|Iterator
+comment|/**      * Returns a collection of ObjAttribute for the described class, its superclasses and      * subclasses, that participate in inheritance qualifier. If a discriminator      * expression specifies a DbAttribute instead of an ObjAttribute, a synthetic      * ObjAttribute is created and returned.      *       * @since 3.1      */
+name|Collection
 argument_list|<
 name|ObjAttribute
 argument_list|>
@@ -226,8 +216,8 @@ name|Expression
 name|getEntityQualifier
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an iterator over the arc properties whose reverse arcs are to-many maps.      * I.e. for each ArcProperty in the iterator, the following is true:      *       *<pre>      * arc.getComplimentaryReverseArc() instanceof ToManyMapProperty      *</pre>      *       * @since 3.0      */
-name|Iterator
+comment|/**      * Returns a collection over the arc properties whose reverse arcs are to-many maps.      * I.e. for each ArcProperty in returned collection, the following is true:      *       *<pre>      * arc.getComplimentaryReverseArc() instanceof ToManyMapProperty      *</pre>      *       * @since 3.1      */
+name|Collection
 argument_list|<
 name|ArcProperty
 argument_list|>

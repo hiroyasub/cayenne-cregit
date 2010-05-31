@@ -711,7 +711,7 @@ name|getEntityName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Iterator
+name|Collection
 argument_list|<
 name|ArcProperty
 argument_list|>
@@ -724,9 +724,10 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|mapArcProperties
 operator|.
-name|hasNext
+name|isEmpty
 argument_list|()
 condition|)
 block|{
@@ -738,22 +739,14 @@ argument_list|(
 name|id
 argument_list|)
 decl_stmt|;
-while|while
-condition|(
-name|mapArcProperties
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|ArcProperty
 name|arc
-init|=
+range|:
 name|mapArcProperties
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+control|)
+block|{
 name|ToManyMapProperty
 name|reverseArc
 init|=
@@ -937,7 +930,7 @@ operator|==
 name|target
 condition|)
 block|{
-comment|//this remove does not trigger event in PersistentObjectMap
+comment|// this remove does not trigger event in PersistentObjectMap
 name|it
 operator|.
 name|remove
@@ -946,9 +939,9 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-comment|//TODO: (andrey, 25/11/09 - this is a hack to prevent event triggering
+comment|// TODO: (andrey, 25/11/09 - this is a hack to prevent event triggering
 comment|// (and concurrent exceptions)
-comment|//should find a way to get rid of type casting
+comment|// should find a way to get rid of type casting
 operator|(
 operator|(
 name|PersistentObjectMap
