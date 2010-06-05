@@ -135,6 +135,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * Sets columns that will be implicitly used in subsequent inserts and selects.      */
 specifier|public
 name|TableHelper
 name|setColumns
@@ -216,6 +217,26 @@ argument_list|)
 expr_stmt|;
 return|return
 name|this
+return|;
+block|}
+comment|/**      * Selects a single row from the mapped table.      */
+specifier|public
+name|Object
+index|[]
+name|select
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+return|return
+name|dbHelper
+operator|.
+name|select
+argument_list|(
+name|tableName
+argument_list|,
+name|columns
+argument_list|)
 return|;
 block|}
 specifier|public
