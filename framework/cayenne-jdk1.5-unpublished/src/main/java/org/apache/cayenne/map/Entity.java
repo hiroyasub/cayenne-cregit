@@ -1286,6 +1286,22 @@ name|rel
 return|;
 block|}
 block|}
+name|String
+name|entityName
+init|=
+operator|(
+name|currentEnt
+operator|!=
+literal|null
+operator|)
+condition|?
+name|currentEnt
+operator|.
+name|getName
+argument_list|()
+else|:
+literal|"(?)"
+decl_stmt|;
 comment|// build error message
 name|StringBuilder
 name|buf
@@ -1303,10 +1319,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|currentEnt
-operator|.
-name|getName
-argument_list|()
+name|entityName
 argument_list|)
 operator|.
 name|append
