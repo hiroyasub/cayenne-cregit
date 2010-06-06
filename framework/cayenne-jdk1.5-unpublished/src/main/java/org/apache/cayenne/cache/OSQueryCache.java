@@ -853,7 +853,7 @@ literal|null
 return|;
 block|}
 block|}
-comment|/**      * Returns a non-null cached value. If it is not present in the cache, it is obtained      * by calling {@link QueryCacheEntryFactory#createObject()}. Whether the cache provider      * will block on the entry update or not is controlled by "cache.blocking"      * configuration property and is "false" by default.      */
+comment|/**      * Returns a non-null cached value. If it is not present in the cache, it is obtained      * by calling {@link QueryCacheEntryFactory#createObject()}. Whether the cache      * provider will block on the entry update or not is controlled by "cache.blocking"      * configuration property and is "false" by default.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

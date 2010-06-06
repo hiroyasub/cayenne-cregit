@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An interface that defines generic QueryCache.  *   * @since 3.0  */
+comment|/**  * An interface that defines generic QueryCache.  *<p>  * Note that depending on implementation, {@link #remove(String)},  * {@link #removeGroup(String)} and {@link #clear()} methods may mark the matching  * existing entries as expired instead of actually removing them. So it may appear that  * the size of the cache, as reported by {@link #size()} method, is unchanged.  *   * @since 3.0  */
 end_comment
 
 begin_interface
@@ -61,7 +61,7 @@ name|QueryMetadata
 name|metadata
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a cached query result for the given QueryMetadata. If the result is not      * cached or is expired, cache will use provided factory to rebuild the value and      * store it in the cache. A corollary is that this method never returns null.      *<p/>Compared to {@link #get(QueryMetadata)}, this method allows the cache to do      * appropriate synchronization when refreshing the entry, preventing multiple threads      * from running the same query when a missing entry is requested by multiple threads      * simultaneously.      */
+comment|/**      * Returns a cached query result for the given QueryMetadata. If the result is not      * cached or is expired, cache will use provided factory to rebuild the value and      * store it in the cache. A corollary is that this method never returns null.      *<p/>      * Compared to {@link #get(QueryMetadata)}, this method allows the cache to do      * appropriate synchronization when refreshing the entry, preventing multiple threads      * from running the same query when a missing entry is requested by multiple threads      * simultaneously.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -100,7 +100,7 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Removes a group of entries identified by group key. This may not be supported by      * the implementation.      */
+comment|/**      * Removes a group of entries identified by group key. Note that depending on      * implementation this method may either actively remove the entries belonging to the      * group or just mark them as expired, so that they are refreshed on the next access.      * In the former case the cache size would shrink, but in the later the cache size      * will not change after calling this method.      */
 name|void
 name|removeGroup
 parameter_list|(
@@ -108,11 +108,12 @@ name|String
 name|groupKey
 parameter_list|)
 function_decl|;
-comment|/**      * Clears all entries.      */
+comment|/**      * Clears all cache entries.      */
 name|void
 name|clear
 parameter_list|()
 function_decl|;
+comment|/**      * Returns the number of entries currently in the cache, including expired but not      * removed entries.      */
 name|int
 name|size
 parameter_list|()
