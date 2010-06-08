@@ -315,6 +315,16 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/**      * Returns true if the EventManager was stopped via {@link #shutdown()} method.      *       * @since 3.1      */
+specifier|public
+name|boolean
+name|isStopped
+parameter_list|()
+block|{
+return|return
+name|stopped
+return|;
+block|}
 comment|/**      * Returns true if this EventManager is single-threaded. If so it will throw an      * exception on any attempt to register an unblocking listener or dispatch a      * non-blocking event.      *       * @since 1.2      */
 specifier|public
 name|boolean
@@ -333,12 +343,12 @@ name|void
 name|shutdown
 parameter_list|()
 block|{
-name|this
-operator|.
+if|if
+condition|(
+operator|!
 name|stopped
-operator|=
-literal|true
-expr_stmt|;
+condition|)
+block|{
 for|for
 control|(
 name|DispatchThread
@@ -351,6 +361,18 @@ name|thread
 operator|.
 name|interrupt
 argument_list|()
+expr_stmt|;
+block|}
+name|dispatchThreads
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|stopped
+operator|=
+literal|true
 expr_stmt|;
 block|}
 block|}

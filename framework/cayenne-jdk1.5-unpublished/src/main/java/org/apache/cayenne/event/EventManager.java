@@ -39,11 +39,6 @@ name|boolean
 name|isSingleThreaded
 parameter_list|()
 function_decl|;
-comment|/**      * Stops event threads. After the EventManager is stopped, it can not be restarted and      * should be discarded.      *       * @since 3.0      */
-name|void
-name|shutdown
-parameter_list|()
-function_decl|;
 comment|/**      * Register an<code>EventListener</code> for events sent by any sender.      *       * @throws RuntimeException if<code>methodName</code> is not found.      */
 name|void
 name|addListener
