@@ -131,7 +131,7 @@ implements|implements
 name|Injector
 block|{
 specifier|private
-name|Scope
+name|SingletonScope
 name|singletonScope
 decl_stmt|;
 specifier|private
@@ -655,7 +655,7 @@ name|get
 argument_list|()
 expr_stmt|;
 block|}
-name|Scope
+name|SingletonScope
 name|getSingletonScope
 parameter_list|()
 block|{
