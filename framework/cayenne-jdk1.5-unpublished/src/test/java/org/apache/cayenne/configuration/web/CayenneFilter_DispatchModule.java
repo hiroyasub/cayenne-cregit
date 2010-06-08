@@ -45,20 +45,6 @@ name|Module
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Scopes
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -88,13 +74,6 @@ argument_list|(
 name|CayenneFilter_DispatchRequestHandler
 operator|.
 name|class
-argument_list|)
-operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|SINGLETON
 argument_list|)
 expr_stmt|;
 block|}

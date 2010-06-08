@@ -107,13 +107,23 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
-comment|/**      * Sets the scope of a bound instance. This method is used to change the default scope      * (which is normally {@link Scopes#SINGLETON}) to something else, e.g.      * {@link Scopes#NO_SCOPE}.      */
+comment|/**      * Sets the scope of a bound instance. This method is used to change the default scope      * which is usually a singleton to a custom scope.      */
 name|void
 name|in
 parameter_list|(
 name|Scope
 name|scope
 parameter_list|)
+function_decl|;
+comment|/**      * Sets the scope of a bound instance to singleton. Singleton is normally the default,      * so calling this method explicitly is rarely needed.      */
+name|void
+name|inSingletonScope
+parameter_list|()
+function_decl|;
+comment|/**      * Sets the scope of a bound instance to "no scope". This means that a new instance of      * an object will be created on every call to {@link Injector#getInstance(Class)}.      */
+name|void
+name|withoutScope
+parameter_list|()
 function_decl|;
 block|}
 end_interface

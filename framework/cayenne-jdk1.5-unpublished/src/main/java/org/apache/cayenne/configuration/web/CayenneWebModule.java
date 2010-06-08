@@ -45,20 +45,6 @@ name|Module
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Scopes
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.1  */
 end_comment
@@ -94,12 +80,8 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|in
-argument_list|(
-name|Scopes
-operator|.
-name|NO_SCOPE
-argument_list|)
+name|withoutScope
+argument_list|()
 expr_stmt|;
 block|}
 block|}
