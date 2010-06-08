@@ -112,6 +112,11 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
+comment|/**      * A lifecycle method that let's the injector's services to clean up their state and      * release resources. This method would normally generate a scope end event for the      * injector's one and only singleton scope.      */
+name|void
+name|shutdown
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

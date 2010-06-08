@@ -105,6 +105,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|OnScopeEnd
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Invocation
@@ -312,6 +326,8 @@ name|singleThread
 return|;
 block|}
 comment|/**      * Stops event threads. After the EventManager is stopped, it can not be restarted and      * should be discarded.      *       * @since 3.0      */
+annotation|@
+name|OnScopeEnd
 specifier|public
 name|void
 name|shutdown
