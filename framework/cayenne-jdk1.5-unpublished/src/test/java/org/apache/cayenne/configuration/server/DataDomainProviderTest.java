@@ -1067,18 +1067,6 @@ operator|instanceof
 name|DataDomain
 argument_list|)
 expr_stmt|;
-name|assertSame
-argument_list|(
-literal|"DataDomainProvider must return the same instance of DataChannel on subsequent calls"
-argument_list|,
-name|channel
-argument_list|,
-name|provider
-operator|.
-name|get
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|DataDomain
 name|domain
 init|=
