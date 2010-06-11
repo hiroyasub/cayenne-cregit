@@ -838,9 +838,6 @@ name|DataRow
 argument_list|>
 name|result
 init|=
-name|getDomain
-argument_list|()
-operator|.
 name|createDataContext
 argument_list|()
 operator|.

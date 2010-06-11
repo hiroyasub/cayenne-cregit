@@ -500,16 +500,26 @@ parameter_list|()
 block|{
 return|return
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 return|;
 block|}
 comment|/**      * Creates a DataContext that uses shared snapshot cache and is based on default test      * domain.      */
 specifier|protected
 name|DataContext
 name|createDataContextWithSharedCache
-parameter_list|()
+parameter_list|(
+name|boolean
+name|clearCache
+parameter_list|)
 block|{
 comment|// remove listeners for snapshot events
+if|if
+condition|(
+name|clearCache
+condition|)
+block|{
 name|getDomain
 argument_list|()
 operator|.
@@ -547,6 +557,7 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+block|}
 name|DataContext
 name|context
 init|=

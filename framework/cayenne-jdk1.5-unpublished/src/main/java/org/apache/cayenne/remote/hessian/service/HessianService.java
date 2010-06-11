@@ -61,9 +61,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|ObjectContextFactory
 import|;
 end_import
 
@@ -155,8 +155,8 @@ name|HessianService
 parameter_list|(
 annotation|@
 name|Inject
-name|DataDomain
-name|domain
+name|ObjectContextFactory
+name|contextFactory
 parameter_list|,
 annotation|@
 name|Inject
@@ -174,7 +174,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|domain
+name|contextFactory
 argument_list|,
 name|eventBridgeProperties
 argument_list|)

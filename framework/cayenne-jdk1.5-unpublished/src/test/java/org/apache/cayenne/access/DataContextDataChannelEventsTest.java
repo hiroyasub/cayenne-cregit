@@ -470,13 +470,10 @@ expr_stmt|;
 name|DataContext
 name|peer
 init|=
-name|context
-operator|.
-name|getParentDataDomain
-argument_list|()
-operator|.
-name|createDataContext
-argument_list|()
+name|createDataContextWithSharedCache
+argument_list|(
+literal|false
+argument_list|)
 decl_stmt|;
 name|Artist
 name|a1

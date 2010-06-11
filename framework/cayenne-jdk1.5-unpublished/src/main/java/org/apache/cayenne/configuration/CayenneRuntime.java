@@ -255,7 +255,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an ObjectContext based on the runtime DataChannel. Default configuration      * will return a new instance of the ObjectContext on every call, as the corresponding      * factory is bound using NO_SCOPE scope. Custom modules may change this behavior.      */
+comment|/**      * Returns an ObjectContext based on the runtime DataChannel. Default configuration      * will return a new instance of the ObjectContext on every call, as the corresponding      * factory is bound using "no scope" scope. Custom modules may change this behavior.      */
 specifier|public
 name|ObjectContext
 name|getContext
@@ -266,9 +266,37 @@ name|injector
 operator|.
 name|getInstance
 argument_list|(
-name|ObjectContext
+name|ObjectContextFactory
 operator|.
 name|class
+argument_list|)
+operator|.
+name|createContext
+argument_list|()
+return|;
+block|}
+comment|/**      * Returns an ObjectContext based on the runtime DataChannel. Default configuration      * will return a new instance of the ObjectContext on every call, as the corresponding      * factory is bound using "no scope" scope. Custom modules may change this behavior.      */
+specifier|public
+name|ObjectContext
+name|getContext
+parameter_list|(
+name|DataChannel
+name|parentChannel
+parameter_list|)
+block|{
+return|return
+name|injector
+operator|.
+name|getInstance
+argument_list|(
+name|ObjectContextFactory
+operator|.
+name|class
+argument_list|)
+operator|.
+name|createContext
+argument_list|(
+name|parentChannel
 argument_list|)
 return|;
 block|}

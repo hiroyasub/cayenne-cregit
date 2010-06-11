@@ -1074,9 +1074,6 @@ block|{
 name|DataContext
 name|otherContext
 init|=
-name|getDomain
-argument_list|()
-operator|.
 name|createDataContext
 argument_list|()
 decl_stmt|;

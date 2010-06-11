@@ -780,15 +780,6 @@ name|ObjectContext
 name|createChildContext
 parameter_list|()
 block|{
-name|DataContextFactory
-name|factory
-init|=
-name|getParentDataDomain
-argument_list|()
-operator|.
-name|getDataContextFactory
-argument_list|()
-decl_stmt|;
 comment|// child ObjectStore should not have direct access to snapshot cache, so do not
 comment|// pass it in constructor.
 name|ObjectStore
@@ -801,19 +792,6 @@ decl_stmt|;
 name|DataContext
 name|child
 init|=
-name|factory
-operator|!=
-literal|null
-condition|?
-name|factory
-operator|.
-name|createDataContext
-argument_list|(
-name|this
-argument_list|,
-name|objectStore
-argument_list|)
-else|:
 operator|new
 name|DataContext
 argument_list|(
@@ -3623,6 +3601,22 @@ block|{
 return|return
 name|usingSharedSnaphsotCache
 return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setUsingSharedSnapshotCache
+parameter_list|(
+name|boolean
+name|flag
+parameter_list|)
+block|{
+name|this
+operator|.
+name|usingSharedSnaphsotCache
+operator|=
+name|flag
+expr_stmt|;
 block|}
 comment|/**      * Returns whether this DataContext performs object validation before commit is      * executed.      *       * @since 1.1      */
 specifier|public

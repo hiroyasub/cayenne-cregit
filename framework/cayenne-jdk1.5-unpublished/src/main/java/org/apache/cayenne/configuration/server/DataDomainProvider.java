@@ -213,7 +213,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|Provider
+name|Injector
 import|;
 end_import
 
@@ -225,9 +225,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|event
+name|di
 operator|.
-name|EventManager
+name|Provider
 import|;
 end_import
 
@@ -374,8 +374,8 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|EventManager
-name|eventManager
+name|Injector
+name|injector
 decl_stmt|;
 specifier|protected
 specifier|volatile
@@ -685,11 +685,11 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|dataDomain
+name|injector
 operator|.
-name|setEventManager
+name|injectMembers
 argument_list|(
-name|eventManager
+name|dataDomain
 argument_list|)
 expr_stmt|;
 name|dataDomain

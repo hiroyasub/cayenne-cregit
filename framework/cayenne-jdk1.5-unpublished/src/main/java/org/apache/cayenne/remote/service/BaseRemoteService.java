@@ -95,7 +95,21 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|DataDomain
+name|DataContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ObjectContextFactory
 import|;
 end_import
 
@@ -210,8 +224,8 @@ name|Log
 name|logger
 decl_stmt|;
 specifier|protected
-name|DataDomain
-name|domain
+name|ObjectContextFactory
+name|contextFactory
 decl_stmt|;
 specifier|protected
 name|String
@@ -230,8 +244,8 @@ comment|/**      * @since 3.1      */
 specifier|public
 name|BaseRemoteService
 parameter_list|(
-name|DataDomain
-name|domain
+name|ObjectContextFactory
+name|contextFactory
 parameter_list|,
 name|Map
 argument_list|<
@@ -262,9 +276,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|domain
+name|contextFactory
 operator|=
-name|domain
+name|contextFactory
 expr_stmt|;
 name|initEventBridgeParameters
 argument_list|(
@@ -319,16 +333,6 @@ else|:
 name|Collections
 operator|.
 name|EMPTY_MAP
-return|;
-block|}
-comment|/**      * Returns a DataChannel that is a parent of all session DataChannels.      *       * @deprecated unused since 3.1      */
-specifier|public
-name|DataChannel
-name|getRootChannel
-parameter_list|()
-block|{
-return|return
-name|domain
 return|;
 block|}
 comment|/**      * Creates a new ServerSession with a dedicated DataChannel.      */
@@ -655,7 +659,13 @@ return|return
 operator|new
 name|ClientServerChannel
 argument_list|(
-name|domain
+operator|(
+name|DataContext
+operator|)
+name|contextFactory
+operator|.
+name|createContext
+argument_list|()
 argument_list|)
 return|;
 block|}

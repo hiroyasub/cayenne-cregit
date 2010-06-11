@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 package|;
 end_package
 
@@ -27,24 +27,38 @@ name|DataChannel
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
+import|;
+end_import
+
 begin_comment
-comment|/**  * An interface for creating DataContexts.  *   * @since 1.2  */
+comment|/**  * A factory for regular and nested contexts.  *   * @since 3.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DataContextFactory
+name|ObjectContextFactory
 block|{
-comment|/**      * Creates a DataContext with parent QueryEngine and a DataRowStore that should be      * used by the ObjectStore.      *       * @since 1.2      * @param parent parent QueryEngine used to communicate with the data source.      * @param objectStore ObjectStore used by DataContext.      */
-name|DataContext
-name|createDataContext
+comment|/**      * Creates an ObjectContext attached to a default DataChannel.      */
+name|ObjectContext
+name|createContext
+parameter_list|()
+function_decl|;
+comment|/**      * Creates an ObjectContext attached to a provided channel. This is often used for      * nested context creation.      */
+name|ObjectContext
+name|createContext
 parameter_list|(
 name|DataChannel
 name|parent
-parameter_list|,
-name|ObjectStore
-name|objectStore
 parameter_list|)
 function_decl|;
 block|}

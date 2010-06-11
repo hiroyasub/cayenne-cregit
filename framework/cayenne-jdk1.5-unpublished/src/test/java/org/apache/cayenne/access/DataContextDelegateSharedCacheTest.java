@@ -139,7 +139,9 @@ expr_stmt|;
 name|context
 operator|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 comment|// prepare a single artist record
 name|artist

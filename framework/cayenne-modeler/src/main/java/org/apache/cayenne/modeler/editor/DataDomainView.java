@@ -199,9 +199,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|event
-operator|.
-name|DomainEvent
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -215,7 +213,9 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|DataChannelDescriptor
+name|event
+operator|.
+name|DomainEvent
 import|;
 end_import
 
@@ -488,10 +488,6 @@ name|JCheckBox
 name|externalTransactions
 decl_stmt|;
 specifier|protected
-name|TextAdapter
-name|dataContextFactory
-decl_stmt|;
-specifier|protected
 name|JComboBox
 name|queryCacheFactory
 decl_stmt|;
@@ -595,40 +591,6 @@ block|}
 expr_stmt|;
 name|this
 operator|.
-name|dataContextFactory
-operator|=
-operator|new
-name|TextAdapter
-argument_list|(
-operator|new
-name|JTextField
-argument_list|()
-argument_list|)
-block|{
-specifier|protected
-name|void
-name|updateModel
-parameter_list|(
-name|String
-name|text
-parameter_list|)
-block|{
-name|setDomainProperty
-argument_list|(
-name|DataDomain
-operator|.
-name|DATA_CONTEXT_FACTORY_PROPERTY
-argument_list|,
-name|text
-argument_list|,
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-expr_stmt|;
-name|this
-operator|.
 name|objectValidation
 operator|=
 operator|new
@@ -701,7 +663,7 @@ name|FormLayout
 argument_list|(
 literal|"right:pref, 3dlu, fill:50dlu, 3dlu, fill:47dlu, 3dlu, fill:100"
 argument_list|,
-literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
+literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p"
 argument_list|)
 decl_stmt|;
 name|PanelBuilder
@@ -781,45 +743,6 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"DataContext Factory:"
-argument_list|,
-name|cc
-operator|.
-name|xy
-argument_list|(
-literal|1
-argument_list|,
-literal|5
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|add
-argument_list|(
-name|dataContextFactory
-operator|.
-name|getComponent
-argument_list|()
-argument_list|,
-name|cc
-operator|.
-name|xywh
-argument_list|(
-literal|3
-argument_list|,
-literal|5
-argument_list|,
-literal|5
-argument_list|,
-literal|1
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|addLabel
-argument_list|(
 literal|"Object Validation:"
 argument_list|,
 name|cc
@@ -828,7 +751,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|7
+literal|5
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -844,7 +767,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|7
+literal|5
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -860,7 +783,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|9
+literal|7
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -876,7 +799,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|9
+literal|7
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -892,7 +815,7 @@ name|xywh
 argument_list|(
 literal|1
 argument_list|,
-literal|11
+literal|9
 argument_list|,
 literal|7
 argument_list|,
@@ -912,7 +835,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|13
+literal|11
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -928,7 +851,7 @@ name|xywh
 argument_list|(
 literal|3
 argument_list|,
-literal|13
+literal|11
 argument_list|,
 literal|5
 argument_list|,
@@ -948,7 +871,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|15
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -967,7 +890,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|15
+literal|13
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -983,7 +906,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|17
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -999,7 +922,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|17
+literal|15
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1015,7 +938,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|19
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1031,7 +954,7 @@ name|xy
 argument_list|(
 literal|3
 argument_list|,
-literal|19
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1047,7 +970,7 @@ name|xy
 argument_list|(
 literal|7
 argument_list|,
-literal|19
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1768,20 +1691,6 @@ name|DataDomain
 operator|.
 name|USING_EXTERNAL_TRANSACTIONS_DEFAULT
 argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|dataContextFactory
-operator|.
-name|setText
-argument_list|(
-name|getDomainProperty
-argument_list|(
-name|DataDomain
-operator|.
-name|DATA_CONTEXT_FACTORY_PROPERTY
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

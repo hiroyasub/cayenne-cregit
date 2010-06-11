@@ -271,7 +271,9 @@ expr_stmt|;
 name|context
 operator|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
 comment|// prepare a single artist record
 name|artist
@@ -334,14 +336,9 @@ comment|// create alternative context making sure that no cache is flushed
 name|DataContext
 name|altContext
 init|=
-name|context
-operator|.
-name|getParentDataDomain
-argument_list|()
-operator|.
-name|createDataContext
+name|createDataContextWithSharedCache
 argument_list|(
-literal|true
+literal|false
 argument_list|)
 decl_stmt|;
 comment|// update artist using raw SQL
@@ -1470,13 +1467,8 @@ comment|// create independent context and fetch artist in it
 name|DataContext
 name|context3
 init|=
-name|getDomain
+name|createDataContextWithDedicatedCache
 argument_list|()
-operator|.
-name|createDataContext
-argument_list|(
-literal|false
-argument_list|)
 decl_stmt|;
 name|List
 name|artists

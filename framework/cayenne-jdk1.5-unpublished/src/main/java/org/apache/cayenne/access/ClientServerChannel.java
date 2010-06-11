@@ -136,6 +136,9 @@ specifier|protected
 name|DataContext
 name|serverContext
 decl_stmt|;
+comment|/**      * @deprecated since 3.1 as context creation is now factory based.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientServerChannel
 parameter_list|(

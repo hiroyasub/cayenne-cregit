@@ -81,9 +81,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|ObjectContextFactory
 import|;
 end_import
 
@@ -143,8 +143,8 @@ comment|/**      * @since 3.1      */
 specifier|public
 name|HttpRemoteService
 parameter_list|(
-name|DataDomain
-name|domain
+name|ObjectContextFactory
+name|contextFactory
 parameter_list|,
 name|Map
 argument_list|<
@@ -157,7 +157,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|domain
+name|contextFactory
 argument_list|,
 name|eventBridgeProperties
 argument_list|)

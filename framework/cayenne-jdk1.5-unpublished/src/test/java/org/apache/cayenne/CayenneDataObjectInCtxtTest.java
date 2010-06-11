@@ -1297,9 +1297,6 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|=
-name|getDomain
-argument_list|()
-operator|.
 name|createDataContext
 argument_list|()
 expr_stmt|;

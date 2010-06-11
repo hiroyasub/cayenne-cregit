@@ -174,7 +174,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|DataContext
 name|deserializedContext
@@ -222,7 +224,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|DataContext
 name|deserializedContext
@@ -270,7 +274,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|ObjectContext
 name|child
@@ -326,7 +332,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|DataContext
 name|deserializedContext
@@ -644,7 +652,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|Artist
 name|artist
@@ -778,7 +788,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|Artist
 name|artist
@@ -942,7 +954,9 @@ name|DataContext
 name|context
 init|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 decl_stmt|;
 name|Artist
 name|artist

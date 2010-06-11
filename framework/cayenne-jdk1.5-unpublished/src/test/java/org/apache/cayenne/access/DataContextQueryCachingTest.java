@@ -127,10 +127,6 @@ name|CayenneCase
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -159,21 +155,10 @@ expr_stmt|;
 name|context
 operator|=
 name|createDataContextWithSharedCache
-argument_list|()
+argument_list|(
+literal|true
+argument_list|)
 expr_stmt|;
-block|}
-specifier|protected
-name|DataContext
-name|createDataContextNoCacheClear
-parameter_list|()
-block|{
-return|return
-name|getDomain
-argument_list|()
-operator|.
-name|createDataContext
-argument_list|()
-return|;
 block|}
 specifier|public
 name|void

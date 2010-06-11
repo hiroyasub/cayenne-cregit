@@ -1412,11 +1412,6 @@ comment|// doesn't mess up the Manager
 name|DataContext
 name|c2
 init|=
-name|context
-operator|.
-name|getParentDataDomain
-argument_list|()
-operator|.
 name|createDataContext
 argument_list|()
 decl_stmt|;
