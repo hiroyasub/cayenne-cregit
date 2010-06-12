@@ -437,7 +437,7 @@ name|configurationProperties
 operator|.
 name|get
 argument_list|(
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|)
@@ -459,7 +459,7 @@ literal|"You can specify when creating Cayenne runtime "
 operator|+
 literal|"or via a system property '%s'"
 argument_list|,
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|)

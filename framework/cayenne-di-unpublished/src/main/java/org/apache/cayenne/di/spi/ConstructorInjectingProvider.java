@@ -374,9 +374,14 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalStateException
+name|ConfigurationException
 argument_list|(
-literal|"No applicable constructor is found for constructor injection"
+literal|"No applicable constructor is found for constructor injection in class '%s'"
+argument_list|,
+name|implementation
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 throw|;
 block|}

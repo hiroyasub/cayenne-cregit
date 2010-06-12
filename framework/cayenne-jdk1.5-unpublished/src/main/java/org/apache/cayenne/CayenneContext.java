@@ -258,7 +258,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new CayenneContext, initializing it with a channel. If      *<code>graphEventsEnabled</code> is true, this context will broadcast GraphEvents      * using ObjectContext.GRAPH_CHANGE_SUBJECT.      */
+comment|/**      * Creates a new CayenneContext, initializing it with a channel.      */
 specifier|public
 name|CayenneContext
 parameter_list|(
@@ -269,7 +269,7 @@ name|boolean
 name|changeEventsEnabled
 parameter_list|,
 name|boolean
-name|syncEventsEnabled
+name|lifecyleEventsEnabled
 parameter_list|)
 block|{
 name|this
@@ -283,7 +283,7 @@ name|this
 argument_list|,
 name|changeEventsEnabled
 argument_list|,
-name|syncEventsEnabled
+name|lifecyleEventsEnabled
 argument_list|)
 expr_stmt|;
 name|setChannel
@@ -1689,8 +1689,9 @@ condition|(
 name|childContext
 condition|)
 block|{
-comment|//            PropertyChangeProcessingStrategy oldStrategy = getPropertyChangeProcessingStrategy();
-comment|//            setPropertyChangeProcessingStrategy(PropertyChangeProcessingStrategy.RECORD);
+comment|// PropertyChangeProcessingStrategy oldStrategy =
+comment|// getPropertyChangeProcessingStrategy();
+comment|// setPropertyChangeProcessingStrategy(PropertyChangeProcessingStrategy.RECORD);
 try|try
 block|{
 name|changes
@@ -1707,7 +1708,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-comment|//                setPropertyChangeProcessingStrategy(oldStrategy);
+comment|// setPropertyChangeProcessingStrategy(oldStrategy);
 block|}
 name|fireDataChannelChanged
 argument_list|(

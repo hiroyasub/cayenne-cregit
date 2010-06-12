@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represents a properties map for a given {@link CayenneRuntime}.  *   * @since 3.1  */
+comment|/**  * Represents a properties map for a given {@link Runtime}.  *   * @since 3.1  */
 end_comment
 
 begin_interface
@@ -24,21 +24,22 @@ specifier|public
 interface|interface
 name|RuntimeProperties
 block|{
-comment|/**      * A property defining the name of the current runtime.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|CONFIGURATION_LOCATION
-init|=
-literal|"cayenne.config.location"
-decl_stmt|;
-comment|/**      * Returns property value for a given key.      */
+comment|/**      * Returns a String property value for a given key.      */
 name|String
 name|get
 parameter_list|(
 name|String
 name|key
+parameter_list|)
+function_decl|;
+name|boolean
+name|getBoolean
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|boolean
+name|defaultValue
 parameter_list|)
 function_decl|;
 block|}

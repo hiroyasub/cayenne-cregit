@@ -115,7 +115,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerRuntime
+name|ServerRuntime
 import|;
 end_import
 
@@ -151,7 +151,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|CayenneServerRuntimeCase
+name|ServerRuntimeCase
 extends|extends
 name|TestCase
 block|{
@@ -161,7 +161,7 @@ name|Map
 argument_list|<
 name|RuntimeName
 argument_list|,
-name|CayenneServerRuntime
+name|ServerRuntime
 argument_list|>
 name|runtimeCache
 decl_stmt|;
@@ -174,13 +174,13 @@ name|HashMap
 argument_list|<
 name|RuntimeName
 argument_list|,
-name|CayenneServerRuntime
+name|ServerRuntime
 argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
 specifier|protected
-name|CayenneServerRuntime
+name|ServerRuntime
 name|runtime
 decl_stmt|;
 annotation|@
@@ -231,7 +231,7 @@ block|{
 name|runtime
 operator|=
 operator|new
-name|CayenneServerRuntime
+name|ServerRuntime
 argument_list|(
 name|location
 argument_list|)

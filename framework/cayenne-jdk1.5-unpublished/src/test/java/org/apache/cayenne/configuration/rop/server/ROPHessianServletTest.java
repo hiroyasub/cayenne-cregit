@@ -39,7 +39,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|CayenneRuntime
+name|Runtime
 import|;
 end_import
 
@@ -69,7 +69,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerModule
+name|ServerModule
 import|;
 end_import
 
@@ -261,7 +261,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil
@@ -294,7 +294,7 @@ argument_list|)
 operator|.
 name|get
 argument_list|(
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|)
@@ -364,7 +364,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil
@@ -397,7 +397,7 @@ argument_list|)
 operator|.
 name|get
 argument_list|(
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|)
@@ -458,7 +458,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil
@@ -493,7 +493,7 @@ argument_list|)
 operator|.
 name|get
 argument_list|(
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|)
@@ -521,7 +521,7 @@ index|[
 literal|0
 index|]
 operator|instanceof
-name|CayenneServerModule
+name|ServerModule
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -534,7 +534,7 @@ index|[
 literal|1
 index|]
 operator|instanceof
-name|CayenneROPServerModule
+name|ROPServerModule
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -630,7 +630,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil
@@ -667,7 +667,7 @@ index|[
 literal|0
 index|]
 operator|instanceof
-name|CayenneServerModule
+name|ServerModule
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -680,7 +680,7 @@ index|[
 literal|1
 index|]
 operator|instanceof
-name|CayenneROPServerModule
+name|ROPServerModule
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -795,7 +795,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil

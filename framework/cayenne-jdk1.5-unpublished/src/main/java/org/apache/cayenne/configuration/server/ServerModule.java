@@ -99,20 +99,6 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|CayenneRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
 name|ConfigurationNameMapper
 import|;
 end_import
@@ -489,6 +475,20 @@ name|cayenne
 operator|.
 name|event
 operator|.
+name|DefaultEventManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|event
+operator|.
 name|EventManager
 import|;
 end_import
@@ -522,22 +522,31 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DI module containing all Cayenne server runtime configurations. To customize Cayenne  * runtime configuration, either extend this module, or supply an extra custom module when  * creating {@link CayenneRuntime}.  *   * @since 3.1  */
+comment|/**  * A DI module containing all Cayenne server runtime configuration.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|CayenneServerModule
+name|ServerModule
 implements|implements
 name|Module
 block|{
+comment|/**      * A property defining the location of the runtime configuration XML resource or file.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CONFIGURATION_LOCATION
+init|=
+literal|"cayenne.config.location"
+decl_stmt|;
 specifier|protected
 name|String
 name|configurationLocation
 decl_stmt|;
 specifier|public
-name|CayenneServerModule
+name|ServerModule
 parameter_list|(
 name|String
 name|configurationLocation
@@ -570,7 +579,7 @@ argument_list|)
 operator|.
 name|put
 argument_list|(
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|,
@@ -720,9 +729,9 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|toProvider
+name|to
 argument_list|(
-name|EventManagerProvider
+name|DefaultEventManager
 operator|.
 name|class
 argument_list|)

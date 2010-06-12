@@ -155,7 +155,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerModule
+name|ServerModule
 import|;
 end_import
 
@@ -672,7 +672,7 @@ name|Module
 name|serverModule
 init|=
 operator|new
-name|CayenneServerModule
+name|ServerModule
 argument_list|(
 literal|"CayenneModeler"
 argument_list|)

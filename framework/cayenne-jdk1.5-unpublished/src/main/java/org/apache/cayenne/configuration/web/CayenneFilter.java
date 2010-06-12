@@ -117,7 +117,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|CayenneRuntime
+name|Runtime
 import|;
 end_import
 
@@ -133,7 +133,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerModule
+name|ServerModule
 import|;
 end_import
 
@@ -149,7 +149,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerRuntime
+name|ServerRuntime
 import|;
 end_import
 
@@ -168,7 +168,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A filter that creates a Cayenne server runtime, possibly including custom modules. By  * default runtime includes {@link CayenneServerModule} and {@link CayenneWebModule}. Any  * custom modules are loaded after the two standard ones to allow custom service  * overrides. Filter initialization parameters:  *<ul>  *<li>configuration-location - (optional) a name of Cayenne configuration XML file that  * will be used to load Cayenne stack. If missing, the filter name will be used to derive  * the location. ".xml" extension will be appended to the filter name to get the location,  * so a filter named "cayenne-foo" will result in location "cayenne-foo.xml".  *<li>extra-modules - (optional) a comma or space-separated list of class names, with  * each class implementing {@link Module} interface. These are the custom modules loaded  * after the two standard ones that allow users to override any Cayenne runtime aspects,  * e.g. {@link RequestHandler}. Each custom module must have a no-arg constructor.  *</ul>  *<p>  * CayenneFilter is a great utility to quickly start a Cayenne application. More advanced  * apps most likely will not use it, relying on their own configuration mechanism (such as  * Guice, Spring, etc.)  *   * @since 3.1  */
+comment|/**  * A filter that creates a Cayenne server runtime, possibly including custom modules. By  * default runtime includes {@link ServerModule} and {@link CayenneWebModule}. Any  * custom modules are loaded after the two standard ones to allow custom service  * overrides. Filter initialization parameters:  *<ul>  *<li>configuration-location - (optional) a name of Cayenne configuration XML file that  * will be used to load Cayenne stack. If missing, the filter name will be used to derive  * the location. ".xml" extension will be appended to the filter name to get the location,  * so a filter named "cayenne-foo" will result in location "cayenne-foo.xml".  *<li>extra-modules - (optional) a comma or space-separated list of class names, with  * each class implementing {@link Module} interface. These are the custom modules loaded  * after the two standard ones that allow users to override any Cayenne runtime aspects,  * e.g. {@link RequestHandler}. Each custom module must have a no-arg constructor.  *</ul>  *<p>  * CayenneFilter is a great utility to quickly start a Cayenne application. More advanced  * apps most likely will not use it, relying on their own configuration mechanism (such as  * Guice, Spring, etc.)  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -229,22 +229,18 @@ operator|.
 name|createModules
 argument_list|(
 operator|new
-name|CayenneServerModule
-argument_list|(
-name|configurationLocation
-argument_list|)
-argument_list|,
-operator|new
 name|CayenneWebModule
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|CayenneServerRuntime
+name|ServerRuntime
 name|runtime
 init|=
 operator|new
-name|CayenneServerRuntime
+name|ServerRuntime
 argument_list|(
+name|configurationLocation
+argument_list|,
 name|modules
 argument_list|)
 decl_stmt|;
@@ -266,7 +262,7 @@ name|void
 name|destroy
 parameter_list|()
 block|{
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil
@@ -284,9 +280,6 @@ literal|null
 condition|)
 block|{
 name|runtime
-operator|.
-name|getInjector
-argument_list|()
 operator|.
 name|shutdown
 argument_list|()
@@ -311,7 +304,7 @@ name|IOException
 throws|,
 name|ServletException
 block|{
-name|CayenneRuntime
+name|Runtime
 name|runtime
 init|=
 name|WebUtil

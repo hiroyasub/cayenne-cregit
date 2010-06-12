@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|runtime
+name|configuration
+operator|.
+name|server
 package|;
 end_package
 
@@ -65,7 +67,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerRuntimeCase
+name|ServerRuntimeCase
 import|;
 end_import
 
@@ -160,9 +162,9 @@ end_import
 begin_class
 specifier|public
 class|class
-name|CayenneServerRuntimeIntegrationTest
+name|ServerRuntimeIntegrationTest
 extends|extends
-name|CayenneServerRuntimeCase
+name|ServerRuntimeCase
 block|{
 annotation|@
 name|Override

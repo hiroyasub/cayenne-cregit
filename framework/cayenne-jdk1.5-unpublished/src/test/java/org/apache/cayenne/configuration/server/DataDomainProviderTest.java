@@ -803,7 +803,7 @@ name|Collections
 operator|.
 name|singletonMap
 argument_list|(
-name|RuntimeProperties
+name|ServerModule
 operator|.
 name|CONFIGURATION_LOCATION
 argument_list|,
