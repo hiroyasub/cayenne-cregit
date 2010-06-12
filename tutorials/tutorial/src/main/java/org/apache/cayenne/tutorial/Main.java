@@ -91,7 +91,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|CayenneServerRuntime
+name|ServerRuntime
 import|;
 end_import
 
@@ -201,11 +201,11 @@ name|args
 parameter_list|)
 block|{
 comment|// starting Cayenne
-name|CayenneServerRuntime
+name|ServerRuntime
 name|cayenneRuntime
 init|=
 operator|new
-name|CayenneServerRuntime
+name|ServerRuntime
 argument_list|(
 literal|"cayenne-UntitledDomain.xml"
 argument_list|)
