@@ -147,7 +147,7 @@ name|Object
 argument_list|>
 name|removedFromUnresolved
 decl_stmt|;
-comment|// exists for the benefit of manual serialization schemes such as the one in Hessian.
+comment|// exists for the benefit of custom serialization schemes such as the one in Hessian.
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1274,7 +1274,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * @return whether object should be added to {@link #removedFromUnresolved} during removal      */
+comment|/**      * @return whether object should be added to {@link #removedFromUnresolved} during      *         removal      */
 specifier|protected
 name|boolean
 name|shouldAddToRemovedFromUnresolvedList

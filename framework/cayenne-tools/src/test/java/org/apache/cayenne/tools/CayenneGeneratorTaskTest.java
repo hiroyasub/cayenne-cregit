@@ -359,7 +359,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -377,7 +377,7 @@ name|a
 argument_list|,
 literal|"Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
@@ -392,7 +392,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/_Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/_Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -479,7 +479,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -497,7 +497,7 @@ name|a
 argument_list|,
 literal|"Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
@@ -512,7 +512,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/_Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/_Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -617,7 +617,7 @@ name|a
 argument_list|,
 literal|"Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
@@ -654,7 +654,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -741,7 +741,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -759,7 +759,7 @@ name|a
 argument_list|,
 literal|"Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"_Artist"
 argument_list|)
@@ -774,7 +774,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/_Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/_Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -792,7 +792,7 @@ name|_a
 argument_list|,
 literal|"_Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
@@ -890,7 +890,7 @@ name|a
 argument_list|,
 literal|"Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"_Artist"
 argument_list|)
@@ -923,7 +923,7 @@ name|_a
 argument_list|,
 literal|"_Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
@@ -938,7 +938,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1012,7 +1012,7 @@ name|task
 operator|.
 name|setSuperpkg
 argument_list|(
-literal|"org.apache.superart"
+literal|"org.apache.cayenne.testdo.testmap.superart"
 argument_list|)
 expr_stmt|;
 comment|// run task
@@ -1032,7 +1032,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art/Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1050,7 +1050,7 @@ name|a
 argument_list|,
 literal|"Artist"
 argument_list|,
-literal|"org.apache.art"
+literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
 literal|"_Artist"
 argument_list|)
@@ -1065,7 +1065,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/superart/_Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/superart/_Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -1083,7 +1083,7 @@ name|_a
 argument_list|,
 literal|"_Artist"
 argument_list|,
-literal|"org.apache.superart"
+literal|"org.apache.cayenne.testdo.testmap.superart"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)

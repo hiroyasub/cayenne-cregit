@@ -41,9 +41,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
 operator|.
-name|CharPkTestEntity
+name|query
+operator|.
+name|SQLTemplate
 import|;
 end_import
 
@@ -55,9 +57,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|testdo
 operator|.
-name|SQLTemplate
+name|testmap
+operator|.
+name|CharPkTestEntity
 import|;
 end_import
 

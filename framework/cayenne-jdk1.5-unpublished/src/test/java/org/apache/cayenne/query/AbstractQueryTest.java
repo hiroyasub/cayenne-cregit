@@ -31,9 +31,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
 operator|.
-name|Artist
+name|map
+operator|.
+name|ObjEntity
 import|;
 end_import
 
@@ -45,9 +47,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|testdo
 operator|.
-name|ObjEntity
+name|testmap
+operator|.
+name|Artist
 import|;
 end_import
 

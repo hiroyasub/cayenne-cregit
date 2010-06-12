@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A non-persistent Java Bean. Useful for testing Cayenne operations that rely on  * introspection.  *   * @since 1.1  */
+comment|/**  * A non-persistent Java Bean. Useful for testing Cayenne operations that rely on  * introspection.  */
 end_comment
 
 begin_class
@@ -78,6 +78,9 @@ name|dateProperty
 decl_stmt|;
 specifier|protected
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|collection
 decl_stmt|;
 specifier|protected
@@ -108,10 +111,16 @@ literal|0
 argument_list|)
 decl_stmt|;
 name|Collection
+argument_list|<
+name|TestBean
+argument_list|>
 name|collection
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|TestBean
+argument_list|>
 argument_list|(
 literal|10
 argument_list|)
@@ -304,6 +313,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|getCollection
 parameter_list|()
 block|{
@@ -316,6 +328,9 @@ name|void
 name|setCollection
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|collection
 parameter_list|)
 block|{

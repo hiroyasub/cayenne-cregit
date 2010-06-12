@@ -396,7 +396,7 @@ name|task
 operator|.
 name|setSuperpkg
 argument_list|(
-literal|"org.apache.art2.auto"
+literal|"org.apache.cayenne.testdo.cgen2.auto"
 argument_list|)
 expr_stmt|;
 name|task
@@ -423,7 +423,7 @@ name|destDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art2/MyArtGroup.java"
+literal|"org/apache/cayenne/testdo/cgen2/MyArtGroup.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -441,7 +441,7 @@ name|a
 argument_list|,
 literal|"MyArtGroup"
 argument_list|,
-literal|"org.apache.art2"
+literal|"org.apache.cayenne.testdo.cgen2"
 argument_list|,
 literal|"_MyArtGroup"
 argument_list|)
@@ -456,7 +456,7 @@ name|destDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/art2/auto/_MyArtGroup.java"
+literal|"org/apache/cayenne/testdo/cgen2/auto/_MyArtGroup.java"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -474,7 +474,7 @@ name|_a
 argument_list|,
 literal|"_MyArtGroup"
 argument_list|,
-literal|"org.apache.art2.auto"
+literal|"org.apache.cayenne.testdo.cgen2.auto"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
@@ -483,7 +483,7 @@ name|assertContents
 argument_list|(
 name|_a
 argument_list|,
-literal|"import org.apache.art.ArtGroup;"
+literal|"import org.apache.cayenne.testdo.testmap.ArtGroup;"
 argument_list|)
 expr_stmt|;
 name|assertContents

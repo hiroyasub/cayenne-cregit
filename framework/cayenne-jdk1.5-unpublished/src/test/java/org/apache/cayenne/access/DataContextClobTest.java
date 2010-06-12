@@ -31,9 +31,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
 operator|.
-name|ClobTestEntity
+name|query
+operator|.
+name|SelectQuery
 import|;
 end_import
 
@@ -45,9 +47,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|testdo
 operator|.
-name|SelectQuery
+name|testmap
+operator|.
+name|ClobTestEntity
 import|;
 end_import
 

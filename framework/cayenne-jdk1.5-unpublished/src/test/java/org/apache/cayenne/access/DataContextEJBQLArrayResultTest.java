@@ -41,9 +41,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
 operator|.
-name|Artist
+name|query
+operator|.
+name|EJBQLQuery
 import|;
 end_import
 
@@ -55,9 +57,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|testdo
 operator|.
-name|EJBQLQuery
+name|testmap
+operator|.
+name|Artist
 import|;
 end_import
 

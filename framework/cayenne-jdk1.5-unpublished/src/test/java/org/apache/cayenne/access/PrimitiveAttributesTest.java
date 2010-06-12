@@ -21,9 +21,9 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
 operator|.
-name|PrimitivesTestEntity
+name|ObjectContext
 import|;
 end_import
 
@@ -35,7 +35,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ObjectContext
+name|testdo
+operator|.
+name|testmap
+operator|.
+name|PrimitivesTestEntity
 import|;
 end_import
 

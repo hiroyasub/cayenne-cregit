@@ -155,6 +155,8 @@ name|cayenne
 operator|.
 name|test
 operator|.
+name|jdbc
+operator|.
 name|DBHelper
 import|;
 end_import

@@ -19,7 +19,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|art
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|testmap
 operator|.
 name|Artist
 import|;
