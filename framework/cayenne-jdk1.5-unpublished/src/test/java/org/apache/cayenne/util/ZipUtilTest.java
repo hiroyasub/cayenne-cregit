@@ -92,7 +92,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"jar-test.jar"
+literal|"org/apache/cayenne/util/jar-test.jar"
 argument_list|)
 decl_stmt|;
 name|File
@@ -294,7 +294,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"jar-test.jar"
+literal|"org/apache/cayenne/util/jar-test.jar"
 argument_list|)
 decl_stmt|;
 name|File
