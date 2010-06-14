@@ -36,7 +36,7 @@ specifier|public
 interface|interface
 name|Injector
 block|{
-comment|/**      * Returns a service instance bound in the container for a specific type. Throws      * {@link DIException} if the type is not bound, or an instance can not be created.      */
+comment|/**      * Returns a service instance bound in the container for a specific type. Throws      *{@link ConfigurationException} if the type is not bound, or an instance can not be      * created.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -52,7 +52,7 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
-comment|/**      * Returns a service instance bound in the container for a specific binding key.      * Throws {@link DIException} if the key is not bound, or an instance can not be      * created.      */
+comment|/**      * Returns a service instance bound in the container for a specific binding key.      * Throws {@link ConfigurationException} if the key is not bound, or an instance can      * not be created.      */
 parameter_list|<
 name|T
 parameter_list|>

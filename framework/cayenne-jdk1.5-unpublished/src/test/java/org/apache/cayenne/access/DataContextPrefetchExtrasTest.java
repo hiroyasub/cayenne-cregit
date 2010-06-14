@@ -208,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test prefetching of various obscure cases.  *   */
+comment|/**  * Test prefetching of various obscure cases.  */
 end_comment
 
 begin_class

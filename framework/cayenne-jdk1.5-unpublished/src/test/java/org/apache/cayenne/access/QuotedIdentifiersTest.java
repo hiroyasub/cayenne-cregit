@@ -203,7 +203,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|QUOTED_IDENTIFIERS_STACK
+name|QUOTED_IDENTIFIERS_PROJECT
 argument_list|)
 specifier|public
 class|class

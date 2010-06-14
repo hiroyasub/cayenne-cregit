@@ -267,7 +267,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|INHERTITANCE_VERTICAL_STACK
+name|INHERTITANCE_VERTICAL_PROJECT
 argument_list|)
 specifier|public
 class|class

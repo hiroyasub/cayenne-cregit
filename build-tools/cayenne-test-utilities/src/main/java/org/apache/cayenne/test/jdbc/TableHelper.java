@@ -137,6 +137,15 @@ return|return
 name|this
 return|;
 block|}
+specifier|public
+name|String
+name|getTableName
+parameter_list|()
+block|{
+return|return
+name|tableName
+return|;
+block|}
 comment|/**      * Sets columns that will be implicitly used in subsequent inserts and selects.      */
 specifier|public
 name|TableHelper

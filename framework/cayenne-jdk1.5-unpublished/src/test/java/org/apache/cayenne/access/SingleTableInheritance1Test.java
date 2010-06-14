@@ -193,7 +193,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|INHERTITANCE_SINGLE_TABLE1_STACK
+name|INHERTITANCE_SINGLE_TABLE1_PROJECT
 argument_list|)
 specifier|public
 class|class
