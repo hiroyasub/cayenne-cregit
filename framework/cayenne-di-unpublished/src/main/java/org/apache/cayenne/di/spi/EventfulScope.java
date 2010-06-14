@@ -336,7 +336,7 @@ block|}
 block|}
 block|}
 comment|/**      * Posts a scope event to all registered listeners. There's no predetermined order of      * event dispatching. An exception thrown by any of the listeners stops further event      * processing and is rethrown.      */
-specifier|protected
+specifier|public
 name|void
 name|postScopeEvent
 parameter_list|(

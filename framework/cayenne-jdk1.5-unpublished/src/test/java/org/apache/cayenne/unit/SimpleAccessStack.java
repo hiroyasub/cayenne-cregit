@@ -546,6 +546,9 @@ argument_list|()
 operator|.
 name|getClass
 argument_list|()
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 return|;
 block|}

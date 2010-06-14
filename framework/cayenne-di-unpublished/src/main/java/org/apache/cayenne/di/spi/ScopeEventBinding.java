@@ -93,6 +93,14 @@ argument_list|()
 operator|.
 name|length
 expr_stmt|;
+comment|// allow public methods of non-public classes to be annotated
+name|eventHandlerMethod
+operator|.
+name|setAccessible
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 name|void
 name|onScopeEvent

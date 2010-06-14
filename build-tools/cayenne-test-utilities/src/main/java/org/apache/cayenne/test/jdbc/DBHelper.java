@@ -134,6 +134,19 @@ operator|=
 name|dataSource
 expr_stmt|;
 block|}
+comment|/**      * Quotes a SQL identifier as appropriate for the given DB. This implementation      * returns the identifier unchanged, while subclasses can implement a custom quoting      * strategy.      */
+specifier|protected
+name|String
+name|quote
+parameter_list|(
+name|String
+name|sqlIdentifier
+parameter_list|)
+block|{
+return|return
+name|sqlIdentifier
+return|;
+block|}
 comment|/**      * Selects a single row.      */
 specifier|public
 name|Object
@@ -181,10 +194,13 @@ name|sql
 operator|.
 name|append
 argument_list|(
+name|quote
+argument_list|(
 name|columns
 index|[
 literal|0
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -213,10 +229,13 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|quote
+argument_list|(
 name|columns
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -229,7 +248,10 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|quote
+argument_list|(
 name|table
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -395,7 +417,10 @@ name|sql
 operator|.
 name|append
 argument_list|(
+name|quote
+argument_list|(
 name|table
+argument_list|)
 argument_list|)
 operator|.
 name|append
@@ -405,10 +430,13 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|quote
+argument_list|(
 name|columns
 index|[
 literal|0
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -437,10 +465,13 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
+name|quote
+argument_list|(
 name|columns
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -491,6 +522,21 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+name|String
+name|sqlString
+init|=
+name|sql
+operator|.
+name|toString
+argument_list|()
+decl_stmt|;
+name|UtilityLogger
+operator|.
+name|log
+argument_list|(
+name|sqlString
+argument_list|)
+expr_stmt|;
 name|PreparedStatement
 name|st
 init|=
@@ -498,10 +544,7 @@ name|c
 operator|.
 name|prepareStatement
 argument_list|(
-name|sql
-operator|.
-name|toString
-argument_list|()
+name|sqlString
 argument_list|)
 decl_stmt|;
 name|ParameterMetaData
@@ -635,8 +678,18 @@ name|sql
 init|=
 literal|"delete from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
+name|UtilityLogger
+operator|.
+name|log
+argument_list|(
+name|sql
+argument_list|)
+expr_stmt|;
 name|Connection
 name|c
 init|=
@@ -701,7 +754,10 @@ name|sql
 init|=
 literal|"select count(*) from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -763,11 +819,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -829,11 +891,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -896,11 +964,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -964,11 +1038,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -1030,11 +1110,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -1096,11 +1182,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -1162,11 +1254,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -1280,11 +1378,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -1354,11 +1458,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new
@@ -1420,11 +1530,17 @@ name|sql
 init|=
 literal|"select "
 operator|+
+name|quote
+argument_list|(
 name|column
+argument_list|)
 operator|+
 literal|" from "
 operator|+
+name|quote
+argument_list|(
 name|table
+argument_list|)
 decl_stmt|;
 return|return
 operator|new

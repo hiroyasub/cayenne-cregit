@@ -970,8 +970,8 @@ specifier|public
 name|AccessStackAdapter
 name|getAccessStackAdapter
 parameter_list|(
-name|Class
-name|adapterClass
+name|String
+name|adapterClassName
 parameter_list|)
 block|{
 name|AccessStackAdapter
@@ -984,10 +984,7 @@ name|adapterMap
 operator|.
 name|get
 argument_list|(
-name|adapterClass
-operator|.
-name|getName
-argument_list|()
+name|adapterClassName
 argument_list|)
 decl_stmt|;
 if|if
@@ -1003,7 +1000,7 @@ name|RuntimeException
 argument_list|(
 literal|"No AccessStackAdapter for DbAdapter class: "
 operator|+
-name|adapterClass
+name|adapterClassName
 argument_list|)
 throw|;
 block|}
@@ -1055,15 +1052,10 @@ name|adapter
 init|=
 name|getAccessStackAdapter
 argument_list|(
-name|Class
-operator|.
-name|forName
-argument_list|(
 name|connectionInfo
 operator|.
 name|getAdapterClassName
 argument_list|()
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|DataNode

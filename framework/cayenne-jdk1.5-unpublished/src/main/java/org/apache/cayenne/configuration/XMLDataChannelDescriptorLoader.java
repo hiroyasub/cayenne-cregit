@@ -506,6 +506,15 @@ operator|.
 name|getURL
 argument_list|()
 decl_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Loading XML configuration resource from "
+operator|+
+name|configurationURL
+argument_list|)
+expr_stmt|;
 name|DataChannelDescriptor
 name|descriptor
 init|=
