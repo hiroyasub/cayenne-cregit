@@ -27,7 +27,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Runtime
+name|CayenneRuntime
 import|;
 end_import
 
@@ -84,11 +84,11 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 operator|new
-name|Runtime
+name|CayenneRuntime
 argument_list|()
 block|{         }
 decl_stmt|;
@@ -113,11 +113,11 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime1
 init|=
 operator|new
-name|Runtime
+name|CayenneRuntime
 argument_list|()
 block|{         }
 decl_stmt|;

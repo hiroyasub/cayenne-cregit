@@ -1694,10 +1694,6 @@ block|{
 name|Process
 name|process
 init|=
-name|java
-operator|.
-name|lang
-operator|.
 name|Runtime
 operator|.
 name|getRuntime

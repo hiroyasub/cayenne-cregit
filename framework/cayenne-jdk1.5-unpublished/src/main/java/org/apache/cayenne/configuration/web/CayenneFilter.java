@@ -117,7 +117,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Runtime
+name|CayenneRuntime
 import|;
 end_import
 
@@ -262,7 +262,7 @@ name|void
 name|destroy
 parameter_list|()
 block|{
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil
@@ -304,7 +304,7 @@ name|IOException
 throws|,
 name|ServletException
 block|{
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil

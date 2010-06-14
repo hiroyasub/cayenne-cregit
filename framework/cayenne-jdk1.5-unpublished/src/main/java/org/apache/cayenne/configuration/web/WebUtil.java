@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Runtime
+name|CayenneRuntime
 import|;
 end_import
 
@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class to retrieve and store {@link Runtime} in the  * {@link ServletContext}. All Cayenne web configuration objects, such as  * {@link CayenneFilter} and {@link ROPHessianServlet}, are using this class to access  * runtime.  *   * @since 3.1  */
+comment|/**  * A helper class to retrieve and store {@link CayenneRuntime} in the  * {@link ServletContext}. All Cayenne web configuration objects, such as  * {@link CayenneFilter} and {@link ROPHessianServlet}, are using this class to access  * runtime.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -82,10 +82,10 @@ argument_list|()
 operator|+
 literal|".CAYENNE_RUNTIME"
 decl_stmt|;
-comment|/**      * Retrieves CayenneRuntime previously stored in provided context via      * {@link #setCayenneRuntime(ServletContext, Runtime)}. May return null if no      * runtime was stored.      */
+comment|/**      * Retrieves CayenneRuntime previously stored in provided context via      * {@link #setCayenneRuntime(ServletContext, CayenneRuntime)}. May return null if no      * runtime was stored.      */
 specifier|public
 specifier|static
-name|Runtime
+name|CayenneRuntime
 name|getCayenneRuntime
 parameter_list|(
 name|ServletContext
@@ -94,7 +94,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|Runtime
+name|CayenneRuntime
 operator|)
 name|context
 operator|.
@@ -104,7 +104,7 @@ name|CAYENNE_RUNTIME_KEY
 argument_list|)
 return|;
 block|}
-comment|/**      * Stores {@link Runtime} in the servlet context. It can be later retrieve via      * {@link #getCayenneRuntime(ServletContext)}.      */
+comment|/**      * Stores {@link CayenneRuntime} in the servlet context. It can be later retrieve via      * {@link #getCayenneRuntime(ServletContext)}.      */
 specifier|public
 specifier|static
 name|void
@@ -113,7 +113,7 @@ parameter_list|(
 name|ServletContext
 name|context
 parameter_list|,
-name|Runtime
+name|CayenneRuntime
 name|runtime
 parameter_list|)
 block|{

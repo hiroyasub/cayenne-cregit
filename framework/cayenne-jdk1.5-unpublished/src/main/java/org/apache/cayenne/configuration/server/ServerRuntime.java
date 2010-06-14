@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Runtime
+name|CayenneRuntime
 import|;
 end_import
 
@@ -96,7 +96,7 @@ specifier|public
 class|class
 name|ServerRuntime
 extends|extends
-name|Runtime
+name|CayenneRuntime
 block|{
 specifier|private
 specifier|static

@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Runtime
+name|CayenneRuntime
 import|;
 end_import
 
@@ -207,7 +207,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil
@@ -307,7 +307,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil
@@ -406,7 +406,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil
@@ -580,7 +580,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil
@@ -747,7 +747,7 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-name|Runtime
+name|CayenneRuntime
 name|runtime
 init|=
 name|WebUtil

@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represents a properties map for a given {@link Runtime}.  *   * @since 3.1  */
+comment|/**  * Represents a properties map for a given {@link CayenneRuntime}.  *   * @since 3.1  */
 end_comment
 
 begin_interface
