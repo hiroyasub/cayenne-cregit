@@ -59,6 +59,20 @@ name|cayenne
 operator|.
 name|di
 operator|.
+name|BeforeScopeEnd
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
 name|DIBootstrap
 import|;
 end_import
@@ -403,6 +417,10 @@ name|injector
 return|;
 block|}
 comment|/**      * Shuts down the DI injector of this runtime, giving all services that need to      * release some resources a chance to do that.      */
+comment|// the following annotation is for environments that manage CayenneRuntimes within
+comment|// another DI registry (e.g. unit tests)
+annotation|@
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|shutdown
