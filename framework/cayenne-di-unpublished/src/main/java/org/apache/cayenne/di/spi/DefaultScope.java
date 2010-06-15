@@ -454,6 +454,10 @@ name|Object
 name|object
 parameter_list|)
 block|{
+comment|// TODO: 2 level-deep full scan will not be very efficient for short scopes. Right
+comment|// now this would only affect the unit test scope, but if we start creating the
+comment|// likes of HTTP request scope, we may need to create a faster listener
+comment|// removal algorithm.
 for|for
 control|(
 name|Entry
