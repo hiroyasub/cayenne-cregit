@@ -316,10 +316,10 @@ name|DefaultScope
 argument_list|()
 decl_stmt|;
 comment|// these are the objects injectable in unit tests that subclass from
-comment|// ServerCase. Server runtime extensions are configured in
-comment|// CachingServerRuntimeFactory. There is some overlap between the two
-comment|// registries (some services declared in both), as cayenne-di does not
-comment|// support registry inheritance.
+comment|// ServerCase. Note that ServerRuntimeProvider creates ServerRuntime
+comment|// instances complete with their own DI injectors, independent from the
+comment|// unit test injector. ServerRuntime injector contents are customized
+comment|// inside ServerRuntimeProvider.
 comment|// singleton objects
 name|binder
 operator|.

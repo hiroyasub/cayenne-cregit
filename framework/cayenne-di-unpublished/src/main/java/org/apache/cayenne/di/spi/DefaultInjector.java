@@ -185,7 +185,7 @@ name|noScope
 operator|=
 name|NoScope
 operator|.
-name|SINGLETON
+name|INSTANCE
 expr_stmt|;
 comment|// this is intentionally hardcoded and is not configurable
 name|this

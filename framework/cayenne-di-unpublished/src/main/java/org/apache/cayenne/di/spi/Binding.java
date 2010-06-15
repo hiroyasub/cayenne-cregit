@@ -124,7 +124,7 @@ name|scope
 operator|=
 name|NoScope
 operator|.
-name|SINGLETON
+name|INSTANCE
 expr_stmt|;
 block|}
 name|scoped

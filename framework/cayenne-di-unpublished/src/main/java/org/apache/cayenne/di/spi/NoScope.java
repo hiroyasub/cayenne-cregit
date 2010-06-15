@@ -59,7 +59,7 @@ block|{
 specifier|static
 specifier|final
 name|Scope
-name|SINGLETON
+name|INSTANCE
 init|=
 operator|new
 name|NoScope
