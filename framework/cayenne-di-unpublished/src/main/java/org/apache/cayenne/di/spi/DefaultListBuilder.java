@@ -246,8 +246,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|getListProvider
@@ -322,8 +320,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|listProvider

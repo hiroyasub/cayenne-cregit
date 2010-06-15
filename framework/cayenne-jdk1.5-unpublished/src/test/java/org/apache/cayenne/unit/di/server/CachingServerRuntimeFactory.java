@@ -129,9 +129,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|di
 operator|.
-name|CayenneResources
+name|spi
+operator|.
+name|DefaultScope
 import|;
 end_import
 
@@ -145,9 +147,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|di
-operator|.
-name|UnitTestScope
+name|CayenneResources
 import|;
 end_import
 
@@ -163,7 +163,7 @@ name|CayenneResources
 name|resources
 decl_stmt|;
 specifier|protected
-name|UnitTestScope
+name|DefaultScope
 name|testScope
 decl_stmt|;
 specifier|protected
@@ -181,7 +181,7 @@ parameter_list|(
 name|CayenneResources
 name|resources
 parameter_list|,
-name|UnitTestScope
+name|DefaultScope
 name|testScope
 parameter_list|)
 block|{

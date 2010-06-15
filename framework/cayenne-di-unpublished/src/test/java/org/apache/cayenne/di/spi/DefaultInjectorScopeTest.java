@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|OnScopeEnd
+name|BeforeScopeEnd
 import|;
 end_import
 
@@ -601,7 +601,7 @@ argument_list|()
 operator|.
 name|postScopeEvent
 argument_list|(
-name|OnScopeEnd
+name|BeforeScopeEnd
 operator|.
 name|class
 argument_list|)

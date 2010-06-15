@@ -98,7 +98,7 @@ annotation|@
 name|Documented
 specifier|public
 annotation_defn|@interface
-name|OnScopeEnd
+name|BeforeScopeEnd
 block|{  }
 end_annotation_defn
 

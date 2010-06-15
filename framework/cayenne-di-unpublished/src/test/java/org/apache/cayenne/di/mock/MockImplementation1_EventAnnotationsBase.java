@@ -27,7 +27,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|OnScopeEnd
+name|BeforeScopeEnd
 import|;
 end_import
 
@@ -71,7 +71,7 @@ literal|false
 expr_stmt|;
 block|}
 annotation|@
-name|OnScopeEnd
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|onShutdown3

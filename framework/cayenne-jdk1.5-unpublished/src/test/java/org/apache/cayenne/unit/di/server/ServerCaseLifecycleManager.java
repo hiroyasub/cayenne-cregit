@@ -79,11 +79,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
-operator|.
 name|di
 operator|.
-name|DefaultUnitTestLifecycleManager
+name|spi
+operator|.
+name|DefaultScope
 import|;
 end_import
 
@@ -99,7 +99,7 @@ name|unit
 operator|.
 name|di
 operator|.
-name|UnitTestScope
+name|DefaultUnitTestLifecycleManager
 import|;
 end_import
 
@@ -128,7 +128,7 @@ decl_stmt|;
 specifier|public
 name|ServerCaseLifecycleManager
 parameter_list|(
-name|UnitTestScope
+name|DefaultScope
 name|scope
 parameter_list|)
 block|{

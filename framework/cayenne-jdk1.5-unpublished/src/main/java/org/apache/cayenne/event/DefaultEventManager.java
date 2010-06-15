@@ -107,7 +107,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|OnScopeEnd
+name|BeforeScopeEnd
 import|;
 end_import
 
@@ -337,7 +337,7 @@ return|;
 block|}
 comment|/**      * Stops event threads. After the EventManager is stopped, it can not be restarted and      * should be discarded.      *       * @since 3.0      */
 annotation|@
-name|OnScopeEnd
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|shutdown

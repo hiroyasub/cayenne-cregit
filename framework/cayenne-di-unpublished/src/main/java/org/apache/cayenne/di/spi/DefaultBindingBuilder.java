@@ -187,8 +187,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|injector
@@ -247,8 +245,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|injector
@@ -338,8 +334,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|Provider
@@ -372,8 +366,6 @@ argument_list|(
 name|provider2
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|injector
@@ -455,8 +447,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|Provider
@@ -489,8 +479,6 @@ argument_list|(
 name|provider2
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|injector

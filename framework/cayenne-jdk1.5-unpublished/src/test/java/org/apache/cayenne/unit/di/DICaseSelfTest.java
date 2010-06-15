@@ -101,6 +101,22 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|spi
+operator|.
+name|DefaultScope
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -131,11 +147,11 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
-name|UnitTestScope
+name|DefaultScope
 name|testScope
 init|=
 operator|new
-name|UnitTestScope
+name|DefaultScope
 argument_list|()
 decl_stmt|;
 name|binder

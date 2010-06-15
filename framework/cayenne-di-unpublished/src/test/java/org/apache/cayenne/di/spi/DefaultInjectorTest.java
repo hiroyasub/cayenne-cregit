@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|OnScopeEnd
+name|BeforeScopeEnd
 import|;
 end_import
 

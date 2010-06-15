@@ -261,8 +261,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 comment|// TODO: andrus 11/15/2009 - report overriding the key??
@@ -353,8 +351,6 @@ argument_list|(
 name|provider0
 argument_list|,
 name|injector
-argument_list|,
-name|bindingKey
 argument_list|)
 decl_stmt|;
 name|provider

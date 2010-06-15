@@ -27,7 +27,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|OnScopeEnd
+name|BeforeScopeEnd
 import|;
 end_import
 
@@ -50,7 +50,7 @@ literal|"XuI"
 return|;
 block|}
 annotation|@
-name|OnScopeEnd
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|onShutdown1
@@ -62,7 +62,7 @@ literal|true
 expr_stmt|;
 block|}
 annotation|@
-name|OnScopeEnd
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|onShutdown2
