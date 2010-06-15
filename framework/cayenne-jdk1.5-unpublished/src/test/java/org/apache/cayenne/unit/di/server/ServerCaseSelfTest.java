@@ -37,7 +37,9 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-literal|"xUy"
+name|ServerCase
+operator|.
+name|TESTMAP_PROJECT
 argument_list|)
 specifier|public
 class|class
@@ -71,7 +73,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"xUy"
+name|ServerCase
+operator|.
+name|TESTMAP_PROJECT
 argument_list|,
 name|properties
 operator|.
