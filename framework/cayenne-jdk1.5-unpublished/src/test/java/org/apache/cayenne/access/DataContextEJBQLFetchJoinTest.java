@@ -245,7 +245,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|DataChannelQueryBlocker
+name|DataChannelQueryInterceptor
 import|;
 end_import
 
@@ -314,7 +314,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|DataChannelQueryBlocker
+name|DataChannelQueryInterceptor
 name|queryBlocker
 decl_stmt|;
 specifier|protected
