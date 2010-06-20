@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to customize SQLTemplate queries used in test cases per adapter.  *   */
+comment|/**  * Helper class to customize SQLTemplate queries used in test cases per adapter.  */
 end_comment
 
 begin_class
@@ -70,12 +70,32 @@ name|adapter
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|>
 name|sqlMap
 decl_stmt|;
 specifier|public
 name|SQLTemplateCustomizer
 parameter_list|(
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|>
 name|sqlMap
 parameter_list|)
 block|{
@@ -96,11 +116,13 @@ name|query
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|customSQL
 init|=
-operator|(
-name|Map
-operator|)
 name|sqlMap
 operator|.
 name|get
@@ -132,9 +154,6 @@ decl_stmt|;
 name|String
 name|template
 init|=
-operator|(
-name|String
-operator|)
 name|customSQL
 operator|.
 name|get
@@ -166,6 +185,9 @@ name|SQLTemplate
 name|createSQLTemplate
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|root
 parameter_list|,
 name|String

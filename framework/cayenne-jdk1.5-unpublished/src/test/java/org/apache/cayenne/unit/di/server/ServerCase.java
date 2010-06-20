@@ -247,6 +247,22 @@ name|UnitTestLifecycleManager
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|util
+operator|.
+name|SQLTemplateCustomizer
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -437,6 +453,24 @@ argument_list|(
 name|ServerCaseDataChannelQueryInterceptor
 operator|.
 name|class
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|SQLTemplateCustomizer
+operator|.
+name|class
+argument_list|)
+operator|.
+name|toProviderInstance
+argument_list|(
+operator|new
+name|CayenneResourcesSQLTemplateCustomizerProvider
+argument_list|(
+name|resources
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// test-scoped objects

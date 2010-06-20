@@ -543,7 +543,7 @@ name|tGallery
 decl_stmt|;
 specifier|protected
 name|TableHelper
-name|tPaining
+name|tPainting
 decl_stmt|;
 annotation|@
 name|Override
@@ -657,7 +657,7 @@ argument_list|,
 literal|"GALLERY_NAME"
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|=
 operator|new
 name|TableHelper
@@ -667,7 +667,7 @@ argument_list|,
 literal|"PAINTING"
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|setColumns
 argument_list|(
@@ -914,7 +914,7 @@ block|{
 name|createArtistsDataSet
 argument_list|()
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
@@ -927,7 +927,7 @@ argument_list|,
 literal|1000
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
@@ -940,7 +940,7 @@ argument_list|,
 literal|2000
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
@@ -953,7 +953,7 @@ argument_list|,
 literal|3000
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
@@ -966,7 +966,7 @@ argument_list|,
 literal|4000
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
@@ -979,7 +979,7 @@ argument_list|,
 literal|5000
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
@@ -992,7 +992,7 @@ argument_list|,
 literal|11000
 argument_list|)
 expr_stmt|;
-name|tPaining
+name|tPainting
 operator|.
 name|insert
 argument_list|(
