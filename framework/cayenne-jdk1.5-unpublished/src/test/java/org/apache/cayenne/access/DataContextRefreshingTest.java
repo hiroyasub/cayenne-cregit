@@ -233,6 +233,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|hsqldb
+operator|.
+name|Types
+import|;
+end_import
+
 begin_comment
 comment|/**  * Test suite covering possible scenarios of refreshing updated objects. This includes  * refreshing relationships and attributes changed outside of Cayenne with and without  * prefetching.  */
 end_comment
@@ -695,6 +705,10 @@ argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
 literal|null
+argument_list|,
+name|Types
+operator|.
+name|BIGINT
 argument_list|)
 operator|.
 name|execute
@@ -1437,6 +1451,10 @@ argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
 literal|null
+argument_list|,
+name|Types
+operator|.
+name|BIGINT
 argument_list|)
 operator|.
 name|execute
