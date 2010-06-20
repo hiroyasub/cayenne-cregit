@@ -47,6 +47,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|DataChannel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Binder
@@ -64,6 +76,20 @@ operator|.
 name|di
 operator|.
 name|Injector
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Key
 import|;
 end_import
 
@@ -96,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ClientRuntime} that provides an ROP stack based on a local connection  * on top of a server stack.  *   * @since 3.1  */
+comment|/**  * A {@link ClientRuntime} that provides an ROP stack based on a local connection on top  * of a server stack.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -106,6 +132,14 @@ name|ClientLocalRuntime
 extends|extends
 name|ClientRuntime
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CLIENT_SERVER_CHANNEL_KEY
+init|=
+literal|"client-server-channel"
+decl_stmt|;
 specifier|private
 specifier|static
 name|Module
@@ -133,6 +167,31 @@ name|binder
 operator|.
 name|bind
 argument_list|(
+name|Key
+operator|.
+name|get
+argument_list|(
+name|DataChannel
+operator|.
+name|class
+argument_list|,
+name|CLIENT_SERVER_CHANNEL_KEY
+argument_list|)
+argument_list|)
+operator|.
+name|toProviderInstance
+argument_list|(
+operator|new
+name|LocalClientServerChannelProvider
+argument_list|(
+name|serverInjector
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
 name|ClientConnection
 operator|.
 name|class
@@ -142,9 +201,7 @@ name|toProviderInstance
 argument_list|(
 operator|new
 name|LocalConnectionProvider
-argument_list|(
-name|serverInjector
-argument_list|)
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

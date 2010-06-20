@@ -175,7 +175,7 @@ name|unit
 operator|.
 name|di
 operator|.
-name|UnitTestClosure
+name|DataChannelInterceptor
 import|;
 end_import
 
@@ -191,9 +191,7 @@ name|unit
 operator|.
 name|di
 operator|.
-name|server
-operator|.
-name|DataChannelQueryInterceptor
+name|UnitTestClosure
 import|;
 end_import
 
@@ -276,7 +274,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|DataChannelQueryInterceptor
+name|DataChannelInterceptor
 name|queryInterceptor
 decl_stmt|;
 specifier|protected

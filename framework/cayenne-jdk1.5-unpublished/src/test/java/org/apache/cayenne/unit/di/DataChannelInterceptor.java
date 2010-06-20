@@ -14,31 +14,17 @@ operator|.
 name|unit
 operator|.
 name|di
-operator|.
-name|server
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|di
-operator|.
-name|UnitTestClosure
-import|;
-end_import
+begin_comment
+comment|/**  * An interface that allows to block a DataChannel or to collect DataChannel statistics  * for the duration of execution of some code.  */
+end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DataChannelQueryInterceptor
+name|DataChannelInterceptor
 block|{
 name|void
 name|runWithQueriesBlocked
@@ -49,6 +35,13 @@ parameter_list|)
 function_decl|;
 name|int
 name|runWithQueryCounter
+parameter_list|(
+name|UnitTestClosure
+name|closure
+parameter_list|)
+function_decl|;
+name|DataChannelSyncStats
+name|runWithSyncStatsCollection
 parameter_list|(
 name|UnitTestClosure
 name|closure
