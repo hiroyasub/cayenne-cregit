@@ -25,15 +25,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
+name|TestCase
 import|;
 end_import
 
@@ -42,7 +38,7 @@ specifier|public
 class|class
 name|BaseContextTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
 specifier|public
 name|void

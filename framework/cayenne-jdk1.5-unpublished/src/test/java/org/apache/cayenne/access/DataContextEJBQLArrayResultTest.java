@@ -364,6 +364,9 @@ name|ejbql
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|context
@@ -427,6 +430,9 @@ name|ejbql
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|context
@@ -550,6 +556,9 @@ name|ejbql
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|context
