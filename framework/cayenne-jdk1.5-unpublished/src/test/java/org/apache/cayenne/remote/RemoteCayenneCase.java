@@ -63,6 +63,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|event
+operator|.
+name|DefaultEventManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|remote
 operator|.
 name|service
@@ -254,6 +268,18 @@ operator|new
 name|ClientChannel
 argument_list|(
 name|connection
+argument_list|,
+literal|false
+argument_list|,
+comment|// we want events, but we don't want thread eaks, so creating single threaded EM.
+comment|// TODO: replace with container managed ClientCase.
+operator|new
+name|DefaultEventManager
+argument_list|(
+literal|0
+argument_list|)
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 return|return
