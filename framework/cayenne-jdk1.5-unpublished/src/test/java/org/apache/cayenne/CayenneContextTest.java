@@ -357,7 +357,7 @@ name|ClientCase
 block|{
 annotation|@
 name|Inject
-specifier|protected
+specifier|private
 name|ObjectContext
 name|serverContext
 decl_stmt|;
