@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class that handles mappings of JDBC data types to the database types and Java  * types. Also contains methods that provide information about JDBC types.  *   */
+comment|/**  * A utility class that handles mappings of JDBC data types to the database types and Java  * types. Also contains methods that provide information about JDBC types.  */
 end_comment
 
 begin_class
@@ -2281,7 +2281,7 @@ operator|.
 name|NUMERIC
 return|;
 block|}
-comment|/**       * Returns an array of string names of the default JDBC data types.       */
+comment|/**      * Returns an array of string names of the default JDBC data types.      */
 specifier|public
 specifier|static
 name|String
@@ -3075,7 +3075,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      * @deprecated use getJavaBySqlType(int) instead. Not usable since "0" can mean      *             "undefined", not really zero.      */
+comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      * @deprecated since 3.0. use getJavaBySqlType(int) instead. Not usable since "0" can      *             mean "undefined", not really zero.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3109,7 +3109,8 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|//SQL integer's max value is 2^31-1, which has length of 10
+comment|// SQL integer's max value is 2^31-1,
+comment|// which has length of 10
 if|if
 condition|(
 name|length
@@ -3131,7 +3132,8 @@ operator|<
 literal|19
 condition|)
 block|{
-comment|//SQL's BIGINT max value is 2^63-1, which has length of 19
+comment|// SQL's BIGINT max value is 2^63-1, which has length
+comment|// of 19
 name|type
 operator|=
 name|Types
