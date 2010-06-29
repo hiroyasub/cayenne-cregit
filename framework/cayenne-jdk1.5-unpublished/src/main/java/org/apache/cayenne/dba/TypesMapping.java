@@ -101,6 +101,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -2271,7 +2281,7 @@ operator|.
 name|NUMERIC
 return|;
 block|}
-comment|/** Returns an array of string names of the default JDBC data types. */
+comment|/**       * Returns an array of string names of the default JDBC data types.       */
 specifier|public
 specifier|static
 name|String
@@ -2279,18 +2289,29 @@ index|[]
 name|getDatabaseTypes
 parameter_list|()
 block|{
-return|return
+name|Collection
+argument_list|<
+name|String
+argument_list|>
+name|types
+init|=
 name|sqlStringType
 operator|.
 name|keySet
 argument_list|()
+decl_stmt|;
+return|return
+name|types
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|String
 index|[
-literal|0
+name|types
+operator|.
+name|size
+argument_list|()
 index|]
 argument_list|)
 return|;
@@ -3054,7 +3075,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      * @deprecated use getJavaBySqlType(int type) instead. No usable since "0" can means      *             "undefined", not really zero.      */
+comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      * @deprecated use getJavaBySqlType(int) instead. Not usable since "0" can mean      *             "undefined", not really zero.      */
 annotation|@
 name|Deprecated
 specifier|public

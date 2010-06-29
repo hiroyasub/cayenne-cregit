@@ -1015,6 +1015,9 @@ name|getModel
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|listAttrs
 init|=
 name|model
@@ -1468,6 +1471,14 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
+comment|// Types.NULL makes no sense as a column type
+name|comboBox
+operator|.
+name|removeItem
+argument_list|(
+literal|"NULL"
+argument_list|)
+expr_stmt|;
 name|AutoCompletion
 operator|.
 name|enable
