@@ -1383,7 +1383,7 @@ name|stripLineBreaks
 argument_list|(
 name|sql
 argument_list|,
-literal|" "
+literal|' '
 argument_list|)
 return|;
 block|}
