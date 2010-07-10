@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of {@link #DeleteBatchQueryBuilder}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  */
+comment|/**  * Implementation of {@link DeleteBatchQueryBuilder}, which uses 'soft' delete (runs  * UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  */
 end_comment
 
 begin_class
@@ -337,7 +337,7 @@ name|query
 argument_list|)
 condition|)
 block|{
-comment|//binding first parameter (which is 'deleted') as true
+comment|// binding first parameter (which is 'deleted') as true
 name|adapter
 operator|.
 name|bindParameter

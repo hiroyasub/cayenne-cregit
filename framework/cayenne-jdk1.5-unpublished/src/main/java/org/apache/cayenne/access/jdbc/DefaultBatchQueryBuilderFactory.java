@@ -96,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of {@link #BatchQueryBuilderFactory}  */
+comment|/**  * Default implementation of {@link BatchQueryBuilderFactory}.  */
 end_comment
 
 begin_class

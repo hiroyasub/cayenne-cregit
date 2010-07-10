@@ -36,7 +36,7 @@ name|MergeDirection
 name|getDirection
 parameter_list|()
 function_decl|;
-comment|/**      * Create a token with the reverse direction. AddColumn in one direction becomes      * DropColumn in the other direction.      *<p>      * Not all tokens are reversible. See {@link #reversible()}      */
+comment|/**      * Create a token with the reverse direction. AddColumn in one direction becomes      * DropColumn in the other direction.      *<p>      * Not all tokens are reversible.      */
 specifier|public
 name|MergerToken
 name|createReverse
