@@ -349,7 +349,7 @@ init|=
 operator|new
 name|EJBQLQuery
 argument_list|(
-literal|"SELECT COUNT(a), a, a.serverAttribute1  FROM MtTable1 a Group By a"
+literal|"SELECT COUNT(a), a, a.serverAttribute1 FROM MtTable1 a Group By a ORDER BY a.serverAttribute1"
 argument_list|)
 decl_stmt|;
 name|List
