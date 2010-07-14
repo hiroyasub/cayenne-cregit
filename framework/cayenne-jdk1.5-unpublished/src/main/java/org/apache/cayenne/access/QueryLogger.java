@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * QueryLogger is intended to log special events that happen whenever Cayenne interacts  * with a database. This includes execution of generated SQL statements, result counts,  * connection events, etc. Normally QueryLogger methods are not invoked directly by the  * . Rather it is a single logging point used by the framework.  *<p>  * Internally QueryLogger uses commons-logging at the "info" level.  *</p>  *   */
+comment|/**  * QueryLogger is intended to log special events that happen whenever Cayenne interacts  * with a database. This includes execution of generated SQL statements, result counts,  * connection events, etc. Normally QueryLogger methods are not invoked directly by the .  * Rather it is a single logging point used by the framework.  *<p>  * Internally QueryLogger uses commons-logging at the "info" level.  *</p>  */
 end_comment
 
 begin_class
@@ -251,7 +251,7 @@ operator|new
 name|ThreadLocal
 argument_list|()
 decl_stmt|;
-comment|/**      * Appends SQL literal for the specified object to the buffer. This is a utility      * method and is not intended to build SQL queries, rather this is used in logging      * routines. In particular it will trim large values to avoid flooding the logs.      *</p>      *       * @param buffer buffer to append value      * @param object object to be transformed to SQL literal.      */
+comment|/**      * Appends SQL literal for the specified object to the buffer. This is a utility      * method and is not intended to build SQL queries, rather this is used in logging      * routines. In particular it will trim large values to avoid flooding the logs.</p>      *       * @param buffer buffer to append value      * @param object object to be transformed to SQL literal.      */
 specifier|public
 specifier|static
 name|void
@@ -685,7 +685,7 @@ operator|instanceof
 name|Enum
 condition|)
 block|{
-comment|//            buffer.append(object.getClass().getName()).append(".");
+comment|// buffer.append(object.getClass().getName()).append(".");
 name|buffer
 operator|.
 name|append
@@ -782,7 +782,8 @@ name|ordinal
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// FIXME -- this isn't quite right
+comment|// FIXME -- this isn't quite
+comment|// right
 block|}
 if|else if
 condition|(
@@ -1434,8 +1435,8 @@ argument_list|(
 literal|", "
 argument_list|)
 expr_stmt|;
-comment|// Find the next attribute and SKIP generated attributes.  Only
-comment|// skip when logging inserts, though.  Should show previously
+comment|// Find the next attribute and SKIP generated attributes. Only
+comment|// skip when logging inserts, though. Should show previously
 comment|// generated keys on DELETE, UPDATE, or SELECT.
 while|while
 condition|(
