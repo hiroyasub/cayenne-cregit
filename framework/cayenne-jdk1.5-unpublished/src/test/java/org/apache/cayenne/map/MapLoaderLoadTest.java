@@ -85,7 +85,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EJBQLQuery
+name|CapsStrategy
 import|;
 end_import
 
@@ -99,7 +99,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|CapsStrategy
+name|EJBQLQuery
 import|;
 end_import
 
@@ -153,6 +153,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|test
+operator|.
+name|file
+operator|.
+name|FileUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|testdo
 operator|.
 name|embeddable
@@ -190,20 +206,6 @@ operator|.
 name|testmap
 operator|.
 name|Gallery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneResources
 import|;
 end_import
 
@@ -761,12 +763,9 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|CayenneResources
+name|FileUtil
 operator|.
-name|getResources
-argument_list|()
-operator|.
-name|getTestDir
+name|baseTestDirectory
 argument_list|()
 argument_list|,
 literal|"testmap_generated.map.xml"

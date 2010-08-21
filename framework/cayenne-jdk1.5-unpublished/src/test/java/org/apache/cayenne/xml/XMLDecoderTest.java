@@ -73,15 +73,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|test
 operator|.
-name|CayenneResources
+name|resource
+operator|.
+name|ResourceUtil
 import|;
 end_import
-
-begin_comment
-comment|/**  */
-end_comment
 
 begin_class
 specifier|public
@@ -128,7 +126,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -136,6 +134,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"encoded-object.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -207,7 +208,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -215,6 +216,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"attribute-mapped.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -226,9 +230,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -289,7 +293,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -297,6 +301,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"simple-mapped.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -308,9 +315,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -357,7 +364,7 @@ name|george
 argument_list|)
 expr_stmt|;
 block|}
-comment|//  Added test for 1-to-1 relationship mappings, per CAY-597.
+comment|// Added test for 1-to-1 relationship mappings, per CAY-597.
 specifier|public
 name|void
 name|testDecodeMapping1To1
@@ -371,7 +378,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -379,6 +386,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"1to1-mapped.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -390,9 +400,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -537,7 +547,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -545,6 +555,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"collection-mapped.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -556,9 +569,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -772,7 +785,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -780,6 +793,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"collection-no-entity-mapped.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -791,9 +807,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -904,7 +920,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -912,6 +928,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"collection-mapped1.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -923,9 +942,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -1040,7 +1059,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1048,6 +1067,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"collection-mapped2.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -1059,9 +1081,9 @@ name|decode
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -1163,7 +1185,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1171,6 +1193,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"encoded-simple-collection.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -1283,7 +1308,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1291,6 +1316,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"encoded-complex-collection.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -1500,7 +1528,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1508,6 +1536,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"encoded-object-primitives.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -1566,7 +1597,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|//  Added test for 1-to-1 relationships, per CAY-597.
+comment|// Added test for 1-to-1 relationships, per CAY-597.
 specifier|public
 name|void
 name|testDecode1To1
@@ -1580,7 +1611,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1588,6 +1619,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"1to1-encoded.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Object
@@ -1793,7 +1827,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1801,6 +1835,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"data-objects-encoded.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -1897,7 +1934,7 @@ init|=
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -1905,6 +1942,9 @@ name|XML_DATA_DIR
 operator|+
 literal|"data-objects-mapped.xml"
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -1920,9 +1960,9 @@ name|decodeList
 argument_list|(
 name|xml
 argument_list|,
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+

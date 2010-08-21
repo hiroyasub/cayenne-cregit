@@ -128,6 +128,8 @@ specifier|private
 name|ObjEntity
 name|objEntity
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUp

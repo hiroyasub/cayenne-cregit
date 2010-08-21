@@ -83,9 +83,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|test
 operator|.
-name|CayenneResources
+name|resource
+operator|.
+name|ResourceUtil
 import|;
 end_import
 
@@ -309,7 +311,7 @@ argument_list|(
 operator|new
 name|InputStreamReader
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
@@ -317,6 +319,9 @@ name|XML_DATA_DIR
 operator|+
 name|filename
 argument_list|)
+operator|.
+name|openStream
+argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -533,9 +538,9 @@ init|=
 operator|new
 name|XMLEncoder
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -614,9 +619,9 @@ init|=
 operator|new
 name|XMLEncoder
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -900,9 +905,9 @@ init|=
 operator|new
 name|XMLEncoder
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
@@ -1176,9 +1181,9 @@ init|=
 operator|new
 name|XMLEncoder
 argument_list|(
-name|CayenneResources
+name|ResourceUtil
 operator|.
-name|getResourceURL
+name|getResource
 argument_list|(
 name|XML_DATA_DIR
 operator|+
