@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Various utils for processing persistent objects and their properties  *   *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *   * @since 3.1   */
+comment|/**  * Various utils for processing persistent objects and their properties  *   *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *   * @since 3.1 its predecessor was called DataObjectUtils  */
 end_comment
 
 begin_class
@@ -191,7 +191,7 @@ specifier|final
 class|class
 name|Cayenne
 block|{
-comment|/**      * A special property denoting a size of the to-many collection, when encountered at      * the end of the path</p>      *       * @since 3.1      */
+comment|/**      * A special property denoting a size of the to-many collection, when encountered at      * the end of the path</p>      */
 specifier|final
 specifier|static
 name|String
@@ -282,7 +282,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns property desctiptor for specified property      * @param properyName path to the property      * @return property descriptor,<code>null</code> if not found      */
+comment|/**      * Returns property descriptor for specified property.      *       * @param properyName path to the property      * @return property descriptor,<code>null</code> if not found      */
 specifier|public
 specifier|static
 name|Property
