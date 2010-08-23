@@ -61,6 +61,22 @@ name|FileUtil
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|test
+operator|.
+name|resource
+operator|.
+name|ResourceUtil
+import|;
+end_import
+
 begin_comment
 comment|/**  * @deprecated since 3.1  */
 end_comment
@@ -111,9 +127,9 @@ argument_list|,
 literal|"jar-test.jar"
 argument_list|)
 decl_stmt|;
-name|Util
+name|ResourceUtil
 operator|.
-name|copy
+name|copyResourceToFile
 argument_list|(
 name|jarResource
 argument_list|,
@@ -238,7 +254,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(
@@ -250,7 +266,7 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(
@@ -307,9 +323,9 @@ argument_list|,
 literal|"jar-test.jar"
 argument_list|)
 decl_stmt|;
-name|Util
+name|ResourceUtil
 operator|.
-name|copy
+name|copyResourceToFile
 argument_list|(
 name|jarResource
 argument_list|,
@@ -403,7 +419,7 @@ expr_stmt|;
 comment|// can't compare length, since different algorithms may have been used
 comment|// assertEquals(jar.length(), newJarFile.length());
 comment|// try unzipping it again
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(
@@ -415,7 +431,7 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(
@@ -445,7 +461,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(
@@ -457,7 +473,7 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(

@@ -136,7 +136,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|copy
+name|copyResourceToFile
 argument_list|(
 name|in
 argument_list|,
@@ -241,10 +241,10 @@ return|return
 name|in
 return|;
 block|}
-specifier|private
+specifier|public
 specifier|static
 name|boolean
-name|copy
+name|copyResourceToFile
 parameter_list|(
 name|URL
 name|from

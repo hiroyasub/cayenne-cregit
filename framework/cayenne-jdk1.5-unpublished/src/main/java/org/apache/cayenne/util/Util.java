@@ -677,7 +677,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Copies file contents from source to destination. Makes up for the lack of file      * copying utilities in Java      */
+comment|/**      * Copies file contents from source to destination. Makes up for the lack of file      * copying utilities in Java      *       * @deprecated since 3.1 this method is not used by Cayenne      */
 specifier|public
 specifier|static
 name|boolean
@@ -820,7 +820,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Save URL contents to a file.      */
+comment|/**      * Save URL contents to a file.      *       * @deprecated since 3.1 this method is not used by Cayenne.      */
 specifier|public
 specifier|static
 name|boolean
@@ -965,7 +965,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Reads data from the input and writes it to the output, until the end of the input      * stream.      *       * @param in      * @param out      * @param bufSizeHint      * @throws IOException      */
+comment|/**      * Reads data from the input and writes it to the output, until the end of the input      * stream.      *       * @deprecated since 3.1 this method is unused by Cayenne.      */
 specifier|public
 specifier|static
 name|void
@@ -1037,7 +1037,7 @@ name|flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Deletes a file or directory, allowing recursive directory deletion. This is an      * improved version of File.delete() method.      */
+comment|/**      * Deletes a file or directory, allowing recursive directory deletion. This is an      * improved version of File.delete() method.      *       * @deprecated since 3.1 this method is unused by Cayenne.      */
 specifier|public
 specifier|static
 name|boolean

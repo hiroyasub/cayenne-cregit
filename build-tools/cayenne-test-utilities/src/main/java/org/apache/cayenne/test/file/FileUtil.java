@@ -149,7 +149,7 @@ return|return
 name|baseTestDirectory
 return|;
 block|}
-specifier|private
+specifier|public
 specifier|static
 name|boolean
 name|delete

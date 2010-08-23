@@ -103,9 +103,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
+name|test
 operator|.
-name|Util
+name|file
+operator|.
+name|FileUtil
 import|;
 end_import
 
@@ -282,7 +284,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(

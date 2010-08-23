@@ -29,6 +29,16 @@ end_import
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -47,19 +57,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
+name|test
 operator|.
-name|Util
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
+name|file
 operator|.
-name|framework
-operator|.
-name|TestCase
+name|FileUtil
 import|;
 end_import
 
@@ -126,7 +128,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|Util
+name|FileUtil
 operator|.
 name|delete
 argument_list|(
