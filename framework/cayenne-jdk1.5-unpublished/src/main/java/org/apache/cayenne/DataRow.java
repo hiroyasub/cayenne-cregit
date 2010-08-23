@@ -35,6 +35,20 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|atomic
+operator|.
+name|AtomicLong
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -91,27 +105,30 @@ argument_list|,
 name|Object
 argument_list|>
 block|{
-comment|// "volatile" is supposed to ensure consistency in read and increment operations;
-comment|// is this universally true?
 comment|// make sure the starting value is different from DataObject default version value
 specifier|private
 specifier|static
-specifier|volatile
-name|long
+name|AtomicLong
 name|currentVersion
 init|=
+operator|new
+name|AtomicLong
+argument_list|(
 name|DataObject
 operator|.
 name|DEFAULT_VERSION
 operator|+
 literal|1
+argument_list|)
 decl_stmt|;
 specifier|protected
 name|long
 name|version
 init|=
 name|currentVersion
-operator|++
+operator|.
+name|getAndIncrement
+argument_list|()
 decl_stmt|;
 specifier|protected
 name|long
