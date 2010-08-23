@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 package|;
 end_package
 
@@ -186,6 +186,34 @@ operator|.
 name|di
 operator|.
 name|Module
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project
+operator|.
+name|DataChannelProjectLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project
+operator|.
+name|Project
 import|;
 end_import
 

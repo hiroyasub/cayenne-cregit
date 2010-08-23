@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
@@ -235,7 +235,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|FileProjectSaver
 import|;
@@ -249,7 +249,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|ProjectSaver
 import|;
@@ -263,7 +263,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|unit
 operator|.
@@ -279,7 +279,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
@@ -295,7 +295,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
@@ -311,11 +311,29 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
 name|UpgradeType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project
+operator|.
+name|upgrade
+operator|.
+name|v6
+operator|.
+name|ProjectUpgrader_V6
 import|;
 end_import
 
