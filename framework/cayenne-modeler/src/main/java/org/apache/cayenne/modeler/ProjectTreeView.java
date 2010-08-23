@@ -1041,7 +1041,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|Project
 import|;

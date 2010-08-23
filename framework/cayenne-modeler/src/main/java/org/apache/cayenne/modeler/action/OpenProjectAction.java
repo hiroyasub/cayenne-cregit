@@ -143,7 +143,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|Project
 import|;
@@ -157,7 +157,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|ProjectLoader
 import|;
@@ -171,7 +171,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
@@ -187,7 +187,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
@@ -203,7 +203,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
@@ -219,7 +219,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project2
+name|project
 operator|.
 name|upgrade
 operator|.
