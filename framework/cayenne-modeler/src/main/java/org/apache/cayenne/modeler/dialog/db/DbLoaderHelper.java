@@ -438,6 +438,9 @@ specifier|private
 specifier|static
 specifier|final
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|EXCLUDED_TABLES
 init|=
 name|Arrays
@@ -507,13 +510,16 @@ name|procedureNamePattern
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|schemas
 decl_stmt|;
 specifier|protected
 name|String
 name|loadStatusNote
 decl_stmt|;
-comment|/**      * Obj Entities which were added to project during reverse engineering       */
+comment|/**      * ObjEntities which were added to project during reverse engineering      */
 specifier|protected
 name|List
 argument_list|<
@@ -1613,7 +1619,7 @@ argument_list|,
 name|dataMap
 argument_list|)
 expr_stmt|;
-comment|/**                  * Update default rules for relationships                   */
+comment|/**                  * Update default rules for relationships                  */
 for|for
 control|(
 name|ObjEntity

@@ -442,13 +442,14 @@ name|getClassLoadingService
 argument_list|()
 decl_stmt|;
 return|return
-operator|(
-name|NamingStrategy
-operator|)
 name|classLoader
 operator|.
 name|loadClass
 argument_list|(
+name|NamingStrategy
+operator|.
+name|class
+argument_list|,
 name|strategyClass
 argument_list|)
 operator|.

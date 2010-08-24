@@ -176,6 +176,9 @@ specifier|public
 name|ComponentGeometry
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|className
 parameter_list|,
 name|String

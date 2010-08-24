@@ -678,6 +678,9 @@ name|transferable
 parameter_list|)
 block|{
 name|List
+argument_list|<
+name|File
+argument_list|>
 name|fileList
 decl_stmt|;
 try|try
@@ -710,9 +713,6 @@ block|}
 name|File
 name|transferFile
 init|=
-operator|(
-name|File
-operator|)
 name|fileList
 operator|.
 name|get

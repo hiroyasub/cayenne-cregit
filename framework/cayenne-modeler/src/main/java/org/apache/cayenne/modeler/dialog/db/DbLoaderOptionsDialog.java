@@ -439,6 +439,9 @@ specifier|public
 name|DbLoaderOptionsDialog
 parameter_list|(
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|schemas
 parameter_list|,
 name|String
@@ -1025,13 +1028,14 @@ name|this
 operator|.
 name|strategy
 operator|=
-operator|(
-name|NamingStrategy
-operator|)
 name|classLoader
 operator|.
 name|loadClass
 argument_list|(
+name|NamingStrategy
+operator|.
+name|class
+argument_list|,
 name|strategyClass
 argument_list|)
 operator|.

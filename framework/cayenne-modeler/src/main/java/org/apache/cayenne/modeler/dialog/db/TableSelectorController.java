@@ -143,20 +143,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|Entity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|modeler
 operator|.
 name|ProjectController
@@ -315,6 +301,11 @@ name|permanentlyExcludedCount
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|DbEntity
+argument_list|>
 name|excludedTables
 decl_stmt|;
 specifier|protected
@@ -359,6 +350,11 @@ name|excludedTables
 operator|=
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|DbEntity
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|this
@@ -367,6 +363,9 @@ name|selectableTablesList
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbEntity
+argument_list|>
 argument_list|()
 expr_stmt|;
 name|this
@@ -386,7 +385,6 @@ name|initController
 argument_list|()
 expr_stmt|;
 block|}
-comment|// ----- properties -----
 specifier|public
 name|Component
 name|getView
@@ -415,6 +413,9 @@ block|}
 comment|/**      * Returns DbEntities that are excluded from DB generation.      */
 specifier|public
 name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
 name|getExcludedTables
 parameter_list|()
 block|{
@@ -427,6 +428,9 @@ return|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|getTables
 parameter_list|()
 block|{
@@ -723,6 +727,9 @@ name|tables
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|DbEntity
+argument_list|>
 argument_list|(
 name|dataMap
 operator|.
@@ -806,7 +813,7 @@ name|getFailures
 argument_list|()
 control|)
 block|{
-name|Entity
+name|DbEntity
 name|failedEntity
 init|=
 literal|null
@@ -834,6 +841,9 @@ argument_list|()
 decl_stmt|;
 name|failedEntity
 operator|=
+operator|(
+name|DbEntity
+operator|)
 name|failedAttribute
 operator|.
 name|getEntity
@@ -863,6 +873,9 @@ argument_list|()
 decl_stmt|;
 name|failedEntity
 operator|=
+operator|(
+name|DbEntity
+operator|)
 name|failedRelationship
 operator|.
 name|getSourceEntity
@@ -882,7 +895,7 @@ block|{
 name|failedEntity
 operator|=
 operator|(
-name|Entity
+name|DbEntity
 operator|)
 name|nextProblem
 operator|.

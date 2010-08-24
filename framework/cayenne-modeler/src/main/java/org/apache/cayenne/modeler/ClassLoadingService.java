@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An interface defining a service for locating external Java resources.  *   */
+comment|/**  * An interface defining a service for locating external Java resources.  */
 end_comment
 
 begin_interface
@@ -25,16 +25,26 @@ interface|interface
 name|ClassLoadingService
 block|{
 comment|/**      * Returns Java ClassLoader that knows how to load all classes configured for this      * service.      */
-specifier|public
 name|ClassLoader
 name|getClassLoader
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a class for given class name.      */
-specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|Class
+argument_list|<
+name|T
+argument_list|>
 name|loadClass
 parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|interfaceType
+parameter_list|,
 name|String
 name|className
 parameter_list|)
