@@ -29,6 +29,20 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|Application
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|CayenneModelerFrame
 import|;
 end_import
@@ -75,7 +89,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|WidgetFactory
 import|;
 end_import
 
@@ -779,7 +793,10 @@ decl_stmt|;
 name|JComboBox
 name|actionsCombo
 init|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|(
@@ -799,7 +816,10 @@ name|actionColumn
 operator|.
 name|setCellEditor
 argument_list|(
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createCellEditor
 argument_list|(

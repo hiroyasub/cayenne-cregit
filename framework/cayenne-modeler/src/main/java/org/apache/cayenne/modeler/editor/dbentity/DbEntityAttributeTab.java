@@ -489,7 +489,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|WidgetFactory
 import|;
 end_import
 
@@ -1479,7 +1479,10 @@ decl_stmt|;
 name|JComboBox
 name|comboBox
 init|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|(
@@ -1507,7 +1510,10 @@ name|col
 operator|.
 name|setCellEditor
 argument_list|(
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createCellEditor
 argument_list|(

@@ -81,7 +81,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|JTextFieldUndoable
 import|;
 end_import
 
@@ -168,23 +168,20 @@ parameter_list|()
 block|{
 name|driver
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|()
 expr_stmt|;
 name|url
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|()
 expr_stmt|;
 name|userName
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|()
 expr_stmt|;
 name|password
@@ -195,18 +192,16 @@ argument_list|()
 expr_stmt|;
 name|minConnections
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|(
 literal|6
 argument_list|)
 expr_stmt|;
 name|maxConnections
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|(
 literal|6
 argument_list|)
@@ -234,9 +229,6 @@ operator|new
 name|CellConstraints
 argument_list|()
 decl_stmt|;
-comment|//        FormLayout layout = new FormLayout(
-comment|//                "right:80dlu, 3dlu, fill:50dlu, 3dlu, fill:74dlu, 3dlu, fill:70dlu",
-comment|//                "p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p");
 name|FormLayout
 name|layout
 init|=

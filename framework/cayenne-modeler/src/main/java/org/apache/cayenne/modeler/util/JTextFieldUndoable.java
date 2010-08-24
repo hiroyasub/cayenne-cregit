@@ -56,6 +56,7 @@ import|;
 end_import
 
 begin_class
+specifier|public
 class|class
 name|JTextFieldUndoable
 extends|extends
@@ -65,6 +66,7 @@ specifier|private
 name|UndoableEditListener
 name|undoListener
 decl_stmt|;
+specifier|public
 name|JTextFieldUndoable
 parameter_list|()
 block|{
@@ -94,6 +96,7 @@ name|undoListener
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|JTextFieldUndoable
 parameter_list|(
 name|int

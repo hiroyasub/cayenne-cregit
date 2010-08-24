@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Opens a URL in the system default browser.  *   */
+comment|/**  * Opens a URL in the system default browser.  */
 end_comment
 
 begin_class
@@ -38,7 +38,6 @@ specifier|public
 class|class
 name|BrowserControl
 block|{
-comment|// The default system browser under windows.
 specifier|private
 specifier|static
 specifier|final
@@ -47,7 +46,6 @@ name|WIN_PATH
 init|=
 literal|"rundll32"
 decl_stmt|;
-comment|// The flag to display a url.
 specifier|private
 specifier|static
 specifier|final
@@ -56,10 +54,6 @@ name|WIN_FLAG
 init|=
 literal|"url.dll,FileProtocolHandler"
 decl_stmt|;
-comment|// The default browser under unix.
-comment|// private static final String UNIX_PATH = "netscape";
-comment|// The flag to display a url.
-comment|// private static final String UNIX_FLAG = "-remote openURL";
 comment|/**      * Display a file in the system browser. If you want to display a file, you must      * include the absolute path name.      *       * @param url the file's url (the url must start with either "http://" or "file://").      */
 comment|// see public domain code at
 comment|// http://www.centerkey.com/java/browser/myapp/BareBonesBrowserLaunch.java

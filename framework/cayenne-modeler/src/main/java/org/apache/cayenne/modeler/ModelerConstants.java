@@ -15,22 +15,8 @@ name|modeler
 package|;
 end_package
 
-begin_import
-import|import
-name|com
-operator|.
-name|jgoodies
-operator|.
-name|looks
-operator|.
-name|plastic
-operator|.
-name|PlasticXPLookAndFeel
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines constants used in the modeler.  *   */
+comment|/**  * Defines constants used in the modeler.  */
 end_comment
 
 begin_interface
@@ -51,40 +37,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|DEFAULT_MESSAGE_BUNDLE
-init|=
-literal|"org.apache.cayenne.modeler.cayennemodeler-strings"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
 name|TITLE
 init|=
 literal|"CayenneModeler"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|DEFAULT_LAF_NAME
-init|=
-name|PlasticXPLookAndFeel
-operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
-decl_stmt|;
-comment|// note that previous default - "Desert Blue" theme doesn't support Chinese and
-comment|// Japanese chars
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|DEFAULT_THEME_NAME
-init|=
-literal|"Sky Bluer"
 decl_stmt|;
 block|}
 end_interface

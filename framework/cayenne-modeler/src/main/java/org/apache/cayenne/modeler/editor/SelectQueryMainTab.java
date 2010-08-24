@@ -243,7 +243,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ProjectController
+name|Application
 import|;
 end_import
 
@@ -257,9 +257,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
+name|ProjectController
 import|;
 end_import
 
@@ -594,7 +592,10 @@ block|}
 expr_stmt|;
 name|queryRoot
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|()

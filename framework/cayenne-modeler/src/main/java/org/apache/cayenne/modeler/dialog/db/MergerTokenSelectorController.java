@@ -199,9 +199,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|util
-operator|.
-name|CayenneController
+name|Application
 import|;
 end_import
 
@@ -217,7 +215,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|CayenneController
 import|;
 end_import
 
@@ -730,7 +728,10 @@ comment|// dropdown for direction column
 name|JComboBox
 name|directionCombo
 init|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|(

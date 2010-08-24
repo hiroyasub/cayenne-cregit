@@ -195,7 +195,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ProjectController
+name|Application
 import|;
 end_import
 
@@ -209,9 +209,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
+name|ProjectController
 import|;
 end_import
 
@@ -1085,7 +1083,10 @@ parameter_list|()
 block|{
 name|labelCase
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createUndoableComboBox
 argument_list|()

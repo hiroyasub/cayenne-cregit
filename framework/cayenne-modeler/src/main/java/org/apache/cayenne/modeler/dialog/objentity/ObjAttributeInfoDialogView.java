@@ -221,7 +221,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ProjectController
+name|Application
 import|;
 end_import
 
@@ -235,11 +235,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|editor
-operator|.
-name|dbentity
-operator|.
-name|DbAttributeTableModel
+name|ProjectController
 import|;
 end_import
 
@@ -272,22 +268,6 @@ operator|.
 name|util
 operator|.
 name|CayenneTable
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
 import|;
 end_import
 
@@ -570,7 +550,10 @@ name|this
 operator|.
 name|type
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|(

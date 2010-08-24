@@ -325,22 +325,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|jgraph
 operator|.
 name|JGraph
@@ -513,7 +497,10 @@ expr_stmt|;
 block|}
 name|diagramCombo
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|(
@@ -669,8 +656,8 @@ operator|instanceof
 name|EntityDisplayEvent
 condition|)
 block|{
-comment|//selecting an event
-comment|//choose type of diagram
+comment|// selecting an event
+comment|// choose type of diagram
 name|Entity
 name|entity
 init|=
@@ -786,7 +773,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Rebuilds graph from a domain, if it is not yet built      * Otherwise, takes it from cache       */
+comment|/**      * Rebuilds graph from a domain, if it is not yet built Otherwise, takes it from cache      */
 specifier|public
 specifier|synchronized
 name|void

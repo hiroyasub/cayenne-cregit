@@ -155,6 +155,20 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|Application
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|ProjectController
 import|;
 end_import
@@ -209,22 +223,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|jgoodies
@@ -238,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base abstract class for editing callback mapping on listener class  * Adds entity listener class processing logic  *  * @version 1.0 Oct 29, 2007  */
+comment|/**  * Base abstract class for editing callback mapping on listener class Adds entity listener  * class processing logic  *   * @version 1.0 Oct 29, 2007  */
 end_comment
 
 begin_class
@@ -254,7 +252,7 @@ specifier|protected
 name|JComboBox
 name|listenerClassCombo
 decl_stmt|;
-comment|/**      * Constructor      * @param mediator mediator instance      */
+comment|/**      * Constructor      *       * @param mediator mediator instance      */
 specifier|protected
 name|AbstractCallbackListenersTab
 parameter_list|(
@@ -494,7 +492,7 @@ name|isVisible
 argument_list|()
 condition|)
 block|{
-comment|//detect editing
+comment|// detect editing
 if|if
 condition|(
 name|listenerClassCombo
@@ -527,7 +525,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|//just celeection changed
+comment|// just celeection changed
 name|mediator
 operator|.
 name|setCurrentListenerClass
@@ -668,7 +666,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * rebuils listener class selection dropdown content and fires selection event      *      * @param selectedListener listener to be selected after rebuild      */
+comment|/**      * rebuils listener class selection dropdown content and fires selection event      *       * @param selectedListener listener to be selected after rebuild      */
 specifier|protected
 name|void
 name|rebuildListenerClassCombo
@@ -820,7 +818,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * adds listener class dropdown to filter bar      * @param builder filter forms builder      */
+comment|/**      * adds listener class dropdown to filter bar      *       * @param builder filter forms builder      */
 specifier|protected
 name|void
 name|buildFilter
@@ -831,7 +829,10 @@ parameter_list|)
 block|{
 name|listenerClassCombo
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|()

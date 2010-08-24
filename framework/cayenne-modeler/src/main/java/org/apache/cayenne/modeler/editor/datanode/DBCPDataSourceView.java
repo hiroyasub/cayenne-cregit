@@ -61,7 +61,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|JTextFieldUndoable
 import|;
 end_import
 
@@ -93,10 +93,6 @@ name|FormLayout
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -114,9 +110,8 @@ parameter_list|()
 block|{
 name|propertiesFile
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|()
 expr_stmt|;
 comment|// assemble

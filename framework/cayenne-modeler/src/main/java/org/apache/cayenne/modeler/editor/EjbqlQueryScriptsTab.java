@@ -203,7 +203,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|JUndoableCayenneTextPane
 import|;
 end_import
 
@@ -284,6 +284,26 @@ operator|.
 name|textpane
 operator|.
 name|JCayenneTextPane
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|swing
+operator|.
+name|components
+operator|.
+name|textpane
+operator|.
+name|syntax
+operator|.
+name|EJBQLSyntaxConstant
 import|;
 end_import
 
@@ -379,10 +399,13 @@ parameter_list|()
 block|{
 name|scriptArea
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createJEJBQLTextPane
+operator|new
+name|JUndoableCayenneTextPane
+argument_list|(
+operator|new
+name|EJBQLSyntaxConstant
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|scriptArea
 operator|.

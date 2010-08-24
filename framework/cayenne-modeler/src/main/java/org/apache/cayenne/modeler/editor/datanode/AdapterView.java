@@ -61,7 +61,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
+name|JTextFieldUndoable
 import|;
 end_import
 
@@ -112,9 +112,8 @@ name|this
 operator|.
 name|customAdapter
 operator|=
-name|CayenneWidgetFactory
-operator|.
-name|createUndoableTextField
+operator|new
+name|JTextFieldUndoable
 argument_list|()
 expr_stmt|;
 comment|// assemble

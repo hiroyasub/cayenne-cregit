@@ -234,6 +234,8 @@ condition|)
 block|{
 continue|continue;
 block|}
+comment|// note that lookuo below will return the same embeddable due to the
+comment|// shared namespace if not conflicts exist
 name|Embeddable
 name|conflictingEmbeddable
 init|=
@@ -249,6 +251,10 @@ condition|(
 name|conflictingEmbeddable
 operator|!=
 literal|null
+operator|&&
+name|conflictingEmbeddable
+operator|!=
+name|embeddable
 condition|)
 block|{
 name|addFailure

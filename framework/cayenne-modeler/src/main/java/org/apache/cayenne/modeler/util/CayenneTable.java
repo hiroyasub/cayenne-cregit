@@ -173,6 +173,20 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|Application
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|pref
 operator|.
 name|TableColumnPreferences
@@ -333,18 +347,20 @@ expr_stmt|;
 name|JTextField
 name|textField
 init|=
-name|CayenneWidgetFactory
-operator|.
-name|createTextField
+operator|new
+name|JTextField
 argument_list|(
-literal|0
+literal|20
 argument_list|)
 decl_stmt|;
 specifier|final
 name|DefaultCellEditor
 name|textEditor
 init|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createCellEditor
 argument_list|(
@@ -520,7 +536,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Selects multiple rows at once. Fires not more than only one       * ListSelectionEvent      */
+comment|/**      * Selects multiple rows at once. Fires not more than only one ListSelectionEvent      */
 specifier|public
 name|void
 name|select
@@ -648,7 +664,7 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * ListSelectionModel for Cayenne table. Has a method to set multiple      * rows selection at once.      */
+comment|/**      * ListSelectionModel for Cayenne table. Has a method to set multiple rows selection      * at once.      */
 class|class
 name|CayenneListSelectionModel
 extends|extends

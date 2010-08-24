@@ -483,22 +483,6 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|CayenneWidgetFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
 name|PanelFactory
 import|;
 end_import
@@ -609,7 +593,10 @@ specifier|protected
 name|JComboBox
 name|callbackTypeCombo
 init|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createComboBox
 argument_list|(
@@ -696,7 +683,7 @@ name|POST_LOAD
 argument_list|,
 literal|"post-load"
 argument_list|)
-block|,             }
+block|,                     }
 argument_list|,
 literal|false
 argument_list|)

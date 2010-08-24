@@ -255,7 +255,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ProjectController
+name|Application
 import|;
 end_import
 
@@ -269,9 +269,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
+name|ProjectController
 import|;
 end_import
 
@@ -813,7 +811,10 @@ argument_list|)
 expr_stmt|;
 name|scriptArea
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createJEditTextArea
 argument_list|()

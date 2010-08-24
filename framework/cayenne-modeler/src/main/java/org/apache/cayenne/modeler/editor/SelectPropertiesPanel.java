@@ -187,7 +187,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ProjectController
+name|Application
 import|;
 end_import
 
@@ -201,9 +201,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|util
-operator|.
-name|CayenneWidgetFactory
+name|ProjectController
 import|;
 end_import
 
@@ -602,7 +600,10 @@ block|}
 expr_stmt|;
 name|cacheStrategy
 operator|=
-name|CayenneWidgetFactory
+name|Application
+operator|.
+name|getWidgetFactory
+argument_list|()
 operator|.
 name|createUndoableComboBox
 argument_list|()
@@ -722,8 +723,8 @@ name|CACHE_POLICIES
 argument_list|)
 decl_stmt|;
 comment|// TODO (andrey, 15/12/09)
-comment|//do not use metadata, as it triggers CDO class loading (CAY-1334)
-comment|//to avoid this evil hack, we need some common interface for SelectQuery, EJBQL
+comment|// do not use metadata, as it triggers CDO class loading (CAY-1334)
+comment|// to avoid this evil hack, we need some common interface for SelectQuery, EJBQL
 comment|//& SQLTemplate, but 3.0 API is frozen now
 name|QueryCacheStrategy
 name|selectedStrategy
