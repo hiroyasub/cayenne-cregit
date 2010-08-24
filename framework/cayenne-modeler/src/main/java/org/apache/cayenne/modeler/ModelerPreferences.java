@@ -202,23 +202,6 @@ name|LAST_PROJ_FILES_SIZE
 init|=
 literal|12
 decl_stmt|;
-comment|/** GUI layout */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|EDITOR_LAFNAME
-init|=
-literal|"lookAndFeel"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|EDITOR_THEMENAME
-init|=
-literal|"theme"
-decl_stmt|;
 comment|/** Log file */
 specifier|public
 specifier|static

@@ -494,22 +494,19 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|//update paste button
-operator|(
-operator|(
-name|PasteAction
-operator|)
+comment|// update paste button
 name|getApplication
+argument_list|()
+operator|.
+name|getActionManager
 argument_list|()
 operator|.
 name|getAction
 argument_list|(
 name|PasteAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
-operator|)
 operator|.
 name|updateState
 argument_list|()

@@ -331,8 +331,7 @@ name|getAction
 argument_list|(
 name|UndoAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 decl_stmt|;
 name|CayenneAction
@@ -347,8 +346,7 @@ name|getAction
 argument_list|(
 name|RedoAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 decl_stmt|;
 name|undoAction

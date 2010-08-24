@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tab for editing default entity listeners of a DataMap  *  * @version 1.0 Oct 28, 2007  */
+comment|/**  * Tab for editing default entity listeners of a DataMap  *   * @version 1.0 Oct 28, 2007  */
 end_comment
 
 begin_class
@@ -238,7 +238,7 @@ name|DataMapCallbackListenersTab
 extends|extends
 name|AbstractCallbackListenersTab
 block|{
-comment|/**      * Constructor      * @param mediator mediator instance      */
+comment|/**      * Constructor      *       * @param mediator mediator instance      */
 specifier|public
 name|DataMapCallbackListenersTab
 parameter_list|(
@@ -325,7 +325,7 @@ operator|new
 name|DataMapDisplayListener
 argument_list|()
 block|{
-comment|/**                      * process DapaMap selection                      * @param e event                      */
+comment|/**              * process DapaMap selection              *               * @param e event              */
 specifier|public
 name|void
 name|currentDataMapChanged
@@ -387,11 +387,14 @@ decl_stmt|;
 return|return
 name|app
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|CreateCallbackMethodForDataMapListenerAction
 operator|.
-name|ACTION_NAME
+name|class
 argument_list|)
 return|;
 block|}
@@ -410,16 +413,16 @@ name|getInstance
 argument_list|()
 decl_stmt|;
 return|return
-operator|(
-name|AbstractRemoveCallbackMethodAction
-operator|)
 name|app
+operator|.
+name|getActionManager
+argument_list|()
 operator|.
 name|getAction
 argument_list|(
 name|RemoveCallbackMethodForDataMapListenerAction
 operator|.
-name|ACTION_NAME
+name|class
 argument_list|)
 return|;
 block|}
@@ -435,12 +438,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|RemoveEntityListenerForDataMapAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 return|;
 block|}
@@ -456,12 +461,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|CreateDataMapEntityListenerAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 return|;
 block|}

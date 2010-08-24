@@ -371,12 +371,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|RemoveProcedureParameterAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 operator|.
 name|setEnabled

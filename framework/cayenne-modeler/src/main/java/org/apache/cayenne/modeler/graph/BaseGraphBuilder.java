@@ -355,20 +355,6 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ActionManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
 name|Application
 import|;
 end_import
@@ -416,6 +402,22 @@ operator|.
 name|action
 operator|.
 name|CreateRelationshipAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|action
+operator|.
+name|ActionManager
 import|;
 end_import
 
@@ -628,7 +630,7 @@ specifier|transient
 name|DataChannelDescriptor
 name|domain
 decl_stmt|;
-comment|/**      * Created entity cells.      * Maps to entity name, since GraphBuilder can be serialized      */
+comment|/**      * Created entity cells. Maps to entity name, since GraphBuilder can be serialized      */
 specifier|protected
 name|Map
 argument_list|<
@@ -638,7 +640,7 @@ name|DefaultGraphCell
 argument_list|>
 name|entityCells
 decl_stmt|;
-comment|/**      * Created relationship cells      * Maps to relationship qualified name, since GraphBuilder can be serialized      */
+comment|/**      * Created relationship cells Maps to relationship qualified name, since GraphBuilder      * can be serialized      */
 specifier|protected
 name|Map
 argument_list|<
@@ -696,7 +698,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|//graph already built, exiting silently
+comment|// graph already built, exiting silently
 return|return;
 block|}
 name|graph
@@ -910,7 +912,7 @@ name|DefaultEdge
 argument_list|>
 argument_list|()
 expr_stmt|;
-comment|/**          * an array for entities that are not connected to anyone.          * We add them separately so that layout doesn't touch them          */
+comment|/**          * an array for entities that are not connected to anyone. We add them separately          * so that layout doesn't touch them          */
 name|List
 argument_list|<
 name|DefaultGraphCell
@@ -969,8 +971,8 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
-comment|//                mapCell.add(cell);
-comment|//                cell.setParent(mapCell);
+comment|// mapCell.add(cell);
+comment|// cell.setParent(mapCell);
 name|List
 argument_list|<
 name|DefaultGraphCell
@@ -1011,7 +1013,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//port
+comment|// port
 block|}
 block|}
 comment|/**          * 2. Add all relationships          */
@@ -1125,7 +1127,8 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-comment|//        JGraphSimpleLayout layout = new JGraphSimpleLayout(JGraphSimpleLayout.TYPE_TILT, 4000, 2000);
+comment|// JGraphSimpleLayout layout = new
+comment|// JGraphSimpleLayout(JGraphSimpleLayout.TYPE_TILT, 4000, 2000);
 name|layout
 operator|.
 name|run
@@ -1145,7 +1148,9 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
-comment|// Obtain a map of the resulting attribute changes from the facade
+comment|// Obtain a map of the
+comment|// resulting attribute
+comment|// changes from the facade
 name|edit
 argument_list|(
 name|nested
@@ -1153,7 +1158,7 @@ argument_list|)
 expr_stmt|;
 comment|// Apply the results to the actual graph
 block|}
-comment|/**          * Adding isolated objects          *           * We're placing them so that they will take maximum space in left top corner.          * The sample order is below:          *           * 1 2 6 7...          * 3 5 8 ...          * 4 9...          * 10 ...          */
+comment|/**          * Adding isolated objects          *           * We're placing them so that they will take maximum space in left top corner. The          * sample order is below:          *           * 1 2 6 7... 3 5 8 ... 4 9... 10 ...          */
 if|if
 condition|(
 name|isolatedObjects
@@ -1174,7 +1179,7 @@ argument_list|()
 operator|/
 literal|2
 decl_stmt|;
-comment|//number of isolated entities
+comment|// number of isolated entities
 name|int
 name|x
 init|=
@@ -1203,7 +1208,7 @@ operator|/
 literal|2
 argument_list|)
 decl_stmt|;
-comment|//side of triangle
+comment|// side of triangle
 name|Dimension
 name|pref
 init|=
@@ -1223,7 +1228,7 @@ literal|2
 operator|/
 name|x
 decl_stmt|;
-comment|//x-distance between entities
+comment|// x-distance between entities
 name|int
 name|dy
 init|=
@@ -1235,7 +1240,7 @@ literal|2
 operator|/
 name|x
 decl_stmt|;
-comment|//y-distance between entities
+comment|// y-distance between entities
 name|int
 name|posX
 init|=
@@ -1340,7 +1345,7 @@ name|isolatedIndex
 operator|+=
 literal|2
 expr_stmt|;
-comment|//because every 2nd object is port
+comment|// because every 2nd object is port
 name|posX
 operator|+=
 name|dx
@@ -1484,7 +1489,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Post (i.e. after creation on entity cell) process of the entity       */
+comment|/**      * Post (i.e. after creation on entity cell) process of the entity      */
 specifier|protected
 name|void
 name|postProcessEntity
@@ -1550,7 +1555,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Returns whether an entity is not connected to any other      * TODO: not fine algorithm, it iterates through all entities and all rels       */
+comment|/**      * Returns whether an entity is not connected to any other TODO: not fine algorithm,      * it iterates through all entities and all rels      */
 specifier|protected
 name|boolean
 name|isIsolated
@@ -1575,7 +1580,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|//searching for rels that have a target="entity"
+comment|// searching for rels that have a target="entity"
 for|for
 control|(
 name|DataMap
@@ -1638,7 +1643,7 @@ name|DataMap
 name|map
 parameter_list|)
 function_decl|;
-comment|/**      * Returns label for relationship on the graph, considering its "mandatory" and "to-many"      * properties      */
+comment|/**      * Returns label for relationship on the graph, considering its "mandatory" and      * "to-many" properties      */
 specifier|private
 specifier|static
 name|String
@@ -1803,8 +1808,7 @@ name|getAction
 argument_list|(
 name|CreateAttributeAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 argument_list|)
 operator|.
@@ -1827,8 +1831,7 @@ name|getAction
 argument_list|(
 name|CreateRelationshipAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 argument_list|)
 operator|.
@@ -2213,8 +2216,10 @@ operator|new
 name|DefaultEdge
 argument_list|()
 decl_stmt|;
-comment|//            GraphConstants.setLineStyle(edge.getAttributes(), GraphConstants.STYLE_ORTHOGONAL);
-comment|//            GraphConstants.setRouting(edge.getAttributes(), GraphConstants.ROUTING_SIMPLE);
+comment|// GraphConstants.setLineStyle(edge.getAttributes(),
+comment|// GraphConstants.STYLE_ORTHOGONAL);
+comment|// GraphConstants.setRouting(edge.getAttributes(),
+comment|// GraphConstants.ROUTING_SIMPLE);
 name|GraphConstants
 operator|.
 name|setEditable
@@ -2350,7 +2355,7 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
-comment|//putting cell to a random posistion..
+comment|// putting cell to a random posistion..
 name|GraphConstants
 operator|.
 name|setBounds
@@ -2391,7 +2396,7 @@ literal|10
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//setting graph type-specific attrs
+comment|// setting graph type-specific attrs
 name|postProcessEntity
 argument_list|(
 name|entity
@@ -2405,7 +2410,7 @@ name|cell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates relationship labels for specified relationship edge.      * @param order order of relationship in entity's same target relationships - to differ labels of relationships with same source and target      */
+comment|/**      * Updates relationship labels for specified relationship edge.      *       * @param order order of relationship in entity's same target relationships - to      *            differ labels of relationships with same source and target      */
 specifier|protected
 name|void
 name|updateRelationshipLabels
@@ -3167,7 +3172,7 @@ operator|!
 name|undoEventsDisabled
 condition|)
 block|{
-comment|//graph has been modified
+comment|// graph has been modified
 name|mediator
 operator|.
 name|setDirty

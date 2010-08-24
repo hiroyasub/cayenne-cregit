@@ -316,7 +316,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Welcome screen (CAY-894) is a panel shown when no project is open.  * User can quickly create new project or open an existing one.  */
+comment|/**  * Welcome screen (CAY-894) is a panel shown when no project is open. User can quickly  * create new project or open an existing one.  */
 end_comment
 
 begin_class
@@ -495,12 +495,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|NewProjectAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -539,12 +541,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|OpenProjectAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1069,7 +1073,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Renderer for the list of last files. Ignores the selection, instead paints      * with ROLLOVER_BACKGROUND (currently red) the row mouse is hovering over      */
+comment|/**      * Renderer for the list of last files. Ignores the selection, instead paints with      * ROLLOVER_BACKGROUND (currently red) the row mouse is hovering over      */
 class|class
 name|RecentFileListRenderer
 extends|extends
@@ -1165,7 +1169,7 @@ name|boolean
 name|cellHasFocus
 parameter_list|)
 block|{
-comment|//selection is ignored
+comment|// selection is ignored
 name|super
 operator|.
 name|getListCellRendererComponent
@@ -1316,12 +1320,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|OpenProjectAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 operator|.
 name|performAction
@@ -1342,7 +1348,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|//clear selection
+comment|// clear selection
 block|}
 block|}
 specifier|public
@@ -1365,7 +1371,7 @@ block|{
 name|int
 name|newRow
 decl_stmt|;
-comment|/**              * Check that a row boundary contains the mouse point, so that rolloverRow would              * be -1 if we are below last row              */
+comment|/**              * Check that a row boundary contains the mouse point, so that rolloverRow              * would be -1 if we are below last row              */
 if|if
 condition|(
 name|list

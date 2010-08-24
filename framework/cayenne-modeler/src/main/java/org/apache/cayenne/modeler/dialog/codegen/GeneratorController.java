@@ -838,7 +838,7 @@ name|application
 operator|.
 name|getPreferencesNode
 argument_list|(
-name|ClassGenerationAction
+name|GeneralPreferences
 operator|.
 name|class
 argument_list|,

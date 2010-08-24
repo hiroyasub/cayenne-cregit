@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of CayenneModeler actions that implements support for some common  * functionality, exception handling, etc.  *   */
+comment|/**  * Superclass of CayenneModeler actions that implements support for some common  * functionality, exception handling, etc.  */
 end_comment
 
 begin_class

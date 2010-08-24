@@ -835,12 +835,14 @@ operator|)
 name|getApplication
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|CreateNodeAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 decl_stmt|;
 comment|// this should make created node current, resulting in the new map being added

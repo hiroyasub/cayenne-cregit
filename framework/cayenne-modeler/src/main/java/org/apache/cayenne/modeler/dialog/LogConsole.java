@@ -968,11 +968,11 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-name|StringBuffer
+name|StringBuilder
 name|newText
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 name|FORMAT
 operator|.
@@ -1106,7 +1106,6 @@ argument_list|,
 name|style
 argument_list|)
 expr_stmt|;
-comment|//view.getLogView().setText(view.getLogView().getText() + newText);
 if|if
 condition|(
 name|autoScroll

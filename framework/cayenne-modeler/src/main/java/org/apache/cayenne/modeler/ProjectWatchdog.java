@@ -330,7 +330,7 @@ literal|"Do you want to load the changes?"
 argument_list|)
 condition|)
 block|{
-comment|/**              * Currently we are reloading all project              */
+comment|// Currently we are reloading all project
 if|if
 condition|(
 name|mediator
@@ -362,23 +362,20 @@ name|getPath
 argument_list|()
 argument_list|)
 decl_stmt|;
-operator|(
-operator|(
-name|OpenProjectAction
-operator|)
 name|Application
 operator|.
 name|getInstance
+argument_list|()
+operator|.
+name|getActionManager
 argument_list|()
 operator|.
 name|getAction
 argument_list|(
 name|OpenProjectAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
-operator|)
 operator|.
 name|openProject
 argument_list|(
@@ -414,7 +411,6 @@ name|getProject
 argument_list|()
 operator|!=
 literal|null
-comment|/*&& fileInfo.getFile().equals(mediator.getProject().getMainFile()) */
 condition|)
 block|{
 name|FileDeletedDialog
@@ -447,12 +443,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|SaveAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 operator|.
 name|performAction

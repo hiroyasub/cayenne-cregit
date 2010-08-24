@@ -299,10 +299,6 @@ name|LogFactory
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -338,7 +334,6 @@ return|return
 literal|"Open Project"
 return|;
 block|}
-comment|/**      * Constructor for OpenProjectAction.      */
 specifier|public
 name|OpenProjectAction
 parameter_list|(
@@ -730,7 +725,8 @@ name|getFrame
 argument_list|()
 argument_list|,
 comment|// TODO: andrus 05/02/2010 - this message shows intermediate
-comment|// version of the project XML, not the Modeler code version that
+comment|// version of the project XML, not the Modeler code
+comment|// version that
 comment|// can be used for upgrade
 literal|"Can't upgrade project. Open the project in the Modeler v."
 operator|+

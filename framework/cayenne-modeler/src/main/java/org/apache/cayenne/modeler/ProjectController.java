@@ -8253,12 +8253,14 @@ name|dirty
 expr_stmt|;
 name|application
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|SaveAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 operator|.
 name|setEnabled
@@ -8268,12 +8270,14 @@ argument_list|)
 expr_stmt|;
 name|application
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|RevertAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 operator|.
 name|setEnabled
@@ -8300,7 +8304,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @return currently selecte entity listener class      */
+comment|/**      * @return currently selected entity listener class      */
 specifier|public
 name|String
 name|getCurrentListenerClass

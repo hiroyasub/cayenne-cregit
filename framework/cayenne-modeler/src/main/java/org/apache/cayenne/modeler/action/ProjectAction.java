@@ -295,16 +295,6 @@ argument_list|()
 condition|)
 block|{
 comment|// discard changes and DO NOT close
-name|Application
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|setQuittingApplication
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
 return|return
 literal|false
 return|;
@@ -338,12 +328,14 @@ operator|.
 name|getInstance
 argument_list|()
 operator|.
+name|getActionManager
+argument_list|()
+operator|.
 name|getAction
 argument_list|(
 name|SaveAction
 operator|.
-name|getActionName
-argument_list|()
+name|class
 argument_list|)
 operator|.
 name|actionPerformed

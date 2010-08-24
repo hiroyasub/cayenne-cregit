@@ -67,20 +67,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|gen
-operator|.
-name|ClassGenerationAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|modeler
 operator|.
 name|Application
@@ -106,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Used to confirm deleting items in the model.  *  */
+comment|/**  * Used to confirm deleting items in the model.  *   */
 end_comment
 
 begin_class
@@ -231,7 +217,8 @@ operator|.
 name|YES_OPTION
 argument_list|)
 expr_stmt|;
-comment|// If the user clicks "no", we'll just ignore whatever's in the checkbox because it's non-sensical.
+comment|// If the user clicks "no", we'll just ignore whatever's in the checkbox because
+comment|// it's non-sensical.
 if|if
 condition|(
 name|shouldDelete
@@ -247,7 +234,7 @@ argument_list|()
 operator|.
 name|getPreferencesNode
 argument_list|(
-name|ClassGenerationAction
+name|GeneralPreferences
 operator|.
 name|class
 argument_list|,
@@ -320,7 +307,7 @@ argument_list|()
 operator|.
 name|getPreferencesNode
 argument_list|(
-name|ClassGenerationAction
+name|GeneralPreferences
 operator|.
 name|class
 argument_list|,
@@ -336,9 +323,7 @@ operator|==
 literal|null
 operator|)
 operator|||
-operator|(
-literal|false
-operator|==
+operator|!
 name|pref
 operator|.
 name|getBoolean
@@ -349,7 +334,6 @@ name|DELETE_PROMPT_PREFERENCE
 argument_list|,
 literal|false
 argument_list|)
-operator|)
 condition|)
 block|{
 name|showDialog
