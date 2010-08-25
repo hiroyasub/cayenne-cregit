@@ -2967,7 +2967,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building LIKE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3026,7 +3026,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE DB_PATH expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building LIKE DB_PATH expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3085,7 +3085,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building NOT_LIKE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3144,7 +3144,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE expression.</p>      *      *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building NOT_LIKE expression.</p>      *      *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3203,7 +3203,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE_IGNORE_CASE expression.</p>      *      *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building LIKE_IGNORE_CASE expression.</p>      *      *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3262,7 +3262,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3321,7 +3321,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3380,7 +3380,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.1      */
+comment|/**      *<p>A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
