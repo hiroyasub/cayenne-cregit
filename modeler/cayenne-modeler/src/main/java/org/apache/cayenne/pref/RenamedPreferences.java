@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/*  * use for preferences where in preference's node path contains dependence from name dataChanelDescriptor,   * dataNodeDescriptor, dataMap etc.  */
+comment|/**  * use for preferences where in preference's node path contains dependence from name dataChanelDescriptor,   * dataNodeDescriptor, dataMap etc.  */
 end_comment
 
 begin_class
