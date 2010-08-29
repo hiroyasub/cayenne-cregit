@@ -597,6 +597,7 @@ name|getEntityResolver
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.1      */
 annotation|@
 name|Override
 specifier|public

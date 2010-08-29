@@ -557,6 +557,7 @@ name|EventManager
 name|eventManager
 decl_stmt|;
 comment|/**      * @since 1.2      */
+specifier|protected
 name|EntitySorter
 name|entitySorter
 decl_stmt|;
@@ -639,10 +640,8 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 1.2      */
-comment|// TODO: andrus, 4/12/2006 - after 1.2 API freeze is over, replace DataNode
-comment|// EntitySorter with this one ... maybe even make it a part of server-side
-comment|// EntityResolver?
+comment|/**      * @since 3.1      */
+specifier|public
 name|EntitySorter
 name|getEntitySorter
 parameter_list|()
@@ -666,37 +665,6 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// backwards compatibility mode... only possible in a single-node case
-comment|// see TODO above
-if|if
-condition|(
-name|nodes
-operator|.
-name|size
-argument_list|()
-operator|==
-literal|1
-condition|)
-block|{
-name|entitySorter
-operator|=
-name|nodes
-operator|.
-name|values
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
-operator|.
-name|getEntitySorter
-argument_list|()
-expr_stmt|;
-block|}
-else|else
-block|{
 name|entitySorter
 operator|=
 operator|new
@@ -709,12 +677,12 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
 return|return
 name|entitySorter
 return|;
 block|}
-comment|/**      * Exists as a backdoor to override domain sorter until the sorter API is moved from      * DataNode.      *       * @since 1.2      */
+comment|/**      * Exists as a backdoor to override domain sorter until the sorter API is moved from      * DataNode.      *       * @since 3.1      */
+specifier|public
 name|void
 name|setEntitySorter
 parameter_list|(

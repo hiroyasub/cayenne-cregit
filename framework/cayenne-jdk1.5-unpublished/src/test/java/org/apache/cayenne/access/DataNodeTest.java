@@ -39,20 +39,6 @@ name|JdbcAdapter
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntitySorter
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -270,21 +256,6 @@ operator|new
 name|DataNode
 argument_list|()
 decl_stmt|;
-comment|// entity sorter should have been created ... and since 1.2 shouldn't change no
-comment|// matter what adapter we use.
-name|EntitySorter
-name|sorter
-init|=
-name|node
-operator|.
-name|getEntitySorter
-argument_list|()
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|sorter
-argument_list|)
-expr_stmt|;
 name|assertNull
 argument_list|(
 name|node
@@ -317,16 +288,6 @@ name|getAdapter
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertSame
-argument_list|(
-name|sorter
-argument_list|,
-name|node
-operator|.
-name|getEntitySorter
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|JdbcAdapter
 name|a2
 init|=
@@ -348,16 +309,6 @@ argument_list|,
 name|node
 operator|.
 name|getAdapter
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|sorter
-argument_list|,
-name|node
-operator|.
-name|getEntitySorter
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -280,6 +280,7 @@ specifier|protected
 name|SchemaUpdateStrategy
 name|schemaUpdateStrategy
 decl_stmt|;
+comment|/**      * @deprecated since 3.1 EntitySorter is located at the DataDomain level.      */
 specifier|protected
 name|EntitySorter
 name|entitySorter
@@ -988,7 +989,7 @@ operator|=
 name|entityResolver
 expr_stmt|;
 block|}
-comment|/**      * Returns EntitySorter used by the DataNode.      */
+comment|/**      * Returns EntitySorter used by the DataNode.      *       * @deprecated since 3.1 EntitySorter only exists at the DataDomain level.      */
 specifier|public
 name|EntitySorter
 name|getEntitySorter
@@ -998,7 +999,7 @@ return|return
 name|entitySorter
 return|;
 block|}
-comment|/**      * Sets an EntitySorter that is used to order objects on commit.      *       * @since 1.2      */
+comment|/**      * Sets an EntitySorter that is used to order objects on commit.      *       * @since 1.2      * @deprecated since 3.1 EntitySorter only exists at the DataDomain level.      */
 specifier|public
 name|void
 name|setEntitySorter
