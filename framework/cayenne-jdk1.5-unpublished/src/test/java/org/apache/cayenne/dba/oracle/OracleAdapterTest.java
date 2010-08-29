@@ -89,7 +89,7 @@ init|=
 name|getDomain
 argument_list|()
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 literal|"testmap"
 argument_list|)

@@ -171,7 +171,7 @@ name|m1
 init|=
 name|domain
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 literal|"map1"
 argument_list|)
@@ -181,7 +181,7 @@ name|m2
 init|=
 name|domain
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 literal|"map2"
 argument_list|)

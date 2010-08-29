@@ -230,7 +230,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 literal|"generic"
 argument_list|)

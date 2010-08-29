@@ -1045,7 +1045,7 @@ decl_stmt|;
 return|return
 name|domain
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 name|name
 argument_list|)

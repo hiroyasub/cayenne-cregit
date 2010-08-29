@@ -177,20 +177,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|AshwoodEntitySorter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DataMap
 import|;
 end_import
@@ -206,20 +192,6 @@ operator|.
 name|map
 operator|.
 name|EntityResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntitySorter
 import|;
 end_import
 
@@ -279,11 +251,6 @@ decl_stmt|;
 specifier|protected
 name|SchemaUpdateStrategy
 name|schemaUpdateStrategy
-decl_stmt|;
-comment|/**      * @deprecated since 3.1 EntitySorter is located at the DataDomain level.      */
-specifier|protected
-name|EntitySorter
-name|entitySorter
 decl_stmt|;
 specifier|protected
 name|Map
@@ -411,21 +378,6 @@ operator|=
 operator|new
 name|TransactionDataSource
 argument_list|()
-expr_stmt|;
-comment|// since 1.2 we always implement entity sorting, regardless of the underlying DB
-comment|// as the right order is needed for deferred PK propagation (and maybe other
-comment|// things too?)
-name|this
-operator|.
-name|entitySorter
-operator|=
-operator|new
-name|AshwoodEntitySorter
-argument_list|(
-name|Collections
-operator|.
-name|EMPTY_LIST
-argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns node name. Name is used to uniquely identify DataNode within a DataDomain.      */
@@ -576,13 +528,6 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-name|entitySorter
-operator|.
-name|setDataMaps
-argument_list|(
-name|dataMaps
-argument_list|)
-expr_stmt|;
 block|}
 comment|/**      * Adds a DataMap to be handled by this node.      */
 specifier|public
@@ -607,14 +552,6 @@ argument_list|,
 name|map
 argument_list|)
 expr_stmt|;
-name|entitySorter
-operator|.
-name|setDataMaps
-argument_list|(
-name|getDataMaps
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -624,32 +561,13 @@ name|String
 name|mapName
 parameter_list|)
 block|{
-name|DataMap
-name|map
-init|=
 name|dataMaps
 operator|.
 name|remove
 argument_list|(
 name|mapName
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|map
-operator|!=
-literal|null
-condition|)
-block|{
-name|entitySorter
-operator|.
-name|setDataMaps
-argument_list|(
-name|getDataMaps
-argument_list|()
-argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Returns DataSource used by this DataNode to obtain connections.      */
 specifier|public
@@ -987,32 +905,6 @@ operator|.
 name|entityResolver
 operator|=
 name|entityResolver
-expr_stmt|;
-block|}
-comment|/**      * Returns EntitySorter used by the DataNode.      *       * @deprecated since 3.1 EntitySorter only exists at the DataDomain level.      */
-specifier|public
-name|EntitySorter
-name|getEntitySorter
-parameter_list|()
-block|{
-return|return
-name|entitySorter
-return|;
-block|}
-comment|/**      * Sets an EntitySorter that is used to order objects on commit.      *       * @since 1.2      * @deprecated since 3.1 EntitySorter only exists at the DataDomain level.      */
-specifier|public
-name|void
-name|setEntitySorter
-parameter_list|(
-name|EntitySorter
-name|entitySorter
-parameter_list|)
-block|{
-name|this
-operator|.
-name|entitySorter
-operator|=
-name|entitySorter
 expr_stmt|;
 block|}
 comment|/**      * Tries to close JDBC connections opened by this node's data source.      */

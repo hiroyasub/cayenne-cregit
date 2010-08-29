@@ -104,7 +104,7 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
-comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly. One possible use is in custom DI providers, another is in unit tests to      * initialize tested objects that are relying on field injecton.      */
+comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly.      *<p>      * Note that using this method inside a custom DI {@link Provider} will most likely      * result in double injection, as custom provider is wrapped in a field-injecting      * provider by the DI container. Instead custom providers must initialize object      * properties manually, obtaining dependencies from Injector.      */
 name|void
 name|injectMembers
 parameter_list|(

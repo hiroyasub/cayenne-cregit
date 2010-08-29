@@ -231,10 +231,6 @@ name|void
 name|testNodes
 parameter_list|()
 throws|throws
-name|java
-operator|.
-name|lang
-operator|.
 name|Exception
 block|{
 name|DataDomain
@@ -313,10 +309,6 @@ name|void
 name|testNodeMaps
 parameter_list|()
 throws|throws
-name|java
-operator|.
-name|lang
-operator|.
 name|Exception
 block|{
 name|DataDomain
@@ -332,7 +324,7 @@ name|assertNull
 argument_list|(
 name|domain
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 literal|"map"
 argument_list|)
@@ -369,7 +361,7 @@ name|assertNotNull
 argument_list|(
 name|domain
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 literal|"map"
 argument_list|)
@@ -381,10 +373,6 @@ name|void
 name|testMaps
 parameter_list|()
 throws|throws
-name|java
-operator|.
-name|lang
-operator|.
 name|Exception
 block|{
 name|DataDomain
@@ -407,7 +395,7 @@ argument_list|)
 decl_stmt|;
 name|d1
 operator|.
-name|addMap
+name|addDataMap
 argument_list|(
 name|m1
 argument_list|)
@@ -418,7 +406,7 @@ name|m1
 argument_list|,
 name|d1
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 name|m1
 operator|.
@@ -429,7 +417,7 @@ argument_list|)
 expr_stmt|;
 name|d1
 operator|.
-name|removeMap
+name|removeDataMap
 argument_list|(
 name|m1
 operator|.
@@ -441,7 +429,7 @@ name|assertNull
 argument_list|(
 name|d1
 operator|.
-name|getMap
+name|getDataMap
 argument_list|(
 name|m1
 operator|.
@@ -608,7 +596,7 @@ argument_list|)
 expr_stmt|;
 name|domain
 operator|.
-name|addMap
+name|addDataMap
 argument_list|(
 name|map
 argument_list|)
