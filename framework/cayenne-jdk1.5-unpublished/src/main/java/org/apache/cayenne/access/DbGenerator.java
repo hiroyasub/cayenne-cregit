@@ -2224,6 +2224,11 @@ name|sorter
 init|=
 operator|new
 name|AshwoodEntitySorter
+argument_list|()
+decl_stmt|;
+name|sorter
+operator|.
+name|setDataMaps
 argument_list|(
 name|Collections
 operator|.
@@ -2232,7 +2237,7 @@ argument_list|(
 name|map
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|sorter
 operator|.
 name|sortDbEntities

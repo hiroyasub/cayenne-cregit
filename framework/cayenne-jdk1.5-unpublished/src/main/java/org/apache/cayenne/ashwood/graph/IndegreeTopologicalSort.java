@@ -81,6 +81,10 @@ name|Map
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 3.1  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -88,8 +92,8 @@ name|IndegreeTopologicalSort
 parameter_list|<
 name|E
 parameter_list|>
-extends|extends
-name|Algorithm
+implements|implements
+name|Iterator
 argument_list|<
 name|E
 argument_list|>
@@ -222,8 +226,6 @@ name|listIterator
 argument_list|()
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|boolean
 name|hasNext
@@ -237,8 +239,6 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|E
 name|next
@@ -389,6 +389,19 @@ name|value
 operator|--
 expr_stmt|;
 block|}
+block|}
+specifier|public
+name|void
+name|remove
+parameter_list|()
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"Method remove() not supported."
+argument_list|)
+throw|;
 block|}
 specifier|private
 specifier|static
