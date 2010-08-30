@@ -1239,7 +1239,7 @@ return|return
 name|tables
 return|;
 block|}
-comment|/**      * Loads dbEntities for the specified tables.      *       * @param map DataMap to be populated with DbEntities.      * @param tables The list of org.objectstyle.ashwood.dbutil.Table objects for which      *            DbEntities must be created.      * @return false if loading must be immediately aborted.      */
+comment|/**      * Loads dbEntities for the specified tables.      *       * @param map DataMap to be populated with DbEntities.      * @param tables The list of org.apache.cayenne.ashwood.dbutil.Table objects for which      *            DbEntities must be created.      * @return false if loading must be immediately aborted.      */
 specifier|public
 name|boolean
 name|loadDbEntities

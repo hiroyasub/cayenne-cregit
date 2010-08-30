@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|ashwood
 package|;
 end_package
 
@@ -32,6 +32,34 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ashwood
+operator|.
+name|AshwoodEntitySorter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
 import|;
 end_import
 
@@ -78,10 +106,6 @@ operator|.
 name|RelationshipCase
 import|;
 end_import
-
-begin_comment
-comment|/**  */
-end_comment
 
 begin_class
 specifier|public

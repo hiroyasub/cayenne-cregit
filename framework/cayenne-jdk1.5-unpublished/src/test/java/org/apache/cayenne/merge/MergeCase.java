@@ -179,9 +179,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
+name|ashwood
 operator|.
-name|DbAdapter
+name|AshwoodEntitySorter
 import|;
 end_import
 
@@ -193,9 +193,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dba
 operator|.
-name|AshwoodEntitySorter
+name|DbAdapter
 import|;
 end_import
 
