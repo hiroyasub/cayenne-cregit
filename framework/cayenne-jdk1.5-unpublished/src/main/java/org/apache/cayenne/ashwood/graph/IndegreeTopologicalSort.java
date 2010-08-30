@@ -87,8 +87,6 @@ class|class
 name|IndegreeTopologicalSort
 parameter_list|<
 name|E
-parameter_list|,
-name|V
 parameter_list|>
 extends|extends
 name|Algorithm
@@ -101,7 +99,7 @@ name|Digraph
 argument_list|<
 name|E
 argument_list|,
-name|V
+name|?
 argument_list|>
 name|digraph
 decl_stmt|;
@@ -151,7 +149,7 @@ name|Digraph
 argument_list|<
 name|E
 argument_list|,
-name|V
+name|?
 argument_list|>
 name|digraph
 parameter_list|)
@@ -344,7 +342,7 @@ name|ArcIterator
 argument_list|<
 name|E
 argument_list|,
-name|V
+name|?
 argument_list|>
 name|i
 init|=
