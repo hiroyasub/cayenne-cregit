@@ -219,6 +219,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"ARTIST_GROUP"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"ARTIST"
 argument_list|)
 expr_stmt|;

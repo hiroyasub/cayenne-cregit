@@ -281,6 +281,10 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_comment
+comment|// TODO: renamed as it fails on DB's like Derby. See CAY-1480.
+end_comment
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -291,7 +295,7 @@ name|TESTMAP_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|DataContextEJBQLFunctionalExpressionsTest
+name|DataContextEJBQLFunctionalExpressionsTemp
 extends|extends
 name|ServerCase
 block|{
@@ -341,6 +345,13 @@ operator|.
 name|deleteAll
 argument_list|(
 literal|"ARTIST_EXHIBIT"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"ARTIST_GROUP"
 argument_list|)
 expr_stmt|;
 name|dbHelper
