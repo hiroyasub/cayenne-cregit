@@ -274,16 +274,6 @@ name|DB2Adapter
 extends|extends
 name|JdbcAdapter
 block|{
-specifier|public
-name|DB2Adapter
-parameter_list|()
-block|{
-name|setSupportsGeneratedKeys
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Creates a DB2 specific PK Generator.      */
 annotation|@
 name|Override
