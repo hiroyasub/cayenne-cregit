@@ -889,6 +889,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|projectController
+operator|.
+name|updateProjectControllerPreferences
+argument_list|()
+expr_stmt|;
 name|updateStatus
 argument_list|(
 literal|"Project saved..."
