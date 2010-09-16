@@ -191,7 +191,7 @@ name|ClientModule
 operator|.
 name|ROP_SERVICE_URL
 argument_list|,
-literal|"http://localhost:8080/tutorial/cayenne-service"
+literal|"http://localhost:8080/tutorial-rop-server/cayenne-service"
 argument_list|)
 expr_stmt|;
 name|properties

@@ -52,7 +52,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|CayenneWebModule
+name|WebModule
 implements|implements
 name|Module
 block|{

@@ -480,7 +480,7 @@ index|[
 literal|1
 index|]
 operator|instanceof
-name|CayenneWebModule
+name|WebModule
 argument_list|)
 expr_stmt|;
 name|RequestHandler
@@ -630,7 +630,7 @@ index|[
 literal|1
 index|]
 operator|instanceof
-name|CayenneWebModule
+name|WebModule
 argument_list|)
 expr_stmt|;
 name|assertTrue

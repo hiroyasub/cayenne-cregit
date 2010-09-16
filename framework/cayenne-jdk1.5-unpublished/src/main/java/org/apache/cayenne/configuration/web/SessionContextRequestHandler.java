@@ -105,6 +105,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ObjectContextFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -150,6 +164,8 @@ argument_list|()
 operator|+
 literal|".SESSION_CONTEXT"
 decl_stmt|;
+comment|// using injector to lookup services instead of injecting them directly for lazy
+comment|// startup and "late binding"
 annotation|@
 name|Inject
 specifier|private
@@ -235,10 +251,13 @@ name|injector
 operator|.
 name|getInstance
 argument_list|(
-name|ObjectContext
+name|ObjectContextFactory
 operator|.
 name|class
 argument_list|)
+operator|.
+name|createContext
+argument_list|()
 expr_stmt|;
 name|session
 operator|.

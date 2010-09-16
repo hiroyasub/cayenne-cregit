@@ -60,7 +60,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|CayenneWebModuleTest
+name|WebModuleTest
 extends|extends
 name|TestCase
 block|{
@@ -76,7 +76,7 @@ operator|new
 name|DefaultInjector
 argument_list|(
 operator|new
-name|CayenneWebModule
+name|WebModule
 argument_list|()
 argument_list|)
 decl_stmt|;
