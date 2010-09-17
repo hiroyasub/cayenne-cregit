@@ -227,22 +227,6 @@ name|access
 operator|.
 name|types
 operator|.
-name|CharType
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|types
-operator|.
 name|ExtendedType
 import|;
 end_import
@@ -770,12 +754,8 @@ operator|.
 name|registerType
 argument_list|(
 operator|new
-name|CharType
-argument_list|(
-literal|true
-argument_list|,
-literal|true
-argument_list|)
+name|OracleCharType
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// create specially configured ByteArrayType handler
