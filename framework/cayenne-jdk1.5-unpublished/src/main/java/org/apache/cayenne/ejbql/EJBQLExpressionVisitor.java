@@ -647,6 +647,14 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 function_decl|;
+comment|/**      * @since 3.1      */
+name|boolean
+name|visitConst
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
 name|boolean
 name|visitDbPath
 parameter_list|(
