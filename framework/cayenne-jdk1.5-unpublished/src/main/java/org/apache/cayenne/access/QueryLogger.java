@@ -1275,13 +1275,37 @@ name|int
 name|count
 parameter_list|)
 block|{
+if|if
+condition|(
+name|isLoggable
+argument_list|()
+condition|)
+block|{
+name|String
+name|countStr
+init|=
+operator|(
+name|count
+operator|==
+literal|1
+operator|)
+condition|?
+literal|"--- will run 1 query."
+else|:
+literal|"--- will run "
+operator|+
+name|count
+operator|+
+literal|" queries."
+decl_stmt|;
 name|logger
 operator|.
-name|logQueryStart
+name|log
 argument_list|(
-name|count
+name|countStr
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * Returns true if current thread default log level is high enough for QueryLogger to      * generate output.      *       * @since 1.2      */
 specifier|public

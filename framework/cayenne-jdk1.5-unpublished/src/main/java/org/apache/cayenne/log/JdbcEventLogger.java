@@ -222,13 +222,6 @@ name|Throwable
 name|th
 parameter_list|)
 function_decl|;
-name|void
-name|logQueryStart
-parameter_list|(
-name|int
-name|count
-parameter_list|)
-function_decl|;
 comment|/**      * Returns true if current thread default log level is high enough to generate output.      */
 name|boolean
 name|isLoggable

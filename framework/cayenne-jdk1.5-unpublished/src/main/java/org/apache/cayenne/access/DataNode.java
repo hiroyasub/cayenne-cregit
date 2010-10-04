@@ -693,13 +693,6 @@ name|listSize
 argument_list|)
 throw|;
 block|}
-name|QueryLogger
-operator|.
-name|logQueryStart
-argument_list|(
-name|listSize
-argument_list|)
-expr_stmt|;
 comment|// do this meaningless inexpensive operation to trigger AutoAdapter lazy
 comment|// initialization before opening a connection. Otherwise we may end up with two
 comment|// connections open simultaneously, possibly hitting connection pool upper limit.

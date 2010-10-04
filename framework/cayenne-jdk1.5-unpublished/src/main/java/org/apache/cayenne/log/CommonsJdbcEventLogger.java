@@ -2014,46 +2014,6 @@ block|}
 block|}
 block|}
 specifier|public
-name|void
-name|logQueryStart
-parameter_list|(
-name|int
-name|count
-parameter_list|)
-block|{
-if|if
-condition|(
-name|isLoggable
-argument_list|()
-condition|)
-block|{
-name|String
-name|countStr
-init|=
-operator|(
-name|count
-operator|==
-literal|1
-operator|)
-condition|?
-literal|"--- will run 1 query."
-else|:
-literal|"--- will run "
-operator|+
-name|count
-operator|+
-literal|" queries."
-decl_stmt|;
-name|logger
-operator|.
-name|info
-argument_list|(
-name|countStr
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-specifier|public
 name|boolean
 name|isLoggable
 parameter_list|()
