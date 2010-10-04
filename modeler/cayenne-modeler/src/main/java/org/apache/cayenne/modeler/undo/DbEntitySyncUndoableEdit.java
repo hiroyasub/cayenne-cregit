@@ -341,7 +341,7 @@ argument_list|(
 name|da
 argument_list|)
 decl_stmt|;
-while|while
+if|if
 condition|(
 name|oa
 operator|!=
@@ -366,15 +366,6 @@ block|{
 name|oa
 block|}
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|oa
-operator|=
-name|entity
-operator|.
-name|getAttributeForDbAttribute
-argument_list|(
-name|da
 argument_list|)
 expr_stmt|;
 block|}
