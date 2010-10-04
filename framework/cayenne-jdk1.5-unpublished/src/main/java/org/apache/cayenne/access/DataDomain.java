@@ -215,6 +215,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|event
 operator|.
 name|EventManager
@@ -246,6 +260,20 @@ operator|.
 name|graph
 operator|.
 name|GraphDiff
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -416,6 +444,12 @@ name|String
 name|QUERY_CACHE_FACTORY_PROPERTY
 init|=
 literal|"cayenne.DataDomain.queryCacheFactory"
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|JdbcEventLogger
+name|jdbcEventLogger
 decl_stmt|;
 comment|/** Stores mapping of data nodes to DataNode name keys. */
 specifier|protected
@@ -2497,7 +2531,7 @@ block|{
 comment|// although we don't expect an exception here, print the stack, as
 comment|// there have been some Cayenne bugs already (CAY-557) that were
 comment|// masked by this 'catch' clause.
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logQueryError
 argument_list|(

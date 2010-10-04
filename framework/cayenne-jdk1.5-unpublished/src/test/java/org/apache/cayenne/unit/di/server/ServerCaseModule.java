@@ -77,6 +77,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|QueryLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|configuration
 operator|.
 name|server
@@ -140,6 +154,34 @@ operator|.
 name|spi
 operator|.
 name|DefaultScope
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|CommonsJdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -286,6 +328,22 @@ comment|// ServerCase. Note that ServerRuntimeProvider creates ServerRuntime
 comment|// instances complete with their own DI injectors, independent from the
 comment|// unit test injector. ServerRuntime injector contents are customized
 comment|// inside ServerRuntimeProvider.
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|JdbcEventLogger
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|CommonsJdbcEventLogger
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 comment|// singleton objects
 name|binder
 operator|.

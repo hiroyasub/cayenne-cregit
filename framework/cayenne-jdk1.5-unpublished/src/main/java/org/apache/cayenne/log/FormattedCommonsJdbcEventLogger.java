@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|log
 package|;
 end_package
 
@@ -41,6 +41,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -55,21 +65,31 @@ name|TreeMap
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbAttribute
+import|;
+end_import
+
 begin_comment
-comment|/**  * QueryFormatter is utility class for formatting queries.  */
+comment|/**  * A {@link CommonsJdbcEventLogger} extension that provides pretty formatting of the  * logged SQL messages.  *   * @since 3.1  */
 end_comment
 
 begin_class
-specifier|final
+specifier|public
 class|class
-name|QueryFormatter
+name|FormattedCommonsJdbcEventLogger
+extends|extends
+name|CommonsJdbcEventLogger
 block|{
-specifier|private
-name|QueryFormatter
-parameter_list|()
-block|{
-comment|// no instances
-block|}
 specifier|private
 specifier|final
 specifier|static
@@ -79,7 +99,7 @@ name|String
 argument_list|,
 name|String
 argument_list|>
-name|KEY_WORDS
+name|KEYWORDS
 init|=
 operator|new
 name|HashMap
@@ -92,7 +112,7 @@ argument_list|()
 decl_stmt|;
 static|static
 block|{
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -101,7 +121,7 @@ argument_list|,
 literal|"SELECT"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -110,7 +130,7 @@ argument_list|,
 literal|"FROM"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -119,7 +139,7 @@ argument_list|,
 literal|"WHERE"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -128,7 +148,7 @@ argument_list|,
 literal|"ORDER BY"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -137,7 +157,7 @@ argument_list|,
 literal|"GROUP BY"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -146,7 +166,7 @@ argument_list|,
 literal|"UPDATE"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -155,7 +175,7 @@ argument_list|,
 literal|"EXEC"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -164,7 +184,7 @@ argument_list|,
 literal|"SET"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -173,7 +193,7 @@ argument_list|,
 literal|"INSERT"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -182,7 +202,7 @@ argument_list|,
 literal|"VALUES"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -191,7 +211,7 @@ argument_list|,
 literal|"DELETE"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -200,7 +220,7 @@ argument_list|,
 literal|"DECLARE"
 argument_list|)
 expr_stmt|;
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|put
 argument_list|(
@@ -210,7 +230,7 @@ literal|"CASE"
 argument_list|)
 expr_stmt|;
 block|}
-specifier|static
+specifier|private
 name|String
 name|formatQuery
 parameter_list|(
@@ -543,7 +563,6 @@ name|result
 return|;
 block|}
 specifier|private
-specifier|static
 name|Map
 argument_list|<
 name|Integer
@@ -586,7 +605,7 @@ control|(
 name|String
 name|keyWrd
 range|:
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|keySet
 argument_list|()
@@ -627,7 +646,7 @@ name|put
 argument_list|(
 name|idx
 argument_list|,
-name|KEY_WORDS
+name|KEYWORDS
 operator|.
 name|get
 argument_list|(
@@ -651,6 +670,55 @@ block|}
 return|return
 name|result
 return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|logQuery
+parameter_list|(
+name|String
+name|queryStr
+parameter_list|,
+name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
+name|attrs
+parameter_list|,
+name|List
+argument_list|<
+name|?
+argument_list|>
+name|params
+parameter_list|,
+name|long
+name|time
+parameter_list|)
+block|{
+if|if
+condition|(
+name|isLoggable
+argument_list|()
+condition|)
+block|{
+name|super
+operator|.
+name|logQuery
+argument_list|(
+name|formatQuery
+argument_list|(
+name|queryStr
+argument_list|)
+argument_list|,
+name|attrs
+argument_list|,
+name|params
+argument_list|,
+name|time
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class

@@ -191,6 +191,20 @@ name|Provider
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
 begin_comment
 comment|/**  * A factory of DbAdapters that either loads user-provided adapter or guesses the adapter  * type from the database metadata.  *   * @since 3.1  */
 end_comment
@@ -209,6 +223,12 @@ name|String
 name|DETECTORS_LIST
 init|=
 literal|"org.apache.cayenne.configuration.server.DefaultDbAdapterFactory.detectors"
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|JdbcEventLogger
+name|jdbcEventLogger
 decl_stmt|;
 annotation|@
 name|Inject
@@ -482,7 +502,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|log
 argument_list|(
@@ -512,7 +532,7 @@ name|DbAdapter
 name|defaultAdapter
 parameter_list|()
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|log
 argument_list|(
