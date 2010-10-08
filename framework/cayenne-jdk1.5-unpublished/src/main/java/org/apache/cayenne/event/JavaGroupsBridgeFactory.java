@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory to create JavaGroupsBridge instances. If JavaGroups library is not installed  * this factory will return a noop EventBridge as a failover mechanism.  *   * @since 1.1  */
+comment|/**  * Factory to create JavaGroupsBridge instances. If JavaGroups library is not installed  * this factory will return a noop EventBridge as a failover mechanism.  *  * For further information about JavaGroups consult the<a href="http://www.jgroups.org/">documentation</a>.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -126,7 +126,7 @@ name|MCAST_PORT_PROPERTY
 init|=
 literal|"cayenne.JavaGroupsBridge.mcast.port"
 decl_stmt|;
-comment|/**      * Defines a property for JavaGroups XML configuration file. Example file can be found      * at<a      * href="http://www.filip.net/javagroups/javagroups-protocol.xml">http://www.filip.net/javagroups/javagroups-protocol.xml</a>.      */
+comment|/**      * Defines a property for JavaGroups XML configuration file.      */
 specifier|public
 specifier|static
 specifier|final
