@@ -1576,6 +1576,9 @@ name|ArcProperty
 name|property
 parameter_list|)
 block|{
+name|resetJoinStack
+argument_list|()
+expr_stmt|;
 name|ObjRelationship
 name|rel
 init|=
