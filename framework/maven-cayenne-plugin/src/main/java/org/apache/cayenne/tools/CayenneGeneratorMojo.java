@@ -391,6 +391,16 @@ argument_list|)
 expr_stmt|;
 name|generator
 operator|.
+name|addQueries
+argument_list|(
+name|dataMap
+operator|.
+name|getQueries
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|generator
+operator|.
 name|execute
 argument_list|()
 expr_stmt|;

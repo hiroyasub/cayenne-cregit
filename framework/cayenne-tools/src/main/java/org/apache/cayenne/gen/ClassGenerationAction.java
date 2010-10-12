@@ -2129,6 +2129,8 @@ operator|.
 name|ALL
 condition|)
 block|{
+comment|// TODO: andrus 10.12.2010 - why not also check for empty query list?? Or
+comment|// create a better API for enabling DataMapArtifact
 if|if
 condition|(
 name|queries
@@ -2246,9 +2248,7 @@ operator|.
 name|ENTITY
 expr_stmt|;
 block|}
-else|else
-block|{
-if|if
+if|else if
 condition|(
 name|ArtifactsGenerationMode
 operator|.
@@ -2282,7 +2282,6 @@ name|ArtifactsGenerationMode
 operator|.
 name|ALL
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
