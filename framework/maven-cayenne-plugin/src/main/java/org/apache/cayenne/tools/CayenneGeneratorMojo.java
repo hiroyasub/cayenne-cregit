@@ -173,15 +173,15 @@ specifier|private
 name|String
 name|encoding
 decl_stmt|;
-comment|/** 	 * Entities (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.excludeEntitiesPattern}" 	 */
+comment|/** 	 * Entities (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.excludeEntities}" 	 */
 specifier|private
 name|String
-name|excludeEntitiesPattern
+name|excludeEntities
 decl_stmt|;
-comment|/** 	 * Entities (expressed as a perl5 regex) to include in template generation. 	 * (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.includeEntitiesPattern}" 	 */
+comment|/** 	 * Entities (expressed as a perl5 regex) to include in template generation. 	 * (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.includeEntities}" 	 */
 specifier|private
 name|String
-name|includeEntitiesPattern
+name|includeEntities
 decl_stmt|;
 comment|/** 	 * If set to<code>true</code>, will generate subclass/superclass pairs, 	 * with all generated code included in superclass (default is 	 *<code>true</code>). 	 *  	 * @parameter expression="${cgen.makePairs}" default-value="true" 	 */
 specifier|private
@@ -311,9 +311,9 @@ name|NamePatternMatcher
 argument_list|(
 name|logger
 argument_list|,
-name|includeEntitiesPattern
+name|includeEntities
 argument_list|,
-name|excludeEntitiesPattern
+name|excludeEntities
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -377,18 +377,19 @@ name|dataMap
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|//ksenia khailenko 15.10.2010
+comment|//TODO add the "includeEmbeddables" and "excludeEmbeddables" attributes
 name|generator
 operator|.
 name|addEmbeddables
 argument_list|(
-name|filterAction
-operator|.
-name|getFilteredEmbeddables
-argument_list|(
 name|dataMap
-argument_list|)
+operator|.
+name|getEmbeddables
+argument_list|()
 argument_list|)
 expr_stmt|;
+comment|//TODO add the "includeQueries" and "excludeQueries" attributes
 name|generator
 operator|.
 name|addQueries
