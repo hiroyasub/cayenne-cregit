@@ -1101,6 +1101,7 @@ name|WHITE
 decl_stmt|;
 comment|/**          * List which is rendered          */
 specifier|private
+specifier|final
 name|JList
 name|list
 decl_stmt|;
@@ -1143,7 +1144,9 @@ literal|1
 expr_stmt|;
 name|setHorizontalTextPosition
 argument_list|(
-literal|10
+name|SwingConstants
+operator|.
+name|LEADING
 argument_list|)
 expr_stmt|;
 block|}
@@ -1205,6 +1208,12 @@ expr_stmt|;
 name|setBackground
 argument_list|(
 name|ROLLOVER_BACKGROUND
+argument_list|)
+expr_stmt|;
+name|setToolTipText
+argument_list|(
+name|getText
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
