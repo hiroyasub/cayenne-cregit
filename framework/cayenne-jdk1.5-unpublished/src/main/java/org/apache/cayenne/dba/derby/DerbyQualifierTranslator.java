@@ -253,15 +253,6 @@ name|getOperand
 argument_list|(
 literal|1
 argument_list|)
-operator|!=
-literal|null
-operator|&&
-name|parent
-operator|.
-name|getOperand
-argument_list|(
-literal|1
-argument_list|)
 operator|instanceof
 name|String
 condition|)
