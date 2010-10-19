@@ -788,7 +788,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|TrimmingQualifierTranslator
+name|DerbyQualifierTranslator
 argument_list|(
 name|queryAssembler
 argument_list|,

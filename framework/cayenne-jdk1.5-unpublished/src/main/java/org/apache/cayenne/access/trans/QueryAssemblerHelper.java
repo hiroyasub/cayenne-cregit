@@ -867,6 +867,8 @@ operator|(
 name|DbAttribute
 operator|)
 name|pathPart
+argument_list|,
+name|pathExp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1088,6 +1090,8 @@ name|component
 operator|.
 name|getAttribute
 argument_list|()
+argument_list|,
+name|pathExp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1139,6 +1143,9 @@ name|processColumnWithQuoteSqlIdentifiers
 parameter_list|(
 name|DbAttribute
 name|dbAttr
+parameter_list|,
+name|Expression
+name|pathExp
 parameter_list|)
 throws|throws
 name|IOException

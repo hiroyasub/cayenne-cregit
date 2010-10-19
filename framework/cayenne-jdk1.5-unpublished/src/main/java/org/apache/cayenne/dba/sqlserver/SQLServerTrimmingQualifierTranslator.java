@@ -339,6 +339,9 @@ name|processColumnWithQuoteSqlIdentifiers
 parameter_list|(
 name|DbAttribute
 name|dbAttr
+parameter_list|,
+name|Expression
+name|pathExp
 parameter_list|)
 throws|throws
 name|IOException
@@ -424,6 +427,8 @@ operator|.
 name|processColumnWithQuoteSqlIdentifiers
 argument_list|(
 name|dbAttr
+argument_list|,
+name|node
 argument_list|)
 expr_stmt|;
 if|if
