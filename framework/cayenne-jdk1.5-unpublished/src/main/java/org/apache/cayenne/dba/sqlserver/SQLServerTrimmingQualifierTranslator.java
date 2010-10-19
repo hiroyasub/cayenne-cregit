@@ -65,18 +65,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|access
 operator|.
 name|trans
@@ -264,8 +252,6 @@ condition|(
 name|likeCI
 condition|)
 block|{
-try|try
-block|{
 name|out
 operator|.
 name|append
@@ -273,23 +259,6 @@ argument_list|(
 literal|"CAST("
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error appending content"
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
 block|}
 name|super
 operator|.
@@ -303,8 +272,6 @@ condition|(
 name|likeCI
 condition|)
 block|{
-try|try
-block|{
 name|out
 operator|.
 name|append
@@ -312,23 +279,6 @@ argument_list|(
 literal|" AS NVARCHAR(MAX))"
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error appending content"
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
 block|}
 block|}
 annotation|@
@@ -395,8 +345,6 @@ condition|(
 name|likeCI
 condition|)
 block|{
-try|try
-block|{
 name|out
 operator|.
 name|append
@@ -404,23 +352,6 @@ argument_list|(
 literal|"CAST("
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error appending content"
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
 block|}
 name|super
 operator|.
@@ -436,8 +367,6 @@ condition|(
 name|likeCI
 condition|)
 block|{
-try|try
-block|{
 name|out
 operator|.
 name|append
@@ -445,23 +374,6 @@ argument_list|(
 literal|" AS NVARCHAR(MAX))"
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error appending content"
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
 block|}
 block|}
 annotation|@
