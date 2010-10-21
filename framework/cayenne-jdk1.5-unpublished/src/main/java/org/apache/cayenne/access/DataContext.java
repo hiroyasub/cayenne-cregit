@@ -1809,6 +1809,30 @@ argument_list|>
 name|dataRows
 parameter_list|)
 block|{
+comment|// TODO: If data row cache is not available it means that current data context is
+comment|// child. We need to redirect this method call to parent data context as an
+comment|// internal query. It is not obvious and has some overhead. Redesign for nested
+comment|// contexts should be done.
+if|if
+condition|(
+name|getObjectStore
+argument_list|()
+operator|.
+name|getDataRowCache
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+name|objectsFromDataRowsFromParentContext
+argument_list|(
+name|descriptor
+argument_list|,
+name|dataRows
+argument_list|)
+return|;
+block|}
 return|return
 operator|new
 name|ObjectResolver
@@ -1824,6 +1848,43 @@ name|synchronizedObjectsFromDataRows
 argument_list|(
 name|dataRows
 argument_list|)
+return|;
+block|}
+specifier|private
+name|List
+name|objectsFromDataRowsFromParentContext
+parameter_list|(
+name|ClassDescriptor
+name|descriptor
+parameter_list|,
+name|List
+argument_list|<
+name|?
+extends|extends
+name|DataRow
+argument_list|>
+name|dataRows
+parameter_list|)
+block|{
+return|return
+name|getChannel
+argument_list|()
+operator|.
+name|onQuery
+argument_list|(
+name|this
+argument_list|,
+operator|new
+name|ObjectsFromDataRowsQuery
+argument_list|(
+name|descriptor
+argument_list|,
+name|dataRows
+argument_list|)
+argument_list|)
+operator|.
+name|firstList
+argument_list|()
 return|;
 block|}
 comment|/**      * Creates a DataObject from DataRow.      *       * @see DataRow      */

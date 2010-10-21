@@ -394,10 +394,33 @@ operator|!=
 name|DONE
 condition|)
 block|{
-comment|// when changing the flow below, make sure to update
-comment|// 'getCacheObjectFactory' method that mimics the interceptors
-comment|// below 'interceptLocalCache'. See comment in an inner class
-comment|// factory in this method...
+name|executePostCache
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+block|}
+block|}
+name|interceptObjectConversion
+argument_list|()
+expr_stmt|;
+return|return
+name|response
+return|;
+block|}
+specifier|private
+name|void
+name|executePostCache
+parameter_list|()
+block|{
+if|if
+condition|(
+name|interceptInternalQuery
+argument_list|()
+operator|!=
+name|DONE
+condition|)
+block|{
 if|if
 condition|(
 name|interceptPaginatedQuery
@@ -411,15 +434,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-block|}
-block|}
-block|}
-name|interceptObjectConversion
-argument_list|()
-expr_stmt|;
-return|return
-name|response
-return|;
 block|}
 comment|/**      * Transfers fetched objects into the target context if it is different from "acting"      * context. Note that when this method is invoked, result objects are already      * registered with acting context by the parent channel.      */
 specifier|protected
@@ -583,6 +597,16 @@ operator|=
 name|childResponse
 expr_stmt|;
 block|}
+block|}
+specifier|protected
+name|boolean
+name|interceptInternalQuery
+parameter_list|()
+block|{
+return|return
+operator|!
+name|DONE
+return|;
 block|}
 specifier|protected
 name|boolean
@@ -1142,20 +1166,9 @@ name|Object
 name|createObject
 parameter_list|()
 block|{
-comment|// must follow the same logic as 'execute' below locla cache interceptor
-comment|// method... reuse that code somehow???
-if|if
-condition|(
-name|interceptPaginatedQuery
-argument_list|()
-operator|!=
-name|DONE
-condition|)
-block|{
-name|runQuery
+name|executePostCache
 argument_list|()
 expr_stmt|;
-block|}
 return|return
 name|response
 operator|.
