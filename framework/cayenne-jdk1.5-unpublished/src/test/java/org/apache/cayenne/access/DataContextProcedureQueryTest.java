@@ -51,16 +51,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Date
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
 import|;
 end_import
@@ -734,8 +724,6 @@ name|uppercaseConverter
 argument_list|(
 name|artistRow
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|Painting
@@ -888,8 +876,6 @@ name|uppercaseConverter
 argument_list|(
 name|artistRow
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|Painting
@@ -1056,8 +1042,6 @@ name|uppercaseConverter
 argument_list|(
 name|artistRow
 argument_list|)
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|Painting

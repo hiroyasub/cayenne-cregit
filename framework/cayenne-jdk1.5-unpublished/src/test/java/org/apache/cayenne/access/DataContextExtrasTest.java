@@ -790,8 +790,6 @@ operator|.
 name|class
 argument_list|,
 name|row
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -898,8 +896,6 @@ operator|.
 name|class
 argument_list|,
 name|row
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -1017,8 +1013,6 @@ operator|.
 name|class
 argument_list|,
 name|row
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|assertTrue

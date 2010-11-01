@@ -657,8 +657,6 @@ operator|(
 name|DataRow
 operator|)
 name|row
-argument_list|,
-literal|true
 argument_list|)
 decl_stmt|;
 name|assertEquals

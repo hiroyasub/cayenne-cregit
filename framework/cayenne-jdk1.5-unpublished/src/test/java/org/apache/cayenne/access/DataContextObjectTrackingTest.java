@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests objects registration in DataContext, transferring objects between contexts and  * such.  *   */
+comment|/**  * Tests objects registration in DataContext, transferring objects between contexts and  * such.  *  */
 end_comment
 
 begin_class
@@ -227,8 +227,6 @@ operator|.
 name|class
 argument_list|,
 name|row
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|ObjectId
@@ -408,8 +406,6 @@ operator|.
 name|class
 argument_list|,
 name|row
-argument_list|,
-literal|false
 argument_list|)
 decl_stmt|;
 name|ObjectId
