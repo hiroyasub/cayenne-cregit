@@ -424,6 +424,11 @@ name|storageEngine
 operator|=
 name|DEFAULT_STORAGE_ENGINE
 expr_stmt|;
+name|setSupportsBatchUpdates
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|setSupportsFkConstraints
 argument_list|(
 literal|true
