@@ -182,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Various utils for processing persistent objects and their properties  *   *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *   * @since 3.1 its predecessor was called DataObjectUtils  */
+comment|/**  * Various utils for processing persistent objects and their properties  *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *   * @since 3.1 its predecessor was called DataObjectUtils  */
 end_comment
 
 begin_class
@@ -199,7 +199,7 @@ name|PROPERTY_COLLECTION_SIZE
 init|=
 literal|"@size"
 decl_stmt|;
-comment|/**      * Returns mapped ObjEntity for object. If an object is transient or is not      * mapped returns null.      */
+comment|/**      * Returns mapped ObjEntity for object. If an object is transient or is not mapped      * returns null.      */
 specifier|public
 specifier|static
 name|ObjEntity
@@ -235,7 +235,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns class descriptor for the object,<code>null</code> if the object is      * transient or descriptor was not found      */
+comment|/**      * Returns class descriptor for the object or null if the object is not registered      * with an ObjectContext or descriptor was not found.      */
 specifier|public
 specifier|static
 name|ClassDescriptor
@@ -245,16 +245,19 @@ name|Persistent
 name|object
 parameter_list|)
 block|{
-if|if
-condition|(
+name|ObjectContext
+name|context
+init|=
 name|object
 operator|.
-name|getPersistenceState
+name|getObjectContext
 argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|context
 operator|==
-name|PersistenceState
-operator|.
-name|TRANSIENT
+literal|null
 condition|)
 block|{
 return|return
@@ -262,10 +265,7 @@ literal|null
 return|;
 block|}
 return|return
-name|object
-operator|.
-name|getObjectContext
-argument_list|()
+name|context
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -323,7 +323,7 @@ name|properyName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)CayenneUtils.readNestedProperty(artist, "name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)CayenneUtils.readNestedProperty(paintingInfo, "toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)CayenneUtils.readNestedProperty(painting, "toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)CayenneUtils.readNestedProperty(painting, "toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)CayenneUtils.readNestedProperty(artist, "paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      */
+comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)CayenneUtils.readNestedProperty(artist, "name");</code>      *<br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)CayenneUtils.readNestedProperty(paintingInfo, "toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)CayenneUtils.readNestedProperty(painting, "toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)CayenneUtils.readNestedProperty(painting, "toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)CayenneUtils.readNestedProperty(artist, "paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      */
 specifier|public
 specifier|static
 name|Object
@@ -831,7 +831,7 @@ name|p
 argument_list|)
 return|;
 block|}
-comment|//handling non-persistent property
+comment|// handling non-persistent property
 name|Object
 name|result
 init|=
@@ -870,7 +870,7 @@ return|return
 name|result
 return|;
 block|}
-comment|//there is still a change to return a property via introspection
+comment|// there is still a change to return a property via introspection
 return|return
 name|PropertyUtils
 operator|.
