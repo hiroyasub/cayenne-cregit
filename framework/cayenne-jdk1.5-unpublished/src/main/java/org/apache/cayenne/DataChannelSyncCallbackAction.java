@@ -39,7 +39,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
+name|HashMap
 import|;
 end_import
 
@@ -49,7 +49,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|Map
 import|;
 end_import
 
@@ -124,7 +124,11 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  * note: made public in 3.1 to be used in all tiers  */
+comment|/**  * @since 3.1  */
+end_comment
+
+begin_comment
+comment|// note: made public in 3.1 to be used in all tiers
 end_comment
 
 begin_class
@@ -135,6 +139,16 @@ name|DataChannelSyncCallbackAction
 implements|implements
 name|GraphChangeHandler
 block|{
+specifier|static
+enum|enum
+name|Op
+block|{
+name|INSERT
+block|,
+name|UPDATE
+block|,
+name|DELETE
+block|}
 specifier|public
 specifier|static
 name|DataChannelSyncCallbackAction
@@ -220,9 +234,11 @@ name|Collection
 name|removed
 decl_stmt|;
 specifier|private
-name|Set
+name|Map
 argument_list|<
 name|Object
+argument_list|,
+name|Op
 argument_list|>
 name|seenIds
 decl_stmt|;
@@ -265,9 +281,11 @@ operator|.
 name|seenIds
 operator|=
 operator|new
-name|HashSet
+name|HashMap
 argument_list|<
 name|Object
+argument_list|,
+name|Op
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -341,14 +359,25 @@ name|Object
 name|nodeId
 parameter_list|)
 block|{
-if|if
-condition|(
+name|Op
+name|op
+init|=
 name|seenIds
 operator|.
-name|add
+name|put
 argument_list|(
 name|nodeId
+argument_list|,
+name|Op
+operator|.
+name|INSERT
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|op
+operator|==
+literal|null
 condition|)
 block|{
 name|Object
@@ -379,6 +408,9 @@ name|persisted
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -400,14 +432,28 @@ name|Object
 name|nodeId
 parameter_list|)
 block|{
-if|if
-condition|(
+name|Op
+name|op
+init|=
 name|seenIds
 operator|.
-name|add
+name|put
 argument_list|(
 name|nodeId
+argument_list|,
+name|Op
+operator|.
+name|DELETE
 argument_list|)
+decl_stmt|;
+comment|// the node may have been updated prior to delete
+if|if
+condition|(
+name|op
+operator|!=
+name|Op
+operator|.
+name|DELETE
 condition|)
 block|{
 name|Object
@@ -438,6 +484,9 @@ name|removed
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -448,6 +497,25 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|op
+operator|==
+name|Op
+operator|.
+name|UPDATE
+condition|)
+block|{
+name|updated
+operator|.
+name|remove
+argument_list|(
+name|node
+argument_list|)
+expr_stmt|;
+block|}
+comment|// don't care about preceding Op.INSERT, as NEW -> DELETED objects are
+comment|// purged from the change log upstream and we don't see them here
 block|}
 block|}
 block|}
@@ -536,14 +604,25 @@ name|Object
 name|nodeId
 parameter_list|)
 block|{
-if|if
-condition|(
+name|Op
+name|op
+init|=
 name|seenIds
 operator|.
-name|add
+name|put
 argument_list|(
 name|nodeId
+argument_list|,
+name|Op
+operator|.
+name|UPDATE
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|op
+operator|==
+literal|null
 condition|)
 block|{
 name|Object
@@ -574,6 +653,9 @@ name|updated
 operator|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
