@@ -29,6 +29,24 @@ name|testdo
 operator|.
 name|testmap
 operator|.
+name|annotations
+operator|.
+name|Tag1
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|testmap
+operator|.
 name|auto
 operator|.
 name|_Artist
@@ -66,6 +84,8 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Tag1
 specifier|public
 class|class
 name|Artist
