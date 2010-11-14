@@ -864,6 +864,15 @@ parameter_list|)
 block|{
 name|binder
 operator|.
+name|bindList
+argument_list|(
+name|DataDomainProvider
+operator|.
+name|FILTERS_LIST
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
 name|bind
 argument_list|(
 name|EventManager

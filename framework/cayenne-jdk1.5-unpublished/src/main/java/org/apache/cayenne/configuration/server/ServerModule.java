@@ -786,6 +786,16 @@ name|MySQLSniffer
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// configure an empty filter chain
+name|binder
+operator|.
+name|bindList
+argument_list|(
+name|DataDomainProvider
+operator|.
+name|FILTERS_LIST
+argument_list|)
+expr_stmt|;
 name|binder
 operator|.
 name|bind

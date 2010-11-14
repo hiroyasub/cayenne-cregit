@@ -184,12 +184,11 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
-specifier|public
 name|QueryResponse
-name|onQuery
+name|onQueryNoFilters
 parameter_list|(
 name|ObjectContext
-name|context
+name|originatingContext
 parameter_list|,
 name|Query
 name|query
@@ -199,7 +198,7 @@ return|return
 operator|new
 name|UnitTestDomainQueryAction
 argument_list|(
-name|context
+name|originatingContext
 argument_list|,
 name|this
 argument_list|,
