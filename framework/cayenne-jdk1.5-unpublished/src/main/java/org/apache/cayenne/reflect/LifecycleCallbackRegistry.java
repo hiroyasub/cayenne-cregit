@@ -857,15 +857,25 @@ literal|"Null listener"
 argument_list|)
 throw|;
 block|}
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|listenerType
+init|=
+name|listener
+operator|.
+name|getClass
+argument_list|()
+decl_stmt|;
+do|do
+block|{
 for|for
 control|(
 name|Method
 name|m
 range|:
-name|listener
-operator|.
-name|getClass
-argument_list|()
+name|listenerType
 operator|.
 name|getDeclaredMethods
 argument_list|()
@@ -941,7 +951,8 @@ name|a
 argument_list|)
 control|)
 block|{
-comment|// TODO: ignoring entity subclasses? whenever we add those, take
+comment|// TODO: ignoring entity subclasses? whenever we add those,
+comment|// take
 comment|// into account "exlcudeSuperclassListeners" flag
 name|types
 operator|.
@@ -1015,6 +1026,31 @@ block|}
 block|}
 block|}
 block|}
+name|listenerType
+operator|=
+name|listenerType
+operator|.
+name|getSuperclass
+argument_list|()
+expr_stmt|;
+block|}
+do|while
+condition|(
+name|listenerType
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|listenerType
+operator|.
+name|equals
+argument_list|(
+name|Object
+operator|.
+name|class
+argument_list|)
+condition|)
+do|;
 block|}
 comment|/**      * Invokes callbacks of a specific type for a given entity object.      */
 specifier|public
