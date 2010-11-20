@@ -87,6 +87,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|CopyOnWriteArrayList
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -630,6 +642,17 @@ name|String
 name|name
 parameter_list|)
 block|{
+name|this
+operator|.
+name|filters
+operator|=
+operator|new
+name|CopyOnWriteArrayList
+argument_list|<
+name|DataChannelFilter
+argument_list|>
+argument_list|()
+expr_stmt|;
 name|setName
 argument_list|(
 name|name
@@ -650,6 +673,17 @@ name|Map
 name|properties
 parameter_list|)
 block|{
+name|this
+operator|.
+name|filters
+operator|=
+operator|new
+name|CopyOnWriteArrayList
+argument_list|<
+name|DataChannelFilter
+argument_list|>
+argument_list|()
+expr_stmt|;
 name|setName
 argument_list|(
 name|name
@@ -2798,7 +2832,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 3.1      */
+comment|/**      * Returns a list of filters registered with this DataDomain. The returned list allows      * concurrent modifications, so if a caller needs to add or remove a filter, he may      * use add/remove methods on the returned list.      *<p>      * Filter ordering note: filters are applied in reverse order of their occurrence in      * the filter list. I.e. the last filter in the list called first in the chain.      *       * @since 3.1      */
 specifier|public
 name|List
 argument_list|<
@@ -2810,25 +2844,6 @@ block|{
 return|return
 name|filters
 return|;
-block|}
-comment|/**      * @since 3.1      */
-specifier|public
-name|void
-name|setFilters
-parameter_list|(
-name|List
-argument_list|<
-name|DataChannelFilter
-argument_list|>
-name|filters
-parameter_list|)
-block|{
-name|this
-operator|.
-name|filters
-operator|=
-name|filters
-expr_stmt|;
 block|}
 specifier|abstract
 class|class
