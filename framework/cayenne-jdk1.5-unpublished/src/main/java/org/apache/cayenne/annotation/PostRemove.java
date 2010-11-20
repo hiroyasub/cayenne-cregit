@@ -99,8 +99,22 @@ name|Target
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|LifecycleEvent
+import|;
+end_import
+
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * An annotation to place on the entity event listener method to receive  * {@link LifecycleEvent#POST_REMOVE} events.  *   * @since 3.1  */
 end_comment
 
 begin_annotation_defn
@@ -126,6 +140,7 @@ specifier|public
 annotation_defn|@interface
 name|PostRemove
 block|{
+comment|/**      * An array of entity classes that a listener method should be associated with.      */
 name|Class
 argument_list|<
 name|?
@@ -136,6 +151,7 @@ argument_list|()
 expr|default
 block|{}
 expr_stmt|;
+comment|/**      * An array of custom annotation types. When such annotation is used on an entity      * class, such entity will be associated with the annotated listener method.      */
 name|Class
 argument_list|<
 name|?

@@ -140,6 +140,7 @@ specifier|public
 annotation_defn|@interface
 name|PostAdd
 block|{
+comment|/**      * An array of entity classes that a listener method should be associated with.      */
 name|Class
 argument_list|<
 name|?
@@ -150,6 +151,7 @@ argument_list|()
 expr|default
 block|{}
 expr_stmt|;
+comment|/**      * An array of custom annotation types. When such annotation is used on an entity      * class, such entity will be associated with the annotated listener method.      */
 name|Class
 argument_list|<
 name|?

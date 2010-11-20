@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines possible object lifecycle events for which callbacks are supported.  *   * @since 3.0  */
+comment|/**  * Defines possible entity object lifecycle events. Cayenne notifies registered listeners  * and entity callback methods when such events occur during the object lifecycle.  *   * @since 3.0  */
 end_comment
 
 begin_enum
