@@ -2832,7 +2832,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a list of filters registered with this DataDomain. The returned list allows      * concurrent modifications, so if a caller needs to add or remove a filter, he may      * use add/remove methods on the returned list.      *<p>      * Filter ordering note: filters are applied in reverse order of their occurrence in      * the filter list. I.e. the last filter in the list called first in the chain.      *       * @since 3.1      */
+comment|/**      * Returns an unmodifiable list of filters registered with this DataDomain.      *<p>      * Filter ordering note: filters are applied in reverse order of their occurrence in      * the filter list. I.e. the last filter in the list called first in the chain.      *       * @since 3.1      */
 specifier|public
 name|List
 argument_list|<
@@ -2842,8 +2842,54 @@ name|getFilters
 parameter_list|()
 block|{
 return|return
+name|Collections
+operator|.
+name|unmodifiableList
+argument_list|(
 name|filters
+argument_list|)
 return|;
+block|}
+comment|/**      * Adds a new filter, calling its 'init' method.      *       * @since 3.1      */
+specifier|public
+name|void
+name|addFilter
+parameter_list|(
+name|DataChannelFilter
+name|filter
+parameter_list|)
+block|{
+name|filter
+operator|.
+name|init
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+name|filters
+operator|.
+name|add
+argument_list|(
+name|filter
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Removes a filter from the filter chain.      *       * @since 3.1      */
+specifier|public
+name|void
+name|removeFilter
+parameter_list|(
+name|DataChannelFilter
+name|filter
+parameter_list|)
+block|{
+name|filters
+operator|.
+name|remove
+argument_list|(
+name|filter
+argument_list|)
+expr_stmt|;
 block|}
 specifier|abstract
 class|class
