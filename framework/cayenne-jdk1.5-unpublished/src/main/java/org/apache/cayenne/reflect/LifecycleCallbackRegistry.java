@@ -45,16 +45,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Collection
 import|;
 end_import
@@ -1095,6 +1085,24 @@ name|objects
 argument_list|)
 expr_stmt|;
 block|}
+comment|// used by unit tests to poke inside the registry
+name|LifecycleCallbackEventHandler
+name|getHandler
+parameter_list|(
+name|LifecycleEvent
+name|type
+parameter_list|)
+block|{
+return|return
+name|eventCallbacks
+index|[
+name|type
+operator|.
+name|ordinal
+argument_list|()
+index|]
+return|;
+block|}
 specifier|private
 name|Map
 argument_list|<
@@ -1812,7 +1820,7 @@ name|?
 extends|extends
 name|Annotation
 argument_list|>
-name|type
+name|annotationType
 parameter_list|)
 block|{
 name|Collection
@@ -1828,7 +1836,7 @@ name|entitiesByAnnotation
 operator|.
 name|get
 argument_list|(
-name|type
+name|annotationType
 operator|.
 name|getName
 argument_list|()
@@ -1841,10 +1849,11 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// ensure no dupes
 name|entities
 operator|=
 operator|new
-name|ArrayList
+name|HashSet
 argument_list|<
 name|Class
 argument_list|<
@@ -1906,13 +1915,48 @@ name|e
 argument_list|)
 throw|;
 block|}
-if|if
+comment|// ensure that we don't register the same callback for multiple
+comment|// classes in the same hierarchy, so find the topmost type using a given
+comment|// annotation and register it once
+comment|// TODO: This ignores "excludeSuperclassListeners" setting, which is
+comment|// not possible with annotations anyways
+while|while
 condition|(
+name|entityType
+operator|!=
+literal|null
+operator|&&
 name|entityType
 operator|.
 name|isAnnotationPresent
 argument_list|(
-name|type
+name|annotationType
+argument_list|)
+condition|)
+block|{
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|superType
+init|=
+name|entityType
+operator|.
+name|getSuperclass
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|superType
+operator|==
+literal|null
+operator|||
+operator|!
+name|superType
+operator|.
+name|isAnnotationPresent
+argument_list|(
+name|annotationType
 argument_list|)
 condition|)
 block|{
@@ -1923,13 +1967,19 @@ argument_list|(
 name|entityType
 argument_list|)
 expr_stmt|;
+break|break;
+block|}
+name|entityType
+operator|=
+name|superType
+expr_stmt|;
 block|}
 block|}
 name|entitiesByAnnotation
 operator|.
 name|put
 argument_list|(
-name|type
+name|annotationType
 operator|.
 name|getName
 argument_list|()

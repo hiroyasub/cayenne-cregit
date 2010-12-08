@@ -31,7 +31,27 @@ name|_User
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|testmap
+operator|.
+name|annotations
+operator|.
+name|Tag2
+import|;
+end_import
+
 begin_class
+annotation|@
+name|Tag2
 specifier|public
 class|class
 name|User
