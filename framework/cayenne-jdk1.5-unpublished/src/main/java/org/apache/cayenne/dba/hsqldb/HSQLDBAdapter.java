@@ -437,12 +437,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|context
-operator|.
-name|quoteString
-argument_list|(
 name|srcName
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|buf
