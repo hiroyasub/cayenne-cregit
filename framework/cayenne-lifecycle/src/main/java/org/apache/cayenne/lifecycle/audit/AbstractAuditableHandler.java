@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of application specific handlers of the {@link Auditable} mixin that  * provides basic needed callbacks.  */
+comment|/**  * A superclass of application specific handlers of the {@link Auditable} mixin that  * provides basic needed callbacks.  *   * @since 3.1  */
 end_comment
 
 begin_class
