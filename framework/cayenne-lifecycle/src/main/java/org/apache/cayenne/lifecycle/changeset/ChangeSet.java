@@ -11,11 +11,21 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|mixin
+name|lifecycle
 operator|.
-name|relationship
+name|changeset
 package|;
 end_package
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
 
 begin_import
 import|import
@@ -25,29 +35,53 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObject
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|graph
+operator|.
+name|GraphDiff
 import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract strategy for resolving mixin relationships.  */
+comment|/**  * Represents a set of changes to persistent objects corresponding to a certain lifecycle  * stage. The changes are presented in a more usable form compared to the internal Cayenne  * representation as {@link GraphDiff}. One or more changes to the same property of the  * same object are all combined in a single {@link PropertyChange} instance.  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|MixinRelationshipFaultingStrategy
+name|ChangeSet
 block|{
-name|void
-name|afterObjectLoaded
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|OBJECT_ID_PROPERTY_NAME
+init|=
+literal|"cayenne:objectId"
+decl_stmt|;
+comment|/**      * Returns a map of changes for a given object in its context, keyed by property name.      * If the object is unchanged, an empty map is returned.      */
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|PropertyChange
+argument_list|>
+name|getChanges
 parameter_list|(
-name|DataObject
+name|Persistent
 name|object
 parameter_list|)
-function_decl|;
-name|void
-name|afterQuery
-parameter_list|()
 function_decl|;
 block|}
 end_interface

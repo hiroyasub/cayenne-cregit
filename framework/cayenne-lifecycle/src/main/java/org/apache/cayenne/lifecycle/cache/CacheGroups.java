@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|mixin
+name|lifecycle
 operator|.
-name|ref
+name|cache
 package|;
 end_package
 
@@ -90,18 +90,16 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A built-in mixin annotation that results in a UUID property being injected  * into annotated DataObject.  */
+comment|/**  * A built-in annotation that provides declarative cache management for persistent  * objects.  */
 end_comment
 
 begin_annotation_defn
 annotation|@
 name|Target
 argument_list|(
-block|{
 name|ElementType
 operator|.
 name|TYPE
-block|}
 argument_list|)
 annotation|@
 name|Retention
@@ -116,16 +114,14 @@ annotation|@
 name|Inherited
 specifier|public
 annotation_defn|@interface
-name|Referenceable
+name|CacheGroups
 block|{
-comment|/** 	 * A name of UUID property injected into a DataObject, making it 	 * referenceable. 	 */
-specifier|public
-specifier|final
+comment|/**      * Defines one or more cache group names associated with the tagged entity.      */
 name|String
-name|UUID_PROPERTY
-init|=
-literal|"cayenne:uuid"
-decl_stmt|;
+index|[]
+name|value
+parameter_list|()
+function_decl|;
 block|}
 end_annotation_defn
 

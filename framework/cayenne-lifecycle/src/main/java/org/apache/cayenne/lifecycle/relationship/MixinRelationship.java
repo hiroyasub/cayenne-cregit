@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|mixin
+name|lifecycle
 operator|.
-name|cache
+name|relationship
 package|;
 end_package
 
@@ -90,16 +90,18 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A built-in annotation that provides declarative cache management for persistent  * objects.  */
+comment|/**  * Allows to tag a relationship from a mixin entity to another entity that has this mixin  * attached. When a mixin is modeled via its own set of entities, this annotation is  * placed on a "mixin" entity class, telling Cayenne to inject related entity object in a  * mixin entity, resolved based on the object UUID "FK".  */
 end_comment
 
 begin_annotation_defn
 annotation|@
 name|Target
 argument_list|(
+block|{
 name|ElementType
 operator|.
 name|TYPE
+block|}
 argument_list|)
 annotation|@
 name|Retention
@@ -114,13 +116,14 @@ annotation|@
 name|Inherited
 specifier|public
 annotation_defn|@interface
-name|CacheGroups
+name|MixinRelationship
 block|{
-comment|/**      * Defines one or more cache group names associated with the tagged entity.      */
+comment|/**      * Returns the name of the property of the mixin entity that is a UUID "FK" to any of      * the entities implementing the mixin.      */
 name|String
-index|[]
 name|value
 parameter_list|()
+default|default
+literal|""
 function_decl|;
 block|}
 end_annotation_defn

@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|mixin
+name|lifecycle
 operator|.
 name|changeset
 package|;
