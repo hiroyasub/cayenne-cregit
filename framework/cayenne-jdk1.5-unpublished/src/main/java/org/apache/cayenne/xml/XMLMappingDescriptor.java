@@ -156,7 +156,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience class for dealing with the mapping file. This can encode and decode  * objects based upon the schema given by the map file.  *   * @since 1.2  */
+comment|/**  * A convenience class for dealing with the mapping file. This can encode and decode  * objects based upon the schema given by the map file.  *   * @since 1.2  * @deprecated since 3.1 this XML serialization package is deprecated and will be removed  *             in the following releases. It has a number of functional and performance  *             limitations that make it impossible to evolve further. A replacement may be  *             provided in an undefined future. For now we recommend the users to  *             implement XML serialization of persistent objects based JAXB, XStream or  *             other similar frameworks.  */
 end_comment
 
 begin_class
@@ -773,7 +773,8 @@ name|ex
 argument_list|)
 throw|;
 block|}
-comment|// If a data context has been supplied by the user, then register the data object with the context.
+comment|// If a data context has been supplied by the user, then register the data object
+comment|// with the context.
 if|if
 condition|(
 operator|(

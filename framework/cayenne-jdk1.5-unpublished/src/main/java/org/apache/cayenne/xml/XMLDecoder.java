@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * XMLDecoder is used to decode XML into objects.  *   * @since 1.2  */
+comment|/**  * XMLDecoder is used to decode XML into objects.  *   * @since 1.2  * @deprecated since 3.1 this XML serialization package is deprecated and will be removed  *             in the following releases. It has a number of functional and performance  *             limitations that make it impossible to evolve further. A replacement may be  *             provided in an undefined future. For now we recommend the users to  *             implement XML serialization of persistent objects based JAXB, XStream or  *             other similar frameworks.  */
 end_comment
 
 begin_class
@@ -789,11 +789,16 @@ name|objectClass
 argument_list|)
 condition|)
 block|{
-comment|// Fix for decoding 1-to-1 relationships between the same class type, per CAY-597.
-comment|// If we don't re-root the tree, the decoder goes into an infinite loop.  In particular,
-comment|// if R1 -> R2, when it decodes R1, it will attempt to decode R2, but without re-rooting,
-comment|// the decoder tries to decode R1 again, think it's decoding R2, because R1 is the first
-comment|// element of that type found in the XML doc with the true root of the doc.
+comment|// Fix for decoding 1-to-1 relationships between the same class type, per
+comment|// CAY-597.
+comment|// If we don't re-root the tree, the decoder goes into an infinite loop.
+comment|// In particular,
+comment|// if R1 -> R2, when it decodes R1, it will attempt to decode R2, but
+comment|// without re-rooting,
+comment|// the decoder tries to decode R1 again, think it's decoding R2, because
+comment|// R1 is the first
+comment|// element of that type found in the XML doc with the true root of the
+comment|// doc.
 name|Element
 name|oldRoot
 init|=

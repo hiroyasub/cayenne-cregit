@@ -2607,7 +2607,7 @@ parameter_list|)
 block|{
 comment|// does nothing
 block|}
-comment|/**      * Encodes object to XML using provided encoder.      *       * @since 1.2      */
+comment|/**      * Encodes object to XML using provided encoder.      *       * @since 1.2      * @deprecated since 3.1 this XML serialization package is deprecated and will be      *             removed in the following releases. It has a number of functional and      *             performance limitations that make it impossible to evolve further. A      *             replacement may be provided in an undefined future. For now we      *             recommend the users to implement XML serialization of persistent      *             objects based JAXB, XStream or other similar frameworks.      */
 specifier|public
 name|void
 name|encodeAsXML
@@ -2709,6 +2709,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @deprecated since 3.1 this XML serialization package is deprecated and will be      *             removed in the following releases. It has a number of functional and      *             performance limitations that make it impossible to evolve further. A      *             replacement may be provided in an undefined future. For now we      *             recommend the users to implement XML serialization of persistent      *             objects based JAXB, XStream or other similar frameworks.      */
 specifier|public
 name|void
 name|decodeFromXML

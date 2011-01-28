@@ -74,7 +74,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A flyweight wrapper for serializing with XML mapping. This object is NOT thread-safe.  *   * @since 1.2  */
+comment|/**  * A flyweight wrapper for serializing with XML mapping. This object is NOT thread-safe.  *   * @since 1.2  * @deprecated since 3.1 this XML serialization package is deprecated and will be removed  *             in the following releases. It has a number of functional and performance  *             limitations that make it impossible to evolve further. A replacement may be  *             provided in an undefined future. For now we recommend the users to  *             implement XML serialization of persistent objects based JAXB, XStream or  *             other similar frameworks.  */
 end_comment
 
 begin_class
@@ -256,7 +256,8 @@ argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// Needed for fix to CAY-597.  This makes sure we get back to the appropriate level in the DOM, rather than constantly re-rooting the tree.
+comment|// Needed for fix to CAY-597. This makes sure we get back to the appropriate
+comment|// level in the DOM, rather than constantly re-rooting the tree.
 name|encoder
 operator|.
 name|pop
