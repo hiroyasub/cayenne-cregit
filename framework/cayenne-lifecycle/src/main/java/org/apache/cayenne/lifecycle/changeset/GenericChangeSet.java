@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ChangeSet} implemented as a wrapper on top of {@link GraphDiff} of unspecified  * nature.  *<p>  * Synchronization note: While this class is thread safe, but is not generally intended  * for use in multi-threaded manner. It is common to use it within a single transaction  * thread.  */
+comment|/**  * A {@link ChangeSet} implemented as a wrapper on top of {@link GraphDiff} of unspecified  * nature.  *<p>  * Synchronization note: While this class is thread safe, but is not generally intended  * for use in multi-threaded manner. It is common to use it within a single transaction  * thread.  *   * @since 3.1  */
 end_comment
 
 begin_class

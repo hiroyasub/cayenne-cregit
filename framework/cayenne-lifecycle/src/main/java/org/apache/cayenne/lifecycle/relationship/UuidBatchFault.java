@@ -226,7 +226,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides lazy faulting functionality for a map of objects identified by UUID.  */
+comment|/**  * Provides lazy faulting functionality for a map of objects identified by UUID.  *   * @since 3.1  */
 end_comment
 
 begin_class

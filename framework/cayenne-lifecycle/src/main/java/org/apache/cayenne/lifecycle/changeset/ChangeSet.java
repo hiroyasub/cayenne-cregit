@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a set of changes to persistent objects corresponding to a certain lifecycle  * stage. The changes are presented in a more usable form compared to the internal Cayenne  * representation as {@link GraphDiff}. One or more changes to the same property of the  * same object are all combined in a single {@link PropertyChange} instance.  */
+comment|/**  * Represents a set of changes to persistent objects corresponding to a certain lifecycle  * stage. The changes are presented in a more usable form compared to the internal Cayenne  * representation as {@link GraphDiff}. One or more changes to the same property of the  * same object are all combined in a single {@link PropertyChange} instance.  *   * @since 3.1  */
 end_comment
 
 begin_interface

@@ -106,7 +106,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that provides interested parties with a thread-local access  * to the current commit changeset. It will only return a non-null change set when commit  * within the scope of the filter  * {@link #onSync(ObjectContext, GraphDiff, int, DataChannelFilterChain)} method. The  * filter is intended to be used by pre-commit and post-commit listeners.  */
+comment|/**  * A {@link DataChannelFilter} that provides interested parties with a thread-local access  * to the current commit changeset. It will only return a non-null change set when commit  * within the scope of the filter  * {@link #onSync(ObjectContext, GraphDiff, int, DataChannelFilterChain)} method. The  * filter is intended to be used by pre-commit and post-commit listeners.  *   * @since 3.1  */
 end_comment
 
 begin_class

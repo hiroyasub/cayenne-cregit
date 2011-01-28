@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that implements mixin relationships faulting  * functionality.  */
+comment|/**  * A {@link DataChannelFilter} that implements mixin relationships faulting functionality.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -260,7 +260,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * A lifecycle callback method that delegates object post load event 	 * processing to the underlying faulting strategy. 	 */
+comment|/**      * A lifecycle callback method that delegates object post load event processing to the      * underlying faulting strategy.      */
 annotation|@
 name|PostLoad
 argument_list|(

@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that invalidates cache groups defined for mapped entities  * via {@link CacheGroups} annotations.  */
+comment|/**  * A {@link DataChannelFilter} that invalidates cache groups defined for mapped entities  * via {@link CacheGroups} annotations.  *   * @since 3.1  */
 end_comment
 
 begin_class

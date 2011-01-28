@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A built-in annotation that provides declarative cache management for persistent  * objects.  */
+comment|/**  * A built-in annotation that provides declarative cache management for persistent  * objects.  *   * @since 3.1  */
 end_comment
 
 begin_annotation_defn

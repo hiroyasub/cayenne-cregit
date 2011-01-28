@@ -41,6 +41,10 @@ name|Persistent
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 3.1  */
+end_comment
+
 begin_class
 class|class
 name|UuidFault

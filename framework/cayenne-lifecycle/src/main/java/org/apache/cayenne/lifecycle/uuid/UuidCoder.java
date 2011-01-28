@@ -204,7 +204,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object to encode/decode persistent objects UUIDs.  */
+comment|/**  * An object to encode/decode persistent objects UUIDs.  *   * @since 3.1  */
 end_comment
 
 begin_class

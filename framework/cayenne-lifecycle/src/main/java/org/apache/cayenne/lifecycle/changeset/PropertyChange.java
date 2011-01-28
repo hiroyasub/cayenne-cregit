@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A change to a single object property.  */
+comment|/**  * A change to a single object property.  *   * @since 3.1  */
 end_comment
 
 begin_class

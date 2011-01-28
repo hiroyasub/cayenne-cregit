@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract strategy for resolving mixin relationships.  */
+comment|/**  * An abstract strategy for resolving mixin relationships.  *   * @since 3.1  */
 end_comment
 
 begin_interface
