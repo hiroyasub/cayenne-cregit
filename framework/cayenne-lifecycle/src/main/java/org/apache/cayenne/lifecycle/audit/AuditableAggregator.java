@@ -218,7 +218,7 @@ block|}
 block|}
 block|}
 name|void
-name|postCommit
+name|postSync
 parameter_list|()
 block|{
 for|for

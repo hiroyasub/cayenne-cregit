@@ -194,6 +194,11 @@ argument_list|(
 name|audited
 argument_list|)
 expr_stmt|;
+name|filter
+operator|.
+name|postSync
+argument_list|()
+expr_stmt|;
 name|verify
 argument_list|(
 name|processor
@@ -247,6 +252,11 @@ argument_list|(
 name|audited
 argument_list|)
 expr_stmt|;
+name|filter
+operator|.
+name|postSync
+argument_list|()
+expr_stmt|;
 name|verify
 argument_list|(
 name|processor
@@ -299,6 +309,11 @@ name|updateAudit
 argument_list|(
 name|audited
 argument_list|)
+expr_stmt|;
+name|filter
+operator|.
+name|postSync
+argument_list|()
 expr_stmt|;
 name|verify
 argument_list|(
@@ -368,6 +383,11 @@ name|updateAuditChild
 argument_list|(
 name|audited
 argument_list|)
+expr_stmt|;
+name|filter
+operator|.
+name|postSync
+argument_list|()
 expr_stmt|;
 name|verify
 argument_list|(
