@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A built-in mixin annotation that results in a UUID property being injected into  * annotated DataObject.  *   * @since 3.1  */
+comment|/**  * A built-in annotation that results in a UUID property being injected into annotated  * DataObject.  *   * @since 3.1  */
 end_comment
 
 begin_annotation_defn
