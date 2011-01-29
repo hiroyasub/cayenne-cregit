@@ -101,7 +101,7 @@ name|FLUSH_NOCASCADE_SYNC
 init|=
 literal|1
 decl_stmt|;
-comment|/**      * A synchronization type that results in changes from an ObjectContext to be recorded      * in the parent DataChannel. If the parent is itself an ObjectContext, it is expected      * to send its own sync message to its parent DataChannel to cascade sycnhronization      * all the way down the stack.      */
+comment|/**      * A synchronization type that results in changes from an ObjectContext to be recorded      * in the parent DataChannel. If the parent is itself an ObjectContext, it is expected      * to send its own sync message to its parent DataChannel to cascade synchronization      * all the way down the stack.      */
 specifier|public
 specifier|static
 specifier|final
@@ -180,7 +180,7 @@ name|EntityResolver
 name|getEntityResolver
 parameter_list|()
 function_decl|;
-comment|/**      * Executes a query, using provided<em>context</em> to register persistent objects      * if query returns any objects.      *       * @param originatingContext an ObjectContext that originated the query, used to      *            register result objects.      * @return a generic response object that encapsulates result of the execution.      */
+comment|/**      * Executes a query, using provided<em>context</em> to register persistent objects if      * query returns any objects.      *       * @param originatingContext an ObjectContext that originated the query, used to      *            register result objects.      * @return a generic response object that encapsulates result of the execution.      */
 name|QueryResponse
 name|onQuery
 parameter_list|(
@@ -191,7 +191,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Processes synchronization request from a child ObjectContext, returning a GraphDiff      * that describes changes to objects made on the receiving end as a result of      * syncronization.      * @param originatingContext an ObjectContext that initiated the sync. Can be null.      * @param changes diff from the context that initiated the sync.      * @param syncType One of {@link #FLUSH_NOCASCADE_SYNC}, {@link #FLUSH_CASCADE_SYNC},      *            {@link #ROLLBACK_CASCADE_SYNC}.      */
+comment|/**      * Processes synchronization request from a child ObjectContext, returning a GraphDiff      * that describes changes to objects made on the receiving end as a result of      * syncronization.      *       * @param originatingContext an ObjectContext that initiated the sync. Can be null.      * @param changes diff from the context that initiated the sync.      * @param syncType One of {@link #FLUSH_NOCASCADE_SYNC}, {@link #FLUSH_CASCADE_SYNC},      *            {@link #ROLLBACK_CASCADE_SYNC}.      */
 name|GraphDiff
 name|onSync
 parameter_list|(

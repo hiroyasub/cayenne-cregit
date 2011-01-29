@@ -26,15 +26,12 @@ specifier|public
 interface|interface
 name|AuditableProcessor
 block|{
-comment|/**      * A method called by {@link AuditableFilter} that should audit records as appropriate      * in a given application. Implementors may insert audit records in DB, log a message,      * etc.      *       * @param auditRoot the root auditable object. This is the object that is either      *            annotated with {@link Auditable} or pointed to by another object      *            annotated with {@link AuditableChild}.      * @param auditSource an object that generated this audit event.      * @param operation a type of object change.      */
+comment|/**      * A method called by {@link AuditableFilter} that should audit records as appropriate      * in a given application. Implementors may insert audit records in DB, log a message,      * etc.      *       * @param object the root auditable object. This is an object that is either annotated      *            with {@link Auditable} or pointed to by another object annotated with      *            {@link AuditableChild}.      * @param operation a type of object change.      */
 name|void
 name|audit
 parameter_list|(
 name|Object
-name|auditRoot
-parameter_list|,
-name|Object
-name|auditSource
+name|object
 parameter_list|,
 name|AuditableOperation
 name|operation

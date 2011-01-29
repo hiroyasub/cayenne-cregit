@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An enum of auditable operations.  *   * @since 3.1  */
+comment|/**  * An enum of possible operations that can be audited.  *   * @since 3.1  */
 end_comment
 
 begin_enum
