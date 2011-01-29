@@ -142,8 +142,6 @@ operator|=
 name|diff
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -401,8 +399,6 @@ return|return
 name|change
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -413,8 +409,6 @@ parameter_list|)
 block|{
 comment|// noop, don't care, we'll still track the changes for deleted objects.
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -425,8 +419,6 @@ parameter_list|)
 block|{
 comment|// noop (??)
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -456,8 +448,6 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -487,8 +477,6 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -521,8 +509,6 @@ name|newValue
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|void
 name|nodeIdChanged

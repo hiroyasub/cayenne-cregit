@@ -160,8 +160,6 @@ specifier|private
 name|MixinRelationshipFaultingStrategy
 name|faultingStrategy
 decl_stmt|;
-annotation|@
-name|Override
 specifier|public
 name|void
 name|init
@@ -189,8 +187,6 @@ name|MixinRelationshipBatchFaultingStrategy
 argument_list|()
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|GraphDiff
 name|onSync
@@ -222,8 +218,6 @@ name|syncType
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|QueryResponse
 name|onQuery

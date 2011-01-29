@@ -237,8 +237,6 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
-annotation|@
-name|Override
 specifier|public
 name|void
 name|init
@@ -249,8 +247,6 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
-annotation|@
-name|Override
 specifier|public
 name|QueryResponse
 name|onQuery
@@ -276,8 +272,6 @@ name|query
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
 specifier|public
 name|GraphDiff
 name|onSync
