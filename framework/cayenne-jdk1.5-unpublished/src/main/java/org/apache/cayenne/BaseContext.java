@@ -73,7 +73,7 @@ name|cayenne
 operator|.
 name|cache
 operator|.
-name|MapQueryCache
+name|QueryCache
 import|;
 end_import
 
@@ -85,9 +85,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|cache
+name|di
 operator|.
-name|QueryCache
+name|Inject
 import|;
 end_import
 
@@ -371,6 +371,14 @@ name|ObjectContext
 implements|,
 name|DataChannel
 block|{
+specifier|protected
+specifier|static
+specifier|final
+name|String
+name|QUERY_CACHE_INJECTION_KEY
+init|=
+literal|"local"
+decl_stmt|;
 comment|/**      * A holder of a ObjectContext bound to the current thread.      *       * @since 3.0      */
 specifier|protected
 specifier|static
@@ -442,14 +450,20 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|// if we are to pass the context around, channel should be left alone and
-comment|// reinjected later if needed
+comment|// transient variables that should be reinitialized on deserialization from the
+comment|// registry
 specifier|protected
 specifier|transient
 name|DataChannel
 name|channel
 decl_stmt|;
+annotation|@
+name|Inject
+argument_list|(
+name|QUERY_CACHE_INJECTION_KEY
+argument_list|)
 specifier|protected
+specifier|transient
 name|QueryCache
 name|queryCache
 decl_stmt|;
@@ -1055,42 +1069,11 @@ argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns {@link QueryCache}, creating it on the fly if needed.      */
 specifier|public
 name|QueryCache
 name|getQueryCache
 parameter_list|()
 block|{
-if|if
-condition|(
-name|queryCache
-operator|==
-literal|null
-condition|)
-block|{
-synchronized|synchronized
-init|(
-name|this
-init|)
-block|{
-if|if
-condition|(
-name|queryCache
-operator|==
-literal|null
-condition|)
-block|{
-comment|// TODO: andrus, 7/27/2006 - figure out the factory stuff like we have
-comment|// in DataContext
-name|queryCache
-operator|=
-operator|new
-name|MapQueryCache
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-block|}
 return|return
 name|queryCache
 return|;
