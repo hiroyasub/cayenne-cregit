@@ -257,11 +257,13 @@ name|void
 name|clear
 parameter_list|()
 block|{
-name|delegate
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"Can't clear a subset of shared cache"
+argument_list|)
+throw|;
 block|}
 annotation|@
 name|SuppressWarnings
