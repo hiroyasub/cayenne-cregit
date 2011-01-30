@@ -1454,11 +1454,16 @@ block|}
 comment|/**      * Creates Serializable object copy using serialization/deserialization.      */
 specifier|public
 specifier|static
-name|Object
+parameter_list|<
+name|T
+extends|extends
+name|Serializable
+parameter_list|>
+name|T
 name|cloneViaSerialization
 parameter_list|(
-name|Serializable
-name|obj
+name|T
+name|object
 parameter_list|)
 throws|throws
 name|Exception
@@ -1498,7 +1503,7 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
-name|obj
+name|object
 argument_list|)
 expr_stmt|;
 name|out
@@ -1522,9 +1527,12 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|Object
-name|objCopy
+name|T
+name|copy
 init|=
+operator|(
+name|T
+operator|)
 name|in
 operator|.
 name|readObject
@@ -1533,7 +1541,7 @@ decl_stmt|;
 comment|// no need to close the stream - we created it and now will be throwing away...
 comment|// in.close();
 return|return
-name|objCopy
+name|copy
 return|;
 block|}
 comment|/**      * Creates an XMLReader with default feature set. Note that all Cayenne internal XML      * parsers should probably use XMLReader obtained via this method for consistency      * sake, and can customize feature sets as needed.      */

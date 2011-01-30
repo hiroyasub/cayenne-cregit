@@ -185,9 +185,6 @@ decl_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -235,9 +232,6 @@ decl_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -293,9 +287,6 @@ decl_stmt|;
 name|ObjectContext
 name|deserializedContext
 init|=
-operator|(
-name|ObjectContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -343,9 +334,6 @@ decl_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -524,9 +512,6 @@ expr_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -691,9 +676,6 @@ expr_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -832,9 +814,6 @@ expr_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
@@ -1005,9 +984,6 @@ expr_stmt|;
 name|DataContext
 name|deserializedContext
 init|=
-operator|(
-name|DataContext
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization
