@@ -105,7 +105,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryLogger
+name|UnitTestDomain
 import|;
 end_import
 
@@ -117,9 +117,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|cache
 operator|.
-name|UnitTestDomain
+name|MapQueryCache
 import|;
 end_import
 
@@ -134,20 +134,6 @@ operator|.
 name|conn
 operator|.
 name|DataSourceInfo
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|log
-operator|.
-name|CommonsJdbcEventLogger
 import|;
 end_import
 
@@ -570,6 +556,17 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|getDomain
+argument_list|()
+operator|.
+name|getQueryCache
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|getDomain
 argument_list|()
 operator|.
@@ -579,6 +576,7 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|DataContext
 name|context

@@ -32,6 +32,16 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
+name|int
+name|getInt
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|int
+name|defaultValue
+parameter_list|)
+function_decl|;
 name|boolean
 name|getBoolean
 parameter_list|(

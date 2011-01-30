@@ -257,13 +257,13 @@ name|void
 name|clear
 parameter_list|()
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Can't clear a subset of shared cache"
-argument_list|)
-throw|;
+comment|// seems pretty evil - it clears the keys that do not belong to our subset of the
+comment|// cache
+name|delegate
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
 block|}
 annotation|@
 name|SuppressWarnings
