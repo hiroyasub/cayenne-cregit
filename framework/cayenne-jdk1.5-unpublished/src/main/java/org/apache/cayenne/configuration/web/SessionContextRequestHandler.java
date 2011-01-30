@@ -81,7 +81,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannel
+name|ObjectContext
 import|;
 end_import
 
@@ -93,7 +93,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ObjectContext
+name|configuration
+operator|.
+name|CayenneRuntime
 import|;
 end_import
 
@@ -140,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of the {@link RequestHandler} that stores per-user  * {@link ObjectContext} in a web session and binds it to request thread. Note that using  * this handler would force {@link HttpSession} creation, that may not be desirable in  * many cases. Also session-bound context may result in a race condition with two user  * requests updating the same periststent objects in parallel.  *<p>  * User applications in most cases should provide a custom RequestHandler that implements  * a smarter app-specific strategy for providing ObjectContext.  *   * @since 3.1  */
+comment|/**  * Default implementation of the {@link RequestHandler} that stores per-user  * {@link ObjectContext} in a web session and binds it to request thread. Note that using  * this handler would force {@link HttpSession} creation, that may not be desirable in  * many cases. Also session-bound context may result in a race condition with two user  * requests updating the same persistent objects in parallel.  *<p>  * User applications in most cases should provide a custom RequestHandler that implements  * a smarter app-specific strategy for providing ObjectContext.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -183,18 +185,11 @@ name|ServletResponse
 name|response
 parameter_list|)
 block|{
-name|BaseContext
+name|CayenneRuntime
 operator|.
-name|bindThreadDeserializationChannel
+name|bindThreadInjector
 argument_list|(
 name|injector
-operator|.
-name|getInstance
-argument_list|(
-name|DataChannel
-operator|.
-name|class
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -290,9 +285,9 @@ name|ServletResponse
 name|response
 parameter_list|)
 block|{
-name|BaseContext
+name|CayenneRuntime
 operator|.
-name|bindThreadDeserializationChannel
+name|bindThreadInjector
 argument_list|(
 literal|null
 argument_list|)
