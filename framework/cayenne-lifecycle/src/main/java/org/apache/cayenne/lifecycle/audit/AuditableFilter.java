@@ -298,6 +298,20 @@ block|}
 block|}
 finally|finally
 block|{
+name|cleanupPostSync
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+name|response
+return|;
+block|}
+comment|/**      * A method called at the end of every      * {@link #onSync(ObjectContext, GraphDiff, int, DataChannelFilterChain)} invocation.      * This implementation uses it for cleaning up thread-local state of the filter.      * Subclasses may override it to do their own cleanup, and are expected to call super.      */
+specifier|protected
+name|void
+name|cleanupPostSync
+parameter_list|()
+block|{
 name|threadAggregator
 operator|.
 name|set
@@ -305,10 +319,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-block|}
-return|return
-name|response
-return|;
 block|}
 name|void
 name|postSync
