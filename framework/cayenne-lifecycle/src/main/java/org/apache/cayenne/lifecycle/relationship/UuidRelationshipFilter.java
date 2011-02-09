@@ -146,18 +146,18 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that implements mixin relationships faulting functionality.  *   * @since 3.1  */
+comment|/**  * A {@link DataChannelFilter} that implements UUID relationships read functionality.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|MixinRelationshipFilter
+name|UuidRelationshipFilter
 implements|implements
 name|DataChannelFilter
 block|{
 specifier|private
-name|MixinRelationshipFaultingStrategy
+name|UuidRelationshipFaultingStrategy
 name|faultingStrategy
 decl_stmt|;
 specifier|public
@@ -177,13 +177,13 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|protected
-name|MixinRelationshipFaultingStrategy
+name|UuidRelationshipFaultingStrategy
 name|createFaultingStrategy
 parameter_list|()
 block|{
 return|return
 operator|new
-name|MixinRelationshipBatchFaultingStrategy
+name|UuidRelationshipBatchFaultingStrategy
 argument_list|()
 return|;
 block|}
@@ -260,7 +260,7 @@ name|PostLoad
 argument_list|(
 name|entityAnnotations
 operator|=
-name|MixinRelationship
+name|UuidRelationship
 operator|.
 name|class
 argument_list|)
@@ -269,7 +269,7 @@ name|PostPersist
 argument_list|(
 name|entityAnnotations
 operator|=
-name|MixinRelationship
+name|UuidRelationship
 operator|.
 name|class
 argument_list|)

@@ -30,15 +30,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * A faulting strategy that does batch-faulting of related objects whenever a first UUID  * relationship is accessed.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|MixinRelationshipBatchFaultingStrategy
+name|UuidRelationshipBatchFaultingStrategy
 implements|implements
-name|MixinRelationshipFaultingStrategy
+name|UuidRelationshipFaultingStrategy
 block|{
 specifier|private
 name|ThreadLocal
@@ -48,7 +48,7 @@ argument_list|>
 name|batchFaultHolder
 decl_stmt|;
 specifier|public
-name|MixinRelationshipBatchFaultingStrategy
+name|UuidRelationshipBatchFaultingStrategy
 parameter_list|()
 block|{
 name|this
@@ -210,7 +210,7 @@ name|DataObject
 name|object
 parameter_list|)
 block|{
-name|MixinRelationship
+name|UuidRelationship
 name|annotation
 init|=
 name|object
@@ -220,7 +220,7 @@ argument_list|()
 operator|.
 name|getAnnotation
 argument_list|(
-name|MixinRelationship
+name|UuidRelationship
 operator|.
 name|class
 argument_list|)

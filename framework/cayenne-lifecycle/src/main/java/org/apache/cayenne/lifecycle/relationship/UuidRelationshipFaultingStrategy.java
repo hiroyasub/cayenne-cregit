@@ -30,13 +30,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstract strategy for resolving mixin relationships.  *   * @since 3.1  */
+comment|/**  * An abstract strategy for resolving UUID relationships.  *   * @since 3.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|MixinRelationshipFaultingStrategy
+name|UuidRelationshipFaultingStrategy
 block|{
 name|void
 name|afterObjectLoaded
