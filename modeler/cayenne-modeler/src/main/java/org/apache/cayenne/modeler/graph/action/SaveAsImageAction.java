@@ -392,8 +392,6 @@ argument_list|(
 name|chooser
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|String
 name|path
 init|=
@@ -425,6 +423,8 @@ operator|+
 name|ext
 expr_stmt|;
 block|}
+try|try
+block|{
 name|OutputStream
 name|out
 init|=
@@ -454,6 +454,8 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|ImageIO
 operator|.
 name|write
@@ -470,11 +472,15 @@ operator|.
 name|flush
 argument_list|()
 expr_stmt|;
+block|}
+finally|finally
+block|{
 name|out
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
