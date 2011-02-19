@@ -307,6 +307,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Sets the context channel, setting up a listener for channel events.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setChannel

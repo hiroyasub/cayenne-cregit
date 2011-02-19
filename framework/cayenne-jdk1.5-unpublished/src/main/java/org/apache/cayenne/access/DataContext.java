@@ -287,62 +287,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|cache
-operator|.
-name|QueryCache
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Injector
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Key
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|event
 operator|.
 name|EventManager
@@ -828,6 +772,8 @@ name|child
 return|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setChannel
@@ -3797,13 +3743,13 @@ name|ClassNotFoundException
 block|{
 comment|// TODO: most of this should be in the superclass, especially the code connecting
 comment|// super transient ivars
-comment|// 1. read non-transient properties
+comment|// read non-transient properties
 name|in
 operator|.
 name|defaultReadObject
 argument_list|()
 expr_stmt|;
-comment|// 2. Deserialize local snapshots cache
+comment|// deserialize local snapshots cache
 if|if
 condition|(
 operator|!
@@ -3830,67 +3776,12 @@ name|cache
 argument_list|)
 expr_stmt|;
 block|}
-comment|// 3. set parent channel
-comment|// call a channel setter to ensure EntityResolver is extracted from channel
-comment|// call it after DataRowCache is deserialized to avoid incorrect DataRowCache lazy
-comment|// creation
-name|Injector
-name|injector
-init|=
-name|CayenneRuntime
-operator|.
-name|getThreadInjector
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|injector
-operator|!=
-literal|null
-condition|)
-block|{
-name|setChannel
-argument_list|(
-name|injector
-operator|.
-name|getInstance
-argument_list|(
-name|DataChannel
-operator|.
-name|class
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|setQueryCache
-argument_list|(
-name|injector
-operator|.
-name|getInstance
-argument_list|(
-name|Key
-operator|.
-name|get
-argument_list|(
-name|QueryCache
-operator|.
-name|class
-argument_list|,
-name|QUERY_CACHE_INJECTION_KEY
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|// throw?
-block|}
-comment|// CayenneDataObjects have a transient datacontext
+comment|// CayenneDataObjects have a transient DataContext
 comment|// because at deserialize time the datacontext may need to be different
 comment|// than the one at serialize time (for programmer defined reasons).
-comment|// So, when a dataobject is resurrected because it's datacontext was
-comment|// serialized, it will then set the objects datacontext to the correctone
-comment|// If deserialized "otherwise", it will not have a datacontext (good)
+comment|// So, when a DataObject is resurrected because it's DataContext was
+comment|// serialized, it will then set the objects DataContext to the correct one
+comment|// If deserialized "otherwise", it will not have a DataContext.
 synchronized|synchronized
 init|(
 name|getObjectStore
@@ -3898,6 +3789,9 @@ argument_list|()
 init|)
 block|{
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|objectStore
@@ -3933,6 +3827,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// ... deferring initialization of transient properties of this context till first
+comment|// access, so that it can attach to Cayenne runtime using appropriate thread
+comment|// injector.
 block|}
 comment|/**      * Returns this context's ObjectStore.      *       * @since 1.2      */
 annotation|@
