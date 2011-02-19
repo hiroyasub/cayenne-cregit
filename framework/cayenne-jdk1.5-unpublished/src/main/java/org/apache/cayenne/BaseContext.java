@@ -490,6 +490,11 @@ specifier|transient
 name|QueryCache
 name|queryCache
 decl_stmt|;
+specifier|protected
+specifier|transient
+name|EntityResolver
+name|entityResolver
+decl_stmt|;
 comment|/**      * Graph action that handles property changes      *       * @since 3.1      */
 specifier|protected
 name|ObjectContextGraphAction
@@ -521,7 +526,7 @@ block|}
 comment|/**      * Checks whether this context is attached to Cayenne runtime stack and if not,      * attempts to attach itself to the runtime using Injector returned from the call to      * {@link CayenneRuntime#getThreadInjector()}. If thread Injector is not available and      * the context is not attached, throws CayenneRuntimeException.      *<p>      * This method is called internally by the context before access to transient      * variables to allow the context to attach to the stack lazily following      * deserialization.      *       * @return true if the context successfully attached to the thread runtime, false - if      *         it was already attached.      * @since 3.1      */
 specifier|protected
 name|boolean
-name|attachIfNeeded
+name|attachToRuntimeIfNeeded
 parameter_list|()
 block|{
 if|if
@@ -560,7 +565,25 @@ literal|"Null injector returned from CayenneRuntime.getThreadInjector()"
 argument_list|)
 throw|;
 block|}
-name|setChannel
+name|attachToRuntime
+argument_list|(
+name|injector
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+comment|/**      * Attaches this context to the Cayenne runtime whose Injector is passed as an      * argument to this method.      *       * @since 3.1      */
+specifier|protected
+name|void
+name|attachToRuntime
+parameter_list|(
+name|Injector
+name|injector
+parameter_list|)
+block|{
+name|attachToChannel
 argument_list|(
 name|injector
 operator|.
@@ -591,9 +614,44 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-literal|true
-return|;
+block|}
+comment|/**      * Initializes a DataChannel for this context, setting internal state using      * information from the      *       * @since 3.1      */
+specifier|protected
+name|void
+name|attachToChannel
+parameter_list|(
+name|DataChannel
+name|channel
+parameter_list|)
+block|{
+if|if
+condition|(
+name|channel
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null channel"
+argument_list|)
+throw|;
+block|}
+name|setChannel
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
+name|setEntityResolver
+argument_list|(
+name|channel
+operator|.
+name|getEntityResolver
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 specifier|abstract
@@ -621,11 +679,14 @@ name|DataChannel
 name|getChannel
 parameter_list|()
 block|{
+name|attachToRuntimeIfNeeded
+argument_list|()
+expr_stmt|;
 return|return
 name|channel
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/**      * Sets a new DataChannel for this context.      *       * @since 3.1      */
 specifier|public
 name|void
 name|setChannel
@@ -642,11 +703,33 @@ name|channel
 expr_stmt|;
 block|}
 specifier|public
-specifier|abstract
 name|EntityResolver
 name|getEntityResolver
 parameter_list|()
-function_decl|;
+block|{
+name|attachToRuntimeIfNeeded
+argument_list|()
+expr_stmt|;
+return|return
+name|entityResolver
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setEntityResolver
+parameter_list|(
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+name|this
+operator|.
+name|entityResolver
+operator|=
+name|entityResolver
+expr_stmt|;
+block|}
 specifier|public
 specifier|abstract
 name|GraphManager
@@ -1190,6 +1273,9 @@ name|QueryCache
 name|getQueryCache
 parameter_list|()
 block|{
+name|attachToRuntimeIfNeeded
+argument_list|()
+expr_stmt|;
 return|return
 name|queryCache
 return|;

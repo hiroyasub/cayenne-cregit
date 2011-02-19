@@ -200,7 +200,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testAttachIfNeeded
+name|testAttachToRuntimeIfNeeded
 parameter_list|()
 block|{
 specifier|final
@@ -340,7 +340,7 @@ name|assertTrue
 argument_list|(
 name|context
 operator|.
-name|attachIfNeeded
+name|attachToRuntimeIfNeeded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -366,7 +366,7 @@ name|assertFalse
 argument_list|(
 name|context
 operator|.
-name|attachIfNeeded
+name|attachToRuntimeIfNeeded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -374,7 +374,7 @@ name|assertFalse
 argument_list|(
 name|context
 operator|.
-name|attachIfNeeded
+name|attachToRuntimeIfNeeded
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -392,7 +392,7 @@ block|}
 block|}
 specifier|public
 name|void
-name|testAttachIfNeeded_NoStack
+name|testAttachToRuntimeIfNeeded_NoStack
 parameter_list|()
 block|{
 name|BaseContext
@@ -420,7 +420,7 @@ try|try
 block|{
 name|context
 operator|.
-name|attachIfNeeded
+name|attachToRuntimeIfNeeded
 argument_list|()
 expr_stmt|;
 name|fail

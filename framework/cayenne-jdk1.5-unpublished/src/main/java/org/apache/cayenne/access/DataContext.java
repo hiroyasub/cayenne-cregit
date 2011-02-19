@@ -387,20 +387,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|EntityResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -616,13 +602,6 @@ specifier|protected
 name|ObjectStore
 name|objectStore
 decl_stmt|;
-comment|// note that entity resolver is initialized from the parent channel the first time it
-comment|// is accessed, and later cached in the context
-specifier|protected
-specifier|transient
-name|EntityResolver
-name|entityResolver
-decl_stmt|;
 specifier|protected
 specifier|transient
 name|DataContextMergeHandler
@@ -652,12 +631,19 @@ name|ObjectStore
 name|objectStore
 parameter_list|)
 block|{
-comment|// use a setter to properly initialize EntityResolver
-name|setChannel
+if|if
+condition|(
+name|channel
+operator|!=
+literal|null
+condition|)
+block|{
+name|attachToChannel
 argument_list|(
 name|channel
 argument_list|)
 expr_stmt|;
+block|}
 comment|// inject self as parent context
 if|if
 condition|(
@@ -771,37 +757,31 @@ return|return
 name|child
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/**      * @since 3.1      */
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|void
-name|setChannel
+name|attachToChannel
 parameter_list|(
 name|DataChannel
 name|channel
 parameter_list|)
 block|{
+name|super
+operator|.
+name|attachToChannel
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|this
-operator|.
-name|channel
-operator|!=
-name|channel
-condition|)
-block|{
-if|if
-condition|(
-name|this
-operator|.
 name|mergeHandler
 operator|!=
 literal|null
 condition|)
 block|{
-name|this
-operator|.
 name|mergeHandler
 operator|.
 name|setActive
@@ -809,43 +789,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-block|}
-name|this
-operator|.
-name|entityResolver
-operator|=
-literal|null
-expr_stmt|;
-name|this
-operator|.
 name|mergeHandler
 operator|=
 literal|null
 expr_stmt|;
-name|this
-operator|.
-name|channel
-operator|=
-name|channel
-expr_stmt|;
-if|if
-condition|(
-name|channel
-operator|!=
-literal|null
-condition|)
-block|{
-comment|// cache entity resolver, as we have no idea how expensive it is to query
-comment|// it on the channel every time
-name|this
-operator|.
-name|entityResolver
-operator|=
-name|channel
-operator|.
-name|getEntityResolver
-argument_list|()
-expr_stmt|;
+block|}
 name|EventManager
 name|eventManager
 init|=
@@ -861,8 +809,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|this
-operator|.
 name|mergeHandler
 operator|=
 operator|new
@@ -921,14 +867,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
-block|}
 comment|/**      * Returns a DataDomain used by this DataContext. DataDomain is looked up in the      * DataChannel hierarchy. If a channel is not a DataDomain or a DataContext, null is      * returned.      *       * @return DataDomain that is a direct or indirect parent of this DataContext in the      *         DataChannel hierarchy.      * @since 1.1      */
 specifier|public
 name|DataDomain
 name|getParentDataDomain
 parameter_list|()
 block|{
+name|attachToRuntimeIfNeeded
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|channel
@@ -3624,18 +3571,6 @@ name|performQuery
 argument_list|(
 name|query
 argument_list|)
-return|;
-block|}
-comment|/**      * Returns EntityResolver. EntityResolver can be null if DataContext has not been      * attached to an DataChannel.      */
-annotation|@
-name|Override
-specifier|public
-name|EntityResolver
-name|getEntityResolver
-parameter_list|()
-block|{
-return|return
-name|entityResolver
 return|;
 block|}
 comment|/**      * Returns<code>true</code> if the ObjectStore uses shared cache of a parent      * DataDomain.      *       * @since 1.1      */
