@@ -147,20 +147,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
-operator|.
-name|PoolManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|DbAdapter
@@ -917,48 +903,13 @@ operator|=
 name|entityResolver
 expr_stmt|;
 block|}
-comment|/**      * Tries to close JDBC connections opened by this node's data source.      */
+comment|/**      * @deprecated since 3.1 does nothing as pool shutdown is performed by the DI      *             container.      */
 specifier|public
-specifier|synchronized
 name|void
 name|shutdown
 parameter_list|()
 block|{
-try|try
-block|{
-comment|// TODO: theoretically someone maybe using our PoolManager as a container
-comment|// mapped DataSource, so we should use some other logic to determine whether
-comment|// this is a DataNode-managed DS.
-if|if
-condition|(
-name|dataSource
-operator|instanceof
-name|PoolManager
-condition|)
-block|{
-operator|(
-operator|(
-name|PoolManager
-operator|)
-name|dataSource
-operator|)
-operator|.
-name|dispose
-argument_list|()
-expr_stmt|;
-name|dataSource
-operator|=
-literal|null
-expr_stmt|;
-block|}
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
-block|}
+comment|// noop
 block|}
 comment|// a read-through DataSource that ensures returning the same connection within
 comment|// transaction.

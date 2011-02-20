@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  *   */
+comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  */
 end_comment
 
 begin_class
@@ -631,10 +631,22 @@ return|return
 name|connection
 return|;
 block|}
-comment|/** Closes all existing connections, removes them from the pool. */
+comment|/**      * Closes all existing connections, removes them from the pool.      *       * @deprecated since 3.1 replaced with {@link #shutdown()} method for naming      *             consistency.      */
 specifier|public
 name|void
 name|dispose
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+name|shutdown
+argument_list|()
+expr_stmt|;
+block|}
+comment|/**      * Closes all existing connections, drains the pool and stops the maintenance thread.      *       * @since 3.1      */
+specifier|public
+name|void
+name|shutdown
 parameter_list|()
 throws|throws
 name|SQLException
@@ -751,12 +763,14 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|this
-operator|.
 name|poolMaintenanceThread
 operator|.
-name|dispose
+name|shutdown
 argument_list|()
+expr_stmt|;
+name|poolMaintenanceThread
+operator|=
+literal|null
 expr_stmt|;
 block|}
 block|}
@@ -1548,11 +1562,11 @@ name|PoolMaintenanceThread
 extends|extends
 name|Thread
 block|{
-specifier|protected
+specifier|private
 name|boolean
 name|shouldDie
 decl_stmt|;
-specifier|protected
+specifier|private
 name|PoolManager
 name|pool
 decl_stmt|;
@@ -1699,10 +1713,9 @@ block|}
 block|}
 block|}
 block|}
-comment|/**          * Stops the thread.          */
-specifier|public
+comment|/**          * Stops the maintenance thread.          */
 name|void
-name|dispose
+name|shutdown
 parameter_list|()
 block|{
 name|shouldDie

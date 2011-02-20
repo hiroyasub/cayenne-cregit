@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A provider that provides scoping for other provoders.  *   * @since 3.1  */
+comment|/**  * A provider that provides scoping for other providers.  *   * @since 3.1  */
 end_comment
 
 begin_class
