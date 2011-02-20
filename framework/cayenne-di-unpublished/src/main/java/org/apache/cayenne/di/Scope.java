@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines the scope of the instances created by the DI container. I.e. whether instances  * are shared between the callers, and for how longs or whether they are created anew.  * Scope object is also used to tie DI-produced instances to the Injector events, such as  * shutdown.  *<p>  * Cayenne defines a few standard scopes in {@link Scopes} class. The default scope of a  * binding in Cayenne is {@link Scopes#INSTANCE}.  *   * @since 3.1  */
+comment|/**  * Defines the scope of the instances created by the DI container. I.e. whether instances  * are shared between the callers, and for how longs or whether they are created anew.  * Scope object is also used to tie DI-produced instances to the Injector events, such as  * shutdown. Default scope in Cayenne DI is "singleton".  *   * @since 3.1  */
 end_comment
 
 begin_interface

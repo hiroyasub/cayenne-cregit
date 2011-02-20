@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  */
+comment|/**  * PoolManager is a Cayenne implementation of a pooling DataSource.  */
 end_comment
 
 begin_class
