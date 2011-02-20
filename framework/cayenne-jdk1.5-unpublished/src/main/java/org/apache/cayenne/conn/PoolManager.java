@@ -1709,6 +1709,9 @@ name|shouldDie
 operator|=
 literal|true
 expr_stmt|;
+name|interrupt
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 comment|/**      * @since 3.0      */
