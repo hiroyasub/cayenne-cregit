@@ -344,6 +344,8 @@ name|BeforeScopeEnd
 operator|.
 name|class
 decl_stmt|;
+comment|// note that checking for class directly prevents wrapping... will wait till
+comment|// Java6/JDBC4 upgrade to check for wrappers
 for|for
 control|(
 name|Method
@@ -383,6 +385,9 @@ name|method
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// no need to look further as we are supporting only a single scope
+comment|// method
+break|break;
 block|}
 block|}
 block|}
