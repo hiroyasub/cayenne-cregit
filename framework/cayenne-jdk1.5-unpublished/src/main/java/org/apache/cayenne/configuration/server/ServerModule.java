@@ -1060,19 +1060,21 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// a service to load DataSourceFactories
+comment|// a service to load DataSourceFactories. DelegatingDataSourceFactory will attempt
+comment|// to find the actual worker factory dynamically on each call depending on
+comment|// DataNodeDescriptor data and the environment
 name|binder
 operator|.
 name|bind
 argument_list|(
-name|DataSourceFactoryLoader
+name|DataSourceFactory
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 operator|.
 name|class
 argument_list|)

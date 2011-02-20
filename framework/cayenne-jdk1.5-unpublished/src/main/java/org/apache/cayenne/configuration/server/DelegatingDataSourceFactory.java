@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|DataSource
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -100,15 +110,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataSourceFactoryLoader} that loads factories explicitly configured in the  * {@link DataNodeDescriptor}. If the factory class is not explicitly configured, and the  * descriptor has a configuration resource attached to it,  * {@link XMLPoolingDataSourceFactory} is returned.  *<p>  * If the environment contains properties<em>cayenne.jdbc.url.domain_name.node_name</em>  * (or<em>cayenne.jdbc.url</em>) and<em>cayenne.jdbc.driver.domain_name.node_name</em>  * (or<em>cayenne.jdbc.driver</em>), any DataSourceFactory configured in the project is  * ignored, and the {@link PropertyDataSourceFactory} is returned.  *   * @since 3.1  */
+comment|/**  * A {@link DataSourceFactory} that delegates DataSource creation to another factory,  * which is determined dynamically per DataNodeDescriptor. The delegate class may be  * explicitly defined in the {@link DataNodeDescriptor}. If not, and if the descriptor has  * a configuration resource attached to it, {@link XMLPoolingDataSourceFactory} is used.  *<p>  * If the environment contains properties<em>cayenne.jdbc.url.domain_name.node_name</em>  * (or<em>cayenne.jdbc.url</em>) and<em>cayenne.jdbc.driver.domain_name.node_name</em>  * (or<em>cayenne.jdbc.driver</em>), any DataSourceFactory configured in the  * DataNodeDescriptor is ignored, and the {@link PropertyDataSourceFactory} is used.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 implements|implements
-name|DataSourceFactoryLoader
+name|DataSourceFactory
 block|{
 specifier|private
 specifier|static
@@ -120,7 +130,7 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 operator|.
 name|class
 argument_list|)
@@ -132,6 +142,28 @@ name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
 specifier|public
+name|DataSource
+name|getDataSource
+parameter_list|(
+name|DataNodeDescriptor
+name|nodeDescriptor
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+return|return
+name|getDataSourceFactory
+argument_list|(
+name|nodeDescriptor
+argument_list|)
+operator|.
+name|getDataSource
+argument_list|(
+name|nodeDescriptor
+argument_list|)
+return|;
+block|}
+specifier|protected
 name|DataSourceFactory
 name|getDataSourceFactory
 parameter_list|(

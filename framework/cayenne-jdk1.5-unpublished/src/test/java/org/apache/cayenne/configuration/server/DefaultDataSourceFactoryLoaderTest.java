@@ -147,7 +147,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 import|;
 end_import
 
@@ -380,11 +380,11 @@ argument_list|(
 name|testModule
 argument_list|)
 decl_stmt|;
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 name|factoryLoader
 init|=
 operator|new
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 argument_list|()
 decl_stmt|;
 name|injector
@@ -510,11 +510,11 @@ argument_list|(
 name|testModule
 argument_list|)
 decl_stmt|;
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 name|factoryLoader
 init|=
 operator|new
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 argument_list|()
 decl_stmt|;
 name|injector
@@ -718,11 +718,11 @@ argument_list|,
 literal|"y"
 argument_list|)
 expr_stmt|;
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 name|factoryLoader
 init|=
 operator|new
-name|DefaultDataSourceFactoryLoader
+name|DelegatingDataSourceFactory
 argument_list|()
 block|{
 annotation|@

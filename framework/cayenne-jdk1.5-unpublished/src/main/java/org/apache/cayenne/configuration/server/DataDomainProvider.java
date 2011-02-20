@@ -421,8 +421,8 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|DataSourceFactoryLoader
-name|dataSourceFactoryLoader
+name|DataSourceFactory
+name|dataSourceFactory
 decl_stmt|;
 annotation|@
 name|Inject
@@ -848,16 +848,6 @@ name|getParameters
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|DataSourceFactory
-name|dataSourceFactory
-init|=
-name|dataSourceFactoryLoader
-operator|.
-name|getDataSourceFactory
-argument_list|(
-name|nodeDescriptor
-argument_list|)
-decl_stmt|;
 name|DataSource
 name|dataSource
 init|=
