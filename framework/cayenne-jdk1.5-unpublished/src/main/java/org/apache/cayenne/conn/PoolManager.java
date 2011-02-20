@@ -1073,7 +1073,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns connection from the pool using internal values of user name and password.      * Eqivalent to calling:      *<p>      *<code>ds.getConnection(ds.getUserName(), ds.getPassword())</code>      *</p>      */
+comment|/**      * Returns connection from the pool using internal values of user name and password.      * Equivalent to calling:      *<p>      *<code>ds.getConnection(ds.getUserName(), ds.getPassword())</code>      *</p>      */
 specifier|public
 name|Connection
 name|getConnection
