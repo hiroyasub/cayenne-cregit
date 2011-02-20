@@ -125,6 +125,20 @@ name|PooledConnection
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|BeforeScopeEnd
+import|;
+end_import
+
 begin_comment
 comment|/**  * PoolManager is a pooling DataSource impementation. Internally to obtain connections  * PoolManager uses either a JDBC driver or another pooling datasource.  */
 end_comment
@@ -644,6 +658,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Closes all existing connections, drains the pool and stops the maintenance thread.      *       * @since 3.1      */
+annotation|@
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|shutdown
