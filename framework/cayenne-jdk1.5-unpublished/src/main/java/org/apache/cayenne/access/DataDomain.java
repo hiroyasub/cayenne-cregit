@@ -249,6 +249,20 @@ name|cayenne
 operator|.
 name|di
 operator|.
+name|BeforeScopeEnd
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
 name|Inject
 import|;
 end_import
@@ -1910,6 +1924,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Shutdowns all owned data nodes and marks this domain as stopped.      */
+annotation|@
+name|BeforeScopeEnd
 specifier|public
 name|void
 name|shutdown
