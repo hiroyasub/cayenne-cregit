@@ -29,6 +29,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Map
@@ -875,6 +885,21 @@ operator|.
 name|getPassword
 argument_list|()
 argument_list|)
+block|{
+annotation|@
+name|Override
+specifier|public
+name|void
+name|shutdown
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+comment|// noop - make sure we are not shutdown by the test scope, but at the
+comment|// same time PoolManager methods are exposed (so we can't wrap
+comment|// PoolManager)
+block|}
+block|}
 return|;
 block|}
 catch|catch
