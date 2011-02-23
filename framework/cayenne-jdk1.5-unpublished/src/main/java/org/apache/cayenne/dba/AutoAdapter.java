@@ -633,7 +633,7 @@ specifier|volatile
 name|DbAdapter
 name|adapter
 decl_stmt|;
-comment|/**      * Creates an AutoAdapter that can detect adapters known to Cayenne.      *       * @deprecated since 3.1 as      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             parameter is required.      */
+comment|/**      * Creates an AutoAdapter that can detect adapters known to Cayenne.      *       * @deprecated since 3.1 use {@link #AutoAdapter(Provider)}      */
 specifier|public
 name|AutoAdapter
 parameter_list|(
@@ -652,7 +652,7 @@ name|dataSource
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates an AutoAdapter with specified adapter factory and DataSource. If      * adapterFactory is null, default factory is used.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */
+comment|/**      * Creates an AutoAdapter with specified adapter factory and DataSource. If      * adapterFactory is null, default factory is used.      *       * @deprecated since 3.1 use {@link #AutoAdapter(Provider)}      */
 specifier|public
 name|AutoAdapter
 parameter_list|(
@@ -920,7 +920,6 @@ name|get
 argument_list|()
 return|;
 block|}
-comment|// ---- DbAdapter methods ----
 specifier|public
 name|String
 name|getBatchTerminator
