@@ -89,24 +89,8 @@ name|Target
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|ref
-operator|.
-name|Referenceable
-import|;
-end_import
-
 begin_comment
-comment|/**  * An annotation that adds auditable behavior to DataObjects. All Auditable objects must  * be also tagged with {@link Referenceable} annotation, as audit records are based on  * UUIDs.  *   * @since 3.1  */
+comment|/**  * An annotation that adds auditing behavior to DataObjects.  *   * @since 3.1  */
 end_comment
 
 begin_annotation_defn
