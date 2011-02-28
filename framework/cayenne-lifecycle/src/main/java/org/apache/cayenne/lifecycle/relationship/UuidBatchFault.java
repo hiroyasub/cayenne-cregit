@@ -346,11 +346,10 @@ name|uuid
 init|=
 name|sources
 operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
+name|get
+argument_list|(
+literal|0
+argument_list|)
 operator|.
 name|getUuid
 argument_list|()
