@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines minimal API of a query descriptor that is executable via Cayenne.  *   */
+comment|/**  * Defines minimal API of a query descriptor that is executable via Cayenne.  */
 end_comment
 
 begin_interface
@@ -124,7 +124,7 @@ name|SQLActionVisitor
 name|visitor
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a symbolic name of the query. The name may be used as a key to find queries      * stored in the DataMap. Some query implementors reuse the name as a QueryMetadata      * cache key. Generally the name can be null.      *       * @since 1.1      */
+comment|/**      * Returns a symbolic name of the query. The name is normally used as a key to find      * queries stored in the DataMap.      *       * @since 1.1      */
 name|String
 name|getName
 parameter_list|()
