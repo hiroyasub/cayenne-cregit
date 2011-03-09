@@ -201,7 +201,7 @@ name|query
 argument_list|)
 condition|)
 block|{
-comment|// Special action for Oracle8.  See CAY-1307.
+comment|// Special action for Oracle8. See CAY-1307.
 return|return
 operator|new
 name|Oracle8LOBBatchAction
@@ -244,8 +244,7 @@ name|OracleBatchAction
 argument_list|(
 name|query
 argument_list|,
-name|getAdapter
-argument_list|()
+name|adapter
 argument_list|,
 name|getEntityResolver
 argument_list|()

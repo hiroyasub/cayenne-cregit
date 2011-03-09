@@ -191,7 +191,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -316,18 +316,13 @@ specifier|protected
 name|RowDescriptor
 name|keyRowDescriptor
 decl_stmt|;
-comment|/**      * Custom BatchQueryBuilderFactory. Can be null, then default will be used.      */
-specifier|protected
-name|BatchQueryBuilderFactory
-name|queryBuilderFactory
-decl_stmt|;
 specifier|public
 name|BatchAction
 parameter_list|(
 name|BatchQuery
 name|batchQuery
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver
@@ -442,31 +437,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @return factory that creates BatchQueryBuilders      */
-specifier|public
-name|BatchQueryBuilderFactory
-name|getQueryBuilderFactory
-parameter_list|()
-block|{
-return|return
-name|queryBuilderFactory
-return|;
-block|}
-specifier|public
-name|void
-name|setQueryBuilderFactory
-parameter_list|(
-name|BatchQueryBuilderFactory
-name|queryBuilderFactory
-parameter_list|)
-block|{
-name|this
-operator|.
-name|queryBuilderFactory
-operator|=
-name|queryBuilderFactory
-expr_stmt|;
-block|}
 specifier|protected
 name|BatchQueryBuilder
 name|createBuilder
@@ -477,7 +447,9 @@ block|{
 name|BatchQueryBuilderFactory
 name|factory
 init|=
-name|getQueryBuilderFactory
+name|adapter
+operator|.
+name|getBatchQueryBuilderFactory
 argument_list|()
 decl_stmt|;
 if|if
@@ -487,12 +459,13 @@ operator|==
 literal|null
 condition|)
 block|{
-name|factory
-operator|=
+throw|throw
 operator|new
-name|DefaultBatchQueryBuilderFactory
-argument_list|()
-expr_stmt|;
+name|IllegalStateException
+argument_list|(
+literal|"Adapter BatchQueryBuilderFactory is null"
+argument_list|)
+throw|;
 block|}
 if|if
 condition|(

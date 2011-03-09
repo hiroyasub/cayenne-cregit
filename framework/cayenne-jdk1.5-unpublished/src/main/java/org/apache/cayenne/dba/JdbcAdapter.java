@@ -123,6 +123,22 @@ name|access
 operator|.
 name|jdbc
 operator|.
+name|BatchQueryBuilderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
 name|EJBQLTranslatorFactory
 import|;
 end_import
@@ -204,6 +220,20 @@ operator|.
 name|types
 operator|.
 name|ExtendedTypeMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Inject
 import|;
 end_import
 
@@ -425,6 +455,13 @@ decl_stmt|;
 specifier|protected
 name|ResourceLocator
 name|resourceLocator
+decl_stmt|;
+comment|/**      * @since 3.1      */
+annotation|@
+name|Inject
+specifier|protected
+name|BatchQueryBuilderFactory
+name|batchQueryBuilderFactory
 decl_stmt|;
 comment|/**      * @since 3.0      */
 specifier|public
@@ -2257,6 +2294,32 @@ name|NoQuoteStrategy
 argument_list|()
 return|;
 block|}
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|BatchQueryBuilderFactory
+name|getBatchQueryBuilderFactory
+parameter_list|()
+block|{
+return|return
+name|batchQueryBuilderFactory
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setBatchQueryBuilderFactory
+parameter_list|(
+name|BatchQueryBuilderFactory
+name|batchQueryBuilderFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|batchQueryBuilderFactory
+operator|=
+name|batchQueryBuilderFactory
+expr_stmt|;
 block|}
 block|}
 end_class

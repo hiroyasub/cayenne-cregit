@@ -247,8 +247,7 @@ name|OracleBatchAction
 argument_list|(
 name|query
 argument_list|,
-name|getAdapter
-argument_list|()
+name|adapter
 argument_list|,
 name|getEntityResolver
 argument_list|()

@@ -143,7 +143,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -191,7 +191,7 @@ parameter_list|(
 name|ProcedureQuery
 name|query
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver

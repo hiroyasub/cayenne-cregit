@@ -387,7 +387,7 @@ return|;
 block|}
 comment|/**      * Returns DbAdapter used associated with this action builder.      */
 specifier|public
-name|DbAdapter
+name|JdbcAdapter
 name|getAdapter
 parameter_list|()
 block|{

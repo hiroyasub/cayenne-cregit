@@ -618,7 +618,7 @@ specifier|protected
 name|boolean
 name|stopped
 decl_stmt|;
-comment|/**      * Factory for creating QueryBuilders. Might be null, then default one will be used.      * Server-only.      */
+comment|/**      * Factory for creating QueryBuilders. Might be null, then default one will be used.      * Server-only.      *       * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
 specifier|private
 name|BatchQueryBuilderFactory
 name|queryBuilderFactory
@@ -2567,7 +2567,7 @@ operator|=
 name|queryCache
 expr_stmt|;
 block|}
-comment|/**      * Sets factory for creating QueryBuilders      */
+comment|/**      * Sets factory for creating QueryBuilders      * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
 specifier|public
 name|void
 name|setQueryBuilderFactory
@@ -2583,7 +2583,7 @@ operator|=
 name|queryBuilderFactory
 expr_stmt|;
 block|}
-comment|/**      * @return factory for creating QueryBuilders. Might be null      */
+comment|/**      * @return factory for creating QueryBuilders. Might be null      * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
 specifier|public
 name|BatchQueryBuilderFactory
 name|getQueryBuilderFactory

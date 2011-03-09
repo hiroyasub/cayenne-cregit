@@ -131,20 +131,6 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
 name|JdbcAdapter
 import|;
 end_import
@@ -275,7 +261,7 @@ name|getEntityResolver
 argument_list|()
 decl_stmt|;
 comment|// test with adapter that supports keys...
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 init|=
 name|buildAdapter
@@ -497,7 +483,7 @@ name|getEntityResolver
 argument_list|()
 decl_stmt|;
 comment|// test with adapter that supports keys...
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 init|=
 name|buildAdapter
@@ -717,7 +703,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|DbAdapter
+name|JdbcAdapter
 name|buildAdapter
 parameter_list|(
 name|boolean

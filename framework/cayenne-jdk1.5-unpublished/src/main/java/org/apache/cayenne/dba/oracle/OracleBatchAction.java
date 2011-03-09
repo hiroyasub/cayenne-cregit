@@ -71,7 +71,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -118,7 +118,7 @@ parameter_list|(
 name|BatchQuery
 name|batchQuery
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver

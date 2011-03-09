@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -182,7 +182,7 @@ implements|implements
 name|SQLAction
 block|{
 specifier|protected
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 decl_stmt|;
 specifier|protected
@@ -192,7 +192,7 @@ decl_stmt|;
 specifier|public
 name|BaseSQLAction
 parameter_list|(
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver
@@ -213,7 +213,7 @@ name|entityResolver
 expr_stmt|;
 block|}
 specifier|public
-name|DbAdapter
+name|JdbcAdapter
 name|getAdapter
 parameter_list|()
 block|{

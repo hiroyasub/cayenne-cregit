@@ -171,7 +171,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -257,7 +257,7 @@ parameter_list|(
 name|ProcedureQuery
 name|query
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver
@@ -891,7 +891,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Initializes statement with query parameters      * @throws Exception       */
+comment|/**      * Initializes statement with query parameters      *       * @throws Exception      */
 name|void
 name|initStatement
 parameter_list|(
