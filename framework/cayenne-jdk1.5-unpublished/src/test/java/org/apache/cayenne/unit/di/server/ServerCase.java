@@ -123,6 +123,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|LOCKING_PROJECT
+init|=
+literal|"cayenne-locking.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|QUOTED_IDENTIFIERS_PROJECT
 init|=
 literal|"cayenne-quoted-identifiers.xml"
