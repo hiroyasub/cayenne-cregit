@@ -607,7 +607,7 @@ specifier|protected
 name|EntitySorter
 name|entitySorter
 decl_stmt|;
-comment|/**      * An injected provider of {@link QueryCache}. Note that QueryCache is not injected      * directly to ensure lazy initialization (e.g. it may never be used and should not be      * instantiated).      *       * @since 3.1      */
+comment|/**      * @since 3.1      */
 annotation|@
 name|Inject
 specifier|protected
