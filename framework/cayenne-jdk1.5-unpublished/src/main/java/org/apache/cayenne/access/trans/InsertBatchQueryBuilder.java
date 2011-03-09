@@ -142,8 +142,6 @@ name|adapter
 parameter_list|)
 block|{
 name|super
-operator|.
-name|setAdapter
 argument_list|(
 name|adapter
 argument_list|)

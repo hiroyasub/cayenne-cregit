@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory which creates BatchQueryBuilders for different types of queries,  * which, in their turn, create SQL strings  */
+comment|/**  * Factory which creates BatchQueryBuilders for different types of queries, which, in  * their turn, create SQL strings for batch queries.  *   * @since 3.0  */
 end_comment
 
 begin_interface
@@ -57,7 +57,6 @@ interface|interface
 name|BatchQueryBuilderFactory
 block|{
 comment|/**      * Creates query builder for INSERT queries      */
-specifier|public
 name|BatchQueryBuilder
 name|createInsertQueryBuilder
 parameter_list|(
@@ -66,7 +65,6 @@ name|adapter
 parameter_list|)
 function_decl|;
 comment|/**      * Creates query builder for UPDATE queries      */
-specifier|public
 name|BatchQueryBuilder
 name|createUpdateQueryBuilder
 parameter_list|(
@@ -75,7 +73,6 @@ name|adapter
 parameter_list|)
 function_decl|;
 comment|/**      * Creates query builder for DELETE queries      */
-specifier|public
 name|BatchQueryBuilder
 name|createDeleteQueryBuilder
 parameter_list|(
