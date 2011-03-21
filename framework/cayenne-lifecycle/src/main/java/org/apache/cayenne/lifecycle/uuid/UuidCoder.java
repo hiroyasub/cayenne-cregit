@@ -499,6 +499,12 @@ name|id
 operator|.
 name|isTemporary
 argument_list|()
+operator|&&
+operator|!
+name|id
+operator|.
+name|isReplacementIdAttached
+argument_list|()
 condition|)
 block|{
 throw|throw
