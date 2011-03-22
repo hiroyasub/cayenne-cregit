@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -125,6 +135,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|annotation
+operator|.
+name|PostUpdate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|graph
 operator|.
 name|GraphDiff
@@ -204,7 +228,7 @@ name|DataChannelFilterChain
 name|chain
 parameter_list|)
 block|{
-comment|// noop for now
+comment|// noop ... all work is done via listeners...
 return|return
 name|chain
 operator|.
@@ -254,9 +278,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * A lifecycle callback method that delegates object post load event processing to the      * underlying faulting strategy.      */
 annotation|@
-name|PostLoad
+name|PostUpdate
 argument_list|(
 name|entityAnnotations
 operator|=
@@ -266,6 +289,40 @@ name|class
 argument_list|)
 annotation|@
 name|PostPersist
+argument_list|(
+name|entityAnnotations
+operator|=
+name|UuidRelationship
+operator|.
+name|class
+argument_list|)
+name|void
+name|postCommit
+parameter_list|(
+name|DataObject
+name|object
+parameter_list|)
+block|{
+comment|// invalidate after commit to ensure UUID property is re-read...
+name|object
+operator|.
+name|getObjectContext
+argument_list|()
+operator|.
+name|invalidateObjects
+argument_list|(
+name|Collections
+operator|.
+name|singleton
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * A lifecycle callback method that delegates object post load event processing to the      * underlying faulting strategy.      */
+annotation|@
+name|PostLoad
 argument_list|(
 name|entityAnnotations
 operator|=
