@@ -69,7 +69,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
+name|LinkedHashSet
 import|;
 end_import
 
@@ -232,7 +232,7 @@ operator|.
 name|callbackNames
 operator|=
 operator|new
-name|ArrayList
+name|LinkedHashSet
 argument_list|<
 name|String
 argument_list|>
@@ -344,7 +344,7 @@ operator|.
 name|callbackNames
 operator|=
 operator|new
-name|ArrayList
+name|LinkedHashSet
 argument_list|<
 name|String
 argument_list|>
