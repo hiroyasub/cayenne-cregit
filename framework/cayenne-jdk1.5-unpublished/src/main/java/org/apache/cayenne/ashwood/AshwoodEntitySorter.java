@@ -2127,7 +2127,7 @@ name|index
 parameter_list|,
 name|Collection
 argument_list|<
-name|?
+name|DbEntity
 argument_list|>
 name|component
 parameter_list|)
@@ -2150,7 +2150,7 @@ name|index
 decl_stmt|;
 name|Collection
 argument_list|<
-name|?
+name|DbEntity
 argument_list|>
 name|component
 decl_stmt|;
