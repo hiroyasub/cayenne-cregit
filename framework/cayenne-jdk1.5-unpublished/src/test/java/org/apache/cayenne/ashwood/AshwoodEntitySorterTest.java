@@ -337,14 +337,11 @@ argument_list|()
 decl_stmt|;
 name|sorter
 operator|.
-name|setDataMaps
+name|setEntityResolver
 argument_list|(
 name|context
 operator|.
 name|getEntityResolver
-argument_list|()
-operator|.
-name|getDataMaps
 argument_list|()
 argument_list|)
 expr_stmt|;

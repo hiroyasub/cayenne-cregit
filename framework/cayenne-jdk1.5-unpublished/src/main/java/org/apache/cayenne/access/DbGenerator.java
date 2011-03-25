@@ -309,6 +309,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|EntitySorter
 import|;
 end_import
@@ -370,7 +384,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that generates database schema based on Cayenne mapping. It is a logical  * counterpart of DbLoader class.  *   */
+comment|/**  * Utility class that generates database schema based on Cayenne mapping. It is a logical  * counterpart of DbLoader class.  */
 end_comment
 
 begin_class
@@ -2228,13 +2242,17 @@ argument_list|()
 decl_stmt|;
 name|sorter
 operator|.
-name|setDataMaps
+name|setEntityResolver
+argument_list|(
+operator|new
+name|EntityResolver
 argument_list|(
 name|Collections
 operator|.
 name|singleton
 argument_list|(
 name|map
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

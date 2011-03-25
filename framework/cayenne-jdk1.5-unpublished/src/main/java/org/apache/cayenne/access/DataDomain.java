@@ -2606,9 +2606,9 @@ condition|)
 block|{
 name|entitySorter
 operator|.
-name|setDataMaps
+name|setEntityResolver
 argument_list|(
-name|getDataMaps
+name|getEntityResolver
 argument_list|()
 argument_list|)
 expr_stmt|;

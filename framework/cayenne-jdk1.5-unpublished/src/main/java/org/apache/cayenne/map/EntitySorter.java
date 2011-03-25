@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|EntitySorter
 block|{
-comment|/**      * Initializes a list of DataMaps used by the sorter.      */
+comment|/**      * Initializes a list of DataMaps used by the sorter.      *       * @deprecated since 3.1 {@link #setEntityResolver(EntityResolver)} is used, and this      *             method is never called.      */
 name|void
 name|setDataMaps
 parameter_list|(
@@ -53,6 +53,14 @@ argument_list|<
 name|DataMap
 argument_list|>
 name|dataMaps
+parameter_list|)
+function_decl|;
+comment|/**      * Sets EntityResolver for this sorter. All entities present in the resolver will be      * used to determine sort ordering.      *       * @since 3.1      */
+name|void
+name|setEntityResolver
+parameter_list|(
+name|EntityResolver
+name|resolver
 parameter_list|)
 function_decl|;
 comment|/**      * Sorts a list of DbEntities.      */
