@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collection
@@ -108,6 +118,8 @@ class|class
 name|ListWithPrefetches
 implements|implements
 name|List
+implements|,
+name|Serializable
 block|{
 specifier|private
 specifier|final
