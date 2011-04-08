@@ -31,6 +31,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Iterator
 import|;
 end_import
@@ -425,6 +435,27 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
+comment|// we need to insert even if there is no changes to default values
+comment|// so creating an empty changes map
+if|if
+condition|(
+name|snapshot
+operator|==
+literal|null
+condition|)
+block|{
+name|snapshot
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
+argument_list|()
+expr_stmt|;
+block|}
 name|batch
 operator|.
 name|add
