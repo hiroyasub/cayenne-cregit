@@ -838,14 +838,24 @@ operator|.
 name|select
 argument_list|()
 decl_stmt|;
+comment|// have to trim CHAR column to ensure consistent comparison results across DB's
+comment|// should really be using VARCHAR in this test
 name|assertEquals
 argument_list|(
 literal|"XyzQ"
 argument_list|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
 name|aRow
 index|[
 literal|1
 index|]
+argument_list|)
+operator|.
+name|trim
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|Object
