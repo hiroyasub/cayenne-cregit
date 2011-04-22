@@ -219,10 +219,6 @@ name|CayenneCase
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -912,7 +908,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|// TODO: andrus 1/5/2007 -  CAY-952: SelectQuery uses INNER JOIN for flattened attributes, while
+comment|// TODO: andrus 1/5/2007 - CAY-952: SelectQuery uses INNER JOIN for flattened
+comment|// attributes, while
 comment|// EJBQLQuery does an OUTER JOIN... which seems like a better idea...
 comment|// 14/01/2010 now it uses LEFT JOIN
 specifier|public
@@ -1082,7 +1079,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Emulates the situation when flattened attribute has unusual(long) name,      *  that puts this attribute property to the top of PersistentDescriptor.declaredProperties map,      *  {@link PersistentDescriptor}[105]      *        *  That forced an error during the building of the SelectQuery statement, CAY-1484      *        */
+comment|/**      * Emulates the situation when flattened attribute has unusual(long) name, that puts      * this attribute property to the top of PersistentDescriptor.declaredProperties map,      * {@link PersistentDescriptor}[105] That forced an error during the building of the      * SelectQuery statement, CAY-1484      */
 specifier|public
 name|void
 name|testSelectCompoundLongNames
