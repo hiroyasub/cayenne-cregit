@@ -250,13 +250,6 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"MAP_TO_MANY"
-argument_list|)
-expr_stmt|;
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
 literal|"MAP_TO_MANY_TARGET"
 argument_list|)
 expr_stmt|;
@@ -264,7 +257,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"ID_MAP_TO_MANY"
+literal|"MAP_TO_MANY"
 argument_list|)
 expr_stmt|;
 name|dbHelper
@@ -272,6 +265,13 @@ operator|.
 name|deleteAll
 argument_list|(
 literal|"ID_MAP_TO_MANY_TARGET"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"ID_MAP_TO_MANY"
 argument_list|)
 expr_stmt|;
 name|tMapToMany
