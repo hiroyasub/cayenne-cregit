@@ -194,7 +194,7 @@ block|{
 annotation|@
 name|Inject
 specifier|protected
-name|ObjectContext
+name|DataContext
 name|context
 decl_stmt|;
 annotation|@

@@ -259,14 +259,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"SIMPLE_LOCKING_TEST"
+literal|"REL_LOCKING_TEST"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"REL_LOCKING_TEST"
+literal|"SIMPLE_LOCKING_TEST"
 argument_list|)
 expr_stmt|;
 name|tSimpleLockingTest
@@ -556,6 +556,10 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|assertEquals
+argument_list|(
+literal|1
+argument_list|,
 name|tSimpleLockingTest
 operator|.
 name|update
@@ -577,6 +581,7 @@ argument_list|)
 operator|.
 name|execute
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
@@ -2283,6 +2288,10 @@ argument_list|)
 decl_stmt|;
 name|assertNull
 argument_list|(
+literal|""
+operator|+
+name|freshFailedRow
+argument_list|,
 name|freshFailedRow
 argument_list|)
 expr_stmt|;
