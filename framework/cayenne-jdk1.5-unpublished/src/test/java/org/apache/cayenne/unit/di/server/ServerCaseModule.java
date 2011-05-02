@@ -546,10 +546,8 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|in
-argument_list|(
-name|testScope
-argument_list|)
+name|withoutScope
+argument_list|()
 expr_stmt|;
 name|binder
 operator|.
@@ -567,10 +565,8 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|in
-argument_list|(
-name|testScope
-argument_list|)
+name|withoutScope
+argument_list|()
 expr_stmt|;
 name|binder
 operator|.
