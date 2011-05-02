@@ -166,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Tests conflicts between field and map-based persistence.  *   */
+comment|/**  * Tests conflicts between field and map-based persistence.  */
 end_comment
 
 begin_class
@@ -216,14 +216,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"MIXED_PERSISTENCE_STRATEGY"
+literal|"MIXED_PERSISTENCE_STRATEGY2"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"MIXED_PERSISTENCE_STRATEGY2"
+literal|"MIXED_PERSISTENCE_STRATEGY"
 argument_list|)
 expr_stmt|;
 name|tMixedPersistenceStrategy

@@ -35,16 +35,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -332,14 +322,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"FLATTENED_TEST_1"
-argument_list|)
-expr_stmt|;
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
-literal|"FLATTENED_TEST_2"
+literal|"COMPLEX_JOIN"
 argument_list|)
 expr_stmt|;
 name|dbHelper
@@ -353,14 +336,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"COMPLEX_JOIN"
+literal|"FLATTENED_TEST_2"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"FLATTENED_CIRCULAR"
+literal|"FLATTENED_TEST_1"
 argument_list|)
 expr_stmt|;
 name|dbHelper
@@ -368,6 +351,13 @@ operator|.
 name|deleteAll
 argument_list|(
 literal|"FLATTENED_CIRCULAR_JOIN"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"FLATTENED_CIRCULAR"
 argument_list|)
 expr_stmt|;
 name|tFlattenedTest1
@@ -1558,7 +1548,7 @@ name|Fault
 argument_list|)
 expr_stmt|;
 comment|// test that taking a snapshot does not trigger a fault, and generally works well
-name|Map
+name|DataRow
 name|snapshot
 init|=
 name|context
