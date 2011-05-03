@@ -333,6 +333,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"DELETE_RULE_JOIN"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"DELETE_RULE_FLATB"
 argument_list|)
 expr_stmt|;
