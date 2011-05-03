@@ -1242,6 +1242,9 @@ condition|(
 name|op
 operator|instanceof
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 condition|)
 block|{
 return|return
