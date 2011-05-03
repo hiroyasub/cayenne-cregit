@@ -444,6 +444,13 @@ argument_list|(
 literal|"TINYINT_TEST"
 argument_list|)
 expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"DECIMAL_PK_TST"
+argument_list|)
+expr_stmt|;
 name|tSmallintTest
 operator|=
 operator|new
@@ -1649,6 +1656,11 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|BigDecimal
+argument_list|>
 name|map
 init|=
 name|Collections
@@ -1746,6 +1758,11 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Double
+argument_list|>
 name|map
 init|=
 name|Collections
