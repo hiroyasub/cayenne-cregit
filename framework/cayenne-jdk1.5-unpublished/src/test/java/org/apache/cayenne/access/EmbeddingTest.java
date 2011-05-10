@@ -219,7 +219,9 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-literal|"cayenne-default.xml"
+name|ServerCase
+operator|.
+name|DEFAULT_PROJECT
 argument_list|)
 specifier|public
 class|class

@@ -159,6 +159,14 @@ name|TESTMAP_PROJECT
 init|=
 literal|"cayenne-testmap.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_PROJECT
+init|=
+literal|"cayenne-default.xml"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
