@@ -1516,7 +1516,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// importnat: make a clone to allow modification independent from the
+comment|// important: make a clone to allow modification independent from the
 comment|// caller...
 try|try
 block|{

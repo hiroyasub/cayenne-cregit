@@ -1478,7 +1478,6 @@ block|{
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|byte
 index|[]
 name|toByteArray
