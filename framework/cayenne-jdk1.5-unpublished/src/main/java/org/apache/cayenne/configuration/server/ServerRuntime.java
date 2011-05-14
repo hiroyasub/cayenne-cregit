@@ -128,14 +128,15 @@ name|Module
 name|mainModule
 parameter_list|(
 name|String
-name|configurationLocation
+modifier|...
+name|configurationLocations
 parameter_list|)
 block|{
 return|return
 operator|new
 name|ServerModule
 argument_list|(
-name|configurationLocation
+name|configurationLocations
 argument_list|)
 return|;
 block|}
@@ -165,17 +166,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a server runtime configuring it with a standard set of services contained      * in {@link ServerModule}. CayenneServerModule is created with provided      * 'configurationLocation'. An optional array of extra modules may contain service      * overrides and/or user services.      */
+comment|/**      * Creates a server runtime configuring it with a standard set of services contained      * in {@link ServerModule}. CayenneServerModule is created with one or more      * 'configurationLocations'. An optional array of extra modules may contain service      * overrides and/or user services.      */
 specifier|public
 name|ServerRuntime
 parameter_list|(
 name|String
-name|configurationLocation
+index|[]
+name|configurationLocations
 parameter_list|,
-name|Collection
-argument_list|<
 name|Module
-argument_list|>
+modifier|...
 name|extraModules
 parameter_list|)
 block|{
@@ -185,7 +185,7 @@ name|mergeModules
 argument_list|(
 name|mainModule
 argument_list|(
-name|configurationLocation
+name|configurationLocations
 argument_list|)
 argument_list|,
 name|extraModules

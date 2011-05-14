@@ -193,7 +193,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|DataNodeDescriptor
+name|DataChannelDescriptorMerger
 import|;
 end_import
 
@@ -207,7 +207,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|RuntimeProperties
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -388,6 +388,15 @@ name|FILTERS_LIST
 init|=
 literal|"org.apache.cayenne.configuration.server.DataDomainProvider.filters"
 decl_stmt|;
+comment|/**      * A DI key for the list storing locations of the DataDomain configuration resources.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|LOCATIONS_LIST
+init|=
+literal|"org.apache.cayenne.configuration.server.DataDomainProvider.locations"
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
@@ -397,14 +406,14 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|DataChannelDescriptorLoader
-name|loader
+name|DataChannelDescriptorMerger
+name|descriptorMerger
 decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|RuntimeProperties
-name|configurationProperties
+name|DataChannelDescriptorLoader
+name|loader
 decl_stmt|;
 annotation|@
 name|Inject
@@ -441,6 +450,18 @@ argument_list|<
 name|DataChannelFilter
 argument_list|>
 name|filters
+decl_stmt|;
+annotation|@
+name|Inject
+argument_list|(
+name|LOCATIONS_LIST
+argument_list|)
+specifier|protected
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|locations
 decl_stmt|;
 annotation|@
 name|Inject
@@ -517,38 +538,23 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|String
-name|configurationLocation
-init|=
-name|configurationProperties
-operator|.
-name|get
-argument_list|(
-name|ServerModule
-operator|.
-name|CONFIGURATION_LOCATION
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
-name|configurationLocation
+name|locations
 operator|==
 literal|null
+operator|||
+name|locations
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 throw|throw
 operator|new
 name|DataDomainLoadException
 argument_list|(
-literal|"No configuration location available. "
-operator|+
-literal|"You can specify when creating Cayenne runtime "
-operator|+
-literal|"or via a system property '%s'"
-argument_list|,
-name|ServerModule
-operator|.
-name|CONFIGURATION_LOCATION
+literal|"No configuration location(s) available"
 argument_list|)
 throw|;
 block|}
@@ -574,10 +580,51 @@ name|debug
 argument_list|(
 literal|"starting configuration loading: "
 operator|+
-name|configurationLocation
+name|locations
 argument_list|)
 expr_stmt|;
 block|}
+name|DataChannelDescriptor
+index|[]
+name|descriptors
+init|=
+operator|new
+name|DataChannelDescriptor
+index|[
+name|locations
+operator|.
+name|size
+argument_list|()
+index|]
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|locations
+operator|.
+name|size
+argument_list|()
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|String
+name|location
+init|=
+name|locations
+operator|.
+name|get
+argument_list|(
+name|i
+argument_list|)
+decl_stmt|;
 name|Collection
 argument_list|<
 name|Resource
@@ -588,7 +635,7 @@ name|resourceLocator
 operator|.
 name|findResources
 argument_list|(
-name|configurationLocation
+name|location
 argument_list|)
 decl_stmt|;
 if|if
@@ -603,9 +650,9 @@ throw|throw
 operator|new
 name|DataDomainLoadException
 argument_list|(
-literal|"Configuration file \"%s\" is not found."
+literal|"Configuration resource \"%s\" is not found."
 argument_list|,
-name|configurationLocation
+name|location
 argument_list|)
 throw|;
 block|}
@@ -642,7 +689,11 @@ operator|.
 name|size
 argument_list|()
 operator|+
-literal|" configurations, will use the first one: "
+literal|" configurations for "
+operator|+
+name|location
+operator|+
+literal|", will use the first one: "
 operator|+
 name|configurationResource
 operator|.
@@ -687,6 +738,17 @@ literal|"Error loading DataChannelDescriptor"
 argument_list|)
 throw|;
 block|}
+name|descriptors
+index|[
+name|i
+index|]
+operator|=
+name|tree
+operator|.
+name|getRootNode
+argument_list|()
+expr_stmt|;
+block|}
 name|long
 name|t1
 init|=
@@ -707,11 +769,7 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-literal|"finished configuration loading: "
-operator|+
-name|configurationLocation
-operator|+
-literal|" in "
+literal|"finished configuration loading in "
 operator|+
 operator|(
 name|t1
@@ -726,10 +784,12 @@ block|}
 name|DataChannelDescriptor
 name|descriptor
 init|=
-name|tree
+name|descriptorMerger
 operator|.
-name|getRootNode
-argument_list|()
+name|merge
+argument_list|(
+name|descriptors
+argument_list|)
 decl_stmt|;
 name|DataDomain
 name|dataDomain
