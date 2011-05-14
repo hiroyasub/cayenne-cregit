@@ -611,14 +611,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"CLIENT_COMPANY"
+literal|"PERSON"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"PERSON"
+literal|"CLIENT_COMPANY"
 argument_list|)
 expr_stmt|;
 block|}
