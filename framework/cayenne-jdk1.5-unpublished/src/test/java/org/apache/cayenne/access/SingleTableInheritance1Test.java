@@ -203,13 +203,13 @@ name|ServerCase
 block|{
 annotation|@
 name|Inject
-specifier|protected
+specifier|private
 name|ObjectContext
 name|context
 decl_stmt|;
 annotation|@
 name|Inject
-specifier|protected
+specifier|private
 name|DBHelper
 name|dbHelper
 decl_stmt|;
@@ -222,11 +222,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|super
-operator|.
-name|setUpAfterInjection
-argument_list|()
-expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
