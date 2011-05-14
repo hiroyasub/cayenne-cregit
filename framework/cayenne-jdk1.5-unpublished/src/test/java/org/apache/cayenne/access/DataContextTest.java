@@ -2928,6 +2928,9 @@ argument_list|(
 name|objects
 operator|instanceof
 name|IncrementalFaultList
+argument_list|<
+name|?
+argument_list|>
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -3036,6 +3039,9 @@ argument_list|(
 name|objects
 operator|instanceof
 name|IncrementalFaultList
+argument_list|<
+name|?
+argument_list|>
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -3147,6 +3153,9 @@ argument_list|(
 name|objects
 operator|instanceof
 name|IncrementalFaultList
+argument_list|<
+name|?
+argument_list|>
 argument_list|)
 expr_stmt|;
 name|queryInterceptor
@@ -3255,6 +3264,11 @@ literal|0
 argument_list|)
 operator|instanceof
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 argument_list|)
 expr_stmt|;
 block|}
