@@ -226,7 +226,7 @@ name|PrefetchTreeNode
 name|parent
 parameter_list|,
 name|String
-name|segmentPath
+name|name
 parameter_list|)
 block|{
 name|this
@@ -239,7 +239,7 @@ name|this
 operator|.
 name|name
 operator|=
-name|segmentPath
+name|name
 expr_stmt|;
 name|this
 operator|.
