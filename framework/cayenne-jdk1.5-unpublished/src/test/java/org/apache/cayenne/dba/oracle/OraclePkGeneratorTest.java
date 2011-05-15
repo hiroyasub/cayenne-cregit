@@ -19,15 +19,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
-name|JdbcAdapter
+name|TestCase
 import|;
 end_import
 
@@ -59,32 +55,14 @@ name|DbKeyGenerator
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
-import|;
-end_import
-
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
 name|OraclePkGeneratorTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
-specifier|protected
+specifier|private
 name|OraclePkGenerator
 name|pkGenerator
 decl_stmt|;
@@ -102,13 +80,8 @@ operator|=
 operator|new
 name|OraclePkGenerator
 argument_list|(
-operator|(
-name|JdbcAdapter
-operator|)
-name|getAccessStackAdapter
-argument_list|()
-operator|.
-name|getAdapter
+operator|new
+name|OracleAdapter
 argument_list|()
 argument_list|)
 expr_stmt|;
