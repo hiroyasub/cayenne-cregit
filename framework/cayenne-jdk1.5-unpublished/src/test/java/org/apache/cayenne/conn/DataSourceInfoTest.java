@@ -17,15 +17,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
+name|TestCase
 import|;
 end_import
 
@@ -48,7 +44,7 @@ specifier|public
 class|class
 name|DataSourceInfoTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
 specifier|private
 name|DataSourceInfo
@@ -61,10 +57,6 @@ name|void
 name|setUp
 parameter_list|()
 throws|throws
-name|java
-operator|.
-name|lang
-operator|.
 name|Exception
 block|{
 name|dsi
@@ -213,9 +205,6 @@ block|{
 name|DataSourceInfo
 name|dsiUnserialized
 init|=
-operator|(
-name|DataSourceInfo
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization

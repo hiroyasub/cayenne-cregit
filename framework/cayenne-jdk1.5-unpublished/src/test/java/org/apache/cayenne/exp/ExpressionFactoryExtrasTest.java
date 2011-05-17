@@ -57,15 +57,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
+name|TestCase
 import|;
 end_import
 
@@ -74,7 +70,7 @@ specifier|public
 class|class
 name|ExpressionFactoryExtrasTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
 specifier|protected
 name|TstTraversalHandler
@@ -87,10 +83,6 @@ name|void
 name|setUp
 parameter_list|()
 throws|throws
-name|java
-operator|.
-name|lang
-operator|.
 name|Exception
 block|{
 name|handler

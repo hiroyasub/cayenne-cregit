@@ -91,7 +91,29 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|CayenneCase
+name|di
+operator|.
+name|server
+operator|.
+name|ServerCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|UseServerRuntime
 import|;
 end_import
 
@@ -100,11 +122,18 @@ comment|/**  */
 end_comment
 
 begin_class
+annotation|@
+name|UseServerRuntime
+argument_list|(
+name|ServerCase
+operator|.
+name|TESTMAP_PROJECT
+argument_list|)
 specifier|public
 class|class
 name|ParametrizedExpressionTest
 extends|extends
-name|CayenneCase
+name|ServerCase
 block|{
 comment|/**      * Tests how parameter substitution algorithm works on an expression with no      * parameters.      *       * @throws Exception      */
 specifier|public
