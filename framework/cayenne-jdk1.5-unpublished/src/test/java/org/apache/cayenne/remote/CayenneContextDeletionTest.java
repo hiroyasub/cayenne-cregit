@@ -31,7 +31,30 @@ name|ClientMtTable1
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|UseServerRuntime
+import|;
+end_import
+
 begin_class
+annotation|@
+name|UseServerRuntime
+argument_list|(
+literal|"cayenne-multi-tier.xml"
+argument_list|)
 specifier|public
 class|class
 name|CayenneContextDeletionTest
@@ -44,7 +67,7 @@ name|testDeletion
 parameter_list|()
 block|{
 name|ClientMtTable1
-name|obj
+name|object
 init|=
 name|context
 operator|.
@@ -64,10 +87,10 @@ name|context
 operator|.
 name|deleteObject
 argument_list|(
-name|obj
+name|object
 argument_list|)
 expr_stmt|;
-comment|//now check that the object is unregistered
+comment|// now check that the object is unregistered
 name|context
 operator|.
 name|commitChanges
@@ -82,7 +105,7 @@ argument_list|()
 operator|.
 name|getNode
 argument_list|(
-name|obj
+name|object
 operator|.
 name|getObjectId
 argument_list|()

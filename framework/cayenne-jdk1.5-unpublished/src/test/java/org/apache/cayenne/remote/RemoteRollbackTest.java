@@ -59,11 +59,34 @@ name|ClientMtTable2
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|UseServerRuntime
+import|;
+end_import
+
 begin_comment
 comment|/**  * This is a test primarily for CAY-1103  */
 end_comment
 
 begin_class
+annotation|@
+name|UseServerRuntime
+argument_list|(
+literal|"cayenne-multi-tier.xml"
+argument_list|)
 specifier|public
 class|class
 name|RemoteRollbackTest
