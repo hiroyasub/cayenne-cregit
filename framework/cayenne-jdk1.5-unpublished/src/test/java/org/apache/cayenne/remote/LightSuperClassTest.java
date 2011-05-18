@@ -157,12 +157,6 @@ specifier|private
 name|DBHelper
 name|dbHelper
 decl_stmt|;
-annotation|@
-name|Inject
-specifier|private
-name|ObjectContext
-name|context
-decl_stmt|;
 specifier|private
 name|boolean
 name|server
@@ -234,7 +228,7 @@ name|server
 condition|)
 block|{
 return|return
-name|context
+name|serverContext
 return|;
 block|}
 else|else

@@ -142,7 +142,7 @@ init|=
 operator|(
 name|BaseContext
 operator|)
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -170,7 +170,7 @@ argument_list|)
 expr_stmt|;
 name|assertNull
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|getQueryCache
 argument_list|()
@@ -181,7 +181,7 @@ name|query
 operator|.
 name|getMetaData
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -227,7 +227,7 @@ argument_list|)
 expr_stmt|;
 name|assertNull
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|getQueryCache
 argument_list|()
@@ -238,7 +238,7 @@ name|query
 operator|.
 name|getMetaData
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|getEntityResolver
 argument_list|()

@@ -69,7 +69,7 @@ block|{
 name|ClientMtTable1
 name|object
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -78,12 +78,12 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|deleteObject
 argument_list|(
@@ -91,14 +91,14 @@ name|object
 argument_list|)
 expr_stmt|;
 comment|// now check that the object is unregistered
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
 name|assertNull
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()

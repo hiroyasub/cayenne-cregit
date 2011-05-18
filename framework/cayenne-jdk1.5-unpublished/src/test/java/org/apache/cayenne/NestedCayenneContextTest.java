@@ -336,7 +336,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -348,7 +348,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|context
+name|clientContext
 argument_list|,
 name|child
 operator|.
@@ -392,7 +392,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -401,7 +401,7 @@ specifier|final
 name|ClientMtTable1
 name|committed
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -414,7 +414,7 @@ specifier|final
 name|ClientMtTable1
 name|deleted
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -427,7 +427,7 @@ specifier|final
 name|ClientMtTable1
 name|modified
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -436,12 +436,12 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|deleteObject
 argument_list|(
@@ -459,7 +459,7 @@ specifier|final
 name|ClientMtTable1
 name|_new
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -475,7 +475,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|localObject
 argument_list|(
@@ -613,7 +613,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|context
+name|clientContext
 argument_list|,
 name|_new
 operator|.
@@ -673,7 +673,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|context
+name|clientContext
 argument_list|,
 name|hollow
 operator|.
@@ -733,7 +733,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|context
+name|clientContext
 argument_list|,
 name|committed
 operator|.
@@ -806,7 +806,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|context
+name|clientContext
 argument_list|,
 name|modified
 operator|.
@@ -866,7 +866,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|context
+name|clientContext
 argument_list|,
 name|deleted
 operator|.
@@ -890,7 +890,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -899,7 +899,7 @@ specifier|final
 name|ClientMtTable1
 name|modified
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -908,7 +908,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -1057,7 +1057,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -1065,7 +1065,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|_new
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1078,7 +1078,7 @@ specifier|final
 name|ClientMtTable2
 name|_new2
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1175,7 +1175,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -1183,7 +1183,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|committed
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1195,7 +1195,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|deleted
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1207,7 +1207,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|modified
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1216,7 +1216,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -1232,7 +1232,7 @@ name|modified
 argument_list|)
 decl_stmt|;
 comment|// test how different object states appear in the child on select
-name|context
+name|clientContext
 operator|.
 name|deleteObject
 argument_list|(
@@ -1249,7 +1249,7 @@ expr_stmt|;
 name|ClientMtTable1
 name|_new
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1420,7 +1420,7 @@ specifier|final
 name|ClientMtTable1
 name|mt11
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1429,7 +1429,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1441,7 +1441,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|mt21
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1453,7 +1453,7 @@ decl_stmt|;
 name|ClientMtTable2
 name|mt22
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1476,7 +1476,7 @@ argument_list|(
 name|mt11
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -1485,7 +1485,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -1663,7 +1663,7 @@ block|{
 name|ClientMtTable1
 name|mt11
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1682,7 +1682,7 @@ expr_stmt|;
 name|ClientMtTable1
 name|mt12
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1701,7 +1701,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|mt21
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1713,7 +1713,7 @@ decl_stmt|;
 name|ClientMtTable2
 name|mt22
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -1736,7 +1736,7 @@ argument_list|(
 name|mt11
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -1745,7 +1745,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -1995,7 +1995,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -2003,7 +2003,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|a
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2012,7 +2012,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -2097,7 +2097,7 @@ block|{
 name|ClientMtTable1
 name|a
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2109,7 +2109,7 @@ decl_stmt|;
 name|ClientMtTable2
 name|b
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2125,7 +2125,7 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -2134,7 +2134,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -2142,7 +2142,7 @@ decl_stmt|;
 name|ObjectContext
 name|childPeer
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -2222,7 +2222,7 @@ init|=
 operator|(
 name|ClientMtTable2
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -2264,7 +2264,7 @@ comment|// check that arc changes got recorded in the parent context
 name|GraphDiff
 name|diffs
 init|=
-name|context
+name|clientContext
 operator|.
 name|internalGraphManager
 argument_list|()
@@ -2407,7 +2407,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2416,7 +2416,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2425,7 +2425,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2434,7 +2434,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2443,7 +2443,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -2452,7 +2452,7 @@ specifier|final
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -2647,7 +2647,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -2667,7 +2667,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -2686,7 +2686,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -2705,7 +2705,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -2798,7 +2798,7 @@ comment|// check that arc changes got recorded in the parent context
 name|GraphDiff
 name|diffs
 init|=
-name|context
+name|clientContext
 operator|.
 name|internalGraphManager
 argument_list|()
@@ -2948,7 +2948,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2957,7 +2957,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2966,7 +2966,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2975,7 +2975,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -2984,7 +2984,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -2992,7 +2992,7 @@ expr_stmt|;
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -3088,7 +3088,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3136,7 +3136,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -3145,7 +3145,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -3154,7 +3154,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -3163,7 +3163,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -3172,7 +3172,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -3180,7 +3180,7 @@ expr_stmt|;
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -3396,7 +3396,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3415,7 +3415,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3434,7 +3434,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3453,7 +3453,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3472,7 +3472,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3579,7 +3579,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -3691,7 +3691,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -3767,7 +3767,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -3817,7 +3817,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -3906,7 +3906,7 @@ block|{
 name|ClientMtTable1
 name|parentMt
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -3915,7 +3915,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -3923,7 +3923,7 @@ expr_stmt|;
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -4001,7 +4001,7 @@ block|{
 name|ClientMtTable1
 name|parentMt
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -4013,7 +4013,7 @@ decl_stmt|;
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -4165,7 +4165,7 @@ operator|.
 name|getObjectContext
 argument_list|()
 argument_list|,
-name|context
+name|clientContext
 argument_list|)
 expr_stmt|;
 block|}
@@ -4179,7 +4179,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -4226,7 +4226,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -4245,7 +4245,7 @@ init|=
 operator|(
 name|ClientMtTable2
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -4295,7 +4295,7 @@ comment|// check that arc changes got recorded in the parent context
 name|GraphDiff
 name|diffs
 init|=
-name|context
+name|clientContext
 operator|.
 name|internalGraphManager
 argument_list|()
@@ -4469,7 +4469,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -4516,7 +4516,7 @@ init|=
 operator|(
 name|ClientMtTooneMaster
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -4535,7 +4535,7 @@ init|=
 operator|(
 name|ClientMtTooneDep
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -4582,7 +4582,7 @@ comment|// check that arc changes got recorded in the parent context
 name|GraphDiff
 name|diffs
 init|=
-name|context
+name|clientContext
 operator|.
 name|internalGraphManager
 argument_list|()

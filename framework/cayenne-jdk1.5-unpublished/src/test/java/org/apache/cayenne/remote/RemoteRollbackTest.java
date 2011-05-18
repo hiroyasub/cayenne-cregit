@@ -101,7 +101,7 @@ block|{
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -120,7 +120,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|p1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -146,7 +146,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|p2
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -172,7 +172,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|p3
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -219,7 +219,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -254,7 +254,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -270,7 +270,7 @@ argument_list|(
 name|o1Name
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -287,7 +287,7 @@ name|getPersistenceState
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -314,7 +314,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -333,7 +333,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|o2
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -358,7 +358,7 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -417,7 +417,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -436,7 +436,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|o2
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -472,7 +472,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -510,7 +510,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -552,7 +552,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -568,20 +568,20 @@ argument_list|(
 name|o1Name
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
 comment|// Save... cayenne doesn't yet handle deleting objects that are uncommitted
-name|context
+name|clientContext
 operator|.
 name|deleteObject
 argument_list|(
 name|o1
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -614,7 +614,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -630,7 +630,7 @@ argument_list|(
 name|o1Name
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -642,7 +642,7 @@ argument_list|(
 literal|"a new value"
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()

@@ -176,7 +176,7 @@ block|{
 name|ObjectContext
 name|peer1
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -211,7 +211,7 @@ decl_stmt|;
 name|ObjectContext
 name|peer2
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -292,7 +292,7 @@ block|{
 name|ClientMtTable1
 name|a
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -308,7 +308,7 @@ argument_list|(
 literal|"X"
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -316,7 +316,7 @@ expr_stmt|;
 name|ObjectContext
 name|peer1
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -342,7 +342,7 @@ decl_stmt|;
 name|ObjectContext
 name|peer2
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -418,7 +418,7 @@ block|{
 name|ClientMtTable1
 name|a
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -430,7 +430,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|altA
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -442,7 +442,7 @@ decl_stmt|;
 name|ClientMtTable2
 name|p
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -479,7 +479,7 @@ argument_list|(
 literal|"Y"
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -487,7 +487,7 @@ expr_stmt|;
 name|ObjectContext
 name|peer1
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -531,7 +531,7 @@ decl_stmt|;
 name|ObjectContext
 name|peer2
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -643,7 +643,7 @@ block|{
 name|ClientMtTable1
 name|a
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -662,7 +662,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|px
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -688,7 +688,7 @@ expr_stmt|;
 name|ClientMtTable2
 name|py
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -704,7 +704,7 @@ argument_list|(
 literal|"PY"
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -712,7 +712,7 @@ expr_stmt|;
 name|ObjectContext
 name|peer1
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -756,7 +756,7 @@ decl_stmt|;
 name|ObjectContext
 name|peer2
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()

@@ -89,7 +89,7 @@ block|{
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -101,7 +101,7 @@ decl_stmt|;
 name|ClientMtTable2
 name|o2
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -130,7 +130,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
@@ -164,7 +164,7 @@ block|{
 name|ClientMtTable1
 name|o1
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -176,7 +176,7 @@ decl_stmt|;
 name|ClientMtTable2
 name|o2
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -188,7 +188,7 @@ decl_stmt|;
 name|ClientMtTable1
 name|o3
 init|=
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -217,7 +217,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()

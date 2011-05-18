@@ -35,20 +35,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|Inject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|ObjEntity
@@ -131,12 +117,6 @@ name|ValueInjectorTest
 extends|extends
 name|RemoteCayenneCase
 block|{
-annotation|@
-name|Inject
-specifier|private
-name|ObjectContext
-name|context
-decl_stmt|;
 specifier|public
 name|void
 name|test
@@ -145,7 +125,7 @@ block|{
 name|ObjEntity
 name|entity
 init|=
-name|context
+name|serverContext
 operator|.
 name|getEntityResolver
 argument_list|()
@@ -170,7 +150,7 @@ block|{
 name|MtTable1Subclass
 name|ee
 init|=
-name|context
+name|serverContext
 operator|.
 name|newObject
 argument_list|(
@@ -189,7 +169,7 @@ argument_list|,
 literal|"sub1"
 argument_list|)
 expr_stmt|;
-comment|//check AND
+comment|// check AND
 name|entity
 operator|.
 name|setDeclaredQualifier
@@ -209,7 +189,7 @@ argument_list|)
 expr_stmt|;
 name|ee
 operator|=
-name|context
+name|serverContext
 operator|.
 name|newObject
 argument_list|(
@@ -308,7 +288,7 @@ argument_list|,
 literal|"sub1"
 argument_list|)
 expr_stmt|;
-comment|//check AND
+comment|// check AND
 name|entity
 operator|.
 name|setDeclaredQualifier

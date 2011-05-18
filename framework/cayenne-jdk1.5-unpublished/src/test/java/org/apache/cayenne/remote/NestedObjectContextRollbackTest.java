@@ -81,14 +81,14 @@ block|{
 name|ObjectContext
 name|child1
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertFalse
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|hasChanges
 argument_list|()
@@ -102,7 +102,7 @@ name|hasChanges
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -122,7 +122,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|hasChanges
 argument_list|()
@@ -143,7 +143,7 @@ argument_list|()
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|hasChanges
 argument_list|()
@@ -157,7 +157,7 @@ name|hasChanges
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -171,14 +171,14 @@ block|{
 name|ObjectContext
 name|child1
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
 decl_stmt|;
 name|assertFalse
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|hasChanges
 argument_list|()
@@ -192,7 +192,7 @@ name|hasChanges
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|newObject
 argument_list|(
@@ -212,7 +212,7 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|hasChanges
 argument_list|()
@@ -233,7 +233,7 @@ argument_list|()
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|context
+name|clientContext
 operator|.
 name|hasChanges
 argument_list|()
@@ -247,7 +247,7 @@ name|hasChanges
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|rollbackChanges
 argument_list|()

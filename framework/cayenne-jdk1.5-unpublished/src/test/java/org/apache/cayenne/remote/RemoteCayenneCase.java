@@ -155,16 +155,16 @@ name|ServerCase
 block|{
 specifier|protected
 name|CayenneContext
-name|context
+name|clientContext
 decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
 name|DataContext
-name|parentDataContext
+name|serverContext
 decl_stmt|;
 comment|/**      * Used serialization policy. Per CAY-979 we're testing on all policies      */
-specifier|protected
+specifier|private
 name|int
 name|serializationPolicy
 decl_stmt|;
@@ -227,7 +227,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|context
+name|clientContext
 operator|=
 name|createROPContext
 argument_list|()
@@ -244,7 +244,7 @@ init|=
 operator|new
 name|ClientServerChannel
 argument_list|(
-name|parentDataContext
+name|serverContext
 argument_list|)
 decl_stmt|;
 name|UnitLocalConnection

@@ -148,7 +148,7 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|clientContext
 operator|.
 name|createChildContext
 argument_list|()
@@ -183,7 +183,7 @@ init|=
 operator|(
 name|ClientMtTable1
 operator|)
-name|context
+name|clientContext
 operator|.
 name|getGraphManager
 argument_list|()
@@ -212,7 +212,7 @@ name|isTemporary
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|clientContext
 operator|.
 name|commitChanges
 argument_list|()
