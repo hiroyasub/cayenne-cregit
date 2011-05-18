@@ -103,7 +103,7 @@ argument_list|(
 name|a1
 argument_list|)
 expr_stmt|;
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
@@ -111,7 +111,7 @@ expr_stmt|;
 name|PaintingInfo
 name|info
 init|=
-name|ctxt
+name|context
 operator|.
 name|newObject
 argument_list|(
@@ -144,7 +144,7 @@ name|getToPaintingInfo
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|ctxt
+name|context
 operator|.
 name|rollbackChanges
 argument_list|()
@@ -185,12 +185,12 @@ argument_list|(
 name|a1
 argument_list|)
 expr_stmt|;
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -239,12 +239,12 @@ argument_list|(
 name|a1
 argument_list|)
 expr_stmt|;
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -336,12 +336,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// do save
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -417,12 +417,12 @@ argument_list|(
 name|pi1
 argument_list|)
 expr_stmt|;
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -449,7 +449,7 @@ comment|// test that taking a snapshot does not trigger a fault, and generally w
 name|Map
 name|snapshot
 init|=
-name|ctxt
+name|context
 operator|.
 name|currentSnapshot
 argument_list|(

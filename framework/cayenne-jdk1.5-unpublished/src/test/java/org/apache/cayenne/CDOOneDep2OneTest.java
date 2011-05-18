@@ -195,12 +195,12 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// do save
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -294,7 +294,7 @@ argument_list|)
 expr_stmt|;
 comment|// do save
 comment|// *** TESTING THIS ***
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
@@ -325,7 +325,7 @@ operator|.
 name|getObjectId
 argument_list|()
 argument_list|,
-name|ctxt
+name|context
 operator|.
 name|localObject
 argument_list|(
@@ -369,19 +369,19 @@ argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|ctxt
+name|context
 operator|.
 name|hasChanges
 argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// do save
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
@@ -497,7 +497,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// do save II
-name|ctxt
+name|context
 operator|.
 name|commitChanges
 argument_list|()
@@ -510,7 +510,7 @@ operator|.
 name|getObjectId
 argument_list|()
 decl_stmt|;
-name|ctxt
+name|context
 operator|=
 name|createDataContext
 argument_list|()
