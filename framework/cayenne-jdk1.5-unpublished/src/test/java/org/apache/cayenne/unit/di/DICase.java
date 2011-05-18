@@ -84,9 +84,51 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+try|try
+block|{
 name|setUpAfterInjection
 argument_list|()
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|e
+parameter_list|)
+block|{
+comment|// must stop the lifecycle manager (do the same thing we'd normally do in
+comment|// 'tearDown' ), otherwise following tests will end up in
+comment|// a bad state
+try|try
+block|{
+name|getUnitTestInjector
+argument_list|()
+operator|.
+name|getInstance
+argument_list|(
+name|UnitTestLifecycleManager
+operator|.
+name|class
+argument_list|)
+operator|.
+name|tearDown
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|x
+parameter_list|)
+block|{
+comment|// swallow...
+block|}
+throw|throw
+name|e
+throw|;
+block|}
 block|}
 annotation|@
 name|Override
