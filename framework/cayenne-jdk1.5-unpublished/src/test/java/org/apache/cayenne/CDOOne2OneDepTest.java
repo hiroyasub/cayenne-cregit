@@ -15,11 +15,29 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Map
+name|cayenne
+operator|.
+name|access
+operator|.
+name|DataContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Inject
 import|;
 end_import
 
@@ -71,13 +89,42 @@ name|PaintingInfo
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|UseServerRuntime
+import|;
+end_import
+
 begin_class
+annotation|@
+name|UseServerRuntime
+argument_list|(
+literal|"cayenne-small-testmap.xml"
+argument_list|)
 specifier|public
 class|class
 name|CDOOne2OneDepTest
 extends|extends
 name|CayenneDOTestBase
 block|{
+annotation|@
+name|Inject
+specifier|private
+name|ObjectContext
+name|context1
+decl_stmt|;
 specifier|public
 name|void
 name|testRollbackDependent
@@ -192,8 +239,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|=
-name|createDataContext
-argument_list|()
+name|context1
 expr_stmt|;
 comment|// test database data
 name|Painting
@@ -246,8 +292,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|=
-name|createDataContext
-argument_list|()
+name|context1
 expr_stmt|;
 comment|// test database data
 name|Painting
@@ -343,8 +388,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|=
-name|createDataContext
-argument_list|()
+name|context1
 expr_stmt|;
 comment|// test database data
 name|Painting
@@ -424,8 +468,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|=
-name|createDataContext
-argument_list|()
+name|context1
 expr_stmt|;
 name|Painting
 name|painting
@@ -446,10 +489,15 @@ name|Fault
 argument_list|)
 expr_stmt|;
 comment|// test that taking a snapshot does not trigger a fault, and generally works well
-name|Map
+name|DataRow
 name|snapshot
 init|=
+operator|(
+operator|(
+name|DataContext
+operator|)
 name|context
+operator|)
 operator|.
 name|currentSnapshot
 argument_list|(
