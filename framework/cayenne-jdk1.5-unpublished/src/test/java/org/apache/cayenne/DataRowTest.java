@@ -15,6 +15,16 @@ end_package
 
 begin_import
 import|import
+name|junit
+operator|.
+name|framework
+operator|.
+name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -45,30 +55,12 @@ name|HessianUtil
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
-import|;
-end_import
-
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
 name|DataRowTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
 specifier|public
 name|void
