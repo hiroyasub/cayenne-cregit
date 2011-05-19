@@ -139,9 +139,9 @@ name|unit
 operator|.
 name|di
 operator|.
-name|server
+name|client
 operator|.
-name|ServerCase
+name|ClientCase
 import|;
 end_import
 
@@ -151,7 +151,7 @@ specifier|abstract
 class|class
 name|RemoteCayenneCase
 extends|extends
-name|ServerCase
+name|ClientCase
 block|{
 specifier|protected
 name|CayenneContext
