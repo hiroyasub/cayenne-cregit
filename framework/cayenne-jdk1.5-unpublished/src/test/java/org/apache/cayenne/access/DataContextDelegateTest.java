@@ -253,6 +253,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"EXHIBIT"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"GALLERY"
 argument_list|)
 expr_stmt|;
