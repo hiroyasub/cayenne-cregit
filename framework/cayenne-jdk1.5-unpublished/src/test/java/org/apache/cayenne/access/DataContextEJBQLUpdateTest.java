@@ -270,6 +270,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"BOOLEAN_TEST"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"PAINTING_INFO"
 argument_list|)
 expr_stmt|;
