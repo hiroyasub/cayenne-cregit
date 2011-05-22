@@ -521,13 +521,11 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|toProviderInstance
+name|toProvider
 argument_list|(
-operator|new
-name|CayenneResourcesSQLTemplateCustomizerProvider
-argument_list|(
-name|resources
-argument_list|)
+name|SQLTemplateCustomizerProvider
+operator|.
+name|class
 argument_list|)
 expr_stmt|;
 comment|// test-scoped objects
