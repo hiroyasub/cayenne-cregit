@@ -649,6 +649,8 @@ name|performQueries
 parameter_list|(
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Query
 argument_list|>
 name|queries

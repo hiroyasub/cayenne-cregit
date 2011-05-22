@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines methods used to run Cayenne queries.  *   */
+comment|/**  * Defines methods used to run Cayenne queries.  */
 end_comment
 
 begin_interface
@@ -68,6 +68,8 @@ name|performQueries
 parameter_list|(
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Query
 argument_list|>
 name|queries

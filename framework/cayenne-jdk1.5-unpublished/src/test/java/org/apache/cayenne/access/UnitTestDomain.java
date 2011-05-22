@@ -216,6 +216,11 @@ name|void
 name|performQueries
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Query
+argument_list|>
 name|queries
 parameter_list|,
 name|OperationObserver
@@ -242,6 +247,11 @@ name|void
 name|checkQueryAllowed
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Query
+argument_list|>
 name|queries
 parameter_list|)
 throws|throws

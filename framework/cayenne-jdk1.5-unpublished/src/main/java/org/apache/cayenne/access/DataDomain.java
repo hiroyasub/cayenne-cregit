@@ -1981,6 +1981,8 @@ parameter_list|(
 specifier|final
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Query
 argument_list|>
 name|queries
@@ -2567,7 +2569,7 @@ operator|=
 name|queryCache
 expr_stmt|;
 block|}
-comment|/**      * Sets factory for creating QueryBuilders      * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
+comment|/**      * Sets factory for creating QueryBuilders      *       * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
 specifier|public
 name|void
 name|setQueryBuilderFactory
