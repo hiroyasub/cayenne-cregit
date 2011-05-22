@@ -17,15 +17,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|junit
 operator|.
-name|apache
+name|framework
 operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|CayenneCase
+name|TestCase
 import|;
 end_import
 
@@ -43,16 +39,14 @@ name|IDUtil
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|QueryLoggerTest
 extends|extends
-name|CayenneCase
+name|TestCase
 block|{
 specifier|public
 name|void

@@ -205,14 +205,6 @@ name|MULTI_TIER_ACCESS_STACK
 init|=
 literal|"MultiTierStack"
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|QUALIFIED_ACCESS_STACK
-init|=
-literal|"QualifiedStack"
-decl_stmt|;
 specifier|protected
 name|AccessStack
 name|accessStack
