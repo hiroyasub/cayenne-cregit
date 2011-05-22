@@ -200,7 +200,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"No type inmformation for null value at index "
+literal|"No type information for null value at index "
 operator|+
 name|i
 argument_list|)
