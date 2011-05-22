@@ -29,24 +29,6 @@ name|DataNode
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|UnitTestDomain
-import|;
-end_import
-
-begin_comment
-comment|/**  * DataDomain wrapper used for testing a specific Cayenne stack configuration.  */
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
@@ -58,16 +40,6 @@ parameter_list|(
 name|DataNode
 name|node
 parameter_list|)
-function_decl|;
-name|UnitTestDomain
-name|getDataDomain
-parameter_list|()
-function_decl|;
-name|void
-name|deleteTestData
-parameter_list|()
-throws|throws
-name|Exception
 function_decl|;
 name|void
 name|dropSchema

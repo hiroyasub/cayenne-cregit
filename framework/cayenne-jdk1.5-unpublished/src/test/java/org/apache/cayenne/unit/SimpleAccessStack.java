@@ -611,9 +611,7 @@ expr_stmt|;
 comment|// use shared data source in all cases but the multi-node...
 if|if
 condition|(
-name|MultiNodeCase
-operator|.
-name|NODE1
+literal|"map-db1"
 operator|.
 name|equals
 argument_list|(
@@ -623,9 +621,7 @@ name|getName
 argument_list|()
 argument_list|)
 operator|||
-name|MultiNodeCase
-operator|.
-name|NODE2
+literal|"map-db1"
 operator|.
 name|equals
 argument_list|(
@@ -676,53 +672,6 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * Returns DataDomain for this AccessStack.      */
-specifier|public
-name|UnitTestDomain
-name|getDataDomain
-parameter_list|()
-block|{
-return|return
-name|domain
-return|;
-block|}
-comment|/**      * Deletes all data from the database tables mentioned in the DataMap.      */
-specifier|public
-name|void
-name|deleteTestData
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-for|for
-control|(
-name|DataNode
-name|node
-range|:
-name|domain
-operator|.
-name|getDataNodes
-argument_list|()
-control|)
-block|{
-name|deleteTestData
-argument_list|(
-name|node
-argument_list|,
-name|node
-operator|.
-name|getDataMaps
-argument_list|()
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 comment|/** Drops all test tables. */
 specifier|public
