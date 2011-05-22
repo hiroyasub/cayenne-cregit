@@ -353,6 +353,22 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
+init|=
+operator|new
+name|ServerCaseDataSourceFactory
+argument_list|(
+name|resources
+operator|.
+name|getConnectionInfo
+argument_list|()
+argument_list|,
+literal|"map-db1"
+argument_list|,
+literal|"map-db2"
+argument_list|)
+decl_stmt|;
 comment|// these are the objects injectable in unit tests that subclass from
 comment|// ServerCase. Note that ServerRuntimeProvider creates ServerRuntime
 comment|// instances complete with their own DI injectors, independent from the
@@ -422,9 +438,9 @@ operator|.
 name|toProviderInstance
 argument_list|(
 operator|new
-name|CayenneResourcesDataSourceProvider
+name|ServerCaseSharedDataSourceProvider
 argument_list|(
-name|resources
+name|dataSourceFactory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -593,6 +609,8 @@ operator|new
 name|ServerRuntimeProvider
 argument_list|(
 name|resources
+argument_list|,
+name|dataSourceFactory
 argument_list|)
 argument_list|)
 operator|.

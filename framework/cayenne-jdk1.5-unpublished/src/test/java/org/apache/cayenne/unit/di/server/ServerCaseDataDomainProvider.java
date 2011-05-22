@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -153,13 +143,13 @@ name|DataDomainProvider
 block|{
 annotation|@
 name|Inject
-specifier|protected
-name|DataSource
-name|dataSource
+specifier|private
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
 decl_stmt|;
 annotation|@
 name|Inject
-specifier|protected
+specifier|private
 name|DbAdapter
 name|adapter
 decl_stmt|;
@@ -198,8 +188,7 @@ operator|.
 name|createAndInitDataDomain
 argument_list|()
 decl_stmt|;
-comment|// add nodes dynamically
-comment|// TODO: andrus, 06/14/2010 should probably map them in XML to avoid this mess...
+comment|// add nodes and DataSources dynamically...
 for|for
 control|(
 name|DataMap
@@ -223,11 +212,20 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+comment|// shared or dedicated DataSources can be mapped per DataMap
 name|node
 operator|.
 name|setDataSource
 argument_list|(
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getDataSource
+argument_list|(
+name|dataMap
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|node
@@ -263,14 +261,6 @@ comment|//
 comment|// // tweak mapping with a delegate
 comment|// for (Procedure proc : map.getProcedures()) {
 comment|// getAdapter(node).tweakProcedure(proc);
-comment|// }
-comment|// use shared data source in all cases but the multi-node...
-comment|// if (MultiNodeCase.NODE1.equals(node.getName())
-comment|// || MultiNodeCase.NODE2.equals(node.getName())) {
-comment|// node.setDataSource(resources.createDataSource());
-comment|// }
-comment|// else {
-comment|// node.setDataSource(resources.getDataSource());
 comment|// }
 name|domain
 operator|.

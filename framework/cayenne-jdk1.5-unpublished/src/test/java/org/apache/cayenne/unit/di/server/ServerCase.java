@@ -167,6 +167,14 @@ name|DEFAULT_PROJECT
 init|=
 literal|"cayenne-default.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|MULTINODE_PROJECT
+init|=
+literal|"cayenne-multinode.xml"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final

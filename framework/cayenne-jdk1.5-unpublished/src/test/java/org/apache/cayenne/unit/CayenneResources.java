@@ -821,9 +821,6 @@ block|{
 name|AccessStackAdapter
 name|stackAdapter
 init|=
-operator|(
-name|AccessStackAdapter
-operator|)
 name|adapterMap
 operator|.
 name|get
