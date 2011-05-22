@@ -141,6 +141,8 @@ literal|"cay743/cayenne-domain.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|DataDomain
 name|domain
 init|=
@@ -257,6 +259,15 @@ argument_list|,
 name|oe11
 argument_list|)
 expr_stmt|;
+block|}
+finally|finally
+block|{
+name|injector
+operator|.
+name|shutdown
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class
