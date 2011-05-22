@@ -409,16 +409,6 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Returns connection information.      */
-specifier|public
-name|DataSourceInfo
-name|getConnectionInfo
-parameter_list|()
-block|{
-return|return
-name|connectionInfo
-return|;
-block|}
 specifier|public
 name|DataSource
 name|createDataSource
