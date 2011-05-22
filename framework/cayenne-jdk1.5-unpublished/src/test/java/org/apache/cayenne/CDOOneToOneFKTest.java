@@ -198,14 +198,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"TO_ONEFK2"
+literal|"TO_ONEFK1"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"TO_ONEFK1"
+literal|"TO_ONEFK2"
 argument_list|)
 expr_stmt|;
 block|}
