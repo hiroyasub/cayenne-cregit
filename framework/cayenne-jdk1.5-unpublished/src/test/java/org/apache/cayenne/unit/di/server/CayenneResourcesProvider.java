@@ -400,13 +400,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|resources
-operator|.
-name|setConnectionInfo
-argument_list|(
-name|dataSourceInfo
-argument_list|)
-expr_stmt|;
 comment|// rebuild schema after the resources instance is loaded so that after
 comment|// possible initial failure we don't attempt rebuilding schema in subsequent
 comment|// tests
@@ -570,6 +563,11 @@ operator|new
 name|SchemaHelper
 argument_list|(
 name|dataSource
+argument_list|,
+name|dataSourceInfo
+operator|.
+name|getAdapterClassName
+argument_list|()
 argument_list|,
 name|resources
 argument_list|,
