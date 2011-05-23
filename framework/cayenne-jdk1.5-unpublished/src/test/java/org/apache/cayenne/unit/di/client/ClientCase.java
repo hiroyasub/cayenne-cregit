@@ -73,6 +73,20 @@ name|cayenne
 operator|.
 name|unit
 operator|.
+name|CayenneResources
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
 name|di
 operator|.
 name|DICase
@@ -152,6 +166,16 @@ name|ClientCaseModule
 argument_list|(
 name|testScope
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// this triggers schema setup
+name|injector
+operator|.
+name|getInstance
+argument_list|(
+name|CayenneResources
+operator|.
+name|class
 argument_list|)
 expr_stmt|;
 block|}
