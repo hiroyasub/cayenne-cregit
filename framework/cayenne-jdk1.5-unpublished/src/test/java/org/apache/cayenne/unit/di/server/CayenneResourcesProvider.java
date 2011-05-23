@@ -31,6 +31,16 @@ end_import
 
 begin_import
 import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|DataSource
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -302,6 +312,12 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
+name|DataSource
+name|dataSource
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|private
 name|DataSourceInfo
 name|dataSourceInfo
 decl_stmt|;
@@ -553,6 +569,8 @@ init|=
 operator|new
 name|SchemaHelper
 argument_list|(
+name|dataSource
+argument_list|,
 name|resources
 argument_list|,
 name|maps
