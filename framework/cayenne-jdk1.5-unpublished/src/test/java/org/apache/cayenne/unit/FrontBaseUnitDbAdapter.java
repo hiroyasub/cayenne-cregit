@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Connection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -29,15 +49,33 @@ name|DbAdapter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DataMap
+import|;
+end_import
+
+begin_comment
+comment|/**  */
+end_comment
+
 begin_class
 specifier|public
 class|class
-name|SQLiteStackAdapter
+name|FrontBaseUnitDbAdapter
 extends|extends
-name|AccessStackAdapter
+name|UnitDbAdapter
 block|{
 specifier|public
-name|SQLiteStackAdapter
+name|FrontBaseUnitDbAdapter
 parameter_list|(
 name|DbAdapter
 name|adapter
@@ -53,7 +91,18 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|supportsFKConstraints
+name|supportsLobs
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsLobInsertsAsStrings
 parameter_list|()
 block|{
 return|return
@@ -64,7 +113,38 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|supportsColumnTypeReengineering
+name|supportsEqualNullSyntax
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|willDropTables
+parameter_list|(
+name|Connection
+name|conn
+parameter_list|,
+name|DataMap
+name|map
+parameter_list|,
+name|Collection
+name|tablesToDrop
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+comment|// avoid dropping constraints...
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsBatchPK
 parameter_list|()
 block|{
 return|return
@@ -75,9 +155,13 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|supportsCaseSensitiveLike
+name|supportsHaving
 parameter_list|()
 block|{
+comment|// FrontBase DOES support HAVING, however it doesn't support aggegate expressions
+comment|// in HAVING, and requires using column aliases instead. As HAVING is used for old
+comment|// and ugly derived DbEntities, no point in implementing special support at the
+comment|// adapter level.
 return|return
 literal|false
 return|;
@@ -86,9 +170,12 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|supportsAllAnySome
+name|supportsCaseInsensitiveOrder
 parameter_list|()
 block|{
+comment|// TODO, Andrus 11/8/2005: FrontBase does support UPPER() in ordering clause,
+comment|// however it does not
+comment|// support table aliases inside UPPER... Not sure what to do about it.
 return|return
 literal|false
 return|;

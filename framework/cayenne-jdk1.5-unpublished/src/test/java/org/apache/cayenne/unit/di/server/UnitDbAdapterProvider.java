@@ -131,7 +131,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|AccessStackAdapter
+name|UnitDbAdapter
 import|;
 end_import
 
@@ -152,11 +152,11 @@ end_import
 begin_class
 specifier|public
 class|class
-name|AccessStackAdapterProvider
+name|UnitDbAdapterProvider
 implements|implements
 name|Provider
 argument_list|<
-name|AccessStackAdapter
+name|UnitDbAdapter
 argument_list|>
 block|{
 specifier|static
@@ -184,7 +184,7 @@ argument_list|>
 name|adapterTypesMap
 decl_stmt|;
 specifier|public
-name|AccessStackAdapterProvider
+name|UnitDbAdapterProvider
 parameter_list|(
 annotation|@
 name|Inject
@@ -230,7 +230,7 @@ name|adapter
 expr_stmt|;
 block|}
 specifier|public
-name|AccessStackAdapter
+name|UnitDbAdapter
 name|get
 parameter_list|()
 throws|throws
@@ -271,7 +271,7 @@ throw|;
 block|}
 name|Class
 argument_list|<
-name|AccessStackAdapter
+name|UnitDbAdapter
 argument_list|>
 name|type
 decl_stmt|;
@@ -282,7 +282,7 @@ operator|=
 operator|(
 name|Class
 argument_list|<
-name|AccessStackAdapter
+name|UnitDbAdapter
 argument_list|>
 operator|)
 name|Util
@@ -314,7 +314,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|AccessStackAdapter
+name|UnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -338,7 +338,7 @@ try|try
 block|{
 name|Constructor
 argument_list|<
-name|AccessStackAdapter
+name|UnitDbAdapter
 argument_list|>
 name|c
 init|=

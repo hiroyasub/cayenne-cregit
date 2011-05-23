@@ -477,7 +477,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|AccessStackAdapter
+name|DB2UnitDbAdapter
 import|;
 end_import
 
@@ -491,7 +491,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|CayenneResources
+name|FrontBaseUnitDbAdapter
 import|;
 end_import
 
@@ -505,7 +505,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|DB2StackAdapter
+name|H2UnitDbAdapter
 import|;
 end_import
 
@@ -519,7 +519,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|FrontBaseStackAdapter
+name|HSQLDBUnitDbAdapter
 import|;
 end_import
 
@@ -533,7 +533,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|H2StackAdapter
+name|IngresUnitDbAdapter
 import|;
 end_import
 
@@ -547,7 +547,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|HSQLDBStackAdapter
+name|MySQLUnitDbAdapter
 import|;
 end_import
 
@@ -561,7 +561,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|IngresStackAdapter
+name|OpenBaseUnitDbAdapter
 import|;
 end_import
 
@@ -575,7 +575,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|MySQLStackAdapter
+name|OracleUnitDbAdapter
 import|;
 end_import
 
@@ -589,7 +589,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|OpenBaseStackAdapter
+name|PostgresUnitDbAdapter
 import|;
 end_import
 
@@ -603,7 +603,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|OracleStackAdapter
+name|SQLServerUnitDbAdapter
 import|;
 end_import
 
@@ -617,7 +617,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|PostgresStackAdapter
+name|SQLiteUnitDbAdapter
 import|;
 end_import
 
@@ -631,7 +631,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|SQLServerStackAdapter
+name|SybaseUnitDbAdapter
 import|;
 end_import
 
@@ -645,21 +645,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|SQLiteStackAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|SybaseStackAdapter
+name|UnitDbAdapter
 import|;
 end_import
 
@@ -753,7 +739,7 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
-name|AccessStackAdapterProvider
+name|UnitDbAdapterProvider
 operator|.
 name|TEST_ADAPTERS_MAP
 argument_list|)
@@ -767,7 +753,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|OracleStackAdapter
+name|OracleUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -784,7 +770,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|OracleStackAdapter
+name|OracleUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -801,7 +787,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|SybaseStackAdapter
+name|SybaseUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -818,7 +804,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|MySQLStackAdapter
+name|MySQLUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -835,7 +821,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|PostgresStackAdapter
+name|PostgresUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -852,7 +838,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|OpenBaseStackAdapter
+name|OpenBaseUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -869,7 +855,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|SQLServerStackAdapter
+name|SQLServerUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -886,7 +872,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|DB2StackAdapter
+name|DB2UnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -903,7 +889,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|HSQLDBStackAdapter
+name|HSQLDBUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -920,7 +906,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|H2StackAdapter
+name|H2UnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -937,7 +923,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|FrontBaseStackAdapter
+name|FrontBaseUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -954,7 +940,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|IngresStackAdapter
+name|IngresUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -971,7 +957,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|SQLiteStackAdapter
+name|SQLiteUnitDbAdapter
 operator|.
 name|class
 operator|.
@@ -983,14 +969,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|CayenneResources
+name|SchemaHelper
 operator|.
 name|class
 argument_list|)
 operator|.
-name|toProvider
+name|to
 argument_list|(
-name|CayenneResourcesProvider
+name|SchemaHelper
 operator|.
 name|class
 argument_list|)
@@ -1082,18 +1068,21 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|AccessStackAdapter
+name|UnitDbAdapter
 operator|.
 name|class
 argument_list|)
 operator|.
 name|toProvider
 argument_list|(
-name|AccessStackAdapterProvider
+name|UnitDbAdapterProvider
 operator|.
 name|class
 argument_list|)
 expr_stmt|;
+comment|// this factory is a hack that allows to inject to DbAdapters loaded outside of
+comment|// server runtime... BatchQueryBuilderFactory is hardcoded and whatever is placed
+comment|// in the ServerModule is ignored
 name|binder
 operator|.
 name|bind

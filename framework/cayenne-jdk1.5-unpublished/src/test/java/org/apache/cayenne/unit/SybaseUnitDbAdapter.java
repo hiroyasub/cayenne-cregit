@@ -162,13 +162,13 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|SybaseStackAdapter
+name|SybaseUnitDbAdapter
 extends|extends
-name|AccessStackAdapter
+name|UnitDbAdapter
 block|{
 comment|/**      * Constructor for SybaseDelegate.      *       * @param adapter      */
 specifier|public
-name|SybaseStackAdapter
+name|SybaseUnitDbAdapter
 parameter_list|(
 name|DbAdapter
 name|adapter

@@ -85,7 +85,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|AccessStackAdapter
+name|UnitDbAdapter
 import|;
 end_import
 
@@ -99,7 +99,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|SQLServerStackAdapter
+name|SQLServerUnitDbAdapter
 import|;
 end_import
 
@@ -162,7 +162,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|AccessStackAdapter
+name|UnitDbAdapter
 name|accessStackAdapter
 decl_stmt|;
 specifier|public
@@ -229,7 +229,7 @@ if|if
 condition|(
 name|accessStackAdapter
 operator|instanceof
-name|SQLServerStackAdapter
+name|SQLServerUnitDbAdapter
 condition|)
 block|{
 name|assertNotNull

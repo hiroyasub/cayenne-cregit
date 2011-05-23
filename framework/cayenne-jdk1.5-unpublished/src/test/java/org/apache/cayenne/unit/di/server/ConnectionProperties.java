@@ -12,6 +12,10 @@ operator|.
 name|cayenne
 operator|.
 name|unit
+operator|.
+name|di
+operator|.
+name|server
 package|;
 end_package
 
@@ -148,7 +152,6 @@ comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects usin
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|ConnectionProperties
 block|{
@@ -295,12 +298,12 @@ name|DRIVER_KEY_MAVEN
 init|=
 literal|"cayenneJdbcDriver"
 decl_stmt|;
-specifier|protected
+specifier|private
 specifier|static
 name|ConnectionProperties
 name|sharedInstance
 decl_stmt|;
-specifier|protected
+specifier|private
 specifier|static
 name|Map
 argument_list|<
@@ -1617,6 +1620,9 @@ name|props
 parameter_list|)
 block|{
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|props

@@ -209,7 +209,7 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|AccessStackAdapter
+name|UnitDbAdapter
 import|;
 end_import
 
@@ -248,7 +248,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|AccessStackAdapter
+name|UnitDbAdapter
 name|accessStackAdapter
 decl_stmt|;
 annotation|@

@@ -262,7 +262,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|AccessStackAdapter
+name|UnitDbAdapter
 block|{
 specifier|private
 specifier|static
@@ -273,7 +273,7 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|AccessStackAdapter
+name|UnitDbAdapter
 operator|.
 name|class
 argument_list|)
@@ -283,7 +283,7 @@ name|DbAdapter
 name|adapter
 decl_stmt|;
 specifier|public
-name|AccessStackAdapter
+name|UnitDbAdapter
 parameter_list|(
 name|DbAdapter
 name|adapter

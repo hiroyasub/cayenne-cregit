@@ -70,12 +70,12 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|OpenBaseStackAdapter
+name|OpenBaseUnitDbAdapter
 extends|extends
-name|AccessStackAdapter
+name|UnitDbAdapter
 block|{
 specifier|public
-name|OpenBaseStackAdapter
+name|OpenBaseUnitDbAdapter
 parameter_list|(
 name|DbAdapter
 name|adapter

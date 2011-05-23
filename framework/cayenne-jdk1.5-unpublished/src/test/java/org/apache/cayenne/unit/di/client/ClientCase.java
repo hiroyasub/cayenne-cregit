@@ -73,7 +73,9 @@ name|cayenne
 operator|.
 name|unit
 operator|.
-name|CayenneResources
+name|di
+operator|.
+name|DICase
 import|;
 end_import
 
@@ -89,7 +91,9 @@ name|unit
 operator|.
 name|di
 operator|.
-name|DICase
+name|server
+operator|.
+name|SchemaHelper
 import|;
 end_import
 
@@ -168,15 +172,17 @@ name|testScope
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// this triggers schema setup
 name|injector
 operator|.
 name|getInstance
 argument_list|(
-name|CayenneResources
+name|SchemaHelper
 operator|.
 name|class
 argument_list|)
+operator|.
+name|rebuildSchema
+argument_list|()
 expr_stmt|;
 block|}
 annotation|@
