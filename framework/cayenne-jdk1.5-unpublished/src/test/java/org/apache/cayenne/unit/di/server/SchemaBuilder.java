@@ -424,7 +424,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|SchemaHelper
+name|SchemaBuilder
 block|{
 specifier|private
 specifier|static
@@ -435,7 +435,7 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|SchemaHelper
+name|SchemaBuilder
 operator|.
 name|class
 argument_list|)
@@ -531,7 +531,7 @@ name|DataDomain
 name|domain
 decl_stmt|;
 specifier|public
-name|SchemaHelper
+name|SchemaBuilder
 parameter_list|(
 annotation|@
 name|Inject

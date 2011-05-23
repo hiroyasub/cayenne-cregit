@@ -193,7 +193,7 @@ name|injector
 operator|.
 name|getInstance
 argument_list|(
-name|SchemaHelper
+name|SchemaBuilder
 operator|.
 name|class
 argument_list|)

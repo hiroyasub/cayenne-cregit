@@ -969,14 +969,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|SchemaHelper
+name|SchemaBuilder
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|SchemaHelper
+name|SchemaBuilder
 operator|.
 name|class
 argument_list|)

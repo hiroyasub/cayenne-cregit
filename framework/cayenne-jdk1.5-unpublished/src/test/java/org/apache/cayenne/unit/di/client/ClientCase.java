@@ -93,7 +93,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|SchemaHelper
+name|SchemaBuilder
 import|;
 end_import
 
@@ -176,7 +176,7 @@ name|injector
 operator|.
 name|getInstance
 argument_list|(
-name|SchemaHelper
+name|SchemaBuilder
 operator|.
 name|class
 argument_list|)
