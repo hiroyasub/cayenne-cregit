@@ -523,6 +523,10 @@ name|UnitDbAdapter
 name|unitDbAdapter
 decl_stmt|;
 specifier|private
+name|DbAdapter
+name|dbAdapter
+decl_stmt|;
+specifier|private
 name|DataDomain
 name|domain
 decl_stmt|;
@@ -538,6 +542,11 @@ annotation|@
 name|Inject
 name|UnitDbAdapter
 name|unitDbAdapter
+parameter_list|,
+annotation|@
+name|Inject
+name|DbAdapter
+name|dbAdapter
 parameter_list|)
 block|{
 name|this
@@ -551,6 +560,12 @@ operator|.
 name|unitDbAdapter
 operator|=
 name|unitDbAdapter
+expr_stmt|;
+name|this
+operator|.
+name|dbAdapter
+operator|=
+name|dbAdapter
 expr_stmt|;
 block|}
 comment|/**      * Completely rebuilds test schema.      */
@@ -780,10 +795,7 @@ name|node
 operator|.
 name|setAdapter
 argument_list|(
-name|unitDbAdapter
-operator|.
-name|getAdapter
-argument_list|()
+name|dbAdapter
 argument_list|)
 expr_stmt|;
 name|node

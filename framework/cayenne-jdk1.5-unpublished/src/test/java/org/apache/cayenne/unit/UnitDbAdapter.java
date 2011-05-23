@@ -311,15 +311,6 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-specifier|public
-name|DbAdapter
-name|getAdapter
-parameter_list|()
-block|{
-return|return
-name|adapter
-return|;
-block|}
 comment|/**      * Drops all table constraints.      */
 specifier|public
 name|void
@@ -486,8 +477,7 @@ decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
-name|getAdapter
-argument_list|()
+name|adapter
 operator|.
 name|getQuotingStrategy
 argument_list|(
@@ -860,6 +850,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a file under test resources DDL directory for the specified database.      */
+specifier|private
 name|String
 name|ddlString
 parameter_list|(
@@ -1148,8 +1139,7 @@ decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
-name|getAdapter
-argument_list|()
+name|adapter
 operator|.
 name|getQuotingStrategy
 argument_list|(
