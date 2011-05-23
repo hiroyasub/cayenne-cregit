@@ -335,14 +335,6 @@ name|adapterClassName
 argument_list|)
 throw|;
 block|}
-comment|// post init
-name|stackAdapter
-operator|.
-name|unchecked
-argument_list|(
-name|this
-argument_list|)
-expr_stmt|;
 return|return
 name|stackAdapter
 return|;

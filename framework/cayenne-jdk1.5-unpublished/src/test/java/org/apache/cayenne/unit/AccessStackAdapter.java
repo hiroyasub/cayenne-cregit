@@ -320,15 +320,6 @@ return|return
 name|adapter
 return|;
 block|}
-specifier|public
-name|void
-name|unchecked
-parameter_list|(
-name|CayenneResources
-name|resources
-parameter_list|)
-block|{
-block|}
 comment|/**      * Drops all table constraints.      */
 specifier|public
 name|void
