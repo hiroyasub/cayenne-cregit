@@ -91,7 +91,7 @@ operator|.
 name|begin
 argument_list|()
 expr_stmt|;
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logBeginTransaction
 argument_list|(
@@ -177,6 +177,9 @@ init|=
 literal|null
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|connections
@@ -260,7 +263,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logRollbackTransaction
 argument_list|(
@@ -294,7 +297,7 @@ block|}
 block|}
 else|else
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logCommitTransaction
 argument_list|(
@@ -340,6 +343,9 @@ init|=
 literal|null
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|connections

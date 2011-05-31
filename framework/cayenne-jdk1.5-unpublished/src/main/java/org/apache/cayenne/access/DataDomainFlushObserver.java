@@ -81,6 +81,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -153,6 +167,24 @@ name|DataDomainFlushObserver
 implements|implements
 name|OperationObserver
 block|{
+comment|/**      * @since 3.1      */
+specifier|private
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
+name|DataDomainFlushObserver
+parameter_list|(
+name|JdbcEventLogger
+name|logger
+parameter_list|)
+block|{
+name|this
+operator|.
+name|logger
+operator|=
+name|logger
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|nextQueryException
@@ -460,7 +492,7 @@ name|next
 argument_list|()
 decl_stmt|;
 comment|// Log the generated PK
-name|QueryLogger
+name|logger
 operator|.
 name|logGeneratedKey
 argument_list|(

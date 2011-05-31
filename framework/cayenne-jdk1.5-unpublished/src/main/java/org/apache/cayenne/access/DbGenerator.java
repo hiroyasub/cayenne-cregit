@@ -237,6 +237,34 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|NoopJdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -418,6 +446,10 @@ specifier|protected
 name|DataDomain
 name|domain
 decl_stmt|;
+specifier|protected
+name|JdbcEventLogger
+name|jdbcEventLogger
+decl_stmt|;
 comment|// stores generated SQL statements
 specifier|protected
 name|Map
@@ -505,7 +537,9 @@ specifier|protected
 name|ValidationResult
 name|failures
 decl_stmt|;
-comment|/**      * Creates and initializes new DbGenerator.      */
+comment|/**      * Creates and initializes new DbGenerator.      *       * @deprecated since 3.1 use {@link #DbGenerator(DbAdapter, DataMap, JdbcEventLogger)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DbGenerator
 parameter_list|(
@@ -532,7 +566,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates and initializes new DbGenerator instance.      *       * @param adapter DbAdapter corresponding to the database      * @param map DataMap whose entities will be used in schema generation      * @param excludedEntities entities that should be ignored during schema generation      */
+comment|/**      * Creates and initializes new DbGenerator instance.      *       * @param adapter DbAdapter corresponding to the database      * @param map DataMap whose entities will be used in schema generation      * @param excludedEntities entities that should be ignored during schema generation      * @deprecated since 3.1 use      *             {@link #DbGenerator(DbAdapter, DataMap, Collection, DataDomain, JdbcEventLogger)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DbGenerator
 parameter_list|(
@@ -558,10 +594,81 @@ argument_list|,
 name|excludedEntities
 argument_list|,
 literal|null
+argument_list|,
+name|NoopJdbcEventLogger
+operator|.
+name|getInstance
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates and initializes new DbGenerator instance.      *       * @param adapter DbAdapter corresponding to the database      * @param map DataMap whose entities will be used in schema generation      * @param excludedEntities entities that should be ignored during schema generation      * @param domain optional DataDomain used to detect cross-database relationships.      * @since 1.2      */
+comment|/**      * @since 3.1      */
+specifier|public
+name|DbGenerator
+parameter_list|(
+name|DbAdapter
+name|adapter
+parameter_list|,
+name|DataMap
+name|map
+parameter_list|,
+name|JdbcEventLogger
+name|logger
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|adapter
+argument_list|,
+name|map
+argument_list|,
+name|logger
+argument_list|,
+name|Collections
+operator|.
+expr|<
+name|DbEntity
+operator|>
+name|emptyList
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|DbGenerator
+parameter_list|(
+name|DbAdapter
+name|adapter
+parameter_list|,
+name|DataMap
+name|map
+parameter_list|,
+name|JdbcEventLogger
+name|logger
+parameter_list|,
+name|Collection
+argument_list|<
+name|DbEntity
+argument_list|>
+name|excludedEntities
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|adapter
+argument_list|,
+name|map
+argument_list|,
+name|excludedEntities
+argument_list|,
+literal|null
+argument_list|,
+name|logger
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Creates and initializes new DbGenerator instance.      *       * @param adapter DbAdapter corresponding to the database      * @param map DataMap whose entities will be used in schema generation      * @param excludedEntities entities that should be ignored during schema generation      * @param domain optional DataDomain used to detect cross-database relationships.      * @since 3.1      */
 specifier|public
 name|DbGenerator
 parameter_list|(
@@ -579,6 +686,9 @@ name|excludedEntities
 parameter_list|,
 name|DataDomain
 name|domain
+parameter_list|,
+name|JdbcEventLogger
+name|logger
 parameter_list|)
 block|{
 comment|// sanity check
@@ -629,6 +739,12 @@ operator|.
 name|adapter
 operator|=
 name|adapter
+expr_stmt|;
+name|this
+operator|.
+name|jdbcEventLogger
+operator|=
+name|logger
 expr_stmt|;
 name|prepareDbEntities
 argument_list|(
@@ -1470,7 +1586,7 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logQuery
 argument_list|(
@@ -1530,7 +1646,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logQueryError
 argument_list|(

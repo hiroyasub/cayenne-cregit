@@ -849,7 +849,12 @@ name|observer
 init|=
 operator|new
 name|DataDomainFlushObserver
+argument_list|(
+name|domain
+operator|.
+name|getJdbcEventLogger
 argument_list|()
+argument_list|)
 decl_stmt|;
 comment|// split query list by spanned nodes and run each single node range individually.
 comment|// Since connections are reused per node within an open transaction, there should

@@ -360,6 +360,11 @@ name|iterator
 operator|.
 name|next
 argument_list|()
+argument_list|,
+name|dataNode
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|gen

@@ -440,7 +440,7 @@ name|SQLException
 throws|,
 name|CayenneException
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logCommitTransaction
 argument_list|(
@@ -456,7 +456,7 @@ name|SQLException
 throws|,
 name|CayenneException
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logRollbackTransaction
 argument_list|(
@@ -484,6 +484,9 @@ block|{
 return|return;
 block|}
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|connections

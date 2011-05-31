@@ -285,6 +285,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -530,6 +544,10 @@ specifier|private
 name|DataDomain
 name|domain
 decl_stmt|;
+specifier|private
+name|JdbcEventLogger
+name|jdbcEventLogger
+decl_stmt|;
 specifier|public
 name|SchemaBuilder
 parameter_list|(
@@ -547,6 +565,11 @@ annotation|@
 name|Inject
 name|DbAdapter
 name|dbAdapter
+parameter_list|,
+annotation|@
+name|Inject
+name|JdbcEventLogger
+name|jdbcEventLogger
 parameter_list|)
 block|{
 name|this
@@ -566,6 +589,12 @@ operator|.
 name|dbAdapter
 operator|=
 name|dbAdapter
+expr_stmt|;
+name|this
+operator|.
+name|jdbcEventLogger
+operator|=
+name|jdbcEventLogger
 expr_stmt|;
 block|}
 comment|/**      * Completely rebuilds test schema.      */
@@ -1756,6 +1785,8 @@ argument_list|,
 literal|null
 argument_list|,
 name|domain
+argument_list|,
+name|jdbcEventLogger
 argument_list|)
 decl_stmt|;
 name|List
