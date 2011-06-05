@@ -209,6 +209,12 @@ decl_stmt|;
 name|shouldDelete
 operator|=
 name|selectedValue
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
+name|selectedValue
 operator|.
 name|equals
 argument_list|(
@@ -217,7 +223,7 @@ operator|.
 name|YES_OPTION
 argument_list|)
 expr_stmt|;
-comment|// If the user clicks "no", we'll just ignore whatever's in the checkbox because
+comment|// If the user clicks "no" or window close button, we'll just ignore whatever's in the checkbox because
 comment|// it's non-sensical.
 if|if
 condition|(
