@@ -109,14 +109,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"ARTIST"
+literal|"PAINTING"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"PAINTING"
+literal|"ARTIST"
 argument_list|)
 expr_stmt|;
 name|tArtist

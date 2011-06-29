@@ -254,7 +254,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"ARTIST"
+literal|"ARTIST_EXHIBIT"
 argument_list|)
 expr_stmt|;
 name|dbHelper
@@ -275,7 +275,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"ARTIST_EXHIBIT"
+literal|"ARTIST"
 argument_list|)
 expr_stmt|;
 name|tArtist

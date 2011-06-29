@@ -240,7 +240,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"FLATTENED_TEST_1"
+literal|"FLATTENED_TEST_3"
 argument_list|)
 expr_stmt|;
 name|dbHelper
@@ -254,7 +254,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"FLATTENED_TEST_3"
+literal|"FLATTENED_TEST_1"
 argument_list|)
 expr_stmt|;
 name|tFlattenedTest1

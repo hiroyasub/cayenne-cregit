@@ -195,6 +195,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"REFLEXIVE_AND_TO_ONE"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"RELATIONSHIP_HELPER"
 argument_list|)
 expr_stmt|;
