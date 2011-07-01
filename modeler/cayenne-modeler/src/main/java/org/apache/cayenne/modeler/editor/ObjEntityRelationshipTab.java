@@ -583,7 +583,7 @@ name|dialog
 operator|.
 name|objentity
 operator|.
-name|ObjRelationshipInfoController
+name|ObjRelationshipInfo
 import|;
 end_import
 
@@ -1345,7 +1345,7 @@ name|getModel
 argument_list|()
 decl_stmt|;
 operator|new
-name|ObjRelationshipInfoController
+name|ObjRelationshipInfo
 argument_list|(
 name|mediator
 argument_list|,
@@ -1357,7 +1357,7 @@ name|row
 argument_list|)
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 comment|/**                  * This is required for a table to be updated properly                  */
