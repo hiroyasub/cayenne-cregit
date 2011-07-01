@@ -391,7 +391,7 @@ name|dialog
 operator|.
 name|query
 operator|.
-name|QueryTypeController
+name|QueryType
 import|;
 end_import
 
@@ -1749,7 +1749,7 @@ argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
-name|QueryTypeController
+name|QueryType
 operator|.
 name|fireQueryEvent
 argument_list|(

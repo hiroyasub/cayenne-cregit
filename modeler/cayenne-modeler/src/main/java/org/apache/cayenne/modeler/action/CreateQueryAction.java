@@ -131,7 +131,7 @@ name|dialog
 operator|.
 name|query
 operator|.
-name|QueryTypeController
+name|QueryType
 import|;
 end_import
 
@@ -246,13 +246,19 @@ name|createQuery
 parameter_list|()
 block|{
 operator|new
-name|QueryTypeController
+name|QueryType
 argument_list|(
 name|getProjectController
 argument_list|()
+argument_list|,
+name|getProjectController
+argument_list|()
+operator|.
+name|getCurrentDataMap
+argument_list|()
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 block|}
