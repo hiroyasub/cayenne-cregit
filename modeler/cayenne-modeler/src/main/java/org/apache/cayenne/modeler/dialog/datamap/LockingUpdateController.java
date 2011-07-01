@@ -31,16 +31,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -195,7 +185,7 @@ extends|extends
 name|CayenneController
 block|{
 specifier|protected
-name|LockingUpdateDialog
+name|LockingUpdateView
 name|view
 decl_stmt|;
 specifier|protected
@@ -232,7 +222,7 @@ block|{
 name|view
 operator|=
 operator|new
-name|LockingUpdateDialog
+name|LockingUpdateView
 argument_list|()
 expr_stmt|;
 name|boolean

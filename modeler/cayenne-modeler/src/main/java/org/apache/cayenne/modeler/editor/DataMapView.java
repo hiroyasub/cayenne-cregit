@@ -2735,7 +2735,7 @@ argument_list|,
 name|dataMap
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 block|}
@@ -2784,7 +2784,7 @@ argument_list|,
 literal|false
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 block|}
@@ -2843,7 +2843,7 @@ argument_list|,
 literal|false
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 block|}
@@ -2892,7 +2892,7 @@ argument_list|,
 literal|true
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 block|}
@@ -2941,7 +2941,7 @@ argument_list|,
 literal|true
 argument_list|)
 operator|.
-name|startup
+name|startupAction
 argument_list|()
 expr_stmt|;
 block|}
