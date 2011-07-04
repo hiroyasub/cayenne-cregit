@@ -214,7 +214,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for CacheSyncConfigDialog and its subviews. Builds a model out of a  * DataDomain properties map, and on save updates DataDomain properties with configuration  * changes made by the user. This controller manages one main dialog view, and its  * subviews organized using CardLayout. Each subview as well as the main dialog have their  * own independent models.  *   */
+comment|/**  * A controller for CacheSyncConfigDialog and its subviews. Builds a model out of a  * DataDomain properties map, and on save updates DataDomain properties with configuration  * changes made by the user. This controller manages one main dialog view, and its  * subviews organized using CardLayout.  *   */
 end_comment
 
 begin_class
@@ -352,7 +352,7 @@ operator|=
 name|eventController
 expr_stmt|;
 block|}
-comment|/**      * Creates and shows a new modal dialog window. Registers as a listener for its own      * model to update subviews on model changes.      */
+comment|/**      * Creates and shows a new modal dialog window.      */
 specifier|public
 name|void
 name|startup
@@ -419,15 +419,6 @@ operator|)
 operator|.
 name|getProperties
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-name|properties
 argument_list|)
 expr_stmt|;
 comment|// build cards, showing the one corresponding to DataDomain state
