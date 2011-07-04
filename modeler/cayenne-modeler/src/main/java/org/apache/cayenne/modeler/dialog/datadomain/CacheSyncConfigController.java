@@ -214,7 +214,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for CacheSyncConfigDialog and its subviews. Builds a model out of a  * DataDomain properties map, and on save updates DataDomain properties with configuration  * changes made by the user. This controller manages one main dialog view, and its  * subviews organized using CardLayout.  *   */
+comment|/**  * A controller for CacheSyncConfigDialog and its subviews. This controller   * manages one main dialog view, and its subviews organized using CardLayout.  *   */
 end_comment
 
 begin_class
