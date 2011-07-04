@@ -201,20 +201,6 @@ name|ProjectController
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|scopemvc
-operator|.
-name|view
-operator|.
-name|awt
-operator|.
-name|AWTUtilities
-import|;
-end_import
-
 begin_comment
 comment|/**  * Superclass of CayenneModeler dialogs. Adds support for popping hyperlinks   * in the default system browser.  *   */
 end_comment
@@ -583,9 +569,9 @@ name|void
 name|centerWindow
 parameter_list|()
 block|{
-name|AWTUtilities
+name|ModelerUtil
 operator|.
-name|centreOnWindow
+name|centerWindow
 argument_list|(
 name|getParentEditor
 argument_list|()

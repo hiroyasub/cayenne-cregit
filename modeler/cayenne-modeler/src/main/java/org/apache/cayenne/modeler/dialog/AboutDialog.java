@@ -233,18 +233,6 @@ name|Util
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|scopemvc
-operator|.
-name|util
-operator|.
-name|UIStrings
-import|;
-end_import
-
 begin_comment
 comment|/**   * Displays the Cayenne license and build information.  */
 end_comment
@@ -410,9 +398,9 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-name|UIStrings
+name|ModelerUtil
 operator|.
-name|get
+name|getProperty
 argument_list|(
 literal|"cayenne.modeler.about.info"
 argument_list|)

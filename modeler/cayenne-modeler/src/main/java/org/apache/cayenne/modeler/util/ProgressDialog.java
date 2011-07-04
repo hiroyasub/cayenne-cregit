@@ -119,20 +119,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|scopemvc
-operator|.
-name|view
-operator|.
-name|awt
-operator|.
-name|AWTUtilities
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|jgoodies
@@ -424,9 +410,9 @@ expr_stmt|;
 name|pack
 argument_list|()
 expr_stmt|;
-name|AWTUtilities
+name|ModelerUtil
 operator|.
-name|centreOnWindow
+name|centerWindow
 argument_list|(
 name|getOwner
 argument_list|()
