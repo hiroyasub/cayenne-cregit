@@ -31,29 +31,21 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|scopemvc
-operator|.
-name|view
+name|javax
 operator|.
 name|swing
 operator|.
-name|SPanel
+name|JPanel
 import|;
 end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|scopemvc
-operator|.
-name|view
+name|javax
 operator|.
 name|swing
 operator|.
-name|STextField
+name|JTextField
 import|;
 end_import
 
@@ -94,8 +86,12 @@ specifier|public
 class|class
 name|CustomRemoteEventsConfigPanel
 extends|extends
-name|SPanel
+name|JPanel
 block|{
+specifier|protected
+name|JTextField
+name|factoryClass
+decl_stmt|;
 specifier|public
 name|CustomRemoteEventsConfigPanel
 parameter_list|()
@@ -119,22 +115,12 @@ name|BorderLayout
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|STextField
 name|factoryClass
-init|=
+operator|=
 operator|new
-name|STextField
+name|JTextField
 argument_list|(
 literal|30
-argument_list|)
-decl_stmt|;
-name|factoryClass
-operator|.
-name|setSelector
-argument_list|(
-name|CacheSyncConfigModel
-operator|.
-name|FACTORY_CLASS_SELECTOR
 argument_list|)
 expr_stmt|;
 comment|// type form
