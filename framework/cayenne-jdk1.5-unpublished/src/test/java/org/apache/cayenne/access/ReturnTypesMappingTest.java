@@ -4666,6 +4666,11 @@ argument_list|)
 decl_stmt|;
 name|assertNotNull
 argument_list|(
+name|testRead
+operator|.
+name|toString
+argument_list|()
+argument_list|,
 name|columnValue
 argument_list|)
 expr_stmt|;
