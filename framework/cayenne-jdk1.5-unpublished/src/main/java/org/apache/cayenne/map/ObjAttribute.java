@@ -372,8 +372,13 @@ name|encoder
 operator|.
 name|print
 argument_list|(
+name|Util
+operator|.
+name|encodeXmlAttribute
+argument_list|(
 name|getType
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|encoder
