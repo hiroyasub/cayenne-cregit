@@ -1993,7 +1993,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Checks expression for containing null imput parameter.      * For that, we'll append IS NULL or IS NOT NULL instead of =null or<>null      * @return whether replacement was done and there's no need for normal expression processing      */
+comment|/**      * Checks expression for containing null input parameter.      * For that, we'll append IS NULL or IS NOT NULL instead of =null or<>null      * @return whether replacement was done and there's no need for normal expression processing      */
 name|boolean
 name|checkNullParameter
 parameter_list|(
@@ -2726,6 +2726,20 @@ operator|==
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+name|checkNullParameter
+argument_list|(
+name|expression
+argument_list|,
+literal|" IS NULL"
+argument_list|)
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
 if|if
 condition|(
 name|expression
