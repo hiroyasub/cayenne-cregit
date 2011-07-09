@@ -131,20 +131,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|trans
 operator|.
 name|QualifierTranslator
@@ -413,6 +399,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -628,6 +628,10 @@ specifier|protected
 name|PkGenerator
 name|pkGenerator
 decl_stmt|;
+specifier|protected
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
 comment|/**      * The actual adapter that is delegated methods execution.      */
 specifier|volatile
 name|DbAdapter
@@ -785,7 +789,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|QueryLogger
+name|logger
 operator|.
 name|log
 argument_list|(
@@ -801,7 +805,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|QueryLogger
+name|logger
 operator|.
 name|log
 argument_list|(
@@ -833,6 +837,9 @@ argument_list|<
 name|DbAdapter
 argument_list|>
 name|adapterProvider
+parameter_list|,
+name|JdbcEventLogger
+name|logger
 parameter_list|)
 block|{
 if|if
@@ -855,6 +862,12 @@ operator|.
 name|adapterProvider
 operator|=
 name|adapterProvider
+expr_stmt|;
+name|this
+operator|.
+name|logger
+operator|=
+name|logger
 expr_stmt|;
 block|}
 comment|/**      * Called from constructor to initialize factory in case no factory was specified by      * the object creator.      *       * @deprecated since 3.1 in favor of      *             {@link org.apache.cayenne.configuration.server.DbAdapterFactory}      *             configured via dependency injection.      */

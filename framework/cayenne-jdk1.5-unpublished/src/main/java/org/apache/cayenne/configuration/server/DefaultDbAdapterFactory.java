@@ -357,6 +357,8 @@ argument_list|)
 return|;
 block|}
 block|}
+argument_list|,
+name|jdbcEventLogger
 argument_list|)
 return|;
 block|}

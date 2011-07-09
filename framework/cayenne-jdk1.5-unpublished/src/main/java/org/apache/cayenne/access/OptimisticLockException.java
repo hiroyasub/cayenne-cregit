@@ -460,12 +460,10 @@ argument_list|(
 literal|"="
 argument_list|)
 expr_stmt|;
-name|QueryLogger
-operator|.
-name|sqlLiteralForObject
-argument_list|(
 name|buffer
-argument_list|,
+operator|.
+name|append
+argument_list|(
 name|entry
 operator|.
 name|getValue
