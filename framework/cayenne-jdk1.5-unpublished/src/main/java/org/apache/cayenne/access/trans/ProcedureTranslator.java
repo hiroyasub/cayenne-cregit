@@ -339,6 +339,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
+comment|/**      * @since 3.1      */
 specifier|public
 name|JdbcEventLogger
 name|getJdbcEventLogger
@@ -544,8 +545,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|isLoggable
 argument_list|()
@@ -612,8 +612,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// FIXME: compute proper attributes via callParams
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|logQuery
 argument_list|(

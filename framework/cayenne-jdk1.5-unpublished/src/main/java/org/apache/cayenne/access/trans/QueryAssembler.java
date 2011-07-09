@@ -412,6 +412,7 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
+comment|/**      * @since 3.1      */
 specifier|public
 name|void
 name|setJdbcEventLogger
@@ -427,6 +428,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
+comment|/**      * @since 3.1      */
 specifier|public
 name|JdbcEventLogger
 name|getJdbcEventLogger
@@ -615,8 +617,7 @@ init|=
 name|createSqlString
 argument_list|()
 decl_stmt|;
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|logQuery
 argument_list|(
