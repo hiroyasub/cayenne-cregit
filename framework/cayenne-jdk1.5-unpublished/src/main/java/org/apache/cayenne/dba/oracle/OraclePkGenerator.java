@@ -789,7 +789,10 @@ name|pkGeneratingSequenceName
 operator|+
 literal|".nextval FROM DUAL"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -1211,7 +1214,10 @@ name|sql
 init|=
 literal|"SELECT LOWER(SEQUENCE_NAME) FROM ALL_SEQUENCES"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(

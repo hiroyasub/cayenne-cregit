@@ -368,7 +368,10 @@ name|pkGeneratingSequenceName
 operator|+
 literal|"')"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -549,7 +552,10 @@ name|sql
 init|=
 literal|"SELECT relname FROM pg_class WHERE relkind='S'"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(

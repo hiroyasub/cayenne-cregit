@@ -280,7 +280,10 @@ name|pkGeneratingSequenceName
 operator|+
 literal|" FROM SYSIBM.SYSDUMMY1"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -750,7 +753,10 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(

@@ -293,7 +293,10 @@ name|pkGeneratingSequenceName
 operator|+
 literal|".nextval"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -419,7 +422,10 @@ name|sql
 init|=
 literal|"select seq_name from iisequences where seq_owner != 'DBA'"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(

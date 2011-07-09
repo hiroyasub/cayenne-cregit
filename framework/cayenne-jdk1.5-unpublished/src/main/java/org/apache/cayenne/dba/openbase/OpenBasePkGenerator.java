@@ -369,7 +369,10 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(

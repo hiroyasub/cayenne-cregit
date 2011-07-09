@@ -288,7 +288,10 @@ name|unlockString
 init|=
 literal|"UNLOCK TABLES"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -493,7 +496,10 @@ name|lockString
 init|=
 literal|"LOCK TABLES AUTO_PK_SUPPORT WRITE"
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -528,7 +534,10 @@ argument_list|(
 name|entityName
 argument_list|)
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
@@ -636,7 +645,10 @@ literal|" AND NEXT_ID = "
 operator|+
 name|pk
 decl_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
