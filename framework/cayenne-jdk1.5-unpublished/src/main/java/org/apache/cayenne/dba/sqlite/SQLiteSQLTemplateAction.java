@@ -123,7 +123,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -171,7 +171,7 @@ parameter_list|(
 name|SQLTemplate
 name|query
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|EntityResolver
@@ -367,8 +367,7 @@ name|updateCount
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|logUpdateCount
 argument_list|(

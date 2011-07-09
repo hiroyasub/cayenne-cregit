@@ -377,9 +377,7 @@ name|SQLTemplate
 name|query
 parameter_list|)
 block|{
-name|SQLTemplateAction
-name|action
-init|=
+return|return
 operator|new
 name|SQLTemplateAction
 argument_list|(
@@ -389,16 +387,6 @@ name|adapter
 argument_list|,
 name|entityResolver
 argument_list|)
-decl_stmt|;
-name|action
-operator|.
-name|setJdbcEventLogger
-argument_list|(
-name|logger
-argument_list|)
-expr_stmt|;
-return|return
-name|action
 return|;
 block|}
 comment|/**      * @since 3.0      */

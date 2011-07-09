@@ -175,7 +175,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -344,7 +344,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 decl_stmt|;
 annotation|@
@@ -1660,13 +1660,6 @@ name|getEntityResolver
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|action
-operator|.
-name|setJdbcEventLogger
-argument_list|(
-name|logger
-argument_list|)
-expr_stmt|;
 name|Connection
 name|c
 init|=

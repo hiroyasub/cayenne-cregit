@@ -119,7 +119,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -134,20 +134,6 @@ operator|.
 name|di
 operator|.
 name|Inject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|log
-operator|.
-name|JdbcEventLogger
 import|;
 end_import
 
@@ -294,14 +280,8 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|DbAdapter
+name|JdbcAdapter
 name|dbAdapter
-decl_stmt|;
-annotation|@
-name|Inject
-specifier|private
-name|JdbcEventLogger
-name|logger
 decl_stmt|;
 annotation|@
 name|Override
@@ -881,13 +861,6 @@ name|getEntityResolver
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|action
-operator|.
-name|setJdbcEventLogger
-argument_list|(
-name|logger
-argument_list|)
-expr_stmt|;
 name|assertSame
 argument_list|(
 name|dbAdapter
