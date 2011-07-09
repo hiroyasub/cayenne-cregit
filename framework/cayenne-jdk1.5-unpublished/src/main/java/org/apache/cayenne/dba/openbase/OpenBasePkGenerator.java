@@ -141,20 +141,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|JdbcAdapter
@@ -383,7 +369,7 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -608,6 +594,9 @@ comment|// looks like generating a PK on top of an existing one does not
 comment|// result in errors...
 comment|// create needed sequences
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|dbEntities
@@ -701,6 +690,9 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|dbEntities

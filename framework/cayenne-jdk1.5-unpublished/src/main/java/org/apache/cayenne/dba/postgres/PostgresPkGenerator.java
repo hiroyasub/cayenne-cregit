@@ -121,20 +121,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|JdbcAdapter
@@ -382,7 +368,7 @@ name|pkGeneratingSequenceName
 operator|+
 literal|"')"
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -563,7 +549,7 @@ name|sql
 init|=
 literal|"SELECT relname FROM pg_class WHERE relkind='S'"
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(

@@ -822,6 +822,13 @@ argument_list|)
 decl_stmt|;
 name|node
 operator|.
+name|setJdbcEventLogger
+argument_list|(
+name|jdbcEventLogger
+argument_list|)
+expr_stmt|;
+name|node
+operator|.
 name|setAdapter
 argument_list|(
 name|dbAdapter

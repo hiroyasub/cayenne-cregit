@@ -125,20 +125,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|trans
 operator|.
 name|ProcedureTranslator
@@ -429,7 +415,7 @@ condition|)
 block|{
 break|break;
 block|}
-name|QueryLogger
+name|logger
 operator|.
 name|logUpdateCount
 argument_list|(
@@ -511,6 +497,13 @@ operator|.
 name|setConnection
 argument_list|(
 name|connection
+argument_list|)
+expr_stmt|;
+name|translator
+operator|.
+name|setJdbcEventLogger
+argument_list|(
+name|logger
 argument_list|)
 expr_stmt|;
 return|return
@@ -861,7 +854,7 @@ argument_list|()
 condition|)
 block|{
 comment|// treat out parameters as a separate data row set
-name|QueryLogger
+name|logger
 operator|.
 name|logSelectCount
 argument_list|(

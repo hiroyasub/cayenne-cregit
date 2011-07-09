@@ -245,6 +245,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -416,7 +430,7 @@ name|DEFAULT_IDENTIFIERS_END_QUOTE
 init|=
 literal|"\""
 decl_stmt|;
-specifier|protected
+specifier|private
 name|PkGenerator
 name|pkGenerator
 decl_stmt|;
@@ -462,6 +476,12 @@ name|Inject
 specifier|protected
 name|BatchQueryBuilderFactory
 name|batchQueryBuilderFactory
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|JdbcEventLogger
+name|logger
 decl_stmt|;
 comment|/**      * @since 3.0      */
 specifier|public
@@ -514,13 +534,6 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|pkGenerator
-operator|=
-name|createPkGenerator
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
 name|typesHandler
 operator|=
 name|TypesHandler
@@ -567,6 +580,18 @@ parameter_list|()
 block|{
 return|return
 literal|";"
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|JdbcEventLogger
+name|getJdbcEventLogger
+parameter_list|()
+block|{
+return|return
+name|this
+operator|.
+name|logger
 return|;
 block|}
 comment|/**      * Locates and returns a named adapter resource. A resource can be an XML file, etc.      *<p>      * This implementation is based on the premise that each adapter is located in its own      * Java package and all resources are in the same package as well. Resource lookup is      * recursive, so that if DbAdapter is a subclass of another adapter, parent adapter      * package is searched as a failover.      *</p>      *       * @since 3.0      */
@@ -708,6 +733,19 @@ name|PkGenerator
 name|getPkGenerator
 parameter_list|()
 block|{
+if|if
+condition|(
+name|pkGenerator
+operator|==
+literal|null
+condition|)
+block|{
+name|pkGenerator
+operator|=
+name|createPkGenerator
+argument_list|()
+expr_stmt|;
+block|}
 return|return
 name|pkGenerator
 return|;

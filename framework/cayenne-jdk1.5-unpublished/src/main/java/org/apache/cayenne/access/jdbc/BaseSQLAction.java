@@ -93,9 +93,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dba
 operator|.
-name|QueryLogger
+name|JdbcAdapter
 import|;
 end_import
 
@@ -107,9 +107,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
+name|log
 operator|.
-name|JdbcAdapter
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -189,6 +189,10 @@ specifier|protected
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
+specifier|protected
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
 specifier|public
 name|BaseSQLAction
 parameter_list|(
@@ -210,6 +214,15 @@ operator|.
 name|entityResolver
 operator|=
 name|entityResolver
+expr_stmt|;
+name|this
+operator|.
+name|logger
+operator|=
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public
@@ -336,7 +349,7 @@ operator|.
 name|allRows
 argument_list|()
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logSelectCount
 argument_list|(

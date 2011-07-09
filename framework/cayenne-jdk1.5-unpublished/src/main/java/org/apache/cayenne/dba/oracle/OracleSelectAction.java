@@ -180,6 +180,13 @@ argument_list|(
 name|connection
 argument_list|)
 expr_stmt|;
+name|translator
+operator|.
+name|setJdbcEventLogger
+argument_list|(
+name|logger
+argument_list|)
+expr_stmt|;
 return|return
 name|translator
 return|;

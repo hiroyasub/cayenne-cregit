@@ -129,6 +129,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -152,6 +166,12 @@ name|Inject
 specifier|private
 name|DbAdapter
 name|adapter
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|private
+name|JdbcEventLogger
+name|jdbcEventLogger
 decl_stmt|;
 annotation|@
 name|Override
@@ -212,6 +232,13 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|node
+operator|.
+name|setJdbcEventLogger
+argument_list|(
+name|jdbcEventLogger
+argument_list|)
+expr_stmt|;
 comment|// shared or dedicated DataSources can be mapped per DataMap
 name|node
 operator|.

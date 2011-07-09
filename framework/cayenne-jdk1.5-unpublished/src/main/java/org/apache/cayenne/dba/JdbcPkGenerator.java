@@ -187,7 +187,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryLogger
+name|ResultIterator
 import|;
 end_import
 
@@ -199,9 +199,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|log
 operator|.
-name|ResultIterator
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -336,6 +336,10 @@ name|pkCacheSize
 init|=
 name|DEFAULT_PK_CACHE_SIZE
 decl_stmt|;
+specifier|protected
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
 specifier|public
 name|JdbcPkGenerator
 parameter_list|(
@@ -351,6 +355,15 @@ operator|.
 name|adapter
 operator|=
 name|adapter
+expr_stmt|;
+name|this
+operator|.
+name|logger
+operator|=
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public
@@ -991,7 +1004,7 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(

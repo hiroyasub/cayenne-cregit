@@ -131,20 +131,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|JdbcAdapter
@@ -803,7 +789,7 @@ name|pkGeneratingSequenceName
 operator|+
 literal|".nextval FROM DUAL"
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -1225,7 +1211,7 @@ name|sql
 init|=
 literal|"SELECT LOWER(SEQUENCE_NAME) FROM ALL_SEQUENCES"
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(

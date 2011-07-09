@@ -103,20 +103,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|jdbc
 operator|.
 name|ColumnDescriptor
@@ -507,7 +493,7 @@ argument_list|()
 condition|)
 block|{
 comment|// treat out parameters as a separate data row set
-name|QueryLogger
+name|logger
 operator|.
 name|logSelectCount
 argument_list|(

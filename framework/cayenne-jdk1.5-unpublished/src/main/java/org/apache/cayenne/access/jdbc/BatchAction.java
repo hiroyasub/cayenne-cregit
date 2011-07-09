@@ -147,20 +147,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|ResultIterator
 import|;
 end_import
@@ -559,13 +545,13 @@ decl_stmt|;
 name|boolean
 name|isLoggable
 init|=
-name|QueryLogger
+name|logger
 operator|.
 name|isLoggable
 argument_list|()
 decl_stmt|;
 comment|// log batch SQL execution
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -607,7 +593,7 @@ condition|(
 name|isLoggable
 condition|)
 block|{
-name|QueryLogger
+name|logger
 operator|.
 name|logQueryParameters
 argument_list|(
@@ -704,7 +690,7 @@ operator|+=
 name|result
 expr_stmt|;
 block|}
-name|QueryLogger
+name|logger
 operator|.
 name|logUpdateCount
 argument_list|(
@@ -757,7 +743,7 @@ block|{
 name|boolean
 name|isLoggable
 init|=
-name|QueryLogger
+name|logger
 operator|.
 name|isLoggable
 argument_list|()
@@ -781,7 +767,7 @@ name|query
 argument_list|)
 decl_stmt|;
 comment|// log batch SQL execution
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -838,7 +824,7 @@ condition|(
 name|isLoggable
 condition|)
 block|{
-name|QueryLogger
+name|logger
 operator|.
 name|logQueryParameters
 argument_list|(
@@ -977,7 +963,7 @@ condition|(
 name|isLoggable
 condition|)
 block|{
-name|QueryLogger
+name|logger
 operator|.
 name|logUpdateCount
 argument_list|(

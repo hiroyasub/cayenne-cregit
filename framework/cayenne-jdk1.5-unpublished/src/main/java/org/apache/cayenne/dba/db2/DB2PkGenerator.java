@@ -131,20 +131,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|QueryLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|JdbcAdapter
@@ -294,7 +280,7 @@ name|pkGeneratingSequenceName
 operator|+
 literal|" FROM SYSIBM.SYSDUMMY1"
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -764,7 +750,7 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|QueryLogger
+name|logger
 operator|.
 name|logQuery
 argument_list|(

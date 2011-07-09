@@ -85,9 +85,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dba
 operator|.
-name|QueryLogger
+name|DbAdapter
 import|;
 end_import
 
@@ -99,9 +99,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
+name|log
 operator|.
-name|DbAdapter
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|NoopJdbcEventLogger
 import|;
 end_import
 
@@ -246,6 +260,24 @@ name|Object
 argument_list|>
 name|values
 decl_stmt|;
+specifier|protected
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
+specifier|public
+name|ProcedureTranslator
+parameter_list|()
+block|{
+name|this
+operator|.
+name|logger
+operator|=
+name|NoopJdbcEventLogger
+operator|.
+name|getInstance
+argument_list|()
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|setQuery
@@ -290,6 +322,31 @@ name|adapter
 operator|=
 name|adapter
 expr_stmt|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|public
+name|void
+name|setJdbcEventLogger
+parameter_list|(
+name|JdbcEventLogger
+name|logger
+parameter_list|)
+block|{
+name|this
+operator|.
+name|logger
+operator|=
+name|logger
+expr_stmt|;
+block|}
+specifier|public
+name|JdbcEventLogger
+name|getJdbcEventLogger
+parameter_list|()
+block|{
+return|return
+name|logger
+return|;
 block|}
 comment|/**      * @since 1.2      */
 specifier|public
@@ -487,7 +544,8 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|QueryLogger
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|isLoggable
 argument_list|()
@@ -554,7 +612,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// FIXME: compute proper attributes via callParams
-name|QueryLogger
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logQuery
 argument_list|(
