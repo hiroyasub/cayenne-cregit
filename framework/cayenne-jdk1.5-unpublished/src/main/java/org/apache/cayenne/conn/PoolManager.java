@@ -139,6 +139,20 @@ name|BeforeScopeEnd
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
 begin_comment
 comment|/**  * PoolManager is a Cayenne implementation of a pooling DataSource.  */
 end_comment
@@ -271,7 +285,7 @@ parameter_list|,
 name|String
 name|password
 parameter_list|,
-name|ConnectionEventLoggingDelegate
+name|JdbcEventLogger
 name|logger
 parameter_list|)
 throws|throws

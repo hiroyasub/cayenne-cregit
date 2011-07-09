@@ -77,9 +77,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|QueryLogger
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -91,9 +91,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|di
 operator|.
-name|DataNodeDescriptor
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -150,6 +164,12 @@ name|JNDIDataSourceFactory
 operator|.
 name|class
 argument_list|)
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|JdbcEventLogger
+name|jdbcEventLogger
 decl_stmt|;
 specifier|public
 name|DataSource
@@ -215,7 +235,7 @@ operator|+
 literal|"'"
 argument_list|)
 expr_stmt|;
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logConnectFailure
 argument_list|(
@@ -236,7 +256,7 @@ parameter_list|)
 throws|throws
 name|NamingException
 block|{
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logConnect
 argument_list|(
@@ -301,7 +321,7 @@ name|location
 argument_list|)
 expr_stmt|;
 block|}
-name|QueryLogger
+name|jdbcEventLogger
 operator|.
 name|logConnectSuccess
 argument_list|()

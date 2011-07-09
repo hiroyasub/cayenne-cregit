@@ -93,6 +93,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Util
@@ -127,7 +141,7 @@ name|String
 name|password
 decl_stmt|;
 specifier|protected
-name|ConnectionEventLoggingDelegate
+name|JdbcEventLogger
 name|logger
 decl_stmt|;
 comment|/**      * Loads JDBC driver using current thread class loader.      *       * @since 3.0      */
@@ -582,7 +596,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|ConnectionEventLoggingDelegate
+name|JdbcEventLogger
 name|getLogger
 parameter_list|()
 block|{
@@ -594,7 +608,7 @@ specifier|public
 name|void
 name|setLogger
 parameter_list|(
-name|ConnectionEventLoggingDelegate
+name|JdbcEventLogger
 name|delegate
 parameter_list|)
 block|{
