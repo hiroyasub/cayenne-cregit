@@ -386,7 +386,10 @@ condition|)
 block|{
 break|break;
 block|}
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logUpdateCount
 argument_list|(

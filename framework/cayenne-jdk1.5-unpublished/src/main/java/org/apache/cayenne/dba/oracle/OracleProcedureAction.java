@@ -493,7 +493,10 @@ argument_list|()
 condition|)
 block|{
 comment|// treat out parameters as a separate data row set
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logSelectCount
 argument_list|(

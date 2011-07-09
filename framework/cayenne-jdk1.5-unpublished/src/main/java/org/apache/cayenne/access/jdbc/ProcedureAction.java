@@ -415,7 +415,10 @@ condition|)
 block|{
 break|break;
 block|}
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logUpdateCount
 argument_list|(
@@ -503,7 +506,10 @@ name|translator
 operator|.
 name|setJdbcEventLogger
 argument_list|(
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -854,7 +860,10 @@ argument_list|()
 condition|)
 block|{
 comment|// treat out parameters as a separate data row set
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logSelectCount
 argument_list|(

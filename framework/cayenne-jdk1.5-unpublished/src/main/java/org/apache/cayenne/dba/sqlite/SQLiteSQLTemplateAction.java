@@ -367,7 +367,10 @@ name|updateCount
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|logger
+name|adapter
+operator|.
+name|getJdbcEventLogger
+argument_list|()
 operator|.
 name|logUpdateCount
 argument_list|(
