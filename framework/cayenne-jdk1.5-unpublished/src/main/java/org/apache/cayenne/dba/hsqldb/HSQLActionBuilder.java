@@ -198,9 +198,7 @@ name|ProcedureQuery
 name|query
 parameter_list|)
 block|{
-name|ProcedureAction
-name|procedureAction
-init|=
+return|return
 operator|new
 name|ProcedureAction
 argument_list|(
@@ -270,9 +268,6 @@ name|transl
 return|;
 block|}
 block|}
-decl_stmt|;
-return|return
-name|procedureAction
 return|;
 block|}
 block|}

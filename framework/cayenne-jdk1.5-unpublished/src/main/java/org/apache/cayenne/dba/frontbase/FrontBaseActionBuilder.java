@@ -162,9 +162,7 @@ name|SelectQuery
 name|query
 parameter_list|)
 block|{
-name|SelectAction
-name|action
-init|=
+return|return
 operator|new
 name|SelectAction
 argument_list|(
@@ -233,9 +231,6 @@ name|translator
 return|;
 block|}
 block|}
-decl_stmt|;
-return|return
-name|action
 return|;
 block|}
 block|}

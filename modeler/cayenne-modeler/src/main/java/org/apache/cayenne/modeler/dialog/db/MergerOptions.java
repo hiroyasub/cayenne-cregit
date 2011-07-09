@@ -191,7 +191,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|DbAdapter
+name|JdbcAdapter
 import|;
 end_import
 
@@ -603,10 +603,6 @@ name|ValidationResult
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -632,7 +628,7 @@ name|DataMap
 name|dataMap
 decl_stmt|;
 specifier|protected
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 decl_stmt|;
 specifier|protected
@@ -872,6 +868,9 @@ try|try
 block|{
 name|adapter
 operator|=
+operator|(
+name|JdbcAdapter
+operator|)
 name|connectionInfo
 operator|.
 name|makeAdapter

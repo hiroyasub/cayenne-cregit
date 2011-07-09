@@ -162,7 +162,7 @@ parameter_list|,
 name|DataSource
 name|dataSource
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|,
 name|ModelMergeDelegate
@@ -191,12 +191,7 @@ name|node
 operator|.
 name|setJdbcEventLogger
 argument_list|(
-operator|(
-operator|(
-name|JdbcAdapter
-operator|)
 name|adapter
-operator|)
 operator|.
 name|getJdbcEventLogger
 argument_list|()

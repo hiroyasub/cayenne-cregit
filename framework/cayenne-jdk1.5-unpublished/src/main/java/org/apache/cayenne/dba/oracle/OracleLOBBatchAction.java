@@ -251,9 +251,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|log
+name|dba
 operator|.
-name|JdbcEventLogger
+name|JdbcAdapter
 import|;
 end_import
 
@@ -267,7 +267,7 @@ name|cayenne
 operator|.
 name|log
 operator|.
-name|NoopJdbcEventLogger
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -380,7 +380,7 @@ parameter_list|(
 name|BatchQuery
 name|query
 parameter_list|,
-name|DbAdapter
+name|JdbcAdapter
 name|adapter
 parameter_list|)
 block|{
@@ -400,9 +400,9 @@ name|this
 operator|.
 name|logger
 operator|=
-name|NoopJdbcEventLogger
+name|adapter
 operator|.
-name|getInstance
+name|getJdbcEventLogger
 argument_list|()
 expr_stmt|;
 block|}
@@ -412,32 +412,6 @@ parameter_list|()
 block|{
 return|return
 name|adapter
-return|;
-block|}
-specifier|public
-name|void
-name|setJdbcEventLogger
-parameter_list|(
-name|JdbcEventLogger
-name|logger
-parameter_list|)
-block|{
-name|this
-operator|.
-name|logger
-operator|=
-name|logger
-expr_stmt|;
-block|}
-specifier|public
-name|JdbcEventLogger
-name|getJdbcEventLogger
-parameter_list|()
-block|{
-return|return
-name|this
-operator|.
-name|logger
 return|;
 block|}
 specifier|public
@@ -557,8 +531,7 @@ decl_stmt|;
 name|boolean
 name|isLoggable
 init|=
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|isLoggable
 argument_list|()
@@ -761,8 +734,7 @@ block|}
 name|boolean
 name|isLoggable
 init|=
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|isLoggable
 argument_list|()
@@ -821,8 +793,7 @@ condition|(
 name|isLoggable
 condition|)
 block|{
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|logQuery
 argument_list|(
@@ -831,8 +802,7 @@ argument_list|,
 name|qualifierValues
 argument_list|)
 expr_stmt|;
-name|getJdbcEventLogger
-argument_list|()
+name|logger
 operator|.
 name|logQueryParameters
 argument_list|(
