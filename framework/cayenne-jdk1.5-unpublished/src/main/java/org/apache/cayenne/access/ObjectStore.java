@@ -557,6 +557,9 @@ specifier|protected
 name|DataContext
 name|context
 decl_stmt|;
+comment|/**      * @deprecated since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ObjectStore
 parameter_list|()
@@ -567,6 +570,9 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ObjectStore
 parameter_list|(
@@ -578,7 +584,8 @@ name|this
 argument_list|(
 name|dataRowCache
 argument_list|,
-literal|null
+name|createObjectMap
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -603,21 +610,30 @@ argument_list|(
 name|dataRowCache
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|objectMap
+operator|!=
+literal|null
+condition|)
+block|{
 name|this
 operator|.
 name|objectMap
 operator|=
 name|objectMap
-operator|!=
-literal|null
-condition|?
-name|objectMap
-else|:
-name|ObjectStore
-operator|.
-name|createObjectMap
-argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Object map is null."
+argument_list|)
+throw|;
+block|}
 name|this
 operator|.
 name|changes

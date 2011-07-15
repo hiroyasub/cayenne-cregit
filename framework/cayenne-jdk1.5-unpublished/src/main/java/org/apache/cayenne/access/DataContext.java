@@ -287,6 +287,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|DataContextFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|event
 operator|.
 name|EventManager
@@ -691,7 +707,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
+comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      * @deprecated Since 3.1 replaced by {@link DataContextFactory#createContext(DataChannel)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ObjectContext
 name|createChildContext
