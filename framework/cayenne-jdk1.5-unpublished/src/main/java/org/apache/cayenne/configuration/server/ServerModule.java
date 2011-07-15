@@ -829,20 +829,6 @@ operator|.
 name|PROPERTIES_MAP
 argument_list|)
 expr_stmt|;
-name|CommonsJdbcEventLogger
-name|logger
-init|=
-operator|new
-name|CommonsJdbcEventLogger
-argument_list|()
-decl_stmt|;
-name|QueryLogger
-operator|.
-name|setLogger
-argument_list|(
-name|logger
-argument_list|)
-expr_stmt|;
 name|binder
 operator|.
 name|bind
@@ -852,9 +838,11 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|toInstance
+name|to
 argument_list|(
-name|logger
+name|CommonsJdbcEventLogger
+operator|.
+name|class
 argument_list|)
 expr_stmt|;
 comment|// configure known DbAdapter detectors in reverse order of popularity. Users can
