@@ -272,6 +272,13 @@ argument_list|(
 literal|"TYPES_MAPPING_TEST2"
 argument_list|)
 expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"DATE_TEST"
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 name|void
