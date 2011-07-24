@@ -608,6 +608,16 @@ decl_stmt|;
 name|int
 name|offset
 init|=
+name|translator
+operator|.
+name|isSuppressingDistinct
+argument_list|()
+condition|?
+name|query
+operator|.
+name|getFetchOffset
+argument_list|()
+else|:
 name|getInMemoryOffset
 argument_list|(
 name|query
