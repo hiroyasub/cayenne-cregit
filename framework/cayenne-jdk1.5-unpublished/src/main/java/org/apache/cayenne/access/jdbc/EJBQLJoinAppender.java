@@ -745,17 +745,7 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|' '
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|semantics
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|' '
+literal|" JOIN "
 argument_list|)
 expr_stmt|;
 name|context
