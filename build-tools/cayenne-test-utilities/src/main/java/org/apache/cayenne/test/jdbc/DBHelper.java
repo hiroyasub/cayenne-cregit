@@ -329,7 +329,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Inserts a single row.      */
+comment|/**      * Inserts a single row. Columns types can be null and will be determined from      * ParameterMetaData in this case. The later scenario will not work if values contains      * nulls and the DB is Oracle.      */
 specifier|public
 name|void
 name|insert
@@ -344,6 +344,10 @@ parameter_list|,
 name|Object
 index|[]
 name|values
+parameter_list|,
+name|int
+index|[]
+name|columnTypes
 parameter_list|)
 throws|throws
 name|SQLException
@@ -571,6 +575,16 @@ operator|==
 literal|null
 condition|)
 block|{
+name|int
+name|type
+decl_stmt|;
+if|if
+condition|(
+name|columnTypes
+operator|==
+literal|null
+condition|)
+block|{
 comment|// check for the right NULL type
 if|if
 condition|(
@@ -587,14 +601,8 @@ name|getParameterMetaData
 argument_list|()
 expr_stmt|;
 block|}
-name|st
-operator|.
-name|setNull
-argument_list|(
-name|i
-operator|+
-literal|1
-argument_list|,
+name|type
+operator|=
 name|parameters
 operator|.
 name|getParameterType
@@ -603,6 +611,27 @@ name|i
 operator|+
 literal|1
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|type
+operator|=
+name|columnTypes
+index|[
+name|i
+index|]
+expr_stmt|;
+block|}
+name|st
+operator|.
+name|setNull
+argument_list|(
+name|i
+operator|+
+literal|1
+argument_list|,
+name|type
 argument_list|)
 expr_stmt|;
 block|}
