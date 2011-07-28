@@ -17,6 +17,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|List
@@ -262,16 +272,6 @@ operator|.
 name|server
 operator|.
 name|UseServerRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|hsqldb
-operator|.
-name|Types
 import|;
 end_import
 
