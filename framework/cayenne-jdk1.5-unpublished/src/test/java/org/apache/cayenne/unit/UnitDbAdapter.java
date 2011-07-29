@@ -730,6 +730,16 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|supportsLobComparisons
+parameter_list|()
+block|{
+return|return
+name|supportsLobs
+argument_list|()
+return|;
+block|}
+specifier|public
+name|boolean
 name|supportsBinaryPK
 parameter_list|()
 block|{

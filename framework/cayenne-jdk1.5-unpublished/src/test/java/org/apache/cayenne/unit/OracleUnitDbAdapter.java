@@ -407,6 +407,19 @@ block|}
 annotation|@
 name|Override
 specifier|public
+name|boolean
+name|supportsLobComparisons
+parameter_list|()
+block|{
+comment|// we can actually allow LOB comparisons with some Oracle trickery. E.g.:
+comment|// DBMS_LOB.SUBSTR(CLOB_COLUMN, LENGTH('string') + 1, 1) = 'string'
+return|return
+literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|tweakProcedure
 parameter_list|(

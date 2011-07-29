@@ -2058,7 +2058,7 @@ if|if
 condition|(
 name|accessStackAdapter
 operator|.
-name|supportsLobs
+name|supportsLobComparisons
 argument_list|()
 condition|)
 block|{
@@ -2131,7 +2131,7 @@ if|if
 condition|(
 name|accessStackAdapter
 operator|.
-name|supportsLobs
+name|supportsLobComparisons
 argument_list|()
 condition|)
 block|{
