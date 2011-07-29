@@ -1305,6 +1305,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsBoolean
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
