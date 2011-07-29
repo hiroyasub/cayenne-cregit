@@ -168,7 +168,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|Oracle8SQLTemplateAction
+name|OracleSQLTemplateAction
 argument_list|(
 name|query
 argument_list|,
