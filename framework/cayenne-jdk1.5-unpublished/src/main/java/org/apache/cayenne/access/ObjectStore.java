@@ -541,7 +541,7 @@ name|DataRowStore
 name|dataRowCache
 decl_stmt|;
 comment|// used to avoid incorrect on-demand DataRowStore initialization after deserialization
-specifier|private
+specifier|protected
 name|boolean
 name|dataRowCacheSet
 decl_stmt|;
