@@ -84,6 +84,14 @@ operator|.
 name|getFetchLimit
 argument_list|()
 decl_stmt|;
+name|int
+name|offset
+init|=
+name|metadata
+operator|.
+name|getFetchOffset
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|limit
@@ -120,7 +128,11 @@ literal|15
 argument_list|,
 literal|"SELECT DISTINCT TOP "
 operator|+
+operator|(
+name|offset
+operator|+
 name|limit
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -136,7 +148,11 @@ literal|6
 argument_list|,
 literal|"SELECT TOP "
 operator|+
+operator|(
+name|offset
+operator|+
 name|limit
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
