@@ -381,6 +381,15 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+specifier|public
+name|SQLTemplateScriptsTab
+name|getScriptsTab
+parameter_list|()
+block|{
+return|return
+name|scriptsTab
+return|;
+block|}
 block|}
 end_class
 
