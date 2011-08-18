@@ -1546,24 +1546,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|// write entity listeners
-for|for
-control|(
-name|EntityListener
-name|entityListener
-range|:
-name|getDefaultEntityListeners
-argument_list|()
-control|)
-block|{
-name|entityListener
-operator|.
-name|encodeAsXML
-argument_list|(
-name|encoder
-argument_list|)
-expr_stmt|;
-block|}
 name|encoder
 operator|.
 name|indent
