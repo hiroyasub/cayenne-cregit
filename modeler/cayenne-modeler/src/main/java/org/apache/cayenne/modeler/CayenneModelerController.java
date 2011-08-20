@@ -434,6 +434,11 @@ name|frame
 decl_stmt|;
 specifier|public
 name|CayenneModelerController
+parameter_list|()
+block|{
+block|}
+specifier|public
+name|CayenneModelerController
 parameter_list|(
 name|Application
 name|application

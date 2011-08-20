@@ -301,6 +301,11 @@ name|propertyChangeSupport
 decl_stmt|;
 specifier|public
 name|CayenneController
+parameter_list|()
+block|{
+block|}
+specifier|public
+name|CayenneController
 parameter_list|(
 name|CayenneController
 name|parent
