@@ -584,6 +584,10 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
+specifier|protected
+name|QueryCache
+name|queryCache
+decl_stmt|;
 comment|// these are initialized from properties...
 specifier|protected
 name|boolean
@@ -606,13 +610,6 @@ comment|/**      * @since 1.2      */
 specifier|protected
 name|EntitySorter
 name|entitySorter
-decl_stmt|;
-comment|/**      * @since 3.1      */
-annotation|@
-name|Inject
-specifier|protected
-name|QueryCache
-name|queryCache
 decl_stmt|;
 specifier|protected
 name|boolean
