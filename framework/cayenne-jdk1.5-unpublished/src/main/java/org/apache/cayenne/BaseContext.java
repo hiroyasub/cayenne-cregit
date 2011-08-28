@@ -399,14 +399,6 @@ name|ObjectContext
 implements|,
 name|DataChannel
 block|{
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|QUERY_CACHE_INJECTION_KEY
-init|=
-literal|"local"
-decl_stmt|;
 comment|/**      * A holder of a ObjectContext bound to the current thread.      *       * @since 3.0      */
 specifier|protected
 specifier|static
