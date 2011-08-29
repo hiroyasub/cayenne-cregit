@@ -232,6 +232,7 @@ name|CHANNEL_EVENTS
 init|=
 literal|"cayenne.config.rop.client.channel.events"
 decl_stmt|;
+comment|// TODO: this property name is exactly the same as CHANNEL_EVENTS... Seems messed up
 specifier|public
 specifier|static
 specifier|final
