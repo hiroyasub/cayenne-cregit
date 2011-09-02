@@ -888,7 +888,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledDomain"
+literal|"project"
 return|;
 block|}
 annotation|@
@@ -954,7 +954,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledMap"
+literal|"datamap"
 return|;
 block|}
 annotation|@
@@ -1075,7 +1075,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledObjEntity"
+literal|"ObjEntity"
 return|;
 block|}
 annotation|@
@@ -1183,7 +1183,7 @@ condition|)
 block|{
 name|setNameBase
 argument_list|(
-literal|"UntitledEmbeddable"
+literal|"Embeddable"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1394,7 +1394,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledDbEntity"
+literal|"db_entity"
 return|;
 block|}
 annotation|@
@@ -1562,7 +1562,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledProcedure"
+literal|"procedure"
 return|;
 block|}
 annotation|@
@@ -1633,7 +1633,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledQuery"
+literal|"query"
 return|;
 block|}
 annotation|@
@@ -1829,7 +1829,7 @@ name|nameBase
 parameter_list|()
 block|{
 return|return
-literal|"UntitledDataNode"
+literal|"datanode"
 return|;
 block|}
 annotation|@

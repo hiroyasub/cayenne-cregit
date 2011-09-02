@@ -451,8 +451,6 @@ operator|.
 name|getRootNode
 argument_list|()
 decl_stmt|;
-comment|// use domain name as DataNode base, as node names must be unique across the
-comment|// project...
 name|DataNodeDescriptor
 name|node
 init|=
@@ -524,13 +522,6 @@ operator|.
 name|class
 argument_list|,
 name|domain
-argument_list|,
-name|domain
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"Node"
 argument_list|)
 decl_stmt|;
 name|DataNodeDescriptor

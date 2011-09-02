@@ -272,8 +272,6 @@ operator|.
 name|getRootNode
 argument_list|()
 decl_stmt|;
-comment|// use domain name as DataMap base, as map names must be unique across the
-comment|// project...
 name|DataMap
 name|map
 init|=
@@ -289,13 +287,6 @@ operator|.
 name|class
 argument_list|,
 name|currentDomain
-argument_list|,
-name|currentDomain
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"Map"
 argument_list|)
 decl_stmt|;
 comment|// set configuration source for new dataMap
