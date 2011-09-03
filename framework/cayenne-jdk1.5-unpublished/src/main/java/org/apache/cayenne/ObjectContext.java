@@ -190,10 +190,13 @@ throws|throws
 name|DeleteDenyException
 function_decl|;
 comment|/**      * Schedules deletion of one or more persistent objects. Same as      * {@link #deleteObjects(Collection)} only with a vararg argument list for easier      * deletion of individual objects.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      * @since 3.1      */
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|deleteObjects
 parameter_list|(
-name|Object
+name|T
 modifier|...
 name|objects
 parameter_list|)
@@ -304,10 +307,13 @@ name|objects
 parameter_list|)
 function_decl|;
 comment|/**      * Invalidates one or more persistent objects. Same as      * {@link #invalidateObjects(Collection)} only with a vararg argument list for easier      * invalidation of individual objects. If no arguments are passed to this method, it      * does nothing.      *       * @since 3.1      */
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|invalidateObjects
 parameter_list|(
-name|Object
+name|T
 modifier|...
 name|objects
 parameter_list|)

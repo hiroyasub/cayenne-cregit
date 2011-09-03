@@ -15,16 +15,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -299,16 +289,11 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|src
 argument_list|,
 name|target
 argument_list|,
 name|src2
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|ToManyFkRoot
@@ -378,10 +363,6 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|src1
 argument_list|,
 name|src1
@@ -392,7 +373,6 @@ operator|.
 name|get
 argument_list|(
 literal|0
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

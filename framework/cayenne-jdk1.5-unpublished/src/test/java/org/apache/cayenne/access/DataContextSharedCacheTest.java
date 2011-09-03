@@ -31,16 +31,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Date
 import|;
 end_import
@@ -2563,12 +2553,7 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
 name|artist
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -2713,12 +2698,7 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
 name|artist
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// original context

@@ -1619,10 +1619,13 @@ block|}
 block|}
 comment|/**      * @since 3.1      */
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|invalidateObjects
 parameter_list|(
-name|Object
+name|T
 modifier|...
 name|objects
 parameter_list|)
@@ -1902,10 +1905,13 @@ expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|deleteObjects
 parameter_list|(
-name|Object
+name|T
 modifier|...
 name|objects
 parameter_list|)

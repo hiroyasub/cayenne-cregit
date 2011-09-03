@@ -41,16 +41,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Collections
 import|;
 end_import
@@ -1172,14 +1162,9 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|trueObject
 argument_list|,
 name|falseObject
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// fetch true...
@@ -1426,14 +1411,9 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|trueObject
 argument_list|,
 name|falseObject
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// fetch true...

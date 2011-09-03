@@ -2195,16 +2195,11 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|company
 argument_list|,
 name|rep
 argument_list|,
 name|employee
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|SelectQuery

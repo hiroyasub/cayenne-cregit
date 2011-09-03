@@ -694,7 +694,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testInvalidateObject
+name|testInvalidateObjects_Vararg
 parameter_list|()
 block|{
 name|DataRow
@@ -802,12 +802,7 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
 name|obj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertEquals

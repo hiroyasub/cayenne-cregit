@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -876,14 +866,9 @@ name|context
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
 name|a1
 argument_list|,
 name|p1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|SelectQuery

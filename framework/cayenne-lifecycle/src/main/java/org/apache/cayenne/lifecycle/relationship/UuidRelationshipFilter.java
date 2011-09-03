@@ -417,12 +417,7 @@ argument_list|()
 operator|.
 name|invalidateObjects
 argument_list|(
-name|Collections
-operator|.
-name|singleton
-argument_list|(
 name|object
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
