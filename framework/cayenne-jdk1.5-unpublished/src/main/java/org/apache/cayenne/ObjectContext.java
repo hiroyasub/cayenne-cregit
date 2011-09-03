@@ -318,8 +318,7 @@ modifier|...
 name|objects
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *       * @since 3.0      */
-specifier|public
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Concurrent      * access to properties does not require any special synchronization      *       * @since 3.0      */
 name|Object
 name|getUserProperty
 parameter_list|(
@@ -327,8 +326,7 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *       * @since 3.0      */
-specifier|public
+comment|/**      * Sets a user-defined property. Concurrent access to properties does not require any      * special synchronization      *       * @since 3.0      */
 name|void
 name|setUserProperty
 parameter_list|(

@@ -75,6 +75,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|ConcurrentHashMap
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -504,6 +516,7 @@ name|graphAction
 decl_stmt|;
 comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 3.0      */
 specifier|protected
+specifier|volatile
 name|Map
 argument_list|<
 name|String
@@ -1671,7 +1684,19 @@ name|getUserProperties
 parameter_list|()
 block|{
 comment|// as not all users will take advantage of properties, creating the
-comment|// map on demand to keep DataContext lean...
+comment|// map on demand to keep the context lean...
+if|if
+condition|(
+name|userProperties
+operator|==
+literal|null
+condition|)
+block|{
+synchronized|synchronized
+init|(
+name|this
+init|)
+block|{
 if|if
 condition|(
 name|userProperties
@@ -1682,7 +1707,7 @@ block|{
 name|userProperties
 operator|=
 operator|new
-name|HashMap
+name|ConcurrentHashMap
 argument_list|<
 name|String
 argument_list|,
@@ -1690,6 +1715,8 @@ name|Object
 argument_list|>
 argument_list|()
 expr_stmt|;
+block|}
+block|}
 block|}
 return|return
 name|userProperties
