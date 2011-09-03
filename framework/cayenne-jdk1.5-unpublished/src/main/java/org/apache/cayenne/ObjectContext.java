@@ -255,11 +255,6 @@ name|rollbackChangesLocally
 parameter_list|()
 function_decl|;
 comment|/**      * Executes a selecting query, returning a list of persistent objects or data rows.      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 name|List
 name|performQuery
 parameter_list|(
