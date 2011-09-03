@@ -85,20 +85,6 @@ name|Query
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|RefreshQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  */
 end_comment
@@ -180,7 +166,7 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
-comment|/**      * Schedules a persistent object for deletion on next commit.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      */
+comment|/**      * Schedules a persistent object for deletion on next commit.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      * @deprecated since 3.1 use {@link #deleteObjects(Object...)} method instead. This      *             method is redundant.      */
 name|void
 name|deleteObject
 parameter_list|(
@@ -190,7 +176,7 @@ parameter_list|)
 throws|throws
 name|DeleteDenyException
 function_decl|;
-comment|/**      * Deletes a collection of objects by repeatedly calling deleteObject safely      * (avoiding a concurrent modification exception).      */
+comment|/**      * Schedules deletion of a collection of persistent objects.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      */
 name|void
 name|deleteObjects
 parameter_list|(
@@ -198,6 +184,17 @@ name|Collection
 argument_list|<
 name|?
 argument_list|>
+name|objects
+parameter_list|)
+throws|throws
+name|DeleteDenyException
+function_decl|;
+comment|/**      * Schedules deletion of one or more persistent objects. Same as      * {@link #deleteObjects(Collection)} only with a vararg argument list for easier      * deletion of individual objects.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      * @since 3.1      */
+name|void
+name|deleteObjects
+parameter_list|(
+name|Object
+modifier|...
 name|objects
 parameter_list|)
 throws|throws
@@ -295,11 +292,23 @@ name|boolean
 name|hasChanges
 parameter_list|()
 function_decl|;
-comment|/**      * Invalidates a Collection of persistent objects. This operation only applies to the      * objects already committed to the database and does nothing to the NEW objects. It      * would remove each object's snapshot from caches and change object's state to      * HOLLOW. On the next access to this object, the object will be refetched.      *       * @see RefreshQuery      */
+comment|/**      * Invalidates a Collection of persistent objects. This operation only applies to the      * objects already committed to the database and does nothing to the NEW objects. It      * would remove each object's snapshot from caches and change object's state to      * HOLLOW. On the next access to this object, the object will be refetched.      */
 name|void
 name|invalidateObjects
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
+name|objects
+parameter_list|)
+function_decl|;
+comment|/**      * Invalidates one or more persistent objects. Same as      * {@link #invalidateObjects(Collection)} only with a vararg argument list for easier      * invalidation of individual objects. If no arguments are passed to this method, it      * does nothing.      *       * @since 3.1      */
+name|void
+name|invalidateObjects
+parameter_list|(
+name|Object
+modifier|...
 name|objects
 parameter_list|)
 function_decl|;

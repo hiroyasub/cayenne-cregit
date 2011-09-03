@@ -230,6 +230,7 @@ name|commitChanges
 parameter_list|()
 block|{
 block|}
+comment|/**      * @deprecated since 3.1      */
 specifier|public
 name|void
 name|deleteObject
@@ -249,6 +250,18 @@ name|?
 argument_list|>
 name|objects
 parameter_list|)
+block|{
+block|}
+specifier|public
+name|void
+name|deleteObjects
+parameter_list|(
+name|Object
+modifier|...
+name|objects
+parameter_list|)
+throws|throws
+name|DeleteDenyException
 block|{
 block|}
 specifier|public
@@ -385,6 +398,19 @@ name|void
 name|invalidateObjects
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
+name|objects
+parameter_list|)
+block|{
+block|}
+specifier|public
+name|void
+name|invalidateObjects
+parameter_list|(
+name|Object
+modifier|...
 name|objects
 parameter_list|)
 block|{
