@@ -418,7 +418,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|childGroup
 argument_list|)
@@ -561,7 +561,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|anArtist
 argument_list|)
@@ -749,7 +749,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|aGroup
 argument_list|)
@@ -880,7 +880,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|parentGroup
 argument_list|)
@@ -957,7 +957,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|painting
 argument_list|)
@@ -1134,7 +1134,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|anArtist
 argument_list|)
@@ -1233,7 +1233,7 @@ try|try
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|gallery
 argument_list|)

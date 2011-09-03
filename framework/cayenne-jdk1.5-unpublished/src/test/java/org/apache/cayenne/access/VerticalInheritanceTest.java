@@ -1283,7 +1283,7 @@ operator|.
 name|getObjectContext
 argument_list|()
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|sub21
 argument_list|)
@@ -3007,7 +3007,7 @@ argument_list|)
 decl_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|root
 argument_list|)
@@ -3032,7 +3032,7 @@ argument_list|)
 decl_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|sub1
 argument_list|)

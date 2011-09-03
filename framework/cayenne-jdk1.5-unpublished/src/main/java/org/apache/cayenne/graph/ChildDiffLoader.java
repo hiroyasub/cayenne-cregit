@@ -528,7 +528,7 @@ try|try
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|findObject
 argument_list|(

@@ -204,7 +204,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)
@@ -282,7 +282,7 @@ try|try
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)
@@ -310,7 +310,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)
@@ -378,7 +378,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)
@@ -465,7 +465,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)

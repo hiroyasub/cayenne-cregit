@@ -386,21 +386,21 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|group1
 argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|group2
 argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|user
 argument_list|)
@@ -470,7 +470,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|user
 argument_list|)
@@ -495,7 +495,7 @@ comment|// here Cayenne would throw per CAY-1378 on an attempt to delete a previ
 comment|// related transient object
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|group
 argument_list|)

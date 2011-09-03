@@ -629,7 +629,7 @@ expr_stmt|;
 comment|// Update and save artist in peer context
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)
@@ -794,7 +794,7 @@ expr_stmt|;
 comment|// Update and save artist in peer context
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)

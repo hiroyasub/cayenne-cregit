@@ -1147,7 +1147,7 @@ expr_stmt|;
 comment|// Cause the delete of the link record
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a1
 argument_list|)

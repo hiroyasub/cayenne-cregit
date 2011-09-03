@@ -1134,7 +1134,7 @@ expr_stmt|;
 comment|// Update Artist
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)
@@ -1266,7 +1266,7 @@ expr_stmt|;
 comment|// Update Artist
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)
@@ -1413,7 +1413,7 @@ expr_stmt|;
 comment|// Update Artist
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)
@@ -1587,7 +1587,7 @@ expr_stmt|;
 comment|// delete peer
 name|context1
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|altArtist
 argument_list|)
@@ -1595,7 +1595,7 @@ expr_stmt|;
 comment|// Update Artist
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)
@@ -1935,7 +1935,7 @@ expr_stmt|;
 comment|// delete painting
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|painting1
 argument_list|)
@@ -3315,7 +3315,7 @@ expr_stmt|;
 comment|// delete object PRIOR to killing the snapshot
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)

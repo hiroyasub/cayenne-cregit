@@ -505,7 +505,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)
@@ -1047,7 +1047,7 @@ argument_list|()
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)
@@ -1148,7 +1148,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -1206,7 +1206,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|artist
 argument_list|)

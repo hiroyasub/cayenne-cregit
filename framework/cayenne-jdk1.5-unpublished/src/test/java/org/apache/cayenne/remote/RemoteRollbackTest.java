@@ -596,7 +596,7 @@ expr_stmt|;
 comment|// Save... cayenne doesn't yet handle deleting objects that are uncommitted
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|o1
 argument_list|)

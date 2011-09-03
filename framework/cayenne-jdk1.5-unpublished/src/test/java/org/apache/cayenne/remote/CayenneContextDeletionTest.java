@@ -105,7 +105,7 @@ argument_list|()
 expr_stmt|;
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)

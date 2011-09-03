@@ -1386,7 +1386,7 @@ argument_list|)
 expr_stmt|;
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|object
 argument_list|)
@@ -1574,14 +1574,14 @@ argument_list|()
 expr_stmt|;
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|o1
 argument_list|)
 expr_stmt|;
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|o2
 argument_list|)

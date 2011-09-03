@@ -1511,7 +1511,7 @@ argument_list|()
 decl_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|transientObject
 argument_list|)
@@ -1552,7 +1552,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|newObject
 argument_list|)
@@ -1654,7 +1654,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|committed
 argument_list|)
@@ -1712,7 +1712,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|modified
 argument_list|)
@@ -1770,7 +1770,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|deleted
 argument_list|)
@@ -2311,7 +2311,7 @@ expr_stmt|;
 comment|// testing this...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|hollow
 argument_list|)

@@ -645,7 +645,7 @@ argument_list|)
 expr_stmt|;
 name|c1
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|o1
 argument_list|)

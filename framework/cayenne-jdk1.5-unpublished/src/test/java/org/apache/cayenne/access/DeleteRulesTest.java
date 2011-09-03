@@ -396,7 +396,7 @@ try|try
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|test1
 argument_list|)
@@ -465,7 +465,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|test3
 argument_list|)
@@ -520,7 +520,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|test2
 argument_list|)
@@ -584,7 +584,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -712,7 +712,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -826,7 +826,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -941,7 +941,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -1055,7 +1055,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -1183,7 +1183,7 @@ expr_stmt|;
 comment|// must go on without exceptions...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -1298,7 +1298,7 @@ try|try
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)
@@ -1398,7 +1398,7 @@ try|try
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a
 argument_list|)

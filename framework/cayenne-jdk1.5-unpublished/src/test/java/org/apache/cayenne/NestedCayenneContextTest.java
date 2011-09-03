@@ -463,7 +463,7 @@ argument_list|()
 expr_stmt|;
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|deleted
 argument_list|)
@@ -1254,7 +1254,7 @@ decl_stmt|;
 comment|// test how different object states appear in the child on select
 name|clientContext
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|deleted
 argument_list|)
@@ -2088,7 +2088,7 @@ argument_list|()
 expr_stmt|;
 name|child
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|p
 argument_list|)
@@ -3068,7 +3068,7 @@ argument_list|)
 decl_stmt|;
 name|child
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|childDeleted
 argument_list|)
@@ -3308,7 +3308,7 @@ argument_list|)
 decl_stmt|;
 name|child
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|childDeleted
 argument_list|)
@@ -3690,7 +3690,7 @@ expr_stmt|;
 comment|// this causes an error on commit
 name|child
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|p2
 argument_list|)

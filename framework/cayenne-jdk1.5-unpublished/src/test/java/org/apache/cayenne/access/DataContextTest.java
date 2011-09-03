@@ -3469,7 +3469,7 @@ argument_list|)
 decl_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|a1
 argument_list|)
@@ -4158,7 +4158,7 @@ expr_stmt|;
 comment|// testing this...
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|hollow
 argument_list|)

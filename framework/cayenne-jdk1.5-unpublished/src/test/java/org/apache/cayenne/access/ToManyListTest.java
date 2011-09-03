@@ -1007,7 +1007,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|p2
 argument_list|)

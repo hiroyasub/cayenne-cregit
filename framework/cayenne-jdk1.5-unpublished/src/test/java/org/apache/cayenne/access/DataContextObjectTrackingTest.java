@@ -1032,7 +1032,7 @@ argument_list|)
 decl_stmt|;
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|deleted
 argument_list|)
