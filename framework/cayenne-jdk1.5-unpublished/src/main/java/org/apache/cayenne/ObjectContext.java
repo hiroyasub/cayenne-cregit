@@ -133,7 +133,7 @@ argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an object local to this ObjectContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * This method can do both "mapping" (i.e. finding an object with the same id in this      * context) and "synchronization" (i.e. updating the state of the found object with      * the state of the prototype object).      *</p>      */
+comment|/**      * Returns an object local to this ObjectContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * This method can do both "mapping" (i.e. finding an object with the same id in this      * context) and "synchronization" (i.e. updating the state of the found object with      * the state of the prototype object).      *</p>      *       * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
 name|Persistent
 name|localObject
 parameter_list|(
@@ -142,6 +142,17 @@ name|id
 parameter_list|,
 name|Object
 name|prototype
+parameter_list|)
+function_decl|;
+comment|/**      * Returns a copy of 'objectFromAnotherContext' object that is registered in this      * context, creating and registering a local hollow object if needed. No DB query is      * performed. This method will cause an exception if an object is not already      * registered in this context or its parent DataChannel and the ObjectId is temporary.      *       * @since 3.1      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|localObject
+parameter_list|(
+name|T
+name|objectFromAnotherContext
 parameter_list|)
 function_decl|;
 comment|/**      * Creates a new persistent object of a given class scheduled to be inserted to the      * database on next commit.      */

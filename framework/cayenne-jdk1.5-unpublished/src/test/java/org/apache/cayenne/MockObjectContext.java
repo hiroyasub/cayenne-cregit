@@ -139,6 +139,7 @@ return|return
 name|graphManager
 return|;
 block|}
+comment|/**      * @deprecated since 3.1      */
 specifier|public
 name|Persistent
 name|localObject
@@ -148,6 +149,21 @@ name|id
 parameter_list|,
 name|Object
 name|prototype
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|localObject
+parameter_list|(
+name|T
+name|objectFromAnotherContext
 parameter_list|)
 block|{
 return|return

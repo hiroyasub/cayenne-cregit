@@ -198,7 +198,7 @@ operator|=
 name|CACHE_REFRESH
 expr_stmt|;
 block|}
-comment|/**      * Creates a refreshing SingleObjectQuery.      */
+comment|/**      * Creates a refreshing ObjectIdQuery.      */
 specifier|public
 name|ObjectIdQuery
 parameter_list|(
