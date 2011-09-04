@@ -715,7 +715,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      * @deprecated Since 3.1 replaced by {@link DataContextFactory#createContext(DataChannel)}      */
+comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      * @deprecated Since 3.1 replaced by      *             {@link DataContextFactory#createContext(DataChannel)}      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -4044,6 +4044,8 @@ operator|.
 name|COMMITTED
 argument_list|)
 expr_stmt|;
+comment|// *** the only line different from CayenneContext implementation. Not
+comment|// clear why it is different?
 name|descriptor
 operator|.
 name|injectValueHolders
