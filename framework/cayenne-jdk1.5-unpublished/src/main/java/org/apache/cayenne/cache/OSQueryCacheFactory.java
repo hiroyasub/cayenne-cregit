@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory for the OSCache factory. "/oscache.properties" file is read to load the  * standard OSCache properties and also extra properties  *   * @since 3.0  * @deprecated since 3.1 OSQueryCacheFactory and QueryCacheFactory are unused. Analog of  *             OSQueryCacheFactory is DI-friendly {@link OSQueryCacheProvider}.  */
+comment|/**  * A factory for the OSCache factory. "/oscache.properties" file is read to load the  * standard OSCache properties and also extra properties  *   * @since 3.0  * @deprecated since 3.1 OSQueryCacheFactory and QueryCacheFactory are unused.  */
 end_comment
 
 begin_class
