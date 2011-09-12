@@ -1056,7 +1056,7 @@ name|execute
 argument_list|()
 return|;
 block|}
-comment|/**      * Converts a list of Persistent objects registered in some other ObjectContext to a      * list of objects local to this ObjectContext.      *<p>      *<i>Current limitation: all objects in the source list must be either in COMMITTED      * or in HOLLOW state.</i>      *</p>      */
+comment|/**      * Converts a list of Persistent objects registered in some other ObjectContext to a      * list of objects local to this ObjectContext.      *<p>      *<i>Current limitation: all objects in the source list must be either in COMMITTED      * or in HOLLOW state.</i>      *</p>      *       * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
 annotation|@
 name|Override
 specifier|public

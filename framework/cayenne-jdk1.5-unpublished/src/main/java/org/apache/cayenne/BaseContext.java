@@ -816,8 +816,8 @@ name|getGraphManager
 argument_list|()
 init|)
 block|{
-comment|// check for race condition - the object appeared in the GraphManager just
-comment|// recently...
+comment|// check for race condition - the object may have appeared in the
+comment|// GraphManager just recently...
 name|localObject
 operator|=
 operator|(
@@ -975,6 +975,7 @@ name|GraphManager
 name|getGraphManager
 parameter_list|()
 function_decl|;
+comment|/**      * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
 specifier|public
 specifier|abstract
 name|Persistent

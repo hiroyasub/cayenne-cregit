@@ -3804,7 +3804,7 @@ return|return
 name|objectStore
 return|;
 block|}
-comment|/**      * Returns an object local to this DataContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * In case you pass a non-null second parameter, you are responsible for setting      * correct persistence state of the returned local object, as generally there is no      * way for Cayenne to determine the resulting local object state.      *       * @since 1.2      */
+comment|/**      * Returns an object local to this DataContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * In case you pass a non-null second parameter, you are responsible for setting      * correct persistence state of the returned local object, as generally there is no      * way for Cayenne to determine the resulting local object state.      *       * @since 1.2      * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
 annotation|@
 name|Override
 specifier|public
