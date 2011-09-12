@@ -579,7 +579,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Attaches this context to the Cayenne runtime whose Injector is passed as an      * argument to this method.      *       * @since 3.1      */
+comment|/**      * Attaches this context to the CayenneRuntime whose Injector is passed as an argument      * to this method.      *       * @since 3.1      */
 specifier|protected
 name|void
 name|attachToRuntime
@@ -588,6 +588,7 @@ name|Injector
 name|injector
 parameter_list|)
 block|{
+comment|// TODO: nested contexts handling??
 name|attachToChannel
 argument_list|(
 name|injector
@@ -617,7 +618,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Initializes a DataChannel for this context, setting internal state using      * information from the      *       * @since 3.1      */
+comment|/**      * Attaches to a provided DataChannel.      *       * @since 3.1      */
 specifier|protected
 name|void
 name|attachToChannel
