@@ -1550,6 +1550,9 @@ operator|.
 name|execute
 argument_list|(
 name|connection
+argument_list|,
+name|getAdapter
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
