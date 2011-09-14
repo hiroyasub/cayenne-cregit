@@ -83,6 +83,13 @@ name|EJBQLTranslationContext
 name|context
 parameter_list|)
 block|{
+name|context
+operator|.
+name|setCaseInsensitive
+argument_list|(
+name|caseInsensitive
+argument_list|)
+expr_stmt|;
 return|return
 operator|new
 name|MySQLEJBQLConditionTranslator

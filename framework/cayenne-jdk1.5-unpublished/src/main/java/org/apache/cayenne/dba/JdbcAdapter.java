@@ -231,6 +231,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|RuntimeProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -416,6 +430,15 @@ name|JdbcAdapter
 implements|implements
 name|DbAdapter
 block|{
+comment|// defines if database uses case-insensitive collation
+specifier|public
+specifier|final
+specifier|static
+name|String
+name|CI_PROPERTY
+init|=
+literal|"cayenne.runtime.db.collation.assume.ci"
+decl_stmt|;
 specifier|final
 specifier|static
 name|String
@@ -470,6 +493,10 @@ specifier|protected
 name|ResourceLocator
 name|resourceLocator
 decl_stmt|;
+specifier|protected
+name|RuntimeProperties
+name|runtimeProperties
+decl_stmt|;
 comment|/**      * @since 3.1      */
 annotation|@
 name|Inject
@@ -506,7 +533,12 @@ block|}
 comment|/**      * Creates new JdbcAdapter with a set of default parameters.      */
 specifier|public
 name|JdbcAdapter
-parameter_list|()
+parameter_list|(
+annotation|@
+name|Inject
+name|RuntimeProperties
+name|runtimeProperties
+parameter_list|)
 block|{
 comment|// init defaults
 name|this
@@ -523,6 +555,12 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
+name|runtimeProperties
+operator|=
+name|runtimeProperties
+expr_stmt|;
 comment|// TODO: andrus 05.02.2010 - ideally this should be injected
 name|this
 operator|.
@@ -537,6 +575,13 @@ operator|.
 name|pkGenerator
 operator|=
 name|createPkGenerator
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|ejbqlTranslatorFactory
+operator|=
+name|createEJBQLTranslatorFactory
 argument_list|()
 expr_stmt|;
 name|this
@@ -567,13 +612,6 @@ name|configureExtendedTypes
 argument_list|(
 name|extendedTypes
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|ejbqlTranslatorFactory
-operator|=
-name|createEJBQLTranslatorFactory
-argument_list|()
 expr_stmt|;
 name|initIdentifiersQuotes
 argument_list|()
@@ -728,10 +766,29 @@ name|EJBQLTranslatorFactory
 name|createEJBQLTranslatorFactory
 parameter_list|()
 block|{
-return|return
+name|JdbcEJBQLTranslatorFactory
+name|translatorFactory
+init|=
 operator|new
 name|JdbcEJBQLTranslatorFactory
 argument_list|()
+decl_stmt|;
+name|translatorFactory
+operator|.
+name|setCaseInsensitive
+argument_list|(
+name|runtimeProperties
+operator|.
+name|getBoolean
+argument_list|(
+name|CI_PROPERTY
+argument_list|,
+literal|false
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|translatorFactory
 return|;
 block|}
 comment|/**      * Returns primary key generator associated with this DbAdapter.      */
@@ -2067,12 +2124,31 @@ name|QueryAssembler
 name|queryAssembler
 parameter_list|)
 block|{
-return|return
+name|QualifierTranslator
+name|translator
+init|=
 operator|new
 name|QualifierTranslator
 argument_list|(
 name|queryAssembler
 argument_list|)
+decl_stmt|;
+name|translator
+operator|.
+name|setCaseInsensitive
+argument_list|(
+name|runtimeProperties
+operator|.
+name|getBoolean
+argument_list|(
+name|CI_PROPERTY
+argument_list|,
+literal|false
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|translator
 return|;
 block|}
 comment|/**      * Uses JdbcActionBuilder to create the right action.      *       * @since 1.2      */

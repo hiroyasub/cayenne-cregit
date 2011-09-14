@@ -322,6 +322,10 @@ specifier|protected
 name|boolean
 name|matchingObject
 decl_stmt|;
+specifier|protected
+name|boolean
+name|caseInsensitive
+decl_stmt|;
 specifier|public
 name|QualifierTranslator
 parameter_list|(
@@ -333,6 +337,10 @@ name|super
 argument_list|(
 name|queryAssembler
 argument_list|)
+expr_stmt|;
+name|caseInsensitive
+operator|=
+literal|false
 expr_stmt|;
 block|}
 comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is obtained from the      * parent queryAssembler.      *       * @since 3.0      */
@@ -350,6 +358,21 @@ argument_list|(
 name|extractQualifier
 argument_list|()
 argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setCaseInsensitive
+parameter_list|(
+name|boolean
+name|caseInsensitive
+parameter_list|)
+block|{
+name|this
+operator|.
+name|caseInsensitive
+operator|=
+name|caseInsensitive
 expr_stmt|;
 block|}
 comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is a method parameter.      *       * @since 3.0      */
@@ -1082,6 +1105,21 @@ name|Expression
 operator|.
 name|LIKE_IGNORE_CASE
 case|:
+if|if
+condition|(
+name|caseInsensitive
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+literal|" LIKE "
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|out
 operator|.
 name|append
@@ -1089,12 +1127,28 @@ argument_list|(
 literal|") LIKE UPPER("
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|Expression
 operator|.
 name|NOT_LIKE_IGNORE_CASE
 case|:
+if|if
+condition|(
+name|caseInsensitive
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+literal|" NOT LIKE "
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|out
 operator|.
 name|append
@@ -1102,6 +1156,7 @@ argument_list|(
 literal|") NOT LIKE UPPER("
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|Expression
@@ -1412,6 +1467,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
+operator|(
 name|node
 operator|.
 name|getType
@@ -1429,6 +1485,10 @@ operator|==
 name|Expression
 operator|.
 name|NOT_LIKE_IGNORE_CASE
+operator|)
+operator|&&
+operator|!
+name|caseInsensitive
 condition|)
 block|{
 name|out
@@ -1566,6 +1626,9 @@ expr_stmt|;
 if|if
 condition|(
 name|likeIgnoreCase
+operator|&&
+operator|!
+name|caseInsensitive
 condition|)
 name|out
 operator|.
