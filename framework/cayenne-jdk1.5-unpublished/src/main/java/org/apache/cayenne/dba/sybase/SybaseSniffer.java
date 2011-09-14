@@ -201,6 +201,9 @@ argument_list|(
 literal|"jdbc:jtds:sybase:"
 argument_list|)
 condition|?
+operator|(
+name|DbAdapter
+operator|)
 name|objectFactory
 operator|.
 name|newInstance
@@ -245,6 +248,9 @@ argument_list|(
 literal|"ADAPTIVE SERVER"
 argument_list|)
 condition|?
+operator|(
+name|DbAdapter
+operator|)
 name|objectFactory
 operator|.
 name|newInstance

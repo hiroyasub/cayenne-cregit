@@ -183,6 +183,9 @@ literal|null
 return|;
 block|}
 return|return
+operator|(
+name|DbAdapter
+operator|)
 name|objectFactory
 operator|.
 name|newInstance
