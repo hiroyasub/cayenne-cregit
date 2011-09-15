@@ -342,9 +342,9 @@ name|DeleteBatchQueryBuilder
 name|createBuilder
 parameter_list|()
 block|{
-return|return
-name|createBuilder
-argument_list|(
+name|JdbcAdapter
+name|adapter
+init|=
 name|objectFactory
 operator|.
 name|newInstance
@@ -360,6 +360,11 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
+decl_stmt|;
+return|return
+name|createBuilder
+argument_list|(
+name|adapter
 argument_list|)
 return|;
 block|}
