@@ -207,7 +207,7 @@ init|=
 operator|new
 name|ServerRuntime
 argument_list|(
-literal|"cayenne-UntitledDomain.xml"
+literal|"cayenne-project.xml"
 argument_list|)
 decl_stmt|;
 comment|// getting a hold of ObjectContext
