@@ -4342,7 +4342,10 @@ operator|.
 name|getCollectionType
 argument_list|()
 else|:
-literal|"to-one"
+name|rel
+operator|.
+name|getTargetEntityName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
