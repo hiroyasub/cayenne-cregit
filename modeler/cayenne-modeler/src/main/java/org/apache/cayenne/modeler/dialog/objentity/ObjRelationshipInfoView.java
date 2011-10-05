@@ -987,6 +987,24 @@ return|return
 name|targetCombo
 return|;
 block|}
+specifier|public
+name|JComboBox
+name|getCollectionTypeCombo
+parameter_list|()
+block|{
+return|return
+name|collectionTypeCombo
+return|;
+block|}
+specifier|public
+name|JComboBox
+name|getMapKeysCombo
+parameter_list|()
+block|{
+return|return
+name|mapKeysCombo
+return|;
+block|}
 block|}
 end_class
 
