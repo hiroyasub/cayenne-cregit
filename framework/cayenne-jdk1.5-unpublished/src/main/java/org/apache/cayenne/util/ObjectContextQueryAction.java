@@ -47,6 +47,26 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -879,7 +899,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|// to-many
+comment|// to-many List
 if|else if
 condition|(
 name|related
@@ -893,6 +913,51 @@ operator|(
 name|List
 operator|)
 name|related
+expr_stmt|;
+block|}
+comment|// to-many Set
+if|else if
+condition|(
+name|related
+operator|instanceof
+name|Set
+condition|)
+block|{
+name|result
+operator|=
+operator|new
+name|ArrayList
+argument_list|(
+operator|(
+name|Set
+operator|)
+name|related
+argument_list|)
+expr_stmt|;
+block|}
+comment|// to-many Map
+if|else if
+condition|(
+name|related
+operator|instanceof
+name|Map
+condition|)
+block|{
+name|result
+operator|=
+operator|new
+name|ArrayList
+argument_list|(
+operator|(
+operator|(
+name|Map
+operator|)
+name|related
+operator|)
+operator|.
+name|values
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 comment|// non-null to-one
