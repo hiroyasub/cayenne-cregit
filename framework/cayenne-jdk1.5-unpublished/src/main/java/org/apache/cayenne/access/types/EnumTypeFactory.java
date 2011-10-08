@@ -34,6 +34,7 @@ comment|/**  * ExtendedTypeFactory for handling JDK 1.5 Enums.  *   * @since 3.0
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EnumTypeFactory
 implements|implements

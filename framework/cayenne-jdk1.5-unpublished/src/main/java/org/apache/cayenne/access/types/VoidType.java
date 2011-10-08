@@ -52,6 +52,7 @@ comment|/**  * A noop type that is sometimes useful to suppress extended types o
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|VoidType
 implements|implements

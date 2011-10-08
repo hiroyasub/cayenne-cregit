@@ -468,7 +468,7 @@ name|ExtendedTypeMap
 name|map
 init|=
 operator|new
-name|TstTypeMap
+name|ExtendedTypeMap
 argument_list|()
 decl_stmt|;
 name|ExtendedType
@@ -541,21 +541,6 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-block|}
-class|class
-name|TstTypeMap
-extends|extends
-name|ExtendedTypeMap
-block|{
-annotation|@
-name|Override
-specifier|protected
-name|void
-name|initDefaultTypes
-parameter_list|()
-block|{
-comment|// noop to avoid any default types
-block|}
 block|}
 block|}
 end_class
