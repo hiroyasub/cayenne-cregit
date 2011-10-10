@@ -221,6 +221,10 @@ specifier|private
 name|PoolMaintenanceThread
 name|poolMaintenanceThread
 decl_stmt|;
+specifier|private
+name|boolean
+name|shuttingDown
+decl_stmt|;
 comment|/**      * Creates new PoolManager using org.apache.cayenne.conn.PoolDataSource for an      * underlying ConnectionPoolDataSource.      */
 specifier|public
 name|PoolManager
@@ -681,12 +685,18 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-synchronized|synchronized
-init|(
-name|this
-init|)
-block|{
-comment|// clean connections from the pool
+comment|// disposing maintenance thread first to avoid any changes to pools
+comment|// during shutdown
+name|disposeOfMaintenanceThread
+argument_list|()
+expr_stmt|;
+comment|// using boolean variable instead of locking PoolManager instance due to
+comment|// possible deadlock during shutdown when one of connections locks its
+comment|// event listeners list trying to invoke locked PoolManager's listener methods
+name|shuttingDown
+operator|=
+literal|true
+expr_stmt|;
 name|ListIterator
 argument_list|<
 name|PooledConnection
@@ -776,10 +786,6 @@ name|remove
 argument_list|()
 expr_stmt|;
 block|}
-block|}
-name|disposeOfMaintenanceThread
-argument_list|()
-expr_stmt|;
 block|}
 specifier|protected
 name|void
@@ -1119,6 +1125,19 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+if|if
+condition|(
+name|shuttingDown
+condition|)
+block|{
+throw|throw
+operator|new
+name|SQLException
+argument_list|(
+literal|"Pool manager is shutting down."
+argument_list|)
+throw|;
+block|}
 name|PooledConnection
 name|pooledConnection
 init|=
@@ -1451,6 +1470,13 @@ name|ConnectionEvent
 name|event
 parameter_list|)
 block|{
+if|if
+condition|(
+name|shuttingDown
+condition|)
+block|{
+return|return;
+block|}
 comment|// return connection to the pool
 name|PooledConnection
 name|closedConn
@@ -1516,6 +1542,13 @@ name|ConnectionEvent
 name|event
 parameter_list|)
 block|{
+if|if
+condition|(
+name|shuttingDown
+condition|)
+block|{
+return|return;
+block|}
 comment|// later on we should analyze the error to see if this
 comment|// is fatal... right now just kill this PooledConnection
 name|PooledConnection
