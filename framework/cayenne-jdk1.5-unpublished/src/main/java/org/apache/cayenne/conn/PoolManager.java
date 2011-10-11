@@ -679,6 +679,7 @@ comment|/**      * Closes all existing connections, drains the pool and stops th
 annotation|@
 name|BeforeScopeEnd
 specifier|public
+specifier|synchronized
 name|void
 name|shutdown
 parameter_list|()
@@ -1695,13 +1696,6 @@ parameter_list|)
 block|{
 comment|// ignore...
 block|}
-if|if
-condition|(
-name|shouldDie
-condition|)
-block|{
-break|break;
-block|}
 synchronized|synchronized
 init|(
 name|pool
@@ -1710,6 +1704,13 @@ block|{
 comment|// TODO: implement a smarter algorithm for pool management...
 comment|// right now it will simply close one connection if the count is
 comment|// above median and there are any idle connections.
+if|if
+condition|(
+name|shouldDie
+condition|)
+block|{
+break|break;
+block|}
 name|int
 name|unused
 init|=
