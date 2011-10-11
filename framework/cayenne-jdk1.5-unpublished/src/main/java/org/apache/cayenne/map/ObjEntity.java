@@ -701,6 +701,28 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// not writing DbEntity name if sub entity has same DbEntity
+comment|// as super entity, see CAY-1477
+if|if
+condition|(
+operator|!
+operator|(
+name|getSuperEntity
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getSuperEntity
+argument_list|()
+operator|.
+name|getDbEntity
+argument_list|()
+operator|==
+name|getDbEntity
+argument_list|()
+operator|)
+condition|)
+block|{
 name|encoder
 operator|.
 name|print
@@ -721,6 +743,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
