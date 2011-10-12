@@ -842,11 +842,7 @@ name|registerType
 argument_list|(
 operator|new
 name|OracleByteArrayType
-argument_list|(
-literal|true
-argument_list|,
-literal|true
-argument_list|)
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// override date handler with Oracle handler
