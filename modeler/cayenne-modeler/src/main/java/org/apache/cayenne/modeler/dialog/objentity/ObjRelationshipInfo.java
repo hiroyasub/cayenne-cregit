@@ -1360,7 +1360,7 @@ name|rels
 control|)
 block|{
 name|currPath
-operator|=
+operator|+=
 literal|"->"
 operator|+
 name|rel
