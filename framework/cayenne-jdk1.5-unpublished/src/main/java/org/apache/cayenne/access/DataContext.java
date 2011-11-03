@@ -611,10 +611,6 @@ name|boolean
 name|usingSharedSnaphsotCache
 decl_stmt|;
 specifier|protected
-name|boolean
-name|validatingObjectsOnCommit
-decl_stmt|;
-specifier|protected
 name|ObjectStore
 name|objectStore
 decl_stmt|;
@@ -3621,32 +3617,6 @@ block|{
 name|this
 operator|.
 name|usingSharedSnaphsotCache
-operator|=
-name|flag
-expr_stmt|;
-block|}
-comment|/**      * Returns whether this DataContext performs object validation before commit is      * executed.      *       * @since 1.1      */
-specifier|public
-name|boolean
-name|isValidatingObjectsOnCommit
-parameter_list|()
-block|{
-return|return
-name|validatingObjectsOnCommit
-return|;
-block|}
-comment|/**      * Sets the property defining whether this DataContext should perform object      * validation before commit is executed.      *       * @since 1.1      */
-specifier|public
-name|void
-name|setValidatingObjectsOnCommit
-parameter_list|(
-name|boolean
-name|flag
-parameter_list|)
-block|{
-name|this
-operator|.
-name|validatingObjectsOnCommit
 operator|=
 name|flag
 expr_stmt|;

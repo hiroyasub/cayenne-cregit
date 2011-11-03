@@ -499,6 +499,12 @@ specifier|transient
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
+specifier|protected
+name|boolean
+name|validatingObjectsOnCommit
+init|=
+literal|true
+decl_stmt|;
 comment|/**      * Graph action that handles property changes      *       * @since 3.1      */
 specifier|protected
 name|ObjectContextGraphAction
@@ -731,6 +737,32 @@ operator|.
 name|entityResolver
 operator|=
 name|entityResolver
+expr_stmt|;
+block|}
+comment|/**      * Returns whether this ObjectContext performs object validation before commit is      * executed.      *       * @since 1.1      */
+specifier|public
+name|boolean
+name|isValidatingObjectsOnCommit
+parameter_list|()
+block|{
+return|return
+name|validatingObjectsOnCommit
+return|;
+block|}
+comment|/**      * Sets the property defining whether this ObjectContext should perform object      * validation before commit is executed.      *       * @since 1.1      */
+specifier|public
+name|void
+name|setValidatingObjectsOnCommit
+parameter_list|(
+name|boolean
+name|flag
+parameter_list|)
+block|{
+name|this
+operator|.
+name|validatingObjectsOnCommit
+operator|=
+name|flag
 expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */

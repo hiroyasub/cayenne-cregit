@@ -462,6 +462,12 @@ name|hasChanges
 argument_list|()
 condition|)
 block|{
+if|if
+condition|(
+name|isValidatingObjectsOnCommit
+argument_list|()
+condition|)
+block|{
 name|ValidationResult
 name|result
 init|=
@@ -589,6 +595,7 @@ argument_list|(
 name|result
 argument_list|)
 throw|;
+block|}
 block|}
 name|graphManager
 operator|.
