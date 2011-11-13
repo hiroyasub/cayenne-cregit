@@ -143,9 +143,9 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|uuid
+name|id
 operator|.
-name|UuidCoder
+name|EntityIdCoder
 import|;
 end_import
 
@@ -206,12 +206,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides lazy faulting functionality for a map of objects identified by UUID.  *   * @since 3.1  */
+comment|/**  * Provides lazy faulting functionality for a map of objects identified by String  * ObjectId.  *   * @since 3.1  */
 end_comment
 
 begin_class
 class|class
-name|UuidBatchFault
+name|ObjectIdBatchFault
 block|{
 specifier|private
 name|ObjectContext
@@ -220,7 +220,7 @@ decl_stmt|;
 specifier|private
 name|List
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 name|sources
 decl_stmt|;
@@ -234,14 +234,14 @@ name|Object
 argument_list|>
 name|resolved
 decl_stmt|;
-name|UuidBatchFault
+name|ObjectIdBatchFault
 parameter_list|(
 name|ObjectContext
 name|context
 parameter_list|,
 name|List
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 name|sources
 parameter_list|)
@@ -351,13 +351,13 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
-name|getUuid
+name|getId
 argument_list|()
 decl_stmt|;
 name|String
 name|entityName
 init|=
-name|UuidCoder
+name|EntityIdCoder
 operator|.
 name|getEntityName
 argument_list|(
@@ -378,7 +378,7 @@ name|ObjectId
 name|id
 init|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|entity
 argument_list|)
@@ -452,7 +452,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|UuidCoder
+name|EntityIdCoder
 argument_list|>
 name|codersByEntity
 init|=
@@ -461,13 +461,13 @@ name|HashMap
 argument_list|<
 name|String
 argument_list|,
-name|UuidCoder
+name|EntityIdCoder
 argument_list|>
 argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 name|source
 range|:
 name|sources
@@ -478,20 +478,20 @@ name|uuid
 init|=
 name|source
 operator|.
-name|getUuid
+name|getId
 argument_list|()
 decl_stmt|;
 name|String
 name|entityName
 init|=
-name|UuidCoder
+name|EntityIdCoder
 operator|.
 name|getEntityName
 argument_list|(
 name|uuid
 argument_list|)
 decl_stmt|;
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 name|codersByEntity
@@ -514,7 +514,7 @@ block|{
 name|coder
 operator|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|resolver
 operator|.
@@ -646,7 +646,7 @@ name|values
 argument_list|()
 control|)
 block|{
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 name|codersByEntity
@@ -685,7 +685,7 @@ name|uuid
 init|=
 name|coder
 operator|.
-name|toUuid
+name|toStringId
 argument_list|(
 name|object
 operator|.

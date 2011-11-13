@@ -75,7 +75,7 @@ name|lifecycle
 operator|.
 name|relationship
 operator|.
-name|UuidRelationshipFilter
+name|ObjectIdRelationshipFilter
 import|;
 end_import
 
@@ -136,11 +136,11 @@ literal|"cayenne-lifecycle.xml"
 argument_list|)
 expr_stmt|;
 comment|// a filter is required to invalidate root objects after commit
-name|UuidRelationshipFilter
+name|ObjectIdRelationshipFilter
 name|filter
 init|=
 operator|new
-name|UuidRelationshipFilter
+name|ObjectIdRelationshipFilter
 argument_list|()
 decl_stmt|;
 name|runtime

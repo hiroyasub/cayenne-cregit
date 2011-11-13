@@ -39,27 +39,9 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|ref
+name|id
 operator|.
-name|ReferenceableHandler
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|relationship
-operator|.
-name|update
-operator|.
-name|UuidPropagatedValueFactory
+name|IdCoder
 import|;
 end_import
 
@@ -70,16 +52,16 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|UuidRelationshipHandler
+name|ObjectIdRelationshipHandler
 block|{
 specifier|protected
-name|ReferenceableHandler
+name|IdCoder
 name|referenceableHandler
 decl_stmt|;
 specifier|public
-name|UuidRelationshipHandler
+name|ObjectIdRelationshipHandler
 parameter_list|(
-name|ReferenceableHandler
+name|IdCoder
 name|referenceableHandler
 parameter_list|)
 block|{
@@ -92,7 +74,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|String
-name|uuidRelationshipName
+name|objectIdRelationshipName
 parameter_list|(
 name|String
 name|uuidPropertyName
@@ -106,13 +88,13 @@ return|;
 block|}
 specifier|public
 name|String
-name|uuidPropertyName
+name|objectIdPropertyName
 parameter_list|(
 name|DataObject
 name|object
 parameter_list|)
 block|{
-name|UuidRelationship
+name|ObjectIdRelationship
 name|annotation
 init|=
 name|object
@@ -122,7 +104,7 @@ argument_list|()
 operator|.
 name|getAnnotation
 argument_list|(
-name|UuidRelationship
+name|ObjectIdRelationship
 operator|.
 name|class
 argument_list|)
@@ -159,7 +141,7 @@ name|value
 argument_list|()
 return|;
 block|}
-comment|/**      * Establishes a UUID relationship between two objects. Objects must be registered in      * the same ObjectContext. "from" argument is the object annotated with      * UuidRelationship. Second argument can optionally be null.      */
+comment|/**      * Establishes an ObjectId relationship between two objects. Objects must be      * registered in the same ObjectContext. "from" argument is the object annotated with      * UuidRelationship. Second argument can optionally be null.      */
 specifier|public
 name|void
 name|relate
@@ -192,7 +174,7 @@ block|}
 name|String
 name|property
 init|=
-name|uuidPropertyName
+name|objectIdPropertyName
 argument_list|(
 name|from
 argument_list|)
@@ -200,7 +182,7 @@ decl_stmt|;
 name|String
 name|relationship
 init|=
-name|uuidRelationshipName
+name|objectIdRelationshipName
 argument_list|(
 name|property
 argument_list|)
@@ -280,7 +262,7 @@ name|isReplacementIdAttached
 argument_list|()
 condition|)
 block|{
-comment|// defer UUID resolving till commit
+comment|// defer ObjectId resolving till commit
 name|from
 operator|.
 name|writeProperty
@@ -288,7 +270,7 @@ argument_list|(
 name|property
 argument_list|,
 operator|new
-name|UuidPropagatedValueFactory
+name|ObjectIdPropagatedValueFactory
 argument_list|(
 name|referenceableHandler
 argument_list|,
@@ -304,7 +286,7 @@ name|uuid
 init|=
 name|referenceableHandler
 operator|.
-name|getUuid
+name|getStringId
 argument_list|(
 name|to
 argument_list|)

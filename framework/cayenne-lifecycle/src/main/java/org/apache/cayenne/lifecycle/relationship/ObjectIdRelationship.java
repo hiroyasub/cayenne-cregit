@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a "virtual" read-only to-one relationship based on an FK that is a UUID. This  * way a related object can be of any entity type.  *   * @since 3.1  */
+comment|/**  * Defines a "virtual" read-only to-one relationship based on an FK that is a character  * representation of Cayenne ObjectId. A target object of this relationship can be of any  * entity type.   *   * @since 3.1  */
 end_comment
 
 begin_annotation_defn
@@ -116,7 +116,7 @@ annotation|@
 name|Inherited
 specifier|public
 annotation_defn|@interface
-name|UuidRelationship
+name|ObjectIdRelationship
 block|{
 comment|/**      * Returns the name of the property of the source entity of the relationship that      * stores a UUID "FK" of a related entity.      */
 name|String

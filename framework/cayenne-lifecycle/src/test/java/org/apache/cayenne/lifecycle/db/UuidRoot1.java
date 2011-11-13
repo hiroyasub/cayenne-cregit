@@ -43,13 +43,13 @@ name|lifecycle
 operator|.
 name|relationship
 operator|.
-name|UuidRelationship
+name|ObjectIdRelationship
 import|;
 end_import
 
 begin_class
 annotation|@
-name|UuidRelationship
+name|ObjectIdRelationship
 argument_list|(
 name|_UuidRoot1
 operator|.

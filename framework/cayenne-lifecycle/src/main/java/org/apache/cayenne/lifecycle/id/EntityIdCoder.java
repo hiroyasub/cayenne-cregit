@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|uuid
+name|id
 package|;
 end_package
 
@@ -204,13 +204,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object to encode/decode persistent objects UUIDs.  *   * @since 3.1  */
+comment|/**  * An object to encode/decode ObjectIds for a single mapped entity.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|UuidCoder
+name|EntityIdCoder
 block|{
 specifier|static
 specifier|final
@@ -242,13 +242,13 @@ name|String
 name|getEntityName
 parameter_list|(
 name|String
-name|uuid
+name|id
 parameter_list|)
 block|{
 name|int
 name|separator
 init|=
-name|uuid
+name|id
 operator|.
 name|indexOf
 argument_list|(
@@ -263,7 +263,7 @@ literal|0
 operator|||
 name|separator
 operator|==
-name|uuid
+name|id
 operator|.
 name|length
 argument_list|()
@@ -277,12 +277,12 @@ name|IllegalArgumentException
 argument_list|(
 literal|"Invalid uuid: "
 operator|+
-name|uuid
+name|id
 argument_list|)
 throw|;
 block|}
 return|return
-name|uuid
+name|id
 operator|.
 name|substring
 argument_list|(
@@ -293,7 +293,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|UuidCoder
+name|EntityIdCoder
 parameter_list|(
 name|ObjEntity
 name|entity
@@ -485,9 +485,10 @@ literal|0.75d
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Returns a consistent String representation of the ObjectId      */
 specifier|public
 name|String
-name|toUuid
+name|toStringId
 parameter_list|(
 name|ObjectId
 name|id

@@ -50,28 +50,28 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A faulting strategy that does batch-faulting of related objects whenever a first UUID  * relationship is accessed.  *   * @since 3.1  */
+comment|/**  * A faulting strategy that does batch-faulting of related objects whenever a first  * ObjectId relationship is accessed.  *   * @since 3.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|UuidRelationshipBatchFaultingStrategy
+name|ObjectIdRelationshipBatchFaultingStrategy
 implements|implements
-name|UuidRelationshipFaultingStrategy
+name|ObjectIdRelationshipFaultingStrategy
 block|{
 specifier|private
 name|ThreadLocal
 argument_list|<
 name|List
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 argument_list|>
 name|batchSources
 decl_stmt|;
 specifier|public
-name|UuidRelationshipBatchFaultingStrategy
+name|ObjectIdRelationshipBatchFaultingStrategy
 parameter_list|()
 block|{
 name|this
@@ -83,7 +83,7 @@ name|ThreadLocal
 argument_list|<
 name|List
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 argument_list|>
 argument_list|()
@@ -100,7 +100,7 @@ block|{
 name|String
 name|uuidProperty
 init|=
-name|uuidPropertyName
+name|objectIdPropertyName
 argument_list|(
 name|object
 argument_list|)
@@ -108,7 +108,7 @@ decl_stmt|;
 name|String
 name|uuidRelationship
 init|=
-name|uuidRelationshipName
+name|objectIdRelationshipName
 argument_list|(
 name|uuidProperty
 argument_list|)
@@ -147,7 +147,7 @@ else|else
 block|{
 name|List
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 name|sources
 init|=
@@ -168,7 +168,7 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -185,7 +185,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|(
 name|object
 argument_list|,
@@ -204,7 +204,7 @@ parameter_list|()
 block|{
 name|List
 argument_list|<
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 argument_list|>
 name|sources
 init|=
@@ -227,11 +227,11 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|UuidBatchFault
+name|ObjectIdBatchFault
 name|batchFault
 init|=
 operator|new
-name|UuidBatchFault
+name|ObjectIdBatchFault
 argument_list|(
 name|sources
 operator|.
@@ -251,7 +251,7 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|UuidBatchSourceItem
+name|ObjectIdBatchSourceItem
 name|source
 range|:
 name|sources
@@ -266,17 +266,17 @@ name|writePropertyDirectly
 argument_list|(
 name|source
 operator|.
-name|getUuidRelationship
+name|getObjectIdRelationship
 argument_list|()
 argument_list|,
 operator|new
-name|UuidFault
+name|ObjectIdFault
 argument_list|(
 name|batchFault
 argument_list|,
 name|source
 operator|.
-name|getUuid
+name|getId
 argument_list|()
 argument_list|)
 argument_list|)
@@ -285,7 +285,7 @@ block|}
 block|}
 block|}
 name|String
-name|uuidRelationshipName
+name|objectIdRelationshipName
 parameter_list|(
 name|String
 name|uuidPropertyName
@@ -298,13 +298,13 @@ name|uuidPropertyName
 return|;
 block|}
 name|String
-name|uuidPropertyName
+name|objectIdPropertyName
 parameter_list|(
 name|DataObject
 name|object
 parameter_list|)
 block|{
-name|UuidRelationship
+name|ObjectIdRelationship
 name|annotation
 init|=
 name|object
@@ -314,7 +314,7 @@ argument_list|()
 operator|.
 name|getAnnotation
 argument_list|(
-name|UuidRelationship
+name|ObjectIdRelationship
 operator|.
 name|class
 argument_list|)

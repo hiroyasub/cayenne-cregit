@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|uuid
+name|id
 package|;
 end_package
 
@@ -103,9 +103,9 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|uuid
+name|id
 operator|.
-name|UuidCoder
+name|EntityIdCoder
 import|;
 end_import
 
@@ -154,7 +154,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|UuidCoderTest
+name|EntityIdCoderTest
 extends|extends
 name|TestCase
 block|{
@@ -269,11 +269,11 @@ argument_list|,
 literal|3
 argument_list|)
 decl_stmt|;
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|entity
 argument_list|)
@@ -284,7 +284,7 @@ literal|"x:3"
 argument_list|,
 name|coder
 operator|.
-name|toUuid
+name|toStringId
 argument_list|(
 name|id
 argument_list|)
@@ -419,11 +419,11 @@ argument_list|,
 literal|3l
 argument_list|)
 decl_stmt|;
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|entity
 argument_list|)
@@ -434,7 +434,7 @@ literal|"x:3"
 argument_list|,
 name|coder
 operator|.
-name|toUuid
+name|toStringId
 argument_list|(
 name|id
 argument_list|)
@@ -556,11 +556,11 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|entity
 argument_list|)
@@ -584,7 +584,7 @@ literal|"x:AbC"
 argument_list|,
 name|coder
 operator|.
-name|toUuid
+name|toStringId
 argument_list|(
 name|id
 argument_list|)
@@ -706,11 +706,11 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|entity
 argument_list|)
@@ -734,7 +734,7 @@ literal|"x:Ab%3AC"
 argument_list|,
 name|coder
 operator|.
-name|toUuid
+name|toStringId
 argument_list|(
 name|id
 argument_list|)
@@ -920,11 +920,11 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-name|UuidCoder
+name|EntityIdCoder
 name|coder
 init|=
 operator|new
-name|UuidCoder
+name|EntityIdCoder
 argument_list|(
 name|entity
 argument_list|)
@@ -990,7 +990,7 @@ literal|"x:6783463:X%3BY:%27_%27"
 argument_list|,
 name|coder
 operator|.
-name|toUuid
+name|toStringId
 argument_list|(
 name|id
 argument_list|)
