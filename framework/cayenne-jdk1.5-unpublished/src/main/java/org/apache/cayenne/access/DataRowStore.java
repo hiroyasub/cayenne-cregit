@@ -1665,6 +1665,16 @@ name|getReplacesVersion
 argument_list|()
 condition|)
 block|{
+comment|// snapshots can be huge potentially.. so print them only if the
+comment|// user is expecting them to be printed
+if|if
+condition|(
+name|logger
+operator|.
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
 name|logger
 operator|.
 name|debug
@@ -1678,6 +1688,7 @@ operator|+
 name|newSnapshot
 argument_list|)
 expr_stmt|;
+block|}
 name|forgetSnapshot
 argument_list|(
 name|key
