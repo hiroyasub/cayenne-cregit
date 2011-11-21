@@ -671,6 +671,14 @@ argument_list|(
 name|password
 argument_list|)
 expr_stmt|;
+name|factory
+operator|.
+name|setReadTimeout
+argument_list|(
+name|getReadTimeout
+argument_list|()
+argument_list|)
+expr_stmt|;
 try|try
 block|{
 name|this

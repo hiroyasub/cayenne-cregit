@@ -228,6 +228,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|ROP_SERVICE_TIMEOUT
+init|=
+literal|"cayenne.config.rop.service.timeout"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|CHANNEL_EVENTS
 init|=
 literal|"cayenne.config.rop.client.channel.events"
