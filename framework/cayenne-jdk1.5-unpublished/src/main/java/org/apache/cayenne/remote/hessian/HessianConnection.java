@@ -169,6 +169,20 @@ name|HessianProtocolException
 import|;
 end_import
 
+begin_import
+import|import
+name|com
+operator|.
+name|caucho
+operator|.
+name|hessian
+operator|.
+name|io
+operator|.
+name|SerializerFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * An ClientConnection that passes messages to a remotely deployed HessianService. It  * supports HTTP BASIC authentication. HessianConnection serializes messages using Hessian  * binary web service protocol over HTTP. For more info on Hessian see Caucho site at<a  * href="http://www.caucho.com/resin-3.0/protocols/hessian.xtp">http://www.caucho.com/resin-3.0/protocols/hessian.xtp</a>.  * HessianConnection supports logging of message traffic via Jakarta commons-logging API.  *   * @since 1.2  */
 end_comment
@@ -236,6 +250,10 @@ decl_stmt|;
 specifier|protected
 name|RemoteService
 name|service
+decl_stmt|;
+specifier|protected
+name|SerializerFactory
+name|serializerFactory
 decl_stmt|;
 comment|/**      * Creates HessianConnection that will establish dedicated session and will not use      * HTTP basic authentication.      */
 specifier|public
@@ -679,6 +697,15 @@ name|getReadTimeout
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
+name|serializerFactory
+operator|=
+name|factory
+operator|.
+name|getSerializerFactory
+argument_list|()
+expr_stmt|;
 try|try
 block|{
 name|this
@@ -990,6 +1017,15 @@ name|unwindException
 argument_list|(
 name|th
 argument_list|)
+return|;
+block|}
+specifier|public
+name|SerializerFactory
+name|getSerializerFactory
+parameter_list|()
+block|{
+return|return
+name|serializerFactory
 return|;
 block|}
 block|}
