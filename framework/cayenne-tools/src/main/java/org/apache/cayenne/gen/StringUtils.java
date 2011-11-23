@@ -392,8 +392,10 @@ literal|null
 operator|||
 name|str
 operator|.
-name|isEmpty
+name|length
 argument_list|()
+operator|==
+literal|0
 condition|)
 block|{
 return|return
