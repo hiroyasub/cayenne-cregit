@@ -330,7 +330,7 @@ expr_stmt|;
 return|return
 name|setValueDirectly
 argument_list|(
-name|objectList
+name|value
 argument_list|)
 return|;
 block|}
