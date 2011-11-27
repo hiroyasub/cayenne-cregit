@@ -711,7 +711,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"writeProperty(\"ID\", ID);"
+literal|"writeProperty(ID_PROPERTY, ID);"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -735,7 +735,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"Object value = readProperty(\"ID\");"
+literal|"Object value = readProperty(ID_PROPERTY);"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -771,7 +771,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"writeProperty(\"name\", name);"
+literal|"writeProperty(NAME_PROPERTY, name);"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -795,7 +795,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"Object value = readProperty(\"name\");"
+literal|"Object value = readProperty(NAME_PROPERTY);"
 argument_list|)
 argument_list|)
 expr_stmt|;
