@@ -223,6 +223,13 @@ condition|(
 name|oldValue
 operator|!=
 name|value
+operator|&&
+name|relationshipOwner
+operator|.
+name|getObjectContext
+argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|relationshipOwner
