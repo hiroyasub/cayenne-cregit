@@ -527,7 +527,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the object that caused the OptimisticLockException.      *       * @since 3.1      */
+comment|/**      * Returns the ObjectId of the object that caused the OptimisticLockException.      *       * @since 3.1      */
 specifier|public
 name|ObjectId
 name|getFailedObjectId
