@@ -89,6 +89,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|exp
 operator|.
 name|Expression
@@ -163,6 +175,10 @@ extends|extends
 name|CayenneRuntimeException
 block|{
 specifier|protected
+name|ObjectId
+name|failedObjectId
+decl_stmt|;
+specifier|protected
 name|String
 name|querySQL
 decl_stmt|;
@@ -177,6 +193,9 @@ decl_stmt|;
 specifier|public
 name|OptimisticLockException
 parameter_list|(
+name|ObjectId
+name|id
+parameter_list|,
 name|DbEntity
 name|rootEntity
 parameter_list|,
@@ -191,6 +210,12 @@ name|super
 argument_list|(
 literal|"Optimistic Lock Failure"
 argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|failedObjectId
+operator|=
+name|id
 expr_stmt|;
 name|this
 operator|.
@@ -500,6 +525,16 @@ name|buffer
 operator|.
 name|toString
 argument_list|()
+return|;
+block|}
+comment|/**      * Returns the object that caused the OptimisticLockException.      *       * @since 3.1      */
+specifier|public
+name|ObjectId
+name|getFailedObjectId
+parameter_list|()
+block|{
+return|return
+name|failedObjectId
 return|;
 block|}
 block|}

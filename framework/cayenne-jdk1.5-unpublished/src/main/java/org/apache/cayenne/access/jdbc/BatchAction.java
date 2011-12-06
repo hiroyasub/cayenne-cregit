@@ -957,6 +957,11 @@ name|OptimisticLockException
 argument_list|(
 name|query
 operator|.
+name|getObjectId
+argument_list|()
+argument_list|,
+name|query
+operator|.
 name|getDbEntity
 argument_list|()
 argument_list|,

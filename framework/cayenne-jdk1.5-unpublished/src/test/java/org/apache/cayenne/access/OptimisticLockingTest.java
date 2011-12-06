@@ -1811,6 +1811,19 @@ name|ex
 parameter_list|)
 block|{
 comment|// optimistic lock failure expected...
+name|assertEquals
+argument_list|(
+name|object
+operator|.
+name|getObjectId
+argument_list|()
+argument_list|,
+name|ex
+operator|.
+name|getFailedObjectId
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 specifier|public
