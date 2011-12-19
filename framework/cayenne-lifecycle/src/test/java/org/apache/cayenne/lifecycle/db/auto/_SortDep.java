@@ -81,7 +81,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"root"
+name|ROOT_PROPERTY
 argument_list|,
 name|root
 argument_list|,
@@ -100,7 +100,7 @@ name|SortRoot
 operator|)
 name|readProperty
 argument_list|(
-literal|"root"
+name|ROOT_PROPERTY
 argument_list|)
 return|;
 block|}

@@ -65,7 +65,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"uuid"
+name|UUID_PROPERTY
 argument_list|,
 name|uuid
 argument_list|)
@@ -82,7 +82,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"uuid"
+name|UUID_PROPERTY
 argument_list|)
 return|;
 block|}
