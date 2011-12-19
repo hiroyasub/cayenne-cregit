@@ -73,7 +73,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"booleanColumn"
+name|BOOLEAN_COLUMN_PROPERTY
 argument_list|,
 name|booleanColumn
 argument_list|)
@@ -92,7 +92,7 @@ name|Boolean
 operator|)
 name|readProperty
 argument_list|(
-literal|"booleanColumn"
+name|BOOLEAN_COLUMN_PROPERTY
 argument_list|)
 decl_stmt|;
 return|return
@@ -120,7 +120,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"intColumn"
+name|INT_COLUMN_PROPERTY
 argument_list|,
 name|intColumn
 argument_list|)
@@ -136,7 +136,7 @@ name|value
 init|=
 name|readProperty
 argument_list|(
-literal|"intColumn"
+name|INT_COLUMN_PROPERTY
 argument_list|)
 decl_stmt|;
 return|return

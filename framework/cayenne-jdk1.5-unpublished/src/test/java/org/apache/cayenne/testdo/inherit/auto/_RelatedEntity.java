@@ -115,7 +115,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"baseEntities"
+name|BASE_ENTITIES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -133,7 +133,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"baseEntities"
+name|BASE_ENTITIES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -163,7 +163,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"baseEntities"
+name|BASE_ENTITIES_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -177,7 +177,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"subEntities"
+name|SUB_ENTITIES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -195,7 +195,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"subEntities"
+name|SUB_ENTITIES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -225,7 +225,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"subEntities"
+name|SUB_ENTITIES_PROPERTY
 argument_list|)
 return|;
 block|}

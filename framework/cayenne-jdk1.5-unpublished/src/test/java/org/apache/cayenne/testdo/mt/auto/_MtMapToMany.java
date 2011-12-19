@@ -91,7 +91,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"targets"
+name|TARGETS_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -109,7 +109,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"targets"
+name|TARGETS_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -143,7 +143,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"targets"
+name|TARGETS_PROPERTY
 argument_list|)
 return|;
 block|}

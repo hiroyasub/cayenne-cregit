@@ -72,6 +72,14 @@ init|=
 literal|"toFT3"
 decl_stmt|;
 specifier|public
+specifier|static
+specifier|final
+name|String
+name|FT4_ID_PK_COLUMN
+init|=
+literal|"FT4_ID"
+decl_stmt|;
+specifier|public
 name|void
 name|setName
 parameter_list|(
@@ -81,7 +89,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -98,7 +106,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -112,7 +120,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toFT3"
+name|TO_FT3_PROPERTY
 argument_list|,
 name|toFT3
 argument_list|,
@@ -131,7 +139,7 @@ name|FlattenedTest3
 operator|)
 name|readProperty
 argument_list|(
-literal|"toFT3"
+name|TO_FT3_PROPERTY
 argument_list|)
 return|;
 block|}

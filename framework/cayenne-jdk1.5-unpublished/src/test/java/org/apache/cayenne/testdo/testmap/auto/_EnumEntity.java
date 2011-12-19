@@ -81,7 +81,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"enumAttribute"
+name|ENUM_ATTRIBUTE_PROPERTY
 argument_list|,
 name|enumAttribute
 argument_list|)
@@ -98,7 +98,7 @@ name|Enum1
 operator|)
 name|readProperty
 argument_list|(
-literal|"enumAttribute"
+name|ENUM_ATTRIBUTE_PROPERTY
 argument_list|)
 return|;
 block|}

@@ -138,6 +138,14 @@ init|=
 literal|"ft4ArrayFor1"
 decl_stmt|;
 specifier|public
+specifier|static
+specifier|final
+name|String
+name|FT1_ID_PK_COLUMN
+init|=
+literal|"FT1_ID"
+decl_stmt|;
+specifier|public
 name|void
 name|setName
 parameter_list|(
@@ -147,7 +155,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -164,7 +172,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -178,7 +186,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"ft2Array"
+name|FT2ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -196,7 +204,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"ft2Array"
+name|FT2ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -226,7 +234,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"ft2Array"
+name|FT2ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -252,7 +260,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"ft3Array"
+name|FT3ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -266,7 +274,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"ft3OverComplex"
+name|FT3OVER_COMPLEX_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -284,7 +292,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"ft3OverComplex"
+name|FT3OVER_COMPLEX_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -314,7 +322,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"ft3OverComplex"
+name|FT3OVER_COMPLEX_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -340,7 +348,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"ft4ArrayFor1"
+name|FT4ARRAY_FOR1_PROPERTY
 argument_list|)
 return|;
 block|}

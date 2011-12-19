@@ -99,7 +99,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -116,7 +116,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -130,7 +130,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"representatives"
+name|REPRESENTATIVES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -148,7 +148,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"representatives"
+name|REPRESENTATIVES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -178,7 +178,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"representatives"
+name|REPRESENTATIVES_PROPERTY
 argument_list|)
 return|;
 block|}

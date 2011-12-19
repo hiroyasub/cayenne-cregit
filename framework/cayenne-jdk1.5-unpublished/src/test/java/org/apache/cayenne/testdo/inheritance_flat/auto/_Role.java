@@ -115,7 +115,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"id"
+name|ID_PROPERTY
 argument_list|,
 name|id
 argument_list|)
@@ -131,7 +131,7 @@ name|value
 init|=
 name|readProperty
 argument_list|(
-literal|"id"
+name|ID_PROPERTY
 argument_list|)
 decl_stmt|;
 return|return
@@ -159,7 +159,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -176,7 +176,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -190,7 +190,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"type"
+name|TYPE_PROPERTY
 argument_list|,
 name|type
 argument_list|)
@@ -206,7 +206,7 @@ name|value
 init|=
 name|readProperty
 argument_list|(
-literal|"type"
+name|TYPE_PROPERTY
 argument_list|)
 decl_stmt|;
 return|return
@@ -234,7 +234,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"roleGroups"
+name|ROLE_GROUPS_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -252,7 +252,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"roleGroups"
+name|ROLE_GROUPS_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -282,7 +282,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"roleGroups"
+name|ROLE_GROUPS_PROPERTY
 argument_list|)
 return|;
 block|}

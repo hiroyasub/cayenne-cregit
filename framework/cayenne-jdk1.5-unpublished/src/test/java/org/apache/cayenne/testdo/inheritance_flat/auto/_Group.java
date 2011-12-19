@@ -119,7 +119,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"groupMembers"
+name|GROUP_MEMBERS_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -137,7 +137,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"groupMembers"
+name|GROUP_MEMBERS_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -167,7 +167,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"groupMembers"
+name|GROUP_MEMBERS_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -181,7 +181,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"groupProperties"
+name|GROUP_PROPERTIES_PROPERTY
 argument_list|,
 name|groupProperties
 argument_list|,
@@ -200,7 +200,7 @@ name|GroupProperties
 operator|)
 name|readProperty
 argument_list|(
-literal|"groupProperties"
+name|GROUP_PROPERTIES_PROPERTY
 argument_list|)
 return|;
 block|}

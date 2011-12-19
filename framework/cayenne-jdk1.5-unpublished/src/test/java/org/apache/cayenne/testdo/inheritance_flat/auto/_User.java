@@ -85,7 +85,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"userProperties"
+name|USER_PROPERTIES_PROPERTY
 argument_list|,
 name|userProperties
 argument_list|,
@@ -104,7 +104,7 @@ name|UserProperties
 operator|)
 name|readProperty
 argument_list|(
-literal|"userProperties"
+name|USER_PROPERTIES_PROPERTY
 argument_list|)
 return|;
 block|}

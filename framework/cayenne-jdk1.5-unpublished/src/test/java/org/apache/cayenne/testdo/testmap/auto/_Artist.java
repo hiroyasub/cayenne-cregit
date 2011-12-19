@@ -165,7 +165,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"artistName"
+name|ARTIST_NAME_PROPERTY
 argument_list|,
 name|artistName
 argument_list|)
@@ -182,7 +182,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"artistName"
+name|ARTIST_NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -196,7 +196,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"dateOfBirth"
+name|DATE_OF_BIRTH_PROPERTY
 argument_list|,
 name|dateOfBirth
 argument_list|)
@@ -213,7 +213,7 @@ name|Date
 operator|)
 name|readProperty
 argument_list|(
-literal|"dateOfBirth"
+name|DATE_OF_BIRTH_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -227,7 +227,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"artistExhibitArray"
+name|ARTIST_EXHIBIT_ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -245,7 +245,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"artistExhibitArray"
+name|ARTIST_EXHIBIT_ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -275,7 +275,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"artistExhibitArray"
+name|ARTIST_EXHIBIT_ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -289,7 +289,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"groupArray"
+name|GROUP_ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -307,7 +307,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"groupArray"
+name|GROUP_ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -337,7 +337,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"groupArray"
+name|GROUP_ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -351,7 +351,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"paintingArray"
+name|PAINTING_ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -369,7 +369,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"paintingArray"
+name|PAINTING_ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -399,7 +399,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"paintingArray"
+name|PAINTING_ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}

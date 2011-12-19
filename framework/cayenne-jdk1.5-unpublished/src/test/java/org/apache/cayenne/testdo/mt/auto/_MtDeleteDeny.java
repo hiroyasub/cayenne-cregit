@@ -89,7 +89,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -106,7 +106,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -120,7 +120,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"deny"
+name|DENY_PROPERTY
 argument_list|,
 name|deny
 argument_list|,
@@ -139,7 +139,7 @@ name|MtDeleteRule
 operator|)
 name|readProperty
 argument_list|(
-literal|"deny"
+name|DENY_PROPERTY
 argument_list|)
 return|;
 block|}

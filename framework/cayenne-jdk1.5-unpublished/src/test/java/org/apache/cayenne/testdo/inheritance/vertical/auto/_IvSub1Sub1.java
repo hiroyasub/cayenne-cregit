@@ -73,7 +73,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"sub1Sub1Name"
+name|SUB1SUB1NAME_PROPERTY
 argument_list|,
 name|sub1Sub1Name
 argument_list|)
@@ -90,7 +90,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"sub1Sub1Name"
+name|SUB1SUB1NAME_PROPERTY
 argument_list|)
 return|;
 block|}

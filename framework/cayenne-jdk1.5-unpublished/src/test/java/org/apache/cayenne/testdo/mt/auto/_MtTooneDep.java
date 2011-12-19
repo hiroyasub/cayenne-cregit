@@ -81,7 +81,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toMaster"
+name|TO_MASTER_PROPERTY
 argument_list|,
 name|toMaster
 argument_list|,
@@ -100,7 +100,7 @@ name|MtTooneMaster
 operator|)
 name|readProperty
 argument_list|(
-literal|"toMaster"
+name|TO_MASTER_PROPERTY
 argument_list|)
 return|;
 block|}

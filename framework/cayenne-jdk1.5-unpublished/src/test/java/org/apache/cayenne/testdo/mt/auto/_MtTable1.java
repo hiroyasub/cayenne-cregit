@@ -107,7 +107,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"globalAttribute1"
+name|GLOBAL_ATTRIBUTE1_PROPERTY
 argument_list|,
 name|globalAttribute1
 argument_list|)
@@ -124,7 +124,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"globalAttribute1"
+name|GLOBAL_ATTRIBUTE1_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -138,7 +138,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"serverAttribute1"
+name|SERVER_ATTRIBUTE1_PROPERTY
 argument_list|,
 name|serverAttribute1
 argument_list|)
@@ -155,7 +155,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"serverAttribute1"
+name|SERVER_ATTRIBUTE1_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -169,7 +169,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"table2Array"
+name|TABLE2ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -187,7 +187,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"table2Array"
+name|TABLE2ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -217,7 +217,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"table2Array"
+name|TABLE2ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}

@@ -116,7 +116,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"binaryColumn"
+name|BINARY_COLUMN_PROPERTY
 argument_list|,
 name|binaryColumn
 argument_list|)
@@ -135,7 +135,7 @@ index|[]
 operator|)
 name|readProperty
 argument_list|(
-literal|"binaryColumn"
+name|BINARY_COLUMN_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -149,7 +149,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"charColumn"
+name|CHAR_COLUMN_PROPERTY
 argument_list|,
 name|charColumn
 argument_list|)
@@ -166,7 +166,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"charColumn"
+name|CHAR_COLUMN_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -180,7 +180,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"intColumn"
+name|INT_COLUMN_PROPERTY
 argument_list|,
 name|intColumn
 argument_list|)
@@ -197,7 +197,7 @@ name|Integer
 operator|)
 name|readProperty
 argument_list|(
-literal|"intColumn"
+name|INT_COLUMN_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -211,7 +211,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"table2Array"
+name|TABLE2ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -229,7 +229,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"table2Array"
+name|TABLE2ARRAY_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -259,7 +259,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"table2Array"
+name|TABLE2ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}

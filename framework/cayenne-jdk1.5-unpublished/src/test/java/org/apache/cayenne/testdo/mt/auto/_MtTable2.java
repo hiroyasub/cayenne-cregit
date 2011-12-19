@@ -113,7 +113,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"globalAttribute"
+name|GLOBAL_ATTRIBUTE_PROPERTY
 argument_list|,
 name|globalAttribute
 argument_list|)
@@ -130,7 +130,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"globalAttribute"
+name|GLOBAL_ATTRIBUTE_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -144,7 +144,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"table1"
+name|TABLE1_PROPERTY
 argument_list|,
 name|table1
 argument_list|,
@@ -163,7 +163,7 @@ name|MtTable1
 operator|)
 name|readProperty
 argument_list|(
-literal|"table1"
+name|TABLE1_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -177,7 +177,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"table3"
+name|TABLE3_PROPERTY
 argument_list|,
 name|table3
 argument_list|,
@@ -196,7 +196,7 @@ name|MtTable3
 operator|)
 name|readProperty
 argument_list|(
-literal|"table3"
+name|TABLE3_PROPERTY
 argument_list|)
 return|;
 block|}

@@ -93,7 +93,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"clientContactType"
+name|CLIENT_CONTACT_TYPE_PROPERTY
 argument_list|,
 name|clientContactType
 argument_list|)
@@ -110,7 +110,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"clientContactType"
+name|CLIENT_CONTACT_TYPE_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -124,7 +124,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toClientCompany"
+name|TO_CLIENT_COMPANY_PROPERTY
 argument_list|,
 name|toClientCompany
 argument_list|,
@@ -143,7 +143,7 @@ name|ClientCompany
 operator|)
 name|readProperty
 argument_list|(
-literal|"toClientCompany"
+name|TO_CLIENT_COMPANY_PROPERTY
 argument_list|)
 return|;
 block|}

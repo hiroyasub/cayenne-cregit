@@ -127,7 +127,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"salary"
+name|SALARY_PROPERTY
 argument_list|,
 name|salary
 argument_list|)
@@ -144,7 +144,7 @@ name|Float
 operator|)
 name|readProperty
 argument_list|(
-literal|"salary"
+name|SALARY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -158,7 +158,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"addresses"
+name|ADDRESSES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -176,7 +176,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"addresses"
+name|ADDRESSES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -206,7 +206,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"addresses"
+name|ADDRESSES_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -220,7 +220,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toDepartment"
+name|TO_DEPARTMENT_PROPERTY
 argument_list|,
 name|toDepartment
 argument_list|,
@@ -239,7 +239,7 @@ name|Department
 operator|)
 name|readProperty
 argument_list|(
-literal|"toDepartment"
+name|TO_DEPARTMENT_PROPERTY
 argument_list|)
 return|;
 block|}

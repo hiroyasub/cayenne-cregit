@@ -123,7 +123,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -140,7 +140,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -154,7 +154,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"employees"
+name|EMPLOYEES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -172,7 +172,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"employees"
+name|EMPLOYEES_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -202,7 +202,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"employees"
+name|EMPLOYEES_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -216,7 +216,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toManager"
+name|TO_MANAGER_PROPERTY
 argument_list|,
 name|toManager
 argument_list|,
@@ -235,7 +235,7 @@ name|Manager
 operator|)
 name|readProperty
 argument_list|(
-literal|"toManager"
+name|TO_MANAGER_PROPERTY
 argument_list|)
 return|;
 block|}

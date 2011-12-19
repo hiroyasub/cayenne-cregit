@@ -65,7 +65,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"pk"
+name|PK_PROPERTY
 argument_list|,
 name|pk
 argument_list|)
@@ -82,7 +82,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"pk"
+name|PK_PROPERTY
 argument_list|)
 return|;
 block|}

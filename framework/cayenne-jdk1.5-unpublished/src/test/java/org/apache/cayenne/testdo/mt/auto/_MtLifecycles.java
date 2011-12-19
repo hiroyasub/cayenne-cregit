@@ -48,6 +48,14 @@ init|=
 literal|"name"
 decl_stmt|;
 specifier|public
+specifier|static
+specifier|final
+name|String
+name|ID_PK_COLUMN
+init|=
+literal|"ID"
+decl_stmt|;
+specifier|public
 name|void
 name|setName
 parameter_list|(
@@ -57,7 +65,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|,
 name|name
 argument_list|)
@@ -74,7 +82,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"name"
+name|NAME_PROPERTY
 argument_list|)
 return|;
 block|}

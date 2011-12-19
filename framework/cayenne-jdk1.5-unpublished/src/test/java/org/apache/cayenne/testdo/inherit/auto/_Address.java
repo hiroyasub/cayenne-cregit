@@ -89,7 +89,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"city"
+name|CITY_PROPERTY
 argument_list|,
 name|city
 argument_list|)
@@ -106,7 +106,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"city"
+name|CITY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -120,7 +120,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toEmployee"
+name|TO_EMPLOYEE_PROPERTY
 argument_list|,
 name|toEmployee
 argument_list|,
@@ -139,7 +139,7 @@ name|Employee
 operator|)
 name|readProperty
 argument_list|(
-literal|"toEmployee"
+name|TO_EMPLOYEE_PROPERTY
 argument_list|)
 return|;
 block|}

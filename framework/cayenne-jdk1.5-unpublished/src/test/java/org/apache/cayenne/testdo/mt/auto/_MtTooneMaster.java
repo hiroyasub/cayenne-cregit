@@ -81,7 +81,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toDependent"
+name|TO_DEPENDENT_PROPERTY
 argument_list|,
 name|toDependent
 argument_list|,
@@ -100,7 +100,7 @@ name|MtTooneDep
 operator|)
 name|readProperty
 argument_list|(
-literal|"toDependent"
+name|TO_DEPENDENT_PROPERTY
 argument_list|)
 return|;
 block|}

@@ -113,7 +113,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"entityType"
+name|ENTITY_TYPE_PROPERTY
 argument_list|,
 name|entityType
 argument_list|)
@@ -130,7 +130,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"entityType"
+name|ENTITY_TYPE_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -144,7 +144,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toDirectToSubEntity"
+name|TO_DIRECT_TO_SUB_ENTITY_PROPERTY
 argument_list|,
 name|toDirectToSubEntity
 argument_list|,
@@ -163,7 +163,7 @@ name|DirectToSubEntity
 operator|)
 name|readProperty
 argument_list|(
-literal|"toDirectToSubEntity"
+name|TO_DIRECT_TO_SUB_ENTITY_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -177,7 +177,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"toRelatedEntity"
+name|TO_RELATED_ENTITY_PROPERTY
 argument_list|,
 name|toRelatedEntity
 argument_list|,
@@ -196,7 +196,7 @@ name|RelatedEntity
 operator|)
 name|readProperty
 argument_list|(
-literal|"toRelatedEntity"
+name|TO_RELATED_ENTITY_PROPERTY
 argument_list|)
 return|;
 block|}

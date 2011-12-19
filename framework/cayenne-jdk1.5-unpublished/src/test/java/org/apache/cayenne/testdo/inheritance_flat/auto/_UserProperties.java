@@ -97,7 +97,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"id"
+name|ID_PROPERTY
 argument_list|,
 name|id
 argument_list|)
@@ -114,7 +114,7 @@ name|Long
 operator|)
 name|readProperty
 argument_list|(
-literal|"id"
+name|ID_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -128,7 +128,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"nickname"
+name|NICKNAME_PROPERTY
 argument_list|,
 name|nickname
 argument_list|)
@@ -145,7 +145,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"nickname"
+name|NICKNAME_PROPERTY
 argument_list|)
 return|;
 block|}
@@ -159,7 +159,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"user"
+name|USER_PROPERTY
 argument_list|,
 name|user
 argument_list|,
@@ -178,7 +178,7 @@ name|User
 operator|)
 name|readProperty
 argument_list|(
-literal|"user"
+name|USER_PROPERTY
 argument_list|)
 return|;
 block|}

@@ -91,7 +91,7 @@ parameter_list|)
 block|{
 name|addToManyTarget
 argument_list|(
-literal|"table4s"
+name|TABLE4S_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -109,7 +109,7 @@ parameter_list|)
 block|{
 name|removeToManyTarget
 argument_list|(
-literal|"table4s"
+name|TABLE4S_PROPERTY
 argument_list|,
 name|obj
 argument_list|,
@@ -139,7 +139,7 @@ argument_list|>
 operator|)
 name|readProperty
 argument_list|(
-literal|"table4s"
+name|TABLE4S_PROPERTY
 argument_list|)
 return|;
 block|}

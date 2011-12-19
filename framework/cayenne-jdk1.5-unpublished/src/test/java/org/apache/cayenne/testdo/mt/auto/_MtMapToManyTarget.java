@@ -81,7 +81,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-literal|"mapToMany"
+name|MAP_TO_MANY_PROPERTY
 argument_list|,
 name|mapToMany
 argument_list|,
@@ -100,7 +100,7 @@ name|MtMapToMany
 operator|)
 name|readProperty
 argument_list|(
-literal|"mapToMany"
+name|MAP_TO_MANY_PROPERTY
 argument_list|)
 return|;
 block|}

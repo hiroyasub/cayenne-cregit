@@ -69,7 +69,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-literal|"subclassAttribute1"
+name|SUBCLASS_ATTRIBUTE1_PROPERTY
 argument_list|,
 name|subclassAttribute1
 argument_list|)
@@ -86,7 +86,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-literal|"subclassAttribute1"
+name|SUBCLASS_ATTRIBUTE1_PROPERTY
 argument_list|)
 return|;
 block|}
