@@ -609,6 +609,13 @@ name|relationship
 operator|.
 name|getDbRelationshipPath
 argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|relationship
+operator|.
+name|getDbRelationshipPath
+argument_list|()
 operator|.
 name|equals
 argument_list|(
