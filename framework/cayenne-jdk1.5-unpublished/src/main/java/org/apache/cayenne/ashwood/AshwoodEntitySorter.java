@@ -1825,6 +1825,9 @@ argument_list|,
 name|finalRel
 argument_list|)
 decl_stmt|;
+comment|// not using 'localObject', looking up in context instead, as within the sorter
+comment|// we only care about objects participating in transaction, so no need to create
+comment|// hollow objects
 return|return
 operator|(
 name|id
@@ -1834,11 +1837,12 @@ operator|)
 condition|?
 name|context
 operator|.
-name|localObject
+name|getGraphManager
+argument_list|()
+operator|.
+name|getNode
 argument_list|(
 name|id
-argument_list|,
-literal|null
 argument_list|)
 else|:
 literal|null
