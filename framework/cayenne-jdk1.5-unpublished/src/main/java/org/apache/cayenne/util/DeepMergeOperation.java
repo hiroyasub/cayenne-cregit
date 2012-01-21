@@ -200,7 +200,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An operation that performs object graph deep merge, terminating merge at unresolved  * nodes.  *   * @since 1.2  */
+comment|/**  * An operation that merges changes from an object graph, whose objects are registered in  * some ObjectContext, to peer objects in an ObjectConext that is a child of that context.  * The merge terminates at hollow nodes in the parent context to avoid tripping over  * unresolved relationships.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -208,11 +208,7 @@ specifier|public
 class|class
 name|DeepMergeOperation
 block|{
-specifier|protected
-name|ObjectContext
-name|context
-decl_stmt|;
-specifier|protected
+specifier|private
 name|Map
 argument_list|<
 name|ObjectId
@@ -221,6 +217,10 @@ name|Persistent
 argument_list|>
 name|seen
 decl_stmt|;
+specifier|private
+name|ShallowMergeOperation
+name|shallowMergeOperation
+decl_stmt|;
 specifier|public
 name|DeepMergeOperation
 parameter_list|(
@@ -228,12 +228,6 @@ name|ObjectContext
 name|context
 parameter_list|)
 block|{
-name|this
-operator|.
-name|context
-operator|=
-name|context
-expr_stmt|;
 name|this
 operator|.
 name|seen
@@ -246,6 +240,16 @@ argument_list|,
 name|Persistent
 argument_list|>
 argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|shallowMergeOperation
+operator|=
+operator|new
+name|ShallowMergeOperation
+argument_list|(
+name|context
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -350,12 +354,10 @@ specifier|final
 name|Persistent
 name|target
 init|=
-name|context
+name|shallowMergeOperation
 operator|.
-name|localObject
+name|merge
 argument_list|(
-name|id
-argument_list|,
 name|source
 argument_list|)
 decl_stmt|;

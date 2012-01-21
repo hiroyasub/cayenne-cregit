@@ -264,7 +264,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that implements  * {@link org.apache.cayenne.DataChannel#onQuery(ObjectContext, Query)} logic on behalf of  * an ObjectContext.  *<p>  *<i>Intended for internal use only.</i>  *</p>  *  * @since 1.2  */
+comment|/**  * A helper class that implements  * {@link org.apache.cayenne.DataChannel#onQuery(ObjectContext, Query)} logic on behalf of  * an ObjectContext.  *<p>  *<i>Intended for internal use only.</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -482,6 +482,11 @@ operator|new
 name|GenericResponse
 argument_list|()
 decl_stmt|;
+name|ShallowMergeOperation
+name|merger
+init|=
+literal|null
+decl_stmt|;
 for|for
 control|(
 name|response
@@ -530,6 +535,22 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|merger
+operator|==
+literal|null
+condition|)
+block|{
+name|merger
+operator|=
+operator|new
+name|ShallowMergeOperation
+argument_list|(
+name|targetContext
+argument_list|)
+expr_stmt|;
+block|}
 comment|// TODO: Andrus 1/31/2006 - IncrementalFaultList is not properly
 comment|// transferred between contexts....
 name|List
@@ -575,15 +596,10 @@ name|childObjects
 operator|.
 name|add
 argument_list|(
-name|targetContext
+name|merger
 operator|.
-name|localObject
+name|merge
 argument_list|(
-name|object
-operator|.
-name|getObjectId
-argument_list|()
-argument_list|,
 name|object
 argument_list|)
 argument_list|)
@@ -993,7 +1009,7 @@ return|return
 name|DONE
 return|;
 block|}
-comment|/**                          * Workaround for CAY-1183. If a Relationship query is being sent from                          * child context, we assure that local object is not NEW and relationship - unresolved                          * (this way exception will occur). This helps when faulting objects that                          * were committed to parent context (this), but not to database.                          *                          * Checking type of context's channel is the only way to ensure that we are                          * on the top level of context hierarchy (there might be more than one-level-deep                          * nested contexts).                          */
+comment|/**                          * Workaround for CAY-1183. If a Relationship query is being sent                          * from child context, we assure that local object is not NEW and                          * relationship - unresolved (this way exception will occur). This                          * helps when faulting objects that were committed to parent                          * context (this), but not to database. Checking type of context's                          * channel is the only way to ensure that we are on the top level                          * of context hierarchy (there might be more than one-level-deep                          * nested contexts).                          */
 if|if
 condition|(
 operator|(
