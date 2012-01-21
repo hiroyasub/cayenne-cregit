@@ -2284,16 +2284,11 @@ expr_stmt|;
 name|ClientMtTable1
 name|hollow
 init|=
-operator|(
-name|ClientMtTable1
-operator|)
 name|context
 operator|.
 name|localObject
 argument_list|(
-name|gid
-argument_list|,
-literal|null
+name|inflated
 argument_list|)
 decl_stmt|;
 name|assertEquals
