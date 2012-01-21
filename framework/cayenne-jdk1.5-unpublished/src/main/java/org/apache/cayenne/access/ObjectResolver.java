@@ -652,11 +652,9 @@ name|object
 init|=
 name|context
 operator|.
-name|localObject
+name|findOrCreateObject
 argument_list|(
 name|anId
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 comment|// deal with object state

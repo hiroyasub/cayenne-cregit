@@ -1094,8 +1094,7 @@ argument_list|)
 condition|)
 block|{
 comment|// prevent passing partial snapshots to ObjectResolver per CAY-724.
-comment|// Create
-comment|// a hollow object right here and skip object conversion downstream
+comment|// Create a hollow object right here and skip object conversion downstream
 name|this
 operator|.
 name|noObjectConversion
@@ -1107,11 +1106,9 @@ name|object
 init|=
 name|context
 operator|.
-name|localObject
+name|findOrCreateObject
 argument_list|(
 name|targetId
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|this

@@ -864,11 +864,9 @@ literal|null
 argument_list|,
 name|context
 operator|.
-name|localObject
+name|findOrCreateObject
 argument_list|(
 name|id
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
