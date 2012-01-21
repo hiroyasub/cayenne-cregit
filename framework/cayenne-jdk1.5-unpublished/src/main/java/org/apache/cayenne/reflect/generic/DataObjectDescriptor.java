@@ -94,6 +94,11 @@ parameter_list|)
 throws|throws
 name|PropertyException
 block|{
+name|injectValueHolders
+argument_list|(
+name|to
+argument_list|)
+expr_stmt|;
 name|super
 operator|.
 name|shallowMerge
