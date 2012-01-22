@@ -805,6 +805,41 @@ name|ObjectIdQuery
 operator|)
 name|query
 decl_stmt|;
+name|ObjectId
+name|oid
+init|=
+name|oidQuery
+operator|.
+name|getObjectId
+argument_list|()
+decl_stmt|;
+comment|// special handling of temp ids... Return an empty list immediately so that
+comment|// upstream code could throw FaultFailureException, etc. Don't attempt to
+comment|// translate and run the query. See for instance CAY-1651
+if|if
+condition|(
+name|oid
+operator|.
+name|isTemporary
+argument_list|()
+operator|&&
+operator|!
+name|oid
+operator|.
+name|isReplacementIdAttached
+argument_list|()
+condition|)
+block|{
+name|response
+operator|=
+operator|new
+name|ListResponse
+argument_list|()
+expr_stmt|;
+return|return
+name|DONE
+return|;
+block|}
 name|DataRow
 name|row
 init|=

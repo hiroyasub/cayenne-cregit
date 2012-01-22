@@ -1156,8 +1156,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|assertNull
 argument_list|(
 name|Cayenne
@@ -1185,22 +1183,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"An attempt to fetch an object for "
-operator|+
-literal|"the non-existent temp id should have failed..."
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneRuntimeException
-name|e
-parameter_list|)
-block|{
-comment|// expected
-block|}
 block|}
 specifier|public
 name|void

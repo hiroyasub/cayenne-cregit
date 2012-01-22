@@ -194,15 +194,8 @@ name|a1
 operator|.
 name|setArtistName
 argument_list|(
-literal|"Z"
+literal|"Y"
 argument_list|)
-expr_stmt|;
-comment|// commit to parent, so that object with temp ID becomes visible to peer child
-comment|// contexts
-name|peer1
-operator|.
-name|commitChangesToParent
-argument_list|()
 expr_stmt|;
 name|ObjectId
 name|a1TempId
@@ -248,14 +241,6 @@ name|a2
 operator|.
 name|getObjectId
 argument_list|()
-argument_list|)
-expr_stmt|;
-comment|// make changes to be able to trigger a commit from child, the commit to DB
-name|a1
-operator|.
-name|setArtistName
-argument_list|(
-literal|"Y"
 argument_list|)
 expr_stmt|;
 name|peer1

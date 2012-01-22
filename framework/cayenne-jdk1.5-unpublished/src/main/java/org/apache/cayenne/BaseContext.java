@@ -831,18 +831,6 @@ return|return
 name|localObject
 return|;
 block|}
-comment|// if the ID is not temporary, let's optimistically assume it exists in the DB,
-comment|// and return a hollow object ... avoid race condition by synchronizing object
-comment|// creation and inserting
-if|if
-condition|(
-operator|!
-name|id
-operator|.
-name|isTemporary
-argument_list|()
-condition|)
-block|{
 synchronized|synchronized
 init|(
 name|getGraphManager
@@ -875,7 +863,9 @@ return|return
 name|localObject
 return|;
 block|}
-comment|// create a hollow object
+comment|// create a hollow object, optimistically assuming that the ID we got from
+comment|// 'objectFromAnotherContext' is a valid ID either in the parent context or in
+comment|// the DB. This essentially defers possible FaultFailureExceptions.
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -941,66 +931,6 @@ operator|)
 name|persistent
 return|;
 block|}
-block|}
-comment|// if the ID is temporary, we still have a chance of finding the object in the
-comment|// parent channel (not sure if that's a good strategy with ROP?)
-comment|// note that since the query is configured to only hit the cache and avoid going
-comment|// to DB, it will not throw, but rather return NULL if the object we are looking
-comment|// for is not found.
-name|ObjectIdQuery
-name|query
-init|=
-operator|new
-name|ObjectIdQuery
-argument_list|(
-name|id
-argument_list|,
-literal|false
-argument_list|,
-name|ObjectIdQuery
-operator|.
-name|CACHE_NOREFRESH
-argument_list|)
-decl_stmt|;
-name|localObject
-operator|=
-operator|(
-name|T
-operator|)
-name|Cayenne
-operator|.
-name|objectForQuery
-argument_list|(
-name|this
-argument_list|,
-name|query
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|localObject
-operator|!=
-literal|null
-condition|)
-block|{
-return|return
-name|localObject
-return|;
-block|}
-comment|// giving up...
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"A temporary ObjectId "
-operator|+
-name|id
-operator|+
-literal|" was not found in the context and parent caches, "
-operator|+
-literal|"so local version of the object can not be created."
-argument_list|)
-throw|;
 block|}
 specifier|public
 specifier|abstract

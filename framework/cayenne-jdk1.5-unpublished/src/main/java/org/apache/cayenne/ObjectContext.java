@@ -144,7 +144,7 @@ name|Object
 name|prototype
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a local copy of 'objectFromAnotherContext' object. "Local" means that the      * returned object is registered in this context. If the local object hasn't been      * previously cached in this context, a hollow object is created and returned to the      * caller. No DB query is performed to resolve an object.      *<p>      * This method will cause an exception if 'objectFromAnotherContext' has a temporary      * ObjectId and a copy of an object can't be found in this context or its parent      * DataChannel.      *       * @since 3.1      */
+comment|/**      * Returns a local copy of 'objectFromAnotherContext' object. "Local" means that the      * returned object is registered in this context. If the local object hasn't been      * previously cached in this context, a hollow object is created and returned to the      * caller. No DB query is performed to resolve an object.      *<p>      * Note that passing an object with a non-existing id, may later result in      * FaultFailureException on attempt to read returned object properties.      *       * @since 3.1      */
 parameter_list|<
 name|T
 parameter_list|>

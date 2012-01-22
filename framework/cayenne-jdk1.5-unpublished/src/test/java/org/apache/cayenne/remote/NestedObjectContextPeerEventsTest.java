@@ -228,12 +228,6 @@ operator|.
 name|getObjectId
 argument_list|()
 decl_stmt|;
-comment|// make sure temp ObjectId becomes available to peers
-name|peer1
-operator|.
-name|commitChangesToParent
-argument_list|()
-expr_stmt|;
 name|ObjectContext
 name|peer2
 init|=
@@ -260,13 +254,6 @@ name|a2
 operator|.
 name|getObjectId
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|a1
-operator|.
-name|setGlobalAttribute1
-argument_list|(
-literal|"Z"
 argument_list|)
 expr_stmt|;
 name|peer1
