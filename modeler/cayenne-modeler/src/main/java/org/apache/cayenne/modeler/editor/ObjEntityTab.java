@@ -277,6 +277,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -2554,6 +2568,14 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// init DbEntities
+name|EntityResolver
+name|resolver
+init|=
+name|mediator
+operator|.
+name|getEntityResolver
+argument_list|()
+decl_stmt|;
 name|DataMap
 name|map
 init|=
@@ -2566,7 +2588,7 @@ name|Object
 index|[]
 name|dbEntities
 init|=
-name|map
+name|resolver
 operator|.
 name|getDbEntities
 argument_list|()
