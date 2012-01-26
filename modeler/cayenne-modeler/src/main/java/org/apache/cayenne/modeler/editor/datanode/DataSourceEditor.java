@@ -136,7 +136,7 @@ name|ObjectBinding
 index|[]
 name|fieldAdapters
 decl_stmt|;
-specifier|protected
+specifier|private
 name|DataNodeDescriptor
 name|node
 decl_stmt|;
