@@ -115,7 +115,15 @@ name|Inherited
 specifier|public
 annotation_defn|@interface
 name|Auditable
-block|{  }
+block|{
+name|String
+index|[]
+name|ignoredProperties
+argument_list|()
+expr|default
+block|{}
+expr_stmt|;
+block|}
 end_annotation_defn
 
 end_unit

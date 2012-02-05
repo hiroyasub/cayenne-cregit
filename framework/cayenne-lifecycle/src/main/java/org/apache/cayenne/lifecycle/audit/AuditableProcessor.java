@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A superclass of application specific handlers of the {@link Auditable} mixin that  * provides basic needed callbacks.  *   * @since 3.1  */
+comment|/**  * A superclass of application specific handlers of the {@link Auditable} annotation, that  * provides basic needed callbacks.  *   * @since 3.1  */
 end_comment
 
 begin_interface

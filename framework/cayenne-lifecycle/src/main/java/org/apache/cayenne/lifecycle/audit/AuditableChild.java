@@ -121,6 +121,13 @@ name|String
 name|value
 parameter_list|()
 function_decl|;
+name|String
+index|[]
+name|ignoredProperties
+argument_list|()
+expr|default
+block|{}
+expr_stmt|;
 block|}
 end_annotation_defn
 
