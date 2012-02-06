@@ -116,12 +116,14 @@ specifier|public
 annotation_defn|@interface
 name|CacheGroups
 block|{
-comment|/**      * Defines one or more cache group names associated with the tagged entity.      */
+comment|/**      * Defines one or more cache group names associated with the tagged entity. If      * omitted, it is assumed that cache group names are determined dynamically based on      * the object type or state in whatever listener is to process them.      */
 name|String
 index|[]
 name|value
-parameter_list|()
-function_decl|;
+argument_list|()
+expr|default
+block|{}
+expr_stmt|;
 block|}
 end_annotation_defn
 
