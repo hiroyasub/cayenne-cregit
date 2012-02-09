@@ -68,6 +68,7 @@ name|ValidationResult
 name|result
 parameter_list|)
 block|{
+comment|// escape percent signs so they aren't interpreted as format specifiers when String.format is called later.
 name|this
 argument_list|(
 literal|"Validation failures: "
@@ -76,6 +77,13 @@ name|result
 operator|.
 name|toString
 argument_list|()
+operator|.
+name|replace
+argument_list|(
+literal|"%"
+argument_list|,
+literal|"%%"
+argument_list|)
 argument_list|,
 name|result
 argument_list|)
