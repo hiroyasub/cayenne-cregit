@@ -241,6 +241,14 @@ argument_list|(
 literal|"CLOB_TEST_RELATION"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|accessStackAdapter
+operator|.
+name|supportsLobs
+argument_list|()
+condition|)
+block|{
 name|dbHelper
 operator|.
 name|deleteAll
@@ -248,6 +256,7 @@ argument_list|(
 literal|"CLOB_TEST"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void

@@ -188,6 +188,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|accessStackAdapter
+operator|.
+name|supportsLobs
+argument_list|()
+condition|)
+block|{
 name|dbHelper
 operator|.
 name|deleteAll
@@ -195,6 +203,7 @@ argument_list|(
 literal|"CLOB_TEST"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|boolean

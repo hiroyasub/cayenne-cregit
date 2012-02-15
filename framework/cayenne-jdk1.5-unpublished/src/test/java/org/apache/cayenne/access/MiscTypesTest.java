@@ -234,6 +234,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|accessStackAdapter
+operator|.
+name|supportsLobs
+argument_list|()
+condition|)
+block|{
 name|dbHelper
 operator|.
 name|deleteAll
@@ -241,6 +249,7 @@ argument_list|(
 literal|"SERIALIZABLE_ENTITY"
 argument_list|)
 expr_stmt|;
+block|}
 name|dbHelper
 operator|.
 name|deleteAll
