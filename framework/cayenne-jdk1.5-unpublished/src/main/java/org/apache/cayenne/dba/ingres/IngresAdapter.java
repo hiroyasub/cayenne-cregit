@@ -267,6 +267,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|sybase
+operator|.
+name|SybaseMergerFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -298,6 +314,20 @@ operator|.
 name|map
 operator|.
 name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|merge
+operator|.
+name|MergerFactory
 import|;
 end_import
 
@@ -1067,6 +1097,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
+specifier|public
+name|MergerFactory
+name|mergerFactory
+parameter_list|()
+block|{
+return|return
+operator|new
+name|IngresMergerFactory
+argument_list|()
+return|;
+block|}
+comment|//    @Override
+comment|//    public void createTableAppendColumn(StringBuffer sqlBuffer, DbAttribute column) {
+comment|//        super.createTableAppendColumn(sqlBuffer, column);
+comment|//    }
 block|}
 end_class
 
