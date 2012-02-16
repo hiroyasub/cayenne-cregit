@@ -58,6 +58,17 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
+name|supportsBoolean
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
 name|supportsLobs
 parameter_list|()
 block|{

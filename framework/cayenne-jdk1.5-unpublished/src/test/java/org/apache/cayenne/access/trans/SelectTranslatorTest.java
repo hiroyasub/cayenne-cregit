@@ -778,6 +778,34 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+name|generatedSql
+operator|.
+name|contains
+argument_list|(
+literal|"TRIM"
+argument_list|)
+condition|)
+block|{
+name|assertTrue
+argument_list|(
+name|generatedSql
+operator|.
+name|indexOf
+argument_list|(
+literal|"ARTIST_NAME) = "
+argument_list|)
+operator|>
+name|generatedSql
+operator|.
+name|indexOf
+argument_list|(
+literal|"TRIM("
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 block|{
 name|assertTrue
