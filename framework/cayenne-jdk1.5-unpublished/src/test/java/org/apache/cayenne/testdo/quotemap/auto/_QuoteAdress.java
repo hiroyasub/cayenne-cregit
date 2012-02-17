@@ -97,7 +97,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|CITY_PROPERTY
+literal|"city"
 argument_list|,
 name|city
 argument_list|)
@@ -114,7 +114,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-name|CITY_PROPERTY
+literal|"city"
 argument_list|)
 return|;
 block|}
@@ -128,7 +128,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|GROUP_PROPERTY
+literal|"group"
 argument_list|,
 name|group
 argument_list|)
@@ -145,7 +145,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-name|GROUP_PROPERTY
+literal|"group"
 argument_list|)
 return|;
 block|}
@@ -159,7 +159,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-name|PERSON_REL_PROPERTY
+literal|"person_Rel"
 argument_list|,
 name|person_Rel
 argument_list|,
@@ -178,7 +178,7 @@ name|Quote_Person
 operator|)
 name|readProperty
 argument_list|(
-name|PERSON_REL_PROPERTY
+literal|"person_Rel"
 argument_list|)
 return|;
 block|}

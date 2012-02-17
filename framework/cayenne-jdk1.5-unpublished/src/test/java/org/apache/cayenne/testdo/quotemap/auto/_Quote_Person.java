@@ -131,7 +131,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|D_ATE_PROPERTY
+literal|"dAte"
 argument_list|,
 name|dAte
 argument_list|)
@@ -148,7 +148,7 @@ name|Date
 operator|)
 name|readProperty
 argument_list|(
-name|D_ATE_PROPERTY
+literal|"dAte"
 argument_list|)
 return|;
 block|}
@@ -162,7 +162,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|F_ULL_NAME_PROPERTY
+literal|"fULL_name"
 argument_list|,
 name|fULL_name
 argument_list|)
@@ -179,7 +179,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-name|F_ULL_NAME_PROPERTY
+literal|"fULL_name"
 argument_list|)
 return|;
 block|}
@@ -193,7 +193,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|GROUP_PROPERTY
+literal|"group"
 argument_list|,
 name|group
 argument_list|)
@@ -210,7 +210,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-name|GROUP_PROPERTY
+literal|"group"
 argument_list|)
 return|;
 block|}
@@ -224,7 +224,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|NAME_PROPERTY
+literal|"name"
 argument_list|,
 name|name
 argument_list|)
@@ -241,7 +241,7 @@ name|String
 operator|)
 name|readProperty
 argument_list|(
-name|NAME_PROPERTY
+literal|"name"
 argument_list|)
 return|;
 block|}
@@ -255,7 +255,7 @@ parameter_list|)
 block|{
 name|writeProperty
 argument_list|(
-name|SALARY_PROPERTY
+literal|"salary"
 argument_list|,
 name|salary
 argument_list|)
@@ -272,7 +272,7 @@ name|Integer
 operator|)
 name|readProperty
 argument_list|(
-name|SALARY_PROPERTY
+literal|"salary"
 argument_list|)
 return|;
 block|}
@@ -286,7 +286,7 @@ parameter_list|)
 block|{
 name|setToOneTarget
 argument_list|(
-name|ADDRESS_REL_PROPERTY
+literal|"address_Rel"
 argument_list|,
 name|address_Rel
 argument_list|,
@@ -305,7 +305,7 @@ name|QuoteAdress
 operator|)
 name|readProperty
 argument_list|(
-name|ADDRESS_REL_PROPERTY
+literal|"address_Rel"
 argument_list|)
 return|;
 block|}

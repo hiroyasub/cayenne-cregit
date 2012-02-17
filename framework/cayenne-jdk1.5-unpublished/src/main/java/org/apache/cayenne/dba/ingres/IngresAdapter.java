@@ -299,6 +299,34 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|DbJoin
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbRelationship
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|merge
 operator|.
 name|MergerFactory
@@ -405,11 +433,9 @@ argument_list|,
 name|extendedTypeFactories
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
 name|setSupportsUniqueConstraints
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -872,9 +898,6 @@ literal|" NOT NULL"
 argument_list|)
 expr_stmt|;
 block|}
-comment|//        if (at.isGenerated()) {
-comment|//            buf.append(" GENERATED ALWAYS AS IDENTITY");
-comment|//        }
 block|}
 block|}
 end_class
