@@ -1269,14 +1269,7 @@ name|translator
 operator|.
 name|setCaseInsensitive
 argument_list|(
-name|runtimeProperties
-operator|.
-name|getBoolean
-argument_list|(
-name|CI_PROPERTY
-argument_list|,
-literal|false
-argument_list|)
+name|caseInsensitiveCollations
 argument_list|)
 expr_stmt|;
 return|return

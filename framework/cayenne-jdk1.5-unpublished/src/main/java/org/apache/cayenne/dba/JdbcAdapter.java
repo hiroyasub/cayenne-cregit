@@ -544,8 +544,8 @@ name|ResourceLocator
 name|resourceLocator
 decl_stmt|;
 specifier|protected
-name|RuntimeProperties
-name|runtimeProperties
+name|boolean
+name|caseInsensitiveCollations
 decl_stmt|;
 comment|/**      * @since 3.1      */
 annotation|@
@@ -640,9 +640,16 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|runtimeProperties
+name|caseInsensitiveCollations
 operator|=
 name|runtimeProperties
+operator|.
+name|getBoolean
+argument_list|(
+name|CI_PROPERTY
+argument_list|,
+literal|false
+argument_list|)
 expr_stmt|;
 comment|// TODO: andrus 05.02.2010 - ideally this should be injected
 name|this
@@ -941,14 +948,7 @@ name|translatorFactory
 operator|.
 name|setCaseInsensitive
 argument_list|(
-name|runtimeProperties
-operator|.
-name|getBoolean
-argument_list|(
-name|CI_PROPERTY
-argument_list|,
-literal|false
-argument_list|)
+name|caseInsensitiveCollations
 argument_list|)
 expr_stmt|;
 return|return
@@ -2236,14 +2236,7 @@ name|translator
 operator|.
 name|setCaseInsensitive
 argument_list|(
-name|runtimeProperties
-operator|.
-name|getBoolean
-argument_list|(
-name|CI_PROPERTY
-argument_list|,
-literal|false
-argument_list|)
+name|caseInsensitiveCollations
 argument_list|)
 expr_stmt|;
 return|return

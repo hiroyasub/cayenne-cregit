@@ -100,6 +100,8 @@ name|String
 name|key
 parameter_list|)
 block|{
+comment|// TODO: note that System.getProperty uses a synchronized hashtable internally as
+comment|// of Java 1.6. So this method suddenly becomes a synchronization bottleneck.
 name|String
 name|property
 init|=
