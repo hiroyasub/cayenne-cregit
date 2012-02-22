@@ -25,6 +25,16 @@ name|parser
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
 begin_comment
 comment|/**  * An implementation of interface CharStream, where the stream is assumed to  * contain only ASCII characters (with java-like unicode escape processing).  */
 end_comment
@@ -34,6 +44,34 @@ specifier|public
 class|class
 name|JavaCharStream
 block|{
+comment|// optimizing internal Exception by reusing the exception per CAY-1667. This exception
+comment|// never reaches the end user, so we can suppress stack trace creation and make it
+comment|// efficient
+specifier|private
+specifier|static
+specifier|final
+name|IOException
+name|END_OF_STREAM_EXCEPTION
+init|=
+operator|new
+name|IOException
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+specifier|synchronized
+name|Throwable
+name|fillInStackTrace
+parameter_list|()
+block|{
+return|return
+name|this
+return|;
+block|}
+empty_stmt|;
+block|}
+decl_stmt|;
 comment|/** Whether parser is static. */
 specifier|public
 specifier|static
@@ -640,13 +678,7 @@ name|close
 argument_list|()
 expr_stmt|;
 throw|throw
-operator|new
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-argument_list|()
+name|END_OF_STREAM_EXCEPTION
 throw|;
 block|}
 else|else
