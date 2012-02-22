@@ -47,16 +47,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Deque
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
 import|;
 end_import
@@ -72,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Linked list implementation of the {@link Deque} interface where the link pointers are  * tightly integrated with the element. Linked deques have no capacity restrictions; they  * grow as necessary to support usage. They are not thread-safe; in the absence of  * external synchronization, they do not support concurrent access by multiple threads.  * Null elements are prohibited.  *<p>  * Most<tt>LinkedDeque</tt> operations run in constant time by assuming that the  * {@link Linked} parameter is associated with the deque instance. Any usage that violates  * this assumption will result in non-deterministic behavior.  *<p>  * The iterators returned by this class are<em>not</em><i>fail-fast</i>: If the deque is  * modified at any time after the iterator is created, the iterator will be in an unknown  * state. Thus, in the face of concurrent modification, the iterator risks arbitrary,  * non-deterministic behavior at an undetermined time in the future.  *   * @param<E> the type of elements held in this collection  */
+comment|/**  * Linked list implementation of the Deque interface (not available in Java 5, so not  * formally declared) where the link pointers are tightly integrated with the element.  * Linked deques have no capacity restrictions; they grow as necessary to support usage.  * They are not thread-safe; in the absence of external synchronization, they do not  * support concurrent access by multiple threads. Null elements are prohibited.  *<p>  * Most<tt>LinkedDeque</tt> operations run in constant time by assuming that the  * {@link Linked} parameter is associated with the deque instance. Any usage that violates  * this assumption will result in non-deterministic behavior.  *<p>  * The iterators returned by this class are<em>not</em><i>fail-fast</i>: If the deque is  * modified at any time after the iterator is created, the iterator will be in an unknown  * state. Thus, in the face of concurrent modification, the iterator risks arbitrary,  * non-deterministic behavior at an undetermined time in the future.  *   * @param<E> the type of elements held in this collection  */
 end_comment
 
 begin_class
@@ -1229,7 +1219,7 @@ block|}
 end_class
 
 begin_comment
-comment|/**  * An element that is linked on the {@link Deque}.  */
+comment|/**  * An element that is linked on the Deque.  */
 end_comment
 
 begin_interface
