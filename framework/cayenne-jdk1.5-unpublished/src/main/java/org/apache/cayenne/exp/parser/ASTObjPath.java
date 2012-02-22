@@ -157,6 +157,14 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|OBJ_PREFIX
+init|=
+literal|"obj:"
+decl_stmt|;
 comment|/**      * Constructor used by expression parser. Do not invoke directly.      */
 name|ASTObjPath
 parameter_list|(

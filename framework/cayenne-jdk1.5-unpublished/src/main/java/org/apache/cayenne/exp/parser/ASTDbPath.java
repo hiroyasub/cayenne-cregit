@@ -100,6 +100,14 @@ name|ASTDbPath
 extends|extends
 name|ASTPath
 block|{
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DB_PREFIX
+init|=
+literal|"db:"
+decl_stmt|;
 name|ASTDbPath
 parameter_list|(
 name|int
@@ -343,7 +351,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-literal|"db:"
+name|DB_PREFIX
 argument_list|)
 expr_stmt|;
 name|pw
@@ -373,7 +381,7 @@ name|pw
 operator|.
 name|print
 argument_list|(
-literal|"db:"
+name|DB_PREFIX
 argument_list|)
 expr_stmt|;
 name|pw
