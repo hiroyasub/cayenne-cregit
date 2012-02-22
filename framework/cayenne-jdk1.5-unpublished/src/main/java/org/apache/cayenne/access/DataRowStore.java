@@ -107,6 +107,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|ConcurrentMap
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -255,11 +267,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|util
 operator|.
-name|ExtendedProperties
+name|concurrentlinkedhashmap
+operator|.
+name|ConcurrentLinkedHashMap
 import|;
 end_import
 
@@ -273,9 +287,7 @@ name|commons
 operator|.
 name|collections
 operator|.
-name|map
-operator|.
-name|LRUMap
+name|ExtendedProperties
 import|;
 end_import
 
@@ -308,7 +320,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A fixed size cache of DataRows keyed by ObjectId.  *<p>  *<strong>Synchronization Note:</strong> DataRowStore synchronizes most operations on  * its own instance.  *</p>  *   * @since 1.1  */
+comment|/**  * A fixed size cache of DataRows keyed by ObjectId.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -409,8 +421,17 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
+specifier|private
+name|int
+name|maxSize
+decl_stmt|;
 specifier|protected
-name|LRUMap
+name|ConcurrentMap
+argument_list|<
+name|ObjectId
+argument_list|,
+name|DataRow
+argument_list|>
 name|snapshots
 decl_stmt|;
 specifier|protected
@@ -549,9 +570,8 @@ argument_list|,
 name|SNAPSHOT_EXPIRATION_DEFAULT
 argument_list|)
 decl_stmt|;
-name|int
-name|snapshotsCacheSize
-init|=
+name|maxSize
+operator|=
 name|propertiesWrapper
 operator|.
 name|getInt
@@ -560,7 +580,7 @@ name|SNAPSHOT_CACHE_SIZE_PROPERTY
 argument_list|,
 name|SNAPSHOT_CACHE_SIZE_DEFAULT
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|boolean
 name|notifyRemote
 init|=
@@ -616,7 +636,7 @@ name|SNAPSHOT_CACHE_SIZE_PROPERTY
 operator|+
 literal|" = "
 operator|+
-name|snapshotsCacheSize
+name|maxSize
 argument_list|)
 expr_stmt|;
 name|logger
@@ -653,16 +673,28 @@ name|notifyingRemoteListeners
 operator|=
 name|notifyRemote
 expr_stmt|;
-comment|// TODO: ENTRY EXPIRATION is not supported by commons LRU Map
 name|this
 operator|.
 name|snapshots
 operator|=
 operator|new
-name|LRUMap
+name|ConcurrentLinkedHashMap
+operator|.
+name|Builder
+argument_list|<
+name|ObjectId
+argument_list|,
+name|DataRow
+argument_list|>
+argument_list|()
+operator|.
+name|maximumWeightedCapacity
 argument_list|(
-name|snapshotsCacheSize
+name|maxSize
 argument_list|)
+operator|.
+name|build
+argument_list|()
 expr_stmt|;
 comment|// init event bridge only if we are notifying remote listeners
 if|if
@@ -815,11 +847,6 @@ name|eventPostedBy
 init|=
 literal|null
 decl_stmt|;
-synchronized|synchronized
-init|(
-name|this
-init|)
-block|{
 for|for
 control|(
 name|int
@@ -886,9 +913,6 @@ comment|// missing
 name|DataRow
 name|cachedSnapshot
 init|=
-operator|(
-name|DataRow
-operator|)
 name|this
 operator|.
 name|snapshots
@@ -1036,7 +1060,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 comment|/**      * Returns current cache size.      */
 specifier|public
 name|int
@@ -1057,10 +1080,7 @@ name|maximumSize
 parameter_list|()
 block|{
 return|return
-name|snapshots
-operator|.
 name|maxSize
-argument_list|()
 return|;
 block|}
 comment|/**      * Shuts down any remote notification connections, and clears internal cache.      */
@@ -1146,7 +1166,6 @@ block|}
 block|}
 comment|/**      * Returns cached snapshot or null if no snapshot is currently cached for the given      * ObjectId.      */
 specifier|public
-specifier|synchronized
 name|DataRow
 name|getCachedSnapshot
 parameter_list|(
@@ -1155,9 +1174,6 @@ name|oid
 parameter_list|)
 block|{
 return|return
-operator|(
-name|DataRow
-operator|)
 name|snapshots
 operator|.
 name|get
@@ -1178,7 +1194,6 @@ return|;
 block|}
 comment|/**      * Expires and removes all stored snapshots without sending any notification events.      */
 specifier|public
-specifier|synchronized
 name|void
 name|clear
 parameter_list|()
@@ -1191,7 +1206,6 @@ expr_stmt|;
 block|}
 comment|/**      * Evicts a snapshot from cache without generating any SnapshotEvents.      */
 specifier|public
-specifier|synchronized
 name|void
 name|forgetSnapshot
 parameter_list|(
@@ -1310,11 +1324,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-synchronized|synchronized
-init|(
-name|this
-init|)
-block|{
 name|processDeletedIDs
 argument_list|(
 name|deletedSnapshotIds
@@ -1346,7 +1355,6 @@ argument_list|,
 name|indirectlyModifiedIds
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Processes changes made to snapshots. Modifies internal cache state, and then sends      * the event to all listeners. Source of these changes is usually an ObjectStore.      */
 specifier|public
@@ -1402,11 +1410,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-synchronized|synchronized
-init|(
-name|this
-init|)
-block|{
 name|processDeletedIDs
 argument_list|(
 name|deletedSnapshotIds
@@ -1438,7 +1441,6 @@ argument_list|,
 name|indirectlyModifiedIds
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|void
@@ -1616,9 +1618,6 @@ decl_stmt|;
 name|DataRow
 name|oldSnapshot
 init|=
-operator|(
-name|DataRow
-operator|)
 name|snapshots
 operator|.
 name|put
@@ -1810,9 +1809,6 @@ decl_stmt|;
 name|DataRow
 name|oldSnapshot
 init|=
-operator|(
-name|DataRow
-operator|)
 name|snapshots
 operator|.
 name|remove

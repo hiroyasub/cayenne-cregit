@@ -271,11 +271,6 @@ name|getObjectStore
 argument_list|()
 init|)
 block|{
-synchronized|synchronized
-init|(
-name|cache
-init|)
-block|{
 return|return
 name|resolveObjectTree
 argument_list|(
@@ -286,7 +281,6 @@ argument_list|,
 name|extraResultsByPath
 argument_list|)
 return|;
-block|}
 block|}
 block|}
 specifier|private

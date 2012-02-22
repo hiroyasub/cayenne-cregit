@@ -459,22 +459,6 @@ begin_comment
 comment|/**  * ObjectStore stores objects using their ObjectId as a key. It works as a dedicated  * object cache for a DataContext. Users rarely need to access ObjectStore directly, as  * DataContext serves as a facade, providing cover methods for most ObjectStore  * operations.  *   * @since 1.0  */
 end_comment
 
-begin_comment
-comment|// Synchronization Note: There is often a need to do double synchronize on an ObjectStore
-end_comment
-
-begin_comment
-comment|// and an underlying DataRowCache. To avoid deadlocks, Cayenne consistently follows the
-end_comment
-
-begin_comment
-comment|// policy of locking an ObjectStore first, and then locking DataRowStore. This pattern
-end_comment
-
-begin_comment
-comment|// must be followed in any new related developments.
-end_comment
-
 begin_class
 specifier|public
 class|class
