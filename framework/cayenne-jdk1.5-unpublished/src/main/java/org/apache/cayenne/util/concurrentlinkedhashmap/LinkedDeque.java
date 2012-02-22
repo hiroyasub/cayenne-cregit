@@ -92,11 +92,6 @@ name|AbstractCollection
 argument_list|<
 name|E
 argument_list|>
-implements|implements
-name|Deque
-argument_list|<
-name|E
-argument_list|>
 block|{
 comment|// This class provides a doubly-linked list that is optimized for the virtual
 comment|// machine. The first and last elements are manipulated instead of a slightly
