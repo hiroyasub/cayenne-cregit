@@ -676,19 +676,6 @@ expr_stmt|;
 name|runQueries
 argument_list|()
 expr_stmt|;
-comment|// note that there is no syncing on the object store itself. This is caller's
-comment|// responsibility.
-synchronized|synchronized
-init|(
-name|context
-operator|.
-name|getObjectStore
-argument_list|()
-operator|.
-name|getDataRowCache
-argument_list|()
-init|)
-block|{
 name|postprocess
 argument_list|(
 name|context
@@ -697,7 +684,6 @@ expr_stmt|;
 return|return
 name|resultDiff
 return|;
-block|}
 block|}
 specifier|private
 name|void
