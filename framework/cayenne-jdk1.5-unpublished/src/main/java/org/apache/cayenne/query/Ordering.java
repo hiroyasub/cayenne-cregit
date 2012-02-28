@@ -760,15 +760,6 @@ name|sortSpecString
 argument_list|)
 expr_stmt|;
 block|}
-name|sortSpec
-operator|=
-name|Expression
-operator|.
-name|fromString
-argument_list|(
-name|sortSpecString
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|sortSpec
