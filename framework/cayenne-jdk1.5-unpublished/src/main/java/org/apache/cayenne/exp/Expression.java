@@ -450,7 +450,7 @@ name|FALSE
 init|=
 literal|22
 decl_stmt|;
-comment|/**      * Expression describes a path relative to an ObjEntity. OBJ_PATH expression is      * resolved relative to some root ObjEntity. Path expression components are separated      * by "." (dot). Path can point to either one of these:      *<ul>      *<li><i>An attribute of root ObjEntity.</i> For entity Gallery OBJ_PATH expression      * "galleryName" will point to ObjAttribute "galleryName"      *<li><i>Another ObjEntity related to root ObjEntity via a chain of relationships.</i>      * For entity Gallery OBJ_PATH expression "paintingArray.toArtist" will point to      * ObjEntity "Artist"      *<li><i>ObjAttribute of another ObjEntity related to root ObjEntity via a chain of      * relationships.</i> For entity Gallery OBJ_PATH expression      * "paintingArray.toArtist.artistName" will point to ObjAttribute "artistName"      *</ul>      */
+comment|/**      * Expression describes a path relative to an ObjEntity. OBJ_PATH expression is      * resolved relative to some root ObjEntity. Path expression components are separated      * by "." (dot). Path can point to either one of these:      *<ul>      *<li><i>An attribute of root ObjEntity.</i> For entity Gallery OBJ_PATH expression      * "galleryName" will point to ObjAttribute "galleryName"      *<li><i>Another ObjEntity related to root ObjEntity via a chain of      * relationships.</i> For entity Gallery OBJ_PATH expression "paintingArray.toArtist"      * will point to ObjEntity "Artist"      *<li><i>ObjAttribute of another ObjEntity related to root ObjEntity via a chain of      * relationships.</i> For entity Gallery OBJ_PATH expression      * "paintingArray.toArtist.artistName" will point to ObjAttribute "artistName"      *</ul>      */
 specifier|public
 specifier|static
 specifier|final
@@ -548,6 +548,8 @@ argument_list|)
 throw|;
 block|}
 comment|// optimizing parser buffers per CAY-1667...
+comment|// adding 1 extra char to the buffer size above the String length, as otherwise
+comment|// resizing still occurs at the end of the stream
 name|int
 name|bufferSize
 init|=
@@ -564,6 +566,8 @@ name|expressionString
 operator|.
 name|length
 argument_list|()
+operator|+
+literal|1
 decl_stmt|;
 name|Reader
 name|reader
@@ -962,7 +966,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns a new Expression instance using this expression as a prototype.      * All ExpressionParam operands are substituted with the values in the      *<code>params</code> map.      *<p>      *<i>Null values in the<code>params</code> map should be explicitly created in the      * map for the corresponding key.</i>      *</p>      *       * @param parameters a map of parameters, with each key being a string name of an      *            expression parameter, and value being the value that should be used in      *            the final expression.      * @param pruneMissing If<code>true</code>, subexpressions that rely on missing      *            parameters will be pruned from the resulting tree. If<code>false</code>,      *            any missing values will generate an exception.      * @return Expression resulting from the substitution of parameters with real values,      *         or null if the whole expression was pruned, due to the missing parameters.      */
+comment|/**      * Creates and returns a new Expression instance using this expression as a prototype.      * All ExpressionParam operands are substituted with the values in the      *<code>params</code> map.      *<p>      *<i>Null values in the<code>params</code> map should be explicitly created in the      * map for the corresponding key.</i>      *</p>      *       * @param parameters a map of parameters, with each key being a string name of an      *            expression parameter, and value being the value that should be used in      *            the final expression.      * @param pruneMissing If<code>true</code>, subexpressions that rely on missing      *            parameters will be pruned from the resulting tree. If<code>false</code>      *            , any missing values will generate an exception.      * @return Expression resulting from the substitution of parameters with real values,      *         or null if the whole expression was pruned, due to the missing parameters.      */
 specifier|public
 name|Expression
 name|expWithParameters
@@ -1199,7 +1203,7 @@ name|Expression
 name|notExp
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a count of operands of this expression. In real life there are unary (count ==      * 1), binary (count == 2) and ternary (count == 3) expressions.      */
+comment|/**      * Returns a count of operands of this expression. In real life there are unary (count      * == 1), binary (count == 2) and ternary (count == 3) expressions.      */
 specifier|public
 specifier|abstract
 name|int
