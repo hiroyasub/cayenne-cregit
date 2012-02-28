@@ -639,7 +639,9 @@ if|if
 condition|(
 name|maxNextCharInd
 operator|==
-literal|4096
+name|nextCharBuf
+operator|.
+name|length
 condition|)
 name|maxNextCharInd
 operator|=
@@ -662,7 +664,9 @@ name|nextCharBuf
 argument_list|,
 name|maxNextCharInd
 argument_list|,
-literal|4096
+name|nextCharBuf
+operator|.
+name|length
 operator|-
 name|maxNextCharInd
 argument_list|)
@@ -1508,7 +1512,7 @@ operator|=
 operator|new
 name|char
 index|[
-literal|4096
+name|buffersize
 index|]
 expr_stmt|;
 block|}
@@ -1650,7 +1654,7 @@ operator|=
 operator|new
 name|char
 index|[
-literal|4096
+name|buffersize
 index|]
 expr_stmt|;
 block|}
