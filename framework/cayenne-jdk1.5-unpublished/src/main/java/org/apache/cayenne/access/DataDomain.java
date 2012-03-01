@@ -1091,7 +1091,6 @@ expr_stmt|;
 block|}
 comment|/**      * Returns snapshots cache for this DataDomain, lazily initializing it on the first      * call if 'sharedCacheEnabled' flag is true.      */
 specifier|public
-specifier|synchronized
 name|DataRowStore
 name|getSharedSnapshotCache
 parameter_list|()
@@ -1109,22 +1108,15 @@ name|this
 operator|.
 name|sharedSnapshotCache
 operator|=
-operator|new
-name|DataRowStore
-argument_list|(
-name|name
-argument_list|,
-name|properties
-argument_list|,
-name|eventManager
-argument_list|)
+name|nonNullSharedSnapshotCache
+argument_list|()
 expr_stmt|;
 block|}
 return|return
 name|sharedSnapshotCache
 return|;
 block|}
-comment|/**      * Returns a guaranteed non-null shared snapshot cache regardless of the      * 'sharedCacheEnabled' flag setting. This allows to build DataContexts that do not      * follow the default policy.      *       * @since 3.0      */
+comment|/**      * Returns a guaranteed non-null shared snapshot cache regardless of the      * 'sharedCacheEnabled' flag setting.      */
 specifier|synchronized
 name|DataRowStore
 name|nonNullSharedSnapshotCache
