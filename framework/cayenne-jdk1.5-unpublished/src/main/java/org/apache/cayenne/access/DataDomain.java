@@ -1314,7 +1314,6 @@ expr_stmt|;
 block|}
 comment|/**      * Removes named DataMap from this DataDomain and any underlying DataNodes that      * include it.      *       * @since 3.1      */
 specifier|public
-specifier|synchronized
 name|void
 name|removeDataMap
 parameter_list|(
@@ -1359,6 +1358,13 @@ name|mapName
 argument_list|)
 expr_stmt|;
 block|}
+name|nodesByDataMapName
+operator|.
+name|remove
+argument_list|(
+name|mapName
+argument_list|)
+expr_stmt|;
 comment|// remove from EntityResolver
 name|getEntityResolver
 argument_list|()
@@ -1367,10 +1373,6 @@ name|removeDataMap
 argument_list|(
 name|map
 argument_list|)
-expr_stmt|;
-comment|// reindex nodes to remove references on removed map entities
-name|reindexNodes
-argument_list|()
 expr_stmt|;
 name|refreshEntitySorter
 argument_list|()
