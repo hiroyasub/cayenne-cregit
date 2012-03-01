@@ -954,14 +954,6 @@ specifier|public
 name|void
 name|setEntityResolver
 parameter_list|(
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|EntityResolver
 name|entityResolver
 parameter_list|)
