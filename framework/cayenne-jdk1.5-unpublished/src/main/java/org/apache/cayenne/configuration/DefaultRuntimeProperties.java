@@ -50,15 +50,6 @@ name|DefaultRuntimeProperties
 implements|implements
 name|RuntimeProperties
 block|{
-comment|/**      * A name of the map created via DI and used to initialize this service.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PROPERTIES_MAP
-init|=
-literal|"org.apache.cayenne.configuration.DefaultRuntimeProperties.properties"
-decl_stmt|;
 specifier|protected
 name|Map
 argument_list|<
@@ -74,6 +65,8 @@ parameter_list|(
 annotation|@
 name|Inject
 argument_list|(
+name|Constants
+operator|.
 name|PROPERTIES_MAP
 argument_list|)
 name|Map

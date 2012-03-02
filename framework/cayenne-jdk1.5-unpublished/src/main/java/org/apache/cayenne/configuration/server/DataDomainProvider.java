@@ -179,6 +179,20 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
 name|DataChannelDescriptor
 import|;
 end_import
@@ -421,24 +435,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * A DI key for the list storing DataDomain filters.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|FILTERS_LIST
-init|=
-literal|"org.apache.cayenne.configuration.server.DataDomainProvider.filters"
-decl_stmt|;
-comment|/**      * A DI key for the list storing locations of the DataDomain configuration resources.      */
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LOCATIONS_LIST
-init|=
-literal|"org.apache.cayenne.configuration.server.DataDomainProvider.locations"
-decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
@@ -484,7 +480,9 @@ decl_stmt|;
 annotation|@
 name|Inject
 argument_list|(
-name|FILTERS_LIST
+name|Constants
+operator|.
+name|SERVER_DOMAIN_FILTERS_LIST
 argument_list|)
 specifier|protected
 name|List
@@ -496,7 +494,9 @@ decl_stmt|;
 annotation|@
 name|Inject
 argument_list|(
-name|LOCATIONS_LIST
+name|Constants
+operator|.
+name|SERVER_PROJECT_LOCATIONS_LIST
 argument_list|)
 specifier|protected
 name|List

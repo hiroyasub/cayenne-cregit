@@ -73,9 +73,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|server
-operator|.
-name|DataDomainProvider
+name|Constants
 import|;
 end_import
 
@@ -333,9 +331,9 @@ name|List
 operator|.
 name|class
 argument_list|,
-name|DataDomainProvider
+name|Constants
 operator|.
-name|LOCATIONS_LIST
+name|SERVER_PROJECT_LOCATIONS_LIST
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -451,9 +449,9 @@ name|List
 operator|.
 name|class
 argument_list|,
-name|DataDomainProvider
+name|Constants
 operator|.
-name|LOCATIONS_LIST
+name|SERVER_PROJECT_LOCATIONS_LIST
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -560,9 +558,9 @@ name|List
 operator|.
 name|class
 argument_list|,
-name|DataDomainProvider
+name|Constants
 operator|.
-name|LOCATIONS_LIST
+name|SERVER_PROJECT_LOCATIONS_LIST
 argument_list|)
 argument_list|)
 decl_stmt|;

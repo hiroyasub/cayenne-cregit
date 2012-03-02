@@ -79,6 +79,20 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
 name|DefaultRuntimeProperties
 import|;
 end_import
@@ -316,7 +330,7 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
-comment|// expose this module properties to DefaultRuntimeProperties
+comment|// expose user-provided ROP properties as the main properties map
 name|binder
 operator|.
 expr|<
@@ -324,7 +338,7 @@ name|String
 operator|>
 name|bindMap
 argument_list|(
-name|DefaultRuntimeProperties
+name|Constants
 operator|.
 name|PROPERTIES_MAP
 argument_list|)
