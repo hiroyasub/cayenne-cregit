@@ -1192,6 +1192,27 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|defaultNode
+operator|!=
+literal|null
+condition|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"setting DataNode '"
+operator|+
+name|defaultNode
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|"' as default, used by all unlinked DataMaps"
+argument_list|)
+expr_stmt|;
 name|dataDomain
 operator|.
 name|setDefaultNode
@@ -1199,6 +1220,7 @@ argument_list|(
 name|defaultNode
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|DataChannelFilter
