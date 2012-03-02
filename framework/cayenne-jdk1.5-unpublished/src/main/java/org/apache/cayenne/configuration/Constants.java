@@ -25,7 +25,7 @@ interface|interface
 name|Constants
 block|{
 comment|// DI "collections"
-comment|/**      * A DI container key for the properties map used to configure either ROP or server      * tiers.      */
+comment|/**      * A DI container key for the Map<String, String> storing properties used by built-in      * Cayenne service.      */
 specifier|public
 specifier|static
 specifier|final
@@ -43,7 +43,7 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/**      * A DI container key for the list storing DataDomain filters.      */
+comment|/**      * A DI container key for the List<DataChannelFilter> storing DataDomain filters.      */
 specifier|public
 specifier|static
 specifier|final
@@ -52,7 +52,7 @@ name|SERVER_DOMAIN_FILTERS_LIST
 init|=
 literal|"cayenne.server.domain_filters"
 decl_stmt|;
-comment|/**      * A DI container key for the list storing locations of the one of more project      * configuration files.      */
+comment|/**      * A DI container key for the List<String> storing locations of the one of more      * project configuration files.      */
 specifier|public
 specifier|static
 specifier|final
