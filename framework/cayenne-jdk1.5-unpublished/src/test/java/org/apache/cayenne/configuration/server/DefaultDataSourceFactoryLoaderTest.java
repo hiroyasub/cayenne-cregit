@@ -61,6 +61,20 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
 name|DataChannelDescriptor
 import|;
 end_import
@@ -642,7 +656,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-name|PropertyDataSourceFactory
+name|Constants
 operator|.
 name|JDBC_DRIVER_PROPERTY
 argument_list|)
@@ -659,7 +673,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-name|PropertyDataSourceFactory
+name|Constants
 operator|.
 name|JDBC_URL_PROPERTY
 argument_list|)
@@ -849,7 +863,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-name|PropertyDataSourceFactory
+name|Constants
 operator|.
 name|JDBC_URL_PROPERTY
 argument_list|)
@@ -887,7 +901,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-name|PropertyDataSourceFactory
+name|Constants
 operator|.
 name|JDBC_URL_PROPERTY
 operator|+
@@ -927,7 +941,7 @@ name|properties
 operator|.
 name|get
 argument_list|(
-name|PropertyDataSourceFactory
+name|Constants
 operator|.
 name|JDBC_URL_PROPERTY
 operator|+

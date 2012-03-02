@@ -123,7 +123,9 @@ name|runtimeProperties
 operator|.
 name|getBoolean
 argument_list|(
-name|SYNC_PROPERTY
+name|Constants
+operator|.
+name|SERVER_CONTEXTS_SYNC_PROPERTY
 argument_list|,
 literal|true
 argument_list|)

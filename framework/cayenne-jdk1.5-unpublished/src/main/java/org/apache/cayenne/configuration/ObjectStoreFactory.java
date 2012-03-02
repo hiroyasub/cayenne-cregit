@@ -52,13 +52,6 @@ specifier|public
 interface|interface
 name|ObjectStoreFactory
 block|{
-specifier|static
-specifier|final
-name|String
-name|SYNC_PROPERTY
-init|=
-literal|"org.apache.cayenne.sync_contexts"
-decl_stmt|;
 comment|/**      * Creates an {@link ObjectStore} with provided dataRowCache      */
 name|ObjectStore
 name|createObjectStore

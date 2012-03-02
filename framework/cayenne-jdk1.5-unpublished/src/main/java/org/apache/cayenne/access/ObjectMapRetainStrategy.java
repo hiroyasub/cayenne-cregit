@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A strategy for retaining objects in {@link ObjectStore}. May be used  * weak, soft or hard references.   *   * @since 3.1  */
+comment|/**  * A strategy for retaining objects in {@link ObjectStore}. The strategy can be weak, soft  * or hard references.  *   * @since 3.1  */
 end_comment
 
 begin_interface
@@ -46,34 +46,6 @@ specifier|public
 interface|interface
 name|ObjectMapRetainStrategy
 block|{
-specifier|static
-specifier|final
-name|String
-name|MAP_RETAIN_STRATEGY_PROPERTY
-init|=
-literal|"org.apache.cayenne.context_object_retain_strategy"
-decl_stmt|;
-specifier|static
-specifier|final
-name|String
-name|WEAK_RETAIN_STRATEGY
-init|=
-literal|"weak"
-decl_stmt|;
-specifier|static
-specifier|final
-name|String
-name|SOFT_RETAIN_STRATEGY
-init|=
-literal|"soft"
-decl_stmt|;
-specifier|static
-specifier|final
-name|String
-name|HARD_RETAIN_STRATEGY
-init|=
-literal|"hard"
-decl_stmt|;
 name|Map
 argument_list|<
 name|Object

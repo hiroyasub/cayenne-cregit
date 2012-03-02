@@ -358,7 +358,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.postgresql.org">PostgreSQL RDBMS</a>.  * Sample connection settings to use with PostgreSQL are shown below:  *   *<pre>  *      *      postgres.cayenne.adapter = org.apache.cayenne.dba.postgres.PostgresAdapter  *      postgres.jdbc.username = test  *      postgres.jdbc.password = secret  *      postgres.jdbc.url = jdbc:postgresql://serverhostname/cayenne  *      postgres.jdbc.driver = org.postgresql.Driver  *       *</pre>  *   */
+comment|/**  * DbAdapter implementation for<a href="http://www.postgresql.org">PostgreSQL RDBMS</a>.  * Sample connection settings to use with PostgreSQL are shown below:  *   *<pre>  *      postgres.jdbc.username = test  *      postgres.jdbc.password = secret  *      postgres.jdbc.url = jdbc:postgresql://serverhostname/cayenne  *      postgres.jdbc.driver = org.postgresql.Driver  *</pre>  */
 end_comment
 
 begin_class
@@ -910,7 +910,12 @@ name|Types
 operator|.
 name|FLOAT
 operator|)
-comment|// Postgress don't support notations float(a, b)
+comment|// Postgress
+comment|// don't
+comment|// support
+comment|// notations
+comment|// float(a,
+comment|// b)
 condition|?
 name|at
 operator|.

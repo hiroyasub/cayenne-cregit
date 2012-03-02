@@ -23,11 +23,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|rop
-operator|.
-name|client
-operator|.
-name|ClientModule
+name|Constants
 import|;
 end_import
 
@@ -243,9 +239,9 @@ annotation|@
 name|ClientRuntimeProperty
 argument_list|(
 block|{
-name|ClientModule
+name|Constants
 operator|.
-name|CHANNEL_EVENTS
+name|ROP_CHANNEL_EVENTS_PROPERTY
 block|,
 literal|"true"
 block|}

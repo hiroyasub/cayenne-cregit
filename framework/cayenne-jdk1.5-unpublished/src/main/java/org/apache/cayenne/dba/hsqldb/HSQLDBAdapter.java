@@ -284,7 +284,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/"> HSQLDB RDBMS  *</a>. Sample connection settings to use with HSQLDB are shown below:  *   *<pre>  *        test-hsqldb.cayenne.adapter = org.apache.cayenne.dba.hsqldb.HSQLDBAdapter  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
+comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/"> HSQLDB RDBMS  *</a>. Sample connection settings to use with HSQLDB are shown below:  *   *<pre>  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
 end_comment
 
 begin_class
