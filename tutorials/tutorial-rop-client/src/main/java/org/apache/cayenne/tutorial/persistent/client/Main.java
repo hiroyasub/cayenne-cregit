@@ -83,11 +83,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|rop
-operator|.
-name|client
-operator|.
-name|ClientModule
+name|Constants
 import|;
 end_import
 
@@ -187,9 +183,9 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|ClientModule
+name|Constants
 operator|.
-name|ROP_SERVICE_URL
+name|ROP_SERVICE_URL_PROPERTY
 argument_list|,
 literal|"http://localhost:8080/tutorial-rop-server/cayenne-service"
 argument_list|)
@@ -198,9 +194,9 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|ClientModule
+name|Constants
 operator|.
-name|ROP_SERVICE_USER_NAME
+name|ROP_SERVICE_USERNAME_PROPERTY
 argument_list|,
 literal|"cayenne-user"
 argument_list|)
@@ -209,9 +205,9 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|ClientModule
+name|Constants
 operator|.
-name|ROP_SERVICE_PASSWORD
+name|ROP_SERVICE_PASSWORD_PROPERTY
 argument_list|,
 literal|"secret"
 argument_list|)
