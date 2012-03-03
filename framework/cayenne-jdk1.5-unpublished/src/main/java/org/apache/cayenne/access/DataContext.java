@@ -597,8 +597,6 @@ class|class
 name|DataContext
 extends|extends
 name|BaseContext
-implements|implements
-name|DataChannel
 block|{
 specifier|private
 name|DataContextDelegate
