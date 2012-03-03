@@ -42,6 +42,16 @@ name|int
 name|defaultValue
 parameter_list|)
 function_decl|;
+name|long
+name|getLong
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|long
+name|defaultValue
+parameter_list|)
+function_decl|;
 name|boolean
 name|getBoolean
 parameter_list|(

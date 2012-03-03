@@ -186,7 +186,7 @@ specifier|final
 name|String
 name|ROP_SERVICE_PASSWORD_PROPERTY
 init|=
-literal|"cayenne.rop.service_password "
+literal|"cayenne.rop.service_password"
 decl_stmt|;
 specifier|public
 specifier|static
