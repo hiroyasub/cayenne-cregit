@@ -138,7 +138,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Null ObjectContext. Can't read a to-one relationshup '"
+literal|"Null ObjectContext. Can't read a to-one relationship '"
 operator|+
 name|relationshipName
 operator|+
