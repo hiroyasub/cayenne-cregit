@@ -88,6 +88,15 @@ name|SERVER_TYPE_FACTORIES_LIST
 init|=
 literal|"cayenne.server.type_factories"
 decl_stmt|;
+comment|/**      * A server-side DI container key for the Map<String, String> storing event bridge      * properties passed to the ROP client on bootstrap.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP
+init|=
+literal|"cayenne.server.rop_event_bridge_properties"
+decl_stmt|;
 comment|// Runtime properties
 specifier|public
 specifier|static
@@ -227,6 +236,15 @@ name|String
 name|ROP_CONTEXT_LIFECYCLE_EVENTS_PROPERTY
 init|=
 literal|"cayenne.rop.context_lifecycle_events"
+decl_stmt|;
+comment|/**      * The name of the {@link org.apache.cayenne.event.EventBridgeFactory} that is passed      * from the ROP server to the client. Client would instantiate the factory to receive      * events from the server. Note that this property is stored in      * {@link #SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP}, not {@link #PROPERTIES_MAP}.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SERVER_ROP_EVENT_BRIDGE_FACTORY_PROPERTY
+init|=
+literal|"cayenne.server.rop_event_bridge_factory"
 decl_stmt|;
 block|}
 end_interface
