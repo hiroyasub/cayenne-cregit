@@ -17,43 +17,31 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|io
 operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|AbstractMojo
+name|File
 import|;
 end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|io
 operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|MojoExecutionException
+name|PrintWriter
 import|;
 end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|sql
 operator|.
-name|maven
-operator|.
-name|plugin
-operator|.
-name|MojoFailureException
+name|Driver
 import|;
 end_import
 
@@ -65,9 +53,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|ToolModule
+name|CayenneException
 import|;
 end_import
 
@@ -79,67 +65,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|access
 operator|.
-name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|ObjEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|MapLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|naming
-operator|.
-name|NamingStrategy
+name|AbstractDbLoaderDelegate
 import|;
 end_import
 
@@ -165,9 +93,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|AbstractDbLoaderDelegate
+name|ToolModule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|conn
+operator|.
+name|DriverDataSource
 import|;
 end_import
 
@@ -249,9 +191,67 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
+name|map
 operator|.
-name|Util
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|MapLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|NamingStrategy
 import|;
 end_import
 
@@ -277,9 +277,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|util
 operator|.
-name|DriverDataSource
+name|Util
 import|;
 end_import
 
@@ -291,7 +291,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|util
+operator|.
+name|XMLEncoder
 import|;
 end_import
 
@@ -313,6 +315,48 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugin
+operator|.
+name|AbstractMojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugin
+operator|.
+name|MojoExecutionException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugin
+operator|.
+name|MojoFailureException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -321,38 +365,8 @@ name|InputSource
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|PrintWriter
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Driver
-import|;
-end_import
-
 begin_comment
-comment|/**  * Maven mojo to reverse engineer datamap from DB.  *  * @since 3.0  *  * @phase generate-sources  * @goal cdbimport  */
+comment|/**  * Maven mojo to reverse engineer datamap from DB.  *   * @since 3.0  *   * @phase generate-sources  * @goal cdbimport  */
 end_comment
 
 begin_class
@@ -362,80 +376,75 @@ name|DbImporterMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/** 	 * DataMap XML file to use as a base for DB importing. 	 * 	 * @parameter expression="${cdbimport.map}" 	 * @required 	 */
+comment|/** 	 * DataMap XML file to use as a base for DB importing. 	 *  	 * @parameter expression="${cdbimport.map}" 	 * @required 	 */
 specifier|private
-name|String
+name|File
 name|map
 decl_stmt|;
-comment|/**      * Indicates whether existing DB and object entities should be overwritten.      * This is an all-or-nothing setting.  If you need finer granularity, please      * use the Cayenne Modeler.      *      * Default is<code>true</code>.      *      * @parameter expression="${cdbimport.overwriteExisting}" default-value="true"      */
+comment|/** 	 * Indicates whether existing DB and object entities should be overwritten. 	 * This is an all-or-nothing setting. If you need finer granularity, please 	 * use the Cayenne Modeler. 	 *  	 * Default is<code>true</code>. 	 *  	 * @parameter expression="${cdbimport.overwriteExisting}" 	 *            default-value="true" 	 */
 specifier|private
 name|boolean
 name|overwriteExisting
 decl_stmt|;
-comment|/**      * DB schema to use for DB importing.      *      * @parameter expression="${cdbimport.schemaName}"      */
+comment|/** 	 * DB schema to use for DB importing. 	 *  	 * @parameter expression="${cdbimport.schemaName}" 	 */
 specifier|private
 name|String
 name|schemaName
 decl_stmt|;
-comment|/**      * Pattern for tables to import from DB.      *      * The default is to match against all tables.      *      * @parameter expression="${cdbimport.tablePattern}"      */
+comment|/** 	 * Pattern for tables to import from DB. 	 *  	 * The default is to match against all tables. 	 *  	 * @parameter expression="${cdbimport.tablePattern}" 	 */
 specifier|private
 name|String
 name|tablePattern
 decl_stmt|;
-comment|/**      * Indicates whether stored procedures should be imported.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.importProcedures}" default-value="false"      */
+comment|/** 	 * Indicates whether stored procedures should be imported. 	 *  	 * Default is<code>false</code>. 	 *  	 * @parameter expression="${cdbimport.importProcedures}" 	 *            default-value="false" 	 */
 specifier|private
 name|boolean
 name|importProcedures
 decl_stmt|;
-comment|/**      * Pattern for stored procedures to import from DB.  This is only meaningful if      *<code>importProcedures</code> is set to<code>true</code>.      *      * The default is to match against all stored procedures.      *      * @parameter expression="${cdbimport.procedurePattern}"      */
+comment|/** 	 * Pattern for stored procedures to import from DB. This is only meaningful 	 * if<code>importProcedures</code> is set to<code>true</code>. 	 *  	 * The default is to match against all stored procedures. 	 *  	 * @parameter expression="${cdbimport.procedurePattern}" 	 */
 specifier|private
 name|String
 name|procedurePattern
 decl_stmt|;
-comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes in the object entities.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      */
+comment|/** 	 * Indicates whether primary keys should be mapped as meaningful attributes 	 * in the object entities. 	 *  	 * Default is<code>false</code>. 	 *  	 * @parameter expression="${cdbimport.meaningfulPk}" default-value="false" 	 */
 specifier|private
 name|boolean
 name|meaningfulPk
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported DB schema.      *      * The default is a basic naming strategy.      *      * @parameter expression="${cdbimport.namingStrategy}" default-value="org.apache.cayenne.map.naming.SmartNamingStrategy"      */
+comment|/** 	 * Java class implementing org.apache.cayenne.map.naming.NamingStrategy. 	 * This is used to specify how ObjEntities will be mapped from the imported 	 * DB schema. 	 *  	 * The default is a basic naming strategy. 	 *  	 * @parameter expression="${cdbimport.namingStrategy}" 	 *            default-value="org.apache.cayenne.map.naming.SmartNamingStrategy" 	 */
 specifier|private
 name|String
 name|namingStrategy
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter.      * While this attribute is optional (a generic JdbcAdapter is used if not set),      * it is highly recommended to specify correct target adapter.      *      * @parameter expression="${cdbimport.adapter}"      */
+comment|/** 	 * Java class implementing org.apache.cayenne.dba.DbAdapter. While this 	 * attribute is optional (a generic JdbcAdapter is used if not set), it is 	 * highly recommended to specify correct target adapter. 	 *  	 * @parameter expression="${cdbimport.adapter}" 	 */
 specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      *      * @parameter expression="${cdbimport.driver}"      * @required      */
+comment|/** 	 * A class of JDBC driver to use for the target database. 	 *  	 * @parameter expression="${cdbimport.driver}" 	 * @required 	 */
 specifier|private
 name|String
 name|driver
 decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      *      * @parameter expression="${cdbimport.url}"      * @required      */
+comment|/** 	 * JDBC connection URL of a target database. 	 *  	 * @parameter expression="${cdbimport.url}" 	 * @required 	 */
 specifier|private
 name|String
 name|url
 decl_stmt|;
-comment|/**      * Database user name.      *      * @parameter expression="${cdbimport.username}"      */
+comment|/** 	 * Database user name. 	 *  	 * @parameter expression="${cdbimport.username}" 	 */
 specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Database user password.      *      * @parameter expression="${cdbimport.password}"      */
+comment|/** 	 * Database user password. 	 *  	 * @parameter expression="${cdbimport.password}" 	 */
 specifier|private
 name|String
 name|password
 decl_stmt|;
-comment|/**      * Maven logger.      */
+comment|/** 	 * Maven logger. 	 */
 specifier|private
 name|Log
 name|logger
-decl_stmt|;
-comment|/**      * The DataMap file to use for importing.      */
-specifier|private
-name|File
-name|mapFile
 decl_stmt|;
 specifier|public
 name|void
@@ -663,19 +672,11 @@ name|namingStrategyInst
 argument_list|)
 expr_stmt|;
 block|}
-name|mapFile
-operator|=
-operator|new
-name|File
-argument_list|(
-name|map
-argument_list|)
-expr_stmt|;
 specifier|final
 name|DataMap
 name|dataMap
 init|=
-name|mapFile
+name|map
 operator|.
 name|exists
 argument_list|()
@@ -735,7 +736,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// Write the new DataMap out to disk.
-name|mapFile
+name|map
 operator|.
 name|delete
 argument_list|()
@@ -746,14 +747,32 @@ init|=
 operator|new
 name|PrintWriter
 argument_list|(
-name|mapFile
+name|map
 argument_list|)
 decl_stmt|;
+name|XMLEncoder
+name|encoder
+init|=
+operator|new
+name|XMLEncoder
+argument_list|(
+name|pw
+argument_list|,
+literal|"\t"
+argument_list|)
+decl_stmt|;
+name|encoder
+operator|.
+name|println
+argument_list|(
+literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+argument_list|)
+expr_stmt|;
 name|dataMap
 operator|.
 name|encodeAsXML
 argument_list|(
-name|pw
+name|encoder
 argument_list|)
 expr_stmt|;
 name|pw
@@ -764,12 +783,10 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-specifier|final
 name|Exception
 name|ex
 parameter_list|)
 block|{
-specifier|final
 name|Throwable
 name|th
 init|=
@@ -976,7 +993,7 @@ init|=
 operator|new
 name|InputSource
 argument_list|(
-name|mapFile
+name|map
 operator|.
 name|getCanonicalPath
 argument_list|()
