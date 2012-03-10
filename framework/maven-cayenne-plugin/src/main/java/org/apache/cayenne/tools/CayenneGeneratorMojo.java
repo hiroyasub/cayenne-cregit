@@ -123,20 +123,6 @@ name|MojoFailureException
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|maven
-operator|.
-name|project
-operator|.
-name|MavenProject
-import|;
-end_import
-
 begin_comment
 comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  *   * @phase generate-sources  * @goal cgen  */
 end_comment
@@ -148,11 +134,6 @@ name|CayenneGeneratorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/** 	 * Project instance used to add generated source code to the build. 	 *  	 * @parameter default-value="${project}" 	 * @required 	 * @readonly 	 */
-specifier|private
-name|MavenProject
-name|project
-decl_stmt|;
 comment|/** 	 * Path to additional DataMap XML files to use for class generation. 	 *  	 * @parameter expression="${cgen.additionalMaps}" 	 */
 specifier|private
 name|File
@@ -377,8 +358,9 @@ name|dataMap
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//ksenia khailenko 15.10.2010
-comment|//TODO add the "includeEmbeddables" and "excludeEmbeddables" attributes
+comment|// ksenia khailenko 15.10.2010
+comment|// TODO add the "includeEmbeddables" and "excludeEmbeddables"
+comment|// attributes
 name|generator
 operator|.
 name|addEmbeddables
@@ -389,7 +371,7 @@ name|getEmbeddables
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//TODO add the "includeQueries" and "excludeQueries" attributes
+comment|// TODO add the "includeQueries" and "excludeQueries" attributes
 name|generator
 operator|.
 name|addQueries
