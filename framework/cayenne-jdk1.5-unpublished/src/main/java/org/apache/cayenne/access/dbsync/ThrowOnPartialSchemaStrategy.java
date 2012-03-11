@@ -190,6 +190,8 @@ parameter_list|(
 name|DataNode
 name|dataNode
 parameter_list|)
+throws|throws
+name|SQLException
 block|{
 name|SchemaAnalyzer
 name|analyzer
@@ -427,6 +429,8 @@ parameter_list|,
 name|int
 name|entitiesSize
 parameter_list|)
+throws|throws
+name|SQLException
 block|{
 if|if
 condition|(
