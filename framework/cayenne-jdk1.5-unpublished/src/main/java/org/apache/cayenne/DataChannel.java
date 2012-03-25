@@ -191,7 +191,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Processes synchronization request from a child ObjectContext, returning a GraphDiff      * that describes changes to objects made on the receiving end as a result of      * syncronization.      *       * @param originatingContext an ObjectContext that initiated the sync. Can be null.      * @param changes diff from the context that initiated the sync.      * @param syncType One of {@link #FLUSH_NOCASCADE_SYNC}, {@link #FLUSH_CASCADE_SYNC},      *            {@link #ROLLBACK_CASCADE_SYNC}.      */
+comment|/**      * Processes synchronization request from a child ObjectContext, returning a GraphDiff      * that describes changes to objects made on the receiving end as a result of      * synchronization.      *       * @param originatingContext an ObjectContext that initiated the sync. Can be null.      * @param changes diff from the context that initiated the sync.      * @param syncType One of {@link #FLUSH_NOCASCADE_SYNC}, {@link #FLUSH_CASCADE_SYNC},      *            {@link #ROLLBACK_CASCADE_SYNC}.      */
 name|GraphDiff
 name|onSync
 parameter_list|(
