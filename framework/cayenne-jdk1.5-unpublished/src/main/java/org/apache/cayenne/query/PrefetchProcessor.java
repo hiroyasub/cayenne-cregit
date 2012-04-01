@@ -38,6 +38,7 @@ name|PrefetchTreeNode
 name|node
 parameter_list|)
 function_decl|;
+comment|/**      * @since 3.1      */
 name|boolean
 name|startDisjointByIdPrefetch
 parameter_list|(
