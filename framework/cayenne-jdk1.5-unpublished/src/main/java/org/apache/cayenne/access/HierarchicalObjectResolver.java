@@ -1276,7 +1276,7 @@ name|node
 parameter_list|)
 block|{
 return|return
-name|startDisjointByIdPrefetch
+name|startDisjointPrefetch
 argument_list|(
 name|node
 argument_list|)
