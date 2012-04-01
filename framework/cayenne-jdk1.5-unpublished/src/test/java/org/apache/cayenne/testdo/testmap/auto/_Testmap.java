@@ -216,6 +216,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|SELECT_RETURN_TYPES_LOBS_MAP1_QUERYNAME
+init|=
+literal|"SelectReturnTypesLobsMap1"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|SELECT_RETURN_TYPES_MAP1_QUERYNAME
 init|=
 literal|"SelectReturnTypesMap1"

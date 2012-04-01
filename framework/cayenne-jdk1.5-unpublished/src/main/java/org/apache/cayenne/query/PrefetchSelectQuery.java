@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SelectQuery to perform a prefetch based on another query. Used internally by Cayenne  * and is normally never used directly.  *   */
+comment|/**  * A SelectQuery to perform a prefetch based on another query. Used internally by Cayenne  * and is normally never used directly.  */
 end_comment
 
 begin_class
@@ -98,6 +98,9 @@ name|PrefetchSelectQuery
 extends|extends
 name|SelectQuery
 block|{
+comment|/**      * @deprecated since 3.1 unused      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|SelectQuery
 name|parentQuery
@@ -121,7 +124,41 @@ name|String
 argument_list|>
 name|resultPaths
 decl_stmt|;
-comment|/**      * Creates a new disjoint prefetch select query.      *       * @since 1.2      */
+comment|/**      * Creates a new disjoint prefetch select query.      *      * @since 3.1      */
+specifier|public
+name|PrefetchSelectQuery
+parameter_list|(
+name|String
+name|prefetchPath
+parameter_list|,
+name|ObjRelationship
+name|lastPrefetchHint
+parameter_list|)
+block|{
+name|setRoot
+argument_list|(
+name|lastPrefetchHint
+operator|.
+name|getTargetEntity
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|prefetchPath
+operator|=
+name|prefetchPath
+expr_stmt|;
+name|this
+operator|.
+name|lastPrefetchHint
+operator|=
+name|lastPrefetchHint
+expr_stmt|;
+block|}
+comment|/**      * Creates a new disjoint prefetch select query.      *       * @since 1.2      * @deprecated Since 3.1 use another constructor without parentQuery parameter      *             instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|PrefetchSelectQuery
 parameter_list|(
@@ -185,7 +222,7 @@ parameter_list|)
 block|{
 comment|// noop - intentional.
 block|}
-comment|/**      * Returns the prefetchPath.      *       * @return String      */
+comment|/**      * Returns the prefetchPath.      */
 specifier|public
 name|String
 name|getPrefetchPath
@@ -211,7 +248,9 @@ operator|=
 name|prefetchPath
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/**      * @since 1.1      * @deprecated since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|SelectQuery
 name|getParentQuery
@@ -221,7 +260,9 @@ return|return
 name|parentQuery
 return|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/**      * @since 1.1      * @deprecated since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setParentQuery

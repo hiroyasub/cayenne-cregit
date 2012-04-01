@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A hierarchical visitor interface for traversing a tree of PrefetchTreeNodes. If any of  * the processing methods return false, node's children will be skipped from traversal.  *   * @since 1.2  * @see org.apache.cayenne.query.PrefetchTreeNode#traverse(PrefetchProcessor)  */
+comment|/**  * A hierarchical visitor interface for traversing a tree of PrefetchTreeNodes. If any of  * the processing methods return false, node's children will be skipped from traversal.  *  * @since 1.2  * @see org.apache.cayenne.query.PrefetchTreeNode#traverse(PrefetchProcessor)  */
 end_comment
 
 begin_interface
@@ -36,6 +36,13 @@ name|startDisjointPrefetch
 parameter_list|(
 name|PrefetchTreeNode
 name|node
+parameter_list|)
+function_decl|;
+name|boolean
+name|startDisjointByIdPrefetch
+parameter_list|(
+name|PrefetchTreeNode
+name|prefetchTreeNode
 parameter_list|)
 function_decl|;
 name|boolean

@@ -515,6 +515,21 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|startDisjointByIdPrefetch
+parameter_list|(
+name|PrefetchTreeNode
+name|node
+parameter_list|)
+block|{
+comment|// continue to children only if we are at root
+return|return
+name|rootPrefetch
+operator|==
+name|node
+return|;
+block|}
+specifier|public
+name|boolean
 name|startUnknownPrefetch
 parameter_list|(
 name|PrefetchTreeNode

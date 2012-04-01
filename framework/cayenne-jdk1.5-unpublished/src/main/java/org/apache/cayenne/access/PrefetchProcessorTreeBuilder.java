@@ -321,16 +321,14 @@ argument_list|)
 return|;
 block|}
 block|}
-specifier|public
-name|boolean
-name|startDisjointPrefetch
+specifier|private
+name|PrefetchProcessorNode
+name|createDisjointNode
 parameter_list|(
 name|PrefetchTreeNode
 name|node
 parameter_list|)
 block|{
-comment|// look ahead for joint children as joint children will require a different
-comment|// node type.
 comment|// TODO, Andrus, 11/16/2005 - minor inefficiency: 'adjacentJointNodes' would
 comment|// grab ALL nodes, we just need to find first and stop...
 name|PrefetchProcessorNode
@@ -376,6 +374,28 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+return|return
+name|decorated
+return|;
+block|}
+specifier|public
+name|boolean
+name|startDisjointPrefetch
+parameter_list|(
+name|PrefetchTreeNode
+name|node
+parameter_list|)
+block|{
+comment|// look ahead for joint children as joint children will require a different
+comment|// node type.
+name|PrefetchProcessorNode
+name|decorated
+init|=
+name|createDisjointNode
+argument_list|(
+name|node
+argument_list|)
+decl_stmt|;
 comment|// semantics has to be "DISJOINT" even if the node is joint, as semantics
 comment|// defines relationship with parent..
 name|decorated
@@ -385,6 +405,39 @@ argument_list|(
 name|PrefetchTreeNode
 operator|.
 name|DISJOINT_PREFETCH_SEMANTICS
+argument_list|)
+expr_stmt|;
+return|return
+name|addNode
+argument_list|(
+name|decorated
+argument_list|)
+return|;
+block|}
+specifier|public
+name|boolean
+name|startDisjointByIdPrefetch
+parameter_list|(
+name|PrefetchTreeNode
+name|node
+parameter_list|)
+block|{
+comment|// see startDisjointPrefetch for comments
+name|PrefetchProcessorNode
+name|decorated
+init|=
+name|createDisjointNode
+argument_list|(
+name|node
+argument_list|)
+decl_stmt|;
+name|decorated
+operator|.
+name|setSemantics
+argument_list|(
+name|PrefetchTreeNode
+operator|.
+name|DISJOINT_BY_ID_PREFETCH_SEMANTICS
 argument_list|)
 expr_stmt|;
 return|return
