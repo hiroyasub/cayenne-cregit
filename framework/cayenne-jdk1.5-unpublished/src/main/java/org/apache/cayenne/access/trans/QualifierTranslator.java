@@ -1274,6 +1274,78 @@ literal|" AND "
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|Expression
+operator|.
+name|BITWISE_OR
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|" "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|operandForBitwiseOr
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" "
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|Expression
+operator|.
+name|BITWISE_AND
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|" "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|operandForBitwiseAnd
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" "
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|Expression
+operator|.
+name|BITWISE_XOR
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|" "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|operandForBitwiseXor
+argument_list|()
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" "
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 block|}
 catch|catch
@@ -1315,6 +1387,46 @@ name|node
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+comment|/**      * @since 3.1      */
+specifier|protected
+name|String
+name|operandForBitwiseNot
+parameter_list|()
+block|{
+return|return
+literal|"~"
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|protected
+name|String
+name|operandForBitwiseOr
+parameter_list|()
+block|{
+return|return
+literal|"|"
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|protected
+name|String
+name|operandForBitwiseAnd
+parameter_list|()
+block|{
+return|return
+literal|"&"
+return|;
+block|}
+comment|/**      * @since 3.1      */
+specifier|protected
+name|String
+name|operandForBitwiseXor
+parameter_list|()
+block|{
+return|return
+literal|"^"
+return|;
 block|}
 specifier|public
 name|void
@@ -1464,6 +1576,27 @@ argument_list|(
 literal|"NOT "
 argument_list|)
 expr_stmt|;
+if|else if
+condition|(
+name|node
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|Expression
+operator|.
+name|BITWISE_NOT
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+name|operandForBitwiseNot
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|else if
 condition|(

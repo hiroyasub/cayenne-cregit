@@ -509,6 +509,42 @@ name|NOT_LIKE_IGNORE_CASE
 init|=
 literal|38
 decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|BITWISE_NOT
+init|=
+literal|39
+decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|BITWISE_AND
+init|=
+literal|40
+decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|BITWISE_OR
+init|=
+literal|41
+decl_stmt|;
+comment|/**      * @since 3.1      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|BITWISE_XOR
+init|=
+literal|42
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final

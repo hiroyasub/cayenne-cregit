@@ -137,6 +137,70 @@ name|exp
 operator|.
 name|parser
 operator|.
+name|ASTBitwiseAnd
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
+name|ASTBitwiseNot
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
+name|ASTBitwiseOr
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
+name|ASTBitwiseXor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
 name|ASTDbPath
 import|;
 end_import
@@ -556,7 +620,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to build expressions. Alternatively expressions can be built using  * {@link org.apache.cayenne.exp.Expression#fromString(String)} method.  *   */
+comment|/**  * Helper class to build expressions. Alternatively expressions can be built using  * {@link org.apache.cayenne.exp.Expression#fromString(String)} method.  */
 end_comment
 
 begin_class
@@ -707,6 +771,22 @@ block|,
 name|Expression
 operator|.
 name|FALSE
+block|,
+name|Expression
+operator|.
+name|BITWISE_NOT
+block|,
+name|Expression
+operator|.
+name|BITWISE_AND
+block|,
+name|Expression
+operator|.
+name|BITWISE_OR
+block|,
+name|Expression
+operator|.
+name|BITWISE_XOR
 block|}
 decl_stmt|;
 name|int
@@ -1115,6 +1195,50 @@ name|ASTFalse
 operator|.
 name|class
 expr_stmt|;
+name|typeLookup
+index|[
+name|Expression
+operator|.
+name|BITWISE_NOT
+index|]
+operator|=
+name|ASTBitwiseNot
+operator|.
+name|class
+expr_stmt|;
+name|typeLookup
+index|[
+name|Expression
+operator|.
+name|BITWISE_OR
+index|]
+operator|=
+name|ASTBitwiseOr
+operator|.
+name|class
+expr_stmt|;
+name|typeLookup
+index|[
+name|Expression
+operator|.
+name|BITWISE_AND
+index|]
+operator|=
+name|ASTBitwiseAnd
+operator|.
+name|class
+expr_stmt|;
+name|typeLookup
+index|[
+name|Expression
+operator|.
+name|BITWISE_XOR
+index|]
+operator|=
+name|ASTBitwiseXor
+operator|.
+name|class
+expr_stmt|;
 block|}
 comment|/**      * Creates a new expression for the type requested. If type is unknown,      * ExpressionException is thrown.      */
 specifier|public
@@ -1288,7 +1412,7 @@ name|op
 return|;
 block|}
 block|}
-comment|/**      * Creates an expression that matches any of the key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary      * expression. Key is considered to be a DB_PATH expression. OR is used to join pair      * binary expressions.      */
+comment|/**      * Creates an expression that matches any of the key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a DB_PATH expression. OR is used to join pair binary      * expressions.      */
 specifier|public
 specifier|static
 name|Expression
@@ -1400,7 +1524,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches all key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary      * expression. Key is considered to be a DB_PATH expression. AND is used to join pair      * binary expressions.      */
+comment|/**      * Creates an expression that matches all key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a DB_PATH expression. AND is used to join pair binary      * expressions.      */
 specifier|public
 specifier|static
 name|Expression
@@ -1512,7 +1636,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches any of the key-values pairs in the      *<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary      * expression. Key is considered to be a OBJ_PATH expression. OR is used to join pair      * binary expressions.      */
+comment|/**      * Creates an expression that matches any of the key-values pairs in the      *<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a OBJ_PATH expression. OR is used to join pair binary      * expressions.      */
 specifier|public
 specifier|static
 name|Expression
@@ -1624,7 +1748,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression to match a collection of values against a single path      * expression.      *<h3>Splits</h3>      *<p>      * Note that "path" argument here can use a split character (a pipe symbol - '|')      * instead of dot to indicate that relationship following a path should be split into      * a separate set of joins. There can only be one split at most. Split must always      * precede a relationship. E.g. "|exhibits.paintings", "exhibits|paintings", etc.      *       * @param path      * @param values      * @since 3.0      */
+comment|/**      * Creates an expression to match a collection of values against a single path      * expression.<h3>Splits</h3>      *<p>      * Note that "path" argument here can use a split character (a pipe symbol - '|')      * instead of dot to indicate that relationship following a path should be split into      * a separate set of joins. There can only be one split at most. Split must always      * precede a relationship. E.g. "|exhibits.paintings", "exhibits|paintings", etc.      *       * @param path      * @param values      * @since 3.0      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1999,7 +2123,7 @@ name|matches
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches all key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary      * expression. Key is considered to be a OBJ_PATH expression. AND is used to join pair      * binary expressions.      */
+comment|/**      * Creates an expression that matches all key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a OBJ_PATH expression. AND is used to join pair binary      * expressions.      */
 specifier|public
 specifier|static
 name|Expression
@@ -2970,7 +3094,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building LIKE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3029,7 +3153,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE DB_PATH expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building LIKE DB_PATH expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3088,7 +3212,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3147,7 +3271,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE expression.</p>      *      *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3206,7 +3330,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE_IGNORE_CASE expression.</p>      *      *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3265,7 +3389,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3324,7 +3448,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression
@@ -3383,7 +3507,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.</p>      *       *<p>The escape character allows for escaping meta-characters      * in the LIKE clause.  Note that the escape character cannot      * be '?'.  To specify no escape character, supply 0 as the      * escape character.</p>      *       * @since 3.0.1      */
+comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
 specifier|public
 specifier|static
 name|Expression

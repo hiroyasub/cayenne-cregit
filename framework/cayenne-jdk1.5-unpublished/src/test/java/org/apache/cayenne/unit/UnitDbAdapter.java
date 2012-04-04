@@ -841,6 +841,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsBitwiseOps
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 specifier|protected
 name|void
 name|executeDDL
