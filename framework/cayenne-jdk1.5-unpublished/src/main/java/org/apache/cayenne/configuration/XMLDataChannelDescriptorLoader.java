@@ -944,6 +944,18 @@ argument_list|(
 name|dataMapLocation
 argument_list|)
 decl_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Loading XML DataMap resource from "
+operator|+
+name|dataMapResource
+operator|.
+name|getURL
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|DataMap
 name|dataMap
 init|=
