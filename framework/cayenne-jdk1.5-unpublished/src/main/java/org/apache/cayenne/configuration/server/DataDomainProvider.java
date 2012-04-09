@@ -1143,7 +1143,7 @@ name|defaultNode
 operator|=
 name|dataDomain
 operator|.
-name|getNode
+name|getDataNode
 argument_list|(
 name|descriptor
 operator|.

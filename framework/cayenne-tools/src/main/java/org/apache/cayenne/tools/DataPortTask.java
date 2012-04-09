@@ -428,7 +428,7 @@ name|source
 init|=
 name|domain
 operator|.
-name|getNode
+name|getDataNode
 argument_list|(
 name|srcNode
 argument_list|)
@@ -455,7 +455,7 @@ name|destination
 init|=
 name|domain
 operator|.
-name|getNode
+name|getDataNode
 argument_list|(
 name|destNode
 argument_list|)

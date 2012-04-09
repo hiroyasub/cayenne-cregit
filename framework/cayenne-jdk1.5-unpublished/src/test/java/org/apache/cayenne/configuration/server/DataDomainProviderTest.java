@@ -1663,7 +1663,7 @@ name|node1
 init|=
 name|domain
 operator|.
-name|getNode
+name|getDataNode
 argument_list|(
 literal|"node1"
 argument_list|)

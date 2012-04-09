@@ -237,7 +237,7 @@ name|node
 init|=
 name|domain
 operator|.
-name|getNode
+name|getDataNode
 argument_list|(
 name|dataNodeName
 argument_list|)
