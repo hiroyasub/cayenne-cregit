@@ -1756,10 +1756,26 @@ name|transaction
 return|;
 block|}
 block|}
-comment|/**      * Returns registered DataNode whose name matches<code>name</code> parameter.      */
+comment|/**      * Returns registered DataNode whose name matches<code>name</code> parameter.      *       * @deprecated since 3.1, use a more consistently named {@link #getDataNode(String)}.      */
 specifier|public
 name|DataNode
 name|getNode
+parameter_list|(
+name|String
+name|nodeName
+parameter_list|)
+block|{
+return|return
+name|getDataNode
+argument_list|(
+name|nodeName
+argument_list|)
+return|;
+block|}
+comment|/**      * Returns registered DataNode whose name matches<code>name</code> parameter.      *       * @since 3.1      */
+specifier|public
+name|DataNode
+name|getDataNode
 parameter_list|(
 name|String
 name|nodeName
