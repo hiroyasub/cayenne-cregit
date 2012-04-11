@@ -1220,6 +1220,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|compoundEdit
+operator|.
+name|end
+argument_list|()
+expr_stmt|;
 name|application
 operator|.
 name|getUndoManager
