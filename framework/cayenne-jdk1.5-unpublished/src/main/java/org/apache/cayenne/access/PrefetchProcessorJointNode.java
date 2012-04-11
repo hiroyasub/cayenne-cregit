@@ -757,6 +757,12 @@ name|jointRoot
 operator|.
 name|isDisjointPrefetch
 argument_list|()
+operator|&&
+operator|!
+name|jointRoot
+operator|.
+name|isDisjointByIdPrefetch
+argument_list|()
 condition|)
 block|{
 name|jointRoot

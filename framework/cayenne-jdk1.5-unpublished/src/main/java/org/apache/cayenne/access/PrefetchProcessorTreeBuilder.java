@@ -514,6 +514,12 @@ name|groupNode
 operator|.
 name|isDisjointPrefetch
 argument_list|()
+operator|&&
+operator|!
+name|groupNode
+operator|.
+name|isDisjointByIdPrefetch
+argument_list|()
 condition|)
 block|{
 name|groupNode
