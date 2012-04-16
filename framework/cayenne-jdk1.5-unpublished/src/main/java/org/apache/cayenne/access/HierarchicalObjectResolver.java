@@ -819,15 +819,31 @@ name|allJoinsQualifier
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: need to pass the remaining tree to make joint prefetches work
-comment|// but not sure is it a good idea to do it in that way
+comment|// need to pass the remaining tree to make joint prefetches work
+name|PrefetchTreeNode
+name|jointSubtree
+init|=
+name|node
+operator|.
+name|cloneJointSubtree
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|jointSubtree
+operator|.
+name|hasChildren
+argument_list|()
+condition|)
+block|{
 name|query
 operator|.
 name|setPrefetchTree
 argument_list|(
-name|node
+name|jointSubtree
 argument_list|)
 expr_stmt|;
+block|}
 name|query
 operator|.
 name|setFetchingDataRows
