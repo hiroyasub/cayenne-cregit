@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A built-in annotation used to tag an object that is not auditable on its own, but whose  * changes should be tracked together with changes of another ("parent") object. This  * annotation allows to group changes in a closely related subtree of objects.  *   * @since 3.1  */
+comment|/**  * A built-in annotation used to tag an object that is not auditable on its own, but whose  * changes should be tracked together with changes of another ("parent") object. This  * annotation allows to group changes in a closely related subtree of objects. Either  * {@link #value()} or {@link #objectIdRelationship()} must be set to a non-empty String,  * so that a processor of AuditableChild could find the parent of the annotated object.  *   * @since 3.1  */
 end_comment
 
 begin_annotation_defn
@@ -120,6 +120,15 @@ comment|/**      * Returns the name of a to-one relationship from an annotated o
 name|String
 name|value
 parameter_list|()
+default|default
+literal|""
+function_decl|;
+comment|/**      * Returns the name of the property of the annotated entity of the relationship that      * stores a String "FK" of a related "parent" entity.      */
+name|String
+name|objectIdRelationship
+parameter_list|()
+default|default
+literal|""
 function_decl|;
 name|String
 index|[]
@@ -128,12 +137,6 @@ argument_list|()
 expr|default
 block|{}
 expr_stmt|;
-name|String
-name|objectIdRelationship
-parameter_list|()
-default|default
-literal|""
-function_decl|;
 block|}
 end_annotation_defn
 

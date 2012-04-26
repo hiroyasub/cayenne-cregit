@@ -74,10 +74,6 @@ argument_list|)
 annotation|@
 name|AuditableChild
 argument_list|(
-name|value
-operator|=
-literal|""
-argument_list|,
 name|objectIdRelationship
 operator|=
 name|_AuditableChildUuid

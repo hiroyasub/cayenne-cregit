@@ -239,20 +239,6 @@ name|Query
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|StringUtils
-import|;
-end_import
-
 begin_comment
 comment|/**  * A {@link DataChannelFilter} that enables audit of entities annotated with  * {@link Auditable} and {@link AuditableChild}. Note that this filter relies on  * {@link ChangeSetFilter} presence in the DataDomain filter chain to be able to analyze  * ignored properties.  *   * @since 3.1  */
 end_comment
@@ -779,21 +765,27 @@ block|}
 name|String
 name|propertyPath
 init|=
-name|StringUtils
+name|annotation
 operator|.
-name|isNotEmpty
+name|value
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|propertyPath
+operator|==
+literal|null
+operator|||
+name|propertyPath
+operator|.
+name|equals
 argument_list|(
-name|annotation
-operator|.
-name|value
-argument_list|()
+literal|""
 argument_list|)
-condition|?
-name|annotation
-operator|.
-name|value
-argument_list|()
-else|:
+condition|)
+block|{
+name|propertyPath
+operator|=
 name|objectIdRelationshipName
 argument_list|(
 name|annotation
@@ -801,7 +793,30 @@ operator|.
 name|objectIdRelationship
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|propertyPath
+operator|==
+literal|null
+operator|||
+name|propertyPath
+operator|.
+name|equals
+argument_list|(
+literal|""
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Either 'value' or 'objectIdRelationship' of @AuditableChild must be set"
+argument_list|)
+throw|;
+block|}
 return|return
 name|dataObject
 operator|.
@@ -811,7 +826,9 @@ name|propertyPath
 argument_list|)
 return|;
 block|}
-comment|/**      * It's a temporary clone method of  {@link org.apache.cayenne.lifecycle.relationship.ObjectIdRelationshipHandler#objectIdRelationshipName(String)}      * //todo Needs to be encapsulated to some separate class to avoid a code duplication      */
+comment|// TODO: It's a temporary clone method of {@link
+comment|// org.apache.cayenne.lifecycle.relationship.ObjectIdRelationshipHandler#objectIdRelationshipName(String)}.
+comment|// Needs to be encapsulated to some separate class to avoid a code duplication
 specifier|private
 name|String
 name|objectIdRelationshipName
