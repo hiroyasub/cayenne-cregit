@@ -128,6 +128,12 @@ argument_list|()
 expr|default
 block|{}
 expr_stmt|;
+name|String
+name|objectIdRelationship
+parameter_list|()
+default|default
+literal|""
+function_decl|;
 block|}
 end_annotation_defn
 
