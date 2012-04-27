@@ -599,7 +599,7 @@ name|insert
 argument_list|(
 literal|1
 argument_list|,
-literal|null
+literal|"bag1"
 argument_list|)
 expr_stmt|;
 name|tBag
@@ -608,7 +608,7 @@ name|insert
 argument_list|(
 literal|2
 argument_list|,
-literal|null
+literal|"bag2"
 argument_list|)
 expr_stmt|;
 name|tBag
@@ -617,7 +617,7 @@ name|insert
 argument_list|(
 literal|3
 argument_list|,
-literal|null
+literal|"bag3"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -628,7 +628,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|null
+literal|"box1"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -639,7 +639,7 @@ literal|2
 argument_list|,
 literal|1
 argument_list|,
-literal|null
+literal|"box2"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -650,7 +650,7 @@ literal|3
 argument_list|,
 literal|1
 argument_list|,
-literal|null
+literal|"box3"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -661,7 +661,7 @@ literal|4
 argument_list|,
 literal|1
 argument_list|,
-literal|null
+literal|"box4"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -672,7 +672,7 @@ literal|5
 argument_list|,
 literal|1
 argument_list|,
-literal|null
+literal|"box5"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -683,7 +683,7 @@ literal|6
 argument_list|,
 literal|2
 argument_list|,
-literal|null
+literal|"box6"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -694,7 +694,7 @@ literal|7
 argument_list|,
 literal|2
 argument_list|,
-literal|null
+literal|"box7"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -705,7 +705,7 @@ literal|8
 argument_list|,
 literal|3
 argument_list|,
-literal|null
+literal|"box8"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -716,7 +716,7 @@ literal|9
 argument_list|,
 literal|3
 argument_list|,
-literal|null
+literal|"box9"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -727,7 +727,7 @@ literal|10
 argument_list|,
 literal|3
 argument_list|,
-literal|null
+literal|"box10"
 argument_list|)
 expr_stmt|;
 block|}
@@ -744,7 +744,7 @@ name|insert
 argument_list|(
 literal|1
 argument_list|,
-literal|null
+literal|"bag1"
 argument_list|)
 expr_stmt|;
 name|tBox
@@ -1701,7 +1701,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|assertEquals
+name|assertTrue
+argument_list|(
+name|volumes
+operator|.
+name|containsAll
 argument_list|(
 name|Arrays
 operator|.
@@ -1719,8 +1723,7 @@ literal|20
 argument_list|,
 literal|40
 argument_list|)
-argument_list|,
-name|volumes
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1903,7 +1906,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|assertEquals
+name|assertTrue
+argument_list|(
+name|volumes
+operator|.
+name|containsAll
 argument_list|(
 name|Arrays
 operator|.
@@ -1921,8 +1928,7 @@ literal|40
 argument_list|,
 literal|40
 argument_list|)
-argument_list|,
-name|volumes
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2218,7 +2224,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|assertEquals
+name|assertTrue
+argument_list|(
+name|volumes
+operator|.
+name|containsAll
 argument_list|(
 name|Arrays
 operator|.
@@ -2228,8 +2238,7 @@ literal|10
 argument_list|,
 literal|20
 argument_list|)
-argument_list|,
-name|volumes
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2772,7 +2781,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|assertEquals
+name|assertTrue
+argument_list|(
+name|volumes
+operator|.
+name|containsAll
 argument_list|(
 name|Arrays
 operator|.
@@ -2782,8 +2795,7 @@ literal|10
 argument_list|,
 literal|20
 argument_list|)
-argument_list|,
-name|volumes
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
