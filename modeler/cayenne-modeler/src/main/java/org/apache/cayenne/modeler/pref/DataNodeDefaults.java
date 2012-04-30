@@ -97,6 +97,13 @@ name|localDataSource
 operator|=
 name|localDataSource
 expr_stmt|;
+if|if
+condition|(
+name|localDataSource
+operator|!=
+literal|null
+condition|)
+block|{
 name|getCurrentPreference
 argument_list|()
 operator|.
@@ -107,6 +114,7 @@ argument_list|,
 name|localDataSource
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 specifier|public
