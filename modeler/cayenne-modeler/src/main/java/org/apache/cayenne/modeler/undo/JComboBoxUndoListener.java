@@ -88,6 +88,12 @@ specifier|private
 name|Object
 name|deselectedItem
 decl_stmt|;
+specifier|private
+name|boolean
+name|isUserAction
+init|=
+literal|true
+decl_stmt|;
 specifier|public
 name|void
 name|itemStateChanged
@@ -127,6 +133,12 @@ name|ItemEvent
 operator|.
 name|SELECTED
 case|:
+comment|// don't add event to undo list, if it was just the default setting
+if|if
+condition|(
+name|isUserAction
+condition|)
+block|{
 name|UndoManager
 name|undoManager
 init|=
@@ -164,8 +176,29 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+comment|//set back to default value after the selecting new option
+name|isUserAction
+operator|=
+literal|true
+expr_stmt|;
 break|break;
 block|}
+block|}
+specifier|public
+name|void
+name|setIsUserAction
+parameter_list|(
+name|boolean
+name|isUserAction
+parameter_list|)
+block|{
+name|this
+operator|.
+name|isUserAction
+operator|=
+name|isUserAction
+expr_stmt|;
 block|}
 block|}
 end_class
