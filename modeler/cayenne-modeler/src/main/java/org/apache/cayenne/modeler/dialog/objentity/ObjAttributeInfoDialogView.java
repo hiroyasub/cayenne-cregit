@@ -431,7 +431,7 @@ name|sourceEntityLabel
 decl_stmt|;
 specifier|protected
 name|JComboBox
-name|type
+name|typeComboBox
 decl_stmt|;
 specifier|protected
 name|JPanel
@@ -548,7 +548,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|type
+name|typeComboBox
 operator|=
 name|Application
 operator|.
@@ -569,14 +569,14 @@ name|AutoCompletion
 operator|.
 name|enable
 argument_list|(
-name|type
+name|typeComboBox
 argument_list|,
 literal|false
 argument_list|,
 literal|true
 argument_list|)
 expr_stmt|;
-name|type
+name|typeComboBox
 operator|.
 name|getRenderer
 argument_list|()
@@ -807,7 +807,7 @@ name|builder
 operator|.
 name|add
 argument_list|(
-name|type
+name|typeComboBox
 argument_list|,
 name|cc
 operator|.
@@ -1216,7 +1216,7 @@ operator|.
 name|SOUTH
 argument_list|)
 expr_stmt|;
-name|type
+name|typeComboBox
 operator|.
 name|addActionListener
 argument_list|(
@@ -1265,7 +1265,7 @@ control|)
 block|{
 if|if
 condition|(
-name|type
+name|typeComboBox
 operator|.
 name|getSelectedItem
 argument_list|()
@@ -1279,7 +1279,7 @@ index|]
 operator|.
 name|equals
 argument_list|(
-name|type
+name|typeComboBox
 operator|.
 name|getSelectedItem
 argument_list|()
@@ -1353,7 +1353,7 @@ name|embNames
 operator|.
 name|contains
 argument_list|(
-name|type
+name|typeComboBox
 operator|.
 name|getSelectedItem
 argument_list|()
@@ -1431,11 +1431,11 @@ return|;
 block|}
 specifier|public
 name|JComboBox
-name|getType
+name|getTypeComboBox
 parameter_list|()
 block|{
 return|return
-name|type
+name|typeComboBox
 return|;
 block|}
 specifier|public

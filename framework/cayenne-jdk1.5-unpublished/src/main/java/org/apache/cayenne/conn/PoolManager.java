@@ -49,6 +49,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|SQLFeatureNotSupportedException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|LinkedList
@@ -72,6 +82,18 @@ operator|.
 name|util
 operator|.
 name|ListIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
+name|Logger
 import|;
 end_import
 
@@ -1829,6 +1851,20 @@ name|iface
 parameter_list|)
 throws|throws
 name|SQLException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+specifier|public
+name|Logger
+name|getParentLogger
+parameter_list|()
+throws|throws
+name|SQLFeatureNotSupportedException
 block|{
 throw|throw
 operator|new

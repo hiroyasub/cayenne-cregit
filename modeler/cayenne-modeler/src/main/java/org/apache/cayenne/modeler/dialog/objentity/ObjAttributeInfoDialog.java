@@ -909,7 +909,7 @@ name|DefaultComboBoxModel
 operator|)
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getModel
@@ -1121,7 +1121,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|setSelectedItem
@@ -1478,7 +1478,7 @@ expr_stmt|;
 block|}
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|addItemListener
@@ -2252,7 +2252,7 @@ if|if
 condition|(
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getSelectedItem
@@ -2272,7 +2272,7 @@ name|lastObjectType
 operator|=
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getSelectedItem
@@ -2311,7 +2311,7 @@ name|setType
 argument_list|(
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getSelectedItem
@@ -2611,7 +2611,7 @@ name|contains
 argument_list|(
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getSelectedItem
@@ -2815,7 +2815,7 @@ literal|null
 operator|&&
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getSelectedItem
@@ -2837,7 +2837,7 @@ name|equals
 argument_list|(
 name|view
 operator|.
-name|getType
+name|getTypeComboBox
 argument_list|()
 operator|.
 name|getSelectedItem
