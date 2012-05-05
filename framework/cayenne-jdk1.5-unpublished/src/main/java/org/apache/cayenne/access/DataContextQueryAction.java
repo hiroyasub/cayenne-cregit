@@ -362,12 +362,7 @@ condition|)
 block|{
 name|object
 operator|=
-operator|(
-operator|(
-name|DataContext
-operator|)
-name|actingContext
-operator|)
+name|actingDataContext
 operator|.
 name|currentSnapshot
 argument_list|(
@@ -452,6 +447,9 @@ name|maxIdQualifierSize
 init|=
 name|actingDataContext
 operator|.
+name|getParentDataDomain
+argument_list|()
+operator|.
 name|getRuntimeProperties
 argument_list|()
 operator|.
@@ -496,10 +494,7 @@ argument_list|<
 name|Object
 argument_list|>
 argument_list|(
-operator|(
-name|DataContext
-operator|)
-name|actingContext
+name|actingDataContext
 argument_list|,
 name|query
 argument_list|,
@@ -517,10 +512,7 @@ argument_list|<
 name|Object
 argument_list|>
 argument_list|(
-operator|(
-name|DataContext
-operator|)
-name|actingContext
+name|actingDataContext
 argument_list|,
 name|query
 argument_list|,

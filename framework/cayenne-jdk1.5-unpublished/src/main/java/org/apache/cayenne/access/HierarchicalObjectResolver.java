@@ -740,6 +740,9 @@ name|maxIdQualifierSize
 init|=
 name|context
 operator|.
+name|getParentDataDomain
+argument_list|()
+operator|.
 name|getRuntimeProperties
 argument_list|()
 operator|.
