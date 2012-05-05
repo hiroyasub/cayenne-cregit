@@ -892,13 +892,32 @@ name|isFetchingDataRows
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|qualsSize
 argument_list|)
+decl_stmt|;
+name|int
+name|fetchSize
+init|=
+name|maxFetchSize
+operator|>
+literal|0
+condition|?
+name|maxFetchSize
+else|:
+name|Integer
+operator|.
+name|MAX_VALUE
 decl_stmt|;
 name|int
 name|fetchEnd
@@ -909,7 +928,7 @@ name|min
 argument_list|(
 name|qualsSize
 argument_list|,
-name|maxFetchSize
+name|fetchSize
 argument_list|)
 decl_stmt|;
 name|int
@@ -1000,7 +1019,7 @@ name|Math
 operator|.
 name|min
 argument_list|(
-name|maxFetchSize
+name|fetchSize
 argument_list|,
 name|qualsSize
 operator|-
@@ -1366,7 +1385,7 @@ operator|/
 name|pageSize
 return|;
 block|}
-comment|/**      * Get the upper bound on the number of records to resolve in one round trip to the      * database. This setting governs the size/complexity of the where clause generated to      * retrieve the next page of records. If the fetch size is less than the page size,      * then multiple fetches will be made to resolve a page.      *       * @return int      */
+comment|/**      * Get the upper bound on the number of records to resolve in one round trip to the      * database. This setting governs the size/complexity of the where clause generated to      * retrieve the next page of records. If the fetch size is less than the page size,      * then multiple fetches will be made to resolve a page.      */
 specifier|public
 name|int
 name|getMaxFetchSize
