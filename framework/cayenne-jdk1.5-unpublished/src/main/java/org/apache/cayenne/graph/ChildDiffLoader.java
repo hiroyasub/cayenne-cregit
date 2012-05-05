@@ -639,7 +639,7 @@ name|writeProperty
 argument_list|(
 name|object
 argument_list|,
-literal|null
+name|oldValue
 argument_list|,
 name|newValue
 argument_list|)
