@@ -596,6 +596,8 @@ argument_list|(
 name|context
 argument_list|,
 name|query
+argument_list|,
+literal|10000
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -705,6 +707,8 @@ argument_list|(
 name|context
 argument_list|,
 name|query
+argument_list|,
+literal|10000
 argument_list|)
 return|;
 block|}
@@ -994,6 +998,8 @@ argument_list|(
 name|context
 argument_list|,
 name|q
+argument_list|,
+literal|10000
 argument_list|)
 decl_stmt|;
 name|assertSame

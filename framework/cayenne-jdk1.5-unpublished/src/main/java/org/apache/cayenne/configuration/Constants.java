@@ -246,6 +246,15 @@ name|SERVER_ROP_EVENT_BRIDGE_FACTORY_PROPERTY
 init|=
 literal|"cayenne.server.rop_event_bridge_factory"
 decl_stmt|;
+comment|/**      * A property that defines a maximum number of ID qualifiers in where clause of queries      * that are generated for example in {@link org.apache.cayenne.access.IncrementalFaultList}      * or in DISJOINT_BY_ID prefetch processing. This is needed to avoid where      * clause size limitations and memory usage efficiency.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY
+init|=
+literal|"cayenne.server.max_id_qualifier_size"
+decl_stmt|;
 block|}
 end_interface
 

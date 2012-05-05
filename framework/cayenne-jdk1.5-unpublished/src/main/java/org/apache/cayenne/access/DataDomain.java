@@ -237,7 +237,35 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
 name|ObjectContextFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|RuntimeProperties
 import|;
 end_import
 
@@ -490,6 +518,12 @@ name|Inject
 specifier|protected
 name|JdbcEventLogger
 name|jdbcEventLogger
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|RuntimeProperties
+name|runtimeProperties
 decl_stmt|;
 comment|/**      * @since 3.1      */
 specifier|protected
@@ -2714,6 +2748,16 @@ parameter_list|()
 block|{
 return|return
 name|jdbcEventLogger
+return|;
+block|}
+comment|/**      * Returns global runtime properties for this data domain.      *      * @since 3.1      */
+specifier|public
+name|RuntimeProperties
+name|getRuntimeProperties
+parameter_list|()
+block|{
+return|return
+name|runtimeProperties
 return|;
 block|}
 name|void

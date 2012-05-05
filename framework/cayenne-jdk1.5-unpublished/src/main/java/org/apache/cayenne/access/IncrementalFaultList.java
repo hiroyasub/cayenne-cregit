@@ -283,15 +283,13 @@ comment|/**      * Defines the upper limit on the size of fetches. This is neede
 specifier|protected
 name|int
 name|maxFetchSize
-init|=
-literal|10000
 decl_stmt|;
 comment|// Don't confuse this with the JDBC ResultSet fetch size setting - this controls
 comment|// the where clause generation that is necessary to fetch specific records a page
 comment|// at a time. Some JDBC Drivers/Databases may have limits on statement length
 comment|// or complexity of the where clause - e.g., PostgreSQL having a default limit of
 comment|// 10,000 nested expressions.
-comment|/**      * Creates a new IncrementalFaultList using a given DataContext and query.      *       * @param dataContext DataContext used by IncrementalFaultList to fill itself with      *            objects.      * @param query Main query used to retrieve data. Must have "pageSize" property set to      *            a value greater than zero.      */
+comment|/**      * Creates a new IncrementalFaultList using a given DataContext and query.      *       * @param dataContext DataContext used by IncrementalFaultList to fill itself with      *            objects.      * @param query Main query used to retrieve data. Must have "pageSize" property set to      *            a value greater than zero.      * @param maxFetchSize maximum number of fetches in one query      */
 specifier|public
 name|IncrementalFaultList
 parameter_list|(
@@ -300,6 +298,9 @@ name|dataContext
 parameter_list|,
 name|Query
 name|query
+parameter_list|,
+name|int
+name|maxFetchSize
 parameter_list|)
 block|{
 name|QueryMetadata
@@ -468,6 +469,12 @@ name|synchronizedList
 argument_list|(
 name|elementsUnsynced
 argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|maxFetchSize
+operator|=
+name|maxFetchSize
 expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */

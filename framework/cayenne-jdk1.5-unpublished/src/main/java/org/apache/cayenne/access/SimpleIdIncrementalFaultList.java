@@ -144,6 +144,9 @@ name|dataContext
 parameter_list|,
 name|Query
 name|query
+parameter_list|,
+name|int
+name|maxFetchSize
 parameter_list|)
 block|{
 name|super
@@ -151,6 +154,8 @@ argument_list|(
 name|dataContext
 argument_list|,
 name|query
+argument_list|,
+name|maxFetchSize
 argument_list|)
 expr_stmt|;
 name|Collection

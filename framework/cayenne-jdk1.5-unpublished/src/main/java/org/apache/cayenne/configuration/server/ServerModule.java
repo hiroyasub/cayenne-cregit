@@ -1070,6 +1070,14 @@ name|ServerModule
 implements|implements
 name|Module
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|DEFAULT_MAX_ID_QUALIFIER_SIZE
+init|=
+literal|10000
+decl_stmt|;
 specifier|protected
 name|String
 index|[]
@@ -1131,7 +1139,7 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
-comment|// configure empty global stack properties
+comment|// configure global stack properties
 name|binder
 operator|.
 name|bindMap
@@ -1139,6 +1147,20 @@ argument_list|(
 name|Constants
 operator|.
 name|PROPERTIES_MAP
+argument_list|)
+operator|.
+name|put
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY
+argument_list|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|DEFAULT_MAX_ID_QUALIFIER_SIZE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|binder

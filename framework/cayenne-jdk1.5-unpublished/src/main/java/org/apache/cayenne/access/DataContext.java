@@ -301,6 +301,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|RuntimeProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|event
 operator|.
 name|EventManager
@@ -973,6 +987,20 @@ return|;
 block|}
 return|return
 literal|null
+return|;
+block|}
+comment|/**      * Returns runtime properties fetched from parent data domain.      *      * @since 3.1      */
+specifier|public
+name|RuntimeProperties
+name|getRuntimeProperties
+parameter_list|()
+block|{
+return|return
+name|getParentDataDomain
+argument_list|()
+operator|.
+name|getRuntimeProperties
+argument_list|()
 return|;
 block|}
 comment|/**      * Sets a DataContextDelegate for this context. Delegate is notified of certain events      * in the DataContext lifecycle and can customize DataContext behavior.      *       * @since 1.1      */
