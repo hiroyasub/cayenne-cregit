@@ -437,7 +437,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 literal|100
 argument_list|)
@@ -571,7 +571,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 literal|0
 argument_list|)
@@ -705,7 +705,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 operator|-
 literal|1
@@ -830,7 +830,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 literal|50
 argument_list|)
@@ -1026,7 +1026,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 literal|1001
 argument_list|)
@@ -1222,7 +1222,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 literal|0
 argument_list|)
@@ -1364,7 +1364,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 operator|-
 literal|1

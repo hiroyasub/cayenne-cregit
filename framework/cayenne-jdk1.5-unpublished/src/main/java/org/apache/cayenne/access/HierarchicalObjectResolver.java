@@ -729,7 +729,7 @@ operator|.
 name|getParentDataDomain
 argument_list|()
 operator|.
-name|getMaxIdQualifierSite
+name|getMaxIdQualifierSize
 argument_list|()
 decl_stmt|;
 name|List

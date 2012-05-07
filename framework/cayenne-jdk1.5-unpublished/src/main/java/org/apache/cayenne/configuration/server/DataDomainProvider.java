@@ -878,7 +878,7 @@ argument_list|)
 decl_stmt|;
 name|dataDomain
 operator|.
-name|setMaxIdQualifierSite
+name|setMaxIdQualifierSize
 argument_list|(
 name|runtimeProperties
 operator|.
