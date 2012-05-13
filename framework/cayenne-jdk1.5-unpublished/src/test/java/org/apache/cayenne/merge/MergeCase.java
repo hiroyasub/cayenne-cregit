@@ -77,16 +77,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -231,6 +221,24 @@ name|ServerCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|ServerCaseDataSourceFactory
+import|;
+end_import
+
 begin_class
 specifier|public
 specifier|abstract
@@ -254,8 +262,8 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|DataSource
-name|dataSource
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
 decl_stmt|;
 annotation|@
 name|Inject
@@ -616,7 +624,10 @@ block|{
 name|Connection
 name|conn
 init|=
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 operator|.
 name|getConnection
 argument_list|()

@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -154,8 +144,8 @@ block|{
 annotation|@
 name|Inject
 specifier|protected
-name|DataSource
-name|dataSource
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
 decl_stmt|;
 annotation|@
 name|Inject
@@ -212,7 +202,10 @@ return|return
 operator|new
 name|FlavoredDBHelper
 argument_list|(
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 argument_list|,
 name|adapter
 operator|.

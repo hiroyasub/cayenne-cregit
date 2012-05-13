@@ -97,16 +97,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -149,6 +139,24 @@ name|ServerCase
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|ServerCaseDataSourceFactory
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -159,8 +167,8 @@ block|{
 annotation|@
 name|Inject
 specifier|private
-name|DataSource
-name|dataSource
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
 decl_stmt|;
 specifier|public
 name|void
@@ -619,7 +627,10 @@ comment|// since more then 1 database type can map to a single JDBC type
 name|Connection
 name|conn
 init|=
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 operator|.
 name|getConnection
 argument_list|()
@@ -736,7 +747,10 @@ block|{
 name|Connection
 name|conn
 init|=
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 operator|.
 name|getConnection
 argument_list|()

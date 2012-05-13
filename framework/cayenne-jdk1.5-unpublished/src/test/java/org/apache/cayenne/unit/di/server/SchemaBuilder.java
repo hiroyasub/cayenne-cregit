@@ -529,8 +529,8 @@ literal|"CLOB_DETAIL"
 block|}
 decl_stmt|;
 specifier|private
-name|DataSource
-name|dataSource
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
 decl_stmt|;
 specifier|private
 name|UnitDbAdapter
@@ -553,8 +553,8 @@ name|SchemaBuilder
 parameter_list|(
 annotation|@
 name|Inject
-name|DataSource
-name|dataSource
+name|ServerCaseDataSourceFactory
+name|dataSourceFactory
 parameter_list|,
 annotation|@
 name|Inject
@@ -574,9 +574,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|dataSource
+name|dataSourceFactory
 operator|=
-name|dataSource
+name|dataSourceFactory
 expr_stmt|;
 name|this
 operator|.
@@ -838,7 +838,10 @@ name|node
 operator|.
 name|setDataSource
 argument_list|(
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// setup test extended types
@@ -1335,7 +1338,10 @@ block|{
 name|Connection
 name|conn
 init|=
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 operator|.
 name|getConnection
 argument_list|()
@@ -1683,7 +1689,10 @@ block|{
 name|Connection
 name|conn
 init|=
-name|dataSource
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
 operator|.
 name|getConnection
 argument_list|()
