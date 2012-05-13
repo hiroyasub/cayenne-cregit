@@ -822,6 +822,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/**      * An implementation of {@link ScopeEventListener} that simply calls      * {@link #shutdown()}.      *       * @since 3.1      */
 specifier|public
 name|void
 name|beforeScopeEnd
@@ -1896,7 +1897,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|/**      * @since 3.1 JDBC 4.1 compatibility under Java 1.5      */
 specifier|public
 name|Logger
 name|getParentLogger
