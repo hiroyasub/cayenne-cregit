@@ -598,7 +598,7 @@ argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
-name|delete
+name|deleteAll
 argument_list|(
 literal|"TYPES_MAPPING_TEST1"
 argument_list|)
