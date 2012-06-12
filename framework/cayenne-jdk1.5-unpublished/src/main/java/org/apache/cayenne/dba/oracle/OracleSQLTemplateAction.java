@@ -763,6 +763,8 @@ argument_list|)
 return|;
 block|}
 comment|/**          * @deprecated          */
+annotation|@
+name|Deprecated
 specifier|public
 name|BigDecimal
 name|getBigDecimal
@@ -807,6 +809,8 @@ argument_list|)
 return|;
 block|}
 comment|/**          * @deprecated          */
+annotation|@
+name|Deprecated
 specifier|public
 name|BigDecimal
 name|getBigDecimal
@@ -1843,6 +1847,8 @@ argument_list|()
 return|;
 block|}
 comment|/**          * @deprecated          */
+annotation|@
+name|Deprecated
 specifier|public
 name|InputStream
 name|getUnicodeStream
@@ -1863,6 +1869,8 @@ argument_list|)
 return|;
 block|}
 comment|/**          * @deprecated          */
+annotation|@
+name|Deprecated
 specifier|public
 name|InputStream
 name|getUnicodeStream

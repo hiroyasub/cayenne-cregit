@@ -597,6 +597,8 @@ name|boolean
 name|stopped
 decl_stmt|;
 comment|/**      * Factory for creating QueryBuilders. Might be null, then default one will be used.      * Server-only.      *       * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
+annotation|@
+name|Deprecated
 specifier|private
 name|BatchQueryBuilderFactory
 name|queryBuilderFactory
@@ -1240,6 +1242,8 @@ block|}
 block|}
 block|}
 comment|/**      * Registers new DataMap with this domain.      *       * @deprecated since 3.1 use a more consistently named {@link #addDataMap(DataMap)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|addMap
@@ -1275,6 +1279,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Returns DataMap matching<code>name</code> parameter.      *       * @deprecated since 3.1 use a more consistently named {@link #getDataMap(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getMap
@@ -1313,6 +1319,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Removes named DataMap from this DataDomain and any underlying DataNodes that      * include it.      *       * @deprecated since 3.1 use a more consistently named {@link #removeDataMap(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|removeMap
@@ -1776,6 +1784,8 @@ return|;
 block|}
 block|}
 comment|/**      * Returns registered DataNode whose name matches<code>name</code> parameter.      *       * @deprecated since 3.1, use a more consistently named {@link #getDataNode(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataNode
 name|getNode
@@ -2701,6 +2711,8 @@ name|queryCache
 expr_stmt|;
 block|}
 comment|/**      * Sets factory for creating QueryBuilders      *       * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setQueryBuilderFactory
@@ -2717,6 +2729,8 @@ name|queryBuilderFactory
 expr_stmt|;
 block|}
 comment|/**      * @return factory for creating QueryBuilders. Might be null      * @deprecated since 3.1 BatchQueryBuilderFactory is injected into JdbcAdapter.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|BatchQueryBuilderFactory
 name|getQueryBuilderFactory

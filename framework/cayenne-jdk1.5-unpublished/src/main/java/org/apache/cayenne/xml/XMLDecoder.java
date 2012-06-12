@@ -234,6 +234,8 @@ comment|/**  * XMLDecoder is used to decode XML into objects.  *   * @since 1.2 
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|XMLDecoder

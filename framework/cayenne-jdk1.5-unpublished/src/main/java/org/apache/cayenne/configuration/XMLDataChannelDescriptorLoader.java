@@ -301,6 +301,8 @@ init|=
 literal|"data-source"
 decl_stmt|;
 comment|/**      * @deprecated the caller should use password resolving strategy instead of resolving      *             the password on the spot. For one thing this can be used in the Modeler      *             and no password may be available.      */
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|String
@@ -358,6 +360,8 @@ name|password
 return|;
 block|}
 comment|/**      * @deprecated the caller should use password resolving strategy instead of resolving      *             the password on the spot. For one thing this can be used in the Modeler      *             and no password may be available.      */
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|String

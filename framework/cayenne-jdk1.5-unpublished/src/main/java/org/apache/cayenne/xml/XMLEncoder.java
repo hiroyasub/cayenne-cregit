@@ -196,6 +196,8 @@ comment|/**  * A helper class to encode objects to XML.  *   * @since 1.2  * @de
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|XMLEncoder

@@ -164,6 +164,8 @@ comment|/**  * Static utility methods to work with DOM trees.  *   * @since 1.2 
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|XMLUtil
 block|{

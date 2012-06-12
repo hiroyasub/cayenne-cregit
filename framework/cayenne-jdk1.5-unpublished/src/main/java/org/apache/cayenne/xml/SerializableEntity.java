@@ -78,6 +78,8 @@ comment|/**  * A flyweight wrapper for serializing with XML mapping. This object
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|SerializableEntity
 implements|implements

@@ -70,6 +70,8 @@ comment|/**  * A facade for a collection of DbAdapterFactories. Can be configure
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|DbAdapterFactoryChain
 implements|implements

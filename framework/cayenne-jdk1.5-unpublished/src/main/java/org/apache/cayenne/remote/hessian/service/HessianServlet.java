@@ -90,6 +90,8 @@ comment|/**  * Deprecated since 3.1 in favor of {@link ROPHessianServlet}. Note 
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|HessianServlet

@@ -30,6 +30,8 @@ comment|/**  * @deprecated since 3.1 moved to "org.apache.cayenne.ashwood" packa
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|AshwoodEntitySorter

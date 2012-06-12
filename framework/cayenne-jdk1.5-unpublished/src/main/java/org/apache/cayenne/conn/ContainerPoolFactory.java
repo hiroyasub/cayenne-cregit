@@ -82,6 +82,8 @@ comment|/**  *<p>  * Basic JNDI object factory that creates an instance of<code>
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ContainerPoolFactory

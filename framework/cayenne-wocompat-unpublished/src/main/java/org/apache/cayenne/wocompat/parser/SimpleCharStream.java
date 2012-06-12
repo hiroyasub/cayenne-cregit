@@ -790,6 +790,8 @@ operator|)
 return|;
 block|}
 comment|/**    * @deprecated     * @see #getEndColumn    */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getColumn
@@ -803,6 +805,8 @@ index|]
 return|;
 block|}
 comment|/**    * @deprecated     * @see #getEndLine    */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|getLine

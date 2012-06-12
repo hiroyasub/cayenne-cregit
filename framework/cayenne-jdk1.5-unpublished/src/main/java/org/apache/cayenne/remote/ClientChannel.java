@@ -350,6 +350,8 @@ name|EventBridge
 name|remoteChannelListener
 decl_stmt|;
 comment|/**      * Creates a new channel accessing remote server via provided connection. Channel      * created using this constructor will post no events of its own and provide its users      * with a multithreaded EventManager.      *       * @deprecated since 3.1 use      *             {@link #ClientChannel(ClientConnection, boolean, EventManager, boolean)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientChannel
 parameter_list|(
@@ -366,6 +368,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.1 use      *             {@link #ClientChannel(ClientConnection, boolean, EventManager, boolean)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientChannel
 parameter_list|(
@@ -391,6 +395,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.1 use      *             {@link #ClientChannel(ClientConnection, boolean, EventManager, boolean)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientChannel
 parameter_list|(

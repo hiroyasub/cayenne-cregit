@@ -2452,6 +2452,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities.      *       * @deprecated since 3.1 use {@link #lookupInheritanceTree(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|EntityInheritanceTree
 name|lookupInheritanceTree

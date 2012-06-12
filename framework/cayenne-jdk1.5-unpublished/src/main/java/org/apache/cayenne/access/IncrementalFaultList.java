@@ -290,6 +290,8 @@ comment|// at a time. Some JDBC Drivers/Databases may have limits on statement l
 comment|// or complexity of the where clause - e.g., PostgreSQL having a default limit of
 comment|// 10,000 nested expressions.
 comment|/**      * @deprecated since 3.1 use {@link #IncrementalFaultList(DataContext, Query, int)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|IncrementalFaultList
 parameter_list|(

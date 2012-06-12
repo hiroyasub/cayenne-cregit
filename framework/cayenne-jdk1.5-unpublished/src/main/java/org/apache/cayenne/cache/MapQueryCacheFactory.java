@@ -30,6 +30,8 @@ comment|/**  * @since 3.0  * @deprecated since 3.1 MapQueryCacheFactory and Quer
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|MapQueryCacheFactory

@@ -84,6 +84,8 @@ comment|/**  * This is a legacy Cayenne bootstrapping filter kept for backwards 
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|WebApplicationContextFilter

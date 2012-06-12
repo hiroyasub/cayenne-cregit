@@ -1194,6 +1194,8 @@ name|clientMap
 return|;
 block|}
 comment|/**      * Prints itself as a well-formed complete XML document. In comparison,      * {@link #encodeAsXML(XMLEncoder)}stores DataMap assuming it is a part of a bigger      * document.      *       * @since 1.1      * @deprecated since 3.1, as {@link XMLSerializable} objects should only save XML      *             segments. Saving full XML files is responsibilty of the callers.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|encodeAsXML

@@ -988,6 +988,8 @@ name|entityResolver
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.1 does nothing as pool shutdown is performed by the DI      *             container.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|shutdown

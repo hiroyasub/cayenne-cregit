@@ -939,6 +939,8 @@ name|getGraphManager
 parameter_list|()
 function_decl|;
 comment|/**      * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Persistent
 name|localObject
@@ -2360,6 +2362,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Schedules an object for deletion on the next commit of this context. Object's      * persistence state is changed to PersistenceState.DELETED; objects related to this      * object are processed according to delete rules, i.e. relationships can be unset      * ("nullify" rule), deletion operation is cascaded (cascade rule).      *       * @param object a persistent object that we want to delete.      * @throws DeleteDenyException if a DENY delete rule is applicable for object      *             deletion.      * @throws NullPointerException if object is null.      * @deprecated since 3.1 use {@link #deleteObjects(Object...)} method instead. This      *             method is redundant.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|deleteObject

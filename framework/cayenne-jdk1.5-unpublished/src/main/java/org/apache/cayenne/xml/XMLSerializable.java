@@ -20,6 +20,8 @@ comment|/**  * Interface for Cayenne objects that can be saved to XML.  *   * @s
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|XMLSerializable

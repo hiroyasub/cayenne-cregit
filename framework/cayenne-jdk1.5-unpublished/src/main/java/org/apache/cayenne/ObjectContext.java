@@ -134,6 +134,8 @@ name|uncommittedObjects
 parameter_list|()
 function_decl|;
 comment|/**      * Returns an object local to this ObjectContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * This method can do both "mapping" (i.e. finding an object with the same id in this      * context) and "synchronization" (i.e. updating the state of the found object with      * the state of the prototype object).      *</p>      *       * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
+annotation|@
+name|Deprecated
 name|Persistent
 name|localObject
 parameter_list|(
@@ -178,6 +180,8 @@ name|object
 parameter_list|)
 function_decl|;
 comment|/**      * Schedules a persistent object for deletion on next commit.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      * @deprecated since 3.1 use {@link #deleteObjects(Object...)} method instead. This      *             method is redundant.      */
+annotation|@
+name|Deprecated
 name|void
 name|deleteObject
 parameter_list|(

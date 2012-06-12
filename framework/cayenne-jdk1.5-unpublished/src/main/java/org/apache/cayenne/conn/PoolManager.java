@@ -700,6 +700,8 @@ name|connection
 return|;
 block|}
 comment|/**      * Closes all existing connections, removes them from the pool.      *       * @deprecated since 3.1 replaced with {@link #shutdown()} method for naming      *             consistency.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|dispose

@@ -169,6 +169,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Applies preconfigured list of filters to the list, removing entities that do not      * pass the filter.      *       * @deprecated since 3.0 still used by AntDataPortDelegate, which itself should      *             probably be deprecated      */
+annotation|@
+name|Deprecated
 name|List
 argument_list|<
 name|?
@@ -288,6 +290,8 @@ name|items
 return|;
 block|}
 comment|/**      * Returns true if the entity matches any one of the "include" patterns, or if there      * is no "include" patterns defined.      *       * @deprecated since 3.0. still used by AntDataPortDelegate, which itself should      *             probably be deprecated      */
+annotation|@
+name|Deprecated
 specifier|private
 name|boolean
 name|passedIncludeFilter
@@ -348,6 +352,8 @@ literal|false
 return|;
 block|}
 comment|/**      * Returns true if the entity does not match any one of the "exclude" patterns, or if      * there is no "exclude" patterns defined.      *       * @deprecated since 3.0      */
+annotation|@
+name|Deprecated
 specifier|private
 name|boolean
 name|passedExcludeFilter

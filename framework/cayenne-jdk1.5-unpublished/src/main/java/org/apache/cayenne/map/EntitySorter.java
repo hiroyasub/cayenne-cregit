@@ -45,6 +45,8 @@ interface|interface
 name|EntitySorter
 block|{
 comment|/**      * Initializes a list of DataMaps used by the sorter.      *       * @deprecated since 3.1 {@link #setEntityResolver(EntityResolver)} is used, and this      *             method is never called.      */
+annotation|@
+name|Deprecated
 name|void
 name|setDataMaps
 parameter_list|(

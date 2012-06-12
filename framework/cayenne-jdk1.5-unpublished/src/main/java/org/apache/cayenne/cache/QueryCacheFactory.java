@@ -44,6 +44,8 @@ comment|/**  * Creates QueryCache.  *   * @since 3.0  * @deprecated since 3.1 Qu
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|QueryCacheFactory

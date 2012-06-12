@@ -30,6 +30,8 @@ comment|/**  * A factory for the OSCache factory. "/oscache.properties" file is 
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|OSQueryCacheFactory

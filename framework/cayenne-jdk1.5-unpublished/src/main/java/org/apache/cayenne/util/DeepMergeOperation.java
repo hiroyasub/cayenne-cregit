@@ -260,6 +260,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.1 - unused as the object is now stateless      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|reset
@@ -268,6 +270,8 @@ block|{
 comment|// noop
 block|}
 comment|/**      * @deprecated since 3.1 use {@link #merge(Persistent)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Object
 name|merge

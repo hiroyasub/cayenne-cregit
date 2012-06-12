@@ -160,6 +160,8 @@ comment|/**  * A convenience class for dealing with the mapping file. This can e
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|final
 class|class
 name|XMLMappingDescriptor

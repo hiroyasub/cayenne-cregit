@@ -40,6 +40,8 @@ comment|/**  * Defines a conditional factory for a specific DbAdapter. Note that
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|DbAdapterFactory

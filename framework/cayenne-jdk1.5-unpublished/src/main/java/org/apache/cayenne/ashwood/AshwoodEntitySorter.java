@@ -468,6 +468,8 @@ literal|true
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.1. Use {@link #AshwoodEntitySorter()} constructor together with      *             {@link #setDataMaps(Collection)} instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|AshwoodEntitySorter
 parameter_list|(
@@ -1026,6 +1028,8 @@ name|components
 expr_stmt|;
 block|}
 comment|/**      * @since 1.1      * @deprecated since 3.1, {@link #setEntityResolver(EntityResolver)} is used instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataMaps
@@ -1567,14 +1571,12 @@ range|:
 name|masters
 control|)
 block|{
+comment|//                    if (masterCandidate.equals(master)) {
 if|if
 condition|(
 name|masterCandidate
-operator|.
-name|equals
-argument_list|(
+operator|==
 name|master
-argument_list|)
 condition|)
 block|{
 name|objectDependencyGraph
