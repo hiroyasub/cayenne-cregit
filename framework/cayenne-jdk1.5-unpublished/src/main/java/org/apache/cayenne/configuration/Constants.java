@@ -211,7 +211,7 @@ specifier|final
 name|String
 name|ROP_SERVICE_TIMEOUT_PROPERTY
 init|=
-literal|"cayenne.rop.service.timeout"
+literal|"cayenne.rop.service_timeout"
 decl_stmt|;
 specifier|public
 specifier|static
