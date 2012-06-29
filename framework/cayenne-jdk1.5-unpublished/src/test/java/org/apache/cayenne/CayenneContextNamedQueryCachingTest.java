@@ -608,7 +608,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testLocalCacheEJBQLQueryParameterized
+name|testParameterizedMappedToEJBQLQueries
 parameter_list|()
 throws|throws
 name|Exception
