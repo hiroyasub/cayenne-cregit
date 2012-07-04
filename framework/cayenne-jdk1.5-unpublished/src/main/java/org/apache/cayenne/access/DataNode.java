@@ -1306,11 +1306,17 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+return|return
+name|iface
+operator|.
+name|isAssignableFrom
+argument_list|(
+name|dataSource
+operator|.
+name|getClass
 argument_list|()
-throw|;
+argument_list|)
+return|;
 block|}
 comment|/**          * @since 3.0          */
 comment|// JDBC 4 compatibility under Java 1.5
@@ -1330,11 +1336,31 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+try|try
+block|{
+return|return
+name|iface
+operator|.
+name|cast
+argument_list|(
+name|dataSource
+argument_list|)
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|ClassCastException
+name|e
+parameter_list|)
+block|{
 throw|throw
 operator|new
-name|UnsupportedOperationException
-argument_list|()
+name|SQLException
+argument_list|(
+name|e
+argument_list|)
 throw|;
+block|}
 block|}
 comment|/**          * @since 3.1          *          * JDBC 4.1 compatibility under Java 1.5          */
 specifier|public
@@ -1346,7 +1372,7 @@ name|SQLFeatureNotSupportedException
 block|{
 throw|throw
 operator|new
-name|UnsupportedOperationException
+name|SQLFeatureNotSupportedException
 argument_list|()
 throw|;
 block|}
