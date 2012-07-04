@@ -103,10 +103,6 @@ name|BatchQuery
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -236,17 +232,6 @@ name|BatchQuery
 name|batch
 parameter_list|)
 block|{
-name|String
-name|table
-init|=
-name|batch
-operator|.
-name|getDbEntity
-argument_list|()
-operator|.
-name|getFullyQualifiedName
-argument_list|()
-decl_stmt|;
 name|List
 argument_list|<
 name|DbAttribute
