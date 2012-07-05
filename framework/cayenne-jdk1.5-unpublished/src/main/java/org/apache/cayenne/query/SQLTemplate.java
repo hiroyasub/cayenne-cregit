@@ -329,29 +329,6 @@ name|SQLTemplate
 parameter_list|()
 block|{
 block|}
-comment|/**      * @since 1.2      * @deprecated since 3.1, use SQLTemplate(DataMap rootMap, String defaultTemplate,      *             boolean isFetchingDataRows) instead      */
-annotation|@
-name|Deprecated
-specifier|public
-name|SQLTemplate
-parameter_list|(
-name|DataMap
-name|rootMap
-parameter_list|,
-name|String
-name|defaultTemplate
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|rootMap
-argument_list|,
-name|defaultTemplate
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * @since 3.1      */
 specifier|public
 name|SQLTemplate
