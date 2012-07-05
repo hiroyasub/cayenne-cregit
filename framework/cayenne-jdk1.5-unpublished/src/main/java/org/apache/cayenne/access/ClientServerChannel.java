@@ -136,25 +136,6 @@ specifier|protected
 name|DataContext
 name|serverContext
 decl_stmt|;
-comment|/**      * @deprecated since 3.1 as context creation is now factory based.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|ClientServerChannel
-parameter_list|(
-name|DataDomain
-name|domain
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|domain
-operator|.
-name|createDataContext
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Creates a ClientServerChannel that wraps a specified DataContext.      *       * @since 3.0      */
 specifier|public
 name|ClientServerChannel
