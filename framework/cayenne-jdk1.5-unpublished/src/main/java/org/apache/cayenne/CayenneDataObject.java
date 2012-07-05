@@ -113,34 +113,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Injector
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -301,48 +273,6 @@ name|ValidationResult
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|xml
-operator|.
-name|XMLDecoder
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|xml
-operator|.
-name|XMLEncoder
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|xml
-operator|.
-name|XMLSerializable
-import|;
-end_import
-
 begin_comment
 comment|/**  * A default implementation of DataObject interface. It is normally used as a superclass  * of Cayenne persistent objects.  */
 end_comment
@@ -357,8 +287,6 @@ implements|implements
 name|DataObject
 implements|,
 name|Validating
-implements|,
-name|XMLSerializable
 block|{
 specifier|protected
 name|long
@@ -416,7 +344,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)artist.readNestedProperty("name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)paintingInfo.readNestedProperty("toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)painting.readNestedProperty("toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)painting.readNestedProperty("toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)artist.readNestedProperty("paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      *      * @since 1.0.5      */
+comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)artist.readNestedProperty("name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)paintingInfo.readNestedProperty("toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)painting.readNestedProperty("toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)painting.readNestedProperty("toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)artist.readNestedProperty("paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      *       * @since 1.0.5      */
 specifier|public
 name|Object
 name|readNestedProperty
@@ -1207,7 +1135,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called before establishing a relationship with another object. Applies "persistence      * by reachability" logic, pulling one of the two objects to a DataConext of another      * object in case one of the objects is transient. If both objects are persistent, and      * they don't have the same DataContext, CayenneRuntimeException is thrown.      *      * @since 1.2      */
+comment|/**      * Called before establishing a relationship with another object. Applies "persistence      * by reachability" logic, pulling one of the two objects to a DataConext of another      * object in case one of the objects is transient. If both objects are persistent, and      * they don't have the same DataContext, CayenneRuntimeException is thrown.      *       * @since 1.2      */
 specifier|protected
 name|void
 name|willConnect
@@ -1311,7 +1239,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Initializes reverse relationship from object<code>val</code> to this object.      *      * @param relName name of relationship from this object to<code>val</code>.      */
+comment|/**      * Initializes reverse relationship from object<code>val</code> to this object.      *       * @param relName name of relationship from this object to<code>val</code>.      */
 specifier|protected
 name|void
 name|setReverseRelationship
@@ -1975,7 +1903,7 @@ comment|// DataContext will be set *IF* the DataContext it came from is also
 comment|// deserialized. Setting of DataContext is handled by the DataContext
 comment|// itself
 block|}
-comment|/**      * Returns a version of a DataRow snapshot that was used to create this object.      *      * @since 1.1      */
+comment|/**      * Returns a version of a DataRow snapshot that was used to create this object.      *       * @since 1.1      */
 specifier|public
 name|long
 name|getSnapshotVersion
@@ -2001,7 +1929,7 @@ operator|=
 name|snapshotVersion
 expr_stmt|;
 block|}
-comment|/**      * Convenience method to invoke {@link Cayenne#makePath(String...)} from      * within a DataObject subclass to create a dotted path using the generated      * string constants for attributes and relationships.      *      * @see Cayenne#makePath(String...)      * @since 3.1      */
+comment|/**      * Convenience method to invoke {@link Cayenne#makePath(String...)} from within a      * DataObject subclass to create a dotted path using the generated string constants      * for attributes and relationships.      *       * @see Cayenne#makePath(String...)      * @since 3.1      */
 specifier|public
 specifier|static
 name|String
@@ -2021,7 +1949,7 @@ name|pathParts
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs property validation of the object, appending any validation failures to      * the provided validationResult object. This method is invoked from "validateFor.."      * before committing a NEW or MODIFIED object to the database. Validation includes      * checking for null values and value sizes. CayenneDataObject subclasses may override      * this method, calling super.      *      * @since 1.1      */
+comment|/**      * Performs property validation of the object, appending any validation failures to      * the provided validationResult object. This method is invoked from "validateFor.."      * before committing a NEW or MODIFIED object to the database. Validation includes      * checking for null values and value sizes. CayenneDataObject subclasses may override      * this method, calling super.      *       * @since 1.1      */
 specifier|protected
 name|void
 name|validateForSave
@@ -2614,7 +2542,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the newly      * created objects before saving them.      *      * @since 1.1      */
+comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the newly      * created objects before saving them.      *       * @since 1.1      */
 specifier|public
 name|void
 name|validateForInsert
@@ -2629,7 +2557,7 @@ name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the modified      * objects before saving them.      *      * @since 1.1      */
+comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the modified      * objects before saving them.      *       * @since 1.1      */
 specifier|public
 name|void
 name|validateForUpdate
@@ -2644,7 +2572,7 @@ name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * This implementation does nothing. CayenneDataObject subclasses may override it      * providing validation logic that should be executed for the deleted objects before      * committing them.      *      * @since 1.1      */
+comment|/**      * This implementation does nothing. CayenneDataObject subclasses may override it      * providing validation logic that should be executed for the deleted objects before      * committing them.      *       * @since 1.1      */
 specifier|public
 name|void
 name|validateForDelete
@@ -2654,206 +2582,6 @@ name|validationResult
 parameter_list|)
 block|{
 comment|// does nothing
-block|}
-comment|/**      * Encodes object to XML using provided encoder.      *      * @since 1.2      * @deprecated since 3.1 XML serialization package is deprecated and will be removed      *             in the following releases. It has a number of functional and      *             performance limitations that make it impossible to evolve further. A      *             replacement may be provided in an undefined future. For now we      *             recommend the users to implement XML serialization of persistent      *             objects based JAXB, XStream or other similar frameworks.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|encodeAsXML
-parameter_list|(
-name|XMLEncoder
-name|encoder
-parameter_list|)
-block|{
-name|EntityResolver
-name|er
-init|=
-name|getObjectContext
-argument_list|()
-operator|.
-name|getEntityResolver
-argument_list|()
-decl_stmt|;
-name|ObjEntity
-name|objectEntity
-init|=
-name|er
-operator|.
-name|lookupObjEntity
-argument_list|(
-name|getClass
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|String
-index|[]
-name|fields
-init|=
-name|this
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|.
-name|split
-argument_list|(
-literal|"\\."
-argument_list|)
-decl_stmt|;
-name|encoder
-operator|.
-name|setRoot
-argument_list|(
-name|fields
-index|[
-name|fields
-operator|.
-name|length
-operator|-
-literal|1
-index|]
-argument_list|,
-name|this
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-specifier|final
-name|ObjAttribute
-name|att
-range|:
-name|objectEntity
-operator|.
-name|getDeclaredAttributes
-argument_list|()
-control|)
-block|{
-name|String
-name|name
-init|=
-name|att
-operator|.
-name|getName
-argument_list|()
-decl_stmt|;
-name|encoder
-operator|.
-name|encodeProperty
-argument_list|(
-name|name
-argument_list|,
-name|readNestedProperty
-argument_list|(
-name|name
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * @deprecated since 3.1 XML serialization package is deprecated and will be removed      *             in the following releases. It has a number of functional and      *             performance limitations that make it impossible to evolve further. A      *             replacement may be provided in an undefined future. For now we      *             recommend the users to implement XML serialization of persistent      *             objects based JAXB, XStream or other similar frameworks.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|decodeFromXML
-parameter_list|(
-name|XMLDecoder
-name|decoder
-parameter_list|)
-block|{
-name|Injector
-name|injector
-init|=
-name|CayenneRuntime
-operator|.
-name|getThreadInjector
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|injector
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|(
-literal|"Can't perform deserialization - "
-operator|+
-literal|"no Injector bound to the current thread."
-argument_list|)
-throw|;
-block|}
-name|EntityResolver
-name|resolver
-init|=
-name|injector
-operator|.
-name|getInstance
-argument_list|(
-name|DataChannel
-operator|.
-name|class
-argument_list|)
-operator|.
-name|getEntityResolver
-argument_list|()
-decl_stmt|;
-name|ObjEntity
-name|objectEntity
-init|=
-name|resolver
-operator|.
-name|lookupObjEntity
-argument_list|(
-name|getClass
-argument_list|()
-argument_list|)
-decl_stmt|;
-for|for
-control|(
-specifier|final
-name|ObjAttribute
-name|att
-range|:
-name|objectEntity
-operator|.
-name|getDeclaredAttributes
-argument_list|()
-control|)
-block|{
-name|String
-name|name
-init|=
-name|att
-operator|.
-name|getName
-argument_list|()
-decl_stmt|;
-name|writeProperty
-argument_list|(
-name|name
-argument_list|,
-name|decoder
-operator|.
-name|decodeObject
-argument_list|(
-name|name
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 comment|/**      * @since 1.2      */
 annotation|@
