@@ -455,10 +455,12 @@ block|{
 name|ObjectContext
 name|child
 init|=
-name|context
+name|runtime
 operator|.
-name|createChildContext
-argument_list|()
+name|getContext
+argument_list|(
+name|context
+argument_list|)
 decl_stmt|;
 name|ObjectContext
 name|deserializedContext

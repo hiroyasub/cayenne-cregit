@@ -139,24 +139,6 @@ return|return
 name|graphManager
 return|;
 block|}
-comment|/**      * @deprecated since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Persistent
-name|localObject
-parameter_list|(
-name|ObjectId
-name|id
-parameter_list|,
-name|Object
-name|prototype
-parameter_list|)
-block|{
-return|return
-literal|null
-return|;
-block|}
 specifier|public
 parameter_list|<
 name|T
@@ -246,18 +228,6 @@ specifier|public
 name|void
 name|commitChanges
 parameter_list|()
-block|{
-block|}
-comment|/**      * @deprecated since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|deleteObject
-parameter_list|(
-name|Object
-name|object
-parameter_list|)
 block|{
 block|}
 specifier|public

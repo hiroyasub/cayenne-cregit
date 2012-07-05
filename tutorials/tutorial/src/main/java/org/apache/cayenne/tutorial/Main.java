@@ -586,7 +586,7 @@ condition|)
 block|{
 name|context
 operator|.
-name|deleteObject
+name|deleteObjects
 argument_list|(
 name|picasso
 argument_list|)

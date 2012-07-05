@@ -133,19 +133,6 @@ argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an object local to this ObjectContext and matching the ObjectId. If      *<code>prototype</code> is not null, local object is refreshed with the prototype      * values.      *<p>      * This method can do both "mapping" (i.e. finding an object with the same id in this      * context) and "synchronization" (i.e. updating the state of the found object with      * the state of the prototype object).      *</p>      *       * @deprecated since 3.1 Cayenne users should use {@link #localObject(Object)}; the      *             internal code has been refactored to avoid using this method all      *             together.      */
-annotation|@
-name|Deprecated
-name|Persistent
-name|localObject
-parameter_list|(
-name|ObjectId
-name|id
-parameter_list|,
-name|Object
-name|prototype
-parameter_list|)
-function_decl|;
 comment|/**      * Returns a local copy of 'objectFromAnotherContext' object. "Local" means that the      * returned object is registered in this context. If the local object hasn't been      * previously cached in this context, a hollow object is created and returned to the      * caller. No DB query is performed to resolve an object.      *<p>      * Note that passing an object with a non-existing id, may later result in      * FaultFailureException on attempt to read returned object properties.      *       * @since 3.1      */
 parameter_list|<
 name|T
@@ -178,18 +165,6 @@ parameter_list|(
 name|Object
 name|object
 parameter_list|)
-function_decl|;
-comment|/**      * Schedules a persistent object for deletion on next commit.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      * @deprecated since 3.1 use {@link #deleteObjects(Object...)} method instead. This      *             method is redundant.      */
-annotation|@
-name|Deprecated
-name|void
-name|deleteObject
-parameter_list|(
-name|Object
-name|object
-parameter_list|)
-throws|throws
-name|DeleteDenyException
 function_decl|;
 comment|/**      * Schedules deletion of a collection of persistent objects.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      */
 name|void
@@ -293,11 +268,6 @@ function_decl|;
 comment|/**      * Returns an DataChannel used by this context.      */
 name|DataChannel
 name|getChannel
-parameter_list|()
-function_decl|;
-comment|/**      * Creates and returns a new child ObjectContext.      *       * @since 3.0      */
-name|ObjectContext
-name|createChildContext
 parameter_list|()
 function_decl|;
 comment|/**      * Returns<code>true</code> if there are any modified, deleted or new objects      * registered with this ObjectContext,<code>false</code> otherwise.      *       * @since 3.0      */
