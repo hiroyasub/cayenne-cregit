@@ -1588,6 +1588,9 @@ name|void
 name|save
 parameter_list|()
 block|{
+name|stopEditing
+argument_list|()
+expr_stmt|;
 comment|// extract names...
 name|String
 name|sourceEntityName

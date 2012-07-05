@@ -220,6 +220,8 @@ argument_list|)
 expr_stmt|;
 comment|//  Editing should be stopped when textfield loses its focus
 comment|//  otherwise the value may get lost (e.g. see CAY-1104)
+comment|//  LATER: this turned out to be the wrong fix, so I commented
+comment|//  out the code in focusLost to fix CAY-1719 and fixed CAY-1104 differently.
 name|this
 operator|.
 name|comboBox
@@ -449,6 +451,7 @@ block|{
 name|stopCellEditing
 argument_list|()
 expr_stmt|;
+comment|// Commented out to fix CAY-1719
 block|}
 block|}
 block|}
