@@ -1186,7 +1186,7 @@ name|blob
 operator|.
 name|setBinaryStream
 argument_list|(
-literal|0
+literal|1
 argument_list|)
 decl_stmt|;
 try|try
@@ -1327,7 +1327,7 @@ name|clob
 operator|.
 name|setCharacterStream
 argument_list|(
-literal|0
+literal|1
 argument_list|)
 decl_stmt|;
 try|try
