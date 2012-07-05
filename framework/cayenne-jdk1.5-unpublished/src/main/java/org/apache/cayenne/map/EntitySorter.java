@@ -21,16 +21,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -44,19 +34,6 @@ specifier|public
 interface|interface
 name|EntitySorter
 block|{
-comment|/**      * Initializes a list of DataMaps used by the sorter.      *       * @deprecated since 3.1 {@link #setEntityResolver(EntityResolver)} is used, and this      *             method is never called.      */
-annotation|@
-name|Deprecated
-name|void
-name|setDataMaps
-parameter_list|(
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-parameter_list|)
-function_decl|;
 comment|/**      * Sets EntityResolver for this sorter. All entities present in the resolver will be      * used to determine sort ordering.      *       * @since 3.1      */
 name|void
 name|setEntityResolver

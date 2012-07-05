@@ -231,20 +231,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbAttribute
 import|;
 end_import
@@ -465,28 +451,6 @@ expr_stmt|;
 name|dirty
 operator|=
 literal|true
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 3.1. Use {@link #AshwoodEntitySorter()} constructor together with      *             {@link #setDataMaps(Collection)} instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|AshwoodEntitySorter
-parameter_list|(
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-parameter_list|)
-block|{
-name|this
-argument_list|()
-expr_stmt|;
-name|setDataMaps
-argument_list|(
-name|dataMaps
-argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Reindexes internal sorter in a thread-safe manner.      */
@@ -1027,38 +991,6 @@ operator|=
 name|components
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      * @deprecated since 3.1, {@link #setEntityResolver(EntityResolver)} is used instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDataMaps
-parameter_list|(
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-parameter_list|)
-block|{
-name|setEntityResolver
-argument_list|(
-operator|new
-name|EntityResolver
-argument_list|(
-name|dataMaps
-operator|!=
-literal|null
-condition|?
-name|dataMaps
-else|:
-name|Collections
-operator|.
-name|EMPTY_LIST
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * @since 3.1      */
 specifier|public
 name|void
@@ -1571,7 +1503,7 @@ range|:
 name|masters
 control|)
 block|{
-comment|//                    if (masterCandidate.equals(master)) {
+comment|// if (masterCandidate.equals(master)) {
 if|if
 condition|(
 name|masterCandidate
