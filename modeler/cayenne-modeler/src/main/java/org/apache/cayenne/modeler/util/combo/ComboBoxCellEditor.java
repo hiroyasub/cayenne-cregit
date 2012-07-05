@@ -448,10 +448,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|stopCellEditing
-argument_list|()
-expr_stmt|;
-comment|// Commented out to fix CAY-1719
+comment|//stopCellEditing(); // Commented out to fix CAY-1719
 block|}
 block|}
 block|}
