@@ -151,14 +151,6 @@ specifier|protected
 name|String
 name|trimFunction
 decl_stmt|;
-comment|/**      * @deprecated since 3.1 unused      */
-annotation|@
-name|Deprecated
-specifier|public
-name|BatchQueryBuilder
-parameter_list|()
-block|{
-block|}
 specifier|public
 name|BatchQueryBuilder
 parameter_list|(
