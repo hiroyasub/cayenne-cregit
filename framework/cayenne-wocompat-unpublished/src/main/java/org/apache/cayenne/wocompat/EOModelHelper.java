@@ -21,6 +21,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|IOException
 import|;
 end_import
@@ -121,20 +131,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|IteratorUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|cayenne
 operator|.
 name|map
@@ -159,6 +155,20 @@ name|Parser
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|collections
+operator|.
+name|IteratorUtils
+import|;
+end_import
+
 begin_comment
 comment|/**  * Helper class used by EOModelProcessor. EOModelHelper loads an EOModel from the  * specified location and gives its users access to the untyped EOModel information.  */
 end_comment
@@ -168,16 +178,6 @@ specifier|public
 class|class
 name|EOModelHelper
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|ResourceLocator
-name|locator
-init|=
-operator|new
-name|ResourceLocator
-argument_list|()
-decl_stmt|;
 specifier|private
 name|Parser
 name|plistParser
@@ -214,32 +214,9 @@ specifier|private
 name|Map
 name|prototypeValues
 decl_stmt|;
-static|static
-block|{
-comment|// configure locator
-name|locator
-operator|.
-name|setSkipClasspath
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-name|locator
-operator|.
-name|setSkipCurrentDirectory
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-name|locator
-operator|.
-name|setSkipAbsolutePath
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Creates helper instance and tries to locate EOModel and load index file.      */
+comment|/**      * Creates helper instance and tries to locate EOModel and load index file.      *       * @deprecated since 3.2, use {@link #EOModelHelper(URL)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|EOModelHelper
 parameter_list|(
@@ -250,13 +227,35 @@ throws|throws
 name|Exception
 block|{
 name|this
-operator|.
-name|modelUrl
-operator|=
-name|findModelUrl
+argument_list|(
+operator|new
+name|File
 argument_list|(
 name|path
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
+operator|.
+name|toURL
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|EOModelHelper
+parameter_list|(
+name|URL
+name|modelUrl
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+name|this
+operator|.
+name|modelUrl
+operator|=
+name|modelUrl
 expr_stmt|;
 name|this
 operator|.
@@ -267,7 +266,10 @@ name|DataMap
 argument_list|(
 name|findModelName
 argument_list|(
-name|path
+name|modelUrl
+operator|.
+name|toExternalForm
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1119,7 +1121,7 @@ return|return
 name|modelUrl
 return|;
 block|}
-comment|/**       * Returns an iterator of model names.       */
+comment|/**      * Returns an iterator of model names.      */
 specifier|public
 name|Iterator
 name|modelNames
@@ -1253,7 +1255,8 @@ argument_list|(
 literal|"name"
 argument_list|)
 decl_stmt|;
-comment|// TODO: why are we copying the original map? can we just use it as is?
+comment|// TODO: why are we copying the original map? can we just use it as
+comment|// is?
 name|Map
 name|prototypeAttrMap
 init|=
@@ -1869,62 +1872,6 @@ return|return
 name|path
 return|;
 block|}
-comment|/**      * Returns a URL of the EOModel directory. Throws exception if it can't be found.      */
-specifier|protected
-name|URL
-name|findModelUrl
-parameter_list|(
-name|String
-name|path
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|path
-operator|.
-name|endsWith
-argument_list|(
-literal|".eomodeld"
-argument_list|)
-condition|)
-block|{
-name|path
-operator|+=
-literal|".eomodeld"
-expr_stmt|;
-block|}
-name|URL
-name|base
-init|=
-name|locator
-operator|.
-name|findDirectoryResource
-argument_list|(
-name|path
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|base
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Can't find EOModel: "
-operator|+
-name|path
-argument_list|)
-throw|;
-block|}
-return|return
-name|base
-return|;
-block|}
 comment|/**      * Returns InputStream to read an EOModel index file.      */
 specifier|protected
 name|InputStream
@@ -1946,7 +1893,7 @@ name|openStream
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns InputStream to read an EOEntity plist file.      *       * @param entityName      *            name of EOEntity to be loaded.      * @return InputStream to read an EOEntity plist file or null if      *<code>entityname.plist</code> file can not be located.      */
+comment|/**      * Returns InputStream to read an EOEntity plist file.      *       * @param entityName name of EOEntity to be loaded.      * @return InputStream to read an EOEntity plist file or null if      *<code>entityname.plist</code> file can not be located.      */
 specifier|protected
 name|InputStream
 name|openEntityStream
@@ -1972,7 +1919,7 @@ name|openStream
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns InputStream to read an EOFetchSpecification plist file.      *       * @param entityName      *            name of EOEntity to be loaded.      * @return InputStream to read an EOEntity plist file or null if      *<code>entityname.plist</code> file can not be located.      */
+comment|/**      * Returns InputStream to read an EOFetchSpecification plist file.      *       * @param entityName name of EOEntity to be loaded.      * @return InputStream to read an EOEntity plist file or null if      *<code>entityname.plist</code> file can not be located.      */
 specifier|protected
 name|InputStream
 name|openQueryStream
