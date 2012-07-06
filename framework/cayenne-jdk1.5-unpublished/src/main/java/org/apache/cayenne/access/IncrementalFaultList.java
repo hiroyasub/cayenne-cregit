@@ -289,29 +289,6 @@ comment|// the where clause generation that is necessary to fetch specific recor
 comment|// at a time. Some JDBC Drivers/Databases may have limits on statement length
 comment|// or complexity of the where clause - e.g., PostgreSQL having a default limit of
 comment|// 10,000 nested expressions.
-comment|/**      * @deprecated since 3.1 use {@link #IncrementalFaultList(DataContext, Query, int)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|IncrementalFaultList
-parameter_list|(
-name|DataContext
-name|dataContext
-parameter_list|,
-name|Query
-name|query
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|dataContext
-argument_list|,
-name|query
-argument_list|,
-literal|10000
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Creates a new IncrementalFaultList using a given DataContext and query.      *       * @param dataContext DataContext used by IncrementalFaultList to fill itself with      *            objects.      * @param query Main query used to retrieve data. Must have "pageSize" property set to      *            a value greater than zero.      * @param maxFetchSize maximum number of fetches in one query      */
 specifier|public
 name|IncrementalFaultList
