@@ -541,38 +541,6 @@ specifier|protected
 name|DataContext
 name|context
 decl_stmt|;
-comment|/**      * @deprecated since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|ObjectStore
-parameter_list|()
-block|{
-name|this
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|ObjectStore
-parameter_list|(
-name|DataRowStore
-name|dataRowCache
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|dataRowCache
-argument_list|,
-name|createObjectMap
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Creates an ObjectStore with {@link DataRowStore} and a map to use for storing      * registered objects. Passed map doesn't require any special synchronization      * behavior, as ObjectStore is synchronized itself.      *       * @since 3.0      */
 specifier|public
 name|ObjectStore
