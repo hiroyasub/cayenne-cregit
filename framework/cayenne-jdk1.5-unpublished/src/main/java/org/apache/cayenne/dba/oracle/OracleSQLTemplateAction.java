@@ -762,7 +762,7 @@ name|columnName
 argument_list|)
 return|;
 block|}
-comment|/**          * @deprecated          */
+comment|/**          * @deprecated to mirror deprecation in the ResultSet interface          */
 annotation|@
 name|Deprecated
 specifier|public
@@ -808,7 +808,7 @@ name|columnIndex
 argument_list|)
 return|;
 block|}
-comment|/**          * @deprecated          */
+comment|/**          * @deprecated to mirror deprecation in the ResultSet interface          */
 annotation|@
 name|Deprecated
 specifier|public
@@ -4359,7 +4359,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**          * @since 3.1          *          * JDBC 4.1 compatibility under Java 1.5          */
+comment|/**          * @since 3.1 JDBC 4.1 compatibility under Java 1.5          */
 specifier|public
 parameter_list|<
 name|T
@@ -4385,7 +4385,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**          * @since 3.1          *          * JDBC 4.1 compatibility under Java 1.5          */
+comment|/**          * @since 3.1 JDBC 4.1 compatibility under Java 1.5          */
 specifier|public
 parameter_list|<
 name|T
