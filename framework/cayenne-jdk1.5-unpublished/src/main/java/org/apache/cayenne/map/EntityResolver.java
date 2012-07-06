@@ -2451,27 +2451,6 @@ name|maps
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities.      *       * @deprecated since 3.1 use {@link #lookupInheritanceTree(String)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|EntityInheritanceTree
-name|lookupInheritanceTree
-parameter_list|(
-name|ObjEntity
-name|entity
-parameter_list|)
-block|{
-return|return
-name|lookupInheritanceTree
-argument_list|(
-name|entity
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-return|;
-block|}
 comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities. Returns non-null object      * for all existing entities, even those that don't have super or subclasses.      *       * @since 3.0      */
 specifier|public
 name|EntityInheritanceTree
