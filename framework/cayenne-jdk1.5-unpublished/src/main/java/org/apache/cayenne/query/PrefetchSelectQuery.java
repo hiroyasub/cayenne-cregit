@@ -98,13 +98,6 @@ name|PrefetchSelectQuery
 extends|extends
 name|SelectQuery
 block|{
-comment|/**      * @deprecated since 3.1 unused      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|SelectQuery
-name|parentQuery
-decl_stmt|;
 comment|/**      * The relationship path from root objects to the objects being prefetched.      */
 specifier|protected
 name|String
@@ -124,7 +117,7 @@ name|String
 argument_list|>
 name|resultPaths
 decl_stmt|;
-comment|/**      * Creates a new disjoint prefetch select query.      *      * @since 3.1      */
+comment|/**      * Creates a new disjoint prefetch select query.      *       * @since 3.1      */
 specifier|public
 name|PrefetchSelectQuery
 parameter_list|(
@@ -142,57 +135,6 @@ operator|.
 name|getTargetEntity
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|prefetchPath
-operator|=
-name|prefetchPath
-expr_stmt|;
-name|this
-operator|.
-name|lastPrefetchHint
-operator|=
-name|lastPrefetchHint
-expr_stmt|;
-block|}
-comment|/**      * Creates a new disjoint prefetch select query.      *       * @since 1.2      * @deprecated Since 3.1 use another constructor without parentQuery parameter      *             instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|PrefetchSelectQuery
-parameter_list|(
-name|SelectQuery
-name|parentQuery
-parameter_list|,
-name|String
-name|prefetchPath
-parameter_list|,
-name|ObjRelationship
-name|lastPrefetchHint
-parameter_list|)
-block|{
-name|setRoot
-argument_list|(
-name|lastPrefetchHint
-operator|.
-name|getTargetEntity
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|setStatementFetchSize
-argument_list|(
-name|parentQuery
-operator|.
-name|getStatementFetchSize
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|parentQuery
-operator|=
-name|parentQuery
 expr_stmt|;
 name|this
 operator|.
@@ -248,37 +190,7 @@ operator|=
 name|prefetchPath
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      * @deprecated since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|SelectQuery
-name|getParentQuery
-parameter_list|()
-block|{
-return|return
-name|parentQuery
-return|;
-block|}
-comment|/**      * @since 1.1      * @deprecated since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setParentQuery
-parameter_list|(
-name|SelectQuery
-name|parentQuery
-parameter_list|)
-block|{
-name|this
-operator|.
-name|parentQuery
-operator|=
-name|parentQuery
-expr_stmt|;
-block|}
-comment|/**      * Retunrs last incoming ObjRelationship in the prefetch relationship chain.      *       * @since 1.1      */
+comment|/**      * Returns last incoming ObjRelationship in the prefetch relationship chain.      *       * @since 1.1      */
 specifier|public
 name|ObjRelationship
 name|getLastPrefetchHint
