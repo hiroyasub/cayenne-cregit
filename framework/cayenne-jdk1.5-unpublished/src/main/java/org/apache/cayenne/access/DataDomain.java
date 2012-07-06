@@ -1756,23 +1756,6 @@ name|shutdown
 argument_list|()
 expr_stmt|;
 block|}
-comment|// deprecated - noop code for backwards compatibility as DataNode shutdown is
-comment|// no longer needed
-for|for
-control|(
-name|DataNode
-name|node
-range|:
-name|getDataNodes
-argument_list|()
-control|)
-block|{
-name|node
-operator|.
-name|shutdown
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * Routes queries to appropriate DataNodes for execution.      */

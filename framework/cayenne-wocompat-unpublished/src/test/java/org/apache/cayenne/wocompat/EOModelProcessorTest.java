@@ -171,6 +171,20 @@ name|SelectQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|XMLEncoder
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -515,6 +529,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|bindings
 init|=
 name|eoQuery
@@ -891,7 +908,11 @@ name|map
 operator|.
 name|encodeAsXML
 argument_list|(
+operator|new
+name|XMLEncoder
+argument_list|(
 name|mockupWriter
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
