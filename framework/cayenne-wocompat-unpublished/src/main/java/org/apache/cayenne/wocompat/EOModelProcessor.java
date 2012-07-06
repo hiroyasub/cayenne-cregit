@@ -31,16 +31,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|FileNotFoundException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|InputStream
 import|;
 end_import
@@ -403,6 +393,8 @@ block|}
 expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.2 in favor of {@link #loadModeIndex(URL)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Map
 name|loadModeIndex
