@@ -237,7 +237,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -911,7 +911,7 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|getClassDescriptor

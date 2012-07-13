@@ -135,7 +135,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -438,7 +438,7 @@ name|isToMany
 argument_list|()
 condition|)
 block|{
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|resolver

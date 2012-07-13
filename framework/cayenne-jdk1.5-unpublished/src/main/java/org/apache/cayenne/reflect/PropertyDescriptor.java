@@ -15,36 +15,17 @@ name|reflect
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|ObjAttribute
-import|;
-end_import
-
 begin_comment
-comment|/**  * Represents a simple object property.  *   * @since 3.0  */
+comment|/**  * Defines bean property API used by Cayenne to access object data, do faulting and graph  * maintenance tasks.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|AttributeProperty
-extends|extends
 name|PropertyDescriptor
-block|{
-name|ObjAttribute
-name|getAttribute
-parameter_list|()
-function_decl|;
-block|}
+extends|extends
+name|Property
+block|{  }
 end_interface
 
 end_unit

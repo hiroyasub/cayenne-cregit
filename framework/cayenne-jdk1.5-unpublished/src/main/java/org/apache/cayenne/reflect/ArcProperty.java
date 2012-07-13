@@ -38,7 +38,7 @@ specifier|public
 interface|interface
 name|ArcProperty
 extends|extends
-name|Property
+name|PropertyDescriptor
 block|{
 comment|/**      * Returns a relationship associated with this arc.      *       * @since 3.0      */
 name|ObjRelationship

@@ -93,7 +93,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -527,7 +527,7 @@ literal|null
 condition|)
 block|{
 comment|// do not override local changes....
-name|Property
+name|PropertyDescriptor
 name|p
 init|=
 name|propertyForId
@@ -858,7 +858,7 @@ block|{
 block|}
 block|}
 specifier|private
-name|Property
+name|PropertyDescriptor
 name|propertyForId
 parameter_list|(
 name|Object

@@ -27,13 +27,13 @@ implements|implements
 name|Accessor
 block|{
 specifier|protected
-name|Property
+name|PropertyDescriptor
 name|property
 decl_stmt|;
 specifier|public
 name|PropertyAccessor
 parameter_list|(
-name|Property
+name|PropertyDescriptor
 name|property
 parameter_list|)
 block|{

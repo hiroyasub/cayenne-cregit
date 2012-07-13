@@ -153,7 +153,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -275,7 +275,7 @@ block|}
 comment|/**      * Returns property descriptor for specified property.      *      * @param properyName path to the property      * @return property descriptor,<code>null</code> if not found      */
 specifier|public
 specifier|static
-name|Property
+name|PropertyDescriptor
 name|getProperty
 parameter_list|(
 name|Persistent
@@ -694,7 +694,7 @@ operator|instanceof
 name|Persistent
 condition|)
 block|{
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|getProperty

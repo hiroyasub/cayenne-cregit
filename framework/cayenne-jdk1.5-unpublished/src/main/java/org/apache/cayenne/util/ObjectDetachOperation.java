@@ -169,7 +169,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -800,7 +800,7 @@ name|AttributeProperty
 name|property
 parameter_list|)
 block|{
-name|Property
+name|PropertyDescriptor
 name|targetProperty
 init|=
 name|targetDescriptor

@@ -39,7 +39,7 @@ extends|extends
 name|CayenneRuntimeException
 block|{
 specifier|protected
-name|Property
+name|PropertyDescriptor
 name|property
 decl_stmt|;
 specifier|protected
@@ -180,7 +180,7 @@ parameter_list|(
 name|String
 name|messageFormat
 parameter_list|,
-name|Property
+name|PropertyDescriptor
 name|property
 parameter_list|,
 name|Object
@@ -214,7 +214,7 @@ parameter_list|(
 name|String
 name|messageFormat
 parameter_list|,
-name|Property
+name|PropertyDescriptor
 name|property
 parameter_list|,
 name|Object
@@ -261,7 +261,7 @@ name|accessor
 return|;
 block|}
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getProperty
 parameter_list|()
 block|{

@@ -25,7 +25,7 @@ specifier|abstract
 class|class
 name|BaseProperty
 implements|implements
-name|Property
+name|PropertyDescriptor
 block|{
 specifier|protected
 name|ClassDescriptor

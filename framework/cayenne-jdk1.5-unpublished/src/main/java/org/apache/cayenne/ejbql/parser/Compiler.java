@@ -335,7 +335,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -907,7 +907,7 @@ argument_list|(
 name|pathChunk
 argument_list|)
 expr_stmt|;
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|descriptor
@@ -2748,7 +2748,7 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|descriptor

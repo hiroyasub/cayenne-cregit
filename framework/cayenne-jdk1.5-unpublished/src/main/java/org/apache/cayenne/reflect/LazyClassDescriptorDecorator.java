@@ -233,7 +233,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getDeclaredProperty
 parameter_list|(
 name|String
@@ -440,7 +440,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getProperty
 parameter_list|(
 name|String

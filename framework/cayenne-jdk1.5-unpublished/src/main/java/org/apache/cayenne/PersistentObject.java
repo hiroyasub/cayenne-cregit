@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -245,7 +245,7 @@ name|objectId
 argument_list|)
 throw|;
 block|}
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|descriptor

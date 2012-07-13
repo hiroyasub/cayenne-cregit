@@ -280,7 +280,7 @@ name|PropertyException
 block|{
 block|}
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getDeclaredProperty
 parameter_list|(
 name|String
@@ -304,7 +304,7 @@ literal|null
 return|;
 block|}
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getProperty
 parameter_list|(
 name|String

@@ -79,7 +79,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -434,7 +434,7 @@ name|getEntityName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|descriptor

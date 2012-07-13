@@ -175,7 +175,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -354,7 +354,7 @@ comment|// 'true' because of how the listener is registered. Still keep it here 
 comment|// extra safegurad
 block|}
 specifier|private
-name|Property
+name|PropertyDescriptor
 name|propertyForId
 parameter_list|(
 name|Object
@@ -663,7 +663,7 @@ name|HOLLOW
 condition|)
 block|{
 comment|// do not override local changes....
-name|Property
+name|PropertyDescriptor
 name|p
 init|=
 name|propertyForId
@@ -809,7 +809,7 @@ operator|.
 name|getPersistenceState
 argument_list|()
 decl_stmt|;
-name|Property
+name|PropertyDescriptor
 name|p
 init|=
 name|propertyForId

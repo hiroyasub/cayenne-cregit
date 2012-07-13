@@ -167,7 +167,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -394,7 +394,7 @@ argument_list|,
 name|targetDescriptor
 argument_list|)
 decl_stmt|;
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 operator|new
@@ -539,7 +539,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 operator|new

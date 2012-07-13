@@ -253,7 +253,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Property
+name|PropertyDescriptor
 argument_list|>
 name|declaredProperties
 decl_stmt|;
@@ -262,7 +262,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Property
+name|PropertyDescriptor
 argument_list|>
 name|superProperties
 decl_stmt|;
@@ -336,7 +336,7 @@ name|HashMap
 argument_list|<
 name|String
 argument_list|,
-name|Property
+name|PropertyDescriptor
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -349,7 +349,7 @@ name|HashMap
 argument_list|<
 name|String
 argument_list|,
-name|Property
+name|PropertyDescriptor
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -429,7 +429,7 @@ specifier|public
 name|void
 name|addSuperProperty
 parameter_list|(
-name|Property
+name|PropertyDescriptor
 name|property
 parameter_list|)
 block|{
@@ -456,7 +456,7 @@ specifier|public
 name|void
 name|addDeclaredProperty
 parameter_list|(
-name|Property
+name|PropertyDescriptor
 name|property
 parameter_list|)
 block|{
@@ -500,7 +500,7 @@ block|}
 name|void
 name|indexAddedProperty
 parameter_list|(
-name|Property
+name|PropertyDescriptor
 name|property
 parameter_list|)
 block|{
@@ -1009,14 +1009,14 @@ return|;
 block|}
 comment|/**      * Recursively looks up property descriptor in this class descriptor and all      * superclass descriptors.      */
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getProperty
 parameter_list|(
 name|String
 name|propertyName
 parameter_list|)
 block|{
-name|Property
+name|PropertyDescriptor
 name|property
 init|=
 name|getDeclaredProperty
@@ -1050,7 +1050,7 @@ name|property
 return|;
 block|}
 specifier|public
-name|Property
+name|PropertyDescriptor
 name|getDeclaredProperty
 parameter_list|(
 name|String
@@ -1161,7 +1161,7 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|Property
+name|PropertyDescriptor
 name|property
 range|:
 name|declaredProperties
@@ -1279,7 +1279,7 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|Property
+name|PropertyDescriptor
 name|next
 range|:
 name|superProperties
@@ -1319,7 +1319,7 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|Property
+name|PropertyDescriptor
 name|next
 range|:
 name|declaredProperties
