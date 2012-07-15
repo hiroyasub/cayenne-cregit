@@ -1275,6 +1275,12 @@ name|WelcomeScreen
 name|welcomeScreen
 decl_stmt|;
 specifier|public
+name|int
+name|selectedTaxIndex
+init|=
+literal|0
+decl_stmt|;
+specifier|public
 name|CayenneModelerFrame
 parameter_list|(
 name|ActionManager
