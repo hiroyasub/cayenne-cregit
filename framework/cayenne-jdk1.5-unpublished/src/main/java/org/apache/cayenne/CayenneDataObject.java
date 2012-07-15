@@ -1930,6 +1930,8 @@ name|snapshotVersion
 expr_stmt|;
 block|}
 comment|/**      * Convenience method to invoke {@link Cayenne#makePath(String...)} from within a      * DataObject subclass to create a dotted path using the generated string constants      * for attributes and relationships.      *       * @see Cayenne#makePath(String...)      * @since 3.1      */
+comment|// TODO: should we deprecate this one? After all the purpose of "Cayenne" class is to
+comment|// get rid of utility methods elsewhere..
 specifier|public
 specifier|static
 name|String
