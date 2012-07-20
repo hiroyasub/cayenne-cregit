@@ -972,10 +972,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|Ordering
+argument_list|>
 name|orderings
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Ordering
+argument_list|>
 argument_list|(
 literal|2
 argument_list|)
