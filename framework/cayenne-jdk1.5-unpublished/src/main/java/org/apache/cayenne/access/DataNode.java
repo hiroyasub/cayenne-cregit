@@ -245,6 +245,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|ToStringBuilder
+import|;
+end_import
+
 begin_comment
 comment|/**  * An abstraction of a single physical data storage. This is usually a database server,  * but can potentially be some other storage type like an LDAP server, etc.  */
 end_comment
@@ -986,6 +1000,32 @@ name|entityResolver
 operator|=
 name|entityResolver
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ToStringBuilder
+argument_list|(
+name|this
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|"name"
+argument_list|,
+name|getName
+argument_list|()
+argument_list|)
+operator|.
+name|toString
+argument_list|()
+return|;
 block|}
 comment|// a read-through DataSource that ensures returning the same connection within
 comment|// transaction.
