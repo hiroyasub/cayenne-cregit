@@ -1405,9 +1405,10 @@ parameter_list|()
 throws|throws
 name|SQLFeatureNotSupportedException
 block|{
+comment|// don't throw SQLFeatureNotSupported - this will break JDK 1.5 runtime
 throw|throw
 operator|new
-name|SQLFeatureNotSupportedException
+name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
