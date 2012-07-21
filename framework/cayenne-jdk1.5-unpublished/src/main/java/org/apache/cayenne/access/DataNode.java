@@ -1387,9 +1387,12 @@ throw|throw
 operator|new
 name|SQLException
 argument_list|(
-literal|"Not a DataSource"
-argument_list|,
+literal|"Not a DataSource: "
+operator|+
 name|e
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 throw|;
 block|}
