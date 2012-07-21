@@ -1387,6 +1387,8 @@ throw|throw
 operator|new
 name|SQLException
 argument_list|(
+literal|"Not a DataSource"
+argument_list|,
 name|e
 argument_list|)
 throw|;
