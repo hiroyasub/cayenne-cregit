@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>A property in a DataObject.</p>  *   *<p>Used to construct Expressions quickly and with type-safety,  * and to construct Orderings</p>  *   *<p>Instances of this class are immutable</p>  *   * @param<E> The type this property returns.  */
+comment|/**  *<p>A property in a DataObject.</p>  *   *<p>Used to construct Expressions quickly and with type-safety,  * and to construct Orderings</p>  *   *<p>Instances of this class are immutable</p>  *   * @param<E> The type this property returns.  * @since 3.2  */
 end_comment
 
 begin_class
