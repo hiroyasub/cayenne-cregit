@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -245,6 +255,8 @@ name|List
 argument_list|<
 name|E
 argument_list|>
+implements|,
+name|Serializable
 block|{
 specifier|protected
 name|int
@@ -2138,6 +2150,8 @@ block|}
 specifier|abstract
 class|class
 name|IncrementalListHelper
+implements|implements
+name|Serializable
 block|{
 name|int
 name|indexOfObject
