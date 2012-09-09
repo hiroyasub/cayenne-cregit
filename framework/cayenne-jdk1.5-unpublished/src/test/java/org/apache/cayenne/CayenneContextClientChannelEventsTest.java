@@ -1020,6 +1020,14 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+comment|// let the events propagate to peers
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|"X"
@@ -1234,6 +1242,14 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+comment|// let the events propagate to peers
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|"g2"
@@ -1447,6 +1463,14 @@ name|c1
 operator|.
 name|commitChanges
 argument_list|()
+expr_stmt|;
+comment|// let the events propagate to peers
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
@@ -1883,6 +1907,14 @@ name|c1
 operator|.
 name|commitChanges
 argument_list|()
+expr_stmt|;
+comment|// let the events propagate to peers
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(

@@ -167,6 +167,8 @@ specifier|public
 name|void
 name|testPeerObjectUpdatedTempOID
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|ObjectContext
 name|peer1
@@ -248,6 +250,14 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+comment|// pause to let the context events propagate
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
 name|assertFalse
 argument_list|(
 name|a1
@@ -288,6 +298,8 @@ specifier|public
 name|void
 name|testPeerObjectUpdatedSimpleProperty
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|Artist
 name|a
@@ -375,6 +387,14 @@ operator|.
 name|commitChangesToParent
 argument_list|()
 expr_stmt|;
+comment|// pause to let the context events propagate
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|"Y"
@@ -400,6 +420,8 @@ specifier|public
 name|void
 name|testPeerObjectUpdatedToOneRelationship
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|Artist
 name|a
@@ -562,6 +584,14 @@ operator|.
 name|commitChangesToParent
 argument_list|()
 expr_stmt|;
+comment|// pause to let the context events propagate
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 name|altA2
@@ -587,6 +617,8 @@ specifier|public
 name|void
 name|testPeerObjectUpdatedToManyRelationship
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|Artist
 name|a
@@ -656,6 +688,14 @@ name|context
 operator|.
 name|commitChanges
 argument_list|()
+expr_stmt|;
+comment|// pause to let the context events propagate
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
 expr_stmt|;
 name|ObjectContext
 name|peer1
@@ -754,6 +794,14 @@ name|peer1
 operator|.
 name|commitChangesToParent
 argument_list|()
+expr_stmt|;
+comment|// pause to let the context events propagate
+name|Thread
+operator|.
+name|sleep
+argument_list|(
+literal|500
+argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
