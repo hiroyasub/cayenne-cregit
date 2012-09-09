@@ -252,6 +252,16 @@ operator|+
 literal|1
 argument_list|)
 decl_stmt|;
+comment|// use non-blocking listeners for multi-threaded EM; blocking for single
+comment|// threaded...
+if|if
+condition|(
+name|manager
+operator|.
+name|isSingleThreaded
+argument_list|()
+condition|)
+block|{
 name|manager
 operator|.
 name|addListener
@@ -269,6 +279,27 @@ argument_list|,
 name|sender
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|manager
+operator|.
+name|addNonBlockingListener
+argument_list|(
+name|listener
+argument_list|,
+name|method
+argument_list|,
+name|GraphEvent
+operator|.
+name|class
+argument_list|,
+name|subject
+argument_list|,
+name|sender
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 comment|// not for instantiation
