@@ -379,6 +379,22 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|util
+operator|.
+name|ThreadedTestHelper
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -1126,6 +1142,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+specifier|final
 name|DataContext
 name|serverContext
 init|=
@@ -1165,6 +1182,7 @@ argument_list|,
 literal|"prePersistMethod"
 argument_list|)
 expr_stmt|;
+specifier|final
 name|Persistent
 name|clientObject
 init|=
@@ -1182,6 +1200,19 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+operator|new
+name|ThreadedTestHelper
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|assertResult
+parameter_list|()
+throws|throws
+name|Exception
+block|{
 comment|// find peer
 name|MtTable1
 name|peer
@@ -1213,6 +1244,14 @@ name|peer
 operator|.
 name|isPrePersisted
 argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+operator|.
+name|assertWithTimeout
+argument_list|(
+literal|1000
 argument_list|)
 expr_stmt|;
 block|}
