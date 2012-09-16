@@ -63,11 +63,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|test
 operator|.
-name|util
+name|parallel
 operator|.
-name|ThreadedTestHelper
+name|ParallelTestContainer
 import|;
 end_import
 
@@ -1723,11 +1723,11 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1753,7 +1753,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|5000
 argument_list|)
@@ -1772,11 +1772,11 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1800,7 +1800,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|5000
 argument_list|)

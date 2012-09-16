@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|test
 operator|.
-name|util
+name|parallel
 package|;
 end_package
 
@@ -25,7 +25,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|ThreadedTestHelper
+name|ParallelTestContainer
 block|{
 specifier|protected
 specifier|abstract
@@ -37,7 +37,7 @@ name|Exception
 function_decl|;
 specifier|public
 name|void
-name|assertWithTimeout
+name|runTest
 parameter_list|(
 name|long
 name|timeoutMs

@@ -83,6 +83,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|test
+operator|.
+name|parallel
+operator|.
+name|ParallelTestContainer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|testdo
 operator|.
 name|testmap
@@ -124,22 +140,6 @@ operator|.
 name|server
 operator|.
 name|UseServerRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|util
-operator|.
-name|ThreadedTestHelper
 import|;
 end_import
 
@@ -340,11 +340,11 @@ argument_list|()
 expr_stmt|;
 comment|// assert that delegate was consulted when an object store
 comment|// was refreshed
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -371,7 +371,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -617,11 +617,11 @@ argument_list|()
 expr_stmt|;
 comment|// assert that delegate was consulted when an object store
 comment|// was refreshed
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -648,7 +648,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -774,11 +774,11 @@ argument_list|()
 expr_stmt|;
 comment|// assert that delegate was consulted when an object store
 comment|// was refreshed, and actually blocked object expulsion
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -805,7 +805,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)

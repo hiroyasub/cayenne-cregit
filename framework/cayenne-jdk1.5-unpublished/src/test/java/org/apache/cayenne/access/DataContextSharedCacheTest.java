@@ -195,6 +195,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|test
+operator|.
+name|parallel
+operator|.
+name|ParallelTestContainer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|testdo
 operator|.
 name|testmap
@@ -268,22 +284,6 @@ operator|.
 name|util
 operator|.
 name|SQLTemplateCustomizer
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|util
-operator|.
-name|ThreadedTestHelper
 import|;
 end_import
 
@@ -609,11 +609,11 @@ name|getArtistName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -642,7 +642,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -769,11 +769,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -800,7 +800,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -975,11 +975,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1028,7 +1028,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -1126,11 +1126,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1167,7 +1167,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -1250,11 +1250,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1291,7 +1291,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -1389,11 +1389,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1422,7 +1422,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -1563,11 +1563,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1604,7 +1604,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -1879,11 +1879,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// check peer artist
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -1955,7 +1955,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|3000
 argument_list|)
@@ -2125,11 +2125,11 @@ expr_stmt|;
 comment|// check peer artist
 comment|// use threaded helper as a barrier, to avoid triggering faults earlier than
 comment|// needed
-name|ThreadedTestHelper
+name|ParallelTestContainer
 name|helper
 init|=
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -2180,7 +2180,7 @@ block|}
 decl_stmt|;
 name|helper
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|2000
 argument_list|)
@@ -2634,7 +2634,7 @@ argument_list|)
 expr_stmt|;
 comment|// alternate context
 operator|new
-name|ThreadedTestHelper
+name|ParallelTestContainer
 argument_list|()
 block|{
 annotation|@
@@ -2680,7 +2680,7 @@ expr_stmt|;
 block|}
 block|}
 operator|.
-name|assertWithTimeout
+name|runTest
 argument_list|(
 literal|5000
 argument_list|)
