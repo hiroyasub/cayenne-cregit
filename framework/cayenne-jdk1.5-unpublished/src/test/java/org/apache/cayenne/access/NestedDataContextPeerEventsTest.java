@@ -322,7 +322,7 @@ block|}
 operator|.
 name|assertWithTimeout
 argument_list|(
-literal|1000
+literal|2000
 argument_list|)
 expr_stmt|;
 block|}
@@ -460,7 +460,7 @@ block|}
 operator|.
 name|assertWithTimeout
 argument_list|(
-literal|1000
+literal|2000
 argument_list|)
 expr_stmt|;
 block|}
@@ -674,7 +674,7 @@ block|}
 operator|.
 name|assertWithTimeout
 argument_list|(
-literal|1000
+literal|2000
 argument_list|)
 expr_stmt|;
 block|}
@@ -918,7 +918,7 @@ block|}
 operator|.
 name|assertWithTimeout
 argument_list|(
-literal|1000
+literal|2000
 argument_list|)
 expr_stmt|;
 block|}

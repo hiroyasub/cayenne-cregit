@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Helper class allowing unit tests to wait till a code in question  * executes in a separate thread. There is still some element of uncertainty remains,  * since this implementation simply tries to give other threads enough time to execute,  * instead of watching for threads activity.   *   *<p>Note that result sampling is done every 300 ms., so if the test succeeds earlier,  * test case wouldn't have to wait for the whole time period specified by timeout.</p>  *   */
+comment|/**  * Helper class allowing unit tests to wait till a code in question executes in  * a separate thread. There is still some element of uncertainty remains, since  * this implementation simply tries to give other threads enough time to  * execute, instead of watching for threads activity.  *   *<p>  * Note that result sampling is done every 300 ms., so if the test succeeds  * earlier, test case wouldn't have to wait for the whole time period specified  * by timeout.  *</p>  *   */
 end_comment
 
 begin_class
@@ -88,8 +88,9 @@ block|}
 comment|// TODO: for things asserting that a certain event DID NOT happen
 comment|// we need a better implementation, that should probably sleep for
 comment|// the whole timeout interval, since otherwise we may have a false
-comment|// positive (i.e. assertion succeeded not because a certain thing did not
-comment|// happen, but rather cause it happened after the assertion was run).
+comment|// positive (i.e. assertion succeeded not because a certain thing did
+comment|// not happen, but rather cause it happened after the assertion was
+comment|// run).
 comment|// for now lets wait for at least one time slice to decrease
 comment|// the possibility of false positives
 name|Thread
@@ -102,7 +103,6 @@ expr_stmt|;
 name|maxMumberOfChecks
 operator|--
 expr_stmt|;
-comment|// wait 5 seconds at the most (10 times 0.5 sec.)
 for|for
 control|(
 name|int
