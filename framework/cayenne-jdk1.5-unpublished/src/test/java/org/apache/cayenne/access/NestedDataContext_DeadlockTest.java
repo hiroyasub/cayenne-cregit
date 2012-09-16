@@ -175,6 +175,22 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|util
+operator|.
+name|ThreadedTestHelper
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -322,6 +338,7 @@ block|{
 name|createArtists
 argument_list|()
 expr_stmt|;
+specifier|final
 name|Thread
 index|[]
 name|threads
@@ -410,19 +427,19 @@ name|start
 argument_list|()
 expr_stmt|;
 block|}
-synchronized|synchronized
-init|(
-name|parent
-init|)
+operator|new
+name|ThreadedTestHelper
+argument_list|()
 block|{
-name|parent
-operator|.
-name|wait
-argument_list|(
-literal|10000
-argument_list|)
-expr_stmt|;
-block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|assertResult
+parameter_list|()
+throws|throws
+name|Exception
+block|{
 for|for
 control|(
 name|int
@@ -440,8 +457,9 @@ name|i
 operator|++
 control|)
 block|{
-comment|// unfortunately here we'll have to leave some dead threads behind... Of
-comment|// course if there's no deadlock, there won't be a leak either
+comment|// unfortunately here we'll have to leave some dead threads
+comment|// behind... Of course if there's no deadlock, there won't
+comment|// be a leak either
 name|assertTrue
 argument_list|(
 literal|"Deadlocked thread"
@@ -457,6 +475,14 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+operator|.
+name|assertWithTimeout
+argument_list|(
+literal|2000
+argument_list|)
+expr_stmt|;
 block|}
 specifier|static
 class|class
