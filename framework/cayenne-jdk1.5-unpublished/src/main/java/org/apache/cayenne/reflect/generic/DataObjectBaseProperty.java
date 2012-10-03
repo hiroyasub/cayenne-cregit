@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -39,7 +49,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|PropertyDescriptor
+name|Property
 import|;
 end_import
 
@@ -80,7 +90,9 @@ specifier|abstract
 class|class
 name|DataObjectBaseProperty
 implements|implements
-name|PropertyDescriptor
+name|Property
+implements|,
+name|Serializable
 block|{
 specifier|public
 specifier|abstract
