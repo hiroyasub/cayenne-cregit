@@ -204,7 +204,7 @@ name|Relationship
 implements|implements
 name|ConfigurationNode
 block|{
-comment|/**      * Denotes a default type of to-many relationship collection which is a Java List.      *       * @since 3.0      */
+comment|/** 	 * Denotes a default type of to-many relationship collection which is a Java 	 * List. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -244,16 +244,16 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
-comment|/**      * Db-relationships path that is set but not yet parsed (turned into      * List<DbRelationship>) Used during map loading      */
+comment|/** 	 * Db-relationships path that is set but not yet parsed (turned into 	 * List<DbRelationship>) Used during map loading 	 */
 name|String
 name|deferredPath
 decl_stmt|;
-comment|/**      * Stores the type of collection mapped by a to-many relationship. Null for to-one      * relationships.      *       * @since 3.0      */
+comment|/** 	 * Stores the type of collection mapped by a to-many relationship. Null for 	 * to-one relationships. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|String
 name|collectionType
 decl_stmt|;
-comment|/**      * Stores a property name of a target entity used to create a relationship map. Only      * has effect if collectionType property is set to "java.util.Map".      *       * @since 3.0      */
+comment|/** 	 * Stores a property name of a target entity used to create a relationship 	 * map. Only has effect if collectionType property is set to 	 * "java.util.Map". 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|String
 name|mapKey
@@ -281,7 +281,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -305,7 +305,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Prints itself as XML to the provided XMLEncoder.      *       * @since 1.1      */
+comment|/** 	 * Prints itself as XML to the provided XMLEncoder. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|encodeAsXML
@@ -354,8 +354,10 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// looking up a target entity ensures that bogus names are not saved... whether
-comment|// this is good or bad is debatable, as users may want to point to non-existent
+comment|// looking up a target entity ensures that bogus names are not saved...
+comment|// whether
+comment|// this is good or bad is debatable, as users may want to point to
+comment|// non-existent
 comment|// entities on purpose.
 name|ObjEntity
 name|target
@@ -482,7 +484,8 @@ name|deleteRule
 argument_list|)
 expr_stmt|;
 block|}
-comment|// quietly get rid of invalid path... this is not the best way of doing things,
+comment|// quietly get rid of invalid path... this is not the best way of doing
+comment|// things,
 comment|// but it is consistent across map package
 name|String
 name|path
@@ -515,7 +518,7 @@ literal|"\"/>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a target ObjEntity of this relationship. Entity is looked up in the parent      * DataMap using "targetEntityName".      */
+comment|/** 	 * Returns a target ObjEntity of this relationship. Entity is looked up in 	 * the parent DataMap using "targetEntityName". 	 */
 annotation|@
 name|Override
 specifier|public
@@ -550,7 +553,7 @@ name|targetName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the name of a complimentary relationship going in the opposite direction or      * null if it doesn't exist.      *       * @since 1.2      */
+comment|/** 	 * Returns the name of a complimentary relationship going in the opposite 	 * direction or null if it doesn't exist. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|String
 name|getReverseRelationshipName
@@ -577,7 +580,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns a "complimentary" ObjRelationship going in the opposite direction. Returns      * null if no such relationship is found.      */
+comment|/** 	 * Returns a "complimentary" ObjRelationship going in the opposite 	 * direction. Returns null if no such relationship is found. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -793,7 +796,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Creates a complimentary reverse relationship from target entity to the source      * entity. A new relationship is created regardless of whether one already exists.      * Returned relationship is not attached to the source entity and has no name. Throws      * a {@link CayenneRuntimeException} if reverse DbRelationship is not mapped.      *       * @since 3.0      */
+comment|/** 	 * Creates a complimentary reverse relationship from target entity to the 	 * source entity. A new relationship is created regardless of whether one 	 * already exists. Returned relationship is not attached to the source 	 * entity and has no name. Throws a {@link CayenneRuntimeException} if 	 * reverse DbRelationship is not mapped. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|ObjRelationship
 name|createReverseRelationship
@@ -837,7 +840,7 @@ return|return
 name|reverse
 return|;
 block|}
-comment|/**      * Returns an immutable list of underlying DbRelationships.      */
+comment|/** 	 * Returns an immutable list of underlying DbRelationships. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -858,7 +861,7 @@ name|dbRelationships
 argument_list|)
 return|;
 block|}
-comment|/**      * Appends a DbRelationship to the existing list of DbRelationships.      */
+comment|/** 	 * Appends a DbRelationship to the existing list of DbRelationships. 	 */
 specifier|public
 name|void
 name|addDbRelationship
@@ -977,7 +980,7 @@ name|recalculateToManyValue
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Removes the relationship<code>dbRel</code> from the list of relationships.      */
+comment|/** 	 * Removes the relationship<code>dbRel</code> from the list of 	 * relationships. 	 */
 specifier|public
 name|void
 name|removeDbRelationship
@@ -1040,7 +1043,7 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-comment|/**      * Returns a boolean indicating whether the presence of a non-null source key(s) will      * not guarantee a presence of a target record. PK..FK relationships are all optional,      * but there are other more subtle cases, such as PK..PK, etc.      *       * @since 3.0      */
+comment|/** 	 * Returns a boolean indicating whether the presence of a non-null source 	 * key(s) will not guarantee a presence of a target record. PK..FK 	 * relationships are all optional, but there are other more subtle cases, 	 * such as PK..PK, etc. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isOptional
@@ -1059,7 +1062,8 @@ return|return
 literal|true
 return|;
 block|}
-comment|// entities with qualifiers may result in filtering even existing target rows, so
+comment|// entities with qualifiers may result in filtering even existing target
+comment|// rows, so
 comment|// such relationships are optional
 if|if
 condition|(
@@ -1135,7 +1139,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns true if the relationship is non-optional and target has no subclasses.      *       * @since 3.0      */
+comment|/** 	 * Returns true if the relationship is non-optional and target has no 	 * subclasses. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isSourceDefiningTargetPrecenseAndType
@@ -1179,7 +1183,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if the entity or its super entities have a limiting qualifier.      */
+comment|/** 	 * Returns true if the entity or its super entities have a limiting 	 * qualifier. 	 */
 specifier|private
 name|boolean
 name|isQualifiedEntity
@@ -1227,7 +1231,7 @@ name|entity
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a boolean indicating whether modifying a target of such relationship in any      * way will not change the underlying table row of the source.      *       * @since 1.1      */
+comment|/** 	 * Returns a boolean indicating whether modifying a target of such 	 * relationship in any way will not change the underlying table row of the 	 * source. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|boolean
 name|isSourceIndependentFromTargetChange
@@ -1250,7 +1254,7 @@ name|isToPK
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if underlying DbRelationships point to dependent entity.      */
+comment|/** 	 * Returns true if underlying DbRelationships point to dependent entity. 	 */
 specifier|public
 name|boolean
 name|isToDependentEntity
@@ -1271,7 +1275,7 @@ name|isToDependentPK
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if the underlying DbRelationships point to a at least one of the      * columns of the target entity.      *       * @since 1.1      */
+comment|/** 	 * Returns true if the underlying DbRelationships point to a at least one of 	 * the columns of the target entity. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|boolean
 name|isToPK
@@ -1292,7 +1296,7 @@ name|isToPK
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if the relationship is a "flattened" relationship. A relationship is      * considered "flattened" if it maps to more than one DbRelationship. Such chain of      * DbRelationships is also called "relationship path". All flattened relationships are      * at least readable, but only those formed across a many-many join table (with no      * custom attributes other than foreign keys) can be automatically written.      *       * @see #isReadOnly      * @return flag indicating if the relationship is flattened or not.      */
+comment|/** 	 * Returns true if the relationship is a "flattened" relationship. A 	 * relationship is considered "flattened" if it maps to more than one 	 * DbRelationship. Such chain of DbRelationships is also called 	 * "relationship path". All flattened relationships are at least readable, 	 * but only those formed across a many-many join table (with no custom 	 * attributes other than foreign keys) can be automatically written. 	 *  	 * @see #isReadOnly 	 * @return flag indicating if the relationship is flattened or not. 	 */
 specifier|public
 name|boolean
 name|isFlattened
@@ -1308,7 +1312,7 @@ operator|>
 literal|1
 return|;
 block|}
-comment|/**      * Returns true if the relationship is flattened, but is not of the single case that      * can have automatic write support. Otherwise, it returns false.      *       * @return flag indicating if the relationship is read only or not      */
+comment|/** 	 * Returns true if the relationship is flattened, but is not of the single 	 * case that can have automatic write support. Otherwise, it returns false. 	 *  	 * @return flag indicating if the relationship is read only or not 	 */
 specifier|public
 name|boolean
 name|isReadOnly
@@ -1344,7 +1348,7 @@ name|isToMany
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the deleteRule. The delete rule is a constant from the DeleteRule class,      * and specifies what should happen to the destination object when the source object      * is deleted.      *       * @return int a constant from DeleteRule      * @see #setDeleteRule      */
+comment|/** 	 * Returns the deleteRule. The delete rule is a constant from the DeleteRule 	 * class, and specifies what should happen to the destination object when 	 * the source object is deleted. 	 *  	 * @return int a constant from DeleteRule 	 * @see #setDeleteRule 	 */
 specifier|public
 name|int
 name|getDeleteRule
@@ -1354,7 +1358,7 @@ return|return
 name|deleteRule
 return|;
 block|}
-comment|/**      * Sets the delete rule of the relationship.      *       * @param value New delete rule. Must be one of the constants defined in DeleteRule      *            class.      * @see DeleteRule      * @throws IllegalArgumentException if the value is not a valid delete rule.      */
+comment|/** 	 * Sets the delete rule of the relationship. 	 *  	 * @param value 	 *            New delete rule. Must be one of the constants defined in 	 *            DeleteRule class. 	 * @see DeleteRule 	 * @throws IllegalArgumentException 	 *             if the value is not a valid delete rule. 	 */
 specifier|public
 name|void
 name|setDeleteRule
@@ -1417,7 +1421,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Returns whether this attribute should be used for locking.      *       * @since 1.1      */
+comment|/** 	 * Returns whether this attribute should be used for locking. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|boolean
 name|isUsedForLocking
@@ -1427,7 +1431,7 @@ return|return
 name|usedForLocking
 return|;
 block|}
-comment|/**      * Sets whether this attribute should be used for locking.      *       * @since 1.1      */
+comment|/** 	 * Sets whether this attribute should be used for locking. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setUsedForLocking
@@ -1443,7 +1447,7 @@ operator|=
 name|usedForLocking
 expr_stmt|;
 block|}
-comment|/**      * Returns a dot-separated path over mapped DbRelationships.      *       * @since 1.1      */
+comment|/** 	 * Returns a dot-separated path over mapped DbRelationships. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|String
 name|getDbRelationshipPath
@@ -1537,7 +1541,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a reversed dbRelationship path.      *       * @since 1.2      */
+comment|/** 	 * Returns a reversed dbRelationship path. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|String
 name|getReverseDbRelationshipPath
@@ -1674,7 +1678,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets mapped DbRelationships as a dot-separated path.      */
+comment|/** 	 * Sets mapped DbRelationships as a dot-separated path. 	 */
 specifier|public
 name|void
 name|setDbRelationshipPath
@@ -1706,7 +1710,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets relationship path, but does not trigger its conversion to List<DbRelationship>      * For internal purposes, primarily datamap loading      */
+comment|/** 	 * Sets relationship path, but does not trigger its conversion to 	 * List<DbRelationship> For internal purposes, primarily datamap loading 	 */
 name|void
 name|setDeferredDbRelationshipPath
 parameter_list|(
@@ -1734,7 +1738,7 @@ name|relationshipPath
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Loads path from "deferredPath" variable (if specified)      */
+comment|/** 	 * Loads path from "deferredPath" variable (if specified) 	 */
 specifier|synchronized
 name|void
 name|refreshFromDeferredPath
@@ -1760,7 +1764,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns dot-separated path over DbRelationships, only including components that      * have valid DbRelationships.      */
+comment|/** 	 * Returns dot-separated path over DbRelationships, only including 	 * components that have valid DbRelationships. 	 */
 name|String
 name|getValidRelationshipPath
 parameter_list|()
@@ -1907,7 +1911,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Rebuild a list of relationships if String relationshipPath has changed.      */
+comment|/** 	 * Rebuild a list of relationships if String relationshipPath has changed. 	 */
 specifier|final
 name|void
 name|refreshFromPath
@@ -2035,7 +2039,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Recalculates whether a relationship is toMany or toOne, based on the underlying db      * relationships.      */
+comment|/** 	 * Recalculates whether a relationship is toMany or toOne, based on the 	 * underlying db relationships. 	 */
 specifier|public
 name|void
 name|recalculateToManyValue
@@ -2079,7 +2083,7 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-comment|/**      * Recalculates a new readonly value based on the underlying DbRelationships.      */
+comment|/** 	 * Recalculates a new readonly value based on the underlying 	 * DbRelationships. 	 */
 specifier|public
 name|void
 name|recalculateReadOnlyValue
@@ -2143,68 +2147,18 @@ argument_list|(
 literal|1
 argument_list|)
 decl_stmt|;
-comment|// only support many-to-many with single-step join
+comment|// many-to-many with single-step join
+comment|// also 1..1..1 (CAY-1744) .. TODO all this should go away eventually
+comment|// per CAY-1743
 if|if
 condition|(
 operator|!
-name|firstRel
-operator|.
-name|isToMany
-argument_list|()
-operator|||
 name|secondRel
 operator|.
 name|isToMany
 argument_list|()
 condition|)
 block|{
-name|this
-operator|.
-name|readOnly
-operator|=
-literal|true
-expr_stmt|;
-return|return;
-block|}
-name|DataMap
-name|map
-init|=
-name|firstRel
-operator|.
-name|getTargetEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|map
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-name|this
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|" could not obtain a DataMap for the destination of "
-operator|+
-name|firstRel
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
 comment|// allow modifications if the joins are from FKs
 if|if
 condition|(
@@ -2259,6 +2213,14 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+else|else
+block|{
+name|readOnly
+operator|=
+literal|true
+expr_stmt|;
+block|}
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -2293,7 +2255,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns an ObjAttribute stripped of any server-side information, such as      * DbAttribute mapping.      *       * @since 1.2      */
+comment|/** 	 * Returns an ObjAttribute stripped of any server-side information, such as 	 * DbAttribute mapping. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|ObjRelationship
 name|getClientRelationship
@@ -2366,7 +2328,7 @@ return|return
 name|relationship
 return|;
 block|}
-comment|/**      * Returns the interface of collection mapped by a to-many relationship. Returns null      * for to-one relationships. Default for to-many is "java.util.List". Other possible      * values are "java.util.Set", "java.util.Collection", "java.util.Map".      *       * @since 3.0      */
+comment|/** 	 * Returns the interface of collection mapped by a to-many relationship. 	 * Returns null for to-one relationships. Default for to-many is 	 * "java.util.List". Other possible values are "java.util.Set", 	 * "java.util.Collection", "java.util.Map". 	 *  	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getCollectionType
@@ -2392,7 +2354,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCollectionType
@@ -2408,7 +2370,7 @@ operator|=
 name|collectionType
 expr_stmt|;
 block|}
-comment|/**      * Returns a property name of a target entity used to create a relationship map. Only      * has effect if collectionType property is set to "java.util.Map".      *       * @return The attribute name used for the map key or<code>null</code> if the default      *         (PK) is used as the map key.      * @since 3.0      */
+comment|/** 	 * Returns a property name of a target entity used to create a relationship 	 * map. Only has effect if collectionType property is set to 	 * "java.util.Map". 	 *  	 * @return The attribute name used for the map key or<code>null</code> if 	 *         the default (PK) is used as the map key. 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getMapKey
@@ -2418,7 +2380,7 @@ return|return
 name|mapKey
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setMapKey

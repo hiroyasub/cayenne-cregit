@@ -39,6 +39,26 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|List
@@ -54,6 +74,20 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DataMapLoader
 import|;
 end_import
 
@@ -98,6 +132,38 @@ operator|.
 name|exp
 operator|.
 name|ExpressionException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|URLResource
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|testdo
+operator|.
+name|inheritance
+operator|.
+name|vertical
+operator|.
+name|Iv2Sub1
 import|;
 end_import
 
@@ -1202,8 +1268,10 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
-comment|// test how toMany changes dependending on the underlying DbRelationships
-comment|// add DbRelationships directly to avoid events to test "calculateToMany"
+comment|// test how toMany changes dependending on the underlying
+comment|// DbRelationships
+comment|// add DbRelationships directly to avoid events to test
+comment|// "calculateToMany"
 name|relationship
 operator|.
 name|dbRelationships
@@ -2115,7 +2183,8 @@ name|isToMany
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// only remaining rel is r2... a toOne
+comment|// only remaining rel is r2... a
+comment|// toOne
 name|assertEquals
 argument_list|(
 literal|1
@@ -2163,10 +2232,118 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testReadOnly_Flattened1_1__N_1
+parameter_list|()
+block|{
+comment|// check common vertical inheritance relationships
+name|DataMapLoader
+name|loader
+init|=
+name|runtime
+operator|.
+name|getInjector
+argument_list|()
+operator|.
+name|getInstance
+argument_list|(
+name|DataMapLoader
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|URL
+name|url
+init|=
+name|getClass
+argument_list|()
+operator|.
+name|getClassLoader
+argument_list|()
+operator|.
+name|getResource
+argument_list|(
+literal|"inheritance-vertical.map.xml"
+argument_list|)
+decl_stmt|;
+name|DataMap
+name|dataMap
+init|=
+name|loader
+operator|.
+name|load
+argument_list|(
+operator|new
+name|URLResource
+argument_list|(
+name|url
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|EntityResolver
+name|resolver
+init|=
+operator|new
+name|EntityResolver
+argument_list|(
+name|Collections
+operator|.
+name|singleton
+argument_list|(
+name|dataMap
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|ObjEntity
+name|iv2Sub1
+init|=
+name|resolver
+operator|.
+name|lookupObjEntity
+argument_list|(
+name|Iv2Sub1
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|ObjRelationship
+name|x
+init|=
+operator|(
+name|ObjRelationship
+operator|)
+name|iv2Sub1
+operator|.
+name|getRelationship
+argument_list|(
+name|Iv2Sub1
+operator|.
+name|X_PROPERTY
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|x
+operator|.
+name|isFlattened
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertFalse
+argument_list|(
+name|x
+operator|.
+name|isReadOnly
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|testReadOnlyMoreThan3DbRelsRelationship
 parameter_list|()
 block|{
-comment|// Readonly is a flattened relationship that isn't over a single many->many link
+comment|// Readonly is a flattened relationship that isn't over a single
+comment|// many->many link
 comment|// table
 name|DbRelationship
 name|r1
@@ -2311,7 +2488,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Test for a read-only flattened relationship that is readonly because it's dbrel
+comment|// Test for a read-only flattened relationship that is readonly because it's
+comment|// dbrel
 comment|// sequence is "incorrect" (or rather, unsupported)
 specifier|public
 name|void
@@ -2424,7 +2602,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Test a relationship loaded from the test datamap that we know should be flattened
+comment|// Test a relationship loaded from the test datamap that we know should be
+comment|// flattened
 specifier|public
 name|void
 name|testKnownFlattenedRelationship
