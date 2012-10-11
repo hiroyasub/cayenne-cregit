@@ -433,14 +433,6 @@ operator|=
 operator|new
 name|DbArcId
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
-name|r1
-operator|.
-name|getTargetEntity
-argument_list|()
-argument_list|,
 name|sourceId
 argument_list|,
 name|r1
@@ -451,11 +443,6 @@ operator|=
 operator|new
 name|DbArcId
 argument_list|(
-name|id1
-operator|.
-name|getEntity
-argument_list|()
-argument_list|,
 name|destinationId
 argument_list|,
 name|r2
