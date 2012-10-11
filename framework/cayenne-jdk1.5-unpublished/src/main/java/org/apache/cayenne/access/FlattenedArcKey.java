@@ -444,9 +444,6 @@ argument_list|,
 name|sourceId
 argument_list|,
 name|r1
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|id2
@@ -462,9 +459,6 @@ argument_list|,
 name|destinationId
 argument_list|,
 name|r2
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1331,11 +1325,17 @@ operator|.
 name|getIncominArc
 argument_list|()
 operator|.
+name|getName
+argument_list|()
+operator|.
 name|compareTo
 argument_list|(
 name|id2
 operator|.
 name|getIncominArc
+argument_list|()
+operator|.
+name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
