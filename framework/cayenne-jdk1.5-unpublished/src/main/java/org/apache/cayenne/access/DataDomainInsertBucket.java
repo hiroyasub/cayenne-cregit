@@ -414,7 +414,7 @@ control|)
 block|{
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -435,27 +435,8 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|// we need to insert even if there is no changes to default values
-comment|// so creating an empty changes map
-if|if
-condition|(
-name|snapshot
-operator|==
-literal|null
-condition|)
-block|{
-name|snapshot
-operator|=
-operator|new
-name|HashMap
-argument_list|<
-name|Object
-argument_list|,
-name|Object
-argument_list|>
-argument_list|()
-expr_stmt|;
-block|}
+comment|// we need to insert even if there is no changes to default
+comment|// values, so keep even an empty changes map
 name|batch
 operator|.
 name|add
@@ -718,7 +699,8 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|// primitive 0 has to be treated as NULL, or otherwise we
+comment|// primitive 0 has to be treated as NULL, or
+comment|// otherwise we
 comment|// can't generate PK for POJO's
 block|}
 else|else
@@ -760,7 +742,8 @@ condition|)
 block|{
 continue|continue;
 block|}
-comment|// only a single key can be generated from DB... if this is done already
+comment|// only a single key can be generated from DB... if this is done
+comment|// already
 comment|// in this loop, we must bail out.
 if|if
 condition|(
