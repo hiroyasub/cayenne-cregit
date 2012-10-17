@@ -28,6 +28,18 @@ import|;
 end_import
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|when
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -95,7 +107,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|LazyClassDescriptorDecorator
+name|ClassDescriptorFactory
 import|;
 end_import
 
@@ -109,7 +121,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|MockClassDescriptorFactory
+name|LazyClassDescriptorDecorator
 import|;
 end_import
 
@@ -331,15 +343,31 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|MockClassDescriptorFactory
+name|ClassDescriptorFactory
 name|factory
 init|=
-operator|new
-name|MockClassDescriptorFactory
+name|mock
+argument_list|(
+name|ClassDescriptorFactory
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|when
+argument_list|(
+name|factory
+operator|.
+name|getDescriptor
+argument_list|(
+literal|"MtTable1"
+argument_list|)
+argument_list|)
+operator|.
+name|thenReturn
 argument_list|(
 name|descriptor
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|resolver
 operator|.
 name|getClassDescriptorMap
