@@ -363,7 +363,7 @@ argument_list|)
 decl_stmt|;
 name|Map
 argument_list|<
-name|String
+name|Object
 argument_list|,
 name|Object
 argument_list|>
@@ -380,9 +380,8 @@ comment|// check whether MODIFIED object has real db-level modifications
 if|if
 condition|(
 name|snapshot
-operator|.
-name|isEmpty
-argument_list|()
+operator|==
+literal|null
 condition|)
 block|{
 continue|continue;
