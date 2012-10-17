@@ -661,6 +661,11 @@ argument_list|(
 name|descriptor
 argument_list|)
 expr_stmt|;
+name|descriptor
+operator|.
+name|sortProperties
+argument_list|()
+expr_stmt|;
 return|return
 name|descriptor
 return|;
