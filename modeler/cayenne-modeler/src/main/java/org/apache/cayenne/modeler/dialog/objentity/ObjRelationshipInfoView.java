@@ -503,7 +503,7 @@ argument_list|()
 expr_stmt|;
 name|setTitle
 argument_list|(
-literal|"ObjAttribute Inspector"
+literal|"ObjRelationship Inspector"
 argument_list|)
 expr_stmt|;
 name|setLayout
