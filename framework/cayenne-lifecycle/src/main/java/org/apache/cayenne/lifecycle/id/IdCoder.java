@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object to encode/decode ObjectIds for all entities found in a mapping namespace.  *   * @since 3.1  */
+comment|/**  * An object to encode/decode ObjectIds for all entities found in a mapping  * namespace.  *   * @since 3.1  */
 end_comment
 
 begin_class

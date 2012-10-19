@@ -215,7 +215,7 @@ block|{
 specifier|static
 specifier|final
 name|String
-name|UUID_SEPARATOR
+name|ID_SEPARATOR
 init|=
 literal|":"
 decl_stmt|;
@@ -252,7 +252,7 @@ name|id
 operator|.
 name|indexOf
 argument_list|(
-name|UUID_SEPARATOR
+name|ID_SEPARATOR
 argument_list|)
 decl_stmt|;
 if|if
@@ -275,7 +275,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Invalid uuid: "
+literal|"Invalid String id: "
 operator|+
 name|id
 argument_list|)
@@ -579,7 +579,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-name|UUID_SEPARATOR
+name|ID_SEPARATOR
 argument_list|)
 operator|.
 name|append
@@ -608,13 +608,13 @@ name|ObjectId
 name|toObjectId
 parameter_list|(
 name|String
-name|uuid
+name|stringId
 parameter_list|)
 block|{
 name|String
-name|uuidValues
+name|idValues
 init|=
-name|uuid
+name|stringId
 operator|.
 name|substring
 argument_list|(
@@ -666,7 +666,7 @@ name|URLDecoder
 operator|.
 name|decode
 argument_list|(
-name|uuidValues
+name|idValues
 argument_list|,
 literal|"UTF-8"
 argument_list|)
@@ -705,7 +705,7 @@ operator|.
 name|getValue
 argument_list|()
 operator|.
-name|fromUuid
+name|fromStringId
 argument_list|(
 name|decoded
 argument_list|)
@@ -737,9 +737,9 @@ init|=
 operator|new
 name|StringTokenizer
 argument_list|(
-name|uuidValues
+name|idValues
 argument_list|,
-name|UUID_SEPARATOR
+name|ID_SEPARATOR
 argument_list|)
 decl_stmt|;
 if|if
@@ -759,13 +759,13 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Invalid UUID for entity "
+literal|"Invalid Strign ID for entity "
 operator|+
 name|entityName
 operator|+
 literal|": "
 operator|+
-name|uuidValues
+name|idValues
 argument_list|)
 throw|;
 block|}
@@ -841,7 +841,7 @@ operator|.
 name|getValue
 argument_list|()
 operator|.
-name|fromUuid
+name|fromStringId
 argument_list|(
 name|decoded
 argument_list|)
@@ -904,10 +904,10 @@ block|{
 annotation|@
 name|Override
 name|Object
-name|fromUuid
+name|fromStringId
 parameter_list|(
 name|String
-name|uuid
+name|stringId
 parameter_list|)
 block|{
 return|return
@@ -915,7 +915,7 @@ name|Long
 operator|.
 name|valueOf
 argument_list|(
-name|uuid
+name|stringId
 argument_list|)
 return|;
 block|}
@@ -942,10 +942,10 @@ block|{
 annotation|@
 name|Override
 name|Object
-name|fromUuid
+name|fromStringId
 parameter_list|(
 name|String
-name|uuid
+name|stringId
 parameter_list|)
 block|{
 return|return
@@ -953,7 +953,7 @@ name|Integer
 operator|.
 name|valueOf
 argument_list|(
-name|uuid
+name|stringId
 argument_list|)
 return|;
 block|}
@@ -980,14 +980,14 @@ block|{
 annotation|@
 name|Override
 name|Object
-name|fromUuid
+name|fromStringId
 parameter_list|(
 name|String
-name|uuid
+name|stringId
 parameter_list|)
 block|{
 return|return
-name|uuid
+name|stringId
 return|;
 block|}
 block|}
@@ -997,7 +997,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Unsupported UUID type: "
+literal|"Unsupported ID type: "
 operator|+
 name|type
 operator|.
@@ -1055,10 +1055,10 @@ block|}
 block|}
 specifier|abstract
 name|Object
-name|fromUuid
+name|fromStringId
 parameter_list|(
 name|String
-name|uuid
+name|stringId
 parameter_list|)
 function_decl|;
 block|}
