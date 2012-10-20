@@ -192,15 +192,11 @@ name|Exception
 block|{
 name|dropTableIfPresent
 argument_list|(
-name|node
-argument_list|,
 literal|"NEW_TABLE"
 argument_list|)
 expr_stmt|;
 name|dropTableIfPresent
 argument_list|(
-name|node
-argument_list|,
 literal|"NEW_TABLE2"
 argument_list|)
 expr_stmt|;

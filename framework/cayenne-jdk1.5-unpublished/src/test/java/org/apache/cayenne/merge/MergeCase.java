@@ -927,9 +927,6 @@ specifier|protected
 name|void
 name|dropTableIfPresent
 parameter_list|(
-name|DataNode
-name|node
-parameter_list|,
 name|String
 name|tableName
 parameter_list|)
