@@ -312,7 +312,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 block|}
@@ -415,7 +415,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 block|}
@@ -538,7 +538,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 block|}
@@ -651,7 +651,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 block|}
@@ -787,7 +787,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|1000
+literal|10000
 argument_list|)
 expr_stmt|;
 block|}
