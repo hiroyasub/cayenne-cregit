@@ -206,10 +206,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -545,10 +541,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|4
 argument_list|,
 literal|0
@@ -556,10 +548,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -943,7 +931,8 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|// TODO: reversing the following two tokens should also reverse the order
+comment|// TODO: reversing the following two tokens should also reverse the
+comment|// order
 name|MergerToken
 name|token0
 init|=

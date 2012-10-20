@@ -266,10 +266,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -278,10 +274,6 @@ expr_stmt|;
 comment|// try merge once more to check that is was merged
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -300,10 +292,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -311,10 +299,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -382,10 +366,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -394,10 +374,6 @@ expr_stmt|;
 comment|// check that is was merged
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -414,10 +390,6 @@ expr_stmt|;
 comment|// merge to db
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -426,10 +398,6 @@ expr_stmt|;
 comment|// check that is was merged
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -448,10 +416,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -459,10 +423,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -565,10 +525,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|2
 argument_list|,
 literal|0
@@ -577,10 +533,6 @@ expr_stmt|;
 comment|// check that is was merged
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -604,10 +556,6 @@ expr_stmt|;
 comment|// merge to db
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|2
 argument_list|,
 literal|0
@@ -616,10 +564,6 @@ expr_stmt|;
 comment|// check that is was merged
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -648,10 +592,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|2
 argument_list|,
 literal|0
@@ -659,10 +599,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -685,10 +621,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -784,10 +716,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -795,10 +723,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -982,10 +906,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -993,10 +913,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1019,10 +935,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1268,10 +1180,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|2
 argument_list|,
 literal|0
@@ -1279,10 +1187,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1316,10 +1220,6 @@ argument_list|()
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|1
@@ -1327,10 +1227,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1384,10 +1280,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -1395,10 +1287,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1421,10 +1309,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1564,10 +1448,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -1575,10 +1455,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1692,10 +1568,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -1703,10 +1575,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1740,10 +1608,6 @@ argument_list|()
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|1
@@ -1751,10 +1615,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1808,10 +1668,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|1
 argument_list|,
 literal|0
@@ -1819,10 +1675,6 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-name|node
-argument_list|,
-name|map
-argument_list|,
 literal|0
 argument_list|,
 literal|0
