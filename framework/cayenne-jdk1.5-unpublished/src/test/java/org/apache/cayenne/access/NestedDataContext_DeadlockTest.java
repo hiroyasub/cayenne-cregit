@@ -87,7 +87,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EJBQLQuery
+name|SelectQuery
 import|;
 end_import
 
@@ -460,11 +460,10 @@ block|{
 comment|// unfortunately here we'll have to leave some dead threads
 comment|// behind... Of course if there's no deadlock, there won't
 comment|// be a leak either
-name|assertTrue
+name|assertFalse
 argument_list|(
 literal|"Deadlocked thread"
 argument_list|,
-operator|!
 name|threads
 index|[
 name|i
@@ -480,7 +479,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|2000
+literal|10000
 argument_list|)
 expr_stmt|;
 block|}
@@ -551,9 +550,11 @@ operator|.
 name|performQuery
 argument_list|(
 operator|new
-name|EJBQLQuery
+name|SelectQuery
 argument_list|(
-literal|"select a FROM Artist a"
+name|Artist
+operator|.
+name|class
 argument_list|)
 argument_list|)
 decl_stmt|;
