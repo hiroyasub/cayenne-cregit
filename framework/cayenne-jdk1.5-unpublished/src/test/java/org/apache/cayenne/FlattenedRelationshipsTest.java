@@ -329,6 +329,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"FLATTENED_TEST_4"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"FLATTENED_TEST_3"
 argument_list|)
 expr_stmt|;
