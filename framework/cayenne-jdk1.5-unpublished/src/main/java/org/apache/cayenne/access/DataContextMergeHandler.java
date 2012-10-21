@@ -506,6 +506,21 @@ name|event
 argument_list|)
 condition|)
 block|{
+comment|// per CAY-1737 event dispatches from parent context to children are
+comment|// non-blocking, this causes issues like CAY-1749. so we must
+comment|// synchronize ObjectStore updates here.
+comment|// TODO: we can get here if a peer context is committed (ok) or
+comment|// if our context was committed (not ok, since parent changes are
+comment|// already applied in the commit thread) .. figure out an alt
+comment|// filtering mechanism to avoid the duplicate object processing
+synchronized|synchronized
+init|(
+name|context
+operator|.
+name|getObjectStore
+argument_list|()
+init|)
+block|{
 name|event
 operator|.
 name|getDiff
@@ -516,6 +531,7 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+block|}
 comment|// repost as change event for our own children
 name|context
 operator|.
