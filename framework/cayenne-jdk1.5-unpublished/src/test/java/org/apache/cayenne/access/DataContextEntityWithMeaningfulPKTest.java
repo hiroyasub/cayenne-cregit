@@ -258,6 +258,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"MEANINGFUL_PK_DEP"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"MEANINGFUL_PK_TEST1"
 argument_list|)
 expr_stmt|;
