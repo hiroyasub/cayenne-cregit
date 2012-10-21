@@ -378,6 +378,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"ARTIST_GROUP"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"ARTGROUP"
 argument_list|)
 expr_stmt|;
@@ -400,13 +407,6 @@ operator|.
 name|deleteAll
 argument_list|(
 literal|"ARTIST_EXHIBIT"
-argument_list|)
-expr_stmt|;
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
-literal|"ARTIST_GROUP"
 argument_list|)
 expr_stmt|;
 name|dbHelper
