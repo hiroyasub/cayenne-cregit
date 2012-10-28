@@ -190,13 +190,6 @@ name|STANDARD_CLIENT_SUBCLASS
 init|=
 literal|"Standard Client Subclass"
 decl_stmt|;
-specifier|static
-specifier|final
-name|String
-name|LIGHT_SERVER_SUPERCLASS
-init|=
-literal|"Light Server Superclass"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -305,13 +298,6 @@ argument_list|(
 name|STANDARD_CLIENT_SUPERCLASS
 argument_list|)
 expr_stmt|;
-name|standardSuperclassTemplates
-operator|.
-name|add
-argument_list|(
-name|LIGHT_SERVER_SUPERCLASS
-argument_list|)
-expr_stmt|;
 name|standardSubclassTemplates
 operator|=
 operator|new
@@ -398,17 +384,6 @@ argument_list|,
 name|ClientClassGenerationAction
 operator|.
 name|SUBCLASS_TEMPLATE
-argument_list|)
-expr_stmt|;
-name|standardTemplates
-operator|.
-name|put
-argument_list|(
-name|LIGHT_SERVER_SUPERCLASS
-argument_list|,
-name|ClientClassGenerationAction
-operator|.
-name|LIGHT_SUPERCLASS_TEMPLATE
 argument_list|)
 expr_stmt|;
 block|}
