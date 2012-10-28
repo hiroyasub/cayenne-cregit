@@ -663,7 +663,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-literal|"jdbc:microsoft:sqlserver://host;databaseName=database;SelectMethod=cursor"
+literal|"jdbc:sqlserver://localhost:1433;databaseName=database;SelectMethod=cursor"
 argument_list|)
 expr_stmt|;
 name|adapterToJDBCURLMap
