@@ -40,103 +40,103 @@ comment|/** RegularExpression Id. */
 name|int
 name|NULL
 init|=
-literal|32
+literal|38
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|TRUE
 init|=
-literal|33
+literal|39
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FALSE
 init|=
-literal|34
+literal|40
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|PROPERTY_PATH
 init|=
-literal|35
+literal|41
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|IDENTIFIER
 init|=
-literal|36
+literal|42
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|LETTER
 init|=
-literal|37
+literal|43
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DIGIT
 init|=
-literal|38
+literal|44
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|ESC
 init|=
-literal|41
+literal|47
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|SINGLE_QUOTED_STRING
 init|=
-literal|43
+literal|49
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|STRING_ESC
 init|=
-literal|44
+literal|50
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DOUBLE_QUOTED_STRING
 init|=
-literal|46
+literal|52
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|INT_LITERAL
 init|=
-literal|47
+literal|53
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FLOAT_LITERAL
 init|=
-literal|48
+literal|54
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DEC_FLT
 init|=
-literal|49
+literal|55
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DEC_DIGITS
 init|=
-literal|50
+literal|56
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|EXPONENT
 init|=
-literal|51
+literal|57
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FLT_SUFF
 init|=
-literal|52
+literal|58
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
@@ -202,6 +202,16 @@ literal|"\"between\""
 block|,
 literal|"\",\""
 block|,
+literal|"\"|\""
+block|,
+literal|"\"^\""
+block|,
+literal|"\"&\""
+block|,
+literal|"\"<<\""
+block|,
+literal|"\">>\""
+block|,
 literal|"\"+\""
 block|,
 literal|"\"-\""
@@ -209,6 +219,8 @@ block|,
 literal|"\"*\""
 block|,
 literal|"\"/\""
+block|,
+literal|"\"~\""
 block|,
 literal|"\"$\""
 block|,
@@ -246,13 +258,13 @@ literal|"\"\\\"\""
 block|,
 literal|"<ESC>"
 block|,
-literal|"<token of kind 42>"
+literal|"<token of kind 48>"
 block|,
 literal|"\"\\\'\""
 block|,
 literal|"<STRING_ESC>"
 block|,
-literal|"<token of kind 45>"
+literal|"<token of kind 51>"
 block|,
 literal|"\"\\\"\""
 block|,

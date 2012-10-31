@@ -545,6 +545,24 @@ name|BITWISE_XOR
 init|=
 literal|42
 decl_stmt|;
+comment|/**      * @since 3.2      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|BITWISE_LEFT_SHIFT
+init|=
+literal|43
+decl_stmt|;
+comment|/**      * @since 3.2      */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|BITWISE_RIGHT_SHIFT
+init|=
+literal|44
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
