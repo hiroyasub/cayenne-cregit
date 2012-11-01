@@ -1010,7 +1010,7 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|// FK pointing to a unique field that is a 'fake' PK (CAY-1751)...
+comment|// FK pointing to a unique field that is a 'fake' PK (CAY-1755)...
 comment|// It is not sufficient to generate target ObjectId.
 name|DbEntity
 name|targetEntity
