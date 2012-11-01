@@ -251,6 +251,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbRelationship
 import|;
 end_import
@@ -967,13 +981,64 @@ name|getEntityResolver
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// check if we can derive target PK from FK... this implies that the
-comment|// relationship is to-one
+comment|// check if we can derive target PK from FK...
 if|if
 condition|(
 name|relationship
 operator|.
 name|isSourceIndependentFromTargetChange
+argument_list|()
+condition|)
+block|{
+return|return
+operator|!
+name|DONE
+return|;
+block|}
+comment|// we can assume that there is one and only one DbRelationship as
+comment|// we previously checked that "!isSourceIndependentFromTargetChange"
+name|DbRelationship
+name|dbRelationship
+init|=
+name|relationship
+operator|.
+name|getDbRelationships
+argument_list|()
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+decl_stmt|;
+comment|// FK pointing to a unique field that is a 'fake' PK (CAY-1751)...
+comment|// It is not sufficient to generate target ObjectId.
+name|DbEntity
+name|targetEntity
+init|=
+operator|(
+name|DbEntity
+operator|)
+name|dbRelationship
+operator|.
+name|getTargetEntity
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|dbRelationship
+operator|.
+name|getJoins
+argument_list|()
+operator|.
+name|size
+argument_list|()
+operator|<
+name|targetEntity
+operator|.
+name|getPrimaryKeys
+argument_list|()
+operator|.
+name|size
 argument_list|()
 condition|)
 block|{
@@ -1019,21 +1084,6 @@ operator|!
 name|DONE
 return|;
 block|}
-comment|// we can assume that there is one and only one DbRelationship as
-comment|// we previously checked that "!isSourceIndependentFromTargetChange"
-name|DbRelationship
-name|dbRelationship
-init|=
-name|relationship
-operator|.
-name|getDbRelationships
-argument_list|()
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
 name|ObjectId
 name|targetId
 init|=
