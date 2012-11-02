@@ -1252,7 +1252,7 @@ literal|"# example1."
 operator|+
 name|URL_KEY
 operator|+
-literal|" = jdbc:mysql://noise/cayenne"
+literal|" = jdbc:mysql://localhost/cayenne"
 argument_list|)
 expr_stmt|;
 name|out
@@ -1268,7 +1268,7 @@ literal|"# example1."
 operator|+
 name|DRIVER_KEY
 operator|+
-literal|" = org.gjt.mm.mysql.Driver"
+literal|" = com.mysql.jdbc.Driver"
 argument_list|)
 expr_stmt|;
 name|out
@@ -1345,7 +1345,7 @@ literal|"# example2."
 operator|+
 name|URL_KEY
 operator|+
-literal|" = jdbc:mysql://noise/cayenne"
+literal|" = jdbc:mysql://localhost/cayenne"
 argument_list|)
 expr_stmt|;
 name|out
@@ -1361,7 +1361,7 @@ literal|"# example2."
 operator|+
 name|DRIVER_KEY
 operator|+
-literal|" = org.gjt.mm.mysql.Driver"
+literal|" = com.mysql.jdbc.Driver"
 argument_list|)
 expr_stmt|;
 name|out
