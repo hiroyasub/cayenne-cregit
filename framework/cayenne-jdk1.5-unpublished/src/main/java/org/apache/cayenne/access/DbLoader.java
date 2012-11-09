@@ -444,7 +444,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that does reverse engineering of the database. It can create DataMaps  * using database meta data obtained via JDBC driver.  */
+comment|/**  * Utility class that does reverse engineering of the database. It can create  * DataMaps using database meta data obtained via JDBC driver.  */
 end_comment
 
 begin_class
@@ -454,8 +454,9 @@ name|DbLoader
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Log
-name|logObj
+name|logger
 init|=
 name|LogFactory
 operator|.
@@ -466,7 +467,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|// TODO: remove this hardcoded stuff once delegate starts to support procedure
+comment|// TODO: remove this hardcoded stuff once delegate starts to support
+comment|// procedure
 comment|// loading...
 specifier|private
 specifier|static
@@ -484,7 +486,7 @@ argument_list|(
 literal|"auto_pk_for_table"
 argument_list|,
 literal|"auto_pk_for_table;1"
-comment|/*                                    * the last name is some Mac OS X Sybase artifact                                    */
+comment|/*                                                                 * the last name                                                                 * is some Mac OS                                                                 * X Sybase                                                                 * artifact                                                                 */
 argument_list|)
 decl_stmt|;
 specifier|public
@@ -721,7 +723,7 @@ operator|=
 name|check
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the generator should map all primary key columns as ObjAttributes.      *       * @since 3.0      */
+comment|/**      * Returns true if the generator should map all primary key columns as      * ObjAttributes.      *       * @since 3.0      */
 specifier|public
 name|boolean
 name|isCreatingMeaningfulPK
@@ -741,7 +743,7 @@ return|return
 name|connection
 return|;
 block|}
-comment|/**      * Returns a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If generic      * class name is null (which is the default), DbLoader will assign each entity a      * unique class name derived from the table name.      *       * @since 1.2      */
+comment|/**      * Returns a name of a generic class that should be used for all      * ObjEntities. The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * null (which is the default), DbLoader will assign each entity a unique      * class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|String
 name|getGenericClassName
@@ -751,7 +753,7 @@ return|return
 name|genericClassName
 return|;
 block|}
-comment|/**      * Sets a name of a generic class that should be used for all ObjEntities. The most      * common generic class is {@link org.apache.cayenne.CayenneDataObject}. If generic      * class name is set to null (which is the default), DbLoader will assign each entity      * a unique class name derived from the table name.      *       * @since 1.2      */
+comment|/**      * Sets a name of a generic class that should be used for all ObjEntities.      * The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * set to null (which is the default), DbLoader will assign each entity a      * unique class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|void
 name|setGenericClassName
@@ -777,7 +779,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * A method that return true if the given table name should be included. The default      * implementation include all tables.      */
+comment|/**      * A method that return true if the given table name should be included. The      * default implementation include all tables.      */
 specifier|public
 name|boolean
 name|includeTableName
@@ -938,7 +940,7 @@ return|return
 name|schemas
 return|;
 block|}
-comment|/**      * Returns all the table types for the given database. Types may be such as "TABLE",      * "VIEW", "SYSTEM TABLE", etc.      *       * @return List of Strings, empty array if nothing found.      */
+comment|/**      * Returns all the table types for the given database. Types may be such as      * "TABLE", "VIEW", "SYSTEM TABLE", etc.      *       * @return List of Strings, empty array if nothing found.      */
 specifier|public
 name|List
 argument_list|<
@@ -1010,7 +1012,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Returns all tables for given combination of the criteria. Tables returned as      * DbEntities without any attributes or relationships.      *       * @param catalogPattern The name of the catalog, may be null.      * @param schemaPattern The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
+comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *       * @param catalogPattern      *            The name of the catalog, may be null.      * @param schemaPattern      *            The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern      *            The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types      *            The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
 specifier|public
 name|List
 argument_list|<
@@ -1049,13 +1051,13 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|logObj
+name|logger
 operator|.
 name|isDebugEnabled
 argument_list|()
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1093,7 +1095,7 @@ range|:
 name|types
 control|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1162,11 +1164,15 @@ argument_list|(
 literal|"TABLE_NAME"
 argument_list|)
 decl_stmt|;
-comment|// Oracle 9i and newer has a nifty recycle bin feature... but we don't
-comment|// want dropped tables to be included here; in fact they may even result
-comment|// in errors on reverse engineering as their names have special chars like
+comment|// Oracle 9i and newer has a nifty recycle bin feature... but we
+comment|// don't
+comment|// want dropped tables to be included here; in fact they may
+comment|// even result
+comment|// in errors on reverse engineering as their names have special
+comment|// chars like
 comment|// "/", etc. So skip them all together
-comment|// TODO: Andrus, 10/29/2005 - this type of filtering should be delegated
+comment|// TODO: Andrus, 10/29/2005 - this type of filtering should be
+comment|// delegated
 comment|// to adapter
 if|if
 condition|(
@@ -1239,7 +1245,7 @@ return|return
 name|tables
 return|;
 block|}
-comment|/**      * Loads dbEntities for the specified tables.      *       * @param map DataMap to be populated with DbEntities.      * @param tables The list of org.apache.cayenne.ashwood.dbutil.Table objects for which      *            DbEntities must be created.      * @return false if loading must be immediately aborted.      */
+comment|/**      * Loads dbEntities for the specified tables.      *       * @param map      *            DataMap to be populated with DbEntities.      * @param tables      *            The list of org.apache.cayenne.ashwood.dbutil.Table objects      *            for which DbEntities must be created.      * @return false if loading must be immediately aborted.      */
 specifier|public
 name|boolean
 name|loadDbEntities
@@ -1321,7 +1327,7 @@ name|oldEnt
 argument_list|)
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1355,7 +1361,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1367,7 +1373,8 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// cay-479 - need to track entities that were not loaded for
+comment|// cay-479 - need to track entities that were not loaded
+comment|// for
 comment|// relationships exported to entities that were
 name|skippedEntities
 operator|.
@@ -1385,7 +1392,7 @@ name|CayenneException
 name|ex
 parameter_list|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -1436,9 +1443,12 @@ argument_list|()
 condition|)
 block|{
 comment|// for a reason not quiet apparent to me, Oracle sometimes
-comment|// returns duplicate record sets for the same table, messing up table
-comment|// names. E.g. for the system table "WK$_ATTR_MAPPING" columns are
-comment|// returned twice - as "WK$_ATTR_MAPPING" and "WK$$_ATTR_MAPPING"...
+comment|// returns duplicate record sets for the same table, messing
+comment|// up table
+comment|// names. E.g. for the system table "WK$_ATTR_MAPPING"
+comment|// columns are
+comment|// returned twice - as "WK$_ATTR_MAPPING" and
+comment|// "WK$$_ATTR_MAPPING"...
 comment|// Go figure
 name|String
 name|tableName
@@ -1464,7 +1474,7 @@ name|tableName
 argument_list|)
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -1637,7 +1647,8 @@ name|dbEntity
 argument_list|)
 expr_stmt|;
 block|}
-comment|// delegate might have thrown this entity out... so check if it is still
+comment|// delegate might have thrown this entity out... so check if it is
+comment|// still
 comment|// around before continuing processing
 if|if
 condition|(
@@ -1764,10 +1775,11 @@ block|}
 else|else
 block|{
 comment|// why an attribute might be null is not quiet clear
-comment|// but there is a bug report 731406 indicating that it is
+comment|// but there is a bug report 731406 indicating that
+comment|// it is
 comment|// possible
 comment|// so just print the warning, and ignore
-name|logObj
+name|logger
 operator|.
 name|warn
 argument_list|(
@@ -1849,7 +1861,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Creates an ObjEntity for each DbEntity in the map. ObjEntities are created empty      * without      */
+comment|/**      * Creates an ObjEntity for each DbEntity in the map. ObjEntities are      * created empty without      */
 specifier|public
 name|void
 name|loadObjEntities
@@ -2000,7 +2012,8 @@ name|dbEntity
 argument_list|)
 decl_stmt|;
 comment|// this loop will terminate even if no valid name is found
-comment|// to prevent loader from looping forever (though such case is very unlikely)
+comment|// to prevent loader from looping forever (though such case is very
+comment|// unlikely)
 name|String
 name|baseName
 init|=
@@ -2216,7 +2229,7 @@ name|cay182Ex
 parameter_list|)
 block|{
 comment|// Sybase-specific - the line above blows on VIEWS, see CAY-182.
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -2241,7 +2254,8 @@ argument_list|()
 condition|)
 return|return;
 comment|// these will be initailzed every time a new target entity
-comment|// is found in the result set (which should be ordered by table name among
+comment|// is found in the result set (which should be ordered by table name
+comment|// among
 comment|// other things)
 name|DbRelationship
 name|forwardRelationship
@@ -2355,7 +2369,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -2544,7 +2558,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -2575,7 +2589,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -2671,7 +2685,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Detects correct relationship multiplicity and "to dep pk" flag. Only called on      * relationships from PK to FK, not the reverse ones.      */
+comment|/**      * Detects correct relationship multiplicity and "to dep pk" flag. Only      * called on relationships from PK to FK, not the reverse ones.      */
 specifier|protected
 name|void
 name|postprocessMasterDbRelationship
@@ -2845,7 +2859,8 @@ name|toMany
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
+comment|/**      * @since 3.2      */
+specifier|public
 name|String
 index|[]
 name|getDefaultTableTypes
@@ -2879,7 +2894,9 @@ name|ArrayList
 argument_list|<
 name|String
 argument_list|>
-argument_list|()
+argument_list|(
+literal|2
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -2935,13 +2952,13 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap that contains default      * mapping of the tables and views. By default will include regular tables and views.      *       * @since 1.0.7      */
+comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *       * @since 1.0.7      * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
 specifier|public
 name|DataMap
 name|loadDataMapFromDB
 parameter_list|(
 name|String
-name|schemaName
+name|schemaPattern
 parameter_list|,
 name|String
 name|tablePattern
@@ -2976,26 +2993,30 @@ literal|"No supported table types found."
 argument_list|)
 throw|;
 block|}
-return|return
-name|loadDataMapFromDB
+name|load
 argument_list|(
-name|schemaName
+name|dataMap
+argument_list|,
+literal|null
+argument_list|,
+name|schemaPattern
 argument_list|,
 name|tablePattern
 argument_list|,
 name|types
-argument_list|,
-name|dataMap
 argument_list|)
+expr_stmt|;
+return|return
+name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap object that contains      * default mapping of the tables and views. Allows to limit types of tables to read.      */
+comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *       * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
 specifier|public
 name|DataMap
 name|loadDataMapFromDB
 parameter_list|(
 name|String
-name|schemaName
+name|schemaPattern
 parameter_list|,
 name|String
 name|tablePattern
@@ -3006,6 +3027,47 @@ name|tableTypes
 parameter_list|,
 name|DataMap
 name|dataMap
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+name|load
+argument_list|(
+name|dataMap
+argument_list|,
+literal|null
+argument_list|,
+name|schemaPattern
+argument_list|,
+name|tablePattern
+argument_list|,
+name|tableTypes
+argument_list|)
+expr_stmt|;
+return|return
+name|dataMap
+return|;
+block|}
+comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *       * @since 3.2      */
+specifier|public
+name|void
+name|load
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|,
+name|String
+name|catalogPattern
+parameter_list|,
+name|String
+name|schemaPattern
+parameter_list|,
+name|String
+name|tablePattern
+parameter_list|,
+name|String
+modifier|...
+name|tableTypes
 parameter_list|)
 throws|throws
 name|SQLException
@@ -3022,30 +3084,33 @@ operator|=
 name|WILDCARD
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|loadDbEntities
-argument_list|(
-name|dataMap
-argument_list|,
+name|List
+argument_list|<
+name|DbEntity
+argument_list|>
+name|tables
+init|=
 name|getTables
 argument_list|(
-literal|null
+name|catalogPattern
 argument_list|,
-name|schemaName
+name|schemaPattern
 argument_list|,
 name|tablePattern
 argument_list|,
 name|tableTypes
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|loadDbEntities
+argument_list|(
+name|dataMap
+argument_list|,
+name|tables
 argument_list|)
 condition|)
 block|{
-return|return
-name|dataMap
-return|;
-block|}
 name|loadDbRelationships
 argument_list|(
 name|dataMap
@@ -3056,11 +3121,9 @@ argument_list|(
 name|dataMap
 argument_list|)
 expr_stmt|;
-return|return
-name|dataMap
-return|;
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make procedure      * loading optional or to implement custom merging logic, so currently this method is      * NOT CALLED from "loadDataMapFromDB" and should be invoked explicitly by the user.      *</i>      *</p>      *       * @since 1.1      */
+block|}
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 1.1      * @deprecated since 3.2 use      *             {@link #loadProcedures(DataMap, String, String, String)} that      *             supports "catalog" pattern.      */
 specifier|public
 name|void
 name|loadProceduresFromDB
@@ -3073,6 +3136,38 @@ name|namePattern
 parameter_list|,
 name|DataMap
 name|dataMap
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+name|loadProcedures
+argument_list|(
+name|dataMap
+argument_list|,
+literal|null
+argument_list|,
+name|schemaPattern
+argument_list|,
+name|namePattern
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 3.2      */
+specifier|public
+name|void
+name|loadProcedures
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|,
+name|String
+name|catalogPattern
+parameter_list|,
+name|String
+name|schemaPattern
+parameter_list|,
+name|String
+name|namePattern
 parameter_list|)
 throws|throws
 name|SQLException
@@ -3096,7 +3191,7 @@ argument_list|()
 operator|.
 name|getProcedures
 argument_list|(
-literal|null
+name|catalogPattern
 argument_list|,
 name|schemaPattern
 argument_list|,
@@ -3134,7 +3229,7 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -3384,7 +3479,8 @@ name|name
 else|:
 name|name
 decl_stmt|;
-comment|// skip ResultSet columns, as they are not described in Cayenne procedures
+comment|// skip ResultSet columns, as they are not described in Cayenne
+comment|// procedures
 comment|// yet...
 if|if
 condition|(
@@ -3395,7 +3491,7 @@ operator|.
 name|procedureColumnResult
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -3426,7 +3522,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
@@ -3466,7 +3562,7 @@ operator|.
 name|procedureColumnReturn
 condition|)
 block|{
-name|logObj
+name|logger
 operator|.
 name|debug
 argument_list|(
@@ -3485,7 +3581,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|logObj
+name|logger
 operator|.
 name|info
 argument_list|(
