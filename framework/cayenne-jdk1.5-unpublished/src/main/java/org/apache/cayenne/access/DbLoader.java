@@ -1600,6 +1600,46 @@ argument_list|,
 name|allowNulls
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|adapter
+operator|.
+name|supportsGeneratedKeys
+argument_list|()
+condition|)
+block|{
+comment|// TODO: this actually throws on some drivers... need to
+comment|// ensure that 'supportsGeneratedKeys' check is enough
+comment|// to prevent an exception here.
+name|String
+name|autoIncrement
+init|=
+name|rs
+operator|.
+name|getString
+argument_list|(
+literal|"IS_AUTOINCREMENT"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+literal|"YES"
+operator|.
+name|equals
+argument_list|(
+name|autoIncrement
+argument_list|)
+condition|)
+block|{
+name|attr
+operator|.
+name|setGenerated
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|attr
 operator|.
 name|setEntity
