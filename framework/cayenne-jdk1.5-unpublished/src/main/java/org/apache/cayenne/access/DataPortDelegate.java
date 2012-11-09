@@ -54,10 +54,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface for callback and delegate methods allowing implementing classes to control  * various aspects of data porting via DataPort. DataPort instance will invoke appropriate  * delegate methods during different stages of porting process.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
+comment|/**  * Interface for callback and delegate methods allowing implementing classes to control  * various aspects of data porting via DataPort. DataPort instance will invoke appropriate  * delegate methods during different stages of porting process.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  * @deprecated since 3.2  */
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|DataPortDelegate
