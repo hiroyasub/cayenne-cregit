@@ -48,37 +48,6 @@ name|CayenneGeneratorMojoTest
 extends|extends
 name|AbstractMojoTestCase
 block|{
-comment|/** {@inheritDoc} */
-specifier|protected
-name|void
-name|setUp
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-comment|// required
-name|super
-operator|.
-name|setUp
-argument_list|()
-expr_stmt|;
-block|}
-comment|/** {@inheritDoc} */
-specifier|protected
-name|void
-name|tearDown
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-comment|// required
-name|super
-operator|.
-name|tearDown
-argument_list|()
-expr_stmt|;
-block|}
-comment|/** 	 * @throws Exception 	 *             if any 	 */
 specifier|public
 name|void
 name|testCgenExecution
