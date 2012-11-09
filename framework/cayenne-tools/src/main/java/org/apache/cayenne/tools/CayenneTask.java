@@ -17,103 +17,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|io
 operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Task
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|BuildException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|types
-operator|.
-name|Path
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|types
-operator|.
-name|Reference
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|MapLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
+name|File
 import|;
 end_import
 
@@ -191,6 +99,80 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|MapLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|Task
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|types
+operator|.
+name|Path
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|types
+operator|.
+name|Reference
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -199,18 +181,8 @@ name|InputSource
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
 begin_comment
-comment|/**  * Base task for all Cayenne ant tasks, providing support for common configuration items.  *  * @since 1.2  */
+comment|/**  * Base task for all Cayenne ant tasks, providing support for common  * configuration items.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -249,7 +221,7 @@ specifier|protected
 name|String
 name|password
 decl_stmt|;
-comment|/**      * Sets the classpath used by the task.      *      * @param path The classpath to set.      */
+comment|/**      * Sets the classpath used by the task.      *       * @param path      *            The classpath to set.      */
 specifier|public
 name|void
 name|setClasspath
@@ -267,7 +239,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets the classpath reference used by the task.      *      * @param reference The classpath reference to set.      */
+comment|/**      * Sets the classpath reference used by the task.      *       * @param reference      *            The classpath reference to set.      */
 specifier|public
 name|void
 name|setClasspathRef
@@ -285,7 +257,7 @@ name|reference
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Convenience method for creating a classpath instance to be used for the task.      *      * @return The new classpath.      */
+comment|/**      * Convenience method for creating a classpath instance to be used for the      * task.      *       * @return The new classpath.      */
 specifier|private
 name|Path
 name|createClasspath
@@ -315,7 +287,7 @@ name|createPath
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets the map.      *      * @param map The map to set      */
+comment|/**      * Sets the map.      *       * @param map      *            The map to set      */
 specifier|public
 name|void
 name|setMap
@@ -331,7 +303,7 @@ operator|=
 name|map
 expr_stmt|;
 block|}
-comment|/**      * Sets the db adapter.      *      * @param adapter The db adapter to set.      */
+comment|/**      * Sets the db adapter.      *       * @param adapter      *            The db adapter to set.      */
 specifier|public
 name|void
 name|setAdapter
@@ -388,7 +360,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets the JDBC driver used to connect to the database server.      *      * @param driver The driver to set.      */
+comment|/**      * Sets the JDBC driver used to connect to the database server.      *       * @param driver      *            The driver to set.      */
 specifier|public
 name|void
 name|setDriver
@@ -404,7 +376,7 @@ operator|=
 name|driver
 expr_stmt|;
 block|}
-comment|/**      * Sets the JDBC URL used to connect to the database server.      *      * @param url The url to set.      */
+comment|/**      * Sets the JDBC URL used to connect to the database server.      *       * @param url      *            The url to set.      */
 specifier|public
 name|void
 name|setUrl
@@ -420,7 +392,7 @@ operator|=
 name|url
 expr_stmt|;
 block|}
-comment|/**      * Sets the username used to connect to the database server.      *      * @param username The username to set.      */
+comment|/**      * Sets the username used to connect to the database server.      *       * @param username      *            The username to set.      */
 specifier|public
 name|void
 name|setUserName
@@ -436,7 +408,7 @@ operator|=
 name|username
 expr_stmt|;
 block|}
-comment|/**      * Sets the password used to connect to the database server.      *      * @param password The password to set.      */
+comment|/**      * Sets the password used to connect to the database server.      *       * @param password      *            The password to set.      */
 specifier|public
 name|void
 name|setPassword
