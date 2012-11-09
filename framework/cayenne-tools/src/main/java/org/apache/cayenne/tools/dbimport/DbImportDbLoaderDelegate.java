@@ -11,6 +11,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tools
+operator|.
 name|dbimport
 package|;
 end_package
@@ -105,7 +107,7 @@ end_comment
 
 begin_class
 class|class
-name|ImportDbLoaderDelegate
+name|DbImportDbLoaderDelegate
 implements|implements
 name|DbLoaderDelegate
 block|{
@@ -137,7 +139,7 @@ name|ObjEntity
 argument_list|>
 name|removedObjEntities
 decl_stmt|;
-name|ImportDbLoaderDelegate
+name|DbImportDbLoaderDelegate
 parameter_list|()
 block|{
 name|addedDbEntities

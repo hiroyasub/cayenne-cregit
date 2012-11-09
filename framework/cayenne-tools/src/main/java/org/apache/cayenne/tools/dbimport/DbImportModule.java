@@ -11,6 +11,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tools
+operator|.
 name|dbimport
 package|;
 end_package

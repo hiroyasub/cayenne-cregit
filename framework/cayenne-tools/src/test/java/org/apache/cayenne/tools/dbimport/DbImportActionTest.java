@@ -11,6 +11,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tools
+operator|.
 name|dbimport
 package|;
 end_package
@@ -148,6 +150,22 @@ operator|.
 name|configuration
 operator|.
 name|ToolsModule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tools
+operator|.
+name|dbimport
+operator|.
+name|DbImportAction
 import|;
 end_import
 

@@ -11,6 +11,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tools
+operator|.
 name|dbimport
 package|;
 end_package
@@ -538,11 +540,11 @@ argument_list|(
 name|parameters
 argument_list|)
 decl_stmt|;
-name|ImportDbLoaderDelegate
+name|DbImportDbLoaderDelegate
 name|loaderDelegate
 init|=
 operator|new
-name|ImportDbLoaderDelegate
+name|DbImportDbLoaderDelegate
 argument_list|()
 decl_stmt|;
 name|DbLoader
