@@ -834,6 +834,15 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|supportsCatalogs
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+specifier|public
+name|boolean
 name|supportsBatchPK
 parameter_list|()
 block|{

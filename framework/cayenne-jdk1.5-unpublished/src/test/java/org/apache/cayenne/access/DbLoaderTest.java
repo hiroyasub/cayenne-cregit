@@ -666,7 +666,7 @@ name|id
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * DataMap loading is in one big test method, since breaking it in individual tests      * would require multiple reads of metatdata which is extremely slow on some RDBMS      * (Sybase).      */
+comment|/**      * DataMap loading is in one big test method, since breaking it in      * individual tests would require multiple reads of metatdata which is      * extremely slow on some RDBMS (Sybase).      */
 specifier|public
 name|void
 name|testLoad
@@ -1048,10 +1048,11 @@ name|DataMap
 name|map
 parameter_list|)
 block|{
-comment|// unfortunately JDBC metadata doesn't provide info for UNIQUE constraints....
+comment|// unfortunately JDBC metadata doesn't provide info for UNIQUE
+comment|// constraints....
 comment|// cant reengineer them...
 comment|// find rel to TO_ONEFK1
-comment|/*          * Iterator it = getDbEntity(map, "TO_ONEFK2").getRelationships().iterator();          * DbRelationship rel = (DbRelationship) it.next(); assertEquals("TO_ONEFK1",          * rel.getTargetEntityName()); assertFalse("UNIQUE constraint was ignored...",          * rel.isToMany());          */
+comment|/*          * Iterator it = getDbEntity(map,          * "TO_ONEFK2").getRelationships().iterator(); DbRelationship rel =          * (DbRelationship) it.next(); assertEquals("TO_ONEFK1",          * rel.getTargetEntityName());          * assertFalse("UNIQUE constraint was ignored...", rel.isToMany());          */
 block|}
 specifier|private
 name|void
@@ -1096,6 +1097,36 @@ name|toUpperCase
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|accessStackAdapter
+operator|.
+name|supportsCatalogs
+argument_list|()
+condition|)
+block|{
+name|assertNotNull
+argument_list|(
+name|dae
+operator|.
+name|getCatalog
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"CAYENNE"
+argument_list|,
+name|dae
+operator|.
+name|getCatalog
+argument_list|()
+operator|.
+name|toUpperCase
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|DbAttribute
 name|a
 init|=
