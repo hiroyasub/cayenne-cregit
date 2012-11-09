@@ -482,7 +482,8 @@ name|map
 argument_list|,
 name|overwriteExisting
 argument_list|,
-name|schema
+name|getSchema
+argument_list|()
 argument_list|,
 name|tablePattern
 argument_list|,
