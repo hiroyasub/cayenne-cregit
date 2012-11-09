@@ -379,6 +379,11 @@ specifier|private
 name|File
 name|map
 decl_stmt|;
+comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @parameter expression="${cdbimport.defaultPackage}"      * @since 3.2      */
+specifier|private
+name|String
+name|defaultPackage
+decl_stmt|;
 comment|/**      * Indicates whether existing DB and object entities should be overwritten.      * This is an all-or-nothing setting. If you need finer granularity, please      * use the Cayenne Modeler.      *       * Default is<code>true</code>.      *       * @parameter expression="${cdbimport.overwriteExisting}"      *            default-value="true"      */
 specifier|private
 name|boolean
@@ -716,6 +721,30 @@ operator|new
 name|DataMap
 argument_list|()
 decl_stmt|;
+comment|// do not override default package of existsing DataMap unless it is
+comment|// explicitly requested by the plugin caller
+if|if
+condition|(
+name|defaultPackage
+operator|!=
+literal|null
+operator|&&
+name|defaultPackage
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|dataMap
+operator|.
+name|setDefaultPackage
+argument_list|(
+name|defaultPackage
+argument_list|)
+expr_stmt|;
+block|}
 name|String
 index|[]
 name|types
