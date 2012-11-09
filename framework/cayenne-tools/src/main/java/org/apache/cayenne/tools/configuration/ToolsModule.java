@@ -11,6 +11,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tools
+operator|.
 name|configuration
 package|;
 end_package
@@ -44,6 +46,48 @@ operator|.
 name|jdbc
 operator|.
 name|DefaultBatchQueryBuilderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DefaultRuntimeProperties
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|RuntimeProperties
 import|;
 end_import
 
@@ -374,13 +418,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DI module containing basic Cayenne configuration.  *   * @since 3.1  */
+comment|/**  * A DI module to bootstrap DI container for Cayenne Ant tasks and Maven  * plugins.  *   * @since 3.2  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ToolModule
+name|ToolsModule
 implements|implements
 name|Module
 block|{
