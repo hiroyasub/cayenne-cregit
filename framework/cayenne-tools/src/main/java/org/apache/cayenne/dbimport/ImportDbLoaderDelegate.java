@@ -104,7 +104,6 @@ comment|/**  * @since 3.2  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|ImportDbLoaderDelegate
 implements|implements
@@ -138,7 +137,6 @@ name|ObjEntity
 argument_list|>
 name|removedObjEntities
 decl_stmt|;
-specifier|public
 name|ImportDbLoaderDelegate
 parameter_list|()
 block|{

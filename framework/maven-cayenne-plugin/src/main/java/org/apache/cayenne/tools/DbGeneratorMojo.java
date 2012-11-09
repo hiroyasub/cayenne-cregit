@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *  * @since 3.0  *  * @phase pre-integration-test  * @goal cdbgen  */
+comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  *   * @phase pre-integration-test  * @goal cdbgen  */
 end_comment
 
 begin_class
@@ -284,57 +284,57 @@ name|DbGeneratorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * DataMap XML file to use as a schema descriptor.      *      * @parameter expression="${cdbgen.map}" 	 * @required      */
+comment|/**      * DataMap XML file to use as a schema descriptor.      *       * @parameter expression="${cdbgen.map}"      * @required      */
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter.      * While this attribute is optional (a generic JdbcAdapter is used if not set),      * it is highly recommended to specify correct target adapter.      *      * @parameter expression="${cdbgen.adapter}"      */
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. While this      * attribute is optional (a generic JdbcAdapter is used if not set), it is      * highly recommended to specify correct target adapter.      *       * @parameter expression="${cdbgen.adapter}"      */
 specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      *      * @parameter expression="${cdbgen.driver}"      * @required      */
+comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter expression="${cdbgen.driver}"      * @required      */
 specifier|private
 name|String
 name|driver
 decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      *      * @parameter expression="${cdbgen.url}"      * @required      */
+comment|/**      * JDBC connection URL of a target database.      *       * @parameter expression="${cdbgen.url}"      * @required      */
 specifier|private
 name|String
 name|url
 decl_stmt|;
-comment|/**      * Database user name.      *      * @parameter expression="${cdbgen.username}"      */
+comment|/**      * Database user name.      *       * @parameter expression="${cdbgen.username}"      */
 specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Database user password.      *      * @parameter expression="${cdbgen.password}"      */
+comment|/**      * Database user password.      *       * @parameter expression="${cdbgen.password}"      */
 specifier|private
 name|String
 name|password
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should drop the tables before attempting to create new ones.      * Default is<code>false</code>.      *      * @parameter expression="${cdbgen.dropTables}" default-value="false"      */
+comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      *       * @parameter expression="${cdbgen.dropTables}" default-value="false"      */
 specifier|private
 name|boolean
 name|dropTables
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects. Default is<code>false</code>.      *      * @parameter expression="${cdbgen.dropPK}" default-value="false"      */
+comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects.      * Default is<code>false</code>.      *       * @parameter expression="${cdbgen.dropPK}" default-value="false"      */
 specifier|private
 name|boolean
 name|dropPK
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create new tables. Default is<code>true</code>.      *      * @parameter expression="${cdbgen.createTables}" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create new tables. Default is      *<code>true</code>.      *       * @parameter expression="${cdbgen.createTables}" default-value="true"      */
 specifier|private
 name|boolean
 name|createTables
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects. Default is<code>true</code>.      *      * @parameter expression="${cdbgen.createPK}" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects.      * Default is<code>true</code>.      *       * @parameter expression="${cdbgen.createPK}" default-value="true"      */
 specifier|private
 name|boolean
 name|createPK
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is<code>true</code>.      *      * @parameter expression="${cdbgen.createFK}' default-value="true"      */
+comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is      *<code>true</code>.      *       * @parameter expression="${cdbgen.createFK}' default-value="true"      */
 specifier|private
 name|boolean
 name|createFK
@@ -348,6 +348,15 @@ name|MojoExecutionException
 throws|,
 name|MojoFailureException
 block|{
+name|Log
+name|logger
+init|=
+operator|new
+name|MavenLogger
+argument_list|(
+name|this
+argument_list|)
+decl_stmt|;
 name|Injector
 name|injector
 init|=
@@ -357,7 +366,9 @@ name|createInjector
 argument_list|(
 operator|new
 name|ToolsModule
-argument_list|()
+argument_list|(
+name|logger
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|AdhocObjectFactory
@@ -370,15 +381,6 @@ argument_list|(
 name|AdhocObjectFactory
 operator|.
 name|class
-argument_list|)
-decl_stmt|;
-name|Log
-name|logger
-init|=
-operator|new
-name|MavenLogger
-argument_list|(
-name|this
 argument_list|)
 decl_stmt|;
 name|logger

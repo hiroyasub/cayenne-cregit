@@ -135,6 +135,20 @@ name|ToolsModule
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -230,7 +244,14 @@ name|createInjector
 argument_list|(
 operator|new
 name|ToolsModule
-argument_list|()
+argument_list|(
+name|mock
+argument_list|(
+name|Log
+operator|.
+name|class
+argument_list|)
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|DbGeneratorTask
