@@ -268,6 +268,11 @@ specifier|private
 name|String
 name|schema
 decl_stmt|;
+comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @since 3.2      */
+specifier|private
+name|String
+name|defaultPackage
+decl_stmt|;
 specifier|private
 name|String
 name|catalog
@@ -492,6 +497,30 @@ operator|new
 name|DataMap
 argument_list|()
 decl_stmt|;
+comment|// do not override default package of existsing DataMap unless it is
+comment|// explicitly requested by the plugin caller
+if|if
+condition|(
+name|defaultPackage
+operator|!=
+literal|null
+operator|&&
+name|defaultPackage
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
+name|dataMap
+operator|.
+name|setDefaultPackage
+argument_list|(
+name|defaultPackage
+argument_list|)
+expr_stmt|;
+block|}
 name|String
 index|[]
 name|types
@@ -792,6 +821,21 @@ operator|.
 name|schema
 operator|=
 name|schema
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|setDefaultPackage
+parameter_list|(
+name|String
+name|defaultPackage
+parameter_list|)
+block|{
+name|this
+operator|.
+name|defaultPackage
+operator|=
+name|defaultPackage
 expr_stmt|;
 block|}
 specifier|public
