@@ -55,20 +55,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|AbstractDbLoaderDelegate
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|DbLoader
 import|;
 end_import
@@ -98,6 +84,20 @@ operator|.
 name|dba
 operator|.
 name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbimport
+operator|.
+name|ImportDbLoaderDelegate
 import|;
 end_import
 
@@ -421,13 +421,12 @@ name|dataSource
 argument_list|)
 decl_stmt|;
 comment|// Load the data map and run the db importer.
-name|AbstractDbLoaderDelegate
+name|ImportDbLoaderDelegate
 name|loaderDelegate
 init|=
 operator|new
-name|AbstractDbLoaderDelegate
+name|ImportDbLoaderDelegate
 argument_list|()
-block|{             }
 decl_stmt|;
 name|DbLoader
 name|loader

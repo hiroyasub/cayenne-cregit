@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbLoaderDelegate defines API that allows to control the behavior of DbLoader during the  * database reverse-engineering. Delegate is also notified of the progress of  * reverse-engineering.  *   */
+comment|/**  * DbLoaderDelegate defines API that allows to control the behavior of DbLoader  * during the database reverse-engineering. Delegate is also notified of the  * progress of reverse-engineering.  */
 end_comment
 
 begin_interface
@@ -64,13 +64,13 @@ specifier|public
 interface|interface
 name|DbLoaderDelegate
 block|{
-comment|/**      * Returns true to tell DbLoader that it is OK to overwrite DbEntity that already      * exists in the model. If loading process should be stopped immediately, an exception      * is thrown.      */
+comment|/**      * Returns true to tell DbLoader that it is OK to overwrite DbEntity that      * already exists in the model. If loading process should be stopped      * immediately, an exception is thrown.      */
 specifier|public
 name|boolean
 name|overwriteDbEntity
 parameter_list|(
 name|DbEntity
-name|ent
+name|entity
 parameter_list|)
 throws|throws
 name|CayenneException
@@ -80,7 +80,7 @@ name|void
 name|dbEntityAdded
 parameter_list|(
 name|DbEntity
-name|ent
+name|entity
 parameter_list|)
 function_decl|;
 specifier|public
@@ -88,7 +88,7 @@ name|void
 name|dbEntityRemoved
 parameter_list|(
 name|DbEntity
-name|ent
+name|entity
 parameter_list|)
 function_decl|;
 specifier|public
@@ -96,7 +96,7 @@ name|void
 name|objEntityAdded
 parameter_list|(
 name|ObjEntity
-name|ent
+name|entity
 parameter_list|)
 function_decl|;
 specifier|public
@@ -104,7 +104,7 @@ name|void
 name|objEntityRemoved
 parameter_list|(
 name|ObjEntity
-name|ent
+name|entity
 parameter_list|)
 function_decl|;
 block|}
