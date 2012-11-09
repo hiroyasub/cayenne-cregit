@@ -115,20 +115,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
-operator|.
-name|resource
-operator|.
-name|ResourceLocator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|commons
 operator|.
 name|logging
@@ -152,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataSourceFactory} that loads JDBC connection information from an XML resource  * associated with the DataNodeDescriptor, returning a DataSource with simple connection  * pooling.  *   * @since 3.1  */
+comment|/**  * A {@link DataSourceFactory} that loads JDBC connection information from an  * XML resource associated with the DataNodeDescriptor, returning a DataSource  * with simple connection pooling.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -176,12 +162,6 @@ name|XMLPoolingDataSourceFactory
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-annotation|@
-name|Inject
-specifier|protected
-name|ResourceLocator
-name|resourceLocator
 decl_stmt|;
 annotation|@
 name|Inject
