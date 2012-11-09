@@ -141,6 +141,14 @@ begin_comment
 comment|/**  * A {@link DataSourceFactory} that loads JDBC connection information from an  * XML resource associated with the DataNodeDescriptor, returning a DataSource  * with simple connection pooling.  *   * @since 3.1  */
 end_comment
 
+begin_comment
+comment|// TODO: this factory does not read XML anymore, should we rename it to
+end_comment
+
+begin_comment
+comment|// something else?
+end_comment
+
 begin_class
 specifier|public
 class|class
