@@ -53,34 +53,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Project
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|tools
-operator|.
-name|ant
-operator|.
-name|Task
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|cayenne
 operator|.
 name|access
@@ -145,11 +117,41 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|Project
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|tools
+operator|.
+name|ant
+operator|.
+name|Task
+import|;
+end_import
+
 begin_comment
-comment|/**  * DataPortDelegate implementation that works in the context of Ant DataPortTask task  * execution, performing entity filtering and logging functions.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
+comment|/**  * DataPortDelegate implementation that works in the context of Ant DataPortTask  * task execution, performing entity filtering and logging functions.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 3.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|AntDataPortDelegate
 implements|implements
@@ -239,7 +241,7 @@ name|mapsPattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Applies preconfigured list of filters to the list, removing entities that do not      * pass the filter.      */
+comment|/**      * Applies preconfigured list of filters to the list, removing entities that      * do not pass the filter.      */
 specifier|protected
 name|List
 name|filterEntities
@@ -321,7 +323,7 @@ return|return
 name|entities
 return|;
 block|}
-comment|/**      * Returns true if the DataMap passes a set of DataMap filters or if there is no      * DataMap filters.      */
+comment|/**      * Returns true if the DataMap passes a set of DataMap filters or if there      * is no DataMap filters.      */
 specifier|protected
 name|boolean
 name|passedDataMapFilter
@@ -392,7 +394,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Implements the delegate method to filter the list of entities applying filtering      * rules encapsulated by this object.      */
+comment|/**      * Implements the delegate method to filter the list of entities applying      * filtering rules encapsulated by this object.      */
 specifier|public
 name|List
 name|willPortEntities

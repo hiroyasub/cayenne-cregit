@@ -230,10 +230,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A "cdataport" Ant task implementing a frontend to DataPort allowing porting database  * data using Ant build scripts.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  */
+comment|/**  * A "cdataport" Ant task implementing a frontend to DataPort allowing porting  * database data using Ant build scripts.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 3.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|DataPortTask
@@ -291,6 +293,15 @@ parameter_list|()
 throws|throws
 name|BuildException
 block|{
+name|log
+argument_list|(
+literal|"*** 'cdataport' task is deprecated and will be removed after 3.2"
+argument_list|,
+name|Project
+operator|.
+name|MSG_WARN
+argument_list|)
+expr_stmt|;
 name|validateParameters
 argument_list|()
 expr_stmt|;
@@ -365,7 +376,8 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-comment|// need to set context class loader so that cayenne can find jdbc driver and
+comment|// need to set context class loader so that cayenne can find jdbc
+comment|// driver and
 comment|// PasswordEncoder
 comment|// TODO: andrus 04/11/2010 is this still relevant in 3.1?
 name|Thread
@@ -601,7 +613,8 @@ name|DataNode
 name|target
 parameter_list|)
 block|{
-comment|// use a set to exclude duplicates, though a valid project will probably have
+comment|// use a set to exclude duplicates, though a valid project will probably
+comment|// have
 comment|// none...
 name|Collection
 argument_list|<

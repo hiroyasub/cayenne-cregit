@@ -234,6 +234,9 @@ name|InputSource
 argument_list|(
 name|dataMapFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 operator|.
