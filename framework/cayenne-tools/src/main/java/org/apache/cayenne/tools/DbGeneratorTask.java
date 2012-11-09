@@ -558,7 +558,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validates atttributes that are not related to internal      * DefaultClassGenerator. Throws BuildException if attributes are invalid.      */
+comment|/**      * Validates attributes that are not related to internal      * DefaultClassGenerator. Throws BuildException if attributes are invalid.      */
 specifier|protected
 name|void
 name|validateAttributes
