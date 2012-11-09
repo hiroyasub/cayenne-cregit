@@ -233,6 +233,16 @@ specifier|private
 name|String
 name|tablePattern
 decl_stmt|;
+comment|/**      * A comma-separated list of Perl5 regex that defines tables that should be      * included in import.      *       * @parameter expression="${cdbimport.includeTables}"      */
+specifier|private
+name|String
+name|includeTables
+decl_stmt|;
+comment|/**      * A comma-separated list of Perl5 regex that defines tables that should be      * skipped from import.      *       * @parameter expression="${cdbimport.excludeTables}"      */
+specifier|private
+name|String
+name|excludeTables
+decl_stmt|;
 comment|/**      * Indicates whether stored procedures should be imported.      *       * Default is<code>false</code>.      *       * @parameter expression="${cdbimport.importProcedures}"      *            default-value="false"      */
 specifier|private
 name|boolean
@@ -340,7 +350,7 @@ argument_list|)
 expr_stmt|;
 name|parameters
 operator|.
-name|setMap
+name|setDataMapFile
 argument_list|(
 name|map
 argument_list|)
@@ -407,6 +417,20 @@ operator|.
 name|setUsername
 argument_list|(
 name|username
+argument_list|)
+expr_stmt|;
+name|parameters
+operator|.
+name|setIncludeTables
+argument_list|(
+name|includeTables
+argument_list|)
+expr_stmt|;
+name|parameters
+operator|.
+name|setExcludeTables
+argument_list|(
+name|excludeTables
 argument_list|)
 expr_stmt|;
 name|Injector

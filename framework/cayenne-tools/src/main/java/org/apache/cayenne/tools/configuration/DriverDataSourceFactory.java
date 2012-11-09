@@ -183,7 +183,7 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"'nodeDescriptor' contains no datasoucre descriptor"
+literal|"'nodeDescriptor' contains no datasource descriptor"
 argument_list|)
 throw|;
 block|}
