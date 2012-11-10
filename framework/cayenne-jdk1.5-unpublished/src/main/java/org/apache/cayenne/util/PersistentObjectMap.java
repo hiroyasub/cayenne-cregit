@@ -216,6 +216,18 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|mergeLocalChanges
+parameter_list|(
+name|List
+name|resolved
+parameter_list|)
+block|{
+comment|// TODO implement
+block|}
 specifier|public
 name|boolean
 name|isFault

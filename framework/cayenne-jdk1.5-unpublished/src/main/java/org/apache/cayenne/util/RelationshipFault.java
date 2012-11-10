@@ -287,6 +287,15 @@ operator|.
 name|DELETED
 return|;
 block|}
+specifier|protected
+specifier|abstract
+name|void
+name|mergeLocalChanges
+parameter_list|(
+name|List
+name|resolved
+parameter_list|)
+function_decl|;
 comment|/**      * Executes a query that returns related objects. Subclasses would invoke this method      * whenever they need to resolve a fault.      */
 specifier|protected
 name|List
@@ -330,7 +339,7 @@ literal|false
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/**          * Duplicating the list (see CAY-1194). Doing that only for RelationshipFault          * query results, so only for nested DataContexts          */
+comment|/**          * Duplicating the list (see CAY-1194). Doing that only for          * RelationshipFault query results, so only for nested DataContexts          */
 if|if
 condition|(
 name|resolved
@@ -347,6 +356,13 @@ name|resolved
 argument_list|)
 expr_stmt|;
 block|}
+comment|// merge local before updating reverse to ensure we update reverse rels
+comment|// of the right objects (see CAY-1757)
+name|mergeLocalChanges
+argument_list|(
+name|resolved
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|resolved

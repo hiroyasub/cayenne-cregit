@@ -482,6 +482,18 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|mergeLocalChanges
+parameter_list|(
+name|List
+name|resolved
+parameter_list|)
+block|{
+comment|// noop
+block|}
 block|}
 end_class
 

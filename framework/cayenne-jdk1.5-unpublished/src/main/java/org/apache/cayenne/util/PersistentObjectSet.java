@@ -773,11 +773,6 @@ init|=
 name|resolveFromDB
 argument_list|()
 decl_stmt|;
-name|mergeLocalChanges
-argument_list|(
-name|localList
-argument_list|)
-expr_stmt|;
 name|this
 operator|.
 name|objectSet
@@ -808,11 +803,14 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
 name|void
 name|mergeLocalChanges
 parameter_list|(
 name|List
-name|fetchedList
+name|resolved
 parameter_list|)
 block|{
 comment|// only merge if an object is in an uncommitted state
@@ -831,7 +829,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|fetchedList
+name|resolved
 operator|.
 name|removeAll
 argument_list|(
@@ -911,7 +909,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|fetchedList
+name|resolved
 operator|.
 name|contains
 argument_list|(
@@ -919,7 +917,7 @@ name|next
 argument_list|)
 condition|)
 block|{
-name|fetchedList
+name|resolved
 operator|.
 name|add
 argument_list|(
