@@ -293,6 +293,11 @@ specifier|private
 name|String
 name|password
 decl_stmt|;
+comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *       * @parameter expression="${cdbimport.usePrimitives}" default-value="true"      */
+specifier|private
+name|boolean
+name|usePrimitives
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -542,6 +547,13 @@ operator|.
 name|setExcludeTables
 argument_list|(
 name|excludeTables
+argument_list|)
+expr_stmt|;
+name|parameters
+operator|.
+name|setUsePrimitives
+argument_list|(
+name|usePrimitives
 argument_list|)
 expr_stmt|;
 return|return
