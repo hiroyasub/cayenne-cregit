@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory of DbAdapters that either loads user-provided adapter or guesses the adapter  * type from the database metadata.  *   * @since 3.1  */
+comment|/**  * A factory of DbAdapters that either loads user-provided adapter or guesses  * the adapter type from the database metadata.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -298,7 +298,6 @@ specifier|public
 name|DbAdapter
 name|createAdapter
 parameter_list|(
-specifier|final
 name|DataNodeDescriptor
 name|nodeDescriptor
 parameter_list|,
@@ -327,6 +326,33 @@ name|nodeDescriptor
 operator|.
 name|getAdapterType
 argument_list|()
+expr_stmt|;
+block|}
+comment|// must not create AutoAdapter via objectFactory, so treat explicit
+comment|// AutoAdapter as null and let it fall through to the default. (explicit
+comment|// AutoAdapter is often passed from the cdbimport pligin).
+if|if
+condition|(
+name|adapterType
+operator|!=
+literal|null
+operator|&&
+name|adapterType
+operator|.
+name|equals
+argument_list|(
+name|AutoAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|adapterType
+operator|=
+literal|null
 expr_stmt|;
 block|}
 if|if
@@ -476,7 +502,8 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// iterate in reverse order to allow custom factories to take precedence over the
+comment|// iterate in reverse order to allow custom factories to take precedence
+comment|// over the
 comment|// default ones configured in constructor
 for|for
 control|(
