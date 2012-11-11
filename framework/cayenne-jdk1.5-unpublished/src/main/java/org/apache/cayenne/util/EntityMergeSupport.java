@@ -832,7 +832,18 @@ name|getAttributes
 argument_list|()
 control|)
 block|{
-comment|// already there
+if|if
+condition|(
+name|dba
+operator|.
+name|getName
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
 if|if
 condition|(
 name|objEntity
@@ -847,37 +858,10 @@ condition|)
 block|{
 continue|continue;
 block|}
-comment|// check if adding it makes sense at all
 if|if
 condition|(
-operator|!
 name|removeMeaningfulPKs
-condition|)
-block|{
-if|if
-condition|(
-name|dba
-operator|.
-name|getName
-argument_list|()
-operator|==
-literal|null
-condition|)
-block|{
-continue|continue;
-block|}
-block|}
-else|else
-block|{
-if|if
-condition|(
-name|dba
-operator|.
-name|getName
-argument_list|()
-operator|==
-literal|null
-operator|||
+operator|&&
 name|dba
 operator|.
 name|isPrimaryKey
@@ -885,7 +869,6 @@ argument_list|()
 condition|)
 block|{
 continue|continue;
-block|}
 block|}
 comment|// check FK's
 name|boolean
