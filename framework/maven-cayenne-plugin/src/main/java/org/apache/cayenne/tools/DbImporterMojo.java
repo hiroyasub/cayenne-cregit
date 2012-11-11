@@ -253,10 +253,15 @@ specifier|private
 name|String
 name|procedurePattern
 decl_stmt|;
-comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *       * Default is<code>false</code>.      *       * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      */
+comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *       * Default is<code>false</code>.      *       * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      * @deprecated since 3.2 use meaningfulPkTables      */
 specifier|private
 name|boolean
 name|meaningfulPk
+decl_stmt|;
+comment|/**      * @parameter expression="${cdbimport.meaningfulPkTables}"      * @since 3.2      */
+specifier|private
+name|String
+name|meaningfulPkTables
 decl_stmt|;
 comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      *       * The default is a basic naming strategy.      *       * @parameter expression="${cdbimport.namingStrategy}"      *            default-value="org.apache.cayenne.map.naming.SmartNamingStrategy"      */
 specifier|private
@@ -357,9 +362,10 @@ argument_list|)
 expr_stmt|;
 name|parameters
 operator|.
-name|setMeaningfulPk
+name|setMeaningfulPkTables
 argument_list|(
-name|meaningfulPk
+name|getMeaningfulPkTables
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|parameters
@@ -557,6 +563,44 @@ condition|?
 name|schema
 else|:
 name|schemaName
+return|;
+block|}
+specifier|private
+name|String
+name|getMeaningfulPkTables
+parameter_list|()
+block|{
+if|if
+condition|(
+name|meaningfulPk
+condition|)
+block|{
+name|getLog
+argument_list|()
+operator|.
+name|warn
+argument_list|(
+literal|"'meaningfulPk' property is deprecated. Use 'meaningfulPkTables' pattern instead"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|meaningfulPkTables
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+name|meaningfulPkTables
+return|;
+block|}
+return|return
+name|meaningfulPk
+condition|?
+literal|"*"
+else|:
+literal|null
 return|;
 block|}
 block|}

@@ -708,19 +708,20 @@ return|return
 name|metaData
 return|;
 block|}
+comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|setCreatingMeaningfulPK
 parameter_list|(
 name|boolean
-name|check
+name|creatingMeaningfulPK
 parameter_list|)
 block|{
 name|this
 operator|.
 name|creatingMeaningfulPK
 operator|=
-name|check
+name|creatingMeaningfulPK
 expr_stmt|;
 block|}
 comment|/**      * Returns true if the generator should map all primary key columns as      * ObjAttributes.      *       * @since 3.0      */
@@ -792,7 +793,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Retrieves catalogues for the database associated with this DbLoader.      *       * @return List with the catalog names, empty Array if none found.      */
+comment|/**      * Retrieves catalogs for the database associated with this DbLoader.      *       * @return List with the catalog names, empty Array if none found.      */
 specifier|public
 name|List
 argument_list|<
@@ -2158,6 +2159,32 @@ expr_stmt|;
 block|}
 block|}
 comment|// update ObjEntity attributes and relationships
+name|EntityMergeSupport
+name|objEntityMerger
+init|=
+name|createEntityMerger
+argument_list|(
+name|map
+argument_list|)
+decl_stmt|;
+name|objEntityMerger
+operator|.
+name|synchronizeWithDbEntities
+argument_list|(
+name|loadedEntities
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|protected
+name|EntityMergeSupport
+name|createEntityMerger
+parameter_list|(
+name|DataMap
+name|map
+parameter_list|)
+block|{
+return|return
 operator|new
 name|EntityMergeSupport
 argument_list|(
@@ -2168,12 +2195,7 @@ argument_list|,
 operator|!
 name|creatingMeaningfulPK
 argument_list|)
-operator|.
-name|synchronizeWithDbEntities
-argument_list|(
-name|loadedEntities
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 comment|/** Loads database relationships into a DataMap. */
 specifier|public
