@@ -1242,7 +1242,6 @@ block|}
 block|}
 else|else
 block|{
-comment|// the name and URL are important for the save to work
 name|String
 name|dataMapName
 init|=
@@ -1263,6 +1262,15 @@ name|length
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|dataMap
+operator|=
+operator|new
+name|DataMap
+argument_list|(
+name|dataMapName
+argument_list|)
+expr_stmt|;
+block|}
 name|URL
 name|dataMapUrl
 init|=
@@ -1275,14 +1283,6 @@ name|toURL
 argument_list|()
 decl_stmt|;
 name|dataMap
-operator|=
-operator|new
-name|DataMap
-argument_list|(
-name|dataMapName
-argument_list|)
-expr_stmt|;
-name|dataMap
 operator|.
 name|setConfigurationSource
 argument_list|(
@@ -1293,7 +1293,6 @@ name|dataMapUrl
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 comment|// update map defaults
 comment|// do not override default package of existing DataMap unless it is
 comment|// explicitly requested by the plugin caller
