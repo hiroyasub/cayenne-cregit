@@ -41,6 +41,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Iterator
 import|;
 end_import
@@ -52,6 +62,16 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
 import|;
 end_import
 
@@ -236,6 +256,129 @@ specifier|public
 class|class
 name|EntityMergeSupport
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|CLASS_TO_PRIMITVE
+decl_stmt|;
+static|static
+block|{
+name|CLASS_TO_PRIMITVE
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|()
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Byte
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"byte"
+argument_list|)
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Long
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"long"
+argument_list|)
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Double
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"double"
+argument_list|)
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Boolean
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"boolean"
+argument_list|)
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Float
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"float"
+argument_list|)
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Short
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"short"
+argument_list|)
+expr_stmt|;
+name|CLASS_TO_PRIMITVE
+operator|.
+name|put
+argument_list|(
+name|Integer
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"int"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|protected
 name|DataMap
 name|map
@@ -247,6 +390,10 @@ decl_stmt|;
 specifier|protected
 name|boolean
 name|removeMeaningfulPKs
+decl_stmt|;
+specifier|protected
+name|boolean
+name|usePrimitives
 decl_stmt|;
 comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
 specifier|protected
@@ -329,7 +476,7 @@ name|namingStrategy
 operator|=
 name|namingStrategy
 expr_stmt|;
-comment|/**          * Adding a listener, so that all created ObjRelationships would have default          * delete rule          */
+comment|/**          * Adding a listener, so that all created ObjRelationships would have          * default delete rule          */
 name|addEntityMergeListener
 argument_list|(
 name|DeleteRuleUpdater
@@ -408,7 +555,7 @@ return|return
 name|removeMeaningfulFKs
 return|;
 block|}
-comment|/**      * Updates ObjEntity attributes and relationships based on the current state of its      * DbEntity.      *       * @return true if the ObjEntity has changed as a result of synchronization.      */
+comment|/**      * Updates ObjEntity attributes and relationships based on the current state      * of its DbEntity.      *       * @return true if the ObjEntity has changed as a result of synchronization.      */
 specifier|public
 name|boolean
 name|synchronizeWithDbEntity
@@ -453,7 +600,8 @@ init|=
 literal|false
 decl_stmt|;
 comment|// synchronization on DataMap is some (weak) protection
-comment|// against simultaneous modification of the map (like double-clicking on sync
+comment|// against simultaneous modification of the map (like double-clicking on
+comment|// sync
 comment|// button)
 synchronized|synchronized
 init|(
@@ -468,7 +616,8 @@ name|dbEntity
 argument_list|)
 condition|)
 block|{
-comment|// get rid of attributes that are now src attributes for relationships
+comment|// get rid of attributes that are now src attributes for
+comment|// relationships
 for|for
 control|(
 name|DbAttribute
@@ -579,6 +728,34 @@ name|getType
 argument_list|()
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|usePrimitives
+condition|)
+block|{
+name|String
+name|primitive
+init|=
+name|CLASS_TO_PRIMITVE
+operator|.
+name|get
+argument_list|(
+name|type
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|primitive
+operator|!=
+literal|null
+condition|)
+block|{
+name|type
+operator|=
+name|primitive
+expr_stmt|;
+block|}
+block|}
 name|ObjAttribute
 name|oa
 init|=
@@ -806,7 +983,7 @@ return|return
 name|fks
 return|;
 block|}
-comment|/**      * Returns a list of attributes that exist in the DbEntity, but are missing from the      * ObjEntity.      */
+comment|/**      * Returns a list of attributes that exist in the DbEntity, but are missing      * from the ObjEntity.      */
 specifier|protected
 name|List
 argument_list|<
@@ -1471,6 +1648,32 @@ block|{
 return|return
 name|namingStrategy
 return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|boolean
+name|isUsePrimitives
+parameter_list|()
+block|{
+return|return
+name|usePrimitives
+return|;
+block|}
+comment|/**      * @since 3.2      * @param usePrimitives      */
+specifier|public
+name|void
+name|setUsePrimitives
+parameter_list|(
+name|boolean
+name|usePrimitives
+parameter_list|)
+block|{
+name|this
+operator|.
+name|usePrimitives
+operator|=
+name|usePrimitives
+expr_stmt|;
 block|}
 block|}
 end_class
