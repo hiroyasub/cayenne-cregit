@@ -390,6 +390,14 @@ name|th
 argument_list|)
 throw|;
 block|}
+finally|finally
+block|{
+name|injector
+operator|.
+name|shutdown
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|/**      * Validates attributes that are not related to internal      * DefaultClassGenerator. Throws BuildException if attributes are invalid.      */
 specifier|protected
