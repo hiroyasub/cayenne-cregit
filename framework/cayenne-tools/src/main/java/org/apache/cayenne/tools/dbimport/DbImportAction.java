@@ -1438,6 +1438,48 @@ name|defaultPackage
 argument_list|)
 expr_stmt|;
 block|}
+comment|// do not override default catalog of existing DataMap unless it is
+comment|// explicitly requested by the plugin caller, and the provided catalog is
+comment|// not a pattern
+name|String
+name|catalog
+init|=
+name|parameters
+operator|.
+name|getCatalog
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|catalog
+operator|!=
+literal|null
+operator|&&
+name|catalog
+operator|.
+name|length
+argument_list|()
+operator|>
+literal|0
+operator|&&
+name|catalog
+operator|.
+name|indexOf
+argument_list|(
+literal|'%'
+argument_list|)
+operator|<
+literal|0
+condition|)
+block|{
+name|dataMap
+operator|.
+name|setDefaultCatalog
+argument_list|(
+name|catalog
+argument_list|)
+expr_stmt|;
+block|}
 comment|// do not override default schema of existing DataMap unless it is
 comment|// explicitly requested by the plugin caller, and the provided schema is
 comment|// not a pattern
@@ -1468,7 +1510,7 @@ name|indexOf
 argument_list|(
 literal|'%'
 argument_list|)
-operator|>=
+operator|<
 literal|0
 condition|)
 block|{
