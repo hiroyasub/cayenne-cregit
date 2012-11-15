@@ -605,7 +605,7 @@ name|add
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|rs
 operator|.

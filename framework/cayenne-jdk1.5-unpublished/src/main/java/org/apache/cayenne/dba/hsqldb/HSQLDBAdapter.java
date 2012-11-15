@@ -284,7 +284,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/"> HSQLDB RDBMS  *</a>. Sample connection settings to use with HSQLDB are shown below:  *   *<pre>  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
+comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/">  * HSQLDB RDBMS</a>. Sample connection settings to use with HSQLDB are shown  * below:  *   *<pre>  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
 end_comment
 
 begin_class
@@ -354,7 +354,7 @@ name|extendedTypeFactories
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Generate fully-qualified name for 1.8 and on. Subclass generates unqualified name.      *       * @since 1.2      */
+comment|/**      * Generate fully-qualified name for 1.8 and on. Subclass generates      * unqualified name.      *       * @since 1.2      */
 specifier|protected
 name|String
 name|getTableName
@@ -384,67 +384,6 @@ name|quoteFullyQualifiedName
 argument_list|(
 name|entity
 argument_list|)
-return|;
-block|}
-comment|/**      * Generate fully-qualified name for 1.8 and on. Subclass generates unqualified name.      *       * @since 1.2      */
-specifier|protected
-name|String
-name|getSchemaName
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
-block|{
-if|if
-condition|(
-name|entity
-operator|.
-name|getSchema
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|entity
-operator|.
-name|getSchema
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|>
-literal|0
-condition|)
-block|{
-name|QuotingStrategy
-name|context
-init|=
-name|getQuotingStrategy
-argument_list|(
-name|entity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-argument_list|)
-decl_stmt|;
-return|return
-name|context
-operator|.
-name|quoteString
-argument_list|(
-name|entity
-operator|.
-name|getSchema
-argument_list|()
-argument_list|)
-operator|+
-literal|"."
-return|;
-block|}
-return|return
-literal|""
 return|;
 block|}
 comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
@@ -591,21 +530,6 @@ argument_list|(
 literal|" ADD CONSTRAINT "
 argument_list|)
 expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-name|context
-operator|.
-name|quoteString
-argument_list|(
-name|getSchemaName
-argument_list|(
-name|source
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|String
 name|name
 init|=
@@ -643,8 +567,13 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
+name|source
+operator|.
+name|getSchema
+argument_list|()
+argument_list|,
 name|name
 argument_list|)
 argument_list|)
@@ -681,7 +610,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|first
 operator|.
@@ -719,7 +648,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|next
 operator|.
@@ -867,22 +796,6 @@ argument_list|(
 literal|" ADD CONSTRAINT "
 argument_list|)
 expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-name|getSchemaName
-argument_list|(
-operator|(
-name|DbEntity
-operator|)
-name|rel
-operator|.
-name|getSourceEntity
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|String
 name|name
 init|=
@@ -917,14 +830,30 @@ literal|100000
 operator|)
 operator|)
 decl_stmt|;
+name|DbEntity
+name|sourceEntity
+init|=
+operator|(
+name|DbEntity
+operator|)
+name|rel
+operator|.
+name|getSourceEntity
+argument_list|()
+decl_stmt|;
 name|buf
 operator|.
 name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
+name|sourceEntity
+operator|.
+name|getSchema
+argument_list|()
+argument_list|,
 name|name
 argument_list|)
 argument_list|)
@@ -984,7 +913,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|join
 operator|.
@@ -999,7 +928,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|join
 operator|.
@@ -1133,7 +1062,8 @@ name|DbAttribute
 name|column
 parameter_list|)
 block|{
-comment|// CAY-1095: if the column is type double, temporarily set the max length to 0 to
+comment|// CAY-1095: if the column is type double, temporarily set the max
+comment|// length to 0 to
 comment|// avoid adding precision information.
 if|if
 condition|(

@@ -721,7 +721,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|at
 operator|.
@@ -740,8 +740,8 @@ argument_list|(
 name|type
 argument_list|)
 expr_stmt|;
-comment|// Mapping LONGVARCHAR without length creates a column with lenght "1" which
-comment|// is defintely not what we want...so just use something very large (1Gb seems
+comment|// Mapping LONGVARCHAR without length creates a column with length "1" which
+comment|// is definitely not what we want...so just use something very large (1Gb seems
 comment|// to be the limit for FB)
 if|if
 condition|(
@@ -1062,7 +1062,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|at
 operator|.

@@ -109,7 +109,7 @@ block|{
 return|return
 name|quotingStrategy
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|sqlIdentifier
 argument_list|)

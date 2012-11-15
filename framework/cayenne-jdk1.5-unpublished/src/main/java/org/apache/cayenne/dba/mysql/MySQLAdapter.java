@@ -464,7 +464,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.<h3>  * Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by MyISAM  * engine. This adapter by default assumes MyISAM, so  * {@link org.apache.cayenne.dba.JdbcAdapter#supportsFkConstraints()} will return false.  * Users can manually change this by calling<em>setSupportsFkConstraints(true)</em> or  * better by using an {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the  * adapter name at all for the DataNode, letting Cayenne guess it in runtime. In the later  * case Cayenne will check the<em>table_type</em> MySQL variable to detect whether InnoDB  * is the default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc:mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  */
+comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.  *<h3>  * Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by  * MyISAM engine. This adapter by default assumes MyISAM, so  * {@link org.apache.cayenne.dba.JdbcAdapter#supportsFkConstraints()} will  * return false. Users can manually change this by calling  *<em>setSupportsFkConstraints(true)</em> or better by using an  * {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the adapter  * name at all for the DataNode, letting Cayenne guess it in runtime. In the  * later case Cayenne will check the<em>table_type</em> MySQL variable to  * detect whether InnoDB is the default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc:mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  */
 end_comment
 
 begin_class
@@ -700,7 +700,8 @@ name|DbEntity
 name|table
 parameter_list|)
 block|{
-comment|// note that CASCADE is a noop as of MySQL 5.0, so we have to use FK checks
+comment|// note that CASCADE is a noop as of MySQL 5.0, so we have to use FK
+comment|// checks
 comment|// statement
 name|StringBuffer
 name|buf
@@ -755,7 +756,7 @@ literal|"SET FOREIGN_KEY_CHECKS=1"
 argument_list|)
 return|;
 block|}
-comment|/**      * Installs appropriate ExtendedTypes used as converters for passing values between      * JDBC and Java layers.      */
+comment|/**      * Installs appropriate ExtendedTypes used as converters for passing values      * between JDBC and Java layers.      */
 annotation|@
 name|Override
 specifier|protected
@@ -844,7 +845,8 @@ name|toLowerCase
 argument_list|()
 expr_stmt|;
 block|}
-comment|// all LOB types are returned by the driver as OTHER... must remap them manually
+comment|// all LOB types are returned by the driver as OTHER... must remap them
+comment|// manually
 comment|// (at least on MySQL 3.23)
 if|if
 condition|(
@@ -1040,7 +1042,8 @@ operator|.
 name|BIGINT
 expr_stmt|;
 block|}
-comment|// BIGINT UNSIGNED maps to BigInteger according to MySQL docs, but there is no
+comment|// BIGINT UNSIGNED maps to BigInteger according to MySQL docs, but
+comment|// there is no
 comment|// JDBC mapping for BigInteger
 block|}
 return|return
@@ -1062,7 +1065,7 @@ name|allowNulls
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of MySQLPkGenerator that does the correct table locking.      */
+comment|/**      * Creates and returns a primary key generator. Overrides superclass      * implementation to return an instance of MySQLPkGenerator that does the      * correct table locking.      */
 annotation|@
 name|Override
 specifier|protected
@@ -1104,7 +1107,7 @@ return|return
 name|translatorFactory
 return|;
 block|}
-comment|/**      * Overrides super implementation to explicitly set table engine to InnoDB if FK      * constraints are supported by this adapter.      */
+comment|/**      * Overrides super implementation to explicitly set table engine to InnoDB      * if FK constraints are supported by this adapter.      */
 annotation|@
 name|Override
 specifier|public
@@ -1143,7 +1146,7 @@ return|return
 name|ddlSQL
 return|;
 block|}
-comment|/**      * Customizes PK clause semantics to ensure that generated columns are in the      * beginning of the PK definition, as this seems to be a requirement for InnoDB      * tables.      *       * @since 1.2      */
+comment|/**      * Customizes PK clause semantics to ensure that generated columns are in      * the beginning of the PK definition, as this seems to be a requirement for      * InnoDB tables.      *       * @since 1.2      */
 comment|// See CAY-358 for details of the InnoDB problem
 annotation|@
 name|Override
@@ -1298,7 +1301,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|at
 operator|.
@@ -1317,7 +1320,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// if FK constraints are supported, we must add indices to all FKs
-comment|// Note that according to MySQL docs, FK indexes are created automatically when
+comment|// Note that according to MySQL docs, FK indexes are created
+comment|// automatically when
 comment|// constraint is defined, starting at MySQL 4.1.2
 if|if
 condition|(
@@ -1402,7 +1406,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|column
 operator|.
@@ -1437,7 +1441,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|column
 operator|.
@@ -1458,7 +1462,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Appends AUTO_INCREMENT clause to the column definition for generated columns.      */
+comment|/**      * Appends AUTO_INCREMENT clause to the column definition for generated      * columns.      */
 annotation|@
 name|Override
 specifier|public
@@ -1609,7 +1613,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|column
 operator|.

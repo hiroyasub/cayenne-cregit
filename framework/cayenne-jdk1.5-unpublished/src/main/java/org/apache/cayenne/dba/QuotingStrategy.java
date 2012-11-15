@@ -38,7 +38,9 @@ specifier|public
 interface|interface
 name|QuotingStrategy
 block|{
-comment|/**      * Returns a properly quoted identifier.      */
+comment|/**      * Returns a properly quoted identifier.      *       * @deprecated use {@link #quotedIdentifier(String...)}      */
+annotation|@
+name|Deprecated
 name|String
 name|quoteString
 parameter_list|(
@@ -46,12 +48,21 @@ name|String
 name|identifier
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a properly quoted fully qualified name of DbEntity.      */
+comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of toQuotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName()).      */
 name|String
 name|quoteFullyQualifiedName
 parameter_list|(
 name|DbEntity
 name|entity
+parameter_list|)
+function_decl|;
+comment|/**      * Builds a dot-separated qualifier, inclosing parts in quotations according      * to this strategy algorithm. Any of the parts can be null, in which case      * it will be skipped.      *       * @since 3.2      */
+name|String
+name|quotedIdentifier
+parameter_list|(
+name|String
+modifier|...
+name|identifierParts
 parameter_list|)
 function_decl|;
 block|}

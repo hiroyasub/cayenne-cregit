@@ -932,7 +932,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|entity
 operator|.
@@ -974,7 +974,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|firstColumn
 operator|.
@@ -1012,7 +1012,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|column
 operator|.
@@ -1160,7 +1160,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|entity
 operator|.
@@ -1202,7 +1202,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|firstColumn
 operator|.
@@ -1240,7 +1240,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|column
 operator|.

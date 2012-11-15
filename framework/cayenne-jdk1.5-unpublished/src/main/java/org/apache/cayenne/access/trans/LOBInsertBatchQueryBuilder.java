@@ -358,7 +358,7 @@ name|append
 argument_list|(
 name|strategy
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|attribute
 operator|.

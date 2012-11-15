@@ -856,7 +856,7 @@ name|append
 argument_list|(
 name|quoter
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|attribute
 operator|.
@@ -968,7 +968,7 @@ name|append
 argument_list|(
 name|quoter
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|String
 operator|.

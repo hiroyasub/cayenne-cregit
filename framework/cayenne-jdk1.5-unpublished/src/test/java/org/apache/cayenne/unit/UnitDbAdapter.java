@@ -1343,7 +1343,7 @@ name|add
 argument_list|(
 name|strategy
 operator|.
-name|quoteString
+name|quotedIdentifier
 argument_list|(
 name|fk
 argument_list|)
