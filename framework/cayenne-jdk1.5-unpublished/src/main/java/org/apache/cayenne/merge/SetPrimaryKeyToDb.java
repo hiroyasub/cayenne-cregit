@@ -272,7 +272,7 @@ argument_list|(
 name|adapter
 argument_list|)
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|getEntity
 argument_list|()
@@ -326,7 +326,7 @@ name|append
 argument_list|(
 name|quotingStrategy
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|getEntity
 argument_list|()

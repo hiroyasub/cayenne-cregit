@@ -380,7 +380,7 @@ decl_stmt|;
 return|return
 name|context
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|entity
 argument_list|)

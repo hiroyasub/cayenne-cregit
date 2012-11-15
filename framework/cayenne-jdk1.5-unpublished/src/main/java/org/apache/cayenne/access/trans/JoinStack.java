@@ -396,7 +396,7 @@ name|append
 argument_list|(
 name|quotingStrategy
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|rootEntity
 argument_list|)
@@ -562,7 +562,7 @@ name|append
 argument_list|(
 name|quotingStrategy
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|targetEntity
 argument_list|)

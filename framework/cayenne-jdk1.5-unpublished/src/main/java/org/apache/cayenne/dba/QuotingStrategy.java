@@ -48,9 +48,19 @@ name|String
 name|identifier
 parameter_list|)
 function_decl|;
-comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of toQuotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName()).      */
+comment|/**      * @deprecated since 3.2 renamed to      *             {@link #quotedFullyQualifiedName(DbEntity)}.      */
+annotation|@
+name|Deprecated
 name|String
 name|quoteFullyQualifiedName
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|)
+function_decl|;
+comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of "quotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName())".      *       * @since 3.2      */
+name|String
+name|quotedFullyQualifiedName
 parameter_list|(
 name|DbEntity
 name|entity

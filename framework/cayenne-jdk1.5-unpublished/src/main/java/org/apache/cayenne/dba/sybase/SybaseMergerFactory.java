@@ -276,7 +276,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|getEntity
 argument_list|()
@@ -415,7 +415,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|getEntity
 argument_list|()
@@ -647,7 +647,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|entity
 argument_list|)
@@ -737,7 +737,7 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|entity
 argument_list|)

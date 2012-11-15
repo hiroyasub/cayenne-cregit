@@ -308,7 +308,7 @@ name|append
 argument_list|(
 name|strategy
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|batch
 operator|.

@@ -932,7 +932,7 @@ name|append
 argument_list|(
 name|quoter
 operator|.
-name|quoteFullyQualifiedName
+name|quotedFullyQualifiedName
 argument_list|(
 name|joinEntity
 argument_list|)
