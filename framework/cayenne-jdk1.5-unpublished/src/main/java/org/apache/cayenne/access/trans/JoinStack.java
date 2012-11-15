@@ -240,7 +240,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Encapsulates join reuse/split logic used in SelectQuery processing. All expression  * path's that exist in the query (in the qualifier, etc.) are processed to produce a  * combined join tree.  *   * @since 3.0  */
+comment|/**  * Encapsulates join reuse/split logic used in SelectQuery processing. All  * expression path's that exist in the query (in the qualifier, etc.) are  * processed to produce a combined join tree.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -258,7 +258,7 @@ name|topNode
 decl_stmt|;
 specifier|private
 name|QuotingStrategy
-name|strategy
+name|quotingStrategy
 decl_stmt|;
 specifier|private
 name|int
@@ -329,7 +329,7 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-name|strategy
+name|quotingStrategy
 operator|=
 name|dbAdapter
 operator|.
@@ -379,44 +379,6 @@ literal|1
 return|;
 block|}
 name|void
-name|appendRoot
-parameter_list|(
-name|Appendable
-name|out
-parameter_list|,
-name|DbEntity
-name|rootEntity
-parameter_list|)
-throws|throws
-name|IOException
-block|{
-name|out
-operator|.
-name|append
-argument_list|(
-name|rootEntity
-operator|.
-name|getFullyQualifiedName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|append
-argument_list|(
-literal|' '
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|rootNode
-operator|.
-name|getTargetTableAlias
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-name|void
 name|appendRootWithQuoteSqlIdentifiers
 parameter_list|(
 name|Appendable
@@ -428,51 +390,15 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-if|if
-condition|(
-name|rootEntity
-operator|.
-name|getSchema
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
 name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
-name|quoteString
+name|quoteFullyQualifiedName
 argument_list|(
 name|rootEntity
-operator|.
-name|getSchema
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|append
-argument_list|(
-literal|"."
-argument_list|)
-expr_stmt|;
-block|}
-name|out
-operator|.
-name|append
-argument_list|(
-name|strategy
-operator|.
-name|quoteString
-argument_list|(
-name|rootEntity
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -487,7 +413,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
 name|quoteString
 argument_list|(
@@ -630,51 +556,15 @@ argument_list|(
 literal|' '
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|targetEntity
-operator|.
-name|getSchema
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
 name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
-name|quoteString
+name|quoteFullyQualifiedName
 argument_list|(
 name|targetEntity
-operator|.
-name|getSchema
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|append
-argument_list|(
-literal|"."
-argument_list|)
-expr_stmt|;
-block|}
-name|out
-operator|.
-name|append
-argument_list|(
-name|strategy
-operator|.
-name|quoteString
-argument_list|(
-name|targetEntity
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -689,7 +579,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
 name|quoteString
 argument_list|(
@@ -767,7 +657,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
 name|quoteString
 argument_list|(
@@ -786,7 +676,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
 name|quoteString
 argument_list|(
@@ -808,7 +698,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
 name|quoteString
 argument_list|(
@@ -827,7 +717,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-name|strategy
+name|quotingStrategy
 operator|.
 name|quoteString
 argument_list|(
@@ -951,7 +841,7 @@ operator|=
 name|rootNode
 expr_stmt|;
 block|}
-comment|/**      * Finds or creates a JoinTreeNode for the given arguments and sets it as the next      * current join.      */
+comment|/**      * Finds or creates a JoinTreeNode for the given arguments and sets it as      * the next current join.      */
 name|void
 name|pushJoin
 parameter_list|(
@@ -991,7 +881,7 @@ name|aliasCounter
 operator|++
 return|;
 block|}
-comment|/**      * Class to translate *joined* DB Entity qualifiers annotation to *current* Obj-entity      * qualifiers annotation This is done by changing all Obj-paths to concatenated      * Db-paths to root entity and rejecting all original Db-paths      */
+comment|/**      * Class to translate *joined* DB Entity qualifiers annotation to *current*      * Obj-entity qualifiers annotation This is done by changing all Obj-paths      * to concatenated Db-paths to root entity and rejecting all original      * Db-paths      */
 class|class
 name|JoinedDbEntityQualifierTransformer
 implements|implements
@@ -1037,7 +927,7 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-comment|/**                  * We must be in the same join as 'node', otherwise incorrect join                  * statement like JOIN t1 ... ON (t0.id=t1.id AND t2.qualifier=0) could be                  * generated                  */
+comment|/**                  * We must be in the same join as 'node', otherwise incorrect                  * join statement like JOIN t1 ... ON (t0.id=t1.id AND                  * t2.qualifier=0) could be generated                  */
 if|if
 condition|(
 name|node
