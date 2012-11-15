@@ -1085,6 +1085,11 @@ name|quotedIdentifier
 argument_list|(
 name|entity
 operator|.
+name|getCatalog
+argument_list|()
+argument_list|,
+name|entity
+operator|.
 name|getSchema
 argument_list|()
 argument_list|,
