@@ -30,32 +30,44 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * @since 3.2 this is a top level class.  */
 end_comment
 
-begin_interface
-specifier|public
-interface|interface
+begin_class
+class|class
+name|NoQuotingStrategy
+implements|implements
 name|QuotingStrategy
 block|{
-comment|/**      * Returns a properly quoted identifier.      */
+specifier|public
 name|String
 name|quoteString
 parameter_list|(
 name|String
-name|identifier
+name|name
 parameter_list|)
-function_decl|;
-comment|/**      * Returns a properly quoted fully qualified name of DbEntity.      */
+block|{
+return|return
+name|name
+return|;
+block|}
+specifier|public
 name|String
 name|quoteFullyQualifiedName
 parameter_list|(
 name|DbEntity
 name|entity
 parameter_list|)
-function_decl|;
+block|{
+return|return
+name|entity
+operator|.
+name|getFullyQualifiedName
+argument_list|()
+return|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

@@ -589,9 +589,6 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|initIdentifiersQuotes
-argument_list|()
-expr_stmt|;
 block|}
 name|void
 name|setSupportsFkConstraints

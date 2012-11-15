@@ -460,7 +460,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic DbAdapter implementation. Can be used as a default adapter or as a superclass  * of a concrete adapter implementation.  */
+comment|/**  * A generic DbAdapter implementation. Can be used as a default adapter or as a  * superclass of a concrete adapter implementation.  */
 end_comment
 
 begin_class
@@ -496,6 +496,15 @@ decl_stmt|;
 specifier|private
 name|PkGenerator
 name|pkGenerator
+decl_stmt|;
+specifier|private
+specifier|final
+name|QuotingStrategy
+name|noQuotingStrategy
+decl_stmt|;
+specifier|private
+name|QuotingStrategy
+name|quotingStrategy
 decl_stmt|;
 specifier|protected
 name|TypesHandler
@@ -619,6 +628,14 @@ argument_list|>
 name|extendedTypeFactories
 parameter_list|)
 block|{
+name|this
+operator|.
+name|noQuotingStrategy
+operator|=
+operator|new
+name|NoQuotingStrategy
+argument_list|()
+expr_stmt|;
 comment|// init defaults
 name|this
 operator|.
@@ -704,6 +721,18 @@ expr_stmt|;
 name|initIdentifiersQuotes
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
+name|quotingStrategy
+operator|=
+operator|new
+name|DefaultQuotingStrategy
+argument_list|(
+name|identifiersStartQuote
+argument_list|,
+name|identifiersEndQuote
+argument_list|)
+expr_stmt|;
 block|}
 comment|/**      * Returns default separator - a semicolon.      *       * @since 1.0.4      */
 specifier|public
@@ -727,7 +756,7 @@ operator|.
 name|logger
 return|;
 block|}
-comment|/**      * Locates and returns a named adapter resource. A resource can be an XML file, etc.      *<p>      * This implementation is based on the premise that each adapter is located in its own      * Java package and all resources are in the same package as well. Resource lookup is      * recursive, so that if DbAdapter is a subclass of another adapter, parent adapter      * package is searched as a failover.      *</p>      *       * @since 3.0      */
+comment|/**      * Locates and returns a named adapter resource. A resource can be an XML      * file, etc.      *<p>      * This implementation is based on the premise that each adapter is located      * in its own Java package and all resources are in the same package as      * well. Resource lookup is recursive, so that if DbAdapter is a subclass of      * another adapter, parent adapter package is searched as a failover.      *</p>      *       * @since 3.0      */
 specifier|protected
 name|URL
 name|findResource
@@ -823,7 +852,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Called from {@link #initExtendedTypes(List, List, List)} to load adapter-specific      * types into the ExtendedTypeMap right after the default types are loaded, but before      * the DI overrides are. This method has specific implementations in JdbcAdapter      * subclasses.      */
+comment|/**      * Called from {@link #initExtendedTypes(List, List, List)} to load      * adapter-specific types into the ExtendedTypeMap right after the default      * types are loaded, but before the DI overrides are. This method has      * specific implementations in JdbcAdapter subclasses.      */
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -913,7 +942,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates and returns a primary key generator. This factory method should be      * overriden by JdbcAdapter subclasses to provide custom implementations of      * PKGenerator.      */
+comment|/**      * Creates and returns a primary key generator. This factory method should      * be overriden by JdbcAdapter subclasses to provide custom implementations      * of PKGenerator.      */
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -927,7 +956,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns an {@link EJBQLTranslatorFactory} used to generate visitors for      * EJBQL to SQL translations. This method should be overriden by subclasses that need      * to customize EJBQL generation.      *       * @since 3.0      */
+comment|/**      * Creates and returns an {@link EJBQLTranslatorFactory} used to generate      * visitors for EJBQL to SQL translations. This method should be overriden      * by subclasses that need to customize EJBQL generation.      *       * @since 3.0      */
 specifier|protected
 name|EJBQLTranslatorFactory
 name|createEJBQLTranslatorFactory
@@ -1062,7 +1091,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */
+comment|/**      * Returns a SQL string that can be used to create database table      * corresponding to<code>ent</code> parameter.      */
 specifier|public
 name|String
 name|createTable
@@ -1866,7 +1895,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship.      */
+comment|/**      * Returns a SQL string that can be used to create a foreign key constraint      * for the relationship.      */
 specifier|public
 name|String
 name|createFkConstraint
@@ -2395,7 +2424,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Returns a translator factory for EJBQL to SQL translation. This property is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be overridden by calling      * {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *       * @since 3.0      */
+comment|/**      * Returns a translator factory for EJBQL to SQL translation. This property      * is normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be overridden by calling      * {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *       * @since 3.0      */
 specifier|public
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory
@@ -2405,7 +2434,7 @@ return|return
 name|ejbqlTranslatorFactory
 return|;
 block|}
-comment|/**      * Sets a translator factory for EJBQL to SQL translation. This property is normally      * initialized in constructor by calling {@link #createEJBQLTranslatorFactory()}, so      * users would only override it if they need to customize EJBQL translation.      *       * @since 3.0      */
+comment|/**      * Sets a translator factory for EJBQL to SQL translation. This property is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, so users would only override it      * if they need to customize EJBQL translation.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setEjbqlTranslatorFactory
@@ -2461,35 +2490,15 @@ name|boolean
 name|needQuotes
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
+operator|(
 name|needQuotes
-condition|)
-block|{
-return|return
-operator|new
-name|QuoteStrategy
-argument_list|(
-name|this
-operator|.
-name|getIdentifiersStartQuote
-argument_list|()
-argument_list|,
-name|this
-operator|.
-name|getIdentifiersEndQuote
-argument_list|()
-argument_list|)
+operator|)
+condition|?
+name|quotingStrategy
+else|:
+name|noQuotingStrategy
 return|;
-block|}
-else|else
-block|{
-return|return
-operator|new
-name|NoQuoteStrategy
-argument_list|()
-return|;
-block|}
 block|}
 comment|/**      * @since 3.1      */
 specifier|public
