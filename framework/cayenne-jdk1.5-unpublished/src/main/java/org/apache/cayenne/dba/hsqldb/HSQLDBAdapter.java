@@ -386,6 +386,22 @@ name|entity
 argument_list|)
 return|;
 block|}
+comment|/**      * Returns DbEntity schema name for 1.8 and on. Subclass generates      * unqualified name.      *       * @since 1.2      */
+specifier|protected
+name|String
+name|getSchemaName
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|)
+block|{
+return|return
+name|entity
+operator|.
+name|getSchema
+argument_list|()
+return|;
+block|}
 comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
 annotation|@
 name|Override
