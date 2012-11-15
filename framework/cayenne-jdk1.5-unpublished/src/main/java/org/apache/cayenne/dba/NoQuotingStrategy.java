@@ -144,6 +144,15 @@ control|)
 block|{
 if|if
 condition|(
+name|part
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
+if|if
+condition|(
 name|buffer
 operator|.
 name|length
