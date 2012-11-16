@@ -1755,7 +1755,10 @@ name|metaData
 operator|.
 name|getPrimaryKeys
 argument_list|(
-literal|null
+name|dbEntity
+operator|.
+name|getCatalog
+argument_list|()
 argument_list|,
 name|dbEntity
 operator|.
