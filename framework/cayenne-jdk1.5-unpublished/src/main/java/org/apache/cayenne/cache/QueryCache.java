@@ -52,7 +52,7 @@ comment|/**      * Returns a cached query result for the given QueryMetadata or 
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 name|List
 name|get
@@ -65,7 +65,7 @@ comment|/**      * Returns a cached query result for the given QueryMetadata. If
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 name|List
 name|get
@@ -80,7 +80,7 @@ function_decl|;
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 name|void
 name|put

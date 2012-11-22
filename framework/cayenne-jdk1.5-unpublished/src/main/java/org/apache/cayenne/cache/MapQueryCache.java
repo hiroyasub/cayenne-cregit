@@ -158,7 +158,7 @@ block|}
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 specifier|public
 name|List
@@ -223,7 +223,7 @@ comment|/**      * Returns a non-null cached value. If it is not present in the 
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 specifier|public
 name|List
@@ -330,7 +330,7 @@ block|}
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 specifier|public
 name|void
