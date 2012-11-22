@@ -472,41 +472,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|cache
-operator|=
-name|cacheManager
-operator|.
-name|getCache
-argument_list|(
-name|groupNames
-index|[
-literal|0
-index|]
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|cache
-operator|==
-literal|null
-condition|)
-block|{
-return|return
-literal|null
-return|;
-block|}
-else|else
-block|{
-name|result
-operator|=
-name|cache
-operator|.
-name|get
-argument_list|(
-name|key
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|groupNames
@@ -520,12 +485,43 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"multiple cache groups per key: "
+literal|"multiple cache groups per key '"
 operator|+
 name|key
+operator|+
+literal|"', ignoring all but the first one: "
+operator|+
+name|groupNames
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 block|}
+comment|// create empty cache for cache group here, as we have a factory to
+comment|// create an object, and should never ever return null from this
+comment|// method
+name|cache
+operator|=
+name|cacheManager
+operator|.
+name|addCacheIfAbsent
+argument_list|(
+name|groupNames
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
+name|result
+operator|=
+name|cache
+operator|.
+name|get
+argument_list|(
+name|key
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -589,7 +585,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// if not succeeded  in reading again putting
+comment|// if not succeeded in reading again putting
 comment|// object to the cache ourselves
 name|Object
 name|noResult
