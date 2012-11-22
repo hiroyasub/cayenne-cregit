@@ -243,6 +243,11 @@ name|DEFAULT_CACHE_NAME
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|List
 name|get
@@ -330,6 +335,11 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|List
 name|get
@@ -544,7 +554,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
+comment|/**      * @since 3.2      */
+specifier|protected
 name|String
 name|cacheName
 parameter_list|(
@@ -606,6 +617,11 @@ return|return
 name|DEFAULT_CACHE_NAME
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"rawtypes"
+argument_list|)
 specifier|public
 name|void
 name|put
@@ -776,7 +792,9 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Returns default cache group.      */
+comment|/**      * Returns default cache group.      *       * @deprecated since 3.2 - this method is no longer in use. If you are      *             overriding it, override {@link #cacheName(String, String...)}      *             instead.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Ehcache
 name|getDefaultCache
