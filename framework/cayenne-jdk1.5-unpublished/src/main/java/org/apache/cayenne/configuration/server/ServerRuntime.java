@@ -111,6 +111,20 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|TransactionManager
+import|;
+end_import
+
 begin_comment
 comment|/**  * An object representing Cayenne server-stack that connects directly to the database via  * JDBC. This is an entry point for user applications to access Cayenne, which  * encapsulates the dependency injection internals. The term "server" is used as opposed  * to ROP "client" (see {@link ClientRuntime}). Any application, desktop, server, etc.  * that has a direct JDBC connection should be using this runtime.  *   * @since 3.1  */
 end_comment
@@ -192,6 +206,23 @@ name|extraModules
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|TransactionManager
+name|getTransactionManager
+parameter_list|()
+block|{
+return|return
+name|injector
+operator|.
+name|getInstance
+argument_list|(
+name|TransactionManager
+operator|.
+name|class
+argument_list|)
+return|;
 block|}
 comment|/**      * Returns the main runtime DataDomain. Note that by default the returned DataDomain      * is the same as the main DataChannel returned by {@link #getChannel()}. Although      * users may redefine DataChannel provider in the DI registry, for instance to      * decorate this DataDomain with a custom wrapper.      */
 specifier|public
