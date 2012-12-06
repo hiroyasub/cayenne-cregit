@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|Transaction
+name|DataDomain
 import|;
 end_import
 
@@ -49,11 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|access
 operator|.
-name|server
-operator|.
-name|ServerRuntime
+name|Transaction
 import|;
 end_import
 
@@ -83,23 +81,23 @@ implements|implements
 name|TransactionManager
 block|{
 specifier|private
-name|ServerRuntime
-name|runtime
+name|DataDomain
+name|dataDomain
 decl_stmt|;
 specifier|public
 name|DefaultTransactionManager
 parameter_list|(
 annotation|@
 name|Inject
-name|ServerRuntime
-name|runtime
+name|DataDomain
+name|dataDomain
 parameter_list|)
 block|{
 name|this
 operator|.
-name|runtime
+name|dataDomain
 operator|=
-name|runtime
+name|dataDomain
 expr_stmt|;
 block|}
 specifier|public
@@ -137,19 +135,14 @@ return|return
 name|op
 operator|.
 name|perform
-argument_list|(
-name|runtime
-argument_list|)
+argument_list|()
 return|;
 block|}
 comment|// start a new tx and manage it till the end
 name|Transaction
 name|tx
 init|=
-name|runtime
-operator|.
-name|getDataDomain
-argument_list|()
+name|dataDomain
 operator|.
 name|createTransaction
 argument_list|()
@@ -167,9 +160,7 @@ return|return
 name|op
 operator|.
 name|perform
-argument_list|(
-name|runtime
-argument_list|)
+argument_list|()
 return|;
 block|}
 catch|catch

@@ -15,20 +15,6 @@ name|tx
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.2  */
 end_comment
@@ -44,10 +30,7 @@ block|{
 comment|/**      * A callback method that {@link TransactionManager} invokes,      * {@link TransactionManager} will wrap this method call in a single      * thread-bound transaction.      */
 name|T
 name|perform
-parameter_list|(
-name|CayenneRuntime
-name|runtime
-parameter_list|)
+parameter_list|()
 function_decl|;
 block|}
 end_interface
