@@ -2908,10 +2908,10 @@ name|toMany
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Method remove temporary entities from dataMap and optimize relationships      * @param map      */
+comment|/**      * Flattens many-to-many relationships in the generated model.      */
 specifier|private
 name|void
-name|optimizeObjRelationships
+name|flattenManyToManyRelationships
 parameter_list|(
 name|DataMap
 name|map
@@ -3338,7 +3338,7 @@ argument_list|(
 name|dataMap
 argument_list|)
 expr_stmt|;
-name|optimizeObjRelationships
+name|flattenManyToManyRelationships
 argument_list|(
 name|dataMap
 argument_list|)
