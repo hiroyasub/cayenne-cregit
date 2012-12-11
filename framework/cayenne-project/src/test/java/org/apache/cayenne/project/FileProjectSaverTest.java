@@ -915,10 +915,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Method test fix for CAY-1780 bug. If specify related fragments (for example ./../)      * in target file path then file must be created successfully.      * @throws Exception      */
+comment|/**      * Method test fix for CAY-1780. If specify related fragments (for example ./../)      * in target file path then file must be created successfully.      * @throws Exception      */
 specifier|public
 name|void
-name|testSaveForRelatedPaths
+name|testSaveForProjectFileWithRelatedPaths
 parameter_list|()
 throws|throws
 name|Exception
@@ -928,7 +928,7 @@ name|testFolder
 init|=
 name|setupTestDirectory
 argument_list|(
-literal|"testSaveForRelatedPaths"
+literal|"testSaveForProjectFileWithRelatedPaths"
 argument_list|)
 decl_stmt|;
 name|String
