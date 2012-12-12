@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of the {@link RequestHandler} that stores per-user  * {@link ObjectContext} in a web session and binds it to request thread. Note that using  * this handler would force {@link HttpSession} creation, that may not be desirable in  * many cases. Also session-bound context may result in a race condition with two user  * requests updating the same persistent objects in parallel.  *<p>  * User applications in most cases should provide a custom RequestHandler that implements  * a smarter app-specific strategy for providing ObjectContext.  *   * @since 3.1  */
+comment|/**  * Default implementation of the {@link RequestHandler} that stores per-user  * {@link ObjectContext} in a web session and binds it to request thread. Note that using  * this handler would force {@link HttpSession} creation, that may not be desirable in  * many cases. Also session-bound context may result in a race condition with two user  * requests updating the same persistent objects in parallel.  *<p>  * User applications in most cases should provide a custom RequestHandler that implements  * a smarter app-specific strategy for providing ObjectContext.  *<p>  * For stateless (per request) context creation use {@link StatelessContextRequestHandler}.  *   * @since 3.1  */
 end_comment
 
 begin_class
