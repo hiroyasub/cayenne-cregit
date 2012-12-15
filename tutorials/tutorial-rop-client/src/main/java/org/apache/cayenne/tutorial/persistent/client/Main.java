@@ -384,7 +384,7 @@ name|select1
 init|=
 name|SelectQuery
 operator|.
-name|from
+name|query
 argument_list|(
 name|Painting
 operator|.
@@ -428,7 +428,7 @@ name|select2
 init|=
 name|SelectQuery
 operator|.
-name|from
+name|query
 argument_list|(
 name|Painting
 operator|.
@@ -482,7 +482,7 @@ name|selectToDelete
 init|=
 name|SelectQuery
 operator|.
-name|from
+name|query
 argument_list|(
 name|Artist
 operator|.
