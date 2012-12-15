@@ -397,9 +397,15 @@ name|query
 operator|=
 operator|new
 name|IncrementalSelectQuery
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 operator|(
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|paginatedQuery
 argument_list|,

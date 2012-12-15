@@ -111,9 +111,15 @@ name|PostgresSelectAction
 extends|extends
 name|SelectAction
 block|{
+parameter_list|<
+name|T
+parameter_list|>
 name|PostgresSelectAction
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|JdbcAdapter

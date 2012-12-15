@@ -109,9 +109,15 @@ extends|extends
 name|SelectAction
 block|{
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|IngresSelectAction
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|JdbcAdapter

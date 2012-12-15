@@ -140,6 +140,9 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+parameter_list|<
+name|T
+parameter_list|>
 name|boolean
 name|resolve
 parameter_list|(
@@ -150,6 +153,9 @@ name|EntityResolver
 name|resolver
 parameter_list|,
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 block|{
@@ -437,10 +443,16 @@ literal|false
 return|;
 block|}
 specifier|private
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|resolveAutoAliases
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 block|{

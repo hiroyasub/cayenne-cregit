@@ -724,10 +724,16 @@ name|next
 argument_list|()
 decl_stmt|;
 name|SelectQuery
+argument_list|<
+name|DataRow
+argument_list|>
 name|select
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|DataRow
+argument_list|>
 argument_list|(
 name|entity
 argument_list|)

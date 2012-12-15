@@ -605,6 +605,9 @@ range|:
 operator|(
 operator|(
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|query
 operator|)

@@ -393,10 +393,16 @@ throws|throws
 name|Exception
 block|{
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 name|q
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|String

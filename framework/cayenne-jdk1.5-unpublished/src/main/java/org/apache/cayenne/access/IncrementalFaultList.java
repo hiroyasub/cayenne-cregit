@@ -276,6 +276,9 @@ name|rootEntity
 decl_stmt|;
 specifier|protected
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|internalQuery
 decl_stmt|;
 specifier|protected
@@ -399,6 +402,9 @@ name|internalQuery
 operator|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|rootEntity
 argument_list|)
@@ -884,7 +890,7 @@ argument_list|()
 decl_stmt|;
 name|List
 argument_list|<
-name|?
+name|Object
 argument_list|>
 name|objects
 init|=
@@ -935,10 +941,16 @@ name|qualsSize
 condition|)
 block|{
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|rootEntity
 argument_list|,

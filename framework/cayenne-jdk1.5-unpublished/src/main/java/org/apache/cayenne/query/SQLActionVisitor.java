@@ -33,10 +33,16 @@ name|query
 parameter_list|)
 function_decl|;
 comment|/**      * Creates an action to execute a SelectQuery.      */
+parameter_list|<
+name|T
+parameter_list|>
 name|SQLAction
 name|objectSelectAction
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 function_decl|;

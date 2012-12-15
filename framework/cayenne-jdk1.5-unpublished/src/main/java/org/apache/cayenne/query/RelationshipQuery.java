@@ -386,10 +386,16 @@ name|objectId
 argument_list|)
 decl_stmt|;
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 operator|(
 name|ObjEntity

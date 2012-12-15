@@ -207,6 +207,9 @@ init|=
 operator|(
 operator|(
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|q
 operator|)

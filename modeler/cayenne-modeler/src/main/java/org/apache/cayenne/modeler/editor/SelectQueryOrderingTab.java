@@ -534,6 +534,9 @@ name|mediator
 decl_stmt|;
 specifier|protected
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|selectQuery
 decl_stmt|;
 specifier|protected
@@ -793,6 +796,9 @@ operator|(
 operator|(
 operator|(
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|query
 operator|)
@@ -817,6 +823,9 @@ name|selectQuery
 operator|=
 operator|(
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|query
 expr_stmt|;

@@ -118,6 +118,9 @@ implements|implements
 name|PrefetchProcessor
 block|{
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|query
 decl_stmt|;
 name|QueryRouter

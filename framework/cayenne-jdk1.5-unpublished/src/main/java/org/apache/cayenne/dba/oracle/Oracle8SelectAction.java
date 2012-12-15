@@ -95,9 +95,15 @@ name|Oracle8SelectAction
 extends|extends
 name|OracleSelectAction
 block|{
+parameter_list|<
+name|T
+parameter_list|>
 name|Oracle8SelectAction
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|JdbcAdapter

@@ -97,6 +97,9 @@ class|class
 name|PrefetchSelectQuery
 extends|extends
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 block|{
 comment|/**      * The relationship path from root objects to the objects being prefetched.      */
 specifier|protected

@@ -62,10 +62,16 @@ name|getQuery
 parameter_list|()
 block|{
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|query

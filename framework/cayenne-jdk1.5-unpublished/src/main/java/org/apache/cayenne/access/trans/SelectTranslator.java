@@ -1202,12 +1202,18 @@ return|;
 block|}
 specifier|private
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|getSelectQuery
 parameter_list|()
 block|{
 return|return
 operator|(
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|getQuery
 argument_list|()
@@ -1248,6 +1254,9 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|query
 init|=
 name|getSelectQuery
@@ -1304,6 +1313,9 @@ return|return
 name|columns
 return|;
 block|}
+parameter_list|<
+name|T
+parameter_list|>
 name|List
 argument_list|<
 name|ColumnDescriptor
@@ -1317,6 +1329,9 @@ argument_list|>
 name|columns
 parameter_list|,
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 block|{
@@ -1370,6 +1385,9 @@ name|columns
 return|;
 block|}
 comment|/**      * Appends columns needed for object SelectQuery to the provided columns list.      */
+parameter_list|<
+name|T
+parameter_list|>
 name|List
 argument_list|<
 name|ColumnDescriptor
@@ -1384,6 +1402,9 @@ argument_list|>
 name|columns
 parameter_list|,
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 block|{
@@ -2302,6 +2323,9 @@ return|return
 name|columns
 return|;
 block|}
+parameter_list|<
+name|T
+parameter_list|>
 name|List
 argument_list|<
 name|ColumnDescriptor
@@ -2316,6 +2340,9 @@ argument_list|>
 name|columns
 parameter_list|,
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 block|{

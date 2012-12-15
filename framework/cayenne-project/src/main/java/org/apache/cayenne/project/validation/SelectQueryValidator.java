@@ -187,10 +187,16 @@ name|SelectQueryValidator
 extends|extends
 name|ConfigurationNodeValidator
 block|{
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|validate
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|ValidationResult
@@ -314,10 +320,16 @@ parameter_list|)
 block|{
 comment|// TODO: andrus 03/10/2010 - should this be implemented?
 block|}
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|validateOrdering
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|Entity
@@ -403,10 +415,16 @@ parameter_list|)
 block|{
 comment|// TODO: andrus 03/10/2010 - should this be implemented?
 block|}
+parameter_list|<
+name|T
+parameter_list|>
 name|Entity
 name|validateRoot
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|ValidationResult
@@ -584,10 +602,16 @@ return|return
 literal|null
 return|;
 block|}
+parameter_list|<
+name|T
+parameter_list|>
 name|void
 name|validateName
 parameter_list|(
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|,
 name|ValidationResult

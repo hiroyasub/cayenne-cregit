@@ -319,7 +319,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 return|;
 block|}
 name|EntityResolver
@@ -414,7 +415,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 return|;
 block|}
 else|else
@@ -436,6 +438,9 @@ argument_list|<
 name|String
 argument_list|,
 name|SelectQuery
+argument_list|<
+name|DataObject
+argument_list|>
 argument_list|>
 name|queriesByEntity
 init|=
@@ -445,6 +450,9 @@ argument_list|<
 name|String
 argument_list|,
 name|SelectQuery
+argument_list|<
+name|DataObject
+argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -502,6 +510,9 @@ name|entityName
 argument_list|)
 decl_stmt|;
 name|SelectQuery
+argument_list|<
+name|DataObject
+argument_list|>
 name|query
 decl_stmt|;
 if|if
@@ -537,6 +548,9 @@ name|query
 operator|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|DataObject
+argument_list|>
 argument_list|(
 name|entityName
 argument_list|)
@@ -638,6 +652,9 @@ decl_stmt|;
 for|for
 control|(
 name|SelectQuery
+argument_list|<
+name|DataObject
+argument_list|>
 name|query
 range|:
 name|queriesByEntity
