@@ -85,6 +85,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|Select
+import|;
+end_import
+
 begin_comment
 comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  */
 end_comment
@@ -249,6 +263,23 @@ name|List
 name|performQuery
 parameter_list|(
 name|Query
+name|query
+parameter_list|)
+function_decl|;
+comment|/**      * Executes a selecting query, returning a list of persistent objects or data rows.      */
+parameter_list|<
+name|T
+parameter_list|>
+name|List
+argument_list|<
+name|T
+argument_list|>
+name|select
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
 name|query
 parameter_list|)
 function_decl|;

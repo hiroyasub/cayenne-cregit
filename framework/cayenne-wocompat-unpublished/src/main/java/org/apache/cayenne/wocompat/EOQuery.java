@@ -249,8 +249,14 @@ begin_class
 specifier|public
 class|class
 name|EOQuery
+parameter_list|<
+name|T
+parameter_list|>
 extends|extends
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 block|{
 specifier|protected
 name|Map

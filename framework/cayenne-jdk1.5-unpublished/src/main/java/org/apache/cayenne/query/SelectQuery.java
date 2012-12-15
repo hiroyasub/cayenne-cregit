@@ -189,12 +189,20 @@ begin_class
 specifier|public
 class|class
 name|SelectQuery
+parameter_list|<
+name|T
+parameter_list|>
 extends|extends
 name|QualifiedQuery
 implements|implements
 name|ParameterizedQuery
 implements|,
 name|XMLSerializable
+implements|,
+name|Select
+argument_list|<
+name|T
+argument_list|>
 block|{
 specifier|public
 specifier|static
@@ -314,7 +322,7 @@ name|SelectQuery
 parameter_list|(
 name|Class
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|rootClass
 parameter_list|)
@@ -329,11 +337,46 @@ expr_stmt|;
 block|}
 comment|/**      * Creates a SelectQuery that selects objects of a given persistent class that match      * supplied qualifier.      *      * @param rootClass the Class of objects fetched by this query.      * @param qualifier an Expression indicating which objects should be fetched.      */
 specifier|public
+specifier|static
+parameter_list|<
+name|T
+parameter_list|>
+name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|rootClass
+parameter_list|,
+name|Expression
+name|qualifier
+parameter_list|)
+block|{
+return|return
+operator|new
+name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
+argument_list|(
+name|rootClass
+argument_list|,
+name|qualifier
+argument_list|)
+return|;
+block|}
+comment|/**      * Creates a SelectQuery that selects objects of a given persistent class that match      * supplied qualifier.      *      * @param rootClass the Class of objects fetched by this query.      * @param qualifier an Expression indicating which objects should be fetched.      */
+specifier|public
 name|SelectQuery
 parameter_list|(
 name|Class
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|rootClass
 parameter_list|,
@@ -357,7 +400,7 @@ name|SelectQuery
 parameter_list|(
 name|Class
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|rootClass
 parameter_list|,
@@ -1110,6 +1153,9 @@ block|}
 comment|/**      * A shortcut for {@link #queryWithParameters(Map, boolean)}that prunes parts of      * qualifier that have no parameter value set.      */
 specifier|public
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|queryWithParameters
 parameter_list|(
 name|Map
@@ -1133,6 +1179,9 @@ block|}
 comment|/**      * Returns a query built using this query as a prototype, using a set of parameters to      * build the qualifier.      *      * @see org.apache.cayenne.exp.Expression#expWithParameters(java.util.Map, boolean)      *      parameter substitution.      */
 specifier|public
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|queryWithParameters
 parameter_list|(
 name|Map
@@ -1149,10 +1198,16 @@ parameter_list|)
 block|{
 comment|// create a query replica
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|query
@@ -1224,7 +1279,10 @@ return|;
 block|}
 comment|/**      * Creates and returns a new SelectQuery built using this query as a prototype and      * substituting qualifier parameters with the values from the map.      *      * @since 1.1      */
 specifier|public
-name|Query
+name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
 name|createQuery
 parameter_list|(
 name|Map
