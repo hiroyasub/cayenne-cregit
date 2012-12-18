@@ -869,6 +869,13 @@ operator|.
 name|createObject
 argument_list|()
 decl_stmt|;
+name|descriptor
+operator|.
+name|injectValueHolders
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|registerNewObject
 argument_list|(
 operator|(
