@@ -451,7 +451,7 @@ name|buf
 operator|.
 name|append
 argument_list|(
-literal|"CREATE TABLE AUTO_PK_SUPPORT ("
+literal|"CREATE TABLE IF NOT EXISTS AUTO_PK_SUPPORT ("
 argument_list|)
 operator|.
 name|append
