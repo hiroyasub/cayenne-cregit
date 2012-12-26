@@ -83,12 +83,26 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|PrefetchTreeNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|SortOrder
 import|;
 end_import
 
 begin_comment
-comment|/**  *<p>A property in a DataObject.</p>  *   *<p>Used to construct Expressions quickly and with type-safety,  * and to construct Orderings</p>  *   *<p>Instances of this class are immutable</p>  *   * @param<E> The type this property returns.  * @since 3.2  */
+comment|/**  *<p>  * A property in a DataObject.  *</p>  *   *<p>  * Used to construct Expressions quickly and with type-safety, and to construct  * Orderings  *</p>  *   *<p>  * Instances of this class are immutable  *</p>  *   * @param<E>  *            The type this property returns.  * @since 3.2  */
 end_comment
 
 begin_class
@@ -99,13 +113,13 @@ parameter_list|<
 name|E
 parameter_list|>
 block|{
-comment|/** 	 * Name of the property in the object 	 */
+comment|/**      * Name of the property in the object      */
 specifier|private
 specifier|final
 name|String
 name|name
 decl_stmt|;
-comment|/** 	 * Constructs a new property with the given name. 	 */
+comment|/**      * Constructs a new property with the given name.      */
 specifier|public
 name|Property
 parameter_list|(
@@ -120,7 +134,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/** 	 * @return Name of the property in the object. 	 */
+comment|/**      * @return Name of the property in the object.      */
 specifier|public
 name|String
 name|getName
@@ -130,7 +144,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/** 	 * @return Constructs a property path by appending the argument to  	 * 	       the existing property separated by a dot 	 */
+comment|/**      * @return Constructs a property path by appending the argument to the      *         existing property separated by a dot      */
 specifier|public
 name|Property
 argument_list|<
@@ -158,7 +172,7 @@ name|property
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Constructs a property path by appending the argument to  	 * 	       the existing property separated by a dot 	 */
+comment|/**      * @return Constructs a property path by appending the argument to the      *         existing property separated by a dot      */
 specifier|public
 parameter_list|<
 name|T
@@ -195,7 +209,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing null. 	 */
+comment|/**      * @return An expression representing null.      */
 specifier|public
 name|Expression
 name|isNull
@@ -213,7 +227,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing a non-null value. 	 */
+comment|/**      * @return An expression representing a non-null value.      */
 specifier|public
 name|Expression
 name|isNotNull
@@ -234,7 +248,7 @@ name|notExp
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality to TRUE. 	 */
+comment|/**      * @return An expression representing equality to TRUE.      */
 specifier|public
 name|Expression
 name|isTrue
@@ -254,7 +268,7 @@ name|TRUE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality to FALSE. 	 */
+comment|/**      * @return An expression representing equality to FALSE.      */
 specifier|public
 name|Expression
 name|isFalse
@@ -274,7 +288,7 @@ name|FALSE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality to a value. 	 */
+comment|/**      * @return An expression representing equality to a value.      */
 specifier|public
 name|Expression
 name|eq
@@ -295,7 +309,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing inequality to a value. 	 */
+comment|/**      * @return An expression representing inequality to a value.      */
 specifier|public
 name|Expression
 name|ne
@@ -316,7 +330,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for a Database "Like" query. 	 */
+comment|/**      * @return An expression for a Database "Like" query.      */
 specifier|public
 name|Expression
 name|like
@@ -337,7 +351,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for a case insensitive "Like" query. 	 */
+comment|/**      * @return An expression for a case insensitive "Like" query.      */
 specifier|public
 name|Expression
 name|likeInsensitive
@@ -358,7 +372,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression checking for objects between a lower and upper bound inclusive 	 * 	 * @param lower The lower bound. 	 * @param upper The upper bound. 	 */
+comment|/**      * @return An expression checking for objects between a lower and upper      *         bound inclusive      *       * @param lower      *            The lower bound.      * @param upper      *            The upper bound.      */
 specifier|public
 name|Expression
 name|between
@@ -384,7 +398,7 @@ name|upper
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for finding objects with values in the given set. 	 */
+comment|/**      * @return An expression for finding objects with values in the given set.      */
 specifier|public
 name|Expression
 name|in
@@ -406,7 +420,7 @@ name|values
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A greater than Expression. 	 */
+comment|/**      * @return A greater than Expression.      */
 specifier|public
 name|Expression
 name|gt
@@ -427,7 +441,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A greater than or equal to Expression. 	 */
+comment|/**      * @return A greater than or equal to Expression.      */
 specifier|public
 name|Expression
 name|gte
@@ -448,7 +462,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A less than Expression. 	 */
+comment|/**      * @return A less than Expression.      */
 specifier|public
 name|Expression
 name|lt
@@ -469,7 +483,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A less than or equal to Expression. 	 */
+comment|/**      * @return A less than or equal to Expression.      */
 specifier|public
 name|Expression
 name|lte
@@ -490,7 +504,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Ascending sort orderings on this property. 	 */
+comment|/**      * @return Ascending sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|asc
@@ -509,7 +523,7 @@ name|ASCENDING
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Ascending sort orderings on this property. 	 */
+comment|/**      * @return Ascending sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -545,7 +559,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * @return Ascending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Ascending case insensitive sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|ascInsensitive
@@ -564,7 +578,7 @@ name|ASCENDING_INSENSITIVE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Ascending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Ascending case insensitive sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -600,7 +614,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * @return Descending sort orderings on this property. 	 */
+comment|/**      * @return Descending sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|desc
@@ -619,7 +633,7 @@ name|DESCENDING
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Descending sort orderings on this property. 	 */
+comment|/**      * @return Descending sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -655,7 +669,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * @return Descending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Descending case insensitive sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|descInsensitive
@@ -674,7 +688,7 @@ name|DESCENDING_INSENSITIVE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Descending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Descending case insensitive sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -708,6 +722,110 @@ argument_list|)
 expr_stmt|;
 return|return
 name|result
+return|;
+block|}
+specifier|public
+name|PrefetchTreeNode
+name|joint
+parameter_list|()
+block|{
+name|PrefetchTreeNode
+name|node
+init|=
+name|prefetch
+argument_list|()
+decl_stmt|;
+name|node
+operator|.
+name|setSemantics
+argument_list|(
+name|PrefetchTreeNode
+operator|.
+name|JOINT_PREFETCH_SEMANTICS
+argument_list|)
+expr_stmt|;
+return|return
+name|node
+return|;
+block|}
+specifier|public
+name|PrefetchTreeNode
+name|disjoint
+parameter_list|()
+block|{
+name|PrefetchTreeNode
+name|node
+init|=
+name|prefetch
+argument_list|()
+decl_stmt|;
+name|node
+operator|.
+name|setSemantics
+argument_list|(
+name|PrefetchTreeNode
+operator|.
+name|DISJOINT_PREFETCH_SEMANTICS
+argument_list|)
+expr_stmt|;
+return|return
+name|node
+return|;
+block|}
+specifier|public
+name|PrefetchTreeNode
+name|disjointById
+parameter_list|()
+block|{
+name|PrefetchTreeNode
+name|node
+init|=
+name|prefetch
+argument_list|()
+decl_stmt|;
+name|node
+operator|.
+name|setSemantics
+argument_list|(
+name|PrefetchTreeNode
+operator|.
+name|DISJOINT_BY_ID_PREFETCH_SEMANTICS
+argument_list|)
+expr_stmt|;
+return|return
+name|node
+return|;
+block|}
+name|PrefetchTreeNode
+name|prefetch
+parameter_list|()
+block|{
+name|PrefetchTreeNode
+name|root
+init|=
+operator|new
+name|PrefetchTreeNode
+argument_list|()
+decl_stmt|;
+name|PrefetchTreeNode
+name|node
+init|=
+name|root
+operator|.
+name|addPath
+argument_list|(
+name|name
+argument_list|)
+decl_stmt|;
+name|node
+operator|.
+name|setPhantom
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+return|return
+name|node
 return|;
 block|}
 block|}
