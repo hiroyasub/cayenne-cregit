@@ -800,6 +800,8 @@ name|PrefetchTreeNode
 name|prefetch
 parameter_list|()
 block|{
+comment|// TODO: not very efficient - we are creating a prefetch that
+comment|// SelectQuery would throw away and recreate...
 name|PrefetchTreeNode
 name|root
 init|=
