@@ -569,66 +569,14 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-name|int
-name|lastPk
-init|=
-name|Cayenne
-operator|.
-name|intPKForObject
-argument_list|(
-name|qualified1s
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-argument_list|)
-operator|-
-literal|1
-decl_stmt|;
-for|for
-control|(
-name|Qualified1
-name|qualified1
-range|:
-name|qualified1s
-control|)
-block|{
-if|if
-condition|(
-name|lastPk
-operator|+
-literal|1
-operator|!=
-name|Cayenne
-operator|.
-name|intPKForObject
-argument_list|(
-name|qualified1
-argument_list|)
-condition|)
-block|{
-name|fail
-argument_list|(
-literal|"Found gap in sequence number: "
-operator|+
-name|lastPk
-operator|+
-literal|" - "
-operator|+
-name|Cayenne
-operator|.
-name|intPKForObject
-argument_list|(
-name|qualified1
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-name|lastPk
-operator|++
-expr_stmt|;
-block|}
+comment|// PKs will be used in order most of the time, but the implementation doesn't guarantee it.
+comment|//		int lastPk = Cayenne.intPKForObject(qualified1s.get(0)) - 1;
+comment|//		for (Qualified1 qualified1 : qualified1s) {
+comment|//			if (lastPk+1 != Cayenne.intPKForObject(qualified1)) {
+comment|//				fail("Found gap in sequence number: " + lastPk + " - " + Cayenne.intPKForObject(qualified1));
+comment|//			}
+comment|//			lastPk++;
+comment|//		}
 block|}
 block|}
 end_class
