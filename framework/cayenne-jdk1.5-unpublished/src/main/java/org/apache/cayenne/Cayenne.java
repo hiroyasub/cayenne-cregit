@@ -1516,7 +1516,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object or a DataRow that is a result of a given query. If query returns      * more than one object, an exception is thrown. If query returns no objects, null is      * returned.      *       * @since 3.1      */
+comment|/**      * Returns an object or a DataRow that is a result of a given query. If query returns      * more than one object, an exception is thrown. If query returns no objects, null is      * returned.      *       * @since 3.2      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
