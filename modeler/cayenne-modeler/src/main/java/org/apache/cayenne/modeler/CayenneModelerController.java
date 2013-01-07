@@ -936,13 +936,6 @@ name|void
 name|projectClosedAction
 parameter_list|()
 block|{
-comment|// CAY-1786
-name|frame
-operator|.
-name|selectedTaxIndex
-operator|=
-literal|0
-expr_stmt|;
 comment|// --- update view
 name|frame
 operator|.

@@ -1506,7 +1506,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller that works with the project tree, tracking selection and dispatching  * project events.  */
+comment|/**  * A controller that works with the project tree, tracking selection and  * dispatching project events.  */
 end_comment
 
 begin_class
@@ -1516,7 +1516,7 @@ name|ProjectController
 extends|extends
 name|CayenneController
 block|{
-comment|/*      * A snapshot of the current state of the project controller. This was added so that      * we could support history of recent objects.      */
+comment|/*      * A snapshot of the current state of the project controller. This was added      * so that we could support history of recent objects.      */
 specifier|public
 class|class
 name|ControllerState
@@ -1617,34 +1617,6 @@ specifier|public
 name|ControllerState
 parameter_list|()
 block|{
-name|domain
-operator|=
-literal|null
-expr_stmt|;
-name|node
-operator|=
-literal|null
-expr_stmt|;
-name|map
-operator|=
-literal|null
-expr_stmt|;
-name|objEntity
-operator|=
-literal|null
-expr_stmt|;
-name|dbEntity
-operator|=
-literal|null
-expr_stmt|;
-name|embeddable
-operator|=
-literal|null
-expr_stmt|;
-name|procedure
-operator|=
-literal|null
-expr_stmt|;
 comment|// life is much easier if these guys are never null
 name|embAttrs
 operator|=
@@ -1702,24 +1674,8 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|query
-operator|=
-literal|null
-expr_stmt|;
-name|event
-operator|=
-literal|null
-expr_stmt|;
-name|paths
-operator|=
-literal|null
-expr_stmt|;
-name|isRefiring
-operator|=
-literal|false
-expr_stmt|;
 block|}
-comment|/*          * Used to determine if the val ControllerState is equivalent, which means if the          * event is refired again, will it end up in the same place on the screen. This          * get's a bit messy at the end, because of inheritance heirarchy issues.          */
+comment|/*          * Used to determine if the val ControllerState is equivalent, which          * means if the event is refired again, will it end up in the same place          * on the screen. This get's a bit messy at the end, because of          * inheritance heirarchy issues.          */
 specifier|public
 name|boolean
 name|isEquivalent
@@ -1959,6 +1915,10 @@ name|boolean
 name|dirty
 decl_stmt|;
 specifier|protected
+name|int
+name|entityTabSelection
+decl_stmt|;
+specifier|protected
 name|Project
 name|project
 decl_stmt|;
@@ -1984,7 +1944,7 @@ specifier|private
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
-comment|/**      * Project files watcher. When project file is changed, user will be asked to confirm      * loading the changes      */
+comment|/**      * Project files watcher. When project file is changed, user will be asked      * to confirm loading the changes      */
 name|ProjectWatchdog
 name|watchdog
 decl_stmt|;
@@ -2165,8 +2125,6 @@ expr_stmt|;
 name|updateEntityResolver
 argument_list|()
 expr_stmt|;
-comment|// addDomainListener(((ModelerProjectConfiguration) project
-comment|// .getConfiguration()).getGraphRegistry());
 block|}
 block|}
 block|}
@@ -2254,7 +2212,7 @@ return|return
 name|projectControllerPreferences
 return|;
 block|}
-comment|/**      * Returns top preferences for the current project, throwing an exception if no      * project is selected.      */
+comment|/**      * Returns top preferences for the current project, throwing an exception if      * no project is selected.      */
 specifier|public
 name|Preferences
 name|getPreferenceForDataDomain
@@ -2300,7 +2258,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns preferences object for the current DataMap. If no preferences exist for the      * current DataMap, a new Preferences object is created. If no DataMap is currently      * selected, an exception is thrown. An optional nameSuffix allows to address more      * than one defaults instance for a single DataMap.      */
+comment|/**      * Returns preferences object for the current DataMap. If no preferences      * exist for the current DataMap, a new Preferences object is created. If no      * DataMap is currently selected, an exception is thrown. An optional      * nameSuffix allows to address more than one defaults instance for a single      * DataMap.      */
 specifier|public
 name|DataMapDefaults
 name|getDataMapPreferences
@@ -2411,7 +2369,7 @@ name|pref
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns preferences object for the current DataMap, throwing an exception if no      * DataMap is selected.      */
+comment|/**      * Returns preferences object for the current DataMap, throwing an exception      * if no DataMap is selected.      */
 specifier|public
 name|DataNodeDefaults
 name|getDataNodePreferences
@@ -2539,6 +2497,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|setEntityTabSelection
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 name|listenerList
 operator|=
 operator|new
@@ -2551,7 +2514,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/*      * Allow the user to change the default history size. TODO When a user changes their      * preferences it should call this method. I don't know how the preferences work, so I      * will leave this to someone else to do. Garry      */
+comment|/*      * Allow the user to change the default history size. TODO When a user      * changes their preferences it should call this method. I don't know how      * the preferences work, so I will leave this to someone else to do. Garry      */
 specifier|public
 name|void
 name|setHistorySize
@@ -4055,7 +4018,8 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
-comment|// call different methods depending on whether domain was opened or closed
+comment|// call different methods depending on whether domain was opened or
+comment|// closed
 if|if
 condition|(
 name|e
@@ -4336,7 +4300,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Informs all listeners of the DataNodeEvent. Does not send the event to its      * originator.      */
+comment|/**      * Informs all listeners of the DataNodeEvent. Does not send the event to      * its originator.      */
 specifier|public
 name|void
 name|fireDataNodeEvent
@@ -5041,7 +5005,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Informs all listeners of the ProcedureEvent. Does not send the event to its      * originator.      */
+comment|/**      * Informs all listeners of the ProcedureEvent. Does not send the event to      * its originator.      */
 specifier|public
 name|void
 name|fireQueryEvent
@@ -5159,7 +5123,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Informs all listeners of the ProcedureEvent. Does not send the event to its      * originator.      */
+comment|/**      * Informs all listeners of the ProcedureEvent. Does not send the event to      * its originator.      */
 specifier|public
 name|void
 name|fireProcedureEvent
@@ -5277,7 +5241,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Informs all listeners of the ProcedureEvent. Does not send the event to its      * originator.      */
+comment|/**      * Informs all listeners of the ProcedureEvent. Does not send the event to      * its originator.      */
 specifier|public
 name|void
 name|fireProcedureParameterEvent
@@ -5549,7 +5513,8 @@ condition|)
 block|{
 break|break;
 block|}
-comment|// if it doesn't find it within 5 tries it is probably stuck in a loop
+comment|// if it doesn't find it within 5 tries it is probably stuck in
+comment|// a loop
 if|if
 condition|(
 operator|++
@@ -5685,7 +5650,8 @@ condition|)
 block|{
 break|break;
 block|}
-comment|// if it doesn't find it within 5 tries it is probably stuck in a loop
+comment|// if it doesn't find it within 5 tries it is probably stuck in
+comment|// a loop
 if|if
 condition|(
 operator|++
@@ -5729,7 +5695,8 @@ name|isRefiring
 operator|=
 literal|true
 expr_stmt|;
-comment|// the order of the following is checked in most specific to generic because
+comment|// the order of the following is checked in most specific to generic
+comment|// because
 comment|// of the inheritance heirarchy
 name|de
 operator|.
@@ -8281,7 +8248,7 @@ operator|=
 name|callbackMethods
 expr_stmt|;
 block|}
-comment|/**      * adds callback method manipulation listener      *       * @param listener listener      */
+comment|/**      * adds callback method manipulation listener      *       * @param listener      *            listener      */
 specifier|public
 name|void
 name|addCallbackMethodListener
@@ -8302,7 +8269,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * fires callback method manipulation event      *       * @param e event      */
+comment|/**      * fires callback method manipulation event      *       * @param e      *            event      */
 specifier|public
 name|void
 name|fireCallbackMethodEvent
@@ -8402,7 +8369,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * adds listener class manipulation listener      *       * @param listener listener      */
+comment|/**      * adds listener class manipulation listener      *       * @param listener      *            listener      */
 specifier|public
 name|void
 name|addEntityListenerListener
@@ -8423,7 +8390,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * fires entity listener manipulation event      *       * @param e event      */
+comment|/**      * fires entity listener manipulation event      *       * @param e      *            event      */
 specifier|public
 name|void
 name|fireEntityListenerEvent
@@ -8533,7 +8500,7 @@ return|return
 name|watchdog
 return|;
 block|}
-comment|/**      * Returns currently selected object, null if there are none, List if there are      * several      */
+comment|/**      * Returns currently selected object, null if there are none, List if there      * are several      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -8712,7 +8679,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**              * Here we sort the list of objects to minimize the risk that objects will be              * pasted incorrectly. For instance, ObjEntity should go before Query, to              * increase chances that Query's root would be set.              */
+comment|/**              * Here we sort the list of objects to minimize the risk that              * objects will be pasted incorrectly. For instance, ObjEntity              * should go before Query, to increase chances that Query's root              * would be set.              */
 name|Collections
 operator|.
 name|sort
@@ -9187,6 +9154,32 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|int
+name|getEntityTabSelection
+parameter_list|()
+block|{
+return|return
+name|entityTabSelection
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|void
+name|setEntityTabSelection
+parameter_list|(
+name|int
+name|entityTabSelection
+parameter_list|)
+block|{
+name|this
+operator|.
+name|entityTabSelection
+operator|=
+name|entityTabSelection
+expr_stmt|;
 block|}
 block|}
 end_class
