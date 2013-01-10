@@ -1594,6 +1594,22 @@ name|EventObject
 name|e
 parameter_list|)
 block|{
+comment|// hasn't been initialized yet, nothing to do
+if|if
+condition|(
+operator|!
+operator|(
+name|table
+operator|.
+name|getModel
+argument_list|()
+operator|instanceof
+name|ObjRelationshipTableModel
+operator|)
+condition|)
+block|{
+return|return;
+block|}
 if|if
 condition|(
 name|e
