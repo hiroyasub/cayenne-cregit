@@ -607,6 +607,26 @@ if|else if
 condition|(
 name|content
 operator|instanceof
+name|Embeddable
+condition|)
+block|{
+name|rAction
+operator|.
+name|removeEmbeddable
+argument_list|(
+name|map
+argument_list|,
+operator|(
+name|Embeddable
+operator|)
+name|content
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|content
+operator|instanceof
 name|Query
 condition|)
 block|{
