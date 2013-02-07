@@ -934,14 +934,12 @@ decl_stmt|;
 name|String
 name|mapFilePath
 init|=
-literal|"file:"
-operator|+
 name|testFolder
 operator|.
-name|getCanonicalPath
+name|toURI
 argument_list|()
 operator|+
-literal|"/../test.map.xml"
+literal|"../test.map.xml"
 decl_stmt|;
 name|String
 name|mapFileName
