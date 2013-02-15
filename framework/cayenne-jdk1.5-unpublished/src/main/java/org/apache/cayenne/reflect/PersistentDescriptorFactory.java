@@ -21,7 +21,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashSet
+name|HashMap
 import|;
 end_import
 
@@ -31,7 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|Map
 import|;
 end_import
 
@@ -1150,16 +1150,23 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// using map instead of a Set to collect attributes, as
+comment|// ObjEntity.getAttribute may return a decorator for attribute on
+comment|// each call, resulting in dupes
 specifier|final
-name|Set
+name|Map
 argument_list|<
+name|String
+argument_list|,
 name|ObjAttribute
 argument_list|>
 name|attributes
 init|=
 operator|new
-name|HashSet
+name|HashMap
 argument_list|<
+name|String
+argument_list|,
 name|ObjAttribute
 argument_list|>
 argument_list|()
@@ -1319,8 +1326,13 @@ expr_stmt|;
 block|}
 name|attributes
 operator|.
-name|add
+name|put
 argument_list|(
+name|objectAttribute
+operator|.
+name|getName
+argument_list|()
+argument_list|,
 name|objectAttribute
 argument_list|)
 expr_stmt|;
@@ -1351,10 +1363,9 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|attributes
-operator|.
-name|add
-argument_list|(
+name|ObjAttribute
+name|attribute
+init|=
 operator|(
 name|ObjAttribute
 operator|)
@@ -1367,6 +1378,14 @@ name|getAttribute
 argument_list|(
 name|path
 argument_list|)
+decl_stmt|;
+name|attributes
+operator|.
+name|put
+argument_list|(
+name|path
+argument_list|,
+name|attribute
 argument_list|)
 expr_stmt|;
 block|}
@@ -1379,6 +1398,9 @@ operator|.
 name|setDiscriminatorColumns
 argument_list|(
 name|attributes
+operator|.
+name|values
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|descriptor
