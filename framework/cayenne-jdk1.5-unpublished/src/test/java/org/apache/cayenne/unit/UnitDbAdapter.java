@@ -359,6 +359,24 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|getIdentifiersStartQuote
+parameter_list|()
+block|{
+return|return
+literal|"\""
+return|;
+block|}
+specifier|public
+name|String
+name|getIdentifiersEndQuote
+parameter_list|()
+block|{
+return|return
+literal|"\""
+return|;
+block|}
 comment|/**      * Drops all table constraints.      */
 specifier|public
 name|void

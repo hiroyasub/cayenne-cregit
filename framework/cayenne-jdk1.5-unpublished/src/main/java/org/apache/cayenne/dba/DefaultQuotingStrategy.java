@@ -90,6 +90,7 @@ comment|/**  * @since 3.2 this is a top-level class.  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|DefaultQuotingStrategy
 implements|implements
@@ -103,6 +104,7 @@ specifier|private
 name|String
 name|startQuote
 decl_stmt|;
+specifier|public
 name|DefaultQuotingStrategy
 parameter_list|(
 name|String

@@ -166,7 +166,6 @@ name|SybaseUnitDbAdapter
 extends|extends
 name|UnitDbAdapter
 block|{
-comment|/**      * Constructor for SybaseDelegate.      *       * @param adapter      */
 specifier|public
 name|SybaseUnitDbAdapter
 parameter_list|(
@@ -179,6 +178,24 @@ argument_list|(
 name|adapter
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+name|String
+name|getIdentifiersStartQuote
+parameter_list|()
+block|{
+return|return
+literal|"["
+return|;
+block|}
+specifier|public
+name|String
+name|getIdentifiersEndQuote
+parameter_list|()
+block|{
+return|return
+literal|"]"
+return|;
 block|}
 annotation|@
 name|Override

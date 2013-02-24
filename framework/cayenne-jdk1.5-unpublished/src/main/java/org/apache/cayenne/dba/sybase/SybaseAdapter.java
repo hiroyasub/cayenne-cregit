@@ -223,6 +223,20 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|DefaultQuotingStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|JdbcAdapter
 import|;
 end_import
@@ -238,6 +252,20 @@ operator|.
 name|dba
 operator|.
 name|PkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|QuotingStrategy
 import|;
 end_import
 
@@ -270,7 +298,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.sybase.com">Sybase RDBMS</a>.  */
+comment|/**  * DbAdapter implementation for<a href="http://www.sybase.com">Sybase  * RDBMS</a>.  */
 end_comment
 
 begin_class
@@ -280,20 +308,6 @@ name|SybaseAdapter
 extends|extends
 name|JdbcAdapter
 block|{
-specifier|final
-specifier|static
-name|String
-name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_START
-init|=
-literal|"["
-decl_stmt|;
-specifier|final
-specifier|static
-name|String
-name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_END
-init|=
-literal|"]"
-decl_stmt|;
 specifier|public
 name|SybaseAdapter
 parameter_list|(
@@ -354,26 +368,22 @@ name|extendedTypeFactories
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
-specifier|public
-name|void
-name|initIdentifiersQuotes
+specifier|protected
+name|QuotingStrategy
+name|createQuotingStrategy
 parameter_list|()
 block|{
-name|this
-operator|.
-name|identifiersStartQuote
-operator|=
-name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_START
-expr_stmt|;
-name|this
-operator|.
-name|identifiersEndQuote
-operator|=
-name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_END
-expr_stmt|;
+return|return
+operator|new
+name|DefaultQuotingStrategy
+argument_list|(
+literal|"["
+argument_list|,
+literal|"]"
+argument_list|)
+return|;
 block|}
 comment|/**      * @since 3.0      */
 annotation|@
@@ -401,7 +411,7 @@ return|return
 literal|"go"
 return|;
 block|}
-comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
+comment|/**      * Installs appropriate ExtendedTypes as converters for passing values      * between JDBC and Java layers.      */
 annotation|@
 name|Override
 specifier|protected
@@ -447,7 +457,8 @@ literal|false
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// address Sybase driver inability to handle java.lang.Short and java.lang.Byte
+comment|// address Sybase driver inability to handle java.lang.Short and
+comment|// java.lang.Byte
 name|map
 operator|.
 name|registerType
@@ -471,7 +482,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of SybasePkGenerator.      */
+comment|/**      * Creates and returns a primary key generator. Overrides superclass      * implementation to return an instance of SybasePkGenerator.      */
 annotation|@
 name|Override
 specifier|protected
