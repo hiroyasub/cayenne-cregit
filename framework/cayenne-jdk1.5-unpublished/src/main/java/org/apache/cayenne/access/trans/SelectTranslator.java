@@ -173,6 +173,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbAttribute
 import|;
 end_import
@@ -458,7 +472,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder of JDBC PreparedStatements based on Cayenne SelectQueries. Translates  * SelectQuery to parameterized SQL string and wraps it in a PreparedStatement.  * SelectTranslator is stateful and thread-unsafe.  */
+comment|/**  * A builder of JDBC PreparedStatements based on Cayenne SelectQueries.  * Translates SelectQuery to parameterized SQL string and wraps it in a  * PreparedStatement. SelectTranslator is stateful and thread-unsafe.  */
 end_comment
 
 begin_class
@@ -591,7 +605,7 @@ decl_stmt|;
 name|boolean
 name|suppressingDistinct
 decl_stmt|;
-comment|/**      * If set to<code>true</code>, indicates that distinct select query is required no      * matter what the original query settings where. This flag can be set when joins are      * created using "to-many" relationships.      */
+comment|/**      * If set to<code>true</code>, indicates that distinct select query is      * required no matter what the original query settings where. This flag can      * be set when joins are created using "to-many" relationships.      */
 name|boolean
 name|forcingDistinct
 decl_stmt|;
@@ -626,45 +640,20 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|DataMap
+name|dataMap
+init|=
+name|queryMetadata
+operator|.
+name|getDataMap
+argument_list|()
+decl_stmt|;
 name|JoinStack
 name|joins
 init|=
 name|getJoinStack
 argument_list|()
 decl_stmt|;
-name|boolean
-name|status
-decl_stmt|;
-if|if
-condition|(
-name|queryMetadata
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|queryMetadata
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-condition|)
-block|{
-name|status
-operator|=
-literal|true
-expr_stmt|;
-block|}
-else|else
-block|{
-name|status
-operator|=
-literal|false
-expr_stmt|;
-block|}
 name|QuotingStrategy
 name|strategy
 init|=
@@ -672,9 +661,7 @@ name|getAdapter
 argument_list|()
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|forcingDistinct
 operator|=
@@ -828,16 +815,31 @@ range|:
 name|resultColumns
 control|)
 block|{
+name|String
+name|fullName
+init|=
+name|strategy
+operator|.
+name|quotedIdentifier
+argument_list|(
+name|dataMap
+argument_list|,
+name|column
+operator|.
+name|getNamePrefix
+argument_list|()
+argument_list|,
+name|column
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|selectColumnExpList
 operator|.
 name|add
 argument_list|(
-name|column
-operator|.
-name|getQualifiedColumnNameWithQuoteSqlIdentifiers
-argument_list|(
-name|strategy
-argument_list|)
+name|fullName
 argument_list|)
 expr_stmt|;
 block|}
@@ -1090,7 +1092,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Handles appending optional limit and offset clauses. This implementation does      * nothing, deferring to subclasses to define the LIMIT/OFFSET clause syntax.      *       * @since 3.0      */
+comment|/**      * Handles appending optional limit and offset clauses. This implementation      * does nothing, deferring to subclasses to define the LIMIT/OFFSET clause      * syntax.      *       * @since 3.0      */
 specifier|protected
 name|void
 name|appendLimitAndOffsetClauses
@@ -1158,7 +1160,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a map of ColumnDescriptors keyed by ObjAttribute for columns that may need      * to be reprocessed manually due to incompatible mappings along the inheritance      * hierarchy.      *       * @since 1.2      */
+comment|/**      * Returns a map of ColumnDescriptors keyed by ObjAttribute for columns that      * may need to be reprocessed manually due to incompatible mappings along      * the inheritance hierarchy.      *       * @since 1.2      */
 specifier|public
 name|Map
 argument_list|<
@@ -1190,7 +1192,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Returns true if SelectTranslator determined that a query requiring DISTINCT can't      * be run with DISTINCT keyword for internal reasons. If this method returns true,      * DataNode may need to do in-memory distinct filtering.      *       * @since 1.1      */
+comment|/**      * Returns true if SelectTranslator determined that a query requiring      * DISTINCT can't be run with DISTINCT keyword for internal reasons. If this      * method returns true, DataNode may need to do in-memory distinct      * filtering.      *       * @since 1.1      */
 specifier|public
 name|boolean
 name|isSuppressingDistinct
@@ -1384,7 +1386,7 @@ return|return
 name|columns
 return|;
 block|}
-comment|/**      * Appends columns needed for object SelectQuery to the provided columns list.      */
+comment|/**      * Appends columns needed for object SelectQuery to the provided columns      * list.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -1720,7 +1722,8 @@ argument_list|(
 name|visitor
 argument_list|)
 expr_stmt|;
-comment|//stack should be reset, because all root table attributes go with "t0" table alias
+comment|// stack should be reset, because all root table attributes go with "t0"
+comment|// table alias
 name|resetJoinStack
 argument_list|()
 expr_stmt|;
@@ -1924,7 +1927,8 @@ name|getPrimaryKeys
 argument_list|()
 control|)
 block|{
-comment|// note that we my select a source attribute, but label it as
+comment|// note that we my select a source attribute, but
+comment|// label it as
 comment|// target for simplified snapshot processing
 name|appendColumn
 argument_list|(
@@ -1976,7 +1980,8 @@ name|adjacentJointNodes
 argument_list|()
 control|)
 block|{
-comment|// for each prefetch add all joins plus columns from the target entity
+comment|// for each prefetch add all joins plus columns from the target
+comment|// entity
 name|Expression
 name|prefetchExp
 init|=
@@ -2072,10 +2077,13 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// add columns from the target entity, including those that are matched
-comment|// against the FK of the source entity. This is needed to determine
+comment|// add columns from the target entity, including those that are
+comment|// matched
+comment|// against the FK of the source entity. This is needed to
+comment|// determine
 comment|// whether optional relationships are null
-comment|// go via target OE to make sure that Java types are mapped correctly...
+comment|// go via target OE to make sure that Java types are mapped
+comment|// correctly...
 name|ObjRelationship
 name|targetRel
 init|=
@@ -2394,7 +2402,8 @@ name|getPrimaryKeys
 argument_list|()
 control|)
 block|{
-comment|// synthetic objattributes can't reliably lookup their DbAttribute, so do
+comment|// synthetic objattributes can't reliably lookup their DbAttribute,
+comment|// so do
 comment|// it manually..
 name|DbAttribute
 name|dbAttribute
@@ -2527,7 +2536,8 @@ argument_list|(
 name|column
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus, 5/7/2006 - replace 'columns' collection with this map, as it
+comment|// TODO: andrus, 5/7/2006 - replace 'columns' collection with this
+comment|// map, as it
 comment|// is redundant
 name|defaultAttributesByColumn
 operator|.

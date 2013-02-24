@@ -258,12 +258,9 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|columnNew
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -438,10 +435,10 @@ name|add
 argument_list|(
 literal|"ALTER TABLE "
 operator|+
-name|getQuotingStrategy
-argument_list|(
 name|adapter
-argument_list|)
+operator|.
+name|getQuotingStrategy
+argument_list|()
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(

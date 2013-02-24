@@ -147,7 +147,7 @@ name|StringBuffer
 name|sqlBuffer
 parameter_list|,
 name|QuotingStrategy
-name|context
+name|quotingStrategy
 parameter_list|)
 block|{
 comment|// http://www.postgresql.org/docs/8.2/static/sql-altertable.html
@@ -162,7 +162,7 @@ name|sqlBuffer
 operator|.
 name|append
 argument_list|(
-name|context
+name|quotingStrategy
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
@@ -181,14 +181,11 @@ name|sqlBuffer
 operator|.
 name|append
 argument_list|(
-name|context
+name|quotingStrategy
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|columnNew
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

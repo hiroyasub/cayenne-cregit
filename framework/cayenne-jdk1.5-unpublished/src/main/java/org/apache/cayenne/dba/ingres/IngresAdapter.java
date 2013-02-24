@@ -245,20 +245,6 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|QuotingStrategy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
 name|TypesMapping
 import|;
 end_import
@@ -348,7 +334,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a  * href="http://opensource.ca.com/projects/ingres/">Ingres</a>. Sample connection settings  * to use with Ingres are shown below:  *   *<pre>  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
+comment|/**  * DbAdapter implementation for<a  * href="http://opensource.ca.com/projects/ingres/">Ingres</a>. Sample  * connection settings to use with Ingres are shown below:  *   *<pre>  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
 end_comment
 
 begin_class
@@ -646,40 +632,6 @@ name|DbAttribute
 name|at
 parameter_list|)
 block|{
-name|boolean
-name|status
-init|=
-operator|(
-name|at
-operator|.
-name|getEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|)
-operator|&&
-name|at
-operator|.
-name|getEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-decl_stmt|;
-name|QuotingStrategy
-name|context
-init|=
-name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
-decl_stmt|;
 name|String
 index|[]
 name|types
@@ -752,14 +704,11 @@ name|buf
 operator|.
 name|append
 argument_list|(
-name|context
+name|quotingStrategy
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|at
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 operator|.

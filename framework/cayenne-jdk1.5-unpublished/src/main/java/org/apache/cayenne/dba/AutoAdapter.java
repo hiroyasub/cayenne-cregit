@@ -747,6 +747,9 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.2      */
+annotation|@
+name|Deprecated
 specifier|public
 name|QuotingStrategy
 name|getQuotingStrategy
@@ -763,6 +766,20 @@ name|getQuotingStrategy
 argument_list|(
 name|isQuoteStrategy
 argument_list|)
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|QuotingStrategy
+name|getQuotingStrategy
+parameter_list|()
+block|{
+return|return
+name|getAdapter
+argument_list|()
+operator|.
+name|getQuotingStrategy
+argument_list|()
 return|;
 block|}
 block|}

@@ -298,7 +298,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API and a common superclass for testing various database features. Different  * databases support different feature sets that need to be tested differently. Many  * things implemented in subclasses may become future candidates for inclusion in the  * corresponding adapter code.  */
+comment|/**  * Defines API and a common superclass for testing various database features.  * Different databases support different feature sets that need to be tested  * differently. Many things implemented in subclasses may become future  * candidates for inclusion in the corresponding adapter code.  */
 end_comment
 
 begin_class
@@ -504,33 +504,13 @@ condition|)
 block|{
 continue|continue;
 block|}
-name|boolean
-name|status
-init|=
-name|entity
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|entity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
 name|adapter
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 for|for
 control|(
@@ -648,7 +628,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns whether the target database supports expressions in the WHERE clause in the      * form "VALUE = COLUMN".      */
+comment|/**      * Returns whether the target database supports expressions in the WHERE      * clause in the form "VALUE = COLUMN".      */
 specifier|public
 name|boolean
 name|supportsReverseComparison
@@ -658,7 +638,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns whether an aggregate query like "SELECT min(X) FROM" returns a NULL row      * when no data matched the WHERE clause. Most DB's do.      */
+comment|/**      * Returns whether an aggregate query like "SELECT min(X) FROM" returns a      * NULL row when no data matched the WHERE clause. Most DB's do.      */
 specifier|public
 name|boolean
 name|supportNullRowForAggregateFunctions
@@ -687,7 +667,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns whether the DB supports a TRIM function for an arbitrary character.      */
+comment|/**      * Returns whether the DB supports a TRIM function for an arbitrary      * character.      */
 specifier|public
 name|boolean
 name|supportsTrimChar
@@ -697,7 +677,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns false if stored procedures are not supported or if it is a victim of      * CAY-148 (column name capitalization).      */
+comment|/**      * Returns false if stored procedures are not supported or if it is a victim      * of CAY-148 (column name capitalization).      */
 specifier|public
 name|boolean
 name|canMakeObjectsOutOfProcedures
@@ -766,7 +746,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns true if the target database has support for large objects (BLOB, CLOB).      */
+comment|/**      * Returns true if the target database has support for large objects (BLOB,      * CLOB).      */
 specifier|public
 name|boolean
 name|supportsLobs
@@ -935,7 +915,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a file under test resources DDL directory for the specified database.      */
+comment|/**      * Returns a file under test resources DDL directory for the specified      * database.      */
 specifier|private
 name|String
 name|ddlString
@@ -1118,7 +1098,7 @@ name|supportsLobs
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a map of database constraints with DbEntity names used as keys, and      * Collections of constraint names as values.      */
+comment|/**      * Returns a map of database constraints with DbEntity names used as keys,      * and Collections of constraint names as values.      */
 specifier|protected
 name|Map
 argument_list|<
@@ -1204,33 +1184,13 @@ condition|)
 block|{
 continue|continue;
 block|}
-name|boolean
-name|status
-init|=
-name|entity
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|entity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
 name|adapter
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 comment|// Get all constraints for the table
 name|ResultSet
@@ -1345,6 +1305,8 @@ name|strategy
 operator|.
 name|quotedIdentifier
 argument_list|(
+name|entity
+argument_list|,
 name|fk
 argument_list|)
 argument_list|)
@@ -1363,23 +1325,6 @@ block|}
 block|}
 return|return
 name|constraintMap
-return|;
-block|}
-specifier|public
-name|QuotingStrategy
-name|getQuotingStrategy
-parameter_list|(
-name|boolean
-name|status
-parameter_list|)
-block|{
-return|return
-name|adapter
-operator|.
-name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
 return|;
 block|}
 specifier|public

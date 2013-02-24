@@ -372,13 +372,20 @@ name|DbAttribute
 name|column
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.0      */
+comment|/**      * @since 3.0      * @deprecated since 3.2 use {@link #getQuotingStrategy()}.      */
+annotation|@
+name|Deprecated
 name|QuotingStrategy
 name|getQuotingStrategy
 parameter_list|(
 name|boolean
 name|needQuotes
 parameter_list|)
+function_decl|;
+comment|/**      * Returns SQL identifier quoting strategy object       *       * @since 3.2      */
+name|QuotingStrategy
+name|getQuotingStrategy
+parameter_list|()
 function_decl|;
 block|}
 end_interface

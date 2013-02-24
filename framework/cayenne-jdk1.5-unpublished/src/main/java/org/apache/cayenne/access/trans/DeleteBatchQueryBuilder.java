@@ -128,7 +128,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translator for delete BatchQueries. Creates parametrized DELETE SQL statements.  */
+comment|/**  * Translator for delete BatchQueries. Creates parameterized DELETE SQL  * statements.  */
 end_comment
 
 begin_class
@@ -163,30 +163,6 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|boolean
-name|status
-init|=
-name|batch
-operator|.
-name|getDbEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|batch
-operator|.
-name|getDbEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
@@ -194,9 +170,7 @@ name|getAdapter
 argument_list|()
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|StringBuffer
 name|query
@@ -432,7 +406,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @return index of first parameter in delete clause       */
+comment|/**      * @return index of first parameter in delete clause      */
 specifier|protected
 name|int
 name|getFirstParameterIndex

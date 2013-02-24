@@ -358,7 +358,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.postgresql.org">PostgreSQL RDBMS</a>.  * Sample connection settings to use with PostgreSQL are shown below:  *   *<pre>  *      postgres.jdbc.username = test  *      postgres.jdbc.password = secret  *      postgres.jdbc.url = jdbc:postgresql://serverhostname/cayenne  *      postgres.jdbc.driver = org.postgresql.Driver  *</pre>  */
+comment|/**  * DbAdapter implementation for<a href="http://www.postgresql.org">PostgreSQL  * RDBMS</a>. Sample connection settings to use with PostgreSQL are shown  * below:  *   *<pre>  *      postgres.jdbc.username = test  *      postgres.jdbc.password = secret  *      postgres.jdbc.url = jdbc:postgresql://serverhostname/cayenne  *      postgres.jdbc.driver = org.postgresql.Driver  *</pre>  */
 end_comment
 
 begin_class
@@ -465,7 +465,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
+comment|/**      * Installs appropriate ExtendedTypes as converters for passing values      * between JDBC and Java layers.      */
 annotation|@
 name|Override
 specifier|protected
@@ -610,7 +610,7 @@ name|allowNulls
 argument_list|)
 return|;
 block|}
-comment|/**      * Customizes table creating procedure for PostgreSQL. One difference with generic      * implementation is that "bytea" type has no explicit length unlike similar binary      * types in other databases.      *       * @since 1.0.2      */
+comment|/**      * Customizes table creating procedure for PostgreSQL. One difference with      * generic implementation is that "bytea" type has no explicit length unlike      * similar binary types in other databases.      *       * @since 1.0.2      */
 annotation|@
 name|Override
 specifier|public
@@ -621,46 +621,11 @@ name|DbEntity
 name|ent
 parameter_list|)
 block|{
-name|boolean
-name|status
-decl_stmt|;
-if|if
-condition|(
-name|ent
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|ent
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-condition|)
-block|{
-name|status
-operator|=
-literal|true
-expr_stmt|;
-block|}
-else|else
-block|{
-name|status
-operator|=
-literal|false
-expr_stmt|;
-block|}
 name|QuotingStrategy
 name|context
 init|=
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|StringBuilder
 name|buf
@@ -848,12 +813,9 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|at
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 operator|.
@@ -887,6 +849,7 @@ operator|.
 name|getMaxLength
 argument_list|()
 decl_stmt|;
+comment|// Postgres does not support notation float(a, b)
 name|int
 name|scale
 init|=
@@ -910,12 +873,6 @@ name|Types
 operator|.
 name|FLOAT
 operator|)
-comment|// Postgress
-comment|// don't
-comment|// support
-comment|// notations
-comment|// float(a,
-comment|// b)
 condition|?
 name|at
 operator|.
@@ -1103,12 +1060,9 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|at
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1217,15 +1171,7 @@ name|QuotingStrategy
 name|context
 init|=
 name|getQuotingStrategy
-argument_list|(
-name|table
-operator|.
-name|getDataMap
 argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-argument_list|)
 decl_stmt|;
 name|StringBuffer
 name|buf

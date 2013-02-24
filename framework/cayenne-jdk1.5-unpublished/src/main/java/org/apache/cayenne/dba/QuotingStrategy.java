@@ -25,7 +25,63 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbJoin
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|Entity
 import|;
 end_import
 
@@ -38,7 +94,7 @@ specifier|public
 interface|interface
 name|QuotingStrategy
 block|{
-comment|/**      * Returns a properly quoted identifier.      *       * @deprecated use {@link #quotedIdentifier(String...)}      */
+comment|/**      * Returns a properly quoted identifier.      *       * @deprecated since 3.2      */
 annotation|@
 name|Deprecated
 name|String
@@ -66,10 +122,49 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Builds a dot-separated qualifier, inclosing parts in quotations according      * to this strategy algorithm. Any of the parts can be null, in which case      * it will be skipped.      *       * @since 3.2      */
+comment|/**      *       * @since 3.2      */
+name|String
+name|quotedName
+parameter_list|(
+name|DbAttribute
+name|attribute
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+name|String
+name|quotedSourceName
+parameter_list|(
+name|DbJoin
+name|join
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+name|String
+name|quotedTargetName
+parameter_list|(
+name|DbJoin
+name|join
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
 name|String
 name|quotedIdentifier
 parameter_list|(
+name|Entity
+name|entity
+parameter_list|,
+name|String
+modifier|...
+name|identifierParts
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+name|String
+name|quotedIdentifier
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|,
 name|String
 modifier|...
 name|identifierParts

@@ -149,7 +149,8 @@ name|dataSourceFactory
 decl_stmt|;
 annotation|@
 name|Inject
-comment|// injecting provider to make this provider independent from scoping of ServerRuntime
+comment|// injecting provider to make this provider independent from scoping of
+comment|// ServerRuntime
 specifier|protected
 name|Provider
 argument_list|<
@@ -210,12 +211,9 @@ argument_list|,
 name|adapter
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|firstMap
-operator|.
-name|isQuotingSQLIdentifiers
 argument_list|()
-argument_list|)
+argument_list|,
+name|firstMap
 argument_list|)
 return|;
 block|}

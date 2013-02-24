@@ -137,20 +137,6 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|QuotingStrategy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
 name|oracle
 operator|.
 name|OraclePkGenerator
@@ -219,8 +205,10 @@ name|DbEntity
 name|ent
 parameter_list|)
 block|{
-comment|// note that PostgreSQL 7.4 and newer supports INCREMENT BY and START WITH
-comment|// however 7.3 doesn't like BY and WITH, so using older more neutral syntax
+comment|// note that PostgreSQL 7.4 and newer supports INCREMENT BY and START
+comment|// WITH
+comment|// however 7.3 doesn't like BY and WITH, so using older more neutral
+comment|// syntax
 comment|// that works with all tested versions.
 name|StringBuilder
 name|buf
@@ -453,7 +441,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Fetches a list of existing sequences that might match Cayenne generated ones.      */
+comment|/**      * Fetches a list of existing sequences that might match Cayenne generated      * ones.      */
 annotation|@
 name|Override
 specifier|protected
@@ -469,60 +457,6 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-name|boolean
-name|status
-decl_stmt|;
-if|if
-condition|(
-name|node
-operator|.
-name|getDataMap
-argument_list|(
-name|node
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-operator|!=
-literal|null
-operator|&&
-name|node
-operator|.
-name|getDataMap
-argument_list|(
-name|node
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-condition|)
-block|{
-name|status
-operator|=
-literal|true
-expr_stmt|;
-block|}
-else|else
-block|{
-name|status
-operator|=
-literal|false
-expr_stmt|;
-block|}
-name|QuotingStrategy
-name|context
-init|=
-name|getAdapter
-argument_list|()
-operator|.
-name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
-decl_stmt|;
 comment|// check existing sequences
 name|Connection
 name|con
@@ -603,16 +537,11 @@ name|sequenceList
 operator|.
 name|add
 argument_list|(
-name|context
-operator|.
-name|quotedIdentifier
-argument_list|(
 name|rs
 operator|.
 name|getString
 argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

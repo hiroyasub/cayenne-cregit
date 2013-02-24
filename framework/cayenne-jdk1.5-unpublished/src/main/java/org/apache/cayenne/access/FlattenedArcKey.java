@@ -705,40 +705,6 @@ comment|// ok, the key is not included in snapshot, must do the fetch...
 comment|// TODO: this should be optimized in the future, but now
 comment|// DeleteBatchQuery
 comment|// expects a PK snapshot, so we must provide it.
-specifier|final
-name|boolean
-name|quotesNeeded
-decl_stmt|;
-if|if
-condition|(
-name|joinEntity
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|joinEntity
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-condition|)
-block|{
-name|quotesNeeded
-operator|=
-literal|true
-expr_stmt|;
-block|}
-else|else
-block|{
-name|quotesNeeded
-operator|=
-literal|false
-expr_stmt|;
-block|}
 name|QuotingStrategy
 name|quoter
 init|=
@@ -748,9 +714,7 @@ name|getAdapter
 argument_list|()
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|quotesNeeded
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|StringBuilder
 name|sql
@@ -856,25 +820,15 @@ name|append
 argument_list|(
 name|quoter
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|attribute
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|quotesNeeded
-condition|)
-block|{
 comment|// since the name of the column can potentially be quoted and
-comment|// use reserved
-comment|// keywords as name, let's specify
-comment|// generated column name parameters to ensure the query doesn't
-comment|// explode
+comment|// use reserved keywords as name, let's specify generated column
+comment|// name parameters to ensure the query doesn't explode
 name|sql
 operator|.
 name|append
@@ -912,7 +866,6 @@ argument_list|(
 name|i
 argument_list|)
 expr_stmt|;
-block|}
 name|sql
 operator|.
 name|append
@@ -970,6 +923,8 @@ name|quoter
 operator|.
 name|quotedIdentifier
 argument_list|(
+name|joinEntity
+argument_list|,
 name|String
 operator|.
 name|valueOf
@@ -1081,8 +1036,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|quotesNeeded
-operator|&&
 operator|!
 name|dataRows
 operator|.

@@ -267,10 +267,10 @@ name|add
 argument_list|(
 literal|"ALTER TABLE "
 operator|+
-name|getQuotingStrategy
-argument_list|(
 name|adapter
-argument_list|)
+operator|.
+name|getQuotingStrategy
+argument_list|()
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
@@ -301,10 +301,10 @@ block|{
 name|QuotingStrategy
 name|quotingStrategy
 init|=
-name|getQuotingStrategy
-argument_list|(
 name|adapter
-argument_list|)
+operator|.
+name|getQuotingStrategy
+argument_list|()
 decl_stmt|;
 name|StringBuilder
 name|sql
@@ -366,14 +366,11 @@ name|append
 argument_list|(
 name|quotingStrategy
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|it
 operator|.
 name|next
-argument_list|()
-operator|.
-name|getName
 argument_list|()
 argument_list|)
 argument_list|)

@@ -182,12 +182,9 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|columnNew
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

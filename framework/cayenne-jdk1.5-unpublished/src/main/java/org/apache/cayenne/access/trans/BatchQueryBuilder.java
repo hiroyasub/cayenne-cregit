@@ -270,9 +270,7 @@ name|getAdapter
 argument_list|()
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|buf
 operator|.
@@ -280,12 +278,9 @@ name|append
 argument_list|(
 name|strategy
 operator|.
-name|quotedIdentifier
+name|quotedName
 argument_list|(
 name|dbAttribute
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -207,16 +207,7 @@ init|=
 name|adapter
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|getEntity
 argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-argument_list|)
 decl_stmt|;
 name|StringBuilder
 name|buf

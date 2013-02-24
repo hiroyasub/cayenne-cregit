@@ -130,7 +130,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of {@link DeleteBatchQueryBuilder}, which uses 'soft' delete (runs  * UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  */
+comment|/**  * Implementation of {@link DeleteBatchQueryBuilder}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  */
 end_comment
 
 begin_class
@@ -196,30 +196,6 @@ name|batch
 argument_list|)
 return|;
 block|}
-name|boolean
-name|status
-init|=
-name|batch
-operator|.
-name|getDbEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|batch
-operator|.
-name|getDbEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
@@ -227,9 +203,7 @@ name|getAdapter
 argument_list|()
 operator|.
 name|getQuotingStrategy
-argument_list|(
-name|status
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|StringBuffer
 name|query
@@ -268,6 +242,11 @@ name|strategy
 operator|.
 name|quotedIdentifier
 argument_list|(
+name|batch
+operator|.
+name|getDbEntity
+argument_list|()
+argument_list|,
 name|deletedFieldName
 argument_list|)
 argument_list|)
