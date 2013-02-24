@@ -75,20 +75,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|QuotingSupport
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|ejbql
 operator|.
 name|EJBQLBaseVisitor
@@ -250,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A translator that walks the relationship/attribute path, appending joins to the query.  *   * @since 3.0  */
+comment|/**  * A translator that walks the relationship/attribute path, appending joins to  * the query.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -466,7 +452,8 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
-comment|// TODO: andrus 6/11/2007 - if the path ends with relationship, the last join will
+comment|// TODO: andrus 6/11/2007 - if the path ends with relationship, the last
+comment|// join will
 comment|// get lost...
 if|if
 condition|(
@@ -601,10 +588,10 @@ name|fullPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|targetEntity
 operator|.
@@ -621,10 +608,10 @@ name|tableName
 init|=
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|currentEntity
 operator|.
@@ -749,10 +736,10 @@ name|fullPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|targetEntity
 operator|.
@@ -903,14 +890,6 @@ name|ObjAttribute
 name|attribute
 parameter_list|)
 block|{
-name|QuotingSupport
-name|quotingSupport
-init|=
-name|context
-operator|.
-name|getQuotingSupport
-argument_list|()
-decl_stmt|;
 name|DbEntity
 name|table
 init|=
@@ -990,9 +969,12 @@ name|getTableAlias
 argument_list|(
 name|idPath
 argument_list|,
-name|quotingSupport
+name|context
 operator|.
-name|generateTableName
+name|getQuotingStrategy
+argument_list|()
+operator|.
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -1017,9 +999,12 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|quotingSupport
+name|context
 operator|.
-name|generateColumnName
+name|getQuotingStrategy
+argument_list|()
+operator|.
+name|quotedName
 argument_list|(
 name|attribute
 operator|.
@@ -1042,10 +1027,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|attribute
 operator|.
@@ -1072,10 +1057,14 @@ name|isSourceIndependentFromTargetChange
 argument_list|()
 condition|)
 block|{
-comment|// (andrus) use an outer join for to-many matches.. This is somewhat different
-comment|// from traditional Cayenne SelectQuery, as EJBQL spec does not allow regular
-comment|// path matches done against to-many relationships, and instead provides
-comment|// MEMBER OF and IS EMPTY operators. Outer join is needed for IS EMPTY... I
+comment|// (andrus) use an outer join for to-many matches.. This is somewhat
+comment|// different
+comment|// from traditional Cayenne SelectQuery, as EJBQL spec does not
+comment|// allow regular
+comment|// path matches done against to-many relationships, and instead
+comment|// provides
+comment|// MEMBER OF and IS EMPTY operators. Outer join is needed for IS
+comment|// EMPTY... I
 comment|// guess MEMBER OF could've been done with an inner join though..
 name|resolveJoin
 argument_list|(
@@ -1120,10 +1109,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -1193,10 +1182,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|pk
 argument_list|)
@@ -1255,10 +1244,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -1327,10 +1316,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|join
 operator|.
@@ -1422,7 +1411,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Checks if the object relationship is flattened and then chooses      * the corresponding db relationship. The last in idPath if isFlattened and      * the first in list otherwise.      *       * @param relationship the object relationship      *       * @return {@link DbRelationship}      */
+comment|/**      * Checks if the object relationship is flattened and then chooses the      * corresponding db relationship. The last in idPath if isFlattened and the      * first in list otherwise.      *       * @param relationship      *            the object relationship      *       * @return {@link DbRelationship}      */
 specifier|protected
 name|DbRelationship
 name|chooseDbRelationship

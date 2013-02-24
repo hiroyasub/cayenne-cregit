@@ -71,6 +71,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -203,6 +217,12 @@ specifier|private
 name|ServerRuntime
 name|runtime
 decl_stmt|;
+annotation|@
+name|Inject
+specifier|private
+name|DbAdapter
+name|adapter
+decl_stmt|;
 specifier|private
 name|SQLTemplate
 name|translateSelect
@@ -313,6 +333,11 @@ argument_list|,
 operator|new
 name|JdbcEJBQLTranslatorFactory
 argument_list|()
+argument_list|,
+name|adapter
+operator|.
+name|getQuotingStrategy
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|select
@@ -357,7 +382,8 @@ operator|.
 name|getDefaultTemplate
 argument_list|()
 decl_stmt|;
-comment|// column order is unpredictable, just need to ensure that they are all there
+comment|// column order is unpredictable, just need to ensure that they are all
+comment|// there
 name|assertTrue
 argument_list|(
 name|sql
@@ -530,7 +556,8 @@ literal|"SELECT"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// check that overlapping implicit and explicit joins did not result in duplicates
+comment|// check that overlapping implicit and explicit joins did not result in
+comment|// duplicates
 name|assertTrue
 argument_list|(
 name|sql
@@ -1545,7 +1572,8 @@ return|return
 name|i
 return|;
 block|}
-comment|// if parameter value is null (in this test x := null) we will generate "IS NULL"
+comment|// if parameter value is null (in this test x := null) we will generate
+comment|// "IS NULL"
 specifier|public
 name|void
 name|testEqualsNullParameter
@@ -1620,6 +1648,11 @@ name|select
 argument_list|,
 operator|new
 name|JdbcEJBQLTranslatorFactory
+argument_list|()
+argument_list|,
+name|adapter
+operator|.
+name|getQuotingStrategy
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1745,6 +1778,11 @@ name|select
 argument_list|,
 operator|new
 name|JdbcEJBQLTranslatorFactory
+argument_list|()
+argument_list|,
+name|adapter
+operator|.
+name|getQuotingStrategy
 argument_list|()
 argument_list|)
 decl_stmt|;

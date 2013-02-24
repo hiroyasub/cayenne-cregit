@@ -301,6 +301,11 @@ argument_list|,
 name|compiledExpression
 argument_list|,
 name|translatorFactory
+argument_list|,
+name|adapter
+operator|.
+name|getQuotingStrategy
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|compiledExpression

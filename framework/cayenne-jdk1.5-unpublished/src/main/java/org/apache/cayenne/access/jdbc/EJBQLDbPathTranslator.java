@@ -400,7 +400,8 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
-comment|// TODO: andrus 6/11/2007 - if the path ends with relationship, the last join will
+comment|// TODO: andrus 6/11/2007 - if the path ends with relationship, the last
+comment|// join will
 comment|// get lost...
 if|if
 condition|(
@@ -509,10 +510,10 @@ name|oldPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|currentEntity
 argument_list|)
@@ -558,10 +559,10 @@ name|fullPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|currentEntity
 argument_list|)
@@ -622,10 +623,10 @@ name|fullPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|targetEntity
 argument_list|)
@@ -810,10 +811,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -840,10 +841,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|attribute
 argument_list|)
@@ -863,10 +864,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|attribute
 argument_list|)
@@ -926,10 +927,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -999,10 +1000,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|pk
 argument_list|)
@@ -1053,10 +1054,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -1125,10 +1126,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|join
 operator|.

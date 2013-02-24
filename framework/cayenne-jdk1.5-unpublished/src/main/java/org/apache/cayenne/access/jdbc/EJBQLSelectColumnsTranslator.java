@@ -475,10 +475,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -593,10 +593,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -646,7 +646,8 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-comment|// DbRelationships not processed, because they will be processed
+comment|// DbRelationships not processed, because they will be
+comment|// processed
 comment|// later when appending table
 if|if
 condition|(
@@ -701,10 +702,10 @@ argument_list|()
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 operator|(
 name|DbEntity
@@ -871,10 +872,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|dbAttribute
 argument_list|)

@@ -77,21 +77,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|JdbcAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
-name|QuotingSupport
+name|QuotingStrategy
 import|;
 end_import
 
@@ -285,8 +271,8 @@ name|EJBQLTranslatorFactory
 name|translatorFactory
 decl_stmt|;
 specifier|private
-name|QuotingSupport
-name|quotingSupport
+name|QuotingStrategy
+name|quotingStrategy
 decl_stmt|;
 specifier|private
 name|EntityResolver
@@ -393,6 +379,9 @@ name|compiledExpression
 parameter_list|,
 name|EJBQLTranslatorFactory
 name|translatorFactory
+parameter_list|,
+name|QuotingStrategy
+name|quotingStrategy
 parameter_list|)
 block|{
 name|this
@@ -470,17 +459,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|quotingSupport
+name|quotingStrategy
 operator|=
-operator|(
-operator|(
-name|JdbcEJBQLTranslatorFactory
-operator|)
-name|translatorFactory
-operator|)
-operator|.
-name|getQuotingSupport
-argument_list|()
+name|quotingStrategy
 expr_stmt|;
 comment|// buffer stack will hold named buffers during translation in the order they were
 comment|// requested
@@ -1769,14 +1750,12 @@ name|caseInsensitive
 expr_stmt|;
 block|}
 specifier|public
-name|QuotingSupport
-name|getQuotingSupport
+name|QuotingStrategy
+name|getQuotingStrategy
 parameter_list|()
 block|{
 return|return
-name|this
-operator|.
-name|quotingSupport
+name|quotingStrategy
 return|;
 block|}
 specifier|public

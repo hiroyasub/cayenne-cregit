@@ -532,10 +532,10 @@ name|idPath
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -557,10 +557,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|attribute
 operator|.

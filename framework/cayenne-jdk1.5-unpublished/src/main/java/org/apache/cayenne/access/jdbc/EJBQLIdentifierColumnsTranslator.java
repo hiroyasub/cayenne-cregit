@@ -408,7 +408,8 @@ name|getFields
 argument_list|()
 expr_stmt|;
 block|}
-comment|// assign whatever we have to a final ivar so that it can be accessed within
+comment|// assign whatever we have to a final ivar so that it can be accessed
+comment|// within
 comment|// the inner class
 specifier|final
 name|Map
@@ -431,9 +432,12 @@ name|getText
 argument_list|()
 decl_stmt|;
 comment|// append all table columns ... the trick is to follow the algorithm for
-comment|// describing the fields in the expression compiler, so that we could assign
-comment|// columns labels from FieldResults in the order we encounter them here...
-comment|// TODO: andrus 2008/02/17 - this is a bit of a hack, think of a better solution
+comment|// describing the fields in the expression compiler, so that we could
+comment|// assign
+comment|// columns labels from FieldResults in the order we encounter them
+comment|// here...
+comment|// TODO: andrus 2008/02/17 - this is a bit of a hack, think of a better
+comment|// solution
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -736,7 +740,8 @@ block|}
 block|}
 block|}
 decl_stmt|;
-comment|// EJBQL queries are polymorphic by definition - there is no distinction between
+comment|// EJBQL queries are polymorphic by definition - there is no distinction
+comment|// between
 comment|// inheritance/no-inheritance fetch
 name|descriptor
 operator|.
@@ -745,7 +750,8 @@ argument_list|(
 name|visitor
 argument_list|)
 expr_stmt|;
-comment|// append id columns ... (some may have been appended already via relationships)
+comment|// append id columns ... (some may have been appended already via
+comment|// relationships)
 name|DbEntity
 name|table
 init|=
@@ -1227,10 +1233,10 @@ name|identifier
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -1245,10 +1251,10 @@ literal|"."
 operator|+
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|column
 argument_list|)
@@ -1339,7 +1345,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: andrus 6/27/2007 - the last parameter is an unofficial "jdbcType"
+comment|// TODO: andrus 6/27/2007 - the last parameter is an unofficial
+comment|// "jdbcType"
 comment|// pending CAY-813 implementation, switch to #column directive
 name|context
 operator|.

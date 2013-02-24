@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|QuotingSupport
+name|QuotingStrategy
 import|;
 end_import
 
@@ -712,7 +712,8 @@ name|EJBQLExpression
 name|expression
 parameter_list|)
 block|{
-comment|// handle as "path is [not] null" (an alt. way would've been a correlated subquery
+comment|// handle as "path is [not] null" (an alt. way would've been a
+comment|// correlated subquery
 comment|// on the target entity)...
 if|if
 condition|(
@@ -809,8 +810,10 @@ parameter_list|)
 block|{
 comment|// run as a correlated subquery.
 comment|// see "visitMemberOf" for correlated subquery logic
-comment|// also note that the code below is mostly copy/paste from MEMBER OF method ...
-comment|// maybe there's enough commonality in building correlated subqueries to make it
+comment|// also note that the code below is mostly copy/paste from MEMBER OF
+comment|// method ...
+comment|// maybe there's enough commonality in building correlated subqueries to
+comment|// make it
 comment|// reusable???
 if|if
 condition|(
@@ -865,6 +868,14 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+name|QuotingStrategy
+name|quoter
+init|=
+name|context
+operator|.
+name|getQuotingStrategy
+argument_list|()
+decl_stmt|;
 name|EJBQLPath
 name|path
 init|=
@@ -907,12 +918,9 @@ decl_stmt|;
 name|String
 name|correlatedTableName
 init|=
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|correlatedEntityDescriptor
 operator|.
@@ -981,12 +989,9 @@ expr_stmt|;
 name|String
 name|subqueryTableName
 init|=
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|targetDescriptor
 operator|.
@@ -1041,7 +1046,8 @@ literal|"."
 argument_list|)
 condition|)
 block|{
-comment|// if the DbRelationshipPath contains '.', the relationship is flattened
+comment|// if the DbRelationshipPath contains '.', the relationship is
+comment|// flattened
 name|subqueryRootAlias
 operator|=
 name|processFlattenedRelationShip
@@ -1054,7 +1060,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// not using "AS" to separate table name and alias name - OpenBase doesn't
+comment|// not using "AS" to separate table name and alias name - OpenBase
+comment|// doesn't
 comment|// support "AS", and the rest of the databases do not care
 name|context
 operator|.
@@ -1174,17 +1181,11 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateColumnName
+name|quotedSourceName
 argument_list|(
 name|join
-operator|.
-name|getSource
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1228,9 +1229,11 @@ parameter_list|)
 block|{
 comment|// create a correlated subquery, using the following transformation:
 comment|// * Subquery Root is always an entity that is a target of relationship
-comment|// * A subquery has a join based on reverse relationship, pointing to the
+comment|// * A subquery has a join based on reverse relationship, pointing to
+comment|// the
 comment|// original ID.
-comment|// * Join must be transled as a part of the subquery WHERE clause instead of
+comment|// * Join must be translated as a part of the subquery WHERE clause
+comment|// instead of
 comment|// FROM.
 comment|// * A condition is added: subquery_root_id = LHS_memberof
 if|if
@@ -1286,6 +1289,14 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+name|QuotingStrategy
+name|quoter
+init|=
+name|context
+operator|.
+name|getQuotingStrategy
+argument_list|()
+decl_stmt|;
 name|EJBQLPath
 name|path
 init|=
@@ -1330,12 +1341,9 @@ decl_stmt|;
 name|String
 name|correlatedTableName
 init|=
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|correlatedEntityDescriptor
 operator|.
@@ -1404,12 +1412,9 @@ expr_stmt|;
 name|String
 name|subqueryTableName
 init|=
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|targetDescriptor
 operator|.
@@ -1464,7 +1469,8 @@ literal|"."
 argument_list|)
 condition|)
 block|{
-comment|// if the DbRelationshipPath contains '.', the relationship is flattened
+comment|// if the DbRelationshipPath contains '.', the relationship is
+comment|// flattened
 name|subqueryRootAlias
 operator|=
 name|processFlattenedRelationShip
@@ -1477,7 +1483,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// not using "AS" to separate table name and alias name - OpenBase doesn't
+comment|// not using "AS" to separate table name and alias name - OpenBase
+comment|// doesn't
 comment|// support "AS", and the rest of the databases do not care
 name|context
 operator|.
@@ -1522,14 +1529,6 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-decl_stmt|;
-name|QuotingSupport
-name|quotingSupport
-init|=
-name|context
-operator|.
-name|getQuotingSupport
-argument_list|()
 decl_stmt|;
 for|for
 control|(
@@ -1586,14 +1585,11 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|quotingSupport
+name|quoter
 operator|.
-name|generateColumnName
+name|quotedSourceName
 argument_list|(
 name|join
-operator|.
-name|getSource
-argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1688,6 +1684,14 @@ name|ObjRelationship
 name|relationship
 parameter_list|)
 block|{
+name|QuotingStrategy
+name|quoter
+init|=
+name|context
+operator|.
+name|getQuotingStrategy
+argument_list|()
+decl_stmt|;
 name|List
 argument_list|<
 name|DbRelationship
@@ -1699,7 +1703,8 @@ operator|.
 name|getDbRelationships
 argument_list|()
 decl_stmt|;
-comment|// reverse order to get the nearest to the correlated of the direct relation
+comment|// reverse order to get the nearest to the correlated of the direct
+comment|// relation
 for|for
 control|(
 name|int
@@ -1733,12 +1738,9 @@ decl_stmt|;
 name|String
 name|subqueryTargetTableName
 init|=
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 operator|(
 name|DbEntity
@@ -1810,12 +1812,9 @@ expr_stmt|;
 name|String
 name|subquerySourceTableName
 init|=
-name|context
+name|quoter
 operator|.
-name|getQuotingSupport
-argument_list|()
-operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 operator|(
 name|DbEntity
@@ -2054,7 +2053,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Checks expression for containing null input parameter.      * For that, we'll append IS NULL or IS NOT NULL instead of =null or<>null      * @return whether replacement was done and there's no need for normal expression processing      */
+comment|/**      * Checks expression for containing null input parameter. For that, we'll      * append IS NULL or IS NOT NULL instead of =null or<>null      *       * @return whether replacement was done and there's no need for normal      *         expression processing      */
 specifier|protected
 name|boolean
 name|checkNullParameter
@@ -2078,7 +2077,8 @@ condition|)
 block|{
 comment|// We rewrite expression "parameter = :x" where x=null
 comment|// as "parameter IS NULL"
-comment|// BUT in such as ":x = parameter" (where x=null) we don't do anything
+comment|// BUT in such as ":x = parameter" (where x=null) we don't do
+comment|// anything
 comment|// as a result it can be unsupported in some DB
 if|if
 condition|(
@@ -2263,7 +2263,8 @@ break|break;
 case|case
 literal|1
 case|:
-comment|// check multicolumn match condition and undo op insertion and append it
+comment|// check multicolumn match condition and undo op insertion and
+comment|// append it
 comment|// from scratch if needed
 if|if
 condition|(
@@ -2502,7 +2503,8 @@ break|break;
 case|case
 literal|1
 case|:
-comment|// check multicolumn match condition and undo op insertion and append it
+comment|// check multicolumn match condition and undo op insertion and
+comment|// append it
 comment|// from scratch if needed
 if|if
 condition|(
@@ -2873,7 +2875,8 @@ argument_list|(
 literal|" IN"
 argument_list|)
 expr_stmt|;
-comment|// a cosmetic hack for preventing extra pair of parenthesis from being
+comment|// a cosmetic hack for preventing extra pair of parenthesis from
+comment|// being
 comment|// appended in 'visitSubselect'
 if|if
 condition|(
@@ -3174,10 +3177,10 @@ argument_list|()
 argument_list|,
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateTableName
+name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
@@ -3236,10 +3239,10 @@ name|append
 argument_list|(
 name|context
 operator|.
-name|getQuotingSupport
+name|getQuotingStrategy
 argument_list|()
 operator|.
-name|generateColumnName
+name|quotedName
 argument_list|(
 name|pk
 argument_list|)
@@ -3858,7 +3861,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// note that String Literal text is already wrapped in single quotes, with
+comment|// note that String Literal text is already wrapped in single
+comment|// quotes, with
 comment|// quotes that are part of the string escaped.
 name|context
 operator|.
@@ -4272,11 +4276,16 @@ operator|=
 literal|"VARCHAR"
 expr_stmt|;
 block|}
-comment|// this is a hack to prevent execptions on DB's like Derby for expressions
-comment|// "X = NULL". The 'VARCHAR' parameter is totally bogus, but seems to work on
-comment|// all tested DB's... Also note what JPA spec, chapter 4.11 says: "Comparison
-comment|// or arithmetic operations with a NULL value always yield an unknown value."
-comment|// TODO: andrus 6/28/2007 Ideally we should track the type of the current
+comment|// this is a hack to prevent execptions on DB's like Derby for
+comment|// expressions
+comment|// "X = NULL". The 'VARCHAR' parameter is totally bogus, but seems
+comment|// to work on
+comment|// all tested DB's... Also note what JPA spec, chapter 4.11 says:
+comment|// "Comparison
+comment|// or arithmetic operations with a NULL value always yield an
+comment|// unknown value."
+comment|// TODO: andrus 6/28/2007 Ideally we should track the type of the
+comment|// current
 comment|// expression to provide a meaningful type.
 name|context
 operator|.
