@@ -165,7 +165,7 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-comment|/**      * Translates BatchQuery into an SQL string formatted to use in a PreparedStatement.      *       * @throws IOException      */
+comment|/**      * Translates BatchQuery into an SQL string formatted to use in a      * PreparedStatement.      *       * @throws IOException      */
 specifier|public
 specifier|abstract
 name|String
@@ -177,7 +177,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Appends the name of the column to the query buffer. Subclasses use this method to      * append column names in the WHERE clause, i.e. for the columns that are not being      * updated.      */
+comment|/**      * Appends the name of the column to the query buffer. Subclasses use this      * method to append column names in the WHERE clause, i.e. for the columns      * that are not being updated.      */
 specifier|protected
 name|void
 name|appendDbAttribute
@@ -222,45 +222,6 @@ name|append
 argument_list|(
 literal|'('
 argument_list|)
-expr_stmt|;
-block|}
-name|boolean
-name|status
-decl_stmt|;
-if|if
-condition|(
-name|dbAttribute
-operator|.
-name|getEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-name|dbAttribute
-operator|.
-name|getEntity
-argument_list|()
-operator|.
-name|getDataMap
-argument_list|()
-operator|.
-name|isQuotingSQLIdentifiers
-argument_list|()
-condition|)
-block|{
-name|status
-operator|=
-literal|true
-expr_stmt|;
-block|}
-else|else
-block|{
-name|status
-operator|=
-literal|false
 expr_stmt|;
 block|}
 name|QuotingStrategy
@@ -344,7 +305,7 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-comment|/**      * Binds parameters for the current batch iteration to the PreparedStatement.      *       * @since 1.2      */
+comment|/**      * Binds parameters for the current batch iteration to the      * PreparedStatement.      *       * @since 1.2      */
 specifier|public
 name|void
 name|bindParameters
@@ -439,7 +400,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a list of values for the current batch iteration. Used primarily for      * logging.      *       * @since 1.2      */
+comment|/**      * Returns a list of values for the current batch iteration. Used primarily      * for logging.      *       * @since 1.2      */
 specifier|public
 name|List
 argument_list|<
