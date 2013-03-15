@@ -202,7 +202,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 name|String
 name|getPath
 parameter_list|()
