@@ -346,6 +346,19 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+comment|// shouldn't rely on super, see CAY-1803
+return|return
+name|path
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
