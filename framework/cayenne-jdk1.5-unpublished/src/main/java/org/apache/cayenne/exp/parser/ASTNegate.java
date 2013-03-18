@@ -23,7 +23,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|IOException
 import|;
 end_import
 
@@ -201,15 +201,18 @@ else|:
 literal|null
 return|;
 block|}
+comment|/**      * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
 name|void
-name|encodeAsString
+name|appendAsString
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -228,9 +231,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"-"
 argument_list|)
@@ -274,9 +277,9 @@ condition|(
 name|useParen
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"("
 argument_list|)
@@ -284,9 +287,9 @@ expr_stmt|;
 block|}
 name|child
 operator|.
-name|encodeAsString
+name|appendAsString
 argument_list|(
-name|pw
+name|out
 argument_list|)
 expr_stmt|;
 if|if
@@ -294,9 +297,9 @@ condition|(
 name|useParen
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|')'
 argument_list|)
@@ -304,19 +307,21 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
 name|void
-name|encodeAsEJBQL
+name|appendAsEJBQL
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|,
 name|String
 name|rootId
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -335,9 +340,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"-"
 argument_list|)
@@ -381,9 +386,9 @@ condition|(
 name|useParen
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"("
 argument_list|)
@@ -391,9 +396,9 @@ expr_stmt|;
 block|}
 name|child
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|rootId
 argument_list|)
@@ -403,9 +408,9 @@ condition|(
 name|useParen
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|')'
 argument_list|)

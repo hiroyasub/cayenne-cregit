@@ -23,7 +23,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|IOException
 import|;
 end_import
 
@@ -197,48 +197,53 @@ operator|.
 name|NOT
 return|;
 block|}
+comment|/**      * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
 name|void
-name|encodeAsString
+name|appendAsString
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|)
+throws|throws
+name|IOException
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"not "
 argument_list|)
 expr_stmt|;
 name|super
 operator|.
-name|encodeAsString
+name|appendAsString
 argument_list|(
-name|pw
+name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
 name|void
-name|encodeAsEJBQL
+name|appendAsEJBQL
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|,
 name|String
 name|rootId
 parameter_list|)
+throws|throws
+name|IOException
 block|{
-name|encodeAsString
+name|appendAsString
 argument_list|(
-name|pw
+name|out
 argument_list|)
 expr_stmt|;
 block|}
