@@ -21,6 +21,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|PrintWriter
 import|;
 end_import
@@ -732,6 +742,8 @@ specifier|public
 name|void
 name|testEncodeAsEJBQL1
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e
@@ -743,40 +755,21 @@ argument_list|(
 literal|"artistName = 'bla'"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|buffer
 argument_list|,
 literal|"x"
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|buffer
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|String
 name|ejbql
@@ -798,6 +791,8 @@ specifier|public
 name|void
 name|testEncodeAsEJBQL2
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e
@@ -809,40 +804,21 @@ argument_list|(
 literal|"artistName.stuff = $name"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|buffer
 argument_list|,
 literal|"x"
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|buffer
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|String
 name|ejbql
@@ -864,6 +840,8 @@ specifier|public
 name|void
 name|testEncodeAsEJBQL3_EncodeListOfParameters
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e
@@ -881,40 +859,21 @@ argument_list|,
 literal|"c"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|buffer
 argument_list|,
 literal|"x"
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|buffer
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|String
 name|ejbql
@@ -936,6 +895,8 @@ specifier|public
 name|void
 name|testEncodeAsEJBQL_PersistentParamater
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Artist
 name|a
@@ -978,40 +939,21 @@ argument_list|,
 name|a
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|buffer
 argument_list|,
 literal|"x"
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|buffer
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|String
 name|ejbql
@@ -1031,8 +973,10 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testEncodeAsEJBQLNotEquals
+name|testAppendAsEJBQLNotEquals
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e
@@ -1044,40 +988,21 @@ argument_list|(
 literal|"artistName != 'bla'"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|buffer
 argument_list|,
 literal|"x"
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|buffer
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|String
 name|ejbql
@@ -1099,6 +1024,8 @@ specifier|public
 name|void
 name|testEncodeAsEJBQL_Enum
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e
@@ -1110,40 +1037,21 @@ argument_list|(
 literal|"a = enum:org.apache.cayenne.exp.ExpEnum1.THREE"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|buffer
 argument_list|,
 literal|"x"
 argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-name|buffer
-operator|.
-name|flush
-argument_list|()
 expr_stmt|;
 name|String
 name|ejbql
@@ -1165,6 +1073,8 @@ specifier|public
 name|void
 name|testEncodeAsString_StringLiteral
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e1
@@ -1176,38 +1086,19 @@ argument_list|(
 literal|"a = 'abc'"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e1
 operator|.
-name|encodeAsString
+name|appendAsString
 argument_list|(
-name|pw
-argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 name|buffer
-operator|.
-name|flush
-argument_list|()
+argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
@@ -1224,6 +1115,8 @@ specifier|public
 name|void
 name|testEncodeAsString_Enum
 parameter_list|()
+throws|throws
+name|IOException
 block|{
 name|Expression
 name|e1
@@ -1235,38 +1128,19 @@ argument_list|(
 literal|"a = enum:org.apache.cayenne.exp.ExpEnum1.TWO"
 argument_list|)
 decl_stmt|;
-name|StringWriter
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringWriter
+name|StringBuilder
 argument_list|()
-decl_stmt|;
-name|PrintWriter
-name|pw
-init|=
-operator|new
-name|PrintWriter
-argument_list|(
-name|buffer
-argument_list|)
 decl_stmt|;
 name|e1
 operator|.
-name|encodeAsString
+name|appendAsString
 argument_list|(
-name|pw
-argument_list|)
-expr_stmt|;
-name|pw
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 name|buffer
-operator|.
-name|flush
-argument_list|()
+argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
@@ -1430,7 +1304,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// we change one object - so the objects are different now (PersistenceState
+comment|// we change one object - so the objects are different now
+comment|// (PersistenceState
 comment|// different)
 name|a1
 operator|.
@@ -2107,7 +1982,8 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// ~7 = -8 in digital world
+comment|// ~7 = -8 in
+comment|// digital world
 block|}
 specifier|public
 name|void
@@ -2536,7 +2412,8 @@ argument_list|(
 literal|"2012L"
 argument_list|)
 decl_stmt|;
-comment|// scalar becomes Long object
+comment|// scalar becomes Long
+comment|// object
 name|assertEquals
 argument_list|(
 name|e1
@@ -2559,7 +2436,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *  a | (b& c) = (a | b)& (a | c)      */
+comment|/**      * a | (b& c) = (a | b)& (a | c)      */
 specifier|public
 name|void
 name|testBitwiseDistributivity
@@ -2607,7 +2484,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * a | ~a = 1       * But in Java computed result is -1 because of JVM represents negative numbers as positive ones: ~2 = -3;      * For instance, there are only 4 bits and that is why -3 means '1101' and 3 means '0011' because of '1101' + '0011' = (1)'0000' what is zero; but the same time '1101' is 13.      */
+comment|/**      * a | ~a = 1 But in Java computed result is -1 because of JVM represents      * negative numbers as positive ones: ~2 = -3; For instance, there are only      * 4 bits and that is why -3 means '1101' and 3 means '0011' because of      * '1101' + '0011' = (1)'0000' what is zero; but the same time '1101' is 13.      */
 specifier|public
 name|void
 name|testBitwiseComplements
@@ -2652,7 +2529,18 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// ~0 = -1 that is the way how robots kill humans what means x | ~x = 1 in boolean algebra against java digital bitwise operations logics
+comment|// ~0 = -1 that
+comment|// is the way how
+comment|// robots kill
+comment|// humans what
+comment|// means x | ~x =
+comment|// 1 in boolean
+comment|// algebra
+comment|// against java
+comment|// digital
+comment|// bitwise
+comment|// operations
+comment|// logics
 name|assertEquals
 argument_list|(
 operator|new
@@ -2672,7 +2560,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Huntington equation n(n(x) + y) + n(n(x) + n(y)) = x where is 'n' is negotation (may be any other unary operation) and '+' is disjunction (OR operation, i.e. '|' bitwise operation).      */
+comment|/**      * Huntington equation n(n(x) + y) + n(n(x) + n(y)) = x where is 'n' is      * negotation (may be any other unary operation) and '+' is disjunction (OR      * operation, i.e. '|' bitwise operation).      */
 specifier|public
 name|void
 name|testBitwiseHuntingtonEquation
@@ -2707,7 +2595,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Robbins equation n(n(x + y) + n(x + n(y))) = x where is 'n' is negotation and '+' is disjunction (OR operation, i.e. '|' bitwise operation).      * Every Robbins algebra is a Boolean algebra according to automated reasoning program EQP.      */
+comment|/**      * Robbins equation n(n(x + y) + n(x + n(y))) = x where is 'n' is negotation      * and '+' is disjunction (OR operation, i.e. '|' bitwise operation). Every      * Robbins algebra is a Boolean algebra according to automated reasoning      * program EQP.      */
 specifier|public
 name|void
 name|testBitwiseRobbinsEquation
@@ -2758,7 +2646,9 @@ argument_list|(
 literal|"1<< 1& 2"
 argument_list|)
 decl_stmt|;
-comment|// 1<< 1 = 2 and after that 2& 2 = 2;
+comment|// 1<< 1 = 2 and
+comment|// after that 2& 2
+comment|// = 2;
 name|Expression
 name|e2
 init|=
@@ -2769,7 +2659,13 @@ argument_list|(
 literal|"0 | 1& ~(3 | ~3)"
 argument_list|)
 decl_stmt|;
-comment|// by java math precedence that means 0 | (1& (~(3 | (~3))))
+comment|// by java
+comment|// math
+comment|// precedence
+comment|// that
+comment|// means 0 |
+comment|// (1& (~(3
+comment|// | (~3))))
 name|Expression
 name|e3
 init|=
@@ -2780,7 +2676,14 @@ argument_list|(
 literal|"3 | ~(-3) + 2"
 argument_list|)
 decl_stmt|;
-comment|// JVM ~(-3) = 2 and then 2 + 2 is 4 what bitwise is 100, then 011 | 100 = 111 what means 3 + 4 = 7
+comment|// JVM ~(-3) = 2
+comment|// and then 2 +
+comment|// 2 is 4 what
+comment|// bitwise is
+comment|// 100, then 011
+comment|// | 100 = 111
+comment|// what means 3
+comment|// + 4 = 7
 name|Expression
 name|e4
 init|=
@@ -2791,7 +2694,9 @@ argument_list|(
 literal|"2 * 2 | 2"
 argument_list|)
 decl_stmt|;
-comment|// (2 * 2) | 2 = 4 | 2 = '100' | '10' = '110' = 6
+comment|// (2 * 2) | 2 = 4 |
+comment|// 2 = '100' | '10'
+comment|// = '110' = 6
 name|Expression
 name|e5
 init|=
@@ -2802,7 +2707,8 @@ argument_list|(
 literal|"6 / 2& 3"
 argument_list|)
 decl_stmt|;
-comment|// (6 / 2)& 3 = 3& 3 = 3
+comment|// (6 / 2)& 3 = 3&
+comment|// 3 = 3
 name|assertEquals
 argument_list|(
 operator|new

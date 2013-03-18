@@ -19,6 +19,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collections
@@ -42,6 +52,18 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -187,8 +209,8 @@ block|{
 block|}
 else|else
 block|{
-comment|// create a unique key based on entity, qualifier, ordering and fetch
-comment|// offset and limit
+comment|// create a unique key based on entity, qualifier, ordering and
+comment|// fetch offset and limit
 name|StringBuilder
 name|key
 init|=
@@ -259,15 +281,36 @@ name|append
 argument_list|(
 literal|'/'
 argument_list|)
-operator|.
-name|append
-argument_list|(
+expr_stmt|;
+try|try
+block|{
 name|query
 operator|.
 name|getQualifier
 argument_list|()
+operator|.
+name|appendAsString
+argument_list|(
+name|key
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Unexpected IO Exception appending to StringBuilder"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 block|}
 if|if
 condition|(
