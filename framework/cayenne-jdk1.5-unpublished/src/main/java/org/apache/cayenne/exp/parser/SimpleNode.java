@@ -27,6 +27,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|PrintWriter
 import|;
 end_import
@@ -48,6 +58,18 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -118,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of AST* expressions that implements Node interface defined by JavaCC  * framework.  *<p>  * Some parts of the parser are based on OGNL parser, copyright (c) 2002, Drew Davidson  * and Luke Blanshard.  *</p>  *   * @since 1.1  */
+comment|/**  * Superclass of AST* expressions that implements Node interface defined by  * JavaCC framework.  *<p>  * Some parts of the parser are based on OGNL parser, copyright (c) 2002, Drew  * Davidson and Luke Blanshard.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -144,14 +166,14 @@ specifier|protected
 name|int
 name|id
 decl_stmt|;
-comment|/**      * Utility method that encodes an object that is not an expression Node to String.      */
+comment|/**      * Utility method that encodes an object that is not an expression Node to      * String.      */
 specifier|protected
 specifier|static
 name|void
-name|encodeScalarAsString
+name|appendScalarAsString
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|,
 name|Object
 name|scalar
@@ -159,6 +181,8 @@ parameter_list|,
 name|char
 name|quoteChar
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 name|boolean
 name|quote
@@ -172,9 +196,9 @@ condition|(
 name|quote
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|quoteChar
 argument_list|)
@@ -216,9 +240,9 @@ name|id
 else|:
 name|scalar
 decl_stmt|;
-name|encodeAsEscapedString
+name|appendAsEscapedString
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|String
 operator|.
@@ -253,16 +277,16 @@ argument_list|>
 operator|)
 name|scalar
 decl_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"enum:"
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|e
 operator|.
@@ -283,9 +307,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|encodeAsEscapedString
+name|appendAsEscapedString
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|String
 operator|.
@@ -301,27 +325,29 @@ condition|(
 name|quote
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|quoteChar
 argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Utility method that prints a string to the provided PrintWriter, escaping special      * characters.      */
+comment|/**      * Utility method that prints a string to the provided Appendable, escaping      * special characters.      */
 specifier|protected
 specifier|static
 name|void
-name|encodeAsEscapedString
+name|appendAsEscapedString
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|,
 name|String
 name|source
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 name|int
 name|len
@@ -364,9 +390,9 @@ block|{
 case|case
 literal|'\n'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\n"
 argument_list|)
@@ -375,9 +401,9 @@ continue|continue;
 case|case
 literal|'\r'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\r"
 argument_list|)
@@ -386,9 +412,9 @@ continue|continue;
 case|case
 literal|'\t'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\t"
 argument_list|)
@@ -397,9 +423,9 @@ continue|continue;
 case|case
 literal|'\b'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\b"
 argument_list|)
@@ -408,9 +434,9 @@ continue|continue;
 case|case
 literal|'\f'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\f"
 argument_list|)
@@ -419,9 +445,9 @@ continue|continue;
 case|case
 literal|'\\'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\\\"
 argument_list|)
@@ -430,9 +456,9 @@ continue|continue;
 case|case
 literal|'\''
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\'"
 argument_list|)
@@ -441,18 +467,18 @@ continue|continue;
 case|case
 literal|'\"'
 case|:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"\\\""
 argument_list|)
 expr_stmt|;
 continue|continue;
 default|default:
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|c
 argument_list|)
@@ -501,7 +527,7 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|/**      * Returns operator for ebjql statements, which can differ for Cayenne expression      * operator      */
+comment|/**      * Returns operator for ebjql statements, which can differ for Cayenne      * expression operator      */
 specifier|protected
 name|String
 name|getEJBQLExpressionOperator
@@ -548,7 +574,7 @@ name|id
 index|]
 return|;
 block|}
-comment|/**      * Flattens the tree under this node by eliminating any children that are of the same      * class as this node and copying their children to this node.      */
+comment|/**      * Flattens the tree under this node by eliminating any children that are of      * the same class as this node and copying their children to this node.      */
 annotation|@
 name|Override
 specifier|protected
@@ -717,15 +743,18 @@ name|newChildren
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
 name|void
-name|encodeAsString
+name|appendAsString
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 if|if
 condition|(
@@ -734,9 +763,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"("
 argument_list|)
@@ -783,16 +812,16 @@ operator|>
 literal|0
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|' '
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|getExpressionOperator
 argument_list|(
@@ -800,9 +829,9 @@ name|i
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|' '
 argument_list|)
@@ -818,9 +847,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"null"
 argument_list|)
@@ -838,9 +867,9 @@ name|i
 index|]
 operator|)
 operator|.
-name|encodeAsString
+name|appendAsString
 argument_list|(
-name|pw
+name|out
 argument_list|)
 expr_stmt|;
 block|}
@@ -853,13 +882,51 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|')'
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+comment|/**      * @deprecated since 3.2 use {@link #appendAsString(Appendable)}.      */
+annotation|@
+name|Override
+annotation|@
+name|Deprecated
+specifier|public
+name|void
+name|encodeAsString
+parameter_list|(
+name|PrintWriter
+name|pw
+parameter_list|)
+block|{
+try|try
+block|{
+name|appendAsString
+argument_list|(
+name|pw
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Unexpected IO exception appending to PrintWriter"
+argument_list|,
+name|e
+argument_list|)
+throw|;
 block|}
 block|}
 annotation|@
@@ -880,8 +947,10 @@ argument_list|(
 name|index
 argument_list|)
 decl_stmt|;
-comment|// unwrap ASTScalar nodes - this is likely a temporary thing to keep it compatible
-comment|// with QualifierTranslator. In the future we might want to keep scalar nodes
+comment|// unwrap ASTScalar nodes - this is likely a temporary thing to keep it
+comment|// compatible
+comment|// with QualifierTranslator. In the future we might want to keep scalar
+comment|// nodes
 comment|// for the purpose of expression evaluation.
 return|return
 name|unwrapChild
@@ -898,8 +967,10 @@ name|Object
 name|child
 parameter_list|)
 block|{
-comment|// when child is null, there's no way of telling whether this is a scalar or
-comment|// not... fuzzy... maybe we should stop using this method - it is too generic
+comment|// when child is null, there's no way of telling whether this is a
+comment|// scalar or
+comment|// not... fuzzy... maybe we should stop using this method - it is too
+comment|// generic
 return|return
 operator|(
 name|child
@@ -1206,7 +1277,8 @@ range|:
 name|children
 control|)
 block|{
-comment|// although nulls are expected to be wrapped in scalar, still doing a
+comment|// although nulls are expected to be wrapped in scalar, still
+comment|// doing a
 comment|// check here to make it more robust
 if|if
 condition|(
@@ -1336,9 +1408,11 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @since 3.0      * @deprecated since 3.2 use {@link #appendAsEJBQL(Appendable, String)}.      */
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|encodeAsEJBQL
@@ -1350,6 +1424,48 @@ name|String
 name|rootId
 parameter_list|)
 block|{
+try|try
+block|{
+name|appendAsEJBQL
+argument_list|(
+name|pw
+argument_list|,
+name|rootId
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Unexpected IO exception appending to PrintWriter"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|appendAsEJBQL
+parameter_list|(
+name|Appendable
+name|out
+parameter_list|,
+name|String
+name|rootId
+parameter_list|)
+throws|throws
+name|IOException
+block|{
 if|if
 condition|(
 name|parent
@@ -1357,9 +1473,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"("
 argument_list|)
@@ -1382,9 +1498,9 @@ literal|0
 operator|)
 condition|)
 block|{
-name|encodeChildrenAsEJBQL
+name|appendChildrenAsEJBQL
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|rootId
 argument_list|)
@@ -1397,9 +1513,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|')'
 argument_list|)
@@ -1409,14 +1525,16 @@ block|}
 comment|/**      * Encodes child of this node with specified index to EJBQL      */
 specifier|protected
 name|void
-name|encodeChildrenAsEJBQL
+name|appendChildrenAsEJBQL
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|,
 name|String
 name|rootId
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 for|for
 control|(
@@ -1442,16 +1560,16 @@ operator|>
 literal|0
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|' '
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|getEJBQLExpressionOperator
 argument_list|(
@@ -1459,9 +1577,9 @@ name|i
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|' '
 argument_list|)
@@ -1477,9 +1595,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"null"
 argument_list|)
@@ -1497,9 +1615,9 @@ name|i
 index|]
 operator|)
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|rootId
 argument_list|)

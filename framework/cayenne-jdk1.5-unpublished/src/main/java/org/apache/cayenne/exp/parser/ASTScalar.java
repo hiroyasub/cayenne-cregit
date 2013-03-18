@@ -23,7 +23,29 @@ name|java
 operator|.
 name|io
 operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|PrintWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -168,8 +190,11 @@ return|return
 name|copy
 return|;
 block|}
+comment|/**      * @deprecated since 3.2 use {@link #appendAsString(Appendable)}      */
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|encodeAsString
@@ -178,11 +203,49 @@ name|PrintWriter
 name|pw
 parameter_list|)
 block|{
-name|SimpleNode
-operator|.
-name|encodeScalarAsString
+try|try
+block|{
+name|appendAsString
 argument_list|(
 name|pw
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"UNexpected IOException appending to PrintWriter"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+block|}
+comment|/**      * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|appendAsString
+parameter_list|(
+name|Appendable
+name|out
+parameter_list|)
+throws|throws
+name|IOException
+block|{
+name|SimpleNode
+operator|.
+name|appendScalarAsString
+argument_list|(
+name|out
 argument_list|,
 name|value
 argument_list|,
@@ -190,7 +253,9 @@ literal|'\"'
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @deprecated since 3.2 use {@link #appendAsEJBQL(Appendable, String)}.      * @since 3.0      */
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public
@@ -204,8 +269,52 @@ name|String
 name|rootId
 parameter_list|)
 block|{
+try|try
+block|{
+name|appendAsEJBQL
+argument_list|(
+name|pw
+argument_list|,
+name|rootId
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Unexpected IOException appending to PrintWriter"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
+block|}
+comment|/**      * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|appendAsEJBQL
+parameter_list|(
+name|Appendable
+name|out
+parameter_list|,
+name|String
+name|rootId
+parameter_list|)
+throws|throws
+name|IOException
+block|{
 comment|// TODO: see CAY-1111
-comment|// Persistent processing is a hack for a rather special case of a single column PK
+comment|// Persistent processing is a hack for a rather special case of a single
+comment|// column PK
 comment|// object.. full implementation pending...
 name|Object
 name|scalar
@@ -274,9 +383,9 @@ block|}
 block|}
 name|SimpleNode
 operator|.
-name|encodeScalarAsString
+name|appendScalarAsString
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|scalar
 argument_list|,

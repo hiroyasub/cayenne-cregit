@@ -23,7 +23,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|PrintWriter
+name|IOException
 import|;
 end_import
 
@@ -95,19 +95,22 @@ annotation|@
 name|Override
 specifier|protected
 name|void
-name|encodeChildrenAsEJBQL
+name|appendChildrenAsEJBQL
 parameter_list|(
-name|PrintWriter
-name|pw
+name|Appendable
+name|out
 parameter_list|,
 name|String
 name|rootId
 parameter_list|)
+throws|throws
+name|IOException
 block|{
-comment|//with like, first expression is always path, second is a literal, which must be uppercased
-name|pw
+comment|// with like, first expression is always path, second is a literal,
+comment|// which must be uppercased
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|"upper("
 argument_list|)
@@ -122,23 +125,23 @@ literal|0
 index|]
 operator|)
 operator|.
-name|encodeAsEJBQL
+name|appendAsEJBQL
 argument_list|(
-name|pw
+name|out
 argument_list|,
 name|rootId
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|") "
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 name|getEJBQLExpressionOperator
 argument_list|(
@@ -146,9 +149,9 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pw
+name|out
 operator|.
-name|print
+name|append
 argument_list|(
 literal|" "
 argument_list|)
@@ -189,9 +192,9 @@ throw|;
 block|}
 name|SimpleNode
 operator|.
-name|encodeScalarAsString
+name|appendScalarAsString
 argument_list|(
-name|pw
+name|out
 argument_list|,
 operator|(
 operator|(
