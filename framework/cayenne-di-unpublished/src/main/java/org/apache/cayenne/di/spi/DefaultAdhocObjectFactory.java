@@ -674,6 +674,23 @@ return|;
 block|}
 if|else if
 condition|(
+literal|"long"
+operator|.
+name|equals
+argument_list|(
+name|className
+argument_list|)
+condition|)
+block|{
+return|return
+name|long
+index|[]
+operator|.
+name|class
+return|;
+block|}
+if|else if
+condition|(
 literal|"short"
 operator|.
 name|equals

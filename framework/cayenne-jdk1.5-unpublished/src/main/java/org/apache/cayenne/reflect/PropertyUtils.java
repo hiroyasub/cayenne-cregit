@@ -1080,6 +1080,22 @@ return|;
 block|}
 if|else if
 condition|(
+literal|"long"
+operator|.
+name|equals
+argument_list|(
+name|className
+argument_list|)
+condition|)
+block|{
+return|return
+name|Long
+operator|.
+name|class
+return|;
+block|}
+if|else if
+condition|(
 literal|"short"
 operator|.
 name|equals
@@ -1229,6 +1245,25 @@ condition|)
 block|{
 return|return
 name|Integer
+operator|.
+name|valueOf
+argument_list|(
+literal|0
+argument_list|)
+return|;
+block|}
+if|else if
+condition|(
+literal|"long"
+operator|.
+name|equals
+argument_list|(
+name|className
+argument_list|)
+condition|)
+block|{
+return|return
+name|Long
 operator|.
 name|valueOf
 argument_list|(
