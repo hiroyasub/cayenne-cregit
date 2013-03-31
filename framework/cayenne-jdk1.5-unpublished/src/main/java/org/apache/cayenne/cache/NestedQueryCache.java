@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link QueryCache} wrapper that introduces a key namespace on top of a delegate  * shared cache. This way multiple cache users can share the same underlying cache without  * a possibility of key conflicts, yet refresh the cache groups in a coordinated fashion.  *   * @since 3.0  */
+comment|/**  * A {@link QueryCache} wrapper that introduces a key namespace on top of a  * delegate shared cache. This way multiple cache users can share the same  * underlying cache without a possibility of key conflicts, yet refresh the  * cache groups in a coordinated fashion.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -172,6 +172,17 @@ name|NestedQueryCache
 implements|implements
 name|QueryCache
 block|{
+comment|// the idea is to be something short (to speed up comparisons), but clear
+comment|// and unlikely to create a conflict with application cache keys...
+comment|// fully-qualified class name that we used before was a bit too long
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|NAMESPACE_PREXIX
+init|=
+literal|"#nested-"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|volatile
@@ -229,11 +240,7 @@ name|this
 operator|.
 name|namespace
 operator|=
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
+name|NAMESPACE_PREXIX
 operator|+
 name|nextInt
 argument_list|()
@@ -241,7 +248,7 @@ operator|+
 literal|":"
 expr_stmt|;
 block|}
-comment|/**      * Returns the actual implementation of the query cache that is wrapped by this      * NestedQueryCache.      */
+comment|/**      * Returns the actual implementation of the query cache that is wrapped by      * this NestedQueryCache.      */
 specifier|public
 name|QueryCache
 name|getDelegate
@@ -257,7 +264,8 @@ name|void
 name|clear
 parameter_list|()
 block|{
-comment|// seems pretty evil - it clears the keys that do not belong to our subset of the
+comment|// seems pretty evil - it clears the keys that do not belong to our
+comment|// subset of the
 comment|// cache
 name|delegate
 operator|.
