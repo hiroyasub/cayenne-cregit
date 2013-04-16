@@ -66,7 +66,6 @@ comment|/**  * Linked list implementation of the Deque interface (not available 
 end_comment
 
 begin_class
-specifier|final
 class|class
 name|LinkedDeque
 parameter_list|<

@@ -42,7 +42,6 @@ comment|/**  * @since 3.1  */
 end_comment
 
 begin_class
-specifier|final
 class|class
 name|PropertyComparator
 implements|implements
