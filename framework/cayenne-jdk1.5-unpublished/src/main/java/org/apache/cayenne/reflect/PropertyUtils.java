@@ -653,6 +653,16 @@ operator|+
 name|nestedPropertyName
 operator|+
 literal|"'"
+operator|+
+literal|" to value '"
+operator|+
+name|value
+operator|+
+literal|"' for object '"
+operator|+
+name|object
+operator|+
+literal|"'"
 argument_list|,
 name|e
 argument_list|)
