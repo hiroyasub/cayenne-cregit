@@ -71,22 +71,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
-name|relationship
-operator|.
-name|ObjectIdRelationshipFilter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbEntity
@@ -135,40 +119,6 @@ argument_list|(
 literal|"cayenne-lifecycle.xml"
 argument_list|)
 expr_stmt|;
-comment|// a filter is required to invalidate root objects after commit
-name|ObjectIdRelationshipFilter
-name|filter
-init|=
-operator|new
-name|ObjectIdRelationshipFilter
-argument_list|()
-decl_stmt|;
-name|runtime
-operator|.
-name|getDataDomain
-argument_list|()
-operator|.
-name|addFilter
-argument_list|(
-name|filter
-argument_list|)
-expr_stmt|;
-name|runtime
-operator|.
-name|getDataDomain
-argument_list|()
-operator|.
-name|getEntityResolver
-argument_list|()
-operator|.
-name|getCallbackRegistry
-argument_list|()
-operator|.
-name|addListener
-argument_list|(
-name|filter
-argument_list|)
-expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -201,9 +151,12 @@ operator|.
 name|getEntityResolver
 argument_list|()
 decl_stmt|;
-comment|// since it is impossible to ensure non-coincidental sort order of unrelated
-comment|// DbEntities (without overriding DbEntity.hashCode()), we'll test on 2 entities
-comment|// with a relationship, and reverse the topological order with SortWeight
+comment|// since it is impossible to ensure non-coincidental sort order of
+comment|// unrelated
+comment|// DbEntities (without overriding DbEntity.hashCode()), we'll test on 2
+comment|// entities
+comment|// with a relationship, and reverse the topological order with
+comment|// SortWeight
 comment|// annotation.
 name|List
 argument_list|<
