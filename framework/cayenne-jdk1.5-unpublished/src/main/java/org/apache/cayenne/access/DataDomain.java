@@ -2472,6 +2472,27 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Adds a listener, mapping its methods to events based on annotations. This      * is a shortcut for      * 'getEntityResolver().getCallbackRegistry().addListener(listener)'.      *       * @since 3.2      */
+specifier|public
+name|void
+name|addListener
+parameter_list|(
+name|Object
+name|listener
+parameter_list|)
+block|{
+name|getEntityResolver
+argument_list|()
+operator|.
+name|getCallbackRegistry
+argument_list|()
+operator|.
+name|addListener
+argument_list|(
+name|listener
+argument_list|)
+expr_stmt|;
+block|}
 specifier|abstract
 class|class
 name|DataDomainFilterChain
