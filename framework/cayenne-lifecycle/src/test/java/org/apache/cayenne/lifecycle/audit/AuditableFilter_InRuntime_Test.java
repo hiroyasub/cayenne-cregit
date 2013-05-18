@@ -99,6 +99,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|DataDomain
@@ -1652,7 +1664,7 @@ specifier|public
 name|void
 name|audit
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|,
 name|AuditableOperation

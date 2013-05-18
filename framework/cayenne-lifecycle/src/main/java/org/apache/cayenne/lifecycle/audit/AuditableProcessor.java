@@ -17,8 +17,20 @@ name|audit
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Persistent
+import|;
+end_import
+
 begin_comment
-comment|/**  * A superclass of application specific handlers of the {@link Auditable} annotation, that  * provides basic needed callbacks.  *   * @since 3.1  */
+comment|/**  * A superclass of application specific handlers of the {@link Auditable}  * annotation, that provides basic needed callbacks.  *   * @since 3.1  */
 end_comment
 
 begin_interface
@@ -26,11 +38,11 @@ specifier|public
 interface|interface
 name|AuditableProcessor
 block|{
-comment|/**      * A method called by {@link AuditableFilter} that should audit records as appropriate      * in a given application. Implementors may insert audit records in DB, log a message,      * etc.      *       * @param object the root auditable object. This is an object that is either annotated      *            with {@link Auditable} or pointed to by another object annotated with      *            {@link AuditableChild}.      * @param operation a type of object change.      */
+comment|/**      * A method called by {@link AuditableFilter} that should audit records as      * appropriate in a given application. Implementors may insert audit records      * in DB, log a message, etc.      *       * @param object      *            the root auditable object. This is an object that is either      *            annotated with {@link Auditable} or pointed to by another      *            object annotated with {@link AuditableChild}.      * @param operation      *            a type of object change.      */
 name|void
 name|audit
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|,
 name|AuditableOperation

@@ -49,8 +49,20 @@ name|Entry
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Persistent
+import|;
+end_import
+
 begin_comment
-comment|/**  * Aggregates audit events per audit root object, and passes them to delegate processor at  * the end of the transaction.  *   * @since 3.1  */
+comment|/**  * Aggregates audit events per audit root object, and passes them to delegate  * processor at the end of the transaction.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -125,7 +137,7 @@ decl_stmt|;
 specifier|private
 name|Map
 argument_list|<
-name|Object
+name|Persistent
 argument_list|,
 name|AuditableOperation
 argument_list|>
@@ -150,7 +162,7 @@ operator|=
 operator|new
 name|IdentityHashMap
 argument_list|<
-name|Object
+name|Persistent
 argument_list|,
 name|AuditableOperation
 argument_list|>
@@ -160,7 +172,7 @@ block|}
 name|void
 name|audit
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|,
 name|AuditableOperation
@@ -225,7 +237,7 @@ for|for
 control|(
 name|Entry
 argument_list|<
-name|Object
+name|Persistent
 argument_list|,
 name|AuditableOperation
 argument_list|>

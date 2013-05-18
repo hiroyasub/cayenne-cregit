@@ -240,7 +240,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that enables audit of entities annotated with  * {@link Auditable} and {@link AuditableChild}. Note that this filter relies on  * {@link ChangeSetFilter} presence in the DataDomain filter chain to be able to analyze  * ignored properties.  *   * @since 3.1  */
+comment|/**  * A {@link DataChannelFilter} that enables audit of entities annotated with  * {@link Auditable} and {@link AuditableChild}. Note that this filter relies on  * {@link ChangeSetFilter} presence in the DataDomain filter chain to be able to  * analyze ignored properties.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -421,7 +421,7 @@ return|return
 name|response
 return|;
 block|}
-comment|/**      * A method called at the end of every      * {@link #onSync(ObjectContext, GraphDiff, int, DataChannelFilterChain)} invocation.      * This implementation uses it for cleaning up thread-local state of the filter.      * Subclasses may override it to do their own cleanup, and are expected to call super.      */
+comment|/**      * A method called at the end of every      * {@link #onSync(ObjectContext, GraphDiff, int, DataChannelFilterChain)}      * invocation. This implementation uses it for cleaning up thread-local      * state of the filter. Subclasses may override it to do their own cleanup,      * and are expected to call super.      */
 specifier|protected
 name|void
 name|cleanupPostSync
@@ -454,7 +454,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// must reset thread aggregator before processing the audit operations
+comment|// must reset thread aggregator before processing the audit
+comment|// operations
 comment|// to avoid an endless processing loop if audit processor commits
 comment|// something
 name|threadAggregator
@@ -523,7 +524,7 @@ argument_list|)
 name|void
 name|insertAudit
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|)
 block|{
@@ -552,7 +553,7 @@ argument_list|)
 name|void
 name|deleteAudit
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|)
 block|{
@@ -581,7 +582,7 @@ argument_list|)
 name|void
 name|updateAudit
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|)
 block|{
@@ -609,7 +610,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// only catching child updates... child insert/delete presumably causes an event on
+comment|// only catching child updates... child insert/delete presumably causes an
+comment|// event on
 comment|// the owner object
 annotation|@
 name|PostUpdate
@@ -623,7 +625,7 @@ argument_list|)
 name|void
 name|updateAuditChild
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|)
 block|{
@@ -637,7 +639,7 @@ literal|true
 argument_list|)
 condition|)
 block|{
-name|Object
+name|Persistent
 name|parent
 init|=
 name|getParent
@@ -652,7 +654,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// not calling 'updateAudit' to skip checking 'isAuditableUpdate' on
+comment|// not calling 'updateAudit' to skip checking
+comment|// 'isAuditableUpdate' on
 comment|// parent
 name|getAggregator
 argument_list|()
@@ -669,17 +672,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// TODO: maybe log this fact... shouldn't normally happen, but I can
+comment|// TODO: maybe log this fact... shouldn't normally happen, but I
+comment|// can
 comment|// imagine certain combinations of object graphs, disconnected
 comment|// relationships, delete rules, etc. may cause this
 block|}
 block|}
 block|}
 specifier|protected
-name|Object
+name|Persistent
 name|getParent
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|)
 block|{
@@ -818,6 +822,9 @@ argument_list|)
 throw|;
 block|}
 return|return
+operator|(
+name|Persistent
+operator|)
 name|dataObject
 operator|.
 name|readNestedProperty
@@ -828,7 +835,8 @@ return|;
 block|}
 comment|// TODO: It's a temporary clone method of {@link
 comment|// org.apache.cayenne.lifecycle.relationship.ObjectIdRelationshipHandler#objectIdRelationshipName(String)}.
-comment|// Needs to be encapsulated to some separate class to avoid a code duplication
+comment|// Needs to be encapsulated to some separate class to avoid a code
+comment|// duplication
 specifier|private
 name|String
 name|objectIdRelationshipName
