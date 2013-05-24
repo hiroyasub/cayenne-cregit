@@ -57,6 +57,18 @@ name|CayenneRuntimeException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ResultIterator
+import|;
+end_import
+
 begin_comment
 comment|/**  * Decorates ResultIterator to close active transaction when the iterator is  * closed.  *   * @since 1.2  */
 end_comment

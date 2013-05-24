@@ -51,20 +51,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|ResultIterator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|graph
 operator|.
 name|GraphManager
@@ -297,7 +283,7 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Creates a ResultIterator based on the provided query and passes it to a      * callback for processing. The caller does not need to worry about closing      * the iterator. Thius methoid takes care of it.      *       * @since 3.2      */
+comment|/**      * Creates a ResultIterator based on the provided query and passes it to a      * callback for processing. The caller does not need to worry about closing      * the iterator. This method takes care of it.      *       * @since 3.2      */
 parameter_list|<
 name|T
 parameter_list|>

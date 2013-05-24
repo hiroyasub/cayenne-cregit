@@ -13,20 +13,6 @@ name|cayenne
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|ResultIterator
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.2  */
 end_comment

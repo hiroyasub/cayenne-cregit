@@ -75,8 +75,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
 name|ResultIterator
 import|;
 end_import

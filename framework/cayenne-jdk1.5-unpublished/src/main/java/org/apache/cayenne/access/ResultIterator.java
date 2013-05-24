@@ -15,21 +15,13 @@ name|access
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result of  * SelectQuery execution. Usually a ResultIterator is supported by an open  * java.sql.ResultSet, therefore most of the methods would throw checked  * exceptions. ResultIterators must be explicitly closed when the user is done  * working with them.  *<p>  * Result "rows", depending on the query, may be represented as scalar values,  * DataRows, or Object[] arrays containing a mix of scalars and DataRows.  */
+comment|/**  * @deprecated since 3.2 moved to {@link org.apache.cayenne.ResultIterator} and  *             significantly reworked.  */
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|ResultIterator
@@ -37,40 +29,17 @@ parameter_list|<
 name|T
 parameter_list|>
 extends|extends
-name|Iterable
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ResultIterator
 argument_list|<
 name|T
 argument_list|>
-block|{
-comment|/**      * Returns all yet unread rows from ResultSet without closing it.      *       * @since 3.0      */
-name|List
-argument_list|<
-name|T
-argument_list|>
-name|allRows
-parameter_list|()
-function_decl|;
-comment|/**      * Returns true if there is at least one more record that can be read from      * the iterator.      */
-name|boolean
-name|hasNextRow
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the next result row that is, depending on the query, may be a      * scalar value, a DataRow, or an Object[] array containing a mix of scalars      * and DataRows.      *       * @since 3.0      */
-name|T
-name|nextRow
-parameter_list|()
-function_decl|;
-comment|/**      * Goes past current row. If the row is not needed, this may save some time      * on data conversion.      *       * @since 3.0      */
-name|void
-name|skipRow
-parameter_list|()
-function_decl|;
-comment|/**      * Closes ResultIterator and associated ResultSet. This method must be      * called explicitly when the user is finished processing the records.      * Otherwise unused database resources will not be released properly.      */
-name|void
-name|close
-parameter_list|()
-function_decl|;
-block|}
+block|{  }
 end_interface
 
 end_unit
