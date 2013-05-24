@@ -61,6 +61,36 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|ResultIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|CollectionResultIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|event
 operator|.
 name|EventManager
@@ -145,6 +175,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|Select
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -194,7 +238,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default generic implementation of ObjectContext suitable for accessing Cayenne from  * either an ORM or a client tiers. Communicates with Cayenne via a  * {@link org.apache.cayenne.DataChannel}.  *   * @since 1.2  */
+comment|/**  * A default generic implementation of ObjectContext suitable for accessing  * Cayenne from either an ORM or a client tiers. Communicates with Cayenne via a  * {@link org.apache.cayenne.DataChannel}.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -222,7 +266,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new CayenneContext, initializing it with a channel instance.      * CayenneContext created using this constructor WILL NOT broadcast graph change      * events.      */
+comment|/**      * Creates a new CayenneContext, initializing it with a channel instance.      * CayenneContext created using this constructor WILL NOT broadcast graph      * change events.      */
 specifier|public
 name|CayenneContext
 parameter_list|(
@@ -340,7 +384,8 @@ name|this
 argument_list|)
 expr_stmt|;
 comment|// listen to our channel events...
-comment|// note that we must reset listener on channel switch, as there is no
+comment|// note that we must reset listener on channel switch, as there is
+comment|// no
 comment|// guarantee that a new channel uses the same EventManager.
 name|EventUtil
 operator|.
@@ -353,7 +398,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns true if this context posts individual object modification events. Subject      * used for these events is<code>ObjectContext.GRAPH_CHANGED_SUBJECT</code>.      */
+comment|/**      * Returns true if this context posts individual object modification events.      * Subject used for these events is      *<code>ObjectContext.GRAPH_CHANGED_SUBJECT</code>.      */
 specifier|public
 name|boolean
 name|isChangeEventsEnabled
@@ -365,7 +410,7 @@ operator|.
 name|changeEventsEnabled
 return|;
 block|}
-comment|/**      * Returns true if this context posts lifecycle events. Subjects used for these events      * are      *<code>ObjectContext.GRAPH_COMMIT_STARTED_SUBJECT, ObjectContext.GRAPH_COMMITTED_SUBJECT,      * ObjectContext.GRAPH_COMMIT_ABORTED_SUBJECT, ObjectContext.GRAPH_ROLLEDBACK_SUBJECT.</code>      * .      */
+comment|/**      * Returns true if this context posts lifecycle events. Subjects used for      * these events are      *<code>ObjectContext.GRAPH_COMMIT_STARTED_SUBJECT, ObjectContext.GRAPH_COMMITTED_SUBJECT,      * ObjectContext.GRAPH_COMMIT_ABORTED_SUBJECT, ObjectContext.GRAPH_ROLLEDBACK_SUBJECT.</code>      * .      */
 specifier|public
 name|boolean
 name|isLifecycleEventsEnabled
@@ -396,7 +441,7 @@ return|return
 name|graphManager
 return|;
 block|}
-comment|/**      * Commits changes to uncommitted objects. First checks if there are changes in this      * context and if any changes are detected, sends a commit message to remote Cayenne      * service via an internal instance of CayenneConnector.      */
+comment|/**      * Commits changes to uncommitted objects. First checks if there are changes      * in this context and if any changes are detected, sends a commit message      * to remote Cayenne service via an internal instance of CayenneConnector.      */
 annotation|@
 name|Override
 specifier|public
@@ -657,7 +702,8 @@ argument_list|(
 name|commitDiff
 argument_list|)
 expr_stmt|;
-comment|// this event is caught by peer nested ObjectContexts to synchronize the
+comment|// this event is caught by peer nested ObjectContexts to
+comment|// synchronize the
 comment|// state
 name|fireDataChannelCommitted
 argument_list|(
@@ -1174,7 +1220,7 @@ name|ClassDescriptor
 name|descriptor
 parameter_list|)
 block|{
-comment|/**          * We should create new id only if it is not set for this object. It could have          * been created, for instance, in child context          */
+comment|/**          * We should create new id only if it is not set for this object. It          * could have been created, for instance, in child context          */
 name|ObjectId
 name|id
 init|=
@@ -1364,7 +1410,7 @@ name|CompoundDiff
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if there are any modified, deleted or new objects      * registered with this CayenneContext,<code>false</code> otherwise.      */
+comment|/**      * Returns<code>true</code> if there are any modified, deleted or new      * objects registered with this CayenneContext,<code>false</code>      * otherwise.      */
 specifier|public
 name|boolean
 name|hasChanges
@@ -1375,6 +1421,48 @@ name|graphManager
 operator|.
 name|hasChanges
 argument_list|()
+return|;
+block|}
+comment|/**      * This method simply returns an iterator over a list of selected objects.      * There's no performance benefit of using it vs. regular "select".      *       * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
+name|iterate
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+block|{
+name|List
+argument_list|<
+name|T
+argument_list|>
+name|objects
+init|=
+name|select
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+return|return
+operator|new
+name|CollectionResultIterator
+argument_list|<
+name|T
+argument_list|>
+argument_list|(
+name|objects
+argument_list|)
 return|;
 block|}
 block|}

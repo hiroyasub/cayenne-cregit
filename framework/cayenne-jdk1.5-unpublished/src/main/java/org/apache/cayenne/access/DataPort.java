@@ -228,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An engine to port data between two DataNodes. These nodes can potentially connect to  * databases from different vendors. The only assumption is that all of the DbEntities  * (tables) being ported are present in both source and destination databases and are  * adequately described by Cayenne mapping.  *<p>  * DataPort implements a Cayenne-based algorithm to read data from source DataNode and  * write to destination DataNode. It uses DataPortDelegate interface to externalize  * various things, such as determining what entities to port (include/exclude from port  * based on some criteria), logging the progress of port operation, qualifying the  * queries, etc.  *</p>  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples package.  * @deprecated since 3.2  */
+comment|/**  * An engine to port data between two DataNodes. These nodes can potentially  * connect to databases from different vendors. The only assumption is that all  * of the DbEntities (tables) being ported are present in both source and  * destination databases and are adequately described by Cayenne mapping.  *<p>  * DataPort implements a Cayenne-based algorithm to read data from source  * DataNode and write to destination DataNode. It uses DataPortDelegate  * interface to externalize various things, such as determining what entities to  * port (include/exclude from port based on some criteria), logging the progress  * of port operation, qualifying the queries, etc.  *</p>  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 3.2  */
 end_comment
 
 begin_class
@@ -296,7 +296,7 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
-comment|/**      * Runs DataPort. The instance must be fully configured by the time this method is      * invoked, having its delegate, source and destinatio nodes, and a list of entities      * set up.      */
+comment|/**      * Runs DataPort. The instance must be fully configured by the time this      * method is invoked, having its delegate, source and destinatio nodes, and      * a list of entities set up.      */
 specifier|public
 name|void
 name|execute
@@ -335,7 +335,8 @@ literal|"Can't port data, destination node is null."
 argument_list|)
 throw|;
 block|}
-comment|// the simple equality check may actually detect problems with misconfigred nodes
+comment|// the simple equality check may actually detect problems with
+comment|// misconfigred nodes
 comment|// it is not as dumb as it may look at first
 if|if
 condition|(
@@ -811,7 +812,8 @@ name|currentRow
 init|=
 literal|0
 decl_stmt|;
-comment|// even if we don't use intermediate batch commits, we still need to
+comment|// even if we don't use intermediate batch commits, we still
+comment|// need to
 comment|// estimate batch insert size
 name|int
 name|batchSize
@@ -849,7 +851,8 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|// end of the batch detected... commit and start a new insert
+comment|// end of the batch detected... commit and start a new
+comment|// insert
 comment|// query
 name|destinationNode
 operator|.
@@ -962,22 +965,12 @@ block|}
 block|}
 finally|finally
 block|{
-try|try
-block|{
 comment|// don't forget to close ResultIterator
 name|result
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|ex
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 block|}
@@ -1008,7 +1001,7 @@ return|return
 name|destinationNode
 return|;
 block|}
-comment|/**      * Sets the initial list of entities to process. This list can be later modified by      * the delegate.      */
+comment|/**      * Sets the initial list of entities to process. This list can be later      * modified by the delegate.      */
 specifier|public
 name|void
 name|setEntities
@@ -1081,7 +1074,7 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
-comment|/**      * Returns true if a DataPort was configured to delete all data from the destination      * tables.      */
+comment|/**      * Returns true if a DataPort was configured to delete all data from the      * destination tables.      */
 specifier|public
 name|boolean
 name|isCleaningDestination
@@ -1091,7 +1084,7 @@ return|return
 name|cleaningDestination
 return|;
 block|}
-comment|/**      * Defines whether DataPort should delete all data from destination tables before      * doing the port.      */
+comment|/**      * Defines whether DataPort should delete all data from destination tables      * before doing the port.      */
 specifier|public
 name|void
 name|setCleaningDestination
@@ -1116,7 +1109,7 @@ return|return
 name|insertBatchSize
 return|;
 block|}
-comment|/**      * Sets a parameter used for tuning insert batches. If set to a value greater than      * zero, DataPort will commit every N rows. If set to value less or equal to zero,      * DataPort will commit only once at the end of the insert.      */
+comment|/**      * Sets a parameter used for tuning insert batches. If set to a value      * greater than zero, DataPort will commit every N rows. If set to value      * less or equal to zero, DataPort will commit only once at the end of the      * insert.      */
 specifier|public
 name|void
 name|setInsertBatchSize

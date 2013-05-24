@@ -35,7 +35,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -90,10 +90,13 @@ end_comment
 begin_class
 class|class
 name|ScalarRowReader
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|RowReader
 argument_list|<
-name|Object
+name|T
 argument_list|>
 block|{
 specifier|private
@@ -161,19 +164,25 @@ operator|+
 literal|1
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
-name|Object
+name|T
 name|readRow
 parameter_list|(
 name|ResultSet
 name|resultSet
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 try|try
 block|{
 return|return
+operator|(
+name|T
+operator|)
 name|converter
 operator|.
 name|materializeObject
@@ -188,7 +197,7 @@ return|;
 block|}
 catch|catch
 parameter_list|(
-name|CayenneException
+name|CayenneRuntimeException
 name|cex
 parameter_list|)
 block|{
@@ -205,7 +214,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Exception materializing column."
 argument_list|,

@@ -53,6 +53,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -73,19 +83,17 @@ name|java
 operator|.
 name|util
 operator|.
-name|Set
+name|NoSuchElementException
 import|;
 end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|cayenne
-operator|.
-name|CayenneException
+name|Set
 import|;
 end_import
 
@@ -144,19 +152,28 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ResultIterator that does in-memory filtering of rows to return only distinct rows.  * Distinct comparison is done by comparing ObjectIds created from each row. Internally  * DistinctResultIterator wraps another ResultIterator that provides the actual rows.  *   * @since 3.0  */
+comment|/**  * A ResultIterator that does in-memory filtering of rows to return only  * distinct rows. Distinct comparison is done by comparing ObjectIds created  * from each row. Internally DistinctResultIterator wraps another ResultIterator  * that provides the actual rows.  *   * @since 3.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
 name|DistinctResultIterator
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
 block|{
 specifier|protected
 name|ResultIterator
-name|wrappedIterator
+argument_list|<
+name|T
+argument_list|>
+name|delegate
 decl_stmt|;
 specifier|protected
 name|Set
@@ -171,7 +188,7 @@ argument_list|>
 name|fetchedIds
 decl_stmt|;
 specifier|protected
-name|Object
+name|DataRow
 name|nextDataRow
 decl_stmt|;
 specifier|protected
@@ -182,12 +199,15 @@ specifier|protected
 name|boolean
 name|compareFullRows
 decl_stmt|;
-comment|/**      * Creates new DistinctResultIterator wrapping another ResultIterator.      *       * @param wrappedIterator      * @param defaultEntity an entity needed to build ObjectIds for distinct comparison.      */
+comment|/**      * Creates new DistinctResultIterator wrapping another ResultIterator.      *       * @param wrappedIterator      * @param defaultEntity      *            an entity needed to build ObjectIds for distinct comparison.      */
 specifier|public
 name|DistinctResultIterator
 parameter_list|(
 name|ResultIterator
-name|wrappedIterator
+argument_list|<
+name|T
+argument_list|>
+name|delegate
 parameter_list|,
 name|DbEntity
 name|defaultEntity
@@ -195,19 +215,17 @@ parameter_list|,
 name|boolean
 name|compareFullRows
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
-name|wrappedIterator
+name|delegate
 operator|==
 literal|null
 condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|NullPointerException
 argument_list|(
 literal|"Null wrapped iterator."
 argument_list|)
@@ -222,7 +240,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|NullPointerException
 argument_list|(
 literal|"Null defaultEntity."
 argument_list|)
@@ -230,9 +248,9 @@ throw|;
 block|}
 name|this
 operator|.
-name|wrappedIterator
+name|delegate
 operator|=
-name|wrappedIterator
+name|delegate
 expr_stmt|;
 name|this
 operator|.
@@ -266,15 +284,33 @@ name|checkNextRow
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|Iterator
+argument_list|<
+name|T
+argument_list|>
+name|iterator
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ResultIteratorIterator
+argument_list|<
+name|T
+argument_list|>
+argument_list|(
+name|this
+argument_list|)
+return|;
+block|}
 comment|/**      * CLoses underlying ResultIterator.      */
 specifier|public
 name|void
 name|close
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
-name|wrappedIterator
+name|delegate
 operator|.
 name|close
 argument_list|()
@@ -284,23 +320,21 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|List
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|allRows
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|List
 argument_list|<
-name|Object
+name|T
 argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|Object
+name|T
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -329,8 +363,6 @@ specifier|public
 name|boolean
 name|hasNextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 return|return
 name|nextDataRow
@@ -339,11 +371,9 @@ literal|null
 return|;
 block|}
 specifier|public
-name|Object
+name|T
 name|nextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
@@ -354,15 +384,24 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|NoSuchElementException
 argument_list|(
 literal|"An attempt to read uninitialized row or past the end of the iterator."
 argument_list|)
 throw|;
 block|}
-name|Object
+comment|// TODO:
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+name|T
 name|row
 init|=
+operator|(
+name|T
+operator|)
 name|nextDataRow
 decl_stmt|;
 name|checkNextRow
@@ -377,8 +416,6 @@ specifier|public
 name|void
 name|skipRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
@@ -389,7 +426,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|NoSuchElementException
 argument_list|(
 literal|"An attempt to read uninitialized row or past the end of the iterator."
 argument_list|)
@@ -402,8 +439,6 @@ block|}
 name|void
 name|checkNextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
@@ -426,8 +461,6 @@ block|}
 name|void
 name|checkNextUniqueRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|nextDataRow
 operator|=
@@ -435,7 +468,7 @@ literal|null
 expr_stmt|;
 while|while
 condition|(
-name|wrappedIterator
+name|delegate
 operator|.
 name|hasNextRow
 argument_list|()
@@ -447,7 +480,7 @@ init|=
 operator|(
 name|DataRow
 operator|)
-name|wrappedIterator
+name|delegate
 operator|.
 name|nextRow
 argument_list|()
@@ -475,8 +508,6 @@ block|}
 name|void
 name|checkNextRowWithUniqueId
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|nextDataRow
 operator|=
@@ -484,7 +515,7 @@ literal|null
 expr_stmt|;
 while|while
 condition|(
-name|wrappedIterator
+name|delegate
 operator|.
 name|hasNextRow
 argument_list|()
@@ -496,7 +527,7 @@ init|=
 operator|(
 name|DataRow
 operator|)
-name|wrappedIterator
+name|delegate
 operator|.
 name|nextRow
 argument_list|()

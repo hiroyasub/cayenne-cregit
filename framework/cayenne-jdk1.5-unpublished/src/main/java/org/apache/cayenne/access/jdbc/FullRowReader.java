@@ -35,7 +35,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -142,8 +142,6 @@ parameter_list|(
 name|ResultSet
 name|resultSet
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 try|try
 block|{
@@ -179,7 +177,8 @@ name|i
 operator|++
 control|)
 block|{
-comment|// note: jdbc column indexes start from 1, not 0 unlike everywhere else
+comment|// note: jdbc column indexes start from 1, not 0 unlike
+comment|// everywhere else
 name|Object
 name|val
 init|=
@@ -228,7 +227,7 @@ return|;
 block|}
 catch|catch
 parameter_list|(
-name|CayenneException
+name|CayenneRuntimeException
 name|cex
 parameter_list|)
 block|{
@@ -245,7 +244,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Exception materializing column."
 argument_list|,

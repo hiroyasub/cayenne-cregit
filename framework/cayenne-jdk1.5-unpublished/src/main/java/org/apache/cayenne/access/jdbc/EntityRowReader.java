@@ -35,7 +35,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -300,7 +300,8 @@ operator|.
 name|getJdbcType
 argument_list|()
 expr_stmt|;
-comment|// query translator may change the order of fields compare to the entity
+comment|// query translator may change the order of fields compare to the
+comment|// entity
 comment|// result, so figure out DataRow labels by doing reverse lookup of
 comment|// RowDescriptor labels...
 if|if
@@ -321,7 +322,8 @@ literal|"."
 argument_list|)
 condition|)
 block|{
-comment|// if the dataRowKey contains ".", it is prefetched column and we can use
+comment|// if the dataRowKey contains ".", it is prefetched column and
+comment|// we can use
 comment|// it instead of search the name by alias
 name|labels
 index|[
@@ -386,8 +388,6 @@ parameter_list|(
 name|ResultSet
 name|resultSet
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 try|try
 block|{
@@ -473,7 +473,7 @@ return|;
 block|}
 catch|catch
 parameter_list|(
-name|CayenneException
+name|CayenneRuntimeException
 name|cex
 parameter_list|)
 block|{
@@ -490,7 +490,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Exception materializing id column."
 argument_list|,

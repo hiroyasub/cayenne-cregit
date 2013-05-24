@@ -75,18 +75,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|access
 operator|.
 name|OperationObserver
@@ -136,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple implementation of OperationObserver interface. Useful as a superclass of other  * implementations of OperationObserver. This implementation only tracks transaction  * events and exceptions.  *<p>  *<i>This operation observer is unsafe to use in application, since it doesn't rethrow  * the exceptions immediately, and may cause the database to hang.</i>  *</p>  *   */
+comment|/**  * Simple implementation of OperationObserver interface. Useful as a superclass  * of other implementations of OperationObserver. This implementation only  * tracks transaction events and exceptions.  *<p>  *<i>This operation observer is unsafe to use in application, since it doesn't  * rethrow the exceptions immediately, and may cause the database to hang.</i>  *</p>  *   */
 end_comment
 
 begin_class
@@ -313,7 +301,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** Returns a list of global exceptions that occured during data operation run. */
+comment|/**      * Returns a list of global exceptions that occured during data operation      * run.      */
 specifier|public
 name|List
 argument_list|<
@@ -326,7 +314,7 @@ return|return
 name|globalExceptions
 return|;
 block|}
-comment|/** Returns a list of exceptions that occured during data operation run by query. */
+comment|/**      * Returns a list of exceptions that occured during data operation run by      * query.      */
 specifier|public
 name|Map
 argument_list|<
@@ -341,7 +329,7 @@ return|return
 name|queryExceptions
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if at least one exception was registered during query      * execution.      */
+comment|/**      * Returns<code>true</code> if at least one exception was registered during      * query execution.      */
 specifier|public
 name|boolean
 name|hasExceptions
@@ -404,7 +392,7 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
-comment|/**      * Closes ResultIterator without reading its data. If you implement a custom subclass,      * only call super if closing the iterator is what you need.      */
+comment|/**      * Closes ResultIterator without reading its data. If you implement a custom      * subclass, only call super if closing the iterator is what you need.      */
 specifier|public
 name|void
 name|nextRows
@@ -423,32 +411,14 @@ operator|!=
 literal|null
 condition|)
 block|{
-try|try
-block|{
 name|it
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|ex
-parameter_list|)
-block|{
-comment|// don't throw here....
-name|nextQueryException
-argument_list|(
-name|query
-argument_list|,
-name|ex
-argument_list|)
-expr_stmt|;
 block|}
-block|}
-block|}
-comment|/**      * Closes ResultIterator without reading its data. If you implement a custom subclass,      * only call super if closing the iterator is what you need.      *       * @since 3.0      */
+comment|/**      * Closes ResultIterator without reading its data. If you implement a custom      * subclass, only call super if closing the iterator is what you need.      *       * @since 3.0      */
 specifier|public
 name|void
 name|nextGeneratedRows
@@ -467,29 +437,11 @@ operator|!=
 literal|null
 condition|)
 block|{
-try|try
-block|{
 name|keysIterator
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|ex
-parameter_list|)
-block|{
-comment|// don't throw here....
-name|nextQueryException
-argument_list|(
-name|query
-argument_list|,
-name|ex
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 specifier|public

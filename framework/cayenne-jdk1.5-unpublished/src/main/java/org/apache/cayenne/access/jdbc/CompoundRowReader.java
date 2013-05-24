@@ -27,18 +27,6 @@ name|ResultSet
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneException
-import|;
-end_import
-
 begin_comment
 comment|/**  * A row reader for complex result sets resolved as object arrays.  *   * @since 3.0  */
 end_comment
@@ -109,8 +97,6 @@ parameter_list|(
 name|ResultSet
 name|resultSet
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 name|int
 name|width

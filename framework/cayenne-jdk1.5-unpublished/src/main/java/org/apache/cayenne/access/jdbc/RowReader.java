@@ -27,18 +27,6 @@ name|ResultSet
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneException
-import|;
-end_import
-
 begin_comment
 comment|/**  * A strategy class that encapsulates an algorithm for converting a single ResultSet row  * into a DataRow.  *   * @since 3.0  */
 end_comment
@@ -57,8 +45,6 @@ parameter_list|(
 name|ResultSet
 name|resultSet
 parameter_list|)
-throws|throws
-name|CayenneException
 function_decl|;
 comment|// TODO: andrus 11/27/2008 refactor the postprocessor hack into a special row reader.
 name|void

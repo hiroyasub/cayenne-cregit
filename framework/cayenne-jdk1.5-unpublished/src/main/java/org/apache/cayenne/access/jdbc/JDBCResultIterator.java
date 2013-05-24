@@ -73,7 +73,27 @@ name|java
 operator|.
 name|util
 operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|NoSuchElementException
 import|;
 end_import
 
@@ -165,8 +185,14 @@ begin_class
 specifier|public
 class|class
 name|JDBCResultIterator
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
 block|{
 comment|// Connection information
 specifier|protected
@@ -205,7 +231,7 @@ decl_stmt|;
 specifier|private
 name|RowReader
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|rowReader
 decl_stmt|;
@@ -282,11 +308,36 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|Iterator
+argument_list|<
+name|T
+argument_list|>
+name|iterator
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ResultIteratorIterator
+argument_list|<
+name|T
+argument_list|>
+argument_list|(
+name|this
+argument_list|)
+return|;
+block|}
 comment|/**      * RowReader factory method.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|RowReader
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|createRowReader
 parameter_list|(
@@ -379,6 +430,9 @@ block|{
 return|return
 operator|new
 name|ScalarRowReader
+argument_list|<
+name|T
+argument_list|>
 argument_list|(
 name|descriptor
 argument_list|,
@@ -461,6 +515,9 @@ name|i
 argument_list|,
 operator|new
 name|ScalarRowReader
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|descriptor
 argument_list|,
@@ -474,6 +531,12 @@ expr_stmt|;
 block|}
 block|}
 return|return
+operator|(
+name|RowReader
+argument_list|<
+name|T
+argument_list|>
+operator|)
 name|reader
 return|;
 block|}
@@ -490,10 +553,15 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|RowReader
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|createEntityRowReader
 parameter_list|(
@@ -517,6 +585,9 @@ block|{
 return|return
 operator|new
 name|IdRowReader
+argument_list|<
+name|T
+argument_list|>
 argument_list|(
 name|descriptor
 argument_list|,
@@ -543,6 +614,12 @@ argument_list|()
 condition|)
 block|{
 return|return
+operator|(
+name|RowReader
+argument_list|<
+name|T
+argument_list|>
+operator|)
 operator|new
 name|InheritanceAwareEntityRowReader
 argument_list|(
@@ -555,6 +632,12 @@ block|}
 else|else
 block|{
 return|return
+operator|(
+name|RowReader
+argument_list|<
+name|T
+argument_list|>
+operator|)
 operator|new
 name|EntityRowReader
 argument_list|(
@@ -565,10 +648,15 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|RowReader
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|createFullRowReader
 parameter_list|(
@@ -592,6 +680,9 @@ block|{
 return|return
 operator|new
 name|IdRowReader
+argument_list|<
+name|T
+argument_list|>
 argument_list|(
 name|descriptor
 argument_list|,
@@ -618,6 +709,12 @@ argument_list|()
 condition|)
 block|{
 return|return
+operator|(
+name|RowReader
+argument_list|<
+name|T
+argument_list|>
+operator|)
 operator|new
 name|InheritanceAwareRowReader
 argument_list|(
@@ -630,6 +727,12 @@ block|}
 else|else
 block|{
 return|return
+operator|(
+name|RowReader
+argument_list|<
+name|T
+argument_list|>
+operator|)
 operator|new
 name|FullRowReader
 argument_list|(
@@ -644,23 +747,21 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|List
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|allRows
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|List
 argument_list|<
-name|Object
+name|T
 argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|Object
+name|T
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -683,7 +784,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Returns true if there is at least one more record that can be read from the      * iterator.      */
+comment|/**      * Returns true if there is at least one more record that can be read from      * the iterator.      */
 specifier|public
 name|boolean
 name|hasNextRow
@@ -695,11 +796,9 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|Object
+name|T
 name|nextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
@@ -710,13 +809,13 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|NoSuchElementException
 argument_list|(
 literal|"An attempt to read uninitialized row or past the end of the iterator."
 argument_list|)
 throw|;
 block|}
-name|Object
+name|T
 name|row
 init|=
 name|rowReader
@@ -738,8 +837,6 @@ specifier|public
 name|void
 name|skipRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
@@ -750,7 +847,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|NoSuchElementException
 argument_list|(
 literal|"An attempt to read uninitialized row or past the end of the iterator."
 argument_list|)
@@ -760,13 +857,13 @@ name|checkNextRow
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Closes ResultIterator and associated ResultSet. This method must be called      * explicitly when the user is finished processing the records. Otherwise unused      * database resources will not be released properly.      */
+comment|/**      * Closes ResultIterator and associated ResultSet. This method must be      * called explicitly when the user is finished processing the records.      * Otherwise unused database resources will not be released properly.      */
 specifier|public
 name|void
 name|close
 parameter_list|()
 throws|throws
-name|CayenneException
+name|NoSuchElementException
 block|{
 if|if
 condition|(
@@ -837,8 +934,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// TODO: andrus, 5/8/2006 - closing connection within JDBCResultIterator is
-comment|// obsolete as this is bound to transaction closing in DataContext. Deprecate
+comment|// TODO: andrus, 5/8/2006 - closing connection within
+comment|// JDBCResultIterator is
+comment|// obsolete as this is bound to transaction closing in DataContext.
+comment|// Deprecate
 comment|// this after 1.2
 comment|// close connection, if this object was explicitly configured to be
 comment|// responsible for doing it
@@ -887,7 +986,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Error closing ResultIterator: "
 operator|+
@@ -904,13 +1003,11 @@ literal|true
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Moves internal ResultSet cursor position down one row. Checks if the next row is      * available.      */
+comment|/**      * Moves internal ResultSet cursor position down one row. Checks if the next      * row is available.      */
 specifier|protected
 name|void
 name|checkNextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|nextRow
 operator|=
@@ -940,7 +1037,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Error rewinding ResultSet"
 argument_list|,
@@ -949,7 +1046,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if this iterator is responsible for closing its      * connection, otherwise a user of the iterator must close the connection after      * closing the iterator.      */
+comment|/**      * Returns<code>true</code> if this iterator is responsible for closing its      * connection, otherwise a user of the iterator must close the connection      * after closing the iterator.      */
 specifier|public
 name|boolean
 name|isClosingConnection
@@ -984,7 +1081,8 @@ return|return
 name|rowDescriptor
 return|;
 block|}
-comment|// TODO: andrus 11/27/2008 refactor the postprocessor hack into a special row reader.
+comment|// TODO: andrus 11/27/2008 refactor the postprocessor hack into a special
+comment|// row reader.
 name|void
 name|setPostProcessor
 parameter_list|(

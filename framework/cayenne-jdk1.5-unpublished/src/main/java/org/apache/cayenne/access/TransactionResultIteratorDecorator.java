@@ -31,6 +31,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -43,23 +53,32 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
 begin_comment
-comment|/**  * Decorates ResultIterator to close active transaction when the iterator is closed.  *   * @since 1.2  */
+comment|/**  * Decorates ResultIterator to close active transaction when the iterator is  * closed.  *   * @since 1.2  */
 end_comment
 
 begin_class
 specifier|final
 class|class
 name|TransactionResultIteratorDecorator
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
 block|{
 specifier|private
 name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
 name|result
 decl_stmt|;
 specifier|private
@@ -70,6 +89,9 @@ specifier|public
 name|TransactionResultIteratorDecorator
 parameter_list|(
 name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
 name|result
 parameter_list|,
 name|Transaction
@@ -89,13 +111,26 @@ operator|=
 name|tx
 expr_stmt|;
 block|}
+specifier|public
+name|Iterator
+argument_list|<
+name|T
+argument_list|>
+name|iterator
+parameter_list|()
+block|{
+return|return
+name|result
+operator|.
+name|iterator
+argument_list|()
+return|;
+block|}
 comment|/**      * Closes the result and commits the transaction.      */
 specifier|public
 name|void
 name|close
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 try|try
 block|{
@@ -133,7 +168,7 @@ block|{
 block|}
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 name|e
 argument_list|)
@@ -165,23 +200,21 @@ comment|/**      * @since 3.0      */
 specifier|public
 name|List
 argument_list|<
-name|?
+name|T
 argument_list|>
 name|allRows
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|List
 argument_list|<
-name|Object
+name|T
 argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|Object
+name|T
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -208,8 +241,6 @@ specifier|public
 name|boolean
 name|hasNextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 return|return
 name|result
@@ -220,11 +251,9 @@ return|;
 block|}
 comment|/**      * @since 3.0      */
 specifier|public
-name|Object
+name|T
 name|nextRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 return|return
 name|result
@@ -238,8 +267,6 @@ specifier|public
 name|void
 name|skipRow
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 name|result
 operator|.

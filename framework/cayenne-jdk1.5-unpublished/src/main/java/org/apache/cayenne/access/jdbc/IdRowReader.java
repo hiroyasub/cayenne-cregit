@@ -35,18 +35,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|CayenneRuntimeException
 import|;
 end_import
@@ -126,10 +114,13 @@ end_comment
 begin_class
 class|class
 name|IdRowReader
+parameter_list|<
+name|T
+parameter_list|>
 extends|extends
 name|BaseRowReader
 argument_list|<
-name|Object
+name|T
 argument_list|>
 block|{
 specifier|protected
@@ -297,14 +288,12 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|T
 name|readRow
 parameter_list|(
 name|ResultSet
 name|resultSet
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 try|try
 block|{
@@ -336,7 +325,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|CayenneException
+name|CayenneRuntimeException
 name|cex
 parameter_list|)
 block|{
@@ -353,7 +342,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Exception materializing id column."
 argument_list|,
@@ -368,7 +357,7 @@ throw|;
 block|}
 block|}
 specifier|private
-name|Object
+name|T
 name|readSingleId
 parameter_list|(
 name|ResultSet
@@ -387,9 +376,17 @@ literal|0
 index|]
 decl_stmt|;
 comment|// note: jdbc column indexes start from 1, not 0 as in arrays
-name|Object
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+name|T
 name|val
 init|=
+operator|(
+name|T
+operator|)
 name|converters
 index|[
 name|index
@@ -409,14 +406,20 @@ name|index
 index|]
 argument_list|)
 decl_stmt|;
-comment|// note that postProcessor overrides are not applied. ID mapping must be the
+comment|// note that postProcessor overrides are not applied. ID mapping must be
+comment|// the
 comment|// same across inheritance hierarchy, so overrides do not make sense.
 return|return
 name|val
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
-name|Object
+name|T
 name|readIdMap
 parameter_list|(
 name|ResultSet
@@ -526,6 +529,9 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+operator|(
+name|T
+operator|)
 name|idRow
 return|;
 block|}

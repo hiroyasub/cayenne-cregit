@@ -51,6 +51,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|ResultIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|graph
 operator|.
 name|GraphManager
@@ -100,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are used in  * the application code to access Cayenne persistence features.  *   * @since 1.2  */
+comment|/**  * A Cayenne object facade to a persistent store. Instances of ObjectContext are  * used in the application code to access Cayenne persistence features.  *   * @since 1.2  */
 end_comment
 
 begin_interface
@@ -110,12 +124,12 @@ name|ObjectContext
 extends|extends
 name|Serializable
 block|{
-comment|/**      * Returns EntityResolver that stores all mapping information accessible by this      * ObjectContext.      */
+comment|/**      * Returns EntityResolver that stores all mapping information accessible by      * this ObjectContext.      */
 name|EntityResolver
 name|getEntityResolver
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a collection of objects that are registered with this ObjectContext and      * have a state PersistenceState.NEW      */
+comment|/**      * Returns a collection of objects that are registered with this      * ObjectContext and have a state PersistenceState.NEW      */
 name|Collection
 argument_list|<
 name|?
@@ -123,7 +137,7 @@ argument_list|>
 name|newObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a collection of objects that are registered with this ObjectContext and      * have a state PersistenceState.DELETED      */
+comment|/**      * Returns a collection of objects that are registered with this      * ObjectContext and have a state PersistenceState.DELETED      */
 name|Collection
 argument_list|<
 name|?
@@ -131,7 +145,7 @@ argument_list|>
 name|deletedObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a collection of objects that are registered with this ObjectContext and      * have a state PersistenceState.MODIFIED      */
+comment|/**      * Returns a collection of objects that are registered with this      * ObjectContext and have a state PersistenceState.MODIFIED      */
 name|Collection
 argument_list|<
 name|?
@@ -147,7 +161,7 @@ argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a local copy of 'objectFromAnotherContext' object. "Local" means that the      * returned object is registered in this context. If the local object hasn't been      * previously cached in this context, a hollow object is created and returned to the      * caller. No DB query is performed to resolve an object.      *<p>      * Note that passing an object with a non-existing id, may later result in      * FaultFailureException on attempt to read returned object properties.      *       * @since 3.1      */
+comment|/**      * Returns a local copy of 'objectFromAnotherContext' object. "Local" means      * that the returned object is registered in this context. If the local      * object hasn't been previously cached in this context, a hollow object is      * created and returned to the caller. No DB query is performed to resolve      * an object.      *<p>      * Note that passing an object with a non-existing id, may later result in      * FaultFailureException on attempt to read returned object properties.      *       * @since 3.1      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -158,7 +172,7 @@ name|T
 name|objectFromAnotherContext
 parameter_list|)
 function_decl|;
-comment|/**      * Creates a new persistent object of a given class scheduled to be inserted to the      * database on next commit.      */
+comment|/**      * Creates a new persistent object of a given class scheduled to be inserted      * to the database on next commit.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -172,7 +186,7 @@ argument_list|>
 name|persistentClass
 parameter_list|)
 function_decl|;
-comment|/**      * Registers a transient object with the context. The difference with      * {@link #newObject(Class)} is that a user creates an object herself, before      * attaching it to the context, instead of relying on Cayenne to do that.      *       * @param object new object that needs to be made persistent.      * @since 3.0      */
+comment|/**      * Registers a transient object with the context. The difference with      * {@link #newObject(Class)} is that a user creates an object herself,      * before attaching it to the context, instead of relying on Cayenne to do      * that.      *       * @param object      *            new object that needs to be made persistent.      * @since 3.0      */
 name|void
 name|registerNewObject
 parameter_list|(
@@ -180,7 +194,7 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
-comment|/**      * Schedules deletion of a collection of persistent objects.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      */
+comment|/**      * Schedules deletion of a collection of persistent objects.      *       * @throws DeleteDenyException      *             if a {@link org.apache.cayenne.map.DeleteRule#DENY} delete      *             rule is applicable for object deletion.      */
 name|void
 name|deleteObjects
 parameter_list|(
@@ -193,7 +207,7 @@ parameter_list|)
 throws|throws
 name|DeleteDenyException
 function_decl|;
-comment|/**      * Schedules deletion of one or more persistent objects. Same as      * {@link #deleteObjects(Collection)} only with a vararg argument list for easier      * deletion of individual objects.      *       * @throws DeleteDenyException if a {@link org.apache.cayenne.map.DeleteRule#DENY}      *             delete rule is applicable for object deletion.      * @since 3.1      */
+comment|/**      * Schedules deletion of one or more persistent objects. Same as      * {@link #deleteObjects(Collection)} only with a vararg argument list for      * easier deletion of individual objects.      *       * @throws DeleteDenyException      *             if a {@link org.apache.cayenne.map.DeleteRule#DENY} delete      *             rule is applicable for object deletion.      * @since 3.1      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -207,7 +221,7 @@ parameter_list|)
 throws|throws
 name|DeleteDenyException
 function_decl|;
-comment|/**      * A callback method that child Persistent objects are expected to call before      * accessing property values. This callback allows ObjectContext to "inflate"      * unresolved objects on demand and also resolve properties that rely on lazy      * faulting.      *       * @since 3.0      */
+comment|/**      * A callback method that child Persistent objects are expected to call      * before accessing property values. This callback allows ObjectContext to      * "inflate" unresolved objects on demand and also resolve properties that      * rely on lazy faulting.      *       * @since 3.0      */
 name|void
 name|prepareForAccess
 parameter_list|(
@@ -221,7 +235,7 @@ name|boolean
 name|lazyFaulting
 parameter_list|)
 function_decl|;
-comment|/**      * A callback method that child Persistent objects are expected to call from inside      * the setter after modifying a value of a persistent property, including "simple" and      * "arc" properties.      */
+comment|/**      * A callback method that child Persistent objects are expected to call from      * inside the setter after modifying a value of a persistent property,      * including "simple" and "arc" properties.      */
 name|void
 name|propertyChanged
 parameter_list|(
@@ -238,27 +252,27 @@ name|Object
 name|newValue
 parameter_list|)
 function_decl|;
-comment|/**      * Flushes all changes to objects in this context to the parent DataChannel, cascading      * flush operation all the way through the stack, ultimately saving data in the      * database.      */
+comment|/**      * Flushes all changes to objects in this context to the parent DataChannel,      * cascading flush operation all the way through the stack, ultimately      * saving data in the database.      */
 name|void
 name|commitChanges
 parameter_list|()
 function_decl|;
-comment|/**      * Flushes all changes to objects in this context to the parent DataChannel. Same as      * {@link #commitChanges()}, but no cascading flush occurs.      */
+comment|/**      * Flushes all changes to objects in this context to the parent DataChannel.      * Same as {@link #commitChanges()}, but no cascading flush occurs.      */
 name|void
 name|commitChangesToParent
 parameter_list|()
 function_decl|;
-comment|/**      * Resets all uncommitted changes made to the objects in this ObjectContext, cascading      * rollback operation all the way through the stack.      */
+comment|/**      * Resets all uncommitted changes made to the objects in this ObjectContext,      * cascading rollback operation all the way through the stack.      */
 name|void
 name|rollbackChanges
 parameter_list|()
 function_decl|;
-comment|/**      * Resets all uncommitted changes made to the objects in this ObjectContext. Same as      * {@link #rollbackChanges()()}, but rollback is local to this context and no      * cascading changes undoing occurs.      */
+comment|/**      * Resets all uncommitted changes made to the objects in this ObjectContext.      * Same as {@link #rollbackChanges()()}, but rollback is local to this      * context and no cascading changes undoing occurs.      */
 name|void
 name|rollbackChangesLocally
 parameter_list|()
 function_decl|;
-comment|/**      * Executes a selecting query, returning a list of persistent objects or data rows.      */
+comment|/**      * Executes a selecting query, returning a list of persistent objects or      * data rows.      */
 name|List
 name|performQuery
 parameter_list|(
@@ -266,7 +280,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a selecting query, returning a list of persistent objects or data rows.      */
+comment|/**      * Executes a selecting query, returning a list of persistent objects or      * data rows.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -283,7 +297,24 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes any kind of query providing the result in a form of QueryResponse.      */
+comment|/**      * Returns an iterable object over the open result set. Note that teration      * must be wrapped in try/finally, and ResultIterator must be explicitly      * closed when iteration is finished.      *       * @since 3.2      */
+parameter_list|<
+name|T
+parameter_list|>
+name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
+name|iterate
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+function_decl|;
+comment|/**      * Executes any kind of query providing the result in a form of      * QueryResponse.      */
 name|QueryResponse
 name|performGenericQuery
 parameter_list|(
@@ -291,7 +322,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Returns GraphManager that manages object graph associated with this context.      */
+comment|/**      * Returns GraphManager that manages object graph associated with this      * context.      */
 name|GraphManager
 name|getGraphManager
 parameter_list|()
@@ -301,12 +332,12 @@ name|DataChannel
 name|getChannel
 parameter_list|()
 function_decl|;
-comment|/**      * Returns<code>true</code> if there are any modified, deleted or new objects      * registered with this ObjectContext,<code>false</code> otherwise.      *       * @since 3.0      */
+comment|/**      * Returns<code>true</code> if there are any modified, deleted or new      * objects registered with this ObjectContext,<code>false</code> otherwise.      *       * @since 3.0      */
 name|boolean
 name|hasChanges
 parameter_list|()
 function_decl|;
-comment|/**      * Invalidates a Collection of persistent objects. This operation only applies to the      * objects already committed to the database and does nothing to the NEW objects. It      * would remove each object's snapshot from caches and change object's state to      * HOLLOW. On the next access to this object, the object will be refetched.      */
+comment|/**      * Invalidates a Collection of persistent objects. This operation only      * applies to the objects already committed to the database and does nothing      * to the NEW objects. It would remove each object's snapshot from caches      * and change object's state to HOLLOW. On the next access to this object,      * the object will be refetched.      */
 name|void
 name|invalidateObjects
 parameter_list|(
@@ -317,7 +348,7 @@ argument_list|>
 name|objects
 parameter_list|)
 function_decl|;
-comment|/**      * Invalidates one or more persistent objects. Same as      * {@link #invalidateObjects(Collection)} only with a vararg argument list for easier      * invalidation of individual objects. If no arguments are passed to this method, it      * does nothing.      *       * @since 3.1      */
+comment|/**      * Invalidates one or more persistent objects. Same as      * {@link #invalidateObjects(Collection)} only with a vararg argument list      * for easier invalidation of individual objects. If no arguments are passed      * to this method, it does nothing.      *       * @since 3.1      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -329,7 +360,7 @@ modifier|...
 name|objects
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Concurrent      * access to properties does not require any special synchronization      *       * @since 3.0      */
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'.      * Concurrent access to properties does not require any special      * synchronization      *       * @since 3.0      */
 name|Object
 name|getUserProperty
 parameter_list|(
@@ -337,7 +368,7 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Sets a user-defined property. Concurrent access to properties does not require any      * special synchronization      *       * @since 3.0      */
+comment|/**      * Sets a user-defined property. Concurrent access to properties does not      * require any special synchronization      *       * @since 3.0      */
 name|void
 name|setUserProperty
 parameter_list|(

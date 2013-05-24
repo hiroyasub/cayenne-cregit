@@ -123,18 +123,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|CayenneRuntimeException
 import|;
 end_import
@@ -522,7 +510,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs query routing and execution. During execution phase intercepts callbacks to  * the OperationObserver, remapping results to the original pre-routed queries.  *   * @since 1.2  */
+comment|/**  * Performs query routing and execution. During execution phase intercepts  * callbacks to the OperationObserver, remapping results to the original  * pre-routed queries.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -827,8 +815,10 @@ operator|.
 name|getObjectId
 argument_list|()
 decl_stmt|;
-comment|// special handling of temp ids... Return an empty list immediately so that
-comment|// upstream code could throw FaultFailureException, etc. Don't attempt to
+comment|// special handling of temp ids... Return an empty list immediately
+comment|// so that
+comment|// upstream code could throw FaultFailureException, etc. Don't
+comment|// attempt to
 comment|// translate and run the query. See for instance CAY-1651
 if|if
 condition|(
@@ -1159,7 +1149,8 @@ return|return
 name|DONE
 return|;
 block|}
-comment|// check whether a non-null FK is enough to assume non-null target, and if so,
+comment|// check whether a non-null FK is enough to assume non-null target,
+comment|// and if so,
 comment|// create a fault
 if|if
 condition|(
@@ -1178,8 +1169,10 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-comment|// prevent passing partial snapshots to ObjectResolver per CAY-724.
-comment|// Create a hollow object right here and skip object conversion downstream
+comment|// prevent passing partial snapshots to ObjectResolver per
+comment|// CAY-724.
+comment|// Create a hollow object right here and skip object conversion
+comment|// downstream
 name|this
 operator|.
 name|noObjectConversion
@@ -1433,7 +1426,8 @@ return|return
 name|DONE
 return|;
 block|}
-comment|// 3. refresh query - this shouldn't normally happen as child datacontext
+comment|// 3. refresh query - this shouldn't normally happen as child
+comment|// datacontext
 comment|// usually does a cascading refresh
 if|if
 condition|(
@@ -1664,7 +1658,8 @@ argument_list|,
 name|factory
 argument_list|)
 decl_stmt|;
-comment|// response may already be initialized by the factory above ... it is null if
+comment|// response may already be initialized by the factory above ... it
+comment|// is null if
 comment|// there was a preexisting cache entry
 if|if
 condition|(
@@ -1707,7 +1702,8 @@ block|}
 block|}
 else|else
 block|{
-comment|// on cache-refresh request, fetch without blocking and fill the cache
+comment|// on cache-refresh request, fetch without blocking and fill the
+comment|// cache
 name|queryCache
 operator|.
 name|put
@@ -1761,7 +1757,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// make an immutable list to make sure callers don't mess it up
+comment|// make an immutable list to make sure callers don't mess it
+comment|// up
 name|list
 operator|=
 name|Collections
@@ -1864,7 +1861,8 @@ name|queriesByExecutedQueries
 operator|=
 literal|null
 expr_stmt|;
-comment|// whether this is null or not will driver further decisions on how to process
+comment|// whether this is null or not will driver further decisions on how to
+comment|// process
 comment|// prefetched rows
 name|this
 operator|.
@@ -2186,7 +2184,8 @@ argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
-comment|// handle case when routing resulted in an "executable" query different from the
+comment|// handle case when routing resulted in an "executable" query different
+comment|// from the
 comment|// original query.
 if|if
 condition|(
@@ -2430,46 +2429,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|ex
-parameter_list|)
-block|{
-comment|// don't throw here....
-name|nextQueryException
-argument_list|(
-name|query
-argument_list|,
-name|ex
-argument_list|)
-expr_stmt|;
-block|}
 finally|finally
-block|{
-try|try
 block|{
 name|keysIterator
 operator|.
 name|close
 argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|e
-parameter_list|)
-block|{
-comment|// don't throw here....
-name|nextQueryException
-argument_list|(
-name|query
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 block|}
@@ -3171,7 +3137,8 @@ operator|.
 name|size
 argument_list|()
 decl_stmt|;
-comment|// no conversions needed for scalar positions; reuse Object[]'s to fill them
+comment|// no conversions needed for scalar positions; reuse Object[]'s to
+comment|// fill them
 comment|// with resolved objects
 name|List
 argument_list|<
