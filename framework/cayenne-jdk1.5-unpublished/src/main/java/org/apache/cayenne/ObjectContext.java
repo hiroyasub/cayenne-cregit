@@ -303,6 +303,23 @@ argument_list|>
 name|callback
 parameter_list|)
 function_decl|;
+comment|/**      * Creates a ResultIterator based on the provided query. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preservign a constant memory footpront. The caller must wrap      * iteration in try/finally and close the ResultIterator explicitly. Or use      * {@link #iterate(Select, ResultIteratorCallback)} as an alternative.      *       * @since 3.2      */
+parameter_list|<
+name|T
+parameter_list|>
+name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
+name|iterator
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+function_decl|;
 comment|/**      * Executes any kind of query providing the result in a form of      * QueryResponse.      */
 name|QueryResponse
 name|performGenericQuery

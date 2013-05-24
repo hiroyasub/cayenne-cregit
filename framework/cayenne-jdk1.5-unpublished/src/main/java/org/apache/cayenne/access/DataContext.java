@@ -2986,7 +2986,7 @@ literal|"unchecked"
 argument_list|)
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 parameter_list|<
 name|T
 parameter_list|>

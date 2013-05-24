@@ -334,7 +334,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 parameter_list|<
 name|T
 parameter_list|>

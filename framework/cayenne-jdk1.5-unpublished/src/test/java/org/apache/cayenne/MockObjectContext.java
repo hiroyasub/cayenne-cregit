@@ -488,6 +488,27 @@ name|callback
 parameter_list|)
 block|{
 block|}
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
+name|iterator
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 

@@ -1396,7 +1396,7 @@ argument_list|()
 return|;
 block|}
 comment|/**      * This method simply returns an iterator over a list of selected objects.      * There's no performance benefit of using it vs. regular "select".      *       * @since 3.2      */
-specifier|protected
+specifier|public
 parameter_list|<
 name|T
 parameter_list|>

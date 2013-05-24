@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * A callback interface that allows to scan through a {@link ResultIterator}  * without the need to close it explicitly.  *   * @since 3.2  */
 end_comment
 
 begin_interface
