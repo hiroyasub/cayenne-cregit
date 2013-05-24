@@ -456,7 +456,7 @@ name|ObjectContext
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Returns the ObjectContext bound to the current thread.      *       * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException if there is no ObjectContext bound to the current      *             thread.      */
+comment|/**      * Returns the ObjectContext bound to the current thread.      *       * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException      *             if there is no ObjectContext bound to the current thread.      */
 specifier|public
 specifier|static
 name|ObjectContext
@@ -492,7 +492,7 @@ return|return
 name|context
 return|;
 block|}
-comment|/**      * Binds a ObjectContext to the current thread. ObjectContext can later be retrieved      * by users in the same thread by calling {@link BaseContext#getThreadObjectContext}.      * Using null parameter will unbind currently bound ObjectContext.      *       * @since 3.0      */
+comment|/**      * Binds a ObjectContext to the current thread. ObjectContext can later be      * retrieved by users in the same thread by calling      * {@link BaseContext#getThreadObjectContext}. Using null parameter will      * unbind currently bound ObjectContext.      *       * @since 3.0      */
 specifier|public
 specifier|static
 name|void
@@ -510,7 +510,8 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|// transient variables that should be reinitialized on deserialization from the
+comment|// transient variables that should be reinitialized on deserialization from
+comment|// the
 comment|// registry
 specifier|protected
 specifier|transient
@@ -562,7 +563,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Checks whether this context is attached to Cayenne runtime stack and if not,      * attempts to attach itself to the runtime using Injector returned from the call to      * {@link CayenneRuntime#getThreadInjector()}. If thread Injector is not available and      * the context is not attached, throws CayenneRuntimeException.      *<p>      * This method is called internally by the context before access to transient      * variables to allow the context to attach to the stack lazily following      * deserialization.      *       * @return true if the context successfully attached to the thread runtime, false - if      *         it was already attached.      * @since 3.1      */
+comment|/**      * Checks whether this context is attached to Cayenne runtime stack and if      * not, attempts to attach itself to the runtime using Injector returned      * from the call to {@link CayenneRuntime#getThreadInjector()}. If thread      * Injector is not available and the context is not attached, throws      * CayenneRuntimeException.      *<p>      * This method is called internally by the context before access to      * transient variables to allow the context to attach to the stack lazily      * following deserialization.      *       * @return true if the context successfully attached to the thread runtime,      *         false - if it was already attached.      * @since 3.1      */
 specifier|protected
 name|boolean
 name|attachToRuntimeIfNeeded
@@ -613,7 +614,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Attaches this context to the CayenneRuntime whose Injector is passed as an argument      * to this method.      *       * @since 3.1      */
+comment|/**      * Attaches this context to the CayenneRuntime whose Injector is passed as      * an argument to this method.      *       * @since 3.1      */
 specifier|protected
 name|void
 name|attachToRuntime
@@ -767,7 +768,7 @@ operator|=
 name|entityResolver
 expr_stmt|;
 block|}
-comment|/**      * Returns whether this ObjectContext performs object validation before commit is      * executed.      *       * @since 1.1      */
+comment|/**      * Returns whether this ObjectContext performs object validation before      * commit is executed.      *       * @since 1.1      */
 specifier|public
 name|boolean
 name|isValidatingObjectsOnCommit
@@ -777,7 +778,7 @@ return|return
 name|validatingObjectsOnCommit
 return|;
 block|}
-comment|/**      * Sets the property defining whether this ObjectContext should perform object      * validation before commit is executed.      *       * @since 1.1      */
+comment|/**      * Sets the property defining whether this ObjectContext should perform      * object validation before commit is executed.      *       * @since 1.1      */
 specifier|public
 name|void
 name|setValidatingObjectsOnCommit
@@ -891,8 +892,10 @@ return|return
 name|localObject
 return|;
 block|}
-comment|// create a hollow object, optimistically assuming that the ID we got from
-comment|// 'objectFromAnotherContext' is a valid ID either in the parent context or in
+comment|// create a hollow object, optimistically assuming that the ID we
+comment|// got from
+comment|// 'objectFromAnotherContext' is a valid ID either in the parent
+comment|// context or in
 comment|// the DB. This essentially defers possible FaultFailureExceptions.
 name|ClassDescriptor
 name|descriptor
@@ -1057,6 +1060,56 @@ return|;
 block|}
 comment|/**      * @since 3.2      */
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|void
+name|iterate
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|,
+name|ResultIteratorCallback
+argument_list|<
+name|T
+argument_list|>
+name|callback
+parameter_list|)
+block|{
+name|ResultIterator
+argument_list|<
+name|T
+argument_list|>
+name|it
+init|=
+name|iterator
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+try|try
+block|{
+name|callback
+operator|.
+name|iterate
+argument_list|(
+name|it
+argument_list|)
+expr_stmt|;
+block|}
+finally|finally
+block|{
+name|it
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+specifier|protected
 specifier|abstract
 parameter_list|<
 name|T
@@ -1065,7 +1118,7 @@ name|ResultIterator
 argument_list|<
 name|T
 argument_list|>
-name|iterate
+name|iterator
 parameter_list|(
 name|Select
 argument_list|<
@@ -1195,7 +1248,8 @@ name|getPersistenceState
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// TODO: andrus 4/13/2006, modified and deleted states are possible due to
+comment|// TODO: andrus 4/13/2006, modified and deleted states are
+comment|// possible due to
 comment|// a race condition, should we handle them here?
 throw|throw
 operator|new
@@ -1251,9 +1305,12 @@ argument_list|(
 name|property
 argument_list|)
 decl_stmt|;
-comment|// If we don't have a property descriptor, there's not much we can do.
-comment|// Let the caller know that the specified property could not be found and list
-comment|// all of the properties that could be so the caller knows what can be used.
+comment|// If we don't have a property descriptor, there's not much we can
+comment|// do.
+comment|// Let the caller know that the specified property could not be
+comment|// found and list
+comment|// all of the properties that could be so the caller knows what can
+comment|// be used.
 if|if
 condition|(
 name|propertyDescriptor
@@ -1921,7 +1978,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a map of user-defined properties associated with this DataContext.      *       * @since 3.0      */
+comment|/**      * Returns a map of user-defined properties associated with this      * DataContext.      *       * @since 3.0      */
 specifier|protected
 name|Map
 argument_list|<
@@ -1971,7 +2028,7 @@ return|return
 name|userProperties
 return|;
 block|}
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'. Note that it      * is a caller responsibility to synchronize access to properties.      *       * @since 3.0      */
+comment|/**      * Returns a user-defined property previously set via 'setUserProperty'.      * Note that it is a caller responsibility to synchronize access to      * properties.      *       * @since 3.0      */
 specifier|public
 name|Object
 name|getUserProperty
@@ -2013,7 +2070,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If ObjEntity qualifier is set, asks it to inject initial value to an object. Also      * performs all Persistent initialization operations      */
+comment|/**      * If ObjEntity qualifier is set, asks it to inject initial value to an      * object. Also performs all Persistent initialization operations      */
 specifier|protected
 name|void
 name|injectInitialValue
@@ -2022,7 +2079,8 @@ name|Object
 name|obj
 parameter_list|)
 block|{
-comment|// must follow this exact order of property initialization per CAY-653, i.e. have
+comment|// must follow this exact order of property initialization per CAY-653,
+comment|// i.e. have
 comment|// the id and the context in place BEFORE setPersistence is called
 name|Persistent
 name|object

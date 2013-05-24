@@ -348,7 +348,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 parameter_list|<
 name|T
 parameter_list|>
@@ -356,7 +356,7 @@ name|ResultIterator
 argument_list|<
 name|T
 argument_list|>
-name|iterate
+name|iterator
 parameter_list|(
 name|Select
 argument_list|<

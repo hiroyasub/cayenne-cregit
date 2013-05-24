@@ -113,18 +113,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|CayenneRuntimeException
 import|;
 end_import
@@ -240,7 +228,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A synchronized list that serves as a container of DataObjects. It is returned when a  * paged query is performed by DataContext. On creation, only the first "page" is fully  * resolved, for the rest of the objects only their ObjectIds are read. Pages following  * the first page are resolved on demand only. On access to an element, the list would  * ensure that this element as well as all its siblings on the same page are fully  * resolved.  *<p>  * The list can hold DataRows or DataObjects. Attempts to add any other object types will  * result in an exception.  *</p>  *<p>  * Performance note: certain operations like<code>toArray</code> would trigger full list  * fetch.  *</p>  */
+comment|/**  * A synchronized list that serves as a container of DataObjects. It is returned  * when a paged query is performed by DataContext. On creation, only the first  * "page" is fully resolved, for the rest of the objects only their ObjectIds  * are read. Pages following the first page are resolved on demand only. On  * access to an element, the list would ensure that this element as well as all  * its siblings on the same page are fully resolved.  *<p>  * The list can hold DataRows or DataObjects. Attempts to add any other object  * types will result in an exception.  *</p>  *<p>  * Performance note: certain operations like<code>toArray</code> would trigger  * full list fetch.  *</p>  */
 end_comment
 
 begin_class
@@ -285,7 +273,7 @@ specifier|protected
 name|int
 name|unfetchedObjects
 decl_stmt|;
-comment|/**      * Stores a hint allowing to distinguish data rows from unfetched ids when the query      * fetches data rows.      */
+comment|/**      * Stores a hint allowing to distinguish data rows from unfetched ids when      * the query fetches data rows.      */
 specifier|protected
 name|int
 name|idWidth
@@ -294,17 +282,21 @@ specifier|private
 name|IncrementalListHelper
 name|helper
 decl_stmt|;
-comment|/**      * Defines the upper limit on the size of fetches. This is needed to avoid where      * clause size limitations.      */
+comment|/**      * Defines the upper limit on the size of fetches. This is needed to avoid      * where clause size limitations.      */
 specifier|protected
 name|int
 name|maxFetchSize
 decl_stmt|;
-comment|// Don't confuse this with the JDBC ResultSet fetch size setting - this controls
-comment|// the where clause generation that is necessary to fetch specific records a page
-comment|// at a time. Some JDBC Drivers/Databases may have limits on statement length
-comment|// or complexity of the where clause - e.g., PostgreSQL having a default limit of
+comment|// Don't confuse this with the JDBC ResultSet fetch size setting - this
+comment|// controls
+comment|// the where clause generation that is necessary to fetch specific records a
+comment|// page
+comment|// at a time. Some JDBC Drivers/Databases may have limits on statement
+comment|// length
+comment|// or complexity of the where clause - e.g., PostgreSQL having a default
+comment|// limit of
 comment|// 10,000 nested expressions.
-comment|/**      * Creates a new IncrementalFaultList using a given DataContext and query.      *       * @param dataContext DataContext used by IncrementalFaultList to fill itself with      *            objects.      * @param query Main query used to retrieve data. Must have "pageSize" property set to      *            a value greater than zero.      * @param maxFetchSize maximum number of fetches in one query      */
+comment|/**      * Creates a new IncrementalFaultList using a given DataContext and query.      *       * @param dataContext      *            DataContext used by IncrementalFaultList to fill itself with      *            objects.      * @param query      *            Main query used to retrieve data. Must have "pageSize"      *            property set to a value greater than zero.      * @param maxFetchSize      *            maximum number of fetches in one query      */
 specifier|public
 name|IncrementalFaultList
 parameter_list|(
@@ -535,7 +527,7 @@ return|return
 name|internalQuery
 return|;
 block|}
-comment|/**      * Performs initialization of the list of objects. Only the first page is fully      * resolved. For the rest of the list, only ObjectIds are read.      *       * @since 3.0      */
+comment|/**      * Performs initialization of the list of objects. Only the first page is      * fully resolved. For the rest of the list, only ObjectIds are read.      *       * @since 3.0      */
 specifier|protected
 name|void
 name|fillIn
@@ -553,16 +545,6 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-try|try
-block|{
-name|long
-name|t1
-init|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-decl_stmt|;
 name|ResultIterator
 name|it
 init|=
@@ -603,28 +585,6 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
-block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error performing query."
-argument_list|,
-name|Util
-operator|.
-name|unwindException
-argument_list|(
-name|e
-argument_list|)
-argument_list|)
-throw|;
-block|}
 name|unfetchedObjects
 operator|=
 name|elementsList
@@ -648,7 +608,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Checks that an object is of the same type as the rest of objects (DataObject or      * DataRows depending on the query type).      */
+comment|/**      * Checks that an object is of the same type as the rest of objects      * (DataObject or DataRows depending on the query type).      */
 specifier|private
 name|void
 name|validateListObject
@@ -709,7 +669,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Resolves a sublist of objects starting at<code>fromIndex</code> up to but not      * including<code>toIndex</code>. Internally performs bound checking and trims      * indexes accordingly.      */
+comment|/**      * Resolves a sublist of objects starting at<code>fromIndex</code> up to      * but not including<code>toIndex</code>. Internally performs bound      * checking and trims indexes accordingly.      */
 specifier|protected
 name|void
 name|resolveInterval
@@ -1335,7 +1295,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns zero-based index of the virtual "page" for a given array element index.      */
+comment|/**      * Returns zero-based index of the virtual "page" for a given array element      * index.      */
 specifier|public
 name|int
 name|pageIndex
@@ -1388,7 +1348,7 @@ operator|/
 name|pageSize
 return|;
 block|}
-comment|/**      * Get the upper bound on the number of records to resolve in one round trip to the      * database. This setting governs the size/complexity of the where clause generated to      * retrieve the next page of records. If the fetch size is less than the page size,      * then multiple fetches will be made to resolve a page.      */
+comment|/**      * Get the upper bound on the number of records to resolve in one round trip      * to the database. This setting governs the size/complexity of the where      * clause generated to retrieve the next page of records. If the fetch size      * is less than the page size, then multiple fetches will be made to resolve      * a page.      */
 specifier|public
 name|int
 name|getMaxFetchSize
@@ -1433,7 +1393,7 @@ return|return
 name|pageSize
 return|;
 block|}
-comment|/**      * Returns a list iterator for this list. DataObjects are resolved a page (according      * to getPageSize()) at a time as necessary - when retrieved with next() or      * previous().      */
+comment|/**      * Returns a list iterator for this list. DataObjects are resolved a page      * (according to getPageSize()) at a time as necessary - when retrieved with      * next() or previous().      */
 specifier|public
 name|ListIterator
 argument_list|<
@@ -1450,7 +1410,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a list iterator of the elements in this list (in proper sequence), starting      * at the specified position in this list. The specified index indicates the first      * element that would be returned by an initial call to the next method. An initial      * call to the previous method would return the element with the specified index minus      * one. DataObjects are resolved a page at a time (according to getPageSize()) as      * necessary - when retrieved with next() or previous().      */
+comment|/**      * Returns a list iterator of the elements in this list (in proper      * sequence), starting at the specified position in this list. The specified      * index indicates the first element that would be returned by an initial      * call to the next method. An initial call to the previous method would      * return the element with the specified index minus one. DataObjects are      * resolved a page at a time (according to getPageSize()) as necessary -      * when retrieved with next() or previous().      */
 specifier|public
 name|ListIterator
 argument_list|<
@@ -1492,7 +1452,7 @@ name|index
 argument_list|)
 return|;
 block|}
-comment|/**      * Return an iterator for this list. DataObjects are resolved a page (according to      * getPageSize()) at a time as necessary - when retrieved with next().      */
+comment|/**      * Return an iterator for this list. DataObjects are resolved a page      * (according to getPageSize()) at a time as necessary - when retrieved with      * next().      */
 specifier|public
 name|Iterator
 argument_list|<
@@ -2392,7 +2352,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**          * Returns true if an object is not the type of object expected in the list. This          * method is not expected to perform thorough checking of the object type. What's          * important is the guarantee that an unresolved object representation will always          * return true for this method, and resolved will return false. Other types of          * objects that users may choose to add to the list will not be analyzed in          * detail.          */
+comment|/**          * Returns true if an object is not the type of object expected in the          * list. This method is not expected to perform thorough checking of the          * object type. What's important is the guarantee that an unresolved          * object representation will always return true for this method, and          * resolved will return false. Other types of objects that users may          * choose to add to the list will not be analyzed in detail.          */
 specifier|abstract
 name|boolean
 name|unresolvedSuspect
@@ -2452,10 +2412,14 @@ return|return
 literal|true
 return|;
 block|}
-comment|// don't do a full check for object type matching the type of objects in the
-comment|// list... what's important is a quick "false" return if the object is of type
-comment|// representing unresolved objects.. furthermore, if inheritance is involved,
-comment|// we'll need an even more extensive check (see CAY-1142 on inheritance
+comment|// don't do a full check for object type matching the type of
+comment|// objects in the
+comment|// list... what's important is a quick "false" return if the object
+comment|// is of type
+comment|// representing unresolved objects.. furthermore, if inheritance is
+comment|// involved,
+comment|// we'll need an even more extensive check (see CAY-1142 on
+comment|// inheritance
 comment|// issues).
 return|return
 literal|false

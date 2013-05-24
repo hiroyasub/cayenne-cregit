@@ -297,14 +297,11 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an iterable object over the open result set. Note that teration      * must be wrapped in try/finally, and ResultIterator must be explicitly      * closed when iteration is finished.      *       * @since 3.2      */
+comment|/**      * Creates a ResultIterator based on the provided query and passes it to a      * callback for processing. The caller does not need to worry about closing      * the iterator. Thius methoid takes care of it.      *       * @since 3.2      */
 parameter_list|<
 name|T
 parameter_list|>
-name|ResultIterator
-argument_list|<
-name|T
-argument_list|>
+name|void
 name|iterate
 parameter_list|(
 name|Select
@@ -312,6 +309,12 @@ argument_list|<
 name|T
 argument_list|>
 name|query
+parameter_list|,
+name|ResultIteratorCallback
+argument_list|<
+name|T
+argument_list|>
+name|callback
 parameter_list|)
 function_decl|;
 comment|/**      * Executes any kind of query providing the result in a form of      * QueryResponse.      */

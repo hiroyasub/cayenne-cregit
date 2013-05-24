@@ -125,18 +125,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|CayenneRuntimeException
 import|;
 end_import
@@ -2970,7 +2958,9 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|public
+annotation|@
+name|Override
+specifier|protected
 parameter_list|<
 name|T
 parameter_list|>
@@ -2978,7 +2968,7 @@ name|ResultIterator
 argument_list|<
 name|T
 argument_list|>
-name|iterate
+name|iterator
 parameter_list|(
 name|Select
 argument_list|<
@@ -2987,29 +2977,12 @@ argument_list|>
 name|query
 parameter_list|)
 block|{
-try|try
-block|{
 return|return
 name|performIteratedQuery
 argument_list|(
 name|query
 argument_list|)
 return|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-name|e
-argument_list|)
-throw|;
-block|}
 block|}
 comment|/**      * Performs a single database select query returning result as a      * ResultIterator. It is caller's responsibility to explicitly close the      * ResultIterator. A failure to do so will result in a database connection      * not being released. Another side effect of an open ResultIterator is that      * an internal Cayenne transaction that originated in this method stays open      * until the iterator is closed. So users should normally close the iterator      * within the same thread that opened it.      */
 comment|// TODO: deprecate once all selecting queries start implementing Select<T>
@@ -3028,8 +3001,6 @@ parameter_list|(
 name|Query
 name|query
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 comment|// TODO: use 3.2 TransactionManager
 if|if
@@ -3103,7 +3074,7 @@ argument_list|()
 expr_stmt|;
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 name|e
 argument_list|)
@@ -3163,8 +3134,6 @@ parameter_list|(
 name|Query
 name|query
 parameter_list|)
-throws|throws
-name|CayenneException
 block|{
 comment|// note that for now DataChannel API does not support cursors (aka
 comment|// ResultIterator), so we have to go directly to the DataDomain.

@@ -110,7 +110,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * OperationObserver that is used to track the execution  * of SelectQueries with results returned as ResultIterator.  *    */
+comment|/**  * OperationObserver that is used to track the execution of SelectQueries with  * results returned as ResultIterator.  *   */
 end_comment
 
 begin_class
@@ -182,8 +182,6 @@ specifier|public
 name|ResultIterator
 name|getResultIterator
 parameter_list|()
-throws|throws
-name|CayenneException
 block|{
 if|if
 condition|(
@@ -239,7 +237,7 @@ comment|// this should never happen
 block|}
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Error getting ResultIterator: "
 operator|+
