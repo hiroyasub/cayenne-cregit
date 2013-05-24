@@ -916,7 +916,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:70dlu, 3dlu, fill:110dlu, 3dlu, fill:100"
+literal|"right:70dlu, 3dlu, fill:180dlu, 3dlu, fill:120"
 argument_list|,
 literal|""
 argument_list|)
@@ -953,7 +953,7 @@ operator|.
 name|getComponent
 argument_list|()
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|builder
@@ -975,7 +975,7 @@ literal|"DataNode:"
 argument_list|,
 name|nodeSelector
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|builder
