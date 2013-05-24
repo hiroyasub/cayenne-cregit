@@ -1607,7 +1607,7 @@ operator|=
 name|distinct
 expr_stmt|;
 block|}
-comment|/**      * Adds one or more aliases for the qualifier expression path. Aliases serve to      * instruct Cayenne to generate separate sets of joins for overlapping paths, that      * maybe needed for complex conditions. An example of an<i>implicit<i> splits is this      * method: {@link ExpressionFactory#matchAllExp(String, Object...)}.      *      * @since 3.0      */
+comment|/**      * Adds one or more aliases for the qualifier expression path. Aliases serve to      * instruct Cayenne to generate separate sets of joins for overlapping paths, that      * maybe needed for complex conditions. An example of an<i>implicit</i> splits is this      * method: {@link ExpressionFactory#matchAllExp(String, Object...)}.      *      * @since 3.0      */
 specifier|public
 name|void
 name|aliasPathSplits
@@ -1972,7 +1972,7 @@ return|return
 name|orderings
 return|;
 block|}
-comment|/**      * Sets statement's fetch size (0 for no default size)      *      * @since 3.0      */
+comment|/**      * Sets statement's fetch size (0 for default size)      *      * @since 3.0      */
 specifier|public
 name|void
 name|setStatementFetchSize
