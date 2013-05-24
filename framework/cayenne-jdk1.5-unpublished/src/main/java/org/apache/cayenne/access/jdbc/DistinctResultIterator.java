@@ -151,6 +151,20 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|ResultIteratorIterator
+import|;
+end_import
+
 begin_comment
 comment|/**  * A ResultIterator that does in-memory filtering of rows to return only  * distinct rows. Distinct comparison is done by comparing ObjectIds created  * from each row. Internally DistinctResultIterator wraps another ResultIterator  * that provides the actual rows.  *   * @since 3.0  */
 end_comment

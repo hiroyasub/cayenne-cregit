@@ -247,6 +247,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ResultIteratorCallback
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|conn
 operator|.
 name|PoolManager
@@ -1511,7 +1523,8 @@ name|createGalleriesAndExhibitsDataSet
 argument_list|()
 expr_stmt|;
 comment|// Exhibit with Gallery as Fault must still include Gallery
-comment|// Artist and Exhibit (Exhibit has unresolved to-one to gallery as in the
+comment|// Artist and Exhibit (Exhibit has unresolved to-one to gallery as in
+comment|// the
 comment|// CAY-96 bug report)
 name|ObjectId
 name|eId
@@ -1574,7 +1587,8 @@ argument_list|(
 name|e
 argument_list|)
 decl_stmt|;
-comment|// assert that after taking a snapshot, we have FK in, but the relationship
+comment|// assert that after taking a snapshot, we have FK in, but the
+comment|// relationship
 comment|// is still a Fault
 name|assertTrue
 argument_list|(
@@ -1607,7 +1621,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests how CHAR field is handled during fetch. Some databases (Oracle...) would pad      * a CHAR column with extra spaces, returned to the client. Cayenne should trim it.      */
+comment|/**      * Tests how CHAR field is handled during fetch. Some databases (Oracle...)      * would pad a CHAR column with extra spaces, returned to the client.      * Cayenne should trim it.      */
 specifier|public
 name|void
 name|testCharFetch
@@ -1664,7 +1678,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests how CHAR field is handled during fetch in the WHERE clause. Some databases      * (Oracle...) would pad a CHAR column with extra spaces, returned to the client.      * Cayenne should trim it.      */
+comment|/**      * Tests how CHAR field is handled during fetch in the WHERE clause. Some      * databases (Oracle...) would pad a CHAR column with extra spaces, returned      * to the client. Cayenne should trim it.      */
 specifier|public
 name|void
 name|testCharInQualifier
@@ -1724,7 +1738,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test fetching query with multiple relationship paths between the same 2 entities      * used in qualifier.      */
+comment|/**      * Test fetching query with multiple relationship paths between the same 2      * entities used in qualifier.      */
 specifier|public
 name|void
 name|testMultiObjRelFetch
@@ -1798,7 +1812,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test fetching query with multiple relationship paths between the same 2 entities      * used in qualifier.      */
+comment|/**      * Test fetching query with multiple relationship paths between the same 2      * entities used in qualifier.      */
 specifier|public
 name|void
 name|testMultiDbRelFetch
@@ -3722,6 +3736,86 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
+name|testIterate
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|createArtistsDataSet
+argument_list|()
+expr_stmt|;
+name|SelectQuery
+argument_list|<
+name|Artist
+argument_list|>
+name|q1
+init|=
+operator|new
+name|SelectQuery
+argument_list|<
+name|Artist
+argument_list|>
+argument_list|(
+name|Artist
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|context
+operator|.
+name|iterate
+argument_list|(
+name|q1
+argument_list|,
+operator|new
+name|ResultIteratorCallback
+argument_list|<
+name|Artist
+argument_list|>
+argument_list|()
+block|{
+specifier|public
+name|void
+name|iterate
+parameter_list|(
+name|ResultIterator
+argument_list|<
+name|Artist
+argument_list|>
+name|iterator
+parameter_list|)
+block|{
+name|int
+name|count
+init|=
+literal|0
+decl_stmt|;
+for|for
+control|(
+name|Artist
+name|a
+range|:
+name|iterator
+control|)
+block|{
+name|count
+operator|++
+expr_stmt|;
+block|}
+name|assertEquals
+argument_list|(
+literal|7
+argument_list|,
+name|count
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
 name|testPerformIteratedQuery1
 parameter_list|()
 throws|throws
@@ -3908,7 +4002,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Tests that hasChanges performs correctly when an object is "modified" and the      * property is simply set to the same value (an unreal modification)      */
+comment|/**      * Tests that hasChanges performs correctly when an object is "modified" and      * the property is simply set to the same value (an unreal modification)      */
 specifier|public
 name|void
 name|testHasChangesPhantom
@@ -3952,9 +4046,12 @@ argument_list|(
 name|artistName
 argument_list|)
 expr_stmt|;
-comment|// note that since 1.2 the polciy is for hasChanges to return true for phantom
-comment|// modifications, as there is no way to detect some more subtle modifications like
-comment|// a change of the master related object, until we actually create the PKs
+comment|// note that since 1.2 the polciy is for hasChanges to return true for
+comment|// phantom
+comment|// modifications, as there is no way to detect some more subtle
+comment|// modifications like
+comment|// a change of the master related object, until we actually create the
+comment|// PKs
 name|assertTrue
 argument_list|(
 name|context
@@ -3964,7 +4061,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that hasChanges performs correctly when an object is "modified" and the      * property is simply set to the same value (an unreal modification)      */
+comment|/**      * Tests that hasChanges performs correctly when an object is "modified" and      * the property is simply set to the same value (an unreal modification)      */
 specifier|public
 name|void
 name|testHasChangesRealModify

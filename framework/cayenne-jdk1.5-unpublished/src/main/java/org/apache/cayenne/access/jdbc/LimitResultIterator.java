@@ -81,6 +81,20 @@ name|ResultIterator
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|ResultIteratorIterator
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment

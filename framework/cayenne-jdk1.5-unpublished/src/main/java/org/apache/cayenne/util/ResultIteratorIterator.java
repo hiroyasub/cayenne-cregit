@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|util
 package|;
 end_package
 
@@ -42,6 +40,7 @@ import|;
 end_import
 
 begin_class
+specifier|public
 class|class
 name|ResultIteratorIterator
 parameter_list|<
@@ -60,6 +59,7 @@ name|T
 argument_list|>
 name|parent
 decl_stmt|;
+specifier|public
 name|ResultIteratorIterator
 parameter_list|(
 name|ResultIterator
