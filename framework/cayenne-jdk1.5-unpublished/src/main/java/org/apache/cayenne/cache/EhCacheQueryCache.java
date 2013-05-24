@@ -33,6 +33,18 @@ name|sf
 operator|.
 name|ehcache
 operator|.
+name|Cache
+import|;
+end_import
+
+begin_import
+import|import
+name|net
+operator|.
+name|sf
+operator|.
+name|ehcache
+operator|.
 name|CacheManager
 import|;
 end_import
@@ -387,7 +399,7 @@ argument_list|)
 decl_stmt|;
 comment|// create empty cache for cache group here, as we have a factory to
 comment|// create an object, and should never ever return null from this
-comment|// method
+comment|// method.
 name|Ehcache
 name|cache
 init|=
@@ -735,13 +747,29 @@ name|String
 name|groupKey
 parameter_list|)
 block|{
+name|Ehcache
+name|cache
+init|=
 name|cacheManager
 operator|.
-name|removeCache
+name|getEhcache
 argument_list|(
 name|groupKey
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|cache
+operator|!=
+literal|null
+condition|)
+block|{
+name|cache
+operator|.
+name|removeAll
+argument_list|()
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
