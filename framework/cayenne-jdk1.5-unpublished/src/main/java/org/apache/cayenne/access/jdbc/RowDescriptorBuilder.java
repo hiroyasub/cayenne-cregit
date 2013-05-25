@@ -467,19 +467,6 @@ operator|+
 literal|1
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|rowkey
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-comment|// escape this ColumnDescriptor, cause column name is empty
-continue|continue;
-block|}
 comment|// resolve column descriptor from 'columns' or create new
 name|rsColumns
 index|[

@@ -1120,13 +1120,6 @@ argument_list|,
 literal|"SELECT COUNT(*) FROM ARTIST"
 argument_list|)
 operator|.
-name|bind
-argument_list|(
-literal|"a"
-argument_list|,
-literal|"artist3"
-argument_list|)
-operator|.
 name|selectOne
 argument_list|(
 name|context
