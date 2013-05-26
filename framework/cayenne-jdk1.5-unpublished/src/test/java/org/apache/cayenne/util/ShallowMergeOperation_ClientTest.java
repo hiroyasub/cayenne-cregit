@@ -425,7 +425,7 @@ name|childContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -547,7 +547,7 @@ name|childContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -724,7 +724,7 @@ name|childContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)

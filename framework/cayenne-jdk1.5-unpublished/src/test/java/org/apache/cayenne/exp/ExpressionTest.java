@@ -1173,7 +1173,7 @@ name|DataContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|Artist

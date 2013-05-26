@@ -121,7 +121,7 @@ operator|.
 name|get
 argument_list|()
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 return|;
 block|}

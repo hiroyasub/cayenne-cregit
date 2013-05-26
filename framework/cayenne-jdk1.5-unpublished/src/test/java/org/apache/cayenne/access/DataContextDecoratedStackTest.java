@@ -374,7 +374,7 @@ name|DataContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|decorator
 argument_list|)
@@ -528,7 +528,7 @@ name|DataContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|decorator
 argument_list|)

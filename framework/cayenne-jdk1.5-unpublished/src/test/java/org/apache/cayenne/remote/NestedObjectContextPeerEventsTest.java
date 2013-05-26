@@ -222,7 +222,7 @@ name|peer1
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -259,7 +259,7 @@ name|peer2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -361,7 +361,7 @@ name|peer1
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -381,7 +381,7 @@ name|peer2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -520,7 +520,7 @@ name|peer1
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -550,7 +550,7 @@ name|peer2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -709,7 +709,7 @@ name|peer1
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -739,7 +739,7 @@ name|peer2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)

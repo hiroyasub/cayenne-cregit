@@ -1249,7 +1249,7 @@ name|painting
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 operator|.
 name|newObject

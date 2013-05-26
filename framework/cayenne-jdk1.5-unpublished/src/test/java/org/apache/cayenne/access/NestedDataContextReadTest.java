@@ -715,7 +715,7 @@ name|child1
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -760,7 +760,7 @@ name|child2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -799,7 +799,7 @@ name|child21
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 operator|(
 name|DataChannel
@@ -851,7 +851,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -1137,7 +1137,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -1772,7 +1772,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -1987,7 +1987,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)
@@ -2247,7 +2247,7 @@ name|DataContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)

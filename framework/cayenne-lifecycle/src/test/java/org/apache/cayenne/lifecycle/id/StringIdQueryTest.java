@@ -439,7 +439,7 @@ name|response
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 operator|.
 name|performGenericQuery
@@ -632,7 +632,7 @@ name|response
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 operator|.
 name|performGenericQuery

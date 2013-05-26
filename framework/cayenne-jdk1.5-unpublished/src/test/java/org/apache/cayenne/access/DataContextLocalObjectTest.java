@@ -808,7 +808,7 @@ name|nestedContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context1
 argument_list|)

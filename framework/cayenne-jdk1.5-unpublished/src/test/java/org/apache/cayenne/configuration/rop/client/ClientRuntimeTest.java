@@ -616,7 +616,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -639,7 +639,7 @@ name|context
 argument_list|,
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 argument_list|)
 expr_stmt|;

@@ -489,7 +489,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|context
 argument_list|)

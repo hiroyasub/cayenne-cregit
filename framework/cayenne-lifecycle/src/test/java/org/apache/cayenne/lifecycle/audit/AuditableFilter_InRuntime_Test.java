@@ -623,7 +623,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|Auditable1
@@ -847,7 +847,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|Auditable1
@@ -1049,7 +1049,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|Auditable2
@@ -1279,7 +1279,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|AuditableChild3
@@ -1432,7 +1432,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|AuditableChildUuid

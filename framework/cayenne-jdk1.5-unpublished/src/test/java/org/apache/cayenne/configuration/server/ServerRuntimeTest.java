@@ -991,7 +991,7 @@ name|context
 argument_list|,
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1001,7 +1001,7 @@ name|context
 argument_list|,
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 argument_list|)
 expr_stmt|;

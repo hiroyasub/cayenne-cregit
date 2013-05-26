@@ -773,7 +773,7 @@ name|context2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|a1

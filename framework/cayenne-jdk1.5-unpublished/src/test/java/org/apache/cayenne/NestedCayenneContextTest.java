@@ -390,7 +390,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -416,7 +416,7 @@ name|grandchild
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 operator|(
 name|DataChannel
@@ -452,7 +452,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -764,7 +764,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -1026,7 +1026,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -1278,7 +1278,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -1419,7 +1419,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -1429,7 +1429,7 @@ name|childPeer
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -1741,7 +1741,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -2278,7 +2278,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -2469,7 +2469,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -2662,7 +2662,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -2909,7 +2909,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -3305,7 +3305,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -3419,7 +3419,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -3653,7 +3653,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -3734,7 +3734,7 @@ name|clientContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 operator|(
 name|DataChannel
@@ -3761,7 +3761,7 @@ name|childContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 operator|(
 name|DataChannel
@@ -3858,7 +3858,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -4018,7 +4018,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)
@@ -4310,7 +4310,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)

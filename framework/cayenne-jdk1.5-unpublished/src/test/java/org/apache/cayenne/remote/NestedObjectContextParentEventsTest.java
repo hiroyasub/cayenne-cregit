@@ -194,7 +194,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|clientContext
 argument_list|)

@@ -275,7 +275,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|List
@@ -347,7 +347,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 for|for

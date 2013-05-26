@@ -392,7 +392,7 @@ name|i
 argument_list|,
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|parent
 argument_list|)

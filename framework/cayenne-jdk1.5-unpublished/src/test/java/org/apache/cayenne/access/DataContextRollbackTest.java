@@ -479,7 +479,7 @@ name|DataContext
 operator|)
 name|serverRuntime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -637,7 +637,7 @@ name|DataContext
 operator|)
 name|serverRuntime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -856,7 +856,7 @@ name|DataContext
 operator|)
 name|serverRuntime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -1019,7 +1019,7 @@ name|DataContext
 operator|)
 name|serverRuntime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -1153,7 +1153,7 @@ name|DataContext
 operator|)
 name|serverRuntime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame

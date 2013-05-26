@@ -376,7 +376,7 @@ name|anotherContext
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 try|try

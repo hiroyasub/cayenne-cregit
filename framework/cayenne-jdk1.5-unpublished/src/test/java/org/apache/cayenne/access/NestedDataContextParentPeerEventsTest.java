@@ -220,7 +220,7 @@ name|child
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|parentContext1
 argument_list|)
@@ -395,7 +395,7 @@ name|childContext1
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|parentContext1
 argument_list|)
@@ -594,7 +594,7 @@ name|peer2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|(
 name|parentContext1
 argument_list|)

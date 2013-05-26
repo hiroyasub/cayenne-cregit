@@ -1020,7 +1020,7 @@ name|context2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 comment|// test database data
@@ -1121,7 +1121,7 @@ name|context2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 comment|// test database data
@@ -1200,7 +1200,7 @@ name|context3
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|Painting
@@ -1355,7 +1355,7 @@ name|context2
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 comment|// test database data
@@ -1447,7 +1447,7 @@ name|context3
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|Artist

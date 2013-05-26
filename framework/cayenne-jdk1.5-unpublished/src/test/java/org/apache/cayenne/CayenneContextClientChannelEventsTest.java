@@ -439,7 +439,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -450,7 +450,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -598,7 +598,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -609,7 +609,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -733,7 +733,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -744,7 +744,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -913,7 +913,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -924,7 +924,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|assertNotSame
@@ -1109,7 +1109,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -1120,7 +1120,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable2
@@ -1339,7 +1339,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -1350,7 +1350,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -1558,7 +1558,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -1569,7 +1569,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable1
@@ -1775,7 +1775,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -1786,7 +1786,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable4
@@ -1980,7 +1980,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|CayenneContext
@@ -1991,7 +1991,7 @@ name|CayenneContext
 operator|)
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|ClientMtTable4
