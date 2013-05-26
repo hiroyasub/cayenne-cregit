@@ -226,7 +226,7 @@ name|context
 init|=
 name|runtime
 operator|.
-name|getContext
+name|newContext
 argument_list|()
 decl_stmt|;
 name|newObjectsTutorial
@@ -389,8 +389,6 @@ argument_list|(
 name|Painting
 operator|.
 name|class
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|List
@@ -401,7 +399,7 @@ name|paintings1
 init|=
 name|context
 operator|.
-name|performQuery
+name|select
 argument_list|(
 name|select1
 argument_list|)
@@ -445,7 +443,7 @@ name|paintings2
 init|=
 name|context
 operator|.
-name|performQuery
+name|select
 argument_list|(
 name|select2
 argument_list|)
