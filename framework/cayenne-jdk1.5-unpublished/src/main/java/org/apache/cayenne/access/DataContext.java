@@ -1728,7 +1728,7 @@ specifier|public
 parameter_list|<
 name|T
 extends|extends
-name|DataObject
+name|Persistent
 parameter_list|>
 name|T
 name|objectFromDataRow
