@@ -1208,51 +1208,18 @@ name|oid
 argument_list|)
 throw|;
 block|}
+comment|// 5/28/2013 - Commented out this block to allow for modifying objects in the postLoad callback
 comment|// sanity check...
-if|if
-condition|(
-name|object
-operator|.
-name|getPersistenceState
-argument_list|()
-operator|!=
-name|PersistenceState
-operator|.
-name|COMMITTED
-condition|)
-block|{
-name|String
-name|state
-init|=
-name|PersistenceState
-operator|.
-name|persistenceStateName
-argument_list|(
-name|object
-operator|.
-name|getPersistenceState
-argument_list|()
-argument_list|)
-decl_stmt|;
-comment|// TODO: andrus 4/13/2006, modified and deleted states are
-comment|// possible due to
-comment|// a race condition, should we handle them here?
-throw|throw
-operator|new
-name|FaultFailureException
-argument_list|(
-literal|"Error resolving fault for ObjectId: "
-operator|+
-name|oid
-operator|+
-literal|" and state ("
-operator|+
-name|state
-operator|+
-literal|"). Possible cause - matching row is missing from the database."
-argument_list|)
-throw|;
-block|}
+comment|//            if (object.getPersistenceState() != PersistenceState.COMMITTED) {
+comment|//
+comment|//                String state = PersistenceState.persistenceStateName(object.getPersistenceState());
+comment|//
+comment|//                // TODO: andrus 4/13/2006, modified and deleted states are
+comment|//                // possible due to
+comment|//                // a race condition, should we handle them here?
+comment|//                throw new FaultFailureException("Error resolving fault for ObjectId: " + oid + " and state (" + state
+comment|//                        + "). Possible cause - matching row is missing from the database.");
+comment|//            }
 block|}
 comment|// resolve relationship fault
 if|if
