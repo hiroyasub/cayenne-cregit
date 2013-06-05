@@ -2055,7 +2055,12 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Sybase blows whenever a transaction wraps a SP, so turn off transactions
+comment|// Sybase blows whenever a transaction wraps a SP, so turn off
+comment|// transactions
+comment|// TODO: it is quite the opposite with PostgreSQL. If an SP returns an
+comment|// open refcursor, it actually expects a TX in progress, so while we
+comment|// don't have refcursor unit tests, this is something to keep in mind
+comment|// e.g. http://stackoverflow.com/questions/16921942/porting-apache-cayenne-from-oracle-to-postgresql
 name|boolean
 name|transactionsFlag
 init|=
