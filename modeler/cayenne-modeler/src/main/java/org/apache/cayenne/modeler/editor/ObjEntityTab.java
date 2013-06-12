@@ -579,22 +579,6 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|ModelerUtil
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
 name|TextAdapter
 import|;
 end_import
@@ -796,10 +780,6 @@ decl_stmt|;
 specifier|protected
 name|JComboBox
 name|dbEntityCombo
-decl_stmt|;
-specifier|protected
-name|JButton
-name|syncWithDbEntityButton
 decl_stmt|;
 specifier|protected
 name|JComboBox
@@ -1239,33 +1219,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|syncWithDbEntityButton
-operator|=
-operator|new
-name|JButton
-argument_list|(
-literal|"Sync w/DbEntity"
-argument_list|)
-expr_stmt|;
-name|syncWithDbEntityButton
-operator|.
-name|setIcon
-argument_list|(
-name|ModelerUtil
-operator|.
-name|buildIcon
-argument_list|(
-literal|"icon-sync.gif"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|syncWithDbEntityButton
-operator|.
-name|setToolTipText
-argument_list|(
-literal|"Sync this ObjEntity with its DBEntity"
-argument_list|)
-expr_stmt|;
 name|isAbstract
 operator|=
 operator|new
@@ -1341,7 +1294,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:100dlu, 3dlu, fill:135dlu, 3dlu, pref"
+literal|"right:100dlu, 3dlu, fill:143dlu"
 argument_list|,
 literal|""
 argument_list|)
@@ -1377,8 +1330,6 @@ name|name
 operator|.
 name|getComponent
 argument_list|()
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1388,8 +1339,6 @@ argument_list|(
 literal|"Inheritance:"
 argument_list|,
 name|superEntityCombo
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1399,8 +1348,6 @@ argument_list|(
 name|tableLabel
 argument_list|,
 name|dbEntityCombo
-argument_list|,
-name|syncWithDbEntityButton
 argument_list|)
 expr_stmt|;
 name|isAbstractLabel
@@ -1412,8 +1359,6 @@ argument_list|(
 literal|"Abstract class:"
 argument_list|,
 name|isAbstract
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1431,8 +1376,6 @@ name|className
 operator|.
 name|getComponent
 argument_list|()
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|superclassLabel
@@ -1447,8 +1390,6 @@ name|superClassName
 operator|.
 name|getComponent
 argument_list|()
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1461,8 +1402,6 @@ name|qualifier
 operator|.
 name|getComponent
 argument_list|()
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1472,8 +1411,6 @@ argument_list|(
 literal|"Read-Only:"
 argument_list|,
 name|readOnly
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1483,8 +1420,6 @@ argument_list|(
 literal|"Optimistic Locking:"
 argument_list|,
 name|optimisticLocking
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 comment|// add callback-related stuff
@@ -1495,8 +1430,6 @@ argument_list|(
 literal|"Exclude superclass listeners:"
 argument_list|,
 name|excludeSuperclassListeners
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|builder
@@ -1506,8 +1439,6 @@ argument_list|(
 literal|"Exclude default listeners:"
 argument_list|,
 name|excludeDefaultListeners
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|clientSeparator
@@ -1528,8 +1459,6 @@ argument_list|(
 literal|"Not for Client Use:"
 argument_list|,
 name|serverOnly
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|clientClassNameLabel
@@ -1544,8 +1473,6 @@ name|clientClassName
 operator|.
 name|getComponent
 argument_list|()
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|clientSuperClassNameLabel
@@ -1560,8 +1487,6 @@ name|clientSuperClassName
 operator|.
 name|getComponent
 argument_list|()
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|add
@@ -1626,15 +1551,6 @@ operator|.
 name|getSelectedItem
 argument_list|()
 decl_stmt|;
-name|syncWithDbEntityButton
-operator|.
-name|setEnabled
-argument_list|(
-name|dbEntity
-operator|!=
-literal|null
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|dbEntity
@@ -2050,20 +1966,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-argument_list|)
-expr_stmt|;
-name|syncWithDbEntityButton
-operator|.
-name|addActionListener
-argument_list|(
-operator|new
-name|ObjEntitySyncAction
-argument_list|(
-name|mediator
-operator|.
-name|getApplication
-argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|readOnly
@@ -3614,18 +3516,6 @@ operator|.
 name|setEnabled
 argument_list|(
 name|directTableMapping
-argument_list|)
-expr_stmt|;
-name|syncWithDbEntityButton
-operator|.
-name|setEnabled
-argument_list|(
-name|dbEntityCombo
-operator|.
-name|getSelectedItem
-argument_list|()
-operator|!=
-literal|null
 argument_list|)
 expr_stmt|;
 name|clientSuperClassName
