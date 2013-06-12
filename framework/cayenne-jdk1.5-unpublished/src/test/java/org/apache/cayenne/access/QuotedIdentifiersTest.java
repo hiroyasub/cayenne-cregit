@@ -304,14 +304,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"QUOTED_ADDRESS"
+literal|"quote Person"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"quote Person"
+literal|"QUOTED_ADDRESS"
 argument_list|)
 expr_stmt|;
 name|QuoteAdress
