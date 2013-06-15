@@ -29,6 +29,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collections
@@ -521,9 +531,25 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"ARTIST_EXHIBIT"
+argument_list|)
+expr_stmt|;
+comment|// table artist_exhibit depends on artist and exhibit
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"ARTIST"
 argument_list|)
 expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"EXHIBIT"
+argument_list|)
+expr_stmt|;
+comment|// table exhibit depends on gallery
 name|dbHelper
 operator|.
 name|deleteAll

@@ -19,9 +19,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|sql
+name|util
 operator|.
-name|Types
+name|List
 import|;
 end_import
 
@@ -29,9 +29,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|sql
 operator|.
-name|List
+name|Types
 import|;
 end_import
 
@@ -358,6 +358,27 @@ expr_stmt|;
 name|artistGroupHelper
 operator|.
 name|deleteAll
+argument_list|()
+expr_stmt|;
+name|dbHelper
+operator|.
+name|update
+argument_list|(
+literal|"ARTGROUP"
+argument_list|)
+operator|.
+name|set
+argument_list|(
+literal|"PARENT_GROUP_ID"
+argument_list|,
+literal|null
+argument_list|,
+name|Types
+operator|.
+name|NULL
+argument_list|)
+operator|.
+name|execute
 argument_list|()
 expr_stmt|;
 name|artgroupHelper

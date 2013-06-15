@@ -25,6 +25,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -246,6 +256,13 @@ operator|.
 name|deleteAll
 argument_list|(
 literal|"PAINTING"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
+literal|"PAINTING1"
 argument_list|)
 expr_stmt|;
 name|dbHelper
