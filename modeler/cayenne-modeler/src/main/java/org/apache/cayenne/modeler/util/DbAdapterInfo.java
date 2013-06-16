@@ -143,6 +143,22 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|firebird
+operator|.
+name|FirebirdAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|frontbase
 operator|.
 name|FrontBaseAdapter
@@ -309,10 +325,6 @@ name|SybaseAdapter
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 specifier|final
@@ -414,6 +426,13 @@ name|getName
 argument_list|()
 block|,
 name|FrontBaseAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+block|,
+name|FirebirdAdapter
 operator|.
 name|class
 operator|.
@@ -607,6 +626,20 @@ name|getName
 argument_list|()
 argument_list|,
 literal|"FrontBase Adapter"
+argument_list|)
+expr_stmt|;
+name|DEFAULT_ADAPTER_LABELS
+operator|.
+name|put
+argument_list|(
+name|FirebirdAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"Firebird Adapter"
 argument_list|)
 expr_stmt|;
 name|DEFAULT_ADAPTER_LABELS

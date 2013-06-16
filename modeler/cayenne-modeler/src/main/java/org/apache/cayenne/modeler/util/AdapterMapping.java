@@ -79,6 +79,22 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|firebird
+operator|.
+name|FirebirdAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|frontbase
 operator|.
 name|FrontBaseAdapter
@@ -246,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Contains mappings for guessing defaults for various adapter and JDBC settings.  *   */
+comment|/**  * Contains mappings for guessing defaults for various adapter and JDBC  * settings.  *   */
 end_comment
 
 begin_class
@@ -539,6 +555,20 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|jdbcDriverToAdapterMap
+operator|.
+name|put
+argument_list|(
+literal|"org.firebirdsql.jdbc.FBDriver"
+argument_list|,
+name|FirebirdAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// urls
 name|adapterToJDBCURLMap
 operator|.
@@ -680,7 +710,22 @@ argument_list|,
 literal|"jdbc:sqlite:testdb"
 argument_list|)
 expr_stmt|;
-comment|// TODO: embedded Derby Mode... change to client-server once we figure it out
+name|adapterToJDBCURLMap
+operator|.
+name|put
+argument_list|(
+name|FirebirdAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"jdbc:firebirdsql:localhost/3050:database.fdb"
+argument_list|)
+expr_stmt|;
+comment|// TODO: embedded Derby Mode... change to client-server once we figure
+comment|// it out
 name|adapterToJDBCURLMap
 operator|.
 name|put
@@ -904,6 +949,20 @@ name|getName
 argument_list|()
 argument_list|,
 literal|"org.sqlite.JDBC"
+argument_list|)
+expr_stmt|;
+name|adapterToJDBCDriverMap
+operator|.
+name|put
+argument_list|(
+name|FirebirdAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"org.firebirdsql.jdbc.FBDriver"
 argument_list|)
 expr_stmt|;
 comment|// EOF plugins...
