@@ -328,14 +328,14 @@ name|Collection
 argument_list|<
 name|SQLResult
 argument_list|>
-name|getResultSets
+name|getResults
 parameter_list|()
 block|{
 return|return
 name|getDelegate
 argument_list|()
 operator|.
-name|getResultSets
+name|getResults
 argument_list|()
 return|;
 block|}

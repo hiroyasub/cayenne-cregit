@@ -493,7 +493,7 @@ name|Collection
 argument_list|<
 name|SQLResult
 argument_list|>
-name|getResultSets
+name|getResults
 parameter_list|()
 block|{
 comment|// TODO Auto-generated method stub

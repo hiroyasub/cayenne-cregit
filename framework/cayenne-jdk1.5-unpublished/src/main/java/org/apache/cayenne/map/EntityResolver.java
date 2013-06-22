@@ -1261,7 +1261,9 @@ name|getEmbeddables
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @deprecated since 3.2 use {@link #getResults()}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Collection
 argument_list|<
@@ -1271,9 +1273,23 @@ name|getResultSets
 parameter_list|()
 block|{
 return|return
+name|getResults
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|Collection
+argument_list|<
+name|SQLResult
+argument_list|>
+name|getResults
+parameter_list|()
+block|{
+return|return
 name|mappingCache
 operator|.
-name|getResultSets
+name|getResults
 argument_list|()
 return|;
 block|}

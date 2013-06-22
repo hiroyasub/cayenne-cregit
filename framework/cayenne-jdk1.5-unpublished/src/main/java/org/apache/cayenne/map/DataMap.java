@@ -4375,22 +4375,6 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.2      */
-specifier|public
-name|Collection
-argument_list|<
-name|SQLResult
-argument_list|>
-name|getResultSets
-parameter_list|()
-block|{
-return|return
-name|results
-operator|.
-name|values
-argument_list|()
-return|;
-block|}
 block|}
 end_class
 

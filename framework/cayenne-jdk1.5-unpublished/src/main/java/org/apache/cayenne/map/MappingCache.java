@@ -164,7 +164,7 @@ name|String
 argument_list|,
 name|Query
 argument_list|>
-name|queryCache
+name|queries
 decl_stmt|;
 specifier|protected
 name|Map
@@ -173,7 +173,7 @@ name|String
 argument_list|,
 name|Embeddable
 argument_list|>
-name|embeddableCache
+name|embeddables
 decl_stmt|;
 specifier|protected
 name|Map
@@ -182,7 +182,7 @@ name|String
 argument_list|,
 name|SQLResult
 argument_list|>
-name|resultsCache
+name|results
 decl_stmt|;
 specifier|protected
 name|Map
@@ -191,7 +191,7 @@ name|String
 argument_list|,
 name|DbEntity
 argument_list|>
-name|dbEntityCache
+name|dbEntities
 decl_stmt|;
 specifier|protected
 name|Map
@@ -200,7 +200,7 @@ name|String
 argument_list|,
 name|ObjEntity
 argument_list|>
-name|objEntityCache
+name|objEntities
 decl_stmt|;
 specifier|protected
 name|Map
@@ -209,7 +209,7 @@ name|String
 argument_list|,
 name|ObjEntity
 argument_list|>
-name|objEntityClassCache
+name|objEntitiesByClassName
 decl_stmt|;
 specifier|protected
 name|Map
@@ -218,7 +218,7 @@ name|String
 argument_list|,
 name|Procedure
 argument_list|>
-name|procedureCache
+name|procedures
 decl_stmt|;
 specifier|protected
 name|Map
@@ -246,7 +246,7 @@ name|maps
 expr_stmt|;
 name|this
 operator|.
-name|embeddableCache
+name|embeddables
 operator|=
 operator|new
 name|HashMap
@@ -259,7 +259,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|queryCache
+name|queries
 operator|=
 operator|new
 name|HashMap
@@ -272,7 +272,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|dbEntityCache
+name|dbEntities
 operator|=
 operator|new
 name|HashMap
@@ -285,7 +285,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|objEntityCache
+name|objEntities
 operator|=
 operator|new
 name|HashMap
@@ -298,7 +298,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|objEntityClassCache
+name|objEntitiesByClassName
 operator|=
 operator|new
 name|HashMap
@@ -311,7 +311,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|procedureCache
+name|procedures
 operator|=
 operator|new
 name|HashMap
@@ -337,7 +337,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|resultsCache
+name|results
 operator|=
 operator|new
 name|HashMap
@@ -378,7 +378,7 @@ name|getDbEntities
 argument_list|()
 control|)
 block|{
-name|dbEntityCache
+name|dbEntities
 operator|.
 name|put
 argument_list|(
@@ -413,7 +413,7 @@ argument_list|()
 control|)
 block|{
 comment|// index by name
-name|objEntityCache
+name|objEntities
 operator|.
 name|put
 argument_list|(
@@ -449,7 +449,7 @@ comment|// that this entity can't be looked up by class
 name|Object
 name|existing
 init|=
-name|objEntityClassCache
+name|objEntitiesByClassName
 operator|.
 name|get
 argument_list|(
@@ -470,7 +470,7 @@ operator|!=
 name|OBJ_DUPLICATE_MARKER
 condition|)
 block|{
-name|objEntityClassCache
+name|objEntitiesByClassName
 operator|.
 name|put
 argument_list|(
@@ -483,7 +483,7 @@ block|}
 block|}
 else|else
 block|{
-name|objEntityClassCache
+name|objEntitiesByClassName
 operator|.
 name|put
 argument_list|(
@@ -506,7 +506,7 @@ name|getProcedures
 argument_list|()
 control|)
 block|{
-name|procedureCache
+name|procedures
 operator|.
 name|put
 argument_list|(
@@ -520,7 +520,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// index embeddables
-name|embeddableCache
+name|embeddables
 operator|.
 name|putAll
 argument_list|(
@@ -553,7 +553,7 @@ decl_stmt|;
 name|Object
 name|existingQuery
 init|=
-name|queryCache
+name|queries
 operator|.
 name|put
 argument_list|(
@@ -685,7 +685,7 @@ comment|// rebuild
 name|ObjEntity
 name|superOE
 init|=
-name|objEntityCache
+name|objEntities
 operator|.
 name|get
 argument_list|(
@@ -755,7 +755,7 @@ name|className
 parameter_list|)
 block|{
 return|return
-name|embeddableCache
+name|embeddables
 operator|.
 name|get
 argument_list|(
@@ -772,7 +772,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|resultsCache
+name|results
 operator|.
 name|get
 argument_list|(
@@ -806,7 +806,7 @@ name|procedureName
 parameter_list|)
 block|{
 return|return
-name|procedureCache
+name|procedures
 operator|.
 name|get
 argument_list|(
@@ -823,7 +823,7 @@ name|queryName
 parameter_list|)
 block|{
 return|return
-name|queryCache
+name|queries
 operator|.
 name|get
 argument_list|(
@@ -840,7 +840,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|dbEntityCache
+name|dbEntities
 operator|.
 name|get
 argument_list|(
@@ -862,7 +862,7 @@ block|{
 name|ObjEntity
 name|entity
 init|=
-name|objEntityClassCache
+name|objEntitiesByClassName
 operator|.
 name|get
 argument_list|(
@@ -905,7 +905,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|objEntityCache
+name|objEntities
 operator|.
 name|get
 argument_list|(
@@ -1133,7 +1133,7 @@ name|Collection
 argument_list|<
 name|SQLResult
 argument_list|>
-name|getResultSets
+name|getResults
 parameter_list|()
 block|{
 comment|// TODO: LEGACY SUPPORT:
@@ -1162,7 +1162,7 @@ name|addComposited
 argument_list|(
 name|map
 operator|.
-name|getResultSets
+name|getResults
 argument_list|()
 argument_list|)
 expr_stmt|;

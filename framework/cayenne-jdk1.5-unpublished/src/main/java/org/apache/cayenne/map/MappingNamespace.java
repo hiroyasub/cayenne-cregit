@@ -77,7 +77,7 @@ name|Collection
 argument_list|<
 name|SQLResult
 argument_list|>
-name|getResultSets
+name|getResults
 parameter_list|()
 function_decl|;
 comment|/**      * Returns DbEntity for a given name, or null if no such DbEntity is found      * in the MappingNamespace.      */
