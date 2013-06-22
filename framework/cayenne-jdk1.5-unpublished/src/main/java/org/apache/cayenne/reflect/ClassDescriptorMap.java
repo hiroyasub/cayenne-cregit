@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object that holds class descriptors for mapped entities, compiling new descriptors  * on demand using an internal chain of descriptor factories. Note that the object is ot  * synchronized internally, so it has to be prefilled with descriptors by the caller on  * initialization via calling 'getDescriptor' for all mapped entities.  *   * @since 3.0  */
+comment|/**  * An object that holds class descriptors for mapped entities, compiling new  * descriptors on demand using an internal chain of descriptor factories. Note  * that the object is not synchronized internally, so it has to be prefilled  * with descriptors by the caller on initialization via calling 'getDescriptor'  * for all mapped entities.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -328,7 +328,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a descriptor wrapper that will compile the underlying descriptor on demand.      * Using proxy indirection is needed to compile relationships of descriptors to other      * descriptors that are not compiled yet.      */
+comment|/**      * Creates a descriptor wrapper that will compile the underlying descriptor      * on demand. Using proxy indirection is needed to compile relationships of      * descriptors to other descriptors that are not compiled yet.      */
 specifier|protected
 name|ClassDescriptor
 name|createProxyDescriptor
@@ -368,8 +368,10 @@ name|String
 name|entityName
 parameter_list|)
 block|{
-comment|// scan the factory chain until some factory returns a non-null descriptor;
-comment|// scanning is done in reverse order so that the factories added last take higher
+comment|// scan the factory chain until some factory returns a non-null
+comment|// descriptor;
+comment|// scanning is done in reverse order so that the factories added last
+comment|// take higher
 comment|// precedence...
 name|ListIterator
 argument_list|<

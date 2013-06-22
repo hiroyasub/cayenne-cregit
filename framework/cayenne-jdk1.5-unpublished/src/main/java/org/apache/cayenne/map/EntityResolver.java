@@ -323,6 +323,7 @@ comment|// must be transient, as resolver may get deserialized in another VM, an
 comment|// descriptor recompilation will be desired.
 specifier|protected
 specifier|transient
+specifier|volatile
 name|ClassDescriptorMap
 name|classDescriptorMap
 decl_stmt|;
@@ -1592,7 +1593,6 @@ return|;
 block|}
 comment|/**      * Returns ClassDescriptor for the ObjEntity matching the name. Returns null      * if no matching entity exists.      *       * @since 1.2      */
 specifier|public
-specifier|synchronized
 name|ClassDescriptor
 name|getClassDescriptor
 parameter_list|(
@@ -2174,6 +2174,18 @@ operator|==
 literal|null
 condition|)
 block|{
+synchronized|synchronized
+init|(
+name|this
+init|)
+block|{
+if|if
+condition|(
+name|classDescriptorMap
+operator|==
+literal|null
+condition|)
+block|{
 name|ClassDescriptorMap
 name|classDescriptorMap
 init|=
@@ -2215,7 +2227,8 @@ name|faultFactory
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// since ClassDescriptorMap is not synchronized, we need to prefill
+comment|// since ClassDescriptorMap is not synchronized, we need to
+comment|// prefill
 comment|// it with entity proxies here.
 for|for
 control|(
@@ -2254,6 +2267,8 @@ name|classDescriptorMap
 operator|=
 name|classDescriptorMap
 expr_stmt|;
+block|}
+block|}
 block|}
 return|return
 name|classDescriptorMap
