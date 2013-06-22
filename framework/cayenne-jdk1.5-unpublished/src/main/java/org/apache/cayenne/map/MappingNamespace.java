@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries and other  * mapping objects.  *   * @since 1.1  */
+comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries  * and other mapping objects.  *   * @since 1.1  */
 end_comment
 
 begin_interface
@@ -48,13 +48,21 @@ specifier|public
 interface|interface
 name|MappingNamespace
 block|{
-comment|/**      * Returns an {@link Embeddable} matching class name or null if such Embeddable is not      * mapped.      *       * @since 3.0      */
+comment|/**      * Returns an {@link Embeddable} matching class name or null if such      * Embeddable is not mapped.      *       * @since 3.0      */
 name|Embeddable
 name|getEmbeddable
 parameter_list|(
 name|String
 name|className
 parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+name|Collection
+argument_list|<
+name|Embeddable
+argument_list|>
+name|getEmbeddables
+parameter_list|()
 function_decl|;
 comment|/**      * Returns a named result set mapping.      *       * @since 3.0      */
 name|SQLResult
@@ -64,7 +72,15 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns DbEntity for a given name, or null if no such DbEntity is found in the      * MappingNamespace.      */
+comment|/**      * @since 3.2      */
+name|Collection
+argument_list|<
+name|SQLResult
+argument_list|>
+name|getResultSets
+parameter_list|()
+function_decl|;
+comment|/**      * Returns DbEntity for a given name, or null if no such DbEntity is found      * in the MappingNamespace.      */
 name|DbEntity
 name|getDbEntity
 parameter_list|(
@@ -72,7 +88,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns ObjEntity for a given name, or null if no such ObjEntity is found in the      * MappingNamespace.      */
+comment|/**      * Returns ObjEntity for a given name, or null if no such ObjEntity is found      * in the MappingNamespace.      */
 name|ObjEntity
 name|getObjEntity
 parameter_list|(
@@ -80,7 +96,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns Procedure for a given name, or null if no such Procedure is found in the      * MappingNamespace.      */
+comment|/**      * Returns Procedure for a given name, or null if no such Procedure is found      * in the MappingNamespace.      */
 name|Procedure
 name|getProcedure
 parameter_list|(
@@ -127,6 +143,25 @@ name|Query
 argument_list|>
 name|getQueries
 parameter_list|()
+function_decl|;
+comment|/**      * @since 3.2      */
+name|EntityInheritanceTree
+name|getInheritanceTree
+parameter_list|(
+name|String
+name|entityName
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+name|ObjEntity
+name|getObjEntity
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|entityClass
+parameter_list|)
 function_decl|;
 block|}
 end_interface

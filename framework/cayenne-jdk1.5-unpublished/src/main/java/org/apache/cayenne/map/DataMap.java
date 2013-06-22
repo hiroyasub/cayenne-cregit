@@ -306,7 +306,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stores a collection of related mapping objects that describe database and object layers  * of an application. DataMap contains DbEntities mapping database tables, ObjEntities -  * mapping persistent Java classes, Procedures - mapping database stored procedures.  */
+comment|/**  * Stores a collection of related mapping objects that describe database and  * object layers of an application. DataMap contains DbEntities mapping database  * tables, ObjEntities - mapping persistent Java classes, Procedures - mapping  * database stored procedures.  */
 end_comment
 
 begin_class
@@ -411,7 +411,7 @@ name|DEFAULT_QUOTE_SQL_IDENTIFIERS_PROPERTY
 init|=
 literal|"quoteSqlIdentifiers"
 decl_stmt|;
-comment|/**      * The namespace in which the data map XML file will be created. This is also the URI      * to locate a copy of the schema document.      */
+comment|/**      * The namespace in which the data map XML file will be created. This is      * also the URI to locate a copy of the schema document.      */
 specifier|public
 specifier|static
 specifier|final
@@ -813,7 +813,7 @@ operator|=
 name|quotingSqlIdentifiers
 expr_stmt|;
 block|}
-comment|/**      * Performs DataMap initialization from a set of properties, using defaults for the      * missing properties.      *       * @since 1.1      */
+comment|/**      * Performs DataMap initialization from a set of properties, using defaults      * for the missing properties.      *       * @since 1.1      */
 specifier|public
 name|void
 name|initWithProperties
@@ -1098,7 +1098,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns a DataMap stripped of any server-side information, such as DbEntity      * mapping, or ObjEntities that are not allowed in the client tier. Returns null if      * this DataMap as a whole does not support client tier persistence.      *       * @since 1.2      */
+comment|/**      * Returns a DataMap stripped of any server-side information, such as      * DbEntity mapping, or ObjEntities that are not allowed in the client tier.      * Returns null if this DataMap as a whole does not support client tier      * persistence.      *       * @since 1.2      */
 specifier|public
 name|DataMap
 name|getClientDataMap
@@ -1197,7 +1197,8 @@ argument_list|(
 name|clientMap
 argument_list|)
 expr_stmt|;
-comment|// resolve metadata so that client can have access to it without knowing about
+comment|// resolve metadata so that client can have access to it without
+comment|// knowing about
 comment|// the server query.
 name|proxy
 operator|.
@@ -1520,7 +1521,8 @@ argument_list|,
 name|encoder
 argument_list|)
 expr_stmt|;
-comment|// since Queries are not XMLSerializable by default, check for non-serilaizable
+comment|// since Queries are not XMLSerializable by default, check for
+comment|// non-serilaizable
 comment|// queries and throws if they are not..
 for|for
 control|(
@@ -1754,7 +1756,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Adds all Object and DB entities and Queries from another map to this map.      * Overwrites all existing entities and queries with the new ones.      *<p>      *<i>TODO: will need to implement advanced merge that allows different policies for      * overwriting entities / queries.</i>      *</p>      */
+comment|/**      * Adds all Object and DB entities and Queries from another map to this map.      * Overwrites all existing entities and queries with the new ones.      *<p>      *<i>TODO: will need to implement advanced merge that allows different      * policies for overwriting entities / queries.</i>      *</p>      */
 specifier|public
 name|void
 name|mergeWithDataMap
@@ -1872,7 +1874,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns "location" property value. Location is abstract and can depend on how the      * DataMap was loaded. E.g. location can be a File on the filesystem or a location      * within a JAR.      */
+comment|/**      * Returns "location" property value. Location is abstract and can depend on      * how the DataMap was loaded. E.g. location can be a File on the filesystem      * or a location within a JAR.      */
 specifier|public
 name|String
 name|getLocation
@@ -1898,7 +1900,7 @@ operator|=
 name|location
 expr_stmt|;
 block|}
-comment|/**      * Returns a sorted unmodifiable map of ObjEntities contained in this DataMap, keyed      * by ObjEntity name.      */
+comment|/**      * Returns a sorted unmodifiable map of ObjEntities contained in this      * DataMap, keyed by ObjEntity name.      */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -1918,7 +1920,7 @@ name|objEntityMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a sorted unmodifiable map of DbEntities contained in this DataMap, keyed by      * DbEntity name.      */
+comment|/**      * Returns a sorted unmodifiable map of DbEntities contained in this      * DataMap, keyed by DbEntity name.      */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -2025,7 +2027,8 @@ literal|"Query name can't be null."
 argument_list|)
 throw|;
 block|}
-comment|// TODO: change method signature to return replaced procedure and make sure the
+comment|// TODO: change method signature to return replaced procedure and make
+comment|// sure the
 comment|// Modeler handles it...
 name|Object
 name|existingQuery
@@ -2257,7 +2260,8 @@ literal|"Attempt to add Embeddable with no class name."
 argument_list|)
 throw|;
 block|}
-comment|// TODO: change method signature to return replaced entity and make sure the
+comment|// TODO: change method signature to return replaced entity and make sure
+comment|// the
 comment|// Modeler handles it...
 name|Object
 name|existing
@@ -2451,7 +2455,8 @@ literal|"Attempt to add ObjEntity with no name."
 argument_list|)
 throw|;
 block|}
-comment|// TODO: change method signature to return replaced entity and make sure the
+comment|// TODO: change method signature to return replaced entity and make sure
+comment|// the
 comment|// Modeler handles it...
 name|Object
 name|existingEntity
@@ -2545,7 +2550,8 @@ literal|"Attempt to add DbEntity with no name."
 argument_list|)
 throw|;
 block|}
-comment|// TODO: change method signature to return replaced entity and make sure the
+comment|// TODO: change method signature to return replaced entity and make sure
+comment|// the
 comment|// Modeler handles it...
 name|Object
 name|existingEntity
@@ -2653,7 +2659,7 @@ name|embeddablesMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of {@link Embeddable} mappings stored in the DataMap.      *       * @since 3.0      */
+comment|/**      * Returns a collection of {@link Embeddable} mappings stored in the      * DataMap.      *       * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
@@ -2805,7 +2811,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns an unmodifiable list of default {@link EntityListener} objects. Note that      * since the order of listeners is significant a list, not just a generic Collection      * is returned.      *       * @since 3.0      */
+comment|/**      * Returns an unmodifiable list of default {@link EntityListener} objects.      * Note that since the order of listeners is significant a list, not just a      * generic Collection is returned.      *       * @since 3.0      */
 specifier|public
 name|List
 argument_list|<
@@ -2823,7 +2829,7 @@ name|defaultEntityListeners
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException if a listener for the same class name is already      *             registered.      */
+comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      */
 specifier|public
 name|void
 name|addDefaultEntityListener
@@ -2996,7 +3002,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns DbEntity matching the<code>name</code> parameter. No dependencies will be      * searched.      */
+comment|/**      * Returns DbEntity matching the<code>name</code> parameter. No      * dependencies will be searched.      */
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -3092,7 +3098,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns an ObjEntity for a given name. If it is not found in this DataMap, it will      * search a parent EntityNamespace.      */
+comment|/**      * Returns an ObjEntity for a given name. If it is not found in this      * DataMap, it will search a parent EntityNamespace.      */
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -3249,7 +3255,8 @@ name|String
 name|className
 parameter_list|)
 block|{
-comment|// TODO: andrus, 1/25/2007 - clean up references like removeDbEntity does.
+comment|// TODO: andrus, 1/25/2007 - clean up references like removeDbEntity
+comment|// does.
 name|embeddablesMap
 operator|.
 name|remove
@@ -3292,7 +3299,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes DbEntity from the DataMap. If<code>clearDependencies</code> is true, all      * DbRelationships that reference this entity are also removed. ObjEntities that rely      * on this entity are cleaned up.      *       * @since 1.1      */
+comment|/**      * Removes DbEntity from the DataMap. If<code>clearDependencies</code> is      * true, all DbRelationships that reference this entity are also removed.      * ObjEntities that rely on this entity are cleaned up.      *       * @since 1.1      */
 specifier|public
 name|void
 name|removeDbEntity
@@ -3487,7 +3494,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes ObjEntity from the DataMap. If<code>clearDependencies</code> is true, all      * ObjRelationships that reference this entity are also removed.      *       * @since 1.1      */
+comment|/**      * Removes ObjEntity from the DataMap. If<code>clearDependencies</code> is      * true, all ObjRelationships that reference this entity are also removed.      *       * @since 1.1      */
 specifier|public
 name|void
 name|removeObjEntity
@@ -3606,7 +3613,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a Procedure for a given name or null if no such procedure exists. If      * Procedure is not found in this DataMap, a parent EntityNamcespace is searched.      */
+comment|/**      * Returns a Procedure for a given name or null if no such procedure exists.      * If Procedure is not found in this DataMap, a parent EntityNamcespace is      * searched.      */
 specifier|public
 name|Procedure
 name|getProcedure
@@ -3651,7 +3658,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Adds stored procedure to the list of procedures. If there is another procedure      * registered under the same name, throws an IllegalArgumentException.      */
+comment|/**      * Adds stored procedure to the list of procedures. If there is another      * procedure registered under the same name, throws an      * IllegalArgumentException.      */
 specifier|public
 name|void
 name|addProcedure
@@ -3678,7 +3685,8 @@ literal|"Attempt to add procedure with no name."
 argument_list|)
 throw|;
 block|}
-comment|// TODO: change method signature to return replaced procedure and make sure the
+comment|// TODO: change method signature to return replaced procedure and make
+comment|// sure the
 comment|// Modeler handles it...
 name|Object
 name|existingProcedure
@@ -3761,7 +3769,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a sorted unmodifiable map of Procedures in this DataMap keyed by name.      */
+comment|/**      * Returns a sorted unmodifiable map of Procedures in this DataMap keyed by      * name.      */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -3781,7 +3789,7 @@ name|procedureMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a parent namespace where this DataMap resides. Parent EntityNamespace is      * used to establish relationships with entities in other DataMaps.      *       * @since 1.1      */
+comment|/**      * Returns a parent namespace where this DataMap resides. Parent      * EntityNamespace is used to establish relationships with entities in other      * DataMaps.      *       * @since 1.1      */
 specifier|public
 name|MappingNamespace
 name|getNamespace
@@ -3791,7 +3799,7 @@ return|return
 name|namespace
 return|;
 block|}
-comment|/**      * Sets a parent namespace where this DataMap resides. Parent EntityNamespace is used      * to establish relationships with entities in other DataMaps.      *       * @since 1.1      */
+comment|/**      * Sets a parent namespace where this DataMap resides. Parent      * EntityNamespace is used to establish relationships with entities in other      * DataMaps.      *       * @since 1.1      */
 specifier|public
 name|void
 name|setNamespace
@@ -3989,7 +3997,7 @@ operator|=
 name|defaultSuperclass
 expr_stmt|;
 block|}
-comment|/**      * DbEntity property changed. May be name, attribute or relationship added or removed,      * etc. Attribute and relationship property changes are handled in respective      * listeners.      *       * @since 1.2      */
+comment|/**      * DbEntity property changed. May be name, attribute or relationship added      * or removed, etc. Attribute and relationship property changes are handled      * in respective listeners.      *       * @since 1.2      */
 specifier|public
 name|void
 name|dbEntityChanged
@@ -4112,7 +4120,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/**      * ObjEntity property changed. May be name, attribute or relationship added or      * removed, etc. Attribute and relationship property changes are handled in respective      * listeners.      *       * @since 1.2      */
+comment|/**      * ObjEntity property changed. May be name, attribute or relationship added      * or removed, etc. Attribute and relationship property changes are handled      * in respective listeners.      *       * @since 1.2      */
 specifier|public
 name|void
 name|objEntityChanged
@@ -4286,6 +4294,102 @@ name|defaultCatalog
 operator|=
 name|defaultCatalog
 expr_stmt|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|EntityInheritanceTree
+name|getInheritanceTree
+parameter_list|(
+name|String
+name|entityName
+parameter_list|)
+block|{
+comment|// TODO: we should support that
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|ObjEntity
+name|getObjEntity
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|entityClass
+parameter_list|)
+block|{
+if|if
+condition|(
+name|entityClass
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+name|String
+name|className
+init|=
+name|entityClass
+operator|.
+name|getName
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|ObjEntity
+name|e
+range|:
+name|objEntityMap
+operator|.
+name|values
+argument_list|()
+control|)
+block|{
+if|if
+condition|(
+name|className
+operator|.
+name|equals
+argument_list|(
+name|e
+operator|.
+name|getClassName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+return|return
+name|e
+return|;
+block|}
+block|}
+return|return
+literal|null
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|Collection
+argument_list|<
+name|SQLResult
+argument_list|>
+name|getResultSets
+parameter_list|()
+block|{
+return|return
+name|results
+operator|.
+name|values
+argument_list|()
+return|;
 block|}
 block|}
 end_class

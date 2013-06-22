@@ -446,6 +446,61 @@ name|values
 argument_list|()
 return|;
 block|}
+specifier|public
+name|Collection
+argument_list|<
+name|Embeddable
+argument_list|>
+name|getEmbeddables
+parameter_list|()
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|EntityInheritanceTree
+name|getInheritanceTree
+parameter_list|(
+name|String
+name|entityName
+parameter_list|)
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|ObjEntity
+name|getObjEntity
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|entityClass
+parameter_list|)
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|Collection
+argument_list|<
+name|SQLResult
+argument_list|>
+name|getResultSets
+parameter_list|()
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 
