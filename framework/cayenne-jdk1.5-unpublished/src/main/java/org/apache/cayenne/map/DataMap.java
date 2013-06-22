@@ -4083,7 +4083,7 @@ operator|)
 name|ns
 operator|)
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 block|}
@@ -4206,7 +4206,7 @@ operator|)
 name|ns
 operator|)
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 block|}

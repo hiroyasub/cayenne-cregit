@@ -1122,7 +1122,7 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 name|assertNull

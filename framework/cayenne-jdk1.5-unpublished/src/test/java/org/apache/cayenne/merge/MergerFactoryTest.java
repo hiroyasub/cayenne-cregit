@@ -860,7 +860,7 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 name|assertNull
@@ -1211,7 +1211,7 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 name|assertTokensAndExecute
@@ -1244,7 +1244,7 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 comment|// assertNull(map.getObjEntity(objEntity.getName()));
@@ -1597,7 +1597,7 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 name|assertTokensAndExecute
@@ -1630,7 +1630,7 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|clearCache
+name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 comment|// assertNull(map.getObjEntity(objEntity.getName()));
