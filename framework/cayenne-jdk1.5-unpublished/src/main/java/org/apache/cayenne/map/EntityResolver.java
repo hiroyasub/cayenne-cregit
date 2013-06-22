@@ -306,7 +306,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike DataMap,  * EntityResolver is intended to work as a runtime container of mapping. DataMaps can be  * added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *   * @since 1.1  */
+comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike  * DataMap, EntityResolver is intended to work as a runtime container of  * mapping. DataMaps can be added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -342,6 +342,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|indexedByClass
@@ -427,7 +429,8 @@ specifier|protected
 name|EntityResolver
 name|clientEntityResolver
 decl_stmt|;
-comment|// must be transient, as resolver may get deserialized in another VM, and descriptor
+comment|// must be transient, as resolver may get deserialized in another VM, and
+comment|// descriptor
 comment|// recompilation will be desired.
 specifier|protected
 specifier|transient
@@ -453,7 +456,7 @@ name|init
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Initialization of EntityResolver. Used in constructor and in Java deserialization      * process      */
+comment|/**      * Initialization of EntityResolver. Used in constructor and in Java      * deserialization process      */
 specifier|private
 name|void
 name|init
@@ -600,7 +603,7 @@ name|constructCache
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships, marking      * newly created relationships as "runtime".      *       * @since 3.0      */
+comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships,      * marking newly created relationships as "runtime".      *       * @since 3.0      */
 specifier|public
 name|void
 name|applyDBLayerDefaults
@@ -627,7 +630,8 @@ name|getDbEntities
 argument_list|()
 control|)
 block|{
-comment|// iterate by copy to avoid concurrency modification errors on reflexive
+comment|// iterate by copy to avoid concurrency modification errors on
+comment|// reflexive
 comment|// relationships
 name|Object
 index|[]
@@ -743,7 +747,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships, marking      * newly created relationships as "runtime".      *       * @since 3.0      */
+comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships,      * marking newly created relationships as "runtime".      *       * @since 3.0      */
 specifier|public
 name|void
 name|applyObjectLayerDefaults
@@ -770,7 +774,8 @@ name|getObjEntities
 argument_list|()
 control|)
 block|{
-comment|// iterate by copy to avoid concurrency modification errors on reflexive
+comment|// iterate by copy to avoid concurrency modification errors on
+comment|// reflexive
 comment|// relationships
 name|Object
 index|[]
@@ -1315,7 +1320,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a {@link LifecycleCallbackRegistry} for handling callbacks. Registry is      * lazily initialized on first call.      *       * @since 3.0      */
+comment|/**      * Returns a {@link LifecycleCallbackRegistry} for handling callbacks.      * Registry is lazily initialized on first call.      *       * @since 3.0      */
 specifier|public
 name|LifecycleCallbackRegistry
 name|getCallbackRegistry
@@ -1336,7 +1341,7 @@ return|return
 name|callbackRegistry
 return|;
 block|}
-comment|/**      * Sets a lifecycle callbacks registry of the EntityResolver. Users rarely if ever      * need to call this method as Cayenne would instantiate a registry itself as needed      * based on mapped configuration.      *       * @since 3.0      */
+comment|/**      * Sets a lifecycle callbacks registry of the EntityResolver. Users rarely      * if ever need to call this method as Cayenne would instantiate a registry      * itself as needed based on mapped configuration.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setCallbackRegistry
@@ -1352,7 +1357,7 @@ operator|=
 name|callbackRegistry
 expr_stmt|;
 block|}
-comment|/**      * Returns ClientEntityResolver with mapping information that only includes entities      * available on CWS Client Tier.      *       * @since 1.2      */
+comment|/**      * Returns ClientEntityResolver with mapping information that only includes      * entities available on CWS Client Tier.      *       * @since 1.2      */
 specifier|public
 name|EntityResolver
 name|getClientEntityResolver
@@ -1818,7 +1823,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Returns ClassDescriptor for the ObjEntity matching the name. Returns null if no      * matching entity exists.      *       * @since 1.2      */
+comment|/**      * Returns ClassDescriptor for the ObjEntity matching the name. Returns null      * if no matching entity exists.      *       * @since 1.2      */
 specifier|public
 specifier|synchronized
 name|ClassDescriptor
@@ -1892,7 +1897,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes all entity mappings from the cache. Cache can be rebuilt either explicitly      * by calling<code>constructCache</code>, or on demand by calling any of the      *<code>lookup...</code> methods.      */
+comment|/**      * Removes all entity mappings from the cache. Cache can be rebuilt either      * explicitly by calling<code>constructCache</code>, or on demand by      * calling any of the<code>lookup...</code> methods.      */
 specifier|public
 specifier|synchronized
 name|void
@@ -1939,7 +1944,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Creates caches of DbEntities by ObjEntity, DataObject class, and ObjEntity name      * using internal list of maps.      */
+comment|/**      * Creates caches of DbEntities by ObjEntity, DataObject class, and      * ObjEntity name using internal list of maps.      */
 specifier|protected
 specifier|synchronized
 name|void
@@ -1950,7 +1955,8 @@ name|clearCache
 argument_list|()
 expr_stmt|;
 comment|// rebuild index
-comment|// index DbEntities separately and before ObjEntities to avoid infinite loops when
+comment|// index DbEntities separately and before ObjEntities to avoid infinite
+comment|// loops when
 comment|// looking up DbEntities during ObjEntity index op
 for|for
 control|(
@@ -2018,12 +2024,8 @@ argument_list|,
 name|oe
 argument_list|)
 expr_stmt|;
-comment|// index by class.. use class name as a key to avoid class loading here...
-if|if
-condition|(
-name|indexedByClass
-condition|)
-block|{
+comment|// index by class.. use class name as a key to avoid class
+comment|// loading here...
 name|String
 name|className
 init|=
@@ -2049,7 +2051,8 @@ argument_list|(
 name|className
 argument_list|)
 decl_stmt|;
-comment|// allow duplicates, but put a special marker indicating that this
+comment|// allow duplicates, but put a special marker indicating
+comment|// that this
 comment|// entity can't be looked up by class
 name|Object
 name|existing
@@ -2097,7 +2100,6 @@ argument_list|,
 name|oe
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|// index stored procedures
@@ -2286,7 +2288,8 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// do direct entity lookup to avoid recursive cache rebuild
+comment|// do direct entity lookup to avoid recursive cache
+comment|// rebuild
 name|ObjEntity
 name|superOE
 init|=
@@ -2324,7 +2327,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// bad mapping? Or most likely some classloader issue
+comment|// bad mapping? Or most likely some classloader
+comment|// issue
 name|logger
 operator|.
 name|warn
@@ -2451,7 +2455,7 @@ name|maps
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that starts with a      * given ObjEntity as root, and includes all its subentities. Returns non-null object      * for all existing entities, even those that don't have super or subclasses.      *       * @since 3.0      */
+comment|/**      * Returns EntityInheritanceTree representing inheritance hierarchy that      * starts with a given ObjEntity as root, and includes all its subentities.      * Returns non-null object for all existing entities, even those that don't      * have super or subclasses.      *       * @since 3.0      */
 specifier|public
 name|EntityInheritanceTree
 name|lookupInheritanceTree
@@ -2498,7 +2502,7 @@ return|return
 name|tree
 return|;
 block|}
-comment|/**      * Looks in the DataMap's that this object was created with for the ObjEntity that      * maps to the services the specified class      *       * @return the required ObjEntity or null if there is none that matches the specifier      */
+comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that maps to the services the specified class      *       * @return the required ObjEntity or null if there is none that matches the      *         specifier      */
 specifier|public
 specifier|synchronized
 name|ObjEntity
@@ -2511,20 +2515,6 @@ argument_list|>
 name|aClass
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|indexedByClass
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Class index is disabled."
-argument_list|)
-throw|;
-block|}
 return|return
 name|_lookupObjEntity
 argument_list|(
@@ -2538,7 +2528,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks in the DataMap's that this object was created with for the ObjEntity that      * services the specified data Object      *       * @return the required ObjEntity, or null if none matches the specifier      */
+comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that services the specified data Object      *       * @return the required ObjEntity, or null if none matches the specifier      */
 specifier|public
 specifier|synchronized
 name|ObjEntity
@@ -2764,6 +2754,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @deprecated since 3.2. There's no replacement. This property is      *             meaningless and is no longer respected by the code.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isIndexedByClass
@@ -2773,6 +2766,7 @@ return|return
 name|indexedByClass
 return|;
 block|}
+comment|/**      * @deprecated since 3.2. There's no replacement. This property is      *             meaningless.      */
 specifier|public
 name|void
 name|setIndexedByClass
@@ -2795,7 +2789,8 @@ name|String
 name|className
 parameter_list|)
 block|{
-comment|// need to ensure that there is no conflict with entity names... I guess such
+comment|// need to ensure that there is no conflict with entity names... I guess
+comment|// such
 comment|// prefix is enough to guarantee that:
 return|return
 literal|"^cl^"
@@ -2803,7 +2798,7 @@ operator|+
 name|className
 return|;
 block|}
-comment|/**      * Internal usage only - provides the type-unsafe implementation which services the      * four typesafe public lookupDbEntity methods Looks in the DataMap's that this object      * was created with for the ObjEntity that maps to the specified object. Object may be      * a Entity name, ObjEntity, DataObject class (Class object for a class which      * implements the DataObject interface), or a DataObject instance itself      *       * @return the required DbEntity, or null if none matches the specifier      */
+comment|/**      * Internal usage only - provides the type-unsafe implementation which      * services the four typesafe public lookupDbEntity methods Looks in the      * DataMap's that this object was created with for the ObjEntity that maps      * to the specified object. Object may be a Entity name, ObjEntity,      * DataObject class (Class object for a class which implements the      * DataObject interface), or a DataObject instance itself      *       * @return the required DbEntity, or null if none matches the specifier      */
 specifier|protected
 name|DbEntity
 name|_lookupDbEntity
@@ -2882,7 +2877,7 @@ operator|)
 name|result
 return|;
 block|}
-comment|/**      * Internal usage only - provides the type-unsafe implementation which services the      * three typesafe public lookupObjEntity methods Looks in the DataMap's that this      * object was created with for the ObjEntity that maps to the specified object. Object      * may be a Entity name, DataObject instance or DataObject class (Class object for a      * class which implements the DataObject interface)      *       * @return the required ObjEntity or null if there is none that matches the specifier      */
+comment|/**      * Internal usage only - provides the type-unsafe implementation which      * services the three typesafe public lookupObjEntity methods Looks in the      * DataMap's that this object was created with for the ObjEntity that maps      * to the specified object. Object may be a Entity name, DataObject instance      * or DataObject class (Class object for a class which implements the      * DataObject interface)      *       * @return the required ObjEntity or null if there is none that matches the      *         specifier      */
 specifier|protected
 name|ObjEntity
 name|_lookupObjEntity
@@ -2947,7 +2942,7 @@ operator|)
 name|result
 return|;
 block|}
-comment|/**      * Returns an object that compiles and stores {@link ClassDescriptor} instances for      * all entities.      *       * @since 3.0      */
+comment|/**      * Returns an object that compiles and stores {@link ClassDescriptor}      * instances for all entities.      *       * @since 3.0      */
 specifier|public
 name|ClassDescriptorMap
 name|getClassDescriptorMap
@@ -3001,7 +2996,8 @@ name|faultFactory
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// since ClassDescriptorMap is not synchronized, we need to prefill it with
+comment|// since ClassDescriptorMap is not synchronized, we need to prefill
+comment|// it with
 comment|// entity proxies here.
 for|for
 control|(
@@ -3045,7 +3041,7 @@ return|return
 name|classDescriptorMap
 return|;
 block|}
-comment|/**      * Sets an optional {@link EntityListenerFactory} that should be used to create entity      * listeners. Note that changing the factory does not affect already created      * listeners. So refresh the existing listners, call "setCallbackRegistry(null)" after      * setting the listener.      *       * @since 3.0      */
+comment|/**      * Sets an optional {@link EntityListenerFactory} that should be used to      * create entity listeners. Note that changing the factory does not affect      * already created listeners. So refresh the existing listners, call      * "setCallbackRegistry(null)" after setting the listener.      *       * @since 3.0      */
 specifier|public
 name|void
 name|setEntityListenerFactory
@@ -3061,7 +3057,7 @@ operator|=
 name|entityListenerFactory
 expr_stmt|;
 block|}
-comment|/**      * Java default deserialization seems not to invoke constructor by default - invoking      * it manually      */
+comment|/**      * Java default deserialization seems not to invoke constructor by default -      * invoking it manually      */
 specifier|private
 name|void
 name|readObject
