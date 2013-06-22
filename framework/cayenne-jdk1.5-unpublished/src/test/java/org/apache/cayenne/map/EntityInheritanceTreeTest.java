@@ -369,7 +369,7 @@ name|t1
 init|=
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 literal|"E1"
 argument_list|)

@@ -201,7 +201,7 @@ name|departmentEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Department
 operator|.
@@ -330,7 +330,7 @@ name|departmentEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Department
 operator|.

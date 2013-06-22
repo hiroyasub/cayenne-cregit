@@ -87,7 +87,7 @@ name|resolver
 decl_stmt|;
 specifier|public
 name|void
-name|testLookupAbstractPersonTree
+name|testGetAbstractPersonTree
 parameter_list|()
 throws|throws
 name|Exception
@@ -97,7 +97,7 @@ name|tree
 init|=
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 literal|"AbstractPerson"
 argument_list|)
@@ -135,7 +135,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testLookupEmployeeTree
+name|testGetEmployeeTree
 parameter_list|()
 throws|throws
 name|Exception
@@ -145,7 +145,7 @@ name|tree
 init|=
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 literal|"Employee"
 argument_list|)
@@ -183,7 +183,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testLookupManagerTree
+name|testGetManagerTree
 parameter_list|()
 throws|throws
 name|Exception
@@ -193,7 +193,7 @@ name|tree
 init|=
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 literal|"Manager"
 argument_list|)
@@ -317,7 +317,7 @@ name|assertNull
 argument_list|(
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 literal|"super1"
 argument_list|)
@@ -335,7 +335,7 @@ name|tree
 init|=
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 literal|"super1"
 argument_list|)

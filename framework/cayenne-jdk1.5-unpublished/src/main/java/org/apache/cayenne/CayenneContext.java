@@ -840,7 +840,7 @@ init|=
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|persistentClass
 argument_list|)
@@ -945,7 +945,7 @@ init|=
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|object
 operator|.
@@ -986,11 +986,6 @@ block|}
 comment|/**      * Runs a query, returning result as list.      */
 annotation|@
 name|Override
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|List
 name|performQuery

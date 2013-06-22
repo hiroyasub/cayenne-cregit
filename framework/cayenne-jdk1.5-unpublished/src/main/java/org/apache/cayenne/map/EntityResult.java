@@ -323,7 +323,7 @@ block|{
 return|return
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|entityClass
 argument_list|)

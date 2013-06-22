@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that defines how a row in a result set can be converted to result  * objects. SQLResult can be mapped to a single scalar, a single entity or a mix of  * scalars and entities that is represented as an Object[].  *   * @since 3.0  */
+comment|/**  * A metadata object that defines how a row in a result set can be converted to  * result objects. SQLResult can be mapped to a single scalar, a single entity  * or a mix of scalars and entities that is represented as an Object[].  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -231,7 +231,7 @@ name|entityName
 operator|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|entityResult
 operator|.
@@ -334,7 +334,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Returns a list of "uncompiled" result descriptors. Column descriptors are returned      * as Strings, entity descriptors - as {@link EntityResult}. To get fully resolved      * descriptors, use {@link #getResolvedComponents(EntityResolver)}.      */
+comment|/**      * Returns a list of "uncompiled" result descriptors. Column descriptors are      * returned as Strings, entity descriptors - as {@link EntityResult}. To get      * fully resolved descriptors, use      * {@link #getResolvedComponents(EntityResolver)}.      */
 specifier|public
 name|List
 argument_list|<
@@ -352,7 +352,8 @@ name|resultDescriptors
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 specifier|public

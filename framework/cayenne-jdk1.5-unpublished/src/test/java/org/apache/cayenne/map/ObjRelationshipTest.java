@@ -2298,7 +2298,7 @@ name|iv2Sub1
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Iv2Sub1
 operator|.

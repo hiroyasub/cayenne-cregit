@@ -1248,7 +1248,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|dataObjectClass
 argument_list|)
@@ -1739,7 +1739,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|dataObjectClass
 argument_list|)

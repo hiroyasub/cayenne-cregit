@@ -637,7 +637,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// Similar to testDeleteObjects2, but extract ObjectContext instead of DataContext.
+comment|// Similar to testDeleteObjects2, but extract ObjectContext instead of
+comment|// DataContext.
 specifier|public
 name|void
 name|testDeleteObjects2
@@ -860,7 +861,8 @@ argument_list|(
 name|paintings
 argument_list|)
 expr_stmt|;
-comment|// as Painting -> Artist has Nullify rule, relationship list has to be cleaned up,
+comment|// as Painting -> Artist has Nullify rule, relationship list has to be
+comment|// cleaned up,
 comment|// and no exceptions thrown on concurrent modification...
 name|ObjRelationship
 name|r
@@ -873,7 +875,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Painting
 operator|.

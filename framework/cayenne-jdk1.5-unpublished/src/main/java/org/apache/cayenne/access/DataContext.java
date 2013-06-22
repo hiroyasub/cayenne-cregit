@@ -1751,7 +1751,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|objectClass
 argument_list|)
@@ -1905,7 +1905,7 @@ init|=
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|persistentClass
 argument_list|)

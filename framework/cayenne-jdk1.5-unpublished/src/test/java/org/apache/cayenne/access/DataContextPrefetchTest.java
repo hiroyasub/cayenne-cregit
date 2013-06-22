@@ -1598,7 +1598,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test that a to-many relationship is initialized when a target entity has a compound      * PK only partially involved in relationship.      */
+comment|/**      * Test that a to-many relationship is initialized when a target entity has      * a compound PK only partially involved in relationship.      */
 specifier|public
 name|void
 name|testPrefetchToMany_OnJoinTableDisjoinedPrefetch
@@ -2206,7 +2206,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test that a to-many relationship is initialized when a target entity has a compound      * PK only partially involved in relationship.      */
+comment|/**      * Test that a to-many relationship is initialized when a target entity has      * a compound PK only partially involved in relationship.      */
 specifier|public
 name|void
 name|testPrefetchToManyOnJoinTableJoinedPrefetch
@@ -2522,7 +2522,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Painting
 operator|.
@@ -2687,7 +2687,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Painting
 operator|.
@@ -3438,7 +3438,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|// find the painting not matching the artist (this is the case where such prefetch
+comment|// find the painting not matching the artist (this is the case where
+comment|// such prefetch
 comment|// at least makes sense)
 name|Expression
 name|exp
@@ -3799,7 +3800,8 @@ argument_list|(
 literal|"paintingArray"
 argument_list|)
 expr_stmt|;
-comment|// prefetch with query using date in qualifier used to fail on SQL Server
+comment|// prefetch with query using date in qualifier used to fail on SQL
+comment|// Server
 comment|// see CAY-119 for details
 name|context
 operator|.
@@ -3973,7 +3975,8 @@ name|void
 name|execute
 parameter_list|()
 block|{
-comment|// per CAY-499 second run of a cached query with prefetches (i.e. when the
+comment|// per CAY-499 second run of a cached query with prefetches
+comment|// (i.e. when the
 comment|// result is served from cache) used to throw an exception...
 name|List
 argument_list|<
@@ -4131,7 +4134,8 @@ name|void
 name|execute
 parameter_list|()
 block|{
-comment|// per CAY-499 second run of a cached query with prefetches (i.e. when the
+comment|// per CAY-499 second run of a cached query with prefetches
+comment|// (i.e. when the
 comment|// result is served from cache) used to throw an exception...
 name|List
 argument_list|<

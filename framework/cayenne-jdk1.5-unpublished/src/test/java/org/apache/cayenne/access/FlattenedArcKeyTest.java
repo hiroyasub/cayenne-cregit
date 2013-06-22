@@ -188,7 +188,7 @@ name|ObjRelationship
 operator|)
 name|entityResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|FlattenedTest3
 operator|.
@@ -280,7 +280,7 @@ name|ObjRelationship
 operator|)
 name|entityResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|FlattenedTest3
 operator|.
@@ -331,7 +331,7 @@ name|ObjRelationship
 operator|)
 name|entityResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|FlattenedTest1
 operator|.
@@ -438,7 +438,7 @@ name|ObjRelationship
 operator|)
 name|entityResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|FlattenedTest3
 operator|.
@@ -489,7 +489,7 @@ name|ObjRelationship
 operator|)
 name|entityResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|FlattenedTest1
 operator|.

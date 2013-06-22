@@ -681,7 +681,7 @@ name|assertNull
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|ClientMtTable1
 operator|.
@@ -696,7 +696,7 @@ operator|.
 name|getClientEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|ClientMtTable1
 operator|.

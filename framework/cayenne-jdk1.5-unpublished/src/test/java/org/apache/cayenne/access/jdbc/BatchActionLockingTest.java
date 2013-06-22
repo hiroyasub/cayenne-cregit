@@ -391,7 +391,7 @@ name|dbEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|SimpleLockingTestEntity
 operator|.
@@ -637,7 +637,7 @@ name|dbEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|SimpleLockingTestEntity
 operator|.

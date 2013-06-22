@@ -682,13 +682,16 @@ name|getProcedure
 parameter_list|()
 block|{
 return|return
+name|query
+operator|.
+name|getMetaData
+argument_list|(
 name|getEntityResolver
 argument_list|()
-operator|.
-name|lookupProcedure
-argument_list|(
-name|query
 argument_list|)
+operator|.
+name|getProcedure
+argument_list|()
 return|;
 block|}
 comment|/**      * Helper method that reads OUT parameters of a CallableStatement.      */

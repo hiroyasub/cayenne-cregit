@@ -477,7 +477,7 @@ name|entity
 operator|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 operator|(
 name|Class
@@ -495,7 +495,8 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// entity not found, try to resolve it with
+comment|// entity not found, try to resolve it
+comment|// with
 comment|// client resolver
 name|EntityResolver
 name|clientResolver
@@ -517,7 +518,7 @@ name|clientEntity
 init|=
 name|clientResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 operator|(
 name|Class

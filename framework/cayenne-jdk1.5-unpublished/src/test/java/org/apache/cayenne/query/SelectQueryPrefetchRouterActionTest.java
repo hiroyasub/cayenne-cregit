@@ -199,7 +199,7 @@ name|paintingEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Painting
 operator|.
@@ -322,7 +322,7 @@ name|paintingEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Painting
 operator|.
@@ -443,7 +443,7 @@ name|galleryEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Gallery
 operator|.

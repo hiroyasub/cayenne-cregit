@@ -1416,16 +1416,46 @@ name|Procedure
 name|getProcedure
 parameter_list|(
 name|String
-name|name
+name|procedureName
 parameter_list|)
 block|{
-return|return
-name|lookupProcedure
+name|Procedure
+name|result
+init|=
+name|mappingCache
+operator|.
+name|getProcedure
 argument_list|(
-name|name
+name|procedureName
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|result
+operator|==
+literal|null
+condition|)
+block|{
+comment|// reconstruct cache just in case some of the datamaps
+comment|// have changed and now contain the required information
+name|refreshMappingCache
+argument_list|()
+expr_stmt|;
+name|result
+operator|=
+name|mappingCache
+operator|.
+name|getProcedure
+argument_list|(
+name|procedureName
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|result
 return|;
 block|}
+comment|/**      * Returns a named query or null if no query exists for a given name.      */
 specifier|public
 name|Query
 name|getQuery
@@ -1434,11 +1464,40 @@ name|String
 name|name
 parameter_list|)
 block|{
-return|return
-name|lookupQuery
+name|Query
+name|result
+init|=
+name|mappingCache
+operator|.
+name|getQuery
 argument_list|(
 name|name
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|result
+operator|==
+literal|null
+condition|)
+block|{
+comment|// reconstruct cache just in case some of the datamaps
+comment|// have changed and now contain the required information
+name|refreshMappingCache
+argument_list|()
+expr_stmt|;
+name|result
+operator|=
+name|mappingCache
+operator|.
+name|getQuery
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|result
 return|;
 block|}
 comment|/**      * @since 3.0      */
@@ -1952,7 +2011,7 @@ name|Class
 condition|)
 block|{
 return|return
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 operator|(
 name|Class
@@ -1965,7 +2024,7 @@ argument_list|)
 return|;
 block|}
 return|return
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|object
 operator|.
@@ -1974,6 +2033,9 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * @deprecated since 3.2. Use q.getMetaData(resolver).getProcedure()      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Procedure
 name|lookupProcedure
@@ -1994,6 +2056,9 @@ name|getProcedure
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 3.2 use {@link #getProcedure(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Procedure
 name|lookupProcedure
@@ -2002,43 +2067,16 @@ name|String
 name|procedureName
 parameter_list|)
 block|{
-name|Procedure
-name|result
-init|=
-name|mappingCache
-operator|.
-name|getProcedure
-argument_list|(
-name|procedureName
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|result
-operator|==
-literal|null
-condition|)
-block|{
-comment|// reconstruct cache just in case some of the datamaps
-comment|// have changed and now contain the required information
-name|refreshMappingCache
-argument_list|()
-expr_stmt|;
-name|result
-operator|=
-name|mappingCache
-operator|.
-name|getProcedure
-argument_list|(
-name|procedureName
-argument_list|)
-expr_stmt|;
-block|}
 return|return
-name|result
+name|getProcedure
+argument_list|(
+name|procedureName
+argument_list|)
 return|;
 block|}
-comment|/**      * Returns a named query or null if no query exists for a given name.      */
+comment|/**      * @deprecated since 3.2 use {@link #getQuery(String)}.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Query
 name|lookupQuery
@@ -2047,40 +2085,11 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|Query
-name|result
-init|=
-name|mappingCache
-operator|.
-name|getQuery
-argument_list|(
-name|name
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|result
-operator|==
-literal|null
-condition|)
-block|{
-comment|// reconstruct cache just in case some of the datamaps
-comment|// have changed and now contain the required information
-name|refreshMappingCache
-argument_list|()
-expr_stmt|;
-name|result
-operator|=
-name|mappingCache
-operator|.
-name|getQuery
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-block|}
 return|return
-name|result
+name|getQuery
+argument_list|(
+name|name
+argument_list|)
 return|;
 block|}
 specifier|public

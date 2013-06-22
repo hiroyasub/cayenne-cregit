@@ -607,7 +607,7 @@ operator|.
 name|getResolver
 argument_list|()
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 name|descriptor
 operator|.
@@ -1089,7 +1089,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// descriptor takes care of weeding off duplicates, which are likely in cases
+comment|// descriptor takes care of weeding off duplicates, which are likely
+comment|// in cases
 comment|// of non-horizontal inheritance
 name|descriptor
 operator|.
@@ -1295,7 +1296,8 @@ block|}
 block|}
 expr_stmt|;
 comment|// we semi-officially DO NOT support inheritance
-comment|// descriptors based on related entities, so here we
+comment|// descriptors based on related entities, so
+comment|// here we
 comment|// assume that DbAttribute is rooted in the root
 comment|// DbEntity, and no relationship is involved.
 name|objectAttribute
@@ -1637,7 +1639,8 @@ name|EmbeddedAttribute
 name|embeddedAttribute
 parameter_list|)
 block|{
-comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every property of
+comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every
+comment|// property of
 comment|// embeddable; look up reusable descriptor instead.
 return|return
 operator|new

@@ -189,7 +189,7 @@ name|assertNull
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Object
 operator|.
@@ -201,7 +201,7 @@ try|try
 block|{
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|CayenneDataObject
 operator|.

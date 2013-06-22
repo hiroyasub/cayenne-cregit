@@ -1505,7 +1505,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Artist
 operator|.
@@ -2223,7 +2223,8 @@ block|{
 name|createClobDataSet
 argument_list|()
 expr_stmt|;
-comment|// see CAY-1539... CLOB column causes suppression of DISTINCT in SQL, and
+comment|// see CAY-1539... CLOB column causes suppression of DISTINCT in
+comment|// SQL, and
 comment|// hence the offset processing is done in memory
 name|SelectQuery
 name|query
@@ -3711,7 +3712,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that all queries specified in prefetch are executed in a more complex      * prefetch scenario.      */
+comment|/**      * Tests that all queries specified in prefetch are executed in a more      * complex prefetch scenario.      */
 specifier|public
 name|void
 name|testRouteWithPrefetches
@@ -3906,7 +3907,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that all queries specified in prefetch are executed in a more complex      * prefetch scenario with no reverse obj relationships.      */
+comment|/**      * Tests that all queries specified in prefetch are executed in a more      * complex prefetch scenario with no reverse obj relationships.      */
 specifier|public
 name|void
 name|testRouteQueryWithPrefetchesNoReverse
@@ -3925,7 +3926,7 @@ name|paintingEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Painting
 operator|.
@@ -3937,7 +3938,7 @@ name|galleryEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Gallery
 operator|.
@@ -3949,7 +3950,7 @@ name|artistExhibitEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|ArtistExhibit
 operator|.
@@ -3961,7 +3962,7 @@ name|exhibitEntity
 init|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Exhibit
 operator|.
@@ -4155,13 +4156,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Test prefetching with qualifier on the root query being the path to the prefetch.      */
+comment|/**      * Test prefetching with qualifier on the root query being the path to the      * prefetch.      */
 specifier|public
 name|void
 name|testRouteQueryWithPrefetchesPrefetchExpressionPath
 parameter_list|()
 block|{
-comment|// find the painting not matching the artist (this is the case where such prefetch
+comment|// find the painting not matching the artist (this is the case where
+comment|// such prefetch
 comment|// at least makes sense)
 name|Expression
 name|exp
@@ -4197,7 +4199,8 @@ argument_list|(
 literal|"toArtist"
 argument_list|)
 expr_stmt|;
-comment|// test how prefetches are resolved in this case - this was a stumbling block for
+comment|// test how prefetches are resolved in this case - this was a stumbling
+comment|// block for
 comment|// a while
 name|EntityResolver
 name|resolver
@@ -4428,7 +4431,8 @@ argument_list|,
 name|query
 argument_list|)
 decl_stmt|;
-comment|// exception if>1 result
+comment|// exception if>1
+comment|// result
 name|assertSame
 argument_list|(
 name|res
@@ -4739,7 +4743,8 @@ name|void
 name|testSelectLongIn
 parameter_list|()
 block|{
-comment|// not all adapters strip INs, so we just make sure query with such qualifier
+comment|// not all adapters strip INs, so we just make sure query with such
+comment|// qualifier
 comment|// fires OK
 name|Object
 index|[]

@@ -232,7 +232,7 @@ name|InsertBatchQuery
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|GeneratedColumnTestEntity
 operator|.
@@ -269,7 +269,7 @@ name|InsertBatchQuery
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Artist
 operator|.
@@ -334,7 +334,7 @@ name|InsertBatchQuery
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|GeneratedColumnTestEntity
 operator|.
@@ -371,7 +371,7 @@ name|InsertBatchQuery
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|Artist
 operator|.
