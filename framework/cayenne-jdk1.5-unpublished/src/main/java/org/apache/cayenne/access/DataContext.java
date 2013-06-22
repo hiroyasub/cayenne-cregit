@@ -1222,7 +1222,7 @@ init|=
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|object
 argument_list|)
@@ -2080,8 +2080,11 @@ init|=
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
+operator|(
+name|Persistent
+operator|)
 name|object
 argument_list|)
 decl_stmt|;

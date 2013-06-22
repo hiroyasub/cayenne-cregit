@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Various utils for processing persistent objects and their properties  *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary key values  * or use primary keys to find objects are provided for convenience. Still the author's  * belief is that integer sequential primary keys are meaningless in the object model and  * are pure database artifacts. Therefore relying heavily on direct access to PK provided  * via this class (or other such Cayenne API) is not a clean design practice in many  * cases, and sometimes may actually lead to security issues.</i>  *</p>  *  * @since 3.1 its predecessor was called DataObjectUtils  */
+comment|/**  * Various utils for processing persistent objects and their properties  *<p>  *<i>DataObjects and Primary Keys: All methods that allow to extract primary  * key values or use primary keys to find objects are provided for convenience.  * Still the author's belief is that integer sequential primary keys are  * meaningless in the object model and are pure database artifacts. Therefore  * relying heavily on direct access to PK provided via this class (or other such  * Cayenne API) is not a clean design practice in many cases, and sometimes may  * actually lead to security issues.</i>  *</p>  *   * @since 3.1 its predecessor was called DataObjectUtils  */
 end_comment
 
 begin_class
@@ -194,7 +194,7 @@ specifier|public
 class|class
 name|Cayenne
 block|{
-comment|/**      * A special property denoting a size of the to-many collection, when encountered at      * the end of the path</p>      */
+comment|/**      * A special property denoting a size of the to-many collection, when      * encountered at the end of the path</p>      */
 specifier|final
 specifier|static
 name|String
@@ -202,7 +202,7 @@ name|PROPERTY_COLLECTION_SIZE
 init|=
 literal|"@size"
 decl_stmt|;
-comment|/**      * Returns mapped ObjEntity for object. If an object is transient or is not mapped      * returns null.      */
+comment|/**      * Returns mapped ObjEntity for object. If an object is transient or is not      * mapped returns null.      */
 specifier|public
 specifier|static
 name|ObjEntity
@@ -230,7 +230,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|p
 argument_list|)
@@ -238,7 +238,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns class descriptor for the object or null if the object is not registered      * with an ObjectContext or descriptor was not found.      */
+comment|/**      * Returns class descriptor for the object or null if the object is not      * registered with an ObjectContext or descriptor was not found.      */
 specifier|public
 specifier|static
 name|ClassDescriptor
@@ -285,7 +285,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns property descriptor for specified property.      *      * @param properyName path to the property      * @return property descriptor,<code>null</code> if not found      */
+comment|/**      * Returns property descriptor for specified property.      *       * @param properyName      *            path to the property      * @return property descriptor,<code>null</code> if not found      */
 specifier|public
 specifier|static
 name|PropertyDescriptor
@@ -326,7 +326,7 @@ name|properyName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)Cayenne.readNestedProperty(artist, "name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)Cayenne.readNestedProperty(paintingInfo, "toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)Cayenne.readNestedProperty(painting, "toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)Cayenne.readNestedProperty(painting, "toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)Cayenne.readNestedProperty(artist, "paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      */
+comment|/**      * Returns a value of the property identified by a property path. Supports      * reading both mapped and unmapped properties. Unmapped properties are      * accessed in a manner consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to      * traverse object relationships until the final object is found. If a null      * object found while traversing path, null is returned. If a list is      * encountered in the middle of the path, CayenneRuntimeException is thrown.      * Unlike {@link #readPropertyDirectly(String)}, this method will resolve an      * object if it is HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)Cayenne.readNestedProperty(artist, "name");</code>      *<br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)Cayenne.readNestedProperty(paintingInfo, "toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)Cayenne.readNestedProperty(painting, "toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)Cayenne.readNestedProperty(painting, "toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)Cayenne.readNestedProperty(artist, "paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      */
 specifier|public
 specifier|static
 name|Object
@@ -486,7 +486,8 @@ argument_list|>
 condition|)
 block|{
 comment|// We don't want nested collections. E.g.
-comment|// readNestedProperty("paintingArray.paintingTitle") should return
+comment|// readNestedProperty("paintingArray.paintingTitle")
+comment|// should return
 comment|// List<String>
 name|result
 operator|.
@@ -749,7 +750,7 @@ name|propertyName
 argument_list|)
 return|;
 block|}
-comment|/**      * Constructs a dotted path from a list of strings.  Useful for creating      * more complex paths while preserving compilation safety.  For example,      * instead of saying:      *<p>      *<pre>orderings.add(new Ordering("department.name", SortOrder.ASCENDING));</pre>      *<p>      * You can use makePath() with the constants generated by Cayenne Modeler:      *<p>      *<pre>orderings.add(new Ordering(Cayenne.makePath(USER.DEPARTMENT_PROPERTY, Department.NAME_PROPERTY), SortOrder.ASCENDING));</pre>      *<p>      * @param pathParts The varargs list of paths to join.      * @return A string of all the paths joined by a "." (used by Cayenne in queries and orderings).      *<p>      * @since 3.1      */
+comment|/**      * Constructs a dotted path from a list of strings. Useful for creating more      * complex paths while preserving compilation safety. For example, instead      * of saying:      *<p>      *       *<pre>      * orderings.add(new Ordering(&quot;department.name&quot;, SortOrder.ASCENDING));      *</pre>      *<p>      * You can use makePath() with the constants generated by Cayenne Modeler:      *<p>      *       *<pre>      * orderings.add(new Ordering(Cayenne.makePath(USER.DEPARTMENT_PROPERTY, Department.NAME_PROPERTY), SortOrder.ASCENDING));      *</pre>      *<p>      *       * @param pathParts      *            The varargs list of paths to join.      * @return A string of all the paths joined by a "." (used by Cayenne in      *         queries and orderings).      *<p>      * @since 3.1      */
 specifier|public
 specifier|static
 name|String
@@ -804,7 +805,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns an int primary key value for a persistent object. Only works for single      * column numeric primary keys. If an object is transient or has an ObjectId that can      * not be converted to an int PK, an exception is thrown.      */
+comment|/**      * Returns an int primary key value for a persistent object. Only works for      * single column numeric primary keys. If an object is transient or has an      * ObjectId that can not be converted to an int PK, an exception is thrown.      */
 specifier|public
 specifier|static
 name|long
@@ -857,7 +858,7 @@ name|longValue
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns an int primary key value for a persistent object. Only works for single      * column numeric primary keys. If an object is transient or has an ObjectId that can      * not be converted to an int PK, an exception is thrown.      */
+comment|/**      * Returns an int primary key value for a persistent object. Only works for      * single column numeric primary keys. If an object is transient or has an      * ObjectId that can not be converted to an int PK, an exception is thrown.      */
 specifier|public
 specifier|static
 name|int
@@ -910,7 +911,7 @@ name|intValue
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a primary key value for a persistent object. Only works for single column      * primary keys. If an object is transient or has a compound ObjectId, an exception is      * thrown.      */
+comment|/**      * Returns a primary key value for a persistent object. Only works for      * single column primary keys. If an object is transient or has a compound      * ObjectId, an exception is thrown.      */
 specifier|public
 specifier|static
 name|Object
@@ -976,7 +977,7 @@ name|getValue
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a primary key map for a persistent object. This method is the most generic      * out of all methods for primary key retrieval. It will work for all possible types      * of primary keys. If an object is transient, an exception is thrown.      */
+comment|/**      * Returns a primary key map for a persistent object. This method is the      * most generic out of all methods for primary key retrieval. It will work      * for all possible types of primary keys. If an object is transient, an      * exception is thrown.      */
 specifier|public
 specifier|static
 name|Map
@@ -1075,7 +1076,7 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|dataObject
 argument_list|)
@@ -1126,7 +1127,7 @@ literal|"Can't get primary key from temporary id."
 argument_list|)
 throw|;
 block|}
-comment|/**      * Returns an object matching an int primary key. If the object is mapped to use      * non-integer PK or a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned without a      * query. Otherwise a query is built and executed against the database.      *</p>      *      * @see #objectForPK(ObjectContext, ObjectId)      */
+comment|/**      * Returns an object matching an int primary key. If the object is mapped to      * use non-integer PK or a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1172,7 +1173,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object matching an Object primary key. If the object is mapped to use a      * compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned without a      * query. Otherwise a query is built and executed against the database.      *</p>      *      * @see #objectForPK(ObjectContext, ObjectId)      */
+comment|/**      * Returns an object matching an Object primary key. If the object is mapped      * to use a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1213,7 +1214,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object matching a primary key. PK map parameter should use database PK      * column names as keys.      *<p>      * If this object is already cached in the ObjectStore, it is returned without a      * query. Otherwise a query is built and executed against the database.      *</p>      *      * @see #objectForPK(ObjectContext, ObjectId)      */
+comment|/**      * Returns an object matching a primary key. PK map parameter should use      * database PK column names as keys.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1291,7 +1292,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object matching an int primary key. If the object is mapped to use      * non-integer PK or a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned without a      * query. Otherwise a query is built and executed against the database.      *</p>      *      * @see #objectForPK(ObjectContext, ObjectId)      */
+comment|/**      * Returns an object matching an int primary key. If the object is mapped to      * use non-integer PK or a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
 specifier|public
 specifier|static
 name|Object
@@ -1328,7 +1329,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object matching an Object primary key. If the object is mapped to use a      * compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned without a      * query. Otherwise a query is built and executed against the database.      *</p>      *      * @see #objectForPK(ObjectContext, ObjectId)      */
+comment|/**      * Returns an object matching an Object primary key. If the object is mapped      * to use a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
 specifier|public
 specifier|static
 name|Object
@@ -1360,7 +1361,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object matching a primary key. PK map parameter should use database PK      * column names as keys.      *<p>      * If this object is already cached in the ObjectStore, it is returned without a      * query. Otherwise a query is built and executed against the database.      *</p>      *      * @see #objectForPK(ObjectContext, ObjectId)      */
+comment|/**      * Returns an object matching a primary key. PK map parameter should use      * database PK column names as keys.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
 specifier|public
 specifier|static
 name|Object
@@ -1411,7 +1412,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object matching ObjectId. If this object is already cached in the      * ObjectStore, it is returned without a query. Otherwise a query is built and      * executed against the database.      *      * @return A persistent object that matched the id, null if no matching objects were      *         found      * @throws CayenneRuntimeException if more than one object matched ObjectId.      */
+comment|/**      * Returns an object matching ObjectId. If this object is already cached in      * the ObjectStore, it is returned without a query. Otherwise a query is      * built and executed against the database.      *       * @return A persistent object that matched the id, null if no matching      *         objects were found      * @throws CayenneRuntimeException      *             if more than one object matched ObjectId.      */
 specifier|public
 specifier|static
 name|Object
@@ -1443,7 +1444,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object or a DataRow that is a result of a given query. If query returns      * more than one object, an exception is thrown. If query returns no objects, null is      * returned.      */
+comment|/**      * Returns an object or a DataRow that is a result of a given query. If      * query returns more than one object, an exception is thrown. If query      * returns no objects, null is returned.      */
 specifier|public
 specifier|static
 name|Object
@@ -1515,7 +1516,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an object or a DataRow that is a result of a given query. If query returns      * more than one object, an exception is thrown. If query returns no objects, null is      * returned.      *       * @since 3.2      */
+comment|/**      * Returns an object or a DataRow that is a result of a given query. If      * query returns more than one object, an exception is thrown. If query      * returns no objects, null is returned.      *       * @since 3.2      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

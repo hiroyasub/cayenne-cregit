@@ -711,8 +711,11 @@ name|entity
 operator|=
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
+operator|(
+name|Persistent
+operator|)
 name|root
 argument_list|)
 expr_stmt|;

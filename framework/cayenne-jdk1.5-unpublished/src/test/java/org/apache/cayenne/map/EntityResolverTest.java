@@ -305,7 +305,7 @@ name|assertIsArtistObjEntity
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 operator|new
 name|Artist
@@ -351,7 +351,7 @@ name|assertIsArtistObjEntity
 argument_list|(
 name|resolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|artist
 argument_list|)

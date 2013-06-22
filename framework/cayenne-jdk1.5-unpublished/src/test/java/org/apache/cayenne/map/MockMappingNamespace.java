@@ -53,6 +53,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbEntity
@@ -495,6 +507,19 @@ name|SQLResult
 argument_list|>
 name|getResults
 parameter_list|()
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
+block|}
+specifier|public
+name|ObjEntity
+name|getObjEntity
+parameter_list|(
+name|Persistent
+name|object
+parameter_list|)
 block|{
 comment|// TODO Auto-generated method stub
 return|return

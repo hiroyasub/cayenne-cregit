@@ -1942,7 +1942,26 @@ name|entityClass
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that services the specified data Object      *       * @return the required ObjEntity, or null if none matches the specifier      */
+specifier|public
+name|ObjEntity
+name|getObjEntity
+parameter_list|(
+name|Persistent
+name|object
+parameter_list|)
+block|{
+return|return
+name|mappingCache
+operator|.
+name|getObjEntity
+argument_list|(
+name|object
+argument_list|)
+return|;
+block|}
+comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that services the specified data Object      *       * @return the required ObjEntity, or null if none matches the specifier      * @since 3.2 a corresponding getObjEntity method should be used.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ObjEntity
 name|lookupObjEntity

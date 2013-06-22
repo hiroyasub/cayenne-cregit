@@ -33,6 +33,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|Query
@@ -161,6 +173,14 @@ argument_list|<
 name|?
 argument_list|>
 name|entityClass
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+name|ObjEntity
+name|getObjEntity
+parameter_list|(
+name|Persistent
+name|object
 parameter_list|)
 function_decl|;
 block|}
