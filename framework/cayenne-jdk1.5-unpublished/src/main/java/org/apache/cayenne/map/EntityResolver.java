@@ -329,7 +329,7 @@ decl_stmt|;
 specifier|protected
 specifier|transient
 name|MappingCache
-name|entityCache
+name|mappingCache
 decl_stmt|;
 specifier|protected
 name|EntityResolver
@@ -1478,7 +1478,7 @@ block|{
 name|DbEntity
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getDbEntity
 argument_list|(
@@ -1499,7 +1499,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getDbEntity
 argument_list|(
@@ -1522,7 +1522,7 @@ block|{
 name|ObjEntity
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getObjEntity
 argument_list|(
@@ -1543,7 +1543,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getObjEntity
 argument_list|(
@@ -1597,7 +1597,7 @@ block|{
 name|Embeddable
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getEmbeddable
 argument_list|(
@@ -1618,7 +1618,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getEmbeddable
 argument_list|(
@@ -1642,7 +1642,7 @@ block|{
 name|SQLResult
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getResult
 argument_list|(
@@ -1663,7 +1663,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getResult
 argument_list|(
@@ -1767,13 +1767,28 @@ name|void
 name|refreshMappingCache
 parameter_list|()
 block|{
-name|entityCache
+name|mappingCache
 operator|=
 operator|new
+name|ProxiedMappingCache
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|protected
 name|MappingCache
+name|createDelegate
+parameter_list|()
+block|{
+return|return
+operator|new
+name|DefaultMappingCache
 argument_list|(
 name|maps
 argument_list|)
+return|;
+block|}
+block|}
 expr_stmt|;
 name|clientEntityResolver
 operator|=
@@ -1892,7 +1907,7 @@ block|{
 name|EntityInheritanceTree
 name|tree
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getInheritanceTree
 argument_list|(
@@ -1915,7 +1930,7 @@ argument_list|()
 expr_stmt|;
 name|tree
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getInheritanceTree
 argument_list|(
@@ -1942,7 +1957,7 @@ block|{
 name|ObjEntity
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getObjEntity
 argument_list|(
@@ -1963,7 +1978,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getObjEntity
 argument_list|(
@@ -2097,7 +2112,7 @@ block|{
 name|Procedure
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getProcedure
 argument_list|(
@@ -2118,7 +2133,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getProcedure
 argument_list|(
@@ -2142,7 +2157,7 @@ block|{
 name|Query
 name|result
 init|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getQuery
 argument_list|(
@@ -2163,7 +2178,7 @@ argument_list|()
 expr_stmt|;
 name|result
 operator|=
-name|entityCache
+name|mappingCache
 operator|.
 name|getQuery
 argument_list|(
