@@ -938,6 +938,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|// callbacks using annotations go first
+name|callbackRegistry
+operator|.
+name|addCallbacks
+argument_list|(
+name|entityClass
+argument_list|)
+expr_stmt|;
+comment|// callbacks mapped in the modeler follow
 name|CallbackDescriptor
 index|[]
 name|callbacks
