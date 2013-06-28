@@ -324,7 +324,7 @@ argument_list|)
 expr_stmt|;
 name|registry
 operator|.
-name|addListener
+name|addCallback
 argument_list|(
 name|LifecycleEvent
 operator|.
@@ -519,7 +519,7 @@ argument_list|)
 expr_stmt|;
 name|registry
 operator|.
-name|addListener
+name|addCallback
 argument_list|(
 name|LifecycleEvent
 operator|.
@@ -708,7 +708,7 @@ argument_list|)
 expr_stmt|;
 name|registry
 operator|.
-name|addListener
+name|addCallback
 argument_list|(
 name|LifecycleEvent
 operator|.

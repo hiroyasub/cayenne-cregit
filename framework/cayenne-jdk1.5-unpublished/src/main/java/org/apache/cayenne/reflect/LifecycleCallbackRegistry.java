@@ -819,10 +819,10 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a callback method to be invoked on an entity class instances      * when a lifecycle event occurs.      */
+comment|/**      * Registers a callback method to be invoked on an entity class instances      * when a lifecycle event occurs.      *       * @since 3.2      */
 specifier|public
 name|void
-name|addListener
+name|addCallback
 parameter_list|(
 name|LifecycleEvent
 name|type
@@ -847,6 +847,36 @@ index|]
 operator|.
 name|addListener
 argument_list|(
+name|entityClass
+argument_list|,
+name|methodName
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 3.2 renamed to {@link #addCallback(LifecycleEvent, Class, String)}.      */
+annotation|@
+name|Deprecated
+specifier|public
+name|void
+name|addListener
+parameter_list|(
+name|LifecycleEvent
+name|type
+parameter_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|entityClass
+parameter_list|,
+name|String
+name|methodName
+parameter_list|)
+block|{
+name|addCallback
+argument_list|(
+name|type
+argument_list|,
 name|entityClass
 argument_list|,
 name|methodName

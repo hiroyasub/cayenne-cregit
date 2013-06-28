@@ -980,7 +980,7 @@ control|)
 block|{
 name|callbackRegistry
 operator|.
-name|addListener
+name|addCallback
 argument_list|(
 name|callback
 operator|.
