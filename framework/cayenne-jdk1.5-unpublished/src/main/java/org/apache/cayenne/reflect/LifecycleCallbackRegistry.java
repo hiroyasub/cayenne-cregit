@@ -306,7 +306,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event types are  * defined in {@link LifecycleEvent} enum.  *   * @since 3.0  */
+comment|/**  * A registry of lifecycle callbacks for all callback event types. Valid event  * types are defined in {@link LifecycleEvent} enum.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -361,7 +361,8 @@ name|entityResolver
 operator|=
 name|resolver
 expr_stmt|;
-comment|// initialize callbacks map in constructor to avoid synchronization issues
+comment|// initialize callbacks map in constructor to avoid synchronization
+comment|// issues
 comment|// downstream.
 name|this
 operator|.
@@ -489,7 +490,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * Registers a {@link LifecycleListener} for all events on all entities. Note that      * listeners are not required to implement {@link LifecycleListener} interface. Other      * methods in this class can be used to register arbitrary listeners.      */
+comment|/**      * Registers a {@link LifecycleListener} for all events on all entities.      * Note that listeners are not required to implement      * {@link LifecycleListener} interface. Other methods in this class can be      * used to register arbitrary listeners.      */
 specifier|public
 name|void
 name|addDefaultListener
@@ -587,7 +588,7 @@ literal|"postLoad"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a callback method to be invoked on a provided non-entity object when a      * lifecycle event occurs on any entity that does not suppress default callbacks.      */
+comment|/**      * Registers a callback method to be invoked on a provided non-entity object      * when a lifecycle event occurs on any entity that does not suppress      * default callbacks.      */
 specifier|public
 name|void
 name|addDefaultListener
@@ -618,7 +619,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a {@link LifecycleListener} for all events on all entities. Note that      * listeners are not required to implement {@link LifecycleListener} interface. Other      * methods in this class can be used to register arbitrary listeners.      */
+comment|/**      * Registers a {@link LifecycleListener} for all events on all entities.      * Note that listeners are not required to implement      * {@link LifecycleListener} interface. Other methods in this class can be      * used to register arbitrary listeners.      */
 specifier|public
 name|void
 name|addListener
@@ -738,7 +739,7 @@ literal|"postLoad"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers callback method to be invoked on a provided non-entity object when a      * lifecycle event occurs for a specific entity.      */
+comment|/**      * Registers callback method to be invoked on a provided non-entity object      * when a lifecycle event occurs for a specific entity.      */
 specifier|public
 name|void
 name|addListener
@@ -777,7 +778,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a callback method to be invoked on an entity class instances when a      * lifecycle event occurs.      */
+comment|/**      * Registers a callback method to be invoked on an entity class instances      * when a lifecycle event occurs.      */
 specifier|public
 name|void
 name|addListener
@@ -954,7 +955,8 @@ range|:
 name|entities
 control|)
 block|{
-comment|// TODO: ignoring entity subclasses? whenever we add those,
+comment|// TODO: ignoring entity subclasses? whenever we add
+comment|// those,
 comment|// take
 comment|// into account "exlcudeSuperclassListeners" flag
 name|types
@@ -1974,9 +1976,11 @@ argument_list|)
 throw|;
 block|}
 comment|// ensure that we don't register the same callback for multiple
-comment|// classes in the same hierarchy, so find the topmost type using a given
+comment|// classes in the same hierarchy, so find the topmost type using
+comment|// a given
 comment|// annotation and register it once
-comment|// TODO: This ignores "excludeSuperclassListeners" setting, which is
+comment|// TODO: This ignores "excludeSuperclassListeners" setting,
+comment|// which is
 comment|// not possible with annotations anyways
 while|while
 condition|(
