@@ -391,11 +391,6 @@ specifier|protected
 name|AbstractCallbackMethodsTab
 name|callbacksPanel
 decl_stmt|;
-comment|/**      * callback methods on ObjEntity's entity listeners tab      */
-specifier|protected
-name|JPanel
-name|listenersPanel
-decl_stmt|;
 specifier|public
 name|ObjEntityTabbedView
 parameter_list|(
@@ -493,21 +488,6 @@ argument_list|(
 literal|"Callbacks"
 argument_list|,
 name|callbacksPanel
-argument_list|)
-expr_stmt|;
-name|listenersPanel
-operator|=
-operator|new
-name|ObjEntityCallbackListenersTab
-argument_list|(
-name|projectController
-argument_list|)
-expr_stmt|;
-name|addTab
-argument_list|(
-literal|"Listeners"
-argument_list|,
-name|listenersPanel
 argument_list|)
 expr_stmt|;
 block|}
