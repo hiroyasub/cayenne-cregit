@@ -756,22 +756,10 @@ argument_list|(
 name|arc
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|node
-operator|.
-name|getParent
-argument_list|()
-operator|!=
-literal|null
-operator|&&
-operator|!
-name|node
-operator|.
-name|isJointPrefetch
-argument_list|()
-condition|)
-block|{
+comment|// TODO: is txStartRowVersion guessed
+comment|// correctly? i.e. the main rows are always fetched
+comment|// first? I guess this has to stay true if prefetching is
+comment|// involved.
 name|long
 name|txStartRowVersion
 decl_stmt|;
@@ -813,6 +801,22 @@ name|getVersion
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|node
+operator|.
+name|getParent
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|node
+operator|.
+name|isJointPrefetch
+argument_list|()
+condition|)
+block|{
 name|node
 operator|.
 name|setResolver
@@ -843,7 +847,7 @@ operator|.
 name|setResolver
 argument_list|(
 operator|new
-name|ObjectResolver
+name|PrefetchObjectResolver
 argument_list|(
 name|context
 argument_list|,
@@ -853,6 +857,8 @@ name|queryMetadata
 operator|.
 name|isRefreshingObjects
 argument_list|()
+argument_list|,
+name|txStartRowVersion
 argument_list|)
 argument_list|)
 expr_stmt|;

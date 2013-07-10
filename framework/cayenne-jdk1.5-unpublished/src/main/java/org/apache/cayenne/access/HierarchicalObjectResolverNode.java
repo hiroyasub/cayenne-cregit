@@ -55,18 +55,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|DataRow
 import|;
 end_import
@@ -103,20 +91,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|graph
-operator|.
-name|GraphManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -127,15 +101,11 @@ begin_class
 class|class
 name|HierarchicalObjectResolverNode
 extends|extends
-name|ObjectResolver
+name|PrefetchObjectResolver
 block|{
 specifier|private
 name|PrefetchProcessorNode
 name|node
-decl_stmt|;
-specifier|private
-name|long
-name|txStartRowVersion
 decl_stmt|;
 name|HierarchicalObjectResolverNode
 parameter_list|(
@@ -162,6 +132,8 @@ argument_list|,
 name|descriptor
 argument_list|,
 name|refresh
+argument_list|,
+name|txStartRowVersion
 argument_list|)
 expr_stmt|;
 name|this
@@ -169,12 +141,6 @@ operator|.
 name|node
 operator|=
 name|node
-expr_stmt|;
-name|this
-operator|.
-name|txStartRowVersion
-operator|=
-name|txStartRowVersion
 expr_stmt|;
 block|}
 annotation|@
@@ -237,14 +203,6 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|GraphManager
-name|graphManager
-init|=
-name|context
-operator|.
-name|getGraphManager
-argument_list|()
-decl_stmt|;
 for|for
 control|(
 name|DataRow
@@ -282,49 +240,9 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
-comment|// skip processing of objects that were already processed in this
-comment|// transaction, either by this node or by some other node...
-comment|// added per CAY-1695 ..
-comment|// TODO: is it going to have any side effects? It is run from the
-comment|// synchronized block, so I guess other threads can't stick their
-comment|// versions of this object in here?
-comment|// TODO: also this logic implies that main rows are always fetched
-comment|// first... I guess this has to stay true if prefetching is
-comment|// involved.
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
-name|graphManager
-operator|.
-name|getNode
-argument_list|(
-name|anId
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|object
-operator|==
-literal|null
-operator|||
-operator|(
-operator|(
-name|DataObject
-operator|)
-name|object
-operator|)
-operator|.
-name|getSnapshotVersion
-argument_list|()
-operator|<
-name|txStartRowVersion
-condition|)
-block|{
-name|object
-operator|=
 name|objectFromDataRow
 argument_list|(
 name|row
@@ -333,7 +251,7 @@ name|anId
 argument_list|,
 name|classDescriptor
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|object
@@ -350,7 +268,6 @@ operator|+
 name|row
 argument_list|)
 throw|;
-block|}
 block|}
 comment|// keep the dupe objects (and data rows) around, as there maybe an
 comment|// attached
