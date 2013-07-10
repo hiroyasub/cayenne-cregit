@@ -31,27 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
 import|;
 end_import
 
@@ -64,6 +44,18 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|DataObject
 import|;
 end_import
 
@@ -111,6 +103,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|graph
+operator|.
+name|GraphManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -127,6 +133,10 @@ specifier|private
 name|PrefetchProcessorNode
 name|node
 decl_stmt|;
+specifier|private
+name|long
+name|txStartRowVersion
+decl_stmt|;
 name|HierarchicalObjectResolverNode
 parameter_list|(
 name|PrefetchProcessorNode
@@ -140,6 +150,9 @@ name|descriptor
 parameter_list|,
 name|boolean
 name|refresh
+parameter_list|,
+name|long
+name|txStartRowVersion
 parameter_list|)
 block|{
 name|super
@@ -156,6 +169,12 @@ operator|.
 name|node
 operator|=
 name|node
+expr_stmt|;
+name|this
+operator|.
+name|txStartRowVersion
+operator|=
+name|txStartRowVersion
 expr_stmt|;
 block|}
 annotation|@
@@ -218,28 +237,12 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// here we can get the same object repeated multiple times in case of
-comment|// many-to-many between prefetched and main entity... this is needed to
-comment|// connect prefetched objects to the main objects. To avoid needlessly
-comment|// refreshing
-comment|// the same object multiple times, track which objectids area already
-comment|// loaded in
-comment|// this pass
-name|Map
-argument_list|<
-name|ObjectId
-argument_list|,
-name|Persistent
-argument_list|>
-name|seen
+name|GraphManager
+name|graphManager
 init|=
-operator|new
-name|HashMap
-argument_list|<
-name|ObjectId
-argument_list|,
-name|Persistent
-argument_list|>
+name|context
+operator|.
+name|getGraphManager
 argument_list|()
 decl_stmt|;
 for|for
@@ -279,12 +282,24 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
+comment|// skip processing of objects that were already processed in this
+comment|// transaction, either by this node or by some other node...
+comment|// added per CAY-1695 ..
+comment|// TODO: is it going to have any side effects? It is run from the
+comment|// synchronized block, so I guess other threads can't stick their
+comment|// versions of this object in here?
+comment|// TODO: also this logic implies that main rows are always fetched
+comment|// first... I guess this has to stay true if prefetching is
+comment|// involved.
 name|Persistent
 name|object
 init|=
-name|seen
+operator|(
+name|Persistent
+operator|)
+name|graphManager
 operator|.
-name|get
+name|getNode
 argument_list|(
 name|anId
 argument_list|)
@@ -294,6 +309,18 @@ condition|(
 name|object
 operator|==
 literal|null
+operator|||
+operator|(
+operator|(
+name|DataObject
+operator|)
+name|object
+operator|)
+operator|.
+name|getSnapshotVersion
+argument_list|()
+operator|<
+name|txStartRowVersion
 condition|)
 block|{
 name|object
@@ -324,15 +351,6 @@ name|row
 argument_list|)
 throw|;
 block|}
-name|seen
-operator|.
-name|put
-argument_list|(
-name|anId
-argument_list|,
-name|object
-argument_list|)
-expr_stmt|;
 block|}
 comment|// keep the dupe objects (and data rows) around, as there maybe an
 comment|// attached
