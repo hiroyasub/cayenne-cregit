@@ -220,8 +220,10 @@ argument_list|)
 decl_stmt|;
 comment|// here we can get the same object repeated multiple times in case of
 comment|// many-to-many between prefetched and main entity... this is needed to
-comment|// connect prefetched objects to the main objects. To avoid needlessly refreshing
-comment|// the same object multiple times, track which objectids area already loaded in
+comment|// connect prefetched objects to the main objects. To avoid needlessly
+comment|// refreshing
+comment|// the same object multiple times, track which objectids area already
+comment|// loaded in
 comment|// this pass
 name|Map
 argument_list|<
@@ -259,7 +261,8 @@ argument_list|(
 name|row
 argument_list|)
 decl_stmt|;
-comment|// not using DataRow.createObjectId for performance reasons - ObjectResolver
+comment|// not using DataRow.createObjectId for performance reasons -
+comment|// ObjectResolver
 comment|// has all needed metadata already cached.
 name|ObjectId
 name|anId
@@ -331,7 +334,8 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
-comment|// keep the dupe objects (and data rows) around, as there maybe an attached
+comment|// keep the dupe objects (and data rows) around, as there maybe an
+comment|// attached
 comment|// joint prefetch...
 name|results
 operator|.
@@ -354,10 +358,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// now deal with snapshots
-comment|// TODO: refactoring: dupes will clutter the lists and cause extra processing...
-comment|// removal of dupes happens only downstream, as we need the objects matching
-comment|// fetched rows for joint prefetch resolving... maybe pushback unique and
-comment|// non-unique lists to the "node", instead of returning a single list from this
+comment|// TODO: refactoring: dupes will clutter the lists and cause extra
+comment|// processing...
+comment|// removal of dupes happens only downstream, as we need the objects
+comment|// matching
+comment|// fetched rows for joint prefetch resolving... maybe pushback unique
+comment|// and
+comment|// non-unique lists to the "node", instead of returning a single list
+comment|// from this
 comment|// method
 name|cache
 operator|.
