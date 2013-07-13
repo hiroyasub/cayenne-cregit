@@ -16,6 +16,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|junit
 operator|.
@@ -33,7 +45,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|MockObjectContext
+name|ObjectContext
 import|;
 end_import
 
@@ -46,20 +58,6 @@ operator|.
 name|cayenne
 operator|.
 name|PersistenceState
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|graph
-operator|.
-name|GraphMap
 import|;
 end_import
 
@@ -107,15 +105,14 @@ name|void
 name|testSetInitialValue
 parameter_list|()
 block|{
-name|MockObjectContext
+name|ObjectContext
 name|context
 init|=
-operator|new
-name|MockObjectContext
+name|mock
 argument_list|(
-operator|new
-name|GraphMap
-argument_list|()
+name|ObjectContext
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 name|ClientMtTable2
@@ -206,15 +203,14 @@ name|void
 name|testInvalidate
 parameter_list|()
 block|{
-name|MockObjectContext
+name|ObjectContext
 name|context
 init|=
-operator|new
-name|MockObjectContext
+name|mock
 argument_list|(
-operator|new
-name|GraphMap
-argument_list|()
+name|ObjectContext
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 name|ClientMtTable2

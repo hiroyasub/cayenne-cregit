@@ -14,6 +14,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -68,12 +80,15 @@ name|void
 name|testObjectContext
 parameter_list|()
 block|{
-name|MockObjectContext
+name|ObjectContext
 name|context
 init|=
-operator|new
-name|MockObjectContext
-argument_list|()
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 name|PersistentObject
 name|object

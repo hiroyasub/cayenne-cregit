@@ -14,6 +14,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -168,9 +180,12 @@ operator|.
 name|getChannel
 argument_list|()
 argument_list|,
-operator|new
-name|MockObjectContext
-argument_list|()
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
 argument_list|,
 literal|null
 argument_list|)
@@ -256,9 +271,12 @@ operator|.
 name|getChannel
 argument_list|()
 argument_list|,
-operator|new
-name|MockObjectContext
-argument_list|()
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
 argument_list|,
 literal|null
 argument_list|)

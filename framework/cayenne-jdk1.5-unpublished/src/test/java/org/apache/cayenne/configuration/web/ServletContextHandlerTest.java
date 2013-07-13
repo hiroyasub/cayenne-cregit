@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|junit
 operator|.
@@ -60,18 +72,6 @@ operator|.
 name|cayenne
 operator|.
 name|MockDataChannel
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|MockObjectContext
 import|;
 end_import
 
@@ -266,9 +266,12 @@ name|parent
 parameter_list|)
 block|{
 return|return
-operator|new
-name|MockObjectContext
-argument_list|()
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -277,9 +280,12 @@ name|createContext
 parameter_list|()
 block|{
 return|return
-operator|new
-name|MockObjectContext
-argument_list|()
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
 return|;
 block|}
 block|}
