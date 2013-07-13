@@ -1015,6 +1015,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
+comment|/**      * @since 3.2      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1041,6 +1042,78 @@ return|return
 name|performQuery
 argument_list|(
 name|query
+argument_list|)
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|selectOne
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+block|{
+name|List
+argument_list|<
+name|T
+argument_list|>
+name|objects
+init|=
+name|select
+argument_list|(
+name|query
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|objects
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+if|else if
+condition|(
+name|objects
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|1
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Expected zero or one object, instead query matched: "
+operator|+
+name|objects
+operator|.
+name|size
+argument_list|()
+argument_list|)
+throw|;
+block|}
+return|return
+name|objects
+operator|.
+name|get
+argument_list|(
+literal|0
 argument_list|)
 return|;
 block|}
@@ -1208,18 +1281,23 @@ name|oid
 argument_list|)
 throw|;
 block|}
-comment|// 5/28/2013 - Commented out this block to allow for modifying objects in the postLoad callback
+comment|// 5/28/2013 - Commented out this block to allow for modifying
+comment|// objects in the postLoad callback
 comment|// sanity check...
-comment|//            if (object.getPersistenceState() != PersistenceState.COMMITTED) {
+comment|// if (object.getPersistenceState() != PersistenceState.COMMITTED) {
 comment|//
-comment|//                String state = PersistenceState.persistenceStateName(object.getPersistenceState());
+comment|// String state =
+comment|// PersistenceState.persistenceStateName(object.getPersistenceState());
 comment|//
-comment|//                // TODO: andrus 4/13/2006, modified and deleted states are
-comment|//                // possible due to
-comment|//                // a race condition, should we handle them here?
-comment|//                throw new FaultFailureException("Error resolving fault for ObjectId: " + oid + " and state (" + state
-comment|//                        + "). Possible cause - matching row is missing from the database.");
-comment|//            }
+comment|// // TODO: andrus 4/13/2006, modified and deleted states are
+comment|// // possible due to
+comment|// // a race condition, should we handle them here?
+comment|// throw new
+comment|// FaultFailureException("Error resolving fault for ObjectId: " +
+comment|// oid + " and state (" + state
+comment|// +
+comment|// "). Possible cause - matching row is missing from the database.");
+comment|// }
 block|}
 comment|// resolve relationship fault
 if|if

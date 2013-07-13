@@ -266,7 +266,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a selecting query, returning a list of persistent objects or      * data rows.      */
+comment|/**      * Executes a selecting query, returning a list of persistent objects or      * data rows.      *       * @since 3.2      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -275,6 +275,20 @@ argument_list|<
 name|T
 argument_list|>
 name|select
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+function_decl|;
+comment|/**      * Executes a selecting query, returning either NULL if query matched no      * objects, or a single object. If query matches more than one object,      * {@link CayenneRuntimeException} is thrown.      *       * @since 3.2      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|selectOne
 parameter_list|(
 name|Select
 argument_list|<

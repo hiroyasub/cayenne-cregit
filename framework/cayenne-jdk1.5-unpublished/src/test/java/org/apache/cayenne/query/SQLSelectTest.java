@@ -568,12 +568,10 @@ expr_stmt|;
 name|Artist
 name|a
 init|=
-name|Cayenne
-operator|.
-name|objectForSelect
-argument_list|(
 name|context
-argument_list|,
+operator|.
+name|selectOne
+argument_list|(
 name|q1
 argument_list|)
 decl_stmt|;
