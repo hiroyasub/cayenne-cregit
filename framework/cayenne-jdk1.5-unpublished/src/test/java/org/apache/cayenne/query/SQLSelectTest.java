@@ -33,18 +33,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|Cayenne
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|DataRow
 import|;
 end_import
@@ -1115,7 +1103,7 @@ name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT COUNT(*) FROM ARTIST"
+literal|"SELECT #result('COUNT(*)' 'int') FROM ARTIST"
 argument_list|)
 operator|.
 name|selectOne
