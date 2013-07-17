@@ -1142,7 +1142,7 @@ name|builder
 operator|.
 name|append
 argument_list|(
-name|CreateTable
+name|createTable
 argument_list|(
 name|callbackType
 argument_list|)
@@ -1170,7 +1170,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|JPanel
-name|CreateTable
+name|createTable
 parameter_list|(
 specifier|final
 name|CallbackType
