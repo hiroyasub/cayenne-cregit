@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This class exists solely to enable testing of arbitrary superclasses for ObjEntities.    * It has no functionality at this stage (nor is any likely)  *   */
+comment|/**  * This class exists solely to enable testing of arbitrary superclasses for  * ObjEntities. It has no functionality at this stage (nor is any likely)  */
 end_comment
 
 begin_class
@@ -39,7 +39,17 @@ class|class
 name|ArtDataObject
 extends|extends
 name|CayenneDataObject
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|1350981440925237535L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

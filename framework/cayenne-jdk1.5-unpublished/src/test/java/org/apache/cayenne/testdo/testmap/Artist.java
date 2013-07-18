@@ -92,6 +92,14 @@ name|Artist
 extends|extends
 name|_Artist
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|protected
 specifier|transient
 name|ValidationDelegate

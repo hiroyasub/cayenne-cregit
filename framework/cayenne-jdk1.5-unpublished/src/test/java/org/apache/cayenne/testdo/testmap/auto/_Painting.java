@@ -115,6 +115,14 @@ name|_Painting
 extends|extends
 name|ArtDataObject
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 annotation|@
 name|Deprecated
 specifier|public

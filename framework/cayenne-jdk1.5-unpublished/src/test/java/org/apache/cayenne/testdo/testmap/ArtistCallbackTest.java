@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class for testing callbacks  *  */
+comment|/**  * Class for testing callbacks  */
 end_comment
 
 begin_class
@@ -46,6 +46,14 @@ name|ArtistCallbackTest
 extends|extends
 name|_ArtistCallbackTest
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
 specifier|public
 name|void
 name|prePersistEntityObjEntity

@@ -288,6 +288,15 @@ name|DataObject
 implements|,
 name|Validating
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|313743913882350400L
+decl_stmt|;
 specifier|protected
 name|long
 name|snapshotVersion
