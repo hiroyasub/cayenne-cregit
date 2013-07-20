@@ -1947,7 +1947,7 @@ decl_stmt|;
 comment|/**      * Project files watcher. When project file is changed, user will be asked      * to confirm loading the changes      */
 specifier|private
 name|ProjectFileChangeTracker
-name|watchdog
+name|fileChangeTracker
 decl_stmt|;
 specifier|public
 name|ProjectController
@@ -2060,17 +2060,17 @@ literal|null
 expr_stmt|;
 if|if
 condition|(
-name|watchdog
+name|fileChangeTracker
 operator|!=
 literal|null
 condition|)
 block|{
-name|watchdog
+name|fileChangeTracker
 operator|.
 name|interrupt
 argument_list|()
 expr_stmt|;
-name|watchdog
+name|fileChangeTracker
 operator|=
 literal|null
 expr_stmt|;
@@ -2080,12 +2080,12 @@ else|else
 block|{
 if|if
 condition|(
-name|watchdog
+name|fileChangeTracker
 operator|==
 literal|null
 condition|)
 block|{
-name|watchdog
+name|fileChangeTracker
 operator|=
 operator|new
 name|ProjectFileChangeTracker
@@ -2093,20 +2093,20 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
-name|watchdog
+name|fileChangeTracker
 operator|.
 name|setDaemon
 argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|watchdog
+name|fileChangeTracker
 operator|.
 name|start
 argument_list|()
 expr_stmt|;
 block|}
-name|watchdog
+name|fileChangeTracker
 operator|.
 name|reconfigure
 argument_list|()
@@ -8481,14 +8481,13 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * @return the project files' watcher      */
 specifier|public
 name|ProjectFileChangeTracker
-name|getProjectWatcher
+name|getFileChangeTracker
 parameter_list|()
 block|{
 return|return
-name|watchdog
+name|fileChangeTracker
 return|;
 block|}
 comment|/**      * Returns currently selected object, null if there are none, List if there      * are several      */

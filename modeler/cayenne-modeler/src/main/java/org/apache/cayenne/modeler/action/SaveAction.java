@@ -230,7 +230,7 @@ decl_stmt|;
 name|getProjectController
 argument_list|()
 operator|.
-name|getProjectWatcher
+name|getFileChangeTracker
 argument_list|()
 operator|.
 name|pauseWatching
@@ -394,7 +394,7 @@ comment|/**              * Reset the watcher now              */
 name|getProjectController
 argument_list|()
 operator|.
-name|getProjectWatcher
+name|getFileChangeTracker
 argument_list|()
 operator|.
 name|reconfigure

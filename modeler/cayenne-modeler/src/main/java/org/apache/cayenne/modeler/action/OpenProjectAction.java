@@ -816,7 +816,7 @@ decl_stmt|;
 name|getProjectController
 argument_list|()
 operator|.
-name|getProjectWatcher
+name|getFileChangeTracker
 argument_list|()
 operator|.
 name|pauseWatching
@@ -825,7 +825,7 @@ expr_stmt|;
 name|getProjectController
 argument_list|()
 operator|.
-name|getProjectWatcher
+name|getFileChangeTracker
 argument_list|()
 operator|.
 name|reconfigure

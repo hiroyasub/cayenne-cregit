@@ -248,7 +248,6 @@ specifier|protected
 name|ProjectController
 name|mediator
 decl_stmt|;
-comment|/**      * Creates new watchdog for a specified project      */
 specifier|public
 name|ProjectFileChangeTracker
 parameter_list|(
