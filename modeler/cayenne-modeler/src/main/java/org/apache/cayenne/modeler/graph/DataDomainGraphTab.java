@@ -773,9 +773,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Rebuilds graph from a domain, if it is not yet built Otherwise, takes it from cache      */
+comment|/**      * Rebuilds graph from a domain, if it is not yet built Otherwise, takes it      * from cache      */
 specifier|public
-specifier|synchronized
 name|void
 name|refresh
 parameter_list|()
@@ -837,7 +836,6 @@ return|;
 block|}
 comment|/**      * Rebuilds graph, deleting existing if needed      */
 specifier|public
-specifier|synchronized
 name|void
 name|rebuild
 parameter_list|()

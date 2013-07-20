@@ -154,7 +154,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|void
 name|discardAllEdits
 parameter_list|()
@@ -171,7 +170,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|boolean
 name|addEdit
 parameter_list|(
@@ -199,7 +197,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|void
 name|redo
 parameter_list|()
@@ -258,7 +255,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|void
 name|undo
 parameter_list|()

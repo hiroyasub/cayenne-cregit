@@ -1111,7 +1111,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**                      * We do not allow A->B->A chains, where relationships are to-one                      */
+comment|/**                      * We do not allow A->B->A chains, where relationships are                      * to-one                      */
 name|DbRelationship
 name|prev
 init|=
@@ -1673,7 +1673,7 @@ operator|.
 name|pathBrowser
 return|;
 block|}
-comment|/**      * Creates a new relationship connecting currently selected source entity with      * ObjRelationship target entity. User is allowed to edit the relationship, change its      * name, and create joins.      */
+comment|/**      * Creates a new relationship connecting currently selected source entity      * with ObjRelationship target entity. User is allowed to edit the      * relationship, change its name, and create joins.      */
 specifier|protected
 name|void
 name|createRelationship
@@ -1799,7 +1799,8 @@ argument_list|(
 name|dbRelationship
 argument_list|)
 expr_stmt|;
-comment|// TODO: creating relationship outside of ResolveDbRelationshipDialog confuses it
+comment|// TODO: creating relationship outside of ResolveDbRelationshipDialog
+comment|// confuses it
 comment|// to send incorrect event - CHANGE instead of ADD
 name|ResolveDbRelationshipDialog
 name|dialog
@@ -2187,7 +2188,7 @@ argument_list|(
 name|DEFAULT_MAP_KEY
 argument_list|)
 expr_stmt|;
-comment|/**          * Object target can be null when selected target DbEntity has no ObjEntities          */
+comment|/**          * Object target can be null when selected target DbEntity has no          * ObjEntities          */
 if|if
 condition|(
 name|objectTarget
@@ -2399,7 +2400,7 @@ return|return
 name|savedDbRelationships
 return|;
 block|}
-comment|/**      * @return last relationship in the path, or<code>null</code> if path is empty      */
+comment|/**      * @return last relationship in the path, or<code>null</code> if path is      *         empty      */
 specifier|public
 name|DbRelationship
 name|getLastRelationship
@@ -2538,7 +2539,6 @@ expr_stmt|;
 block|}
 comment|/**      * Processes relationship path when path component at index was changed.      */
 specifier|public
-specifier|synchronized
 name|void
 name|relationshipChanged
 parameter_list|(
@@ -2562,7 +2562,8 @@ name|boolean
 name|isToMany
 parameter_list|()
 block|{
-comment|// copied algorithm from ObjRelationship.calculateToMany(), only iterating through
+comment|// copied algorithm from ObjRelationship.calculateToMany(), only
+comment|// iterating through
 comment|// the unsaved dbrels selection.
 for|for
 control|(
@@ -2595,7 +2596,6 @@ return|;
 block|}
 comment|/**      * Stores current state of the model in the internal ObjRelationship.      */
 specifier|public
-specifier|synchronized
 name|boolean
 name|savePath
 parameter_list|()
@@ -2686,7 +2686,7 @@ operator|!=
 name|lastEntity
 condition|)
 block|{
-comment|/**                  * Entities in combobox and path browser do not match. In this case, we                  * rely on the browser and automatically select one of lastEntity's                  * ObjEntities                  */
+comment|/**                  * Entities in combobox and path browser do not match. In this                  * case, we rely on the browser and automatically select one of                  * lastEntity's ObjEntities                  */
 name|Collection
 argument_list|<
 name|ObjEntity
@@ -2953,7 +2953,7 @@ name|mapKey
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * As of CAY-436 here we check if to-many property has changed during the editing,          * and if so, delete rule must be reset to default value          */
+comment|/**          * As of CAY-436 here we check if to-many property has changed during          * the editing, and if so, delete rule must be reset to default value          */
 if|if
 condition|(
 name|hasChanges
@@ -3179,7 +3179,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Checks if the entity can be edited with this inspector. NOTE: As of CAY-1077,      * relationship inspector can be opened even if no target entity was set.      */
+comment|/**      * Checks if the entity can be edited with this inspector. NOTE: As of      * CAY-1077, relationship inspector can be opened even if no target entity      * was set.      */
 specifier|private
 name|void
 name|validateCanMap
@@ -3245,7 +3245,7 @@ name|DbEntity
 name|getEndEntity
 parameter_list|()
 block|{
-comment|/**          * Object target can be null when selected target DbEntity has no ObjEntities          */
+comment|/**          * Object target can be null when selected target DbEntity has no          * ObjEntities          */
 if|if
 condition|(
 name|objectTarget

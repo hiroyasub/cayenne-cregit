@@ -420,7 +420,6 @@ name|validationObjects
 decl_stmt|;
 specifier|public
 specifier|static
-specifier|synchronized
 name|void
 name|showDialog
 parameter_list|(
@@ -472,7 +471,6 @@ expr_stmt|;
 block|}
 specifier|public
 specifier|static
-specifier|synchronized
 name|void
 name|showValidationSuccess
 parameter_list|(

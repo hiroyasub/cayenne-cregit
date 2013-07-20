@@ -33,26 +33,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
 import|;
 end_import
@@ -89,6 +69,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|ConcurrentHashMap
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -116,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FileWatchdog is a watcher for files' change. If one of the files has changed or been  * removed, a {@link #doOnChange(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo)}  * or {@link #doOnRemove(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo) method}  * will be called  *   * Original code taken from Log4J project  *   */
+comment|/**  * FileWatchdog is a watcher for files' change. If one of the files has changed  * or been removed, a  * {@link #doOnChange(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo)} or  * {@link #doOnRemove(org.apache.cayenne.modeler.util.FileWatchdog.FileInfo)  * method} will be called  *   * Original code taken from Log4J project  *   */
 end_comment
 
 begin_class
@@ -146,7 +138,7 @@ name|FileInfo
 argument_list|>
 name|filesInfo
 decl_stmt|;
-comment|/**      * The delay to observe between every check. By default set {@link #DEFAULT_DELAY}.      */
+comment|/**      * The delay to observe between every check. By default set      * {@link #DEFAULT_DELAY}.      */
 specifier|protected
 name|long
 name|delay
@@ -158,7 +150,7 @@ specifier|protected
 name|boolean
 name|paused
 decl_stmt|;
-comment|/**      * This flags shows whether only one or multiple notifications will be fired when      * several files change      */
+comment|/**      * This flags shows whether only one or multiple notifications will be fired      * when several files change      */
 specifier|protected
 name|boolean
 name|singleNotification
@@ -192,19 +184,14 @@ parameter_list|()
 block|{
 name|filesInfo
 operator|=
-name|Collections
-operator|.
-name|synchronizedMap
-argument_list|(
 operator|new
-name|HashMap
+name|ConcurrentHashMap
 argument_list|<
 name|String
 argument_list|,
 name|FileInfo
 argument_list|>
 argument_list|()
-argument_list|)
 expr_stmt|;
 name|setDaemon
 argument_list|(
@@ -212,7 +199,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets whether only one or multiple notifications will be fired when several files      * change      */
+comment|/**      * Sets whether only one or multiple notifications will be fired when      * several files change      */
 specifier|public
 name|void
 name|setSingleNotification
@@ -226,7 +213,7 @@ operator|=
 name|b
 expr_stmt|;
 block|}
-comment|/**      * Returns whether only one or multiple notifications will be fired when several files      * change      */
+comment|/**      * Returns whether only one or multiple notifications will be fired when      * several files change      */
 specifier|public
 name|boolean
 name|isSingleNotification
@@ -236,7 +223,7 @@ return|return
 name|singleNotification
 return|;
 block|}
-comment|/**      * Adds a new file to watch      *       * @param location path of file      */
+comment|/**      * Adds a new file to watch      *       * @param location      *            path of file      */
 specifier|public
 name|void
 name|addFile
@@ -244,11 +231,6 @@ parameter_list|(
 name|String
 name|location
 parameter_list|)
-block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
 block|{
 try|try
 block|{
@@ -285,8 +267,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-comment|/**      * Turns off watching for a specified file      *       * @param location path of file      */
+comment|/**      * Turns off watching for a specified file      *       * @param location      *            path of file      */
 specifier|public
 name|void
 name|removeFile
@@ -294,11 +275,6 @@ parameter_list|(
 name|String
 name|location
 parameter_list|)
-block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
 block|{
 name|filesInfo
 operator|.
@@ -308,24 +284,17 @@ name|location
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 comment|/**      * Turns off watching for all files      */
 specifier|public
 name|void
 name|removeAllFiles
 parameter_list|()
 block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
-block|{
 name|filesInfo
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Set the delay to observe between each check of the file changes.      */
 specifier|public
@@ -343,7 +312,7 @@ operator|=
 name|delay
 expr_stmt|;
 block|}
-comment|/**      * Invoked when one of the watched files has changed      *       * @param fileInfo Changed file info      */
+comment|/**      * Invoked when one of the watched files has changed      *       * @param fileInfo      *            Changed file info      */
 specifier|protected
 specifier|abstract
 name|void
@@ -353,7 +322,7 @@ name|FileInfo
 name|fileInfo
 parameter_list|)
 function_decl|;
-comment|/**      * Invoked when one of the watched files has been removed      *       * @param fileInfo Changed file info      */
+comment|/**      * Invoked when one of the watched files has been removed      *       * @param fileInfo      *            Changed file info      */
 specifier|protected
 specifier|abstract
 name|void
@@ -367,11 +336,6 @@ specifier|protected
 name|void
 name|check
 parameter_list|()
-block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
 block|{
 if|if
 condition|(
@@ -493,7 +457,8 @@ operator|.
 name|lastModified
 argument_list|()
 decl_stmt|;
-comment|// this can also throw a
+comment|// this can also throw
+comment|// a
 comment|// SecurityException
 if|if
 condition|(
@@ -505,7 +470,8 @@ name|getLastModified
 argument_list|()
 condition|)
 block|{
-comment|// however, if we reached this point
+comment|// however, if we reached
+comment|// this point
 comment|// this
 name|fi
 operator|.
@@ -534,7 +500,8 @@ operator|!=
 operator|-
 literal|1
 condition|)
-comment|// the file has been removed
+comment|// the file has been
+comment|// removed
 block|{
 name|deleted
 operator|.
@@ -590,7 +557,6 @@ condition|)
 return|return;
 block|}
 block|}
-block|}
 specifier|public
 name|void
 name|run
@@ -625,22 +591,16 @@ return|return;
 block|}
 block|}
 block|}
-comment|/**      * Tells watcher to pause watching for some time. Useful before changing files      */
+comment|/**      * Tells watcher to pause watching for some time. Useful before changing      * files      */
 specifier|public
 name|void
 name|pauseWatching
 parameter_list|()
 block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
-block|{
 name|paused
 operator|=
 literal|true
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Resumes watching for files      */
 specifier|public
@@ -653,7 +613,7 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-comment|/**      * Class to store information about files (last modification time& File pointer)      */
+comment|/**      * Class to store information about files (last modification time& File      * pointer)      */
 specifier|protected
 class|class
 name|FileInfo
@@ -666,7 +626,7 @@ comment|/**          * Time the file was modified          */
 name|long
 name|lastModified
 decl_stmt|;
-comment|/**          * Creates new object          *           * @param location the file path          */
+comment|/**          * Creates new object          *           * @param location          *            the file path          */
 specifier|public
 name|FileInfo
 parameter_list|(

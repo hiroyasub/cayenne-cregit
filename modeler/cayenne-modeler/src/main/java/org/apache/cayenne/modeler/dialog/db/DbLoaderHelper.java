@@ -446,7 +446,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|// TODO: this is a temp hack... need to delegate to DbAdapter, or configurable in
+comment|// TODO: this is a temp hack... need to delegate to DbAdapter, or
+comment|// configurable in
 comment|// preferences...
 specifier|private
 specifier|static
@@ -542,7 +543,6 @@ argument_list|>
 name|addedObjEntities
 decl_stmt|;
 specifier|static
-specifier|synchronized
 name|DbLoaderMergeDialog
 name|getMergeDialogInstance
 parameter_list|()
@@ -687,7 +687,7 @@ return|return
 name|stoppingReverseEngineering
 return|;
 block|}
-comment|/**      * Performs reverse engineering of the DB using internal DbLoader. This method should      * be invoked outside EventDispatchThread, or it will throw an exception.      */
+comment|/**      * Performs reverse engineering of the DB using internal DbLoader. This      * method should be invoked outside EventDispatchThread, or it will throw an      * exception.      */
 specifier|public
 name|void
 name|execute
@@ -1113,7 +1113,8 @@ argument_list|()
 operator|+
 literal|"'..."
 expr_stmt|;
-comment|// TODO: hack to prevent PK tables from being visible... this should really be
+comment|// TODO: hack to prevent PK tables from being visible... this should
+comment|// really be
 comment|// delegated to DbAdapter to decide...
 if|if
 condition|(
@@ -1814,7 +1815,8 @@ operator|.
 name|getConfigurationSource
 argument_list|()
 decl_stmt|;
-comment|// this will be new data map so need to set configuration source for it
+comment|// this will be new data map so need to set configuration source
+comment|// for it
 if|if
 condition|(
 name|baseResource

@@ -43,27 +43,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
 import|;
 end_import
 
@@ -220,10 +200,6 @@ name|root
 expr_stmt|;
 name|sortedChildren
 operator|=
-name|Collections
-operator|.
-name|synchronizedMap
-argument_list|(
 operator|new
 name|HashMap
 argument_list|<
@@ -233,7 +209,6 @@ name|Object
 index|[]
 argument_list|>
 argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -418,11 +393,6 @@ literal|0
 index|]
 return|;
 block|}
-synchronized|synchronized
-init|(
-name|sortedChildren
-init|)
-block|{
 name|Object
 name|key
 init|=
@@ -585,24 +555,17 @@ return|return
 name|sortedForNode
 return|;
 block|}
-block|}
 comment|/**      * Removes children cache for specified entity.      */
 specifier|public
 name|void
 name|invalidate
 parameter_list|()
 block|{
-synchronized|synchronized
-init|(
-name|sortedChildren
-init|)
-block|{
 name|sortedChildren
 operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Removes children cache for specified entity.      */
 specifier|public
@@ -612,11 +575,6 @@ parameter_list|(
 name|Entity
 name|entity
 parameter_list|)
-block|{
-synchronized|synchronized
-init|(
-name|sortedChildren
-init|)
 block|{
 name|sortedChildren
 operator|.
@@ -643,7 +601,6 @@ argument_list|(
 name|rel
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|private

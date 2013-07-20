@@ -385,6 +385,22 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|ActionManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|action
+operator|.
 name|CreateAttributeAction
 import|;
 end_import
@@ -402,22 +418,6 @@ operator|.
 name|action
 operator|.
 name|CreateRelationshipAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|action
-operator|.
-name|ActionManager
 import|;
 end_import
 
@@ -630,7 +630,7 @@ specifier|transient
 name|DataChannelDescriptor
 name|domain
 decl_stmt|;
-comment|/**      * Created entity cells. Maps to entity name, since GraphBuilder can be serialized      */
+comment|/**      * Created entity cells. Maps to entity name, since GraphBuilder can be      * serialized      */
 specifier|protected
 name|Map
 argument_list|<
@@ -640,7 +640,7 @@ name|DefaultGraphCell
 argument_list|>
 name|entityCells
 decl_stmt|;
-comment|/**      * Created relationship cells Maps to relationship qualified name, since GraphBuilder      * can be serialized      */
+comment|/**      * Created relationship cells Maps to relationship qualified name, since      * GraphBuilder can be serialized      */
 specifier|protected
 name|Map
 argument_list|<
@@ -677,7 +677,6 @@ name|boolean
 name|undoEventsDisabled
 decl_stmt|;
 specifier|public
-specifier|synchronized
 name|void
 name|buildGraph
 parameter_list|(
@@ -912,7 +911,7 @@ name|DefaultEdge
 argument_list|>
 argument_list|()
 expr_stmt|;
-comment|/**          * an array for entities that are not connected to anyone. We add them separately          * so that layout doesn't touch them          */
+comment|/**          * an array for entities that are not connected to anyone. We add them          * separately so that layout doesn't touch them          */
 name|List
 argument_list|<
 name|DefaultGraphCell
@@ -1148,9 +1147,12 @@ argument_list|,
 literal|true
 argument_list|)
 decl_stmt|;
-comment|// Obtain a map of the
-comment|// resulting attribute
-comment|// changes from the facade
+comment|// Obtain a map of
+comment|// the
+comment|// resulting
+comment|// attribute
+comment|// changes from the
+comment|// facade
 name|edit
 argument_list|(
 name|nested
@@ -1158,7 +1160,7 @@ argument_list|)
 expr_stmt|;
 comment|// Apply the results to the actual graph
 block|}
-comment|/**          * Adding isolated objects          *           * We're placing them so that they will take maximum space in left top corner. The          * sample order is below:          *           * 1 2 6 7... 3 5 8 ... 4 9... 10 ...          */
+comment|/**          * Adding isolated objects          *           * We're placing them so that they will take maximum space in left top          * corner. The sample order is below:          *           * 1 2 6 7... 3 5 8 ... 4 9... 10 ...          */
 if|if
 condition|(
 name|isolatedObjects
@@ -1208,7 +1210,8 @@ operator|/
 literal|2
 argument_list|)
 decl_stmt|;
-comment|// side of triangle
+comment|// side of
+comment|// triangle
 name|Dimension
 name|pref
 init|=
@@ -1555,7 +1558,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Returns whether an entity is not connected to any other TODO: not fine algorithm,      * it iterates through all entities and all rels      */
+comment|/**      * Returns whether an entity is not connected to any other TODO: not fine      * algorithm, it iterates through all entities and all rels      */
 specifier|protected
 name|boolean
 name|isIsolated
@@ -1643,7 +1646,7 @@ name|DataMap
 name|map
 parameter_list|)
 function_decl|;
-comment|/**      * Returns label for relationship on the graph, considering its "mandatory" and      * "to-many" properties      */
+comment|/**      * Returns label for relationship on the graph, considering its "mandatory"      * and "to-many" properties      */
 specifier|private
 specifier|static
 name|String
@@ -2410,7 +2413,7 @@ name|cell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates relationship labels for specified relationship edge.      *       * @param order order of relationship in entity's same target relationships - to      *            differ labels of relationships with same source and target      */
+comment|/**      * Updates relationship labels for specified relationship edge.      *       * @param order      *            order of relationship in entity's same target relationships -      *            to differ labels of relationships with same source and target      */
 specifier|protected
 name|void
 name|updateRelationshipLabels
@@ -2813,7 +2816,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns qualified name (entity name + relationship name) for a relationship      */
+comment|/**      * Returns qualified name (entity name + relationship name) for a      * relationship      */
 specifier|static
 name|String
 name|getQualifiedName
@@ -3058,7 +3061,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-specifier|synchronized
 name|void
 name|edit
 parameter_list|(
@@ -3094,7 +3096,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-specifier|synchronized
 name|void
 name|insert
 parameter_list|(
@@ -3130,7 +3131,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-specifier|synchronized
 name|void
 name|runWithUndoDisabled
 parameter_list|(

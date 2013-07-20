@@ -376,7 +376,7 @@ name|SHIFT_MASK
 argument_list|)
 return|;
 block|}
-comment|/**      * Saves project and related files. Saving is done to temporary files, and only on      * successful save, master files are replaced with new versions.      */
+comment|/**      * Saves project and related files. Saving is done to temporary files, and      * only on successful save, master files are replaced with new versions.      */
 specifier|protected
 name|boolean
 name|saveAll
@@ -842,9 +842,8 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * This method is synchronized to prevent problems on double-clicking "save".      */
+comment|/**      * This method is synchronized to prevent problems on double-clicking      * "save".      */
 specifier|public
-specifier|synchronized
 name|void
 name|performAction
 parameter_list|(
@@ -861,7 +860,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-specifier|synchronized
 name|void
 name|performAction
 parameter_list|(
@@ -967,7 +965,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if path contains a Project object and the project is      * modified.      */
+comment|/**      * Returns<code>true</code> if path contains a Project object and the      * project is modified.      */
 specifier|public
 name|boolean
 name|enableForPath

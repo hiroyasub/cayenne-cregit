@@ -93,16 +93,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -292,7 +282,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A simple non-editable tree browser with multiple columns   * for display and navigation of a tree structure. This type of  * browser is ideal for showing deeply (or infinitely) nested   * trees/graphs. The most famous example of its use is Mac OS X   * Finder column view.   *   *<p>  * MultiColumnBrowser starts at the root of the tree  * and automatically expands to the right as navigation goes deeper.   * MultiColumnBrowser uses the same TreeModel as a regular JTree   * for its navigation model.  *</p>  *   *<p>  * Users are notified of selection changes via a TreeSelectionEvents.  *</p>  *   * @since 1.1  */
+comment|/**  * A simple non-editable tree browser with multiple columns for display and  * navigation of a tree structure. This type of browser is ideal for showing  * deeply (or infinitely) nested trees/graphs. The most famous example of its  * use is Mac OS X Finder column view.  *   *<p>  * MultiColumnBrowser starts at the root of the tree and automatically expands  * to the right as navigation goes deeper. MultiColumnBrowser uses the same  * TreeModel as a regular JTree for its navigation model.  *</p>  *   *<p>  * Users are notified of selection changes via a TreeSelectionEvents.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -423,17 +413,12 @@ name|this
 operator|.
 name|treeSelectionListeners
 operator|=
-name|Collections
-operator|.
-name|synchronizedList
-argument_list|(
 operator|new
 name|ArrayList
 argument_list|<
 name|TreeSelectionListener
 argument_list|>
 argument_list|()
-argument_list|)
 expr_stmt|;
 name|initView
 argument_list|()
@@ -446,11 +431,6 @@ parameter_list|(
 name|TreeSelectionListener
 name|listener
 parameter_list|)
-block|{
-synchronized|synchronized
-init|(
-name|treeSelectionListeners
-init|)
 block|{
 if|if
 condition|(
@@ -476,7 +456,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 specifier|public
 name|void
 name|removeTreeSelectionListener
@@ -485,11 +464,6 @@ name|TreeSelectionListener
 name|listener
 parameter_list|)
 block|{
-synchronized|synchronized
-init|(
-name|treeSelectionListeners
-init|)
-block|{
 name|treeSelectionListeners
 operator|.
 name|remove
@@ -497,7 +471,6 @@ argument_list|(
 name|listener
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Notifies listeners of a tree selection change.      */
 specifier|protected
@@ -537,11 +510,6 @@ argument_list|,
 literal|null
 argument_list|)
 decl_stmt|;
-synchronized|synchronized
-init|(
-name|treeSelectionListeners
-init|)
-block|{
 for|for
 control|(
 name|TreeSelectionListener
@@ -549,6 +517,7 @@ name|listener
 range|:
 name|treeSelectionListeners
 control|)
+block|{
 name|listener
 operator|.
 name|valueChanged
@@ -684,7 +653,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|//update
+comment|// update
 name|updateFromModel
 argument_list|(
 name|row
@@ -750,7 +719,7 @@ name|refreshPreferredSize
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Resets currently used renderer to default one that will      * use the "name" property of objects and display a small      * arrow to the right of all non-leaf nodes.      */
+comment|/**      * Resets currently used renderer to default one that will use the "name"      * property of objects and display a small arrow to the right of all      * non-leaf nodes.      */
 specifier|public
 name|void
 name|setDefaultRenderer
@@ -787,7 +756,6 @@ return|;
 block|}
 comment|/**      * Initializes the renderer of column cells.      */
 specifier|public
-specifier|synchronized
 name|void
 name|setRenderer
 parameter_list|(
@@ -844,7 +812,6 @@ block|}
 block|}
 comment|/**      * Initializes browser model.      */
 specifier|public
-specifier|synchronized
 name|void
 name|setModel
 parameter_list|(
@@ -929,10 +896,6 @@ parameter_list|()
 block|{
 name|columns
 operator|=
-name|Collections
-operator|.
-name|synchronizedList
-argument_list|(
 operator|new
 name|ArrayList
 argument_list|<
@@ -941,7 +904,6 @@ argument_list|>
 argument_list|(
 name|minColumns
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|adjustViewColumns
 argument_list|(
@@ -949,7 +911,7 @@ name|minColumns
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Expands or contracts the view by<code>delta</code> columns.      * Never contracts the view below<code>minColumns</code>.      */
+comment|/**      * Expands or contracts the view by<code>delta</code> columns. Never      * contracts the view below<code>minColumns</code>.      */
 specifier|private
 name|void
 name|adjustViewColumns
@@ -1232,7 +1194,7 @@ name|browserSelector
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Refreshes preferred size of the browser to      * reflect current number of columns.      */
+comment|/**      * Refreshes preferred size of the browser to reflect current number of      * columns.      */
 specifier|private
 name|void
 name|refreshPreferredSize
@@ -1396,7 +1358,6 @@ block|}
 block|}
 comment|/**      * Rebuilds view for the new object selection.      */
 specifier|protected
-specifier|synchronized
 name|void
 name|updateFromModel
 parameter_list|(
@@ -1417,9 +1378,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Rebuilds view for the new object selection.      * @param load Whether children are loaded automatically      */
+comment|/**      * Rebuilds view for the new object selection.      *       * @param load      *            Whether children are loaded automatically      */
 specifier|protected
-specifier|synchronized
 name|void
 name|updateFromModel
 parameter_list|(
@@ -1597,7 +1557,7 @@ name|selectionPath
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**       * Builds a TreePath to the new node, that is known to be a peer or a child       * of one of the path components. As the method walks the current path backwards,      * it cleans columns that are not common with the new path.      */
+comment|/**      * Builds a TreePath to the new node, that is known to be a peer or a child      * of one of the path components. As the method walks the current path      * backwards, it cleans columns that are not common with the new path.      */
 specifier|private
 name|Object
 index|[]

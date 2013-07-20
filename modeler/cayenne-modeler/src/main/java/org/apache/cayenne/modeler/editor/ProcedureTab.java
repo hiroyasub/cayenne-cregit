@@ -294,7 +294,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A panel for editing stored procedure general settings, such as name, schema, etc.  *   */
+comment|/**  * A panel for editing stored procedure general settings, such as name, schema,  * etc.  *   */
 end_comment
 
 begin_class
@@ -770,7 +770,6 @@ expr_stmt|;
 block|}
 comment|/**      * Invoked when currently selected Procedure object is changed.      */
 specifier|public
-specifier|synchronized
 name|void
 name|currentProcedureChanged
 parameter_list|(

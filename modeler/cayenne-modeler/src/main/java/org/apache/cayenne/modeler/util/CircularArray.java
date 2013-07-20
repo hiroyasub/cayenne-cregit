@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A circular array is an array of fixed size as objects are added it will push objects  * off of the end to allow space for new objects to be added. This is useful for things  * like a fixed history size for a navigation tool.  *   * @since 1.2  */
+comment|/**  * A circular array is an array of fixed size as objects are added it will push  * objects off of the end to allow space for new objects to be added. This is  * useful for things like a fixed history size for a navigation tool.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -59,7 +59,7 @@ name|capacity
 init|=
 literal|0
 decl_stmt|;
-comment|/**      * Creates an array of capacity size.      *       * @param capacity - size of the new array      */
+comment|/**      * Creates an array of capacity size.      *       * @param capacity      *            - size of the new array      */
 specifier|public
 name|CircularArray
 parameter_list|(
@@ -99,7 +99,6 @@ expr_stmt|;
 block|}
 comment|/**      * Clears out the contents of the array.      */
 specifier|public
-specifier|synchronized
 name|void
 name|clear
 parameter_list|()
@@ -137,9 +136,8 @@ operator|==
 literal|0
 return|;
 block|}
-comment|/**      * Adds a new object to the array. If the array is full it will push the oldest item      * out of the array.      *       * @param obj - the object to be added      */
+comment|/**      * Adds a new object to the array. If the array is full it will push the      * oldest item out of the array.      *       * @param obj      *            - the object to be added      */
 specifier|public
-specifier|synchronized
 name|void
 name|add
 parameter_list|(
@@ -264,7 +262,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns true if the array contains the specified object.      *       * @param obj the object to be checked      */
+comment|/**      * Returns true if the array contains the specified object.      *       * @param obj      *            the object to be checked      */
 specifier|public
 name|boolean
 name|contains
@@ -282,9 +280,8 @@ operator|>=
 literal|0
 return|;
 block|}
-comment|/**      * Gets the object at the specified index.      *       * @param index the index of the object to be retrieved      */
+comment|/**      * Gets the object at the specified index.      *       * @param index      *            the index of the object to be retrieved      */
 specifier|public
-specifier|synchronized
 name|Object
 name|get
 parameter_list|(
@@ -318,9 +315,8 @@ argument_list|)
 index|]
 return|;
 block|}
-comment|/**      * Returns the index of the specified object      *       * @param obj the object that is being searched for      */
+comment|/**      * Returns the index of the specified object      *       * @param obj      *            the object that is being searched for      */
 specifier|public
-specifier|synchronized
 name|int
 name|indexOf
 parameter_list|(
@@ -372,9 +368,8 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/**      * Removes the specified object from the array      *       * @param i the index of the object to be removed      */
+comment|/**      * Removes the specified object from the array      *       * @param i      *            the index of the object to be removed      */
 specifier|public
-specifier|synchronized
 name|void
 name|remove
 parameter_list|(
@@ -1036,9 +1031,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Resizes the array to the specified new size. If the new capacity is smaller than      * the current object count in the array, it will keep the newCapacity most recent      * objects.      *       * @param newCapacity the new capacity of the array      */
+comment|/**      * Resizes the array to the specified new size. If the new capacity is      * smaller than the current object count in the array, it will keep the      * newCapacity most recent objects.      *       * @param newCapacity      *            the new capacity of the array      */
 specifier|public
-specifier|synchronized
 name|void
 name|resize
 parameter_list|(
@@ -1155,7 +1149,6 @@ return|;
 block|}
 comment|/**      * Converts the array to an Object array.      */
 specifier|public
-specifier|synchronized
 name|Object
 index|[]
 name|toArray
@@ -1205,7 +1198,6 @@ name|o
 return|;
 block|}
 specifier|public
-specifier|synchronized
 name|String
 name|internalRep
 parameter_list|()

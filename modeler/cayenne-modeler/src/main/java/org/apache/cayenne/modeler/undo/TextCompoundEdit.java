@@ -905,7 +905,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|String
 name|getRedoPresentationName
 parameter_list|()
@@ -917,7 +916,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-specifier|synchronized
 name|String
 name|getUndoPresentationName
 parameter_list|()

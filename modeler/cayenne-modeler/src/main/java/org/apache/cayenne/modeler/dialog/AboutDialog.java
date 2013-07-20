@@ -234,7 +234,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Displays the Cayenne license and build information.  */
+comment|/**  * Displays the Cayenne license and build information.  */
 end_comment
 
 begin_comment
@@ -279,7 +279,6 @@ name|ImageIcon
 name|logoImage
 decl_stmt|;
 specifier|static
-specifier|synchronized
 name|ImageIcon
 name|getLogoImage
 parameter_list|()
@@ -307,7 +306,6 @@ return|;
 block|}
 comment|/**      * Builds and returns CayenneModeler info string.      */
 specifier|static
-specifier|synchronized
 name|String
 name|getInfoString
 parameter_list|()

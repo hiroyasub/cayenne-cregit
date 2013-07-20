@@ -132,7 +132,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Text adapter with live validation, which is fired in  * VALIDATION_DELAY time.  */
+comment|/**  * Text adapter with live validation, which is fired in VALIDATION_DELAY time.  */
 end_comment
 
 begin_class
@@ -280,7 +280,7 @@ name|ts
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Live-checks if text is correct      * @throws ValidationException if the text is incorrect      */
+comment|/**      * Live-checks if text is correct      *       * @throws ValidationException      *             if the text is incorrect      */
 specifier|protected
 specifier|abstract
 name|void
@@ -316,7 +316,7 @@ operator|=
 name|b
 expr_stmt|;
 block|}
-comment|/**      * Task to be fired after some delay       */
+comment|/**      * Task to be fired after some delay      */
 class|class
 name|ValidationTimerTask
 extends|extends
@@ -381,7 +381,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Wraps the tooltip, making it multi-lined if needed.      * Current implementation uses HTML markup to break the lines      * @param tooltip single-line tooltip      * @return multi-line tooltip.      */
+comment|/**      * Wraps the tooltip, making it multi-lined if needed. Current      * implementation uses HTML markup to break the lines      *       * @param tooltip      *            single-line tooltip      * @return multi-line tooltip.      */
 specifier|protected
 name|String
 name|wrapTooltip
@@ -571,7 +571,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Listener to user input, which fires validation timer       */
+comment|/**      * Listener to user input, which fires validation timer      */
 class|class
 name|TimerScheduler
 implements|implements
@@ -583,20 +583,6 @@ comment|/**          * The timer, which fires validation after some delay       
 name|Timer
 name|validationTimer
 decl_stmt|;
-name|Object
-name|sync
-decl_stmt|;
-comment|//to prevent concurrent collisions
-name|TimerScheduler
-parameter_list|()
-block|{
-name|sync
-operator|=
-operator|new
-name|Object
-argument_list|()
-expr_stmt|;
-block|}
 specifier|public
 name|void
 name|insertUpdate
@@ -643,11 +629,6 @@ name|isLiveCheckEnabled
 argument_list|()
 condition|)
 block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
-block|{
 if|if
 condition|(
 name|validationTimer
@@ -685,7 +666,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 specifier|public
 name|void
 name|focusGained
@@ -703,11 +683,6 @@ name|FocusEvent
 name|e
 parameter_list|)
 block|{
-synchronized|synchronized
-init|(
-name|sync
-init|)
-block|{
 if|if
 condition|(
 name|validationTimer
@@ -720,7 +695,6 @@ operator|.
 name|cancel
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 block|}
 empty_stmt|;

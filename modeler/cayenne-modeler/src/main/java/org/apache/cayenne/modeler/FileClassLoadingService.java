@@ -135,14 +135,13 @@ literal|15
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns class for a given name, loading it if needed from configured locations.      */
+comment|/**      * Returns class for a given name, loading it if needed from configured      * locations.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"all"
 argument_list|)
 specifier|public
-specifier|synchronized
 parameter_list|<
 name|T
 parameter_list|>
@@ -193,7 +192,6 @@ return|;
 block|}
 comment|/**      * Returns an unmodifiable list of configured CLASSPATH locations.      */
 specifier|public
-specifier|synchronized
 name|List
 argument_list|<
 name|File
@@ -211,7 +209,6 @@ argument_list|)
 return|;
 block|}
 specifier|public
-specifier|synchronized
 name|void
 name|setPathFiles
 parameter_list|(
@@ -315,7 +312,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-specifier|synchronized
 name|FileClassLoader
 name|nonNullClassLoader
 parameter_list|()
