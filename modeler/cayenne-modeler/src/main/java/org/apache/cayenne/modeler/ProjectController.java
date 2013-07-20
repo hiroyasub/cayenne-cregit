@@ -1945,7 +1945,8 @@ name|EntityResolver
 name|entityResolver
 decl_stmt|;
 comment|/**      * Project files watcher. When project file is changed, user will be asked      * to confirm loading the changes      */
-name|ProjectWatchdog
+specifier|private
+name|ProjectFileChangeTracker
 name|watchdog
 decl_stmt|;
 specifier|public
@@ -2087,9 +2088,16 @@ block|{
 name|watchdog
 operator|=
 operator|new
-name|ProjectWatchdog
+name|ProjectFileChangeTracker
 argument_list|(
 name|this
+argument_list|)
+expr_stmt|;
+name|watchdog
+operator|.
+name|setDaemon
+argument_list|(
+literal|true
 argument_list|)
 expr_stmt|;
 name|watchdog
@@ -8475,7 +8483,7 @@ block|}
 block|}
 comment|/**      * @return the project files' watcher      */
 specifier|public
-name|ProjectWatchdog
+name|ProjectFileChangeTracker
 name|getProjectWatcher
 parameter_list|()
 block|{
