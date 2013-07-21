@@ -677,18 +677,24 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
 name|commitChanges
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
 name|commitChangesToParent
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|Collection
@@ -698,6 +704,8 @@ argument_list|>
 name|deletedObjects
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|DataChannel
 name|getChannel
@@ -726,6 +734,8 @@ operator|=
 name|channel
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getEntityResolver
@@ -781,6 +791,8 @@ name|flag
 expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -949,12 +961,16 @@ name|persistent
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|GraphManager
 name|getGraphManager
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|Collection
@@ -964,6 +980,8 @@ argument_list|>
 name|modifiedObjects
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 parameter_list|<
@@ -979,6 +997,8 @@ argument_list|>
 name|persistentClass
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
@@ -988,6 +1008,8 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|Collection
@@ -997,6 +1019,8 @@ argument_list|>
 name|newObjects
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|QueryResponse
@@ -1006,6 +1030,8 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|List
@@ -1021,6 +1047,8 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -1046,6 +1074,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @since 3.2      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -1118,6 +1148,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @since 3.2      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -1168,6 +1200,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 parameter_list|<
@@ -1186,6 +1220,8 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|prepareForAccess
@@ -1409,6 +1445,8 @@ operator|new
 name|PropertyVisitor
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAttribute
@@ -1432,6 +1470,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToOne
@@ -1455,6 +1495,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToMany
@@ -1565,6 +1607,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|propertyChanged
@@ -1596,18 +1640,24 @@ name|newValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
 name|rollbackChanges
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
 name|rollbackChangesLocally
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|Collection
@@ -1646,6 +1696,8 @@ name|queryCache
 expr_stmt|;
 block|}
 comment|/**      * Returns EventManager associated with the ObjectStore.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|EventManager
 name|getEventManager
@@ -1664,6 +1716,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|GraphDiff
 name|onSync
@@ -1920,6 +1974,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|invalidateObjects
@@ -1968,6 +2024,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -2060,6 +2118,8 @@ name|userProperties
 return|;
 block|}
 comment|/**      * Returns a user-defined property previously set via 'setUserProperty'.      * Note that it is a caller responsibility to synchronize access to      * properties.      *       * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getUserProperty
@@ -2079,6 +2139,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *       * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setUserProperty
@@ -2254,6 +2316,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -2312,6 +2376,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|deleteObjects
