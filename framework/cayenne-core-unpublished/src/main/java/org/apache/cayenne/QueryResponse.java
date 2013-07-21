@@ -70,7 +70,7 @@ comment|/**      * A utility method for quickly retrieving the first list in the
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"unchecked"
+literal|"rawtypes"
 argument_list|)
 name|List
 name|firstList
