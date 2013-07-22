@@ -187,6 +187,20 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
+comment|/**      *       * @param count      * @param time (milliseconds) time query took to run      * @param sql SQL that was executed, printed when time exceeds timeThreshold      *       * @since 3.2      */
+name|void
+name|logSelectCount
+parameter_list|(
+name|int
+name|count
+parameter_list|,
+name|long
+name|time
+parameter_list|,
+name|String
+name|sql
+parameter_list|)
+function_decl|;
 name|void
 name|logUpdateCount
 parameter_list|(

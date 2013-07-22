@@ -656,6 +656,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+name|cachedSqlString
+operator|!=
+literal|null
+condition|)
+return|return
+name|cachedSqlString
+return|;
 name|DataMap
 name|dataMap
 init|=
@@ -1028,11 +1037,15 @@ name|queryBuf
 argument_list|)
 expr_stmt|;
 block|}
-return|return
+name|cachedSqlString
+operator|=
 name|queryBuf
 operator|.
 name|toString
 argument_list|()
+expr_stmt|;
+return|return
+name|cachedSqlString
 return|;
 block|}
 comment|/**      * @since 3.1      */

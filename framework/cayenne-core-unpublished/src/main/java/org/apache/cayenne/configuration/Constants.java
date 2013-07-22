@@ -255,6 +255,24 @@ name|SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY
 init|=
 literal|"cayenne.server.max_id_qualifier_size"
 decl_stmt|;
+comment|/** Defines if database uses case-insensitive collation */
+specifier|public
+specifier|final
+specifier|static
+name|String
+name|CI_PROPERTY
+init|=
+literal|"cayenne.runtime.db.collation.assume.ci"
+decl_stmt|;
+comment|/**       * A integer property that enables logging for just long running queries (rather than all queries).       * The value is the minimum number of milliseconds a query must run before is logged.       * A value less than or equal to zero (the default) disables this feature.       *       * @since 3.2       * */
+specifier|public
+specifier|final
+specifier|static
+name|String
+name|QUERY_EXECUTION_TIME_LOGGING_THRESHOLD_PROPERTY
+init|=
+literal|"cayenne.server.query_execution_time_logging_threshold"
+decl_stmt|;
 block|}
 end_interface
 

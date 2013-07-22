@@ -17,11 +17,35 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
 name|junit
 operator|.
 name|framework
 operator|.
 name|TestCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DefaultRuntimeProperties
 import|;
 end_import
 
@@ -63,7 +87,15 @@ decl_stmt|;
 comment|// test unsupported type
 operator|new
 name|CommonsJdbcEventLogger
-argument_list|()
+argument_list|(
+operator|new
+name|DefaultRuntimeProperties
+argument_list|(
+name|Collections
+operator|.
+name|EMPTY_MAP
+argument_list|)
+argument_list|)
 operator|.
 name|sqlLiteralForObject
 argument_list|(

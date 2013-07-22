@@ -240,6 +240,10 @@ name|QueryMetadata
 name|queryMetadata
 decl_stmt|;
 specifier|protected
+name|String
+name|cachedSqlString
+decl_stmt|;
+specifier|protected
 name|Connection
 name|connection
 decl_stmt|;
@@ -489,6 +493,10 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
+name|cachedSqlString
+operator|=
+literal|null
+expr_stmt|;
 block|}
 specifier|public
 name|DbEntity

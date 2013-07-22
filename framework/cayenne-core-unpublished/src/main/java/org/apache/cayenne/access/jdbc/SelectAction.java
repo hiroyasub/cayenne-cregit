@@ -730,6 +730,11 @@ name|currentTimeMillis
 argument_list|()
 operator|-
 name|t1
+argument_list|,
+name|translator
+operator|.
+name|createSqlString
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|observer

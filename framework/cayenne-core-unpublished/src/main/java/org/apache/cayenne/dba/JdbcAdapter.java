@@ -470,15 +470,6 @@ name|JdbcAdapter
 implements|implements
 name|DbAdapter
 block|{
-comment|// defines if database uses case-insensitive collation
-specifier|public
-specifier|final
-specifier|static
-name|String
-name|CI_PROPERTY
-init|=
-literal|"cayenne.runtime.db.collation.assume.ci"
-decl_stmt|;
 specifier|private
 name|PkGenerator
 name|pkGenerator
@@ -604,6 +595,8 @@ name|runtimeProperties
 operator|.
 name|getBoolean
 argument_list|(
+name|Constants
+operator|.
 name|CI_PROPERTY
 argument_list|,
 literal|false
