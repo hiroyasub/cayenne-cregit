@@ -152,6 +152,10 @@ specifier|protected
 name|CallbackDescriptor
 name|callbackDescriptor
 decl_stmt|;
+specifier|protected
+name|CallbackType
+name|callbackType
+decl_stmt|;
 comment|/**      * constructor      *       * @param mediator mediator instance      * @param eventSource event source      * @param objectList default objects list      * @param callbackDescriptor callback descriptor instance      */
 specifier|public
 name|CallbackDescriptorTableModel
@@ -167,6 +171,9 @@ name|objectList
 parameter_list|,
 name|CallbackDescriptor
 name|callbackDescriptor
+parameter_list|,
+name|CallbackType
+name|callbackType
 parameter_list|)
 block|{
 name|super
@@ -183,6 +190,12 @@ operator|.
 name|callbackDescriptor
 operator|=
 name|callbackDescriptor
+expr_stmt|;
+name|this
+operator|.
+name|callbackType
+operator|=
+name|callbackType
 expr_stmt|;
 block|}
 comment|/**      * does nothing      *       * @param newVal newVal      * @param row row      * @param col col      */
@@ -282,12 +295,9 @@ name|column
 parameter_list|)
 block|{
 return|return
-name|callbackDescriptor
+name|callbackType
 operator|.
-name|getCallbackType
-argument_list|()
-operator|.
-name|name
+name|getName
 argument_list|()
 return|;
 block|}
