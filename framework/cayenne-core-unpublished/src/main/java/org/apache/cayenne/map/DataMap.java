@@ -546,6 +546,7 @@ name|SQLResult
 argument_list|>
 name|results
 decl_stmt|;
+comment|/**      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
 specifier|private
 name|List
 argument_list|<
@@ -2835,7 +2836,9 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns an unmodifiable list of default {@link EntityListener} objects.      * Note that since the order of listeners is significant a list, not just a      * generic Collection is returned.      *       * @since 3.0      */
+comment|/**      * Returns an unmodifiable list of default {@link EntityListener} objects.      * Note that since the order of listeners is significant a list, not just a      * generic Collection is returned.      *       * @since 3.0      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|List
 argument_list|<
@@ -2853,7 +2856,9 @@ name|defaultEntityListeners
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      */
+comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|addDefaultEntityListener
@@ -2908,7 +2913,9 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a listener matching class name.      *       * @since 3.0      */
+comment|/**      * Removes a listener matching class name.      *       * @since 3.0      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|removeDefaultEntityListener
@@ -2966,7 +2973,9 @@ break|break;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer tied to a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|EntityListener
 name|getDefaultEntityListener

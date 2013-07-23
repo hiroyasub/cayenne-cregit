@@ -314,7 +314,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ObjEntity is a mapping descriptor for a DataObject Java class. It contains the  * information about the Java class itself, as well as its mapping to the DbEntity layer.  */
+comment|/**  * ObjEntity is a mapping descriptor for a DataObject Java class. It contains  * the information about the Java class itself, as well as its mapping to the  * DbEntity layer.  */
 end_comment
 
 begin_class
@@ -344,7 +344,8 @@ name|LOCK_TYPE_OPTIMISTIC
 init|=
 literal|1
 decl_stmt|;
-comment|// do not import CayenneDataObject as it introduces unneeded client dependency
+comment|// do not import CayenneDataObject as it introduces unneeded client
+comment|// dependency
 specifier|static
 specifier|final
 name|String
@@ -352,7 +353,7 @@ name|CAYENNE_DATA_OBJECT_CLASS
 init|=
 literal|"org.apache.cayenne.CayenneDataObject"
 decl_stmt|;
-comment|/**      * A collection of default "generic" entity classes excluded from class generation.      *       * @since 1.2      */
+comment|/**      * A collection of default "generic" entity classes excluded from class      * generation.      *       * @since 1.2      */
 specifier|protected
 specifier|static
 specifier|final
@@ -413,6 +414,8 @@ specifier|protected
 name|String
 name|clientSuperClassName
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|List
 argument_list|<
@@ -424,10 +427,14 @@ specifier|protected
 name|CallbackMap
 name|callbacks
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|excludingDefaultListeners
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|boolean
 name|excludingSuperclassListeners
@@ -803,6 +810,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|// deprecated
 if|if
 condition|(
 name|isExcludingSuperclassListeners
@@ -817,6 +825,7 @@ literal|"\" exclude-superclass-listeners=\"true"
 argument_list|)
 expr_stmt|;
 block|}
+comment|// deprecated
 if|if
 condition|(
 name|isExcludingDefaultListeners
@@ -952,6 +961,7 @@ literal|"/>"
 argument_list|)
 expr_stmt|;
 block|}
+comment|// deprecated
 comment|// write entity listeners
 for|for
 control|(
@@ -994,7 +1004,7 @@ literal|"</obj-entity>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns an ObjEntity stripped of any server-side information, such as DbEntity      * mapping. "clientClassName" property of this entity is used to initialize      * "className" property of returned entity.      *       * @since 1.2      */
+comment|/**      * Returns an ObjEntity stripped of any server-side information, such as      * DbEntity mapping. "clientClassName" property of this entity is used to      * initialize "className" property of returned entity.      *       * @since 1.2      */
 specifier|public
 name|ObjEntity
 name|getClientEntity
@@ -1113,7 +1123,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// after all meaningful pks got removed, here we only have synthetic pks left...
+comment|// after all meaningful pks got removed, here we only have synthetic pks
+comment|// left...
 for|for
 control|(
 name|ObjAttribute
@@ -1176,7 +1187,8 @@ operator|.
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
-comment|// note that 'isClientAllowed' also checks parent DataMap client policy
+comment|// note that 'isClientAllowed' also checks parent DataMap client
+comment|// policy
 comment|// that can be handy in case of cross-map relationships
 if|if
 condition|(
@@ -1205,12 +1217,12 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// TODO: andrus 2/5/2007 - copy embeddables
-comment|// TODO: andrus 2/5/2007 - copy listeners and callback methods
+comment|// TODO: andrus 2/5/2007 - copy callback methods
 return|return
 name|entity
 return|;
 block|}
-comment|/**      * Returns a non-null class name. For generic entities with no class specified      * explicitly, default DataMap superclass is used, and if it is not set -      * CayenneDataObject is used.      */
+comment|/**      * Returns a non-null class name. For generic entities with no class      * specified explicitly, default DataMap superclass is used, and if it is      * not set - CayenneDataObject is used.      */
 name|String
 name|getJavaClassName
 parameter_list|()
@@ -1258,7 +1270,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns Java class of persistent objects described by this entity. For generic      * entities with no class specified explicitly, default DataMap superclass is used,      * and if it is not set - CayenneDataObject is used. Casts any thrown exceptions into      * CayenneRuntimeException.      *       * @since 1.2      */
+comment|/**      * Returns Java class of persistent objects described by this entity. For      * generic entities with no class specified explicitly, default DataMap      * superclass is used, and if it is not set - CayenneDataObject is used.      * Casts any thrown exceptions into CayenneRuntimeException.      *       * @since 1.2      */
 specifier|public
 name|Class
 argument_list|<
@@ -1310,7 +1322,9 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns an unmodifiable list of registered {@link EntityListener} objects. Note      * that since the order of listeners is significant a list, not just a generic      * Collection is returned.      *       * @since 3.0      */
+comment|/**      * Returns an unmodifiable list of registered {@link EntityListener}      * objects. Note that since the order of listeners is significant a list,      * not just a generic Collection is returned.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|List
 argument_list|<
@@ -1328,7 +1342,9 @@ name|entityListeners
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException if a listener for the same class name is already      *             registered.      */
+comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|addEntityListener
@@ -1383,7 +1399,9 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a listener matching class name.      *       * @since 3.0      */
+comment|/**      * Removes a listener matching class name.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|removeEntityListener
@@ -1441,7 +1459,9 @@ break|break;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|EntityListener
 name|getEntityListener
@@ -1490,7 +1510,7 @@ return|return
 name|callbacks
 return|;
 block|}
-comment|/**      * Returns the type of lock used by this ObjEntity. If this entity is not locked, this      * method would look in a super entity recursively, until it finds a lock somewhere in      * the inheritance hierarchy.      *       * @since 1.1      */
+comment|/**      * Returns the type of lock used by this ObjEntity. If this entity is not      * locked, this method would look in a super entity recursively, until it      * finds a lock somewhere in the inheritance hierarchy.      *       * @since 1.1      */
 specifier|public
 name|int
 name|getLockType
@@ -1530,7 +1550,7 @@ else|:
 name|lockType
 return|;
 block|}
-comment|/**      * Returns the type of lock used by this ObjEntity, regardless of what locking type is      * used by super entities.      *       * @since 1.1      */
+comment|/**      * Returns the type of lock used by this ObjEntity, regardless of what      * locking type is used by super entities.      *       * @since 1.1      */
 specifier|public
 name|int
 name|getDeclaredLockType
@@ -1554,7 +1574,7 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/**      * Returns whether this entity is "generic", meaning it is not mapped to a unique Java      * class. Criterion for generic entities is that it either has no Java class mapped or      * its class is the same as DataMap's default superclass, or it is CayenneDataObject.      *       * @since 1.2      */
+comment|/**      * Returns whether this entity is "generic", meaning it is not mapped to a      * unique Java class. Criterion for generic entities is that it either has      * no Java class mapped or its class is the same as DataMap's default      * superclass, or it is CayenneDataObject.      *       * @since 1.2      */
 specifier|public
 name|boolean
 name|isGeneric
@@ -1597,7 +1617,7 @@ argument_list|)
 operator|)
 return|;
 block|}
-comment|/**      * Returns true if this entity is allowed to be used on the client. Checks that parent      * DataMap allows client entities and also that this entity is not explicitly disabled      * for the client use.      *       * @since 1.2      */
+comment|/**      * Returns true if this entity is allowed to be used on the client. Checks      * that parent DataMap allows client entities and also that this entity is      * not explicitly disabled for the client use.      *       * @since 1.2      */
 specifier|public
 name|boolean
 name|isClientAllowed
@@ -1674,7 +1694,7 @@ operator|=
 name|serverOnly
 expr_stmt|;
 block|}
-comment|/**      * Returns a qualifier that imposes a restriction on what objects belong to this      * entity. Returned qualifier is the one declared in this entity, and does not include      * qualifiers declared in super entities.      *       * @since 1.1      */
+comment|/**      * Returns a qualifier that imposes a restriction on what objects belong to      * this entity. Returned qualifier is the one declared in this entity, and      * does not include qualifiers declared in super entities.      *       * @since 1.1      */
 specifier|public
 name|Expression
 name|getDeclaredQualifier
@@ -1694,7 +1714,7 @@ return|return
 name|superEntityName
 return|;
 block|}
-comment|/**      * Sets a qualifier that imposes a limit on what objects belong to this entity.      *       * @since 1.1      */
+comment|/**      * Sets a qualifier that imposes a limit on what objects belong to this      * entity.      *       * @since 1.1      */
 specifier|public
 name|void
 name|setDeclaredQualifier
@@ -1778,7 +1798,7 @@ operator|=
 name|clientClassName
 expr_stmt|;
 block|}
-comment|/**      * Returns a fully-qualified name of the super class of the DataObject class. This      * value is used as a hint for class generation. If the entity inherits from another      * entity, a superclass is the class of that entity.      */
+comment|/**      * Returns a fully-qualified name of the super class of the DataObject      * class. This value is used as a hint for class generation. If the entity      * inherits from another entity, a superclass is the class of that entity.      */
 specifier|public
 name|String
 name|getSuperClassName
@@ -1805,7 +1825,7 @@ else|:
 name|superClassName
 return|;
 block|}
-comment|/**      * Sets a fully-qualified name of the super class of the DataObject class. This value      * is used as a hint for class generation.      *<p>      *<i>An attempt to set superclass on an inherited entity has no effect, since a class      * of the super entity is always used as a superclass.</i>      *</p>      */
+comment|/**      * Sets a fully-qualified name of the super class of the DataObject class.      * This value is used as a hint for class generation.      *<p>      *<i>An attempt to set superclass on an inherited entity has no effect,      * since a class of the super entity is always used as a superclass.</i>      *</p>      */
 specifier|public
 name|void
 name|setSuperClassName
@@ -1821,7 +1841,7 @@ operator|=
 name|superClassName
 expr_stmt|;
 block|}
-comment|/**      * Returns a fully-qualified name of the client-side super class of the DataObject      * class. This value is used as a hint for class generation. If the entity inherits      * from another entity, a superclass is the class of that entity.      *       * @since 1.2      */
+comment|/**      * Returns a fully-qualified name of the client-side super class of the      * DataObject class. This value is used as a hint for class generation. If      * the entity inherits from another entity, a superclass is the class of      * that entity.      *       * @since 1.2      */
 specifier|public
 name|String
 name|getClientSuperClassName
@@ -1848,7 +1868,7 @@ else|:
 name|clientSuperClassName
 return|;
 block|}
-comment|/**      * Sets a fully-qualified name of the client-side super class of the ClientDataObject      * class. This value is used as a hint for class generation.      *<p>      *<i>An attempt to set superclass on an inherited entity has no effect, since a class      * of the super entity is always used as a superclass.</i>      *</p>      *       * @since 1.2      */
+comment|/**      * Sets a fully-qualified name of the client-side super class of the      * ClientDataObject class. This value is used as a hint for class      * generation.      *<p>      *<i>An attempt to set superclass on an inherited entity has no effect,      * since a class of the super entity is always used as a superclass.</i>      *</p>      *       * @since 1.2      */
 specifier|public
 name|void
 name|setClientSuperClassName
@@ -1936,7 +1956,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Sets the DbEntity used by this ObjEntity.      *<p>      *<i>Setting DbEntity on an inherited entity has no effect, since a class of the      * super entity is always used as a superclass.</i>      *</p>      */
+comment|/**      * Sets the DbEntity used by this ObjEntity.      *<p>      *<i>Setting DbEntity on an inherited entity has no effect, since a class      * of the super entity is always used as a superclass.</i>      *</p>      */
 specifier|public
 name|void
 name|setDbEntity
@@ -1963,7 +1983,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns an unmodifiable collection of ObjAttributes representing the primary key of      * the table described by this DbEntity. Note that since PK is very often not an      * object property, the returned collection may contain "synthetic" ObjAttributes that      * are created on the fly and are not a part of ObjEntity and will not be a part of      * entity.getAttributes().      *       * @since 3.0      */
+comment|/**      * Returns an unmodifiable collection of ObjAttributes representing the      * primary key of the table described by this DbEntity. Note that since PK      * is very often not an object property, the returned collection may contain      * "synthetic" ObjAttributes that are created on the fly and are not a part      * of ObjEntity and will not be a part of entity.getAttributes().      *       * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
@@ -2119,7 +2139,7 @@ return|return
 name|attributes
 return|;
 block|}
-comment|/**      * Returns a named attribute that is either declared in this ObjEntity or is      * inherited. In any case returned attribute 'getEntity' method will return this      * entity. Returns null if no matching attribute is found.      */
+comment|/**      * Returns a named attribute that is either declared in this ObjEntity or is      * inherited. In any case returned attribute 'getEntity' method will return      * this entity. Returns null if no matching attribute is found.      */
 annotation|@
 name|Override
 specifier|public
@@ -2260,7 +2280,8 @@ return|return
 literal|null
 return|;
 block|}
-comment|// decorate returned attribute to make it appear as if it belongs to this
+comment|// decorate returned attribute to make it appear as if it belongs to
+comment|// this
 comment|// entity
 name|ObjAttribute
 name|decoratedAttribute
@@ -2311,7 +2332,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns a SortedMap of all attributes that either belong to this ObjEntity or      * inherited.      */
+comment|/**      * Returns a SortedMap of all attributes that either belong to this      * ObjEntity or inherited.      */
 annotation|@
 name|Override
 specifier|public
@@ -2552,7 +2573,7 @@ name|attributeOverrides
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a Collection of all attributes that either belong to this ObjEntity or      * inherited.      */
+comment|/**      * Returns a Collection of all attributes that either belong to this      * ObjEntity or inherited.      */
 annotation|@
 name|Override
 specifier|public
@@ -2591,7 +2612,7 @@ name|values
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a Collection of all attributes that belong to this ObjEntity, excluding      * inherited attributes.      *       * @since 1.1      */
+comment|/**      * Returns a Collection of all attributes that belong to this ObjEntity,      * excluding inherited attributes.      *       * @since 1.1      */
 specifier|public
 name|Collection
 argument_list|<
@@ -2613,7 +2634,7 @@ name|getAttributes
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a named Relationship that either belongs to this ObjEntity or is inherited.      * Returns null if no matching attribute is found.      */
+comment|/**      * Returns a named Relationship that either belongs to this ObjEntity or is      * inherited. Returns null if no matching attribute is found.      */
 annotation|@
 name|Override
 specifier|public
@@ -2742,7 +2763,7 @@ return|return
 name|relationshipMap
 return|;
 block|}
-comment|/**      * Recursively appends all relationships in the entity inheritance hierarchy.      */
+comment|/**      * Recursively appends all relationships in the entity inheritance      * hierarchy.      */
 specifier|final
 name|void
 name|appendRelationships
@@ -2834,7 +2855,7 @@ name|values
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a Collection of all relationships that belong to this ObjEntity, excluding      * inherited attributes.      *       * @since 1.1      */
+comment|/**      * Returns a Collection of all relationships that belong to this ObjEntity,      * excluding inherited attributes.      *       * @since 1.1      */
 specifier|public
 name|Collection
 argument_list|<
@@ -2944,7 +2965,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns the names of DbAtributes that comprise the primary key of the parent      * DbEntity.      *       * @since 3.0      */
+comment|/**      * Returns the names of DbAtributes that comprise the primary key of the      * parent DbEntity.      *       * @since 3.0      */
 specifier|public
 name|Collection
 argument_list|<
@@ -3031,7 +3052,7 @@ name|names
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns ObjRelationship of this entity that maps to<code>dbRelationship</code>      * parameter. Returns null if no such relationship is found.      */
+comment|/**      * Returns ObjRelationship of this entity that maps to      *<code>dbRelationship</code> parameter. Returns null if no such      * relationship is found.      */
 specifier|public
 name|ObjRelationship
 name|getRelationshipForDbRelationship
@@ -3096,7 +3117,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Clears all the mapping between this obj entity and its current db entity. Clears      * mapping between entities, attributes and relationships.      */
+comment|/**      * Clears all the mapping between this obj entity and its current db entity.      * Clears mapping between entities, attributes and relationships.      */
 specifier|public
 name|void
 name|clearDbMapping
@@ -3180,7 +3201,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if this ObjEntity represents a set of read-only objects.      *       * @return boolean      */
+comment|/**      * Returns<code>true</code> if this ObjEntity represents a set of read-only      * objects.      *       * @return boolean      */
 specifier|public
 name|boolean
 name|isReadOnly
@@ -3205,7 +3226,7 @@ operator|=
 name|readOnly
 expr_stmt|;
 block|}
-comment|/**      * Returns true if this entity directly or indirectly inherits from a given entity,      * false otherwise.      *       * @since 1.1      */
+comment|/**      * Returns true if this entity directly or indirectly inherits from a given      * entity, false otherwise.      *       * @since 1.1      */
 specifier|public
 name|boolean
 name|isSubentityOf
@@ -3305,7 +3326,7 @@ name|aliasMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an Iterable instance over expression path components based on this entity.      *       * @since 3.0      */
+comment|/**      * Returns an Iterable instance over expression path components based on      * this entity.      *       * @since 3.0      */
 annotation|@
 name|Override
 annotation|@
@@ -3505,7 +3526,7 @@ literal|"',  OBJ_PATH is expected."
 argument_list|)
 throw|;
 block|}
-comment|/**      * Transforms an Expression to an analogous expression in terms of the underlying      * DbEntity.      *       * @since 1.1      */
+comment|/**      * Transforms an Expression to an analogous expression in terms of the      * underlying DbEntity.      *       * @since 1.1      */
 specifier|public
 name|Expression
 name|translateToDbPath
@@ -3559,7 +3580,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Transforms an Expression rooted in this entity to an analogous expression rooted in      * related entity.      *       * @since 1.1      */
+comment|/**      * Transforms an Expression rooted in this entity to an analogous expression      * rooted in related entity.      *       * @since 1.1      */
 annotation|@
 name|Override
 specifier|public
@@ -3688,7 +3709,12 @@ argument_list|>
 argument_list|()
 argument_list|)
 return|;
-comment|//TODO: do we need aliases here?
+comment|// TODO:
+comment|// do
+comment|// we
+comment|// need
+comment|// aliases
+comment|// here?
 block|}
 specifier|final
 class|class
@@ -3696,7 +3722,8 @@ name|DBPathConverter
 implements|implements
 name|Transformer
 block|{
-comment|// TODO: make it a public method - resolveDBPathComponents or something...
+comment|// TODO: make it a public method - resolveDBPathComponents or
+comment|// something...
 comment|// seems generally useful
 name|String
 name|toDbPath
@@ -4011,7 +4038,7 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-comment|/**      * ObjEntity property changed. May be name, attribute or relationship added or      * removed, etc. Attribute and relationship property changes are handled in respective      * listeners.      *       * @since 1.2      */
+comment|/**      * ObjEntity property changed. May be name, attribute or relationship added      * or removed, etc. Attribute and relationship property changes are handled      * in respective listeners.      *       * @since 1.2      */
 specifier|public
 name|void
 name|objEntityChanged
@@ -4171,7 +4198,9 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/**      * Returns true if the default lifecycle listeners should not be notified of this      * entity lifecycle events.      *       * @since 3.0      */
+comment|/**      * Returns true if the default lifecycle listeners should not be notified of      * this entity lifecycle events.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isExcludingDefaultListeners
@@ -4181,6 +4210,9 @@ return|return
 name|excludingDefaultListeners
 return|;
 block|}
+comment|/**      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setExcludingDefaultListeners
@@ -4196,7 +4228,9 @@ operator|=
 name|excludingDefaultListeners
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the lifeycle listeners defined on the superclasses should not be      * notified of this entity lifecycle events.      *       * @since 3.0      */
+comment|/**      * Returns true if the lifeycle listeners defined on the superclasses should      * not be notified of this entity lifecycle events.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isExcludingSuperclassListeners
@@ -4206,6 +4240,9 @@ return|return
 name|excludingSuperclassListeners
 return|;
 block|}
+comment|/**      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setExcludingSuperclassListeners
