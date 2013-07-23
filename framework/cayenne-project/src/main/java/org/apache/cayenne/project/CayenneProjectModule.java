@@ -71,9 +71,9 @@ name|project
 operator|.
 name|upgrade
 operator|.
-name|v6
+name|v7
 operator|.
-name|ProjectUpgrader_V6
+name|ProjectUpgrader_V7
 import|;
 end_import
 
@@ -171,7 +171,7 @@ argument_list|)
 operator|.
 name|to
 argument_list|(
-name|ProjectUpgrader_V6
+name|ProjectUpgrader_V7
 operator|.
 name|class
 argument_list|)

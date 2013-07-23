@@ -458,7 +458,10 @@ name|Override
 specifier|protected
 name|Resource
 name|doPerformUpgrade
-parameter_list|()
+parameter_list|(
+name|UpgradeMetaData
+name|metaData
+parameter_list|)
 throws|throws
 name|ConfigurationException
 block|{
