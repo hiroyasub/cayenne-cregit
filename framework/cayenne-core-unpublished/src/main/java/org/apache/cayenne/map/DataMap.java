@@ -442,7 +442,7 @@ specifier|final
 name|String
 name|SCHEMA_XSD
 init|=
-literal|"http://cayenne.apache.org/schema/3.0/modelMap"
+literal|"http://cayenne.apache.org/schema/7/modelMap"
 decl_stmt|;
 specifier|protected
 name|String
@@ -1262,7 +1262,7 @@ name|encoder
 operator|.
 name|println
 argument_list|(
-literal|"<data-map xmlns=\"http://cayenne.apache.org/schema/3.0/modelMap\""
+literal|"<data-map xmlns=\"http://cayenne.apache.org/schema/7/modelMap\""
 argument_list|)
 expr_stmt|;
 name|encoder
