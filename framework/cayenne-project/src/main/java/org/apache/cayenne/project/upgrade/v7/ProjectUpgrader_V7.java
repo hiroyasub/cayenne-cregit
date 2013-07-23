@@ -123,15 +123,6 @@ argument_list|(
 name|projectSource
 argument_list|)
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"PH OK"
-argument_list|)
-expr_stmt|;
 name|injector
 operator|.
 name|injectMembers
