@@ -17,13 +17,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|cayenne
-operator|.
-name|DataObject
+name|Map
 import|;
 end_import
 
@@ -87,10 +85,15 @@ name|PrefetchObjectResolver
 extends|extends
 name|ObjectResolver
 block|{
-name|long
-name|txStartRowVersion
+specifier|private
+name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
+name|seen
 decl_stmt|;
-specifier|public
 name|PrefetchObjectResolver
 parameter_list|(
 name|DataContext
@@ -102,8 +105,13 @@ parameter_list|,
 name|boolean
 name|refresh
 parameter_list|,
-name|long
-name|txStartRowVersion
+name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
+name|seen
 parameter_list|)
 block|{
 name|super
@@ -117,9 +125,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|txStartRowVersion
+name|seen
 operator|=
-name|txStartRowVersion
+name|seen
 expr_stmt|;
 block|}
 annotation|@
@@ -140,21 +148,12 @@ block|{
 comment|// skip processing of objects that were already processed in this
 comment|// transaction, either by this node or by some other node...
 comment|// added per CAY-1695 ..
-comment|// TODO: is it going to have any side effects? It is run from the
-comment|// synchronized block, so I guess other threads can't stick their
-comment|// versions of this object in here?
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
-name|context
+name|seen
 operator|.
-name|getGraphManager
-argument_list|()
-operator|.
-name|getNode
+name|get
 argument_list|(
 name|anId
 argument_list|)
@@ -162,27 +161,12 @@ decl_stmt|;
 if|if
 condition|(
 name|object
-operator|!=
+operator|==
 literal|null
-operator|&&
-operator|(
-operator|(
-name|DataObject
-operator|)
-name|object
-operator|)
-operator|.
-name|getSnapshotVersion
-argument_list|()
-operator|>=
-name|txStartRowVersion
 condition|)
 block|{
-return|return
 name|object
-return|;
-block|}
-return|return
+operator|=
 name|super
 operator|.
 name|objectFromDataRow
@@ -193,6 +177,19 @@ name|anId
 argument_list|,
 name|classDescriptor
 argument_list|)
+expr_stmt|;
+name|seen
+operator|.
+name|put
+argument_list|(
+name|anId
+argument_list|,
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|object
 return|;
 block|}
 block|}

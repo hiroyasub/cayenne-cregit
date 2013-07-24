@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|LinkedList
 import|;
 end_import
@@ -65,7 +75,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataObject
+name|ObjectId
 import|;
 end_import
 
@@ -77,7 +87,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataRow
+name|Persistent
 import|;
 end_import
 
@@ -189,6 +199,15 @@ specifier|private
 name|Map
 name|extraResultsByPath
 decl_stmt|;
+specifier|private
+name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
+name|seen
+decl_stmt|;
 name|PrefetchProcessorTreeBuilder
 parameter_list|(
 name|HierarchicalObjectResolver
@@ -254,6 +273,24 @@ operator|new
 name|LinkedList
 argument_list|<
 name|PrefetchProcessorNode
+argument_list|>
+argument_list|()
+expr_stmt|;
+comment|// 'seen' is used to avoid re-processing objects already processed in a
+comment|// given prefetch query (see CAY-1695 for why this is bad). It is
+comment|// essentially a map of all objects fetched in a given transaction
+comment|// TODO: there are other places that are attempting to track objects in
+comment|// a tx... can we reuse 'seen' map from here?
+name|this
+operator|.
+name|seen
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -353,7 +390,8 @@ name|PrefetchTreeNode
 name|node
 parameter_list|)
 block|{
-comment|// TODO, Andrus, 11/16/2005 - minor inefficiency: 'adjacentJointNodes' would
+comment|// TODO, Andrus, 11/16/2005 - minor inefficiency: 'adjacentJointNodes'
+comment|// would
 comment|// grab ALL nodes, we just need to find first and stop...
 name|PrefetchProcessorNode
 name|decorated
@@ -410,7 +448,8 @@ name|PrefetchTreeNode
 name|node
 parameter_list|)
 block|{
-comment|// look ahead for joint children as joint children will require a different
+comment|// look ahead for joint children as joint children will require a
+comment|// different
 comment|// node type.
 name|PrefetchProcessorNode
 name|decorated
@@ -420,7 +459,8 @@ argument_list|(
 name|node
 argument_list|)
 decl_stmt|;
-comment|// semantics has to be "DISJOINT" even if the node is joint, as semantics
+comment|// semantics has to be "DISJOINT" even if the node is joint, as
+comment|// semantics
 comment|// defines relationship with parent..
 name|decorated
 operator|.
@@ -756,51 +796,6 @@ argument_list|(
 name|arc
 argument_list|)
 expr_stmt|;
-comment|// TODO: is txStartRowVersion guessed
-comment|// correctly? i.e. the main rows are always fetched
-comment|// first? I guess this has to stay true if prefetching is
-comment|// involved.
-name|long
-name|txStartRowVersion
-decl_stmt|;
-if|if
-condition|(
-name|mainResultRows
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-name|txStartRowVersion
-operator|=
-name|DataObject
-operator|.
-name|DEFAULT_VERSION
-expr_stmt|;
-block|}
-else|else
-block|{
-name|DataRow
-name|firstRow
-init|=
-operator|(
-name|DataRow
-operator|)
-name|mainResultRows
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-name|txStartRowVersion
-operator|=
-name|firstRow
-operator|.
-name|getVersion
-argument_list|()
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|node
@@ -835,7 +830,7 @@ operator|.
 name|isRefreshingObjects
 argument_list|()
 argument_list|,
-name|txStartRowVersion
+name|seen
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -858,7 +853,7 @@ operator|.
 name|isRefreshingObjects
 argument_list|()
 argument_list|,
-name|txStartRowVersion
+name|seen
 argument_list|)
 argument_list|)
 expr_stmt|;

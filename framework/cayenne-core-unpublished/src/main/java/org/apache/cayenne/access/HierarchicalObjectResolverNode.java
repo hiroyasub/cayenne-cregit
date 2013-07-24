@@ -37,6 +37,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -121,8 +131,13 @@ parameter_list|,
 name|boolean
 name|refresh
 parameter_list|,
-name|long
-name|txStartRowVersion
+name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|Persistent
+argument_list|>
+name|seen
 parameter_list|)
 block|{
 name|super
@@ -133,7 +148,7 @@ name|descriptor
 argument_list|,
 name|refresh
 argument_list|,
-name|txStartRowVersion
+name|seen
 argument_list|)
 expr_stmt|;
 name|this
