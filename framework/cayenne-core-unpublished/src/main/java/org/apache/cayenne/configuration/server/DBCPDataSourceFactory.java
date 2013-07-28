@@ -219,6 +219,8 @@ specifier|protected
 name|ResourceLocator
 name|resourceLocator
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|DataSource
 name|getDataSource

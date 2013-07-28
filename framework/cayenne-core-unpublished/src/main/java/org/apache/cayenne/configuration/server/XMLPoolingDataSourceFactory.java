@@ -177,6 +177,8 @@ specifier|protected
 name|JdbcEventLogger
 name|jdbcEventLogger
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|DataSource
 name|getDataSource

@@ -543,6 +543,8 @@ specifier|protected
 name|RuntimeProperties
 name|runtimeProperties
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|DataDomain
 name|get

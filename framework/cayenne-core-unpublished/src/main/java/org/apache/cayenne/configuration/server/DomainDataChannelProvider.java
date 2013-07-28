@@ -91,6 +91,8 @@ specifier|protected
 name|DataDomain
 name|dataDomain
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|DataChannel
 name|get

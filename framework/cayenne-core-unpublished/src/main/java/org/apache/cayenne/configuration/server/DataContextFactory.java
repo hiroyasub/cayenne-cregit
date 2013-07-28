@@ -236,6 +236,8 @@ specifier|protected
 name|QueryCache
 name|queryCache
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|ObjectContext
 name|createContext
@@ -248,6 +250,8 @@ name|dataDomain
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjectContext
 name|createContext
