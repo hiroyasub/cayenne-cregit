@@ -259,8 +259,6 @@ argument_list|>
 argument_list|(
 literal|null
 argument_list|,
-literal|null
-argument_list|,
 name|resultSet
 argument_list|,
 name|descriptor
@@ -350,13 +348,6 @@ else|else
 block|{
 try|try
 block|{
-name|resultReader
-operator|.
-name|setClosingConnection
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 name|delegate
 operator|.
 name|nextRows

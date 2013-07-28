@@ -689,7 +689,8 @@ range|:
 name|results
 control|)
 block|{
-comment|// this means Statement.SUCCESS_NO_INFO or Statement.EXECUTE_FAILED
+comment|// this means Statement.SUCCESS_NO_INFO or
+comment|// Statement.EXECUTE_FAILED
 if|if
 condition|(
 name|result
@@ -1111,10 +1112,13 @@ operator|.
 name|getGeneratedKeys
 argument_list|()
 decl_stmt|;
-comment|// TODO: andrus, 7/4/2007 - (1) get the type of meaningful PK's from their
+comment|// TODO: andrus, 7/4/2007 - (1) get the type of meaningful PK's from
+comment|// their
 comment|// ObjAttributes; (2) use a different form of Statement.execute -
-comment|// "execute(String,String[])" to be able to map generated column names (this way
-comment|// we can support multiple columns.. although need to check how well this works
+comment|// "execute(String,String[])" to be able to map generated column names
+comment|// (this way
+comment|// we can support multiple columns.. although need to check how well
+comment|// this works
 comment|// with most common drivers)
 name|RowDescriptorBuilder
 name|builder
@@ -1178,7 +1182,8 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-comment|// use column name from result set, but type and Java class from DB
+comment|// use column name from result set, but type and Java class from
+comment|// DB
 comment|// attribute
 name|columns
 index|[
@@ -1267,8 +1272,6 @@ init|=
 operator|new
 name|JDBCResultIterator
 argument_list|(
-literal|null
-argument_list|,
 literal|null
 argument_list|,
 name|keysRS

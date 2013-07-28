@@ -206,11 +206,6 @@ argument_list|<
 name|T
 argument_list|>
 block|{
-comment|// Connection information
-specifier|protected
-name|Connection
-name|connection
-decl_stmt|;
 specifier|protected
 name|Statement
 name|statement
@@ -227,11 +222,6 @@ specifier|protected
 name|QueryMetadata
 name|queryMetadata
 decl_stmt|;
-comment|// last indexed PK
-specifier|protected
-name|boolean
-name|closingConnection
-decl_stmt|;
 specifier|protected
 name|boolean
 name|closed
@@ -247,7 +237,9 @@ name|T
 argument_list|>
 name|rowReader
 decl_stmt|;
-comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      *       * @since 3.0      */
+comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      *       * @since 3.0      * @deprecated since 3.2 use      *             {@link #JDBCResultIterator(Statement, ResultSet, RowDescriptor, QueryMetadata)}      */
+annotation|@
+name|Deprecated
 specifier|public
 name|JDBCResultIterator
 parameter_list|(
@@ -270,11 +262,36 @@ throws|throws
 name|CayenneException
 block|{
 name|this
-operator|.
-name|connection
-operator|=
-name|connection
+argument_list|(
+name|statement
+argument_list|,
+name|resultSet
+argument_list|,
+name|descriptor
+argument_list|,
+name|queryMetadata
+argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      *       * @since 3.2      */
+specifier|public
+name|JDBCResultIterator
+parameter_list|(
+name|Statement
+name|statement
+parameter_list|,
+name|ResultSet
+name|resultSet
+parameter_list|,
+name|RowDescriptor
+name|descriptor
+parameter_list|,
+name|QueryMetadata
+name|queryMetadata
+parameter_list|)
+throws|throws
+name|CayenneException
+block|{
 name|this
 operator|.
 name|statement
@@ -899,11 +916,11 @@ name|nextRow
 operator|=
 literal|false
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|errors
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 try|try
@@ -954,46 +971,6 @@ operator|.
 name|append
 argument_list|(
 literal|"Error closing PreparedStatement."
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|// TODO: andrus, 5/8/2006 - closing connection within
-comment|// JDBCResultIterator is
-comment|// obsolete as this is bound to transaction closing in DataContext.
-comment|// Deprecate
-comment|// this after 1.2
-comment|// close connection, if this object was explicitly configured to be
-comment|// responsible for doing it
-if|if
-condition|(
-name|connection
-operator|!=
-literal|null
-operator|&&
-name|isClosingConnection
-argument_list|()
-condition|)
-block|{
-try|try
-block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|e3
-parameter_list|)
-block|{
-name|errors
-operator|.
-name|append
-argument_list|(
-literal|"Error closing Connection."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1070,17 +1047,21 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if this iterator is responsible for closing its      * connection, otherwise a user of the iterator must close the connection      * after closing the iterator.      */
+comment|/**      * @deprecated since 3.2 always returns false. Connection closing is outside      *             the scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isClosingConnection
 parameter_list|()
 block|{
 return|return
-name|closingConnection
+literal|false
 return|;
 block|}
-comment|/**      * Sets the<code>closingConnection</code> property.      */
+comment|/**      * Sets the<code>closingConnection</code> property.      *       * @deprecated since 3.2 does nothing. Connection closing is outside the      *             scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setClosingConnection
@@ -1089,12 +1070,7 @@ name|boolean
 name|flag
 parameter_list|)
 block|{
-name|this
-operator|.
-name|closingConnection
-operator|=
-name|flag
-expr_stmt|;
+comment|// noop
 block|}
 specifier|public
 name|RowDescriptor

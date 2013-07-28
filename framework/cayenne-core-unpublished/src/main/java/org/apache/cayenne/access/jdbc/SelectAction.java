@@ -353,7 +353,8 @@ decl_stmt|;
 name|ResultSet
 name|rs
 decl_stmt|;
-comment|// need to run in try-catch block to close statement properly if exception happens
+comment|// need to run in try-catch block to close statement properly if
+comment|// exception happens
 try|try
 block|{
 name|rs
@@ -420,8 +421,6 @@ init|=
 operator|new
 name|JDBCResultIterator
 argument_list|(
-name|connection
-argument_list|,
 name|prepStmt
 argument_list|,
 name|rs
@@ -448,6 +447,25 @@ name|it
 init|=
 name|workerIterator
 decl_stmt|;
+if|if
+condition|(
+name|observer
+operator|.
+name|isIteratedResult
+argument_list|()
+condition|)
+block|{
+name|it
+operator|=
+operator|new
+name|ConnectionAwareResultIterator
+argument_list|(
+name|workerIterator
+argument_list|,
+name|connection
+argument_list|)
+expr_stmt|;
+block|}
 comment|// wrap result iterator if distinct has to be suppressed
 if|if
 condition|(
@@ -612,9 +630,12 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-comment|// wrap iterator in a fetch limit checker ... there are a few cases when in-memory
-comment|// fetch limit is a noop, however in a general case this is needed, as the SQL
-comment|// result count does not directly correspond to the number of objects returned
+comment|// wrap iterator in a fetch limit checker ... there are a few cases when
+comment|// in-memory
+comment|// fetch limit is a noop, however in a general case this is needed, as
+comment|// the SQL
+comment|// result count does not directly correspond to the number of objects
+comment|// returned
 comment|// from Cayenne.
 name|int
 name|fetchLimit
@@ -669,7 +690,8 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: Should do something about closing ResultSet and PreparedStatement in this
+comment|// TODO: Should do something about closing ResultSet and
+comment|// PreparedStatement in this
 comment|// method, instead of relying on DefaultResultIterator to do that later
 if|if
 condition|(
@@ -751,13 +773,6 @@ else|else
 block|{
 try|try
 block|{
-name|workerIterator
-operator|.
-name|setClosingConnection
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 name|observer
 operator|.
 name|nextRows

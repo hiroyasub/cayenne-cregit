@@ -169,6 +169,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ResultIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|OperationObserver
@@ -462,7 +474,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * Runs a SQLTemplate query, collecting all results. If a callback expects an iterated      * result, result processing is stopped after the first ResultSet is encountered.      */
+comment|/**      * Runs a SQLTemplate query, collecting all results. If a callback expects      * an iterated result, result processing is stopped after the first      * ResultSet is encountered.      */
 specifier|public
 name|void
 name|performAction
@@ -670,7 +682,8 @@ name|counts
 argument_list|)
 expr_stmt|;
 block|}
-comment|// notify of combined counts of all queries inside SQLTemplate multiplied by the
+comment|// notify of combined counts of all queries inside SQLTemplate
+comment|// multiplied by the
 comment|// number of parameter sets...
 name|int
 index|[]
@@ -885,7 +898,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|// ignore possible following update counts and bail early on
+comment|// ignore possible following update counts and bail
+comment|// early on
 comment|// iterated results
 if|if
 condition|(
@@ -1015,13 +1029,10 @@ init|=
 operator|new
 name|JDBCResultIterator
 argument_list|(
-name|connection
-argument_list|,
 name|statement
 argument_list|,
 name|resultSet
 argument_list|,
-comment|// descriptor,
 name|builder
 operator|.
 name|getDescriptor
@@ -1032,13 +1043,33 @@ argument_list|,
 name|queryMetadata
 argument_list|)
 decl_stmt|;
-name|LimitResultIterator
+name|ResultIterator
 name|it
 init|=
+name|result
+decl_stmt|;
+if|if
+condition|(
+name|iteratedResult
+condition|)
+block|{
+name|it
+operator|=
+operator|new
+name|ConnectionAwareResultIterator
+argument_list|(
+name|it
+argument_list|,
+name|connection
+argument_list|)
+expr_stmt|;
+block|}
+name|it
+operator|=
 operator|new
 name|LimitResultIterator
 argument_list|(
-name|result
+name|it
 argument_list|,
 name|getFetchOffset
 argument_list|()
@@ -1048,15 +1079,17 @@ operator|.
 name|getFetchLimit
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|iteratedResult
 condition|)
 block|{
-comment|// note that we are not closing the iterator here, relying on caller to close
-comment|// the underlying ResultSet on its own... this is a hack, maybe a cleaner flow
+comment|// note that we are not closing the iterator here, relying on caller
+comment|// to close
+comment|// the underlying ResultSet on its own... this is a hack, maybe a
+comment|// cleaner flow
 comment|// is due here.
 name|List
 argument_list|<
@@ -1109,13 +1142,6 @@ else|else
 block|{
 try|try
 block|{
-name|result
-operator|.
-name|setClosingConnection
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 name|callback
 operator|.
 name|nextRows
@@ -1171,7 +1197,8 @@ argument_list|(
 name|resultSet
 argument_list|)
 expr_stmt|;
-comment|// SQLTemplate #result columns take precedence over other ways to determine the
+comment|// SQLTemplate #result columns take precedence over other ways to
+comment|// determine the
 comment|// type
 if|if
 condition|(
@@ -1211,7 +1238,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// TODO: andrus 2008/03/28 support flattened attributes with aliases...
+comment|// TODO: andrus 2008/03/28 support flattened attributes with
+comment|// aliases...
 for|for
 control|(
 name|ObjAttribute
@@ -1263,7 +1291,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// override numeric Java types based on JDBC defaults for DbAttributes, as
+comment|// override numeric Java types based on JDBC defaults for DbAttributes,
+comment|// as
 comment|// Oracle
 comment|// ResultSetMetadata is not very precise about NUMERIC distinctions...
 comment|// (BigDecimal vs Long vs. Integer)
@@ -1363,7 +1392,7 @@ return|return
 name|builder
 return|;
 block|}
-comment|/**      * Extracts a template string from a SQLTemplate query. Exists mainly for the benefit      * of subclasses that can customize returned template.      *       * @since 1.2      */
+comment|/**      * Extracts a template string from a SQLTemplate query. Exists mainly for      * the benefit of subclasses that can customize returned template.      *       * @since 1.2      */
 specifier|protected
 name|String
 name|extractTemplateString
@@ -1386,8 +1415,10 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// note that we MUST convert line breaks to spaces. On some databases (DB2)
-comment|// queries with breaks simply won't run; the rest are affected by CAY-726.
+comment|// note that we MUST convert line breaks to spaces. On some databases
+comment|// (DB2)
+comment|// queries with breaks simply won't run; the rest are affected by
+comment|// CAY-726.
 return|return
 name|Util
 operator|.
