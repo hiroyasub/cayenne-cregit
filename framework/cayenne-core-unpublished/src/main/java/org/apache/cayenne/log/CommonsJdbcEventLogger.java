@@ -1138,7 +1138,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// append URL on the same line to make log somewhat grep-friendly
+comment|// append URL on the same line to make log somewhat
+comment|// grep-friendly
 name|buf
 operator|.
 name|append
@@ -1460,7 +1461,8 @@ range|:
 name|parameters
 control|)
 block|{
-comment|// If at the beginning, output the prefix, otherwise a separator.
+comment|// If at the beginning, output the prefix, otherwise a
+comment|// separator.
 if|if
 condition|(
 name|position
@@ -1840,16 +1842,6 @@ if|if
 condition|(
 name|isLoggable
 argument_list|()
-operator|||
-operator|(
-name|queryExecutionTimeLoggingThreshold
-operator|>
-literal|0
-operator|&&
-name|time
-operator|>
-name|queryExecutionTimeLoggingThreshold
-operator|)
 condition|)
 block|{
 name|StringBuilder
@@ -1929,13 +1921,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|buf
-operator|.
-name|setLength
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
+block|}
 if|if
 condition|(
 name|queryExecutionTimeLoggingThreshold
@@ -1947,6 +1933,13 @@ operator|>
 name|queryExecutionTimeLoggingThreshold
 condition|)
 block|{
+name|StringBuilder
+name|buf
+init|=
+operator|new
+name|StringBuilder
+argument_list|()
+decl_stmt|;
 name|buf
 operator|.
 name|append
@@ -1992,7 +1985,6 @@ name|message
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 specifier|public
