@@ -375,7 +375,7 @@ literal|null
 argument_list|,
 name|Types
 operator|.
-name|NULL
+name|INTEGER
 argument_list|)
 operator|.
 name|execute
