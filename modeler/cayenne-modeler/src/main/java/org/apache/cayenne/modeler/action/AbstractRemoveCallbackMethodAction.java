@@ -182,7 +182,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-remove-method.gif"
+literal|"icon-trash.gif"
 return|;
 block|}
 comment|/**      * performs callback method removing      * @param e event      */

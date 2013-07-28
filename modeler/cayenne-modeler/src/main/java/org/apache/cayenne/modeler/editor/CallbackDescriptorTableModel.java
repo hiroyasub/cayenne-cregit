@@ -468,6 +468,16 @@ return|return
 name|callbackDescriptor
 return|;
 block|}
+comment|/**      * @return CallbackType of the model      */
+specifier|public
+name|CallbackType
+name|getCallbackType
+parameter_list|()
+block|{
+return|return
+name|callbackType
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
