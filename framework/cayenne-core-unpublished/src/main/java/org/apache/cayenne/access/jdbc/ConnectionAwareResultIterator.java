@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ResultIterator} wrapper that handles closing a connection. Used in  * iterators that are returned to the end users and are not implicitly managed  * by Cayenne.  *   * @since 3.2  */
+comment|/**  * A {@link ResultIterator} wrapper that handles closing a connection. Also  * internally counts processed rows, mostly for the benefit of subclasses.  * Subclasses are used in iterators that are returned to the end users and are  * not implicitly managed by Cayenne.  *   * @since 3.2  */
 end_comment
 
 begin_class
@@ -112,6 +112,10 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|closed
+decl_stmt|;
+specifier|protected
+name|int
+name|rowCounter
 decl_stmt|;
 specifier|public
 name|ConnectionAwareResultIterator
@@ -151,6 +155,20 @@ condition|(
 operator|!
 name|closed
 condition|)
+block|{
+name|doClose
+argument_list|()
+expr_stmt|;
+name|closed
+operator|=
+literal|true
+expr_stmt|;
+block|}
+block|}
+specifier|protected
+name|void
+name|doClose
+parameter_list|()
 block|{
 name|StringBuilder
 name|errors
@@ -253,11 +271,6 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-name|closed
-operator|=
-literal|true
-expr_stmt|;
-block|}
 block|}
 annotation|@
 name|Override
@@ -297,6 +310,9 @@ name|T
 name|nextRow
 parameter_list|()
 block|{
+name|rowCounter
+operator|++
+expr_stmt|;
 return|return
 name|delegate
 operator|.
