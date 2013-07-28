@@ -321,6 +321,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * @since 3.2      */
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -756,6 +758,8 @@ return|;
 block|}
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -797,6 +801,8 @@ name|list
 return|;
 block|}
 comment|/**      * Returns true if there is at least one more record that can be read from      * the iterator.      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNextRow
@@ -807,6 +813,8 @@ name|nextRow
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|T
 name|nextRow
@@ -845,6 +853,8 @@ name|row
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|skipRow
@@ -870,6 +880,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Closes ResultIterator and associated ResultSet. This method must be      * called explicitly when the user is finished processing the records.      * Otherwise unused database resources will not be released properly.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
