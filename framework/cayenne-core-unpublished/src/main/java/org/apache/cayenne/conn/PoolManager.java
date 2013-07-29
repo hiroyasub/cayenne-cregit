@@ -202,15 +202,37 @@ name|DataSource
 implements|,
 name|ConnectionEventListener
 block|{
-comment|/**      * Defines a maximum time in milliseconds that a connection request could wait in the      * connection queue. After this period expires, an exception will be thrown in the      * calling method. In the future this parameter should be made configurable.      */
+comment|/**      * Defines a maximum time in milliseconds that a connection request could wait in the      * connection queue. After this period expires, an exception will be thrown in the      * calling method.       */
 specifier|public
 specifier|static
 specifier|final
 name|int
-name|MAX_QUEUE_WAIT
+name|MAX_QUEUE_WAIT_DEFAULT
 init|=
 literal|20000
 decl_stmt|;
+comment|/**      * An exception indicating that a connection request waiting in the queue      * timed out and was unable to obtain a connection.      */
+specifier|public
+specifier|static
+class|class
+name|ConnectionUnavailableException
+extends|extends
+name|SQLException
+block|{
+specifier|public
+name|ConnectionUnavailableException
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 specifier|protected
 name|ConnectionPoolDataSource
 name|poolDataSource
@@ -261,6 +283,10 @@ specifier|private
 name|boolean
 name|shuttingDown
 decl_stmt|;
+specifier|private
+name|long
+name|maxQueueWaitTime
+decl_stmt|;
 comment|/**      * Creates new PoolManager using org.apache.cayenne.conn.PoolDataSource for an      * underlying ConnectionPoolDataSource.      */
 specifier|public
 name|PoolManager
@@ -301,6 +327,8 @@ argument_list|,
 name|password
 argument_list|,
 literal|null
+argument_list|,
+name|MAX_QUEUE_WAIT_DEFAULT
 argument_list|)
 expr_stmt|;
 block|}
@@ -327,6 +355,9 @@ name|password
 parameter_list|,
 name|JdbcEventLogger
 name|logger
+parameter_list|,
+name|long
+name|maxQueueWaitTime
 parameter_list|)
 throws|throws
 name|SQLException
@@ -445,6 +476,8 @@ argument_list|,
 name|userName
 argument_list|,
 name|password
+argument_list|,
+name|maxQueueWaitTime
 argument_list|)
 expr_stmt|;
 block|}
@@ -481,6 +514,8 @@ argument_list|,
 name|userName
 argument_list|,
 name|password
+argument_list|,
+name|MAX_QUEUE_WAIT_DEFAULT
 argument_list|)
 expr_stmt|;
 block|}
@@ -503,6 +538,9 @@ name|userName
 parameter_list|,
 name|String
 name|password
+parameter_list|,
+name|long
+name|maxQueueWaitTime
 parameter_list|)
 throws|throws
 name|SQLException
@@ -591,6 +629,12 @@ operator|.
 name|poolDataSource
 operator|=
 name|poolDataSource
+expr_stmt|;
+name|this
+operator|.
+name|maxQueueWaitTime
+operator|=
+name|maxQueueWaitTime
 expr_stmt|;
 comment|// init pool... use linked lists to use the queue in the FIFO manner
 name|usedPool
@@ -1358,7 +1402,7 @@ operator|.
 name|currentTimeMillis
 argument_list|()
 operator|+
-name|MAX_QUEUE_WAIT
+name|maxQueueWaitTime
 decl_stmt|;
 do|do
 block|{
@@ -1366,7 +1410,7 @@ try|try
 block|{
 name|wait
 argument_list|(
-name|MAX_QUEUE_WAIT
+name|maxQueueWaitTime
 argument_list|)
 expr_stmt|;
 block|}
@@ -1388,12 +1432,18 @@ argument_list|()
 operator|==
 literal|0
 operator|&&
+operator|(
+name|maxQueueWaitTime
+operator|==
+literal|0
+operator|||
 name|waitTill
 operator|>
 name|System
 operator|.
 name|currentTimeMillis
 argument_list|()
+operator|)
 condition|)
 do|;
 if|if
@@ -1408,7 +1458,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|SQLException
+name|ConnectionUnavailableException
 argument_list|(
 literal|"Can't obtain connection. Request timed out. Total used connections: "
 operator|+

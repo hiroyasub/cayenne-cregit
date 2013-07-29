@@ -255,6 +255,15 @@ name|SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY
 init|=
 literal|"cayenne.server.max_id_qualifier_size"
 decl_stmt|;
+comment|/**      * Defines a maximum time in milliseconds that a connection request could wait in the      * connection queue. After this period expires, an exception will be thrown in the      * calling method. A value of zero will make the thread wait until a connection is      * available with no time out. Defaults to 20 seconds.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SERVER_MAX_QUEUE_WAIT_TIME
+init|=
+literal|"cayenne.jdbc.max_wait"
+decl_stmt|;
 comment|/** Defines if database uses case-insensitive collation */
 specifier|public
 specifier|final
