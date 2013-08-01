@@ -750,10 +750,16 @@ name|Exception
 block|{
 comment|// compare on non-persistent property
 name|List
+argument_list|<
+name|TestBean
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|TestBean
+argument_list|>
 argument_list|(
 literal|3
 argument_list|)
@@ -885,10 +891,16 @@ name|Exception
 block|{
 comment|// compare on non-persistent property
 name|List
+argument_list|<
+name|TestBean
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|TestBean
+argument_list|>
 argument_list|(
 literal|6
 argument_list|)
@@ -1018,10 +1030,16 @@ argument_list|)
 expr_stmt|;
 comment|// clone list and then order
 name|List
+argument_list|<
+name|TestBean
+argument_list|>
 name|orderedList
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|TestBean
+argument_list|>
 argument_list|(
 name|list
 argument_list|)
