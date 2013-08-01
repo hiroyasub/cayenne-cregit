@@ -867,6 +867,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|editor
+operator|.
+name|ObjCallbackMethod
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|event
 operator|.
 name|AttributeDisplayEvent
@@ -1609,7 +1625,7 @@ name|callbackType
 decl_stmt|;
 comment|/**          * currently selected callback methods          */
 specifier|private
-name|String
+name|ObjCallbackMethod
 index|[]
 name|callbackMethods
 decl_stmt|;
@@ -1669,7 +1685,7 @@ expr_stmt|;
 name|callbackMethods
 operator|=
 operator|new
-name|String
+name|ObjCallbackMethod
 index|[
 literal|0
 index|]
@@ -8179,7 +8195,7 @@ return|;
 block|}
 comment|/**      * @return currently selected callback methods      */
 specifier|public
-name|String
+name|ObjCallbackMethod
 index|[]
 name|getCurrentCallbackMethods
 parameter_list|()
@@ -8227,7 +8243,7 @@ specifier|public
 name|void
 name|setCurrentCallbackMethods
 parameter_list|(
-name|String
+name|ObjCallbackMethod
 index|[]
 name|callbackMethods
 parameter_list|)

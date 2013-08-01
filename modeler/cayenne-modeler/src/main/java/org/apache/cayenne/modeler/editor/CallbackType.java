@@ -19,15 +19,11 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|io
 operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|LifecycleEvent
+name|Serializable
 import|;
 end_import
 
@@ -39,9 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
+name|map
 operator|.
-name|ConversionUtil
+name|LifecycleEvent
 import|;
 end_import
 
@@ -67,6 +63,8 @@ begin_class
 specifier|public
 class|class
 name|CallbackType
+implements|implements
+name|Serializable
 block|{
 specifier|private
 name|LifecycleEvent
