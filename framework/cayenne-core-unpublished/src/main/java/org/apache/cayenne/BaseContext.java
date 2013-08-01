@@ -796,6 +796,8 @@ name|Override
 specifier|public
 parameter_list|<
 name|T
+extends|extends
+name|Persistent
 parameter_list|>
 name|T
 name|localObject
@@ -822,12 +824,7 @@ block|}
 name|ObjectId
 name|id
 init|=
-operator|(
-operator|(
-name|Persistent
-operator|)
 name|objectFromAnotherContext
-operator|)
 operator|.
 name|getObjectId
 argument_list|()
