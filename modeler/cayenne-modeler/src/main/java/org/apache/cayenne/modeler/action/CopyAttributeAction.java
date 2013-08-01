@@ -274,7 +274,7 @@ operator|=
 name|getProjectController
 argument_list|()
 operator|.
-name|getCurrentEmbAttrs
+name|getCurrentEmbAttributes
 argument_list|()
 expr_stmt|;
 block|}

@@ -3096,7 +3096,7 @@ comment|/**      * @return Array of selected EmbeddableAttribute      */
 specifier|public
 name|EmbeddableAttribute
 index|[]
-name|getCurrentEmbAttrs
+name|getCurrentEmbAttributes
 parameter_list|()
 block|{
 return|return
