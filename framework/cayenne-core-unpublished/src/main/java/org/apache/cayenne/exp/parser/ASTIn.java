@@ -247,7 +247,7 @@ operator|instanceof
 name|Collection
 condition|)
 block|{
-comment|/* handle the case where we have a collection of objects */
+comment|// handle the case where we have a collection of objects
 for|for
 control|(
 name|Object
@@ -261,9 +261,14 @@ control|)
 block|{
 if|if
 condition|(
-name|ASTEqual
+name|Evaluator
 operator|.
-name|evaluateAtomic
+name|evaluator
+argument_list|(
+name|obj
+argument_list|)
+operator|.
+name|eq
 argument_list|(
 name|obj
 argument_list|,
@@ -286,9 +291,14 @@ else|else
 block|{
 if|if
 condition|(
-name|ASTEqual
+name|Evaluator
 operator|.
-name|evaluateAtomic
+name|evaluator
+argument_list|(
+name|o1
+argument_list|)
+operator|.
+name|eq
 argument_list|(
 name|o1
 argument_list|,

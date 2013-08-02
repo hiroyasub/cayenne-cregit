@@ -228,9 +228,14 @@ index|]
 operator|!=
 literal|null
 operator|&&
-name|ASTEqual
+name|Evaluator
 operator|.
-name|evaluateAtomic
+name|evaluator
+argument_list|(
+name|o1
+argument_list|)
+operator|.
+name|eq
 argument_list|(
 name|o1
 argument_list|,

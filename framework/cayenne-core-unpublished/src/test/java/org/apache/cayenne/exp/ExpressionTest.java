@@ -1305,8 +1305,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// we change one object - so the objects are different now
-comment|// (PersistenceState
-comment|// different)
+comment|// (PersistenceState different)
 name|a1
 operator|.
 name|setArtistName
@@ -1346,7 +1345,7 @@ argument_list|(
 name|ex2
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertTrue
 argument_list|(
 name|ex2
 operator|.
