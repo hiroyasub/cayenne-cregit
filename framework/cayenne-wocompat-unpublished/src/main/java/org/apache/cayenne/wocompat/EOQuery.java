@@ -2094,6 +2094,8 @@ name|ExpressionException
 name|e
 parameter_list|)
 block|{
+try|try
+block|{
 name|keyExp
 operator|=
 name|entity
@@ -2103,6 +2105,17 @@ argument_list|(
 name|keyExp
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|Exception
+name|dbpathEx
+parameter_list|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 try|try
 block|{
