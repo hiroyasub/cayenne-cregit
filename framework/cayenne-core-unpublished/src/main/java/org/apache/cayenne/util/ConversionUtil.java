@@ -394,6 +394,20 @@ if|else if
 condition|(
 name|object
 operator|instanceof
+name|StringBuilder
+condition|)
+block|{
+return|return
+name|object
+operator|.
+name|toString
+argument_list|()
+return|;
+block|}
+if|else if
+condition|(
+name|object
+operator|instanceof
 name|StringBuffer
 condition|)
 block|{
