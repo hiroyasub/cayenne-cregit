@@ -1181,17 +1181,6 @@ return|return
 literal|false
 return|;
 block|}
-specifier|final
-name|boolean
-index|[]
-name|modFound
-init|=
-operator|new
-name|boolean
-index|[
-literal|1
-index|]
-decl_stmt|;
 name|int
 name|state
 init|=
@@ -1220,6 +1209,17 @@ literal|false
 return|;
 block|}
 comment|// check phantom mods
+specifier|final
+name|boolean
+index|[]
+name|modFound
+init|=
+operator|new
+name|boolean
+index|[
+literal|1
+index|]
+decl_stmt|;
 name|getClassDescriptor
 argument_list|()
 operator|.
