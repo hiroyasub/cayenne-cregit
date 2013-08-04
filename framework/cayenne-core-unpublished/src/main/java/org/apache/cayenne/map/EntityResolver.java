@@ -499,7 +499,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships,      * marking newly created relationships as "runtime".      *       * @since 3.0      * @deprecated since 3.2 does nothing      */
+comment|/**      * @since 3.0      * @deprecated since 3.2 does nothing. Previously it used to create runtime      *             ObjRelationships, that broke a lot of things.      */
 annotation|@
 name|Deprecated
 specifier|public
