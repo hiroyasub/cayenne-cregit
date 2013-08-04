@@ -242,9 +242,6 @@ comment|// test that an attribute that has ObjAttribute has its type configured
 name|DbAttribute
 name|dba1
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbe
 operator|.
 name|getAttribute
@@ -268,9 +265,6 @@ comment|// test that a numeric attribute has its type configured
 name|DbAttribute
 name|dba2
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbe
 operator|.
 name|getAttribute
@@ -294,9 +288,6 @@ comment|// test that an attribute that has no ObjAttribute has its type configur
 name|DbAttribute
 name|dba3
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbe
 operator|.
 name|getAttribute

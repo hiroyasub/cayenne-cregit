@@ -649,9 +649,6 @@ block|{
 name|DbRelationship
 name|relationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|currentEntity
 operator|.
 name|getRelationship
@@ -706,9 +703,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|currentEntity
 operator|.
 name|getAttribute
@@ -733,9 +727,6 @@ block|}
 name|DbRelationship
 name|relationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|currentEntity
 operator|.
 name|getRelationship

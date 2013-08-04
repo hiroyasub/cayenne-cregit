@@ -1052,7 +1052,7 @@ expr_stmt|;
 comment|// columns
 name|Iterator
 argument_list|<
-name|?
+name|DbAttribute
 argument_list|>
 name|it
 init|=
@@ -1108,9 +1108,6 @@ block|}
 name|DbAttribute
 name|column
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next

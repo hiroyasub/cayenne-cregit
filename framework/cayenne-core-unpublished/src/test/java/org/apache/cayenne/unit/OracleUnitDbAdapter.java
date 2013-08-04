@@ -256,7 +256,7 @@ name|Exception
 block|{
 comment|// avoid dropping constraints...
 block|}
-comment|/**      * Oracle 8i does not support more then 1 "LONG xx" column per table PAINTING_INFO      * need to be fixed.      */
+comment|/**      * Oracle 8i does not support more then 1 "LONG xx" column per table      * PAINTING_INFO need to be fixed.      */
 annotation|@
 name|Override
 specifier|public
@@ -290,9 +290,6 @@ block|{
 name|DbAttribute
 name|textReview
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|paintingInfo
 operator|.
 name|getAttribute
@@ -411,7 +408,8 @@ name|boolean
 name|supportsLobComparisons
 parameter_list|()
 block|{
-comment|// we can actually allow LOB comparisons with some Oracle trickery. E.g.:
+comment|// we can actually allow LOB comparisons with some Oracle trickery.
+comment|// E.g.:
 comment|// DBMS_LOB.SUBSTR(CLOB_COLUMN, LENGTH('string') + 1, 1) = 'string'
 return|return
 literal|false

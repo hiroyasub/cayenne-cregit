@@ -240,9 +240,6 @@ block|{
 name|DbAttribute
 name|a
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute

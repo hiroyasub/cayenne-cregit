@@ -392,9 +392,8 @@ argument_list|()
 control|)
 block|{
 comment|// iterate by copy to avoid concurrency modification errors on
-comment|// reflexive
-comment|// relationships
-name|Object
+comment|// reflexive relationships
+name|DbRelationship
 index|[]
 name|relationships
 init|=
@@ -404,36 +403,28 @@ name|getRelationships
 argument_list|()
 operator|.
 name|toArray
+argument_list|(
+operator|new
+name|DbRelationship
+index|[
+name|entity
+operator|.
+name|getRelationships
 argument_list|()
+operator|.
+name|size
+argument_list|()
+index|]
+argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|relationships
-operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
 name|DbRelationship
 name|relationship
-init|=
-operator|(
-name|DbRelationship
-operator|)
+range|:
 name|relationships
-index|[
-name|i
-index|]
-decl_stmt|;
+control|)
+block|{
 if|if
 condition|(
 name|relationship

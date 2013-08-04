@@ -208,9 +208,6 @@ block|{
 name|DbAttribute
 name|t
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|oe
 operator|.
 name|getDbEntity

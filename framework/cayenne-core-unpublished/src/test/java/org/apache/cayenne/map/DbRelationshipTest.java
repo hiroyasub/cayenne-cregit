@@ -233,9 +233,6 @@ expr_stmt|;
 name|DbRelationship
 name|dbRel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|galleryEnt
 operator|.
 name|getRelationship
@@ -285,9 +282,6 @@ comment|// start with "to many"
 name|DbRelationship
 name|r1
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|artistEnt
 operator|.
 name|getRelationship
@@ -332,9 +326,6 @@ comment|// start with "to one"
 name|DbRelationship
 name|r1
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|paintingEnt
 operator|.
 name|getRelationship

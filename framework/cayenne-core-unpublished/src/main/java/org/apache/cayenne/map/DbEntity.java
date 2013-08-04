@@ -1851,11 +1851,10 @@ block|}
 block|}
 block|}
 comment|// handle all of the relationships / joins that use the
-comment|// changed
-comment|// attribute
+comment|// changed attribute
 for|for
 control|(
-name|Relationship
+name|DbRelationship
 name|rel
 range|:
 name|ent
@@ -1869,12 +1868,7 @@ control|(
 name|DbJoin
 name|join
 range|:
-operator|(
-operator|(
-name|DbRelationship
-operator|)
 name|rel
-operator|)
 operator|.
 name|getJoins
 argument_list|()
@@ -2002,24 +1996,16 @@ argument_list|()
 expr_stmt|;
 for|for
 control|(
-name|Object
+name|DbAttribute
 name|next
 range|:
 name|getAttributes
 argument_list|()
 control|)
 block|{
-name|DbAttribute
-name|dba
-init|=
-operator|(
-name|DbAttribute
-operator|)
-name|next
-decl_stmt|;
 if|if
 condition|(
-name|dba
+name|next
 operator|.
 name|isPrimaryKey
 argument_list|()
@@ -2031,7 +2017,7 @@ name|primaryKey
 operator|.
 name|add
 argument_list|(
-name|dba
+name|next
 argument_list|)
 expr_stmt|;
 block|}
@@ -2103,24 +2089,16 @@ argument_list|()
 expr_stmt|;
 for|for
 control|(
-name|Object
+name|DbAttribute
 name|next
 range|:
 name|getAttributes
 argument_list|()
 control|)
 block|{
-name|DbAttribute
-name|dba
-init|=
-operator|(
-name|DbAttribute
-operator|)
-name|next
-decl_stmt|;
 if|if
 condition|(
-name|dba
+name|next
 operator|.
 name|isGenerated
 argument_list|()
@@ -2132,7 +2110,7 @@ name|generatedAttributes
 operator|.
 name|add
 argument_list|(
-name|dba
+name|next
 argument_list|)
 expr_stmt|;
 block|}

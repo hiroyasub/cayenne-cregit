@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based on one or  * more primary key/foreign key pairs.  */
+comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based  * on one or more primary key/foreign key pairs.  */
 end_comment
 
 begin_class
@@ -202,7 +202,8 @@ literal|2
 argument_list|)
 decl_stmt|;
 comment|// Is relationship from source to target points to dependent primary
-comment|// key (primary key column of destination table that is also a FK to the source
+comment|// key (primary key column of destination table that is also a FK to the
+comment|// source
 comment|// column)
 specifier|protected
 name|boolean
@@ -426,7 +427,7 @@ literal|"</db-relationship>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a target of this relationship. If relationship is not attached to a      * DbEntity, and DbEntity doesn't have a namespace, and exception is thrown.      */
+comment|/**      * Returns a target of this relationship. If relationship is not attached to      * a DbEntity, and DbEntity doesn't have a namespace, and exception is      * thrown.      */
 annotation|@
 name|Override
 specifier|public
@@ -537,7 +538,7 @@ name|sourceExtractor
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a new relationship with the same set of joins, but going in the opposite      * direction.      *       * @since 1.0.5      */
+comment|/**      * Creates a new relationship with the same set of joins, but going in the      * opposite direction.      *       * @since 1.0.5      */
 specifier|public
 name|DbRelationship
 name|createReverseRelationship
@@ -577,8 +578,10 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 12/24/2007 - one more case to handle - set reverse toDepPK = true
-comment|// if this relationship toDepPK is false, but the entities are joined on a PK...
+comment|// TODO: andrus 12/24/2007 - one more case to handle - set reverse
+comment|// toDepPK = true
+comment|// if this relationship toDepPK is false, but the entities are joined on
+comment|// a PK...
 comment|// on the other hand, these can still be two independent entities...
 if|if
 condition|(
@@ -656,17 +659,15 @@ return|return
 name|reverse
 return|;
 block|}
-comment|/**      * Returns DbRelationship that is the opposite of this DbRelationship. This means a      * relationship from this target entity to this source entity with the same join      * semantics. Returns null if no such relationship exists.      */
+comment|/**      * Returns DbRelationship that is the opposite of this DbRelationship. This      * means a relationship from this target entity to this source entity with      * the same join semantics. Returns null if no such relationship exists.      */
 specifier|public
 name|DbRelationship
 name|getReverseRelationship
 parameter_list|()
 block|{
-name|Entity
+name|DbEntity
 name|target
 init|=
-name|this
-operator|.
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
@@ -719,7 +720,7 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|Relationship
+name|DbRelationship
 name|rel
 range|:
 name|target
@@ -744,12 +745,7 @@ name|DbJoin
 argument_list|>
 name|otherJoins
 init|=
-operator|(
-operator|(
-name|DbRelationship
-operator|)
 name|rel
-operator|)
 operator|.
 name|getJoins
 argument_list|()
@@ -827,9 +823,6 @@ name|joinsMatch
 condition|)
 block|{
 return|return
-operator|(
-name|DbRelationship
-operator|)
 name|rel
 return|;
 block|}
@@ -838,7 +831,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns true if the relationship points to at least one of the PK columns of the      * target entity.      *       * @since 1.1      */
+comment|/**      * Returns true if the relationship points to at least one of the PK columns      * of the target entity.      *       * @since 1.1      */
 specifier|public
 name|boolean
 name|isToPK
@@ -940,7 +933,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if a method<code>isToDependentPK</code> of reverse      * relationship of this relationship returns<code>true</code>.      */
+comment|/**      * Returns<code>true</code> if a method<code>isToDependentPK</code> of      * reverse relationship of this relationship returns<code>true</code>.      */
 specifier|public
 name|boolean
 name|isToMasterPK
@@ -980,7 +973,7 @@ else|:
 literal|false
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if relationship from source to target points to dependent      * primary key. Dependent PK is a primary key column of the destination table that is      * also a FK to the source column.      */
+comment|/**      * Returns<code>true</code> if relationship from source to target points to      * dependent primary key. Dependent PK is a primary key column of the      * destination table that is also a FK to the source column.      */
 specifier|public
 name|boolean
 name|isToDependentPK
@@ -1088,7 +1081,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns a list of joins. List is returned by reference, so any modifications of the      * list will affect this relationship.      */
+comment|/**      * Returns a list of joins. List is returned by reference, so any      * modifications of the list will affect this relationship.      */
 specifier|public
 name|List
 argument_list|<
@@ -1185,7 +1178,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates a snapshot of primary key attributes of a target object of this      * relationship based on a snapshot of a source. Only "to-one" relationships are      * supported. Returns null if relationship does not point to an object. Throws      * CayenneRuntimeException if relationship is "to many" or if snapshot is missing id      * components.      */
+comment|/**      * Creates a snapshot of primary key attributes of a target object of this      * relationship based on a snapshot of a source. Only "to-one" relationships      * are supported. Returns null if relationship does not point to an object.      * Throws CayenneRuntimeException if relationship is "to many" or if      * snapshot is missing id components.      */
 specifier|public
 name|Map
 argument_list|<
@@ -1377,7 +1370,8 @@ literal|null
 condition|)
 block|{
 comment|// some keys may be nulls and some not in case of multi-key
-comment|// relationships where PK and FK partially overlap (see CAY-284)
+comment|// relationships where PK and FK partially overlap (see
+comment|// CAY-284)
 if|if
 condition|(
 operator|!
@@ -1449,7 +1443,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Common code to srcSnapshotWithTargetSnapshot. Both are functionally the same,      * except for the name, and whether they operate on a toMany or a toOne.      */
+comment|/**      * Common code to srcSnapshotWithTargetSnapshot. Both are functionally the      * same, except for the name, and whether they operate on a toMany or a      * toOne.      */
 specifier|private
 name|Map
 argument_list|<
@@ -1598,7 +1592,7 @@ return|return
 name|idMap
 return|;
 block|}
-comment|/**      * Creates a snapshot of foreign key attributes of a source object of this      * relationship based on a snapshot of a target. Only "to-one" relationships are      * supported. Throws CayenneRuntimeException if relationship is "to many".      */
+comment|/**      * Creates a snapshot of foreign key attributes of a source object of this      * relationship based on a snapshot of a target. Only "to-one" relationships      * are supported. Throws CayenneRuntimeException if relationship is      * "to many".      */
 specifier|public
 name|Map
 argument_list|<
@@ -1638,7 +1632,7 @@ name|targetSnapshot
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a snapshot of primary key attributes of a source object of this      * relationship based on a snapshot of a target. Only "to-many" relationships are      * supported. Throws CayenneRuntimeException if relationship is "to one".      */
+comment|/**      * Creates a snapshot of primary key attributes of a source object of this      * relationship based on a snapshot of a target. Only "to-many"      * relationships are supported. Throws CayenneRuntimeException if      * relationship is "to one".      */
 specifier|public
 name|Map
 argument_list|<

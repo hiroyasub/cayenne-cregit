@@ -421,7 +421,7 @@ literal|"GENERATED_JOIN"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests a bug casued by the ID Java type mismatch vs the default JDBC type of the ID      * column.      */
+comment|/**      * Tests a bug casued by the ID Java type mismatch vs the default JDBC type      * of the ID column.      */
 specifier|public
 name|void
 name|testCAY823
@@ -588,7 +588,8 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-comment|// this will throw an exception if id wasn't generated one way or another
+comment|// this will throw an exception if id wasn't generated one way or
+comment|// another
 name|int
 name|id
 init|=
@@ -653,7 +654,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// before saving objects, let's manually access PKGenerator to get a base PK value
+comment|// before saving objects, let's manually access PKGenerator to get a
+comment|// base PK value
 comment|// for comparison
 name|DbEntity
 name|joinTableEntity
@@ -674,9 +676,6 @@ decl_stmt|;
 name|DbAttribute
 name|pkAttribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|joinTableEntity
 operator|.
 name|getAttribute
@@ -756,7 +755,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|// this is a leap of faith that autoincrement-based IDs will not match
-comment|// PkGenertor provided ids... This sorta works though if pk generator has a 200
+comment|// PkGenertor provided ids... This sorta works though if pk generator
+comment|// has a 200
 comment|// base value
 if|if
 condition|(
@@ -896,7 +896,7 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Tests that insert in two tables with identity pk does not generate a conflict. See      * CAY-341 for the original bug.      */
+comment|/**      * Tests that insert in two tables with identity pk does not generate a      * conflict. See CAY-341 for the original bug.      */
 specifier|public
 name|void
 name|testMultipleNewObjectsSeparateTables
@@ -1190,7 +1190,8 @@ name|supportsGeneratedKeys
 argument_list|()
 condition|)
 block|{
-comment|// only works for generated keys, as the entity tested has one Cayenne
+comment|// only works for generated keys, as the entity tested has one
+comment|// Cayenne
 comment|// auto-pk and one generated key
 name|String
 name|masterName
@@ -1608,7 +1609,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// fail("TODO: test insert with DEFAULT generated column...need custom SQL to
+comment|// fail("TODO: test insert with DEFAULT generated column...need custom
+comment|// SQL to
 comment|// build such table");
 block|}
 specifier|public

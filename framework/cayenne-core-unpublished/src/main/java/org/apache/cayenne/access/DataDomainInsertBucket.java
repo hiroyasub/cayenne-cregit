@@ -41,16 +41,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -435,7 +425,8 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|// we need to insert even if there is no changes to default values
+comment|// we need to insert even if there is no changes to default
+comment|// values
 comment|// so creating an empty changes map
 if|if
 condition|(
@@ -718,7 +709,8 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|// primitive 0 has to be treated as NULL, or otherwise we
+comment|// primitive 0 has to be treated as NULL, or
+comment|// otherwise we
 comment|// can't generate PK for POJO's
 block|}
 else|else
@@ -760,7 +752,8 @@ condition|)
 block|{
 continue|continue;
 block|}
-comment|// only a single key can be generated from DB... if this is done already
+comment|// only a single key can be generated from DB... if this is done
+comment|// already
 comment|// in this loop, we must bail out.
 if|if
 condition|(
@@ -836,12 +829,11 @@ name|DbAttribute
 name|attribute
 parameter_list|)
 block|{
-name|Iterator
-argument_list|<
-name|?
-argument_list|>
-name|it
-init|=
+for|for
+control|(
+name|DbRelationship
+name|dbRel
+range|:
 name|attribute
 operator|.
 name|getEntity
@@ -849,29 +841,8 @@ argument_list|()
 operator|.
 name|getRelationships
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbRelationship
-name|dbRel
-init|=
-operator|(
-name|DbRelationship
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 operator|!

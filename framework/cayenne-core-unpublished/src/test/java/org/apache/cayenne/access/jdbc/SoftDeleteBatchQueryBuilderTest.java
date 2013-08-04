@@ -445,9 +445,6 @@ name|Collections
 operator|.
 name|singletonList
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute
@@ -542,9 +539,6 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute
@@ -552,9 +546,6 @@ argument_list|(
 literal|"SOFT_TEST_ID"
 argument_list|)
 argument_list|,
-operator|(
-name|DbAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute
@@ -674,9 +665,6 @@ name|Collections
 operator|.
 name|singletonList
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute

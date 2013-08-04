@@ -420,9 +420,6 @@ block|{
 name|DbRelationship
 name|rel
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject

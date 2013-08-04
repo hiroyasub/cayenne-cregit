@@ -481,7 +481,8 @@ return|;
 block|}
 comment|/**      * Returns index.eomodeld contents as a Map.      *       * @since 3.2      */
 comment|// TODO: refactor EOModelHelper to provide a similar method without loading
-comment|// all entity files in memory... here we simply copied stuff from EOModelHelper
+comment|// all entity files in memory... here we simply copied stuff from
+comment|// EOModelHelper
 specifier|public
 name|Map
 name|loadModeIndex
@@ -628,7 +629,7 @@ name|generateClientClass
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs EOModel loading.      *       * @param url URL of ".eomodeld" directory.      */
+comment|/**      * Performs EOModel loading.      *       * @param url      *            URL of ".eomodeld" directory.      */
 specifier|public
 name|DataMap
 name|loadEOModel
@@ -648,7 +649,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs EOModel loading.      *       * @param url URL of ".eomodeld" directory.      * @param generateClientClass if true then loading of EOModel is java client classes      *            aware and the following processing will work with Java client class      *            settings of the EOModel.      */
+comment|/**      * Performs EOModel loading.      *       * @param url      *            URL of ".eomodeld" directory.      * @param generateClientClass      *            if true then loading of EOModel is java client classes aware      *            and the following processing will work with Java client class      *            settings of the EOModel.      */
 specifier|public
 name|DataMap
 name|loadEOModel
@@ -847,7 +848,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// after all normal relationships are loaded, process flattened relationships
+comment|// after all normal relationships are loaded, process flattened
+comment|// relationships
 name|it
 operator|=
 name|modelNames
@@ -1026,7 +1028,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Returns whether an Entity is an EOF EOPrototypes entity. According to EOF      * conventions EOPrototypes and EO[Adapter]Prototypes entities are considered to be      * prototypes.      *       * @since 1.1      */
+comment|/**      * Returns whether an Entity is an EOF EOPrototypes entity. According to EOF      * conventions EOPrototypes and EO[Adapter]Prototypes entities are      * considered to be prototypes.      *       * @since 1.1      */
 specifier|protected
 name|boolean
 name|isPrototypesEntity
@@ -1044,7 +1046,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an returns new EOModelHelper to process EOModel. Exists mostly for the      * benefit of subclasses.      */
+comment|/**      * Creates an returns new EOModelHelper to process EOModel. Exists mostly      * for the benefit of subclasses.      */
 specifier|protected
 name|EOModelHelper
 name|makeHelper
@@ -1327,7 +1329,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// ... if inheritance is involved and parent hierarchy uses the same DBEntity,
+comment|// ... if inheritance is involved and parent hierarchy uses the same
+comment|// DBEntity,
 comment|// do not create a DbEntity...
 name|boolean
 name|createDbEntity
@@ -1528,7 +1531,7 @@ return|return
 name|objEntity
 return|;
 block|}
-comment|/**      * Create ObjAttributes of the specified entity, as well as DbAttributes of the      * corresponding DbEntity.      */
+comment|/**      * Create ObjAttributes of the specified entity, as well as DbAttributes of      * the corresponding DbEntity.      */
 specifier|protected
 name|void
 name|makeAttributes
@@ -2000,8 +2003,10 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// create DbAttribute...since EOF allows the same column name for
-comment|// more than one Java attribute, we need to check for name duplicates
+comment|// create DbAttribute...since EOF allows the same column
+comment|// name for
+comment|// more than one Java attribute, we need to check for name
+comment|// duplicates
 name|int
 name|i
 init|=
@@ -2149,7 +2154,8 @@ argument_list|(
 literal|"allowsNull"
 argument_list|)
 decl_stmt|;
-comment|// TODO: Unclear that allowsNull should be inherited from EOPrototypes
+comment|// TODO: Unclear that allowsNull should be inherited from
+comment|// EOPrototypes
 comment|// if (null == allowsNull) allowsNull =
 comment|// prototypeAttrMap.get("allowsNull");;
 name|dbAttr
@@ -2243,7 +2249,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|// set name instead of the actual attribute, as it may be inherited....
+comment|// set name instead of the actual attribute, as it may be
+comment|// inherited....
 name|attr
 operator|.
 name|setDbAttributePath
@@ -2363,7 +2370,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/**      * Create ObjRelationships of the specified entity, as well as DbRelationships of the      * corresponding DbEntity.      */
+comment|/**      * Create ObjRelationships of the specified entity, as well as      * DbRelationships of the corresponding DbEntity.      */
 specifier|protected
 name|void
 name|makeRelationships
@@ -2640,13 +2647,11 @@ literal|null
 condition|)
 block|{
 comment|// in case of inheritance EOF stores duplicates of all inherited
-comment|// relationships, so we must skip this relationship in DB entity if it is
+comment|// relationships, so we must skip this relationship in DB entity
+comment|// if it is
 comment|// already there...
 name|dbRel
 operator|=
-operator|(
-name|DbRelationship
-operator|)
 name|dbSrc
 operator|.
 name|getRelationship
@@ -2758,7 +2763,8 @@ argument_list|(
 name|dbRel
 argument_list|)
 decl_stmt|;
-comment|// find source attribute dictionary and extract the column name
+comment|// find source attribute dictionary and extract the
+comment|// column name
 name|String
 name|sourceAttributeName
 init|=
@@ -2883,7 +2889,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Create reverse DbRelationships that were not created so far, since Cayenne requires      * them.      *       * @since 1.0.5      */
+comment|/**      * Create reverse DbRelationships that were not created so far, since      * Cayenne requires them.      *       * @since 1.0.5      */
 specifier|protected
 name|void
 name|makeReverseDbRelationships
@@ -2909,45 +2915,24 @@ throw|;
 block|}
 comment|// iterate over a copy of the collection, since in case of
 comment|// reflexive relationships, we may modify source entity relationship map
-name|Collection
-name|clone
-init|=
+for|for
+control|(
+name|DbRelationship
+name|relationship
+range|:
 operator|new
 name|ArrayList
+argument_list|<
+name|DbRelationship
+argument_list|>
 argument_list|(
 name|dbEntity
 operator|.
 name|getRelationships
 argument_list|()
 argument_list|)
-decl_stmt|;
-name|Iterator
-name|it
-init|=
-name|clone
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbRelationship
-name|relationship
-init|=
-operator|(
-name|DbRelationship
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|relationship
@@ -3200,8 +3185,10 @@ operator|.
 name|nextToken
 argument_list|()
 decl_stmt|;
-comment|// get relationship info and reset entityInfo, so that we could use
-comment|// entityInfo state as an indicator of valid flat relationship enpoint
+comment|// get relationship info and reset entityInfo, so that we could
+comment|// use
+comment|// entityInfo state as an indicator of valid flat relationship
+comment|// enpoint
 comment|// outside the loop
 name|Collection
 name|relationshipInfo
@@ -3329,7 +3316,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Locates an attribute map matching the name and returns column name for this      * attribute.      *       * @since 1.1      */
+comment|/**      * Locates an attribute map matching the name and returns column name for      * this attribute.      *       * @since 1.1      */
 name|String
 name|columnName
 parameter_list|(
@@ -3410,7 +3397,8 @@ return|return
 literal|null
 return|;
 block|}
-comment|// sorts ObjEntities so that subentities in inheritance hierarchy are shown last
+comment|// sorts ObjEntities so that subentities in inheritance hierarchy are shown
+comment|// last
 specifier|final
 class|class
 name|InheritanceComparator
@@ -3557,7 +3545,8 @@ return|return
 literal|1
 return|;
 block|}
-comment|// entity goes first if it is a direct or indirect superentity of another
+comment|// entity goes first if it is a direct or indirect superentity of
+comment|// another
 comment|// one
 if|if
 condition|(

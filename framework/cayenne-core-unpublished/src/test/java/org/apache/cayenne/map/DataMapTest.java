@@ -990,7 +990,8 @@ operator|new
 name|DataMap
 argument_list|()
 decl_stmt|;
-comment|// Give them different class-names... we are only testing for the same entity name
+comment|// Give them different class-names... we are only testing for the same
+comment|// entity name
 comment|// being a problem
 name|ObjEntity
 name|e1
@@ -1066,7 +1067,8 @@ operator|new
 name|DataMap
 argument_list|()
 decl_stmt|;
-comment|// It should be possible to cleanly remove and then add the same entity again.
+comment|// It should be possible to cleanly remove and then add the same entity
+comment|// again.
 comment|// Uncovered the need for this while testing modeller manually.
 name|ObjEntity
 name|e
@@ -1781,9 +1783,6 @@ comment|// create a twisty maze of intermingled relationships.
 name|DbEntity
 name|e1
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject
@@ -1805,9 +1804,6 @@ expr_stmt|;
 name|DbEntity
 name|e2
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject
@@ -1829,9 +1825,6 @@ expr_stmt|;
 name|DbRelationship
 name|r1
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject
@@ -1860,9 +1853,6 @@ expr_stmt|;
 name|DbRelationship
 name|r2
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject
@@ -1891,9 +1881,6 @@ expr_stmt|;
 name|DbRelationship
 name|r3
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject

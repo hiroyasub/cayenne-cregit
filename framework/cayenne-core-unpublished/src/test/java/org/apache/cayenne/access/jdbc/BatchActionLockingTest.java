@@ -411,9 +411,6 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute
@@ -421,9 +418,6 @@ argument_list|(
 literal|"LOCKING_TEST_ID"
 argument_list|)
 argument_list|,
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute
@@ -657,9 +651,6 @@ name|Arrays
 operator|.
 name|asList
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute
@@ -667,9 +658,6 @@ argument_list|(
 literal|"LOCKING_TEST_ID"
 argument_list|)
 argument_list|,
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute

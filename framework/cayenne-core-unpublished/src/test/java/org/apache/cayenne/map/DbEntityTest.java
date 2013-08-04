@@ -259,9 +259,6 @@ expr_stmt|;
 name|DbAttribute
 name|pk2
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|d2
 operator|.
 name|getAttribute
@@ -320,9 +317,6 @@ expr_stmt|;
 name|DbAttribute
 name|generated2
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|d2
 operator|.
 name|getAttribute
@@ -461,9 +455,6 @@ expr_stmt|;
 name|DbAttribute
 name|pk2
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|d2
 operator|.
 name|getAttribute
@@ -522,9 +513,6 @@ expr_stmt|;
 name|DbAttribute
 name|generated2
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|d2
 operator|.
 name|getAttribute

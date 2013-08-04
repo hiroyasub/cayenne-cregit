@@ -2130,9 +2130,6 @@ name|ae
 operator|.
 name|getAttributeForDbAttribute
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|dae
 operator|.
 name|getAttribute
@@ -2148,9 +2145,6 @@ name|ae
 operator|.
 name|getAttributeForDbAttribute
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|dae
 operator|.
 name|getAttribute
@@ -2210,9 +2204,6 @@ name|ae
 operator|.
 name|getRelationshipForDbRelationship
 argument_list|(
-operator|(
-name|DbRelationship
-operator|)
 name|dae
 operator|.
 name|getRelationship

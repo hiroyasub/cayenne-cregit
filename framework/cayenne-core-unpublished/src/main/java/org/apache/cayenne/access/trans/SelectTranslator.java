@@ -2392,9 +2392,6 @@ comment|// so do it manually..
 name|DbAttribute
 name|dbAttribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute

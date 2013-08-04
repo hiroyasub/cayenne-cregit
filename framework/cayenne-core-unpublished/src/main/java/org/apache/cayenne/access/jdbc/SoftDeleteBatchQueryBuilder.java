@@ -358,9 +358,6 @@ block|{
 name|DbAttribute
 name|attr
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|query
 operator|.
 name|getDbEntity

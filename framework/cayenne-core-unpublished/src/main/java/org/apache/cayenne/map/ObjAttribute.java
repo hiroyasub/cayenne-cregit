@@ -242,6 +242,23 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|ObjEntity
+name|getEntity
+parameter_list|()
+block|{
+return|return
+operator|(
+name|ObjEntity
+operator|)
+name|super
+operator|.
+name|getEntity
+argument_list|()
+return|;
+block|}
 comment|/**      * @since 3.1      */
 specifier|public
 parameter_list|<
@@ -266,7 +283,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns Java class of an object property described by this attribute. Wraps any      * thrown exceptions into CayenneRuntimeException.      */
+comment|/**      * Returns Java class of an object property described by this attribute.      * Wraps any thrown exceptions into CayenneRuntimeException.      */
 specifier|public
 name|Class
 argument_list|<
@@ -470,7 +487,7 @@ literal|"/>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns fully qualified Java class name of the object property represented by this      * attribute.      */
+comment|/**      * Returns fully qualified Java class name of the object property      * represented by this attribute.      */
 specifier|public
 name|String
 name|getType
@@ -480,7 +497,7 @@ return|return
 name|type
 return|;
 block|}
-comment|/**      * Sets the type of the data object property. Type is expected to be a fully qualified      * Java class name.      */
+comment|/**      * Sets the type of the data object property. Type is expected to be a fully      * qualified Java class name.      */
 specifier|public
 name|void
 name|setType
@@ -865,9 +882,6 @@ block|{
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbEnt
 operator|.
 name|getAttribute
@@ -906,7 +920,7 @@ name|dbAttributePath
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the the name of the mapped DbAttribute. This value is the same as      * "dbAttributePath" for regular attributes mapped to columns. It is equql to the last      * path component for the flattened attributes.      */
+comment|/**      * Returns the the name of the mapped DbAttribute. This value is the same as      * "dbAttributePath" for regular attributes mapped to columns. It is equql      * to the last path component for the flattened attributes.      */
 specifier|public
 name|String
 name|getDbAttributeName
@@ -992,7 +1006,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a dot-separated path that starts in the root DbEntity that maps to this      * attribute's ObjEntity and spans zero or more relationships, always ending in a      * DbAttribute name.      */
+comment|/**      * Returns a dot-separated path that starts in the root DbEntity that maps      * to this attribute's ObjEntity and spans zero or more relationships,      * always ending in a DbAttribute name.      */
 specifier|public
 name|String
 name|getDbAttributePath
@@ -1002,7 +1016,7 @@ return|return
 name|dbAttributePath
 return|;
 block|}
-comment|/**      * Returns whether this attribute is "flattened", meaning that it points to a column      * from an entity other than the DbEntity mapped to the parent ObjEntity.      *       * @since 3.0      */
+comment|/**      * Returns whether this attribute is "flattened", meaning that it points to      * a column from an entity other than the DbEntity mapped to the parent      * ObjEntity.      *       * @since 3.0      */
 specifier|public
 name|boolean
 name|isFlattened
@@ -1111,7 +1125,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// expose PK attribute names - the client may need those to build ObjectIds
+comment|// expose PK attribute names - the client may need those to build
+comment|// ObjectIds
 if|if
 condition|(
 name|dbAttribute

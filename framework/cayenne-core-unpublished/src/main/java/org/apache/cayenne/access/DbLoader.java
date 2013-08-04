@@ -486,7 +486,7 @@ argument_list|(
 literal|"auto_pk_for_table"
 argument_list|,
 literal|"auto_pk_for_table;1"
-comment|/*                                                                 * the last name                                                                 * is some Mac OS                                                                 * X Sybase                                                                 * artifact                                                                 */
+comment|/*                                    * the last name is some Mac OS X Sybase                                    * artifact                                    */
 argument_list|)
 decl_stmt|;
 specifier|public
@@ -642,7 +642,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates new DbLoader with specified naming strategy.      *      * @since 3.0      */
+comment|/**      * Creates new DbLoader with specified naming strategy.      *       * @since 3.0      */
 specifier|public
 name|DbLoader
 parameter_list|(
@@ -724,7 +724,7 @@ operator|=
 name|creatingMeaningfulPK
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the generator should map all primary key columns as      * ObjAttributes.      *      * @since 3.0      */
+comment|/**      * Returns true if the generator should map all primary key columns as      * ObjAttributes.      *       * @since 3.0      */
 specifier|public
 name|boolean
 name|isCreatingMeaningfulPK
@@ -734,7 +734,7 @@ return|return
 name|creatingMeaningfulPK
 return|;
 block|}
-comment|/**      * Returns database connection used by this DbLoader.      *      * @since 3.0      */
+comment|/**      * Returns database connection used by this DbLoader.      *       * @since 3.0      */
 specifier|public
 name|Connection
 name|getConnection
@@ -744,7 +744,7 @@ return|return
 name|connection
 return|;
 block|}
-comment|/**      * Returns a name of a generic class that should be used for all      * ObjEntities. The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * null (which is the default), DbLoader will assign each entity a unique      * class name derived from the table name.      *      * @since 1.2      */
+comment|/**      * Returns a name of a generic class that should be used for all      * ObjEntities. The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * null (which is the default), DbLoader will assign each entity a unique      * class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|String
 name|getGenericClassName
@@ -754,7 +754,7 @@ return|return
 name|genericClassName
 return|;
 block|}
-comment|/**      * Sets a name of a generic class that should be used for all ObjEntities.      * The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * set to null (which is the default), DbLoader will assign each entity a      * unique class name derived from the table name.      *      * @since 1.2      */
+comment|/**      * Sets a name of a generic class that should be used for all ObjEntities.      * The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * set to null (which is the default), DbLoader will assign each entity a      * unique class name derived from the table name.      *       * @since 1.2      */
 specifier|public
 name|void
 name|setGenericClassName
@@ -770,7 +770,7 @@ operator|=
 name|genericClassName
 expr_stmt|;
 block|}
-comment|/**      * Returns DbAdapter associated with this DbLoader.      *      * @since 1.1      */
+comment|/**      * Returns DbAdapter associated with this DbLoader.      *       * @since 1.1      */
 specifier|public
 name|DbAdapter
 name|getAdapter
@@ -793,7 +793,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Retrieves catalogs for the database associated with this DbLoader.      *      * @return List with the catalog names, empty Array if none found.      */
+comment|/**      * Retrieves catalogs for the database associated with this DbLoader.      *       * @return List with the catalog names, empty Array if none found.      */
 specifier|public
 name|List
 argument_list|<
@@ -867,7 +867,7 @@ return|return
 name|catalogs
 return|;
 block|}
-comment|/**      * Retrieves the schemas for the database.      *      * @return List with the schema names, empty Array if none found.      */
+comment|/**      * Retrieves the schemas for the database.      *       * @return List with the schema names, empty Array if none found.      */
 specifier|public
 name|List
 argument_list|<
@@ -941,7 +941,7 @@ return|return
 name|schemas
 return|;
 block|}
-comment|/**      * Returns all the table types for the given database. Types may be such as      * "TABLE", "VIEW", "SYSTEM TABLE", etc.      *      * @return List of Strings, empty array if nothing found.      */
+comment|/**      * Returns all the table types for the given database. Types may be such as      * "TABLE", "VIEW", "SYSTEM TABLE", etc.      *       * @return List of Strings, empty array if nothing found.      */
 specifier|public
 name|List
 argument_list|<
@@ -1013,7 +1013,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *      * @param catalogPattern      *            The name of the catalog, may be null.      * @param schemaPattern      *            The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern      *            The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types      *            The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
+comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *       * @param catalogPattern      *            The name of the catalog, may be null.      * @param schemaPattern      *            The pattern for schema name, use "%" for wildcard.      * @param tableNamePattern      *            The pattern for table names, % for wildcard, if null or ""      *            defaults to "%".      * @param types      *            The types of table names to retrieve, null returns all types.      * @return List of TableInfo objects, empty array if nothing found.      */
 specifier|public
 name|List
 argument_list|<
@@ -1246,7 +1246,7 @@ return|return
 name|tables
 return|;
 block|}
-comment|/**      * Loads dbEntities for the specified tables.      *      * @param map      *            DataMap to be populated with DbEntities.      * @param tables      *            The list of org.apache.cayenne.ashwood.dbutil.Table objects      *            for which DbEntities must be created.      * @return false if loading must be immediately aborted.      */
+comment|/**      * Loads dbEntities for the specified tables.      *       * @param map      *            DataMap to be populated with DbEntities.      * @param tables      *            The list of org.apache.cayenne.ashwood.dbutil.Table objects      *            for which DbEntities must be created.      * @return false if loading must be immediately aborted.      */
 specifier|public
 name|boolean
 name|loadDbEntities
@@ -1791,9 +1791,6 @@ decl_stmt|;
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute
@@ -2590,9 +2587,6 @@ comment|// skip invalid joins...
 name|DbAttribute
 name|pkAtt
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|pkEntity
 operator|.
 name|getAttribute
@@ -2621,9 +2615,6 @@ block|}
 name|DbAttribute
 name|fkAtt
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|fkEntity
 operator|.
 name|getAttribute
@@ -3125,7 +3116,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *      * @since 1.0.7      * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
+comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *       * @since 1.0.7      * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
 specifier|public
 name|DataMap
 name|loadDataMapFromDB
@@ -3183,7 +3174,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *      * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
+comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *       * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
 specifier|public
 name|DataMap
 name|loadDataMapFromDB
@@ -3265,7 +3256,7 @@ name|clearResultSets
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 3.2      */
+comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *       * @since 3.2      */
 specifier|public
 name|void
 name|load
@@ -3350,7 +3341,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *      * @since 1.1      * @deprecated since 3.2 use      *             {@link #loadProcedures(DataMap, String, String, String)} that      *             supports "catalog" pattern.      */
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 1.1      * @deprecated since 3.2 use      *             {@link #loadProcedures(DataMap, String, String, String)} that      *             supports "catalog" pattern.      */
 specifier|public
 name|void
 name|loadProceduresFromDB
@@ -3379,7 +3370,7 @@ name|namePattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *      * @since 3.2      */
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 3.2      */
 specifier|public
 name|void
 name|loadProcedures
@@ -4012,7 +4003,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets new naming strategy for reverse engineering      *      * @since 3.0      */
+comment|/**      * Sets new naming strategy for reverse engineering      *       * @since 3.0      */
 specifier|public
 name|void
 name|setNamingStrategy

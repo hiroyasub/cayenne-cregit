@@ -276,9 +276,6 @@ operator|.
 name|dbEntity
 operator|=
 operator|(
-name|DbEntity
-operator|)
-operator|(
 operator|(
 name|DbAttribute
 operator|)

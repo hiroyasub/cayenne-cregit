@@ -111,20 +111,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Attribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbAttribute
 import|;
 end_import
@@ -407,7 +393,7 @@ block|}
 comment|// find identity attributes
 for|for
 control|(
-name|Attribute
+name|DbAttribute
 name|attribute
 range|:
 name|query
@@ -421,12 +407,7 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
-operator|(
-name|DbAttribute
-operator|)
 name|attribute
-operator|)
 operator|.
 name|isGenerated
 argument_list|()

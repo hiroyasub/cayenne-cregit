@@ -1190,9 +1190,6 @@ specifier|final
 name|DbAttribute
 name|attribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|dbEntity
 operator|.
 name|getAttribute

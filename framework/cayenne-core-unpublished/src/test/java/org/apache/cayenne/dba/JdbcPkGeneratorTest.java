@@ -208,9 +208,6 @@ decl_stmt|;
 name|DbAttribute
 name|pkAttribute
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|artistEntity
 operator|.
 name|getAttribute
