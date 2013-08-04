@@ -461,6 +461,8 @@ return|return
 name|noop
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isNoop
@@ -509,6 +511,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -528,6 +532,8 @@ name|handler
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo
