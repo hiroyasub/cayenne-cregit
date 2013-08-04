@@ -209,6 +209,20 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
+name|ArcProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|reflect
+operator|.
 name|AttributeProperty
 import|;
 end_import
@@ -224,20 +238,6 @@ operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|reflect
-operator|.
-name|PropertyDescriptor
 import|;
 end_import
 
@@ -298,7 +298,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A dynamic GraphDiff that represents a delta between object simple properties at diff  * creation time and its current state.  */
+comment|/**  * A dynamic GraphDiff that represents a delta between object simple properties  * at diff creation time and its current state.  */
 end_comment
 
 begin_class
@@ -379,7 +379,8 @@ name|getObjectId
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// retain the object, as ObjectStore may have weak references to registered
+comment|// retain the object, as ObjectStore may have weak references to
+comment|// registered
 comment|// objects and we can't allow it to deallocate dirty objects.
 name|this
 operator|.
@@ -429,7 +430,8 @@ operator|.
 name|getPersistenceState
 argument_list|()
 decl_stmt|;
-comment|// take snapshot of simple properties and arcs used for optimistic locking..
+comment|// take snapshot of simple properties and arcs used for optimistic
+comment|// locking..
 if|if
 condition|(
 name|state
@@ -631,7 +633,8 @@ name|ClassDescriptor
 name|getClassDescriptor
 parameter_list|()
 block|{
-comment|// class descriptor is initiated in constructor, but is nullified on serialization
+comment|// class descriptor is initiated in constructor, but is nullified on
+comment|// serialization
 if|if
 condition|(
 name|classDescriptor
@@ -911,9 +914,12 @@ operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|PropertyDescriptor
+name|ArcProperty
 name|property
 init|=
+operator|(
+name|ArcProperty
+operator|)
 name|getClassDescriptor
 argument_list|()
 operator|.
@@ -922,7 +928,8 @@ argument_list|(
 name|arcId
 argument_list|)
 decl_stmt|;
-comment|// note that some collection properties implement 'SingleObjectArcProperty',
+comment|// note that some collection properties implement
+comment|// 'SingleObjectArcProperty',
 comment|// so we cant't do 'instanceof SingleObjectArcProperty'
 comment|// TODO: andrus, 3.22.2006 - should we consider this a bug?
 if|if
@@ -933,37 +940,13 @@ name|ToManyProperty
 condition|)
 block|{
 comment|// record flattened op changes
-name|ObjEntity
-name|entity
-init|=
-name|object
-operator|.
-name|getObjectContext
-argument_list|()
-operator|.
-name|getEntityResolver
-argument_list|()
-operator|.
-name|getObjEntity
-argument_list|(
-name|entityName
-argument_list|)
-decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
-name|entity
-operator|.
-name|getRelationship
-argument_list|(
 name|property
 operator|.
-name|getName
+name|getRelationship
 argument_list|()
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
