@@ -161,6 +161,14 @@ name|MULTINODE_PROJECT
 init|=
 literal|"cayenne-multinode.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|ONEWAY_PROJECT
+init|=
+literal|"cayenne-oneway-rels.xml"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final

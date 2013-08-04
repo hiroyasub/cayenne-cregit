@@ -422,7 +422,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of the AccessStack that has a single DataNode per DataMap.  */
+comment|/**  * Default implementation of the AccessStack that has a single DataNode per  * DataMap.  */
 end_comment
 
 begin_class
@@ -500,6 +500,8 @@ block|,
 literal|"inheritance-single-table1.map.xml"
 block|,
 literal|"inheritance-vertical.map.xml"
+block|,
+literal|"oneway-rels.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded
@@ -619,7 +621,8 @@ expr_stmt|;
 return|return;
 block|}
 comment|// generate schema combining all DataMaps that require schema support.
-comment|// Schema generation is done like that instead of per DataMap on demand to avoid
+comment|// Schema generation is done like that instead of per DataMap on demand
+comment|// to avoid
 comment|// conflicts when dropping and generating PK objects.
 name|DataMap
 index|[]
@@ -1004,7 +1007,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates primary key support for all node DbEntities. Will use its facilities      * provided by DbAdapter to generate any necessary database objects and data for      * primary key support.      */
+comment|/**      * Creates primary key support for all node DbEntities. Will use its      * facilities provided by DbAdapter to generate any necessary database      * objects and data for primary key support.      */
 specifier|private
 name|void
 name|createPKSupport
@@ -1041,7 +1044,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Helper method that orders DbEntities to satisfy referential constraints and returns      * an ordered list.      */
+comment|/**      * Helper method that orders DbEntities to satisfy referential constraints      * and returns an ordered list.      */
 specifier|private
 name|List
 argument_list|<
@@ -1397,7 +1400,8 @@ argument_list|()
 condition|)
 block|{
 comment|// 'toUpperCase' is needed since most databases
-comment|// are case insensitive, and some will convert names to lower case
+comment|// are case insensitive, and some will convert names to lower
+comment|// case
 comment|// (PostgreSQL)
 name|String
 name|name
