@@ -312,7 +312,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory class that generates various Cayenne objects with default names that are unique  * in their corresponding context. Supports creation of the following objects:  *<ul>  *<li>DataMap</li>  *<li>ObjEntity</li>  *<li>ObjAttribute</li>  *<li>ObjRelationship</li>  *<li>DbEntity</li>  *<li>DbAttribute</li>  *<li>DbRelationship</li>  *<li>DataNodeDescriptor</li>  *<li>DataDomain</li>  *<li>Query</li>  *<li>Procedure</li>  *<li>ProcedureParameter</li>  *</ul>  * This is a helper class used mostly by GUI and database reengineering classes.  *   * @since 3.1 moved from project package  */
+comment|/**  * Factory class that generates various Cayenne objects with default names that  * are unique in their corresponding context. Supports creation of the following  * objects:  *<ul>  *<li>DataMap</li>  *<li>ObjEntity</li>  *<li>ObjAttribute</li>  *<li>ObjRelationship</li>  *<li>DbEntity</li>  *<li>DbAttribute</li>  *<li>DbRelationship</li>  *<li>DataNodeDescriptor</li>  *<li>DataDomain</li>  *<li>Query</li>  *<li>Procedure</li>  *<li>ProcedureParameter</li>  *</ul>  * This is a helper class used mostly by GUI and database reengineering classes.  *   * @since 3.1 moved from project package  */
 end_comment
 
 begin_comment
@@ -610,7 +610,7 @@ name|nameBase
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an object using an appropriate factory class. If no factory is found for      * the object, NullPointerException is thrown.      *<p>      *<i>Note that newly created object is not added to the parent. This behavior can be      * changed later.</i>      *</p>      */
+comment|/**      * Creates an object using an appropriate factory class. If no factory is      * found for the object, NullPointerException is thrown.      *<p>      *<i>Note that newly created object is not added to the parent. This      * behavior can be changed later.</i>      *</p>      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -651,7 +651,9 @@ name|namingContext
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 1.0.5      */
+comment|/**      * @since 1.0.5      * @deprecated since 3.2 unused, and generics spec makes no sense.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|Object
@@ -690,7 +692,7 @@ name|nameBase
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a relationship using an appropriate factory class. If no factory is found      * for the object, NullPointerException is thrown.      *<p>      *<i>Note that newly created object is not added to the parent. This behavior can be      * changed later.</i>      *</p>      */
+comment|/**      * Creates a relationship using an appropriate factory class. If no factory      * is found for the object, NullPointerException is thrown.      *<p>      *<i>Note that newly created object is not added to the parent. This      * behavior can be changed later.</i>      *</p>      */
 specifier|public
 specifier|static
 name|Relationship
@@ -873,7 +875,7 @@ name|Object
 name|namingContext
 parameter_list|)
 function_decl|;
-comment|/**      * Checks if the name is already taken by another sibling in the same context.      */
+comment|/**      * Checks if the name is already taken by another sibling in the same      * context.      */
 specifier|protected
 specifier|abstract
 name|boolean
@@ -2048,7 +2050,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**          * Returns generated name for the ObjRelationships. For to-one case and entity          * name "xxxx" it generates name "toXxxx". For to-many case and entity name "Xxxx"          * it generates name "xxxxArray".          */
+comment|/**          * Returns generated name for the ObjRelationships. For to-one case and          * entity name "xxxx" it generates name "toXxxx". For to-many case and          * entity name "Xxxx" it generates name "xxxxArray".          */
 annotation|@
 name|Override
 specifier|protected
@@ -2169,7 +2171,7 @@ name|name
 argument_list|)
 return|;
 block|}
-comment|/**          * Returns generated name for the DbRelationships. For to-one case it generates          * name "TO_XXXX". For to-many case it generates name "XXXX_ARRAY".          */
+comment|/**          * Returns generated name for the DbRelationships. For to-one case it          * generates name "TO_XXXX". For to-many case it generates name          * "XXXX_ARRAY".          */
 annotation|@
 name|Override
 specifier|protected
