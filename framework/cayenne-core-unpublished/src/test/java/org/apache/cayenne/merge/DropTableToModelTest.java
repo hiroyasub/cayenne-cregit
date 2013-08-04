@@ -397,6 +397,11 @@ argument_list|(
 name|token
 argument_list|)
 expr_stmt|;
+name|resolver
+operator|.
+name|refreshMappingCache
+argument_list|()
+expr_stmt|;
 name|assertNull
 argument_list|(
 name|map
