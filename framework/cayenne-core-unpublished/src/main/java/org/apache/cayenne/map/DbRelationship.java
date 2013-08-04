@@ -973,6 +973,26 @@ else|:
 literal|false
 return|;
 block|}
+comment|/**      * Returns a boolean indicating whether modifying a target of such      * relationship in any way will not change the underlying table row of the      * source.      *       * @since 3.2      */
+specifier|public
+name|boolean
+name|isSourceIndependentFromTargetChange
+parameter_list|()
+block|{
+comment|// note - call "isToPK" at the end of the chain, since
+comment|// if it is to a dependent PK, we still should return true...
+return|return
+name|isToMany
+argument_list|()
+operator|||
+name|isToDependentPK
+argument_list|()
+operator|||
+operator|!
+name|isToPK
+argument_list|()
+return|;
+block|}
 comment|/**      * Returns<code>true</code> if relationship from source to target points to      * dependent primary key. Dependent PK is a primary key column of the      * destination table that is also a FK to the source column.      */
 specifier|public
 name|boolean
