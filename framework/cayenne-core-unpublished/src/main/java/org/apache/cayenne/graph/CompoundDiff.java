@@ -205,6 +205,8 @@ name|addAll
 parameter_list|(
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|GraphDiff
 argument_list|>
 name|diffs

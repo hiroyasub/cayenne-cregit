@@ -77,6 +77,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+operator|.
+name|Entry
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -173,6 +185,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|graph
+operator|.
+name|NodeDiff
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|validation
 operator|.
 name|ValidationException
@@ -194,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphDiff facade for the ObjectStore changes. Provides a way for the lower layers of  * the access stack to speed up processing of presorted ObjectStore diffs.  *   * @since 1.2  */
+comment|/**  * A GraphDiff facade for the ObjectStore changes. Provides a way for the lower  * layers of the access stack to speed up processing of presorted ObjectStore  * diffs.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -268,7 +294,8 @@ name|noop
 init|=
 literal|true
 decl_stmt|;
-comment|// build a new collection for validation as validation methods may result in
+comment|// build a new collection for validation as validation methods may
+comment|// result in
 comment|// ObjectStore modifications
 name|Collection
 name|objectsToValidate
@@ -540,7 +567,7 @@ name|handler
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Converts diffs organized by ObjectId in a collection of diffs sorted by diffId      * (same as creation order).      */
+comment|/**      * Converts diffs organized by ObjectId in a collection of diffs sorted by      * diffId (same as creation order).      */
 specifier|private
 name|void
 name|resolveDiff
@@ -581,10 +608,16 @@ argument_list|()
 condition|)
 block|{
 name|List
+argument_list|<
+name|NodeDiff
+argument_list|>
 name|allChanges
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|NodeDiff
+argument_list|>
 argument_list|(
 name|changes
 operator|.
@@ -646,6 +679,11 @@ name|objectStore
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|Object
+argument_list|,
+name|ObjectDiff
+argument_list|>
 name|changes
 init|=
 name|getChangesByObjectId
@@ -660,40 +698,22 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|ObjectDiff
+argument_list|>
+name|entry
+range|:
 name|changes
 operator|.
 name|entrySet
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|ObjectId
 name|id
 init|=

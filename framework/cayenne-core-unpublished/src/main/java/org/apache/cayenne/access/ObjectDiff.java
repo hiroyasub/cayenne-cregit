@@ -320,7 +320,7 @@ decl_stmt|;
 specifier|private
 name|Collection
 argument_list|<
-name|GraphDiff
+name|NodeDiff
 argument_list|>
 name|otherDiffs
 decl_stmt|;
@@ -510,6 +510,8 @@ operator|new
 name|PropertyVisitor
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAttribute
@@ -539,6 +541,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToMany
@@ -551,6 +555,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToOne
@@ -798,6 +804,9 @@ name|void
 name|appendDiffs
 parameter_list|(
 name|Collection
+argument_list|<
+name|NodeDiff
+argument_list|>
 name|collection
 parameter_list|)
 block|{
@@ -867,7 +876,7 @@ block|}
 name|void
 name|addDiff
 parameter_list|(
-name|GraphDiff
+name|NodeDiff
 name|diff
 parameter_list|)
 block|{
@@ -1119,7 +1128,7 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|GraphDiff
+name|NodeDiff
 argument_list|>
 argument_list|(
 literal|3
@@ -1220,6 +1229,8 @@ operator|new
 name|PropertyVisitor
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAttribute
@@ -1280,6 +1291,8 @@ literal|0
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToMany
@@ -1293,6 +1306,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToOne
@@ -1476,6 +1491,8 @@ operator|new
 name|PropertyVisitor
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAttribute
@@ -1578,6 +1595,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToMany
@@ -1590,6 +1609,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToOne
