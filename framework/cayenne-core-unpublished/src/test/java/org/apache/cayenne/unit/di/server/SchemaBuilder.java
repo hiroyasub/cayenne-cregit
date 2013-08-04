@@ -483,6 +483,8 @@ literal|"locking.map.xml"
 block|,
 literal|"relationships.map.xml"
 block|,
+literal|"relationships1.map.xml"
+block|,
 literal|"multi-tier.map.xml"
 block|,
 literal|"generic.map.xml"
