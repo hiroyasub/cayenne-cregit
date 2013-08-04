@@ -538,7 +538,7 @@ block|{
 comment|// iterate by copy to avoid concurrency modification errors on
 comment|// reflexive
 comment|// relationships
-name|Object
+name|ObjRelationship
 index|[]
 name|relationships
 init|=
@@ -548,7 +548,19 @@ name|getRelationships
 argument_list|()
 operator|.
 name|toArray
+argument_list|(
+operator|new
+name|ObjRelationship
+index|[
+name|entity
+operator|.
+name|getRelationships
 argument_list|()
+operator|.
+name|size
+argument_list|()
+index|]
+argument_list|)
 decl_stmt|;
 for|for
 control|(
@@ -567,20 +579,12 @@ name|i
 operator|++
 control|)
 block|{
-name|ObjRelationship
-name|relationship
-init|=
-operator|(
-name|ObjRelationship
-operator|)
+if|if
+condition|(
 name|relationships
 index|[
 name|i
 index|]
-decl_stmt|;
-if|if
-condition|(
-name|relationship
 operator|.
 name|getReverseRelationship
 argument_list|()
@@ -591,7 +595,10 @@ block|{
 name|ObjRelationship
 name|reverse
 init|=
-name|relationship
+name|relationships
+index|[
+name|i
+index|]
 operator|.
 name|createReverseRelationship
 argument_list|()

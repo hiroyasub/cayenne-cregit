@@ -121,7 +121,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|ClassGenerationAction
+name|ArtifactsGenerationMode
 import|;
 end_import
 
@@ -135,21 +135,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|ArtifactsGenerationMode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|Attribute
+name|ClassGenerationAction
 import|;
 end_import
 
@@ -611,7 +597,7 @@ name|DataMapDefaults
 name|createDefaults
 parameter_list|()
 function_decl|;
-comment|/**      * Creates an appropriate subclass of {@link ClassGenerationAction}, returning it in      * an unconfigured state. Configuration is performed by {@link #createGenerator()}      * method.      */
+comment|/**      * Creates an appropriate subclass of {@link ClassGenerationAction},      * returning it in an unconfigured state. Configuration is performed by      * {@link #createGenerator()} method.      */
 specifier|protected
 specifier|abstract
 name|ClassGenerationAction
@@ -1253,7 +1239,7 @@ return|return;
 block|}
 for|for
 control|(
-name|Attribute
+name|ObjAttribute
 name|attribute
 range|:
 name|entity
@@ -1321,9 +1307,6 @@ name|failure
 init|=
 name|validateAttribute
 argument_list|(
-operator|(
-name|ObjAttribute
-operator|)
 name|attribute
 argument_list|)
 decl_stmt|;
@@ -2361,7 +2344,7 @@ return|return
 name|preferences
 return|;
 block|}
-comment|/**      * An action method that pops up a file chooser dialog to pick the generation      * directory.      */
+comment|/**      * An action method that pops up a file chooser dialog to pick the      * generation directory.      */
 specifier|public
 name|void
 name|selectOutputFolderAction

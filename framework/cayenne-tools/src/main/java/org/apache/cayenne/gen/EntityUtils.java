@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedHashSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -49,27 +69,105 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|*
+name|CallbackDescriptor
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Collection
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DataMap
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|LinkedHashSet
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|MappingNamespace
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjRelationship
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|Relationship
 import|;
 end_import
 
@@ -437,7 +535,7 @@ name|isAbstract
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if current ObjEntity contains at least one toMany relationship.      */
+comment|/**      * Returns true if current ObjEntity contains at least one toMany      * relationship.      */
 specifier|public
 name|boolean
 name|hasToManyRelationships
@@ -498,7 +596,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns true if current ObjEntity contains at least one toMany relationship,      * ignoring those declared in superentities.      *       * @since 1.2      */
+comment|/**      * Returns true if current ObjEntity contains at least one toMany      * relationship, ignoring those declared in superentities.      *       * @since 1.2      */
 specifier|public
 name|boolean
 name|hasToManyDeclaredRelationships
@@ -511,7 +609,7 @@ name|objEntity
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if an ObjEntity contains at least one toMany relationship, ignoring      * those declared in superentities.      *       * @since 1.2      */
+comment|/**      * Returns true if an ObjEntity contains at least one toMany relationship,      * ignoring those declared in superentities.      *       * @since 1.2      */
 specifier|public
 name|boolean
 name|hasToManyDeclaredRelationships
@@ -559,7 +657,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns true if current ObjEntity contains at least one toOne relationship.      */
+comment|/**      * Returns true if current ObjEntity contains at least one toOne      * relationship.      */
 specifier|public
 name|boolean
 name|hasToOneRelationships
@@ -622,7 +720,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns true if current ObjEntity contains at least one toOne relationship,      * ignoring those declared in superentities.      */
+comment|/**      * Returns true if current ObjEntity contains at least one toOne      * relationship, ignoring those declared in superentities.      */
 specifier|public
 name|boolean
 name|hasToOneDeclaredRelationships
@@ -635,7 +733,7 @@ name|objEntity
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if an ObjEntity contains at least one toOne relationship, ignoring      * those declared in superentities.      */
+comment|/**      * Returns true if an ObjEntity contains at least one toOne relationship,      * ignoring those declared in superentities.      */
 specifier|public
 name|boolean
 name|hasToOneDeclaredRelationships
@@ -684,7 +782,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns the map key type for a collection relationship of type java.util.Map.      *       * @param relationship The relationship to look up type information for.      * @return The type of the attribute keyed on.      */
+comment|/**      * Returns the map key type for a collection relationship of type      * java.util.Map.      *       * @param relationship      *            The relationship to look up type information for.      * @return The type of the attribute keyed on.      */
 specifier|public
 name|String
 name|getMapKeyType
@@ -705,7 +803,8 @@ operator|.
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
-comment|// If the map key is null, then we're doing look-ups by actual object key.
+comment|// If the map key is null, then we're doing look-ups by actual object
+comment|// key.
 if|if
 condition|(
 name|relationship
@@ -716,7 +815,8 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// If it's a multi-column key, then the return type is always ObjectId.
+comment|// If it's a multi-column key, then the return type is always
+comment|// ObjectId.
 name|DbEntity
 name|dbEntity
 init|=
@@ -755,7 +855,8 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|// If it's a single column key or no key exists at all, then we really don't
+comment|// If it's a single column key or no key exists at all, then we
+comment|// really don't
 comment|// know what the key type is,
 comment|// so default to Object.
 return|return
@@ -767,14 +868,12 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|// If the map key is a non-default attribute, then fetch the attribute and return
+comment|// If the map key is a non-default attribute, then fetch the attribute
+comment|// and return
 comment|// its type.
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|targetEntity
 operator|.
 name|getAttribute

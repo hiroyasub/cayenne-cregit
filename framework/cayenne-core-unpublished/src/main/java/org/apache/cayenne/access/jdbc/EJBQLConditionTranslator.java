@@ -1017,9 +1017,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|correlatedEntityDescriptor
 operator|.
 name|getEntity
@@ -1440,9 +1437,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|correlatedEntityDescriptor
 operator|.
 name|getEntity

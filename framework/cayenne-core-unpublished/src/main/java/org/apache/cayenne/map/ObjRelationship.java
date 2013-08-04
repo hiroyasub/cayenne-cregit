@@ -281,6 +281,23 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|ObjEntity
+name|getSourceEntity
+parameter_list|()
+block|{
+return|return
+operator|(
+name|ObjEntity
+operator|)
+name|super
+operator|.
+name|getSourceEntity
+argument_list|()
+return|;
+block|}
 comment|/**      * @since 3.1      */
 specifier|public
 parameter_list|<
@@ -522,7 +539,7 @@ comment|/**      * Returns a target ObjEntity of this relationship. Entity is lo
 annotation|@
 name|Override
 specifier|public
-name|Entity
+name|ObjEntity
 name|getTargetEntity
 parameter_list|()
 block|{

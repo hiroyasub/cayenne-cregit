@@ -941,10 +941,6 @@ operator|.
 name|getType
 argument_list|()
 argument_list|,
-operator|(
-operator|(
-name|ObjAttribute
-operator|)
 name|superEntity
 operator|.
 name|getAttribute
@@ -954,7 +950,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
-operator|)
 operator|.
 name|getType
 argument_list|()

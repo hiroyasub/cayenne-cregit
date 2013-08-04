@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processes object diffs, generating DB diffs. Can be used for both UPDATE and INSERT.  *   * @since 1.2  */
+comment|/**  * Processes object diffs, generating DB diffs. Can be used for both UPDATE and  * INSERT.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -257,7 +257,7 @@ name|getDbEntity
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Resets the builder to process a new object for the previously set combination of      * objEntity/dbEntity.      */
+comment|/**      * Resets the builder to process a new object for the previously set      * combination of objEntity/dbEntity.      */
 specifier|private
 name|void
 name|reset
@@ -404,9 +404,6 @@ block|{
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|objEntity
 operator|.
 name|getAttribute
@@ -420,7 +417,8 @@ name|toString
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// in case of a flattened attribute, ensure that it belongs to this
+comment|// in case of a flattened attribute, ensure that it belongs to
+comment|// this
 comment|// bucket...
 name|DbAttribute
 name|dbAttribute
@@ -502,9 +500,6 @@ block|{
 name|ObjRelationship
 name|relation
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|objEntity
 operator|.
 name|getRelationship
@@ -604,7 +599,8 @@ argument_list|>
 name|dbDiff
 parameter_list|)
 block|{
-comment|// populate changed PKs; note that we might end up overriding some values taken
+comment|// populate changed PKs; note that we might end up overriding some
+comment|// values taken
 comment|// from the object (e.g. zero PK's).
 if|if
 condition|(
@@ -650,7 +646,8 @@ name|Object
 name|newValue
 parameter_list|)
 block|{
-comment|// note - no checking for phantom mod... assuming there is no phantom diffs
+comment|// note - no checking for phantom mod... assuming there is no phantom
+comment|// diffs
 if|if
 condition|(
 name|currentPropertyDiff
@@ -697,9 +694,6 @@ block|{
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|objEntity
 operator|.
 name|getRelationship
@@ -766,9 +760,6 @@ block|{
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|objEntity
 operator|.
 name|getRelationship
@@ -818,7 +809,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// skip deletion record if a substitute arc was created prior to deleting
+comment|// skip deletion record if a substitute arc was created prior to
+comment|// deleting
 comment|// the old arc...
 name|Object
 name|existingTargetId

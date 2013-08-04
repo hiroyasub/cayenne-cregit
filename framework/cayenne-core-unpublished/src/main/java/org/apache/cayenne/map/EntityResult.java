@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A metadata object that provides mapping of a set of result columns to an ObjEntity.  * Used by {@link SQLResult}. Note that fields in the EntityResult are not required to  * follow the order of columns in the actual query, and can be added in the arbitrary  * order.  *   * @since 3.0  */
+comment|/**  * A metadata object that provides mapping of a set of result columns to an  * ObjEntity. Used by {@link SQLResult}. Note that fields in the EntityResult  * are not required to follow the order of columns in the actual query, and can  * be added in the arbitrary order.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -137,7 +137,7 @@ operator|=
 name|entityName
 expr_stmt|;
 block|}
-comment|/**      * Returns a map of result column names to attribute db paths from the root entity.      */
+comment|/**      * Returns a map of result column names to attribute db paths from the root      * entity.      */
 specifier|public
 name|Map
 argument_list|<
@@ -255,9 +255,6 @@ decl_stmt|;
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute
@@ -340,7 +337,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Adds a result set column mapping for a single object property of the root entity.      */
+comment|/**      * Adds a result set column mapping for a single object property of the root      * entity.      */
 specifier|public
 name|void
 name|addObjectField
@@ -368,7 +365,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a result set column mapping for a single object property of a specified entity      * that may differ from the root entity if inheritance is involved.      */
+comment|/**      * Adds a result set column mapping for a single object property of a      * specified entity that may differ from the root entity if inheritance is      * involved.      */
 specifier|public
 name|void
 name|addObjectField

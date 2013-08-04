@@ -427,9 +427,6 @@ expr_stmt|;
 name|ObjAttribute
 name|a1
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|subEntity
 operator|.
 name|getAttribute
@@ -475,9 +472,6 @@ expr_stmt|;
 name|ObjAttribute
 name|a2
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|subEntity
 operator|.
 name|getAttribute
@@ -511,9 +505,6 @@ expr_stmt|;
 name|ObjAttribute
 name|a3
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|subEntity
 operator|.
 name|getAttribute
@@ -862,7 +853,6 @@ name|void
 name|testAttributes
 parameter_list|()
 block|{
-comment|// ObjEntity artistE = getObjEntity("Artist");
 name|ObjEntity
 name|artistE
 init|=
@@ -882,9 +872,6 @@ decl_stmt|;
 name|ObjAttribute
 name|attr
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|artistE
 operator|.
 name|getAttribute
@@ -1696,7 +1683,7 @@ block|{
 annotation|@
 name|Override
 specifier|public
-name|Entity
+name|ObjEntity
 name|getTargetEntity
 parameter_list|()
 block|{

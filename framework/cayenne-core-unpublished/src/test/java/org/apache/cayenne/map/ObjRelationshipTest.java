@@ -552,9 +552,6 @@ comment|// start with "to many"
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|artistObjEnt
 operator|.
 name|getRelationship
@@ -626,7 +623,7 @@ block|{
 annotation|@
 name|Override
 specifier|public
-name|Entity
+name|ObjEntity
 name|getTargetEntity
 parameter_list|()
 block|{
@@ -746,9 +743,6 @@ comment|// start with "to many"
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|artistObjEnt
 operator|.
 name|getRelationship
@@ -769,9 +763,6 @@ expr_stmt|;
 name|ObjRelationship
 name|r2
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|paintingObjEnt
 operator|.
 name|getRelationship
@@ -1804,9 +1795,6 @@ comment|// start with "to many"
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|artistObjEnt
 operator|.
 name|getRelationship
@@ -1881,9 +1869,6 @@ comment|// start with "to one"
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|paintingEnt
 operator|.
 name|getRelationship
@@ -2308,9 +2293,6 @@ decl_stmt|;
 name|ObjRelationship
 name|x
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|iv2Sub1
 operator|.
 name|getRelationship
@@ -2628,9 +2610,6 @@ decl_stmt|;
 name|ObjRelationship
 name|theRel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|artistEnt
 operator|.
 name|getRelationship

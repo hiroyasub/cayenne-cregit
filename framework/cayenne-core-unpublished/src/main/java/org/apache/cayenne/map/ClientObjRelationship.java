@@ -126,7 +126,7 @@ return|return
 literal|null
 return|;
 block|}
-name|Entity
+name|ObjEntity
 name|target
 init|=
 name|getTargetEntity
@@ -144,9 +144,6 @@ literal|null
 return|;
 block|}
 return|return
-operator|(
-name|ObjRelationship
-operator|)
 name|target
 operator|.
 name|getRelationship

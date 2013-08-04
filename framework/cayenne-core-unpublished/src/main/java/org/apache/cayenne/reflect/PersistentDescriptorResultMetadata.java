@@ -206,9 +206,6 @@ decl_stmt|;
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute
@@ -274,9 +271,6 @@ decl_stmt|;
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|entity
 operator|.
 name|getAttribute

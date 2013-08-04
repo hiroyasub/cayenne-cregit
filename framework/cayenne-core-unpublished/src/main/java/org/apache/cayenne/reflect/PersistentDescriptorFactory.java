@@ -99,20 +99,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Attribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|DbAttribute
 import|;
 end_import
@@ -198,20 +184,6 @@ operator|.
 name|map
 operator|.
 name|ObjRelationship
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|Relationship
 import|;
 end_import
 
@@ -390,7 +362,7 @@ expr_stmt|;
 comment|// only include this entity attributes and skip superclasses...
 for|for
 control|(
-name|Attribute
+name|ObjAttribute
 name|attribute
 range|:
 name|descriptor
@@ -439,20 +411,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|else if
-condition|(
-name|attribute
-operator|instanceof
-name|ObjAttribute
-condition|)
+else|else
 block|{
 name|createAttributeProperty
 argument_list|(
 name|descriptor
 argument_list|,
-operator|(
-name|ObjAttribute
-operator|)
 name|attribute
 argument_list|)
 expr_stmt|;
@@ -461,7 +425,7 @@ block|}
 comment|// only include this entity relationships and skip superclasses...
 for|for
 control|(
-name|Relationship
+name|ObjRelationship
 name|relationship
 range|:
 name|descriptor
@@ -473,14 +437,6 @@ name|getDeclaredRelationships
 argument_list|()
 control|)
 block|{
-name|ObjRelationship
-name|objRelationship
-init|=
-operator|(
-name|ObjRelationship
-operator|)
-name|relationship
-decl_stmt|;
 if|if
 condition|(
 name|relationship
@@ -492,7 +448,7 @@ block|{
 name|String
 name|collectionType
 init|=
-name|objRelationship
+name|relationship
 operator|.
 name|getCollectionType
 argument_list|()
@@ -517,7 +473,7 @@ name|createToManyListProperty
 argument_list|(
 name|descriptor
 argument_list|,
-name|objRelationship
+name|relationship
 argument_list|)
 expr_stmt|;
 block|}
@@ -535,7 +491,7 @@ name|createToManyMapProperty
 argument_list|(
 name|descriptor
 argument_list|,
-name|objRelationship
+name|relationship
 argument_list|)
 expr_stmt|;
 block|}
@@ -553,7 +509,7 @@ name|createToManySetProperty
 argument_list|(
 name|descriptor
 argument_list|,
-name|objRelationship
+name|relationship
 argument_list|)
 expr_stmt|;
 block|}
@@ -571,7 +527,7 @@ name|createToManyCollectionProperty
 argument_list|(
 name|descriptor
 argument_list|,
-name|objRelationship
+name|relationship
 argument_list|)
 expr_stmt|;
 block|}
@@ -594,7 +550,7 @@ name|createToOneProperty
 argument_list|(
 name|descriptor
 argument_list|,
-name|objRelationship
+name|relationship
 argument_list|)
 expr_stmt|;
 block|}
@@ -1368,9 +1324,6 @@ decl_stmt|;
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|descriptor
 operator|.
 name|getEntity

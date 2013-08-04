@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A class that presents an AttributeProperty view for an inherited attribute at a given  * subclass. It applies all needed attribute overrides.  *   * @since 3.0  */
+comment|/**  * A class that presents an AttributeProperty view for an inherited attribute at  * a given subclass. It applies all needed attribute overrides.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -66,9 +66,6 @@ name|this
 operator|.
 name|attribute
 operator|=
-operator|(
-name|ObjAttribute
-operator|)
 name|owningClassDescriptor
 operator|.
 name|getEntity

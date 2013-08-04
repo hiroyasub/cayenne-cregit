@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of DataObject interface. It is normally used as a superclass  * of Cayenne persistent objects.  */
+comment|/**  * A default implementation of DataObject interface. It is normally used as a  * superclass of Cayenne persistent objects.  */
 end_comment
 
 begin_class
@@ -353,7 +353,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a value of the property identified by a property path. Supports reading      * both mapped and unmapped properties. Unmapped properties are accessed in a manner      * consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to traverse object      * relationships until the final object is found. If a null object found while      * traversing path, null is returned. If a list is encountered in the middle of the      * path, CayenneRuntimeException is thrown. Unlike      * {@link #readPropertyDirectly(String)}, this method will resolve an object if it is      * HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)artist.readNestedProperty("name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)paintingInfo.readNestedProperty("toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)painting.readNestedProperty("toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)painting.readNestedProperty("toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)artist.readNestedProperty("paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      *       * @since 1.0.5      */
+comment|/**      * Returns a value of the property identified by a property path. Supports      * reading both mapped and unmapped properties. Unmapped properties are      * accessed in a manner consistent with JavaBeans specification.      *<p>      * Property path (or nested property) is a dot-separated path used to      * traverse object relationships until the final object is found. If a null      * object found while traversing path, null is returned. If a list is      * encountered in the middle of the path, CayenneRuntimeException is thrown.      * Unlike {@link #readPropertyDirectly(String)}, this method will resolve an      * object if it is HOLLOW.      *<p>      * Examples:      *</p>      *<ul>      *<li>Read this object property:<br>      *<code>String name = (String)artist.readNestedProperty("name");</code><br>      *<br>      *</li>      *<li>Read an object related to this object:<br>      *<code>Gallery g = (Gallery)paintingInfo.readNestedProperty("toPainting.toGallery");</code>      *<br>      *<br>      *</li>      *<li>Read a property of an object related to this object:<br>      *<code>String name = (String)painting.readNestedProperty("toArtist.artistName");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship list:<br>      *<code>List exhibits = (List)painting.readNestedProperty("toGallery.exhibitArray");</code>      *<br>      *<br>      *</li>      *<li>Read to-many relationship in the middle of the path:<br>      *<code>List<String> names = (List<String>)artist.readNestedProperty("paintingArray.paintingName");</code>      *<br>      *<br>      *</li>      *</ul>      *       * @since 1.0.5      */
 specifier|public
 name|Object
 name|readNestedProperty
@@ -630,8 +630,10 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// will resolve faults ourselves below as checking class descriptors for the
-comment|// "lazyFaulting" flag is inefficient. Passing "false" here to suppress fault
+comment|// will resolve faults ourselves below as checking class descriptors
+comment|// for the
+comment|// "lazyFaulting" flag is inefficient. Passing "false" here to
+comment|// suppress fault
 comment|// processing
 name|objectContext
 operator|.
@@ -735,7 +737,8 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-comment|// note how we notify ObjectContext of change BEFORE the object is actually
+comment|// note how we notify ObjectContext of change BEFORE the object is
+comment|// actually
 comment|// changed... this is needed to take a valid current snapshot
 name|Object
 name|oldValue
@@ -812,7 +815,8 @@ argument_list|(
 name|relName
 argument_list|)
 decl_stmt|;
-comment|// call 'propertyChanged' AFTER readProperty as readProperty ensures that this
+comment|// call 'propertyChanged' AFTER readProperty as readProperty ensures
+comment|// that this
 comment|// object fault is resolved
 name|getObjectContext
 argument_list|()
@@ -828,7 +832,8 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 8/20/2007 - can we optimize this somehow, avoiding type checking??
+comment|// TODO: andrus 8/20/2007 - can we optimize this somehow, avoiding type
+comment|// checking??
 if|if
 condition|(
 name|holder
@@ -946,7 +951,8 @@ argument_list|(
 name|relName
 argument_list|)
 decl_stmt|;
-comment|// call 'propertyChanged' AFTER readProperty as readProperty ensures that this
+comment|// call 'propertyChanged' AFTER readProperty as readProperty ensures
+comment|// that this
 comment|// object fault is resolved
 name|getObjectContext
 argument_list|()
@@ -962,7 +968,8 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 8/20/2007 - can we optimize this somehow, avoiding type checking??
+comment|// TODO: andrus 8/20/2007 - can we optimize this somehow, avoiding type
+comment|// checking??
 if|if
 condition|(
 name|holder
@@ -1144,7 +1151,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Called before establishing a relationship with another object. Applies "persistence      * by reachability" logic, pulling one of the two objects to a DataConext of another      * object in case one of the objects is transient. If both objects are persistent, and      * they don't have the same DataContext, CayenneRuntimeException is thrown.      *       * @since 1.2      */
+comment|/**      * Called before establishing a relationship with another object. Applies      * "persistence by reachability" logic, pulling one of the two objects to a      * DataConext of another object in case one of the objects is transient. If      * both objects are persistent, and they don't have the same DataContext,      * CayenneRuntimeException is thrown.      *       * @since 1.2      */
 specifier|protected
 name|void
 name|willConnect
@@ -1248,7 +1255,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Initializes reverse relationship from object<code>val</code> to this object.      *       * @param relName name of relationship from this object to<code>val</code>.      */
+comment|/**      * Initializes reverse relationship from object<code>val</code> to this      * object.      *       * @param relName      *            name of relationship from this object to<code>val</code>.      */
 specifier|protected
 name|void
 name|setReverseRelationship
@@ -1263,9 +1270,6 @@ block|{
 name|ObjRelationship
 name|rel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|objectContext
 operator|.
 name|getEntityResolver
@@ -1337,7 +1341,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes current object from reverse relationship of object<code>val</code> to this      * object.      */
+comment|/**      * Removes current object from reverse relationship of object      *<code>val</code> to this object.      */
 specifier|protected
 name|void
 name|unsetReverseRelationship
@@ -1390,9 +1394,6 @@ block|}
 name|ObjRelationship
 name|rel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entity
 operator|.
 name|getRelationship
@@ -1453,7 +1454,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * A variation of "toString" method, that may be more efficient in some cases. For      * example when printing a list of objects into the same String.      */
+comment|/**      * A variation of "toString" method, that may be more efficient in some      * cases. For example when printing a list of objects into the same String.      */
 specifier|public
 name|StringBuffer
 name|toStringBuffer
@@ -1912,7 +1913,7 @@ comment|// DataContext will be set *IF* the DataContext it came from is also
 comment|// deserialized. Setting of DataContext is handled by the DataContext
 comment|// itself
 block|}
-comment|/**      * Returns a version of a DataRow snapshot that was used to create this object.      *       * @since 1.1      */
+comment|/**      * Returns a version of a DataRow snapshot that was used to create this      * object.      *       * @since 1.1      */
 specifier|public
 name|long
 name|getSnapshotVersion
@@ -1938,8 +1939,9 @@ operator|=
 name|snapshotVersion
 expr_stmt|;
 block|}
-comment|/**      * Convenience method to invoke {@link Cayenne#makePath(String...)} from within a      * DataObject subclass to create a dotted path using the generated string constants      * for attributes and relationships.      *       * @see Cayenne#makePath(String...)      * @since 3.1      */
-comment|// TODO: should we deprecate this one? After all the purpose of "Cayenne" class is to
+comment|/**      * Convenience method to invoke {@link Cayenne#makePath(String...)} from      * within a DataObject subclass to create a dotted path using the generated      * string constants for attributes and relationships.      *       * @see Cayenne#makePath(String...)      * @since 3.1      */
+comment|// TODO: should we deprecate this one? After all the purpose of "Cayenne"
+comment|// class is to
 comment|// get rid of utility methods elsewhere..
 specifier|public
 specifier|static
@@ -1960,7 +1962,7 @@ name|pathParts
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs property validation of the object, appending any validation failures to      * the provided validationResult object. This method is invoked from "validateFor.."      * before committing a NEW or MODIFIED object to the database. Validation includes      * checking for null values and value sizes. CayenneDataObject subclasses may override      * this method, calling super.      *       * @since 1.1      */
+comment|/**      * Performs property validation of the object, appending any validation      * failures to the provided validationResult object. This method is invoked      * from "validateFor.." before committing a NEW or MODIFIED object to the      * database. Validation includes checking for null values and value sizes.      * CayenneDataObject subclasses may override this method, calling super.      *       * @since 1.1      */
 specifier|protected
 name|void
 name|validateForSave
@@ -2005,10 +2007,14 @@ argument_list|)
 throw|;
 block|}
 comment|// validate mandatory attributes
-comment|// handling a special case - meaningful mandatory FK... defer failures until
-comment|// relationship validation is done... This is just a temporary solution, as
-comment|// handling meaningful keys within the object lifecycle requires something more,
-comment|// namely read/write methods for relationships and direct values should be
+comment|// handling a special case - meaningful mandatory FK... defer failures
+comment|// until
+comment|// relationship validation is done... This is just a temporary solution,
+comment|// as
+comment|// handling meaningful keys within the object lifecycle requires
+comment|// something more,
+comment|// namely read/write methods for relationships and direct values should
+comment|// be
 comment|// synchronous with each other..
 name|Map
 argument_list|<
@@ -2022,7 +2028,7 @@ literal|null
 decl_stmt|;
 for|for
 control|(
-name|Object
+name|ObjAttribute
 name|next
 range|:
 name|objEntity
@@ -2041,18 +2047,10 @@ condition|)
 block|{
 continue|continue;
 block|}
-name|ObjAttribute
-name|objAttribute
-init|=
-operator|(
-name|ObjAttribute
-operator|)
-name|next
-decl_stmt|;
 name|DbAttribute
 name|dbAttribute
 init|=
-name|objAttribute
+name|next
 operator|.
 name|getDbAttribute
 argument_list|()
@@ -2070,7 +2068,7 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"ObjAttribute '"
 operator|+
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2097,7 +2095,7 @@ name|this
 operator|.
 name|readPropertyDirectly
 argument_list|(
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2120,7 +2118,7 @@ name|validateNotNull
 argument_list|(
 name|this
 argument_list|,
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2220,7 +2218,7 @@ name|message
 init|=
 literal|"\""
 operator|+
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2245,7 +2243,7 @@ name|BeanValidationFailure
 argument_list|(
 name|this
 argument_list|,
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2291,7 +2289,7 @@ name|message
 init|=
 literal|"\""
 operator|+
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2316,7 +2314,7 @@ name|BeanValidationFailure
 argument_list|(
 name|this
 argument_list|,
-name|objAttribute
+name|next
 operator|.
 name|getName
 argument_list|()
@@ -2441,7 +2439,8 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// loop through all joins if there were previous mandatory
+comment|// loop through all joins if there were previous
+comment|// mandatory
 comment|// attribute failures....
 if|if
 condition|(
@@ -2553,7 +2552,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the newly      * created objects before saving them.      *       * @since 1.1      */
+comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject      * subclasses may override it providing validation logic that should be      * executed for the newly created objects before saving them.      *       * @since 1.1      */
 specifier|public
 name|void
 name|validateForInsert
@@ -2568,7 +2567,7 @@ name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the modified      * objects before saving them.      *       * @since 1.1      */
+comment|/**      * Calls {@link #validateForSave(ValidationResult)}. CayenneDataObject      * subclasses may override it providing validation logic that should be      * executed for the modified objects before saving them.      *       * @since 1.1      */
 specifier|public
 name|void
 name|validateForUpdate
@@ -2583,7 +2582,7 @@ name|validationResult
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * This implementation does nothing. CayenneDataObject subclasses may override it      * providing validation logic that should be executed for the deleted objects before      * committing them.      *       * @since 1.1      */
+comment|/**      * This implementation does nothing. CayenneDataObject subclasses may      * override it providing validation logic that should be executed for the      * deleted objects before committing them.      *       * @since 1.1      */
 specifier|public
 name|void
 name|validateForDelete

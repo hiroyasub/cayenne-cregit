@@ -183,9 +183,6 @@ decl_stmt|;
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entityResolver
 operator|.
 name|getObjEntity
@@ -275,9 +272,6 @@ decl_stmt|;
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entityResolver
 operator|.
 name|getObjEntity
@@ -326,9 +320,6 @@ decl_stmt|;
 name|ObjRelationship
 name|r3
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entityResolver
 operator|.
 name|getObjEntity
@@ -433,9 +424,6 @@ decl_stmt|;
 name|ObjRelationship
 name|r1
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entityResolver
 operator|.
 name|getObjEntity
@@ -484,9 +472,6 @@ decl_stmt|;
 name|ObjRelationship
 name|r3
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entityResolver
 operator|.
 name|getObjEntity

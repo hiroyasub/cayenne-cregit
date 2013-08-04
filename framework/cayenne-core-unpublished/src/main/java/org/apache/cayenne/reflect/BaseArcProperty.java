@@ -94,9 +94,6 @@ name|this
 operator|.
 name|relationship
 operator|=
-operator|(
-name|ObjRelationship
-operator|)
 name|owner
 operator|.
 name|getEntity

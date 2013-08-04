@@ -29,16 +29,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Collections
@@ -1936,9 +1926,6 @@ decl_stmt|;
 name|ObjAttribute
 name|dateOfBirth
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|artistE
 operator|.
 name|getAttribute

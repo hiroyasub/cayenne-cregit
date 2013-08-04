@@ -242,7 +242,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal "decorator" of  * Cayenne SelectQuery to provide access to the extra information of WebObjects  * EOFetchSpecification.  *   * @since 1.1  */
+comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal  * "decorator" of Cayenne SelectQuery to provide access to the extra information  * of WebObjects EOFetchSpecification.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -611,7 +611,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// data rows - note that we do not support fetching individual columns in the
+comment|// data rows - note that we do not support fetching individual columns
+comment|// in the
 comment|// modeler...
 if|if
 condition|(
@@ -912,8 +913,10 @@ name|className
 init|=
 literal|null
 decl_stmt|;
-comment|// we don't know whether its obj path or db path, so the expression can blow
-comment|// ... in fact we can't support DB Path as the key is different from external
+comment|// we don't know whether its obj path or db path, so the expression
+comment|// can blow
+comment|// ... in fact we can't support DB Path as the key is different from
+comment|// external
 comment|// name,
 comment|// so we will use Object type for all DB path...
 try|try
@@ -962,9 +965,6 @@ block|{
 name|ObjEntity
 name|target
 init|=
-operator|(
-name|ObjEntity
-operator|)
 operator|(
 operator|(
 name|ObjRelationship
@@ -1080,7 +1080,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Creates the Expression equivalent of the EOFetchSpecification represented by the      * Map.      *       * @param qualifierMap - FetchSpecification to translate      * @return Expression equivalent to FetchSpecification      */
+comment|/**      * Creates the Expression equivalent of the EOFetchSpecification represented      * by the Map.      *       * @param qualifierMap      *            - FetchSpecification to translate      * @return Expression equivalent to FetchSpecification      */
 specifier|public
 specifier|synchronized
 name|Expression
@@ -1121,12 +1121,13 @@ name|qualifierMap
 argument_list|)
 return|;
 block|}
-comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a WebObjects-style      * EOModel. It recursively builds Cayenne Expression objects and assembles them into      * the final aggregate Expression.      */
+comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a      * WebObjects-style EOModel. It recursively builds Cayenne Expression      * objects and assembles them into the final aggregate Expression.      */
 specifier|static
 class|class
 name|EOFetchSpecificationParser
 block|{
-comment|// Xcode/EOModeler expressions have a colon at the end of the selector name
+comment|// Xcode/EOModeler expressions have a colon at the end of the selector
+comment|// name
 comment|// (just like standard Objective-C syntax). WOLips does not. Add both
 comment|// sets to the hash map to handle both types of models.
 comment|// Selector strings (Java-base).
@@ -1205,7 +1206,7 @@ name|Integer
 argument_list|>
 name|selectorToExpressionBridge
 decl_stmt|;
-comment|/**          * selectorToExpressionBridge is just a mapping of EOModeler's selector types to          * Cayenne Expression types.          *           * @return HashMap of Expression types, keyed by the corresponding selector name          */
+comment|/**          * selectorToExpressionBridge is just a mapping of EOModeler's selector          * types to Cayenne Expression types.          *           * @return HashMap of Expression types, keyed by the corresponding          *         selector name          */
 specifier|static
 specifier|synchronized
 name|HashMap
@@ -1433,7 +1434,7 @@ return|return
 name|selectorToExpressionBridge
 return|;
 block|}
-comment|/**          * isAggregate determines whether a qualifier is "aggregate" -- has children -- or          * "simple".          *           * @param qualifier - a Map containing the qualifier settings          * @return boolean indicating whether the qualifier is "aggregate" qualifier          */
+comment|/**          * isAggregate determines whether a qualifier is "aggregate" -- has          * children -- or "simple".          *           * @param qualifier          *            - a Map containing the qualifier settings          * @return boolean indicating whether the qualifier is "aggregate"          *         qualifier          */
 specifier|static
 name|boolean
 name|isAggregate
@@ -1498,7 +1499,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**          * expressionTypeForQualifier looks at a qualifier containing the EOModeler          * FetchSpecification and returns the equivalent Cayenne Expression type for its          * selector.          *           * @param qualifierMap - a Map containing the qualifier settings to examine.          * @return int Expression type          */
+comment|/**          * expressionTypeForQualifier looks at a qualifier containing the          * EOModeler FetchSpecification and returns the equivalent Cayenne          * Expression type for its selector.          *           * @param qualifierMap          *            - a Map containing the qualifier settings to examine.          * @return int Expression type          */
 specifier|static
 name|int
 name|expressionTypeForQualifier
@@ -1528,7 +1529,7 @@ name|selector
 argument_list|)
 return|;
 block|}
-comment|/**          * expressionTypeForSelector looks at a selector from an EOModeler          * FetchSpecification and returns the equivalent Cayenne Expression type.          *           * @param selector - a String containing the selector name.          * @return int Expression type          */
+comment|/**          * expressionTypeForSelector looks at a selector from an EOModeler          * FetchSpecification and returns the equivalent Cayenne Expression          * type.          *           * @param selector          *            - a String containing the selector name.          * @return int Expression type          */
 specifier|static
 name|int
 name|expressionTypeForSelector
@@ -1564,7 +1565,7 @@ literal|1
 operator|)
 return|;
 block|}
-comment|/**          * aggregateExpressionClassForQualifier looks at a qualifer and returns the          * aggregate type: one of Expression.AND, Expression.OR, or Expression.NOT          *           * @param qualifierMap - containing the qualifier to examine          * @return int aggregate Expression type          */
+comment|/**          * aggregateExpressionClassForQualifier looks at a qualifer and returns          * the aggregate type: one of Expression.AND, Expression.OR, or          * Expression.NOT          *           * @param qualifierMap          *            - containing the qualifier to examine          * @return int aggregate Expression type          */
 specifier|static
 name|int
 name|aggregateExpressionClassForQualifier
@@ -1648,7 +1649,7 @@ literal|1
 return|;
 comment|// error
 block|}
-comment|/**          * makeQualifier recursively builds an Expression for each condition in the          * qualifierMap and assembles from them the complex Expression to represent the          * entire EOFetchSpecification.          *           * @param qualifierMap - Map representation of EOFetchSpecification          * @return Expression translation of the EOFetchSpecification          */
+comment|/**          * makeQualifier recursively builds an Expression for each condition in          * the qualifierMap and assembles from them the complex Expression to          * represent the entire EOFetchSpecification.          *           * @param qualifierMap          *            - Map representation of EOFetchSpecification          * @return Expression translation of the EOFetchSpecification          */
 specifier|static
 name|Expression
 name|makeQualifier
@@ -1689,7 +1690,8 @@ operator|.
 name|NOT
 condition|)
 block|{
-comment|// NOT qualifiers only have one child, keyed with "qualifier"
+comment|// NOT qualifiers only have one child, keyed with
+comment|// "qualifier"
 name|Map
 name|child
 init|=
@@ -1720,7 +1722,8 @@ operator|.
 name|notExp
 argument_list|()
 return|;
-comment|// add the "not" clause and return the
+comment|// add the "not" clause and return
+comment|// the
 comment|// result
 block|}
 else|else
@@ -1838,7 +1841,8 @@ name|key
 init|=
 literal|null
 decl_stmt|;
-comment|// the key, keyPath, value, or parameterized value against which we're
+comment|// the key, keyPath, value, or parameterized value against which
+comment|// we're
 comment|// comparing the key
 name|Object
 name|comparisonValue
@@ -1877,7 +1881,8 @@ argument_list|(
 literal|"rightValue"
 argument_list|)
 expr_stmt|;
-comment|// FIXME: I think EOKeyComparisonQualifier sytle Expressions are not
+comment|// FIXME: I think EOKeyComparisonQualifier sytle Expressions are
+comment|// not
 comment|// supported...
 return|return
 literal|null
@@ -2037,7 +2042,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// Could there be other types? boolean, date, etc.???
+comment|// Could there be other types? boolean, date,
+comment|// etc.???
 comment|// no cast
 name|comparisonValue
 operator|=
@@ -2061,7 +2067,8 @@ expr_stmt|;
 block|}
 comment|// end if (value instanceof Map) else...
 block|}
-comment|// check whether the key is an object path; if at least one component is not,
+comment|// check whether the key is an object path; if at least one
+comment|// component is not,
 comment|// switch to db path..
 name|Expression
 name|keyExp

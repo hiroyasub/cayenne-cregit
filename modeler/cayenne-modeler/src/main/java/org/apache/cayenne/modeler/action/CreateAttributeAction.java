@@ -506,9 +506,6 @@ decl_stmt|;
 name|ObjAttribute
 name|attr
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject
@@ -588,9 +585,6 @@ decl_stmt|;
 name|DbAttribute
 name|attr
 init|=
-operator|(
-name|DbAttribute
-operator|)
 name|NamedObjectFactory
 operator|.
 name|createObject

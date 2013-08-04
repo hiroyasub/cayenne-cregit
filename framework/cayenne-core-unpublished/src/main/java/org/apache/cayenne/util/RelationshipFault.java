@@ -286,7 +286,7 @@ name|List
 name|resolved
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a query that returns related objects. Subclasses would invoke this method      * whenever they need to resolve a fault.      */
+comment|/**      * Executes a query that returns related objects. Subclasses would invoke      * this method whenever they need to resolve a fault.      */
 specifier|protected
 name|List
 name|resolveFromDB
@@ -374,7 +374,8 @@ return|return
 name|resolved
 return|;
 block|}
-comment|// see if reverse relationship is to-one and we can connect source to results....
+comment|// see if reverse relationship is to-one and we can connect source to
+comment|// results....
 specifier|protected
 name|void
 name|updateReverse
@@ -413,9 +414,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|sourceEntity
 operator|.
 name|getRelationship

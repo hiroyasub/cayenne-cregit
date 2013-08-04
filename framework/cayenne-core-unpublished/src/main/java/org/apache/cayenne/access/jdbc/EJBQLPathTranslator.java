@@ -764,9 +764,6 @@ block|{
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|currentEntity
 operator|.
 name|getRelationship
@@ -821,9 +818,6 @@ block|{
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|currentEntity
 operator|.
 name|getAttribute
@@ -848,9 +842,6 @@ block|}
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|currentEntity
 operator|.
 name|getRelationship

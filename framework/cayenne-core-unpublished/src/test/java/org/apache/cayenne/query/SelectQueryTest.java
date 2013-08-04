@@ -4060,9 +4060,6 @@ decl_stmt|;
 name|ObjRelationship
 name|paintingToArtistRel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|paintingEntity
 operator|.
 name|getRelationship
@@ -4080,9 +4077,6 @@ expr_stmt|;
 name|ObjRelationship
 name|galleryToPaintingRel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|galleryEntity
 operator|.
 name|getRelationship
@@ -4100,9 +4094,6 @@ expr_stmt|;
 name|ObjRelationship
 name|artistExhibitToArtistRel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|artistExhibitEntity
 operator|.
 name|getRelationship
@@ -4120,9 +4111,6 @@ expr_stmt|;
 name|ObjRelationship
 name|exhibitToArtistExhibitRel
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|exhibitEntity
 operator|.
 name|getRelationship

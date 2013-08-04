@@ -1524,9 +1524,6 @@ decl_stmt|;
 name|ObjAttribute
 name|oa1
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|oe1
 operator|.
 name|getAttribute
@@ -1748,9 +1745,6 @@ decl_stmt|;
 name|ObjAttribute
 name|oa1
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|oe1
 operator|.
 name|getAttribute

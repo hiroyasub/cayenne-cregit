@@ -3457,7 +3457,7 @@ else|else
 block|{
 for|for
 control|(
-name|Relationship
+name|ObjRelationship
 name|rel
 range|:
 name|objEnt
@@ -3471,12 +3471,7 @@ control|(
 name|DbRelationship
 name|dbRel
 range|:
-operator|(
-operator|(
-name|ObjRelationship
-operator|)
 name|rel
-operator|)
 operator|.
 name|getDbRelationships
 argument_list|()
@@ -3492,12 +3487,7 @@ operator|==
 name|dbEntityToDelete
 condition|)
 block|{
-operator|(
-operator|(
-name|ObjRelationship
-operator|)
 name|rel
-operator|)
 operator|.
 name|clearDbRelationships
 argument_list|()

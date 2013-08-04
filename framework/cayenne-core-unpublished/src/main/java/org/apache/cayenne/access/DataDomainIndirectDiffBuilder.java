@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A processor of ObjectStore indirect changes, such as flattened relationships and  * to-many relationships.  *   * @since 1.2  */
+comment|/**  * A processor of ObjectStore indirect changes, such as flattened relationships  * and to-many relationships.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -251,7 +251,8 @@ name|GraphDiff
 name|allChanges
 parameter_list|)
 block|{
-comment|// extract flattened and indirect changes and remove duplicate changes...
+comment|// extract flattened and indirect changes and remove duplicate
+comment|// changes...
 name|allChanges
 operator|.
 name|apply
@@ -371,9 +372,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entity
 operator|.
 name|getRelationship
@@ -458,7 +456,8 @@ literal|"'."
 argument_list|)
 throw|;
 block|}
-comment|// Register this combination (so we can remove it later if an insert
+comment|// Register this combination (so we can remove it later if an
+comment|// insert
 comment|// occurs before commit)
 name|FlattenedArcKey
 name|key
@@ -479,7 +478,8 @@ argument_list|,
 name|relationship
 argument_list|)
 decl_stmt|;
-comment|// If this combination has already been deleted, simply undelete it.
+comment|// If this combination has already been deleted, simply undelete
+comment|// it.
 if|if
 condition|(
 operator|!
@@ -539,9 +539,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entity
 operator|.
 name|getRelationship
@@ -615,7 +612,8 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// Register this combination (so we can remove it later if an insert
+comment|// Register this combination (so we can remove it later if an
+comment|// insert
 comment|// occurs before commit)
 name|FlattenedArcKey
 name|key
@@ -636,7 +634,8 @@ argument_list|,
 name|relationship
 argument_list|)
 decl_stmt|;
-comment|// If this combination has already been inserted, simply "uninsert" it
+comment|// If this combination has already been inserted, simply
+comment|// "uninsert" it
 comment|// also do not delete it twice
 if|if
 condition|(

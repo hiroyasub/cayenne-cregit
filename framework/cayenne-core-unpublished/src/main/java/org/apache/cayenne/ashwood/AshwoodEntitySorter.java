@@ -378,7 +378,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implements dependency sorting algorithms for ObjEntities, DbEntities and DataObjects.  * Presently it works for acyclic database schemas with possible multi-reflexive tables.  *   * @since 3.1  */
+comment|/**  * Implements dependency sorting algorithms for ObjEntities, DbEntities and  * DataObjects. Presently it works for acyclic database schemas with possible  * multi-reflexive tables.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -461,7 +461,8 @@ parameter_list|()
 block|{
 comment|// correct double check locking per Joshua Bloch
 comment|// http://java.sun.com/developer/technicalArticles/Interviews/bloch_effective_08_qa.html
-comment|// (maybe we should use something like CountDownLatch or a Cyclic barrier
+comment|// (maybe we should use something like CountDownLatch or a Cyclic
+comment|// barrier
 comment|// instead?)
 name|boolean
 name|localDirty
@@ -1417,9 +1418,6 @@ name|findReflexiveMaster
 argument_list|(
 name|current
 argument_list|,
-operator|(
-name|ObjRelationship
-operator|)
 name|objEntity
 operator|.
 name|getRelationship
@@ -1654,9 +1652,11 @@ operator|.
 name|getObjectContext
 argument_list|()
 decl_stmt|;
-comment|// find committed snapshot - so we can't fetch from the context as it will return
+comment|// find committed snapshot - so we can't fetch from the context as it
+comment|// will return
 comment|// dirty snapshot; must go down the stack instead
-comment|// how do we handle this for NEW objects correctly? For now bail from the method
+comment|// how do we handle this for NEW objects correctly? For now bail from
+comment|// the method
 if|if
 condition|(
 name|object
@@ -1759,8 +1759,10 @@ argument_list|,
 name|finalRel
 argument_list|)
 decl_stmt|;
-comment|// not using 'localObject', looking up in context instead, as within the sorter
-comment|// we only care about objects participating in transaction, so no need to create
+comment|// not using 'localObject', looking up in context instead, as within the
+comment|// sorter
+comment|// we only care about objects participating in transaction, so no need
+comment|// to create
 comment|// hollow objects
 return|return
 operator|(

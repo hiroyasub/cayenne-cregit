@@ -63,7 +63,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|Map
 import|;
 end_import
 
@@ -74,6 +74,8 @@ operator|.
 name|util
 operator|.
 name|Map
+operator|.
+name|Entry
 import|;
 end_import
 
@@ -246,6 +248,11 @@ name|translator
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|ObjAttribute
+argument_list|,
+name|ColumnDescriptor
+argument_list|>
 name|attributeOverrides
 init|=
 name|translator
@@ -299,46 +306,25 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Entry
+argument_list|<
+name|ObjAttribute
+argument_list|,
+name|ColumnDescriptor
+argument_list|>
+name|entry
+range|:
 name|attributeOverrides
 operator|.
 name|entrySet
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|ObjAttribute
 name|attribute
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|entry
 operator|.
 name|getKey
@@ -400,7 +386,8 @@ name|getValue
 argument_list|()
 condition|)
 block|{
-comment|// if attribute type is the same as column, there is no conflict
+comment|// if attribute type is the same as column, there is no
+comment|// conflict
 if|if
 condition|(
 operator|!

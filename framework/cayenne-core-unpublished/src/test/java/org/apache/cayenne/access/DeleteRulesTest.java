@@ -1479,9 +1479,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entity
 operator|.
 name|getRelationship
@@ -1533,9 +1530,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entity
 operator|.
 name|getRelationship
@@ -1630,9 +1624,6 @@ decl_stmt|;
 name|ObjRelationship
 name|relationship
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|entity
 operator|.
 name|getRelationship

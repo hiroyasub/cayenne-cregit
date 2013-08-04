@@ -867,9 +867,6 @@ comment|// and no exceptions thrown on concurrent modification...
 name|ObjRelationship
 name|r
 init|=
-operator|(
-name|ObjRelationship
-operator|)
 name|context
 operator|.
 name|getEntityResolver

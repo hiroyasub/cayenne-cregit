@@ -234,9 +234,6 @@ decl_stmt|;
 name|ObjAttribute
 name|a2
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization

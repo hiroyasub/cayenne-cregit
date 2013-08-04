@@ -229,6 +229,23 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|DbEntity
+name|getSourceEntity
+parameter_list|()
+block|{
+return|return
+operator|(
+name|DbEntity
+operator|)
+name|super
+operator|.
+name|getSourceEntity
+argument_list|()
+return|;
+block|}
 comment|/**      * @since 3.1      */
 specifier|public
 parameter_list|<
@@ -413,7 +430,7 @@ comment|/**      * Returns a target of this relationship. If relationship is not
 annotation|@
 name|Override
 specifier|public
-name|Entity
+name|DbEntity
 name|getTargetEntity
 parameter_list|()
 block|{

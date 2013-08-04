@@ -650,9 +650,6 @@ expr_stmt|;
 name|ObjAttribute
 name|id
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|artist
 operator|.
 name|getAttribute
@@ -1410,9 +1407,6 @@ comment|// BLOBs should be mapped as byte[]
 name|ObjAttribute
 name|blobAttr
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|blobEnt
 operator|.
 name|getAttribute
@@ -1456,9 +1450,6 @@ comment|// CLOBs should be mapped as Strings by default
 name|ObjAttribute
 name|clobAttr
 init|=
-operator|(
-name|ObjAttribute
-operator|)
 name|clobEnt
 operator|.
 name|getAttribute
