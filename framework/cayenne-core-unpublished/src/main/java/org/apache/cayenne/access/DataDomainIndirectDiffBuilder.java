@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -123,36 +143,6 @@ name|ObjRelationship
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
 begin_comment
 comment|/**  * A processor of ObjectStore indirect changes, such as flattened relationships and  * to-many relationships.  *   * @since 1.2  */
 end_comment
@@ -177,6 +167,9 @@ decl_stmt|;
 specifier|private
 specifier|final
 name|Collection
+argument_list|<
+name|ObjectId
+argument_list|>
 name|indirectModifications
 decl_stmt|;
 specifier|private
@@ -341,6 +334,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -397,15 +392,18 @@ name|isSourceIndependentFromTargetChange
 argument_list|()
 condition|)
 block|{
-if|if
-condition|(
-operator|!
-operator|(
+name|ObjectId
+name|nodeObjectId
+init|=
 operator|(
 name|ObjectId
 operator|)
 name|nodeId
-operator|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|nodeObjectId
 operator|.
 name|isTemporary
 argument_list|()
@@ -415,7 +413,7 @@ name|indirectModifications
 operator|.
 name|add
 argument_list|(
-name|nodeId
+name|nodeObjectId
 argument_list|)
 expr_stmt|;
 block|}
@@ -504,6 +502,8 @@ block|}
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -561,15 +561,18 @@ argument_list|()
 condition|)
 block|{
 comment|// do not record temporary id mods...
-if|if
-condition|(
-operator|!
-operator|(
+name|ObjectId
+name|nodeObjectId
+init|=
 operator|(
 name|ObjectId
 operator|)
 name|nodeId
-operator|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|nodeObjectId
 operator|.
 name|isTemporary
 argument_list|()
@@ -579,7 +582,7 @@ name|indirectModifications
 operator|.
 name|add
 argument_list|(
-name|nodeId
+name|nodeObjectId
 argument_list|)
 expr_stmt|;
 block|}
@@ -657,6 +660,8 @@ block|}
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -670,6 +675,8 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -680,6 +687,8 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -690,6 +699,8 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
