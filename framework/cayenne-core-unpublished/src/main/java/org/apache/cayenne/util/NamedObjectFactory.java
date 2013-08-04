@@ -554,6 +554,9 @@ name|String
 name|createName
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|Object
@@ -583,6 +586,9 @@ name|String
 name|createName
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|Object
