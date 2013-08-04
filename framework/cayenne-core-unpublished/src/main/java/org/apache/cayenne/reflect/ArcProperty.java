@@ -25,12 +25,26 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbRelationship
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjRelationship
 import|;
 end_import
 
 begin_comment
-comment|/**  * A Property that represents an "arc" connecting source node to the target node in the  * graph.  *   * @since 1.2  */
+comment|/**  * A Property that represents an "arc" connecting source node to the target node  * in the graph.  *   * @since 1.2  */
 end_comment
 
 begin_interface
@@ -45,17 +59,22 @@ name|ObjRelationship
 name|getRelationship
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a complimentary reverse ArcProperty or null if no reverse arc exists.      */
+comment|/**      * Returns a path over reverse DbRelationships for this arc's      * ObjRelationship.      *       * @since 3.2      */
+name|String
+name|getComplimentaryReverseDbRelationshipPath
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a complimentary reverse ArcProperty or null if no reverse arc      * exists.      */
 name|ArcProperty
 name|getComplimentaryReverseArc
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a ClassDescriptor for the type of graph nodes pointed to by this arc      * property. Note that considering that a target object may be a subclass of the class      * handled by the descriptor, users of this method may need to call      * {@link ClassDescriptor#getSubclassDescriptor(Class)} before using the descriptor to      * access objects.      */
+comment|/**      * Returns a ClassDescriptor for the type of graph nodes pointed to by this      * arc property. Note that considering that a target object may be a      * subclass of the class handled by the descriptor, users of this method may      * need to call {@link ClassDescriptor#getSubclassDescriptor(Class)} before      * using the descriptor to access objects.      */
 name|ClassDescriptor
 name|getTargetDescriptor
 parameter_list|()
 function_decl|;
-comment|/**      * Returns whether a target node connected to a given object is an unresolved fault.      *       * @param source an object that is a source object of the relationship.      */
+comment|/**      * Returns whether a target node connected to a given object is an      * unresolved fault.      *       * @param source      *            an object that is a source object of the relationship.      */
 name|boolean
 name|isFault
 parameter_list|(

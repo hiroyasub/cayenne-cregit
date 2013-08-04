@@ -933,6 +933,8 @@ operator|.
 name|addDiff
 argument_list|(
 name|diff
+argument_list|,
+name|this
 argument_list|)
 expr_stmt|;
 block|}
