@@ -946,10 +946,6 @@ condition|(
 name|diff
 operator|instanceof
 name|ArcOperation
-operator|&&
-name|snapshot
-operator|!=
-literal|null
 condition|)
 block|{
 name|ArcOperation
