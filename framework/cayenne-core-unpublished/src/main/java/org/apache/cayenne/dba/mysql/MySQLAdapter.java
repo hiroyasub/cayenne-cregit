@@ -1516,9 +1516,7 @@ expr_stmt|;
 comment|// append size and precision (if applicable)s
 if|if
 condition|(
-name|TypesMapping
-operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|column
 operator|.
@@ -1647,6 +1645,45 @@ argument_list|(
 literal|" AUTO_INCREMENT"
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+specifier|private
+name|boolean
+name|typeSupportsLength
+parameter_list|(
+name|int
+name|type
+parameter_list|)
+block|{
+comment|// As of MySQL 5.6.4 the "TIMESTAMP" and "TIME" types support length, which is the number of decimal places for fractional seconds
+comment|// http://dev.mysql.com/doc/refman/5.6/en/fractional-seconds.html
+switch|switch
+condition|(
+name|type
+condition|)
+block|{
+case|case
+name|Types
+operator|.
+name|TIMESTAMP
+case|:
+case|case
+name|Types
+operator|.
+name|TIME
+case|:
+return|return
+literal|true
+return|;
+default|default:
+return|return
+name|TypesMapping
+operator|.
+name|supportsLength
+argument_list|(
+name|type
+argument_list|)
+return|;
 block|}
 block|}
 annotation|@
