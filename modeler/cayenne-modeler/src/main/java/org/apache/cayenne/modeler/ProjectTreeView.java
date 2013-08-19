@@ -1615,6 +1615,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns tree model cast to ProjectTreeModel.      */
+specifier|public
 name|ProjectTreeModel
 name|getProjectModel
 parameter_list|()
