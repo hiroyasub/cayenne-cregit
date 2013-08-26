@@ -956,15 +956,6 @@ expr_stmt|;
 name|registerAction
 argument_list|(
 operator|new
-name|ExpandTreeAction
-argument_list|(
-name|application
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|registerAction
-argument_list|(
-operator|new
 name|FilterAction
 argument_list|(
 name|application

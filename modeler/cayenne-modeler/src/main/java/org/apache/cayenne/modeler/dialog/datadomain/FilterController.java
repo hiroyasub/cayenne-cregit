@@ -407,11 +407,14 @@ operator|==
 literal|"collapse"
 condition|)
 block|{
-name|tree
+name|treeModel
 operator|.
-name|collapsePath
+name|reload
 argument_list|(
-name|parent
+name|treeModel
+operator|.
+name|getRootNode
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
