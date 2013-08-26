@@ -298,6 +298,10 @@ argument_list|>
 name|classPathKeys
 decl_stmt|;
 specifier|private
+name|Preferences
+name|preferences
+decl_stmt|;
+specifier|private
 name|int
 name|counter
 decl_stmt|;
@@ -320,6 +324,25 @@ operator|=
 operator|new
 name|ClasspathPreferencesView
 argument_list|()
+expr_stmt|;
+comment|// this prefs node is shared with other dialog panels... be aware of
+comment|// that when accessing the keys
+name|this
+operator|.
+name|preferences
+operator|=
+name|getApplication
+argument_list|()
+operator|.
+name|getPreferencesNode
+argument_list|(
+name|this
+operator|.
+name|getClass
+argument_list|()
+argument_list|,
+literal|""
+argument_list|)
 expr_stmt|;
 name|PreferenceEditor
 name|editor
@@ -432,8 +455,7 @@ try|try
 block|{
 name|cpKeys
 operator|=
-name|getClassLoader
-argument_list|()
+name|preferences
 operator|.
 name|keys
 argument_list|()
@@ -492,12 +514,11 @@ name|NumberFormatException
 name|e
 parameter_list|)
 block|{
-comment|// remove wrong entry (key must be number)
-name|addRemovedPreferences
-argument_list|(
-name|cpKey
-argument_list|)
-expr_stmt|;
+comment|// we are sharing the 'preferences' node with other dialogs, and
+comment|// this is a rather poor way of telling our preference keys from
+comment|// other dialog keys ... ours are numeric, the rest are
+comment|// string..
+comment|// TODO: better key namespacing...
 continue|continue;
 block|}
 if|if
@@ -515,8 +536,7 @@ block|}
 name|String
 name|tempValue
 init|=
-name|getClassLoader
-argument_list|()
+name|preferences
 operator|.
 name|get
 argument_list|(
@@ -563,26 +583,6 @@ parameter_list|()
 block|{
 return|return
 name|view
-return|;
-block|}
-specifier|protected
-name|Preferences
-name|getClassLoader
-parameter_list|()
-block|{
-return|return
-name|getApplication
-argument_list|()
-operator|.
-name|getPreferencesNode
-argument_list|(
-name|this
-operator|.
-name|getClass
-argument_list|()
-argument_list|,
-literal|""
-argument_list|)
 return|;
 block|}
 specifier|protected
@@ -1002,8 +1002,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-name|getClassLoader
-argument_list|()
+name|preferences
 argument_list|)
 decl_stmt|;
 if|if
@@ -1041,8 +1040,7 @@ argument_list|()
 operator|.
 name|put
 argument_list|(
-name|getClassLoader
-argument_list|()
+name|preferences
 argument_list|,
 name|map
 argument_list|)
@@ -1071,8 +1069,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-name|getClassLoader
-argument_list|()
+name|preferences
 argument_list|)
 decl_stmt|;
 if|if
@@ -1110,8 +1107,7 @@ argument_list|()
 operator|.
 name|put
 argument_list|(
-name|getClassLoader
-argument_list|()
+name|preferences
 argument_list|,
 name|map
 argument_list|)
