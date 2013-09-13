@@ -24,7 +24,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result of  * SelectQuery execution. Usually a ResultIterator is supported by an open  * java.sql.ResultSet, therefore most of the methods would throw checked  * exceptions. ResultIterators must be explicitly closed when the user is done  * working with them.  *<p>  * Result "rows", depending on the query, may be represented as scalar values,  * DataRows, or Object[] arrays containing a mix of scalars and DataRows.  */
+comment|/**  * Defines API of an iterator over the records returned as a result of  * SelectQuery execution. Usually a ResultIterator is supported by an open  * java.sql.ResultSet, therefore ResultIterators must be explicitly closed when  * the user is done working with them. An alternative to that is  * {@link ObjectContext#iterate(org.apache.cayenne.query.Select, ResultIteratorCallback)}  * method that handles resource management.  */
 end_comment
 
 begin_interface
