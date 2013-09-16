@@ -871,8 +871,12 @@ argument_list|)
 throw|;
 block|}
 comment|// do basic conversions
-name|value
-operator|=
+name|Converter
+argument_list|<
+name|?
+argument_list|>
+name|converter
+init|=
 name|ConverterFactory
 operator|.
 name|factory
@@ -884,16 +888,31 @@ operator|.
 name|getPropertyType
 argument_list|()
 argument_list|)
+decl_stmt|;
+name|value
+operator|=
+operator|(
+name|converter
+operator|!=
+literal|null
+operator|)
+condition|?
+name|converter
 operator|.
 name|convert
 argument_list|(
 name|value
 argument_list|,
+operator|(
+name|Class
+operator|)
 name|descriptor
 operator|.
 name|getPropertyType
 argument_list|()
 argument_list|)
+else|:
+name|value
 expr_stmt|;
 comment|// set
 name|writer
