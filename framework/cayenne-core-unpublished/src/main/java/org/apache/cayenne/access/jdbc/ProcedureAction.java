@@ -316,6 +316,10 @@ comment|// TODO: andrus, 4/2/2007 - according to the docs we should store the bo
 comment|// return value of this method and avoid calling 'getMoreResults' if it is
 comment|// true.
 comment|// some db's handle this well, some don't (MySQL).
+comment|// 09/23/2013: almost all adapters except Oracle (and maybe a few
+comment|// more?) are actually using the correct strategy, so making it a
+comment|// default in the superclass, and isolating hack to subclasses is
+comment|// probably a good idea
 name|statement
 operator|.
 name|execute
@@ -897,6 +901,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Initializes statement with query parameters      *       * @throws Exception      */
+specifier|protected
 name|void
 name|initStatement
 parameter_list|(
