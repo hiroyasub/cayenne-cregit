@@ -422,8 +422,6 @@ class|class
 name|BaseContext
 implements|implements
 name|ObjectContext
-implements|,
-name|DataChannel
 block|{
 comment|/**      * A holder of a ObjectContext bound to the current thread.      *       * @since 3.0      */
 specifier|protected

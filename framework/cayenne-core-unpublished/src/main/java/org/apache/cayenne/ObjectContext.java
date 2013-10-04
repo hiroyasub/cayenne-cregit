@@ -108,6 +108,8 @@ specifier|public
 interface|interface
 name|ObjectContext
 extends|extends
+name|DataChannel
+extends|,
 name|Serializable
 block|{
 comment|/**      * Returns EntityResolver that stores all mapping information accessible by      * this ObjectContext.      */
