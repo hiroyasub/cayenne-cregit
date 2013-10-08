@@ -1596,7 +1596,7 @@ name|T
 argument_list|>
 name|filterObjects
 parameter_list|(
-name|List
+name|Collection
 argument_list|<
 name|T
 argument_list|>
