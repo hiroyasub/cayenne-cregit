@@ -569,7 +569,9 @@ name|resetProperties
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Creates new DataDomain.      *       * @param name      *            DataDomain name. Domain can be located using its name in the      *            Configuration object.      * @param properties      *            A Map containing domain configuration properties.      */
+comment|/**      * Creates new DataDomain.      *       * @param name      *            DataDomain name. Domain can be located using its name in the      *            Configuration object.      * @param properties      *            A Map containing domain configuration properties.      * @deprecated since 3.2 unused      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataDomain
 parameter_list|(
@@ -730,7 +732,9 @@ operator|=
 name|USING_EXTERNAL_TRANSACTIONS_DEFAULT
 expr_stmt|;
 block|}
-comment|/**      * Reinitializes domain state with a new set of properties.      *       * @since 1.1      */
+comment|/**      * Reinitializes domain state with a new set of properties.      *       * @since 1.1      * @deprecated since 3.2 properties are processed by the DI provider.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|initWithProperties
