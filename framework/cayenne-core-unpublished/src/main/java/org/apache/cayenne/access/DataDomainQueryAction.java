@@ -1746,6 +1746,8 @@ operator|new
 name|QueryCacheEntryFactory
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|createObject
@@ -1820,6 +1822,8 @@ operator|new
 name|Transformer
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|transform
@@ -2105,6 +2109,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|route
@@ -2240,6 +2246,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryEngine
 name|engineForDataMap
@@ -2294,6 +2302,8 @@ return|return
 name|node
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextCount
@@ -2313,6 +2323,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextBatchCount
@@ -2333,6 +2345,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -2451,6 +2465,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextQueryException
@@ -2477,6 +2493,8 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGlobalException
@@ -2500,6 +2518,8 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIteratedResult
