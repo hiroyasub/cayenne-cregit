@@ -828,6 +828,12 @@ name|getObjectId
 argument_list|()
 decl_stmt|;
 comment|// first look for the ID in the local GraphManager
+synchronized|synchronized
+init|(
+name|getGraphManager
+argument_list|()
+init|)
+block|{
 name|T
 name|localObject
 init|=
@@ -842,38 +848,6 @@ argument_list|(
 name|id
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|localObject
-operator|!=
-literal|null
-condition|)
-block|{
-return|return
-name|localObject
-return|;
-block|}
-synchronized|synchronized
-init|(
-name|getGraphManager
-argument_list|()
-init|)
-block|{
-comment|// check for race condition - the object may have appeared in the
-comment|// GraphManager just recently...
-name|localObject
-operator|=
-operator|(
-name|T
-operator|)
-name|getGraphManager
-argument_list|()
-operator|.
-name|getNode
-argument_list|(
-name|id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|localObject
