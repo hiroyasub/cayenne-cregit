@@ -1822,6 +1822,8 @@ expr_stmt|;
 block|}
 comment|// ****** DataChannel methods:
 comment|/**      * Runs query returning generic QueryResponse.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|onQuery
@@ -1885,6 +1887,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns an EntityResolver that stores mapping information for this      * domain.      */
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getEntityResolver
@@ -1906,6 +1910,8 @@ name|entityResolver
 return|;
 block|}
 comment|/**      * Only handles commit-type synchronization, ignoring any other type.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|GraphDiff
 name|onSync
@@ -2028,6 +2034,8 @@ operator|new
 name|Transformer
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|transform
@@ -2550,6 +2558,8 @@ name|DataDomainQueryFilterChain
 extends|extends
 name|DataDomainFilterChain
 block|{
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|onQuery
@@ -2593,6 +2603,8 @@ name|query
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|GraphDiff
 name|onSync
@@ -2622,6 +2634,8 @@ name|DataDomainSyncFilterChain
 extends|extends
 name|DataDomainFilterChain
 block|{
+annotation|@
+name|Override
 specifier|public
 name|GraphDiff
 name|onSync
@@ -2674,6 +2688,8 @@ name|syncType
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryResponse
 name|onQuery
