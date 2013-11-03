@@ -1543,6 +1543,8 @@ operator|new
 name|GraphChangeHandler
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -1558,6 +1560,8 @@ name|arcId
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -1573,6 +1577,8 @@ name|arcId
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -1582,6 +1588,8 @@ name|nodeId
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -1601,6 +1609,8 @@ name|newId
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -1619,6 +1629,8 @@ name|newValue
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -1906,6 +1918,8 @@ name|filteredObjects
 return|;
 block|}
 comment|/**      * SnapshotEventListener implementation that processes snapshot change event, updating      * DataObjects that have the changes.      *<p>      *<i>Implementation note:</i> This method should not attempt to alter the underlying      * DataRowStore, since it is normally invoked *AFTER* the DataRowStore was modified as      * a result of some external interaction.      *</p>      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|snapshotsChanged
@@ -2712,6 +2726,8 @@ operator|new
 name|PropertyVisitor
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToMany
@@ -2731,6 +2747,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitToOne
@@ -2762,6 +2780,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|visitAttribute
@@ -3044,6 +3064,8 @@ block|}
 comment|// *********** GraphManager Methods ********
 comment|// =========================================
 comment|/**      * Returns a registered DataObject or null of no object exists for the ObjectId.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|Object
@@ -3081,6 +3103,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns all registered DataObjects. List is returned by copy and can be modified by      * the caller.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|Collection
@@ -3105,6 +3129,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -3131,6 +3157,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|Object
@@ -3171,6 +3199,8 @@ name|object
 return|;
 block|}
 comment|/**      * Does nothing.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -3191,6 +3221,8 @@ argument_list|)
 throw|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -3230,6 +3262,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -3269,6 +3303,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Records dirty object snapshot.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -3318,6 +3354,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -3372,6 +3410,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -3501,6 +3541,8 @@ return|return
 name|event
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|apply
@@ -3515,6 +3557,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isNoop
@@ -3526,6 +3570,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|undo
