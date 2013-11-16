@@ -169,6 +169,14 @@ name|ONEWAY_PROJECT
 init|=
 literal|"cayenne-oneway-rels.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|MULTI_TIER_PROJECT
+init|=
+literal|"cayenne-multi-tier.xml"
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final

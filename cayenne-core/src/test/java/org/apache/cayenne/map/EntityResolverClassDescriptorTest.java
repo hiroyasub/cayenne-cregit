@@ -183,9 +183,9 @@ name|unit
 operator|.
 name|di
 operator|.
-name|client
+name|server
 operator|.
-name|ClientCase
+name|ServerCase
 import|;
 end_import
 
@@ -211,7 +211,7 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-name|ClientCase
+name|ServerCase
 operator|.
 name|MULTI_TIER_PROJECT
 argument_list|)
@@ -219,7 +219,7 @@ specifier|public
 class|class
 name|EntityResolverClassDescriptorTest
 extends|extends
-name|ClientCase
+name|ServerCase
 block|{
 annotation|@
 name|Inject
