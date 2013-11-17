@@ -10,10 +10,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|access
-operator|.
-name|jdbc
 package|;
 end_package
 
@@ -57,24 +53,11 @@ name|List
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|ResultIterator
-import|;
-end_import
-
 begin_comment
 comment|/**  * A ResultIterator over a collection of objects.  *   * @since 3.2  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|CollectionResultIterator
 parameter_list|<

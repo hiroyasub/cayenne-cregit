@@ -57,22 +57,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|web
-operator|.
-name|CayenneFilter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|BeforeScopeEnd
@@ -148,7 +132,7 @@ name|Injector
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Binds a DI {@link Injector} bound to the current thread. It is primarily      * intended for deserialization of ObjectContexts.      *<p>      * {@link CayenneFilter} will automatically bind the right injector to each      * request thread. If you are not using CayenneFilter, your application is      * responsible for calling this method at appropriate points of the      * lifecycle.      *       * @since 3.1      */
+comment|/**      * Binds a DI {@link Injector} bound to the current thread. It is primarily      * intended for deserialization of ObjectContexts.      *       * @since 3.1      */
 specifier|public
 specifier|static
 name|void
