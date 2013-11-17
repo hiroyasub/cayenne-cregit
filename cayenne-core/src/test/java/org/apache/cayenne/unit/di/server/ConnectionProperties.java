@@ -147,14 +147,57 @@ name|ExtendedProperties
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
 begin_comment
-comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects using information stored  * in $HOME/.cayenne/connection.properties. As of now this is purely a utility class. Its  * features are not used in deployment.  */
+comment|/**  * ConnectionProperties handles a set of DataSourceInfo objects using  * information stored in $HOME/.cayenne/connection.properties. As of now this is  * purely a utility class. Its features are not used in deployment.  */
 end_comment
 
 begin_class
 class|class
 name|ConnectionProperties
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Log
+name|logger
+init|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|ConnectionProperties
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -346,7 +389,8 @@ return|return
 name|sharedInstance
 return|;
 block|}
-comment|// CayenneUserDir is defined in the Modeler, not accessible here, so hardcoding it for
+comment|// CayenneUserDir is defined in the Modeler, not accessible here, so
+comment|// hardcoding it for
 comment|// the tests
 specifier|private
 specifier|static
@@ -452,6 +496,18 @@ argument_list|(
 name|DRIVER_KEY_MAVEN
 argument_list|)
 decl_stmt|;
+name|String
+name|connectionKey
+init|=
+name|System
+operator|.
+name|getProperty
+argument_list|(
+name|ServerCaseDataSourceInfoProvider
+operator|.
+name|CONNECTION_NAME_KEY
+argument_list|)
+decl_stmt|;
 name|File
 name|f
 init|=
@@ -474,6 +530,18 @@ name|exists
 argument_list|()
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Found connection properties at "
+operator|+
+name|f
+operator|.
+name|getAbsolutePath
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|ConnectionProperties
 name|cp
 init|=
@@ -565,22 +633,12 @@ operator|)
 operator|)
 operator|&&
 operator|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 operator|!=
 literal|null
 operator|&&
 operator|!
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 operator|.
 name|equals
 argument_list|(
@@ -600,12 +658,7 @@ name|connectionInfos
 operator|.
 name|get
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 argument_list|)
 operator|!=
 literal|null
@@ -617,24 +670,14 @@ name|connectionInfos
 operator|.
 name|get
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 argument_list|)
 expr_stmt|;
 name|connectionInfos
 operator|.
 name|remove
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 argument_list|)
 expr_stmt|;
 block|}
@@ -847,12 +890,7 @@ name|connectionInfos
 operator|.
 name|put
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 argument_list|,
 name|dsi
 argument_list|)
@@ -942,22 +980,12 @@ operator|)
 operator|)
 operator|&&
 operator|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 operator|!=
 literal|null
 operator|&&
 operator|!
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 operator|.
 name|equals
 argument_list|(
@@ -1085,18 +1113,14 @@ name|connectionInfos
 operator|.
 name|put
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"cayenneTestConnection"
-argument_list|)
+name|connectionKey
 argument_list|,
 name|dsi
 argument_list|)
 expr_stmt|;
 block|}
-comment|// lets touch this file so that users would get a clue of what it is
+comment|// lets touch this file so that users would get a clue of what
+comment|// it is
 name|createSamplePropertiesFile
 argument_list|(
 name|f
@@ -1423,7 +1447,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns DataSourceInfo object for a symbolic name. If name does not match an      * existing object, returns null.      */
+comment|/**      * Returns DataSourceInfo object for a symbolic name. If name does not match      * an existing object, returns null.      */
 specifier|public
 name|DataSourceInfo
 name|getConnectionInfo

@@ -97,7 +97,6 @@ argument_list|<
 name|DataSourceInfo
 argument_list|>
 block|{
-specifier|private
 specifier|static
 specifier|final
 name|String
@@ -127,6 +126,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|DataSourceInfo
 name|get
