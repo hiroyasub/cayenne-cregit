@@ -519,7 +519,7 @@ name|put
 argument_list|(
 literal|"derby"
 argument_list|,
-name|h2
+name|derby
 argument_list|)
 expr_stmt|;
 block|}
