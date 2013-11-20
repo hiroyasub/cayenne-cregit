@@ -45,7 +45,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -169,7 +171,7 @@ modifier|...
 name|modules
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 name|this
 operator|.
@@ -301,7 +303,7 @@ argument_list|>
 name|key
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 if|if
 condition|(
@@ -423,7 +425,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"No existing binding for key "
 operator|+
@@ -453,7 +455,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 return|return
 name|getProvider
@@ -479,7 +481,7 @@ argument_list|>
 name|key
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 return|return
 name|getProvider
@@ -508,7 +510,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 return|return
 name|getProvider
@@ -539,7 +541,7 @@ argument_list|>
 name|key
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 if|if
 condition|(
@@ -584,7 +586,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"DI container has no binding for key %s"
 argument_list|,

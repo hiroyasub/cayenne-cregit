@@ -30,7 +30,7 @@ name|ConfigurationException
 parameter_list|()
 block|{
 block|}
-comment|/**      * Constructs an exception with the specified message with an optional list of message      * formatting arguments. Message formatting rules follow "String.format(..)"      * conventions.      */
+comment|/**      * Constructs an exception with the specified message with an optional list      * of message formatting arguments. Message formatting rules follow      * "String.format(..)" conventions.      */
 specifier|public
 name|ConfigurationException
 parameter_list|(

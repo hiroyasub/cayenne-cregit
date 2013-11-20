@@ -23,7 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -43,7 +45,7 @@ name|T
 name|get
 parameter_list|()
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 block|}
 end_interface

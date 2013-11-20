@@ -25,7 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -58,7 +60,7 @@ name|MockInterface1
 name|get
 parameter_list|()
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 return|return
 operator|new

@@ -25,7 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -150,7 +152,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"Underlying provider (%s) returned NULL instance"
 argument_list|,

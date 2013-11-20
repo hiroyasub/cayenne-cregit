@@ -25,7 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
+name|di
+operator|.
+name|AdhocObjectFactory
 import|;
 end_import
 
@@ -39,7 +41,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|AdhocObjectFactory
+name|DIRuntimeException
 import|;
 end_import
 
@@ -181,7 +183,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|DIRuntimeException
 argument_list|(
 literal|"Invalid class %s of type %s"
 argument_list|,
@@ -209,7 +211,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|DIRuntimeException
 argument_list|(
 literal|"Class %s is not assignable to %s"
 argument_list|,
@@ -283,7 +285,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|DIRuntimeException
 argument_list|(
 literal|"Error creating instance of class %s of type %s"
 argument_list|,

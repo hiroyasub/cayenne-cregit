@@ -37,7 +37,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -140,7 +142,7 @@ name|T
 name|get
 parameter_list|()
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 name|T
 name|object
@@ -316,7 +318,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"Provider field %s.%s of type %s must be "
 operator|+
@@ -459,7 +461,7 @@ argument_list|)
 decl_stmt|;
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 name|message
 argument_list|,

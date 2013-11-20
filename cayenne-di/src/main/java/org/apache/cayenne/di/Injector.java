@@ -23,7 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -36,7 +38,7 @@ specifier|public
 interface|interface
 name|Injector
 block|{
-comment|/**      * Returns a service instance bound in the container for a specific type. Throws      *{@link ConfigurationException} if the type is not bound, or an instance can not be      * created.      */
+comment|/**      * Returns a service instance bound in the container for a specific type. Throws      *{@link DIRuntimeException} if the type is not bound, or an instance can not be      * created.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -50,9 +52,9 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
-comment|/**      * Returns a service instance bound in the container for a specific binding key.      * Throws {@link ConfigurationException} if the key is not bound, or an instance can      * not be created.      */
+comment|/**      * Returns a service instance bound in the container for a specific binding key.      * Throws {@link DIRuntimeException} if the key is not bound, or an instance can      * not be created.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -66,7 +68,7 @@ argument_list|>
 name|key
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 parameter_list|<
 name|T
@@ -84,7 +86,7 @@ argument_list|>
 name|type
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 parameter_list|<
 name|T
@@ -102,7 +104,7 @@ argument_list|>
 name|key
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 comment|/**      * Performs field injection on a given object, ignoring constructor injection. Since      * Cayenne DI injector returns fully injected objects, this method is rarely used      * directly.      *<p>      * Note that using this method inside a custom DI {@link Provider} will most likely      * result in double injection, as custom provider is wrapped in a field-injecting      * provider by the DI container. Instead custom providers must initialize object      * properties manually, obtaining dependencies from Injector.      */
 name|void

@@ -25,7 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -153,7 +155,7 @@ argument_list|>
 name|implementation
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 name|Provider
 argument_list|<
@@ -213,7 +215,7 @@ name|T
 name|instance
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 name|Provider
 argument_list|<

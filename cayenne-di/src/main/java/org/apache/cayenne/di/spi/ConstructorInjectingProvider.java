@@ -61,7 +61,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -169,7 +171,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"Can't find approprate constructor for implementation class '%s'"
 argument_list|,
@@ -374,7 +376,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"No applicable constructor is found for constructor injection in class '%s'"
 argument_list|,
@@ -623,7 +625,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"Constructor provider parameter %s must be "
 operator|+
@@ -730,7 +732,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|ConfigurationException
+name|DIRuntimeException
 argument_list|(
 literal|"Error instantiating class '%s'"
 argument_list|,

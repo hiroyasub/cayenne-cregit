@@ -49,7 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -191,7 +193,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|DIRuntimeException
 argument_list|(
 literal|"Error invoking event method %s"
 argument_list|,
@@ -242,7 +244,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneRuntimeException
+name|DIRuntimeException
 argument_list|(
 literal|"Event argument list size (%d) is different "
 operator|+

@@ -33,7 +33,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -73,7 +75,7 @@ modifier|...
 name|modules
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 block|{
 return|return
 operator|new

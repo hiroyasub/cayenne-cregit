@@ -23,7 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -54,7 +56,7 @@ argument_list|>
 name|implementation
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 name|BindingBuilder
 argument_list|<
@@ -66,7 +68,7 @@ name|T
 name|instance
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 name|BindingBuilder
 argument_list|<
@@ -88,7 +90,7 @@ argument_list|>
 name|providerType
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 name|BindingBuilder
 argument_list|<
@@ -105,7 +107,7 @@ argument_list|>
 name|provider
 parameter_list|)
 throws|throws
-name|ConfigurationException
+name|DIRuntimeException
 function_decl|;
 comment|/**      * Sets the scope of a bound instance. This method is used to change the default scope      * which is usually a singleton to a custom scope.      */
 name|void

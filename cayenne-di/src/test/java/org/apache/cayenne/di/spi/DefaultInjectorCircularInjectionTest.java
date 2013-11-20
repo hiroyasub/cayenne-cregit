@@ -35,7 +35,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -317,7 +319,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|ConfigurationException
+name|DIRuntimeException
 name|e
 parameter_list|)
 block|{
@@ -506,7 +508,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|ConfigurationException
+name|DIRuntimeException
 name|e
 parameter_list|)
 block|{
@@ -619,7 +621,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|ConfigurationException
+name|DIRuntimeException
 name|e
 parameter_list|)
 block|{
