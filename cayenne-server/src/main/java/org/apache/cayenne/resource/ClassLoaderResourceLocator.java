@@ -235,7 +235,7 @@ throw|throw
 operator|new
 name|IllegalStateException
 argument_list|(
-literal|"Can't detect ClassLoader to use for resouyrce location"
+literal|"Can't detect ClassLoader to use for resource location"
 argument_list|)
 throw|;
 block|}
