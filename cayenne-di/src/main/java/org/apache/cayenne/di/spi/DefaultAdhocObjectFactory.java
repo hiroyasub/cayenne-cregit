@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of {@link AdhocObjectFactory} that creates objects using  * default no-arg constructor and injects dependencies into annotated fields. Note that  * constructor injection is not supported by this factory.  *   * @since 3.1  */
+comment|/**  * A default implementation of {@link AdhocObjectFactory} that creates objects  * using default no-arg constructor and injects dependencies into annotated  * fields. Note that constructor injection is not supported by this factory.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -104,6 +104,13 @@ specifier|protected
 name|Injector
 name|injector
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -361,7 +368,8 @@ name|getClassLoader
 argument_list|()
 expr_stmt|;
 block|}
-comment|// use custom logic on failure only, assuming primitives and arrays are not that
+comment|// use custom logic on failure only, assuming primitives and arrays are
+comment|// not that
 comment|// common
 try|try
 block|{

@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ResourceLocator} that looks up resources is the application classpath based on  * the current thread ClassLoader.  *   * @since 3.1  */
+comment|/**  * A {@link ResourceLocator} that looks up resources is the application  * classpath based on the current thread ClassLoader.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -88,6 +88,8 @@ name|ClassLoaderResourceLocator
 implements|implements
 name|ResourceLocator
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -155,9 +157,10 @@ name|hasMoreElements
 argument_list|()
 condition|)
 block|{
-comment|// TODO: andrus 11/30/2009 - replace URLResource that resolves relative URL's
-comment|// as truly relative with some kind of ClasspathResource that creates a
-comment|// relative *path* and then resolves it against the entire classpath space.
+comment|// TODO: andrus 11/30/2009 - replace URLResource that resolves
+comment|// relative URL's as truly relative with some kind of
+comment|// ClasspathResource that creates a relative *path* and then
+comment|// resolves it against the entire classpath space.
 name|resources
 operator|.
 name|add
