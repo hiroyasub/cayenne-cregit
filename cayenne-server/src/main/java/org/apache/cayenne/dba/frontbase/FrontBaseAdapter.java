@@ -295,6 +295,20 @@ name|SQLAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
 begin_comment
 comment|/**  * DbAdapter implementation for<a href="http://www.frontbase.com/">FrontBase RDBMS</a>.  * Sample connection settings to use with FrontBase are shown below:  *   *<pre>  *          fb.jdbc.username = _system  *          fb.jdbc.password = secret  *          fb.jdbc.url = jdbc:FrontBase://localhost/cayenne/  *          fb.jdbc.driver = jdbc.FrontBase.FBJDriver  *</pre>  *   * @since 1.2  */
 end_comment
@@ -376,6 +390,11 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+annotation|@
+name|Inject
+name|ResourceLocator
+name|resourceLocator
 parameter_list|)
 block|{
 name|super
@@ -387,6 +406,8 @@ argument_list|,
 name|userExtendedTypes
 argument_list|,
 name|extendedTypeFactories
+argument_list|,
+name|resourceLocator
 argument_list|)
 expr_stmt|;
 name|setSupportsBatchUpdates

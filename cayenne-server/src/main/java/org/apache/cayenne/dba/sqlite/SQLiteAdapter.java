@@ -245,6 +245,20 @@ name|SQLAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
 begin_comment
 comment|/**  * A SQLite database adapter that works with Zentus JDBC driver. See  * http://www.zentus.com/sqlitejdbc/ for the driver information. Also look at  * http://www.xerial.org/trac/Xerial/wiki/SQLiteJDBC for another adaptor option.  *   *<pre>  *      sqlite.jdbc.url = jdbc:sqlite:sqlitetest.db  *      sqlite.jdbc.driver = org.sqlite.JDBC  *</pre>  *   * @since 3.0  */
 end_comment
@@ -306,6 +320,11 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+annotation|@
+name|Inject
+name|ResourceLocator
+name|resourceLocator
 parameter_list|)
 block|{
 name|super
@@ -317,6 +336,8 @@ argument_list|,
 name|userExtendedTypes
 argument_list|,
 name|extendedTypeFactories
+argument_list|,
+name|resourceLocator
 argument_list|)
 expr_stmt|;
 name|this

@@ -463,6 +463,20 @@ name|SQLAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
 begin_comment
 comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.  *<h3>  * Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by  * MyISAM engine. This adapter by default assumes MyISAM, so  * {@link org.apache.cayenne.dba.JdbcAdapter#supportsFkConstraints()} will  * return false. Users can manually change this by calling  *<em>setSupportsFkConstraints(true)</em> or better by using an  * {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the adapter  * name at all for the DataNode, letting Cayenne guess it in runtime. In the  * later case Cayenne will check the<em>table_type</em> MySQL variable to  * detect whether InnoDB is the default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc:mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  */
 end_comment
@@ -549,6 +563,11 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+annotation|@
+name|Inject
+name|ResourceLocator
+name|resourceLocator
 parameter_list|)
 block|{
 name|super
@@ -560,6 +579,8 @@ argument_list|,
 name|userExtendedTypes
 argument_list|,
 name|extendedTypeFactories
+argument_list|,
+name|resourceLocator
 argument_list|)
 expr_stmt|;
 comment|// init defaults

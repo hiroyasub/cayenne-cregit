@@ -459,6 +459,20 @@ name|UpdateBatchQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
 begin_comment
 comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  * connection settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *</pre>  */
 end_comment
@@ -793,6 +807,11 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+annotation|@
+name|Inject
+name|ResourceLocator
+name|resourceLocator
 parameter_list|)
 block|{
 name|super
@@ -804,6 +823,8 @@ argument_list|,
 name|userExtendedTypes
 argument_list|,
 name|extendedTypeFactories
+argument_list|,
+name|resourceLocator
 argument_list|)
 expr_stmt|;
 comment|// enable batch updates by default

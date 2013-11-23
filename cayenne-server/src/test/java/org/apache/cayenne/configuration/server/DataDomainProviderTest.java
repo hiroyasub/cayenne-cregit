@@ -793,6 +793,20 @@ name|cayenne
 operator|.
 name|resource
 operator|.
+name|ClassLoaderResourceLocator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
 name|Resource
 import|;
 end_import
@@ -1015,7 +1029,7 @@ name|ResourceLocator
 name|locator
 init|=
 operator|new
-name|ResourceLocator
+name|ClassLoaderResourceLocator
 argument_list|()
 block|{
 specifier|public
@@ -1029,6 +1043,28 @@ name|String
 name|name
 parameter_list|)
 block|{
+comment|// ResourceLocator also used by JdbcAdapter to locate
+comment|// types.xml... if this is the request we are getting, just let
+comment|// it go through..
+if|if
+condition|(
+name|name
+operator|.
+name|endsWith
+argument_list|(
+literal|"types.xml"
+argument_list|)
+condition|)
+block|{
+return|return
+name|super
+operator|.
+name|findResources
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
 name|assertEquals
 argument_list|(
 name|testConfigName

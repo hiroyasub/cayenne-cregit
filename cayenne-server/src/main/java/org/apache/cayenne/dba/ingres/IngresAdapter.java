@@ -333,6 +333,20 @@ name|SQLAction
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|resource
+operator|.
+name|ResourceLocator
+import|;
+end_import
+
 begin_comment
 comment|/**  * DbAdapter implementation for<a  * href="http://opensource.ca.com/projects/ingres/">Ingres</a>. Sample  * connection settings to use with Ingres are shown below:  *   *<pre>  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
 end_comment
@@ -398,6 +412,11 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+annotation|@
+name|Inject
+name|ResourceLocator
+name|resourceLocator
 parameter_list|)
 block|{
 name|super
@@ -409,6 +428,8 @@ argument_list|,
 name|userExtendedTypes
 argument_list|,
 name|extendedTypeFactories
+argument_list|,
+name|resourceLocator
 argument_list|)
 expr_stmt|;
 name|setSupportsUniqueConstraints

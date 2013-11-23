@@ -413,20 +413,6 @@ name|cayenne
 operator|.
 name|resource
 operator|.
-name|ClassLoaderResourceLocator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|resource
-operator|.
 name|Resource
 import|;
 end_import
@@ -570,6 +556,11 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+annotation|@
+name|Inject
+name|ResourceLocator
+name|resourceLocator
 parameter_list|)
 block|{
 comment|// init defaults
@@ -602,14 +593,11 @@ argument_list|,
 literal|false
 argument_list|)
 expr_stmt|;
-comment|// TODO: andrus 05.02.2010 - ideally this should be injected
 name|this
 operator|.
 name|resourceLocator
 operator|=
-operator|new
-name|ClassLoaderResourceLocator
-argument_list|()
+name|resourceLocator
 expr_stmt|;
 name|this
 operator|.
