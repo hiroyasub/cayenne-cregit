@@ -113,6 +113,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|AdhocObjectFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Util
@@ -148,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor of an embeddable class. Embeddable is a persistent class that  * doesn't have its own identity and is embedded in other persistent classes. It can be  * viewed as a custom type mapped to one or more database columns. Embeddable mapping can  * include optional default column names that can be overriden by the owning entity.  *   * @since 3.0  */
+comment|/**  * A mapping descriptor of an embeddable class. Embeddable is a persistent class  * that doesn't have its own identity and is embedded in other persistent  * classes. It can be viewed as a custom type mapped to one or more database  * columns. Embeddable mapping can include optional default column names that  * can be overriden by the owning entity.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -264,7 +278,9 @@ operator|=
 name|dataMap
 expr_stmt|;
 block|}
-comment|/**      * Returns Java class of the embeddable.      */
+comment|/**      * Returns Java class of the embeddable.      *       * @deprecated since 3.2 this method based on statically defined class      *             loading algorithm is not going to work in environments like      *             OSGi. {@link AdhocObjectFactory} should be used as it can      *             provide the environment-specific class loading policy.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|Class
 argument_list|<
@@ -316,7 +332,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns EmbeddableAttribute of this Embeddable that maps to      *<code>dbAttribute</code> parameter. Returns null if no such attribute is found.      */
+comment|/**      * Returns EmbeddableAttribute of this Embeddable that maps to      *<code>dbAttribute</code> parameter. Returns null if no such attribute is      * found.      */
 specifier|public
 name|EmbeddableAttribute
 name|getAttributeForDbPath
@@ -403,7 +419,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds new embeddable attribute to the entity, setting its parent embeddable to be      * this object. If attribute has no name, IllegalArgumentException is thrown.      */
+comment|/**      * Adds new embeddable attribute to the entity, setting its parent      * embeddable to be this object. If attribute has no name,      * IllegalArgumentException is thrown.      */
 specifier|public
 name|void
 name|addAttribute
