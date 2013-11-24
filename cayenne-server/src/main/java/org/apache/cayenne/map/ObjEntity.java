@@ -177,6 +177,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|AdhocObjectFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|exp
 operator|.
 name|Expression
@@ -1226,7 +1240,8 @@ return|return
 name|entity
 return|;
 block|}
-comment|/**      * Returns a non-null class name. For generic entities with no class      * specified explicitly, default DataMap superclass is used, and if it is      * not set - CayenneDataObject is used.      */
+comment|/**      * Returns a non-null class name. For generic entities with no class      * specified explicitly, default DataMap superclass is used, and if it is      * not set - CayenneDataObject is used.      *       * @since 3.2      */
+specifier|public
 name|String
 name|getJavaClassName
 parameter_list|()
@@ -1274,7 +1289,9 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns Java class of persistent objects described by this entity. For      * generic entities with no class specified explicitly, default DataMap      * superclass is used, and if it is not set - CayenneDataObject is used.      * Casts any thrown exceptions into CayenneRuntimeException.      *       * @since 1.2      */
+comment|/**      * Returns Java class of persistent objects described by this entity. For      * generic entities with no class specified explicitly, default DataMap      * superclass is used, and if it is not set - CayenneDataObject is used.      * Casts any thrown exceptions into CayenneRuntimeException.      *       * @since 1.2      * @deprecated since 3.2 this method based on statically defined class      *             loading algorithm is not going to work in environments like      *             OSGi. {@link AdhocObjectFactory} should be used as it can      *             provide the environment-specific class loading policy.       */
+annotation|@
+name|Deprecated
 specifier|public
 name|Class
 argument_list|<

@@ -165,11 +165,7 @@ argument_list|<
 name|T
 argument_list|>
 name|type
-decl_stmt|;
-try|try
-block|{
-name|type
-operator|=
+init|=
 operator|(
 name|Class
 argument_list|<
@@ -180,31 +176,7 @@ name|getJavaClass
 argument_list|(
 name|className
 argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ClassNotFoundException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|DIRuntimeException
-argument_list|(
-literal|"Invalid class %s of type %s"
-argument_list|,
-name|e
-argument_list|,
-name|className
-argument_list|,
-name|superType
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -372,6 +344,8 @@ return|return
 name|classLoader
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Class
 argument_list|<
@@ -382,8 +356,6 @@ parameter_list|(
 name|String
 name|className
 parameter_list|)
-throws|throws
-name|ClassNotFoundException
 block|{
 comment|// is there a better way to get array class from string name?
 if|if
@@ -395,7 +367,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|ClassNotFoundException
+name|NullPointerException
 argument_list|(
 literal|"Null class name"
 argument_list|)
@@ -578,6 +550,22 @@ operator|.
 name|TYPE
 return|;
 block|}
+if|else if
+condition|(
+literal|"void"
+operator|.
+name|equals
+argument_list|(
+name|className
+argument_list|)
+condition|)
+block|{
+return|return
+name|Void
+operator|.
+name|TYPE
+return|;
+block|}
 comment|// try inner class often specified with "." instead of $
 else|else
 block|{
@@ -655,7 +643,15 @@ block|}
 block|}
 block|}
 throw|throw
+operator|new
+name|DIRuntimeException
+argument_list|(
+literal|"Invalid class: %s"
+argument_list|,
 name|e
+argument_list|,
+name|className
+argument_list|)
 throw|;
 block|}
 if|if
@@ -831,6 +827,8 @@ operator|.
 name|class
 return|;
 block|}
+try|try
+block|{
 return|return
 name|Class
 operator|.
@@ -847,6 +845,25 @@ argument_list|,
 name|classLoader
 argument_list|)
 return|;
+block|}
+catch|catch
+parameter_list|(
+name|ClassNotFoundException
+name|e1
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|DIRuntimeException
+argument_list|(
+literal|"Invalid class: %s"
+argument_list|,
+name|e1
+argument_list|,
+name|className
+argument_list|)
+throw|;
+block|}
 block|}
 block|}
 block|}

@@ -43,6 +43,17 @@ name|String
 name|className
 parameter_list|)
 function_decl|;
+comment|/**      * Returns a Java class loaded using ClassLoader returned from      * {@link #getClassLoader(String)} for a given class name.      *       * @since 3.2      */
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|getJavaClass
+parameter_list|(
+name|String
+name|className
+parameter_list|)
+function_decl|;
 comment|/**      * Returns a ClassLoader appropriate for loading a given resource. Resource      * path should be compatible with Class.getResource(..) and such, i.e. the      * path component separator should be slash, not dot.      *       * @since 3.2      */
 name|ClassLoader
 name|getClassLoader
