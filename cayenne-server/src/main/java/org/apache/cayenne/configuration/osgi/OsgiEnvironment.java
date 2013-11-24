@@ -27,7 +27,7 @@ interface|interface
 name|OsgiEnvironment
 block|{
 name|ClassLoader
-name|applicationClassLoader
+name|resourceClassLoader
 parameter_list|(
 name|String
 name|resourceName

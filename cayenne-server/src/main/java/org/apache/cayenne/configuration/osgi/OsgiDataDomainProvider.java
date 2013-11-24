@@ -177,7 +177,7 @@ name|setContextClassLoader
 argument_list|(
 name|osgiEnvironment
 operator|.
-name|applicationClassLoader
+name|resourceClassLoader
 argument_list|(
 literal|"com/"
 argument_list|)

@@ -131,7 +131,7 @@ literal|2
 condition|)
 block|{
 return|return
-name|applicationClassLoader
+name|resourceClassLoader
 argument_list|(
 name|resourceName
 argument_list|)
@@ -194,7 +194,7 @@ argument_list|()
 return|;
 block|}
 return|return
-name|applicationClassLoader
+name|resourceClassLoader
 argument_list|(
 name|resourceName
 argument_list|)
@@ -202,7 +202,7 @@ return|;
 block|}
 specifier|protected
 name|ClassLoader
-name|applicationClassLoader
+name|resourceClassLoader
 parameter_list|(
 name|String
 name|resourceName
@@ -211,7 +211,7 @@ block|{
 return|return
 name|osgiEnvironment
 operator|.
-name|applicationClassLoader
+name|resourceClassLoader
 argument_list|(
 name|resourceName
 argument_list|)

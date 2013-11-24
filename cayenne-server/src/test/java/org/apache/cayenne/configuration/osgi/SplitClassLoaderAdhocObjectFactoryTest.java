@@ -122,7 +122,7 @@ name|when
 argument_list|(
 name|osgiEnvironment
 operator|.
-name|applicationClassLoader
+name|resourceClassLoader
 argument_list|(
 name|anyString
 argument_list|()
