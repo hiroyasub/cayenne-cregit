@@ -61,6 +61,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|DIRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Util
@@ -1043,6 +1057,9 @@ return|return
 name|dataSourceUrl
 return|;
 block|}
+comment|/**      * @deprecated since 3.2 as class loading should not happen here.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|PasswordEncoding
 name|getPasswordEncoder
@@ -1093,6 +1110,15 @@ block|{
 empty_stmt|;
 comment|// Swallow it -- no need to throw/etc.
 block|}
+catch|catch
+parameter_list|(
+name|DIRuntimeException
+name|e
+parameter_list|)
+block|{
+empty_stmt|;
+comment|// Swallow it -- no need to throw/etc.
+block|}
 name|logger
 operator|.
 name|error
@@ -1102,7 +1128,7 @@ operator|+
 name|getPasswordEncoderClass
 argument_list|()
 operator|+
-literal|"' -- please check CLASSPATH"
+literal|"'"
 argument_list|)
 expr_stmt|;
 return|return
