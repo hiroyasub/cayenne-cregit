@@ -219,6 +219,14 @@ name|ConnectionUnavailableException
 extends|extends
 name|SQLException
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1063973806941023165L
+decl_stmt|;
 specifier|public
 name|ConnectionUnavailableException
 parameter_list|(
@@ -287,7 +295,9 @@ specifier|private
 name|long
 name|maxQueueWaitTime
 decl_stmt|;
-comment|/**      * Creates new PoolManager using org.apache.cayenne.conn.PoolDataSource for an      * underlying ConnectionPoolDataSource.      */
+comment|/**      * Creates new PoolManager using org.apache.cayenne.conn.PoolDataSource for an      * underlying ConnectionPoolDataSource.      *       * @deprecated since 3.2 This constructor causes implicit class loading that should avoided.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|PoolManager
 parameter_list|(
@@ -332,6 +342,9 @@ name|MAX_QUEUE_WAIT_DEFAULT
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.2 This constructor causes implicit class loading that should avoided.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|PoolManager
 parameter_list|(
@@ -481,7 +494,7 @@ name|maxQueueWaitTime
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates new PoolManager with the specified policy for connection pooling and a      * ConnectionPoolDataSource object.      *       * @param poolDataSource data source for pooled connections      * @param minCons Non-negative integer that specifies a minimum number of open      *            connections to keep in the pool at all times      * @param maxCons Non-negative integer that specifies maximum number of simultaneuosly      *            open connections      * @throws SQLException if pool manager can not be created.      */
+comment|/**      * Creates new PoolManager with the specified policy for connection pooling and a      * ConnectionPoolDataSource object.      *       * @param poolDataSource data source for pooled connections      * @param minCons Non-negative integer that specifies a minimum number of open      *            connections to keep in the pool at all times      * @param maxCons Non-negative integer that specifies maximum number of simultaneuosly      *            open connections      * @throws SQLException if pool manager can not be created.      * @deprecated since 3.2 use {@link #PoolManager(ConnectionPoolDataSource, int, int, String, String, long)}      */
 specifier|public
 name|PoolManager
 parameter_list|(
@@ -503,6 +516,49 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+name|this
+argument_list|(
+name|poolDataSource
+argument_list|,
+name|minCons
+argument_list|,
+name|maxCons
+argument_list|,
+name|userName
+argument_list|,
+name|password
+argument_list|,
+name|PoolManager
+operator|.
+name|MAX_QUEUE_WAIT_DEFAULT
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Creates new PoolManager with the specified policy for connection pooling and a      * ConnectionPoolDataSource object.      *       * @param poolDataSource data source for pooled connections      * @param minCons Non-negative integer that specifies a minimum number of open      *            connections to keep in the pool at all times      * @param maxCons Non-negative integer that specifies maximum number of simultaneuosly      *            open connections      * @throws SQLException if pool manager can not be created.      * @since 3.2      */
+specifier|public
+name|PoolManager
+parameter_list|(
+name|ConnectionPoolDataSource
+name|poolDataSource
+parameter_list|,
+name|int
+name|minCons
+parameter_list|,
+name|int
+name|maxCons
+parameter_list|,
+name|String
+name|userName
+parameter_list|,
+name|String
+name|password
+parameter_list|,
+name|long
+name|maxQueueWaitTime
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
 name|init
 argument_list|(
 name|poolDataSource
@@ -515,7 +571,7 @@ name|userName
 argument_list|,
 name|password
 argument_list|,
-name|MAX_QUEUE_WAIT_DEFAULT
+name|maxQueueWaitTime
 argument_list|)
 expr_stmt|;
 block|}
