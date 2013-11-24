@@ -16,42 +16,20 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Creates objects for user-provided String class names, injecting dependencies  * into them.  *   * @since 3.1  */
+comment|/**  * Maps ClassLoaders to resources. This is a useful abstraction when switching  * between environments. E.g. between JEE with thread/hierarchical classloaders  * and OSGi with per-bundle classloaders.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|AdhocObjectFactory
+name|ClassLoaderManager
 block|{
-comment|/**      * Returns an instance of "className" that implements "superType", injecting      * dependencies from the registry into it.      */
-parameter_list|<
-name|T
-parameter_list|>
-name|T
-name|newInstance
-parameter_list|(
-name|Class
-argument_list|<
-name|?
-super|super
-name|T
-argument_list|>
-name|superType
-parameter_list|,
-name|String
-name|className
-parameter_list|)
-function_decl|;
-comment|/**      * Returns a Java class loaded using ClassLoader returned from      * {@link #getClassLoader(String)} for a given class name.      *       * @since 3.2      */
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|getJavaClass
+comment|/**      * Returns a ClassLoader appropriate for loading a given resource. Resource      * path should be compatible with Class.getResource(..) and such, i.e. the      * path component separator should be slash, not dot.      */
+name|ClassLoader
+name|getClassLoader
 parameter_list|(
 name|String
-name|className
+name|resourceName
 parameter_list|)
 function_decl|;
 block|}

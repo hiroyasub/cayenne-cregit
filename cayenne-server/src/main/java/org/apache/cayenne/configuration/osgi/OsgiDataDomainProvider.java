@@ -69,6 +69,20 @@ name|cayenne
 operator|.
 name|di
 operator|.
+name|ClassLoaderManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
 name|Inject
 import|;
 end_import
@@ -121,23 +135,23 @@ extends|extends
 name|DataDomainProvider
 block|{
 specifier|private
-name|OsgiEnvironment
-name|osgiEnvironment
+name|ClassLoaderManager
+name|classLoaderManager
 decl_stmt|;
 specifier|public
 name|OsgiDataDomainProvider
 parameter_list|(
 annotation|@
 name|Inject
-name|OsgiEnvironment
-name|osgiEnvironment
+name|ClassLoaderManager
+name|classLoaderManager
 parameter_list|)
 block|{
 name|this
 operator|.
-name|osgiEnvironment
+name|classLoaderManager
 operator|=
-name|osgiEnvironment
+name|classLoaderManager
 expr_stmt|;
 block|}
 annotation|@
@@ -169,15 +183,15 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-comment|// using fake package name... may not work with all implementations
-comment|// of osgiEnvironment?
+comment|// using fake package name... as long as it is not
+comment|// org.apache.cayenne, this do the right trick
 name|thread
 operator|.
 name|setContextClassLoader
 argument_list|(
-name|osgiEnvironment
+name|classLoaderManager
 operator|.
-name|resourceClassLoader
+name|getClassLoader
 argument_list|(
 literal|"com/"
 argument_list|)

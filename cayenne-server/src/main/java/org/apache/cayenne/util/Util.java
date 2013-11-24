@@ -343,9 +343,39 @@ name|cayenne
 operator|.
 name|di
 operator|.
+name|AdhocObjectFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
 name|spi
 operator|.
 name|DefaultAdhocObjectFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|spi
+operator|.
+name|DefaultClassLoaderManager
 import|;
 end_import
 
@@ -452,6 +482,8 @@ specifier|public
 class|class
 name|Util
 block|{
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|DefaultAdhocObjectFactory
@@ -463,10 +495,16 @@ name|objectFactory
 operator|=
 operator|new
 name|DefaultAdhocObjectFactory
+argument_list|(
+literal|null
+argument_list|,
+operator|new
+name|DefaultClassLoaderManager
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Converts URL to file. Throws {@link IllegalArgumentException} if the URL is not a      * "file://" URL.      */
+comment|/**      * Converts URL to file. Throws {@link IllegalArgumentException} if the URL      * is not a "file://" URL.      */
 specifier|public
 specifier|static
 name|File
@@ -536,7 +574,7 @@ name|uri
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads file contents, returning it as a String, using System default line separator.      */
+comment|/**      * Reads file contents, returning it as a String, using System default line      * separator.      */
 specifier|public
 specifier|static
 name|String
@@ -562,7 +600,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads file contents, returning it as a String, joining lines with provided      * separator.      */
+comment|/**      * Reads file contents, returning it as a String, joining lines with      * provided separator.      */
 specifier|public
 specifier|static
 name|String
@@ -647,7 +685,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * @param strings The list of strings to join.      * @param separator The separator between the strings.      * @return A single string of all the input strings separated by the separator.      */
+comment|/**      * @param strings      *            The list of strings to join.      * @param separator      *            The separator between the strings.      * @return A single string of all the input strings separated by the      *         separator.      */
 specifier|public
 specifier|static
 name|String
@@ -735,7 +773,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Replaces all backslashes "\" with forward slashes "/". Convenience method to      * convert path Strings to URI format.      */
+comment|/**      * Replaces all backslashes "\" with forward slashes "/". Convenience method      * to convert path Strings to URI format.      */
 specifier|public
 specifier|static
 name|String
@@ -754,7 +792,7 @@ name|string
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks up and returns the root cause of an exception. If none is found, returns      * supplied Throwable object unchanged. If root is found, recursively "unwraps" it,      * and returns the result to the user.      */
+comment|/**      * Looks up and returns the root cause of an exception. If none is found,      * returns supplied Throwable object unchanged. If root is found,      * recursively "unwraps" it, and returns the result to the user.      */
 specifier|public
 specifier|static
 name|Throwable
@@ -860,7 +898,7 @@ return|return
 name|th
 return|;
 block|}
-comment|/**      * Compares two objects similar to "Object.equals(Object)". Unlike Object.equals(..),      * this method doesn't throw an exception if any of the two objects is null.      */
+comment|/**      * Compares two objects similar to "Object.equals(Object)". Unlike      * Object.equals(..), this method doesn't throw an exception if any of the      * two objects is null.      */
 specifier|public
 specifier|static
 name|boolean
@@ -937,7 +975,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Compares two objects similar to "Comparable.compareTo(Object)". Unlike      * Comparable.compareTo(..), this method doesn't throw an exception if any of the two      * objects is null.      *      * @since 1.1      */
+comment|/**      * Compares two objects similar to "Comparable.compareTo(Object)". Unlike      * Comparable.compareTo(..), this method doesn't throw an exception if any      * of the two objects is null.      *       * @since 1.1      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1127,13 +1165,14 @@ operator|.
 name|readObject
 argument_list|()
 decl_stmt|;
-comment|// no need to close the stream - we created it and now will be throwing away...
+comment|// no need to close the stream - we created it and now will be throwing
+comment|// away...
 comment|// in.close();
 return|return
 name|copy
 return|;
 block|}
-comment|/**      * Creates an XMLReader with default feature set. Note that all Cayenne internal XML      * parsers should probably use XMLReader obtained via this method for consistency      * sake, and can customize feature sets as needed.      */
+comment|/**      * Creates an XMLReader with default feature set. Note that all Cayenne      * internal XML parsers should probably use XMLReader obtained via this      * method for consistency sake, and can customize feature sets as needed.      */
 specifier|public
 specifier|static
 name|XMLReader
@@ -1184,7 +1223,7 @@ return|return
 name|reader
 return|;
 block|}
-comment|/**      * Returns package name for the Java class as a path separated with forward slash      * ("/"). Method is used to lookup resources that are located in package      * subdirectories. For example, a String "a/b/c" will be returned for class name      * "a.b.c.ClassName".      */
+comment|/**      * Returns package name for the Java class as a path separated with forward      * slash ("/"). Method is used to lookup resources that are located in      * package subdirectories. For example, a String "a/b/c" will be returned      * for class name "a.b.c.ClassName".      */
 specifier|public
 specifier|static
 name|String
@@ -1203,7 +1242,7 @@ name|className
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an unqualified class name for the fully qualified name.      *      * @since 3.0      */
+comment|/**      * Returns an unqualified class name for the fully qualified name.      *       * @since 3.0      */
 specifier|public
 specifier|static
 name|String
@@ -1275,7 +1314,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a mutable map out of two arrays with keys and values.      *      * @since 1.2      */
+comment|/**      * Creates a mutable map out of two arrays with keys and values.      *       * @since 1.2      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1420,7 +1459,7 @@ return|return
 name|map
 return|;
 block|}
-comment|/**      * Extracts extension from the file name. Dot is not included in the returned string.      */
+comment|/**      * Extracts extension from the file name. Dot is not included in the      * returned string.      */
 specifier|public
 specifier|static
 name|String
@@ -1509,7 +1548,7 @@ else|:
 name|fileName
 return|;
 block|}
-comment|/**      * Strips "\n", "\r\n", "\r" from the argument string, replacing them with a provided      * character.      *      * @since 3.1      */
+comment|/**      * Strips "\n", "\r\n", "\r" from the argument string, replacing them with a      * provided character.      *       * @since 3.1      */
 specifier|public
 specifier|static
 name|String
@@ -1665,7 +1704,7 @@ else|:
 name|string
 return|;
 block|}
-comment|/**      * Encodes a string so that it can be used as an attribute value in an XML document.      * Will do conversion of the greater/less signs, quotes and ampersands.      */
+comment|/**      * Encodes a string so that it can be used as an attribute value in an XML      * document. Will do conversion of the greater/less signs, quotes and      * ampersands.      */
 specifier|public
 specifier|static
 name|String
@@ -1818,7 +1857,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Trims long strings substituting middle part with "...".      *      * @param str String to trim.      * @param maxLength maximum allowable length. Must be at least 5, or an      *            IllegalArgumentException is thrown.      * @return String      */
+comment|/**      * Trims long strings substituting middle part with "...".      *       * @param str      *            String to trim.      * @param maxLength      *            maximum allowable length. Must be at least 5, or an      *            IllegalArgumentException is thrown.      * @return String      */
 specifier|public
 specifier|static
 name|String
@@ -1915,7 +1954,7 @@ name|endLen
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a sorted iterator from an unsorted one. Use this method as a last resort,      * since it is much less efficient then just sorting a collection that backs the      * original iterator.      */
+comment|/**      * Returns a sorted iterator from an unsorted one. Use this method as a last      * resort, since it is much less efficient then just sorting a collection      * that backs the original iterator.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -2078,7 +2117,7 @@ name|flag
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if a Member is accessible via reflection under normal Java access      * controls.      *      * @since 1.2      */
+comment|/**      * Returns true if a Member is accessible via reflection under normal Java      * access controls.      *       * @since 1.2      */
 specifier|public
 specifier|static
 name|boolean
@@ -2437,7 +2476,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Changes object state to MODIFIED if needed, returning true if the change has      * occurred, false if not.      */
+comment|/**      * Changes object state to MODIFIED if needed, returning true if the change      * has occurred, false if not.      */
 specifier|static
 name|boolean
 name|markAsDirty

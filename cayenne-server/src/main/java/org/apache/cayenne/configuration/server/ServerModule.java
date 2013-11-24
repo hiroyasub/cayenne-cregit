@@ -943,7 +943,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|Key
+name|ClassLoaderManager
 import|;
 end_import
 
@@ -988,6 +988,22 @@ operator|.
 name|spi
 operator|.
 name|DefaultAdhocObjectFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|spi
+operator|.
+name|DefaultClassLoaderManager
 import|;
 end_import
 
@@ -1233,6 +1249,22 @@ operator|.
 name|to
 argument_list|(
 name|CommonsJdbcEventLogger
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|ClassLoaderManager
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|DefaultClassLoaderManager
 operator|.
 name|class
 argument_list|)

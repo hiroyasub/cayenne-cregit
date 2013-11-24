@@ -11,38 +11,100 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|di
 operator|.
-name|osgi
+name|spi
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|ClassLoaderManager
+import|;
+end_import
+
 begin_comment
-comment|/**  * Encapsulates OSGi-specific environment settings that can be used to configure  * the rest of Cayenne.  *   * @since 3.2  */
+comment|/**  * A {@link ClassLoaderManager} that  *   * @since 3.2  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|OsgiEnvironment
+class|class
+name|DefaultClassLoaderManager
+implements|implements
+name|ClassLoaderManager
 block|{
+annotation|@
+name|Override
+specifier|public
 name|ClassLoader
-name|resourceClassLoader
+name|getClassLoader
 parameter_list|(
 name|String
 name|resourceName
 parameter_list|)
-function_decl|;
+block|{
+comment|// here we are ignoring 'className' when looking for ClassLoader...
+comment|// other implementations (such as OSGi) may actually use it
 name|ClassLoader
-name|cayenneDiClassLoader
-parameter_list|()
-function_decl|;
-name|ClassLoader
-name|cayenneServerClassLoader
-parameter_list|()
-function_decl|;
+name|classLoader
+init|=
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|getContextClassLoader
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|classLoader
+operator|==
+literal|null
+condition|)
+block|{
+name|classLoader
+operator|=
+name|DefaultClassLoaderManager
+operator|.
+name|class
+operator|.
+name|getClassLoader
+argument_list|()
+expr_stmt|;
 block|}
-end_interface
+comment|// this is too paranoid I guess... "this" class will always have a
+comment|// ClassLoader
+if|if
+condition|(
+name|classLoader
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Can't find a ClassLoader"
+argument_list|)
+throw|;
+block|}
+return|return
+name|classLoader
+return|;
+block|}
+block|}
+end_class
 
 end_unit
 

@@ -87,7 +87,7 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|AdhocObjectFactory
+name|ClassLoaderManager
 import|;
 end_import
 
@@ -117,23 +117,23 @@ implements|implements
 name|ResourceLocator
 block|{
 specifier|private
-name|AdhocObjectFactory
-name|objectFactory
+name|ClassLoaderManager
+name|classLoaderManager
 decl_stmt|;
 specifier|public
 name|ClassLoaderResourceLocator
 parameter_list|(
 annotation|@
 name|Inject
-name|AdhocObjectFactory
-name|objectFactory
+name|ClassLoaderManager
+name|classLoaderManager
 parameter_list|)
 block|{
 name|this
 operator|.
-name|objectFactory
+name|classLoaderManager
 operator|=
-name|objectFactory
+name|classLoaderManager
 expr_stmt|;
 block|}
 annotation|@
@@ -174,7 +174,7 @@ try|try
 block|{
 name|urls
 operator|=
-name|objectFactory
+name|classLoaderManager
 operator|.
 name|getClassLoader
 argument_list|(
@@ -232,7 +232,7 @@ return|return
 name|resources
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 unused, as AdhocObjectFactory.getClassLoader() is used instead.      */
+comment|/**      * @deprecated since 3.2 unused, as AdhocObjectFactory.getClassLoader() is      *             used instead.      */
 annotation|@
 name|Deprecated
 specifier|protected

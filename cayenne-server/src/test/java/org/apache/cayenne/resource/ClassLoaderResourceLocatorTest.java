@@ -47,7 +47,7 @@ name|di
 operator|.
 name|spi
 operator|.
-name|DefaultAdhocObjectFactory
+name|DefaultClassLoaderManager
 import|;
 end_import
 
@@ -70,7 +70,7 @@ operator|new
 name|ClassLoaderResourceLocator
 argument_list|(
 operator|new
-name|DefaultAdhocObjectFactory
+name|DefaultClassLoaderManager
 argument_list|()
 argument_list|)
 decl_stmt|;
