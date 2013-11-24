@@ -311,6 +311,67 @@ return|return
 name|instance
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|ClassLoader
+name|getClassLoader
+parameter_list|(
+name|String
+name|resourceName
+parameter_list|)
+block|{
+comment|// here we are ignoring 'className' when looking for ClassLoader...
+comment|// other implementations (such as OSGi) may actually use it
+name|ClassLoader
+name|classLoader
+init|=
+name|Thread
+operator|.
+name|currentThread
+argument_list|()
+operator|.
+name|getContextClassLoader
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|classLoader
+operator|==
+literal|null
+condition|)
+block|{
+name|classLoader
+operator|=
+name|DefaultAdhocObjectFactory
+operator|.
+name|class
+operator|.
+name|getClassLoader
+argument_list|()
+expr_stmt|;
+block|}
+comment|// this is too paranoid I guess... "this" class will always have a
+comment|// ClassLoader
+if|if
+condition|(
+name|classLoader
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Can't find a ClassLoader"
+argument_list|)
+throw|;
+block|}
+return|return
+name|classLoader
+return|;
+block|}
 specifier|public
 name|Class
 argument_list|<
@@ -343,34 +404,20 @@ block|}
 name|ClassLoader
 name|classLoader
 init|=
-name|Thread
-operator|.
-name|currentThread
-argument_list|()
-operator|.
-name|getContextClassLoader
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|classLoader
-operator|==
-literal|null
-condition|)
-block|{
-name|classLoader
-operator|=
-name|DefaultAdhocObjectFactory
-operator|.
-name|class
-operator|.
 name|getClassLoader
-argument_list|()
-expr_stmt|;
-block|}
+argument_list|(
+name|className
+operator|.
+name|replace
+argument_list|(
+literal|'.'
+argument_list|,
+literal|'/'
+argument_list|)
+argument_list|)
+decl_stmt|;
 comment|// use custom logic on failure only, assuming primitives and arrays are
-comment|// not that
-comment|// common
+comment|// not that common
 try|try
 block|{
 return|return

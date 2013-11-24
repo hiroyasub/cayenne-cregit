@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Creates objects for user-provided String class names, injecting dependencies into them.  *   * @since 3.1  */
+comment|/**  * Creates objects for user-provided String class names, injecting dependencies  * into them.  *   * @since 3.1  */
 end_comment
 
 begin_interface
@@ -41,6 +41,14 @@ name|superType
 parameter_list|,
 name|String
 name|className
+parameter_list|)
+function_decl|;
+comment|/**      * Returns a ClassLoader appropriate for loading a given resource. Resource      * path should be compatible with Class.getResource(..) and such, i.e. the      * path component separator should be slash, not dot.      *       * @since 3.2      */
+name|ClassLoader
+name|getClassLoader
+parameter_list|(
+name|String
+name|resourceName
 parameter_list|)
 function_decl|;
 block|}
