@@ -427,6 +427,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"COMPOUND_FK_TEST"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"COMPOUND_PK_TEST"
 argument_list|)
 expr_stmt|;
