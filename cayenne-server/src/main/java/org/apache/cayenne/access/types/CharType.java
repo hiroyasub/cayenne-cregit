@@ -172,6 +172,8 @@ name|usingClobs
 expr_stmt|;
 block|}
 comment|/**      * Returns "java.lang.String".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -187,6 +189,8 @@ argument_list|()
 return|;
 block|}
 comment|/** Return trimmed string. */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -285,6 +289,8 @@ name|val
 return|;
 block|}
 comment|/** Return trimmed string. */
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -454,6 +460,8 @@ literal|1
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

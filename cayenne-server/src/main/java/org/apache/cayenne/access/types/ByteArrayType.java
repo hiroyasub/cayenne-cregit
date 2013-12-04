@@ -290,6 +290,8 @@ operator|=
 name|trimmingBytes
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -299,6 +301,8 @@ return|return
 literal|"byte[]"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -396,6 +400,8 @@ return|return
 name|bytes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -496,6 +502,8 @@ return|return
 name|bytes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
