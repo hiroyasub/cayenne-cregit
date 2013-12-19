@@ -109,6 +109,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|PkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -158,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * DbAdapter implementation for<a href="http://www.h2database.com/">H2  * RDBMS</a>. Sample connection settings to use with H2 are shown  * below:  *   *<pre>  *      postgres.jdbc.username = sa  *      postgres.jdbc.password =   *      postgres.jdbc.url = jdbc:h2:cayenne  *      postgres.jdbc.driver = org.h2.Driver  *</pre>  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -291,6 +305,21 @@ literal|" AUTO_INCREMENT"
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+annotation|@
+name|Override
+specifier|protected
+name|PkGenerator
+name|createPkGenerator
+parameter_list|()
+block|{
+return|return
+operator|new
+name|H2PkGenerator
+argument_list|(
+name|this
+argument_list|)
+return|;
 block|}
 block|}
 end_class
