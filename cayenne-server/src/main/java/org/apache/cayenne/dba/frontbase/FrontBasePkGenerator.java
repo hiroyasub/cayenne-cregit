@@ -190,6 +190,10 @@ argument_list|(
 name|adapter
 argument_list|)
 expr_stmt|;
+name|pkStartValue
+operator|=
+literal|1000000
+expr_stmt|;
 block|}
 comment|/**      * Retruns zero as PK caching is not supported by FrontBaseAdapter.      */
 annotation|@
@@ -368,7 +372,17 @@ name|buf
 operator|.
 name|append
 argument_list|(
-literal|"SET UNIQUE = 1000000 FOR \""
+literal|"SET UNIQUE = "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|pkStartValue
+argument_list|)
+operator|.
+name|append
+argument_list|(
+literal|" FOR \""
 argument_list|)
 operator|.
 name|append

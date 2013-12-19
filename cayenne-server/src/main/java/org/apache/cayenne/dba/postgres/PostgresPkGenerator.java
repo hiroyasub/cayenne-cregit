@@ -247,7 +247,12 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" START 200"
+literal|" START "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|pkStartValue
 argument_list|)
 expr_stmt|;
 return|return

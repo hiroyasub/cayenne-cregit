@@ -615,7 +615,12 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" START WITH 200"
+literal|" START WITH "
+argument_list|)
+operator|.
+name|append
+argument_list|(
+name|pkStartValue
 argument_list|)
 operator|.
 name|append
