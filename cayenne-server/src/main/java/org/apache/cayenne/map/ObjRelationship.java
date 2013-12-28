@@ -1768,6 +1768,20 @@ operator|!=
 literal|null
 condition|)
 block|{
+synchronized|synchronized
+init|(
+name|this
+init|)
+block|{
+comment|// check if another thread just
+comment|// loaded path from deferredPath
+if|if
+condition|(
+name|deferredPath
+operator|!=
+literal|null
+condition|)
+block|{
 name|refreshFromPath
 argument_list|(
 name|deferredPath
@@ -1779,6 +1793,8 @@ name|deferredPath
 operator|=
 literal|null
 expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 comment|/**      * Returns dot-separated path over DbRelationships, only including      * components that have valid DbRelationships.      */
@@ -1940,11 +1956,6 @@ name|boolean
 name|stripInvalid
 parameter_list|)
 block|{
-synchronized|synchronized
-init|(
-name|this
-init|)
-block|{
 comment|// remove existing relationships
 name|dbRelationships
 operator|.
@@ -2054,7 +2065,6 @@ expr_stmt|;
 name|recalculateReadOnlyValue
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Recalculates whether a relationship is toMany or toOne, based on the      * underlying db relationships.      */
 specifier|public
