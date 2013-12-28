@@ -95,7 +95,7 @@ name|testdo
 operator|.
 name|mt
 operator|.
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 import|;
 end_import
 
@@ -111,7 +111,7 @@ name|testdo
 operator|.
 name|mt
 operator|.
-name|MtTable1Subclass
+name|MtTable1Subclass1
 import|;
 end_import
 
@@ -186,7 +186,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-name|MtTable1Subclass
+name|MtTable1Subclass1
 operator|.
 name|class
 argument_list|)
@@ -201,14 +201,14 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-name|MtTable1Subclass
+name|MtTable1Subclass1
 name|ee
 init|=
 name|serverContext
 operator|.
 name|newObject
 argument_list|(
-name|MtTable1Subclass
+name|MtTable1Subclass1
 operator|.
 name|class
 argument_list|)
@@ -247,7 +247,7 @@ name|serverContext
 operator|.
 name|newObject
 argument_list|(
-name|MtTable1Subclass
+name|MtTable1Subclass1
 operator|.
 name|class
 argument_list|)
@@ -305,7 +305,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|.
 name|class
 argument_list|)
@@ -320,14 +320,14 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 name|ee
 init|=
 name|context
 operator|.
 name|newObject
 argument_list|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|.
 name|class
 argument_list|)
@@ -366,7 +366,7 @@ name|context
 operator|.
 name|newObject
 argument_list|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|.
 name|class
 argument_list|)

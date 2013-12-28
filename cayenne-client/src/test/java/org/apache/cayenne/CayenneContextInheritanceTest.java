@@ -135,7 +135,7 @@ name|testdo
 operator|.
 name|mt
 operator|.
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 import|;
 end_import
 
@@ -278,14 +278,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 name|object
 init|=
 name|context
 operator|.
 name|newObject
 argument_list|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|.
 name|class
 argument_list|)
@@ -306,7 +306,7 @@ argument_list|)
 expr_stmt|;
 name|object
 operator|.
-name|setSubclassAttribute1
+name|setSubclass1Attribute1
 argument_list|(
 literal|"suba1"
 argument_list|)
@@ -415,14 +415,14 @@ init|=
 operator|new
 name|SelectQuery
 argument_list|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|.
 name|class
 argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 argument_list|>
 name|objects
 init|=
@@ -454,7 +454,7 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
-name|getSubclassAttribute1
+name|getSubclass1Attribute1
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -625,7 +625,7 @@ literal|"sa1"
 argument_list|,
 operator|(
 operator|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|)
 name|objects
 operator|.
@@ -635,7 +635,7 @@ name|i
 argument_list|)
 operator|)
 operator|.
-name|getSubclassAttribute1
+name|getSubclass1Attribute1
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -834,7 +834,7 @@ literal|"sa1"
 argument_list|,
 operator|(
 operator|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|)
 name|objects
 operator|.
@@ -844,7 +844,7 @@ name|i
 argument_list|)
 operator|)
 operator|.
-name|getSubclassAttribute1
+name|getSubclass1Attribute1
 argument_list|()
 argument_list|)
 expr_stmt|;

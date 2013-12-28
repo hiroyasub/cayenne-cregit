@@ -313,7 +313,7 @@ name|testdo
 operator|.
 name|mt
 operator|.
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 import|;
 end_import
 
@@ -1167,14 +1167,14 @@ name|result
 argument_list|,
 name|result
 operator|instanceof
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 argument_list|)
 expr_stmt|;
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 name|clientObject
 init|=
 operator|(
-name|ClientMtTable1Subclass
+name|ClientMtTable1Subclass1
 operator|)
 name|result
 decl_stmt|;

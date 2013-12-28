@@ -96,6 +96,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|PARAMETERIZED_EJBQLMT_QUERY_QUERYNAME
+init|=
+literal|"ParameterizedEJBQLMtQuery"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|PARAMETERIZED_MT_QUERY_WITH_LOCAL_CACHE_QUERYNAME
 init|=
 literal|"ParameterizedMtQueryWithLocalCache"
