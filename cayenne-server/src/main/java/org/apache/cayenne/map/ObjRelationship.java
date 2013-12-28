@@ -1756,7 +1756,6 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Loads path from "deferredPath" variable (if specified)      */
-specifier|synchronized
 name|void
 name|refreshFromDeferredPath
 parameter_list|()
