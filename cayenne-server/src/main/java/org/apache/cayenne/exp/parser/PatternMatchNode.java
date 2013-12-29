@@ -68,10 +68,12 @@ extends|extends
 name|ConditionNode
 block|{
 specifier|protected
+specifier|transient
 name|Pattern
 name|pattern
 decl_stmt|;
 specifier|protected
+specifier|transient
 name|boolean
 name|patternCompiled
 decl_stmt|;
