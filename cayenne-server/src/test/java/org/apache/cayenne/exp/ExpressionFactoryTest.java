@@ -1652,6 +1652,13 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+name|artist
+operator|.
+name|setArtistName
+argument_list|(
+literal|"artist"
+argument_list|)
+expr_stmt|;
 name|Painting
 name|p1
 init|=
@@ -1720,6 +1727,11 @@ name|addToPaintingArray
 argument_list|(
 name|p2
 argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|commitChanges
+argument_list|()
 expr_stmt|;
 name|assertTrue
 argument_list|(
