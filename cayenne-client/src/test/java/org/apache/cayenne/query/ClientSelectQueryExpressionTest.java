@@ -206,6 +206,13 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
+literal|"MT_TABLE2"
+argument_list|)
+expr_stmt|;
+name|dbHelper
+operator|.
+name|deleteAll
+argument_list|(
 literal|"MT_TABLE1"
 argument_list|)
 expr_stmt|;
