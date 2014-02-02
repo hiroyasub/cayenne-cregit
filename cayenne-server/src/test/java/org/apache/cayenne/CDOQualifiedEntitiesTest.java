@@ -228,14 +228,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"QUALIFIED2"
+literal|"TEST_QUALIFIED2"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"QUALIFIED1"
+literal|"TEST_QUALIFIED1"
 argument_list|)
 expr_stmt|;
 name|int
@@ -261,7 +261,7 @@ name|TableHelper
 argument_list|(
 name|dbHelper
 argument_list|,
-literal|"QUALIFIED1"
+literal|"TEST_QUALIFIED1"
 argument_list|)
 expr_stmt|;
 name|tQualified1
@@ -295,7 +295,7 @@ name|TableHelper
 argument_list|(
 name|dbHelper
 argument_list|,
-literal|"QUALIFIED2"
+literal|"TEST_QUALIFIED2"
 argument_list|)
 expr_stmt|;
 name|tQualified2
