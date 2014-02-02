@@ -973,7 +973,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
+specifier|public
 name|void
 name|dropPKSupport
 parameter_list|()
@@ -1010,7 +1010,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Creates primary key support for all node DbEntities. Will use its      * facilities provided by DbAdapter to generate any necessary database      * objects and data for primary key support.      */
-specifier|private
+specifier|public
 name|void
 name|createPKSupport
 parameter_list|()

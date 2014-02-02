@@ -306,7 +306,6 @@ name|DEFAULT_PK_CACHE_SIZE
 init|=
 literal|20
 decl_stmt|;
-specifier|private
 specifier|static
 specifier|final
 name|long
