@@ -181,6 +181,19 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
+name|realAsDouble
+parameter_list|()
+block|{
+comment|// this actually depends on the "sql_mode" var in MYSQL. However the
+comment|// default is REAL == DOUBLE
+return|return
+literal|true
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
 name|supportsLobs
 parameter_list|()
 block|{

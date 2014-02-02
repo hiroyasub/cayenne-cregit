@@ -377,6 +377,16 @@ return|return
 literal|"\""
 return|;
 block|}
+comment|/**      * Returns whether the target DB treats REAL values as DOUBLEs. Default is      * false, i.e. REALs are treated as FLOATs.      *       * @return      */
+specifier|public
+name|boolean
+name|realAsDouble
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 comment|/**      * Drops all table constraints.      */
 specifier|public
 name|void
