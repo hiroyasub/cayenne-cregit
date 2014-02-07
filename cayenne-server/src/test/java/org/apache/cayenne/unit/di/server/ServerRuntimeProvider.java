@@ -131,6 +131,20 @@ name|Provider
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|UnitDbAdapter
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -148,6 +162,10 @@ decl_stmt|;
 specifier|private
 name|ServerCaseDataSourceFactory
 name|dataSourceFactory
+decl_stmt|;
+specifier|private
+name|UnitDbAdapter
+name|unitDbAdapter
 decl_stmt|;
 specifier|private
 name|Provider
@@ -176,6 +194,11 @@ argument_list|<
 name|DbAdapter
 argument_list|>
 name|dbAdapterProvider
+parameter_list|,
+annotation|@
+name|Inject
+name|UnitDbAdapter
+name|unitDbAdapter
 parameter_list|)
 block|{
 name|this
@@ -195,6 +218,12 @@ operator|.
 name|dbAdapterProvider
 operator|=
 name|dbAdapterProvider
+expr_stmt|;
+name|this
+operator|.
+name|unitDbAdapter
+operator|=
+name|unitDbAdapter
 expr_stmt|;
 block|}
 specifier|public
@@ -284,6 +313,20 @@ argument_list|(
 name|ServerCaseDataDomainProvider
 operator|.
 name|class
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|UnitDbAdapter
+operator|.
+name|class
+argument_list|)
+operator|.
+name|toInstance
+argument_list|(
+name|unitDbAdapter
 argument_list|)
 expr_stmt|;
 comment|// map DataSources for all test DataNode names

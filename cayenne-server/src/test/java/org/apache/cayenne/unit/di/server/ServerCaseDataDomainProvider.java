@@ -149,6 +149,34 @@ name|DataMap
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|Procedure
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|UnitDbAdapter
+import|;
+end_import
+
 begin_class
 class|class
 name|ServerCaseDataDomainProvider
@@ -172,6 +200,12 @@ name|Inject
 specifier|private
 name|JdbcEventLogger
 name|jdbcEventLogger
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|private
+name|UnitDbAdapter
+name|unitDbAdapter
 decl_stmt|;
 annotation|@
 name|Override
@@ -208,7 +242,6 @@ operator|.
 name|createAndInitDataDomain
 argument_list|()
 decl_stmt|;
-comment|// add nodes and DataSources dynamically...
 for|for
 control|(
 name|DataMap
@@ -220,6 +253,7 @@ name|getDataMaps
 argument_list|()
 control|)
 block|{
+comment|// add nodes and DataSources dynamically...
 name|DataNode
 name|node
 init|=
@@ -278,17 +312,34 @@ name|SkipSchemaUpdateStrategy
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// customizations from SimpleAccessStackAdapter that are not yet ported...
+comment|// tweak procedures for testing...
+for|for
+control|(
+name|Procedure
+name|proc
+range|:
+name|dataMap
+operator|.
+name|getProcedures
+argument_list|()
+control|)
+block|{
+name|unitDbAdapter
+operator|.
+name|tweakProcedure
+argument_list|(
+name|proc
+argument_list|)
+expr_stmt|;
+block|}
+comment|// customizations from SimpleAccessStackAdapter that are not yet
+comment|// ported...
 comment|// those can be done better now
 comment|// node
 comment|// .getAdapter()
 comment|// .getExtendedTypes()
 comment|// .registerType(new StringET1ExtendedType());
 comment|//
-comment|// // tweak mapping with a delegate
-comment|// for (Procedure proc : map.getProcedures()) {
-comment|// getAdapter(node).tweakProcedure(proc);
-comment|// }
 name|domain
 operator|.
 name|addNode
