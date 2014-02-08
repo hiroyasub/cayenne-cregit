@@ -419,7 +419,7 @@ literal|1
 init|;
 name|i
 operator|<=
-literal|1000
+literal|100
 condition|;
 name|i
 operator|++
@@ -453,7 +453,7 @@ block|}
 block|}
 specifier|private
 name|void
-name|insertData_OneBag_1000Boxes
+name|insertData_OneBag_100Boxes
 parameter_list|()
 throws|throws
 name|SQLException
@@ -476,7 +476,7 @@ literal|1
 init|;
 name|i
 operator|<=
-literal|1000
+literal|100
 condition|;
 name|i
 operator|++
@@ -514,7 +514,7 @@ argument_list|()
 operator|.
 name|setMaxIdQualifierSize
 argument_list|(
-literal|100
+literal|10
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -754,7 +754,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|insertData_OneBag_1000Boxes
+name|insertData_OneBag_100Boxes
 argument_list|()
 expr_stmt|;
 name|runtime
@@ -764,7 +764,7 @@ argument_list|()
 operator|.
 name|setMaxIdQualifierSize
 argument_list|(
-literal|50
+literal|5
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -783,7 +783,7 @@ name|query
 operator|.
 name|setPageSize
 argument_list|(
-literal|100
+literal|10
 argument_list|)
 expr_stmt|;
 name|int
@@ -909,7 +909,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|insertData_OneBag_1000Boxes
+name|insertData_OneBag_100Boxes
 argument_list|()
 expr_stmt|;
 name|runtime
@@ -919,7 +919,7 @@ argument_list|()
 operator|.
 name|setMaxIdQualifierSize
 argument_list|(
-literal|1001
+literal|101
 argument_list|)
 expr_stmt|;
 specifier|final
@@ -938,7 +938,7 @@ name|query
 operator|.
 name|setPageSize
 argument_list|(
-literal|100
+literal|10
 argument_list|)
 expr_stmt|;
 name|int
@@ -1064,7 +1064,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|insertData_OneBag_1000Boxes
+name|insertData_OneBag_100Boxes
 argument_list|()
 expr_stmt|;
 name|runtime
@@ -1093,7 +1093,7 @@ name|query
 operator|.
 name|setPageSize
 argument_list|(
-literal|100
+literal|10
 argument_list|)
 expr_stmt|;
 name|int
@@ -1165,7 +1165,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|insertData_OneBag_1000Boxes
+name|insertData_OneBag_100Boxes
 argument_list|()
 expr_stmt|;
 name|runtime
@@ -1195,7 +1195,7 @@ name|query
 operator|.
 name|setPageSize
 argument_list|(
-literal|100
+literal|10
 argument_list|)
 expr_stmt|;
 name|int
