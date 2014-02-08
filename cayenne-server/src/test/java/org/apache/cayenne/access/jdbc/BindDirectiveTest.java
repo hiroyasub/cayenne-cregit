@@ -177,6 +177,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|oracle
+operator|.
+name|OracleAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -1040,6 +1056,21 @@ argument_list|,
 name|sql
 argument_list|)
 decl_stmt|;
+comment|// customize for DB's that require trimming CHAR spaces
+name|query
+operator|.
+name|setTemplate
+argument_list|(
+name|OracleAdapter
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+literal|"SELECT * FROM ARTIST WHERE RTRIM(ARTIST_NAME) in (#bind($ARTISTNAMES))"
+argument_list|)
+expr_stmt|;
 name|query
 operator|.
 name|setColumnNamesCapitalization
