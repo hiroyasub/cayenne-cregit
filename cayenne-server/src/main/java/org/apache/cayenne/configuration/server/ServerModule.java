@@ -1173,30 +1173,14 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|NullPointerException
-argument_list|(
-literal|"Null configurationLocations"
-argument_list|)
-throw|;
-block|}
-if|if
-condition|(
 name|configurationLocations
-operator|.
-name|length
-operator|<
-literal|1
-condition|)
-block|{
-throw|throw
+operator|=
 operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Empty configurationLocations"
-argument_list|)
-throw|;
+name|String
+index|[
+literal|0
+index|]
+expr_stmt|;
 block|}
 name|this
 operator|.
