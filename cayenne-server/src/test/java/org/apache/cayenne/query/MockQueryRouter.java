@@ -178,6 +178,22 @@ name|MockQueryEngine
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|QueryEngine
+name|engineForName
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+operator|new
+name|MockQueryEngine
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

@@ -748,45 +748,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// somewhat undeterministic routing, as we don't have access to
-comment|// stack at this point and can't even assert whether we have a
-comment|// single DataNode or not.
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|maps
-init|=
-name|resolver
-operator|.
-name|getDataMaps
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|maps
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"No DataMaps available in runtime"
-argument_list|)
-throw|;
-block|}
+comment|// will route via default node. TODO: allow explicit node name?
 name|root
 operator|=
-name|maps
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
+literal|null
 expr_stmt|;
 block|}
 name|SQLTemplate
