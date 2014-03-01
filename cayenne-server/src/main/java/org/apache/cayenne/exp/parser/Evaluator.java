@@ -190,7 +190,7 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object
@@ -279,7 +279,7 @@ argument_list|()
 block|{
 annotation|@
 name|Override
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object
@@ -289,13 +289,9 @@ name|Object
 name|rhs
 parameter_list|)
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Unsupported"
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 annotation|@
 name|Override
@@ -349,7 +345,7 @@ return|;
 block|}
 annotation|@
 name|Override
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object
@@ -359,13 +355,9 @@ name|Object
 name|rhs
 parameter_list|)
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Unsupported"
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 block|}
 argument_list|)
@@ -381,7 +373,7 @@ argument_list|()
 block|{
 annotation|@
 name|Override
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object
@@ -391,13 +383,9 @@ name|Object
 name|rhs
 parameter_list|)
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Unsupported"
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 annotation|@
 name|Override
@@ -597,7 +585,7 @@ argument_list|()
 block|{
 annotation|@
 name|Override
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object
@@ -640,13 +628,22 @@ parameter_list|)
 block|{
 comment|// BigDecimals must be compared using compareTo (
 comment|// see CAY-280 and BigDecimal.equals JavaDoc)
-return|return
+name|Integer
+name|c
+init|=
 name|compare
 argument_list|(
 name|lhs
 argument_list|,
 name|rhs
 argument_list|)
+decl_stmt|;
+return|return
+name|c
+operator|!=
+literal|null
+operator|&&
+name|c
 operator|==
 literal|0
 return|;
@@ -674,7 +671,7 @@ block|}
 argument_list|)
 annotation|@
 name|Override
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object
@@ -965,8 +962,9 @@ name|Object
 name|rhs
 parameter_list|)
 function_decl|;
+comment|/**      * Returns NULL if comparison is invalid, otherwise returns positive,      * negative or zero, with the same meaning as      * {@link Comparable#compareTo(Object)}.      */
 specifier|abstract
-name|int
+name|Integer
 name|compare
 parameter_list|(
 name|Object

@@ -157,8 +157,8 @@ argument_list|,
 name|o
 argument_list|)
 decl_stmt|;
-name|int
-name|diff
+name|Integer
+name|c
 init|=
 name|Evaluator
 operator|.
@@ -175,7 +175,11 @@ name|o2
 argument_list|)
 decl_stmt|;
 return|return
-name|diff
+name|c
+operator|!=
+literal|null
+operator|&&
+name|c
 operator|>=
 literal|0
 condition|?

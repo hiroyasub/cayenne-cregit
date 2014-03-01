@@ -167,6 +167,8 @@ argument_list|,
 name|o
 argument_list|)
 decl_stmt|;
+comment|// TODO: what if there's a NULL inside IN list?
+comment|// e.g. ASTEqual evals as "NULL == NULL"
 if|if
 condition|(
 name|o1
