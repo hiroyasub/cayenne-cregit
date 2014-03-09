@@ -274,12 +274,10 @@ specifier|protected
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
+comment|/**      * @since 3.2      */
 specifier|public
 name|AuditableFilter
 parameter_list|(
-name|EntityResolver
-name|entityResolver
-parameter_list|,
 name|AuditableProcessor
 name|processor
 parameter_list|)
@@ -289,12 +287,6 @@ operator|.
 name|processor
 operator|=
 name|processor
-expr_stmt|;
-name|this
-operator|.
-name|entityResolver
-operator|=
-name|entityResolver
 expr_stmt|;
 name|this
 operator|.
@@ -321,6 +313,25 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 3.1 use {@link #AuditableFilter(AuditableProcessor)}      *             constructor - EntityResolver will be initialized in 'init'.      */
+annotation|@
+name|Deprecated
+specifier|public
+name|AuditableFilter
+parameter_list|(
+name|EntityResolver
+name|entityResolver
+parameter_list|,
+name|AuditableProcessor
+name|processor
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|processor
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|init
@@ -329,7 +340,15 @@ name|DataChannel
 name|channel
 parameter_list|)
 block|{
-comment|// noop
+name|this
+operator|.
+name|entityResolver
+operator|=
+name|channel
+operator|.
+name|getEntityResolver
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 name|QueryResponse
