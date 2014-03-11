@@ -458,6 +458,16 @@ operator|.
 name|getObjects
 argument_list|()
 decl_stmt|;
+comment|// this can be null if parent node returned no rows
+if|if
+condition|(
+name|objects
+operator|==
+literal|null
+condition|)
+block|{
+return|return;
+block|}
 name|List
 argument_list|<
 name|DataRow
