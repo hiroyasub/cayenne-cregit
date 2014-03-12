@@ -96,6 +96,8 @@ name|iterator
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -111,6 +113,8 @@ return|return
 name|iterator
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -152,6 +156,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNextRow
@@ -167,6 +173,8 @@ name|hasNext
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|T
 name|nextRow
@@ -182,6 +190,8 @@ name|next
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|skipRow
@@ -196,6 +206,8 @@ name|next
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close

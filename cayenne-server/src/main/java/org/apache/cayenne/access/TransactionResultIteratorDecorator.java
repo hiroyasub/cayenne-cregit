@@ -123,6 +123,8 @@ operator|=
 name|tx
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -139,6 +141,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Closes the result and commits the transaction.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
@@ -209,6 +213,8 @@ block|}
 block|}
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -249,6 +255,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNextRow
@@ -262,6 +270,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|T
 name|nextRow
@@ -275,6 +285,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|skipRow

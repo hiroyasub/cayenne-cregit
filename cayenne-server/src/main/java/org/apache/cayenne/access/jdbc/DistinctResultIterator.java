@@ -297,6 +297,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * @since 3.2      */
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -316,7 +318,9 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * CLoses underlying ResultIterator.      */
+comment|/**      * Closes underlying ResultIterator.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
@@ -329,6 +333,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -371,6 +377,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNextRow
@@ -382,6 +390,8 @@ operator|!=
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|T
 name|nextRow
@@ -424,6 +434,8 @@ name|row
 return|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|skipRow

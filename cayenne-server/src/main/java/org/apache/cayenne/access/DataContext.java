@@ -3081,6 +3081,8 @@ name|T
 argument_list|>
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -3100,6 +3102,8 @@ name|this
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -3140,6 +3144,8 @@ return|return
 name|list
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNextRow
@@ -3152,6 +3158,8 @@ name|hasNextRow
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|T
 name|nextRow
@@ -3201,6 +3209,8 @@ literal|0
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|skipRow
@@ -3212,6 +3222,8 @@ name|skipRow
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
