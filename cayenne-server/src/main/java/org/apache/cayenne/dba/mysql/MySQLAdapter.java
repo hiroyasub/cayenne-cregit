@@ -700,6 +700,11 @@ name|node
 operator|.
 name|getEntityResolver
 argument_list|()
+argument_list|,
+name|node
+operator|.
+name|getRowReaderFactory
+argument_list|()
 argument_list|)
 argument_list|)
 return|;

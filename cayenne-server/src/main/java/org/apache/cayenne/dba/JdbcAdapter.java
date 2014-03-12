@@ -653,6 +653,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns default separator - a semicolon.      *       * @since 1.0.4      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getBatchTerminator
@@ -899,6 +901,8 @@ name|translatorFactory
 return|;
 block|}
 comment|/**      * Returns primary key generator associated with this DbAdapter.      */
+annotation|@
+name|Override
 specifier|public
 name|PkGenerator
 name|getPkGenerator
@@ -925,6 +929,8 @@ name|pkGenerator
 expr_stmt|;
 block|}
 comment|/**      * Returns true.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsUniqueConstraints
@@ -951,6 +957,8 @@ name|flag
 expr_stmt|;
 block|}
 comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -996,6 +1004,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a SQL string that can be used to create database table      * corresponding to<code>ent</code> parameter.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -1267,6 +1277,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Appends SQL for column creation to CREATE TABLE buffer.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createTableAppendColumn
@@ -1516,6 +1528,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a DDL string to create a unique constraint over a set of columns.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createUniqueConstraint
@@ -1665,6 +1679,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a SQL string that can be used to create a foreign key constraint      * for the relationship.      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createFkConstraint
@@ -1843,6 +1859,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 index|[]
@@ -1861,6 +1879,8 @@ name|type
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ExtendedTypeMap
 name|getExtendedTypes
@@ -1870,6 +1890,8 @@ return|return
 name|extendedTypes
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAttribute
 name|buildAttribute
@@ -1956,6 +1978,8 @@ return|return
 name|attr
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForTable
@@ -1965,6 +1989,8 @@ return|return
 literal|"TABLE"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForView
@@ -1975,6 +2001,8 @@ literal|"VIEW"
 return|;
 block|}
 comment|/**      * Creates and returns a default implementation of a qualifier translator.      */
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -2004,6 +2032,8 @@ name|translator
 return|;
 block|}
 comment|/**      * Uses JdbcActionBuilder to create the right action.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -2029,10 +2059,17 @@ name|node
 operator|.
 name|getEntityResolver
 argument_list|()
+argument_list|,
+name|node
+operator|.
+name|getRowReaderFactory
+argument_list|()
 argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|bindParameter
@@ -2107,6 +2144,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsBatchUpdates
@@ -2134,6 +2173,8 @@ name|flag
 expr_stmt|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsGeneratedKeys

@@ -228,6 +228,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|T
@@ -237,6 +239,8 @@ name|ResultSet
 name|resultSet
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setPostProcessor

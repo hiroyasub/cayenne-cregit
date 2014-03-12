@@ -1686,6 +1686,16 @@ argument_list|)
 expr_stmt|;
 name|dataNode
 operator|.
+name|setRowReaderFactory
+argument_list|(
+name|node
+operator|.
+name|getRowReaderFactory
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|dataNode
+operator|.
 name|setEntityResolver
 argument_list|(
 operator|new

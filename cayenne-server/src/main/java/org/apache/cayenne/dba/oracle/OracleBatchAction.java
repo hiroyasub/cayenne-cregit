@@ -55,6 +55,22 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|jdbc
+operator|.
+name|RowReaderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|trans
 operator|.
 name|BatchQueryBuilder
@@ -113,6 +129,7 @@ name|OracleBatchAction
 extends|extends
 name|BatchAction
 block|{
+comment|/**      * @since 3.2      */
 name|OracleBatchAction
 parameter_list|(
 name|BatchQuery
@@ -123,6 +140,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|entityResolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|super
@@ -132,6 +152,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 expr_stmt|;
 block|}

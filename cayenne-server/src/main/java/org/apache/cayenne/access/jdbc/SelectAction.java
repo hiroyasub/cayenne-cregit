@@ -223,6 +223,7 @@ name|?
 argument_list|>
 name|query
 decl_stmt|;
+comment|/**      * @since 3.2      */
 specifier|public
 name|SelectAction
 parameter_list|(
@@ -237,6 +238,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|entityResolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|super
@@ -244,6 +248,8 @@ argument_list|(
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 expr_stmt|;
 name|this
@@ -311,6 +317,15 @@ return|return
 name|translator
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"unchecked"
+block|,
+literal|"rawtypes"
+block|}
+argument_list|)
 annotation|@
 name|Override
 specifier|public
@@ -431,6 +446,21 @@ name|getExtendedTypes
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|RowReader
+argument_list|<
+name|?
+argument_list|>
+name|rowReader
+init|=
+name|rowReaderFactory
+operator|.
+name|createRowReader
+argument_list|(
+name|descriptor
+argument_list|,
+name|md
+argument_list|)
+decl_stmt|;
 name|JDBCResultIterator
 name|workerIterator
 init|=
@@ -441,9 +471,7 @@ name|prepStmt
 argument_list|,
 name|rs
 argument_list|,
-name|descriptor
-argument_list|,
-name|md
+name|rowReader
 argument_list|)
 decl_stmt|;
 name|workerIterator

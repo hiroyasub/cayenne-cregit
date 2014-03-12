@@ -75,6 +75,22 @@ name|access
 operator|.
 name|jdbc
 operator|.
+name|RowReaderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
 name|SQLTemplateAction
 import|;
 end_import
@@ -244,6 +260,11 @@ specifier|protected
 name|JdbcEventLogger
 name|logger
 decl_stmt|;
+specifier|protected
+name|RowReaderFactory
+name|rowReaderFactory
+decl_stmt|;
+comment|/**      * @since 3.2      */
 specifier|public
 name|JdbcActionBuilder
 parameter_list|(
@@ -252,6 +273,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|resolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|this
@@ -268,6 +292,12 @@ name|resolver
 expr_stmt|;
 name|this
 operator|.
+name|rowReaderFactory
+operator|=
+name|rowReaderFactory
+expr_stmt|;
+name|this
+operator|.
 name|logger
 operator|=
 name|adapter
@@ -276,6 +306,8 @@ name|getJdbcEventLogger
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|batchAction
@@ -316,6 +348,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 decl_stmt|;
 name|action
@@ -346,6 +380,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 return|;
 block|}
@@ -372,6 +408,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 return|;
 block|}
@@ -392,6 +430,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 return|;
 block|}
@@ -415,6 +455,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 return|;
 block|}

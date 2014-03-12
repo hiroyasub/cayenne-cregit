@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -1697,6 +1709,13 @@ name|context
 operator|.
 name|getEntityResolver
 argument_list|()
+argument_list|,
+name|mock
+argument_list|(
+name|RowReaderFactory
+operator|.
+name|class
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|Connection

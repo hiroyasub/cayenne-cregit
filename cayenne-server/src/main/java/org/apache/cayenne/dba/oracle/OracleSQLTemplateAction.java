@@ -289,6 +289,22 @@ name|access
 operator|.
 name|jdbc
 operator|.
+name|RowReaderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
 name|SQLStatement
 import|;
 end_import
@@ -389,6 +405,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|entityResolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|super
@@ -398,6 +417,8 @@ argument_list|,
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 expr_stmt|;
 name|this
@@ -442,7 +463,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// wrap ResultSet to distinguish between Integer and BigDecimal for Oracle NUMBER
+comment|// wrap ResultSet to distinguish between Integer and BigDecimal for
+comment|// Oracle NUMBER
 comment|// columns...
 if|if
 condition|(

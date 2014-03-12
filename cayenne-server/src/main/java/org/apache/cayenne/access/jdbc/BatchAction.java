@@ -314,6 +314,7 @@ specifier|protected
 name|RowDescriptor
 name|keyRowDescriptor
 decl_stmt|;
+comment|/**      * @since 3.2      */
 specifier|public
 name|BatchAction
 parameter_list|(
@@ -325,6 +326,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|entityResolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|super
@@ -332,6 +336,8 @@ argument_list|(
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 expr_stmt|;
 name|this
@@ -1089,6 +1095,15 @@ literal|false
 return|;
 block|}
 comment|/**      * Implements generated keys extraction supported in JDBC 3.0 specification.      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"rawtypes"
+block|,
+literal|"unchecked"
+block|}
+argument_list|)
 specifier|protected
 name|void
 name|processGeneratedKeys
@@ -1266,6 +1281,27 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+name|RowReader
+argument_list|<
+name|?
+argument_list|>
+name|rowReader
+init|=
+name|rowReaderFactory
+operator|.
+name|createRowReader
+argument_list|(
+name|keyRowDescriptor
+argument_list|,
+name|query
+operator|.
+name|getMetaData
+argument_list|(
+name|getEntityResolver
+argument_list|()
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|ResultIterator
 name|iterator
 init|=
@@ -1276,15 +1312,7 @@ literal|null
 argument_list|,
 name|keysRS
 argument_list|,
-name|keyRowDescriptor
-argument_list|,
-name|query
-operator|.
-name|getMetaData
-argument_list|(
-name|getEntityResolver
-argument_list|()
-argument_list|)
+name|rowReader
 argument_list|)
 decl_stmt|;
 name|observer

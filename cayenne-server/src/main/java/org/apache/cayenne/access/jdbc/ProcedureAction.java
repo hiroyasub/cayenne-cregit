@@ -237,6 +237,7 @@ specifier|protected
 name|int
 name|processedResultSets
 decl_stmt|;
+comment|/**      * @since 3.2      */
 specifier|public
 name|ProcedureAction
 parameter_list|(
@@ -248,6 +249,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|entityResolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|super
@@ -255,6 +259,8 @@ argument_list|(
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 expr_stmt|;
 name|this
@@ -264,6 +270,8 @@ operator|=
 name|query
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction

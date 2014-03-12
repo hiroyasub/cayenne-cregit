@@ -224,6 +224,9 @@ name|adapter
 parameter_list|,
 name|EntityResolver
 name|entityResolver
+parameter_list|,
+name|RowReaderFactory
+name|rowReaderFactory
 parameter_list|)
 block|{
 name|super
@@ -231,6 +234,8 @@ argument_list|(
 name|adapter
 argument_list|,
 name|entityResolver
+argument_list|,
+name|rowReaderFactory
 argument_list|)
 expr_stmt|;
 name|this
@@ -246,6 +251,8 @@ operator|=
 name|actionFactory
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction
