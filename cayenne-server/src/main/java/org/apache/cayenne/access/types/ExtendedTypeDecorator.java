@@ -91,12 +91,16 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|String
 name|getClassName
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -129,6 +133,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -161,6 +167,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
