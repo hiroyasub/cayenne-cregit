@@ -459,6 +459,8 @@ argument_list|(
 name|descriptor
 argument_list|,
 name|md
+argument_list|,
+name|translator
 argument_list|)
 decl_stmt|;
 name|JDBCResultIterator
@@ -474,18 +476,6 @@ argument_list|,
 name|rowReader
 argument_list|)
 decl_stmt|;
-name|workerIterator
-operator|.
-name|setPostProcessor
-argument_list|(
-name|DataRowPostProcessor
-operator|.
-name|createPostProcessor
-argument_list|(
-name|translator
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|ResultIterator
 name|it
 init|=

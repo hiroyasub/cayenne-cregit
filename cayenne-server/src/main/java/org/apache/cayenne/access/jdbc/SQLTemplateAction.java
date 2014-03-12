@@ -1064,6 +1064,8 @@ name|types
 argument_list|)
 argument_list|,
 name|queryMetadata
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|JDBCResultIterator

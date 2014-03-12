@@ -566,7 +566,6 @@ name|columnOverrides
 argument_list|)
 return|;
 block|}
-specifier|private
 name|DataRowPostProcessor
 parameter_list|(
 name|ClassDescriptor

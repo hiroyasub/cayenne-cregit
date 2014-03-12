@@ -103,6 +103,9 @@ name|descriptor
 parameter_list|,
 name|EntityResultSegment
 name|segmentMetadata
+parameter_list|,
+name|DataRowPostProcessor
+name|postProcessor
 parameter_list|)
 block|{
 name|super
@@ -110,8 +113,12 @@ argument_list|(
 name|descriptor
 argument_list|,
 name|segmentMetadata
+argument_list|,
+name|postProcessor
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|entityInheritanceTree
 operator|=
 name|segmentMetadata

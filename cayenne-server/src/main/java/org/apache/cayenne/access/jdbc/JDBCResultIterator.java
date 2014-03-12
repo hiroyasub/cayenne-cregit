@@ -524,31 +524,6 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
-comment|// TODO: andrus 11/27/2008 refactor the postprocessor hack into a special
-comment|// row reader.
-name|void
-name|setPostProcessor
-parameter_list|(
-name|DataRowPostProcessor
-name|postProcessor
-parameter_list|)
-block|{
-if|if
-condition|(
-name|rowReader
-operator|!=
-literal|null
-condition|)
-block|{
-name|rowReader
-operator|.
-name|setPostProcessor
-argument_list|(
-name|postProcessor
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 block|}
 end_class
 

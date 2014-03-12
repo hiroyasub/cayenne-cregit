@@ -230,18 +230,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-annotation|@
-name|Override
-specifier|public
-name|void
-name|setPostProcessor
-parameter_list|(
-name|DataRowPostProcessor
-name|postProcessor
-parameter_list|)
-block|{
-comment|// noop
-block|}
 block|}
 end_class
 

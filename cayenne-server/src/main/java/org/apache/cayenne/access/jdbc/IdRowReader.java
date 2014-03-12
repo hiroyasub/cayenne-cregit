@@ -136,6 +136,9 @@ name|descriptor
 parameter_list|,
 name|QueryMetadata
 name|queryMetadata
+parameter_list|,
+name|DataRowPostProcessor
+name|postProcessor
 parameter_list|)
 block|{
 name|super
@@ -143,6 +146,8 @@ argument_list|(
 name|descriptor
 argument_list|,
 name|queryMetadata
+argument_list|,
+name|postProcessor
 argument_list|)
 expr_stmt|;
 name|DbEntity

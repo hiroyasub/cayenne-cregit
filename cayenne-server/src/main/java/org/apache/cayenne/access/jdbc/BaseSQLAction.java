@@ -269,6 +269,8 @@ argument_list|(
 name|descriptor
 argument_list|,
 name|metadata
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|JDBCResultIterator

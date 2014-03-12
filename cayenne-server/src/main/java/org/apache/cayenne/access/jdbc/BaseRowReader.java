@@ -113,6 +113,9 @@ name|descriptor
 parameter_list|,
 name|QueryMetadata
 name|queryMetadata
+parameter_list|,
+name|DataRowPostProcessor
+name|postProcessor
 parameter_list|)
 block|{
 name|ObjEntity
@@ -140,6 +143,12 @@ name|getName
 argument_list|()
 expr_stmt|;
 block|}
+name|this
+operator|.
+name|postProcessor
+operator|=
+name|postProcessor
+expr_stmt|;
 name|this
 operator|.
 name|converters
@@ -239,23 +248,6 @@ name|ResultSet
 name|resultSet
 parameter_list|)
 function_decl|;
-annotation|@
-name|Override
-specifier|public
-name|void
-name|setPostProcessor
-parameter_list|(
-name|DataRowPostProcessor
-name|postProcessor
-parameter_list|)
-block|{
-name|this
-operator|.
-name|postProcessor
-operator|=
-name|postProcessor
-expr_stmt|;
-block|}
 block|}
 end_class
 

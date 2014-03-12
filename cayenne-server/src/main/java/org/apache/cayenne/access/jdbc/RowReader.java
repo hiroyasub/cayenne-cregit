@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A strategy class that encapsulates an algorithm for converting a single ResultSet row  * into a DataRow.  *   * @since 3.0  */
+comment|/**  * A strategy class that encapsulates an algorithm for converting a single  * ResultSet row into a DataRow.  *   * @since 3.0  */
 end_comment
 
 begin_interface
@@ -44,14 +44,6 @@ name|readRow
 parameter_list|(
 name|ResultSet
 name|resultSet
-parameter_list|)
-function_decl|;
-comment|// TODO: andrus 11/27/2008 refactor the postprocessor hack into a special row reader.
-name|void
-name|setPostProcessor
-parameter_list|(
-name|DataRowPostProcessor
-name|postProcessor
 parameter_list|)
 function_decl|;
 block|}
