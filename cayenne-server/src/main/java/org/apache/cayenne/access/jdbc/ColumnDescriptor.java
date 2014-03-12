@@ -21,16 +21,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|Serializable
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|sql
 operator|.
 name|ResultSetMetaData
@@ -153,8 +143,6 @@ begin_class
 specifier|public
 class|class
 name|ColumnDescriptor
-implements|implements
-name|Serializable
 block|{
 specifier|protected
 name|String
