@@ -1696,6 +1696,16 @@ argument_list|)
 expr_stmt|;
 name|dataNode
 operator|.
+name|setBatchQueryBuilderFactory
+argument_list|(
+name|node
+operator|.
+name|getBatchQueryBuilderFactory
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|dataNode
+operator|.
 name|setEntityResolver
 argument_list|(
 operator|new

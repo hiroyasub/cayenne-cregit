@@ -496,7 +496,7 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the DataNode.      */
 annotation|@
 name|Inject
 specifier|protected
@@ -2053,17 +2053,7 @@ argument_list|(
 operator|new
 name|JdbcActionBuilder
 argument_list|(
-name|this
-argument_list|,
 name|node
-operator|.
-name|getEntityResolver
-argument_list|()
-argument_list|,
-name|node
-operator|.
-name|getRowReaderFactory
-argument_list|()
 argument_list|)
 argument_list|)
 return|;
@@ -2280,7 +2270,9 @@ return|return
 name|quotingStrategy
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the DataNode.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|BatchQueryBuilderFactory
 name|getBatchQueryBuilderFactory
@@ -2290,7 +2282,9 @@ return|return
 name|batchQueryBuilderFactory
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the DataNode.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setBatchQueryBuilderFactory
@@ -2305,6 +2299,18 @@ name|batchQueryBuilderFactory
 operator|=
 name|batchQueryBuilderFactory
 expr_stmt|;
+block|}
+comment|/**      * Simply returns this, as JdbcAdapter is not a wrapper.      *       * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|DbAdapter
+name|unwrap
+parameter_list|()
+block|{
+return|return
+name|this
+return|;
 block|}
 block|}
 end_class

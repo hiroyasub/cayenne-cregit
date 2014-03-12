@@ -27,9 +27,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
-operator|.
-name|BatchAction
+name|DataNode
 import|;
 end_import
 
@@ -45,7 +43,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|RowReaderFactory
+name|BatchAction
 import|;
 end_import
 
@@ -60,34 +58,6 @@ operator|.
 name|dba
 operator|.
 name|JdbcActionBuilder
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
-name|JdbcAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntityResolver
 import|;
 end_import
 
@@ -129,7 +99,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SQLAction
 import|;
 end_import
 
@@ -143,7 +113,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLAction
+name|SelectQuery
 import|;
 end_import
 
@@ -162,23 +132,13 @@ comment|/**      * @since 3.2      */
 specifier|public
 name|SQLServerActionBuilder
 parameter_list|(
-name|JdbcAdapter
-name|adapter
-parameter_list|,
-name|EntityResolver
-name|resolver
-parameter_list|,
-name|RowReaderFactory
-name|rowReaderFactory
+name|DataNode
+name|dataNode
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|adapter
-argument_list|,
-name|resolver
-argument_list|,
-name|rowReaderFactory
+name|dataNode
 argument_list|)
 expr_stmt|;
 block|}
@@ -208,7 +168,10 @@ init|=
 operator|!
 name|useOptimisticLock
 operator|&&
-name|adapter
+name|dataNode
+operator|.
+name|getAdapter
+argument_list|()
 operator|.
 name|supportsBatchUpdates
 argument_list|()
@@ -221,11 +184,7 @@ name|SQLServerBatchAction
 argument_list|(
 name|query
 argument_list|,
-name|adapter
-argument_list|,
-name|entityResolver
-argument_list|,
-name|rowReaderFactory
+name|dataNode
 argument_list|)
 decl_stmt|;
 name|action
@@ -261,11 +220,7 @@ name|SQLServerSelectAction
 argument_list|(
 name|query
 argument_list|,
-name|adapter
-argument_list|,
-name|entityResolver
-argument_list|,
-name|rowReaderFactory
+name|dataNode
 argument_list|)
 return|;
 block|}
@@ -285,13 +240,7 @@ name|SQLServerProcedureAction
 argument_list|(
 name|query
 argument_list|,
-name|getAdapter
-argument_list|()
-argument_list|,
-name|getEntityResolver
-argument_list|()
-argument_list|,
-name|rowReaderFactory
+name|dataNode
 argument_list|)
 return|;
 block|}

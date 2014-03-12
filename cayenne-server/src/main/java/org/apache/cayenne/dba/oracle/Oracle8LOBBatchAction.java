@@ -91,7 +91,21 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|JdbcAdapter
+name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -138,8 +152,11 @@ parameter_list|(
 name|BatchQuery
 name|query
 parameter_list|,
-name|JdbcAdapter
+name|DbAdapter
 name|adapter
+parameter_list|,
+name|JdbcEventLogger
+name|logger
 parameter_list|)
 block|{
 name|super
@@ -147,6 +164,8 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|logger
 argument_list|)
 expr_stmt|;
 block|}

@@ -77,7 +77,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|OperationObserver
+name|DataNode
 import|;
 end_import
 
@@ -91,9 +91,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
-operator|.
-name|RowReaderFactory
+name|OperationObserver
 import|;
 end_import
 
@@ -137,34 +135,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|JdbcAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntityResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|SQLTemplate
@@ -186,29 +156,19 @@ parameter_list|(
 name|SQLTemplate
 name|query
 parameter_list|,
-name|JdbcAdapter
-name|adapter
-parameter_list|,
-name|EntityResolver
-name|resolver
-parameter_list|,
-name|RowReaderFactory
-name|rowReaderFactory
+name|DataNode
+name|dataNode
 parameter_list|)
 block|{
 name|super
 argument_list|(
 name|query
 argument_list|,
-name|adapter
-argument_list|,
-name|resolver
-argument_list|,
-name|rowReaderFactory
+name|dataNode
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Overrides super implementation to guess whether the query is selecting or not and      * execute it appropriately. Super implementation relied on generic JDBC mechanism,      * common for selecting and updating statements that does not work in Oracle 8.*      * drivers.      */
+comment|/**      * Overrides super implementation to guess whether the query is selecting or      * not and execute it appropriately. Super implementation relied on generic      * JDBC mechanism, common for selecting and updating statements that does      * not work in Oracle 8.* drivers.      */
 annotation|@
 name|Override
 specifier|protected
@@ -384,7 +344,7 @@ name|updateCount
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|adapter
+name|dataNode
 operator|.
 name|getJdbcEventLogger
 argument_list|()

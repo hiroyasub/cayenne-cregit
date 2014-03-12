@@ -32,6 +32,7 @@ comment|/**  * A strategy class that encapsulates an algorithm for converting a 
 end_comment
 
 begin_interface
+specifier|public
 interface|interface
 name|RowReader
 parameter_list|<

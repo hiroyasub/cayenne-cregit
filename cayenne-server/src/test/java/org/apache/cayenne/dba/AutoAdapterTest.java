@@ -301,7 +301,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|AutoAdapter
-name|adapter
+name|autoAdapter
 init|=
 operator|new
 name|AutoAdapter
@@ -320,7 +320,7 @@ init|=
 operator|(
 name|SQLTemplateAction
 operator|)
-name|adapter
+name|autoAdapter
 operator|.
 name|getAction
 argument_list|(
@@ -337,7 +337,8 @@ argument_list|,
 name|dataNode
 argument_list|)
 decl_stmt|;
-comment|// it is important for SQLTemplateAction to be used with unwrapped adapter, as the
+comment|// it is important for SQLTemplateAction to be used with unwrapped
+comment|// adapter, as the
 comment|// adapter class name is used as a key to the correct SQL template.
 name|assertNotNull
 argument_list|(

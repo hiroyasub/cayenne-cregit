@@ -782,6 +782,19 @@ name|getQuotingStrategy
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|DbAdapter
+name|unwrap
+parameter_list|()
+block|{
+return|return
+name|getAdapter
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

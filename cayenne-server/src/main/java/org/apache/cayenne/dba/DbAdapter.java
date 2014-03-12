@@ -387,6 +387,11 @@ name|QuotingStrategy
 name|getQuotingStrategy
 parameter_list|()
 function_decl|;
+comment|/**      * Allows the users to get access to the adapter decorated by a given      * adapter.      *       * @since 3.2      */
+name|DbAdapter
+name|unwrap
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
