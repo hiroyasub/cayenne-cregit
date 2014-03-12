@@ -460,7 +460,12 @@ name|descriptor
 argument_list|,
 name|md
 argument_list|,
+name|adapter
+argument_list|,
 name|translator
+operator|.
+name|getAttributeOverrides
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|JDBCResultIterator
