@@ -75,6 +75,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|DataNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|DbAdapter
@@ -92,20 +106,6 @@ operator|.
 name|log
 operator|.
 name|JdbcEventLogger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|log
-operator|.
-name|NoopJdbcEventLogger
 import|;
 end_import
 
@@ -274,7 +274,7 @@ name|Object
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * PreparedStatement attributes matching entries in<code>values</code> list.      */
+comment|/**      * PreparedStatement attributes matching entries in<code>values</code>      * list.      */
 specifier|protected
 name|List
 argument_list|<
@@ -294,18 +294,69 @@ specifier|protected
 name|int
 name|parameterIndex
 decl_stmt|;
+comment|/**      * @since 3.2      */
 specifier|public
 name|QueryAssembler
-parameter_list|()
+parameter_list|(
+name|Query
+name|query
+parameter_list|,
+name|DataNode
+name|dataNode
+parameter_list|,
+name|Connection
+name|connection
+parameter_list|)
 block|{
 name|this
 operator|.
 name|logger
 operator|=
-name|NoopJdbcEventLogger
+name|dataNode
 operator|.
-name|getInstance
+name|getJdbcEventLogger
 argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|entityResolver
+operator|=
+name|dataNode
+operator|.
+name|getEntityResolver
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|adapter
+operator|=
+name|dataNode
+operator|.
+name|getAdapter
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|query
+operator|=
+name|query
+expr_stmt|;
+name|this
+operator|.
+name|connection
+operator|=
+name|connection
+expr_stmt|;
+name|this
+operator|.
+name|queryMetadata
+operator|=
+name|query
+operator|.
+name|getMetaData
+argument_list|(
+name|entityResolver
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns aliases for the path splits defined in the query.      *       * @since 3.0      */
@@ -368,70 +419,6 @@ return|return
 name|queryMetadata
 return|;
 block|}
-specifier|public
-name|void
-name|setQuery
-parameter_list|(
-name|Query
-name|query
-parameter_list|)
-block|{
-name|this
-operator|.
-name|query
-operator|=
-name|query
-expr_stmt|;
-name|refreshMetadata
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|setConnection
-parameter_list|(
-name|Connection
-name|connection
-parameter_list|)
-block|{
-name|this
-operator|.
-name|connection
-operator|=
-name|connection
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|setAdapter
-parameter_list|(
-name|DbAdapter
-name|adapter
-parameter_list|)
-block|{
-name|this
-operator|.
-name|adapter
-operator|=
-name|adapter
-expr_stmt|;
-block|}
-comment|/**      * @since 3.1      */
-specifier|public
-name|void
-name|setJdbcEventLogger
-parameter_list|(
-name|JdbcEventLogger
-name|logger
-parameter_list|)
-block|{
-name|this
-operator|.
-name|logger
-operator|=
-name|logger
-expr_stmt|;
-block|}
 comment|/**      * @since 3.1      */
 specifier|public
 name|JdbcEventLogger
@@ -441,62 +428,6 @@ block|{
 return|return
 name|logger
 return|;
-block|}
-specifier|public
-name|void
-name|setEntityResolver
-parameter_list|(
-name|EntityResolver
-name|entityResolver
-parameter_list|)
-block|{
-name|this
-operator|.
-name|entityResolver
-operator|=
-name|entityResolver
-expr_stmt|;
-name|refreshMetadata
-argument_list|()
-expr_stmt|;
-block|}
-specifier|private
-name|void
-name|refreshMetadata
-parameter_list|()
-block|{
-if|if
-condition|(
-name|query
-operator|!=
-literal|null
-operator|&&
-name|entityResolver
-operator|!=
-literal|null
-condition|)
-block|{
-name|queryMetadata
-operator|=
-name|query
-operator|.
-name|getMetaData
-argument_list|(
-name|entityResolver
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|queryMetadata
-operator|=
-literal|null
-expr_stmt|;
-block|}
-name|cachedSqlString
-operator|=
-literal|null
-expr_stmt|;
 block|}
 specifier|public
 name|DbEntity
@@ -522,14 +453,14 @@ name|getObjEntity
 argument_list|()
 return|;
 block|}
-comment|/**      * A callback invoked by a child qualifier or ordering processor allowing query      * assembler to reset its join stack.      *       * @since 3.0      */
+comment|/**      * A callback invoked by a child qualifier or ordering processor allowing      * query assembler to reset its join stack.      *       * @since 3.0      */
 specifier|public
 specifier|abstract
 name|void
 name|resetJoinStack
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an alias of the table which is currently at the top of the join stack.      *       * @since 3.0      */
+comment|/**      * Returns an alias of the table which is currently at the top of the join      * stack.      *       * @since 3.0      */
 specifier|public
 specifier|abstract
 name|String
@@ -552,7 +483,7 @@ name|String
 name|joinSplitAlias
 parameter_list|)
 function_decl|;
-comment|/**      * Translates query into sql string. This is a workhorse method of QueryAssembler. It      * is called internally from<code>createStatement</code>. Usually there is no need to      * invoke it explicitly.      */
+comment|/**      * Translates query into sql string. This is a workhorse method of      * QueryAssembler. It is called internally from<code>createStatement</code>      * . Usually there is no need to invoke it explicitly.      */
 specifier|public
 specifier|abstract
 name|String
@@ -561,7 +492,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Returns<code>true</code> if table aliases are supported. Default implementation      * returns false.      */
+comment|/**      * Returns<code>true</code> if table aliases are supported. Default      * implementation returns false.      */
 specifier|public
 name|boolean
 name|supportsTableAliases
@@ -571,7 +502,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Registers<code>anObject</code> as a PreparedStatement parameter.      *       * @param anObject object that represents a value of DbAttribute      * @param dbAttr DbAttribute being processed.      */
+comment|/**      * Registers<code>anObject</code> as a PreparedStatement parameter.      *       * @param anObject      *            object that represents a value of DbAttribute      * @param dbAttr      *            DbAttribute being processed.      */
 specifier|public
 name|void
 name|addToParamList
@@ -662,7 +593,7 @@ return|return
 name|stmt
 return|;
 block|}
-comment|/**      * Initializes prepared statements with collected parameters. Called internally from      * "createStatement". Cayenne users shouldn't normally call it directly.      */
+comment|/**      * Initializes prepared statements with collected parameters. Called      * internally from "createStatement". Cayenne users shouldn't normally call      * it directly.      */
 specifier|protected
 name|void
 name|initStatement
@@ -730,7 +661,8 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
-comment|// null DbAttributes are a result of inferior qualifier processing
+comment|// null DbAttributes are a result of inferior qualifier
+comment|// processing
 comment|// (qualifier can't map parameters to DbAttributes and therefore
 comment|// only supports standard java types now)
 comment|// hence, a special moronic case here:

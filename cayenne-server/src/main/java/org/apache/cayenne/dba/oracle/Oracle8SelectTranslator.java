@@ -19,6 +19,30 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Connection
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|DataNode
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -33,6 +57,20 @@ name|JoinStack
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|Query
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -43,6 +81,30 @@ name|Oracle8SelectTranslator
 extends|extends
 name|OracleSelectTranslator
 block|{
+comment|/**      * @since 3.2      */
+specifier|public
+name|Oracle8SelectTranslator
+parameter_list|(
+name|Query
+name|query
+parameter_list|,
+name|DataNode
+name|dataNode
+parameter_list|,
+name|Connection
+name|connection
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|query
+argument_list|,
+name|dataNode
+argument_list|,
+name|connection
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Returns an old style joint stack for Oracle8 that does not support explicit join      * syntax.      */
 annotation|@
 name|Override
