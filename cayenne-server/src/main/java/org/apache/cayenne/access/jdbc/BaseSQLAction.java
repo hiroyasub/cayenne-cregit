@@ -226,7 +226,7 @@ name|rowReader
 init|=
 name|dataNode
 operator|.
-name|createRowReader
+name|rowReader
 argument_list|(
 name|descriptor
 argument_list|,

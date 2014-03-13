@@ -116,7 +116,7 @@ name|RowReader
 argument_list|<
 name|?
 argument_list|>
-name|createRowReader
+name|rowReader
 parameter_list|(
 name|RowDescriptor
 name|descriptor

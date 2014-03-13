@@ -372,7 +372,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An abstraction of a single physical data storage. This is usually a database server,  * but can potentially be some other storage type like an LDAP server, etc.  */
+comment|/**  * An abstraction of a single physical data storage. This is usually a database  * server, but can potentially be some other storage type like an LDAP server,  * etc.  */
 end_comment
 
 begin_class
@@ -590,7 +590,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
-comment|/**      * Returns node name. Name is used to uniquely identify DataNode within a DataDomain.      */
+comment|/**      * Returns node name. Name is used to uniquely identify DataNode within a      * DataDomain.      */
 specifier|public
 name|String
 name|getName
@@ -615,7 +615,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Returns a location of DataSource of this node. Depending on how this node was      * created, location is either a JNDI name, or a location of node XML file, etc.      */
+comment|/**      * Returns a location of DataSource of this node. Depending on how this node      * was created, location is either a JNDI name, or a location of node XML      * file, etc.      */
 specifier|public
 name|String
 name|getDataSourceLocation
@@ -827,7 +827,7 @@ operator|=
 name|dataSource
 expr_stmt|;
 block|}
-comment|/**      * Returns DbAdapter object. This is a plugin that handles RDBMS vendor-specific      * features.      */
+comment|/**      * Returns DbAdapter object. This is a plugin that handles RDBMS      * vendor-specific features.      */
 specifier|public
 name|DbAdapter
 name|getAdapter
@@ -923,8 +923,10 @@ argument_list|)
 throw|;
 block|}
 comment|// do this meaningless inexpensive operation to trigger AutoAdapter lazy
-comment|// initialization before opening a connection. Otherwise we may end up with two
-comment|// connections open simultaneously, possibly hitting connection pool upper limit.
+comment|// initialization before opening a connection. Otherwise we may end up
+comment|// with two
+comment|// connections open simultaneously, possibly hitting connection pool
+comment|// upper limit.
 name|getAdapter
 argument_list|()
 operator|.
@@ -1105,7 +1107,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/**      * Sets EntityResolver. DataNode relies on externally set EntityResolver, so if the      * node is created outside of DataDomain stack, a valid EntityResolver must be      * provided explicitly.      *       * @since 1.1      */
+comment|/**      * Sets EntityResolver. DataNode relies on externally set EntityResolver, so      * if the node is created outside of DataDomain stack, a valid      * EntityResolver must be provided explicitly.      *       * @since 1.1      */
 specifier|public
 name|void
 name|setEntityResolver
@@ -1147,7 +1149,8 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|// a read-through DataSource that ensures returning the same connection within
+comment|// a read-through DataSource that ensures returning the same connection
+comment|// within
 comment|// transaction.
 specifier|final
 class|class
@@ -1246,8 +1249,10 @@ name|c
 argument_list|)
 expr_stmt|;
 block|}
-comment|// wrap transaction-attached connections in a decorator that prevents them
-comment|// from being closed by callers, as transaction should take care of them
+comment|// wrap transaction-attached connections in a decorator that
+comment|// prevents them
+comment|// from being closed by callers, as transaction should take care
+comment|// of them
 comment|// on commit or rollback.
 return|return
 operator|new
@@ -1355,8 +1360,10 @@ name|c
 argument_list|)
 expr_stmt|;
 block|}
-comment|// wrap transaction-attached connections in a decorator that prevents them
-comment|// from being closed by callers, as transaction should take care of them
+comment|// wrap transaction-attached connections in a decorator that
+comment|// prevents them
+comment|// from being closed by callers, as transaction should take care
+comment|// of them
 comment|// on commit or rollback.
 return|return
 operator|new
@@ -1517,7 +1524,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**          * @since 3.1          *          * JDBC 4.1 compatibility under Java 1.5          */
+comment|/**          * @since 3.1          *           *        JDBC 4.1 compatibility under Java 1.5          */
 specifier|public
 name|Logger
 name|getParentLogger
@@ -1525,7 +1532,8 @@ parameter_list|()
 throws|throws
 name|SQLFeatureNotSupportedException
 block|{
-comment|// don't throw SQLFeatureNotSupported - this will break JDK 1.5 runtime
+comment|// don't throw SQLFeatureNotSupported - this will break JDK 1.5
+comment|// runtime
 throw|throw
 operator|new
 name|UnsupportedOperationException
@@ -1539,7 +1547,7 @@ name|RowReader
 argument_list|<
 name|?
 argument_list|>
-name|createRowReader
+name|rowReader
 parameter_list|(
 name|RowDescriptor
 name|descriptor
@@ -1549,7 +1557,7 @@ name|queryMetadata
 parameter_list|)
 block|{
 return|return
-name|createRowReader
+name|rowReader
 argument_list|(
 name|descriptor
 argument_list|,
@@ -1573,7 +1581,7 @@ name|RowReader
 argument_list|<
 name|?
 argument_list|>
-name|createRowReader
+name|rowReader
 parameter_list|(
 name|RowDescriptor
 name|descriptor
@@ -1593,7 +1601,7 @@ block|{
 return|return
 name|rowReaderFactory
 operator|.
-name|createRowReader
+name|rowReader
 argument_list|(
 name|descriptor
 argument_list|,

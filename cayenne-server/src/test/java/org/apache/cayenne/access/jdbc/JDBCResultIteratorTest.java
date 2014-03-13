@@ -303,7 +303,7 @@ operator|new
 name|DefaultRowReaderFactory
 argument_list|()
 operator|.
-name|createRowReader
+name|rowReader
 argument_list|(
 name|descriptor
 argument_list|,
