@@ -14,6 +14,8 @@ operator|.
 name|access
 operator|.
 name|jdbc
+operator|.
+name|reader
 package|;
 end_package
 
@@ -24,6 +26,38 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ColumnDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|RowDescriptor
 import|;
 end_import
 

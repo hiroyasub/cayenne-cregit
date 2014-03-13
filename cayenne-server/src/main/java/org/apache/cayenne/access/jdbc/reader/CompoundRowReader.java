@@ -14,6 +14,8 @@ operator|.
 name|access
 operator|.
 name|jdbc
+operator|.
+name|reader
 package|;
 end_package
 

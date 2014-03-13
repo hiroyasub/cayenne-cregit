@@ -155,6 +155,8 @@ name|access
 operator|.
 name|jdbc
 operator|.
+name|reader
+operator|.
 name|RowReaderFactory
 import|;
 end_import
