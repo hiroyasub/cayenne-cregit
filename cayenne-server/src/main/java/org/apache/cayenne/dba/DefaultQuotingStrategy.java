@@ -129,6 +129,8 @@ expr_stmt|;
 block|}
 comment|/**      * @deprecated since 3.2      */
 annotation|@
+name|Override
+annotation|@
 name|Deprecated
 specifier|public
 name|String
@@ -151,6 +153,8 @@ argument_list|)
 return|;
 block|}
 annotation|@
+name|Override
+annotation|@
 name|Deprecated
 specifier|public
 name|String
@@ -167,6 +171,8 @@ name|entity
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|quotedFullyQualifiedName
@@ -200,6 +206,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|quotedName
@@ -226,6 +234,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|quotedSourceName
@@ -260,6 +270,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|quotedTargetName
@@ -294,6 +306,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|quotedIdentifier
@@ -318,6 +332,8 @@ name|identifierParts
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|quotedIdentifier

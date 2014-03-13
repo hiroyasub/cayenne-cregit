@@ -356,6 +356,8 @@ name|get
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getBatchTerminator
@@ -369,6 +371,8 @@ name|getBatchTerminator
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
@@ -387,6 +391,8 @@ name|queryAssembler
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|getAction
@@ -410,6 +416,8 @@ name|node
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsUniqueConstraints
@@ -423,6 +431,8 @@ name|supportsUniqueConstraints
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsGeneratedKeys
@@ -436,6 +446,8 @@ name|supportsGeneratedKeys
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|supportsBatchUpdates
@@ -449,6 +461,8 @@ name|supportsBatchUpdates
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -470,6 +484,8 @@ name|table
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createTable
@@ -488,6 +504,8 @@ name|entity
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createUniqueConstraint
@@ -514,6 +532,8 @@ name|columns
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createFkConstraint
@@ -532,6 +552,8 @@ name|rel
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 index|[]
@@ -551,6 +573,8 @@ name|type
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ExtendedTypeMap
 name|getExtendedTypes
@@ -565,6 +589,8 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Returns a primary key generator.      */
+annotation|@
+name|Override
 specifier|public
 name|PkGenerator
 name|getPkGenerator
@@ -602,6 +628,8 @@ operator|=
 name|pkGenerator
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAttribute
 name|buildAttribute
@@ -645,6 +673,8 @@ name|allowNulls
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|bindParameter
@@ -686,6 +716,8 @@ name|precision
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForTable
@@ -699,6 +731,8 @@ name|tableTypeForTable
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|tableTypeForView
@@ -712,6 +746,8 @@ name|tableTypeForView
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerFactory
 name|mergerFactory
@@ -725,6 +761,8 @@ name|mergerFactory
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|createTableAppendColumn
@@ -750,6 +788,8 @@ block|}
 comment|/**      * @deprecated since 3.2      */
 annotation|@
 name|Deprecated
+annotation|@
+name|Override
 specifier|public
 name|QuotingStrategy
 name|getQuotingStrategy
@@ -769,6 +809,8 @@ argument_list|)
 return|;
 block|}
 comment|/**      * @since 3.2      */
+annotation|@
+name|Override
 specifier|public
 name|QuotingStrategy
 name|getQuotingStrategy
