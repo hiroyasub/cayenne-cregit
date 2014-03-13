@@ -70,6 +70,8 @@ name|StringET1ExtendedType
 implements|implements
 name|ExtendedType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -84,6 +86,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -124,6 +128,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -164,6 +170,8 @@ else|:
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

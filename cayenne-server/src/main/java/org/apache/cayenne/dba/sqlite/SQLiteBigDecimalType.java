@@ -83,6 +83,8 @@ name|SQLiteBigDecimalType
 implements|implements
 name|ExtendedType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -97,6 +99,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -142,6 +146,8 @@ name|string
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -187,6 +193,8 @@ name|string
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

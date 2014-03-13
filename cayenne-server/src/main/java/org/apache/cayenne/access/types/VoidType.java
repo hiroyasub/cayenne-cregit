@@ -58,6 +58,8 @@ name|VoidType
 implements|implements
 name|ExtendedType
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -72,6 +74,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -104,6 +108,8 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -124,6 +130,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject

@@ -93,6 +93,8 @@ implements|implements
 name|ExtendedType
 block|{
 comment|/**      * Returns "java.util.Date".      */
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -222,6 +224,8 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Date
 name|materializeObject
@@ -323,6 +327,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Date
 name|materializeObject
@@ -424,6 +430,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject

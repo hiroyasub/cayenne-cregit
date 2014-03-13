@@ -56,6 +56,9 @@ name|ExtendedType
 block|{
 specifier|protected
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 decl_stmt|;
 specifier|public
@@ -74,6 +77,9 @@ specifier|public
 name|MockExtendedType
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|)
 block|{
@@ -84,6 +90,8 @@ operator|=
 name|objectClass
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -96,6 +104,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
@@ -119,6 +129,8 @@ throws|throws
 name|Exception
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -142,6 +154,8 @@ name|newInstance
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject

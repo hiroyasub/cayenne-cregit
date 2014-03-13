@@ -76,6 +76,8 @@ operator|=
 name|widenShorts
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClassName
@@ -90,6 +92,8 @@ name|getName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -129,6 +133,8 @@ else|:
 name|s
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|materializeObject
@@ -168,6 +174,8 @@ else|:
 name|s
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setJdbcObject
