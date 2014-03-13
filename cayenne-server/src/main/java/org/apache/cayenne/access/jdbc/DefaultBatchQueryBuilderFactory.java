@@ -106,6 +106,8 @@ name|DefaultBatchQueryBuilderFactory
 implements|implements
 name|BatchQueryBuilderFactory
 block|{
+annotation|@
+name|Override
 specifier|public
 name|BatchQueryBuilder
 name|createDeleteQueryBuilder
@@ -122,6 +124,8 @@ name|adapter
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|BatchQueryBuilder
 name|createInsertQueryBuilder
@@ -138,6 +142,8 @@ name|adapter
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|BatchQueryBuilder
 name|createUpdateQueryBuilder
