@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dba
 operator|.
-name|trans
+name|oracle
 package|;
 end_package
 
@@ -128,13 +128,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to extract the information from BatchQueries, essential for LOB columns  * processing.  *   */
+comment|/**  * Helper class to extract the information from BatchQueries, essential for LOB  * columns processing.  *   */
 end_comment
 
 begin_class
-specifier|public
 class|class
-name|LOBBatchQueryWrapper
+name|OracleLOBBatchQueryWrapper
 block|{
 specifier|protected
 name|BatchQuery
@@ -163,12 +162,7 @@ name|Object
 index|[]
 name|updatedLOBAttributes
 decl_stmt|;
-specifier|protected
-name|boolean
-name|hasNext
-decl_stmt|;
-specifier|public
-name|LOBBatchQueryWrapper
+name|OracleLOBBatchQueryWrapper
 parameter_list|(
 name|BatchQuery
 name|query
@@ -230,31 +224,6 @@ expr_stmt|;
 name|indexQualifierAttributes
 argument_list|()
 expr_stmt|;
-block|}
-specifier|public
-name|boolean
-name|next
-parameter_list|()
-block|{
-name|hasNext
-operator|=
-name|query
-operator|.
-name|next
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|hasNext
-condition|)
-block|{
-name|indexLOBAttributes
-argument_list|()
-expr_stmt|;
-block|}
-return|return
-name|hasNext
-return|;
 block|}
 comment|/**      * Indexes attributes      */
 specifier|protected
@@ -339,7 +308,6 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Indexes attributes      */
-specifier|protected
 name|void
 name|indexLOBAttributes
 parameter_list|()
@@ -632,8 +600,7 @@ name|strValue
 return|;
 block|}
 block|}
-comment|/**      * Returns a list of DbAttributes used in the qualifier of the query that selects a      * LOB row for LOB update.      */
-specifier|public
+comment|/**      * Returns a list of DbAttributes used in the qualifier of the query that      * selects a LOB row for LOB update.      */
 name|List
 argument_list|<
 name|DbAttribute
@@ -708,8 +675,7 @@ return|return
 name|attributes
 return|;
 block|}
-comment|/**      * Returns a list of DbAttributes that correspond to the LOB columns updated in the      * current row in the batch query. The list will not include LOB attributes that are      * null or empty.      */
-specifier|public
+comment|/**      * Returns a list of DbAttributes that correspond to the LOB columns updated      * in the current row in the batch query. The list will not include LOB      * attributes that are null or empty.      */
 name|List
 argument_list|<
 name|DbAttribute
@@ -717,20 +683,6 @@ argument_list|>
 name|getDbAttributesForUpdatedLOBColumns
 parameter_list|()
 block|{
-if|if
-condition|(
-operator|!
-name|hasNext
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|(
-literal|"No more rows in the BatchQuery."
-argument_list|)
-throw|;
-block|}
 name|int
 name|len
 init|=
@@ -800,25 +752,10 @@ return|return
 name|attributes
 return|;
 block|}
-specifier|public
 name|List
 name|getValuesForLOBSelectQualifier
 parameter_list|()
 block|{
-if|if
-condition|(
-operator|!
-name|hasNext
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|(
-literal|"No more rows in the BatchQuery."
-argument_list|)
-throw|;
-block|}
 name|int
 name|len
 init|=
@@ -880,25 +817,10 @@ return|return
 name|values
 return|;
 block|}
-specifier|public
 name|List
 name|getValuesForUpdatedLOBColumns
 parameter_list|()
 block|{
-if|if
-condition|(
-operator|!
-name|hasNext
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalStateException
-argument_list|(
-literal|"No more rows in the BatchQuery."
-argument_list|)
-throw|;
-block|}
 name|int
 name|len
 init|=
@@ -960,16 +882,6 @@ block|}
 block|}
 return|return
 name|values
-return|;
-block|}
-comment|/**      * Returns wrapped BatchQuery.      */
-specifier|public
-name|BatchQuery
-name|getQuery
-parameter_list|()
-block|{
-return|return
-name|query
 return|;
 block|}
 block|}

@@ -193,22 +193,6 @@ name|access
 operator|.
 name|trans
 operator|.
-name|LOBBatchQueryWrapper
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|trans
-operator|.
 name|LOBInsertBatchQueryBuilder
 import|;
 end_import
@@ -504,11 +488,11 @@ expr_stmt|;
 comment|// no batching is done, queries are translated
 comment|// for each batch set, since prepared statements
 comment|// may be different depending on whether LOBs are NULL or not..
-name|LOBBatchQueryWrapper
+name|OracleLOBBatchQueryWrapper
 name|selectQuery
 init|=
 operator|new
-name|LOBBatchQueryWrapper
+name|OracleLOBBatchQueryWrapper
 argument_list|(
 name|query
 argument_list|)
@@ -539,12 +523,17 @@ argument_list|()
 expr_stmt|;
 while|while
 condition|(
-name|selectQuery
+name|query
 operator|.
 name|next
 argument_list|()
 condition|)
 block|{
+name|selectQuery
+operator|.
+name|indexLOBAttributes
+argument_list|()
+expr_stmt|;
 name|int
 name|updated
 init|=
@@ -684,7 +673,7 @@ parameter_list|,
 name|LOBBatchQueryBuilder
 name|queryBuilder
 parameter_list|,
-name|LOBBatchQueryWrapper
+name|OracleLOBBatchQueryWrapper
 name|selectQuery
 parameter_list|,
 name|List
@@ -1149,7 +1138,7 @@ block|{
 block|}
 block|}
 block|}
-comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done using Oracle      * driver utilities, using reflection.      */
+comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done      * using Oracle driver utilities, using reflection.      */
 specifier|protected
 name|void
 name|writeBlob
@@ -1220,7 +1209,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done using Oracle      * driver utilities.      */
+comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done      * using Oracle driver utilities.      */
 specifier|protected
 name|void
 name|writeClob
@@ -1291,7 +1280,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done using Oracle      * driver utilities.      */
+comment|/**      * Writing of LOBs is not supported prior to JDBC 3.0 and has to be done      * using Oracle driver utilities.      */
 specifier|protected
 name|void
 name|writeClob
