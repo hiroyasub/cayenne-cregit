@@ -85,6 +85,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ResultIterator
 import|;
 end_import
@@ -331,6 +343,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|route
@@ -465,6 +479,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryEngine
 name|engineForDataMap
@@ -596,6 +612,8 @@ return|return
 name|node
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextCount
@@ -620,6 +638,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextBatchCount
@@ -645,6 +665,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -672,6 +694,8 @@ name|dataRows
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -696,6 +720,8 @@ name|it
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGeneratedRows
@@ -704,7 +730,10 @@ name|Query
 name|query
 parameter_list|,
 name|ResultIterator
-name|keysIterator
+name|keys
+parameter_list|,
+name|ObjectId
+name|idToUpdate
 parameter_list|)
 block|{
 name|callback
@@ -716,10 +745,14 @@ argument_list|(
 name|query
 argument_list|)
 argument_list|,
-name|keysIterator
+name|keys
+argument_list|,
+name|idToUpdate
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextQueryException
@@ -744,6 +777,8 @@ name|ex
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGlobalException
@@ -760,6 +795,8 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIteratedResult

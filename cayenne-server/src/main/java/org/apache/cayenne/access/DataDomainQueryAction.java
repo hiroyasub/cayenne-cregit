@@ -2531,6 +2531,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -2550,6 +2552,8 @@ literal|"Invalid attempt to fetch a cursor."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGeneratedRows
@@ -2558,12 +2562,15 @@ name|Query
 name|query
 parameter_list|,
 name|ResultIterator
-name|keysIterator
+name|keys
+parameter_list|,
+name|ObjectId
+name|idToUpdate
 parameter_list|)
 block|{
 if|if
 condition|(
-name|keysIterator
+name|keys
 operator|!=
 literal|null
 condition|)
@@ -2574,7 +2581,7 @@ name|nextRows
 argument_list|(
 name|query
 argument_list|,
-name|keysIterator
+name|keys
 operator|.
 name|allRows
 argument_list|()
@@ -2583,7 +2590,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|keysIterator
+name|keys
 operator|.
 name|close
 argument_list|()

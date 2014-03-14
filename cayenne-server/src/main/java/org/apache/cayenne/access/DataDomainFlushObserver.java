@@ -185,6 +185,8 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextQueryException
@@ -211,6 +213,8 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGlobalException
@@ -236,6 +240,8 @@ throw|;
 block|}
 comment|/**      * Processes generated keys.      *       * @since 1.2      */
 annotation|@
+name|Override
+annotation|@
 name|SuppressWarnings
 argument_list|(
 block|{
@@ -253,6 +259,9 @@ name|query
 parameter_list|,
 name|ResultIterator
 name|keysIterator
+parameter_list|,
+name|ObjectId
+name|idToUpdate
 parameter_list|)
 block|{
 comment|// read and close the iterator before doing anything else
@@ -306,30 +315,14 @@ name|query
 argument_list|)
 throw|;
 block|}
-name|BatchQuery
-name|batch
-init|=
-operator|(
-name|BatchQuery
-operator|)
-name|query
-decl_stmt|;
-name|ObjectId
-name|id
-init|=
-name|batch
-operator|.
-name|getObjectId
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|id
+name|idToUpdate
 operator|==
 literal|null
 operator|||
 operator|!
-name|id
+name|idToUpdate
 operator|.
 name|isTemporary
 argument_list|()
@@ -420,6 +413,14 @@ name|key
 argument_list|)
 throw|;
 block|}
+name|BatchQuery
+name|batch
+init|=
+operator|(
+name|BatchQuery
+operator|)
+name|query
+decl_stmt|;
 for|for
 control|(
 name|DbAttribute
@@ -471,7 +472,7 @@ argument_list|)
 expr_stmt|;
 comment|// I guess we should override any existing value,
 comment|// as generated key is the latest thing that exists in the DB.
-name|id
+name|idToUpdate
 operator|.
 name|getReplacementIdMap
 argument_list|()
@@ -516,6 +517,8 @@ operator|.
 name|logger
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextBatchCount
@@ -529,6 +532,8 @@ name|resultCount
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextCount
@@ -541,6 +546,8 @@ name|resultCount
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -556,6 +563,8 @@ name|dataRows
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -580,6 +589,8 @@ literal|"'nextDataRows(Query,ResultIterator)' is unsupported (and unexpected) on
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIteratedResult

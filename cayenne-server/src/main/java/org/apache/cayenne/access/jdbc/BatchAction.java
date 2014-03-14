@@ -1101,7 +1101,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Implements generated keys extraction supported in JDBC 3.0 specification.      */
+comment|/**      * Implements generated keys extraction supported in JDBC 3.0 specification.      *       * @since 3.2      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1343,6 +1343,11 @@ argument_list|(
 name|query
 argument_list|,
 name|iterator
+argument_list|,
+name|query
+operator|.
+name|getObjectId
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

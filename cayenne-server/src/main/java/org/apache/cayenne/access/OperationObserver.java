@@ -33,6 +33,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ResultIterator
 import|;
 end_import
@@ -110,7 +122,7 @@ name|ResultIterator
 name|it
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 3.0      */
+comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 3.2      */
 name|void
 name|nextGeneratedRows
 parameter_list|(
@@ -118,7 +130,10 @@ name|Query
 name|query
 parameter_list|,
 name|ResultIterator
-name|keysIterator
+name|keys
+parameter_list|,
+name|ObjectId
+name|idToUpdate
 parameter_list|)
 function_decl|;
 comment|/**      * Callback method invoked on exceptions that happen during an execution of a specific      * query.      */

@@ -416,7 +416,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Closes ResultIterator without reading its data. If you implement a custom      * subclass, only call super if closing the iterator is what you need.      *       * @since 3.0      */
+comment|/**      * Closes ResultIterator without reading its data. If you implement a custom      * subclass, only call super if closing the iterator is what you need.      *       * @since 3.2      */
 specifier|public
 name|void
 name|nextGeneratedRows
@@ -425,17 +425,26 @@ name|Query
 name|query
 parameter_list|,
 name|ResultIterator
-name|keysIterator
+name|keys
+parameter_list|,
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectId
+name|idToUpdate
 parameter_list|)
 block|{
 if|if
 condition|(
-name|keysIterator
+name|keys
 operator|!=
 literal|null
 condition|)
 block|{
-name|keysIterator
+name|keys
 operator|.
 name|close
 argument_list|()
