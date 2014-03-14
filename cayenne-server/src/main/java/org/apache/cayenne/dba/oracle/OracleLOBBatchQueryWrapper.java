@@ -127,6 +127,20 @@ name|BatchQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|BatchQueryRow
+import|;
+end_import
+
 begin_comment
 comment|/**  * Helper class to extract the information from BatchQueries, essential for LOB  * columns processing.  *   */
 end_comment
@@ -310,7 +324,10 @@ block|}
 comment|/**      * Indexes attributes      */
 name|void
 name|indexLOBAttributes
-parameter_list|()
+parameter_list|(
+name|BatchQueryRow
+name|row
+parameter_list|)
 block|{
 name|int
 name|len
@@ -353,7 +370,7 @@ comment|// skip null and empty LOBs
 name|Object
 name|value
 init|=
-name|query
+name|row
 operator|.
 name|getValue
 argument_list|(
@@ -754,7 +771,10 @@ return|;
 block|}
 name|List
 name|getValuesForLOBSelectQualifier
-parameter_list|()
+parameter_list|(
+name|BatchQueryRow
+name|row
+parameter_list|)
 block|{
 name|int
 name|len
@@ -803,7 +823,7 @@ name|values
 operator|.
 name|add
 argument_list|(
-name|query
+name|row
 operator|.
 name|getValue
 argument_list|(

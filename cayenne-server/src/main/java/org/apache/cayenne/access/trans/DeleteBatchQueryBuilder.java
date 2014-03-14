@@ -109,6 +109,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|BatchQueryRow
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|DeleteBatchQuery
 import|;
 end_import
@@ -291,7 +305,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Binds BatchQuery parameters to the PreparedStatement.      */
+comment|/**      * Binds BatchQuery parameters to the PreparedStatement.      *       * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
@@ -300,6 +314,9 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
+parameter_list|,
+name|BatchQueryRow
+name|row
 parameter_list|)
 throws|throws
 name|SQLException
@@ -339,7 +356,7 @@ block|{
 name|Object
 name|value
 init|=
-name|query
+name|row
 operator|.
 name|getValue
 argument_list|(

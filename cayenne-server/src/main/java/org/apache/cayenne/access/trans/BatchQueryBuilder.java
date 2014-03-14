@@ -133,6 +133,20 @@ name|BatchQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|BatchQueryRow
+import|;
+end_import
+
 begin_comment
 comment|/**  * Superclass of batch query translators.  */
 end_comment
@@ -323,6 +337,9 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
+parameter_list|,
+name|BatchQueryRow
+name|row
 parameter_list|)
 throws|throws
 name|SQLException
@@ -336,7 +353,10 @@ argument_list|<
 name|Object
 argument_list|>
 name|getParameterValues
-parameter_list|()
+parameter_list|(
+name|BatchQueryRow
+name|row
+parameter_list|)
 block|{
 name|int
 name|len
@@ -383,7 +403,7 @@ name|values
 operator|.
 name|add
 argument_list|(
-name|query
+name|row
 operator|.
 name|getValue
 argument_list|(

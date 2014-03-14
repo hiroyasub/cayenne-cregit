@@ -21,6 +21,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|sql
 operator|.
 name|PreparedStatement
@@ -165,6 +175,20 @@ name|BatchQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|BatchQueryRow
+import|;
+end_import
+
 begin_comment
 comment|/**  * Superclass of query builders for the DML operations involving LOBs.  *   */
 end_comment
@@ -204,8 +228,35 @@ block|}
 specifier|abstract
 name|List
 name|getValuesForLOBUpdateParameters
-parameter_list|()
+parameter_list|(
+name|BatchQueryRow
+name|row
+parameter_list|)
 function_decl|;
+specifier|abstract
+name|String
+name|createSqlString
+parameter_list|(
+name|BatchQueryRow
+name|row
+parameter_list|)
+function_decl|;
+annotation|@
+name|Override
+specifier|public
+specifier|final
+name|String
+name|createSqlString
+parameter_list|()
+throws|throws
+name|IOException
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
+block|}
 name|String
 name|createLOBSelectString
 parameter_list|(
@@ -490,7 +541,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Binds BatchQuery parameters to the PreparedStatement.      */
+comment|/**      * Binds BatchQuery parameters to the PreparedStatement.      *       * @since 3.2      */
 annotation|@
 name|Override
 specifier|public
@@ -499,6 +550,9 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
+parameter_list|,
+name|BatchQueryRow
+name|row
 parameter_list|)
 throws|throws
 name|SQLException
@@ -548,7 +602,7 @@ block|{
 name|Object
 name|value
 init|=
-name|query
+name|row
 operator|.
 name|getValue
 argument_list|(
