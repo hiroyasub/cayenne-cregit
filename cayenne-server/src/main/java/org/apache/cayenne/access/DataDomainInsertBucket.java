@@ -404,7 +404,7 @@ control|)
 block|{
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -426,8 +426,7 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 comment|// we need to insert even if there is no changes to default
-comment|// values
-comment|// so creating an empty changes map
+comment|// values so creating an empty changes map
 if|if
 condition|(
 name|snapshot
@@ -440,7 +439,7 @@ operator|=
 operator|new
 name|HashMap
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>

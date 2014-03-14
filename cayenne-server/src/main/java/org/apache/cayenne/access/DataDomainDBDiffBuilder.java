@@ -307,7 +307,7 @@ block|}
 comment|/**      * Processes GraphDiffs of a single object, converting them to DB diff.      */
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -348,7 +348,7 @@ return|;
 block|}
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -357,7 +357,7 @@ init|=
 operator|new
 name|HashMap
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -395,7 +395,7 @@ name|appendSimpleProperties
 parameter_list|(
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -491,7 +491,7 @@ name|appendForeignKeys
 parameter_list|(
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -654,7 +654,7 @@ name|appendPrimaryKeys
 parameter_list|(
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>

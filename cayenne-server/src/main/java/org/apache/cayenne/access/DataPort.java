@@ -931,6 +931,9 @@ if|if
 condition|(
 name|insert
 operator|.
+name|getRows
+argument_list|()
+operator|.
 name|size
 argument_list|()
 operator|>

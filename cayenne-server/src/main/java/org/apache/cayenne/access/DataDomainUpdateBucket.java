@@ -363,7 +363,7 @@ argument_list|)
 decl_stmt|;
 name|Map
 argument_list|<
-name|Object
+name|String
 argument_list|,
 name|Object
 argument_list|>
@@ -394,6 +394,11 @@ name|entity
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|qualifierSnapshot
 init|=
 name|qualifierBuilder
