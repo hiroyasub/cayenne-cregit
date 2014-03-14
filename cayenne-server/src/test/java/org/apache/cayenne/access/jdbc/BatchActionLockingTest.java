@@ -636,6 +636,8 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|node
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|action
@@ -907,6 +909,8 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|node
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 try|try

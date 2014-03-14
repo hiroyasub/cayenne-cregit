@@ -107,6 +107,9 @@ name|batchQuery
 parameter_list|,
 name|DataNode
 name|dataNode
+parameter_list|,
+name|boolean
+name|runningAsBatch
 parameter_list|)
 block|{
 name|super
@@ -114,6 +117,8 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|dataNode
+argument_list|,
+name|runningAsBatch
 argument_list|)
 expr_stmt|;
 block|}

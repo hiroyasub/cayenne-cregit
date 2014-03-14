@@ -330,6 +330,8 @@ argument_list|(
 name|batch1
 argument_list|,
 name|node
+argument_list|,
+literal|false
 argument_list|)
 operator|.
 name|hasGeneratedKeys
@@ -365,6 +367,8 @@ argument_list|(
 name|batch2
 argument_list|,
 name|node
+argument_list|,
+literal|false
 argument_list|)
 operator|.
 name|hasGeneratedKeys
@@ -461,6 +465,8 @@ argument_list|(
 name|batch1
 argument_list|,
 name|node
+argument_list|,
+literal|false
 argument_list|)
 operator|.
 name|hasGeneratedKeys
@@ -496,6 +502,8 @@ argument_list|(
 name|batch2
 argument_list|,
 name|node
+argument_list|,
+literal|false
 argument_list|)
 operator|.
 name|hasGeneratedKeys
