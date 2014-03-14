@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dba
 operator|.
-name|trans
+name|oracle
 package|;
 end_package
 
@@ -76,6 +76,22 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|trans
+operator|.
+name|BatchQueryBuilder
 import|;
 end_import
 
@@ -154,10 +170,9 @@ comment|/**  * Superclass of query builders for the DML operations involving LOB
 end_comment
 
 begin_class
-specifier|public
 specifier|abstract
 class|class
-name|LOBBatchQueryBuilder
+name|OracleLOBBatchQueryBuilder
 extends|extends
 name|BatchQueryBuilder
 block|{
@@ -169,8 +184,7 @@ specifier|protected
 name|String
 name|newBlobFunction
 decl_stmt|;
-specifier|public
-name|LOBBatchQueryBuilder
+name|OracleLOBBatchQueryBuilder
 parameter_list|(
 name|BatchQuery
 name|query
@@ -187,13 +201,11 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
 specifier|abstract
 name|List
 name|getValuesForLOBUpdateParameters
 parameter_list|()
 function_decl|;
-specifier|public
 name|String
 name|createLOBSelectString
 parameter_list|(
@@ -628,25 +640,6 @@ name|CLOB
 operator|)
 return|;
 block|}
-specifier|public
-name|String
-name|getNewBlobFunction
-parameter_list|()
-block|{
-return|return
-name|newBlobFunction
-return|;
-block|}
-specifier|public
-name|String
-name|getNewClobFunction
-parameter_list|()
-block|{
-return|return
-name|newClobFunction
-return|;
-block|}
-specifier|public
 name|void
 name|setNewBlobFunction
 parameter_list|(
@@ -659,7 +652,6 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-specifier|public
 name|void
 name|setNewClobFunction
 parameter_list|(
