@@ -195,6 +195,8 @@ operator|-
 literal|1
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -218,6 +220,8 @@ name|this
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -243,6 +247,8 @@ name|name
 expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Override
 specifier|public
 name|DataMap
 name|getDataMap
@@ -269,6 +275,8 @@ name|dataMap
 expr_stmt|;
 block|}
 comment|/**      * Returns default select parameters.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -297,6 +305,8 @@ block|}
 return|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|route
@@ -332,6 +342,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Calls "batchAction" on the visitor.      *       * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction
