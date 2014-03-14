@@ -588,7 +588,13 @@ name|idAttributes
 argument_list|,
 name|updatedAttributes
 argument_list|,
-literal|null
+name|Collections
+operator|.
+expr|<
+name|String
+operator|>
+name|emptySet
+argument_list|()
 argument_list|,
 literal|1
 argument_list|)

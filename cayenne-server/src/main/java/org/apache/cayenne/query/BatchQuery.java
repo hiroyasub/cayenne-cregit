@@ -139,12 +139,25 @@ name|BatchQueryRow
 argument_list|>
 name|rows
 decl_stmt|;
+specifier|protected
+name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
+name|dbAttributes
+decl_stmt|;
 comment|/**      * @since 3.2      */
 specifier|public
 name|BatchQuery
 parameter_list|(
 name|DbEntity
 name|dbEntity
+parameter_list|,
+name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
+name|dbAttributes
 parameter_list|,
 name|int
 name|batchCapacity
@@ -168,6 +181,12 @@ argument_list|>
 argument_list|(
 name|batchCapacity
 argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|dbAttributes
+operator|=
+name|dbAttributes
 expr_stmt|;
 block|}
 comment|/**      * @since 3.2      */
@@ -371,14 +390,17 @@ return|;
 block|}
 comment|/**      * Returns a list of DbAttributes describing batch parameters.      */
 specifier|public
-specifier|abstract
 name|List
 argument_list|<
 name|DbAttribute
 argument_list|>
 name|getDbAttributes
 parameter_list|()
-function_decl|;
+block|{
+return|return
+name|dbAttributes
+return|;
+block|}
 comment|/**      * @deprecated since 3.2 use getRows().size().      */
 annotation|@
 name|Deprecated
