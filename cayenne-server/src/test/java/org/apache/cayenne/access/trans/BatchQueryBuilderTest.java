@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -233,6 +245,13 @@ init|=
 operator|new
 name|BatchQueryBuilder
 argument_list|(
+name|mock
+argument_list|(
+name|BatchQuery
+operator|.
+name|class
+argument_list|)
+argument_list|,
 name|adapter
 argument_list|)
 block|{
@@ -241,10 +260,7 @@ name|Override
 specifier|public
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 literal|null
@@ -258,9 +274,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException
@@ -318,6 +331,13 @@ init|=
 operator|new
 name|BatchQueryBuilder
 argument_list|(
+name|mock
+argument_list|(
+name|BatchQuery
+operator|.
+name|class
+argument_list|)
+argument_list|,
 name|adapter
 argument_list|)
 block|{
@@ -326,10 +346,7 @@ name|Override
 specifier|public
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 literal|null
@@ -343,9 +360,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException
@@ -498,6 +512,13 @@ init|=
 operator|new
 name|BatchQueryBuilder
 argument_list|(
+name|mock
+argument_list|(
+name|BatchQuery
+operator|.
+name|class
+argument_list|)
+argument_list|,
 name|adapter
 argument_list|)
 block|{
@@ -506,10 +527,7 @@ name|Override
 specifier|public
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 literal|null
@@ -523,9 +541,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException

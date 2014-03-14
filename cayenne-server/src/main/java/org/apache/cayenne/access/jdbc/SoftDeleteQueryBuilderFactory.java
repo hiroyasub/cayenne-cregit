@@ -47,6 +47,20 @@ name|DbAdapter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|DeleteBatchQuery
+import|;
+end_import
+
 begin_comment
 comment|/**  * Implementation of {@link #BatchQueryBuilderFactory}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  */
 end_comment
@@ -102,6 +116,9 @@ specifier|public
 name|BatchQueryBuilder
 name|createDeleteQueryBuilder
 parameter_list|(
+name|DeleteBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
@@ -110,6 +127,8 @@ return|return
 operator|new
 name|SoftDeleteBatchQueryBuilder
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|,
 name|deletedFieldName

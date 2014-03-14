@@ -99,7 +99,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|BatchQuery
+name|InsertBatchQuery
 import|;
 end_import
 
@@ -113,12 +113,17 @@ block|{
 specifier|public
 name|LOBInsertBatchQueryBuilder
 parameter_list|(
+name|InsertBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
 name|super
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|)
 expr_stmt|;
@@ -128,10 +133,7 @@ name|Override
 specifier|public
 name|List
 name|getValuesForLOBUpdateParameters
-parameter_list|(
-name|BatchQuery
-name|query
-parameter_list|)
+parameter_list|()
 block|{
 name|List
 argument_list|<
@@ -227,10 +229,7 @@ name|Override
 specifier|public
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 block|{
 name|List
 argument_list|<
@@ -238,7 +237,7 @@ name|DbAttribute
 argument_list|>
 name|dbAttributes
 init|=
-name|batch
+name|query
 operator|.
 name|getDbAttributes
 argument_list|()
@@ -253,7 +252,7 @@ name|getQuotingStrategy
 argument_list|()
 decl_stmt|;
 name|StringBuffer
-name|query
+name|buffer
 init|=
 operator|new
 name|StringBuffer
@@ -261,7 +260,7 @@ argument_list|(
 literal|"INSERT INTO "
 argument_list|)
 decl_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -269,14 +268,14 @@ name|strategy
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-name|batch
+name|query
 operator|.
 name|getDbEntity
 argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -311,7 +310,7 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -331,7 +330,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -340,7 +339,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -372,7 +371,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -382,7 +381,7 @@ expr_stmt|;
 block|}
 name|appendUpdatedParameter
 argument_list|(
-name|query
+name|buffer
 argument_list|,
 name|dbAttributes
 operator|.
@@ -391,7 +390,7 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|,
-name|batch
+name|query
 operator|.
 name|getValue
 argument_list|(
@@ -400,7 +399,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -408,7 +407,7 @@ literal|')'
 argument_list|)
 expr_stmt|;
 return|return
-name|query
+name|buffer
 operator|.
 name|toString
 argument_list|()

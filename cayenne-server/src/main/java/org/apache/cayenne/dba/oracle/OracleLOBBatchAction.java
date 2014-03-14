@@ -430,6 +430,11 @@ operator|=
 operator|new
 name|LOBInsertBatchQueryBuilder
 argument_list|(
+operator|(
+name|InsertBatchQuery
+operator|)
+name|query
+argument_list|,
 name|getAdapter
 argument_list|()
 argument_list|)
@@ -447,6 +452,11 @@ operator|=
 operator|new
 name|LOBUpdateBatchQueryBuilder
 argument_list|(
+operator|(
+name|UpdateBatchQuery
+operator|)
+name|query
+argument_list|,
 name|getAdapter
 argument_list|()
 argument_list|)
@@ -546,9 +556,7 @@ init|=
 name|queryBuilder
 operator|.
 name|createSqlString
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 decl_stmt|;
 comment|// 1. run row update
 name|logger
@@ -585,9 +593,7 @@ init|=
 name|queryBuilder
 operator|.
 name|getValuesForLOBUpdateParameters
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|logger
 operator|.
@@ -610,8 +616,6 @@ operator|.
 name|bindParameters
 argument_list|(
 name|statement
-argument_list|,
-name|query
 argument_list|)
 expr_stmt|;
 name|updated
@@ -764,11 +768,6 @@ name|queryBuilder
 operator|.
 name|createLOBSelectString
 argument_list|(
-name|selectQuery
-operator|.
-name|getQuery
-argument_list|()
-argument_list|,
 name|lobAttributes
 argument_list|,
 name|qualifierAttributes

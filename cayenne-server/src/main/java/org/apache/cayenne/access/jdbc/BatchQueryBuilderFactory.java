@@ -47,8 +47,50 @@ name|DbAdapter
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|DeleteBatchQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|InsertBatchQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|UpdateBatchQuery
+import|;
+end_import
+
 begin_comment
-comment|/**  * Factory which creates BatchQueryBuilders for different types of queries, which, in  * their turn, create SQL strings for batch queries.  *   * @since 3.0  */
+comment|/**  * Factory which creates BatchQueryBuilders for different types of queries,  * which, in their turn, create SQL strings for batch queries.  *   * @since 3.0  */
 end_comment
 
 begin_interface
@@ -56,26 +98,35 @@ specifier|public
 interface|interface
 name|BatchQueryBuilderFactory
 block|{
-comment|/**      * Creates query builder for INSERT queries      */
+comment|/**      * Creates query builder for INSERT queries      *       * @since 3.2      */
 name|BatchQueryBuilder
 name|createInsertQueryBuilder
 parameter_list|(
+name|InsertBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
 function_decl|;
-comment|/**      * Creates query builder for UPDATE queries      */
+comment|/**      * Creates query builder for UPDATE queries      *       * @since 3.2      */
 name|BatchQueryBuilder
 name|createUpdateQueryBuilder
 parameter_list|(
+name|UpdateBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
 function_decl|;
-comment|/**      * Creates query builder for DELETE queries      */
+comment|/**      * Creates query builder for DELETE queries      *       * @since 3.2      */
 name|BatchQueryBuilder
 name|createDeleteQueryBuilder
 parameter_list|(
+name|DeleteBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)

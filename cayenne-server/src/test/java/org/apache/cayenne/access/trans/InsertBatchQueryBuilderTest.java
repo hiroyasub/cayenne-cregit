@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -247,12 +259,19 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|DeleteBatchQueryBuilder
+name|InsertBatchQueryBuilder
 name|builder
 init|=
 operator|new
-name|DeleteBatchQueryBuilder
+name|InsertBatchQueryBuilder
 argument_list|(
+name|mock
+argument_list|(
+name|InsertBatchQuery
+operator|.
+name|class
+argument_list|)
+argument_list|,
 name|adapter
 argument_list|)
 decl_stmt|;
@@ -315,7 +334,7 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 name|InsertBatchQuery
-name|deleteQuery
+name|insertQuery
 init|=
 operator|new
 name|InsertBatchQuery
@@ -331,6 +350,8 @@ init|=
 operator|new
 name|InsertBatchQueryBuilder
 argument_list|(
+name|insertQuery
+argument_list|,
 name|adapter
 argument_list|)
 decl_stmt|;
@@ -340,9 +361,7 @@ init|=
 name|builder
 operator|.
 name|createSqlString
-argument_list|(
-name|deleteQuery
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|assertNotNull
 argument_list|(
@@ -415,7 +434,7 @@ operator|.
 name|adapter
 decl_stmt|;
 name|InsertBatchQuery
-name|deleteQuery
+name|insertQuery
 init|=
 operator|new
 name|InsertBatchQuery
@@ -431,6 +450,8 @@ init|=
 operator|new
 name|InsertBatchQueryBuilder
 argument_list|(
+name|insertQuery
+argument_list|,
 name|adapter
 argument_list|)
 decl_stmt|;
@@ -440,9 +461,7 @@ init|=
 name|builder
 operator|.
 name|createSqlString
-argument_list|(
-name|deleteQuery
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|String
 name|charStart

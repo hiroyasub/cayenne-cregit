@@ -172,12 +172,17 @@ decl_stmt|;
 specifier|public
 name|LOBBatchQueryBuilder
 parameter_list|(
+name|BatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
 name|super
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|)
 expr_stmt|;
@@ -186,18 +191,12 @@ specifier|public
 specifier|abstract
 name|List
 name|getValuesForLOBUpdateParameters
-parameter_list|(
-name|BatchQuery
-name|query
-parameter_list|)
+parameter_list|()
 function_decl|;
 specifier|public
 name|String
 name|createLOBSelectString
 parameter_list|(
-name|BatchQuery
-name|updateQuery
-parameter_list|,
 name|List
 name|selectedLOBAttributes
 parameter_list|,
@@ -292,7 +291,7 @@ name|strategy
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-name|updateQuery
+name|query
 operator|.
 name|getDbEntity
 argument_list|()
@@ -375,7 +374,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Appends parameter placeholder for the value of the column being updated. If      * requested, performs special handling on LOB columns.      */
+comment|/**      * Appends parameter placeholder for the value of the column being updated.      * If requested, performs special handling on LOB columns.      */
 specifier|protected
 name|void
 name|appendUpdatedParameter
@@ -488,9 +487,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException
@@ -565,7 +561,8 @@ operator|.
 name|getType
 argument_list|()
 decl_stmt|;
-comment|// TODO: (Andrus) This works as long as there is no LOBs in qualifier
+comment|// TODO: (Andrus) This works as long as there is no LOBs in
+comment|// qualifier
 if|if
 condition|(
 name|isUpdateableColumn

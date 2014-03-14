@@ -380,7 +380,10 @@ decl_stmt|;
 specifier|private
 name|DeleteBatchQueryBuilder
 name|createBuilder
-parameter_list|()
+parameter_list|(
+name|DeleteBatchQuery
+name|query
+parameter_list|)
 block|{
 name|JdbcAdapter
 name|adapter
@@ -404,6 +407,8 @@ decl_stmt|;
 return|return
 name|createBuilder
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|)
 return|;
@@ -412,6 +417,9 @@ specifier|private
 name|DeleteBatchQueryBuilder
 name|createBuilder
 parameter_list|(
+name|DeleteBatchQuery
+name|query
+parameter_list|,
 name|JdbcAdapter
 name|adapter
 parameter_list|)
@@ -426,6 +434,8 @@ argument_list|()
 operator|.
 name|createDeleteQueryBuilder
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|)
 return|;
@@ -492,7 +502,9 @@ name|DeleteBatchQueryBuilder
 name|builder
 init|=
 name|createBuilder
-argument_list|()
+argument_list|(
+name|deleteQuery
+argument_list|)
 decl_stmt|;
 name|String
 name|generatedSql
@@ -500,9 +512,7 @@ init|=
 name|builder
 operator|.
 name|createSqlString
-argument_list|(
-name|deleteQuery
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|assertNotNull
 argument_list|(
@@ -606,7 +616,9 @@ name|DeleteBatchQueryBuilder
 name|builder
 init|=
 name|createBuilder
-argument_list|()
+argument_list|(
+name|deleteQuery
+argument_list|)
 decl_stmt|;
 name|String
 name|generatedSql
@@ -614,9 +626,7 @@ init|=
 name|builder
 operator|.
 name|createSqlString
-argument_list|(
-name|deleteQuery
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|assertNotNull
 argument_list|(
@@ -723,6 +733,8 @@ name|builder
 init|=
 name|createBuilder
 argument_list|(
+name|deleteQuery
+argument_list|,
 name|adapter
 argument_list|)
 decl_stmt|;
@@ -732,9 +744,7 @@ init|=
 name|builder
 operator|.
 name|createSqlString
-argument_list|(
-name|deleteQuery
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|String
 name|charStart

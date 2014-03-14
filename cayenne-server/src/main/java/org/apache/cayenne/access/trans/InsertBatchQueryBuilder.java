@@ -119,7 +119,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|BatchQuery
+name|InsertBatchQuery
 import|;
 end_import
 
@@ -137,17 +137,22 @@ block|{
 specifier|public
 name|InsertBatchQueryBuilder
 parameter_list|(
+name|InsertBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
 name|super
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Binds parameters for the current batch iteration to the PreparedStatement. Performs      * filtering of attributes based on column generation rules.      *       * @since 1.2      */
+comment|/**      * Binds parameters for the current batch iteration to the      * PreparedStatement. Performs filtering of attributes based on column      * generation rules.      *       * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -156,9 +161,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException
@@ -259,7 +261,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Returns a list of values for the current batch iteration. Performs filtering of      * attributes based on column generation rules. Used primarily for logging.      *       * @since 1.2      */
+comment|/**      * Returns a list of values for the current batch iteration. Performs      * filtering of attributes based on column generation rules. Used primarily      * for logging.      *       * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -268,10 +270,7 @@ argument_list|<
 name|Object
 argument_list|>
 name|getParameterValues
-parameter_list|(
-name|BatchQuery
-name|query
-parameter_list|)
+parameter_list|()
 block|{
 name|List
 argument_list|<
@@ -363,10 +362,7 @@ name|Override
 specifier|public
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 throws|throws
 name|IOException
 block|{
@@ -376,7 +372,7 @@ name|DbAttribute
 argument_list|>
 name|dbAttributes
 init|=
-name|batch
+name|query
 operator|.
 name|getDbAttributes
 argument_list|()
@@ -391,7 +387,7 @@ name|getQuotingStrategy
 argument_list|()
 decl_stmt|;
 name|StringBuilder
-name|query
+name|buffer
 init|=
 operator|new
 name|StringBuilder
@@ -399,7 +395,7 @@ argument_list|(
 literal|"INSERT INTO "
 argument_list|)
 decl_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -407,14 +403,14 @@ name|strategy
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-name|batch
+name|query
 operator|.
 name|getDbEntity
 argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -436,7 +432,8 @@ control|)
 block|{
 comment|// attribute inclusion rule - one of the rules below must be true:
 comment|// (1) attribute not generated
-comment|// (2) attribute is generated and PK and adapter does not support generated
+comment|// (2) attribute is generated and PK and adapter does not support
+comment|// generated
 comment|// keys
 if|if
 condition|(
@@ -453,7 +450,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -461,7 +458,7 @@ literal|", "
 argument_list|)
 expr_stmt|;
 block|}
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -478,7 +475,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -507,7 +504,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -515,7 +512,7 @@ literal|", "
 argument_list|)
 expr_stmt|;
 block|}
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -523,7 +520,7 @@ literal|'?'
 argument_list|)
 expr_stmt|;
 block|}
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -531,7 +528,7 @@ literal|')'
 argument_list|)
 expr_stmt|;
 return|return
-name|query
+name|buffer
 operator|.
 name|toString
 argument_list|()
@@ -548,7 +545,8 @@ parameter_list|)
 block|{
 comment|// attribute inclusion rule - one of the rules below must be true:
 comment|// (1) attribute not generated
-comment|// (2) attribute is generated and PK and adapter does not support generated
+comment|// (2) attribute is generated and PK and adapter does not support
+comment|// generated
 comment|// keys
 return|return
 operator|!

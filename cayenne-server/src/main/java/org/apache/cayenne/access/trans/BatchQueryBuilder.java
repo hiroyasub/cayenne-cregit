@@ -144,6 +144,10 @@ class|class
 name|BatchQueryBuilder
 block|{
 specifier|protected
+name|BatchQuery
+name|query
+decl_stmt|;
+specifier|protected
 name|DbAdapter
 name|adapter
 decl_stmt|;
@@ -154,10 +158,19 @@ decl_stmt|;
 specifier|public
 name|BatchQueryBuilder
 parameter_list|(
+name|BatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
+name|this
+operator|.
+name|query
+operator|=
+name|query
+expr_stmt|;
 name|this
 operator|.
 name|adapter
@@ -165,15 +178,12 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-comment|/**      * Translates BatchQuery into an SQL string formatted to use in a      * PreparedStatement.      *       * @throws IOException      */
+comment|/**      * Translates BatchQuery into an SQL string formatted to use in a      * PreparedStatement.      *       * @since 3.2      * @throws IOException      */
 specifier|public
 specifier|abstract
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
@@ -305,7 +315,7 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-comment|/**      * Binds parameters for the current batch iteration to the      * PreparedStatement.      *       * @since 1.2      */
+comment|/**      * Binds parameters for the current batch iteration to the      * PreparedStatement.      *       * @since 3.2      */
 specifier|public
 specifier|abstract
 name|void
@@ -313,9 +323,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException
@@ -329,10 +336,7 @@ argument_list|<
 name|Object
 argument_list|>
 name|getParameterValues
-parameter_list|(
-name|BatchQuery
-name|query
-parameter_list|)
+parameter_list|()
 block|{
 name|int
 name|len

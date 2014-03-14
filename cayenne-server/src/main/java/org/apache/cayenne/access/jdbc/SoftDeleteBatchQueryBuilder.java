@@ -125,7 +125,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|BatchQuery
+name|DeleteBatchQuery
 import|;
 end_import
 
@@ -147,6 +147,9 @@ decl_stmt|;
 specifier|public
 name|SoftDeleteBatchQueryBuilder
 parameter_list|(
+name|DeleteBatchQuery
+name|query
+parameter_list|,
 name|DbAdapter
 name|adapter
 parameter_list|,
@@ -156,6 +159,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|query
+argument_list|,
 name|adapter
 argument_list|)
 expr_stmt|;
@@ -171,10 +176,7 @@ name|Override
 specifier|public
 name|String
 name|createSqlString
-parameter_list|(
-name|BatchQuery
-name|batch
-parameter_list|)
+parameter_list|()
 throws|throws
 name|IOException
 block|{
@@ -182,18 +184,14 @@ if|if
 condition|(
 operator|!
 name|needSoftDelete
-argument_list|(
-name|batch
-argument_list|)
+argument_list|()
 condition|)
 block|{
 return|return
 name|super
 operator|.
 name|createSqlString
-argument_list|(
-name|batch
-argument_list|)
+argument_list|()
 return|;
 block|}
 name|QuotingStrategy
@@ -206,7 +204,7 @@ name|getQuotingStrategy
 argument_list|()
 decl_stmt|;
 name|StringBuffer
-name|query
+name|buffer
 init|=
 operator|new
 name|StringBuffer
@@ -214,7 +212,7 @@ argument_list|(
 literal|"UPDATE "
 argument_list|)
 decl_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -222,14 +220,14 @@ name|strategy
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-name|batch
+name|query
 operator|.
 name|getDbEntity
 argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|query
+name|buffer
 operator|.
 name|append
 argument_list|(
@@ -242,7 +240,7 @@ name|strategy
 operator|.
 name|quotedIdentifier
 argument_list|(
-name|batch
+name|query
 operator|.
 name|getDbEntity
 argument_list|()
@@ -258,13 +256,11 @@ argument_list|)
 expr_stmt|;
 name|applyQualifier
 argument_list|(
-name|query
-argument_list|,
-name|batch
+name|buffer
 argument_list|)
 expr_stmt|;
 return|return
-name|query
+name|buffer
 operator|.
 name|toString
 argument_list|()
@@ -275,16 +271,11 @@ name|Override
 specifier|protected
 name|int
 name|getFirstParameterIndex
-parameter_list|(
-name|BatchQuery
-name|query
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 name|needSoftDelete
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 condition|?
 literal|2
 else|:
@@ -299,9 +290,6 @@ name|bindParameters
 parameter_list|(
 name|PreparedStatement
 name|statement
-parameter_list|,
-name|BatchQuery
-name|query
 parameter_list|)
 throws|throws
 name|SQLException
@@ -311,9 +299,7 @@ block|{
 if|if
 condition|(
 name|needSoftDelete
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 condition|)
 block|{
 comment|// binding first parameter (which is 'deleted') as true
@@ -341,8 +327,6 @@ operator|.
 name|bindParameters
 argument_list|(
 name|statement
-argument_list|,
-name|query
 argument_list|)
 expr_stmt|;
 block|}
@@ -350,10 +334,7 @@ comment|/**      * @return whether 'soft' deletion should be used      */
 specifier|protected
 name|boolean
 name|needSoftDelete
-parameter_list|(
-name|BatchQuery
-name|query
-parameter_list|)
+parameter_list|()
 block|{
 name|DbAttribute
 name|attr

@@ -548,6 +548,8 @@ init|=
 operator|new
 name|DeleteBatchQueryBuilder
 argument_list|(
+name|batchQuery
+argument_list|,
 name|adapter
 argument_list|)
 decl_stmt|;
@@ -821,6 +823,8 @@ init|=
 operator|new
 name|DeleteBatchQueryBuilder
 argument_list|(
+name|batchQuery
+argument_list|,
 name|adapter
 argument_list|)
 decl_stmt|;

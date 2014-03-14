@@ -478,6 +478,11 @@ name|factory
 operator|.
 name|createInsertQueryBuilder
 argument_list|(
+operator|(
+name|InsertBatchQuery
+operator|)
+name|query
+argument_list|,
 name|dataNode
 operator|.
 name|getAdapter
@@ -497,6 +502,11 @@ name|factory
 operator|.
 name|createUpdateQueryBuilder
 argument_list|(
+operator|(
+name|UpdateBatchQuery
+operator|)
+name|query
+argument_list|,
 name|dataNode
 operator|.
 name|getAdapter
@@ -516,6 +526,11 @@ name|factory
 operator|.
 name|createDeleteQueryBuilder
 argument_list|(
+operator|(
+name|DeleteBatchQuery
+operator|)
+name|query
+argument_list|,
 name|dataNode
 operator|.
 name|getAdapter
@@ -560,9 +575,7 @@ init|=
 name|queryBuilder
 operator|.
 name|createSqlString
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|JdbcEventLogger
 name|logger
@@ -637,9 +650,7 @@ argument_list|,
 name|queryBuilder
 operator|.
 name|getParameterValues
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 argument_list|,
 name|query
 operator|instanceof
@@ -652,8 +663,6 @@ operator|.
 name|bindParameters
 argument_list|(
 name|statement
-argument_list|,
-name|query
 argument_list|)
 expr_stmt|;
 name|statement
@@ -801,9 +810,7 @@ init|=
 name|queryBuilder
 operator|.
 name|createSqlString
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 decl_stmt|;
 comment|// log batch SQL execution
 name|logger
@@ -877,9 +884,7 @@ argument_list|,
 name|queryBuilder
 operator|.
 name|getParameterValues
-argument_list|(
-name|query
-argument_list|)
+argument_list|()
 argument_list|,
 name|query
 operator|instanceof
@@ -892,8 +897,6 @@ operator|.
 name|bindParameters
 argument_list|(
 name|statement
-argument_list|,
-name|query
 argument_list|)
 expr_stmt|;
 name|int
