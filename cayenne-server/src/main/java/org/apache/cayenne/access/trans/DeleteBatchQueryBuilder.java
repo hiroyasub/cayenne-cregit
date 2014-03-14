@@ -160,11 +160,11 @@ operator|.
 name|getQuotingStrategy
 argument_list|()
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|(
 literal|"DELETE FROM "
 argument_list|)
@@ -201,7 +201,7 @@ specifier|protected
 name|void
 name|applyQualifier
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|buffer
 parameter_list|)
 block|{

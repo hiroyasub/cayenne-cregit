@@ -192,7 +192,7 @@ specifier|protected
 name|void
 name|appendDbAttribute
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|buf
 parameter_list|,
 name|DbAttribute

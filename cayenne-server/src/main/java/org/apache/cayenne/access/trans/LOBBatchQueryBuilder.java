@@ -213,11 +213,11 @@ operator|.
 name|getQuotingStrategy
 argument_list|()
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|buf
@@ -379,7 +379,7 @@ specifier|protected
 name|void
 name|appendUpdatedParameter
 parameter_list|(
-name|StringBuffer
+name|StringBuilder
 name|buf
 parameter_list|,
 name|DbAttribute

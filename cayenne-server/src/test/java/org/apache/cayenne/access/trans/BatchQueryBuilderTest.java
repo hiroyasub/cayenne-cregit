@@ -376,11 +376,11 @@ argument_list|(
 name|trimFunction
 argument_list|)
 expr_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|DbEntity
@@ -436,7 +436,7 @@ expr_stmt|;
 name|buf
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 expr_stmt|;
 name|attr
@@ -550,11 +550,11 @@ block|{
 block|}
 block|}
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|DbEntity
@@ -610,7 +610,7 @@ expr_stmt|;
 name|buf
 operator|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 expr_stmt|;
 name|attr
