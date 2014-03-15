@@ -545,6 +545,9 @@ name|isLoggable
 condition|)
 block|{
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|bindings
 init|=
 name|queryBuilder
@@ -696,6 +699,9 @@ name|isLoggable
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|qualifierValues
 init|=
 name|selectQuery
@@ -706,6 +712,9 @@ name|row
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|lobValues
 init|=
 name|selectQuery
