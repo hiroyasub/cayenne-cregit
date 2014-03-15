@@ -33,6 +33,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|conn
 operator|.
 name|DataSourceInfo
@@ -155,6 +173,23 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
+comment|/**      * @since 3.2      */
+name|void
+name|logQueryParameters
+parameter_list|(
+name|String
+name|label
+parameter_list|,
+name|List
+argument_list|<
+name|BatchParameterBinding
+argument_list|>
+name|bindings
+parameter_list|)
+function_decl|;
+comment|/**      * @deprecated since 3.2 in favor of      *             {@link #logQueryParameters(String, List)}      */
+annotation|@
+name|Deprecated
 name|void
 name|logQueryParameters
 parameter_list|(
@@ -187,7 +222,7 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
-comment|/**      *       * @param count      * @param time (milliseconds) time query took to run      * @param sql SQL that was executed, printed when time exceeds timeThreshold      *       * @since 3.2      */
+comment|/**      *       * @param count      * @param time      *            (milliseconds) time query took to run      * @param sql      *            SQL that was executed, printed when time exceeds timeThreshold      *       * @since 3.2      */
 name|void
 name|logSelectCount
 parameter_list|(
@@ -236,7 +271,7 @@ name|Throwable
 name|th
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if current thread default log level is high enough to generate output.      */
+comment|/**      * Returns true if current thread default log level is high enough to      * generate output.      */
 name|boolean
 name|isLoggable
 parameter_list|()
