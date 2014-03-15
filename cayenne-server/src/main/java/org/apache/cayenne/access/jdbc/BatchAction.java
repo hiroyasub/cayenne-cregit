@@ -433,10 +433,10 @@ control|(
 name|int
 name|i
 init|=
-literal|1
+literal|0
 init|;
 name|i
-operator|<=
+operator|<
 name|len
 condition|;
 name|i
@@ -465,6 +465,8 @@ name|getValue
 argument_list|()
 argument_list|,
 name|i
+operator|+
+literal|1
 argument_list|,
 name|b
 operator|.

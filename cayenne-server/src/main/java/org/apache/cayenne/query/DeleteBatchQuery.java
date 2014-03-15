@@ -21,7 +21,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
+name|Collection
 import|;
 end_import
 
@@ -31,7 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|List
 import|;
 end_import
 
@@ -91,13 +91,6 @@ decl_stmt|;
 specifier|private
 name|Collection
 argument_list|<
-name|DbAttribute
-argument_list|>
-name|qualifierAttributes
-decl_stmt|;
-specifier|private
-name|Collection
-argument_list|<
 name|String
 argument_list|>
 name|nullQualifierNames
@@ -109,7 +102,7 @@ parameter_list|(
 name|DbEntity
 name|dbEntity
 parameter_list|,
-name|Collection
+name|List
 argument_list|<
 name|DbAttribute
 argument_list|>
@@ -129,14 +122,7 @@ name|super
 argument_list|(
 name|dbEntity
 argument_list|,
-operator|new
-name|ArrayList
-argument_list|<
-name|DbAttribute
-argument_list|>
-argument_list|(
 name|qualifierAttributes
-argument_list|)
 argument_list|,
 name|batchCapacity
 argument_list|)
@@ -156,12 +142,6 @@ literal|"Null 'nullQualifierNames'"
 argument_list|)
 throw|;
 block|}
-name|this
-operator|.
-name|qualifierAttributes
-operator|=
-name|qualifierAttributes
-expr_stmt|;
 name|this
 operator|.
 name|nullQualifierNames
@@ -217,19 +197,6 @@ name|usingOptimisticLocking
 operator|=
 name|usingOptimisticLocking
 expr_stmt|;
-block|}
-comment|/**      * @since 3.0 (since 3.0 changed to return collection instead of a list).      */
-specifier|public
-name|Collection
-argument_list|<
-name|DbAttribute
-argument_list|>
-name|getQualifierAttributes
-parameter_list|()
-block|{
-return|return
-name|qualifierAttributes
-return|;
 block|}
 specifier|public
 name|void
