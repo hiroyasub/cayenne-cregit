@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|select
 package|;
 end_package
 
@@ -88,6 +90,24 @@ operator|.
 name|jdbc
 operator|.
 name|ColumnDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
 import|;
 end_import
 

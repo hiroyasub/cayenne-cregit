@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|select
 package|;
 end_package
 
@@ -62,6 +64,24 @@ operator|.
 name|access
 operator|.
 name|DataNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|QualifierTranslator
 import|;
 end_import
 

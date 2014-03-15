@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|procedure
 package|;
 end_package
 

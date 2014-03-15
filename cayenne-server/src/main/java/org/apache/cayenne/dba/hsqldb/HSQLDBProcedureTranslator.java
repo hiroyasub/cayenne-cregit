@@ -27,7 +27,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|procedure
 operator|.
 name|ProcedureTranslator
 import|;

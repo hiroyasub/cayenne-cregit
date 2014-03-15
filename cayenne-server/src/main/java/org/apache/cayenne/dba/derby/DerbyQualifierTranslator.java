@@ -47,7 +47,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|select
 operator|.
 name|QueryAssembler
 import|;
@@ -63,7 +65,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|select
 operator|.
 name|TrimmingQualifierTranslator
 import|;
