@@ -281,8 +281,7 @@ name|adapter
 argument_list|,
 name|builder
 operator|.
-name|getAdapter
-argument_list|()
+name|adapter
 argument_list|)
 expr_stmt|;
 block|}

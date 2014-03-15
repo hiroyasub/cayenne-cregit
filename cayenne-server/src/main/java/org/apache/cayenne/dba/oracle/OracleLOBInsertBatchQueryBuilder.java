@@ -262,8 +262,7 @@ decl_stmt|;
 name|QuotingStrategy
 name|strategy
 init|=
-name|getAdapter
-argument_list|()
+name|adapter
 operator|.
 name|getQuotingStrategy
 argument_list|()
