@@ -266,9 +266,15 @@ name|String
 name|createLOBSelectString
 parameter_list|(
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|selectedLOBAttributes
 parameter_list|,
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|qualifierAttributes
 parameter_list|)
 block|{
@@ -295,6 +301,9 @@ literal|"SELECT "
 argument_list|)
 expr_stmt|;
 name|Iterator
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|it
 init|=
 name|selectedLOBAttributes
@@ -318,9 +327,6 @@ name|strategy
 operator|.
 name|quotedName
 argument_list|(
-operator|(
-name|DbAttribute
-operator|)
 name|it
 operator|.
 name|next
