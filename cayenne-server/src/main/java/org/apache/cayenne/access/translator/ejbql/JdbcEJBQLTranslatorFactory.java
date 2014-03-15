@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|ejbql
 package|;
 end_package
 

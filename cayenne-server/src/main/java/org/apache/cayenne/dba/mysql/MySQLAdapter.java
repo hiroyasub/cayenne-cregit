@@ -133,7 +133,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|ejbql
 operator|.
 name|EJBQLTranslatorFactory
 import|;
@@ -149,7 +151,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|ejbql
 operator|.
 name|JdbcEJBQLTranslatorFactory
 import|;

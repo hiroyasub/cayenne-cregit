@@ -27,7 +27,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|ejbql
 operator|.
 name|EJBQLConditionTranslator
 import|;
@@ -43,7 +45,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|ejbql
 operator|.
 name|EJBQLTranslationContext
 import|;

@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|ejbql
 package|;
 end_package
 
@@ -510,6 +512,7 @@ name|stackTop
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|SQLTemplate
 name|getQuery
 parameter_list|()
