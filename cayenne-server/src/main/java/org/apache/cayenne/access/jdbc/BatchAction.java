@@ -547,9 +547,9 @@ throws|,
 name|Exception
 block|{
 name|BatchTranslator
-name|queryBuilder
+name|translator
 init|=
-name|createBuilder
+name|createTranslator
 argument_list|()
 decl_stmt|;
 name|boolean
@@ -570,7 +570,7 @@ name|runAsBatch
 argument_list|(
 name|connection
 argument_list|,
-name|queryBuilder
+name|translator
 argument_list|,
 name|observer
 argument_list|)
@@ -582,7 +582,7 @@ name|runAsIndividualQueries
 argument_list|(
 name|connection
 argument_list|,
-name|queryBuilder
+name|translator
 argument_list|,
 name|observer
 argument_list|,
@@ -593,7 +593,7 @@ block|}
 block|}
 specifier|protected
 name|BatchTranslator
-name|createBuilder
+name|createTranslator
 parameter_list|()
 throws|throws
 name|CayenneException
@@ -714,7 +714,7 @@ name|Connection
 name|con
 parameter_list|,
 name|BatchTranslator
-name|queryBuilder
+name|translator
 parameter_list|,
 name|OperationObserver
 name|delegate
@@ -727,7 +727,7 @@ block|{
 name|String
 name|queryStr
 init|=
-name|queryBuilder
+name|translator
 operator|.
 name|createSqlString
 argument_list|()
@@ -798,7 +798,7 @@ name|BatchParameterBinding
 argument_list|>
 name|bindings
 init|=
-name|queryBuilder
+name|translator
 operator|.
 name|createBindings
 argument_list|(
@@ -925,7 +925,7 @@ name|Connection
 name|connection
 parameter_list|,
 name|BatchTranslator
-name|queryBuilder
+name|translator
 parameter_list|,
 name|OperationObserver
 name|delegate
@@ -957,7 +957,7 @@ decl_stmt|;
 name|String
 name|queryStr
 init|=
-name|queryBuilder
+name|translator
 operator|.
 name|createSqlString
 argument_list|()
@@ -1027,7 +1027,7 @@ name|BatchParameterBinding
 argument_list|>
 name|bindings
 init|=
-name|queryBuilder
+name|translator
 operator|.
 name|createBindings
 argument_list|(

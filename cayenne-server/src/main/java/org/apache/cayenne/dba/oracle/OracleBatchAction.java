@@ -128,7 +128,7 @@ annotation|@
 name|Override
 specifier|protected
 name|BatchTranslator
-name|createBuilder
+name|createTranslator
 parameter_list|()
 throws|throws
 name|CayenneException
@@ -139,7 +139,7 @@ name|builder
 init|=
 name|super
 operator|.
-name|createBuilder
+name|createTranslator
 argument_list|()
 decl_stmt|;
 name|builder
