@@ -35,26 +35,6 @@ name|java
 operator|.
 name|sql
 operator|.
-name|PreparedStatement
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
 name|Types
 import|;
 end_import
@@ -306,22 +286,18 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-comment|/**      * Binds parameters for the current batch iteration to the      * PreparedStatement.      *       * @since 3.2      */
+comment|/**      * Returns PreparedStatement bindings for a given row.      */
 specifier|public
 specifier|abstract
-name|void
-name|bindParameters
+name|List
+argument_list|<
+name|BatchParameterBinding
+argument_list|>
+name|createBindings
 parameter_list|(
-name|PreparedStatement
-name|statement
-parameter_list|,
 name|BatchQueryRow
 name|row
 parameter_list|)
-throws|throws
-name|SQLException
-throws|,
-name|Exception
 function_decl|;
 comment|/**      * Returns a list of values for the current batch iteration. Used primarily      * for logging.      *       * @since 1.2      */
 specifier|public
