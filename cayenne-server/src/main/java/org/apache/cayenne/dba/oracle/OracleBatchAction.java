@@ -69,9 +69,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
 operator|.
-name|BatchQueryBuilder
+name|batch
+operator|.
+name|BatchTranslator
 import|;
 end_import
 
@@ -125,14 +127,14 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|BatchQueryBuilder
+name|BatchTranslator
 name|createBuilder
 parameter_list|()
 throws|throws
 name|CayenneException
 block|{
 comment|// intercept super call to configure the builder...
-name|BatchQueryBuilder
+name|BatchTranslator
 name|builder
 init|=
 name|super

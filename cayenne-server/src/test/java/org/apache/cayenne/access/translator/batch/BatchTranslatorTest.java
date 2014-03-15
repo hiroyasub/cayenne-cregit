@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|batch
 package|;
 end_package
 
@@ -56,6 +58,24 @@ operator|.
 name|sql
 operator|.
 name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchTranslator
 import|;
 end_import
 
@@ -217,7 +237,7 @@ name|TESTMAP_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|BatchQueryBuilderTest
+name|BatchTranslatorTest
 extends|extends
 name|ServerCase
 block|{
@@ -253,11 +273,11 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|BatchQueryBuilder
+name|BatchTranslator
 name|builder
 init|=
 operator|new
-name|BatchQueryBuilder
+name|BatchTranslator
 argument_list|(
 name|mock
 argument_list|(
@@ -341,11 +361,11 @@ name|trimFunction
 init|=
 literal|"testTrim"
 decl_stmt|;
-name|BatchQueryBuilder
+name|BatchTranslator
 name|builder
 init|=
 operator|new
-name|BatchQueryBuilder
+name|BatchTranslator
 argument_list|(
 name|mock
 argument_list|(
@@ -525,11 +545,11 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|BatchQueryBuilder
+name|BatchTranslator
 name|builder
 init|=
 operator|new
-name|BatchQueryBuilder
+name|BatchTranslator
 argument_list|(
 name|mock
 argument_list|(

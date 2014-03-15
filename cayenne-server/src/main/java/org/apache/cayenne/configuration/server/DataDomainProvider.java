@@ -139,7 +139,9 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|BatchQueryBuilderFactory
+name|reader
+operator|.
+name|RowReaderFactory
 import|;
 end_import
 
@@ -153,11 +155,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|reader
+name|batch
 operator|.
-name|RowReaderFactory
+name|BatchTranslatorFactory
 import|;
 end_import
 
@@ -594,7 +596,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 name|batchQueryBuilderFactory
 decl_stmt|;
 annotation|@

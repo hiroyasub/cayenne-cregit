@@ -41,9 +41,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|BatchQueryBuilderFactory
+name|batch
+operator|.
+name|BatchTranslatorFactory
 import|;
 end_import
 
@@ -57,9 +59,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|DefaultBatchQueryBuilderFactory
+name|batch
+operator|.
+name|DefaultBatchTranslatorFactory
 import|;
 end_import
 
@@ -84,11 +88,11 @@ name|ServerCaseBatchQueryBuilderFactoryProvider
 implements|implements
 name|Provider
 argument_list|<
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 argument_list|>
 block|{
 specifier|public
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 name|get
 parameter_list|()
 throws|throws
@@ -96,7 +100,7 @@ name|ConfigurationException
 block|{
 return|return
 operator|new
-name|DefaultBatchQueryBuilderFactory
+name|DefaultBatchTranslatorFactory
 argument_list|()
 return|;
 block|}

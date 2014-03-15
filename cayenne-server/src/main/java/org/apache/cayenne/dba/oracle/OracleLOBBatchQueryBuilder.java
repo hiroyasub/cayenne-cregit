@@ -99,9 +99,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
 operator|.
-name|BatchQueryBuilder
+name|batch
+operator|.
+name|BatchTranslator
 import|;
 end_import
 
@@ -198,7 +200,7 @@ specifier|abstract
 class|class
 name|OracleLOBBatchQueryBuilder
 extends|extends
-name|BatchQueryBuilder
+name|BatchTranslator
 block|{
 specifier|protected
 name|String

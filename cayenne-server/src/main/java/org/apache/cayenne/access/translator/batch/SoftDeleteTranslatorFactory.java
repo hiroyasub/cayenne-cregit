@@ -13,25 +13,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|batch
 package|;
 end_package
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|trans
-operator|.
-name|BatchQueryBuilder
-import|;
-end_import
 
 begin_import
 import|import
@@ -62,15 +48,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of {@link #BatchQueryBuilderFactory}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  */
+comment|/**  * Implementation of {@link #BatchQueryBuilderFactory}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 3.2  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|SoftDeleteQueryBuilderFactory
+name|SoftDeleteTranslatorFactory
 extends|extends
-name|DefaultBatchQueryBuilderFactory
+name|DefaultBatchTranslatorFactory
 block|{
 comment|/**      * Default name of 'deleted' field      */
 specifier|public
@@ -87,7 +73,7 @@ name|String
 name|deletedFieldName
 decl_stmt|;
 specifier|public
-name|SoftDeleteQueryBuilderFactory
+name|SoftDeleteTranslatorFactory
 parameter_list|()
 block|{
 name|this
@@ -97,7 +83,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|SoftDeleteQueryBuilderFactory
+name|SoftDeleteTranslatorFactory
 parameter_list|(
 name|String
 name|deletedFieldName
@@ -113,8 +99,8 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|BatchQueryBuilder
-name|createDeleteQueryBuilder
+name|BatchTranslator
+name|deleteTranslator
 parameter_list|(
 name|DeleteBatchQuery
 name|query
@@ -125,7 +111,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|SoftDeleteBatchQueryBuilder
+name|SoftDeleteBatchTranslator
 argument_list|(
 name|query
 argument_list|,

@@ -159,9 +159,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
 operator|.
-name|DeleteBatchQueryBuilder
+name|batch
+operator|.
+name|DeleteBatchTranslator
 import|;
 end_import
 
@@ -542,11 +544,11 @@ argument_list|(
 name|qualifierSnapshot
 argument_list|)
 expr_stmt|;
-name|DeleteBatchQueryBuilder
+name|DeleteBatchTranslator
 name|batchQueryBuilder
 init|=
 operator|new
-name|DeleteBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
 name|batchQuery
 argument_list|,
@@ -817,11 +819,11 @@ argument_list|(
 name|qualifierSnapshot
 argument_list|)
 expr_stmt|;
-name|DeleteBatchQueryBuilder
+name|DeleteBatchTranslator
 name|batchQueryBuilder
 init|=
 operator|new
-name|DeleteBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
 name|batchQuery
 argument_list|,

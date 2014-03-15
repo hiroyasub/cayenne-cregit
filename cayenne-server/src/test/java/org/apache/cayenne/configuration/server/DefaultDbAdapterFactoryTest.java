@@ -113,9 +113,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|BatchQueryBuilderFactory
+name|batch
+operator|.
+name|BatchTranslatorFactory
 import|;
 end_import
 
@@ -847,7 +849,7 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 operator|.
 name|class
 argument_list|)
@@ -856,7 +858,7 @@ name|toInstance
 argument_list|(
 name|mock
 argument_list|(
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 operator|.
 name|class
 argument_list|)
@@ -1120,7 +1122,7 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 operator|.
 name|class
 argument_list|)
@@ -1129,7 +1131,7 @@ name|toInstance
 argument_list|(
 name|mock
 argument_list|(
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 operator|.
 name|class
 argument_list|)

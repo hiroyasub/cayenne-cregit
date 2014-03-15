@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|batch
 package|;
 end_package
 
@@ -155,7 +157,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|BatchQueryBuilder
+name|BatchTranslator
 block|{
 specifier|protected
 name|BatchQuery
@@ -170,7 +172,7 @@ name|String
 name|trimFunction
 decl_stmt|;
 specifier|public
-name|BatchQueryBuilder
+name|BatchTranslator
 parameter_list|(
 name|BatchQuery
 name|query

@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|batch
 package|;
 end_package
 
@@ -26,6 +28,24 @@ operator|.
 name|Mockito
 operator|.
 name|mock
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|InsertBatchTranslator
 import|;
 end_import
 
@@ -205,7 +225,7 @@ name|LOCKING_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|InsertBatchQueryBuilderTest
+name|InsertBatchTranslatorTest
 extends|extends
 name|ServerCase
 block|{
@@ -259,11 +279,11 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 name|builder
 init|=
 operator|new
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 argument_list|(
 name|mock
 argument_list|(
@@ -343,11 +363,11 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 name|builder
 init|=
 operator|new
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 argument_list|(
 name|insertQuery
 argument_list|,
@@ -443,11 +463,11 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 name|builder
 init|=
 operator|new
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 argument_list|(
 name|insertQuery
 argument_list|,

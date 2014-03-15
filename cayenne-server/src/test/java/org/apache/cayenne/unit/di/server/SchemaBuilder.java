@@ -209,7 +209,9 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|DefaultBatchQueryBuilderFactory
+name|reader
+operator|.
+name|DefaultRowReaderFactory
 import|;
 end_import
 
@@ -223,11 +225,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|reader
+name|batch
 operator|.
-name|DefaultRowReaderFactory
+name|DefaultBatchTranslatorFactory
 import|;
 end_import
 
@@ -939,7 +941,7 @@ operator|.
 name|setBatchQueryBuilderFactory
 argument_list|(
 operator|new
-name|DefaultBatchQueryBuilderFactory
+name|DefaultBatchTranslatorFactory
 argument_list|()
 argument_list|)
 expr_stmt|;

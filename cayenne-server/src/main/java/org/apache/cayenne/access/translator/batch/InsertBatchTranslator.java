@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|batch
 package|;
 end_package
 
@@ -144,12 +146,12 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 extends|extends
-name|BatchQueryBuilder
+name|BatchTranslator
 block|{
 specifier|public
-name|InsertBatchQueryBuilder
+name|InsertBatchTranslator
 parameter_list|(
 name|InsertBatchQuery
 name|query

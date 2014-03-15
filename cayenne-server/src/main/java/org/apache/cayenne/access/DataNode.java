@@ -173,22 +173,6 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|BatchQueryBuilderFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|jdbc
-operator|.
 name|ColumnDescriptor
 import|;
 end_import
@@ -242,6 +226,24 @@ operator|.
 name|reader
 operator|.
 name|RowReaderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchTranslatorFactory
 import|;
 end_import
 
@@ -432,7 +434,7 @@ name|RowReaderFactory
 name|rowReaderFactory
 decl_stmt|;
 specifier|private
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 name|batchQueryBuilderFactory
 decl_stmt|;
 name|TransactionDataSource
@@ -1642,7 +1644,7 @@ expr_stmt|;
 block|}
 comment|/**      * @since 3.2      */
 specifier|public
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 name|getBatchQueryBuilderFactory
 parameter_list|()
 block|{
@@ -1655,7 +1657,7 @@ specifier|public
 name|void
 name|setBatchQueryBuilderFactory
 parameter_list|(
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 name|batchQueryBuilderFactory
 parameter_list|)
 block|{

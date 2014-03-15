@@ -13,25 +13,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
+operator|.
+name|batch
 package|;
 end_package
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|trans
-operator|.
-name|BatchQueryBuilder
-import|;
-end_import
 
 begin_import
 import|import
@@ -90,17 +76,17 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory which creates BatchQueryBuilders for different types of queries,  * which, in their turn, create SQL strings for batch queries.  *   * @since 3.0  */
+comment|/**  * Factory which creates BatchQueryBuilders for different types of queries,  * which, in their turn, create SQL strings for batch queries.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|BatchQueryBuilderFactory
+name|BatchTranslatorFactory
 block|{
-comment|/**      * Creates query builder for INSERT queries      *       * @since 3.2      */
-name|BatchQueryBuilder
-name|createInsertQueryBuilder
+comment|/**      * Creates query builder for INSERT queries      */
+name|BatchTranslator
+name|insertTranslator
 parameter_list|(
 name|InsertBatchQuery
 name|query
@@ -109,9 +95,9 @@ name|DbAdapter
 name|adapter
 parameter_list|)
 function_decl|;
-comment|/**      * Creates query builder for UPDATE queries      *       * @since 3.2      */
-name|BatchQueryBuilder
-name|createUpdateQueryBuilder
+comment|/**      * Creates query builder for UPDATE queries      */
+name|BatchTranslator
+name|updateTranslator
 parameter_list|(
 name|UpdateBatchQuery
 name|query
@@ -120,9 +106,9 @@ name|DbAdapter
 name|adapter
 parameter_list|)
 function_decl|;
-comment|/**      * Creates query builder for DELETE queries      *       * @since 3.2      */
-name|BatchQueryBuilder
-name|createDeleteQueryBuilder
+comment|/**      * Creates query builder for DELETE queries      */
+name|BatchTranslator
+name|deleteTranslator
 parameter_list|(
 name|DeleteBatchQuery
 name|query

@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|trans
+name|translator
+operator|.
+name|batch
 package|;
 end_package
 
@@ -66,6 +68,24 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|DeleteBatchTranslator
 import|;
 end_import
 
@@ -151,6 +171,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 import|;
 end_import
@@ -165,7 +199,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|UpdateBatchQuery
+name|DeleteBatchQuery
 import|;
 end_import
 
@@ -245,7 +279,7 @@ name|LOCKING_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|UpdateBatchQueryBuilderTest
+name|DeleteBatchTranslatorTest
 extends|extends
 name|ServerCase
 block|{
@@ -299,15 +333,15 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 name|builder
 init|=
 operator|new
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
 name|mock
 argument_list|(
-name|UpdateBatchQuery
+name|DeleteBatchQuery
 operator|.
 name|class
 argument_list|)
@@ -354,6 +388,9 @@ name|getDbEntity
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|idAttributes
 init|=
 name|Collections
@@ -368,32 +405,15 @@ literal|"LOCKING_TEST_ID"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|List
-name|updatedAttributes
-init|=
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
-name|entity
-operator|.
-name|getAttribute
-argument_list|(
-literal|"DESCRIPTION"
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|UpdateBatchQuery
-name|updateQuery
+name|DeleteBatchQuery
+name|deleteQuery
 init|=
 operator|new
-name|UpdateBatchQuery
+name|DeleteBatchQuery
 argument_list|(
 name|entity
 argument_list|,
 name|idAttributes
-argument_list|,
-name|updatedAttributes
 argument_list|,
 name|Collections
 operator|.
@@ -425,13 +445,13 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 name|builder
 init|=
 operator|new
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
-name|updateQuery
+name|deleteQuery
 argument_list|,
 name|adapter
 argument_list|)
@@ -451,14 +471,14 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"UPDATE "
+literal|"DELETE FROM "
 operator|+
 name|entity
 operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" SET DESCRIPTION = ? WHERE LOCKING_TEST_ID = ?"
+literal|" WHERE LOCKING_TEST_ID = ?"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -493,6 +513,9 @@ name|getDbEntity
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|idAttributes
 init|=
 name|Arrays
@@ -514,22 +537,10 @@ literal|"NAME"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|List
-name|updatedAttributes
-init|=
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
-name|entity
-operator|.
-name|getAttribute
-argument_list|(
-literal|"DESCRIPTION"
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nullAttributes
 init|=
 name|Collections
@@ -539,17 +550,15 @@ argument_list|(
 literal|"NAME"
 argument_list|)
 decl_stmt|;
-name|UpdateBatchQuery
-name|updateQuery
+name|DeleteBatchQuery
+name|deleteQuery
 init|=
 operator|new
-name|UpdateBatchQuery
+name|DeleteBatchQuery
 argument_list|(
 name|entity
 argument_list|,
 name|idAttributes
-argument_list|,
-name|updatedAttributes
 argument_list|,
 name|nullAttributes
 argument_list|,
@@ -575,13 +584,13 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 name|builder
 init|=
 operator|new
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
-name|updateQuery
+name|deleteQuery
 argument_list|,
 name|adapter
 argument_list|)
@@ -601,14 +610,14 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"UPDATE "
+literal|"DELETE FROM "
 operator|+
 name|entity
 operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" SET DESCRIPTION = ? WHERE LOCKING_TEST_ID = ? AND NAME IS NULL"
+literal|" WHERE LOCKING_TEST_ID = ? AND NAME IS NULL"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -655,6 +664,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|idAttributes
 init|=
 name|Collections
@@ -669,32 +681,15 @@ literal|"LOCKING_TEST_ID"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|List
-name|updatedAttributes
-init|=
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
-name|entity
-operator|.
-name|getAttribute
-argument_list|(
-literal|"DESCRIPTION"
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|UpdateBatchQuery
-name|updateQuery
+name|DeleteBatchQuery
+name|deleteQuery
 init|=
 operator|new
-name|UpdateBatchQuery
+name|DeleteBatchQuery
 argument_list|(
 name|entity
 argument_list|,
 name|idAttributes
-argument_list|,
-name|updatedAttributes
 argument_list|,
 name|Collections
 operator|.
@@ -717,13 +712,13 @@ name|this
 operator|.
 name|adapter
 decl_stmt|;
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 name|builder
 init|=
 operator|new
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
-name|updateQuery
+name|deleteQuery
 argument_list|,
 name|adapter
 argument_list|)
@@ -759,7 +754,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"UPDATE "
+literal|"DELETE FROM "
 operator|+
 name|charStart
 operator|+
@@ -770,15 +765,7 @@ argument_list|()
 operator|+
 name|charEnd
 operator|+
-literal|" SET "
-operator|+
-name|charStart
-operator|+
-literal|"DESCRIPTION"
-operator|+
-name|charEnd
-operator|+
-literal|" = ? WHERE "
+literal|" WHERE "
 operator|+
 name|charStart
 operator|+
@@ -847,6 +834,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 name|List
+argument_list|<
+name|DbAttribute
+argument_list|>
 name|idAttributes
 init|=
 name|Arrays
@@ -868,22 +858,10 @@ literal|"NAME"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|List
-name|updatedAttributes
-init|=
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
-name|entity
-operator|.
-name|getAttribute
-argument_list|(
-literal|"DESCRIPTION"
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|nullAttributes
 init|=
 name|Collections
@@ -893,17 +871,15 @@ argument_list|(
 literal|"NAME"
 argument_list|)
 decl_stmt|;
-name|UpdateBatchQuery
-name|updateQuery
+name|DeleteBatchQuery
+name|deleteQuery
 init|=
 operator|new
-name|UpdateBatchQuery
+name|DeleteBatchQuery
 argument_list|(
 name|entity
 argument_list|,
 name|idAttributes
-argument_list|,
-name|updatedAttributes
 argument_list|,
 name|nullAttributes
 argument_list|,
@@ -920,13 +896,13 @@ name|this
 operator|.
 name|adapter
 decl_stmt|;
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 name|builder
 init|=
 operator|new
-name|UpdateBatchQueryBuilder
+name|DeleteBatchTranslator
 argument_list|(
-name|updateQuery
+name|deleteQuery
 argument_list|,
 name|adapter
 argument_list|)
@@ -939,11 +915,6 @@ operator|.
 name|createSqlString
 argument_list|()
 decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|generatedSql
-argument_list|)
-expr_stmt|;
 name|String
 name|charStart
 init|=
@@ -960,9 +931,14 @@ operator|.
 name|getIdentifiersEndQuote
 argument_list|()
 decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|generatedSql
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"UPDATE "
+literal|"DELETE FROM "
 operator|+
 name|charStart
 operator|+
@@ -973,15 +949,7 @@ argument_list|()
 operator|+
 name|charEnd
 operator|+
-literal|" SET "
-operator|+
-name|charStart
-operator|+
-literal|"DESCRIPTION"
-operator|+
-name|charEnd
-operator|+
-literal|" = ? WHERE "
+literal|" WHERE "
 operator|+
 name|charStart
 operator|+
