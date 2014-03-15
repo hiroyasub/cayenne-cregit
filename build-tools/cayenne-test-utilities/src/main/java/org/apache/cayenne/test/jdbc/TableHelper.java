@@ -47,6 +47,16 @@ name|Timestamp
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
 comment|/**  * JDBC utility class for setting up and analyzing the DB data sets for a single table.  * TableHelper intentionally bypasses Cayenne stack.  */
 end_comment
@@ -321,6 +331,28 @@ return|return
 name|dbHelper
 operator|.
 name|select
+argument_list|(
+name|tableName
+argument_list|,
+name|columns
+argument_list|)
+return|;
+block|}
+specifier|public
+name|List
+argument_list|<
+name|Object
+index|[]
+argument_list|>
+name|selectAll
+parameter_list|()
+throws|throws
+name|SQLException
+block|{
+return|return
+name|dbHelper
+operator|.
+name|selectAll
 argument_list|(
 name|tableName
 argument_list|,

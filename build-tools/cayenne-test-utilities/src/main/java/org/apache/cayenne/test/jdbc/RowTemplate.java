@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A JDBC template for reading a single row from the database.  *   */
+comment|/**  * A JDBC template for reading a single row from the database.  */
 end_comment
 
 begin_class
