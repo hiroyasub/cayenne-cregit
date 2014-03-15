@@ -229,6 +229,9 @@ expr_stmt|;
 block|}
 specifier|abstract
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getValuesForLOBUpdateParameters
 parameter_list|(
 name|BatchQueryRow

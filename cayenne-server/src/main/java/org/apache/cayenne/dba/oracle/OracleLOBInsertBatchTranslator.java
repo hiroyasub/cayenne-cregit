@@ -143,6 +143,9 @@ block|}
 annotation|@
 name|Override
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getValuesForLOBUpdateParameters
 parameter_list|(
 name|BatchQueryRow
@@ -169,10 +172,16 @@ name|size
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|values
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|len
 argument_list|)
