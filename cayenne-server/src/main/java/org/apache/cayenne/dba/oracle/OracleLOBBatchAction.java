@@ -365,7 +365,7 @@ name|SQLException
 throws|,
 name|Exception
 block|{
-name|OracleLOBBatchQueryBuilder
+name|OracleLOBBatchTranslator
 name|queryBuilder
 decl_stmt|;
 if|if
@@ -378,7 +378,7 @@ block|{
 name|queryBuilder
 operator|=
 operator|new
-name|OracleLOBInsertBatchQueryBuilder
+name|OracleLOBInsertBatchTranslator
 argument_list|(
 operator|(
 name|InsertBatchQuery
@@ -400,7 +400,7 @@ block|{
 name|queryBuilder
 operator|=
 operator|new
-name|OracleLOBUpdateBatchQueryBuilder
+name|OracleLOBUpdateBatchTranslator
 argument_list|(
 operator|(
 name|UpdateBatchQuery
@@ -644,7 +644,7 @@ parameter_list|(
 name|Connection
 name|con
 parameter_list|,
-name|OracleLOBBatchQueryBuilder
+name|OracleLOBBatchTranslator
 name|queryBuilder
 parameter_list|,
 name|OracleLOBBatchQueryWrapper
