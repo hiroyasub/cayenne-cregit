@@ -159,6 +159,8 @@ operator|new
 name|OperationObserver
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextBatchCount
@@ -181,6 +183,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextCount
@@ -202,6 +206,8 @@ name|resultCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -226,6 +232,8 @@ name|dataRows
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextRows
@@ -275,6 +283,8 @@ name|idToUpdate
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGlobalException
@@ -291,6 +301,8 @@ name|ex
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextQueryException
@@ -312,6 +324,8 @@ name|ex
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIteratedResult
