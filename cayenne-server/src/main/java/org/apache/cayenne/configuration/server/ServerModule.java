@@ -1937,6 +1937,22 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|DataNodeFactory
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|DefaultDataNodeFactory
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 comment|// will return DataDomain for request for a DataChannel
 name|binder
 operator|.
