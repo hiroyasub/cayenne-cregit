@@ -176,6 +176,8 @@ name|getMapProvider
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MapBuilder
 argument_list|<
@@ -217,6 +219,8 @@ return|return
 name|this
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MapBuilder
 argument_list|<
@@ -280,6 +284,8 @@ return|return
 name|this
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MapBuilder
 argument_list|<
@@ -440,6 +446,8 @@ return|return
 name|provider
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|in

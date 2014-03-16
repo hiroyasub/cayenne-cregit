@@ -65,6 +65,8 @@ operator|new
 name|NoScope
 argument_list|()
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T

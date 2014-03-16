@@ -139,6 +139,8 @@ operator|=
 name|bindingKey
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|BindingBuilder
 argument_list|<
@@ -204,6 +206,8 @@ return|return
 name|this
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|BindingBuilder
 argument_list|<
@@ -262,7 +266,8 @@ return|return
 name|this
 return|;
 block|}
-empty_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|BindingBuilder
 argument_list|<
@@ -383,6 +388,8 @@ return|return
 name|this
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|BindingBuilder
 argument_list|<
@@ -496,6 +503,8 @@ return|return
 name|this
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|in
@@ -514,6 +523,8 @@ name|scope
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|withoutScope
@@ -528,6 +539,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|inSingletonScope
