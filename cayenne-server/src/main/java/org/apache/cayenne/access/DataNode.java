@@ -869,6 +869,8 @@ name|this
 return|;
 block|}
 comment|/**      * Runs queries using Connection obtained from internal DataSource.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performQueries
@@ -1100,6 +1102,8 @@ block|}
 block|}
 block|}
 comment|/**      * Returns EntityResolver that handles DataMaps of this node.      */
+annotation|@
+name|Override
 specifier|public
 name|EntityResolver
 name|getEntityResolver
