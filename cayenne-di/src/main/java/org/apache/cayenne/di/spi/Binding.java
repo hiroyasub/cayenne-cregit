@@ -142,6 +142,8 @@ operator|.
 name|INSTANCE
 expr_stmt|;
 block|}
+comment|// TODO: what happens to the old scoped value? Seems like this leaks
+comment|// scope event listeners and may cause unexpected events...
 name|this
 operator|.
 name|scoped
@@ -231,6 +233,8 @@ name|decorated
 operator|=
 name|provider
 expr_stmt|;
+comment|// TODO: what happens to the old scoped value? Seems like this leaks
+comment|// scope event listeners and may cause unexpected events...
 name|this
 operator|.
 name|scoped
