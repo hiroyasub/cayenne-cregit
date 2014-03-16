@@ -122,6 +122,8 @@ operator|=
 name|objectFactory
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbAdapter
 name|createAdapter
