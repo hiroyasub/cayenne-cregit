@@ -86,6 +86,40 @@ name|String
 name|bindingName
 parameter_list|)
 function_decl|;
+comment|/**      * @since 3.2      */
+parameter_list|<
+name|T
+parameter_list|>
+name|DecoratorBuilder
+argument_list|<
+name|T
+argument_list|>
+name|decorate
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|interfaceType
+parameter_list|)
+function_decl|;
+comment|/**      * @since 3.2      */
+parameter_list|<
+name|T
+parameter_list|>
+name|DecoratorBuilder
+argument_list|<
+name|T
+argument_list|>
+name|decorate
+parameter_list|(
+name|Key
+argument_list|<
+name|T
+argument_list|>
+name|key
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 

@@ -432,7 +432,7 @@ name|MapProvider
 operator|)
 name|binding
 operator|.
-name|getUnscoped
+name|getOriginal
 argument_list|()
 expr_stmt|;
 block|}
