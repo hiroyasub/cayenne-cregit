@@ -938,7 +938,7 @@ argument_list|)
 expr_stmt|;
 name|node
 operator|.
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 argument_list|(
 operator|new
 name|DefaultBatchTranslatorFactory

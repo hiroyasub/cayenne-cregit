@@ -334,7 +334,7 @@ argument_list|)
 expr_stmt|;
 name|node
 operator|.
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 argument_list|(
 name|batchQueryBuilderFactory
 argument_list|)

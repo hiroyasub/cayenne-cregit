@@ -1696,11 +1696,11 @@ argument_list|)
 expr_stmt|;
 name|dataNode
 operator|.
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 argument_list|(
 name|node
 operator|.
-name|getBatchQueryBuilderFactory
+name|getBatchTranslatorFactory
 argument_list|()
 argument_list|)
 expr_stmt|;

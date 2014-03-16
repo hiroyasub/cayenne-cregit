@@ -603,7 +603,7 @@ name|factory
 init|=
 name|dataNode
 operator|.
-name|getBatchQueryBuilderFactory
+name|getBatchTranslatorFactory
 argument_list|()
 decl_stmt|;
 if|if

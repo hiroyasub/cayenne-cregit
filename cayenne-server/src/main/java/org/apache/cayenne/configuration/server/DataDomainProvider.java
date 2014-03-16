@@ -994,7 +994,7 @@ argument_list|)
 expr_stmt|;
 name|dataNode
 operator|.
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 argument_list|(
 name|batchQueryBuilderFactory
 argument_list|)

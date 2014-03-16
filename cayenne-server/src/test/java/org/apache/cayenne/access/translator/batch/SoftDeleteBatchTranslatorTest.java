@@ -909,14 +909,14 @@ name|oldFactory
 init|=
 name|dataNode
 operator|.
-name|getBatchQueryBuilderFactory
+name|getBatchTranslatorFactory
 argument_list|()
 decl_stmt|;
 try|try
 block|{
 name|dataNode
 operator|.
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 argument_list|(
 operator|new
 name|SoftDeleteTranslatorFactory
@@ -1170,7 +1170,7 @@ argument_list|)
 expr_stmt|;
 name|dataNode
 operator|.
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 argument_list|(
 name|oldFactory
 argument_list|)

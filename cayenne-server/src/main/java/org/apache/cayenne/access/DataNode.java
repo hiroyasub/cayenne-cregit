@@ -435,7 +435,7 @@ name|rowReaderFactory
 decl_stmt|;
 specifier|private
 name|BatchTranslatorFactory
-name|batchQueryBuilderFactory
+name|batchTranslatorFactory
 decl_stmt|;
 name|TransactionDataSource
 name|readThroughDataSource
@@ -1645,27 +1645,27 @@ block|}
 comment|/**      * @since 3.2      */
 specifier|public
 name|BatchTranslatorFactory
-name|getBatchQueryBuilderFactory
+name|getBatchTranslatorFactory
 parameter_list|()
 block|{
 return|return
-name|batchQueryBuilderFactory
+name|batchTranslatorFactory
 return|;
 block|}
 comment|/**      * @since 3.2      */
 specifier|public
 name|void
-name|setBatchQueryBuilderFactory
+name|setBatchTranslatorFactory
 parameter_list|(
 name|BatchTranslatorFactory
-name|batchQueryBuilderFactory
+name|batchTranslatorFactory
 parameter_list|)
 block|{
 name|this
 operator|.
-name|batchQueryBuilderFactory
+name|batchTranslatorFactory
 operator|=
-name|batchQueryBuilderFactory
+name|batchTranslatorFactory
 expr_stmt|;
 block|}
 block|}
