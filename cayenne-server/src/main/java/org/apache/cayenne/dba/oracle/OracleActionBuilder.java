@@ -167,44 +167,9 @@ name|BatchQuery
 name|query
 parameter_list|)
 block|{
-comment|// special handling for LOB updates
-if|if
-condition|(
-name|OracleAdapter
-operator|.
-name|isSupportsOracleLOB
-argument_list|()
-operator|&&
-name|OracleAdapter
-operator|.
-name|updatesLOBColumns
-argument_list|(
-name|query
-argument_list|)
-condition|)
-block|{
-return|return
-operator|new
-name|OracleLOBBatchAction
-argument_list|(
-name|query
-argument_list|,
-name|dataNode
-operator|.
-name|getAdapter
-argument_list|()
-argument_list|,
-name|dataNode
-operator|.
-name|getJdbcEventLogger
-argument_list|()
-argument_list|)
-return|;
-block|}
-else|else
-block|{
 comment|// optimistic locking is not supported in batches due to JDBC driver
 comment|// limitations
+comment|// TODO: is this still true with ojdbc6.jar?
 name|boolean
 name|useOptimisticLock
 init|=
@@ -238,7 +203,6 @@ argument_list|,
 name|runningAsBatch
 argument_list|)
 return|;
-block|}
 block|}
 annotation|@
 name|Override

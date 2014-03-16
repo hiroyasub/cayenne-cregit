@@ -206,7 +206,7 @@ end_comment
 begin_class
 specifier|abstract
 class|class
-name|OracleLOBBatchTranslator
+name|Oracle8LOBBatchTranslator
 extends|extends
 name|BatchTranslator
 block|{
@@ -218,7 +218,7 @@ specifier|protected
 name|String
 name|newBlobFunction
 decl_stmt|;
-name|OracleLOBBatchTranslator
+name|Oracle8LOBBatchTranslator
 parameter_list|(
 name|BatchQuery
 name|query

@@ -119,11 +119,11 @@ end_import
 
 begin_class
 class|class
-name|OracleLOBUpdateBatchTranslator
+name|Oracle8LOBUpdateBatchTranslator
 extends|extends
-name|OracleLOBBatchTranslator
+name|Oracle8LOBBatchTranslator
 block|{
-name|OracleLOBUpdateBatchTranslator
+name|Oracle8LOBUpdateBatchTranslator
 parameter_list|(
 name|UpdateBatchQuery
 name|query

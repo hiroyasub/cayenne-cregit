@@ -626,6 +626,8 @@ index|[]
 name|bytes
 parameter_list|)
 block|{
+comment|// TODO: should we use Connection.createBlob() instead? (Like Oracle
+comment|// ByteArrayType does)
 return|return
 name|bytes
 operator|!=

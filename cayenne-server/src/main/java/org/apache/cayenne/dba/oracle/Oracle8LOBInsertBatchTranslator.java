@@ -119,11 +119,11 @@ end_import
 
 begin_class
 class|class
-name|OracleLOBInsertBatchTranslator
+name|Oracle8LOBInsertBatchTranslator
 extends|extends
-name|OracleLOBBatchTranslator
+name|Oracle8LOBBatchTranslator
 block|{
-name|OracleLOBInsertBatchTranslator
+name|Oracle8LOBInsertBatchTranslator
 parameter_list|(
 name|InsertBatchQuery
 name|query

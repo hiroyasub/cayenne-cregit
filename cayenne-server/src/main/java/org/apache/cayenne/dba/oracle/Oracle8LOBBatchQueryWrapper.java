@@ -147,7 +147,7 @@ end_comment
 
 begin_class
 class|class
-name|OracleLOBBatchQueryWrapper
+name|Oracle8LOBBatchQueryWrapper
 block|{
 specifier|protected
 name|BatchQuery
@@ -176,7 +176,7 @@ name|Object
 index|[]
 name|updatedLOBAttributes
 decl_stmt|;
-name|OracleLOBBatchQueryWrapper
+name|Oracle8LOBBatchQueryWrapper
 parameter_list|(
 name|BatchQuery
 name|query
