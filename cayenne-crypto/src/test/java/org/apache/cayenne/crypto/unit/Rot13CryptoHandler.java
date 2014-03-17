@@ -46,7 +46,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|Rot13CipherService
+name|Rot13CryptoHandler
 implements|implements
 name|CryptoHandler
 block|{
@@ -277,9 +277,6 @@ argument_list|(
 name|plaintext
 operator|.
 name|toString
-argument_list|()
-operator|.
-name|getBytes
 argument_list|()
 argument_list|)
 return|;
