@@ -447,7 +447,7 @@ name|h2
 operator|.
 name|setDataSourceUrl
 argument_list|(
-literal|"jdbc:h2:mem:aname;MVCC=TRUE"
+literal|"jdbc:h2:mem:aname;MVCC=TRUE;DB_CLOSE_DELAY=-1"
 argument_list|)
 expr_stmt|;
 name|h2
