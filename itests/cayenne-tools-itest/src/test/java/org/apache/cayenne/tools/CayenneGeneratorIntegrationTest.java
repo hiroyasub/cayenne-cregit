@@ -236,11 +236,11 @@ argument_list|)
 expr_stmt|;
 name|assertContents
 argument_list|(
-literal|"org/apache/cayenne/testdo/testmap/_Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/auto/_Artist.java"
 argument_list|,
 literal|"_Artist"
 argument_list|,
-literal|"org.apache.cayenne.testdo.testmap"
+literal|"org.apache.cayenne.testdo.testmap.auto"
 argument_list|,
 literal|"CayenneDataObject"
 argument_list|)
