@@ -418,6 +418,8 @@ name|exception
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|clearWarnings
@@ -449,6 +451,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
@@ -478,6 +482,8 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|commit
@@ -509,6 +515,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Statement
 name|createStatement
@@ -543,6 +551,8 @@ argument_list|()
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Statement
 name|createStatement
@@ -591,6 +601,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|getAutoCommit
@@ -623,6 +635,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCatalog
@@ -655,6 +669,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DatabaseMetaData
 name|getMetaData
@@ -687,6 +703,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getTransactionIsolation
@@ -719,6 +737,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|SQLWarning
 name|getWarnings
@@ -751,6 +771,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isClosed
@@ -795,6 +817,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isReadOnly
@@ -827,6 +851,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|nativeSQL
@@ -864,6 +890,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|CallableStatement
 name|prepareCall
@@ -905,6 +933,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|CallableStatement
 name|prepareCall
@@ -960,6 +990,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|prepareStatement
@@ -1001,6 +1033,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|prepareStatement
@@ -1056,6 +1090,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|rollback
@@ -1087,6 +1123,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setAutoCommit
@@ -1143,6 +1181,8 @@ throw|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setCatalog
@@ -1179,6 +1219,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setReadOnly
@@ -1215,6 +1257,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setTransactionIsolation
@@ -1251,6 +1295,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -1291,6 +1337,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setTypeMap
@@ -1335,6 +1383,8 @@ name|sqlEx
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setHoldability
@@ -1357,6 +1407,8 @@ literal|"Method setHoldability() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getHoldability
@@ -1376,6 +1428,8 @@ literal|"Method getHoldability() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Savepoint
 name|setSavepoint
@@ -1395,6 +1449,8 @@ literal|"Method setSavepoint() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Savepoint
 name|setSavepoint
@@ -1417,6 +1473,8 @@ literal|"Method setSavepoint() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|rollback
@@ -1439,6 +1497,8 @@ literal|"Method rollback() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|releaseSavepoint
@@ -1461,6 +1521,8 @@ literal|"Method releaseSavepoint() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Statement
 name|createStatement
@@ -1489,6 +1551,8 @@ literal|"Method createStatement() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|prepareStatement
@@ -1520,6 +1584,8 @@ literal|"Method prepareStatement() not yet implemented."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|CallableStatement
 name|prepareCall
@@ -1582,6 +1648,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|prepareStatement
@@ -1630,6 +1698,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|prepareStatement
@@ -1679,6 +1749,8 @@ argument_list|)
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PreparedStatement
 name|prepareStatement
@@ -1729,29 +1801,60 @@ return|;
 block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|Array
 name|createArrayOf
 parameter_list|(
 name|String
-name|arg0
+name|typeName
 parameter_list|,
 name|Object
 index|[]
-name|arg1
+name|elements
 parameter_list|)
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|createArrayOf
+argument_list|(
+name|typeName
+argument_list|,
+name|elements
+argument_list|)
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|createArrayOf
+argument_list|(
+name|typeName
+argument_list|,
+name|elements
+argument_list|)
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|Blob
 name|createBlob
@@ -1759,14 +1862,36 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|createBlob
 argument_list|()
-throw|;
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|createBlob
+argument_list|()
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|Clob
 name|createClob
@@ -1774,36 +1899,88 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|createClob
 argument_list|()
-throw|;
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|createClob
+argument_list|()
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|Struct
 name|createStruct
 parameter_list|(
 name|String
-name|arg0
+name|typeName
 parameter_list|,
 name|Object
 index|[]
-name|arg1
+name|attributes
 parameter_list|)
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|createStruct
+argument_list|(
+name|typeName
+argument_list|,
+name|attributes
+argument_list|)
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|createStruct
+argument_list|(
+name|typeName
+argument_list|,
+name|attributes
+argument_list|)
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|Properties
 name|getClientInfo
@@ -1811,50 +1988,124 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|getClientInfo
 argument_list|()
-throw|;
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|getClientInfo
+argument_list|()
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getClientInfo
 parameter_list|(
 name|String
-name|arg0
+name|name
 parameter_list|)
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|getClientInfo
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|getClientInfo
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isValid
 parameter_list|(
 name|int
-name|arg0
+name|timeout
 parameter_list|)
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|isValid
+argument_list|(
+name|timeout
+argument_list|)
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|isValid
+argument_list|(
+name|timeout
+argument_list|)
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isWrapperFor
@@ -1868,6 +2119,7 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+comment|// TODO: we can implement that now.
 throw|throw
 operator|new
 name|UnsupportedOperationException
@@ -1875,7 +2127,8 @@ argument_list|()
 throw|;
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -1892,6 +2145,7 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+comment|// TODO: we can implement that now.
 throw|throw
 operator|new
 name|UnsupportedOperationException
@@ -1899,7 +2153,8 @@ argument_list|()
 throw|;
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|NClob
 name|createNClob
@@ -1907,14 +2162,36 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|createNClob
 argument_list|()
-throw|;
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|createNClob
+argument_list|()
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|SQLXML
 name|createSQLXML
@@ -1922,14 +2199,37 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
+try|try
+block|{
+return|return
+name|connection
+operator|.
+name|createSQLXML
 argument_list|()
-throw|;
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|sqlEx
+parameter_list|)
+block|{
+comment|// reconnect has code to prevent loops
+name|reconnect
+argument_list|(
+name|sqlEx
+argument_list|)
+expr_stmt|;
+return|return
+name|createSQLXML
+argument_list|()
+return|;
+block|}
 block|}
 comment|/**      * @since 3.0      */
 comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setClientInfo
@@ -1940,6 +2240,7 @@ parameter_list|)
 throws|throws
 name|SQLClientInfoException
 block|{
+comment|// TODO: we can implement that now.
 throw|throw
 operator|new
 name|UnsupportedOperationException
@@ -1948,6 +2249,8 @@ throw|;
 block|}
 comment|/**      * @since 3.0      */
 comment|// JDBC 4 compatibility under Java 1.5
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setClientInfo
@@ -1961,6 +2264,7 @@ parameter_list|)
 throws|throws
 name|SQLClientInfoException
 block|{
+comment|// TODO: we can implement that now.
 throw|throw
 operator|new
 name|UnsupportedOperationException
