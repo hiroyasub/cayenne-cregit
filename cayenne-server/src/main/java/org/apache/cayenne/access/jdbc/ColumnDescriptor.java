@@ -145,6 +145,10 @@ class|class
 name|ColumnDescriptor
 block|{
 specifier|protected
+name|DbAttribute
+name|attribute
+decl_stmt|;
+specifier|protected
 name|String
 name|tableName
 decl_stmt|;
@@ -244,6 +248,12 @@ operator|.
 name|getType
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|attribute
+operator|=
+name|attribute
 expr_stmt|;
 name|this
 operator|.
@@ -488,6 +498,16 @@ block|}
 block|}
 return|return
 name|name
+return|;
+block|}
+comment|/**      * Returns a DbAttribute for this column. Since columns descriptors can be      * initialized in a context where a DbAttribite is unknown, this method may      * return null.      *       * @since 3.2      */
+specifier|public
+name|DbAttribute
+name|getAttribute
+parameter_list|()
+block|{
+return|return
+name|attribute
 return|;
 block|}
 comment|/**      * Returns true if another object is a ColumnDescriptor with the same name,      * name prefix, table and procedure names. Other fields are ignored in the      * equality test.      *       * @since 1.2      */

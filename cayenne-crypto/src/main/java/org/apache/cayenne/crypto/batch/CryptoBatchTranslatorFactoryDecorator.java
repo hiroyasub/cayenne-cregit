@@ -192,7 +192,7 @@ name|BatchTranslatorFactory
 block|{
 specifier|private
 name|CryptoHandler
-name|cipherService
+name|cryptoHandler
 decl_stmt|;
 specifier|private
 name|ColumnMapper
@@ -213,7 +213,7 @@ parameter_list|,
 annotation|@
 name|Inject
 name|CryptoHandler
-name|cipherService
+name|cryptoHandler
 parameter_list|,
 annotation|@
 name|Inject
@@ -229,9 +229,9 @@ name|columnMapper
 expr_stmt|;
 name|this
 operator|.
-name|cipherService
+name|cryptoHandler
 operator|=
-name|cipherService
+name|cryptoHandler
 expr_stmt|;
 name|this
 operator|.
@@ -356,7 +356,7 @@ block|{
 name|Object
 name|encrypted
 init|=
-name|cipherService
+name|cryptoHandler
 operator|.
 name|encrypt
 argument_list|(
