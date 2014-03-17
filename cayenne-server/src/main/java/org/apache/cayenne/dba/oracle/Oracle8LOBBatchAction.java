@@ -501,6 +501,10 @@ operator|)
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|OracleAdapter
+operator|.
+name|TRIM_FUNCTION
 argument_list|)
 expr_stmt|;
 block|}
@@ -522,6 +526,10 @@ operator|)
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|OracleAdapter
+operator|.
+name|TRIM_FUNCTION
 argument_list|)
 expr_stmt|;
 block|}
@@ -537,15 +545,6 @@ name|query
 argument_list|)
 throw|;
 block|}
-name|translator
-operator|.
-name|setTrimFunction
-argument_list|(
-name|OracleAdapter
-operator|.
-name|TRIM_FUNCTION
-argument_list|)
-expr_stmt|;
 name|translator
 operator|.
 name|setNewBlobFunction

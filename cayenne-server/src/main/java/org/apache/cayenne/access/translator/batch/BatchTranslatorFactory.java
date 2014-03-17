@@ -65,6 +65,9 @@ name|query
 parameter_list|,
 name|DbAdapter
 name|adapter
+parameter_list|,
+name|String
+name|trimFunction
 parameter_list|)
 function_decl|;
 block|}

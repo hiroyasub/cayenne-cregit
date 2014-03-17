@@ -553,6 +553,8 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|MockConnection
@@ -828,6 +830,8 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|MockConnection

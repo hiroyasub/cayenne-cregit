@@ -111,7 +111,7 @@ name|translator
 operator|.
 name|batch
 operator|.
-name|BatchTranslator
+name|DefaultBatchTranslator
 import|;
 end_import
 
@@ -208,7 +208,7 @@ specifier|abstract
 class|class
 name|Oracle8LOBBatchTranslator
 extends|extends
-name|BatchTranslator
+name|DefaultBatchTranslator
 block|{
 specifier|protected
 name|String
@@ -225,6 +225,9 @@ name|query
 parameter_list|,
 name|DbAdapter
 name|adapter
+parameter_list|,
+name|String
+name|trimFunction
 parameter_list|)
 block|{
 name|super
@@ -232,6 +235,8 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|trimFunction
 argument_list|)
 expr_stmt|;
 block|}

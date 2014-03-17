@@ -419,7 +419,7 @@ name|objectFactory
 decl_stmt|;
 specifier|private
 name|DeleteBatchTranslator
-name|createBuilder
+name|createTranslator
 parameter_list|(
 name|DeleteBatchQuery
 name|query
@@ -445,7 +445,7 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 return|return
-name|createBuilder
+name|createTranslator
 argument_list|(
 name|query
 argument_list|,
@@ -455,7 +455,7 @@ return|;
 block|}
 specifier|private
 name|DeleteBatchTranslator
-name|createBuilder
+name|createTranslator
 parameter_list|(
 name|DeleteBatchQuery
 name|query
@@ -472,11 +472,13 @@ operator|new
 name|SoftDeleteTranslatorFactory
 argument_list|()
 operator|.
-name|deleteTranslator
+name|translator
 argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 return|;
 block|}
@@ -547,7 +549,7 @@ decl_stmt|;
 name|DeleteBatchTranslator
 name|builder
 init|=
-name|createBuilder
+name|createTranslator
 argument_list|(
 name|deleteQuery
 argument_list|)
@@ -661,7 +663,7 @@ decl_stmt|;
 name|DeleteBatchTranslator
 name|builder
 init|=
-name|createBuilder
+name|createTranslator
 argument_list|(
 name|deleteQuery
 argument_list|)
@@ -783,7 +785,7 @@ decl_stmt|;
 name|DeleteBatchTranslator
 name|builder
 init|=
-name|createBuilder
+name|createTranslator
 argument_list|(
 name|deleteQuery
 argument_list|,

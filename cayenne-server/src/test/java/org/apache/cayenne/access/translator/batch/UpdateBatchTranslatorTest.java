@@ -333,6 +333,8 @@ name|class
 argument_list|)
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|assertSame
@@ -454,6 +456,8 @@ argument_list|(
 name|updateQuery
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -604,6 +608,8 @@ argument_list|(
 name|updateQuery
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -746,6 +752,8 @@ argument_list|(
 name|updateQuery
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -949,6 +957,8 @@ argument_list|(
 name|updateQuery
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
 name|String

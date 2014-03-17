@@ -128,7 +128,7 @@ specifier|public
 class|class
 name|InsertBatchTranslator
 extends|extends
-name|BatchTranslator
+name|DefaultBatchTranslator
 block|{
 specifier|public
 name|InsertBatchTranslator
@@ -140,11 +140,15 @@ name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
+comment|// no trimming is needed here, so passing hardcoded NULL for trim
+comment|// function
 name|super
 argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
