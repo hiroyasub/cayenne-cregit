@@ -144,7 +144,7 @@ specifier|private
 name|boolean
 name|client
 decl_stmt|;
-comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter expression="${cgen.destDir}" default-value= 	 *            "${project.build.sourceDirectory}/java/generated-sources/cayenne" 	 */
+comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter expression="${cgen.destDir}" default-value="${project.build.sourceDirectory}" 	 */
 specifier|private
 name|File
 name|destDir
@@ -189,7 +189,7 @@ specifier|private
 name|boolean
 name|overwrite
 decl_stmt|;
-comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 *  	 * @parameter expression="${cgen.superPkg}" 	 */
+comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 *  	 * @parameter expression="${cgen.superPkg}"  	 */
 specifier|private
 name|String
 name|superPkg

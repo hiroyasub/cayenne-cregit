@@ -682,7 +682,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Test pairs generation including full package path. */
+comment|/** Test pairs generation including full package path, default superclass package. */
 specifier|public
 name|void
 name|testPairs1
@@ -789,7 +789,7 @@ name|mapDir
 argument_list|,
 name|convertPath
 argument_list|(
-literal|"org/apache/cayenne/testdo/testmap/_Artist.java"
+literal|"org/apache/cayenne/testdo/testmap/auto/_Artist.java"
 argument_list|)
 argument_list|)
 decl_stmt|;

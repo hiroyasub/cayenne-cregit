@@ -827,6 +827,8 @@ block|{
 name|superPackageName
 operator|=
 name|packageName
+operator|+
+literal|".auto"
 expr_stmt|;
 block|}
 name|context
