@@ -103,7 +103,7 @@ name|crypto
 operator|.
 name|cipher
 operator|.
-name|CipherService
+name|CryptoHandler
 import|;
 end_import
 
@@ -191,7 +191,7 @@ implements|implements
 name|BatchTranslatorFactory
 block|{
 specifier|private
-name|CipherService
+name|CryptoHandler
 name|cipherService
 decl_stmt|;
 specifier|private
@@ -212,7 +212,7 @@ name|delegate
 parameter_list|,
 annotation|@
 name|Inject
-name|CipherService
+name|CryptoHandler
 name|cipherService
 parameter_list|,
 annotation|@

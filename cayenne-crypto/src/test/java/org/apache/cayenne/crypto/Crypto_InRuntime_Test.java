@@ -202,7 +202,7 @@ operator|new
 name|CryptoModuleBuilder
 argument_list|()
 operator|.
-name|cipherService
+name|cryptoHandler
 argument_list|(
 name|Rot13CipherService
 operator|.

@@ -39,7 +39,7 @@ name|crypto
 operator|.
 name|cipher
 operator|.
-name|CipherService
+name|CryptoHandler
 import|;
 end_import
 
@@ -48,7 +48,7 @@ specifier|public
 class|class
 name|Rot13CipherService
 implements|implements
-name|CipherService
+name|CryptoHandler
 block|{
 specifier|public
 specifier|static

@@ -24,7 +24,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|CipherService
+name|CryptoHandler
 block|{
 name|Object
 name|encrypt
