@@ -13,9 +13,23 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|map
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbAttribute
+import|;
+end_import
 
 begin_comment
 comment|/**  * @since 3.2  */
@@ -24,26 +38,14 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|CipherService
+name|ColumnMapper
 block|{
-name|Object
-name|encrypt
+comment|/**      * Returns true if a given DbAttribute is encrypted.      */
+name|boolean
+name|isEncrypted
 parameter_list|(
-name|Object
-name|plaintext
-parameter_list|,
-name|int
-name|jdbcType
-parameter_list|)
-function_decl|;
-name|Object
-name|decrypt
-parameter_list|(
-name|Object
-name|ciphertext
-parameter_list|,
-name|int
-name|jdbcType
+name|DbAttribute
+name|column
 parameter_list|)
 function_decl|;
 block|}
