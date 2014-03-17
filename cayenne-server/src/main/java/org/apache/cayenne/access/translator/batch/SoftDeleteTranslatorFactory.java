@@ -98,7 +98,7 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|BatchTranslator
 name|deleteTranslator
 parameter_list|(

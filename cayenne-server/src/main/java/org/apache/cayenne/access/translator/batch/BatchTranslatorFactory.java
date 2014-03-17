@@ -43,35 +43,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|DeleteBatchQuery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|InsertBatchQuery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|UpdateBatchQuery
+name|BatchQuery
 import|;
 end_import
 
@@ -84,33 +56,11 @@ specifier|public
 interface|interface
 name|BatchTranslatorFactory
 block|{
-comment|/**      * Creates query builder for INSERT queries      */
+comment|/**      * Creates a proper translator for a BatchQuery      */
 name|BatchTranslator
-name|insertTranslator
+name|translator
 parameter_list|(
-name|InsertBatchQuery
-name|query
-parameter_list|,
-name|DbAdapter
-name|adapter
-parameter_list|)
-function_decl|;
-comment|/**      * Creates query builder for UPDATE queries      */
-name|BatchTranslator
-name|updateTranslator
-parameter_list|(
-name|UpdateBatchQuery
-name|query
-parameter_list|,
-name|DbAdapter
-name|adapter
-parameter_list|)
-function_decl|;
-comment|/**      * Creates query builder for DELETE queries      */
-name|BatchTranslator
-name|deleteTranslator
-parameter_list|(
-name|DeleteBatchQuery
+name|BatchQuery
 name|query
 parameter_list|,
 name|DbAdapter
