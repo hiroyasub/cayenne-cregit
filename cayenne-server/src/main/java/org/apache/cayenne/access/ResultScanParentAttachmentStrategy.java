@@ -479,6 +479,15 @@ operator|.
 name|getDataRows
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|rows
+operator|==
+literal|null
+condition|)
+block|{
+return|return;
+block|}
 name|int
 name|size
 init|=
