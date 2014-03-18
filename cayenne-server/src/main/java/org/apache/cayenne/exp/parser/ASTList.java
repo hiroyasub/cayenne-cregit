@@ -697,7 +697,21 @@ name|value
 operator|)
 operator|.
 name|toArray
+argument_list|(
+operator|new
+name|Object
+index|[
+operator|(
+operator|(
+name|Collection
+operator|)
+name|value
+operator|)
+operator|.
+name|size
 argument_list|()
+index|]
+argument_list|)
 expr_stmt|;
 block|}
 if|else if
