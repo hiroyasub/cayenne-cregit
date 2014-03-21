@@ -122,7 +122,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object representing Cayenne server-stack that connects directly to the  * database via JDBC. This is an entry point for user applications to access  * Cayenne, which encapsulates the dependency injection internals. The term  * "server" is used as opposed to ROP "client" (see {@link ClientRuntime}). Any  * application, desktop, server, etc. that has a direct JDBC connection should  * be using this runtime.  *   * @since 3.1  */
+comment|/**  * An object representing Cayenne server-stack that connects directly to the  * database via JDBC. This is an entry point for user applications to access  * Cayenne, which encapsulates the dependency injection internals. The term  * "server" is used as opposed to ROP "client" (see {@link CayenneRuntime}). Any  * application, desktop, server, etc. that has a direct JDBC connection should  * be using this runtime.  *   * @since 3.1  */
 end_comment
 
 begin_class

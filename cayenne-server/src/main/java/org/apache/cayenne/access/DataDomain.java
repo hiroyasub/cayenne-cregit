@@ -950,7 +950,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns<code>true</code> if DataContexts produced by this DataDomain are      * using shared DataRowStore. Returns<code>false</code> if each DataContext      * would work with its own DataRowStore. Note that this setting can be      * overwritten per DataContext. See {@link #createDataContext(boolean)}.      */
+comment|/**      * Returns<code>true</code> if DataContexts produced by this DataDomain are      * using shared DataRowStore. Returns<code>false</code> if each DataContext      * would work with its own DataRowStore. Note that this setting can be      * overwritten per DataContext.      */
 specifier|public
 name|boolean
 name|isSharedCacheEnabled

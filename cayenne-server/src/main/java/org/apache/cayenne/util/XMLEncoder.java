@@ -259,7 +259,7 @@ name|projectVersion
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Prints an XML attribute. The value is trimmed (so leading and following spaces are      * lost) and then encoded to be a proper XML attribute value. E.g. "&" becomes      * "&amp;", etc.      *       * @since 3.1      */
+comment|/**      * Prints an XML attribute. The value is trimmed (so leading and following spaces are      * lost) and then encoded to be a proper XML attribute value. E.g. "&amp;" becomes      * "&amp;amp;", etc.      *       * @since 3.1      */
 specifier|public
 name|void
 name|printAttribute

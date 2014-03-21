@@ -211,7 +211,7 @@ specifier|protected
 name|boolean
 name|compareFullRows
 decl_stmt|;
-comment|/**      * Creates new DistinctResultIterator wrapping another ResultIterator.      *       * @param wrappedIterator      * @param defaultEntity      *            an entity needed to build ObjectIds for distinct comparison.      */
+comment|/**      * Creates new DistinctResultIterator wrapping another ResultIterator.      *       * @param delegate      * @param defaultEntity      *            an entity needed to build ObjectIds for distinct comparison.      */
 specifier|public
 name|DistinctResultIterator
 parameter_list|(

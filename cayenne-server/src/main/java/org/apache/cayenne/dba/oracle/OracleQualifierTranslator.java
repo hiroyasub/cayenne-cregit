@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Oracle qualifier translator. In particular, trims INs with more than 1000 elements to  * an OR-set of INs with<= 1000 elements  */
+comment|/**  * Oracle qualifier translator. In particular, trims INs with more than 1000 elements to  * an OR-set of INs with&lt;= 1000 elements  */
 end_comment
 
 begin_class

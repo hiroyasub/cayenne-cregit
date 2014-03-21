@@ -203,7 +203,7 @@ return|return
 name|dbAttributes
 return|;
 block|}
-comment|/**      * Creates new UpdateBatchQuery.      *       * @param dbEntity      *            Table or view to update.      * @param qualifierAttributes      *            DbAttributes used in the WHERE clause.      * @param nullQualifierNames      *            DbAttribute names in the WHERE clause that have null values.      * @param updatedAttribute      *            DbAttributes describing updated columns.      * @param batchCapacity      *            Estimated size of the batch.      */
+comment|/**      * Creates new UpdateBatchQuery.      *       * @param dbEntity      *            Table or view to update.      * @param qualifierAttributes      *            DbAttributes used in the WHERE clause.      * @param nullQualifierNames      *            DbAttribute names in the WHERE clause that have null values.      * @param updatedAttributes      *            DbAttributes describing updated columns.      * @param batchCapacity      *            Estimated size of the batch.      */
 specifier|public
 name|UpdateBatchQuery
 parameter_list|(

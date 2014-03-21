@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Bitwise right shift '>>' operation.  *   * @since 3.2  */
+comment|/**  * Bitwise right shift '&gt;&gt;' operation.  *   * @since 3.2  */
 end_comment
 
 begin_class

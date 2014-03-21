@@ -655,7 +655,7 @@ return|return
 name|session
 return|;
 block|}
-comment|/**      * Creates a server-side channel that will handle all client requests. For shared      * sessions the same channel instance is reused for the entire group of clients. For      * dedicated sessions, one channel per client is created.      *<p/>      * This implementation returns {@link ClientServerChannel} instance wrapping a      * DataContext. Subclasses may override the method to customize channel creation. For      * instance they may wrap channel in the custom interceptors to handle transactions or      * security.      */
+comment|/**      * Creates a server-side channel that will handle all client requests. For shared      * sessions the same channel instance is reused for the entire group of clients. For      * dedicated sessions, one channel per client is created.      *<p>      * This implementation returns {@link ClientServerChannel} instance wrapping a      * DataContext. Subclasses may override the method to customize channel creation. For      * instance they may wrap channel in the custom interceptors to handle transactions or      * security.      */
 specifier|protected
 name|DataChannel
 name|createChannel

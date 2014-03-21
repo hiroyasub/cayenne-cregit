@@ -113,7 +113,7 @@ name|CayenneException
 parameter_list|()
 block|{
 block|}
-comment|/**      * Constructs an<code>CayenneException</code> with the specified detail message.      *       * @param message the detail message.      */
+comment|/**      * Constructs an<code>CayenneException</code> with the specified detail message.      *       * @param messageFormat the detail message format string.      */
 specifier|public
 name|CayenneException
 parameter_list|(

@@ -25,7 +25,7 @@ interface|interface
 name|Constants
 block|{
 comment|// DI "collections"
-comment|/**      * A DI container key for the Map<String, String> storing properties used by built-in      * Cayenne service.      */
+comment|/**      * A DI container key for the Map&lt;String, String&gt; storing properties used by built-in      * Cayenne service.      */
 specifier|public
 specifier|static
 specifier|final
@@ -34,7 +34,7 @@ name|PROPERTIES_MAP
 init|=
 literal|"cayenne.properties"
 decl_stmt|;
-comment|/**      * A DI container key for the List<DbAdapterDetector> that contains objects that can      * discover the type of current database and install the correct DbAdapter in runtime.      */
+comment|/**      * A DI container key for the List&lt;DbAdapterDetector&gt; that contains objects that can      * discover the type of current database and install the correct DbAdapter in runtime.      */
 specifier|public
 specifier|static
 specifier|final
@@ -43,7 +43,7 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/**      * A DI container key for the List<DataChannelFilter> storing DataDomain filters.      */
+comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing DataDomain filters.      */
 specifier|public
 specifier|static
 specifier|final
@@ -52,7 +52,7 @@ name|SERVER_DOMAIN_FILTERS_LIST
 init|=
 literal|"cayenne.server.domain_filters"
 decl_stmt|;
-comment|/**      * A DI container key for the List<String> storing locations of the one of more      * project configuration files.      */
+comment|/**      * A DI container key for the List&lt;String&gt; storing locations of the one of more      * project configuration files.      */
 specifier|public
 specifier|static
 specifier|final
@@ -61,7 +61,7 @@ name|SERVER_PROJECT_LOCATIONS_LIST
 init|=
 literal|"cayenne.server.project_locations"
 decl_stmt|;
-comment|/**      * A DI container key for the List<ExtendedType> storing default adapter-agnostic      * ExtendedTypes.      */
+comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing default adapter-agnostic      * ExtendedTypes.      */
 specifier|public
 specifier|static
 specifier|final
@@ -70,7 +70,7 @@ name|SERVER_DEFAULT_TYPES_LIST
 init|=
 literal|"cayenne.server.default_types"
 decl_stmt|;
-comment|/**      * A DI container key for the List<ExtendedType> storing a user-provided      * ExtendedTypes.      */
+comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing a user-provided      * ExtendedTypes.      */
 specifier|public
 specifier|static
 specifier|final
@@ -79,7 +79,7 @@ name|SERVER_USER_TYPES_LIST
 init|=
 literal|"cayenne.server.user_types"
 decl_stmt|;
-comment|/**      * A DI container key for the List<ExtendedTypeFactory> storing default and      * user-provided ExtendedTypeFactories.      */
+comment|/**      * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing default and      * user-provided ExtendedTypeFactories.      */
 specifier|public
 specifier|static
 specifier|final
@@ -88,7 +88,7 @@ name|SERVER_TYPE_FACTORIES_LIST
 init|=
 literal|"cayenne.server.type_factories"
 decl_stmt|;
-comment|/**      * A server-side DI container key for the Map<String, String> storing event bridge      * properties passed to the ROP client on bootstrap.      */
+comment|/**      * A server-side DI container key for the Map&lt;String, String&gt; storing event bridge      * properties passed to the ROP client on bootstrap.      */
 specifier|public
 specifier|static
 specifier|final

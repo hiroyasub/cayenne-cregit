@@ -362,7 +362,7 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting ">=" expression and also after visiting every expression child.      *       * @param expression an ">=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
+comment|/**      * Called on visiting "&gt;=" expression and also after visiting every expression child.      *       * @param expression an "&gt;=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitGreaterOrEqual
 parameter_list|(
@@ -373,7 +373,7 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting ">=" expression and also after visiting every expression child.      *       * @param expression an ">=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
+comment|/**      * Called on visiting "&gt;=" expression and also after visiting every expression child.      *       * @param expression an "&gt;=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitGreaterThan
 parameter_list|(
@@ -470,7 +470,7 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting "<=" expression and also after visiting every expression child.      *       * @param expression an "<=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
+comment|/**      * Called on visiting "&lt;=" expression and also after visiting every expression child.      *       * @param expression an "&lt;=" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitLessOrEqual
 parameter_list|(
@@ -481,7 +481,7 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 function_decl|;
-comment|/**      * Called on visiting "<" expression and also after visiting every expression child.      *       * @param expression an "<" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
+comment|/**      * Called on visiting "&lt;" expression and also after visiting every expression child.      *       * @param expression an "&lt;" node being visited.      * @param finishedChildIndex "-1" when the expression node is visited for the first      *            time, before its children; otherwise this is an index of a child just      *            visited.      */
 name|boolean
 name|visitLessThan
 parameter_list|(

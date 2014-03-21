@@ -2049,7 +2049,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Checks expression for containing null input parameter. For that, we'll      * append IS NULL or IS NOT NULL instead of =null or<>null      *       * @return whether replacement was done and there's no need for normal      *         expression processing      */
+comment|/**      * Checks expression for containing null input parameter. For that, we'll      * append IS NULL or IS NOT NULL instead of =null or&lt;&gt;null      *       * @return whether replacement was done and there's no need for normal      *         expression processing      */
 specifier|protected
 name|boolean
 name|checkNullParameter

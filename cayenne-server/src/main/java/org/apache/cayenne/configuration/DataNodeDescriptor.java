@@ -596,7 +596,7 @@ return|return
 name|dataMapNames
 return|;
 block|}
-comment|/**      * Returns extra DataNodeDescriptor parameters. This property is often used by custom      * {@link DataSourceFactory} to configure a DataSource. E.g. JNDIDataSoirceFactory may      * treat parameters String as a JNDI location of the DataSource, etc.      */
+comment|/**      * Returns extra DataNodeDescriptor parameters. This property is often used by custom      * {@link org.apache.cayenne.configuration.server.DataSourceFactory} to configure a DataSource. E.g. JNDIDataSourceFactory may      * treat parameters String as a JNDI location of the DataSource, etc.      */
 specifier|public
 name|String
 name|getParameters
@@ -606,7 +606,7 @@ return|return
 name|parameters
 return|;
 block|}
-comment|/**      * Sets extra DataNodeDescriptor parameters. This property is often used by custom      * {@link DataSourceFactory} to configure a DataSource. E.g. JNDIDataSoirceFactory may      * treat parameters String as a JNDI location of the DataSource, etc.      */
+comment|/**      * Sets extra DataNodeDescriptor parameters. This property is often used by custom      * {@link org.apache.cayenne.configuration.server.DataSourceFactory} to configure a DataSource. E.g. JNDIDataSourceFactory may      * treat parameters String as a JNDI location of the DataSource, etc.      */
 specifier|public
 name|void
 name|setParameters

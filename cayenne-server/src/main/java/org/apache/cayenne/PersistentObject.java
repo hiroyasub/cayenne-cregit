@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience base superclass for concrete Persistent objects. Provides implementation  * of properties declared in Persistent interface.  *<h4>POJO Note</h4>  *<p>  * If having PersistentObject as a superclass presents a problem in an application, source  * code of this class can be copied verbatim to a custom class generation template.  * Desired superclass can be set in CayenneModeler.  *</p>  *   * @since 1.2  */
+comment|/**  * A convenience base superclass for concrete Persistent objects. Provides implementation  * of properties declared in Persistent interface.  *<h1>POJO Note</h1>  *<p>  * If having PersistentObject as a superclass presents a problem in an application, source  * code of this class can be copied verbatim to a custom class generation template.  * Desired superclass can be set in CayenneModeler.  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class

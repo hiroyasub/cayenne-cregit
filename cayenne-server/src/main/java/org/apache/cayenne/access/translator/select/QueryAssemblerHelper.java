@@ -438,7 +438,7 @@ parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Outputs the standard JDBC (database agnostic) expression for supplying      * the escape character to the database server when supplying a LIKE clause.      * This has been factored-out because some database adaptors handle LIKE      * differently and they need access to this common method in order not to      * repeat this code.</p>      *<p>      * If there is no escape character defined then this method will not output      * anything. An escape character of 0 will mean no escape character.      *       * @since 3.1      */
+comment|/**      *<p>Outputs the standard JDBC (database agnostic) expression for supplying      * the escape character to the database server when supplying a LIKE clause.      * This has been factored-out because some database adaptors handle LIKE      * differently and they need access to this common method in order not to      * repeat this code.      *<p>      * If there is no escape character defined then this method will not output      * anything. An escape character of 0 will mean no escape character.      *       * @since 3.1      */
 specifier|protected
 name|void
 name|appendLikeEscapeCharacter

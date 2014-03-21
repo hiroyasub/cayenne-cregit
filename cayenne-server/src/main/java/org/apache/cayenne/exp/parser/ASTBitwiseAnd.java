@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Bitwise conjunction (AND or '&') expression  *   * @since 3.1  */
+comment|/**  * Bitwise conjunction (AND or '&amp;') expression  *   * @since 3.1  */
 end_comment
 
 begin_class

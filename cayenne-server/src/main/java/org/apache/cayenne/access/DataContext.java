@@ -1943,7 +1943,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Instantiates a new object and registers it with this context. Object      * class is determined from the mapped entity. Object class must have a      * default constructor.      *<p/>      *<i>Note: in most cases {@link #newObject(Class)} method should be used,      * however this method is helpful when generic persistent classes are      * used.</i>      *       * @since 3.0      */
+comment|/**      * Instantiates a new object and registers it with this context. Object      * class is determined from the mapped entity. Object class must have a      * default constructor.      *<p>      *<i>Note: in most cases {@link #newObject(Class)} method should be used,      * however this method is helpful when generic persistent classes are      * used.</i>      *       * @since 3.0      */
 specifier|public
 name|Persistent
 name|newObject
@@ -2048,7 +2048,7 @@ return|return
 name|object
 return|;
 block|}
-comment|/**      * Registers a transient object with the context, recursively registering      * all transient persistent objects attached to this object via      * relationships.      *<p/>      *<i>Note that since 3.0 this method takes Object as an argument instead of      * a {@link DataObject}.</i>      *       * @param object      *            new object that needs to be made persistent.      */
+comment|/**      * Registers a transient object with the context, recursively registering      * all transient persistent objects attached to this object via      * relationships.      *<p>      *<i>Note that since 3.0 this method takes Object as an argument instead of      * a {@link DataObject}.</i>      *       * @param object      *            new object that needs to be made persistent.      */
 annotation|@
 name|Override
 specifier|public

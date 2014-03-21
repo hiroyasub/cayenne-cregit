@@ -257,7 +257,7 @@ name|void
 name|rollbackChanges
 parameter_list|()
 function_decl|;
-comment|/**      * Resets all uncommitted changes made to the objects in this ObjectContext.      * Same as {@link #rollbackChanges()()}, but rollback is local to this      * context and no cascading changes undoing occurs.      */
+comment|/**      * Resets all uncommitted changes made to the objects in this ObjectContext.      * Same as {@link #rollbackChanges()}, but rollback is local to this      * context and no cascading changes undoing occurs.      */
 name|void
 name|rollbackChangesLocally
 parameter_list|()

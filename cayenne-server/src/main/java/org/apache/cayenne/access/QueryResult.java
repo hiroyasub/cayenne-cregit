@@ -227,7 +227,7 @@ operator|.
 name|EMPTY_LIST
 return|;
 block|}
-comment|/**      * Returns the first update count for the query. This is a shortcut for<code>(Integer)getUpdates(query).get(0)<code>, kind of like Google's "I'm feeling lucky".      * Returns -1 if no update count is found for the query.      */
+comment|/**      * Returns the first update count for the query. This is a shortcut for<code>(Integer)getUpdates(query).get(0)</code>, kind of like Google's "I'm feeling lucky".      * Returns -1 if no update count is found for the query.      */
 specifier|public
 name|int
 name|getFirstUpdateCount
@@ -454,7 +454,7 @@ literal|0
 index|]
 return|;
 block|}
-comment|/**      * Returns the first results for the query. This is a shortcut for<code>(List)getRows(query).get(0)<code>, kind of like Google's "I'm feeling lucky".      */
+comment|/**      * Returns the first results for the query. This is a shortcut for<code>(List)getRows(query).get(0)</code>, kind of like Google's "I'm feeling lucky".      */
 specifier|public
 name|List
 name|getFirstRows

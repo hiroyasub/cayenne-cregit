@@ -244,7 +244,7 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
-comment|/**      * Db-relationships path that is set but not yet parsed (turned into      * List<DbRelationship>) Used during map loading      */
+comment|/**      * Db-relationships path that is set but not yet parsed (turned into      * List&lt;DbRelationship&gt;) Used during map loading      */
 name|String
 name|deferredPath
 decl_stmt|;

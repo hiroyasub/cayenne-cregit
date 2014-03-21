@@ -38,7 +38,7 @@ specifier|public
 interface|interface
 name|TransactionManager
 block|{
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link TransactionalOperation#perform(CayenneRuntime)}, and then      * committing or rolling back the transaction. Frees the user      */
+comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then      * committing or rolling back the transaction. Frees the user      */
 parameter_list|<
 name|T
 parameter_list|>
