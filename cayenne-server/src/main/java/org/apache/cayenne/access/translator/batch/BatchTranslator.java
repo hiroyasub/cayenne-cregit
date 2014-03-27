@@ -80,10 +80,6 @@ name|BatchQueryRow
 name|row
 parameter_list|)
 function_decl|;
-name|String
-name|getTrimFunction
-parameter_list|()
-function_decl|;
 block|}
 end_interface
 

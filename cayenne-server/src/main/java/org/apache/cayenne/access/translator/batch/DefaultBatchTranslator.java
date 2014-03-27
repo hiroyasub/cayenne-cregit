@@ -175,17 +175,6 @@ operator|=
 name|trimFunction
 expr_stmt|;
 block|}
-annotation|@
-name|Override
-specifier|public
-name|String
-name|getTrimFunction
-parameter_list|()
-block|{
-return|return
-name|trimFunction
-return|;
-block|}
 comment|/**      * Translates BatchQuery into an SQL string formatted to use in a      * PreparedStatement.      */
 annotation|@
 name|Override
