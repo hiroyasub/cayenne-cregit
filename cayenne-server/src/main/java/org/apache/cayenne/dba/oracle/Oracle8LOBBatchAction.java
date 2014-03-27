@@ -614,7 +614,7 @@ name|updateStr
 init|=
 name|translator
 operator|.
-name|createSqlString
+name|createSql
 argument_list|(
 name|row
 argument_list|)

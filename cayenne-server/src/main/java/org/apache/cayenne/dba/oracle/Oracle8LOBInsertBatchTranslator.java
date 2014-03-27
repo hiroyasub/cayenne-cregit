@@ -256,7 +256,7 @@ annotation|@
 name|Override
 specifier|public
 name|String
-name|createSqlString
+name|createSql
 parameter_list|(
 name|BatchQueryRow
 name|row

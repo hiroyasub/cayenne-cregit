@@ -559,7 +559,7 @@ name|generatedSql
 init|=
 name|builder
 operator|.
-name|createSqlString
+name|getSql
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -673,7 +673,7 @@ name|generatedSql
 init|=
 name|builder
 operator|.
-name|createSqlString
+name|getSql
 argument_list|()
 decl_stmt|;
 name|assertNotNull
@@ -797,7 +797,7 @@ name|generatedSql
 init|=
 name|builder
 operator|.
-name|createSqlString
+name|getSql
 argument_list|()
 decl_stmt|;
 name|String

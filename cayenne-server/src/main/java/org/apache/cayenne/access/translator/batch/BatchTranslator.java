@@ -23,16 +23,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|List
@@ -62,12 +52,10 @@ specifier|public
 interface|interface
 name|BatchTranslator
 block|{
-comment|/**      * Translates BatchQuery into an SQL string formatted to use in a      * PreparedStatement.      */
+comment|/**      * Returns SQL String that can be used to init a PreparedStatement.      */
 name|String
-name|createSqlString
+name|getSql
 parameter_list|()
-throws|throws
-name|IOException
 function_decl|;
 comment|/**      * Returns PreparedStatement bindings for a given row.      */
 name|List

@@ -586,7 +586,7 @@ name|queryStr
 init|=
 name|translator
 operator|.
-name|createSqlString
+name|getSql
 argument_list|()
 decl_stmt|;
 name|JdbcEventLogger
@@ -816,7 +816,7 @@ name|queryStr
 init|=
 name|translator
 operator|.
-name|createSqlString
+name|getSql
 argument_list|()
 decl_stmt|;
 comment|// log batch SQL execution

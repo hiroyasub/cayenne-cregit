@@ -275,9 +275,9 @@ argument_list|)
 block|{
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|String
-name|createSqlString
+name|createSql
 parameter_list|()
 block|{
 return|return
@@ -367,9 +367,9 @@ argument_list|)
 block|{
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|String
-name|createSqlString
+name|createSql
 parameter_list|()
 block|{
 return|return
@@ -548,9 +548,9 @@ argument_list|)
 block|{
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|String
-name|createSqlString
+name|createSql
 parameter_list|()
 block|{
 return|return
