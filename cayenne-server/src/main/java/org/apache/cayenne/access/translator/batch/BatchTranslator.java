@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -57,12 +47,16 @@ name|String
 name|getSql
 parameter_list|()
 function_decl|;
-comment|/**      * Returns PreparedStatement bindings for a given row.      */
-name|List
-argument_list|<
+comment|/**      * Returns the widest possible array of bindings for this query. Each      * binding's position corresponds to a value position in      * {@link BatchQueryRow}.      */
 name|BatchParameterBinding
-argument_list|>
-name|createBindings
+index|[]
+name|getBindings
+parameter_list|()
+function_decl|;
+comment|/**      * Updates internal bindings to be used with a given row, returning updated      * bindings array. Note that usually the returned array is the same copy on      * every iteration, only with changed object state.      */
+name|BatchParameterBinding
+index|[]
+name|updateBindings
 parameter_list|(
 name|BatchQueryRow
 name|row

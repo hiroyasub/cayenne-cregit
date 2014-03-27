@@ -180,10 +180,8 @@ parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|List
-argument_list|<
 name|BatchParameterBinding
-argument_list|>
+index|[]
 name|bindings
 parameter_list|)
 function_decl|;
