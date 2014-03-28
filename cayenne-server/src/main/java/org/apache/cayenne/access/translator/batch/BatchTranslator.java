@@ -47,13 +47,13 @@ name|String
 name|getSql
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the widest possible array of bindings for this query. Each      * binding's position corresponds to a value position in      * {@link BatchQueryRow}.      */
+comment|/**      * Returns the widest possible array of bindings for this query.      */
 name|BatchParameterBinding
 index|[]
 name|getBindings
 parameter_list|()
 function_decl|;
-comment|/**      * Updates internal bindings to be used with a given row, returning updated      * bindings array. Note that usually the returned array is the same copy on      * every iteration, only with changed object state.      */
+comment|/**      * Updates internal bindings to be used with a given row, returning updated      * bindings array. This method guarantees that the returned array contains      * the same bindings in the same order as in the array returned from      * {@link #getBindings()} (but in a state corresponding to the 'row'      * parameter). Usually the returned array is actually the same object reused      * for every iteration, only with changed object state.      */
 name|BatchParameterBinding
 index|[]
 name|updateBindings
