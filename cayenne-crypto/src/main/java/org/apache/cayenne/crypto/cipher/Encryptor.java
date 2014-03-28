@@ -30,7 +30,7 @@ name|Object
 name|encrypt
 parameter_list|(
 name|Object
-name|value
+name|plaintext
 parameter_list|)
 function_decl|;
 block|}

@@ -137,7 +137,7 @@ name|crypto
 operator|.
 name|unit
 operator|.
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 import|;
 end_import
 
@@ -232,9 +232,9 @@ operator|new
 name|CryptoModuleBuilder
 argument_list|()
 operator|.
-name|cryptoHandler
+name|cryptoFactory
 argument_list|(
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|class
 argument_list|)
@@ -371,7 +371,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|rotate
 argument_list|(
@@ -523,7 +523,7 @@ expr_stmt|;
 block|}
 name|assertEquals
 argument_list|(
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|rotate
 argument_list|(
@@ -540,7 +540,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|rotate
 argument_list|(
@@ -571,7 +571,7 @@ literal|1
 argument_list|,
 literal|"plain_1"
 argument_list|,
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|rotate
 argument_list|(
@@ -587,7 +587,7 @@ literal|2
 argument_list|,
 literal|"plain_2"
 argument_list|,
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|rotate
 argument_list|(
@@ -603,7 +603,7 @@ literal|3
 argument_list|,
 literal|"plain_3"
 argument_list|,
-name|Rot13CryptoHandler
+name|Rot13CryptoFactory
 operator|.
 name|rotate
 argument_list|(

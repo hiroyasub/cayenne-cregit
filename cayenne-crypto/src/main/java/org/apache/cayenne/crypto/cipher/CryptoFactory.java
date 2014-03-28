@@ -32,16 +32,23 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * A factory that creates encryption/decryption handlers that can be used to  * process data.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|EncryptorFactory
+name|CryptoFactory
 block|{
 name|Encryptor
 name|getEncryptor
+parameter_list|(
+name|DbAttribute
+name|column
+parameter_list|)
+function_decl|;
+name|Decryptor
+name|getDecryptor
 parameter_list|(
 name|DbAttribute
 name|column

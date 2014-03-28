@@ -18,32 +18,19 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * An decryptor object configured to decrypt a value of a certain type.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|CryptoHandler
+name|Decryptor
 block|{
-name|Object
-name|encrypt
-parameter_list|(
-name|Object
-name|plaintext
-parameter_list|,
-name|int
-name|jdbcType
-parameter_list|)
-function_decl|;
 name|Object
 name|decrypt
 parameter_list|(
 name|Object
 name|ciphertext
-parameter_list|,
-name|int
-name|jdbcType
 parameter_list|)
 function_decl|;
 block|}
