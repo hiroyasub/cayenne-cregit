@@ -115,9 +115,9 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 operator|.
-name|CryptoFactory
+name|TransformerFactory
 import|;
 end_import
 
@@ -131,7 +131,7 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 operator|.
 name|MapTransformer
 import|;
@@ -205,7 +205,7 @@ name|RowReaderFactory
 name|delegate
 decl_stmt|;
 specifier|private
-name|CryptoFactory
+name|TransformerFactory
 name|cryptoFactory
 decl_stmt|;
 specifier|public
@@ -218,7 +218,7 @@ name|delegate
 parameter_list|,
 annotation|@
 name|Inject
-name|CryptoFactory
+name|TransformerFactory
 name|cryptoFactory
 parameter_list|)
 block|{
@@ -317,7 +317,7 @@ name|decryptor
 operator|=
 name|cryptoFactory
 operator|.
-name|createDecryptor
+name|decryptor
 argument_list|(
 name|descriptor
 operator|.

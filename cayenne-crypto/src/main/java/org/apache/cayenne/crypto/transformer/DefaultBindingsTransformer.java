@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 package|;
 end_package
 

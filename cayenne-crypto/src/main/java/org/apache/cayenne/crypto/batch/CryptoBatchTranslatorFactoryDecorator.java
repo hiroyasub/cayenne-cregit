@@ -81,7 +81,7 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 operator|.
 name|BindingsTransformer
 import|;
@@ -97,9 +97,9 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 operator|.
-name|CryptoFactory
+name|TransformerFactory
 import|;
 end_import
 
@@ -171,7 +171,7 @@ implements|implements
 name|BatchTranslatorFactory
 block|{
 specifier|private
-name|CryptoFactory
+name|TransformerFactory
 name|cryptoFactory
 decl_stmt|;
 specifier|private
@@ -188,7 +188,7 @@ name|delegate
 parameter_list|,
 annotation|@
 name|Inject
-name|CryptoFactory
+name|TransformerFactory
 name|cryptoFactory
 parameter_list|)
 block|{
@@ -264,7 +264,7 @@ name|encryptor
 operator|=
 name|cryptoFactory
 operator|.
-name|createEncryptor
+name|encryptor
 argument_list|(
 name|getBindings
 argument_list|()

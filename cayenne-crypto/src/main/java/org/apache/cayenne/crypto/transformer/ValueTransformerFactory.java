@@ -13,39 +13,31 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * A factory that creates transformers for encryption/decryption of individual  * values.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|MapTransformer
+name|ValueTransformerFactory
 block|{
-name|void
-name|transform
+name|ValueTransformer
+name|encryptor
 parameter_list|(
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-name|map
+name|int
+name|jdbcType
+parameter_list|)
+function_decl|;
+name|ValueTransformer
+name|decryptor
+parameter_list|(
+name|int
+name|jdbcType
 parameter_list|)
 function_decl|;
 block|}

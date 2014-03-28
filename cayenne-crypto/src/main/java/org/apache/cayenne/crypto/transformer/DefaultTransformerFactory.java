@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 package|;
 end_package
 
@@ -128,9 +128,9 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DefaultCryptoFactory
+name|DefaultTransformerFactory
 implements|implements
-name|CryptoFactory
+name|TransformerFactory
 block|{
 specifier|private
 name|ColumnMapper
@@ -141,7 +141,7 @@ name|ValueTransformerFactory
 name|transformerFactory
 decl_stmt|;
 specifier|public
-name|DefaultCryptoFactory
+name|DefaultTransformerFactory
 parameter_list|(
 annotation|@
 name|Inject
@@ -171,7 +171,7 @@ annotation|@
 name|Override
 specifier|public
 name|MapTransformer
-name|createDecryptor
+name|decryptor
 parameter_list|(
 name|ColumnDescriptor
 index|[]
@@ -360,7 +360,7 @@ index|]
 operator|=
 name|transformerFactory
 operator|.
-name|getDecryptor
+name|decryptor
 argument_list|(
 name|cd
 operator|.
@@ -393,7 +393,7 @@ annotation|@
 name|Override
 specifier|public
 name|BindingsTransformer
-name|createEncryptor
+name|encryptor
 parameter_list|(
 name|BatchParameterBinding
 index|[]
@@ -563,7 +563,7 @@ index|]
 operator|=
 name|transformerFactory
 operator|.
-name|getEncryptor
+name|encryptor
 argument_list|(
 name|b
 operator|.

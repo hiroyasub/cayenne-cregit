@@ -13,37 +13,43 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 package|;
 end_package
 
 begin_import
 import|import
-name|javax
+name|org
 operator|.
-name|crypto
+name|apache
 operator|.
-name|Cipher
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchParameterBinding
 import|;
 end_import
 
 begin_comment
-comment|/**  * An encryptor or decryptor of a single value.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ValueTransformer
+name|BindingsTransformer
 block|{
-name|Object
+name|void
 name|transform
 parameter_list|(
-name|Cipher
-name|cipher
-parameter_list|,
-name|Object
-name|value
+name|BatchParameterBinding
+index|[]
+name|bindings
 parameter_list|)
 function_decl|;
 block|}

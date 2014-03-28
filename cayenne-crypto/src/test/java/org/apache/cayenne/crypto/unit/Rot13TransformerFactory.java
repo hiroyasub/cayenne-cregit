@@ -47,7 +47,7 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 operator|.
 name|ValueTransformer
 import|;
@@ -63,7 +63,7 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|transformer
 operator|.
 name|ValueTransformerFactory
 import|;
@@ -313,7 +313,7 @@ annotation|@
 name|Override
 specifier|public
 name|ValueTransformer
-name|getDecryptor
+name|decryptor
 parameter_list|(
 name|int
 name|jdbcType
@@ -327,7 +327,7 @@ annotation|@
 name|Override
 specifier|public
 name|ValueTransformer
-name|getEncryptor
+name|encryptor
 parameter_list|(
 name|int
 name|jdbcType

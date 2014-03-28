@@ -62,7 +62,7 @@ literal|"nop"
 argument_list|,
 name|factory
 operator|.
-name|getEncryptor
+name|encryptor
 argument_list|(
 name|Types
 operator|.
@@ -96,7 +96,7 @@ literal|"nop"
 argument_list|,
 name|factory
 operator|.
-name|getDecryptor
+name|decryptor
 argument_list|(
 name|Types
 operator|.
