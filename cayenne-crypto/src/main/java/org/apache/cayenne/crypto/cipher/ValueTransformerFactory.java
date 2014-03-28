@@ -18,19 +18,26 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An encryptor object configured to encrypt a value of a certain type.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|Encryptor
+name|ValueTransformerFactory
 block|{
-name|Object
-name|encrypt
+name|ValueTransformer
+name|getEncryptor
 parameter_list|(
-name|Object
-name|plaintext
+name|int
+name|jdbcType
+parameter_list|)
+function_decl|;
+name|ValueTransformer
+name|getDecryptor
+parameter_list|(
+name|int
+name|jdbcType
 parameter_list|)
 function_decl|;
 block|}

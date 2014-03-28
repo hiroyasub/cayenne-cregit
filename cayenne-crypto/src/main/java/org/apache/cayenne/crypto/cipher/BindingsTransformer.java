@@ -17,20 +17,39 @@ name|cipher
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchParameterBinding
+import|;
+end_import
+
 begin_comment
-comment|/**  * An decryptor object configured to decrypt a value of a certain type.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|Decryptor
+name|BindingsTransformer
 block|{
-name|Object
-name|decrypt
+name|void
+name|transform
 parameter_list|(
-name|Object
-name|ciphertext
+name|BatchParameterBinding
+index|[]
+name|bindings
 parameter_list|)
 function_decl|;
 block|}
