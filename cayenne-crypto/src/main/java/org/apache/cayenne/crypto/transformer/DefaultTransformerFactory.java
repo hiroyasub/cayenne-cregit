@@ -91,6 +91,22 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
+name|cipher
+operator|.
+name|CipherFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|crypto
+operator|.
 name|map
 operator|.
 name|ColumnMapper
@@ -133,6 +149,10 @@ implements|implements
 name|TransformerFactory
 block|{
 specifier|private
+name|CipherFactory
+name|cipherFactory
+decl_stmt|;
+specifier|private
 name|ColumnMapper
 name|columnMapper
 decl_stmt|;
@@ -152,6 +172,11 @@ annotation|@
 name|Inject
 name|ValueTransformerFactory
 name|transformerFactory
+parameter_list|,
+annotation|@
+name|Inject
+name|CipherFactory
+name|cipherFactory
 parameter_list|)
 block|{
 name|this
@@ -165,6 +190,12 @@ operator|.
 name|transformerFactory
 operator|=
 name|transformerFactory
+expr_stmt|;
+name|this
+operator|.
+name|cipherFactory
+operator|=
+name|cipherFactory
 expr_stmt|;
 block|}
 annotation|@
@@ -372,7 +403,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: use real cipher
 return|return
 operator|new
 name|DefaultMapTransformer
@@ -381,7 +411,10 @@ name|keys
 argument_list|,
 name|transformers
 argument_list|,
-literal|null
+name|cipherFactory
+operator|.
+name|cipher
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -575,7 +608,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: use real cipher
 return|return
 operator|new
 name|DefaultBindingsTransformer
@@ -584,7 +616,10 @@ name|positions
 argument_list|,
 name|transformers
 argument_list|,
-literal|null
+name|cipherFactory
+operator|.
+name|cipher
+argument_list|()
 argument_list|)
 return|;
 block|}
