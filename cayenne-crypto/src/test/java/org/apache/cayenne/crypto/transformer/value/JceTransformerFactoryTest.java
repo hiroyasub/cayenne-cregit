@@ -23,6 +23,66 @@ begin_import
 import|import static
 name|org
 operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
 name|mockito
 operator|.
 name|Mockito
@@ -50,16 +110,6 @@ operator|.
 name|sql
 operator|.
 name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -107,12 +157,30 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|JceTransformerFactoryTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|DbEntity
@@ -123,8 +191,8 @@ name|DbEntity
 name|t2
 decl_stmt|;
 annotation|@
-name|Override
-specifier|protected
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -175,6 +243,8 @@ literal|"TABLE2"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetJavaType
@@ -384,6 +454,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateEncryptor

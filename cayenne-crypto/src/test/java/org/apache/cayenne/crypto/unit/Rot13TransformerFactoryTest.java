@@ -18,12 +18,14 @@ package|;
 end_package
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
 import|;
 end_import
 
@@ -41,13 +43,23 @@ name|DbAttribute
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|Rot13TransformerFactoryTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEncrypt
@@ -82,6 +94,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecrypt

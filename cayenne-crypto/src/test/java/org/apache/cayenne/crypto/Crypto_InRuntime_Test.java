@@ -16,6 +16,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -52,16 +64,6 @@ operator|.
 name|util
 operator|.
 name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
 import|;
 end_import
 
@@ -201,12 +203,30 @@ name|TableHelper
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|Crypto_InRuntime_Test
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|ServerRuntime
@@ -217,8 +237,8 @@ name|TableHelper
 name|table1
 decl_stmt|;
 annotation|@
-name|Override
-specifier|protected
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -304,6 +324,8 @@ name|deleteAll
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInsert
@@ -385,6 +407,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInsert_MultipleObjects
@@ -556,6 +580,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test_SelectQuery
