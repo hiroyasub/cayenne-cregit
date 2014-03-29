@@ -42,7 +42,6 @@ name|StringToBytesConverter
 implements|implements
 name|ToBytesConverter
 block|{
-specifier|private
 specifier|static
 specifier|final
 name|String

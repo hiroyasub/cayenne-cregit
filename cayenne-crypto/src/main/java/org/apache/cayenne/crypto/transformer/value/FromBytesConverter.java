@@ -23,46 +23,10 @@ begin_comment
 comment|/**  * @since 3.2  */
 end_comment
 
-begin_class
-specifier|final
-class|class
-name|BytesToBytesConverter
-implements|implements
-name|ToBytesConverter
-implements|,
+begin_interface
+interface|interface
 name|FromBytesConverter
 block|{
-specifier|static
-specifier|final
-name|BytesToBytesConverter
-name|INSTANCE
-init|=
-operator|new
-name|BytesToBytesConverter
-argument_list|()
-decl_stmt|;
-annotation|@
-name|Override
-specifier|public
-name|byte
-index|[]
-name|toBytes
-parameter_list|(
-name|Object
-name|value
-parameter_list|)
-block|{
-return|return
-operator|(
-name|byte
-index|[]
-operator|)
-name|value
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
 name|Object
 name|fromBytes
 parameter_list|(
@@ -70,13 +34,9 @@ name|byte
 index|[]
 name|bytes
 parameter_list|)
-block|{
-return|return
-name|bytes
-return|;
+function_decl|;
 block|}
-block|}
-end_class
+end_interface
 
 end_unit
 
