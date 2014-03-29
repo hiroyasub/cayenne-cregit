@@ -511,7 +511,7 @@ index|[]
 name|DATA_MAPS_REQUIREING_SCHEMA_SETUP
 init|=
 block|{
-literal|"testmap.map.xml"
+literal|"tstmap.map.xml"
 block|,
 literal|"people.map.xml"
 block|,

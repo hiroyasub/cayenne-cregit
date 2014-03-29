@@ -63,7 +63,7 @@ name|unit
 operator|.
 name|util
 operator|.
-name|TestBean
+name|TstBean
 import|;
 end_import
 
@@ -155,7 +155,7 @@ init|=
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestBean
+name|TstBean
 operator|.
 name|class
 argument_list|,
@@ -186,11 +186,11 @@ argument_list|(
 name|property
 argument_list|)
 expr_stmt|;
-name|TestBean
+name|TstBean
 name|from
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|()
 decl_stmt|;
 name|from
@@ -200,11 +200,11 @@ argument_list|(
 literal|"123"
 argument_list|)
 expr_stmt|;
-name|TestBean
+name|TstBean
 name|to
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|()
 decl_stmt|;
 name|d1

@@ -768,7 +768,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|SQLTemplate
@@ -1100,7 +1100,7 @@ name|query
 operator|.
 name|setDataNodeName
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1181,7 +1181,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|SQLTemplate
@@ -1340,7 +1340,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|SQLTemplate

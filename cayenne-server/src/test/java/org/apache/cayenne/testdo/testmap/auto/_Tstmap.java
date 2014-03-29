@@ -106,7 +106,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|_Testmap
+name|_Tstmap
 block|{
 specifier|public
 specifier|static

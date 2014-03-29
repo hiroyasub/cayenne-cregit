@@ -35,7 +35,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|_SoftTest
+name|_SoftDelete
 extends|extends
 name|CayenneDataObject
 block|{
@@ -59,9 +59,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|SOFT_TEST_ID_PK_COLUMN
+name|ID_PK_COLUMN
 init|=
-literal|"SOFT_TEST_ID"
+literal|"ID"
 decl_stmt|;
 specifier|public
 name|void

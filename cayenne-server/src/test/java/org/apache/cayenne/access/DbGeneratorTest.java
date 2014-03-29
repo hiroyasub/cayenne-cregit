@@ -196,7 +196,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 argument_list|,
 name|logger
@@ -238,7 +238,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|DbEntity

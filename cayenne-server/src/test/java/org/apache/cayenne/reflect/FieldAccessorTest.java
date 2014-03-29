@@ -51,7 +51,7 @@ name|unit
 operator|.
 name|util
 operator|.
-name|TestBean
+name|TstBean
 import|;
 end_import
 
@@ -73,7 +73,7 @@ init|=
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestBean
+name|TstBean
 operator|.
 name|class
 argument_list|,
@@ -106,7 +106,7 @@ init|=
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestBean
+name|TstBean
 operator|.
 name|class
 argument_list|,
@@ -117,11 +117,11 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|TestBean
+name|TstBean
 name|object
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|()
 decl_stmt|;
 name|object
@@ -149,18 +149,18 @@ name|void
 name|testSetValue
 parameter_list|()
 block|{
-name|TestFields
+name|TstFields
 name|object
 init|=
 operator|new
-name|TestFields
+name|TstFields
 argument_list|()
 decl_stmt|;
 comment|// string
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestFields
+name|TstFields
 operator|.
 name|class
 argument_list|,
@@ -206,7 +206,7 @@ decl_stmt|;
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestFields
+name|TstFields
 operator|.
 name|class
 argument_list|,
@@ -251,7 +251,7 @@ decl_stmt|;
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestFields
+name|TstFields
 operator|.
 name|class
 argument_list|,
@@ -285,18 +285,18 @@ name|void
 name|testSetValuePrimitive
 parameter_list|()
 block|{
-name|TestFields
+name|TstFields
 name|object
 init|=
 operator|new
-name|TestFields
+name|TstFields
 argument_list|()
 decl_stmt|;
 comment|// primitive int .. write non-null
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestFields
+name|TstFields
 operator|.
 name|class
 argument_list|,
@@ -337,7 +337,7 @@ expr_stmt|;
 operator|new
 name|FieldAccessor
 argument_list|(
-name|TestFields
+name|TstFields
 operator|.
 name|class
 argument_list|,

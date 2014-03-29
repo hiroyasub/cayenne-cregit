@@ -30,7 +30,7 @@ specifier|public
 name|void
 name|prePersistEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{
@@ -39,7 +39,7 @@ specifier|public
 name|void
 name|postPersistEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{
@@ -48,7 +48,7 @@ specifier|public
 name|void
 name|preUpdateEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{
@@ -57,7 +57,7 @@ specifier|public
 name|void
 name|postUpdateEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{
@@ -66,7 +66,7 @@ specifier|public
 name|void
 name|preRemoveEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{
@@ -75,7 +75,7 @@ specifier|public
 name|void
 name|postRemoveEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{
@@ -84,7 +84,7 @@ specifier|public
 name|void
 name|postLoadEntityListener
 parameter_list|(
-name|ArtistCallbackTest
+name|ArtistCallback
 name|entity
 parameter_list|)
 block|{

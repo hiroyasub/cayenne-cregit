@@ -52,7 +52,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|TestJavaBean
+name|TstJavaBean
 extends|extends
 name|Object
 block|{
@@ -106,7 +106,7 @@ name|Object
 name|objectField
 decl_stmt|;
 specifier|protected
-name|TestJavaBean
+name|TstJavaBean
 name|related
 decl_stmt|;
 specifier|protected
@@ -292,7 +292,7 @@ name|booleanField
 expr_stmt|;
 block|}
 specifier|public
-name|TestJavaBean
+name|TstJavaBean
 name|getRelated
 parameter_list|()
 block|{
@@ -304,7 +304,7 @@ specifier|public
 name|void
 name|setRelated
 parameter_list|(
-name|TestJavaBean
+name|TstJavaBean
 name|related
 parameter_list|)
 block|{

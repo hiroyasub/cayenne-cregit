@@ -83,7 +83,7 @@ name|unit
 operator|.
 name|util
 operator|.
-name|TestBean
+name|TstBean
 import|;
 end_import
 
@@ -658,29 +658,29 @@ throws|throws
 name|Exception
 block|{
 comment|// compare on non-persistent property
-name|TestBean
+name|TstBean
 name|t1
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|1000
 argument_list|)
 decl_stmt|;
-name|TestBean
+name|TstBean
 name|t2
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|2000
 argument_list|)
 decl_stmt|;
-name|TestBean
+name|TstBean
 name|t3
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|2000
 argument_list|)
@@ -751,14 +751,14 @@ block|{
 comment|// compare on non-persistent property
 name|List
 argument_list|<
-name|TestBean
+name|TstBean
 argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|TestBean
+name|TstBean
 argument_list|>
 argument_list|(
 literal|3
@@ -769,7 +769,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|5
 argument_list|)
@@ -780,7 +780,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|2
 argument_list|)
@@ -791,7 +791,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|3
 argument_list|)
@@ -818,7 +818,7 @@ literal|2
 argument_list|,
 operator|(
 operator|(
-name|TestBean
+name|TstBean
 operator|)
 name|list
 operator|.
@@ -841,7 +841,7 @@ literal|3
 argument_list|,
 operator|(
 operator|(
-name|TestBean
+name|TstBean
 operator|)
 name|list
 operator|.
@@ -864,7 +864,7 @@ literal|5
 argument_list|,
 operator|(
 operator|(
-name|TestBean
+name|TstBean
 operator|)
 name|list
 operator|.
@@ -892,14 +892,14 @@ block|{
 comment|// compare on non-persistent property
 name|List
 argument_list|<
-name|TestBean
+name|TstBean
 argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|TestBean
+name|TstBean
 argument_list|>
 argument_list|(
 literal|6
@@ -910,7 +910,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|"c"
 argument_list|,
@@ -923,7 +923,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|"c"
 argument_list|,
@@ -936,7 +936,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|"a"
 argument_list|,
@@ -949,7 +949,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|"b"
 argument_list|,
@@ -962,7 +962,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|"b"
 argument_list|,
@@ -975,7 +975,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|TestBean
+name|TstBean
 argument_list|(
 literal|"b"
 argument_list|,
@@ -1031,14 +1031,14 @@ expr_stmt|;
 comment|// clone list and then order
 name|List
 argument_list|<
-name|TestBean
+name|TstBean
 argument_list|>
 name|orderedList
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|TestBean
+name|TstBean
 argument_list|>
 argument_list|(
 name|list

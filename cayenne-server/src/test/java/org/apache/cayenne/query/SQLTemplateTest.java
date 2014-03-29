@@ -283,7 +283,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|SQLTemplate
@@ -338,7 +338,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|String
@@ -418,7 +418,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 decl_stmt|;
 name|String

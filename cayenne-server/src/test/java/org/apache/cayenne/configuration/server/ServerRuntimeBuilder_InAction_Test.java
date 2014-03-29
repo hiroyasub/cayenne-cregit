@@ -299,7 +299,7 @@ name|runtime
 operator|.
 name|getDataSource
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|)
 expr_stmt|;
 block|}

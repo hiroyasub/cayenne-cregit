@@ -319,7 +319,7 @@ name|SQLSelect
 operator|.
 name|dataRowQuery
 argument_list|(
-literal|"testmap"
+literal|"tstmap"
 argument_list|,
 literal|"SELECT * FROM ARTIST"
 argument_list|)

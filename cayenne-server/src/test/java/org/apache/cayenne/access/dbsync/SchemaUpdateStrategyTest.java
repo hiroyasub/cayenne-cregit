@@ -1043,7 +1043,7 @@ argument_list|)
 decl_stmt|;
 name|setStrategy
 argument_list|(
-name|TestSchemaUpdateStrategy
+name|TstSchemaUpdateStrategy
 operator|.
 name|class
 operator|.
@@ -1077,7 +1077,7 @@ operator|.
 name|getSchemaUpdateStrategy
 argument_list|()
 operator|instanceof
-name|TestSchemaUpdateStrategy
+name|TstSchemaUpdateStrategy
 argument_list|)
 expr_stmt|;
 block|}

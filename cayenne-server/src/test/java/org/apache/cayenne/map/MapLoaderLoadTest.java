@@ -594,7 +594,7 @@ name|loadDataMap
 argument_list|(
 name|getMapXml
 argument_list|(
-literal|"testmap.map.xml"
+literal|"tstmap.map.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -712,7 +712,7 @@ name|map
 operator|.
 name|getObjEntity
 argument_list|(
-literal|"ArtistCallbackTest"
+literal|"ArtistCallback"
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -761,7 +761,7 @@ name|loadDataMap
 argument_list|(
 name|getMapXml
 argument_list|(
-literal|"testmap.map.xml"
+literal|"tstmap.map.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;

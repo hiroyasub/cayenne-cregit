@@ -171,7 +171,7 @@ name|unit
 operator|.
 name|util
 operator|.
-name|TestBean
+name|TstBean
 import|;
 end_import
 
@@ -443,11 +443,11 @@ operator|new
 name|CayenneDataObject
 argument_list|()
 decl_stmt|;
-name|TestBean
+name|TstBean
 name|o2
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|()
 decl_stmt|;
 name|o2
@@ -500,7 +500,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|TestBean
+name|TstBean
 operator|.
 name|class
 argument_list|,
@@ -514,7 +514,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|TestBean
+name|TstBean
 operator|.
 name|class
 operator|.

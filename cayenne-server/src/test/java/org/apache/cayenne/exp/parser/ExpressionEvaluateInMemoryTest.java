@@ -275,7 +275,7 @@ name|unit
 operator|.
 name|util
 operator|.
-name|TestBean
+name|TstBean
 import|;
 end_import
 
@@ -582,11 +582,11 @@ argument_list|(
 literal|"property2"
 argument_list|)
 decl_stmt|;
-name|TestBean
+name|TstBean
 name|b1
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|()
 decl_stmt|;
 name|b1
@@ -612,11 +612,11 @@ name|b1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|TestBean
+name|TstBean
 name|b2
 init|=
 operator|new
-name|TestBean
+name|TstBean
 argument_list|()
 decl_stmt|;
 name|b2

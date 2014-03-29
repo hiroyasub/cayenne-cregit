@@ -319,7 +319,7 @@ name|testdo
 operator|.
 name|locking
 operator|.
-name|SoftTest
+name|SoftDelete
 import|;
 end_import
 
@@ -499,7 +499,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-name|SoftTest
+name|SoftDelete
 operator|.
 name|class
 argument_list|)
@@ -521,7 +521,7 @@ name|entity
 operator|.
 name|getAttribute
 argument_list|(
-literal|"SOFT_TEST_ID"
+literal|"ID"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -576,7 +576,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" SET DELETED = ? WHERE SOFT_TEST_ID = ?"
+literal|" SET DELETED = ? WHERE ID = ?"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -599,7 +599,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-name|SoftTest
+name|SoftDelete
 operator|.
 name|class
 argument_list|)
@@ -621,7 +621,7 @@ name|entity
 operator|.
 name|getAttribute
 argument_list|(
-literal|"SOFT_TEST_ID"
+literal|"ID"
 argument_list|)
 argument_list|,
 name|entity
@@ -690,7 +690,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" SET DELETED = ? WHERE SOFT_TEST_ID = ? AND NAME IS NULL"
+literal|" SET DELETED = ? WHERE ID = ? AND NAME IS NULL"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -713,7 +713,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-name|SoftTest
+name|SoftDelete
 operator|.
 name|class
 argument_list|)
@@ -747,7 +747,7 @@ name|entity
 operator|.
 name|getAttribute
 argument_list|(
-literal|"SOFT_TEST_ID"
+literal|"ID"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -846,7 +846,7 @@ literal|" = ? WHERE "
 operator|+
 name|charStart
 operator|+
-literal|"SOFT_TEST_ID"
+literal|"ID"
 operator|+
 name|charEnd
 operator|+
@@ -888,7 +888,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-name|SoftTest
+name|SoftDelete
 operator|.
 name|class
 argument_list|)
@@ -926,14 +926,14 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 specifier|final
-name|SoftTest
+name|SoftDelete
 name|test
 init|=
 name|context
 operator|.
 name|newObject
 argument_list|(
-name|SoftTest
+name|SoftDelete
 operator|.
 name|class
 argument_list|)
@@ -957,7 +957,7 @@ init|=
 operator|new
 name|SelectQuery
 argument_list|(
-name|SoftTest
+name|SoftDelete
 operator|.
 name|class
 argument_list|)
@@ -1121,7 +1121,7 @@ name|SQLTemplate
 argument_list|(
 name|entity
 argument_list|,
-literal|"SELECT * FROM SOFT_TEST"
+literal|"SELECT * FROM SOFT_DELETE"
 argument_list|)
 decl_stmt|;
 name|template
@@ -1166,7 +1166,7 @@ name|SQLTemplate
 argument_list|(
 name|entity
 argument_list|,
-literal|"DELETE FROM SOFT_TEST"
+literal|"DELETE FROM SOFT_DELETE"
 argument_list|)
 argument_list|)
 expr_stmt|;

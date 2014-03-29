@@ -59,7 +59,7 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
-name|_ArtistCallbackTest
+name|_ArtistCallback
 extends|extends
 name|CayenneDataObject
 block|{
