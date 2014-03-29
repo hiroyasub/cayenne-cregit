@@ -70,7 +70,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|JceValueEncryptor
+name|JceValueTransformer
 implements|implements
 name|ValueTransformer
 block|{
@@ -83,7 +83,7 @@ name|FromBytesConverter
 name|postConverter
 decl_stmt|;
 specifier|public
-name|JceValueEncryptor
+name|JceValueTransformer
 parameter_list|(
 name|ToBytesConverter
 name|preConverter
