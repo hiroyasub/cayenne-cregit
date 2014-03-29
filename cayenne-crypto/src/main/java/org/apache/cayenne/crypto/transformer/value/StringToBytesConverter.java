@@ -42,6 +42,14 @@ name|StringToBytesConverter
 implements|implements
 name|ToBytesConverter
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_CHARSET
+init|=
+literal|"UTF-8"
+decl_stmt|;
 specifier|static
 specifier|final
 name|ToBytesConverter
@@ -66,7 +74,7 @@ name|Charset
 operator|.
 name|forName
 argument_list|(
-literal|"UTF-8"
+name|DEFAULT_CHARSET
 argument_list|)
 expr_stmt|;
 block|}

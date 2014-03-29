@@ -38,7 +38,7 @@ specifier|public
 interface|interface
 name|ValueTransformer
 block|{
-comment|/**      * Transforms a value using the provided Cipher. Cipher is assumed to be      * fully initialized and its state reset from any previous operations.      */
+comment|/**      * Transforms a value using the provided Cipher. Cipher is assumed to be      * fully initialized for the right operation (encryption or decryption) and      * its state reset from any previous operations.      */
 name|Object
 name|transform
 parameter_list|(
