@@ -747,7 +747,7 @@ init|=
 operator|new
 name|JceValueTransformer
 argument_list|(
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
@@ -814,7 +814,7 @@ argument_list|(
 name|b1_t
 argument_list|)
 argument_list|,
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|DEFAULT_CHARSET
 argument_list|)
@@ -868,7 +868,7 @@ argument_list|(
 name|b2_t
 argument_list|)
 argument_list|,
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|DEFAULT_CHARSET
 argument_list|)
@@ -894,11 +894,11 @@ init|=
 operator|new
 name|JceValueTransformer
 argument_list|(
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
-name|Base64FromBytesConverter
+name|Base64StringConverter
 operator|.
 name|INSTANCE
 argument_list|)
@@ -974,7 +974,7 @@ argument_list|(
 name|b1_t
 argument_list|)
 argument_list|,
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|DEFAULT_CHARSET
 argument_list|)
@@ -1032,7 +1032,7 @@ argument_list|(
 name|b2_t
 argument_list|)
 argument_list|,
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|DEFAULT_CHARSET
 argument_list|)

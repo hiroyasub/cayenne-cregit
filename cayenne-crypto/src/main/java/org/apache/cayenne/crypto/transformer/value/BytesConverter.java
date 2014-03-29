@@ -25,8 +25,16 @@ end_comment
 
 begin_interface
 interface|interface
-name|ToBytesConverter
+name|BytesConverter
 block|{
+name|Object
+name|fromBytes
+parameter_list|(
+name|byte
+index|[]
+name|bytes
+parameter_list|)
+function_decl|;
 name|byte
 index|[]
 name|toBytes

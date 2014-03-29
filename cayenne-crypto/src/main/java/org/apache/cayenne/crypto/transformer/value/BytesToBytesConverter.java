@@ -24,13 +24,10 @@ comment|/**  * @since 3.2  */
 end_comment
 
 begin_class
-specifier|final
 class|class
 name|BytesToBytesConverter
 implements|implements
-name|ToBytesConverter
-implements|,
-name|FromBytesConverter
+name|BytesConverter
 block|{
 specifier|static
 specifier|final

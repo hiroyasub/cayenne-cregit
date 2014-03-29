@@ -511,7 +511,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|Utf8ToBytesConverter
+name|Utf8StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
@@ -528,7 +528,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|Base64FromBytesConverter
+name|Base64StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
@@ -658,7 +658,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|Base64ToBytesConverter
+name|Base64StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
@@ -675,7 +675,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|Utf8FromBytesConverter
+name|Utf8StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
@@ -807,7 +807,7 @@ argument_list|)
 expr_stmt|;
 name|assertSame
 argument_list|(
-name|Utf8FromBytesConverter
+name|Utf8StringConverter
 operator|.
 name|INSTANCE
 argument_list|,
