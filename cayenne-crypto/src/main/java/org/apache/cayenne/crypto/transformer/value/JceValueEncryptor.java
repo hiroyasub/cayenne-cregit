@@ -30,15 +30,27 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An encryptor or decryptor of a single value.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
+class|class
+name|JceValueEncryptor
+implements|implements
 name|ValueTransformer
 block|{
-comment|/**      * Transforms a value using the provided Cipher. Cipher is assumed to be      * fully initialized and its state reset from any previous operations.      */
+specifier|public
+name|JceValueEncryptor
+parameter_list|(
+name|ToBytesConverter
+name|toBytes
+parameter_list|)
+block|{
+block|}
+annotation|@
+name|Override
+specifier|public
 name|Object
 name|transform
 parameter_list|(
@@ -48,9 +60,14 @@ parameter_list|,
 name|Object
 name|value
 parameter_list|)
-function_decl|;
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

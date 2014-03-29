@@ -73,6 +73,20 @@ name|ValueTransformerFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbAttribute
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -319,8 +333,8 @@ specifier|public
 name|ValueTransformer
 name|decryptor
 parameter_list|(
-name|int
-name|jdbcType
+name|DbAttribute
+name|a
 parameter_list|)
 block|{
 return|return
@@ -333,8 +347,8 @@ specifier|public
 name|ValueTransformer
 name|encryptor
 parameter_list|(
-name|int
-name|jdbcType
+name|DbAttribute
+name|a
 parameter_list|)
 block|{
 return|return

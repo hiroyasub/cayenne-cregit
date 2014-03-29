@@ -19,32 +19,18 @@ name|value
 package|;
 end_package
 
-begin_import
-import|import
-name|javax
-operator|.
-name|crypto
-operator|.
-name|Cipher
-import|;
-end_import
-
 begin_comment
-comment|/**  * An encryptor or decryptor of a single value.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
 begin_interface
-specifier|public
 interface|interface
-name|ValueTransformer
+name|ToBytesConverter
 block|{
-comment|/**      * Transforms a value using the provided Cipher. Cipher is assumed to be      * fully initialized and its state reset from any previous operations.      */
-name|Object
-name|transform
+name|byte
+index|[]
+name|toBytes
 parameter_list|(
-name|Cipher
-name|cipher
-parameter_list|,
 name|Object
 name|value
 parameter_list|)

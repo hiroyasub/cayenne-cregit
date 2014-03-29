@@ -19,6 +19,20 @@ name|value
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbAttribute
+import|;
+end_import
+
 begin_comment
 comment|/**  * A factory that creates transformers for encryption/decryption of individual  * values.  *   * @since 3.2  */
 end_comment
@@ -31,15 +45,15 @@ block|{
 name|ValueTransformer
 name|encryptor
 parameter_list|(
-name|int
-name|jdbcType
+name|DbAttribute
+name|a
 parameter_list|)
 function_decl|;
 name|ValueTransformer
 name|decryptor
 parameter_list|(
-name|int
-name|jdbcType
+name|DbAttribute
+name|a
 parameter_list|)
 function_decl|;
 block|}

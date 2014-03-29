@@ -437,9 +437,6 @@ name|cd
 operator|.
 name|getAttribute
 argument_list|()
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -641,9 +638,6 @@ argument_list|(
 name|b
 operator|.
 name|getAttribute
-argument_list|()
-operator|.
-name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
