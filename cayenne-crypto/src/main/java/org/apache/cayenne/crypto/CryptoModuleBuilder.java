@@ -175,6 +175,8 @@ name|crypto
 operator|.
 name|transformer
 operator|.
+name|value
+operator|.
 name|ValueTransformerFactory
 import|;
 end_import

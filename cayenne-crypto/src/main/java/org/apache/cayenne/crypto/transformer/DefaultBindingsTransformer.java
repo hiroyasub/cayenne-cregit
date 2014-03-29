@@ -45,6 +45,24 @@ name|BatchParameterBinding
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|crypto
+operator|.
+name|transformer
+operator|.
+name|value
+operator|.
+name|ValueTransformer
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.2  */
 end_comment

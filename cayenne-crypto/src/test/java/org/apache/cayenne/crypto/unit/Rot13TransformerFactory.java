@@ -49,6 +49,8 @@ name|crypto
 operator|.
 name|transformer
 operator|.
+name|value
+operator|.
 name|ValueTransformer
 import|;
 end_import
@@ -64,6 +66,8 @@ operator|.
 name|crypto
 operator|.
 name|transformer
+operator|.
+name|value
 operator|.
 name|ValueTransformerFactory
 import|;

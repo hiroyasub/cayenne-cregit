@@ -14,34 +14,63 @@ operator|.
 name|crypto
 operator|.
 name|transformer
+operator|.
+name|value
 package|;
 end_package
 
 begin_comment
-comment|/**  * A factory that creates transformers for encryption/decryption of individual  * values.  *   * @since 3.2  */
+comment|/**  * A {@link ValueTransformerFactory} that creates encryptors/decryptors that are  * taking advantage of the JCE (Java Cryptography Extension) ciphers.  *   * @since 3.2  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
+class|class
+name|JceTransformerFactory
+implements|implements
 name|ValueTransformerFactory
 block|{
-name|ValueTransformer
-name|encryptor
-parameter_list|(
-name|int
-name|jdbcType
-parameter_list|)
-function_decl|;
+specifier|public
+name|JceTransformerFactory
+parameter_list|()
+block|{
+comment|// TODO Auto-generated constructor stub
+block|}
+annotation|@
+name|Override
+specifier|public
 name|ValueTransformer
 name|decryptor
 parameter_list|(
 name|int
 name|jdbcType
 parameter_list|)
-function_decl|;
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+literal|null
+return|;
 block|}
-end_interface
+annotation|@
+name|Override
+specifier|public
+name|ValueTransformer
+name|encryptor
+parameter_list|(
+name|int
+name|jdbcType
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"TODO"
+argument_list|)
+throw|;
+block|}
+block|}
+end_class
 
 end_unit
 
