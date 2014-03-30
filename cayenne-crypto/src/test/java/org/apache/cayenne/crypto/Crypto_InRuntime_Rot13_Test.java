@@ -226,7 +226,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|Crypto_InRuntime_Test
+name|Crypto_InRuntime_Rot13_Test
 block|{
 specifier|private
 name|ServerRuntime
