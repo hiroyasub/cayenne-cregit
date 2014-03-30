@@ -206,7 +206,7 @@ name|delegate
 decl_stmt|;
 specifier|private
 name|TransformerFactory
-name|cryptoFactory
+name|transformerFactory
 decl_stmt|;
 specifier|public
 name|CryptoRowReaderFactoryDecorator
@@ -219,7 +219,7 @@ parameter_list|,
 annotation|@
 name|Inject
 name|TransformerFactory
-name|cryptoFactory
+name|transformerFactory
 parameter_list|)
 block|{
 name|this
@@ -230,9 +230,9 @@ name|delegate
 expr_stmt|;
 name|this
 operator|.
-name|cryptoFactory
+name|transformerFactory
 operator|=
-name|cryptoFactory
+name|transformerFactory
 expr_stmt|;
 block|}
 annotation|@
@@ -315,7 +315,7 @@ condition|)
 block|{
 name|decryptor
 operator|=
-name|cryptoFactory
+name|transformerFactory
 operator|.
 name|decryptor
 argument_list|(

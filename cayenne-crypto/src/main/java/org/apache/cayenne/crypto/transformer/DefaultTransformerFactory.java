@@ -368,7 +368,7 @@ argument_list|()
 decl_stmt|;
 name|String
 index|[]
-name|keys
+name|mapKeys
 init|=
 operator|new
 name|String
@@ -414,7 +414,7 @@ name|i
 argument_list|)
 index|]
 decl_stmt|;
-name|keys
+name|mapKeys
 index|[
 name|i
 index|]
@@ -444,7 +444,7 @@ return|return
 operator|new
 name|DefaultMapTransformer
 argument_list|(
-name|keys
+name|mapKeys
 argument_list|,
 name|transformers
 argument_list|,

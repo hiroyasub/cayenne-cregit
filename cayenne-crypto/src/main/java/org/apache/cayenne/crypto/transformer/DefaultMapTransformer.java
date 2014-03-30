@@ -69,7 +69,7 @@ block|{
 specifier|private
 name|String
 index|[]
-name|keys
+name|mapKeys
 decl_stmt|;
 specifier|private
 name|ValueTransformer
@@ -85,7 +85,7 @@ name|DefaultMapTransformer
 parameter_list|(
 name|String
 index|[]
-name|keys
+name|mapKeys
 parameter_list|,
 name|ValueTransformer
 index|[]
@@ -97,9 +97,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|keys
+name|mapKeys
 operator|=
-name|keys
+name|mapKeys
 expr_stmt|;
 name|this
 operator|.
@@ -132,7 +132,7 @@ block|{
 name|int
 name|len
 init|=
-name|keys
+name|mapKeys
 operator|.
 name|length
 decl_stmt|;
@@ -158,7 +158,7 @@ name|map
 operator|.
 name|get
 argument_list|(
-name|keys
+name|mapKeys
 index|[
 name|i
 index|]
@@ -190,7 +190,7 @@ name|map
 operator|.
 name|put
 argument_list|(
-name|keys
+name|mapKeys
 index|[
 name|i
 index|]
