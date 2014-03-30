@@ -134,7 +134,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|KeyStoreKeySourceTest
+name|JceksKeySourceTest
 block|{
 specifier|public
 specifier|static
@@ -207,7 +207,7 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 operator|new
-name|KeyStoreKeySource
+name|JceksKeySource
 argument_list|(
 name|props
 argument_list|,
@@ -261,7 +261,7 @@ name|put
 argument_list|(
 name|CryptoConstants
 operator|.
-name|JCEKS_KEYSTORE_URL
+name|KEYSTORE_URL
 argument_list|,
 name|url
 operator|.
@@ -299,11 +299,11 @@ argument_list|,
 name|TEST_KEY_PASS
 argument_list|)
 expr_stmt|;
-name|KeyStoreKeySource
+name|JceksKeySource
 name|ks
 init|=
 operator|new
-name|KeyStoreKeySource
+name|JceksKeySource
 argument_list|(
 name|props
 argument_list|,

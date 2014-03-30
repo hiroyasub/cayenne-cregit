@@ -15,6 +15,22 @@ name|crypto
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|crypto
+operator|.
+name|key
+operator|.
+name|KeySource
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.2  */
 end_comment
@@ -66,14 +82,14 @@ name|CIPHER_PADDING
 init|=
 literal|"cayenne.crypto.cipher.padding"
 decl_stmt|;
-comment|/**      * Defines a URL of a KeyStore of "jceks" type - the only type that supports      * secret key storage.      */
+comment|/**      * Defines a URL of a KeyStore. The actual format depends on the      * {@link KeySource} implementation that will be reading it. E.g. it can be      * a "jceks" Java key store.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|JCEKS_KEYSTORE_URL
+name|KEYSTORE_URL
 init|=
-literal|"cayenne.crypto.jceks.keystore.url"
+literal|"cayenne.crypto.keystore.url"
 decl_stmt|;
 comment|/**      * A password to access a secret key within the keystore.      */
 specifier|public

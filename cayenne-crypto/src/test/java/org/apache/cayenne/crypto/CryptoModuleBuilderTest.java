@@ -77,7 +77,7 @@ name|crypto
 operator|.
 name|key
 operator|.
-name|KeyStoreKeySourceTest
+name|JceksKeySourceTest
 import|;
 end_import
 
@@ -172,20 +172,20 @@ argument_list|()
 operator|.
 name|keyPassword
 argument_list|(
-name|KeyStoreKeySourceTest
+name|JceksKeySourceTest
 operator|.
 name|TEST_KEY_PASS
 argument_list|)
 operator|.
 name|keyStore
 argument_list|(
-name|KeyStoreKeySourceTest
+name|JceksKeySourceTest
 operator|.
 name|class
 operator|.
 name|getResource
 argument_list|(
-name|KeyStoreKeySourceTest
+name|JceksKeySourceTest
 operator|.
 name|KS1_JCEKS
 argument_list|)

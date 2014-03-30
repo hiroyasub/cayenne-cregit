@@ -152,13 +152,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link KeySource} based on a JDK KeyStore. DI properties are used to locate  * the KeyStore and keys within it. Since Java only supports storing secret keys  * in a "jceks" type of of KeyStore, this class assumes that provided keystore  * is "jceks", and will throw if it is of a different type.  *   * @since 3.2  */
+comment|/**  * A {@link KeySource} based on a Java "jceks" KeyStore. Uses  * {@link CryptoConstants#KEYSTORE_URL} to locate the keystore and  * {@link CryptoConstants#KEY_PASSWORD} to read the secret key.  *   * @since 3.2  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|KeyStoreKeySource
+name|JceksKeySource
 implements|implements
 name|KeySource
 block|{
@@ -181,7 +181,7 @@ index|[]
 name|keyPassword
 decl_stmt|;
 specifier|public
-name|KeyStoreKeySource
+name|JceksKeySource
 parameter_list|(
 annotation|@
 name|Inject
@@ -224,7 +224,7 @@ name|get
 argument_list|(
 name|CryptoConstants
 operator|.
-name|JCEKS_KEYSTORE_URL
+name|KEYSTORE_URL
 argument_list|)
 decl_stmt|;
 if|if
@@ -242,7 +242,7 @@ literal|"KeyStore URL is not set. Property name: "
 operator|+
 name|CryptoConstants
 operator|.
-name|JCEKS_KEYSTORE_URL
+name|KEYSTORE_URL
 argument_list|)
 throw|;
 block|}

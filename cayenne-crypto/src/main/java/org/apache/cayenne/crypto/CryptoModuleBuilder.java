@@ -157,7 +157,7 @@ name|crypto
 operator|.
 name|key
 operator|.
-name|KeyStoreKeySource
+name|JceksKeySource
 import|;
 end_import
 
@@ -443,7 +443,7 @@ name|this
 operator|.
 name|keySourceType
 operator|=
-name|KeyStoreKeySource
+name|JceksKeySource
 operator|.
 name|class
 expr_stmt|;
@@ -631,7 +631,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Sets a password used that unlocks a secret key.      */
+comment|/**      * Sets a password that unlocks a secret key.      */
 specifier|public
 name|CryptoModuleBuilder
 name|keyPassword
@@ -988,7 +988,7 @@ name|put
 argument_list|(
 name|CryptoConstants
 operator|.
-name|JCEKS_KEYSTORE_URL
+name|KEYSTORE_URL
 argument_list|,
 name|keyStoreUrl
 argument_list|)
