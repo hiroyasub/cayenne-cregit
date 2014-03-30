@@ -57,6 +57,31 @@ name|CIPHER_PADDING
 init|=
 literal|"cayenne.crypto.cipher.padding"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|KEYSTORE_URL
+init|=
+literal|"cayenne.crypto.keystore.url"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|KEYSTORE_PASSWORD
+init|=
+literal|"cayenne.crypto.keystore.password"
+decl_stmt|;
+comment|/**      * A password to access a secret key within the keystore. (As opposed to      * keystore password specified with KEYSTORE_PASSWORD property).      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|KEY_PASSWORD
+init|=
+literal|"cayenne.crypto.key.password"
+decl_stmt|;
 block|}
 end_interface
 
