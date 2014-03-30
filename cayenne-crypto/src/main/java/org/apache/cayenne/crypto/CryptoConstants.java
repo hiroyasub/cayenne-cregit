@@ -66,13 +66,14 @@ name|CIPHER_PADDING
 init|=
 literal|"cayenne.crypto.cipher.padding"
 decl_stmt|;
+comment|/**      * Defines a URL of a KeyStore of "jceks" type - the only type that supports      * secret key storage.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
-name|KEYSTORE_URL
+name|JCEKS_KEYSTORE_URL
 init|=
-literal|"cayenne.crypto.keystore.url"
+literal|"cayenne.crypto.jceks.keystore.url"
 decl_stmt|;
 comment|/**      * A password to access a secret key within the keystore.      */
 specifier|public

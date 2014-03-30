@@ -261,7 +261,7 @@ name|put
 argument_list|(
 name|CryptoConstants
 operator|.
-name|KEYSTORE_URL
+name|JCEKS_KEYSTORE_URL
 argument_list|,
 name|url
 operator|.

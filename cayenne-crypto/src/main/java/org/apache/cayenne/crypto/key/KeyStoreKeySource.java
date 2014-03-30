@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link KeySource} based on a JDK KeyStore. DI properties are used to locate  * the KeyStore and keys within it.  *   * @since 3.2  */
+comment|/**  * A {@link KeySource} based on a JDK KeyStore. DI properties are used to locate  * the KeyStore and keys within it. Since Java only supports storing secret keys  * in a "jceks" type of of KeyStore, this class assumes that provided keystore  * is "jceks", and will throw if it is of a different type.  *   * @since 3.2  */
 end_comment
 
 begin_class
@@ -224,7 +224,7 @@ name|get
 argument_list|(
 name|CryptoConstants
 operator|.
-name|KEYSTORE_URL
+name|JCEKS_KEYSTORE_URL
 argument_list|)
 decl_stmt|;
 if|if
@@ -242,7 +242,7 @@ literal|"KeyStore URL is not set. Property name: "
 operator|+
 name|CryptoConstants
 operator|.
-name|KEYSTORE_URL
+name|JCEKS_KEYSTORE_URL
 argument_list|)
 throw|;
 block|}

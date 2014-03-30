@@ -651,6 +651,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * Instructs builder to use a given file to load keystore data. The KeyStore      * must be of "jceks" type and contain all needed secret keys for the target      * database.      */
 specifier|public
 name|CryptoModuleBuilder
 name|keyStore
@@ -681,6 +682,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * Instructs builder to use a given URL to load keystore data. The KeyStore      * must be of "jceks" type and contain all needed secret keys for the target      * database.      */
 specifier|public
 name|CryptoModuleBuilder
 name|keyStore
@@ -711,6 +713,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * Instructs builder to use a given URL to load keystore data. The KeyStore      * must be of "jceks" type and contain all needed secret keys for the target      * database.      */
 specifier|public
 name|CryptoModuleBuilder
 name|keyStore
@@ -985,7 +988,7 @@ name|put
 argument_list|(
 name|CryptoConstants
 operator|.
-name|KEYSTORE_URL
+name|JCEKS_KEYSTORE_URL
 argument_list|,
 name|keyStoreUrl
 argument_list|)
