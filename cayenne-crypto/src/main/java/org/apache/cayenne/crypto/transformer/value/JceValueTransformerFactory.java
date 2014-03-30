@@ -184,7 +184,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|JceTransformerFactory
+name|JceValueTransformerFactory
 implements|implements
 name|ValueTransformerFactory
 block|{
@@ -243,7 +243,7 @@ argument_list|>
 name|decryptors
 decl_stmt|;
 specifier|public
-name|JceTransformerFactory
+name|JceValueTransformerFactory
 parameter_list|()
 block|{
 name|this

@@ -136,7 +136,7 @@ specifier|public
 class|class
 name|KeyStoreKeySourceTest
 block|{
-specifier|private
+specifier|public
 specifier|static
 specifier|final
 name|char
@@ -147,6 +147,14 @@ literal|"testkeypass"
 operator|.
 name|toCharArray
 argument_list|()
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|KS1_JCEKS
+init|=
+literal|"ks1.jceks"
 decl_stmt|;
 annotation|@
 name|Test
@@ -222,7 +230,7 @@ argument_list|()
 operator|.
 name|getResource
 argument_list|(
-literal|"ks1.jceks"
+name|KS1_JCEKS
 argument_list|)
 decl_stmt|;
 name|assertNotNull
