@@ -24,12 +24,21 @@ specifier|public
 interface|interface
 name|CryptoConstants
 block|{
-comment|/**      * An injection key for the map of the crypto properties.      */
+comment|/**      * An injection key for the Map<String, String> of the crypto properties.      */
 specifier|public
 specifier|static
 specifier|final
 name|String
 name|PROPERTIES_MAP
+init|=
+literal|"cayenne.crypto.properties"
+decl_stmt|;
+comment|/**      * An injection key for the map Map<String, char[]> of credentials.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CREDENTIALS_MAP
 init|=
 literal|"cayenne.crypto.properties"
 decl_stmt|;
@@ -65,15 +74,7 @@ name|KEYSTORE_URL
 init|=
 literal|"cayenne.crypto.keystore.url"
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|KEYSTORE_PASSWORD
-init|=
-literal|"cayenne.crypto.keystore.password"
-decl_stmt|;
-comment|/**      * A password to access a secret key within the keystore. (As opposed to      * keystore password specified with KEYSTORE_PASSWORD property).      */
+comment|/**      * A password to access a secret key within the keystore.      */
 specifier|public
 specifier|static
 specifier|final
