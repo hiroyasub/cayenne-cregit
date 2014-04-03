@@ -100,6 +100,15 @@ name|KEY_PASSWORD
 init|=
 literal|"cayenne.crypto.key.password"
 decl_stmt|;
+comment|/**      * A symbolic name of the default encryption key in the keystore.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_KEY_ALIAS
+init|=
+literal|"cayenne.crypto.key.alias"
+decl_stmt|;
 block|}
 end_interface
 
