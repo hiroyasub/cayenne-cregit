@@ -49,7 +49,7 @@ name|PROPERTIES_MAP
 init|=
 literal|"cayenne.crypto.properties"
 decl_stmt|;
-comment|/**      * An injection key for the map Map<String, char[]> of credentials.      */
+comment|/**      * An injection key for the Map<String, char[]> of credentials.      */
 specifier|public
 specifier|static
 specifier|final
