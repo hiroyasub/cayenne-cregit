@@ -159,7 +159,7 @@ name|crypto
 operator|.
 name|unit
 operator|.
-name|CryptoTestUtils
+name|CryptoUnitUtils
 import|;
 end_import
 
@@ -213,7 +213,7 @@ name|byte
 index|[]
 name|keyBytes
 init|=
-name|CryptoTestUtils
+name|CryptoUnitUtils
 operator|.
 name|hexToBytes
 argument_list|(
@@ -459,7 +459,7 @@ name|byte
 index|[]
 name|ivBytes
 init|=
-name|CryptoTestUtils
+name|CryptoUnitUtils
 operator|.
 name|hexToBytes
 argument_list|(

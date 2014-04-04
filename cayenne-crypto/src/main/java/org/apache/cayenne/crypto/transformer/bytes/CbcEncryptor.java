@@ -51,6 +51,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|crypto
@@ -170,12 +180,6 @@ name|cipher
 expr_stmt|;
 name|this
 operator|.
-name|iv
-operator|=
-name|seedIv
-expr_stmt|;
-name|this
-operator|.
 name|blockSize
 operator|=
 name|cipher
@@ -185,20 +189,21 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|iv
+name|seedIv
 operator|.
 name|length
 operator|!=
 name|blockSize
 condition|)
 block|{
+comment|// TODO: perhaps we should truncate/expand it if there's a mismatch
 throw|throw
 operator|new
 name|CayenneCryptoException
 argument_list|(
 literal|"IV size is expected to be the same as block size. Was "
 operator|+
-name|iv
+name|seedIv
 operator|.
 name|length
 operator|+
@@ -208,6 +213,21 @@ name|blockSize
 argument_list|)
 throw|;
 block|}
+comment|// making a copy - we are modifying this array, something that should
+comment|// not be visible oustide this object.
+name|this
+operator|.
+name|iv
+operator|=
+name|Arrays
+operator|.
+name|copyOf
+argument_list|(
+name|seedIv
+argument_list|,
+name|blockSize
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -278,7 +298,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-specifier|protected
+specifier|private
 name|void
 name|doEncrypt
 parameter_list|(
