@@ -40,6 +40,11 @@ name|String
 name|alias
 parameter_list|)
 function_decl|;
+comment|/**      * Returns an alias of the default key.      */
+name|String
+name|getDefaultKeyAlias
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

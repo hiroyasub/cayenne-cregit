@@ -269,6 +269,17 @@ name|toExternalForm
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|props
+operator|.
+name|put
+argument_list|(
+name|CryptoConstants
+operator|.
+name|DEFAULT_KEY_ALIAS
+argument_list|,
+literal|"k2"
+argument_list|)
+expr_stmt|;
 name|Map
 argument_list|<
 name|String

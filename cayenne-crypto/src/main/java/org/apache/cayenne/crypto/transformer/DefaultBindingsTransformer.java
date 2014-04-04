@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|javax
-operator|.
-name|crypto
-operator|.
-name|Cipher
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -42,6 +32,24 @@ operator|.
 name|batch
 operator|.
 name|BatchParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|crypto
+operator|.
+name|transformer
+operator|.
+name|bytes
+operator|.
+name|BytesEncryptor
 import|;
 end_import
 
@@ -85,8 +93,8 @@ index|[]
 name|transformers
 decl_stmt|;
 specifier|private
-name|Cipher
-name|cipher
+name|BytesEncryptor
+name|encryptor
 decl_stmt|;
 specifier|public
 name|DefaultBindingsTransformer
@@ -99,8 +107,8 @@ name|ValueEncryptor
 index|[]
 name|transformers
 parameter_list|,
-name|Cipher
-name|cipher
+name|BytesEncryptor
+name|encryptor
 parameter_list|)
 block|{
 name|this
@@ -117,9 +125,9 @@ name|transformers
 expr_stmt|;
 name|this
 operator|.
-name|cipher
+name|encryptor
 operator|=
-name|cipher
+name|encryptor
 expr_stmt|;
 block|}
 annotation|@
@@ -176,7 +184,7 @@ index|]
 operator|.
 name|encrypt
 argument_list|(
-name|cipher
+name|encryptor
 argument_list|,
 name|b
 operator|.

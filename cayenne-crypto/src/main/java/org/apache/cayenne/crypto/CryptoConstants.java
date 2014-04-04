@@ -107,7 +107,7 @@ specifier|final
 name|String
 name|DEFAULT_KEY_ALIAS
 init|=
-literal|"cayenne.crypto.key.alias"
+literal|"cayenne.crypto.key.defaultalias"
 decl_stmt|;
 block|}
 end_interface

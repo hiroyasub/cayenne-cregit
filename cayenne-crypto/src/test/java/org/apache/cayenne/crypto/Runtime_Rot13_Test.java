@@ -28,6 +28,18 @@ import|;
 end_import
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -108,6 +120,22 @@ operator|.
 name|db
 operator|.
 name|Table1
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|crypto
+operator|.
+name|key
+operator|.
+name|KeySource
 import|;
 end_import
 
@@ -241,6 +269,21 @@ argument_list|(
 name|Rot13TransformerFactory
 operator|.
 name|class
+argument_list|)
+operator|.
+name|keySource
+argument_list|(
+name|mock
+argument_list|(
+name|KeySource
+operator|.
+name|class
+argument_list|)
+argument_list|)
+operator|.
+name|cipherMode
+argument_list|(
+literal|"dummy"
 argument_list|)
 operator|.
 name|build

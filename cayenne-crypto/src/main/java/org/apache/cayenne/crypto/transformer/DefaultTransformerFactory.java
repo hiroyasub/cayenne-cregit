@@ -91,9 +91,9 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|cipher
+name|map
 operator|.
-name|CipherFactory
+name|ColumnMapper
 import|;
 end_import
 
@@ -107,9 +107,11 @@ name|cayenne
 operator|.
 name|crypto
 operator|.
-name|map
+name|transformer
 operator|.
-name|ColumnMapper
+name|bytes
+operator|.
+name|BytesTransformerFactory
 import|;
 end_import
 
@@ -207,8 +209,8 @@ implements|implements
 name|TransformerFactory
 block|{
 specifier|private
-name|CipherFactory
-name|cipherFactory
+name|BytesTransformerFactory
+name|bytesTransformerFactory
 decl_stmt|;
 specifier|private
 name|ColumnMapper
@@ -233,8 +235,8 @@ name|transformerFactory
 parameter_list|,
 annotation|@
 name|Inject
-name|CipherFactory
-name|cipherFactory
+name|BytesTransformerFactory
+name|bytesTransformerFactory
 parameter_list|)
 block|{
 name|this
@@ -251,9 +253,9 @@ name|transformerFactory
 expr_stmt|;
 name|this
 operator|.
-name|cipherFactory
+name|bytesTransformerFactory
 operator|=
-name|cipherFactory
+name|bytesTransformerFactory
 expr_stmt|;
 block|}
 annotation|@
@@ -466,9 +468,9 @@ name|mapKeys
 argument_list|,
 name|transformers
 argument_list|,
-name|cipherFactory
+name|bytesTransformerFactory
 operator|.
-name|cipher
+name|decryptor
 argument_list|()
 argument_list|)
 return|;
@@ -668,9 +670,9 @@ name|positions
 argument_list|,
 name|transformers
 argument_list|,
-name|cipherFactory
+name|bytesTransformerFactory
 operator|.
-name|cipher
+name|encryptor
 argument_list|()
 argument_list|)
 return|;

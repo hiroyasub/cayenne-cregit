@@ -61,7 +61,7 @@ name|crypto
 operator|.
 name|key
 operator|.
-name|KeySource
+name|JceksKeySourceTest
 import|;
 end_import
 
@@ -77,7 +77,7 @@ name|crypto
 operator|.
 name|key
 operator|.
-name|JceksKeySourceTest
+name|KeySource
 import|;
 end_import
 
@@ -198,6 +198,11 @@ operator|.
 name|class
 argument_list|)
 operator|.
+name|defaultKeyAlias
+argument_list|(
+literal|"k1"
+argument_list|)
+operator|.
 name|build
 argument_list|()
 decl_stmt|;
@@ -246,6 +251,21 @@ name|k1
 operator|.
 name|getAlgorithm
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|String
+name|dkName
+init|=
+name|ks
+operator|.
+name|getDefaultKeyAlias
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|"k1"
+argument_list|,
+name|dkName
 argument_list|)
 expr_stmt|;
 block|}

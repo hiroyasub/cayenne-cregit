@@ -21,11 +21,19 @@ end_package
 
 begin_import
 import|import
-name|javax
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
 operator|.
 name|crypto
 operator|.
-name|Cipher
+name|transformer
+operator|.
+name|bytes
+operator|.
+name|BytesDecryptor
 import|;
 end_import
 
@@ -42,8 +50,8 @@ comment|/**      * Transforms a value using the provided Cipher. Cipher is assum
 name|Object
 name|decrypt
 parameter_list|(
-name|Cipher
-name|cipher
+name|BytesDecryptor
+name|bytesDecryptor
 parameter_list|,
 name|Object
 name|value

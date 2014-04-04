@@ -244,16 +244,6 @@ literal|"/"
 operator|+
 name|padding
 expr_stmt|;
-name|this
-operator|.
-name|blockSize
-operator|=
-name|cipher
-argument_list|()
-operator|.
-name|getBlockSize
-argument_list|()
-expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -317,6 +307,27 @@ name|int
 name|blockSize
 parameter_list|()
 block|{
+comment|// lazy init to prevent Cipher initialization in constructor.
+comment|// synchronization is not required - if we do it multiple times ,
+comment|// shouldn't be a big deal...
+if|if
+condition|(
+name|blockSize
+operator|==
+literal|0
+condition|)
+block|{
+name|this
+operator|.
+name|blockSize
+operator|=
+name|cipher
+argument_list|()
+operator|.
+name|getBlockSize
+argument_list|()
+expr_stmt|;
+block|}
 return|return
 name|blockSize
 return|;
