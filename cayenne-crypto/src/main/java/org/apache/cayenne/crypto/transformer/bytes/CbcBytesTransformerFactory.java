@@ -127,8 +127,11 @@ name|KeySource
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 3.2  */
+end_comment
+
 begin_class
-specifier|public
 class|class
 name|CbcBytesTransformerFactory
 implements|implements

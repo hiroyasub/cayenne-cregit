@@ -34,7 +34,6 @@ import|;
 end_import
 
 begin_class
-specifier|public
 class|class
 name|EncryptorWithKeyName
 implements|implements
@@ -53,7 +52,6 @@ name|byte
 index|[]
 name|keyName
 decl_stmt|;
-specifier|public
 name|EncryptorWithKeyName
 parameter_list|(
 name|BytesTransformer

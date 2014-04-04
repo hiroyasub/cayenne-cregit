@@ -120,7 +120,6 @@ comment|/**  * A {@link BytesTransformer} that encrypts the provided bytes. The 
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|CbcEncryptor
 implements|implements
