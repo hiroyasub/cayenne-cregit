@@ -28,25 +28,14 @@ specifier|public
 interface|interface
 name|BytesEncryptor
 block|{
-comment|/**      * Returns the size of the transformed data in bytes. This information      * allows the caller to pre-size the output array.      */
-name|int
-name|getOutputSize
-parameter_list|(
-name|int
-name|inputLength
-parameter_list|)
-function_decl|;
-comment|/**      * Transform input bytes using default encryption key.      */
-name|void
+comment|/**      * Transform input bytes using default encryption key.      *       * @param input      *            a buffer with unencrypted bytes.      * @param outputOffset      *            how much empty space to leave in the beginning of the returned      *            output array. This would allow the caller to prepend extra      *            data to the encrypted array.      */
+name|byte
+index|[]
 name|encrypt
 parameter_list|(
 name|byte
 index|[]
 name|input
-parameter_list|,
-name|byte
-index|[]
-name|output
 parameter_list|,
 name|int
 name|outputOffset
