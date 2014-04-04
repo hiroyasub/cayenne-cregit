@@ -91,7 +91,7 @@ name|KEYSTORE_URL
 init|=
 literal|"cayenne.crypto.keystore.url"
 decl_stmt|;
-comment|/**      * A password to access a secret key within the keystore.      */
+comment|/**      * A password to access all secret keys within the keystore.      */
 specifier|public
 specifier|static
 specifier|final
@@ -105,9 +105,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|DEFAULT_KEY_ALIAS
+name|ENCRYPTION_KEY_ALIAS
 init|=
-literal|"cayenne.crypto.key.defaultalias"
+literal|"cayenne.crypto.key.enc.alias"
 decl_stmt|;
 block|}
 end_interface

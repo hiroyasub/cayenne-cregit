@@ -275,7 +275,7 @@ name|put
 argument_list|(
 name|CryptoConstants
 operator|.
-name|DEFAULT_KEY_ALIAS
+name|ENCRYPTION_KEY_ALIAS
 argument_list|,
 literal|"k2"
 argument_list|)

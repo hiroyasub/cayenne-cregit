@@ -304,7 +304,7 @@ name|get
 argument_list|(
 name|CryptoConstants
 operator|.
-name|DEFAULT_KEY_ALIAS
+name|ENCRYPTION_KEY_ALIAS
 argument_list|)
 expr_stmt|;
 if|if
@@ -322,7 +322,7 @@ literal|"Default key alias is not set. Property name: "
 operator|+
 name|CryptoConstants
 operator|.
-name|DEFAULT_KEY_ALIAS
+name|ENCRYPTION_KEY_ALIAS
 argument_list|)
 throw|;
 block|}
