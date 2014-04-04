@@ -192,7 +192,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|JceValueTransformerTest
+name|DefaultEncryptorTest
 block|{
 specifier|private
 name|Cipher
@@ -305,11 +305,11 @@ name|IllegalBlockSizeException
 throws|,
 name|BadPaddingException
 block|{
-name|JceValueTransformer
+name|DefaultEncryptor
 name|e
 init|=
 operator|new
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|(
 name|BytesToBytesConverter
 operator|.
@@ -356,7 +356,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -402,7 +402,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -446,11 +446,11 @@ name|void
 name|testTransform_BytesToBytes_DifferentSizes
 parameter_list|()
 block|{
-name|JceValueTransformer
+name|DefaultEncryptor
 name|e
 init|=
 operator|new
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|(
 name|BytesToBytesConverter
 operator|.
@@ -588,7 +588,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -617,7 +617,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -646,7 +646,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -675,7 +675,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -706,7 +706,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -741,11 +741,11 @@ name|IllegalBlockSizeException
 throws|,
 name|BadPaddingException
 block|{
-name|JceValueTransformer
+name|DefaultEncryptor
 name|e
 init|=
 operator|new
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|(
 name|Utf8StringConverter
 operator|.
@@ -776,7 +776,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -830,7 +830,7 @@ index|[]
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -888,11 +888,11 @@ name|IllegalBlockSizeException
 throws|,
 name|BadPaddingException
 block|{
-name|JceValueTransformer
+name|DefaultEncryptor
 name|e
 init|=
 operator|new
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|(
 name|Utf8StringConverter
 operator|.
@@ -930,7 +930,7 @@ name|String
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,
@@ -988,7 +988,7 @@ name|String
 operator|)
 name|e
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|encCipher
 argument_list|,

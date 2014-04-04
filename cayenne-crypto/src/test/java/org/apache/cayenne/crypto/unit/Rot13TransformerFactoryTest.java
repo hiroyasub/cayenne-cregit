@@ -85,7 +85,7 @@ name|DbAttribute
 argument_list|()
 argument_list|)
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 literal|null
 argument_list|,
@@ -121,7 +121,7 @@ name|DbAttribute
 argument_list|()
 argument_list|)
 operator|.
-name|transform
+name|decrypt
 argument_list|(
 literal|null
 argument_list|,

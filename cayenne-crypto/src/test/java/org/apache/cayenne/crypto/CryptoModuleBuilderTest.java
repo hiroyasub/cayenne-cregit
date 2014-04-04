@@ -95,7 +95,7 @@ name|transformer
 operator|.
 name|value
 operator|.
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 import|;
 end_import
 
@@ -193,7 +193,7 @@ argument_list|)
 operator|.
 name|valueTransformer
 argument_list|(
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 operator|.
 name|class
 argument_list|)

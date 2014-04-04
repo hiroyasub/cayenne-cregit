@@ -51,7 +51,7 @@ name|transformer
 operator|.
 name|value
 operator|.
-name|ValueTransformer
+name|ValueDecryptor
 import|;
 end_import
 
@@ -72,7 +72,7 @@ index|[]
 name|mapKeys
 decl_stmt|;
 specifier|private
-name|ValueTransformer
+name|ValueDecryptor
 index|[]
 name|transformers
 decl_stmt|;
@@ -87,7 +87,7 @@ name|String
 index|[]
 name|mapKeys
 parameter_list|,
-name|ValueTransformer
+name|ValueDecryptor
 index|[]
 name|transformers
 parameter_list|,
@@ -179,7 +179,7 @@ index|[
 name|i
 index|]
 operator|.
-name|transform
+name|decrypt
 argument_list|(
 name|cipher
 argument_list|,

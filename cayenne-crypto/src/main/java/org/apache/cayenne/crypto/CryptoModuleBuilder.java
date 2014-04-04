@@ -291,7 +291,7 @@ name|transformer
 operator|.
 name|value
 operator|.
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 import|;
 end_import
 
@@ -511,7 +511,7 @@ name|this
 operator|.
 name|valueTransformerFactoryType
 operator|=
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 operator|.
 name|class
 expr_stmt|;

@@ -168,7 +168,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|JceValueTransformerFactoryTest
+name|DefaultValueTransformerFactoryTest
 block|{
 specifier|private
 name|DbEntity
@@ -259,11 +259,11 @@ name|void
 name|testGetJavaType
 parameter_list|()
 block|{
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 name|f
 init|=
 operator|new
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 argument_list|()
 decl_stmt|;
 name|DbAttribute
@@ -470,11 +470,11 @@ name|void
 name|testCreateEncryptor
 parameter_list|()
 block|{
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 name|f
 init|=
 operator|new
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 argument_list|()
 decl_stmt|;
 name|DbAttribute
@@ -487,7 +487,7 @@ argument_list|(
 literal|"CRYPTO_STRING"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueEncryptor
 name|t1
 init|=
 name|f
@@ -506,7 +506,7 @@ name|assertTrue
 argument_list|(
 name|t1
 operator|instanceof
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -517,7 +517,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultEncryptor
 operator|)
 name|t1
 operator|)
@@ -534,7 +534,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultEncryptor
 operator|)
 name|t1
 operator|)
@@ -553,7 +553,7 @@ argument_list|(
 literal|"CRYPTO_BYTES"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueEncryptor
 name|t2
 init|=
 name|f
@@ -572,7 +572,7 @@ name|assertTrue
 argument_list|(
 name|t2
 operator|instanceof
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -583,7 +583,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultEncryptor
 operator|)
 name|t2
 operator|)
@@ -600,7 +600,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultEncryptor
 operator|)
 name|t2
 operator|)
@@ -617,11 +617,11 @@ name|void
 name|testCreateDecryptor
 parameter_list|()
 block|{
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 name|f
 init|=
 operator|new
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 argument_list|()
 decl_stmt|;
 name|DbAttribute
@@ -634,7 +634,7 @@ argument_list|(
 literal|"CRYPTO_STRING"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueDecryptor
 name|t1
 init|=
 name|f
@@ -653,7 +653,7 @@ name|assertTrue
 argument_list|(
 name|t1
 operator|instanceof
-name|JceValueTransformer
+name|DefaultDecryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -664,7 +664,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultDecryptor
 operator|)
 name|t1
 operator|)
@@ -681,7 +681,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultDecryptor
 operator|)
 name|t1
 operator|)
@@ -700,7 +700,7 @@ argument_list|(
 literal|"CRYPTO_BYTES"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueDecryptor
 name|t2
 init|=
 name|f
@@ -719,7 +719,7 @@ name|assertTrue
 argument_list|(
 name|t2
 operator|instanceof
-name|JceValueTransformer
+name|DefaultDecryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -730,7 +730,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultDecryptor
 operator|)
 name|t2
 operator|)
@@ -747,7 +747,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultDecryptor
 operator|)
 name|t2
 operator|)
@@ -766,7 +766,7 @@ argument_list|(
 literal|"CRYPTO_BYTES"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueDecryptor
 name|t3
 init|=
 name|f
@@ -785,7 +785,7 @@ name|assertTrue
 argument_list|(
 name|t3
 operator|instanceof
-name|JceValueTransformer
+name|DefaultDecryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -796,7 +796,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultDecryptor
 operator|)
 name|t3
 operator|)
@@ -813,7 +813,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|JceValueTransformer
+name|DefaultDecryptor
 operator|)
 name|t3
 operator|)
@@ -830,11 +830,11 @@ name|void
 name|testEncryptor
 parameter_list|()
 block|{
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 name|f
 init|=
 operator|new
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 argument_list|()
 decl_stmt|;
 name|DbAttribute
@@ -847,7 +847,7 @@ argument_list|(
 literal|"CRYPTO_STRING"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueEncryptor
 name|t1
 init|=
 name|f
@@ -896,7 +896,7 @@ argument_list|(
 literal|"CRYPTO_BYTES"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueEncryptor
 name|t2
 init|=
 name|f
@@ -943,11 +943,11 @@ name|void
 name|testDecryptor
 parameter_list|()
 block|{
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 name|f
 init|=
 operator|new
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 argument_list|()
 decl_stmt|;
 name|DbAttribute
@@ -960,7 +960,7 @@ argument_list|(
 literal|"CRYPTO_STRING"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueDecryptor
 name|t1
 init|=
 name|f
@@ -1009,7 +1009,7 @@ argument_list|(
 literal|"CRYPTO_BYTES"
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueDecryptor
 name|t2
 init|=
 name|f

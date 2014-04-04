@@ -21,39 +21,32 @@ end_package
 
 begin_import
 import|import
-name|org
+name|javax
 operator|.
-name|apache
+name|crypto
 operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbAttribute
+name|Cipher
 import|;
 end_import
 
 begin_comment
-comment|/**  * A factory that creates transformers for encryption/decryption of individual  * values.  *   * @since 3.2  */
+comment|/**  * An encryptor or decryptor of a single value.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ValueTransformerFactory
-block|{
 name|ValueEncryptor
-name|encryptor
+block|{
+comment|/**      * Transforms a value using the provided Cipher. Cipher is assumed to be      * fully initialized for the right operation (encryption or decryption) and      * its state reset from any previous operations.      */
+name|Object
+name|encrypt
 parameter_list|(
-name|DbAttribute
-name|a
-parameter_list|)
-function_decl|;
-name|ValueDecryptor
-name|decryptor
-parameter_list|(
-name|DbAttribute
-name|a
+name|Cipher
+name|cipher
+parameter_list|,
+name|Object
+name|value
 parameter_list|)
 function_decl|;
 block|}

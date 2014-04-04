@@ -68,11 +68,10 @@ comment|/**  * @since 3.2  */
 end_comment
 
 begin_class
-specifier|public
 class|class
-name|JceValueTransformer
+name|DefaultEncryptor
 implements|implements
-name|ValueTransformer
+name|ValueEncryptor
 block|{
 specifier|private
 name|BytesConverter
@@ -83,7 +82,7 @@ name|BytesConverter
 name|postConverter
 decl_stmt|;
 specifier|public
-name|JceValueTransformer
+name|DefaultEncryptor
 parameter_list|(
 name|BytesConverter
 name|preConverter
@@ -125,7 +124,7 @@ annotation|@
 name|Override
 specifier|public
 name|Object
-name|transform
+name|encrypt
 parameter_list|(
 name|Cipher
 name|cipher

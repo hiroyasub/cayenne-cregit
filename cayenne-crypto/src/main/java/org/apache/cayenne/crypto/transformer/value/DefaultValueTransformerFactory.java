@@ -184,7 +184,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 implements|implements
 name|ValueTransformerFactory
 block|{
@@ -229,7 +229,7 @@ name|ConcurrentMap
 argument_list|<
 name|DbAttribute
 argument_list|,
-name|ValueTransformer
+name|ValueEncryptor
 argument_list|>
 name|encryptors
 decl_stmt|;
@@ -238,12 +238,12 @@ name|ConcurrentMap
 argument_list|<
 name|DbAttribute
 argument_list|,
-name|ValueTransformer
+name|ValueDecryptor
 argument_list|>
 name|decryptors
 decl_stmt|;
 specifier|public
-name|JceValueTransformerFactory
+name|DefaultValueTransformerFactory
 parameter_list|()
 block|{
 name|this
@@ -255,7 +255,7 @@ name|ConcurrentHashMap
 argument_list|<
 name|DbAttribute
 argument_list|,
-name|ValueTransformer
+name|ValueEncryptor
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -268,7 +268,7 @@ name|ConcurrentHashMap
 argument_list|<
 name|DbAttribute
 argument_list|,
-name|ValueTransformer
+name|ValueDecryptor
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -304,14 +304,14 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ValueTransformer
+name|ValueDecryptor
 name|decryptor
 parameter_list|(
 name|DbAttribute
 name|a
 parameter_list|)
 block|{
-name|ValueTransformer
+name|ValueDecryptor
 name|e
 init|=
 name|decryptors
@@ -328,7 +328,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|ValueTransformer
+name|ValueDecryptor
 name|newTransformer
 init|=
 name|createDecryptor
@@ -336,7 +336,7 @@ argument_list|(
 name|a
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueDecryptor
 name|oldTransformer
 init|=
 name|decryptors
@@ -366,14 +366,14 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ValueTransformer
+name|ValueEncryptor
 name|encryptor
 parameter_list|(
 name|DbAttribute
 name|a
 parameter_list|)
 block|{
-name|ValueTransformer
+name|ValueEncryptor
 name|e
 init|=
 name|encryptors
@@ -390,7 +390,7 @@ operator|==
 literal|null
 condition|)
 block|{
-name|ValueTransformer
+name|ValueEncryptor
 name|newTransformer
 init|=
 name|createEncryptor
@@ -398,7 +398,7 @@ argument_list|(
 name|a
 argument_list|)
 decl_stmt|;
-name|ValueTransformer
+name|ValueEncryptor
 name|oldTransformer
 init|=
 name|encryptors
@@ -812,7 +812,7 @@ name|map
 return|;
 block|}
 specifier|protected
-name|ValueTransformer
+name|ValueEncryptor
 name|createEncryptor
 parameter_list|(
 name|DbAttribute
@@ -906,7 +906,7 @@ throw|;
 block|}
 return|return
 operator|new
-name|JceValueTransformer
+name|DefaultEncryptor
 argument_list|(
 name|toBytes
 argument_list|,
@@ -915,7 +915,7 @@ argument_list|)
 return|;
 block|}
 specifier|protected
-name|ValueTransformer
+name|ValueDecryptor
 name|createDecryptor
 parameter_list|(
 name|DbAttribute
@@ -1009,7 +1009,7 @@ throw|;
 block|}
 return|return
 operator|new
-name|JceValueTransformer
+name|DefaultDecryptor
 argument_list|(
 name|toBytes
 argument_list|,
