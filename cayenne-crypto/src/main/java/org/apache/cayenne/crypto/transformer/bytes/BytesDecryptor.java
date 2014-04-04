@@ -38,25 +38,14 @@ specifier|public
 interface|interface
 name|BytesDecryptor
 block|{
-comment|/**      * Returns the size of the transformed data in bytes. This information      * allows the caller to pre-size the output array.      */
-name|int
-name|getOutputSize
-parameter_list|(
-name|int
-name|inputLength
-parameter_list|)
-function_decl|;
 comment|/**      * Transform input bytes using provided encryption key. Note that some      * implementations may ignore the provided key and e.g. derive the key from      * the record.      */
-name|void
+name|byte
+index|[]
 name|decrypt
 parameter_list|(
 name|byte
 index|[]
 name|input
-parameter_list|,
-name|byte
-index|[]
-name|output
 parameter_list|,
 name|int
 name|inputOffset
