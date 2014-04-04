@@ -252,14 +252,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"CLOB_MASTER"
+literal|"CLOB_DETAIL"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"CLOB_DETAIL"
+literal|"CLOB_MASTER"
 argument_list|)
 expr_stmt|;
 name|tClobMaster
