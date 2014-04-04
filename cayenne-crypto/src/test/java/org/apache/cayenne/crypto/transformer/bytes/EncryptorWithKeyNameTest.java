@@ -148,12 +148,12 @@ argument_list|(
 literal|"UTF-8"
 argument_list|)
 decl_stmt|;
-name|BytesTransformer
+name|BytesEncryptor
 name|delegate
 init|=
 name|mock
 argument_list|(
-name|BytesTransformer
+name|BytesEncryptor
 operator|.
 name|class
 argument_list|)
@@ -220,12 +220,12 @@ argument_list|(
 literal|"UTF-8"
 argument_list|)
 decl_stmt|;
-name|BytesTransformer
+name|BytesEncryptor
 name|delegate
 init|=
 name|mock
 argument_list|(
-name|BytesTransformer
+name|BytesEncryptor
 operator|.
 name|class
 argument_list|)
@@ -383,7 +383,7 @@ argument_list|(
 name|delegate
 argument_list|)
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|input
 argument_list|,
@@ -408,7 +408,7 @@ argument_list|)
 decl_stmt|;
 name|encryptor
 operator|.
-name|transform
+name|encrypt
 argument_list|(
 name|input
 argument_list|,

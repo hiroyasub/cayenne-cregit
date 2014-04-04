@@ -20,21 +20,37 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A class that encapsulates Cayenne cryptography protocol, which is usually  * dependent on the encryption mode.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|BytesTransformerFactory
-block|{
 name|BytesEncryptor
-name|encryptor
-parameter_list|()
+block|{
+comment|/**      * Returns the size of the transformed data in bytes. This information      * allows the caller to pre-size the output array.      */
+name|int
+name|getOutputSize
+parameter_list|(
+name|int
+name|inputLength
+parameter_list|)
 function_decl|;
-name|BytesDecryptor
-name|decryptor
-parameter_list|()
+comment|/**      * Transform input bytes using default encryption key.      */
+name|void
+name|encrypt
+parameter_list|(
+name|byte
+index|[]
+name|input
+parameter_list|,
+name|byte
+index|[]
+name|output
+parameter_list|,
+name|int
+name|outputOffset
+parameter_list|)
 function_decl|;
 block|}
 end_interface

@@ -251,7 +251,7 @@ throw|;
 block|}
 block|}
 specifier|public
-name|BytesTransformer
+name|BytesEncryptor
 name|encryptor
 parameter_list|()
 block|{
@@ -263,7 +263,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|BytesTransformer
+name|BytesDecryptor
 name|decryptor
 parameter_list|()
 block|{

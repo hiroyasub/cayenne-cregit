@@ -19,6 +19,16 @@ name|bytes
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|security
+operator|.
+name|Key
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.2  */
 end_comment
@@ -26,7 +36,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|BytesTransformer
+name|BytesDecryptor
 block|{
 comment|/**      * Returns the size of the transformed data in bytes. This information      * allows the caller to pre-size the output array.      */
 name|int
@@ -36,8 +46,9 @@ name|int
 name|inputLength
 parameter_list|)
 function_decl|;
+comment|/**      * Transform input bytes using provided encryption key. Note that some      * implementations may ignore the provided key and e.g. derive the key from      * the record.      */
 name|void
-name|transform
+name|decrypt
 parameter_list|(
 name|byte
 index|[]
@@ -48,7 +59,10 @@ index|[]
 name|output
 parameter_list|,
 name|int
-name|outputOffset
+name|inputOffset
+parameter_list|,
+name|Key
+name|key
 parameter_list|)
 function_decl|;
 block|}
