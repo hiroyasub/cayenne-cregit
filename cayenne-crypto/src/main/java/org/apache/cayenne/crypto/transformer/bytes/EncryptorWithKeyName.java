@@ -19,6 +19,20 @@ name|bytes
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|crypto
+operator|.
+name|CayenneCryptoException
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -71,6 +85,31 @@ name|keyName
 operator|=
 name|keyName
 expr_stmt|;
+if|if
+condition|(
+name|blockSize
+operator|!=
+name|keyName
+operator|.
+name|length
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneCryptoException
+argument_list|(
+literal|"keyName size is expected to be the same as block size. Was "
+operator|+
+name|keyName
+operator|.
+name|length
+operator|+
+literal|"; block size was: "
+operator|+
+name|blockSize
+argument_list|)
+throw|;
+block|}
 block|}
 annotation|@
 name|Override
