@@ -196,7 +196,11 @@ comment|/**  * A common superclass of UpgradeHandlers.  *   * @since 3.1  */
 end_comment
 
 begin_comment
-comment|// there's no guarantee this will survive the further version upgrades, but for now all
+comment|// there's no guarantee this will survive the further version upgrades, but for
+end_comment
+
+begin_comment
+comment|// now all
 end_comment
 
 begin_comment
@@ -296,6 +300,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Resource
 name|getProjectSource
@@ -305,6 +311,8 @@ return|return
 name|projectSource
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|UpgradeMetaData
 name|getUpgradeMetaData
@@ -328,6 +336,8 @@ return|return
 name|metaData
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Resource
 name|performUpgrade
@@ -385,7 +395,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Does the actual project upgrade, assuming the caller already verified that the      * upgrade is possible.      * @param metaData object describing the type of upgrade      */
+comment|/**      * Does the actual project upgrade, assuming the caller already verified      * that the upgrade is possible.      *       * @param metaData      *            object describing the type of upgrade      */
 specifier|protected
 specifier|abstract
 name|Resource
@@ -404,7 +414,7 @@ name|UpgradeMetaData
 name|loadMetaData
 parameter_list|()
 function_decl|;
-comment|/**      * A default method for quick extraction of the project version from an XML file.      */
+comment|/**      * A default method for quick extraction of the project version from an XML      * file.      */
 specifier|protected
 name|String
 name|loadProjectVersion
@@ -479,7 +489,8 @@ name|SAXException
 name|e
 parameter_list|)
 block|{
-comment|// expected ... handler will terminate as soon as it finds a root tag.
+comment|// expected ... handler will terminate as soon as it finds a root
+comment|// tag.
 block|}
 catch|catch
 parameter_list|(
@@ -765,7 +776,8 @@ argument_list|,
 literal|"project-version"
 argument_list|)
 expr_stmt|;
-comment|// bail right away - we are not interested in reading this to the end
+comment|// bail right away - we are not interested in reading this to the
+comment|// end
 throw|throw
 operator|new
 name|SAXException
