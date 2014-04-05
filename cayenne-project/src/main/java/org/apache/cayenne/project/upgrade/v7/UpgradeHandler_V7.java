@@ -365,7 +365,18 @@ argument_list|(
 name|tree
 argument_list|)
 decl_stmt|;
-comment|// because listeners are no longer loaded they are not saved in upgraded project
+name|attachToNamespace
+argument_list|(
+operator|(
+name|DataChannelDescriptor
+operator|)
+name|project
+operator|.
+name|getRootNode
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// load and safe cycle removes objects no longer supported, specifically listeners.
 name|projectSaver
 operator|.
 name|save
