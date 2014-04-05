@@ -508,7 +508,7 @@ specifier|private
 specifier|static
 name|String
 index|[]
-name|DATA_MAPS_REQUIREING_SCHEMA_SETUP
+name|MAPS_REQUIRING_SCHEMA_SETUP
 init|=
 block|{
 literal|"tstmap.map.xml"
@@ -660,8 +660,7 @@ return|return;
 block|}
 comment|// generate schema combining all DataMaps that require schema support.
 comment|// Schema generation is done like that instead of per DataMap on demand
-comment|// to avoid
-comment|// conflicts when dropping and generating PK objects.
+comment|// to avoid conflicts when dropping and generating PK objects.
 name|DataMap
 index|[]
 name|maps
@@ -669,7 +668,7 @@ init|=
 operator|new
 name|DataMap
 index|[
-name|DATA_MAPS_REQUIREING_SCHEMA_SETUP
+name|MAPS_REQUIRING_SCHEMA_SETUP
 operator|.
 name|length
 index|]
@@ -702,7 +701,7 @@ argument_list|()
 operator|.
 name|getResourceAsStream
 argument_list|(
-name|DATA_MAPS_REQUIREING_SCHEMA_SETUP
+name|MAPS_REQUIRING_SCHEMA_SETUP
 index|[
 name|i
 index|]
@@ -721,7 +720,7 @@ name|in
 operator|.
 name|setSystemId
 argument_list|(
-name|DATA_MAPS_REQUIREING_SCHEMA_SETUP
+name|MAPS_REQUIRING_SCHEMA_SETUP
 index|[
 name|i
 index|]
