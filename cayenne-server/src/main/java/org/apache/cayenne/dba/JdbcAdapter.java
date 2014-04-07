@@ -506,7 +506,7 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the DataNode.      */
+comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
 annotation|@
 name|Inject
 specifier|protected
@@ -2200,7 +2200,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Returns a translator factory for EJBQL to SQL translation. This property      * is normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be overridden by calling      * {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *       * @since 3.0      */
+comment|/**      * Returns a translator factory for EJBQL to SQL translation. The factory is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be changed later by      * calling {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *       * @since 3.0      */
 specifier|public
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory
@@ -2280,7 +2280,7 @@ return|return
 name|quotingStrategy
 return|;
 block|}
-comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the DataNode.      */
+comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2292,7 +2292,7 @@ return|return
 name|batchQueryBuilderFactory
 return|;
 block|}
-comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the DataNode.      */
+comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
 annotation|@
 name|Deprecated
 specifier|public

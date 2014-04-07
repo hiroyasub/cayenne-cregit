@@ -71,6 +71,24 @@ name|access
 operator|.
 name|translator
 operator|.
+name|ejbql
+operator|.
+name|EJBQLTranslatorFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
 name|select
 operator|.
 name|QualifierTranslator
@@ -196,7 +214,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne extension point that abstracts the differences between specifics of JDBC  * interfaces to various databases. Cayenne already ships with a number of built-in  * adapters for most common databases and users can provide their own custom adapters.  */
+comment|/**  * A Cayenne extension point that abstracts the differences between specifics of  * JDBC interfaces to various databases. Cayenne already ships with a number of  * built-in adapters for most common databases and users can provide their own  * custom adapters.  */
 end_comment
 
 begin_interface
@@ -204,7 +222,7 @@ specifier|public
 interface|interface
 name|DbAdapter
 block|{
-comment|/**      * Returns a String used to terminate a batch in command-line tools. E.g. ";" on      * Oracle or "go" on Sybase.      *       * @since 1.0.4      */
+comment|/**      * Returns a String used to terminate a batch in command-line tools. E.g.      * ";" on Oracle or "go" on Sybase.      *       * @since 1.0.4      */
 name|String
 name|getBatchTerminator
 parameter_list|()
@@ -233,7 +251,7 @@ name|boolean
 name|supportsUniqueConstraints
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if a target database supports key autogeneration. This feature also      * requires JDBC3-compliant driver.      *       * @since 1.2      */
+comment|/**      * Returns true if a target database supports key autogeneration. This      * feature also requires JDBC3-compliant driver.      *       * @since 1.2      */
 name|boolean
 name|supportsGeneratedKeys
 parameter_list|()
@@ -254,7 +272,7 @@ name|DbEntity
 name|table
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>entity</code> parameter.      */
+comment|/**      * Returns a SQL string that can be used to create database table      * corresponding to<code>entity</code> parameter.      */
 name|String
 name|createTable
 parameter_list|(
@@ -262,7 +280,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a DDL string to create a unique constraint over a set of columns, or null      * if the unique constraints are not supported.      *       * @since 1.1      */
+comment|/**      * Returns a DDL string to create a unique constraint over a set of columns,      * or null if the unique constraints are not supported.      *       * @since 1.1      */
 name|String
 name|createUniqueConstraint
 parameter_list|(
@@ -276,7 +294,7 @@ argument_list|>
 name|columns
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship, or null if foreign keys are not supported.      */
+comment|/**      * Returns a SQL string that can be used to create a foreign key constraint      * for the relationship, or null if foreign keys are not supported.      */
 name|String
 name|createFkConstraint
 parameter_list|(
@@ -284,7 +302,7 @@ name|DbRelationship
 name|rel
 parameter_list|)
 function_decl|;
-comment|/**      * Returns an array of RDBMS types that can be used with JDBC<code>type</code>. Valid      * JDBC types are defined in java.sql.Types.      */
+comment|/**      * Returns an array of RDBMS types that can be used with JDBC      *<code>type</code>. Valid JDBC types are defined in java.sql.Types.      */
 name|String
 index|[]
 name|externalTypesForJdbcType
@@ -293,7 +311,7 @@ name|int
 name|type
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a map of ExtendedTypes that is used to translate values between Java and      * JDBC layer.      */
+comment|/**      * Returns a map of ExtendedTypes that is used to translate values between      * Java and JDBC layer.      */
 name|ExtendedTypeMap
 name|getExtendedTypes
 parameter_list|()
@@ -303,7 +321,7 @@ name|PkGenerator
 name|getPkGenerator
 parameter_list|()
 function_decl|;
-comment|/**      * Creates and returns a DbAttribute based on supplied parameters (usually obtained      * from database meta data).      *       * @param name database column name      * @param typeName database specific type name, may be used as a hint to determine the      *            right JDBC type.      * @param type JDBC column type      * @param size database column size (ignored if less than zero)      * @param scale database column scale, i.e. the number of decimal digits (ignored if      *            less than zero)      * @param allowNulls database column nullable parameter      */
+comment|/**      * Creates and returns a DbAttribute based on supplied parameters (usually      * obtained from database meta data).      *       * @param name      *            database column name      * @param typeName      *            database specific type name, may be used as a hint to      *            determine the right JDBC type.      * @param type      *            JDBC column type      * @param size      *            database column size (ignored if less than zero)      * @param scale      *            database column scale, i.e. the number of decimal digits      *            (ignored if less than zero)      * @param allowNulls      *            database column nullable parameter      */
 name|DbAttribute
 name|buildAttribute
 parameter_list|(
@@ -365,7 +383,7 @@ name|MergerFactory
 name|mergerFactory
 parameter_list|()
 function_decl|;
-comment|/**      * Append the column type part of a "create table" to the given {@link StringBuffer}      *       * @param sqlBuffer the {@link StringBuffer} to append the column type to      * @param column the {@link DbAttribute} defining the column to append type for      * @since 3.0      */
+comment|/**      * Append the column type part of a "create table" to the given      * {@link StringBuffer}      *       * @param sqlBuffer      *            the {@link StringBuffer} to append the column type to      * @param column      *            the {@link DbAttribute} defining the column to append type for      * @since 3.0      */
 name|void
 name|createTableAppendColumn
 parameter_list|(
@@ -386,7 +404,7 @@ name|boolean
 name|needQuotes
 parameter_list|)
 function_decl|;
-comment|/**      * Returns SQL identifier quoting strategy object       *       * @since 3.2      */
+comment|/**      * Returns SQL identifier quoting strategy object      *       * @since 3.2      */
 name|QuotingStrategy
 name|getQuotingStrategy
 parameter_list|()
@@ -394,6 +412,11 @@ function_decl|;
 comment|/**      * Allows the users to get access to the adapter decorated by a given      * adapter.      *       * @since 3.2      */
 name|DbAdapter
 name|unwrap
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a translator factory for EJBQL to SQL translation.      *       * @since 3.2      */
+name|EJBQLTranslatorFactory
+name|getEjbqlTranslatorFactory
 parameter_list|()
 function_decl|;
 block|}
