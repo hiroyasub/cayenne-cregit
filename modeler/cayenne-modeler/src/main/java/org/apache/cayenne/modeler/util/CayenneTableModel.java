@@ -228,6 +228,9 @@ specifier|public
 specifier|abstract
 class|class
 name|CayenneTableModel
+parameter_list|<
+name|T
+parameter_list|>
 extends|extends
 name|AbstractTableModel
 block|{
@@ -241,6 +244,9 @@ name|eventSource
 decl_stmt|;
 specifier|protected
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|objectList
 decl_stmt|;
 specifier|private
@@ -272,6 +278,9 @@ operator|.
 name|util
 operator|.
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|objectList
 parameter_list|)
 block|{
@@ -527,6 +536,9 @@ operator|.
 name|util
 operator|.
 name|List
+argument_list|<
+name|T
+argument_list|>
 name|getObjectList
 parameter_list|()
 block|{
@@ -538,7 +550,7 @@ specifier|public
 name|void
 name|addRow
 parameter_list|(
-name|Object
+name|T
 name|row
 parameter_list|)
 block|{
@@ -758,6 +770,24 @@ expr_stmt|;
 name|fireTableDataChanged
 argument_list|()
 expr_stmt|;
+block|}
+comment|/**      * Correct errors that model has.      */
+specifier|public
+name|void
+name|resetModel
+parameter_list|()
+block|{
+comment|// do nothing by default
+block|}
+comment|/**      * @return false, if model is not valid.       */
+specifier|public
+name|boolean
+name|isValid
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
 block|}
 specifier|protected
 class|class

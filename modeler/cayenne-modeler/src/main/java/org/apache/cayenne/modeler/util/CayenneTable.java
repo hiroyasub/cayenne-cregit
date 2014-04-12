@@ -397,17 +397,34 @@ name|textEditor
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @return CayenneTableModel, or null if model can't be casted to CayenneTableModel.      */
 specifier|public
 name|CayenneTableModel
 name|getCayenneModel
 parameter_list|()
 block|{
+name|TableModel
+name|model
+init|=
+name|getModel
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|model
+operator|instanceof
+name|CayenneTableModel
+condition|)
+block|{
 return|return
 operator|(
 name|CayenneTableModel
 operator|)
-name|getModel
-argument_list|()
+name|model
+return|;
+block|}
+return|return
+literal|null
 return|;
 block|}
 comment|/**      * Cancels editing of any cells that maybe currently edited. This method should be      * called before updating any selections.      */

@@ -822,6 +822,9 @@ name|getAttribute
 argument_list|(
 name|row
 argument_list|)
+operator|.
+name|getValue
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

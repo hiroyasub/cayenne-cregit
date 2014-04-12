@@ -269,6 +269,17 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|void
+name|clear
+parameter_list|()
+block|{
+name|failures
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
 annotation|@
 name|Override
 specifier|public
