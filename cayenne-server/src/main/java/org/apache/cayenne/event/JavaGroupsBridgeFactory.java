@@ -135,7 +135,7 @@ name|JGROUPS_CONFIG_URL_PROPERTY
 init|=
 literal|"javagroupsbridge.config.url"
 decl_stmt|;
-comment|/**      * Creates a JavaGroupsBridge instance. Since JavaGroups is not shipped with Cayenne      * and should be installed separately, a common misconfiguration problem may be the      * absense of JavaGroups jar file. This factory returns a dummy noop EventBridge, if      * this is the case. This would allow the application to continue to run, but without      * remote notifications.      */
+comment|/**      * Creates a JavaGroupsBridge instance. Since JavaGroups is not shipped with Cayenne      * and should be installed separately, a common misconfiguration problem may be the      * absence of JavaGroups jar file. This factory returns a dummy noop EventBridge, if      * this is the case. This would allow the application to continue to run, but without      * remote notifications.      */
 specifier|public
 name|EventBridge
 name|createEventBridge
@@ -153,7 +153,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|String
 argument_list|>
 name|properties
 parameter_list|)
@@ -220,7 +220,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|String
 argument_list|>
 name|properties
 parameter_list|)
@@ -269,9 +269,6 @@ comment|// configure properties
 name|String
 name|multicastAddress
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -282,9 +279,6 @@ decl_stmt|;
 name|String
 name|multicastPort
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -295,9 +289,6 @@ decl_stmt|;
 name|String
 name|configURL
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -388,7 +379,11 @@ name|super
 argument_list|(
 name|Collections
 operator|.
-name|EMPTY_SET
+expr|<
+name|EventSubject
+operator|>
+name|emptySet
+argument_list|()
 argument_list|,
 literal|null
 argument_list|)

@@ -209,6 +209,11 @@ name|eventBridgeFactory
 decl_stmt|;
 specifier|protected
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|eventBridgeParameters
 decl_stmt|;
 comment|// private constructor used by hessian deserialization mechanism
@@ -251,6 +256,11 @@ name|String
 name|eventBridgeFactory
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|eventBridgeParameters
 parameter_list|)
 block|{
@@ -359,7 +369,9 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Creates an EventBridge that will listen for server events. Returns null if server      * events support is not configured in the descriptor.      *       * @throws CayenneRuntimeException if EventBridge startup fails for any reason.      */
+comment|/**      * Creates an EventBridge that will listen for server events. Returns null if server      * events support is not configured in the descriptor.      *       * @throws CayenneRuntimeException if EventBridge startup fails for any reason.      *       * @deprecated since 3.2. Factory creation should is handled by the client connection.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|EventBridge
 name|createServerEventBridge
@@ -397,6 +409,11 @@ name|newInstance
 argument_list|()
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|parameters
 init|=
 name|eventBridgeParameters
@@ -407,7 +424,13 @@ name|eventBridgeParameters
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+decl_stmt|,
+name|String
+decl|>
+name|emptyMap
+argument_list|()
 decl_stmt|;
 comment|// must use "name", not the sessionId as an external subject for the event
 comment|// bridge
@@ -502,6 +525,58 @@ return|return
 name|builder
 operator|.
 name|toString
+argument_list|()
+return|;
+block|}
+specifier|public
+specifier|static
+name|Collection
+argument_list|<
+name|EventSubject
+argument_list|>
+name|getSubjects
+parameter_list|()
+block|{
+return|return
+name|SUBJECTS
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|String
+name|getEventBridgeFactory
+parameter_list|()
+block|{
+return|return
+name|eventBridgeFactory
+return|;
+block|}
+comment|/**      * @since 3.2      */
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|getEventBridgeParameters
+parameter_list|()
+block|{
+return|return
+name|eventBridgeParameters
+operator|!=
+literal|null
+condition|?
+name|eventBridgeParameters
+else|:
+name|Collections
+operator|.
+expr|<
+name|String
+operator|,
+name|String
+operator|>
+name|emptyMap
 argument_list|()
 return|;
 block|}

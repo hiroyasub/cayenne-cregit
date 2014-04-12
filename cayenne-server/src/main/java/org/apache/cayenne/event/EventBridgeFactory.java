@@ -61,7 +61,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|String
 argument_list|>
 name|properties
 parameter_list|)

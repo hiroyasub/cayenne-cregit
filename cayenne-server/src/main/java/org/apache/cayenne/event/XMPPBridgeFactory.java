@@ -108,6 +108,8 @@ name|XMPP_PASSWORD_PROPERTY
 init|=
 literal|"cayenne.XMPPBridge.xmppPassword"
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|EventBridge
 name|createEventBridge
@@ -125,7 +127,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|String
 argument_list|>
 name|properties
 parameter_list|)
@@ -133,9 +135,6 @@ block|{
 name|String
 name|chatService
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -146,9 +145,6 @@ decl_stmt|;
 name|String
 name|host
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -159,9 +155,6 @@ decl_stmt|;
 name|String
 name|loginId
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -172,9 +165,6 @@ decl_stmt|;
 name|String
 name|password
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -185,9 +175,6 @@ decl_stmt|;
 name|String
 name|secureConnectionString
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
@@ -208,9 +195,6 @@ decl_stmt|;
 name|String
 name|portString
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get

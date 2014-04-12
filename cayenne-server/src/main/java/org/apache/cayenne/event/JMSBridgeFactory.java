@@ -82,7 +82,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|String
 argument_list|>
 name|properties
 parameter_list|)
@@ -102,9 +102,6 @@ comment|// configure properties
 name|String
 name|topicConnectionFactory
 init|=
-operator|(
-name|String
-operator|)
 name|properties
 operator|.
 name|get
