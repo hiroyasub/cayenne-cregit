@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of {@link RuntimeProperties} that returns properties that were  * injected via a map in constructor. Each property can be overridden via -D command line  * option (i.e. in this implementation JVM system properties take precedence over any  * other property configuration mechanism).  *   * @since 3.1  */
+comment|/**  * An implementation of {@link RuntimeProperties} that returns properties that  * were injected via a map in constructor. Each property can be overridden via  * -D command line option (i.e. in this implementation JVM system properties  * take precedence over any other property configuration mechanism).  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -85,6 +85,8 @@ operator|=
 name|properties
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|get
@@ -93,8 +95,10 @@ name|String
 name|key
 parameter_list|)
 block|{
-comment|// TODO: note that System.getProperty uses a synchronized hashtable internally as
-comment|// of Java 1.6. So this method suddenly becomes a synchronization bottleneck.
+comment|// TODO: note that System.getProperty uses a synchronized hashtable
+comment|// internally as
+comment|// of Java 1.6. So this method suddenly becomes a synchronization
+comment|// bottleneck.
 name|String
 name|property
 init|=
@@ -125,6 +129,40 @@ name|key
 argument_list|)
 return|;
 block|}
+comment|/**      * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|String
+name|get
+parameter_list|(
+name|String
+name|key
+parameter_list|,
+name|String
+name|defaultValue
+parameter_list|)
+block|{
+name|String
+name|string
+init|=
+name|get
+argument_list|(
+name|key
+argument_list|)
+decl_stmt|;
+return|return
+name|string
+operator|!=
+literal|null
+condition|?
+name|string
+else|:
+name|defaultValue
+return|;
+block|}
+annotation|@
+name|Override
 specifier|public
 name|long
 name|getLong
@@ -178,6 +216,8 @@ name|defaultValue
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getInt
@@ -231,6 +271,8 @@ name|defaultValue
 return|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|getBoolean
