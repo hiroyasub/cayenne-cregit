@@ -362,8 +362,6 @@ argument_list|(
 name|cbcDecryptor
 argument_list|,
 name|keySource
-argument_list|,
-name|blockSize
 argument_list|)
 return|;
 block|}
