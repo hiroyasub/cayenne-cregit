@@ -109,6 +109,15 @@ name|ENCRYPTION_KEY_ALIAS
 init|=
 literal|"cayenne.crypto.key.enc.alias"
 decl_stmt|;
+comment|/**      * A property that defines whether compression is enabled. Should be "true"      * or "false". "False" is the default.      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|COMPRESSION
+init|=
+literal|"cayenne.crypto.compression"
+decl_stmt|;
 block|}
 end_interface
 

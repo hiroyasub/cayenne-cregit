@@ -89,6 +89,8 @@ operator|.
 name|create
 argument_list|(
 literal|"mykey"
+argument_list|,
+literal|false
 argument_list|)
 decl_stmt|;
 name|BytesEncryptor
