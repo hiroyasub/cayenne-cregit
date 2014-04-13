@@ -48,6 +48,7 @@ comment|/**  * Represents a header with metadata about the encrypted data. A hea
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|Header
 block|{
@@ -60,6 +61,7 @@ init|=
 literal|"UTF-8"
 decl_stmt|;
 comment|/**      * The size of a header byte[] block.      */
+specifier|public
 specifier|static
 specifier|final
 name|int
@@ -68,6 +70,7 @@ init|=
 literal|16
 decl_stmt|;
 comment|/**      * The size of a key name within the header block.      */
+specifier|public
 specifier|static
 specifier|final
 name|int
@@ -76,6 +79,7 @@ init|=
 literal|8
 decl_stmt|;
 comment|/**      * Position of the key name within the header block.      */
+specifier|public
 specifier|static
 specifier|final
 name|int
@@ -84,6 +88,7 @@ init|=
 literal|8
 decl_stmt|;
 comment|/**      * Position of the "flags" byte in the header.      */
+specifier|public
 specifier|static
 specifier|final
 name|int
@@ -96,6 +101,7 @@ name|byte
 index|[]
 name|data
 decl_stmt|;
+specifier|public
 specifier|static
 name|Header
 name|create
@@ -200,6 +206,7 @@ name|data
 argument_list|)
 return|;
 block|}
+specifier|public
 specifier|static
 name|Header
 name|create
@@ -257,6 +264,7 @@ name|Header
 parameter_list|()
 block|{
 block|}
+specifier|public
 name|byte
 index|[]
 name|getData

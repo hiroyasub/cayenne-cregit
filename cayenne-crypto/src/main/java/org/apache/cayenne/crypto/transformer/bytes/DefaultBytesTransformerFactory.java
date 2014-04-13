@@ -198,6 +198,16 @@ argument_list|(
 name|cipherFactory
 argument_list|,
 name|keySource
+argument_list|,
+name|Header
+operator|.
+name|create
+argument_list|(
+name|keySource
+operator|.
+name|getDefaultKeyAlias
+argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
