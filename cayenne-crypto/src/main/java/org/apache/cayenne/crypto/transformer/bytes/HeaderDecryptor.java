@@ -75,7 +75,7 @@ end_comment
 
 begin_class
 class|class
-name|DecryptorWithKeyName
+name|HeaderDecryptor
 implements|implements
 name|BytesDecryptor
 block|{
@@ -100,7 +100,7 @@ name|int
 name|blockSize
 decl_stmt|;
 specifier|public
-name|DecryptorWithKeyName
+name|HeaderDecryptor
 parameter_list|(
 name|BytesDecryptor
 name|delegate

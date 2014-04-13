@@ -72,7 +72,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DecryptorWithKeyNameTest
+name|HeaderDecryptorTest
 block|{
 annotation|@
 name|Test
@@ -129,11 +129,11 @@ block|,
 literal|'e'
 block|}
 decl_stmt|;
-name|DecryptorWithKeyName
+name|HeaderDecryptor
 name|decryptor
 init|=
 operator|new
-name|DecryptorWithKeyName
+name|HeaderDecryptor
 argument_list|(
 name|mock
 argument_list|(

@@ -455,7 +455,7 @@ decl_stmt|;
 comment|// TODO: make adding key name for versioning an optional property
 return|return
 operator|new
-name|EncryptorWithKeyName
+name|HeaderEncryptor
 argument_list|(
 name|cbcEncryptor
 argument_list|,
@@ -492,7 +492,7 @@ decl_stmt|;
 comment|// TODO: make checking for key name an optional property
 return|return
 operator|new
-name|DecryptorWithKeyName
+name|HeaderDecryptor
 argument_list|(
 name|cbcDecryptor
 argument_list|,
