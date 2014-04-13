@@ -334,8 +334,6 @@ operator|new
 name|GzipEncryptor
 argument_list|(
 name|delegate
-argument_list|,
-name|encryptionHeader
 argument_list|)
 expr_stmt|;
 block|}

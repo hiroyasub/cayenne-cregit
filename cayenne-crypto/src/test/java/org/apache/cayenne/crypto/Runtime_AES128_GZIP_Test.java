@@ -172,7 +172,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|Runtime_AES128_Test
+name|Runtime_AES128_GZIP_Test
 extends|extends
 name|Runtime_AES128_Base
 block|{
@@ -189,7 +189,7 @@ name|super
 operator|.
 name|setUp
 argument_list|(
-literal|false
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
@@ -282,6 +282,10 @@ argument_list|()
 argument_list|,
 name|CryptoUnitUtils
 operator|.
+name|gunzip
+argument_list|(
+name|CryptoUnitUtils
+operator|.
 name|decrypt_AES_CBC
 argument_list|(
 operator|(
@@ -294,6 +298,7 @@ literal|2
 index|]
 argument_list|,
 name|runtime
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -500,6 +505,10 @@ argument_list|()
 argument_list|,
 name|CryptoUnitUtils
 operator|.
+name|gunzip
+argument_list|(
+name|CryptoUnitUtils
+operator|.
 name|decrypt_AES_CBC
 argument_list|(
 name|cipherByPlain
@@ -512,6 +521,7 @@ argument_list|,
 name|runtime
 argument_list|)
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|assertArrayEquals
 argument_list|(
@@ -520,6 +530,10 @@ operator|.
 name|getBytes
 argument_list|()
 argument_list|,
+name|CryptoUnitUtils
+operator|.
+name|gunzip
+argument_list|(
 name|CryptoUnitUtils
 operator|.
 name|decrypt_AES_CBC
@@ -532,6 +546,7 @@ literal|"b"
 argument_list|)
 argument_list|,
 name|runtime
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
