@@ -373,12 +373,22 @@ argument_list|(
 name|cipher
 argument_list|)
 decl_stmt|;
-comment|// TODO: make checking for key name an optional property
+name|BytesDecryptor
+name|gzipDecryptor
+init|=
+operator|new
+name|GzipDecryptor
+argument_list|(
+name|cbcDecryptor
+argument_list|)
+decl_stmt|;
 return|return
 operator|new
 name|HeaderDecryptor
 argument_list|(
 name|cbcDecryptor
+argument_list|,
+name|gzipDecryptor
 argument_list|,
 name|keySource
 argument_list|)
