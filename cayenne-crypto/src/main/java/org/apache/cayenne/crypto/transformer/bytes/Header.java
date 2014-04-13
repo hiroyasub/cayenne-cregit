@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a header with metadata about the encrypted data. A header is  * prependend to each encrypted value, and itself is not encrypted.  *   * @since 3.2  */
+comment|/**  * Represents a header with metadata about the encrypted data. A header is  * prependend to each encrypted value, and itself is not encrypted. Header  * format is the following:  *<ul>  *<li>byte 0..2: "magic" number identifying the format as Cayenne-crypto  * encrypted sequence.  *<li>byte 3: header length N, i.e. how many bytes the header contains,  * including magic number and the length indicator. N can be 0..127.  *<li>byte 4: a bit String representing various flags, such as compression.  *<li>byte 5..N: UTF8-encoded symbolic name of the encryption key.  *</ul>  *   * @since 3.2  */
 end_comment
 
 begin_class
@@ -60,41 +60,70 @@ name|KEY_NAME_CHARSET
 init|=
 literal|"UTF-8"
 decl_stmt|;
-comment|/**      * The size of a header byte[] block.      */
-specifier|public
+comment|// "CC1" is a "magic number" identifying Cayenne-crypto version 1 value
+specifier|private
 specifier|static
 specifier|final
-name|int
-name|HEADER_SIZE
+name|byte
+index|[]
+name|MAGIC_NUMBER
 init|=
-literal|16
+block|{
+literal|'C'
+block|,
+literal|'C'
+block|,
+literal|'1'
+block|}
 decl_stmt|;
-comment|/**      * The size of a key name within the header block.      */
-specifier|public
+comment|/**      * Position of the "flags" byte in the header.      */
+specifier|private
 specifier|static
 specifier|final
 name|int
-name|KEY_NAME_SIZE
+name|MAGIC_NUMBER_POSITION
 init|=
-literal|8
+literal|0
+decl_stmt|;
+comment|/**      * Position of the header size byte in the header.      */
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|SIZE_POSITION
+init|=
+literal|3
+decl_stmt|;
+comment|/**      * Position of the "flags" byte in the header.      */
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|FLAGS_POSITION
+init|=
+literal|4
 decl_stmt|;
 comment|/**      * Position of the key name within the header block.      */
-specifier|public
+specifier|private
 specifier|static
 specifier|final
 name|int
 name|KEY_NAME_OFFSET
 init|=
-literal|8
+literal|5
 decl_stmt|;
-comment|/**      * Position of the "flags" byte in the header.      */
-specifier|public
+comment|/**      * Max size of a key name within a header.      */
+specifier|private
 specifier|static
 specifier|final
 name|int
-name|FLAGS_OFFSET
+name|KEY_NAME_MAX_SIZE
 init|=
-literal|0
+name|Byte
+operator|.
+name|MAX_VALUE
+operator|-
+name|KEY_NAME_OFFSET
 decl_stmt|;
 specifier|private
 name|byte
@@ -148,6 +177,46 @@ name|e
 argument_list|)
 throw|;
 block|}
+if|if
+condition|(
+name|keyNameBytes
+operator|.
+name|length
+operator|>
+name|KEY_NAME_MAX_SIZE
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneCryptoException
+argument_list|(
+literal|"Key name '"
+operator|+
+name|keyName
+operator|+
+literal|"' is too long. Its UTF8-encoded form should not exceed "
+operator|+
+name|KEY_NAME_MAX_SIZE
+operator|+
+literal|" bytes"
+argument_list|)
+throw|;
+block|}
+name|int
+name|n
+init|=
+name|MAGIC_NUMBER
+operator|.
+name|length
+operator|+
+literal|1
+operator|+
+literal|1
+operator|+
+name|keyNameBytes
+operator|.
+name|length
+decl_stmt|;
 name|byte
 index|[]
 name|data
@@ -155,18 +224,46 @@ init|=
 operator|new
 name|byte
 index|[
-name|HEADER_SIZE
+name|n
 index|]
 decl_stmt|;
-if|if
-condition|(
-name|keyNameBytes
+name|System
+operator|.
+name|arraycopy
+argument_list|(
+name|MAGIC_NUMBER
+argument_list|,
+literal|0
+argument_list|,
+name|data
+argument_list|,
+name|MAGIC_NUMBER_POSITION
+argument_list|,
+name|MAGIC_NUMBER
 operator|.
 name|length
-operator|<=
-name|KEY_NAME_SIZE
-condition|)
-block|{
+argument_list|)
+expr_stmt|;
+comment|// total header size
+name|data
+index|[
+name|SIZE_POSITION
+index|]
+operator|=
+operator|(
+name|byte
+operator|)
+name|n
+expr_stmt|;
+comment|// flags
+name|data
+index|[
+name|FLAGS_POSITION
+index|]
+operator|=
+literal|0
+expr_stmt|;
+comment|// key name
 name|System
 operator|.
 name|arraycopy
@@ -184,25 +281,6 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneCryptoException
-argument_list|(
-literal|"Key name '"
-operator|+
-name|keyName
-operator|+
-literal|"' is too long. Its UTF8-encoded form should not exceed "
-operator|+
-name|KEY_NAME_SIZE
-operator|+
-literal|" bytes"
-argument_list|)
-throw|;
-block|}
 return|return
 name|create
 argument_list|(
@@ -225,33 +303,6 @@ name|int
 name|offset
 parameter_list|)
 block|{
-if|if
-condition|(
-name|data
-operator|.
-name|length
-operator|-
-name|offset
-operator|<
-name|HEADER_SIZE
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneCryptoException
-argument_list|(
-literal|"Unexpected header data size: "
-operator|+
-name|data
-operator|.
-name|length
-operator|+
-literal|", expected size is "
-operator|+
-name|HEADER_SIZE
-argument_list|)
-throw|;
-block|}
 return|return
 operator|new
 name|Header
@@ -288,6 +339,21 @@ name|offset
 expr_stmt|;
 block|}
 specifier|public
+name|int
+name|size
+parameter_list|()
+block|{
+return|return
+name|data
+index|[
+name|offset
+operator|+
+name|SIZE_POSITION
+index|]
+return|;
+block|}
+comment|/**      * Saves the header bytes in the provided buffer at specified offset.      */
+specifier|public
 name|void
 name|store
 parameter_list|(
@@ -311,9 +377,8 @@ name|output
 argument_list|,
 name|outputOffset
 argument_list|,
-name|Header
-operator|.
-name|HEADER_SIZE
+name|size
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -324,7 +389,6 @@ parameter_list|()
 block|{
 try|try
 block|{
-comment|// 'trim' is to get rid of 0 padding
 return|return
 operator|new
 name|String
@@ -335,13 +399,13 @@ name|offset
 operator|+
 name|KEY_NAME_OFFSET
 argument_list|,
-name|KEY_NAME_SIZE
+name|size
+argument_list|()
+operator|-
+name|KEY_NAME_OFFSET
 argument_list|,
 name|KEY_NAME_CHARSET
 argument_list|)
-operator|.
-name|trim
-argument_list|()
 return|;
 block|}
 catch|catch

@@ -82,9 +82,10 @@ name|input
 argument_list|,
 name|outputOffset
 operator|+
-name|Header
+name|header
 operator|.
-name|HEADER_SIZE
+name|size
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|header
