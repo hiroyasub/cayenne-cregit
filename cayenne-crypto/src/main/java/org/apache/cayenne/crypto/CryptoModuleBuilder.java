@@ -745,6 +745,25 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * @param encryptionKeyAlias      *            The name of the key in the keystore that should be used for      *            encryption by default.      */
+specifier|public
+name|CryptoModuleBuilder
+name|encryptionKeyAlias
+parameter_list|(
+name|String
+name|encryptionKeyAlias
+parameter_list|)
+block|{
+name|this
+operator|.
+name|encryptionKeyAlias
+operator|=
+name|encryptionKeyAlias
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 comment|/**      * Configures keystore parameters. The KeyStore must be of "jceks" type and      * contain all needed secret keys for the target database. Currently all      * keys must be protected with the same password.      *       * @param file      *            A file to load keystore from.      * @param passwordForAllKeys      *            A password that unlocks all keys in the keystore.      * @param encryptionKeyAlias      *            The name of the key in the keystore that should be used for      *            encryption by default.      */
 specifier|public
 name|CryptoModuleBuilder
