@@ -536,7 +536,7 @@ name|assertTrue
 argument_list|(
 name|t1
 operator|instanceof
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -547,7 +547,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 operator|)
 name|t1
 operator|)
@@ -564,7 +564,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 operator|)
 name|t1
 operator|)
@@ -602,7 +602,7 @@ name|assertTrue
 argument_list|(
 name|t2
 operator|instanceof
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -613,7 +613,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 operator|)
 name|t2
 operator|)
@@ -630,7 +630,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 operator|)
 name|t2
 operator|)
@@ -690,7 +690,7 @@ name|assertTrue
 argument_list|(
 name|t1
 operator|instanceof
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -701,7 +701,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 operator|)
 name|t1
 operator|)
@@ -718,7 +718,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 operator|)
 name|t1
 operator|)
@@ -756,7 +756,7 @@ name|assertTrue
 argument_list|(
 name|t2
 operator|instanceof
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -767,7 +767,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 operator|)
 name|t2
 operator|)
@@ -784,7 +784,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 operator|)
 name|t2
 operator|)
@@ -822,7 +822,7 @@ name|assertTrue
 argument_list|(
 name|t3
 operator|instanceof
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -833,7 +833,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 operator|)
 name|t3
 operator|)
@@ -850,7 +850,7 @@ name|INSTANCE
 argument_list|,
 operator|(
 operator|(
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 operator|)
 name|t3
 operator|)

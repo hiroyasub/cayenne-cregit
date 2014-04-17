@@ -969,7 +969,7 @@ throw|;
 block|}
 return|return
 operator|new
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 argument_list|(
 name|toBytes
 argument_list|,
@@ -1072,7 +1072,7 @@ throw|;
 block|}
 return|return
 operator|new
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 argument_list|(
 name|toBytes
 argument_list|,

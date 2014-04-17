@@ -43,7 +43,7 @@ end_comment
 
 begin_class
 class|class
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 implements|implements
 name|ValueEncryptor
 block|{
@@ -56,7 +56,7 @@ name|BytesConverter
 name|postConverter
 decl_stmt|;
 specifier|public
-name|DefaultEncryptor
+name|DefaultValueEncryptor
 parameter_list|(
 name|BytesConverter
 name|preConverter

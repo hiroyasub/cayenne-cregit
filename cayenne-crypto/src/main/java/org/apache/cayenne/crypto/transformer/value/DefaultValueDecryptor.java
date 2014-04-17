@@ -53,7 +53,7 @@ end_comment
 
 begin_class
 class|class
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 implements|implements
 name|ValueDecryptor
 block|{
@@ -70,7 +70,7 @@ name|BytesConverter
 name|postConverter
 decl_stmt|;
 specifier|public
-name|DefaultDecryptor
+name|DefaultValueDecryptor
 parameter_list|(
 name|BytesConverter
 name|preConverter
