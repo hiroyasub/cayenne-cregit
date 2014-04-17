@@ -460,6 +460,12 @@ argument_list|(
 name|plain
 argument_list|,
 literal|0
+argument_list|,
+operator|new
+name|byte
+index|[
+literal|1
+index|]
 argument_list|)
 decl_stmt|;
 name|assertEquals

@@ -188,6 +188,10 @@ name|input
 parameter_list|,
 name|int
 name|outputOffset
+parameter_list|,
+name|byte
+index|[]
+name|flags
 parameter_list|)
 block|{
 name|byte

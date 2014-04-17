@@ -141,6 +141,12 @@ argument_list|(
 name|bytes
 argument_list|,
 literal|0
+argument_list|,
+operator|new
+name|byte
+index|[
+literal|1
+index|]
 argument_list|)
 decl_stmt|;
 return|return

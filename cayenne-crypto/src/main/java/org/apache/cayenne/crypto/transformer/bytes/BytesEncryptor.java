@@ -28,7 +28,7 @@ specifier|public
 interface|interface
 name|BytesEncryptor
 block|{
-comment|/**      * Transform input bytes using default encryption key.      *       * @param input      *            a buffer with unencrypted bytes.      * @param outputOffset      *            how much empty space to leave in the beginning of the returned      *            output array. This would allow the caller to prepend extra      *            data to the encrypted array.      */
+comment|/**      * Transform input bytes using default encryption key.      *       * @param input      *            a buffer with unencrypted bytes.      * @param outputOffset      *            how much empty space to leave in the beginning of the returned      *            output array. This would allow the caller to prepend extra      *            data to the encrypted array.      * @param flags      *            a byte[1] that allows nested encryptors to manipulate header      *            flags.      */
 name|byte
 index|[]
 name|encrypt
@@ -39,6 +39,10 @@ name|input
 parameter_list|,
 name|int
 name|outputOffset
+parameter_list|,
+name|byte
+index|[]
+name|flags
 parameter_list|)
 function_decl|;
 block|}

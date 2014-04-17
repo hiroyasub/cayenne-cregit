@@ -100,6 +100,12 @@ argument_list|(
 name|input
 argument_list|,
 literal|3
+argument_list|,
+operator|new
+name|byte
+index|[
+literal|1
+index|]
 argument_list|)
 decl_stmt|;
 name|assertArrayEquals
@@ -165,6 +171,12 @@ argument_list|(
 name|input
 argument_list|,
 literal|3
+argument_list|,
+operator|new
+name|byte
+index|[
+literal|1
+index|]
 argument_list|)
 decl_stmt|;
 name|assertArrayEquals
