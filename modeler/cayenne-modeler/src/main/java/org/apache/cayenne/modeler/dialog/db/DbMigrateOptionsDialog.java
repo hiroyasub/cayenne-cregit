@@ -224,9 +224,6 @@ name|schemaLabel
 decl_stmt|;
 specifier|protected
 name|JComboBox
-argument_list|<
-name|String
-argument_list|>
 name|schemaSelector
 decl_stmt|;
 specifier|protected
@@ -261,7 +258,7 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
-literal|"Migrater DB Schema: Select Schema"
+literal|"Migrate DB Schema: Select Schema"
 argument_list|)
 expr_stmt|;
 name|init
@@ -321,9 +318,6 @@ name|schemaSelector
 operator|=
 operator|new
 name|JComboBox
-argument_list|<
-name|String
-argument_list|>
 argument_list|()
 expr_stmt|;
 name|FormLayout
@@ -558,9 +552,6 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
-argument_list|<
-name|String
-argument_list|>
 argument_list|(
 name|schemas
 operator|.
