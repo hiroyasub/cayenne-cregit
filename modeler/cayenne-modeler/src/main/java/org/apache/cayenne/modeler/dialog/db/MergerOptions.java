@@ -643,6 +643,10 @@ specifier|protected
 name|MergerTokenSelectorController
 name|tokens
 decl_stmt|;
+specifier|protected
+name|String
+name|defaultSchema
+decl_stmt|;
 specifier|public
 name|MergerOptions
 parameter_list|(
@@ -657,6 +661,9 @@ name|connectionInfo
 parameter_list|,
 name|DataMap
 name|dataMap
+parameter_list|,
+name|String
+name|defaultSchema
 parameter_list|)
 block|{
 name|super
@@ -698,6 +705,12 @@ operator|.
 name|connectionInfo
 operator|=
 name|connectionInfo
+expr_stmt|;
+name|this
+operator|.
+name|defaultSchema
+operator|=
+name|defaultSchema
 expr_stmt|;
 comment|/*          * TODO:? this.generatorDefaults = (DBGeneratorDefaults) parent          * .getPreferenceDomainForProject() .getDetail("DbGenerator",          * DBGeneratorDefaults.class, true);          */
 name|this
@@ -897,6 +910,13 @@ operator|=
 operator|new
 name|DbMerger
 argument_list|()
+expr_stmt|;
+name|merger
+operator|.
+name|setSchema
+argument_list|(
+name|defaultSchema
+argument_list|)
 expr_stmt|;
 name|List
 argument_list|<
