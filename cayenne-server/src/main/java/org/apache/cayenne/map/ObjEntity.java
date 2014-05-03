@@ -3831,11 +3831,6 @@ name|component
 argument_list|)
 throw|;
 block|}
-name|boolean
-name|firstComponent
-init|=
-literal|true
-decl_stmt|;
 while|while
 condition|(
 name|dbSubpath
@@ -3885,10 +3880,9 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// use OUTER join for all components of the path is Obj path is OUTER
 if|if
 condition|(
-name|firstComponent
-operator|&&
 name|component
 operator|.
 name|getJoinType
@@ -3907,10 +3901,6 @@ name|OUTER_JOIN_INDICATOR
 argument_list|)
 expr_stmt|;
 block|}
-name|firstComponent
-operator|=
-literal|false
-expr_stmt|;
 block|}
 block|}
 return|return
