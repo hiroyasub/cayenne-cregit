@@ -275,6 +275,47 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * Returns a version of this property that represents an OUTER join. It is      * up to caller to ensure that the property corresponds to a relationship,      * as "outer" attributes make no sense.      */
+specifier|public
+name|Property
+argument_list|<
+name|E
+argument_list|>
+name|outer
+parameter_list|()
+block|{
+return|return
+name|isOuter
+argument_list|()
+condition|?
+name|this
+else|:
+operator|new
+name|Property
+argument_list|<
+name|E
+argument_list|>
+argument_list|(
+name|name
+operator|+
+literal|"+"
+argument_list|)
+return|;
+block|}
+specifier|private
+name|boolean
+name|isOuter
+parameter_list|()
+block|{
+return|return
+name|name
+operator|.
+name|endsWith
+argument_list|(
+literal|"+"
+argument_list|)
+return|;
+block|}
 comment|/**      * @return An expression representing null.      */
 specifier|public
 name|Expression
@@ -375,7 +416,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * @return An expression representing equality between two attributes (columns).      */
+comment|/**      * @return An expression representing equality between two attributes      *         (columns).      */
 specifier|public
 name|Expression
 name|eq
@@ -427,7 +468,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * @return An expression representing inequality between two attributes (columns).      */
+comment|/**      * @return An expression representing inequality between two attributes      *         (columns).      */
 specifier|public
 name|Expression
 name|ne
@@ -797,7 +838,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Represents a greater than relationship between two attributes (columns).      */
+comment|/**      * @return Represents a greater than relationship between two attributes      *         (columns).      */
 specifier|public
 name|Expression
 name|gt
@@ -849,7 +890,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Represents a greater than or equal relationship between two attributes (columns).      */
+comment|/**      * @return Represents a greater than or equal relationship between two      *         attributes (columns).      */
 specifier|public
 name|Expression
 name|gte
@@ -901,7 +942,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Represents a less than relationship between two attributes (columns).      */
+comment|/**      * @return Represents a less than relationship between two attributes      *         (columns).      */
 specifier|public
 name|Expression
 name|lt
@@ -953,7 +994,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Represents a less than or equal relationship between two attributes (columns).      */
+comment|/**      * @return Represents a less than or equal relationship between two      *         attributes (columns).      */
 specifier|public
 name|Expression
 name|lte
@@ -1310,7 +1351,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Extracts property value from an object using JavaBean-compatible introspection with one addition -      * a property can be a dot-separated property name path.      */
+comment|/**      * Extracts property value from an object using JavaBean-compatible      * introspection with one addition - a property can be a dot-separated      * property name path.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1339,7 +1380,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Extracts property value from a collection of objects using JavaBean-compatible introspection with one addition -      * a property can be a dot-separated property name path.      */
+comment|/**      * Extracts property value from a collection of objects using      * JavaBean-compatible introspection with one addition - a property can be a      * dot-separated property name path.      */
 specifier|public
 name|List
 argument_list|<
@@ -1395,7 +1436,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Sets a property value in 'obj' using JavaBean-compatible introspection with one addition -      * a property can be a dot-separated property name path.      */
+comment|/**      * Sets a property value in 'obj' using JavaBean-compatible introspection      * with one addition - a property can be a dot-separated property name path.      */
 specifier|public
 name|void
 name|setIn
@@ -1420,7 +1461,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets a property value in a collection of objects using JavaBean-compatible introspection with one addition -      * a property can be a dot-separated property name path.      */
+comment|/**      * Sets a property value in a collection of objects using      * JavaBean-compatible introspection with one addition - a property can be a      * dot-separated property name path.      */
 specifier|public
 name|void
 name|setInAll
