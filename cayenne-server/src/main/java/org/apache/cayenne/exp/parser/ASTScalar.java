@@ -29,6 +29,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -200,6 +210,12 @@ specifier|public
 name|void
 name|appendAsEJBQL
 parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|parameterAccumulator
+parameter_list|,
 name|Appendable
 name|out
 parameter_list|,
@@ -274,13 +290,13 @@ block|}
 block|}
 name|SimpleNode
 operator|.
-name|appendScalarAsString
+name|encodeScalarAsEJBQL
 argument_list|(
+name|parameterAccumulator
+argument_list|,
 name|out
 argument_list|,
 name|scalar
-argument_list|,
-literal|'\''
 argument_list|)
 expr_stmt|;
 block|}

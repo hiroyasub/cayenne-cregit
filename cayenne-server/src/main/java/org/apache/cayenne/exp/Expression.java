@@ -2193,10 +2193,40 @@ parameter_list|)
 function_decl|;
 comment|/**      * Stores a String representation of Expression as EJBQL using a provided      * Appendable. DB path expressions produce non-standard EJBQL path      * expressions.      *       * @since 3.2      * @throws IOException      */
 specifier|public
+name|void
+name|appendAsEJBQL
+parameter_list|(
+name|Appendable
+name|out
+parameter_list|,
+name|String
+name|rootId
+parameter_list|)
+throws|throws
+name|IOException
+block|{
+name|appendAsEJBQL
+argument_list|(
+literal|null
+argument_list|,
+name|out
+argument_list|,
+name|rootId
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Stores a String representation of Expression as EJBQL using a provided PrintWriter.      * DB path expressions produce non-standard EJBQL path expressions.  If the      * parameterAccumulator is supplied then as the EJBQL is output, it may load parameters      * into this list.  In this case, the EJBQL output will contain reference to positional      * parameters.  If no parameterAccumulator is supplied and a scalar type is encountered      * for which there is no EJBQL literal representation (such as dates) then this method      * will throw a runtime exception to indicate that it was not possible to generate a      * string-only representation of the Expression in EJBQL.      *      * @since 3.2      * @throws IOException      */
+specifier|public
 specifier|abstract
 name|void
 name|appendAsEJBQL
 parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|parameterAccumulator
+parameter_list|,
 name|Appendable
 name|out
 parameter_list|,
@@ -2251,11 +2281,17 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/**      * Produces an EJBQL string that represents this expression.  If the parameterAccumulator is      * supplied then, where appropriate, parameters to the EJBQL may be written into the      * parameterAccumulator.  If this method encounters a scalar type which is not able to be      * represented as an EJBQL literal then this method will throw a runtime exception to indicate      * that it was not possible to generate a string-only representation of the Expression as      * EJBQL.      *      * @since 3.1      */
 specifier|public
 name|String
 name|toEJBQL
 parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|parameterAccumulator
+parameter_list|,
 name|String
 name|rootId
 parameter_list|)
@@ -2271,6 +2307,8 @@ try|try
 block|{
 name|appendAsEJBQL
 argument_list|(
+name|parameterAccumulator
+argument_list|,
 name|out
 argument_list|,
 name|rootId
@@ -2298,6 +2336,24 @@ name|out
 operator|.
 name|toString
 argument_list|()
+return|;
+block|}
+comment|/**      * Produces an EJBQL string that represents this expression.  If this method encounters a scalar      * type which is not able to be represented as an EJBQL literal then this method will throw a      * runtime exception.      *      * @since 3.0      */
+specifier|public
+name|String
+name|toEJBQL
+parameter_list|(
+name|String
+name|rootId
+parameter_list|)
+block|{
+return|return
+name|toEJBQL
+argument_list|(
+literal|null
+argument_list|,
+name|rootId
+argument_list|)
 return|;
 block|}
 block|}

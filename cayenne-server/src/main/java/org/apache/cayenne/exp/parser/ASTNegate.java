@@ -39,6 +39,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -314,6 +324,12 @@ specifier|public
 name|void
 name|appendAsEJBQL
 parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|parameterAccumulator
+parameter_list|,
 name|Appendable
 name|out
 parameter_list|,
@@ -398,6 +414,8 @@ name|child
 operator|.
 name|appendAsEJBQL
 argument_list|(
+name|parameterAccumulator
+argument_list|,
 name|out
 argument_list|,
 name|rootId
