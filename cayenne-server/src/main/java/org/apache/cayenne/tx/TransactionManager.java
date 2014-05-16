@@ -15,20 +15,6 @@ name|tx
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|CayenneRuntime
-import|;
-end_import
-
 begin_comment
 comment|/**  * An optional utility service that simplifies wrapping multiple operations in  * transactions. Users only rarely need to invoke it directly, as all standard  * Cayenne operations are managing their own transactions internally.  *   * @since 3.2  */
 end_comment
