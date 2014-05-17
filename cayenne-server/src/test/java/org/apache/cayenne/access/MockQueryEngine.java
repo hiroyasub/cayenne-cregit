@@ -235,7 +235,7 @@ parameter_list|,
 name|OperationObserver
 name|resultConsumer
 parameter_list|,
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{

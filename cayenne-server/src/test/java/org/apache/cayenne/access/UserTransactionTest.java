@@ -263,10 +263,10 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 name|t
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|internalTransaction
 argument_list|(
@@ -320,7 +320,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -410,7 +410,7 @@ parameter_list|)
 block|{
 comment|// ignore
 block|}
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(

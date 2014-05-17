@@ -153,7 +153,7 @@ name|CayenneException
 block|{
 name|status
 operator|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_COMMITTING
 expr_stmt|;
@@ -319,7 +319,7 @@ name|CayenneException
 block|{
 name|status
 operator|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ROLLING_BACK
 expr_stmt|;

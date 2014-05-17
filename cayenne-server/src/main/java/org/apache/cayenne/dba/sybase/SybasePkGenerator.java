@@ -89,7 +89,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|DataNode
+name|BaseTransaction
 import|;
 end_import
 
@@ -103,7 +103,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|Transaction
+name|DataNode
 import|;
 end_import
 
@@ -146,6 +146,20 @@ operator|.
 name|map
 operator|.
 name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|Transaction
 import|;
 end_import
 
@@ -435,12 +449,12 @@ comment|// 3.0?
 name|Transaction
 name|transaction
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -603,7 +617,7 @@ block|}
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(

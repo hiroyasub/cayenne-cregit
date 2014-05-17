@@ -57,6 +57,18 @@ name|CayenneException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents a container-managed transaction.  *   * @since 1.2 moved to a top-level class.  */
 end_comment
@@ -65,7 +77,7 @@ begin_class
 class|class
 name|ExternalTransaction
 extends|extends
-name|Transaction
+name|BaseTransaction
 block|{
 name|ExternalTransaction
 parameter_list|()
@@ -95,7 +107,7 @@ if|if
 condition|(
 name|status
 operator|!=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_NO_TRANSACTION
 condition|)
@@ -108,7 +120,7 @@ literal|"Transaction must have 'STATUS_NO_TRANSACTION' to begin. "
 operator|+
 literal|"Current status: "
 operator|+
-name|Transaction
+name|BaseTransaction
 operator|.
 name|decodeStatus
 argument_list|(
@@ -119,7 +131,7 @@ throw|;
 block|}
 name|status
 operator|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ACTIVE
 expr_stmt|;
@@ -136,8 +148,6 @@ parameter_list|,
 name|Connection
 name|connection
 parameter_list|)
-throws|throws
-name|SQLException
 block|{
 if|if
 condition|(
@@ -156,7 +166,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_NO_TRANSACTION
 condition|)
@@ -169,7 +179,7 @@ if|if
 condition|(
 name|status
 operator|!=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ACTIVE
 condition|)
@@ -182,7 +192,7 @@ literal|"Transaction must have 'STATUS_ACTIVE' to add a connection. "
 operator|+
 literal|"Current status: "
 operator|+
-name|Transaction
+name|BaseTransaction
 operator|.
 name|decodeStatus
 argument_list|(
@@ -191,11 +201,30 @@ argument_list|)
 argument_list|)
 throw|;
 block|}
+try|try
+block|{
 name|fixConnectionState
 argument_list|(
 name|connection
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|e
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Exception changing connection state"
+argument_list|,
+name|e
+argument_list|)
+throw|;
+block|}
 return|return
 literal|true
 return|;
@@ -224,7 +253,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_NO_TRANSACTION
 condition|)
@@ -252,7 +281,7 @@ if|if
 condition|(
 name|status
 operator|!=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ACTIVE
 condition|)
@@ -265,7 +294,7 @@ literal|"Transaction must have 'STATUS_ACTIVE' to be committed. "
 operator|+
 literal|"Current status: "
 operator|+
-name|Transaction
+name|BaseTransaction
 operator|.
 name|decodeStatus
 argument_list|(
@@ -279,7 +308,7 @@ argument_list|()
 expr_stmt|;
 name|status
 operator|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_COMMITTED
 expr_stmt|;
@@ -321,19 +350,19 @@ if|if
 condition|(
 name|status
 operator|==
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_NO_TRANSACTION
 operator|||
 name|status
 operator|==
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ROLLEDBACK
 operator|||
 name|status
 operator|==
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ROLLING_BACK
 condition|)
@@ -361,13 +390,13 @@ if|if
 condition|(
 name|status
 operator|!=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ACTIVE
 operator|&&
 name|status
 operator|!=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_MARKED_ROLLEDBACK
 condition|)
@@ -380,7 +409,7 @@ literal|"Transaction must have 'STATUS_ACTIVE' or 'STATUS_MARKED_ROLLEDBACK' to 
 operator|+
 literal|"Current status: "
 operator|+
-name|Transaction
+name|BaseTransaction
 operator|.
 name|decodeStatus
 argument_list|(
@@ -394,7 +423,7 @@ argument_list|()
 expr_stmt|;
 name|status
 operator|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|STATUS_ROLLEDBACK
 expr_stmt|;

@@ -399,6 +399,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tx
+operator|.
+name|Transaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|ToStringBuilder
@@ -1003,7 +1017,7 @@ expr_stmt|;
 name|Transaction
 name|transaction
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -1091,7 +1105,7 @@ expr_stmt|;
 name|Transaction
 name|transaction
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -1229,7 +1243,7 @@ block|}
 name|Transaction
 name|t
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -1340,7 +1354,7 @@ block|}
 name|Transaction
 name|t
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()

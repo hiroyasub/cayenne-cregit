@@ -431,17 +431,17 @@ argument_list|)
 expr_stmt|;
 comment|// since stored procedure commits its stuff, we must use an explicit
 comment|// non-committing transaction
-name|Transaction
+name|BaseTransaction
 name|t
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|externalTransaction
 argument_list|(
 literal|null
 argument_list|)
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -460,7 +460,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -590,17 +590,17 @@ argument_list|)
 decl_stmt|;
 comment|// since stored procedure commits its stuff, we must use an explicit
 comment|// non-committing transaction
-name|Transaction
+name|BaseTransaction
 name|t
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|externalTransaction
 argument_list|(
 literal|null
 argument_list|)
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -619,7 +619,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(

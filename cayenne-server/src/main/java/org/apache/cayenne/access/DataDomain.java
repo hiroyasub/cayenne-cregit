@@ -373,6 +373,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tx
+operator|.
+name|Transaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|ToStringBuilder
@@ -1485,10 +1499,10 @@ name|isUsingExternalTransactions
 argument_list|()
 condition|)
 block|{
-name|Transaction
+name|BaseTransaction
 name|transaction
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|externalTransaction
 argument_list|(
@@ -1509,10 +1523,10 @@ return|;
 block|}
 else|else
 block|{
-name|Transaction
+name|BaseTransaction
 name|transaction
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|internalTransaction
 argument_list|(
@@ -2092,7 +2106,7 @@ comment|// if there is a transaction in progress, roll it back
 name|Transaction
 name|transaction
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -2193,7 +2207,7 @@ block|{
 comment|// user or container-managed or nested transaction
 if|if
 condition|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -2217,7 +2231,7 @@ init|=
 name|createTransaction
 argument_list|()
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -2285,7 +2299,7 @@ block|}
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -2296,12 +2310,8 @@ if|if
 condition|(
 name|transaction
 operator|.
-name|getStatus
+name|isRollbackOnly
 argument_list|()
-operator|==
-name|Transaction
-operator|.
-name|STATUS_MARKED_ROLLEDBACK
 condition|)
 block|{
 try|try

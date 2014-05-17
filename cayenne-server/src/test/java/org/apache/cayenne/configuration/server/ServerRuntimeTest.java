@@ -145,7 +145,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|Transaction
+name|BaseTransaction
 import|;
 end_import
 
@@ -302,12 +302,12 @@ name|testPerformInTransaction
 parameter_list|()
 block|{
 specifier|final
-name|Transaction
+name|BaseTransaction
 name|tx
 init|=
 name|mock
 argument_list|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|class
 argument_list|)
@@ -412,7 +412,7 @@ name|assertSame
 argument_list|(
 name|tx
 argument_list|,
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()

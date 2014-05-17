@@ -39,7 +39,7 @@ specifier|public
 name|boolean
 name|willCommit
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 function_decl|;
@@ -48,7 +48,7 @@ specifier|public
 name|boolean
 name|willMarkAsRollbackOnly
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 function_decl|;
@@ -57,7 +57,7 @@ specifier|public
 name|boolean
 name|willRollback
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 function_decl|;
@@ -66,7 +66,7 @@ specifier|public
 name|void
 name|didCommit
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 function_decl|;
@@ -75,7 +75,7 @@ specifier|public
 name|void
 name|didRollback
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 function_decl|;
@@ -84,7 +84,7 @@ specifier|public
 name|boolean
 name|willAddConnection
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|,
 name|Connection

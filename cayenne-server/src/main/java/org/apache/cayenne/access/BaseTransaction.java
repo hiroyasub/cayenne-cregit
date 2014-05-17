@@ -95,6 +95,20 @@ name|NoopJdbcEventLogger
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|Transaction
+import|;
+end_import
+
 begin_comment
 comment|/**  * A Cayenne transaction. Currently supports managing JDBC connections.  *   * @since 1.1  */
 end_comment
@@ -103,6 +117,8 @@ begin_class
 specifier|public
 specifier|abstract
 class|class
+name|BaseTransaction
+implements|implements
 name|Transaction
 block|{
 comment|/**      * A ThreadLocal that stores current thread transaction.      *       * @since 1.2      */
@@ -124,11 +140,11 @@ decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
-name|Transaction
+name|BaseTransaction
 name|NO_TRANSACTION
 init|=
 operator|new
-name|Transaction
+name|BaseTransaction
 argument_list|()
 block|{
 annotation|@
@@ -315,7 +331,7 @@ name|transaction
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a Transaction associated with the current thread, or null if there is no      * such Transaction.      *       * @since 1.2      */
+comment|/**      * Returns a Transaction associated with the current thread, or null if      * there is no such Transaction.      *       * @since 1.2      */
 specifier|public
 specifier|static
 name|Transaction
@@ -329,10 +345,10 @@ name|get
 argument_list|()
 return|;
 block|}
-comment|/**      * Factory method returning a new transaction instance that would propagate      * commit/rollback to participating connections. Connections will be closed when      * commit or rollback is called.      */
+comment|/**      * Factory method returning a new transaction instance that would propagate      * commit/rollback to participating connections. Connections will be closed      * when commit or rollback is called.      */
 specifier|public
 specifier|static
-name|Transaction
+name|BaseTransaction
 name|internalTransaction
 parameter_list|(
 name|TransactionDelegate
@@ -347,10 +363,10 @@ name|delegate
 argument_list|)
 return|;
 block|}
-comment|/**      * Factory method returning a new transaction instance that would NOT propagate      * commit/rollback to participating connections. Connections will still be closed when      * commit or rollback is called.      */
+comment|/**      * Factory method returning a new transaction instance that would NOT      * propagate commit/rollback to participating connections. Connections will      * still be closed when commit or rollback is called.      */
 specifier|public
 specifier|static
-name|Transaction
+name|BaseTransaction
 name|externalTransaction
 parameter_list|(
 name|TransactionDelegate
@@ -365,7 +381,7 @@ name|delegate
 argument_list|)
 return|;
 block|}
-comment|/**      * Factory method returning a transaction instance that does not alter the state of      * participating connections in any way. Commit and rollback methods do not do      * anything.      */
+comment|/**      * Factory method returning a transaction instance that does not alter the      * state of participating connections in any way. Commit and rollback      * methods do not do anything.      */
 specifier|public
 specifier|static
 name|Transaction
@@ -378,7 +394,7 @@ return|;
 block|}
 comment|/**      * Creates new inactive transaction.      */
 specifier|protected
-name|Transaction
+name|BaseTransaction
 parameter_list|()
 block|{
 name|status
@@ -454,6 +470,8 @@ operator|.
 name|jdbcEventLogger
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -465,6 +483,22 @@ argument_list|(
 name|STATUS_MARKED_ROLLEDBACK
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * @since 3.2      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isRollbackOnly
+parameter_list|()
+block|{
+comment|// TODO Auto-generated method stub
+return|return
+name|getStatus
+argument_list|()
+operator|==
+name|STATUS_MARKED_ROLLEDBACK
+return|;
 block|}
 specifier|public
 specifier|synchronized
@@ -503,13 +537,17 @@ operator|=
 name|status
 expr_stmt|;
 block|}
-comment|/**      * Starts a Transaction. If Transaction is not started explicitly, it will be started      * when the first connection is added.      */
+comment|/**      * Starts a Transaction. If Transaction is not started explicitly, it will      * be started when the first connection is added.      */
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
 name|begin
 parameter_list|()
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
@@ -522,6 +560,8 @@ name|SQLException
 throws|,
 name|CayenneException
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
@@ -535,6 +575,8 @@ throws|,
 name|CayenneException
 function_decl|;
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|Connection
 name|getConnection
@@ -561,6 +603,8 @@ literal|null
 return|;
 block|}
 comment|/**      * @since 1.2      */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|addConnection
@@ -571,8 +615,6 @@ parameter_list|,
 name|Connection
 name|connection
 parameter_list|)
-throws|throws
-name|SQLException
 block|{
 if|if
 condition|(

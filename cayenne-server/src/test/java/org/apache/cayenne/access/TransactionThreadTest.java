@@ -254,10 +254,10 @@ operator|new
 name|Delegate
 argument_list|()
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 name|t
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|internalTransaction
 argument_list|(
@@ -271,7 +271,7 @@ argument_list|(
 name|logger
 argument_list|)
 expr_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -329,7 +329,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -382,7 +382,7 @@ specifier|public
 name|boolean
 name|willCommit
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{
@@ -481,7 +481,7 @@ specifier|public
 name|boolean
 name|willAddConnection
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|,
 name|Connection
@@ -510,7 +510,7 @@ specifier|public
 name|void
 name|didCommit
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{
@@ -519,7 +519,7 @@ specifier|public
 name|void
 name|didRollback
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{
@@ -528,7 +528,7 @@ specifier|public
 name|boolean
 name|willCommit
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{
@@ -540,7 +540,7 @@ specifier|public
 name|boolean
 name|willMarkAsRollbackOnly
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{
@@ -552,7 +552,7 @@ specifier|public
 name|boolean
 name|willRollback
 parameter_list|(
-name|Transaction
+name|BaseTransaction
 name|transaction
 parameter_list|)
 block|{

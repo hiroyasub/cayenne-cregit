@@ -1041,7 +1041,7 @@ name|Throwable
 name|th
 parameter_list|)
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()

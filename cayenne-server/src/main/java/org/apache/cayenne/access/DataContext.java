@@ -539,6 +539,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tx
+operator|.
+name|Transaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|EventUtil
@@ -3260,7 +3274,7 @@ block|{
 comment|// TODO: use 3.2 TransactionManager
 if|if
 condition|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -3289,7 +3303,7 @@ operator|.
 name|createTransaction
 argument_list|()
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -3315,7 +3329,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -3346,12 +3360,8 @@ if|if
 condition|(
 name|tx
 operator|.
-name|getStatus
+name|isRollbackOnly
 argument_list|()
-operator|==
-name|Transaction
-operator|.
-name|STATUS_MARKED_ROLLEDBACK
 condition|)
 block|{
 try|try

@@ -63,7 +63,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|Transaction
+name|BaseTransaction
 import|;
 end_import
 
@@ -123,12 +123,12 @@ name|testPerformInTransaction_NoTx
 parameter_list|()
 block|{
 specifier|final
-name|Transaction
+name|BaseTransaction
 name|tx
 init|=
 name|mock
 argument_list|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|class
 argument_list|)
@@ -195,7 +195,7 @@ parameter_list|()
 block|{
 name|assertNotNull
 argument_list|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -222,12 +222,12 @@ name|testPerformInTransaction_ExistingTx
 parameter_list|()
 block|{
 specifier|final
-name|Transaction
+name|BaseTransaction
 name|tx1
 init|=
 name|mock
 argument_list|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|class
 argument_list|)
@@ -266,17 +266,17 @@ name|domain
 argument_list|)
 decl_stmt|;
 specifier|final
-name|Transaction
+name|BaseTransaction
 name|tx2
 init|=
 name|mock
 argument_list|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -316,7 +316,7 @@ name|assertSame
 argument_list|(
 name|tx2
 argument_list|,
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -339,7 +339,7 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(

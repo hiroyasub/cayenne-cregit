@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|Transaction
+name|BaseTransaction
 import|;
 end_import
 
@@ -119,7 +119,7 @@ comment|// commit or roll it back
 name|Transaction
 name|currentTx
 init|=
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -147,7 +147,7 @@ operator|.
 name|createTransaction
 argument_list|()
 decl_stmt|;
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -194,7 +194,7 @@ throw|;
 block|}
 finally|finally
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(
@@ -205,12 +205,8 @@ if|if
 condition|(
 name|tx
 operator|.
-name|getStatus
+name|isRollbackOnly
 argument_list|()
-operator|==
-name|Transaction
-operator|.
-name|STATUS_MARKED_ROLLEDBACK
 condition|)
 block|{
 try|try
