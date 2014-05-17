@@ -23,6 +23,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|ServerRuntime
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|tx
 operator|.
 name|BaseTransaction
@@ -30,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @deprecated since 3.2 use {@link BaseTransaction} static methods. Note that  *             since 3.2 {@link org.apache.cayenne.tx.Transaction} is an  *             interface located in a different package.  */
+comment|/**  * @deprecated since 3.2. For manual transaction management use  *             {@link BaseTransaction} static methods or better -  *             {@link ServerRuntime#performInTransaction(org.apache.cayenne.tx.TransactionalOperation)}  *             . Also note that since 3.2 an actual Transaction is an interface  *             located in a different package:  *             {@link org.apache.cayenne.tx.Transaction}  */
 end_comment
 
 begin_class
