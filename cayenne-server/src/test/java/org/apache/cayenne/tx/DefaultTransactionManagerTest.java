@@ -47,9 +47,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|configuration
 operator|.
-name|DataDomain
+name|server
+operator|.
+name|TransactionFactory
 import|;
 end_import
 
@@ -61,11 +63,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|log
 operator|.
-name|server
-operator|.
-name|TransactionFactory
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -165,6 +165,13 @@ operator|new
 name|DefaultTransactionManager
 argument_list|(
 name|txFactory
+argument_list|,
+name|mock
+argument_list|(
+name|JdbcEventLogger
+operator|.
+name|class
+argument_list|)
 argument_list|)
 decl_stmt|;
 specifier|final
@@ -263,6 +270,13 @@ operator|new
 name|DefaultTransactionManager
 argument_list|(
 name|txFactory
+argument_list|,
+name|mock
+argument_list|(
+name|JdbcEventLogger
+operator|.
+name|class
+argument_list|)
 argument_list|)
 decl_stmt|;
 specifier|final

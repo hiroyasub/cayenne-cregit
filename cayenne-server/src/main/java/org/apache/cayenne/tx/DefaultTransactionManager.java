@@ -57,6 +57,20 @@ name|Inject
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.2  */
 end_comment
@@ -72,6 +86,10 @@ specifier|private
 name|TransactionFactory
 name|txFactory
 decl_stmt|;
+specifier|private
+name|JdbcEventLogger
+name|jdbcEventLogger
+decl_stmt|;
 specifier|public
 name|DefaultTransactionManager
 parameter_list|(
@@ -79,6 +97,11 @@ annotation|@
 name|Inject
 name|TransactionFactory
 name|txFactory
+parameter_list|,
+annotation|@
+name|Inject
+name|JdbcEventLogger
+name|jdbcEventLogger
 parameter_list|)
 block|{
 name|this
@@ -86,6 +109,12 @@ operator|.
 name|txFactory
 operator|=
 name|txFactory
+expr_stmt|;
+name|this
+operator|.
+name|jdbcEventLogger
+operator|=
+name|jdbcEventLogger
 expr_stmt|;
 block|}
 annotation|@
@@ -165,6 +194,21 @@ return|;
 block|}
 catch|catch
 parameter_list|(
+name|CayenneRuntimeException
+name|ex
+parameter_list|)
+block|{
+name|tx
+operator|.
+name|setRollbackOnly
+argument_list|()
+expr_stmt|;
+throw|throw
+name|ex
+throw|;
+block|}
+catch|catch
+parameter_list|(
 name|Exception
 name|ex
 parameter_list|)
@@ -213,6 +257,16 @@ name|Exception
 name|e
 parameter_list|)
 block|{
+comment|// although we don't expect an exception here, print the
+comment|// stack, as there have been some Cayenne bugs already
+comment|// (CAY-557) that were masked by this 'catch' clause.
+name|jdbcEventLogger
+operator|.
+name|logQueryError
+argument_list|(
+name|e
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
