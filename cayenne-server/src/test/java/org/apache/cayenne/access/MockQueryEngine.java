@@ -117,6 +117,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|BaseTransaction
+import|;
+end_import
+
 begin_comment
 comment|/**  * A query engine used for unit testing. Returns canned results instead of doing the  * actual query.  *   */
 end_comment

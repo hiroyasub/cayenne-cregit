@@ -219,6 +219,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|TransactionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|BeforeScopeEnd
@@ -375,6 +391,20 @@ name|cayenne
 operator|.
 name|tx
 operator|.
+name|BaseTransaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
 name|Transaction
 import|;
 end_import
@@ -452,6 +482,9 @@ name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * @deprecated since 3.2 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -460,6 +493,9 @@ name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
 init|=
 literal|"cayenne.DataDomain.usingExternalTransactions"
 decl_stmt|;
+comment|/**      * @deprecated since 3.2 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}.      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
@@ -474,6 +510,13 @@ name|Inject
 specifier|protected
 name|JdbcEventLogger
 name|jdbcEventLogger
+decl_stmt|;
+comment|/**      * @since 3.2      */
+annotation|@
+name|Inject
+specifier|protected
+name|TransactionFactory
+name|transactionFactory
 decl_stmt|;
 comment|/**      * @since 3.1      */
 specifier|protected
@@ -528,10 +571,6 @@ name|DataRowStore
 name|sharedSnapshotCache
 decl_stmt|;
 specifier|protected
-name|TransactionDelegate
-name|transactionDelegate
-decl_stmt|;
-specifier|protected
 name|String
 name|name
 decl_stmt|;
@@ -547,10 +586,6 @@ decl_stmt|;
 specifier|protected
 name|boolean
 name|validatingObjectsOnCommit
-decl_stmt|;
-specifier|protected
-name|boolean
-name|usingExternalTransactions
 decl_stmt|;
 comment|/**      * @since 1.2      */
 specifier|protected
@@ -741,10 +776,6 @@ name|validatingObjectsOnCommit
 operator|=
 name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
 expr_stmt|;
-name|usingExternalTransactions
-operator|=
-name|USING_EXTERNAL_TRANSACTIONS_DEFAULT
-expr_stmt|;
 block|}
 comment|/**      * Reinitializes domain state with a new set of properties.      *       * @since 1.1      * @deprecated since 3.2 properties are processed by the DI provider.      */
 annotation|@
@@ -804,16 +835,6 @@ argument_list|(
 name|VALIDATING_OBJECTS_ON_COMMIT_PROPERTY
 argument_list|)
 decl_stmt|;
-name|String
-name|usingExternalTransactions
-init|=
-name|properties
-operator|.
-name|get
-argument_list|(
-name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
-argument_list|)
-decl_stmt|;
 comment|// init ivars from properties
 name|this
 operator|.
@@ -852,25 +873,6 @@ name|validatingObjectsOnCommit
 argument_list|)
 else|:
 name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
-expr_stmt|;
-name|this
-operator|.
-name|usingExternalTransactions
-operator|=
-operator|(
-name|usingExternalTransactions
-operator|!=
-literal|null
-operator|)
-condition|?
-literal|"true"
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|usingExternalTransactions
-argument_list|)
-else|:
-name|USING_EXTERNAL_TRANSACTIONS_DEFAULT
 expr_stmt|;
 name|this
 operator|.
@@ -1015,32 +1017,6 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Returns whether this DataDomain should internally commit all      * transactions, or let container do that.      *       * @since 1.1      */
-specifier|public
-name|boolean
-name|isUsingExternalTransactions
-parameter_list|()
-block|{
-return|return
-name|usingExternalTransactions
-return|;
-block|}
-comment|/**      * Sets a property defining whether this DataDomain should internally commit      * all transactions, or let container do that.      *       * @since 1.1      */
-specifier|public
-name|void
-name|setUsingExternalTransactions
-parameter_list|(
-name|boolean
-name|flag
-parameter_list|)
-block|{
-name|this
-operator|.
-name|usingExternalTransactions
-operator|=
-name|flag
-expr_stmt|;
-block|}
 comment|/**      * @since 1.1      * @return a Map of properties for this DataDomain.      */
 specifier|public
 name|Map
@@ -1055,32 +1031,6 @@ block|{
 return|return
 name|properties
 return|;
-block|}
-comment|/**      * @since 1.1      * @return TransactionDelegate associated with this DataDomain, or null if      *         no delegate exist.      */
-specifier|public
-name|TransactionDelegate
-name|getTransactionDelegate
-parameter_list|()
-block|{
-return|return
-name|transactionDelegate
-return|;
-block|}
-comment|/**      * Initializes TransactionDelegate used by all DataContexts associated with      * this DataDomain.      *       * @since 1.1      */
-specifier|public
-name|void
-name|setTransactionDelegate
-parameter_list|(
-name|TransactionDelegate
-name|transactionDelegate
-parameter_list|)
-block|{
-name|this
-operator|.
-name|transactionDelegate
-operator|=
-name|transactionDelegate
-expr_stmt|;
 block|}
 comment|/**      * Returns snapshots cache for this DataDomain, lazily initializing it on      * the first call if 'sharedCacheEnabled' flag is true.      */
 specifier|public
@@ -1485,65 +1435,6 @@ argument_list|,
 name|node
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-comment|/**      * Creates and returns a new inactive transaction. Returned transaction is      * bound to the current execution thread.      *<p>      * If there is a TransactionDelegate, adds the delegate to the newly created      * Transaction. Behavior of the returned Transaction depends on      * "usingInternalTransactions" property setting.      *</p>      *       * @since 1.1      */
-specifier|public
-name|Transaction
-name|createTransaction
-parameter_list|()
-block|{
-if|if
-condition|(
-name|isUsingExternalTransactions
-argument_list|()
-condition|)
-block|{
-name|BaseTransaction
-name|transaction
-init|=
-name|BaseTransaction
-operator|.
-name|externalTransaction
-argument_list|(
-name|getTransactionDelegate
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|transaction
-operator|.
-name|setJdbcEventLogger
-argument_list|(
-name|jdbcEventLogger
-argument_list|)
-expr_stmt|;
-return|return
-name|transaction
-return|;
-block|}
-else|else
-block|{
-name|BaseTransaction
-name|transaction
-init|=
-name|BaseTransaction
-operator|.
-name|internalTransaction
-argument_list|(
-name|getTransactionDelegate
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|transaction
-operator|.
-name|setJdbcEventLogger
-argument_list|(
-name|jdbcEventLogger
-argument_list|)
-expr_stmt|;
-return|return
-name|transaction
-return|;
 block|}
 block|}
 comment|/**      * Returns registered DataNode whose name matches<code>name</code>      * parameter.      *       * @since 3.1      */
@@ -2228,6 +2119,8 @@ comment|// Cayenne-managed transaction
 name|Transaction
 name|transaction
 init|=
+name|transactionFactory
+operator|.
 name|createTransaction
 argument_list|()
 decl_stmt|;

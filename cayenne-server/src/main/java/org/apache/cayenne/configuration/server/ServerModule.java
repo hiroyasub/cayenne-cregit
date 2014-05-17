@@ -1986,6 +1986,22 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|TransactionFactory
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|DefaultTransactionFactory
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 comment|// a service to load project XML descriptors
 name|binder
 operator|.

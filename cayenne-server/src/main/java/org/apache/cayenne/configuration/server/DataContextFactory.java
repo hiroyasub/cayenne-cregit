@@ -237,6 +237,12 @@ name|QueryCache
 name|queryCache
 decl_stmt|;
 annotation|@
+name|Inject
+specifier|protected
+name|TransactionFactory
+name|transactionFactory
+decl_stmt|;
+annotation|@
 name|Override
 specifier|public
 name|ObjectContext
@@ -526,6 +532,13 @@ name|NestedQueryCache
 argument_list|(
 name|queryCache
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|setTransactionFactory
+argument_list|(
+name|transactionFactory
 argument_list|)
 expr_stmt|;
 return|return

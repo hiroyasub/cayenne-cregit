@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Defines the names of runtime properties and DI collections used in DI modules used to  * configure server and client runtime.  *   * @since 3.1  */
+comment|/**  * Defines the names of runtime properties and DI collections used in DI modules  * used to configure server and client runtime.  *   * @since 3.1  */
 end_comment
 
 begin_interface
@@ -25,7 +25,7 @@ interface|interface
 name|Constants
 block|{
 comment|// DI "collections"
-comment|/**      * A DI container key for the Map&lt;String, String&gt; storing properties used by built-in      * Cayenne service.      */
+comment|/**      * A DI container key for the Map&lt;String, String&gt; storing properties      * used by built-in Cayenne service.      */
 specifier|public
 specifier|static
 specifier|final
@@ -34,7 +34,7 @@ name|PROPERTIES_MAP
 init|=
 literal|"cayenne.properties"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;DbAdapterDetector&gt; that contains objects that can      * discover the type of current database and install the correct DbAdapter in runtime.      */
+comment|/**      * A DI container key for the List&lt;DbAdapterDetector&gt; that contains      * objects that can discover the type of current database and install the      * correct DbAdapter in runtime.      */
 specifier|public
 specifier|static
 specifier|final
@@ -43,7 +43,7 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing DataDomain filters.      */
+comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing      * DataDomain filters.      */
 specifier|public
 specifier|static
 specifier|final
@@ -52,7 +52,7 @@ name|SERVER_DOMAIN_FILTERS_LIST
 init|=
 literal|"cayenne.server.domain_filters"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;String&gt; storing locations of the one of more      * project configuration files.      */
+comment|/**      * A DI container key for the List&lt;String&gt; storing locations of the      * one of more project configuration files.      */
 specifier|public
 specifier|static
 specifier|final
@@ -61,7 +61,7 @@ name|SERVER_PROJECT_LOCATIONS_LIST
 init|=
 literal|"cayenne.server.project_locations"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing default adapter-agnostic      * ExtendedTypes.      */
+comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing default      * adapter-agnostic ExtendedTypes.      */
 specifier|public
 specifier|static
 specifier|final
@@ -70,7 +70,7 @@ name|SERVER_DEFAULT_TYPES_LIST
 init|=
 literal|"cayenne.server.default_types"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing a user-provided      * ExtendedTypes.      */
+comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing a      * user-provided ExtendedTypes.      */
 specifier|public
 specifier|static
 specifier|final
@@ -79,7 +79,7 @@ name|SERVER_USER_TYPES_LIST
 init|=
 literal|"cayenne.server.user_types"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing default and      * user-provided ExtendedTypeFactories.      */
+comment|/**      * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing      * default and user-provided ExtendedTypeFactories.      */
 specifier|public
 specifier|static
 specifier|final
@@ -88,7 +88,7 @@ name|SERVER_TYPE_FACTORIES_LIST
 init|=
 literal|"cayenne.server.type_factories"
 decl_stmt|;
-comment|/**      * A server-side DI container key for the Map&lt;String, String&gt; storing event bridge      * properties passed to the ROP client on bootstrap.      */
+comment|/**      * A server-side DI container key for the Map&lt;String, String&gt; storing      * event bridge properties passed to the ROP client on bootstrap.      */
 specifier|public
 specifier|static
 specifier|final
@@ -146,7 +146,7 @@ name|JDBC_MAX_CONNECTIONS_PROPERTY
 init|=
 literal|"cayenne.jdbc.max_connections"
 decl_stmt|;
-comment|/**      * An integer property defining the maximum number of entries in the query cache. Note      * that not all QueryCache providers may respect this property. MapQueryCache uses it,      * but the rest would use alternative configuration methods.      */
+comment|/**      * An integer property defining the maximum number of entries in the query      * cache. Note that not all QueryCache providers may respect this property.      * MapQueryCache uses it, but the rest would use alternative configuration      * methods.      */
 specifier|public
 specifier|static
 specifier|final
@@ -155,7 +155,7 @@ name|QUERY_CACHE_SIZE_PROPERTY
 init|=
 literal|"cayenne.querycache.size"
 decl_stmt|;
-comment|/**      * A boolean property defining whether cross-contexts synchronization is enabled.      * Possible values are "true" or "false".      */
+comment|/**      * A boolean property defining whether cross-contexts synchronization is      * enabled. Possible values are "true" or "false".      */
 specifier|public
 specifier|static
 specifier|final
@@ -164,7 +164,7 @@ name|SERVER_CONTEXTS_SYNC_PROPERTY
 init|=
 literal|"cayenne.server.contexts_sync_strategy"
 decl_stmt|;
-comment|/**      * A String property that defines how ObjectContexts should retain cached committed      * objects. Possible values are "weak", "soft", "hard".      */
+comment|/**      * A String property that defines how ObjectContexts should retain cached      * committed objects. Possible values are "weak", "soft", "hard".      */
 specifier|public
 specifier|static
 specifier|final
@@ -172,6 +172,15 @@ name|String
 name|SERVER_OBJECT_RETAIN_STRATEGY_PROPERTY
 init|=
 literal|"cayenne.server.object_retain_strategy"
+decl_stmt|;
+comment|/**      * A boolean property that defines whether runtime should use external      * transactions. Possible values are "true" or "false".      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SERVER_EXTERNAL_TX_PROPERTY
+init|=
+literal|"cayenne.server.external_tx"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -237,7 +246,7 @@ name|ROP_CONTEXT_LIFECYCLE_EVENTS_PROPERTY
 init|=
 literal|"cayenne.rop.context_lifecycle_events"
 decl_stmt|;
-comment|/**      * The name of the {@link org.apache.cayenne.event.EventBridgeFactory} that is passed      * from the ROP server to the client. Client would instantiate the factory to receive      * events from the server. Note that this property is stored in      * {@link #SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP}, not {@link #PROPERTIES_MAP}.      */
+comment|/**      * The name of the {@link org.apache.cayenne.event.EventBridgeFactory} that      * is passed from the ROP server to the client. Client would instantiate the      * factory to receive events from the server. Note that this property is      * stored in {@link #SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP}, not      * {@link #PROPERTIES_MAP}.      */
 specifier|public
 specifier|static
 specifier|final
@@ -246,7 +255,7 @@ name|SERVER_ROP_EVENT_BRIDGE_FACTORY_PROPERTY
 init|=
 literal|"cayenne.server.rop_event_bridge_factory"
 decl_stmt|;
-comment|/**      * A property that defines a maximum number of ID qualifiers in where clause of queries      * that are generated for example in {@link org.apache.cayenne.access.IncrementalFaultList}      * or in DISJOINT_BY_ID prefetch processing. This is needed to avoid where      * clause size limitations and memory usage efficiency.      */
+comment|/**      * A property that defines a maximum number of ID qualifiers in where clause      * of queries that are generated for example in      * {@link org.apache.cayenne.access.IncrementalFaultList} or in      * DISJOINT_BY_ID prefetch processing. This is needed to avoid where clause      * size limitations and memory usage efficiency.      */
 specifier|public
 specifier|static
 specifier|final
@@ -255,7 +264,7 @@ name|SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY
 init|=
 literal|"cayenne.server.max_id_qualifier_size"
 decl_stmt|;
-comment|/**      * Defines a maximum time in milliseconds that a connection request could wait in the      * connection queue. After this period expires, an exception will be thrown in the      * calling method. A value of zero will make the thread wait until a connection is      * available with no time out. Defaults to 20 seconds.      */
+comment|/**      * Defines a maximum time in milliseconds that a connection request could      * wait in the connection queue. After this period expires, an exception      * will be thrown in the calling method. A value of zero will make the      * thread wait until a connection is available with no time out. Defaults to      * 20 seconds.      */
 specifier|public
 specifier|static
 specifier|final
@@ -273,7 +282,7 @@ name|CI_PROPERTY
 init|=
 literal|"cayenne.runtime.db.collation.assume.ci"
 decl_stmt|;
-comment|/**       * A integer property that enables logging for just long running queries (rather than all queries).       * The value is the minimum number of milliseconds a query must run before is logged.       * A value less than or equal to zero (the default) disables this feature.       *       * @since 3.2       * */
+comment|/**      * A integer property that enables logging for just long running queries      * (rather than all queries). The value is the minimum number of      * milliseconds a query must run before is logged. A value less than or      * equal to zero (the default) disables this feature.      *       * @since 3.2      * */
 specifier|public
 specifier|final
 specifier|static

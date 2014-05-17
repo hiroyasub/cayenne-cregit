@@ -253,6 +253,20 @@ name|ClassDescriptor
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|BaseTransaction
+import|;
+end_import
+
 begin_comment
 comment|/**  * A stateful commit handler used by DataContext to perform commit operation.  * DataContextCommitAction resolves primary key dependencies, referential integrity  * dependencies (including multi-reflexive entities), generates primary keys, creates  * batches for massive data modifications, assigns operations to data nodes.  *   * @since 1.2  */
 end_comment
