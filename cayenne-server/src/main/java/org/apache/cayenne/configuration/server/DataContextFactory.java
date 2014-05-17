@@ -195,6 +195,20 @@ name|EventManager
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|TransactionFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.1  */
 end_comment
