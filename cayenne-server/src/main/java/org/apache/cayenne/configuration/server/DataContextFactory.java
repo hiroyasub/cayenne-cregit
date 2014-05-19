@@ -195,6 +195,20 @@ name|EventManager
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|TransactionFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.1  */
 end_comment
@@ -235,6 +249,12 @@ name|Inject
 specifier|protected
 name|QueryCache
 name|queryCache
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|TransactionFactory
+name|transactionFactory
 decl_stmt|;
 annotation|@
 name|Override
@@ -526,6 +546,13 @@ name|NestedQueryCache
 argument_list|(
 name|queryCache
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|setTransactionFactory
+argument_list|(
+name|transactionFactory
 argument_list|)
 expr_stmt|;
 return|return

@@ -16,27 +16,17 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An optional utility service that simplifies wrapping multiple operations in  * transactions. Users only rarely need to invoke it directly, as all standard  * Cayenne operations are managing their own transactions internally.  *   * @since 3.2  */
+comment|/**  * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|TransactionManager
+name|TransactionFactory
 block|{
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then      * committing or rolling back the transaction. Frees the user      */
-parameter_list|<
-name|T
-parameter_list|>
-name|T
-name|performInTransaction
-parameter_list|(
-name|TransactionalOperation
-argument_list|<
-name|T
-argument_list|>
-name|op
-parameter_list|)
+name|Transaction
+name|createTransaction
+parameter_list|()
 function_decl|;
 block|}
 end_interface

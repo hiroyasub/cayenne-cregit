@@ -15,27 +15,61 @@ name|tx
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Connection
+import|;
+end_import
+
 begin_comment
-comment|/**  * An optional utility service that simplifies wrapping multiple operations in  * transactions. Users only rarely need to invoke it directly, as all standard  * Cayenne operations are managing their own transactions internally.  *   * @since 3.2  */
+comment|/**  * A Cayenne Transaction interface.  *   * @since 3.2  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|TransactionManager
+name|Transaction
 block|{
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then      * committing or rolling back the transaction. Frees the user      */
-parameter_list|<
-name|T
-parameter_list|>
-name|T
-name|performInTransaction
+comment|/**      * Starts a Transaction. If Transaction is not started explicitly, it will      * be started when the first connection is added.      */
+name|void
+name|begin
+parameter_list|()
+function_decl|;
+name|void
+name|commit
+parameter_list|()
+function_decl|;
+name|void
+name|rollback
+parameter_list|()
+function_decl|;
+name|void
+name|setRollbackOnly
+parameter_list|()
+function_decl|;
+name|boolean
+name|isRollbackOnly
+parameter_list|()
+function_decl|;
+name|Connection
+name|getConnection
 parameter_list|(
-name|TransactionalOperation
-argument_list|<
-name|T
-argument_list|>
-name|op
+name|String
+name|name
+parameter_list|)
+function_decl|;
+name|void
+name|addConnection
+parameter_list|(
+name|String
+name|name
+parameter_list|,
+name|Connection
+name|connection
 parameter_list|)
 function_decl|;
 block|}

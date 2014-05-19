@@ -15,31 +15,79 @@ name|tx
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
 begin_comment
-comment|/**  * An optional utility service that simplifies wrapping multiple operations in  * transactions. Users only rarely need to invoke it directly, as all standard  * Cayenne operations are managing their own transactions internally.  *   * @since 3.2  */
+comment|/**  * Represents a container-managed transaction.  *   * @since 3.2  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|TransactionManager
+class|class
+name|ExternalTransaction
+extends|extends
+name|BaseTransaction
 block|{
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then      * committing or rolling back the transaction. Frees the user      */
-parameter_list|<
-name|T
-parameter_list|>
-name|T
-name|performInTransaction
+specifier|protected
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
+specifier|public
+name|ExternalTransaction
 parameter_list|(
-name|TransactionalOperation
-argument_list|<
-name|T
-argument_list|>
-name|op
+name|JdbcEventLogger
+name|jdbcEventLogger
 parameter_list|)
-function_decl|;
+block|{
+name|this
+operator|.
+name|logger
+operator|=
+name|jdbcEventLogger
+expr_stmt|;
 block|}
-end_interface
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|processCommit
+parameter_list|()
+block|{
+name|logger
+operator|.
+name|logCommitTransaction
+argument_list|(
+literal|"no commit - transaction controlled externally."
+argument_list|)
+expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|processRollback
+parameter_list|()
+block|{
+name|logger
+operator|.
+name|logRollbackTransaction
+argument_list|(
+literal|"no rollback - transaction controlled externally."
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_class
 
 end_unit
 

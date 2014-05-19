@@ -69,6 +69,34 @@ name|ResultIterator
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|BaseTransaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|Transaction
+import|;
+end_import
+
 begin_comment
 comment|/**  * Decorates ResultIterator to close active transaction when the iterator is  * closed.  *   * @since 1.2  */
 end_comment
@@ -194,7 +222,7 @@ finally|finally
 block|{
 if|if
 condition|(
-name|Transaction
+name|BaseTransaction
 operator|.
 name|getThreadTransaction
 argument_list|()
@@ -202,7 +230,7 @@ operator|==
 name|tx
 condition|)
 block|{
-name|Transaction
+name|BaseTransaction
 operator|.
 name|bindThreadTransaction
 argument_list|(

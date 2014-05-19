@@ -307,6 +307,15 @@ name|MIN_SUPPORTED_VERSION
 init|=
 literal|"3.0.0.1"
 decl_stmt|;
+comment|// this will be removed from DataDomain soon. So caching this property name
+comment|// in the upgrade handler
+specifier|static
+specifier|final
+name|String
+name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
+init|=
+literal|"cayenne.DataDomain.usingExternalTransactions"
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
@@ -438,13 +447,19 @@ name|getRootNode
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|removeExternalTxProperty
+argument_list|(
+name|project
+argument_list|)
+expr_stmt|;
 comment|// remove "shadow" attributes per CAY-1795
 name|removeShadowAttributes
 argument_list|(
 name|project
 argument_list|)
 expr_stmt|;
-comment|// load and safe cycle removes objects no longer supported, specifically listeners
+comment|// load and safe cycle removes objects no longer supported, specifically
+comment|// listeners
 name|projectSaver
 operator|.
 name|save
@@ -458,6 +473,36 @@ operator|.
 name|getConfigurationResource
 argument_list|()
 return|;
+block|}
+specifier|private
+name|void
+name|removeExternalTxProperty
+parameter_list|(
+name|Project
+name|project
+parameter_list|)
+block|{
+name|DataChannelDescriptor
+name|rootNode
+init|=
+operator|(
+name|DataChannelDescriptor
+operator|)
+name|project
+operator|.
+name|getRootNode
+argument_list|()
+decl_stmt|;
+name|rootNode
+operator|.
+name|getProperties
+argument_list|()
+operator|.
+name|remove
+argument_list|(
+name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|void
