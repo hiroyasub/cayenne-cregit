@@ -90,6 +90,78 @@ name|select
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      *<p>This should not parse because there are multiple non-bracketed parameters.</p>      */
+specifier|public
+name|void
+name|testInWithMultipleStringPositionalParameter_withoutBrackets
+parameter_list|()
+block|{
+name|EJBQLParser
+name|parser
+init|=
+name|EJBQLParserFactory
+operator|.
+name|getParser
+argument_list|()
+decl_stmt|;
+try|try
+block|{
+name|EJBQLExpression
+name|select
+init|=
+name|parser
+operator|.
+name|parse
+argument_list|(
+literal|"select p from Painting p WHERE p.toArtist IN ?1, ?2"
+argument_list|)
+decl_stmt|;
+name|fail
+argument_list|(
+literal|"a test in clause with multiple unbracketed parameters parsed; should not be possible"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|EJBQLException
+name|ejbqlE
+parameter_list|)
+block|{
+comment|//expected; should not have parsed
+block|}
+catch|catch
+parameter_list|(
+name|Throwable
+name|th
+parameter_list|)
+block|{
+name|fail
+argument_list|(
+literal|"expected an instance of "
+operator|+
+name|EJBQLException
+operator|.
+name|class
+operator|.
+name|getSimpleName
+argument_list|()
+operator|+
+literal|" to be thrown, but; "
+operator|+
+name|th
+operator|.
+name|getClass
+argument_list|()
+operator|.
+name|getSimpleName
+argument_list|()
+operator|+
+literal|" was thrown"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_class
 

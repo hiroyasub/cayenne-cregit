@@ -65,6 +65,67 @@ name|EJBQLExpressionVisitor
 name|visitor
 parameter_list|)
 block|{
+comment|// this special handling caters for the fact that if a position parameter is used
+comment|// in an IN clause and it is the only parameter and it is a collection of objects
+comment|// then it should be bound as a number of objects rather than as that collection.
+if|if
+condition|(
+literal|null
+operator|!=
+name|parent
+operator|&&
+name|EJBQLIn
+operator|.
+name|class
+operator|.
+name|isAssignableFrom
+argument_list|(
+name|parent
+operator|.
+name|getClass
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|EJBQLIn
+name|parentIn
+init|=
+operator|(
+name|EJBQLIn
+operator|)
+name|parent
+decl_stmt|;
+comment|// the count here is two; 0 is the expression to the thing that should IN the
+comment|// list and 1... is the list itself.
+if|if
+condition|(
+literal|2
+operator|==
+name|parentIn
+operator|.
+name|getChildrenCount
+argument_list|()
+operator|&&
+name|this
+operator|==
+name|parentIn
+operator|.
+name|getChild
+argument_list|(
+literal|1
+argument_list|)
+condition|)
+block|{
+return|return
+name|visitor
+operator|.
+name|visitPositionalInputParameterForIn
+argument_list|(
+name|this
+argument_list|)
+return|;
+block|}
+block|}
 return|return
 name|visitor
 operator|.

@@ -565,6 +565,14 @@ name|int
 name|finishedChildIndex
 parameter_list|)
 function_decl|;
+comment|/**      *<p>This method is invoked from the processing of the      * {@link org.apache.cayenne.ejbql.parser.EJBQLIn} in order to handle a query such      * as;</p>      *      *<div><code>p.toArtist IN (:artists)</code></div>      */
+name|boolean
+name|visitNamedInputParameterForIn
+parameter_list|(
+name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
 name|boolean
 name|visitNamedInputParameter
 parameter_list|(
@@ -661,6 +669,14 @@ name|boolean
 name|visitPatternValue
 parameter_list|(
 name|EJBQLExpression
+name|expression
+parameter_list|)
+function_decl|;
+comment|/**      *<p>This method is invoked from the processing of the      * {@link org.apache.cayenne.ejbql.parser.EJBQLIn} in order to handle a query such      * as;</p>      *      *<div><code>p.toArtist IN (?1)</code></div>      */
+name|boolean
+name|visitPositionalInputParameterForIn
+parameter_list|(
+name|EJBQLPositionalInputParameter
 name|expression
 parameter_list|)
 function_decl|;
