@@ -1109,7 +1109,9 @@ name|toString
 argument_list|()
 return|;
 block|}
-specifier|private
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|typeSupportsLength
 parameter_list|(
@@ -1165,9 +1167,9 @@ block|}
 block|}
 block|}
 return|return
-name|TypesMapping
+name|super
 operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|type
 argument_list|)

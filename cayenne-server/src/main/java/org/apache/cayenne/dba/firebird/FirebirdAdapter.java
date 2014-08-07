@@ -536,9 +536,7 @@ expr_stmt|;
 comment|// append size and precision (if applicable)s
 if|if
 condition|(
-name|TypesMapping
-operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|column
 operator|.

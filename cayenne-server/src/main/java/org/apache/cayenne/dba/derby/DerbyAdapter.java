@@ -855,7 +855,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|private
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|typeSupportsLength
 parameter_list|(
@@ -884,9 +886,9 @@ literal|true
 return|;
 default|default:
 return|return
-name|TypesMapping
+name|super
 operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|type
 argument_list|)

@@ -39,6 +39,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collection
@@ -260,6 +270,13 @@ comment|/**      * Returns<code>true</code> if the target database supports batc
 name|boolean
 name|supportsBatchUpdates
 parameter_list|()
+function_decl|;
+name|boolean
+name|typeSupportsLength
+parameter_list|(
+name|int
+name|type
+parameter_list|)
 function_decl|;
 comment|/**      * Returns a collection of SQL statements needed to drop a database table.      *       * @since 3.0      */
 name|Collection

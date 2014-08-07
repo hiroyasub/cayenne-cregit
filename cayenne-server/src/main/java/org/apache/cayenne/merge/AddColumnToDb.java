@@ -339,9 +339,9 @@ expr_stmt|;
 comment|// append size and precision (if applicable)
 if|if
 condition|(
-name|TypesMapping
+name|adapter
 operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|getColumn
 argument_list|()

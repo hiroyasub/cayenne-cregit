@@ -831,9 +831,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|TypesMapping
-operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|at
 operator|.

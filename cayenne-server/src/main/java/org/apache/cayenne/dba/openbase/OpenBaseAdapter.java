@@ -908,9 +908,7 @@ expr_stmt|;
 comment|// append size and precision (if applicable)
 if|if
 condition|(
-name|TypesMapping
-operator|.
-name|supportsLength
+name|typeSupportsLength
 argument_list|(
 name|at
 operator|.

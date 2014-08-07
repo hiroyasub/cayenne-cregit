@@ -419,9 +419,12 @@ name|len
 operator|>
 literal|0
 operator|&&
-name|TypesMapping
+name|queryAssembler
 operator|.
-name|supportsLength
+name|getAdapter
+argument_list|()
+operator|.
+name|typeSupportsLength
 argument_list|(
 name|jdbcType
 argument_list|)
