@@ -287,7 +287,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|NamingStrategy
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -1125,7 +1125,7 @@ name|EntityMergeSupport
 argument_list|(
 name|map
 argument_list|,
-name|namingStrategy
+name|nameGenerator
 argument_list|,
 literal|true
 argument_list|)
@@ -1187,11 +1187,11 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|NamingStrategy
-name|namingStrategyInst
+name|ObjectNameGenerator
+name|nameGeneratorInst
 init|=
 operator|(
-name|NamingStrategy
+name|ObjectNameGenerator
 operator|)
 name|Class
 operator|.
@@ -1205,9 +1205,9 @@ argument_list|()
 decl_stmt|;
 name|loader
 operator|.
-name|setNamingStrategy
+name|setNameGenerator
 argument_list|(
-name|namingStrategyInst
+name|nameGeneratorInst
 argument_list|)
 expr_stmt|;
 block|}

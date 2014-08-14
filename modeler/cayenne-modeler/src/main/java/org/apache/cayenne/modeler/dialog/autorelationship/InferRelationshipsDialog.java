@@ -155,7 +155,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 import|;
 end_import
 
@@ -452,7 +452,7 @@ argument_list|(
 operator|new
 name|DefaultComboBoxModel
 argument_list|(
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 operator|.
 name|getInstance
 argument_list|()

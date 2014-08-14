@@ -49,7 +49,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|util
+name|map
+operator|.
+name|naming
 operator|.
 name|NameConverter
 import|;

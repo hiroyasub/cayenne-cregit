@@ -223,7 +223,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|NamingStrategy
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -283,7 +283,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 import|;
 end_import
 
@@ -427,7 +427,7 @@ name|JComboBox
 name|strategyCombo
 decl_stmt|;
 specifier|protected
-name|NamingStrategy
+name|ObjectNameGenerator
 name|strategy
 decl_stmt|;
 specifier|protected
@@ -882,7 +882,7 @@ name|String
 argument_list|>
 name|arr
 init|=
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 operator|.
 name|getInstance
 argument_list|()
@@ -1032,7 +1032,7 @@ name|classLoader
 operator|.
 name|loadClass
 argument_list|(
-name|NamingStrategy
+name|ObjectNameGenerator
 operator|.
 name|class
 argument_list|,
@@ -1043,7 +1043,7 @@ name|newInstance
 argument_list|()
 expr_stmt|;
 comment|/**              * Be user-friendly and update preferences with specified strategy              */
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 operator|.
 name|getInstance
 argument_list|()
@@ -1228,7 +1228,7 @@ return|;
 block|}
 comment|/**      * Returns configured naming strategy      */
 specifier|public
-name|NamingStrategy
+name|ObjectNameGenerator
 name|getNamingStrategy
 parameter_list|()
 block|{

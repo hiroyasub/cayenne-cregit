@@ -59,20 +59,6 @@ name|DbRelationship
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|NameConverter
-import|;
-end_import
-
 begin_comment
 comment|/**  * BasicNamingStrategy is an naming strategy that creates names in Cayenne's  * old-fashioned manner, i.e. the same way Cayenne did before 3.0  *   * @since 3.0  */
 end_comment
@@ -80,9 +66,9 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|BasicNamingStrategy
+name|BasicNameGenerator
 implements|implements
-name|NamingStrategy
+name|ObjectNameGenerator
 block|{
 specifier|public
 name|String

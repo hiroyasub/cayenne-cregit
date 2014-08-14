@@ -125,6 +125,38 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|DefaultUniqueNameGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|NameCheckers
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|modeler
 operator|.
 name|Application
@@ -177,20 +209,6 @@ name|CayenneAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|NamedObjectFactory
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -212,7 +230,7 @@ return|return
 literal|"Create Parameter"
 return|;
 block|}
-comment|/**      * Constructor for CreateProcedureParameterAction.      *       * @param name      */
+comment|/**      * Constructor for CreateProcedureParameterAction.      *       */
 specifier|public
 name|CreateProcedureParameterAction
 parameter_list|(
@@ -280,18 +298,19 @@ decl_stmt|;
 name|ProcedureParameter
 name|parameter
 init|=
-operator|(
+operator|new
 name|ProcedureParameter
-operator|)
-name|NamedObjectFactory
-operator|.
-name|createObject
 argument_list|(
-name|ProcedureParameter
+name|DefaultUniqueNameGenerator
 operator|.
-name|class
+name|generate
+argument_list|(
+name|NameCheckers
+operator|.
+name|ProcedureParameter
 argument_list|,
 name|procedure
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|procedure

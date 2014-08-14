@@ -149,7 +149,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|NamingStrategy
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -271,7 +271,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 import|;
 end_import
 
@@ -363,7 +363,7 @@ name|InferRelationshipsTabController
 name|entitySelector
 decl_stmt|;
 specifier|protected
-name|NamingStrategy
+name|ObjectNameGenerator
 name|strategy
 decl_stmt|;
 specifier|public
@@ -387,7 +387,7 @@ name|strategy
 operator|=
 name|createNamingStrategy
 argument_list|(
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 operator|.
 name|getInstance
 argument_list|()
@@ -421,7 +421,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|NamingStrategy
+name|ObjectNameGenerator
 name|createNamingStrategy
 parameter_list|(
 name|String
@@ -433,10 +433,7 @@ block|{
 name|ClassLoadingService
 name|classLoader
 init|=
-name|Application
-operator|.
-name|getInstance
-argument_list|()
+name|application
 operator|.
 name|getClassLoadingService
 argument_list|()
@@ -446,7 +443,7 @@ name|classLoader
 operator|.
 name|loadClass
 argument_list|(
-name|NamingStrategy
+name|ObjectNameGenerator
 operator|.
 name|class
 argument_list|,
@@ -727,7 +724,7 @@ condition|)
 block|{
 return|return;
 block|}
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 operator|.
 name|getInstance
 argument_list|()
@@ -747,7 +744,7 @@ argument_list|(
 operator|new
 name|DefaultComboBoxModel
 argument_list|(
-name|NamingStrategyPreferences
+name|NameGeneratorPreferences
 operator|.
 name|getInstance
 argument_list|()
@@ -803,7 +800,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|NamingStrategy
+name|ObjectNameGenerator
 name|getNamingStrategy
 parameter_list|()
 block|{

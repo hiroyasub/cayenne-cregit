@@ -66,7 +66,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|NamingStrategy
+name|ObjectNameGenerator
 block|{
 comment|/**      * Creates new name for Obj Entity      */
 name|String

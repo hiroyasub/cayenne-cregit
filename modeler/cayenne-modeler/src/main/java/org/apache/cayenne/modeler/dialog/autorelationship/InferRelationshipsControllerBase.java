@@ -177,7 +177,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|NamingStrategy
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -258,7 +258,7 @@ init|=
 literal|0
 decl_stmt|;
 specifier|protected
-name|NamingStrategy
+name|ObjectNameGenerator
 name|strategy
 decl_stmt|;
 specifier|protected
@@ -1096,7 +1096,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
+specifier|protected
 name|ExportedKey
 name|getExportedKey
 parameter_list|(
@@ -1434,7 +1434,7 @@ specifier|public
 name|void
 name|setNamingStrategy
 parameter_list|(
-name|NamingStrategy
+name|ObjectNameGenerator
 name|namestr
 parameter_list|)
 block|{

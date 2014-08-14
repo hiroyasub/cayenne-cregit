@@ -227,7 +227,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|BasicNamingStrategy
+name|BasicNameGenerator
 import|;
 end_import
 
@@ -243,7 +243,39 @@ name|map
 operator|.
 name|naming
 operator|.
-name|NamingStrategy
+name|DefaultUniqueNameGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|NameCheckers
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -397,8 +429,8 @@ name|usePrimitives
 decl_stmt|;
 comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
 specifier|protected
-name|NamingStrategy
-name|namingStrategy
+name|ObjectNameGenerator
+name|nameGenerator
 decl_stmt|;
 comment|/**      * Listeners of merge process.      */
 specifier|protected
@@ -420,7 +452,7 @@ argument_list|(
 name|map
 argument_list|,
 operator|new
-name|BasicNamingStrategy
+name|BasicNameGenerator
 argument_list|()
 argument_list|,
 literal|true
@@ -434,8 +466,8 @@ parameter_list|(
 name|DataMap
 name|map
 parameter_list|,
-name|NamingStrategy
-name|namingStrategy
+name|ObjectNameGenerator
+name|nameGenerator
 parameter_list|,
 name|boolean
 name|removeMeaningfulPKs
@@ -472,9 +504,9 @@ name|removeMeaningfulPKs
 expr_stmt|;
 name|this
 operator|.
-name|namingStrategy
+name|nameGenerator
 operator|=
-name|namingStrategy
+name|nameGenerator
 expr_stmt|;
 comment|/**          * Adding a listener, so that all created ObjRelationships would have          * default delete rule          */
 name|addEntityMergeListener
@@ -692,7 +724,7 @@ block|{
 name|String
 name|attrName
 init|=
-name|namingStrategy
+name|nameGenerator
 operator|.
 name|createObjAttributeName
 argument_list|(
@@ -702,13 +734,13 @@ decl_stmt|;
 comment|// avoid duplicate names
 name|attrName
 operator|=
-name|NamedObjectFactory
+name|DefaultUniqueNameGenerator
 operator|.
-name|createName
+name|generate
 argument_list|(
-name|ObjAttribute
+name|NameCheckers
 operator|.
-name|class
+name|ObjAttribute
 argument_list|,
 name|entity
 argument_list|,
@@ -836,7 +868,7 @@ comment|// avoid duplicate names
 name|String
 name|relationshipName
 init|=
-name|namingStrategy
+name|nameGenerator
 operator|.
 name|createObjRelationshipName
 argument_list|(
@@ -845,13 +877,13 @@ argument_list|)
 decl_stmt|;
 name|relationshipName
 operator|=
-name|NamedObjectFactory
+name|DefaultUniqueNameGenerator
 operator|.
-name|createName
+name|generate
 argument_list|(
-name|ObjRelationship
+name|NameCheckers
 operator|.
-name|class
+name|ObjRelationship
 argument_list|,
 name|entity
 argument_list|,
@@ -1626,27 +1658,27 @@ block|}
 comment|/**      * Sets new naming strategy for reverse engineering      */
 specifier|public
 name|void
-name|setNamingStrategy
+name|setNameGenerator
 parameter_list|(
-name|NamingStrategy
+name|ObjectNameGenerator
 name|strategy
 parameter_list|)
 block|{
 name|this
 operator|.
-name|namingStrategy
+name|nameGenerator
 operator|=
 name|strategy
 expr_stmt|;
 block|}
 comment|/**      * @return naming strategy for reverse engineering      */
 specifier|public
-name|NamingStrategy
-name|getNamingStrategy
+name|ObjectNameGenerator
+name|getNameGenerator
 parameter_list|()
 block|{
 return|return
-name|namingStrategy
+name|nameGenerator
 return|;
 block|}
 comment|/**      * @since 3.2      */

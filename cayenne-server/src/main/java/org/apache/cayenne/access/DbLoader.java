@@ -351,7 +351,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|BasicNamingStrategy
+name|BasicNameGenerator
 import|;
 end_import
 
@@ -383,7 +383,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|NamingStrategy
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -611,8 +611,8 @@ name|creatingMeaningfulPK
 decl_stmt|;
 comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
 specifier|protected
-name|NamingStrategy
-name|namingStrategy
+name|ObjectNameGenerator
+name|nameGenerator
 decl_stmt|;
 comment|/**      * Creates new DbLoader.      */
 specifier|public
@@ -637,7 +637,7 @@ argument_list|,
 name|delegate
 argument_list|,
 operator|new
-name|BasicNamingStrategy
+name|BasicNameGenerator
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -655,7 +655,7 @@ parameter_list|,
 name|DbLoaderDelegate
 name|delegate
 parameter_list|,
-name|NamingStrategy
+name|ObjectNameGenerator
 name|strategy
 parameter_list|)
 block|{
@@ -677,7 +677,7 @@ name|delegate
 operator|=
 name|delegate
 expr_stmt|;
-name|setNamingStrategy
+name|setNameGenerator
 argument_list|(
 name|strategy
 argument_list|)
@@ -2045,7 +2045,7 @@ block|}
 name|String
 name|objEntityName
 init|=
-name|namingStrategy
+name|nameGenerator
 operator|.
 name|createObjEntityName
 argument_list|(
@@ -2174,7 +2174,7 @@ name|EntityMergeSupport
 argument_list|(
 name|map
 argument_list|,
-name|namingStrategy
+name|nameGenerator
 argument_list|,
 operator|!
 name|creatingMeaningfulPK
@@ -2454,7 +2454,7 @@ comment|// init relationship
 name|String
 name|forwardPreferredName
 init|=
-name|namingStrategy
+name|nameGenerator
 operator|.
 name|createDbRelationshipName
 argument_list|(
@@ -2500,7 +2500,7 @@ expr_stmt|;
 name|String
 name|reversePreferredName
 init|=
-name|namingStrategy
+name|nameGenerator
 operator|.
 name|createDbRelationshipName
 argument_list|(
@@ -2865,7 +2865,7 @@ name|uniqueRelName
 argument_list|(
 name|source
 argument_list|,
-name|namingStrategy
+name|nameGenerator
 operator|.
 name|createDbRelationshipName
 argument_list|(
@@ -2935,8 +2935,9 @@ block|{
 name|ManyToManyCandidateEntity
 name|entity
 init|=
-operator|new
 name|ManyToManyCandidateEntity
+operator|.
+name|build
 argument_list|(
 name|curEntity
 argument_list|)
@@ -2944,15 +2945,17 @@ decl_stmt|;
 if|if
 condition|(
 name|entity
-operator|.
-name|isRepresentManyToManyTable
-argument_list|()
+operator|!=
+literal|null
 condition|)
 block|{
 name|entity
 operator|.
 name|optimizeRelationships
+argument_list|(
+name|getNameGenerator
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|entitiesForDelete
 operator|.
@@ -4006,9 +4009,9 @@ block|}
 comment|/**      * Sets new naming strategy for reverse engineering      *       * @since 3.0      */
 specifier|public
 name|void
-name|setNamingStrategy
+name|setNameGenerator
 parameter_list|(
-name|NamingStrategy
+name|ObjectNameGenerator
 name|strategy
 parameter_list|)
 block|{
@@ -4030,19 +4033,19 @@ throw|;
 block|}
 name|this
 operator|.
-name|namingStrategy
+name|nameGenerator
 operator|=
 name|strategy
 expr_stmt|;
 block|}
 comment|/**      * @return naming strategy for reverse engineering      * @since 3.0      */
 specifier|public
-name|NamingStrategy
-name|getNamingStrategy
+name|ObjectNameGenerator
+name|getNameGenerator
 parameter_list|()
 block|{
 return|return
-name|namingStrategy
+name|nameGenerator
 return|;
 block|}
 block|}
