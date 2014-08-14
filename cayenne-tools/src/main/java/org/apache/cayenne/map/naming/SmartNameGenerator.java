@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * SmartNameGenerator is a new strategy for generating names of  * entities, attributes etc.  *   * Advantages of this strategy are:  * -Using of FK names at generating relationship names  * -Dropping 'to' prefix for obj relationships and therefore for generated class methods' names  * -Using pluralized form instead-of "ARRAY" suffix for to-many relationships (i.e. 'adresses'   *   instead-of 'addressArray')  *   * @since 3.0  */
+comment|/**  * SmartNameGenerator is a strategy for generating names of entities, attributes  * etc.  *   * @since 3.2  */
 end_comment
 
 begin_class
@@ -115,7 +115,7 @@ condition|)
 block|{
 try|try
 block|{
-comment|/**                  * by default we use english language rules here.                  * uppercase is required for NameConverter to work properly                  */
+comment|/** 				 * by default we use english language rules here. uppercase is 				 * required for NameConverter to work properly 				 */
 name|name
 operator|=
 name|Noun
@@ -145,7 +145,7 @@ name|Exception
 name|inflectorError
 parameter_list|)
 block|{
-comment|/**                  * seems that Inflector cannot be trusted. For instance, it throws an exception                  * when invoked for word "ADDRESS" (although lower case works fine). To feel safe, we                  * use superclass' behavior if something's gone wrong                  */
+comment|/** 				 * seems that Inflector cannot be trusted. For instance, it 				 * throws an exception when invoked for word "ADDRESS" (although 				 * lower case works fine). To feel safe, we use superclass' 				 * behavior if something's gone wrong 				 */
 return|return
 name|key
 operator|.
@@ -167,7 +167,7 @@ operator|.
 name|getFKColumnName
 argument_list|()
 decl_stmt|;
-comment|//trim "ID" in the end
+comment|// trim "ID" in the end
 if|if
 condition|(
 name|fkColName
@@ -259,7 +259,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/**                  * We don't want relationship to conflict with attribute, so we'd better return                  * superior value with 'to'                  */
+comment|/** 				 * We don't want relationship to conflict with attribute, so 				 * we'd better return superior value with 'to' 				 */
 name|name
 operator|=
 name|key
@@ -280,6 +280,8 @@ literal|false
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createObjEntityName
@@ -302,6 +304,8 @@ literal|true
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createObjAttributeName
@@ -324,6 +328,8 @@ literal|false
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createObjRelationshipName

@@ -701,7 +701,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|SelectQuery
+name|Query
 argument_list|,
 name|dataMap
 argument_list|)

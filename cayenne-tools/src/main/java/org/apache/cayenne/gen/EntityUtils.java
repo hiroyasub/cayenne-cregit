@@ -27,16 +27,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedHashSet
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -56,20 +46,6 @@ operator|.
 name|cayenne
 operator|.
 name|ObjectId
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|CallbackDescriptor
 import|;
 end_import
 

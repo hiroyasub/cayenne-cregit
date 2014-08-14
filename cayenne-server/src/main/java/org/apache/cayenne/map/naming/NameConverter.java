@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class to convert from different naming styles to Java convention. For example  * names like "ABCD_EFG" can be converted to "abcdEfg".  *   */
+comment|/**  * Utility class to convert from different naming styles to Java convention. For example  * names like "ABCD_EFG" can be converted to "abcdEfg".  */
 end_comment
 
 begin_class

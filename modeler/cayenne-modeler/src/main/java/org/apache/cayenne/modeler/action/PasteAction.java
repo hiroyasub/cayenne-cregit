@@ -1358,7 +1358,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|SelectQuery
+name|Query
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1774,7 +1774,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|SelectQuery
+name|Query
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1841,7 +1841,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|SelectQuery
+name|Query
 argument_list|,
 name|COPY_PATTERN
 argument_list|,

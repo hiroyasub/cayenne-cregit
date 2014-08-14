@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * NamingStrategy is a strategy for creating names for entities, attributes, relationships  * during reverse engineering.  *   * @since 3.0  */
+comment|/**  * ObjectNameGenerator is a strategy for creating names for entities,  * attributes, relationships from DB metadata.  *   * @since 3.2  */
 end_comment
 
 begin_interface
@@ -68,7 +68,7 @@ specifier|public
 interface|interface
 name|ObjectNameGenerator
 block|{
-comment|/**      * Creates new name for Obj Entity      */
+comment|/** 	 * Creates new name for ObjEntity 	 */
 name|String
 name|createObjEntityName
 parameter_list|(
@@ -76,7 +76,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Creates new name for Obj Attribute      */
+comment|/** 	 * Creates new name for ObjAttribute 	 */
 name|String
 name|createObjAttributeName
 parameter_list|(
@@ -84,7 +84,7 @@ name|DbAttribute
 name|attr
 parameter_list|)
 function_decl|;
-comment|/**      * Creates new name for Db Relationship      */
+comment|/** 	 * Creates new name for DbRelationship 	 */
 name|String
 name|createDbRelationshipName
 parameter_list|(
@@ -95,7 +95,7 @@ name|boolean
 name|toMany
 parameter_list|)
 function_decl|;
-comment|/**      * Creates new name for Obj Relationship      */
+comment|/** 	 * Creates new name for ObjRelationship 	 */
 name|String
 name|createObjRelationshipName
 parameter_list|(
