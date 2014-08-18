@@ -487,7 +487,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|EmbeddableAttribute
+name|embeddableAttribute
 argument_list|,
 name|embeddable
 argument_list|)
@@ -553,7 +553,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|objEntity
 argument_list|)
@@ -640,7 +640,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbAttribute
+name|dbAttribute
 argument_list|,
 name|dbEntity
 argument_list|)

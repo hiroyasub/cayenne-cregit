@@ -65,7 +65,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|SmartNameGenerator
+name|DefaultNameGenerator
 import|;
 end_import
 
@@ -259,7 +259,7 @@ name|parameters
 operator|.
 name|setNamingStrategy
 argument_list|(
-name|SmartNameGenerator
+name|DefaultNameGenerator
 operator|.
 name|class
 operator|.

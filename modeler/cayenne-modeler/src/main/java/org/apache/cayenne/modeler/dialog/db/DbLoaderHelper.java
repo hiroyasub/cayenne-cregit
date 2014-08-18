@@ -1582,7 +1582,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1596,7 +1596,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|,
 name|mediator
 operator|.

@@ -293,7 +293,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|BasicNameGenerator
+name|LegacyNameGenerator
 import|;
 end_import
 
@@ -589,7 +589,7 @@ operator|.
 name|optimizeRelationships
 argument_list|(
 operator|new
-name|BasicNameGenerator
+name|LegacyNameGenerator
 argument_list|()
 argument_list|)
 expr_stmt|;

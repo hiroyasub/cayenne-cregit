@@ -533,7 +533,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataNodeDescriptor
+name|dataNodeDescriptor
 argument_list|,
 name|domain
 argument_list|)

@@ -307,7 +307,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ProcedureParameter
+name|procedureParameter
 argument_list|,
 name|procedure
 argument_list|)

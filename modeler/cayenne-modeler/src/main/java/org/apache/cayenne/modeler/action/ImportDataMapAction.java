@@ -487,7 +487,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|,
 name|domain
 argument_list|,
@@ -511,7 +511,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|,
 name|domain
 argument_list|)

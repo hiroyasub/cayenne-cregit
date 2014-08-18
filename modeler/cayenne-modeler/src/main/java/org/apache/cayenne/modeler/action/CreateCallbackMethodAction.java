@@ -305,7 +305,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjCallbackMethod
+name|objCallbackMethod
 argument_list|,
 name|getProjectController
 argument_list|()

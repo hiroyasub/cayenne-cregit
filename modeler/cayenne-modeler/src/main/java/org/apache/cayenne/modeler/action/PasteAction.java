@@ -1020,7 +1020,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1116,7 +1116,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbEntity
+name|dbEntity
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1186,7 +1186,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjEntity
+name|objEntity
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1256,7 +1256,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1318,7 +1318,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Procedure
+name|procedure
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1358,7 +1358,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Query
+name|query
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1597,7 +1597,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbEntity
+name|dbEntity
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1655,7 +1655,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjEntity
+name|objEntity
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1715,7 +1715,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1774,7 +1774,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Query
+name|query
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1841,7 +1841,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Query
+name|query
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1908,7 +1908,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Procedure
+name|procedure
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -1984,7 +1984,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbAttribute
+name|dbAttribute
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -2048,7 +2048,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbRelationship
+name|dbRelationship
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -2124,7 +2124,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -2188,7 +2188,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -2247,7 +2247,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjCallbackMethod
+name|objCallbackMethod
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -2355,7 +2355,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|EmbeddableAttribute
+name|embeddableAttribute
 argument_list|,
 name|COPY_PATTERN
 argument_list|,
@@ -2432,7 +2432,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ProcedureParameter
+name|procedureParameter
 argument_list|,
 name|COPY_PATTERN
 argument_list|,

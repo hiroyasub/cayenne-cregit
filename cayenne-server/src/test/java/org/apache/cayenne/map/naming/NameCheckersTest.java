@@ -288,7 +288,7 @@ name|maker
 init|=
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 decl_stmt|;
 name|ObjEntity
 name|namingContainer
@@ -432,7 +432,7 @@ name|maker
 operator|=
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 expr_stmt|;
 name|baseName
 operator|=
@@ -505,7 +505,7 @@ name|maker
 operator|=
 name|NameCheckers
 operator|.
-name|ObjCallbackMethod
+name|objCallbackMethod
 expr_stmt|;
 name|baseName
 operator|=
@@ -575,7 +575,7 @@ name|map
 argument_list|,
 name|NameCheckers
 operator|.
-name|DbEntity
+name|dbEntity
 argument_list|,
 literal|"name"
 argument_list|)
@@ -597,7 +597,7 @@ name|map
 argument_list|,
 name|NameCheckers
 operator|.
-name|ObjEntity
+name|objEntity
 argument_list|,
 literal|"name"
 argument_list|)
@@ -619,7 +619,7 @@ name|map
 argument_list|,
 name|NameCheckers
 operator|.
-name|Procedure
+name|procedure
 argument_list|,
 literal|"name"
 argument_list|)
@@ -653,7 +653,7 @@ name|map
 argument_list|,
 name|NameCheckers
 operator|.
-name|Query
+name|query
 argument_list|,
 literal|"name"
 argument_list|)
@@ -672,7 +672,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataChannelDescriptor
+name|dataChannelDescriptor
 operator|.
 name|isNameInUse
 argument_list|(
@@ -716,7 +716,7 @@ name|dbEntity
 argument_list|,
 name|NameCheckers
 operator|.
-name|DbRelationship
+name|dbRelationship
 argument_list|,
 literal|"name"
 argument_list|)
@@ -755,7 +755,7 @@ name|procedure
 argument_list|,
 name|NameCheckers
 operator|.
-name|ProcedureParameter
+name|procedureParameter
 argument_list|,
 literal|"name"
 argument_list|)
@@ -794,7 +794,7 @@ name|embeddable
 argument_list|,
 name|NameCheckers
 operator|.
-name|EmbeddableAttribute
+name|embeddableAttribute
 argument_list|,
 literal|"name"
 argument_list|)
@@ -836,7 +836,7 @@ name|descriptor
 argument_list|,
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|,
 literal|"name"
 argument_list|)
@@ -861,7 +861,7 @@ name|descriptor
 argument_list|,
 name|NameCheckers
 operator|.
-name|DataNodeDescriptor
+name|dataNodeDescriptor
 argument_list|,
 literal|"name"
 argument_list|)
@@ -902,7 +902,7 @@ name|dataDomain
 argument_list|,
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 argument_list|,
 literal|"name"
 argument_list|)
@@ -911,7 +911,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 operator|.
 name|isNameInUse
 argument_list|(
@@ -925,7 +925,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataMap
+name|dataMap
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1040,7 +1040,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjCallbackMethod
+name|objCallbackMethod
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1073,7 +1073,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1093,7 +1093,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1113,7 +1113,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1133,7 +1133,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1175,7 +1175,7 @@ name|assertTrue
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1191,7 +1191,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1226,7 +1226,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1246,7 +1246,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|namingContainer
 argument_list|,
@@ -1286,7 +1286,7 @@ name|assertTrue
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1308,7 +1308,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|map
 argument_list|,
@@ -1322,7 +1322,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1345,7 +1345,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1367,7 +1367,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|map
 argument_list|,
@@ -1392,7 +1392,7 @@ name|assertTrue
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 operator|.
 name|isNameInUse
 argument_list|(
@@ -1414,7 +1414,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|map
 argument_list|,
@@ -1428,7 +1428,7 @@ name|assertFalse
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 operator|.
 name|isNameInUse
 argument_list|(

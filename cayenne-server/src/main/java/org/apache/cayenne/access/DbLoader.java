@@ -351,7 +351,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|BasicNameGenerator
+name|LegacyNameGenerator
 import|;
 end_import
 
@@ -637,7 +637,7 @@ argument_list|,
 name|delegate
 argument_list|,
 operator|new
-name|BasicNameGenerator
+name|LegacyNameGenerator
 argument_list|()
 argument_list|)
 expr_stmt|;

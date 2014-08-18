@@ -154,7 +154,7 @@ name|NameCheckers
 implements|implements
 name|NameChecker
 block|{
-name|DataChannelDescriptor
+name|dataChannelDescriptor
 argument_list|(
 literal|"project"
 argument_list|)
@@ -178,7 +178,7 @@ return|;
 block|}
 block|}
 block|,
-name|DataMap
+name|dataMap
 argument_list|(
 literal|"datamap"
 argument_list|)
@@ -267,7 +267,7 @@ return|;
 block|}
 block|}
 block|,
-name|ObjEntity
+name|objEntity
 argument_list|(
 literal|"ObjEntity"
 argument_list|)
@@ -306,7 +306,7 @@ return|;
 block|}
 block|}
 block|,
-name|Embeddable
+name|embeddable
 argument_list|(
 literal|"Embeddable"
 argument_list|)
@@ -375,7 +375,7 @@ return|;
 block|}
 block|}
 block|,
-name|EmbeddableAttribute
+name|embeddableAttribute
 argument_list|(
 literal|"untitledAttr"
 argument_list|)
@@ -414,7 +414,7 @@ return|;
 block|}
 block|}
 block|,
-name|DbEntity
+name|dbEntity
 argument_list|(
 literal|"db_entity"
 argument_list|)
@@ -453,7 +453,7 @@ return|;
 block|}
 block|}
 block|,
-name|ProcedureParameter
+name|procedureParameter
 argument_list|(
 literal|"UntitledProcedureParameter"
 argument_list|)
@@ -518,7 +518,7 @@ return|;
 block|}
 block|}
 block|,
-name|Procedure
+name|procedure
 argument_list|(
 literal|"procedure"
 argument_list|)
@@ -557,7 +557,7 @@ return|;
 block|}
 block|}
 block|,
-name|Query
+name|query
 argument_list|(
 literal|"query"
 argument_list|)
@@ -596,7 +596,7 @@ return|;
 block|}
 block|}
 block|,
-name|ObjAttribute
+name|objAttribute
 argument_list|(
 literal|"untitledAttr"
 argument_list|)
@@ -615,7 +615,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|ObjRelationship
+name|objRelationship
 operator|.
 name|isNameInUse
 argument_list|(
@@ -627,7 +627,7 @@ return|;
 block|}
 block|}
 block|,
-name|DbAttribute
+name|dbAttribute
 argument_list|(
 literal|"untitledAttr"
 argument_list|)
@@ -675,7 +675,7 @@ return|;
 block|}
 block|}
 block|,
-name|DataNodeDescriptor
+name|dataNodeDescriptor
 argument_list|(
 literal|"datanode"
 argument_list|)
@@ -744,7 +744,7 @@ return|;
 block|}
 block|}
 block|,
-name|ObjRelationship
+name|objRelationship
 argument_list|(
 literal|"untitledRel"
 argument_list|)
@@ -771,7 +771,7 @@ operator|)
 name|namingContext
 decl_stmt|;
 return|return
-name|DbAttribute
+name|dbAttribute
 operator|.
 name|isNameInUse
 argument_list|(
@@ -800,7 +800,7 @@ return|;
 block|}
 block|}
 block|,
-name|DbRelationship
+name|dbRelationship
 argument_list|(
 literal|"untitledRel"
 argument_list|)
@@ -819,7 +819,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|DbAttribute
+name|dbAttribute
 operator|.
 name|isNameInUse
 argument_list|(
@@ -831,7 +831,7 @@ return|;
 block|}
 block|}
 block|,
-name|ObjCallbackMethod
+name|objCallbackMethod
 argument_list|(
 literal|"ObjCallbackMethod"
 argument_list|)
@@ -865,7 +865,7 @@ argument_list|(
 literal|"get"
 argument_list|)
 operator|&&
-name|DbAttribute
+name|dbAttribute
 operator|.
 name|isNameInUse
 argument_list|(

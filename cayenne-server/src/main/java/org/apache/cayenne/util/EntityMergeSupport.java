@@ -227,7 +227,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|BasicNameGenerator
+name|LegacyNameGenerator
 import|;
 end_import
 
@@ -452,7 +452,7 @@ argument_list|(
 name|map
 argument_list|,
 operator|new
-name|BasicNameGenerator
+name|LegacyNameGenerator
 argument_list|()
 argument_list|,
 literal|true
@@ -740,7 +740,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjAttribute
+name|objAttribute
 argument_list|,
 name|entity
 argument_list|,
@@ -883,7 +883,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 argument_list|,
 name|entity
 argument_list|,

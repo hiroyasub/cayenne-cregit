@@ -72,7 +72,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|SmartNameGeneratorTest
+name|DefaultNameGeneratorTest
 extends|extends
 name|TestCase
 block|{
@@ -83,11 +83,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|SmartNameGenerator
+name|DefaultNameGenerator
 name|strategy
 init|=
 operator|new
-name|SmartNameGenerator
+name|DefaultNameGenerator
 argument_list|()
 decl_stmt|;
 name|ExportedKey

@@ -383,7 +383,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 argument_list|,
 name|objEnt
 argument_list|)
@@ -448,7 +448,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbRelationship
+name|dbRelationship
 argument_list|,
 name|dbEnt
 argument_list|)
