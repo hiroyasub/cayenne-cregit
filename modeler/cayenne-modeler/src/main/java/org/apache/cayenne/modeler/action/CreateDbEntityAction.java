@@ -321,7 +321,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbEntity
+name|dbEntity
 argument_list|,
 name|map
 argument_list|)

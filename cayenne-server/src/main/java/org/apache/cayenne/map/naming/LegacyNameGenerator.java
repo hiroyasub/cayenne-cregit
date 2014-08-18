@@ -66,7 +66,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|BasicNameGenerator
+name|LegacyNameGenerator
 implements|implements
 name|ObjectNameGenerator
 block|{

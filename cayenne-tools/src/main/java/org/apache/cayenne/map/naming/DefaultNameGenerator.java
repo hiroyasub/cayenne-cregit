@@ -88,7 +88,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|SmartNameGenerator
+name|DefaultNameGenerator
 implements|implements
 name|ObjectNameGenerator
 block|{

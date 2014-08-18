@@ -319,7 +319,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|mediator
 operator|.

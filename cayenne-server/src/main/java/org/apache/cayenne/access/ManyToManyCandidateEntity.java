@@ -475,7 +475,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjRelationship
+name|objRelationship
 argument_list|,
 name|srcEntity
 argument_list|,

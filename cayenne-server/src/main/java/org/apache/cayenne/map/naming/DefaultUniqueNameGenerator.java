@@ -162,7 +162,7 @@ name|checker
 operator|==
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 condition|)
 block|{
 name|generator
@@ -172,7 +172,7 @@ name|DefaultUniqueNameGenerator
 argument_list|(
 name|NameCheckers
 operator|.
-name|Embeddable
+name|embeddable
 argument_list|,
 name|pattern
 argument_list|)

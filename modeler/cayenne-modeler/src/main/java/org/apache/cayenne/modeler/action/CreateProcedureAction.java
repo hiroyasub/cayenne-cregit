@@ -296,7 +296,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|Procedure
+name|procedure
 argument_list|,
 name|map
 argument_list|)

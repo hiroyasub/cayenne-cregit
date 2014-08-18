@@ -378,7 +378,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjEntity
+name|objEntity
 argument_list|,
 name|dataMap
 argument_list|)
@@ -452,7 +452,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|ObjEntity
+name|objEntity
 argument_list|,
 name|dbEntity
 operator|.

@@ -72,7 +72,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|BasicNameGeneratorTest
+name|LegacyNameGeneratorTest
 extends|extends
 name|TestCase
 block|{
@@ -83,11 +83,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|BasicNameGenerator
+name|LegacyNameGenerator
 name|strategy
 init|=
 operator|new
-name|BasicNameGenerator
+name|LegacyNameGenerator
 argument_list|()
 decl_stmt|;
 name|ExportedKey

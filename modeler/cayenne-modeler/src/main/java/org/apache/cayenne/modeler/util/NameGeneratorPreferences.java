@@ -61,7 +61,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|BasicNameGenerator
+name|LegacyNameGenerator
 import|;
 end_import
 
@@ -77,7 +77,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|SmartNameGenerator
+name|DefaultNameGenerator
 import|;
 end_import
 
@@ -110,7 +110,7 @@ specifier|final
 name|String
 name|STRATEGIES_PREFERENCE
 init|=
-literal|"recent.name.generators"
+literal|"name.generators.recent"
 decl_stmt|;
 comment|/**      * Naming strategies to appear in combobox by default      */
 specifier|private
@@ -135,7 +135,7 @@ name|PREDEFINED_STRATEGIES
 operator|.
 name|add
 argument_list|(
-name|BasicNameGenerator
+name|DefaultNameGenerator
 operator|.
 name|class
 operator|.
@@ -147,7 +147,7 @@ name|PREDEFINED_STRATEGIES
 operator|.
 name|add
 argument_list|(
-name|SmartNameGenerator
+name|LegacyNameGenerator
 operator|.
 name|class
 operator|.

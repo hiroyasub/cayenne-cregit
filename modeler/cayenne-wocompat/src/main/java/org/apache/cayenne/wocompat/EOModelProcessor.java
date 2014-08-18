@@ -2978,7 +2978,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DbRelationship
+name|dbRelationship
 argument_list|,
 name|reverse
 operator|.

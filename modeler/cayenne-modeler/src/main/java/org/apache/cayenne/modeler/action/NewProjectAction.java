@@ -302,7 +302,7 @@ name|generate
 argument_list|(
 name|NameCheckers
 operator|.
-name|DataChannelDescriptor
+name|dataChannelDescriptor
 argument_list|,
 name|domain
 argument_list|)
