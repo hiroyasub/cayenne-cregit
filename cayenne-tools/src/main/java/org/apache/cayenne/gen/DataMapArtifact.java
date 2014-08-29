@@ -630,6 +630,15 @@ return|return
 name|queryNames
 return|;
 block|}
+specifier|public
+name|DataMap
+name|getDataMap
+parameter_list|()
+block|{
+return|return
+name|dataMap
+return|;
+block|}
 block|}
 end_class
 
