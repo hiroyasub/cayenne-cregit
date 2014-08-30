@@ -194,45 +194,8 @@ name|String
 name|pkTableCreateString
 parameter_list|()
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"CREATE TABLE AUTO_PK_SUPPORT ("
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  TABLE_NAME CHAR(100) NOT NULL,"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  NEXT_ID DECIMAL(19,0) NOT NULL,"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  PRIMARY KEY(TABLE_NAME)"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|")"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"CREATE TABLE AUTO_PK_SUPPORT (  TABLE_NAME CHAR(100) NOT NULL, NEXT_ID DECIMAL(19,0) NOT NULL, PRIMARY KEY(TABLE_NAME))"
 return|;
 block|}
 comment|/**      * Generates database objects to provide automatic primary key support. Method will      * execute the following SQL statements:      *<p>      * 1. Executed only if a corresponding table does not exist in the database.      *</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID DECIMAL(19,0) NOT NULL      *    )      *</pre>      *<p>      * 2. Executed under any circumstances.      *</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *<p>      * 3. Executed under any circumstances.      *</p>      * CREATE PROCEDURE auto_pk_for_table      *       *<pre>      *&#064;tname VARCHAR(32),      *&#064;pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID =      *              NEXT_ID +      *&#064;pkbatchsize WHERE TABLE_NAME =      *&#064;tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID =      *&#064;tname COMMIT END      *</pre>      *       * @param node node that provides access to a DataSource.      */
@@ -672,60 +635,12 @@ name|String
 name|unsafePkProcCreate
 parameter_list|()
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|" CREATE PROCEDURE auto_pk_for_table @tname VARCHAR(32), @pkbatchsize INT AS"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" BEGIN"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" BEGIN TRANSACTION"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" UPDATE AUTO_PK_SUPPORT set NEXT_ID = NEXT_ID + @pkbatchsize"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" WHERE TABLE_NAME = @tname"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" SELECT NEXT_ID FROM AUTO_PK_SUPPORT WHERE TABLE_NAME = @tname"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" COMMIT"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" END"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|" CREATE PROCEDURE auto_pk_for_table @tname VARCHAR(32), @pkbatchsize INT AS BEGIN BEGIN TRANSACTION"
+operator|+
+literal|" UPDATE AUTO_PK_SUPPORT set NEXT_ID = NEXT_ID + @pkbatchsize WHERE TABLE_NAME = @tname"
+operator|+
+literal|" SELECT NEXT_ID FROM AUTO_PK_SUPPORT WHERE TABLE_NAME = @tname COMMIT END"
 return|;
 block|}
 specifier|private
@@ -733,40 +648,8 @@ name|String
 name|safePkProcDrop
 parameter_list|()
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" BEGIN"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" DROP PROCEDURE auto_pk_for_table"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" END"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table') BEGIN DROP PROCEDURE auto_pk_for_table END"
 return|;
 block|}
 block|}

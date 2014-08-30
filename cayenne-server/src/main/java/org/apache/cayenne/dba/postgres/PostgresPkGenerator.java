@@ -210,56 +210,24 @@ comment|// WITH
 comment|// however 7.3 doesn't like BY and WITH, so using older more neutral
 comment|// syntax
 comment|// that works with all tested versions.
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
+return|return
 literal|"CREATE SEQUENCE "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|sequenceName
 argument_list|(
 name|ent
 argument_list|)
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" INCREMENT "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|pkCacheSize
 argument_list|(
 name|ent
 argument_list|)
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" START "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|pkStartValue
-argument_list|)
-expr_stmt|;
-return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
 return|;
 block|}
 comment|/**      * @since 3.0      */
@@ -314,6 +282,7 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
+block|{
 name|pkGeneratingSequenceName
 operator|=
 name|pkGenerator
@@ -321,7 +290,9 @@ operator|.
 name|getGeneratorName
 argument_list|()
 expr_stmt|;
+block|}
 else|else
+block|{
 name|pkGeneratingSequenceName
 operator|=
 name|sequenceName
@@ -329,6 +300,7 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
+block|}
 name|Connection
 name|con
 init|=

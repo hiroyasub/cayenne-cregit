@@ -161,9 +161,6 @@ argument_list|(
 literal|"H2"
 argument_list|)
 condition|?
-operator|(
-name|DbAdapter
-operator|)
 name|objectFactory
 operator|.
 name|newInstance

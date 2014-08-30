@@ -693,10 +693,11 @@ name|SQLException
 block|{
 if|if
 condition|(
-literal|null
-operator|==
 name|metaData
+operator|==
+literal|null
 condition|)
+block|{
 name|metaData
 operator|=
 name|connection
@@ -704,6 +705,7 @@ operator|.
 name|getMetaData
 argument_list|()
 expr_stmt|;
+block|}
 return|return
 name|metaData
 return|;
@@ -1037,19 +1039,6 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-name|List
-argument_list|<
-name|DbEntity
-argument_list|>
-name|tables
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|logger
@@ -1125,6 +1114,19 @@ argument_list|,
 name|types
 argument_list|)
 decl_stmt|;
+name|List
+argument_list|<
+name|DbEntity
+argument_list|>
+name|tables
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|DbEntity
+argument_list|>
+argument_list|()
+decl_stmt|;
 try|try
 block|{
 while|while
@@ -1135,26 +1137,11 @@ name|next
 argument_list|()
 condition|)
 block|{
-name|String
-name|catalog
-init|=
-name|rs
-operator|.
-name|getString
-argument_list|(
-literal|"TABLE_CAT"
-argument_list|)
-decl_stmt|;
-name|String
-name|schema
-init|=
-name|rs
-operator|.
-name|getString
-argument_list|(
-literal|"TABLE_SCHEM"
-argument_list|)
-decl_stmt|;
+comment|// Oracle 9i and newer has a nifty recycle bin feature... but we don't
+comment|// want dropped tables to be included here; in fact they may even result
+comment|// in errors on reverse engineering as their names have special chars like
+comment|// "/", etc. So skip them all together
+comment|// TODO: Andrus, 10/29/2005 - this type of filtering should be delegated to adapter
 name|String
 name|name
 init|=
@@ -1165,16 +1152,6 @@ argument_list|(
 literal|"TABLE_NAME"
 argument_list|)
 decl_stmt|;
-comment|// Oracle 9i and newer has a nifty recycle bin feature... but we
-comment|// don't
-comment|// want dropped tables to be included here; in fact they may
-comment|// even result
-comment|// in errors on reverse engineering as their names have special
-comment|// chars like
-comment|// "/", etc. So skip them all together
-comment|// TODO: Andrus, 10/29/2005 - this type of filtering should be
-comment|// delegated
-comment|// to adapter
 if|if
 condition|(
 name|name
@@ -1187,12 +1164,7 @@ name|startsWith
 argument_list|(
 literal|"BIN$"
 argument_list|)
-condition|)
-block|{
-continue|continue;
-block|}
-if|if
-condition|(
+operator|||
 operator|!
 name|includeTableName
 argument_list|(
@@ -1215,14 +1187,24 @@ name|table
 operator|.
 name|setCatalog
 argument_list|(
-name|catalog
+name|rs
+operator|.
+name|getString
+argument_list|(
+literal|"TABLE_CAT"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|table
 operator|.
 name|setSchema
 argument_list|(
-name|schema
+name|rs
+operator|.
+name|getString
+argument_list|(
+literal|"TABLE_SCHEM"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tables
@@ -1720,7 +1702,6 @@ block|}
 comment|// get primary keys for each table and store it in dbEntity
 for|for
 control|(
-specifier|final
 name|DbEntity
 name|dbEntity
 range|:
@@ -1883,7 +1864,6 @@ block|}
 comment|// cay-479 - iterate skipped DbEntities to populate exported keys
 for|for
 control|(
-specifier|final
 name|DbEntity
 name|skippedEntity
 range|:
@@ -2194,7 +2174,6 @@ name|SQLException
 block|{
 for|for
 control|(
-specifier|final
 name|DbEntity
 name|pkEntity
 range|:
@@ -2298,7 +2277,9 @@ operator|.
 name|next
 argument_list|()
 condition|)
+block|{
 return|return;
+block|}
 comment|// these will be initailzed every time a new target entity
 comment|// is found in the result set (which should be ordered by table name
 comment|// among
@@ -2755,7 +2736,6 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-specifier|final
 name|DbJoin
 name|join
 range|:
@@ -2802,15 +2782,10 @@ literal|true
 expr_stmt|;
 if|if
 condition|(
-operator|(
-operator|(
-name|DbEntity
-operator|)
 name|relationship
 operator|.
 name|getTargetEntity
 argument_list|()
-operator|)
 operator|.
 name|getPrimaryKeys
 argument_list|()
@@ -3120,6 +3095,8 @@ name|types
 return|;
 block|}
 comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *       * @since 1.0.7      * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|loadDataMapFromDB
@@ -3178,6 +3155,8 @@ name|dataMap
 return|;
 block|}
 comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *       * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|loadDataMapFromDB
@@ -3198,10 +3177,10 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-name|clearDataMap
-argument_list|(
 name|dataMap
-argument_list|)
+operator|.
+name|clear
+argument_list|()
 expr_stmt|;
 name|load
 argument_list|(
@@ -3219,45 +3198,6 @@ expr_stmt|;
 return|return
 name|dataMap
 return|;
-block|}
-specifier|private
-name|void
-name|clearDataMap
-parameter_list|(
-name|DataMap
-name|dataMap
-parameter_list|)
-block|{
-name|dataMap
-operator|.
-name|clearDbEntities
-argument_list|()
-expr_stmt|;
-name|dataMap
-operator|.
-name|clearEmbeddables
-argument_list|()
-expr_stmt|;
-name|dataMap
-operator|.
-name|clearObjEntities
-argument_list|()
-expr_stmt|;
-name|dataMap
-operator|.
-name|clearProcedures
-argument_list|()
-expr_stmt|;
-name|dataMap
-operator|.
-name|clearQueries
-argument_list|()
-expr_stmt|;
-name|dataMap
-operator|.
-name|clearResultSets
-argument_list|()
-expr_stmt|;
 block|}
 comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *       * @since 3.2      */
 specifier|public

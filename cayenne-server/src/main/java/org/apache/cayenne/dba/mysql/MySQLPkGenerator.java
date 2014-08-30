@@ -518,12 +518,6 @@ name|lockString
 argument_list|)
 expr_stmt|;
 comment|// select
-name|long
-name|pk
-init|=
-operator|-
-literal|1
-decl_stmt|;
 name|String
 name|selectString
 init|=
@@ -557,6 +551,12 @@ name|executeQuery
 argument_list|(
 name|selectString
 argument_list|)
+decl_stmt|;
+name|long
+name|pk
+init|=
+operator|-
+literal|1
 decl_stmt|;
 try|try
 block|{

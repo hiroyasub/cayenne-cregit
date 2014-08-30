@@ -1470,12 +1470,10 @@ name|index
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|rs
 operator|.
 name|wasNull
 argument_list|()
-operator|)
 condition|?
 literal|null
 else|:
@@ -1523,12 +1521,10 @@ name|index
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|st
 operator|.
 name|wasNull
 argument_list|()
-operator|)
 condition|?
 literal|null
 else|:

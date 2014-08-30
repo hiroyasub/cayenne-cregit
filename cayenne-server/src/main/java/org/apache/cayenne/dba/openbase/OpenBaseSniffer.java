@@ -161,9 +161,6 @@ argument_list|(
 literal|"OPENBASE"
 argument_list|)
 condition|?
-operator|(
-name|DbAdapter
-operator|)
 name|objectFactory
 operator|.
 name|newInstance

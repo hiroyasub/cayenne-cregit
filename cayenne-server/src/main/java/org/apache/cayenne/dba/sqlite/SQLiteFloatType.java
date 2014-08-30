@@ -123,11 +123,9 @@ name|index
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|n
 operator|==
 literal|null
-operator|)
 condition|?
 literal|null
 else|:
@@ -175,11 +173,9 @@ name|index
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|n
 operator|==
 literal|null
-operator|)
 condition|?
 literal|null
 else|:

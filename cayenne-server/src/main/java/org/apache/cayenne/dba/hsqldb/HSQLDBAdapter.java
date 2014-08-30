@@ -661,9 +661,6 @@ name|srcName
 init|=
 name|getTableName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|rel
 operator|.
 name|getSourceEntity
@@ -675,9 +672,6 @@ name|dstName
 init|=
 name|getTableName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|rel
 operator|.
 name|getTargetEntity
@@ -743,9 +737,6 @@ decl_stmt|;
 name|DbEntity
 name|sourceEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|rel
 operator|.
 name|getSourceEntity
@@ -815,10 +806,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|first
 operator|=
 literal|false
 expr_stmt|;
+block|}
 name|buf
 operator|.
 name|append
