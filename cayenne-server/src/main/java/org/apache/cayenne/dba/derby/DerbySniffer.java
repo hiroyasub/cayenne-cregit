@@ -161,6 +161,9 @@ argument_list|(
 literal|"APACHE DERBY"
 argument_list|)
 condition|?
+operator|(
+name|DbAdapter
+operator|)
 name|objectFactory
 operator|.
 name|newInstance

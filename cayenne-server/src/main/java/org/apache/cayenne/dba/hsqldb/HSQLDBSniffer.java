@@ -195,6 +195,9 @@ decl_stmt|;
 return|return
 name|supportsSchema
 condition|?
+operator|(
+name|DbAdapter
+operator|)
 name|objectFactory
 operator|.
 name|newInstance
@@ -211,6 +214,9 @@ name|getName
 argument_list|()
 argument_list|)
 else|:
+operator|(
+name|DbAdapter
+operator|)
 name|objectFactory
 operator|.
 name|newInstance
