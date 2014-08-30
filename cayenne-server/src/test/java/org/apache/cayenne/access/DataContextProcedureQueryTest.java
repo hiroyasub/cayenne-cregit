@@ -2144,6 +2144,11 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
+name|t
+operator|.
+name|commit
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 specifier|protected
