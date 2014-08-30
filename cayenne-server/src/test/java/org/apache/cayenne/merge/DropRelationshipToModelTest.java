@@ -185,7 +185,7 @@ name|MergeCase
 block|{
 specifier|public
 name|void
-name|testForreignKey
+name|testForeignKey
 parameter_list|()
 throws|throws
 name|Exception
