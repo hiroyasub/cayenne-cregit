@@ -79,6 +79,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Drop Table"
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -114,11 +116,11 @@ control|(
 name|ObjEntity
 name|objEntity
 range|:
-name|objEntitiesMappedToDbEntity
-argument_list|(
 name|getEntity
 argument_list|()
-argument_list|)
+operator|.
+name|mappedObjEntities
+argument_list|()
 control|)
 block|{
 name|objEntity
@@ -175,15 +177,6 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Drop Table"
-return|;
 block|}
 block|}
 end_class

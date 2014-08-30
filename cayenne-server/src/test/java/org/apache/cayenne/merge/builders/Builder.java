@@ -12,82 +12,32 @@ operator|.
 name|cayenne
 operator|.
 name|merge
+operator|.
+name|builders
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbAttribute
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DbEntity
-import|;
-end_import
-
 begin_comment
-comment|/**  * Class that will be used to set value for null on not  * null columns  */
+comment|/**  * Base interface for all domain builders  *  * @since 3.2.  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ValueForNullProvider
+name|Builder
+parameter_list|<
+name|T
+parameter_list|>
 block|{
-comment|/**      * @return true if there exist a value that should be inserted for null values      */
-specifier|public
-name|boolean
-name|hasValueFor
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|,
-name|DbAttribute
-name|column
-parameter_list|)
+comment|/**      * Build valid object. If some required data omitted it will be filled with random data.      * */
+name|T
+name|build
+parameter_list|()
 function_decl|;
-comment|/**      * @return a {@link List} of sql to set value for null      */
-specifier|public
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|createSql
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|,
-name|DbAttribute
-name|column
-parameter_list|)
+comment|/**      * Build valid object and add some optional fields randomly.      * */
+name|T
+name|random
+parameter_list|()
 function_decl|;
 block|}
 end_interface

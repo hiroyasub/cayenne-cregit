@@ -104,6 +104,7 @@ comment|/**  * A default implementation of {@link ModelMergeDelegate} that does 
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|DefaultModelMergeDelegate
 implements|implements

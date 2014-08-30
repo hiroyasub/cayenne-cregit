@@ -93,6 +93,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Set Column Type"
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -189,15 +191,6 @@ argument_list|(
 name|columnOriginal
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Set Column Type"
-return|;
 block|}
 annotation|@
 name|Override

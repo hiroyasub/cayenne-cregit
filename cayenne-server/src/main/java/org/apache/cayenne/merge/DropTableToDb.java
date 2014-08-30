@@ -81,6 +81,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Drop Table"
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -128,15 +130,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|sqls
-return|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Drop Table"
 return|;
 block|}
 specifier|public
