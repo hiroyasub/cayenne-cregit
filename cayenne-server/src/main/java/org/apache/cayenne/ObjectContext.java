@@ -184,6 +184,16 @@ name|Object
 name|object
 parameter_list|)
 function_decl|;
+comment|/** 	 * Schedules deletion of a persistent object. 	 *  	 * @throws DeleteDenyException 	 *             if a {@link org.apache.cayenne.map.DeleteRule#DENY} delete 	 *             rule is applicable for object deletion. 	 */
+name|void
+name|deleteObject
+parameter_list|(
+name|Object
+name|object
+parameter_list|)
+throws|throws
+name|DeleteDenyException
+function_decl|;
 comment|/**      * Schedules deletion of a collection of persistent objects.      *       * @throws DeleteDenyException      *             if a {@link org.apache.cayenne.map.DeleteRule#DENY} delete      *             rule is applicable for object deletion.      */
 name|void
 name|deleteObjects
