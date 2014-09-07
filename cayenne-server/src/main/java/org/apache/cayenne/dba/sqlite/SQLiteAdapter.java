@@ -524,9 +524,6 @@ expr_stmt|;
 name|DbEntity
 name|entity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|column
 operator|.
 name|getEntity

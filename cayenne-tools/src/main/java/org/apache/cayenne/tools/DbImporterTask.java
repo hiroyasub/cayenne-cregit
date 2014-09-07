@@ -113,7 +113,7 @@ name|tools
 operator|.
 name|dbimport
 operator|.
-name|DbImportModule
+name|DbImportConfiguration
 import|;
 end_import
 
@@ -129,7 +129,7 @@ name|tools
 operator|.
 name|dbimport
 operator|.
-name|DbImportParameters
+name|DbImportModule
 import|;
 end_import
 
@@ -211,15 +211,20 @@ extends|extends
 name|Task
 block|{
 specifier|private
-name|DbImportParameters
+specifier|final
+name|DbImportConfiguration
 name|parameters
 decl_stmt|;
 comment|/**      * @deprecated since 3.2 in favor of "schema"      */
+annotation|@
+name|Deprecated
 specifier|private
 name|String
 name|schemaName
 decl_stmt|;
 comment|/**      * @deprecated since 3.2 in favor of "meaningfulPkTable"      */
+annotation|@
+name|Deprecated
 specifier|private
 name|boolean
 name|meaningfulPk
@@ -231,7 +236,7 @@ block|{
 name|parameters
 operator|=
 operator|new
-name|DbImportParameters
+name|DbImportConfiguration
 argument_list|()
 expr_stmt|;
 name|parameters
@@ -293,6 +298,13 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+name|parameters
+operator|.
+name|setLogger
+argument_list|(
+name|logger
+argument_list|)
+expr_stmt|;
 name|Injector
 name|injector
 init|=
@@ -330,12 +342,10 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-specifier|final
 name|Exception
 name|ex
 parameter_list|)
 block|{
-specifier|final
 name|Throwable
 name|th
 init|=

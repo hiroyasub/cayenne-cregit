@@ -742,7 +742,6 @@ name|value
 operator|==
 literal|null
 operator|||
-operator|(
 name|type
 operator|!=
 name|Types
@@ -754,7 +753,6 @@ operator|!=
 name|Types
 operator|.
 name|CLOB
-operator|)
 return|;
 block|}
 name|void

@@ -138,6 +138,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Add Column"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -279,16 +281,11 @@ argument_list|()
 operator|!=
 literal|null
 condition|?
-operator|(
-operator|(
-name|DbEntity
-operator|)
 name|getColumn
 argument_list|()
 operator|.
 name|getEntity
 argument_list|()
-operator|)
 operator|.
 name|getFullyQualifiedName
 argument_list|()
@@ -457,15 +454,6 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-return|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Add Column"
 return|;
 block|}
 specifier|public

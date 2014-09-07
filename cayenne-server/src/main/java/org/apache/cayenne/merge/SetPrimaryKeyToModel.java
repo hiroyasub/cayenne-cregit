@@ -154,6 +154,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Set Primary Key"
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -312,15 +314,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Set Primary Key"
-return|;
 block|}
 block|}
 end_class

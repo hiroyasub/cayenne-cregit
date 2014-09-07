@@ -496,22 +496,22 @@ name|MySQLAdapter
 extends|extends
 name|JdbcAdapter
 block|{
-specifier|final
 specifier|static
+specifier|final
 name|String
 name|DEFAULT_STORAGE_ENGINE
 init|=
 literal|"InnoDB"
 decl_stmt|;
-specifier|final
 specifier|static
+specifier|final
 name|String
 name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_START
 init|=
 literal|"`"
 decl_stmt|;
-specifier|final
 specifier|static
+specifier|final
 name|String
 name|MYSQL_QUOTE_SQL_IDENTIFIERS_CHAR_END
 init|=
@@ -724,11 +724,11 @@ block|{
 comment|// note that CASCADE is a noop as of MySQL 5.0, so we have to use FK
 comment|// checks
 comment|// statement
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|QuotingStrategy

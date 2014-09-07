@@ -116,6 +116,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Set Not Null"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -135,13 +137,6 @@ name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
-name|StringBuilder
-name|sqlBuffer
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
 name|QuotingStrategy
 name|context
 init|=
@@ -150,17 +145,13 @@ operator|.
 name|getQuotingStrategy
 argument_list|()
 decl_stmt|;
-name|sqlBuffer
+return|return
+name|Collections
 operator|.
-name|append
+name|singletonList
 argument_list|(
 literal|"ALTER TABLE "
-argument_list|)
-expr_stmt|;
-name|sqlBuffer
-operator|.
-name|append
-argument_list|(
+operator|+
 name|context
 operator|.
 name|quotedFullyQualifiedName
@@ -168,19 +159,9 @@ argument_list|(
 name|getEntity
 argument_list|()
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|sqlBuffer
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" ALTER COLUMN "
-argument_list|)
-expr_stmt|;
-name|sqlBuffer
-operator|.
-name|append
-argument_list|(
+operator|+
 name|context
 operator|.
 name|quotedName
@@ -188,34 +169,9 @@ argument_list|(
 name|getColumn
 argument_list|()
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|sqlBuffer
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" SET NOT NULL"
 argument_list|)
-expr_stmt|;
-return|return
-name|Collections
-operator|.
-name|singletonList
-argument_list|(
-name|sqlBuffer
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-return|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Set Not Null"
 return|;
 block|}
 specifier|public

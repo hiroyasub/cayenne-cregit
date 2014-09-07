@@ -443,7 +443,6 @@ name|string
 expr_stmt|;
 block|}
 specifier|private
-specifier|final
 name|DbRelationship
 name|getNonNullRelationship
 parameter_list|()

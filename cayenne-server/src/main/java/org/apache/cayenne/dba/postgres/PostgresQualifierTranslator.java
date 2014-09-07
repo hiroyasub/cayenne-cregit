@@ -265,6 +265,7 @@ name|getClass
 argument_list|()
 argument_list|)
 condition|)
+block|{
 name|appendLikeEscapeCharacter
 argument_list|(
 operator|(
@@ -273,6 +274,7 @@ operator|)
 name|node
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|parenthesisNeeded
@@ -282,6 +284,7 @@ argument_list|,
 name|parentNode
 argument_list|)
 condition|)
+block|{
 name|out
 operator|.
 name|append
@@ -289,6 +292,7 @@ argument_list|(
 literal|')'
 argument_list|)
 expr_stmt|;
+block|}
 comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// Postgres uses ILIKE
@@ -432,9 +436,7 @@ block|{
 name|Appendable
 name|buf
 init|=
-operator|(
 name|matchingObject
-operator|)
 condition|?
 operator|new
 name|StringBuilder

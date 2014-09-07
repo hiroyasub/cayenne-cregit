@@ -685,15 +685,10 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"Undefined type for attribute '"
 operator|+
-operator|(
-operator|(
-name|DbEntity
-operator|)
 name|at
 operator|.
 name|getEntity
 argument_list|()
-operator|)
 operator|.
 name|getFullyQualifiedName
 argument_list|()

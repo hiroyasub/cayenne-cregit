@@ -909,12 +909,12 @@ name|merger
 operator|=
 operator|new
 name|DbMerger
-argument_list|()
-expr_stmt|;
-name|merger
-operator|.
-name|setSchema
 argument_list|(
+name|adapter
+operator|.
+name|mergerFactory
+argument_list|()
+argument_list|,
 name|defaultSchema
 argument_list|)
 expr_stmt|;
@@ -928,8 +928,6 @@ name|merger
 operator|.
 name|createMergeTokens
 argument_list|(
-name|adapter
-argument_list|,
 name|connectionInfo
 operator|.
 name|makeDataSource
@@ -940,6 +938,8 @@ operator|.
 name|getClassLoadingService
 argument_list|()
 argument_list|)
+argument_list|,
+name|adapter
 argument_list|,
 name|dataMap
 argument_list|)
@@ -975,11 +975,11 @@ parameter_list|()
 block|{
 comment|// convert them to string representation for display
 specifier|final
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|Iterator

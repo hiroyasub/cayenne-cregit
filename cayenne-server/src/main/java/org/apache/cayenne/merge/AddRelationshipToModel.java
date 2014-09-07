@@ -68,6 +68,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Add Relationship"
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -117,8 +119,6 @@ expr_stmt|;
 comment|// TODO: add reverse relationship as well if it does not exist
 name|synchronizeWithObjEntity
 argument_list|(
-name|mergerContext
-argument_list|,
 name|getEntity
 argument_list|()
 argument_list|)
@@ -134,15 +134,6 @@ name|rel
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Add Relationship"
-return|;
-block|}
 annotation|@
 name|Override
 specifier|public
@@ -150,17 +141,7 @@ name|String
 name|getTokenValue
 parameter_list|()
 block|{
-name|StringBuilder
-name|s
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|s
-operator|.
-name|append
-argument_list|(
+return|return
 name|rel
 operator|.
 name|getSourceEntity
@@ -168,29 +149,12 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|s
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|"->"
-argument_list|)
-expr_stmt|;
-name|s
-operator|.
-name|append
-argument_list|(
+operator|+
 name|rel
 operator|.
 name|getTargetEntityName
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-name|s
-operator|.
-name|toString
 argument_list|()
 return|;
 block|}

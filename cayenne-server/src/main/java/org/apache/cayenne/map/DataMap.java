@@ -2613,12 +2613,19 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"An attempt to override entity '"
+literal|"An attempt to override db entity '"
 operator|+
 name|entity
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|"' in DataMap '"
+operator|+
+name|getName
+argument_list|()
+operator|+
+literal|"'"
 argument_list|)
 throw|;
 block|}
@@ -4443,6 +4450,30 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+block|}
+specifier|public
+name|void
+name|clear
+parameter_list|()
+block|{
+name|clearDbEntities
+argument_list|()
+expr_stmt|;
+name|clearEmbeddables
+argument_list|()
+expr_stmt|;
+name|clearObjEntities
+argument_list|()
+expr_stmt|;
+name|clearProcedures
+argument_list|()
+expr_stmt|;
+name|clearQueries
+argument_list|()
+expr_stmt|;
+name|clearResultSets
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class

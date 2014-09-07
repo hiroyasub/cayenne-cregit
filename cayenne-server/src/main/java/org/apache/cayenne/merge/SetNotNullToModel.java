@@ -68,6 +68,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Set Not Null"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -122,15 +124,6 @@ name|getColumn
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Set Not Null"
-return|;
 block|}
 block|}
 end_class

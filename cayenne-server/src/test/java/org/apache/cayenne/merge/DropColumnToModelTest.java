@@ -1245,7 +1245,7 @@ argument_list|)
 decl_stmt|;
 name|assertTrue
 argument_list|(
-name|token0
+name|token1
 operator|.
 name|getClass
 argument_list|()
@@ -1253,14 +1253,14 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|token0
+name|token1
 operator|instanceof
 name|DropColumnToModel
 argument_list|)
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|token1
+name|token0
 operator|.
 name|getClass
 argument_list|()
@@ -1268,7 +1268,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|token1
+name|token0
 operator|instanceof
 name|DropRelationshipToModel
 argument_list|)
@@ -1276,7 +1276,7 @@ expr_stmt|;
 comment|// do not execute DropRelationshipToModel, only DropColumnToModel.
 name|execute
 argument_list|(
-name|token0
+name|token1
 argument_list|)
 expr_stmt|;
 comment|// check after merging

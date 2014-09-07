@@ -116,6 +116,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Set Allow Null"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -207,15 +209,6 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-return|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Set Allow Null"
 return|;
 block|}
 specifier|public

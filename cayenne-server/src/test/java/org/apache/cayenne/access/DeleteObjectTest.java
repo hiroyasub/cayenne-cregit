@@ -505,7 +505,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|.
-name|deleteObjects
+name|deleteObject
 argument_list|(
 name|artist
 argument_list|)

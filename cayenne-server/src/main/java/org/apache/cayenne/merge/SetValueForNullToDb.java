@@ -95,6 +95,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Set value for null"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -147,15 +149,6 @@ name|DummyReverseToken
 argument_list|(
 name|this
 argument_list|)
-return|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Set value for null"
 return|;
 block|}
 block|}

@@ -169,14 +169,12 @@ literal|null
 return|;
 block|}
 return|return
-operator|(
 name|md
 operator|.
 name|getDriverMajorVersion
 argument_list|()
 operator|<=
 literal|8
-operator|)
 condition|?
 operator|(
 name|DbAdapter

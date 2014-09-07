@@ -24,11 +24,13 @@ specifier|public
 enum|enum
 name|MergeDirection
 block|{
+comment|/**      * TO_DB Token means that changes was made in object model and should be reflected at DB      */
 name|TO_DB
 argument_list|(
 literal|"To DB"
 argument_list|)
 block|,
+comment|/**      * TO_MODEL Token represent database changes that should be allayed to object model      */
 name|TO_MODEL
 argument_list|(
 literal|"To Model"
@@ -94,11 +96,6 @@ name|String
 name|toString
 parameter_list|()
 block|{
-name|super
-operator|.
-name|toString
-argument_list|()
-expr_stmt|;
 return|return
 name|getName
 argument_list|()

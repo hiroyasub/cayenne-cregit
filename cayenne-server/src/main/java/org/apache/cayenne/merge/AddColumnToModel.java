@@ -96,6 +96,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Add Column"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -142,8 +144,6 @@ argument_list|)
 expr_stmt|;
 name|synchronizeWithObjEntity
 argument_list|(
-name|mergerContext
-argument_list|,
 name|getEntity
 argument_list|()
 argument_list|)
@@ -159,15 +159,6 @@ name|getColumn
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Add Column"
-return|;
 block|}
 block|}
 end_class

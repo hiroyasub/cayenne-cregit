@@ -246,6 +246,7 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
+block|{
 name|pkGeneratingSequenceName
 operator|=
 name|pkGenerator
@@ -253,7 +254,9 @@ operator|.
 name|getGeneratorName
 argument_list|()
 expr_stmt|;
+block|}
 else|else
+block|{
 name|pkGeneratingSequenceName
 operator|=
 name|sequenceName
@@ -261,6 +264,7 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
+block|}
 name|Connection
 name|con
 init|=

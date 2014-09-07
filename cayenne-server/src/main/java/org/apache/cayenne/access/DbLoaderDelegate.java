@@ -65,7 +65,6 @@ interface|interface
 name|DbLoaderDelegate
 block|{
 comment|/**      * Returns true to tell DbLoader that it is OK to overwrite DbEntity that      * already exists in the model. If loading process should be stopped      * immediately, an exception is thrown.      */
-specifier|public
 name|boolean
 name|overwriteDbEntity
 parameter_list|(
@@ -75,7 +74,6 @@ parameter_list|)
 throws|throws
 name|CayenneException
 function_decl|;
-specifier|public
 name|void
 name|dbEntityAdded
 parameter_list|(
@@ -83,7 +81,6 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbEntityRemoved
 parameter_list|(
@@ -91,7 +88,6 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objEntityAdded
 parameter_list|(
@@ -99,7 +95,6 @@ name|ObjEntity
 name|entity
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objEntityRemoved
 parameter_list|(

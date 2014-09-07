@@ -581,11 +581,14 @@ if|if
 condition|(
 name|first
 condition|)
+block|{
 name|first
 operator|=
 literal|false
 expr_stmt|;
+block|}
 else|else
+block|{
 name|buf
 operator|.
 name|append
@@ -593,6 +596,7 @@ argument_list|(
 literal|", "
 argument_list|)
 expr_stmt|;
+block|}
 name|DbAttribute
 name|at
 init|=
@@ -976,11 +980,14 @@ if|if
 condition|(
 name|first
 condition|)
+block|{
 name|first
 operator|=
 literal|false
 expr_stmt|;
+block|}
 else|else
+block|{
 name|buf
 operator|.
 name|append
@@ -988,6 +995,7 @@ argument_list|(
 literal|", "
 argument_list|)
 expr_stmt|;
+block|}
 name|buf
 operator|.
 name|append
@@ -1012,11 +1020,14 @@ if|if
 condition|(
 name|firstPk
 condition|)
+block|{
 name|firstPk
 operator|=
 literal|false
 expr_stmt|;
+block|}
 else|else
+block|{
 name|buf
 operator|.
 name|append
@@ -1024,6 +1035,7 @@ argument_list|(
 literal|", "
 argument_list|)
 expr_stmt|;
+block|}
 name|DbAttribute
 name|at
 init|=
@@ -1081,49 +1093,22 @@ name|DbEntity
 name|table
 parameter_list|)
 block|{
-name|QuotingStrategy
-name|context
-init|=
-name|getQuotingStrategy
-argument_list|()
-decl_stmt|;
-name|StringBuffer
-name|buf
-init|=
-operator|new
-name|StringBuffer
-argument_list|(
-literal|"DROP TABLE "
-argument_list|)
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-name|context
-operator|.
-name|quotedFullyQualifiedName
-argument_list|(
-name|table
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|" CASCADE"
-argument_list|)
-expr_stmt|;
 return|return
 name|Collections
 operator|.
 name|singleton
 argument_list|(
-name|buf
-operator|.
-name|toString
+literal|"DROP TABLE "
+operator|+
+name|getQuotingStrategy
 argument_list|()
+operator|.
+name|quotedFullyQualifiedName
+argument_list|(
+name|table
+argument_list|)
+operator|+
+literal|" CASCADE"
 argument_list|)
 return|;
 block|}

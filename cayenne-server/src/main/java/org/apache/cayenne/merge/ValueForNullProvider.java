@@ -53,6 +53,10 @@ name|DbEntity
 import|;
 end_import
 
+begin_comment
+comment|/**  * Class that will be used to set value for null on not  * null columns  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface

@@ -144,6 +144,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Drop Column"
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -241,6 +243,9 @@ block|{
 name|remove
 argument_list|(
 name|mergerContext
+operator|.
+name|getModelMergeDelegate
+argument_list|()
 argument_list|,
 name|dbRelationship
 argument_list|,
@@ -256,11 +261,11 @@ control|(
 name|ObjEntity
 name|objEntity
 range|:
-name|objEntitiesMappedToDbEntity
-argument_list|(
 name|getEntity
 argument_list|()
-argument_list|)
+operator|.
+name|mappedObjEntities
+argument_list|()
 control|)
 block|{
 name|ObjAttribute
@@ -327,15 +332,6 @@ name|getColumn
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Drop Column"
-return|;
 block|}
 block|}
 end_class

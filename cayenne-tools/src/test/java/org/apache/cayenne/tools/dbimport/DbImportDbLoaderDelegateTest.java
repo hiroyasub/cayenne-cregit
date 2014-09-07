@@ -333,7 +333,6 @@ argument_list|(
 name|objEntity
 argument_list|)
 expr_stmt|;
-specifier|final
 name|List
 argument_list|<
 name|ObjEntity

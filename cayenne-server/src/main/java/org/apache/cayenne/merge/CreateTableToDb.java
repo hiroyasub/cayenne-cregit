@@ -119,6 +119,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|"Create Table"
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -273,15 +275,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-specifier|public
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-literal|"Create Table"
-return|;
 block|}
 specifier|public
 name|MergerToken
