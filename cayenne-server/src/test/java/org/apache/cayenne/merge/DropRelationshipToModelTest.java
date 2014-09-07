@@ -927,8 +927,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|// TODO: reversing the following two tokens should also reverse the
-comment|// order
+comment|// TODO: reversing the following two tokens should also reverse the order
 name|MergerToken
 name|token0
 init|=
@@ -961,20 +960,32 @@ name|mergerFactory
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|assertTrue
-argument_list|(
+if|if
+condition|(
+operator|!
+operator|(
 name|token0
 operator|instanceof
 name|DropRelationshipToModel
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
+operator|&&
 name|token1
 operator|instanceof
 name|DropColumnToModel
-argument_list|)
+operator|||
+name|token1
+operator|instanceof
+name|DropRelationshipToModel
+operator|&&
+name|token0
+operator|instanceof
+name|DropColumnToModel
+operator|)
+condition|)
+block|{
+name|fail
+argument_list|()
 expr_stmt|;
+block|}
 name|execute
 argument_list|(
 name|token0
