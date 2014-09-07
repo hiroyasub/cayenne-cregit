@@ -974,6 +974,7 @@ name|createSQL
 parameter_list|()
 block|{
 comment|// convert them to string representation for display
+specifier|final
 name|StringBuilder
 name|buf
 init|=
@@ -1003,19 +1004,22 @@ operator|.
 name|getBatchTerminator
 argument_list|()
 decl_stmt|;
+specifier|final
 name|String
 name|lineEnd
 init|=
+operator|(
 name|batchTerminator
-operator|==
+operator|!=
 literal|null
+operator|)
 condition|?
-literal|"\n\n"
-else|:
 literal|"\n"
 operator|+
 name|batchTerminator
 operator|+
+literal|"\n\n"
+else|:
 literal|"\n\n"
 decl_stmt|;
 while|while

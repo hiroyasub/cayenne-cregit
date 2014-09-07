@@ -112,6 +112,7 @@ implements|implements
 name|DbLoaderDelegate
 block|{
 specifier|private
+specifier|final
 name|List
 argument_list|<
 name|DbEntity
@@ -119,6 +120,7 @@ argument_list|>
 name|addedDbEntities
 decl_stmt|;
 specifier|private
+specifier|final
 name|List
 argument_list|<
 name|DbEntity
@@ -126,6 +128,7 @@ argument_list|>
 name|removedDbEntities
 decl_stmt|;
 specifier|private
+specifier|final
 name|List
 argument_list|<
 name|ObjEntity
@@ -133,6 +136,7 @@ argument_list|>
 name|addedObjEntities
 decl_stmt|;
 specifier|private
+specifier|final
 name|List
 argument_list|<
 name|ObjEntity
@@ -183,7 +187,6 @@ specifier|public
 name|boolean
 name|overwriteDbEntity
 parameter_list|(
-specifier|final
 name|DbEntity
 name|ent
 parameter_list|)
@@ -198,7 +201,6 @@ specifier|public
 name|void
 name|dbEntityAdded
 parameter_list|(
-specifier|final
 name|DbEntity
 name|ent
 parameter_list|)
@@ -225,7 +227,6 @@ specifier|public
 name|void
 name|dbEntityRemoved
 parameter_list|(
-specifier|final
 name|DbEntity
 name|ent
 parameter_list|)
@@ -255,7 +256,6 @@ specifier|public
 name|void
 name|objEntityAdded
 parameter_list|(
-specifier|final
 name|ObjEntity
 name|ent
 parameter_list|)
@@ -282,7 +282,6 @@ specifier|public
 name|void
 name|objEntityRemoved
 parameter_list|(
-specifier|final
 name|ObjEntity
 name|ent
 parameter_list|)
