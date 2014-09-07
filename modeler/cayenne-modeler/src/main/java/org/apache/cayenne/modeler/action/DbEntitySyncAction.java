@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action that synchronizes all ObjEntities with the current state of the selected  * DbEntity.  *   */
+comment|/**  * Action that synchronizes all ObjEntities with the current state of the  * selected DbEntity.  */
 end_comment
 
 begin_class
@@ -251,7 +251,7 @@ return|return
 literal|"icon-sync.gif"
 return|;
 block|}
-comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
+comment|/** 	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
 specifier|public
 name|void
 name|performAction

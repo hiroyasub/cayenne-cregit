@@ -209,10 +209,6 @@ name|CayenneAction
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -230,7 +226,7 @@ return|return
 literal|"Create Parameter"
 return|;
 block|}
-comment|/**      * Constructor for CreateProcedureParameterAction.      *       */
+comment|/** 	 * Constructor for CreateProcedureParameterAction. 	 *  	 */
 specifier|public
 name|CreateProcedureParameterAction
 parameter_list|(
@@ -256,7 +252,7 @@ return|return
 literal|"icon-plus.gif"
 return|;
 block|}
-comment|/**      * Creates ProcedureParameter depending on context.      */
+comment|/** 	 * Creates ProcedureParameter depending on context. 	 */
 specifier|public
 name|void
 name|performAction
@@ -338,7 +334,7 @@ name|parameter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fires events when an proc parameter was added      */
+comment|/** 	 * Fires events when an proc parameter was added 	 */
 specifier|static
 name|void
 name|fireProcedureParameterEvent
@@ -405,7 +401,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if path contains a Procedure object.      */
+comment|/** 	 * Returns<code>true</code> if path contains a Procedure object. 	 */
 specifier|public
 name|boolean
 name|enableForPath

@@ -226,7 +226,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class to create a new stored procedure mapping.  *   */
+comment|/**  * Action class to create a new stored procedure mapping.  */
 end_comment
 
 begin_class
@@ -326,7 +326,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fires events when a procedure was added      */
+comment|/** 	 * Fires events when a procedure was added 	 */
 specifier|static
 name|void
 name|fireProcedureEvent
@@ -437,7 +437,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if path contains a DataMap object.      */
+comment|/** 	 * Returns<code>true</code> if path contains a DataMap object. 	 */
 specifier|public
 name|boolean
 name|enableForPath

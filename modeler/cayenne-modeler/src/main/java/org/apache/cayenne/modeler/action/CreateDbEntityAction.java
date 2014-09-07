@@ -239,10 +239,6 @@ name|CayenneAction
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -260,7 +256,7 @@ return|return
 literal|"Create DbEntity"
 return|;
 block|}
-comment|/**      * Constructor for CreateDbEntityAction.      */
+comment|/** 	 * Constructor for CreateDbEntityAction. 	 */
 specifier|public
 name|CreateDbEntityAction
 parameter_list|(
@@ -286,7 +282,7 @@ return|return
 literal|"icon-dbentity.gif"
 return|;
 block|}
-comment|/**      * Creates new DbEntity, adds it to the current DataMap, fires DbEntityEvent and      * DbEntityDisplayEvent.      *       * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
+comment|/** 	 * Creates new DbEntity, adds it to the current DataMap, fires DbEntityEvent 	 * and DbEntityDisplayEvent. 	 *  	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
 specifier|public
 name|void
 name|performAction
@@ -351,7 +347,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fires events when a db entity was added      */
+comment|/** 	 * Fires events when a db entity was added 	 */
 specifier|static
 name|void
 name|fireDbEntityEvent
@@ -430,7 +426,7 @@ name|displayEvent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructs and returns a new DbEntity. Entity returned is added to the DataMap.      */
+comment|/** 	 * Constructs and returns a new DbEntity. Entity returned is added to the 	 * DataMap. 	 */
 specifier|public
 name|void
 name|createEntity
@@ -485,7 +481,7 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if path contains a DataMap object.      */
+comment|/** 	 * Returns<code>true</code> if path contains a DataMap object. 	 */
 specifier|public
 name|boolean
 name|enableForPath

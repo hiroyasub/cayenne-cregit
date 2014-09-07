@@ -295,10 +295,6 @@ name|DeleteRuleUpdater
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -316,7 +312,7 @@ return|return
 literal|"Create Relationship"
 return|;
 block|}
-comment|/**      * Constructor for CreateRelationshipAction.      */
+comment|/** 	 * Constructor for CreateRelationshipAction. 	 */
 specifier|public
 name|CreateRelationshipAction
 parameter_list|(
@@ -344,7 +340,7 @@ return|return
 literal|"icon-relationship.gif"
 return|;
 block|}
-comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
+comment|/** 	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
 annotation|@
 name|Override
 specifier|public
@@ -535,7 +531,7 @@ name|rel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fires events when a obj rel was added      */
+comment|/** 	 * Fires events when a obj rel was added 	 */
 specifier|static
 name|void
 name|fireObjRelationshipEvent
@@ -652,7 +648,7 @@ name|rel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fires events when a db rel was added      */
+comment|/** 	 * Fires events when a db rel was added 	 */
 specifier|static
 name|void
 name|fireDbRelationshipEvent
@@ -726,7 +722,7 @@ name|rde
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if path contains an Entity object.      */
+comment|/** 	 * Returns<code>true</code> if path contains an Entity object. 	 */
 annotation|@
 name|Override
 specifier|public
