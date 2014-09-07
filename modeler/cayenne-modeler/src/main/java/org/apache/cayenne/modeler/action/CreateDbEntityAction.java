@@ -450,6 +450,16 @@ argument_list|()
 decl_stmt|;
 name|entity
 operator|.
+name|setCatalog
+argument_list|(
+name|map
+operator|.
+name|getDefaultCatalog
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|entity
+operator|.
 name|setSchema
 argument_list|(
 name|map
