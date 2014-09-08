@@ -17,6 +17,36 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -72,19 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A model of a Cayenne mapping project. A project consists of descriptors for  * DataChannel, DataNodes and DataMaps and associated filesystem files they are loaded  * from and saved to.  *   * @since 3.1  */
-end_comment
-
-begin_comment
-comment|// do we even need a project wrapper around ConfigurationNode, as currently it does
-end_comment
-
-begin_comment
-comment|// nothing?? Maybe in the future make it store configuration Resources for the project
-end_comment
-
-begin_comment
-comment|// nodes to avoid attaching them to descriptors?
+comment|/**  * A model of a Cayenne mapping project. A project consists of descriptors for  * DataChannel, DataNodes and DataMaps and associated filesystem files they are  * loaded from and saved to.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -110,6 +128,13 @@ name|Resource
 argument_list|>
 name|configurationSourceGetter
 decl_stmt|;
+specifier|private
+name|Collection
+argument_list|<
+name|URL
+argument_list|>
+name|unusedResources
+decl_stmt|;
 specifier|public
 name|Project
 parameter_list|(
@@ -132,6 +157,17 @@ name|configurationSourceGetter
 operator|=
 operator|new
 name|ConfigurationSourceGetter
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|unusedResources
+operator|=
+operator|new
+name|HashSet
+argument_list|<
+name|URL
+argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
@@ -159,7 +195,7 @@ name|getRootNode
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns<code>true</code> if the project is modified.      */
+comment|/** 	 * Returns<code>true</code> if the project is modified. 	 */
 specifier|public
 name|boolean
 name|isModified
@@ -169,7 +205,7 @@ return|return
 name|modified
 return|;
 block|}
-comment|/**      * Updates "modified" state of the project.      */
+comment|/** 	 * Updates "modified" state of the project. 	 */
 specifier|public
 name|void
 name|setModified
@@ -217,6 +253,18 @@ name|acceptVisitor
 argument_list|(
 name|configurationSourceGetter
 argument_list|)
+return|;
+block|}
+specifier|public
+name|Collection
+argument_list|<
+name|URL
+argument_list|>
+name|getUnusedResources
+parameter_list|()
+block|{
+return|return
+name|unusedResources
 return|;
 block|}
 block|}
