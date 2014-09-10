@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A callback interface that allows to scan through a {@link ResultIterator}  * without the need to close it explicitly.  *   * @since 3.2  */
+comment|/**  * A callback interface invoked on each row when iterating over  * {@link ResultIterator}. This simplifies iterator management.  *   * @since 3.2  */
 end_comment
 
 begin_interface
@@ -26,13 +26,10 @@ name|T
 parameter_list|>
 block|{
 name|void
-name|iterate
+name|next
 parameter_list|(
-name|ResultIterator
-argument_list|<
 name|T
-argument_list|>
-name|iterator
+name|object
 parameter_list|)
 function_decl|;
 block|}
