@@ -1114,6 +1114,11 @@ argument_list|)
 throw|;
 block|}
 comment|/**      * Returns an object matching an int primary key. If the object is mapped to      * use non-integer PK or a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 parameter_list|<
@@ -1160,6 +1165,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns an object matching an Object primary key. If the object is mapped      * to use a compound PK, CayenneRuntimeException is thrown.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 parameter_list|<
@@ -1201,6 +1211,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns an object matching a primary key. PK map parameter should use      * database PK column names as keys.      *<p>      * If this object is already cached in the ObjectStore, it is returned      * without a query. Otherwise a query is built and executed against the      * database.      *</p>      *       * @see #objectForPK(ObjectContext, ObjectId)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 parameter_list|<
@@ -1777,7 +1792,7 @@ name|pk
 argument_list|)
 return|;
 block|}
-specifier|private
+specifier|protected
 name|Cayenne
 parameter_list|()
 block|{
