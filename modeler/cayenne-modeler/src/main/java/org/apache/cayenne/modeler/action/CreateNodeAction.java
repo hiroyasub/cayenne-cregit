@@ -257,10 +257,6 @@ name|CayenneAction
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -278,7 +274,7 @@ return|return
 literal|"Create DataNode"
 return|;
 block|}
-comment|/**      * Constructor for CreateNodeAction.      *       * @param application      */
+comment|/** 	 * Constructor for CreateNodeAction. 	 *  	 * @param application 	 */
 specifier|public
 name|CreateNodeAction
 parameter_list|(
@@ -304,7 +300,7 @@ return|return
 literal|"icon-node.gif"
 return|;
 block|}
-comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
+comment|/** 	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
 specifier|public
 name|void
 name|performAction
@@ -409,7 +405,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if path contains a DataDomain object.      */
+comment|/** 	 * Returns<code>true</code> if path contains a DataDomain object. 	 */
 specifier|public
 name|boolean
 name|enableForPath
@@ -436,7 +432,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Creates a new DataNode, adding to the current domain, but doesn't send any events.      */
+comment|/** 	 * Creates a new DataNode, adding to the current domain, but doesn't send 	 * any events. 	 */
 specifier|public
 name|DataNodeDescriptor
 name|buildDataNode
@@ -513,7 +509,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * A factory method that makes a new DataNode.      */
+comment|/** 	 * A factory method that makes a new DataNode. 	 */
 name|DataNodeDescriptor
 name|buildDataNode
 parameter_list|(

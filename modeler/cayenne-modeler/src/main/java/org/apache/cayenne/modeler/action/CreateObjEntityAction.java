@@ -171,6 +171,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|NameConverter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|modeler
 operator|.
 name|Application
@@ -267,26 +283,6 @@ name|EntityMergeSupport
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|naming
-operator|.
-name|NameConverter
-import|;
-end_import
-
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -304,7 +300,7 @@ return|return
 literal|"Create ObjEntity"
 return|;
 block|}
-comment|/**      * Constructor for CreateObjEntityAction.      */
+comment|/** 	 * Constructor for CreateObjEntityAction. 	 */
 specifier|public
 name|CreateObjEntityAction
 parameter_list|(
@@ -332,7 +328,7 @@ return|return
 literal|"icon-new_objentity.gif"
 return|;
 block|}
-comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
+comment|/** 	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
 annotation|@
 name|Override
 specifier|public
@@ -673,7 +669,7 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Fires events when a obj entity was added      */
+comment|/** 	 * Fires events when a obj entity was added 	 */
 specifier|static
 name|void
 name|fireObjEntityEvent
@@ -752,7 +748,7 @@ name|displayEvent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if path contains a DataMap object.      */
+comment|/** 	 * Returns<code>true</code> if path contains a DataMap object. 	 */
 annotation|@
 name|Override
 specifier|public

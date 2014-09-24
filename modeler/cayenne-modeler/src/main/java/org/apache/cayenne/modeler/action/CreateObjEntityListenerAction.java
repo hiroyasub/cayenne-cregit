@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class for creating entity listeners on an ObjEntity  *   * @version 1.0 Oct 30, 2007  */
+comment|/**  * Action class for creating entity listeners on an ObjEntity  */
 end_comment
 
 begin_class
@@ -156,7 +156,7 @@ name|CreateObjEntityListenerAction
 extends|extends
 name|CayenneAction
 block|{
-comment|/**      * unique action name      */
+comment|/** 	 * unique action name 	 */
 specifier|private
 specifier|static
 specifier|final
@@ -165,7 +165,7 @@ name|CREATE_ENTITY_LISTENER
 init|=
 literal|"Create objentity entity listener"
 decl_stmt|;
-comment|/**      * Constructor.      *       * @param application Application instance      */
+comment|/** 	 * Constructor. 	 *  	 * @param application 	 *            Application instance 	 */
 specifier|public
 name|CreateObjEntityListenerAction
 parameter_list|(
@@ -182,7 +182,7 @@ name|application
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructor for extending classes.      *       * @param actionName unique action name      * @param application Application instance      */
+comment|/** 	 * Constructor for extending classes. 	 *  	 * @param actionName 	 *            unique action name 	 * @param application 	 *            Application instance 	 */
 specifier|protected
 name|CreateObjEntityListenerAction
 parameter_list|(
@@ -201,7 +201,7 @@ name|application
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @return unique action name      */
+comment|/** 	 * @return unique action name 	 */
 specifier|public
 specifier|static
 name|String
@@ -212,7 +212,7 @@ return|return
 name|CREATE_ENTITY_LISTENER
 return|;
 block|}
-comment|/**      * @return icon file name for button      */
+comment|/** 	 * @return icon file name for button 	 */
 specifier|public
 name|String
 name|getIconName
@@ -222,7 +222,7 @@ return|return
 literal|"icon-create-listener.gif"
 return|;
 block|}
-comment|/**      * checks whether the new name of listener class already exists      *       * @param className entered class name      * @return true or false      */
+comment|/** 	 * checks whether the new name of listener class already exists 	 *  	 * @param className 	 *            entered class name 	 * @return true or false 	 */
 specifier|protected
 name|boolean
 name|isListenerClassAlreadyExists
@@ -246,7 +246,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * base entity listenre creation logic      *       * @param e event      */
+comment|/** 	 * base entity listenre creation logic 	 *  	 * @param e 	 *            event 	 */
 specifier|public
 name|void
 name|performAction
