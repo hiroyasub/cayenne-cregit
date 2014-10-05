@@ -142,6 +142,15 @@ argument_list|<
 name|T
 argument_list|>
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|7074293371883740872L
+decl_stmt|;
 comment|/** 	 * Creates a query that selects DataRows and uses default routing. 	 */
 specifier|public
 specifier|static

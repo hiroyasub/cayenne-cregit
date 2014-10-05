@@ -70,7 +70,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience superclass of the queries that resolve into some other queries during the  * routing phase. Provides caching of a replacement query.  *   * @since 1.2  */
+comment|/**  * A base superclass for queries that resolve into some other queries during the  * routing phase. Provides caching of a replacement query.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -81,11 +81,19 @@ name|IndirectQuery
 implements|implements
 name|Query
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|974666786498898209L
+decl_stmt|;
 specifier|protected
 name|String
 name|name
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|DataMap
 name|dataMap
@@ -100,7 +108,9 @@ specifier|transient
 name|EntityResolver
 name|lastResolver
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -124,7 +134,9 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|DataMap
 name|getDataMap
@@ -134,7 +146,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setDataMap
@@ -150,7 +162,9 @@ operator|=
 name|dataMap
 expr_stmt|;
 block|}
-comment|/**      * Returns the metadata obtained from the replacement query.      */
+comment|/** 	 * Returns the metadata obtained from the replacement query. 	 */
+annotation|@
+name|Override
 specifier|public
 name|QueryMetadata
 name|getMetaData
@@ -171,6 +185,8 @@ name|resolver
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -195,7 +211,9 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Delegates routing to a replacement query.      */
+comment|/** 	 * Delegates routing to a replacement query. 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|route
@@ -231,7 +249,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a substitute query. An implementor is free to provide an arbitrary      * replacement query.      */
+comment|/** 	 * Creates a substitute query. An implementor is free to provide an 	 * arbitrary replacement query. 	 */
 specifier|protected
 specifier|abstract
 name|Query
@@ -241,7 +259,7 @@ name|EntityResolver
 name|resolver
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a replacement query, creating it on demand and caching it for reuse.      */
+comment|/** 	 * Returns a replacement query, creating it on demand and caching it for 	 * reuse. 	 */
 specifier|protected
 name|Query
 name|getReplacementQuery
@@ -281,7 +299,9 @@ return|return
 name|replacementQuery
 return|;
 block|}
-comment|/**      * Throws an exception as indirect query should not be executed directly.      */
+comment|/** 	 * Throws an exception as indirect query should not be executed directly. 	 */
+annotation|@
+name|Override
 specifier|public
 name|SQLAction
 name|createSQLAction
