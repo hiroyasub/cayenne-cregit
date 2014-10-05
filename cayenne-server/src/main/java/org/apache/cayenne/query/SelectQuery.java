@@ -254,7 +254,7 @@ operator|new
 name|SelectQueryMetadata
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates a SelectQuery that selects objects of a given persistent class.      *       * @param rootClass      *            the Class of objects fetched by this query.      *       * @since 3.2      */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 *  	 * @since 3.2 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -284,7 +284,7 @@ name|rootClass
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a SelectQuery that selects objects of a given persistent class      * that match supplied qualifier.      *       * @param rootClass      *            the Class of objects fetched by this query.      * @param qualifier      *            an Expression indicating which objects should be fetched.      *       * @since 3.2      */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 *  	 * @since 3.2 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -319,7 +319,7 @@ name|qualifier
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a SelectQuery that selects objects of a given persistent class      * that match supplied qualifier.      *       * @param rootClass      *            the Class of objects fetched by this query.      * @param qualifier      *            an Expression indicating which objects should be fetched.      * @param orderings      *            defines how to order the results, may be null.      *       * @since 3.2      */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 *  	 * @since 3.2 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -364,7 +364,7 @@ name|orderings
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 specifier|static
 name|SelectQuery
@@ -414,7 +414,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates a SelectQuery that selects DataRows that correspond to a given      * persistent class that match supplied qualifier.      *       * @param rootClass      *            the Class of objects that correspond to DataRows entity.      * @param qualifier      *            an Expression indicating which objects should be fetched.      *       * @since 3.2      */
+comment|/** 	 * Creates a SelectQuery that selects DataRows that correspond to a given 	 * persistent class that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects that correspond to DataRows entity. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 *  	 * @since 3.2 	 */
 specifier|public
 specifier|static
 name|SelectQuery
@@ -455,7 +455,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 specifier|static
 name|SelectQuery
@@ -510,7 +510,7 @@ name|SelectQuery
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a SelectQuery with null qualifier, for the specifed ObjEntity      *       * @param root      *            the ObjEntity this SelectQuery is for.      */
+comment|/** 	 * Creates a SelectQuery with null qualifier, for the specifed ObjEntity 	 *  	 * @param root 	 *            the ObjEntity this SelectQuery is for. 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -526,7 +526,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery for the specified ObjEntity with the given      * qualifier.      *       * @param root      *            the ObjEntity this SelectQuery is for.      * @param qualifier      *            an Expression indicating which objects should be fetched      */
+comment|/** 	 * Creates a SelectQuery for the specified ObjEntity with the given 	 * qualifier. 	 *  	 * @param root 	 *            the ObjEntity this SelectQuery is for. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -547,7 +547,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery for the specified ObjEntity with the given      * qualifier and orderings.      *       * @param root      *            the ObjEntity this SelectQuery is for.      * @param qualifier      *            an Expression indicating which objects should be fetched.      * @param orderings      *            defines how to order the results, may be null.      * @since 3.1      */
+comment|/** 	 * Creates a SelectQuery for the specified ObjEntity with the given 	 * qualifier and orderings. 	 *  	 * @param root 	 *            the ObjEntity this SelectQuery is for. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 * @since 3.1 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -584,7 +584,7 @@ name|orderings
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery that selects all objects of a given persistent      * class.      *       * @param rootClass      *            the Class of objects fetched by this query.      */
+comment|/** 	 * Creates a SelectQuery that selects all objects of a given persistent 	 * class. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -603,7 +603,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery that selects objects of a given persistent class      * that match supplied qualifier.      *       * @param rootClass      *            the Class of objects fetched by this query.      * @param qualifier      *            an Expression indicating which objects should be fetched.      */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -627,7 +627,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery that selects objects of a given persistent class      * that match supplied qualifier.      *       * @param rootClass      *            the Class of objects fetched by this query.      * @param qualifier      *            an Expression indicating which objects should be fetched.      * @param orderings      *            defines how to order the results, may be null.      * @since 3.1      */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 * @since 3.1 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -662,7 +662,7 @@ name|orderings
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery for the specified DbEntity.      *       * @param root      *            the DbEntity this SelectQuery is for.      * @since 1.1      */
+comment|/** 	 * Creates a SelectQuery for the specified DbEntity. 	 *  	 * @param root 	 *            the DbEntity this SelectQuery is for. 	 * @since 1.1 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -678,7 +678,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery for the specified DbEntity with the given      * qualifier.      *       * @param root      *            the DbEntity this SelectQuery is for.      * @param qualifier      *            an Expression indicating which objects should be fetched.      * @since 1.1      */
+comment|/** 	 * Creates a SelectQuery for the specified DbEntity with the given 	 * qualifier. 	 *  	 * @param root 	 *            the DbEntity this SelectQuery is for. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @since 1.1 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -699,7 +699,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery for the specified DbEntity with the given qualifier      * and orderings.      *       * @param root      *            the DbEntity this SelectQuery is for.      * @param qualifier      *            an Expression indicating which objects should be fetched.      * @param orderings      *            defines how to order the results, may be null.      * @since 3.1      */
+comment|/** 	 * Creates a SelectQuery for the specified DbEntity with the given qualifier 	 * and orderings. 	 *  	 * @param root 	 *            the DbEntity this SelectQuery is for. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 * @since 3.1 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -736,7 +736,7 @@ name|orderings
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates SelectQuery with<code>objEntityName</code> parameter.      */
+comment|/** 	 * Creates SelectQuery with<code>objEntityName</code> parameter. 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -752,7 +752,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates SelectQuery with<code>objEntityName</code> and      *<code>qualifier</code> parameters.      */
+comment|/** 	 * Creates SelectQuery with<code>objEntityName</code> and 	 *<code>qualifier</code> parameters. 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -773,7 +773,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a SelectQuery that selects objects of a given persistent class      * that match supplied qualifier.      *       * @param objEntityName      *            the name of the ObjEntity to fetch from.      * @param qualifier      *            an Expression indicating which objects should be fetched.      * @param orderings      *            defines how to order the results, may be null.      * @since 3.1      */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param objEntityName 	 *            the name of the ObjEntity to fetch from. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 * @since 3.1 	 */
 specifier|public
 name|SelectQuery
 parameter_list|(
@@ -831,7 +831,7 @@ name|qualifier
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -894,7 +894,7 @@ name|metaData
 return|;
 block|}
 block|}
-comment|/**      * Routes itself and if there are any prefetches configured, creates      * prefetch queries and routes them as well.      *       * @since 1.2      */
+comment|/** 	 * Routes itself and if there are any prefetches configured, creates 	 * prefetch queries and routes them as well. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -944,7 +944,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates and routes extra disjoint prefetch queries.      *       * @since 1.2      */
+comment|/** 	 * Creates and routes extra disjoint prefetch queries. 	 *  	 * @since 1.2 	 */
 name|void
 name|routePrefetches
 parameter_list|(
@@ -969,7 +969,7 @@ name|resolver
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Calls "makeSelect" on the visitor.      *       * @since 1.2      */
+comment|/** 	 * Calls "makeSelect" on the visitor. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -989,7 +989,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Initializes query parameters using a set of properties.      *       * @since 1.1      */
+comment|/** 	 * Initializes query parameters using a set of properties. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|initWithProperties
@@ -1060,7 +1060,7 @@ name|properties
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Prints itself as XML to the provided PrintWriter.      *       * @since 1.1      */
+comment|/** 	 * Prints itself as XML to the provided PrintWriter. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|encodeAsXML
@@ -1391,7 +1391,7 @@ literal|"</query>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * A shortcut for {@link #queryWithParameters(Map, boolean)}that prunes      * parts of qualifier that have no parameter value set.      */
+comment|/** 	 * A shortcut for {@link #queryWithParameters(Map, boolean)}that prunes 	 * parts of qualifier that have no parameter value set. 	 */
 specifier|public
 name|SelectQuery
 argument_list|<
@@ -1417,7 +1417,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a query built using this query as a prototype, using a set of      * parameters to build the qualifier.      *       * @see org.apache.cayenne.exp.Expression#expWithParameters(java.util.Map,      *      boolean) parameter substitution.      */
+comment|/** 	 * Returns a query built using this query as a prototype, using a set of 	 * parameters to build the qualifier. 	 *  	 * @see org.apache.cayenne.exp.Expression#expWithParameters(java.util.Map, 	 *      boolean) parameter substitution. 	 */
 specifier|public
 name|SelectQuery
 argument_list|<
@@ -1518,7 +1518,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates and returns a new SelectQuery built using this query as a      * prototype and substituting qualifier parameters with the values from the      * map.      *       * @since 1.1      */
+comment|/** 	 * Creates and returns a new SelectQuery built using this query as a 	 * prototype and substituting qualifier parameters with the values from the 	 * map. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|SelectQuery
 argument_list|<
@@ -1542,7 +1542,7 @@ name|parameters
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds ordering specification to this query orderings.      */
+comment|/** 	 * Adds ordering specification to this query orderings. 	 */
 specifier|public
 name|void
 name|addOrdering
@@ -1560,7 +1560,7 @@ name|ordering
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a list of orderings.      */
+comment|/** 	 * Adds a list of orderings. 	 */
 specifier|public
 name|void
 name|addOrderings
@@ -1591,7 +1591,7 @@ name|orderings
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds ordering specification to this query orderings.      *       * @since 3.0      */
+comment|/** 	 * Adds ordering specification to this query orderings. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|addOrdering
@@ -1615,7 +1615,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes ordering.      *       * @since 1.1      */
+comment|/** 	 * Removes ordering. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|removeOrdering
@@ -1640,7 +1640,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a list of orderings used by this query.      */
+comment|/** 	 * Returns a list of orderings used by this query. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -1667,7 +1667,7 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-comment|/**      * Clears all configured orderings.      */
+comment|/** 	 * Clears all configured orderings. 	 */
 specifier|public
 name|void
 name|clearOrderings
@@ -1678,7 +1678,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns true if this query returns distinct rows.      */
+comment|/** 	 * Returns true if this query returns distinct rows. 	 */
 specifier|public
 name|boolean
 name|isDistinct
@@ -1688,7 +1688,7 @@ return|return
 name|distinct
 return|;
 block|}
-comment|/**      * Sets<code>distinct</code> property that determines whether this query      * returns distinct row.      */
+comment|/** 	 * Sets<code>distinct</code> property that determines whether this query 	 * returns distinct row. 	 */
 specifier|public
 name|void
 name|setDistinct
@@ -1704,7 +1704,7 @@ operator|=
 name|distinct
 expr_stmt|;
 block|}
-comment|/**      * Adds one or more aliases for the qualifier expression path. Aliases serve      * to instruct Cayenne to generate separate sets of joins for overlapping      * paths, that maybe needed for complex conditions. An example of an      *<i>implicit</i> splits is this method:      * {@link ExpressionFactory#matchAllExp(String, Object...)}.      *       * @since 3.0      */
+comment|/** 	 * Adds one or more aliases for the qualifier expression path. Aliases serve 	 * to instruct Cayenne to generate separate sets of joins for overlapping 	 * paths, that maybe needed for complex conditions. An example of an 	 *<i>implicit</i> splits is this method: 	 * {@link ExpressionFactory#matchAllExp(String, Object...)}. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|aliasPathSplits
@@ -1727,7 +1727,7 @@ name|aliases
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|getPrefetchTree
@@ -1740,7 +1740,7 @@ name|getPrefetchTree
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|setPrefetchTree
@@ -1757,7 +1757,7 @@ name|prefetchTree
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a prefetch with specified relationship path to the query.      *       * @since 3.2      */
+comment|/** 	 * Adds a prefetch with specified relationship path to the query. 	 *  	 * @since 3.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|addPrefetch
@@ -1793,7 +1793,7 @@ name|semantics
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a prefetch with specified relationship path to the query.      *       * @since 1.2 signature changed to return created PrefetchTreeNode.      */
+comment|/** 	 * Adds a prefetch with specified relationship path to the query. 	 *  	 * @since 1.2 signature changed to return created PrefetchTreeNode. 	 */
 specifier|public
 name|PrefetchTreeNode
 name|addPrefetch
@@ -1815,7 +1815,7 @@ name|UNDEFINED_SEMANTICS
 argument_list|)
 return|;
 block|}
-comment|/**      * Clears all stored prefetch paths.      */
+comment|/** 	 * Clears all stored prefetch paths. 	 */
 specifier|public
 name|void
 name|clearPrefetches
@@ -1827,7 +1827,7 @@ name|clearPrefetches
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Removes prefetch.      *       * @since 1.1      */
+comment|/** 	 * Removes prefetch. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|removePrefetch
@@ -1844,7 +1844,7 @@ name|prefetchPath
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if this query should produce a list of data      * rows as opposed to DataObjects,<code>false</code> for DataObjects. This      * is a hint to QueryEngine executing this query.      *       * @deprecated since 3.2, use {@link #dataRowQuery(Class, Expression)} to      *             create DataRow query instead.      */
+comment|/** 	 * Returns<code>true</code> if this query should produce a list of data 	 * rows as opposed to DataObjects,<code>false</code> for DataObjects. This 	 * is a hint to QueryEngine executing this query. 	 *  	 * @deprecated since 3.2, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
 specifier|public
 name|boolean
 name|isFetchingDataRows
@@ -1863,7 +1863,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets query result type. If<code>flag</code> parameter is      *<code>true</code>, then results will be in the form of data rows.      *<p>      *<i>Note that if the root of this query is a {@link DbEntity}, this      * setting has no effect, and data rows are always fetched.</i>      *</p>      *       * @deprecated since 3.2, use {@link #dataRowQuery(Class, Expression)} to      *             create DataRow query instead.      */
+comment|/** 	 * Sets query result type. If<code>flag</code> parameter is 	 *<code>true</code>, then results will be in the form of data rows. 	 *<p> 	 *<i>Note that if the root of this query is a {@link DbEntity}, this 	 * setting has no effect, and data rows are always fetched.</i> 	 *</p> 	 *  	 * @deprecated since 3.2, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
 specifier|public
 name|void
 name|setFetchingDataRows
@@ -1880,7 +1880,7 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy
@@ -1893,7 +1893,7 @@ name|getCacheStrategy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCacheStrategy
@@ -1910,7 +1910,7 @@ name|strategy
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 index|[]
@@ -1924,7 +1924,7 @@ name|getCacheGroups
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCacheGroups
@@ -1944,7 +1944,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 3.2      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 3.2 	 */
 specifier|public
 name|void
 name|useLocalCache
@@ -1967,7 +1967,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 3.2      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 3.2 	 */
 specifier|public
 name|void
 name|useSharedCache
@@ -1990,7 +1990,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the fetchOffset.      *       * @since 3.0      */
+comment|/** 	 * Returns the fetchOffset. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getFetchOffset
@@ -2003,7 +2003,7 @@ name|getFetchOffset
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the fetchLimit.      */
+comment|/** 	 * Returns the fetchLimit. 	 */
 specifier|public
 name|int
 name|getFetchLimit
@@ -2016,7 +2016,7 @@ name|getFetchLimit
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets the fetchLimit.      */
+comment|/** 	 * Sets the fetchLimit. 	 */
 specifier|public
 name|void
 name|setFetchLimit
@@ -2035,7 +2035,7 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setFetchOffset
@@ -2054,7 +2054,7 @@ name|fetchOffset
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>pageSize</code> property. See setPageSize for more details.      */
+comment|/** 	 * Returns<code>pageSize</code> property. See setPageSize for more details. 	 */
 specifier|public
 name|int
 name|getPageSize
@@ -2067,7 +2067,7 @@ name|getPageSize
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets<code>pageSize</code> property.      *       * By setting a page size, the Collection returned by performing a query      * will return<i>hollow</i> DataObjects. This is considerably faster and      * uses a tiny fraction of the memory compared to a non-paged query when      * large numbers of objects are returned in the result. When a hollow      * DataObject is accessed all DataObjects on the same page will be faulted      * into memory. There will be a small delay when faulting objects while the      * data is fetched from the data source, but otherwise you do not need to do      * anything special to access data in hollow objects. The first page is      * always faulted into memory immediately.      *       * @param pageSize      *            The pageSize to set      */
+comment|/** 	 * Sets<code>pageSize</code> property. 	 *  	 * By setting a page size, the Collection returned by performing a query 	 * will return<i>hollow</i> DataObjects. This is considerably faster and 	 * uses a tiny fraction of the memory compared to a non-paged query when 	 * large numbers of objects are returned in the result. When a hollow 	 * DataObject is accessed all DataObjects on the same page will be faulted 	 * into memory. There will be a small delay when faulting objects while the 	 * data is fetched from the data source, but otherwise you do not need to do 	 * anything special to access data in hollow objects. The first page is 	 * always faulted into memory immediately. 	 *  	 * @param pageSize 	 *            The pageSize to set 	 */
 specifier|public
 name|void
 name|setPageSize
@@ -2084,7 +2084,7 @@ name|pageSize
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a list that internally stores orderings, creating it on demand.      *       * @since 1.2      */
+comment|/** 	 * Returns a list that internally stores orderings, creating it on demand. 	 *  	 * @since 1.2 	 */
 name|List
 argument_list|<
 name|Ordering
@@ -2115,7 +2115,7 @@ return|return
 name|orderings
 return|;
 block|}
-comment|/**      * Sets statement's fetch size (0 for default size)      *       * @since 3.0      */
+comment|/** 	 * Sets statement's fetch size (0 for default size) 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setStatementFetchSize
@@ -2132,7 +2132,7 @@ name|size
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @return statement's fetch size      * @since 3.0      */
+comment|/** 	 * @return statement's fetch size 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getStatementFetchSize
@@ -2145,7 +2145,7 @@ name|getStatementFetchSize
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets new query qualifier.      */
+comment|/** 	 * Sets new query qualifier. 	 */
 specifier|public
 name|void
 name|setQualifier
@@ -2161,7 +2161,7 @@ operator|=
 name|qualifier
 expr_stmt|;
 block|}
-comment|/**      * Returns query qualifier.      */
+comment|/** 	 * Returns query qualifier. 	 */
 specifier|public
 name|Expression
 name|getQualifier
@@ -2171,7 +2171,7 @@ return|return
 name|qualifier
 return|;
 block|}
-comment|/**      * Adds specified qualifier to the existing qualifier joining it using "AND".      */
+comment|/** 	 * Adds specified qualifier to the existing qualifier joining it using 	 * "AND". 	 */
 specifier|public
 name|void
 name|andQualifier
@@ -2198,7 +2198,7 @@ else|:
 name|e
 expr_stmt|;
 block|}
-comment|/**      * Adds specified qualifier to the existing qualifier joining it using "OR".      */
+comment|/** 	 * Adds specified qualifier to the existing qualifier joining it using "OR". 	 */
 specifier|public
 name|void
 name|orQualifier
