@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -87,10 +99,12 @@ expr_stmt|;
 name|CayenneRuntime
 name|runtime
 init|=
-operator|new
+name|mock
+argument_list|(
 name|CayenneRuntime
-argument_list|()
-block|{         }
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 name|WebUtil
 operator|.
@@ -116,10 +130,12 @@ expr_stmt|;
 name|CayenneRuntime
 name|runtime1
 init|=
-operator|new
+name|mock
+argument_list|(
 name|CayenneRuntime
-argument_list|()
-block|{         }
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 name|WebUtil
 operator|.

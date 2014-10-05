@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -115,7 +105,7 @@ specifier|abstract
 class|class
 name|CayenneRuntime
 block|{
-comment|/**      * A holder of an Injector bound to the current thread. Used mainly to allow      * serializable contexts to attach to correct Cayenne stack on      * deserialization.      *       * @since 3.1      */
+comment|/** 	 * A holder of an Injector bound to the current thread. Used mainly to allow 	 * serializable contexts to attach to correct Cayenne stack on 	 * deserialization. 	 *  	 * @since 3.1 	 */
 specifier|protected
 specifier|static
 specifier|final
@@ -132,7 +122,7 @@ name|Injector
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Binds a DI {@link Injector} bound to the current thread. It is primarily      * intended for deserialization of ObjectContexts.      *       * @since 3.1      */
+comment|/** 	 * Binds a DI {@link Injector} bound to the current thread. It is primarily 	 * intended for deserialization of ObjectContexts. 	 *  	 * @since 3.1 	 */
 specifier|public
 specifier|static
 name|void
@@ -150,7 +140,7 @@ name|injector
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the {@link Injector} bound to the current thread. Will return      * null if none is bound.      *       * @since 3.1      */
+comment|/** 	 * Returns the {@link Injector} bound to the current thread. Will return 	 * null if none is bound. 	 *  	 * @since 3.1 	 */
 specifier|public
 specifier|static
 name|Injector
@@ -170,203 +160,21 @@ name|injector
 decl_stmt|;
 specifier|protected
 name|Module
-index|[]
-name|modules
+name|module
 decl_stmt|;
-comment|/**      * Internal helper method to add special extra modules in subclass      * constructors.      */
-specifier|protected
-specifier|static
-name|Module
-index|[]
-name|mergeModules
-parameter_list|(
-name|Module
-name|mainModule
-parameter_list|,
-name|Module
-modifier|...
-name|extraModules
-parameter_list|)
-block|{
-if|if
-condition|(
-name|extraModules
-operator|==
-literal|null
-operator|||
-name|extraModules
-operator|.
-name|length
-operator|==
-literal|0
-condition|)
-block|{
-return|return
-operator|new
-name|Module
-index|[]
-block|{
-name|mainModule
-block|}
-return|;
-block|}
-name|Module
-index|[]
-name|allModules
-init|=
-operator|new
-name|Module
-index|[
-name|extraModules
-operator|.
-name|length
-operator|+
-literal|1
-index|]
-decl_stmt|;
-name|allModules
-index|[
-literal|0
-index|]
-operator|=
-name|mainModule
-expr_stmt|;
-name|System
-operator|.
-name|arraycopy
-argument_list|(
-name|extraModules
-argument_list|,
-literal|0
-argument_list|,
-name|allModules
-argument_list|,
-literal|1
-argument_list|,
-name|extraModules
-operator|.
-name|length
-argument_list|)
-expr_stmt|;
-return|return
-name|allModules
-return|;
-block|}
-comment|/**      * Internal helper method to add special extra modules in subclass      * constructors.      */
-specifier|protected
-specifier|static
-name|Module
-index|[]
-name|mergeModules
-parameter_list|(
-name|Module
-name|mainModule
-parameter_list|,
-name|Collection
-argument_list|<
-name|Module
-argument_list|>
-name|extraModules
-parameter_list|)
-block|{
-if|if
-condition|(
-name|extraModules
-operator|==
-literal|null
-operator|||
-name|extraModules
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-return|return
-operator|new
-name|Module
-index|[]
-block|{
-name|mainModule
-block|}
-return|;
-block|}
-name|Module
-index|[]
-name|allModules
-init|=
-operator|new
-name|Module
-index|[
-name|extraModules
-operator|.
-name|size
-argument_list|()
-operator|+
-literal|1
-index|]
-decl_stmt|;
-name|allModules
-index|[
-literal|0
-index|]
-operator|=
-name|mainModule
-expr_stmt|;
-name|System
-operator|.
-name|arraycopy
-argument_list|(
-name|extraModules
-operator|.
-name|toArray
-argument_list|()
-argument_list|,
-literal|0
-argument_list|,
-name|allModules
-argument_list|,
-literal|1
-argument_list|,
-name|extraModules
-operator|.
-name|size
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-name|allModules
-return|;
-block|}
-comment|/**      * Creates a CayenneRuntime with configuration based on the supplied array      * of DI modules.      */
+comment|/** 	 * Creates a CayenneRuntime with configuration based on the supplied array 	 * of DI modules. 	 */
 specifier|public
 name|CayenneRuntime
 parameter_list|(
 name|Module
-modifier|...
-name|modules
+name|module
 parameter_list|)
 block|{
-if|if
-condition|(
-name|modules
-operator|==
-literal|null
-condition|)
-block|{
-name|modules
-operator|=
-operator|new
-name|Module
-index|[
-literal|0
-index|]
-expr_stmt|;
-block|}
 name|this
 operator|.
-name|modules
+name|module
 operator|=
-name|modules
+name|module
 expr_stmt|;
 name|this
 operator|.
@@ -376,75 +184,13 @@ name|DIBootstrap
 operator|.
 name|createInjector
 argument_list|(
-name|modules
+name|module
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a CayenneRuntime with configuration based on the supplied      * collection of DI modules.      */
-specifier|public
-name|CayenneRuntime
-parameter_list|(
-name|Collection
-argument_list|<
-name|Module
-argument_list|>
-name|modules
-parameter_list|)
-block|{
-if|if
-condition|(
-name|modules
-operator|==
-literal|null
-condition|)
-block|{
-name|this
-operator|.
-name|modules
-operator|=
-operator|new
-name|Module
-index|[
-literal|0
-index|]
-expr_stmt|;
-block|}
-else|else
-block|{
-name|this
-operator|.
-name|modules
-operator|=
-name|modules
-operator|.
-name|toArray
-argument_list|(
-operator|new
-name|Module
-index|[
-name|modules
-operator|.
-name|size
-argument_list|()
-index|]
-argument_list|)
-expr_stmt|;
-block|}
-name|this
-operator|.
-name|injector
-operator|=
-name|DIBootstrap
-operator|.
-name|createInjector
-argument_list|(
-name|this
-operator|.
-name|modules
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * Returns an array of modules used to initialize this runtime.      */
+comment|/** 	 * Returns an array of modules used to initialize this runtime. 	 *  	 * @deprecated since 3.2. We only keep one module now, so use 	 *             {@link #getModule()}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|Module
 index|[]
@@ -452,10 +198,25 @@ name|getModules
 parameter_list|()
 block|{
 return|return
-name|modules
+operator|new
+name|Module
+index|[]
+block|{
+name|module
+block|}
 return|;
 block|}
-comment|/**      * Returns DI injector used by this runtime.      */
+comment|/** 	 *  	 * Returns the module used to initialize this runtime. 	 *  	 * @since 3.2 	 */
+specifier|public
+name|Module
+name|getModule
+parameter_list|()
+block|{
+return|return
+name|module
+return|;
+block|}
+comment|/** 	 * Returns DI injector used by this runtime. 	 */
 specifier|public
 name|Injector
 name|getInjector
@@ -465,7 +226,7 @@ return|return
 name|injector
 return|;
 block|}
-comment|/**      * Shuts down the DI injector of this runtime, giving all services that need      * to release some resources a chance to do that.      */
+comment|/** 	 * Shuts down the DI injector of this runtime, giving all services that need 	 * to release some resources a chance to do that. 	 */
 comment|// the following annotation is for environments that manage CayenneRuntimes
 comment|// within
 comment|// another DI registry (e.g. unit tests)
@@ -482,7 +243,7 @@ name|shutdown
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns the runtime {@link DataChannel}.      */
+comment|/** 	 * Returns the runtime {@link DataChannel}. 	 */
 specifier|public
 name|DataChannel
 name|getChannel
@@ -499,7 +260,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a new ObjectContext instance based on the runtime's main      * DataChannel.      *       * @since 3.2      */
+comment|/** 	 * Returns a new ObjectContext instance based on the runtime's main 	 * DataChannel. 	 *  	 * @since 3.2 	 */
 specifier|public
 name|ObjectContext
 name|newContext
@@ -519,7 +280,7 @@ name|createContext
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a new ObjectContext which is a child of the specified      * DataChannel. This method is used for creation of nested ObjectContexts,      * with parent ObjectContext passed as an argument.      *       * @since 3.2      */
+comment|/** 	 * Returns a new ObjectContext which is a child of the specified 	 * DataChannel. This method is used for creation of nested ObjectContexts, 	 * with parent ObjectContext passed as an argument. 	 *  	 * @since 3.2 	 */
 specifier|public
 name|ObjectContext
 name|newContext
@@ -544,7 +305,7 @@ name|parentChannel
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 3.1 use better named {@link #newContext()} instead.      */
+comment|/** 	 * @deprecated since 3.1 use better named {@link #newContext()} instead. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -557,7 +318,7 @@ name|newContext
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.1 use better named {@link #newContext(DataChannel)}      *             instead.      */
+comment|/** 	 * @deprecated since 3.1 use better named {@link #newContext(DataChannel)} 	 *             instead. 	 */
 annotation|@
 name|Deprecated
 specifier|public
