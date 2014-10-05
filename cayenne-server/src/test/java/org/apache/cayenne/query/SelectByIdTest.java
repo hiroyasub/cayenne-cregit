@@ -167,7 +167,7 @@ name|TESTMAP_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|IdSelectTest
+name|SelectByIdTest
 extends|extends
 name|ServerCase
 block|{
@@ -311,7 +311,7 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|query
 argument_list|(
@@ -345,7 +345,7 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|query
 argument_list|(
@@ -390,7 +390,7 @@ expr_stmt|;
 name|Artist
 name|a3
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|query
 argument_list|(
@@ -431,7 +431,7 @@ expr_stmt|;
 name|Artist
 name|a2
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|query
 argument_list|(
@@ -498,7 +498,7 @@ decl_stmt|;
 name|Artist
 name|a3
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|query
 argument_list|(
@@ -547,7 +547,7 @@ decl_stmt|;
 name|Artist
 name|a2
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|query
 argument_list|(
@@ -592,7 +592,7 @@ expr_stmt|;
 name|DataRow
 name|a3
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|dataRowQuery
 argument_list|(
@@ -628,7 +628,7 @@ expr_stmt|;
 name|DataRow
 name|a2
 init|=
-name|IdSelect
+name|SelectById
 operator|.
 name|dataRowQuery
 argument_list|(
