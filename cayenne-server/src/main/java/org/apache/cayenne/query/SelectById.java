@@ -679,7 +679,7 @@ return|return
 name|cacheStrategy
 return|;
 block|}
-specifier|public
+specifier|private
 name|SelectById
 argument_list|<
 name|T
@@ -726,7 +726,7 @@ return|return
 name|cacheGroups
 return|;
 block|}
-specifier|public
+specifier|private
 name|SelectById
 argument_list|<
 name|T
