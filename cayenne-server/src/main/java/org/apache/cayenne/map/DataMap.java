@@ -16,6 +16,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|emptyList
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -355,7 +367,15 @@ argument_list|<
 name|DataMap
 argument_list|>
 block|{
-comment|/**      * Defines whether a DataMap supports client entities.      *       * @since 1.2      */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|4851901426473991657L
+decl_stmt|;
+comment|/** 	 * Defines whether a DataMap supports client entities. 	 *  	 * @since 1.2 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -364,7 +384,7 @@ name|CLIENT_SUPPORTED_PROPERTY
 init|=
 literal|"clientSupported"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default client Java class package.      *       * @since 1.2      */
+comment|/** 	 * Defines the name of the property for default client Java class package. 	 *  	 * @since 1.2 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -373,7 +393,7 @@ name|DEFAULT_CLIENT_PACKAGE_PROPERTY
 init|=
 literal|"defaultClientPackage"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default client Java superclass.      *       * @since 3.0      */
+comment|/** 	 * Defines the name of the property for default client Java superclass. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -382,7 +402,7 @@ name|DEFAULT_CLIENT_SUPERCLASS_PROPERTY
 init|=
 literal|"defaultClientSuperclass"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default DB catalog.      *       * @since 3.2      */
+comment|/** 	 * Defines the name of the property for default DB catalog. 	 *  	 * @since 3.2 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -391,7 +411,7 @@ name|DEFAULT_CATALOG_PROPERTY
 init|=
 literal|"defaultCatalog"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default DB schema.      *       * @since 1.1      */
+comment|/** 	 * Defines the name of the property for default DB schema. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -400,7 +420,7 @@ name|DEFAULT_SCHEMA_PROPERTY
 init|=
 literal|"defaultSchema"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default Java class package.      *       * @since 1.1      */
+comment|/** 	 * Defines the name of the property for default Java class package. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -409,7 +429,7 @@ name|DEFAULT_PACKAGE_PROPERTY
 init|=
 literal|"defaultPackage"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default Java superclass.      *       * @since 1.1      */
+comment|/** 	 * Defines the name of the property for default Java superclass. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -418,7 +438,7 @@ name|DEFAULT_SUPERCLASS_PROPERTY
 init|=
 literal|"defaultSuperclass"
 decl_stmt|;
-comment|/**      * Defines the name of the property for default DB schema.      *       * @since 1.1      */
+comment|/** 	 * Defines the name of the property for default DB schema. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -435,7 +455,7 @@ name|DEFAULT_QUOTE_SQL_IDENTIFIERS_PROPERTY
 init|=
 literal|"quoteSqlIdentifiers"
 decl_stmt|;
-comment|/**      * The namespace in which the data map XML file will be created. This is      * also the URI to locate a copy of the schema document.      */
+comment|/** 	 * The namespace in which the data map XML file will be created. This is 	 * also the URI to locate a copy of the schema document. 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -546,7 +566,7 @@ name|SQLResult
 argument_list|>
 name|results
 decl_stmt|;
-comment|/**      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+comment|/** 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 specifier|private
 name|List
 argument_list|<
@@ -554,17 +574,17 @@ name|EntityListener
 argument_list|>
 name|defaultEntityListeners
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|Resource
 name|configurationSource
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|DataChannelDescriptor
 name|dataChannelDescriptor
 decl_stmt|;
-comment|/**      * Creates a new unnamed DataMap.      */
+comment|/** 	 * Creates a new unnamed DataMap. 	 */
 specifier|public
 name|DataMap
 parameter_list|()
@@ -575,7 +595,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new named DataMap.      */
+comment|/** 	 * Creates a new named DataMap. 	 */
 specifier|public
 name|DataMap
 parameter_list|(
@@ -589,7 +609,13 @@ name|mapName
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+argument_list|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -696,7 +722,7 @@ name|properties
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|DataChannelDescriptor
 name|getDataChannelDescriptor
@@ -706,7 +732,7 @@ return|return
 name|dataChannelDescriptor
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setDataChannelDescriptor
@@ -722,7 +748,7 @@ operator|=
 name|dataChannelDescriptor
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -746,7 +772,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|int
 name|compareTo
@@ -812,7 +838,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isQuotingSQLIdentifiers
@@ -822,7 +848,7 @@ return|return
 name|quotingSQLIdentifiers
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setQuotingSQLIdentifiers
@@ -838,7 +864,7 @@ operator|=
 name|quotingSqlIdentifiers
 expr_stmt|;
 block|}
-comment|/**      * Performs DataMap initialization from a set of properties, using defaults      * for the missing properties.      *       * @since 1.1      */
+comment|/** 	 * Performs DataMap initialization from a set of properties, using defaults 	 * for the missing properties. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|initWithProperties
@@ -864,7 +890,13 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 name|Object
@@ -1123,7 +1155,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns a DataMap stripped of any server-side information, such as      * DbEntity mapping, or ObjEntities that are not allowed in the client tier.      * Returns null if this DataMap as a whole does not support client tier      * persistence.      *       * @since 1.2      */
+comment|/** 	 * Returns a DataMap stripped of any server-side information, such as 	 * DbEntity mapping, or ObjEntities that are not allowed in the client tier. 	 * Returns null if this DataMap as a whole does not support client tier 	 * persistence. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|DataMap
 name|getClientDataMap
@@ -1249,7 +1281,7 @@ return|return
 name|clientMap
 return|;
 block|}
-comment|/**      * Prints itself as XML to the provided PrintWriter.      *       * @since 1.1      */
+comment|/** 	 * Prints itself as XML to the provided PrintWriter. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|encodeAsXML
@@ -1755,7 +1787,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the name of this DataMap.      */
+comment|/** 	 * Returns the name of this DataMap. 	 */
 specifier|public
 name|String
 name|getName
@@ -1765,7 +1797,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Set the name of this DataMap.      */
+comment|/** 	 * Set the name of this DataMap. 	 */
 specifier|public
 name|void
 name|setName
@@ -1781,7 +1813,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Adds all Object and DB entities and Queries from another map to this map.      * Overwrites all existing entities and queries with the new ones.      *<p>      *<i>TODO: will need to implement advanced merge that allows different      * policies for overwriting entities / queries.</i>      *</p>      */
+comment|/** 	 * Adds all Object and DB entities and Queries from another map to this map. 	 * Overwrites all existing entities and queries with the new ones. 	 *<p> 	 *<i>TODO: will need to implement advanced merge that allows different 	 * policies for overwriting entities / queries.</i> 	 *</p> 	 */
 specifier|public
 name|void
 name|mergeWithDataMap
@@ -1899,7 +1931,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns "location" property value. Location is abstract and can depend on      * how the DataMap was loaded. E.g. location can be a File on the filesystem      * or a location within a JAR.      */
+comment|/** 	 * Returns "location" property value. Location is abstract and can depend on 	 * how the DataMap was loaded. E.g. location can be a File on the filesystem 	 * or a location within a JAR. 	 */
 specifier|public
 name|String
 name|getLocation
@@ -1909,7 +1941,7 @@ return|return
 name|location
 return|;
 block|}
-comment|/**      * Sets "location" property.      */
+comment|/** 	 * Sets "location" property. 	 */
 specifier|public
 name|void
 name|setLocation
@@ -1925,7 +1957,7 @@ operator|=
 name|location
 expr_stmt|;
 block|}
-comment|/**      * Returns a sorted unmodifiable map of ObjEntities contained in this      * DataMap, keyed by ObjEntity name.      */
+comment|/** 	 * Returns a sorted unmodifiable map of ObjEntities contained in this 	 * DataMap, keyed by ObjEntity name. 	 */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -1945,7 +1977,7 @@ name|objEntityMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a sorted unmodifiable map of DbEntities contained in this      * DataMap, keyed by DbEntity name.      */
+comment|/** 	 * Returns a sorted unmodifiable map of DbEntities contained in this 	 * DataMap, keyed by DbEntity name. 	 */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -1965,7 +1997,7 @@ name|dbEntityMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a named query associated with this DataMap.      *       * @since 1.1      */
+comment|/** 	 * Returns a named query associated with this DataMap. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|Query
 name|getQuery
@@ -2010,7 +2042,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Stores a query under its name.      *       * @since 1.1      */
+comment|/** 	 * Stores a query under its name. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|addQuery
@@ -2113,7 +2145,7 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a named query from the DataMap.      *       * @since 1.1      */
+comment|/** 	 * Removes a named query from the DataMap. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|removeQuery
@@ -2130,7 +2162,7 @@ name|queryName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes all stored embeddable objects from the map.      *       * @since 3.0      */
+comment|/** 	 * Removes all stored embeddable objects from the map. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|clearEmbeddables
@@ -2142,7 +2174,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|clearResultSets
@@ -2154,7 +2186,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|clearQueries
@@ -2166,7 +2198,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|clearObjEntities
@@ -2178,7 +2210,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|clearDbEntities
@@ -2190,7 +2222,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|clearProcedures
@@ -2202,7 +2234,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -2222,7 +2254,7 @@ name|queryMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an unmodifiable collection of mapped queries.      *       * @since 1.1      */
+comment|/** 	 * Returns an unmodifiable collection of mapped queries. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -2243,7 +2275,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds an embeddable object to the DataMap.      *       * @since 3.0      */
+comment|/** 	 * Adds an embeddable object to the DataMap. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|addEmbeddable
@@ -2353,7 +2385,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a named SQLResultSet to the DataMap.      *       * @since 3.0      */
+comment|/** 	 * Adds a named SQLResultSet to the DataMap. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|addResult
@@ -2453,7 +2485,7 @@ name|result
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a new ObjEntity to this DataMap.      */
+comment|/** 	 * Adds a new ObjEntity to this DataMap. 	 */
 specifier|public
 name|void
 name|addObjEntity
@@ -2548,7 +2580,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a new DbEntity to this DataMap.      */
+comment|/** 	 * Adds a new DbEntity to this DataMap. 	 */
 specifier|public
 name|void
 name|addDbEntity
@@ -2650,7 +2682,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns an unmodifiable collection of ObjEntities stored in this DataMap.      */
+comment|/** 	 * Returns an unmodifiable collection of ObjEntities stored in this DataMap. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -2671,7 +2703,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -2691,7 +2723,7 @@ name|embeddablesMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a collection of {@link Embeddable} mappings stored in the      * DataMap.      *       * @since 3.0      */
+comment|/** 	 * Returns a collection of {@link Embeddable} mappings stored in the 	 * DataMap. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -2712,7 +2744,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -2732,7 +2764,7 @@ name|results
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -2753,7 +2785,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|Embeddable
 name|getEmbeddable
@@ -2798,7 +2830,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|SQLResult
 name|getResult
@@ -2843,7 +2875,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns an unmodifiable list of default {@link EntityListener} objects.      * Note that since the order of listeners is significant a list, not just a      * generic Collection is returned.      *       * @since 3.0      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+comment|/** 	 * Returns an unmodifiable list of default {@link EntityListener} objects. 	 * Note that since the order of listeners is significant a list, not just a 	 * generic Collection is returned. 	 *  	 * @since 3.0 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2863,7 +2895,7 @@ name|defaultEntityListeners
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+comment|/** 	 * Adds a new EntityListener. 	 *  	 * @since 3.0 	 * @throws IllegalArgumentException 	 *             if a listener for the same class name is already registered. 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2920,7 +2952,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a listener matching class name.      *       * @since 3.0      * @deprecated since 3.2 unused as listeners are no longer tied to a      *             DataMap.      */
+comment|/** 	 * Removes a listener matching class name. 	 *  	 * @since 3.0 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2980,7 +3012,7 @@ break|break;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer tied to a      *             DataMap.      */
+comment|/** 	 * @since 3.0 	 * @deprecated since 3.2 unused, as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3021,7 +3053,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns all DbEntities in this DataMap.      */
+comment|/** 	 * Returns all DbEntities in this DataMap. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -3042,7 +3074,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns DbEntity matching the<code>name</code> parameter. No      * dependencies will be searched.      */
+comment|/** 	 * Returns DbEntity matching the<code>name</code> parameter. No 	 * dependencies will be searched. 	 */
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -3087,7 +3119,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns an ObjEntity for a DataObject class name.      *       * @since 1.1      */
+comment|/** 	 * Returns an ObjEntity for a DataObject class name. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|ObjEntity
 name|getObjEntityForJavaClass
@@ -3138,7 +3170,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns an ObjEntity for a given name. If it is not found in this      * DataMap, it will search a parent EntityNamespace.      */
+comment|/** 	 * Returns an ObjEntity for a given name. If it is not found in this 	 * DataMap, it will search a parent EntityNamespace. 	 */
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -3183,7 +3215,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns all ObjEntities mapped to the given DbEntity.      */
+comment|/** 	 * Returns all ObjEntities mapped to the given DbEntity. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -3203,9 +3235,8 @@ literal|null
 condition|)
 block|{
 return|return
-name|Collections
-operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 name|Collection
@@ -3237,9 +3268,8 @@ argument_list|()
 condition|)
 block|{
 return|return
-name|Collections
-operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 name|Collection
@@ -3286,7 +3316,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Removes an {@link Embeddable} descriptor with matching class name.      *       * @since 3.0      */
+comment|/** 	 * Removes an {@link Embeddable} descriptor with matching class name. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|removeEmbeddable
@@ -3305,7 +3335,7 @@ name|className
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|removeResult
@@ -3322,7 +3352,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * "Dirty" remove of the DbEntity from the data map.      */
+comment|/** 	 * "Dirty" remove of the DbEntity from the data map. 	 */
 specifier|public
 name|void
 name|removeDbEntity
@@ -3339,7 +3369,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes DbEntity from the DataMap. If<code>clearDependencies</code> is      * true, all DbRelationships that reference this entity are also removed.      * ObjEntities that rely on this entity are cleaned up.      *       * @since 1.1      */
+comment|/** 	 * Removes DbEntity from the DataMap. If<code>clearDependencies</code> is 	 * true, all DbRelationships that reference this entity are also removed. 	 * ObjEntities that rely on this entity are cleaned up. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|removeDbEntity
@@ -3507,7 +3537,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * "Dirty" remove of the ObjEntity from the data map.      */
+comment|/** 	 * "Dirty" remove of the ObjEntity from the data map. 	 */
 specifier|public
 name|void
 name|removeObjEntity
@@ -3524,7 +3554,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes ObjEntity from the DataMap. If<code>clearDependencies</code> is      * true, all ObjRelationships that reference this entity are also removed.      *       * @since 1.1      */
+comment|/** 	 * Removes ObjEntity from the DataMap. If<code>clearDependencies</code> is 	 * true, all ObjRelationships that reference this entity are also removed. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|removeObjEntity
@@ -3622,7 +3652,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Returns stored procedures associated with this DataMap.      */
+comment|/** 	 * Returns stored procedures associated with this DataMap. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -3643,7 +3673,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a Procedure for a given name or null if no such procedure exists.      * If Procedure is not found in this DataMap, a parent EntityNamcespace is      * searched.      */
+comment|/** 	 * Returns a Procedure for a given name or null if no such procedure exists. 	 * If Procedure is not found in this DataMap, a parent EntityNamcespace is 	 * searched. 	 */
 specifier|public
 name|Procedure
 name|getProcedure
@@ -3688,7 +3718,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Adds stored procedure to the list of procedures. If there is another      * procedure registered under the same name, throws an      * IllegalArgumentException.      */
+comment|/** 	 * Adds stored procedure to the list of procedures. If there is another 	 * procedure registered under the same name, throws an 	 * IllegalArgumentException. 	 */
 specifier|public
 name|void
 name|addProcedure
@@ -3799,7 +3829,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a sorted unmodifiable map of Procedures in this DataMap keyed by      * name.      */
+comment|/** 	 * Returns a sorted unmodifiable map of Procedures in this DataMap keyed by 	 * name. 	 */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -3819,7 +3849,7 @@ name|procedureMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a parent namespace where this DataMap resides. Parent      * EntityNamespace is used to establish relationships with entities in other      * DataMaps.      *       * @since 1.1      */
+comment|/** 	 * Returns a parent namespace where this DataMap resides. Parent 	 * EntityNamespace is used to establish relationships with entities in other 	 * DataMaps. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|MappingNamespace
 name|getNamespace
@@ -3829,7 +3859,7 @@ return|return
 name|namespace
 return|;
 block|}
-comment|/**      * Sets a parent namespace where this DataMap resides. Parent      * EntityNamespace is used to establish relationships with entities in other      * DataMaps.      *       * @since 1.1      */
+comment|/** 	 * Sets a parent namespace where this DataMap resides. Parent 	 * EntityNamespace is used to establish relationships with entities in other 	 * DataMaps. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setNamespace
@@ -3845,7 +3875,7 @@ operator|=
 name|namespace
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|int
 name|getDefaultLockType
@@ -3855,7 +3885,7 @@ return|return
 name|defaultLockType
 return|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setDefaultLockType
@@ -3871,7 +3901,7 @@ operator|=
 name|defaultLockType
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|boolean
 name|isClientSupported
@@ -3881,7 +3911,7 @@ return|return
 name|clientSupported
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|setClientSupported
@@ -3897,7 +3927,7 @@ operator|=
 name|clientSupport
 expr_stmt|;
 block|}
-comment|/**      * Returns default client package.      *       * @since 1.2      */
+comment|/** 	 * Returns default client package. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|String
 name|getDefaultClientPackage
@@ -3907,7 +3937,7 @@ return|return
 name|defaultClientPackage
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|setDefaultClientPackage
@@ -3923,7 +3953,7 @@ operator|=
 name|defaultClientPackage
 expr_stmt|;
 block|}
-comment|/**      * Returns default client superclass.      *       * @since 3.0      */
+comment|/** 	 * Returns default client superclass. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getDefaultClientSuperclass
@@ -3933,7 +3963,7 @@ return|return
 name|defaultClientSuperclass
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setDefaultClientSuperclass
@@ -3949,7 +3979,7 @@ operator|=
 name|defaultClientSuperclass
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|String
 name|getDefaultPackage
@@ -3959,7 +3989,7 @@ return|return
 name|defaultPackage
 return|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setDefaultPackage
@@ -3975,7 +4005,7 @@ operator|=
 name|defaultPackage
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|String
 name|getDefaultSchema
@@ -3985,7 +4015,7 @@ return|return
 name|defaultSchema
 return|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setDefaultSchema
@@ -4001,7 +4031,7 @@ operator|=
 name|defaultSchema
 expr_stmt|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|String
 name|getDefaultSuperclass
@@ -4011,7 +4041,7 @@ return|return
 name|defaultSuperclass
 return|;
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setDefaultSuperclass
@@ -4027,7 +4057,7 @@ operator|=
 name|defaultSuperclass
 expr_stmt|;
 block|}
-comment|/**      * DbEntity property changed. May be name, attribute or relationship added      * or removed, etc. Attribute and relationship property changes are handled      * in respective listeners.      *       * @since 1.2      */
+comment|/** 	 * DbEntity property changed. May be name, attribute or relationship added 	 * or removed, etc. Attribute and relationship property changes are handled 	 * in respective listeners. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|dbEntityChanged
@@ -4150,7 +4180,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/**      * ObjEntity property changed. May be name, attribute or relationship added      * or removed, etc. Attribute and relationship property changes are handled      * in respective listeners.      *       * @since 1.2      */
+comment|/** 	 * ObjEntity property changed. May be name, attribute or relationship added 	 * or removed, etc. Attribute and relationship property changes are handled 	 * in respective listeners. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|objEntityChanged
@@ -4273,7 +4303,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|Resource
 name|getConfigurationSource
@@ -4283,7 +4313,7 @@ return|return
 name|configurationSource
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setConfigurationSource
@@ -4299,7 +4329,7 @@ operator|=
 name|configurationSource
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 name|String
 name|getDefaultCatalog
@@ -4309,7 +4339,7 @@ return|return
 name|defaultCatalog
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 name|void
 name|setDefaultCatalog
@@ -4325,7 +4355,7 @@ operator|=
 name|defaultCatalog
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 name|EntityInheritanceTree
 name|getInheritanceTree
@@ -4341,7 +4371,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 name|ObjEntity
 name|getObjEntity
