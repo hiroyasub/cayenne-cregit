@@ -59,6 +59,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ModuleCollection
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Binder
@@ -122,7 +136,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ClientRuntime} that provides an ROP stack based on a local connection on top  * of a server stack.  *   * @since 3.1  */
+comment|/**  * A {@link ClientRuntime} that provides an ROP stack based on a local  * connection on top of a server stack.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -142,7 +156,7 @@ literal|"client-server-channel"
 decl_stmt|;
 specifier|private
 specifier|static
-name|Module
+name|ModuleCollection
 name|mainModuleOverride
 parameter_list|(
 specifier|final
@@ -151,6 +165,9 @@ name|serverInjector
 parameter_list|)
 block|{
 return|return
+operator|new
+name|ModuleCollection
+argument_list|(
 operator|new
 name|Module
 argument_list|()
@@ -206,6 +223,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+argument_list|)
 return|;
 block|}
 specifier|public
@@ -233,13 +251,13 @@ name|super
 argument_list|(
 name|properties
 argument_list|,
-name|mergeModules
-argument_list|(
 name|mainModuleOverride
 argument_list|(
 name|serverInjector
 argument_list|)
-argument_list|,
+operator|.
+name|add
+argument_list|(
 name|extraModules
 argument_list|)
 argument_list|)
@@ -268,13 +286,13 @@ name|super
 argument_list|(
 name|properties
 argument_list|,
-name|mergeModules
-argument_list|(
 name|mainModuleOverride
 argument_list|(
 name|serverInjector
 argument_list|)
-argument_list|,
+operator|.
+name|add
+argument_list|(
 name|extraModules
 argument_list|)
 argument_list|)

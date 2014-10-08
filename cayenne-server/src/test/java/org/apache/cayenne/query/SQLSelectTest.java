@@ -603,14 +603,14 @@ argument_list|)
 decl_stmt|;
 name|q1
 operator|.
-name|bind
+name|params
 argument_list|(
 literal|"a"
 argument_list|,
 literal|"artist3"
 argument_list|)
 operator|.
-name|bind
+name|params
 argument_list|(
 literal|"b"
 argument_list|,
@@ -852,7 +852,7 @@ argument_list|(
 literal|" WHERE ARTIST_NAME = #bind($a)"
 argument_list|)
 operator|.
-name|bind
+name|params
 argument_list|(
 literal|"a"
 argument_list|,
@@ -910,7 +910,7 @@ argument_list|,
 literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
 argument_list|)
 operator|.
-name|bind
+name|params
 argument_list|(
 literal|"a"
 argument_list|,
@@ -957,7 +957,7 @@ argument_list|,
 literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
 argument_list|)
 operator|.
-name|bind
+name|params
 argument_list|(
 literal|"a"
 argument_list|,
@@ -1004,7 +1004,7 @@ argument_list|,
 literal|"SELECT ARTIST_ID FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
 argument_list|)
 operator|.
-name|bind
+name|params
 argument_list|(
 literal|"a"
 argument_list|,

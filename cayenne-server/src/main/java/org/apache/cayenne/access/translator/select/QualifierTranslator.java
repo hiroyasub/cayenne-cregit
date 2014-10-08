@@ -243,7 +243,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|QualifiedQuery
+name|Query
 import|;
 end_import
 
@@ -257,7 +257,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|SelectQuery
 import|;
 end_import
 
@@ -423,7 +423,10 @@ name|qualifier
 init|=
 operator|(
 operator|(
-name|QualifiedQuery
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|q
 operator|)

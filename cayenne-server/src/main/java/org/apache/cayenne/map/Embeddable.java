@@ -176,6 +176,15 @@ name|XMLSerializable
 implements|,
 name|Serializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|7163768090567642099L
+decl_stmt|;
 specifier|protected
 name|String
 name|className
@@ -230,7 +239,7 @@ operator|=
 name|className
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -278,7 +287,7 @@ operator|=
 name|dataMap
 expr_stmt|;
 block|}
-comment|/**      * Returns Java class of the embeddable.      *       * @deprecated since 3.2 this method based on statically defined class      *             loading algorithm is not going to work in environments like      *             OSGi. {@link AdhocObjectFactory} should be used as it can      *             provide the environment-specific class loading policy.      */
+comment|/** 	 * Returns Java class of the embeddable. 	 *  	 * @deprecated since 3.2 this method based on statically defined class 	 *             loading algorithm is not going to work in environments like 	 *             OSGi. {@link AdhocObjectFactory} should be used as it can 	 *             provide the environment-specific class loading policy. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -332,7 +341,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns EmbeddableAttribute of this Embeddable that maps to      *<code>dbAttribute</code> parameter. Returns null if no such attribute is      * found.      */
+comment|/** 	 * Returns EmbeddableAttribute of this Embeddable that maps to 	 *<code>dbAttribute</code> parameter. Returns null if no such attribute is 	 * found. 	 */
 specifier|public
 name|EmbeddableAttribute
 name|getAttributeForDbPath
@@ -374,7 +383,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns an unmodifiable sorted map of embeddable attributes.      */
+comment|/** 	 * Returns an unmodifiable sorted map of embeddable attributes. 	 */
 specifier|public
 name|SortedMap
 argument_list|<
@@ -396,7 +405,7 @@ name|attributes
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an unmodifiable collection of embeddable attributes.      */
+comment|/** 	 * Returns an unmodifiable collection of embeddable attributes. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -419,7 +428,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds new embeddable attribute to the entity, setting its parent      * embeddable to be this object. If attribute has no name,      * IllegalArgumentException is thrown.      */
+comment|/** 	 * Adds new embeddable attribute to the entity, setting its parent 	 * embeddable to be this object. If attribute has no name, 	 * IllegalArgumentException is thrown. 	 */
 specifier|public
 name|void
 name|addAttribute
@@ -570,7 +579,7 @@ operator|=
 name|className
 expr_stmt|;
 block|}
-comment|/**      * {@link XMLSerializable} implementation that generates XML for embeddable.      */
+comment|/** 	 * {@link XMLSerializable} implementation that generates XML for embeddable. 	 */
 specifier|public
 name|void
 name|encodeAsXML

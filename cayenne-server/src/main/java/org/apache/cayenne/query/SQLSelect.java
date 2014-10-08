@@ -21,16 +21,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
 import|;
 end_import
@@ -152,7 +142,16 @@ argument_list|<
 name|T
 argument_list|>
 block|{
-comment|/**      * Creates a query that selects DataRows and uses default routing.      */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|7074293371883740872L
+decl_stmt|;
+comment|/** 	 * Creates a query that selects DataRows and uses default routing. 	 */
 specifier|public
 specifier|static
 name|SQLSelect
@@ -184,7 +183,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates a query that selects DataRows and uses routing based on the      * provided DataMap name.      */
+comment|/** 	 * Creates a query that selects DataRows and uses routing based on the 	 * provided DataMap name. 	 */
 specifier|public
 specifier|static
 name|SQLSelect
@@ -225,7 +224,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates a query that selects DataObjects.      */
+comment|/** 	 * Creates a query that selects DataObjects. 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -260,7 +259,7 @@ name|sql
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a query that selects scalar values and uses default routing.      */
+comment|/** 	 * Creates a query that selects scalar values and uses default routing. 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -307,7 +306,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates a query that selects scalar values and uses routing based on the      * provided DataMap name.      */
+comment|/** 	 * Creates a query that selects scalar values and uses routing based on the 	 * provided DataMap name. 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -513,7 +512,7 @@ operator|.
 name|PAGE_SIZE_DEFAULT
 expr_stmt|;
 block|}
-comment|/**      * Selects objects using provided context. Essentially the inversion of      * "context.select(query)".      */
+comment|/** 	 * Selects objects using provided context. Essentially the inversion of 	 * "ObjectContext.select(query)". 	 */
 specifier|public
 name|List
 argument_list|<
@@ -534,7 +533,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Selects a single object using provided context. Essentially the inversion      * of "Cayenne.objectForSelect(context, query)".      */
+comment|/** 	 * Selects a single object using provided context. Essentially the inversion 	 * of "ObjectContext.selectOne(Select)". 	 */
 specifier|public
 name|T
 name|selectOne
@@ -600,7 +599,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Appends a piece of SQL to the previously stored SQL template.      */
+comment|/** 	 * Appends a piece of SQL to the previously stored SQL template. 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -634,7 +633,7 @@ name|SQLSelect
 argument_list|<
 name|T
 argument_list|>
-name|bind
+name|params
 parameter_list|(
 name|String
 name|name
@@ -662,7 +661,54 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns mutable map of parameters that will be bound to SQL. A caller is      * free to add/remove parameters from the returned map as needed.      * Alternatively one should use chained {@link #bind(String, Object)}      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"rawtypes"
+block|,
+literal|"unchecked"
+block|}
+argument_list|)
+specifier|public
+name|SQLSelect
+argument_list|<
+name|T
+argument_list|>
+name|params
+parameter_list|(
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|parameters
+parameter_list|)
+block|{
+name|Map
+name|bareMap
+init|=
+name|parameters
+decl_stmt|;
+name|parameters
+operator|.
+name|putAll
+argument_list|(
+name|bareMap
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|replacementQuery
+operator|=
+literal|null
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|/** 	 * Returns mutable map of parameters that will be bound to SQL. A caller is 	 * free to add/remove parameters from the returned map as needed. 	 * Alternatively one should use chained {@link #params(String, Object)} 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -872,7 +918,7 @@ return|return
 name|template
 return|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 3.2      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 3.2 	 */
 specifier|public
 name|void
 name|useLocalCache
@@ -895,7 +941,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -1006,7 +1052,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns a column name capitalization policy applied to selecting queries.      * This is used to simplify mapping of the queries like "SELECT * FROM ...",      * ensuring that a chosen Cayenne column mapping strategy (e.g. all column      * names in uppercase) is portable across database engines that can have      * varying default capitalization. Default (null) value indicates that      * column names provided in result set are used unchanged.      */
+comment|/** 	 * Returns a column name capitalization policy applied to selecting queries. 	 * This is used to simplify mapping of the queries like "SELECT * FROM ...", 	 * ensuring that a chosen Cayenne column mapping strategy (e.g. all column 	 * names in uppercase) is portable across database engines that can have 	 * varying default capitalization. Default (null) value indicates that 	 * column names provided in result set are used unchanged. 	 */
 specifier|public
 name|CapsStrategy
 name|getColumnNameCaps
@@ -1016,7 +1062,7 @@ return|return
 name|columnNameCaps
 return|;
 block|}
-comment|/**      * Sets a column name capitalization policy applied to selecting queries.      * This is used to simplify mapping of the queries like "SELECT * FROM ...",      * ensuring that a chosen Cayenne column mapping strategy (e.g. all column      * names in uppercase) is portable across database engines that can have      * varying default capitalization. Default (null) value indicates that      * column names provided in result set are used unchanged.      *<p>      * Note that while a non-default setting is useful for queries that do not      * rely on a #result directive to describe columns, it works for all      * SQLTemplates the same way.      */
+comment|/** 	 * Sets a column name capitalization policy applied to selecting queries. 	 * This is used to simplify mapping of the queries like "SELECT * FROM ...", 	 * ensuring that a chosen Cayenne column mapping strategy (e.g. all column 	 * names in uppercase) is portable across database engines that can have 	 * varying default capitalization. Default (null) value indicates that 	 * column names provided in result set are used unchanged. 	 *<p> 	 * Note that while a non-default setting is useful for queries that do not 	 * rely on a #result directive to describe columns, it works for all 	 * SQLTemplates the same way. 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -1054,7 +1100,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Equivalent of setting {@link CapsStrategy#UPPER}      */
+comment|/** 	 * Equivalent of setting {@link CapsStrategy#UPPER} 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -1072,7 +1118,7 @@ name|UPPER
 argument_list|)
 return|;
 block|}
-comment|/**      * Equivalent of setting {@link CapsStrategy#LOWER}      */
+comment|/** 	 * Equivalent of setting {@link CapsStrategy#LOWER} 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -1228,7 +1274,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Sets JDBC statement's fetch size (0 for no default size)      */
+comment|/** 	 * Sets JDBC statement's fetch size (0 for no default size) 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -1266,7 +1312,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * @return JBDC statement's fetch size      */
+comment|/** 	 * @return JBDC statement's fetch size 	 */
 specifier|public
 name|int
 name|getStatementFetchSize

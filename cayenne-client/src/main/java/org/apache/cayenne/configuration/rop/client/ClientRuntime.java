@@ -61,6 +61,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ModuleCollection
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Module
@@ -94,7 +108,7 @@ name|CayenneRuntime
 block|{
 specifier|private
 specifier|static
-name|Module
+name|ModuleCollection
 name|mainModule
 parameter_list|(
 name|Map
@@ -108,13 +122,17 @@ parameter_list|)
 block|{
 return|return
 operator|new
+name|ModuleCollection
+argument_list|(
+operator|new
 name|ClientModule
 argument_list|(
 name|properties
 argument_list|)
+argument_list|)
 return|;
 block|}
-comment|/**      * Creates a client runtime configuring it with a standard set of services contained      * in {@link ClientModule}. CayenneClientModule is created based on a set of      * properties that contain things like connection information, etc. Recognized      * property keys are defined in {@link ClientModule}. An optional array of      * extra modules may contain service overrides and/or user services.      */
+comment|/** 	 * Creates a client runtime configuring it with a standard set of services 	 * contained in {@link ClientModule}. CayenneClientModule is created based 	 * on a set of properties that contain things like connection information, 	 * etc. Recognized property keys are defined in {@link ClientModule}. An 	 * optional array of extra modules may contain service overrides and/or user 	 * services. 	 */
 specifier|public
 name|ClientRuntime
 parameter_list|(
@@ -135,19 +153,19 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|mergeModules
-argument_list|(
 name|mainModule
 argument_list|(
 name|properties
 argument_list|)
-argument_list|,
+operator|.
+name|add
+argument_list|(
 name|extraModules
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a client runtime configuring it with a standard set of services contained      * in {@link ClientModule}. CayenneClientModule is created based on a set of      * properties that contain things like connection information, etc. Recognized      * property keys are defined in {@link ClientModule}. An optional collection of      * extra modules may contain service overrides and/or user services.      */
+comment|/** 	 * Creates a client runtime configuring it with a standard set of services 	 * contained in {@link ClientModule}. CayenneClientModule is created based 	 * on a set of properties that contain things like connection information, 	 * etc. Recognized property keys are defined in {@link ClientModule}. An 	 * optional collection of extra modules may contain service overrides and/or 	 * user services. 	 */
 specifier|public
 name|ClientRuntime
 parameter_list|(
@@ -166,13 +184,13 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|mergeModules
-argument_list|(
 name|mainModule
 argument_list|(
 name|properties
 argument_list|)
-argument_list|,
+operator|.
+name|add
+argument_list|(
 name|extraModules
 argument_list|)
 argument_list|)

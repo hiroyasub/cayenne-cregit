@@ -652,7 +652,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class to build expressions. Alternatively expressions can be built using  * {@link org.apache.cayenne.exp.Expression#fromString(String)} method.  */
+comment|/**  * Helper class to build expressions. Alternatively expressions can be built  * using {@link org.apache.cayenne.exp.Expression#fromString(String)} method.  */
 end_comment
 
 begin_class
@@ -660,7 +660,7 @@ specifier|public
 class|class
 name|ExpressionFactory
 block|{
-comment|/**      * A "split" character, "|", that is understood by some of the ExpressionFactory      * methods that require splitting joins in the middle of the path.      *       * @since 3.0      */
+comment|/** 	 * A "split" character, "|", that is understood by some of the 	 * ExpressionFactory methods that require splitting joins in the middle of 	 * the path. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -1302,7 +1302,7 @@ operator|.
 name|class
 expr_stmt|;
 block|}
-comment|/**      * Creates a new expression for the type requested. If type is unknown,      * ExpressionException is thrown.      */
+comment|/** 	 * Creates a new expression for the type requested. If type is unknown, 	 * ExpressionException is thrown. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -1413,7 +1413,7 @@ name|type
 argument_list|)
 throw|;
 block|}
-comment|/**      * Applies a few default rules for adding operands to expressions. In particular wraps      * all lists into LIST expressions. Applied only in path expressions.      */
+comment|/** 	 * Applies a few default rules for adding operands to expressions. In 	 * particular wraps all lists into LIST expressions. Applied only in path 	 * expressions. 	 */
 specifier|protected
 specifier|static
 name|Object
@@ -1474,7 +1474,7 @@ name|op
 return|;
 block|}
 block|}
-comment|/**      * Creates an expression that matches any of the key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a DB_PATH expression. OR is used to join pair binary      * expressions.      */
+comment|/** 	 * Creates an expression that matches any of the key-values pairs in 	 *<code>map</code>. 	 *<p> 	 * For each pair<code>pairType</code> operator is used to build a binary 	 * expression. Key is considered to be a DB_PATH expression. OR is used to 	 * join pair binary expressions. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -1586,7 +1586,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches all key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a DB_PATH expression. AND is used to join pair binary      * expressions.      */
+comment|/** 	 * Creates an expression that matches all key-values pairs in 	 *<code>map</code>. 	 *<p> 	 * For each pair<code>pairType</code> operator is used to build a binary 	 * expression. Key is considered to be a DB_PATH expression. AND is used to 	 * join pair binary expressions. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -1698,7 +1698,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches any of the key-values pairs in the      *<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a OBJ_PATH expression. OR is used to join pair binary      * expressions.      */
+comment|/** 	 * Creates an expression that matches any of the key-values pairs in the 	 *<code>map</code>. 	 *<p> 	 * For each pair<code>pairType</code> operator is used to build a binary 	 * expression. Key is considered to be a OBJ_PATH expression. OR is used to 	 * join pair binary expressions. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -1810,7 +1810,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression to match a collection of values against a single path      * expression.<h3>Splits</h3>      *<p>      * Note that "path" argument here can use a split character (a pipe symbol - '|')      * instead of dot to indicate that relationship following a path should be split into      * a separate set of joins. There can only be one split at most. Split must always      * precede a relationship. E.g. "|exhibits.paintings", "exhibits|paintings", etc.      *       * @param path      * @param values      * @since 3.0      */
+comment|/** 	 * Creates an expression to match a collection of values against a single 	 * path expression.<h3>Splits</h3> 	 *<p> 	 * Note that "path" argument here can use a split character (a pipe symbol - 	 * '|') instead of dot to indicate that relationship following a path should 	 * be split into a separate set of joins. There can only be one split at 	 * most. Split must always precede a relationship. E.g. 	 * "|exhibits.paintings", "exhibits|paintings", etc. 	 *  	 * @param path 	 * @param values 	 * @since 3.0 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1871,7 +1871,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2051,7 +2051,8 @@ operator|+
 literal|1
 argument_list|)
 decl_stmt|;
-comment|// fix the path - replace split with dot if it's in the middle, or strip it if
+comment|// fix the path - replace split with dot if it's in the middle, or
+comment|// strip it if
 comment|// it's in the beginning
 name|path
 operator|=
@@ -2185,7 +2186,7 @@ name|matches
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches all key-values pairs in<code>map</code>.      *<p>      * For each pair<code>pairType</code> operator is used to build a binary expression.      * Key is considered to be a OBJ_PATH expression. AND is used to join pair binary      * expressions.      */
+comment|/** 	 * Creates an expression that matches all key-values pairs in 	 *<code>map</code>. 	 *<p> 	 * For each pair<code>pairType</code> operator is used to build a binary 	 * expression. Key is considered to be a OBJ_PATH expression. AND is used to 	 * join pair binary expressions. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2297,7 +2298,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an DB_PATH "equal to" expression.      */
+comment|/** 	 * A convenience method to create an DB_PATH "equal to" expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2324,7 +2325,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an DB_PATH "not equal to" expression.      */
+comment|/** 	 * A convenience method to create an DB_PATH "not equal to" expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2351,7 +2352,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an OBJ_PATH "equal to" expression.      */
+comment|/** 	 * A convenience method to create an OBJ_PATH "equal to" expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2378,7 +2379,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an OBJ_PATH "not equal to" expression.      */
+comment|/** 	 * A convenience method to create an OBJ_PATH "not equal to" expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2405,7 +2406,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an OBJ_PATH "less than" expression.      */
+comment|/** 	 * A convenience method to create an OBJ_PATH "less than" expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2432,7 +2433,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an DB_PATH "less than" expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience method to create an DB_PATH "less than" expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2459,7 +2460,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an OBJ_PATH "less than or equal to" expression.      */
+comment|/** 	 * A convenience method to create an OBJ_PATH "less than or equal to" 	 * expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2486,7 +2487,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an DB_PATH "less than or equal to" expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience method to create an DB_PATH "less than or equal to" 	 * expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2513,7 +2514,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an OBJ_PATH "greater than" expression.      */
+comment|/** 	 * A convenience method to create an OBJ_PATH "greater than" expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2540,7 +2541,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an DB_PATH "greater than" expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience method to create an DB_PATH "greater than" expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2567,7 +2568,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an OBJ_PATH "greater than or equal to" expression.      */
+comment|/** 	 * A convenience method to create an OBJ_PATH "greater than or equal to" 	 * expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2594,7 +2595,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience method to create an DB_PATH "greater than or equal to" expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience method to create an DB_PATH "greater than or equal to" 	 * expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2621,7 +2622,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building IN expression. Return ASTFalse for empty      * collection.      */
+comment|/** 	 * A convenience shortcut for building IN expression. Return ASTFalse for 	 * empty collection. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2668,7 +2669,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building IN DB expression. Return ASTFalse for empty      * collection.      */
+comment|/** 	 * A convenience shortcut for building IN DB expression. Return ASTFalse for 	 * empty collection. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2715,7 +2716,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building IN expression. Return ASTFalse for empty      * collection.      */
+comment|/** 	 * A convenience shortcut for building IN expression. Return ASTFalse for 	 * empty collection. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2763,7 +2764,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building IN DB expression. Return ASTFalse for empty      * collection.      */
+comment|/** 	 * A convenience shortcut for building IN DB expression. Return ASTFalse for 	 * empty collection. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2811,7 +2812,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_IN expression. Return ASTTrue for empty      * collection.      */
+comment|/** 	 * A convenience shortcut for building NOT_IN expression. Return ASTTrue for 	 * empty collection. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2859,7 +2860,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_IN expression. Return ASTTrue for empty      * collection.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building NOT_IN expression. Return ASTTrue for 	 * empty collection. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2907,7 +2908,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_IN expression. Return ASTTrue for empty      * collection.      *       * @since 1.0.6      */
+comment|/** 	 * A convenience shortcut for building NOT_IN expression. Return ASTTrue for 	 * empty collection. 	 *  	 * @since 1.0.6 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -2954,7 +2955,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_IN expression. Return ASTTrue for empty      * collection.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building NOT_IN expression. Return ASTTrue for 	 * empty collection. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3001,7 +3002,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building BETWEEN expressions.      */
+comment|/** 	 * A convenience shortcut for building BETWEEN expressions. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3033,7 +3034,7 @@ name|value2
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building BETWEEN expressions.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building BETWEEN expressions. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3065,7 +3066,7 @@ name|value2
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_BETWEEN expressions.      */
+comment|/** 	 * A convenience shortcut for building NOT_BETWEEN expressions. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3097,7 +3098,7 @@ name|value2
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_BETWEEN expressions.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building NOT_BETWEEN expressions. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3129,7 +3130,7 @@ name|value2
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building LIKE expression.      */
+comment|/** 	 * A convenience shortcut for building LIKE expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3156,7 +3157,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building LIKE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building LIKE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3188,7 +3189,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building LIKE DB_PATH expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building LIKE DB_PATH expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3215,7 +3216,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building LIKE DB_PATH expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building LIKE DB_PATH expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3247,7 +3248,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_LIKE expression.      */
+comment|/** 	 * A convenience shortcut for building NOT_LIKE expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3274,7 +3275,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building NOT_LIKE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3306,7 +3307,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_LIKE expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building NOT_LIKE expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3333,7 +3334,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building NOT_LIKE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3365,7 +3366,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building LIKE_IGNORE_CASE expression.      */
+comment|/** 	 * A convenience shortcut for building LIKE_IGNORE_CASE expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3392,7 +3393,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building LIKE_IGNORE_CASE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3424,7 +3425,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building LIKE_IGNORE_CASE expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building LIKE_IGNORE_CASE expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3451,7 +3452,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building LIKE_IGNORE_CASE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3483,7 +3484,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.      */
+comment|/** 	 * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3510,7 +3511,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3542,7 +3543,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3569,7 +3570,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>      * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression.      *</p>      *<p>      * The escape character allows for escaping meta-characters in the LIKE clause. Note      * that the escape character cannot be '?'. To specify no escape character, supply 0      * as the escape character.      *</p>      *       * @since 3.0.1      */
+comment|/** 	 *<p> 	 * A convenience shortcut for building NOT_LIKE_IGNORE_CASE expression. 	 *</p> 	 *<p> 	 * The escape character allows for escaping meta-characters in the LIKE 	 * clause. Note that the escape character cannot be '?'. To specify no 	 * escape character, supply 0 as the escape character. 	 *</p> 	 *  	 * @since 3.0.1 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3601,7 +3602,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/**      * A convenience shortcut for boolean true expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for boolean true expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3614,7 +3615,7 @@ name|ASTTrue
 argument_list|()
 return|;
 block|}
-comment|/**      * A convenience shortcut for boolean false expression.      *       * @since 3.0      */
+comment|/** 	 * A convenience shortcut for boolean false expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3627,7 +3628,7 @@ name|ASTFalse
 argument_list|()
 return|;
 block|}
-comment|/**      * Joins all<code>expressions</code> in a single expression.<code>type</code> is      * used as an expression type for expressions joining each one of the items on the      * list.<code>type</code> must be binary expression type.      *<p>      * For example, if type is Expression.AND, resulting expression would match all      * expressions in the list. If type is Expression.OR, resulting expression would match      * any of the expressions.      *</p>      */
+comment|/** 	 * Joins all<code>expressions</code> in a single expression. 	 *<code>type</code> is used as an expression type for expressions joining 	 * each one of the items on the list.<code>type</code> must be binary 	 * expression type. 	 *<p> 	 * For example, if type is Expression.AND, resulting expression would match 	 * all expressions in the list. If type is Expression.OR, resulting 	 * expression would match any of the expressions. 	 *</p> 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3723,7 +3724,7 @@ return|return
 name|exp
 return|;
 block|}
-comment|/**      * Creates an expression that matches the primary key of object in      *<code>ObjectId</code>'s<code>IdSnapshot</code> for the argument      *<code>object</code>.      */
+comment|/** 	 * Creates an expression that matches the primary key of object in 	 *<code>ObjectId</code>'s<code>IdSnapshot</code> for the argument 	 *<code>object</code>. 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3750,7 +3751,7 @@ name|EQUAL_TO
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches any of the objects contained in the list      *<code>objects</code>      */
+comment|/** 	 * Creates an expression that matches any of the objects contained in the 	 * list<code>objects</code> 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -3803,7 +3804,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an expression that matches any of the objects contained in the      *<code>objects</code> array      */
+comment|/** 	 * Creates an expression that matches any of the objects contained in the 	 *<code>objects</code> array 	 */
 specifier|public
 specifier|static
 name|Expression

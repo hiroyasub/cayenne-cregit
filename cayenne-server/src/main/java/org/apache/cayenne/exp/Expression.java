@@ -291,7 +291,7 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
-comment|/**      * A value that a Transformer might return to indicate that a node has to be      * pruned from the expression during the transformation.      *       * @since 1.2      */
+comment|/** 	 * A value that a Transformer might return to indicate that a node has to be 	 * pruned from the expression during the transformation. 	 *  	 * @since 1.2 	 */
 specifier|public
 specifier|final
 specifier|static
@@ -462,7 +462,7 @@ name|FALSE
 init|=
 literal|22
 decl_stmt|;
-comment|/**      * Expression describes a path relative to an ObjEntity. OBJ_PATH expression      * is resolved relative to some root ObjEntity. Path expression components      * are separated by "." (dot). Path can point to either one of these:      *<ul>      *<li><i>An attribute of root ObjEntity.</i> For entity Gallery OBJ_PATH      * expression "galleryName" will point to ObjAttribute "galleryName"      *<li><i>Another ObjEntity related to root ObjEntity via a chain of      * relationships.</i> For entity Gallery OBJ_PATH expression      * "paintingArray.toArtist" will point to ObjEntity "Artist"      *<li><i>ObjAttribute of another ObjEntity related to root ObjEntity via a      * chain of relationships.</i> For entity Gallery OBJ_PATH expression      * "paintingArray.toArtist.artistName" will point to ObjAttribute      * "artistName"      *</ul>      */
+comment|/** 	 * Expression describes a path relative to an ObjEntity. OBJ_PATH expression 	 * is resolved relative to some root ObjEntity. Path expression components 	 * are separated by "." (dot). Path can point to either one of these: 	 *<ul> 	 *<li><i>An attribute of root ObjEntity.</i> For entity Gallery OBJ_PATH 	 * expression "galleryName" will point to ObjAttribute "galleryName" 	 *<li><i>Another ObjEntity related to root ObjEntity via a chain of 	 * relationships.</i> For entity Gallery OBJ_PATH expression 	 * "paintingArray.toArtist" will point to ObjEntity "Artist" 	 *<li><i>ObjAttribute of another ObjEntity related to root ObjEntity via a 	 * chain of relationships.</i> For entity Gallery OBJ_PATH expression 	 * "paintingArray.toArtist.artistName" will point to ObjAttribute 	 * "artistName" 	 *</ul> 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -471,7 +471,7 @@ name|OBJ_PATH
 init|=
 literal|26
 decl_stmt|;
-comment|/**      * Expression describes a path relative to a DbEntity. DB_PATH expression is      * resolved relative to some root DbEntity. Path expression components are      * separated by "." (dot). Path can point to either one of these:      *<ul>      *<li><i>An attribute of root DbEntity.</i> For entity GALLERY, DB_PATH      * expression "GALLERY_NAME" will point to a DbAttribute "GALLERY_NAME".</li>      *<li><i>Another DbEntity related to root DbEntity via a chain of      * relationships.</i> For entity GALLERY DB_PATH expression      * "paintingArray.toArtist" will point to DbEntity "ARTIST".</li>      *<li><i>DbAttribute of another ObjEntity related to root DbEntity via a      * chain of relationships.</i> For entity GALLERY DB_PATH expression      * "paintingArray.toArtist.ARTIST_NAME" will point to DbAttribute      * "ARTIST_NAME".</li>      *</ul>      */
+comment|/** 	 * Expression describes a path relative to a DbEntity. DB_PATH expression is 	 * resolved relative to some root DbEntity. Path expression components are 	 * separated by "." (dot). Path can point to either one of these: 	 *<ul> 	 *<li><i>An attribute of root DbEntity.</i> For entity GALLERY, DB_PATH 	 * expression "GALLERY_NAME" will point to a DbAttribute "GALLERY_NAME".</li> 	 *<li><i>Another DbEntity related to root DbEntity via a chain of 	 * relationships.</i> For entity GALLERY DB_PATH expression 	 * "paintingArray.toArtist" will point to DbEntity "ARTIST".</li> 	 *<li><i>DbAttribute of another ObjEntity related to root DbEntity via a 	 * chain of relationships.</i> For entity GALLERY DB_PATH expression 	 * "paintingArray.toArtist.ARTIST_NAME" will point to DbAttribute 	 * "ARTIST_NAME".</li> 	 *</ul> 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -480,7 +480,7 @@ name|DB_PATH
 init|=
 literal|27
 decl_stmt|;
-comment|/**      * Interpreted as a comma-separated list of literals.      */
+comment|/** 	 * Interpreted as a comma-separated list of literals. 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -521,7 +521,7 @@ name|NOT_LIKE_IGNORE_CASE
 init|=
 literal|38
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -530,7 +530,7 @@ name|BITWISE_NOT
 init|=
 literal|39
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -539,7 +539,7 @@ name|BITWISE_AND
 init|=
 literal|40
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -548,7 +548,7 @@ name|BITWISE_OR
 init|=
 literal|41
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -557,7 +557,7 @@ name|BITWISE_XOR
 init|=
 literal|42
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -566,7 +566,7 @@ name|BITWISE_LEFT_SHIFT
 init|=
 literal|43
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/** 	 * @since 3.2 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -587,7 +587,7 @@ specifier|protected
 name|int
 name|type
 decl_stmt|;
-comment|/**      * Parses string, converting it to Expression. If string does not represent      * a semantically correct expression, an ExpressionException is thrown.      *       * @since 1.1      */
+comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 1.1 	 */
 comment|// TODO: cache expression strings, since this operation is pretty slow
 specifier|public
 specifier|static
@@ -751,7 +751,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a map of path aliases for this expression. It returns a non-empty      * map only if this is a path expression and the aliases are known at the      * expression creation time. Otherwise an empty map is returned.      *       * @since 3.0      */
+comment|/** 	 * Returns a map of path aliases for this expression. It returns a non-empty 	 * map only if this is a path expression and the aliases are known at the 	 * expression creation time. Otherwise an empty map is returned. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|abstract
 name|Map
@@ -763,7 +763,7 @@ argument_list|>
 name|getPathAliases
 parameter_list|()
 function_decl|;
-comment|/**      * Returns String label for this expression. Used for debugging.      */
+comment|/** 	 * Returns String label for this expression. Used for debugging. 	 */
 specifier|public
 name|String
 name|expName
@@ -1009,7 +1009,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Returns a type of expression. Most common types are defined as public      * static fields of this interface.      */
+comment|/** 	 * Returns a type of expression. Most common types are defined as public 	 * static fields of this interface. 	 */
 specifier|public
 name|int
 name|getType
@@ -1034,7 +1034,7 @@ operator|=
 name|type
 expr_stmt|;
 block|}
-comment|/**      * A shortcut for<code>expWithParams(params, true)</code>.      */
+comment|/** 	 * A shortcut for<code>expWithParams(params, true)</code>. 	 */
 specifier|public
 name|Expression
 name|expWithParameters
@@ -1057,7 +1057,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns a new Expression instance using this expression as a      * prototype. All ExpressionParam operands are substituted with the values      * in the<code>params</code> map.      *<p>      *<i>Null values in the<code>params</code> map should be explicitly      * created in the map for the corresponding key.</i>      *</p>      *       * @param parameters      *            a map of parameters, with each key being a string name of an      *            expression parameter, and value being the value that should be      *            used in the final expression.      * @param pruneMissing      *            If<code>true</code>, subexpressions that rely on missing      *            parameters will be pruned from the resulting tree. If      *<code>false</code> , any missing values will generate an      *            exception.      * @return Expression resulting from the substitution of parameters with      *         real values, or null if the whole expression was pruned, due to      *         the missing parameters.      */
+comment|/** 	 * Creates and returns a new Expression instance using this expression as a 	 * prototype. All ExpressionParam operands are substituted with the values 	 * in the<code>params</code> map. 	 *<p> 	 *<i>Null values in the<code>params</code> map should be explicitly 	 * created in the map for the corresponding key.</i> 	 *</p> 	 *  	 * @param parameters 	 *            a map of parameters, with each key being a string name of an 	 *            expression parameter, and value being the value that should be 	 *            used in the final expression. 	 * @param pruneMissing 	 *            If<code>true</code>, subexpressions that rely on missing 	 *            parameters will be pruned from the resulting tree. If 	 *<code>false</code> , any missing values will generate an 	 *            exception. 	 * @return Expression resulting from the substitution of parameters with 	 *         real values, or null if the whole expression was pruned, due to 	 *         the missing parameters. 	 */
 specifier|public
 name|Expression
 name|expWithParameters
@@ -1268,7 +1268,7 @@ name|transformer
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a new expression that joins this object with another expression,      * using specified join type. It is very useful for incrementally building      * chained expressions, like long AND or OR statements.      */
+comment|/** 	 * Creates a new expression that joins this object with another expression, 	 * using specified join type. It is very useful for incrementally building 	 * chained expressions, like long AND or OR statements. 	 */
 specifier|public
 name|Expression
 name|joinExp
@@ -1295,7 +1295,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a new expression that joins this object with other expressions,      * using specified join type. It is very useful for incrementally building      * chained expressions, like long AND or OR statements.      *       * @since 3.2      */
+comment|/** 	 * Creates a new expression that joins this object with other expressions, 	 * using specified join type. It is very useful for incrementally building 	 * chained expressions, like long AND or OR statements. 	 *  	 * @since 3.2 	 */
 specifier|public
 name|Expression
 name|joinExp
@@ -1385,7 +1385,7 @@ return|return
 name|join
 return|;
 block|}
-comment|/**      * Chains this expression with another expression using "and".      */
+comment|/** 	 * Chains this expression with another expression using "and". 	 */
 specifier|public
 name|Expression
 name|andExp
@@ -1405,7 +1405,7 @@ name|exp
 argument_list|)
 return|;
 block|}
-comment|/**      * Chains this expression with other expressions using "and".      *       * @since 3.2      */
+comment|/** 	 * Chains this expression with other expressions using "and". 	 *  	 * @since 3.2 	 */
 specifier|public
 name|Expression
 name|andExp
@@ -1431,7 +1431,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/**      * Chains this expression with another expression using "or".      */
+comment|/** 	 * Chains this expression with another expression using "or". 	 */
 specifier|public
 name|Expression
 name|orExp
@@ -1451,7 +1451,7 @@ name|exp
 argument_list|)
 return|;
 block|}
-comment|/**      * Chains this expression with other expressions using "or".      *       * @since 3.2      */
+comment|/** 	 * Chains this expression with other expressions using "or". 	 *  	 * @since 3.2 	 */
 specifier|public
 name|Expression
 name|orExp
@@ -1477,21 +1477,21 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a logical NOT of current expression.      *       * @since 1.0.6      */
+comment|/** 	 * Returns a logical NOT of current expression. 	 *  	 * @since 1.0.6 	 */
 specifier|public
 specifier|abstract
 name|Expression
 name|notExp
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a count of operands of this expression. In real life there are      * unary (count == 1), binary (count == 2) and ternary (count == 3)      * expressions.      */
+comment|/** 	 * Returns a count of operands of this expression. In real life there are 	 * unary (count == 1), binary (count == 2) and ternary (count == 3) 	 * expressions. 	 */
 specifier|public
 specifier|abstract
 name|int
 name|getOperandCount
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a value of operand at<code>index</code>. Operand indexing starts      * at 0.      */
+comment|/** 	 * Returns a value of operand at<code>index</code>. Operand indexing starts 	 * at 0. 	 */
 specifier|public
 specifier|abstract
 name|Object
@@ -1501,7 +1501,7 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|/**      * Sets a value of operand at<code>index</code>. Operand indexing starts at      * 0.      */
+comment|/** 	 * Sets a value of operand at<code>index</code>. Operand indexing starts at 	 * 0. 	 */
 specifier|public
 specifier|abstract
 name|void
@@ -1514,7 +1514,7 @@ name|Object
 name|value
 parameter_list|)
 function_decl|;
-comment|/**      * Calculates expression value with object as a context for path      * expressions.      *       * @since 1.1      */
+comment|/** 	 * Calculates expression value with object as a context for path 	 * expressions. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|abstract
 name|Object
@@ -1524,7 +1524,7 @@ name|Object
 name|o
 parameter_list|)
 function_decl|;
-comment|/**      * Calculates expression boolean value with object as a context for path      * expressions.      *       * @since 1.1      */
+comment|/** 	 * Calculates expression boolean value with object as a context for path 	 * expressions. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|boolean
 name|match
@@ -1545,7 +1545,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the first object in the list that matches the expression.      *       * @since 3.1      */
+comment|/** 	 * Returns the first object in the list that matches the expression. 	 *  	 * @since 3.1 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -1585,7 +1585,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns a list of objects that match the expression.      */
+comment|/** 	 * Returns a list of objects that match the expression. 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -1643,7 +1643,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds objects matching this expression from the source collection to the      * target collection.      *       * @since 1.1      */
+comment|/** 	 * Adds objects matching this expression from the source collection to the 	 * target collection. 	 *  	 * @since 1.1 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -1696,7 +1696,7 @@ return|return
 name|target
 return|;
 block|}
-comment|/**      * Clones this expression.      *       * @since 1.1      */
+comment|/** 	 * Clones this expression. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|Expression
 name|deepCopy
@@ -1709,14 +1709,14 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      *       * @since 1.1      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|abstract
 name|Expression
 name|shallowCopy
 parameter_list|()
 function_decl|;
-comment|/**      * Returns true if this node should be pruned from expression tree in the      * event a child is removed.      *       * @since 1.1      */
+comment|/** 	 * Returns true if this node should be pruned from expression tree in the 	 * event a child is removed. 	 *  	 * @since 1.1 	 */
 specifier|protected
 specifier|abstract
 name|boolean
@@ -1726,14 +1726,14 @@ name|Object
 name|prunedChild
 parameter_list|)
 function_decl|;
-comment|/**      * Restructures expression to make sure that there are no children of the      * same type as this expression.      *       * @since 1.1      */
+comment|/** 	 * Restructures expression to make sure that there are no children of the 	 * same type as this expression. 	 *  	 * @since 1.1 	 */
 specifier|protected
 specifier|abstract
 name|void
 name|flattenTree
 parameter_list|()
 function_decl|;
-comment|/**      * Traverses itself and child expressions, notifying visitor via callback      * methods as it goes. This is an Expression-specific implementation of the      * "Visitor" design pattern.      *       * @since 1.1      */
+comment|/** 	 * Traverses itself and child expressions, notifying visitor via callback 	 * methods as it goes. This is an Expression-specific implementation of the 	 * "Visitor" design pattern. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|traverse
@@ -1765,7 +1765,7 @@ name|visitor
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Traverses itself and child expressions, notifying visitor via callback      * methods as it goes.      *       * @since 1.1      */
+comment|/** 	 * Traverses itself and child expressions, notifying visitor via callback 	 * methods as it goes. 	 *  	 * @since 1.1 	 */
 specifier|protected
 name|void
 name|traverse
@@ -1879,7 +1879,7 @@ name|parentExp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a transformed copy of this expression, applying transformation      * provided by Transformer to all its nodes. Null transformer will result in      * an identical deep copy of this expression.      *<p>      * To force a node and its children to be pruned from the copy, Transformer      * should return Expression.PRUNED_NODE. Otherwise an expectation is that if      * a node is an Expression it must be transformed to null or another      * Expression. Any other object type would result in a ExpressionException.      *       * @since 1.1      */
+comment|/** 	 * Creates a transformed copy of this expression, applying transformation 	 * provided by Transformer to all its nodes. Null transformer will result in 	 * an identical deep copy of this expression. 	 *<p> 	 * To force a node and its children to be pruned from the copy, Transformer 	 * should return Expression.PRUNED_NODE. Otherwise an expectation is that if 	 * a node is an Expression it must be transformed to null or another 	 * Expression. Any other object type would result in a ExpressionException. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|Expression
 name|transform
@@ -1935,7 +1935,7 @@ name|transformed
 argument_list|)
 throw|;
 block|}
-comment|/**      * A recursive method called from "transform" to do the actual      * transformation.      *       * @return null, Expression.PRUNED_NODE or transformed expression.      * @since 1.2      */
+comment|/** 	 * A recursive method called from "transform" to do the actual 	 * transformation. 	 *  	 * @return null, Expression.PRUNED_NODE or transformed expression. 	 * @since 1.2 	 */
 specifier|protected
 name|Object
 name|transformExpression
@@ -2101,7 +2101,7 @@ else|:
 name|copy
 return|;
 block|}
-comment|/**      * Encodes itself, wrapping the string into XML CDATA section.      *       * @since 1.1      */
+comment|/** 	 * Encodes itself, wrapping the string into XML CDATA section. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|encodeAsXML
@@ -2152,7 +2152,7 @@ literal|"]]>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Stores a String representation of Expression using a provided      * PrintWriter.      *       * @since 1.1      * @deprecated since 3.2 use {@link #appendAsString(Appendable)}.      */
+comment|/** 	 * Stores a String representation of Expression using a provided 	 * PrintWriter. 	 *  	 * @since 1.1 	 * @deprecated since 3.2 use {@link #appendAsString(Appendable)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2164,7 +2164,7 @@ name|PrintWriter
 name|pw
 parameter_list|)
 function_decl|;
-comment|/**      * Appends own content as a String to the provided Appendable.      *       * @since 3.2      * @throws IOException      */
+comment|/** 	 * Appends own content as a String to the provided Appendable. 	 *  	 * @since 3.2 	 * @throws IOException 	 */
 specifier|public
 specifier|abstract
 name|void
@@ -2176,7 +2176,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/**      * Stores a String representation of Expression as EJBQL using a provided      * PrintWriter. DB path expressions produce non-standard EJBQL path      * expressions.      *       * @since 3.0      * @deprecated since 3.2 use {@link #appendAsEJBQL(Appendable, String)}      */
+comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 3.0 	 * @deprecated since 3.2 use {@link #appendAsEJBQL(Appendable, String)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2191,7 +2191,7 @@ name|String
 name|rootId
 parameter_list|)
 function_decl|;
-comment|/**      * Stores a String representation of Expression as EJBQL using a provided      * Appendable. DB path expressions produce non-standard EJBQL path      * expressions.      *       * @since 3.2      * @throws IOException      */
+comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * Appendable. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 3.2 	 * @throws IOException 	 */
 specifier|public
 name|void
 name|appendAsEJBQL
@@ -2215,7 +2215,7 @@ name|rootId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Stores a String representation of Expression as EJBQL using a provided PrintWriter.      * DB path expressions produce non-standard EJBQL path expressions.  If the      * parameterAccumulator is supplied then as the EJBQL is output, it may load parameters      * into this list.  In this case, the EJBQL output will contain reference to positional      * parameters.  If no parameterAccumulator is supplied and a scalar type is encountered      * for which there is no EJBQL literal representation (such as dates) then this method      * will throw a runtime exception to indicate that it was not possible to generate a      * string-only representation of the Expression in EJBQL.      *      * @since 3.2      * @throws IOException      */
+comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. If the parameterAccumulator is supplied then as the EJBQL is 	 * output, it may load parameters into this list. In this case, the EJBQL 	 * output will contain reference to positional parameters. If no 	 * parameterAccumulator is supplied and a scalar type is encountered for 	 * which there is no EJBQL literal representation (such as dates) then this 	 * method will throw a runtime exception to indicate that it was not 	 * possible to generate a string-only representation of the Expression in 	 * EJBQL. 	 *  	 * @since 3.2 	 * @throws IOException 	 */
 specifier|public
 specifier|abstract
 name|void
@@ -2281,7 +2281,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Produces an EJBQL string that represents this expression.  If the parameterAccumulator is      * supplied then, where appropriate, parameters to the EJBQL may be written into the      * parameterAccumulator.  If this method encounters a scalar type which is not able to be      * represented as an EJBQL literal then this method will throw a runtime exception to indicate      * that it was not possible to generate a string-only representation of the Expression as      * EJBQL.      *      * @since 3.1      */
+comment|/** 	 * Produces an EJBQL string that represents this expression. If the 	 * parameterAccumulator is supplied then, where appropriate, parameters to 	 * the EJBQL may be written into the parameterAccumulator. If this method 	 * encounters a scalar type which is not able to be represented as an EJBQL 	 * literal then this method will throw a runtime exception to indicate that 	 * it was not possible to generate a string-only representation of the 	 * Expression as EJBQL. 	 *  	 * @since 3.1 	 */
 specifier|public
 name|String
 name|toEJBQL
@@ -2338,7 +2338,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Produces an EJBQL string that represents this expression.  If this method encounters a scalar      * type which is not able to be represented as an EJBQL literal then this method will throw a      * runtime exception.      *      * @since 3.0      */
+comment|/** 	 * Produces an EJBQL string that represents this expression. If this method 	 * encounters a scalar type which is not able to be represented as an EJBQL 	 * literal then this method will throw a runtime exception. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|String
 name|toEJBQL

@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|sql
@@ -87,6 +77,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ModuleCollection
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Module
@@ -134,7 +138,7 @@ name|CayenneRuntime
 block|{
 specifier|private
 specifier|static
-name|Module
+name|ModuleCollection
 name|mainModule
 parameter_list|(
 name|String
@@ -144,13 +148,17 @@ parameter_list|)
 block|{
 return|return
 operator|new
+name|ModuleCollection
+argument_list|(
+operator|new
 name|ServerModule
 argument_list|(
 name|configurationLocations
 argument_list|)
+argument_list|)
 return|;
 block|}
-comment|/**      * Creates a server runtime configuring it with a standard set of services      * contained in {@link ServerModule}. CayenneServerModule is created with      * provided 'configurationLocation'. An optional array of extra modules may      * contain service overrides and/or user services.      */
+comment|/** 	 * Creates a server runtime configuring it with a standard set of services 	 * contained in {@link ServerModule}. CayenneServerModule is created with 	 * provided 'configurationLocation'. An optional array of extra modules may 	 * contain service overrides and/or user services. 	 */
 specifier|public
 name|ServerRuntime
 parameter_list|(
@@ -164,19 +172,19 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|mergeModules
-argument_list|(
 name|mainModule
 argument_list|(
 name|configurationLocation
 argument_list|)
-argument_list|,
+operator|.
+name|add
+argument_list|(
 name|extraModules
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a server runtime configuring it with a standard set of services      * contained in {@link ServerModule}. CayenneServerModule is created with      * one or more 'configurationLocations'. An optional array of extra modules      * may contain service overrides and/or user services.      */
+comment|/** 	 * Creates a server runtime configuring it with a standard set of services 	 * contained in {@link ServerModule}. CayenneServerModule is created with 	 * one or more 'configurationLocations'. An optional array of extra modules 	 * may contain service overrides and/or user services. 	 */
 specifier|public
 name|ServerRuntime
 parameter_list|(
@@ -191,19 +199,19 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-name|mergeModules
-argument_list|(
 name|mainModule
 argument_list|(
 name|configurationLocations
 argument_list|)
-argument_list|,
+operator|.
+name|add
+argument_list|(
 name|extraModules
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Runs provided operation wrapped in a single transaction. Transaction      * handling delegated to the internal {@link TransactionManager}. Nested      * calls to 'performInTransaction' are safe and attached to the same      * in-progress transaction. TransactionalOperation can be some arbitrary      * user code, which most often than not will consist of multiple Cayenne      * operations.      *       * @since 3.2      */
+comment|/** 	 * Runs provided operation wrapped in a single transaction. Transaction 	 * handling delegated to the internal {@link TransactionManager}. Nested 	 * calls to 'performInTransaction' are safe and attached to the same 	 * in-progress transaction. TransactionalOperation can be some arbitrary 	 * user code, which most often than not will consist of multiple Cayenne 	 * operations. 	 *  	 * @since 3.2 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -239,7 +247,7 @@ name|op
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the main runtime DataDomain. Note that by default the returned      * DataDomain is the same as the main DataChannel returned by      * {@link #getChannel()}. Although users may redefine DataChannel provider      * in the DI registry, for instance to decorate this DataDomain with a      * custom wrapper.      */
+comment|/** 	 * Returns the main runtime DataDomain. Note that by default the returned 	 * DataDomain is the same as the main DataChannel returned by 	 * {@link #getChannel()}. Although users may redefine DataChannel provider 	 * in the DI registry, for instance to decorate this DataDomain with a 	 * custom wrapper. 	 */
 specifier|public
 name|DataDomain
 name|getDataDomain
@@ -256,7 +264,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a default DataSource for this runtime. If no default DataSource      * exists, an exception is thrown.      *       * @since 3.2      */
+comment|/** 	 * Returns a default DataSource for this runtime. If no default DataSource 	 * exists, an exception is thrown. 	 *  	 * @since 3.2 	 */
 specifier|public
 name|DataSource
 name|getDataSource
@@ -327,7 +335,7 @@ name|getDataSource
 argument_list|()
 return|;
 block|}
-comment|/**      * Provides access to the JDBC DataSource assigned to a given DataNode. A      * null argument will work if there's only one DataNode configured.      *<p>      * Normally Cayenne applications don't need to access DataSource or any      * other JDBC code directly, however in some unusual conditions it may be      * needed, and this method provides a shortcut to raw JDBC.      */
+comment|/** 	 * Provides access to the JDBC DataSource assigned to a given DataNode. A 	 * null argument will work if there's only one DataNode configured. 	 *<p> 	 * Normally Cayenne applications don't need to access DataSource or any 	 * other JDBC code directly, however in some unusual conditions it may be 	 * needed, and this method provides a shortcut to raw JDBC. 	 */
 specifier|public
 name|DataSource
 name|getDataSource
