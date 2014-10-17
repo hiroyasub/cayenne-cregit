@@ -1661,6 +1661,11 @@ name|Object
 index|[]
 name|paths
 decl_stmt|;
+comment|/**          * Parent path of multiple selection          */
+specifier|private
+name|Object
+name|parentPath
+decl_stmt|;
 comment|/**          * currently selecte entity listener class          */
 specifier|private
 name|String
@@ -3223,6 +3228,17 @@ return|return
 name|currentState
 operator|.
 name|paths
+return|;
+block|}
+specifier|public
+name|Object
+name|getCurrentParentPath
+parameter_list|()
+block|{
+return|return
+name|currentState
+operator|.
+name|parentPath
 return|;
 block|}
 specifier|public
@@ -7824,6 +7840,15 @@ operator|=
 name|e
 operator|.
 name|getNodes
+argument_list|()
+expr_stmt|;
+name|currentState
+operator|.
+name|parentPath
+operator|=
+name|e
+operator|.
+name|getParentNode
 argument_list|()
 expr_stmt|;
 name|EventListener

@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|EventObject
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -38,6 +28,16 @@ operator|.
 name|configuration
 operator|.
 name|ConfigurationNode
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|EventObject
 import|;
 end_import
 
@@ -57,6 +57,10 @@ name|ConfigurationNode
 index|[]
 name|nodes
 decl_stmt|;
+specifier|private
+name|ConfigurationNode
+name|parentNode
+decl_stmt|;
 specifier|public
 name|MultipleObjectsDisplayEvent
 parameter_list|(
@@ -66,6 +70,9 @@ parameter_list|,
 name|ConfigurationNode
 index|[]
 name|objects
+parameter_list|,
+name|ConfigurationNode
+name|parentObject
 parameter_list|)
 block|{
 name|super
@@ -77,11 +84,13 @@ name|this
 operator|.
 name|nodes
 operator|=
-operator|(
-name|ConfigurationNode
-index|[]
-operator|)
 name|objects
+expr_stmt|;
+name|this
+operator|.
+name|parentNode
+operator|=
+name|parentObject
 expr_stmt|;
 block|}
 comment|/**      * @return all paths of this event      */
@@ -93,6 +102,15 @@ parameter_list|()
 block|{
 return|return
 name|nodes
+return|;
+block|}
+specifier|public
+name|ConfigurationNode
+name|getParentNode
+parameter_list|()
+block|{
+return|return
+name|parentNode
 return|;
 block|}
 block|}
