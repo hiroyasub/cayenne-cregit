@@ -532,6 +532,15 @@ name|application
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|registerAction
+argument_list|(
+operator|new
+name|RemoveAttributeRelationshipAction
+argument_list|(
+name|application
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|// start callback-related actions
 name|registerAction
 argument_list|(
@@ -822,6 +831,15 @@ expr_stmt|;
 name|registerAction
 argument_list|(
 operator|new
+name|CutAttributeRelationshipAction
+argument_list|(
+name|application
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|registerAction
+argument_list|(
+operator|new
 name|CutProcedureParameterAction
 argument_list|(
 name|application
@@ -859,6 +877,15 @@ name|registerAction
 argument_list|(
 operator|new
 name|CopyRelationshipAction
+argument_list|(
+name|application
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|registerAction
+argument_list|(
+operator|new
+name|CopyAttributeRelationshipAction
 argument_list|(
 name|application
 argument_list|)
