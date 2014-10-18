@@ -1189,6 +1189,40 @@ literal|"a = enum:BOGUS"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testExp_Vararg_InAsValues
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|Expression
+name|e
+init|=
+name|ExpressionFactory
+operator|.
+name|exp
+argument_list|(
+literal|"k1 in ($ap, $bp)"
+argument_list|,
+literal|"a"
+argument_list|,
+literal|"b"
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|"k1 in (\"a\", \"b\")"
+argument_list|,
+name|e
+operator|.
+name|toString
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

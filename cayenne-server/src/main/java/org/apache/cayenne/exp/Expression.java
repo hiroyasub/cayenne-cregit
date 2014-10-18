@@ -984,7 +984,6 @@ name|?
 argument_list|>
 name|parameters
 parameter_list|,
-specifier|final
 name|boolean
 name|pruneMissing
 parameter_list|)
@@ -2162,7 +2161,7 @@ name|ExpressionParameter
 operator|)
 condition|)
 block|{
-comment|// mainly for the ASTList array child...
+comment|// normally Object[] is an ASTList child
 if|if
 condition|(
 name|object
@@ -2412,6 +2411,80 @@ operator|instanceof
 name|ExpressionParameter
 condition|)
 block|{
+name|node
+operator|.
+name|setOperand
+argument_list|(
+name|childIndex
+argument_list|,
+name|nextValue
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+comment|// normally Object[] is an ASTList child
+if|else if
+condition|(
+name|child
+operator|instanceof
+name|Object
+index|[]
+condition|)
+block|{
+name|Object
+index|[]
+name|array
+init|=
+operator|(
+name|Object
+index|[]
+operator|)
+name|child
+decl_stmt|;
+for|for
+control|(
+name|int
+name|i
+init|=
+literal|0
+init|;
+name|i
+operator|<
+name|array
+operator|.
+name|length
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|array
+index|[
+name|i
+index|]
+operator|instanceof
+name|ExpressionParameter
+condition|)
+block|{
+name|array
+index|[
+name|i
+index|]
+operator|=
+name|nextValue
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+block|}
+block|}
+specifier|private
+name|Object
+name|nextValue
+parameter_list|()
+block|{
 if|if
 condition|(
 name|i
@@ -2445,9 +2518,7 @@ decl_stmt|;
 comment|// wrap lists (for now); also support null parameters
 comment|// TODO: andrus 8/14/2007 - shouldn't we also wrap non-null
 comment|// object values in ASTScalars?
-name|Object
-name|value
-init|=
+return|return
 operator|(
 name|p
 operator|!=
@@ -2466,17 +2537,7 @@ name|ASTScalar
 argument_list|(
 literal|null
 argument_list|)
-decl_stmt|;
-name|node
-operator|.
-name|setOperand
-argument_list|(
-name|childIndex
-argument_list|,
-name|value
-argument_list|)
-expr_stmt|;
-block|}
+return|;
 block|}
 block|}
 block|}
