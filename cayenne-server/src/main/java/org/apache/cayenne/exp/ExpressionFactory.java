@@ -4115,37 +4115,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Parses string, converting it to Expression and binding named parameters 	 * of the expression using a If string does not represent a semantically 	 * correct expression, an ExpressionException is thrown. 	 *  	 * @since 3.2 	 */
-specifier|public
-specifier|static
-name|Expression
-name|exp
-parameter_list|(
-name|String
-name|expressionString
-parameter_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-name|parameters
-parameter_list|)
-block|{
-return|return
-name|exp
-argument_list|(
-name|expressionString
-argument_list|)
-operator|.
-name|params
-argument_list|(
-name|parameters
-argument_list|)
-return|;
-block|}
-comment|/** 	 * Parses string, converting it to Expression and binding named parameters 	 * of the expression using a If string does not represent a semantically 	 * correct expression, an ExpressionException is thrown. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Parses string, converting it to Expression and optionally binding 	 * positional parameters. If a string does not represent a semantically 	 * correct expression, an ExpressionException is thrown. 	 *<p> 	 * Binding of parameters by name (as opposed to binding by position) can be 	 * achieved by chaining this call with {@link Expression#params(Map)}. 	 *  	 * @since 3.2 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -4159,24 +4129,46 @@ modifier|...
 name|parameters
 parameter_list|)
 block|{
-return|return
-name|exp
+name|Expression
+name|e
+init|=
+name|fromString
 argument_list|(
 name|expressionString
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|parameters
+operator|!=
+literal|null
+operator|&&
+name|parameters
 operator|.
-name|paramsArray
+name|length
+operator|>
+literal|0
+condition|)
+block|{
+comment|// apply parameters in-place... it is wasteful to clone the
+comment|// expression that hasn't been exposed to the callers
+name|e
+operator|.
+name|inPlaceParamsArray
 argument_list|(
 name|parameters
 argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|e
 return|;
 block|}
 comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 3.2 	 */
-comment|// TODO: cache expression strings, since this operation is pretty slow
-specifier|public
+specifier|private
 specifier|static
 name|Expression
-name|exp
+name|fromString
 parameter_list|(
 name|String
 name|expressionString

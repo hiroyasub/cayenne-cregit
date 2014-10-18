@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Named parameter for paramterized expressions.  *   */
+comment|/**  * Named parameter for parameterized expressions.  */
 end_comment
 
 begin_class
@@ -54,7 +54,7 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
-comment|/**      * Constructor for ExpressionParam.      */
+comment|/** 	 * Constructor for ExpressionParam. 	 */
 specifier|public
 name|ExpressionParameter
 parameter_list|(
@@ -69,7 +69,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Returns the name of the expression parameter.      */
+comment|/** 	 * Returns the name of the expression parameter. 	 */
 specifier|public
 name|String
 name|getName
