@@ -16,6 +16,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -37,16 +49,16 @@ end_import
 
 begin_import
 import|import
-name|junit
+name|org
 operator|.
-name|framework
+name|junit
 operator|.
 name|Assert
 import|;
 end_import
 
 begin_comment
-comment|/**   * Class that collects statistics of expression traversal.   */
+comment|/**  * Class that collects statistics of expression traversal.  */
 end_comment
 
 begin_class
@@ -58,10 +70,16 @@ name|TraversalHandler
 block|{
 specifier|protected
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|treeFlatView
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 specifier|protected
@@ -80,7 +98,7 @@ specifier|protected
 name|int
 name|leafs
 decl_stmt|;
-comment|/**      * Performs independent traversal of two expressions,      * comparing the results. If expressions structure is different,      * throws an exception.      */
+comment|/** 	 * Performs independent traversal of two expressions, comparing the results. 	 * If expressions structure is different, throws an exception. 	 */
 specifier|public
 specifier|static
 name|void
@@ -121,8 +139,6 @@ argument_list|(
 name|exp2
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|handler1
@@ -159,6 +175,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|getTreeFlatView
 parameter_list|()
 block|{

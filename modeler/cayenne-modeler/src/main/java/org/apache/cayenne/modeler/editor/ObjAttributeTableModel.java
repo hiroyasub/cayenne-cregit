@@ -863,7 +863,7 @@ case|case
 name|OBJ_ATTRIBUTE
 case|:
 return|return
-literal|"ObjAttribute"
+literal|"Name"
 return|;
 case|case
 name|OBJ_ATTRIBUTE_TYPE
