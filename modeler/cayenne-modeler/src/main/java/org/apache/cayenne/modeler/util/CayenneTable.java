@@ -19,11 +19,31 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|awt
+name|apache
 operator|.
-name|Component
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|Application
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|pref
+operator|.
+name|TableColumnPreferences
 import|;
 end_import
 
@@ -165,31 +185,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|awt
 operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|Application
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|pref
-operator|.
-name|TableColumnPreferences
+name|Component
 import|;
 end_import
 
@@ -213,7 +213,7 @@ name|SortButtonRenderer
 argument_list|()
 decl_stmt|;
 specifier|protected
-name|TableHeaderSortingListener
+name|TableHeaderListener
 name|tableHeaderListener
 decl_stmt|;
 specifier|private
@@ -250,7 +250,7 @@ decl_stmt|;
 name|tableHeaderListener
 operator|=
 operator|new
-name|TableHeaderSortingListener
+name|TableHeaderListener
 argument_list|(
 name|header
 argument_list|,
