@@ -19,18 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|prefs
-operator|.
-name|Preferences
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -54,6 +42,28 @@ operator|.
 name|pref
 operator|.
 name|RenamedPreferences
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|prefs
+operator|.
+name|Preferences
 import|;
 end_import
 
@@ -382,8 +392,11 @@ specifier|public
 name|void
 name|configureGenerator
 parameter_list|(
+name|Collection
+argument_list|<
 name|DbGenerator
-name|generator
+argument_list|>
+name|generators
 parameter_list|)
 block|{
 name|setCreateFK
@@ -411,6 +424,14 @@ argument_list|(
 name|dropTables
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|DbGenerator
+name|generator
+range|:
+name|generators
+control|)
+block|{
 name|generator
 operator|.
 name|setShouldCreateFKConstraints
@@ -446,6 +467,7 @@ argument_list|(
 name|dropTables
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * An initialization callback.      */
 specifier|public
