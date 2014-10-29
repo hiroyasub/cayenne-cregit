@@ -17,6 +17,60 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|MockEnum
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|MockEnumHolder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -106,56 +160,74 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|CayenneRuntimeException
+name|assertFalse
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|access
-operator|.
-name|types
-operator|.
-name|MockEnum
+name|assertNotNull
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|access
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|types
+name|junit
 operator|.
-name|MockEnumHolder
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -163,9 +235,9 @@ begin_class
 specifier|public
 class|class
 name|PropertyUtilsTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateAccessor
@@ -260,6 +332,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateAccessorNested
@@ -390,6 +464,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetProperty
@@ -530,6 +606,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetProperty
@@ -656,6 +734,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetPropertyMap
@@ -801,6 +881,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetPropertyMap
@@ -939,6 +1021,8 @@ name|o2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetConverted
@@ -1117,6 +1201,8 @@ name|o1
 operator|.
 name|getFloatField
 argument_list|()
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|// string to double primitive
@@ -1139,6 +1225,8 @@ name|o1
 operator|.
 name|getDoubleField
 argument_list|()
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|// string to boolean
@@ -1343,6 +1431,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetConvertedWithCustomConverter
@@ -1556,6 +1646,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetNull
@@ -1772,6 +1864,8 @@ name|o1
 operator|.
 name|getFloatField
 argument_list|()
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|o1
@@ -1800,9 +1894,13 @@ name|o1
 operator|.
 name|getDoubleField
 argument_list|()
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetConvertedEnum

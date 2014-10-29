@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -36,22 +46,50 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
-operator|.
 name|Assert
+operator|.
+name|assertEquals
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -59,8 +97,6 @@ begin_class
 specifier|public
 class|class
 name|InvocationTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|String
@@ -68,6 +104,8 @@ name|_methodName
 init|=
 literal|"myListenerMethod"
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsReflexive
@@ -86,8 +124,6 @@ argument_list|,
 name|_methodName
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|inv0
@@ -96,6 +132,8 @@ name|inv0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsSymmetric
@@ -125,8 +163,6 @@ argument_list|,
 name|_methodName
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|inv01
@@ -134,8 +170,6 @@ argument_list|,
 name|inv02
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|inv02
@@ -144,6 +178,8 @@ name|inv01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsTransitive
@@ -184,8 +220,6 @@ argument_list|,
 name|_methodName
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|inv01
@@ -193,8 +227,6 @@ argument_list|,
 name|inv02
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|inv02
@@ -202,8 +234,6 @@ argument_list|,
 name|inv03
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|inv01
@@ -212,6 +242,8 @@ name|inv03
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsNull
@@ -230,8 +262,6 @@ argument_list|,
 name|_methodName
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|inv0
@@ -245,6 +275,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsDifferentMethods
@@ -283,8 +315,6 @@ name|class
 block|}
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|inv0
@@ -298,6 +328,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsNoVsOneArg
@@ -336,8 +368,6 @@ name|class
 block|}
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|inv0
@@ -351,6 +381,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddToSet
@@ -390,8 +422,6 @@ argument_list|(
 name|inv0
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 literal|1
@@ -403,6 +433,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddTwo
@@ -453,8 +485,6 @@ argument_list|(
 name|inv02
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 literal|1
@@ -466,6 +496,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEmptyParamTypes
@@ -488,8 +520,6 @@ index|[]
 block|{}
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -503,6 +533,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullParamTypes0
@@ -527,8 +559,6 @@ literal|null
 block|}
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -542,6 +572,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullParamTypes1
@@ -570,8 +602,6 @@ literal|null
 block|}
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -585,6 +615,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFireNoArgument
@@ -603,8 +635,6 @@ argument_list|,
 name|_methodName
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|inv0
@@ -614,6 +644,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFireOneArgument
@@ -641,8 +673,6 @@ name|class
 block|}
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|inv1
@@ -654,6 +684,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFireWrongArgumentCount0
@@ -681,8 +713,6 @@ argument_list|(
 literal|"foo"
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -696,6 +726,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFireWrongArgumentCount1
@@ -730,8 +762,6 @@ operator|.
 name|fire
 argument_list|()
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -745,6 +775,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFireWrongArgumentCount2
@@ -788,8 +820,6 @@ literal|"bar"
 block|}
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -803,6 +833,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFireNullArgArray
@@ -839,8 +871,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -854,6 +884,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGarbageCollection
@@ -886,8 +918,6 @@ operator|.
 name|gc
 argument_list|()
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|inv0

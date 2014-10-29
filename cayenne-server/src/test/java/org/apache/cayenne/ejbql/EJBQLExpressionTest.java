@@ -17,11 +17,35 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -29,9 +53,9 @@ begin_class
 specifier|public
 class|class
 name|EJBQLExpressionTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDbPath
@@ -61,6 +85,8 @@ name|select
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEnumPath
@@ -91,6 +117,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      *<p>This should not parse because there are multiple non-bracketed parameters.</p>      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInWithMultipleStringPositionalParameter_withoutBrackets
