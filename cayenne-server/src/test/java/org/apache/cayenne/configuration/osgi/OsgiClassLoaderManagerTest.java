@@ -18,14 +18,12 @@ package|;
 end_package
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
-name|mockito
+name|junit
 operator|.
-name|Mockito
-operator|.
-name|mock
+name|Test
 import|;
 end_import
 
@@ -40,12 +38,26 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
 import|;
 end_import
 
@@ -53,9 +65,9 @@ begin_class
 specifier|public
 class|class
 name|OsgiClassLoaderManagerTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetClassLoader

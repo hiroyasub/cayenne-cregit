@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -49,13 +29,83 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|EventSubjectTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIllegalArguments
@@ -72,8 +122,6 @@ argument_list|,
 literal|"Subject"
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -99,8 +147,6 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -126,8 +172,6 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -141,6 +185,8 @@ block|{
 comment|// OK
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualityOfClonedSubjects
@@ -203,6 +249,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIdenticalSubject
@@ -236,8 +284,6 @@ argument_list|,
 literal|"MySubject"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|s1
@@ -246,6 +292,8 @@ name|s2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualityOfIdenticalSubjects
@@ -279,8 +327,6 @@ argument_list|,
 literal|"MySubject"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 name|s1
@@ -289,6 +335,8 @@ name|s2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualityOfSubjectsByDifferentOwner
@@ -322,8 +370,6 @@ argument_list|,
 literal|"MySubject"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|s1
@@ -335,6 +381,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualityOfSubjectsByDifferentTopic
@@ -368,8 +416,6 @@ argument_list|,
 literal|"Subject2"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|s1
@@ -381,6 +427,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSubjectEqualsNull
@@ -400,8 +448,6 @@ argument_list|,
 literal|"MySubject"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|s1
