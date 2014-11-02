@@ -216,6 +216,14 @@ argument_list|<
 name|T
 argument_list|>
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|5486418811888197559L
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -1505,7 +1513,7 @@ name|setQualifier
 argument_list|(
 name|qualifier
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|parameters
 argument_list|,

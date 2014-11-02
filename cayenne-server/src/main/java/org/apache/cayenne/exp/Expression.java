@@ -969,7 +969,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates and returns a new Expression instance using this expression as a 	 * prototype. All ExpressionParam operands are substituted with the values 	 * in the<code>params</code> map. 	 *<p> 	 *<i>Null values in the<code>params</code> map should be explicitly 	 * created in the map for the corresponding key.</i> 	 *</p> 	 *  	 * @param parameters 	 *            a map of parameters, with each key being a string name of an 	 *            expression parameter, and value being the value that should be 	 *            used in the final expression. 	 * @param pruneMissing 	 *            If<code>true</code>, subexpressions that rely on missing 	 *            parameters will be pruned from the resulting tree. If 	 *<code>false</code> , any missing values will generate an 	 *            exception. 	 * @return Expression resulting from the substitution of parameters with 	 *         real values, or null if the whole expression was pruned, due to 	 *         the missing parameters. 	 *  	 * @deprecated since 4.0 use {@link #params(Map)} or 	 *             {@link #paramsNoPrune(Map)}. 	 */
+comment|/** 	 * Creates and returns a new Expression instance using this expression as a 	 * prototype. All ExpressionParam operands are substituted with the values 	 * in the<code>params</code> map. 	 *<p> 	 *<i>Null values in the<code>params</code> map should be explicitly 	 * created in the map for the corresponding key.</i> 	 *</p> 	 *  	 * @param parameters 	 *            a map of parameters, with each key being a string name of an 	 *            expression parameter, and value being the value that should be 	 *            used in the final expression. 	 * @param pruneMissing 	 *            If<code>true</code>, subexpressions that rely on missing 	 *            parameters will be pruned from the resulting tree. If 	 *<code>false</code> , any missing values will generate an 	 *            exception. 	 * @return Expression resulting from the substitution of parameters with 	 *         real values, or null if the whole expression was pruned, due to 	 *         the missing parameters. 	 *  	 * @deprecated since 4.0 use {@link #params(Map, boolean)} instead. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -989,15 +989,11 @@ name|pruneMissing
 parameter_list|)
 block|{
 return|return
-name|transform
-argument_list|(
-operator|new
-name|NamedParamTransformer
+name|params
 argument_list|(
 name|parameters
 argument_list|,
 name|pruneMissing
-argument_list|)
 argument_list|)
 return|;
 block|}
