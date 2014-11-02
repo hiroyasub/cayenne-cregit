@@ -381,20 +381,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
-operator|.
-name|velocity
-operator|.
-name|SQLTemplateProcessor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|commons
 operator|.
 name|collections
@@ -571,13 +557,6 @@ operator|.
 name|parametersSize
 argument_list|()
 decl_stmt|;
-name|SQLTemplateProcessor
-name|templateProcessor
-init|=
-operator|new
-name|SQLTemplateProcessor
-argument_list|()
-decl_stmt|;
 comment|// zero size indicates a one-shot query with no parameters
 comment|// so fake a single entry batch...
 name|int
@@ -681,7 +660,10 @@ decl_stmt|;
 name|SQLStatement
 name|compiled
 init|=
-name|templateProcessor
+name|dataNode
+operator|.
+name|getSqlTemplateProcessor
+argument_list|()
 operator|.
 name|processTemplate
 argument_list|(

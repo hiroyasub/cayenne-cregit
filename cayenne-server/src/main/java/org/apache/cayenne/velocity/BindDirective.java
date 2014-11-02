@@ -637,7 +637,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-name|SQLTemplateProcessor
+name|VelocitySQLTemplateProcessor
 operator|.
 name|BINDINGS_LIST_KEY
 argument_list|)
