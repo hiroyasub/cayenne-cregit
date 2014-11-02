@@ -258,6 +258,15 @@ name|ParameterizedQuery
 implements|,
 name|XMLSerializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|3073521388289663641L
+decl_stmt|;
 specifier|static
 specifier|final
 name|String
@@ -341,13 +350,13 @@ operator|new
 name|SQLTemplateMetadata
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates an empty SQLTemplate. Note this constructor does not specify the "root" of      * the query, so a user must call "setRoot" later to make sure SQLTemplate can be      * executed.      *       * @since 1.2      */
+comment|/** 	 * Creates an empty SQLTemplate. Note this constructor does not specify the 	 * "root" of the query, so a user must call "setRoot" later to make sure 	 * SQLTemplate can be executed. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a SQLTemplate without an explicit root.      *       * @since 4.0      */
+comment|/** 	 * Creates a SQLTemplate without an explicit root. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -482,7 +491,7 @@ name|substitutedQuery
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -512,7 +521,7 @@ name|isFetchingDataRows
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -534,7 +543,7 @@ name|rootEntity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -559,7 +568,7 @@ name|rootClass
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -581,7 +590,7 @@ name|rootEntity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -603,7 +612,7 @@ name|defaultTemplate
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -629,7 +638,7 @@ return|return
 name|metaData
 return|;
 block|}
-comment|/**      * Calls<em>sqlAction(this)</em> on the visitor.      *       * @since 1.2      */
+comment|/** 	 * Calls<em>sqlAction(this)</em> on the visitor. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -649,7 +658,9 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Prints itself as XML to the provided PrintWriter.      *       * @since 1.1      */
+comment|/** 	 * Prints itself as XML to the provided PrintWriter. 	 *  	 * @since 1.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML
@@ -979,7 +990,7 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|//sorting entries by adapter name
+comment|// sorting entries by adapter name
 name|TreeSet
 argument_list|<
 name|String
@@ -1101,7 +1112,7 @@ literal|"</query>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Initializes query parameters using a set of properties.      *       * @since 1.1      */
+comment|/** 	 * Initializes query parameters using a set of properties. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|initWithProperties
@@ -1134,7 +1145,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 name|Object
@@ -1173,7 +1185,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns an iterator over parameter sets. Each element returned from the iterator is      * a java.util.Map.      */
+comment|/** 	 * Returns an iterator over parameter sets. Each element returned from the 	 * iterator is a java.util.Map. 	 */
 specifier|public
 name|Iterator
 argument_list|<
@@ -1215,7 +1227,7 @@ name|nullMapTransformer
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the number of parameter sets.      */
+comment|/** 	 * Returns the number of parameter sets. 	 */
 specifier|public
 name|int
 name|parametersSize
@@ -1235,7 +1247,7 @@ else|:
 literal|0
 return|;
 block|}
-comment|/**      * Returns a new query built using this query as a prototype and a new set of      * parameters.      */
+comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 */
 specifier|public
 name|SQLTemplate
 name|queryWithParameters
@@ -1328,7 +1340,9 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates and returns a new SQLTemplate built using this query as a prototype and      * substituting template parameters with the values from the map.      *       * @since 1.1      */
+comment|/** 	 * Creates and returns a new SQLTemplate built using this query as a 	 * prototype and substituting template parameters with the values from the 	 * map. 	 *  	 * @since 1.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|createQuery
@@ -1349,7 +1363,7 @@ name|parameters
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy
@@ -1362,7 +1376,7 @@ name|getCacheStrategy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCacheStrategy
@@ -1379,7 +1393,7 @@ name|strategy
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 index|[]
@@ -1393,7 +1407,7 @@ name|getCacheGroups
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCacheGroups
@@ -1413,7 +1427,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 4.0      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useLocalCache
@@ -1436,7 +1450,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 4.0      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useSharedCache
@@ -1489,7 +1503,7 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getFetchOffset
@@ -1502,7 +1516,7 @@ name|getFetchOffset
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setFetchOffset
@@ -1575,7 +1589,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns default SQL template for this query.      */
+comment|/** 	 * Returns default SQL template for this query. 	 */
 specifier|public
 name|String
 name|getDefaultTemplate
@@ -1585,7 +1599,7 @@ return|return
 name|defaultTemplate
 return|;
 block|}
-comment|/**      * Sets default SQL template for this query.      */
+comment|/** 	 * Sets default SQL template for this query. 	 */
 specifier|public
 name|void
 name|setDefaultTemplate
@@ -1599,7 +1613,7 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-comment|/**      * Returns a template for key, or a default template if a template for key is not      * found.      */
+comment|/** 	 * Returns a template for key, or a default template if a template for key 	 * is not found. 	 */
 specifier|public
 specifier|synchronized
 name|String
@@ -1642,7 +1656,7 @@ else|:
 name|defaultTemplate
 return|;
 block|}
-comment|/**      * Returns template for key, or null if there is no template configured for this key.      * Unlike {@link #getTemplate(String)}this method does not return a default template      * as a failover strategy, rather it returns null.      */
+comment|/** 	 * Returns template for key, or null if there is no template configured for 	 * this key. Unlike {@link #getTemplate(String)}this method does not return 	 * a default template as a failover strategy, rather it returns null. 	 */
 specifier|public
 specifier|synchronized
 name|String
@@ -1669,7 +1683,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Adds a SQL template string for a given key. Note the the keys understood by Cayenne      * must be fully qualified adapter class names. This way the framework can related      * current DataNode to the right template. E.g.      * "org.apache.cayenne.dba.oracle.OracleAdapter" is a key that should be used to setup      * an Oracle-specific template.      *       * @see #setDefaultTemplate(String)      */
+comment|/** 	 * Adds a SQL template string for a given key. Note the the keys understood 	 * by Cayenne must be fully qualified adapter class names. This way the 	 * framework can related current DataNode to the right template. E.g. 	 * "org.apache.cayenne.dba.oracle.OracleAdapter" is a key that should be 	 * used to setup an Oracle-specific template. 	 *  	 * @see #setDefaultTemplate(String) 	 */
 specifier|public
 specifier|synchronized
 name|void
@@ -1736,7 +1750,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a collection of configured template keys.      */
+comment|/** 	 * Returns a collection of configured template keys. 	 */
 specifier|public
 specifier|synchronized
 name|Collection
@@ -1753,22 +1767,21 @@ operator|!=
 literal|null
 operator|)
 condition|?
-name|Collections
-operator|.
-name|unmodifiableCollection
-argument_list|(
 name|templates
 operator|.
 name|keySet
 argument_list|()
-argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|String
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
-comment|/**      * Utility method to get the first set of parameters, since most queries will only      * have one.      */
+comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1817,10 +1830,16 @@ name|map
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 return|;
 block|}
-comment|/**      * Utility method to initialize query with one or more sets of parameters.      */
+comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 */
 specifier|public
 name|void
 name|setParameters
@@ -1851,8 +1870,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// clone parameters to ensure that we don't have immutable maps that are not
-comment|// serializable with Hessian...
+comment|// clone parameters to ensure that we don't have immutable maps that
+comment|// are not serializable with Hessian...
 name|this
 operator|.
 name|parameters
@@ -1922,7 +1941,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|getPrefetchTree
@@ -1935,7 +1954,7 @@ name|getPrefetchTree
 argument_list|()
 return|;
 block|}
-comment|/**      * Adds a prefetch.      *       * @since 1.2      */
+comment|/** 	 * Adds a prefetch. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|addPrefetch
@@ -1958,7 +1977,7 @@ name|JOINT_PREFETCH_SEMANTICS
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|removePrefetch
@@ -1975,7 +1994,7 @@ name|prefetch
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds all prefetches from a provided collection.      *       * @since 1.2      */
+comment|/** 	 * Adds all prefetches from a provided collection. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|addPrefetches
@@ -1999,7 +2018,7 @@ name|JOINT_PREFETCH_SEMANTICS
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Clears all prefetches.      *       * @since 1.2      */
+comment|/** 	 * Clears all prefetches. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|clearPrefetches
@@ -2011,7 +2030,7 @@ name|clearPrefetches
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns a column name capitalization policy applied to selecting queries. This is      * used to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a      * chosen Cayenne column mapping strategy (e.g. all column names in uppercase) is      * portable across database engines that can have varying default capitalization.      * Default (null) value indicates that column names provided in result set are used      * unchanged.      *       * @since 3.0      */
+comment|/** 	 * Returns a column name capitalization policy applied to selecting queries. 	 * This is used to simplify mapping of the queries like "SELECT * FROM ...", 	 * ensuring that a chosen Cayenne column mapping strategy (e.g. all column 	 * names in uppercase) is portable across database engines that can have 	 * varying default capitalization. Default (null) value indicates that 	 * column names provided in result set are used unchanged. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|CapsStrategy
 name|getColumnNamesCapitalization
@@ -2029,7 +2048,7 @@ operator|.
 name|DEFAULT
 return|;
 block|}
-comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p>      * Note that while a non-default setting is useful for queries that do not rely on a      * #result directive to describe columns, it works for all SQLTemplates the same way.      *       * @since 3.0      */
+comment|/** 	 * Sets a column name capitalization policy applied to selecting queries. 	 * This is used to simplify mapping of the queries like "SELECT * FROM ...", 	 * ensuring that a chosen Cayenne column mapping strategy (e.g. all column 	 * names in uppercase) is portable across database engines that can have 	 * varying default capitalization. Default (null) value indicates that 	 * column names provided in result set are used unchanged. 	 *<p> 	 * Note that while a non-default setting is useful for queries that do not 	 * rely on a #result directive to describe columns, it works for all 	 * SQLTemplates the same way. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setColumnNamesCapitalization
@@ -2045,7 +2064,7 @@ operator|=
 name|columnNameCapitalization
 expr_stmt|;
 block|}
-comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResult} rules.      *       * @since 3.0      */
+comment|/** 	 * Sets an optional explicit mapping of the result set. If result set 	 * mapping is specified, the result of SQLTemplate may not be a normal list 	 * of Persistent objects or DataRows, instead it will follow the 	 * {@link SQLResult} rules. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setResult
@@ -2061,7 +2080,7 @@ operator|=
 name|resultSet
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|SQLResult
 name|getResult
@@ -2071,7 +2090,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Sets statement's fetch size (0 for no default size)      *       * @since 3.0      */
+comment|/** 	 * Sets statement's fetch size (0 for no default size) 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setStatementFetchSize
@@ -2088,7 +2107,7 @@ name|size
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @return statement's fetch size      * @since 3.0      */
+comment|/** 	 * @return statement's fetch size 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getStatementFetchSize
@@ -2101,7 +2120,7 @@ name|getStatementFetchSize
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a name of the DataNode to use with this SQLTemplate. This      * information will be used during query execution if no other routing      * information is provided such as entity name or class, etc.      *       * @since 4.0      */
+comment|/** 	 * Returns a name of the DataNode to use with this SQLTemplate. This 	 * information will be used during query execution if no other routing 	 * information is provided such as entity name or class, etc. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|String
 name|getDataNodeName
@@ -2111,7 +2130,7 @@ return|return
 name|dataNodeName
 return|;
 block|}
-comment|/**      * Sets a name of the DataNode to use with this SQLTemplate. This      * information will be used during query execution if no other routing      * information is provided such as entity name or class, etc.      *       * @since 4.0      */
+comment|/** 	 * Sets a name of the DataNode to use with this SQLTemplate. This 	 * information will be used during query execution if no other routing 	 * information is provided such as entity name or class, etc. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|setDataNodeName

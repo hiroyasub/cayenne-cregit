@@ -708,7 +708,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Returns mutable map of parameters that will be bound to SQL. A caller is 	 * free to add/remove parameters from the returned map as needed. 	 * Alternatively one should use chained {@link #params(String, Object)} 	 */
+comment|/** 	 * Returns mutable map of parameters that will be bound to SQL. A caller is 	 * free to add/remove parameters from the returned map as needed. 	 * Alternatively one may use chained {@link #params(String, Object)} 	 */
 specifier|public
 name|Map
 argument_list|<

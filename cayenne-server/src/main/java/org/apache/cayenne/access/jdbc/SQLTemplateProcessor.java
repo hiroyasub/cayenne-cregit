@@ -155,7 +155,7 @@ name|runtime
 operator|.
 name|log
 operator|.
-name|NullLogSystem
+name|NullLogChute
 import|;
 end_import
 
@@ -272,7 +272,7 @@ operator|.
 name|RUNTIME_LOG_LOGSYSTEM
 argument_list|,
 operator|new
-name|NullLogSystem
+name|NullLogChute
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -475,6 +475,11 @@ name|String
 name|template
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 throws|throws
@@ -482,6 +487,11 @@ name|Exception
 block|{
 comment|// have to make a copy of parameter map since we are gonna modify it..
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|internalParameters
 init|=
 operator|(
@@ -498,14 +508,24 @@ operator|)
 condition|?
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|(
 name|parameters
 argument_list|)
 else|:
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 argument_list|(
-literal|3
+literal|5
 argument_list|)
 decl_stmt|;
 name|List
@@ -639,6 +659,11 @@ name|String
 name|template
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|parameters
 parameter_list|)
 throws|throws
