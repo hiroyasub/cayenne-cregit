@@ -17,6 +17,32 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|wocompat
+operator|.
+name|unit
+operator|.
+name|WOCompatCase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -66,18 +92,26 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|wocompat
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|unit
+name|junit
 operator|.
-name|WOCompatCase
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -88,6 +122,8 @@ name|PropertyListSerializationTest
 extends|extends
 name|WOCompatCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListPlist
@@ -193,6 +229,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMapPlist
@@ -296,6 +334,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEmptyString
@@ -386,6 +426,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithQuotes
@@ -491,6 +533,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNestedPlist
@@ -628,6 +672,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithSpaces
@@ -727,6 +773,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithBraces
@@ -826,6 +874,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithSlashes
@@ -925,6 +975,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithQuotes1
@@ -1027,6 +1079,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithPlusMinus
@@ -1129,6 +1183,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStringWithLessGreater

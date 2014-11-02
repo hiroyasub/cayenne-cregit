@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -39,14 +29,36 @@ name|Task
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|NamePatternMatcherTest
-extends|extends
-name|TestCase
 block|{
 comment|/**      * Test pattern expansion.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReplaceWildcardInStringWithString
@@ -184,6 +196,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test tokenizing      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTokenizer
@@ -319,6 +333,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test tokenizing      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTokenizerEntities
