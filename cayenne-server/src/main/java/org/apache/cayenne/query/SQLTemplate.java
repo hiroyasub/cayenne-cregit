@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Arrays
 import|;
 end_import
@@ -1333,6 +1343,35 @@ modifier|...
 name|params
 parameter_list|)
 block|{
+name|setParamsList
+argument_list|(
+name|params
+operator|!=
+literal|null
+condition|?
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|params
+argument_list|)
+else|:
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setParamsList
+parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|params
+parameter_list|)
+block|{
 comment|// since positional parameters are specified, resetting named
 comment|// parameters
 name|this
@@ -1349,9 +1388,11 @@ name|params
 operator|!=
 literal|null
 condition|?
-name|Arrays
-operator|.
-name|asList
+operator|new
+name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|(
 name|params
 argument_list|)
