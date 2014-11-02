@@ -138,7 +138,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *   * @since 3.2  */
+comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *   * @since 4.0  */
 end_comment
 
 begin_class

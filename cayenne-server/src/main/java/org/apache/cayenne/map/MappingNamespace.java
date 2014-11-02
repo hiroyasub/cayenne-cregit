@@ -68,7 +68,7 @@ name|String
 name|className
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|Collection
 argument_list|<
 name|Embeddable
@@ -84,7 +84,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|Collection
 argument_list|<
 name|SQLResult
@@ -156,7 +156,7 @@ argument_list|>
 name|getQueries
 parameter_list|()
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|EntityInheritanceTree
 name|getInheritanceTree
 parameter_list|(
@@ -164,7 +164,7 @@ name|String
 name|entityName
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|ObjEntity
 name|getObjEntity
 parameter_list|(
@@ -175,7 +175,7 @@ argument_list|>
 name|entityClass
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|ObjEntity
 name|getObjEntity
 parameter_list|(

@@ -151,7 +151,7 @@ specifier|protected
 name|DataNode
 name|dataNode
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BaseSQLAction
 parameter_list|(

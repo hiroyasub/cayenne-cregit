@@ -561,7 +561,7 @@ return|return
 name|changed
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|boolean
 name|removePK
@@ -574,7 +574,7 @@ return|return
 name|removeMeaningfulPKs
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|boolean
 name|removeFK
@@ -1681,7 +1681,7 @@ return|return
 name|nameGenerator
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|boolean
 name|isUsePrimitives
@@ -1691,7 +1691,7 @@ return|return
 name|usePrimitives
 return|;
 block|}
-comment|/**      * @since 3.2      * @param usePrimitives      */
+comment|/**      * @since 4.0      * @param usePrimitives      */
 specifier|public
 name|void
 name|setUsePrimitives

@@ -500,7 +500,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns a DbAttribute for this column. Since columns descriptors can be      * initialized in a context where a DbAttribite is unknown, this method may      * return null.      *       * @since 3.2      */
+comment|/**      * Returns a DbAttribute for this column. Since columns descriptors can be      * initialized in a context where a DbAttribite is unknown, this method may      * return null.      *       * @since 4.0      */
 specifier|public
 name|DbAttribute
 name|getAttribute
@@ -777,7 +777,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|String
 name|getNamePrefix

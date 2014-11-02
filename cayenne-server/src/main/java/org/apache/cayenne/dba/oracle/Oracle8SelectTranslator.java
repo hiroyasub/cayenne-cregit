@@ -83,7 +83,7 @@ name|Oracle8SelectTranslator
 extends|extends
 name|OracleSelectTranslator
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|Oracle8SelectTranslator
 parameter_list|(

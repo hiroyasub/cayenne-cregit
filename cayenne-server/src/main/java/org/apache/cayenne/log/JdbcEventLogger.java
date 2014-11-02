@@ -173,7 +173,7 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|void
 name|logQueryParameters
 parameter_list|(
@@ -185,7 +185,7 @@ index|[]
 name|bindings
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 3.2 in favor of      *             {@link #logQueryParameters(String, List)}      */
+comment|/**      * @deprecated since 4.0 in favor of      *             {@link #logQueryParameters(String, List)}      */
 annotation|@
 name|Deprecated
 name|void
@@ -220,7 +220,7 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
-comment|/**      *       * @param count      * @param time      *            (milliseconds) time query took to run      * @param sql      *            SQL that was executed, printed when time exceeds timeThreshold      *       * @since 3.2      */
+comment|/**      *       * @param count      * @param time      *            (milliseconds) time query took to run      * @param sql      *            SQL that was executed, printed when time exceeds timeThreshold      *       * @since 4.0      */
 name|void
 name|logSelectCount
 parameter_list|(

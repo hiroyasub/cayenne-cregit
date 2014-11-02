@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @deprecated since 3.2. For manual transaction management use  *             {@link BaseTransaction} static methods or better -  *             {@link ServerRuntime#performInTransaction(org.apache.cayenne.tx.TransactionalOperation)}  *             . Also note that since 3.2 an actual Transaction is an interface  *             located in a different package:  *             {@link org.apache.cayenne.tx.Transaction}  */
+comment|/**  * @deprecated since 4.0. For manual transaction management use  *             {@link BaseTransaction} static methods or better -  *             {@link ServerRuntime#performInTransaction(org.apache.cayenne.tx.TransactionalOperation)}  *             . Also note that since 4.0 an actual Transaction is an interface  *             located in a different package:  *             {@link org.apache.cayenne.tx.Transaction}  */
 end_comment
 
 begin_class

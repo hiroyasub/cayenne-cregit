@@ -381,7 +381,7 @@ argument_list|<
 name|DataDomain
 argument_list|>
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|static
 specifier|final
 name|String
@@ -826,7 +826,7 @@ return|return
 name|dataDomain
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|DataNode
 name|addDataNode

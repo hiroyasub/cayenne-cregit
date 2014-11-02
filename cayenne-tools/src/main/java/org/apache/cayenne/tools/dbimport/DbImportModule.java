@@ -160,7 +160,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DI module that bootstraps {@link DbImportAction}. Should be used in  * conjunction with {@link ToolsModule}.  *   * @since 3.2  */
+comment|/**  * A DI module that bootstraps {@link DbImportAction}. Should be used in  * conjunction with {@link ToolsModule}.  *   * @since 4.0  */
 end_comment
 
 begin_class

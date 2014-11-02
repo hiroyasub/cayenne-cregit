@@ -83,7 +83,7 @@ name|PostgresSelectTranslator
 extends|extends
 name|SelectTranslator
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|PostgresSelectTranslator
 parameter_list|(

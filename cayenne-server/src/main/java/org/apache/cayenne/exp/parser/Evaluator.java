@@ -112,7 +112,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs argument conversions for a calling binary expression, so that the  * expression could eval the arguments of the same type.  *   * @since 3.2  */
+comment|/**  * Performs argument conversions for a calling binary expression, so that the  * expression could eval the arguments of the same type.  *   * @since 4.0  */
 end_comment
 
 begin_class

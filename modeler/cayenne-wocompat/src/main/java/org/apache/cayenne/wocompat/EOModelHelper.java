@@ -214,7 +214,7 @@ specifier|private
 name|Map
 name|prototypeValues
 decl_stmt|;
-comment|/**      * Creates helper instance and tries to locate EOModel and load index file.      *       * @deprecated since 3.2, use {@link #EOModelHelper(URL)}.      */
+comment|/**      * Creates helper instance and tries to locate EOModel and load index file.      *       * @deprecated since 4.0, use {@link #EOModelHelper(URL)}.      */
 annotation|@
 name|Deprecated
 specifier|public

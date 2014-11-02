@@ -4023,7 +4023,7 @@ name|pairs
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -4047,7 +4047,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -4069,7 +4069,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -4093,7 +4093,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -4115,7 +4115,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Parses string, converting it to Expression and optionally binding 	 * positional parameters. If a string does not represent a semantically 	 * correct expression, an ExpressionException is thrown. 	 *<p> 	 * Binding of parameters by name (as opposed to binding by position) can be 	 * achieved by chaining this call with {@link Expression#params(Map)}. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Parses string, converting it to Expression and optionally binding 	 * positional parameters. If a string does not represent a semantically 	 * correct expression, an ExpressionException is thrown. 	 *<p> 	 * Binding of parameters by name (as opposed to binding by position) can be 	 * achieved by chaining this call with {@link Expression#params(Map)}. 	 *  	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -4164,7 +4164,7 @@ return|return
 name|e
 return|;
 block|}
-comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 4.0 	 */
 specifier|private
 specifier|static
 name|Expression

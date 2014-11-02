@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates RowReader instances for executed queries.  *   * @since 3.2  */
+comment|/**  * Creates RowReader instances for executed queries.  *   * @since 4.0  */
 end_comment
 
 begin_interface

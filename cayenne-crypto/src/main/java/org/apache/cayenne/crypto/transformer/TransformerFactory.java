@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory that creates encryption transformers used for processing batch  * bindings and decryption transformers - for result rows.  *   * @since 3.2  */
+comment|/**  * A factory that creates encryption transformers used for processing batch  * bindings and decryption transformers - for result rows.  *   * @since 4.0  */
 end_comment
 
 begin_interface

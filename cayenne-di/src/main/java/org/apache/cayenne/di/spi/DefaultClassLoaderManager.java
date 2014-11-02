@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ClassLoaderManager} that  *   * @since 3.2  */
+comment|/**  * A {@link ClassLoaderManager} that  *   * @since 4.0  */
 end_comment
 
 begin_class

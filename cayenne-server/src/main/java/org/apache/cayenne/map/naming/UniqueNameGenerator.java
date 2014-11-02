@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A "filter" for the mapping artifact names generated elsewhere that ensures no  * duplicate names are generated.  *   * @since 3.2  */
+comment|/**  * A "filter" for the mapping artifact names generated elsewhere that ensures no  * duplicate names are generated.  *   * @since 4.0  */
 end_comment
 
 begin_interface

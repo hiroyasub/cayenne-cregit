@@ -497,7 +497,7 @@ name|BITWISE_XOR
 init|=
 literal|42
 decl_stmt|;
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -506,7 +506,7 @@ name|BITWISE_LEFT_SHIFT
 init|=
 literal|43
 decl_stmt|;
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -519,7 +519,7 @@ specifier|protected
 name|int
 name|type
 decl_stmt|;
-comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 1.1 	 * @deprecated since 3.2 use 	 *             {@link ExpressionFactory#exp(String, Object...)} 	 */
+comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 1.1 	 * @deprecated since 4.0 use 	 *             {@link ExpressionFactory#exp(String, Object...)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -821,7 +821,7 @@ operator|=
 name|type
 expr_stmt|;
 block|}
-comment|/** 	 * Creates and returns a new Expression instance based on this expression, 	 * but with named parameters substituted with provided values. This is a 	 * positional style of binding. Names of variables in the expression are 	 * ignored and parameters are bound in order they are found in the 	 * expression. E.g. if the same name is mentioned twice, it can be bound to 	 * two different values. Also positional style would not allow subexpression 	 * pruning. If declared and provided parameters counts are mismatched, an 	 * exception will be thrown. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates and returns a new Expression instance based on this expression, 	 * but with named parameters substituted with provided values. This is a 	 * positional style of binding. Names of variables in the expression are 	 * ignored and parameters are bound in order they are found in the 	 * expression. E.g. if the same name is mentioned twice, it can be bound to 	 * two different values. Also positional style would not allow subexpression 	 * pruning. If declared and provided parameters counts are mismatched, an 	 * exception will be thrown. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Expression
 name|paramsArray
@@ -848,7 +848,7 @@ return|return
 name|clone
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 name|void
 name|inPlaceParamsArray
 parameter_list|(
@@ -887,7 +887,7 @@ name|onFinish
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * Creates and returns a new Expression instance based on this expression, 	 * but with named parameters substituted with provided values. Any 	 * subexpressions containing parameters not matching the "name" argument 	 * will be pruned. 	 *<p> 	 * Note that if you want matching against nulls to be preserved, you must 	 * place NULL values for the corresponding keys in the map. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates and returns a new Expression instance based on this expression, 	 * but with named parameters substituted with provided values. Any 	 * subexpressions containing parameters not matching the "name" argument 	 * will be pruned. 	 *<p> 	 * Note that if you want matching against nulls to be preserved, you must 	 * place NULL values for the corresponding keys in the map. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Expression
 name|params
@@ -914,7 +914,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates and returns a new Expression instance based on this expression, 	 * but with named parameters substituted with provided values.If any 	 * subexpressions containing parameters not matching the "name" argument are 	 * found, the behavior depends on "pruneMissing" argument. If it is false an 	 * Exception will be thrown, otherwise subexpressions with missing 	 * parameters will be pruned from the resulting expression. 	 *<p> 	 * Note that if you want matching against nulls to be preserved, you must 	 * place NULL values for the corresponding keys in the map. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates and returns a new Expression instance based on this expression, 	 * but with named parameters substituted with provided values.If any 	 * subexpressions containing parameters not matching the "name" argument are 	 * found, the behavior depends on "pruneMissing" argument. If it is false an 	 * Exception will be thrown, otherwise subexpressions with missing 	 * parameters will be pruned from the resulting expression. 	 *<p> 	 * Note that if you want matching against nulls to be preserved, you must 	 * place NULL values for the corresponding keys in the map. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Expression
 name|params
@@ -944,7 +944,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * A shortcut for<code>expWithParams(params, true)</code>. 	 *  	 * @deprecated since 3.2 use {@link #params(Map)} 	 */
+comment|/** 	 * A shortcut for<code>expWithParams(params, true)</code>. 	 *  	 * @deprecated since 4.0 use {@link #params(Map)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -969,7 +969,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates and returns a new Expression instance using this expression as a 	 * prototype. All ExpressionParam operands are substituted with the values 	 * in the<code>params</code> map. 	 *<p> 	 *<i>Null values in the<code>params</code> map should be explicitly 	 * created in the map for the corresponding key.</i> 	 *</p> 	 *  	 * @param parameters 	 *            a map of parameters, with each key being a string name of an 	 *            expression parameter, and value being the value that should be 	 *            used in the final expression. 	 * @param pruneMissing 	 *            If<code>true</code>, subexpressions that rely on missing 	 *            parameters will be pruned from the resulting tree. If 	 *<code>false</code> , any missing values will generate an 	 *            exception. 	 * @return Expression resulting from the substitution of parameters with 	 *         real values, or null if the whole expression was pruned, due to 	 *         the missing parameters. 	 *  	 * @deprecated since 3.2 use {@link #params(Map)} or 	 *             {@link #paramsNoPrune(Map)}. 	 */
+comment|/** 	 * Creates and returns a new Expression instance using this expression as a 	 * prototype. All ExpressionParam operands are substituted with the values 	 * in the<code>params</code> map. 	 *<p> 	 *<i>Null values in the<code>params</code> map should be explicitly 	 * created in the map for the corresponding key.</i> 	 *</p> 	 *  	 * @param parameters 	 *            a map of parameters, with each key being a string name of an 	 *            expression parameter, and value being the value that should be 	 *            used in the final expression. 	 * @param pruneMissing 	 *            If<code>true</code>, subexpressions that rely on missing 	 *            parameters will be pruned from the resulting tree. If 	 *<code>false</code> , any missing values will generate an 	 *            exception. 	 * @return Expression resulting from the substitution of parameters with 	 *         real values, or null if the whole expression was pruned, due to 	 *         the missing parameters. 	 *  	 * @deprecated since 4.0 use {@link #params(Map)} or 	 *             {@link #paramsNoPrune(Map)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1028,7 +1028,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a new expression that joins this object with other expressions, 	 * using specified join type. It is very useful for incrementally building 	 * chained expressions, like long AND or OR statements. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates a new expression that joins this object with other expressions, 	 * using specified join type. It is very useful for incrementally building 	 * chained expressions, like long AND or OR statements. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Expression
 name|joinExp
@@ -1138,7 +1138,7 @@ name|exp
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Chains this expression with other expressions using "and". 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Chains this expression with other expressions using "and". 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Expression
 name|andExp
@@ -1184,7 +1184,7 @@ name|exp
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Chains this expression with other expressions using "or". 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Chains this expression with other expressions using "or". 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Expression
 name|orExp
@@ -1891,7 +1891,7 @@ literal|"]]>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Stores a String representation of Expression using a provided 	 * PrintWriter. 	 *  	 * @since 1.1 	 * @deprecated since 3.2 use {@link #appendAsString(Appendable)}. 	 */
+comment|/** 	 * Stores a String representation of Expression using a provided 	 * PrintWriter. 	 *  	 * @since 1.1 	 * @deprecated since 4.0 use {@link #appendAsString(Appendable)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1903,7 +1903,7 @@ name|PrintWriter
 name|pw
 parameter_list|)
 function_decl|;
-comment|/** 	 * Appends own content as a String to the provided Appendable. 	 *  	 * @since 3.2 	 * @throws IOException 	 */
+comment|/** 	 * Appends own content as a String to the provided Appendable. 	 *  	 * @since 4.0 	 * @throws IOException 	 */
 specifier|public
 specifier|abstract
 name|void
@@ -1915,7 +1915,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
-comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 3.0 	 * @deprecated since 3.2 use {@link #appendAsEJBQL(Appendable, String)} 	 */
+comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 3.0 	 * @deprecated since 4.0 use {@link #appendAsEJBQL(Appendable, String)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1930,7 +1930,7 @@ name|String
 name|rootId
 parameter_list|)
 function_decl|;
-comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * Appendable. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 3.2 	 * @throws IOException 	 */
+comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * Appendable. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 4.0 	 * @throws IOException 	 */
 specifier|public
 name|void
 name|appendAsEJBQL
@@ -1954,7 +1954,7 @@ name|rootId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. If the parameterAccumulator is supplied then as the EJBQL is 	 * output, it may load parameters into this list. In this case, the EJBQL 	 * output will contain reference to positional parameters. If no 	 * parameterAccumulator is supplied and a scalar type is encountered for 	 * which there is no EJBQL literal representation (such as dates) then this 	 * method will throw a runtime exception to indicate that it was not 	 * possible to generate a string-only representation of the Expression in 	 * EJBQL. 	 *  	 * @since 3.2 	 * @throws IOException 	 */
+comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. If the parameterAccumulator is supplied then as the EJBQL is 	 * output, it may load parameters into this list. In this case, the EJBQL 	 * output will contain reference to positional parameters. If no 	 * parameterAccumulator is supplied and a scalar type is encountered for 	 * which there is no EJBQL literal representation (such as dates) then this 	 * method will throw a runtime exception to indicate that it was not 	 * possible to generate a string-only representation of the Expression in 	 * EJBQL. 	 *  	 * @since 4.0 	 * @throws IOException 	 */
 specifier|public
 specifier|abstract
 name|void

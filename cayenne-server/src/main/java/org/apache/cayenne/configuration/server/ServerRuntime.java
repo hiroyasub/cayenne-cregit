@@ -211,7 +211,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Runs provided operation wrapped in a single transaction. Transaction 	 * handling delegated to the internal {@link TransactionManager}. Nested 	 * calls to 'performInTransaction' are safe and attached to the same 	 * in-progress transaction. TransactionalOperation can be some arbitrary 	 * user code, which most often than not will consist of multiple Cayenne 	 * operations. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Runs provided operation wrapped in a single transaction. Transaction 	 * handling delegated to the internal {@link TransactionManager}. Nested 	 * calls to 'performInTransaction' are safe and attached to the same 	 * in-progress transaction. TransactionalOperation can be some arbitrary 	 * user code, which most often than not will consist of multiple Cayenne 	 * operations. 	 *  	 * @since 4.0 	 */
 specifier|public
 parameter_list|<
 name|T
@@ -264,7 +264,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a default DataSource for this runtime. If no default DataSource 	 * exists, an exception is thrown. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Returns a default DataSource for this runtime. If no default DataSource 	 * exists, an exception is thrown. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|DataSource
 name|getDataSource

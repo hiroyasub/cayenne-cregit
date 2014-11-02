@@ -566,7 +566,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|String
 name|cacheName
@@ -820,7 +820,7 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Returns default cache group.      *       * @deprecated since 3.2 - this method is no longer in use. If you are      *             overriding it, override {@link #cacheName(String, String...)}      *             instead.      */
+comment|/**      * Returns default cache group.      *       * @deprecated since 4.0 - this method is no longer in use. If you are      *             overriding it, override {@link #cacheName(String, String...)}      *             instead.      */
 annotation|@
 name|Deprecated
 specifier|public

@@ -66,7 +66,7 @@ name|Query
 name|substitutedQuery
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a QueryEngine for a given name. If the name is null, a default      * QueryEngine is returned. If there's no default engine, an exception is      * thrown.      *       * @since 3.2      */
+comment|/**      * Returns a QueryEngine for a given name. If the name is null, a default      * QueryEngine is returned. If there's no default engine, an exception is      * thrown.      *       * @since 4.0      */
 name|QueryEngine
 name|engineForName
 parameter_list|(

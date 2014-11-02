@@ -280,7 +280,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a selecting query, returning a list of persistent objects or      * data rows.      *       * @since 3.2      */
+comment|/**      * Executes a selecting query, returning a list of persistent objects or      * data rows.      *       * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -297,7 +297,7 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Executes a selecting query, returning either NULL if query matched no      * objects, or a single object. If query matches more than one object,      * {@link CayenneRuntimeException} is thrown.      *       * @since 3.2      */
+comment|/**      * Executes a selecting query, returning either NULL if query matched no      * objects, or a single object. If query matches more than one object,      * {@link CayenneRuntimeException} is thrown.      *       * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -311,7 +311,7 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Creates a ResultIterator based on the provided query and passes it to a      * callback for processing. The caller does not need to worry about closing      * the iterator. This method takes care of it.      *       * @since 3.2      */
+comment|/**      * Creates a ResultIterator based on the provided query and passes it to a      * callback for processing. The caller does not need to worry about closing      * the iterator. This method takes care of it.      *       * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -331,7 +331,7 @@ argument_list|>
 name|callback
 parameter_list|)
 function_decl|;
-comment|/**      * Creates a ResultIterator based on the provided query. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preserving a constant memory footprint. The caller must wrap      * iteration in try/finally and close the ResultIterator explicitly. Or use      * {@link #iterate(Select, ResultIteratorCallback)} as an alternative.      *       * @since 3.2      */
+comment|/**      * Creates a ResultIterator based on the provided query. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preserving a constant memory footprint. The caller must wrap      * iteration in try/finally and close the ResultIterator explicitly. Or use      * {@link #iterate(Select, ResultIteratorCallback)} as an alternative.      *       * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>

@@ -1647,7 +1647,7 @@ argument_list|()
 throw|;
 block|}
 block|}
-comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 3.2      */
+comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 4.0      */
 specifier|public
 name|RowReader
 argument_list|<
@@ -1681,7 +1681,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 3.2      */
+comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 4.0      */
 specifier|public
 name|RowReader
 argument_list|<
@@ -1720,7 +1720,7 @@ name|attributeOverrides
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BatchTranslator
 name|batchTranslator
@@ -1746,7 +1746,7 @@ name|trimFunction
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|RowReaderFactory
 name|getRowReaderFactory
@@ -1756,7 +1756,7 @@ return|return
 name|rowReaderFactory
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setRowReaderFactory
@@ -1772,7 +1772,7 @@ operator|=
 name|rowReaderFactory
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BatchTranslatorFactory
 name|getBatchTranslatorFactory
@@ -1782,7 +1782,7 @@ return|return
 name|batchTranslatorFactory
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setBatchTranslatorFactory

@@ -274,7 +274,7 @@ specifier|protected
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|AuditableFilter
 parameter_list|(

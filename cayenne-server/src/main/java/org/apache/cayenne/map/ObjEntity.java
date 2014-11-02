@@ -1262,7 +1262,7 @@ return|return
 name|entity
 return|;
 block|}
-comment|/**      * Returns a non-null class name. For generic entities with no class      * specified explicitly, default DataMap superclass is used, and if it is      * not set - CayenneDataObject is used.      *       * @since 3.2      */
+comment|/**      * Returns a non-null class name. For generic entities with no class      * specified explicitly, default DataMap superclass is used, and if it is      * not set - CayenneDataObject is used.      *       * @since 4.0      */
 specifier|public
 name|String
 name|getJavaClassName
@@ -1311,7 +1311,7 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * Returns Java class of persistent objects described by this entity. For      * generic entities with no class specified explicitly, default DataMap      * superclass is used, and if it is not set - CayenneDataObject is used.      * Casts any thrown exceptions into CayenneRuntimeException.      *       * @since 1.2      * @deprecated since 3.2 this method based on statically defined class      *             loading algorithm is not going to work in environments like      *             OSGi. {@link AdhocObjectFactory} should be used as it can      *             provide the environment-specific class loading policy.       */
+comment|/**      * Returns Java class of persistent objects described by this entity. For      * generic entities with no class specified explicitly, default DataMap      * superclass is used, and if it is not set - CayenneDataObject is used.      * Casts any thrown exceptions into CayenneRuntimeException.      *       * @since 1.2      * @deprecated since 4.0 this method based on statically defined class      *             loading algorithm is not going to work in environments like      *             OSGi. {@link AdhocObjectFactory} should be used as it can      *             provide the environment-specific class loading policy.       */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1365,7 +1365,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns an unmodifiable list of registered {@link EntityListener}      * objects. Note that since the order of listeners is significant a list,      * not just a generic Collection is returned.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * Returns an unmodifiable list of registered {@link EntityListener}      * objects. Note that since the order of listeners is significant a list,      * not just a generic Collection is returned.      *       * @since 3.0      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1385,7 +1385,7 @@ name|entityListeners
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * Adds a new EntityListener.      *       * @since 3.0      * @throws IllegalArgumentException      *             if a listener for the same class name is already registered.      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1442,7 +1442,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a listener matching class name.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * Removes a listener matching class name.      *       * @since 3.0      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1502,7 +1502,7 @@ break|break;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * @since 3.0      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3736,7 +3736,7 @@ comment|// need
 comment|// aliases
 comment|// here?
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|Set
 argument_list|<
@@ -4252,7 +4252,7 @@ parameter_list|)
 block|{
 comment|// does nothing currently
 block|}
-comment|/**      * Returns true if the default lifecycle listeners should not be notified of      * this entity lifecycle events.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * Returns true if the default lifecycle listeners should not be notified of      * this entity lifecycle events.      *       * @since 3.0      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -4264,7 +4264,7 @@ return|return
 name|excludingDefaultListeners
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -4282,7 +4282,7 @@ operator|=
 name|excludingDefaultListeners
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the lifeycle listeners defined on the superclasses should      * not be notified of this entity lifecycle events.      *       * @since 3.0      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * Returns true if the lifeycle listeners defined on the superclasses should      * not be notified of this entity lifecycle events.      *       * @since 3.0      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -4294,7 +4294,7 @@ return|return
 name|excludingSuperclassListeners
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 unused, as listeners are no longer mapped in a      *             DataMap.      */
+comment|/**      * @deprecated since 4.0 unused, as listeners are no longer mapped in a      *             DataMap.      */
 annotation|@
 name|Deprecated
 specifier|public

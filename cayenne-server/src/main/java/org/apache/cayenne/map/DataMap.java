@@ -402,7 +402,7 @@ name|DEFAULT_CLIENT_SUPERCLASS_PROPERTY
 init|=
 literal|"defaultClientSuperclass"
 decl_stmt|;
-comment|/** 	 * Defines the name of the property for default DB catalog. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Defines the name of the property for default DB catalog. 	 *  	 * @since 4.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -566,7 +566,7 @@ name|SQLResult
 argument_list|>
 name|results
 decl_stmt|;
-comment|/** 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
+comment|/** 	 * @deprecated since 4.0 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 specifier|private
 name|List
 argument_list|<
@@ -2875,7 +2875,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/** 	 * Returns an unmodifiable list of default {@link EntityListener} objects. 	 * Note that since the order of listeners is significant a list, not just a 	 * generic Collection is returned. 	 *  	 * @since 3.0 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
+comment|/** 	 * Returns an unmodifiable list of default {@link EntityListener} objects. 	 * Note that since the order of listeners is significant a list, not just a 	 * generic Collection is returned. 	 *  	 * @since 3.0 	 * @deprecated since 4.0 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2895,7 +2895,7 @@ name|defaultEntityListeners
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Adds a new EntityListener. 	 *  	 * @since 3.0 	 * @throws IllegalArgumentException 	 *             if a listener for the same class name is already registered. 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
+comment|/** 	 * Adds a new EntityListener. 	 *  	 * @since 3.0 	 * @throws IllegalArgumentException 	 *             if a listener for the same class name is already registered. 	 * @deprecated since 4.0 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2952,7 +2952,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Removes a listener matching class name. 	 *  	 * @since 3.0 	 * @deprecated since 3.2 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
+comment|/** 	 * Removes a listener matching class name. 	 *  	 * @since 3.0 	 * @deprecated since 4.0 unused as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3012,7 +3012,7 @@ break|break;
 block|}
 block|}
 block|}
-comment|/** 	 * @since 3.0 	 * @deprecated since 3.2 unused, as listeners are no longer tied to a 	 *             DataMap. 	 */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0 unused, as listeners are no longer tied to a 	 *             DataMap. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -4329,7 +4329,7 @@ operator|=
 name|configurationSource
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|String
 name|getDefaultCatalog
@@ -4339,7 +4339,7 @@ return|return
 name|defaultCatalog
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|void
 name|setDefaultCatalog
@@ -4355,7 +4355,7 @@ operator|=
 name|defaultCatalog
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|EntityInheritanceTree
 name|getInheritanceTree
@@ -4371,7 +4371,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|ObjEntity
 name|getObjEntity

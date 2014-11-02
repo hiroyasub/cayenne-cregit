@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An id similar to ObjectId that identifies a DbEntity snapshot for implicit  * DbEntities of flattened attributes or relationships. Provides 'equals' and  * 'hashCode' implementations adequate for use as a map key.  *   * @since 3.2  */
+comment|/**  * An id similar to ObjectId that identifies a DbEntity snapshot for implicit  * DbEntities of flattened attributes or relationships. Provides 'equals' and  * 'hashCode' implementations adequate for use as a map key.  *   * @since 4.0  */
 end_comment
 
 begin_class

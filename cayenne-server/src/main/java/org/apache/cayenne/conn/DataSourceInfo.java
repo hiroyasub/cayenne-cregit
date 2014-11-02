@@ -1057,7 +1057,7 @@ return|return
 name|dataSourceUrl
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 as class loading should not happen here.      */
+comment|/**      * @deprecated since 4.0 as class loading should not happen here.      */
 annotation|@
 name|Deprecated
 specifier|public

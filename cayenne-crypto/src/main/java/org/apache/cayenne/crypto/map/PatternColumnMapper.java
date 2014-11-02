@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ColumnMapper} that decides on whether a column is encrypted by  * matching its name against a preset pattern. Only column name is inspected.  * Table name is ignored.  *   * @since 3.2  */
+comment|/**  * A {@link ColumnMapper} that decides on whether a column is encrypted by  * matching its name against a preset pattern. Only column name is inspected.  * Table name is ignored.  *   * @since 4.0  */
 end_comment
 
 begin_class

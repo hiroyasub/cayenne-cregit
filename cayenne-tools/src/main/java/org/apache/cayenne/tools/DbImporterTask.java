@@ -215,14 +215,14 @@ specifier|final
 name|DbImportConfiguration
 name|parameters
 decl_stmt|;
-comment|/**      * @deprecated since 3.2 in favor of "schema"      */
+comment|/**      * @deprecated since 4.0 in favor of "schema"      */
 annotation|@
 name|Deprecated
 specifier|private
 name|String
 name|schemaName
 decl_stmt|;
-comment|/**      * @deprecated since 3.2 in favor of "meaningfulPkTable"      */
+comment|/**      * @deprecated since 4.0 in favor of "meaningfulPkTable"      */
 annotation|@
 name|Deprecated
 specifier|private
@@ -502,7 +502,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setOverwrite
@@ -519,7 +519,7 @@ name|overwrite
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #setSchema(String)}      */
+comment|/**      * @deprecated since 4.0 use {@link #setSchema(String)}      */
 specifier|public
 name|void
 name|setSchemaName
@@ -535,7 +535,7 @@ operator|=
 name|schemaName
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setSchema
@@ -552,7 +552,7 @@ name|schema
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setDefaultPackage
@@ -617,7 +617,7 @@ name|procedurePattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #setMeaningfulPkTables(String)}      */
+comment|/**      * @deprecated since 4.0 use {@link #setMeaningfulPkTables(String)}      */
 specifier|public
 name|void
 name|setMeaningfulPk
@@ -633,7 +633,7 @@ operator|=
 name|meaningfulPk
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setMeaningfulPkTables
@@ -762,7 +762,7 @@ name|username
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setIncludeTables
@@ -779,7 +779,7 @@ name|includeTables
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setExcludeTables
@@ -796,7 +796,7 @@ name|excludeTables
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setUsePrimitives

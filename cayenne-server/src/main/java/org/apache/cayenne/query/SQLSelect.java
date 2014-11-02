@@ -124,7 +124,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A selecting query based on raw SQL and featuring fluent API.  *   * @since 3.2  */
+comment|/**  * A selecting query based on raw SQL and featuring fluent API.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -918,7 +918,7 @@ return|return
 name|template
 return|;
 block|}
-comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useLocalCache

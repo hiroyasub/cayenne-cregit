@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne Transaction interface.  *   * @since 3.2  */
+comment|/**  * A Cayenne Transaction interface.  *   * @since 4.0  */
 end_comment
 
 begin_interface

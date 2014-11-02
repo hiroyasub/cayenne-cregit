@@ -506,7 +506,7 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
+comment|/**      * @since 3.1      * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
 annotation|@
 name|Inject
 specifier|protected
@@ -966,7 +966,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * Returns true if supplied type can have a length attribute as a part of column      * definition      *       * @since 3.2      */
+comment|/**      * Returns true if supplied type can have a length attribute as a part of column      * definition      *       * @since 4.0      */
 specifier|public
 name|boolean
 name|typeSupportsLength
@@ -2319,7 +2319,7 @@ name|MergerFactory
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.2      * @return      */
+comment|/**      * @since 4.0      * @return      */
 specifier|protected
 name|QuotingStrategy
 name|createQuotingStrategy
@@ -2335,7 +2335,7 @@ literal|"\""
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      * @deprecated since 3.2 use {@link #getQuotingStrategy()}.      */
+comment|/**      * @since 3.0      * @deprecated since 4.0 use {@link #getQuotingStrategy()}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2351,7 +2351,7 @@ name|getQuotingStrategy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|QuotingStrategy
 name|getQuotingStrategy
@@ -2361,7 +2361,7 @@ return|return
 name|quotingStrategy
 return|;
 block|}
-comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
+comment|/**      * @since 3.1      * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2373,7 +2373,7 @@ return|return
 name|batchQueryBuilderFactory
 return|;
 block|}
-comment|/**      * @since 3.1      * @deprecated since 3.2 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
+comment|/**      * @since 3.1      * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the      *             DataNode.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2391,7 +2391,7 @@ operator|=
 name|batchQueryBuilderFactory
 expr_stmt|;
 block|}
-comment|/**      * Simply returns this, as JdbcAdapter is not a wrapper.      *       * @since 3.2      */
+comment|/**      * Simply returns this, as JdbcAdapter is not a wrapper.      *       * @since 4.0      */
 annotation|@
 name|Override
 specifier|public

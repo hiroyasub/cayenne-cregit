@@ -56,7 +56,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne transaction. Currently supports managing JDBC connections.  *   * @since 3.2  */
+comment|/**  * A Cayenne transaction. Currently supports managing JDBC connections.  *   * @since 4.0  */
 end_comment
 
 begin_class

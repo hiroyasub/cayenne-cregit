@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of batch query translators.  *   * @since 3.2  */
+comment|/**  * Superclass of batch query translators.  *   * @since 4.0  */
 end_comment
 
 begin_interface

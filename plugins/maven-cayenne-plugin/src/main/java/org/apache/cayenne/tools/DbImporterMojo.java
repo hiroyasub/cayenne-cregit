@@ -203,7 +203,7 @@ specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @parameter expression="${cdbimport.defaultPackage}"      * @since 3.2      */
+comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @parameter expression="${cdbimport.defaultPackage}"      * @since 4.0      */
 specifier|private
 name|String
 name|defaultPackage
@@ -213,17 +213,17 @@ specifier|private
 name|boolean
 name|overwrite
 decl_stmt|;
-comment|/**      * DB schema to use for DB importing.      *       * @parameter expression="${cdbimport.schemaName}"      * @deprecated since 3.2 renamed to "schema"      */
+comment|/**      * DB schema to use for DB importing.      *       * @parameter expression="${cdbimport.schemaName}"      * @deprecated since 4.0 renamed to "schema"      */
 specifier|private
 name|String
 name|schemaName
 decl_stmt|;
-comment|/**      * DB schema to use for DB importing.      *       * @parameter expression="${cdbimport.catalog}"      * @since 3.2      */
+comment|/**      * DB schema to use for DB importing.      *       * @parameter expression="${cdbimport.catalog}"      * @since 4.0      */
 specifier|private
 name|String
 name|catalog
 decl_stmt|;
-comment|/**      * DB schema to use for DB importing.      *       * @parameter expression="${cdbimport.schema}"      * @since 3.2      */
+comment|/**      * DB schema to use for DB importing.      *       * @parameter expression="${cdbimport.schema}"      * @since 4.0      */
 specifier|private
 name|String
 name|schema
@@ -253,12 +253,12 @@ specifier|private
 name|String
 name|procedurePattern
 decl_stmt|;
-comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *       * Default is<code>false</code>.      *       * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      * @deprecated since 3.2 use meaningfulPkTables      */
+comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *       * Default is<code>false</code>.      *       * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      * @deprecated since 4.0 use meaningfulPkTables      */
 specifier|private
 name|boolean
 name|meaningfulPk
 decl_stmt|;
-comment|/**      * @parameter expression="${cdbimport.meaningfulPkTables}"      * @since 3.2      */
+comment|/**      * @parameter expression="${cdbimport.meaningfulPkTables}"      * @since 4.0      */
 specifier|private
 name|String
 name|meaningfulPkTables

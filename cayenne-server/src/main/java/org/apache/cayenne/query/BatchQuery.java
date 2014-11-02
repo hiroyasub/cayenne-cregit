@@ -131,7 +131,7 @@ specifier|protected
 name|DataMap
 name|dataMap
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|List
 argument_list|<
@@ -146,7 +146,7 @@ name|DbAttribute
 argument_list|>
 name|dbAttributes
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BatchQuery
 parameter_list|(
@@ -189,7 +189,7 @@ operator|=
 name|dbAttributes
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|List
 argument_list|<
@@ -401,7 +401,7 @@ return|return
 name|dbAttributes
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 use getRows().size().      */
+comment|/**      * @deprecated since 4.0 use getRows().size().      */
 annotation|@
 name|Deprecated
 specifier|public

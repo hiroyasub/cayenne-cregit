@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Maps ClassLoaders to resources. This is a useful abstraction when switching  * between environments. E.g. between JEE with thread/hierarchical classloaders  * and OSGi with per-bundle classloaders.  *   * @since 3.2  */
+comment|/**  * Maps ClassLoaders to resources. This is a useful abstraction when switching  * between environments. E.g. between JEE with thread/hierarchical classloaders  * and OSGi with per-bundle classloaders.  *   * @since 4.0  */
 end_comment
 
 begin_interface

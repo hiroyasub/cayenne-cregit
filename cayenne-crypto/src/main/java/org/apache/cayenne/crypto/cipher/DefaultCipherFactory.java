@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Creates and returns a new {@link Cipher} configured using properties from  * {@link CryptoConstants#PROPERTIES_MAP}.  *   * @since 3.2  */
+comment|/**  * Creates and returns a new {@link Cipher} configured using properties from  * {@link CryptoConstants#PROPERTIES_MAP}.  *   * @since 4.0  */
 end_comment
 
 begin_class

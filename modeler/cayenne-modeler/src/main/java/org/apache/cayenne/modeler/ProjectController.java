@@ -9442,7 +9442,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|int
 name|getEntityTabSelection
@@ -9452,7 +9452,7 @@ return|return
 name|entityTabSelection
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setEntityTabSelection

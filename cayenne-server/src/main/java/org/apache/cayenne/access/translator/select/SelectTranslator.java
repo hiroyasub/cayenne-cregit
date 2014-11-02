@@ -614,7 +614,7 @@ block|}
 name|JoinStack
 name|joinStack
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|SelectTranslator
 parameter_list|(

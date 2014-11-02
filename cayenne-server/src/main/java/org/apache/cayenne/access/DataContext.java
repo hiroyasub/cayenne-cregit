@@ -666,7 +666,7 @@ specifier|protected
 name|ObjectStore
 name|objectStore
 decl_stmt|;
-comment|/**      * @deprecated since 3.2 used in a method that itself should be deprecated,      *             so this is a temp code      */
+comment|/**      * @deprecated since 4.0 used in a method that itself should be deprecated,      *             so this is a temp code      */
 annotation|@
 name|Deprecated
 specifier|protected
@@ -4230,7 +4230,7 @@ return|return
 name|transactionFactory
 return|;
 block|}
-comment|/**      * @since 3.2      * @deprecated since 3.2 avoid using thsi directly. Transaction management      *             at this level will be eventually removed      */
+comment|/**      * @since 4.0      * @deprecated since 4.0 avoid using thsi directly. Transaction management      *             at this level will be eventually removed      */
 annotation|@
 name|Deprecated
 specifier|public

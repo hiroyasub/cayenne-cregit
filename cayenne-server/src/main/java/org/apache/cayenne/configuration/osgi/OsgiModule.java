@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DI module that helps to bootstrap Cayenne in OSGi environment.  *   * @since 3.2  */
+comment|/**  * A DI module that helps to bootstrap Cayenne in OSGi environment.  *   * @since 4.0  */
 end_comment
 
 begin_class

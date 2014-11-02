@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory that creates transformers for encryption/decryption of individual  * values.  *   * @since 3.2  */
+comment|/**  * A factory that creates transformers for encryption/decryption of individual  * values.  *   * @since 4.0  */
 end_comment
 
 begin_interface

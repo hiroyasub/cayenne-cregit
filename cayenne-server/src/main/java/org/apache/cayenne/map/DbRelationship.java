@@ -973,7 +973,7 @@ else|:
 literal|false
 return|;
 block|}
-comment|/**      * Returns a boolean indicating whether modifying a target of such      * relationship in any way will not change the underlying table row of the      * source.      *       * @since 3.2      */
+comment|/**      * Returns a boolean indicating whether modifying a target of such      * relationship in any way will not change the underlying table row of the      * source.      *       * @since 4.0      */
 specifier|public
 name|boolean
 name|isSourceIndependentFromTargetChange

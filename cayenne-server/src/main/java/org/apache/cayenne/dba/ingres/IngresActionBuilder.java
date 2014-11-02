@@ -80,7 +80,7 @@ name|IngresActionBuilder
 extends|extends
 name|JdbcActionBuilder
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|IngresActionBuilder
 parameter_list|(

@@ -356,7 +356,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder of a Cayenne DI module that will contain all extension to Cayenne  * runtime needed to enable encryption of certain data columns. Builder allows  * to specify custom ciphers, as well as a strategy for discovering which  * columns are encrypted.  *   * @since 3.2  */
+comment|/**  * A builder of a Cayenne DI module that will contain all extension to Cayenne  * runtime needed to enable encryption of certain data columns. Builder allows  * to specify custom ciphers, as well as a strategy for discovering which  * columns are encrypted.  *   * @since 4.0  */
 end_comment
 
 begin_class

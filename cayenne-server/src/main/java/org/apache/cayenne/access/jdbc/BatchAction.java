@@ -415,7 +415,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BatchAction
 parameter_list|(
@@ -1036,7 +1036,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Implements generated keys extraction supported in JDBC 3.0 specification.      *       * @since 3.2      */
+comment|/**      * Implements generated keys extraction supported in JDBC 3.0 specification.      *       * @since 4.0      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

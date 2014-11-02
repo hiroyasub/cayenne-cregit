@@ -146,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataPortDelegate implementation that works in the context of Ant DataPortTask  * task execution, performing entity filtering and logging functions.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 3.2  */
+comment|/**  * DataPortDelegate implementation that works in the context of Ant DataPortTask  * task execution, performing entity filtering and logging functions.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 4.0  */
 end_comment
 
 begin_class

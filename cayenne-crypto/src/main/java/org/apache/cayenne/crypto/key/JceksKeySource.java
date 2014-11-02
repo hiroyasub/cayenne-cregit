@@ -176,7 +176,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link KeySource} based on a Java "jceks" KeyStore. Uses  * {@link CryptoConstants#KEYSTORE_URL} to locate the keystore and  * {@link CryptoConstants#KEY_PASSWORD} to read the secret key.  *   * @since 3.2  */
+comment|/**  * A {@link KeySource} based on a Java "jceks" KeyStore. Uses  * {@link CryptoConstants#KEYSTORE_URL} to locate the keystore and  * {@link CryptoConstants#KEY_PASSWORD} to read the secret key.  *   * @since 4.0  */
 end_comment
 
 begin_class

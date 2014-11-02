@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link BytesEncryptor} that encrypts the provided bytes. The first block in  * the encrypted bytes is the value of IV used to seed the CBC transformation.  * It will be needed for decryption. The object is stateful and is not  * thread-safe.  *   * @since 3.2  */
+comment|/**  * A {@link BytesEncryptor} that encrypts the provided bytes. The first block in  * the encrypted bytes is the value of IV used to seed the CBC transformation.  * It will be needed for decryption. The object is stateful and is not  * thread-safe.  *   * @since 4.0  */
 end_comment
 
 begin_class

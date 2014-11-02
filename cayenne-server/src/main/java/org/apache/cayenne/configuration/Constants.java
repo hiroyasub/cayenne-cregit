@@ -282,7 +282,7 @@ name|CI_PROPERTY
 init|=
 literal|"cayenne.runtime.db.collation.assume.ci"
 decl_stmt|;
-comment|/**      * A integer property that enables logging for just long running queries      * (rather than all queries). The value is the minimum number of      * milliseconds a query must run before is logged. A value less than or      * equal to zero (the default) disables this feature.      *       * @since 3.2      * */
+comment|/**      * A integer property that enables logging for just long running queries      * (rather than all queries). The value is the minimum number of      * milliseconds a query must run before is logged. A value less than or      * equal to zero (the default) disables this feature.      *       * @since 4.0      * */
 specifier|public
 specifier|final
 specifier|static

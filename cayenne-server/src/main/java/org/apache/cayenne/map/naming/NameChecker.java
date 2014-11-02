@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * @since 4.0  */
 end_comment
 
 begin_interface

@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Base interface for all domain builders  *  * @since 3.2.  */
+comment|/**  * Base interface for all domain builders  *  * @since 4.0.  */
 end_comment
 
 begin_interface

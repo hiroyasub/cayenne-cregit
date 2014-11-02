@@ -101,7 +101,7 @@ name|OpenBaseSelectTranslator
 extends|extends
 name|SelectTranslator
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|OpenBaseSelectTranslator
 parameter_list|(

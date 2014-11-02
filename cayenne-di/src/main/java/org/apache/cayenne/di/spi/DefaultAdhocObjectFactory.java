@@ -120,7 +120,7 @@ specifier|protected
 name|ClassLoaderManager
 name|classLoaderManager
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|DefaultAdhocObjectFactory
 parameter_list|(

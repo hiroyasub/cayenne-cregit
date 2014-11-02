@@ -86,7 +86,7 @@ name|String
 name|bindingName
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -103,7 +103,7 @@ argument_list|>
 name|interfaceType
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>

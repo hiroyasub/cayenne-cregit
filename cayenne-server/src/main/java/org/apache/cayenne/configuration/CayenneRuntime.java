@@ -188,7 +188,7 @@ name|module
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns an array of modules used to initialize this runtime. 	 *  	 * @deprecated since 3.2. We only keep one module now, so use 	 *             {@link #getModule()}. 	 */
+comment|/** 	 * Returns an array of modules used to initialize this runtime. 	 *  	 * @deprecated since 4.0. We only keep one module now, so use 	 *             {@link #getModule()}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -206,7 +206,7 @@ name|module
 block|}
 return|;
 block|}
-comment|/** 	 *  	 * Returns the module used to initialize this runtime. 	 *  	 * @since 3.2 	 */
+comment|/** 	 *  	 * Returns the module used to initialize this runtime. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Module
 name|getModule
@@ -260,7 +260,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a new ObjectContext instance based on the runtime's main 	 * DataChannel. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Returns a new ObjectContext instance based on the runtime's main 	 * DataChannel. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|ObjectContext
 name|newContext
@@ -280,7 +280,7 @@ name|createContext
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a new ObjectContext which is a child of the specified 	 * DataChannel. This method is used for creation of nested ObjectContexts, 	 * with parent ObjectContext passed as an argument. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Returns a new ObjectContext which is a child of the specified 	 * DataChannel. This method is used for creation of nested ObjectContexts, 	 * with parent ObjectContext passed as an argument. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|ObjectContext
 name|newContext

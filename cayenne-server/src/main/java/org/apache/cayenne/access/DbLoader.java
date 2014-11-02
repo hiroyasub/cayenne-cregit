@@ -2139,7 +2139,7 @@ name|loadedEntities
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|EntityMergeSupport
 name|createEntityMerger
@@ -3001,7 +3001,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|String
 index|[]
@@ -3094,7 +3094,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *       * @since 1.0.7      * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
+comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *       * @since 1.0.7      * @deprecated since 4.0 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3154,7 +3154,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *       * @deprecated since 3.2 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
+comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *       * @deprecated since 4.0 use      *             {@link #load(DataMap, String, String, String, String...)}      *             method that supports catalogs.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3199,7 +3199,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *       * @since 3.2      */
+comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *       * @since 4.0      */
 specifier|public
 name|void
 name|load
@@ -3284,7 +3284,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 1.1      * @deprecated since 3.2 use      *             {@link #loadProcedures(DataMap, String, String, String)} that      *             supports "catalog" pattern.      */
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 1.1      * @deprecated since 4.0 use      *             {@link #loadProcedures(DataMap, String, String, String)} that      *             supports "catalog" pattern.      */
 specifier|public
 name|void
 name|loadProceduresFromDB
@@ -3313,7 +3313,7 @@ name|namePattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 3.2      */
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 4.0      */
 specifier|public
 name|void
 name|loadProcedures

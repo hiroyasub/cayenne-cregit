@@ -1028,7 +1028,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1060,7 +1060,7 @@ name|query
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1134,7 +1134,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public

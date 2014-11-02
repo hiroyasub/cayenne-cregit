@@ -254,7 +254,7 @@ operator|new
 name|SelectQueryMetadata
 argument_list|()
 decl_stmt|;
-comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 *  	 * @since 4.0 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -284,7 +284,7 @@ name|rootClass
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 *  	 * @since 4.0 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -319,7 +319,7 @@ name|qualifier
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates a SelectQuery that selects objects of a given persistent class 	 * that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects fetched by this query. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 * @param orderings 	 *            defines how to order the results, may be null. 	 *  	 * @since 4.0 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -364,7 +364,7 @@ name|orderings
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|SelectQuery
@@ -414,7 +414,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/** 	 * Creates a SelectQuery that selects DataRows that correspond to a given 	 * persistent class that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects that correspond to DataRows entity. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Creates a SelectQuery that selects DataRows that correspond to a given 	 * persistent class that match supplied qualifier. 	 *  	 * @param rootClass 	 *            the Class of objects that correspond to DataRows entity. 	 * @param qualifier 	 *            an Expression indicating which objects should be fetched. 	 *  	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|SelectQuery
@@ -455,7 +455,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/** 	 * @since 3.2 	 */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 name|SelectQuery
@@ -1757,7 +1757,7 @@ name|prefetchTree
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Adds a prefetch with specified relationship path to the query. 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Adds a prefetch with specified relationship path to the query. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|PrefetchTreeNode
 name|addPrefetch
@@ -1844,7 +1844,7 @@ name|prefetchPath
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns<code>true</code> if this query should produce a list of data 	 * rows as opposed to DataObjects,<code>false</code> for DataObjects. This 	 * is a hint to QueryEngine executing this query. 	 *  	 * @deprecated since 3.2, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
+comment|/** 	 * Returns<code>true</code> if this query should produce a list of data 	 * rows as opposed to DataObjects,<code>false</code> for DataObjects. This 	 * is a hint to QueryEngine executing this query. 	 *  	 * @deprecated since 4.0, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
 specifier|public
 name|boolean
 name|isFetchingDataRows
@@ -1863,7 +1863,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Sets query result type. If<code>flag</code> parameter is 	 *<code>true</code>, then results will be in the form of data rows. 	 *<p> 	 *<i>Note that if the root of this query is a {@link DbEntity}, this 	 * setting has no effect, and data rows are always fetched.</i> 	 *</p> 	 *  	 * @deprecated since 3.2, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
+comment|/** 	 * Sets query result type. If<code>flag</code> parameter is 	 *<code>true</code>, then results will be in the form of data rows. 	 *<p> 	 *<i>Note that if the root of this query is a {@link DbEntity}, this 	 * setting has no effect, and data rows are always fetched.</i> 	 *</p> 	 *  	 * @deprecated since 4.0, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
 specifier|public
 name|void
 name|setFetchingDataRows
@@ -1944,7 +1944,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useLocalCache
@@ -1967,7 +1967,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 3.2 	 */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useSharedCache
