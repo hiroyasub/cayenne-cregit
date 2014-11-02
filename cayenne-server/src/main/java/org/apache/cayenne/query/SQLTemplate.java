@@ -244,7 +244,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *                  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  */
+comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL  * specified by the user.<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports  * parameters and customization using Velocity scripting language. The most  * straightforward use of scripting abilities is to build parameterized queries.  * For example:  *</p>  *   *<pre>  *                  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the  * User Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but  * also it allows to configure multiple templates and switch them dynamically.  * This way a single query can have multiple "dialects" specific to a given  * database.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -1185,11 +1185,23 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/** 	 * Returns an iterator over parameter sets. Each element returned from the 	 * iterator is a java.util.Map. 	 */
+comment|/** 	 * Returns an iterator over parameter sets. Each element returned from the 	 * iterator is a java.util.Map. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
+name|Deprecated
 specifier|public
 name|Iterator
 argument_list|<
+name|Map
+argument_list|<
+name|String
+argument_list|,
 name|?
+argument_list|>
 argument_list|>
 name|parametersIterator
 parameter_list|()
@@ -1227,7 +1239,9 @@ name|nullMapTransformer
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns the number of parameter sets. 	 */
+comment|/** 	 * Returns the number of parameter sets. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|parametersSize
@@ -1247,7 +1261,36 @@ else|:
 literal|0
 return|;
 block|}
-comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 */
+comment|/** 	 * Initializes parameters map of this query. 	 *  	 * @since 4.0 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|public
+name|void
+name|setParams
+parameter_list|(
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|parameters
+parameter_list|)
+block|{
+comment|// calling a deprecated method until we can remove multi-parameter-batch
+comment|// deprecation.
+name|setParameters
+argument_list|(
+name|parameters
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. For an alternative use 	 *             {@link #createQuery(Map)}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|SQLTemplate
 name|queryWithParameters
@@ -1356,11 +1399,82 @@ argument_list|>
 name|parameters
 parameter_list|)
 block|{
-return|return
-name|queryWithParameters
+comment|// create a query replica
+name|SQLTemplate
+name|query
+init|=
+operator|new
+name|SQLTemplate
+argument_list|()
+decl_stmt|;
+name|query
+operator|.
+name|setRoot
+argument_list|(
+name|root
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setDefaultTemplate
+argument_list|(
+name|getDefaultTemplate
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|templates
+operator|!=
+literal|null
+condition|)
+block|{
+name|query
+operator|.
+name|templates
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|(
+name|templates
+argument_list|)
+expr_stmt|;
+block|}
+name|query
+operator|.
+name|metaData
+operator|.
+name|copyFromInfo
+argument_list|(
+name|this
+operator|.
+name|metaData
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setParams
 argument_list|(
 name|parameters
 argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setColumnNamesCapitalization
+argument_list|(
+name|this
+operator|.
+name|getColumnNamesCapitalization
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|query
 return|;
 block|}
 comment|/** 	 * @since 3.0 	 */
@@ -1781,7 +1895,7 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 */
+comment|/** 	 * Returns a map of parameters. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1789,7 +1903,7 @@ name|String
 argument_list|,
 name|?
 argument_list|>
-name|getParameters
+name|getParams
 parameter_list|()
 block|{
 name|Map
@@ -1839,7 +1953,27 @@ name|emptyMap
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 */
+comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 *  	 * @deprecated since 4.0 in favor of {@link #getParams()}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
+annotation|@
+name|Deprecated
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|getParameters
+parameter_list|()
+block|{
+return|return
+name|getParams
+argument_list|()
+return|;
+block|}
+comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 *  	 * @deprecated since 4.0 in favor of {@link #setParams(Map)}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setParameters

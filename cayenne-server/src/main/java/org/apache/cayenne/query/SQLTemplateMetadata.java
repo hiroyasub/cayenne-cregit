@@ -246,7 +246,7 @@ name|parameters
 init|=
 name|query
 operator|.
-name|getParameters
+name|getParams
 argument_list|()
 decl_stmt|;
 if|if

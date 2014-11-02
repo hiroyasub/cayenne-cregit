@@ -535,7 +535,7 @@ argument_list|)
 decl_stmt|;
 name|q1
 operator|.
-name|getParameters
+name|getParams
 argument_list|()
 operator|.
 name|put

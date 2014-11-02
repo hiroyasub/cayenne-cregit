@@ -420,7 +420,7 @@ specifier|protected
 name|DbAdapter
 name|dbAdapter
 decl_stmt|;
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|SQLTemplateAction
 parameter_list|(
@@ -480,7 +480,7 @@ name|unwrap
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns unwrapped DbAdapter used to find correct SQL for a  given DB.      */
+comment|/** 	 * Returns unwrapped DbAdapter used to find correct SQL for a given DB. 	 */
 specifier|public
 name|DbAdapter
 name|getAdapter
@@ -490,7 +490,7 @@ return|return
 name|dbAdapter
 return|;
 block|}
-comment|/**      * Runs a SQLTemplate query, collecting all results. If a callback expects      * an iterated result, result processing is stopped after the first      * ResultSet is encountered.      */
+comment|/** 	 * Runs a SQLTemplate query, collecting all results. If a callback expects 	 * an iterated result, result processing is stopped after the first 	 * ResultSet is encountered. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -594,9 +594,24 @@ argument_list|(
 name|batchSize
 argument_list|)
 decl_stmt|;
+comment|// for now supporting deprecated batch parameters...
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"deprecation"
+block|,
+literal|"unchecked"
+block|}
+argument_list|)
 name|Iterator
 argument_list|<
+name|Map
+argument_list|<
+name|String
+argument_list|,
 name|?
+argument_list|>
 argument_list|>
 name|it
 init|=
@@ -605,19 +620,20 @@ name|size
 operator|>
 literal|0
 operator|)
-condition|?
+operator|?
 name|query
 operator|.
 name|parametersIterator
 argument_list|()
-else|:
+operator|:
 name|IteratorUtils
 operator|.
 name|singletonIterator
 argument_list|(
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
@@ -636,11 +652,13 @@ operator|++
 control|)
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
 name|nextParameters
 init|=
-operator|(
-name|Map
-operator|)
 name|it
 operator|.
 name|next
@@ -1240,7 +1258,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|protected
 name|RowDescriptorBuilder
 name|configureRowDescriptorBuilder
@@ -1463,7 +1481,7 @@ return|return
 name|builder
 return|;
 block|}
-comment|/**      * Extracts a template string from a SQLTemplate query. Exists mainly for      * the benefit of subclasses that can customize returned template.      *       * @since 1.2      */
+comment|/** 	 * Extracts a template string from a SQLTemplate query. Exists mainly for 	 * the benefit of subclasses that can customize returned template. 	 *  	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|extractTemplateString
@@ -1500,7 +1518,7 @@ literal|' '
 argument_list|)
 return|;
 block|}
-comment|/**      * Binds parameters to the PreparedStatement.      */
+comment|/** 	 * Binds parameters to the PreparedStatement. 	 */
 specifier|protected
 name|void
 name|bind
@@ -1611,7 +1629,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a SQLTemplate for this action.      */
+comment|/** 	 * Returns a SQLTemplate for this action. 	 */
 specifier|public
 name|SQLTemplate
 name|getQuery
@@ -1621,7 +1639,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|protected
 name|int
 name|getFetchOffset
