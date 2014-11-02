@@ -593,8 +593,6 @@ name|internalParameters
 argument_list|)
 argument_list|,
 name|template
-argument_list|,
-name|parameters
 argument_list|)
 decl_stmt|;
 name|ParameterBinding
@@ -657,14 +655,6 @@ name|context
 parameter_list|,
 name|String
 name|template
-parameter_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|?
-argument_list|>
-name|parameters
 parameter_list|)
 throws|throws
 name|Exception
