@@ -86,8 +86,10 @@ name|ServerCase
 extends|extends
 name|DICase
 block|{
-comment|// known runtimes... unit tests may reuse these with @UseServerRuntime annotation or
-comment|// can define their own on the fly (TODO: how would that work with the global schema
+comment|// known runtimes... unit tests may reuse these with @UseServerRuntime
+comment|// annotation or
+comment|// can define their own on the fly (TODO: how would that work with the
+comment|// global schema
 comment|// setup?)
 specifier|public
 specifier|static
@@ -176,6 +178,14 @@ name|String
 name|MULTI_TIER_PROJECT
 init|=
 literal|"cayenne-multi-tier.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SUS_PROJECT
+init|=
+literal|"cayenne-sus.xml"
 decl_stmt|;
 specifier|private
 specifier|static
