@@ -3352,7 +3352,7 @@ name|Query
 name|query
 parameter_list|)
 block|{
-comment|// TODO: use 3.2 TransactionManager
+comment|// TODO: use 4.0 TransactionManager
 if|if
 condition|(
 name|BaseTransaction

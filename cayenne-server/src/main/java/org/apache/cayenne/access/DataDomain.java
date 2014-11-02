@@ -2182,7 +2182,7 @@ name|filters
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new filter, immediately calling its 'init' method. Since 3.2 this      * method also registers passed filter as an event listener, if any of its      * methods have event annotations.      *       * @since 3.1      */
+comment|/**      * Adds a new filter, immediately calling its 'init' method. Since 4.0 this      * method also registers passed filter as an event listener, if any of its      * methods have event annotations.      *       * @since 3.1      */
 specifier|public
 name|void
 name|addFilter

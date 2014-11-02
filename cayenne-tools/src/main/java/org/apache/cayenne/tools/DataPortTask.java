@@ -295,7 +295,7 @@ name|BuildException
 block|{
 name|log
 argument_list|(
-literal|"*** 'cdataport' task is deprecated and will be removed after 3.2"
+literal|"*** 'cdataport' task is deprecated and will be removed after 4.0"
 argument_list|,
 name|Project
 operator|.
