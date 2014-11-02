@@ -80,7 +80,7 @@ specifier|public
 interface|interface
 name|JdbcEventLogger
 block|{
-comment|/**      * Logs an arbitrary message.      */
+comment|/** 	 * Logs an arbitrary message. 	 */
 name|void
 name|log
 parameter_list|(
@@ -88,7 +88,7 @@ name|String
 name|message
 parameter_list|)
 function_decl|;
-comment|/**      * Logs database connection event using container data source.      */
+comment|/** 	 * Logs database connection event using container data source. 	 */
 name|void
 name|logConnect
 parameter_list|(
@@ -109,7 +109,7 @@ name|String
 name|password
 parameter_list|)
 function_decl|;
-comment|/**      * Logs database connection event.      */
+comment|/** 	 * Logs database connection event. 	 */
 name|void
 name|logPoolCreated
 parameter_list|(
@@ -173,7 +173,7 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 name|void
 name|logQueryParameters
 parameter_list|(
@@ -185,7 +185,7 @@ index|[]
 name|bindings
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 4.0 in favor of      *             {@link #logQueryParameters(String, List)}      */
+comment|/** 	 * @deprecated since 4.0 in favor of 	 *             {@link #logQueryParameters(String, BatchParameterBinding[])} 	 */
 annotation|@
 name|Deprecated
 name|void
@@ -220,7 +220,7 @@ name|long
 name|time
 parameter_list|)
 function_decl|;
-comment|/**      *       * @param count      * @param time      *            (milliseconds) time query took to run      * @param sql      *            SQL that was executed, printed when time exceeds timeThreshold      *       * @since 4.0      */
+comment|/** 	 *  	 * @param count 	 * @param time 	 *            (milliseconds) time query took to run 	 * @param sql 	 *            SQL that was executed, printed when time exceeds timeThreshold 	 *  	 * @since 4.0 	 */
 name|void
 name|logSelectCount
 parameter_list|(
@@ -269,7 +269,7 @@ name|Throwable
 name|th
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if current thread default log level is high enough to      * generate output.      */
+comment|/** 	 * Returns true if current thread default log level is high enough to 	 * generate output. 	 */
 name|boolean
 name|isLoggable
 parameter_list|()
