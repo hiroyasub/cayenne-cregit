@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|velocity
 package|;
 end_package
 
@@ -98,6 +96,22 @@ operator|.
 name|cayenne
 operator|.
 name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ParameterBinding
 import|;
 end_import
 

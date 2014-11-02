@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|velocity
 package|;
 end_package
 
@@ -43,6 +41,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|velocity
 operator|.
 name|context
@@ -52,15 +66,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to create a set of SQL conditions to check unequality of an  * ObjectId of an object. Usage in Velocity template is "WHERE  * #bindObjectNotEqual($object)" or "WHERE #bindObjectNotEqual($object $columns  * $idValues)".  *   * @since 3.0  */
+comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text  * for "= ?". If null value is encountered, generated text will look like "IS NULL".  * Usage in Velocity template is "WHERE SOME_COLUMN #bindEqual($xyz)".  *   * @since 1.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|BindObjectNotEqualDirective
+name|BindEqualDirective
 extends|extends
-name|BindObjectEqualDirective
+name|BindDirective
 block|{
 annotation|@
 name|Override
@@ -70,55 +84,8 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"bindObjectNotEqual"
+literal|"bindEqual"
 return|;
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|void
-name|renderColumn
-parameter_list|(
-name|InternalContextAdapter
-name|context
-parameter_list|,
-name|Writer
-name|writer
-parameter_list|,
-name|Object
-name|columnName
-parameter_list|,
-name|int
-name|columnIndex
-parameter_list|)
-throws|throws
-name|IOException
-block|{
-if|if
-condition|(
-name|columnIndex
-operator|>
-literal|0
-condition|)
-block|{
-name|writer
-operator|.
-name|write
-argument_list|(
-literal|" OR "
-argument_list|)
-expr_stmt|;
-block|}
-name|writer
-operator|.
-name|write
-argument_list|(
-name|columnName
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -159,7 +126,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-literal|"<> ?"
+literal|"= ?"
 argument_list|)
 expr_stmt|;
 block|}
@@ -169,7 +136,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-literal|"IS NOT NULL"
+literal|"IS NULL"
 argument_list|)
 expr_stmt|;
 block|}

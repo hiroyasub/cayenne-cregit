@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|velocity
 package|;
 end_package
 
@@ -43,6 +41,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|velocity
 operator|.
 name|context
@@ -52,13 +66,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text  * for "= ?". If null value is encountered, generated text will look like "IS NULL".  * Usage in Velocity template is "WHERE SOME_COLUMN #bindEqual($xyz)".  *   * @since 1.1  */
+comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text for "&lt;&gt;?".  * If null value is encountered, generated text will look like "IS NOT NULL". Usage in  * Velocity template is "WHERE SOME_COLUMN #bindNotEqual($xyz)".  *   * @since 1.1  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|BindEqualDirective
+name|BindNotEqualDirective
 extends|extends
 name|BindDirective
 block|{
@@ -70,7 +84,7 @@ name|getName
 parameter_list|()
 block|{
 return|return
-literal|"bindEqual"
+literal|"bindNotEqual"
 return|;
 block|}
 annotation|@
@@ -112,7 +126,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-literal|"= ?"
+literal|"<> ?"
 argument_list|)
 expr_stmt|;
 block|}
@@ -122,7 +136,7 @@ name|writer
 operator|.
 name|write
 argument_list|(
-literal|"IS NULL"
+literal|"IS NOT NULL"
 argument_list|)
 expr_stmt|;
 block|}

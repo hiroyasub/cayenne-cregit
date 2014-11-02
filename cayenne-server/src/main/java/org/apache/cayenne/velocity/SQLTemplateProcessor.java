@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|velocity
 package|;
 end_package
 
@@ -86,6 +84,54 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ColumnDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|SQLStatement
 import|;
 end_import
 
@@ -194,10 +240,11 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processor for SQL velocity templates.  *   * @see org.apache.cayenne.query.SQLTemplate  * @since 1.1  */
+comment|/**  * Processor for SQL velocity templates.  *   * @see org.apache.cayenne.query.SQLTemplate  * @since 4.0  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|SQLTemplateProcessor
 block|{
@@ -429,6 +476,7 @@ argument_list|)
 throw|;
 block|}
 block|}
+specifier|public
 name|SQLTemplateProcessor
 parameter_list|()
 block|{
@@ -445,6 +493,7 @@ operator|=
 name|sharedUtils
 expr_stmt|;
 block|}
+specifier|public
 name|SQLTemplateProcessor
 parameter_list|(
 name|RuntimeInstance
@@ -467,7 +516,8 @@ operator|=
 name|renderingUtils
 expr_stmt|;
 block|}
-comment|/**      * Builds and returns a SQLStatement based on SQL template and a set of parameters.      * During rendering, VelocityContext exposes the following as variables: all      * parameters in the map, {@link SQLTemplateRenderingUtils} as a "helper" variable and      * SQLStatement object as "statement" variable.      */
+comment|/** 	 * Builds and returns a SQLStatement based on SQL template and a set of 	 * parameters. During rendering, VelocityContext exposes the following as 	 * variables: all parameters in the map, {@link SQLTemplateRenderingUtils} 	 * as a "helper" variable and SQLStatement object as "statement" variable. 	 */
+specifier|public
 name|SQLStatement
 name|processTemplate
 parameter_list|(

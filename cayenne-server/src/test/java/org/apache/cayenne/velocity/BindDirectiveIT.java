@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|velocity
 package|;
 end_package
 
@@ -66,6 +64,22 @@ operator|.
 name|access
 operator|.
 name|MockOperationObserver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|SQLTemplateAction
 import|;
 end_import
 
@@ -1126,7 +1140,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|Collections
 operator|.
@@ -1722,7 +1736,7 @@ argument_list|)
 decl_stmt|;
 name|template
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|parameters
 argument_list|)

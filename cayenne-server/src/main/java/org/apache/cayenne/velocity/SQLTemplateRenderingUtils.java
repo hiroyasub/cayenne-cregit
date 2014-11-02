@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|jdbc
+name|velocity
 package|;
 end_package
 
@@ -27,12 +25,12 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Expression
+name|ExpressionFactory
 import|;
 end_import
 
 begin_comment
-comment|/**  * Implements utility methods used inside Velocity templates  * when rendering SQLTemplates.  *   * @since 1.1  */
+comment|/**  * Implements utility methods used inside Velocity templates when rendering  * SQLTemplates.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -40,7 +38,7 @@ specifier|public
 class|class
 name|SQLTemplateRenderingUtils
 block|{
-comment|/**      * Returns the result of evaluation of expression with object.      */
+comment|/** 	 * Returns the result of evaluation of expression with object. 	 */
 specifier|public
 name|Object
 name|cayenneExp
@@ -53,9 +51,9 @@ name|expression
 parameter_list|)
 block|{
 return|return
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 name|expression
 argument_list|)
