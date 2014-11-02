@@ -23,6 +23,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -50,6 +60,20 @@ argument_list|,
 name|?
 argument_list|>
 name|parameters
+parameter_list|)
+function_decl|;
+comment|/** 	 * Builds and returns a SQLStatement based on SQL template String and a list 	 * of positional parameters. 	 */
+name|SQLStatement
+name|processTemplate
+parameter_list|(
+name|String
+name|template
+parameter_list|,
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|positionalParameters
 parameter_list|)
 function_decl|;
 block|}

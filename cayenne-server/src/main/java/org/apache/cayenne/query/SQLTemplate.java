@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collection
 import|;
 end_import
@@ -52,6 +62,16 @@ operator|.
 name|util
 operator|.
 name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -330,6 +350,13 @@ name|?
 argument_list|>
 index|[]
 name|parameters
+decl_stmt|;
+specifier|protected
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|positionalParams
 decl_stmt|;
 specifier|protected
 name|CapsStrategy
@@ -1261,7 +1288,7 @@ else|:
 literal|0
 return|;
 block|}
-comment|/** 	 * Initializes parameters map of this query. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Initializes named parameter of this query. Note that calling this method 	 * will reset any positional parameters. 	 *  	 * @since 4.0 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1277,15 +1304,59 @@ name|String
 argument_list|,
 name|?
 argument_list|>
-name|parameters
+name|params
 parameter_list|)
 block|{
+comment|// since named parameters are specified, resetting positional
+comment|// parameters
+name|this
+operator|.
+name|positionalParams
+operator|=
+literal|null
+expr_stmt|;
 comment|// calling a deprecated method until we can remove multi-parameter-batch
 comment|// deprecation.
 name|setParameters
 argument_list|(
-name|parameters
+name|params
 argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Initializes positional parameters of the query. This is a positional 	 * style of binding. Names of variables in the expression are ignored and 	 * parameters are bound in order they are found in the expression. E.g. if 	 * the same name is mentioned twice, it can be bound to two different 	 * values. If declared and provided parameters counts are mismatched, an 	 * exception will be thrown. 	 *<p> 	 * Note that calling this method will reset any previously set *named* 	 * parameters. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setParamsArray
+parameter_list|(
+name|Object
+modifier|...
+name|params
+parameter_list|)
+block|{
+comment|// since positional parameters are specified, resetting named
+comment|// parameters
+name|this
+operator|.
+name|parameters
+operator|=
+literal|null
+expr_stmt|;
+name|this
+operator|.
+name|positionalParams
+operator|=
+name|params
+operator|!=
+literal|null
+condition|?
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|params
+argument_list|)
+else|:
+literal|null
 expr_stmt|;
 block|}
 comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. For an alternative use 	 *             {@link #createQuery(Map)}. 	 */
@@ -1895,7 +1966,7 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a map of parameters. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Returns a map of named parameters that will be bound to SQL. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1953,6 +2024,28 @@ name|emptyMap
 argument_list|()
 return|;
 block|}
+comment|/** 	 * Returns a list of positional parameters that will be bound to SQL. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|getPositionalParams
+parameter_list|()
+block|{
+return|return
+name|positionalParams
+operator|!=
+literal|null
+condition|?
+name|positionalParams
+else|:
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+return|;
+block|}
 comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 *  	 * @deprecated since 4.0 in favor of {@link #getParams()}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
 annotation|@
 name|Deprecated
@@ -1972,6 +2065,11 @@ argument_list|()
 return|;
 block|}
 comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 *  	 * @deprecated since 4.0 in favor of {@link #setParams(Map)}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 annotation|@
 name|Deprecated
 specifier|public

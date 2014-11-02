@@ -190,7 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text. There are the  * following possible invocation formats inside the template:  *   *<pre>  * #bind(value) - e.g. #bind($xyz)  * #bind(value jdbc_type_name) - e.g. #bind($xyz 'VARCHAR'). This is the most common and useful form.  * #bind(value jdbc_type_name, scale) - e.g. #bind($xyz 'VARCHAR' 2)  *</pre>  *<p>  * Other examples:  *</p>  *<p>  *<strong>Binding literal parameter value:</strong>  *</p>  *<p>  *<code>"WHERE SOME_COLUMN&gt; #bind($xyz)"</code> produces  *<code>"WHERE SOME_COLUMN&gt; ?"</code> and also places the value of the "xyz" parameter  * in the context "bindings" collection.  *</p>  *<p>  *<strong>Binding ID column of a DataObject value:</strong>  *</p>  *<p>  *<code>"WHERE ID_COL1 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))   * AND ID_COL2 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))"</code> produces<code>"WHERE ID_COL1 = ? AND ID_COL2 = ?"</code> and also places the  * values of id columns of the DataObject parameter "xyz" in the context "bindings"  * collection.  *</p>  *   * @since 1.1  */
+comment|/**  * A custom Velocity directive to create a PreparedStatement parameter text.  * There are the following possible invocation formats inside the template:  *   *<pre>  * #bind(value) - e.g. #bind($xyz)  * #bind(value jdbc_type_name) - e.g. #bind($xyz 'VARCHAR'). This is the most common and useful form.  * #bind(value jdbc_type_name, scale) - e.g. #bind($xyz 'VARCHAR' 2)  *</pre>  *<p>  * Other examples:  *</p>  *<p>  *<strong>Binding literal parameter value:</strong>  *</p>  *<p>  *<code>"WHERE SOME_COLUMN&gt; #bind($xyz)"</code> produces  *<code>"WHERE SOME_COLUMN&gt; ?"</code> and also places the value of the  * "xyz" parameter in the context "bindings" collection.  *</p>  *<p>  *<strong>Binding ID column of a DataObject value:</strong>  *</p>  *<p>  *<code>"WHERE ID_COL1 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))   * AND ID_COL2 = #bind($helper.cayenneExp($xyz, 'db:ID_COL2'))"</code> produces  *<code>"WHERE ID_COL1 = ? AND ID_COL2 = ?"</code> and also places the values  * of id columns of the DataObject parameter "xyz" in the context "bindings"  * collection.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -222,7 +222,7 @@ return|return
 name|LINE
 return|;
 block|}
-comment|/**      * Extracts the value of the object property to render and passes control to      * {@link #render(InternalContextAdapter, Writer, ParameterBinding)} to do the actual      * rendering.      */
+comment|/** 	 * Extracts the value of the object property to render and passes control to 	 * {@link #render(InternalContextAdapter, Writer, ParameterBinding)} to do 	 * the actual rendering. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -394,7 +394,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|render
@@ -583,7 +583,9 @@ parameter_list|)
 throws|throws
 name|MethodInvocationException
 block|{
-return|return
+name|Object
+name|child
+init|=
 operator|(
 name|i
 operator|>=
@@ -610,9 +612,33 @@ name|context
 argument_list|)
 else|:
 literal|null
+decl_stmt|;
+comment|// unwrap postional parameters
+if|if
+condition|(
+name|child
+operator|instanceof
+name|VelocityParamSequence
+condition|)
+block|{
+name|child
+operator|=
+operator|(
+operator|(
+name|VelocityParamSequence
+operator|)
+name|child
+operator|)
+operator|.
+name|next
+argument_list|()
+expr_stmt|;
+block|}
+return|return
+name|child
 return|;
 block|}
-comment|/**      * Adds value to the list of bindings in the context.      */
+comment|/** 	 * Adds value to the list of bindings in the context. 	 */
 specifier|protected
 name|void
 name|bind

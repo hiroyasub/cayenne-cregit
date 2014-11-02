@@ -400,7 +400,7 @@ name|String
 argument_list|,
 name|Object
 argument_list|>
-name|parameters
+name|params
 decl_stmt|;
 specifier|protected
 name|CapsStrategy
@@ -476,7 +476,7 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
-name|parameters
+name|params
 operator|=
 operator|new
 name|HashMap
@@ -642,7 +642,7 @@ name|Object
 name|value
 parameter_list|)
 block|{
-name|parameters
+name|params
 operator|.
 name|put
 argument_list|(
@@ -708,7 +708,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Returns mutable map of parameters that will be bound to SQL. A caller is 	 * free to add/remove parameters from the returned map as needed. 	 * Alternatively one may use chained {@link #params(String, Object)} 	 */
+comment|/** 	 * Returns a mutable map of parameters that will be bound to SQL. A caller 	 * is free to add/remove parameters from the returned map as needed. 	 * Alternatively one may use chained {@link #params(String, Object)} 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -720,7 +720,7 @@ name|getParams
 parameter_list|()
 block|{
 return|return
-name|parameters
+name|params
 return|;
 block|}
 annotation|@
@@ -843,7 +843,7 @@ name|template
 operator|.
 name|setParams
 argument_list|(
-name|parameters
+name|params
 argument_list|)
 expr_stmt|;
 name|template
