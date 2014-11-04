@@ -327,10 +327,16 @@ name|testLocalCacheStaysLocal
 parameter_list|()
 block|{
 name|SelectQuery
+argument_list|<
+name|ClientMtTable1
+argument_list|>
 name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<
+name|ClientMtTable1
+argument_list|>
 argument_list|(
 name|ClientMtTable1
 operator|.
