@@ -223,6 +223,10 @@ name|Parameters
 specifier|public
 specifier|static
 name|Collection
+argument_list|<
+name|Object
+index|[]
+argument_list|>
 name|data
 parameter_list|()
 block|{
