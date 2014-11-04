@@ -97,6 +97,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -140,6 +150,8 @@ literal|"PRIMITIVES_TEST"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommit

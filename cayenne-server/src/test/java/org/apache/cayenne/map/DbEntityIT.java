@@ -111,6 +111,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -139,6 +149,8 @@ specifier|private
 name|ServerRuntime
 name|runtime
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSerializability
@@ -328,6 +340,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConstructor1
@@ -349,6 +363,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConstructor2
@@ -374,6 +390,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCatalog
@@ -411,6 +429,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSchema
@@ -448,6 +468,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFullyQualifiedName
@@ -588,6 +610,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetPrimaryKey
@@ -698,6 +722,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddPKAttribute
@@ -763,6 +789,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangeAttributeToPK
@@ -839,6 +867,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangePKAttribute
@@ -915,6 +945,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveAttribute
@@ -1190,6 +1222,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTranslateToRelatedEntityIndependentPath
@@ -1250,6 +1284,8 @@ name|translated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTranslateToRelatedEntityTrimmedPath
@@ -1310,6 +1346,8 @@ name|translated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTranslateToRelatedEntitySplitHalfWay
@@ -1370,6 +1408,8 @@ name|translated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTranslateToRelatedEntityMatchingPath
@@ -1430,6 +1470,8 @@ name|translated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTranslateToRelatedEntityToOne

@@ -173,6 +173,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -738,6 +748,8 @@ literal|5000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupBy
@@ -897,6 +909,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByMultipleItems
@@ -1133,6 +1147,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByRelatedEntity
@@ -1256,6 +1272,8 @@ name|Artist
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByIdVariable
@@ -1312,6 +1330,8 @@ comment|// Object[] row = (Object[]) data.get(i);
 comment|// assertEquals(new Long(1), row[0]);
 comment|// }
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByHavingOnColumn
@@ -1424,6 +1444,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByHavingOnAggregate
@@ -1536,6 +1558,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByHavingOnAggregateMultipleConditions
@@ -1648,6 +1672,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByJoinedRelatedEntities
@@ -1823,6 +1849,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByJoinedEntities
@@ -1997,6 +2025,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByJoinedEntityInCount
@@ -2144,6 +2174,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByChainedJoins

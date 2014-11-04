@@ -379,6 +379,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -807,6 +817,8 @@ literal|33002
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetch_ToOne_FetchLimit
@@ -967,6 +979,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetch_ToMany_FetchLimit
@@ -1141,6 +1155,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchDataRows
@@ -1421,6 +1437,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchSQLTemplate
@@ -1661,6 +1679,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchToOne
@@ -1809,6 +1829,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that joined entities can have non-standard type mappings.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchDataTypes
@@ -2086,6 +2108,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchToMany
@@ -2278,6 +2302,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchToManyNonConflictingQualifier
@@ -2502,6 +2528,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testJointPrefetchMultiStep

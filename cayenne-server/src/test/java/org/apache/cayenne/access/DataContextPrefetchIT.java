@@ -373,6 +373,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -1006,6 +1016,8 @@ literal|4
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToMany_ViaProperty
@@ -1192,6 +1204,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToMany_WithQualfier
@@ -1488,6 +1502,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToManyNoQualifier
@@ -1666,6 +1682,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test that a to-many relationship is initialized when a target entity has      * a compound PK only partially involved in relationship.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToMany_OnJoinTableDisjoinedPrefetch
@@ -1966,6 +1984,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToManyOnJoinTableJoinedPrefetch_ViaProperty
@@ -2274,6 +2294,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test that a to-many relationship is initialized when a target entity has      * a compound PK only partially involved in relationship.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToManyOnJoinTableJoinedPrefetch
@@ -2571,6 +2593,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test that a to-many relationship is initialized when there is no inverse      * relationship      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToManyNoReverse
@@ -2733,6 +2757,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToManyNoReverseWithQualifier
@@ -2909,6 +2935,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToOne
@@ -3041,6 +3069,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToOne_DbPath
@@ -3109,6 +3139,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToOne_ObjPath
@@ -3177,6 +3209,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ReflexiveRelationship
@@ -3334,6 +3368,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToOneWithQualifierOverlappingPrefetchPath
@@ -3446,6 +3482,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_ToOneWith_OuterJoinFlattenedQualifier
@@ -3666,6 +3704,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch9
@@ -3834,6 +3874,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch_OneToOneWithQualifier
@@ -4037,6 +4079,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToMany_DateInQualifier
@@ -4092,6 +4136,8 @@ name|q
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchingToOneNull
@@ -4196,6 +4242,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToOneSharedCache
@@ -4355,6 +4403,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToOneLocalCache
@@ -4514,6 +4564,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToOneWithBackRelationship
@@ -4676,6 +4728,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchPaintingOverToOneAndToMany
@@ -4857,6 +4911,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToOneWithBackRelationship_Joint

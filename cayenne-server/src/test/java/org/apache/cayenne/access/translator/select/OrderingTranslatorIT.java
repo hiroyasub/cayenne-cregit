@@ -159,6 +159,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -235,6 +245,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Tests ascending ordering on string attribute.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoTranslation1
@@ -330,6 +342,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests descending ordering on string attribute.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoTranslation2
@@ -425,6 +439,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests ascending case-insensitive ordering on string attribute.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoTranslation4
@@ -534,6 +550,8 @@ name|orderBySql
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoTranslation5
@@ -681,6 +699,8 @@ name|orderBySql
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoTranslation6
@@ -828,6 +848,8 @@ name|orderBySql
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoTranslation3

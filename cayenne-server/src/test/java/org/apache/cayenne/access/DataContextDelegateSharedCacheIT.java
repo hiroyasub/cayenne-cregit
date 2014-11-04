@@ -135,6 +135,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -218,6 +228,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that delegate method is invoked on external change of object in      * the store.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testShouldMergeChanges
@@ -378,6 +390,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that delegate method can block changes made by ObjectStore.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBlockedShouldMergeChanges
@@ -498,6 +512,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that delegate method is invoked on external change of object in      * the store.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testShouldProcessDeleteOnExternalChange
@@ -655,6 +671,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that delegate method is invoked on external change of object in      * the store, and is able to block further object processing.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBlockShouldProcessDeleteOnExternalChange

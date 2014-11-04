@@ -143,6 +143,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -174,6 +184,8 @@ specifier|protected
 name|CayenneContext
 name|context
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleSimpleProperties
@@ -249,6 +261,8 @@ name|nodesCreated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testComplimentaryArcs
@@ -354,6 +368,8 @@ name|arcsDeleted
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDelete

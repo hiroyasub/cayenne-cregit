@@ -123,6 +123,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -157,6 +167,8 @@ specifier|private
 name|ObjectContext
 name|context2
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLocalCache

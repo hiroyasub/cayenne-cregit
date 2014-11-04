@@ -175,6 +175,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -345,6 +355,8 @@ literal|"TABLE3_ID"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToOne_TwoNew
@@ -428,6 +440,8 @@ name|t2FK
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToOne_Replace
@@ -554,6 +568,8 @@ name|t2FK
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToOne_ReplaceWithNull
@@ -655,6 +671,8 @@ name|t2FK
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToMany_TwoNew
@@ -738,6 +756,8 @@ name|t4FK
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToMany_AddNew
@@ -920,6 +940,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToMany_AddExisting
@@ -1113,6 +1135,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToMany_RemoveExisting

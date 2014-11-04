@@ -143,6 +143,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -247,6 +257,8 @@ name|handlesNullVsEmptyLOBs
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testManyBlobsInOneTX
@@ -382,6 +394,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEmptyBlob
@@ -411,6 +425,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test5ByteBlob
@@ -432,6 +448,8 @@ literal|5
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test5KByteBlob
@@ -455,6 +473,8 @@ literal|1024
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test1MBBlob
@@ -478,6 +498,8 @@ literal|1024
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullBlob

@@ -111,6 +111,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -131,6 +141,8 @@ specifier|private
 name|ServerRuntime
 name|runtime
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoCache
@@ -228,6 +240,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLocalCache
@@ -297,6 +311,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSharedCache
@@ -366,6 +382,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamedQuery
@@ -444,6 +462,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCacheFetchOffsetAndLimit

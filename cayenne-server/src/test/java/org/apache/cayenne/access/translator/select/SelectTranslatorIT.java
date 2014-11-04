@@ -353,6 +353,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -508,6 +518,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Tests query creation with qualifier and ordering.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString1
@@ -633,6 +645,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests query creation with qualifier and ordering.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDbEntityQualifier
@@ -850,6 +864,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDbEntityQualifier_OuterJoin
@@ -1072,6 +1088,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDbEntityQualifier_FlattenedRel
@@ -1298,6 +1316,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDbEntityQualifier_RelatedMatch
@@ -1522,6 +1542,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Tests query creation with "distinct" specified.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString2
@@ -1582,6 +1604,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test aliases when the same table used in more then 1 relationship. Check      * translation of relationship path "ArtistExhibit.toArtist.artistName" and      * "ArtistExhibit.toExhibit.toGallery.paintingArray.toArtist.artistName".      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString5
@@ -1766,6 +1790,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test aliases when the same table used in more then 1 relationship. Check      * translation of relationship path "ArtistExhibit.toArtist.artistName" and      * "ArtistExhibit.toArtist.paintingArray.paintingTitle".      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString6
@@ -1925,6 +1951,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test query when qualifying on the same attribute more than once. Check      * translation "Artist.dateOfBirth> ? AND Artist.dateOfBirth< ?".      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString7
@@ -2094,6 +2122,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test query when qualifying on the same attribute accessed over      * relationship, more than once. Check translation      * "Painting.toArtist.dateOfBirth> ? AND Painting.toArtist.dateOfBirth<      * ?".      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString8
@@ -2266,6 +2296,8 @@ name|i3
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString9
@@ -2548,6 +2580,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString10
@@ -2685,6 +2719,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString11
@@ -2759,6 +2795,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString12
@@ -2896,6 +2934,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlString13
@@ -2959,6 +2999,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlStringWithQuoteSqlIdentifiers
@@ -3276,6 +3318,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlStringWithQuoteSqlIdentifiers2
@@ -3662,6 +3706,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlStringWithQuoteSqlIdentifiers3
@@ -4487,6 +4533,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCreateSqlStringWithQuoteSqlIdentifiers4
@@ -5110,6 +5158,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Tests columns generated for a simple object query.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBuildResultColumns1
@@ -5210,6 +5260,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Tests columns generated for an object query with joint prefetch.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBuildResultColumns2

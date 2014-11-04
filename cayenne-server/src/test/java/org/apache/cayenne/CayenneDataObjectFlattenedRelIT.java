@@ -219,6 +219,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -483,6 +493,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReadFlattenedRelationship
@@ -536,6 +548,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReadFlattenedRelationship2
@@ -621,6 +635,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddToFlattenedRelationship
@@ -861,6 +877,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// Test case to show up a bug in committing more than once
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoubleCommitAddToFlattenedRelationship
@@ -1031,6 +1049,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveFromFlattenedRelationship
@@ -1129,6 +1149,8 @@ block|}
 comment|// Demonstrates a possible bug in ordering of deletes, when a flattened relationships
 comment|// link record is deleted at the same time (same transaction) as one of the record to
 comment|// which it links.
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveFlattenedRelationshipAndRootRecord
@@ -1215,6 +1237,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddRemoveFlattenedRelationship1
@@ -1334,6 +1358,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddRemoveFlattenedRelationship2

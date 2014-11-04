@@ -94,6 +94,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -102,6 +112,18 @@ operator|.
 name|Mockito
 operator|.
 name|mock
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -125,6 +147,8 @@ specifier|protected
 name|CayenneContext
 name|context
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testShouldProcessEvent
@@ -298,6 +322,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNodePropertyChanged

@@ -521,6 +521,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -1199,6 +1209,8 @@ literal|21000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCurrentSnapshot1
@@ -1290,6 +1302,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCurrentSnapshot2
@@ -1406,6 +1420,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCurrentSnapshot3
@@ -1524,6 +1540,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Testing snapshot with to-one fault. This was a bug CAY-96.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCurrentSnapshotWithToOneFault
@@ -1634,6 +1652,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests how CHAR field is handled during fetch. Some databases (Oracle...)      * would pad a CHAR column with extra spaces, returned to the client.      * Cayenne should trim it.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCharFetch
@@ -1691,6 +1711,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests how CHAR field is handled during fetch in the WHERE clause. Some      * databases (Oracle...) would pad a CHAR column with extra spaces, returned      * to the client. Cayenne should trim it.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCharInQualifier
@@ -1751,6 +1773,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test fetching query with multiple relationship paths between the same 2      * entities used in qualifier.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultiObjRelFetch
@@ -1825,6 +1849,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test fetching query with multiple relationship paths between the same 2      * entities used in qualifier.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultiDbRelFetch
@@ -1896,6 +1922,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectDate
@@ -1963,6 +1991,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCaseInsensitiveOrdering
@@ -2163,6 +2193,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelect_DataRows
@@ -2243,6 +2275,8 @@ name|DataRow
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformSelectQuery1
@@ -2317,6 +2351,8 @@ name|Artist
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformSelectQuery2
@@ -2458,6 +2494,8 @@ name|Artist
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformQuery_Routing
@@ -2540,6 +2578,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformNonSelectingQuery
@@ -2621,6 +2661,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformNonSelectingQueryCounts1
@@ -2755,6 +2797,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformNonSelectingQueryCounts2
@@ -3003,6 +3047,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformPaginatedQuery
@@ -3120,6 +3166,8 @@ name|Artist
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformPaginatedQuery1
@@ -3231,6 +3279,8 @@ name|Artist
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformPaginatedQueryBigPage
@@ -3316,6 +3366,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformDataRowQuery
@@ -3402,6 +3454,8 @@ argument_list|>
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesRO1
@@ -3463,6 +3517,8 @@ comment|// exception is expected,
 comment|// must blow on saving new "read-only" object.
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesRO2
@@ -3547,6 +3603,8 @@ comment|// exception is expected,
 comment|// must blow on saving new "read-only" object.
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesRO3
@@ -3627,6 +3685,8 @@ comment|// exception is expected,
 comment|// must blow on saving new "read-only" object.
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesRO4
@@ -3750,6 +3810,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIterate
@@ -3840,6 +3902,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIterateDataRows
@@ -3932,6 +3996,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIterator
@@ -4008,6 +4074,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformIteratedQuery1
@@ -4089,6 +4157,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformIteratedQuery2
@@ -4206,6 +4276,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Tests that hasChanges performs correctly when an object is "modified" and      * the property is simply set to the same value (an unreal modification)      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHasChangesPhantom
@@ -4265,6 +4337,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that hasChanges performs correctly when an object is "modified" and      * the property is simply set to the same value (an unreal modification)      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHasChangesRealModify
@@ -4311,6 +4385,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInvalidateObjects_Vararg
@@ -4469,6 +4545,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInvalidateObjects
@@ -4632,6 +4710,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBeforeHollowDeleteShouldChangeStateToCommited
@@ -4731,6 +4811,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitUnchangedInsert

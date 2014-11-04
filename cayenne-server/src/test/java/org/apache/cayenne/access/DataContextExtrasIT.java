@@ -327,6 +327,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -626,6 +636,8 @@ literal|3000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testManualIdProcessingOnCommit
@@ -730,6 +742,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveFault
@@ -824,6 +838,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testResolveFaultFailure
@@ -876,6 +892,8 @@ parameter_list|)
 block|{
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUserProperties
@@ -920,6 +938,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHasChangesNew
@@ -954,6 +974,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNewObject
@@ -1002,6 +1024,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNewObjectWithClass
@@ -1049,6 +1073,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIdObjectFromDataRow
@@ -1140,6 +1166,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPartialObjectFromDataRow
@@ -1240,6 +1268,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFullObjectFromDataRow
@@ -1356,6 +1386,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesError
@@ -1523,6 +1555,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Testing behavior of Cayenne when a database exception is thrown in SELECT query.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectException
@@ -1565,6 +1599,8 @@ block|{
 comment|// exception expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEntityResolver
@@ -1579,6 +1615,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPhantomModificationsValidate
@@ -1733,6 +1771,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPhantomModificationsValidateToOne
@@ -1806,6 +1846,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidateOnToManyChange
@@ -1893,6 +1935,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPhantomAttributeModificationCommit
@@ -1977,6 +2021,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPhantomRelationshipModificationCommit
@@ -2121,6 +2167,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPhantomRelationshipModificationValidate

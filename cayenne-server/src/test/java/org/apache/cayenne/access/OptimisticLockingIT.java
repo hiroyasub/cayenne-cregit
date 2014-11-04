@@ -17,36 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -198,6 +168,46 @@ operator|.
 name|server
 operator|.
 name|UseServerRuntime
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
 import|;
 end_import
 
@@ -645,6 +655,8 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnDelete
@@ -723,6 +735,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnDeleteFollowedByInvalidate
@@ -808,6 +822,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnDeleteFollowedByForgetSnapshot
@@ -902,6 +918,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnDeletePrecededByInvalidate
@@ -987,6 +1005,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnDeletePrecededByForgetSnapshot
@@ -1081,6 +1101,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailSimpleLockingOnDelete
@@ -1179,6 +1201,8 @@ block|{
 comment|// optimistic lock failure expected...
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnUpdate
@@ -1257,6 +1281,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnUpdateFollowedByInvalidate
@@ -1342,6 +1368,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnUpdatePrecededByInvalidate
@@ -1427,6 +1455,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnUpdateFollowedByForgetSnapshot
@@ -1521,6 +1551,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessSimpleLockingOnUpdatePrecededByForgetSnapshot
@@ -1615,6 +1647,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailSimpleLocking
@@ -1714,6 +1748,8 @@ block|{
 comment|// optimistic lock failure expected...
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailLockingOnNull
@@ -1826,6 +1862,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessLockingOnMixed
@@ -1955,6 +1993,8 @@ comment|// TODO: it would be nice to pick inside DataContext to see that 3 batch
 comment|// generated...
 comment|// this requires refactoring of ContextCommit.
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailLockingOnToOne
@@ -2079,6 +2119,8 @@ block|{
 comment|// optimistic lock failure expected...
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailRetrieveRow
@@ -2196,6 +2238,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFailRetrieveDeletedRow

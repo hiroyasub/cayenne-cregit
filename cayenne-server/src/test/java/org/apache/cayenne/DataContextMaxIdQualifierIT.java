@@ -219,6 +219,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -497,6 +507,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisjointByIdPrefetch
@@ -580,6 +592,8 @@ name|queriesCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisjointByIdPrefetch_Zero
@@ -663,6 +677,8 @@ name|queriesCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDisjointByIdPrefetch_Negative
@@ -747,6 +763,8 @@ name|queriesCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncrementalFaultList_Lower
@@ -902,6 +920,8 @@ name|queriesCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncrementalFaultList_Higher
@@ -1057,6 +1077,8 @@ name|queriesCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncrementalFaultList_Zero
@@ -1158,6 +1180,8 @@ name|queriesCount
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncrementalFaultList_Negative

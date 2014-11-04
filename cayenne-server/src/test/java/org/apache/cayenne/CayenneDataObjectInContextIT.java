@@ -171,6 +171,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -279,6 +289,8 @@ literal|"ARTIST_NAME"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDoubleRegistration
@@ -403,6 +415,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesInBatch
@@ -500,6 +514,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetObjectId
@@ -536,6 +552,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStateTransToNew
@@ -580,6 +598,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStateNewToCommitted
@@ -636,6 +656,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStateCommittedToModified
@@ -704,6 +726,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStateModifiedToCommitted
@@ -775,6 +799,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStateCommittedToDeleted
@@ -838,6 +864,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testStateDeletedToTransient
@@ -928,6 +956,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetContext
@@ -966,6 +996,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchByAttribute
@@ -1053,6 +1085,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUniquing
@@ -1155,6 +1189,8 @@ name|a2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotVersion1
@@ -1232,6 +1268,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotVersion2
@@ -1315,6 +1353,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotVersion3
@@ -1406,6 +1446,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests a condition when user substitutes object id of a new object instead of      * setting replacement. This is demonstrated here -      * http://objectstyle.org/cayenne/lists/cayenne-user/2005/01/0210.html      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectsCommittedManualOID

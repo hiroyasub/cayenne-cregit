@@ -67,6 +67,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -81,6 +91,8 @@ name|DefaultOperationObserverIT
 extends|extends
 name|ServerCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHasExceptions1
@@ -121,6 +133,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testHasExceptions2

@@ -183,6 +183,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_comment
 comment|/**  * Special test cases per CAY-1378, CAY-1379.  */
 end_comment
@@ -251,6 +261,8 @@ literal|"ROLES"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupActions
@@ -411,6 +423,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFlattenedNullifyNullifyDeleteRules

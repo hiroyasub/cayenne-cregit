@@ -66,6 +66,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -103,6 +113,8 @@ name|DefaultTransactionManagerIT
 extends|extends
 name|ServerCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformInTransaction_NoTx
@@ -208,6 +220,8 @@ name|result
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPerformInTransaction_ExistingTx

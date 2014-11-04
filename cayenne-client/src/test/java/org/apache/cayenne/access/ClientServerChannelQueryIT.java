@@ -253,6 +253,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -268,6 +278,18 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -473,6 +495,8 @@ literal|"g2"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPaginatedQueryServerCacheOverflow
@@ -588,6 +612,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testParameterizedMappedToEJBQLQueries
@@ -652,6 +678,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNamedQuery
@@ -707,6 +735,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQueryEntityNameRoot
@@ -762,6 +792,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQueryClientClassRoot
@@ -819,6 +851,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQuerySimpleQualifier
@@ -883,6 +917,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQueryToManyRelationshipQualifier
@@ -947,6 +983,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQueryOrdering
@@ -1134,6 +1172,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQueryPrefetchToOne
@@ -1260,6 +1300,8 @@ name|target
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectQueryPrefetchToMany

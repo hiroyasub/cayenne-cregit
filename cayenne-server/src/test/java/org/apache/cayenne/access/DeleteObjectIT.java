@@ -197,6 +197,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -465,6 +475,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteObject
@@ -548,6 +560,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteObjects1
@@ -639,6 +653,8 @@ block|}
 block|}
 comment|// Similar to testDeleteObjects2, but extract ObjectContext instead of
 comment|// DataContext.
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteObjects2
@@ -770,6 +786,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteObjectsRelationshipCollection
@@ -928,6 +946,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteObjectInIterator
@@ -1086,6 +1106,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteHollow
@@ -1165,6 +1187,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteNew

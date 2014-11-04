@@ -127,6 +127,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -147,6 +157,8 @@ specifier|private
 name|CayenneContext
 name|context
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyToOne
@@ -237,6 +249,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDenyToOne
@@ -321,6 +335,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeToOne
@@ -415,6 +431,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeToOneNewObject

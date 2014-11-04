@@ -183,6 +183,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|lang
@@ -265,6 +275,8 @@ literal|"CHARACTER_ENTITY"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSerializable
@@ -383,6 +395,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testByteArray
@@ -487,6 +501,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCharArray
@@ -591,6 +607,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCharacterArray
@@ -707,6 +725,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCharacter
@@ -804,6 +824,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testByteWrapperArray

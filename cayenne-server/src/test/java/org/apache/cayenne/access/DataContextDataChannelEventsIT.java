@@ -177,6 +177,16 @@ name|EventUtil
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_comment
 comment|/**  * Tests that DataContext sends DataChannel events.  */
 end_comment
@@ -213,6 +223,8 @@ specifier|private
 name|ServerRuntime
 name|runtime
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitEvent
@@ -316,6 +328,8 @@ literal|10000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackEvent
@@ -419,6 +433,8 @@ literal|10000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangeEventOnChildChange
@@ -542,6 +558,8 @@ literal|10000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangeEventOnPeerChange
@@ -655,6 +673,8 @@ literal|10000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChangeEventOnPeerChangeSecondNestingLevel

@@ -125,6 +125,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|naming
@@ -163,6 +173,8 @@ specifier|private
 name|Injector
 name|injector
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetDataSource_NameBound
@@ -259,6 +271,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetDataSource_NameBoundWithPrefix
@@ -359,6 +373,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetDataSource_NameNotBound

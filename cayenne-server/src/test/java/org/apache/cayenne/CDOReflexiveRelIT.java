@@ -79,6 +79,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_comment
 comment|/**  * Some more tests regarding reflexive relationships, especially related to delete rules  * etc. The implementation is hairy, and so needs a really good workout.  */
 end_comment
@@ -101,6 +111,8 @@ specifier|private
 name|ObjectContext
 name|context
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddDeleteNoCommit
@@ -159,6 +171,8 @@ name|parentGroup
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddDeleteWithCommit
@@ -227,6 +241,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReplaceDeleteNoCommit
@@ -318,6 +334,8 @@ name|parentGroup2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReplaceDeleteWithCommit
@@ -419,6 +437,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitReplaceCommit
@@ -506,6 +526,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testComplexInsertUpdateOrdering

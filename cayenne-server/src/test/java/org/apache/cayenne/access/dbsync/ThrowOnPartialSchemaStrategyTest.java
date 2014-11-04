@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -117,6 +107,26 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -131,6 +141,8 @@ name|ThrowOnPartialSchemaStrategyTest
 extends|extends
 name|SchemaUpdateStrategyBase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testThrowOnPartialStrategyTableNoExist
@@ -235,6 +247,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testThrowOnPartialStrategyTableExist
@@ -299,6 +313,8 @@ name|observer
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testThrowOnPartialStrategyWithOneTable

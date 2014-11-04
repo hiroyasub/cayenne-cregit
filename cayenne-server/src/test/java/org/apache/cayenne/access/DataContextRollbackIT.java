@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -191,6 +181,26 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -268,6 +278,8 @@ literal|"ARTIST"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackNew
@@ -417,6 +429,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackNewObject
@@ -543,6 +557,8 @@ block|}
 comment|// Catches a bug where new objects were unregistered within an object iterator, thus
 comment|// modifying the collection the iterator was iterating over
 comment|// (ConcurrentModificationException)
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackWithMultipleNewObjects
@@ -698,6 +714,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackRelationshipModification
@@ -944,6 +962,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackDeletedObject
@@ -1080,6 +1100,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRollbackModifiedObject

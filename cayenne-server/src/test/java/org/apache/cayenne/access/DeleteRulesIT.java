@@ -259,6 +259,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -365,6 +375,8 @@ literal|"DELETE_RULE_FLATA"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDenyToOne
@@ -435,6 +447,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoActionToOne
@@ -490,6 +504,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoActionToMany
@@ -541,6 +557,8 @@ argument_list|)
 expr_stmt|;
 comment|// don't commit, since this will cause a constraint exception
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoActionFlattened
@@ -663,6 +681,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoActionFlattenedNoReverse
@@ -783,6 +803,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeFlattened
@@ -892,6 +914,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeFlattenedNoReverse
@@ -1012,6 +1036,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyFlattened
@@ -1134,6 +1160,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyFlattenedNoReverse
@@ -1254,6 +1282,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDenyFlattened
@@ -1348,6 +1378,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDenyFlattenedNoReverse

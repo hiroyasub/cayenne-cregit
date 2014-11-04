@@ -79,6 +79,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -230,6 +240,8 @@ comment|// Test various delete orders. There are more possible literal combinati
 comment|// ones below fairly well
 comment|// encompass the various orders that might be a problem. Add more if additional
 comment|// problems come to light
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReflexiveRelationshipDelete1
@@ -269,6 +281,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReflexiveRelationshipDelete2
@@ -308,6 +322,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReflexiveRelationshipDelete3
@@ -347,6 +363,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReflexiveRelationshipDelete4

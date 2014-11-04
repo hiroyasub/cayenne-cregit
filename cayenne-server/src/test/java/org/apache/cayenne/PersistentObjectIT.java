@@ -50,6 +50,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -75,6 +85,8 @@ name|PersistentObjectIT
 extends|extends
 name|ServerCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectContext
@@ -123,6 +135,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPersistenceState
@@ -169,6 +183,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectID

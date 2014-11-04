@@ -243,6 +243,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -648,6 +658,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectCompound1
@@ -905,6 +917,8 @@ comment|// TODO: andrus 1/5/2007 - CAY-952: SelectQuery uses INNER JOIN for flat
 comment|// attributes, while
 comment|// EJBQLQuery does an OUTER JOIN... which seems like a better idea...
 comment|// 14/01/2010 now it uses LEFT JOIN
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectCompound2
@@ -1073,6 +1087,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Emulates the situation when flattened attribute has unusual(long) name, that puts      * this attribute property to the top of PersistentDescriptor.declaredProperties map,      * {@link PersistentDescriptor}[105] That forced an error during the building of the      * SelectQuery statement, CAY-1484      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectCompoundLongNames
@@ -1114,6 +1130,8 @@ name|objects
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEJQBQL
@@ -1229,6 +1247,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEJQBQLCollectionTheta
@@ -1330,6 +1350,8 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEJQBQLLike
@@ -1431,6 +1453,8 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEJQBQLBetween
@@ -1534,6 +1558,8 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEJQBQLSubquery
@@ -1607,6 +1633,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEJQBQLHaving
@@ -1693,6 +1721,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInsert
@@ -1842,6 +1872,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDelete
@@ -2031,6 +2063,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdate

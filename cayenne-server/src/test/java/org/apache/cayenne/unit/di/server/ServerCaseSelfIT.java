@@ -63,6 +63,16 @@ name|Provider
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -98,6 +108,8 @@ specifier|protected
 name|ServerCaseProperties
 name|properties
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetup_TearDown_Runtime

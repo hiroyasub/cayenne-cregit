@@ -287,6 +287,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -529,6 +539,8 @@ name|date
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testProperties
@@ -580,6 +592,8 @@ name|dataNode
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExecuteSelect
@@ -811,6 +825,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectUtilDate
@@ -1001,6 +1017,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectSQLDate
@@ -1191,6 +1209,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectSQLTimestamp
@@ -1385,6 +1405,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExecuteUpdate
@@ -1597,6 +1619,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExecuteUpdateNoParameters
@@ -1706,6 +1730,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExecuteUpdateBatch
@@ -2148,6 +2174,8 @@ expr_stmt|;
 comment|// to compare dates we need to create the binding correctly
 comment|// assertEquals(bindings2.get("dob"), row2.get("DATE_OF_BIRTH"));
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExtractTemplateString

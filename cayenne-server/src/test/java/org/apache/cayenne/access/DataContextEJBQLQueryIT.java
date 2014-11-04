@@ -271,6 +271,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -676,6 +686,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * CAY-899: Checks that aggregate results do not cause callbacks execution.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectAggregatePostLoadCallback
@@ -813,6 +825,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectAggregate
@@ -953,6 +967,8 @@ literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectAggregateNull
@@ -1073,6 +1089,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEntityPathsScalarResult
@@ -1147,6 +1165,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEntityPathsArrayResult
@@ -1327,6 +1347,8 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSimpleSelect
@@ -1409,6 +1431,8 @@ name|COMMITTED
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchLimit
@@ -1464,6 +1488,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereEqual
@@ -1532,6 +1558,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereEqualReverseOrder
@@ -1611,6 +1639,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNot
@@ -1703,6 +1733,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNotEquals
@@ -1795,6 +1827,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereOrEqual
@@ -1914,6 +1948,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereAndEqual
@@ -2005,6 +2041,8 @@ literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereBetween
@@ -2094,6 +2132,8 @@ literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNotBetween
@@ -2183,6 +2223,8 @@ literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereGreater
@@ -2272,6 +2314,8 @@ literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereGreaterOrEqual
@@ -2320,6 +2364,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereLess
@@ -2409,6 +2455,8 @@ literal|0.01
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereLessOrEqual
@@ -2457,6 +2505,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereDecimalNumber
@@ -2505,6 +2555,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereDecimalNumberPositional
@@ -2566,6 +2618,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereDecimalNumberNamed
@@ -2627,6 +2681,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereMatchOnObject
@@ -2725,6 +2781,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereMatchRelationshipAndScalar
@@ -2798,6 +2856,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereMatchOnMultiColumnObject
@@ -2935,6 +2995,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereMatchOnMultiColumnObjectReverse
@@ -3083,6 +3145,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNoMatchOnMultiColumnObject

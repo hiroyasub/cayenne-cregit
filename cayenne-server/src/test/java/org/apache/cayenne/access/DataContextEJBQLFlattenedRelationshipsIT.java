@@ -165,6 +165,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -462,6 +472,8 @@ literal|"ft4"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionMemberOfThetaJoin
@@ -613,6 +625,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionMemberOfThetaJoinLongRelationshipSequence
@@ -809,6 +823,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionInnerJoin
@@ -965,6 +981,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionAsInnerJoin
@@ -1122,6 +1140,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionThetaJoin
@@ -1267,6 +1287,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionIdentificationVariable
@@ -1437,6 +1459,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAssociationFieldSelect
@@ -1580,6 +1604,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionSubquery
@@ -1611,6 +1637,8 @@ comment|// the reason is that property "ft3Array" inside the subquery
 comment|// parses as unmapped
 comment|/*          * List<?> objects = context.performQuery(query); assertNotNull(objects);          * assertFalse(objects.isEmpty()); assertEquals(1, objects.size()); Set<Object>          * ids = new HashSet<Object>(); Iterator<?> it = objects.iterator(); while          * (it.hasNext()) { Object id = Cayenne.pkForObject((Persistent) it.next());          * ids.add(id); } assertTrue(ids.contains(new Integer(2)));          */
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionSubquery1
@@ -1744,6 +1772,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGroupByFlattenedRelationship

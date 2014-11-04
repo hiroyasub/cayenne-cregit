@@ -157,6 +157,16 @@ name|ValidationResult
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_comment
 comment|/**  */
 end_comment
@@ -239,6 +249,8 @@ literal|"ARTIST"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidatingObjectsOnCommitProperty
@@ -277,6 +289,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidatingObjectsOnCommit
@@ -364,6 +378,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidationModifyingContext

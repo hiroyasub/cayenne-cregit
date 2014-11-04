@@ -201,6 +201,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -333,6 +343,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*      * TODO: olga: We need divided TYPES_MAPPING_TES2 to 2 schemas with lobs columns and not lobs columns       */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBIGINT
@@ -436,6 +448,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBIGINT2
@@ -534,6 +548,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBINARY
@@ -688,6 +704,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBINARY2
@@ -834,6 +852,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBIT
@@ -967,6 +987,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBIT2
@@ -1065,6 +1087,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBLOB
@@ -1219,6 +1243,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBLOB2
@@ -1365,6 +1391,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBOOLEAN
@@ -1498,6 +1526,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBOOLEAN2
@@ -1596,6 +1626,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCHAR
@@ -1699,6 +1731,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCHAR2
@@ -1797,6 +1831,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCLOB
@@ -1972,6 +2008,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCLOB2
@@ -2112,6 +2150,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDATE
@@ -2248,6 +2288,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDATE2
@@ -2379,6 +2421,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDECIMAL
@@ -2486,6 +2530,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDECIMAL2
@@ -2588,6 +2634,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDOUBLE
@@ -2691,6 +2739,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDOUBLE2
@@ -2789,6 +2839,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFLOAT
@@ -2915,9 +2967,13 @@ operator|)
 operator|.
 name|floatValue
 argument_list|()
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFLOAT2
@@ -3016,6 +3072,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testINTEGER
@@ -3119,6 +3177,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testINTEGER2
@@ -3217,6 +3277,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLONGVARBINARY
@@ -3371,6 +3433,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLONGVARBINARY2
@@ -3517,6 +3581,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLONGVARCHAR
@@ -3653,6 +3719,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLONGVARCHAR2
@@ -3784,6 +3852,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNUMERIC
@@ -3891,6 +3961,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNUMERIC2
@@ -3993,6 +4065,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testREAL
@@ -4139,6 +4213,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testREAL2
@@ -4237,6 +4313,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSMALLINT
@@ -4340,6 +4418,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSMALLINT2
@@ -4438,6 +4518,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTIME
@@ -4599,6 +4681,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTIME2
@@ -4750,6 +4834,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSQLTemplateTime
@@ -4900,6 +4986,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTIMESTAMP
@@ -5029,6 +5117,8 @@ literal|1000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTIMESTAMP2
@@ -5153,6 +5243,8 @@ literal|1000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTINYINT
@@ -5270,6 +5362,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTINYINT2
@@ -5368,6 +5462,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVARBINARY
@@ -5522,6 +5618,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVARBINARY2
@@ -5668,6 +5766,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVARCHAR
@@ -5771,6 +5871,8 @@ name|columnValue
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testVARCHAR2

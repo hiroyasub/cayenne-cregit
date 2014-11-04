@@ -17,56 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Date
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -287,6 +237,66 @@ name|SQLTemplateCustomizer
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Date
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * Test suite for testing behavior of multiple DataContexts that share the same underlying  * DataDomain.  */
 end_comment
@@ -427,6 +437,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that refreshing snapshots as a result of the database fetch will      * be propagated across DataContexts.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotChangePropagationOnSelect
@@ -649,6 +661,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that changes made to an object in one ObjectStore and committed      * to the database will be reflected in the peer ObjectStore using the same      * DataRowCache.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotChangePropagation
@@ -807,6 +821,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that changes made to an object in one ObjectStore and committed      * to the database will be correctly merged in the peer ObjectStore using the same      * DataRowCache. E.g. modified objects will be merged so that no new changes are lost.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotChangePropagationToModifiedObjects
@@ -1035,6 +1051,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that deleting an object in one ObjectStore and committing to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default COMMITTED objects will be changed to TRANSIENT.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotDeletePropagationToCommitted
@@ -1174,6 +1192,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that deleting an object in one ObjectStore and committed to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default HOLLOW objects will be changed to TRANSIENT.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotDeletePropagationToHollow
@@ -1298,6 +1318,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that deleting an object in one ObjectStore and committed to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default MODIFIED objects will be changed to NEW.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotDeletePropagationToModified
@@ -1484,6 +1506,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that deleting an object in one ObjectStore and committing to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default DELETED objects will be changed to TRANSIENT.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotDeletePropagationToDeleted
@@ -1619,6 +1643,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that deleting an object in one ObjectStore and committing to the      * database will be reflected in the peer ObjectStore using the same DataRowCache,      * including proper processing of deleted object being held in to-many collections.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotDeletePropagationToManyRefresh
@@ -1962,6 +1988,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test case to prove that inserting an object in one ObjectStore and committing to      * the database will be reflected in the peer ObjectStore using the same DataRowCache.      * This would mean refreshing to-many collections.      *       * @throws Exception      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotInsertPropagationToManyRefresh
@@ -2208,6 +2236,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Checks that cache is refreshed when a query "refreshingObjects" property is set to      * true.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCacheRefreshingOnSelect
@@ -2441,6 +2471,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotEvictedForHollow
@@ -2542,6 +2574,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotEvictedAndObjectsHollowedForInvalidate
@@ -2733,6 +2767,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotEvictedForCommitted
@@ -2852,6 +2888,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotEvictedForModified
@@ -2971,6 +3009,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotEvictedAndChangedForModified
@@ -3163,6 +3203,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSnapshotEvictedForDeleted

@@ -183,6 +183,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -337,6 +347,8 @@ literal|"GALLERY"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEncodeAsXML
@@ -485,6 +497,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionType
@@ -525,6 +539,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSerializability
@@ -596,6 +612,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetClientRelationship
@@ -702,6 +720,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetReverseDbRelationshipPath
@@ -781,6 +801,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetDbRelationshipPath
@@ -836,6 +858,8 @@ literal|"paintingArray"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRefreshFromPath
@@ -1101,6 +1125,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCalculateToMany
@@ -1359,6 +1385,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCalculateToManyFromPath
@@ -1644,6 +1672,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTargetEntity
@@ -1754,6 +1784,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetReverseRel1
@@ -1828,6 +1860,8 @@ name|r2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetReverseRel2
@@ -1902,6 +1936,8 @@ name|r2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingleDbRelationship
@@ -2008,6 +2044,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFlattenedRelationship
@@ -2215,6 +2253,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReadOnly_Flattened1_1__N_1
@@ -2319,6 +2359,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReadOnlyMoreThan3DbRelsRelationship
@@ -2473,6 +2515,8 @@ block|}
 comment|// Test for a read-only flattened relationship that is readonly because it's
 comment|// dbrel
 comment|// sequence is "incorrect" (or rather, unsupported)
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIncorrectSequenceReadOnlyRelationship
@@ -2586,6 +2630,8 @@ expr_stmt|;
 block|}
 comment|// Test a relationship loaded from the test datamap that we know should be
 comment|// flattened
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testKnownFlattenedRelationship
@@ -2639,6 +2685,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBadDeleteRuleValue
@@ -2675,6 +2723,8 @@ block|{
 comment|// Good... it should throw an exception
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOkDeleteRuleValue

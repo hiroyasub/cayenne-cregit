@@ -253,6 +253,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -561,6 +571,8 @@ literal|21000
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListType
@@ -625,6 +637,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test that all queries specified in prefetch are executed with a single prefetch      * path.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch1
@@ -767,6 +781,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test that a to-many relationship is initialized.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch3
@@ -914,6 +930,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Test that a to-one relationship is initialized.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch4

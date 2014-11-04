@@ -389,6 +389,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -1077,6 +1087,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMatchingOnSuperAttributes
@@ -1154,6 +1166,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMatchingOnSuperAttributesWithPrefetch
@@ -1240,6 +1254,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPaginatedQueries
@@ -1356,6 +1372,8 @@ name|Employee
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelationshipToAbstractSuper
@@ -1431,6 +1449,8 @@ name|Employee
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelationshipAbstractFromSuperPrefetchingJoint
@@ -1641,6 +1661,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelationshipAbstractFromSuperPrefetchingDisjoint
@@ -1844,6 +1866,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelationshipAbstractToSuperPrefetchingDisjoint
@@ -1992,6 +2016,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelationshipAbstractToSuperPrefetchingJoint
@@ -2101,6 +2127,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSave
@@ -2252,6 +2280,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that to-one relationship produces correct subclass.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEmployeeAddress
@@ -2321,6 +2351,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that to-one relationship produces correct subclass.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testManagerAddress
@@ -2394,6 +2426,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCAY592
@@ -2514,6 +2548,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that to-one relationship produces correct subclass.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRepCompany
@@ -2606,6 +2642,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that to-many relationship produces correct subclasses.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDepartmentEmployees
@@ -2708,6 +2746,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectInheritanceResolving
@@ -2796,6 +2836,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test for CAY-1008: Reverse relationships may not be correctly set if inheritance is      * used.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCAY1008
@@ -2894,6 +2936,8 @@ comment|// TODO: andrus 2008/03/28 - this fails...
 comment|// assertEquals(1, related.getSubEntities().size());
 block|}
 comment|/**      * Test for CAY-1009: Bogus runtime relationships can mess up commit.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCAY1009

@@ -315,6 +315,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -422,6 +432,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests a bug casued by the ID Java type mismatch vs the default JDBC type      * of the ID column.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCAY823
@@ -544,6 +556,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNewObject
@@ -647,6 +661,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGeneratedJoinInFlattenedRelationship
@@ -800,6 +816,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Tests CAY-422 bug.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnrelatedUpdate
@@ -897,6 +915,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Tests that insert in two tables with identity pk does not generate a      * conflict. See CAY-341 for the original bug.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleNewObjectsSeparateTables
@@ -948,6 +968,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleNewObjects
@@ -1175,6 +1197,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompoundPKWithGeneratedColumn
@@ -1429,6 +1453,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateDependentWithNewMaster
@@ -1602,6 +1628,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGeneratedDefaultValue
@@ -1613,6 +1641,8 @@ comment|// fail("TODO: test insert with DEFAULT generated column...need custom
 comment|// SQL to
 comment|// build such table");
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPropagateToDependent

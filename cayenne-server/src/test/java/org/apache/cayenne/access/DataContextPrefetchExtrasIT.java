@@ -279,6 +279,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -616,6 +626,8 @@ literal|"CFK3"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetchToManyOnCharKey
@@ -787,6 +799,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests to-one prefetching over relationships with compound keys.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch10
@@ -931,6 +945,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests to-many prefetching over relationships with compound keys.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPrefetch11

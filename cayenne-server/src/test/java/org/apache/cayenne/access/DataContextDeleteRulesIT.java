@@ -221,6 +221,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -362,6 +372,8 @@ literal|"GALLERY"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyToOne
@@ -478,6 +490,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Tests that deleting a source of a flattened relationship with CASCADE rule results      * in deleting a join and a target.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeToManyFlattened
@@ -652,6 +666,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that deleting a source of a flattened relationship with NULLIFY rule results      * in deleting a join together with the object deleted.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyToManyFlattened
@@ -827,6 +843,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyToMany
@@ -933,6 +951,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeToOne
@@ -1028,6 +1048,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCascadeToMany
@@ -1202,6 +1224,8 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDenyToMany

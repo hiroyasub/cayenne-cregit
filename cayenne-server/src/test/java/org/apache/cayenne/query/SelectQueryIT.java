@@ -473,6 +473,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -857,6 +867,8 @@ literal|4
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSetQualifier
@@ -925,6 +937,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAndQualifier
@@ -1019,6 +1033,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testOrQualifier
@@ -1113,6 +1129,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchLimit
@@ -1176,6 +1194,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchOffset
@@ -1288,6 +1308,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDbEntityRoot
@@ -1356,6 +1378,8 @@ name|DataRow
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchLimitWithOffset
@@ -1451,6 +1475,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchOffsetWithQualifier
@@ -1578,6 +1604,8 @@ literal|5
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testFetchLimitWithQualifier
@@ -1648,6 +1676,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectAllObjectsRootEntityName
@@ -1697,6 +1727,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectAllObjectsRootClass
@@ -1748,6 +1780,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectAllObjectsRootObjEntity
@@ -1812,6 +1846,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeExactMatch
@@ -1882,6 +1918,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectNotLikeSingleWildcardMatch
@@ -1952,6 +1990,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectNotLikeIgnoreCaseSingleWildcardMatch
@@ -2022,6 +2062,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeCaseSensitive
@@ -2103,6 +2145,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeSingleWildcardMatch
@@ -2173,6 +2217,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeSingleWildcardMatchAndEscape
@@ -2240,6 +2286,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeMultipleWildcardMatch
@@ -2311,6 +2359,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test how "like ignore case" works when using uppercase parameter.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeIgnoreCaseObjects1
@@ -2382,6 +2432,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Test how "like ignore case" works when using lowercase parameter. */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeIgnoreCaseObjects2
@@ -2453,6 +2505,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Test how "like ignore case" works when using uppercase parameter. */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLikeIgnoreCaseClob
@@ -2532,6 +2586,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFetchLimit_Offset_DistinctClob
@@ -2647,6 +2703,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEqualsClob
@@ -2726,6 +2784,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectNotEqualsClob
@@ -2799,6 +2859,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectIn
@@ -2861,6 +2923,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectParameterizedIn
@@ -2946,6 +3010,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectParameterizedEmptyIn
@@ -3027,6 +3093,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectParameterizedEmptyNotIn
@@ -3108,6 +3176,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEmptyIn
@@ -3170,6 +3240,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectEmptyNotIn
@@ -3232,6 +3304,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBooleanTrue
@@ -3308,6 +3382,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBitwiseNot
@@ -3425,6 +3501,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBitwiseOr
@@ -3549,6 +3627,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBitwiseAnd
@@ -3673,6 +3753,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBitwiseXor
@@ -3815,6 +3897,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBooleanNotTrueOr
@@ -3898,6 +3982,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBooleanFalse
@@ -3974,6 +4060,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectBooleanFalseOr
@@ -4051,6 +4139,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that all queries specified in prefetch are executed in a more      * complex prefetch scenario.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRouteWithPrefetches
@@ -4252,6 +4342,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests that all queries specified in prefetch are executed in a more      * complex prefetch scenario with no reverse obj relationships.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRouteQueryWithPrefetchesNoReverse
@@ -4497,6 +4589,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Test prefetching with qualifier on the root query being the path to the      * prefetch.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRouteQueryWithPrefetchesPrefetchExpressionPath
@@ -4579,6 +4673,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLeftJoinAndPrefetchToMany
@@ -4630,6 +4726,8 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLeftJoinAndPrefetchToOne
@@ -4681,6 +4779,8 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelect_MatchObject
@@ -4932,6 +5032,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelect_WithOrdering
@@ -5102,6 +5204,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests INs with more than 1000 elements      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectLongIn
@@ -5181,6 +5285,8 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCacheOffsetAndLimit

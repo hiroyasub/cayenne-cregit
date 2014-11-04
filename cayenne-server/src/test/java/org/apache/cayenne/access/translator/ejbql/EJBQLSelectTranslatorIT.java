@@ -171,6 +171,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -363,6 +373,8 @@ name|getQuery
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFrom
@@ -453,6 +465,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectMultipleJoinsToTheSameTable
@@ -521,6 +535,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectImplicitColumnJoins
@@ -607,6 +623,8 @@ comment|// TODO: andrus 1/6/2008 - this fails
 comment|// int i2 = sql.indexOf("INNER JOIN PAINTING", i1 + 1);
 comment|// assertTrue(sql, i2< 0);
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectDistinct
@@ -641,6 +659,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereEqual
@@ -689,6 +709,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereOrEqual
@@ -823,6 +845,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereAndEqual
@@ -957,6 +981,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNot
@@ -1005,6 +1031,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereGreater
@@ -1051,6 +1079,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereGreaterOrEqual
@@ -1085,6 +1115,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereLess
@@ -1119,6 +1151,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereLessOrEqual
@@ -1153,6 +1187,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNotEqual
@@ -1187,6 +1223,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereBetween
@@ -1223,6 +1261,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNotBetween
@@ -1259,6 +1299,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereLike
@@ -1295,6 +1337,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectFromWhereNotLike
@@ -1331,6 +1375,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSelectPositionalParameters
@@ -1410,6 +1456,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMax
@@ -1448,6 +1496,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDistinctSum
@@ -1484,6 +1534,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testColumnPaths
@@ -1576,6 +1628,8 @@ return|;
 block|}
 comment|// if parameter value is null (in this test x := null) we will generate
 comment|// "IS NULL"
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsNullParameter
@@ -1697,6 +1751,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// if parameter value is null and more than one parameter in query
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsNullAndNotNullParameter

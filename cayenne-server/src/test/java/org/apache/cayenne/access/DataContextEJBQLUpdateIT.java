@@ -197,6 +197,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -543,6 +553,8 @@ literal|"b2"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateQualifier
@@ -667,6 +679,8 @@ name|notUpdated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierString
@@ -791,6 +805,8 @@ name|notUpdated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierNull
@@ -939,6 +955,8 @@ comment|//
 comment|// notUpdated = Cayenne.objectForQuery(context, check);
 comment|// assertEquals(new Long(0l), notUpdated);
 comment|// }
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierMultipleItems
@@ -1063,6 +1081,8 @@ name|notUpdated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierDecimal
@@ -1187,6 +1207,8 @@ name|notUpdated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierBoolean
@@ -1376,6 +1398,8 @@ name|notUpdated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierToOne
@@ -1534,6 +1558,8 @@ name|notUpdated
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUpdateNoQualifierToOneCompoundPK

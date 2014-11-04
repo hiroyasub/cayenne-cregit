@@ -93,6 +93,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -113,6 +123,8 @@ specifier|private
 name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testName
@@ -158,6 +170,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDataSourceLocation
@@ -203,6 +217,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDataSourceFactory
@@ -248,6 +264,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNodeEntityResolver
@@ -309,6 +327,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAdapter

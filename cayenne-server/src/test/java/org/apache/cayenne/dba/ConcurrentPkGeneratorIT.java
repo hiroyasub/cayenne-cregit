@@ -165,6 +165,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -248,6 +258,8 @@ name|ServerRuntime
 name|runtime
 decl_stmt|;
 comment|/*      * Attempts to discover any problems regarding thread locking in the PkGenerator      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConcurrentInserts

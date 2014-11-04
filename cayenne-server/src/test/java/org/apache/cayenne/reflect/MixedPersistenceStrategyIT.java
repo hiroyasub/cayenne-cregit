@@ -165,6 +165,16 @@ name|UseServerRuntime
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
 begin_comment
 comment|/**  * Tests conflicts between field and map-based persistence.  */
 end_comment
@@ -310,6 +320,8 @@ literal|"dn2"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConflictingField1
@@ -361,6 +373,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * This test case reproduces CAY-582 bug.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConflictingField2

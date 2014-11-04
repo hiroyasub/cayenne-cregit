@@ -141,6 +141,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|lang
@@ -312,6 +322,8 @@ name|PAINTING_ARRAY_PROPERTY
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNewAddRemove
@@ -421,6 +433,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSavedUnresolvedAddRemove
@@ -612,6 +626,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSavedUnresolvedMerge
@@ -816,6 +832,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testThrowOutDeleted
@@ -1110,6 +1128,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRealRelationship
@@ -1292,6 +1312,8 @@ name|size
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRealRelationshipRollback

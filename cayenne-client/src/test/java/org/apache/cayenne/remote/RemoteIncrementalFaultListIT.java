@@ -211,6 +211,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -671,6 +681,8 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSize
@@ -694,6 +706,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIteratorPageSize1
@@ -707,6 +721,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIteratorPageSize5
@@ -721,6 +737,8 @@ literal|5
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIteratorPageSize6
@@ -735,6 +753,8 @@ literal|6
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIteratorPageSize25
@@ -749,6 +769,8 @@ name|COUNT
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIteratorPageSize26
@@ -765,6 +787,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testListIterator
@@ -888,6 +912,8 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnfetchedObjects
@@ -947,6 +973,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPageIndex
@@ -1024,6 +1052,8 @@ block|{
 comment|// exception expercted
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPagesRead1
@@ -1116,6 +1146,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGet1
@@ -1195,6 +1227,8 @@ name|ClientMtTable1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIndexOf
@@ -1307,6 +1341,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLastIndexOf

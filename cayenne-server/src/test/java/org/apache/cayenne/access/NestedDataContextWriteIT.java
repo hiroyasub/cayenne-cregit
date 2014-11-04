@@ -315,6 +315,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -768,6 +778,8 @@ return|return
 name|context
 return|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDeleteNew
@@ -862,6 +874,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * A test case for CAY-698 bug.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullifyToOne
@@ -1017,6 +1031,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesToParent
@@ -1419,6 +1435,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesToParentDeleted
@@ -1590,6 +1608,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChanges
@@ -2027,6 +2047,8 @@ name|parentHollow
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesToParent_MergeProperties
@@ -2462,6 +2484,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesToParentPropagatedKey
@@ -2673,6 +2697,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesToParentFlattened
@@ -2987,6 +3013,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCommitChangesToParentFlattenedMultipleFlush
@@ -3626,6 +3654,8 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddRemove
@@ -3744,6 +3774,8 @@ name|commitChangesToParent
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCAY1194

@@ -289,6 +289,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -604,6 +614,8 @@ literal|"artist2"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReadNestedProperty_ToMany
@@ -732,6 +744,8 @@ name|size
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testScalarObjectForQuery
@@ -871,6 +885,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testScalarObjectForQuery2
@@ -945,6 +961,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMakePath
@@ -987,6 +1005,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForQuery
@@ -1073,6 +1093,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForSelect
@@ -1145,6 +1167,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForQueryNoObject
@@ -1193,6 +1217,8 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNoObjectForPK
@@ -1226,6 +1252,8 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForPKTemporary
@@ -1319,6 +1347,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForPKObjectId
@@ -1379,6 +1409,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForPKClassInt
@@ -1433,6 +1465,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForPKEntityInt
@@ -1485,6 +1519,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForPKClassMap
@@ -1562,6 +1598,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectForPKEntityMapCompound
@@ -1655,6 +1693,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCompoundPKForObject
@@ -1766,6 +1806,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIntPKForObjectFailureForCompound
@@ -1842,6 +1884,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIntPKForObjectFailureForNonNumeric
@@ -1917,6 +1961,8 @@ parameter_list|)
 block|{
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPKForObjectFailureForCompound
@@ -1992,6 +2038,8 @@ parameter_list|)
 block|{
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIntPKForObject
@@ -2057,6 +2105,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPKForObject
@@ -2126,6 +2176,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIntPKForObjectNonNumeric

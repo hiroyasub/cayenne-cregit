@@ -139,6 +139,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -263,6 +273,8 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Tests that FKs are properly loaded when the relationship source is not loaded. See      * CAY-479. This test will perform two reverse engineers. The second reverse engineer      * will skip two tables that share relationships with PAINTING. Relationships in      * ARTIST and GALLERY should remain unmodified, and all PAINTING relationships should      * be loaded.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPartialLoad

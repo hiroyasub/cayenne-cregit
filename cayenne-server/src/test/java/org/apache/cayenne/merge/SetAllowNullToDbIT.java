@@ -81,6 +81,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -103,6 +113,8 @@ name|SetAllowNullToDbIT
 extends|extends
 name|MergeCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|test

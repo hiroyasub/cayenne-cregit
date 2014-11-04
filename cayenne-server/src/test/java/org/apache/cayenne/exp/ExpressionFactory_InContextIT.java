@@ -157,6 +157,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -195,6 +205,8 @@ specifier|private
 name|ObjectContext
 name|context
 decl_stmt|;
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testExpressionOfBadType
@@ -231,6 +243,8 @@ block|{
 comment|// exception expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBetweenExp
@@ -304,6 +318,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBetweenDbExp
@@ -377,6 +393,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNotBetweenExp
@@ -450,6 +468,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNotBetweenDbExp
@@ -523,6 +543,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGreaterExp
@@ -562,6 +584,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGreaterDbExp
@@ -626,6 +650,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGreaterOrEqualExp
@@ -665,6 +691,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGreaterOrEqualDbExp
@@ -729,6 +757,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLessExp
@@ -768,6 +798,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLessDbExp
@@ -832,6 +864,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLessOrEqualExp
@@ -896,6 +930,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLessOrEqualDbExp
@@ -960,6 +996,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInExp1
@@ -994,6 +1032,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInExp2
@@ -1053,6 +1093,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInExp3
@@ -1098,6 +1140,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeExp
@@ -1160,6 +1204,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeDbExp
@@ -1222,6 +1268,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeExpEscape
@@ -1301,6 +1349,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeIgnoreCaseExp
@@ -1378,6 +1428,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeIgnoreCaseExpEscape
@@ -1457,6 +1509,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeIgnoreCaseDbExp
@@ -1519,6 +1573,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNotLikeIgnoreCaseExp
@@ -1557,6 +1613,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// testing CAY-941 bug
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLikeExpNull
@@ -1625,6 +1683,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// CAY-416
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testCollectionMatch
@@ -1894,6 +1954,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIn
@@ -1993,6 +2055,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEscapeCharacter

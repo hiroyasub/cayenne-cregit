@@ -227,6 +227,16 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -343,6 +353,8 @@ name|close
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetTableTypes
@@ -435,6 +447,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetTables
@@ -522,6 +536,8 @@ name|foundArtist
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLoadWithMeaningfulPK
@@ -654,6 +670,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * DataMap loading is in one big test method, since breaking it in      * individual tests would require multiple reads of metatdata which is      * extremely slow on some RDBMS (Sybase).      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLoad
