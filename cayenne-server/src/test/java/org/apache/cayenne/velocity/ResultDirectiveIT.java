@@ -285,6 +285,30 @@ name|Map
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
 begin_comment
 comment|/**  * Test for Result directive to check if we could use ResultDitrective  * optionally.  */
 end_comment

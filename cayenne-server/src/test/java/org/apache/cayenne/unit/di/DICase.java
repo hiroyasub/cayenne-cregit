@@ -47,16 +47,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Before
 import|;
 end_import
@@ -70,8 +60,6 @@ specifier|public
 specifier|abstract
 class|class
 name|DICase
-extends|extends
-name|Assert
 block|{
 specifier|protected
 specifier|abstract
