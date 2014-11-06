@@ -259,7 +259,7 @@ name|UseServerRuntime
 argument_list|(
 name|ClientCase
 operator|.
-name|MULTI_TIER_PROJECT
+name|PERSISTENT_PROJECT
 argument_list|)
 annotation|@
 name|RunWith

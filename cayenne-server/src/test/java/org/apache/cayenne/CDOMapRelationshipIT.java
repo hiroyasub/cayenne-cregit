@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|map_to_many
 operator|.
 name|IdMapToMany
 import|;
@@ -127,7 +127,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|map_to_many
 operator|.
 name|MapToMany
 import|;
@@ -143,7 +143,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|map_to_many
 operator|.
 name|MapToManyTarget
 import|;
@@ -283,7 +283,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|MAP_TO_MANY_PROJECT
 argument_list|)
 specifier|public
 class|class

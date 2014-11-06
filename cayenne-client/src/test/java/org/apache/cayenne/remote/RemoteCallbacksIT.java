@@ -65,9 +65,9 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|mt
+name|lifecycles
 operator|.
-name|ClientMtLifecycles
+name|ClientLifecycles
 import|;
 end_import
 
@@ -193,7 +193,7 @@ name|UseServerRuntime
 argument_list|(
 name|ClientCase
 operator|.
-name|MULTI_TIER_PROJECT
+name|LIFECYCLES_PROJECT
 argument_list|)
 annotation|@
 name|RunWith
@@ -359,7 +359,7 @@ argument_list|()
 operator|.
 name|addListener
 argument_list|(
-name|ClientMtLifecycles
+name|ClientLifecycles
 operator|.
 name|class
 argument_list|,
@@ -385,14 +385,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|ClientMtLifecycles
+name|ClientLifecycles
 name|l1
 init|=
 name|context
 operator|.
 name|newObject
 argument_list|(
-name|ClientMtLifecycles
+name|ClientLifecycles
 operator|.
 name|class
 argument_list|)

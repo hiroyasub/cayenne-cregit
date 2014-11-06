@@ -183,6 +183,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|MAP_TO_MANY_PROJECT
+init|=
+literal|"cayenne-map-to-many.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|SUS_PROJECT
 init|=
 literal|"cayenne-sus.xml"

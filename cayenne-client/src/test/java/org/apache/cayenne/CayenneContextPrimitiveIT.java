@@ -97,9 +97,9 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|mt
+name|table_primitives
 operator|.
-name|ClientMtTablePrimitives
+name|ClientTablePrimitives
 import|;
 end_import
 
@@ -113,9 +113,9 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|mt
+name|table_primitives
 operator|.
-name|MtTablePrimitives
+name|TablePrimitives
 import|;
 end_import
 
@@ -241,7 +241,7 @@ name|UseServerRuntime
 argument_list|(
 name|ClientCase
 operator|.
-name|MULTI_TIER_PROJECT
+name|TABLE_PRIMITIVES_PROJECT
 argument_list|)
 specifier|public
 class|class
@@ -269,7 +269,7 @@ name|dbHelper
 decl_stmt|;
 specifier|private
 name|TableHelper
-name|tMtTablePrimitives
+name|tTablePrimitives
 decl_stmt|;
 annotation|@
 name|Override
@@ -284,7 +284,7 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"MT_TABLE_PRIMITIVES"
+literal|"TABLE_PRIMITIVES"
 argument_list|)
 expr_stmt|;
 name|int
@@ -303,17 +303,17 @@ name|Types
 operator|.
 name|INTEGER
 decl_stmt|;
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|=
 operator|new
 name|TableHelper
 argument_list|(
 name|dbHelper
 argument_list|,
-literal|"MT_TABLE_PRIMITIVES"
+literal|"TABLE_PRIMITIVES"
 argument_list|)
 expr_stmt|;
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|setColumns
 argument_list|(
@@ -345,7 +345,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|insert
 argument_list|(
@@ -363,7 +363,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|insert
 argument_list|(
@@ -400,7 +400,7 @@ init|=
 operator|new
 name|SelectQuery
 argument_list|(
-name|ClientMtTablePrimitives
+name|ClientTablePrimitives
 operator|.
 name|class
 argument_list|)
@@ -411,7 +411,7 @@ name|addOrdering
 argument_list|(
 literal|"db:"
 operator|+
-name|MtTablePrimitives
+name|TablePrimitives
 operator|.
 name|ID_PK_COLUMN
 argument_list|,
@@ -422,7 +422,7 @@ argument_list|)
 expr_stmt|;
 name|List
 argument_list|<
-name|ClientMtTablePrimitives
+name|ClientTablePrimitives
 argument_list|>
 name|results
 init|=
@@ -499,14 +499,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|ClientMtTablePrimitives
+name|ClientTablePrimitives
 name|object
 init|=
 name|context
 operator|.
 name|newObject
 argument_list|(
-name|ClientMtTablePrimitives
+name|ClientTablePrimitives
 operator|.
 name|class
 argument_list|)
@@ -532,7 +532,7 @@ argument_list|()
 expr_stmt|;
 name|assertTrue
 argument_list|(
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|getBoolean
 argument_list|(
@@ -544,7 +544,7 @@ name|assertEquals
 argument_list|(
 literal|3
 argument_list|,
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|getInt
 argument_list|(
@@ -573,7 +573,7 @@ argument_list|()
 expr_stmt|;
 name|assertFalse
 argument_list|(
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|getBoolean
 argument_list|(
@@ -585,7 +585,7 @@ name|assertEquals
 argument_list|(
 literal|8
 argument_list|,
-name|tMtTablePrimitives
+name|tTablePrimitives
 operator|.
 name|getInt
 argument_list|(
