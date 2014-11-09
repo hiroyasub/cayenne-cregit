@@ -144,6 +144,14 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1112629504025820837L
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -202,9 +210,11 @@ specifier|transient
 name|PrefetchTreeNode
 name|parent
 decl_stmt|;
-comment|// Using Collection instead of Map for children storage (even though there cases of
+comment|// Using Collection instead of Map for children storage (even though there
+comment|// cases of
 comment|// lookup by segment) is a reasonable tradeoff considering that
-comment|// each node has no more than a few children and lookup by name doesn't happen on
+comment|// each node has no more than a few children and lookup by name doesn't
+comment|// happen on
 comment|// traversal, only during creation.
 specifier|protected
 name|Collection
@@ -213,7 +223,7 @@ name|PrefetchTreeNode
 argument_list|>
 name|children
 decl_stmt|;
-comment|/**      * Creates a root node of the prefetch tree. Children can be added to the parent by      * calling "addPath".      */
+comment|/** 	 * Creates a root node of the prefetch tree. Children can be added to the 	 * parent by calling "addPath". 	 */
 specifier|public
 name|PrefetchTreeNode
 parameter_list|()
@@ -226,7 +236,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a phantom PrefetchTreeNode, initializing it with parent node and a name of      * a relationship segment connecting this node with the parent.      */
+comment|/** 	 * Creates a phantom PrefetchTreeNode, initializing it with parent node and 	 * a name of a relationship segment connecting this node with the parent. 	 */
 specifier|protected
 name|PrefetchTreeNode
 parameter_list|(
@@ -280,7 +290,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the root of the node tree. Root is the topmost parent node that itself has      * no parent set.      */
+comment|/** 	 * Returns the root of the node tree. Root is the topmost parent node that 	 * itself has no parent set. 	 */
 specifier|public
 name|PrefetchTreeNode
 name|getRoot
@@ -301,7 +311,7 @@ else|:
 name|this
 return|;
 block|}
-comment|/**      * Returns full prefetch path, that is a dot separated String of node names starting      * from root and up to and including this node. Note that root "name" is considered to      * be an empty string.      */
+comment|/** 	 * Returns full prefetch path, that is a dot separated String of node names 	 * starting from root and up to and including this node. Note that root 	 * "name" is considered to be an empty string. 	 */
 specifier|public
 name|String
 name|getPath
@@ -399,7 +409,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a subset of nodes with "joint" semantics that are to be prefetched in the      * same query as the current node. Result excludes this node, regardless of its      * semantics.      */
+comment|/** 	 * Returns a subset of nodes with "joint" semantics that are to be 	 * prefetched in the same query as the current node. Result excludes this 	 * node, regardless of its semantics. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -434,7 +444,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns a collection of PrefetchTreeNodes in this tree with joint semantics.      */
+comment|/** 	 * Returns a collection of PrefetchTreeNodes in this tree with joint 	 * semantics. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -479,7 +489,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns a collection of PrefetchTreeNodes with disjoint semantics.      */
+comment|/** 	 * Returns a collection of PrefetchTreeNodes with disjoint semantics. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -524,7 +534,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns a collection of PrefetchTreeNodes with disjoint semantics      * @since 3.1      */
+comment|/** 	 * Returns a collection of PrefetchTreeNodes with disjoint semantics 	 *  	 * @since 3.1 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -569,7 +579,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns a collection of PrefetchTreeNodes that are not phantoms.      */
+comment|/** 	 * Returns a collection of PrefetchTreeNodes that are not phantoms. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -614,7 +624,7 @@ return|return
 name|c
 return|;
 block|}
-comment|/**      * Returns a clone of subtree that includes all joint children      * starting from this node itself and till the first occurrence of non-joint node      *      * @since 3.1      */
+comment|/** 	 * Returns a clone of subtree that includes all joint children starting from 	 * this node itself and till the first occurrence of non-joint node 	 * 	 * @since 3.1 	 */
 specifier|public
 name|PrefetchTreeNode
 name|cloneJointSubtree
@@ -713,7 +723,7 @@ return|return
 name|cloned
 return|;
 block|}
-comment|/**      * Traverses the tree depth-first, invoking callback methods of the processor when      * passing through the nodes.      */
+comment|/** 	 * Traverses the tree depth-first, invoking callback methods of the 	 * processor when passing through the nodes. 	 */
 specifier|public
 name|void
 name|traverse
@@ -839,7 +849,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Looks up an existing node in the tree desribed by the dot-separated path. Will      * return null if no matching child exists.      */
+comment|/** 	 * Looks up an existing node in the tree desribed by the dot-separated path. 	 * Will return null if no matching child exists. 	 */
 specifier|public
 name|PrefetchTreeNode
 name|getNode
@@ -920,7 +930,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Adds a "path" with specified semantics to this prefetch node. All yet non-existent      * nodes in the created path will be marked as phantom.      *      * @return the last segment in the created path.      */
+comment|/** 	 * Adds a "path" with specified semantics to this prefetch node. All yet 	 * non-existent nodes in the created path will be marked as phantom. 	 * 	 * @return the last segment in the created path. 	 */
 specifier|public
 name|PrefetchTreeNode
 name|addPath
@@ -1027,7 +1037,160 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Removes or makes phantom a node defined by this path. If the node for this path      * doesn't have any children, it is removed, otherwise it is made phantom.      */
+comment|/** 	 * Merges {@link PrefetchTreeNode} into the current prefetch tree, cloning 	 * the nodes added to this tree. Merged nodes semantics (if defined) and 	 * non-phantom status are applied to the nodes of this tree. 	 *  	 * @param node 	 *            a root node of a tree to merge into this tree. The path of the 	 *            merged node within the resulting tree is determined from its 	 *            name. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|void
+name|merge
+parameter_list|(
+name|PrefetchTreeNode
+name|node
+parameter_list|)
+block|{
+if|if
+condition|(
+name|node
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null node"
+argument_list|)
+throw|;
+block|}
+name|PrefetchTreeNode
+name|start
+init|=
+name|node
+operator|.
+name|getName
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|addPath
+argument_list|(
+name|node
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+else|:
+name|this
+decl_stmt|;
+name|merge
+argument_list|(
+name|start
+argument_list|,
+name|node
+argument_list|)
+expr_stmt|;
+block|}
+name|void
+name|merge
+parameter_list|(
+name|PrefetchTreeNode
+name|original
+parameter_list|,
+name|PrefetchTreeNode
+name|toMerge
+parameter_list|)
+block|{
+if|if
+condition|(
+name|toMerge
+operator|.
+name|getSemantics
+argument_list|()
+operator|!=
+name|UNDEFINED_SEMANTICS
+condition|)
+block|{
+name|original
+operator|.
+name|setSemantics
+argument_list|(
+name|toMerge
+operator|.
+name|getSemantics
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|toMerge
+operator|.
+name|isPhantom
+argument_list|()
+condition|)
+block|{
+name|original
+operator|.
+name|setPhantom
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+name|PrefetchTreeNode
+name|childToMerge
+range|:
+name|toMerge
+operator|.
+name|getChildren
+argument_list|()
+control|)
+block|{
+name|PrefetchTreeNode
+name|childOrigin
+init|=
+name|original
+operator|.
+name|getChild
+argument_list|(
+name|childToMerge
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|childOrigin
+operator|==
+literal|null
+condition|)
+block|{
+name|childOrigin
+operator|=
+name|original
+operator|.
+name|addPath
+argument_list|(
+name|childToMerge
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+name|merge
+argument_list|(
+name|childOrigin
+argument_list|,
+name|childToMerge
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+comment|/** 	 * Removes or makes phantom a node defined by this path. If the node for 	 * this path doesn't have any children, it is removed, otherwise it is made 	 * phantom. 	 */
 specifier|public
 name|void
 name|removePath
@@ -1324,7 +1487,7 @@ return|return
 name|parent
 return|;
 block|}
-comment|/**      * Returns an unmodifiable collection of children.      */
+comment|/** 	 * Returns an unmodifiable collection of children. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -1340,14 +1503,13 @@ literal|null
 condition|?
 name|Collections
 operator|.
-name|EMPTY_SET
+expr|<
+name|PrefetchTreeNode
+operator|>
+name|emptySet
+argument_list|()
 else|:
-name|Collections
-operator|.
-name|unmodifiableCollection
-argument_list|(
 name|children
-argument_list|)
 return|;
 block|}
 specifier|public
@@ -1506,7 +1668,8 @@ name|entityName
 expr_stmt|;
 block|}
 comment|// **** custom serialization that supports serializing subtrees...
-comment|// implementing 'readResolve' instead of 'readObject' so that this would work with
+comment|// implementing 'readResolve' instead of 'readObject' so that this would
+comment|// work with
 comment|// hessian
 specifier|private
 name|Object

@@ -293,7 +293,7 @@ specifier|transient
 name|EntityResolver
 name|lastEntityResolver
 decl_stmt|;
-comment|/**      * Copies values of another QueryMetadata object to this object.      */
+comment|/** 	 * Copies values of another QueryMetadata object to this object. 	 */
 name|void
 name|copyFromInfo
 parameter_list|(
@@ -1370,7 +1370,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|String
 name|getCacheKey
@@ -1380,7 +1380,7 @@ return|return
 name|cacheKey
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|DataMap
 name|getDataMap
@@ -1390,7 +1390,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|Procedure
 name|getProcedure
@@ -1400,7 +1400,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1418,7 +1418,7 @@ name|emptyMap
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -1428,7 +1428,7 @@ return|return
 name|dbEntity
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -1447,7 +1447,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -1457,7 +1457,7 @@ return|return
 name|classDescriptor
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|List
 argument_list|<
@@ -1470,7 +1470,7 @@ return|return
 name|resultSetMapping
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|getPrefetchTree
@@ -1598,7 +1598,7 @@ return|return
 name|target
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy
@@ -1608,7 +1608,7 @@ return|return
 name|cacheStrategy
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 name|void
 name|setCacheStrategy
 parameter_list|(
@@ -1623,7 +1623,7 @@ operator|=
 name|cacheStrategy
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 index|[]
@@ -1634,7 +1634,7 @@ return|return
 name|cacheGroups
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 name|void
 name|setCacheGroups
 parameter_list|(
@@ -1686,7 +1686,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getFetchOffset
@@ -1753,7 +1753,7 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/**      * Sets statement's fetch size (0 for no default size)      *       * @since 3.0      */
+comment|/** 	 * Sets statement's fetch size (0 for no default size) 	 *  	 * @since 3.0 	 */
 name|void
 name|setStatementFetchSize
 parameter_list|(
@@ -1768,7 +1768,7 @@ operator|=
 name|size
 expr_stmt|;
 block|}
-comment|/**      * @return statement's fetch size      * @since 3.0      */
+comment|/** 	 * @return statement's fetch size 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getStatementFetchSize
@@ -1778,7 +1778,7 @@ return|return
 name|statementFetchSize
 return|;
 block|}
-comment|/**      * Adds a joint prefetch.      *       * @since 1.2      */
+comment|/** 	 * Adds a joint prefetch. 	 *  	 * @since 1.2 	 */
 name|PrefetchTreeNode
 name|addPrefetch
 parameter_list|(
@@ -1831,7 +1831,37 @@ return|return
 name|node
 return|;
 block|}
-comment|/**      * Adds all prefetches from a provided collection.      *       * @since 1.2      */
+comment|/** 	 * Adds a joint prefetch. 	 *  	 * @since 4.0 	 */
+name|void
+name|mergePrefetch
+parameter_list|(
+name|PrefetchTreeNode
+name|node
+parameter_list|)
+block|{
+if|if
+condition|(
+name|prefetchTree
+operator|==
+literal|null
+condition|)
+block|{
+name|prefetchTree
+operator|=
+operator|new
+name|PrefetchTreeNode
+argument_list|()
+expr_stmt|;
+block|}
+name|prefetchTree
+operator|.
+name|merge
+argument_list|(
+name|node
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Adds all prefetches from a provided collection. 	 *  	 * @since 1.2 	 */
 name|void
 name|addPrefetches
 parameter_list|(
@@ -1870,7 +1900,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Clears all joint prefetches.      *       * @since 1.2      */
+comment|/** 	 * Clears all joint prefetches. 	 *  	 * @since 1.2 	 */
 name|void
 name|clearPrefetches
 parameter_list|()
@@ -1880,7 +1910,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Removes joint prefetch.      *       * @since 1.2      */
+comment|/** 	 * Removes joint prefetch. 	 *  	 * @since 1.2 	 */
 name|void
 name|removePrefetch
 parameter_list|(
