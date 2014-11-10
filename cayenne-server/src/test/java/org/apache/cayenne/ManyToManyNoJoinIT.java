@@ -53,7 +53,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|r1
+name|relationships_activity
 operator|.
 name|Activity
 import|;
@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|r1
+name|relationships_activity
 operator|.
 name|ActivityResult
 import|;
@@ -137,7 +137,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_ACTIVITY_PROJECT
 argument_list|)
 specifier|public
 class|class

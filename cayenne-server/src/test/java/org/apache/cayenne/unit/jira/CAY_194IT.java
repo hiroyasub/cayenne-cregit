@@ -129,7 +129,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships
 operator|.
 name|ReflexiveAndToOne
 import|;
@@ -316,13 +316,6 @@ operator|.
 name|deleteAll
 argument_list|(
 literal|"REFLEXIVE_AND_TO_ONE"
-argument_list|)
-expr_stmt|;
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
-literal|"TO_ONEFK1"
 argument_list|)
 expr_stmt|;
 block|}

@@ -151,7 +151,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_delete_rules
 operator|.
 name|DeleteRuleFlatA
 import|;
@@ -167,7 +167,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_delete_rules
 operator|.
 name|DeleteRuleFlatB
 import|;
@@ -183,7 +183,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_delete_rules
 operator|.
 name|DeleteRuleTest1
 import|;
@@ -199,7 +199,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_delete_rules
 operator|.
 name|DeleteRuleTest2
 import|;
@@ -215,7 +215,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_delete_rules
 operator|.
 name|DeleteRuleTest3
 import|;
@@ -363,7 +363,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_DELETE_RULES_PROJECT
 argument_list|)
 specifier|public
 class|class

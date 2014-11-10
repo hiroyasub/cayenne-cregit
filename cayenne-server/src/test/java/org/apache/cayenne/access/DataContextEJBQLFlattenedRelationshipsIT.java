@@ -121,7 +121,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_flattened
 operator|.
 name|FlattenedTest1
 import|;
@@ -267,7 +267,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_FLATTENED_PROJECT
 argument_list|)
 specifier|public
 class|class

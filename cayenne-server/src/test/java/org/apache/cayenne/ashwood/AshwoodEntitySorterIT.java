@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships
 operator|.
 name|ReflexiveAndToOne
 import|;

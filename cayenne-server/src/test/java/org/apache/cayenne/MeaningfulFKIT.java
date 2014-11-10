@@ -53,7 +53,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships
 operator|.
 name|MeaningfulFK
 import|;
@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships
 operator|.
 name|RelationshipHelper
 import|;

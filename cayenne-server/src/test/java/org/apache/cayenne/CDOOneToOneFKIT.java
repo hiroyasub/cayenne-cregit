@@ -81,7 +81,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_to_one_fk
 operator|.
 name|ToOneFK1
 import|;
@@ -97,7 +97,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_to_one_fk
 operator|.
 name|ToOneFK2
 import|;
@@ -219,7 +219,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_TO_ONE_FK_PROJECT
 argument_list|)
 specifier|public
 class|class
@@ -258,14 +258,14 @@ name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"TO_ONEFK1"
+literal|"TO_ONE_FK1"
 argument_list|)
 expr_stmt|;
 name|dbHelper
 operator|.
 name|deleteAll
 argument_list|(
-literal|"TO_ONEFK2"
+literal|"TO_ONE_FK2"
 argument_list|)
 expr_stmt|;
 block|}

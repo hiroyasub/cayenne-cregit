@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_collection_to_many
 operator|.
 name|CollectionToMany
 import|;
@@ -127,7 +127,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_collection_to_many
 operator|.
 name|CollectionToManyTarget
 import|;
@@ -267,7 +267,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_COLLECTION_TO_MANY_PROJECT
 argument_list|)
 specifier|public
 class|class

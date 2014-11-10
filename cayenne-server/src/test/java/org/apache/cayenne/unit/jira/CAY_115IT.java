@@ -129,7 +129,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_clob
 operator|.
 name|ClobMaster
 import|;
@@ -227,7 +227,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_CLOB_PROJECT
 argument_list|)
 specifier|public
 class|class

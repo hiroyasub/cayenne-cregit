@@ -83,7 +83,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_child_master
 operator|.
 name|Child
 import|;
@@ -99,7 +99,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|relationship
+name|relationships_child_master
 operator|.
 name|Master
 import|;
@@ -217,7 +217,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|RELATIONSHIPS_PROJECT
+name|RELATIONSHIPS_CHILD_MASTER_PROJECT
 argument_list|)
 specifier|public
 class|class
