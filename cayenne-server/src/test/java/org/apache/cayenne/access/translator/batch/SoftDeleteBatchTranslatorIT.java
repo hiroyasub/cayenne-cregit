@@ -223,7 +223,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|locking
+name|soft_delete
 operator|.
 name|SoftDelete
 import|;
@@ -359,7 +359,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|LOCKING_PROJECT
+name|SOFT_DELETE_PROJECT
 argument_list|)
 specifier|public
 class|class

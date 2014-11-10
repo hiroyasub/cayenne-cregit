@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|locking
+name|soft_delete
 package|;
 end_package
 
@@ -27,21 +27,35 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|locking
+name|soft_delete
 operator|.
 name|auto
 operator|.
-name|_TimeLockingTestEntity
+name|_SoftDelete
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|TimeLockingTestEntity
+name|SoftDelete
 extends|extends
-name|_TimeLockingTestEntity
-block|{  }
+name|_SoftDelete
+block|{
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|onPrePersist
+parameter_list|()
+block|{
+name|setDeleted
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 end_class
 
 end_unit

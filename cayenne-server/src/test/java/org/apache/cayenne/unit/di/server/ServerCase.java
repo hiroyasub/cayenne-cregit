@@ -119,6 +119,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|SOFT_DELETE_PROJECT
+init|=
+literal|"cayenne-soft-delete.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|QUOTED_IDENTIFIERS_PROJECT
 init|=
 literal|"cayenne-quoted-identifiers.xml"

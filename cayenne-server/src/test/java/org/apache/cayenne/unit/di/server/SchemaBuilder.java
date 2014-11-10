@@ -517,6 +517,8 @@ literal|"people.map.xml"
 block|,
 literal|"locking.map.xml"
 block|,
+literal|"soft-delete.map.xml"
+block|,
 literal|"relationships.map.xml"
 block|,
 literal|"relationships1.map.xml"
