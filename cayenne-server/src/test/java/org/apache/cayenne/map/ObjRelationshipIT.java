@@ -109,9 +109,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|Iv2Sub1
 import|;

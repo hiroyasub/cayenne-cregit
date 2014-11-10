@@ -97,9 +97,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|Iv1Root
 import|;
@@ -115,9 +113,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|Iv1Sub1
 import|;
@@ -133,9 +129,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|Iv2Sub1
 import|;
@@ -151,9 +145,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|Iv2X
 import|;
@@ -169,9 +161,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|IvRoot
 import|;
@@ -187,9 +177,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|IvSub1
 import|;
@@ -205,9 +193,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|IvSub1Sub1
 import|;
@@ -223,9 +209,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inheritance
-operator|.
-name|vertical
+name|inheritance_vertical
 operator|.
 name|IvSub2
 import|;
@@ -381,7 +365,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|INHERTITANCE_VERTICAL_PROJECT
+name|INHERITANCE_VERTICAL_PROJECT
 argument_list|)
 specifier|public
 class|class

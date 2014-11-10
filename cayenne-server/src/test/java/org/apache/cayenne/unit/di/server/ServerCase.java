@@ -95,7 +95,7 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|INHERTITANCE_SINGLE_TABLE1_PROJECT
+name|INHERITANCE_SINGLE_TABLE1_PROJECT
 init|=
 literal|"cayenne-inheritance-single-table1.xml"
 decl_stmt|;
@@ -103,9 +103,17 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|INHERTITANCE_VERTICAL_PROJECT
+name|INHERITANCE_VERTICAL_PROJECT
 init|=
 literal|"cayenne-inheritance-vertical.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|INHERITANCE_PROJECT
+init|=
+literal|"cayenne-inheritance.xml"
 decl_stmt|;
 specifier|public
 specifier|static

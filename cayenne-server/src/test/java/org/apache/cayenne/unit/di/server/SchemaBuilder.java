@@ -515,6 +515,8 @@ literal|"tstmap.map.xml"
 block|,
 literal|"people.map.xml"
 block|,
+literal|"inheritance.map.xml"
+block|,
 literal|"locking.map.xml"
 block|,
 literal|"soft-delete.map.xml"

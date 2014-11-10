@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|unit
+name|testdo
 operator|.
-name|jira
+name|inheritance_people
 package|;
 end_package
 
@@ -29,53 +29,19 @@ name|testdo
 operator|.
 name|inheritance_people
 operator|.
-name|Manager
+name|auto
+operator|.
+name|_PersonNotes
 import|;
 end_import
-
-begin_comment
-comment|/**  */
-end_comment
 
 begin_class
 specifier|public
 class|class
-name|CAY_207Manager1
+name|PersonNotes
 extends|extends
-name|Manager
-block|{
-specifier|public
-name|void
-name|setClientContactType
-parameter_list|(
-name|CAY_207String1
-name|clientContactType
-parameter_list|)
-block|{
-name|writeProperty
-argument_list|(
-literal|"clientContactType"
-argument_list|,
-name|clientContactType
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|CAY_207String1
-name|getClientContactType
-parameter_list|()
-block|{
-return|return
-operator|(
-name|CAY_207String1
-operator|)
-name|readProperty
-argument_list|(
-literal|"clientContactType"
-argument_list|)
-return|;
-block|}
-block|}
+name|_PersonNotes
+block|{  }
 end_class
 
 end_unit

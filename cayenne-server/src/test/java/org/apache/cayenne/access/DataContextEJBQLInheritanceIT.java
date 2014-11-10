@@ -97,7 +97,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inherit
+name|inheritance_people
 operator|.
 name|CustomerRepresentative
 import|;
@@ -113,7 +113,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inherit
+name|inheritance_people
 operator|.
 name|Employee
 import|;
@@ -129,7 +129,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|inherit
+name|inheritance_people
 operator|.
 name|Manager
 import|;
