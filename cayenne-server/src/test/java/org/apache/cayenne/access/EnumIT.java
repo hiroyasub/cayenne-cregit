@@ -151,7 +151,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|enum_test
 operator|.
 name|Enum1
 import|;
@@ -167,7 +167,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|enum_test
 operator|.
 name|EnumEntity
 import|;
@@ -249,7 +249,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|ENUM_PROJECT
 argument_list|)
 specifier|public
 class|class

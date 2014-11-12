@@ -93,7 +93,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|misc_types
 operator|.
 name|ArraysEntity
 import|;
@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|misc_types
 operator|.
 name|CharacterEntity
 import|;
@@ -125,7 +125,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|misc_types
 operator|.
 name|SerializableEntity
 import|;
@@ -245,7 +245,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|MISC_TYPES_PROJECT
 argument_list|)
 specifier|public
 class|class

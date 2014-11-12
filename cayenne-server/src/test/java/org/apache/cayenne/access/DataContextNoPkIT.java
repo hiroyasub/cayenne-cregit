@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|no_pk
 operator|.
 name|NoPkTestEntity
 import|;
@@ -235,7 +235,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|NO_PK_PROJECT
 argument_list|)
 specifier|public
 class|class

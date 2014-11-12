@@ -834,7 +834,7 @@ argument_list|()
 operator|.
 name|getObjEntity
 argument_list|(
-literal|"MeaningfulPKTest1"
+literal|"MeaningfulGeneratedColumnTestEntity"
 argument_list|)
 decl_stmt|;
 name|Collection

@@ -175,7 +175,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedColumnCompKey
 import|;
@@ -191,7 +191,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedColumnCompMaster
 import|;
@@ -207,7 +207,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedColumnDep
 import|;
@@ -223,7 +223,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedColumnTest2
 import|;
@@ -239,7 +239,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedColumnTestEntity
 import|;
@@ -255,7 +255,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedF1
 import|;
@@ -271,7 +271,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|generated
 operator|.
 name|GeneratedF2
 import|;
@@ -387,7 +387,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|GENERATED_PROJECT
 argument_list|)
 specifier|public
 class|class

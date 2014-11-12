@@ -475,7 +475,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"tstmap"
+literal|"testmap"
 argument_list|)
 expr_stmt|;
 name|filterDataMap

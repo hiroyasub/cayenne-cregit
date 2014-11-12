@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Connection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -50,6 +40,16 @@ operator|.
 name|map
 operator|.
 name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Connection
 import|;
 end_import
 
@@ -131,7 +131,7 @@ argument_list|()
 operator|.
 name|containsKey
 argument_list|(
-literal|"cayenne_tst_select_proc"
+literal|"cayenne_test_select_proc"
 argument_list|)
 condition|)
 block|{

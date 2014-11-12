@@ -55,7 +55,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|primitive
 operator|.
 name|PrimitivesTestEntity
 import|;
@@ -113,7 +113,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|PRIMITIVE_PROJECT
 argument_list|)
 specifier|public
 class|class

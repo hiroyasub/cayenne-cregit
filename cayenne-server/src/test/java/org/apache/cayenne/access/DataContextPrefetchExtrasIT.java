@@ -187,7 +187,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|compound
 operator|.
 name|CharFkTestEntity
 import|;
@@ -203,7 +203,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|compound
 operator|.
 name|CharPkTestEntity
 import|;
@@ -219,7 +219,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|compound
 operator|.
 name|CompoundFkTestEntity
 import|;
@@ -235,7 +235,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|compound
 operator|.
 name|CompoundPkTestEntity
 import|;
@@ -367,7 +367,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|COMPOUND_PROJECT
 argument_list|)
 specifier|public
 class|class

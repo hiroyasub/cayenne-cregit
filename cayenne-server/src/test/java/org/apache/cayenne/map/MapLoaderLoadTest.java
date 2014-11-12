@@ -644,7 +644,7 @@ name|loadDataMap
 argument_list|(
 name|getMapXml
 argument_list|(
-literal|"tstmap.map.xml"
+literal|"testmap.map.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -661,7 +661,7 @@ name|map
 operator|.
 name|getProcedure
 argument_list|(
-literal|"cayenne_tst_upd_proc"
+literal|"cayenne_test_upd_proc"
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -813,7 +813,7 @@ name|loadDataMap
 argument_list|(
 name|getMapXml
 argument_list|(
-literal|"tstmap.map.xml"
+literal|"testmap.map.xml"
 argument_list|)
 argument_list|)
 decl_stmt|;

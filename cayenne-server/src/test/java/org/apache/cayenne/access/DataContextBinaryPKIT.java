@@ -81,7 +81,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|binary_pk
 operator|.
 name|BinaryPKTest1
 import|;
@@ -97,7 +97,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|binary_pk
 operator|.
 name|BinaryPKTest2
 import|;
@@ -193,7 +193,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|BINARY_PK_PROJECT
 argument_list|)
 specifier|public
 class|class

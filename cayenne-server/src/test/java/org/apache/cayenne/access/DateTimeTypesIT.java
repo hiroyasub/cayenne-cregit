@@ -95,7 +95,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|date_time
 operator|.
 name|CalendarEntity
 import|;
@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|date_time
 operator|.
 name|DateTestEntity
 import|;
@@ -239,7 +239,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|DATE_TIME_PROJECT
 argument_list|)
 specifier|public
 class|class
@@ -1219,6 +1219,16 @@ argument_list|(
 literal|"TIME_COLUMN"
 argument_list|)
 decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|testRead
+operator|.
+name|toString
+argument_list|()
+argument_list|,
+name|columnValue
+argument_list|)
+expr_stmt|;
 name|assertNotNull
 argument_list|(
 name|columnValue

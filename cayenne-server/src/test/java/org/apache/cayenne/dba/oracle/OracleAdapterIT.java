@@ -199,7 +199,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|LOB_PROJECT
 argument_list|)
 specifier|public
 class|class
@@ -238,7 +238,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"tstmap"
+literal|"lob"
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -296,7 +296,7 @@ name|map
 operator|.
 name|getDbEntity
 argument_list|(
-literal|"ARTIST"
+literal|"TEST"
 argument_list|)
 argument_list|,
 literal|1

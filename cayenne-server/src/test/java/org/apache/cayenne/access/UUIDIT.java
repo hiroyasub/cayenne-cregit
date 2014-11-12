@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|uuid
 operator|.
 name|UuidPkEntity
 import|;
@@ -125,7 +125,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|uuid
 operator|.
 name|UuidTestEntity
 import|;
@@ -217,7 +217,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|UUID_PROJECT
 argument_list|)
 specifier|public
 class|class

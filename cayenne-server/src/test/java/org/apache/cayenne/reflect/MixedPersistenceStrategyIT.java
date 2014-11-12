@@ -107,7 +107,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|mixed_persistence_strategy
 operator|.
 name|MixedPersistenceStrategy
 import|;
@@ -123,7 +123,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|mixed_persistence_strategy
 operator|.
 name|MixedPersistenceStrategy2
 import|;
@@ -209,7 +209,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|MIXED_PERSISTENCE_STRATEGY_PROJECT
 argument_list|)
 specifier|public
 class|class

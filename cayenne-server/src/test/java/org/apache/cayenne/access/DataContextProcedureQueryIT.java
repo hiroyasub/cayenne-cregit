@@ -383,7 +383,7 @@ specifier|final
 name|String
 name|UPDATE_STORED_PROCEDURE
 init|=
-literal|"cayenne_tst_upd_proc"
+literal|"cayenne_test_upd_proc"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -391,7 +391,7 @@ specifier|final
 name|String
 name|UPDATE_STORED_PROCEDURE_NOPARAM
 init|=
-literal|"cayenne_tst_upd_proc2"
+literal|"cayenne_test_upd_proc2"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -399,7 +399,7 @@ specifier|final
 name|String
 name|SELECT_STORED_PROCEDURE
 init|=
-literal|"cayenne_tst_select_proc"
+literal|"cayenne_test_select_proc"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -407,7 +407,7 @@ specifier|final
 name|String
 name|OUT_STORED_PROCEDURE
 init|=
-literal|"cayenne_tst_out_proc"
+literal|"cayenne_test_out_proc"
 decl_stmt|;
 annotation|@
 name|Inject

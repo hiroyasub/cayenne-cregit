@@ -111,7 +111,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|lob
 operator|.
 name|ClobTestEntity
 import|;
@@ -127,7 +127,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|lob
 operator|.
 name|ClobTestRelation
 import|;
@@ -233,7 +233,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|LOB_PROJECT
 argument_list|)
 specifier|public
 class|class

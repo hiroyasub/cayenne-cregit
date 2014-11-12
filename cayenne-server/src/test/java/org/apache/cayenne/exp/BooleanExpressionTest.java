@@ -25,7 +25,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|BooleanTestEntity
 import|;

@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|return_types
 operator|.
 name|ReturnTypesMap1
 import|;
@@ -203,7 +203,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|RETURN_TYPES_PROJECT
 argument_list|)
 specifier|public
 class|class

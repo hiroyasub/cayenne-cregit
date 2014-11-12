@@ -310,7 +310,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test for Result directive to check if we could use ResultDitrective  * optionally.  */
+comment|/**  * Test for Result directive to check if we could use ResultDirective  * optionally.  */
 end_comment
 
 begin_class

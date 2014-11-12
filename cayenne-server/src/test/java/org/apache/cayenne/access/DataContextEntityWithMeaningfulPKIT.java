@@ -135,7 +135,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|meaningful_pk
 operator|.
 name|MeaningfulPKDep
 import|;
@@ -151,7 +151,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|meaningful_pk
 operator|.
 name|MeaningfulPKTest1
 import|;
@@ -277,7 +277,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|MEANINGFUL_PK_PROJECT
 argument_list|)
 specifier|public
 class|class

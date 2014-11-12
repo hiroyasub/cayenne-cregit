@@ -141,7 +141,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|BigDecimalEntity
 import|;
@@ -157,7 +157,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|BigIntegerEntity
 import|;
@@ -173,7 +173,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|BitTestEntity
 import|;
@@ -189,7 +189,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|BooleanTestEntity
 import|;
@@ -205,7 +205,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|DecimalPKTest1
 import|;
@@ -221,7 +221,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|DecimalPKTestEntity
 import|;
@@ -237,7 +237,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|LongEntity
 import|;
@@ -253,7 +253,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|SmallintTestEntity
 import|;
@@ -269,7 +269,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|numeric_types
 operator|.
 name|TinyintTestEntity
 import|;
@@ -409,7 +409,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|NUMERIC_TYPES_PROJECT
 argument_list|)
 specifier|public
 class|class

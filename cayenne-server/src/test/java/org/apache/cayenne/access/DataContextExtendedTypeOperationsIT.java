@@ -137,7 +137,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|extended_type
 operator|.
 name|ExtendedTypeEntity
 import|;
@@ -153,7 +153,7 @@ name|cayenne
 operator|.
 name|testdo
 operator|.
-name|testmap
+name|extended_type
 operator|.
 name|StringET1
 import|;
@@ -233,7 +233,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|TESTMAP_PROJECT
+name|EXTENDED_TYPE_PROJECT
 argument_list|)
 specifier|public
 class|class

@@ -375,7 +375,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"tstmap"
+literal|"testmap"
 argument_list|)
 decl_stmt|;
 name|SQLTemplate
@@ -432,7 +432,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"tstmap"
+literal|"testmap"
 argument_list|)
 decl_stmt|;
 name|String
@@ -514,7 +514,7 @@ argument_list|()
 operator|.
 name|getDataMap
 argument_list|(
-literal|"tstmap"
+literal|"testmap"
 argument_list|)
 decl_stmt|;
 name|String
@@ -583,7 +583,7 @@ expr_stmt|;
 block|}
 name|assertTrue
 argument_list|(
-literal|"If fetchingDataRows is false and ObjectEntity not set, shoulb be thrown exception"
+literal|"If fetchingDataRows is false and ObjectEntity not set, should be thrown exception"
 argument_list|,
 name|gotRuntimeException
 argument_list|)
