@@ -267,7 +267,7 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-literal|"cayenne-default.xml"
+literal|"cayenne-qualified.xml"
 argument_list|)
 specifier|public
 class|class

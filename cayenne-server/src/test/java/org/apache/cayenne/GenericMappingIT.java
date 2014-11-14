@@ -211,7 +211,7 @@ name|UseServerRuntime
 argument_list|(
 name|ServerCase
 operator|.
-name|DEFAULT_PROJECT
+name|GENERIC_PROJECT
 argument_list|)
 specifier|public
 class|class
