@@ -31,6 +31,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collections
 import|;
 end_import
@@ -1573,7 +1583,7 @@ specifier|public
 name|void
 name|addOrderings
 parameter_list|(
-name|List
+name|Collection
 argument_list|<
 name|?
 extends|extends
@@ -1590,6 +1600,7 @@ name|orderings
 operator|!=
 literal|null
 condition|)
+block|{
 name|nonNullOrderings
 argument_list|()
 operator|.
@@ -1598,6 +1609,7 @@ argument_list|(
 name|orderings
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * Adds ordering specification to this query orderings. 	 *  	 * @since 3.0 	 */
 specifier|public

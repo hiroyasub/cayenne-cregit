@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines object sorting criteria, used either for in-memory sorting of object lists or  * as a specification for building<em>ORDER BY</em> clause of a SelectQuery query. Note  * that in case of in-memory sorting, Ordering can be used with any JavaBeans, not just  * DataObjects.  */
+comment|/**  * Defines object sorting criteria, used either for in-memory sorting of object  * lists or as a specification for building<em>ORDER BY</em> clause of a  * SelectQuery query. Note that in case of in-memory sorting, Ordering can be  * used with any JavaBeans, not just DataObjects.  */
 end_comment
 
 begin_class
@@ -223,6 +223,15 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|9167074787055881422L
+decl_stmt|;
 specifier|protected
 name|String
 name|sortSpecString
@@ -248,7 +257,7 @@ name|nullSortedFirst
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * Orders a given list of objects, using a List of Orderings applied according the      * default iteration order of the Orderings list. I.e. each Ordering with lower index      * is more significant than any other Ordering with higher index. List being ordered      * is modified in place.      */
+comment|/** 	 * Orders a given list of objects, using a List of Orderings applied 	 * according the default iteration order of the Orderings list. I.e. each 	 * Ordering with lower index is more significant than any other Ordering 	 * with higher index. List being ordered is modified in place. 	 */
 specifier|public
 specifier|static
 name|void
@@ -289,7 +298,25 @@ name|Ordering
 parameter_list|()
 block|{
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * Create an ordering instance with a provided path and ascending sorting 	 * strategy. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|Ordering
+parameter_list|(
+name|String
+name|sortPathSpec
+parameter_list|)
+block|{
+name|this
+argument_list|(
+name|sortPathSpec
+argument_list|,
+name|SortOrder
+operator|.
+name|ASCENDING
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|Ordering
 parameter_list|(
@@ -311,7 +338,112 @@ name|sortOrder
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets sortSpec to be an expression represented by string argument.      *       * @since 1.1      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|equals
+parameter_list|(
+name|Object
+name|object
+parameter_list|)
+block|{
+if|if
+condition|(
+name|this
+operator|==
+name|object
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+if|if
+condition|(
+operator|!
+operator|(
+name|object
+operator|instanceof
+name|Ordering
+operator|)
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+name|Ordering
+name|o
+init|=
+operator|(
+name|Ordering
+operator|)
+name|object
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|Util
+operator|.
+name|nullSafeEquals
+argument_list|(
+name|sortSpecString
+argument_list|,
+name|o
+operator|.
+name|sortSpecString
+argument_list|)
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+if|if
+condition|(
+name|sortOrder
+operator|!=
+name|o
+operator|.
+name|sortOrder
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+if|if
+condition|(
+name|pathExceptionSuppressed
+operator|!=
+name|o
+operator|.
+name|pathExceptionSuppressed
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+if|if
+condition|(
+name|nullSortedFirst
+operator|!=
+name|o
+operator|.
+name|nullSortedFirst
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+return|return
+literal|true
+return|;
+block|}
+comment|/** 	 * Sets sortSpec to be an expression represented by string argument. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setSortSpecString
@@ -349,7 +481,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets sort order for whether nulls are at the top or bottom of the resulting list.      * Default is true.      *       * @param nullSortedFirst true sorts nulls to the top of the list, false sorts nulls      *            to the bottom      */
+comment|/** 	 * Sets sort order for whether nulls are at the top or bottom of the 	 * resulting list. Default is true. 	 *  	 * @param nullSortedFirst 	 *            true sorts nulls to the top of the list, false sorts nulls to 	 *            the bottom 	 */
 specifier|public
 name|void
 name|setNullSortedFirst
@@ -365,7 +497,7 @@ operator|=
 name|nullSortedFirst
 expr_stmt|;
 block|}
-comment|/**      * Get sort order for nulls.      *       * @return true if nulls are sorted to the top of the list, false if sorted to the      *         bottom      */
+comment|/** 	 * Get sort order for nulls. 	 *  	 * @return true if nulls are sorted to the top of the list, false if sorted 	 *         to the bottom 	 */
 specifier|public
 name|boolean
 name|isNullSortedFirst
@@ -375,7 +507,7 @@ return|return
 name|nullSortedFirst
 return|;
 block|}
-comment|/**      * Sets whether a path with a null in the middle is ignored. For example, a sort from      *<code>painting</code> on<code>artist.name</code> would by default throw an      * exception if the artist was null. If set to true, then this is treated just like a      * null value. Default is false.      *       * @param pathExceptionSuppressed true to suppress exceptions and sort as null      */
+comment|/** 	 * Sets whether a path with a null in the middle is ignored. For example, a 	 * sort from<code>painting</code> on<code>artist.name</code> would by 	 * default throw an exception if the artist was null. If set to true, then 	 * this is treated just like a null value. Default is false. 	 *  	 * @param pathExceptionSuppressed 	 *            true to suppress exceptions and sort as null 	 */
 specifier|public
 name|void
 name|setPathExceptionSupressed
@@ -391,7 +523,7 @@ operator|=
 name|pathExceptionSuppressed
 expr_stmt|;
 block|}
-comment|/**      * Is a path with a null in the middle is ignored.      *       * @return true is exception is suppressed and sorted as null      */
+comment|/** 	 * Is a path with a null in the middle is ignored. 	 *  	 * @return true is exception is suppressed and sorted as null 	 */
 specifier|public
 name|boolean
 name|isPathExceptionSuppressed
@@ -401,7 +533,7 @@ return|return
 name|pathExceptionSuppressed
 return|;
 block|}
-comment|/**      * Returns sortSpec string representation.      *       * @since 1.1      */
+comment|/** 	 * Returns sortSpec string representation. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|String
 name|getSortSpecString
@@ -411,7 +543,7 @@ return|return
 name|sortSpecString
 return|;
 block|}
-comment|/**      * Sets the sort order for this ordering.      *       * @since 3.0      */
+comment|/** 	 * Sets the sort order for this ordering. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setSortOrder
@@ -451,7 +583,7 @@ operator|.
 name|ASCENDING_INSENSITIVE
 return|;
 block|}
-comment|/**      * Returns true if the sorting is done in descending order.      *       * @since 3.0      */
+comment|/** 	 * Returns true if the sorting is done in descending order. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isDescending
@@ -463,7 +595,7 @@ name|isAscending
 argument_list|()
 return|;
 block|}
-comment|/**      * If the sort order is DESCENDING or DESCENDING_INSENSITIVE, sets the sort order to      * ASCENDING or ASCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+comment|/** 	 * If the sort order is DESCENDING or DESCENDING_INSENSITIVE, sets the sort 	 * order to ASCENDING or ASCENDING_INSENSITIVE, respectively. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setAscending
@@ -504,7 +636,7 @@ name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If the sort order is ASCENDING or ASCENDING_INSENSITIVE, sets the sort order to      * DESCENDING or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+comment|/** 	 * If the sort order is ASCENDING or ASCENDING_INSENSITIVE, sets the sort 	 * order to DESCENDING or DESCENDING_INSENSITIVE, respectively. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setDescending
@@ -557,7 +689,7 @@ name|isCaseSensitive
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns true if the sorting is case sensitive.      *       * @since 3.0      */
+comment|/** 	 * Returns true if the sorting is case sensitive. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isCaseSensitive
@@ -581,7 +713,7 @@ operator|.
 name|DESCENDING
 return|;
 block|}
-comment|/**      * If the sort order is ASCENDING or DESCENDING, sets the sort order to      * ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, respectively.      *       * @since 3.0      */
+comment|/** 	 * If the sort order is ASCENDING or DESCENDING, sets the sort order to 	 * ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, respectively. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCaseInsensitive
@@ -622,7 +754,7 @@ name|DESCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If the sort order is ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, sets the sort      * order to ASCENDING or DESCENDING, respectively.      *       * @since 3.0      */
+comment|/** 	 * If the sort order is ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, 	 * sets the sort order to ASCENDING or DESCENDING, respectively. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCaseSensitive
@@ -663,7 +795,7 @@ name|DESCENDING
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns the expression defining a ordering Java Bean property.      */
+comment|/** 	 * Returns the expression defining a ordering Java Bean property. 	 */
 specifier|public
 name|Expression
 name|getSortSpec
@@ -680,7 +812,8 @@ return|return
 literal|null
 return|;
 block|}
-comment|// compile on demand .. since orderings can only be paths, avoid the overhead of
+comment|// compile on demand .. since orderings can only be paths, avoid the
+comment|// overhead of
 comment|// Expression.fromString, and parse them manually
 if|if
 condition|(
@@ -767,7 +900,7 @@ return|return
 name|sortSpec
 return|;
 block|}
-comment|/**      * Sets the expression defining a ordering Java Bean property.      */
+comment|/** 	 * Sets the expression defining a ordering Java Bean property. 	 */
 specifier|public
 name|void
 name|setSortSpec
@@ -800,7 +933,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Orders the given list of objects according to the ordering that this object      * specifies. List is modified in-place.      *       * @param objects a List of objects to be sorted      */
+comment|/** 	 * Orders the given list of objects according to the ordering that this 	 * object specifies. List is modified in-place. 	 *  	 * @param objects 	 *            a List of objects to be sorted 	 */
 specifier|public
 name|void
 name|orderList
@@ -822,7 +955,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Comparable interface implementation. Can compare two Java Beans based on the stored      * expression.      */
+comment|/** 	 * Comparable interface implementation. Can compare two Java Beans based on 	 * the stored expression. 	 */
 specifier|public
 name|int
 name|compare
@@ -999,7 +1132,8 @@ name|isCaseInsensitive
 argument_list|()
 condition|)
 block|{
-comment|// TODO: to upper case should probably be defined as a separate expression
+comment|// TODO: to upper case should probably be defined as a separate
+comment|// expression
 comment|// type
 name|value1
 operator|=
@@ -1052,7 +1186,7 @@ operator|-
 name|compareResult
 return|;
 block|}
-comment|/**      * Encodes itself as a query ordering.      *       * @since 1.1      */
+comment|/** 	 * Encodes itself as a query ordering. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|encodeAsXML
@@ -1182,7 +1316,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns sort order for this ordering      * @since 3.1      */
+comment|/** 	 * Returns sort order for this ordering 	 *  	 * @since 3.1 	 */
 specifier|public
 name|SortOrder
 name|getSortOrder
