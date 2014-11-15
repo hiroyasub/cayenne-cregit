@@ -1630,6 +1630,15 @@ operator|.
 name|cacheStrategy
 operator|=
 name|cacheStrategy
+operator|!=
+literal|null
+condition|?
+name|cacheStrategy
+else|:
+name|QueryCacheStrategy
+operator|.
+name|getDefaultStrategy
+argument_list|()
 expr_stmt|;
 block|}
 comment|/** 	 * @since 3.0 	 */
