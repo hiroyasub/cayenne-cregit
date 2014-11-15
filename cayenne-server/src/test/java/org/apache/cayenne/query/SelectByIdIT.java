@@ -811,6 +811,9 @@ name|class
 argument_list|,
 literal|4
 argument_list|)
+operator|.
+name|useLocalCache
+argument_list|()
 decl_stmt|;
 name|QueryMetadata
 name|md1
@@ -861,6 +864,9 @@ argument_list|,
 literal|4
 argument_list|)
 argument_list|)
+operator|.
+name|useLocalCache
+argument_list|()
 decl_stmt|;
 name|QueryMetadata
 name|md2
@@ -919,6 +925,9 @@ name|class
 argument_list|,
 literal|5
 argument_list|)
+operator|.
+name|useLocalCache
+argument_list|()
 decl_stmt|;
 name|QueryMetadata
 name|md3
@@ -975,6 +984,9 @@ name|class
 argument_list|,
 literal|4
 argument_list|)
+operator|.
+name|useLocalCache
+argument_list|()
 decl_stmt|;
 name|QueryMetadata
 name|md4
@@ -1041,6 +1053,9 @@ argument_list|,
 literal|4
 argument_list|)
 argument_list|)
+operator|.
+name|useLocalCache
+argument_list|()
 decl_stmt|;
 name|QueryMetadata
 name|md5
