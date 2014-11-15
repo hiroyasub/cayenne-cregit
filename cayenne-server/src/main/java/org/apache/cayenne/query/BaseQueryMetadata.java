@@ -213,6 +213,14 @@ name|XMLSerializable
 implements|,
 name|Serializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|5129792493303459115L
+decl_stmt|;
 name|int
 name|fetchLimit
 init|=
@@ -813,7 +821,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 name|Object
