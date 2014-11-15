@@ -1833,7 +1833,7 @@ name|prefetchPath
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns<code>true</code> if this query should produce a list of data 	 * rows as opposed to DataObjects,<code>false</code> for DataObjects. This 	 * is a hint to QueryEngine executing this query. 	 *  	 * @deprecated since 4.0, use {@link #dataRowQuery(Class, Expression)} to 	 *             create DataRow query instead. 	 */
+comment|/** 	 * Returns<code>true</code> if this query should produce a list of data 	 * rows as opposed to DataObjects,<code>false</code> for DataObjects. This 	 * is a hint to QueryEngine executing this query. 	 */
 specifier|public
 name|boolean
 name|isFetchingDataRows
