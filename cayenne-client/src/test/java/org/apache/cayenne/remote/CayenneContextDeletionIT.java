@@ -59,9 +59,9 @@ name|unit
 operator|.
 name|di
 operator|.
-name|client
+name|server
 operator|.
-name|ClientCase
+name|CayenneProjects
 import|;
 end_import
 
@@ -167,7 +167,7 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-name|ClientCase
+name|CayenneProjects
 operator|.
 name|MULTI_TIER_PROJECT
 argument_list|)

@@ -547,6 +547,8 @@ literal|"locking.map.xml"
 block|,
 literal|"soft-delete.map.xml"
 block|,
+literal|"empty.map.xml"
+block|,
 literal|"relationships.map.xml"
 block|,
 literal|"relationships-activity.map.xml"

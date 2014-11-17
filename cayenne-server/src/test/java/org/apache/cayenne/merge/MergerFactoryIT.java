@@ -153,7 +153,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|ServerCase
+name|CayenneProjects
 import|;
 end_import
 
@@ -235,7 +235,7 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-name|ServerCase
+name|CayenneProjects
 operator|.
 name|TESTMAP_PROJECT
 argument_list|)

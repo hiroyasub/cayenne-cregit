@@ -35,20 +35,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|Inject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|RefreshQuery
@@ -82,22 +68,6 @@ operator|.
 name|service
 operator|.
 name|LocalConnection
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|test
-operator|.
-name|jdbc
-operator|.
-name|DBHelper
 import|;
 end_import
 
@@ -145,9 +115,9 @@ name|unit
 operator|.
 name|di
 operator|.
-name|client
+name|server
 operator|.
-name|ClientCase
+name|CayenneProjects
 import|;
 end_import
 
@@ -250,14 +220,14 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Test for entites that are implemented in same class on client and server  */
+comment|/**  * Test for entities that are implemented in same class on client and server  */
 end_comment
 
 begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-name|ClientCase
+name|CayenneProjects
 operator|.
 name|PERSISTENT_PROJECT
 argument_list|)
@@ -276,12 +246,6 @@ name|LightSuperClassIT
 extends|extends
 name|RemoteCayenneCase
 block|{
-annotation|@
-name|Inject
-specifier|private
-name|DBHelper
-name|dbHelper
-decl_stmt|;
 specifier|private
 name|boolean
 name|server
@@ -364,35 +328,6 @@ operator|.
 name|server
 operator|=
 name|server
-expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|void
-name|setUpAfterInjection
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-name|super
-operator|.
-name|setUpAfterInjection
-argument_list|()
-expr_stmt|;
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
-literal|"CONTINENT"
-argument_list|)
-expr_stmt|;
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
-literal|"COUNTRY"
-argument_list|)
 expr_stmt|;
 block|}
 specifier|private

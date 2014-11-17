@@ -133,9 +133,9 @@ name|unit
 operator|.
 name|di
 operator|.
-name|client
+name|server
 operator|.
-name|ClientCase
+name|CayenneProjects
 import|;
 end_import
 
@@ -172,6 +172,16 @@ operator|.
 name|server
 operator|.
 name|UseServerRuntime
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
 import|;
 end_import
 
@@ -211,7 +221,7 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-name|ClientCase
+name|CayenneProjects
 operator|.
 name|MULTI_TIER_PROJECT
 argument_list|)
@@ -238,21 +248,14 @@ name|TableHelper
 name|mtTable
 decl_stmt|;
 annotation|@
-name|Override
-specifier|protected
+name|Before
+specifier|public
 name|void
-name|setUpAfterInjection
+name|testSetUp
 parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|dbHelper
-operator|.
-name|deleteAll
-argument_list|(
-literal|"MT_TABLE1"
-argument_list|)
-expr_stmt|;
 name|mtTable
 operator|=
 operator|new

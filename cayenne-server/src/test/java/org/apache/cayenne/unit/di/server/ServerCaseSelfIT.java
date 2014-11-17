@@ -125,7 +125,7 @@ begin_class
 annotation|@
 name|UseServerRuntime
 argument_list|(
-name|ServerCase
+name|CayenneProjects
 operator|.
 name|TESTMAP_PROJECT
 argument_list|)
@@ -172,7 +172,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|ServerCase
+name|CayenneProjects
 operator|.
 name|TESTMAP_PROJECT
 argument_list|,
