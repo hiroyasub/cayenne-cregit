@@ -1748,6 +1748,25 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|descriptor
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|EJBQLException
+argument_list|(
+literal|"the entity variable '"
+operator|+
+name|id
+operator|+
+literal|"' does not refer to any entity in the FROM clause"
+argument_list|)
+throw|;
+block|}
 specifier|final
 name|EntityResult
 name|entityResult
