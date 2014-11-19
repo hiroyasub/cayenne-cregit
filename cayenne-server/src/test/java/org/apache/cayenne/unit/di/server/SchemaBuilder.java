@@ -2017,6 +2017,15 @@ return|return
 name|queries
 return|;
 block|}
+specifier|protected
+name|DataDomain
+name|getDomain
+parameter_list|()
+block|{
+return|return
+name|domain
+return|;
+block|}
 block|}
 end_class
 
