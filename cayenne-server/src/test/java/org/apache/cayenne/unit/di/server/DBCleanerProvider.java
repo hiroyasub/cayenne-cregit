@@ -101,12 +101,6 @@ argument_list|>
 name|propertiesProvider
 decl_stmt|;
 annotation|@
-name|Inject
-specifier|private
-name|SchemaBuilder
-name|schemaBuilder
-decl_stmt|;
-annotation|@
 name|Override
 specifier|public
 name|DBCleaner
@@ -123,11 +117,6 @@ operator|(
 name|FlavoredDBHelper
 operator|)
 name|dbHelper
-argument_list|,
-name|schemaBuilder
-operator|.
-name|getDomain
-argument_list|()
 argument_list|,
 name|propertiesProvider
 operator|.
