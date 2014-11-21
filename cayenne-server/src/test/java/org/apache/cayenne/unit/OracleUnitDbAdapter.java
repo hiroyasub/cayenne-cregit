@@ -339,7 +339,7 @@ argument_list|()
 operator|.
 name|containsKey
 argument_list|(
-literal|"cayenne_test_select_proc"
+literal|"cayenne_tst_select_proc"
 argument_list|)
 condition|)
 block|{

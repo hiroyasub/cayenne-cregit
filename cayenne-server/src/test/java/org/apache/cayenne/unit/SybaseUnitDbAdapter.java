@@ -216,7 +216,7 @@ name|map
 operator|.
 name|getProcedure
 argument_list|(
-literal|"cayenne_test_select_proc"
+literal|"cayenne_tst_select_proc"
 argument_list|)
 decl_stmt|;
 if|if
@@ -587,7 +587,7 @@ name|map
 operator|.
 name|getProcedure
 argument_list|(
-literal|"cayenne_test_select_proc"
+literal|"cayenne_tst_select_proc"
 argument_list|)
 decl_stmt|;
 if|if

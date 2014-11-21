@@ -661,7 +661,7 @@ name|map
 operator|.
 name|getProcedure
 argument_list|(
-literal|"cayenne_test_upd_proc"
+literal|"cayenne_tst_upd_proc"
 argument_list|)
 decl_stmt|;
 name|assertNotNull
