@@ -381,14 +381,6 @@ argument_list|<
 name|DataDomain
 argument_list|>
 block|{
-comment|/**      * @since 4.0      */
-specifier|static
-specifier|final
-name|String
-name|DEFAULT_NAME
-init|=
-literal|"cayenne"
-decl_stmt|;
 specifier|private
 specifier|static
 name|Log
@@ -561,13 +553,6 @@ operator|new
 name|DataChannelDescriptor
 argument_list|()
 expr_stmt|;
-name|descriptor
-operator|.
-name|setName
-argument_list|(
-name|DEFAULT_NAME
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -575,6 +560,33 @@ name|descriptor
 operator|=
 name|descriptorFromConfigs
 argument_list|()
+expr_stmt|;
+block|}
+name|String
+name|nameOverride
+init|=
+name|runtimeProperties
+operator|.
+name|get
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_DOMAIN_NAME_PROPERTY
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|nameOverride
+operator|!=
+literal|null
+condition|)
+block|{
+name|descriptor
+operator|.
+name|setName
+argument_list|(
+name|nameOverride
+argument_list|)
 expr_stmt|;
 block|}
 name|DataDomain
@@ -826,7 +838,7 @@ return|return
 name|dataDomain
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|protected
 name|DataNode
 name|addDataNode
