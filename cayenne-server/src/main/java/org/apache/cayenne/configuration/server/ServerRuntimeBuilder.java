@@ -188,6 +188,7 @@ specifier|private
 name|int
 name|jdbcMaxConnections
 decl_stmt|;
+comment|/** 	 * Creates an empty builder. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|()
@@ -215,6 +216,7 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
+comment|/** 	 * An equivalent to creating builder with default constructor and calling 	 * {@link #addConfig(String)}. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|(
@@ -231,7 +233,7 @@ name|configurationLocation
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets a DataSource that will override any DataSources found in the      * mapping. Moreover if the mapping contains no DataNodes, and the      * DataSource is set with this method, the builder would create a single      * default DataNode.      */
+comment|/** 	 * Sets a DataSource that will override any DataSources found in the 	 * mapping. Moreover if the mapping contains no DataNodes, and the 	 * DataSource is set with this method, the builder would create a single 	 * default DataNode. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|dataSource
@@ -254,6 +256,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets JNDI location for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|jndiDataSource
@@ -276,6 +279,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a database URL for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|url
@@ -294,6 +298,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a driver Java class for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|jdbcDriver
@@ -313,6 +318,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a user name for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|user
@@ -331,6 +337,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a password for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|password
