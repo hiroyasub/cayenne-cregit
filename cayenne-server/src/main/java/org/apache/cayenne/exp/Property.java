@@ -675,7 +675,7 @@ block|}
 comment|/** 	 * Same as {@link #contains(String)}, only using case-insensitive 	 * comparison. 	 */
 specifier|public
 name|Expression
-name|icontains
+name|containsIgnoreCase
 parameter_list|(
 name|String
 name|value
@@ -696,7 +696,7 @@ block|}
 comment|/** 	 * Same as {@link #startsWith(String)}, only using case-insensitive 	 * comparison. 	 */
 specifier|public
 name|Expression
-name|istartsWith
+name|startsWithIgnoreCase
 parameter_list|(
 name|String
 name|value
@@ -717,7 +717,7 @@ block|}
 comment|/** 	 * Same as {@link #endsWith(String)}, only using case-insensitive 	 * comparison. 	 */
 specifier|public
 name|Expression
-name|iendsWith
+name|endsWithIgnoreCase
 parameter_list|(
 name|String
 name|value
