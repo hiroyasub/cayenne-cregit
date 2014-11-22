@@ -591,7 +591,7 @@ block|}
 comment|/** 	 * @return An expression for a case insensitive "NOT LIKE" query. 	 */
 specifier|public
 name|Expression
-name|nlikeInsensitive
+name|nlikeIgnoreCase
 parameter_list|(
 name|String
 name|value
