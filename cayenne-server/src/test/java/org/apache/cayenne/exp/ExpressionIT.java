@@ -283,7 +283,7 @@ name|TESTMAP_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|Expression_InContextIT
+name|ExpressionIT
 extends|extends
 name|ServerCase
 block|{
