@@ -314,7 +314,7 @@ name|DATA_SOURCE_TAG
 init|=
 literal|"data-source"
 decl_stmt|;
-comment|/**      * @deprecated the caller should use password resolving strategy instead of resolving      *             the password on the spot. For one thing this can be used in the Modeler      *             and no password may be available.      */
+comment|/** 	 * @deprecated the caller should use password resolving strategy instead of 	 *             resolving the password on the spot. For one thing this can be 	 *             used in the Modeler and no password may be available. 	 */
 annotation|@
 name|Deprecated
 specifier|private
@@ -373,7 +373,7 @@ return|return
 name|password
 return|;
 block|}
-comment|/**      * @deprecated the caller should use password resolving strategy instead of resolving      *             the password on the spot. For one thing this can be used in the Modeler      *             and no password may be available.      */
+comment|/** 	 * @deprecated the caller should use password resolving strategy instead of 	 *             resolving the password on the spot. For one thing this can be 	 *             used in the Modeler and no password may be available. 	 */
 annotation|@
 name|Deprecated
 specifier|private
@@ -494,6 +494,8 @@ specifier|protected
 name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|ConfigurationTree
 argument_list|<
@@ -1568,7 +1570,8 @@ argument_list|(
 name|username
 argument_list|)
 expr_stmt|;
-comment|// Replace {} in passwordSource with encoderSalt -- useful for EXECUTABLE
+comment|// Replace {} in passwordSource with encoderSalt -- useful for
+comment|// EXECUTABLE
 comment|//& URL options
 if|if
 condition|(

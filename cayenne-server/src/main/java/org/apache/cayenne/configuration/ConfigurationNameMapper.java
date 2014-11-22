@@ -38,7 +38,7 @@ specifier|public
 interface|interface
 name|ConfigurationNameMapper
 block|{
-comment|/**      * Returns the name of a configuration resource based on a naming convention for a      * given node type.      */
+comment|/** 	 * Returns the name of a configuration resource based on a naming convention 	 * for a given node type. 	 */
 name|String
 name|configurationLocation
 parameter_list|(
@@ -46,7 +46,7 @@ name|ConfigurationNode
 name|node
 parameter_list|)
 function_decl|;
-comment|/**      * Returns the name of a configuration resource based on a naming convention for a      * given node type.      */
+comment|/** 	 * Returns the name of a configuration resource based on a naming convention 	 * for a given node type. 	 */
 name|String
 name|configurationLocation
 parameter_list|(
@@ -62,7 +62,7 @@ name|String
 name|nodeName
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a node name for a given configuration type and a configuration resource.      * This operation is the opposite of the {@link #configurationLocation(Class, String)}      * . May return null if the resource name is not following the expected naming format.      */
+comment|/** 	 * Returns a node name for a given configuration type and a configuration 	 * resource. This operation is the opposite of the 	 * {@link #configurationLocation(Class, String)} . May return null if the 	 * resource name is not following the expected naming format. 	 */
 name|String
 name|configurationNodeName
 parameter_list|(

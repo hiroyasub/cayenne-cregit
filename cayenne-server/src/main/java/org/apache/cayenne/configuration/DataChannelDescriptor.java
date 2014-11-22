@@ -156,6 +156,14 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|6567527544207035602L
+decl_stmt|;
 specifier|protected
 name|String
 name|name
@@ -678,7 +686,7 @@ operator|=
 name|configurationSource
 expr_stmt|;
 block|}
-comment|/**      * Returns the name of the DataNode that should be used as the default if a DataMap is      * not explicitly linked to a node.      */
+comment|/** 	 * Returns the name of the DataNode that should be used as the default if a 	 * DataMap is not explicitly linked to a node. 	 */
 specifier|public
 name|String
 name|getDefaultNodeName

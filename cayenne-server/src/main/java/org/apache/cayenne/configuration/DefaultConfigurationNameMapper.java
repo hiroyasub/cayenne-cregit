@@ -96,6 +96,8 @@ name|NameMapper
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|configurationLocation
@@ -113,6 +115,8 @@ name|nameMapper
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|configurationLocation
@@ -180,6 +184,8 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|configurationNodeName
