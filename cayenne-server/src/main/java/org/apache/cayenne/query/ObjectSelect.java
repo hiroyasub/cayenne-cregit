@@ -2207,7 +2207,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Selects a single object using provided context. Essentially the inversion 	 * of "ObjectContext.selectOne(Select)". 	 */
+comment|/** 	 * Selects a single object using provided context. The query is expected to 	 * match zero or one object. It returns null if no objects were matched. If 	 * query matched more than one object, {@link CayenneRuntimeException} is 	 * thrown. 	 *<p> 	 * Essentially the inversion of "ObjectContext.selectOne(Select)". 	 */
 specifier|public
 name|T
 name|selectOne
@@ -2222,6 +2222,27 @@ operator|.
 name|selectOne
 argument_list|(
 name|this
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Selects a single object using provided context. The query itself can 	 * match any number of objects, but will return only the first one. It 	 * returns null if no objects were matched. 	 *<p> 	 * If it matched more than one object, the first object from the list is 	 * returned. This makes 'selectFirst' different from 	 * {@link #selectOne(ObjectContext)}, which would throw in this situation. 	 * 'selectFirst' is useful e.g. when the query is ordered and we only want 	 * to see the first object (e.g. "most recent news article"), etc. 	 *<p> 	 * This method is equivalent to calling "limit(1).selectOne(context)". 	 */
+specifier|public
+name|T
+name|selectFirst
+parameter_list|(
+name|ObjectContext
+name|context
+parameter_list|)
+block|{
+return|return
+name|limit
+argument_list|(
+literal|1
+argument_list|)
+operator|.
+name|selectOne
+argument_list|(
+name|context
 argument_list|)
 return|;
 block|}

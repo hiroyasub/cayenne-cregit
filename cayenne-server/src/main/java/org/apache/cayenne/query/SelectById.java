@@ -601,7 +601,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * Selects a single object using provided context. Essentially the inversion 	 * of "ObjectContext.selectOne(Select)". 	 */
+comment|/** 	 * Selects a single object using provided context. The query is expected to 	 * match zero or one object. It returns null if no objects were matched. If 	 * query matched more than one object, {@link CayenneRuntimeException} is 	 * thrown. Since we are selecting by ID, multiple matched objects likely 	 * indicate a database referential integrity problem. 	 *<p> 	 * Essentially the inversion of "ObjectContext.selectOne(Select)". 	 */
 specifier|public
 name|T
 name|selectOne
