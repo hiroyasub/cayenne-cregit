@@ -401,7 +401,7 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|exp
+name|where
 argument_list|(
 name|Artist
 operator|.
@@ -505,7 +505,7 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|exp
+name|where
 argument_list|(
 name|Artist
 operator|.

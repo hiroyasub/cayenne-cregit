@@ -220,7 +220,7 @@ name|dbEntityName
 decl_stmt|;
 specifier|private
 name|Expression
-name|exp
+name|where
 decl_stmt|;
 specifier|private
 name|Collection
@@ -326,7 +326,7 @@ argument_list|(
 name|entityType
 argument_list|)
 operator|.
-name|exp
+name|where
 argument_list|(
 name|expression
 argument_list|)
@@ -373,7 +373,7 @@ argument_list|(
 name|entityType
 argument_list|)
 operator|.
-name|exp
+name|where
 argument_list|(
 name|expression
 argument_list|)
@@ -438,7 +438,7 @@ operator|.
 name|fetchDataRows
 argument_list|()
 operator|.
-name|exp
+name|where
 argument_list|(
 name|expression
 argument_list|)
@@ -542,7 +542,7 @@ argument_list|(
 name|dbEntityName
 argument_list|)
 operator|.
-name|exp
+name|where
 argument_list|(
 name|expression
 argument_list|)
@@ -705,7 +705,7 @@ name|replacement
 operator|.
 name|setQualifier
 argument_list|(
-name|exp
+name|where
 argument_list|)
 expr_stmt|;
 name|replacement
@@ -918,7 +918,7 @@ name|ObjectSelect
 argument_list|<
 name|T
 argument_list|>
-name|exp
+name|where
 parameter_list|(
 name|Expression
 name|expression
@@ -926,7 +926,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|exp
+name|where
 operator|=
 name|expression
 expr_stmt|;
@@ -940,7 +940,7 @@ name|ObjectSelect
 argument_list|<
 name|T
 argument_list|>
-name|exp
+name|where
 parameter_list|(
 name|String
 name|expressionString
@@ -952,7 +952,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|exp
+name|where
 operator|=
 name|ExpressionFactory
 operator|.
@@ -967,7 +967,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * AND's provided expressions to the existing qualifier expression. 	 *  	 * @return this object 	 */
+comment|/** 	 * AND's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1009,7 +1009,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * AND's provided expressions to the existing qualifier expression. 	 *  	 * @return this object 	 */
+comment|/** 	 * AND's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1048,7 +1048,7 @@ name|all
 decl_stmt|;
 if|if
 condition|(
-name|exp
+name|where
 operator|!=
 literal|null
 condition|)
@@ -1073,7 +1073,7 @@ name|all
 operator|.
 name|add
 argument_list|(
-name|exp
+name|where
 argument_list|)
 expr_stmt|;
 name|all
@@ -1091,7 +1091,7 @@ operator|=
 name|expressions
 expr_stmt|;
 block|}
-name|exp
+name|where
 operator|=
 name|ExpressionFactory
 operator|.
@@ -1104,7 +1104,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * OR's provided expressions to the existing qualifier expression. 	 *  	 * @return this object 	 */
+comment|/** 	 * OR's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1146,7 +1146,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * OR's provided expressions to the existing qualifier expression. 	 *  	 * @return this object 	 */
+comment|/** 	 * OR's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1185,7 +1185,7 @@ name|all
 decl_stmt|;
 if|if
 condition|(
-name|exp
+name|where
 operator|!=
 literal|null
 condition|)
@@ -1210,7 +1210,7 @@ name|all
 operator|.
 name|add
 argument_list|(
-name|exp
+name|where
 argument_list|)
 expr_stmt|;
 name|all
@@ -1228,7 +1228,7 @@ operator|=
 name|expressions
 expr_stmt|;
 block|}
-name|exp
+name|where
 operator|=
 name|ExpressionFactory
 operator|.
@@ -2155,13 +2155,14 @@ return|return
 name|dbEntityName
 return|;
 block|}
+comment|/** 	 * Returns a WHERE clause Expression of this query. 	 */
 specifier|public
 name|Expression
-name|getExp
+name|getWhere
 parameter_list|()
 block|{
 return|return
-name|exp
+name|where
 return|;
 block|}
 specifier|public

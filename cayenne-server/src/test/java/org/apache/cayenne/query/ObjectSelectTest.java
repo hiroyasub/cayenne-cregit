@@ -307,7 +307,7 @@ name|assertNull
 argument_list|(
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -390,7 +390,7 @@ literal|"a = \"A\""
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -562,7 +562,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testExp
+name|testWhere
 parameter_list|()
 block|{
 name|ObjectSelect
@@ -582,7 +582,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -600,7 +600,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -609,7 +609,7 @@ argument_list|)
 expr_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -627,7 +627,7 @@ literal|"b = 4"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -659,7 +659,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -677,7 +677,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -713,7 +713,7 @@ literal|"(a = 3) and (b = 4) and (c> 5)"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -745,7 +745,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -763,7 +763,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -812,7 +812,7 @@ literal|"(a = 3) and (b = 4) and (c> 5)"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -844,7 +844,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -862,7 +862,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -880,7 +880,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -912,7 +912,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -930,7 +930,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -954,7 +954,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -986,7 +986,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -1004,7 +1004,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -1030,7 +1030,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -1062,7 +1062,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -1080,7 +1080,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -1116,7 +1116,7 @@ literal|"(a = 3) or (b = 4) or (c> 5)"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -1148,7 +1148,7 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|exp
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -1166,7 +1166,7 @@ literal|"a = 3"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -1215,7 +1215,7 @@ literal|"(a = 3) or (b = 4) or (c> 5)"
 argument_list|,
 name|q
 operator|.
-name|getExp
+name|getWhere
 argument_list|()
 operator|.
 name|toString
