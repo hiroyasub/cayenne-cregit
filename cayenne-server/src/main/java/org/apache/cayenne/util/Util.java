@@ -504,7 +504,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Converts URL to file. Throws {@link IllegalArgumentException} if the URL      * is not a "file://" URL.      */
+comment|/** 	 * Converts URL to file. Throws {@link IllegalArgumentException} if the URL 	 * is not a "file://" URL. 	 */
 specifier|public
 specifier|static
 name|File
@@ -574,7 +574,7 @@ name|uri
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads file contents, returning it as a String, using System default line      * separator.      */
+comment|/** 	 * Reads file contents, returning it as a String, using System default line 	 * separator. 	 */
 specifier|public
 specifier|static
 name|String
@@ -600,7 +600,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads file contents, returning it as a String, joining lines with      * provided separator.      */
+comment|/** 	 * Reads file contents, returning it as a String, joining lines with 	 * provided separator. 	 */
 specifier|public
 specifier|static
 name|String
@@ -685,7 +685,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * @param strings      *            The list of strings to join.      * @param separator      *            The separator between the strings.      * @return A single string of all the input strings separated by the      *         separator.      */
+comment|/** 	 * @param strings 	 *            The list of strings to join. 	 * @param separator 	 *            The separator between the strings. 	 * @return A single string of all the input strings separated by the 	 *         separator. 	 */
 specifier|public
 specifier|static
 name|String
@@ -714,19 +714,23 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 literal|""
 return|;
+block|}
 if|if
 condition|(
 name|separator
 operator|==
 literal|null
 condition|)
+block|{
 name|separator
 operator|=
 literal|""
 expr_stmt|;
+block|}
 name|StringBuilder
 name|builder
 init|=
@@ -751,6 +755,7 @@ argument_list|()
 operator|>
 literal|0
 condition|)
+block|{
 name|builder
 operator|.
 name|append
@@ -758,6 +763,7 @@ argument_list|(
 name|separator
 argument_list|)
 expr_stmt|;
+block|}
 name|builder
 operator|.
 name|append
@@ -773,7 +779,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Replaces all backslashes "\" with forward slashes "/". Convenience method      * to convert path Strings to URI format.      */
+comment|/** 	 * Replaces all backslashes "\" with forward slashes "/". Convenience method 	 * to convert path Strings to URI format. 	 */
 specifier|public
 specifier|static
 name|String
@@ -792,7 +798,7 @@ name|string
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks up and returns the root cause of an exception. If none is found,      * returns supplied Throwable object unchanged. If root is found,      * recursively "unwraps" it, and returns the result to the user.      */
+comment|/** 	 * Looks up and returns the root cause of an exception. If none is found, 	 * returns supplied Throwable object unchanged. If root is found, 	 * recursively "unwraps" it, and returns the result to the user. 	 */
 specifier|public
 specifier|static
 name|Throwable
@@ -898,7 +904,7 @@ return|return
 name|th
 return|;
 block|}
-comment|/**      * Compares two objects similar to "Object.equals(Object)". Unlike      * Object.equals(..), this method doesn't throw an exception if any of the      * two objects is null.      */
+comment|/** 	 * Compares two objects similar to "Object.equals(Object)". Unlike 	 * Object.equals(..), this method doesn't throw an exception if any of the 	 * two objects is null. 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -975,7 +981,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Compares two objects similar to "Comparable.compareTo(Object)". Unlike      * Comparable.compareTo(..), this method doesn't throw an exception if any      * of the two objects is null.      *       * @since 1.1      */
+comment|/** 	 * Compares two objects similar to "Comparable.compareTo(Object)". Unlike 	 * Comparable.compareTo(..), this method doesn't throw an exception if any 	 * of the two objects is null. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1056,7 +1062,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Returns true, if the String is null or an empty string.      */
+comment|/** 	 * Returns true, if the String is null or an empty string. 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -1079,7 +1085,7 @@ operator|==
 literal|0
 return|;
 block|}
-comment|/**      * Creates Serializable object copy using serialization/deserialization.      */
+comment|/** 	 * Creates Serializable object copy using serialization/deserialization. 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1172,7 +1178,7 @@ return|return
 name|copy
 return|;
 block|}
-comment|/**      * Creates an XMLReader with default feature set. Note that all Cayenne      * internal XML parsers should probably use XMLReader obtained via this      * method for consistency sake, and can customize feature sets as needed.      */
+comment|/** 	 * Creates an XMLReader with default feature set. Note that all Cayenne 	 * internal XML parsers should probably use XMLReader obtained via this 	 * method for consistency sake, and can customize feature sets as needed. 	 */
 specifier|public
 specifier|static
 name|XMLReader
@@ -1223,7 +1229,7 @@ return|return
 name|reader
 return|;
 block|}
-comment|/**      * Returns package name for the Java class as a path separated with forward      * slash ("/"). Method is used to lookup resources that are located in      * package subdirectories. For example, a String "a/b/c" will be returned      * for class name "a.b.c.ClassName".      */
+comment|/** 	 * Returns package name for the Java class as a path separated with forward 	 * slash ("/"). Method is used to lookup resources that are located in 	 * package subdirectories. For example, a String "a/b/c" will be returned 	 * for class name "a.b.c.ClassName". 	 */
 specifier|public
 specifier|static
 name|String
@@ -1242,7 +1248,7 @@ name|className
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns an unqualified class name for the fully qualified name.      *       * @since 3.0      */
+comment|/** 	 * Returns an unqualified class name for the fully qualified name. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|String
@@ -1314,7 +1320,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a mutable map out of two arrays with keys and values.      *       * @since 1.2      */
+comment|/** 	 * Creates a mutable map out of two arrays with keys and values. 	 *  	 * @since 1.2 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1459,7 +1465,7 @@ return|return
 name|map
 return|;
 block|}
-comment|/**      * Extracts extension from the file name. Dot is not included in the      * returned string.      */
+comment|/** 	 * Extracts extension from the file name. Dot is not included in the 	 * returned string. 	 */
 specifier|public
 specifier|static
 name|String
@@ -1507,7 +1513,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Strips extension from the file name.      */
+comment|/** 	 * Strips extension from the file name. 	 */
 specifier|public
 specifier|static
 name|String
@@ -1548,7 +1554,7 @@ else|:
 name|fileName
 return|;
 block|}
-comment|/**      * Strips "\n", "\r\n", "\r" from the argument string, replacing them with a      * provided character.      *       * @since 3.1      */
+comment|/** 	 * Strips "\n", "\r\n", "\r" from the argument string, replacing them with a 	 * provided character. 	 *  	 * @since 3.1 	 */
 specifier|public
 specifier|static
 name|String
@@ -1704,7 +1710,7 @@ else|:
 name|string
 return|;
 block|}
-comment|/**      * Encodes a string so that it can be used as an attribute value in an XML      * document. Will do conversion of the greater/less signs, quotes and      * ampersands.      */
+comment|/** 	 * Encodes a string so that it can be used as an attribute value in an XML 	 * document. Will do conversion of the greater/less signs, quotes and 	 * ampersands. 	 */
 specifier|public
 specifier|static
 name|String
@@ -1782,6 +1788,7 @@ name|c
 operator|==
 literal|'<'
 condition|)
+block|{
 name|encoded
 operator|.
 name|append
@@ -1789,12 +1796,14 @@ argument_list|(
 literal|"&lt;"
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|c
 operator|==
 literal|'\"'
 condition|)
+block|{
 name|encoded
 operator|.
 name|append
@@ -1802,12 +1811,14 @@ argument_list|(
 literal|"&quot;"
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|c
 operator|==
 literal|'>'
 condition|)
+block|{
 name|encoded
 operator|.
 name|append
@@ -1815,12 +1826,14 @@ argument_list|(
 literal|"&gt;"
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|c
 operator|==
 literal|'\''
 condition|)
+block|{
 name|encoded
 operator|.
 name|append
@@ -1828,12 +1841,14 @@ argument_list|(
 literal|"&apos;"
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|c
 operator|==
 literal|'&'
 condition|)
+block|{
 name|encoded
 operator|.
 name|append
@@ -1841,7 +1856,9 @@ argument_list|(
 literal|"&amp;"
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|encoded
 operator|.
 name|append
@@ -1849,6 +1866,7 @@ argument_list|(
 name|c
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|encoded
@@ -1857,7 +1875,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Trims long strings substituting middle part with "...".      *       * @param str      *            String to trim.      * @param maxLength      *            maximum allowable length. Must be at least 5, or an      *            IllegalArgumentException is thrown.      * @return String      */
+comment|/** 	 * Trims long strings substituting middle part with "...". 	 *  	 * @param str 	 *            String to trim. 	 * @param maxLength 	 *            maximum allowable length. Must be at least 5, or an 	 *            IllegalArgumentException is thrown. 	 * @return String 	 */
 specifier|public
 specifier|static
 name|String
@@ -1954,7 +1972,7 @@ name|endLen
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a sorted iterator from an unsorted one. Use this method as a last      * resort, since it is much less efficient then just sorting a collection      * that backs the original iterator.      */
+comment|/** 	 * Returns a sorted iterator from an unsorted one. Use this method as a last 	 * resort, since it is much less efficient then just sorting a collection 	 * that backs the original iterator. 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -2027,7 +2045,7 @@ name|iterator
 argument_list|()
 return|;
 block|}
-comment|/**      * Builds a hashCode of Collection.      */
+comment|/** 	 * Builds a hashCode of Collection. 	 */
 specifier|public
 specifier|static
 name|int
@@ -2070,7 +2088,7 @@ name|toHashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 specifier|static
 name|Pattern
@@ -2117,7 +2135,7 @@ name|flag
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if a Member is accessible via reflection under normal Java      * access controls.      *       * @since 1.2      */
+comment|/** 	 * Returns true if a Member is accessible via reflection under normal Java 	 * access controls. 	 *  	 * @since 1.2 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -2152,7 +2170,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a Java class, handling regular class names as well as      * single-dimensional arrays and primitive types.      *       * @since 1.2      * @deprecated since 4.0 this method based on statically defined class      *             loading algorithm is not going to work in environments like      *             OSGi. {@link AdhocObjectFactory} should be used as it can      *             provide the environment-specific class loading policy.      */
+comment|/** 	 * Creates a Java class, handling regular class names as well as 	 * single-dimensional arrays and primitive types. 	 *  	 * @since 1.2 	 * @deprecated since 4.0 this method based on statically defined class 	 *             loading algorithm is not going to work in environments like 	 *             OSGi. {@link AdhocObjectFactory} should be used as it can 	 *             provide the environment-specific class loading policy. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2476,7 +2494,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Changes object state to MODIFIED if needed, returning true if the change      * has occurred, false if not.      */
+comment|/** 	 * Changes object state to MODIFIED if needed, returning true if the change 	 * has occurred, false if not. 	 */
 specifier|static
 name|boolean
 name|markAsDirty
