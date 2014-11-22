@@ -1112,7 +1112,7 @@ name|e
 init|=
 name|p
 operator|.
-name|likeInsensitive
+name|likeIgnoreCase
 argument_list|(
 literal|"abc"
 argument_list|)
