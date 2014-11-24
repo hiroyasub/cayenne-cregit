@@ -188,10 +188,6 @@ specifier|private
 name|String
 name|location
 decl_stmt|;
-specifier|private
-name|XMLDataChannelDescriptorLoader
-name|loader
-decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
@@ -240,12 +236,13 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
+name|XMLDataChannelDescriptorLoader
 name|loader
-operator|=
+init|=
 operator|new
 name|XMLDataChannelDescriptorLoader
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 name|injector
 operator|.
 name|injectMembers

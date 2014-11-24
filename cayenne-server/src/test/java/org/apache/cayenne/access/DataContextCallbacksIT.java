@@ -283,7 +283,7 @@ annotation|@
 name|After
 specifier|public
 name|void
-name|testTearDown
+name|tearDown
 parameter_list|()
 throws|throws
 name|Exception

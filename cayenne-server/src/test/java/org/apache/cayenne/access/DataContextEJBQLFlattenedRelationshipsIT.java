@@ -335,7 +335,7 @@ annotation|@
 name|Before
 specifier|public
 name|void
-name|testSetUp
+name|setUp
 parameter_list|()
 throws|throws
 name|Exception

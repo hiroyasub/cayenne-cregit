@@ -263,7 +263,7 @@ annotation|@
 name|Before
 specifier|public
 name|void
-name|testSetUp
+name|setUp
 parameter_list|()
 throws|throws
 name|Exception
@@ -278,7 +278,7 @@ annotation|@
 name|After
 specifier|public
 name|void
-name|testTearDown
+name|tearDown
 parameter_list|()
 throws|throws
 name|Exception

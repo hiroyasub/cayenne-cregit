@@ -205,10 +205,10 @@ name|get
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|tearDown
+name|tearDownLifecycleManager
 argument_list|()
 expr_stmt|;
-name|setUp
+name|setUpLifecycleManager
 argument_list|()
 expr_stmt|;
 name|assertNotSame
