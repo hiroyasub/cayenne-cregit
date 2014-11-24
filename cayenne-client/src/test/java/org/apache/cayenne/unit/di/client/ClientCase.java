@@ -147,6 +147,16 @@ name|ServerCaseModule
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -216,10 +226,10 @@ argument_list|()
 expr_stmt|;
 block|}
 annotation|@
-name|Override
-specifier|protected
+name|Before
+specifier|public
 name|void
-name|setUpAfterInjection
+name|cleanUpDB
 parameter_list|()
 throws|throws
 name|Exception

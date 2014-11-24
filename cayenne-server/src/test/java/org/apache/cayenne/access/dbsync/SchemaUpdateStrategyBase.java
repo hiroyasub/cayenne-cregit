@@ -238,9 +238,9 @@ name|adapter
 decl_stmt|;
 annotation|@
 name|Override
-specifier|protected
+specifier|public
 name|void
-name|setUpAfterInjection
+name|cleanUpDB
 parameter_list|()
 throws|throws
 name|Exception

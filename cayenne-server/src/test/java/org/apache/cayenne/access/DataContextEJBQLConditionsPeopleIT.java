@@ -335,19 +335,9 @@ name|dbCleaner
 decl_stmt|;
 annotation|@
 name|Override
-specifier|protected
-name|void
-name|setUpAfterInjection
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-block|}
-annotation|@
-name|Before
 specifier|public
 name|void
-name|testSetUp
+name|cleanUpDB
 parameter_list|()
 throws|throws
 name|Exception
@@ -405,6 +395,14 @@ operator|.
 name|clean
 argument_list|()
 expr_stmt|;
+block|}
+annotation|@
+name|Before
+specifier|public
+name|void
+name|setUp
+parameter_list|()
+block|{
 comment|// TODO: use TableHelper to create test data
 name|Department
 name|d1
