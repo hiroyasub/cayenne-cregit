@@ -306,7 +306,7 @@ condition|)
 block|{
 name|setSuperclassPackage
 argument_list|(
-literal|""
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
