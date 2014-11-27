@@ -21,6 +21,22 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NamePatternMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|tools
 operator|.
 name|ant
@@ -51,6 +67,24 @@ name|assertEquals
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NamePatternMatcher
+operator|.
+name|replaceWildcardInStringWithString
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -70,8 +104,6 @@ name|assertEquals
 argument_list|(
 literal|null
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -86,8 +118,6 @@ name|assertEquals
 argument_list|(
 literal|"*.java"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|null
@@ -102,8 +132,6 @@ name|assertEquals
 argument_list|(
 literal|"Entity.java"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -118,8 +146,6 @@ name|assertEquals
 argument_list|(
 literal|"java.Entity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -134,8 +160,6 @@ name|assertEquals
 argument_list|(
 literal|"Entity.Entity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -150,8 +174,6 @@ name|assertEquals
 argument_list|(
 literal|"EntityEntity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -166,8 +188,6 @@ name|assertEquals
 argument_list|(
 literal|"EditEntityReport.vm"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -182,8 +202,6 @@ name|assertEquals
 argument_list|(
 literal|"Entity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -257,8 +275,9 @@ decl_stmt|;
 name|NamePatternMatcher
 name|namePatternMatcher
 init|=
-operator|new
 name|NamePatternMatcher
+operator|.
+name|build
 argument_list|(
 operator|new
 name|AntLogger
@@ -394,8 +413,9 @@ decl_stmt|;
 name|NamePatternMatcher
 name|namePatternMatcher
 init|=
-operator|new
 name|NamePatternMatcher
+operator|.
+name|build
 argument_list|(
 operator|new
 name|AntLogger

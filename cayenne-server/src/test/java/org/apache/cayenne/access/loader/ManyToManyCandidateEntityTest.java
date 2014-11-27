@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|access
+operator|.
+name|loader
 package|;
 end_package
 

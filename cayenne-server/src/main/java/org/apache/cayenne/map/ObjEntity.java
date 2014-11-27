@@ -364,17 +364,17 @@ name|ObjEntityListener
 implements|,
 name|ConfigurationNode
 block|{
-specifier|final
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|LOCK_TYPE_NONE
 init|=
 literal|0
 decl_stmt|;
-specifier|final
 specifier|public
 specifier|static
+specifier|final
 name|int
 name|LOCK_TYPE_OPTIMISTIC
 init|=
@@ -1349,7 +1349,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Failed to load class "
+literal|"Failed to doLoad class "
 operator|+
 name|name
 operator|+
@@ -1667,18 +1667,15 @@ name|isClientAllowed
 parameter_list|()
 block|{
 return|return
-operator|(
 name|getDataMap
 argument_list|()
-operator|==
+operator|!=
 literal|null
-operator|||
+operator|&&
+operator|!
 name|isServerOnly
 argument_list|()
-operator|)
-condition|?
-literal|false
-else|:
+operator|&&
 name|getDataMap
 argument_list|()
 operator|.
@@ -3164,7 +3161,9 @@ name|dbEntityName
 operator|==
 literal|null
 condition|)
+block|{
 return|return;
+block|}
 for|for
 control|(
 name|ObjAttribute
@@ -3187,9 +3186,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-literal|null
-operator|!=
 name|dbAttr
+operator|!=
+literal|null
 condition|)
 block|{
 name|attribute

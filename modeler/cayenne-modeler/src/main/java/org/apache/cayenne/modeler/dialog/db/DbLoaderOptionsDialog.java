@@ -835,7 +835,7 @@ name|setText
 argument_list|(
 name|DbLoader
 operator|.
-name|WILDCARD
+name|WILDCARD_PATTERN
 argument_list|)
 expr_stmt|;
 name|this
@@ -855,7 +855,7 @@ name|setText
 argument_list|(
 name|DbLoader
 operator|.
-name|WILDCARD
+name|WILDCARD_PATTERN
 argument_list|)
 expr_stmt|;
 name|this

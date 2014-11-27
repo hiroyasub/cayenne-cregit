@@ -300,7 +300,7 @@ return|return
 literal|"Create ObjEntity"
 return|;
 block|}
-comment|/** 	 * Constructor for CreateObjEntityAction. 	 */
+comment|/**      * Constructor for CreateObjEntityAction.      */
 specifier|public
 name|CreateObjEntityAction
 parameter_list|(
@@ -328,7 +328,7 @@ return|return
 literal|"icon-new_objentity.gif"
 return|;
 block|}
-comment|/** 	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
+comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */
 annotation|@
 name|Override
 specifier|public
@@ -460,52 +460,21 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|String
-name|pkg
-init|=
-name|dataMap
-operator|.
-name|getDefaultPackage
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|pkg
-operator|!=
-literal|null
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|pkg
-operator|.
-name|endsWith
-argument_list|(
-literal|"."
-argument_list|)
-condition|)
-block|{
-name|pkg
-operator|=
-name|pkg
-operator|+
-literal|"."
-expr_stmt|;
-block|}
 name|entity
 operator|.
 name|setClassName
 argument_list|(
-name|pkg
-operator|+
+name|dataMap
+operator|.
+name|getNameWithDefaultPackage
+argument_list|(
 name|entity
 operator|.
 name|getName
 argument_list|()
 argument_list|)
+argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|dataMap
@@ -514,52 +483,21 @@ name|isClientSupported
 argument_list|()
 condition|)
 block|{
-name|String
-name|clientPkg
-init|=
-name|dataMap
-operator|.
-name|getDefaultClientPackage
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|clientPkg
-operator|!=
-literal|null
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|clientPkg
-operator|.
-name|endsWith
-argument_list|(
-literal|"."
-argument_list|)
-condition|)
-block|{
-name|clientPkg
-operator|=
-name|clientPkg
-operator|+
-literal|"."
-expr_stmt|;
-block|}
 name|entity
 operator|.
 name|setClientClassName
 argument_list|(
-name|clientPkg
-operator|+
+name|dataMap
+operator|.
+name|getNameWithDefaultClientPackage
+argument_list|(
 name|entity
 operator|.
 name|getName
 argument_list|()
 argument_list|)
+argument_list|)
 expr_stmt|;
-block|}
 name|entity
 operator|.
 name|setClientSuperClassName
@@ -669,7 +607,7 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Fires events when a obj entity was added 	 */
+comment|/**      * Fires events when a obj entity was added      */
 specifier|static
 name|void
 name|fireObjEntityEvent
@@ -748,7 +686,7 @@ name|displayEvent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns<code>true</code> if path contains a DataMap object. 	 */
+comment|/**      * Returns<code>true</code> if path contains a DataMap object.      */
 annotation|@
 name|Override
 specifier|public
