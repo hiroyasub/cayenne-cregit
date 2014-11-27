@@ -154,7 +154,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2.  * @Immutable  */
+comment|/**  * @since 3.2.  */
 end_comment
 
 begin_class
@@ -780,7 +780,7 @@ name|toHashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * @Immutable      * @param<T>      */
+comment|/**      * @param<T>      */
 specifier|private
 specifier|abstract
 specifier|static

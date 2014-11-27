@@ -3559,7 +3559,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 1.1      * @deprecated since 4.0 use      *             {@link #loadProcedures(DataMap, String, String, String)} that      *             supports "catalog" pattern.      */
+comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *       * @since 1.1      * @deprecated since 4.0 use loadProcedures(DataMap, String, String, String) that supports "catalog" pattern.      */
 annotation|@
 name|Deprecated
 specifier|public
