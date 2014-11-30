@@ -496,7 +496,7 @@ block|}
 operator|.
 name|runTest
 argument_list|(
-literal|20000
+literal|40000
 argument_list|)
 expr_stmt|;
 block|}
