@@ -16,6 +16,86 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -243,97 +323,7 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Before
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
 import|;
 end_import
 
@@ -376,10 +366,10 @@ name|DBHelper
 name|dbHelper
 decl_stmt|;
 annotation|@
-name|Before
+name|Override
 specifier|public
 name|void
-name|setUp
+name|cleanUpDB
 parameter_list|()
 throws|throws
 name|Exception
@@ -403,6 +393,11 @@ name|INTEGER
 argument_list|)
 operator|.
 name|execute
+argument_list|()
+expr_stmt|;
+name|super
+operator|.
+name|cleanUpDB
 argument_list|()
 expr_stmt|;
 block|}
@@ -523,7 +518,7 @@ name|commitChanges
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Tests that deleting a source of a flattened relationship with CASCADE rule results      * in deleting a join and a target.      */
+comment|/** 	 * Tests that deleting a source of a flattened relationship with CASCADE 	 * rule results in deleting a join and a target. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -699,7 +694,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that deleting a source of a flattened relationship with NULLIFY rule results      * in deleting a join together with the object deleted.      */
+comment|/** 	 * Tests that deleting a source of a flattened relationship with NULLIFY 	 * rule results in deleting a join together with the object deleted. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -1226,7 +1221,8 @@ argument_list|(
 name|anArtist
 argument_list|)
 expr_stmt|;
-comment|// Test that the link record was deleted, and removed from the relationship
+comment|// Test that the link record was deleted, and removed from the
+comment|// relationship
 name|assertEquals
 argument_list|(
 name|PersistenceState
