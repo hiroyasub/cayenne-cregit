@@ -646,6 +646,12 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+comment|// ensure other threads get a chance to run too
+name|Thread
+operator|.
+name|yield
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 block|}
