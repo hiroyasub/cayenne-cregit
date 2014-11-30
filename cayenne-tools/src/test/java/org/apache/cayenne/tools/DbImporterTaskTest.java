@@ -339,6 +339,14 @@ name|fail
 import|;
 end_import
 
+begin_comment
+comment|// TODO: we are only testing on Derby. We may need to dynamically switch between DBs
+end_comment
+
+begin_comment
+comment|// based on "cayenneTestConnection", like we do in cayenne-server, etc.
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -1120,33 +1128,6 @@ name|similar
 argument_list|()
 condition|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|">>>> "
-operator|+
-name|map
-operator|.
-name|getAbsolutePath
-argument_list|()
-operator|+
-literal|"-result"
-argument_list|)
-expr_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|">>>> "
-operator|+
-name|mapFileCopy
-argument_list|)
-expr_stmt|;
 name|fail
 argument_list|(
 name|diff
