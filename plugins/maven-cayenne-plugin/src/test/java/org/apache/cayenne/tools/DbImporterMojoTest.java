@@ -19,13 +19,15 @@ begin_import
 import|import static
 name|org
 operator|.
-name|custommonkey
+name|apache
 operator|.
-name|xmlunit
+name|commons
 operator|.
-name|XMLAssert
+name|lang
 operator|.
-name|assertXMLEqual
+name|StringUtils
+operator|.
+name|isBlank
 import|;
 end_import
 
@@ -151,6 +153,22 @@ name|tools
 operator|.
 name|dbimport
 operator|.
+name|DbImportConfiguration
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tools
+operator|.
+name|dbimport
+operator|.
 name|config
 operator|.
 name|Catalog
@@ -190,22 +208,6 @@ operator|.
 name|config
 operator|.
 name|Schema
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|tools
-operator|.
-name|dbimport
-operator|.
-name|DbImportConfiguration
 import|;
 end_import
 
@@ -284,22 +286,6 @@ operator|.
 name|sax
 operator|.
 name|SAXException
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|StringUtils
-operator|.
-name|isBlank
 import|;
 end_import
 
