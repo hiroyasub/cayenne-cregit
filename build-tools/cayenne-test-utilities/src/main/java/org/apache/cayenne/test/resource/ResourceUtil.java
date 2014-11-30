@@ -18,6 +18,18 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
 import|import
 name|java
 operator|.
@@ -112,7 +124,7 @@ specifier|public
 class|class
 name|ResourceUtil
 block|{
-comment|/**      * Copies resources to a file, thus making it available to the caller as File.      */
+comment|/** 	 * Copies resources to a file, thus making it available to the caller as 	 * File. 	 */
 specifier|public
 specifier|static
 name|void
@@ -155,7 +167,49 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a guaranteed non-null resource for a given name.      */
+comment|/** 	 * Returns a guaranteed non-null resource for a given name. 	 */
+specifier|public
+specifier|static
+name|URL
+name|getResource
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|relativeTo
+parameter_list|,
+name|String
+name|name
+parameter_list|)
+block|{
+name|URL
+name|in
+init|=
+name|relativeTo
+operator|.
+name|getResource
+argument_list|(
+name|name
+argument_list|)
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+literal|"Resource not found: "
+operator|+
+name|name
+argument_list|,
+name|in
+argument_list|)
+expr_stmt|;
+return|return
+name|getResource
+argument_list|(
+name|in
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Returns a guaranteed non-null resource for a given name. 	 */
 specifier|public
 specifier|static
 name|URL
@@ -181,33 +235,57 @@ argument_list|(
 name|name
 argument_list|)
 decl_stmt|;
+name|assertNotNull
+argument_list|(
+literal|"Resource not found: "
+operator|+
+name|name
+argument_list|,
+name|in
+argument_list|)
+expr_stmt|;
+return|return
+name|getResource
+argument_list|(
+name|in
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Returns a guaranteed non-null resource for a given name. 	 */
+specifier|private
+specifier|static
+name|URL
+name|getResource
+parameter_list|(
+name|URL
+name|classloaderUrl
+parameter_list|)
+block|{
 if|if
 condition|(
-name|in
+name|classloaderUrl
 operator|==
 literal|null
 condition|)
 block|{
 throw|throw
 operator|new
-name|RuntimeException
+name|NullPointerException
 argument_list|(
-literal|"Resource not found: "
-operator|+
-name|name
+literal|"null URL"
 argument_list|)
 throw|;
 block|}
-comment|// Fix for the issue described at https://issues.apache.org/struts/browse/SB-35
+comment|// Fix for the issue described at
+comment|// https://issues.apache.org/struts/browse/SB-35
 comment|// Basically, spaces in filenames make maven cry.
 try|try
 block|{
-name|in
-operator|=
+return|return
 operator|new
 name|URL
 argument_list|(
-name|in
+name|classloaderUrl
 operator|.
 name|toExternalForm
 argument_list|()
@@ -219,7 +297,7 @@ argument_list|,
 literal|"%20"
 argument_list|)
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 catch|catch
 parameter_list|(
@@ -237,9 +315,6 @@ name|e
 argument_list|)
 throw|;
 block|}
-return|return
-name|in
-return|;
 block|}
 specifier|public
 specifier|static

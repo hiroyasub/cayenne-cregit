@@ -1263,11 +1263,13 @@ block|{
 name|URL
 name|sqlUrl
 init|=
-name|getClass
-argument_list|()
+name|ResourceUtil
 operator|.
 name|getResource
 argument_list|(
+name|getClass
+argument_list|()
+argument_list|,
 literal|"dbimport/"
 operator|+
 name|sqlFile
