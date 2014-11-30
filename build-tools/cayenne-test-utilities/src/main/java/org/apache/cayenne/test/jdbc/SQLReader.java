@@ -77,6 +77,7 @@ class|class
 name|SQLReader
 block|{
 specifier|public
+specifier|static
 name|Collection
 argument_list|<
 name|String
@@ -99,6 +100,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
+specifier|static
 name|Collection
 argument_list|<
 name|String
@@ -236,6 +238,7 @@ name|statements
 return|;
 block|}
 specifier|private
+specifier|static
 name|boolean
 name|appendLine
 parameter_list|(
