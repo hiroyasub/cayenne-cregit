@@ -2699,7 +2699,7 @@ argument_list|)
 expr_stmt|;
 name|dbRel
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbTarget
 argument_list|)
@@ -2877,7 +2877,7 @@ argument_list|)
 expr_stmt|;
 name|rel
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|target
 argument_list|)

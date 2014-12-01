@@ -605,6 +605,16 @@ end_import
 
 begin_import
 import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JToolBar
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|awt
@@ -1054,9 +1064,9 @@ argument_list|(
 operator|new
 name|Dimension
 argument_list|(
-literal|35
-argument_list|,
 literal|30
+argument_list|,
+literal|20
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1080,9 +1090,9 @@ argument_list|(
 operator|new
 name|Dimension
 argument_list|(
-literal|35
-argument_list|,
 literal|30
+argument_list|,
+literal|20
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1114,14 +1124,12 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-name|JPanel
+name|JToolBar
 name|barPanel
 init|=
 operator|new
-name|JPanel
-argument_list|(
-literal|true
-argument_list|)
+name|JToolBar
+argument_list|()
 decl_stmt|;
 name|barPanel
 operator|.
@@ -1132,7 +1140,7 @@ name|Dimension
 argument_list|(
 literal|75
 argument_list|,
-literal|33
+literal|25
 argument_list|)
 argument_list|)
 expr_stmt|;

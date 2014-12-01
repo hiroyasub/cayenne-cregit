@@ -171,6 +171,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|state
+operator|.
+name|ProjectStateUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|Project
@@ -424,6 +442,16 @@ name|CayenneModelerController
 extends|extends
 name|CayenneController
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|ProjectStateUtil
+name|PROJECT_STATE_UTIL
+init|=
+operator|new
+name|ProjectStateUtil
+argument_list|()
+decl_stmt|;
 specifier|protected
 name|ProjectController
 name|projectController
@@ -600,6 +628,13 @@ name|WindowEvent
 name|e
 parameter_list|)
 block|{
+name|PROJECT_STATE_UTIL
+operator|.
+name|saveLastState
+argument_list|(
+name|projectController
+argument_list|)
+expr_stmt|;
 name|getApplication
 argument_list|()
 operator|.
@@ -948,6 +983,13 @@ name|void
 name|projectClosedAction
 parameter_list|()
 block|{
+name|PROJECT_STATE_UTIL
+operator|.
+name|saveLastState
+argument_list|(
+name|projectController
+argument_list|)
+expr_stmt|;
 comment|// --- update view
 name|frame
 operator|.
@@ -1138,6 +1180,13 @@ name|fireRecentFileListChanged
 argument_list|()
 expr_stmt|;
 block|}
+name|PROJECT_STATE_UTIL
+operator|.
+name|fireLastState
+argument_list|(
+name|projectController
+argument_list|)
+expr_stmt|;
 comment|// for validation purposes combine load failures with post-load validation (not
 comment|// sure if that'll cause duplicate messages?).
 name|List

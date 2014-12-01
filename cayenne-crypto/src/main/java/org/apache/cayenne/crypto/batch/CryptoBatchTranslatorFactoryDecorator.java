@@ -29,9 +29,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -293,7 +291,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|getBindings
 parameter_list|()
@@ -308,7 +306,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|updateBindings
 parameter_list|(
@@ -319,7 +317,7 @@ block|{
 name|ensureEncryptorCompiled
 argument_list|()
 expr_stmt|;
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 init|=

@@ -417,6 +417,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|UNSUPPORTED_DISTINCT_TYPES_PROJECT
+init|=
+literal|"cayenne-unsupported-distinct-types.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|UUID_PROJECT
 init|=
 literal|"cayenne-uuid.xml"

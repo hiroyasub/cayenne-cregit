@@ -513,9 +513,6 @@ name|byte
 index|[]
 name|bytes2
 init|=
-operator|new
-name|byte
-index|[]
 block|{
 literal|'a'
 block|,

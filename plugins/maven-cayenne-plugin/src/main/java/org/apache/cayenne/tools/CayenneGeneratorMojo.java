@@ -23,6 +23,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NamePatternMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|gen
 operator|.
 name|ClassGenerationAction
@@ -144,90 +160,108 @@ name|CayenneGeneratorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/** 	 * Path to additional DataMap XML files to use for class generation. 	 *  	 * @parameter expression="${cgen.additionalMaps}" 	 */
+specifier|public
+specifier|static
+specifier|final
+name|File
+index|[]
+name|NO_FILES
+init|=
+operator|new
+name|File
+index|[
+literal|0
+index|]
+decl_stmt|;
+comment|/** 	 * Path to additional DataMap XML files to use for class generation. 	 *  	 * @parameter additionalMaps="additionalMaps" 	 */
 specifier|private
 name|File
 name|additionalMaps
 decl_stmt|;
-comment|/** 	 * Whether we are generating classes for the client tier in a Remote Object 	 * Persistence application. Default is<code>false</code>. 	 *  	 * @parameter expression="${cgen.client}" default-value="false" 	 */
+comment|/** 	 * Whether we are generating classes for the client tier in a Remote Object 	 * Persistence application. Default is<code>false</code>. 	 *  	 * @parameter client="client" default-value="false" 	 */
 specifier|private
 name|boolean
 name|client
 decl_stmt|;
-comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter expression="${cgen.destDir}" default-value="${project.build.sourceDirectory}" 	 */
+comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 *  	 * @parameter destDir="destDir" default-value="${project.build.sourceDirectory}" 	 */
 specifier|private
 name|File
 name|destDir
 decl_stmt|;
-comment|/** 	 * Specify generated file encoding if different from the default on current 	 * platform. Target encoding must be supported by the JVM running Maven 	 * build. Standard encodings supported by Java on all platforms are 	 * US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16. See Sun Java 	 * Docs for java.nio.charset.Charset for more information. 	 *  	 * @parameter expression="${cgen.encoding}" 	 */
+comment|/** 	 * Specify generated file encoding if different from the default on current 	 * platform. Target encoding must be supported by the JVM running Maven 	 * build. Standard encodings supported by Java on all platforms are 	 * US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16. See Sun Java 	 * Docs for java.nio.charset.Charset for more information. 	 *  	 * @parameter encoding="encoding" 	 */
 specifier|private
 name|String
 name|encoding
 decl_stmt|;
-comment|/** 	 * Entities (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.excludeEntities}" 	 */
+comment|/** 	 * Entities (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all entities in the DataMap). 	 *  	 * @parameter excludeEntities="excludeEntities" 	 */
 specifier|private
 name|String
 name|excludeEntities
 decl_stmt|;
-comment|/** 	 * Entities (expressed as a perl5 regex) to include in template generation. 	 * (Default is to include all entities in the DataMap). 	 *  	 * @parameter expression="${cgen.includeEntities}" 	 */
+comment|/** 	 * Entities (expressed as a perl5 regex) to include in template generation. 	 * (Default is to include all entities in the DataMap). 	 *  	 * @parameter includeEntities="includeEntities" 	 */
 specifier|private
 name|String
 name|includeEntities
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will generate subclass/superclass pairs, 	 * with all generated code included in superclass (default is 	 *<code>true</code>). 	 *  	 * @parameter expression="${cgen.makePairs}" default-value="true" 	 */
+comment|/** 	 * If set to<code>true</code>, will generate subclass/superclass pairs, 	 * with all generated code included in superclass (default is 	 *<code>true</code>). 	 *  	 * @parameter makePairs="makePairs" default-value="true" 	 */
 specifier|private
 name|boolean
 name|makePairs
 decl_stmt|;
-comment|/** 	 * DataMap XML file to use as a base for class generation. 	 *  	 * @parameter expression="${cgen.map}" 	 * @required 	 */
+comment|/** 	 * DataMap XML file to use as a base for class generation. 	 *  	 * @parameter map="map" 	 * @required 	 */
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). (Default is 	 *&quot;entity&quot;) 	 *  	 * @parameter expression="${cgen.mode}" default-value="entity" 	 */
+comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). (Default is 	 *&quot;entity&quot;) 	 *  	 * @parameter mode="mode" default-value="entity" 	 */
 specifier|private
 name|String
 name|mode
 decl_stmt|;
-comment|/** 	 * Name of file for generated output. (Default is&quot;*.java&quot;) 	 *  	 * @parameter expression="${cgen.outputPattern}" default-value="*.java" 	 */
+comment|/** 	 * Name of file for generated output. (Default is&quot;*.java&quot;) 	 *  	 * @parameter outputPattern="outputPattern" default-value="*.java" 	 */
 specifier|private
 name|String
 name|outputPattern
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will overwrite older versions of generated 	 * classes. Ignored unless makepairs is set to<code>false</code>. 	 *  	 * @parameter expression="${cgen.overwrite}" default-value="false" 	 */
+comment|/** 	 * If set to<code>true</code>, will overwrite older versions of generated 	 * classes. Ignored unless makepairs is set to<code>false</code>. 	 *  	 * @parameter overwrite="overwrite" default-value="false" 	 */
 specifier|private
 name|boolean
 name|overwrite
 decl_stmt|;
-comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 *  	 * @parameter expression="${cgen.superPkg}"  	 */
+comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 *  	 * @parameter superPkg="superPkg"  	 */
 specifier|private
 name|String
 name|superPkg
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Entity superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.superTemplate}" 	 */
+comment|/** 	 * Location of Velocity template file for Entity superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter superTemplate="superTemplate" 	 */
 specifier|private
 name|String
 name|superTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Entity class generation. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.template}" 	 */
+comment|/** 	 * Location of Velocity template file for Entity class generation. If 	 * omitted, default template is used. 	 *  	 * @parameter template="template" 	 */
 specifier|private
 name|String
 name|template
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Embeddable superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.embeddableSuperTemplate}" 	 */
+comment|/** 	 * Location of Velocity template file for Embeddable superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 *  	 * @parameter embeddableSuperTemplate="embeddableSuperTemplate" 	 */
 specifier|private
 name|String
 name|embeddableSuperTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Embeddable class generation. If 	 * omitted, default template is used. 	 *  	 * @parameter expression="${cgen.embeddableTemplate}" 	 */
+comment|/** 	 * Location of Velocity template file for Embeddable class generation. If 	 * omitted, default template is used. 	 *  	 * @parameter embeddableTemplate="embeddableTemplate" 	 */
 specifier|private
 name|String
 name|embeddableTemplate
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code> (default), a directory tree will be generated 	 * in "destDir" corresponding to the class package structure, if set to 	 *<code>false</code>, classes will be generated in&quot;destDir&quot; 	 * ignoring their package. 	 *  	 * @parameter expression="${cgen.usePkgPath}" default-value="true" 	 */
+comment|/** 	 * If set to<code>true</code> (default), a directory tree will be generated 	 * in "destDir" corresponding to the class package structure, if set to 	 *<code>false</code>, classes will be generated in&quot;destDir&quot; 	 * ignoring their package. 	 *  	 * @parameter usePkgPath="usePkgPath" default-value="true" 	 */
 specifier|private
 name|boolean
 name|usePkgPath
+decl_stmt|;
+comment|/**      * If set to<code>true</code>, will generate String Property names.      * Default is<code>false</code>.      *      * @parameter createPropertyNames="createPropertyNames" default-value="false"      */
+specifier|private
+name|boolean
+name|createPropertyNames
 decl_stmt|;
 specifier|public
 name|void
@@ -297,8 +331,9 @@ name|filterAction
 operator|.
 name|setNameFilter
 argument_list|(
-operator|new
 name|NamePatternMatcher
+operator|.
+name|build
 argument_list|(
 name|logger
 argument_list|,
@@ -426,17 +461,13 @@ name|Exception
 block|{
 if|if
 condition|(
-literal|null
-operator|==
 name|additionalMaps
+operator|==
+literal|null
 condition|)
 block|{
 return|return
-operator|new
-name|File
-index|[
-literal|0
-index|]
+name|NO_FILES
 return|;
 block|}
 if|if
@@ -476,8 +507,7 @@ name|String
 name|name
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
 name|name
 operator|!=
 literal|null
@@ -491,18 +521,7 @@ name|endsWith
 argument_list|(
 literal|".map.xml"
 argument_list|)
-condition|)
-block|{
-return|return
-literal|true
 return|;
-block|}
-else|else
-block|{
-return|return
-literal|false
-return|;
-block|}
 block|}
 block|}
 decl_stmt|;
@@ -627,6 +646,13 @@ operator|.
 name|setUsePkgPath
 argument_list|(
 name|usePkgPath
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setCreatePropertyNames
+argument_list|(
+name|createPropertyNames
 argument_list|)
 expr_stmt|;
 return|return

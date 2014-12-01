@@ -15,36 +15,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Serializable
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -96,6 +66,36 @@ operator|.
 name|query
 operator|.
 name|Select
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -311,6 +311,20 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
+comment|/**      * Selects a single object using provided query. The query itself can      * match any number of objects, but will return only the first one. It      * returns null if no objects were matched.      *<p>      * If it matched more than one object, the first object from the list is      * returned. This makes 'selectFirst' different from      * {@link #selectOne(Select)}, which would throw in this situation.      * 'selectFirst' is useful e.g. when the query is ordered and we only want      * to see the first object (e.g. "most recent news article"), etc.      *<p>      * Selecting the first object via "Select.selectFirst(ObjectContext)"      * is more comprehensible than selecting via "ObjectContext.selectFirst(Select)",      * because implementations of "Select" set fetch size limit to one.      *      * @since 4.0      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|selectFirst
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+function_decl|;
 comment|/**      * Creates a ResultIterator based on the provided query and passes it to a      * callback for processing. The caller does not need to worry about closing      * the iterator. This method takes care of it.      *       * @since 4.0      */
 parameter_list|<
 name|T
@@ -331,7 +345,7 @@ argument_list|>
 name|callback
 parameter_list|)
 function_decl|;
-comment|/**      * Creates a ResultIterator based on the provided query. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preserving a constant memory footprint. The caller must wrap      * iteration in try/finally and close the ResultIterator explicitly. Or use      * {@link #iterate(Select, ResultIteratorCallback)} as an alternative.      *       * @since 4.0      */
+comment|/**      * Creates a ResultIterator based on the provided query. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preserving a constant memory footprint. The caller must wrap      * iteration in try/finally (or try-with-resources for Java 1.7 and higher) and      * close the ResultIterator explicitly.      * Or use {@link #iterate(Select, ResultIteratorCallback)} as an alternative.      *       * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -346,6 +360,26 @@ argument_list|<
 name|T
 argument_list|>
 name|query
+parameter_list|)
+function_decl|;
+comment|/**      * Creates a ResultBatchIterator based on the provided query and batch size. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preserving a constant memory footprint. The caller must wrap      * iteration in try/finally (or try-with-resources for Java 1.7 and higher) and      * close the ResultBatchIterator explicitly.      *      * @since 4.0      */
+parameter_list|<
+name|T
+parameter_list|>
+name|ResultBatchIterator
+argument_list|<
+name|T
+argument_list|>
+name|batchIterator
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|,
+name|int
+name|size
 parameter_list|)
 function_decl|;
 comment|/**      * Executes any kind of query providing the result in a form of      * QueryResponse.      */

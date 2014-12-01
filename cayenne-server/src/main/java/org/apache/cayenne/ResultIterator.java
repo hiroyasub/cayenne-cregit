@@ -17,6 +17,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|Closeable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|List
@@ -24,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API of an iterator over the records returned as a result of  * SelectQuery execution. Usually a ResultIterator is supported by an open  * java.sql.ResultSet, therefore ResultIterators must be explicitly closed when  * the user is done working with them. An alternative to that is  * {@link ObjectContext#iterate(org.apache.cayenne.query.Select, ResultIteratorCallback)}  * method that handles resource management.  */
+comment|/**  * Defines API of an iterator over the records returned as a result of  * Select queries execution. Usually a ResultIterator is supported by an open  * java.sql.ResultSet, therefore ResultIterators must be explicitly closed when  * the user is done working with them. An alternative to that is  * {@link ObjectContext#iterate(org.apache.cayenne.query.Select, ResultIteratorCallback)}  * method that handles resource management.  *  * @since 3.0  */
 end_comment
 
 begin_interface
@@ -39,6 +49,8 @@ name|Iterable
 argument_list|<
 name|T
 argument_list|>
+extends|,
+name|Closeable
 block|{
 comment|/**      * Returns all yet unread rows from ResultSet without closing it.      *       * @since 3.0      */
 name|List

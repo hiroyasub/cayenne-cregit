@@ -23,16 +23,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -165,15 +155,13 @@ name|queryAssembler
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Translates query Ordering list to SQL ORDER BY clause. Ordering list is obtained      * from<code>queryAssembler</code>'s query object. In a process of building of      * ORDER BY clause,<code>queryAssembler</code> is notified when a join needs to be      * added.      *       * @since 3.0      */
+comment|/** 	 * Translates query Ordering list to SQL ORDER BY clause. Ordering list is 	 * obtained from<code>queryAssembler</code>'s query object. In a process of 	 * building of ORDER BY clause,<code>queryAssembler</code> is notified when 	 * a join needs to be added. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
 name|void
 name|doAppendPart
 parameter_list|()
-throws|throws
-name|IOException
 block|{
 name|Query
 name|q
@@ -222,7 +210,7 @@ operator|.
 name|iterator
 argument_list|()
 decl_stmt|;
-name|Appendable
+name|StringBuilder
 name|mainBuffer
 init|=
 name|this
@@ -247,7 +235,8 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
-comment|// reset buffer to collect SQL for the single column, that we'll be reusing
+comment|// reset buffer to collect SQL for the single column, that we'll
+comment|// be reusing
 name|this
 operator|.
 name|out
@@ -413,7 +402,7 @@ name|mainBuffer
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns the column expressions (not Expressions) used in the order by clause. E.g.,      * in the case of an case-insensitive order by, an element of the list would be      *<code>UPPER(&lt;column reference&gt;)</code>      */
+comment|/** 	 * Returns the column expressions (not Expressions) used in the order by 	 * clause. E.g., in the case of an case-insensitive order by, an element of 	 * the list would be<code>UPPER(&lt;column reference&gt;)</code> 	 */
 specifier|public
 name|List
 argument_list|<

@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  *   * @since 1.1  */
+comment|/**  * Translates query qualifier to SQL. Used as a helper class by query  * translators.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -172,8 +172,6 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 if|if
 condition|(
 name|parenthesisNeeded
@@ -196,23 +194,6 @@ comment|// super implementation has special handling
 comment|// of LIKE_IGNORE_CASE and NOT_LIKE_IGNORE_CASE
 comment|// OpenBase is case-insensitive by default
 comment|// ...
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error appending content"
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
 block|}
 else|else
 block|{
@@ -252,7 +233,8 @@ condition|)
 block|{
 try|try
 block|{
-comment|// check if we need to use objectMatchTranslator to finish building the
+comment|// check if we need to use objectMatchTranslator to finish
+comment|// building the
 comment|// expression
 if|if
 condition|(

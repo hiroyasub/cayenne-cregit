@@ -57,7 +57,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 operator|.
 name|DriverDataSource
 import|;
@@ -284,57 +284,57 @@ name|DbGeneratorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * DataMap XML file to use as a schema descriptor.      *       * @parameter expression="${cdbgen.map}"      * @required      */
+comment|/**      * DataMap XML file to use as a schema descriptor.      *       * @parameter map="map"      * @required      */
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. While this      * attribute is optional (a generic JdbcAdapter is used if not set), it is      * highly recommended to specify correct target adapter.      *       * @parameter expression="${cdbgen.adapter}"      */
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. While this      * attribute is optional (a generic JdbcAdapter is used if not set), it is      * highly recommended to specify correct target adapter.      *       * @parameter adapter="adapter"      */
 specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter expression="${cdbgen.driver}"      * @required      */
+comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter driver="driver"      * @required      */
 specifier|private
 name|String
 name|driver
 decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      *       * @parameter expression="${cdbgen.url}"      * @required      */
+comment|/**      * JDBC connection URL of a target database.      *       * @parameter url="url"      * @required      */
 specifier|private
 name|String
 name|url
 decl_stmt|;
-comment|/**      * Database user name.      *       * @parameter expression="${cdbgen.username}"      */
+comment|/**      * Database user name.      *       * @parameter username="username"      */
 specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Database user password.      *       * @parameter expression="${cdbgen.password}"      */
+comment|/**      * Database user password.      *       * @parameter password="password"      */
 specifier|private
 name|String
 name|password
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      *       * @parameter expression="${cdbgen.dropTables}" default-value="false"      */
+comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      *       * @parameter dropTables="dropTables" default-value="false"      */
 specifier|private
 name|boolean
 name|dropTables
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects.      * Default is<code>false</code>.      *       * @parameter expression="${cdbgen.dropPK}" default-value="false"      */
+comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects.      * Default is<code>false</code>.      *       * @parameter dropPK="dropPK" default-value="false"      */
 specifier|private
 name|boolean
 name|dropPK
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create new tables. Default is      *<code>true</code>.      *       * @parameter expression="${cdbgen.createTables}" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create new tables. Default is      *<code>true</code>.      *       * @parameter createTables="createTables" default-value="true"      */
 specifier|private
 name|boolean
 name|createTables
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects.      * Default is<code>true</code>.      *       * @parameter expression="${cdbgen.createPK}" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects.      * Default is<code>true</code>.      *       * @parameter createPK="createPK" default-value="true"      */
 specifier|private
 name|boolean
 name|createPK
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is      *<code>true</code>.      *       * @parameter expression="${cdbgen.createFK}' default-value="true"      */
+comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is      *<code>true</code>.      *       * @parameter createFK="createFK" default-value="true"      */
 specifier|private
 name|boolean
 name|createFK

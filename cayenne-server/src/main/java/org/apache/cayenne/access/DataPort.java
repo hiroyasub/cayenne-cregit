@@ -123,6 +123,22 @@ name|access
 operator|.
 name|util
 operator|.
+name|DoNothingOperationObserver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|util
+operator|.
 name|IteratedSelectObserver
 import|;
 end_import
@@ -293,7 +309,7 @@ operator|=
 name|INSERT_BATCH_SIZE
 expr_stmt|;
 block|}
-comment|/**      * Creates a new DataPort instance, setting its delegate.      */
+comment|/** 	 * Creates a new DataPort instance, setting its delegate. 	 */
 specifier|public
 name|DataPort
 parameter_list|(
@@ -308,7 +324,7 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
-comment|/**      * Runs DataPort. The instance must be fully configured by the time this      * method is invoked, having its delegate, source and destinatio nodes, and      * a list of entities set up.      */
+comment|/** 	 * Runs DataPort. The instance must be fully configured by the time this 	 * method is invoked, having its delegate, source and destinatio nodes, and 	 * a list of entities set up. 	 */
 specifier|public
 name|void
 name|execute
@@ -463,7 +479,7 @@ name|sorted
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Cleans up destination tables data.      */
+comment|/** 	 * Cleans up destination tables data. 	 */
 specifier|protected
 name|void
 name|processDelete
@@ -509,15 +525,6 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// Using QueryResult as observer for the data cleanup.
-comment|// This allows to collect query statistics and pass it to the delegate.
-name|QueryResult
-name|observer
-init|=
-operator|new
-name|QueryResult
-argument_list|()
-decl_stmt|;
 comment|// Delete data from entities one by one
 name|Iterator
 name|it
@@ -584,12 +591,50 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+specifier|final
+name|int
+index|[]
+name|count
+init|=
+operator|new
+name|int
+index|[]
+block|{
+operator|-
+literal|1
+block|}
+decl_stmt|;
 comment|// perform delete query
+name|OperationObserver
 name|observer
-operator|.
-name|clear
+init|=
+operator|new
+name|DoNothingOperationObserver
 argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+name|void
+name|nextCount
+parameter_list|(
+name|Query
+name|query
+parameter_list|,
+name|int
+name|resultCount
+parameter_list|)
+block|{
+name|count
+index|[
+literal|0
+index|]
+operator|=
+name|resultCount
 expr_stmt|;
+block|}
+block|}
+decl_stmt|;
 name|destinationNode
 operator|.
 name|performQueries
@@ -612,17 +657,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// observer will store query statistics
-name|int
-name|count
-init|=
-name|observer
-operator|.
-name|getFirstUpdateCount
-argument_list|(
-name|query
-argument_list|)
-decl_stmt|;
 name|delegate
 operator|.
 name|didCleanData
@@ -632,12 +666,15 @@ argument_list|,
 name|entity
 argument_list|,
 name|count
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Reads source data from source, saving it to destination.      */
+comment|/** 	 * Reads source data from source, saving it to destination. 	 */
 specifier|protected
 name|void
 name|processInsert
@@ -694,13 +731,11 @@ operator|new
 name|IteratedSelectObserver
 argument_list|()
 decl_stmt|;
-comment|// Using QueryResult as observer for the data insert.
-comment|// This allows to collect query statistics and pass it to the delegate.
-name|QueryResult
+name|OperationObserver
 name|insertObserver
 init|=
 operator|new
-name|QueryResult
+name|DoNothingOperationObserver
 argument_list|()
 decl_stmt|;
 comment|// process ordered list of entities one by one
@@ -720,11 +755,6 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|insertObserver
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
 name|DbEntity
 name|entity
 init|=
@@ -893,11 +923,6 @@ argument_list|,
 name|batchSize
 argument_list|)
 expr_stmt|;
-name|insertObserver
-operator|.
-name|clear
-argument_list|()
-expr_stmt|;
 block|}
 name|currentRow
 operator|++
@@ -1016,7 +1041,7 @@ return|return
 name|destinationNode
 return|;
 block|}
-comment|/**      * Sets the initial list of entities to process. This list can be later      * modified by the delegate.      */
+comment|/** 	 * Sets the initial list of entities to process. This list can be later 	 * modified by the delegate. 	 */
 specifier|public
 name|void
 name|setEntities
@@ -1032,7 +1057,7 @@ operator|=
 name|entities
 expr_stmt|;
 block|}
-comment|/**      * Sets the DataNode serving as a source of the ported data.      */
+comment|/** 	 * Sets the DataNode serving as a source of the ported data. 	 */
 specifier|public
 name|void
 name|setSourceNode
@@ -1048,7 +1073,7 @@ operator|=
 name|sourceNode
 expr_stmt|;
 block|}
-comment|/**      * Sets the DataNode serving as a destination of the ported data.      */
+comment|/** 	 * Sets the DataNode serving as a destination of the ported data. 	 */
 specifier|public
 name|void
 name|setDestinationNode
@@ -1064,7 +1089,7 @@ operator|=
 name|destinationNode
 expr_stmt|;
 block|}
-comment|/**      * Returns previously initialized DataPortDelegate object.      */
+comment|/** 	 * Returns previously initialized DataPortDelegate object. 	 */
 specifier|public
 name|DataPortDelegate
 name|getDelegate
@@ -1089,7 +1114,7 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
-comment|/**      * Returns true if a DataPort was configured to delete all data from the      * destination tables.      */
+comment|/** 	 * Returns true if a DataPort was configured to delete all data from the 	 * destination tables. 	 */
 specifier|public
 name|boolean
 name|isCleaningDestination
@@ -1099,7 +1124,7 @@ return|return
 name|cleaningDestination
 return|;
 block|}
-comment|/**      * Defines whether DataPort should delete all data from destination tables      * before doing the port.      */
+comment|/** 	 * Defines whether DataPort should delete all data from destination tables 	 * before doing the port. 	 */
 specifier|public
 name|void
 name|setCleaningDestination
@@ -1124,7 +1149,7 @@ return|return
 name|insertBatchSize
 return|;
 block|}
-comment|/**      * Sets a parameter used for tuning insert batches. If set to a value      * greater than zero, DataPort will commit every N rows. If set to value      * less or equal to zero, DataPort will commit only once at the end of the      * insert.      */
+comment|/** 	 * Sets a parameter used for tuning insert batches. If set to a value 	 * greater than zero, DataPort will commit every N rows. If set to value 	 * less or equal to zero, DataPort will commit only once at the end of the 	 * insert. 	 */
 specifier|public
 name|void
 name|setInsertBatchSize

@@ -1351,6 +1351,22 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
+name|pref
+operator|.
+name|ProjectStatePreferences
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
 name|util
 operator|.
 name|CayenneController
@@ -2647,6 +2663,31 @@ argument_list|)
 return|;
 block|}
 specifier|public
+name|ProjectStatePreferences
+name|getProjectStatePreferences
+parameter_list|()
+block|{
+return|return
+operator|(
+name|ProjectStatePreferences
+operator|)
+name|application
+operator|.
+name|getCayenneProjectPreferences
+argument_list|()
+operator|.
+name|getProjectDetailObject
+argument_list|(
+name|ProjectStatePreferences
+operator|.
+name|class
+argument_list|,
+name|getPreferenceForDataDomain
+argument_list|()
+argument_list|)
+return|;
+block|}
+specifier|public
 name|void
 name|projectOpened
 parameter_list|()
@@ -3205,6 +3246,17 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|DataChannelDescriptor
+name|getCurrentDataChanel
+parameter_list|()
+block|{
+return|return
+name|currentState
+operator|.
+name|domain
+return|;
+block|}
+specifier|public
 name|DataNodeDescriptor
 name|getCurrentDataNode
 parameter_list|()
@@ -3379,6 +3431,17 @@ return|return
 name|currentState
 operator|.
 name|parentPath
+return|;
+block|}
+specifier|public
+name|DisplayEvent
+name|getLastDisplayEvent
+parameter_list|()
+block|{
+return|return
+name|currentState
+operator|.
+name|event
 return|;
 block|}
 specifier|public
@@ -8496,7 +8559,7 @@ operator|=
 name|callbackMethods
 expr_stmt|;
 block|}
-comment|/**      * adds callback method manipulation listener      *       * @param listener      *            listener      */
+comment|/**      * adds callback method manipulation listener      *      * @param listener      *            listener      */
 specifier|public
 name|void
 name|addCallbackMethodListener
@@ -8517,7 +8580,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * fires callback method manipulation event      *       * @param e      *            event      */
+comment|/**      * fires callback method manipulation event      *      * @param e      *            event      */
 specifier|public
 name|void
 name|fireCallbackMethodEvent
@@ -8617,7 +8680,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * adds listener class manipulation listener      *       * @param listener      *            listener      */
+comment|/**      * adds listener class manipulation listener      *      * @param listener      *            listener      */
 specifier|public
 name|void
 name|addEntityListenerListener
@@ -8638,7 +8701,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * fires entity listener manipulation event      *       * @param e      *            event      */
+comment|/**      * fires entity listener manipulation event      *      * @param e      *            event      */
 specifier|public
 name|void
 name|fireEntityListenerEvent
@@ -8846,6 +8909,19 @@ condition|)
 block|{
 return|return
 name|getCurrentDataNode
+argument_list|()
+return|;
+block|}
+if|else if
+condition|(
+name|getCurrentDataChanel
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+name|getCurrentDataChanel
 argument_list|()
 return|;
 block|}

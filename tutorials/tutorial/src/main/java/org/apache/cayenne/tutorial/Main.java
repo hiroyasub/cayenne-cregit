@@ -16,12 +16,18 @@ package|;
 end_package
 
 begin_import
-import|import
-name|java
+import|import static
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Calendar
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|ExpressionFactory
+operator|.
+name|exp
 import|;
 end_import
 
@@ -31,7 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
+name|Calendar
 import|;
 end_import
 
@@ -396,7 +402,7 @@ name|Painting
 operator|.
 name|NAME
 operator|.
-name|likeInsensitive
+name|likeIgnoreCase
 argument_list|(
 literal|"gi%"
 argument_list|)
@@ -467,32 +473,16 @@ expr_stmt|;
 name|Expression
 name|qualifier3
 init|=
-name|Expression
-operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artist.dateOfBirth< $date"
-argument_list|)
-decl_stmt|;
-name|qualifier3
-operator|=
-name|qualifier3
-operator|.
-name|expWithParameters
-argument_list|(
-name|Collections
-operator|.
-name|singletonMap
-argument_list|(
-literal|"date"
 argument_list|,
 name|c
 operator|.
 name|getTime
 argument_list|()
 argument_list|)
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|SelectQuery
 argument_list|<
 name|Painting

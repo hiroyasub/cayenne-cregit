@@ -130,7 +130,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-literal|"Drop Relationship"
+literal|"Drop foreign key"
 argument_list|,
 name|entity
 argument_list|)

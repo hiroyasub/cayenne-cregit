@@ -501,6 +501,14 @@ argument_list|(
 literal|"xMap"
 argument_list|)
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|8042147877503405974L
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public

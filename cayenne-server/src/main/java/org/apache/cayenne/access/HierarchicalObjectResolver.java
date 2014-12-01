@@ -491,6 +491,9 @@ literal|true
 return|;
 block|}
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|objects
 init|=
 name|processorNode

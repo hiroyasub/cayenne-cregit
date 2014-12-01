@@ -707,7 +707,7 @@ name|value
 decl_stmt|;
 name|relationship
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|target
 argument_list|)

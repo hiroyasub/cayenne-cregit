@@ -67,7 +67,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -222,7 +222,7 @@ return|return
 name|LINE
 return|;
 block|}
-comment|/** 	 * Extracts the value of the object property to render and passes control to 	 * {@link #render(InternalContextAdapter, Writer, ParameterBinding)} to do 	 * the actual rendering. 	 */
+comment|/** 	 * Extracts the value of the object property to render and passes control to 	 * {@link #render(InternalContextAdapter, Writer, SQLParameterBinding)} to do 	 * the actual rendering. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -525,7 +525,7 @@ argument_list|,
 name|writer
 argument_list|,
 operator|new
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|(
 name|value
 argument_list|,
@@ -546,7 +546,7 @@ parameter_list|,
 name|Writer
 name|writer
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 name|binding
 parameter_list|)
 throws|throws
@@ -583,9 +583,7 @@ parameter_list|)
 throws|throws
 name|MethodInvocationException
 block|{
-name|Object
-name|child
-init|=
+return|return
 operator|(
 name|i
 operator|>=
@@ -612,30 +610,6 @@ name|context
 argument_list|)
 else|:
 literal|null
-decl_stmt|;
-comment|// unwrap postional parameters
-if|if
-condition|(
-name|child
-operator|instanceof
-name|VelocityParamSequence
-condition|)
-block|{
-name|child
-operator|=
-operator|(
-operator|(
-name|VelocityParamSequence
-operator|)
-name|child
-operator|)
-operator|.
-name|next
-argument_list|()
-expr_stmt|;
-block|}
-return|return
-name|child
 return|;
 block|}
 comment|/** 	 * Adds value to the list of bindings in the context. 	 */
@@ -646,7 +620,7 @@ parameter_list|(
 name|InternalContextAdapter
 name|context
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 name|binding
 parameter_list|)
 block|{

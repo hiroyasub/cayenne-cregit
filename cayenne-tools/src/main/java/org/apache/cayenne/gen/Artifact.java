@@ -100,6 +100,13 @@ name|BASE_PACKAGE_KEY
 init|=
 literal|"basePackageName"
 decl_stmt|;
+specifier|public
+specifier|static
+name|String
+name|CREATE_PROPERTY_NAMES
+init|=
+literal|"createPropertyNames"
+decl_stmt|;
 name|TemplateType
 index|[]
 name|getTemplateTypes

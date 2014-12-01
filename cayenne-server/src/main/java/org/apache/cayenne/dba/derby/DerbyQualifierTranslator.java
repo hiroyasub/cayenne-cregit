@@ -21,16 +21,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|sql
 operator|.
 name|Types
@@ -186,8 +176,6 @@ parameter_list|,
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|SimpleNode
 name|parent
@@ -217,7 +205,8 @@ name|jjtGetParent
 argument_list|()
 expr_stmt|;
 block|}
-comment|// problem in derby : Comparisons between 'CLOB (UCS_BASIC)' and 'CLOB (UCS_BASIC)' are not supported.
+comment|// problem in derby : Comparisons between 'CLOB (UCS_BASIC)' and 'CLOB
+comment|// (UCS_BASIC)' are not supported.
 comment|// we need do it by casting the Clob to VARCHAR.
 if|if
 condition|(

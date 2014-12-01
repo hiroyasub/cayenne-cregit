@@ -181,7 +181,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 operator|.
 name|DriverDataSource
 import|;

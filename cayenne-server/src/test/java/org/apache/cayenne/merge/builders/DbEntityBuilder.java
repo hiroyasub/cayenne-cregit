@@ -201,6 +201,8 @@ name|i
 operator|++
 control|)
 block|{
+try|try
+block|{
 name|obj
 operator|.
 name|addAttribute
@@ -213,6 +215,18 @@ name|random
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalArgumentException
+name|e
+parameter_list|)
+block|{
+name|i
+operator|--
+expr_stmt|;
+comment|// try again
+block|}
 block|}
 return|return
 name|this

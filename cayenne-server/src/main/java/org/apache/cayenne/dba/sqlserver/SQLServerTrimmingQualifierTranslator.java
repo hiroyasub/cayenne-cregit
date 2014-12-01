@@ -21,16 +21,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|sql
 operator|.
 name|Types
@@ -131,8 +121,10 @@ name|SQLServerTrimmingQualifierTranslator
 extends|extends
 name|TrimmingQualifierTranslator
 block|{
-comment|// since LIKE IGNORE CASE requires more contextual information than the super
-comment|// translator can provide, we are using an internal element stack to trace translation
+comment|// since LIKE IGNORE CASE requires more contextual information than the
+comment|// super
+comment|// translator can provide, we are using an internal element stack to trace
+comment|// translation
 comment|// context.. Maybe it is a good idea to introduce it in the superclass?
 specifier|private
 name|List
@@ -204,8 +196,6 @@ parameter_list|(
 name|DbAttribute
 name|dbAttr
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|Expression
 name|node
@@ -297,8 +287,6 @@ parameter_list|,
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|Expression
 name|node

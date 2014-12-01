@@ -45,9 +45,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -63,7 +61,7 @@ block|{
 name|BindingsTransformer
 name|encryptor
 parameter_list|(
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)

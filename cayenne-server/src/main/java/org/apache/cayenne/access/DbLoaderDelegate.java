@@ -23,7 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|map
+operator|.
+name|DbEntity
 import|;
 end_import
 
@@ -37,7 +39,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbEntity
+name|DbRelationship
 import|;
 end_import
 
@@ -64,16 +66,6 @@ specifier|public
 interface|interface
 name|DbLoaderDelegate
 block|{
-comment|/**      * Returns true to tell DbLoader that it is OK to overwrite DbEntity that      * already exists in the model. If loading process should be stopped      * immediately, an exception is thrown.      */
-name|boolean
-name|overwriteDbEntity
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
-throws|throws
-name|CayenneException
-function_decl|;
 name|void
 name|dbEntityAdded
 parameter_list|(
@@ -86,6 +78,25 @@ name|dbEntityRemoved
 parameter_list|(
 name|DbEntity
 name|entity
+parameter_list|)
+function_decl|;
+comment|/**      * Called before relationship loading for db-entity      * @param entity      *      * @return true in case you want process relationships for this entity      *         false otherwise      */
+name|boolean
+name|dbRelationship
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|)
+function_decl|;
+comment|/**      * Called before relationship will be added into db-entity but after it was loaded from db      * @param entity      *      * @return true in case you want add this relationship into entity      *         false otherwise      */
+name|boolean
+name|dbRelationshipLoaded
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|,
+name|DbRelationship
+name|relationship
 parameter_list|)
 function_decl|;
 name|void

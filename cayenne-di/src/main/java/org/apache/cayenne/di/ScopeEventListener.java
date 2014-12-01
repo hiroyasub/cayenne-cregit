@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * This interface duplicates default reflection based mechanism for receiving DI events.  * It is not fully supported and its usage are reserved for cases when for some reason  * it is not possible to use reflection. It is used for example in  * {@link javax.sql.DataSource} managing layer to provide compatibility with java version 5.  *  * @since 3.1  */
+comment|/**  * This interface duplicates default reflection based mechanism for receiving DI  * events. It is not fully supported and its usage are reserved for cases when  * for some reason it is not possible to use reflection. It is used for example  * in {@link javax.sql.DataSource} management layer to provide compatibility  * with java version 5.  *  * @since 3.1  */
 end_comment
 
 begin_interface
@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|ScopeEventListener
 block|{
-comment|/**      * Similar to {@link BeforeScopeEnd}      */
+comment|/** 	 * Similar to {@link BeforeScopeEnd} 	 */
 name|void
 name|beforeScopeEnd
 parameter_list|()

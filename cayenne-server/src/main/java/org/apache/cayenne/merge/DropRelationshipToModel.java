@@ -69,7 +69,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-literal|"Drop Relationship"
+literal|"Drop db-relationship "
 argument_list|,
 name|entity
 argument_list|)
@@ -130,20 +130,12 @@ name|getTokenValue
 parameter_list|()
 block|{
 return|return
+name|AddRelationshipToModel
+operator|.
+name|getTokenValue
+argument_list|(
 name|rel
-operator|.
-name|getSourceEntity
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"->"
-operator|+
-name|rel
-operator|.
-name|getTargetEntityName
-argument_list|()
+argument_list|)
 return|;
 block|}
 specifier|public

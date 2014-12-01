@@ -23,16 +23,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|sql
 operator|.
 name|Types
@@ -68,7 +58,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * QualifierTranslator that allows translation of qualifiers that perform comparison with  * CHAR columns. Some databases require trimming the values for this to work.  *   */
+comment|/**  * QualifierTranslator that allows translation of qualifiers that perform  * comparison with CHAR columns. Some databases require trimming the values for  * this to work.  *   */
 end_comment
 
 begin_class
@@ -82,7 +72,7 @@ specifier|protected
 name|String
 name|trimFunction
 decl_stmt|;
-comment|/**      * Constructor for TrimmingQualifierTranslator.      */
+comment|/** 	 * Constructor for TrimmingQualifierTranslator. 	 */
 specifier|public
 name|TrimmingQualifierTranslator
 parameter_list|(
@@ -105,7 +95,7 @@ operator|=
 name|trimFunction
 expr_stmt|;
 block|}
-comment|/**      * Adds special handling of CHAR columns.      */
+comment|/** 	 * Adds special handling of CHAR columns. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -115,8 +105,6 @@ parameter_list|(
 name|DbAttribute
 name|dbAttr
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 if|if
 condition|(
@@ -168,7 +156,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds special handling of CHAR columns.      */
+comment|/** 	 * Adds special handling of CHAR columns. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -181,8 +169,6 @@ parameter_list|,
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 if|if
 condition|(
@@ -238,7 +224,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns the trimFunction.      *       * @return String      */
+comment|/** 	 * Returns the trimFunction. 	 *  	 * @return String 	 */
 specifier|public
 name|String
 name|getTrimFunction
@@ -248,7 +234,7 @@ return|return
 name|trimFunction
 return|;
 block|}
-comment|/**      * Sets the trimFunction.      *       * @param trimFunction The trimFunction to set      */
+comment|/** 	 * Sets the trimFunction. 	 *  	 * @param trimFunction 	 *            The trimFunction to set 	 */
 specifier|public
 name|void
 name|setTrimFunction
