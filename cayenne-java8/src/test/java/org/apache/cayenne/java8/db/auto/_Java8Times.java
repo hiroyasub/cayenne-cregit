@@ -22,7 +22,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|_Java8
+name|_Java8Times
 block|{ }
 end_class
 

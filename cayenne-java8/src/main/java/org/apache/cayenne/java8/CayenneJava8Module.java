@@ -118,6 +118,11 @@ name|CayenneJava8Module
 implements|implements
 name|Module
 block|{
+specifier|public
+name|CayenneJava8Module
+parameter_list|()
+block|{
+block|}
 annotation|@
 name|Override
 specifier|public

@@ -87,7 +87,7 @@ operator|=
 operator|new
 name|ServerRuntime
 argument_list|(
-literal|"cayenne-java8.xml"
+literal|"cayenne-java8-times.xml"
 argument_list|,
 name|java8Module
 argument_list|)
