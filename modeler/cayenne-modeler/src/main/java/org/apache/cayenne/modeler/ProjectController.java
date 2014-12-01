@@ -3205,6 +3205,17 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|DataChannelDescriptor
+name|getCurrentDataChanel
+parameter_list|()
+block|{
+return|return
+name|currentState
+operator|.
+name|domain
+return|;
+block|}
+specifier|public
 name|DataNodeDescriptor
 name|getCurrentDataNode
 parameter_list|()
@@ -8846,6 +8857,19 @@ condition|)
 block|{
 return|return
 name|getCurrentDataNode
+argument_list|()
+return|;
+block|}
+if|else if
+condition|(
+name|getCurrentDataChanel
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+name|getCurrentDataChanel
 argument_list|()
 return|;
 block|}
