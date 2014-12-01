@@ -1421,6 +1421,12 @@ name|getRelationships
 argument_list|()
 control|)
 block|{
+comment|// TODO: PERFORMANCE 'getTargetEntity' is generally slow, called
+comment|// in this iterator it is showing (e.g. in YourKit profiles)..
+comment|// perhaps use cheaper 'getTargetEntityName()' or even better -
+comment|// pre-cache all relationships by target entity to avoid O(n)
+comment|// search ?
+comment|// (need to profile to prove the difference)
 if|if
 condition|(
 name|entity

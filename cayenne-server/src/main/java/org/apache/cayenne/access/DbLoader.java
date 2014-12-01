@@ -2118,6 +2118,8 @@ name|entities
 control|)
 block|{
 comment|// check if there are existing entities
+comment|// TODO: performance. This is an O(n^2) search and it shows on
+comment|// YourKit profiles. Pre-cache mapped entities perhaps (?)
 name|Collection
 argument_list|<
 name|ObjEntity
