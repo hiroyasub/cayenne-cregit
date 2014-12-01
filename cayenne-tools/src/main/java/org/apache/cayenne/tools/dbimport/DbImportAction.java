@@ -553,7 +553,7 @@ if|if
 condition|(
 name|logger
 operator|.
-name|isInfoEnabled
+name|isDebugEnabled
 argument_list|()
 condition|)
 block|{
@@ -1211,12 +1211,12 @@ name|createLoaderDelegate
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|dataMap
-operator|=
 name|loader
 operator|.
 name|load
 argument_list|(
+name|dataMap
+argument_list|,
 name|config
 operator|.
 name|getDbLoaderConfig

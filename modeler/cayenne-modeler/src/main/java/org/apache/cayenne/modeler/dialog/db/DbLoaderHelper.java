@@ -2016,32 +2016,6 @@ argument_list|(
 name|meaningfulPk
 argument_list|)
 expr_stmt|;
-name|String
-index|[]
-name|types
-init|=
-name|loader
-operator|.
-name|getDefaultTableTypes
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|types
-operator|.
-name|length
-operator|==
-literal|0
-condition|)
-block|{
-throw|throw
-operator|new
-name|SQLException
-argument_list|(
-literal|"No supported table types found."
-argument_list|)
-throw|;
-block|}
 name|DbLoaderConfiguration
 name|configuration
 init|=
@@ -2080,8 +2054,6 @@ argument_list|(
 name|dataMap
 argument_list|,
 name|configuration
-argument_list|,
-name|types
 argument_list|)
 expr_stmt|;
 comment|/**                  * Update default rules for relationships                  */
