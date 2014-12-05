@@ -23,18 +23,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbEntity
@@ -64,16 +52,6 @@ specifier|public
 interface|interface
 name|DbLoaderDelegate
 block|{
-comment|/**      * Returns true to tell DbLoader that it is OK to overwrite DbEntity that      * already exists in the model. If loading process should be stopped      * immediately, an exception is thrown.      */
-name|boolean
-name|overwriteDbEntity
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
-throws|throws
-name|CayenneException
-function_decl|;
 name|void
 name|dbEntityAdded
 parameter_list|(
