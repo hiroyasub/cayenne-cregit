@@ -703,6 +703,14 @@ argument_list|(
 name|existing
 argument_list|,
 name|loadedFomDb
+argument_list|,
+name|config
+operator|.
+name|getDbLoaderConfig
+argument_list|()
+operator|.
+name|getFiltersConfig
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if

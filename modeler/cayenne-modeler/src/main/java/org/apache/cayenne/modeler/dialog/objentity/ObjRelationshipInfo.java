@@ -1752,6 +1752,11 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+operator|(
+name|short
+operator|)
+literal|1
 argument_list|)
 argument_list|,
 name|targetModel
