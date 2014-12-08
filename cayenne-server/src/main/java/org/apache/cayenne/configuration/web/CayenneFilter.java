@@ -295,7 +295,7 @@ name|runtime
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Subclasses may override this to specify additional modules that should be included when creating the CayenneRuntime (in addition to those specified in the web.xml file).      *       * @since 3.2      */
+comment|/**      * Subclasses may override this to specify additional modules that should be included when creating the CayenneRuntime (in addition to those specified in the web.xml file).      *       * @since 4.0      */
 specifier|protected
 name|Collection
 argument_list|<

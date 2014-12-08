@@ -369,7 +369,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * Creates an EventBridge that will listen for server events. Returns null if server      * events support is not configured in the descriptor.      *       * @throws CayenneRuntimeException if EventBridge startup fails for any reason.      *       * @deprecated since 3.2. Factory creation should is handled by the client connection.      */
+comment|/**      * Creates an EventBridge that will listen for server events. Returns null if server      * events support is not configured in the descriptor.      *       * @throws CayenneRuntimeException if EventBridge startup fails for any reason.      *       * @deprecated since 4.0. Factory creation should is handled by the client connection.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -541,7 +541,7 @@ return|return
 name|SUBJECTS
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|String
 name|getEventBridgeFactory
@@ -551,7 +551,7 @@ return|return
 name|eventBridgeFactory
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|Map
 argument_list|<

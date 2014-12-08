@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Testing deprecated Expression.expWithParameters(..) API.  *   * @deprecated since 3.2  */
+comment|/**  * Testing deprecated Expression.expWithParameters(..) API.  *   * @deprecated since 4.0  */
 end_comment
 
 begin_class

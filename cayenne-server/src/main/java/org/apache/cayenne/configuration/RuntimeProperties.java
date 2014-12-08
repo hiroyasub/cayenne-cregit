@@ -32,7 +32,7 @@ name|String
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a String property value for a given key or a default value if a      * value is not present in properties or is null.      *       * @since 3.2      */
+comment|/**      * Returns a String property value for a given key or a default value if a      * value is not present in properties or is null.      *       * @since 4.0      */
 name|String
 name|get
 parameter_list|(

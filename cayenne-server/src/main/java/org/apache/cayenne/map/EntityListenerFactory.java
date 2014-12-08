@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A factory used to create entity listeners. By default listeners are created  * using a noop constructor on the listener class, however if a user needs to  * customize listener creation process (e.g. perform dependency injection,  * etc.), a custom factory can be installed on the EntityResolver.  * EntityListenerFactory also supports defining listener interfaces, not just  * classes).  *   * @since 3.0  * @deprecated since 3.2, as EntityResolver no longer loads listeners from its  *             DataMaps.  */
+comment|/**  * A factory used to create entity listeners. By default listeners are created  * using a noop constructor on the listener class, however if a user needs to  * customize listener creation process (e.g. perform dependency injection,  * etc.), a custom factory can be installed on the EntityResolver.  * EntityListenerFactory also supports defining listener interfaces, not just  * classes).  *   * @since 3.0  * @deprecated since 4.0, as EntityResolver no longer loads listeners from its  *             DataMaps.  */
 end_comment
 
 begin_interface

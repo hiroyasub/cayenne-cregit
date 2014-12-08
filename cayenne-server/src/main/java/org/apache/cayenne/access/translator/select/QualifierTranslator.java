@@ -1481,7 +1481,7 @@ return|return
 literal|"^"
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|String
 name|operandForBitwiseLeftShift
@@ -1491,7 +1491,7 @@ return|return
 literal|"<<"
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|String
 name|operandForBitwiseRightShift

@@ -21,6 +21,26 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collection
 import|;
 end_import
@@ -52,6 +72,16 @@ operator|.
 name|util
 operator|.
 name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -244,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL specified  * by the user.<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports parameters and  * customization using Velocity scripting language. The most straightforward use of  * scripting abilities is to build parameterized queries. For example:  *</p>  *   *<pre>  *                  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the User  * Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but also it  * allows to configure multiple templates and switch them dynamically. This way a single  * query can have multiple "dialects" specific to a given database.  *</p>  *<h3>Parameter Sets</h3>  *<p>  * SQLTemplate supports multiple sets of parameters, so a single query can be executed  * multiple times with different parameters. "Scrolling" through parameter list is done by  * calling {@link #parametersIterator()}. This iterator goes over parameter sets,  * returning a Map on each call to "next()"  *</p>  *   * @since 1.1  */
+comment|/**  * A query that executes unchanged (except for template preprocessing) "raw" SQL  * specified by the user.<h3>Template Script</h3>  *<p>  * SQLTemplate stores a dynamic template for the SQL query that supports  * parameters and customization using Velocity scripting language. The most  * straightforward use of scripting abilities is to build parameterized queries.  * For example:  *</p>  *   *<pre>  *                  SELECT ID, NAME FROM SOME_TABLE WHERE NAME LIKE $a  *</pre>  *<p>  *<i>For advanced scripting options see "Scripting SQLTemplate" chapter in the  * User Guide.</i>  *</p>  *<h3>Per-Database Template Customization</h3>  *<p>  * SQLTemplate has a {@link #getDefaultTemplate() default template script}, but  * also it allows to configure multiple templates and switch them dynamically.  * This way a single query can have multiple "dialects" specific to a given  * database.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -258,6 +288,15 @@ name|ParameterizedQuery
 implements|,
 name|XMLSerializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|3073521388289663641L
+decl_stmt|;
 specifier|static
 specifier|final
 name|String
@@ -323,6 +362,13 @@ index|[]
 name|parameters
 decl_stmt|;
 specifier|protected
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|positionalParams
+decl_stmt|;
+specifier|protected
 name|CapsStrategy
 name|columnNamesCapitalization
 decl_stmt|;
@@ -341,13 +387,13 @@ operator|new
 name|SQLTemplateMetadata
 argument_list|()
 decl_stmt|;
-comment|/**      * Creates an empty SQLTemplate. Note this constructor does not specify the "root" of      * the query, so a user must call "setRoot" later to make sure SQLTemplate can be      * executed.      *       * @since 1.2      */
+comment|/** 	 * Creates an empty SQLTemplate. Note this constructor does not specify the 	 * "root" of the query, so a user must call "setRoot" later to make sure 	 * SQLTemplate can be executed. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a SQLTemplate without an explicit root.      *       * @since 3.2      */
+comment|/** 	 * Creates a SQLTemplate without an explicit root. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -482,7 +528,7 @@ name|substitutedQuery
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -512,7 +558,7 @@ name|isFetchingDataRows
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -534,7 +580,7 @@ name|rootEntity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -559,7 +605,7 @@ name|rootClass
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -581,7 +627,7 @@ name|rootEntity
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|SQLTemplate
 parameter_list|(
@@ -603,7 +649,7 @@ name|defaultTemplate
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -629,7 +675,7 @@ return|return
 name|metaData
 return|;
 block|}
-comment|/**      * Calls<em>sqlAction(this)</em> on the visitor.      *       * @since 1.2      */
+comment|/** 	 * Calls<em>sqlAction(this)</em> on the visitor. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -649,7 +695,9 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Prints itself as XML to the provided PrintWriter.      *       * @since 1.1      */
+comment|/** 	 * Prints itself as XML to the provided PrintWriter. 	 *  	 * @since 1.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML
@@ -979,7 +1027,7 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-comment|//sorting entries by adapter name
+comment|// sorting entries by adapter name
 name|TreeSet
 argument_list|<
 name|String
@@ -1101,7 +1149,7 @@ literal|"</query>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Initializes query parameters using a set of properties.      *       * @since 1.1      */
+comment|/** 	 * Initializes query parameters using a set of properties. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|initWithProperties
@@ -1134,7 +1182,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 name|Object
@@ -1173,11 +1222,23 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Returns an iterator over parameter sets. Each element returned from the iterator is      * a java.util.Map.      */
+comment|/** 	 * Returns an iterator over parameter sets. Each element returned from the 	 * iterator is a java.util.Map. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
+name|Deprecated
 specifier|public
 name|Iterator
 argument_list|<
+name|Map
+argument_list|<
+name|String
+argument_list|,
 name|?
+argument_list|>
 argument_list|>
 name|parametersIterator
 parameter_list|()
@@ -1215,7 +1276,9 @@ name|nullMapTransformer
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the number of parameter sets.      */
+comment|/** 	 * Returns the number of parameter sets. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|parametersSize
@@ -1235,7 +1298,111 @@ else|:
 literal|0
 return|;
 block|}
-comment|/**      * Returns a new query built using this query as a prototype and a new set of      * parameters.      */
+comment|/** 	 * Initializes named parameter of this query. Note that calling this method 	 * will reset any positional parameters. 	 *  	 * @since 4.0 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|public
+name|void
+name|setParams
+parameter_list|(
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|params
+parameter_list|)
+block|{
+comment|// since named parameters are specified, resetting positional
+comment|// parameters
+name|this
+operator|.
+name|positionalParams
+operator|=
+literal|null
+expr_stmt|;
+comment|// calling a deprecated method until we can remove multi-parameter-batch
+comment|// deprecation.
+name|setParameters
+argument_list|(
+name|params
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Initializes positional parameters of the query. This is a positional 	 * style of binding. Names of variables in the expression are ignored and 	 * parameters are bound in order they are found in the expression. E.g. if 	 * the same name is mentioned twice, it can be bound to two different 	 * values. If declared and provided parameters counts are mismatched, an 	 * exception will be thrown. 	 *<p> 	 * Note that calling this method will reset any previously set *named* 	 * parameters. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setParamsArray
+parameter_list|(
+name|Object
+modifier|...
+name|params
+parameter_list|)
+block|{
+name|setParamsList
+argument_list|(
+name|params
+operator|!=
+literal|null
+condition|?
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|params
+argument_list|)
+else|:
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setParamsList
+parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|params
+parameter_list|)
+block|{
+comment|// since positional parameters are specified, resetting named
+comment|// parameters
+name|this
+operator|.
+name|parameters
+operator|=
+literal|null
+expr_stmt|;
+name|this
+operator|.
+name|positionalParams
+operator|=
+name|params
+operator|!=
+literal|null
+condition|?
+operator|new
+name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
+argument_list|(
+name|params
+argument_list|)
+else|:
+literal|null
+expr_stmt|;
+block|}
+comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. For an alternative use 	 *             {@link #createQuery(Map)}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|SQLTemplate
 name|queryWithParameters
@@ -1328,7 +1495,9 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates and returns a new SQLTemplate built using this query as a prototype and      * substituting template parameters with the values from the map.      *       * @since 1.1      */
+comment|/** 	 * Creates and returns a new SQLTemplate built using this query as a 	 * prototype and substituting template parameters with the values from the 	 * map. 	 *  	 * @since 1.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|createQuery
@@ -1342,14 +1511,85 @@ argument_list|>
 name|parameters
 parameter_list|)
 block|{
-return|return
-name|queryWithParameters
+comment|// create a query replica
+name|SQLTemplate
+name|query
+init|=
+operator|new
+name|SQLTemplate
+argument_list|()
+decl_stmt|;
+name|query
+operator|.
+name|setRoot
+argument_list|(
+name|root
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setDefaultTemplate
+argument_list|(
+name|getDefaultTemplate
+argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|templates
+operator|!=
+literal|null
+condition|)
+block|{
+name|query
+operator|.
+name|templates
+operator|=
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+argument_list|(
+name|templates
+argument_list|)
+expr_stmt|;
+block|}
+name|query
+operator|.
+name|metaData
+operator|.
+name|copyFromInfo
+argument_list|(
+name|this
+operator|.
+name|metaData
+argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setParams
 argument_list|(
 name|parameters
 argument_list|)
+expr_stmt|;
+name|query
+operator|.
+name|setColumnNamesCapitalization
+argument_list|(
+name|this
+operator|.
+name|getColumnNamesCapitalization
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|query
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy
@@ -1362,7 +1602,7 @@ name|getCacheStrategy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCacheStrategy
@@ -1379,7 +1619,7 @@ name|strategy
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 index|[]
@@ -1393,7 +1633,7 @@ name|getCacheGroups
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCacheGroups
@@ -1413,7 +1653,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 3.2      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.LOCAL_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useLocalCache
@@ -1436,7 +1676,7 @@ name|cacheGroups
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *       *<pre>      * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE);      * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;);      *</pre>      *       * @since 3.2      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.setCacheStrategy(QueryCacheStrategy.SHARED_CACHE); 	 * query.setCacheGroups(&quot;group1&quot;,&quot;group2&quot;); 	 *</pre> 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|useSharedCache
@@ -1489,7 +1729,7 @@ name|fetchLimit
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getFetchOffset
@@ -1502,7 +1742,7 @@ name|getFetchOffset
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setFetchOffset
@@ -1575,7 +1815,7 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns default SQL template for this query.      */
+comment|/** 	 * Returns default SQL template for this query. 	 */
 specifier|public
 name|String
 name|getDefaultTemplate
@@ -1585,7 +1825,7 @@ return|return
 name|defaultTemplate
 return|;
 block|}
-comment|/**      * Sets default SQL template for this query.      */
+comment|/** 	 * Sets default SQL template for this query. 	 */
 specifier|public
 name|void
 name|setDefaultTemplate
@@ -1599,7 +1839,7 @@ operator|=
 name|string
 expr_stmt|;
 block|}
-comment|/**      * Returns a template for key, or a default template if a template for key is not      * found.      */
+comment|/** 	 * Returns a template for key, or a default template if a template for key 	 * is not found. 	 */
 specifier|public
 specifier|synchronized
 name|String
@@ -1642,7 +1882,7 @@ else|:
 name|defaultTemplate
 return|;
 block|}
-comment|/**      * Returns template for key, or null if there is no template configured for this key.      * Unlike {@link #getTemplate(String)}this method does not return a default template      * as a failover strategy, rather it returns null.      */
+comment|/** 	 * Returns template for key, or null if there is no template configured for 	 * this key. Unlike {@link #getTemplate(String)}this method does not return 	 * a default template as a failover strategy, rather it returns null. 	 */
 specifier|public
 specifier|synchronized
 name|String
@@ -1669,7 +1909,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Adds a SQL template string for a given key. Note the the keys understood by Cayenne      * must be fully qualified adapter class names. This way the framework can related      * current DataNode to the right template. E.g.      * "org.apache.cayenne.dba.oracle.OracleAdapter" is a key that should be used to setup      * an Oracle-specific template.      *       * @see #setDefaultTemplate(String)      */
+comment|/** 	 * Adds a SQL template string for a given key. Note the the keys understood 	 * by Cayenne must be fully qualified adapter class names. This way the 	 * framework can related current DataNode to the right template. E.g. 	 * "org.apache.cayenne.dba.oracle.OracleAdapter" is a key that should be 	 * used to setup an Oracle-specific template. 	 *  	 * @see #setDefaultTemplate(String) 	 */
 specifier|public
 specifier|synchronized
 name|void
@@ -1736,7 +1976,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a collection of configured template keys.      */
+comment|/** 	 * Returns a collection of configured template keys. 	 */
 specifier|public
 specifier|synchronized
 name|Collection
@@ -1753,22 +1993,21 @@ operator|!=
 literal|null
 operator|)
 condition|?
-name|Collections
-operator|.
-name|unmodifiableCollection
-argument_list|(
 name|templates
 operator|.
 name|keySet
 argument_list|()
-argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|String
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
-comment|/**      * Utility method to get the first set of parameters, since most queries will only      * have one.      */
+comment|/** 	 * Returns a map of named parameters that will be bound to SQL. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1776,7 +2015,7 @@ name|String
 argument_list|,
 name|?
 argument_list|>
-name|getParameters
+name|getParams
 parameter_list|()
 block|{
 name|Map
@@ -1817,10 +2056,63 @@ name|map
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 return|;
 block|}
-comment|/**      * Utility method to initialize query with one or more sets of parameters.      */
+comment|/** 	 * Returns a list of positional parameters that will be bound to SQL. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|getPositionalParams
+parameter_list|()
+block|{
+return|return
+name|positionalParams
+operator|!=
+literal|null
+condition|?
+name|positionalParams
+else|:
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+return|;
+block|}
+comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 *  	 * @deprecated since 4.0 in favor of {@link #getParams()}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
+annotation|@
+name|Deprecated
+specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|?
+argument_list|>
+name|getParameters
+parameter_list|()
+block|{
+return|return
+name|getParams
+argument_list|()
+return|;
+block|}
+comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 *  	 * @deprecated since 4.0 in favor of {@link #setParams(Map)}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setParameters
@@ -1851,8 +2143,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// clone parameters to ensure that we don't have immutable maps that are not
-comment|// serializable with Hessian...
+comment|// clone parameters to ensure that we don't have immutable maps that
+comment|// are not serializable with Hessian...
 name|this
 operator|.
 name|parameters
@@ -1922,7 +2214,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|getPrefetchTree
@@ -1935,7 +2227,7 @@ name|getPrefetchTree
 argument_list|()
 return|;
 block|}
-comment|/**      * Adds a prefetch.      *       * @since 1.2      */
+comment|/** 	 * Adds a prefetch. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode
 name|addPrefetch
@@ -1958,7 +2250,7 @@ name|JOINT_PREFETCH_SEMANTICS
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|removePrefetch
@@ -1975,7 +2267,7 @@ name|prefetch
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds all prefetches from a provided collection.      *       * @since 1.2      */
+comment|/** 	 * Adds all prefetches from a provided collection. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|addPrefetches
@@ -1999,7 +2291,7 @@ name|JOINT_PREFETCH_SEMANTICS
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Clears all prefetches.      *       * @since 1.2      */
+comment|/** 	 * Clears all prefetches. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|clearPrefetches
@@ -2011,7 +2303,7 @@ name|clearPrefetches
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns a column name capitalization policy applied to selecting queries. This is      * used to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a      * chosen Cayenne column mapping strategy (e.g. all column names in uppercase) is      * portable across database engines that can have varying default capitalization.      * Default (null) value indicates that column names provided in result set are used      * unchanged.      *       * @since 3.0      */
+comment|/** 	 * Returns a column name capitalization policy applied to selecting queries. 	 * This is used to simplify mapping of the queries like "SELECT * FROM ...", 	 * ensuring that a chosen Cayenne column mapping strategy (e.g. all column 	 * names in uppercase) is portable across database engines that can have 	 * varying default capitalization. Default (null) value indicates that 	 * column names provided in result set are used unchanged. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|CapsStrategy
 name|getColumnNamesCapitalization
@@ -2029,7 +2321,7 @@ operator|.
 name|DEFAULT
 return|;
 block|}
-comment|/**      * Sets a column name capitalization policy applied to selecting queries. This is used      * to simplify mapping of the queries like "SELECT * FROM ...", ensuring that a chosen      * Cayenne column mapping strategy (e.g. all column names in uppercase) is portable      * across database engines that can have varying default capitalization. Default      * (null) value indicates that column names provided in result set are used unchanged.      *<p>      * Note that while a non-default setting is useful for queries that do not rely on a      * #result directive to describe columns, it works for all SQLTemplates the same way.      *       * @since 3.0      */
+comment|/** 	 * Sets a column name capitalization policy applied to selecting queries. 	 * This is used to simplify mapping of the queries like "SELECT * FROM ...", 	 * ensuring that a chosen Cayenne column mapping strategy (e.g. all column 	 * names in uppercase) is portable across database engines that can have 	 * varying default capitalization. Default (null) value indicates that 	 * column names provided in result set are used unchanged. 	 *<p> 	 * Note that while a non-default setting is useful for queries that do not 	 * rely on a #result directive to describe columns, it works for all 	 * SQLTemplates the same way. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setColumnNamesCapitalization
@@ -2045,7 +2337,7 @@ operator|=
 name|columnNameCapitalization
 expr_stmt|;
 block|}
-comment|/**      * Sets an optional explicit mapping of the result set. If result set mapping is      * specified, the result of SQLTemplate may not be a normal list of Persistent objects      * or DataRows, instead it will follow the {@link SQLResult} rules.      *       * @since 3.0      */
+comment|/** 	 * Sets an optional explicit mapping of the result set. If result set 	 * mapping is specified, the result of SQLTemplate may not be a normal list 	 * of Persistent objects or DataRows, instead it will follow the 	 * {@link SQLResult} rules. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setResult
@@ -2061,7 +2353,7 @@ operator|=
 name|resultSet
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|SQLResult
 name|getResult
@@ -2071,7 +2363,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Sets statement's fetch size (0 for no default size)      *       * @since 3.0      */
+comment|/** 	 * Sets statement's fetch size (0 for no default size) 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setStatementFetchSize
@@ -2088,7 +2380,7 @@ name|size
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @return statement's fetch size      * @since 3.0      */
+comment|/** 	 * @return statement's fetch size 	 * @since 3.0 	 */
 specifier|public
 name|int
 name|getStatementFetchSize
@@ -2101,7 +2393,7 @@ name|getStatementFetchSize
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a name of the DataNode to use with this SQLTemplate. This      * information will be used during query execution if no other routing      * information is provided such as entity name or class, etc.      *       * @since 3.2      */
+comment|/** 	 * Returns a name of the DataNode to use with this SQLTemplate. This 	 * information will be used during query execution if no other routing 	 * information is provided such as entity name or class, etc. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|String
 name|getDataNodeName
@@ -2111,7 +2403,7 @@ return|return
 name|dataNodeName
 return|;
 block|}
-comment|/**      * Sets a name of the DataNode to use with this SQLTemplate. This      * information will be used during query execution if no other routing      * information is provided such as entity name or class, etc.      *       * @since 3.2      */
+comment|/** 	 * Sets a name of the DataNode to use with this SQLTemplate. This 	 * information will be used during query execution if no other routing 	 * information is provided such as entity name or class, etc. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|setDataNodeName

@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link BytesTransformerFactory} that creates transformers depending on the  * encryption mode specified via properties.  *   * @since 3.2  */
+comment|/**  * A {@link BytesTransformerFactory} that creates transformers depending on the  * encryption mode specified via properties.  *   * @since 4.0  */
 end_comment
 
 begin_class

@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -26,12 +46,50 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
 import|;
 end_import
 
@@ -43,8 +101,6 @@ begin_class
 specifier|public
 class|class
 name|ObjEntitySingleTableInheritanceTest
-extends|extends
-name|TestCase
 block|{
 specifier|protected
 name|DataMap
@@ -115,7 +171,7 @@ name|ObjRelationship
 name|relationship3
 decl_stmt|;
 annotation|@
-name|Override
+name|Before
 specifier|public
 name|void
 name|setUp
@@ -389,6 +445,8 @@ name|entity3
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInheritedAttributes
@@ -493,6 +551,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInheritedRelationships
@@ -571,6 +631,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAttributeForDbAttribute
@@ -660,6 +722,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRelationshipForDbRelationship

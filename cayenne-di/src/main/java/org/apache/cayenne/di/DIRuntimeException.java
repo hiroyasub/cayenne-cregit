@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A runtime exception thrown on DI misconfiguration.  *   * @since 3.2  */
+comment|/**  * A runtime exception thrown on DI misconfiguration.  *   * @since 4.0  */
 end_comment
 
 begin_class

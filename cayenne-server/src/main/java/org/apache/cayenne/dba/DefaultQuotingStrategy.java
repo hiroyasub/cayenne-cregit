@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2 this is a top-level class.  */
+comment|/**  * @since 4.0 this is a top-level class.  */
 end_comment
 
 begin_class
@@ -127,7 +127,7 @@ operator|=
 name|endQuote
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.2      */
+comment|/**      * @deprecated since 4.0      */
 annotation|@
 name|Override
 annotation|@

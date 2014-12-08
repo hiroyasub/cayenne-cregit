@@ -205,6 +205,22 @@ name|access
 operator|.
 name|jdbc
 operator|.
+name|SQLTemplateProcessor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
 name|reader
 operator|.
 name|RowReader
@@ -510,6 +526,10 @@ decl_stmt|;
 specifier|private
 name|BatchTranslatorFactory
 name|batchTranslatorFactory
+decl_stmt|;
+specifier|private
+name|SQLTemplateProcessor
+name|sqlTemplateProcessor
 decl_stmt|;
 name|TransactionDataSource
 name|readThroughDataSource
@@ -1647,7 +1667,7 @@ argument_list|()
 throw|;
 block|}
 block|}
-comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 3.2      */
+comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 4.0      */
 specifier|public
 name|RowReader
 argument_list|<
@@ -1681,7 +1701,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 3.2      */
+comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 4.0      */
 specifier|public
 name|RowReader
 argument_list|<
@@ -1720,7 +1740,7 @@ name|attributeOverrides
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BatchTranslator
 name|batchTranslator
@@ -1746,7 +1766,7 @@ name|trimFunction
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|RowReaderFactory
 name|getRowReaderFactory
@@ -1756,7 +1776,7 @@ return|return
 name|rowReaderFactory
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setRowReaderFactory
@@ -1772,7 +1792,7 @@ operator|=
 name|rowReaderFactory
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|BatchTranslatorFactory
 name|getBatchTranslatorFactory
@@ -1782,7 +1802,7 @@ return|return
 name|batchTranslatorFactory
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setBatchTranslatorFactory
@@ -1796,6 +1816,32 @@ operator|.
 name|batchTranslatorFactory
 operator|=
 name|batchTranslatorFactory
+expr_stmt|;
+block|}
+comment|/**      * @since 4.0      */
+specifier|public
+name|SQLTemplateProcessor
+name|getSqlTemplateProcessor
+parameter_list|()
+block|{
+return|return
+name|sqlTemplateProcessor
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setSqlTemplateProcessor
+parameter_list|(
+name|SQLTemplateProcessor
+name|sqlTemplateProcessor
+parameter_list|)
+block|{
+name|this
+operator|.
+name|sqlTemplateProcessor
+operator|=
+name|sqlTemplateProcessor
 expr_stmt|;
 block|}
 block|}

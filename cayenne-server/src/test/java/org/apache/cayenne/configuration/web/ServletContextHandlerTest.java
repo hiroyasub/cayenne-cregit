@@ -18,24 +18,44 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
+import|import
+name|com
 operator|.
-name|mockito
-operator|.
-name|Mockito
+name|mockrunner
 operator|.
 name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpServletRequest
 import|;
 end_import
 
 begin_import
 import|import
-name|junit
+name|com
 operator|.
-name|framework
+name|mockrunner
 operator|.
-name|TestCase
+name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpServletResponse
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|mockrunner
+operator|.
+name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpSession
 import|;
 end_import
 
@@ -159,43 +179,71 @@ end_import
 
 begin_import
 import|import
-name|com
+name|org
 operator|.
-name|mockrunner
+name|junit
 operator|.
-name|mock
-operator|.
-name|web
-operator|.
-name|MockHttpServletRequest
+name|Test
 import|;
 end_import
 
 begin_import
-import|import
-name|com
+import|import static
+name|org
 operator|.
-name|mockrunner
+name|junit
 operator|.
-name|mock
+name|Assert
 operator|.
-name|web
-operator|.
-name|MockHttpServletResponse
+name|assertNotNull
 import|;
 end_import
 
 begin_import
-import|import
-name|com
+import|import static
+name|org
 operator|.
-name|mockrunner
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
 operator|.
 name|mock
-operator|.
-name|web
-operator|.
-name|MockHttpSession
 import|;
 end_import
 
@@ -203,9 +251,9 @@ begin_class
 specifier|public
 class|class
 name|ServletContextHandlerTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRequestStart_bindContext

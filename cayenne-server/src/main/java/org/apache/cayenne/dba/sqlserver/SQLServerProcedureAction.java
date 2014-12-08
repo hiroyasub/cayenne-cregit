@@ -218,7 +218,7 @@ name|SQLServerProcedureAction
 extends|extends
 name|ProcedureAction
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|SQLServerProcedureAction
 parameter_list|(

@@ -17,6 +17,42 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|test
+operator|.
+name|parallel
+operator|.
+name|ParallelTestContainer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -36,38 +72,14 @@ import|;
 end_import
 
 begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|test
-operator|.
-name|parallel
-operator|.
-name|ParallelTestContainer
+name|*
 import|;
 end_import
 
@@ -75,8 +87,6 @@ begin_class
 specifier|public
 class|class
 name|DefaultEventManagerTest
-extends|extends
-name|TestCase
 implements|implements
 name|EventListener
 block|{
@@ -97,7 +107,7 @@ name|EventManager
 name|eventManager
 decl_stmt|;
 annotation|@
-name|Override
+name|Before
 specifier|public
 name|void
 name|setUp
@@ -118,6 +128,8 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSubjectListenerWouldRegisterListener
@@ -190,6 +202,8 @@ name|mockSubject
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testObjectListenerWouldRegisterListener
@@ -270,6 +284,8 @@ name|mockSubject
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullListener
@@ -305,8 +321,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -320,6 +334,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNullNotification
@@ -343,8 +359,6 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -388,8 +402,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -435,8 +447,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -450,6 +460,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNonexistingMethod
@@ -487,8 +499,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -502,6 +512,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInvalidArgumentTypes
@@ -539,8 +551,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|fail
 argument_list|()
 expr_stmt|;
@@ -554,6 +564,8 @@ block|{
 comment|// expected
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNonretainedListener
@@ -615,8 +627,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertEquals
 argument_list|(
 literal|0
@@ -625,6 +635,8 @@ name|numberOfReceivedEventsForClass
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testValidSubclassOfRegisteredEventClass
@@ -683,6 +695,8 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testWrongRegisteredEventClass
@@ -743,6 +757,8 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessfulNotificationDefaultSender
@@ -840,6 +856,8 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessfulNotificationIndividualSender
@@ -905,6 +923,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessfulNotificationIndividualSenderTwice
@@ -985,6 +1005,8 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSuccessfulNotificationBothDefaultAndIndividualSender
@@ -1084,6 +1106,8 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveOnEmptyList
@@ -1104,8 +1128,6 @@ argument_list|,
 literal|"XXX"
 argument_list|)
 decl_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1119,13 +1141,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveOnNullSubject
 parameter_list|()
 block|{
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1139,6 +1161,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveFromDefaultQueue
@@ -1174,8 +1198,6 @@ argument_list|,
 name|subject
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|eventManager
@@ -1188,8 +1210,6 @@ name|subject
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1201,6 +1221,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveSpecificQueue
@@ -1238,8 +1260,6 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|eventManager
@@ -1252,8 +1272,6 @@ name|subject
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1265,6 +1283,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveSpecificSender
@@ -1302,8 +1322,6 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|eventManager
@@ -1318,8 +1336,6 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1331,6 +1347,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveNullSender
@@ -1368,8 +1386,6 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|eventManager
@@ -1384,8 +1400,6 @@ literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1397,6 +1411,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveNonexistingSender
@@ -1434,8 +1450,6 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1450,8 +1464,6 @@ literal|"foo"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|eventManager
@@ -1463,6 +1475,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveAll
@@ -1560,8 +1574,6 @@ argument_list|,
 name|this
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertTrue
 argument_list|(
 name|eventManager
@@ -1572,8 +1584,6 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1584,8 +1594,6 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1598,8 +1606,6 @@ name|subject1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1612,8 +1618,6 @@ name|subject2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager
@@ -1627,6 +1631,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSubjectGarbageCollection
@@ -1677,8 +1683,6 @@ operator|.
 name|gc
 argument_list|()
 expr_stmt|;
-name|Assert
-operator|.
 name|assertFalse
 argument_list|(
 name|eventManager

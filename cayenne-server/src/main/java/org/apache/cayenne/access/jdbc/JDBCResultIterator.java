@@ -183,7 +183,7 @@ name|T
 argument_list|>
 name|rowReader
 decl_stmt|;
-comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      *       * @since 3.2      */
+comment|/**      * Creates new JDBCResultIterator that reads from provided ResultSet.      *       * @since 4.0      */
 specifier|public
 name|JDBCResultIterator
 parameter_list|(
@@ -222,7 +222,7 @@ name|checkNextRow
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -517,7 +517,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.2 always returns false. Connection closing is outside      *             the scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
+comment|/**      * @deprecated since 4.0 always returns false. Connection closing is outside      *             the scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -529,7 +529,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Sets the<code>closingConnection</code> property.      *       * @deprecated since 3.2 does nothing. Connection closing is outside the      *             scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
+comment|/**      * Sets the<code>closingConnection</code> property.      *       * @deprecated since 4.0 does nothing. Connection closing is outside the      *             scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
 annotation|@
 name|Deprecated
 specifier|public

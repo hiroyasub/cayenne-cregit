@@ -1425,7 +1425,7 @@ name|toTimestampConverter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Converters are used by {@link PropertyUtils#setProperty(Object, String, Object)} to coerce      * generic Object values into the specific type expected by the named setter.      *       * @param type      * 		the Class to convert a value to; the destination type      * @param converter      * 		a converter used to convert the value from Object to T      * @since 3.2      */
+comment|/**      * Converters are used by {@link PropertyUtils#setProperty(Object, String, Object)} to coerce      * generic Object values into the specific type expected by the named setter.      *       * @param type      * 		the Class to convert a value to; the destination type      * @param converter      * 		a converter used to convert the value from Object to T      * @since 4.0      */
 specifier|public
 specifier|static
 parameter_list|<

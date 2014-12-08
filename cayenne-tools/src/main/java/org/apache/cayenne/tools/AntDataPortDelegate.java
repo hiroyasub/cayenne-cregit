@@ -83,6 +83,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NamePatternMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -146,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DataPortDelegate implementation that works in the context of Ant DataPortTask  * task execution, performing entity filtering and logging functions.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 3.2  */
+comment|/**  * DataPortDelegate implementation that works in the context of Ant DataPortTask  * task execution, performing entity filtering and logging functions.  *   * @since 1.2: Prior to 1.2 DataPort classes were a part of cayenne-examples  *        package.  * @deprecated since 4.0  */
 end_comment
 
 begin_class
@@ -211,18 +227,24 @@ name|parentTask
 operator|=
 name|parentTask
 expr_stmt|;
-name|this
-operator|.
-name|namePatternMatcher
-operator|=
-operator|new
-name|NamePatternMatcher
-argument_list|(
+name|AntLogger
+name|logger
+init|=
 operator|new
 name|AntLogger
 argument_list|(
 name|parentTask
 argument_list|)
+decl_stmt|;
+name|this
+operator|.
+name|namePatternMatcher
+operator|=
+name|NamePatternMatcher
+operator|.
+name|build
+argument_list|(
+name|logger
 argument_list|,
 name|includeEntitiesPattern
 argument_list|,
@@ -233,10 +255,12 @@ name|this
 operator|.
 name|mapFilters
 operator|=
-name|namePatternMatcher
+name|NamePatternMatcher
 operator|.
 name|createPatterns
 argument_list|(
+name|logger
+argument_list|,
 name|mapsPattern
 argument_list|)
 expr_stmt|;

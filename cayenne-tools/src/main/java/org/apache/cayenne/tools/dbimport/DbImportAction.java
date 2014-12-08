@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|/*  * Licensed to the Apache Software Foundation (ASF) under one  *    or more contributor license agreements.  See the NOTICE file  *    distributed with this work for additional information  *    regarding copyright ownership.  The ASF licenses this file  *    to you under the Apache License, Version 2.0 (the  *    "License"); you may not use this file except in compliance  *    with the License.  You may obtain a copy of the License at  *  *      http://www.apache.org/licenses/LICENSE-2.0  *  *    Unless required by applicable law or agreed to in writing,  *    software distributed under the License is distributed on an  *    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *    KIND, either express or implied.  See the License for the  *    specific language governing permissions and limitations  *    under the License.  */
 end_comment
 
 begin_package
@@ -446,7 +446,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A thin wrapper around {@link DbLoader} that encapsulates DB import logic for  * the benefit of Ant and Maven db importers.  *   * @since 3.2  */
+comment|/**  * A thin wrapper around {@link DbLoader} that encapsulates DB import logic for  * the benefit of Ant and Maven db importers.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -544,7 +544,7 @@ name|void
 name|execute
 parameter_list|(
 name|DbImportConfiguration
-name|parameters
+name|config
 parameter_list|)
 throws|throws
 name|Exception
@@ -553,7 +553,7 @@ if|if
 condition|(
 name|logger
 operator|.
-name|isInfoEnabled
+name|isDebugEnabled
 argument_list|()
 condition|)
 block|{
@@ -561,29 +561,12 @@ name|logger
 operator|.
 name|debug
 argument_list|(
-name|String
+literal|"DB connection: "
+operator|+
+name|config
 operator|.
-name|format
-argument_list|(
-literal|"DB connection - [driver: %s, url: %s, username: %s, password: %s]"
-argument_list|,
-name|parameters
-operator|.
-name|getDriver
+name|getDataSourceInfo
 argument_list|()
-argument_list|,
-name|parameters
-operator|.
-name|getUrl
-argument_list|()
-argument_list|,
-name|parameters
-operator|.
-name|getUsername
-argument_list|()
-argument_list|,
-literal|"XXXXX"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -595,16 +578,18 @@ name|isDebugEnabled
 argument_list|()
 condition|)
 block|{
-name|parameters
+name|logger
 operator|.
-name|log
-argument_list|()
+name|debug
+argument_list|(
+name|config
+argument_list|)
 expr_stmt|;
 block|}
 name|DataNodeDescriptor
 name|dataNodeDescriptor
 init|=
-name|parameters
+name|config
 operator|.
 name|createDataNodeDescriptor
 argument_list|()
@@ -636,7 +621,7 @@ name|loadedFomDb
 init|=
 name|load
 argument_list|(
-name|parameters
+name|config
 argument_list|,
 name|adapter
 argument_list|,
@@ -667,7 +652,7 @@ name|existing
 init|=
 name|loadExistingDataMap
 argument_list|(
-name|parameters
+name|config
 operator|.
 name|getDataMapFile
 argument_list|()
@@ -682,7 +667,12 @@ condition|)
 block|{
 name|saveLoaded
 argument_list|(
+name|config
+operator|.
+name|initializeDataMap
+argument_list|(
 name|loadedFomDb
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -736,7 +726,7 @@ name|saveLoaded
 argument_list|(
 name|execute
 argument_list|(
-name|parameters
+name|config
 operator|.
 name|createMergeDelegate
 argument_list|()
@@ -1183,7 +1173,7 @@ name|DataMap
 name|load
 parameter_list|(
 name|DbImportConfiguration
-name|parameters
+name|config
 parameter_list|,
 name|DbAdapter
 name|adapter
@@ -1197,7 +1187,7 @@ block|{
 name|DataMap
 name|dataMap
 init|=
-name|parameters
+name|config
 operator|.
 name|createDataMap
 argument_list|()
@@ -1207,7 +1197,7 @@ block|{
 name|DbLoader
 name|loader
 init|=
-name|parameters
+name|config
 operator|.
 name|createLoader
 argument_list|(
@@ -1215,20 +1205,11 @@ name|adapter
 argument_list|,
 name|connection
 argument_list|,
-name|parameters
+name|config
 operator|.
 name|createLoaderDelegate
 argument_list|()
 argument_list|)
-decl_stmt|;
-name|String
-index|[]
-name|types
-init|=
-name|loader
-operator|.
-name|getDefaultTableTypes
-argument_list|()
 decl_stmt|;
 name|loader
 operator|.
@@ -1236,55 +1217,12 @@ name|load
 argument_list|(
 name|dataMap
 argument_list|,
-name|parameters
+name|config
 operator|.
-name|getCatalog
-argument_list|()
-argument_list|,
-name|parameters
-operator|.
-name|getSchema
-argument_list|()
-argument_list|,
-name|parameters
-operator|.
-name|getTablePattern
-argument_list|()
-argument_list|,
-name|types
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|parameters
-operator|.
-name|isImportProcedures
-argument_list|()
-condition|)
-block|{
-name|loader
-operator|.
-name|loadProcedures
-argument_list|(
-name|dataMap
-argument_list|,
-name|parameters
-operator|.
-name|getCatalog
-argument_list|()
-argument_list|,
-name|parameters
-operator|.
-name|getSchema
-argument_list|()
-argument_list|,
-name|parameters
-operator|.
-name|getProcedurePattern
+name|getDbLoaderConfig
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 finally|finally
 block|{

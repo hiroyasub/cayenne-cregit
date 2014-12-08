@@ -14,7 +14,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A callback interface invoked on each row when iterating over  * {@link ResultIterator}. This simplifies iterator management.  *   * @since 3.2  */
+comment|/**  * A callback interface invoked on each row when iterating over  * {@link ResultIterator}. This simplifies iterator management.  *   * @since 4.0  */
 end_comment
 
 begin_interface

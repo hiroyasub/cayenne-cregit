@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ResultIterator} wrapper that handles closing a connection. Also  * internally counts processed rows, mostly for the benefit of subclasses.  * Subclasses are used in iterators that are returned to the end users and are  * not implicitly managed by Cayenne.  *   * @since 3.2  */
+comment|/**  * A {@link ResultIterator} wrapper that handles closing a connection. Also  * internally counts processed rows, mostly for the benefit of subclasses.  * Subclasses are used in iterators that are returned to the end users and are  * not implicitly managed by Cayenne.  *   * @since 4.0  */
 end_comment
 
 begin_class

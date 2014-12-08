@@ -38,7 +38,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An encryptor or decryptor of a single value.  *   * @since 3.2  */
+comment|/**  * An encryptor or decryptor of a single value.  *   * @since 4.0  */
 end_comment
 
 begin_interface

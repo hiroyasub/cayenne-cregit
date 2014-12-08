@@ -526,7 +526,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DI module to bootstrap DI container for Cayenne Ant tasks and Maven  * plugins.  *   * @since 3.2  */
+comment|/**  * A DI module to bootstrap DI container for Cayenne Ant tasks and Maven  * plugins.  *   * @since 4.0  */
 end_comment
 
 begin_class

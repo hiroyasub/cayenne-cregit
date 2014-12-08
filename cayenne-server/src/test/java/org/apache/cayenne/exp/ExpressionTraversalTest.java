@@ -17,11 +17,21 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|TestCase
+name|junit
+operator|.
+name|Test
 import|;
 end_import
 
@@ -29,16 +39,14 @@ begin_class
 specifier|public
 class|class
 name|ExpressionTraversalTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|TstTraversalHandler
 name|handler
 decl_stmt|;
 annotation|@
-name|Override
-specifier|protected
+name|Before
+specifier|public
 name|void
 name|setUp
 parameter_list|()
@@ -52,6 +60,8 @@ name|TstTraversalHandler
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testUnary
@@ -67,6 +77,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBinary
@@ -82,6 +94,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTernary

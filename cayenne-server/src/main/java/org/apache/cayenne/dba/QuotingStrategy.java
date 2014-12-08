@@ -94,7 +94,7 @@ specifier|public
 interface|interface
 name|QuotingStrategy
 block|{
-comment|/**      * Returns a properly quoted identifier.      *       * @deprecated since 3.2      */
+comment|/**      * Returns a properly quoted identifier.      *       * @deprecated since 4.0      */
 annotation|@
 name|Deprecated
 name|String
@@ -104,7 +104,7 @@ name|String
 name|identifier
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 3.2 renamed to      *             {@link #quotedFullyQualifiedName(DbEntity)}.      */
+comment|/**      * @deprecated since 4.0 renamed to      *             {@link #quotedFullyQualifiedName(DbEntity)}.      */
 annotation|@
 name|Deprecated
 name|String
@@ -114,7 +114,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of "quotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName())".      *       * @since 3.2      */
+comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of "quotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName())".      *       * @since 4.0      */
 name|String
 name|quotedFullyQualifiedName
 parameter_list|(
@@ -122,7 +122,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      *       * @since 3.2      */
+comment|/**      *       * @since 4.0      */
 name|String
 name|quotedName
 parameter_list|(
@@ -130,7 +130,7 @@ name|DbAttribute
 name|attribute
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|String
 name|quotedSourceName
 parameter_list|(
@@ -138,7 +138,7 @@ name|DbJoin
 name|join
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|String
 name|quotedTargetName
 parameter_list|(
@@ -146,7 +146,7 @@ name|DbJoin
 name|join
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|String
 name|quotedIdentifier
 parameter_list|(
@@ -158,7 +158,7 @@ modifier|...
 name|identifierParts
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|String
 name|quotedIdentifier
 parameter_list|(

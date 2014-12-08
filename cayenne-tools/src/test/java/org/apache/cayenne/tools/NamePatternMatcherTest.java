@@ -17,11 +17,17 @@ end_package
 
 begin_import
 import|import
-name|junit
+name|org
 operator|.
-name|framework
+name|apache
 operator|.
-name|TestCase
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NamePatternMatcher
 import|;
 end_import
 
@@ -39,14 +45,54 @@ name|Task
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NamePatternMatcher
+operator|.
+name|replaceWildcardInStringWithString
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
 name|NamePatternMatcherTest
-extends|extends
-name|TestCase
 block|{
 comment|/**      * Test pattern expansion.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testReplaceWildcardInStringWithString
@@ -58,8 +104,6 @@ name|assertEquals
 argument_list|(
 literal|null
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -74,8 +118,6 @@ name|assertEquals
 argument_list|(
 literal|"*.java"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|null
@@ -90,8 +132,6 @@ name|assertEquals
 argument_list|(
 literal|"Entity.java"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -106,8 +146,6 @@ name|assertEquals
 argument_list|(
 literal|"java.Entity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -122,8 +160,6 @@ name|assertEquals
 argument_list|(
 literal|"Entity.Entity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -138,8 +174,6 @@ name|assertEquals
 argument_list|(
 literal|"EntityEntity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -154,8 +188,6 @@ name|assertEquals
 argument_list|(
 literal|"EditEntityReport.vm"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -170,8 +202,6 @@ name|assertEquals
 argument_list|(
 literal|"Entity"
 argument_list|,
-name|NamePatternMatcher
-operator|.
 name|replaceWildcardInStringWithString
 argument_list|(
 literal|"*"
@@ -184,6 +214,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test tokenizing      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTokenizer
@@ -243,8 +275,9 @@ decl_stmt|;
 name|NamePatternMatcher
 name|namePatternMatcher
 init|=
-operator|new
 name|NamePatternMatcher
+operator|.
+name|build
 argument_list|(
 operator|new
 name|AntLogger
@@ -319,6 +352,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test tokenizing      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTokenizerEntities
@@ -378,8 +413,9 @@ decl_stmt|;
 name|NamePatternMatcher
 name|namePatternMatcher
 init|=
-operator|new
 name|NamePatternMatcher
+operator|.
+name|build
 argument_list|(
 operator|new
 name|AntLogger

@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default PK generator for H2 that uses sequences for PK generation.  *   * @since 3.2  */
+comment|/**  * Default PK generator for H2 that uses sequences for PK generation.  *   * @since 4.0  */
 end_comment
 
 begin_class

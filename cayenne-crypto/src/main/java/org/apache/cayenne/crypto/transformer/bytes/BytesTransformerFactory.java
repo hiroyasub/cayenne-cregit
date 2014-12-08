@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A class that encapsulates Cayenne cryptography protocol, which is usually  * dependent on the encryption mode.  *   * @since 3.2  */
+comment|/**  * A class that encapsulates Cayenne cryptography protocol, which is usually  * dependent on the encryption mode.  *   * @since 4.0  */
 end_comment
 
 begin_interface

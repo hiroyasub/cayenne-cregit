@@ -15,6 +15,16 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -34,12 +44,14 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertTrue
 import|;
 end_import
 
@@ -47,8 +59,6 @@ begin_class
 specifier|public
 class|class
 name|ObjectIdRegressionTest
-extends|extends
-name|TestCase
 block|{
 comment|// public void testX() {
 comment|// for (int i = 0; i< 10000; i++) {
@@ -61,6 +71,8 @@ comment|//
 comment|// System.out.println(buffer);
 comment|// }
 comment|// }
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIdPool

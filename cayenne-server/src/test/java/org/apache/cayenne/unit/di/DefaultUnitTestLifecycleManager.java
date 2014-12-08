@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|junit
-operator|.
-name|framework
-operator|.
-name|TestCase
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -119,8 +109,6 @@ block|}
 specifier|public
 parameter_list|<
 name|T
-extends|extends
-name|TestCase
 parameter_list|>
 name|void
 name|setUp
@@ -142,8 +130,6 @@ name|BeforeScopeEnd
 specifier|public
 parameter_list|<
 name|T
-extends|extends
-name|TestCase
 parameter_list|>
 name|void
 name|tearDown

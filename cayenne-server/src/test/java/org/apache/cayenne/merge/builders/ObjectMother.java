@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Factory for test data see pattern definition:  * http://martinfowler.com/bliki/ObjectMother.html  *  * @since 3.2.  */
+comment|/**  * Factory for test data see pattern definition:  * http://martinfowler.com/bliki/ObjectMother.html  *  * @since 4.0.  */
 end_comment
 
 begin_class

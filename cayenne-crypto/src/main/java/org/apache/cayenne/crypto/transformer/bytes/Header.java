@@ -44,7 +44,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a header with metadata about the encrypted data. A header is  * prependend to each encrypted value, and itself is not encrypted. Header  * format is the following:  *<ul>  *<li>byte 0..2: "magic" number identifying the format as Cayenne-crypto  * encrypted sequence.  *<li>byte 3: header length N, i.e. how many bytes the header contains,  * including magic number and the length indicator. N can be 0..127.  *<li>byte 4: a bit String representing various flags, such as compression.  *<li>byte 5..N: UTF8-encoded symbolic name of the encryption key.  *</ul>  *   * @since 3.2  */
+comment|/**  * Represents a header with metadata about the encrypted data. A header is  * prependend to each encrypted value, and itself is not encrypted. Header  * format is the following:  *<ul>  *<li>byte 0..2: "magic" number identifying the format as Cayenne-crypto  * encrypted sequence.  *<li>byte 3: header length N, i.e. how many bytes the header contains,  * including magic number and the length indicator. N can be 0..127.  *<li>byte 4: a bit String representing various flags, such as compression.  *<li>byte 5..N: UTF8-encoded symbolic name of the encryption key.  *</ul>  *   * @since 4.0  */
 end_comment
 
 begin_class

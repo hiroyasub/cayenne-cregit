@@ -480,7 +480,7 @@ name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * @deprecated since 3.2 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}.      */
+comment|/**      * @deprecated since 4.0 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -491,7 +491,7 @@ name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
 init|=
 literal|"cayenne.DataDomain.usingExternalTransactions"
 decl_stmt|;
-comment|/**      * @deprecated since 3.2 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}.      */
+comment|/**      * @deprecated since 4.0 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -509,7 +509,7 @@ specifier|protected
 name|JdbcEventLogger
 name|jdbcEventLogger
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Inject
 specifier|protected
@@ -616,7 +616,7 @@ name|resetProperties
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Creates new DataDomain.      *       * @param name      *            DataDomain name. Domain can be located using its name in the      *            Configuration object.      * @param properties      *            A Map containing domain configuration properties.      * @deprecated since 3.2 unused      */
+comment|/**      * Creates new DataDomain.      *       * @param name      *            DataDomain name. Domain can be located using its name in the      *            Configuration object.      * @param properties      *            A Map containing domain configuration properties.      * @deprecated since 4.0 unused      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -775,7 +775,7 @@ operator|=
 name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
 expr_stmt|;
 block|}
-comment|/**      * Reinitializes domain state with a new set of properties.      *       * @since 1.1      * @deprecated since 3.2 properties are processed by the DI provider.      */
+comment|/**      * Reinitializes domain state with a new set of properties.      *       * @since 1.1      * @deprecated since 4.0 properties are processed by the DI provider.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2182,7 +2182,7 @@ name|filters
 argument_list|)
 return|;
 block|}
-comment|/**      * Adds a new filter, immediately calling its 'init' method. Since 3.2 this      * method also registers passed filter as an event listener, if any of its      * methods have event annotations.      *       * @since 3.1      */
+comment|/**      * Adds a new filter, immediately calling its 'init' method. Since 4.0 this      * method also registers passed filter as an event listener, if any of its      * methods have event annotations.      *       * @since 3.1      */
 specifier|public
 name|void
 name|addFilter
@@ -2234,7 +2234,7 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a listener, mapping its methods to events based on annotations. This      * is a shortcut for      * 'getEntityResolver().getCallbackRegistry().addListener(listener)'.      *       * @since 3.2      */
+comment|/**      * Adds a listener, mapping its methods to events based on annotations. This      * is a shortcut for      * 'getEntityResolver().getCallbackRegistry().addListener(listener)'.      *       * @since 4.0      */
 specifier|public
 name|void
 name|addListener

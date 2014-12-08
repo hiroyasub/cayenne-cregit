@@ -170,7 +170,7 @@ specifier|protected
 name|JdbcEventLogger
 name|logger
 decl_stmt|;
-comment|/**      * Loads JDBC driver using current thread class loader.      *       * @since 3.0      * @deprecated since 3.2 as class loading should not happen here.      */
+comment|/**      * Loads JDBC driver using current thread class loader.      *       * @since 3.0      * @deprecated since 4.0 as class loading should not happen here.      */
 annotation|@
 name|Deprecated
 specifier|private

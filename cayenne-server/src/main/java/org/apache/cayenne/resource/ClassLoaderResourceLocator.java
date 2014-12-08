@@ -232,7 +232,7 @@ return|return
 name|resources
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 unused, as AdhocObjectFactory.getClassLoader() is      *             used instead.      */
+comment|/**      * @deprecated since 4.0 unused, as AdhocObjectFactory.getClassLoader() is      *             used instead.      */
 annotation|@
 name|Deprecated
 specifier|protected

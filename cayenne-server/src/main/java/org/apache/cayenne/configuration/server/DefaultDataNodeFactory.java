@@ -69,6 +69,22 @@ name|access
 operator|.
 name|jdbc
 operator|.
+name|SQLTemplateProcessor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
 name|reader
 operator|.
 name|RowReaderFactory
@@ -150,7 +166,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * @since 4.0  */
 end_comment
 
 begin_class
@@ -203,6 +219,12 @@ name|SchemaUpdateStrategy
 name|defaultSchemaUpdateStrategy
 decl_stmt|;
 annotation|@
+name|Inject
+specifier|protected
+name|SQLTemplateProcessor
+name|sqlTemplateProcessor
+decl_stmt|;
+annotation|@
 name|Override
 specifier|public
 name|DataNode
@@ -245,6 +267,13 @@ operator|.
 name|setBatchTranslatorFactory
 argument_list|(
 name|batchTranslatorFactory
+argument_list|)
+expr_stmt|;
+name|dataNode
+operator|.
+name|setSqlTemplateProcessor
+argument_list|(
+name|sqlTemplateProcessor
 argument_list|)
 expr_stmt|;
 name|dataNode

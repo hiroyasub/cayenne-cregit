@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a Cayenne-managed local Transaction.  *   * @since 3.2  */
+comment|/**  * Represents a Cayenne-managed local Transaction.  *   * @since 4.0  */
 end_comment
 
 begin_class

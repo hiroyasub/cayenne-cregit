@@ -17,11 +17,15 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
 operator|.
 name|io
 operator|.
-name|File
+name|FileUtils
 import|;
 end_import
 
@@ -38,6 +42,16 @@ operator|.
 name|testing
 operator|.
 name|AbstractMojoTestCase
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
 import|;
 end_import
 
@@ -233,6 +247,46 @@ name|excludedEntity
 operator|.
 name|exists
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|String
+name|content
+init|=
+name|FileUtils
+operator|.
+name|readFileToString
+argument_list|(
+name|superTestEntity
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|content
+operator|.
+name|contains
+argument_list|(
+literal|"public static final Property<List<TestRelEntity>> ADDITIONAL_REL = new Property<List<TestRelEntity>>(\"additionalRel\");"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|content
+operator|.
+name|contains
+argument_list|(
+literal|"public void addToAdditionalRel(TestRelEntity obj)"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|assertTrue
+argument_list|(
+name|content
+operator|.
+name|contains
+argument_list|(
+literal|"public void removeFromAdditionalRel(TestRelEntity obj)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

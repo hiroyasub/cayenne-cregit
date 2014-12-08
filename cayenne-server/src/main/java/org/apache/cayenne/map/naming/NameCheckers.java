@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * @since 4.0  */
 end_comment
 
 begin_enum
@@ -332,42 +332,17 @@ name|DataMap
 operator|)
 name|namingContext
 decl_stmt|;
-if|if
-condition|(
-name|map
-operator|.
-name|getDefaultPackage
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
 return|return
 name|map
 operator|.
 name|getEmbeddable
 argument_list|(
-operator|(
 name|map
 operator|.
-name|getDefaultPackage
-argument_list|()
-operator|+
-literal|"."
-operator|+
+name|getNameWithDefaultPackage
+argument_list|(
 name|name
-operator|)
 argument_list|)
-operator|!=
-literal|null
-return|;
-block|}
-return|return
-name|map
-operator|.
-name|getEmbeddable
-argument_list|(
-name|name
 argument_list|)
 operator|!=
 literal|null

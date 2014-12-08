@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -68,12 +78,38 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|fail
 import|;
 end_import
 
@@ -81,8 +117,6 @@ begin_class
 specifier|public
 class|class
 name|CayenneGeneratorIntegrationTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|File
@@ -116,6 +150,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test single classes with a non-standard template.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingleClassesCustTemplate
@@ -146,6 +182,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Test single classes generation including full package path. */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingleClasses1
@@ -176,6 +214,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Test single classes generation ignoring package path. */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingleClasses2
@@ -211,6 +251,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Test pairs generation including full package path. */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPairs1
@@ -247,6 +289,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/** Test pairs generation in the same directory. */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPairs2
@@ -288,6 +332,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test pairs generation including full package path with superclass and      * subclass in different packages.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPairs3
@@ -323,6 +369,8 @@ literal|"CayenneDataObject"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPairs1_client
@@ -358,6 +406,8 @@ literal|"PersistentObject"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testPairsEmbeddable3

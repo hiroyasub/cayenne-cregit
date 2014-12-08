@@ -397,7 +397,7 @@ name|Painting
 operator|.
 name|NAME
 operator|.
-name|likeInsensitive
+name|likeIgnoreCase
 argument_list|(
 literal|"gi%"
 argument_list|)

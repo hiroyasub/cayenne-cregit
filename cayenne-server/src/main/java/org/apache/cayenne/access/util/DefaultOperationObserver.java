@@ -416,7 +416,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Closes ResultIterator without reading its data. If you implement a custom      * subclass, only call super if closing the iterator is what you need.      *       * @since 3.2      */
+comment|/**      * Closes ResultIterator without reading its data. If you implement a custom      * subclass, only call super if closing the iterator is what you need.      *       * @since 4.0      */
 specifier|public
 name|void
 name|nextGeneratedRows

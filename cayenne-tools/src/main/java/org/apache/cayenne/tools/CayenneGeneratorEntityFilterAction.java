@@ -57,11 +57,17 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|List
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|NameFilter
 import|;
 end_import
 
@@ -116,7 +122,7 @@ class|class
 name|CayenneGeneratorEntityFilterAction
 block|{
 specifier|private
-name|NamePatternMatcher
+name|NameFilter
 name|nameFilter
 decl_stmt|;
 specifier|private
@@ -133,7 +139,7 @@ name|DataMap
 name|mainDataMap
 parameter_list|)
 block|{
-name|List
+name|Collection
 argument_list|<
 name|Embeddable
 argument_list|>
@@ -218,7 +224,7 @@ parameter_list|)
 throws|throws
 name|MalformedURLException
 block|{
-name|List
+name|Collection
 argument_list|<
 name|ObjEntity
 argument_list|>
@@ -270,16 +276,7 @@ name|e
 operator|.
 name|isGeneric
 argument_list|()
-condition|)
-block|{
-name|it
-operator|.
-name|remove
-argument_list|()
-expr_stmt|;
-block|}
-if|else if
-condition|(
+operator|||
 name|client
 operator|&&
 operator|!
@@ -287,16 +284,7 @@ name|e
 operator|.
 name|isClientAllowed
 argument_list|()
-condition|)
-block|{
-name|it
-operator|.
-name|remove
-argument_list|()
-expr_stmt|;
-block|}
-if|else if
-condition|(
+operator|||
 operator|!
 name|nameFilter
 operator|.
@@ -338,7 +326,7 @@ specifier|public
 name|void
 name|setNameFilter
 parameter_list|(
-name|NamePatternMatcher
+name|NameFilter
 name|nameFilter
 parameter_list|)
 block|{

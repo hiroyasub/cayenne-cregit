@@ -411,7 +411,7 @@ name|DbAttribute
 name|column
 parameter_list|)
 function_decl|;
-comment|/**      * @since 3.0      * @deprecated since 3.2 use {@link #getQuotingStrategy()}.      */
+comment|/**      * @since 3.0      * @deprecated since 4.0 use {@link #getQuotingStrategy()}.      */
 annotation|@
 name|Deprecated
 name|QuotingStrategy
@@ -421,17 +421,17 @@ name|boolean
 name|needQuotes
 parameter_list|)
 function_decl|;
-comment|/**      * Returns SQL identifier quoting strategy object      *       * @since 3.2      */
+comment|/**      * Returns SQL identifier quoting strategy object      *       * @since 4.0      */
 name|QuotingStrategy
 name|getQuotingStrategy
 parameter_list|()
 function_decl|;
-comment|/**      * Allows the users to get access to the adapter decorated by a given      * adapter.      *       * @since 3.2      */
+comment|/**      * Allows the users to get access to the adapter decorated by a given      * adapter.      *       * @since 4.0      */
 name|DbAdapter
 name|unwrap
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a translator factory for EJBQL to SQL translation.      *       * @since 3.2      */
+comment|/**      * Returns a translator factory for EJBQL to SQL translation.      *       * @since 4.0      */
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory
 parameter_list|()

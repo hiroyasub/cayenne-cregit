@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2  */
+comment|/**  * @since 4.0  */
 end_comment
 
 begin_class
@@ -190,9 +190,16 @@ name|String
 name|nameBase
 parameter_list|)
 block|{
-name|String
-name|name
-init|=
+return|return
+operator|(
+operator|(
+name|DataMap
+operator|)
+name|namingContext
+operator|)
+operator|.
+name|getNameWithDefaultPackage
+argument_list|(
 name|super
 operator|.
 name|generate
@@ -201,38 +208,7 @@ name|namingContext
 argument_list|,
 name|nameBase
 argument_list|)
-decl_stmt|;
-name|DataMap
-name|map
-init|=
-operator|(
-name|DataMap
-operator|)
-name|namingContext
-decl_stmt|;
-if|if
-condition|(
-name|map
-operator|.
-name|getDefaultPackage
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-return|return
-name|map
-operator|.
-name|getDefaultPackage
-argument_list|()
-operator|+
-literal|"."
-operator|+
-name|name
-return|;
-block|}
-return|return
-name|name
+argument_list|)
 return|;
 block|}
 block|}

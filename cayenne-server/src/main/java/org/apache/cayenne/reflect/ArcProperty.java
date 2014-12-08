@@ -59,7 +59,7 @@ name|ObjRelationship
 name|getRelationship
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a path over reverse DbRelationships for this arc's      * ObjRelationship.      *       * @since 3.2      */
+comment|/**      * Returns a path over reverse DbRelationships for this arc's      * ObjRelationship.      *       * @since 4.0      */
 name|String
 name|getComplimentaryReverseDbRelationshipPath
 parameter_list|()

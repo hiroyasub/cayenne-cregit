@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of {@link BatchTranslatorFactory}.  *   * @since 3.2  */
+comment|/**  * Default implementation of {@link BatchTranslatorFactory}.  *   * @since 4.0  */
 end_comment
 
 begin_class

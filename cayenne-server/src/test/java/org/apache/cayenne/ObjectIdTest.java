@@ -15,6 +15,46 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|collections
+operator|.
+name|map
+operator|.
+name|LinkedMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|math
@@ -44,42 +84,74 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|util
-operator|.
-name|Util
+name|assertFalse
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|commons
+name|Assert
 operator|.
-name|collections
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
 operator|.
-name|map
+name|junit
 operator|.
-name|LinkedMap
+name|Assert
+operator|.
+name|assertNotSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -87,9 +159,9 @@ begin_class
 specifier|public
 class|class
 name|ObjectIdTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testConstructor
@@ -185,6 +257,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSerializabilityTemp
@@ -237,6 +311,8 @@ name|temp2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSerializabilityPerm
@@ -330,6 +406,8 @@ name|perm2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals0
@@ -365,6 +443,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals1
@@ -417,6 +497,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals2
@@ -472,6 +554,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals3
@@ -558,6 +642,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * This is a test case reproducing conditions for the bug "8458963".      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals5
@@ -663,6 +749,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Multiple key objectId      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals6
@@ -781,6 +869,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Checks that hashCode works even if keys are inserted in the map in a      * different order...      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals7
@@ -900,6 +990,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsBinaryKey
@@ -1007,6 +1099,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEqualsNull
@@ -1040,6 +1134,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIdAsMapKey
@@ -1140,6 +1236,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNotEqual1
@@ -1174,6 +1272,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testNotEqual2
@@ -1245,6 +1345,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Test different numeric types.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEquals8
@@ -1364,6 +1466,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testToString

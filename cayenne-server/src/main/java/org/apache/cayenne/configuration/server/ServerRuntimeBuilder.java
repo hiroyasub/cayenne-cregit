@@ -33,6 +33,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collection
 import|;
 end_import
@@ -138,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *   * @since 3.2  */
+comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -146,6 +156,18 @@ specifier|public
 class|class
 name|ServerRuntimeBuilder
 block|{
+comment|/** 	 * @since 4.0 	 */
+specifier|static
+specifier|final
+name|String
+name|DEFAULT_NAME
+init|=
+literal|"cayenne"
+decl_stmt|;
+specifier|private
+name|String
+name|name
+decl_stmt|;
 specifier|private
 name|Collection
 argument_list|<
@@ -188,9 +210,24 @@ specifier|private
 name|int
 name|jdbcMaxConnections
 decl_stmt|;
+comment|/** 	 * Creates an empty builder. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|()
+block|{
+name|this
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Creates a builder with a fixed name of the DataDomain of the resulting 	 * ServerRuntime. Specifying explicit name is often needed for consistency 	 * in runtimes merged from multiple configs, each having its own name. 	 */
+specifier|public
+name|ServerRuntimeBuilder
+parameter_list|(
+name|String
+name|name
+parameter_list|)
 block|{
 name|this
 operator|.
@@ -214,24 +251,14 @@ name|Module
 argument_list|>
 argument_list|()
 expr_stmt|;
-block|}
-specifier|public
-name|ServerRuntimeBuilder
-parameter_list|(
-name|String
-name|configurationLocation
-parameter_list|)
-block|{
 name|this
-argument_list|()
-expr_stmt|;
-name|addConfig
-argument_list|(
-name|configurationLocation
-argument_list|)
+operator|.
+name|name
+operator|=
+name|name
 expr_stmt|;
 block|}
-comment|/**      * Sets a DataSource that will override any DataSources found in the      * mapping. Moreover if the mapping contains no DataNodes, and the      * DataSource is set with this method, the builder would create a single      * default DataNode.      */
+comment|/** 	 * Sets a DataSource that will override any DataSources found in the 	 * mapping. Moreover if the mapping contains no DataNodes, and the 	 * DataSource is set with this method, the builder would create a single 	 * default DataNode. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|dataSource
@@ -254,6 +281,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets JNDI location for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|jndiDataSource
@@ -276,6 +304,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a database URL for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|url
@@ -294,6 +323,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a driver Java class for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|jdbcDriver
@@ -313,6 +343,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a user name for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|user
@@ -331,6 +362,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Sets a password for the default DataSource. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|password
@@ -400,6 +432,39 @@ argument_list|(
 name|configurationLocation
 argument_list|)
 expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+specifier|public
+name|ServerRuntimeBuilder
+name|addConfigs
+parameter_list|(
+name|String
+modifier|...
+name|configurationLocations
+parameter_list|)
+block|{
+if|if
+condition|(
+name|configurationLocations
+operator|!=
+literal|null
+condition|)
+block|{
+name|configs
+operator|.
+name|addAll
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|configurationLocations
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|this
 return|;
@@ -536,6 +601,88 @@ name|void
 name|buildModules
 parameter_list|()
 block|{
+name|String
+name|nameOverride
+init|=
+name|name
+decl_stmt|;
+if|if
+condition|(
+name|nameOverride
+operator|==
+literal|null
+condition|)
+block|{
+comment|// check if we need to force the default name ... we do when no
+comment|// configs or multiple configs are supplied.
+if|if
+condition|(
+name|configs
+operator|.
+name|size
+argument_list|()
+operator|!=
+literal|1
+condition|)
+block|{
+name|nameOverride
+operator|=
+name|DEFAULT_NAME
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|nameOverride
+operator|!=
+literal|null
+condition|)
+block|{
+specifier|final
+name|String
+name|finalNameOverride
+init|=
+name|nameOverride
+decl_stmt|;
+name|prepend
+argument_list|(
+operator|new
+name|Module
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+name|void
+name|configure
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|)
+block|{
+name|binder
+operator|.
+name|bindMap
+argument_list|(
+name|Constants
+operator|.
+name|PROPERTIES_MAP
+argument_list|)
+operator|.
+name|put
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_DOMAIN_NAME_PROPERTY
+argument_list|,
+name|finalNameOverride
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|dataSourceFactory

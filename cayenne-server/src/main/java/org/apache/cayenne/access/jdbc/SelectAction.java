@@ -229,7 +229,7 @@ name|?
 argument_list|>
 name|query
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|SelectAction
 parameter_list|(

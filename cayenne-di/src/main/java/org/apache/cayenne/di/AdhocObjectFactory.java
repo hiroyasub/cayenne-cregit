@@ -43,7 +43,7 @@ name|String
 name|className
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a Java class loaded using ClassLoader returned from      * {@link ClassLoaderManager#getClassLoader(String)} for a given class name.      *       * @since 3.2      */
+comment|/**      * Returns a Java class loaded using ClassLoader returned from      * {@link ClassLoaderManager#getClassLoader(String)} for a given class name.      *       * @since 4.0      */
 name|Class
 argument_list|<
 name|?

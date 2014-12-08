@@ -827,7 +827,7 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.2      */
+comment|/**      * @deprecated since 4.0      */
 annotation|@
 name|Deprecated
 annotation|@
@@ -850,7 +850,7 @@ name|isQuoteStrategy
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -866,7 +866,7 @@ name|getQuotingStrategy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -879,7 +879,7 @@ name|getAdapter
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public

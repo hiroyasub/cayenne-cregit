@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ResultIterator over a collection of objects.  *   * @since 3.2  */
+comment|/**  * A ResultIterator over a collection of objects.  *   * @since 4.0  */
 end_comment
 
 begin_class

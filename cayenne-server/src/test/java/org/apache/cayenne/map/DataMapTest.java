@@ -17,6 +17,98 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|AbstractQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|MockAbstractQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|Query
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|XMLEncoder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|xml
+operator|.
+name|sax
+operator|.
+name|InputSource
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -96,94 +188,86 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|query
-operator|.
-name|AbstractQuery
+name|assertFalse
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|query
-operator|.
-name|MockAbstractQuery
+name|assertNotNull
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|query
-operator|.
-name|Query
+name|assertNull
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|util
-operator|.
-name|Util
+name|assertSame
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|util
-operator|.
-name|XMLEncoder
+name|assertTrue
 import|;
 end_import
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|xml
+name|junit
 operator|.
-name|sax
+name|Assert
 operator|.
-name|InputSource
+name|fail
 import|;
 end_import
 
@@ -195,9 +279,9 @@ begin_class
 specifier|public
 class|class
 name|DataMapTest
-extends|extends
-name|TestCase
 block|{
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSerializability
@@ -283,6 +367,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testInitWithProperties
@@ -361,6 +447,8 @@ argument_list|)
 expr_stmt|;
 comment|// TODO: test other defaults
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDefaultSchema
@@ -419,6 +507,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDefaultClientPackage
@@ -477,6 +567,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDefaultClientSuperclass
@@ -535,6 +627,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDefaultPackage
@@ -593,6 +687,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDefaultSuperclass
@@ -651,6 +747,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDefaultLockType
@@ -718,6 +816,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testName
@@ -753,6 +853,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testLocation
@@ -796,6 +898,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddObjEntity
@@ -857,6 +961,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddEntityWithSameName
@@ -934,6 +1040,8 @@ parameter_list|)
 block|{
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveThenAddNullClassName
@@ -985,6 +1093,8 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveObjEntity
@@ -1175,6 +1285,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testMultipleNullClassNames
@@ -1222,6 +1334,8 @@ name|e2
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveThenAddRealClassName
@@ -1277,6 +1391,8 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddEmbeddable
@@ -1345,6 +1461,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveEmbeddable
@@ -1427,6 +1545,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddDbEntity
@@ -1481,6 +1601,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testAddQuery
@@ -1522,6 +1644,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveQuery
@@ -1580,6 +1704,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testGetQueryMap
@@ -1646,6 +1772,8 @@ expr_stmt|;
 block|}
 comment|// make sure deleting a DbEntity& other entity's relationships to it
 comment|// works& does not cause a ConcurrentModificationException
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRemoveDbEntity
@@ -1858,6 +1986,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testChildProcedures
@@ -2074,6 +2204,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testQuoteSqlIdentifiersEncodeAsXML

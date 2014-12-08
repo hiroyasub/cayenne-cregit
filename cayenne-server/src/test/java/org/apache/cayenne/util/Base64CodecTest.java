@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -36,12 +46,26 @@ import|;
 end_import
 
 begin_import
-import|import
+import|import static
+name|org
+operator|.
 name|junit
 operator|.
-name|framework
+name|Assert
 operator|.
-name|TestCase
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -53,8 +77,6 @@ begin_class
 specifier|public
 class|class
 name|Base64CodecTest
-extends|extends
-name|TestCase
 block|{
 specifier|private
 name|Random
@@ -65,6 +87,8 @@ name|Random
 argument_list|()
 decl_stmt|;
 comment|/**      * Test the Base64 implementation      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testBase64
@@ -108,6 +132,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests conditional true branch for "marker0" test.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecodePadMarkerIndex2
@@ -134,6 +160,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests conditional branches for "marker1" test.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecodePadMarkerIndex3
@@ -178,6 +206,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecodePadOnly
@@ -220,6 +250,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecodePadOnlyChunked
@@ -263,6 +295,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// encode/decode random arrays from size 0 to size 11
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEncodeDecodeSmall
@@ -374,6 +408,8 @@ expr_stmt|;
 block|}
 block|}
 comment|// encode/decode a large random array
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testEncodeDecodeRandom
@@ -471,6 +507,8 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Tests RFC 2045 section 2.1 CRLF definition.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRfc2045Section2Dot1CrLfDefinition
@@ -499,6 +537,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Tests RFC 2045 section 6.8 chuck size definition.      */
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testRfc2045Section6Dot8ChunkSizeDefinition
@@ -514,6 +554,8 @@ name|CHUNK_SIZE
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingletons
@@ -3040,6 +3082,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testSingletonsChunked
@@ -5566,6 +5610,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTriplets
@@ -7748,6 +7794,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testTripletsChunked
@@ -9930,6 +9978,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testKnownEncodings
@@ -10069,6 +10119,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testKnownDecodings
@@ -10189,6 +10241,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testIgnoringNonBase64InDecode
@@ -10216,6 +10270,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDecodeWithWhitespace
@@ -10336,6 +10392,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
 specifier|public
 name|void
 name|testDiscardWhitespace

@@ -467,7 +467,7 @@ block|}
 block|}
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 3.2 in favor of {@link #loadModeIndex(URL)}.      */
+comment|/**      * @deprecated since 4.0 in favor of {@link #loadModeIndex(URL)}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -497,7 +497,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns index.eomodeld contents as a Map.      *       * @since 3.2      */
+comment|/**      * Returns index.eomodeld contents as a Map.      *       * @since 4.0      */
 comment|// TODO: refactor EOModelHelper to provide a similar method without loading
 comment|// all entity files in memory... here we simply copied stuff from
 comment|// EOModelHelper
@@ -590,7 +590,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.2 in favor of {@link #loadEOModel(URL)}.      */
+comment|/**      * @deprecated since 4.0 in favor of {@link #loadEOModel(URL)}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -612,7 +612,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 in favor of {@link #loadEOModel(URL, boolean)}.      */
+comment|/**      * @deprecated since 4.0 in favor of {@link #loadEOModel(URL, boolean)}.      */
 annotation|@
 name|Deprecated
 specifier|public

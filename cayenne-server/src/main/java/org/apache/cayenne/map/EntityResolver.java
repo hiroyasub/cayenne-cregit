@@ -499,7 +499,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      * @deprecated since 3.2 does nothing. Previously it used to create runtime      *             ObjRelationships, that broke a lot of things.      */
+comment|/**      * @since 3.0      * @deprecated since 4.0 does nothing. Previously it used to create runtime      *             ObjRelationships, that broke a lot of things.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -826,7 +826,7 @@ name|getEmbeddables
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #getResults()}.      */
+comment|/**      * @deprecated since 4.0 use {@link #getResults()}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -842,7 +842,7 @@ name|getResults
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|Collection
 argument_list|<
@@ -1228,7 +1228,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes all entity mappings from the cache.      *       * @deprecated since 3.2 in favor of {@link #refreshMappingCache()}.      */
+comment|/**      * Removes all entity mappings from the cache.      *       * @deprecated since 4.0 in favor of {@link #refreshMappingCache()}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1240,7 +1240,7 @@ name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Refreshes entity cache to reflect the current state of the DataMaps in      * the EntityResolver.      *       * @since 3.2      */
+comment|/**      * Refreshes entity cache to reflect the current state of the DataMaps in      * the EntityResolver.      *       * @since 4.0      */
 specifier|public
 name|void
 name|refreshMappingCache
@@ -1374,7 +1374,7 @@ name|maps
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|EntityInheritanceTree
 name|getInheritanceTree
@@ -1421,7 +1421,7 @@ return|return
 name|tree
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #getInheritanceTree(String)}.      */
+comment|/**      * @deprecated since 4.0 use {@link #getInheritanceTree(String)}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1439,7 +1439,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that maps to the services the specified class      *       * @return the required ObjEntity or null if there is none that matches the      *         specifier      *       * @since 3.2      */
+comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that maps to the services the specified class      *       * @return the required ObjEntity or null if there is none that matches the      *         specifier      *       * @since 4.0      */
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -1487,7 +1487,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * @deprecated since 3.2, use {@link #getObjEntity(Class)}.      */
+comment|/**      * @deprecated since 4.0, use {@link #getObjEntity(Class)}.      */
 specifier|public
 name|ObjEntity
 name|lookupObjEntity
@@ -1523,7 +1523,7 @@ name|object
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that services the specified data Object      *       * @return the required ObjEntity, or null if none matches the specifier      * @since 3.2 a corresponding getObjEntity method should be used.      */
+comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that services the specified data Object      *       * @return the required ObjEntity, or null if none matches the specifier      * @since 4.0 a corresponding getObjEntity method should be used.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1616,7 +1616,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 3.2. Use q.getMetaData(resolver).getProcedure()      */
+comment|/**      * @deprecated since 4.0. Use q.getMetaData(resolver).getProcedure()      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1639,7 +1639,7 @@ name|getProcedure
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #getProcedure(String)}.      */
+comment|/**      * @deprecated since 4.0 use {@link #getProcedure(String)}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1657,7 +1657,7 @@ name|procedureName
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #getQuery(String)}.      */
+comment|/**      * @deprecated since 4.0 use {@link #getQuery(String)}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1699,7 +1699,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.2. There's no replacement. This property is      *             meaningless and is no longer respected by the code.      */
+comment|/**      * @deprecated since 4.0. There's no replacement. This property is      *             meaningless and is no longer respected by the code.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1711,7 +1711,7 @@ return|return
 name|indexedByClass
 return|;
 block|}
-comment|/**      * @deprecated since 3.2. There's no replacement. This property is      *             meaningless.      */
+comment|/**      * @deprecated since 4.0. There's no replacement. This property is      *             meaningless.      */
 specifier|public
 name|void
 name|setIndexedByClass
@@ -1838,7 +1838,7 @@ return|return
 name|classDescriptorMap
 return|;
 block|}
-comment|/**      * @since 3.0      * @deprecated since 3.2 this method does nothing, as EntityResolver no      *             longer loads listeners from its DataMaps.      */
+comment|/**      * @since 3.0      * @deprecated since 4.0 this method does nothing, as EntityResolver no      *             longer loads listeners from its DataMaps.      */
 annotation|@
 name|Deprecated
 specifier|public

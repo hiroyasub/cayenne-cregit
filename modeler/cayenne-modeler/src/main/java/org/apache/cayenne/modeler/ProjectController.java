@@ -3205,6 +3205,17 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
+name|DataChannelDescriptor
+name|getCurrentDataChanel
+parameter_list|()
+block|{
+return|return
+name|currentState
+operator|.
+name|domain
+return|;
+block|}
+specifier|public
 name|DataNodeDescriptor
 name|getCurrentDataNode
 parameter_list|()
@@ -8851,6 +8862,19 @@ return|;
 block|}
 if|else if
 condition|(
+name|getCurrentDataChanel
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+return|return
+name|getCurrentDataChanel
+argument_list|()
+return|;
+block|}
+if|else if
+condition|(
 name|getCurrentPaths
 argument_list|()
 operator|!=
@@ -9442,7 +9466,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|int
 name|getEntityTabSelection
@@ -9452,7 +9476,7 @@ return|return
 name|entityTabSelection
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setEntityTabSelection

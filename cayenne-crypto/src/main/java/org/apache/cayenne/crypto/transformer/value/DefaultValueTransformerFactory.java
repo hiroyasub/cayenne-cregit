@@ -218,7 +218,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ValueTransformerFactory} that creates encryptors/decryptors that are  * taking advantage of the JCE (Java Cryptography Extension) ciphers.  *   * @since 3.2  */
+comment|/**  * A {@link ValueTransformerFactory} that creates encryptors/decryptors that are  * taking advantage of the JCE (Java Cryptography Extension) ciphers.  *   * @since 4.0  */
 end_comment
 
 begin_class

@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of {link #BatchTranslator}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 3.2  */
+comment|/**  * Implementation of {link #BatchTranslator}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 4.0  */
 end_comment
 
 begin_class

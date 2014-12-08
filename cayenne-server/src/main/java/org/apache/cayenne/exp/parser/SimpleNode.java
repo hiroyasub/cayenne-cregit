@@ -1046,7 +1046,7 @@ name|newChildren
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1194,7 +1194,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 3.2 use {@link #appendAsString(Appendable)}.      */
+comment|/**      * @deprecated since 4.0 use {@link #appendAsString(Appendable)}.      */
 annotation|@
 name|Override
 annotation|@
@@ -1711,7 +1711,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 3.0      * @deprecated since 3.2 use {@link #appendAsEJBQL(Appendable, String)}.      */
+comment|/**      * @since 3.0      * @deprecated since 4.0 use {@link #appendAsEJBQL(Appendable, String)}.      */
 annotation|@
 name|Override
 annotation|@
@@ -1754,7 +1754,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|appendAsEJBQL
@@ -1778,7 +1778,7 @@ name|rootId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * @since 3.2          */
+comment|/**          * @since 4.0          */
 annotation|@
 name|Override
 specifier|public

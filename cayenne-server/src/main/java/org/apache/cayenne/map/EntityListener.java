@@ -54,7 +54,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A mapping descriptor of an entity listener class that declares one or more  * callback methods to be notified of the entity events.  *   * @since 3.0  * @deprecated since 3.2, as EntityResolver no longer loads listeners from its  *             DataMaps.  */
+comment|/**  * A mapping descriptor of an entity listener class that declares one or more  * callback methods to be notified of the entity events.  *   * @since 3.0  * @deprecated since 4.0, as EntityResolver no longer loads listeners from its  *             DataMaps.  */
 end_comment
 
 begin_class

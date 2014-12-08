@@ -101,7 +101,7 @@ name|OracleBatchAction
 extends|extends
 name|BatchAction
 block|{
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 name|OracleBatchAction
 parameter_list|(
 name|BatchQuery

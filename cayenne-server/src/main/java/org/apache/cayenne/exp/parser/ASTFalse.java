@@ -160,7 +160,7 @@ operator|.
 name|FALSE
 return|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -181,7 +181,7 @@ literal|"false"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public

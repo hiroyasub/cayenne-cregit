@@ -225,7 +225,7 @@ specifier|protected
 name|int
 name|processedResultSets
 decl_stmt|;
-comment|/**      * @since 3.2      */
+comment|/**      * @since 4.0      */
 specifier|public
 name|ProcedureAction
 parameter_list|(

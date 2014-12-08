@@ -119,6 +119,14 @@ name|SelectQueryMetadata
 extends|extends
 name|BaseQueryMetadata
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|7465922769303943945L
+decl_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -195,19 +203,53 @@ literal|null
 argument_list|)
 condition|)
 block|{
-comment|// generate unique cache key...
+comment|// generate unique cache key, but only if we are caching..
 if|if
 condition|(
+name|cacheStrategy
+operator|!=
+literal|null
+operator|&&
+name|cacheStrategy
+operator|!=
 name|QueryCacheStrategy
 operator|.
 name|NO_CACHE
-operator|==
-name|getCacheStrategy
-argument_list|()
 condition|)
 block|{
+name|this
+operator|.
+name|cacheKey
+operator|=
+name|makeCacheKey
+argument_list|(
+name|query
+argument_list|)
+expr_stmt|;
 block|}
-else|else
+name|resolveAutoAliases
+argument_list|(
+name|query
+argument_list|)
+expr_stmt|;
+return|return
+literal|true
+return|;
+block|}
+return|return
+literal|false
+return|;
+block|}
+specifier|private
+name|String
+name|makeCacheKey
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|)
 block|{
 comment|// create a unique key based on entity, qualifier, ordering and
 comment|// fetch offset and limit
@@ -462,27 +504,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|this
-operator|.
-name|cacheKey
-operator|=
+return|return
 name|key
 operator|.
 name|toString
 argument_list|()
-expr_stmt|;
-block|}
-name|resolveAutoAliases
-argument_list|(
-name|query
-argument_list|)
-expr_stmt|;
-return|return
-literal|true
-return|;
-block|}
-return|return
-literal|false
 return|;
 block|}
 specifier|private
@@ -630,7 +656,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -661,7 +687,7 @@ name|emptyMap
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|addPathSplitAliases
