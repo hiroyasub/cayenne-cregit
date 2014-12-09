@@ -882,9 +882,9 @@ name|assertTokens
 argument_list|(
 name|tokens
 argument_list|,
-literal|2
+literal|3
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 for|for

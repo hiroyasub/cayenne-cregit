@@ -119,6 +119,11 @@ argument_list|,
 literal|"ARTIST_ID"
 argument_list|,
 literal|null
+argument_list|,
+operator|(
+name|short
+operator|)
+literal|1
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -165,6 +170,11 @@ argument_list|,
 literal|"MOTHER_ID"
 argument_list|,
 literal|null
+argument_list|,
+operator|(
+name|short
+operator|)
+literal|1
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -211,6 +221,11 @@ argument_list|,
 literal|"SHIPPING_ADDRESS_ID"
 argument_list|,
 literal|null
+argument_list|,
+operator|(
+name|short
+operator|)
+literal|1
 argument_list|)
 expr_stmt|;
 name|assertEquals

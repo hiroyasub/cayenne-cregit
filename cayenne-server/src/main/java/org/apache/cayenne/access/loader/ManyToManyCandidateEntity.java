@@ -544,6 +544,11 @@ name|getName
 argument_list|()
 argument_list|,
 literal|null
+argument_list|,
+operator|(
+name|short
+operator|)
+literal|1
 argument_list|)
 decl_stmt|;
 name|ObjRelationship
