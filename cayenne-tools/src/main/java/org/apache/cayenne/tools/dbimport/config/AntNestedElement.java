@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Additional class to handle<name> element under<catalog> and<schema>  *      required for ant configuration  *  * @since 3.2.  */
+comment|/**  * Additional class to handle<name> element under<catalog> and<schema>  *      required for ant configuration  *  * @since 4.0.  */
 end_comment
 
 begin_class

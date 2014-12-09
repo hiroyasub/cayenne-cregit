@@ -948,7 +948,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *       *      * @param config      *      * @param types      *            The types of table names to retrieve, null returns all types.      * @return      * @since 3.2      */
+comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *       *      * @param config      *      * @param types      *            The types of table names to retrieve, null returns all types.      * @return      * @since 4.0      */
 specifier|public
 name|Map
 argument_list|<
@@ -3643,7 +3643,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 3.2      */
+comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 4.0      */
 specifier|public
 name|DataMap
 name|load
