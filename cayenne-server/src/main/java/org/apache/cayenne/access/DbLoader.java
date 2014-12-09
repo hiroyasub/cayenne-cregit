@@ -173,6 +173,22 @@ name|access
 operator|.
 name|loader
 operator|.
+name|DefaultDbLoaderDelegate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
 name|ManyToManyCandidateEntity
 import|;
 end_import
@@ -688,6 +704,14 @@ name|this
 operator|.
 name|delegate
 operator|=
+name|delegate
+operator|==
+literal|null
+condition|?
+operator|new
+name|DefaultDbLoaderDelegate
+argument_list|()
+else|:
 name|delegate
 expr_stmt|;
 name|setNameGenerator
@@ -1402,14 +1426,6 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-comment|// notify delegate
-if|if
-condition|(
-name|delegate
-operator|!=
-literal|null
-condition|)
-block|{
 name|delegate
 operator|.
 name|dbEntityAdded
@@ -1417,7 +1433,6 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-block|}
 comment|// delegate might have thrown this entity out... so check if it is still
 comment|// around before continuing processing
 if|if
@@ -2539,6 +2554,18 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|delegate
+operator|.
+name|dbRelationshipLoaded
+argument_list|(
+name|fkEntity
+argument_list|,
+name|reverseRelationship
+argument_list|)
+condition|)
+block|{
 name|fkEntity
 operator|.
 name|addRelationship
@@ -2546,6 +2573,7 @@ argument_list|(
 name|reverseRelationship
 argument_list|)
 expr_stmt|;
+block|}
 name|boolean
 name|toPK
 init|=
@@ -2613,6 +2641,18 @@ name|isOneToOne
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|delegate
+operator|.
+name|dbRelationshipLoaded
+argument_list|(
+name|pkEntity
+argument_list|,
+name|forwardRelationship
+argument_list|)
+condition|)
+block|{
 name|pkEntity
 operator|.
 name|addRelationship
@@ -2620,6 +2660,7 @@ argument_list|(
 name|forwardRelationship
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -2845,6 +2886,19 @@ name|values
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|delegate
+operator|.
+name|dbRelationship
+argument_list|(
+name|dbEntity
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
 name|ResultSet
 name|rs
 decl_stmt|;
@@ -3268,14 +3322,6 @@ name|getObjEntities
 argument_list|()
 control|)
 block|{
-comment|// notify delegate
-if|if
-condition|(
-name|delegate
-operator|!=
-literal|null
-condition|)
-block|{
 name|delegate
 operator|.
 name|objEntityAdded
@@ -3283,7 +3329,6 @@ argument_list|(
 name|curEntity
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 comment|/**      * By default we want to load Tables and Views for mo types      *      * @see DbLoader#getTableTypes()      * @since 4.0      */

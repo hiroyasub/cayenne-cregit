@@ -582,6 +582,13 @@ init|=
 name|toParameters
 argument_list|()
 decl_stmt|;
+name|config
+operator|.
+name|setLogger
+argument_list|(
+name|logger
+argument_list|)
+expr_stmt|;
 name|Injector
 name|injector
 init|=
