@@ -1395,6 +1395,24 @@ return|return
 name|dataSourceInfo
 return|;
 block|}
+specifier|public
+name|void
+name|setSkipRelationshipsLoading
+parameter_list|(
+name|Boolean
+name|skipRelationshipsLoading
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dbLoaderConfiguration
+operator|.
+name|setSkipRelationshipsLoading
+argument_list|(
+name|skipRelationshipsLoading
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

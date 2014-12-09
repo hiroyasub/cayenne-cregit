@@ -3677,6 +3677,15 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|config
+operator|.
+name|isSkipRelationshipsLoading
+argument_list|()
+condition|)
+block|{
 name|loadDbRelationships
 argument_list|(
 name|config
@@ -3684,6 +3693,7 @@ argument_list|,
 name|tables
 argument_list|)
 expr_stmt|;
+block|}
 name|loadObjEntities
 argument_list|(
 name|dataMap

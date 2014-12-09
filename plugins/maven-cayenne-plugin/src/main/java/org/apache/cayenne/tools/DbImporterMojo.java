@@ -794,6 +794,16 @@ name|filtersConfig
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|config
+operator|.
+name|setSkipRelationshipsLoading
+argument_list|(
+name|reverseEngineering
+operator|.
+name|getSkipRelationshipsLoading
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|config
 return|;
