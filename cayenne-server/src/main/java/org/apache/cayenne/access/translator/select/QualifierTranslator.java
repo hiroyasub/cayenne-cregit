@@ -1737,7 +1737,8 @@ parameter_list|)
 block|{
 try|try
 block|{
-comment|// check if we need to use objectMatchTranslator to finish building the
+comment|// check if we need to use objectMatchTranslator to finish building
+comment|// the
 comment|// expression
 if|if
 condition|(
@@ -1803,32 +1804,7 @@ name|getClass
 argument_list|()
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|parenthesisNeeded
-condition|)
-name|out
-operator|.
-name|append
-argument_list|(
-literal|')'
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|isPatternMatchNode
-operator|&&
-operator|!
-name|likeIgnoreCase
-condition|)
-name|appendLikeEscapeCharacter
-argument_list|(
-operator|(
-name|PatternMatchNode
-operator|)
-name|node
-argument_list|)
-expr_stmt|;
+comment|// closing UPPER parenthesis
 if|if
 condition|(
 name|likeIgnoreCase
@@ -1836,6 +1812,7 @@ operator|&&
 operator|!
 name|caseInsensitive
 condition|)
+block|{
 name|out
 operator|.
 name|append
@@ -1843,12 +1820,12 @@ argument_list|(
 literal|')'
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|isPatternMatchNode
-operator|&&
-name|likeIgnoreCase
 condition|)
+block|{
 name|appendLikeEscapeCharacter
 argument_list|(
 operator|(
@@ -1857,6 +1834,21 @@ operator|)
 name|node
 argument_list|)
 expr_stmt|;
+block|}
+comment|// closing LIKE parenthesis
+if|if
+condition|(
+name|parenthesisNeeded
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+literal|')'
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
