@@ -16,6 +16,108 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -335,109 +437,17 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertSame
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
 import|;
 end_import
 
@@ -473,16 +483,21 @@ specifier|private
 name|UnitDbAdapter
 name|accessStackAdapter
 decl_stmt|;
-specifier|protected
-name|void
-name|createArtistsDataSet
-parameter_list|()
-throws|throws
-name|Exception
-block|{
+specifier|private
 name|TableHelper
 name|tArtist
-init|=
+decl_stmt|;
+annotation|@
+name|Before
+specifier|public
+name|void
+name|before
+parameter_list|()
+block|{
+name|this
+operator|.
+name|tArtist
+operator|=
 operator|new
 name|TableHelper
 argument_list|(
@@ -490,8 +505,6 @@ name|dbHelper
 argument_list|,
 literal|"ARTIST"
 argument_list|)
-decl_stmt|;
-name|tArtist
 operator|.
 name|setColumns
 argument_list|(
@@ -502,6 +515,14 @@ argument_list|,
 literal|"DATE_OF_BIRTH"
 argument_list|)
 expr_stmt|;
+block|}
+specifier|protected
+name|void
+name|createArtistsDataSet
+parameter_list|()
+throws|throws
+name|Exception
+block|{
 name|long
 name|dateBase
 init|=
@@ -559,26 +580,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|TableHelper
-name|tArtist
-init|=
-operator|new
-name|TableHelper
-argument_list|(
-name|dbHelper
-argument_list|,
-literal|"ARTIST"
-argument_list|)
-decl_stmt|;
-name|tArtist
-operator|.
-name|setColumns
-argument_list|(
-literal|"ARTIST_ID"
-argument_list|,
-literal|"ARTIST_NAME"
-argument_list|)
-expr_stmt|;
 name|tArtist
 operator|.
 name|insert
@@ -586,6 +587,8 @@ argument_list|(
 literal|1
 argument_list|,
 literal|"_X"
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 name|tArtist
@@ -595,6 +598,8 @@ argument_list|(
 literal|2
 argument_list|,
 literal|"Y_"
+argument_list|,
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -1880,7 +1885,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testSelectLikeSingleWildcardMatch
+name|testSelectLikeSingle_WildcardMatch
 parameter_list|()
 throws|throws
 name|Exception
@@ -1952,7 +1957,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testSelectLikeSingleWildcardMatchAndEscape
+name|testSelectLikeSingle_WildcardMatchAndEscape
 parameter_list|()
 throws|throws
 name|Exception
@@ -2021,7 +2026,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testSelectLikeSingleWildcardMatchAndEscape_AndOtherCriteria
+name|testSelectLike_WildcardMatchAndEscape_AndOtherCriteria
 parameter_list|()
 throws|throws
 name|Exception
@@ -2106,7 +2111,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testSelectLikeSingleWildcardMatchIgnoreCaseAndEscape_AndOtherCriteria
+name|testSelectLike_WildcardMatchIgnoreCaseAndEscape_AndOtherCriteria
 parameter_list|()
 throws|throws
 name|Exception
@@ -2114,7 +2119,8 @@ block|{
 name|createArtistsWildcardDataSet
 argument_list|()
 expr_stmt|;
-comment|// CAY-1978 - combining LIKE..ESCAPE with another clause generated bad SQL
+comment|// CAY-1978 - combining LIKE..ESCAPE with another clause generated bad
+comment|// SQL
 name|SelectQuery
 argument_list|<
 name|Artist
@@ -2190,7 +2196,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testSelectLikeMultipleWildcardMatch
+name|testSelectLikeMultiple_WildcardMatch
 parameter_list|()
 throws|throws
 name|Exception
@@ -2258,7 +2264,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test how "like ignore case" works when using uppercase parameter.      */
+comment|/** 	 * Test how "like ignore case" works when using uppercase parameter. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -3168,7 +3174,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that all queries specified in prefetch are executed in a more      * complex prefetch scenario.      */
+comment|/** 	 * Tests that all queries specified in prefetch are executed in a more 	 * complex prefetch scenario. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -3371,7 +3377,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests that all queries specified in prefetch are executed in a more      * complex prefetch scenario with no reverse obj relationships.      */
+comment|/** 	 * Tests that all queries specified in prefetch are executed in a more 	 * complex prefetch scenario with no reverse obj relationships. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -3618,7 +3624,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Test prefetching with qualifier on the root query being the path to the      * prefetch.      */
+comment|/** 	 * Test prefetching with qualifier on the root query being the path to the 	 * prefetch. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -4233,7 +4239,7 @@ name|a3
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tests INs with more than 1000 elements      */
+comment|/** 	 * Tests INs with more than 1000 elements 	 */
 annotation|@
 name|Test
 specifier|public
