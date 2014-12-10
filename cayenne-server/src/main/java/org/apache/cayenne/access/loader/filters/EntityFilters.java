@@ -1607,6 +1607,15 @@ return|;
 block|}
 specifier|public
 name|String
+name|catalog
+parameter_list|()
+block|{
+return|return
+name|catalog
+return|;
+block|}
+specifier|public
+name|String
 name|schema
 parameter_list|()
 block|{
