@@ -445,6 +445,22 @@ name|List
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|lang
+operator|.
+name|StringUtils
+operator|.
+name|isBlank
+import|;
+end_import
+
 begin_comment
 comment|/**  * A thin wrapper around {@link DbLoader} that encapsulates DB import logic for  * the benefit of Ant and Maven db importers.  *   * @since 4.0  */
 end_comment
@@ -729,6 +745,29 @@ literal|"No changes to import."
 argument_list|)
 expr_stmt|;
 return|return;
+block|}
+if|if
+condition|(
+operator|!
+name|isBlank
+argument_list|(
+name|config
+operator|.
+name|getDefaultPackage
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|existing
+operator|.
+name|setDefaultPackage
+argument_list|(
+name|config
+operator|.
+name|getDefaultPackage
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 name|saveLoaded
 argument_list|(
