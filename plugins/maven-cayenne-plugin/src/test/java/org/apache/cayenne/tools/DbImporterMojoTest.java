@@ -625,6 +625,20 @@ literal|"testSkipRelationshipsLoading"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * what happens if a relationship existed over a column that was later deleted? and âskipRelLoadingâ is true      *      * @throws Exception      */
+specifier|public
+name|void
+name|testPreserveRelationships
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|test
+argument_list|(
+literal|"testPreserveRelationships"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|private
 name|void
 name|test
