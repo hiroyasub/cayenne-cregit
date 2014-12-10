@@ -292,6 +292,49 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|toString
+argument_list|(
+literal|"    "
+argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|(
+name|String
+name|indent
+parameter_list|)
+block|{
+return|return
+name|indent
+operator|+
+literal|"Catalog '"
+operator|+
+name|name
+operator|+
+literal|"': "
+operator|+
+name|super
+operator|.
+name|toString
+argument_list|(
+name|indent
+operator|+
+literal|"    "
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 
