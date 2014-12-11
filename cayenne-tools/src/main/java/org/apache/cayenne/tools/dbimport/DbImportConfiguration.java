@@ -1413,6 +1413,23 @@ name|skipRelationshipsLoading
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|setTableTypes
+parameter_list|(
+name|String
+index|[]
+name|tableTypes
+parameter_list|)
+block|{
+name|dbLoaderConfiguration
+operator|.
+name|setTableTypes
+argument_list|(
+name|tableTypes
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

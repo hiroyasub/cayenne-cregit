@@ -3567,7 +3567,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *      * @since 1.0.7      * @deprecated since 4.0 use      * {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration, String...)}      * method that supports catalogs.      */
+comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *      * @since 1.0.7      * @deprecated since 4.0 use      * {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration)}      * method that supports catalogs.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3634,7 +3634,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *      * @deprecated since 4.0 use      * {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration, String...)}      * method that supports catalogs.      */
+comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *      * @deprecated since 4.0 use      * {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration)}      * method that supports catalogs.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -3711,8 +3711,6 @@ argument_list|(
 name|dataMap
 argument_list|,
 name|config
-argument_list|,
-name|tableTypes
 argument_list|)
 expr_stmt|;
 return|return
@@ -3779,10 +3777,6 @@ name|dataMap
 parameter_list|,
 name|DbLoaderConfiguration
 name|config
-parameter_list|,
-name|String
-modifier|...
-name|tableTypes
 parameter_list|)
 throws|throws
 name|SQLException
@@ -3804,7 +3798,10 @@ name|getTables
 argument_list|(
 name|config
 argument_list|,
-name|tableTypes
+name|config
+operator|.
+name|getTableTypes
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|List
@@ -3898,11 +3895,6 @@ argument_list|(
 name|dataMap
 argument_list|,
 name|config
-argument_list|,
-name|config
-operator|.
-name|getTableTypes
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|loadProcedures

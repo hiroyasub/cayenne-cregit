@@ -804,6 +804,16 @@ name|getSkipRelationshipsLoading
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|config
+operator|.
+name|setTableTypes
+argument_list|(
+name|reverseEngineering
+operator|.
+name|getTableTypes
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|config
 return|;
