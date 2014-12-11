@@ -4553,7 +4553,7 @@ name|clearResultSets
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      *      * @return package + "." + name when it is possible otherwise just name      *      * @since 3.2      */
+comment|/**      *      * @return package + "." + name when it is possible otherwise just name      *      * @since 4.0      */
 specifier|public
 name|String
 name|getNameWithDefaultPackage
@@ -4571,7 +4571,7 @@ name|name
 argument_list|)
 return|;
 block|}
-comment|/**      *      * @return package + "." + name when it is possible otherwise just name      *      * @since 3.2      */
+comment|/**      *      * @return package + "." + name when it is possible otherwise just name      *      * @since 4.0      */
 specifier|public
 specifier|static
 name|String
@@ -4620,7 +4620,7 @@ name|name
 return|;
 block|}
 block|}
-comment|/**      *      * @param name      * @return package + "." + name when it is possible otherwise just name      *      * @since 3.2      */
+comment|/**      *      * @param name      * @return package + "." + name when it is possible otherwise just name      *      * @since 4.0      */
 specifier|public
 name|String
 name|getNameWithDefaultClientPackage

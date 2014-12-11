@@ -765,7 +765,6 @@ operator|.
 name|getConnection
 argument_list|()
 expr_stmt|;
-comment|// TODO pass naming strategy
 name|DbLoader
 name|dbLoader
 init|=

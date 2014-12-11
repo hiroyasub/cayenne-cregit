@@ -39,6 +39,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbRelationship
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|ObjEntity
 import|;
 end_import
@@ -64,6 +78,25 @@ name|dbEntityRemoved
 parameter_list|(
 name|DbEntity
 name|entity
+parameter_list|)
+function_decl|;
+comment|/**      * Called before relationship loading for db-entity      * @param entity      *      * @return true in case you want process relationships for this entity      *         false otherwise      */
+name|boolean
+name|dbRelationship
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|)
+function_decl|;
+comment|/**      * Called before relationship will be added into db-entity but after it was loaded from db      * @param entity      *      * @return true in case you want add this relationship into entity      *         false otherwise      */
+name|boolean
+name|dbRelationshipLoaded
+parameter_list|(
+name|DbEntity
+name|entity
+parameter_list|,
+name|DbRelationship
+name|relationship
 parameter_list|)
 function_decl|;
 name|void

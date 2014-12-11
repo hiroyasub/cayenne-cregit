@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2.  */
+comment|/**  * @since 4.0.  */
 end_comment
 
 begin_class
@@ -290,6 +290,49 @@ block|}
 block|}
 return|return
 literal|true
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|toString
+argument_list|(
+literal|"    "
+argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|(
+name|String
+name|indent
+parameter_list|)
+block|{
+return|return
+name|indent
+operator|+
+literal|"Catalog '"
+operator|+
+name|name
+operator|+
+literal|"': "
+operator|+
+name|super
+operator|.
+name|toString
+argument_list|(
+name|indent
+operator|+
+literal|"    "
+argument_list|)
 return|;
 block|}
 block|}

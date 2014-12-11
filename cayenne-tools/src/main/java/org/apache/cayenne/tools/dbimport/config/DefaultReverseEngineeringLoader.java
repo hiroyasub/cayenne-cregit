@@ -224,7 +224,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2.  */
+comment|/**  * @since 4.0.  */
 end_comment
 
 begin_class
@@ -310,6 +310,18 @@ operator|.
 name|getDocumentElement
 argument_list|()
 decl_stmt|;
+name|engineering
+operator|.
+name|setSkipRelationshipsLoading
+argument_list|(
+name|loadBoolean
+argument_list|(
+name|root
+argument_list|,
+literal|"skipRelationshipsLoading"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|engineering
 operator|.
 name|setCatalogs
@@ -453,6 +465,31 @@ expr_stmt|;
 block|}
 return|return
 literal|null
+return|;
+block|}
+specifier|private
+name|Boolean
+name|loadBoolean
+parameter_list|(
+name|Element
+name|root
+parameter_list|,
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+name|Boolean
+operator|.
+name|valueOf
+argument_list|(
+name|loadByName
+argument_list|(
+name|root
+argument_list|,
+name|name
+argument_list|)
+argument_list|)
 return|;
 block|}
 specifier|private

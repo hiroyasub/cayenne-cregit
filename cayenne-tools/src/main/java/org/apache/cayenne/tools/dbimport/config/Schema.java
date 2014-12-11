@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 3.2.  */
+comment|/**  * @since 4.0.  */
 end_comment
 
 begin_class
@@ -134,6 +134,49 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+name|toString
+argument_list|(
+literal|"    "
+argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|(
+name|String
+name|indent
+parameter_list|)
+block|{
+return|return
+name|indent
+operator|+
+literal|"Schema '"
+operator|+
+name|name
+operator|+
+literal|"': "
+operator|+
+name|super
+operator|.
+name|toString
+argument_list|(
+name|indent
+operator|+
+literal|"    "
+argument_list|)
+return|;
 block|}
 block|}
 end_class

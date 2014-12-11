@@ -43,6 +43,22 @@ name|access
 operator|.
 name|loader
 operator|.
+name|DefaultDbLoaderDelegate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
 name|ManyToManyCandidateEntity
 import|;
 end_import
@@ -729,6 +745,14 @@ operator|.
 name|delegate
 operator|=
 name|delegate
+operator|==
+literal|null
+condition|?
+operator|new
+name|DefaultDbLoaderDelegate
+argument_list|()
+else|:
+name|delegate
 expr_stmt|;
 name|setNameGenerator
 argument_list|(
@@ -988,7 +1012,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *      * @param config      * @param types  The types of table names to retrieve, null returns all types.      * @return      * @since 3.2      */
+comment|/**      * Returns all tables for given combination of the criteria. Tables returned      * as DbEntities without any attributes or relationships.      *      * @param config      * @param types  The types of table names to retrieve, null returns all types.      * @return      * @since 4.0      */
 specifier|public
 name|Map
 argument_list|<
@@ -1524,14 +1548,6 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-comment|// notify delegate
-if|if
-condition|(
-name|delegate
-operator|!=
-literal|null
-condition|)
-block|{
 name|delegate
 operator|.
 name|dbEntityAdded
@@ -1539,7 +1555,6 @@ argument_list|(
 name|dbEntity
 argument_list|)
 expr_stmt|;
-block|}
 comment|// delegate might have thrown this entity out... so check if it is still
 comment|// around before continuing processing
 if|if
@@ -1893,7 +1908,24 @@ name|filters
 operator|.
 name|filter
 argument_list|(
-name|path
+operator|new
+name|DbPath
+argument_list|(
+name|dbEntity
+operator|.
+name|getCatalog
+argument_list|()
+argument_list|,
+name|dbEntity
+operator|.
+name|getSchema
+argument_list|()
+argument_list|,
+name|dbEntity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 argument_list|)
 operator|.
 name|columnFilter
@@ -2652,6 +2684,18 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|delegate
+operator|.
+name|dbRelationshipLoaded
+argument_list|(
+name|fkEntity
+argument_list|,
+name|reverseRelationship
+argument_list|)
+condition|)
+block|{
 name|fkEntity
 operator|.
 name|addRelationship
@@ -2659,6 +2703,7 @@ argument_list|(
 name|reverseRelationship
 argument_list|)
 expr_stmt|;
+block|}
 name|boolean
 name|toPK
 init|=
@@ -2726,6 +2771,18 @@ name|isOneToOne
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|delegate
+operator|.
+name|dbRelationshipLoaded
+argument_list|(
+name|pkEntity
+argument_list|,
+name|forwardRelationship
+argument_list|)
+condition|)
+block|{
 name|pkEntity
 operator|.
 name|addRelationship
@@ -2733,6 +2790,7 @@ argument_list|(
 name|forwardRelationship
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -2958,6 +3016,19 @@ name|values
 argument_list|()
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|delegate
+operator|.
+name|dbRelationship
+argument_list|(
+name|dbEntity
+argument_list|)
+condition|)
+block|{
+continue|continue;
+block|}
 name|ResultSet
 name|rs
 decl_stmt|;
@@ -3758,6 +3829,15 @@ operator|!=
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|config
+operator|.
+name|isSkipRelationshipsLoading
+argument_list|()
+condition|)
+block|{
 name|loadDbRelationships
 argument_list|(
 name|config
@@ -3765,6 +3845,7 @@ argument_list|,
 name|tables
 argument_list|)
 expr_stmt|;
+block|}
 name|Collection
 argument_list|<
 name|ObjEntity
@@ -3794,7 +3875,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 3.2      */
+comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 4.0      */
 specifier|public
 name|DataMap
 name|load

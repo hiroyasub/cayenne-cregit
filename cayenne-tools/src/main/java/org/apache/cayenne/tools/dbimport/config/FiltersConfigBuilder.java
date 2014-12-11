@@ -210,7 +210,7 @@ import|;
 end_import
 
 begin_comment
-comment|/** * @since 3.2. */
+comment|/** * @since 4.0. */
 end_comment
 
 begin_class
@@ -261,6 +261,18 @@ name|EntityFilters
 name|filter
 parameter_list|)
 block|{
+if|if
+condition|(
+name|filter
+operator|.
+name|isDefault
+argument_list|()
+condition|)
+block|{
+return|return
+name|this
+return|;
+block|}
 if|if
 condition|(
 operator|!
