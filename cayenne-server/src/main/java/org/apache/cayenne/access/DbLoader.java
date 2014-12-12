@@ -1599,7 +1599,15 @@ name|getValue
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// get primary keys for each table and store it in dbEntity
+if|if
+condition|(
+operator|!
+name|config
+operator|.
+name|isSkipPrimaryKeyLoading
+argument_list|()
+condition|)
+block|{
 name|getPrimaryKeyForTable
 argument_list|(
 name|tablesMap
@@ -1608,6 +1616,7 @@ name|getValue
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|dbEntityList

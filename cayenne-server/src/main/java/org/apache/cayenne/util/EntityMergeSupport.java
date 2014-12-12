@@ -1602,7 +1602,10 @@ argument_list|(
 operator|new
 name|EntityMergeListener
 index|[
-literal|0
+name|listeners
+operator|.
+name|size
+argument_list|()
 index|]
 argument_list|)
 return|;

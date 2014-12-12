@@ -103,9 +103,7 @@ specifier|private
 name|String
 name|genericClassName
 decl_stmt|;
-comment|/*     // TODO: Andrus, 10/29/2005 - this type of filtering should be delegated to adapter     */
-comment|/* TODO by default should skip name.startsWith("BIN$") */
-comment|/*      private NameFilter tableFilter = NamePatternMatcher.build(null, null, "BIN$");      private NameFilter columnFilter;      private NameFilter proceduresFilter = new NameFilter() {         private final Collection<String> excludedProcedures = Arrays.asList(                 "auto_pk_for_table",                 "auto_pk_for_table;1" // the last name is some Mac OS X Sybase artifact         );          @Override         public boolean isIncluded(String string) {             return !excludedProcedures.contains(string);         }     }; */
+comment|/*     // TODO: Andrus, 10/29/2005 - this type of filtering should be delegated to adapter        TODO by default should skip name.startsWith("BIN$")      private NameFilter tableFilter = NamePatternMatcher.build(null, null, "BIN$");      private NameFilter columnFilter;      private NameFilter proceduresFilter = new NameFilter() {         private final Collection<String> excludedProcedures = Arrays.asList(                 "auto_pk_for_table",                 "auto_pk_for_table;1" // the last name is some Mac OS X Sybase artifact         );          @Override         public boolean isIncluded(String string) {             return !excludedProcedures.contains(string);         }     }; */
 comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      */
 specifier|private
 name|String
@@ -114,6 +112,10 @@ decl_stmt|;
 specifier|private
 name|Boolean
 name|skipRelationshipsLoading
+decl_stmt|;
+specifier|private
+name|Boolean
+name|skipPrimaryKeyLoading
 decl_stmt|;
 specifier|private
 name|String
@@ -257,7 +259,7 @@ name|filtersConfig
 expr_stmt|;
 block|}
 specifier|public
-name|Boolean
+name|boolean
 name|isSkipRelationshipsLoading
 parameter_list|()
 block|{
@@ -293,6 +295,43 @@ operator|=
 name|skipRelationshipsLoading
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|setSkipPrimaryKeyLoading
+parameter_list|(
+name|Boolean
+name|skipPrimaryKeyLoading
+parameter_list|)
+block|{
+name|this
+operator|.
+name|skipPrimaryKeyLoading
+operator|=
+name|skipPrimaryKeyLoading
+expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|getSkipPrimaryKeyLoading
+parameter_list|()
+block|{
+return|return
+name|skipPrimaryKeyLoading
+return|;
+block|}
+specifier|public
+name|boolean
+name|isSkipPrimaryKeyLoading
+parameter_list|()
+block|{
+return|return
+name|skipPrimaryKeyLoading
+operator|!=
+literal|null
+operator|&&
+name|skipPrimaryKeyLoading
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -310,16 +349,24 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|skipRelationshipsLoading
-operator|!=
-literal|null
-operator|&&
-name|skipRelationshipsLoading
+name|isSkipRelationshipsLoading
+argument_list|()
 condition|)
 block|{
 name|res
 operator|+=
 literal|"\n Skip Loading Relationships! \n"
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|isSkipPrimaryKeyLoading
+argument_list|()
+condition|)
+block|{
+name|res
+operator|+=
+literal|"\n Skip Loading PrimaryKeys! \n"
 expr_stmt|;
 block|}
 return|return

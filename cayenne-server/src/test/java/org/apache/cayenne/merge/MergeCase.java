@@ -678,6 +678,14 @@ operator|.
 name|createMergeTokens
 argument_list|(
 name|node
+operator|.
+name|getDataSource
+argument_list|()
+argument_list|,
+name|node
+operator|.
+name|getAdapter
+argument_list|()
 argument_list|,
 name|map
 argument_list|,

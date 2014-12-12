@@ -526,7 +526,7 @@ name|procedurePattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.meaningfulPk}" default-value="false"      * @deprecated since 4.0 use meaningfulPkTables      */
+comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.meaningfulPk}"      * @deprecated since 4.0 use meaningfulPkTables      */
 specifier|private
 name|boolean
 name|meaningfulPk
@@ -801,6 +801,16 @@ argument_list|(
 name|reverseEngineering
 operator|.
 name|getSkipRelationshipsLoading
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|config
+operator|.
+name|setSkipPrimaryKeyLoading
+argument_list|(
+name|reverseEngineering
+operator|.
+name|getSkipPrimaryKeyLoading
 argument_list|()
 argument_list|)
 expr_stmt|;
