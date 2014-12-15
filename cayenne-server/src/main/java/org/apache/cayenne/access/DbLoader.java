@@ -501,6 +501,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -2186,7 +2196,7 @@ return|return
 name|attr
 return|;
 block|}
-comment|/**      * Creates an ObjEntity for each DbEntity in the map. ObjEntities are      * created empty without      */
+comment|/**      * Creates an ObjEntity for each DbEntity in the map.      */
 specifier|protected
 name|Collection
 argument_list|<
@@ -2216,7 +2226,10 @@ argument_list|()
 condition|)
 block|{
 return|return
-literal|null
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
 return|;
 block|}
 name|Collection
