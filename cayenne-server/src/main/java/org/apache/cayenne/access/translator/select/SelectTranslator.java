@@ -1941,8 +1941,13 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// In this case we must have forcingDistinct = false (as default)
-comment|// so we don't invoke dbRelationshipAdded() and invoke pushJoin() at once.
+comment|// do not invoke dbRelationshipAdded(), invoke
+comment|// pushJoin() instead. This is to prevent
+comment|// 'forcingDistinct' flipping to true, that will result
+comment|// in unneeded extra processing and sometimes in invalid
+comment|// results (see CAY-1979). Distinctness of each row is
+comment|// guaranteed by the prefetch query semantics - we
+comment|// include target ID in the result columns
 name|getJoinStack
 argument_list|()
 operator|.
