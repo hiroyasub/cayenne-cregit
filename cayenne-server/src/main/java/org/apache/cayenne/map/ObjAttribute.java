@@ -73,6 +73,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|TypesMapping
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|CayenneMapEntry
@@ -1254,6 +1268,29 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"ObjAttr: "
+operator|+
+name|type
+operator|+
+literal|" "
+operator|+
+name|name
+operator|+
+literal|"; DbPath["
+operator|+
+name|dbAttributePath
+operator|+
+literal|"]"
+return|;
 block|}
 block|}
 end_class
