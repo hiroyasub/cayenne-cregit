@@ -306,57 +306,57 @@ name|DbImporterMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * DataMap XML file to use as a base for DB importing.      *       * @parameter expression="${cdbimport.map}"      * @required      */
+comment|/**      * DataMap XML file to use as a base for DB importing.      *       * @parameter map="map"      * @required      */
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @parameter expression="${cdbimport.defaultPackage}"      * @since 4.0      */
+comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @parameter defaultPackage="defaultPackage"      * @since 4.0      */
 specifier|private
 name|String
 name|defaultPackage
 decl_stmt|;
-comment|/**      * Indicates that the old mapping should be completely removed and replaced      * with the new data based on reverse engineering. Default is      *<code>true</code>.      *       * @parameter expression="${cdbimport.overwrite}" default-value="true"      */
+comment|/**      * Indicates that the old mapping should be completely removed and replaced      * with the new data based on reverse engineering. Default is      *<code>true</code>.      *       * @parameter overwrite="overwrite" default-value="true"      */
 specifier|private
 name|boolean
 name|overwrite
 decl_stmt|;
-comment|/**      * @parameter expression="${cdbimport.meaningfulPkTables}"      * @since 4.0      */
+comment|/**      * @parameter meaningfulPkTables="meaningfulPkTables"      * @since 4.0      */
 specifier|private
 name|String
 name|meaningfulPkTables
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      *       * The default is a basic naming strategy.      *       * @parameter expression="${cdbimport.namingStrategy}"      *            default-value="org.apache.cayenne.map.naming.DefaultNameGenerator"      */
+comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      *       * The default is a basic naming strategy.      *       * @parameter namingStrategy="namingStrategy"      *            default-value="org.apache.cayenne.map.naming.DefaultNameGenerator"      */
 specifier|private
 name|String
 name|namingStrategy
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. This attribute      * is optional, the default is AutoAdapter, i.e. Cayenne would try to guess      * the DB type.      *       * @parameter expression="${cdbimport.adapter}"      *            default-value="org.apache.cayenne.dba.AutoAdapter"      */
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. This attribute      * is optional, the default is AutoAdapter, i.e. Cayenne would try to guess      * the DB type.      *       * @parameter adapter="adapter"      *            default-value="org.apache.cayenne.dba.AutoAdapter"      */
 specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter expression="${cdbimport.driver}"      * @required      */
+comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter driver="driver"      * @required      */
 specifier|private
 name|String
 name|driver
 decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      *       * @parameter expression="${cdbimport.url}"      * @required      */
+comment|/**      * JDBC connection URL of a target database.      *       * @parameter url="url"      * @required      */
 specifier|private
 name|String
 name|url
 decl_stmt|;
-comment|/**      * Database user name.      *       * @parameter expression="${cdbimport.username}"      */
+comment|/**      * Database user name.      *       * @parameter username="username"      */
 specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Database user password.      *       * @parameter expression="${cdbimport.password}"      */
+comment|/**      * Database user password.      *       * @parameter password="password"      */
 specifier|private
 name|String
 name|password
 decl_stmt|;
-comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *       * @parameter expression="${cdbimport.usePrimitives}" default-value="true"      */
+comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *       * @parameter usePrimitives="usePrimitives" default-value="true"      */
 specifier|private
 name|boolean
 name|usePrimitives
@@ -374,7 +374,7 @@ operator|.
 name|Builder
 argument_list|()
 decl_stmt|;
-comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *      * @parameter expression="${cdbimport.reverseEngineering}"      */
+comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *      * @parameter reverseEngineering="reverseEngineering"      */
 specifier|private
 name|ReverseEngineering
 name|reverseEngineering
@@ -383,7 +383,7 @@ operator|new
 name|ReverseEngineering
 argument_list|()
 decl_stmt|;
-comment|/**      * DB schema to use for DB importing.      *      * @parameter expression="${cdbimport.schemaName}"      * @deprecated since 4.0 renamed to "schema"      */
+comment|/**      * DB schema to use for DB importing.      *      * @parameter schemaName="schemaName"      * @deprecated since 4.0 renamed to "schema"      */
 specifier|private
 name|String
 name|schemaName
@@ -412,7 +412,7 @@ name|schemaName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * DB schema to use for DB importing.      *      * @parameter expression="${cdbimport.schema}"      * @since 4.0      */
+comment|/**      * DB schema to use for DB importing.      *      * @parameter schema="schema"      * @since 4.0      */
 specifier|private
 name|Schema
 name|schema
@@ -455,7 +455,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Pattern for tables to import from DB.      *      * The default is to match against all tables.      *      * @parameter expression="${cdbimport.tablePattern}"      */
+comment|/**      * Pattern for tables to import from DB.      *      * The default is to match against all tables.      *      * @parameter tablePattern="tablePattern"      */
 specifier|private
 name|String
 name|tablePattern
@@ -476,7 +476,7 @@ name|tablePattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Indicates whether stored procedures should be imported.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.importProcedures}"      *            default-value="false"      */
+comment|/**      * Indicates whether stored procedures should be imported.      *      * Default is<code>false</code>.      *      * @parameter importProcedures="importProcedures"      *            default-value="false"      */
 specifier|private
 name|String
 name|importProcedures
@@ -505,7 +505,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Pattern for stored procedures to import from DB. This is only meaningful      * if<code>importProcedures</code> is set to<code>true</code>.      *      * The default is to match against all stored procedures.      *      * @parameter expression="${cdbimport.procedurePattern}"      */
+comment|/**      * Pattern for stored procedures to import from DB. This is only meaningful      * if<code>importProcedures</code> is set to<code>true</code>.      *      * The default is to match against all stored procedures.      *      * @parameter procedurePattern="procedurePattern"      */
 specifier|private
 name|String
 name|procedurePattern
@@ -526,7 +526,7 @@ name|procedurePattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *      * Default is<code>false</code>.      *      * @parameter expression="${cdbimport.meaningfulPk}"      * @deprecated since 4.0 use meaningfulPkTables      */
+comment|/**      * Indicates whether primary keys should be mapped as meaningful attributes      * in the object entities.      *      * Default is<code>false</code>.      *      * @parameter meaningfulPk="meaningfulPk"      * @deprecated since 4.0 use meaningfulPkTables      */
 specifier|private
 name|boolean
 name|meaningfulPk
@@ -900,7 +900,7 @@ operator|=
 name|url
 expr_stmt|;
 block|}
-comment|/**      * A comma-separated list of Perl5 regex that defines tables that should be      * included in import.      *      * @parameter expression="${cdbimport.includeTables}"      */
+comment|/**      * A comma-separated list of Perl5 regex that defines tables that should be      * included in import.      *      * @parameter includeTables="includeTables"      */
 specifier|private
 name|String
 name|includeTables
@@ -921,7 +921,7 @@ name|includeTables
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * A comma-separated list of Perl5 regex that defines tables that should be      * skipped from import.      *      * @parameter expression="${cdbimport.excludeTables}"      */
+comment|/**      * A comma-separated list of Perl5 regex that defines tables that should be      * skipped from import.      *      * @parameter excludeTables="excludeTables"      */
 specifier|private
 name|String
 name|excludeTables
@@ -958,7 +958,7 @@ name|schema
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * DB schema to use for DB importing.      *      * @parameter expression="${cdbimport.catalog}"      * @since 4.0      */
+comment|/**      * DB schema to use for DB importing.      *      * @parameter catalog="catalog"      * @since 4.0      */
 specifier|private
 name|Catalog
 name|catalog
