@@ -82,7 +82,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ExportedKey is an representation of relationship between two tables   * in database. It can be used for creating names for relationships  *   */
+comment|/**  * ExportedKey is an representation of relationship between two tables   * in database. It can be used for creating names for relationships  *  * Example:  *  Table A with primary key ID  *  Table B with primary key ID and foreign key A_ID  *  *  In that case ExportedKey will be:  *      pkTable:  A  *      pkColumn: A.ID  *      fkTable:  B  *      fkColumn: B.A_ID  *      fkName:   name of foreign key  *      pkName:  *      keySeq: TODO  *   */
 end_comment
 
 begin_class
@@ -669,16 +669,6 @@ operator|+
 literal|" # "
 operator|+
 name|keySeq
-operator|+
-literal|"("
-operator|+
-name|pkColumn
-operator|+
-literal|"<- "
-operator|+
-name|fkColumn
-operator|+
-literal|")"
 return|;
 block|}
 specifier|public
@@ -691,7 +681,7 @@ name|pkTable
 operator|+
 literal|"."
 operator|+
-name|pkName
+name|pkColumn
 operator|+
 literal|"<- "
 operator|+
@@ -699,7 +689,7 @@ name|fkTable
 operator|+
 literal|"."
 operator|+
-name|fkName
+name|fkColumn
 return|;
 block|}
 block|}

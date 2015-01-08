@@ -878,13 +878,14 @@ init|=
 name|createMergeTokens
 argument_list|()
 decl_stmt|;
+comment|/**          * Add Relationship NEW_TABLE->NEW_TABLE2 To Model          * Drop Relationship NEW_TABLE2->NEW_TABLE To DB          * Drop Column NEW_TABLE2.FK To DB          * */
 name|assertTokens
 argument_list|(
 name|tokens
 argument_list|,
-literal|3
+literal|2
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 for|for

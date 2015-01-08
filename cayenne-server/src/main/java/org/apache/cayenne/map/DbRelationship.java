@@ -171,6 +171,20 @@ name|Transformer
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|lang
+operator|.
+name|StringUtils
+import|;
+end_import
+
 begin_comment
 comment|/**  * A DbRelationship is a descriptor of a database inter-table relationship based  * on one or more primary key/foreign key pairs.  */
 end_comment
@@ -184,7 +198,7 @@ name|Relationship
 implements|implements
 name|ConfigurationNode
 block|{
-comment|// The columns through which the join is implemented.
+comment|/**      * The columns through which the join is implemented.      */
 specifier|protected
 name|List
 argument_list|<
@@ -201,10 +215,7 @@ argument_list|(
 literal|2
 argument_list|)
 decl_stmt|;
-comment|// Is relationship from source to target points to dependent primary
-comment|// key (primary key column of destination table that is also a FK to the
-comment|// source
-comment|// column)
+comment|/**      * Is relationship from source to target points to dependent primary key (primary key column of destination table      * that is also a FK to the source column)      */
 specifier|protected
 name|boolean
 name|toDependentPK
@@ -213,9 +224,6 @@ specifier|public
 name|DbRelationship
 parameter_list|()
 block|{
-name|super
-argument_list|()
-expr_stmt|;
 block|}
 specifier|public
 name|DbRelationship
@@ -484,7 +492,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 return|return
@@ -522,7 +531,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 return|return
@@ -547,9 +557,6 @@ block|{
 name|DbEntity
 name|targetEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
@@ -1899,6 +1906,103 @@ name|targetName
 argument_list|)
 return|;
 block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+name|String
+name|res
+init|=
+literal|"Db Relationship : "
+operator|+
+operator|(
+name|toMany
+condition|?
+literal|"toMany"
+else|:
+literal|"toOne "
+operator|)
+decl_stmt|;
+name|String
+name|sourceEntityName
+init|=
+name|getSourceEntityName
+argument_list|()
+decl_stmt|;
+name|String
+name|targetEntityName
+init|=
+name|getTargetEntityName
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|DbJoin
+name|join
+range|:
+name|joins
+control|)
+block|{
+name|res
+operator|+=
+literal|" ("
+operator|+
+name|sourceEntityName
+operator|+
+literal|"."
+operator|+
+name|join
+operator|.
+name|getSourceName
+argument_list|()
+operator|+
+literal|", "
+operator|+
+name|targetEntityName
+operator|+
+literal|"."
+operator|+
+name|join
+operator|.
+name|getTargetName
+argument_list|()
+operator|+
+literal|")"
+expr_stmt|;
+block|}
+return|return
+name|res
+return|;
+block|}
+specifier|public
+name|String
+name|getSourceEntityName
+parameter_list|()
+block|{
+if|if
+condition|(
+name|this
+operator|.
+name|sourceEntity
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+return|return
+name|this
+operator|.
+name|sourceEntity
+operator|.
+name|name
+return|;
 block|}
 block|}
 end_class
