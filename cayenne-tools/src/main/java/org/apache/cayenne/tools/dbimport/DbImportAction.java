@@ -738,7 +738,14 @@ name|logger
 operator|.
 name|info
 argument_list|(
-literal|"No changes to import."
+literal|""
+argument_list|)
+expr_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Detected changes: No changes to import."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -805,6 +812,13 @@ argument_list|>
 name|tokens
 parameter_list|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
 name|logger
 operator|.
 name|info
@@ -997,7 +1011,7 @@ name|tokens
 return|;
 block|}
 comment|/**      * Performs configured schema operations via DbGenerator.      */
-specifier|public
+specifier|private
 name|DataMap
 name|execute
 parameter_list|(

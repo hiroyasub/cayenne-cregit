@@ -117,7 +117,7 @@ name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Add dbEntity: "
+literal|"  Table: "
 operator|+
 name|entity
 operator|.
@@ -140,7 +140,7 @@ name|logger
 operator|.
 name|info
 argument_list|(
-literal|"Del dbEntity: "
+literal|"  Table removed: "
 operator|+
 name|entity
 operator|.
@@ -159,9 +159,17 @@ name|DbEntity
 name|entity
 parameter_list|)
 block|{
+if|if
+condition|(
 name|logger
 operator|.
-name|info
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|debug
 argument_list|(
 literal|"    Relationships for "
 operator|+
@@ -171,6 +179,7 @@ name|getFullyQualifiedName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 literal|true
 return|;
@@ -188,34 +197,15 @@ name|DbRelationship
 name|relationship
 parameter_list|)
 block|{
-if|if
-condition|(
 name|logger
 operator|.
-name|isDebugEnabled
-argument_list|()
-condition|)
-block|{
-name|logger
-operator|.
-name|debug
+name|info
 argument_list|(
-literal|"    Relationship : "
-operator|+
-name|entity
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"; "
+literal|"    "
 operator|+
 name|relationship
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -230,11 +220,19 @@ name|ObjEntity
 name|entity
 parameter_list|)
 block|{
+if|if
+condition|(
 name|logger
 operator|.
-name|info
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|debug
 argument_list|(
-literal|"Add objEntity: "
+literal|"  Class: "
 operator|+
 name|entity
 operator|.
@@ -242,6 +240,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 annotation|@
 name|Override
@@ -253,11 +252,19 @@ name|ObjEntity
 name|entity
 parameter_list|)
 block|{
+if|if
+condition|(
 name|logger
 operator|.
-name|info
+name|isDebugEnabled
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|debug
 argument_list|(
-literal|"Del objEntity: "
+literal|"  Class removed: "
 operator|+
 name|entity
 operator|.
@@ -265,6 +272,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_class

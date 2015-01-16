@@ -763,6 +763,19 @@ literal|"testSkipPrimaryKeyLoading"
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|testOneToOne
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|test
+argument_list|(
+literal|"testOneToOne"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Q: what happens if a relationship existed over a column that was later deleted? and âskipRelLoadingâ is true      * A: it should remove relationship and column      *      * @throws Exception      */
 annotation|@
 name|Test
