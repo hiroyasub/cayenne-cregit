@@ -1380,7 +1380,7 @@ argument_list|)
 expr_stmt|;
 name|detected
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|targetEntity
 argument_list|)

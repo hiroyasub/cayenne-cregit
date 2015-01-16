@@ -912,7 +912,7 @@ argument_list|)
 expr_stmt|;
 name|rel
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|temp
 operator|.

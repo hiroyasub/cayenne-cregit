@@ -446,7 +446,7 @@ argument_list|)
 expr_stmt|;
 name|rel1To2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbEntity2
 argument_list|)
@@ -504,7 +504,7 @@ argument_list|)
 expr_stmt|;
 name|rel2To1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbEntity1
 argument_list|)
@@ -743,7 +743,7 @@ argument_list|)
 expr_stmt|;
 name|objRel1To2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|objEntity2
 argument_list|)
@@ -780,7 +780,7 @@ argument_list|)
 expr_stmt|;
 name|objRel2To1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|objEntity1
 argument_list|)
@@ -878,13 +878,14 @@ init|=
 name|createMergeTokens
 argument_list|()
 decl_stmt|;
+comment|/**          * Add Relationship NEW_TABLE->NEW_TABLE2 To Model          * Drop Relationship NEW_TABLE2->NEW_TABLE To DB          * Drop Column NEW_TABLE2.FK To DB          * */
 name|assertTokens
 argument_list|(
 name|tokens
 argument_list|,
-literal|3
+literal|2
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 for|for

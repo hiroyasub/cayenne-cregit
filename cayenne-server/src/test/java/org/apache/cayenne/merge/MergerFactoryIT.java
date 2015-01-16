@@ -1049,7 +1049,7 @@ argument_list|)
 expr_stmt|;
 name|r1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|artistDbEntity
 argument_list|)
@@ -1102,7 +1102,7 @@ argument_list|)
 expr_stmt|;
 name|r2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbEntity
 argument_list|)
@@ -1176,14 +1176,14 @@ operator|.
 name|refreshMappingCache
 argument_list|()
 expr_stmt|;
+comment|/*          * Db -Rel 'toArtistR1' - NEW_TABLE 1 -> 1 ARTIST" r2 =     * Db -Rel 'toNewTableR2' - ARTIST 1 -> * NEW_TABLE"          * */
 name|assertTokensAndExecute
 argument_list|(
-literal|2
+literal|1
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
-comment|//        assertTokensAndExecute(1, 1);
 name|assertTokensAndExecute
 argument_list|(
 literal|0
@@ -1387,7 +1387,7 @@ argument_list|)
 expr_stmt|;
 name|r1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|artistDbEntity
 argument_list|)
@@ -1440,7 +1440,7 @@ argument_list|)
 expr_stmt|;
 name|r2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbEntity
 argument_list|)
@@ -1514,11 +1514,12 @@ operator|.
 name|refreshMappingCache
 argument_list|()
 expr_stmt|;
+comment|/*         * Add Relationship ARTIST->NEW_TABLE To Model         * Drop Relationship NEW_TABLE->ARTIST To DB         * */
 name|assertTokensAndExecute
 argument_list|(
-literal|2
+literal|1
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute

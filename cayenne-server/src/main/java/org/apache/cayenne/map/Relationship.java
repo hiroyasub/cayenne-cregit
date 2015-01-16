@@ -196,7 +196,7 @@ function_decl|;
 comment|/**      * Sets relationship target entity. Internally calls<code>setTargetEntityName</code>.      */
 specifier|public
 name|void
-name|setTargetEntity
+name|setTargetEntityName
 parameter_list|(
 name|Entity
 name|targetEntity
@@ -222,6 +222,9 @@ else|else
 block|{
 name|setTargetEntityName
 argument_list|(
+operator|(
+name|String
+operator|)
 literal|null
 argument_list|)
 expr_stmt|;

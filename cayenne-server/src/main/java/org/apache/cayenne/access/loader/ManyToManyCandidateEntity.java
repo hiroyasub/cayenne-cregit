@@ -620,7 +620,7 @@ argument_list|)
 expr_stmt|;
 name|newRelationship
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dstEntity
 argument_list|)
