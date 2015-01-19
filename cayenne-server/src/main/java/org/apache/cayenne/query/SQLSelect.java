@@ -1004,7 +1004,7 @@ condition|)
 block|{
 name|template
 operator|.
-name|setParamsArray
+name|setParamsList
 argument_list|(
 name|positionalParams
 argument_list|)
