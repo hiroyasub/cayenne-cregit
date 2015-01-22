@@ -297,7 +297,7 @@ argument_list|)
 else|:
 literal|""
 decl_stmt|;
-comment|// if there is a conditional prefix, use a separate buffer ofr children
+comment|// if there is a conditional prefix, use a separate buffer for children
 name|StringWriter
 name|childWriter
 init|=

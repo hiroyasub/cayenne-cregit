@@ -788,6 +788,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Initializes positional parameters of the query. Parameters are bound in 	 * the order they are found in the SQL template. If a given parameter name 	 * is used more than once, only the first occurrence is treated as 	 * "position", subsequent occurrences are bound with the same value as the 	 * first one. If template parameters count is different from the array 	 * parameter count, an exception will be thrown. 	 *<p> 	 * Note that calling this method will reset any previously set *named* 	 * parameters. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
@@ -818,6 +819,7 @@ literal|null
 argument_list|)
 return|;
 block|}
+comment|/** 	 * Initializes positional parameters of the query. Parameters are bound in 	 * the order they are found in the SQL template. If a given parameter name 	 * is used more than once, only the first occurrence is treated as 	 * "position", subsequent occurrences are bound with the same value as the 	 * first one. If template parameters count is different from the list 	 * parameter count, an exception will be thrown. 	 *<p> 	 * Note that calling this method will reset any previously set *named* 	 * parameters. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|SQLSelect
 argument_list|<
