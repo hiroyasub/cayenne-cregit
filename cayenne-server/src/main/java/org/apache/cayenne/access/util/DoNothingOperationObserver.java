@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|access
+operator|.
+name|util
 package|;
 end_package
 
@@ -33,6 +35,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectId
 import|;
 end_import
@@ -46,6 +60,20 @@ operator|.
 name|cayenne
 operator|.
 name|ResultIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|OperationObserver
 import|;
 end_import
 
@@ -64,17 +92,30 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a set of callback methods that allow {@link QueryEngine} to pass back query  * results and notify caller about exceptions.  */
+comment|/**  * A very simple observer that does nothing with provided data, and rethrows any  * reported exceptions. Can be used as a base superclass for custom observers.  *   * @since 4.0  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
+class|class
+name|DoNothingOperationObserver
+implements|implements
 name|OperationObserver
-extends|extends
-name|OperationHints
 block|{
-comment|/**      * Callback method invoked after an updating query is executed.      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isIteratedResult
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|nextCount
 parameter_list|(
@@ -84,8 +125,12 @@ parameter_list|,
 name|int
 name|resultCount
 parameter_list|)
-function_decl|;
-comment|/**      * Callback method invoked after a batch update is executed.      */
+block|{
+comment|// TODO Auto-generated method stub
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|nextBatchCount
 parameter_list|(
@@ -96,8 +141,12 @@ name|int
 index|[]
 name|resultCount
 parameter_list|)
-function_decl|;
-comment|/**      * Callback method invoked for each processed ResultSet.      *       * @since 3.0      */
+block|{
+comment|// TODO Auto-generated method stub
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|nextRows
 parameter_list|(
@@ -110,8 +159,12 @@ name|?
 argument_list|>
 name|dataRows
 parameter_list|)
-function_decl|;
-comment|/**      * Callback method invoked for each opened ResultIterator. If this observer requested      * results to be returned as a ResultIterator, this method is invoked instead of      * {@link #nextRows(Query, List)}.      *       * @since 3.0      */
+block|{
+comment|// TODO Auto-generated method stub
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|nextRows
 parameter_list|(
@@ -124,8 +177,12 @@ name|?
 argument_list|>
 name|it
 parameter_list|)
-function_decl|;
-comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 4.0      */
+block|{
+comment|// TODO Auto-generated method stub
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|nextGeneratedRows
 parameter_list|(
@@ -141,8 +198,11 @@ parameter_list|,
 name|ObjectId
 name|idToUpdate
 parameter_list|)
-function_decl|;
-comment|/**      * Callback method invoked on exceptions that happen during an execution of a specific      * query.      */
+block|{
+comment|// do
+block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextQueryException
@@ -153,8 +213,17 @@ parameter_list|,
 name|Exception
 name|ex
 parameter_list|)
-function_decl|;
-comment|/**      * Callback method invoked on exceptions that are not tied to a specific query      * execution, such as JDBC connection exceptions, etc.      */
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+name|ex
+argument_list|)
+throw|;
+block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nextGlobalException
@@ -162,9 +231,17 @@ parameter_list|(
 name|Exception
 name|ex
 parameter_list|)
-function_decl|;
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+name|ex
+argument_list|)
+throw|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 
