@@ -116,7 +116,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-literal|"Add Relationship"
+literal|"Add foreign key"
 argument_list|,
 name|entity
 argument_list|)
@@ -237,6 +237,14 @@ name|String
 name|getTokenValue
 parameter_list|()
 block|{
+if|if
+condition|(
+name|this
+operator|.
+name|shouldGenerateFkConstraint
+argument_list|()
+condition|)
+block|{
 return|return
 name|rel
 operator|.
@@ -253,6 +261,13 @@ operator|.
 name|getTargetEntityName
 argument_list|()
 return|;
+block|}
+else|else
+block|{
+return|return
+literal|"Skip. No sql representation."
+return|;
+block|}
 block|}
 specifier|public
 name|DbRelationship
