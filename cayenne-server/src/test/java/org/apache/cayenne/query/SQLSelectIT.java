@@ -535,6 +535,13 @@ name|class
 argument_list|,
 literal|"SELECT * FROM ARTIST"
 argument_list|)
+operator|.
+name|columnNameCaps
+argument_list|(
+name|CapsStrategy
+operator|.
+name|UPPER
+argument_list|)
 decl_stmt|;
 name|assertFalse
 argument_list|(
@@ -617,6 +624,13 @@ literal|"a"
 argument_list|,
 literal|"artist3"
 argument_list|)
+operator|.
+name|columnNameCaps
+argument_list|(
+name|CapsStrategy
+operator|.
+name|UPPER
+argument_list|)
 expr_stmt|;
 name|assertFalse
 argument_list|(
@@ -674,6 +688,13 @@ operator|.
 name|class
 argument_list|,
 literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a) OR ARTIST_NAME = #bind($b)"
+argument_list|)
+operator|.
+name|columnNameCaps
+argument_list|(
+name|CapsStrategy
+operator|.
+name|UPPER
 argument_list|)
 decl_stmt|;
 name|q1
@@ -941,6 +962,13 @@ literal|"a"
 argument_list|,
 literal|"artist3"
 argument_list|)
+operator|.
+name|columnNameCaps
+argument_list|(
+name|CapsStrategy
+operator|.
+name|UPPER
+argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
@@ -1002,6 +1030,13 @@ argument_list|,
 literal|"artist3"
 argument_list|)
 operator|.
+name|columnNameCaps
+argument_list|(
+name|CapsStrategy
+operator|.
+name|UPPER
+argument_list|)
+operator|.
 name|select
 argument_list|(
 name|context
@@ -1049,6 +1084,13 @@ argument_list|(
 literal|"a"
 argument_list|,
 literal|"artist3"
+argument_list|)
+operator|.
+name|columnNameCaps
+argument_list|(
+name|CapsStrategy
+operator|.
+name|UPPER
 argument_list|)
 operator|.
 name|selectOne

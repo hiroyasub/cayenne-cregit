@@ -127,6 +127,20 @@ name|cayenne
 operator|.
 name|unit
 operator|.
+name|PostgresUnitDbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
 name|UnitDbAdapter
 import|;
 end_import
@@ -278,6 +292,30 @@ operator|.
 name|Assert
 operator|.
 name|assertTrue
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assume
+operator|.
+name|assumeThat
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assume
+operator|.
+name|assumeTrue
 import|;
 end_import
 
@@ -1065,6 +1103,18 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|assumeTrue
+argument_list|(
+literal|"In postresql blob_column has OID type, but in JAVA it converts into long not into byte."
+argument_list|,
+operator|!
+operator|(
+name|unitDbAdapter
+operator|instanceof
+name|PostgresUnitDbAdapter
+operator|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|unitDbAdapter
