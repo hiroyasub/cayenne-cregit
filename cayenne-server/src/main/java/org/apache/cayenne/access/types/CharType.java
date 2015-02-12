@@ -19,6 +19,18 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneException
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -104,18 +116,6 @@ operator|.
 name|sql
 operator|.
 name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneException
 import|;
 end_import
 
@@ -477,6 +477,12 @@ operator|==
 name|Types
 operator|.
 name|CLOB
+operator|||
+name|type
+operator|==
+name|Types
+operator|.
+name|NCLOB
 condition|)
 block|{
 name|st
