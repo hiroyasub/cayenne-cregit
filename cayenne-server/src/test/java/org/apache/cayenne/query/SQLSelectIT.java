@@ -57,7 +57,7 @@ name|java
 operator|.
 name|sql
 operator|.
-name|Date
+name|Types
 import|;
 end_import
 
@@ -175,7 +175,7 @@ name|testdo
 operator|.
 name|testmap
 operator|.
-name|Artist
+name|Painting
 import|;
 end_import
 
@@ -281,7 +281,7 @@ name|dbHelper
 decl_stmt|;
 specifier|private
 name|TableHelper
-name|tArtist
+name|tPainting
 decl_stmt|;
 annotation|@
 name|Before
@@ -290,23 +290,38 @@ name|void
 name|before
 parameter_list|()
 block|{
-name|tArtist
+name|tPainting
 operator|=
 operator|new
 name|TableHelper
 argument_list|(
 name|dbHelper
 argument_list|,
-literal|"ARTIST"
+literal|"PAINTING"
 argument_list|)
 operator|.
 name|setColumns
 argument_list|(
-literal|"ARTIST_ID"
+literal|"PAINTING_ID"
 argument_list|,
-literal|"ARTIST_NAME"
+literal|"PAINTING_TITLE"
 argument_list|,
-literal|"DATE_OF_BIRTH"
+literal|"ESTIMATED_PRICE"
+argument_list|)
+operator|.
+name|setColumnTypes
+argument_list|(
+name|Types
+operator|.
+name|INTEGER
+argument_list|,
+name|Types
+operator|.
+name|VARCHAR
+argument_list|,
+name|Types
+operator|.
+name|DECIMAL
 argument_list|)
 expr_stmt|;
 block|}
@@ -317,14 +332,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|long
-name|dateBase
-init|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-decl_stmt|;
 for|for
 control|(
 name|int
@@ -340,29 +347,19 @@ name|i
 operator|++
 control|)
 block|{
-name|tArtist
+name|tPainting
 operator|.
 name|insert
 argument_list|(
 name|i
 argument_list|,
-literal|"artist"
+literal|"painting"
 operator|+
 name|i
 argument_list|,
-operator|new
-name|java
-operator|.
-name|sql
-operator|.
-name|Date
-argument_list|(
-name|dateBase
-operator|+
-literal|10000
+literal|10000.
 operator|*
 name|i
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -391,7 +388,7 @@ name|dataRowQuery
 argument_list|(
 literal|"testmap"
 argument_list|,
-literal|"SELECT * FROM ARTIST"
+literal|"SELECT * FROM PAINTING"
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -460,7 +457,7 @@ name|SQLSelect
 operator|.
 name|dataRowQuery
 argument_list|(
-literal|"SELECT * FROM ARTIST"
+literal|"SELECT * FROM PAINTING"
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -521,7 +518,7 @@ argument_list|()
 expr_stmt|;
 name|SQLSelect
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|q1
 init|=
@@ -529,11 +526,11 @@ name|SQLSelect
 operator|.
 name|query
 argument_list|(
-name|Artist
+name|Painting
 operator|.
 name|class
 argument_list|,
-literal|"SELECT * FROM ARTIST"
+literal|"SELECT * FROM PAINTING"
 argument_list|)
 operator|.
 name|columnNameCaps
@@ -553,7 +550,7 @@ argument_list|)
 expr_stmt|;
 name|List
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|result
 init|=
@@ -583,7 +580,7 @@ argument_list|(
 literal|0
 argument_list|)
 operator|instanceof
-name|Artist
+name|Painting
 argument_list|)
 expr_stmt|;
 block|}
@@ -601,7 +598,7 @@ argument_list|()
 expr_stmt|;
 name|SQLSelect
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|q1
 init|=
@@ -609,11 +606,11 @@ name|SQLSelect
 operator|.
 name|query
 argument_list|(
-name|Artist
+name|Painting
 operator|.
 name|class
 argument_list|,
-literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
+literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 decl_stmt|;
 name|q1
@@ -622,7 +619,7 @@ name|params
 argument_list|(
 literal|"a"
 argument_list|,
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|columnNameCaps
@@ -640,7 +637,7 @@ name|isFetchingDataRows
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|Artist
+name|Painting
 name|a
 init|=
 name|context
@@ -652,11 +649,11 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"artist3"
+literal|"painting3"
 argument_list|,
 name|a
 operator|.
-name|getArtistName
+name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -675,7 +672,7 @@ argument_list|()
 expr_stmt|;
 name|SQLSelect
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|q1
 init|=
@@ -683,11 +680,11 @@ name|SQLSelect
 operator|.
 name|query
 argument_list|(
-name|Artist
+name|Painting
 operator|.
 name|class
 argument_list|,
-literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a) OR ARTIST_NAME = #bind($b)"
+literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = #bind($a) OR PAINTING_TITLE = #bind($b)"
 argument_list|)
 operator|.
 name|columnNameCaps
@@ -703,19 +700,19 @@ name|params
 argument_list|(
 literal|"a"
 argument_list|,
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|params
 argument_list|(
 literal|"b"
 argument_list|,
-literal|"artist4"
+literal|"painting4"
 argument_list|)
 expr_stmt|;
 name|List
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|result
 init|=
@@ -756,7 +753,7 @@ name|SQLSelect
 operator|.
 name|dataRowQuery
 argument_list|(
-literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = 'artist2'"
+literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = 'painting2'"
 argument_list|)
 decl_stmt|;
 name|q1
@@ -848,7 +845,7 @@ name|SQLSelect
 operator|.
 name|dataRowQuery
 argument_list|(
-literal|"SELECT * FROM ARTIST"
+literal|"SELECT * FROM PAINTING"
 argument_list|)
 decl_stmt|;
 name|q1
@@ -896,7 +893,7 @@ name|SQLSelect
 operator|.
 name|dataRowQuery
 argument_list|(
-literal|"SELECT * FROM ARTIST"
+literal|"SELECT * FROM PAINTING"
 argument_list|)
 decl_stmt|;
 name|q1
@@ -936,7 +933,7 @@ argument_list|()
 expr_stmt|;
 name|SQLSelect
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|q1
 init|=
@@ -944,23 +941,23 @@ name|SQLSelect
 operator|.
 name|query
 argument_list|(
-name|Artist
+name|Painting
 operator|.
 name|class
 argument_list|,
-literal|"SELECT * FROM ARTIST"
+literal|"SELECT * FROM PAINTING"
 argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" WHERE ARTIST_NAME = #bind($a)"
+literal|" WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
 name|params
 argument_list|(
 literal|"a"
 argument_list|,
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|columnNameCaps
@@ -972,7 +969,7 @@ argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|result
 init|=
@@ -1008,7 +1005,7 @@ argument_list|()
 expr_stmt|;
 name|List
 argument_list|<
-name|Artist
+name|Painting
 argument_list|>
 name|result
 init|=
@@ -1016,18 +1013,18 @@ name|SQLSelect
 operator|.
 name|query
 argument_list|(
-name|Artist
+name|Painting
 operator|.
 name|class
 argument_list|,
-literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
+literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
 name|params
 argument_list|(
 literal|"a"
 argument_list|,
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|columnNameCaps
@@ -1065,25 +1062,25 @@ block|{
 name|createArtistsDataSet
 argument_list|()
 expr_stmt|;
-name|Artist
+name|Painting
 name|a
 init|=
 name|SQLSelect
 operator|.
 name|query
 argument_list|(
-name|Artist
+name|Painting
 operator|.
 name|class
 argument_list|,
-literal|"SELECT * FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
+literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
 name|params
 argument_list|(
 literal|"a"
 argument_list|,
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|columnNameCaps
@@ -1100,11 +1097,11 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"artist3"
+literal|"painting3"
 argument_list|,
 name|a
 operator|.
-name|getArtistName
+name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1128,18 +1125,18 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Long
+name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ARTIST_ID FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
+literal|"SELECT PAINTING_ID FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
 name|params
 argument_list|(
 literal|"a"
 argument_list|,
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|selectOne
@@ -1169,7 +1166,7 @@ argument_list|()
 expr_stmt|;
 name|List
 argument_list|<
-name|Long
+name|Integer
 argument_list|>
 name|ids
 init|=
@@ -1177,11 +1174,11 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Long
+name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ARTIST_ID FROM ARTIST ORDER BY ARTIST_ID"
+literal|"SELECT PAINTING_ID FROM PAINTING ORDER BY PAINTING_ID"
 argument_list|)
 operator|.
 name|select
@@ -1210,7 +1207,7 @@ argument_list|(
 literal|1
 argument_list|)
 operator|.
-name|longValue
+name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1238,7 +1235,7 @@ name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT #result('COUNT(*)' 'int') FROM ARTIST"
+literal|"SELECT #result('COUNT(*)' 'int') FROM PAINTING"
 argument_list|)
 operator|.
 name|selectOne
@@ -1266,23 +1263,23 @@ block|{
 name|createArtistsDataSet
 argument_list|()
 expr_stmt|;
-name|Long
+name|Integer
 name|id
 init|=
 name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Long
+name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ARTIST_ID FROM ARTIST WHERE ARTIST_NAME = #bind($a)"
+literal|"SELECT PAINTING_ID FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
 name|paramsArray
 argument_list|(
-literal|"artist3"
+literal|"painting3"
 argument_list|)
 operator|.
 name|selectOne
@@ -1296,7 +1293,7 @@ literal|3l
 argument_list|,
 name|id
 operator|.
-name|longValue
+name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1315,7 +1312,7 @@ argument_list|()
 expr_stmt|;
 name|List
 argument_list|<
-name|Long
+name|Integer
 argument_list|>
 name|ids
 init|=
@@ -1323,18 +1320,18 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Long
+name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ARTIST_ID FROM ARTIST WHERE ARTIST_NAME = #bind($a) OR ARTIST_NAME = #bind($b) ORDER BY ARTIST_ID"
+literal|"SELECT PAINTING_ID FROM PAINTING WHERE PAINTING_TITLE = #bind($a) OR PAINTING_TITLE = #bind($b) ORDER BY PAINTING_ID"
 argument_list|)
 operator|.
 name|paramsArray
 argument_list|(
-literal|"artist3"
+literal|"painting3"
 argument_list|,
-literal|"artist2"
+literal|"painting2"
 argument_list|)
 operator|.
 name|select
@@ -1353,7 +1350,7 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
-name|longValue
+name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1368,7 +1365,7 @@ argument_list|(
 literal|1
 argument_list|)
 operator|.
-name|longValue
+name|intValue
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1382,47 +1379,31 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Date
-name|dob
-init|=
-operator|new
-name|java
-operator|.
-name|sql
-operator|.
-name|Date
-argument_list|(
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|tArtist
+name|tPainting
 operator|.
 name|insert
 argument_list|(
 literal|1
 argument_list|,
-literal|"artist1"
+literal|"painting1"
 argument_list|,
-name|dob
+literal|1.0
 argument_list|)
 expr_stmt|;
-name|tArtist
+name|tPainting
 operator|.
 name|insert
 argument_list|(
 literal|2
 argument_list|,
-literal|"artist2"
+literal|"painting2"
 argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
 name|List
 argument_list|<
-name|Long
+name|Integer
 argument_list|>
 name|ids
 init|=
@@ -1430,22 +1411,22 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Long
+name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ARTIST_ID FROM ARTIST #chain('OR' 'WHERE') "
+literal|"SELECT PAINTING_ID FROM PAINTING #chain('OR' 'WHERE') "
 operator|+
-literal|"#chunk($a) DATE_OF_BIRTH #bindEqual($a) #end "
+literal|"#chunk($a) ESTIMATED_PRICE #bindEqual($a) #end "
 operator|+
-literal|"#chunk($b) ARTIST_NAME #bindEqual($b) #end #end ORDER BY ARTIST_ID"
+literal|"#chunk($b) PAINTING_TITLE #bindEqual($b) #end #end ORDER BY PAINTING_ID"
 argument_list|)
 operator|.
 name|paramsArray
 argument_list|(
 literal|null
 argument_list|,
-literal|"artist1"
+literal|"painting1"
 argument_list|)
 operator|.
 name|select
@@ -1488,40 +1469,24 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Date
-name|dob
-init|=
-operator|new
-name|java
-operator|.
-name|sql
-operator|.
-name|Date
-argument_list|(
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|tArtist
+name|tPainting
 operator|.
 name|insert
 argument_list|(
 literal|1
 argument_list|,
-literal|"artist1"
+literal|"painting1"
 argument_list|,
-name|dob
+literal|1.0
 argument_list|)
 expr_stmt|;
-name|tArtist
+name|tPainting
 operator|.
 name|insert
 argument_list|(
 literal|2
 argument_list|,
-literal|"artist2"
+literal|"painting2"
 argument_list|,
 literal|null
 argument_list|)
@@ -1558,12 +1523,12 @@ name|put
 argument_list|(
 literal|"b"
 argument_list|,
-literal|"artist1"
+literal|"painting1"
 argument_list|)
 expr_stmt|;
 name|List
 argument_list|<
-name|Long
+name|Integer
 argument_list|>
 name|ids
 init|=
@@ -1571,15 +1536,15 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Long
+name|Integer
 operator|.
 name|class
 argument_list|,
-literal|"SELECT ARTIST_ID FROM ARTIST #chain('OR' 'WHERE') "
+literal|"SELECT PAINTING_ID FROM PAINTING #chain('OR' 'WHERE') "
 operator|+
-literal|"#chunk($a) DATE_OF_BIRTH #bindEqual($a) #end "
+literal|"#chunk($a) ESTIMATED_PRICE #bindEqual($a) #end "
 operator|+
-literal|"#chunk($b) ARTIST_NAME #bindEqual($b) #end #end ORDER BY ARTIST_ID"
+literal|"#chunk($b) PAINTING_TITLE #bindEqual($b) #end #end ORDER BY PAINTING_ID"
 argument_list|)
 operator|.
 name|params
