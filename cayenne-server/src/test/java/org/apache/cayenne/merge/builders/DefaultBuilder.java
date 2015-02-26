@@ -23,11 +23,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|datafactory
 operator|.
-name|StringUtils
+name|DataFactory
 import|;
 end_import
 
@@ -35,13 +35,13 @@ begin_import
 import|import
 name|org
 operator|.
-name|fluttercode
+name|apache
 operator|.
-name|datafactory
+name|commons
 operator|.
-name|impl
+name|lang
 operator|.
-name|DataFactory
+name|StringUtils
 import|;
 end_import
 
