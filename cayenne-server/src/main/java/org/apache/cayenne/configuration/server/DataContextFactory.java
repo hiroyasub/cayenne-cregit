@@ -467,6 +467,13 @@ name|queryCache
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|context
+operator|.
+name|setTransactionFactory
+argument_list|(
+name|transactionFactory
+argument_list|)
+expr_stmt|;
 return|return
 name|context
 return|;
