@@ -2775,6 +2775,14 @@ name|e
 operator|.
 name|getQuery
 argument_list|()
+operator|.
+name|getDataMap
+argument_list|()
+block|,
+name|e
+operator|.
+name|getQuery
+argument_list|()
 block|}
 decl_stmt|;
 name|updateNode
