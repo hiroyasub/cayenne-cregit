@@ -17,11 +17,11 @@ end_package
 
 begin_import
 import|import
-name|java
+name|foundrylogic
 operator|.
-name|io
+name|vpp
 operator|.
-name|File
+name|VPPConfig
 import|;
 end_import
 
@@ -141,11 +141,11 @@ end_import
 
 begin_import
 import|import
-name|foundrylogic
+name|java
 operator|.
-name|vpp
+name|io
 operator|.
-name|VPPConfig
+name|File
 import|;
 end_import
 
@@ -240,6 +240,10 @@ decl_stmt|;
 specifier|protected
 name|boolean
 name|usepkgpath
+decl_stmt|;
+specifier|protected
+name|boolean
+name|createpropertynames
 decl_stmt|;
 specifier|public
 name|CayenneGeneratorTask
@@ -412,6 +416,13 @@ operator|.
 name|setUsePkgPath
 argument_list|(
 name|usepkgpath
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setCreatePropertyNames
+argument_list|(
+name|createpropertynames
 argument_list|)
 expr_stmt|;
 return|return
@@ -934,6 +945,22 @@ operator|.
 name|mode
 operator|=
 name|mode
+expr_stmt|;
+block|}
+comment|/**      * Sets<code>createpropertynames</code> property.      */
+specifier|public
+name|void
+name|setCreatepropertynames
+parameter_list|(
+name|boolean
+name|createpropertynames
+parameter_list|)
+block|{
+name|this
+operator|.
+name|createpropertynames
+operator|=
+name|createpropertynames
 expr_stmt|;
 block|}
 specifier|public

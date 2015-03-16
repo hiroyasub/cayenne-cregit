@@ -258,6 +258,11 @@ specifier|private
 name|boolean
 name|usePkgPath
 decl_stmt|;
+comment|/**      * If set to<code>true</code>, will generate String Property names.      * Default is<code>false</code>.      *      * @parameter createPropertyNames="createPropertyNames" default-value="false"      */
+specifier|private
+name|boolean
+name|createPropertyNames
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -641,6 +646,13 @@ operator|.
 name|setUsePkgPath
 argument_list|(
 name|usePkgPath
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setCreatePropertyNames
+argument_list|(
+name|createPropertyNames
 argument_list|)
 expr_stmt|;
 return|return

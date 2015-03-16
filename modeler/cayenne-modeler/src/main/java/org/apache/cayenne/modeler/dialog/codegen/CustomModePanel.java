@@ -182,6 +182,10 @@ specifier|protected
 name|JTextField
 name|outputPattern
 decl_stmt|;
+specifier|protected
+name|JCheckBox
+name|createPropertyNames
+decl_stmt|;
 specifier|private
 name|DefaultFormBuilder
 name|builder
@@ -248,6 +252,14 @@ name|outputPattern
 operator|=
 operator|new
 name|JTextField
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|createPropertyNames
+operator|=
+operator|new
+name|JCheckBox
 argument_list|()
 expr_stmt|;
 name|this
@@ -420,6 +432,20 @@ name|builder
 operator|.
 name|append
 argument_list|(
+literal|"Use Package Path:"
+argument_list|,
+name|usePackagePath
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|nextLine
+argument_list|()
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
 literal|"Overwrite Subclasses:"
 argument_list|,
 name|overwrite
@@ -434,9 +460,9 @@ name|builder
 operator|.
 name|append
 argument_list|(
-literal|"Use Package Path:"
+literal|"Create Property Names:"
 argument_list|,
-name|usePackagePath
+name|createPropertyNames
 argument_list|)
 expr_stmt|;
 name|builder
@@ -607,6 +633,15 @@ parameter_list|()
 block|{
 return|return
 name|outputPattern
+return|;
+block|}
+specifier|public
+name|JCheckBox
+name|getCreatePropertyNames
+parameter_list|()
+block|{
+return|return
+name|createPropertyNames
 return|;
 block|}
 block|}
