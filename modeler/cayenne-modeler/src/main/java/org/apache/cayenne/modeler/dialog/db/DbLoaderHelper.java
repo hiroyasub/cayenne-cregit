@@ -661,6 +661,10 @@ name|String
 argument_list|>
 name|catalogs
 decl_stmt|;
+specifier|protected
+name|DbAdapter
+name|adapter
+decl_stmt|;
 specifier|private
 specifier|final
 name|EntityFilters
@@ -744,6 +748,12 @@ expr_stmt|;
 block|}
 name|this
 operator|.
+name|adapter
+operator|=
+name|adapter
+expr_stmt|;
+name|this
+operator|.
 name|loader
 operator|=
 operator|new
@@ -794,6 +804,14 @@ operator|=
 literal|false
 expr_stmt|;
 comment|// load catalogs...
+if|if
+condition|(
+name|adapter
+operator|.
+name|supportsCatalogsOnReverseEngineering
+argument_list|()
+condition|)
+block|{
 name|LongRunningTask
 name|loadCatalogsTask
 init|=
@@ -813,6 +831,7 @@ operator|.
 name|startAndWait
 argument_list|()
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|stoppingReverseEngineering

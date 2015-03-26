@@ -17,46 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|PreparedStatement
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -223,6 +183,36 @@ name|SQLAction
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|PreparedStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
 begin_comment
 comment|/**  * A Cayenne extension point that abstracts the differences between specifics of  * JDBC interfaces to various databases. Cayenne already ships with a number of  * built-in adapters for most common databases and users can provide their own  * custom adapters.  */
 end_comment
@@ -256,9 +246,14 @@ name|DataNode
 name|node
 parameter_list|)
 function_decl|;
-comment|/**      * Returns true if a target database supports UNIQUE constraints.      *       * @since 1.1      */
+comment|/**      * Returns true if a target database supports UNIQUE constraints.      *      * @since 1.1      */
 name|boolean
 name|supportsUniqueConstraints
+parameter_list|()
+function_decl|;
+comment|/**      * Returns true if a target database supports catalogs on reverse engineering.      *      * @since 4.0      */
+name|boolean
+name|supportsCatalogsOnReverseEngineering
 parameter_list|()
 function_decl|;
 comment|/**      * Returns true if a target database supports key autogeneration. This      * feature also requires JDBC3-compliant driver.      *       * @since 1.2      */
