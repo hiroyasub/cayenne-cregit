@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility methods to quickly access object properties. This class supports simple and  * nested properties and also conversion of property values to match property type. No  * converter customization is provided yet, so only basic converters for Strings, Numbers  * and primitives are available.  *   * @since 1.2  */
+comment|/**  * Utility methods to quickly access object properties. This class supports  * simple and nested properties and also conversion of property values to match  * property type. No converter customization is provided yet, so only basic  * converters for Strings, Numbers and primitives are available.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -178,7 +178,7 @@ specifier|public
 class|class
 name|PropertyUtils
 block|{
-comment|/**      * Compiles an accessor that can be used for fast access for the nested property of      * the objects of a given class.      *       * @since 3.0      */
+comment|/** 	 * Compiles an accessor that can be used for fast access for the nested 	 * property of the objects of a given class. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|Accessor
@@ -307,7 +307,7 @@ return|return
 name|accessor
 return|;
 block|}
-comment|/**      * Returns object property using JavaBean-compatible introspection with one addition -      * a property can be a dot-separated property name path.      */
+comment|/** 	 * Returns object property using JavaBean-compatible introspection with one 	 * addition - a property can be a dot-separated property name path. 	 */
 specifier|public
 specifier|static
 name|Object
@@ -417,20 +417,9 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// null value in the middle....
-throw|throw
-operator|new
-name|UnresolvablePathException
-argument_list|(
-literal|"Null value in the middle of the path, failed on "
-operator|+
-name|nestedPropertyName
-operator|+
-literal|" from "
-operator|+
-name|object
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 name|value
 operator|=
@@ -490,7 +479,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Sets object property using JavaBean-compatible introspection with one addition - a      * property can be a dot-separated property name path. Before setting a value attempts      * to convert it to a type compatible with the object property. Automatic conversion      * is supported between strings and basic types like numbers or primitives.      */
+comment|/** 	 * Sets object property using JavaBean-compatible introspection with one 	 * addition - a property can be a dot-separated property name path. Before 	 * setting a value attempts to convert it to a type compatible with the 	 * object property. Automatic conversion is supported between strings and 	 * basic types like numbers or primitives. 	 */
 specifier|public
 specifier|static
 name|void
@@ -760,7 +749,8 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|// note that Map has two traditional bean properties - 'empty' and 'class', so
+comment|// note that Map has two traditional bean properties - 'empty' and
+comment|// 'class', so
 comment|// do a check here only after descriptor lookup failed.
 if|else if
 condition|(
@@ -811,6 +801,15 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+block|{
+literal|"rawtypes"
+block|,
+literal|"unchecked"
+block|}
+argument_list|)
 specifier|static
 name|void
 name|setSimpleProperty
@@ -935,7 +934,8 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|// note that Map has two traditional bean properties - 'empty' and 'class', so
+comment|// note that Map has two traditional bean properties - 'empty' and
+comment|// 'class', so
 comment|// do a check here only after descriptor lookup failed.
 if|else if
 condition|(
@@ -947,11 +947,6 @@ block|{
 operator|(
 operator|(
 name|Map
-argument_list|<
-name|Object
-argument_list|,
-name|Object
-argument_list|>
 operator|)
 name|object
 operator|)
@@ -1054,7 +1049,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * "Normalizes" passed type, converting primitive types to their object counterparts.      */
+comment|/** 	 * "Normalizes" passed type, converting primitive types to their object 	 * counterparts. 	 */
 specifier|static
 name|Class
 argument_list|<
@@ -1218,7 +1213,7 @@ return|return
 name|type
 return|;
 block|}
-comment|/**      * Returns default value that should be used for nulls. For non-primitive types, null      * is returned. For primitive types a default such as zero or false is returned.      */
+comment|/** 	 * Returns default value that should be used for nulls. For non-primitive 	 * types, null is returned. For primitive types a default such as zero or 	 * false is returned. 	 */
 specifier|static
 name|Object
 name|defaultNullValueForType
@@ -1427,6 +1422,15 @@ implements|implements
 name|Accessor
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|6592741135509067043L
+decl_stmt|;
+specifier|private
 name|Collection
 argument_list|<
 name|Accessor
@@ -1474,6 +1478,8 @@ name|accessor
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getName
@@ -1483,6 +1489,8 @@ return|return
 name|name
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|getValue
@@ -1542,6 +1550,8 @@ return|return
 name|value
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setValue
