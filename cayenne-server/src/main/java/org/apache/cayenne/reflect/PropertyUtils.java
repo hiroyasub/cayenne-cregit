@@ -1521,20 +1521,9 @@ operator|==
 literal|null
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Null object at the end of the segment '"
-operator|+
-name|accessor
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|"'"
-argument_list|)
-throw|;
+return|return
+literal|null
+return|;
 block|}
 name|value
 operator|=
