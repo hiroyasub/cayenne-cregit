@@ -680,6 +680,24 @@ name|this
 argument_list|)
 return|;
 block|}
+comment|/**      * Since we are selecting by ID, we don't need to limit fetch size.      * Multiple matched objects likely indicate a database referential integrity problem.      */
+annotation|@
+name|Override
+specifier|public
+name|T
+name|selectFirst
+parameter_list|(
+name|ObjectContext
+name|context
+parameter_list|)
+block|{
+return|return
+name|selectFirst
+argument_list|(
+name|context
+argument_list|)
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
