@@ -362,6 +362,26 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
+comment|/**      * Creates a ResultBatchIterator based on the provided query and batch size. It is usually      * backed by an open result set and is useful for processing of large data      * sets, preserving a constant memory footprint. The caller must wrap      * iteration in try/finally (or try-with-resources for Java 1.7 and higher) and      * close the ResultBatchIterator explicitly.      *      * @since 4.0      */
+parameter_list|<
+name|T
+parameter_list|>
+name|ResultBatchIterator
+argument_list|<
+name|T
+argument_list|>
+name|batchIterator
+parameter_list|(
+name|Select
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|,
+name|int
+name|size
+parameter_list|)
+function_decl|;
 comment|/**      * Executes any kind of query providing the result in a form of      * QueryResponse.      */
 name|QueryResponse
 name|performGenericQuery
