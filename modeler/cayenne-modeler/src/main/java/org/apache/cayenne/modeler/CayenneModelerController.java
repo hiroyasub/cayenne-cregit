@@ -171,6 +171,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|ProjectStateUtil
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|project
 operator|.
 name|Project
@@ -600,6 +616,13 @@ name|WindowEvent
 name|e
 parameter_list|)
 block|{
+name|ProjectStateUtil
+operator|.
+name|saveLastState
+argument_list|(
+name|projectController
+argument_list|)
+expr_stmt|;
 name|getApplication
 argument_list|()
 operator|.
@@ -948,6 +971,13 @@ name|void
 name|projectClosedAction
 parameter_list|()
 block|{
+name|ProjectStateUtil
+operator|.
+name|saveLastState
+argument_list|(
+name|projectController
+argument_list|)
+expr_stmt|;
 comment|// --- update view
 name|frame
 operator|.
@@ -1138,6 +1168,13 @@ name|fireRecentFileListChanged
 argument_list|()
 expr_stmt|;
 block|}
+name|ProjectStateUtil
+operator|.
+name|fireLastState
+argument_list|(
+name|projectController
+argument_list|)
+expr_stmt|;
 comment|// for validation purposes combine load failures with post-load validation (not
 comment|// sure if that'll cause duplicate messages?).
 name|List
