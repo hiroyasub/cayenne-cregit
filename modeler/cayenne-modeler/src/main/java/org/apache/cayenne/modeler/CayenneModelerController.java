@@ -175,6 +175,8 @@ name|modeler
 operator|.
 name|util
 operator|.
+name|state
+operator|.
 name|ProjectStateUtil
 import|;
 end_import
@@ -440,6 +442,16 @@ name|CayenneModelerController
 extends|extends
 name|CayenneController
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|ProjectStateUtil
+name|PROJECT_STATE_UTIL
+init|=
+operator|new
+name|ProjectStateUtil
+argument_list|()
+decl_stmt|;
 specifier|protected
 name|ProjectController
 name|projectController
@@ -616,7 +628,7 @@ name|WindowEvent
 name|e
 parameter_list|)
 block|{
-name|ProjectStateUtil
+name|PROJECT_STATE_UTIL
 operator|.
 name|saveLastState
 argument_list|(
@@ -971,7 +983,7 @@ name|void
 name|projectClosedAction
 parameter_list|()
 block|{
-name|ProjectStateUtil
+name|PROJECT_STATE_UTIL
 operator|.
 name|saveLastState
 argument_list|(
@@ -1168,7 +1180,7 @@ name|fireRecentFileListChanged
 argument_list|()
 expr_stmt|;
 block|}
-name|ProjectStateUtil
+name|PROJECT_STATE_UTIL
 operator|.
 name|fireLastState
 argument_list|(
