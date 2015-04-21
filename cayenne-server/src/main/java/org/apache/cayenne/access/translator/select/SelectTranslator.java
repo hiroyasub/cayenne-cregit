@@ -1124,7 +1124,7 @@ return|return
 name|cachedSqlString
 return|;
 block|}
-comment|/** 	 * Allows subclasses to insert their own dialect of DISTINCT statement to 	 * improve performance. 	 * 	 * @return string representing the DISTINCT statement 	 * @since 3.1.1 	 */
+comment|/** 	 * Allows subclasses to insert their own dialect of DISTINCT statement to 	 * improve performance. 	 * 	 * @return string representing the DISTINCT statement 	 * @since 4.0 	 */
 specifier|protected
 name|String
 name|buildDistinctStatement

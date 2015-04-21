@@ -191,7 +191,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * @since 3.1.1 	 */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|protected
