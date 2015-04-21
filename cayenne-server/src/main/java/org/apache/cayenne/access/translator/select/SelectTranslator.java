@@ -872,7 +872,10 @@ name|queryBuf
 operator|.
 name|append
 argument_list|(
-literal|"DISTINCT "
+name|buildDistinctStatement
+argument_list|()
+operator|+
+literal|" "
 argument_list|)
 expr_stmt|;
 block|}
@@ -1105,6 +1108,16 @@ argument_list|()
 expr_stmt|;
 return|return
 name|cachedSqlString
+return|;
+block|}
+comment|/** 	 * Allows subclasses to insert their own dialect of DISTINCT statement to 	 * improve performance. 	 * 	 * @return string representing the DISTINCT statement 	 * @since 3.1.1 	 */
+specifier|protected
+name|String
+name|buildDistinctStatement
+parameter_list|()
+block|{
+return|return
+literal|"DISTINCT"
 return|;
 block|}
 comment|/**      * @since 3.1      */
