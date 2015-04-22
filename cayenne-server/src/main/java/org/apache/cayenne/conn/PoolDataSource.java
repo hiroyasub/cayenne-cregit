@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>PoolDataSource allows to generate pooled connections.</p>  *  *<p>It is implemented as a wrapper around a non-pooled data source object.   * Delegates all method calls except for "getPooledConnection" to the underlying   * datasource.  *</p>  *   */
+comment|/**  * PoolDataSource allows to generate pooled connections.  *  *<p>  * It is implemented as a wrapper around a non-pooled data source object.  * Delegates all method calls except for "getPooledConnection" to the underlying  * DataSource.  *   */
 end_comment
 
 begin_class
@@ -102,7 +102,6 @@ specifier|private
 name|DataSource
 name|nonPooledDatasource
 decl_stmt|;
-comment|/** Creates new PoolDataSource */
 specifier|public
 name|PoolDataSource
 parameter_list|(
@@ -140,6 +139,8 @@ name|connectionUrl
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getLoginTimeout
@@ -154,6 +155,8 @@ name|getLoginTimeout
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLoginTimeout
@@ -172,6 +175,8 @@ name|seconds
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PrintWriter
 name|getLogWriter
@@ -186,6 +191,8 @@ name|getLogWriter
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLogWriter
@@ -204,6 +211,8 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PooledConnection
 name|getPooledConnection
@@ -223,6 +232,8 @@ literal|null
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PooledConnection
 name|getPooledConnection
@@ -248,7 +259,7 @@ name|password
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|/** 	 * @since 3.1 	 * 	 *        JDBC 4.1 compatibility under Java 1.7 	 */
 specifier|public
 name|Logger
 name|getParentLogger
