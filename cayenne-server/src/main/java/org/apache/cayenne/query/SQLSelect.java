@@ -1247,20 +1247,15 @@ modifier|...
 name|cacheGroups
 parameter_list|)
 block|{
+return|return
 name|cacheStrategy
 argument_list|(
 name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE
-argument_list|)
-expr_stmt|;
-name|cacheGroups
-argument_list|(
+argument_list|,
 name|cacheGroups
 argument_list|)
-expr_stmt|;
-return|return
-name|this
 return|;
 block|}
 comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.cacheStrategy(QueryCacheStrategy.SHARED_CACHE, cacheGroups); 	 *</pre> 	 */
@@ -1282,10 +1277,7 @@ argument_list|(
 name|QueryCacheStrategy
 operator|.
 name|SHARED_CACHE
-argument_list|)
-operator|.
-name|cacheGroups
-argument_list|(
+argument_list|,
 name|cacheGroups
 argument_list|)
 return|;
