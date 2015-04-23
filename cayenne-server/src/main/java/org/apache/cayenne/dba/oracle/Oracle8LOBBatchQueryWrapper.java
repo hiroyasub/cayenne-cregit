@@ -305,7 +305,6 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
 name|type
 operator|==
 name|Types
@@ -317,7 +316,6 @@ operator|==
 name|Types
 operator|.
 name|CLOB
-operator|)
 expr_stmt|;
 block|}
 block|}

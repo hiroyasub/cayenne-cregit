@@ -1752,6 +1752,11 @@ argument_list|,
 literal|null
 argument_list|,
 literal|null
+argument_list|,
+operator|(
+name|short
+operator|)
+literal|1
 argument_list|)
 argument_list|,
 name|targetModel
@@ -1774,7 +1779,7 @@ argument_list|)
 expr_stmt|;
 name|dbRelationship
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|targetModel
 operator|.
@@ -2823,7 +2828,7 @@ comment|// via old modeler events, but we leave this to the controller
 comment|// since model knows nothing about Modeler mediator.
 name|relationship
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|objectTarget
 argument_list|)

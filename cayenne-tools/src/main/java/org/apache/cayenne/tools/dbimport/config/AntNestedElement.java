@@ -20,7 +20,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Additional class to handle<name> element under<catalog> and<schema>  *      required for ant configuration  *  * @since 3.2.  */
+comment|/**  * Additional class to handle<name> element under<catalog> and<schema>  *      required for ant configuration  *  * @since 4.0.  */
 end_comment
 
 begin_class
@@ -40,6 +40,21 @@ block|{
 return|return
 name|name
 return|;
+block|}
+specifier|public
+name|void
+name|setName
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+name|this
+operator|.
+name|name
+operator|=
+name|name
+expr_stmt|;
 block|}
 specifier|public
 name|void

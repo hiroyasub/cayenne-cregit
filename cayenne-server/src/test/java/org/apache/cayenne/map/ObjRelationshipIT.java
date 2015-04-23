@@ -2188,7 +2188,7 @@ argument_list|)
 expr_stmt|;
 name|r1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|artistExhibitDBEntity
 argument_list|)
@@ -2209,7 +2209,7 @@ argument_list|)
 expr_stmt|;
 name|r2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|exhibitDBEntity
 argument_list|)
@@ -2515,7 +2515,7 @@ argument_list|)
 expr_stmt|;
 name|r1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|artistExhibitDBEntity
 argument_list|)
@@ -2536,7 +2536,7 @@ argument_list|)
 expr_stmt|;
 name|r2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|exhibitDBEntity
 argument_list|)
@@ -2557,7 +2557,7 @@ argument_list|)
 expr_stmt|;
 name|r3
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|galleryDBEntity
 argument_list|)
@@ -2659,7 +2659,7 @@ argument_list|)
 expr_stmt|;
 name|r1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|paintingDbEntity
 argument_list|)
@@ -2680,7 +2680,7 @@ argument_list|)
 expr_stmt|;
 name|r2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|galleryDBEntity
 argument_list|)

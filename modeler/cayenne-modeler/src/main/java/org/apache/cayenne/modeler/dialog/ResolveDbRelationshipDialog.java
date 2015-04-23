@@ -1899,7 +1899,7 @@ argument_list|)
 expr_stmt|;
 name|reverseRelationship
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|relationship
 operator|.

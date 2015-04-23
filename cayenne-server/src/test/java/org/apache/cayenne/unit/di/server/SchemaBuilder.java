@@ -608,6 +608,8 @@ block|,
 literal|"inheritance-vertical.map.xml"
 block|,
 literal|"oneway-rels.map.xml"
+block|,
+literal|"unsupported-distinct-types.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded

@@ -564,7 +564,6 @@ argument_list|(
 name|escapeChar
 argument_list|)
 expr_stmt|;
-break|break;
 block|}
 name|buffer
 operator|.

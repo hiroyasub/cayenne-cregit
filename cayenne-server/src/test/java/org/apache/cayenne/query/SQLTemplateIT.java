@@ -704,8 +704,6 @@ argument_list|(
 literal|11
 argument_list|,
 literal|"The Fiddler"
-argument_list|,
-literal|4567
 argument_list|)
 expr_stmt|;
 name|context
@@ -741,7 +739,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|4567.d
+literal|11.d
 argument_list|,
 name|tPainting
 operator|.
@@ -756,6 +754,13 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+argument_list|(
+name|expected
+operator|=
+name|CayenneRuntimeException
+operator|.
+name|class
+argument_list|)
 specifier|public
 name|void
 name|testSQLTemplate_PositionalParams_ToFewParams
@@ -768,7 +773,7 @@ name|sql
 init|=
 literal|"INSERT INTO PAINTING (PAINTING_ID, PAINTING_TITLE, ESTIMATED_PRICE) "
 operator|+
-literal|"VALUES ($b, '$n', #bind($b 'INTEGER'))"
+literal|"VALUES ($b, '$n', #bind($c 'INTEGER'))"
 decl_stmt|;
 name|SQLTemplate
 name|q1
@@ -792,8 +797,6 @@ argument_list|,
 literal|"The Fiddler"
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|context
 operator|.
 name|performNonSelectingQuery
@@ -801,20 +804,6 @@ argument_list|(
 name|q1
 argument_list|)
 expr_stmt|;
-name|fail
-argument_list|(
-literal|"Exception not thrown on parameter length mismatch"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|CayenneRuntimeException
-name|e
-parameter_list|)
-block|{
-comment|// expected
-block|}
 block|}
 annotation|@
 name|Test

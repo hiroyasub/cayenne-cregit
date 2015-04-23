@@ -386,7 +386,7 @@ argument_list|)
 expr_stmt|;
 name|rel1To2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbEntity2
 argument_list|)
@@ -444,7 +444,7 @@ argument_list|)
 expr_stmt|;
 name|rel2To1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|dbEntity1
 argument_list|)

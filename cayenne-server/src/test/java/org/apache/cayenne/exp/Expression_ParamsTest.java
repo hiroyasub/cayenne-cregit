@@ -243,7 +243,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testParams_Positional2
+name|testParams_Positional_Repeating
 parameter_list|()
 block|{
 name|Expression
@@ -266,8 +266,6 @@ argument_list|(
 literal|"A"
 argument_list|,
 literal|5
-argument_list|,
-literal|6
 argument_list|)
 decl_stmt|;
 name|assertNotSame
@@ -279,7 +277,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"(a = \"A\") or ((x = 5) and (y = 6))"
+literal|"(a = \"A\") or ((x = 5) and (y = 5))"
 argument_list|,
 name|ep
 operator|.

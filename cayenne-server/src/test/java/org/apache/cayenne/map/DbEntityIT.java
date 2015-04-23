@@ -1172,7 +1172,7 @@ argument_list|)
 expr_stmt|;
 name|rel
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|otherEntity
 argument_list|)
@@ -1210,7 +1210,7 @@ argument_list|)
 expr_stmt|;
 name|rel1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|ent
 argument_list|)

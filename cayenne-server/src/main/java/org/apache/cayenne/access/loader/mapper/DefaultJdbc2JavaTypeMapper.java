@@ -142,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2.  */
+comment|/**  * @since 4.0.  */
 end_comment
 
 begin_class
@@ -407,7 +407,34 @@ name|add
 parameter_list|(
 name|Types
 operator|.
+name|NCLOB
+parameter_list|,
+name|JAVA_STRING
+parameter_list|)
+constructor_decl|;
+name|add
+parameter_list|(
+name|Types
+operator|.
+name|SQLXML
+parameter_list|,
+name|JAVA_STRING
+parameter_list|)
+constructor_decl|;
+name|add
+parameter_list|(
+name|Types
+operator|.
 name|CHAR
+parameter_list|,
+name|JAVA_STRING
+parameter_list|)
+constructor_decl|;
+name|add
+parameter_list|(
+name|Types
+operator|.
+name|NCHAR
 parameter_list|,
 name|JAVA_STRING
 parameter_list|)
@@ -462,6 +489,15 @@ parameter_list|(
 name|Types
 operator|.
 name|LONGVARCHAR
+parameter_list|,
+name|JAVA_STRING
+parameter_list|)
+constructor_decl|;
+name|add
+parameter_list|(
+name|Types
+operator|.
+name|LONGNVARCHAR
 parameter_list|,
 name|JAVA_STRING
 parameter_list|)
@@ -543,6 +579,15 @@ parameter_list|(
 name|Types
 operator|.
 name|VARCHAR
+parameter_list|,
+name|JAVA_STRING
+parameter_list|)
+constructor_decl|;
+name|add
+parameter_list|(
+name|Types
+operator|.
+name|NVARCHAR
 parameter_list|,
 name|JAVA_STRING
 parameter_list|)

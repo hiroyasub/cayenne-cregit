@@ -418,12 +418,7 @@ name|typesMap
 operator|.
 name|get
 argument_list|(
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 name|type
-argument_list|)
 argument_list|)
 return|;
 block|}

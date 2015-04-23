@@ -507,7 +507,7 @@ argument_list|)
 expr_stmt|;
 name|rforward
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|e
 argument_list|)
@@ -592,7 +592,7 @@ argument_list|)
 expr_stmt|;
 name|rback
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|e
 argument_list|)

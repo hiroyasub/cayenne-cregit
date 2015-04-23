@@ -1831,7 +1831,7 @@ argument_list|)
 expr_stmt|;
 name|r1
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|e2
 argument_list|)
@@ -1852,7 +1852,7 @@ argument_list|)
 expr_stmt|;
 name|r2
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|e1
 argument_list|)
@@ -1873,7 +1873,7 @@ argument_list|)
 expr_stmt|;
 name|r3
 operator|.
-name|setTargetEntity
+name|setTargetEntityName
 argument_list|(
 name|e2
 argument_list|)
