@@ -676,6 +676,7 @@ name|getSchemas
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|engineering
 operator|.
 name|setSchemas
@@ -683,7 +684,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 specifier|private
 name|void

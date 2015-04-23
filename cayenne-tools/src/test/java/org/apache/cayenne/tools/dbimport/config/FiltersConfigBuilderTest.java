@@ -303,7 +303,18 @@ argument_list|(
 operator|new
 name|Catalog
 argument_list|(
-literal|"APP"
+literal|"APP1"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|engineering
+operator|.
+name|addCatalog
+argument_list|(
+operator|new
+name|Catalog
+argument_list|(
+literal|"APP2"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -347,7 +358,17 @@ name|assertEquals
 argument_list|(
 literal|"ReverseEngineering: \n"
 operator|+
-literal|"  Catalog: APP\n"
+literal|"  Catalog: APP1\n"
+operator|+
+literal|"    Schema: null\n"
+operator|+
+literal|"      IncludeTable: null\n"
+operator|+
+literal|"        ExcludeColumn: calculated_.*\n"
+operator|+
+literal|"      ExcludeTable: SYS_.*\n"
+operator|+
+literal|"  Catalog: APP2\n"
 operator|+
 literal|"    Schema: null\n"
 operator|+
