@@ -81,12 +81,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindings
 init|=
 operator|new
-name|ParameterBinding
+name|SQLParameterBinding
 index|[
 literal|0
 index|]

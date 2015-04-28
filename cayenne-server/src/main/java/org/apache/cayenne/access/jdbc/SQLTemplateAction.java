@@ -1676,7 +1676,7 @@ parameter_list|(
 name|PreparedStatement
 name|preparedStatement
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindings
 parameter_list|)

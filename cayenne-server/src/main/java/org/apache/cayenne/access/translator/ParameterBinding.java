@@ -14,8 +14,6 @@ operator|.
 name|access
 operator|.
 name|translator
-operator|.
-name|batch
 package|;
 end_package
 
@@ -34,13 +32,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * Describes a PreparedStatement parameter binding mapped to a DbAttribute.  *   * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|BatchParameterBinding
+name|ParameterBinding
 block|{
 specifier|static
 specifier|final
@@ -63,7 +61,7 @@ name|int
 name|statementPosition
 decl_stmt|;
 specifier|public
-name|BatchParameterBinding
+name|ParameterBinding
 parameter_list|(
 name|DbAttribute
 name|attribute
@@ -150,7 +148,7 @@ operator|==
 name|EXCLUDED_POSITION
 return|;
 block|}
-comment|/**      * Marks the binding object as excluded for the current iteration.      */
+comment|/** 	 * Marks the binding object as excluded for the current iteration. 	 */
 specifier|public
 name|void
 name|exclude
@@ -169,7 +167,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Sets the value of the binding and initializes statement position var,      * thus "including" this binding in the current iteration.      */
+comment|/** 	 * Sets the value of the binding and initializes statement position var, 	 * thus "including" this binding in the current iteration. 	 */
 specifier|public
 name|void
 name|include

@@ -111,7 +111,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -476,7 +476,7 @@ argument_list|,
 name|writer
 argument_list|,
 operator|new
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|(
 name|value
 argument_list|,
@@ -697,7 +697,7 @@ parameter_list|,
 name|Writer
 name|writer
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 name|binding
 parameter_list|)
 throws|throws

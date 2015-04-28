@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -46,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Extends the TrimmingQualifierTranslator that Cayenne normally uses for Oracle.  * Overrides doAppendPart() to wrap the qualifierBuffer in parentheses if it contains an  * "OR" expression. This avoids a bug that can happen on Oracle8 if the query also  * contains a join.  *   * @since 3.0  */
+comment|/**  * Extends the TrimmingQualifierTranslator that Cayenne normally uses for  * Oracle. Overrides doAppendPart() to wrap the qualifierBuffer in parentheses  * if it contains an "OR" expression. This avoids a bug that can happen on  * Oracle8 if the query also contains a join.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -74,8 +64,6 @@ specifier|protected
 name|void
 name|doAppendPart
 parameter_list|()
-throws|throws
-name|IOException
 block|{
 name|super
 operator|.

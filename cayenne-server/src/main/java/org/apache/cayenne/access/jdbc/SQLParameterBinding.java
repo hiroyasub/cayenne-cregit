@@ -18,13 +18,13 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Describes PreparedStatement parameter binding.  *   * @since 1.1  */
+comment|/**  * Describes PreparedStatement parameter binding.  *   * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ParameterBinding
+name|SQLParameterBinding
 block|{
 specifier|protected
 name|int
@@ -39,7 +39,7 @@ name|Object
 name|value
 decl_stmt|;
 specifier|public
-name|ParameterBinding
+name|SQLParameterBinding
 parameter_list|(
 name|Object
 name|value
@@ -79,7 +79,6 @@ return|return
 name|jdbcType
 return|;
 block|}
-comment|/**      * @since 3.0      */
 specifier|public
 name|int
 name|getScale
@@ -111,7 +110,6 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
 specifier|public
 name|void
 name|setScale

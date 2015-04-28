@@ -37,9 +37,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -107,6 +105,8 @@ name|NoopJdbcEventLogger
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|log
@@ -116,6 +116,8 @@ name|message
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logConnect
@@ -125,6 +127,8 @@ name|dataSource
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logConnect
@@ -140,6 +144,8 @@ name|password
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logPoolCreated
@@ -149,12 +155,16 @@ name|dsi
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logConnectSuccess
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logConnectFailure
@@ -164,6 +174,8 @@ name|th
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logGeneratedKey
@@ -176,6 +188,8 @@ name|value
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logQuery
@@ -191,6 +205,10 @@ name|params
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Deprecated
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logQuery
@@ -212,6 +230,24 @@ name|params
 parameter_list|,
 name|long
 name|time
+parameter_list|)
+block|{
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|logQuery
+parameter_list|(
+name|String
+name|sql
+parameter_list|,
+name|ParameterBinding
+index|[]
+name|bindings
+parameter_list|,
+name|long
+name|translatedIn
 parameter_list|)
 block|{
 block|}
@@ -252,12 +288,14 @@ parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logSelectCount
@@ -270,6 +308,8 @@ name|time
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logSelectCount
@@ -285,6 +325,8 @@ name|sql
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logUpdateCount
@@ -294,6 +336,8 @@ name|count
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logBeginTransaction
@@ -303,6 +347,8 @@ name|transactionLabel
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logCommitTransaction
@@ -312,6 +358,8 @@ name|transactionLabel
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logRollbackTransaction
@@ -321,6 +369,8 @@ name|transactionLabel
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|logQueryError
@@ -330,6 +380,8 @@ name|th
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isLoggable

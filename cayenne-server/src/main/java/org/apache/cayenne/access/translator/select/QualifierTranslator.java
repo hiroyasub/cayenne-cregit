@@ -304,7 +304,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Translates query qualifier to SQL. Used as a helper class by query translators.  */
+comment|/**  * Translates query qualifier to SQL. Used as a helper class by query  * translators.  */
 end_comment
 
 begin_class
@@ -345,15 +345,13 @@ operator|=
 literal|false
 expr_stmt|;
 block|}
-comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is obtained from the      * parent queryAssembler.      *       * @since 3.0      */
+comment|/** 	 * Translates query qualifier to SQL WHERE clause. Qualifier is obtained 	 * from the parent queryAssembler. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
 name|void
 name|doAppendPart
 parameter_list|()
-throws|throws
-name|IOException
 block|{
 name|doAppendPart
 argument_list|(
@@ -377,7 +375,7 @@ operator|=
 name|caseInsensitive
 expr_stmt|;
 block|}
-comment|/**      * Translates query qualifier to SQL WHERE clause. Qualifier is a method parameter.      *       * @since 3.0      */
+comment|/** 	 * Translates query qualifier to SQL WHERE clause. Qualifier is a method 	 * parameter. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|doAppendPart
@@ -385,8 +383,6 @@ parameter_list|(
 name|Expression
 name|rootNode
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 if|if
 condition|(
@@ -501,7 +497,7 @@ name|entityQualifier
 expr_stmt|;
 block|}
 block|}
-comment|/**          * Attaching root Db entity's qualifier          */
+comment|/** 		 * Attaching root Db entity's qualifier 		 */
 if|if
 condition|(
 name|getDbEntity
@@ -558,7 +554,7 @@ return|return
 name|qualifier
 return|;
 block|}
-comment|/**      * Called before processing an expression to initialize objectMatchTranslator if      * needed.      */
+comment|/** 	 * Called before processing an expression to initialize 	 * objectMatchTranslator if needed. 	 */
 specifier|protected
 name|void
 name|detectObjectMatch
@@ -588,7 +584,8 @@ block|{
 comment|// only binary expressions are supported
 return|return;
 block|}
-comment|// check if there are DataObjects among direct children of the Expression
+comment|// check if there are DataObjects among direct children of the
+comment|// Expression
 for|for
 control|(
 name|int
@@ -680,7 +677,8 @@ literal|"An invalid attempt to append object match."
 argument_list|)
 throw|;
 block|}
-comment|// turn off special handling, so that all the methods behave as a superclass's
+comment|// turn off special handling, so that all the methods behave as a
+comment|// superclass's
 comment|// impl.
 name|matchingObject
 operator|=
@@ -1441,7 +1439,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|String
 name|operandForBitwiseNot
@@ -1451,7 +1449,7 @@ return|return
 literal|"~"
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|String
 name|operandForBitwiseOr
@@ -1461,7 +1459,7 @@ return|return
 literal|"|"
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|String
 name|operandForBitwiseAnd
@@ -1471,7 +1469,7 @@ return|return
 literal|"&"
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|String
 name|operandForBitwiseXor
@@ -1481,7 +1479,7 @@ return|return
 literal|"^"
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|protected
 name|String
 name|operandForBitwiseLeftShift
@@ -1491,7 +1489,7 @@ return|return
 literal|"<<"
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|protected
 name|String
 name|operandForBitwiseRightShift
@@ -1534,8 +1532,6 @@ name|node
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 if|if
 condition|(
 name|parenthesisNeeded
@@ -1706,24 +1702,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error appending content"
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
-block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|endNode
@@ -2301,8 +2280,6 @@ parameter_list|,
 name|String
 name|joinSplitAlias
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 if|if
 condition|(
@@ -2356,7 +2333,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Class to translate DB Entity qualifiers annotation to Obj-entity qualifiers      * annotation This is done by changing all Obj-paths to Db-paths and rejecting all      * original Db-paths      */
+comment|/** 	 * Class to translate DB Entity qualifiers annotation to Obj-entity 	 * qualifiers annotation This is done by changing all Obj-paths to Db-paths 	 * and rejecting all original Db-paths 	 */
 class|class
 name|DbEntityQualifierTransformer
 implements|implements

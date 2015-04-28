@@ -189,9 +189,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -354,7 +352,7 @@ parameter_list|,
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -365,7 +363,7 @@ name|Exception
 block|{
 for|for
 control|(
-name|BatchParameterBinding
+name|ParameterBinding
 name|b
 range|:
 name|bindings
@@ -617,7 +615,7 @@ argument_list|)
 decl_stmt|;
 try|try
 block|{
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 init|=

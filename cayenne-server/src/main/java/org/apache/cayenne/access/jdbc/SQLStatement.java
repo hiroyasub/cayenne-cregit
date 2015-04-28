@@ -31,7 +31,7 @@ name|String
 name|sql
 decl_stmt|;
 specifier|protected
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindings
 decl_stmt|;
@@ -51,7 +51,7 @@ parameter_list|(
 name|String
 name|sql
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -77,7 +77,7 @@ name|ColumnDescriptor
 index|[]
 name|resultColumns
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -125,7 +125,7 @@ name|descriptors
 expr_stmt|;
 block|}
 specifier|public
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|getBindings
 parameter_list|()
@@ -147,7 +147,7 @@ specifier|public
 name|void
 name|setBindings
 parameter_list|(
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindings
 parameter_list|)

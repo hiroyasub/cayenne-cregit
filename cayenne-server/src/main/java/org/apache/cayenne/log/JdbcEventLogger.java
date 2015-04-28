@@ -37,9 +37,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -138,6 +136,9 @@ name|Object
 name|value
 parameter_list|)
 function_decl|;
+comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+annotation|@
+name|Deprecated
 name|void
 name|logQuery
 parameter_list|(
@@ -151,6 +152,9 @@ argument_list|>
 name|params
 parameter_list|)
 function_decl|;
+comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+annotation|@
+name|Deprecated
 name|void
 name|logQuery
 parameter_list|(
@@ -175,17 +179,32 @@ parameter_list|)
 function_decl|;
 comment|/** 	 * @since 4.0 	 */
 name|void
+name|logQuery
+parameter_list|(
+name|String
+name|sql
+parameter_list|,
+name|ParameterBinding
+index|[]
+name|bindings
+parameter_list|,
+name|long
+name|translatedIn
+parameter_list|)
+function_decl|;
+comment|/** 	 * @since 4.0 	 */
+name|void
 name|logQueryParameters
 parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
 function_decl|;
-comment|/** 	 * @deprecated since 4.0 in favor of 	 *             {@link #logQueryParameters(String, BatchParameterBinding[])} 	 */
+comment|/** 	 * @deprecated since 4.0 in favor of 	 *             {@link #logQueryParameters(String, ParameterBinding[])} 	 */
 annotation|@
 name|Deprecated
 name|void

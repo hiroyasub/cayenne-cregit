@@ -115,7 +115,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -884,14 +884,14 @@ parameter_list|)
 block|{
 name|List
 argument_list|<
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|>
 name|bindings
 init|=
 operator|new
 name|ArrayList
 argument_list|<
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -972,12 +972,12 @@ name|e
 argument_list|)
 throw|;
 block|}
-name|ParameterBinding
+name|SQLParameterBinding
 index|[]
 name|bindingsArray
 init|=
 operator|new
-name|ParameterBinding
+name|SQLParameterBinding
 index|[
 name|bindings
 operator|.
