@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PooledConnectionImpl is an implementation of a pooling wrapper for the database  * connection as per JDBC3 spec. Most of the modern JDBC drivers should have its own  * implementation that may be used instead of this class.  *   */
+comment|/**  * PooledConnectionImpl is an implementation of a pooling wrapper for the  * database connection as per JDBC3 spec. Most of the modern JDBC drivers should  * have its own implementation that may be used instead of this class.  */
 end_comment
 
 begin_class
@@ -143,7 +143,7 @@ name|hadErrors
 decl_stmt|;
 specifier|private
 name|DataSource
-name|connectionSource
+name|dataSource
 decl_stmt|;
 specifier|private
 name|String
@@ -153,9 +153,18 @@ specifier|private
 name|String
 name|password
 decl_stmt|;
-specifier|protected
+specifier|public
 name|PooledConnectionImpl
-parameter_list|()
+parameter_list|(
+name|DataSource
+name|dataSource
+parameter_list|,
+name|String
+name|userName
+parameter_list|,
+name|String
+name|password
+parameter_list|)
 block|{
 comment|// TODO: maybe remove synchronization and use
 comment|// FastArrayList from commons-collections? After
@@ -178,29 +187,11 @@ literal|10
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-comment|/** Creates new PooledConnection */
-specifier|public
-name|PooledConnectionImpl
-parameter_list|(
-name|DataSource
-name|connectionSource
-parameter_list|,
-name|String
-name|userName
-parameter_list|,
-name|String
-name|password
-parameter_list|)
-block|{
-name|this
-argument_list|()
-expr_stmt|;
 name|this
 operator|.
-name|connectionSource
+name|dataSource
 operator|=
-name|connectionSource
+name|dataSource
 expr_stmt|;
 name|this
 operator|.
@@ -262,7 +253,7 @@ operator|!=
 literal|null
 operator|)
 condition|?
-name|connectionSource
+name|dataSource
 operator|.
 name|getConnection
 argument_list|(
@@ -271,12 +262,14 @@ argument_list|,
 name|password
 argument_list|)
 else|:
-name|connectionSource
+name|dataSource
 operator|.
 name|getConnection
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addConnectionEventListener
@@ -300,6 +293,7 @@ argument_list|(
 name|listener
 argument_list|)
 condition|)
+block|{
 name|connectionEventListeners
 operator|.
 name|add
@@ -309,6 +303,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeConnectionEventListener
@@ -331,6 +328,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|close
@@ -374,6 +373,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Connection
 name|getConnection
@@ -464,14 +465,15 @@ name|close
 argument_list|()
 expr_stmt|;
 else|else
-comment|// notify the listeners that connection is no longer used by application...
+comment|// notify the listeners that connection is no longer used by
+comment|// application...
 name|this
 operator|.
 name|connectionClosedNotification
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * This method creates and sents an event to listeners when an error occurs in the      * underlying connection. Listeners can have special logic to analyze the error and do      * things like closing this PooledConnection (if the error is fatal), etc...      */
+comment|/** 	 * This method creates and sents an event to listeners when an error occurs 	 * in the underlying connection. Listeners can have special logic to analyze 	 * the error and do things like closing this PooledConnection (if the error 	 * is fatal), etc... 	 */
 specifier|public
 name|void
 name|connectionErrorNotification
@@ -494,12 +496,12 @@ if|if
 condition|(
 name|connectionEventListeners
 operator|.
-name|size
+name|isEmpty
 argument_list|()
-operator|==
-literal|0
 condition|)
+block|{
 return|return;
+block|}
 name|ConnectionEvent
 name|closedEvent
 init|=
@@ -513,7 +515,6 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-specifier|final
 name|ConnectionEventListener
 name|nextListener
 range|:
@@ -530,7 +531,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Creates and sends an event to listeners when a user closes java.sql.Connection      * object belonging to this PooledConnection.      */
+comment|/** 	 * Creates and sends an event to listeners when a user closes 	 * java.sql.Connection object belonging to this PooledConnection. 	 */
 specifier|protected
 name|void
 name|connectionClosedNotification
@@ -550,7 +551,9 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return;
+block|}
 name|ConnectionEvent
 name|closedEvent
 init|=
@@ -562,7 +565,6 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-specifier|final
 name|ConnectionEventListener
 name|nextListener
 range|:
@@ -579,8 +581,9 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+comment|/** 	 * @since 3.0 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|addStatementEventListener
@@ -592,11 +595,14 @@ block|{
 throw|throw
 operator|new
 name|UnsupportedOperationException
-argument_list|()
+argument_list|(
+literal|"Statement events are unsupported"
+argument_list|)
 throw|;
 block|}
-comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+comment|/** 	 * @since 3.0 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeStatementEventListener
@@ -608,7 +614,9 @@ block|{
 throw|throw
 operator|new
 name|UnsupportedOperationException
-argument_list|()
+argument_list|(
+literal|"Statement events are unsupported"
+argument_list|)
 throw|;
 block|}
 block|}

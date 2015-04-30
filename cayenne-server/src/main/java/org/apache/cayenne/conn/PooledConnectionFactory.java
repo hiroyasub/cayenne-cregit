@@ -88,13 +88,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PoolDataSource allows to generate pooled connections.  *  *<p>  * It is implemented as a wrapper around a non-pooled data source object.  * Delegates all method calls except for "getPooledConnection" to the underlying  * DataSource.  *   */
+comment|/**  * A {@link ConnectionPoolDataSource} implementation.  *<p>  * It is implemented as a wrapper around a non-pooled data source object.  * Delegates all method calls except for "getPooledConnection" to the underlying  * DataSource.  *   * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|PoolDataSource
+name|PooledConnectionFactory
 implements|implements
 name|ConnectionPoolDataSource
 block|{
@@ -103,7 +103,7 @@ name|DataSource
 name|nonPooledDatasource
 decl_stmt|;
 specifier|public
-name|PoolDataSource
+name|PooledConnectionFactory
 parameter_list|(
 name|DataSource
 name|nonPooledDatasource
@@ -117,7 +117,7 @@ name|nonPooledDatasource
 expr_stmt|;
 block|}
 specifier|public
-name|PoolDataSource
+name|PooledConnectionFactory
 parameter_list|(
 name|String
 name|jdbcDriver
