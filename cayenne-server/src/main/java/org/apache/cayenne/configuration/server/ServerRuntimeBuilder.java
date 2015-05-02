@@ -156,7 +156,6 @@ specifier|public
 class|class
 name|ServerRuntimeBuilder
 block|{
-comment|/** 	 * @since 4.0 	 */
 specifier|static
 specifier|final
 name|String
@@ -214,6 +213,35 @@ specifier|private
 name|String
 name|validationQuery
 decl_stmt|;
+specifier|public
+specifier|static
+name|ServerRuntimeBuilder
+name|builder
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ServerRuntimeBuilder
+argument_list|()
+return|;
+block|}
+specifier|public
+specifier|static
+name|ServerRuntimeBuilder
+name|builder
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ServerRuntimeBuilder
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
 comment|/** 	 * Creates an empty builder. 	 */
 specifier|public
 name|ServerRuntimeBuilder
