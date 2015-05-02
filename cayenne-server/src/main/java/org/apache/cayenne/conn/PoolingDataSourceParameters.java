@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A connection of pooling parameters used by {@link PoolingDataSource}.  *   * @since 4.0  */
+comment|/**  * A collection of pooling parameters used by {@link PoolingDataSource}.  *   * @since 4.0  */
 end_comment
 
 begin_class
