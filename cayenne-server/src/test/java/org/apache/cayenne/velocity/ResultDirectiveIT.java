@@ -404,6 +404,8 @@ argument_list|(
 name|sql
 argument_list|)
 decl_stmt|;
+comment|// TODO: is that correct to use Long (coming from DbAttribute) type for
+comment|// ARTIST_ID instead of Integer (coming from #result(..))?
 name|assertEquals
 argument_list|(
 literal|1l
