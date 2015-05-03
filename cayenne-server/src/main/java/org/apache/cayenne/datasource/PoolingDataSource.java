@@ -253,7 +253,11 @@ literal|"set chained command not allowed"
 argument_list|)
 condition|)
 block|{
-comment|// TODO: the hack is ugly... should we rollback instead here?
+comment|// TODO: doing 'commit' here is extremely dangerous... we need to
+comment|// get a hold of Sybase instance and verify whether this issue is
+comment|// still there, and fix it differently (and perhaps generically) by
+comment|// calling 'rollback' on connections (can we do it when getting
+comment|// connection from the pool? returning it to the pool?)
 name|c
 operator|.
 name|commit
