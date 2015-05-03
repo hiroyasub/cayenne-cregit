@@ -230,72 +230,6 @@ specifier|private
 name|String
 name|validationQuery
 decl_stmt|;
-comment|// An old hack that fixes Sybase problems with autocommit. Used idea from
-comment|// Jonas org.objectweb.jonas.jdbc_xa.ConnectionImpl
-comment|// (http://www.objectweb.org/jonas/).
-comment|//
-comment|// If problem is not the one that can be fixed by this patch, original
-comment|// exception is rethrown. If exception occurs when fixing the problem, new
-comment|// exception is thrown.
-comment|//
-specifier|static
-name|void
-name|sybaseAutoCommitPatch
-parameter_list|(
-name|Connection
-name|c
-parameter_list|,
-name|SQLException
-name|e
-parameter_list|,
-name|boolean
-name|autoCommit
-parameter_list|)
-throws|throws
-name|SQLException
-block|{
-name|String
-name|s
-init|=
-name|e
-operator|.
-name|getMessage
-argument_list|()
-operator|.
-name|toLowerCase
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|s
-operator|.
-name|contains
-argument_list|(
-literal|"set chained command not allowed"
-argument_list|)
-condition|)
-block|{
-name|c
-operator|.
-name|commit
-argument_list|()
-expr_stmt|;
-name|c
-operator|.
-name|setAutoCommit
-argument_list|(
-name|autoCommit
-argument_list|)
-expr_stmt|;
-comment|// Shouldn't fail now.
-block|}
-else|else
-block|{
-throw|throw
-name|e
-throw|;
-block|}
-block|}
 specifier|public
 name|PoolAwareConnection
 parameter_list|(
@@ -453,6 +387,8 @@ block|{
 comment|// ignore exception, since connection is expected to be in a bad
 comment|// state
 block|}
+comment|// TODO: autocommit, tx isolation, and other connection settings may
+comment|// change when resetting connection and need to be restored...
 try|try
 block|{
 name|connection
@@ -1218,7 +1154,8 @@ parameter_list|)
 block|{
 try|try
 block|{
-comment|// apply Sybase patch
+name|PoolingDataSource
+operator|.
 name|sybaseAutoCommitPatch
 argument_list|(
 name|connection

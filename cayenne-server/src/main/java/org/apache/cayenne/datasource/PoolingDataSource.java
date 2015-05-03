@@ -208,6 +208,73 @@ name|PoolingDataSource
 implements|implements
 name|DataSource
 block|{
+comment|// An old hack that fixes Sybase problems with autocommit. Used idea from
+comment|// Jonas org.objectweb.jonas.jdbc_xa.ConnectionImpl
+comment|// (http://www.objectweb.org/jonas/).
+comment|//
+comment|// If problem is not the one that can be fixed by this patch, original
+comment|// exception is rethrown. If exception occurs when fixing the problem, new
+comment|// exception is thrown.
+comment|//
+specifier|static
+name|void
+name|sybaseAutoCommitPatch
+parameter_list|(
+name|Connection
+name|c
+parameter_list|,
+name|SQLException
+name|e
+parameter_list|,
+name|boolean
+name|autoCommit
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+name|String
+name|s
+init|=
+name|e
+operator|.
+name|getMessage
+argument_list|()
+operator|.
+name|toLowerCase
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|s
+operator|.
+name|contains
+argument_list|(
+literal|"set chained command not allowed"
+argument_list|)
+condition|)
+block|{
+comment|// TODO: the hack is ugly... should we rollback instead here?
+name|c
+operator|.
+name|commit
+argument_list|()
+expr_stmt|;
+name|c
+operator|.
+name|setAutoCommit
+argument_list|(
+name|autoCommit
+argument_list|)
+expr_stmt|;
+comment|// Shouldn't fail now.
+block|}
+else|else
+block|{
+throw|throw
+name|e
+throw|;
+block|}
+block|}
 comment|/** 	 * Defines a maximum time in milliseconds that a connection request could 	 * wait in the connection queue. After this period expires, an exception 	 * will be thrown in the calling method. 	 */
 specifier|public
 specifier|static
@@ -944,17 +1011,68 @@ name|validationQuery
 argument_list|)
 return|;
 block|}
+comment|/** 	 * Creates a new connection in a consistent state. 	 */
 name|Connection
 name|createUnwrapped
 parameter_list|()
 throws|throws
 name|SQLException
 block|{
-return|return
+name|Connection
+name|c
+init|=
 name|nonPoolingDataSource
 operator|.
 name|getConnection
 argument_list|()
+decl_stmt|;
+comment|// set default connection state...
+comment|// TODO: tx isolation level?
+if|if
+condition|(
+operator|!
+name|c
+operator|.
+name|getAutoCommit
+argument_list|()
+condition|)
+block|{
+try|try
+block|{
+name|c
+operator|.
+name|setAutoCommit
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|e
+parameter_list|)
+block|{
+name|PoolingDataSource
+operator|.
+name|sybaseAutoCommitPatch
+argument_list|(
+name|c
+argument_list|,
+name|e
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|c
+operator|.
+name|clearWarnings
+argument_list|()
+expr_stmt|;
+return|return
+name|c
 return|;
 block|}
 annotation|@
