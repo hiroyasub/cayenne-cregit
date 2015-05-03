@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 package|;
 end_package
 
@@ -92,6 +92,16 @@ operator|.
 name|sql
 operator|.
 name|PreparedStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|ResultSet
 import|;
 end_import
 
@@ -198,33 +208,36 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ConnectionWrapper is a<code>java.sql.Connection</code> implementation that wraps  * another Connection, delegating method calls to this connection. It works in conjunction  * with PooledConnectionImpl, to generate pool events, provide limited automated  * reconnection functionality, etc.  *   */
+comment|/**  * A {@link Connection} wrapper that interacts with the  * {@link PoolingDataSource}, allowing to recycle connections and track  * failures.  *   * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ConnectionWrapper
+name|PoolAwareConnection
 implements|implements
 name|Connection
 block|{
+specifier|private
+name|PoolingDataSource
+name|parent
+decl_stmt|;
 specifier|private
 name|Connection
 name|connection
 decl_stmt|;
 specifier|private
-name|PooledConnectionImpl
-name|pooledConnection
+name|String
+name|validationQuery
 decl_stmt|;
-specifier|private
-name|long
-name|lastReconnected
-decl_stmt|;
-specifier|private
-name|int
-name|reconnectCount
-decl_stmt|;
-comment|/**      * Fixes Sybase problems with autocommit. Used idea from Jonas      * org.objectweb.jonas.jdbc_xa.ConnectionImpl (http://www.objectweb.org/jonas/).      *<p>      * If problem is not the one that can be fixed by this patch, original exception is      * rethrown. If exception occurs when fixing the problem, new exception is thrown.      *</p>      */
+comment|// An old hack that fixes Sybase problems with autocommit. Used idea from
+comment|// Jonas org.objectweb.jonas.jdbc_xa.ConnectionImpl
+comment|// (http://www.objectweb.org/jonas/).
+comment|//
+comment|// If problem is not the one that can be fixed by this patch, original
+comment|// exception is rethrown. If exception occurs when fixing the problem, new
+comment|// exception is thrown.
+comment|//
 specifier|static
 name|void
 name|sybaseAutoCommitPatch
@@ -283,140 +296,190 @@ name|e
 throw|;
 block|}
 block|}
-comment|/**      * Creates new ConnectionWrapper      */
 specifier|public
-name|ConnectionWrapper
+name|PoolAwareConnection
 parameter_list|(
+name|PoolingDataSource
+name|parent
+parameter_list|,
 name|Connection
 name|connection
 parameter_list|,
-name|PooledConnectionImpl
-name|pooledConnection
+name|String
+name|validationQuery
 parameter_list|)
 block|{
 name|this
 operator|.
+name|parent
+operator|=
+name|parent
+expr_stmt|;
+name|this
+operator|.
 name|connection
 operator|=
 name|connection
 expr_stmt|;
 name|this
 operator|.
-name|pooledConnection
+name|validationQuery
 operator|=
-name|pooledConnection
+name|validationQuery
 expr_stmt|;
 block|}
-specifier|protected
-name|void
-name|reconnect
+name|Connection
+name|getConnection
+parameter_list|()
+block|{
+return|return
+name|connection
+return|;
+block|}
+name|boolean
+name|validate
+parameter_list|()
+block|{
+if|if
+condition|(
+name|validationQuery
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+try|try
+block|{
+name|Statement
+name|statement
+init|=
+name|connection
+operator|.
+name|createStatement
+argument_list|()
+decl_stmt|;
+try|try
+block|{
+name|ResultSet
+name|rs
+init|=
+name|statement
+operator|.
+name|executeQuery
+argument_list|(
+name|validationQuery
+argument_list|)
+decl_stmt|;
+try|try
+block|{
+if|if
+condition|(
+operator|!
+name|rs
+operator|.
+name|next
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|SQLException
+argument_list|(
+literal|"Connection validation failed, no result for query: "
+operator|+
+name|validationQuery
+argument_list|)
+throw|;
+block|}
+block|}
+finally|finally
+block|{
+name|rs
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+finally|finally
+block|{
+name|statement
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+catch|catch
 parameter_list|(
 name|SQLException
-name|exception
+name|e
+parameter_list|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+return|return
+literal|true
+return|;
+block|}
+name|void
+name|recover
+parameter_list|(
+name|SQLException
+name|reconnectCause
 parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// if there was a relatively recent reconnect, just rethrow an error
-comment|// and retire itself. THIS WILL PREVENT RECONNECT LOOPS
-if|if
-condition|(
-name|reconnectCount
-operator|>
-literal|0
-operator|&&
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-operator|-
-name|lastReconnected
-operator|<
-literal|60000
-condition|)
+try|try
 block|{
+name|connection
+operator|.
+name|close
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|e
+parameter_list|)
+block|{
+comment|// ignore exception, since connection is expected to be in a bad
+comment|// state
+block|}
+try|try
+block|{
+name|connection
+operator|=
+name|parent
+operator|.
+name|createUnwrapped
+argument_list|()
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|e
+parameter_list|)
+block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|exception
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
-name|exception
+name|reconnectCause
 throw|;
 block|}
-name|pooledConnection
-operator|.
-name|reconnect
-argument_list|()
-expr_stmt|;
-comment|// Pooled connection will wrap returned connection into
-comment|// another ConnectionWrapper.... lets get the real connection
-comment|// underneath...
-name|Connection
-name|connection
-init|=
-name|pooledConnection
-operator|.
-name|getConnection
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|connection
-operator|instanceof
-name|ConnectionWrapper
-condition|)
-block|{
-name|this
-operator|.
-name|connection
-operator|=
-operator|(
-operator|(
-name|ConnectionWrapper
-operator|)
-name|connection
-operator|)
-operator|.
-name|connection
-expr_stmt|;
-block|}
-else|else
-block|{
-name|this
-operator|.
-name|connection
-operator|=
-name|connection
-expr_stmt|;
-block|}
-name|lastReconnected
-operator|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-expr_stmt|;
-name|reconnectCount
-operator|++
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|retire
-parameter_list|(
-name|SQLException
-name|exception
-parameter_list|)
-block|{
-comment|// notify all the listeners....
-name|pooledConnection
-operator|.
-name|connectionErrorNotification
-argument_list|(
-name|exception
-argument_list|)
-expr_stmt|;
 block|}
 annotation|@
 name|Override
@@ -441,9 +504,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -460,26 +525,12 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-if|if
-condition|(
-literal|null
-operator|!=
-name|pooledConnection
-condition|)
-block|{
-name|pooledConnection
+name|parent
 operator|.
-name|returnConnectionToThePool
-argument_list|()
-expr_stmt|;
-block|}
-name|connection
-operator|=
-literal|null
-expr_stmt|;
-name|pooledConnection
-operator|=
-literal|null
+name|reclaim
+argument_list|(
+name|this
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
@@ -505,9 +556,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -539,13 +592,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createStatement
 argument_list|()
 return|;
@@ -582,16 +636,17 @@ block|}
 catch|catch
 parameter_list|(
 name|SQLException
-name|sqlEx
+name|e
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
-name|sqlEx
+name|e
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createStatement
 argument_list|(
 name|resultSetType
@@ -625,9 +680,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -659,9 +716,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -693,9 +752,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -727,9 +788,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -761,9 +824,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -780,13 +845,6 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-if|if
-condition|(
-name|connection
-operator|!=
-literal|null
-condition|)
-block|{
 try|try
 block|{
 return|return
@@ -802,20 +860,17 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
 name|sqlEx
 throw|;
 block|}
-block|}
-else|else
-return|return
-literal|true
-return|;
 block|}
 annotation|@
 name|Override
@@ -841,9 +896,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -880,9 +937,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -919,13 +978,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareCall
 argument_list|(
 name|sql
@@ -972,13 +1032,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareCall
 argument_list|(
 name|sql
@@ -1019,13 +1080,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareStatement
 argument_list|(
 name|sql
@@ -1072,13 +1134,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareStatement
 argument_list|(
 name|sql
@@ -1113,9 +1176,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1170,9 +1235,11 @@ name|SQLException
 name|patchEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1209,9 +1276,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1247,9 +1316,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1285,9 +1356,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1327,9 +1400,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1373,9 +1448,11 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
+name|parent
+operator|.
 name|retire
 argument_list|(
-name|sqlEx
+name|this
 argument_list|)
 expr_stmt|;
 throw|throw
@@ -1625,16 +1702,17 @@ block|}
 catch|catch
 parameter_list|(
 name|SQLException
-name|sqlEx
+name|e
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
-name|sqlEx
+name|e
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareCall
 argument_list|(
 name|sql
@@ -1679,16 +1757,17 @@ block|}
 catch|catch
 parameter_list|(
 name|SQLException
-name|sqlEx
+name|e
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
-name|sqlEx
+name|e
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareStatement
 argument_list|(
 name|sql
@@ -1730,16 +1809,17 @@ block|}
 catch|catch
 parameter_list|(
 name|SQLException
-name|sqlEx
+name|e
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
-name|sqlEx
+name|e
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareStatement
 argument_list|(
 name|sql
@@ -1784,13 +1864,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|prepareStatement
 argument_list|(
 name|sql
@@ -1800,7 +1881,6 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1836,13 +1916,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createArrayOf
 argument_list|(
 name|typeName
@@ -1852,7 +1933,6 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1877,19 +1957,19 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createBlob
 argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1914,19 +1994,19 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createClob
 argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1962,13 +2042,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createStruct
 argument_list|(
 name|typeName
@@ -1978,7 +2059,6 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2003,19 +2083,19 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|getClientInfo
 argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2045,13 +2125,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|getClientInfo
 argument_list|(
 name|name
@@ -2059,7 +2140,6 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2089,13 +2169,14 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|isValid
 argument_list|(
 name|timeout
@@ -2103,7 +2184,6 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2119,14 +2199,33 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// TODO: we can implement that now.
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+return|return
+operator|(
+name|PoolAwareConnection
+operator|.
+name|class
+operator|.
+name|equals
+argument_list|(
+name|iface
+argument_list|)
+operator|)
+condition|?
+literal|true
+else|:
+name|connection
+operator|.
+name|isWrapperFor
+argument_list|(
+name|iface
+argument_list|)
+return|;
 block|}
-comment|/**      * @since 3.0      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 annotation|@
 name|Override
 specifier|public
@@ -2145,14 +2244,29 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// TODO: we can implement that now.
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
+return|return
+name|PoolAwareConnection
+operator|.
+name|class
+operator|.
+name|equals
+argument_list|(
+name|iface
+argument_list|)
+condition|?
+operator|(
+name|T
+operator|)
+name|this
+else|:
+name|connection
+operator|.
+name|unwrap
+argument_list|(
+name|iface
+argument_list|)
+return|;
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2177,19 +2291,19 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createNClob
 argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -2214,20 +2328,19 @@ name|SQLException
 name|sqlEx
 parameter_list|)
 block|{
-comment|// reconnect has code to prevent loops
-name|reconnect
+name|recover
 argument_list|(
 name|sqlEx
 argument_list|)
 expr_stmt|;
 return|return
+name|connection
+operator|.
 name|createSQLXML
 argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
 annotation|@
 name|Override
 specifier|public
@@ -2247,8 +2360,6 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
 annotation|@
 name|Override
 specifier|public
@@ -2271,7 +2382,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|// JDBC 4.1 compatibility pre Java 7
 specifier|public
 name|void
 name|setSchema
@@ -2288,7 +2399,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|// JDBC 4.1 compatibility pre Java 7
 specifier|public
 name|String
 name|getSchema
@@ -2302,7 +2413,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|// JDBC 4.1 compatibility pre Java 7
 specifier|public
 name|void
 name|abort
@@ -2319,7 +2430,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|// JDBC 4.1 compatibility pre Java 7
 specifier|public
 name|void
 name|setNetworkTimeout
@@ -2339,7 +2450,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|// JDBC 4.1 compatibility pre Java 7
 specifier|public
 name|int
 name|getNetworkTimeout

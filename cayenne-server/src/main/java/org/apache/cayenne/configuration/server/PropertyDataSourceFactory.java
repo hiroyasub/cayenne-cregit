@@ -89,7 +89,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 operator|.
 name|DataSourceBuilder
 import|;
@@ -103,7 +103,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 operator|.
 name|PoolingDataSource
 import|;

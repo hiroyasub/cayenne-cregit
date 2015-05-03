@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 package|;
 end_package
 
