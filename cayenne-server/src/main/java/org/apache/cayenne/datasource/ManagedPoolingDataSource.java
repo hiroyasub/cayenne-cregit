@@ -125,6 +125,7 @@ name|dataSource
 operator|=
 name|dataSource
 expr_stmt|;
+comment|// wake every 2 minutes...
 name|this
 operator|.
 name|dataSourceManager
@@ -133,6 +134,8 @@ operator|new
 name|PoolingDataSourceManager
 argument_list|(
 name|dataSource
+argument_list|,
+literal|120000
 argument_list|)
 expr_stmt|;
 name|dataSourceManager
@@ -141,11 +144,29 @@ name|start
 argument_list|()
 expr_stmt|;
 block|}
+name|PoolingDataSourceManager
+name|getDataSourceManager
+parameter_list|()
+block|{
+return|return
+name|dataSourceManager
+return|;
+block|}
+comment|/** 	 * Calls {@link #shutdown()} to drain the underlying pool, close open 	 * connections and block the DataSource from creating any new connections. 	 */
 annotation|@
 name|Override
 specifier|public
 name|void
 name|beforeScopeEnd
+parameter_list|()
+block|{
+name|shutdown
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|shutdown
 parameter_list|()
 block|{
 comment|// swap the underlying DataSource to prevent further interaction with
@@ -161,6 +182,8 @@ name|dataSource
 argument_list|)
 expr_stmt|;
 comment|// shut down the thread..
+name|this
+operator|.
 name|dataSourceManager
 operator|.
 name|shutdown

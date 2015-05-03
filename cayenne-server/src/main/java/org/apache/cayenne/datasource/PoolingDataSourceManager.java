@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Manages the state of a {@link PoolingDataSource} instance, performing  * periodic expansion/contraction of pooled connections, and orchestrating  * shutdown.  *   * @since 4.0  */
+comment|/**  * A thread that manages the state of a {@link PoolingDataSource} instance,  * performing periodic expansion/contraction of pooled connections, and  * orchestrating shutdown.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -34,15 +34,22 @@ specifier|private
 name|PoolingDataSource
 name|dataSource
 decl_stmt|;
+specifier|private
+name|long
+name|managerWakeTime
+decl_stmt|;
 name|PoolingDataSourceManager
 parameter_list|(
 name|PoolingDataSource
 name|dataSource
+parameter_list|,
+name|long
+name|managerWakeTime
 parameter_list|)
 block|{
 name|setName
 argument_list|(
-literal|"PoolManagerCleanup-"
+literal|"PoolingDataSourceManager-"
 operator|+
 name|dataSource
 operator|.
@@ -67,8 +74,13 @@ name|shouldStop
 operator|=
 literal|false
 expr_stmt|;
+name|this
+operator|.
+name|managerWakeTime
+operator|=
+name|managerWakeTime
+expr_stmt|;
 block|}
-specifier|public
 name|void
 name|shutdown
 parameter_list|()
@@ -86,6 +98,22 @@ name|interrupt
 argument_list|()
 expr_stmt|;
 block|}
+name|PoolingDataSource
+name|getDataSource
+parameter_list|()
+block|{
+return|return
+name|dataSource
+return|;
+block|}
+name|boolean
+name|isStopped
+parameter_list|()
+block|{
+return|return
+name|shouldStop
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -100,12 +128,11 @@ condition|)
 block|{
 try|try
 block|{
-comment|// don't do it too often
 name|Thread
 operator|.
 name|sleep
 argument_list|(
-literal|600000
+name|managerWakeTime
 argument_list|)
 expr_stmt|;
 block|}
