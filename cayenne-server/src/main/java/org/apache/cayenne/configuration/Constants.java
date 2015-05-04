@@ -146,6 +146,15 @@ name|JDBC_MAX_CONNECTIONS_PROPERTY
 init|=
 literal|"cayenne.jdbc.max_connections"
 decl_stmt|;
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|JDBC_VALIDATION_QUERY_PROPERTY
+init|=
+literal|"cayenne.jdbc.validation_query"
+decl_stmt|;
 comment|/** 	 * An integer property defining the maximum number of entries in the query 	 * cache. Note that not all QueryCache providers may respect this property. 	 * MapQueryCache uses it, but the rest would use alternative configuration 	 * methods. 	 */
 specifier|public
 specifier|static

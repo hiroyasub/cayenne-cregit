@@ -19,30 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Connection
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|DataNode
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -55,7 +31,35 @@ name|translator
 operator|.
 name|select
 operator|.
-name|SelectTranslator
+name|DefaultSelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EntityResolver
 import|;
 end_import
 
@@ -81,29 +85,29 @@ begin_class
 class|class
 name|HSQLSelectTranslator
 extends|extends
-name|SelectTranslator
+name|DefaultSelectTranslator
 block|{
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|HSQLSelectTranslator
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
-name|DataNode
-name|dataNode
+name|DbAdapter
+name|adapter
 parameter_list|,
-name|Connection
-name|connection
+name|EntityResolver
+name|entityResolver
 parameter_list|)
 block|{
 name|super
 argument_list|(
 name|query
 argument_list|,
-name|dataNode
+name|adapter
 argument_list|,
-name|connection
+name|entityResolver
 argument_list|)
 expr_stmt|;
 block|}
@@ -151,7 +155,8 @@ argument_list|(
 literal|" LIMIT "
 argument_list|)
 expr_stmt|;
-comment|// both OFFSET and LIMIT must be present, so come up with defaults if one of
+comment|// both OFFSET and LIMIT must be present, so come up with defaults
+comment|// if one of
 comment|// them is not set by the user
 if|if
 condition|(

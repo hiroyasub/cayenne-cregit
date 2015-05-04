@@ -75,9 +75,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -485,7 +483,7 @@ specifier|public
 name|BindingsTransformer
 name|encryptor
 parameter_list|(
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -631,7 +629,7 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
-name|BatchParameterBinding
+name|ParameterBinding
 name|b
 init|=
 name|bindings

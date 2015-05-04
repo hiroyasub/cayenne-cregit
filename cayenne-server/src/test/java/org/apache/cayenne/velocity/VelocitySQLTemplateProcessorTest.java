@@ -137,7 +137,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -1440,7 +1440,7 @@ literal|"Not a binding!"
 argument_list|,
 name|binding
 operator|instanceof
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1449,7 +1449,7 @@ name|expectedValue
 argument_list|,
 operator|(
 operator|(
-name|ParameterBinding
+name|SQLParameterBinding
 operator|)
 name|binding
 operator|)
@@ -1476,7 +1476,7 @@ literal|"Not a binding!"
 argument_list|,
 name|binding
 operator|instanceof
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1485,7 +1485,7 @@ name|expectedType
 argument_list|,
 operator|(
 operator|(
-name|ParameterBinding
+name|SQLParameterBinding
 operator|)
 name|binding
 operator|)

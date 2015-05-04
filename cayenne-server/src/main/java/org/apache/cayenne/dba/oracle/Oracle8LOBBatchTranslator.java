@@ -71,9 +71,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|batch
-operator|.
-name|BatchParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -544,7 +542,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|createBindings
 parameter_list|()
@@ -568,12 +566,12 @@ operator|.
 name|size
 argument_list|()
 decl_stmt|;
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 init|=
 operator|new
-name|BatchParameterBinding
+name|ParameterBinding
 index|[
 name|len
 index|]
@@ -609,7 +607,7 @@ name|i
 index|]
 operator|=
 operator|new
-name|BatchParameterBinding
+name|ParameterBinding
 argument_list|(
 name|attribute
 argument_list|)
@@ -622,7 +620,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|BatchParameterBinding
+name|ParameterBinding
 index|[]
 name|doUpdateBindings
 parameter_list|(
@@ -656,7 +654,7 @@ name|i
 operator|++
 control|)
 block|{
-name|BatchParameterBinding
+name|ParameterBinding
 name|b
 init|=
 name|bindings

@@ -154,6 +154,14 @@ name|XMLSerializable
 block|{
 specifier|private
 specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|3748394113864532902L
+decl_stmt|;
+specifier|private
+specifier|static
 name|Log
 name|logger
 init|=
@@ -165,6 +173,38 @@ name|DataSourceInfo
 operator|.
 name|class
 argument_list|)
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PASSWORD_LOCATION_CLASSPATH
+init|=
+literal|"classpath"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PASSWORD_LOCATION_EXECUTABLE
+init|=
+literal|"executable"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PASSWORD_LOCATION_MODEL
+init|=
+literal|"model"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|PASSWORD_LOCATION_URL
+init|=
+literal|"url"
 decl_stmt|;
 specifier|protected
 name|String
@@ -198,40 +238,6 @@ name|maxConnections
 init|=
 literal|1
 decl_stmt|;
-comment|// Constants for passwordLocation
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PASSWORD_LOCATION_CLASSPATH
-init|=
-literal|"classpath"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PASSWORD_LOCATION_EXECUTABLE
-init|=
-literal|"executable"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PASSWORD_LOCATION_MODEL
-init|=
-literal|"model"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|PASSWORD_LOCATION_URL
-init|=
-literal|"url"
-decl_stmt|;
-comment|// Extended parameters
 specifier|protected
 name|String
 name|passwordEncoderClass
@@ -296,18 +302,22 @@ name|obj
 operator|==
 name|this
 condition|)
+block|{
 return|return
 literal|true
 return|;
+block|}
 if|if
 condition|(
 name|obj
 operator|==
 literal|null
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 name|obj
@@ -320,9 +330,11 @@ operator|.
 name|getClass
 argument_list|()
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 name|DataSourceInfo
 name|dsi
 init|=
@@ -347,9 +359,11 @@ operator|.
 name|userName
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -366,9 +380,11 @@ operator|.
 name|password
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -385,9 +401,11 @@ operator|.
 name|jdbcDriver
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -404,9 +422,11 @@ operator|.
 name|dataSourceUrl
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -423,9 +443,11 @@ operator|.
 name|adapterClassName
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 name|this
@@ -436,9 +458,11 @@ name|dsi
 operator|.
 name|minConnections
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 name|this
@@ -449,9 +473,11 @@ name|dsi
 operator|.
 name|maxConnections
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -468,9 +494,11 @@ operator|.
 name|passwordEncoderClass
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -487,9 +515,11 @@ operator|.
 name|passwordEncoderKey
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -506,9 +536,11 @@ operator|.
 name|passwordSourceFilename
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -525,9 +557,11 @@ operator|.
 name|passwordSourceModel
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -544,9 +578,11 @@ operator|.
 name|passwordSourceUrl
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 operator|!
@@ -563,14 +599,16 @@ operator|.
 name|passwordLocation
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 return|return
 literal|true
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|encodeAsXML
@@ -803,7 +841,8 @@ name|passwordLocation
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: this is very not nice... we need to clean up the whole DataSourceInfo
+comment|// TODO: this is very not nice... we need to clean up the whole
+comment|// DataSourceInfo
 comment|// to avoid returning arbitrary labels...
 name|String
 name|passwordSource
@@ -1057,7 +1096,7 @@ return|return
 name|dataSourceUrl
 return|;
 block|}
-comment|/**      * @deprecated since 4.0 as class loading should not happen here.      */
+comment|/** 	 * @deprecated since 4.0 as class loading should not happen here. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1135,7 +1174,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @return the passwordEncoderClass      */
+comment|/** 	 * @return the passwordEncoderClass 	 */
 specifier|public
 name|String
 name|getPasswordEncoderClass
@@ -1145,7 +1184,7 @@ return|return
 name|passwordEncoderClass
 return|;
 block|}
-comment|/**      * @param passwordEncoderClass the passwordEncoderClass to set      */
+comment|/** 	 * @param passwordEncoderClass 	 *            the passwordEncoderClass to set 	 */
 specifier|public
 name|void
 name|setPasswordEncoderClass
@@ -1179,7 +1218,7 @@ operator|=
 name|passwordEncoderClass
 expr_stmt|;
 block|}
-comment|/**      * @return the passwordEncoderKey      */
+comment|/** 	 * @return the passwordEncoderKey 	 */
 specifier|public
 name|String
 name|getPasswordEncoderKey
@@ -1189,7 +1228,7 @@ return|return
 name|passwordEncoderKey
 return|;
 block|}
-comment|/**      * @param passwordEncoderKey the passwordEncoderKey to set      */
+comment|/** 	 * @param passwordEncoderKey 	 *            the passwordEncoderKey to set 	 */
 specifier|public
 name|void
 name|setPasswordEncoderKey
@@ -1205,7 +1244,7 @@ operator|=
 name|passwordEncoderKey
 expr_stmt|;
 block|}
-comment|/**      * @return the passwordLocationFilename      */
+comment|/** 	 * @return the passwordLocationFilename 	 */
 specifier|public
 name|String
 name|getPasswordSourceFilename
@@ -1215,7 +1254,7 @@ return|return
 name|passwordSourceFilename
 return|;
 block|}
-comment|/**      * @param passwordSourceFilename the passwordSourceFilename to set      */
+comment|/** 	 * @param passwordSourceFilename 	 *            the passwordSourceFilename to set 	 */
 specifier|public
 name|void
 name|setPasswordSourceFilename
@@ -1231,7 +1270,7 @@ operator|=
 name|passwordSourceFilename
 expr_stmt|;
 block|}
-comment|/**      * @return the passwordLocationModel      */
+comment|/** 	 * @return the passwordLocationModel 	 */
 specifier|public
 name|String
 name|getPasswordSourceModel
@@ -1241,7 +1280,7 @@ return|return
 name|passwordSourceModel
 return|;
 block|}
-comment|/**      * @return the passwordLocationUrl      */
+comment|/** 	 * @return the passwordLocationUrl 	 */
 specifier|public
 name|String
 name|getPasswordSourceUrl
@@ -1251,7 +1290,7 @@ return|return
 name|passwordSourceUrl
 return|;
 block|}
-comment|/**      * @param passwordSourceUrl the passwordSourceUrl to set      */
+comment|/** 	 * @param passwordSourceUrl 	 *            the passwordSourceUrl to set 	 */
 specifier|public
 name|void
 name|setPasswordSourceUrl
@@ -1267,7 +1306,7 @@ operator|=
 name|passwordSourceUrl
 expr_stmt|;
 block|}
-comment|/**      * @return the passwordLocationExecutable      */
+comment|/** 	 * @return the passwordLocationExecutable 	 */
 specifier|public
 name|String
 name|getPasswordSourceExecutable
@@ -1277,7 +1316,7 @@ return|return
 name|passwordSourceExecutable
 return|;
 block|}
-comment|/**      * @param passwordSourceExecutable the passwordSourceExecutable to set      */
+comment|/** 	 * @param passwordSourceExecutable 	 *            the passwordSourceExecutable to set 	 */
 specifier|public
 name|void
 name|setPasswordSourceExecutable
@@ -1417,7 +1456,7 @@ name|passwordSource
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @return the passwordLocation      */
+comment|/** 	 * @return the passwordLocation 	 */
 specifier|public
 name|String
 name|getPasswordLocation
@@ -1427,7 +1466,7 @@ return|return
 name|passwordLocation
 return|;
 block|}
-comment|/**      * @param passwordLocation the passwordLocation to set      */
+comment|/** 	 * @param passwordLocation 	 *            the passwordLocation to set 	 */
 specifier|public
 name|void
 name|setPasswordLocation

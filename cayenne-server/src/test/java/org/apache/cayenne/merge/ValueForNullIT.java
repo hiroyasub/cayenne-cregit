@@ -131,7 +131,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -604,7 +604,7 @@ block|{
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|SQLParameterBinding
 name|get
 parameter_list|(
 name|DbEntity
@@ -634,7 +634,7 @@ name|VARCHAR
 case|:
 return|return
 operator|new
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|(
 name|DEFAULT_VALUE_STRING
 argument_list|,

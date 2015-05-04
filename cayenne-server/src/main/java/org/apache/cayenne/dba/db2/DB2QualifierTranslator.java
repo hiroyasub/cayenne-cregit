@@ -478,8 +478,6 @@ parameter_list|,
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|SimpleNode
 name|parent

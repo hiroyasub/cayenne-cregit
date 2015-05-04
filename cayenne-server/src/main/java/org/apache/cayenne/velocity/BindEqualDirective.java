@@ -47,7 +47,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -99,7 +99,7 @@ parameter_list|,
 name|Writer
 name|writer
 parameter_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 name|binding
 parameter_list|)
 throws|throws

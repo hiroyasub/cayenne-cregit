@@ -11,9 +11,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|datasource
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|datasource
+operator|.
+name|DriverDataSource
+import|;
+end_import
 
 begin_import
 import|import

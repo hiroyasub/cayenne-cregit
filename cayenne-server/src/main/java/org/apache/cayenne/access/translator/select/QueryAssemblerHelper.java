@@ -320,14 +320,14 @@ name|QueryAssembler
 name|queryAssembler
 decl_stmt|;
 specifier|protected
-name|Appendable
+name|StringBuilder
 name|out
 decl_stmt|;
 specifier|protected
 name|QuotingStrategy
 name|strategy
 decl_stmt|;
-comment|/**      * Creates QueryAssemblerHelper initializing with parent      * {@link QueryAssembler} and output buffer object.      */
+comment|/** 	 * Creates QueryAssemblerHelper initializing with parent 	 * {@link QueryAssembler} and output buffer object. 	 */
 specifier|public
 name|QueryAssemblerHelper
 parameter_list|(
@@ -360,7 +360,10 @@ block|{
 return|return
 name|queryAssembler
 operator|.
-name|getRootEntity
+name|getQueryMetadata
+argument_list|()
+operator|.
+name|getObjEntity
 argument_list|()
 return|;
 block|}
@@ -372,25 +375,21 @@ block|{
 return|return
 name|queryAssembler
 operator|.
-name|getRootDbEntity
+name|getQueryMetadata
+argument_list|()
+operator|.
+name|getDbEntity
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
-parameter_list|<
-name|T
-extends|extends
-name|Appendable
-parameter_list|>
-name|T
+name|StringBuilder
 name|appendPart
 parameter_list|(
-name|T
+name|StringBuilder
 name|out
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|this
 operator|.
@@ -405,11 +404,11 @@ return|return
 name|out
 return|;
 block|}
-comment|/**      * Sets ouput buffer      */
+comment|/** 	 * Sets ouput buffer 	 */
 name|void
 name|setOut
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|)
 block|{
@@ -420,8 +419,8 @@ operator|=
 name|out
 expr_stmt|;
 block|}
-comment|/**      * @return output buffer      */
-name|Appendable
+comment|/** 	 * @return output buffer 	 */
+name|StringBuilder
 name|getOut
 parameter_list|()
 block|{
@@ -429,16 +428,14 @@ return|return
 name|out
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|protected
 specifier|abstract
 name|void
 name|doAppendPart
 parameter_list|()
-throws|throws
-name|IOException
 function_decl|;
-comment|/**      *<p>Outputs the standard JDBC (database agnostic) expression for supplying      * the escape character to the database server when supplying a LIKE clause.      * This has been factored-out because some database adaptors handle LIKE      * differently and they need access to this common method in order not to      * repeat this code.      *<p>      * If there is no escape character defined then this method will not output      * anything. An escape character of 0 will mean no escape character.      *       * @since 3.1      */
+comment|/** 	 *<p> 	 * Outputs the standard JDBC (database agnostic) expression for supplying 	 * the escape character to the database server when supplying a LIKE clause. 	 * This has been factored-out because some database adaptors handle LIKE 	 * differently and they need access to this common method in order not to 	 * repeat this code. 	 *<p> 	 * If there is no escape character defined then this method will not output 	 * anything. An escape character of 0 will mean no escape character. 	 *  	 * @since 3.1 	 */
 specifier|protected
 name|void
 name|appendLikeEscapeCharacter
@@ -502,7 +499,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Processes parts of the OBJ_PATH expression.      */
+comment|/** 	 * Processes parts of the OBJ_PATH expression. 	 */
 specifier|protected
 name|void
 name|appendObjPath
@@ -510,8 +507,6 @@ parameter_list|(
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|queryAssembler
 operator|.
@@ -844,8 +839,6 @@ parameter_list|(
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|queryAssembler
 operator|.
@@ -1065,8 +1058,6 @@ parameter_list|(
 name|DbAttribute
 name|dbAttr
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|processColumnWithQuoteSqlIdentifiers
 argument_list|(
@@ -1086,8 +1077,6 @@ parameter_list|,
 name|Expression
 name|pathExp
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|String
 name|alias
@@ -1129,7 +1118,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Appends SQL code to the query buffer to handle<code>val</code> as a      * parameter to the PreparedStatement being built. Adds<code>val</code>      * into QueryAssembler parameter list.      *<p>      * If<code>val</code> is null, "NULL" is appended to the query.      *</p>      *<p>      * If<code>val</code> is a DataObject, its primary key value is used as a      * parameter.<i>Only objects with a single column primary key can be      * used.</i>      *       * @param val      *            object that should be appended as a literal to the query. Must      *            be of one of "standard JDBC" types, null or a DataObject.      * @param attr      *            DbAttribute that has information on what type of parameter is      *            being appended.      */
+comment|/** 	 * Appends SQL code to the query buffer to handle<code>val</code> as a 	 * parameter to the PreparedStatement being built. Adds<code>val</code> 	 * into QueryAssembler parameter list. 	 *<p> 	 * If<code>val</code> is null, "NULL" is appended to the query. 	 *</p> 	 *<p> 	 * If<code>val</code> is a DataObject, its primary key value is used as a 	 * parameter.<i>Only objects with a single column primary key can be 	 * used.</i> 	 *  	 * @param val 	 *            object that should be appended as a literal to the query. Must 	 *            be of one of "standard JDBC" types, null or a DataObject. 	 * @param attr 	 *            DbAttribute that has information on what type of parameter is 	 *            being appended. 	 */
 specifier|protected
 name|void
 name|appendLiteral
@@ -1463,7 +1452,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Appends SQL code to the query buffer to handle<code>val</code> as a      * parameter to the PreparedStatement being built. Adds<code>val</code>      * into QueryAssembler parameter list.      */
+comment|/** 	 * Appends SQL code to the query buffer to handle<code>val</code> as a 	 * parameter to the PreparedStatement being built. Adds<code>val</code> 	 * into QueryAssembler parameter list. 	 */
 specifier|protected
 name|void
 name|appendLiteralDirect
@@ -1487,9 +1476,6 @@ argument_list|(
 literal|'?'
 argument_list|)
 expr_stmt|;
-comment|// we are hoping that when processing parameter list,
-comment|// the correct type will be
-comment|// guessed without looking at DbAttribute...
 name|queryAssembler
 operator|.
 name|addToParamList
@@ -1500,7 +1486,7 @@ name|val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns database type of expression parameters or null if it can not be      * determined.      */
+comment|/** 	 * Returns database type of expression parameters or null if it can not be 	 * determined. 	 */
 specifier|protected
 name|DbAttribute
 name|paramsDbType
@@ -1865,7 +1851,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Processes case when an OBJ_PATH expression ends with relationship. If      * this is a "to many" relationship, a join is added and a column expression      * for the target entity primary key. If this is a "to one" relationship,      * column expression for the source foreign key is added.      *       * @since 3.0      */
+comment|/** 	 * Processes case when an OBJ_PATH expression ends with relationship. If 	 * this is a "to many" relationship, a join is added and a column expression 	 * for the target entity primary key. If this is a "to one" relationship, 	 * column expression for the source foreign key is added. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|processRelTermination
@@ -1879,8 +1865,6 @@ parameter_list|,
 name|String
 name|joinSplitAlias
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|Iterator
 argument_list|<
@@ -1951,7 +1935,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Handles case when a DB_NAME expression ends with relationship. If this is      * a "to many" relationship, a join is added and a column expression for the      * target entity primary key. If this is a "to one" relationship, column      * expression for the source foreign key is added.      *       * @since 3.0      */
+comment|/** 	 * Handles case when a DB_NAME expression ends with relationship. If this is 	 * a "to many" relationship, a join is added and a column expression for the 	 * target entity primary key. If this is a "to one" relationship, column 	 * expression for the source foreign key is added. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|processRelTermination
@@ -1965,8 +1949,6 @@ parameter_list|,
 name|String
 name|joinSplitAlias
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 if|if
 condition|(

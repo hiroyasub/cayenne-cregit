@@ -67,7 +67,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|ParameterBinding
+name|SQLParameterBinding
 import|;
 end_import
 
@@ -111,7 +111,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|>
 name|values
 init|=
@@ -120,7 +120,7 @@ name|HashMap
 argument_list|<
 name|String
 argument_list|,
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|>
 argument_list|()
 decl_stmt|;
@@ -153,7 +153,7 @@ name|column
 argument_list|)
 argument_list|,
 operator|new
-name|ParameterBinding
+name|SQLParameterBinding
 argument_list|(
 name|value
 argument_list|,
@@ -168,7 +168,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
-name|ParameterBinding
+name|SQLParameterBinding
 name|get
 parameter_list|(
 name|DbEntity
@@ -206,7 +206,7 @@ name|DbAttribute
 name|column
 parameter_list|)
 block|{
-name|ParameterBinding
+name|SQLParameterBinding
 name|value
 init|=
 name|get

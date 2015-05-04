@@ -23,16 +23,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|List
@@ -266,7 +256,7 @@ specifier|private
 name|int
 name|aliasCounter
 decl_stmt|;
-comment|/**      * Helper class to process DbEntity qualifiers      */
+comment|/** 	 * Helper class to process DbEntity qualifiers 	 */
 specifier|private
 name|QualifierTranslator
 name|qualifierTranslator
@@ -339,7 +329,7 @@ name|getTargetTableAlias
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns the number of configured joins.      */
+comment|/** 	 * Returns the number of configured joins. 	 */
 specifier|protected
 name|int
 name|size
@@ -358,14 +348,12 @@ block|}
 name|void
 name|appendRootWithQuoteSqlIdentifiers
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|,
 name|DbEntity
 name|rootEntity
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|out
 operator|.
@@ -404,16 +392,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Appends all configured joins to the provided output object.      */
+comment|/** 	 * Appends all configured joins to the provided output object. 	 */
 specifier|protected
 name|void
 name|appendJoins
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 comment|// skip root, recursively append its children
 for|for
@@ -440,14 +426,12 @@ specifier|protected
 name|void
 name|appendJoinSubtree
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|,
 name|JoinTreeNode
 name|node
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|DbRelationship
 name|relationship
@@ -683,7 +667,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Attaching root Db entity's qualifier          */
+comment|/** 		 * Attaching root Db entity's qualifier 		 */
 name|Expression
 name|dbQualifier
 init|=
@@ -769,23 +753,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Append join information to the qualifier - the part after "WHERE".      */
+comment|/** 	 * Append join information to the qualifier - the part after "WHERE". 	 */
 specifier|protected
 name|void
 name|appendQualifier
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|,
 name|boolean
 name|firstQualifierElement
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 comment|// nothing as standard join is performed before "WHERE"
 block|}
-comment|/**      * Pops the stack all the way to the root node.      */
+comment|/** 	 * Pops the stack all the way to the root node. 	 */
 name|void
 name|resetStack
 parameter_list|()
@@ -795,7 +777,7 @@ operator|=
 name|rootNode
 expr_stmt|;
 block|}
-comment|/**      * Finds or creates a JoinTreeNode for the given arguments and sets it as      * the next current join.      */
+comment|/** 	 * Finds or creates a JoinTreeNode for the given arguments and sets it as 	 * the next current join. 	 */
 name|void
 name|pushJoin
 parameter_list|(
@@ -835,7 +817,7 @@ name|aliasCounter
 operator|++
 return|;
 block|}
-comment|/**      * Class to translate *joined* DB Entity qualifiers annotation to *current*      * Obj-entity qualifiers annotation This is done by changing all Obj-paths      * to concatenated Db-paths to root entity and rejecting all original      * Db-paths      */
+comment|/** 	 * Class to translate *joined* DB Entity qualifiers annotation to *current* 	 * Obj-entity qualifiers annotation This is done by changing all Obj-paths 	 * to concatenated Db-paths to root entity and rejecting all original 	 * Db-paths 	 */
 class|class
 name|JoinedDbEntityQualifierTransformer
 implements|implements
@@ -881,7 +863,7 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-comment|/**                  * We must be in the same join as 'node', otherwise incorrect                  * join statement like JOIN t1 ... ON (t0.id=t1.id AND                  * t2.qualifier=0) could be generated                  */
+comment|/** 				 * We must be in the same join as 'node', otherwise incorrect 				 * join statement like JOIN t1 ... ON (t0.id=t1.id AND 				 * t2.qualifier=0) could be generated 				 */
 if|if
 condition|(
 name|node

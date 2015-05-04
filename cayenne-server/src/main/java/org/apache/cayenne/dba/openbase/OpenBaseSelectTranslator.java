@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Connection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -37,7 +27,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|DataNode
+name|translator
+operator|.
+name|select
+operator|.
+name|DefaultSelectTranslator
 import|;
 end_import
 
@@ -67,13 +61,23 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dba
 operator|.
-name|translator
+name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|select
+name|apache
 operator|.
-name|SelectTranslator
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EntityResolver
 import|;
 end_import
 
@@ -99,29 +103,29 @@ begin_class
 class|class
 name|OpenBaseSelectTranslator
 extends|extends
-name|SelectTranslator
+name|DefaultSelectTranslator
 block|{
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|OpenBaseSelectTranslator
 parameter_list|(
 name|Query
 name|query
 parameter_list|,
-name|DataNode
-name|dataNode
+name|DbAdapter
+name|adapter
 parameter_list|,
-name|Connection
-name|connection
+name|EntityResolver
+name|entityResolver
 parameter_list|)
 block|{
 name|super
 argument_list|(
 name|query
 argument_list|,
-name|dataNode
+name|adapter
 argument_list|,
-name|connection
+name|entityResolver
 argument_list|)
 expr_stmt|;
 block|}

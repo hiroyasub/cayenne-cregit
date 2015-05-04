@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Connection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -165,10 +155,7 @@ name|Override
 specifier|protected
 name|SelectTranslator
 name|createTranslator
-parameter_list|(
-name|Connection
-name|connection
-parameter_list|)
+parameter_list|()
 block|{
 return|return
 operator|new
@@ -177,8 +164,14 @@ argument_list|(
 name|query
 argument_list|,
 name|dataNode
+operator|.
+name|getAdapter
+argument_list|()
 argument_list|,
-name|connection
+name|dataNode
+operator|.
+name|getEntityResolver
+argument_list|()
 argument_list|)
 return|;
 block|}

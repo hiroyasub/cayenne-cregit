@@ -21,16 +21,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|List
@@ -162,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * OpenBase does not support standard JOIN keyword and have strange syntax for defining  * inner/outer joins  *   * @see http  *      ://www.openbase.com/help/KnowledgeBase/400_OpenBaseSQL/401_SelectStatements.html  * @since 3.0  */
+comment|/**  * OpenBase does not support standard JOIN keyword and have strange syntax for  * defining inner/outer joins  *   * @see http ://www.openbase.com/help/KnowledgeBase/  *      400_OpenBaseSQL/401_SelectStatements.html  * @since 3.0  */
 end_comment
 
 begin_class
@@ -200,14 +190,12 @@ specifier|protected
 name|void
 name|appendJoinSubtree
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|,
 name|JoinTreeNode
 name|node
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|DbRelationship
 name|relationship
@@ -296,14 +284,12 @@ specifier|protected
 name|void
 name|appendQualifier
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|,
 name|boolean
 name|firstQualifierElement
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|boolean
 name|first
@@ -352,14 +338,12 @@ specifier|protected
 name|void
 name|appendQualifierSubtree
 parameter_list|(
-name|Appendable
+name|StringBuilder
 name|out
 parameter_list|,
 name|JoinTreeNode
 name|node
 parameter_list|)
-throws|throws
-name|IOException
 block|{
 name|DbRelationship
 name|relationship
