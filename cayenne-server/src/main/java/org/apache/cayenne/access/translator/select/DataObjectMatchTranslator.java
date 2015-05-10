@@ -407,7 +407,8 @@ name|values
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 return|return;
 block|}
