@@ -71,16 +71,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|TIMESTAMP_PROPERTY
-init|=
-literal|"timestamp"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final

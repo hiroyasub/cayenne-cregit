@@ -71,16 +71,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|DATE_PROPERTY
-init|=
-literal|"date"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
