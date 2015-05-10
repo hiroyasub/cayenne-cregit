@@ -8,6 +8,10 @@ operator|.
 name|cayenne
 operator|.
 name|joda
+operator|.
+name|access
+operator|.
+name|types
 package|;
 end_package
 
@@ -18,6 +22,8 @@ operator|.
 name|apache
 operator|.
 name|cayenne
+operator|.
+name|joda
 operator|.
 name|access
 operator|.

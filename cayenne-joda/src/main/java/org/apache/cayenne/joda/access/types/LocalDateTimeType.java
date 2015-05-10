@@ -11,11 +11,29 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|joda
+operator|.
 name|access
 operator|.
 name|types
 package|;
 end_package
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ExtendedType
+import|;
+end_import
 
 begin_import
 import|import
@@ -80,7 +98,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>org.joda.time.LocalDateTime</code> type mapping.  */
+comment|/**  * Handles<code>org.joda.time.LocalDateTime</code> type mapping.  *   * @since 4.0  */
 end_comment
 
 begin_class
