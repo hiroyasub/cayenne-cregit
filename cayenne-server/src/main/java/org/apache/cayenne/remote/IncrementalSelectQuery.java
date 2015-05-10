@@ -17,6 +17,36 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -329,38 +359,8 @@ name|XMLEncoder
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
 begin_comment
-comment|/**  * A SelectQuery decorator that overrides the metadata to ensure that query result is  * cached on the server, so that subranges could be retrieved at a later time. Note that a  * special decorator that is a subclass of SelectQuery is needed so that  * {@link IncrementalFaultList} on the server-side could apply SelectQuery-specific  * optimizations.  *   * @since 3.0  */
+comment|/**  * A SelectQuery decorator that overrides the metadata to ensure that query  * result is cached on the server, so that subranges could be retrieved at a  * later time. Note that a special decorator that is a subclass of SelectQuery  * is needed so that {@link IncrementalFaultList} on the server-side could apply  * SelectQuery-specific optimizations.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -432,8 +432,10 @@ argument_list|(
 name|resolver
 argument_list|)
 decl_stmt|;
-comment|// the way paginated queries work on the server is that they are never cached
-comment|// (IncrementalFaultList interception happens before cache interception). So
+comment|// the way paginated queries work on the server is that they are never
+comment|// cached
+comment|// (IncrementalFaultList interception happens before cache
+comment|// interception). So
 comment|// overriding caching settings in the metadata will only affect
 comment|// ClientServerChannel behavior
 return|return
@@ -1355,9 +1357,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-parameter_list|<
-name|T
-parameter_list|>
 name|List
 argument_list|<
 name|T
@@ -1418,9 +1417,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-parameter_list|<
-name|T
-parameter_list|>
 name|void
 name|iterate
 parameter_list|(

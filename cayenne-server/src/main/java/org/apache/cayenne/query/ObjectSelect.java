@@ -2288,9 +2288,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-parameter_list|<
-name|T
-parameter_list|>
 name|void
 name|iterate
 parameter_list|(

@@ -16,6 +16,64 @@ package|;
 end_package
 
 begin_import
+import|import static
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+operator|.
+name|singletonMap
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|ExpressionFactory
+operator|.
+name|matchAllDbExp
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
 import|import
 name|org
 operator|.
@@ -138,64 +196,6 @@ operator|.
 name|map
 operator|.
 name|ObjEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import static
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-operator|.
-name|singletonMap
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|ExpressionFactory
-operator|.
-name|matchAllDbExp
 import|;
 end_import
 
@@ -672,7 +672,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Since we are selecting by ID, multiple matched objects likely      * indicate a database referential integrity problem.      */
+comment|/** 	 * Since we are selecting by ID, multiple matched objects likely indicate a 	 * database referential integrity problem. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -692,7 +692,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Since we are selecting by ID, we don't need to limit fetch size.      * Multiple matched objects likely indicate a database referential integrity problem.      */
+comment|/** 	 * Since we are selecting by ID, we don't need to limit fetch size. Multiple 	 * matched objects likely indicate a database referential integrity problem. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -713,9 +713,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-parameter_list|<
-name|T
-parameter_list|>
 name|void
 name|iterate
 parameter_list|(
@@ -794,7 +791,7 @@ name|size
 argument_list|)
 return|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *      *<pre>      * query.cacheStrategy(QueryCacheStrategy.LOCAL_CACHE, cacheGroups);      *</pre>      *      * @since 4.0.M3      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 * 	 *<pre> 	 * query.cacheStrategy(QueryCacheStrategy.LOCAL_CACHE, cacheGroups); 	 *</pre> 	 * 	 * @since 4.0.M3 	 */
 specifier|public
 name|SelectById
 argument_list|<
@@ -818,7 +815,7 @@ name|cacheGroups
 argument_list|)
 return|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *      *<pre>      * query.cacheStrategy(QueryCacheStrategy.SHARED_CACHE, cacheGroups);      *</pre>      *      * @since 4.0.M3      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 * 	 *<pre> 	 * query.cacheStrategy(QueryCacheStrategy.SHARED_CACHE, cacheGroups); 	 *</pre> 	 * 	 * @since 4.0.M3 	 */
 specifier|public
 name|SelectById
 argument_list|<
@@ -842,7 +839,7 @@ name|cacheGroups
 argument_list|)
 return|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *      * @deprecated since 4.0.M3 use {@link #localCache(String...)}      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 * 	 * @deprecated since 4.0.M3 use {@link #localCache(String...)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -864,7 +861,7 @@ name|cacheGroups
 argument_list|)
 return|;
 block|}
-comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *      * @deprecated since 4.0.M3 use {@link #sharedCache(String...)}      */
+comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 * 	 * @deprecated since 4.0.M3 use {@link #sharedCache(String...)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
