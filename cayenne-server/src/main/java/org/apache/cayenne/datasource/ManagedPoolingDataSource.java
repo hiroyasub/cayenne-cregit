@@ -119,13 +119,31 @@ name|PoolingDataSource
 name|dataSource
 parameter_list|)
 block|{
+comment|// wake every 2 minutes...
+name|this
+argument_list|(
+name|dataSource
+argument_list|,
+literal|120000
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|ManagedPoolingDataSource
+parameter_list|(
+name|PoolingDataSource
+name|dataSource
+parameter_list|,
+name|long
+name|managerWakeTime
+parameter_list|)
+block|{
 name|this
 operator|.
 name|dataSource
 operator|=
 name|dataSource
 expr_stmt|;
-comment|// wake every 2 minutes...
 name|this
 operator|.
 name|dataSourceManager
@@ -135,7 +153,7 @@ name|PoolingDataSourceManager
 argument_list|(
 name|dataSource
 argument_list|,
-literal|120000
+name|managerWakeTime
 argument_list|)
 expr_stmt|;
 name|dataSourceManager
