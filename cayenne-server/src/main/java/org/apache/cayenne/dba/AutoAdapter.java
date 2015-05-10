@@ -17,6 +17,36 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|PreparedStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -92,6 +122,24 @@ operator|.
 name|select
 operator|.
 name|QueryAssembler
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
 import|;
 end_import
 
@@ -189,6 +237,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|merge
 operator|.
 name|MergerFactory
@@ -225,36 +287,20 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|sql
+name|apache
 operator|.
-name|PreparedStatement
-import|;
-end_import
-
-begin_import
-import|import
-name|java
+name|cayenne
 operator|.
-name|sql
+name|query
 operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
+name|SelectQuery
 import|;
 end_import
 
 begin_comment
-comment|/**  * A DbAdapter that automatically detects the kind of database it is running on and  * instantiates an appropriate DB-specific adapter, delegating all subsequent method calls  * to this adapter.  *   * @since 1.2  */
+comment|/**  * A DbAdapter that automatically detects the kind of database it is running on  * and instantiates an appropriate DB-specific adapter, delegating all  * subsequent method calls to this adapter.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -279,12 +325,12 @@ specifier|protected
 name|JdbcEventLogger
 name|logger
 decl_stmt|;
-comment|/**      * The actual adapter that is delegated methods execution.      */
+comment|/** 	 * The actual adapter that is delegated methods execution. 	 */
 specifier|volatile
 name|DbAdapter
 name|adapter
 decl_stmt|;
-comment|/**      * Creates an {@link AutoAdapter} based on a delegate adapter obtained via      * "adapterProvider".      *       * @since 3.1      */
+comment|/** 	 * Creates an {@link AutoAdapter} based on a delegate adapter obtained via 	 * "adapterProvider". 	 *  	 * @since 3.1 	 */
 specifier|public
 name|AutoAdapter
 parameter_list|(
@@ -326,7 +372,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
-comment|/**      * Returns a proxied DbAdapter, lazily creating it on first invocation.      */
+comment|/** 	 * Returns a proxied DbAdapter, lazily creating it on first invocation. 	 */
 specifier|protected
 name|DbAdapter
 name|getAdapter
@@ -365,7 +411,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * Loads underlying DbAdapter delegate.      */
+comment|/** 	 * Loads underlying DbAdapter delegate. 	 */
 specifier|protected
 name|DbAdapter
 name|loadAdapter
@@ -376,6 +422,35 @@ name|adapterProvider
 operator|.
 name|get
 argument_list|()
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+name|getAdapter
+argument_list|()
+operator|.
+name|getSelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|entityResolver
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -645,7 +720,7 @@ name|getExtendedTypes
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a primary key generator.      */
+comment|/** 	 * Returns a primary key generator. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -669,7 +744,7 @@ name|getPkGenerator
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets a PK generator override. If set to non-null value, such PK generator will be      * used instead of the one provided by wrapped adapter.      */
+comment|/** 	 * Sets a PK generator override. If set to non-null value, such PK generator 	 * will be used instead of the one provided by wrapped adapter. 	 */
 specifier|public
 name|void
 name|setPkGenerator
@@ -842,7 +917,7 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 4.0      */
+comment|/** 	 * @deprecated since 4.0 	 */
 annotation|@
 name|Deprecated
 annotation|@
@@ -865,7 +940,7 @@ name|isQuoteStrategy
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -881,7 +956,7 @@ name|getQuotingStrategy
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -894,7 +969,7 @@ name|getAdapter
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public

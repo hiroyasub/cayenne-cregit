@@ -93,6 +93,24 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|types
 operator|.
 name|ExtendedType
@@ -235,6 +253,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|merge
 operator|.
 name|MergerFactory
@@ -266,6 +298,20 @@ operator|.
 name|query
 operator|.
 name|SQLAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SelectQuery
 import|;
 end_import
 
@@ -361,7 +407,36 @@ name|resourceLocator
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Generate fully-qualified name for 1.8 and on. Subclass generates      * unqualified name.      *       * @since 1.2      */
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|new
+name|HSQLSelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Generate fully-qualified name for 1.8 and on. Subclass generates 	 * unqualified name. 	 *  	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|getTableName
@@ -379,7 +454,7 @@ name|entity
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns DbEntity schema name for 1.8 and on. Subclass generates      * unqualified name.      *       * @since 1.2      */
+comment|/** 	 * Returns DbEntity schema name for 1.8 and on. Subclass generates 	 * unqualified name. 	 *  	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|getSchemaName
@@ -395,7 +470,7 @@ name|getSchema
 argument_list|()
 return|;
 block|}
-comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
+comment|/** 	 * Uses special action builder to create the right action. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -422,7 +497,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a DDL string to create a unique constraint over a set of columns.      *       * @since 1.1      */
+comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns. 	 *  	 * @since 1.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -631,7 +706,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Adds an ADD CONSTRAINT clause to a relationship constraint.      *       * @see JdbcAdapter#createFkConstraint(DbRelationship)      */
+comment|/** 	 * Adds an ADD CONSTRAINT clause to a relationship constraint. 	 *  	 * @see JdbcAdapter#createFkConstraint(DbRelationship) 	 */
 annotation|@
 name|Override
 specifier|public
@@ -890,7 +965,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Uses "CREATE CACHED TABLE" instead of "CREATE TABLE".      *       * @since 1.2      */
+comment|/** 	 * Uses "CREATE CACHED TABLE" instead of "CREATE TABLE". 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public

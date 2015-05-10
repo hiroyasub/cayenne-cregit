@@ -133,6 +133,24 @@ name|translator
 operator|.
 name|select
 operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
 name|TrimmingQualifierTranslator
 import|;
 end_import
@@ -293,7 +311,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbEntity
+name|EntityResolver
 import|;
 end_import
 
@@ -336,6 +354,20 @@ operator|.
 name|query
 operator|.
 name|SQLAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SelectQuery
 import|;
 end_import
 
@@ -449,6 +481,35 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|new
+name|IngresSelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
+argument_list|)
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -534,7 +595,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @see JdbcAdapter#createPkGenerator()      */
+comment|/** 	 * @see JdbcAdapter#createPkGenerator() 	 */
 annotation|@
 name|Override
 specifier|protected

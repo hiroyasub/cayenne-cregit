@@ -109,6 +109,24 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|types
 operator|.
 name|ExtendedType
@@ -181,6 +199,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|Query
@@ -209,6 +241,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|resource
 operator|.
 name|ResourceLocator
@@ -216,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A flavor of OracleAdapter that implements workarounds for some old driver limitations.  *   * @since 1.2  */
+comment|/**  * A flavor of OracleAdapter that implements workarounds for some old driver  * limitations.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -378,7 +424,36 @@ return|return
 name|outputStreamFromBlobMethod
 return|;
 block|}
-comment|/**      * Uses OracleActionBuilder to create the right action.      */
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|new
+name|Oracle8SelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Uses OracleActionBuilder to create the right action. 	 */
 annotation|@
 name|Override
 specifier|public

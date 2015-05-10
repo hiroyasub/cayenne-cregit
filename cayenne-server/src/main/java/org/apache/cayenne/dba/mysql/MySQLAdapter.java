@@ -225,6 +225,24 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|types
 operator|.
 name|ByteArrayType
@@ -457,6 +475,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|merge
 operator|.
 name|MergerFactory
@@ -499,6 +531,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|resource
 operator|.
 name|ResourceLocator
@@ -506,7 +552,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.  *<h3>  * Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by  * MyISAM engine. This adapter by default assumes MyISAM, so  *<code>supportsFkConstraints</code> will  * be false. Users can manually change this by calling  *<em>setSupportsFkConstraints(true)</em> or better by using an  * {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the adapter  * name at all for the DataNode, letting Cayenne guess it in runtime. In the  * later case Cayenne will check the<em>table_type</em> MySQL variable to  * detect whether InnoDB is the default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc:mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  */
+comment|/**  * DbAdapter implementation for<a href="http://www.mysql.com">MySQL RDBMS</a>.  *<h3>  * Foreign Key Constraint Handling</h3>  *<p>  * Foreign key constraints are supported by InnoDB engine and NOT supported by  * MyISAM engine. This adapter by default assumes MyISAM, so  *<code>supportsFkConstraints</code> will be false. Users can manually change  * this by calling<em>setSupportsFkConstraints(true)</em> or better by using an  * {@link org.apache.cayenne.dba.AutoAdapter}, i.e. not entering the adapter  * name at all for the DataNode, letting Cayenne guess it in runtime. In the  * later case Cayenne will check the<em>table_type</em> MySQL variable to  * detect whether InnoDB is the default, and configure the adapter accordingly.  *<h3>Sample Connection Settings</h3>  *<ul>  *<li>Adapter name: org.apache.cayenne.dba.mysql.MySQLAdapter</li>  *<li>DB URL: jdbc:mysql://serverhostname/dbname</li>  *<li>Driver Class: com.mysql.jdbc.Driver</li>  *</ul>  */
 end_comment
 
 begin_class
@@ -673,6 +719,34 @@ block|}
 annotation|@
 name|Override
 specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|new
+name|MySQLSelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
+argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|QualifierTranslator
 name|getQualifierTranslator
 parameter_list|(
@@ -700,7 +774,7 @@ return|return
 name|translator
 return|;
 block|}
-comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
+comment|/** 	 * Uses special action builder to create the right action. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -727,7 +801,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -789,7 +863,7 @@ literal|"SET FOREIGN_KEY_CHECKS=1"
 argument_list|)
 return|;
 block|}
-comment|/**      * Installs appropriate ExtendedTypes used as converters for passing values      * between JDBC and Java layers.      */
+comment|/** 	 * Installs appropriate ExtendedTypes used as converters for passing values 	 * between JDBC and Java layers. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -1202,7 +1276,7 @@ name|sqlType
 return|;
 block|}
 block|}
-comment|/**      * Creates and returns a primary key generator. Overrides superclass      * implementation to return an instance of MySQLPkGenerator that does the      * correct table locking.      */
+comment|/** 	 * Creates and returns a primary key generator. Overrides superclass 	 * implementation to return an instance of MySQLPkGenerator that does the 	 * correct table locking. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -1218,7 +1292,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -1244,7 +1318,7 @@ return|return
 name|translatorFactory
 return|;
 block|}
-comment|/**      * Overrides super implementation to explicitly set table engine to InnoDB      * if FK constraints are supported by this adapter.      */
+comment|/** 	 * Overrides super implementation to explicitly set table engine to InnoDB 	 * if FK constraints are supported by this adapter. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1283,7 +1357,7 @@ return|return
 name|ddlSQL
 return|;
 block|}
-comment|/**      * Customizes PK clause semantics to ensure that generated columns are in      * the beginning of the PK definition, as this seems to be a requirement for      * InnoDB tables.      *       * @since 1.2      */
+comment|/** 	 * Customizes PK clause semantics to ensure that generated columns are in 	 * the beginning of the PK definition, as this seems to be a requirement for 	 * InnoDB tables. 	 *  	 * @since 1.2 	 */
 comment|// See CAY-358 for details of the InnoDB problem
 annotation|@
 name|Override
@@ -1541,7 +1615,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Appends AUTO_INCREMENT clause to the column definition for generated      * columns.      */
+comment|/** 	 * Appends AUTO_INCREMENT clause to the column definition for generated 	 * columns. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1805,7 +1879,8 @@ name|int
 name|type
 parameter_list|)
 block|{
-comment|// As of MySQL 5.6.4 the "TIMESTAMP" and "TIME" types support length, which is the number of decimal places for fractional seconds
+comment|// As of MySQL 5.6.4 the "TIMESTAMP" and "TIME" types support length,
+comment|// which is the number of decimal places for fractional seconds
 comment|// http://dev.mysql.com/doc/refman/5.6/en/fractional-seconds.html
 switch|switch
 condition|(
@@ -1913,7 +1988,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getStorageEngine
@@ -1923,7 +1998,7 @@ return|return
 name|storageEngine
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setStorageEngine

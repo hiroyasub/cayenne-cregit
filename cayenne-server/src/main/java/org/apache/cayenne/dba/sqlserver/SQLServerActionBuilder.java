@@ -87,20 +87,6 @@ name|SQLAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 1.2  */
 end_comment
@@ -112,7 +98,7 @@ name|SQLServerActionBuilder
 extends|extends
 name|JdbcActionBuilder
 block|{
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|SQLServerActionBuilder
 parameter_list|(
@@ -137,7 +123,8 @@ name|query
 parameter_list|)
 block|{
 comment|// check run strategy...
-comment|// optimistic locking is not supported in batches due to JDBC driver limitations
+comment|// optimistic locking is not supported in batches due to JDBC driver
+comment|// limitations
 name|boolean
 name|useOptimisticLock
 init|=
@@ -169,32 +156,6 @@ argument_list|,
 name|dataNode
 argument_list|,
 name|runningAsBatch
-argument_list|)
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-parameter_list|<
-name|T
-parameter_list|>
-name|SQLAction
-name|objectSelectAction
-parameter_list|(
-name|SelectQuery
-argument_list|<
-name|T
-argument_list|>
-name|query
-parameter_list|)
-block|{
-return|return
-operator|new
-name|SQLServerSelectAction
-argument_list|(
-name|query
-argument_list|,
-name|dataNode
 argument_list|)
 return|;
 block|}

@@ -89,7 +89,11 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|DataNode
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
 import|;
 end_import
 
@@ -275,9 +279,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|Query
+name|EntityResolver
 import|;
 end_import
 
@@ -291,7 +295,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLAction
+name|SelectQuery
 import|;
 end_import
 
@@ -310,7 +314,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.frontbase.com/">FrontBase RDBMS</a>.  * Sample connection settings to use with FrontBase are shown below:  *   *<pre>  *          fb.jdbc.username = _system  *          fb.jdbc.password = secret  *          fb.jdbc.url = jdbc:FrontBase://localhost/cayenne/  *          fb.jdbc.driver = jdbc.FrontBase.FBJDriver  *</pre>  *   * @since 1.2  */
+comment|/**  * DbAdapter implementation for<a href="http://www.frontbase.com/">FrontBase  * RDBMS</a>. Sample connection settings to use with FrontBase are shown below:  *   *<pre>  *          fb.jdbc.username = _system  *          fb.jdbc.password = secret  *          fb.jdbc.url = jdbc:FrontBase://localhost/cayenne/  *          fb.jdbc.driver = jdbc.FrontBase.FBJDriver  *</pre>  *   * @since 1.2  */
 end_comment
 
 begin_comment
@@ -326,11 +330,19 @@ comment|//
 end_comment
 
 begin_comment
-comment|// 1. Case insensitive ordering (i.e. UPPER in the ORDER BY clause) is supported by
+comment|// 1. Case insensitive ordering (i.e. UPPER in the ORDER BY clause) is supported
 end_comment
 
 begin_comment
-comment|// FrontBase, however aliases don't work ( ORDER BY UPPER(t0.ARTIST_NAME)) ... not sure
+comment|// by
+end_comment
+
+begin_comment
+comment|// FrontBase, however aliases don't work ( ORDER BY UPPER(t0.ARTIST_NAME)) ...
+end_comment
+
+begin_comment
+comment|// not sure
 end_comment
 
 begin_comment
@@ -416,30 +428,32 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Uses special action builder to create the right action.      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
-name|SQLAction
-name|getAction
+name|SelectTranslator
+name|getSelectTranslator
 parameter_list|(
-name|Query
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|query
 parameter_list|,
-name|DataNode
-name|node
+name|EntityResolver
+name|entityResolver
 parameter_list|)
 block|{
 return|return
-name|query
-operator|.
-name|createSQLAction
-argument_list|(
 operator|new
-name|FrontBaseActionBuilder
+name|FrontBaseSelectTranslator
 argument_list|(
-name|node
-argument_list|)
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
 argument_list|)
 return|;
 block|}
@@ -499,7 +513,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Customizes table creating procedure for FrontBase.      */
+comment|/** 	 * Customizes table creating procedure for FrontBase. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -722,8 +736,10 @@ argument_list|(
 name|type
 argument_list|)
 expr_stmt|;
-comment|// Mapping LONGVARCHAR without length creates a column with length "1" which
-comment|// is definitely not what we want...so just use something very large (1Gb seems
+comment|// Mapping LONGVARCHAR without length creates a column with length
+comment|// "1" which
+comment|// is definitely not what we want...so just use something very large
+comment|// (1Gb seems
 comment|// to be the limit for FB)
 if|if
 condition|(
@@ -1079,7 +1095,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Adds the CASCADE option to the DROP TABLE clause.      */
+comment|/** 	 * Adds the CASCADE option to the DROP TABLE clause. 	 */
 annotation|@
 name|Override
 specifier|public

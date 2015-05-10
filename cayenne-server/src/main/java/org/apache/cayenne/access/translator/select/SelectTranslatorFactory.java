@@ -11,9 +11,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
+name|access
 operator|.
-name|oracle
+name|translator
+operator|.
+name|select
 package|;
 end_package
 
@@ -25,9 +27,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dba
 operator|.
-name|DataNode
+name|DbAdapter
 import|;
 end_import
 
@@ -39,13 +41,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|translator
-operator|.
-name|select
-operator|.
-name|SelectTranslator
+name|EntityResolver
 import|;
 end_import
 
@@ -64,65 +62,33 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * A factory for {@link SelectTranslator} objects.  *   * @since 4.0  */
 end_comment
 
-begin_class
-class|class
-name|Oracle8SelectAction
-extends|extends
-name|OracleSelectAction
+begin_interface
+specifier|public
+interface|interface
+name|SelectTranslatorFactory
 block|{
-parameter_list|<
-name|T
-parameter_list|>
-name|Oracle8SelectAction
+comment|/** 	 * Creates a proper translator for a BatchQuery 	 */
+name|SelectTranslator
+name|translator
 parameter_list|(
 name|SelectQuery
 argument_list|<
-name|T
+name|?
 argument_list|>
 name|query
 parameter_list|,
-name|DataNode
-name|dataNode
+name|DbAdapter
+name|adapter
+parameter_list|,
+name|EntityResolver
+name|entityResolver
 parameter_list|)
-block|{
-name|super
-argument_list|(
-name|query
-argument_list|,
-name|dataNode
-argument_list|)
-expr_stmt|;
+function_decl|;
 block|}
-annotation|@
-name|Override
-specifier|protected
-name|SelectTranslator
-name|createTranslator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|Oracle8SelectTranslator
-argument_list|(
-name|query
-argument_list|,
-name|dataNode
-operator|.
-name|getAdapter
-argument_list|()
-argument_list|,
-name|dataNode
-operator|.
-name|getEntityResolver
-argument_list|()
-argument_list|)
-return|;
-block|}
-block|}
-end_class
+end_interface
 
 end_unit
 

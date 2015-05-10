@@ -87,6 +87,24 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|types
 operator|.
 name|ExtendedType
@@ -189,6 +207,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|merge
 operator|.
 name|MergerFactory
@@ -231,6 +263,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|resource
 operator|.
 name|ResourceLocator
@@ -238,7 +284,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>Cayenne DbAdapter implementation for<a href="http://www.microsoft.com/sql/">Microsoft  * SQL Server</a> engine.</p><h3>Microsoft Driver Settings</h3>  *<p>  * Sample connection settings to use with MS SQL Server are shown below:  *   *<pre>  *       sqlserver.jdbc.username = test  *       sqlserver.jdbc.password = secret  *       sqlserver.jdbc.url = jdbc:sqlserver://192.168.0.65;databaseName=cayenne;SelectMethod=cursor  *       sqlserver.jdbc.driver = com.microsoft.sqlserver.jdbc.SQLServerDriver  *</pre>  *<p>  *<i>Note on case-sensitive LIKE: if your application requires case-sensitive LIKE  * support, ask your DBA to configure the database to use a case-senstitive collation (one  * with "CS" in symbolic collation name instead of "CI", e.g.  * "SQL_Latin1_general_CP1_CS_AS").</i>  *</p>  *<h3>jTDS Driver Settings</h3>  *<p>  * jTDS is an open source driver that can be downloaded from<a href=  * "http://jtds.sourceforge.net">http://jtds.sourceforge.net</a>. It supports both  * SQLServer and Sybase. Sample SQLServer settings are the following:  *</p>  *   *<pre>  *       sqlserver.jdbc.username = test  *       sqlserver.jdbc.password = secret  *       sqlserver.jdbc.url = jdbc:jtds:sqlserver://192.168.0.65/cayenne  *       sqlserver.jdbc.driver = net.sourceforge.jtds.jdbc.Driver  *</pre>  *   * @since 1.1  */
+comment|/**  *<p>  * Cayenne DbAdapter implementation for<a  * href="http://www.microsoft.com/sql/">Microsoft SQL Server</a> engine.  *</p>  *<h3>Microsoft Driver Settings</h3>  *<p>  * Sample connection settings to use with MS SQL Server are shown below:  *   *<pre>  *       sqlserver.jdbc.username = test  *       sqlserver.jdbc.password = secret  *       sqlserver.jdbc.url = jdbc:sqlserver://192.168.0.65;databaseName=cayenne;SelectMethod=cursor  *       sqlserver.jdbc.driver = com.microsoft.sqlserver.jdbc.SQLServerDriver  *</pre>  *<p>  *<i>Note on case-sensitive LIKE: if your application requires case-sensitive  * LIKE support, ask your DBA to configure the database to use a case-senstitive  * collation (one with "CS" in symbolic collation name instead of "CI", e.g.  * "SQL_Latin1_general_CP1_CS_AS").</i>  *</p>  *<h3>jTDS Driver Settings</h3>  *<p>  * jTDS is an open source driver that can be downloaded from<a href=  * "http://jtds.sourceforge.net">http://jtds.sourceforge.net</a>. It supports  * both SQLServer and Sybase. Sample SQLServer settings are the following:  *</p>  *   *<pre>  *       sqlserver.jdbc.username = test  *       sqlserver.jdbc.password = secret  *       sqlserver.jdbc.url = jdbc:jtds:sqlserver://192.168.0.65/cayenne  *       sqlserver.jdbc.driver = net.sourceforge.jtds.jdbc.Driver  *</pre>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -339,7 +385,36 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Uses SQLServerActionBuilder to create the right action.      *       * @since 1.2      */
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|new
+name|SQLServerSelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
+argument_list|)
+return|;
+block|}
+comment|/** 	 * Uses SQLServerActionBuilder to create the right action. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -366,7 +441,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a trimming translator.      */
+comment|/** 	 * Returns a trimming translator. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -401,7 +476,7 @@ return|return
 name|translator
 return|;
 block|}
-comment|/**      * Overrides super implementation to correctly set up identity columns.      *       * @since 1.2      */
+comment|/** 	 * Overrides super implementation to correctly set up identity columns. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public

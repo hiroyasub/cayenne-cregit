@@ -99,20 +99,6 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|DataNode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|translator
 operator|.
 name|select
@@ -136,6 +122,24 @@ operator|.
 name|select
 operator|.
 name|QueryAssembler
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
 import|;
 end_import
 
@@ -367,6 +371,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|EntityResolver
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|merge
 operator|.
 name|MergerFactory
@@ -383,21 +401,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SQLAction
+name|SelectQuery
 import|;
 end_import
 
@@ -416,7 +420,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>. Sample  * connection settings to use with OpenBase are shown below:  *   *<pre>  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *   * @since 1.1  */
+comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *   *<pre>  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -501,30 +505,32 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Uses special action builder to create the right action.      *       * @since 1.2      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
-name|SQLAction
-name|getAction
+name|SelectTranslator
+name|getSelectTranslator
 parameter_list|(
-name|Query
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|query
 parameter_list|,
-name|DataNode
-name|node
+name|EntityResolver
+name|entityResolver
 parameter_list|)
 block|{
 return|return
-name|query
-operator|.
-name|createSQLAction
-argument_list|(
 operator|new
-name|OpenBaseActionBuilder
+name|OpenBaseSelectTranslator
 argument_list|(
-name|node
-argument_list|)
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
 argument_list|)
 return|;
 block|}
@@ -628,7 +634,7 @@ name|allowNulls
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns word "go".      */
+comment|/** 	 * Returns word "go". 	 */
 annotation|@
 name|Override
 specifier|public
@@ -640,7 +646,7 @@ return|return
 literal|"go"
 return|;
 block|}
-comment|/**      * Returns null, since views are not yet supported in openbase.      */
+comment|/** 	 * Returns null, since views are not yet supported in openbase. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -653,7 +659,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns OpenBase-specific translator for queries.      */
+comment|/** 	 * Returns OpenBase-specific translator for queries. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -672,7 +678,7 @@ name|queryAssembler
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of OpenBasePkGenerator that uses built-in multi-server primary      * key generation.      */
+comment|/** 	 * Creates and returns a primary key generator. Overrides superclass 	 * implementation to return an instance of OpenBasePkGenerator that uses 	 * built-in multi-server primary key generation. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -688,7 +694,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a SQL string that can be used to create database table corresponding to      *<code>ent</code> parameter.      */
+comment|/** 	 * Returns a SQL string that can be used to create database table 	 * corresponding to<code>ent</code> parameter. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1049,7 +1055,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a SQL string that can be used to create a foreign key constraint for the      * relationship.      */
+comment|/** 	 * Returns a SQL string that can be used to create a foreign key constraint 	 * for the relationship. 	 */
 annotation|@
 name|Override
 specifier|public

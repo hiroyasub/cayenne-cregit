@@ -199,6 +199,24 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|types
 operator|.
 name|ByteType
@@ -333,20 +351,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|QuotingStrategy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|Inject
@@ -378,6 +382,20 @@ operator|.
 name|map
 operator|.
 name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|EntityResolver
 import|;
 end_import
 
@@ -461,6 +479,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|UpdateBatchQuery
 import|;
 end_import
@@ -480,7 +512,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS</a>. Sample  * connection settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *</pre>  */
+comment|/**  * DbAdapter implementation for<a href="http://www.oracle.com">Oracle RDBMS  *</a>. Sample connection settings to use with Oracle are shown below:  *   *<pre>  *          test-oracle.jdbc.username = test  *          test-oracle.jdbc.password = secret  *          test-oracle.jdbc.url = jdbc:oracle:thin:@//192.168.0.20:1521/ora1   *          test-oracle.jdbc.driver = oracle.jdbc.driver.OracleDriver  *</pre>  */
 end_comment
 
 begin_class
@@ -567,8 +599,10 @@ name|supportsOracleLOB
 decl_stmt|;
 static|static
 block|{
-comment|// TODO: as CAY-234 shows, having such initialization done in a static fashion
-comment|// makes it untestable and any potential problems hard to reproduce. Make this
+comment|// TODO: as CAY-234 shows, having such initialization done in a static
+comment|// fashion
+comment|// makes it untestable and any potential problems hard to reproduce.
+comment|// Make this
 comment|// an instance method (with all the affected vars) and write unit tests.
 name|initDriverInformation
 argument_list|()
@@ -644,7 +678,7 @@ return|return
 name|supportsOracleLOB
 return|;
 block|}
-comment|/**      * Utility method that returns<code>true</code> if the query will update at least one      * BLOB or CLOB DbAttribute.      *       * @since 1.2      */
+comment|/** 	 * Utility method that returns<code>true</code> if the query will update at 	 * least one BLOB or CLOB DbAttribute. 	 *  	 * @since 1.2 	 */
 specifier|static
 name|boolean
 name|updatesLOBColumns
@@ -745,7 +779,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Returns an Oracle JDBC extension type defined in      * oracle.jdbc.driver.OracleTypes.CURSOR. This value is determined from Oracle driver      * classes via reflection in runtime, so that Cayenne code has no compile dependency      * on the driver. This means that calling this method when the driver is not available      * will result in an exception.      */
+comment|/** 	 * Returns an Oracle JDBC extension type defined in 	 * oracle.jdbc.driver.OracleTypes.CURSOR. This value is determined from 	 * Oracle driver classes via reflection in runtime, so that Cayenne code has 	 * no compile dependency on the driver. This means that calling this method 	 * when the driver is not available will result in an exception. 	 */
 specifier|public
 specifier|static
 name|int
@@ -848,7 +882,36 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|SelectTranslator
+name|getSelectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|,
+name|EntityResolver
+name|entityResolver
+parameter_list|)
+block|{
+return|return
+operator|new
+name|OracleSelectTranslator
+argument_list|(
+name|query
+argument_list|,
+name|this
+argument_list|,
+name|entityResolver
+argument_list|)
+return|;
+block|}
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -862,7 +925,7 @@ name|OracleEJBQLTranslatorFactory
 argument_list|()
 return|;
 block|}
-comment|/**      * Installs appropriate ExtendedTypes as converters for passing values between JDBC      * and Java layers.      */
+comment|/** 	 * Installs appropriate ExtendedTypes as converters for passing values 	 * between JDBC and Java layers. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -943,7 +1006,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates and returns a primary key generator. Overrides superclass implementation to      * return an instance of OraclePkGenerator.      */
+comment|/** 	 * Creates and returns a primary key generator. Overrides superclass 	 * implementation to return an instance of OraclePkGenerator. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -959,7 +1022,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a query string to drop a table corresponding to<code>ent</code> DbEntity.      * Changes superclass behavior to drop all related foreign key constraints.      *       * @since 3.0      */
+comment|/** 	 * Returns a query string to drop a table corresponding to<code>ent</code> 	 * DbEntity. Changes superclass behavior to drop all related foreign key 	 * constraints. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1018,7 +1081,8 @@ name|SQLException
 throws|,
 name|Exception
 block|{
-comment|// Oracle doesn't support BOOLEAN even when binding NULL, so have to intercept
+comment|// Oracle doesn't support BOOLEAN even when binding NULL, so have to
+comment|// intercept
 comment|// NULL Boolean here, as super doesn't pass it through ExtendedType...
 if|if
 condition|(
@@ -1081,7 +1145,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Fixes some reverse engineering problems. Namely if a columns is created as DECIMAL      * and has non-positive precision it is converted to INTEGER.      */
+comment|/** 	 * Fixes some reverse engineering problems. Namely if a columns is created 	 * as DECIMAL and has non-positive precision it is converted to INTEGER. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1285,7 +1349,7 @@ return|return
 name|attr
 return|;
 block|}
-comment|/**      * Returns a trimming translator.      */
+comment|/** 	 * Returns a trimming translator. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1316,7 +1380,7 @@ return|return
 name|translator
 return|;
 block|}
-comment|/**      * Uses OracleActionBuilder to create the right action.      *       * @since 1.2      */
+comment|/** 	 * Uses OracleActionBuilder to create the right action. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1343,7 +1407,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|final
 class|class
 name|OracleBooleanType
@@ -1390,7 +1454,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Oracle does not support Types.BOOLEAN, so we have to override user mapping
+comment|// Oracle does not support Types.BOOLEAN, so we have to override
+comment|// user mapping
 comment|// unconditionally
 if|if
 condition|(
@@ -1458,7 +1523,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Oracle does not support Types.BOOLEAN, so we have to override user mapping
+comment|// Oracle does not support Types.BOOLEAN, so we have to override
+comment|// user mapping
 comment|// unconditionally
 name|int
 name|i
@@ -1509,7 +1575,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// Oracle does not support Types.BOOLEAN, so we have to override user mapping
+comment|// Oracle does not support Types.BOOLEAN, so we have to override
+comment|// user mapping
 comment|// unconditionally
 name|int
 name|i

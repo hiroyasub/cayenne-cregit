@@ -221,6 +221,42 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|DefaultSelectTranslatorFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslatorFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|types
 operator|.
 name|BigDecimalType
@@ -1255,7 +1291,7 @@ name|String
 index|[]
 name|configurationLocations
 decl_stmt|;
-comment|/**      * Creates a ServerModule with at least one configuration location. For multi-module      * projects additional locations can be specified as well.      */
+comment|/** 	 * Creates a ServerModule with at least one configuration location. For 	 * multi-module projects additional locations can be specified as well. 	 */
 specifier|public
 name|ServerModule
 parameter_list|(
@@ -1367,9 +1403,11 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// configure known DbAdapter detectors in reverse order of popularity. Users can
+comment|// configure known DbAdapter detectors in reverse order of popularity.
+comment|// Users can
 comment|// add their own to install custom adapters automatically
-comment|// a bit ugly - need to bind all sniffers explicitly first before placing then in a list
+comment|// a bit ugly - need to bind all sniffers explicitly first before
+comment|// placing then in a list
 name|binder
 operator|.
 name|bind
@@ -2144,8 +2182,10 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// a service to load DataSourceFactories. DelegatingDataSourceFactory will attempt
-comment|// to find the actual worker factory dynamically on each call depending on
+comment|// a service to load DataSourceFactories. DelegatingDataSourceFactory
+comment|// will attempt
+comment|// to find the actual worker factory dynamically on each call depending
+comment|// on
 comment|// DataNodeDescriptor data and the environment
 name|binder
 operator|.
@@ -2163,7 +2203,8 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// a default SchemaUpdateStrategy (used when no explicit strategy is specified in
+comment|// a default SchemaUpdateStrategy (used when no explicit strategy is
+comment|// specified in
 comment|// XML)
 name|binder
 operator|.
@@ -2181,7 +2222,8 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// a default DBAdapterFactory used to load custom and automatic DbAdapters
+comment|// a default DBAdapterFactory used to load custom and automatic
+comment|// DbAdapters
 name|binder
 operator|.
 name|bind
@@ -2198,7 +2240,8 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// binding AshwoodEntitySorter without scope, as this is a stateful object and is
+comment|// binding AshwoodEntitySorter without scope, as this is a stateful
+comment|// object and is
 comment|// configured by the owning domain
 name|binder
 operator|.
@@ -2235,7 +2278,24 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// a default ObjectMapRetainStrategy used to create objects map for ObjectStore
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|SelectTranslatorFactory
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|DefaultSelectTranslatorFactory
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+comment|// a default ObjectMapRetainStrategy used to create objects map for
+comment|// ObjectStore
 name|binder
 operator|.
 name|bind

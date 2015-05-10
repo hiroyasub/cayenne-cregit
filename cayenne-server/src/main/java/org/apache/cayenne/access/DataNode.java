@@ -289,6 +289,42 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|select
+operator|.
+name|SelectTranslatorFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|DbAdapter
@@ -429,6 +465,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|SelectQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|tx
 operator|.
 name|BaseTransaction
@@ -528,13 +578,17 @@ name|BatchTranslatorFactory
 name|batchTranslatorFactory
 decl_stmt|;
 specifier|private
+name|SelectTranslatorFactory
+name|selectTranslatorFactory
+decl_stmt|;
+specifier|private
 name|SQLTemplateProcessor
 name|sqlTemplateProcessor
 decl_stmt|;
 name|TransactionDataSource
 name|readThroughDataSource
 decl_stmt|;
-comment|/**      * Creates a new unnamed DataNode.      */
+comment|/** 	 * Creates a new unnamed DataNode. 	 */
 specifier|public
 name|DataNode
 parameter_list|()
@@ -545,7 +599,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new DataNode, assigning it a name.      */
+comment|/** 	 * Creates a new DataNode, assigning it a name. 	 */
 specifier|public
 name|DataNode
 parameter_list|(
@@ -591,7 +645,7 @@ name|getInstance
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getSchemaUpdateStrategyName
@@ -618,7 +672,7 @@ return|return
 name|schemaUpdateStrategyName
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setSchemaUpdateStrategyName
@@ -634,7 +688,7 @@ operator|=
 name|schemaUpdateStrategyName
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|SchemaUpdateStrategy
 name|getSchemaUpdateStrategy
@@ -644,7 +698,7 @@ return|return
 name|schemaUpdateStrategy
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setSchemaUpdateStrategy
@@ -660,7 +714,7 @@ operator|=
 name|schemaUpdateStrategy
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|JdbcEventLogger
 name|getJdbcEventLogger
@@ -694,7 +748,7 @@ return|return
 name|jdbcEventLogger
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setJdbcEventLogger
@@ -710,7 +764,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
-comment|/**      * Returns node name. Name is used to uniquely identify DataNode within a      * DataDomain.      */
+comment|/** 	 * Returns node name. Name is used to uniquely identify DataNode within a 	 * DataDomain. 	 */
 specifier|public
 name|String
 name|getName
@@ -735,7 +789,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/**      * Returns a location of DataSource of this node. Depending on how this node      * was created, location is either a JNDI name, or a location of node XML      * file, etc.      */
+comment|/** 	 * Returns a location of DataSource of this node. Depending on how this node 	 * was created, location is either a JNDI name, or a location of node XML 	 * file, etc. 	 */
 specifier|public
 name|String
 name|getDataSourceLocation
@@ -760,7 +814,7 @@ operator|=
 name|dataSourceLocation
 expr_stmt|;
 block|}
-comment|/**      * Returns a name of DataSourceFactory class for this node.      */
+comment|/** 	 * Returns a name of DataSourceFactory class for this node. 	 */
 specifier|public
 name|String
 name|getDataSourceFactory
@@ -785,7 +839,7 @@ operator|=
 name|dataSourceFactory
 expr_stmt|;
 block|}
-comment|/**      * Returns an unmodifiable collection of DataMaps handled by this DataNode.      */
+comment|/** 	 * Returns an unmodifiable collection of DataMaps handled by this DataNode. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -806,7 +860,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns datamap with specified name, null if none present      */
+comment|/** 	 * Returns datamap with specified name, null if none present 	 */
 specifier|public
 name|DataMap
 name|getDataMap
@@ -859,7 +913,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds a DataMap to be handled by this node.      */
+comment|/** 	 * Adds a DataMap to be handled by this node. 	 */
 specifier|public
 name|void
 name|addDataMap
@@ -916,7 +970,7 @@ name|mapName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns DataSource used by this DataNode to obtain connections.      */
+comment|/** 	 * Returns DataSource used by this DataNode to obtain connections. 	 */
 specifier|public
 name|DataSource
 name|getDataSource
@@ -947,7 +1001,7 @@ operator|=
 name|dataSource
 expr_stmt|;
 block|}
-comment|/**      * Returns DbAdapter object. This is a plugin that handles RDBMS      * vendor-specific features.      */
+comment|/** 	 * Returns DbAdapter object. This is a plugin that handles RDBMS 	 * vendor-specific features. 	 */
 specifier|public
 name|DbAdapter
 name|getAdapter
@@ -972,7 +1026,7 @@ operator|=
 name|adapter
 expr_stmt|;
 block|}
-comment|/**      * Returns a DataNode that should handle queries for all DataMap components.      *       * @since 1.1      */
+comment|/** 	 * Returns a DataNode that should handle queries for all DataMap components. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|DataNode
 name|lookupDataNode
@@ -986,7 +1040,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Runs queries using Connection obtained from internal DataSource.      *       * @since 1.1      */
+comment|/** 	 * Runs queries using Connection obtained from internal DataSource. 	 *  	 * @since 1.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1221,7 +1275,7 @@ comment|// ignore closing exceptions...
 block|}
 block|}
 block|}
-comment|/**      * Returns EntityResolver that handles DataMaps of this node.      */
+comment|/** 	 * Returns EntityResolver that handles DataMaps of this node. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1233,7 +1287,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/**      * Sets EntityResolver. DataNode relies on externally set EntityResolver, so      * if the node is created outside of DataDomain stack, a valid      * EntityResolver must be provided explicitly.      *       * @since 1.1      */
+comment|/** 	 * Sets EntityResolver. DataNode relies on externally set EntityResolver, so 	 * if the node is created outside of DataDomain stack, a valid 	 * EntityResolver must be provided explicitly. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setEntityResolver
@@ -1574,7 +1628,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * @since 3.0          */
+comment|/** 		 * @since 3.0 		 */
 comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 name|boolean
@@ -1601,7 +1655,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**          * @since 3.0          */
+comment|/** 		 * @since 3.0 		 */
 comment|// JDBC 4 compatibility under Java 1.5
 specifier|public
 parameter_list|<
@@ -1650,7 +1704,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**          * @since 3.1          *           *        JDBC 4.1 compatibility under Java 1.5          */
+comment|/** 		 * @since 3.1 		 *  		 *        JDBC 4.1 compatibility under Java 1.5 		 */
 specifier|public
 name|Logger
 name|getParentLogger
@@ -1667,7 +1721,7 @@ argument_list|()
 throw|;
 block|}
 block|}
-comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 4.0      */
+comment|/** 	 * Creates a {@link RowReader} using internal {@link RowReaderFactory}. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|RowReader
 argument_list|<
@@ -1701,7 +1755,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a {@link RowReader} using internal {@link RowReaderFactory}.      *       * @since 4.0      */
+comment|/** 	 * Creates a {@link RowReader} using internal {@link RowReaderFactory}. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|RowReader
 argument_list|<
@@ -1740,7 +1794,7 @@ name|attributeOverrides
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|BatchTranslator
 name|batchTranslator
@@ -1766,7 +1820,34 @@ name|trimFunction
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|SelectTranslator
+name|selectTranslator
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
+name|query
+parameter_list|)
+block|{
+return|return
+name|selectTranslatorFactory
+operator|.
+name|translator
+argument_list|(
+name|query
+argument_list|,
+name|getAdapter
+argument_list|()
+argument_list|,
+name|getEntityResolver
+argument_list|()
+argument_list|)
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|RowReaderFactory
 name|getRowReaderFactory
@@ -1776,7 +1857,7 @@ return|return
 name|rowReaderFactory
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|void
 name|setRowReaderFactory
@@ -1792,7 +1873,7 @@ operator|=
 name|rowReaderFactory
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|BatchTranslatorFactory
 name|getBatchTranslatorFactory
@@ -1802,7 +1883,7 @@ return|return
 name|batchTranslatorFactory
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|void
 name|setBatchTranslatorFactory
@@ -1818,7 +1899,7 @@ operator|=
 name|batchTranslatorFactory
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|SQLTemplateProcessor
 name|getSqlTemplateProcessor
@@ -1842,6 +1923,32 @@ operator|.
 name|sqlTemplateProcessor
 operator|=
 name|sqlTemplateProcessor
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|SelectTranslatorFactory
+name|getSelectTranslatorFactory
+parameter_list|()
+block|{
+return|return
+name|selectTranslatorFactory
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setSelectTranslatorFactory
+parameter_list|(
+name|SelectTranslatorFactory
+name|selectTranslatorFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|selectTranslatorFactory
+operator|=
+name|selectTranslatorFactory
 expr_stmt|;
 block|}
 block|}
