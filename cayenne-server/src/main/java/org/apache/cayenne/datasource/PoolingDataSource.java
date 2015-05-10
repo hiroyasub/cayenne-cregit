@@ -339,6 +339,10 @@ name|int
 name|minConnections
 decl_stmt|;
 specifier|private
+name|int
+name|maxConnections
+decl_stmt|;
+specifier|private
 name|String
 name|validationQuery
 decl_stmt|;
@@ -492,6 +496,12 @@ operator|.
 name|minConnections
 operator|=
 name|minConnections
+expr_stmt|;
+name|this
+operator|.
+name|maxConnections
+operator|=
+name|maxConnections
 expr_stmt|;
 name|this
 operator|.
@@ -803,6 +813,7 @@ name|PoolAwareConnection
 name|connection
 parameter_list|)
 block|{
+comment|// TODO: rollback any in-process tx?
 comment|// the queue may overflow potentially and we won't be able to add the
 comment|// object
 if|if
@@ -1015,22 +1026,30 @@ name|validationQuery
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a new connection in a consistent state. 	 */
+comment|/** 	 * Creates a new connection. 	 */
 name|Connection
 name|createUnwrapped
 parameter_list|()
 throws|throws
 name|SQLException
 block|{
-name|Connection
-name|c
-init|=
+return|return
 name|nonPoolingDataSource
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-comment|// set default connection state...
+return|;
+block|}
+comment|/** 	 * Updates connection state to a default state. 	 */
+name|Connection
+name|resetState
+parameter_list|(
+name|Connection
+name|c
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
 comment|// TODO: tx isolation level?
 if|if
 condition|(
@@ -1110,7 +1129,10 @@ literal|null
 condition|)
 block|{
 return|return
+name|resetState
+argument_list|(
 name|c
+argument_list|)
 return|;
 block|}
 name|c
@@ -1126,7 +1148,10 @@ literal|null
 condition|)
 block|{
 return|return
+name|resetState
+argument_list|(
 name|c
+argument_list|)
 return|;
 block|}
 name|c
@@ -1144,7 +1169,10 @@ literal|null
 condition|)
 block|{
 return|return
+name|resetState
+argument_list|(
 name|c
+argument_list|)
 return|;
 block|}
 throw|throw
@@ -1367,6 +1395,46 @@ operator|new
 name|SQLFeatureNotSupportedException
 argument_list|()
 throw|;
+block|}
+name|String
+name|getValidationQuery
+parameter_list|()
+block|{
+return|return
+name|validationQuery
+return|;
+block|}
+name|long
+name|getMaxQueueWaitTime
+parameter_list|()
+block|{
+return|return
+name|maxQueueWaitTime
+return|;
+block|}
+name|int
+name|getMaxIdleConnections
+parameter_list|()
+block|{
+return|return
+name|maxIdleConnections
+return|;
+block|}
+name|int
+name|getMinConnections
+parameter_list|()
+block|{
+return|return
+name|minConnections
+return|;
+block|}
+name|int
+name|getMaxConnections
+parameter_list|()
+block|{
+return|return
+name|maxConnections
+return|;
 block|}
 block|}
 end_class
