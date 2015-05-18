@@ -262,7 +262,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/** 	 * Sets a DataSource that will override any DataSources found in the 	 * mapping. Moreover if the mapping contains no DataNodes, and the 	 * DataSource is set with this method, the builder would create a single 	 * default DataNode. 	 *  	 * @see DataSourceBuilder 	 */
+comment|/** 	 * Sets a DataSource that will override any DataSources found in the 	 * mapping. If the mapping contains no DataNodes, and the DataSource is set 	 * with this method, the builder would create a single default DataNode. 	 *  	 * @see DataSourceBuilder 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|dataSource
@@ -285,7 +285,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets JNDI location for the default DataSource. 	 */
+comment|/** 	 * Sets JNDI location for the default DataSource. If the mapping contains no 	 * DataNodes, and the DataSource is set with this method, the builder would 	 * create a single default DataNode. 	 */
 specifier|public
 name|ServerRuntimeBuilder
 name|jndiDataSource
