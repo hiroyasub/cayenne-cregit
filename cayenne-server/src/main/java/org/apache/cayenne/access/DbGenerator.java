@@ -398,7 +398,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Utility class that generates database schema based on Cayenne mapping. It is a logical  * counterpart of DbLoader class.  */
+comment|/**  * Utility class that generates database schema based on Cayenne mapping. It is  * a logical counterpart of DbLoader class.  */
 end_comment
 
 begin_class
@@ -427,7 +427,8 @@ specifier|protected
 name|DataMap
 name|map
 decl_stmt|;
-comment|// optional DataDomain needed for correct FK generation in cross-db situations
+comment|// optional DataDomain needed for correct FK generation in cross-db
+comment|// situations
 specifier|protected
 name|DataDomain
 name|domain
@@ -484,7 +485,7 @@ name|String
 argument_list|>
 name|dropPK
 decl_stmt|;
-comment|/**      * Contains all DbEntities ordered considering their interdependencies.      * DerivedDbEntities are filtered out of this list.      */
+comment|/** 	 * Contains all DbEntities ordered considering their interdependencies. 	 * DerivedDbEntities are filtered out of this list. 	 */
 specifier|protected
 name|List
 argument_list|<
@@ -523,7 +524,7 @@ specifier|protected
 name|ValidationResult
 name|failures
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|DbGenerator
 parameter_list|(
@@ -555,7 +556,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|DbGenerator
 parameter_list|(
@@ -589,7 +590,7 @@ name|logger
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates and initializes new DbGenerator instance.      *       * @param adapter DbAdapter corresponding to the database      * @param map DataMap whose entities will be used in schema generation      * @param excludedEntities entities that should be ignored during schema generation      * @param domain optional DataDomain used to detect cross-database relationships.      * @since 3.1      */
+comment|/** 	 * Creates and initializes new DbGenerator instance. 	 *  	 * @param adapter 	 *            DbAdapter corresponding to the database 	 * @param map 	 *            DataMap whose entities will be used in schema generation 	 * @param excludedEntities 	 *            entities that should be ignored during schema generation 	 * @param domain 	 *            optional DataDomain used to detect cross-database 	 *            relationships. 	 * @since 3.1 	 */
 specifier|public
 name|DbGenerator
 parameter_list|(
@@ -715,7 +716,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Creates and stores internally a set of statements for database schema creation,      * ignoring configured schema creation preferences. Statements are NOT executed in      * this method.      */
+comment|/** 	 * Creates and stores internally a set of statements for database schema 	 * creation, ignoring configured schema creation preferences. Statements are 	 * NOT executed in this method. 	 */
 specifier|protected
 name|void
 name|buildStatements
@@ -856,7 +857,7 @@ name|dbEntitiesRequiringAutoPK
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns<code>true</code> if there is nothing to be done by this generator. If      *<code>respectConfiguredSettings</code> is<code>true</code>, checks are done      * applying currently configured settings, otherwise check is done, assuming that all      * possible generated objects.      */
+comment|/** 	 * Returns<code>true</code> if there is nothing to be done by this 	 * generator. If<code>respectConfiguredSettings</code> is<code>true</code> 	 * , checks are done applying currently configured settings, otherwise check 	 * is done, assuming that all possible generated objects. 	 */
 specifier|public
 name|boolean
 name|isEmpty
@@ -917,7 +918,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * Returns a list of all schema statements that should be executed with the current      * configuration.      */
+comment|/** 	 * Returns a list of all schema statements that should be executed with the 	 * current configuration. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -1093,7 +1094,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Creates a temporary DataSource out of DataSourceInfo and invokes      *<code>public void runGenerator(DataSource ds)</code>.      */
+comment|/** 	 * Creates a temporary DataSource out of DataSourceInfo and invokes 	 *<code>public void runGenerator(DataSource ds)</code>. 	 */
 specifier|public
 name|void
 name|runGenerator
@@ -1163,6 +1164,8 @@ name|dsi
 operator|.
 name|getPassword
 argument_list|()
+argument_list|,
+name|jdbcEventLogger
 argument_list|)
 decl_stmt|;
 name|runGenerator
@@ -1171,7 +1174,7 @@ name|dataSource
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Executes a set of commands to drop/create database objects. This is the main worker      * method of DbGenerator. Command set is built based on pre-configured generator      * settings.      */
+comment|/** 	 * Executes a set of commands to drop/create database objects. This is the 	 * main worker method of DbGenerator. Command set is built based on 	 * pre-configured generator settings. 	 */
 specifier|public
 name|void
 name|runGenerator
@@ -1486,7 +1489,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Builds and executes a SQL statement, catching and storing SQL exceptions resulting      * from invalid SQL. Only non-recoverable exceptions are rethrown.      *       * @since 1.1      */
+comment|/** 	 * Builds and executes a SQL statement, catching and storing SQL exceptions 	 * resulting from invalid SQL. Only non-recoverable exceptions are rethrown. 	 *  	 * @since 1.1 	 */
 specifier|protected
 name|boolean
 name|safeExecute
@@ -1590,7 +1593,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates FK and UNIQUE constraint statements for a given table.      *       * @since 3.0      */
+comment|/** 	 * Creates FK and UNIQUE constraint statements for a given table. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|List
 argument_list|<
@@ -1827,7 +1830,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Returns an object representing a collection of failures that occurred on the last      * "runGenerator" invocation, or null if there were no failures. Failures usually      * indicate problems with generated DDL (such as "create...", "drop...", etc.) and      * usually happen due to the DataMap being out of sync with the database.      *       * @since 1.1      */
+comment|/** 	 * Returns an object representing a collection of failures that occurred on 	 * the last "runGenerator" invocation, or null if there were no failures. 	 * Failures usually indicate problems with generated DDL (such as 	 * "create...", "drop...", etc.) and usually happen due to the DataMap being 	 * out of sync with the database. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|ValidationResult
 name|getFailures
@@ -1837,7 +1840,7 @@ return|return
 name|failures
 return|;
 block|}
-comment|/**      * Returns whether DbGenerator is configured to create primary key support for DataMap      * entities.      */
+comment|/** 	 * Returns whether DbGenerator is configured to create primary key support 	 * for DataMap entities. 	 */
 specifier|public
 name|boolean
 name|shouldCreatePKSupport
@@ -1847,7 +1850,7 @@ return|return
 name|shouldCreatePKSupport
 return|;
 block|}
-comment|/**      * Returns whether DbGenerator is configured to create tables for DataMap entities.      */
+comment|/** 	 * Returns whether DbGenerator is configured to create tables for DataMap 	 * entities. 	 */
 specifier|public
 name|boolean
 name|shouldCreateTables
@@ -1959,7 +1962,7 @@ operator|=
 name|shouldCreateFKConstraints
 expr_stmt|;
 block|}
-comment|/**      * Returns a DataDomain used by the DbGenerator to detect cross-database      * relationships. By default DataDomain is null.      *       * @since 1.2      */
+comment|/** 	 * Returns a DataDomain used by the DbGenerator to detect cross-database 	 * relationships. By default DataDomain is null. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|DataDomain
 name|getDomain
@@ -1969,7 +1972,7 @@ return|return
 name|domain
 return|;
 block|}
-comment|/**      * Helper method that orders DbEntities to satisfy referential constraints and returns      * an ordered list. It also filters out DerivedDbEntities.      */
+comment|/** 	 * Helper method that orders DbEntities to satisfy referential constraints 	 * and returns an ordered list. It also filters out DerivedDbEntities. 	 */
 specifier|private
 name|void
 name|prepareDbEntities
@@ -2146,7 +2149,8 @@ name|nextEntity
 argument_list|)
 expr_stmt|;
 comment|// check if an automatic PK generation can be potentially supported
-comment|// in this entity. For now simply check that the key is not propagated
+comment|// in this entity. For now simply check that the key is not
+comment|// propagated
 name|Iterator
 argument_list|<
 name|DbRelationship
@@ -2241,7 +2245,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// primary key is needed only if at least one of the primary key attributes
+comment|// primary key is needed only if at least one of the primary key
+comment|// attributes
 comment|// is not propagated via relationship
 if|if
 condition|(

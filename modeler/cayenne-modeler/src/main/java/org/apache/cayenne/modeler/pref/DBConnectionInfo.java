@@ -153,6 +153,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|NoopJdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|modeler
 operator|.
 name|Application
@@ -832,7 +846,7 @@ operator|=
 name|dbConnectionInfoPreferences
 expr_stmt|;
 block|}
-comment|/**      * Creates a DbAdapter based on configured values.      */
+comment|/** 	 * Creates a DbAdapter based on configured values. 	 */
 specifier|public
 name|DbAdapter
 name|makeAdapter
@@ -954,7 +968,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a DataSource that uses connection information from this object. Returned      * DataSource is not pooling its connections. It can be wrapped in PoolManager if      * pooling is needed.      */
+comment|/** 	 * Returns a DataSource that uses connection information from this object. 	 * Returned DataSource is not pooling its connections. It can be wrapped in 	 * PoolManager if pooling is needed. 	 */
 specifier|public
 name|DataSource
 name|makeDataSource
@@ -1064,10 +1078,15 @@ argument_list|()
 argument_list|,
 name|getPassword
 argument_list|()
+argument_list|,
+name|NoopJdbcEventLogger
+operator|.
+name|getInstance
+argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Updates another DBConnectionInfo with this object's values.      */
+comment|/** 	 * Updates another DBConnectionInfo with this object's values. 	 */
 specifier|public
 name|boolean
 name|copyTo
@@ -1235,7 +1254,7 @@ return|return
 name|updated
 return|;
 block|}
-comment|/**      * Updates DataSourceInfo with this object's values.      *<p>      *<i>Currently doesn't set the adapter property. Need to change the UI to handle      * adapter via DataSourceInfo first, and then it should be safe to do an adapter      * update here.</i>      *</p>      */
+comment|/** 	 * Updates DataSourceInfo with this object's values. 	 *<p> 	 *<i>Currently doesn't set the adapter property. Need to change the UI to 	 * handle adapter via DataSourceInfo first, and then it should be safe to do 	 * an adapter update here.</i> 	 *</p> 	 */
 specifier|public
 name|boolean
 name|copyTo

@@ -403,6 +403,11 @@ argument_list|,
 name|userName
 argument_list|,
 name|password
+argument_list|,
+name|NoopJdbcEventLogger
+operator|.
+name|getInstance
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|DbAdapter
@@ -563,7 +568,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Validates attributes that are not related to internal      * DefaultClassGenerator. Throws BuildException if attributes are invalid.      */
+comment|/** 	 * Validates attributes that are not related to internal 	 * DefaultClassGenerator. Throws BuildException if attributes are invalid. 	 */
 specifier|protected
 name|void
 name|validateAttributes

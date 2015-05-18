@@ -123,6 +123,20 @@ name|Inject
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -138,6 +152,10 @@ specifier|private
 name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
+specifier|private
+name|JdbcEventLogger
+name|logger
+decl_stmt|;
 specifier|public
 name|DriverDataSourceFactory
 parameter_list|(
@@ -145,6 +163,11 @@ annotation|@
 name|Inject
 name|AdhocObjectFactory
 name|objectFactory
+parameter_list|,
+annotation|@
+name|Inject
+name|JdbcEventLogger
+name|logger
 parameter_list|)
 block|{
 name|this
@@ -152,6 +175,12 @@ operator|.
 name|objectFactory
 operator|=
 name|objectFactory
+expr_stmt|;
+name|this
+operator|.
+name|logger
+operator|=
+name|logger
 expr_stmt|;
 block|}
 specifier|public
@@ -224,6 +253,8 @@ name|properties
 operator|.
 name|getPassword
 argument_list|()
+argument_list|,
+name|logger
 argument_list|)
 return|;
 block|}

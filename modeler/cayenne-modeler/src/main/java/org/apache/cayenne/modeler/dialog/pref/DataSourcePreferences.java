@@ -193,6 +193,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|NoopJdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|modeler
 operator|.
 name|FileClassLoadingService
@@ -643,7 +657,7 @@ name|dataSourceKey
 argument_list|)
 return|;
 block|}
-comment|/**      * Shows a dialog to create new local DataSource configuration.      */
+comment|/** 	 * Shows a dialog to create new local DataSource configuration. 	 */
 specifier|public
 name|void
 name|newDataSourceAction
@@ -743,7 +757,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Shows a dialog to duplicate an existing local DataSource configuration.      */
+comment|/** 	 * Shows a dialog to duplicate an existing local DataSource configuration. 	 */
 specifier|public
 name|void
 name|duplicateDataSourceAction
@@ -867,7 +881,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Removes current DataSource.      */
+comment|/** 	 * Removes current DataSource. 	 */
 specifier|public
 name|void
 name|removeDataSourceAction
@@ -951,7 +965,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Opens specified DataSource in the editor.      */
+comment|/** 	 * Opens specified DataSource in the editor. 	 */
 specifier|public
 name|void
 name|editDataSourceAction
@@ -974,7 +988,7 @@ name|editDataSourceAction
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Opens current DataSource in the editor.      */
+comment|/** 	 * Opens current DataSource in the editor. 	 */
 specifier|public
 name|void
 name|editDataSourceAction
@@ -994,7 +1008,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Tries to establish a DB connection, reporting the status of this operation.      */
+comment|/** 	 * Tries to establish a DB connection, reporting the status of this 	 * operation. 	 */
 specifier|public
 name|void
 name|testDataSourceAction
@@ -1437,7 +1451,8 @@ operator|.
 name|newInstance
 argument_list|()
 decl_stmt|;
-comment|// connect via Cayenne DriverDataSource - it addresses some driver issues...
+comment|// connect via Cayenne DriverDataSource - it addresses some driver
+comment|// issues...
 name|Connection
 name|c
 init|=
@@ -1459,6 +1474,11 @@ argument_list|,
 name|currentDataSource
 operator|.
 name|getPassword
+argument_list|()
+argument_list|,
+name|NoopJdbcEventLogger
+operator|.
+name|getInstance
 argument_list|()
 argument_list|)
 operator|.

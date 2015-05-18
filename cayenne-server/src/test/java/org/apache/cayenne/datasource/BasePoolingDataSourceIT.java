@@ -257,15 +257,10 @@ name|dataSourceInfo
 operator|.
 name|getPassword
 argument_list|()
-argument_list|)
-decl_stmt|;
-name|nonPooling
-operator|.
-name|setLogger
-argument_list|(
+argument_list|,
 name|logger
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|PoolingDataSourceParameters
 name|poolParameters
 init|=

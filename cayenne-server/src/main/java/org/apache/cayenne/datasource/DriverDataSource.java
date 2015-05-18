@@ -141,6 +141,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|log
+operator|.
+name|NoopJdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Util
@@ -267,7 +281,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * Creates a new DriverDataSource. If "driverClassName" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @deprecated since 4.0 as class loading should not happen here. Use 	 *             {@link #DriverDataSource(Driver, String, String, String)}. 	 */
+comment|/** 	 * Creates a new DriverDataSource. If "driverClassName" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @deprecated since 4.0 as class loading should not happen here. Use { 	 *             {@link #DriverDataSource(Driver, String, String, String, JdbcEventLogger)} 	 *             . 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -292,7 +306,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates a new DriverDataSource. If "driverClassName" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @deprecated since 4.0 as class loading should not happen here. Use 	 *             {@link #DriverDataSource(Driver, String, String, String)}. 	 */
+comment|/** 	 * Creates a new DriverDataSource. If "driverClassName" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @deprecated since 4.0 as class loading should not happen here. Use 	 *             {@link #DriverDataSource(Driver, String, String, String, JdbcEventLogger)} 	 *             . 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -325,26 +339,10 @@ argument_list|,
 name|password
 argument_list|)
 expr_stmt|;
-name|this
-operator|.
-name|connectionUrl
-operator|=
-name|connectionUrl
-expr_stmt|;
-name|this
-operator|.
-name|userName
-operator|=
-name|userName
-expr_stmt|;
-name|this
-operator|.
-name|password
-operator|=
-name|password
-expr_stmt|;
 block|}
-comment|/** 	 * Creates a new DriverDataSource wrapping a given Driver. If "driver" is 	 * null, DriverDataSource will consult DriverManager for a registered driver 	 * for the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Creates a DriverDataSource wrapping a given Driver. If "driver" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @since 1.1 	 * @deprecated since 4.0 as class loading should not happen here. Use 	 *             {@link #DriverDataSource(Driver, String, String, String, JdbcEventLogger)} 	 *             . 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|DriverDataSource
 parameter_list|(
@@ -362,6 +360,73 @@ name|password
 parameter_list|)
 block|{
 name|this
+argument_list|(
+name|driver
+argument_list|,
+name|connectionUrl
+argument_list|,
+name|userName
+argument_list|,
+name|password
+argument_list|,
+name|NoopJdbcEventLogger
+operator|.
+name|getInstance
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Creates a new DriverDataSource wrapping a given Driver. If "driver" is 	 * null, DriverDataSource will consult DriverManager for a registered driver 	 * for the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @since 4.0 	 */
+specifier|public
+name|DriverDataSource
+parameter_list|(
+name|Driver
+name|driver
+parameter_list|,
+name|String
+name|connectionUrl
+parameter_list|,
+name|String
+name|userName
+parameter_list|,
+name|String
+name|password
+parameter_list|,
+name|JdbcEventLogger
+name|logger
+parameter_list|)
+block|{
+if|if
+condition|(
+name|connectionUrl
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null 'connectionUrl'"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|logger
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null 'logger'"
+argument_list|)
+throw|;
+block|}
+name|this
 operator|.
 name|driver
 operator|=
@@ -384,6 +449,12 @@ operator|.
 name|password
 operator|=
 name|password
+expr_stmt|;
+name|this
+operator|.
+name|logger
+operator|=
+name|logger
 expr_stmt|;
 block|}
 comment|/** 	 * Returns a new database connection, using preconfigured data to locate the 	 * database and obtain a connection. 	 */
@@ -638,6 +709,9 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * @deprecated since 4.0. Connection parameters are immutable and not 	 *             readable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|JdbcEventLogger
 name|getLogger
@@ -647,20 +721,42 @@ return|return
 name|logger
 return|;
 block|}
+comment|/** 	 * @deprecated since 4.0. Logger is immutable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setLogger
 parameter_list|(
 name|JdbcEventLogger
-name|delegate
+name|logger
 parameter_list|)
 block|{
+if|if
+condition|(
+name|logger
+operator|==
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"Null 'logger'"
+argument_list|)
+throw|;
+block|}
+name|this
+operator|.
 name|logger
 operator|=
-name|delegate
+name|logger
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0. Connection parameters are immutable and not 	 *             readable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getConnectionUrl
@@ -670,7 +766,9 @@ return|return
 name|connectionUrl
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0. Connection parameters are immutable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setConnectionUrl
@@ -686,7 +784,9 @@ operator|=
 name|connectionUrl
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0. Connection parameters are immutable and not 	 *             readable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getPassword
@@ -696,7 +796,9 @@ return|return
 name|password
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/** 	 * @deprecated since 4.0. Connection parameters are immutable. 	 * @since 3.0 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setPassword
@@ -712,7 +814,9 @@ operator|=
 name|password
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0. Connection parameters are immutable and not 	 *             readable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getUserName
@@ -722,7 +826,9 @@ return|return
 name|userName
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0. Connection parameters are immutable. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setUserName
