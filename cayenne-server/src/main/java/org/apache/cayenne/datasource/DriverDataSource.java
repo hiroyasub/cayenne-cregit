@@ -115,6 +115,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|log
 operator|.
 name|JdbcEventLogger
@@ -136,7 +148,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A non-pooling DataSource implementation wrapping a JDBC driver.  *   */
+comment|/**  * A non-pooling DataSource implementation wrapping a JDBC driver.  */
 end_comment
 
 begin_class
@@ -148,11 +160,7 @@ name|DataSource
 block|{
 specifier|protected
 name|Driver
-name|_driver
-decl_stmt|;
-specifier|protected
-name|String
-name|driverClassName
+name|driver
 decl_stmt|;
 specifier|protected
 name|String
@@ -170,7 +178,7 @@ specifier|protected
 name|JdbcEventLogger
 name|logger
 decl_stmt|;
-comment|/**      * Loads JDBC driver using current thread class loader.      *       * @since 3.0      * @deprecated since 4.0 as class loading should not happen here.      */
+comment|/** 	 * Loads JDBC driver using current thread class loader. 	 *  	 * @since 3.0 	 * @deprecated since 4.0 as class loading should not happen here. 	 */
 annotation|@
 name|Deprecated
 specifier|private
@@ -181,8 +189,6 @@ parameter_list|(
 name|String
 name|driverClassName
 parameter_list|)
-throws|throws
-name|SQLException
 block|{
 name|Class
 argument_list|<
@@ -210,7 +216,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|SQLException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Can not load JDBC driver named '"
 operator|+
@@ -245,7 +251,7 @@ parameter_list|)
 block|{
 throw|throw
 operator|new
-name|SQLException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Error instantiating driver '"
 operator|+
@@ -261,7 +267,9 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Creates a new DriverDataSource. If "driverClassName" is null, DriverDataSource will      * consult DriverManager for a registered driver for the given URL. So when specifying      * null, a user must take care of registering the driver. "connectionUrl" on the other      * hand must NOT be null.      */
+comment|/** 	 * Creates a new DriverDataSource. If "driverClassName" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @deprecated since 4.0 as class loading should not happen here. Use 	 *             {@link #DriverDataSource(Driver, String, String, String)}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|DriverDataSource
 parameter_list|(
@@ -284,7 +292,9 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a new DriverDataSource. If "driverClassName" is null, DriverDataSource will      * consult DriverManager for a registered driver for the given URL. So when specifying      * null, a user must take care of registering the driver. "connectionUrl" on the other      * hand must NOT be null.      *       * @since 3.0      */
+comment|/** 	 * Creates a new DriverDataSource. If "driverClassName" is null, 	 * DriverDataSource will consult DriverManager for a registered driver for 	 * the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @deprecated since 4.0 as class loading should not happen here. Use 	 *             {@link #DriverDataSource(Driver, String, String, String)}. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|DriverDataSource
 parameter_list|(
@@ -301,9 +311,18 @@ name|String
 name|password
 parameter_list|)
 block|{
-name|setDriverClassName
+name|this
+argument_list|(
+name|loadDriver
 argument_list|(
 name|driverClassName
+argument_list|)
+argument_list|,
+name|connectionUrl
+argument_list|,
+name|userName
+argument_list|,
+name|password
 argument_list|)
 expr_stmt|;
 name|this
@@ -325,7 +344,7 @@ operator|=
 name|password
 expr_stmt|;
 block|}
-comment|/**      * Creates a new DriverDataSource wrapping a given Driver. If "driver" is null,      * DriverDataSource will consult DriverManager for a registered driver for the given      * URL. So when specifying null, a user must take care of registering the driver.      * "connectionUrl" on the other hand must NOT be null.      *       * @since 1.1      */
+comment|/** 	 * Creates a new DriverDataSource wrapping a given Driver. If "driver" is 	 * null, DriverDataSource will consult DriverManager for a registered driver 	 * for the given URL. So when specifying null, a user must take care of 	 * registering the driver. "connectionUrl" on the other hand must NOT be 	 * null. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|DriverDataSource
 parameter_list|(
@@ -344,21 +363,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|_driver
+name|driver
 operator|=
 name|driver
-expr_stmt|;
-name|this
-operator|.
-name|driverClassName
-operator|=
-name|driver
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
 expr_stmt|;
 name|this
 operator|.
@@ -379,7 +386,7 @@ operator|=
 name|password
 expr_stmt|;
 block|}
-comment|/**      * Returns a new database connection, using preconfigured data to locate the database      * and obtain a connection.      */
+comment|/** 	 * Returns a new database connection, using preconfigured data to locate the 	 * database and obtain a connection. 	 */
 specifier|public
 name|Connection
 name|getConnection
@@ -397,7 +404,7 @@ name|password
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a new database connection using provided credentials to login to the      * database.      */
+comment|/** 	 * Returns a new database connection using provided credentials to login to 	 * the database. 	 */
 specifier|public
 name|Connection
 name|getConnection
@@ -439,8 +446,7 @@ literal|null
 decl_stmt|;
 if|if
 condition|(
-name|getDriver
-argument_list|()
+name|driver
 operator|==
 literal|null
 condition|)
@@ -504,8 +510,7 @@ expr_stmt|;
 block|}
 name|c
 operator|=
-name|getDriver
-argument_list|()
+name|driver
 operator|.
 name|connect
 argument_list|(
@@ -655,7 +660,7 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getConnectionUrl
@@ -665,7 +670,7 @@ return|return
 name|connectionUrl
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setConnectionUrl
@@ -681,7 +686,7 @@ operator|=
 name|connectionUrl
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getPassword
@@ -691,7 +696,7 @@ return|return
 name|password
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setPassword
@@ -707,7 +712,7 @@ operator|=
 name|password
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getUserName
@@ -717,7 +722,7 @@ return|return
 name|userName
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setUserName
@@ -733,85 +738,9 @@ operator|=
 name|userName
 expr_stmt|;
 block|}
-specifier|public
-name|String
-name|getDriverClassName
-parameter_list|()
-block|{
-return|return
-name|driverClassName
-return|;
-block|}
-specifier|public
-name|void
-name|setDriverClassName
-parameter_list|(
-name|String
-name|driverClassName
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|Util
-operator|.
-name|nullSafeEquals
-argument_list|(
-name|getDriverClassName
-argument_list|()
-argument_list|,
-name|driverClassName
-argument_list|)
-condition|)
-block|{
-name|this
-operator|.
-name|driverClassName
-operator|=
-name|driverClassName
-expr_stmt|;
-name|this
-operator|.
-name|_driver
-operator|=
-literal|null
-expr_stmt|;
-comment|// force reload
-block|}
-block|}
-comment|/**      * Lazily instantiate the driver class to prevent errors for connections that are never opened      */
-specifier|private
-name|Driver
-name|getDriver
-parameter_list|()
-throws|throws
-name|SQLException
-block|{
-if|if
-condition|(
-name|_driver
-operator|==
-literal|null
-operator|&&
-name|driverClassName
-operator|!=
-literal|null
-condition|)
-block|{
-name|_driver
-operator|=
-name|loadDriver
-argument_list|(
-name|driverClassName
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|_driver
-return|;
-block|}
-comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+comment|/** 	 * @since 3.0 	 */
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isWrapperFor
@@ -831,8 +760,9 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.0      */
-comment|// JDBC 4 compatibility under Java 1.5
+comment|/** 	 * @since 3.0 	 */
+annotation|@
+name|Override
 specifier|public
 parameter_list|<
 name|T
@@ -855,7 +785,7 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      *      * JDBC 4.1 compatibility under Java 1.5      */
+comment|/** 	 * @since 3.1 	 * 	 *        JDBC 4.1 compatibility under Java 1.5 	 */
 specifier|public
 name|Logger
 name|getParentLogger
