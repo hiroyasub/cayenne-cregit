@@ -287,7 +287,7 @@ name|getLong
 argument_list|(
 name|Constants
 operator|.
-name|SERVER_MAX_QUEUE_WAIT_TIME
+name|JDBC_MAX_QUEUE_WAIT_TIME
 argument_list|,
 name|PoolingDataSource
 operator|.
@@ -343,13 +343,10 @@ argument_list|(
 name|password
 argument_list|)
 operator|.
-name|minConnections
+name|pool
 argument_list|(
 name|minConnections
-argument_list|)
-operator|.
-name|maxConnections
-argument_list|(
+argument_list|,
 name|maxConnections
 argument_list|)
 operator|.
