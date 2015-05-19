@@ -117,6 +117,8 @@ parameter_list|)
 block|{
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -127,6 +129,8 @@ name|dataSource
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public
@@ -145,6 +149,8 @@ parameter_list|)
 block|{
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -156,6 +162,8 @@ parameter_list|)
 block|{
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -163,6 +171,8 @@ name|logConnectSuccess
 parameter_list|()
 block|{
 block|}
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public

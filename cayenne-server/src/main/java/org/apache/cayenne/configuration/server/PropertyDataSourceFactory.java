@@ -137,20 +137,6 @@ name|Inject
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|log
-operator|.
-name|JdbcEventLogger
-import|;
-end_import
-
 begin_comment
 comment|/**  * A DataSourceFactrory that creates a DataSource based on system properties.  * Properties can be set per domain/node name or globally, applying to all nodes  * without explicit property set. The following properties are supported:  *<ul>  *<li>cayenne.jdbc.driver[.domain_name.node_name]  *<li>cayenne.jdbc.url[.domain_name.node_name]  *<li>cayenne.jdbc.username[.domain_name.node_name]  *<li>cayenne.jdbc.password[.domain_name.node_name]  *<li>cayenne.jdbc.min.connections[.domain_name.node_name]  *<li>cayenne.jdbc.max.conections[.domain_name.node_name]  *</ul>  * At least url and driver properties must be specified for this factory to  * return a valid DataSource.  *   * @since 3.1  */
 end_comment
@@ -167,12 +153,6 @@ name|Inject
 specifier|protected
 name|RuntimeProperties
 name|properties
-decl_stmt|;
-annotation|@
-name|Inject
-specifier|protected
-name|JdbcEventLogger
-name|jdbcEventLogger
 decl_stmt|;
 annotation|@
 name|Inject
@@ -322,8 +302,6 @@ operator|.
 name|builder
 argument_list|(
 name|objectFactory
-argument_list|,
-name|jdbcEventLogger
 argument_list|)
 operator|.
 name|driver

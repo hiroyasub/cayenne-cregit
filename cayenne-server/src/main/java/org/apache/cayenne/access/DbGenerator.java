@@ -1164,8 +1164,6 @@ name|dsi
 operator|.
 name|getPassword
 argument_list|()
-argument_list|,
-name|jdbcEventLogger
 argument_list|)
 decl_stmt|;
 name|runGenerator

@@ -1034,6 +1034,8 @@ expr_stmt|;
 block|}
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -1060,6 +1062,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public
@@ -1130,6 +1134,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public
@@ -1291,6 +1297,8 @@ expr_stmt|;
 block|}
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -1305,6 +1313,8 @@ literal|"+++ Connecting: SUCCESS."
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public

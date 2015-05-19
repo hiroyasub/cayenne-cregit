@@ -551,11 +551,6 @@ argument_list|,
 name|username
 argument_list|,
 name|password
-argument_list|,
-name|NoopJdbcEventLogger
-operator|.
-name|getInstance
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|generator
