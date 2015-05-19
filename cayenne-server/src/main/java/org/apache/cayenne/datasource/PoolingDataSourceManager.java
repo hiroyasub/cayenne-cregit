@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A thread that manages the state of a {@link PoolingDataSource} instance,  * performing periodic expansion/contraction of pooled connections, and  * orchestrating shutdown.  *   * @since 4.0  */
+comment|/**  * A thread that manages the state of a {@link UnmanagedPoolingDataSource} instance,  * performing periodic expansion/contraction of pooled connections, and  * orchestrating shutdown.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -31,7 +31,7 @@ name|boolean
 name|shouldStop
 decl_stmt|;
 specifier|private
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|dataSource
 decl_stmt|;
 specifier|private
@@ -40,7 +40,7 @@ name|managerWakeTime
 decl_stmt|;
 name|PoolingDataSourceManager
 parameter_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|dataSource
 parameter_list|,
 name|long
@@ -91,14 +91,14 @@ literal|true
 expr_stmt|;
 name|dataSource
 operator|.
-name|shutdown
+name|close
 argument_list|()
 expr_stmt|;
 name|interrupt
 argument_list|()
 expr_stmt|;
 block|}
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|getDataSource
 parameter_list|()
 block|{

@@ -133,7 +133,7 @@ class|class
 name|PoolDataSourceManagerTest
 block|{
 specifier|private
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|mockPoolingDataSource
 decl_stmt|;
 specifier|private
@@ -155,7 +155,7 @@ name|mockPoolingDataSource
 operator|=
 name|mock
 argument_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|class
 argument_list|)

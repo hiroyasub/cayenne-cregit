@@ -276,13 +276,23 @@ init|=
 name|createParameters
 argument_list|()
 decl_stmt|;
+name|UnmanagedPoolingDataSource
+name|ds
+init|=
 operator|new
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 argument_list|(
 name|nonPooling
 argument_list|,
 name|poolParameters
 argument_list|)
+decl_stmt|;
+comment|// the exception should happen in the line above... this line is to
+comment|// prevent compiler warnings
+name|ds
+operator|.
+name|close
+argument_list|()
 expr_stmt|;
 block|}
 block|}

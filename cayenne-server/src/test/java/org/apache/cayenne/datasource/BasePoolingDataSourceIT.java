@@ -186,7 +186,7 @@ name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
 specifier|protected
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|dataSource
 decl_stmt|;
 annotation|@
@@ -250,7 +250,7 @@ operator|.
 name|dataSource
 operator|=
 operator|new
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 argument_list|(
 name|nonPooling
 argument_list|,
@@ -276,7 +276,7 @@ condition|)
 block|{
 name|dataSource
 operator|.
-name|shutdown
+name|close
 argument_list|()
 expr_stmt|;
 block|}

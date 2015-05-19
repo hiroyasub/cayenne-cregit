@@ -208,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link Connection} wrapper that interacts with the  * {@link PoolingDataSource}, allowing to recycle connections and track  * failures.  *   * @since 4.0  */
+comment|/**  * A {@link Connection} wrapper that interacts with the  * {@link UnmanagedPoolingDataSource}, allowing to recycle connections and track  * failures.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -219,7 +219,7 @@ implements|implements
 name|Connection
 block|{
 specifier|private
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|parent
 decl_stmt|;
 specifier|private
@@ -233,7 +233,7 @@ decl_stmt|;
 specifier|public
 name|PoolAwareConnection
 parameter_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|parent
 parameter_list|,
 name|Connection
@@ -1154,7 +1154,7 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|sybaseAutoCommitPatch
 argument_list|(

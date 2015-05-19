@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|datasource
 operator|.
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 import|;
 end_import
 
@@ -67,7 +67,7 @@ name|assertEquals
 argument_list|(
 literal|1
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(
@@ -81,7 +81,7 @@ name|assertEquals
 argument_list|(
 literal|2
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(
@@ -95,7 +95,7 @@ name|assertEquals
 argument_list|(
 literal|1
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(
@@ -109,7 +109,7 @@ name|assertEquals
 argument_list|(
 literal|2
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(
@@ -123,7 +123,7 @@ name|assertEquals
 argument_list|(
 literal|2
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(
@@ -137,7 +137,7 @@ name|assertEquals
 argument_list|(
 literal|3
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(
@@ -151,7 +151,7 @@ name|assertEquals
 argument_list|(
 literal|6
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|maxIdleConnections
 argument_list|(

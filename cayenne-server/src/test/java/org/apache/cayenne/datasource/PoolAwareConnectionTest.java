@@ -141,7 +141,7 @@ name|cayenne
 operator|.
 name|datasource
 operator|.
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 import|;
 end_import
 
@@ -171,7 +171,7 @@ class|class
 name|PoolAwareConnectionTest
 block|{
 specifier|private
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|parentMock
 decl_stmt|;
 specifier|private
@@ -200,7 +200,7 @@ name|parentMock
 operator|=
 name|mock
 argument_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|class
 argument_list|)

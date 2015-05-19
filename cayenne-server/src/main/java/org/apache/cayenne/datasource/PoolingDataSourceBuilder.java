@@ -93,7 +93,7 @@ name|poolParameters
 operator|.
 name|setMaxQueueWaitTime
 argument_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|MAX_QUEUE_WAIT_DEFAULT
 argument_list|)
@@ -175,8 +175,9 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Builds a pooling DataSource that needs to be explicitly closed by the 	 * caller when no longer in use. 	 */
 specifier|public
-name|DataSource
+name|PoolingDataSource
 name|build
 parameter_list|()
 block|{
@@ -271,7 +272,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|buildPooling
 parameter_list|(
 name|DataSource
@@ -280,7 +281,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 argument_list|(
 name|nonPoolingDataSource
 argument_list|,
@@ -289,10 +290,10 @@ argument_list|)
 return|;
 block|}
 specifier|private
-name|DataSource
+name|PoolingDataSource
 name|buildManaged
 parameter_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|dataSource
 parameter_list|)
 block|{

@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A wrapper for {@link PoolingDataSourceManager} that manages the underlying  * connection pool size.  *   * @since 4.0  */
+comment|/**  * A wrapper for {@link UnmanagedPoolingDataSource} that automatically manages the underlying  * connection pool size.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -100,7 +100,7 @@ specifier|public
 class|class
 name|ManagedPoolingDataSource
 implements|implements
-name|DataSource
+name|PoolingDataSource
 implements|,
 name|ScopeEventListener
 block|{
@@ -115,7 +115,7 @@ decl_stmt|;
 specifier|public
 name|ManagedPoolingDataSource
 parameter_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|dataSource
 parameter_list|)
 block|{
@@ -131,7 +131,7 @@ block|}
 specifier|public
 name|ManagedPoolingDataSource
 parameter_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|dataSource
 parameter_list|,
 name|long
@@ -178,13 +178,15 @@ name|void
 name|beforeScopeEnd
 parameter_list|()
 block|{
-name|shutdown
+name|close
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
-name|shutdown
+name|close
 parameter_list|()
 block|{
 comment|// swap the underlying DataSource to prevent further interaction with

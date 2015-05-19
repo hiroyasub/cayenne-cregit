@@ -129,7 +129,7 @@ name|cayenne
 operator|.
 name|datasource
 operator|.
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 import|;
 end_import
 
@@ -300,7 +300,7 @@ name|Constants
 operator|.
 name|JDBC_MAX_QUEUE_WAIT_TIME
 argument_list|,
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|MAX_QUEUE_WAIT_DEFAULT
 argument_list|)

@@ -172,7 +172,7 @@ index|[]
 name|mockConnections
 decl_stmt|;
 specifier|private
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 name|mockPoolingDataSource
 decl_stmt|;
 specifier|private
@@ -234,7 +234,7 @@ name|mockPoolingDataSource
 operator|=
 name|mock
 argument_list|(
-name|PoolingDataSource
+name|UnmanagedPoolingDataSource
 operator|.
 name|class
 argument_list|)
@@ -360,7 +360,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testShutdown
+name|testClose
 parameter_list|()
 throws|throws
 name|SQLException
@@ -386,7 +386,7 @@ literal|0
 argument_list|)
 argument_list|)
 operator|.
-name|shutdown
+name|close
 argument_list|()
 expr_stmt|;
 name|assertFalse
@@ -413,7 +413,7 @@ argument_list|)
 expr_stmt|;
 name|dataSource
 operator|.
-name|shutdown
+name|close
 argument_list|()
 expr_stmt|;
 comment|// state after shutdown
@@ -427,7 +427,7 @@ literal|1
 argument_list|)
 argument_list|)
 operator|.
-name|shutdown
+name|close
 argument_list|()
 expr_stmt|;
 name|assertTrue
