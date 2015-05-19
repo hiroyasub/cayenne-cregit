@@ -409,6 +409,8 @@ name|password
 expr_stmt|;
 block|}
 comment|/** 	 * Returns a new database connection, using preconfigured data to locate the 	 * database and obtain a connection. 	 */
+annotation|@
+name|Override
 specifier|public
 name|Connection
 name|getConnection
@@ -427,6 +429,8 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * Returns a new database connection using provided credentials to login to 	 * the database. 	 */
+annotation|@
+name|Override
 specifier|public
 name|Connection
 name|getConnection
@@ -610,36 +614,29 @@ init|=
 operator|new
 name|StringBuilder
 argument_list|(
-literal|"Opening connection: "
+literal|"Connecting to '"
 argument_list|)
-decl_stmt|;
-comment|// append URL on the same line to make log somewhat grep-friendly
-name|buf
 operator|.
 name|append
 argument_list|(
 name|url
 argument_list|)
-expr_stmt|;
-name|buf
 operator|.
 name|append
 argument_list|(
-literal|"\n\tLogin: "
+literal|"' as '"
 argument_list|)
 operator|.
 name|append
 argument_list|(
 name|userName
 argument_list|)
-expr_stmt|;
-name|buf
 operator|.
 name|append
 argument_list|(
-literal|"\n\tPassword: *******"
+literal|"'"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|LOGGER
 operator|.
 name|info
@@ -652,6 +649,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getLoginTimeout
@@ -664,6 +663,8 @@ operator|-
 literal|1
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLoginTimeout
@@ -676,6 +677,8 @@ name|SQLException
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PrintWriter
 name|getLogWriter
@@ -690,6 +693,8 @@ name|getLogWriter
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setLogWriter
