@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder class that creates a default Cayenne implementation of a pooling  * {@link DataSource}.  *   * @since 4.0  */
+comment|/**  * A builder class that allows to build a {@link DataSource} with optional  * pooling.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -169,11 +169,11 @@ operator|.
 name|logger
 operator|=
 name|logger
-expr_stmt|;
-name|this
-operator|.
+operator|!=
+literal|null
+condition|?
 name|logger
-operator|=
+else|:
 name|NoopJdbcEventLogger
 operator|.
 name|getInstance
