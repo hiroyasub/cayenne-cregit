@@ -55,6 +55,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|ObjectId
 import|;
 end_import
@@ -68,6 +80,20 @@ operator|.
 name|cayenne
 operator|.
 name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|DataContext
 import|;
 end_import
 
@@ -110,6 +136,14 @@ name|ASTDbPath
 extends|extends
 name|ASTPath
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|6623715674339310782L
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -174,7 +208,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// TODO: implement resolving DB_PATH for DataObjects
 if|if
 condition|(
 name|o
@@ -288,8 +321,97 @@ name|Persistent
 operator|)
 name|o
 decl_stmt|;
-comment|// TODO: returns ObjectId snapshot for now.. should probably
-comment|// retrieve full snapshot...
+comment|// before reading full snapshot, check if we can use smaller ID
+comment|// snapshot ... it is much cheaper...
+return|return
+name|persistent
+operator|.
+name|getObjectContext
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|toMap_AttachedObject
+argument_list|(
+name|persistent
+operator|.
+name|getObjectContext
+argument_list|()
+argument_list|,
+name|persistent
+argument_list|)
+else|:
+name|toMap_DetachedObject
+argument_list|(
+name|persistent
+argument_list|)
+return|;
+block|}
+else|else
+block|{
+return|return
+literal|null
+return|;
+block|}
+block|}
+specifier|private
+name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
+name|toMap_AttachedObject
+parameter_list|(
+name|ObjectContext
+name|context
+parameter_list|,
+name|Persistent
+name|persistent
+parameter_list|)
+block|{
+comment|// TODO: snapshotting API should not be limited to DataContext...
+if|if
+condition|(
+name|context
+operator|instanceof
+name|DataContext
+condition|)
+block|{
+return|return
+operator|(
+operator|(
+name|DataContext
+operator|)
+name|context
+operator|)
+operator|.
+name|currentSnapshot
+argument_list|(
+name|persistent
+argument_list|)
+return|;
+block|}
+return|return
+name|toMap_DetachedObject
+argument_list|(
+name|persistent
+argument_list|)
+return|;
+block|}
+specifier|private
+name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
+name|toMap_DetachedObject
+parameter_list|(
+name|Persistent
+name|persistent
+parameter_list|)
+block|{
 name|ObjectId
 name|oid
 init|=
@@ -298,6 +420,8 @@ operator|.
 name|getObjectId
 argument_list|()
 decl_stmt|;
+comment|// returning null here is for backwards compatibility. Should we throw
+comment|// instead?
 return|return
 operator|(
 name|oid
@@ -313,14 +437,7 @@ else|:
 literal|null
 return|;
 block|}
-else|else
-block|{
-return|return
-literal|null
-return|;
-block|}
-block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -347,7 +464,7 @@ return|return
 name|copy
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -399,7 +516,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
