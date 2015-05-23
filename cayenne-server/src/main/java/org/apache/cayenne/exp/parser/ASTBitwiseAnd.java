@@ -82,7 +82,8 @@ specifier|final
 name|long
 name|serialVersionUID
 init|=
-literal|1L
+operator|-
+literal|1482206814209874743L
 decl_stmt|;
 name|ASTBitwiseAnd
 parameter_list|(

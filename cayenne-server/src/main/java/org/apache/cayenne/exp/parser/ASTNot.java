@@ -76,6 +76,14 @@ name|ASTNot
 extends|extends
 name|AggregateConditionNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|7418894098531106347L
+decl_stmt|;
 name|ASTNot
 parameter_list|(
 name|int
@@ -178,7 +186,7 @@ operator|.
 name|TRUE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -207,7 +215,7 @@ operator|.
 name|NOT
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -235,7 +243,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public

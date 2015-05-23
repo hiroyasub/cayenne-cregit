@@ -163,6 +163,14 @@ name|Expression
 implements|implements
 name|Node
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|4471832357335707557L
+decl_stmt|;
 specifier|protected
 name|Node
 name|parent
@@ -176,7 +184,7 @@ specifier|protected
 name|int
 name|id
 decl_stmt|;
-comment|/**      *<p>This is a utility method that can represent the supplied scalar as either an EJBQL literal into the      * supplied {@link java.io.PrintWriter} or is able to add the scalar to the parameters and to instead      * write a positional parameter to the EJBQL written to the {@link java.io.PrintWriter}.  If the parameters      * are null and the scalar object is not able to be represented as an EJBQL literal then the method will      * throw a runtime exception to indicate that it has failed to produce valid EJBQL.</p>      */
+comment|/** 	 *<p> 	 * This is a utility method that can represent the supplied scalar as either 	 * an EJBQL literal into the supplied {@link java.io.PrintWriter} or is able 	 * to add the scalar to the parameters and to instead write a positional 	 * parameter to the EJBQL written to the {@link java.io.PrintWriter}. If the 	 * parameters are null and the scalar object is not able to be represented 	 * as an EJBQL literal then the method will throw a runtime exception to 	 * indicate that it has failed to produce valid EJBQL. 	 *</p> 	 */
 specifier|protected
 specifier|static
 name|void
@@ -284,7 +292,9 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// parameters start at 1
+comment|// parameters
+comment|// start
+comment|// at 1
 return|return;
 block|}
 if|if
@@ -469,7 +479,7 @@ literal|"' is not supported as a scalar type in EJBQL"
 argument_list|)
 throw|;
 block|}
-comment|/**      * Utility method that encodes an object that is not an expression Node to      * String.      */
+comment|/** 	 * Utility method that encodes an object that is not an expression Node to 	 * String. 	 */
 specifier|protected
 specifier|static
 name|void
@@ -637,7 +647,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Utility method that prints a string to the provided Appendable, escaping      * special characters.      */
+comment|/** 	 * Utility method that prints a string to the provided Appendable, escaping 	 * special characters. 	 */
 specifier|protected
 specifier|static
 name|void
@@ -801,7 +811,7 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/**      * Always returns empty map.      *       * @since 3.0      */
+comment|/** 	 * Always returns empty map. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -830,7 +840,7 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|/**      * Returns operator for ebjql statements, which can differ for Cayenne      * expression operator      */
+comment|/** 	 * Returns operator for ebjql statements, which can differ for Cayenne 	 * expression operator 	 */
 specifier|protected
 name|String
 name|getEJBQLExpressionOperator
@@ -860,7 +870,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Implemented for backwards compatibility with exp package.      */
+comment|/** 	 * Implemented for backwards compatibility with exp package. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -877,7 +887,7 @@ name|id
 index|]
 return|;
 block|}
-comment|/**      * Flattens the tree under this node by eliminating any children that are of      * the same class as this node and copying their children to this node.      */
+comment|/** 	 * Flattens the tree under this node by eliminating any children that are of 	 * the same class as this node and copying their children to this node. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -1046,7 +1056,7 @@ name|newChildren
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1194,7 +1204,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @deprecated since 4.0 use {@link #appendAsString(Appendable)}.      */
+comment|/** 	 * @deprecated since 4.0 use {@link #appendAsString(Appendable)}. 	 */
 annotation|@
 name|Override
 annotation|@
@@ -1547,7 +1557,7 @@ operator|.
 name|length
 return|;
 block|}
-comment|/**      * Evaluates itself with object, pushing result on the stack.      */
+comment|/** 	 * Evaluates itself with object, pushing result on the stack. 	 */
 specifier|protected
 specifier|abstract
 name|Object
@@ -1559,7 +1569,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Sets the parent to this for all children.      *       * @since 3.0      */
+comment|/** 	 * Sets the parent to this for all children. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|connectChildren
@@ -1711,7 +1721,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 3.0      * @deprecated since 4.0 use {@link #appendAsEJBQL(Appendable, String)}.      */
+comment|/** 	 * @since 3.0 	 * @deprecated since 4.0 use {@link #appendAsEJBQL(Appendable, String)}. 	 */
 annotation|@
 name|Override
 annotation|@
@@ -1754,7 +1764,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|void
 name|appendAsEJBQL
@@ -1778,7 +1788,7 @@ name|rootId
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * @since 4.0          */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1858,7 +1868,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Encodes child of this node with specified index to EJBQL      */
+comment|/** 	 * Encodes child of this node with specified index to EJBQL 	 */
 specifier|protected
 name|void
 name|appendChildrenAsEJBQL

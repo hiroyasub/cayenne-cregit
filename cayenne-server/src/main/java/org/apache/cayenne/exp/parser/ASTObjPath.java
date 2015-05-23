@@ -155,8 +155,17 @@ block|{
 specifier|private
 specifier|static
 specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|3574281576491705706L
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
 name|Log
-name|logObj
+name|LOGGER
 init|=
 name|LogFactory
 operator|.
@@ -175,7 +184,7 @@ name|OBJ_PREFIX
 init|=
 literal|"obj:"
 decl_stmt|;
-comment|/**      * Constructor used by expression parser. Do not invoke directly.      */
+comment|/** 	 * Constructor used by expression parser. Do not invoke directly. 	 */
 name|ASTObjPath
 parameter_list|(
 name|int
@@ -275,7 +284,7 @@ name|path
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -302,7 +311,7 @@ return|return
 name|copy
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -346,7 +355,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -453,7 +462,7 @@ name|CayenneRuntimeException
 name|ex
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|warn
 argument_list|(

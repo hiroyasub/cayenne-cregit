@@ -42,6 +42,15 @@ name|ASTBetween
 extends|extends
 name|ConditionNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8739783546459651759L
+decl_stmt|;
 name|ASTBetween
 parameter_list|(
 name|int
@@ -258,7 +267,7 @@ operator|.
 name|FALSE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

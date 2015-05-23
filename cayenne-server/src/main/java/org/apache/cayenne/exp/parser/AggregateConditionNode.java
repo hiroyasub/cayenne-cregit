@@ -23,11 +23,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|exp
 operator|.
-name|Transformer
+name|ExpressionException
 import|;
 end_import
 
@@ -37,16 +37,16 @@ name|org
 operator|.
 name|apache
 operator|.
-name|cayenne
+name|commons
 operator|.
-name|exp
+name|collections
 operator|.
-name|ExpressionException
+name|Transformer
 import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of aggregated conditional nodes such as NOT, AND, OR. Performs  * extra checks on parent and child expressions to validate conditions that  * are not addressed in the Cayenne expressions grammar.  *   * @since 1.1  */
+comment|/**  * Superclass of aggregated conditional nodes such as NOT, AND, OR. Performs  * extra checks on parent and child expressions to validate conditions that are  * not addressed in the Cayenne expressions grammar.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -57,6 +57,15 @@ name|AggregateConditionNode
 extends|extends
 name|SimpleNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|636699350691988809L
+decl_stmt|;
 name|AggregateConditionNode
 parameter_list|(
 name|int
@@ -166,7 +175,7 @@ case|:
 return|return
 name|PRUNED_NODE
 return|;
-default|default :
+default|default:
 return|return
 name|condition
 return|;

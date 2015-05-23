@@ -86,6 +86,15 @@ name|ASTDivide
 extends|extends
 name|SimpleNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|5086569683844539310L
+decl_stmt|;
 name|ASTDivide
 parameter_list|(
 name|int
@@ -329,7 +338,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

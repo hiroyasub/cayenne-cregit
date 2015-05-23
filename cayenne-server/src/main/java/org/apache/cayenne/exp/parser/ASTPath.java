@@ -77,6 +77,15 @@ name|ASTPath
 extends|extends
 name|SimpleNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8099822503585617295L
+decl_stmt|;
 specifier|protected
 name|String
 name|path
@@ -211,7 +220,7 @@ return|return
 name|path
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -237,7 +246,7 @@ name|getPathAliases
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setPathAliases
@@ -258,7 +267,7 @@ operator|=
 name|pathAliases
 expr_stmt|;
 block|}
-comment|/**      * Helper method to evaluate path expression with Cayenne Entity.      */
+comment|/** 	 * Helper method to evaluate path expression with Cayenne Entity. 	 */
 specifier|protected
 name|CayenneMapEntry
 name|evaluateEntityNode

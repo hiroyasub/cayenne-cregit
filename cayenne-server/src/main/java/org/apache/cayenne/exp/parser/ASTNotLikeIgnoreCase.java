@@ -56,6 +56,15 @@ name|ASTNotLikeIgnoreCase
 extends|extends
 name|IgnoreCaseNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|1837593236671099985L
+decl_stmt|;
 name|ASTNotLikeIgnoreCase
 parameter_list|(
 name|int
@@ -245,7 +254,7 @@ operator|.
 name|TRUE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

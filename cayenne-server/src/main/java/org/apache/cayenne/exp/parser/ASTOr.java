@@ -76,6 +76,14 @@ name|ASTOr
 extends|extends
 name|AggregateConditionNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|780157841581581297L
+decl_stmt|;
 name|ASTOr
 parameter_list|(
 name|int
@@ -299,7 +307,7 @@ operator|.
 name|FALSE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

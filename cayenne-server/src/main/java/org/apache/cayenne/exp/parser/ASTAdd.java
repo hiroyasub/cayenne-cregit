@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Add" Expression.  *   */
+comment|/**  * "Add" Expression.  */
 end_comment
 
 begin_class
@@ -86,6 +86,15 @@ name|ASTAdd
 extends|extends
 name|SimpleNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8622963819149351988L
+decl_stmt|;
 name|ASTAdd
 parameter_list|(
 name|int
@@ -169,6 +178,9 @@ specifier|public
 name|ASTAdd
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|nodes
 parameter_list|)
 block|{
@@ -188,6 +200,9 @@ name|size
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|nodes
@@ -325,7 +340,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

@@ -92,7 +92,16 @@ name|AggregateConditionNode
 implements|implements
 name|ValueInjector
 block|{
-comment|/**      * Constructor used by expression parser. Do not invoke directly.      */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|5936206826390819160L
+decl_stmt|;
+comment|/** 	 * Constructor used by expression parser. Do not invoke directly. 	 */
 name|ASTAnd
 parameter_list|(
 name|int
@@ -317,7 +326,7 @@ operator|.
 name|TRUE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -384,7 +393,7 @@ name|Object
 name|o
 parameter_list|)
 block|{
-comment|//iterate through all operands, inject all possible
+comment|// iterate through all operands, inject all possible
 name|int
 name|len
 init|=
