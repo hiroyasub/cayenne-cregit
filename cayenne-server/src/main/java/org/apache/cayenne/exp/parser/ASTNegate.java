@@ -86,6 +86,15 @@ name|ASTNegate
 extends|extends
 name|SimpleNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|9161722951926428414L
+decl_stmt|;
 name|ASTNegate
 parameter_list|(
 name|int
@@ -138,7 +147,7 @@ name|connectChildren
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -211,7 +220,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -317,7 +326,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public

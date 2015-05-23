@@ -38,6 +38,15 @@ name|ExpressionException
 extends|extends
 name|CayenneRuntimeException
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|4933472762330859309L
+decl_stmt|;
 specifier|protected
 name|String
 name|expressionString
@@ -106,7 +115,7 @@ name|cause
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructor for ExpressionException.      *       * @since 1.1      */
+comment|/** 	 * Constructor for ExpressionException. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|ExpressionException
 parameter_list|(

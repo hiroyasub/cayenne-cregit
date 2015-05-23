@@ -50,6 +50,15 @@ name|ExpressionParameter
 implements|implements
 name|Serializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8324061115570177022L
+decl_stmt|;
 specifier|protected
 name|String
 name|name
