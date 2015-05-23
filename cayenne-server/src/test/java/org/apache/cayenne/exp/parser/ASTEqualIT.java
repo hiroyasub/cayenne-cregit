@@ -643,7 +643,7 @@ argument_list|)
 argument_list|,
 name|Cayenne
 operator|.
-name|intPKForObject
+name|longPKForObject
 argument_list|(
 name|a1
 argument_list|)
