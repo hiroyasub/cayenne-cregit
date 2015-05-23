@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Boolean false expression element  *   * Notice that there is one ASTTrue and one ASTFalse instead of a ASTBoolean  * with a Boolean value. The main reason for doing this is that a common  * ASTBoolean will have operand count of 1 and that will default to a prepared  * statmenet like " where ? and (...)", but we only need " where true and  * (...)".  *   * @see ASTTrue  * @since 3.0  */
+comment|/**  * Boolean false expression element  *   * Notice that there is one ASTTrue and one ASTFalse instead of a ASTBoolean  * with a Boolean value. The main reason for doing this is that a common  * ASTBoolean will have operand count of 1 and that will default to a prepared  * statement like " where ? and (...)", but we only need " where true and  * (...)".  *   * @see ASTTrue  * @since 3.0  */
 end_comment
 
 begin_class
@@ -62,7 +62,16 @@ name|ASTFalse
 extends|extends
 name|ConditionNode
 block|{
-comment|/**      * Constructor used by expression parser. Do not invoke directly.      */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8441997825701749863L
+decl_stmt|;
+comment|/** 	 * Constructor used by expression parser. Do not invoke directly. 	 */
 name|ASTFalse
 parameter_list|(
 name|int
@@ -160,7 +169,7 @@ operator|.
 name|FALSE
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -181,7 +190,7 @@ literal|"false"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public

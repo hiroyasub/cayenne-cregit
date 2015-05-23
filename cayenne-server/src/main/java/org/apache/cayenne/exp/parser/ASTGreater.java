@@ -42,7 +42,15 @@ name|ASTGreater
 extends|extends
 name|ConditionNode
 block|{
-comment|/**      * Constructor used by expression parser. Do not invoke directly.      */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|2796092142001150018L
+decl_stmt|;
+comment|/** 	 * Constructor used by expression parser. Do not invoke directly. 	 */
 name|ASTGreater
 parameter_list|(
 name|int
@@ -192,7 +200,7 @@ operator|.
 name|FALSE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

@@ -99,8 +99,16 @@ block|{
 specifier|private
 specifier|static
 specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1211234198602067833L
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
 name|Log
-name|logObj
+name|LOGGER
 init|=
 name|LogFactory
 operator|.
@@ -111,7 +119,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * Constructor used by expression parser. Do not invoke directly.      */
+comment|/** 	 * Constructor used by expression parser. Do not invoke directly. 	 */
 name|ASTEqual
 parameter_list|(
 name|int
@@ -136,7 +144,7 @@ name|JJTEQUAL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates "Equal To" expression.      */
+comment|/** 	 * Creates "Equal To" expression. 	 */
 specifier|public
 name|ASTEqual
 parameter_list|(
@@ -236,7 +244,7 @@ name|o2
 argument_list|)
 return|;
 block|}
-comment|/**      * Compares two objects, if one of them is array, 'in' operation is      * performed      */
+comment|/** 	 * Compares two objects, if one of them is array, 'in' operation is 	 * performed 	 */
 specifier|static
 name|boolean
 name|evaluateImpl
@@ -415,7 +423,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -624,7 +632,7 @@ name|Exception
 name|ex
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
