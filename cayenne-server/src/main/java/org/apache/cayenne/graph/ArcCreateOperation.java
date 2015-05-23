@@ -26,6 +26,14 @@ name|ArcCreateOperation
 extends|extends
 name|NodeDiff
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|2497511574121718987L
+decl_stmt|;
 specifier|protected
 name|Object
 name|targetNodeId

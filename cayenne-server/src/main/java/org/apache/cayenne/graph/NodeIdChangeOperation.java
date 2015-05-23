@@ -26,6 +26,15 @@ name|NodeIdChangeOperation
 extends|extends
 name|NodeDiff
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|7763730686130451729L
+decl_stmt|;
 specifier|protected
 name|Object
 name|newNodeId

@@ -40,6 +40,14 @@ name|NodePropertyChangeOperation
 extends|extends
 name|NodeDiff
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|3282063727025159961L
+decl_stmt|;
 specifier|protected
 name|String
 name|property
@@ -137,7 +145,7 @@ operator|=
 name|newValue
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getProperty
@@ -147,7 +155,7 @@ return|return
 name|property
 return|;
 block|}
-comment|/**      * Chnages the 'newValue'.      *       * @since 3.0      */
+comment|/** 	 * Changes the 'newValue'. 	 *  	 * @since 3.0 	 */
 name|void
 name|setNewValue
 parameter_list|(
@@ -162,7 +170,7 @@ operator|=
 name|newValue
 expr_stmt|;
 block|}
-comment|/**      * Returns true if both old and new value are equal.      */
+comment|/** 	 * Returns true if both old and new value are equal. 	 */
 annotation|@
 name|Override
 specifier|public

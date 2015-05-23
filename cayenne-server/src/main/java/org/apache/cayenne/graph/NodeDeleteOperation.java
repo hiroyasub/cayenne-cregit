@@ -26,6 +26,15 @@ name|NodeDeleteOperation
 extends|extends
 name|NodeDiff
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|6826320740710028334L
+decl_stmt|;
 specifier|public
 name|NodeDeleteOperation
 parameter_list|(

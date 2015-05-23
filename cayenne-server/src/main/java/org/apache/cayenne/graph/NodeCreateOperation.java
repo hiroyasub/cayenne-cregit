@@ -26,6 +26,15 @@ name|NodeCreateOperation
 extends|extends
 name|NodeDiff
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|7383872939009489304L
+decl_stmt|;
 specifier|public
 name|NodeCreateOperation
 parameter_list|(

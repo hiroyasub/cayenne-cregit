@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An event indicating a change in the object graph. A change is expressed as a GraphDiff,  * so the easiest way to process the event is the following:  *   *<pre>  *    GraphChangeHandler handler = ..;  *    event.getDiff().apply(handler);  *</pre>  *   * @since 1.2  */
+comment|/**  * An event indicating a change in the object graph. A change is expressed as a  * GraphDiff, so the easiest way to process the event is the following:  *   *<pre>  *    GraphChangeHandler handler = ..;  *    event.getDiff().apply(handler);  *</pre>  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -40,6 +40,15 @@ name|GraphEvent
 extends|extends
 name|CayenneEvent
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8954343713674462675L
+decl_stmt|;
 specifier|protected
 name|GraphDiff
 name|diff

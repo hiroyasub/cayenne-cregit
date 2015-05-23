@@ -31,16 +31,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -256,7 +246,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent ObjectContext.  * Graph node ids are expected to be ObjectIds. This class is made public since 3.0 to be  * used in ObjectContext synchronizing  *   * @since 1.2  */
+comment|/**  * A GraphChangeHandler that loads child ObjectContext diffs into a parent  * ObjectContext. Graph node ids are expected to be ObjectIds. This class is  * made public since 3.0 to be used in ObjectContext synchronizing  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -266,7 +256,8 @@ name|ChildDiffLoader
 implements|implements
 name|GraphChangeHandler
 block|{
-comment|// TODO: andrus 04/05/2009 - replace with PropertyChangeProcessingStrategy enum used
+comment|// TODO: andrus 04/05/2009 - replace with PropertyChangeProcessingStrategy
+comment|// enum used
 comment|// in ROP?
 specifier|static
 specifier|final
@@ -303,7 +294,7 @@ specifier|protected
 name|ObjectContext
 name|context
 decl_stmt|;
-comment|/**      * Returns whether child diff processing is in progress.      *       * @since 3.0      */
+comment|/** 	 * Returns whether child diff processing is in progress. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -317,7 +308,7 @@ name|get
 argument_list|()
 return|;
 block|}
-comment|/**      * Sets whether child diff processing is in progress.      *       * @since 3.0      */
+comment|/** 	 * Sets whether child diff processing is in progress. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|void
@@ -588,7 +579,8 @@ name|Object
 name|newValue
 parameter_list|)
 block|{
-comment|// this change is for simple property, so no need to convert targets to server
+comment|// this change is for simple property, so no need to convert targets to
+comment|// server
 comment|// objects...
 name|Persistent
 name|object
@@ -706,7 +698,8 @@ argument_list|(
 name|targetNodeId
 argument_list|)
 decl_stmt|;
-comment|// if a target was later deleted, the diff for arcCreated is still preserved and
+comment|// if a target was later deleted, the diff for arcCreated is still
+comment|// preserved and
 comment|// can result in NULL target here.
 if|if
 condition|(
@@ -791,7 +784,8 @@ name|ToManyProperty
 name|property
 parameter_list|)
 block|{
-comment|// connect reverse arc if the relationship is marked as "runtime"
+comment|// connect reverse arc if the relationship is marked as
+comment|// "runtime"
 name|ArcProperty
 name|reverseArc
 init|=
@@ -892,7 +886,8 @@ argument_list|(
 name|nodeId
 argument_list|)
 decl_stmt|;
-comment|// needed as sometime temporary objects are evoked from the context before
+comment|// needed as sometime temporary objects are evoked from the context
+comment|// before
 comment|// changing their relationships
 if|if
 condition|(
@@ -974,7 +969,8 @@ name|ToManyProperty
 name|property
 parameter_list|)
 block|{
-comment|// connect reverse arc if the relationship is marked as "runtime"
+comment|// connect reverse arc if the relationship is marked as
+comment|// "runtime"
 name|ArcProperty
 name|reverseArc
 init|=
@@ -1013,12 +1009,15 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// this is usually the case when a NEW object was deleted and then
+comment|// this is usually the case when a NEW object was
+comment|// deleted and then
 comment|// its
-comment|// relationships were manipulated; so try to locate the object in
+comment|// relationships were manipulated; so try to locate the
+comment|// object in
 comment|// the
 comment|// collection ...
-comment|// the performance of this is rather dubious of course...
+comment|// the performance of this is rather dubious of
+comment|// course...
 name|target
 operator|=
 name|findObjectInCollection
@@ -1107,7 +1106,8 @@ name|Object
 name|nodeId
 parameter_list|)
 block|{
-comment|// first do a lookup in ObjectStore; if even a hollow object is found, return it;
+comment|// first do a lookup in ObjectStore; if even a hollow object is found,
+comment|// return it;
 comment|// if not - fetch.
 name|Persistent
 name|object
@@ -1144,7 +1144,8 @@ name|ObjectId
 operator|)
 name|nodeId
 decl_stmt|;
-comment|// this can happen if a NEW object is deleted and after that its relationships are
+comment|// this can happen if a NEW object is deleted and after that its
+comment|// relationships are
 comment|// modified
 if|if
 condition|(
@@ -1187,6 +1188,9 @@ name|query
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|objects
 init|=
 name|response
@@ -1261,6 +1265,9 @@ name|toManyHolder
 parameter_list|)
 block|{
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|c
 init|=
 operator|(
@@ -1272,6 +1279,11 @@ condition|?
 operator|(
 operator|(
 name|Map
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|toManyHolder
 operator|)
@@ -1281,35 +1293,27 @@ argument_list|()
 else|:
 operator|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|toManyHolder
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Object
+name|o
+range|:
 name|c
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|Persistent
-name|o
+name|p
 init|=
 operator|(
 name|Persistent
 operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|o
 decl_stmt|;
 if|if
 condition|(
@@ -1317,7 +1321,7 @@ name|nodeId
 operator|.
 name|equals
 argument_list|(
-name|o
+name|p
 operator|.
 name|getObjectId
 argument_list|()
@@ -1325,7 +1329,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|o
+name|p
 return|;
 block|}
 block|}

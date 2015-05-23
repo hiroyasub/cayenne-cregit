@@ -76,6 +76,14 @@ name|CompoundDiff
 implements|implements
 name|GraphDiff
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|5930690302335603082L
+decl_stmt|;
 specifier|protected
 name|List
 argument_list|<
@@ -83,13 +91,13 @@ name|GraphDiff
 argument_list|>
 name|diffs
 decl_stmt|;
-comment|/**      * Creates an empty CompoundDiff instance.      */
+comment|/** 	 * Creates an empty CompoundDiff instance. 	 */
 specifier|public
 name|CompoundDiff
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates CompoundDiff instance. Note that a List is not cloned in this constructor,      * so subsequent calls to add and addAll would modify the original list.      */
+comment|/** 	 * Creates CompoundDiff instance. Note that a List is not cloned in this 	 * constructor, so subsequent calls to add and addAll would modify the 	 * original list. 	 */
 specifier|public
 name|CompoundDiff
 parameter_list|(
@@ -107,7 +115,7 @@ operator|=
 name|diffs
 expr_stmt|;
 block|}
-comment|/**      * Returns true if this diff has no other diffs or if all of its diffs are noops.      */
+comment|/** 	 * Returns true if this diff has no other diffs or if all of its diffs are 	 * noops. 	 */
 specifier|public
 name|boolean
 name|isNoop
@@ -179,7 +187,11 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|GraphDiff
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
 specifier|public
@@ -221,7 +233,7 @@ name|diffs
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Iterates over diffs list, calling "apply" on each individual diff.      */
+comment|/** 	 * Iterates over diffs list, calling "apply" on each individual diff. 	 */
 specifier|public
 name|void
 name|apply
@@ -257,7 +269,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Iterates over diffs list in reverse order, calling "apply" on each individual diff.      */
+comment|/** 	 * Iterates over diffs list in reverse order, calling "apply" on each 	 * individual diff. 	 */
 specifier|public
 name|void
 name|undo

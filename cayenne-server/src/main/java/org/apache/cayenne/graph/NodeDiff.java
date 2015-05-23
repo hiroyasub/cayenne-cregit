@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An abstract superclass of operations on individual nodes and arcs in a digraph.  *   * @since 1.2  */
+comment|/**  * An abstract superclass of operations on individual nodes and arcs in a  * digraph.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -32,6 +32,15 @@ argument_list|<
 name|NodeDiff
 argument_list|>
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|6108147375331011556L
+decl_stmt|;
 specifier|protected
 name|int
 name|diffId
@@ -77,6 +86,8 @@ operator|=
 name|diffId
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isNoop
@@ -86,6 +97,8 @@ return|return
 literal|false
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
@@ -95,6 +108,8 @@ name|GraphChangeHandler
 name|tracker
 parameter_list|)
 function_decl|;
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
@@ -113,7 +128,7 @@ return|return
 name|nodeId
 return|;
 block|}
-comment|/**      * Returns an id of this diff that can be used for various purposes, such as      * identifying the order of the diff in a sequence.      */
+comment|/** 	 * Returns an id of this diff that can be used for various purposes, such as 	 * identifying the order of the diff in a sequence. 	 */
 specifier|public
 name|int
 name|getDiffId
@@ -123,7 +138,7 @@ return|return
 name|diffId
 return|;
 block|}
-comment|/**      * Sets an id of this diff that can be used for various purposes, such as identifying      * the order of the diff in a sequence.      */
+comment|/** 	 * Sets an id of this diff that can be used for various purposes, such as 	 * identifying the order of the diff in a sequence. 	 */
 specifier|public
 name|void
 name|setDiffId
@@ -139,7 +154,9 @@ operator|=
 name|diffId
 expr_stmt|;
 block|}
-comment|/**      * Implements a Comparable interface method to compare based on diffId property.      */
+comment|/** 	 * Implements a Comparable interface method to compare based on diffId 	 * property. 	 */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|compareTo
