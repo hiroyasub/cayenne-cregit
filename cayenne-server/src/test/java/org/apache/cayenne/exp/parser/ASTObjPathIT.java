@@ -187,7 +187,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testEvaluate_ObjPath_ObjEntity
+name|testEvaluate_ObjEntity
 parameter_list|()
 block|{
 name|ASTObjPath

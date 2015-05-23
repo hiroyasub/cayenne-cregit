@@ -100,7 +100,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testEvaluateBETWEEN
+name|testEvaluate
 parameter_list|()
 block|{
 comment|// evaluate both BETWEEN and NOT_BETWEEN
@@ -327,7 +327,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testEvaluateBETWEEN_Null
+name|testEvaluate_Null
 parameter_list|()
 block|{
 name|Expression

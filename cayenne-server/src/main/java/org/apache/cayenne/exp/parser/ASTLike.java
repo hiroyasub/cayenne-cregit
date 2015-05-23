@@ -46,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * "Like" expression.  *   */
+comment|/**  * "Like" expression.  */
 end_comment
 
 begin_class
@@ -56,6 +56,15 @@ name|ASTLike
 extends|extends
 name|PatternMatchNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|238967837469085757L
+decl_stmt|;
 name|ASTLike
 parameter_list|(
 name|int
@@ -264,7 +273,7 @@ operator|.
 name|FALSE
 return|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public

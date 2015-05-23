@@ -90,6 +90,15 @@ name|ASTNamedParameter
 extends|extends
 name|ASTScalar
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|3965588358977704022L
+decl_stmt|;
 name|ASTNamedParameter
 parameter_list|(
 name|int
@@ -158,7 +167,7 @@ literal|", call 'expWithParameters' first."
 argument_list|)
 throw|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -251,7 +260,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public

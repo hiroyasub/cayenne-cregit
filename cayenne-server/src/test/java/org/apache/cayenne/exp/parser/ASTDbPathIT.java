@@ -253,7 +253,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testEvaluate_DbPath_DataObject
+name|testEvaluate_DataObject
 parameter_list|()
 block|{
 name|Artist
@@ -334,7 +334,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testEvaluate_DbPath_DbEntity
+name|testEvaluate_DbEntity
 parameter_list|()
 block|{
 name|Expression

@@ -104,6 +104,14 @@ name|ASTList
 extends|extends
 name|SimpleNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|6045178972189002055L
+decl_stmt|;
 specifier|protected
 name|Object
 index|[]
@@ -133,7 +141,7 @@ name|JJTLIST
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Initializes a list expression with an Object[].      */
+comment|/** 	 * Initializes a list expression with an Object[]. 	 */
 specifier|public
 name|ASTList
 parameter_list|(
@@ -155,11 +163,14 @@ name|objects
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Initializes a list expression with a Java Collection      */
+comment|/** 	 * Initializes a list expression with a Java Collection 	 */
 specifier|public
 name|ASTList
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|objects
 parameter_list|)
 block|{
@@ -176,11 +187,14 @@ name|objects
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Initializes a list expression with a Java Iterator.      */
+comment|/** 	 * Initializes a list expression with a Java Iterator. 	 */
 specifier|public
 name|ASTList
 parameter_list|(
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|objects
 parameter_list|)
 block|{
@@ -197,7 +211,7 @@ name|objects
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a copy of this expression node, without copying children.      */
+comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -256,7 +270,7 @@ return|return
 literal|","
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -608,7 +622,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets an internal collection of values. Value argument can be an Object[],      * a Collection or an iterator.      */
+comment|/** 	 * Sets an internal collection of values. Value argument can be an Object[], 	 * a Collection or an iterator. 	 */
 specifier|protected
 name|void
 name|setValues
@@ -691,28 +705,32 @@ operator|instanceof
 name|Collection
 condition|)
 block|{
+name|Collection
+argument_list|<
+name|?
+argument_list|>
+name|c
+init|=
+operator|(
+name|Collection
+argument_list|<
+name|?
+argument_list|>
+operator|)
+name|value
+decl_stmt|;
 name|this
 operator|.
 name|values
 operator|=
-operator|(
-operator|(
-name|Collection
-operator|)
-name|value
-operator|)
+name|c
 operator|.
 name|toArray
 argument_list|(
 operator|new
 name|Object
 index|[
-operator|(
-operator|(
-name|Collection
-operator|)
-name|value
-operator|)
+name|c
 operator|.
 name|size
 argument_list|()
@@ -728,17 +746,29 @@ name|Iterator
 condition|)
 block|{
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|values
 init|=
 operator|new
 name|ArrayList
+argument_list|<
+name|Object
+argument_list|>
 argument_list|()
 decl_stmt|;
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 operator|(
 name|Iterator
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|value
 decl_stmt|;
