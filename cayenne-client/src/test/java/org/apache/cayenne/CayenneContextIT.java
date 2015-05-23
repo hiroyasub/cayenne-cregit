@@ -107,20 +107,6 @@ name|cayenne
 operator|.
 name|graph
 operator|.
-name|MockGraphDiff
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|graph
-operator|.
 name|NodeIdChangeOperation
 import|;
 end_import
@@ -678,9 +664,12 @@ init|=
 operator|new
 name|MockDataChannel
 argument_list|(
-operator|new
-name|MockGraphDiff
-argument_list|()
+name|mock
+argument_list|(
+name|GraphDiff
+operator|.
+name|class
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|channel
@@ -806,7 +795,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|// test that ids that are passed back are actually propagated to the right
+comment|// test that ids that are passed back are actually propagated to the
+comment|// right
 comment|// objects...
 name|MockDataChannel
 name|channel
@@ -931,7 +921,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|// record change here to make it available to the anonymous connector method..
+comment|// record change here to make it available to the anonymous connector
+comment|// method..
 name|diff
 operator|.
 name|add

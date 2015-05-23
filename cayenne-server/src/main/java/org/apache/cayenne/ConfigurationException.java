@@ -24,13 +24,21 @@ name|ConfigurationException
 extends|extends
 name|CayenneRuntimeException
 block|{
-comment|/**      * Creates new<code>ConfigurationException</code> without detail message.      */
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|3991782831459956981L
+decl_stmt|;
+comment|/** 	 * Creates new<code>ConfigurationException</code> without detail message. 	 */
 specifier|public
 name|ConfigurationException
 parameter_list|()
 block|{
 block|}
-comment|/**      * Constructs an exception with the specified message with an optional list      * of message formatting arguments. Message formatting rules follow      * "String.format(..)" conventions.      */
+comment|/** 	 * Constructs an exception with the specified message with an optional list 	 * of message formatting arguments. Message formatting rules follow 	 * "String.format(..)" conventions. 	 */
 specifier|public
 name|ConfigurationException
 parameter_list|(
@@ -50,7 +58,7 @@ name|messageArgs
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructs an exception wrapping another exception thrown elsewhere.      */
+comment|/** 	 * Constructs an exception wrapping another exception thrown elsewhere. 	 */
 specifier|public
 name|ConfigurationException
 parameter_list|(
