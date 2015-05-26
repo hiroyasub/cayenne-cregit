@@ -19,6 +19,46 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -67,18 +107,6 @@ name|Serializable
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
 begin_comment
 comment|/**  * ExtendedTypeFactory for handling serializable objects. Returned ExtendedType is simply  * an object serialization wrapper on top of byte[] ExtendedType.  *   * @since 3.0  */
 end_comment
@@ -89,6 +117,21 @@ name|SerializableTypeFactory
 implements|implements
 name|ExtendedTypeFactory
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Log
+name|logger
+init|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|SerializableTypeFactory
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 name|ExtendedTypeMap
 name|map
@@ -117,6 +160,20 @@ argument_list|>
 name|objectClass
 parameter_list|)
 block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"Haven't found suitable ExtendedType for class '"
+operator|+
+name|objectClass
+operator|.
+name|getCanonicalName
+argument_list|()
+operator|+
+literal|"'. Most likely you need to define custom ExtendedType."
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|Serializable
@@ -129,6 +186,13 @@ name|objectClass
 argument_list|)
 condition|)
 block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"SerializableType will be used for type conversion."
+argument_list|)
+expr_stmt|;
 comment|// using a binary stream delegate instead of byte[] may actually speed up
 comment|// things in some dbs, but at least byte[] type works consistently across
 comment|// adapters...
@@ -159,7 +223,7 @@ literal|"Can't create Serializable ExtendedType for "
 operator|+
 name|objectClass
 operator|.
-name|getName
+name|getCanonicalName
 argument_list|()
 operator|+
 literal|": no ExtendedType exists for byte[]"
@@ -228,7 +292,7 @@ block|{
 return|return
 name|javaClass
 operator|.
-name|getName
+name|getCanonicalName
 argument_list|()
 return|;
 block|}

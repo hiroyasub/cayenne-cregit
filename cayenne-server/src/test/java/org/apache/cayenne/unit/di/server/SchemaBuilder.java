@@ -628,6 +628,8 @@ block|,
 literal|"oneway-rels.map.xml"
 block|,
 literal|"unsupported-distinct-types.map.xml"
+block|,
+literal|"array-type.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded

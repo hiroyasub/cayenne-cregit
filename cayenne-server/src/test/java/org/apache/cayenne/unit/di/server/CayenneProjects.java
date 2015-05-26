@@ -33,6 +33,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|ARRAY_TYPE_PROJECT
+init|=
+literal|"cayenne-array-type.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|BINARY_PK_PROJECT
 init|=
 literal|"cayenne-binary-pk.xml"

@@ -17,6 +17,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -122,20 +136,6 @@ operator|.
 name|util
 operator|.
 name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
 import|;
 end_import
 
@@ -621,15 +621,7 @@ argument_list|()
 decl_stmt|;
 static|static
 block|{
-name|SQL_STRING_TYPE
-operator|.
-name|put
-argument_list|(
-name|SQL_ARRAY
-argument_list|,
-name|ARRAY
-argument_list|)
-expr_stmt|;
+comment|//        SQL_STRING_TYPE.put(SQL_ARRAY, ARRAY);
 name|SQL_STRING_TYPE
 operator|.
 name|put
