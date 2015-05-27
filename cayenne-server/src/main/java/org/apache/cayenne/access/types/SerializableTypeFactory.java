@@ -171,7 +171,7 @@ operator|.
 name|getCanonicalName
 argument_list|()
 operator|+
-literal|"'. Most likely you need to define custom ExtendedType."
+literal|"'. Most likely you need to define a custom ExtendedType."
 argument_list|)
 expr_stmt|;
 if|if
