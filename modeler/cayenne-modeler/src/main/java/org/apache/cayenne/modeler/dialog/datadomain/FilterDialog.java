@@ -41,25 +41,19 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|modeler
+name|swing
 operator|.
-name|util
-operator|.
-name|StayOpenJCheckBoxMenuItem
+name|BindingBuilder
 import|;
 end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
+name|javax
 operator|.
 name|swing
 operator|.
-name|BindingBuilder
+name|JCheckBox
 import|;
 end_import
 
@@ -121,27 +115,27 @@ init|=
 literal|"Show all"
 decl_stmt|;
 specifier|private
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 name|dbEntity
 decl_stmt|;
 specifier|private
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 name|objEntity
 decl_stmt|;
 specifier|private
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 name|embeddable
 decl_stmt|;
 specifier|private
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 name|procedure
 decl_stmt|;
 specifier|private
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 name|query
 decl_stmt|;
 specifier|private
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 name|all
 decl_stmt|;
 specifier|private
@@ -442,7 +436,7 @@ block|{
 name|all
 operator|=
 operator|new
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 argument_list|(
 name|SHOW_ALL
 argument_list|)
@@ -450,7 +444,7 @@ expr_stmt|;
 name|dbEntity
 operator|=
 operator|new
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 argument_list|(
 literal|"DbEntity"
 argument_list|)
@@ -458,7 +452,7 @@ expr_stmt|;
 name|objEntity
 operator|=
 operator|new
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 argument_list|(
 literal|"ObjEntity"
 argument_list|)
@@ -466,7 +460,7 @@ expr_stmt|;
 name|embeddable
 operator|=
 operator|new
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 argument_list|(
 literal|"Embeddable"
 argument_list|)
@@ -474,7 +468,7 @@ expr_stmt|;
 name|procedure
 operator|=
 operator|new
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 argument_list|(
 literal|"Procedure"
 argument_list|)
@@ -482,7 +476,7 @@ expr_stmt|;
 name|query
 operator|=
 operator|new
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 argument_list|(
 literal|"Query"
 argument_list|)
@@ -902,7 +896,7 @@ name|key
 argument_list|,
 operator|(
 operator|(
-name|StayOpenJCheckBoxMenuItem
+name|JCheckBox
 operator|)
 name|e
 operator|.
