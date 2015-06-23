@@ -243,7 +243,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 4.0 	 */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -265,9 +265,22 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|appendAsString
-argument_list|(
 name|out
+operator|.
+name|append
+argument_list|(
+literal|"not "
+argument_list|)
+expr_stmt|;
+name|super
+operator|.
+name|appendAsEJBQL
+argument_list|(
+name|parameterAccumulator
+argument_list|,
+name|out
+argument_list|,
+name|rootId
 argument_list|)
 expr_stmt|;
 block|}
