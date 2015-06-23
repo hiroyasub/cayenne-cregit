@@ -88,6 +88,15 @@ name|SERVER_TYPE_FACTORIES_LIST
 init|=
 literal|"cayenne.server.type_factories"
 decl_stmt|;
+comment|/**      * A server-side DI container key for binding {@link org.apache.cayenne.resource.ResourceLocator}      */
+specifier|public
+specifier|final
+specifier|static
+name|String
+name|SERVER_RESOURCE_LOCATOR
+init|=
+literal|"cayenne.server.resource_locator"
+decl_stmt|;
 comment|/** 	 * A server-side DI container key for the Map&lt;String, String&gt; storing 	 * event bridge properties passed to the ROP client on bootstrap. 	 */
 specifier|public
 specifier|static

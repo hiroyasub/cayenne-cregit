@@ -640,6 +640,11 @@ name|extendedTypeFactories
 parameter_list|,
 annotation|@
 name|Inject
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_RESOURCE_LOCATOR
+argument_list|)
 name|ResourceLocator
 name|resourceLocator
 parameter_list|)

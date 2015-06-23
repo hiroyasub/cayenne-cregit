@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -171,6 +161,16 @@ name|ResourceLocator
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
 comment|/**  * DbAdapter implementation for<a href="http://www.h2database.com/">H2  * RDBMS</a>. Sample connection settings to use with H2 are shown  * below:  *   *<pre>  *      postgres.jdbc.username = sa  *      postgres.jdbc.password =   *      postgres.jdbc.url = jdbc:h2:cayenne  *      postgres.jdbc.driver = org.h2.Driver  *</pre>  *   * @since 3.0  */
 end_comment
@@ -231,6 +231,11 @@ name|extendedTypeFactories
 parameter_list|,
 annotation|@
 name|Inject
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_RESOURCE_LOCATOR
+argument_list|)
 name|ResourceLocator
 name|resourceLocator
 parameter_list|)
