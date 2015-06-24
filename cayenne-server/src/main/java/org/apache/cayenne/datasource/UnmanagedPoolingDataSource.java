@@ -279,6 +279,36 @@ name|e
 throw|;
 block|}
 block|}
+comment|/**      * An exception indicating that a connection request waiting in the queue      * timed out and was unable to obtain a connection.      */
+specifier|public
+specifier|static
+class|class
+name|ConnectionUnavailableException
+extends|extends
+name|SQLException
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1063973806941023165L
+decl_stmt|;
+specifier|public
+name|ConnectionUnavailableException
+parameter_list|(
+name|String
+name|message
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|/** 	 * Defines a maximum time in milliseconds that a connection request could 	 * wait in the connection queue. After this period expires, an exception 	 * will be thrown in the calling method. 	 */
 specifier|public
 specifier|static
@@ -1188,7 +1218,7 @@ return|;
 block|}
 throw|throw
 operator|new
-name|SQLException
+name|ConnectionUnavailableException
 argument_list|(
 literal|"Can't obtain connection. Request to pool timed out. Total pool size: "
 operator|+
