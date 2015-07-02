@@ -396,6 +396,33 @@ name|DATA_ROW_STORE_PROPERTIES_MAP
 init|=
 literal|"cayenne.server.data_row_store"
 decl_stmt|;
+comment|/**      * A DI container key for the Map&lt;String, String&gt; storing      * {@link org.apache.cayenne.event.JMSBridge} properties      *      * @since 4.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|JMS_BRIDGE_PROPERTIES_MAP
+init|=
+literal|"cayenne.server.jms_bridge"
+decl_stmt|;
+comment|/**      * A DI container key for the Map&lt;String, String&gt; storing      * {@link org.apache.cayenne.event.JavaGroupsBridge} properties      *      * @since 4.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|JAVA_GROUPS_BRIDGE_PROPERTIES_MAP
+init|=
+literal|"cayenne.server.java_group_bridge"
+decl_stmt|;
+comment|/**      * A DI container key for the Map&lt;String, String&gt; storing      * {@link org.apache.cayenne.event.XMPPBridge} properties      *      * @since 4.0      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|XMPP_BRIDGE_PROPERTIES_MAP
+init|=
+literal|"cayenne.server.xmpp_bridge"
+decl_stmt|;
 block|}
 end_interface
 

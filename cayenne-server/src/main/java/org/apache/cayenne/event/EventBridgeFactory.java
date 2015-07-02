@@ -44,7 +44,7 @@ specifier|public
 interface|interface
 name|EventBridgeFactory
 block|{
-comment|/**      * Creates an EventBridge with the specified parameters.      *       * @since 1.2      */
+comment|/**      * Creates an {@link EventBridge} with the specified parameters.      *       * @since 1.2      */
 name|EventBridge
 name|createEventBridge
 parameter_list|(
