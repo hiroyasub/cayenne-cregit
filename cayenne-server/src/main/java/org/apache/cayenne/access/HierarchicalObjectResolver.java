@@ -694,11 +694,19 @@ name|?
 argument_list|>
 name|parentDataRows
 decl_stmt|;
+comment|// note that a disjoint prefetch that has adjacent joint prefetches
+comment|// will be a PrefetchProcessorJointNode, so here check for
+comment|// semantics, not node type
 if|if
 condition|(
 name|parentProcessorNode
-operator|instanceof
-name|PrefetchProcessorJointNode
+operator|.
+name|getSemantics
+argument_list|()
+operator|==
+name|PrefetchTreeNode
+operator|.
+name|JOINT_PREFETCH_SEMANTICS
 condition|)
 block|{
 name|parentDataRows
