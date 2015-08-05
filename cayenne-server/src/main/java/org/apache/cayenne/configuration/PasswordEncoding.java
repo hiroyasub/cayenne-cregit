@@ -55,7 +55,7 @@ name|getName
 argument_list|()
 block|}
 decl_stmt|;
-comment|/**      * Decodes an encoded database password.      *       * @param encodedPassword - The encoded password to be decoded      * @param key - An optional data element which can be used to unlock the password.      *            Some encoders may require the key.      * @return The decoded normal/plain plassword.      */
+comment|/**      * Decodes an encoded database password.      *       * @param encodedPassword - The encoded password to be decoded      * @param key - An optional data element which can be used to unlock the password.      *            Some encoders may require the key.      * @return The decoded normal/plain password.      */
 name|String
 name|decodePassword
 parameter_list|(
