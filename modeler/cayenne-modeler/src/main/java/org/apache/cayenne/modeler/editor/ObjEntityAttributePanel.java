@@ -797,7 +797,7 @@ specifier|private
 name|ActionListener
 name|resolver
 decl_stmt|;
-comment|/**      * By now popup menu item is made similiar to toolbar button. (i.e. all functionality      * is here) This should be probably refactored as Action.      */
+comment|/**      * By now popup menu item is made similar to toolbar button. (i.e. all functionality      * is here) This should be probably refactored as Action.      */
 specifier|protected
 name|JMenuItem
 name|resolveMenu
@@ -1159,13 +1159,6 @@ argument_list|(
 name|JTable
 operator|.
 name|AUTO_RESIZE_OFF
-argument_list|)
-expr_stmt|;
-name|table
-operator|.
-name|setAutoCreateRowSorter
-argument_list|(
-literal|true
 argument_list|)
 expr_stmt|;
 name|mediator
