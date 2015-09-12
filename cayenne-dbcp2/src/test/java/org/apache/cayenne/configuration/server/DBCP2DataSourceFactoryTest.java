@@ -226,11 +226,11 @@ argument_list|(
 literal|"testDBCP2.properties"
 argument_list|)
 expr_stmt|;
-name|DBCP2DataSourceFactory
+name|DBCPDataSourceFactory
 name|factory
 init|=
 operator|new
-name|DBCP2DataSourceFactory
+name|DBCPDataSourceFactory
 argument_list|()
 decl_stmt|;
 name|DataSource
@@ -359,7 +359,7 @@ name|out
 operator|.
 name|println
 argument_list|(
-name|DBCP2DataSourceFactory
+name|DBCPDataSourceFactory
 operator|.
 name|class
 operator|.
@@ -442,11 +442,11 @@ argument_list|(
 literal|"testDBCP2.properties.nosuchfile"
 argument_list|)
 expr_stmt|;
-name|DBCP2DataSourceFactory
+name|DBCPDataSourceFactory
 name|factory
 init|=
 operator|new
-name|DBCP2DataSourceFactory
+name|DBCPDataSourceFactory
 argument_list|()
 decl_stmt|;
 try|try

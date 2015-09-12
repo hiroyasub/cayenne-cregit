@@ -165,22 +165,6 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|DBCPDataSourceFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|server
-operator|.
 name|JNDIDataSourceFactory
 import|;
 end_import
@@ -341,6 +325,13 @@ begin_class
 class|class
 name|XMLDataChannelDescriptorLoader_V3_0_0_1
 block|{
+specifier|static
+specifier|final
+name|String
+name|DBCP_DATA_SOURCE_FACTORY
+init|=
+literal|"org.apache.cayenne.configuration.server.DBCPDataSourceFactory"
+decl_stmt|;
 specifier|private
 specifier|static
 name|Log
@@ -455,12 +446,7 @@ name|put
 argument_list|(
 literal|"org.apache.cayenne.conf.DBCPDataSourceFactory"
 argument_list|,
-name|DBCPDataSourceFactory
-operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
+name|DBCP_DATA_SOURCE_FACTORY
 argument_list|)
 expr_stmt|;
 block|}
@@ -659,7 +645,7 @@ return|return
 name|domains
 return|;
 block|}
-comment|/**      * Make sure the domain name is only made up of Java-identifier-safe characters.      */
+comment|/** 	 * Make sure the domain name is only made up of Java-identifier-safe 	 * characters. 	 */
 specifier|protected
 name|String
 name|scrubDomainName
@@ -790,7 +776,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Converts the names of standard Cayenne-supplied DataSourceFactories from the legacy      * names to the current names.      */
+comment|/** 	 * Converts the names of standard Cayenne-supplied DataSourceFactories from 	 * the legacy names to the current names. 	 */
 specifier|private
 name|String
 name|convertDataSourceFactory
@@ -1386,7 +1372,8 @@ argument_list|(
 name|dataSourceFactory6
 argument_list|)
 expr_stmt|;
-comment|// depending on the factory, "datasource" attribute is interpreted
+comment|// depending on the factory, "datasource" attribute is
+comment|// interpreted
 comment|// differently
 name|String
 name|datasource
