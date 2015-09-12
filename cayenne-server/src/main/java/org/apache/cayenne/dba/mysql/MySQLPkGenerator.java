@@ -157,7 +157,7 @@ return|return
 literal|"DROP TABLE IF EXISTS AUTO_PK_SUPPORT"
 return|;
 block|}
-comment|/**      * Overrides superclass's implementation to perform locking of the primary key lookup      * table.      *       * @since 3.0      */
+comment|/** 	 * Overrides superclass's implementation to perform locking of the primary 	 * key lookup table. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -188,6 +188,8 @@ init|=
 operator|-
 literal|1l
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|con
 init|=
@@ -198,8 +200,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 if|if
 condition|(
@@ -279,7 +281,8 @@ block|}
 finally|finally
 block|{
 comment|// UNLOCK!
-comment|// THIS MUST BE EXECUTED NO MATTER WHAT, OR WE WILL LOCK THE PRIMARY KEY
+comment|// THIS MUST BE EXECUTED NO MATTER WHAT, OR WE WILL LOCK THE
+comment|// PRIMARY KEY
 comment|// TABLE!!
 try|try
 block|{
@@ -364,25 +367,6 @@ name|exception
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|closingEx
-parameter_list|)
-block|{
-comment|// ignoring
-block|}
-block|}
 comment|// check errors
 if|if
 condition|(
@@ -399,7 +383,7 @@ return|return
 name|pk
 return|;
 block|}
-comment|/**      * Appends a new SQLException to the chain. If parent is null, uses the exception as      * the chain root.      */
+comment|/** 	 * Appends a new SQLException to the chain. If parent is null, uses the 	 * exception as the chain root. 	 */
 specifier|protected
 name|SQLException
 name|processSQLException
@@ -476,7 +460,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|protected
 name|long
 name|getLongPrimaryKey

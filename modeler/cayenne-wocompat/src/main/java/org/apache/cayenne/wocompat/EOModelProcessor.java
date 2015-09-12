@@ -467,7 +467,7 @@ block|}
 block|}
 expr_stmt|;
 block|}
-comment|/**      * @deprecated since 4.0 in favor of {@link #loadModeIndex(URL)}.      */
+comment|/** 	 * @deprecated since 4.0 in favor of {@link #loadModeIndex(URL)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -497,7 +497,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns index.eomodeld contents as a Map.      *       * @since 4.0      */
+comment|/** 	 * Returns index.eomodeld contents as a Map. 	 *  	 * @since 4.0 	 */
 comment|// TODO: refactor EOModelHelper to provide a similar method without loading
 comment|// all entity files in memory... here we simply copied stuff from
 comment|// EOModelHelper
@@ -548,6 +548,8 @@ operator|new
 name|Parser
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|InputStream
 name|in
 init|=
@@ -561,8 +563,8 @@ argument_list|)
 operator|.
 name|openStream
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plistParser
 operator|.
@@ -581,16 +583,8 @@ name|propertyList
 argument_list|()
 return|;
 block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-comment|/**      * @deprecated since 4.0 in favor of {@link #loadEOModel(URL)}.      */
+comment|/** 	 * @deprecated since 4.0 in favor of {@link #loadEOModel(URL)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -612,7 +606,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 4.0 in favor of {@link #loadEOModel(URL, boolean)}.      */
+comment|/** 	 * @deprecated since 4.0 in favor of {@link #loadEOModel(URL, boolean)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -647,7 +641,7 @@ name|generateClientClass
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs EOModel loading.      *       * @param url      *            URL of ".eomodeld" directory.      */
+comment|/** 	 * Performs EOModel loading. 	 *  	 * @param url 	 *            URL of ".eomodeld" directory. 	 */
 specifier|public
 name|DataMap
 name|loadEOModel
@@ -667,7 +661,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs EOModel loading.      *       * @param url      *            URL of ".eomodeld" directory.      * @param generateClientClass      *            if true then loading of EOModel is java client classes aware      *            and the following processing will work with Java client class      *            settings of the EOModel.      */
+comment|/** 	 * Performs EOModel loading. 	 *  	 * @param url 	 *            URL of ".eomodeld" directory. 	 * @param generateClientClass 	 *            if true then loading of EOModel is java client classes aware 	 *            and the following processing will work with Java client class 	 *            settings of the EOModel. 	 */
 specifier|public
 name|DataMap
 name|loadEOModel
@@ -1046,7 +1040,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Returns whether an Entity is an EOF EOPrototypes entity. According to EOF      * conventions EOPrototypes and EO[Adapter]Prototypes entities are      * considered to be prototypes.      *       * @since 1.1      */
+comment|/** 	 * Returns whether an Entity is an EOF EOPrototypes entity. According to EOF 	 * conventions EOPrototypes and EO[Adapter]Prototypes entities are 	 * considered to be prototypes. 	 *  	 * @since 1.1 	 */
 specifier|protected
 name|boolean
 name|isPrototypesEntity
@@ -1064,7 +1058,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an returns new EOModelHelper to process EOModel. Exists mostly      * for the benefit of subclasses.      */
+comment|/** 	 * Creates an returns new EOModelHelper to process EOModel. Exists mostly 	 * for the benefit of subclasses. 	 */
 specifier|protected
 name|EOModelHelper
 name|makeHelper
@@ -1083,7 +1077,7 @@ name|url
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a Cayenne query out of EOFetchSpecification data.      *       * @since 1.1      */
+comment|/** 	 * Creates a Cayenne query out of EOFetchSpecification data. 	 *  	 * @since 1.1 	 */
 specifier|protected
 name|Query
 name|makeQuery
@@ -1193,7 +1187,7 @@ return|return
 name|query
 return|;
 block|}
-comment|/**      * Creates and returns a new ObjEntity linked to a corresponding DbEntity.      */
+comment|/** 	 * Creates and returns a new ObjEntity linked to a corresponding DbEntity. 	 */
 specifier|protected
 name|EOObjEntity
 name|makeEntity
@@ -1549,7 +1543,7 @@ return|return
 name|objEntity
 return|;
 block|}
-comment|/**      * Create ObjAttributes of the specified entity, as well as DbAttributes of      * the corresponding DbEntity.      */
+comment|/** 	 * Create ObjAttributes of the specified entity, as well as DbAttributes of 	 * the corresponding DbEntity. 	 */
 specifier|protected
 name|void
 name|makeAttributes
@@ -2388,7 +2382,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/**      * Create ObjRelationships of the specified entity, as well as      * DbRelationships of the corresponding DbEntity.      */
+comment|/** 	 * Create ObjRelationships of the specified entity, as well as 	 * DbRelationships of the corresponding DbEntity. 	 */
 specifier|protected
 name|void
 name|makeRelationships
@@ -2907,7 +2901,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Create reverse DbRelationships that were not created so far, since      * Cayenne requires them.      *       * @since 1.0.5      */
+comment|/** 	 * Create reverse DbRelationships that were not created so far, since 	 * Cayenne requires them. 	 *  	 * @since 1.0.5 	 */
 specifier|protected
 name|void
 name|makeReverseDbRelationships
@@ -3013,7 +3007,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Create Flattened ObjRelationships of the specified entity.      */
+comment|/** 	 * Create Flattened ObjRelationships of the specified entity. 	 */
 specifier|protected
 name|void
 name|makeFlatRelationships
@@ -3334,7 +3328,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Locates an attribute map matching the name and returns column name for      * this attribute.      *       * @since 1.1      */
+comment|/** 	 * Locates an attribute map matching the name and returns column name for 	 * this attribute. 	 *  	 * @since 1.1 	 */
 name|String
 name|columnName
 parameter_list|(

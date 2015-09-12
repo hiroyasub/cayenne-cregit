@@ -1439,6 +1439,8 @@ argument_list|()
 decl_stmt|;
 comment|// connect via Cayenne DriverDataSource - it addresses some driver
 comment|// issues...
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1465,14 +1467,10 @@ argument_list|)
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
-name|c
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+comment|// do nothing...
 block|}
 catch|catch
 parameter_list|(

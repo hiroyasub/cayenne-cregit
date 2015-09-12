@@ -17,6 +17,116 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Connection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Comparator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|DataSource
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -245,116 +355,6 @@ name|LogFactory
 import|;
 end_import
 
-begin_import
-import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Connection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Comparator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
-
 begin_comment
 comment|/**  * Traverse a {@link DataNode} and a {@link DataMap} and create a group of  * {@link MergerToken}s to alter the {@link DataNode} data store to match the  * {@link DataMap}.  *   */
 end_comment
@@ -435,7 +435,7 @@ else|:
 name|valueForNull
 expr_stmt|;
 block|}
-comment|/**      * Create and return a {@link List} of {@link MergerToken}s to alter the given      * {@link DataNode} to match the given {@link DataMap}      */
+comment|/** 	 * Create and return a {@link List} of {@link MergerToken}s to alter the 	 * given {@link DataNode} to match the given {@link DataMap} 	 */
 specifier|public
 name|List
 argument_list|<
@@ -474,7 +474,7 @@ name|config
 argument_list|)
 return|;
 block|}
-comment|/**      * Create and return a {@link List} of {@link MergerToken}s to alter the given      * {@link DataNode} to match the given {@link DataMap}      */
+comment|/** 	 * Create and return a {@link List} of {@link MergerToken}s to alter the 	 * given {@link DataNode} to match the given {@link DataMap} 	 */
 specifier|public
 name|List
 argument_list|<
@@ -528,7 +528,8 @@ argument_list|,
 name|config
 argument_list|)
 decl_stmt|;
-comment|// sort. use a custom Comparator since only toDb tokens are comparable by now
+comment|// sort. use a custom Comparator since only toDb tokens are comparable
+comment|// by now
 name|Collections
 operator|.
 name|sort
@@ -682,20 +683,18 @@ name|DbLoaderConfiguration
 name|config
 parameter_list|)
 block|{
+try|try
+init|(
 name|Connection
 name|conn
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|conn
-operator|=
 name|dataSource
 operator|.
 name|getConnection
 argument_list|()
-expr_stmt|;
+init|;
+init|)
+block|{
 return|return
 operator|new
 name|DbLoader
@@ -732,33 +731,6 @@ argument_list|,
 name|e
 argument_list|)
 throw|;
-block|}
-finally|finally
-block|{
-if|if
-condition|(
-name|conn
-operator|!=
-literal|null
-condition|)
-block|{
-try|try
-block|{
-name|conn
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|e
-parameter_list|)
-block|{
-comment|// Do nothing.
-block|}
-block|}
 block|}
 block|}
 specifier|public
@@ -977,7 +949,8 @@ block|}
 block|}
 block|}
 comment|// drop table
-comment|// TODO: support drop table. currently, too many tables are marked for drop
+comment|// TODO: support drop table. currently, too many tables are marked for
+comment|// drop
 for|for
 control|(
 name|DbEntity
@@ -1423,7 +1396,8 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// alter detected relationship to match entity and attribute names.
+comment|// alter detected relationship to match entity and attribute
+comment|// names.
 comment|// (case sensitively)
 name|DbEntity
 name|targetEntity
@@ -1562,7 +1536,8 @@ name|isToMany
 argument_list|()
 condition|)
 block|{
-comment|// default toModel as we can not do drop a toMany in the db. only
+comment|// default toModel as we can not do drop a toMany in the db.
+comment|// only
 comment|// toOne are represented using foreign key
 name|token
 operator|=
@@ -1660,8 +1635,10 @@ name|shouldGenerateFkConstraint
 argument_list|()
 condition|)
 block|{
-comment|// TODO I guess we should add relationship always; in order to have ability
-comment|// TODO generate reverse relationship. If it doesn't have anything to execute it will be passed
+comment|// TODO I guess we should add relationship always; in order
+comment|// to have ability
+comment|// TODO generate reverse relationship. If it doesn't have
+comment|// anything to execute it will be passed
 comment|// TODO through execution without any affect on db
 name|tokens
 operator|.
@@ -1825,7 +1802,7 @@ return|return
 name|names
 return|;
 block|}
-comment|/**      * case insensitive search for a {@link DbEntity} in a {@link DataMap} by name      */
+comment|/** 	 * case insensitive search for a {@link DbEntity} in a {@link DataMap} by 	 * name 	 */
 specifier|private
 name|DbEntity
 name|findDbEntity
@@ -1871,7 +1848,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * case insensitive search for a {@link DbAttribute} in a {@link DbEntity} by name      */
+comment|/** 	 * case insensitive search for a {@link DbAttribute} in a {@link DbEntity} 	 * by name 	 */
 specifier|private
 name|DbAttribute
 name|findDbAttribute
@@ -1916,7 +1893,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * search for a {@link DbRelationship} like rel in the given {@link DbEntity}      */
+comment|/** 	 * search for a {@link DbRelationship} like rel in the given 	 * {@link DbEntity} 	 */
 specifier|private
 name|DbRelationship
 name|findDbRelationship
@@ -1964,7 +1941,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Return true if the two unordered {@link Collection}s of {@link DbJoin}s are      * equal. Entity and Attribute names are compared case insensitively.      *      * TODO complexity n^2; sort both collection and go through them to compare = 2*n*log(n) + n      */
+comment|/** 	 * Return true if the two unordered {@link Collection}s of {@link DbJoin}s 	 * are equal. Entity and Attribute names are compared case insensitively. 	 * 	 * TODO complexity n^2; sort both collection and go through them to compare 	 * = 2*n*log(n) + n 	 */
 specifier|private
 specifier|static
 name|boolean

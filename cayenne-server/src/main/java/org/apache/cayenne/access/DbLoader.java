@@ -21,7 +21,37 @@ name|java
 operator|.
 name|sql
 operator|.
-name|*
+name|Connection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|DatabaseMetaData
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|ResultSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
 import|;
 end_import
 
@@ -31,7 +61,87 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeSet
 import|;
 end_import
 
@@ -47,7 +157,71 @@ name|access
 operator|.
 name|loader
 operator|.
-name|*
+name|DbAttributesPerSchemaLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|DbLoaderConfiguration
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|DbTableLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|DefaultDbLoaderDelegate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|loader
+operator|.
+name|ManyToManyCandidateEntity
 import|;
 end_import
 
@@ -494,12 +668,12 @@ specifier|private
 name|DatabaseMetaData
 name|metaData
 decl_stmt|;
-comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
+comment|/** 	 * Strategy for choosing names for entities, attributes and relationships 	 */
 specifier|private
 name|ObjectNameGenerator
 name|nameGenerator
 decl_stmt|;
-comment|/**      * Creates new DbLoader.      */
+comment|/** 	 * Creates new DbLoader. 	 */
 specifier|public
 name|DbLoader
 parameter_list|(
@@ -527,7 +701,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates new DbLoader with specified naming strategy.      *      * @since 3.0      */
+comment|/** 	 * Creates new DbLoader with specified naming strategy. 	 * 	 * @since 3.0 	 */
 specifier|public
 name|DbLoader
 parameter_list|(
@@ -576,7 +750,7 @@ name|strategy
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns DatabaseMetaData object associated with this DbLoader.      */
+comment|/** 	 * Returns DatabaseMetaData object associated with this DbLoader. 	 */
 specifier|private
 name|DatabaseMetaData
 name|getMetaData
@@ -603,7 +777,7 @@ return|return
 name|metaData
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setCreatingMeaningfulPK
@@ -619,7 +793,7 @@ operator|=
 name|creatingMeaningfulPK
 expr_stmt|;
 block|}
-comment|/**      * Returns true if the generator should map all primary key columns as      * ObjAttributes.      *      * @since 3.0      */
+comment|/** 	 * Returns true if the generator should map all primary key columns as 	 * ObjAttributes. 	 * 	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isCreatingMeaningfulPK
@@ -629,7 +803,7 @@ return|return
 name|creatingMeaningfulPK
 return|;
 block|}
-comment|/**      * Returns database connection used by this DbLoader.      *      * @since 3.0      */
+comment|/** 	 * Returns database connection used by this DbLoader. 	 * 	 * @since 3.0 	 */
 specifier|public
 name|Connection
 name|getConnection
@@ -639,7 +813,7 @@ return|return
 name|connection
 return|;
 block|}
-comment|/**      * Returns DbAdapter associated with this DbLoader.      *      * @since 1.1      */
+comment|/** 	 * Returns DbAdapter associated with this DbLoader. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|DbAdapter
 name|getAdapter
@@ -649,7 +823,7 @@ return|return
 name|adapter
 return|;
 block|}
-comment|/**      * Retrieves catalogs for the database associated with this DbLoader.      *      * @return List with the catalog names, empty Array if none found.      */
+comment|/** 	 * Retrieves catalogs for the database associated with this DbLoader. 	 * 	 * @return List with the catalog names, empty Array if none found. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -660,18 +834,27 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-return|return
-name|getStrings
-argument_list|(
+try|try
+init|(
+name|ResultSet
+name|rs
+init|=
 name|getMetaData
 argument_list|()
 operator|.
 name|getCatalogs
 argument_list|()
+init|)
+block|{
+return|return
+name|getStrings
+argument_list|(
+name|rs
 argument_list|)
 return|;
 block|}
-comment|/**      * Retrieves the schemas for the database.      *      * @return List with the schema names, empty Array if none found.      */
+block|}
+comment|/** 	 * Retrieves the schemas for the database. 	 * 	 * @return List with the schema names, empty Array if none found. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -682,16 +865,25 @@ parameter_list|()
 throws|throws
 name|SQLException
 block|{
-return|return
-name|getStrings
-argument_list|(
+try|try
+init|(
+name|ResultSet
+name|rs
+init|=
 name|getMetaData
 argument_list|()
 operator|.
 name|getSchemas
 argument_list|()
+init|)
+block|{
+return|return
+name|getStrings
+argument_list|(
+name|rs
 argument_list|)
 return|;
+block|}
 block|}
 specifier|private
 specifier|static
@@ -720,8 +912,6 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-try|try
-block|{
 while|while
 condition|(
 name|rs
@@ -743,20 +933,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 return|return
 name|strings
 return|;
 block|}
-comment|/**      * Returns all the table types for the given database. Types may be such as      * Typical types are "TABLE",      * "VIEW", "SYSTEM TABLE", "GLOBAL TEMPORARY",      * "LOCAL TEMPORARY", "ALIAS", "SYNONYM"., etc.      *      * @return List of Strings, empty array if nothing found.      */
+comment|/** 	 * Returns all the table types for the given database. Types may be such as 	 * Typical types are "TABLE", "VIEW", "SYSTEM TABLE", "GLOBAL TEMPORARY", 	 * "LOCAL TEMPORARY", "ALIAS", "SYNONYM"., etc. 	 * 	 * @return List of Strings, empty array if nothing found. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -780,6 +961,8 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -788,8 +971,8 @@ argument_list|()
 operator|.
 name|getTableTypes
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 while|while
 condition|(
@@ -816,19 +999,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 return|return
 name|types
 return|;
 block|}
-comment|/**      * Creates an ObjEntity for each DbEntity in the map.      */
+comment|/** 	 * Creates an ObjEntity for each DbEntity in the map. 	 */
 specifier|public
 name|Collection
 argument_list|<
@@ -1065,7 +1240,7 @@ return|return
 name|loadedEntities
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|protected
 name|EntityMergeSupport
 name|createEntityMerger
@@ -1504,7 +1679,8 @@ argument_list|(
 name|fkEntity
 argument_list|)
 expr_stmt|;
-comment|// forwardRelationship is a reference from table with foreign key, it is what exactly we load from db
+comment|// forwardRelationship is a reference from table with foreign key,
+comment|// it is what exactly we load from db
 name|DbRelationshipDetected
 name|reverseRelationship
 init|=
@@ -2210,7 +2386,7 @@ name|forwardPreferredName
 argument_list|)
 return|;
 block|}
-comment|/**      * Flattens many-to-many relationships in the generated model.      */
+comment|/** 	 * Flattens many-to-many relationships in the generated model. 	 */
 specifier|public
 specifier|static
 name|void
@@ -2360,7 +2536,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * By default we want to load Tables and Views for mo types      *      * @see DbLoader#getTableTypes()      * @since 4.0      */
+comment|/** 	 * By default we want to load Tables and Views for mo types 	 * 	 * @see DbLoader#getTableTypes() 	 * @since 4.0 	 */
 specifier|public
 name|String
 index|[]
@@ -2444,7 +2620,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap that contains      * default mapping of the tables and views. By default will include regular      * tables and views.      *      * @since 1.0.7      * @deprecated since 4.0 use      * {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration)}      * method that supports catalogs.      */
+comment|/** 	 * Performs database reverse engineering and generates DataMap that contains 	 * default mapping of the tables and views. By default will include regular 	 * tables and views. 	 * 	 * @since 1.0.7 	 * @deprecated since 4.0 use 	 *             {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration)} 	 *             method that supports catalogs. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2506,7 +2682,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering and generates DataMap object that      * contains default mapping of the tables and views. Allows to limit types      * of tables to read.      *      * @deprecated since 4.0 use      * {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration)}      * method that supports catalogs.      */
+comment|/** 	 * Performs database reverse engineering and generates DataMap object that 	 * contains default mapping of the tables and views. Allows to limit types 	 * of tables to read. 	 * 	 * @deprecated since 4.0 use 	 *             {@link #load(org.apache.cayenne.map.DataMap, DbLoaderConfiguration)} 	 *             method that supports catalogs. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2584,7 +2760,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Performs database reverse engineering based on the specified config      * and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 4.0      */
+comment|/** 	 * Performs database reverse engineering based on the specified config and 	 * fills the specified DataMap object with DB and object mapping info. 	 * 	 * @since 4.0 	 */
 specifier|public
 name|void
 name|load
@@ -2815,7 +2991,7 @@ name|loadedObjEntities
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 4.0      */
+comment|/** 	 * Performs database reverse engineering to match the specified catalog, 	 * schema, table name and table type patterns and fills the specified 	 * DataMap object with DB and object mapping info. 	 * 	 * @since 4.0 	 */
 specifier|public
 name|DataMap
 name|load
@@ -2851,7 +3027,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *      * @since 1.1      * @deprecated since 4.0 use loadProcedures(DataMap, String, String, String) that supports "catalog" pattern.      */
+comment|/** 	 * Loads database stored procedures into the DataMap. 	 *<p> 	 *<i>As of 1.1 there is no boolean property or delegate method to make 	 * procedure loading optional or to implement custom merging logic, so 	 * currently this method is NOT CALLED from "loadDataMapFromDB" and should 	 * be invoked explicitly by the user.</i> 	 *</p> 	 * 	 * @since 1.1 	 * @deprecated since 4.0 use loadProcedures(DataMap, String, String, String) 	 *             that supports "catalog" pattern. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2913,7 +3089,7 @@ name|configuration
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *      * @since 4.0      */
+comment|/** 	 * Loads database stored procedures into the DataMap. 	 *<p> 	 *<i>As of 1.1 there is no boolean property or delegate method to make 	 * procedure loading optional or to implement custom merging logic, so 	 * currently this method is NOT CALLED from "loadDataMapFromDB" and should 	 * be invoked explicitly by the user.</i> 	 *</p> 	 * 	 * @since 4.0 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -3065,6 +3241,8 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+try|try
+init|(
 name|ResultSet
 name|columnsRS
 init|=
@@ -3081,8 +3259,8 @@ literal|null
 argument_list|,
 literal|null
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 while|while
 condition|(
@@ -3178,14 +3356,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|columnsRS
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 specifier|private
 name|ProcedureParameter
@@ -3213,7 +3383,8 @@ argument_list|(
 literal|"COLUMN_NAME"
 argument_list|)
 decl_stmt|;
-comment|// skip ResultSet columns, as they are not described in Cayenne procedures yet...
+comment|// skip ResultSet columns, as they are not described in Cayenne
+comment|// procedures yet...
 name|short
 name|type
 init|=
@@ -3616,6 +3787,8 @@ argument_list|>
 argument_list|()
 decl_stmt|;
 comment|// get procedures
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -3630,8 +3803,8 @@ name|schema
 argument_list|,
 name|WILDCARD
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 while|while
 condition|(
@@ -3777,19 +3950,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 return|return
 name|procedures
 return|;
 block|}
-comment|/**      * Sets new naming strategy for reverse engineering      *      * @since 3.0      */
+comment|/** 	 * Sets new naming strategy for reverse engineering 	 * 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setNameGenerator
@@ -3831,7 +3996,7 @@ name|strategy
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @return naming strategy for reverse engineering      * @since 3.0      */
+comment|/** 	 * @return naming strategy for reverse engineering 	 * @since 3.0 	 */
 specifier|public
 name|ObjectNameGenerator
 name|getNameGenerator

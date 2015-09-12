@@ -494,6 +494,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|JDBCResultIterator
 name|it
 init|=
@@ -506,7 +508,9 @@ name|rs
 argument_list|,
 name|rowReader
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|assertFalse
 argument_list|(
 name|rs
@@ -531,11 +535,7 @@ name|isClosed
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|it
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 name|assertTrue
 argument_list|(
 name|rs

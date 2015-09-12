@@ -68,6 +68,8 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+try|try
+init|(
 name|PreparedStatement
 name|st
 init|=
@@ -79,7 +81,9 @@ literal|"UPDATE PAINTING SET ESTIMATED_PRICE = ESTIMATED_PRICE * 2 "
 operator|+
 literal|"WHERE ESTIMATED_PRICE< ?"
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|st
 operator|.
 name|setInt
@@ -94,11 +98,7 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 block|}
 specifier|public
 specifier|static
@@ -117,6 +117,8 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+try|try
+init|(
 name|PreparedStatement
 name|st
 init|=
@@ -128,7 +130,9 @@ literal|"UPDATE PAINTING SET ESTIMATED_PRICE = ESTIMATED_PRICE * 2 "
 operator|+
 literal|"WHERE ESTIMATED_PRICE< ?"
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|st
 operator|.
 name|setInt
@@ -143,11 +147,9 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
+try|try
+init|(
 name|PreparedStatement
 name|select
 init|=
@@ -165,7 +167,9 @@ literal|" A.ARTIST_NAME = ?"
 operator|+
 literal|" ORDER BY A.ARTIST_ID"
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|select
 operator|.
 name|setString
@@ -180,6 +184,7 @@ operator|.
 name|executeQuery
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 end_class

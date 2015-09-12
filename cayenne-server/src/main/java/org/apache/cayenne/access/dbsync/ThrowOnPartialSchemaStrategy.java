@@ -180,7 +180,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -218,15 +218,13 @@ name|md
 init|=
 literal|null
 decl_stmt|;
+try|try
+block|{
+try|try
+init|(
 name|Connection
 name|connection
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|connection
-operator|=
 name|dataNode
 operator|.
 name|getDataSource
@@ -234,8 +232,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-expr_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|md
 operator|=
@@ -244,6 +242,8 @@ operator|.
 name|getMetaData
 argument_list|()
 expr_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -251,8 +251,8 @@ name|md
 operator|.
 name|getSchemas
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 while|while
 condition|(
@@ -281,22 +281,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 name|analyzer
 operator|.

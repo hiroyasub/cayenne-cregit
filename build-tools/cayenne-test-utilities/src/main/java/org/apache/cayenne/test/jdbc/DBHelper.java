@@ -144,7 +144,7 @@ operator|=
 name|dataSource
 expr_stmt|;
 block|}
-comment|/**      * Quotes a SQL identifier as appropriate for the given DB. This      * implementation returns the identifier unchanged, while subclasses can      * implement a custom quoting strategy.      */
+comment|/** 	 * Quotes a SQL identifier as appropriate for the given DB. This 	 * implementation returns the identifier unchanged, while subclasses can 	 * implement a custom quoting strategy. 	 */
 specifier|protected
 name|String
 name|quote
@@ -157,7 +157,7 @@ return|return
 name|sqlIdentifier
 return|;
 block|}
-comment|/**      * Selects a single row.      */
+comment|/** 	 * Selects a single row. 	 */
 specifier|public
 name|Object
 index|[]
@@ -580,7 +580,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Inserts a single row. Columns types can be null and will be determined      * from ParameterMetaData in this case. The later scenario will not work if      * values contains nulls and the DB is Oracle.      */
+comment|/** 	 * Inserts a single row. Columns types can be null and will be determined 	 * from ParameterMetaData in this case. The later scenario will not work if 	 * values contains nulls and the DB is Oracle. 	 */
 specifier|public
 name|void
 name|insert
@@ -759,13 +759,15 @@ argument_list|(
 literal|")"
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|String
 name|sqlString
@@ -782,6 +784,13 @@ argument_list|(
 name|sqlString
 argument_list|)
 expr_stmt|;
+name|ParameterMetaData
+name|parameters
+init|=
+literal|null
+decl_stmt|;
+try|try
+init|(
 name|PreparedStatement
 name|st
 init|=
@@ -791,13 +800,8 @@ name|prepareStatement
 argument_list|(
 name|sqlString
 argument_list|)
-decl_stmt|;
-name|ParameterMetaData
-name|parameters
-init|=
-literal|null
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 for|for
 control|(
@@ -910,25 +914,9 @@ name|executeUpdate
 argument_list|()
 expr_stmt|;
 block|}
-finally|finally
-block|{
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 name|c
 operator|.
 name|commit
-argument_list|()
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
 argument_list|()
 expr_stmt|;
 block|}

@@ -192,7 +192,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A subclass of ConnectionWizard that tests configured DataSource, but does not keep an  * open connection.  *   */
+comment|/**  * A subclass of ConnectionWizard that tests configured DataSource, but does not  * keep an open connection.  *   */
 end_comment
 
 begin_class
@@ -226,7 +226,8 @@ specifier|protected
 name|String
 name|dataSourceKey
 decl_stmt|;
-comment|// this object is a clone of an object selected from the dropdown, as we need to allow
+comment|// this object is a clone of an object selected from the dropdown, as we
+comment|// need to allow
 comment|// local temporary modifications
 specifier|protected
 name|DBConnectionInfo
@@ -297,7 +298,7 @@ name|initBindings
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Creates swing dialog for this wizard      */
+comment|/** 	 * Creates swing dialog for this wizard 	 */
 specifier|protected
 name|DataSourceWizardView
 name|createView
@@ -454,7 +455,7 @@ name|connectionInfo
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Main action method that pops up a dialog asking for user selection. Returns true if      * the selection was confirmed, false - if canceled.      */
+comment|/** 	 * Main action method that pops up a dialog asking for user selection. 	 * Returns true if the selection was confirmed, false - if canceled. 	 */
 specifier|public
 name|boolean
 name|startupAction
@@ -517,7 +518,7 @@ return|return
 name|connectionInfo
 return|;
 block|}
-comment|/**      * Tests that the entered information is valid and can be used to open a conneciton.      * Does not store the open connection.      */
+comment|/** 	 * Tests that the entered information is valid and can be used to open a 	 * conneciton. Does not store the open connection. 	 */
 specifier|public
 name|void
 name|okAction
@@ -568,6 +569,8 @@ comment|// doing connection testing...
 comment|// attempt opening the connection, and close it right away
 try|try
 block|{
+try|try
+init|(
 name|Connection
 name|connection
 init|=
@@ -580,14 +583,10 @@ argument_list|)
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+comment|//
 block|}
 catch|catch
 parameter_list|(
@@ -639,7 +638,7 @@ name|dispose
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Opens preferences panel to allow configuration of DataSource presets.      */
+comment|/** 	 * Opens preferences panel to allow configuration of DataSource presets. 	 */
 specifier|public
 name|void
 name|dataSourceConfigAction

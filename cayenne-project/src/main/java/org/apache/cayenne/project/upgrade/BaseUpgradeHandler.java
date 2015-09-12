@@ -259,7 +259,7 @@ operator|=
 name|projectSource
 expr_stmt|;
 block|}
-comment|/**      * Creates a single common EntityResolver for all project DataMaps, setting      * it as a namespace for all of them. This is needed for resolving cross-map      * relationships.      */
+comment|/** 	 * Creates a single common EntityResolver for all project DataMaps, setting 	 * it as a namespace for all of them. This is needed for resolving cross-map 	 * relationships. 	 */
 specifier|protected
 name|void
 name|attachToNamespace
@@ -395,7 +395,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/**      * Does the actual project upgrade, assuming the caller already verified      * that the upgrade is possible.      *       * @param metaData      *            object describing the type of upgrade      */
+comment|/** 	 * Does the actual project upgrade, assuming the caller already verified 	 * that the upgrade is possible. 	 *  	 * @param metaData 	 *            object describing the type of upgrade 	 */
 specifier|protected
 specifier|abstract
 name|Resource
@@ -407,14 +407,14 @@ parameter_list|)
 throws|throws
 name|ConfigurationException
 function_decl|;
-comment|/**      * Creates a metadata object describing the type of upgrade needed.      */
+comment|/** 	 * Creates a metadata object describing the type of upgrade needed. 	 */
 specifier|protected
 specifier|abstract
 name|UpgradeMetaData
 name|loadMetaData
 parameter_list|()
 function_decl|;
-comment|/**      * A default method for quick extraction of the project version from an XML      * file.      */
+comment|/** 	 * A default method for quick extraction of the project version from an XML 	 * file. 	 */
 specifier|protected
 name|String
 name|loadProjectVersion
@@ -435,20 +435,18 @@ operator|.
 name|getURL
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|InputStream
 name|in
 init|=
-literal|null
-decl_stmt|;
-try|try
-block|{
-name|in
-operator|=
 name|url
 operator|.
 name|openStream
 argument_list|()
-expr_stmt|;
+init|;
+init|)
+block|{
 name|XMLReader
 name|parser
 init|=
@@ -510,33 +508,6 @@ name|url
 argument_list|)
 throw|;
 block|}
-finally|finally
-block|{
-try|try
-block|{
-if|if
-condition|(
-name|in
-operator|!=
-literal|null
-condition|)
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-comment|// ignoring...
-block|}
-block|}
 return|return
 name|rootHandler
 operator|.
@@ -551,7 +522,7 @@ else|:
 name|UNKNOWN_VERSION
 return|;
 block|}
-comment|/**      * Compares two String versions.      */
+comment|/** 	 * Compares two String versions. 	 */
 specifier|protected
 name|int
 name|compareVersions

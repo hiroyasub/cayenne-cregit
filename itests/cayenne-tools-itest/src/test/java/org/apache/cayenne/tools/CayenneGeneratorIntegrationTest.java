@@ -596,6 +596,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+try|try
+init|(
 name|BufferedReader
 name|in
 init|=
@@ -612,8 +614,7 @@ name|f
 argument_list|)
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|assertPackage
 argument_list|(
@@ -630,14 +631,6 @@ name|className
 argument_list|,
 name|extendsName
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}

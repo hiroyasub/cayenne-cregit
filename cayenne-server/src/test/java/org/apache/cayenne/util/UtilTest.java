@@ -209,6 +209,8 @@ name|fTmpFileName
 argument_list|)
 expr_stmt|;
 comment|// right some garbage to the temp file, so that it is not empty
+try|try
+init|(
 name|FileWriter
 name|fout
 init|=
@@ -217,7 +219,8 @@ name|FileWriter
 argument_list|(
 name|fTmpFileInCurrentDir
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|fout
 operator|.
 name|write
@@ -225,11 +228,7 @@ argument_list|(
 literal|"This is total garbage.."
 argument_list|)
 expr_stmt|;
-name|fout
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 name|fTmpFileCopy
 operator|=
 operator|new
@@ -720,7 +719,7 @@ class|class
 name|TmpTest
 extends|extends
 name|Object
-block|{         }
+block|{ 		}
 name|String
 name|expectedPath
 init|=

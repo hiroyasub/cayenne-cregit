@@ -194,7 +194,8 @@ name|SQLException
 throws|,
 name|Exception
 block|{
-comment|// this condition checks if identity columns are present in the query and adapter
+comment|// this condition checks if identity columns are present in the query
+comment|// and adapter
 comment|// is not ready to process them... e.g. if we are using a MS driver...
 name|boolean
 name|identityOverride
@@ -229,7 +230,8 @@ expr_stmt|;
 block|}
 finally|finally
 block|{
-comment|// important: turn off IDENTITY_INSERT as SQL Server won't be able to process
+comment|// important: turn off IDENTITY_INSERT as SQL Server won't be able
+comment|// to process
 comment|// other identity columns in the same transaction
 comment|// TODO: if an error happens here this would mask the parent error
 if|if
@@ -298,6 +300,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|Statement
 name|statement
 init|=
@@ -305,8 +309,8 @@ name|connection
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|statement
 operator|.
@@ -316,26 +320,8 @@ name|configSQL
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-block|}
-block|}
-block|}
-comment|/**      * Returns whether a table has identity columns.      */
+comment|/** 	 * Returns whether a table has identity columns. 	 */
 specifier|protected
 name|boolean
 name|expectsToOverrideIdentityColumns

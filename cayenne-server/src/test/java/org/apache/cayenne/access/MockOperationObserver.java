@@ -323,6 +323,9 @@ name|Query
 name|q
 parameter_list|,
 name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 parameter_list|)
 block|{
@@ -337,6 +340,9 @@ name|Query
 name|query
 parameter_list|,
 name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
 name|keys
 parameter_list|,
 name|ObjectId

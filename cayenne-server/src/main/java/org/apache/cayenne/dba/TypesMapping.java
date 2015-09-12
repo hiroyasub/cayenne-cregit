@@ -152,7 +152,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A utility class that handles mappings of JDBC data types to the database types and Java  * types. Also contains methods that provide information about JDBC types.  */
+comment|/**  * A utility class that handles mappings of JDBC data types to the database  * types and Java types. Also contains methods that provide information about  * JDBC types.  */
 end_comment
 
 begin_class
@@ -213,7 +213,7 @@ name|SQL_BLOB
 init|=
 literal|"BLOB"
 decl_stmt|;
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -535,7 +535,7 @@ name|JAVA_BLOB
 init|=
 literal|"java.sql.Blob"
 decl_stmt|;
-comment|/**      * Keys: SQL string type names, Values: SQL int type definitions from java.sql.Types      */
+comment|/** 	 * Keys: SQL string type names, Values: SQL int type definitions from 	 * java.sql.Types 	 */
 specifier|private
 specifier|static
 specifier|final
@@ -556,7 +556,7 @@ name|Integer
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Keys: SQL int type definitions from java.sql.Types, Values: SQL string type names      */
+comment|/** 	 * Keys: SQL int type definitions from java.sql.Types, Values: SQL string 	 * type names 	 */
 specifier|private
 specifier|static
 specifier|final
@@ -577,7 +577,7 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Keys: SQL int type definitions from java.sql.Types, Values: java class names      */
+comment|/** 	 * Keys: SQL int type definitions from java.sql.Types, Values: java class 	 * names 	 */
 specifier|private
 specifier|static
 specifier|final
@@ -598,7 +598,7 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Keys: java class names, Values: SQL int type definitions from java.sql.Types      */
+comment|/** 	 * Keys: java class names, Values: SQL int type definitions from 	 * java.sql.Types 	 */
 specifier|private
 specifier|static
 specifier|final
@@ -621,7 +621,7 @@ argument_list|()
 decl_stmt|;
 static|static
 block|{
-comment|//        SQL_STRING_TYPE.put(SQL_ARRAY, ARRAY);
+comment|// SQL_STRING_TYPE.put(SQL_ARRAY, ARRAY);
 name|SQL_STRING_TYPE
 operator|.
 name|put
@@ -1596,7 +1596,7 @@ name|BIT
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @deprecated      *       * Returns true if supplied type can have a length attribute as a part of column      * definition.      */
+comment|/** 	 * @deprecated 	 *  	 *             Returns true if supplied type can have a length attribute as 	 *             a part of column definition. 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -1615,7 +1615,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if supplied type is a numeric type.      */
+comment|/** 	 * Returns true if supplied type is a numeric type. 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -1667,7 +1667,7 @@ operator|==
 name|TINYINT
 return|;
 block|}
-comment|/**      * Returns true if supplied type is a decimal type.      */
+comment|/** 	 * Returns true if supplied type is a decimal type. 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -1699,7 +1699,7 @@ operator|==
 name|NUMERIC
 return|;
 block|}
-comment|/**      * Returns an array of string names of the default JDBC data types.      */
+comment|/** 	 * Returns an array of string names of the default JDBC data types. 	 */
 specifier|public
 specifier|static
 name|String
@@ -1734,7 +1734,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Method implements an algorithm to pick a data type from a list of alternatives that      * most closely matches JDBC data type.      */
+comment|/** 	 * Method implements an algorithm to pick a data type from a list of 	 * alternatives that most closely matches JDBC data type. 	 */
 specifier|protected
 specifier|static
 name|String
@@ -2010,7 +2010,7 @@ operator|.
 name|name
 return|;
 block|}
-comment|/**      * Returns a JDBC int type for SQL typem name.      */
+comment|/** 	 * Returns a JDBC int type for SQL typem name. 	 */
 specifier|public
 specifier|static
 name|int
@@ -2040,7 +2040,7 @@ else|:
 name|tmp
 return|;
 block|}
-comment|/**      * Returns a String representation of the SQL type from its JDBC code.      */
+comment|/** 	 * Returns a String representation of the SQL type from its JDBC code. 	 */
 specifier|public
 specifier|static
 name|String
@@ -2059,7 +2059,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns default java.sql.Types type by the Java type name.      *       * @param className Fully qualified Java Class name.      * @return The SQL type or NOT_DEFINED if no type found.      */
+comment|/** 	 * Returns default java.sql.Types type by the Java type name. 	 *  	 * @param className 	 *            Fully qualified Java Class name. 	 * @return The SQL type or NOT_DEFINED if no type found. 	 */
 specifier|public
 specifier|static
 name|int
@@ -2137,7 +2137,7 @@ name|aClass
 argument_list|)
 return|;
 block|}
-comment|/**      * Guesses a default JDBC type for the Java class.      *       * @since 1.1      */
+comment|/** 	 * Guesses a default JDBC type for the Java class. 	 *  	 * @since 1.1 	 */
 specifier|public
 specifier|static
 name|int
@@ -2351,7 +2351,8 @@ return|return
 name|BIGINT
 return|;
 block|}
-comment|// serializable check should be the last one when all other mapping attempts
+comment|// serializable check should be the last one when all other mapping
+comment|// attempts
 comment|// failed
 if|if
 condition|(
@@ -2373,7 +2374,7 @@ return|return
 name|NOT_DEFINED
 return|;
 block|}
-comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *       * @return Fully qualified Java type name or null if not found.      */
+comment|/** 	 * Get the corresponding Java type by its java.sql.Types counterpart. Note 	 * that this method should be used as a last resort, with explicit mapping 	 * provided by user used as a first choice, as it can only guess how to map 	 * certain types, such as NUMERIC, etc. 	 *  	 * @return Fully qualified Java type name or null if not found. 	 */
 specifier|public
 specifier|static
 name|String
@@ -2426,6 +2427,8 @@ throws|throws
 name|SQLException
 block|{
 comment|// map database types to standard JDBC types
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -2433,8 +2436,8 @@ name|metaData
 operator|.
 name|getTypeInfo
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 while|while
 condition|(
@@ -2538,14 +2541,6 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 comment|// do some tricks to substitute for missing datatypes
 comment|// 1. swap TIMESTAMP - DATE

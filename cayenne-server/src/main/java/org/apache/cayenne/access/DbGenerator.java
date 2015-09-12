@@ -1189,6 +1189,8 @@ name|failures
 operator|=
 literal|null
 expr_stmt|;
+try|try
+init|(
 name|Connection
 name|connection
 init|=
@@ -1196,8 +1198,8 @@ name|ds
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 comment|// drop tables
 if|if
@@ -1478,14 +1480,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 comment|/** 	 * Builds and executes a SQL statement, catching and storing SQL exceptions 	 * resulting from invalid SQL. Only non-recoverable exceptions are rethrown. 	 *  	 * @since 1.1 	 */
 specifier|protected
@@ -1501,6 +1495,8 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+try|try
+init|(
 name|Statement
 name|statement
 init|=
@@ -1508,8 +1504,8 @@ name|connection
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|jdbcEventLogger
 operator|.
@@ -1581,14 +1577,6 @@ expr_stmt|;
 return|return
 literal|false
 return|;
-block|}
-finally|finally
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 comment|/** 	 * Creates FK and UNIQUE constraint statements for a given table. 	 *  	 * @since 3.0 	 */

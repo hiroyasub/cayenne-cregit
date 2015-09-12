@@ -164,7 +164,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A<b>PropertyListSerialization</b> is a utility class that reads and stores files in  * NeXT/Apple property list format. Unlike corresponding WebObjects class,  *<code>PropertyListSerialization</code> uses standard Java collections (lists and  * maps) to store property lists.  *   */
+comment|/**  * A<b>PropertyListSerialization</b> is a utility class that reads and stores  * files in NeXT/Apple property list format. Unlike corresponding WebObjects  * class,<code>PropertyListSerialization</code> uses standard Java collections  * (lists and maps) to store property lists.  *   */
 end_comment
 
 begin_class
@@ -172,7 +172,7 @@ specifier|public
 class|class
 name|PropertyListSerialization
 block|{
-comment|/**      * Reads a property list file. Returns a property list object, that is normally a      * java.util.List or a java.util.Map, but can also be a String or a Number.      */
+comment|/** 	 * Reads a property list file. Returns a property list object, that is 	 * normally a java.util.List or a java.util.Map, but can also be a String or 	 * a Number. 	 */
 specifier|public
 specifier|static
 name|Object
@@ -193,7 +193,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads a property list file. Returns a property list object, that is normally a      * java.util.List or a java.util.Map, but can also be a String or a Number.      */
+comment|/** 	 * Reads a property list file. Returns a property list object, that is 	 * normally a java.util.List or a java.util.Map, but can also be a String or 	 * a Number. 	 */
 specifier|public
 specifier|static
 name|Object
@@ -240,7 +240,7 @@ name|propertyList
 argument_list|()
 return|;
 block|}
-comment|/**      * Reads a property list data from InputStream. Returns a property list o bject, that      * is normally a java.util.List or a java.util.Map, but can also be a String or a      * Number.      */
+comment|/** 	 * Reads a property list data from InputStream. Returns a property list o 	 * bject, that is normally a java.util.List or a java.util.Map, but can also 	 * be a String or a Number. 	 */
 specifier|public
 specifier|static
 name|Object
@@ -259,7 +259,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/**      * Reads a property list data from InputStream. Returns a property list o bject, that      * is normally a java.util.List or a java.util.Map, but can also be a String or a      * Number.      */
+comment|/** 	 * Reads a property list data from InputStream. Returns a property list o 	 * bject, that is normally a java.util.List or a java.util.Map, but can also 	 * be a String or a Number. 	 */
 specifier|public
 specifier|static
 name|Object
@@ -285,7 +285,7 @@ name|propertyList
 argument_list|()
 return|;
 block|}
-comment|/**      * Saves property list to file.      */
+comment|/** 	 * Saves property list to file. 	 */
 specifier|public
 specifier|static
 name|void
@@ -300,6 +300,8 @@ parameter_list|)
 block|{
 try|try
 block|{
+try|try
+init|(
 name|BufferedWriter
 name|out
 init|=
@@ -312,8 +314,8 @@ argument_list|(
 name|f
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|writeObject
 argument_list|(
@@ -323,14 +325,6 @@ name|out
 argument_list|,
 name|plist
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|out
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -351,7 +345,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Saves property list to file.      */
+comment|/** 	 * Saves property list to file. 	 */
 specifier|public
 specifier|static
 name|void
@@ -366,6 +360,8 @@ parameter_list|)
 block|{
 try|try
 block|{
+try|try
+init|(
 name|BufferedWriter
 name|out
 init|=
@@ -378,8 +374,8 @@ argument_list|(
 name|os
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|writeObject
 argument_list|(
@@ -389,14 +385,6 @@ name|out
 argument_list|,
 name|plist
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|out
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -417,7 +405,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Internal method to recursively write a property list object.      */
+comment|/** 	 * Internal method to recursively write a property list object. 	 */
 specifier|protected
 specifier|static
 name|void
@@ -862,7 +850,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Escapes all doublequotes and backslashes.      */
+comment|/** 	 * Escapes all doublequotes and backslashes. 	 */
 specifier|protected
 specifier|static
 name|String
@@ -957,7 +945,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a quoted String, with all the escapes preprocessed. May return an unquoted      * String if it contains no special characters. The rule for a non-special character      * is the following:      *       *<pre>      *       c&gt;= 'a'&amp;&amp; c&lt;= 'z'      *       c&gt;= 'A'&amp;&amp; c&lt;= 'Z'      *       c&gt;= '0'&amp;&amp; c&lt;= '9'      *       c == '_'      *       c == '$'      *       c == ':'      *       c == '.'      *       c == '/'      *</pre>      */
+comment|/** 	 * Returns a quoted String, with all the escapes preprocessed. May return an 	 * unquoted String if it contains no special characters. The rule for a 	 * non-special character is the following: 	 *  	 *<pre> 	 *       c&gt;= 'a'&amp;&amp; c&lt;= 'z' 	 *       c&gt;= 'A'&amp;&amp; c&lt;= 'Z' 	 *       c&gt;= '0'&amp;&amp; c&lt;= '9' 	 *       c == '_' 	 *       c == '$' 	 *       c == ':' 	 *       c == '.' 	 *       c == '/' 	 *</pre> 	 */
 specifier|protected
 specifier|static
 name|String

@@ -75,20 +75,6 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|AutoAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
 name|DbAdapter
 import|;
 end_import
@@ -110,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A helper class that handles postprocessing after the schema generation operation. E.g.  * some databases require a checkpoint command to be run for the schema changes to be  * flushed to disk.  *   */
+comment|/**  * A helper class that handles postprocessing after the schema generation  * operation. E.g. some databases require a checkpoint command to be run for the  * schema changes to be flushed to disk.  *   */
 end_comment
 
 begin_class
@@ -243,6 +229,8 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
+try|try
+init|(
 name|PreparedStatement
 name|st
 init|=
@@ -252,20 +240,12 @@ name|prepareStatement
 argument_list|(
 literal|"CHECKPOINT"
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|st
 operator|.
 name|execute
-argument_list|()
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|st
-operator|.
-name|close
 argument_list|()
 expr_stmt|;
 block|}

@@ -15,6 +15,68 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|ConcurrentHashMap
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -349,68 +411,6 @@ name|ObjectContextGraphAction
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|ConcurrentHashMap
-import|;
-end_import
-
 begin_comment
 comment|/**  * A common base superclass for Cayenne ObjectContext implementors.  *   * @since 3.0  */
 end_comment
@@ -423,7 +423,7 @@ name|BaseContext
 implements|implements
 name|ObjectContext
 block|{
-comment|/**      * A holder of a ObjectContext bound to the current thread.      *       * @since 3.0      */
+comment|/** 	 * A holder of a ObjectContext bound to the current thread. 	 *  	 * @since 3.0 	 */
 specifier|protected
 specifier|static
 specifier|final
@@ -440,7 +440,7 @@ name|ObjectContext
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**      * Returns the ObjectContext bound to the current thread.      *       * @since 3.0      * @return the ObjectContext associated with caller thread.      * @throws IllegalStateException      *             if there is no ObjectContext bound to the current thread.      */
+comment|/** 	 * Returns the ObjectContext bound to the current thread. 	 *  	 * @since 3.0 	 * @return the ObjectContext associated with caller thread. 	 * @throws IllegalStateException 	 *             if there is no ObjectContext bound to the current thread. 	 */
 specifier|public
 specifier|static
 name|ObjectContext
@@ -476,7 +476,7 @@ return|return
 name|context
 return|;
 block|}
-comment|/**      * Binds a ObjectContext to the current thread. ObjectContext can later be      * retrieved by users in the same thread by calling      * {@link BaseContext#getThreadObjectContext}. Using null parameter will      * unbind currently bound ObjectContext.      *       * @since 3.0      */
+comment|/** 	 * Binds a ObjectContext to the current thread. ObjectContext can later be 	 * retrieved by users in the same thread by calling 	 * {@link BaseContext#getThreadObjectContext}. Using null parameter will 	 * unbind currently bound ObjectContext. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|void
@@ -518,12 +518,12 @@ name|validatingObjectsOnCommit
 init|=
 literal|true
 decl_stmt|;
-comment|/**      * Graph action that handles property changes      *       * @since 3.1      */
+comment|/** 	 * Graph action that handles property changes 	 *  	 * @since 3.1 	 */
 specifier|protected
 name|ObjectContextGraphAction
 name|graphAction
 decl_stmt|;
-comment|/**      * Stores user defined properties associated with this DataContext.      *       * @since 3.0      */
+comment|/** 	 * Stores user defined properties associated with this DataContext. 	 *  	 * @since 3.0 	 */
 specifier|protected
 specifier|volatile
 name|Map
@@ -547,7 +547,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Checks whether this context is attached to Cayenne runtime stack and if      * not, attempts to attach itself to the runtime using Injector returned      * from the call to {@link CayenneRuntime#getThreadInjector()}. If thread      * Injector is not available and the context is not attached, throws      * CayenneRuntimeException.      *<p>      * This method is called internally by the context before access to      * transient variables to allow the context to attach to the stack lazily      * following deserialization.      *       * @return true if the context successfully attached to the thread runtime,      *         false - if it was already attached.      * @since 3.1      */
+comment|/** 	 * Checks whether this context is attached to Cayenne runtime stack and if 	 * not, attempts to attach itself to the runtime using Injector returned 	 * from the call to {@link CayenneRuntime#getThreadInjector()}. If thread 	 * Injector is not available and the context is not attached, throws 	 * CayenneRuntimeException. 	 *<p> 	 * This method is called internally by the context before access to 	 * transient variables to allow the context to attach to the stack lazily 	 * following deserialization. 	 *  	 * @return true if the context successfully attached to the thread runtime, 	 *         false - if it was already attached. 	 * @since 3.1 	 */
 specifier|protected
 name|boolean
 name|attachToRuntimeIfNeeded
@@ -598,7 +598,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Attaches this context to the CayenneRuntime whose Injector is passed as      * an argument to this method.      *       * @since 3.1      */
+comment|/** 	 * Attaches this context to the CayenneRuntime whose Injector is passed as 	 * an argument to this method. 	 *  	 * @since 3.1 	 */
 specifier|protected
 name|void
 name|attachToRuntime
@@ -637,7 +637,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Attaches to a provided DataChannel.      *       * @since 3.1      */
+comment|/** 	 * Attaches to a provided DataChannel. 	 *  	 * @since 3.1 	 */
 specifier|protected
 name|void
 name|attachToChannel
@@ -734,7 +734,7 @@ return|return
 name|channel
 return|;
 block|}
-comment|/**      * Sets a new DataChannel for this context.      *       * @since 3.1      */
+comment|/** 	 * Sets a new DataChannel for this context. 	 *  	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setChannel
@@ -764,7 +764,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setEntityResolver
@@ -780,7 +780,7 @@ operator|=
 name|entityResolver
 expr_stmt|;
 block|}
-comment|/**      * Returns whether this ObjectContext performs object validation before      * commit is executed.      *       * @since 1.1      */
+comment|/** 	 * Returns whether this ObjectContext performs object validation before 	 * commit is executed. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|boolean
 name|isValidatingObjectsOnCommit
@@ -790,7 +790,7 @@ return|return
 name|validatingObjectsOnCommit
 return|;
 block|}
-comment|/**      * Sets the property defining whether this ObjectContext should perform      * object validation before commit is executed.      *       * @since 1.1      */
+comment|/** 	 * Sets the property defining whether this ObjectContext should perform 	 * object validation before commit is executed. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setValidatingObjectsOnCommit
@@ -806,7 +806,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1028,7 +1028,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1060,7 +1060,7 @@ name|query
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1134,7 +1134,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1184,7 +1184,7 @@ literal|0
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1207,6 +1207,8 @@ argument_list|>
 name|callback
 parameter_list|)
 block|{
+try|try
+init|(
 name|ResultIterator
 argument_list|<
 name|T
@@ -1217,8 +1219,8 @@ name|iterator
 argument_list|(
 name|query
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 for|for
 control|(
@@ -1236,14 +1238,6 @@ name|t
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|it
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 annotation|@
@@ -1763,7 +1757,7 @@ return|return
 name|queryCache
 return|;
 block|}
-comment|/**      * Sets a QueryCache to be used for storing cached query results.      */
+comment|/** 	 * Sets a QueryCache to be used for storing cached query results. 	 */
 specifier|public
 name|void
 name|setQueryCache
@@ -1779,7 +1773,7 @@ operator|=
 name|queryCache
 expr_stmt|;
 block|}
-comment|/**      * Returns EventManager associated with the ObjectStore.      *       * @since 1.2      */
+comment|/** 	 * Returns EventManager associated with the ObjectStore. 	 *  	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1905,7 +1899,7 @@ name|boolean
 name|cascade
 parameter_list|)
 function_decl|;
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|protected
 name|void
 name|fireDataChannelCommitted
@@ -1956,7 +1950,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|protected
 name|void
 name|fireDataChannelRolledback
@@ -2007,7 +2001,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|protected
 name|void
 name|fireDataChannelChanged
@@ -2107,7 +2101,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2151,7 +2145,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a map of user-defined properties associated with this      * DataContext.      *       * @since 3.0      */
+comment|/** 	 * Returns a map of user-defined properties associated with this 	 * DataContext. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|Map
 argument_list|<
@@ -2201,7 +2195,7 @@ return|return
 name|userProperties
 return|;
 block|}
-comment|/**      * Returns a user-defined property previously set via 'setUserProperty'.      * Note that it is a caller responsibility to synchronize access to      * properties.      *       * @since 3.0      */
+comment|/** 	 * Returns a user-defined property previously set via 'setUserProperty'. 	 * Note that it is a caller responsibility to synchronize access to 	 * properties. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2222,7 +2216,7 @@ name|key
 argument_list|)
 return|;
 block|}
-comment|/**      * Sets a user-defined property. Note that it is a caller responsibility to      * synchronize access to properties.      *       * @since 3.0      */
+comment|/** 	 * Sets a user-defined property. Note that it is a caller responsibility to 	 * synchronize access to properties. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2247,7 +2241,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * If ObjEntity qualifier is set, asks it to inject initial value to an      * object. Also performs all Persistent initialization operations      */
+comment|/** 	 * If ObjEntity qualifier is set, asks it to inject initial value to an 	 * object. Also performs all Persistent initialization operations 	 */
 specifier|protected
 name|void
 name|injectInitialValue
@@ -2399,7 +2393,7 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 annotation|@
 name|Override
 specifier|public

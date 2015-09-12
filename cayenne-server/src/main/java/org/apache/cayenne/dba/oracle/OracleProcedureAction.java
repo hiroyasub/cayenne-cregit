@@ -226,7 +226,7 @@ name|dataNode
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Helper method that reads OUT parameters of a CallableStatement.      */
+comment|/** 	 * Helper method that reads OUT parameters of a CallableStatement. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -323,6 +323,8 @@ name|getOracleCursorType
 argument_list|()
 condition|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -337,8 +339,8 @@ name|i
 operator|+
 literal|1
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|RowDescriptor
 name|rsDescriptor
@@ -362,24 +364,6 @@ argument_list|,
 name|delegate
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 comment|// ==== end Oracle-specific part

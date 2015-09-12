@@ -449,7 +449,7 @@ throw|;
 block|}
 block|}
 block|}
-comment|/**      * Returns all the table names in database.      *       * @throws SQLException      */
+comment|/** 	 * Returns all the table names in database. 	 *  	 * @throws SQLException 	 */
 specifier|protected
 name|Map
 argument_list|<
@@ -476,11 +476,6 @@ operator|.
 name|tableTypeForTable
 argument_list|()
 decl_stmt|;
-name|Connection
-name|con
-init|=
-literal|null
-decl_stmt|;
 name|Map
 argument_list|<
 name|String
@@ -498,8 +493,11 @@ name|Boolean
 argument_list|>
 argument_list|()
 decl_stmt|;
+try|try
+init|(
+name|Connection
 name|con
-operator|=
+init|=
 name|dataNode
 operator|.
 name|getDataSource
@@ -507,9 +505,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-expr_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -533,8 +533,8 @@ block|{
 name|tableLabel
 block|}
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 while|while
 condition|(
@@ -565,22 +565,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 return|return
 name|nameTables

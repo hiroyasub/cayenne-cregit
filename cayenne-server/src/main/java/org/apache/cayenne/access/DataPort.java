@@ -825,14 +825,6 @@ argument_list|,
 name|observer
 argument_list|)
 expr_stmt|;
-name|ResultIterator
-name|result
-init|=
-name|observer
-operator|.
-name|getResultIterator
-argument_list|()
-decl_stmt|;
 name|InsertBatchQuery
 name|insert
 init|=
@@ -845,6 +837,19 @@ name|INSERT_BATCH_SIZE
 argument_list|)
 decl_stmt|;
 try|try
+init|(
+name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
+name|result
+init|=
+name|observer
+operator|.
+name|getResultIterator
+argument_list|()
+init|;
+init|)
 block|{
 comment|// Split insertions into the same table into batches.
 comment|// This will allow to process tables of arbitrary size
@@ -1002,15 +1007,6 @@ name|currentRow
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-comment|// don't forget to close ResultIterator
-name|result
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}

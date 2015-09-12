@@ -208,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ProcedureAction for SQLServer MS JDBC driver. Customizes OUT parameter processing - it  * has to be done AFTER the ResultSets are read (note that jTDS driver works fine with  * normal ProcedureAction).  *<p>  *<i>See JIRA CAY-251 for details.</i>  *</p>  *   * @since 1.2  */
+comment|/**  * ProcedureAction for SQLServer MS JDBC driver. Customizes OUT parameter  * processing - it has to be done AFTER the ResultSets are read (note that jTDS  * driver works fine with normal ProcedureAction).  *<p>  *<i>See JIRA CAY-251 for details.</i>  *</p>  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -218,7 +218,7 @@ name|SQLServerProcedureAction
 extends|extends
 name|ProcedureAction
 block|{
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|SQLServerProcedureAction
 parameter_list|(
@@ -262,6 +262,8 @@ argument_list|(
 name|connection
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|CallableStatement
 name|statement
 init|=
@@ -272,10 +274,11 @@ name|transl
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
-comment|// stored procedure may contain a mixture of update counts and result sets,
+comment|// stored procedure may contain a mixture of update counts and
+comment|// result sets,
 comment|// and out parameters. Read out parameters first, then
 comment|// iterate until we exhaust all results
 name|boolean
@@ -286,7 +289,8 @@ operator|.
 name|execute
 argument_list|()
 decl_stmt|;
-comment|// local observer to cache results and provide them to the external observer
+comment|// local observer to cache results and provide them to the external
+comment|// observer
 comment|// in the order consistent with other adapters.
 name|Observer
 name|localObserver
@@ -308,6 +312,8 @@ condition|(
 name|hasResultSet
 condition|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -315,8 +321,8 @@ name|statement
 operator|.
 name|getResultSet
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|RowDescriptor
 name|descriptor
@@ -340,24 +346,6 @@ argument_list|,
 name|localObserver
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 else|else
@@ -408,8 +396,10 @@ name|getMoreResults
 argument_list|()
 expr_stmt|;
 block|}
-comment|// read out parameters to the main observer ... AFTER the main result set
-comment|// TODO: I hope SQLServer does not support ResultSets as OUT parameters,
+comment|// read out parameters to the main observer ... AFTER the main
+comment|// result set
+comment|// TODO: I hope SQLServer does not support ResultSets as OUT
+comment|// parameters,
 comment|// otherwise
 comment|// the order of custom result descriptors will be messed up
 name|readProcedureOutParameters
@@ -427,24 +417,6 @@ argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 class|class

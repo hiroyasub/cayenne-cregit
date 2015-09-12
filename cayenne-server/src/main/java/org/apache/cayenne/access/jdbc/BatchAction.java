@@ -413,7 +413,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|BatchAction
 parameter_list|(
@@ -445,7 +445,7 @@ operator|=
 name|runningAsBatch
 expr_stmt|;
 block|}
-comment|/**      * @return Query which originated this action      */
+comment|/** 	 * @return Query which originated this action 	 */
 specifier|public
 name|BatchQuery
 name|getQuery
@@ -598,6 +598,8 @@ operator|.
 name|getAdapter
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|PreparedStatement
 name|statement
 init|=
@@ -607,8 +609,8 @@ name|prepareStatement
 argument_list|(
 name|sql
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 for|for
 control|(
@@ -724,26 +726,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-block|}
-block|}
-block|}
-comment|/**      * Executes batch as individual queries over the same prepared statement.      */
+comment|/** 	 * Executes batch as individual queries over the same prepared statement. 	 */
 specifier|protected
 name|void
 name|runAsIndividualQueries
@@ -810,6 +794,8 @@ operator|.
 name|getAdapter
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|PreparedStatement
 name|statement
 init|=
@@ -834,8 +820,8 @@ name|prepareStatement
 argument_list|(
 name|queryStr
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 for|for
 control|(
@@ -950,26 +936,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-block|}
-block|}
-block|}
-comment|/**      * Returns whether BatchQuery generates any keys.      */
+comment|/** 	 * Returns whether BatchQuery generates any keys. 	 */
 specifier|protected
 name|boolean
 name|hasGeneratedKeys
@@ -1034,7 +1002,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * Implements generated keys extraction supported in JDBC 3.0 specification.      *       * @since 4.0      */
+comment|/** 	 * Implements generated keys extraction supported in JDBC 3.0 specification. 	 *  	 * @since 4.0 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(

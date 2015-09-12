@@ -206,6 +206,8 @@ argument_list|(
 name|connection
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|CallableStatement
 name|statement
 init|=
@@ -216,11 +218,13 @@ name|transl
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
-comment|// this is one difference with super - we need to read the first result set
-comment|// without calling 'getMoreResults' - which may actually be a good default
+comment|// this is one difference with super - we need to read the first
+comment|// result set
+comment|// without calling 'getMoreResults' - which may actually be a good
+comment|// default
 comment|// strategy?
 name|boolean
 name|firstResult
@@ -300,24 +304,6 @@ condition|)
 block|{
 break|break;
 block|}
-block|}
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
 block|}
 block|}
 block|}
@@ -442,7 +428,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Creates a translator that adds parenthesis to no-param queries.      */
+comment|/** 	 * Creates a translator that adds parenthesis to no-param queries. 	 */
 comment|// see CAY-750 for the problem description
 annotation|@
 name|Override

@@ -164,7 +164,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Primary key generator implementation for Sybase. Uses a lookup table named  * "AUTO_PK_SUPPORT" and a stored procedure "auto_pk_for_table" to search and increment  * primary keys for tables.  */
+comment|/**  * Primary key generator implementation for Sybase. Uses a lookup table named  * "AUTO_PK_SUPPORT" and a stored procedure "auto_pk_for_table" to search and  * increment primary keys for tables.  */
 end_comment
 
 begin_class
@@ -198,7 +198,7 @@ return|return
 literal|"CREATE TABLE AUTO_PK_SUPPORT (  TABLE_NAME CHAR(100) NOT NULL, NEXT_ID DECIMAL(19,0) NOT NULL, PRIMARY KEY(TABLE_NAME))"
 return|;
 block|}
-comment|/**      * Generates database objects to provide automatic primary key support. Method will      * execute the following SQL statements:      *<p>      * 1. Executed only if a corresponding table does not exist in the database.      *</p>      *       *<pre>      *    CREATE TABLE AUTO_PK_SUPPORT (      *       TABLE_NAME VARCHAR(32) NOT NULL,      *       NEXT_ID DECIMAL(19,0) NOT NULL      *    )      *</pre>      *<p>      * 2. Executed under any circumstances.      *</p>      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *<p>      * 3. Executed under any circumstances.      *</p>      * CREATE PROCEDURE auto_pk_for_table      *       *<pre>      *&#064;tname VARCHAR(32),      *&#064;pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID =      *              NEXT_ID +      *&#064;pkbatchsize WHERE TABLE_NAME =      *&#064;tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID =      *&#064;tname COMMIT END      *</pre>      *       * @param node node that provides access to a DataSource.      */
+comment|/** 	 * Generates database objects to provide automatic primary key support. 	 * Method will execute the following SQL statements: 	 *<p> 	 * 1. Executed only if a corresponding table does not exist in the database. 	 *</p> 	 *  	 *<pre> 	 *    CREATE TABLE AUTO_PK_SUPPORT ( 	 *       TABLE_NAME VARCHAR(32) NOT NULL, 	 *       NEXT_ID DECIMAL(19,0) NOT NULL 	 *    ) 	 *</pre> 	 *<p> 	 * 2. Executed under any circumstances. 	 *</p> 	 *  	 *<pre> 	 * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table') 	 * BEGIN 	 *    DROP PROCEDURE auto_pk_for_table  	 * END 	 *</pre> 	 *<p> 	 * 3. Executed under any circumstances. 	 *</p> 	 * CREATE PROCEDURE auto_pk_for_table 	 *  	 *<pre> 	 *&#064;tname VARCHAR(32), 	 *&#064;pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID = 	 *              NEXT_ID + 	 *&#064;pkbatchsize WHERE TABLE_NAME = 	 *&#064;tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID = 	 *&#064;tname COMMIT END 	 *</pre> 	 *  	 * @param node 	 *            node that provides access to a DataSource. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -298,7 +298,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Drops database objects related to automatic primary key support. Method will      * execute the following SQL statements:      *       *<pre>      * if exists (SELECT * FROM sysobjects WHERE name = 'AUTO_PK_SUPPORT')      * BEGIN      *    DROP TABLE AUTO_PK_SUPPORT      * END      *       *       * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table')      * BEGIN      *    DROP PROCEDURE auto_pk_for_table       * END      *</pre>      *       * @param node node that provides access to a DataSource.      */
+comment|/** 	 * Drops database objects related to automatic primary key support. Method 	 * will execute the following SQL statements: 	 *  	 *<pre> 	 * if exists (SELECT * FROM sysobjects WHERE name = 'AUTO_PK_SUPPORT') 	 * BEGIN 	 *    DROP TABLE AUTO_PK_SUPPORT 	 * END 	 *  	 *  	 * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table') 	 * BEGIN 	 *    DROP PROCEDURE auto_pk_for_table  	 * END 	 *</pre> 	 *  	 * @param node 	 *            node that provides access to a DataSource. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -387,7 +387,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -403,11 +403,15 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// handle CAY-588 - get connection that is separate from the connection in the
+comment|// handle CAY-588 - get connection that is separate from the connection
+comment|// in the
 comment|// current transaction.
-comment|// TODO (andrus, 7/6/2006) Note that this will still work in a pool with a single
-comment|// connection, as PK generator is invoked early in the transaction, before the
-comment|// connection is grabbed for commit... So maybe promote this to other adapters in
+comment|// TODO (andrus, 7/6/2006) Note that this will still work in a pool with
+comment|// a single
+comment|// connection, as PK generator is invoked early in the transaction,
+comment|// before the
+comment|// connection is grabbed for commit... So maybe promote this to other
+comment|// adapters in
 comment|// 3.0?
 name|Transaction
 name|transaction
@@ -426,6 +430,8 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+try|try
+init|(
 name|Connection
 name|connection
 init|=
@@ -436,9 +442,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|CallableStatement
 name|statement
 init|=
@@ -448,8 +456,8 @@ name|prepareCall
 argument_list|(
 literal|"{call auto_pk_for_table(?, ?)}"
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|statement
 operator|.
@@ -476,7 +484,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// can't use "executeQuery"
-comment|// per http://jtds.sourceforge.net/faq.html#expectingResultSet
+comment|// per
+comment|// http://jtds.sourceforge.net/faq.html#expectingResultSet
 name|statement
 operator|.
 name|execute
@@ -490,6 +499,8 @@ name|getMoreResults
 argument_list|()
 condition|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -497,8 +508,8 @@ name|statement
 operator|.
 name|getResultSet
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 if|if
 condition|(
@@ -533,14 +544,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -560,22 +563,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-finally|finally
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 finally|finally

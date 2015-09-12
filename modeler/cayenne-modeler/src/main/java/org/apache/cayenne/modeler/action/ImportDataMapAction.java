@@ -55,16 +55,6 @@ name|java
 operator|.
 name|io
 operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
 name|InputStream
 import|;
 end_import
@@ -290,7 +280,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Modeler action that imports a DataMap into a project from an arbitrary location.  *   * @since 1.1  */
+comment|/**  * Modeler action that imports a DataMap into a project from an arbitrary  * location.  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -393,6 +383,8 @@ operator|.
 name|toURL
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|InputStream
 name|in
 init|=
@@ -400,8 +392,8 @@ name|url
 operator|.
 name|openStream
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|InputSource
 name|inSrc
@@ -433,24 +425,6 @@ argument_list|(
 name|inSrc
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-block|}
 block|}
 name|DataChannelDescriptor
 name|domain

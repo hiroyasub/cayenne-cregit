@@ -717,7 +717,7 @@ operator|=
 name|jdbcEventLogger
 expr_stmt|;
 block|}
-comment|/**      * Completely rebuilds test schema.      */
+comment|/** 	 * Completely rebuilds test schema. 	 */
 comment|// TODO - this method changes the internal state of the object ... refactor
 specifier|public
 name|void
@@ -1088,7 +1088,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates all test tables in the database.      */
+comment|/** 	 * Creates all test tables in the database. 	 */
 specifier|private
 name|void
 name|createSchema
@@ -1161,7 +1161,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Creates primary key support for all node DbEntities. Will use its      * facilities provided by DbAdapter to generate any necessary database      * objects and data for primary key support.      */
+comment|/** 	 * Creates primary key support for all node DbEntities. Will use its 	 * facilities provided by DbAdapter to generate any necessary database 	 * objects and data for primary key support. 	 */
 specifier|public
 name|void
 name|createPKSupport
@@ -1198,7 +1198,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Helper method that orders DbEntities to satisfy referential constraints      * and returns an ordered list.      */
+comment|/** 	 * Helper method that orders DbEntities to satisfy referential constraints 	 * and returns an ordered list. 	 */
 specifier|private
 name|List
 argument_list|<
@@ -1562,17 +1562,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|Connection
-name|conn
-init|=
-name|dataSourceFactory
-operator|.
-name|getSharedDataSource
-argument_list|()
-operator|.
-name|getConnection
-argument_list|()
-decl_stmt|;
 name|List
 argument_list|<
 name|DbEntity
@@ -1587,6 +1576,19 @@ name|map
 argument_list|)
 decl_stmt|;
 try|try
+init|(
+name|Connection
+name|conn
+init|=
+name|dataSourceFactory
+operator|.
+name|getSharedDataSource
+argument_list|()
+operator|.
+name|getConnection
+argument_list|()
+init|;
+init|)
 block|{
 name|DatabaseMetaData
 name|md
@@ -1596,6 +1598,21 @@ operator|.
 name|getMetaData
 argument_list|()
 decl_stmt|;
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|allTables
+init|=
+operator|new
+name|ArrayList
+argument_list|<
+name|String
+argument_list|>
+argument_list|()
+decl_stmt|;
+try|try
+init|(
 name|ResultSet
 name|tables
 init|=
@@ -1611,20 +1628,8 @@ literal|"%"
 argument_list|,
 literal|null
 argument_list|)
-decl_stmt|;
-name|List
-argument_list|<
-name|String
-argument_list|>
-name|allTables
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|String
-argument_list|>
-argument_list|()
-decl_stmt|;
+init|)
+block|{
 while|while
 condition|(
 name|tables
@@ -1634,7 +1639,8 @@ argument_list|()
 condition|)
 block|{
 comment|// 'toUpperCase' is needed since most databases
-comment|// are case insensitive, and some will convert names to lower
+comment|// are case insensitive, and some will convert names to
+comment|// lower
 comment|// case
 comment|// (PostgreSQL)
 name|String
@@ -1664,11 +1670,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|tables
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 name|unitDbAdapter
 operator|.
 name|willDropTables
@@ -1681,6 +1683,8 @@ name|allTables
 argument_list|)
 expr_stmt|;
 comment|// drop all tables in the map
+try|try
+init|(
 name|Statement
 name|stmt
 init|=
@@ -1688,7 +1692,9 @@ name|conn
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
+init|;
+init|)
+block|{
 name|ListIterator
 argument_list|<
 name|DbEntity
@@ -1798,6 +1804,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 name|unitDbAdapter
 operator|.
 name|droppedTables
@@ -1806,14 +1813,6 @@ name|conn
 argument_list|,
 name|map
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|conn
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -1914,6 +1913,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+try|try
+init|(
 name|Connection
 name|conn
 init|=
@@ -1924,8 +1925,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|unitDbAdapter
 operator|.
@@ -1936,6 +1937,8 @@ argument_list|,
 name|map
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|Statement
 name|stmt
 init|=
@@ -1943,7 +1946,9 @@ name|conn
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
+init|;
+init|)
+block|{
 for|for
 control|(
 name|String
@@ -1972,6 +1977,7 @@ name|query
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 name|unitDbAdapter
 operator|.
 name|createdTables
@@ -1982,16 +1988,8 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-name|conn
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-comment|/**      * Returns iterator of preprocessed table create queries.      */
+comment|/** 	 * Returns iterator of preprocessed table create queries. 	 */
 specifier|private
 name|Collection
 argument_list|<

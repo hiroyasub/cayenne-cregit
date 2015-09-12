@@ -189,17 +189,6 @@ literal|null
 return|;
 block|}
 comment|// if InnoDB is used as a default engine, allow PK
-name|Statement
-name|statement
-init|=
-name|md
-operator|.
-name|getConnection
-argument_list|()
-operator|.
-name|createStatement
-argument_list|()
-decl_stmt|;
 name|boolean
 name|supportFK
 init|=
@@ -213,11 +202,28 @@ operator|.
 name|DEFAULT_STORAGE_ENGINE
 decl_stmt|;
 try|try
+init|(
+name|Statement
+name|statement
+init|=
+name|md
+operator|.
+name|getConnection
+argument_list|()
+operator|.
+name|createStatement
+argument_list|()
+init|;
+init|)
 block|{
 comment|// http://dev.mysql.com/doc/refman/5.0/en/storage-engines.html
-comment|// per link above "table type" concept is deprecated in favor of "storage
-comment|// engine". Not sure if we should check "storage_engine" variable and in what
+comment|// per link above "table type" concept is deprecated in favor of
+comment|// "storage
+comment|// engine". Not sure if we should check "storage_engine" variable
+comment|// and in what
 comment|// version of MySQL it got introduced...
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -227,8 +233,8 @@ name|executeQuery
 argument_list|(
 literal|"SHOW VARIABLES LIKE 'table_type'"
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 if|if
 condition|(
@@ -274,22 +280,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 name|MySQLAdapter
 name|adapter

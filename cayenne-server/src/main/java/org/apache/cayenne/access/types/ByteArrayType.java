@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>byte[]</code>, mapping it as either of JDBC types - BLOB or (VAR)BINARY.  * Can be configured to trim trailing zero bytes.  */
+comment|/**  * Handles<code>byte[]</code>, mapping it as either of JDBC types - BLOB or  * (VAR)BINARY. Can be configured to trim trailing zero bytes.  */
 end_comment
 
 begin_class
@@ -162,7 +162,7 @@ specifier|protected
 name|boolean
 name|usingBlobs
 decl_stmt|;
-comment|/**      * Strips null bytes from the byte array, returning a potentially smaller array that      * contains no trailing zero bytes.      */
+comment|/** 	 * Strips null bytes from the byte array, returning a potentially smaller 	 * array that contains no trailing zero bytes. 	 */
 specifier|public
 specifier|static
 name|byte
@@ -745,6 +745,8 @@ name|IOException
 throws|,
 name|SQLException
 block|{
+try|try
+init|(
 name|InputStream
 name|in
 init|=
@@ -754,7 +756,9 @@ name|getBinaryStream
 argument_list|(
 name|index
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 return|return
 operator|(
 name|in
@@ -774,6 +778,7 @@ argument_list|)
 else|:
 literal|null
 return|;
+block|}
 block|}
 specifier|protected
 name|byte
@@ -824,8 +829,6 @@ operator|new
 name|ByteArrayOutputStream
 argument_list|()
 decl_stmt|;
-try|try
-block|{
 while|while
 condition|(
 operator|(
@@ -865,16 +868,7 @@ name|toByteArray
 argument_list|()
 return|;
 block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Returns<code>true</code> if byte columns are handled as BLOBs internally.      */
+comment|/** 	 * Returns<code>true</code> if byte columns are handled as BLOBs 	 * internally. 	 */
 specifier|public
 name|boolean
 name|isUsingBlobs

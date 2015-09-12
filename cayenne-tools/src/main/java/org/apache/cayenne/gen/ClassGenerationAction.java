@@ -17,6 +17,96 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|FileOutputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|OutputStreamWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Writer
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Properties
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -178,96 +268,6 @@ operator|.
 name|log
 operator|.
 name|NullLogSystem
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|FileOutputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|OutputStreamWriter
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Writer
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Properties
 import|;
 end_import
 
@@ -718,7 +718,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Returns a String used to prefix class name to create a generated superclass.      * Default value is "_".      */
+comment|/** 	 * Returns a String used to prefix class name to create a generated 	 * superclass. Default value is "_". 	 */
 specifier|protected
 name|String
 name|getSuperclassPrefix
@@ -730,7 +730,7 @@ operator|.
 name|SUPERCLASS_PREFIX
 return|;
 block|}
-comment|/**      * VelocityContext initialization method called once per artifact.      */
+comment|/** 	 * VelocityContext initialization method called once per artifact. 	 */
 specifier|protected
 name|void
 name|resetContextForArtifact
@@ -940,7 +940,7 @@ name|createPropertyNames
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * VelocityContext initialization method called once per each artifact and template      * type combination.      */
+comment|/** 	 * VelocityContext initialization method called once per each artifact and 	 * template type combination. 	 */
 specifier|protected
 name|void
 name|resetContextForArtifactTemplate
@@ -973,7 +973,7 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Executes class generation once per each artifact.      */
+comment|/** 	 * Executes class generation once per each artifact. 	 */
 specifier|public
 name|void
 name|execute
@@ -1003,7 +1003,8 @@ block|}
 block|}
 finally|finally
 block|{
-comment|// must reset engine at the end of class generator run to avoid memory
+comment|// must reset engine at the end of class generator run to avoid
+comment|// memory
 comment|// leaks and stale templates
 name|this
 operator|.
@@ -1014,7 +1015,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Executes class generation for a single artifact.      */
+comment|/** 	 * Executes class generation for a single artifact. 	 */
 specifier|protected
 name|void
 name|execute
@@ -1062,6 +1063,8 @@ range|:
 name|templateTypes
 control|)
 block|{
+try|try
+init|(
 name|Writer
 name|out
 init|=
@@ -1069,7 +1072,9 @@ name|openWriter
 argument_list|(
 name|type
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 if|if
 condition|(
 name|out
@@ -1096,11 +1101,7 @@ argument_list|,
 name|out
 argument_list|)
 expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -1137,8 +1138,10 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Velocity< 1.5 has some memory problems, so we will create a VelocityEngine
-comment|// every time, and store templates in an internal cache, to avoid uncontrolled
+comment|// Velocity< 1.5 has some memory problems, so we will create a
+comment|// VelocityEngine
+comment|// every time, and store templates in an internal cache, to avoid
+comment|// uncontrolled
 comment|// memory leaks... Presumably 1.5 fixes it.
 name|Template
 name|template
@@ -1250,7 +1253,7 @@ return|return
 name|template
 return|;
 block|}
-comment|/**      * Validates the state of this class generator. Throws CayenneRuntimeException if it      * is in an inconsistent state. Called internally from "execute".      */
+comment|/** 	 * Validates the state of this class generator. Throws 	 * CayenneRuntimeException if it is in an inconsistent state. Called 	 * internally from "execute". 	 */
 specifier|protected
 name|void
 name|validateAttributes
@@ -1308,7 +1311,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Sets the destDir.      */
+comment|/** 	 * Sets the destDir. 	 */
 specifier|public
 name|void
 name|setDestDir
@@ -1324,7 +1327,7 @@ operator|=
 name|destDir
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>overwrite</code> property.      */
+comment|/** 	 * Sets<code>overwrite</code> property. 	 */
 specifier|public
 name|void
 name|setOverwrite
@@ -1340,7 +1343,7 @@ operator|=
 name|overwrite
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>makepairs</code> property.      */
+comment|/** 	 * Sets<code>makepairs</code> property. 	 */
 specifier|public
 name|void
 name|setMakePairs
@@ -1356,7 +1359,7 @@ operator|=
 name|makePairs
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>template</code> property.      */
+comment|/** 	 * Sets<code>template</code> property. 	 */
 specifier|public
 name|void
 name|setTemplate
@@ -1372,7 +1375,7 @@ operator|=
 name|template
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>superTemplate</code> property.      */
+comment|/** 	 * Sets<code>superTemplate</code> property. 	 */
 specifier|public
 name|void
 name|setSuperTemplate
@@ -1418,7 +1421,7 @@ operator|=
 name|querySuperTemplate
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>usepkgpath</code> property.      */
+comment|/** 	 * Sets<code>usepkgpath</code> property. 	 */
 specifier|public
 name|void
 name|setUsePkgPath
@@ -1434,7 +1437,7 @@ operator|=
 name|usePkgPath
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>outputPattern</code> property.      */
+comment|/** 	 * Sets<code>outputPattern</code> property. 	 */
 specifier|public
 name|void
 name|setOutputPattern
@@ -1450,7 +1453,7 @@ operator|=
 name|outputPattern
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>createPropertyNames</code> property.      */
+comment|/** 	 * Sets<code>createPropertyNames</code> property. 	 */
 specifier|public
 name|void
 name|setCreatePropertyNames
@@ -1466,7 +1469,7 @@ operator|=
 name|createPropertyNames
 expr_stmt|;
 block|}
-comment|/**      * Opens a Writer to write generated output. Returned Writer is mapped to a filesystem      * file (although subclasses may override that). File location is determined from the      * current state of VelocityContext and the TemplateType passed as a parameter. Writer      * encoding is determined from the value of the "encoding" property.      */
+comment|/** 	 * Opens a Writer to write generated output. Returned Writer is mapped to a 	 * filesystem file (although subclasses may override that). File location is 	 * determined from the current state of VelocityContext and the TemplateType 	 * passed as a parameter. Writer encoding is determined from the value of 	 * the "encoding" property. 	 */
 specifier|protected
 name|Writer
 name|openWriter
@@ -1572,7 +1575,7 @@ name|out
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a target file where a generated superclass must be saved. If null is      * returned, class shouldn't be generated.      */
+comment|/** 	 * Returns a target file where a generated superclass must be saved. If null 	 * is returned, class shouldn't be generated. 	 */
 specifier|protected
 name|File
 name|fileForSuperclass
@@ -1699,7 +1702,7 @@ return|return
 name|dest
 return|;
 block|}
-comment|/**      * Returns a target file where a generated class must be saved. If null is returned,      * class shouldn't be generated.      */
+comment|/** 	 * Returns a target file where a generated class must be saved. If null is 	 * returned, class shouldn't be generated. 	 */
 specifier|protected
 name|File
 name|fileForClass
@@ -1851,7 +1854,7 @@ return|return
 name|dest
 return|;
 block|}
-comment|/**      * Returns true if<code>file</code> parameter is older than internal timestamp of      * this class generator.      */
+comment|/** 	 * Returns true if<code>file</code> parameter is older than internal 	 * timestamp of this class generator. 	 */
 specifier|protected
 name|boolean
 name|isOld
@@ -1869,7 +1872,7 @@ operator|<=
 name|timestamp
 return|;
 block|}
-comment|/**      * Returns a File object corresponding to a directory where files that belong to      *<code>pkgName</code> package should reside. Creates any missing diectories below      *<code>dest</code>.      */
+comment|/** 	 * Returns a File object corresponding to a directory where files that 	 * belong to<code>pkgName</code> package should reside. Creates any missing 	 * diectories below<code>dest</code>. 	 */
 specifier|protected
 name|File
 name|mkpath
@@ -1966,7 +1969,7 @@ operator|=
 name|timestamp
 expr_stmt|;
 block|}
-comment|/**      * Sets file encoding. If set to null, default system encoding will be used.      */
+comment|/** 	 * Sets file encoding. If set to null, default system encoding will be used. 	 */
 specifier|public
 name|void
 name|setEncoding
@@ -1982,7 +1985,7 @@ operator|=
 name|encoding
 expr_stmt|;
 block|}
-comment|/**      * Sets "superPkg" property value.      */
+comment|/** 	 * Sets "superPkg" property value. 	 */
 specifier|public
 name|void
 name|setSuperPkg
@@ -1998,7 +2001,7 @@ operator|=
 name|superPkg
 expr_stmt|;
 block|}
-comment|/**      * @param dataMap The dataMap to set.      */
+comment|/** 	 * @param dataMap 	 *            The dataMap to set. 	 */
 specifier|public
 name|void
 name|setDataMap
@@ -2014,7 +2017,7 @@ operator|=
 name|dataMap
 expr_stmt|;
 block|}
-comment|/**      * Adds entities to the internal entity list.      */
+comment|/** 	 * Adds entities to the internal entity list. 	 */
 specifier|public
 name|void
 name|addEntities
@@ -2153,7 +2156,8 @@ operator|.
 name|ALL
 condition|)
 block|{
-comment|// TODO: andrus 10.12.2010 - why not also check for empty query list?? Or
+comment|// TODO: andrus 10.12.2010 - why not also check for empty query
+comment|// list?? Or
 comment|// create a better API for enabling DataMapArtifact
 if|if
 condition|(
@@ -2178,7 +2182,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Sets an optional shared VelocityContext. Useful with tools like VPP that can set      * custom values in the context, not known to Cayenne.      */
+comment|/** 	 * Sets an optional shared VelocityContext. Useful with tools like VPP that 	 * can set custom values in the context, not known to Cayenne. 	 */
 specifier|public
 name|void
 name|setContext
@@ -2194,7 +2198,7 @@ operator|=
 name|context
 expr_stmt|;
 block|}
-comment|/**      * Injects an optional logger that will be used to trace generated files at the info      * level.      */
+comment|/** 	 * Injects an optional logger that will be used to trace generated files at 	 * the info level. 	 */
 specifier|public
 name|void
 name|setLogger

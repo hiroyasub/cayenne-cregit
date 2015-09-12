@@ -129,6 +129,8 @@ name|String
 argument_list|>
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|BufferedReader
 name|reader
 init|=
@@ -146,8 +148,8 @@ argument_list|,
 literal|"UTF-8"
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|String
 name|line
@@ -224,14 +226,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|reader
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 return|return
 name|statements

@@ -241,7 +241,7 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a non-repeating primary key for a given PK attribute. Since      * OpenBase-specific mechanism is used, key caching is disabled. Instead a database      * operation is performed on every call.      *       * @since 3.0      */
+comment|/** 	 * Returns a non-repeating primary key for a given PK attribute. Since 	 * OpenBase-specific mechanism is used, key caching is disabled. Instead a 	 * database operation is performed on every call. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -331,7 +331,8 @@ return|;
 block|}
 else|else
 block|{
-comment|// leaving it up to the user to ensure that PK does not exceed max int...
+comment|// leaving it up to the user to ensure that PK does not exceed max
+comment|// int...
 return|return
 name|Integer
 operator|.
@@ -345,7 +346,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Generates new (unique and non-repeating) primary key for specified DbEntity.      * Executed SQL looks like this:      *       *<pre>      *  NEWID FOR Table Column      *</pre>      *       * COLUMN must be marked as UNIQUE in order for this to work properly.      *       * @since 3.0      */
+comment|/** 	 * Generates new (unique and non-repeating) primary key for specified 	 * DbEntity. Executed SQL looks like this: 	 *  	 *<pre> 	 *  NEWID FOR Table Column 	 *</pre> 	 *  	 * COLUMN must be marked as UNIQUE in order for this to work properly. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -383,6 +384,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|Connection
 name|con
 init|=
@@ -393,9 +396,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|Statement
 name|st
 init|=
@@ -403,9 +408,11 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -415,8 +422,8 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 comment|// Object pk = null;
 if|if
@@ -450,34 +457,10 @@ literal|1
 argument_list|)
 return|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Returns SQL string that can generate new (unique and non-repeating) primary key for      * specified DbEntity. No actual database operations are performed.      *       * @since 1.2      */
+comment|/** 	 * Returns SQL string that can generate new (unique and non-repeating) 	 * primary key for specified DbEntity. No actual database operations are 	 * performed. 	 *  	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|newIDString
@@ -775,7 +758,7 @@ comment|// Good thing is that it doesn't matter, since PK support
 comment|// is attached to the table itself, so if a table is dropped,
 comment|// it will be dropped as well
 block|}
-comment|/**      * Returns an empty list, since OpenBase doesn't support this operation.      */
+comment|/** 	 * Returns an empty list, since OpenBase doesn't support this operation. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -792,7 +775,7 @@ operator|.
 name|EMPTY_LIST
 return|;
 block|}
-comment|/**      * Returns a String to create PK support for an entity.      */
+comment|/** 	 * Returns a String to create PK support for an entity. 	 */
 specifier|protected
 name|String
 name|createPKString
@@ -970,7 +953,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a String to create a unique index on table primary key columns per OpenBase      * recommendations.      */
+comment|/** 	 * Returns a String to create a unique index on table primary key columns 	 * per OpenBase recommendations. 	 */
 specifier|protected
 name|String
 name|createUniquePKIndexString
@@ -1168,7 +1151,7 @@ parameter_list|()
 block|{
 comment|// noop
 block|}
-comment|/**      * Returns zero, since PK caching is not feasible with OpenBase PK generation      * mechanism.      */
+comment|/** 	 * Returns zero, since PK caching is not feasible with OpenBase PK 	 * generation mechanism. 	 */
 annotation|@
 name|Override
 specifier|public

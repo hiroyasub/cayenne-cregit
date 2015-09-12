@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SQLAction that runs a stored procedure. Note that ProcedureAction has internal state  * and is not thread-safe.  *   * @since 1.2  */
+comment|/**  * A SQLAction that runs a stored procedure. Note that ProcedureAction has  * internal state and is not thread-safe.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -220,12 +220,12 @@ specifier|protected
 name|ProcedureQuery
 name|query
 decl_stmt|;
-comment|/**      * Holds a number of ResultSets processed by the action. This value is reset to zero      * on every "performAction" call.      */
+comment|/** 	 * Holds a number of ResultSets processed by the action. This value is reset 	 * to zero on every "performAction" call. 	 */
 specifier|protected
 name|int
 name|processedResultSets
 decl_stmt|;
-comment|/**      * @since 4.0      */
+comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|ProcedureAction
 parameter_list|(
@@ -277,6 +277,8 @@ argument_list|(
 name|connection
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|CallableStatement
 name|statement
 init|=
@@ -287,19 +289,22 @@ name|transl
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|initStatement
 argument_list|(
 name|statement
 argument_list|)
 expr_stmt|;
-comment|// stored procedure may contain a mixture of update counts and result sets,
+comment|// stored procedure may contain a mixture of update counts and
+comment|// result sets,
 comment|// and out parameters. Read out parameters first, then
 comment|// iterate until we exhaust all results
-comment|// TODO: andrus, 4/2/2007 - according to the docs we should store the boolean
-comment|// return value of this method and avoid calling 'getMoreResults' if it is
+comment|// TODO: andrus, 4/2/2007 - according to the docs we should store
+comment|// the boolean
+comment|// return value of this method and avoid calling 'getMoreResults' if
+comment|// it is
 comment|// true.
 comment|// some db's handle this well, some don't (MySQL).
 comment|// 09/23/2013: almost all adapters except Oracle (and maybe a few
@@ -333,6 +338,8 @@ name|getMoreResults
 argument_list|()
 condition|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -340,8 +347,8 @@ name|statement
 operator|.
 name|getResultSet
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|RowDescriptor
 name|descriptor
@@ -365,24 +372,6 @@ argument_list|,
 name|observer
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
-block|}
 block|}
 block|}
 else|else
@@ -427,26 +416,8 @@ expr_stmt|;
 block|}
 block|}
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ex
-parameter_list|)
-block|{
-block|}
-block|}
-block|}
-comment|/**      * Returns the ProcedureTranslator to use for this ProcedureAction.      *       * @param connection JDBC connection      */
+comment|/** 	 * Returns the ProcedureTranslator to use for this ProcedureAction. 	 *  	 * @param connection 	 *            JDBC connection 	 */
 specifier|protected
 name|ProcedureTranslator
 name|createTranslator
@@ -510,7 +481,7 @@ return|return
 name|translator
 return|;
 block|}
-comment|/**      * Creates a RowDescriptor for result set.      *       * @param resultSet JDBC ResultSet      * @param setIndex a zero-based index of the ResultSet in the query results.      */
+comment|/** 	 * Creates a RowDescriptor for result set. 	 *  	 * @param resultSet 	 *            JDBC ResultSet 	 * @param setIndex 	 *            a zero-based index of the ResultSet in the query results. 	 */
 specifier|protected
 name|RowDescriptor
 name|describeResultSet
@@ -671,7 +642,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns stored procedure for an internal query.      */
+comment|/** 	 * Returns stored procedure for an internal query. 	 */
 specifier|protected
 name|Procedure
 name|getProcedure
@@ -692,7 +663,7 @@ name|getProcedure
 argument_list|()
 return|;
 block|}
-comment|/**      * Helper method that reads OUT parameters of a CallableStatement.      */
+comment|/** 	 * Helper method that reads OUT parameters of a CallableStatement. 	 */
 specifier|protected
 name|void
 name|readProcedureOutParameters
@@ -896,7 +867,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Initializes statement with query parameters      *       * @throws Exception      */
+comment|/** 	 * Initializes statement with query parameters 	 *  	 * @throws Exception 	 */
 specifier|protected
 name|void
 name|initStatement

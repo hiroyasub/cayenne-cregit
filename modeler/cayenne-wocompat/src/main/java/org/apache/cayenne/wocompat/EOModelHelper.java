@@ -170,7 +170,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper class used by EOModelProcessor. EOModelHelper loads an EOModel from the  * specified location and gives its users access to the untyped EOModel information.  */
+comment|/**  * Helper class used by EOModelProcessor. EOModelHelper loads an EOModel from  * the specified location and gives its users access to the untyped EOModel  * information.  */
 end_comment
 
 begin_class
@@ -214,7 +214,7 @@ specifier|private
 name|Map
 name|prototypeValues
 decl_stmt|;
-comment|/**      * Creates helper instance and tries to locate EOModel and load index file.      *       * @deprecated since 4.0, use {@link #EOModelHelper(URL)}.      */
+comment|/** 	 * Creates helper instance and tries to locate EOModel and load index file. 	 *  	 * @deprecated since 4.0, use {@link #EOModelHelper(URL)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -568,7 +568,8 @@ operator|.
 name|EMPTY_LIST
 expr_stmt|;
 block|}
-comment|// there is a bug in EOModeler it sometimes keeps outdated properties in
+comment|// there is a bug in EOModeler it sometimes keeps outdated
+comment|// properties in
 comment|// the client property list. This removes them
 name|clientClassProperties
 operator|.
@@ -577,7 +578,8 @@ argument_list|(
 name|classProperties
 argument_list|)
 expr_stmt|;
-comment|// remove all properties from the entity properties that are already defined
+comment|// remove all properties from the entity properties that are already
+comment|// defined
 comment|// in
 comment|// a potential parent class.
 name|String
@@ -705,7 +707,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Performs Objective C data types conversion to Java types.      *       * @since 1.1      * @return String representation for Java type corresponding to String representation      *         of Objective C type.      */
+comment|/** 	 * Performs Objective C data types conversion to Java types. 	 *  	 * @since 1.1 	 * @return String representation for Java type corresponding to String 	 *         representation of Objective C type. 	 */
 specifier|public
 name|String
 name|javaTypeForEOModelerType
@@ -945,7 +947,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 comment|// TODO: create a lookup map, maybe XML-loaded...
 specifier|protected
 name|Class
@@ -1121,7 +1123,7 @@ return|return
 name|modelUrl
 return|;
 block|}
-comment|/**      * Returns an iterator of model names.      */
+comment|/** 	 * Returns an iterator of model names. 	 */
 specifier|public
 name|Iterator
 name|modelNames
@@ -1137,7 +1139,7 @@ name|iterator
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a list of model entity names.      *       * @since 1.1      */
+comment|/** 	 * Returns a list of model entity names. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|List
 name|modelNamesAsList
@@ -1255,7 +1257,8 @@ argument_list|(
 literal|"name"
 argument_list|)
 decl_stmt|;
-comment|// TODO: why are we copying the original map? can we just use it as
+comment|// TODO: why are we copying the original map? can we just
+comment|// use it as
 comment|// is?
 name|Map
 name|prototypeAttrMap
@@ -1438,7 +1441,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns the iterator over EOFetchSpecification names for a given entity.      *       * @since 1.1      */
+comment|/** 	 * Returns the iterator over EOFetchSpecification names for a given entity. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|Iterator
 name|queryNames
@@ -1488,7 +1491,7 @@ name|iterator
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a map containing EOFetchSpecification information for entity name and query      * name. Returns null if no such query is found.      *       * @since 1.1      */
+comment|/** 	 * Returns a map containing EOFetchSpecification information for entity name 	 * and query name. Returns null if no such query is found. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|Map
 name|queryPListMap
@@ -1592,13 +1595,15 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+try|try
+init|(
 name|InputStream
 name|indexIn
 init|=
 name|openIndexStream
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plistParser
 operator|.
@@ -1617,16 +1622,8 @@ name|propertyList
 argument_list|()
 return|;
 block|}
-finally|finally
-block|{
-name|indexIn
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-comment|/**      * Loads EOEntity information and returns it as a map.      */
+comment|/** 	 * Loads EOEntity information and returns it as a map. 	 */
 specifier|protected
 name|Map
 name|loadEntityIndex
@@ -1637,6 +1634,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+try|try
+init|(
 name|InputStream
 name|entIn
 init|=
@@ -1644,8 +1643,8 @@ name|openEntityStream
 argument_list|(
 name|entityName
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plistParser
 operator|.
@@ -1664,16 +1663,8 @@ name|propertyList
 argument_list|()
 return|;
 block|}
-finally|finally
-block|{
-name|entIn
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-comment|/**      * Loads EOFetchSpecification information and returns it as a map.      */
+comment|/** 	 * Loads EOFetchSpecification information and returns it as a map. 	 */
 specifier|protected
 name|Map
 name|loadQueryIndex
@@ -1689,7 +1680,8 @@ name|queryIn
 init|=
 literal|null
 decl_stmt|;
-comment|// catch file open exceptions since not all entities have query files....
+comment|// catch file open exceptions since not all entities have query
+comment|// files....
 try|try
 block|{
 name|queryIn
@@ -1872,7 +1864,7 @@ return|return
 name|path
 return|;
 block|}
-comment|/**      * Returns InputStream to read an EOModel index file.      */
+comment|/** 	 * Returns InputStream to read an EOModel index file. 	 */
 specifier|protected
 name|InputStream
 name|openIndexStream
@@ -1893,7 +1885,7 @@ name|openStream
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns InputStream to read an EOEntity plist file.      *       * @param entityName name of EOEntity to be loaded.      * @return InputStream to read an EOEntity plist file or null if      *<code>entityname.plist</code> file can not be located.      */
+comment|/** 	 * Returns InputStream to read an EOEntity plist file. 	 *  	 * @param entityName 	 *            name of EOEntity to be loaded. 	 * @return InputStream to read an EOEntity plist file or null if 	 *<code>entityname.plist</code> file can not be located. 	 */
 specifier|protected
 name|InputStream
 name|openEntityStream
@@ -1919,7 +1911,7 @@ name|openStream
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns InputStream to read an EOFetchSpecification plist file.      *       * @param entityName name of EOEntity to be loaded.      * @return InputStream to read an EOEntity plist file or null if      *<code>entityname.plist</code> file can not be located.      */
+comment|/** 	 * Returns InputStream to read an EOFetchSpecification plist file. 	 *  	 * @param entityName 	 *            name of EOEntity to be loaded. 	 * @return InputStream to read an EOEntity plist file or null if 	 *<code>entityname.plist</code> file can not be located. 	 */
 specifier|protected
 name|InputStream
 name|openQueryStream

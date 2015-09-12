@@ -622,6 +622,8 @@ operator|new
 name|StringBuilder
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|BufferedReader
 name|in
 init|=
@@ -634,8 +636,8 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|String
 name|line
@@ -669,14 +671,6 @@ name|joinWith
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 return|return
 name|buf
@@ -1086,6 +1080,11 @@ literal|0
 return|;
 block|}
 comment|/** 	 * Creates Serializable object copy using serialization/deserialization. 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 parameter_list|<
@@ -1123,6 +1122,8 @@ return|;
 block|}
 block|}
 decl_stmt|;
+try|try
+init|(
 name|ObjectOutputStream
 name|out
 init|=
@@ -1131,7 +1132,8 @@ name|ObjectOutputStream
 argument_list|(
 name|bytes
 argument_list|)
-decl_stmt|;
+init|)
+block|{
 name|out
 operator|.
 name|writeObject
@@ -1139,11 +1141,9 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
+try|try
+init|(
 name|ObjectInputStream
 name|in
 init|=
@@ -1159,10 +1159,9 @@ name|toByteArray
 argument_list|()
 argument_list|)
 argument_list|)
-decl_stmt|;
-name|T
-name|copy
-init|=
+init|)
+block|{
+return|return
 operator|(
 name|T
 operator|)
@@ -1170,13 +1169,8 @@ name|in
 operator|.
 name|readObject
 argument_list|()
-decl_stmt|;
-comment|// no need to close the stream - we created it and now will be throwing
-comment|// away...
-comment|// in.close();
-return|return
-name|copy
 return|;
+block|}
 block|}
 comment|/** 	 * Creates an XMLReader with default feature set. Note that all Cayenne 	 * internal XML parsers should probably use XMLReader obtained via this 	 * method for consistency sake, and can customize feature sets as needed. 	 */
 specifier|public

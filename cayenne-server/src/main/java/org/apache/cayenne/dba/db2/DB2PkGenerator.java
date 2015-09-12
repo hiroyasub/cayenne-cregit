@@ -210,7 +210,7 @@ name|_SEQUENCE_PREFIX
 init|=
 literal|"S_"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -234,6 +234,8 @@ argument_list|(
 name|entity
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|con
 init|=
@@ -244,9 +246,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|Statement
 name|st
 init|=
@@ -254,8 +258,8 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|String
 name|sql
@@ -280,6 +284,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -289,8 +295,8 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 comment|// Object pk = null;
 if|if
@@ -324,31 +330,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 annotation|@
@@ -417,7 +399,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Creates a list of CREATE SEQUENCE statements for the list of DbEntities.      */
+comment|/** 	 * Creates a list of CREATE SEQUENCE statements for the list of DbEntities. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -475,7 +457,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Drops PK sequences for all specified DbEntities.      */
+comment|/** 	 * Drops PK sequences for all specified DbEntities. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -606,7 +588,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Creates a list of DROP SEQUENCE statements for the list of DbEntities.      */
+comment|/** 	 * Creates a list of DROP SEQUENCE statements for the list of DbEntities. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -664,7 +646,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/**      * Fetches a list of existing sequences that might match Cayenne generated      * ones.      */
+comment|/** 	 * Fetches a list of existing sequences that might match Cayenne generated 	 * ones. 	 */
 specifier|protected
 name|List
 argument_list|<
@@ -679,6 +661,8 @@ throws|throws
 name|SQLException
 block|{
 comment|// check existing sequences
+try|try
+init|(
 name|Connection
 name|con
 init|=
@@ -689,9 +673,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|Statement
 name|sel
 init|=
@@ -699,8 +685,8 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|StringBuilder
 name|buffer
@@ -753,6 +739,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -762,8 +750,8 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|List
 argument_list|<
@@ -803,34 +791,10 @@ return|return
 name|sequenceList
 return|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|sel
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Returns default sequence name for DbEntity.      */
+comment|/** 	 * Returns default sequence name for DbEntity. 	 */
 specifier|protected
 name|String
 name|sequenceName
@@ -878,7 +842,7 @@ name|seqName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns DROP SEQUENCE statement.      */
+comment|/** 	 * Returns DROP SEQUENCE statement. 	 */
 specifier|protected
 name|String
 name|dropSequenceString
@@ -898,7 +862,7 @@ operator|+
 literal|" RESTRICT "
 return|;
 block|}
-comment|/**      * Returns CREATE SEQUENCE statement for entity.      */
+comment|/** 	 * Returns CREATE SEQUENCE statement for entity. 	 */
 specifier|protected
 name|String
 name|createSequenceString

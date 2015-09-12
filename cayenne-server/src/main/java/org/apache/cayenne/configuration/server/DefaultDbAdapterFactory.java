@@ -431,7 +431,7 @@ argument_list|()
 return|;
 block|}
 try|try
-block|{
+init|(
 name|Connection
 name|c
 init|=
@@ -439,8 +439,8 @@ name|dataSource
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 return|return
 name|detectAdapter
@@ -451,26 +451,6 @@ name|getMetaData
 argument_list|()
 argument_list|)
 return|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|e
-parameter_list|)
-block|{
-comment|// ignore...
-block|}
-block|}
 block|}
 catch|catch
 parameter_list|(

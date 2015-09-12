@@ -472,6 +472,8 @@ argument_list|(
 name|keyStoreUrl
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|InputStream
 name|in
 init|=
@@ -479,8 +481,8 @@ name|url
 operator|.
 name|openStream
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|keyStore
 operator|.
@@ -490,14 +492,6 @@ name|in
 argument_list|,
 literal|null
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 return|return

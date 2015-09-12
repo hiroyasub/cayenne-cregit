@@ -730,6 +730,8 @@ operator|new
 name|MockOperationObserver
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -740,8 +742,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plan
 operator|.
@@ -751,14 +753,6 @@ name|c
 argument_list|,
 name|observer
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|List
@@ -799,7 +793,8 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|// In the absence of ObjEntity most DB's return a Long here, except for Oracle
+comment|// In the absence of ObjEntity most DB's return a Long here, except for
+comment|// Oracle
 comment|// that has no BIGINT type and
 comment|// returns BigDecimal, so do a Number comparison
 name|Number
@@ -957,6 +952,8 @@ operator|new
 name|MockOperationObserver
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -967,8 +964,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plan
 operator|.
@@ -978,14 +975,6 @@ name|c
 argument_list|,
 name|observer
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|List
@@ -1149,6 +1138,8 @@ operator|new
 name|MockOperationObserver
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1159,8 +1150,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plan
 operator|.
@@ -1170,14 +1161,6 @@ name|c
 argument_list|,
 name|observer
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|List
@@ -1341,6 +1324,8 @@ operator|new
 name|MockOperationObserver
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1351,8 +1336,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|plan
 operator|.
@@ -1362,14 +1347,6 @@ name|c
 argument_list|,
 name|observer
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|List
@@ -1549,6 +1526,8 @@ argument_list|,
 name|node
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1559,8 +1538,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|MockOperationObserver
 name|observer
@@ -1612,14 +1591,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|assertEquals
@@ -1697,6 +1668,8 @@ argument_list|,
 name|node
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1707,8 +1680,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|MockOperationObserver
 name|observer
@@ -1760,14 +1733,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -1970,6 +1935,8 @@ name|getQuery
 argument_list|()
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1980,8 +1947,8 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|MockOperationObserver
 name|observer
@@ -2043,14 +2010,6 @@ index|[
 literal|1
 index|]
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 name|MockOperationObserver

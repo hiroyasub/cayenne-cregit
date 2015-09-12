@@ -17,16 +17,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|Closeable
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|List
@@ -50,7 +40,7 @@ argument_list|<
 name|T
 argument_list|>
 extends|,
-name|Closeable
+name|AutoCloseable
 block|{
 comment|/**      * Returns all yet unread rows from ResultSet without closing it.      *       * @since 3.0      */
 name|List

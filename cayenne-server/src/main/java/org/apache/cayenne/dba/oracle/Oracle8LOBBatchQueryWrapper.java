@@ -239,7 +239,7 @@ name|indexQualifierAttributes
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Indexes attributes      */
+comment|/** 	 * Indexes attributes 	 */
 specifier|protected
 name|void
 name|indexQualifierAttributes
@@ -319,7 +319,7 @@ name|CLOB
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Indexes attributes      */
+comment|/** 	 * Indexes attributes 	 */
 name|void
 name|indexLOBAttributes
 parameter_list|(
@@ -428,7 +428,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Converts value to byte[] if possible.      */
+comment|/** 	 * Converts value to byte[] if possible. 	 */
 specifier|protected
 name|byte
 index|[]
@@ -498,7 +498,7 @@ block|}
 block|}
 decl_stmt|;
 try|try
-block|{
+init|(
 name|ObjectOutputStream
 name|out
 init|=
@@ -507,18 +507,15 @@ name|ObjectOutputStream
 argument_list|(
 name|bytes
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|out
 operator|.
 name|writeObject
 argument_list|(
 name|value
 argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 catch|catch
@@ -548,7 +545,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Converts to char[] or String. Both are acceptable when writing CLOBs.      */
+comment|/** 	 * Converts to char[] or String. Both are acceptable when writing CLOBs. 	 */
 specifier|protected
 name|Object
 name|convertToClobValue
@@ -611,7 +608,7 @@ name|strValue
 return|;
 block|}
 block|}
-comment|/**      * Returns a list of DbAttributes used in the qualifier of the query that      * selects a LOB row for LOB update.      */
+comment|/** 	 * Returns a list of DbAttributes used in the qualifier of the query that 	 * selects a LOB row for LOB update. 	 */
 name|List
 argument_list|<
 name|DbAttribute
@@ -686,7 +683,7 @@ return|return
 name|attributes
 return|;
 block|}
-comment|/**      * Returns a list of DbAttributes that correspond to the LOB columns updated      * in the current row in the batch query. The list will not include LOB      * attributes that are null or empty.      */
+comment|/** 	 * Returns a list of DbAttributes that correspond to the LOB columns updated 	 * in the current row in the batch query. The list will not include LOB 	 * attributes that are null or empty. 	 */
 name|List
 argument_list|<
 name|DbAttribute

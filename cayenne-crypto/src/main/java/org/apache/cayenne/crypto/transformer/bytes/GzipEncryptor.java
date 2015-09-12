@@ -214,6 +214,8 @@ operator|.
 name|length
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|GZIPOutputStream
 name|out
 init|=
@@ -222,7 +224,9 @@ name|GZIPOutputStream
 argument_list|(
 name|zipBytes
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|out
 operator|.
 name|write
@@ -236,11 +240,7 @@ operator|.
 name|length
 argument_list|)
 expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 return|return
 name|zipBytes
 operator|.

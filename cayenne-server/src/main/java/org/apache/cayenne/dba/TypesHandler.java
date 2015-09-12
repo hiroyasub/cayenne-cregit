@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * TypesHandler provides JDBC-RDBMS types mapping. Loads types info from   * an XML file.  *   */
+comment|/**  * TypesHandler provides JDBC-RDBMS types mapping. Loads types info from an XML  * file.  *   */
 end_comment
 
 begin_class
@@ -221,7 +221,7 @@ index|[]
 argument_list|>
 name|typesMap
 decl_stmt|;
-comment|/**      * @since 1.1      */
+comment|/** 	 * @since 1.1 	 */
 specifier|public
 specifier|static
 name|TypesHandler
@@ -276,7 +276,7 @@ name|handler
 return|;
 block|}
 block|}
-comment|/**      * Creates new TypesHandler loading configuration info from the XML      * file specified as<code>typesConfigPath</code> parameter.      *       * @since 1.1      */
+comment|/** 	 * Creates new TypesHandler loading configuration info from the XML file 	 * specified as<code>typesConfigPath</code> parameter. 	 *  	 * @since 1.1 	 */
 specifier|public
 name|TypesHandler
 parameter_list|(
@@ -285,7 +285,7 @@ name|typesConfig
 parameter_list|)
 block|{
 try|try
-block|{
+init|(
 name|InputStream
 name|in
 init|=
@@ -293,8 +293,8 @@ name|typesConfig
 operator|.
 name|openStream
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|XMLReader
 name|parser
@@ -364,45 +364,6 @@ name|ex
 argument_list|)
 throw|;
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-block|}
-block|}
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|ioex
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Error opening config file '"
-operator|+
-name|typesConfig
-operator|+
-literal|"'."
-argument_list|,
-name|ioex
-argument_list|)
-throw|;
-block|}
 block|}
 specifier|public
 name|String
@@ -422,7 +383,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**       * Helper class to load types data from XML.      */
+comment|/** 	 * Helper class to load types data from XML. 	 */
 specifier|final
 class|class
 name|TypesParseHandler

@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>java.lang.String</code>, mapping it as either of JDBC types - CLOB or  * (VAR)CHAR. Can be configured to trim trailing spaces.  */
+comment|/**  * Handles<code>java.lang.String</code>, mapping it as either of JDBC types -  * CLOB or (VAR)CHAR. Can be configured to trim trailing spaces.  */
 end_comment
 
 begin_class
@@ -171,7 +171,7 @@ operator|=
 name|usingClobs
 expr_stmt|;
 block|}
-comment|/**      * Returns "java.lang.String".      */
+comment|/** 	 * Returns "java.lang.String". 	 */
 annotation|@
 name|Override
 specifier|public
@@ -632,6 +632,8 @@ name|IOException
 throws|,
 name|SQLException
 block|{
+try|try
+init|(
 name|Reader
 name|in
 init|=
@@ -641,7 +643,9 @@ name|getCharacterStream
 argument_list|(
 name|index
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 return|return
 name|in
 operator|!=
@@ -659,6 +663,7 @@ argument_list|)
 else|:
 literal|null
 return|;
+block|}
 block|}
 specifier|protected
 name|String
@@ -703,8 +708,6 @@ operator|new
 name|StringWriter
 argument_list|()
 decl_stmt|;
-try|try
-block|{
 name|int
 name|read
 decl_stmt|;
@@ -747,16 +750,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Returns<code>true</code> if 'materializeObject' method should trim trailing spaces      * from the CHAR columns. This addresses an issue with some JDBC drivers (e.g.      * Oracle), that return Strings for CHAR columns padded with spaces.      */
+comment|/** 	 * Returns<code>true</code> if 'materializeObject' method should trim 	 * trailing spaces from the CHAR columns. This addresses an issue with some 	 * JDBC drivers (e.g. Oracle), that return Strings for CHAR columns padded 	 * with spaces. 	 */
 specifier|public
 name|boolean
 name|isTrimmingChars

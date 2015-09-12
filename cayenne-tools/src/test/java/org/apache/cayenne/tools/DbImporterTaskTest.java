@@ -1463,6 +1463,8 @@ operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -1475,9 +1477,14 @@ operator|.
 name|getUrl
 argument_list|()
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+comment|// TODO: move parsing SQL files to a common utility (DBHelper?) .
+comment|// ALso see UnitDbApater.executeDDL - this should use the same
+comment|// utility
+try|try
+init|(
 name|Statement
 name|stmt
 init|=
@@ -1485,11 +1492,8 @@ name|c
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-comment|// TODO: move parsing SQL files to a common utility (DBHelper?) .
-comment|// ALso see UnitDbApater.executeDDL - this should use the same
-comment|// utility
-try|try
+init|;
+init|)
 block|{
 for|for
 control|(
@@ -1528,22 +1532,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|stmt
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}

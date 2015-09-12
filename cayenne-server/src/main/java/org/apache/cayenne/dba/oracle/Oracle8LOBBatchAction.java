@@ -603,6 +603,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|PreparedStatement
 name|statement
 init|=
@@ -612,8 +614,8 @@ name|prepareStatement
 argument_list|(
 name|updateStr
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|ParameterBinding
 index|[]
@@ -658,24 +660,6 @@ argument_list|(
 name|updated
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|statement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-block|}
 block|}
 comment|// 2. run row LOB update (SELECT...FOR UPDATE and writing out LOBs)
 name|processLOBRow
@@ -840,6 +824,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+init|(
 name|PreparedStatement
 name|selectStatement
 init|=
@@ -849,8 +835,8 @@ name|prepareStatement
 argument_list|(
 name|selectStr
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 for|for
 control|(
@@ -911,6 +897,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+init|(
 name|ResultSet
 name|result
 init|=
@@ -918,8 +906,8 @@ name|selectStatement
 operator|.
 name|executeQuery
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 if|if
 condition|(
@@ -1150,45 +1138,9 @@ argument_list|)
 throw|;
 block|}
 block|}
-finally|finally
-block|{
-try|try
-block|{
-name|result
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
 block|}
 block|}
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|selectStatement
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-block|}
-block|}
-block|}
-comment|/**      * Override the Oracle writeBlob() method to be compatible with Oracle8      * drivers.      */
+comment|/** 	 * Override the Oracle writeBlob() method to be compatible with Oracle8 	 * drivers. 	 */
 specifier|protected
 name|void
 name|writeBlob
@@ -1213,6 +1165,8 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+try|try
+init|(
 name|OutputStream
 name|out
 init|=
@@ -1231,8 +1185,8 @@ index|[]
 operator|)
 literal|null
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|out
 operator|.
@@ -1244,14 +1198,6 @@ expr_stmt|;
 name|out
 operator|.
 name|flush
-argument_list|()
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|out
-operator|.
-name|close
 argument_list|()
 expr_stmt|;
 block|}
@@ -1278,7 +1224,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Override the Oracle writeClob() method to be compatible with Oracle8      * drivers.      */
+comment|/** 	 * Override the Oracle writeClob() method to be compatible with Oracle8 	 * drivers. 	 */
 specifier|protected
 name|void
 name|writeClob
@@ -1301,6 +1247,8 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+try|try
+init|(
 name|Writer
 name|out
 init|=
@@ -1319,8 +1267,8 @@ index|[]
 operator|)
 literal|null
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|out
 operator|.
@@ -1332,14 +1280,6 @@ expr_stmt|;
 name|out
 operator|.
 name|flush
-argument_list|()
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|out
-operator|.
-name|close
 argument_list|()
 expr_stmt|;
 block|}
@@ -1366,7 +1306,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Override the Oracle writeClob() method to be compatible with Oracle8      * drivers.      */
+comment|/** 	 * Override the Oracle writeClob() method to be compatible with Oracle8 	 * drivers. 	 */
 specifier|protected
 name|void
 name|writeClob
@@ -1388,6 +1328,8 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
+try|try
+init|(
 name|Writer
 name|out
 init|=
@@ -1406,8 +1348,8 @@ index|[]
 operator|)
 literal|null
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|out
 operator|.
@@ -1419,14 +1361,6 @@ expr_stmt|;
 name|out
 operator|.
 name|flush
-argument_list|()
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|out
-operator|.
-name|close
 argument_list|()
 expr_stmt|;
 block|}

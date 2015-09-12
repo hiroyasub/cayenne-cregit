@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ExtendedTypeFactory for handling serializable objects. Returned ExtendedType is simply  * an object serialization wrapper on top of byte[] ExtendedType.  *   * @since 3.0  */
+comment|/**  * ExtendedTypeFactory for handling serializable objects. Returned ExtendedType  * is simply an object serialization wrapper on top of byte[] ExtendedType.  *   * @since 3.0  */
 end_comment
 
 begin_class
@@ -193,10 +193,13 @@ argument_list|(
 literal|"SerializableType will be used for type conversion."
 argument_list|)
 expr_stmt|;
-comment|// using a binary stream delegate instead of byte[] may actually speed up
-comment|// things in some dbs, but at least byte[] type works consistently across
+comment|// using a binary stream delegate instead of byte[] may actually
+comment|// speed up
+comment|// things in some dbs, but at least byte[] type works consistently
+comment|// across
 comment|// adapters...
-comment|// note - can't use "getRegisteredType" as it causes infinite recursion
+comment|// note - can't use "getRegisteredType" as it causes infinite
+comment|// recursion
 name|ExtendedType
 name|bytesType
 init|=
@@ -207,7 +210,8 @@ argument_list|(
 literal|"byte[]"
 argument_list|)
 decl_stmt|;
-comment|// not sure if this type of recursion can occur, still worth checking
+comment|// not sure if this type of recursion can occur, still worth
+comment|// checking
 if|if
 condition|(
 name|bytesType
@@ -244,7 +248,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * A serialization wrapper on top of byte[] ExtendedType      */
+comment|/** 	 * A serialization wrapper on top of byte[] ExtendedType 	 */
 specifier|final
 class|class
 name|SerializableType
@@ -329,7 +333,7 @@ block|}
 block|}
 decl_stmt|;
 try|try
-block|{
+init|(
 name|ObjectOutputStream
 name|out
 init|=
@@ -338,18 +342,15 @@ name|ObjectOutputStream
 argument_list|(
 name|bytes
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|out
 operator|.
 name|writeObject
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 catch|catch

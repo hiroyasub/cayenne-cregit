@@ -208,7 +208,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A loader of XML for the {@link DataSourceInfo} object. The loader is compatible with  * project version 3.0.0.1 and earlier.  *   * @since 3.1  */
+comment|/**  * A loader of XML for the {@link DataSourceInfo} object. The loader is  * compatible with project version 3.0.0.1 and earlier.  *   * @since 3.1  */
 end_comment
 
 begin_comment
@@ -362,20 +362,16 @@ name|InputStream
 name|inputStream
 parameter_list|)
 block|{
-name|BufferedReader
-name|bufferedReader
-init|=
-literal|null
-decl_stmt|;
 name|String
 name|password
 init|=
 literal|null
 decl_stmt|;
 try|try
-block|{
+init|(
+name|BufferedReader
 name|bufferedReader
-operator|=
+init|=
 operator|new
 name|BufferedReader
 argument_list|(
@@ -385,7 +381,9 @@ argument_list|(
 name|inputStream
 argument_list|)
 argument_list|)
-expr_stmt|;
+init|;
+init|)
+block|{
 name|password
 operator|=
 name|bufferedReader
@@ -404,29 +402,6 @@ comment|// ignoring...
 block|}
 finally|finally
 block|{
-try|try
-block|{
-if|if
-condition|(
-name|bufferedReader
-operator|!=
-literal|null
-condition|)
-block|{
-name|bufferedReader
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|exception
-parameter_list|)
-block|{
-block|}
 try|try
 block|{
 name|inputStream
@@ -744,7 +719,8 @@ argument_list|(
 name|username
 argument_list|)
 expr_stmt|;
-comment|// Replace {} in passwordSource with encoderSalt -- useful for EXECUTABLE
+comment|// Replace {} in passwordSource with encoderSalt -- useful for
+comment|// EXECUTABLE
 comment|//& URL options
 if|if
 condition|(

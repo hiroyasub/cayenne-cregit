@@ -664,6 +664,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+try|try
+init|(
 name|FileOutputStream
 name|out
 init|=
@@ -672,7 +674,9 @@ name|FileOutputStream
 argument_list|(
 name|f
 argument_list|)
-decl_stmt|;
+init|;
+init|)
+block|{
 name|out
 operator|.
 name|write
@@ -680,11 +684,7 @@ argument_list|(
 literal|'a'
 argument_list|)
 expr_stmt|;
-name|out
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
+block|}
 block|}
 block|}
 end_class

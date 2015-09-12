@@ -230,7 +230,7 @@ operator|+
 name|pkStartValue
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -301,6 +301,8 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+init|(
 name|Connection
 name|con
 init|=
@@ -311,9 +313,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|Statement
 name|st
 init|=
@@ -321,8 +325,8 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|String
 name|sql
@@ -347,6 +351,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -356,8 +362,8 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 comment|// Object pk = null;
 if|if
@@ -391,34 +397,10 @@ literal|1
 argument_list|)
 return|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
-finally|finally
-block|{
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-comment|/**      * Fetches a list of existing sequences that might match Cayenne generated      * ones.      */
+comment|/** 	 * Fetches a list of existing sequences that might match Cayenne generated 	 * ones. 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -435,6 +417,8 @@ throws|throws
 name|SQLException
 block|{
 comment|// check existing sequences
+try|try
+init|(
 name|Connection
 name|con
 init|=
@@ -445,9 +429,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|Statement
 name|sel
 init|=
@@ -455,8 +441,8 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|String
 name|sql
@@ -477,6 +463,8 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -486,8 +474,8 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|List
 argument_list|<
@@ -527,31 +515,7 @@ return|return
 name|sequenceList
 return|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|sel
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|con
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}

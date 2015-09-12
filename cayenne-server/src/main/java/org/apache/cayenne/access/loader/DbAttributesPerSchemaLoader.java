@@ -234,6 +234,8 @@ argument_list|>
 argument_list|>
 argument_list|()
 decl_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -252,8 +254,8 @@ literal|"%"
 argument_list|,
 literal|"%"
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|Set
 argument_list|<
@@ -325,9 +327,12 @@ expr_stmt|;
 block|}
 block|}
 comment|// for a reason not quiet apparent to me, Oracle sometimes
-comment|// returns duplicate record sets for the same table, messing up table
-comment|// names. E.g. for the system table "WK$_ATTR_MAPPING" columns are
-comment|// returned twice - as "WK$_ATTR_MAPPING" and "WK$$_ATTR_MAPPING"... Go figure
+comment|// returns duplicate record sets for the same table, messing up
+comment|// table
+comment|// names. E.g. for the system table "WK$_ATTR_MAPPING" columns
+comment|// are
+comment|// returned twice - as "WK$_ATTR_MAPPING" and
+comment|// "WK$$_ATTR_MAPPING"... Go figure
 name|String
 name|tableName
 init|=
@@ -358,7 +363,7 @@ argument_list|(
 name|tableName
 argument_list|)
 decl_stmt|;
-comment|/*                 * Here is possible optimization if filter will contain map<tableName, columnFilter>                 *     we can replace it after tables loading since already done pattern matching once and exactly                 *     know all tables that we want to process                 * */
+comment|/* 				 * Here is possible optimization if filter will contain 				 * map<tableName, columnFilter> we can replace it after tables 				 * loading since already done pattern matching once and exactly 				 * know all tables that we want to process 				 */
 if|if
 condition|(
 name|columnFilter
@@ -466,14 +471,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 return|return
 name|attributes

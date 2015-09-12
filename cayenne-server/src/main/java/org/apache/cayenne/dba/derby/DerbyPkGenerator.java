@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default PK generator for Derby that uses updateable ResultSet to get the next id from  * the lookup table.  *   * @since 1.2  */
+comment|/**  * Default PK generator for Derby that uses updateable ResultSet to get the next  * id from the lookup table.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -171,7 +171,7 @@ literal|"SELECT NEXT_ID FROM AUTO_PK_SUPPORT"
 operator|+
 literal|" WHERE TABLE_NAME = ? FOR UPDATE"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override
 specifier|protected
@@ -221,6 +221,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -231,9 +233,11 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
+try|try
+init|(
 name|PreparedStatement
 name|select
 init|=
@@ -251,8 +255,8 @@ name|ResultSet
 operator|.
 name|CONCUR_UPDATABLE
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|select
 operator|.
@@ -266,6 +270,8 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -273,8 +279,8 @@ name|select
 operator|.
 name|executeQuery
 argument_list|()
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 if|if
 condition|(
@@ -354,31 +360,7 @@ return|return
 name|nextId
 return|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|select
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}

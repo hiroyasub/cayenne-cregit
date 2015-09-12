@@ -334,7 +334,7 @@ name|UNKNOWN_LOCATION
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test single classes with a non-standard template.      */
+comment|/** 	 * Test single classes with a non-standard template. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -732,7 +732,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Test pairs generation including full package path, default superclass package. */
+comment|/** 	 * Test pairs generation including full package path, default superclass 	 * package. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -1020,7 +1020,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test pairs generation including full package path with superclass and subclass in      * different packages.      */
+comment|/** 	 * Test pairs generation including full package path with superclass and 	 * subclass in different packages. 	 */
 annotation|@
 name|Test
 specifier|public
@@ -1406,6 +1406,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+try|try
+init|(
 name|BufferedReader
 name|in
 init|=
@@ -1422,8 +1424,8 @@ name|f
 argument_list|)
 argument_list|)
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|assertPackage
 argument_list|(
@@ -1440,14 +1442,6 @@ name|className
 argument_list|,
 name|extendsName
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|in
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}

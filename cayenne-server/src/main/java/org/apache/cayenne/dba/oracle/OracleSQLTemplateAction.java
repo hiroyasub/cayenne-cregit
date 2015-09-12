@@ -510,6 +510,8 @@ specifier|private
 name|ResultSet
 name|delegate
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|ResultSetMetaData
 name|getMetaData
@@ -541,6 +543,8 @@ operator|=
 name|delegate
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|absolute
@@ -560,6 +564,8 @@ name|row
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|afterLast

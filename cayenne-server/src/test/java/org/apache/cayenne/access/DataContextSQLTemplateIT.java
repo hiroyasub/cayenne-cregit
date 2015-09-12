@@ -2024,7 +2024,8 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
-comment|// null comparison is unpredictable across DB's ... some would return true on null
+comment|// null comparison is unpredictable across DB's ... some would return
+comment|// true on null
 comment|//<> value, some - false
 name|assertTrue
 argument_list|(
@@ -2497,7 +2498,8 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
-comment|// null comparison is unpredictable across DB's ... some would return true on null
+comment|// null comparison is unpredictable across DB's ... some would return
+comment|// true on null
 comment|//<> value, some - false
 name|assertTrue
 argument_list|(
@@ -3238,7 +3240,12 @@ argument_list|,
 name|template
 argument_list|)
 decl_stmt|;
+try|try
+init|(
 name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
 name|it
 init|=
 name|context
@@ -3247,8 +3254,8 @@ name|performIteratedQuery
 argument_list|(
 name|query
 argument_list|)
-decl_stmt|;
-try|try
+init|;
+init|)
 block|{
 name|long
 name|i
@@ -3312,14 +3319,6 @@ literal|4
 argument_list|,
 name|i
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|it
-operator|.
-name|close
-argument_list|()
 expr_stmt|;
 block|}
 block|}

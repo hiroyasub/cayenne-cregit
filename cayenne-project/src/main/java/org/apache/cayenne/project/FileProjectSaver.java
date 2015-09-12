@@ -883,13 +883,11 @@ name|delete
 argument_list|()
 expr_stmt|;
 block|}
+try|try
+init|(
 name|PrintWriter
 name|printWriter
-decl_stmt|;
-try|try
-block|{
-name|printWriter
-operator|=
+init|=
 operator|new
 name|PrintWriter
 argument_list|(
@@ -906,6 +904,15 @@ argument_list|)
 argument_list|,
 name|fileEncoding
 argument_list|)
+argument_list|)
+init|;
+init|)
+block|{
+name|saveToTempFile
+argument_list|(
+name|unit
+argument_list|,
+name|printWriter
 argument_list|)
 expr_stmt|;
 block|}
@@ -959,24 +966,6 @@ name|getMessage
 argument_list|()
 argument_list|)
 throw|;
-block|}
-try|try
-block|{
-name|saveToTempFile
-argument_list|(
-name|unit
-argument_list|,
-name|printWriter
-argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-name|printWriter
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 block|}
@@ -1279,7 +1268,8 @@ condition|)
 block|{
 continue|continue;
 block|}
-comment|// compare against ALL unit target files, not just the current unit... if the
+comment|// compare against ALL unit target files, not just the current
+comment|// unit... if the
 comment|// target matches, skip this file
 name|boolean
 name|isTarget
