@@ -850,7 +850,9 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/** 	 * @since 3.1 	 * 	 *        JDBC 4.1 compatibility under Java 1.5 	 */
+comment|/** 	 * @since 3.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|Logger
 name|getParentLogger

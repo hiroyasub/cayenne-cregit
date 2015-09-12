@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Closeable
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|sql
@@ -46,7 +36,7 @@ name|PoolingDataSource
 extends|extends
 name|DataSource
 extends|,
-name|Closeable
+name|AutoCloseable
 block|{  }
 end_interface
 

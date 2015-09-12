@@ -279,7 +279,7 @@ name|e
 throw|;
 block|}
 block|}
-comment|/**      * An exception indicating that a connection request waiting in the queue      * timed out and was unable to obtain a connection.      */
+comment|/** 	 * An exception indicating that a connection request waiting in the queue 	 * timed out and was unable to obtain a connection. 	 */
 specifier|public
 specifier|static
 class|class
@@ -1423,7 +1423,8 @@ name|iface
 argument_list|)
 return|;
 block|}
-comment|// JDBC 4.1 compatibility under Java pre 1.7
+annotation|@
+name|Override
 specifier|public
 name|Logger
 name|getParentLogger
@@ -1431,11 +1432,12 @@ parameter_list|()
 throws|throws
 name|SQLFeatureNotSupportedException
 block|{
-throw|throw
-operator|new
-name|SQLFeatureNotSupportedException
+return|return
+name|nonPoolingDataSource
+operator|.
+name|getParentLogger
 argument_list|()
-throw|;
+return|;
 block|}
 name|String
 name|getValidationQuery

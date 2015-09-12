@@ -300,7 +300,8 @@ name|iface
 argument_list|)
 return|;
 block|}
-comment|// JDBC 4.1 compatibility under Java pre 1.7
+annotation|@
+name|Override
 specifier|public
 name|Logger
 name|getParentLogger
@@ -308,11 +309,12 @@ parameter_list|()
 throws|throws
 name|SQLFeatureNotSupportedException
 block|{
-throw|throw
-operator|new
-name|SQLFeatureNotSupportedException
+return|return
+name|dataSource
+operator|.
+name|getParentLogger
 argument_list|()
-throw|;
+return|;
 block|}
 block|}
 end_class

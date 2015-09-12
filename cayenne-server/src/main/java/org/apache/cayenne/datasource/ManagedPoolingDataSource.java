@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A wrapper for {@link UnmanagedPoolingDataSource} that automatically manages the underlying  * connection pool size.  *   * @since 4.0  */
+comment|/**  * A wrapper for {@link UnmanagedPoolingDataSource} that automatically manages  * the underlying connection pool size.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -407,7 +407,8 @@ name|iface
 argument_list|)
 return|;
 block|}
-comment|// JDBC 4.1 compatibility under Java 1.6 and newer
+annotation|@
+name|Override
 specifier|public
 name|Logger
 name|getParentLogger
@@ -415,11 +416,12 @@ parameter_list|()
 throws|throws
 name|SQLFeatureNotSupportedException
 block|{
-throw|throw
-operator|new
-name|SQLFeatureNotSupportedException
+return|return
+name|dataSource
+operator|.
+name|getParentLogger
 argument_list|()
-throw|;
+return|;
 block|}
 block|}
 end_class
