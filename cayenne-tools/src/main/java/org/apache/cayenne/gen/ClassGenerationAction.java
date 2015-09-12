@@ -527,11 +527,7 @@ name|templateCache
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Template
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|5
 argument_list|)

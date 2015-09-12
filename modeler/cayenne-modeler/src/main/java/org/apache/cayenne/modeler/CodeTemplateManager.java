@@ -335,11 +335,7 @@ name|standardTemplates
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|standardTemplates
@@ -387,7 +383,7 @@ name|SUBCLASS_TEMPLATE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates custom templates from preferences.      */
+comment|/** 	 * Updates custom templates from preferences. 	 */
 specifier|public
 name|void
 name|updateCustomTemplates
@@ -432,11 +428,7 @@ name|customTemplates
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|keys
 operator|.
@@ -496,7 +488,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// TODO: andrus, 12/5/2007 - this should also take a "pairs" parameter to correctly
+comment|// TODO: andrus, 12/5/2007 - this should also take a "pairs" parameter to
+comment|// correctly
 comment|// assign standard templates
 specifier|public
 name|String

@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provides lazy faulting functionality for a map of objects identified by String  * ObjectId.  *   * @since 3.1  */
+comment|/**  * Provides lazy faulting functionality for a map of objects identified by  * String ObjectId.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -331,7 +331,8 @@ operator|.
 name|getEntityResolver
 argument_list|()
 decl_stmt|;
-comment|// simple case of one query, handle it separately for performance reasons
+comment|// simple case of one query, handle it separately for performance
+comment|// reasons
 if|if
 condition|(
 name|sources
@@ -446,14 +447,7 @@ name|queriesByEntity
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|SelectQuery
-argument_list|<
-name|DataObject
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -466,11 +460,7 @@ name|codersByEntity
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|EntityIdCoder
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -640,11 +630,7 @@ name|results
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|capacity
 argument_list|)

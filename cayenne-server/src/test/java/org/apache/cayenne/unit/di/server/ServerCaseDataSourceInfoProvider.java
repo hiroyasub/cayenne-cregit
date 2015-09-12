@@ -345,11 +345,7 @@ name|inMemoryDataSources
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|DataSourceInfo
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 comment|// preload default in-memory DataSources. Will use them as defaults if

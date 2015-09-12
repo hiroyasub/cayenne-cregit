@@ -161,11 +161,7 @@ name|ops
 operator|=
 operator|new
 name|IdentityHashMap
-argument_list|<
-name|Persistent
-argument_list|,
-name|AuditableOperation
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

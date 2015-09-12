@@ -347,7 +347,7 @@ argument_list|>
 argument_list|>
 name|entitiesByAnnotation
 decl_stmt|;
-comment|/**      * Creates an empty callback registry.      */
+comment|/** 	 * Creates an empty callback registry. 	 */
 specifier|public
 name|LifecycleCallbackRegistry
 parameter_list|(
@@ -415,21 +415,11 @@ name|entitiesByAnnotation
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|String
-argument_list|,
-name|Collection
-argument_list|<
-name|Class
-argument_list|<
-name|?
-argument_list|>
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Removes all listeners for all event types.      */
+comment|/** 	 * Removes all listeners for all event types. 	 */
 specifier|public
 name|void
 name|clear
@@ -450,7 +440,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes listeners for a single event type.      */
+comment|/** 	 * Removes listeners for a single event type. 	 */
 specifier|public
 name|void
 name|clear
@@ -468,7 +458,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Returns true if there are no listeners for a specific event type.      */
+comment|/** 	 * Returns true if there are no listeners for a specific event type. 	 */
 specifier|public
 name|boolean
 name|isEmpty
@@ -490,7 +480,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * Registers a {@link LifecycleListener} for all events on all entities.      * Note that listeners are not required to implement      * {@link LifecycleListener} interface. Other methods in this class can be      * used to register arbitrary listeners.      */
+comment|/** 	 * Registers a {@link LifecycleListener} for all events on all entities. 	 * Note that listeners are not required to implement 	 * {@link LifecycleListener} interface. Other methods in this class can be 	 * used to register arbitrary listeners. 	 */
 specifier|public
 name|void
 name|addDefaultListener
@@ -588,7 +578,7 @@ literal|"postLoad"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a callback method to be invoked on a provided non-entity object      * when a lifecycle event occurs on any entity that does not suppress      * default callbacks.      */
+comment|/** 	 * Registers a callback method to be invoked on a provided non-entity object 	 * when a lifecycle event occurs on any entity that does not suppress 	 * default callbacks. 	 */
 specifier|public
 name|void
 name|addDefaultListener
@@ -619,7 +609,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a {@link LifecycleListener} for all events on all entities.      * Note that listeners are not required to implement      * {@link LifecycleListener} interface. Other methods in this class can be      * used to register arbitrary listeners.      */
+comment|/** 	 * Registers a {@link LifecycleListener} for all events on all entities. 	 * Note that listeners are not required to implement 	 * {@link LifecycleListener} interface. Other methods in this class can be 	 * used to register arbitrary listeners. 	 */
 specifier|public
 name|void
 name|addListener
@@ -739,7 +729,7 @@ literal|"postLoad"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers callback method to be invoked on a provided non-entity object      * when a lifecycle event occurs for a specific entity.      */
+comment|/** 	 * Registers callback method to be invoked on a provided non-entity object 	 * when a lifecycle event occurs for a specific entity. 	 */
 specifier|public
 name|void
 name|addListener
@@ -778,7 +768,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a callback method to be invoked on an entity class instances      * when a lifecycle event occurs.      *       * @since 4.0      */
+comment|/** 	 * Registers a callback method to be invoked on an entity class instances 	 * when a lifecycle event occurs. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
 name|addCallback
@@ -812,7 +802,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.0 renamed to {@link #addCallback(LifecycleEvent, Class, String)}.      */
+comment|/** 	 * @since 4.0 renamed to {@link #addCallback(LifecycleEvent, Class, String)} 	 *        . 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -842,7 +832,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a listener, mapping its methods to events based on annotations.      *       * @since 3.1      */
+comment|/** 	 * Adds a listener, mapping its methods to events based on annotations. 	 *  	 * @since 3.1 	 */
 specifier|public
 name|void
 name|addListener
@@ -1120,7 +1110,7 @@ argument_list|)
 condition|)
 do|;
 block|}
-comment|/**      * Invokes callbacks of a specific type for a given entity object.      */
+comment|/** 	 * Invokes callbacks of a specific type for a given entity object. 	 */
 specifier|public
 name|void
 name|performCallbacks
@@ -1146,7 +1136,7 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Invokes callbacks of a specific type for a collection of entity objects.      */
+comment|/** 	 * Invokes callbacks of a specific type for a collection of entity objects. 	 */
 specifier|public
 name|void
 name|performCallbacks
@@ -1220,11 +1210,7 @@ name|annotationsMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|AnnotationReader
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|annotationsMap

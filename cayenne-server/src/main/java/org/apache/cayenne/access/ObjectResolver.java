@@ -448,7 +448,7 @@ return|return
 name|rootNode
 return|;
 block|}
-comment|/**      * Properly synchronized version of 'objectsFromDataRows'.      */
+comment|/** 	 * Properly synchronized version of 'objectsFromDataRows'. 	 */
 name|List
 argument_list|<
 name|Persistent
@@ -480,7 +480,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Converts rows to objects.      *<p>      * Synchronization note. This method requires EXTERNAL synchronization on ObjectStore      * and DataRowStore.      *</p>      */
+comment|/** 	 * Converts rows to objects. 	 *<p> 	 * Synchronization note. This method requires EXTERNAL synchronization on 	 * ObjectStore and DataRowStore. 	 *</p> 	 */
 name|List
 argument_list|<
 name|Persistent
@@ -593,7 +593,8 @@ argument_list|(
 name|row
 argument_list|)
 decl_stmt|;
-comment|// not using DataRow.createObjectId for performance reasons - ObjectResolver
+comment|// not using DataRow.createObjectId for performance reasons -
+comment|// ObjectResolver
 comment|// has all needed metadata already cached.
 name|ObjectId
 name|anId
@@ -634,7 +635,8 @@ name|ClassDescriptor
 name|classDescriptor
 parameter_list|)
 block|{
-comment|// this condition is valid - see comments on 'createObjectId' for details
+comment|// this condition is valid - see comments on 'createObjectId' for
+comment|// details
 if|if
 condition|(
 name|anId
@@ -994,11 +996,7 @@ name|idMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|pk
 operator|.

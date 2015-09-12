@@ -800,11 +800,7 @@ name|id1
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|id1
@@ -846,11 +842,7 @@ name|id2
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|id2

@@ -97,11 +97,7 @@ name|PATH_ACCESSORS
 init|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|String
-argument_list|,
-name|Accessor
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -125,19 +121,7 @@ name|SEGMENT_ACCESSORS
 init|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|Class
-argument_list|<
-name|?
-argument_list|>
-argument_list|,
-name|ConcurrentMap
-argument_list|<
-name|String
-argument_list|,
-name|Accessor
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/** 	 * Compiles an accessor that can be used for fast access for the nested 	 * property of the objects of a given class. 	 *  	 * @since 4.0 	 */

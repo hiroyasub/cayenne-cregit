@@ -740,11 +740,7 @@ name|stringToEmbeddables
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Embeddable
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -839,7 +835,7 @@ return|return
 name|view
 return|;
 block|}
-comment|/**      * Starts options dialog.      */
+comment|/** 	 * Starts options dialog. 	 */
 specifier|public
 name|void
 name|startupAction
@@ -1003,7 +999,7 @@ name|getDbEntities
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/**          * Register auto-selection of the target          */
+comment|/** 		 * Register auto-selection of the target 		 */
 name|view
 operator|.
 name|getPathBrowser
@@ -1186,7 +1182,7 @@ argument_list|,
 literal|"saveMapping()"
 argument_list|)
 expr_stmt|;
-comment|/*          * set filter for ObjAttributePathBrowser          */
+comment|/* 		 * set filter for ObjAttributePathBrowser 		 */
 if|if
 condition|(
 name|view
@@ -1423,7 +1419,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**                          * We do not allow A->B->A chains, where relationships are to-one                          */
+comment|/** 						 * We do not allow A->B->A chains, where relationships 						 * are to-one 						 */
 name|DbRelationship
 name|prev
 init|=
@@ -3471,11 +3467,7 @@ name|currentEmbeddableOverrite
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Collection
@@ -3736,7 +3728,7 @@ return|return
 name|firstEnt
 return|;
 block|}
-comment|/**      * Selects path in browser      */
+comment|/** 	 * Selects path in browser 	 */
 specifier|public
 name|void
 name|setSelectionPath
@@ -4181,11 +4173,7 @@ name|attrOverrides
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

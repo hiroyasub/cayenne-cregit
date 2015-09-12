@@ -453,7 +453,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/**      * Reindexes internal sorter in a thread-safe manner.      */
+comment|/** 	 * Reindexes internal sorter in a thread-safe manner. 	 */
 specifier|protected
 name|void
 name|indexSorter
@@ -499,7 +499,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Reindexes internal sorter without synchronization.      */
+comment|/** 	 * Reindexes internal sorter without synchronization. 	 */
 specifier|protected
 name|void
 name|doIndexSorter
@@ -518,14 +518,7 @@ name|reflexiveDbEntities
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|DbEntity
-argument_list|,
-name|List
-argument_list|<
-name|DbRelationship
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|32
 argument_list|)
@@ -543,14 +536,7 @@ name|referentialDigraph
 init|=
 operator|new
 name|MapDigraph
-argument_list|<
-name|DbEntity
-argument_list|,
-name|List
-argument_list|<
-name|DbAttribute
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Map
@@ -563,11 +549,7 @@ name|tableMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 if|if
@@ -992,7 +974,7 @@ operator|=
 name|components
 expr_stmt|;
 block|}
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|setEntityResolver

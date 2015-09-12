@@ -285,7 +285,7 @@ name|JAVA_BLOB
 init|=
 literal|"java.sql.Blob"
 decl_stmt|;
-comment|/**      * Keys: java class names, Values: SQL int type definitions from java.sql.Types      */
+comment|/** 	 * Keys: java class names, Values: SQL int type definitions from 	 * java.sql.Types 	 */
 specifier|private
 specifier|final
 name|Map
@@ -298,11 +298,7 @@ name|javaSqlEnum
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -317,11 +313,7 @@ name|mapping
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|DbType
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -334,9 +326,7 @@ name|dbTypes
 init|=
 operator|new
 name|TreeSet
-argument_list|<
-name|DbType
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -850,11 +840,7 @@ name|classToPrimitive
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|classToPrimitive
@@ -960,7 +946,7 @@ specifier|private
 name|Boolean
 name|usePrimitives
 decl_stmt|;
-comment|/**      * Returns default java.sql.Types type by the Java type name.      *      * @param className Fully qualified Java Class name.      * @return The SQL type or NOT_DEFINED if no type found.      */
+comment|/** 	 * Returns default java.sql.Types type by the Java type name. 	 * 	 * @param className 	 *            Fully qualified Java Class name. 	 * @return The SQL type or NOT_DEFINED if no type found. 	 */
 specifier|public
 name|int
 name|getJdbcTypeByJava
@@ -1090,7 +1076,7 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Guesses a default JDBC type for the Java class.      *      * @since 1.1      */
+comment|/** 	 * Guesses a default JDBC type for the Java class. 	 * 	 * @since 1.1 	 */
 specifier|protected
 name|int
 name|getSqlTypeByJava
@@ -1326,7 +1312,8 @@ name|javaClass
 argument_list|)
 condition|)
 block|{
-comment|// serializable check should be the last one when all other mapping attempts failed
+comment|// serializable check should be the last one when all other mapping
+comment|// attempts failed
 return|return
 name|Types
 operator|.
@@ -1337,7 +1324,7 @@ return|return
 name|NOT_DEFINED
 return|;
 block|}
-comment|/**      * Get the corresponding Java type by its java.sql.Types counterpart. Note that this      * method should be used as a last resort, with explicit mapping provided by user used      * as a first choice, as it can only guess how to map certain types, such as NUMERIC,      * etc.      *      * @return Fully qualified Java type name or null if not found.      */
+comment|/** 	 * Get the corresponding Java type by its java.sql.Types counterpart. Note 	 * that this method should be used as a last resort, with explicit mapping 	 * provided by user used as a first choice, as it can only guess how to map 	 * certain types, such as NUMERIC, etc. 	 * 	 * @return Fully qualified Java type name or null if not found. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1480,7 +1467,8 @@ name|type
 argument_list|)
 condition|)
 block|{
-comment|// because dbTypes sorted by specificity we will take first and the most specific matching
+comment|// because dbTypes sorted by specificity we will take first and
+comment|// the most specific matching
 comment|// that applicable for attribute
 return|return
 name|mapping

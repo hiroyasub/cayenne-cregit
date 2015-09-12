@@ -350,11 +350,7 @@ name|excludedTables
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -363,9 +359,7 @@ name|selectableTablesList
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -374,11 +368,7 @@ name|validationMessages
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|initController

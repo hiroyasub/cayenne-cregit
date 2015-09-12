@@ -162,7 +162,7 @@ name|DataSourceInfo
 argument_list|>
 name|connectionInfos
 decl_stmt|;
-comment|/**      * Constructor for ConnectionProperties.      */
+comment|/** 	 * Constructor for ConnectionProperties. 	 */
 name|ConnectionProperties
 parameter_list|(
 name|ExtendedProperties
@@ -173,11 +173,7 @@ name|connectionInfos
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|DataSourceInfo
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -226,7 +222,7 @@ name|size
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns DataSourceInfo object for a symbolic name. If name does not match      * an existing object, returns null.      */
+comment|/** 	 * Returns DataSourceInfo object for a symbolic name. If name does not match 	 * an existing object, returns null. 	 */
 name|DataSourceInfo
 name|getConnection
 parameter_list|(
@@ -243,7 +239,7 @@ name|name
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a DataSourceInfo object from a set of properties.      */
+comment|/** 	 * Creates a DataSourceInfo object from a set of properties. 	 */
 specifier|private
 name|DataSourceInfo
 name|buildDataSourceInfo
@@ -346,7 +342,7 @@ return|return
 name|dsi
 return|;
 block|}
-comment|/**      * Returns a list of connection names configured in the properties object.      */
+comment|/** 	 * Returns a list of connection names configured in the properties object. 	 */
 specifier|private
 name|List
 argument_list|<

@@ -228,14 +228,7 @@ name|listeners
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|String
-argument_list|,
-name|Collection
-argument_list|<
-name|ScopeEventBinding
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this

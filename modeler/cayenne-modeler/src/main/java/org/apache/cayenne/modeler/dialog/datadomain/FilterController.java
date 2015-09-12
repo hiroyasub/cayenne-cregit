@@ -41,6 +41,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|swing
@@ -121,7 +131,7 @@ class|class
 name|FilterController
 block|{
 specifier|private
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -131,11 +141,7 @@ name|filterMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Boolean
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -178,7 +184,7 @@ name|eventController
 return|;
 block|}
 specifier|public
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

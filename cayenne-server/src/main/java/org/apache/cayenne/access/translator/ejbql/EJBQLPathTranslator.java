@@ -1334,11 +1334,7 @@ name|multiColumnMatch
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|joins
 operator|.
@@ -1404,7 +1400,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Checks if the object relationship is flattened and then chooses the      * corresponding db relationship. The last in idPath if isFlattened and the      * first in list otherwise.      *       * @param relationship      *            the object relationship      *       * @return {@link DbRelationship}      */
+comment|/** 	 * Checks if the object relationship is flattened and then chooses the 	 * corresponding db relationship. The last in idPath if isFlattened and the 	 * first in list otherwise. 	 *  	 * @param relationship 	 *            the object relationship 	 *  	 * @return {@link DbRelationship} 	 */
 specifier|protected
 name|DbRelationship
 name|chooseDbRelationship

@@ -1080,7 +1080,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Creates the Expression equivalent of the EOFetchSpecification represented      * by the Map.      *       * @param qualifierMap      *            - FetchSpecification to translate      * @return Expression equivalent to FetchSpecification      */
+comment|/** 	 * Creates the Expression equivalent of the EOFetchSpecification represented 	 * by the Map. 	 *  	 * @param qualifierMap 	 *            - FetchSpecification to translate 	 * @return Expression equivalent to FetchSpecification 	 */
 specifier|public
 specifier|synchronized
 name|Expression
@@ -1121,7 +1121,7 @@ name|qualifierMap
 argument_list|)
 return|;
 block|}
-comment|/**      * EOFetchSpecificationParser parses EOFetchSpecifications from a      * WebObjects-style EOModel. It recursively builds Cayenne Expression      * objects and assembles them into the final aggregate Expression.      */
+comment|/** 	 * EOFetchSpecificationParser parses EOFetchSpecifications from a 	 * WebObjects-style EOModel. It recursively builds Cayenne Expression 	 * objects and assembles them into the final aggregate Expression. 	 */
 specifier|static
 class|class
 name|EOFetchSpecificationParser
@@ -1198,7 +1198,7 @@ decl_stmt|;
 comment|// Objective-C syntax addition.
 specifier|private
 specifier|static
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -1206,10 +1206,10 @@ name|Integer
 argument_list|>
 name|selectorToExpressionBridge
 decl_stmt|;
-comment|/**          * selectorToExpressionBridge is just a mapping of EOModeler's selector          * types to Cayenne Expression types.          *           * @return HashMap of Expression types, keyed by the corresponding          *         selector name          */
+comment|/** 		 * selectorToExpressionBridge is just a mapping of EOModeler's selector 		 * types to Cayenne Expression types. 		 *  		 * @return HashMap of Expression types, keyed by the corresponding 		 *         selector name 		 */
 specifier|static
 specifier|synchronized
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -1230,11 +1230,7 @@ name|selectorToExpressionBridge
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|selectorToExpressionBridge
@@ -1434,7 +1430,7 @@ return|return
 name|selectorToExpressionBridge
 return|;
 block|}
-comment|/**          * isAggregate determines whether a qualifier is "aggregate" -- has          * children -- or "simple".          *           * @param qualifier          *            - a Map containing the qualifier settings          * @return boolean indicating whether the qualifier is "aggregate"          *         qualifier          */
+comment|/** 		 * isAggregate determines whether a qualifier is "aggregate" -- has 		 * children -- or "simple". 		 *  		 * @param qualifier 		 *            - a Map containing the qualifier settings 		 * @return boolean indicating whether the qualifier is "aggregate" 		 *         qualifier 		 */
 specifier|static
 name|boolean
 name|isAggregate
@@ -1499,7 +1495,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**          * expressionTypeForQualifier looks at a qualifier containing the          * EOModeler FetchSpecification and returns the equivalent Cayenne          * Expression type for its selector.          *           * @param qualifierMap          *            - a Map containing the qualifier settings to examine.          * @return int Expression type          */
+comment|/** 		 * expressionTypeForQualifier looks at a qualifier containing the 		 * EOModeler FetchSpecification and returns the equivalent Cayenne 		 * Expression type for its selector. 		 *  		 * @param qualifierMap 		 *            - a Map containing the qualifier settings to examine. 		 * @return int Expression type 		 */
 specifier|static
 name|int
 name|expressionTypeForQualifier
@@ -1529,7 +1525,7 @@ name|selector
 argument_list|)
 return|;
 block|}
-comment|/**          * expressionTypeForSelector looks at a selector from an EOModeler          * FetchSpecification and returns the equivalent Cayenne Expression          * type.          *           * @param selector          *            - a String containing the selector name.          * @return int Expression type          */
+comment|/** 		 * expressionTypeForSelector looks at a selector from an EOModeler 		 * FetchSpecification and returns the equivalent Cayenne Expression 		 * type. 		 *  		 * @param selector 		 *            - a String containing the selector name. 		 * @return int Expression type 		 */
 specifier|static
 name|int
 name|expressionTypeForSelector
@@ -1565,7 +1561,7 @@ literal|1
 operator|)
 return|;
 block|}
-comment|/**          * aggregateExpressionClassForQualifier looks at a qualifer and returns          * the aggregate type: one of Expression.AND, Expression.OR, or          * Expression.NOT          *           * @param qualifierMap          *            - containing the qualifier to examine          * @return int aggregate Expression type          */
+comment|/** 		 * aggregateExpressionClassForQualifier looks at a qualifer and returns 		 * the aggregate type: one of Expression.AND, Expression.OR, or 		 * Expression.NOT 		 *  		 * @param qualifierMap 		 *            - containing the qualifier to examine 		 * @return int aggregate Expression type 		 */
 specifier|static
 name|int
 name|aggregateExpressionClassForQualifier
@@ -1649,7 +1645,7 @@ literal|1
 return|;
 comment|// error
 block|}
-comment|/**          * makeQualifier recursively builds an Expression for each condition in          * the qualifierMap and assembles from them the complex Expression to          * represent the entire EOFetchSpecification.          *           * @param qualifierMap          *            - Map representation of EOFetchSpecification          * @return Expression translation of the EOFetchSpecification          */
+comment|/** 		 * makeQualifier recursively builds an Expression for each condition in 		 * the qualifierMap and assembles from them the complex Expression to 		 * represent the entire EOFetchSpecification. 		 *  		 * @param qualifierMap 		 *            - Map representation of EOFetchSpecification 		 * @return Expression translation of the EOFetchSpecification 		 */
 specifier|static
 name|Expression
 name|makeQualifier

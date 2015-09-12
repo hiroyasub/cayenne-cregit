@@ -67,7 +67,7 @@ name|BaseTransaction
 implements|implements
 name|Transaction
 block|{
-comment|/**      * A ThreadLocal that stores current thread transaction.      */
+comment|/** 	 * A ThreadLocal that stores current thread transaction. 	 */
 specifier|static
 specifier|final
 name|ThreadLocal
@@ -215,7 +215,7 @@ name|status
 return|;
 block|}
 block|}
-comment|/**      * Binds a Transaction to the current thread.      */
+comment|/** 	 * Binds a Transaction to the current thread. 	 */
 specifier|public
 specifier|static
 name|void
@@ -233,7 +233,7 @@ name|transaction
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a Transaction associated with the current thread, or null if      * there is no such Transaction.      */
+comment|/** 	 * Returns a Transaction associated with the current thread, or null if 	 * there is no such Transaction. 	 */
 specifier|public
 specifier|static
 name|Transaction
@@ -247,7 +247,7 @@ name|get
 argument_list|()
 return|;
 block|}
-comment|/**      * Creates new inactive transaction.      */
+comment|/** 	 * Creates new inactive transaction. 	 */
 specifier|protected
 name|BaseTransaction
 parameter_list|()
@@ -286,7 +286,7 @@ operator|==
 name|STATUS_MARKED_ROLLEDBACK
 return|;
 block|}
-comment|/**      * Starts a Transaction. If Transaction is not started explicitly, it will      * be started when the first connection is added.      */
+comment|/** 	 * Starts a Transaction. If Transaction is not started explicitly, it will 	 * be started when the first connection is added. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -528,11 +528,7 @@ name|connections
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Connection
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -606,7 +602,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Closes all connections associated with transaction.      */
+comment|/** 	 * Closes all connections associated with transaction. 	 */
 specifier|protected
 name|void
 name|close

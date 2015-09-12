@@ -77,6 +77,8 @@ name|DefaultPlistDataStructureFactory
 implements|implements
 name|PlistDataStructureFactory
 block|{
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -97,6 +99,8 @@ argument_list|>
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -113,11 +117,7 @@ block|{
 return|return
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 return|;
 block|}

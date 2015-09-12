@@ -210,11 +210,7 @@ name|dataSources
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|DataSource
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -223,9 +219,7 @@ name|mapsWithDedicatedDataSource
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|Arrays
 operator|.

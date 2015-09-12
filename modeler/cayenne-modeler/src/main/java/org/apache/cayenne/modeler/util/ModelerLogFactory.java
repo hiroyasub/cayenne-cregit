@@ -19,6 +19,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -61,28 +81,8 @@ name|LogFactoryImpl
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
 begin_comment
-comment|/**  * Factory for creating ModelerLogger instances. LogFactoryImpl is   * subclassed to save default behavior   */
+comment|/**  * Factory for creating ModelerLogger instances. LogFactoryImpl is subclassed to  * save default behavior  */
 end_comment
 
 begin_class
@@ -92,7 +92,7 @@ name|ModelerLogFactory
 extends|extends
 name|LogFactoryImpl
 block|{
-comment|/**      * Local cache of modeler loggers      */
+comment|/** 	 * Local cache of modeler loggers 	 */
 specifier|protected
 name|Map
 argument_list|<
@@ -110,11 +110,7 @@ name|localCache
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|ModelerLogger
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -16,16 +16,362 @@ package|;
 end_package
 
 begin_import
-import|import
-name|org
+import|import static
+name|java
 operator|.
-name|apache
+name|sql
 operator|.
-name|cayenne
+name|Types
 operator|.
-name|util
+name|ARRAY
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
 operator|.
-name|Util
+name|sql
+operator|.
+name|Types
+operator|.
+name|BIGINT
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|BINARY
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|BIT
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|BLOB
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|BOOLEAN
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|CHAR
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|CLOB
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|DATE
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|DECIMAL
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|DOUBLE
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|FLOAT
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|INTEGER
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|LONGNVARCHAR
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|LONGVARBINARY
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|LONGVARCHAR
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|NCHAR
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|NCLOB
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|NULL
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|NUMERIC
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|NVARCHAR
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|OTHER
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|REAL
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|SMALLINT
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|SQLXML
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|TIME
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|TIMESTAMP
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|TINYINT
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|VARBINARY
+import|;
+end_import
+
+begin_import
+import|import static
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+operator|.
+name|VARCHAR
 import|;
 end_import
 
@@ -140,14 +486,16 @@ import|;
 end_import
 
 begin_import
-import|import static
-name|java
+import|import
+name|org
 operator|.
-name|sql
+name|apache
 operator|.
-name|Types
+name|cayenne
 operator|.
-name|*
+name|util
+operator|.
+name|Util
 import|;
 end_import
 
@@ -549,11 +897,7 @@ name|SQL_STRING_TYPE
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/** 	 * Keys: SQL int type definitions from java.sql.Types, Values: SQL string 	 * type names 	 */
@@ -570,11 +914,7 @@ name|SQL_ENUM_TYPE
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Integer
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/** 	 * Keys: SQL int type definitions from java.sql.Types, Values: java class 	 * names 	 */
@@ -591,11 +931,7 @@ name|SQL_ENUM_JAVA
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Integer
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|/** 	 * Keys: java class names, Values: SQL int type definitions from 	 * java.sql.Types 	 */
@@ -612,11 +948,7 @@ name|JAVA_SQL_ENUM
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 static|static

@@ -121,6 +121,36 @@ name|org
 operator|.
 name|apache
 operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|jdbc
+operator|.
+name|ColumnDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
 name|velocity
 operator|.
 name|context
@@ -205,38 +235,8 @@ name|Node
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|jdbc
-operator|.
-name|ColumnDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
 begin_comment
-comment|/**  * A custom Velocity directive to describe a ResultSet column. There are the following  * possible invocation formats inside the template:  *   *<pre>  *       #result(column_name) - e.g. #result('ARTIST_ID')  *       #result(column_name java_type) - e.g. #result('ARTIST_ID' 'String')  *       #result(column_name java_type column_alias) - e.g. #result('ARTIST_ID' 'String' 'ID')  *       #result(column_name java_type column_alias data_row_key) - e.g. #result('ARTIST_ID' 'String' 'ID' 'toArtist.ID')  *</pre>  *   *<p>  * 'data_row_key' is needed if SQL 'column_alias' is not appropriate as a DataRow key on  * the Cayenne side. One common case when this happens is when a DataRow retrieved from a  * query is mapped using joint prefetch keys. In this case DataRow must use DB_PATH  * expressions for joint column keys, and their format is incompatible with most databases  * alias format.  *</p>  *<p>  * Most common Java types used in JDBC can be specified without a package. This includes  * all numeric types, primitives, String, SQL dates, BigDecimal and BigInteger.  *</p>  *   * @since 1.1  */
+comment|/**  * A custom Velocity directive to describe a ResultSet column. There are the  * following possible invocation formats inside the template:  *   *<pre>  *       #result(column_name) - e.g. #result('ARTIST_ID')  *       #result(column_name java_type) - e.g. #result('ARTIST_ID' 'String')  *       #result(column_name java_type column_alias) - e.g. #result('ARTIST_ID' 'String' 'ID')  *       #result(column_name java_type column_alias data_row_key) - e.g. #result('ARTIST_ID' 'String' 'ID' 'toArtist.ID')  *</pre>  *   *<p>  * 'data_row_key' is needed if SQL 'column_alias' is not appropriate as a  * DataRow key on the Cayenne side. One common case when this happens is when a  * DataRow retrieved from a query is mapped using joint prefetch keys. In this  * case DataRow must use DB_PATH expressions for joint column keys, and their  * format is incompatible with most databases alias format.  *</p>  *<p>  * Most common Java types used in JDBC can be specified without a package. This  * includes all numeric types, primitives, String, SQL dates, BigDecimal and  * BigInteger.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -264,11 +264,7 @@ name|typesGuess
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 comment|// primitives
@@ -745,8 +741,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: andrus 6/27/2007 - this is an unofficial jdbcType parameter that is added
-comment|// temporarily pending CAY-813 implementation for the sake of EJBQL query...
+comment|// TODO: andrus 6/27/2007 - this is an unofficial jdbcType parameter
+comment|// that is added
+comment|// temporarily pending CAY-813 implementation for the sake of EJBQL
+comment|// query...
 name|Object
 name|jdbcType
 init|=
@@ -790,8 +788,10 @@ name|column
 argument_list|)
 expr_stmt|;
 comment|// append column alias if needed.
-comment|// Note that if table aliases are used, this logic will result in SQL like
-comment|// "t0.ARTIST_NAME AS ARTIST_NAME". Doing extra regex matching to handle this
+comment|// Note that if table aliases are used, this logic will result in SQL
+comment|// like
+comment|// "t0.ARTIST_NAME AS ARTIST_NAME". Doing extra regex matching to handle
+comment|// this
 comment|// won't probably buy us much.
 if|if
 condition|(
@@ -883,7 +883,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Returns a directive argument at a given index converted to String.      *       * @since 1.2      */
+comment|/** 	 * Returns a directive argument at a given index converted to String. 	 *  	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|getChildAsString
@@ -927,7 +927,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/**      * Converts "short" type notation to the fully qualified class name. Right now      * supports all major standard SQL types, including primitives. All other types are      * expected to be fully qualified, and are not converted.      */
+comment|/** 	 * Converts "short" type notation to the fully qualified class name. Right 	 * now supports all major standard SQL types, including primitives. All 	 * other types are expected to be fully qualified, and are not converted. 	 */
 specifier|protected
 name|String
 name|guessType
@@ -956,7 +956,7 @@ else|:
 name|type
 return|;
 block|}
-comment|/**      * Adds value to the list of result columns in the context.      */
+comment|/** 	 * Adds value to the list of result columns in the context. 	 */
 specifier|protected
 name|void
 name|bindResult

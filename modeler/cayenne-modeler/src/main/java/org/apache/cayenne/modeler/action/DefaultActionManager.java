@@ -315,11 +315,7 @@ name|actionMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Action
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|40
 argument_list|)

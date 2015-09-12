@@ -62,8 +62,16 @@ name|EJBQLSum
 extends|extends
 name|EJBQLAggregateColumn
 block|{
-comment|// per JPA spec, 4.8.4, SUM type mapping rules are a bit convoluted. Mapping them
-comment|// here...
+comment|// per JPA spec, 4.8.4, SUM type mapping rules are a bit convoluted. Mapping
+comment|// them here...
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|2256495371122671530L
+decl_stmt|;
 specifier|static
 specifier|final
 name|Map
@@ -80,11 +88,7 @@ name|typeMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|typeMap
@@ -209,7 +213,8 @@ return|return
 literal|"java.lang.Long"
 return|;
 block|}
-comment|// type map only contains mappings that are different from the attribute path, so
+comment|// type map only contains mappings that are different from the attribute
+comment|// path, so
 comment|// if no mapping exists, return the argument passed to this method.
 name|String
 name|mappedType

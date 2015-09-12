@@ -475,11 +475,7 @@ name|descriptorsById
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|ClassDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -488,11 +484,7 @@ name|incomingById
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|ObjRelationship
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this

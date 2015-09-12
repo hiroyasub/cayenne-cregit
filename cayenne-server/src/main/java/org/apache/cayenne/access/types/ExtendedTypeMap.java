@@ -19,20 +19,6 @@ end_package
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -105,8 +91,22 @@ name|CopyOnWriteArrayList
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
 begin_comment
-comment|/**  * Stores ExtendedTypes, implementing an algorithm to determine the right type for a given  * Java class. See {@link #getRegisteredType(String)} documentation for lookup algorithm  * details.  */
+comment|/**  * Stores ExtendedTypes, implementing an algorithm to determine the right type  * for a given Java class. See {@link #getRegisteredType(String)} documentation  * for lookup algorithm details.  */
 end_comment
 
 begin_class
@@ -130,11 +130,7 @@ name|classesForPrimitives
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|classesForPrimitives
@@ -256,7 +252,8 @@ name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
 decl_stmt|;
-comment|// standard type factories registered by Cayenne that are consulted after the user
+comment|// standard type factories registered by Cayenne that are consulted after
+comment|// the user
 comment|// factories.
 name|Collection
 argument_list|<
@@ -264,7 +261,7 @@ name|ExtendedTypeFactory
 argument_list|>
 name|internalTypeFactories
 decl_stmt|;
-comment|/**      * Creates new ExtendedTypeMap, populating it with default JDBC-compatible types. If      * JDK version is at least 1.5, also loads support for enumerated types.      */
+comment|/** 	 * Creates new ExtendedTypeMap, populating it with default JDBC-compatible 	 * types. If JDK version is at least 1.5, also loads support for enumerated 	 * types. 	 */
 specifier|public
 name|ExtendedTypeMap
 parameter_list|()
@@ -283,11 +280,7 @@ name|typeMap
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|String
-argument_list|,
-name|ExtendedType
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -296,9 +289,7 @@ name|extendedTypeFactories
 operator|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|ExtendedTypeFactory
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -307,16 +298,14 @@ name|internalTypeFactories
 operator|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|ExtendedTypeFactory
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|initDefaultFactories
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Registers default factories for creating enum types and serializable types. Note      * that user-defined factories are consulted before any default factory.      *       * @since 3.0      */
+comment|/** 	 * Registers default factories for creating enum types and serializable 	 * types. Note that user-defined factories are consulted before any default 	 * factory. 	 *  	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|initDefaultFactories
@@ -342,7 +331,8 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// note that Serializable type should be used as a last resort after all other
+comment|// note that Serializable type should be used as a last resort after all
+comment|// other
 comment|// alternatives are exhausted.
 name|internalTypeFactories
 operator|.
@@ -356,7 +346,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds an ExtendedTypeFactory that will be consulted if no direct mapping for a given      * class exists. This feature can be used to map interfaces.      *<p>      *<i>Note that the order in which factories are added is important, as factories are      * consulted in turn when an ExtendedType is looked up, and lookup is stopped when any      * factory provides a non-null type.</i>      *</p>      *       * @since 1.2      */
+comment|/** 	 * Adds an ExtendedTypeFactory that will be consulted if no direct mapping 	 * for a given class exists. This feature can be used to map interfaces. 	 *<p> 	 *<i>Note that the order in which factories are added is important, as 	 * factories are consulted in turn when an ExtendedType is looked up, and 	 * lookup is stopped when any factory provides a non-null type.</i> 	 *</p> 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|addFactory
@@ -388,7 +378,7 @@ name|factory
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes a factory from the registered factories if it was previously added.      *       * @since 1.2      */
+comment|/** 	 * Removes a factory from the registered factories if it was previously 	 * added. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|void
 name|removeFactory
@@ -413,7 +403,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds a new type to the list of registered types. If there is another type      * registered for a class described by the<code>type</code> argument, the old handler      * is overridden by the new one.      */
+comment|/** 	 * Adds a new type to the list of registered types. If there is another type 	 * registered for a class described by the<code>type</code> argument, the 	 * old handler is overridden by the new one. 	 */
 specifier|public
 name|void
 name|registerType
@@ -445,7 +435,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a default ExtendedType that is used to handle unmapped types.      */
+comment|/** 	 * Returns a default ExtendedType that is used to handle unmapped types. 	 */
 specifier|public
 name|ExtendedType
 name|getDefaultType
@@ -455,7 +445,7 @@ return|return
 name|defaultType
 return|;
 block|}
-comment|/**      * Returns a guaranteed non-null ExtendedType instance for a given Java class name.      * Primitive class names are internally replaced by the non-primitive counterparts.      * The following lookup sequence is used to determine the type:      *<ul>      *<li>First the methods checks for an ExtendedType explicitly registered with the map      * for a given class name (most common types are registered by Cayenne internally;      * users can register their own).</li>      *<li>Second, the method tries to obtain a type by iterating through      * {@link ExtendedTypeFactory} instances registered by users. If a factory returns a      * non-null type, it is returned to the user and the rest of the factories are      * ignored.</li>      *<li>Third, the method iterates through standard {@link ExtendedTypeFactory}      * instances that can dynamically construct extended types for serializable objects      * and JDK 1.5 enums.</li>      *<li>If all the methods above failed, the default type is returned that relies on      * default JDBC driver mapping to set and get objects.</li>      *</ul>      *<i>Note that for array types class name must be in the form 'MyClass[]'</i>.      */
+comment|/** 	 * Returns a guaranteed non-null ExtendedType instance for a given Java 	 * class name. Primitive class names are internally replaced by the 	 * non-primitive counterparts. The following lookup sequence is used to 	 * determine the type: 	 *<ul> 	 *<li>First the methods checks for an ExtendedType explicitly registered 	 * with the map for a given class name (most common types are registered by 	 * Cayenne internally; users can register their own).</li> 	 *<li>Second, the method tries to obtain a type by iterating through 	 * {@link ExtendedTypeFactory} instances registered by users. If a factory 	 * returns a non-null type, it is returned to the user and the rest of the 	 * factories are ignored.</li> 	 *<li>Third, the method iterates through standard 	 * {@link ExtendedTypeFactory} instances that can dynamically construct 	 * extended types for serializable objects and JDK 1.5 enums.</li> 	 *<li>If all the methods above failed, the default type is returned that 	 * relies on default JDBC driver mapping to set and get objects.</li> 	 *</ul> 	 *<i>Note that for array types class name must be in the form 	 * 'MyClass[]'</i>. 	 */
 specifier|public
 name|ExtendedType
 name|getRegisteredType
@@ -577,7 +567,7 @@ name|className
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a type registered for the class name. If no such type exists, returns the      * default type. It is guaranteed that this method returns a non-null ExtendedType      * instance.      */
+comment|/** 	 * Returns a type registered for the class name. If no such type exists, 	 * returns the default type. It is guaranteed that this method returns a 	 * non-null ExtendedType instance. 	 */
 specifier|public
 name|ExtendedType
 name|getRegisteredType
@@ -599,7 +589,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Removes registered ExtendedType object corresponding to<code>javaClassName</code>      * parameter.      */
+comment|/** 	 * Removes registered ExtendedType object corresponding to 	 *<code>javaClassName</code> parameter. 	 */
 specifier|public
 name|void
 name|unregisterType
@@ -616,7 +606,7 @@ name|javaClassName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns array of Java class names supported by Cayenne for JDBC mapping.      */
+comment|/** 	 * Returns array of Java class names supported by Cayenne for JDBC mapping. 	 */
 specifier|public
 name|String
 index|[]
@@ -693,7 +683,7 @@ return|return
 name|types
 return|;
 block|}
-comment|/**      * Returns an ExtendedType for specific Java classes. Uses user-provided and      * Cayenne-provided {@link ExtendedTypeFactory} factories to instantiate the      * ExtendedType. All primitive classes must be converted to the corresponding Java      * classes by the callers.      *       * @return a default type for a given class or null if a class has no default type      *         mapping.      * @since 1.2      */
+comment|/** 	 * Returns an ExtendedType for specific Java classes. Uses user-provided and 	 * Cayenne-provided {@link ExtendedTypeFactory} factories to instantiate the 	 * ExtendedType. All primitive classes must be converted to the 	 * corresponding Java classes by the callers. 	 *  	 * @return a default type for a given class or null if a class has no 	 *         default type mapping. 	 * @since 1.2 	 */
 specifier|protected
 name|ExtendedType
 name|createType

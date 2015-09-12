@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A portable global identifier for persistent objects. ObjectId can be temporary (used  * for transient or new uncommitted objects) or permanent (used for objects that have been  * already stored in DB). A temporary ObjectId stores object entity name and a  * pseudo-unique binary key; permanent id stores a map of values from an external  * persistent store (aka "primary key").  *   */
+comment|/**  * A portable global identifier for persistent objects. ObjectId can be  * temporary (used for transient or new uncommitted objects) or permanent (used  * for objects that have been already stored in DB). A temporary ObjectId stores  * object entity name and a pseudo-unique binary key; permanent id stores a map  * of values from an external persistent store (aka "primary key").  *   */
 end_comment
 
 begin_class
@@ -150,6 +150,15 @@ name|ObjectId
 implements|implements
 name|Serializable
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|2265029098344119323L
+decl_stmt|;
 specifier|protected
 name|String
 name|entityName
@@ -202,7 +211,7 @@ name|ObjectId
 parameter_list|()
 block|{
 block|}
-comment|/**      * Creates a TEMPORARY ObjectId. Assigns a generated unique key.      *       * @since 1.2      */
+comment|/** 	 * Creates a TEMPORARY ObjectId. Assigns a generated unique key. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -221,7 +230,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a TEMPORARY id with a specified entity name and a binary key. It is a      * caller responsibility to provide a globally unique binary key.      *       * @since 1.2      */
+comment|/** 	 * Creates a TEMPORARY id with a specified entity name and a binary key. It 	 * is a caller responsibility to provide a globally unique binary key. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -246,7 +255,7 @@ operator|=
 name|key
 expr_stmt|;
 block|}
-comment|/**      * Creates a portable permanent ObjectId.      *       * @param entityName The entity name which this object id is for      * @param key A key describing this object id, usually the attribute name for the      *            primary key      * @param value The unique value for this object id      * @since 1.2      */
+comment|/** 	 * Creates a portable permanent ObjectId. 	 *  	 * @param entityName 	 *            The entity name which this object id is for 	 * @param key 	 *            A key describing this object id, usually the attribute name 	 *            for the primary key 	 * @param value 	 *            The unique value for this object id 	 * @since 1.2 	 */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -275,7 +284,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a portable permanent ObjectId.      *       * @param entityName The entity name which this object id is for      * @param key A key describing this object id, usually the attribute name for the      *            primary key      * @param value The unique value for this object id      * @since 1.2      */
+comment|/** 	 * Creates a portable permanent ObjectId. 	 *  	 * @param entityName 	 *            The entity name which this object id is for 	 * @param key 	 *            A key describing this object id, usually the attribute name 	 *            for the primary key 	 * @param value 	 *            The unique value for this object id 	 * @since 1.2 	 */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -308,7 +317,7 @@ operator|=
 name|value
 expr_stmt|;
 block|}
-comment|/**      * Creates a portable permanent ObjectId as a compound primary key.      *       * @param entityName The entity name which this object id is for      * @param idMap Keys are usually the attribute names for each part of the primary key.      *            Values are unique when taken as a whole.      * @since 1.2      */
+comment|/** 	 * Creates a portable permanent ObjectId as a compound primary key. 	 *  	 * @param entityName 	 *            The entity name which this object id is for 	 * @param idMap 	 *            Keys are usually the attribute names for each part of the 	 *            primary key. Values are unique when taken as a whole. 	 * @since 1.2 	 */
 specifier|public
 name|ObjectId
 parameter_list|(
@@ -411,18 +420,14 @@ name|objectIdKeys
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|idMap
 argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Is this is temporary object id (used for objects which are not yet persisted to the      * data store).      */
+comment|/** 	 * Is this is temporary object id (used for objects which are not yet 	 * persisted to the data store). 	 */
 specifier|public
 name|boolean
 name|isTemporary
@@ -434,7 +439,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|String
 name|getEntityName
@@ -444,7 +449,7 @@ return|return
 name|entityName
 return|;
 block|}
-comment|/**      * Get the binary temporary object id. Null if this object id is permanent (persisted      * to the data store).      */
+comment|/** 	 * Get the binary temporary object id. Null if this object id is permanent 	 * (persisted to the data store). 	 */
 specifier|public
 name|byte
 index|[]
@@ -455,7 +460,7 @@ return|return
 name|key
 return|;
 block|}
-comment|/**      * Returns an unmodifiable Map of persistent id values, essentially a primary key map.      * For temporary id returns replacement id, if it was already created. Otherwise      * returns an empty map.      */
+comment|/** 	 * Returns an unmodifiable Map of persistent id values, essentially a 	 * primary key map. For temporary id returns replacement id, if it was 	 * already created. Otherwise returns an empty map. 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -999,7 +1004,8 @@ operator|.
 name|size
 argument_list|()
 decl_stmt|;
-comment|// handle multiple keys - must sort the keys to use with HashCodeBuilder
+comment|// handle multiple keys - must sort the keys to use with
+comment|// HashCodeBuilder
 name|Object
 index|[]
 name|keys
@@ -1036,7 +1042,8 @@ control|)
 block|{
 comment|// HashCodeBuilder will take care of processing object if it
 comment|// happens to be a primitive array such as byte[]
-comment|// also we don't have to append the key hashcode, its index will
+comment|// also we don't have to append the key hashcode, its index
+comment|// will
 comment|// work
 name|builder
 operator|.
@@ -1115,7 +1122,7 @@ return|return
 name|hashCode
 return|;
 block|}
-comment|/**      * Returns a non-null mutable map that can be used to append replacement id values.      * This allows to incrementally build a replacement GlobalID.      *       * @since 1.2      */
+comment|/** 	 * Returns a non-null mutable map that can be used to append replacement id 	 * values. This allows to incrementally build a replacement GlobalID. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1137,11 +1144,7 @@ name|replacementIdMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1149,7 +1152,7 @@ return|return
 name|replacementIdMap
 return|;
 block|}
-comment|/**      * Creates and returns a replacement ObjectId. No validation of ID is done.      *       * @since 1.2      */
+comment|/** 	 * Creates and returns a replacement ObjectId. No validation of ID is done. 	 *  	 * @since 1.2 	 */
 specifier|public
 name|ObjectId
 name|createReplacementId
@@ -1167,11 +1170,7 @@ name|newIdMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|getIdSnapshot
 argument_list|()
@@ -1203,7 +1202,7 @@ name|newIdMap
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns true if there is full or partial replacement id attached to this id. This      * method is preferrable to "!getReplacementIdMap().isEmpty()" as it avoids unneeded      * replacement id map creation.      */
+comment|/** 	 * Returns true if there is full or partial replacement id attached to this 	 * id. This method is preferrable to "!getReplacementIdMap().isEmpty()" as 	 * it avoids unneeded replacement id map creation. 	 */
 specifier|public
 name|boolean
 name|isReplacementIdAttached
@@ -1221,7 +1220,7 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
-comment|/**      * A standard toString method used for debugging. It is guaranteed to produce the same      * string if two ObjectIds are equal.      */
+comment|/** 	 * A standard toString method used for debugging. It is guaranteed to 	 * produce the same string if two ObjectIds are equal. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1322,7 +1321,8 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// ensure consistent order of the keys, so that toString could be used as a
+comment|// ensure consistent order of the keys, so that toString could be
+comment|// used as a
 comment|// unique key, just like id itself
 name|List
 argument_list|<

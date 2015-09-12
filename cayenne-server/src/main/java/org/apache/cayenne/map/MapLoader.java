@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default MapLoader. Its responsibilities include reading DataMaps from XML files and  * saving DataMap objects back to XML.  */
+comment|/**  * Default MapLoader. Its responsibilities include reading DataMaps from XML  * files and saving DataMap objects back to XML.  */
 end_comment
 
 begin_class
@@ -203,7 +203,7 @@ name|PROPERTY_TAG
 init|=
 literal|"property"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -212,7 +212,7 @@ name|EMBEDDABLE_TAG
 init|=
 literal|"embeddable"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -221,7 +221,7 @@ name|EMBEDDABLE_ATTRIBUTE_TAG
 init|=
 literal|"embeddable-attribute"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -230,7 +230,7 @@ name|EMBEDDED_ATTRIBUTE_TAG
 init|=
 literal|"embedded-attribute"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -489,7 +489,7 @@ name|DB_KEY_CACHE_SIZE_TAG
 init|=
 literal|"db-key-cache-size"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -498,7 +498,7 @@ name|OBJ_ENTITY_ROOT
 init|=
 literal|"obj-entity"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -507,7 +507,7 @@ name|DB_ENTITY_ROOT
 init|=
 literal|"db-entity"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -516,7 +516,7 @@ name|PROCEDURE_ROOT
 init|=
 literal|"procedure"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -525,7 +525,7 @@ name|DATA_MAP_ROOT
 init|=
 literal|"data-map"
 decl_stmt|;
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -647,11 +647,7 @@ name|startTagOpMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|StartClosure
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|40
 argument_list|)
@@ -660,11 +656,7 @@ name|endTagOpMap
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|EndClosure
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|40
 argument_list|)
@@ -2528,7 +2520,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Loads a DataMap from XML input source.      */
+comment|/** 	 * Loads a DataMap from XML input source. 	 */
 specifier|public
 specifier|synchronized
 name|DataMap
@@ -2666,7 +2658,7 @@ return|return
 name|dataMap
 return|;
 block|}
-comment|/**      * Constructs error message for displaying as exception message      */
+comment|/** 	 * Constructs error message for displaying as exception message 	 */
 specifier|private
 name|Appendable
 name|constructCurrentStateString
@@ -2771,7 +2763,7 @@ return|return
 name|sb
 return|;
 block|}
-comment|/**      * Helper method to guess the map name from its location.      */
+comment|/** 	 * Helper method to guess the map name from its location. 	 */
 specifier|protected
 name|String
 name|mapNameFromLocation
@@ -3341,7 +3333,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// this is an obsolete 1.2 'precision' attribute that really meant 'scale'
+comment|// this is an obsolete 1.2 'precision' attribute that really meant
+comment|// 'scale'
 name|String
 name|pseudoPrecision
 init|=
@@ -4190,7 +4183,8 @@ parameter_list|)
 throws|throws
 name|SAXException
 block|{
-comment|// db-relationship-ref element is deprecated and is supported for backwards
+comment|// db-relationship-ref element is deprecated and is supported for
+comment|// backwards
 comment|// compatibility only
 name|String
 name|name
@@ -5102,7 +5096,8 @@ argument_list|,
 name|rootName
 argument_list|)
 expr_stmt|;
-comment|// TODO: Andrus, 2/13/2006 'result-type' is only used in ProcedureQuery and is
+comment|// TODO: Andrus, 2/13/2006 'result-type' is only used in ProcedureQuery
+comment|// and is
 comment|// deprecated in 1.2
 if|if
 condition|(
@@ -5942,7 +5937,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * @since 2.0      */
+comment|/** 	 * @since 2.0 	 */
 name|String
 name|convertClassNameFromV1_2
 parameter_list|(

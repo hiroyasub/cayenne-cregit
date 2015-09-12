@@ -375,19 +375,10 @@ name|queriesMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|/**      * Return valid method name based on query name (replace all illegal characters with      * underscore '_').      *       * @param query      * @return Method name that perform query.      */
+comment|/** 	 * Return valid method name based on query name (replace all illegal 	 * characters with underscore '_'). 	 *  	 * @param query 	 * @return Method name that perform query. 	 */
 specifier|public
 name|String
 name|getQueryMethodName
@@ -410,7 +401,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Get all parameter names that used in query qualifier.      *      * @param query      * @return Parameter names.      */
+comment|/** 	 * Get all parameter names that used in query qualifier. 	 * 	 * @param query 	 * @return Parameter names. 	 */
 specifier|public
 name|Collection
 name|getParameterNames
@@ -674,7 +665,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Get list of parameter names in the same order as in qualifier.      *       * @param qualifierString to be parsed      * @return List of parameter names.      */
+comment|/** 	 * Get list of parameter names in the same order as in qualifier. 	 *  	 * @param qualifierString 	 *            to be parsed 	 * @return List of parameter names. 	 */
 specifier|private
 name|Set
 name|parseQualifier
@@ -797,7 +788,7 @@ operator|>
 literal|0
 return|;
 block|}
-comment|/**      * Get type of parameter for given name.      *      * @param query      * @param name      * @return Parameter type.      */
+comment|/** 	 * Get type of parameter for given name. 	 * 	 * @param query 	 * @param name 	 * @return Parameter type. 	 */
 specifier|public
 name|String
 name|getParameterType
@@ -862,11 +853,7 @@ name|types
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|String

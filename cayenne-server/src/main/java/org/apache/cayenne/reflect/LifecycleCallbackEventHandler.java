@@ -156,14 +156,7 @@ name|listeners
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Collection
-argument_list|<
-name|AbstractCallback
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -172,9 +165,7 @@ name|defaultListeners
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|AbstractCallback
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

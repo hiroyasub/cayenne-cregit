@@ -259,13 +259,10 @@ name|importTypesMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// Types forced to be FQN
 specifier|protected
 name|Map
 argument_list|<
@@ -277,18 +274,9 @@ name|reservedImportTypesMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|// Types
-comment|// forced
-comment|// to
-comment|// be
-comment|// FQN
 specifier|protected
 name|String
 name|packageName
@@ -401,7 +389,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Reserve a fully-qualified data type class name so it cannot be used by another      * class. No import statements will be generated for reserved types. Typically, this      * is the fully-qualified class name of the class being generated.      *       * @param typeName FQ data type class name.      */
+comment|/** 	 * Reserve a fully-qualified data type class name so it cannot be used by 	 * another class. No import statements will be generated for reserved types. 	 * Typically, this is the fully-qualified class name of the class being 	 * generated. 	 *  	 * @param typeName 	 *            FQ data type class name. 	 */
 specifier|public
 name|void
 name|addReservedType
@@ -447,7 +435,7 @@ name|typeName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Register a fully-qualified data type class name. For example,      * org.apache.cayenne.CayenneDataObject.      *       * @param typeName FQ data type class name.      */
+comment|/** 	 * Register a fully-qualified data type class name. For example, 	 * org.apache.cayenne.CayenneDataObject. 	 *  	 * @param typeName 	 *            FQ data type class name. 	 */
 specifier|public
 name|void
 name|addType
@@ -513,7 +501,7 @@ name|typeName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Add the package name to use for this importUtil invocation.      *       * @param packageName      */
+comment|/** 	 * Add the package name to use for this importUtil invocation. 	 *  	 * @param packageName 	 */
 specifier|public
 name|void
 name|setPackage
@@ -529,7 +517,7 @@ operator|=
 name|packageName
 expr_stmt|;
 block|}
-comment|/**      * Performs processing similar to<code>formatJavaType(String)</code>, with special      * handling of primitive types and their Java class counterparts. This method allows      * users to make a decision whether to use primitives or not, regardless of how type      * is mapped.      */
+comment|/** 	 * Performs processing similar to<code>formatJavaType(String)</code>, with 	 * special handling of primitive types and their Java class counterparts. 	 * This method allows users to make a decision whether to use primitives or 	 * not, regardless of how type is mapped. 	 */
 specifier|public
 name|String
 name|formatJavaType
@@ -602,7 +590,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Removes registered package and non-reserved registered type name prefixes from java      * types      */
+comment|/** 	 * Removes registered package and non-reserved registered type name prefixes 	 * from java types 	 */
 specifier|public
 name|String
 name|formatJavaType
@@ -723,7 +711,7 @@ return|return
 name|typeName
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|formatJavaTypeAsNonBooleanPrimitive
@@ -757,7 +745,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isNonBooleanPrimitive
@@ -783,7 +771,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|isBoolean
@@ -801,7 +789,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/**      * Generate package and list of import statements based on the registered types.      */
+comment|/** 	 * Generate package and list of import statements based on the registered 	 * types. 	 */
 specifier|public
 name|String
 name|generate
@@ -835,8 +823,10 @@ argument_list|(
 name|packageName
 argument_list|)
 expr_stmt|;
-comment|// Using UNIX line endings intentionally - generated Java files should look
-comment|// the same regardless of platform to prevent developer teams working on
+comment|// Using UNIX line endings intentionally - generated Java files
+comment|// should look
+comment|// the same regardless of platform to prevent developer teams
+comment|// working on
 comment|// multiple OS's to override each other's work
 name|outputBuffer
 operator|.

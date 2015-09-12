@@ -212,7 +212,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic implementation of an RemoteService. Can be subclassed to work with different  * remoting mechanisms, such as Hessian or JAXRPC.  *   * @since 1.2  */
+comment|/**  * A generic implementation of an RemoteService. Can be subclassed to work with  * different remoting mechanisms, such as Hessian or JAXRPC.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -223,7 +223,8 @@ name|BaseRemoteService
 implements|implements
 name|RemoteService
 block|{
-comment|// keep logger non-static so that it could be garbage collected with this instance.
+comment|// keep logger non-static so that it could be garbage collected with this
+comment|// instance.
 specifier|protected
 specifier|final
 name|Log
@@ -246,7 +247,7 @@ name|String
 argument_list|>
 name|eventBridgeParameters
 decl_stmt|;
-comment|/**      * @since 3.1      */
+comment|/** 	 * @since 3.1 	 */
 specifier|public
 name|BaseRemoteService
 parameter_list|(
@@ -341,14 +342,14 @@ operator|.
 name|EMPTY_MAP
 return|;
 block|}
-comment|/**      * Creates a new ServerSession with a dedicated DataChannel.      */
+comment|/** 	 * Creates a new ServerSession with a dedicated DataChannel. 	 */
 specifier|protected
 specifier|abstract
 name|ServerSession
 name|createServerSession
 parameter_list|()
 function_decl|;
-comment|/**      * Creates a new ServerSession based on a shared DataChannel.      *       * @param name shared session name used to lookup a shared DataChannel.      */
+comment|/** 	 * Creates a new ServerSession based on a shared DataChannel. 	 *  	 * @param name 	 *            shared session name used to lookup a shared DataChannel. 	 */
 specifier|protected
 specifier|abstract
 name|ServerSession
@@ -358,7 +359,7 @@ name|String
 name|name
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a ServerSession object that represents Cayenne-related state associated      * with the current session. If ServerSession hasn't been previously saved, returns      * null.      */
+comment|/** 	 * Returns a ServerSession object that represents Cayenne-related state 	 * associated with the current session. If ServerSession hasn't been 	 * previously saved, returns null. 	 */
 specifier|protected
 specifier|abstract
 name|ServerSession
@@ -655,7 +656,7 @@ return|return
 name|session
 return|;
 block|}
-comment|/**      * Creates a server-side channel that will handle all client requests. For shared      * sessions the same channel instance is reused for the entire group of clients. For      * dedicated sessions, one channel per client is created.      *<p>      * This implementation returns {@link ClientServerChannel} instance wrapping a      * DataContext. Subclasses may override the method to customize channel creation. For      * instance they may wrap channel in the custom interceptors to handle transactions or      * security.      */
+comment|/** 	 * Creates a server-side channel that will handle all client requests. For 	 * shared sessions the same channel instance is reused for the entire group 	 * of clients. For dedicated sessions, one channel per client is created. 	 *<p> 	 * This implementation returns {@link ClientServerChannel} instance wrapping 	 * a DataContext. Subclasses may override the method to customize channel 	 * creation. For instance they may wrap channel in the custom interceptors 	 * to handle transactions or security. 	 */
 specifier|protected
 name|DataChannel
 name|createChannel
@@ -675,7 +676,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Initializes EventBridge parameters for remote clients peer-to-peer communications.      */
+comment|/** 	 * Initializes EventBridge parameters for remote clients peer-to-peer 	 * communications. 	 */
 specifier|protected
 name|void
 name|initEventBridgeParameters
@@ -718,11 +719,7 @@ name|eventBridgeParameters
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|properties
 argument_list|)

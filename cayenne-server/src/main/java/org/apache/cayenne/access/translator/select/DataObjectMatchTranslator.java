@@ -258,7 +258,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Initializes itself to do translation of the match ending with a DbRelationship.      *       * @since 3.0      */
+comment|/** 	 * Initializes itself to do translation of the match ending with a 	 * DbRelationship. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setRelationship
@@ -286,11 +286,7 @@ name|attributes
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|DbAttribute
-argument_list|>
+argument_list|<>
 argument_list|(
 name|rel
 operator|.
@@ -421,7 +417,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 1.2      */
+comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|setObjectId
@@ -511,7 +507,7 @@ name|iterator
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|String
 name|getJoinSplitAlias

@@ -294,11 +294,7 @@ name|entityDescriptors
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|String
-argument_list|,
-name|AuditableEntityDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -307,9 +303,7 @@ name|threadAggregator
 operator|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|AuditableAggregator
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -253,11 +253,7 @@ name|map
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|len
 operator|*
@@ -347,9 +343,7 @@ name|attributes
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbAttribute
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -358,9 +352,7 @@ name|valueTransformers
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Transformer
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -464,7 +456,8 @@ block|}
 block|}
 else|else
 block|{
-comment|// TODO: andrus 12/23/2007 - only one step relationship is supported...
+comment|// TODO: andrus 12/23/2007 - only one step relationship is
+comment|// supported...
 if|if
 condition|(
 name|descriptor
@@ -763,8 +756,10 @@ operator|.
 name|getSource
 argument_list|()
 decl_stmt|;
-comment|// relationship transformers override attribute transformers for
-comment|// meaningful FK's... why meaningful FKs can go out of sync is
+comment|// relationship transformers override attribute
+comment|// transformers for
+comment|// meaningful FK's... why meaningful FKs can go out of
+comment|// sync is
 comment|// another story (CAY-595)
 name|int
 name|index

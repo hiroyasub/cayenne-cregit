@@ -20,44 +20,46 @@ package|;
 end_package
 
 begin_import
-import|import
-name|com
+import|import static
+name|org
 operator|.
-name|caucho
+name|junit
 operator|.
-name|services
+name|Assert
 operator|.
-name|server
-operator|.
-name|ServiceContext
+name|assertSame
 import|;
 end_import
 
 begin_import
 import|import
-name|com
+name|java
 operator|.
-name|mockrunner
+name|util
 operator|.
-name|mock
-operator|.
-name|web
-operator|.
-name|MockHttpServletRequest
+name|HashMap
 import|;
 end_import
 
 begin_import
 import|import
-name|com
+name|java
 operator|.
-name|mockrunner
+name|util
 operator|.
-name|mock
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
 operator|.
-name|web
+name|servlet
 operator|.
-name|MockHttpSession
+name|http
+operator|.
+name|HttpSession
 import|;
 end_import
 
@@ -139,45 +141,43 @@ end_import
 
 begin_import
 import|import
-name|javax
+name|com
 operator|.
-name|servlet
+name|caucho
 operator|.
-name|http
+name|services
 operator|.
-name|HttpSession
+name|server
+operator|.
+name|ServiceContext
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|com
 operator|.
-name|util
+name|mockrunner
 operator|.
-name|HashMap
+name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpServletRequest
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|com
 operator|.
-name|util
+name|mockrunner
 operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
+name|mock
 operator|.
-name|junit
+name|web
 operator|.
-name|Assert
-operator|.
-name|assertSame
+name|MockHttpSession
 import|;
 end_import
 
@@ -205,11 +205,7 @@ name|map
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|map
@@ -290,7 +286,8 @@ argument_list|(
 name|session
 argument_list|)
 expr_stmt|;
-comment|// for some eason need to call this to get session activated in the mock request
+comment|// for some reason need to call this to get session activated in the
+comment|// mock request
 name|request
 operator|.
 name|getSession

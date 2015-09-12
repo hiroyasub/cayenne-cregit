@@ -354,7 +354,7 @@ specifier|protected
 name|Expression
 name|entityQualifier
 decl_stmt|;
-comment|/**      * Creates a PersistentDescriptor.      */
+comment|/** 	 * Creates a PersistentDescriptor. 	 */
 specifier|public
 name|PersistentDescriptor
 parameter_list|()
@@ -365,11 +365,7 @@ name|declaredProperties
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|PropertyDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -378,11 +374,7 @@ name|properties
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|PropertyDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -391,11 +383,7 @@ name|subclassDescriptors
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|ClassDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 comment|// must be a set as duplicate addition attempts are expected...
@@ -456,7 +444,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Registers a superclass property.      */
+comment|/** 	 * Registers a superclass property. 	 */
 specifier|public
 name|void
 name|addSuperProperty
@@ -483,7 +471,7 @@ name|property
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Registers a property. This method is useful to customize default ClassDescriptor      * generated from ObjEntity by adding new properties or overriding the standard ones.      */
+comment|/** 	 * Registers a property. This method is useful to customize default 	 * ClassDescriptor generated from ObjEntity by adding new properties or 	 * overriding the standard ones. 	 */
 specifier|public
 name|void
 name|addDeclaredProperty
@@ -522,7 +510,7 @@ name|property
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a root DbEntity to the list of roots, filtering duplicates.      */
+comment|/** 	 * Adds a root DbEntity to the list of roots, filtering duplicates. 	 */
 specifier|public
 name|void
 name|addRootDbEntity
@@ -870,7 +858,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * Removes declared property. This method can be used to customize default      * ClassDescriptor generated from ObjEntity.      */
+comment|/** 	 * Removes declared property. This method can be used to customize default 	 * ClassDescriptor generated from ObjEntity. 	 */
 specifier|public
 name|void
 name|removeDeclaredProperty
@@ -935,7 +923,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Adds a subclass descriptor that maps to a given class name.      */
+comment|/** 	 * Adds a subclass descriptor that maps to a given class name. 	 */
 specifier|public
 name|void
 name|addSubclassDescriptor
@@ -948,8 +936,10 @@ name|subclassDescriptor
 parameter_list|)
 block|{
 comment|// note that 'className' should be used instead of
-comment|// "subclassDescriptor.getEntity().getClassName()", as this method is called in
-comment|// the early phases of descriptor initialization and we do not want to trigger
+comment|// "subclassDescriptor.getEntity().getClassName()", as this method is
+comment|// called in
+comment|// the early phases of descriptor initialization and we do not want to
+comment|// trigger
 comment|// subclassDescriptor resolution just yet to prevent stack overflow.
 name|subclassDescriptors
 operator|.
@@ -1111,7 +1101,8 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// ascend via the class hierarchy (only doing it if there are multiple choices)
+comment|// ascend via the class hierarchy (only doing it if there are multiple
+comment|// choices)
 if|if
 condition|(
 name|subclassDescriptor
@@ -1244,7 +1235,7 @@ operator|.
 name|EMPTY_LIST
 return|;
 block|}
-comment|/**      * Recursively looks up property descriptor in this class descriptor and all      * superclass descriptors.      */
+comment|/** 	 * Recursively looks up property descriptor in this class descriptor and all 	 * superclass descriptors. 	 */
 specifier|public
 name|PropertyDescriptor
 name|getProperty
@@ -1303,7 +1294,7 @@ name|propertyName
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a descriptor of the mapped superclass or null if the descriptor's entity      * sits at the top of inheritance hierarchy.      */
+comment|/** 	 * Returns a descriptor of the mapped superclass or null if the descriptor's 	 * entity sits at the top of inheritance hierarchy. 	 */
 specifier|public
 name|ClassDescriptor
 name|getSuperclassDescriptor
@@ -1313,7 +1304,7 @@ return|return
 name|superclassDescriptor
 return|;
 block|}
-comment|/**      * Creates a new instance of a class described by this object.      */
+comment|/** 	 * Creates a new instance of a class described by this object. 	 */
 specifier|public
 name|Object
 name|createObject
@@ -1367,7 +1358,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Invokes 'prepareForAccess' of a super descriptor and then invokes      * 'prepareForAccess' of each declared property.      */
+comment|/** 	 * Invokes 'prepareForAccess' of a super descriptor and then invokes 	 * 'prepareForAccess' of each declared property. 	 */
 specifier|public
 name|void
 name|injectValueHolders
@@ -1416,7 +1407,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Copies object properties from one object to another. Invokes 'shallowCopy' of a      * super descriptor and then invokes 'shallowCopy' of each declared property.      */
+comment|/** 	 * Copies object properties from one object to another. Invokes 	 * 'shallowCopy' of a super descriptor and then invokes 'shallowCopy' of 	 * each declared property. 	 */
 specifier|public
 name|void
 name|shallowMerge
@@ -1506,7 +1497,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|visitDeclaredProperties
@@ -1546,7 +1537,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * @since 3.0      */
+comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|boolean
 name|visitAllProperties

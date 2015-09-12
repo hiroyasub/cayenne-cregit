@@ -124,11 +124,7 @@ name|fields
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -238,7 +234,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a result set column mapping for a single object property of a specified entity      * that may differ from the root entity if inheritance is involved.      */
+comment|/** 	 * Adds a result set column mapping for a single object property of a 	 * specified entity that may differ from the root entity if inheritance is 	 * involved. 	 */
 name|void
 name|addObjectField
 parameter_list|(
@@ -303,7 +299,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a result set column mapping for a single DbAttribute.      */
+comment|/** 	 * Adds a result set column mapping for a single DbAttribute. 	 */
 name|void
 name|addDbField
 parameter_list|(

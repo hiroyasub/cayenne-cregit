@@ -887,14 +887,7 @@ name|columnOverrides
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Collection
-argument_list|<
-name|ColumnOverride
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|2
 argument_list|)

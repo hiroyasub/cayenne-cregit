@@ -449,7 +449,7 @@ name|r2
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a join DbEntity for the single-step flattened relationship.      */
+comment|/** 	 * Returns a join DbEntity for the single-step flattened relationship. 	 */
 name|DbEntity
 name|getJoinEntity
 parameter_list|()
@@ -461,7 +461,7 @@ name|getEntity
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a snapshot for join record for the single-step flattened      * relationship, generating value for the primary key column if it is not      * propagated via the relationships.      */
+comment|/** 	 * Returns a snapshot for join record for the single-step flattened 	 * relationship, generating value for the primary key column if it is not 	 * propagated via the relationships. 	 */
 name|Map
 argument_list|<
 name|String
@@ -624,7 +624,7 @@ return|return
 name|snapshot
 return|;
 block|}
-comment|/**      * Returns pk snapshots for join records for the single-step flattened      * relationship. Multiple joins between the same pair of objects are      * theoretically possible, so the return value is a list.      */
+comment|/** 	 * Returns pk snapshots for join records for the single-step flattened 	 * relationship. Multiple joins between the same pair of objects are 	 * theoretically possible, so the return value is a list. 	 */
 name|List
 name|buildJoinSnapshotsForDelete
 parameter_list|(
@@ -1372,7 +1372,7 @@ name|toHashCode
 argument_list|()
 return|;
 block|}
-comment|/**      * Defines equal based on whether the relationship is bidirectional.      */
+comment|/** 	 * Defines equal based on whether the relationship is bidirectional. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1567,11 +1567,7 @@ name|snapshot
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|sourceId
 operator|.
@@ -1747,11 +1743,7 @@ name|snapshot
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|fromSourceJoins
 operator|.

@@ -133,11 +133,7 @@ name|descriptors
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|ClassDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -152,9 +148,7 @@ name|factories
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ClassDescriptorFactory
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

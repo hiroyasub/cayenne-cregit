@@ -163,7 +163,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 return|;
 block|}
 name|Map
@@ -176,11 +177,7 @@ name|dbFields
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
