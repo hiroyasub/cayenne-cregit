@@ -378,14 +378,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|this
-operator|.
-name|lastPathComponent
-operator|=
+name|resolveLastPathComponent
+argument_list|(
 name|expression
 operator|.
 name|getText
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|this
 operator|.

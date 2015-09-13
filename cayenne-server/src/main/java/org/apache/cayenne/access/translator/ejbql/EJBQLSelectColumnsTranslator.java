@@ -450,12 +450,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|this
-operator|.
 name|resolveJoin
-argument_list|(
-literal|true
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 name|String

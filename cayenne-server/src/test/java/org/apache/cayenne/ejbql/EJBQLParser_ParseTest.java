@@ -129,6 +129,29 @@ name|select
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testImplicitOuterJoin
+parameter_list|()
+block|{
+name|EJBQLExpression
+name|select
+init|=
+name|parser
+operator|.
+name|parse
+argument_list|(
+literal|"SELECT a FROM Artist a WHERE a.paintingArray+.toGallery.galleryName = 'gallery2'"
+argument_list|)
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|select
+argument_list|)
+expr_stmt|;
+block|}
 comment|/** 	 * This should not parse because there are multiple non-bracketed 	 * parameters. 	 */
 annotation|@
 name|Test
