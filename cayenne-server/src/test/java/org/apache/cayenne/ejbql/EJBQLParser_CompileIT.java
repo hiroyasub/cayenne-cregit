@@ -179,7 +179,7 @@ name|TESTMAP_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|EJBQLCompiledExpressionIT
+name|EJBQLParser_CompileIT
 extends|extends
 name|ServerCase
 block|{
