@@ -112,7 +112,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testEncodeAsString
+name|testAppendAsString
 parameter_list|()
 throws|throws
 name|IOException
