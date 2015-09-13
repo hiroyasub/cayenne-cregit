@@ -116,7 +116,7 @@ name|select
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      *<p>This should not parse because there are multiple non-bracketed parameters.</p>      */
+comment|/** 	 *<p> 	 * This should not parse because there are multiple non-bracketed 	 * parameters. 	 *</p> 	 */
 annotation|@
 name|Test
 specifier|public
@@ -134,16 +134,13 @@ argument_list|()
 decl_stmt|;
 try|try
 block|{
-name|EJBQLExpression
-name|select
-init|=
 name|parser
 operator|.
 name|parse
 argument_list|(
 literal|"select p from Painting p WHERE p.toArtist IN ?1, ?2"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|fail
 argument_list|(
 literal|"a test in clause with multiple unbracketed parameters parsed; should not be possible"
@@ -156,7 +153,7 @@ name|EJBQLException
 name|ejbqlE
 parameter_list|)
 block|{
-comment|//expected; should not have parsed
+comment|// expected; should not have parsed
 block|}
 catch|catch
 parameter_list|(
