@@ -702,9 +702,7 @@ expr_stmt|;
 name|String
 name|ejbql
 init|=
-literal|"SELECT DISTINCT a "
-operator|+
-literal|"FROM Artist a, Painting b "
+literal|"SELECT DISTINCT a FROM Artist a, Painting b "
 operator|+
 literal|"WHERE a.artistName = b.paintingTitle"
 decl_stmt|;
@@ -832,9 +830,7 @@ expr_stmt|;
 name|String
 name|ejbql
 init|=
-literal|"SELECT a "
-operator|+
-literal|"FROM Artist a INNER JOIN a.paintingArray p "
+literal|"SELECT a FROM Artist a INNER JOIN a.paintingArray p "
 operator|+
 literal|"WHERE a.artistName = 'AA1'"
 decl_stmt|;
@@ -901,9 +897,7 @@ expr_stmt|;
 name|String
 name|ejbql
 init|=
-literal|"SELECT a "
-operator|+
-literal|"FROM Artist a LEFT JOIN a.paintingArray p "
+literal|"SELECT a FROM Artist a LEFT JOIN a.paintingArray p "
 operator|+
 literal|"WHERE a.artistName = 'AA1'"
 decl_stmt|;
@@ -1028,9 +1022,7 @@ expr_stmt|;
 name|String
 name|ejbql
 init|=
-literal|"SELECT a "
-operator|+
-literal|"FROM Artist a JOIN a.paintingArray p JOIN p.toGallery g "
+literal|"SELECT a FROM Artist a JOIN a.paintingArray p JOIN p.toGallery g "
 operator|+
 literal|"WHERE g.galleryName = 'gallery2'"
 decl_stmt|;
@@ -1102,11 +1094,7 @@ expr_stmt|;
 name|String
 name|ejbql
 init|=
-literal|"SELECT a "
-operator|+
-literal|"FROM Artist a "
-operator|+
-literal|"WHERE a.paintingArray.toGallery.galleryName = 'gallery2'"
+literal|"SELECT a FROM Artist a WHERE a.paintingArray.toGallery.galleryName = 'gallery2'"
 decl_stmt|;
 name|EJBQLQuery
 name|query
