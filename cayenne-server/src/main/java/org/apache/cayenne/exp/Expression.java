@@ -1362,11 +1362,14 @@ literal|0
 condition|)
 block|{
 return|return
-name|Collections
-operator|.
-name|emptyList
+operator|new
+name|LinkedList
+argument_list|<
+name|T
+argument_list|>
 argument_list|()
 return|;
+comment|// returning Collections.emptyList() could cause random client exceptions if they try to mutate the resulting list
 block|}
 return|return
 operator|(
