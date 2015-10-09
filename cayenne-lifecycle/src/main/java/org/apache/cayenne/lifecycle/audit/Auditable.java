@@ -123,6 +123,14 @@ argument_list|()
 expr|default
 block|{}
 expr_stmt|;
+comment|/**      * @since 4.0      */
+name|String
+index|[]
+name|confidential
+argument_list|()
+expr|default
+block|{}
+expr_stmt|;
 block|}
 end_annotation_defn
 

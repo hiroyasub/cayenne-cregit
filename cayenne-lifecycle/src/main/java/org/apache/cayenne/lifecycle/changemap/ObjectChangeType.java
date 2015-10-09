@@ -13,67 +13,26 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|db
+name|changemap
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|audit
-operator|.
-name|Auditable
-import|;
-end_import
+begin_comment
+comment|/**  * Defines types of tracked object changes.  *   * @since 4.0  */
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|db
-operator|.
-name|auto
-operator|.
-name|_Auditable2
-import|;
-end_import
-
-begin_class
-annotation|@
-name|Auditable
-argument_list|(
-name|ignoredProperties
-operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY1_PROPERTY
-argument_list|,
-name|confidential
-operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY2_PROPERTY
-argument_list|)
+begin_enum
 specifier|public
-class|class
-name|Auditable2
-extends|extends
-name|_Auditable2
-block|{  }
-end_class
+enum|enum
+name|ObjectChangeType
+block|{
+name|INSERT
+block|,
+name|UPDATE
+block|,
+name|DELETE
+block|; }
+end_enum
 
 end_unit
 

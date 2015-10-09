@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|db
+name|postcommit
+operator|.
+name|meta
 package|;
 end_package
 
@@ -25,55 +27,28 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
-name|audit
-operator|.
-name|Auditable
+name|ObjectId
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|db
-operator|.
-name|auto
-operator|.
-name|_Auditable2
-import|;
-end_import
+begin_comment
+comment|/**  * @since 4.0  */
+end_comment
 
-begin_class
-annotation|@
-name|Auditable
-argument_list|(
-name|ignoredProperties
-operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY1_PROPERTY
-argument_list|,
-name|confidential
-operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY2_PROPERTY
-argument_list|)
+begin_interface
 specifier|public
-class|class
-name|Auditable2
-extends|extends
-name|_Auditable2
-block|{  }
-end_class
+interface|interface
+name|PostCommitEntityFactory
+block|{
+name|PostCommitEntity
+name|getEntity
+parameter_list|(
+name|ObjectId
+name|id
+parameter_list|)
+function_decl|;
+block|}
+end_interface
 
 end_unit
 

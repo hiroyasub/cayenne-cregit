@@ -13,23 +13,17 @@ name|cayenne
 operator|.
 name|lifecycle
 operator|.
-name|db
+name|changemap
 package|;
 end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|audit
-operator|.
-name|Auditable
+name|Collection
 import|;
 end_import
 
@@ -41,39 +35,35 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
-name|db
-operator|.
-name|auto
-operator|.
-name|_Auditable2
+name|ObjectId
 import|;
 end_import
 
-begin_class
-annotation|@
-name|Auditable
-argument_list|(
-name|ignoredProperties
-operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY1_PROPERTY
-argument_list|,
-name|confidential
-operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY2_PROPERTY
-argument_list|)
+begin_comment
+comment|/**  * Represents a change in a to-many relationship property to another entity.  *   * @since 4.0  */
+end_comment
+
+begin_interface
 specifier|public
-class|class
-name|Auditable2
-extends|extends
-name|_Auditable2
-block|{  }
-end_class
+interface|interface
+name|ToManyRelationshipChange
+block|{
+name|Collection
+argument_list|<
+name|ObjectId
+argument_list|>
+name|getAdded
+parameter_list|()
+function_decl|;
+name|Collection
+argument_list|<
+name|ObjectId
+argument_list|>
+name|getRemoved
+parameter_list|()
+function_decl|;
+block|}
+end_interface
 
 end_unit
 
