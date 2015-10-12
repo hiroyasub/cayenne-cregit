@@ -26,10 +26,16 @@ specifier|public
 interface|interface
 name|PropertyChange
 block|{
-name|void
+parameter_list|<
+name|T
+parameter_list|>
+name|T
 name|accept
 parameter_list|(
 name|PropertyChangeVisitor
+argument_list|<
+name|T
+argument_list|>
 name|visitor
 parameter_list|)
 function_decl|;
