@@ -25,6 +25,8 @@ begin_interface
 specifier|public
 interface|interface
 name|AttributeChange
+extends|extends
+name|PropertyChange
 block|{
 name|Object
 name|getOldValue

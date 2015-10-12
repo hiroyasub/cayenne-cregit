@@ -37,6 +37,8 @@ begin_interface
 specifier|public
 interface|interface
 name|ToOneRelationshipChange
+extends|extends
+name|PropertyChange
 block|{
 name|ObjectId
 name|getOldValue

@@ -47,6 +47,8 @@ begin_interface
 specifier|public
 interface|interface
 name|ToManyRelationshipChange
+extends|extends
+name|PropertyChange
 block|{
 name|Collection
 argument_list|<
