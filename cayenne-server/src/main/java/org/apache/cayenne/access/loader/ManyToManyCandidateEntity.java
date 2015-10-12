@@ -463,14 +463,6 @@ operator|&&
 name|entity2
 operator|!=
 literal|null
-operator|&&
-operator|!
-name|entity1
-operator|.
-name|equals
-argument_list|(
-name|entity2
-argument_list|)
 return|;
 block|}
 specifier|private
