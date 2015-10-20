@@ -327,9 +327,10 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testDefaultNoFilters
+name|testDefaultFilters
 parameter_list|()
 block|{
+comment|// There is a default TransactionFilter
 name|DataDomain
 name|domain
 init|=
@@ -340,7 +341,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|0
+literal|1
 argument_list|,
 name|domain
 operator|.

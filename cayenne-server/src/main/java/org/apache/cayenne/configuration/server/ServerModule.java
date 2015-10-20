@@ -79,6 +79,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|tx
+operator|.
+name|TransactionFilter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|access
 operator|.
 name|dbsync
@@ -1753,7 +1767,23 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// configure an empty filter chain
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|TransactionFilter
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|TransactionFilter
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+comment|// configure a filter chain with only one TransactionFilter as default
 name|binder
 operator|.
 name|bindList
@@ -1761,6 +1791,13 @@ argument_list|(
 name|Constants
 operator|.
 name|SERVER_DOMAIN_FILTERS_LIST
+argument_list|)
+operator|.
+name|add
+argument_list|(
+name|TransactionFilter
+operator|.
+name|class
 argument_list|)
 expr_stmt|;
 comment|// configure extended types
