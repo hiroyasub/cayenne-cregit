@@ -86,7 +86,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The implementation here is basically an adjacency list, but a {@link Map}  * is used to map each vertex to its list of adjacent vertices.  *  * @param<V> A type of a vertex.  * @since 4.0.M3  */
+comment|/**  * The implementation here is basically an adjacency list, but a {@link Map}  * is used to map each vertex to its list of adjacent vertices.  *  * @param<V> A type of a vertex.  * @since 4.0  */
 end_comment
 
 begin_class

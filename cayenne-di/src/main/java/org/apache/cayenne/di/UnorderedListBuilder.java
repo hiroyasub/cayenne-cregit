@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A binding builder for unordered list configurations.  *  * @param<T> A type of list values.  * @since 4.0.M3  */
+comment|/**  * A binding builder for unordered list configurations.  *  * @param<T> A type of list values.  * @since 4.0  */
 end_comment
 
 begin_interface

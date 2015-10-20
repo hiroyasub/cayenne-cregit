@@ -32,7 +32,7 @@ argument_list|<
 name|T
 argument_list|>
 block|{
-comment|/**      * @since 4.0.M3      */
+comment|/**      * @since 4.0      */
 name|UnorderedListBuilder
 argument_list|<
 name|T
@@ -46,7 +46,7 @@ argument_list|>
 name|type
 parameter_list|)
 function_decl|;
-comment|/**      * @since 4.0.M3      */
+comment|/**      * @since 4.0      */
 name|UnorderedListBuilder
 argument_list|<
 name|T
@@ -60,7 +60,7 @@ argument_list|>
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * @since 4.0.M3      */
+comment|/**      * @since 4.0      */
 name|UnorderedListBuilder
 argument_list|<
 name|T
@@ -74,7 +74,7 @@ argument_list|>
 name|type
 parameter_list|)
 function_decl|;
-comment|/**      * @since 4.0.M3      */
+comment|/**      * @since 4.0      */
 name|UnorderedListBuilder
 argument_list|<
 name|T
