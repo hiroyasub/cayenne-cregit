@@ -12,6 +12,8 @@ operator|.
 name|cayenne
 operator|.
 name|di
+operator|.
+name|spi
 package|;
 end_package
 
@@ -86,18 +88,17 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * The implementation here is basically an adjacency list, but a {@link Map}  * is used to map each vertex to its list of adjacent vertices.  *  * @param<V> A type of a vertex.  * @since 4.0  */
+comment|/**  * The implementation here is basically an adjacency list, but a {@link Map} is  * used to map each vertex to its list of adjacent vertices.  *  * @param<V>  *            A type of a vertex.  * @since 4.0  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|DIGraph
 parameter_list|<
 name|V
 parameter_list|>
 block|{
-comment|/**      * Note: {@link LinkedHashMap} is used for supporting insertion order.      */
+comment|/** 	 * Note: {@link LinkedHashMap} is used for supporting insertion order. 	 */
 specifier|private
 name|Map
 argument_list|<
@@ -120,7 +121,7 @@ name|DIGraph
 parameter_list|()
 block|{
 block|}
-comment|/**      * Add a vertex to the graph. Nothing happens if vertex is already in graph.      */
+comment|/** 	 * Add a vertex to the graph. Nothing happens if vertex is already in graph. 	 */
 specifier|public
 name|void
 name|add
@@ -156,7 +157,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Add an edge to the graph; if either vertex does not exist, it's added.      * This implementation allows the creation of multi-edges and self-loops.      */
+comment|/** 	 * Add an edge to the graph; if either vertex does not exist, it's added. 	 * This implementation allows the creation of multi-edges and self-loops. 	 */
 specifier|public
 name|void
 name|add
@@ -195,7 +196,7 @@ name|to
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * True iff graph contains vertex.      */
+comment|/** 	 * True iff graph contains vertex. 	 */
 specifier|public
 name|boolean
 name|contains
@@ -213,7 +214,7 @@ name|vertex
 argument_list|)
 return|;
 block|}
-comment|/**      * Remove an edge from the graph. Nothing happens if no such edge.      *      * @throws IllegalArgumentException if either vertex doesn't exist.      */
+comment|/** 	 * Remove an edge from the graph. Nothing happens if no such edge. 	 * 	 * @throws IllegalArgumentException 	 *             if either vertex doesn't exist. 	 */
 specifier|public
 name|void
 name|remove
@@ -264,7 +265,7 @@ name|to
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Return (as a Map) the out-degree of each vertex.      */
+comment|/** 	 * Return (as a Map) the out-degree of each vertex. 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -332,7 +333,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Return (as a Map) the in-degree of each vertex.      */
+comment|/** 	 * Return (as a Map) the in-degree of each vertex. 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -423,7 +424,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Return (as a List) the topological sort of the vertices; null for no such sort.      */
+comment|/** 	 * Return (as a List) the topological sort of the vertices; null for no such 	 * sort. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -602,7 +603,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * String representation of graph.      */
+comment|/** 	 * String representation of graph. 	 */
 specifier|public
 name|String
 name|toString
