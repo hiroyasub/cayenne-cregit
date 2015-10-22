@@ -209,6 +209,8 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
+annotation|@
+name|SafeVarargs
 specifier|public
 name|DefaultScope
 parameter_list|(

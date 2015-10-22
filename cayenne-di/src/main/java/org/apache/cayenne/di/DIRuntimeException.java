@@ -26,6 +26,14 @@ name|DIRuntimeException
 extends|extends
 name|RuntimeException
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|396131653561690312L
+decl_stmt|;
 comment|/**      * Creates new<code>ConfigurationException</code> without detail message.      */
 specifier|public
 name|DIRuntimeException
