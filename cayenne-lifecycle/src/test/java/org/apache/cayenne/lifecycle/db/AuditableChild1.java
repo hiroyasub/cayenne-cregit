@@ -41,7 +41,16 @@ class|class
 name|AuditableChild1
 extends|extends
 name|_AuditableChild1
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|7967782239405764614L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

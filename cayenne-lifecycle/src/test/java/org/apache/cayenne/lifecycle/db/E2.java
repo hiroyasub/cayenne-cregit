@@ -41,7 +41,16 @@ class|class
 name|E2
 extends|extends
 name|_E2
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

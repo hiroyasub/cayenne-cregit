@@ -62,7 +62,16 @@ class|class
 name|SortRoot
 extends|extends
 name|_SortRoot
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

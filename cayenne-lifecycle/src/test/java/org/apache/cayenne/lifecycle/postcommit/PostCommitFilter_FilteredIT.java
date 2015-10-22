@@ -527,7 +527,10 @@ name|get
 argument_list|(
 name|Auditable2
 operator|.
-name|CHAR_PROPERTY2_PROPERTY
+name|CHAR_PROPERTY2
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 operator|.
 name|getNewValue
@@ -768,7 +771,10 @@ name|get
 argument_list|(
 name|Auditable2
 operator|.
-name|CHAR_PROPERTY2_PROPERTY
+name|CHAR_PROPERTY2
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -1047,7 +1053,10 @@ name|get
 argument_list|(
 name|Auditable2
 operator|.
-name|CHAR_PROPERTY2_PROPERTY
+name|CHAR_PROPERTY2
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 operator|.
 name|getOldValue

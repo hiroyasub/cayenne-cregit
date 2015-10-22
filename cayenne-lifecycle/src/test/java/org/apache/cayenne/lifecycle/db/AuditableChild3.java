@@ -57,22 +57,27 @@ name|AuditableChild
 argument_list|(
 name|value
 operator|=
-name|_AuditableChild3
-operator|.
-name|PARENT_PROPERTY
+literal|"parent"
 argument_list|,
 name|ignoredProperties
 operator|=
-name|_AuditableChild3
-operator|.
-name|CHAR_PROPERTY1_PROPERTY
+literal|"charProperty1"
 argument_list|)
 specifier|public
 class|class
 name|AuditableChild3
 extends|extends
 name|_AuditableChild3
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

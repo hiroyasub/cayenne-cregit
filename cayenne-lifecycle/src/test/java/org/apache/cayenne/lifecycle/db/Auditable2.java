@@ -57,22 +57,27 @@ name|Auditable
 argument_list|(
 name|ignoredProperties
 operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY1_PROPERTY
+literal|"charProperty1"
 argument_list|,
 name|confidential
 operator|=
-name|_Auditable2
-operator|.
-name|CHAR_PROPERTY2_PROPERTY
+literal|"charProperty2"
 argument_list|)
 specifier|public
 class|class
 name|Auditable2
 extends|extends
 name|_Auditable2
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|5203324250911707978L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

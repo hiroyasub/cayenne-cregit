@@ -59,7 +59,16 @@ class|class
 name|Auditable1
 extends|extends
 name|_Auditable1
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|8458581370578140962L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

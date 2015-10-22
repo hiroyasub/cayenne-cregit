@@ -55,16 +55,23 @@ begin_class
 annotation|@
 name|ObjectIdRelationship
 argument_list|(
-name|_UuidRoot1
-operator|.
-name|UUID_PROPERTY
+literal|"uuid"
 argument_list|)
 specifier|public
 class|class
 name|UuidRoot1
 extends|extends
 name|_UuidRoot1
-block|{  }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
 end_class
 
 end_unit

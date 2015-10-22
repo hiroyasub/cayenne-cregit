@@ -71,25 +71,30 @@ begin_class
 annotation|@
 name|ObjectIdRelationship
 argument_list|(
-name|_AuditableChildUuid
-operator|.
-name|UUID_PROPERTY
+literal|"uuid"
 argument_list|)
 annotation|@
 name|AuditableChild
 argument_list|(
 name|objectIdRelationship
 operator|=
-name|_AuditableChildUuid
-operator|.
-name|UUID_PROPERTY
+literal|"uuid"
 argument_list|)
 specifier|public
 class|class
 name|AuditableChildUuid
 extends|extends
 name|_AuditableChildUuid
-block|{ }
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
 end_class
 
 end_unit
