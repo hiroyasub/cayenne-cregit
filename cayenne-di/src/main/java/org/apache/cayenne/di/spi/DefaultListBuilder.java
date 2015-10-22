@@ -205,6 +205,9 @@ throws|throws
 name|DIRuntimeException
 block|{
 name|Key
+argument_list|<
+name|?
+argument_list|>
 name|key
 init|=
 name|Key

@@ -132,6 +132,12 @@ name|providers
 decl_stmt|;
 specifier|private
 name|DIGraph
+argument_list|<
+name|Key
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
 name|graph
 decl_stmt|;
 specifier|private
@@ -160,6 +166,7 @@ name|graph
 operator|=
 operator|new
 name|DIGraph
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
