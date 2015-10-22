@@ -299,7 +299,7 @@ name|lifecycle
 operator|.
 name|unit
 operator|.
-name|LifecycleServerCase
+name|AuditableServerCase
 import|;
 end_import
 
@@ -318,7 +318,7 @@ specifier|public
 class|class
 name|AuditableFilterIT
 extends|extends
-name|LifecycleServerCase
+name|AuditableServerCase
 block|{
 annotation|@
 name|Test

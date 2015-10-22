@@ -327,7 +327,7 @@ name|lifecycle
 operator|.
 name|unit
 operator|.
-name|LifecycleServerCase
+name|AuditableServerCase
 import|;
 end_import
 
@@ -394,7 +394,7 @@ specifier|public
 class|class
 name|PostCommitFilter_AllIT
 extends|extends
-name|LifecycleServerCase
+name|AuditableServerCase
 block|{
 specifier|protected
 name|ObjectContext
