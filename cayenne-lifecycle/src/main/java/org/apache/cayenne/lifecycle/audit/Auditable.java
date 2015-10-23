@@ -89,6 +89,22 @@ name|Target
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|lifecycle
+operator|.
+name|postcommit
+operator|.
+name|Confidential
+import|;
+end_import
+
 begin_comment
 comment|/**  * An annotation that adds auditing behavior to DataObjects.  *   * @since 3.1  */
 end_comment
@@ -116,6 +132,7 @@ specifier|public
 annotation_defn|@interface
 name|Auditable
 block|{
+comment|/** 	 * Returns an array of entity properties that should be excluded from audit. 	 */
 name|String
 index|[]
 name|ignoredProperties
@@ -123,7 +140,28 @@ argument_list|()
 expr|default
 block|{}
 expr_stmt|;
-comment|/**      * @since 4.0      */
+comment|/** 	 * Returns whether all attributes should be excluded from audit. 	 *  	 * @since 4.0 	 */
+name|boolean
+name|ignoreAttributes
+parameter_list|()
+default|default
+literal|false
+function_decl|;
+comment|/** 	 * Returns whether all to-one relationships should be excluded from audit. 	 *  	 * @since 4.0 	 */
+name|boolean
+name|ignoreToOneRelationships
+parameter_list|()
+default|default
+literal|false
+function_decl|;
+comment|/** 	 * Returns whether all to-many relationships should be excluded from audit. 	 *  	 * @since 4.0 	 */
+name|boolean
+name|ignoreToManyRelationships
+parameter_list|()
+default|default
+literal|false
+function_decl|;
+comment|/** 	 * Returns an array of properties that should be treated as confidential. 	 * I.e. their change should be recorded, but their values should be hidden 	 * from listeners. In practice both old and new values will be set to an 	 * instance of {@link Confidential}. 	 *  	 * @since 4.0 	 */
 name|String
 index|[]
 name|confidential
