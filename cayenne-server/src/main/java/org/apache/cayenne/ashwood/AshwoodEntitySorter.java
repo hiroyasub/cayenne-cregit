@@ -638,9 +638,6 @@ block|{
 name|DbEntity
 name|origin
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|candidate
 operator|.
 name|getTargetEntity
@@ -712,9 +709,7 @@ name|reflexiveRels
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbRelationship
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|1
 argument_list|)
@@ -767,9 +762,7 @@ name|fks
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbAttribute
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|referentialDigraph
@@ -809,14 +802,7 @@ name|contractor
 init|=
 operator|new
 name|StrongConnection
-argument_list|<
-name|DbEntity
-argument_list|,
-name|List
-argument_list|<
-name|DbAttribute
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 name|referentialDigraph
 argument_list|)
@@ -840,20 +826,7 @@ name|contractedReferentialDigraph
 init|=
 operator|new
 name|MapDigraph
-argument_list|<
-name|Collection
-argument_list|<
-name|DbEntity
-argument_list|>
-argument_list|,
-name|Collection
-argument_list|<
-name|List
-argument_list|<
-name|DbAttribute
-argument_list|>
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|contractor
@@ -874,12 +847,7 @@ name|sorter
 init|=
 operator|new
 name|IndegreeTopologicalSort
-argument_list|<
-name|Collection
-argument_list|<
-name|DbEntity
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 name|contractedReferentialDigraph
 argument_list|)
@@ -894,11 +862,7 @@ name|components
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|DbEntity
-argument_list|,
-name|ComponentRecord
-argument_list|>
+argument_list|<>
 argument_list|(
 name|contractedReferentialDigraph
 operator|.
@@ -975,6 +939,8 @@ name|components
 expr_stmt|;
 block|}
 comment|/** 	 * @since 3.1 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setEntityResolver
@@ -996,6 +962,8 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|sortDbEntities
@@ -1026,6 +994,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|sortObjEntities
@@ -1056,6 +1026,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|sortObjectsForEntity
@@ -1271,11 +1243,7 @@ name|objectDependencyGraph
 init|=
 operator|new
 name|MapDigraph
-argument_list|<
-name|Persistent
-argument_list|,
-name|Boolean
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Object
@@ -1483,7 +1451,6 @@ range|:
 name|masters
 control|)
 block|{
-comment|// if (masterCandidate.equals(master)) {
 if|if
 condition|(
 name|masterCandidate
@@ -1519,9 +1486,7 @@ name|sorter
 init|=
 operator|new
 name|IndegreeTopologicalSort
-argument_list|<
-name|Persistent
-argument_list|>
+argument_list|<>
 argument_list|(
 name|objectDependencyGraph
 argument_list|)
@@ -1936,11 +1901,6 @@ name|DbEntity
 name|t2
 parameter_list|)
 block|{
-name|int
-name|result
-init|=
-literal|0
-decl_stmt|;
 if|if
 condition|(
 name|t1
@@ -1956,21 +1916,19 @@ name|t1
 operator|==
 literal|null
 condition|)
-name|result
-operator|=
+return|return
 operator|-
 literal|1
-expr_stmt|;
+return|;
 if|else if
 condition|(
 name|t2
 operator|==
 literal|null
 condition|)
-name|result
-operator|=
+return|return
 literal|1
-expr_stmt|;
+return|;
 else|else
 block|{
 name|ComponentRecord
@@ -2007,9 +1965,9 @@ name|rec2
 operator|.
 name|index
 decl_stmt|;
+name|int
 name|result
-operator|=
-operator|(
+init|=
 name|index1
 operator|>
 name|index2
@@ -2026,8 +1984,8 @@ literal|1
 else|:
 literal|0
 operator|)
-operator|)
-expr_stmt|;
+decl_stmt|;
+comment|// TODO: is this check really needed?
 if|if
 condition|(
 name|result
@@ -2042,6 +2000,7 @@ name|rec2
 operator|.
 name|component
 condition|)
+block|{
 name|result
 operator|=
 literal|0
@@ -2050,6 +2009,7 @@ block|}
 return|return
 name|result
 return|;
+block|}
 block|}
 block|}
 specifier|private

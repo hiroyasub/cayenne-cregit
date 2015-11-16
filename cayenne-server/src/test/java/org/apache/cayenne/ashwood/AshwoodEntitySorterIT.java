@@ -439,6 +439,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|ReflexiveAndToOne
 operator|.
