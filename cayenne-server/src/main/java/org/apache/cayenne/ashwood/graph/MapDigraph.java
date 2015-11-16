@@ -133,6 +133,8 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|addVertex
@@ -175,6 +177,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|addAllVertices
@@ -223,6 +227,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|V
 name|putArc
@@ -312,6 +318,8 @@ return|return
 name|oldArc
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|V
 name|getArc
@@ -358,6 +366,8 @@ name|destination
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|removeVertex
@@ -407,6 +417,8 @@ return|return
 literal|true
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|removeAllVertices
@@ -445,6 +457,8 @@ return|return
 name|modified
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Object
 name|removeArc
@@ -505,6 +519,8 @@ return|return
 name|arc
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|removeIncoming
@@ -566,6 +582,8 @@ return|return
 name|modified
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|removeOutgoing
@@ -624,6 +642,8 @@ return|return
 name|modified
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Iterator
 argument_list|<
@@ -642,6 +662,8 @@ name|iterator
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ArcIterator
 argument_list|<
@@ -658,6 +680,8 @@ name|AllArcIterator
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ArcIterator
 argument_list|<
@@ -694,6 +718,8 @@ name|vertex
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ArcIterator
 argument_list|<
@@ -715,11 +741,13 @@ argument_list|(
 name|vertex
 argument_list|)
 condition|)
+block|{
 return|return
 name|ArcIterator
 operator|.
 name|EMPTY_ITERATOR
 return|;
+block|}
 return|return
 operator|new
 name|IncomingArcIterator
@@ -728,6 +756,8 @@ name|vertex
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|order
@@ -740,6 +770,8 @@ name|size
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size
@@ -749,6 +781,8 @@ return|return
 name|size
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|outgoingSize
@@ -789,6 +823,8 @@ name|size
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|incomingSize
@@ -851,6 +887,8 @@ return|return
 name|count
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|containsVertex
@@ -868,6 +906,8 @@ name|vertex
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|containsAllVertices
@@ -893,6 +933,8 @@ name|vertices
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasArc
@@ -937,6 +979,8 @@ name|destination
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isEmpty
@@ -949,6 +993,8 @@ name|isEmpty
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isOutgoingEmpty
@@ -966,6 +1012,8 @@ operator|==
 literal|0
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isIncomingEmpty
@@ -1059,6 +1107,8 @@ name|next
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|E
 name|getOrigin
@@ -1068,6 +1118,8 @@ return|return
 name|origin
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|E
 name|getDestination
@@ -1077,6 +1129,8 @@ return|return
 name|destination
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNext
@@ -1088,6 +1142,8 @@ operator|!=
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|V
 name|next
@@ -1249,6 +1305,8 @@ return|return
 name|arc
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|remove
@@ -1326,6 +1384,8 @@ name|iterator
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|E
 name|getOrigin
@@ -1335,6 +1395,8 @@ return|return
 name|origin
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|E
 name|getDestination
@@ -1356,6 +1418,8 @@ name|getKey
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|hasNext
@@ -1368,6 +1432,8 @@ name|hasNext
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|V
 name|next
@@ -1387,6 +1453,8 @@ name|getValue
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|remove
