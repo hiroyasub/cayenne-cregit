@@ -228,9 +228,10 @@ name|vertex
 argument_list|)
 condition|)
 return|return
-name|ArcIterator
+name|EmptyIterator
 operator|.
-name|EMPTY_ITERATOR
+name|instance
+argument_list|()
 return|;
 return|return
 operator|new
@@ -282,9 +283,10 @@ name|vertex
 argument_list|)
 condition|)
 return|return
-name|ArcIterator
+name|EmptyIterator
 operator|.
-name|EMPTY_ITERATOR
+name|instance
+argument_list|()
 return|;
 return|return
 operator|new

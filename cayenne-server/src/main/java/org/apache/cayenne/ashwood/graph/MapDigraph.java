@@ -705,9 +705,10 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|ArcIterator
+name|EmptyIterator
 operator|.
-name|EMPTY_ITERATOR
+name|instance
+argument_list|()
 return|;
 block|}
 return|return
@@ -743,9 +744,10 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|ArcIterator
+name|EmptyIterator
 operator|.
-name|EMPTY_ITERATOR
+name|instance
+argument_list|()
 return|;
 block|}
 return|return
