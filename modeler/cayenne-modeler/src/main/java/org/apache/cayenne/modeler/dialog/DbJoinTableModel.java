@@ -294,7 +294,13 @@ operator|==
 name|SOURCE
 condition|)
 return|return
-literal|"Source"
+name|relationship
+operator|.
+name|getSourceEntity
+argument_list|()
+operator|.
+name|getName
+argument_list|()
 return|;
 if|else if
 condition|(
@@ -303,7 +309,13 @@ operator|==
 name|TARGET
 condition|)
 return|return
-literal|"Target"
+name|relationship
+operator|.
+name|getTargetEntity
+argument_list|()
+operator|.
+name|getName
+argument_list|()
 return|;
 else|else
 return|return
