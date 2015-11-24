@@ -382,15 +382,6 @@ name|MouseEvent
 name|e
 parameter_list|)
 block|{
-name|renderer
-operator|.
-name|setPressedColumn
-argument_list|(
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-comment|// clear
 name|header
 operator|.
 name|repaint
@@ -432,13 +423,6 @@ name|sortCol
 argument_list|)
 condition|)
 block|{
-name|renderer
-operator|.
-name|setPressedColumn
-argument_list|(
-name|col
-argument_list|)
-expr_stmt|;
 name|renderer
 operator|.
 name|setSelectedColumn
