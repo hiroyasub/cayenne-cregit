@@ -19,6 +19,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|remote
+operator|.
+name|RemoteSession
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -37,37 +51,10 @@ name|URL
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URLConnection
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|remote
-operator|.
-name|RemoteSession
-import|;
-end_import
-
-begin_comment
-comment|/**  * A proxy factory that handles HTTP sessions.  *   * @since 1.2  */
-end_comment
-
 begin_class
+specifier|public
 class|class
-name|HessianProxyFactory
+name|HessianURLConnectionFactory
 extends|extends
 name|com
 operator|.
@@ -77,7 +64,7 @@ name|hessian
 operator|.
 name|client
 operator|.
-name|HessianProxyFactory
+name|HessianURLConnectionFactory
 block|{
 specifier|static
 specifier|final
@@ -90,7 +77,7 @@ specifier|private
 name|HessianConnection
 name|clientConnection
 decl_stmt|;
-name|HessianProxyFactory
+name|HessianURLConnectionFactory
 parameter_list|(
 name|HessianConnection
 name|clientConnection
@@ -105,9 +92,17 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
-specifier|protected
-name|URLConnection
-name|openConnection
+specifier|public
+name|com
+operator|.
+name|caucho
+operator|.
+name|hessian
+operator|.
+name|client
+operator|.
+name|HessianConnection
+name|open
 parameter_list|(
 name|URL
 name|url
@@ -115,19 +110,24 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
-name|URLConnection
-name|connection
+name|com
+operator|.
+name|caucho
+operator|.
+name|hessian
+operator|.
+name|client
+operator|.
+name|HessianConnection
+name|hessianConnection
 init|=
 name|super
 operator|.
-name|openConnection
+name|open
 argument_list|(
 name|url
 argument_list|)
 decl_stmt|;
-comment|// unfortunately we can't read response cookies without completely reimplementing
-comment|// 'HessianProxy.invoke()'. Currently (3.0.13) it doesn't allow to cleanly
-comment|// intercept response... so extract session id from the RemoteSession....
 comment|// add session cookie
 name|RemoteSession
 name|session
@@ -151,9 +151,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|connection
+name|hessianConnection
 operator|.
-name|setRequestProperty
+name|addHeader
 argument_list|(
 literal|"Cookie"
 argument_list|,
@@ -169,7 +169,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|connection
+name|hessianConnection
 return|;
 block|}
 block|}

@@ -17,66 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|ObjectInputStream
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Serializable
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -255,8 +195,68 @@ name|LogFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|ObjectInputStream
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
 begin_comment
-comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike  * DataMap, EntityResolver is intended to work as a runtime container of  * mapping. DataMaps can be added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *   * @since 1.1  */
+comment|/**  * Represents a virtual shared namespace for zero or more DataMaps. Unlike  * DataMap, EntityResolver is intended to work as a runtime container of  * mapping. DataMaps can be added or removed dynamically at runtime.  *<p>  * EntityResolver is thread-safe.  *</p>  *  * @since 1.1  */
 end_comment
 
 begin_class
@@ -364,7 +364,7 @@ name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships,      * marking newly created relationships as "runtime".      *       * @since 3.0      */
+comment|/**      * Updates missing mapping artifacts that can be guessed from other mapping      * information. This implementation creates missing reverse relationships,      * marking newly created relationships as "runtime".      *      * @since 3.0      */
 specifier|public
 name|void
 name|applyDBLayerDefaults
@@ -663,7 +663,7 @@ name|callbackRegistry
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns a {@link LifecycleCallbackRegistry} for handling callbacks.      * Registry is lazily initialized on first call.      *       * @since 3.0      */
+comment|/**      * Returns a {@link LifecycleCallbackRegistry} for handling callbacks.      * Registry is lazily initialized on first call.      *      * @since 3.0      */
 specifier|public
 name|LifecycleCallbackRegistry
 name|getCallbackRegistry
@@ -684,7 +684,7 @@ return|return
 name|callbackRegistry
 return|;
 block|}
-comment|/**      * Sets a lifecycle callbacks registry of the EntityResolver. Users rarely      * if ever need to call this method as Cayenne would instantiate a registry      * itself as needed based on mapped configuration.      *       * @since 3.0      */
+comment|/**      * Sets a lifecycle callbacks registry of the EntityResolver. Users rarely      * if ever need to call this method as Cayenne would instantiate a registry      * itself as needed based on mapped configuration.      *      * @since 3.0      */
 specifier|public
 name|void
 name|setCallbackRegistry
@@ -700,7 +700,7 @@ operator|=
 name|callbackRegistry
 expr_stmt|;
 block|}
-comment|/**      * Returns ClientEntityResolver with mapping information that only includes      * entities available on CWS Client Tier.      *       * @since 1.2      */
+comment|/**      * Returns ClientEntityResolver with mapping information that only includes      * entities available on CWS Client Tier.      *      * @since 1.2      */
 specifier|public
 name|EntityResolver
 name|getClientEntityResolver
@@ -788,6 +788,9 @@ argument_list|>
 name|getDbEntities
 parameter_list|()
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
@@ -803,6 +806,9 @@ argument_list|>
 name|getObjEntities
 parameter_list|()
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
@@ -819,6 +825,9 @@ argument_list|>
 name|getEmbeddables
 parameter_list|()
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
@@ -851,6 +860,9 @@ argument_list|>
 name|getResults
 parameter_list|()
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
@@ -866,6 +878,9 @@ argument_list|>
 name|getProcedures
 parameter_list|()
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
@@ -881,6 +896,9 @@ argument_list|>
 name|getQueries
 parameter_list|()
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
@@ -896,6 +914,9 @@ name|String
 name|name
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|DbEntity
 name|result
 init|=
@@ -940,6 +961,9 @@ name|String
 name|name
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|ObjEntity
 name|result
 init|=
@@ -984,6 +1008,9 @@ name|String
 name|procedureName
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|Procedure
 name|result
 init|=
@@ -1029,6 +1056,9 @@ name|String
 name|name
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|Query
 name|result
 init|=
@@ -1074,6 +1104,9 @@ name|String
 name|className
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|Embeddable
 name|result
 init|=
@@ -1119,6 +1152,9 @@ name|String
 name|name
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|SQLResult
 name|result
 init|=
@@ -1155,7 +1191,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/**      * Returns ClassDescriptor for the ObjEntity matching the name. Returns null      * if no matching entity exists.      *       * @since 1.2      */
+comment|/**      * Returns ClassDescriptor for the ObjEntity matching the name. Returns null      * if no matching entity exists.      *      * @since 1.2      */
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -1228,7 +1264,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes all entity mappings from the cache.      *       * @deprecated since 4.0 in favor of {@link #refreshMappingCache()}.      */
+comment|/**      * Removes all entity mappings from the cache.      *      * @deprecated since 4.0 in favor of {@link #refreshMappingCache()}.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1240,7 +1276,24 @@ name|refreshMappingCache
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Refreshes entity cache to reflect the current state of the DataMaps in      * the EntityResolver.      *       * @since 4.0      */
+specifier|private
+name|void
+name|checkMappingCache
+parameter_list|()
+block|{
+if|if
+condition|(
+name|mappingCache
+operator|==
+literal|null
+condition|)
+block|{
+name|refreshMappingCache
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+comment|/**      * Refreshes entity cache to reflect the current state of the DataMaps in      * the EntityResolver.      *      * @since 4.0      */
 specifier|public
 name|void
 name|refreshMappingCache
@@ -1383,6 +1436,9 @@ name|String
 name|entityName
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|EntityInheritanceTree
 name|tree
 init|=
@@ -1439,7 +1495,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that maps to the services the specified class      *       * @return the required ObjEntity or null if there is none that matches the      *         specifier      *       * @since 4.0      */
+comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that maps to the services the specified class      *      * @return the required ObjEntity or null if there is none that matches the      *         specifier      *      * @since 4.0      */
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -1451,6 +1507,9 @@ argument_list|>
 name|entityClass
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 name|ObjEntity
 name|result
 init|=
@@ -1514,6 +1573,9 @@ name|Persistent
 name|object
 parameter_list|)
 block|{
+name|checkMappingCache
+argument_list|()
+expr_stmt|;
 return|return
 name|mappingCache
 operator|.
