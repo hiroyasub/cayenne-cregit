@@ -145,6 +145,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|LIFECYCLE_CALLBACKS_ORDER_PROJECT
+init|=
+literal|"cayenne-lifecycle-callbacks-order.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|LIFECYCLES_PROJECT
 init|=
 literal|"cayenne-lifecycles.xml"

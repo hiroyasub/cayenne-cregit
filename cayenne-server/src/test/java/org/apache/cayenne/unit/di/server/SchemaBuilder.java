@@ -599,6 +599,8 @@ literal|"reflexive.map.xml"
 block|,
 literal|"delete-rules.map.xml"
 block|,
+literal|"lifecycle-callbacks-order.map.xml"
+block|,
 literal|"lifecycles.map.xml"
 block|,
 literal|"map-to-many.map.xml"
