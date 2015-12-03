@@ -17,11 +17,13 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|sql
+name|apache
 operator|.
-name|Driver
+name|cayenne
+operator|.
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -37,13 +39,11 @@ end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|sql
 operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
+name|Driver
 import|;
 end_import
 
@@ -209,6 +209,16 @@ operator|new
 name|PoolingDataSourceBuilder
 argument_list|(
 name|this
+argument_list|)
+operator|.
+name|minConnections
+argument_list|(
+name|minConnection
+argument_list|)
+operator|.
+name|maxConnections
+argument_list|(
+name|maxConnections
 argument_list|)
 return|;
 block|}
