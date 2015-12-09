@@ -484,6 +484,14 @@ name|LOCKING
 init|=
 literal|5
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|COLUMN_COUNT
+init|=
+literal|6
+decl_stmt|;
 specifier|private
 name|ObjEntity
 name|entity
@@ -781,7 +789,7 @@ name|getColumnCount
 parameter_list|()
 block|{
 return|return
-literal|6
+name|COLUMN_COUNT
 return|;
 block|}
 specifier|public

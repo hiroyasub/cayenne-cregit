@@ -393,6 +393,13 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+name|comboBoxPathChooser
+operator|.
+name|setToolTipText
+argument_list|(
+literal|"To choose relationship press enter two times. \n To choose next relationship press dot."
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Override
