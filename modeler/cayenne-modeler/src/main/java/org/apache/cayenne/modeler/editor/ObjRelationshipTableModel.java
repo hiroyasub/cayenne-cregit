@@ -369,13 +369,13 @@ case|case
 name|REL_MAP_KEY
 case|:
 return|return
-literal|"Map key"
+literal|"Map Key"
 return|;
 case|case
 name|REL_TARGET_PATH
 case|:
 return|return
-literal|"DbRelationshipPath"
+literal|"DbRelationship Path"
 return|;
 default|default:
 return|return

@@ -827,7 +827,7 @@ case|case
 name|DB_ATTRIBUTE
 case|:
 return|return
-literal|"DbAttributePath"
+literal|"DbAttribute Path"
 return|;
 case|case
 name|DB_ATTRIBUTE_TYPE
