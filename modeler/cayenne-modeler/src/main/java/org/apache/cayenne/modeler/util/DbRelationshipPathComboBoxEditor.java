@@ -391,7 +391,7 @@ name|comboBoxPathChooser
 operator|.
 name|setToolTipText
 argument_list|(
-literal|"To choose relationship press enter two times. \n To choose next relationship press dot."
+literal|"To choose relationship press enter two times.To choose next relationship press dot."
 argument_list|)
 expr_stmt|;
 name|JTextComponent
