@@ -1045,7 +1045,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Sets the relationships to the specified<code>DataObject</code> objects. 	 *  	 *<p> 	 * New relationships will be created with 	 * {@link #addToManyTarget(String, org.apache.cayenne.DataObject, boolean)}, 	 * already established relationships stay untouched. Missing relationships 	 * will be removed with 	 * {@link #removeToManyTarget(String, org.apache.cayenne.DataObject, boolean)} 	 * and returnd as List. You may delete them manually. 	 *</p> 	 *  	 *<p> 	 * Notice: Moving an object relationship to another object, is still needing 	 * an manually "unregister" from the first object by 	 * {@link #removeToManyTarget(String, org.apache.cayenne.DataObject, boolean)} 	 *</p> 	 *  	 * @param relName 	 *            name of the relation 	 * @param values 	 *<code>DataObject</code> objects of this 	 *<code>Collection</code> are set to the object. No changes will 	 *            be made to the the<code>Collection</code>, a copy is used. It 	 *            is safe to pass a persisted<code>Collection</code> of another 	 *            object. 	 * @param setReverse 	 *            update reverse relationships 	 * @return<code>List&lt;? extends DataObject&gt;</code> of unrelated 	 *         DataObjects. If no relationship was removed an empty List is 	 *         returned. 	 * @throws NullPointerException 	 *             if no relationship could be read by relName, or if the passed 	 *<code>Collection</code> is null. To clear all relationships 	 *             use an empty<code>Collection</code> 	 * @since 4.0.M3 	 */
+comment|/** 	 * Sets the relationships to the specified<code>DataObject</code> objects. 	 *  	 *<p> 	 * New relationships will be created with 	 * {@link #addToManyTarget(String, org.apache.cayenne.DataObject, boolean)}, 	 * already established relationships stay untouched. Missing relationships 	 * will be removed with 	 * {@link #removeToManyTarget(String, org.apache.cayenne.DataObject, boolean)} 	 * and returnd as List. You may delete them manually. 	 *</p> 	 *  	 *<p> 	 * Notice: Moving an object relationship to another object, is still needing 	 * an manually "unregister" from the first object by 	 * {@link #removeToManyTarget(String, org.apache.cayenne.DataObject, boolean)} 	 *</p> 	 *  	 * @param relName 	 *            name of the relation 	 * @param values 	 *<code>DataObject</code> objects of this 	 *<code>Collection</code> are set to the object. No changes will 	 *            be made to the the<code>Collection</code>, a copy is used. It 	 *            is safe to pass a persisted<code>Collection</code> of another 	 *            object. 	 * @param setReverse 	 *            update reverse relationships 	 * @return<code>List&lt;? extends DataObject&gt;</code> of unrelated 	 *         DataObjects. If no relationship was removed an empty List is 	 *         returned. 	 * @throws IllegalArgumentException 	 *             if no relationship could be read by relName, or if the passed 	 *<code>Collection</code> is null. To clear all relationships 	 *             use an empty<code>Collection</code> 	 * @throws UnsupportedOperationException 	 *             if the relation Collection Type is neither 	 *<code>java.util.Collection</code> nor 	 *<code>java.util.Map</code> 	 * @since 4.0.M3 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|List
 argument_list|<
@@ -1079,8 +1084,10 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
-argument_list|()
+name|IllegalArgumentException
+argument_list|(
+literal|"values Collection is null. To clear all relationships use an empty Collection"
+argument_list|)
 throw|;
 block|}
 name|Object
@@ -1100,7 +1107,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"unknown relName "
 operator|+
@@ -1138,7 +1145,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|dataObjects
+name|property
 operator|instanceof
 name|Collection
 condition|)
@@ -1155,9 +1162,9 @@ else|else
 block|{
 throw|throw
 operator|new
-name|RuntimeException
+name|UnsupportedOperationException
 argument_list|(
-literal|"setToManyTarget only operates with Map and Collection types"
+literal|"setToManyTarget operates only with Map or Collection types"
 argument_list|)
 throw|;
 block|}
