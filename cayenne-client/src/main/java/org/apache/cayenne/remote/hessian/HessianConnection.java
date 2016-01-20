@@ -807,7 +807,6 @@ argument_list|(
 name|password
 argument_list|)
 expr_stmt|;
-comment|//        factory.setReadTimeout(getReadTimeout());
 name|this
 operator|.
 name|serializerFactory

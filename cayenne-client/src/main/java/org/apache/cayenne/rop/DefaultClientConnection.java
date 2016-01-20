@@ -153,6 +153,15 @@ operator|=
 name|sharedSession
 expr_stmt|;
 block|}
+specifier|public
+name|RemoteSession
+name|getSession
+parameter_list|()
+block|{
+return|return
+name|session
+return|;
+block|}
 annotation|@
 name|Override
 specifier|protected

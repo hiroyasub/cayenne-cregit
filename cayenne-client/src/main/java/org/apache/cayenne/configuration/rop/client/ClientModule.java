@@ -239,22 +239,6 @@ name|ClientHessianSerializationServiceProvider
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|rop
-operator|.
-name|http
-operator|.
-name|HttpROPConnectorProvider
-import|;
-end_import
-
 begin_comment
 comment|/**  * A DI module containing all Cayenne ROP client runtime configurations.  *   * @since 3.1  */
 end_comment
@@ -363,22 +347,6 @@ operator|.
 name|toProvider
 argument_list|(
 name|ClientHessianSerializationServiceProvider
-operator|.
-name|class
-argument_list|)
-expr_stmt|;
-name|binder
-operator|.
-name|bind
-argument_list|(
-name|ROPConnector
-operator|.
-name|class
-argument_list|)
-operator|.
-name|toProvider
-argument_list|(
-name|HttpROPConnectorProvider
 operator|.
 name|class
 argument_list|)
