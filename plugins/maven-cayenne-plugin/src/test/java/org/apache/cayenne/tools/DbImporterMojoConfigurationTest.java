@@ -23,11 +23,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|DefaultReverseEngineeringLoaderTest
 operator|.
@@ -131,11 +127,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|Schema
 import|;
@@ -164,16 +156,6 @@ operator|.
 name|junit
 operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
 import|;
 end_import
 

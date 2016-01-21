@@ -545,7 +545,7 @@ name|modeler
 operator|.
 name|action
 operator|.
-name|ImportDBAction
+name|ReverseEngineeringAction
 import|;
 end_import
 
@@ -1870,7 +1870,7 @@ name|add
 argument_list|(
 name|getAction
 argument_list|(
-name|ImportDBAction
+name|ReverseEngineeringAction
 operator|.
 name|class
 argument_list|)

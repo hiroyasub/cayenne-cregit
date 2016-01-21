@@ -647,7 +647,7 @@ expr_stmt|;
 name|registerAction
 argument_list|(
 operator|new
-name|ImportDBAction
+name|ReverseEngineeringAction
 argument_list|(
 name|application
 argument_list|)
@@ -1157,7 +1157,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|ImportDBAction
+name|ReverseEngineeringAction
 operator|.
 name|class
 operator|.

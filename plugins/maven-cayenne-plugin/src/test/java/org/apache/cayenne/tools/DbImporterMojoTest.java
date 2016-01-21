@@ -71,11 +71,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|Catalog
 import|;
@@ -89,11 +85,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|IncludeTable
 import|;
@@ -107,11 +99,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|Schema
 import|;

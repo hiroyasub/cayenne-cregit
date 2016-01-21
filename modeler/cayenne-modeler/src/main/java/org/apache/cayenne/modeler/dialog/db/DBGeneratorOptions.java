@@ -1169,11 +1169,11 @@ name|void
 name|generateSchemaAction
 parameter_list|()
 block|{
-name|DataSourceWizard
+name|DataSourceController
 name|connectWizard
 init|=
 operator|new
-name|DataSourceWizard
+name|DataSourceController
 argument_list|(
 name|this
 operator|.

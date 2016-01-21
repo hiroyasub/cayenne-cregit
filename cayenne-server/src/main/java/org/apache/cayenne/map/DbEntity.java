@@ -2406,6 +2406,13 @@ operator|.
 name|getNamespace
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|mns
+operator|!=
+literal|null
+condition|)
+block|{
 for|for
 control|(
 name|ObjEntity
@@ -2435,6 +2442,7 @@ argument_list|(
 name|objEntity
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return

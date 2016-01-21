@@ -129,7 +129,7 @@ name|dialog
 operator|.
 name|db
 operator|.
-name|DataSourceWizard
+name|DataSourceController
 import|;
 end_import
 
@@ -244,11 +244,11 @@ argument_list|(
 name|nodeInfo
 argument_list|)
 decl_stmt|;
-name|DataSourceWizard
+name|DataSourceController
 name|connectWizard
 init|=
 operator|new
-name|DataSourceWizard
+name|DataSourceController
 argument_list|(
 name|getProjectController
 argument_list|()
@@ -432,7 +432,7 @@ name|String
 argument_list|>
 name|getSchemas
 parameter_list|(
-name|DataSourceWizard
+name|DataSourceController
 name|connectWizard
 parameter_list|)
 throws|throws

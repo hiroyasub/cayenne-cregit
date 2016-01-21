@@ -203,11 +203,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|Catalog
 import|;
@@ -221,11 +217,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|FiltersConfigBuilder
 import|;
@@ -239,11 +231,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|ReverseEngineering
 import|;
@@ -257,11 +245,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-operator|.
 name|dbimport
-operator|.
-name|config
 operator|.
 name|Schema
 import|;
@@ -344,16 +328,6 @@ operator|.
 name|sql
 operator|.
 name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
 import|;
 end_import
 
