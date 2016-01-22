@@ -215,7 +215,7 @@ name|RELATIONSHIPS_SET_TO_MANY_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|CayenneDataObjectSetToManySetTest
+name|CayenneDataObjectSetToManySetIT
 extends|extends
 name|ServerCase
 block|{
