@@ -21,11 +21,17 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|List
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|ParameterBinding
 import|;
 end_import
 
@@ -39,9 +45,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|translator
+name|types
 operator|.
-name|ParameterBinding
+name|ExtendedType
 import|;
 end_import
 
@@ -70,6 +76,20 @@ operator|.
 name|dba
 operator|.
 name|QuotingStrategy
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|TypesMapping
 import|;
 end_import
 
@@ -112,6 +132,16 @@ operator|.
 name|query
 operator|.
 name|InsertBatchQuery
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
 import|;
 end_import
 
@@ -384,6 +414,32 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
+name|String
+name|typeName
+init|=
+name|TypesMapping
+operator|.
+name|getJavaBySqlType
+argument_list|(
+name|a
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|ExtendedType
+name|extendedType
+init|=
+name|adapter
+operator|.
+name|getExtendedTypes
+argument_list|()
+operator|.
+name|getRegisteredType
+argument_list|(
+name|typeName
+argument_list|)
+decl_stmt|;
 name|bindings
 index|[
 name|i
@@ -393,6 +449,8 @@ operator|new
 name|ParameterBinding
 argument_list|(
 name|a
+argument_list|,
+name|extendedType
 argument_list|)
 expr_stmt|;
 comment|// include/exclude state depends on DbAttribute only and can be
