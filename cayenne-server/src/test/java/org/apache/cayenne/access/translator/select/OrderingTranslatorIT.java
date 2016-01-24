@@ -32,18 +32,6 @@ import|;
 end_import
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -540,6 +528,9 @@ operator|new
 name|StringBuilder
 argument_list|()
 decl_stmt|;
+name|String
+name|translated
+init|=
 operator|new
 name|OrderingTranslator
 argument_list|(
@@ -550,28 +541,12 @@ name|appendPart
 argument_list|(
 name|out
 argument_list|)
-expr_stmt|;
-name|String
-name|translated
-init|=
-name|out
 operator|.
 name|toString
 argument_list|()
 decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|translated
-argument_list|)
-expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"Unexpected translation: "
-operator|+
-name|translated
-operator|+
-literal|"...."
-argument_list|,
 name|expectedSQL
 argument_list|,
 name|translated
