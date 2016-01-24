@@ -1440,13 +1440,8 @@ return|;
 block|}
 block|}
 return|return
-operator|new
-name|DbAttribute
-argument_list|(
-literal|"null"
-argument_list|)
+literal|null
 return|;
-comment|//Make tests passed. Should never happen in runtime.
 block|}
 comment|// naive algorithm:
 comment|// if at least one of the sibling operands is a
