@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|/*****************************************************************  * Licensed to the Apache Software Foundation (ASF) under one  * or more contributor license agreements.  See the NOTICE file  * distributed with this work for additional information  * regarding copyright ownership.  The ASF licenses this file  * to you under the Apache License, Version 2.0 (the  * "License"); you may not use this file except in compliance  * with the License.  You may obtain a copy of the License at  *<p/>  * http://www.apache.org/licenses/LICENSE-2.0  *<p/>  * Unless required by applicable law or agreed to in writing,  * software distributed under the License is distributed on an  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  * KIND, either express or implied.  See the License for the  * specific language governing permissions and limitations  * under the License.  ****************************************************************/
 end_comment
 
 begin_package
@@ -18,36 +18,6 @@ operator|.
 name|select
 package|;
 end_package
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
 
 begin_import
 import|import
@@ -73,9 +43,39 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ExtendedType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|TypesMapping
 import|;
 end_import
 
@@ -160,6 +160,36 @@ operator|.
 name|query
 operator|.
 name|QueryMetadata
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
 import|;
 end_import
 
@@ -259,7 +289,7 @@ argument_list|>
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * Returns aliases for the path splits defined in the query. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Returns aliases for the path splits defined in the query. 	 * 	 * @since 3.0 	 */
 specifier|protected
 name|Map
 argument_list|<
@@ -314,21 +344,21 @@ return|return
 name|queryMetadata
 return|;
 block|}
-comment|/** 	 * A callback invoked by a child qualifier or ordering processor allowing 	 * query assembler to reset its join stack. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * A callback invoked by a child qualifier or ordering processor allowing 	 * query assembler to reset its join stack. 	 * 	 * @since 3.0 	 */
 specifier|public
 specifier|abstract
 name|void
 name|resetJoinStack
 parameter_list|()
 function_decl|;
-comment|/** 	 * Returns an alias of the table which is currently at the top of the join 	 * stack. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Returns an alias of the table which is currently at the top of the join 	 * stack. 	 * 	 * @since 3.0 	 */
 specifier|public
 specifier|abstract
 name|String
 name|getCurrentAlias
 parameter_list|()
 function_decl|;
-comment|/** 	 * Appends a join with given semantics to the query. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Appends a join with given semantics to the query. 	 * 	 * @since 3.0 	 */
 specifier|public
 specifier|abstract
 name|void
@@ -395,7 +425,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|/** 	 * Registers<code>anObject</code> as a PreparedStatement parameter. 	 *  	 * @param anObject 	 *            object that represents a value of DbAttribute 	 * @param dbAttr 	 *            DbAttribute being processed. 	 */
+comment|/** 	 * Registers<code>anObject</code> as a PreparedStatement parameter. 	 * 	 * @param anObject 	 *            object that represents a value of DbAttribute 	 * @param dbAttr 	 *            DbAttribute being processed. 	 */
 specifier|public
 name|void
 name|addToParamList
@@ -407,6 +437,32 @@ name|Object
 name|anObject
 parameter_list|)
 block|{
+name|String
+name|typeName
+init|=
+name|TypesMapping
+operator|.
+name|getJavaBySqlType
+argument_list|(
+name|dbAttr
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|ExtendedType
+name|extendedType
+init|=
+name|adapter
+operator|.
+name|getExtendedTypes
+argument_list|()
+operator|.
+name|getRegisteredType
+argument_list|(
+name|typeName
+argument_list|)
+decl_stmt|;
 name|ParameterBinding
 name|binding
 init|=
@@ -414,6 +470,8 @@ operator|new
 name|ParameterBinding
 argument_list|(
 name|dbAttr
+argument_list|,
+name|extendedType
 argument_list|)
 decl_stmt|;
 name|binding
