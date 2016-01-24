@@ -130,7 +130,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DefaultClientConnectionProvider
+name|HttpClientConnectionProvider
 implements|implements
 name|Provider
 argument_list|<
@@ -187,11 +187,11 @@ argument_list|,
 name|ropConnector
 argument_list|)
 decl_stmt|;
-name|DefaultClientConnection
+name|HttpClientConnection
 name|clientConnection
 init|=
 operator|new
-name|DefaultClientConnection
+name|HttpClientConnection
 argument_list|(
 name|remoteService
 argument_list|,

@@ -378,7 +378,7 @@ argument_list|)
 operator|.
 name|toProvider
 argument_list|(
-name|DefaultClientConnectionProvider
+name|HttpClientConnectionProvider
 operator|.
 name|class
 argument_list|)

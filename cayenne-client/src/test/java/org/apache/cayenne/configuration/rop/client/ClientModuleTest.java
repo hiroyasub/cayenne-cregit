@@ -167,7 +167,7 @@ name|cayenne
 operator|.
 name|rop
 operator|.
-name|DefaultClientConnection
+name|HttpClientConnection
 import|;
 end_import
 
@@ -325,7 +325,7 @@ name|assertTrue
 argument_list|(
 name|connection
 operator|instanceof
-name|DefaultClientConnection
+name|HttpClientConnection
 argument_list|)
 expr_stmt|;
 name|assertSame

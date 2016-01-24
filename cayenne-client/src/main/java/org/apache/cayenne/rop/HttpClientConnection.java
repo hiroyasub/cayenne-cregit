@@ -114,7 +114,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DefaultClientConnection
+name|HttpClientConnection
 extends|extends
 name|BaseConnection
 block|{
@@ -131,7 +131,7 @@ name|String
 name|sharedSessionName
 decl_stmt|;
 specifier|public
-name|DefaultClientConnection
+name|HttpClientConnection
 parameter_list|(
 name|RemoteService
 name|remoteService

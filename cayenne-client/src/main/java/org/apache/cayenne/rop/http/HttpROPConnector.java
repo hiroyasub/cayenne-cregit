@@ -41,7 +41,7 @@ name|cayenne
 operator|.
 name|rop
 operator|.
-name|DefaultClientConnection
+name|HttpClientConnection
 import|;
 end_import
 
@@ -213,7 +213,7 @@ init|=
 literal|"JSESSIONID"
 decl_stmt|;
 specifier|private
-name|DefaultClientConnection
+name|HttpClientConnection
 name|clientConnection
 decl_stmt|;
 specifier|private
@@ -268,7 +268,7 @@ specifier|public
 name|void
 name|setClientConnection
 parameter_list|(
-name|DefaultClientConnection
+name|HttpClientConnection
 name|clientConnection
 parameter_list|)
 block|{
