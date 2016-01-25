@@ -41,26 +41,8 @@ name|CayenneRuntime
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|rop
-operator|.
-name|server
-operator|.
-name|ROPHessianServlet
-import|;
-end_import
-
 begin_comment
-comment|/**  * A helper class to retrieve and store {@link CayenneRuntime} in the  * {@link ServletContext}. All Cayenne web configuration objects, such as  * {@link CayenneFilter} and {@link ROPHessianServlet}, are using this class to access  * runtime.  *   * @since 3.1  */
+comment|/**  * A helper class to retrieve and store {@link CayenneRuntime} in the  * {@link ServletContext}. All Cayenne web configuration objects, such as  * {@link CayenneFilter} and {@link org.apache.cayenne.rop.ROPServlet}, are using this class to access  * runtime.  *   * @since 3.1  */
 end_comment
 
 begin_class

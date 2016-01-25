@@ -35,17 +35,23 @@ name|InputStream
 import|;
 end_import
 
+begin_comment
+comment|/**  * ROP network connectivity interface.  *   * @since 4.0  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
 name|ROPConnector
 block|{
+comment|/** 	 * Establishes a dedicated session with Cayenne DataChannel, returning session id. 	 */
 name|InputStream
 name|establishSession
 parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
+comment|/** 	 * Creates a new session with the specified or joins an existing one. This method is 	 * used to bootstrap collaborating clients of a single "group chat". 	 */
 name|InputStream
 name|establishSharedSession
 parameter_list|(
@@ -55,6 +61,7 @@ parameter_list|)
 throws|throws
 name|IOException
 function_decl|;
+comment|/** 	 * Processes message on a remote server, returning the result of such processing. 	 */
 name|InputStream
 name|sendMessage
 parameter_list|(
