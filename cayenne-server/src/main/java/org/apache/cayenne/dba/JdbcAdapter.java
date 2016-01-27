@@ -51,6 +51,54 @@ name|cayenne
 operator|.
 name|access
 operator|.
+name|jdbc
+operator|.
+name|SQLParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|ParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|ProcedureParameterBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
 name|translator
 operator|.
 name|batch
@@ -455,6 +503,16 @@ name|java
 operator|.
 name|sql
 operator|.
+name|CallableStatement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|PreparedStatement
 import|;
 end_import
@@ -570,7 +628,7 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 *             DataNode. 	 */
+comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 * DataNode. 	 */
 annotation|@
 name|Inject
 specifier|protected
@@ -731,7 +789,7 @@ name|extendedTypeFactories
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns default separator - a semicolon. 	 *  	 * @since 1.0.4 	 */
+comment|/** 	 * Returns default separator - a semicolon. 	 * 	 * @since 1.0.4 	 */
 annotation|@
 name|Override
 specifier|public
@@ -755,7 +813,7 @@ operator|.
 name|logger
 return|;
 block|}
-comment|/** 	 * Locates and returns a named adapter resource. A resource can be an XML 	 * file, etc. 	 *<p> 	 * This implementation is based on the premise that each adapter is located 	 * in its own Java package and all resources are in the same package as 	 * well. Resource lookup is recursive, so that if DbAdapter is a subclass of 	 * another adapter, parent adapter package is searched as a failover. 	 *</p> 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Locates and returns a named adapter resource. A resource can be an XML 	 * file, etc. 	 *<p> 	 * This implementation is based on the premise that each adapter is located 	 * in its own Java package and all resources are in the same package as 	 * well. Resource lookup is recursive, so that if DbAdapter is a subclass of 	 * another adapter, parent adapter package is searched as a failover. 	 *</p> 	 * 	 * @since 3.0 	 */
 specifier|protected
 name|URL
 name|findResource
@@ -955,7 +1013,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates and returns an {@link EJBQLTranslatorFactory} used to generate 	 * visitors for EJBQL to SQL translations. This method should be overriden 	 * by subclasses that need to customize EJBQL generation. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Creates and returns an {@link EJBQLTranslatorFactory} used to generate 	 * visitors for EJBQL to SQL translations. This method should be overriden 	 * by subclasses that need to customize EJBQL generation. 	 * 	 * @since 3.0 	 */
 specifier|protected
 name|EJBQLTranslatorFactory
 name|createEJBQLTranslatorFactory
@@ -991,7 +1049,7 @@ return|return
 name|pkGenerator
 return|;
 block|}
-comment|/** 	 * Sets new primary key generator. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Sets new primary key generator. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setPkGenerator
@@ -1007,7 +1065,7 @@ operator|=
 name|pkGenerator
 expr_stmt|;
 block|}
-comment|/** 	 * Returns true. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns true. 	 * 	 * @since 1.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1047,7 +1105,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/** 	 * Returns true if supplied type can have a length attribute as a part of 	 * column definition 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Returns true if supplied type can have a length attribute as a part of 	 * column definition 	 * 	 * @since 4.0 	 */
 specifier|public
 name|boolean
 name|typeSupportsLength
@@ -1065,7 +1123,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns true if supplied type can have a length attribute as a part of 	 * column definition 	 *  	 * TODO: this is a static method only to support the deprecated method 	 * {@link TypesMapping#supportsLength(int)} When the deprecated method is 	 * removed this body should be moved in to {@link #typeSupportsLength(int)} 	 *  	 * @deprecated 	 */
+comment|/** 	 * Returns true if supplied type can have a length attribute as a part of 	 * column definition 	 *<p/> 	 * TODO: this is a static method only to support the deprecated method 	 * {@link TypesMapping#supportsLength(int)} When the deprecated method is 	 * removed this body should be moved in to {@link #typeSupportsLength(int)} 	 * 	 * @deprecated 	 */
 specifier|static
 name|boolean
 name|supportsLength
@@ -1472,7 +1530,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Appends SQL for column creation to CREATE TABLE buffer. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Appends SQL for column creation to CREATE TABLE buffer. 	 * 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1745,7 +1803,7 @@ literal|0
 index|]
 return|;
 block|}
-comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns. 	 * 	 * @since 1.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2250,7 +2308,7 @@ return|return
 name|translator
 return|;
 block|}
-comment|/** 	 * Uses JdbcActionBuilder to create the right action. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Uses JdbcActionBuilder to create the right action. 	 * 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2314,17 +2372,8 @@ parameter_list|(
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|Object
-name|object
-parameter_list|,
-name|int
-name|pos
-parameter_list|,
-name|int
-name|sqlType
-parameter_list|,
-name|int
-name|scale
+name|ParameterBinding
+name|binding
 parameter_list|)
 throws|throws
 name|SQLException
@@ -2333,7 +2382,10 @@ name|Exception
 block|{
 if|if
 condition|(
-name|object
+name|binding
+operator|.
+name|getValue
+argument_list|()
 operator|==
 literal|null
 condition|)
@@ -2342,9 +2394,15 @@ name|statement
 operator|.
 name|setNull
 argument_list|(
-name|pos
+name|binding
+operator|.
+name|getStatementPosition
+argument_list|()
 argument_list|,
-name|sqlType
+name|binding
+operator|.
+name|getType
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2358,7 +2416,10 @@ argument_list|()
 operator|.
 name|getRegisteredType
 argument_list|(
-name|object
+name|binding
+operator|.
+name|getValue
+argument_list|()
 operator|.
 name|getClass
 argument_list|()
@@ -2370,13 +2431,216 @@ name|setJdbcObject
 argument_list|(
 name|statement
 argument_list|,
-name|object
+name|binding
+operator|.
+name|getValue
+argument_list|()
 argument_list|,
-name|pos
+name|binding
+operator|.
+name|getStatementPosition
+argument_list|()
 argument_list|,
-name|sqlType
+name|binding
+operator|.
+name|getType
+argument_list|()
 argument_list|,
-name|scale
+name|binding
+operator|.
+name|getAttribute
+argument_list|()
+operator|.
+name|getScale
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|bindParameter
+parameter_list|(
+name|PreparedStatement
+name|statement
+parameter_list|,
+name|SQLParameterBinding
+name|binding
+parameter_list|,
+name|int
+name|position
+parameter_list|)
+throws|throws
+name|SQLException
+throws|,
+name|Exception
+block|{
+if|if
+condition|(
+name|binding
+operator|.
+name|getValue
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|statement
+operator|.
+name|setNull
+argument_list|(
+name|position
+argument_list|,
+name|binding
+operator|.
+name|getJdbcType
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|ExtendedType
+name|typeProcessor
+init|=
+name|getExtendedTypes
+argument_list|()
+operator|.
+name|getRegisteredType
+argument_list|(
+name|binding
+operator|.
+name|getValue
+argument_list|()
+operator|.
+name|getClass
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|typeProcessor
+operator|.
+name|setJdbcObject
+argument_list|(
+name|statement
+argument_list|,
+name|binding
+operator|.
+name|getValue
+argument_list|()
+argument_list|,
+name|position
+argument_list|,
+name|binding
+operator|.
+name|getJdbcType
+argument_list|()
+argument_list|,
+name|binding
+operator|.
+name|getScale
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|void
+name|bindParameter
+parameter_list|(
+name|CallableStatement
+name|statement
+parameter_list|,
+name|ProcedureParameterBinding
+name|binding
+parameter_list|)
+throws|throws
+name|SQLException
+throws|,
+name|Exception
+block|{
+if|if
+condition|(
+name|binding
+operator|.
+name|getValue
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|statement
+operator|.
+name|setNull
+argument_list|(
+name|binding
+operator|.
+name|getStatementPosition
+argument_list|()
+argument_list|,
+name|binding
+operator|.
+name|getParam
+argument_list|()
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|ExtendedType
+name|typeProcessor
+init|=
+name|getExtendedTypes
+argument_list|()
+operator|.
+name|getRegisteredType
+argument_list|(
+name|binding
+operator|.
+name|getValue
+argument_list|()
+operator|.
+name|getClass
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|typeProcessor
+operator|.
+name|setJdbcObject
+argument_list|(
+name|statement
+argument_list|,
+name|binding
+operator|.
+name|getValue
+argument_list|()
+argument_list|,
+name|binding
+operator|.
+name|getStatementPosition
+argument_list|()
+argument_list|,
+name|binding
+operator|.
+name|getParam
+argument_list|()
+operator|.
+name|getType
+argument_list|()
+argument_list|,
+name|binding
+operator|.
+name|getParam
+argument_list|()
+operator|.
+name|getPrecision
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2437,7 +2701,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a translator factory for EJBQL to SQL translation. The factory is 	 * normally initialized in constructor by calling 	 * {@link #createEJBQLTranslatorFactory()}, and can be changed later by 	 * calling {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Returns a translator factory for EJBQL to SQL translation. The factory is 	 * normally initialized in constructor by calling 	 * {@link #createEJBQLTranslatorFactory()}, and can be changed later by 	 * calling {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}. 	 * 	 * @since 3.0 	 */
 specifier|public
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory
@@ -2447,7 +2711,7 @@ return|return
 name|ejbqlTranslatorFactory
 return|;
 block|}
-comment|/** 	 * Sets a translator factory for EJBQL to SQL translation. This property is 	 * normally initialized in constructor by calling 	 * {@link #createEJBQLTranslatorFactory()}, so users would only override it 	 * if they need to customize EJBQL translation. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Sets a translator factory for EJBQL to SQL translation. This property is 	 * normally initialized in constructor by calling 	 * {@link #createEJBQLTranslatorFactory()}, so users would only override it 	 * if they need to customize EJBQL translation. 	 * 	 * @since 3.0 	 */
 specifier|public
 name|void
 name|setEjbqlTranslatorFactory
@@ -2475,7 +2739,7 @@ name|MergerFactory
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 4.0 	 * @return 	 */
+comment|/** 	 * @return 	 * @since 4.0 	 */
 specifier|protected
 name|QuotingStrategy
 name|createQuotingStrategy
@@ -2517,7 +2781,7 @@ return|return
 name|quotingStrategy
 return|;
 block|}
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 *             DataNode. 	 */
+comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 * DataNode. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2529,7 +2793,7 @@ return|return
 name|batchQueryBuilderFactory
 return|;
 block|}
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 *             DataNode. 	 */
+comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 * DataNode. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2547,7 +2811,7 @@ operator|=
 name|batchQueryBuilderFactory
 expr_stmt|;
 block|}
-comment|/** 	 * Simply returns this, as JdbcAdapter is not a wrapper. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Simply returns this, as JdbcAdapter is not a wrapper. 	 * 	 * @since 4.0 	 */
 annotation|@
 name|Override
 specifier|public
