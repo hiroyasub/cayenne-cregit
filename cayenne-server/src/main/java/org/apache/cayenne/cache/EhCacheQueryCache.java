@@ -27,6 +27,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
+import|import
 name|net
 operator|.
 name|sf
@@ -619,10 +629,17 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|cacheGroups
 index|[
 literal|0
 index|]
+argument_list|,
+literal|"Null cache group"
+argument_list|)
 return|;
 block|}
 return|return
