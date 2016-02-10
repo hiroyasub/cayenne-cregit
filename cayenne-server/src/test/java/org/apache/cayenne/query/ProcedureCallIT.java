@@ -649,7 +649,7 @@ literal|3000
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 comment|// check the results
@@ -806,7 +806,7 @@ literal|2
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 name|assertEquals
@@ -891,7 +891,7 @@ literal|2
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 name|assertEquals
@@ -961,7 +961,7 @@ name|LOWER
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 name|List
@@ -994,7 +994,7 @@ name|UPPER
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 name|assertTrue
@@ -1106,7 +1106,7 @@ name|Number
 operator|)
 name|result
 operator|.
-name|getParam
+name|getOutParam
 argument_list|(
 literal|"out_param"
 argument_list|)
@@ -1186,7 +1186,7 @@ literal|"An Artist"
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 comment|// check the results
@@ -1376,7 +1376,7 @@ name|columns
 argument_list|)
 argument_list|)
 operator|.
-name|getSelectResult
+name|firstList
 argument_list|()
 decl_stmt|;
 comment|// check the results

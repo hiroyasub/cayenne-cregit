@@ -493,7 +493,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/**      * Returns a potentially immmutable map of named parameters that will be      * bound to SQL.      */
+comment|/**      * Returns a potentially immutable map of named parameters that will be      * bound to SQL.      */
 specifier|public
 name|Map
 argument_list|<
@@ -522,7 +522,7 @@ name|emptyMap
 argument_list|()
 return|;
 block|}
-comment|/**      * Returns a potentially immmutable list of positional parameters that will      * be bound to SQL.      */
+comment|/**      * Returns a potentially immutable list of positional parameters that will      * be bound to SQL.      */
 specifier|public
 name|List
 argument_list|<
@@ -545,10 +545,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|List
-argument_list|<
 name|QueryResult
-argument_list|>
 name|execute
 parameter_list|(
 name|ObjectContext
@@ -643,10 +640,7 @@ name|context
 parameter_list|)
 block|{
 comment|// TODO: create a corresponding method in ObjectContext
-name|List
-argument_list|<
 name|QueryResult
-argument_list|>
 name|results
 init|=
 name|execute
@@ -677,36 +671,10 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-name|QueryResult
-name|result
-init|=
+return|return
 name|results
 operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|result
-operator|.
-name|isSelectResult
-argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Expected a single update result. Got a select instead."
-argument_list|)
-throw|;
-block|}
-return|return
-name|result
-operator|.
-name|getUpdateResult
+name|firstUpdateCount
 argument_list|()
 return|;
 block|}
@@ -720,10 +688,7 @@ name|context
 parameter_list|)
 block|{
 comment|// TODO: create a corresponding method in ObjectContext
-name|List
-argument_list|<
 name|QueryResult
-argument_list|>
 name|results
 init|=
 name|execute
@@ -754,36 +719,10 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-name|QueryResult
-name|result
-init|=
+return|return
 name|results
 operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|result
-operator|.
-name|isSelectResult
-argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Expected a single update result. Got a select instead."
-argument_list|)
-throw|;
-block|}
-return|return
-name|result
-operator|.
-name|getBatchUpdateResult
+name|firstBatchUpdateCount
 argument_list|()
 return|;
 block|}

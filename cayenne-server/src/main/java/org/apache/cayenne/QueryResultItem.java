@@ -24,49 +24,44 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a collection of items which are results of a multipart query execution.  *  * @since 4.0  */
+comment|/**  * Represents a single item in a multipart query execution. Can be either an  * update count or a list of objects.  *  * @since 4.0  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|QueryResult
+name|QueryResultItem
 parameter_list|<
 name|T
 parameter_list|>
-extends|extends
-name|Iterable
-argument_list|<
-name|QueryResultItem
-argument_list|>
 block|{
-comment|/**      * Returns a number of results in the response.      */
-name|int
-name|size
-parameter_list|()
-function_decl|;
-comment|/**      * Returns whether current iteration result is a list or an update count.      */
+comment|/**      * Returns true if encapsulated result is a select result.      */
 name|boolean
-name|isList
+name|isSelectResult
 parameter_list|()
 function_decl|;
-comment|/**      * A utility method for quickly retrieving the first list in the response. Returns      * null if the query has no lists.      */
+comment|/**      * Returns true if encapsulated result is a batch update result.      */
+name|boolean
+name|isBatchUpdate
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a list of selected objects. Throws unless      * {@link #isSelectResult()} returns true.      */
 name|List
 argument_list|<
 name|T
 argument_list|>
-name|firstList
+name|getSelectResult
 parameter_list|()
 function_decl|;
-comment|/**      * A utility method for quickly retrieving the first batch update count array from the response.      */
+comment|/**      * Returns an update count.      */
+name|int
+name|getUpdateCount
+parameter_list|()
+function_decl|;
+comment|/**      * Returns batch update result in a form of array of individual update counts.      */
 name|int
 index|[]
-name|firstBatchUpdateCount
-parameter_list|()
-function_decl|;
-comment|/**      * A utility method for quick retrieval of the first update count from the response.      */
-name|int
-name|firstUpdateCount
+name|getBatchUpdateCounts
 parameter_list|()
 function_decl|;
 block|}

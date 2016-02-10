@@ -181,10 +181,7 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|List
-argument_list|<
 name|QueryResult
-argument_list|>
 name|execute
 parameter_list|(
 name|ObjectContext
