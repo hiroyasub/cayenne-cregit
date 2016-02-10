@@ -442,6 +442,18 @@ name|typeName
 init|=
 name|TypesMapping
 operator|.
+name|SQL_NULL
+decl_stmt|;
+if|if
+condition|(
+name|dbAttr
+operator|!=
+literal|null
+condition|)
+name|typeName
+operator|=
+name|TypesMapping
+operator|.
 name|getJavaBySqlType
 argument_list|(
 name|dbAttr
@@ -449,7 +461,7 @@ operator|.
 name|getType
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|ExtendedType
 name|extendedType
 init|=
