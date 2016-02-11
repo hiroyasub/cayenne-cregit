@@ -10,8 +10,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|exp
 package|;
 end_package
 
@@ -21,82 +19,50 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
 
-begin_class
+begin_comment
+comment|/**  * Represents a single item in a multipart query execution. Can be either an  * update count or a list of objects.  *  * @since 4.0  */
+end_comment
+
+begin_interface
 specifier|public
-specifier|abstract
-class|class
-name|TstExpressionSuite
+interface|interface
+name|QueryResult
 block|{
-specifier|private
-name|List
-name|cases
-init|=
-operator|new
-name|ArrayList
-argument_list|()
-decl_stmt|;
-specifier|public
-name|TstExpressionCase
-index|[]
-name|cases
+comment|/**      * Returns true if encapsulated result is a select result.      */
+name|boolean
+name|isSelectResult
 parameter_list|()
-block|{
-name|TstExpressionCase
+function_decl|;
+comment|/**      * Returns true if encapsulated result is a batch update result.      */
+name|boolean
+name|isBatchUpdate
+parameter_list|()
+function_decl|;
+comment|/**      * Returns a list of selected objects. Throws unless      * {@link #isSelectResult()} returns true.      */
+name|List
+argument_list|<
+name|?
+argument_list|>
+name|getSelectResult
+parameter_list|()
+function_decl|;
+comment|/**      * Returns an update count.      */
+name|int
+name|getUpdateResult
+parameter_list|()
+function_decl|;
+comment|/**      * Returns batch update result in a form of array of individual update counts.      */
+name|int
 index|[]
-name|exps
-init|=
-operator|new
-name|TstExpressionCase
-index|[
-name|cases
-operator|.
-name|size
-argument_list|()
-index|]
-decl_stmt|;
-name|cases
-operator|.
-name|toArray
-argument_list|(
-name|exps
-argument_list|)
-expr_stmt|;
-return|return
-name|exps
-return|;
+name|getBatchUpdateResult
+parameter_list|()
+function_decl|;
 block|}
-specifier|public
-name|void
-name|addCase
-parameter_list|(
-name|TstExpressionCase
-name|expCase
-parameter_list|)
-block|{
-name|cases
-operator|.
-name|add
-argument_list|(
-name|expCase
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_class
+end_interface
 
 end_unit
 

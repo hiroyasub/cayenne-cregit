@@ -160,8 +160,6 @@ specifier|public
 name|void
 name|assertConsistency
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Assert
 operator|.
