@@ -23,16 +23,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -145,8 +135,6 @@ parameter_list|,
 name|EntityResolver
 name|resolver
 parameter_list|)
-throws|throws
-name|SQLException
 block|{
 name|super
 argument_list|(

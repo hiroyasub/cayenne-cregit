@@ -139,9 +139,10 @@ init|=
 operator|new
 name|DataNodeDescriptor
 argument_list|(
-name|ServerRuntimeBuilder
-operator|.
-name|DEFAULT_NAME
+name|createSyntheticDataNodeName
+argument_list|(
+name|dataDomain
+argument_list|)
 argument_list|)
 decl_stmt|;
 for|for
@@ -196,6 +197,35 @@ expr_stmt|;
 block|}
 return|return
 name|dataDomain
+return|;
+block|}
+specifier|protected
+name|String
+name|createSyntheticDataNodeName
+parameter_list|(
+name|DataDomain
+name|domain
+parameter_list|)
+block|{
+comment|// using Domain's name for the node name.. distinguishing nodes by name
+comment|// may be useful in case of multiple stacks used in the same
+comment|// transaction...
+return|return
+name|domain
+operator|.
+name|getName
+argument_list|()
+operator|!=
+literal|null
+condition|?
+name|domain
+operator|.
+name|getName
+argument_list|()
+else|:
+name|ServerRuntimeBuilder
+operator|.
+name|DEFAULT_NAME
 return|;
 block|}
 block|}
