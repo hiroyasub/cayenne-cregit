@@ -47,9 +47,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
-name|Query
+name|naming
+operator|.
+name|NameConverter
 import|;
 end_import
 
@@ -61,11 +63,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|query
 operator|.
-name|naming
-operator|.
-name|NameConverter
+name|QueryDescriptor
 import|;
 end_import
 
@@ -98,7 +98,7 @@ name|dataMap
 parameter_list|,
 name|Collection
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
 name|queries
 parameter_list|)

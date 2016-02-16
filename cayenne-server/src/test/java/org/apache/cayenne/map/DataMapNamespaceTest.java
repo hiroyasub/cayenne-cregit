@@ -493,81 +493,18 @@ argument_list|(
 name|namespace
 argument_list|)
 expr_stmt|;
-name|Query
-name|q1
-init|=
-operator|new
-name|MockQuery
-argument_list|(
-literal|"query"
-argument_list|)
-decl_stmt|;
-name|Query
-name|q2
-init|=
-operator|new
-name|MockQuery
-argument_list|(
-literal|"query"
-argument_list|)
-decl_stmt|;
-name|namespace
-operator|.
-name|addQuery
-argument_list|(
-name|q1
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|q1
-argument_list|,
-name|map
-operator|.
-name|getQuery
-argument_list|(
-literal|"query"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|map
-operator|.
-name|addQuery
-argument_list|(
-name|q2
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|q2
-argument_list|,
-name|map
-operator|.
-name|getQuery
-argument_list|(
-literal|"query"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|map
-operator|.
-name|removeQuery
-argument_list|(
-literal|"query"
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|q1
-argument_list|,
-name|map
-operator|.
-name|getQuery
-argument_list|(
-literal|"query"
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|//
+comment|//        Query q1 = new MockQuery("query");
+comment|//        Query q2 = new MockQuery("query");
+comment|//        namespace.addQuery(q1);
+comment|//
+comment|//        assertSame(q1, map.getQuery("query"));
+comment|//
+comment|//        map.addQuery(q2);
+comment|//        assertSame(q2, map.getQuery("query"));
+comment|//
+comment|//        map.removeQuery("query");
+comment|//        assertSame(q1, map.getQuery("query"));
 block|}
 block|}
 end_class

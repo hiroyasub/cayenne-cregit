@@ -51,6 +51,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries  * and other mapping objects.  *   * @since 1.1  */
 end_comment
@@ -117,8 +131,8 @@ name|name
 parameter_list|)
 function_decl|;
 comment|/**      * Returns Query for a given name, or null if no such Query is found in the      * MappingNamespace.      */
-name|Query
-name|getQuery
+name|QueryDescriptor
+name|getQueryDescriptor
 parameter_list|(
 name|String
 name|name
@@ -151,9 +165,9 @@ function_decl|;
 comment|/**      * Returns all Queries in the namespace.      */
 name|Collection
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
-name|getQueries
+name|getQueryDescriptors
 parameter_list|()
 function_decl|;
 comment|/**      * @since 4.0      */

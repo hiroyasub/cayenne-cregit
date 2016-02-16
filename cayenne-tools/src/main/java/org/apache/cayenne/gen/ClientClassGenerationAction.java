@@ -53,6 +53,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -247,7 +261,7 @@ name|addQueries
 parameter_list|(
 name|Collection
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
 name|queries
 parameter_list|)

@@ -423,7 +423,7 @@ name|addQueries
 argument_list|(
 name|dataMap
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 argument_list|)
 expr_stmt|;

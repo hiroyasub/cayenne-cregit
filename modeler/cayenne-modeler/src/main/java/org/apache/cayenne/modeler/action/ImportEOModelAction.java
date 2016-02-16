@@ -503,7 +503,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -1253,7 +1253,7 @@ name|ArrayList
 argument_list|(
 name|currentMap
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1301,7 +1301,7 @@ name|ArrayList
 argument_list|(
 name|currentMap
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1610,11 +1610,11 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Query
+name|QueryDescriptor
 name|q
 init|=
 operator|(
-name|Query
+name|QueryDescriptor
 operator|)
 name|it
 operator|.
@@ -1672,11 +1672,11 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Query
+name|QueryDescriptor
 name|q
 init|=
 operator|(
-name|Query
+name|QueryDescriptor
 operator|)
 name|it
 operator|.

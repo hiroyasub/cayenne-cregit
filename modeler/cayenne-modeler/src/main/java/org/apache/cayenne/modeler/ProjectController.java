@@ -1455,6 +1455,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|IDUtil
@@ -1688,7 +1702,7 @@ index|[]
 name|procedureParameters
 decl_stmt|;
 specifier|private
-name|Query
+name|QueryDescriptor
 name|query
 decl_stmt|;
 comment|/**          * Paths of multiple selection          */
@@ -3397,7 +3411,7 @@ name|dbRels
 return|;
 block|}
 specifier|public
-name|Query
+name|QueryDescriptor
 name|getCurrentQuery
 parameter_list|()
 block|{

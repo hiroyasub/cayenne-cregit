@@ -213,7 +213,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -468,13 +468,13 @@ argument_list|()
 decl_stmt|;
 name|Iterator
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
 name|querIterator
 init|=
 name|dm
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 operator|.
 name|iterator
@@ -488,7 +488,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|Query
+name|QueryDescriptor
 name|q
 init|=
 name|querIterator

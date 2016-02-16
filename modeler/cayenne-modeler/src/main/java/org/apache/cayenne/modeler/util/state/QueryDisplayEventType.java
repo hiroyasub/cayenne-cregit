@@ -91,6 +91,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_class
 class|class
 name|QueryDisplayEventType
@@ -172,12 +186,12 @@ condition|)
 block|{
 return|return;
 block|}
-name|Query
+name|QueryDescriptor
 name|query
 init|=
 name|dataMap
 operator|.
-name|getQuery
+name|getQueryDescriptor
 argument_list|(
 name|preferences
 operator|.

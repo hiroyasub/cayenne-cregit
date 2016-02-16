@@ -47,7 +47,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -181,8 +181,8 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|Query
-name|getQuery
+name|QueryDescriptor
+name|getQueryDescriptor
 parameter_list|(
 name|String
 name|queryName
@@ -192,7 +192,7 @@ return|return
 name|getDelegate
 argument_list|()
 operator|.
-name|getQuery
+name|getQueryDescriptor
 argument_list|(
 name|queryName
 argument_list|)
@@ -324,16 +324,16 @@ block|}
 specifier|public
 name|Collection
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
-name|getQueries
+name|getQueryDescriptors
 parameter_list|()
 block|{
 return|return
 name|getDelegate
 argument_list|()
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 return|;
 block|}

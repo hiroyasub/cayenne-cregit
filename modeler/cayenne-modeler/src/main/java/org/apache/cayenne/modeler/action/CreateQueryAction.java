@@ -177,7 +177,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -272,13 +272,13 @@ parameter_list|,
 name|DataMap
 name|dataMap
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{
 name|dataMap
 operator|.
-name|addQuery
+name|addQueryDescriptor
 argument_list|(
 name|query
 argument_list|)
@@ -317,7 +317,7 @@ parameter_list|,
 name|DataMap
 name|dataMap
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{

@@ -41,7 +41,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -55,7 +55,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLTemplate
+name|SQLTemplateDescriptor
 import|;
 end_import
 
@@ -87,6 +87,16 @@ name|ValidationResult
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_class
 class|class
 name|SQLTemplateValidator
@@ -96,7 +106,7 @@ block|{
 name|void
 name|validate
 parameter_list|(
-name|SQLTemplate
+name|SQLTemplateDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -128,7 +138,7 @@ block|}
 name|void
 name|validateDefaultSQL
 parameter_list|(
-name|SQLTemplate
+name|SQLTemplateDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -143,7 +153,7 @@ name|isEmptyString
 argument_list|(
 name|query
 operator|.
-name|getDefaultTemplate
+name|getSql
 argument_list|()
 argument_list|)
 condition|)
@@ -151,13 +161,22 @@ block|{
 comment|// see if there is at least one adapter-specific template...
 for|for
 control|(
-specifier|final
+name|Map
+operator|.
+name|Entry
+argument_list|<
 name|String
-name|key
+argument_list|,
+name|String
+argument_list|>
+name|entry
 range|:
 name|query
 operator|.
-name|getTemplateKeys
+name|getAdapterSql
+argument_list|()
+operator|.
+name|entrySet
 argument_list|()
 control|)
 block|{
@@ -168,12 +187,10 @@ name|Util
 operator|.
 name|isEmptyString
 argument_list|(
-name|query
+name|entry
 operator|.
-name|getCustomTemplate
-argument_list|(
-name|key
-argument_list|)
+name|getValue
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -199,7 +216,7 @@ block|}
 name|void
 name|validateRoot
 parameter_list|(
-name|SQLTemplate
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -247,7 +264,7 @@ block|}
 name|void
 name|validateName
 parameter_list|(
-name|SQLTemplate
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -305,12 +322,12 @@ comment|// check for duplicate names in the parent context
 for|for
 control|(
 specifier|final
-name|Query
+name|QueryDescriptor
 name|otherQuery
 range|:
 name|map
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 control|)
 block|{

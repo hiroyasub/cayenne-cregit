@@ -83,6 +83,20 @@ name|EJBQLQuery
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|EJBQLQueryDescriptor
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -92,7 +106,7 @@ specifier|public
 name|PositionException
 name|validateEJBQL
 parameter_list|(
-name|EJBQLQuery
+name|EJBQLQueryDescriptor
 name|query
 parameter_list|,
 name|EntityResolver
@@ -103,7 +117,7 @@ if|if
 condition|(
 name|query
 operator|.
-name|getEjbqlStatement
+name|getEjbql
 argument_list|()
 operator|!=
 literal|null
@@ -127,7 +141,7 @@ name|setEjbqlStatement
 argument_list|(
 name|query
 operator|.
-name|getEjbqlStatement
+name|getEjbql
 argument_list|()
 argument_list|)
 expr_stmt|;

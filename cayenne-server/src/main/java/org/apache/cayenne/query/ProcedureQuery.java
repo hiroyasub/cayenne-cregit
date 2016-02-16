@@ -176,6 +176,7 @@ name|ParameterizedQuery
 implements|,
 name|XMLSerializable
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|String

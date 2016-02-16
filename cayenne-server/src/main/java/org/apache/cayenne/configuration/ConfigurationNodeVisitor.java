@@ -183,6 +183,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * A visitor interface for implementing operations on different types of  * {@link ConfigurationNode} objects.  *   * @since 3.1  */
 end_comment
@@ -289,7 +303,7 @@ function_decl|;
 name|T
 name|visitQuery
 parameter_list|(
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 function_decl|;

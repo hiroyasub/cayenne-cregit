@@ -235,7 +235,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -520,7 +520,7 @@ specifier|public
 name|ConfigurationNode
 name|visitQuery
 parameter_list|(
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{

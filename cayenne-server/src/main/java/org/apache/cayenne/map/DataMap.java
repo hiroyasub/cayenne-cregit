@@ -151,21 +151,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|NamedQuery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -553,9 +539,9 @@ name|SortedMap
 argument_list|<
 name|String
 argument_list|,
-name|Query
+name|QueryDescriptor
 argument_list|>
-name|queryMap
+name|queryDescriptorMap
 decl_stmt|;
 specifier|private
 name|SortedMap
@@ -678,15 +664,11 @@ name|Procedure
 argument_list|>
 argument_list|()
 expr_stmt|;
-name|queryMap
+name|queryDescriptorMap
 operator|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Query
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|defaultEntityListeners
@@ -1218,62 +1200,18 @@ block|}
 comment|// create proxies for named queries
 for|for
 control|(
-name|Query
+name|QueryDescriptor
 name|q
 range|:
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 control|)
 block|{
-name|NamedQuery
-name|proxy
-init|=
-operator|new
-name|NamedQuery
-argument_list|(
-name|q
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-decl_stmt|;
-name|proxy
-operator|.
-name|setName
-argument_list|(
-name|q
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|proxy
-operator|.
-name|setDataMap
-argument_list|(
-name|clientMap
-argument_list|)
-expr_stmt|;
-comment|// resolve metadata so that client can have access to it without
-comment|// knowing about
-comment|// the server query.
-name|proxy
-operator|.
-name|initMetadata
-argument_list|(
-name|q
-operator|.
-name|getMetaData
-argument_list|(
-name|serverResolver
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|clientMap
 operator|.
-name|addQuery
+name|addQueryDescriptor
 argument_list|(
-name|proxy
+name|q
 argument_list|)
 expr_stmt|;
 block|}
@@ -1583,10 +1521,10 @@ comment|// non-serilaizable
 comment|// queries and throws if they are not..
 for|for
 control|(
-name|Query
+name|QueryDescriptor
 name|query
 range|:
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 control|)
 block|{
@@ -1896,25 +1834,23 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|Query
+name|QueryDescriptor
 name|query
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|Query
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 argument_list|)
 control|)
 block|{
 name|this
 operator|.
-name|removeQuery
+name|removeQueryDescriptor
 argument_list|(
 name|query
 operator|.
@@ -1924,7 +1860,7 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|addQuery
+name|addQueryDescriptor
 argument_list|(
 name|query
 argument_list|)
@@ -1997,19 +1933,19 @@ name|dbEntityMap
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a named query associated with this DataMap. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns a named query associated with this DataMap. 	 *  	 * @since 4.0 	 */
 specifier|public
-name|Query
-name|getQuery
+name|QueryDescriptor
+name|getQueryDescriptor
 parameter_list|(
 name|String
 name|queryName
 parameter_list|)
 block|{
-name|Query
-name|query
+name|QueryDescriptor
+name|queryDescriptor
 init|=
-name|queryMap
+name|queryDescriptorMap
 operator|.
 name|get
 argument_list|(
@@ -2018,13 +1954,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|query
+name|queryDescriptor
 operator|!=
 literal|null
 condition|)
 block|{
 return|return
-name|query
+name|queryDescriptor
 return|;
 block|}
 return|return
@@ -2034,7 +1970,7 @@ literal|null
 condition|?
 name|namespace
 operator|.
-name|getQuery
+name|getQueryDescriptor
 argument_list|(
 name|queryName
 argument_list|)
@@ -2042,18 +1978,18 @@ else|:
 literal|null
 return|;
 block|}
-comment|/** 	 * Stores a query under its name. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Stores a query descriptor under its name. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|void
-name|addQuery
+name|addQueryDescriptor
 parameter_list|(
-name|Query
-name|query
+name|QueryDescriptor
+name|queryDescriptor
 parameter_list|)
 block|{
 if|if
 condition|(
-name|query
+name|queryDescriptor
 operator|==
 literal|null
 condition|)
@@ -2068,7 +2004,7 @@ throw|;
 block|}
 if|if
 condition|(
-name|query
+name|queryDescriptor
 operator|.
 name|getName
 argument_list|()
@@ -2087,14 +2023,14 @@ block|}
 comment|// TODO: change method signature to return replaced procedure and make
 comment|// sure the
 comment|// Modeler handles it...
-name|Object
-name|existingQuery
+name|QueryDescriptor
+name|existingQueryDescriptor
 init|=
-name|queryMap
+name|queryDescriptorMap
 operator|.
 name|get
 argument_list|(
-name|query
+name|queryDescriptor
 operator|.
 name|getName
 argument_list|()
@@ -2102,16 +2038,16 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|existingQuery
+name|existingQueryDescriptor
 operator|!=
 literal|null
 condition|)
 block|{
 if|if
 condition|(
-name|existingQuery
+name|existingQueryDescriptor
 operator|==
-name|query
+name|queryDescriptor
 condition|)
 block|{
 return|return;
@@ -2124,7 +2060,7 @@ name|IllegalArgumentException
 argument_list|(
 literal|"An attempt to override entity '"
 operator|+
-name|query
+name|queryDescriptor
 operator|.
 name|getName
 argument_list|()
@@ -2132,29 +2068,29 @@ argument_list|)
 throw|;
 block|}
 block|}
-name|queryMap
+name|queryDescriptorMap
 operator|.
 name|put
 argument_list|(
-name|query
+name|queryDescriptor
 operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|query
+name|queryDescriptor
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Removes a named query from the DataMap. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Removes a named query from the DataMap. 	 *  	 * @since 4.0 	 */
 specifier|public
 name|void
-name|removeQuery
+name|removeQueryDescriptor
 parameter_list|(
 name|String
 name|queryName
 parameter_list|)
 block|{
-name|queryMap
+name|queryDescriptorMap
 operator|.
 name|remove
 argument_list|(
@@ -2192,7 +2128,7 @@ name|void
 name|clearQueries
 parameter_list|()
 block|{
-name|queryMap
+name|queryDescriptorMap
 operator|.
 name|clear
 argument_list|()
@@ -2234,15 +2170,15 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * @since 1.1 	 */
+comment|/** 	 * @since 4.0      */
 specifier|public
 name|SortedMap
 argument_list|<
 name|String
 argument_list|,
-name|Query
+name|QueryDescriptor
 argument_list|>
-name|getQueryMap
+name|getQueryDescriptorMap
 parameter_list|()
 block|{
 return|return
@@ -2250,17 +2186,17 @@ name|Collections
 operator|.
 name|unmodifiableSortedMap
 argument_list|(
-name|queryMap
+name|queryDescriptorMap
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns an unmodifiable collection of mapped queries. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns an unmodifiable collection of mapped queries. 	 * 	 * @since 4.0      */
 specifier|public
 name|Collection
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
-name|getQueries
+name|getQueryDescriptors
 parameter_list|()
 block|{
 return|return
@@ -2268,7 +2204,7 @@ name|Collections
 operator|.
 name|unmodifiableCollection
 argument_list|(
-name|queryMap
+name|queryDescriptorMap
 operator|.
 name|values
 argument_list|()

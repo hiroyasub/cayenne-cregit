@@ -117,7 +117,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|QueryDescriptor
 import|;
 end_import
 
@@ -304,14 +304,20 @@ block|{
 if|if
 condition|(
 operator|!
-operator|(
+name|QueryDescriptor
+operator|.
+name|SELECT_QUERY
+operator|.
+name|equals
+argument_list|(
 name|mediator
 operator|.
 name|getCurrentQuery
 argument_list|()
-operator|instanceof
-name|SelectQuery
-operator|)
+operator|.
+name|getType
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|setVisible
@@ -324,15 +330,10 @@ block|}
 comment|// if no root, reset tabs to show the first panel..
 if|if
 condition|(
-operator|(
-operator|(
-name|SelectQuery
-operator|)
 name|mediator
 operator|.
 name|getCurrentQuery
 argument_list|()
-operator|)
 operator|.
 name|getRoot
 argument_list|()

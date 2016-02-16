@@ -445,6 +445,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -465,7 +479,7 @@ name|ObjEntity
 name|objEntity
 decl_stmt|;
 specifier|private
-name|Query
+name|QueryDescriptor
 name|query
 decl_stmt|;
 specifier|private
@@ -990,7 +1004,7 @@ parameter_list|(
 name|DataMap
 name|map
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{

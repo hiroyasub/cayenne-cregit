@@ -183,6 +183,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * A {@link ConfigurationNodeVisitor} that does nothing, used as a convenience superclass  * for partial visitors. All methods of this visitor throw an  * {@link UnsupportedOperationException}.  *   * @since 3.1  */
 end_comment
@@ -413,7 +427,7 @@ specifier|public
 name|T
 name|visitQuery
 parameter_list|(
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{

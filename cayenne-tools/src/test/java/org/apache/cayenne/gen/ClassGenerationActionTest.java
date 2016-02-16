@@ -95,7 +95,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|NamedQuery
+name|QueryDescriptor
 import|;
 end_import
 
@@ -896,6 +896,21 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
+name|QueryDescriptor
+name|descriptor
+init|=
+name|QueryDescriptor
+operator|.
+name|selectQueryDescriptor
+argument_list|()
+decl_stmt|;
+name|descriptor
+operator|.
+name|setName
+argument_list|(
+literal|"TestQuery"
+argument_list|)
+expr_stmt|;
 name|DataMap
 name|map
 init|=
@@ -905,13 +920,9 @@ argument_list|()
 decl_stmt|;
 name|map
 operator|.
-name|addQuery
+name|addQueryDescriptor
 argument_list|(
-operator|new
-name|NamedQuery
-argument_list|(
-literal|"TestQuery"
-argument_list|)
+name|descriptor
 argument_list|)
 expr_stmt|;
 name|map
@@ -950,7 +961,7 @@ name|map
 argument_list|,
 name|map
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 argument_list|)
 argument_list|)
@@ -976,7 +987,7 @@ name|map
 argument_list|,
 name|map
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 argument_list|)
 argument_list|)

@@ -55,7 +55,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|ProcedureQuery
+name|ProcedureQueryDescriptor
 import|;
 end_import
 
@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -110,7 +110,7 @@ block|{
 name|void
 name|validate
 parameter_list|(
-name|ProcedureQuery
+name|ProcedureQueryDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -135,7 +135,7 @@ block|}
 name|void
 name|validateRoot
 parameter_list|(
-name|ProcedureQuery
+name|ProcedureQueryDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -290,7 +290,7 @@ block|}
 name|void
 name|validateName
 parameter_list|(
-name|ProcedureQuery
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|ValidationResult
@@ -348,12 +348,12 @@ comment|// check for duplicate names in the parent context
 for|for
 control|(
 specifier|final
-name|Query
+name|QueryDescriptor
 name|otherQuery
 range|:
 name|map
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 control|)
 block|{

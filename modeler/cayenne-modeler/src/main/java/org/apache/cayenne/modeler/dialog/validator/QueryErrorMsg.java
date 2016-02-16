@@ -97,7 +97,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -174,11 +174,11 @@ operator|.
 name|getRootNode
 argument_list|()
 decl_stmt|;
-name|Query
+name|QueryDescriptor
 name|query
 init|=
 operator|(
-name|Query
+name|QueryDescriptor
 operator|)
 name|object
 decl_stmt|;

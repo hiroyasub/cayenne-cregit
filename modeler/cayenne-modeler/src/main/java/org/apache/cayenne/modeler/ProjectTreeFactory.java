@@ -217,6 +217,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * A helper class that wraps a tree of project nodes into Swing tree nodes.  */
 end_comment
@@ -698,12 +712,12 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|Query
+name|QueryDescriptor
 name|query
 range|:
 name|dataMap
 operator|.
-name|getQueries
+name|getQueryDescriptors
 argument_list|()
 control|)
 block|{

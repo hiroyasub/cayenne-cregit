@@ -339,7 +339,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -617,7 +617,7 @@ if|else if
 condition|(
 name|object
 operator|instanceof
-name|Query
+name|QueryDescriptor
 condition|)
 block|{
 return|return

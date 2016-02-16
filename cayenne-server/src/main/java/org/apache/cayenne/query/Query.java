@@ -91,8 +91,6 @@ interface|interface
 name|Query
 extends|extends
 name|Serializable
-extends|,
-name|ConfigurationNode
 block|{
 comment|/**      * Returns query runtime parameters. The method is called at various stages of the      * execution by Cayenne access stack to retrieve query parameters. EntityResolver      * instance is passed to this method, meaning that the query doesn't need to store      * direct references to Cayenne mapping objects and can resolve them at runtime.      *       * @since 1.2      */
 name|QueryMetadata

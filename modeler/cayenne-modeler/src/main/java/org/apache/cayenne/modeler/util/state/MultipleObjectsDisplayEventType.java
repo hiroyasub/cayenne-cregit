@@ -787,7 +787,7 @@ if|else if
 condition|(
 name|dataMap
 operator|.
-name|getQuery
+name|getQueryDescriptor
 argument_list|(
 name|objectName
 argument_list|)
@@ -801,7 +801,7 @@ name|add
 argument_list|(
 name|dataMap
 operator|.
-name|getQuery
+name|getQueryDescriptor
 argument_list|(
 name|objectName
 argument_list|)

@@ -85,7 +85,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -99,7 +99,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|QueryMetadata
 import|;
 end_import
 
@@ -525,9 +525,16 @@ name|FALSE
 decl_stmt|;
 name|setQueryProperty
 argument_list|(
-literal|"fetchingDataRows"
+name|QueryMetadata
+operator|.
+name|FETCHING_DATA_ROWS_PROPERTY
 argument_list|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
 name|b
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -540,7 +547,7 @@ specifier|public
 name|void
 name|initFromModel
 parameter_list|(
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{
@@ -555,15 +562,19 @@ name|dataRows
 operator|.
 name|setSelected
 argument_list|(
-operator|(
-operator|(
-name|SelectQuery
-operator|)
-name|query
-operator|)
+name|Boolean
 operator|.
-name|isFetchingDataRows
-argument_list|()
+name|valueOf
+argument_list|(
+name|query
+operator|.
+name|getProperty
+argument_list|(
+name|QueryMetadata
+operator|.
+name|FETCHING_DATA_ROWS_PROPERTY
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

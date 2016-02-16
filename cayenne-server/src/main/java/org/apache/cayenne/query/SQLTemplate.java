@@ -297,6 +297,7 @@ init|=
 operator|-
 literal|3073521388289663641L
 decl_stmt|;
+specifier|public
 specifier|static
 specifier|final
 name|String

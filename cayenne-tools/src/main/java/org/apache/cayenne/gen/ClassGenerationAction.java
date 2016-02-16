@@ -185,7 +185,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -2132,7 +2132,7 @@ name|addQueries
 parameter_list|(
 name|Collection
 argument_list|<
-name|Query
+name|QueryDescriptor
 argument_list|>
 name|queries
 parameter_list|)

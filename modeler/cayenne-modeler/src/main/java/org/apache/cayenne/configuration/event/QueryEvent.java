@@ -57,7 +57,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -73,7 +73,7 @@ extends|extends
 name|MapEvent
 block|{
 specifier|protected
-name|Query
+name|QueryDescriptor
 name|query
 decl_stmt|;
 comment|/**      * Data map containing the query      */
@@ -87,7 +87,7 @@ parameter_list|(
 name|Object
 name|source
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{
@@ -108,7 +108,7 @@ parameter_list|(
 name|Object
 name|source
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|String
@@ -134,7 +134,7 @@ parameter_list|(
 name|Object
 name|source
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|int
@@ -161,7 +161,7 @@ parameter_list|(
 name|Object
 name|source
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|DataMap
@@ -188,7 +188,7 @@ parameter_list|(
 name|Object
 name|source
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|String
@@ -220,7 +220,7 @@ parameter_list|(
 name|Object
 name|source
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|int
@@ -268,7 +268,7 @@ literal|null
 return|;
 block|}
 specifier|public
-name|Query
+name|QueryDescriptor
 name|getQuery
 parameter_list|()
 block|{
@@ -280,7 +280,7 @@ specifier|public
 name|void
 name|setQuery
 parameter_list|(
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{

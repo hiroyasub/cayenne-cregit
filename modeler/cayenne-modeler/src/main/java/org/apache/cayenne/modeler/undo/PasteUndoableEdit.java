@@ -331,7 +331,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -671,7 +671,7 @@ if|else if
 condition|(
 name|content
 operator|instanceof
-name|Query
+name|QueryDescriptor
 condition|)
 block|{
 name|rAction
@@ -681,7 +681,7 @@ argument_list|(
 name|map
 argument_list|,
 operator|(
-name|Query
+name|QueryDescriptor
 operator|)
 name|content
 argument_list|)

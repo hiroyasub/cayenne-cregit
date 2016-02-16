@@ -933,7 +933,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|QueryDescriptor
 import|;
 end_import
 
@@ -2954,7 +2954,7 @@ condition|)
 block|{
 return|return;
 block|}
-name|Query
+name|QueryDescriptor
 name|query
 init|=
 name|e
@@ -5184,7 +5184,7 @@ if|else if
 condition|(
 name|obj
 operator|instanceof
-name|Query
+name|QueryDescriptor
 condition|)
 block|{
 name|QueryDisplayEvent
@@ -5196,7 +5196,7 @@ argument_list|(
 name|this
 argument_list|,
 operator|(
-name|Query
+name|QueryDescriptor
 operator|)
 name|obj
 argument_list|,

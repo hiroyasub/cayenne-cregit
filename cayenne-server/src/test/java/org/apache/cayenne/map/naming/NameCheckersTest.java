@@ -245,7 +245,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|QueryDescriptor
 import|;
 end_import
 
@@ -624,14 +624,13 @@ argument_list|,
 literal|"name"
 argument_list|)
 expr_stmt|;
-name|SelectQuery
+name|QueryDescriptor
 name|query
 init|=
-operator|new
-name|SelectQuery
-argument_list|(
-literal|"name"
-argument_list|)
+name|QueryDescriptor
+operator|.
+name|selectQueryDescriptor
+argument_list|()
 decl_stmt|;
 name|query
 operator|.
@@ -642,7 +641,7 @@ argument_list|)
 expr_stmt|;
 name|map
 operator|.
-name|addQuery
+name|addQueryDescriptor
 argument_list|(
 name|query
 argument_list|)

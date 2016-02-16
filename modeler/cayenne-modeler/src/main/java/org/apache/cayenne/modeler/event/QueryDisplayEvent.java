@@ -59,6 +59,20 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 1.1  */
 end_comment
@@ -71,7 +85,7 @@ extends|extends
 name|DataMapDisplayEvent
 block|{
 specifier|protected
-name|Query
+name|QueryDescriptor
 name|query
 decl_stmt|;
 specifier|protected
@@ -86,7 +100,7 @@ parameter_list|(
 name|Object
 name|src
 parameter_list|,
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|,
 name|DataMap
@@ -113,7 +127,7 @@ name|query
 expr_stmt|;
 block|}
 specifier|public
-name|Query
+name|QueryDescriptor
 name|getQuery
 parameter_list|()
 block|{
@@ -125,7 +139,7 @@ specifier|public
 name|void
 name|setQuery
 parameter_list|(
-name|Query
+name|QueryDescriptor
 name|query
 parameter_list|)
 block|{

@@ -561,7 +561,7 @@ decl_stmt|;
 return|return
 name|map
 operator|.
-name|getQuery
+name|getQueryDescriptor
 argument_list|(
 name|name
 argument_list|)

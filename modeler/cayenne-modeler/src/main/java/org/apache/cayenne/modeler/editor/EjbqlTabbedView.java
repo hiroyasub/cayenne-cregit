@@ -117,7 +117,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|EJBQLQuery
+name|QueryDescriptor
 import|;
 end_import
 
@@ -279,14 +279,20 @@ block|{
 if|if
 condition|(
 operator|!
-operator|(
+name|QueryDescriptor
+operator|.
+name|EJBQL_QUERY
+operator|.
+name|equals
+argument_list|(
 name|mediator
 operator|.
 name|getCurrentQuery
 argument_list|()
-operator|instanceof
-name|EJBQLQuery
-operator|)
+operator|.
+name|getType
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|setVisible
