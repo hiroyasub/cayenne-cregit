@@ -1,6 +1,6 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|/*****************************************************************  * Licensed to the Apache Software Foundation (ASF) under one  * or more contributor license agreements.  See the NOTICE file  * distributed with this work for additional information  * regarding copyright ownership.  The ASF licenses this file  * to you under the Apache License, Version 2.0 (the  * "License"); you may not use this file except in compliance  * with the License.  You may obtain a copy of the License at  *<p/>  * http://www.apache.org/licenses/LICENSE-2.0  *<p/>  * Unless required by applicable law or agreed to in writing,  * software distributed under the License is distributed on an  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  * KIND, either express or implied.  See the License for the  * specific language governing permissions and limitations  * under the License.  ****************************************************************/
 end_comment
 
 begin_package
@@ -39,41 +39,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
-operator|.
-name|SQLParameterBinding
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
 name|translator
 operator|.
-name|ParameterBinding
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|translator
-operator|.
-name|ProcedureParameterBinding
+name|Binding
 import|;
 end_import
 
@@ -283,16 +251,6 @@ name|java
 operator|.
 name|sql
 operator|.
-name|CallableStatement
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
 name|PreparedStatement
 import|;
 end_import
@@ -326,12 +284,12 @@ specifier|public
 interface|interface
 name|DbAdapter
 block|{
-comment|/** 	 * Returns a String used to terminate a batch in command-line tools. E.g. 	 * ";" on Oracle or "go" on Sybase. 	 *  	 * @since 1.0.4 	 */
+comment|/** 	 * Returns a String used to terminate a batch in command-line tools. E.g. 	 * ";" on Oracle or "go" on Sybase. 	 * 	 * @since 1.0.4 	 */
 name|String
 name|getBatchTerminator
 parameter_list|()
 function_decl|;
-comment|/** 	 * Returns a SelectTranslator that works with the adapter target database. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Returns a SelectTranslator that works with the adapter target database. 	 * 	 * @since 4.0 	 */
 name|SelectTranslator
 name|getSelectTranslator
 parameter_list|(
@@ -352,7 +310,7 @@ name|QueryAssembler
 name|queryAssembler
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns an instance of SQLAction that should handle the query. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Returns an instance of SQLAction that should handle the query. 	 * 	 * @since 1.2 	 */
 name|SQLAction
 name|getAction
 parameter_list|(
@@ -373,7 +331,7 @@ name|boolean
 name|supportsCatalogsOnReverseEngineering
 parameter_list|()
 function_decl|;
-comment|/** 	 * Returns true if a target database supports key autogeneration. This 	 * feature also requires JDBC3-compliant driver. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Returns true if a target database supports key autogeneration. This 	 * feature also requires JDBC3-compliant driver. 	 * 	 * @since 1.2 	 */
 name|boolean
 name|supportsGeneratedKeys
 parameter_list|()
@@ -390,7 +348,7 @@ name|int
 name|type
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns a collection of SQL statements needed to drop a database table. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Returns a collection of SQL statements needed to drop a database table. 	 * 	 * @since 3.0 	 */
 name|Collection
 argument_list|<
 name|String
@@ -409,7 +367,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns, 	 * or null if the unique constraints are not supported. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns, 	 * or null if the unique constraints are not supported. 	 * 	 * @since 1.1 	 */
 name|String
 name|createUniqueConstraint
 parameter_list|(
@@ -450,7 +408,7 @@ name|PkGenerator
 name|getPkGenerator
 parameter_list|()
 function_decl|;
-comment|/** 	 * Creates and returns a DbAttribute based on supplied parameters (usually 	 * obtained from database meta data). 	 *  	 * @param name 	 *            database column name 	 * @param typeName 	 *            database specific type name, may be used as a hint to 	 *            determine the right JDBC type. 	 * @param type 	 *            JDBC column type 	 * @param size 	 *            database column size (ignored if less than zero) 	 * @param scale 	 *            database column scale, i.e. the number of decimal digits 	 *            (ignored if less than zero) 	 * @param allowNulls 	 *            database column nullable parameter 	 */
+comment|/** 	 * Creates and returns a DbAttribute based on supplied parameters (usually 	 * obtained from database meta data). 	 * 	 * @param name 	 *            database column name 	 * @param typeName 	 *            database specific type name, may be used as a hint to 	 *            determine the right JDBC type. 	 * @param type 	 *            JDBC column type 	 * @param size 	 *            database column size (ignored if less than zero) 	 * @param scale 	 *            database column scale, i.e. the number of decimal digits 	 *            (ignored if less than zero) 	 * @param allowNulls 	 *            database column nullable parameter 	 */
 name|DbAttribute
 name|buildAttribute
 parameter_list|(
@@ -473,48 +431,15 @@ name|boolean
 name|allowNulls
 parameter_list|)
 function_decl|;
-comment|/** 	 * Binds an object value to PreparedStatement's numbered parameter. 	 */
+comment|/** 	 * Binds an object value to PreparedStatement's parameter. 	 */
 name|void
 name|bindParameter
 parameter_list|(
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|ParameterBinding
+name|Binding
 name|parameterBinding
-parameter_list|)
-throws|throws
-name|SQLException
-throws|,
-name|Exception
-function_decl|;
-comment|/** 	 * Binds an object value to PreparedStatement's numbered parameter. 	 */
-name|void
-name|bindParameter
-parameter_list|(
-name|PreparedStatement
-name|statement
-parameter_list|,
-name|SQLParameterBinding
-name|parameterBinding
-parameter_list|,
-name|int
-name|position
-parameter_list|)
-throws|throws
-name|SQLException
-throws|,
-name|Exception
-function_decl|;
-comment|/** 	 * Binds an object value to CallableStatement's numbered parameter. 	 */
-name|void
-name|bindParameter
-parameter_list|(
-name|CallableStatement
-name|statement
-parameter_list|,
-name|ProcedureParameterBinding
-name|binding
 parameter_list|)
 throws|throws
 name|SQLException
@@ -536,7 +461,7 @@ name|MergerFactory
 name|mergerFactory
 parameter_list|()
 function_decl|;
-comment|/** 	 * Append the column type part of a "create table" to the given 	 * {@link StringBuffer} 	 *  	 * @param sqlBuffer 	 *            the {@link StringBuffer} to append the column type to 	 * @param column 	 *            the {@link DbAttribute} defining the column to append type for 	 * @since 3.0 	 */
+comment|/** 	 * Append the column type part of a "create table" to the given 	 * {@link StringBuffer} 	 * 	 * @param sqlBuffer 	 *            the {@link StringBuffer} to append the column type to 	 * @param column 	 *            the {@link DbAttribute} defining the column to append type for 	 * @since 3.0 	 */
 name|void
 name|createTableAppendColumn
 parameter_list|(
@@ -557,17 +482,17 @@ name|boolean
 name|needQuotes
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns SQL identifier quoting strategy object 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Returns SQL identifier quoting strategy object 	 * 	 * @since 4.0 	 */
 name|QuotingStrategy
 name|getQuotingStrategy
 parameter_list|()
 function_decl|;
-comment|/** 	 * Allows the users to get access to the adapter decorated by a given 	 * adapter. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Allows the users to get access to the adapter decorated by a given 	 * adapter. 	 * 	 * @since 4.0 	 */
 name|DbAdapter
 name|unwrap
 parameter_list|()
 function_decl|;
-comment|/** 	 * Returns a translator factory for EJBQL to SQL translation. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Returns a translator factory for EJBQL to SQL translation. 	 * 	 * @since 4.0 	 */
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory
 parameter_list|()

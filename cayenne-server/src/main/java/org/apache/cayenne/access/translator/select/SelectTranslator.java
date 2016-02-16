@@ -57,7 +57,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -104,7 +104,7 @@ parameter_list|()
 throws|throws
 name|Exception
 function_decl|;
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|getBindings
 parameter_list|()

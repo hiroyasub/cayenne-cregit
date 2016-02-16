@@ -29,7 +29,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -291,7 +291,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|getBindings
 parameter_list|()
@@ -306,7 +306,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|updateBindings
 parameter_list|(
@@ -317,7 +317,7 @@ block|{
 name|ensureEncryptorCompiled
 argument_list|()
 expr_stmt|;
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 init|=

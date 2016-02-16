@@ -29,7 +29,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -134,7 +134,7 @@ specifier|public
 name|void
 name|transform
 parameter_list|(
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -161,7 +161,7 @@ name|i
 operator|++
 control|)
 block|{
-name|ParameterBinding
+name|DbAttributeBinding
 name|b
 init|=
 name|bindings

@@ -31,7 +31,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -417,7 +417,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|createBindings
 parameter_list|()
@@ -468,12 +468,12 @@ operator|.
 name|size
 argument_list|()
 decl_stmt|;
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 init|=
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 name|ul
 operator|+
@@ -537,7 +537,7 @@ name|i
 index|]
 operator|=
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|(
 name|a
 argument_list|,
@@ -604,7 +604,7 @@ name|i
 index|]
 operator|=
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|(
 name|a
 argument_list|,
@@ -619,7 +619,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|doUpdateBindings
 parameter_list|(

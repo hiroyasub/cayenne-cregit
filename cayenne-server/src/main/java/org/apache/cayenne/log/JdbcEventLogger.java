@@ -37,7 +37,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -149,7 +149,7 @@ name|Object
 name|value
 parameter_list|)
 function_decl|;
-comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, DbAttributeBinding[], long)}. 	 */
 annotation|@
 name|Deprecated
 name|void
@@ -165,7 +165,7 @@ argument_list|>
 name|params
 parameter_list|)
 function_decl|;
-comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, DbAttributeBinding[], long)}. 	 */
 annotation|@
 name|Deprecated
 name|void
@@ -197,7 +197,7 @@ parameter_list|(
 name|String
 name|sql
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|,
@@ -212,12 +212,12 @@ parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)
 function_decl|;
-comment|/** 	 * @deprecated since 4.0 in favor of 	 *             {@link #logQueryParameters(String, ParameterBinding[])} 	 */
+comment|/** 	 * @deprecated since 4.0 in favor of 	 *             {@link #logQueryParameters(String, DbAttributeBinding[])} 	 */
 annotation|@
 name|Deprecated
 name|void

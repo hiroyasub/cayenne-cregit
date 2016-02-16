@@ -41,7 +41,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -148,7 +148,7 @@ name|String
 name|sql
 decl_stmt|;
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 decl_stmt|;
@@ -233,7 +233,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|getBindings
 parameter_list|()
@@ -248,7 +248,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|updateBindings
 parameter_list|(
@@ -274,14 +274,14 @@ parameter_list|()
 function_decl|;
 specifier|protected
 specifier|abstract
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|createBindings
 parameter_list|()
 function_decl|;
 specifier|protected
 specifier|abstract
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|doUpdateBindings
 parameter_list|(

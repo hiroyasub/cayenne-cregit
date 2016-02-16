@@ -31,7 +31,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -230,7 +230,7 @@ decl_stmt|;
 specifier|protected
 name|List
 argument_list|<
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|>
 name|bindings
 decl_stmt|;
@@ -284,7 +284,7 @@ operator|=
 operator|new
 name|ArrayList
 argument_list|<
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|>
 argument_list|()
 expr_stmt|;
@@ -475,11 +475,11 @@ argument_list|(
 name|typeName
 argument_list|)
 decl_stmt|;
-name|ParameterBinding
+name|DbAttributeBinding
 name|binding
 init|=
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|(
 name|dbAttr
 argument_list|,
@@ -515,7 +515,7 @@ expr_stmt|;
 block|}
 comment|/** 	 * @since 4.0 	 */
 specifier|public
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|getBindings
 parameter_list|()
@@ -526,7 +526,7 @@ operator|.
 name|toArray
 argument_list|(
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 name|bindings
 operator|.

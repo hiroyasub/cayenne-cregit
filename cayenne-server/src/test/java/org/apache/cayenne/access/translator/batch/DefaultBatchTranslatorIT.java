@@ -31,7 +31,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -337,14 +337,14 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|createBindings
 parameter_list|()
 block|{
 return|return
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 literal|0
 index|]
@@ -353,7 +353,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|doUpdateBindings
 parameter_list|(
@@ -363,7 +363,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 literal|0
 index|]
@@ -446,14 +446,14 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|createBindings
 parameter_list|()
 block|{
 return|return
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 literal|0
 index|]
@@ -462,7 +462,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|doUpdateBindings
 parameter_list|(
@@ -472,7 +472,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 literal|0
 index|]
@@ -644,14 +644,14 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|createBindings
 parameter_list|()
 block|{
 return|return
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 literal|0
 index|]
@@ -660,7 +660,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|doUpdateBindings
 parameter_list|(
@@ -670,7 +670,7 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 index|[
 literal|0
 index|]

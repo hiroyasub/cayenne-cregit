@@ -37,7 +37,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -252,7 +252,7 @@ parameter_list|(
 name|String
 name|sql
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|,
@@ -298,7 +298,7 @@ parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)

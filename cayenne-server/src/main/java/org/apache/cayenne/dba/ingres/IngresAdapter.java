@@ -55,7 +55,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|Binding
 import|;
 end_import
 
@@ -641,7 +641,7 @@ parameter_list|(
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|ParameterBinding
+name|Binding
 name|binding
 parameter_list|)
 throws|throws
@@ -661,9 +661,6 @@ operator|&&
 operator|(
 name|binding
 operator|.
-name|getAttribute
-argument_list|()
-operator|.
 name|getType
 argument_list|()
 operator|==
@@ -672,9 +669,6 @@ operator|.
 name|BOOLEAN
 operator|||
 name|binding
-operator|.
-name|getAttribute
-argument_list|()
 operator|.
 name|getType
 argument_list|()

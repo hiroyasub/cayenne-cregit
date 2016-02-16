@@ -109,7 +109,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -1392,7 +1392,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, DbAttributeBinding[], long)}. 	 */
 annotation|@
 name|Deprecated
 annotation|@
@@ -1687,7 +1687,7 @@ parameter_list|(
 name|String
 name|sql
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|,
@@ -1937,7 +1937,7 @@ parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -2003,7 +2003,7 @@ parameter_list|,
 name|String
 name|label
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -2046,7 +2046,7 @@ name|i
 operator|++
 control|)
 block|{
-name|ParameterBinding
+name|DbAttributeBinding
 name|b
 init|=
 name|bindings

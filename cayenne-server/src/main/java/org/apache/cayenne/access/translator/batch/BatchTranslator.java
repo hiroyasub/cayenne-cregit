@@ -31,7 +31,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -64,13 +64,13 @@ name|getSql
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the widest possible array of bindings for this query.      */
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|getBindings
 parameter_list|()
 function_decl|;
 comment|/**      * Updates internal bindings to be used with a given row, returning updated      * bindings array. This method guarantees that the returned array contains      * the same bindings in the same order as in the array returned from      * {@link #getBindings()} (but in a state corresponding to the 'row'      * parameter). Usually the returned array is actually the same object reused      * for every iteration, only with changed object state.      */
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|updateBindings
 parameter_list|(

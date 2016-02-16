@@ -45,7 +45,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -61,7 +61,7 @@ block|{
 name|BindingsTransformer
 name|encryptor
 parameter_list|(
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)

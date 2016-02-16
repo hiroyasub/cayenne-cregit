@@ -67,7 +67,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|ParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -236,7 +236,7 @@ parameter_list|,
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -247,17 +247,17 @@ name|Exception
 block|{
 for|for
 control|(
-name|ParameterBinding
+name|DbAttributeBinding
 name|b
 range|:
 name|bindings
 control|)
 block|{
-name|ParameterBinding
+name|DbAttributeBinding
 name|binding
 init|=
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|(
 name|b
 operator|.
@@ -505,7 +505,7 @@ argument_list|)
 init|;
 init|)
 block|{
-name|ParameterBinding
+name|DbAttributeBinding
 index|[]
 name|bindings
 init|=
@@ -761,11 +761,11 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
-name|ParameterBinding
+name|DbAttributeBinding
 name|binding
 init|=
 operator|new
-name|ParameterBinding
+name|DbAttributeBinding
 argument_list|(
 name|attribute
 argument_list|,
