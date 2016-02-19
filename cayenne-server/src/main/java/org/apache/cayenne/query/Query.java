@@ -47,20 +47,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|ConfigurationNode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DataMap
@@ -122,7 +108,7 @@ name|SQLActionVisitor
 name|visitor
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a symbolic name of the query. The name is normally used as a key to find      * queries stored in the DataMap.      *       * @since 1.1      */
+comment|/**      * Returns a symbolic name of the query. The name is normally used as a key to find      * queries stored in the DataMap.      *       * @since 1.1      * @deprecated {@link QueryDescriptor#getName()} should be used instead      */
 name|String
 name|getName
 parameter_list|()
