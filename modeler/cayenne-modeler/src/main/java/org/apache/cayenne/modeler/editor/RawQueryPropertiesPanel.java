@@ -119,37 +119,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|EntityResolver
 import|;
 end_import
 
@@ -224,20 +196,6 @@ operator|.
 name|util
 operator|.
 name|Comparators
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|Query
 import|;
 end_import
 
@@ -809,9 +767,6 @@ argument_list|(
 name|query
 argument_list|)
 expr_stmt|;
-comment|//        EntityResolver entRes = new EntityResolver(((DataChannelDescriptor) mediator
-comment|//                .getProject()
-comment|//                .getRootNode()).getDataMaps());
 name|boolean
 name|fetchingDO
 init|=
