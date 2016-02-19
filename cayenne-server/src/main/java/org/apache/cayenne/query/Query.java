@@ -67,6 +67,20 @@ name|EntityResolver
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|QueryDescriptor
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines minimal API of a query descriptor that is executable via Cayenne.  */
 end_comment

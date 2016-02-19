@@ -37,34 +37,6 @@ name|Persistent
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|Query
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QueryDescriptor
-import|;
-end_import
-
 begin_comment
 comment|/**  * Defines API of a container of DbEntities, ObjEntities, Procedures, Queries  * and other mapping objects.  *   * @since 1.1  */
 end_comment

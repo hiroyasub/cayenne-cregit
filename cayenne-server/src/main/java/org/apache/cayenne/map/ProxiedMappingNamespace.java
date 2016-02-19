@@ -37,20 +37,6 @@ name|Persistent
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|QueryDescriptor
-import|;
-end_import
-
 begin_comment
 comment|/**  * A proxy for lazy on-demand initialization of the mapping cache.  */
 end_comment

@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 package|;
 end_package
 
@@ -23,23 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|query
 operator|.
-name|MapLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|Procedure
+name|ProcedureQuery
 import|;
 end_import
 
@@ -66,6 +52,10 @@ operator|.
 name|Map
 import|;
 end_import
+
+begin_comment
+comment|/**  * @since 4.0  */
+end_comment
 
 begin_class
 specifier|public

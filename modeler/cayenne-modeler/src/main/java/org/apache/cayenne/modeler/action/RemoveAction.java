@@ -671,7 +671,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
+name|map
 operator|.
 name|QueryDescriptor
 import|;
