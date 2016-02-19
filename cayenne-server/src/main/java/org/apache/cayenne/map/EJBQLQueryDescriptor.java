@@ -72,11 +72,10 @@ specifier|public
 name|EJBQLQueryDescriptor
 parameter_list|()
 block|{
-name|this
-operator|.
-name|type
-operator|=
+name|super
+argument_list|(
 name|EJBQL_QUERY
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns EJBQL query string for this query.      */

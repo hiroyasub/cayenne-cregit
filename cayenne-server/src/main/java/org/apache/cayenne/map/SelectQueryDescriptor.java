@@ -158,11 +158,10 @@ specifier|public
 name|SelectQueryDescriptor
 parameter_list|()
 block|{
-name|this
-operator|.
-name|type
-operator|=
+name|super
+argument_list|(
 name|SELECT_QUERY
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public

@@ -275,15 +275,10 @@ name|descriptor
 init|=
 operator|new
 name|QueryDescriptor
-argument_list|()
-decl_stmt|;
-name|descriptor
-operator|.
-name|setType
 argument_list|(
 name|type
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 return|return
 name|descriptor
 return|;
@@ -321,8 +316,17 @@ argument_list|()
 decl_stmt|;
 specifier|protected
 name|QueryDescriptor
-parameter_list|()
+parameter_list|(
+name|String
+name|type
+parameter_list|)
 block|{
+name|this
+operator|.
+name|type
+operator|=
+name|type
+expr_stmt|;
 block|}
 comment|/**      * Returns name of the query.      */
 specifier|public

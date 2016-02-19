@@ -72,11 +72,10 @@ specifier|public
 name|ProcedureQueryDescriptor
 parameter_list|()
 block|{
-name|this
-operator|.
-name|type
-operator|=
+name|super
+argument_list|(
 name|PROCEDURE_QUERY
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns result entity name.      */

@@ -106,11 +106,10 @@ specifier|public
 name|SQLTemplateDescriptor
 parameter_list|()
 block|{
-name|this
-operator|.
-name|type
-operator|=
+name|super
+argument_list|(
 name|SQL_TEMPLATE
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns default SQL statement for this query.      */
