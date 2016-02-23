@@ -120,7 +120,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that is a reference to a named parameterized query stored in the mapping. The  * actual query is resolved during execution.  *   * @since 1.2  */
+comment|/**  * A query that is a reference to a named parameterized query stored in the mapping. The  * actual query is resolved during execution.  *   * @since 1.2  * @deprecated since 4.0 you should use {@link MappedQuery} instead  */
 end_comment
 
 begin_class
