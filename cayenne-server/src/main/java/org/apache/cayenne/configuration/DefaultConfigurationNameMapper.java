@@ -98,7 +98,7 @@ specifier|final
 name|String
 name|REVERSE_ENGINEERING_SUFFIX
 init|=
-literal|".reverseEngineering.xml"
+literal|".xml"
 decl_stmt|;
 specifier|protected
 name|ConfigurationNodeVisitor

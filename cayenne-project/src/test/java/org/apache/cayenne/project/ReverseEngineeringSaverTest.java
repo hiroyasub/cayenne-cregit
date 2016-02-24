@@ -363,7 +363,7 @@ name|testFolder
 argument_list|,
 name|reverseEngineeringName
 operator|+
-literal|".reverseEngineering.xml"
+literal|".xml"
 argument_list|)
 decl_stmt|;
 name|assertTrue

@@ -299,16 +299,6 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JSeparator
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
 name|JSplitPane
 import|;
 end_import
@@ -378,7 +368,7 @@ specifier|protected
 name|ProjectController
 name|controller
 decl_stmt|;
-specifier|public
+specifier|protected
 name|ReverseEngineeringController
 name|reverseEngineeringController
 decl_stmt|;
@@ -405,10 +395,6 @@ decl_stmt|;
 specifier|protected
 name|PanelBuilder
 name|builder
-decl_stmt|;
-specifier|protected
-name|JSeparator
-name|separator
 decl_stmt|;
 specifier|protected
 name|JSplitPane

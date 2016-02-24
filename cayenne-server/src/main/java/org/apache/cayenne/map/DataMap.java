@@ -1291,7 +1291,7 @@ name|encoder
 operator|.
 name|print
 argument_list|(
-literal|"<reverseEngineering"
+literal|"<reverse-engineering-config"
 argument_list|)
 expr_stmt|;
 name|encoder

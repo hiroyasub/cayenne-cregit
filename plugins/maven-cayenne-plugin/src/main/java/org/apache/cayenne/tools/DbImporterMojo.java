@@ -29,7 +29,21 @@ name|loader
 operator|.
 name|filters
 operator|.
-name|*
+name|OldFilterConfigBridge
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ConfigurationNameMapper
 import|;
 end_import
 
@@ -114,16 +128,6 @@ operator|.
 name|io
 operator|.
 name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
 import|;
 end_import
 
@@ -376,7 +380,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to reverse engineer datamap from DB.  *   * @since 3.0  *   * @phase generate-sources  * @goal cdbimport  */
+comment|/**  * Maven mojo to reverse engineer datamap from DB.  *  * @since 3.0  *  * @phase generate-sources  * @goal cdbimport  */
 end_comment
 
 begin_class
@@ -386,17 +390,17 @@ name|DbImporterMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * DataMap XML file to use as a base for DB importing.      *       * @parameter map="map"      * @required      */
+comment|/**      * DataMap XML file to use as a base for DB importing.      *      * @parameter map="map"      * @required      */
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *       * @parameter defaultPackage="defaultPackage"      * @since 4.0      */
+comment|/**      * A default package for ObjEntity Java classes. If not specified, and the      * existing DataMap already has the default package, the existing package      * will be used.      *      * @parameter defaultPackage="defaultPackage"      * @since 4.0      */
 specifier|private
 name|String
 name|defaultPackage
 decl_stmt|;
-comment|/**      * Indicates that the old mapping should be completely removed and replaced      * with the new data based on reverse engineering. Default is      *<code>true</code>.      *       * @parameter overwrite="overwrite" default-value="true"      */
+comment|/**      * Indicates that the old mapping should be completely removed and replaced      * with the new data based on reverse engineering. Default is      *<code>true</code>.      *      * @parameter overwrite="overwrite" default-value="true"      */
 specifier|private
 name|boolean
 name|overwrite
@@ -406,37 +410,37 @@ specifier|private
 name|String
 name|meaningfulPkTables
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      *       * The default is a basic naming strategy.      *       * @parameter namingStrategy="namingStrategy"      *            default-value="org.apache.cayenne.map.naming.DefaultNameGenerator"      */
+comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      *      * The default is a basic naming strategy.      *      * @parameter namingStrategy="namingStrategy"      *            default-value="org.apache.cayenne.map.naming.DefaultNameGenerator"      */
 specifier|private
 name|String
 name|namingStrategy
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. This attribute      * is optional, the default is AutoAdapter, i.e. Cayenne would try to guess      * the DB type.      *       * @parameter adapter="adapter"      *            default-value="org.apache.cayenne.dba.AutoAdapter"      */
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. This attribute      * is optional, the default is AutoAdapter, i.e. Cayenne would try to guess      * the DB type.      *      * @parameter adapter="adapter"      *            default-value="org.apache.cayenne.dba.AutoAdapter"      */
 specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter driver="driver"      * @required      */
+comment|/**      * A class of JDBC driver to use for the target database.      *      * @parameter driver="driver"      * @required      */
 specifier|private
 name|String
 name|driver
 decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      *       * @parameter url="url"      * @required      */
+comment|/**      * JDBC connection URL of a target database.      *      * @parameter url="url"      * @required      */
 specifier|private
 name|String
 name|url
 decl_stmt|;
-comment|/**      * Database user name.      *       * @parameter username="username"      */
+comment|/**      * Database user name.      *      * @parameter username="username"      */
 specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Database user password.      *       * @parameter password="password"      */
+comment|/**      * Database user password.      *      * @parameter password="password"      */
 specifier|private
 name|String
 name|password
 decl_stmt|;
-comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *       * @parameter usePrimitives="usePrimitives" default-value="true"      */
+comment|/**      * If true, would use primitives instead of numeric and boolean classes.      *      * @parameter usePrimitives="usePrimitives" default-value="true"      */
 specifier|private
 name|boolean
 name|usePrimitives
@@ -459,6 +463,7 @@ operator|new
 name|ReverseEngineering
 argument_list|()
 decl_stmt|;
+comment|/**      * Flag which defines from where to take the configuration of cdbImport.      * If we define the config of cdbImport in pom.xml      * we should set it to true or it will be setted to true automatically      * if we will define some configuration parameters in pom.xml      * Else it remains default(false) and for cdbImport      * we use the configuration defined in signed dataMap      *      *  @parameter isReverseEngineeringDefined="isReverseEngineeringDefined" default-value="false"      */
 specifier|private
 name|boolean
 name|isReverseEngineeringDefined
@@ -872,6 +877,58 @@ operator|!=
 literal|null
 condition|)
 block|{
+try|try
+block|{
+name|Injector
+name|injector
+init|=
+name|DIBootstrap
+operator|.
+name|createInjector
+argument_list|(
+operator|new
+name|ToolsModule
+argument_list|(
+name|logger
+argument_list|)
+argument_list|,
+operator|new
+name|DbImportModule
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|ConfigurationNameMapper
+name|nameMapper
+init|=
+name|injector
+operator|.
+name|getInstance
+argument_list|(
+name|ConfigurationNameMapper
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|String
+name|reverseEngineeringLocation
+init|=
+name|nameMapper
+operator|.
+name|configurationLocation
+argument_list|(
+name|ReverseEngineering
+operator|.
+name|class
+argument_list|,
+name|dataMap
+operator|.
+name|getReverseEngineering
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
 name|Resource
 name|reverseEngineeringResource
 init|=
@@ -889,15 +946,7 @@ argument_list|)
 operator|.
 name|getRelativeResource
 argument_list|(
-name|dataMap
-operator|.
-name|getReverseEngineering
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-operator|+
-literal|".reverseEngineering.xml"
+name|reverseEngineeringLocation
 argument_list|)
 decl_stmt|;
 name|DefaultReverseEngineeringLoader
@@ -975,24 +1024,6 @@ name|filtersConfig
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|Injector
-name|injector
-init|=
-name|DIBootstrap
-operator|.
-name|createInjector
-argument_list|(
-operator|new
-name|ToolsModule
-argument_list|(
-name|logger
-argument_list|)
-argument_list|,
-operator|new
-name|DbImportModule
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|validateDbImportConfiguration
 argument_list|(
 name|config
@@ -1000,8 +1031,6 @@ argument_list|,
 name|injector
 argument_list|)
 expr_stmt|;
-try|try
-block|{
 name|injector
 operator|.
 name|getInstance
@@ -1081,33 +1110,6 @@ block|}
 catch|catch
 parameter_list|(
 name|MalformedURLException
-name|e
-parameter_list|)
-block|{
-name|getLog
-argument_list|()
-operator|.
-name|error
-argument_list|(
-name|e
-argument_list|)
-expr_stmt|;
-throw|throw
-operator|new
-name|MojoExecutionException
-argument_list|(
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|,
-name|e
-argument_list|)
-throw|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
 name|e
 parameter_list|)
 block|{

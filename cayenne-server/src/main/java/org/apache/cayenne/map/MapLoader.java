@@ -216,7 +216,7 @@ specifier|final
 name|String
 name|REVERSE_ENGINEERING
 init|=
-literal|"reverseEngineering"
+literal|"reverse-engineering-config"
 decl_stmt|;
 specifier|public
 specifier|static
