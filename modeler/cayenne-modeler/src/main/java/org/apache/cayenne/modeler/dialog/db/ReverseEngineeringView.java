@@ -437,7 +437,13 @@ specifier|private
 name|String
 name|template
 init|=
-literal|"<reverseEngineering>\n"
+literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+operator|+
+literal|"<reverseEngineering xmlns=\"http://cayenne.apache.org/schema/8/reverseEngineering\"\n"
+operator|+
+literal|"                    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+operator|+
+literal|"                    xsi:schemaLocation=\"http://cayenne.apache.org/schema/8/reverseEngineering http://cayenne.apache.org/schema/8/reverseEngineering.xsd\">\n"
 operator|+
 literal|"<skipRelationshipsLoading>false</skipRelationshipsLoading>\n"
 operator|+
