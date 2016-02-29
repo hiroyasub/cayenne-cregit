@@ -219,6 +219,17 @@ name|setProperty
 argument_list|(
 name|Marshaller
 operator|.
+name|JAXB_SCHEMA_LOCATION
+argument_list|,
+literal|"http://cayenne.apache.org/schema/8/reverseEngineering http://cayenne.apache.org/schema/8/reverseEngineering.xsd"
+argument_list|)
+expr_stmt|;
+name|marshaller
+operator|.
+name|setProperty
+argument_list|(
+name|Marshaller
+operator|.
 name|JAXB_FRAGMENT
 argument_list|,
 literal|true

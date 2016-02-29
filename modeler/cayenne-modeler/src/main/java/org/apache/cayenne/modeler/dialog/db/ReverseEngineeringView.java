@@ -364,6 +364,48 @@ name|ReverseEngineeringView
 extends|extends
 name|JPanel
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|CONFIGURATION_TEMPLATE
+init|=
+literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+operator|+
+literal|"<reverseEngineering\n"
+operator|+
+literal|"       xmlns=\"http://cayenne.apache.org/schema/8/reverseEngineering\"\n"
+operator|+
+literal|"       xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+operator|+
+literal|"       xsi:schemaLocation=\"http://cayenne.apache.org/schema/8/reverseEngineering "
+operator|+
+literal|"http://cayenne.apache.org/schema/8/reverseEngineering.xsd\">\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"<skipRelationshipsLoading>false</skipRelationshipsLoading>\n"
+operator|+
+literal|"<skipPrimaryKeyLoading>false</skipPrimaryKeyLoading>\n"
+operator|+
+literal|"\n"
+operator|+
+literal|"<catalog>\n"
+operator|+
+literal|"<schema>\n"
+operator|+
+literal|"<includeTable>\n"
+operator|+
+literal|"</includeTable>\n"
+operator|+
+literal|"</schema>\n"
+operator|+
+literal|"</catalog>\n"
+operator|+
+literal|"<includeProcedure pattern=\".*\"/>\n"
+operator|+
+literal|"</reverseEngineering>"
+decl_stmt|;
 specifier|protected
 name|ProjectController
 name|controller
@@ -432,40 +474,6 @@ argument_list|,
 name|DataMapViewModel
 argument_list|>
 name|reverseEngineeringViewMap
-decl_stmt|;
-specifier|private
-name|String
-name|template
-init|=
-literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-operator|+
-literal|"<reverseEngineering xmlns=\"http://cayenne.apache.org/schema/8/reverseEngineering\"\n"
-operator|+
-literal|"                    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
-operator|+
-literal|"                    xsi:schemaLocation=\"http://cayenne.apache.org/schema/8/reverseEngineering http://cayenne.apache.org/schema/8/reverseEngineering.xsd\">\n"
-operator|+
-literal|"<skipRelationshipsLoading>false</skipRelationshipsLoading>\n"
-operator|+
-literal|"<skipPrimaryKeyLoading>false</skipPrimaryKeyLoading>\n"
-operator|+
-literal|"\n"
-operator|+
-literal|"<catalog>\n"
-operator|+
-literal|"<schema>\n"
-operator|+
-literal|"<includeTable>\n"
-operator|+
-literal|"</includeTable>\n"
-operator|+
-literal|"</schema>\n"
-operator|+
-literal|"</catalog>\n"
-operator|+
-literal|"<includeProcedure pattern=\".*\"/>\n"
-operator|+
-literal|"</reverseEngineering>"
 decl_stmt|;
 specifier|public
 name|ReverseEngineeringView
@@ -1341,7 +1349,7 @@ argument_list|()
 operator|.
 name|setText
 argument_list|(
-name|template
+name|CONFIGURATION_TEMPLATE
 argument_list|)
 expr_stmt|;
 block|}
