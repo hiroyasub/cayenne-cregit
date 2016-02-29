@@ -233,8 +233,17 @@ operator|new
 name|XMLEncoder
 argument_list|(
 name|printWriter
+argument_list|,
+literal|"\t"
+argument_list|,
+name|version
 argument_list|)
 decl_stmt|;
+name|printXMLHeader
+argument_list|(
+name|encoder
+argument_list|)
+expr_stmt|;
 name|node
 operator|.
 name|encodeAsXML
