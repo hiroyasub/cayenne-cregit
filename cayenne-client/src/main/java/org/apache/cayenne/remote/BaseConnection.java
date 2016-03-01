@@ -75,12 +75,6 @@ specifier|protected
 name|long
 name|messageId
 decl_stmt|;
-specifier|protected
-name|long
-name|readTimeout
-init|=
-literal|0L
-decl_stmt|;
 comment|/**      * Default constructor that initializes logging and a single threaded EventManager.      */
 specifier|protected
 name|BaseConnection
@@ -303,32 +297,6 @@ name|messageId
 operator|+
 literal|1
 return|;
-block|}
-comment|/**      * The socket timeout on requests in milliseconds. Defaults to infinity.      *       * @since 3.1      */
-specifier|public
-name|long
-name|getReadTimeout
-parameter_list|()
-block|{
-return|return
-name|readTimeout
-return|;
-block|}
-comment|/**      * Sets the socket timeout.      *       * @param readTimeout The socket timeout on requests in milliseconds.      *       * @since 3.1      */
-specifier|public
-name|void
-name|setReadTimeout
-parameter_list|(
-name|long
-name|readTimeout
-parameter_list|)
-block|{
-name|this
-operator|.
-name|readTimeout
-operator|=
-name|readTimeout
-expr_stmt|;
 block|}
 comment|/**      * Called before logging the beginning of message processing.      */
 specifier|protected

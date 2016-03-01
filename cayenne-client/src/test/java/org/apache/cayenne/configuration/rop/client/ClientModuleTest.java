@@ -165,11 +165,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|remote
+name|rop
 operator|.
-name|hessian
-operator|.
-name|HessianConnection
+name|HttpClientConnection
 import|;
 end_import
 
@@ -327,7 +325,7 @@ name|assertTrue
 argument_list|(
 name|connection
 operator|instanceof
-name|HessianConnection
+name|HttpClientConnection
 argument_list|)
 expr_stmt|;
 name|assertSame

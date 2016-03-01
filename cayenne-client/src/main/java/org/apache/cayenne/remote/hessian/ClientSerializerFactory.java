@@ -132,6 +132,7 @@ comment|/**  * An object that manages all custom (de)serializers used on the cli
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|ClientSerializerFactory
 extends|extends
