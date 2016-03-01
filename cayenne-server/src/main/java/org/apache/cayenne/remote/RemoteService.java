@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface of a Cayenne remote service.  *   * @since 1.2  * @see org.apache.cayenne.configuration.rop.server.ROPHessianServlet  */
+comment|/**  * Interface of a Cayenne remote service.  *   * @since 1.2  * @see org.apache.cayenne.rop.ROPServlet  */
 end_comment
 
 begin_interface
