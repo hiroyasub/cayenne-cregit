@@ -1774,6 +1774,8 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|extendedType
+operator|=
 name|getAdapter
 argument_list|()
 operator|.
