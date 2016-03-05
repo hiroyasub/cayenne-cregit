@@ -40,7 +40,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|Binding
+name|ParameterBinding
 block|{
 specifier|static
 specifier|final
@@ -71,7 +71,7 @@ name|int
 name|scale
 decl_stmt|;
 specifier|public
-name|Binding
+name|ParameterBinding
 parameter_list|(
 name|ExtendedType
 name|extendedType

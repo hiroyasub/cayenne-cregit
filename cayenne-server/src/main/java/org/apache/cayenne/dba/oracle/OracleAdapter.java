@@ -55,7 +55,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|Binding
+name|ParameterBinding
 import|;
 end_import
 
@@ -911,7 +911,7 @@ parameter_list|(
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|Binding
+name|ParameterBinding
 name|binding
 parameter_list|)
 throws|throws

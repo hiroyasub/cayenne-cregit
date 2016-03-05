@@ -56,7 +56,7 @@ specifier|public
 class|class
 name|ProcedureParameterBinding
 extends|extends
-name|Binding
+name|ParameterBinding
 block|{
 specifier|private
 specifier|final
