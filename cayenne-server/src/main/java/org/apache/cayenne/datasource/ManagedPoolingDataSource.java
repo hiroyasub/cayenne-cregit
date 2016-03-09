@@ -198,6 +198,20 @@ name|availableSize
 argument_list|()
 return|;
 block|}
+name|int
+name|canExpandSize
+parameter_list|()
+block|{
+return|return
+name|dataSourceManager
+operator|.
+name|getDataSource
+argument_list|()
+operator|.
+name|canExpandSize
+argument_list|()
+return|;
+block|}
 comment|/** 	 * Calls {@link #shutdown()} to drain the underlying pool, close open 	 * connections and block the DataSource from creating any new connections. 	 */
 annotation|@
 name|Override
