@@ -589,7 +589,7 @@ argument_list|,
 name|maxConnections
 argument_list|)
 expr_stmt|;
-comment|// grow pull to min connections
+comment|// grow pool to min connections
 try|try
 block|{
 for|for
