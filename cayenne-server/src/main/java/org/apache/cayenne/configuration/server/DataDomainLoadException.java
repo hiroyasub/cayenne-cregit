@@ -69,6 +69,14 @@ extends|extends
 name|ConfigurationException
 block|{
 specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|7969847819485380271L
+decl_stmt|;
+specifier|private
 name|ConfigurationTree
 argument_list|<
 name|DataChannelDescriptor
