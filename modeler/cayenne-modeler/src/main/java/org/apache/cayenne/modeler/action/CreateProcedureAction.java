@@ -418,6 +418,16 @@ name|getDefaultSchema
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|procedure
+operator|.
+name|setCatalog
+argument_list|(
+name|map
+operator|.
+name|getDefaultCatalog
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|map
 operator|.
 name|addProcedure
