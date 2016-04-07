@@ -430,6 +430,13 @@ name|serverMetadata
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+return|return
+operator|!
+name|DONE
+return|;
+block|}
 if|if
 condition|(
 name|cachedList
