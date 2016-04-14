@@ -2017,10 +2017,8 @@ name|class
 argument_list|)
 expr_stmt|;
 comment|// a service to load DataSourceFactories. DelegatingDataSourceFactory
-comment|// will attempt
-comment|// to find the actual worker factory dynamically on each call depending
-comment|// on
-comment|// DataNodeDescriptor data and the environment
+comment|// will attempt to find the actual worker factory dynamically on each
+comment|// call depending on DataNodeDescriptor data and the environment
 name|binder
 operator|.
 name|bind
