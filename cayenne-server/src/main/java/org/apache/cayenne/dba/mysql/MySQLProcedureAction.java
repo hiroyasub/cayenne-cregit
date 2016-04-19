@@ -59,6 +59,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -323,10 +333,15 @@ block|{
 name|ResultSet
 name|rs
 init|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|statement
 operator|.
 name|getResultSet
 argument_list|()
+argument_list|)
 decl_stmt|;
 try|try
 block|{
