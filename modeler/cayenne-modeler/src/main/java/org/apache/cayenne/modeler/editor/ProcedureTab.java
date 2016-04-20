@@ -103,20 +103,6 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|jgoodies
-operator|.
-name|forms
-operator|.
-name|builder
-operator|.
-name|DefaultFormBuilder
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -262,6 +248,20 @@ operator|.
 name|validation
 operator|.
 name|ValidationException
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|jgoodies
+operator|.
+name|forms
+operator|.
+name|builder
+operator|.
+name|DefaultFormBuilder
 import|;
 end_import
 
@@ -520,9 +520,9 @@ name|builder
 operator|.
 name|append
 argument_list|(
-literal|"Schema:"
+literal|"Catalog:"
 argument_list|,
-name|schema
+name|catalog
 operator|.
 name|getComponent
 argument_list|()
@@ -532,9 +532,9 @@ name|builder
 operator|.
 name|append
 argument_list|(
-literal|"Catalog:"
+literal|"Schema:"
 argument_list|,
-name|catalog
+name|schema
 operator|.
 name|getComponent
 argument_list|()
