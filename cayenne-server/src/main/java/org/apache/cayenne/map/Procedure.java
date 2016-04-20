@@ -487,7 +487,7 @@ literal|"</procedure>"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns procedure name including schema, if present.      */
+comment|/**      * Returns procedure name including schema and catalog, if present.      */
 specifier|public
 name|String
 name|getFullyQualifiedName
@@ -495,20 +495,30 @@ parameter_list|()
 block|{
 return|return
 operator|(
+name|catalog
+operator|!=
+literal|null
+condition|?
+name|catalog
+operator|+
+literal|'.'
+else|:
+literal|""
+operator|)
+operator|+
+operator|(
 name|schema
 operator|!=
 literal|null
-operator|)
 condition|?
 name|schema
 operator|+
 literal|'.'
-operator|+
-name|getName
-argument_list|()
 else|:
-name|getName
-argument_list|()
+literal|""
+operator|)
+operator|+
+name|name
 return|;
 block|}
 comment|/**      * @return parent DataMap of this entity.      */
