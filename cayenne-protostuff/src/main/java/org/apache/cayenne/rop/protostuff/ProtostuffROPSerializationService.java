@@ -103,6 +103,10 @@ name|OutputStream
 import|;
 end_import
 
+begin_comment
+comment|/**  * This {@link ROPSerializationService} implementation uses Protostuff {@link GraphIOUtil} to (de)serialize  * Cayenne object graph.  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -351,7 +355,7 @@ specifier|private
 class|class
 name|Wrapper
 block|{
-specifier|public
+specifier|private
 name|Object
 name|data
 decl_stmt|;

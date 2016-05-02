@@ -77,13 +77,22 @@ name|ProtostuffROPSerializationServiceProvider
 import|;
 end_import
 
+begin_comment
+comment|/**  * A DI module that uses Protostuff Object Graph Serialization as Cayenne {@link ROPSerializationService}.  *<a href="http://www.protostuff.io/">  *  * Note the you usually have to add -Dprotostuff.runtime.collection_schema_on_repeated_fields=true as VM option  * because Cayenne objects might have cyclic collection fields.  *  * @since 4.0  */
+end_comment
+
 begin_class
 specifier|public
 class|class
-name|ProtostuffClientModule
+name|ProtostuffModule
 implements|implements
 name|Module
 block|{
+specifier|public
+name|ProtostuffModule
+parameter_list|()
+block|{
+block|}
 annotation|@
 name|Override
 specifier|public

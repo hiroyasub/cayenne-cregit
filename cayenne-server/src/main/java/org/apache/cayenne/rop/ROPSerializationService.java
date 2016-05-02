@@ -45,6 +45,10 @@ name|OutputStream
 import|;
 end_import
 
+begin_comment
+comment|/**  * ROP serialization service  *  * @since 4.0  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface

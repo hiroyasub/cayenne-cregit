@@ -79,7 +79,7 @@ name|rop
 operator|.
 name|client
 operator|.
-name|ProtostuffClientModule
+name|ProtostuffModule
 import|;
 end_import
 
@@ -334,7 +334,7 @@ name|emptyMap
 argument_list|()
 argument_list|,
 operator|new
-name|ProtostuffClientModule
+name|ProtostuffModule
 argument_list|()
 argument_list|)
 decl_stmt|;
