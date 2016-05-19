@@ -1298,12 +1298,11 @@ return|return
 name|DONE
 return|;
 block|}
+comment|// target id resolution (unlike source) should be polymorphic
 name|DataRow
 name|targetRow
 init|=
-name|cache
-operator|.
-name|getCachedSnapshot
+name|polymorphicRowFromCache
 argument_list|(
 name|targetId
 argument_list|)
