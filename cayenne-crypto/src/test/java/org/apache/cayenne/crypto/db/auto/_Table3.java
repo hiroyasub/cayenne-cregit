@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|CRYPTO_STRING_PROPERTY
-init|=
-literal|"cryptoString"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
