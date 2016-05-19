@@ -313,12 +313,7 @@ block|{
 name|Object
 name|object
 init|=
-name|actingContext
-operator|.
-name|getGraphManager
-argument_list|()
-operator|.
-name|getNode
+name|polymorphicObjectFromCache
 argument_list|(
 name|oidQuery
 operator|.
