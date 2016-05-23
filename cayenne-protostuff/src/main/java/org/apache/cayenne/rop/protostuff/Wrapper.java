@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * As Protostuff has limitation that nested messages should not contain references to the root message, so we provide  * a simple wrapper for the root message.  *  *<a href="http://www.protostuff.io/documentation/object-graphs/">  */
+comment|/**  * As Protostuff has limitation that nested messages should not contain references to the root message, so we provide  * a simple wrapper for the root message.  *  *<a href="http://www.protostuff.io/documentation/object-graphs/">  *  * @since 4.0  */
 end_comment
 
 begin_class

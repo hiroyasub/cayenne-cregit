@@ -114,7 +114,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|ProtostuffPrefetchTreeNodeSchemaIT
+name|PrefetchTreeNodeSchemaTest
 block|{
 specifier|private
 name|ROPSerializationService
