@@ -204,7 +204,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that organizes commit changes  *   * @since 4.0  */
+comment|/**  * A {@link DataChannelFilter} that captures commit changes, delegating their  * processing to an underlying collection of listeners.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -275,7 +275,7 @@ name|DataChannel
 name|channel
 parameter_list|)
 block|{
-comment|// TODO Auto-generated method stub
+comment|// do nothing...
 block|}
 annotation|@
 name|Override
