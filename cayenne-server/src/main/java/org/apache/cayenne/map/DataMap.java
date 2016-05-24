@@ -566,6 +566,7 @@ name|defaultEntityListeners
 decl_stmt|;
 comment|/** 	 * @since 3.1 	 */
 specifier|protected
+specifier|transient
 name|Resource
 name|configurationSource
 decl_stmt|;
