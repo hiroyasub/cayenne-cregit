@@ -850,7 +850,7 @@ argument_list|,
 literal|4
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|()
 decl_stmt|;
 name|QueryMetadata
@@ -900,7 +900,7 @@ literal|4
 argument_list|)
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|()
 decl_stmt|;
 name|QueryMetadata
@@ -958,7 +958,7 @@ argument_list|,
 literal|5
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|()
 decl_stmt|;
 name|QueryMetadata
@@ -1014,7 +1014,7 @@ argument_list|,
 literal|4
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|()
 decl_stmt|;
 name|QueryMetadata
@@ -1080,7 +1080,7 @@ literal|4
 argument_list|)
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|()
 decl_stmt|;
 name|QueryMetadata
@@ -1180,7 +1180,7 @@ argument_list|,
 literal|3
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|(
 literal|"g1"
 argument_list|)
@@ -1245,7 +1245,7 @@ argument_list|,
 literal|3
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|(
 literal|"g1"
 argument_list|)
@@ -1310,7 +1310,7 @@ argument_list|,
 literal|3
 argument_list|)
 operator|.
-name|useLocalCache
+name|localCache
 argument_list|(
 literal|"g1"
 argument_list|)
