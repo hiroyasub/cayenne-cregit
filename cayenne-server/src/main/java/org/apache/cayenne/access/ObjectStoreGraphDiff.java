@@ -227,6 +227,10 @@ specifier|private
 name|GraphDiff
 name|resolvedDiff
 decl_stmt|;
+specifier|private
+name|int
+name|lastSeenDiffId
+decl_stmt|;
 name|ObjectStoreGraphDiff
 parameter_list|(
 name|ObjectStore
@@ -559,11 +563,19 @@ name|void
 name|resolveDiff
 parameter_list|()
 block|{
+comment|// refresh the diff on first access or if the underlying ObjectStore has
+comment|// changed the the last time we cached the changes.
 if|if
 condition|(
 name|resolvedDiff
 operator|==
 literal|null
+operator|||
+name|lastSeenDiffId
+operator|<
+name|objectStore
+operator|.
+name|currentDiffId
 condition|)
 block|{
 name|CompoundDiff
@@ -648,6 +660,14 @@ name|allChanges
 argument_list|)
 expr_stmt|;
 block|}
+name|this
+operator|.
+name|lastSeenDiffId
+operator|=
+name|objectStore
+operator|.
+name|currentDiffId
+expr_stmt|;
 name|this
 operator|.
 name|resolvedDiff
