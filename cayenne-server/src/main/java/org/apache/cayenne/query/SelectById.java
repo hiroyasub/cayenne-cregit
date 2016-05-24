@@ -672,7 +672,6 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Since we are selecting by ID, multiple matched objects likely indicate a 	 * database referential integrity problem. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -692,7 +691,6 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Since we are selecting by ID, we don't need to limit fetch size. Multiple 	 * matched objects likely indicate a database referential integrity problem. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -704,9 +702,11 @@ name|context
 parameter_list|)
 block|{
 return|return
+name|context
+operator|.
 name|selectFirst
 argument_list|(
-name|context
+name|this
 argument_list|)
 return|;
 block|}
