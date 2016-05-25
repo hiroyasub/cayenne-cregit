@@ -126,6 +126,15 @@ name|SelectQueryDescriptor
 extends|extends
 name|QueryDescriptor
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+operator|-
+literal|8798258795351950215L
+decl_stmt|;
 specifier|protected
 name|Expression
 name|qualifier
