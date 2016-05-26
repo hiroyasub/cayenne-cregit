@@ -163,6 +163,8 @@ begin_class
 specifier|public
 class|class
 name|ProtostuffROPSerializationTest
+extends|extends
+name|ProtostuffProperties
 block|{
 specifier|private
 specifier|static
