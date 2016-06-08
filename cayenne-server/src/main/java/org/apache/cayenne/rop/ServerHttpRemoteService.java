@@ -17,20 +17,6 @@ end_package
 
 begin_import
 import|import
-name|com
-operator|.
-name|caucho
-operator|.
-name|services
-operator|.
-name|server
-operator|.
-name|ServiceContext
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -176,7 +162,7 @@ init|=
 operator|(
 name|HttpServletRequest
 operator|)
-name|ServiceContext
+name|ROPRequestContext
 operator|.
 name|getContextRequest
 argument_list|()
