@@ -506,6 +506,7 @@ operator|.
 name|MODIFIED
 condition|)
 block|{
+specifier|final
 name|ObjEntity
 name|entity
 init|=
@@ -610,11 +611,27 @@ name|ToOneProperty
 name|property
 parameter_list|)
 block|{
+name|boolean
+name|isUsedForLocking
+init|=
+name|entity
+operator|.
+name|getRelationship
+argument_list|(
+name|property
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+operator|.
+name|isUsedForLocking
+argument_list|()
+decl_stmt|;
 comment|// eagerly resolve optimistically locked relationships
 name|Object
 name|target
 init|=
-name|lock
+name|isUsedForLocking
 condition|?
 name|property
 operator|.
