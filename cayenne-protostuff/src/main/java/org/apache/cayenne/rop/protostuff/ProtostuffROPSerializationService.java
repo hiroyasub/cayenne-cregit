@@ -450,11 +450,6 @@ argument_list|,
 name|result
 argument_list|,
 name|wrapperSchema
-argument_list|,
-name|LinkedBuffer
-operator|.
-name|allocate
-argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
