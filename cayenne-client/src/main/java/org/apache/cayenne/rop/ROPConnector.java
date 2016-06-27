@@ -56,7 +56,7 @@ name|InputStream
 name|establishSharedSession
 parameter_list|(
 name|String
-name|name
+name|sharedSessionName
 parameter_list|)
 throws|throws
 name|IOException
@@ -69,6 +69,13 @@ name|byte
 index|[]
 name|message
 parameter_list|)
+throws|throws
+name|IOException
+function_decl|;
+comment|/** 	 * Close all resources related to ROP Connector. 	 */
+name|void
+name|close
+parameter_list|()
 throws|throws
 name|IOException
 function_decl|;
