@@ -246,6 +246,23 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|ROP_SERVICE_REALM_PROPERTY
+init|=
+literal|"cayenne.rop.service_realm"
+decl_stmt|;
+comment|/** 	 * A boolean property that defines whether ALPN should be used. 	 * Possible values are "true" or "false". 	 */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|ROP_SERVICE_USE_ALPN_PROPERTY
+init|=
+literal|"cayenne.rop.service_use_alpn"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|ROP_SERVICE_SHARED_SESSION_PROPERTY
 init|=
 literal|"cayenne.rop.shared_session_name"
