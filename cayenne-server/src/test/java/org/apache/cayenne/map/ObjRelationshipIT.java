@@ -2449,7 +2449,10 @@ name|getRelationship
 argument_list|(
 name|Iv2Sub1
 operator|.
-name|X_PROPERTY
+name|X
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertTrue
