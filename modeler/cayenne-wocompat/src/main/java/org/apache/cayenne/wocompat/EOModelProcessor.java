@@ -2575,6 +2575,35 @@ operator|.
 name|CLOB
 expr_stmt|;
 block|}
+if|else if
+condition|(
+name|sqlType
+operator|==
+name|TypesMapping
+operator|.
+name|NOT_DEFINED
+operator|&&
+name|externalType
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// At this point we usually hit a custom Java class through a prototype, which isn't resolvable
+comment|// with the model alone. But we can use the externalType as a hint. If that still doesn't match
+comment|// anything, sqlType will still be NOT_DEFINED.
+name|sqlType
+operator|=
+name|TypesMapping
+operator|.
+name|getSqlTypeByName
+argument_list|(
+name|externalType
+operator|.
+name|toUpperCase
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|dbAttr
 operator|=
 operator|new
