@@ -1257,9 +1257,7 @@ argument_list|(
 literal|"name"
 argument_list|)
 decl_stmt|;
-comment|// TODO: why are we copying the original map? can we just
-comment|// use it as
-comment|// is?
+comment|// TODO: why are we copying the original map? can we just use it as is?
 name|Map
 name|prototypeAttrMap
 init|=
@@ -1385,6 +1383,20 @@ operator|.
 name|get
 argument_list|(
 literal|"valueType"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prototypeAttrMap
+operator|.
+name|put
+argument_list|(
+literal|"externalType"
+argument_list|,
+name|attrMap
+operator|.
+name|get
+argument_list|(
+literal|"externalType"
 argument_list|)
 argument_list|)
 expr_stmt|;
