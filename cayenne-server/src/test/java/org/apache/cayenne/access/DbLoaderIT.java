@@ -1311,10 +1311,10 @@ decl_stmt|;
 name|DbAttribute
 name|id
 init|=
-name|bag
-operator|.
-name|getAttribute
+name|getDbAttribute
 argument_list|(
+name|bag
+argument_list|,
 literal|"GENERATED_COLUMN"
 argument_list|)
 decl_stmt|;

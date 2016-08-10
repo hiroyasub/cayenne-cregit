@@ -552,6 +552,11 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+name|setSupportsGeneratedKeys
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 comment|/** 	 * @since 4.0 	 */
 annotation|@
@@ -1192,6 +1197,34 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
+comment|// Checking that attribute is generated and we have alternative types in types.xml.
+comment|// If so, use those autoincremented types. For example serial, bigserial, smallserial.
+name|String
+name|type
+init|=
+operator|(
+name|at
+operator|.
+name|isGenerated
+argument_list|()
+operator|&&
+name|types
+operator|.
+name|length
+operator|>
+literal|1
+operator|)
+condition|?
+name|types
+index|[
+literal|1
+index|]
+else|:
+name|types
+index|[
+literal|0
+index|]
+decl_stmt|;
 name|buf
 operator|.
 name|append
@@ -1211,10 +1244,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|types
-index|[
-literal|0
-index|]
+name|type
 argument_list|)
 operator|.
 name|append
