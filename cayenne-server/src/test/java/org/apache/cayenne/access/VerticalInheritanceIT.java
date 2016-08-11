@@ -3548,6 +3548,19 @@ name|getParent
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// Manually delete child to prevent a foreign key constraint failure while cleaning MySQL db
+name|context
+operator|.
+name|deleteObject
+argument_list|(
+name|child
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|commitChanges
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_class
