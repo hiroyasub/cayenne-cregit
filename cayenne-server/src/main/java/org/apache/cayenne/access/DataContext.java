@@ -1305,6 +1305,16 @@ argument_list|(
 literal|10
 argument_list|)
 decl_stmt|;
+name|snapshot
+operator|.
+name|setEntityName
+argument_list|(
+name|entity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|descriptor
 operator|.
 name|visitProperties
