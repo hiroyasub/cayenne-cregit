@@ -24,6 +24,7 @@ comment|/**  * @since 4.0  */
 end_comment
 
 begin_interface
+specifier|public
 interface|interface
 name|BytesConverter
 block|{

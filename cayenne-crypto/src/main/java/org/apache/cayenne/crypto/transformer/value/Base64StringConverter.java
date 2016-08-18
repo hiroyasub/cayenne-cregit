@@ -36,6 +36,7 @@ comment|/**  * @since 4.0  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|Base64StringConverter
 implements|implements
