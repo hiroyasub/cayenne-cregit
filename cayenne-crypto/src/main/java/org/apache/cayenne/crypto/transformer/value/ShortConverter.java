@@ -141,6 +141,12 @@ block|{
 if|if
 condition|(
 name|k
+operator|>=
+name|Byte
+operator|.
+name|MIN_VALUE
+operator|&&
+name|k
 operator|<=
 name|Byte
 operator|.
