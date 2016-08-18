@@ -172,7 +172,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|Runtime_AES128_Test
+name|Runtime_AES128_IT
 extends|extends
 name|Runtime_AES128_Base
 block|{
