@@ -23,15 +23,26 @@ begin_comment
 comment|/**  * @since 4.0  */
 end_comment
 
+begin_comment
+comment|// we can't use<byte[]> , so parameterizing this converter to Object
+end_comment
+
 begin_class
+specifier|public
 class|class
 name|BytesToBytesConverter
 implements|implements
 name|BytesConverter
+argument_list|<
+name|Object
+argument_list|>
 block|{
 specifier|static
 specifier|final
-name|BytesToBytesConverter
+name|BytesConverter
+argument_list|<
+name|Object
+argument_list|>
 name|INSTANCE
 init|=
 operator|new

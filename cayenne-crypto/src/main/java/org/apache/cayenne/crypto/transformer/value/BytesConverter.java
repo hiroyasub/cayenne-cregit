@@ -27,8 +27,11 @@ begin_interface
 specifier|public
 interface|interface
 name|BytesConverter
+parameter_list|<
+name|T
+parameter_list|>
 block|{
-name|Object
+name|T
 name|fromBytes
 parameter_list|(
 name|byte
@@ -40,7 +43,7 @@ name|byte
 index|[]
 name|toBytes
 parameter_list|(
-name|Object
+name|T
 name|value
 parameter_list|)
 function_decl|;

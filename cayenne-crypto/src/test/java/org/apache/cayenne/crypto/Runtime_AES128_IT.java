@@ -401,7 +401,11 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
+operator|new
+name|Integer
+argument_list|(
 literal|61
+argument_list|)
 argument_list|,
 name|IntegerConverter
 operator|.

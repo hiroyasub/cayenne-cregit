@@ -41,10 +41,16 @@ class|class
 name|Base64StringConverter
 implements|implements
 name|BytesConverter
+argument_list|<
+name|String
+argument_list|>
 block|{
 specifier|static
 specifier|final
 name|BytesConverter
+argument_list|<
+name|String
+argument_list|>
 name|INSTANCE
 init|=
 operator|new
@@ -58,7 +64,7 @@ name|byte
 index|[]
 name|toBytes
 parameter_list|(
-name|Object
+name|String
 name|value
 parameter_list|)
 block|{
@@ -67,9 +73,6 @@ name|DatatypeConverter
 operator|.
 name|parseBase64Binary
 argument_list|(
-operator|(
-name|String
-operator|)
 name|value
 argument_list|)
 return|;
@@ -77,7 +80,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|String
 name|fromBytes
 parameter_list|(
 name|byte

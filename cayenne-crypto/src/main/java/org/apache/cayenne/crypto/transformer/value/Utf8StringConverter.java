@@ -42,6 +42,9 @@ class|class
 name|Utf8StringConverter
 implements|implements
 name|BytesConverter
+argument_list|<
+name|String
+argument_list|>
 block|{
 specifier|static
 specifier|final
@@ -54,6 +57,9 @@ specifier|public
 specifier|static
 specifier|final
 name|BytesConverter
+argument_list|<
+name|String
+argument_list|>
 name|INSTANCE
 init|=
 operator|new
@@ -86,17 +92,12 @@ name|byte
 index|[]
 name|toBytes
 parameter_list|(
-name|Object
+name|String
 name|value
 parameter_list|)
 block|{
 return|return
-operator|(
-operator|(
-name|String
-operator|)
 name|value
-operator|)
 operator|.
 name|getBytes
 argument_list|(
@@ -107,7 +108,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|String
 name|fromBytes
 parameter_list|(
 name|byte

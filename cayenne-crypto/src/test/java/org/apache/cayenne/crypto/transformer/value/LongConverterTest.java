@@ -257,7 +257,7 @@ name|Short
 operator|.
 name|MAX_VALUE
 operator|-
-literal|1
+literal|1l
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -278,7 +278,7 @@ operator|.
 name|toBytes
 argument_list|(
 operator|-
-literal|7
+literal|7l
 argument_list|)
 argument_list|)
 expr_stmt|;
