@@ -33,6 +33,7 @@ argument_list|<
 name|Boolean
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|BytesConverter

@@ -45,6 +45,7 @@ argument_list|<
 name|String
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|BytesConverter
