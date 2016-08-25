@@ -37,6 +37,7 @@ argument_list|<
 name|Object
 argument_list|>
 block|{
+specifier|public
 specifier|static
 specifier|final
 name|BytesConverter
