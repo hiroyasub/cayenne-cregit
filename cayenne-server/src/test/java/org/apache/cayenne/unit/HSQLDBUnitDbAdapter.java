@@ -146,6 +146,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsPKGeneratorConcurrency
+parameter_list|()
+block|{
+comment|// HSQL is not locking AUTO_PK_TABLE, so running PkGenerator in parallel may result in conflicting ranges
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 
