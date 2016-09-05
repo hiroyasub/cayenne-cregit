@@ -3320,7 +3320,6 @@ name|Query
 name|query
 parameter_list|)
 block|{
-comment|// TODO: use 4.0 TransactionManager
 if|if
 condition|(
 name|BaseTransaction
@@ -3340,9 +3339,9 @@ return|;
 block|}
 else|else
 block|{
+comment|// can't use TransactionManger here as it would attempt to commit the transaction at the end...
 comment|// manually manage a transaction, so that a ResultIterator wrapper
-comment|// could close
-comment|// it when it is done.
+comment|// could close it when it is done.
 name|Transaction
 name|tx
 init|=
@@ -3378,13 +3377,6 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|BaseTransaction
-operator|.
-name|bindThreadTransaction
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
 name|tx
 operator|.
 name|setRollbackOnly
@@ -3400,11 +3392,19 @@ throw|;
 block|}
 finally|finally
 block|{
-comment|// note: we are keeping the transaction bound to the current
-comment|// thread on
-comment|// success - iterator will unbind it. Unsetting a transaction
-comment|// here would
-comment|// result in some strangeness, at least on Ingres
+comment|// unbind thread tx before returning to the caller. Transaction will be managed internally by the
+comment|// ResultIterator and should not get in the way of other DB operations that may be performed
+comment|// within the iterator....
+comment|// TODO: there was an older comment about Ingres breaking when we unbind thread transaction
+comment|// before closing the iterator. As we have no test environment for ingres, we can't
+comment|// confirm this here...
+name|BaseTransaction
+operator|.
+name|bindThreadTransaction
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tx
