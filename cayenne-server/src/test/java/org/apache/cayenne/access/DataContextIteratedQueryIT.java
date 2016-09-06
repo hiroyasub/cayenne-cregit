@@ -1324,6 +1324,8 @@ init|)
 block|{
 name|assertNull
 argument_list|(
+literal|"Iterator transaction was not unbound from thread"
+argument_list|,
 name|BaseTransaction
 operator|.
 name|getThreadTransaction

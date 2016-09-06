@@ -124,6 +124,23 @@ name|Transaction
 name|tx
 parameter_list|)
 block|{
+comment|// make sure it is still valid before proceeding with the iterator
+if|if
+condition|(
+name|tx
+operator|.
+name|isRollbackOnly
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Transaction passed should be rolled back"
+argument_list|)
+throw|;
+block|}
 name|this
 operator|.
 name|result
@@ -169,6 +186,8 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+comment|// we can safely commit here as the transaction is internal to this decorator, and we already checked
+comment|// that it hasn't been rolled back in constructor.
 name|tx
 operator|.
 name|commit
