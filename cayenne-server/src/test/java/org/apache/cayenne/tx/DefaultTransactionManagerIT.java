@@ -159,7 +159,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testPerformInTransaction_NoTx
+name|testPerformInTransaction_Local
 parameter_list|()
 block|{
 specifier|final
