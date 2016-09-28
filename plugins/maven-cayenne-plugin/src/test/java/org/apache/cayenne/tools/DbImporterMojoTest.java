@@ -790,6 +790,22 @@ literal|"testOneToOne"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * Q: what happens if an attribute or relationship is unmapped in the object layer, but then the underlying table 	 * changes. 	 * A: it should not recreate unmapped attributes/relationships. Only add an attribute for the new column. 	 * 	 * @throws Exception 	 */
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testPreserveCustomObjMappings
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|test
+argument_list|(
+literal|"testPreserveCustomObjMappings"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Q: what happens if a relationship existed over a column that was later deleted? and âskipRelLoadingâ is true      * A: it should remove relationship and column      *      * @throws Exception      */
 annotation|@
 name|Test
