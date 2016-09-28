@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Represent a merge direction that can be one of two. Either from the model to the db or  * from the db to the model.  */
+comment|/**  * Represent a merge direction that can be either from the model to the db or from the db to the model.  */
 end_comment
 
 begin_enum
@@ -40,7 +40,6 @@ specifier|private
 name|String
 name|name
 decl_stmt|;
-specifier|private
 name|MergeDirection
 parameter_list|(
 name|String

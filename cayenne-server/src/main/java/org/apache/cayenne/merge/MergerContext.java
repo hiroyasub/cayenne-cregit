@@ -72,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object passed as an argument to {@link MergerToken#execute(MergerContext)}s that a  * {@link MergerToken} can do its work.  *   */
+comment|/**  * An object passed as an argument to {@link MergerToken#execute(MergerContext)}s that a  * {@link MergerToken} can do its work.  */
 end_comment
 
 begin_interface
@@ -80,27 +80,22 @@ specifier|public
 interface|interface
 name|MergerContext
 block|{
-specifier|public
 name|ModelMergeDelegate
 name|getModelMergeDelegate
 parameter_list|()
 function_decl|;
-specifier|public
 name|DbAdapter
 name|getAdapter
 parameter_list|()
 function_decl|;
-specifier|public
 name|DataMap
 name|getDataMap
 parameter_list|()
 function_decl|;
-specifier|public
 name|DataNode
 name|getDataNode
 parameter_list|()
 function_decl|;
-specifier|public
 name|ValidationResult
 name|getValidationResult
 parameter_list|()

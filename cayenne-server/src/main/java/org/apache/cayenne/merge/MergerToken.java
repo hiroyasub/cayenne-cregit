@@ -15,29 +15,29 @@ name|merge
 package|;
 end_package
 
+begin_comment
+comment|/**  * Represents a minimal atomic synchronization operation between database and Cayenne model.  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface
 name|MergerToken
 block|{
-specifier|public
 name|String
 name|getTokenName
 parameter_list|()
 function_decl|;
-specifier|public
 name|String
 name|getTokenValue
 parameter_list|()
 function_decl|;
 comment|/**      * The direction of this token. One of {@link MergeDirection#TO_DB} or      * {@link MergeDirection#TO_MODEL}      */
-specifier|public
 name|MergeDirection
 name|getDirection
 parameter_list|()
 function_decl|;
-comment|/**      * Create a token with the reverse direction. AddColumn in one direction becomes      * DropColumn in the other direction.      *<p>      * Not all tokens are reversible.      */
-specifier|public
+comment|/**      * Create a complimentary token with the reverse direction. AddColumn in one direction becomes      * DropColumn in the other direction.      *<p>      * Not all tokens are reversible.      */
 name|MergerToken
 name|createReverse
 parameter_list|(
@@ -45,7 +45,7 @@ name|MergerFactory
 name|factory
 parameter_list|)
 function_decl|;
-specifier|public
+comment|/**      * Executes synchronization operation.      *      * @param mergerContext operation context.      */
 name|void
 name|execute
 parameter_list|(
