@@ -58,7 +58,21 @@ import|;
 end_import
 
 begin_import
-import|import static
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -67,9 +81,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|Util
-operator|.
-name|join
+name|EntityMergeSupport
 import|;
 end_import
 
@@ -166,12 +178,42 @@ name|rel
 argument_list|)
 expr_stmt|;
 comment|// TODO: add reverse relationship as well if it does not exist
-name|synchronizeWithObjEntity
+comment|// TODO: use EntityMergeSupport from DbImportConfiguration... otherwise we are ignoring a bunch of
+comment|// important settings
+name|EntityMergeSupport
+name|entityMergeSupport
+init|=
+operator|new
+name|EntityMergeSupport
 argument_list|(
-name|getEntity
+name|mergerContext
+operator|.
+name|getDataMap
 argument_list|()
 argument_list|)
+decl_stmt|;
+for|for
+control|(
+name|ObjEntity
+name|e
+range|:
+name|getEntity
+argument_list|()
+operator|.
+name|mappedObjEntities
+argument_list|()
+control|)
+block|{
+name|entityMergeSupport
+operator|.
+name|synchronizeOnDbRelationshipAdded
+argument_list|(
+name|e
+argument_list|,
+name|rel
+argument_list|)
 expr_stmt|;
+block|}
 name|mergerContext
 operator|.
 name|getModelMergeDelegate

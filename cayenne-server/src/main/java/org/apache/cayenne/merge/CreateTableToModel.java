@@ -83,7 +83,7 @@ name|cayenne
 operator|.
 name|util
 operator|.
-name|Util
+name|EntityMergeSupport
 import|;
 end_import
 
@@ -315,10 +315,18 @@ argument_list|(
 name|objEntity
 argument_list|)
 expr_stmt|;
-name|synchronizeWithObjEntity
+comment|// presumably there are no other ObjEntities pointing to this DbEntity, so syncing just this one...
+comment|// TODO: use EntityMergeSupport from DbImportConfiguration... otherwise we are ignoring a bunch of
+comment|// important settings
+operator|new
+name|EntityMergeSupport
 argument_list|(
-name|getEntity
-argument_list|()
+name|map
+argument_list|)
+operator|.
+name|synchronizeWithDbEntity
+argument_list|(
+name|objEntity
 argument_list|)
 expr_stmt|;
 name|mergerContext
