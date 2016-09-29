@@ -1463,7 +1463,7 @@ name|schemas
 operator|=
 name|loader
 operator|.
-name|getSchemas
+name|loadSchemas
 argument_list|()
 expr_stmt|;
 block|}
@@ -1524,7 +1524,7 @@ name|catalogs
 operator|=
 name|loader
 operator|.
-name|getCatalogs
+name|loadCatalogs
 argument_list|()
 expr_stmt|;
 block|}

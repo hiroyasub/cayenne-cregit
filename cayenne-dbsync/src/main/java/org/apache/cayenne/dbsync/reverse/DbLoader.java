@@ -751,23 +751,13 @@ operator|=
 name|creatingMeaningfulPK
 expr_stmt|;
 block|}
-comment|/** 	 * Returns true if the generator should map all primary key columns as 	 * ObjAttributes. 	 * 	 * @since 3.0 	 */
-specifier|public
-name|boolean
-name|isCreatingMeaningfulPK
-parameter_list|()
-block|{
-return|return
-name|creatingMeaningfulPK
-return|;
-block|}
 comment|/** 	 * Retrieves catalogs for the database associated with this DbLoader. 	 * 	 * @return List with the catalog names, empty Array if none found. 	 */
 specifier|public
 name|List
 argument_list|<
 name|String
 argument_list|>
-name|getCatalogs
+name|loadCatalogs
 parameter_list|()
 throws|throws
 name|SQLException
@@ -798,7 +788,7 @@ name|List
 argument_list|<
 name|String
 argument_list|>
-name|getSchemas
+name|loadSchemas
 parameter_list|()
 throws|throws
 name|SQLException
@@ -2761,8 +2751,7 @@ name|dataMap
 argument_list|,
 name|loadedObjEntities
 argument_list|,
-name|getNameGenerator
-argument_list|()
+name|nameGenerator
 argument_list|)
 expr_stmt|;
 name|fireObjEntitiesAddedEvents
@@ -3706,16 +3695,6 @@ operator|=
 name|strategy
 expr_stmt|;
 block|}
-block|}
-comment|/** 	 * @return naming strategy for reverse engineering 	 * @since 3.0 	 */
-specifier|public
-name|ObjectNameGenerator
-name|getNameGenerator
-parameter_list|()
-block|{
-return|return
-name|nameGenerator
-return|;
 block|}
 block|}
 end_class

@@ -524,7 +524,7 @@ argument_list|,
 literal|null
 argument_list|)
 operator|.
-name|getSchemas
+name|loadSchemas
 argument_list|()
 return|;
 block|}
