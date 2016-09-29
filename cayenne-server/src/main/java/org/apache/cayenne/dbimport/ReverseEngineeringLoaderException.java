@@ -19,6 +19,18 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -48,7 +60,7 @@ specifier|public
 class|class
 name|ReverseEngineeringLoaderException
 extends|extends
-name|RuntimeException
+name|CayenneRuntimeException
 block|{
 specifier|public
 name|ReverseEngineeringLoaderException
