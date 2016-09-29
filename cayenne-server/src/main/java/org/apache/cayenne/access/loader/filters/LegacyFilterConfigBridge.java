@@ -36,13 +36,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.2.  */
+comment|/**  * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 block|{
 specifier|private
 name|String
@@ -81,12 +81,12 @@ name|boolean
 name|loadProcedures
 decl_stmt|;
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 parameter_list|()
 block|{
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|catalog
 parameter_list|(
 name|String
@@ -113,7 +113,7 @@ name|catalog
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|schema
 parameter_list|(
 name|String
@@ -140,7 +140,7 @@ name|schema
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|includeTables
 parameter_list|(
 name|String
@@ -173,7 +173,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|includeColumns
 parameter_list|(
 name|String
@@ -206,7 +206,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|includeProcedures
 parameter_list|(
 name|String
@@ -239,7 +239,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|excludeTables
 parameter_list|(
 name|String
@@ -272,7 +272,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|excludeColumns
 parameter_list|(
 name|String
@@ -305,7 +305,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|excludeProcedures
 parameter_list|(
 name|String

@@ -29,7 +29,7 @@ name|loader
 operator|.
 name|filters
 operator|.
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 import|;
 end_import
 
@@ -447,11 +447,11 @@ name|usePrimitives
 decl_stmt|;
 specifier|private
 specifier|final
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|filterBuilder
 init|=
 operator|new
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 argument_list|()
 decl_stmt|;
 comment|/**      * An object that contains reverse engineering rules.      *      * @parameter reverseEngineering="reverseEngineering"      */

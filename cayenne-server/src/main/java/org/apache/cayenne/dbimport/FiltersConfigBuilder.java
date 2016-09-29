@@ -29,7 +29,7 @@ name|loader
 operator|.
 name|filters
 operator|.
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 import|;
 end_import
 
@@ -1652,7 +1652,7 @@ specifier|public
 name|FiltersConfigBuilder
 name|add
 parameter_list|(
-name|OldFilterConfigBridge
+name|LegacyFilterConfigBridge
 name|build
 parameter_list|)
 block|{
