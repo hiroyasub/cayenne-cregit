@@ -449,11 +449,6 @@ name|DataMap
 name|dataMap
 parameter_list|)
 block|{
-name|dbLoaderHelper
-operator|.
-name|cleanup
-argument_list|()
-expr_stmt|;
 name|ProjectController
 name|mediator
 init|=

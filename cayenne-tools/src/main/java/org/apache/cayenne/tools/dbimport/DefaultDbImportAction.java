@@ -1500,14 +1500,14 @@ decl_stmt|;
 for|for
 control|(
 name|MergerToken
-name|tok
+name|token
 range|:
 name|tokens
 control|)
 block|{
 try|try
 block|{
-name|tok
+name|token
 operator|.
 name|execute
 argument_list|(
@@ -1526,14 +1526,14 @@ name|message
 init|=
 literal|"Migration Error. Can't apply changes from token: "
 operator|+
-name|tok
+name|token
 operator|.
 name|getTokenName
 argument_list|()
 operator|+
 literal|" ("
 operator|+
-name|tok
+name|token
 operator|.
 name|getTokenValue
 argument_list|()
