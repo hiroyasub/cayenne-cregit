@@ -161,7 +161,7 @@ argument_list|)
 operator|.
 name|to
 argument_list|(
-name|DbImportActionDefault
+name|DefaultDbImportAction
 operator|.
 name|class
 argument_list|)

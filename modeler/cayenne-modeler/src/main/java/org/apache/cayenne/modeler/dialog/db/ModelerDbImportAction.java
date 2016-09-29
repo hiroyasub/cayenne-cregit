@@ -237,7 +237,7 @@ name|tools
 operator|.
 name|dbimport
 operator|.
-name|DbImportActionDefault
+name|DefaultDbImportAction
 import|;
 end_import
 
@@ -294,7 +294,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DbImportActionModeler
+name|ModelerDbImportAction
 implements|implements
 name|DbImportAction
 block|{
@@ -333,7 +333,7 @@ name|MapLoader
 name|mapLoader
 decl_stmt|;
 specifier|public
-name|DbImportActionModeler
+name|ModelerDbImportAction
 parameter_list|(
 name|Log
 name|logger
@@ -383,7 +383,7 @@ argument_list|)
 throw|;
 block|}
 operator|new
-name|DbImportActionDefault
+name|DefaultDbImportAction
 argument_list|(
 name|logger
 argument_list|,
@@ -573,13 +573,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|DataMap
-name|dataMap
-decl_stmt|;
-try|try
-block|{
-name|dataMap
-operator|=
+return|return
 name|dbLoaderHelper
 operator|.
 name|getLoader
@@ -592,26 +586,6 @@ operator|.
 name|getDbLoaderConfig
 argument_list|()
 argument_list|)
-expr_stmt|;
-block|}
-finally|finally
-block|{
-if|if
-condition|(
-name|connection
-operator|!=
-literal|null
-condition|)
-block|{
-name|connection
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-return|return
-name|dataMap
 return|;
 block|}
 block|}

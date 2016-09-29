@@ -1845,11 +1845,11 @@ name|filtersConfig
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|DbImportActionModeler
+name|ModelerDbImportAction
 name|importAction
 init|=
 operator|new
-name|DbImportActionModeler
+name|ModelerDbImportAction
 argument_list|(
 name|logObj
 argument_list|,

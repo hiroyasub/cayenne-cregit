@@ -750,7 +750,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DbImportActionTest
+name|DefaultDbImportActionTest
 block|{
 specifier|public
 specifier|static
@@ -982,7 +982,7 @@ block|{
 literal|false
 block|}
 decl_stmt|;
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|action
 init|=
 name|buildDbImportAction
@@ -1302,7 +1302,7 @@ block|{
 literal|false
 block|}
 decl_stmt|;
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|action
 init|=
 name|buildDbImportAction
@@ -1838,7 +1838,7 @@ name|build
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|action
 init|=
 name|buildDbImportAction
@@ -2059,7 +2059,7 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|action
 init|=
 name|buildDbImportAction
@@ -2128,7 +2128,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|private
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|buildDbImportAction
 parameter_list|(
 name|FileProjectSaver
@@ -2188,7 +2188,7 @@ argument_list|)
 return|;
 block|}
 specifier|private
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|buildDbImportAction
 parameter_list|(
 name|Log
@@ -2307,7 +2307,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|new
-name|DbImportActionDefault
+name|DefaultDbImportAction
 argument_list|(
 name|log
 argument_list|,
@@ -2358,11 +2358,11 @@ name|DbImportModule
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|DbImportActionDefault
+name|DefaultDbImportAction
 name|action
 init|=
 operator|(
-name|DbImportActionDefault
+name|DefaultDbImportAction
 operator|)
 name|i
 operator|.
@@ -2588,7 +2588,7 @@ argument_list|)
 argument_list|,
 name|toClasses
 argument_list|(
-name|DbImportActionDefault
+name|DefaultDbImportAction
 operator|.
 name|sort
 argument_list|(
