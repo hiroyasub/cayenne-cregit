@@ -100,7 +100,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A default implementation of {@link ModelMergeDelegate} that does nothing by  * itself.  */
+comment|/**  * A default noop implementation of {@link ModelMergeDelegate}.  */
 end_comment
 
 begin_class
@@ -110,6 +110,8 @@ name|DefaultModelMergeDelegate
 implements|implements
 name|ModelMergeDelegate
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbAttributeAdded
@@ -119,6 +121,8 @@ name|att
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbAttributeModified
@@ -128,6 +132,8 @@ name|att
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbAttributeRemoved
@@ -137,6 +143,8 @@ name|att
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbEntityAdded
@@ -146,6 +154,8 @@ name|ent
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbEntityRemoved
@@ -155,6 +165,8 @@ name|ent
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbRelationshipAdded
@@ -164,6 +176,8 @@ name|rel
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|dbRelationshipRemoved
@@ -173,6 +187,8 @@ name|rel
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objAttributeAdded
@@ -182,6 +198,8 @@ name|att
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objAttributeModified
@@ -191,6 +209,8 @@ name|att
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objAttributeRemoved
@@ -200,6 +220,8 @@ name|att
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objEntityAdded
@@ -209,6 +231,8 @@ name|ent
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objEntityRemoved
@@ -218,6 +242,8 @@ name|ent
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objRelationshipAdded
@@ -227,6 +253,8 @@ name|rel
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|objRelationshipRemoved
