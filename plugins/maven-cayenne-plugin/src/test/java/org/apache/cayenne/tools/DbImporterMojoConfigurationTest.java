@@ -39,9 +39,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dbsync
 operator|.
-name|loader
+name|reverse
 operator|.
 name|filters
 operator|.
@@ -57,9 +57,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dbsync
 operator|.
-name|loader
+name|reverse
 operator|.
 name|filters
 operator|.
@@ -75,9 +75,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dbsync
 operator|.
-name|loader
+name|reverse
 operator|.
 name|filters
 operator|.
@@ -93,9 +93,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dbsync
 operator|.
-name|loader
+name|reverse
 operator|.
 name|filters
 operator|.

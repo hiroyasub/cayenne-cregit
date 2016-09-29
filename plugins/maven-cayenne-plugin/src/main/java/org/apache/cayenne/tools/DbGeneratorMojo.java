@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|File
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Driver
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -88,6 +68,20 @@ operator|.
 name|dba
 operator|.
 name|JdbcAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|CayenneDbSyncModule
 import|;
 end_import
 
@@ -273,6 +267,26 @@ name|InputSource
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Driver
+import|;
+end_import
+
 begin_comment
 comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  *   * @phase pre-integration-test  * @goal cdbgen  */
 end_comment
@@ -364,6 +378,10 @@ name|DIBootstrap
 operator|.
 name|createInjector
 argument_list|(
+operator|new
+name|CayenneDbSyncModule
+argument_list|()
+argument_list|,
 operator|new
 name|ToolsModule
 argument_list|(

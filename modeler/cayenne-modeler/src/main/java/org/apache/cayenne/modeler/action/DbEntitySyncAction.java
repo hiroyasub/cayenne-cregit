@@ -19,23 +19,15 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|awt
+name|apache
 operator|.
-name|event
+name|cayenne
 operator|.
-name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
+name|configuration
 operator|.
-name|util
-operator|.
-name|Iterator
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -47,9 +39,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|dbsync
 operator|.
-name|DataChannelDescriptor
+name|merge
+operator|.
+name|EntityMergeSupport
 import|;
 end_import
 
@@ -193,15 +187,23 @@ end_import
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|awt
 operator|.
-name|cayenne
+name|event
+operator|.
+name|ActionEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|java
 operator|.
 name|util
 operator|.
-name|EntityMergeSupport
+name|Iterator
 import|;
 end_import
 

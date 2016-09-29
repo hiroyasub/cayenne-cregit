@@ -381,17 +381,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|FirebirdMergerFactory
-name|mergerFactory
-parameter_list|()
-block|{
-return|return
-operator|new
-name|FirebirdMergerFactory
-argument_list|()
-return|;
-block|}
-specifier|public
 name|void
 name|createTableAppendColumn
 parameter_list|(

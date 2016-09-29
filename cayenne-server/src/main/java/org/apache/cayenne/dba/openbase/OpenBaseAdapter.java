@@ -325,20 +325,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|merge
-operator|.
-name|MergerFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|SelectQuery
@@ -420,7 +406,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *   *<pre>  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *   * @since 1.1  */
+comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<p>  *<pre>  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *  * @since 1.1  */
 end_comment
 
 begin_class
@@ -510,7 +496,7 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 4.0 	 */
+comment|/**      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -639,7 +625,7 @@ name|allowNulls
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns word "go". 	 */
+comment|/**      * Returns word "go".      */
 annotation|@
 name|Override
 specifier|public
@@ -651,7 +637,7 @@ return|return
 literal|"go"
 return|;
 block|}
-comment|/** 	 * Returns null, since views are not yet supported in openbase. 	 */
+comment|/**      * Returns null, since views are not yet supported in openbase.      */
 annotation|@
 name|Override
 specifier|public
@@ -664,7 +650,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/** 	 * Returns OpenBase-specific translator for queries. 	 */
+comment|/**      * Returns OpenBase-specific translator for queries.      */
 annotation|@
 name|Override
 specifier|public
@@ -683,7 +669,7 @@ name|queryAssembler
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates and returns a primary key generator. Overrides superclass 	 * implementation to return an instance of OpenBasePkGenerator that uses 	 * built-in multi-server primary key generation. 	 */
+comment|/**      * Creates and returns a primary key generator. Overrides superclass      * implementation to return an instance of OpenBasePkGenerator that uses      * built-in multi-server primary key generation.      */
 annotation|@
 name|Override
 specifier|protected
@@ -699,7 +685,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a SQL string that can be used to create database table 	 * corresponding to<code>ent</code> parameter. 	 */
+comment|/**      * Returns a SQL string that can be used to create database table      * corresponding to<code>ent</code> parameter.      */
 annotation|@
 name|Override
 specifier|public
@@ -1060,7 +1046,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a SQL string that can be used to create a foreign key constraint 	 * for the relationship. 	 */
+comment|/**      * Returns a SQL string that can be used to create a foreign key constraint      * for the relationship.      */
 annotation|@
 name|Override
 specifier|public
@@ -1484,19 +1470,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-annotation|@
-name|Override
-specifier|public
-name|MergerFactory
-name|mergerFactory
-parameter_list|()
-block|{
-return|return
-operator|new
-name|OpenBaseMergerFactory
-argument_list|()
-return|;
 block|}
 block|}
 end_class

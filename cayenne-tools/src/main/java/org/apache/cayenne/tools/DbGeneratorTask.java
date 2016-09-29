@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Driver
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -74,6 +54,20 @@ operator|.
 name|dba
 operator|.
 name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|CayenneDbSyncModule
 import|;
 end_import
 
@@ -219,6 +213,26 @@ name|Project
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Driver
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
 begin_comment
 comment|/**  * An Ant Task that is a frontend to Cayenne DbGenerator allowing schema  * generation from DataMap using Ant.  *   * @since 1.2  */
 end_comment
@@ -337,6 +351,10 @@ name|DIBootstrap
 operator|.
 name|createInjector
 argument_list|(
+operator|new
+name|CayenneDbSyncModule
+argument_list|()
+argument_list|,
 operator|new
 name|ToolsModule
 argument_list|(

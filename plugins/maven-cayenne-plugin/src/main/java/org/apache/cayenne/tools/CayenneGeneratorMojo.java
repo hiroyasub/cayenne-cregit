@@ -23,9 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|dbsync
 operator|.
-name|loader
+name|reverse
 operator|.
 name|NamePatternMatcher
 import|;

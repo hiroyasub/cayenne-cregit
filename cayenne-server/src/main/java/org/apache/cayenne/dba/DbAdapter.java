@@ -197,20 +197,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|merge
-operator|.
-name|MergerFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|Query
@@ -454,11 +440,6 @@ function_decl|;
 comment|/** 	 * Returns the name of the table type (as returned by 	 *<code>DatabaseMetaData.getTableTypes</code>) for a view table. 	 */
 name|String
 name|tableTypeForView
-parameter_list|()
-function_decl|;
-comment|/** 	 * @since 3.0 	 */
-name|MergerFactory
-name|mergerFactory
 parameter_list|()
 function_decl|;
 comment|/** 	 * Append the column type part of a "create table" to the given 	 * {@link StringBuffer} 	 * 	 * @param sqlBuffer 	 *            the {@link StringBuffer} to append the column type to 	 * @param column 	 *            the {@link DbAttribute} defining the column to append type for 	 * @since 3.0 	 */
