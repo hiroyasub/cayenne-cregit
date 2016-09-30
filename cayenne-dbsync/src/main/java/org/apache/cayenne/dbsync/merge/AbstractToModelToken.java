@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Common abstract superclass for all {@link MergerToken}s going from the database to the  * model.  *   */
+comment|/**  * Common abstract superclass for all {@link MergerToken}s going from the database to the  * model.  */
 end_comment
 
 begin_class
@@ -117,30 +117,6 @@ name|tokenName
 operator|=
 name|tokenName
 expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|public
-specifier|final
-name|String
-name|getTokenName
-parameter_list|()
-block|{
-return|return
-name|tokenName
-return|;
-block|}
-specifier|public
-specifier|final
-name|MergeDirection
-name|getDirection
-parameter_list|()
-block|{
-return|return
-name|MergeDirection
-operator|.
-name|TO_MODEL
-return|;
 block|}
 specifier|protected
 specifier|static
@@ -301,6 +277,32 @@ argument_list|(
 name|rel
 argument_list|)
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+specifier|final
+name|String
+name|getTokenName
+parameter_list|()
+block|{
+return|return
+name|tokenName
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+specifier|final
+name|MergeDirection
+name|getDirection
+parameter_list|()
+block|{
+return|return
+name|MergeDirection
+operator|.
+name|TO_MODEL
+return|;
 block|}
 annotation|@
 name|Override

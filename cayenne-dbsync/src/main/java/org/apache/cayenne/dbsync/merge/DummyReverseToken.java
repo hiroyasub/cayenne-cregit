@@ -63,6 +63,8 @@ operator|=
 name|reverse
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerToken
 name|createReverse
@@ -75,6 +77,8 @@ return|return
 name|reverse
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|execute
@@ -85,6 +89,8 @@ parameter_list|)
 block|{
 comment|// can not execute
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergeDirection
 name|getDirection
@@ -100,6 +106,8 @@ name|reverseDirection
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTokenName
@@ -114,6 +122,8 @@ name|getTokenName
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getTokenValue
@@ -124,15 +134,6 @@ name|reverse
 operator|.
 name|getTokenValue
 argument_list|()
-return|;
-block|}
-specifier|public
-name|boolean
-name|isReversible
-parameter_list|()
-block|{
-return|return
-literal|true
 return|;
 block|}
 block|}

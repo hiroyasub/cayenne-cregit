@@ -144,10 +144,7 @@ comment|/**      * className if {@link ObjEntity} should be generated with a    
 specifier|private
 name|String
 name|objEntityClassName
-init|=
-literal|null
 decl_stmt|;
-comment|//CayenneDataObject.class.getName();
 specifier|public
 name|CreateTableToModel
 parameter_list|(

@@ -19,26 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -111,6 +91,26 @@ name|DbRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -122,7 +122,7 @@ name|Entity
 block|{
 specifier|private
 name|DbRelationship
-name|rel
+name|relationship
 decl_stmt|;
 specifier|public
 name|AddRelationshipToDb
@@ -131,7 +131,7 @@ name|DbEntity
 name|entity
 parameter_list|,
 name|DbRelationship
-name|rel
+name|relationship
 parameter_list|)
 block|{
 name|super
@@ -143,9 +143,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|rel
+name|relationship
 operator|=
-name|rel
+name|relationship
 expr_stmt|;
 block|}
 comment|/**      * @see DbGenerator#createConstraintsQueries(org.apache.cayenne.map.DbEntity)      */
@@ -178,7 +178,7 @@ name|adapter
 operator|.
 name|createFkConstraint
 argument_list|(
-name|rel
+name|relationship
 argument_list|)
 decl_stmt|;
 if|if
@@ -212,24 +212,26 @@ parameter_list|()
 block|{
 return|return
 operator|!
-name|rel
+name|relationship
 operator|.
 name|isToMany
 argument_list|()
 operator|&&
-name|rel
+name|relationship
 operator|.
 name|isToPK
 argument_list|()
 comment|// TODO it is not necessary primary key it can be unique index
 operator|&&
 operator|!
-name|rel
+name|relationship
 operator|.
 name|isToDependentPK
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerToken
 name|createReverse
@@ -246,7 +248,7 @@ argument_list|(
 name|getEntity
 argument_list|()
 argument_list|,
-name|rel
+name|relationship
 argument_list|)
 return|;
 block|}
@@ -266,7 +268,7 @@ argument_list|()
 condition|)
 block|{
 return|return
-name|rel
+name|relationship
 operator|.
 name|getSourceEntity
 argument_list|()
@@ -276,7 +278,7 @@ argument_list|()
 operator|+
 literal|"->"
 operator|+
-name|rel
+name|relationship
 operator|.
 name|getTargetEntityName
 argument_list|()
@@ -288,15 +290,6 @@ return|return
 literal|"Skip. No sql representation."
 return|;
 block|}
-block|}
-specifier|public
-name|DbRelationship
-name|getRelationship
-parameter_list|()
-block|{
-return|return
-name|rel
-return|;
 block|}
 annotation|@
 name|Override
