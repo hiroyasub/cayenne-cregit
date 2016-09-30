@@ -109,6 +109,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|db
+operator|.
 name|DbLoaderConfiguration
 import|;
 end_import

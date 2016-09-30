@@ -14,6 +14,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|db
 package|;
 end_package
 
@@ -85,7 +87,6 @@ specifier|private
 name|String
 name|genericClassName
 decl_stmt|;
-comment|/*     // TODO: Andrus, 10/29/2005 - this type of filtering should be delegated to adapter        TODO by default should skip name.startsWith("BIN$")      private NameFilter tableFilter = NamePatternMatcher.build(null, null, "BIN$");      private NameFilter columnFilter;      private NameFilter proceduresFilter = new NameFilter() {         private final Collection<String> excludedProcedures = Arrays.asList(                 "auto_pk_for_table",                 "auto_pk_for_table;1" // the last name is some Mac OS X Sybase artifact         );          @Override         public boolean isIncluded(String string) {             return !excludedProcedures.contains(string);         }     }; */
 comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      */
 specifier|private
 name|String

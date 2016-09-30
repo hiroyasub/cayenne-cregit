@@ -322,7 +322,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0.  */
+comment|/**  * @since 4.0  */
 end_comment
 
 begin_class
@@ -352,7 +352,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|FiltersConfig
-name|filtersConfig
+name|build
 parameter_list|()
 block|{
 name|compact
@@ -729,8 +729,7 @@ return|return
 name|filter
 return|;
 block|}
-comment|/**      * Goal of this method transform ReverseEngineering config into more regular form      * From      *      ReverseEngineering      *          Catalog      *              Schema      *                  IncludeTable      *                      IncludeColumn      *                      ExcludeColumn      *                  ExcludeTable      *                  IncludeProcedures      *                  ExcludeProcedures      *                  IncludeColumn      *                  ExcludeColumn      *              IncludeTable      *                  IncludeColumn      *                  ExcludeColumn      *              ExcludeTable      *              IncludeProcedures      *              ExcludeProcedures      *              IncludeColumn      *              ExcludeColumn      *          Schema      *              IncludeTable      *                  IncludeColumn      *                  ExcludeColumn      *              ExcludeTable      *              IncludeProcedures      *              ExcludeProcedures      *              IncludeColumn      *              ExcludeColumn      *          IncludeTable      *              IncludeColumn      *              ExcludeColumn      *          ExcludeTable      *          IncludeProcedures      *          ExcludeProcedures      *          IncludeColumn      *          ExcludeColumn      *      * Into      *      ReverseEngineering      *          Catalog      *              Schema      *                  IncludeTable      *                      IncludeColumn      *                      ExcludeColumn      *                  ExcludeTable      *                  IncludeProcedures      *                  ExcludeProcedures      *      *      * */
-specifier|public
+comment|/**      * Goal of this method transform ReverseEngineering config into more regular form      * From      *<pre>      *      ReverseEngineering      *          Catalog      *              Schema      *                  IncludeTable      *                      IncludeColumn      *                      ExcludeColumn      *                  ExcludeTable      *                  IncludeProcedures      *                  ExcludeProcedures      *                  IncludeColumn      *                  ExcludeColumn      *              IncludeTable      *                  IncludeColumn      *                  ExcludeColumn      *              ExcludeTable      *              IncludeProcedures      *              ExcludeProcedures      *              IncludeColumn      *              ExcludeColumn      *          Schema      *              IncludeTable      *                  IncludeColumn      *                  ExcludeColumn      *              ExcludeTable      *              IncludeProcedures      *              ExcludeProcedures      *              IncludeColumn      *              ExcludeColumn      *          IncludeTable      *              IncludeColumn      *              ExcludeColumn      *          ExcludeTable      *          IncludeProcedures      *          ExcludeProcedures      *          IncludeColumn      *          ExcludeColumn      *</pre>      * Into      *<pre>      *  ReverseEngineering      *          Catalog      *              Schema      *                  IncludeTable      *                      IncludeColumn      *                      ExcludeColumn      *                  ExcludeTable      *                  IncludeProcedures      *                  ExcludeProcedures      *</pre>      */
 name|void
 name|compact
 parameter_list|()

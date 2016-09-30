@@ -14,6 +14,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|db
 package|;
 end_package
 
@@ -176,7 +178,6 @@ comment|/**  * Class represent ObjEntity that may be optimized using flattened r
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|ManyToManyCandidateEntity
 block|{
@@ -320,7 +321,7 @@ name|getTargetEntity
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Method check - if current entity represent many to many temporary table      * @return true if current entity is represent many to many table; otherwise returns false      */
+comment|/**      * Method check - if current entity represent many to many temporary table      *      * @return true if current entity is represent many to many table; otherwise returns false      */
 specifier|public
 specifier|static
 name|ManyToManyCandidateEntity

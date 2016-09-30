@@ -1100,7 +1100,7 @@ name|setFiltersConfig
 argument_list|(
 name|filtersConfigBuilder
 operator|.
-name|filtersConfig
+name|build
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1467,7 +1467,7 @@ argument_list|(
 name|filterBuilder
 argument_list|)
 operator|.
-name|filtersConfig
+name|build
 argument_list|()
 argument_list|)
 expr_stmt|;

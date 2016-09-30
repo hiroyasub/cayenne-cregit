@@ -29,6 +29,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|db
+operator|.
 name|DefaultDbLoaderDelegate
 import|;
 end_import

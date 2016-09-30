@@ -147,6 +147,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|db
+operator|.
 name|DbLoader
 import|;
 end_import
@@ -162,6 +164,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|db
 operator|.
 name|DbLoaderConfiguration
 import|;
@@ -179,6 +183,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|db
+operator|.
 name|DbLoaderDelegate
 import|;
 end_import
@@ -195,6 +201,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|db
+operator|.
 name|DefaultDbLoaderDelegate
 import|;
 end_import
@@ -210,6 +218,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|db
 operator|.
 name|LoggingDbLoaderDelegate
 import|;

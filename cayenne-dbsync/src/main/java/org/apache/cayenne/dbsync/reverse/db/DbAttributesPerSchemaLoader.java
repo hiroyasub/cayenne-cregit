@@ -14,6 +14,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|db
 package|;
 end_package
 

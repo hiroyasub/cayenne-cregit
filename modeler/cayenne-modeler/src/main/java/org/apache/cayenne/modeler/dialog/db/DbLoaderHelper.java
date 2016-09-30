@@ -99,6 +99,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|db
+operator|.
 name|DbLoader
 import|;
 end_import
@@ -114,6 +116,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|db
 operator|.
 name|DefaultDbLoaderDelegate
 import|;
@@ -1788,7 +1792,7 @@ name|setFiltersConfig
 argument_list|(
 name|filtersConfigBuilder
 operator|.
-name|filtersConfig
+name|build
 argument_list|()
 argument_list|)
 expr_stmt|;
