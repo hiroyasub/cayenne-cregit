@@ -157,9 +157,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
-name|naming
+name|reverse
+operator|.
+name|db
 operator|.
 name|ExportedKey
 import|;
