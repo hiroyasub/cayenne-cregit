@@ -301,11 +301,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 import|;
 end_import
 
@@ -333,7 +335,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
@@ -596,7 +600,7 @@ argument_list|,
 name|delegate
 argument_list|,
 operator|new
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -3614,7 +3618,7 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"Attempt to set null into NameGenerator. LegacyNameGenerator will be used."
+literal|"Attempt to set null into NameGenerator. LegacyObjectNameGenerator will be used."
 argument_list|)
 expr_stmt|;
 name|this
@@ -3622,7 +3626,7 @@ operator|.
 name|nameGenerator
 operator|=
 operator|new
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 argument_list|()
 expr_stmt|;
 block|}

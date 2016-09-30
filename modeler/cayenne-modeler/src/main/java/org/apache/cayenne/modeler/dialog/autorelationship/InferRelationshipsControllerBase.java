@@ -173,7 +173,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.

@@ -337,11 +337,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
-name|DefaultNameGenerator
+name|DefaultObjectNameGenerator
 import|;
 end_import
 
@@ -594,7 +596,7 @@ name|config
 operator|.
 name|setNamingStrategy
 argument_list|(
-name|DefaultNameGenerator
+name|DefaultObjectNameGenerator
 operator|.
 name|class
 operator|.

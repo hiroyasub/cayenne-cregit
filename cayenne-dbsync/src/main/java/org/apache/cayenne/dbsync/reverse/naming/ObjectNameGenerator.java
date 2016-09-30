@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 package|;
@@ -56,6 +58,22 @@ operator|.
 name|map
 operator|.
 name|DbRelationship
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|naming
+operator|.
+name|ExportedKey
 import|;
 end_import
 

@@ -57,11 +57,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 import|;
 end_import
 
@@ -73,11 +75,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
-name|DefaultNameGenerator
+name|DefaultObjectNameGenerator
 import|;
 end_import
 
@@ -89,7 +93,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
@@ -151,7 +157,7 @@ name|PREDEFINED_STRATEGIES
 operator|.
 name|add
 argument_list|(
-name|DefaultNameGenerator
+name|DefaultObjectNameGenerator
 operator|.
 name|class
 operator|.
@@ -163,7 +169,7 @@ name|PREDEFINED_STRATEGIES
 operator|.
 name|add
 argument_list|(
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 operator|.
 name|class
 operator|.
@@ -418,7 +424,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|DefaultNameGenerator
+name|DefaultObjectNameGenerator
 argument_list|()
 return|;
 block|}

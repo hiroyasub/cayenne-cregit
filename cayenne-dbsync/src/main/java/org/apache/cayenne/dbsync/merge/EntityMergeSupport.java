@@ -181,11 +181,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 import|;
 end_import
 
@@ -213,7 +215,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 operator|.
@@ -531,7 +535,7 @@ argument_list|(
 name|map
 argument_list|,
 operator|new
-name|LegacyNameGenerator
+name|LegacyObjectNameGenerator
 argument_list|()
 argument_list|,
 literal|true
