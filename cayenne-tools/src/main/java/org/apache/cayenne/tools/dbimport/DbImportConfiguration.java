@@ -301,6 +301,42 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|naming
+operator|.
+name|DefaultObjectNameGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|naming
+operator|.
+name|ObjectNameGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -332,42 +368,6 @@ operator|.
 name|map
 operator|.
 name|EntityResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|reverse
-operator|.
-name|naming
-operator|.
-name|LegacyObjectNameGenerator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|reverse
-operator|.
-name|naming
-operator|.
-name|ObjectNameGenerator
 import|;
 end_import
 
@@ -812,7 +812,6 @@ return|;
 block|}
 block|}
 decl_stmt|;
-comment|// TODO: load via DI AdhocObjectFactory
 name|loader
 operator|.
 name|setNameGenerator
@@ -830,6 +829,8 @@ name|ObjectNameGenerator
 name|getNameGenerator
 parameter_list|()
 block|{
+comment|// TODO: load via DI AdhocObjectFactory
+comment|// TODO: not a singleton; called from different places...
 name|String
 name|namingStrategy
 init|=
@@ -870,7 +871,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error creating name generator"
+literal|"Error creating name generator: "
+operator|+
+name|namingStrategy
 argument_list|,
 name|e
 argument_list|)
@@ -879,10 +882,9 @@ block|}
 block|}
 return|return
 operator|new
-name|LegacyObjectNameGenerator
+name|DefaultObjectNameGenerator
 argument_list|()
 return|;
-comment|// TODO
 block|}
 specifier|public
 name|String

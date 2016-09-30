@@ -264,7 +264,7 @@ name|remove
 argument_list|(
 name|mergerContext
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 argument_list|,
 name|dbRelationship
@@ -318,7 +318,7 @@ argument_list|)
 expr_stmt|;
 name|mergerContext
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 operator|.
 name|objAttributeRemoved
@@ -343,7 +343,7 @@ argument_list|)
 expr_stmt|;
 name|mergerContext
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 operator|.
 name|dbAttributeRemoved

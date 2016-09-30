@@ -133,7 +133,7 @@ name|remove
 argument_list|(
 name|mergerContext
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 argument_list|,
 name|rel

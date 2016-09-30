@@ -177,12 +177,14 @@ operator|=
 name|n
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|execute
 parameter_list|(
 name|MergerContext
-name|mergerContext
+name|context
 parameter_list|)
 block|{
 name|DbEntity
@@ -194,7 +196,7 @@ decl_stmt|;
 name|DataMap
 name|map
 init|=
-name|mergerContext
+name|context
 operator|.
 name|getDataMap
 argument_list|()
@@ -376,22 +378,19 @@ name|objEntity
 argument_list|)
 expr_stmt|;
 comment|// presumably there are no other ObjEntities pointing to this DbEntity, so syncing just this one...
-comment|// TODO: use EntityMergeSupport from DbImportConfiguration... otherwise we are ignoring a bunch of
-comment|// important settings
-operator|new
-name|EntityMergeSupport
-argument_list|(
-name|map
-argument_list|)
+name|context
+operator|.
+name|getEntityMergeSupport
+argument_list|()
 operator|.
 name|synchronizeWithDbEntity
 argument_list|(
 name|objEntity
 argument_list|)
 expr_stmt|;
-name|mergerContext
+name|context
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 operator|.
 name|dbEntityAdded
@@ -400,9 +399,9 @@ name|getEntity
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|mergerContext
+name|context
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 operator|.
 name|objEntityAdded

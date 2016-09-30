@@ -65,12 +65,12 @@ name|MergerTokenFactory
 name|factory
 parameter_list|)
 function_decl|;
-comment|/**      * Executes synchronization operation.      *      * @param mergerContext operation context.      */
+comment|/**      * Executes synchronization operation.      *      * @param context merge operation context.      */
 name|void
 name|execute
 parameter_list|(
 name|MergerContext
-name|mergerContext
+name|context
 parameter_list|)
 function_decl|;
 block|}

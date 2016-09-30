@@ -94,7 +94,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * BasicNamingStrategy is an naming strategy that creates names in Cayenne's  * old-fashioned manner, i.e. the same way Cayenne did before 3.0  *  * @since 4.0  */
+comment|/**  * An ObjectNameGenerator that creates names in Cayenne's old-fashioned style. I.e. the same way Cayenne did before 3.0,  * with "to" prefixes and "array" suffixes.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -104,6 +104,8 @@ name|LegacyObjectNameGenerator
 implements|implements
 name|ObjectNameGenerator
 block|{
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createDbRelationshipName
@@ -147,6 +149,8 @@ literal|false
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createObjEntityName
@@ -169,6 +173,8 @@ literal|true
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createObjAttributeName
@@ -191,6 +197,8 @@ literal|false
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|createObjRelationshipName

@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link MergerToken} to add a {@link DbAttribute} to a {@link DbEntity}. The  * {@link EntityMergeSupport} will be used to update the mapped {@link ObjEntity}  *   */
+comment|/**  * A {@link MergerToken} to add a {@link DbAttribute} to a {@link DbEntity}. The  * {@link EntityMergeSupport} will be used to update the mapped {@link ObjEntity}  */
 end_comment
 
 begin_class
@@ -110,6 +110,8 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|MergerToken
 name|createReverse
@@ -131,6 +133,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|execute
@@ -148,20 +152,6 @@ name|getColumn
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// TODO: use EntityMergeSupport from DbImportConfiguration... otherwise we are ignoring a bunch of
-comment|// important settings
-name|EntityMergeSupport
-name|entityMergeSupport
-init|=
-operator|new
-name|EntityMergeSupport
-argument_list|(
-name|mergerContext
-operator|.
-name|getDataMap
-argument_list|()
-argument_list|)
-decl_stmt|;
 for|for
 control|(
 name|ObjEntity
@@ -174,7 +164,10 @@ name|mappedObjEntities
 argument_list|()
 control|)
 block|{
-name|entityMergeSupport
+name|mergerContext
+operator|.
+name|getEntityMergeSupport
+argument_list|()
 operator|.
 name|synchronizeOnDbAttributeAdded
 argument_list|(
@@ -187,7 +180,7 @@ expr_stmt|;
 block|}
 name|mergerContext
 operator|.
-name|getModelMergeDelegate
+name|getDelegate
 argument_list|()
 operator|.
 name|dbAttributeAdded
