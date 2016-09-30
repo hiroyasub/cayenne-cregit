@@ -11,7 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|naming
 package|;
@@ -51,6 +53,10 @@ begin_comment
 comment|/**  * Utility class to convert from different naming styles to Java convention. For example  * names like "ABCD_EFG" can be converted to "abcdEfg".  */
 end_comment
 
+begin_comment
+comment|// TODO: deprecate
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -84,7 +90,8 @@ literal|"pound"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Converts a String name to a String forllowing java convention for the static final      * variables. E.g. "abcXyz" will be converted to "ABC_XYZ".      *       * @since 1.0.3      */
+comment|/**      * Converts a String name to a String following java convention for the static final      * variables. E.g. "abcXyz" will be converted to "ABC_XYZ".      */
+comment|// TODO: move to the only user....
 specifier|public
 specifier|static
 name|String
@@ -223,7 +230,8 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * Converts names like "ABCD_EFG_123" to Java-style names like "abcdEfg123". If      *<code>capitalize</code> is true, returned name is capitalized (for instance if      * this is a class name).      *       * @since 1.2      */
+comment|/**      * Converts names like "ABCD_EFG_123" to Java-style names like "abcdEfg123". If      *<code>capitalize</code> is true, returned name is capitalized (for instance if      * this is a class name).      *      * @since 1.2      */
+comment|// TODO: migrate users to ObjectNameGenerator
 specifier|public
 specifier|static
 name|String
@@ -496,7 +504,6 @@ argument_list|()
 return|;
 block|}
 comment|/**      * Replaces special chars with human-readable and Java-id-compatible symbols.      */
-specifier|public
 specifier|static
 name|String
 name|specialCharsToJava

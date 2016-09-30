@@ -17,11 +17,19 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Collection
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|naming
+operator|.
+name|NameConverter
 import|;
 end_import
 
@@ -36,22 +44,6 @@ operator|.
 name|map
 operator|.
 name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|naming
-operator|.
-name|NameConverter
 import|;
 end_import
 
@@ -80,6 +72,16 @@ operator|.
 name|util
 operator|.
 name|Util
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
 import|;
 end_import
 
@@ -171,15 +173,10 @@ name|underscoredToJava
 argument_list|(
 name|clientPrefix
 operator|+
-name|NameConverter
-operator|.
-name|specialCharsToJava
-argument_list|(
 name|dataMap
 operator|.
 name|getName
 argument_list|()
-argument_list|)
 argument_list|,
 literal|true
 argument_list|)
