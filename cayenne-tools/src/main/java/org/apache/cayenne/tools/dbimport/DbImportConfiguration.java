@@ -1175,11 +1175,11 @@ name|name
 decl_stmt|;
 if|if
 condition|(
-name|defaultPackage
+name|catalog
 operator|!=
 literal|null
 operator|&&
-name|defaultPackage
+name|catalog
 operator|.
 name|length
 argument_list|()
@@ -1224,11 +1224,11 @@ name|name
 decl_stmt|;
 if|if
 condition|(
-name|defaultPackage
+name|schema
 operator|!=
 literal|null
 operator|&&
-name|defaultPackage
+name|schema
 operator|.
 name|length
 argument_list|()
