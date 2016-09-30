@@ -308,7 +308,7 @@ decl_stmt|;
 name|String
 name|name
 init|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -337,7 +337,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -368,7 +368,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -399,7 +399,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -443,7 +443,7 @@ argument_list|()
 expr_stmt|;
 name|name
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -472,7 +472,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -516,7 +516,7 @@ argument_list|()
 expr_stmt|;
 name|name
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -967,7 +967,7 @@ name|newName
 operator|+
 literal|"1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -985,7 +985,7 @@ literal|"other"
 operator|+
 name|newName
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1033,7 +1033,7 @@ name|assertEquals
 argument_list|(
 literal|"getMyName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1066,7 +1066,7 @@ name|assertEquals
 argument_list|(
 literal|"SecondName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1086,7 +1086,7 @@ name|assertEquals
 argument_list|(
 literal|"secondName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1106,7 +1106,7 @@ name|assertEquals
 argument_list|(
 literal|"SecondName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1126,7 +1126,7 @@ name|assertEquals
 argument_list|(
 literal|"secondName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1219,7 +1219,7 @@ name|assertEquals
 argument_list|(
 literal|"SecondName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1239,7 +1239,7 @@ name|assertEquals
 argument_list|(
 literal|"secondName1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1301,7 +1301,7 @@ name|assertEquals
 argument_list|(
 literal|"name1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1360,7 +1360,7 @@ name|assertEquals
 argument_list|(
 literal|"package.name"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1407,7 +1407,7 @@ name|assertEquals
 argument_list|(
 literal|"package.name1"
 argument_list|,
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

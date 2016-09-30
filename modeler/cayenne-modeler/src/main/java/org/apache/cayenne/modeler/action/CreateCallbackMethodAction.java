@@ -85,7 +85,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -299,7 +299,7 @@ decl_stmt|;
 name|String
 name|methodName
 init|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

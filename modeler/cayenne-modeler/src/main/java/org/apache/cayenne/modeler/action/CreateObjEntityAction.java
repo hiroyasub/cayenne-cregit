@@ -147,7 +147,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -370,7 +370,7 @@ init|=
 operator|new
 name|ObjEntity
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -444,7 +444,7 @@ name|entity
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

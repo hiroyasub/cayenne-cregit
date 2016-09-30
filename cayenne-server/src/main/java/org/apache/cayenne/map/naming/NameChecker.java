@@ -26,7 +26,7 @@ specifier|public
 interface|interface
 name|NameChecker
 block|{
-comment|/** 	 * Returns a base default name, like "UntitledEntity", etc. 	 *  	 */
+comment|/** 	 * Returns a base default name, like "UntitledEntity", etc. 	 */
 name|String
 name|baseName
 parameter_list|()

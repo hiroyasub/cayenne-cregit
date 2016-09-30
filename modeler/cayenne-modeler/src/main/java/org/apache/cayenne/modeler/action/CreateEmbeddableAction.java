@@ -143,7 +143,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -313,7 +313,7 @@ init|=
 operator|new
 name|Embeddable
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

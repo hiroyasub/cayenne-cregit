@@ -319,7 +319,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -1642,7 +1642,7 @@ condition|)
 block|{
 name|sourceEntityName
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1710,7 +1710,7 @@ condition|)
 block|{
 name|targetEntityName
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

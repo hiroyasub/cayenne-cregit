@@ -257,7 +257,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -481,7 +481,7 @@ name|attr
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -547,7 +547,7 @@ init|=
 operator|new
 name|ObjAttribute
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -634,7 +634,7 @@ init|=
 operator|new
 name|DbAttribute
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

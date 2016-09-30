@@ -273,7 +273,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -793,7 +793,7 @@ block|}
 name|String
 name|objEntityName
 init|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -2367,7 +2367,7 @@ name|toMany
 argument_list|)
 decl_stmt|;
 return|return
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

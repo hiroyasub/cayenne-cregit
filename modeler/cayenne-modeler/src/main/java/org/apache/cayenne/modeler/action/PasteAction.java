@@ -269,7 +269,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -1000,7 +1000,7 @@ name|dataMap
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1084,7 +1084,7 @@ name|dbEntity
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1154,7 +1154,7 @@ name|objEntity
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1224,7 +1224,7 @@ name|embeddable
 operator|.
 name|setClassName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1286,7 +1286,7 @@ name|procedure
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1321,7 +1321,7 @@ name|query
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1560,7 +1560,7 @@ name|dbEntity
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1618,7 +1618,7 @@ name|objEntity
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1678,7 +1678,7 @@ name|embeddable
 operator|.
 name|setClassName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1737,7 +1737,7 @@ name|query
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1804,7 +1804,7 @@ name|procedure
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1880,7 +1880,7 @@ name|attr
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1944,7 +1944,7 @@ name|rel
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -2020,7 +2020,7 @@ name|attr
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -2084,7 +2084,7 @@ name|rel
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -2143,7 +2143,7 @@ name|method
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -2251,7 +2251,7 @@ name|attr
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -2328,7 +2328,7 @@ name|param
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

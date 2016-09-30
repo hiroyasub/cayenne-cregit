@@ -169,7 +169,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -909,7 +909,7 @@ argument_list|)
 decl_stmt|;
 name|relationshipName
 operator|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1280,7 +1280,7 @@ block|{
 name|String
 name|attrName
 init|=
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(

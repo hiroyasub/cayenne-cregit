@@ -267,7 +267,7 @@ name|map
 operator|.
 name|naming
 operator|.
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 import|;
 end_import
 
@@ -1616,7 +1616,7 @@ operator|=
 operator|new
 name|DataMap
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1630,7 +1630,7 @@ name|dataMap
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
@@ -1730,7 +1730,7 @@ name|reverseEngineering
 operator|.
 name|setName
 argument_list|(
-name|DefaultUniqueNameGenerator
+name|UniqueNameGenerator
 operator|.
 name|generate
 argument_list|(
