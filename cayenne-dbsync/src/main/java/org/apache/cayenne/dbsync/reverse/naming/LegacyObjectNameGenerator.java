@@ -27,6 +27,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|db
+operator|.
+name|ExportedKey
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -69,18 +87,14 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbsync
+name|util
 operator|.
-name|reverse
-operator|.
-name|db
-operator|.
-name|ExportedKey
+name|Util
 import|;
 end_import
 
 begin_comment
-comment|/**  * BasicNamingStrategy is an naming strategy that creates names in Cayenne's  * old-fashioned manner, i.e. the same way Cayenne did before 3.0  *   * @since 4.0  */
+comment|/**  * BasicNamingStrategy is an naming strategy that creates names in Cayenne's  * old-fashioned manner, i.e. the same way Cayenne did before 3.0  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -123,7 +137,7 @@ name|getPKTableName
 argument_list|()
 decl_stmt|;
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -142,7 +156,7 @@ name|dbEntity
 parameter_list|)
 block|{
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -164,7 +178,7 @@ name|attr
 parameter_list|)
 block|{
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -186,7 +200,7 @@ name|dbRel
 parameter_list|)
 block|{
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(

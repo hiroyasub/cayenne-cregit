@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 package|;
@@ -158,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * A set of default {@link NameChecker} objects for the known model objects.  *  * @since 4.0  */
 end_comment
 
 begin_enum
@@ -971,7 +971,7 @@ return|;
 block|}
 block|}
 block|;
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|baseName

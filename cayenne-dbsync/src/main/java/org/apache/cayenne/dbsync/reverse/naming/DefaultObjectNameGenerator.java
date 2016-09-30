@@ -27,6 +27,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|db
+operator|.
+name|ExportedKey
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -69,13 +87,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbsync
+name|util
 operator|.
-name|reverse
-operator|.
-name|db
-operator|.
-name|ExportedKey
+name|Util
 import|;
 end_import
 
@@ -290,7 +304,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -311,7 +325,7 @@ name|dbEntity
 parameter_list|)
 block|{
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -335,7 +349,7 @@ name|attr
 parameter_list|)
 block|{
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -359,7 +373,7 @@ name|dbRel
 parameter_list|)
 block|{
 return|return
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(

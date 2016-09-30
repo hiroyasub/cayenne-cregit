@@ -139,11 +139,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 operator|.
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 import|;
 end_import
 
@@ -155,7 +155,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 operator|.
@@ -455,9 +455,9 @@ name|newMap
 operator|.
 name|setName
 argument_list|(
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 operator|.
-name|generate
+name|resolve
 argument_list|(
 name|NameCheckers
 operator|.
@@ -479,9 +479,9 @@ name|newMap
 operator|.
 name|setName
 argument_list|(
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 operator|.
-name|generate
+name|resolve
 argument_list|(
 name|NameCheckers
 operator|.

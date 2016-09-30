@@ -165,11 +165,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 operator|.
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 import|;
 end_import
 
@@ -199,7 +199,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 operator|.
@@ -909,9 +909,9 @@ argument_list|)
 decl_stmt|;
 name|relationshipName
 operator|=
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 operator|.
-name|generate
+name|resolve
 argument_list|(
 name|NameCheckers
 operator|.
@@ -1280,9 +1280,9 @@ block|{
 name|String
 name|attrName
 init|=
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 operator|.
-name|generate
+name|resolve
 argument_list|(
 name|NameCheckers
 operator|.

@@ -315,11 +315,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 operator|.
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 import|;
 end_import
 
@@ -331,7 +331,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
 operator|.
 name|naming
 operator|.
@@ -1642,9 +1642,9 @@ condition|)
 block|{
 name|sourceEntityName
 operator|=
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 operator|.
-name|generate
+name|resolve
 argument_list|(
 name|NameCheckers
 operator|.
@@ -1710,9 +1710,9 @@ condition|)
 block|{
 name|targetEntityName
 operator|=
-name|UniqueNameGenerator
+name|DuplicateNameResolver
 operator|.
-name|generate
+name|resolve
 argument_list|(
 name|NameCheckers
 operator|.

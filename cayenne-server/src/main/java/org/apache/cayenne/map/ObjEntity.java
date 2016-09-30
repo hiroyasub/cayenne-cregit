@@ -2112,10 +2112,17 @@ operator|=
 operator|new
 name|SyntheticPKObjAttribute
 argument_list|(
+name|Util
+operator|.
+name|underscoredToJava
+argument_list|(
 name|pk
 operator|.
 name|getName
 argument_list|()
+argument_list|,
+literal|false
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|attribute

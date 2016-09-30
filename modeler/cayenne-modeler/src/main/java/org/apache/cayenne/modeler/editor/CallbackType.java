@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Serializable
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -49,18 +39,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbsync
+name|util
 operator|.
-name|reverse
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
+name|java
 operator|.
-name|naming
+name|io
 operator|.
-name|NameConverter
+name|Serializable
 import|;
 end_import
 
 begin_comment
-comment|/**  * Entity for callback type. Contains type and type name  *   * @version 1.0 Oct 26, 2007  */
+comment|/**  * Entity for callback type. Contains type and type name  *  * @version 1.0 Oct 26, 2007  */
 end_comment
 
 begin_class
@@ -74,17 +70,14 @@ specifier|private
 name|LifecycleEvent
 name|type
 decl_stmt|;
-comment|/**      * callback type name      */
 specifier|private
 name|String
 name|name
 decl_stmt|;
-comment|/**      * methods counter      */
 specifier|private
 name|int
 name|counter
 decl_stmt|;
-comment|/**      * constructor      *       * @param type type id      * @param name name      */
 specifier|public
 name|CallbackType
 parameter_list|(
@@ -102,7 +95,7 @@ name|this
 operator|.
 name|name
 operator|=
-name|NameConverter
+name|Util
 operator|.
 name|underscoredToJava
 argument_list|(
@@ -151,7 +144,7 @@ return|return
 name|counter
 return|;
 block|}
-comment|/**      * Method to specify counter value      *       * @param counter new coutner value      */
+comment|/**      * Method to specify counter value      *      * @param counter new coutner value      */
 specifier|public
 name|void
 name|setCounter
