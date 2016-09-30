@@ -809,7 +809,7 @@ literal|"testPreserveRelationships"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * By default many-to-many are flattened during reverse engineering.      * But if a user un-flattens a given N:M manually, weâd like this choice to be preserved on the next run      *      * @throws Exception      */
+comment|/**      * By default many-to-many are flattened during reverse engineering.      * But if a user un-flattens a given N:M manually, weâd like this choice to be preserved on the next run      */
 annotation|@
 name|Test
 specifier|public
@@ -819,6 +819,8 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// TODO: this should be "xYs" :<db-relationship name="xIes"
+comment|// TODO: this should be aBs :<db-relationship name="aBArray"
 name|test
 argument_list|(
 literal|"testUnFlattensManyToMany"
