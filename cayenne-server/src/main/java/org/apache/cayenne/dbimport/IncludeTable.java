@@ -77,22 +77,6 @@ name|LinkedList
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|StringUtils
-operator|.
-name|join
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.0.  */
 end_comment

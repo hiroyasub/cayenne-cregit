@@ -717,17 +717,17 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @param strings 	 *            The list of strings to join. 	 * @param separator 	 *            The separator between the strings. 	 * @return A single string of all the input strings separated by the 	 *         separator. 	 */
+comment|/** 	 * @param objects 	 *            An Iterable of objects that will be converted to Strings and joined together. 	 * @param separator 	 *            The separator between the strings. 	 * @return A single string of all the input strings separated by the 	 *         separator. 	 */
 specifier|public
 specifier|static
 name|String
 name|join
 parameter_list|(
-name|List
+name|Iterable
 argument_list|<
-name|String
+name|?
 argument_list|>
-name|strings
+name|objects
 parameter_list|,
 name|String
 name|separator
@@ -735,16 +735,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|strings
+name|objects
 operator|==
 literal|null
-operator|||
-name|strings
-operator|.
-name|size
-argument_list|()
-operator|==
-literal|0
 condition|)
 block|{
 return|return
@@ -772,10 +765,10 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|String
-name|string
+name|Object
+name|o
 range|:
-name|strings
+name|objects
 control|)
 block|{
 if|if
@@ -796,6 +789,20 @@ name|separator
 argument_list|)
 expr_stmt|;
 block|}
+name|String
+name|string
+init|=
+name|o
+operator|!=
+literal|null
+condition|?
+name|o
+operator|.
+name|toString
+argument_list|()
+else|:
+literal|""
+decl_stmt|;
 name|builder
 operator|.
 name|append
@@ -1013,7 +1020,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/** 	 * Compares two objects similar to "Comparable.compareTo(Object)". Unlike 	 * Comparable.compareTo(..), this method doesn't throw an exception if any 	 * of the two objects is null. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Compares two objects similar to "Comparable.compareTo(Object)". Unlike 	 * Comparable.compareTo(..), this method doesn't throw an exception if any 	 * of the two objects is null. 	 * 	 * @since 1.1 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1280,7 +1287,7 @@ name|className
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns an unqualified class name for the fully qualified name. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Returns an unqualified class name for the fully qualified name. 	 * 	 * @since 3.0 	 */
 specifier|public
 specifier|static
 name|String
@@ -1352,7 +1359,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a mutable map out of two arrays with keys and values. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Creates a mutable map out of two arrays with keys and values. 	 * 	 * @since 1.2 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -1586,7 +1593,7 @@ else|:
 name|fileName
 return|;
 block|}
-comment|/** 	 * Strips "\n", "\r\n", "\r" from the argument string, replacing them with a 	 * provided character. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Strips "\n", "\r\n", "\r" from the argument string, replacing them with a 	 * provided character. 	 * 	 * @since 3.1 	 */
 specifier|public
 specifier|static
 name|String
@@ -1907,7 +1914,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Trims long strings substituting middle part with "...". 	 *  	 * @param str 	 *            String to trim. 	 * @param maxLength 	 *            maximum allowable length. Must be at least 5, or an 	 *            IllegalArgumentException is thrown. 	 * @return String 	 */
+comment|/** 	 * Trims long strings substituting middle part with "...". 	 * 	 * @param str 	 *            String to trim. 	 * @param maxLength 	 *            maximum allowable length. Must be at least 5, or an 	 *            IllegalArgumentException is thrown. 	 * @return String 	 */
 specifier|public
 specifier|static
 name|String
@@ -2167,7 +2174,7 @@ name|flag
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns true if a Member is accessible via reflection under normal Java 	 * access controls. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Returns true if a Member is accessible via reflection under normal Java 	 * access controls. 	 * 	 * @since 1.2 	 */
 specifier|public
 specifier|static
 name|boolean
@@ -2202,7 +2209,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a Java class, handling regular class names as well as 	 * single-dimensional arrays and primitive types. 	 *  	 * @since 1.2 	 * @deprecated since 4.0 this method based on statically defined class 	 *             loading algorithm is not going to work in environments like 	 *             OSGi. {@link AdhocObjectFactory} should be used as it can 	 *             provide the environment-specific class loading policy. 	 */
+comment|/** 	 * Creates a Java class, handling regular class names as well as 	 * single-dimensional arrays and primitive types. 	 * 	 * @since 1.2 	 * @deprecated since 4.0 this method based on statically defined class 	 *             loading algorithm is not going to work in environments like 	 *             OSGi. {@link AdhocObjectFactory} should be used as it can 	 *             provide the environment-specific class loading policy. 	 */
 annotation|@
 name|Deprecated
 specifier|public

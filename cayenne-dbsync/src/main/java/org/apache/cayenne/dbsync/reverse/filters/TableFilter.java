@@ -25,11 +25,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|StringUtils
+name|Util
 import|;
 end_import
 
@@ -66,7 +66,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * TableFilter contain at least one IncludeTable always  *  */
+comment|/**  * TableFilter contain at least one IncludeTable always.  */
 end_comment
 
 begin_class
@@ -90,7 +90,7 @@ name|Pattern
 argument_list|>
 name|excludes
 decl_stmt|;
-comment|/**      * Includes can contain only One includetable      *      * @param includes      * @param excludes      */
+comment|/**      * Includes can contain only one include table      *      * @param includes      * @param excludes      */
 specifier|public
 name|TableFilter
 parameter_list|(
@@ -416,7 +416,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|StringUtils
+name|Util
 operator|.
 name|join
 argument_list|(

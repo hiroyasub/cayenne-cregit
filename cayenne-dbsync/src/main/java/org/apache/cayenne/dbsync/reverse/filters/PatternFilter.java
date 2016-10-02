@@ -25,11 +25,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|StringUtils
+name|Util
 import|;
 end_import
 
@@ -110,7 +110,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|StringBuilder
 name|toString
 parameter_list|(
@@ -155,7 +155,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|StringBuilder
 name|toString
 parameter_list|(
@@ -563,7 +563,7 @@ name|hashCode
 argument_list|()
 return|;
 block|}
-specifier|public
+specifier|protected
 name|StringBuilder
 name|toString
 parameter_list|(
@@ -600,7 +600,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|StringUtils
+name|Util
 operator|.
 name|join
 argument_list|(
@@ -650,7 +650,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-name|StringUtils
+name|Util
 operator|.
 name|join
 argument_list|(
