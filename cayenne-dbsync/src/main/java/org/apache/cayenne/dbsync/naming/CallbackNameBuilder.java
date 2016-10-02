@@ -115,7 +115,7 @@ return|return
 operator|new
 name|DeduplicationVisitor
 argument_list|(
-name|namingContext
+name|parent
 argument_list|,
 name|baseName
 argument_list|,
@@ -146,7 +146,7 @@ init|=
 operator|(
 name|ObjEntity
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 if|if
 condition|(
