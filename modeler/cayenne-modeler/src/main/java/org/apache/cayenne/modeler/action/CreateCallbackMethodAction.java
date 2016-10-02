@@ -29,23 +29,7 @@ name|dbsync
 operator|.
 name|naming
 operator|.
-name|DuplicateNameResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|naming
-operator|.
-name|NameCheckers
+name|NameBuilder
 import|;
 end_import
 
@@ -198,7 +182,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action class for creating callback methods on ObjEntity  *  * @version 1.0 Oct 30, 2007  */
+comment|/**  * Action class for creating callback methods on ObjEntity  */
 end_comment
 
 begin_class
@@ -217,7 +201,7 @@ name|ACTION_NAME
 init|=
 literal|"Create callback method"
 decl_stmt|;
-comment|/**      * Constructor.      *       * @param actionName unique action name      * @param application Application instance      */
+comment|/**      * Constructor.      *      * @param actionName  unique action name      * @param application Application instance      */
 specifier|public
 name|CreateCallbackMethodAction
 parameter_list|(
@@ -235,6 +219,32 @@ argument_list|,
 name|application
 argument_list|)
 expr_stmt|;
+block|}
+comment|/**      * Constructor.      *      * @param application Application instance      */
+specifier|public
+name|CreateCallbackMethodAction
+parameter_list|(
+name|Application
+name|application
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|ACTION_NAME
+argument_list|,
+name|application
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+specifier|static
+name|String
+name|getActionName
+parameter_list|()
+block|{
+return|return
+name|ACTION_NAME
+return|;
 block|}
 comment|/**      * @return CallbackMap instance where to create a method      */
 specifier|public
@@ -263,7 +273,7 @@ return|return
 literal|"icon-create-method.gif"
 return|;
 block|}
-comment|/**      * performs adding new callback method      *       * @param e event      */
+comment|/**      * performs adding new callback method      *      * @param e event      */
 specifier|public
 specifier|final
 name|void
@@ -283,8 +293,21 @@ name|getCurrentCallbackType
 argument_list|()
 decl_stmt|;
 name|String
-name|methodNamePrefix
+name|methodName
 init|=
+name|NameBuilder
+operator|.
+name|builderForCallbackMethod
+argument_list|(
+name|getProjectController
+argument_list|()
+operator|.
+name|getCurrentObjEntity
+argument_list|()
+argument_list|)
+operator|.
+name|baseName
+argument_list|(
 name|toMethodName
 argument_list|(
 name|callbackType
@@ -292,26 +315,10 @@ operator|.
 name|getType
 argument_list|()
 argument_list|)
-decl_stmt|;
-name|String
-name|methodName
-init|=
-name|DuplicateNameResolver
-operator|.
-name|resolve
-argument_list|(
-name|NameCheckers
-operator|.
-name|objCallbackMethod
-argument_list|,
-name|getProjectController
-argument_list|()
-operator|.
-name|getCurrentObjEntity
-argument_list|()
-argument_list|,
-name|methodNamePrefix
 argument_list|)
+operator|.
+name|name
+argument_list|()
 decl_stmt|;
 name|createCallbackMethod
 argument_list|(
@@ -413,32 +420,6 @@ argument_list|,
 literal|true
 argument_list|)
 return|;
-block|}
-specifier|public
-specifier|static
-name|String
-name|getActionName
-parameter_list|()
-block|{
-return|return
-name|ACTION_NAME
-return|;
-block|}
-comment|/**      * Constructor.      *      * @param application Application instance      */
-specifier|public
-name|CreateCallbackMethodAction
-parameter_list|(
-name|Application
-name|application
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|ACTION_NAME
-argument_list|,
-name|application
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_class

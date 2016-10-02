@@ -218,7 +218,7 @@ operator|=
 name|callbackType
 expr_stmt|;
 block|}
-comment|/**      * moves specified callback method to the specified position      *       * @param callbackMethod callbacm method name (should exist)      * @param destinationIndex destinationi index (should be valid)      * @return true if any changes were made      */
+comment|/**      * Moves specified callback method to the specified position      *       * @param callbackMethod callbacm method name (should exist)      * @param destinationIndex destinationi index (should be valid)      * @return true if any changes were made      */
 specifier|public
 name|boolean
 name|moveMethod

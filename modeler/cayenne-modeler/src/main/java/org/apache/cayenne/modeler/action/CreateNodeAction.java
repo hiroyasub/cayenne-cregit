@@ -19,18 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -141,43 +129,27 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dbsync
+operator|.
+name|naming
+operator|.
+name|NameBuilder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|event
 operator|.
 name|MapEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|naming
-operator|.
-name|DuplicateNameResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|naming
-operator|.
-name|NameCheckers
 import|;
 end_import
 
@@ -257,6 +229,18 @@ name|CayenneAction
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
+name|ActionEvent
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -264,17 +248,7 @@ name|CreateNodeAction
 extends|extends
 name|CayenneAction
 block|{
-specifier|public
-specifier|static
-name|String
-name|getActionName
-parameter_list|()
-block|{
-return|return
-literal|"Create DataNode"
-return|;
-block|}
-comment|/** 	 * Constructor for CreateNodeAction. 	 *  	 * @param application 	 */
+comment|/**      * Constructor for CreateNodeAction.      *      * @param application      */
 specifier|public
 name|CreateNodeAction
 parameter_list|(
@@ -292,6 +266,18 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+specifier|static
+name|String
+name|getActionName
+parameter_list|()
+block|{
+return|return
+literal|"Create DataNode"
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|String
 name|getIconName
 parameter_list|()
@@ -300,7 +286,8 @@ return|return
 literal|"icon-node.gif"
 return|;
 block|}
-comment|/** 	 * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent) 	 */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction
@@ -405,7 +392,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns<code>true</code> if path contains a DataDomain object. 	 */
+comment|/**      * Returns<code>true</code> if path contains a DataDomain object.      */
 specifier|public
 name|boolean
 name|enableForPath
@@ -432,7 +419,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/** 	 * Creates a new DataNode, adding to the current domain, but doesn't send 	 * any events. 	 */
+comment|/**      * Creates a new DataNode, adding to the current domain, but doesn't send      * any events.      */
 specifier|public
 name|DataNodeDescriptor
 name|buildDataNode
@@ -509,12 +496,12 @@ return|return
 name|node
 return|;
 block|}
-comment|/** 	 * A factory method that makes a new DataNode. 	 */
+comment|/**      * A factory method that makes a new DataNode.      */
 name|DataNodeDescriptor
 name|buildDataNode
 parameter_list|(
 name|DataChannelDescriptor
-name|domain
+name|dataChannelDescriptor
 parameter_list|)
 block|{
 name|DataNodeDescriptor
@@ -522,24 +509,30 @@ name|node
 init|=
 operator|new
 name|DataNodeDescriptor
-argument_list|(
-name|DuplicateNameResolver
-operator|.
-name|resolve
-argument_list|(
-name|NameCheckers
-operator|.
-name|dataNodeDescriptor
-argument_list|,
-name|domain
-argument_list|)
-argument_list|)
+argument_list|()
 decl_stmt|;
+name|node
+operator|.
+name|setName
+argument_list|(
+name|NameBuilder
+operator|.
+name|builder
+argument_list|(
+name|node
+argument_list|,
+name|dataChannelDescriptor
+argument_list|)
+operator|.
+name|name
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|node
 operator|.
 name|setDataChannelDescriptor
 argument_list|(
-name|domain
+name|dataChannelDescriptor
 argument_list|)
 expr_stmt|;
 return|return
