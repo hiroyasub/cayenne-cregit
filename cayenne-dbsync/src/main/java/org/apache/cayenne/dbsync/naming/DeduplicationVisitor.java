@@ -284,7 +284,7 @@ argument_list|>
 block|{
 specifier|private
 name|ConfigurationNode
-name|namingContext
+name|parent
 decl_stmt|;
 specifier|private
 name|String
@@ -297,7 +297,7 @@ decl_stmt|;
 name|DeduplicationVisitor
 parameter_list|(
 name|ConfigurationNode
-name|context
+name|parent
 parameter_list|,
 name|String
 name|baseName
@@ -308,9 +308,9 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|namingContext
+name|parent
 operator|=
-name|context
+name|parent
 expr_stmt|;
 name|this
 operator|.
@@ -383,7 +383,7 @@ init|=
 operator|(
 name|DataChannelDescriptor
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 for|for
 control|(
@@ -453,7 +453,7 @@ comment|// null context is a situation when DataMap is a
 comment|// top level object of the project
 if|if
 condition|(
-name|namingContext
+name|parent
 operator|==
 literal|null
 condition|)
@@ -464,7 +464,7 @@ return|;
 block|}
 if|if
 condition|(
-name|namingContext
+name|parent
 operator|instanceof
 name|DataChannelDescriptor
 condition|)
@@ -475,7 +475,7 @@ init|=
 operator|(
 name|DataChannelDescriptor
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|domain
@@ -529,7 +529,7 @@ init|=
 operator|(
 name|DataMap
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|map
@@ -579,7 +579,7 @@ init|=
 operator|(
 name|DataMap
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|map
@@ -629,7 +629,7 @@ init|=
 operator|(
 name|DataMap
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|map
@@ -684,7 +684,7 @@ init|=
 operator|(
 name|Embeddable
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|emb
@@ -794,7 +794,7 @@ init|=
 operator|(
 name|DataMap
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|map
@@ -846,7 +846,7 @@ init|=
 operator|(
 name|Procedure
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 for|for
 control|(
@@ -918,7 +918,7 @@ init|=
 operator|(
 name|DataMap
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 return|return
 name|map
@@ -964,7 +964,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|namingContext
+name|parent
 operator|==
 literal|null
 condition|)
@@ -979,7 +979,7 @@ init|=
 operator|(
 name|DataChannelDescriptor
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 for|for
 control|(
@@ -1116,7 +1116,7 @@ init|=
 operator|(
 name|DbEntity
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 comment|// check if either attribute or relationship name matches...
 return|return
@@ -1171,7 +1171,7 @@ init|=
 operator|(
 name|ObjEntity
 operator|)
-name|namingContext
+name|parent
 decl_stmt|;
 comment|// check if either attribute or relationship name matches...
 if|if
