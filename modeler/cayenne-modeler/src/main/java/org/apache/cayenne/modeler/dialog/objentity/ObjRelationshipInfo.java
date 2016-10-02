@@ -173,8 +173,6 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
 name|naming
 operator|.
 name|ObjectNameGenerator
@@ -1829,7 +1827,7 @@ literal|0
 argument_list|)
 argument_list|)
 operator|.
-name|createDbRelationshipName
+name|dbRelationshipName
 argument_list|(
 operator|new
 name|ExportedKey

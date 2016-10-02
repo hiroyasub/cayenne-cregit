@@ -161,8 +161,6 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
 name|naming
 operator|.
 name|LegacyObjectNameGenerator
@@ -178,8 +176,6 @@ operator|.
 name|cayenne
 operator|.
 name|dbsync
-operator|.
-name|reverse
 operator|.
 name|naming
 operator|.
@@ -784,7 +780,7 @@ name|baseName
 argument_list|(
 name|nameGenerator
 operator|.
-name|createObjEntityName
+name|objEntityName
 argument_list|(
 name|dbEntity
 argument_list|)
@@ -1658,7 +1654,7 @@ name|baseName
 argument_list|(
 name|nameGenerator
 operator|.
-name|createDbRelationshipName
+name|dbRelationshipName
 argument_list|(
 name|key
 argument_list|,
@@ -1712,7 +1708,7 @@ name|baseName
 argument_list|(
 name|nameGenerator
 operator|.
-name|createDbRelationshipName
+name|dbRelationshipName
 argument_list|(
 name|key
 argument_list|,
@@ -1830,7 +1826,7 @@ name|baseName
 argument_list|(
 name|nameGenerator
 operator|.
-name|createDbRelationshipName
+name|dbRelationshipName
 argument_list|(
 name|key
 argument_list|,

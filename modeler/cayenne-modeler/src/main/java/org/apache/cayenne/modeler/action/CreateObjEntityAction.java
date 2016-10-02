@@ -87,8 +87,6 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
 name|naming
 operator|.
 name|DefaultObjectNameGenerator
@@ -502,7 +500,7 @@ operator|new
 name|DefaultObjectNameGenerator
 argument_list|()
 operator|.
-name|createObjEntityName
+name|objEntityName
 argument_list|(
 name|dbEntity
 argument_list|)

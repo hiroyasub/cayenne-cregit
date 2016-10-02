@@ -61,8 +61,6 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
 name|naming
 operator|.
 name|DefaultObjectNameGenerator
@@ -190,20 +188,6 @@ name|dbEntity
 argument_list|)
 expr_stmt|;
 comment|// create a ObjEntity
-comment|// TODO: name generator must be injected...
-comment|// TODO: should we use DbEntity name as a basis instead of generic name like "ObjEntity1"?
-name|String
-name|baseName
-init|=
-operator|new
-name|DefaultObjectNameGenerator
-argument_list|()
-operator|.
-name|createObjEntityName
-argument_list|(
-name|dbEntity
-argument_list|)
-decl_stmt|;
 name|ObjEntity
 name|objEntity
 init|=
@@ -211,9 +195,10 @@ operator|new
 name|ObjEntity
 argument_list|()
 decl_stmt|;
-name|String
-name|name
-init|=
+name|objEntity
+operator|.
+name|setName
+argument_list|(
 name|NameBuilder
 operator|.
 name|builder
@@ -225,20 +210,22 @@ operator|.
 name|getDataMap
 argument_list|()
 argument_list|)
+comment|// TODO: name generator must be injected...
 operator|.
 name|baseName
 argument_list|(
-name|baseName
+operator|new
+name|DefaultObjectNameGenerator
+argument_list|()
+operator|.
+name|objEntityName
+argument_list|(
+name|dbEntity
+argument_list|)
 argument_list|)
 operator|.
 name|name
 argument_list|()
-decl_stmt|;
-name|objEntity
-operator|.
-name|setName
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 name|objEntity
@@ -262,14 +249,17 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// we should generate a className based on the objEntityName
+comment|// generate a className based on the objEntityName
 name|className
 operator|=
 name|map
 operator|.
 name|getNameWithDefaultPackage
 argument_list|(
-name|name
+name|objEntity
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

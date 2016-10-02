@@ -55,8 +55,6 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
 name|naming
 operator|.
 name|DefaultObjectNameGenerator
@@ -72,8 +70,6 @@ operator|.
 name|cayenne
 operator|.
 name|dbsync
-operator|.
-name|reverse
 operator|.
 name|naming
 operator|.

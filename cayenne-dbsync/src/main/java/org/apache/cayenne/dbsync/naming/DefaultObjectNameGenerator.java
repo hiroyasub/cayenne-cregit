@@ -13,8 +13,6 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
 name|naming
 package|;
 end_package
@@ -130,7 +128,7 @@ annotation|@
 name|Override
 specifier|public
 name|String
-name|createDbRelationshipName
+name|dbRelationshipName
 parameter_list|(
 name|ExportedKey
 name|key
@@ -318,7 +316,7 @@ annotation|@
 name|Override
 specifier|public
 name|String
-name|createObjEntityName
+name|objEntityName
 parameter_list|(
 name|DbEntity
 name|dbEntity
@@ -342,7 +340,7 @@ annotation|@
 name|Override
 specifier|public
 name|String
-name|createObjAttributeName
+name|objAttributeName
 parameter_list|(
 name|DbAttribute
 name|attr
@@ -366,7 +364,7 @@ annotation|@
 name|Override
 specifier|public
 name|String
-name|createObjRelationshipName
+name|objRelationshipName
 parameter_list|(
 name|DbRelationship
 name|dbRel
