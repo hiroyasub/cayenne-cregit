@@ -66,11 +66,10 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A dummy {@link ValueForNullProvider} that are not able to provide any values.  *  * @since 4.0  */
+comment|/**  * A dummy {@link ValueForNullProvider} that are not able to provide any values.  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|EmptyValueForNullProvider
 implements|implements

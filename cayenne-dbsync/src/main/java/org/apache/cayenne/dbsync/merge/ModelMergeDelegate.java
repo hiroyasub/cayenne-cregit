@@ -110,7 +110,6 @@ specifier|public
 interface|interface
 name|ModelMergeDelegate
 block|{
-specifier|public
 name|void
 name|dbEntityAdded
 parameter_list|(
@@ -118,7 +117,6 @@ name|DbEntity
 name|ent
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbEntityRemoved
 parameter_list|(
@@ -126,7 +124,6 @@ name|DbEntity
 name|ent
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objEntityAdded
 parameter_list|(
@@ -134,7 +131,6 @@ name|ObjEntity
 name|ent
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objEntityRemoved
 parameter_list|(
@@ -142,7 +138,6 @@ name|ObjEntity
 name|ent
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbAttributeAdded
 parameter_list|(
@@ -150,7 +145,6 @@ name|DbAttribute
 name|att
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbAttributeRemoved
 parameter_list|(
@@ -158,7 +152,6 @@ name|DbAttribute
 name|att
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbAttributeModified
 parameter_list|(
@@ -166,7 +159,6 @@ name|DbAttribute
 name|att
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objAttributeAdded
 parameter_list|(
@@ -174,7 +166,6 @@ name|ObjAttribute
 name|att
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objAttributeRemoved
 parameter_list|(
@@ -182,7 +173,6 @@ name|ObjAttribute
 name|att
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objAttributeModified
 parameter_list|(
@@ -190,7 +180,6 @@ name|ObjAttribute
 name|att
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbRelationshipAdded
 parameter_list|(
@@ -198,7 +187,6 @@ name|DbRelationship
 name|rel
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|dbRelationshipRemoved
 parameter_list|(
@@ -206,7 +194,6 @@ name|DbRelationship
 name|rel
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objRelationshipAdded
 parameter_list|(
@@ -214,7 +201,6 @@ name|ObjRelationship
 name|rel
 parameter_list|)
 function_decl|;
-specifier|public
 name|void
 name|objRelationshipRemoved
 parameter_list|(
