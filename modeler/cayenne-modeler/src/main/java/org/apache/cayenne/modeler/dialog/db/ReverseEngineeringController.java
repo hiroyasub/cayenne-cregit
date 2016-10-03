@@ -107,6 +107,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|modeler
 operator|.
 name|ClassLoadingService
@@ -696,10 +710,15 @@ argument_list|,
 name|connection
 argument_list|)
 decl_stmt|;
+comment|// TODO: counterintuitive... we never use the DataMap that we loaded...
 name|dbLoader
 operator|.
 name|load
 argument_list|(
+operator|new
+name|DataMap
+argument_list|()
+argument_list|,
 name|dbLoaderConfiguration
 argument_list|)
 expr_stmt|;

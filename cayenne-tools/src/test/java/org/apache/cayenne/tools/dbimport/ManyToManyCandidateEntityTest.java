@@ -11,11 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbsync
+name|tools
 operator|.
-name|reverse
-operator|.
-name|db
+name|dbimport
 package|;
 end_package
 

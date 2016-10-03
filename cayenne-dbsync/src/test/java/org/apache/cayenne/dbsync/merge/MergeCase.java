@@ -730,6 +730,10 @@ argument_list|)
 expr_stmt|;
 name|DataMap
 name|dbImport
+init|=
+operator|new
+name|DataMap
+argument_list|()
 decl_stmt|;
 try|try
 init|(
@@ -746,8 +750,6 @@ argument_list|()
 init|;
 init|)
 block|{
-name|dbImport
-operator|=
 operator|new
 name|DbLoader
 argument_list|(
@@ -778,6 +780,8 @@ argument_list|)
 operator|.
 name|load
 argument_list|(
+name|dbImport
+argument_list|,
 name|loaderConfiguration
 argument_list|)
 expr_stmt|;

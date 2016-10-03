@@ -11,11 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbsync
+name|tools
 operator|.
-name|reverse
-operator|.
-name|db
+name|dbimport
 package|;
 end_package
 
@@ -48,6 +46,24 @@ operator|.
 name|naming
 operator|.
 name|ObjectNameGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|db
+operator|.
+name|ExportedKey
 import|;
 end_import
 
@@ -142,7 +158,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Class represent ObjEntity that may be optimized using flattened relationships  * as many to many table  */
+comment|/**  * An ObjEntity that may be removed as a result of flattenning relationships.  */
 end_comment
 
 begin_class
