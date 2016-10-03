@@ -1168,7 +1168,7 @@ decl_stmt|;
 name|DataMap
 name|executed
 init|=
-name|execute
+name|applyTokens
 argument_list|(
 name|delegate
 argument_list|,
@@ -1540,10 +1540,9 @@ return|return
 name|tokens
 return|;
 block|}
-comment|/**      * Performs configured schema operations via DbGenerator.      */
 specifier|private
 name|DataMap
-name|execute
+name|applyTokens
 parameter_list|(
 name|ModelMergeDelegate
 name|mergeDelegate
