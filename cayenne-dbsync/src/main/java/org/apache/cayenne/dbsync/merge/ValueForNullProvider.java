@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -55,8 +45,18 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
-comment|/**  * Class that will be used to set value for null on not  * null columns  */
+comment|/**  * Class that will be used to set value for null on not null columns  */
 end_comment
 
 begin_interface
@@ -65,7 +65,6 @@ interface|interface
 name|ValueForNullProvider
 block|{
 comment|/**      * @return true if there exist a value that should be inserted for null values      */
-specifier|public
 name|boolean
 name|hasValueFor
 parameter_list|(
@@ -77,7 +76,6 @@ name|column
 parameter_list|)
 function_decl|;
 comment|/**      * @return a {@link List} of sql to set value for null      */
-specifier|public
 name|List
 argument_list|<
 name|String

@@ -19,26 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -65,11 +45,32 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
-comment|/**  * A dummy {@link ValueForNullProvider} that are not able to provide any values  */
+comment|/**  * A dummy {@link ValueForNullProvider} that are not able to provide any values.  *  * @since 4.0  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|EmptyValueForNullProvider
 implements|implements

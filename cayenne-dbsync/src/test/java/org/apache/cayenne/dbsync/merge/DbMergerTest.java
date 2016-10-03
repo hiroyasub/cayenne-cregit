@@ -1670,6 +1670,10 @@ name|DbMerger
 argument_list|(
 name|factory
 argument_list|()
+argument_list|,
+operator|new
+name|EmptyValueForNullProvider
+argument_list|()
 argument_list|)
 return|;
 block|}
