@@ -677,9 +677,7 @@ name|loadedEntities
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|entities
 operator|.

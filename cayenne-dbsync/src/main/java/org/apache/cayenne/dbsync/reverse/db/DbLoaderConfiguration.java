@@ -82,7 +82,6 @@ specifier|public
 class|class
 name|DbLoaderConfiguration
 block|{
-comment|/**      * Returns a name of a generic class that should be used for all      * ObjEntities. The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * null (which is the default), DbLoader will assign each entity a unique      * class name derived from the table name.      *      */
 specifier|private
 name|String
 name|genericClassName
@@ -109,6 +108,7 @@ specifier|private
 name|FiltersConfig
 name|filtersConfig
 decl_stmt|;
+comment|/**      * Returns a name of a generic class that should be used for all ObjEntities. The most common generic class is      * {@link org.apache.cayenne.CayenneDataObject}. If generic class name is      * null (which is the default), DbLoader will assign each entity a unique      * class name derived from the table name.      */
 specifier|public
 name|String
 name|getGenericClassName
