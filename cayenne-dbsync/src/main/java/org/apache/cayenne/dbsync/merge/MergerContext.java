@@ -394,6 +394,7 @@ name|ObjectNameGenerator
 name|nameGenerator
 parameter_list|)
 block|{
+comment|// should the last argument also be a part of the builder?
 name|context
 operator|.
 name|entityMergeSupport
@@ -401,11 +402,6 @@ operator|=
 operator|new
 name|EntityMergeSupport
 argument_list|(
-name|context
-operator|.
-name|getDataMap
-argument_list|()
-argument_list|,
 name|Objects
 operator|.
 name|requireNonNull
@@ -414,9 +410,10 @@ name|nameGenerator
 argument_list|)
 argument_list|,
 literal|true
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
-comment|// should the last argument also be a part of the builder?
 return|return
 name|this
 return|;

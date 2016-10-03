@@ -318,7 +318,7 @@ specifier|private
 specifier|static
 specifier|final
 name|Log
-name|LOG
+name|LOGGER
 init|=
 name|LogFactory
 operator|.
@@ -450,16 +450,9 @@ expr_stmt|;
 block|}
 specifier|private
 specifier|final
-name|DataMap
-name|map
-decl_stmt|;
-comment|/**      * Strategy for choosing names for entities, attributes and relationships      */
-specifier|private
-specifier|final
 name|ObjectNameGenerator
 name|nameGenerator
 decl_stmt|;
-comment|/**      * Listeners of merge process.      */
 specifier|private
 specifier|final
 name|List
@@ -467,45 +460,40 @@ argument_list|<
 name|EntityMergeListener
 argument_list|>
 name|listeners
-init|=
-operator|new
-name|ArrayList
-argument_list|<
-name|EntityMergeListener
-argument_list|>
-argument_list|()
 decl_stmt|;
 specifier|protected
 name|boolean
-name|removeMeaningfulFKs
+name|removingMeaningfulFKs
 decl_stmt|;
 specifier|protected
 name|boolean
-name|removeMeaningfulPKs
+name|removingMeaningfulPKs
 decl_stmt|;
 specifier|protected
 name|boolean
-name|usePrimitives
+name|usingPrimitives
 decl_stmt|;
-comment|/**      * @since 3.0      */
 specifier|public
 name|EntityMergeSupport
 parameter_list|(
-name|DataMap
-name|map
-parameter_list|,
 name|ObjectNameGenerator
 name|nameGenerator
 parameter_list|,
 name|boolean
-name|removeMeaningfulPKs
+name|removingMeaningfulPKs
+parameter_list|,
+name|boolean
+name|removingMeaningfulFKs
 parameter_list|)
 block|{
 name|this
 operator|.
-name|map
+name|listeners
 operator|=
-name|map
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
 expr_stmt|;
 name|this
 operator|.
@@ -515,17 +503,18 @@ name|nameGenerator
 expr_stmt|;
 name|this
 operator|.
-name|removeMeaningfulFKs
+name|removingMeaningfulFKs
 operator|=
-literal|true
+name|removingMeaningfulFKs
 expr_stmt|;
 name|this
 operator|.
-name|removeMeaningfulPKs
+name|removingMeaningfulPKs
 operator|=
-name|removeMeaningfulPKs
+name|removingMeaningfulPKs
 expr_stmt|;
-comment|/**          * Adding a listener, so that all created ObjRelationships would have          * default delete rule          */
+comment|// will ensure that all created ObjRelationships would have
+comment|// default delete rule
 name|addEntityMergeListener
 argument_list|(
 name|DeleteRuleUpdater
@@ -535,7 +524,25 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates each one of the collection of ObjEntities, adding attributes and      * relationships based on the current state of its DbEntity.      *      * @return true if any ObjEntity has changed as a result of synchronization.      * @since 1.2 changed signature to use Collection instead of List.      */
+specifier|public
+name|boolean
+name|isRemovingMeaningfulFKs
+parameter_list|()
+block|{
+return|return
+name|removingMeaningfulFKs
+return|;
+block|}
+specifier|public
+name|boolean
+name|isRemovingMeaningfulPKs
+parameter_list|()
+block|{
+return|return
+name|removingMeaningfulPKs
+return|;
+block|}
+comment|/**      * Updates each one of the collection of ObjEntities, adding attributes and      * relationships based on the current state of its DbEntity.      *      * @return true if any ObjEntity has changed as a result of synchronization.      */
 specifier|public
 name|boolean
 name|synchronizeWithDbEntities
@@ -588,7 +595,7 @@ name|dbEntity
 parameter_list|)
 block|{
 return|return
-name|removeMeaningfulPKs
+name|removingMeaningfulPKs
 return|;
 block|}
 comment|/**      * @since 4.0      */
@@ -601,7 +608,7 @@ name|dbEntity
 parameter_list|)
 block|{
 return|return
-name|removeMeaningfulFKs
+name|removingMeaningfulFKs
 return|;
 block|}
 comment|/**      * Updates ObjEntity attributes and relationships based on the current state      * of its DbEntity.      *      * @return true if the ObjEntity has changed as a result of synchronization.      */
@@ -648,13 +655,6 @@ name|changed
 init|=
 literal|false
 decl_stmt|;
-comment|// synchronization on DataMap is some (weak) protection
-comment|// against simultaneous modification of the map (like double-clicking on sync button)
-synchronized|synchronized
-init|(
-name|map
-init|)
-block|{
 if|if
 condition|(
 name|removeFK
@@ -685,7 +685,6 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|changed
 return|;
@@ -1079,6 +1078,19 @@ name|DbRelationship
 name|dbRelationship
 parameter_list|)
 block|{
+comment|// getting DataMap from DbRelationship's source entity. This is the only object in our arguments that
+comment|// is guaranteed to be a part of the map....
+name|DataMap
+name|dataMap
+init|=
+name|dbRelationship
+operator|.
+name|getSourceEntity
+argument_list|()
+operator|.
+name|getDataMap
+argument_list|()
+decl_stmt|;
 name|DbEntity
 name|targetEntity
 init|=
@@ -1093,7 +1105,7 @@ name|ObjEntity
 argument_list|>
 name|mappedObjEntities
 init|=
-name|map
+name|dataMap
 operator|.
 name|getMappedEntities
 argument_list|(
@@ -1102,36 +1114,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|mappedObjEntities
 operator|.
 name|isEmpty
 argument_list|()
 condition|)
-block|{
-for|for
-control|(
-name|Entity
-name|mappedTarget
-range|:
-name|mappedObjEntities
-control|)
-block|{
-name|createObjRelationship
-argument_list|(
-name|entity
-argument_list|,
-name|dbRelationship
-argument_list|,
-name|mappedTarget
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-else|else
 block|{
 if|if
 condition|(
@@ -1184,7 +1171,7 @@ condition|(
 name|needGeneratedEntity
 condition|)
 block|{
-name|LOG
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -1196,7 +1183,7 @@ name|getTargetEntityName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|LOG
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -1208,6 +1195,30 @@ literal|") will have GUESSED Obj Relationship reflection. "
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+else|else
+block|{
+for|for
+control|(
+name|Entity
+name|mappedTarget
+range|:
+name|mappedObjEntities
+control|)
+block|{
+name|createObjRelationship
+argument_list|(
+name|entity
+argument_list|,
+name|dbRelationship
+argument_list|,
+name|mappedTarget
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -1278,7 +1289,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|usePrimitives
+name|usingPrimitives
 condition|)
 block|{
 name|String
@@ -1429,9 +1440,7 @@ name|fks
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbAttribute
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|2
 argument_list|)
@@ -1509,9 +1518,7 @@ name|missing
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbAttribute
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Collection
@@ -1994,32 +2001,6 @@ return|return
 name|missing
 return|;
 block|}
-comment|/**      * @since 1.2      */
-specifier|public
-name|boolean
-name|isRemoveMeaningfulFKs
-parameter_list|()
-block|{
-return|return
-name|removeMeaningfulFKs
-return|;
-block|}
-comment|/**      * @since 1.2      */
-specifier|public
-name|void
-name|setRemoveMeaningfulFKs
-parameter_list|(
-name|boolean
-name|removeMeaningfulFKs
-parameter_list|)
-block|{
-name|this
-operator|.
-name|removeMeaningfulFKs
-operator|=
-name|removeMeaningfulFKs
-expr_stmt|;
-block|}
 comment|/**      * Registers new EntityMergeListener      */
 specifier|public
 name|void
@@ -2129,7 +2110,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @return naming strategy for reverse engineering      */
+comment|/**      * @return a strategy for naming object layer artifacts based on their DB names.      */
 specifier|public
 name|ObjectNameGenerator
 name|getNameGenerator
@@ -2142,27 +2123,27 @@ block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|boolean
-name|isUsePrimitives
+name|isUsingPrimitives
 parameter_list|()
 block|{
 return|return
-name|usePrimitives
+name|usingPrimitives
 return|;
 block|}
-comment|/**      * @param usePrimitives      * @since 4.0      */
+comment|/**      * @param usingPrimitives      * @since 4.0      */
 specifier|public
 name|void
-name|setUsePrimitives
+name|setUsingPrimitives
 parameter_list|(
 name|boolean
-name|usePrimitives
+name|usingPrimitives
 parameter_list|)
 block|{
 name|this
 operator|.
-name|usePrimitives
+name|usingPrimitives
 operator|=
-name|usePrimitives
+name|usingPrimitives
 expr_stmt|;
 block|}
 block|}

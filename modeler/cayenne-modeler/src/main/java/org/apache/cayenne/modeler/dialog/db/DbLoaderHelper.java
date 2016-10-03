@@ -515,8 +515,7 @@ class|class
 name|DbLoaderHelper
 block|{
 comment|// TODO: this is a temp hack... need to delegate to DbAdapter, or
-comment|// configurable in
-comment|// preferences...
+comment|// configurable in preferences...
 specifier|private
 specifier|static
 specifier|final
@@ -538,7 +537,7 @@ decl_stmt|;
 specifier|private
 specifier|static
 name|Log
-name|logObj
+name|LOGGER
 init|=
 name|LogFactory
 operator|.
@@ -654,7 +653,7 @@ name|SQLException
 name|e
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -765,7 +764,7 @@ name|SQLException
 name|e
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|warn
 argument_list|(
@@ -916,15 +915,6 @@ condition|)
 block|{
 return|return;
 block|}
-name|this
-operator|.
-name|loader
-operator|.
-name|setCreatingMeaningfulPK
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 name|LongRunningTask
 name|loadDataMapTask
 init|=
@@ -958,7 +948,7 @@ name|String
 name|message
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|info
 argument_list|(
@@ -1816,7 +1806,7 @@ init|=
 operator|new
 name|ModelerDbImportAction
 argument_list|(
-name|logObj
+name|LOGGER
 argument_list|,
 name|DbLoaderHelper
 operator|.
@@ -1839,7 +1829,7 @@ argument_list|,
 operator|new
 name|ToolsModule
 argument_list|(
-name|logObj
+name|LOGGER
 argument_list|)
 argument_list|,
 operator|new

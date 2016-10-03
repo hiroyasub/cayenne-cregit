@@ -414,7 +414,7 @@ if|if
 condition|(
 name|merger
 operator|.
-name|isRemoveMeaningfulFKs
+name|isRemovingMeaningfulFKs
 argument_list|()
 condition|)
 block|{
