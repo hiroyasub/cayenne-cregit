@@ -350,6 +350,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -372,6 +382,11 @@ name|DbImporterMojoTest
 extends|extends
 name|AbstractMojoTestCase
 block|{
+specifier|private
+specifier|static
+name|DerbyManager
+name|derbyAssembly
+decl_stmt|;
 static|static
 block|{
 name|XMLUnit
@@ -382,11 +397,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
-specifier|static
-name|DerbyManager
-name|derbyAssembly
-decl_stmt|;
 annotation|@
 name|BeforeClass
 specifier|public
@@ -777,7 +787,7 @@ literal|"testOneToOne"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Q: what happens if an attribute or relationship is unmapped in the object layer, but then the underlying table 	 * changes. 	 * A: it should not recreate unmapped attributes/relationships. Only add an attribute for the new column. 	 * 	 * @throws Exception 	 */
+comment|/**      * Q: what happens if an attribute or relationship is unmapped in the object layer, but then the underlying table      * changes.      * A: it should not recreate unmapped attributes/relationships. Only add an attribute for the new column.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public
@@ -820,14 +830,13 @@ throws|throws
 name|Exception
 block|{
 comment|// TODO: this should be "xYs" :<db-relationship name="xIes"
-comment|// TODO: this should be aBs :<db-relationship name="aBArray"
 name|test
 argument_list|(
 literal|"testUnFlattensManyToMany"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * CREATE TABLE APP.A (      *      id INTEGER NOT NULL,      *      *      PRIMARY KEY (id)      * );      *      * CREATE TABLE APP.A_A (      *      A1_ID INTEGER NOT NULL,      *      A2_ID INTEGER NOT NULL,      *      *      PRIMARY KEY (A1_ID, A2_ID),      *      CONSTRAINT A_A1 FOREIGN KEY (A1_ID) REFERENCES APP.A (ID),      *      CONSTRAINT A_A2 FOREIGN KEY (A2_ID) REFERENCES APP.A (ID)      * );      *      * If one table has many-to-many relationship with it self ObjEntity should have two      *  collection attributes in both directions      *      * @throws Exception      */
+comment|/**      * CREATE TABLE APP.A (      * id INTEGER NOT NULL,      *<p>      * PRIMARY KEY (id)      * );      *<p>      * CREATE TABLE APP.A_A (      * A1_ID INTEGER NOT NULL,      * A2_ID INTEGER NOT NULL,      *<p>      * PRIMARY KEY (A1_ID, A2_ID),      * CONSTRAINT A_A1 FOREIGN KEY (A1_ID) REFERENCES APP.A (ID),      * CONSTRAINT A_A2 FOREIGN KEY (A2_ID) REFERENCES APP.A (ID)      * );      *<p>      * If one table has many-to-many relationship with it self ObjEntity should have two      * collection attributes in both directions      *      * @throws Exception      */
 annotation|@
 name|Test
 annotation|@
@@ -2020,8 +2029,12 @@ throws|throws
 name|Exception
 block|{
 name|URL
-name|sqlUrl
+name|dbUrl
 init|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|ResourceUtil
 operator|.
 name|getResource
@@ -2035,12 +2048,9 @@ name|sqlFile
 operator|+
 literal|".sql"
 argument_list|)
-decl_stmt|;
-name|assertNotNull
-argument_list|(
-name|sqlUrl
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+comment|// TODO: refactor to common DB management code... E.g. bootique-jdbc-test?
 name|Class
 operator|.
 name|forName
@@ -2054,9 +2064,10 @@ operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
-comment|// Get a connection
-name|Statement
-name|stmt
+try|try
+init|(
+name|Connection
+name|connection
 init|=
 name|DriverManager
 operator|.
@@ -2067,10 +2078,20 @@ operator|.
 name|getUrl
 argument_list|()
 argument_list|)
+init|)
+block|{
+try|try
+init|(
+name|Statement
+name|stmt
+init|=
+name|connection
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
+init|;
+init|)
+block|{
 for|for
 control|(
 name|String
@@ -2080,7 +2101,7 @@ name|SQLReader
 operator|.
 name|statements
 argument_list|(
-name|sqlUrl
+name|dbUrl
 argument_list|,
 literal|";"
 argument_list|)
@@ -2093,6 +2114,8 @@ argument_list|(
 name|sql
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 block|}
 block|}
