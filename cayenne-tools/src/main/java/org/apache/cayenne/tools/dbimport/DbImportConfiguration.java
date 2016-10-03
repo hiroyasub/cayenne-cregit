@@ -881,7 +881,7 @@ return|return
 name|dataMap
 return|;
 block|}
-specifier|public
+specifier|protected
 name|void
 name|initializeDataMap
 parameter_list|(
