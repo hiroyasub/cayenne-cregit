@@ -772,16 +772,8 @@ argument_list|)
 argument_list|)
 argument_list|,
 operator|new
-name|EntityMergeSupport
-argument_list|(
-operator|new
 name|DefaultObjectNameGenerator
 argument_list|()
-argument_list|,
-literal|true
-argument_list|,
-literal|true
-argument_list|)
 argument_list|)
 operator|.
 name|load
