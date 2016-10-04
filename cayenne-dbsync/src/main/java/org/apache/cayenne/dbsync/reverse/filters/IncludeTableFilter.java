@@ -111,7 +111,7 @@ block|{
 return|return
 name|columnsFilter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 name|name
 argument_list|)

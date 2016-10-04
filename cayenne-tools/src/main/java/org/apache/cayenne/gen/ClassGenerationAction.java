@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
+name|filter
 operator|.
 name|NamePatternMatcher
 import|;

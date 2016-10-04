@@ -64,7 +64,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aaa"
 argument_list|)
@@ -74,7 +74,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"bbb"
 argument_list|)
@@ -84,7 +84,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aaaa"
 argument_list|)
@@ -94,7 +94,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aa"
 argument_list|)
@@ -104,7 +104,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"abb"
 argument_list|)
@@ -125,7 +125,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"v_new_view"
 argument_list|)
@@ -135,7 +135,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"new_view"
 argument_list|)
@@ -145,7 +145,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"view"
 argument_list|)
@@ -155,7 +155,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"girl"
 argument_list|)
@@ -190,7 +190,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aaa"
 argument_list|)
@@ -200,7 +200,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"bbb"
 argument_list|)
@@ -210,7 +210,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aaaa"
 argument_list|)
@@ -220,7 +220,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aa"
 argument_list|)
@@ -230,7 +230,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"abb"
 argument_list|)
@@ -265,7 +265,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aaa"
 argument_list|)
@@ -275,7 +275,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"bbb"
 argument_list|)
@@ -285,7 +285,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aaaa"
 argument_list|)
@@ -295,7 +295,7 @@ name|assertTrue
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"aa"
 argument_list|)
@@ -305,7 +305,7 @@ name|assertFalse
 argument_list|(
 name|filter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"abb"
 argument_list|)
@@ -323,7 +323,7 @@ name|PatternFilter
 operator|.
 name|INCLUDE_EVERYTHING
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"qwe"
 argument_list|)
@@ -335,7 +335,7 @@ name|PatternFilter
 operator|.
 name|INCLUDE_EVERYTHING
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|""
 argument_list|)
@@ -347,7 +347,7 @@ name|PatternFilter
 operator|.
 name|INCLUDE_EVERYTHING
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|null
 argument_list|)
@@ -365,7 +365,7 @@ name|PatternFilter
 operator|.
 name|INCLUDE_NOTHING
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|"qwe"
 argument_list|)
@@ -377,7 +377,7 @@ name|PatternFilter
 operator|.
 name|INCLUDE_NOTHING
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|""
 argument_list|)
@@ -389,7 +389,7 @@ name|PatternFilter
 operator|.
 name|INCLUDE_NOTHING
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 literal|null
 argument_list|)

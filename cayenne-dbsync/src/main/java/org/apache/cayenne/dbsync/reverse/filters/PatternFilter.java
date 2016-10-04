@@ -98,7 +98,7 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|isInclude
+name|isIncluded
 parameter_list|(
 name|String
 name|obj
@@ -143,7 +143,7 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|isInclude
+name|isIncluded
 parameter_list|(
 name|String
 name|obj
@@ -391,7 +391,7 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|isInclude
+name|isIncluded
 parameter_list|(
 name|String
 name|obj

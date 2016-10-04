@@ -11,25 +11,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
-package|;
-end_package
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dbsync
 operator|.
-name|reverse
-operator|.
-name|NamePatternMatcher
-import|;
-end_import
+name|filter
+package|;
+end_package
 
 begin_import
 import|import
@@ -51,7 +37,7 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
+name|filter
 operator|.
 name|NamePatternMatcher
 operator|.
@@ -76,7 +62,7 @@ specifier|public
 class|class
 name|NamePatternMatcherTest
 block|{
-comment|/** 	 * Test pattern expansion. 	 */
+comment|/**      * Test pattern expansion.      */
 annotation|@
 name|Test
 specifier|public
@@ -199,7 +185,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Test tokenizing 	 */
+comment|/**      * Test tokenizing      */
 annotation|@
 name|Test
 specifier|public
@@ -268,7 +254,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Test tokenizing 	 */
+comment|/**      * Test tokenizing      */
 annotation|@
 name|Test
 specifier|public

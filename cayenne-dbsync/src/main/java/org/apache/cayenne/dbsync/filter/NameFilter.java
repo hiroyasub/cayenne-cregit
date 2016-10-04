@@ -13,7 +13,7 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|reverse
+name|filter
 package|;
 end_package
 

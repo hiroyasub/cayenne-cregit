@@ -419,7 +419,7 @@ operator|||
 operator|!
 name|columnFilter
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 name|columnName
 argument_list|)

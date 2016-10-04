@@ -14,6 +14,8 @@ operator|.
 name|dbsync
 operator|.
 name|reverse
+operator|.
+name|filters
 package|;
 end_package
 
@@ -140,6 +142,24 @@ operator|.
 name|dbimport
 operator|.
 name|Schema
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|filters
+operator|.
+name|FiltersConfigBuilder
 import|;
 end_import
 

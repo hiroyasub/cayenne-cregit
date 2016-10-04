@@ -2960,7 +2960,7 @@ name|getSchema
 argument_list|()
 argument_list|)
 operator|.
-name|isInclude
+name|isIncluded
 argument_list|(
 name|procedure
 operator|.

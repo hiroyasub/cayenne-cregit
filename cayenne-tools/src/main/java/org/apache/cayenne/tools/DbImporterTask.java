@@ -283,6 +283,8 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
+name|filters
+operator|.
 name|FiltersConfigBuilder
 import|;
 end_import
