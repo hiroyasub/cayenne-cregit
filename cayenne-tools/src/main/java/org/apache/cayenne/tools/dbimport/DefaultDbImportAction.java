@@ -1092,6 +1092,11 @@ name|config
 operator|.
 name|getNameGenerator
 argument_list|()
+argument_list|,
+name|config
+operator|.
+name|isUsePrimitives
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
@@ -1513,6 +1518,9 @@ name|tokens
 parameter_list|,
 name|ObjectNameGenerator
 name|nameGenerator
+parameter_list|,
+name|boolean
+name|usingPrimitives
 parameter_list|)
 block|{
 if|if
@@ -1606,6 +1614,11 @@ operator|.
 name|nameGenerator
 argument_list|(
 name|nameGenerator
+argument_list|)
+operator|.
+name|usingPrimitives
+argument_list|(
+name|usingPrimitives
 argument_list|)
 operator|.
 name|build
