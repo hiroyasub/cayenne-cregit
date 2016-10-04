@@ -410,6 +410,8 @@ argument_list|(
 name|listener
 argument_list|)
 expr_stmt|;
+comment|// TODO: addition or removal of model objects should be reflected in listener callbacks...
+comment|// we should not be trying to introspect the merger
 if|if
 condition|(
 name|merger

@@ -29,9 +29,41 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
+name|filter
+operator|.
+name|NamePatternMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
 name|merge
 operator|.
 name|EntityMergeSupport
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|naming
+operator|.
+name|ObjectNameGenerator
 import|;
 end_import
 
@@ -60,22 +92,6 @@ operator|.
 name|map
 operator|.
 name|ObjEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|naming
-operator|.
-name|ObjectNameGenerator
 import|;
 end_import
 
@@ -303,7 +319,9 @@ name|EntityMergeSupport
 argument_list|(
 name|namingStrategy
 argument_list|,
-literal|true
+name|NamePatternMatcher
+operator|.
+name|EXCLUDE_ALL
 argument_list|,
 literal|true
 argument_list|,
@@ -479,7 +497,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|// TODO: Modeler-controlled defaults for all the hardcoded boolean flags here.
+comment|// TODO: Modeler-controlled defaults for all the hardcoded flags here.
 return|return
 name|cancel
 index|[
@@ -493,7 +511,9 @@ name|EntityMergeSupport
 argument_list|(
 name|namingStrategy
 argument_list|,
-literal|true
+name|NamePatternMatcher
+operator|.
+name|EXCLUDE_ALL
 argument_list|,
 name|removeFKs
 index|[

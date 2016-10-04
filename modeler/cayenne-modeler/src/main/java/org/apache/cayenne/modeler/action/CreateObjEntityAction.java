@@ -55,6 +55,22 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
+name|filter
+operator|.
+name|NamePatternMatcher
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
 name|merge
 operator|.
 name|EntityMergeSupport
@@ -73,7 +89,7 @@ name|dbsync
 operator|.
 name|naming
 operator|.
-name|NameBuilder
+name|DefaultObjectNameGenerator
 import|;
 end_import
 
@@ -89,7 +105,7 @@ name|dbsync
 operator|.
 name|naming
 operator|.
-name|DefaultObjectNameGenerator
+name|NameBuilder
 import|;
 end_import
 
@@ -598,7 +614,9 @@ operator|new
 name|DefaultObjectNameGenerator
 argument_list|()
 argument_list|,
-literal|true
+name|NamePatternMatcher
+operator|.
+name|EXCLUDE_ALL
 argument_list|,
 literal|true
 argument_list|,
