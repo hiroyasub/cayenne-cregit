@@ -436,7 +436,7 @@ specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * @parameter meaningfulPkTables="meaningfulPkTables"      * @since 4.0      */
+comment|/**      * A comma-separated list of Perl5 patterns that defines which imported tables should have their primary key columns      * mapped as ObjAttributes. "*" would indicate all tables.      *      * @parameter meaningfulPkTables="meaningfulPkTables"      * @since 4.0      */
 specifier|private
 name|String
 name|meaningfulPkTables
