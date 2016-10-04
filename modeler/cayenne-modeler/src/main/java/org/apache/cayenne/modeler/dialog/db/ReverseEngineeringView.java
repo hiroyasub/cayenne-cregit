@@ -145,7 +145,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBModel
+name|DbModel
 import|;
 end_import
 
@@ -1107,9 +1107,7 @@ name|dataMapViewModel
 init|=
 operator|new
 name|DataMapViewModel
-argument_list|(
-name|mapName
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|String
 name|xmlText
@@ -1180,7 +1178,7 @@ operator|.
 name|setReverseEngineeringTree
 argument_list|(
 operator|new
-name|DBModel
+name|DbModel
 argument_list|(
 literal|""
 argument_list|)
@@ -1195,7 +1193,7 @@ operator|.
 name|setReverseEngineeringTree
 argument_list|(
 operator|new
-name|DBModel
+name|DbModel
 argument_list|(
 literal|""
 argument_list|)
@@ -1426,7 +1424,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|DBModel
+name|DbModel
 name|loadedPreviousTree
 init|=
 name|reverseEngineeringViewMap

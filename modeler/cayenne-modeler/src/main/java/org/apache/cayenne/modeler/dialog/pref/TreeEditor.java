@@ -35,7 +35,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBCatalog
+name|DbCatalog
 import|;
 end_import
 
@@ -55,7 +55,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBElement
+name|DbElement
 import|;
 end_import
 
@@ -75,7 +75,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBEntity
+name|DbEntity
 import|;
 end_import
 
@@ -95,7 +95,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBModel
+name|DbModel
 import|;
 end_import
 
@@ -115,7 +115,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBSchema
+name|DbSchema
 import|;
 end_import
 
@@ -254,7 +254,7 @@ specifier|public
 name|void
 name|convertTreeViewIntoTreeNode
 parameter_list|(
-name|DBModel
+name|DbModel
 name|dbModel
 parameter_list|)
 block|{
@@ -269,12 +269,12 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|DBElement
+name|DbElement
 name|dbElement
 range|:
 name|dbModel
 operator|.
-name|getDbElements
+name|getElements
 argument_list|()
 control|)
 block|{
@@ -291,7 +291,7 @@ if|if
 condition|(
 name|dbElement
 operator|instanceof
-name|DBCatalog
+name|DbCatalog
 condition|)
 block|{
 name|parseCatalog
@@ -306,7 +306,7 @@ if|if
 condition|(
 name|dbElement
 operator|instanceof
-name|DBSchema
+name|DbSchema
 condition|)
 block|{
 name|parseSchema
@@ -355,7 +355,7 @@ specifier|public
 name|void
 name|parseCatalog
 parameter_list|(
-name|DBElement
+name|DbElement
 name|catalog
 parameter_list|,
 name|DefaultMutableTreeNode
@@ -364,12 +364,12 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|DBElement
+name|DbElement
 name|dbElement
 range|:
 name|catalog
 operator|.
-name|getDbElements
+name|getElements
 argument_list|()
 control|)
 block|{
@@ -386,7 +386,7 @@ if|if
 condition|(
 name|dbElement
 operator|instanceof
-name|DBSchema
+name|DbSchema
 condition|)
 block|{
 name|parseSchema
@@ -401,7 +401,7 @@ if|if
 condition|(
 name|dbElement
 operator|instanceof
-name|DBEntity
+name|DbEntity
 condition|)
 block|{
 name|parseEntity
@@ -425,7 +425,7 @@ specifier|public
 name|void
 name|parseSchema
 parameter_list|(
-name|DBElement
+name|DbElement
 name|schema
 parameter_list|,
 name|DefaultMutableTreeNode
@@ -434,12 +434,12 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|DBElement
+name|DbElement
 name|element
 range|:
 name|schema
 operator|.
-name|getDbElements
+name|getElements
 argument_list|()
 control|)
 block|{
@@ -456,7 +456,7 @@ if|if
 condition|(
 name|element
 operator|instanceof
-name|DBEntity
+name|DbEntity
 condition|)
 block|{
 name|parseEntity
@@ -480,7 +480,7 @@ specifier|private
 name|void
 name|parseEntity
 parameter_list|(
-name|DBElement
+name|DbElement
 name|entity
 parameter_list|,
 name|DefaultMutableTreeNode
@@ -489,12 +489,12 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|DBElement
+name|DbElement
 name|column
 range|:
 name|entity
 operator|.
-name|getDbElements
+name|getElements
 argument_list|()
 control|)
 block|{

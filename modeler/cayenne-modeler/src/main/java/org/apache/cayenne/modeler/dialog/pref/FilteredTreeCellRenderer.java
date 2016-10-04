@@ -35,7 +35,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBCatalog
+name|DbCatalog
 import|;
 end_import
 
@@ -55,7 +55,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBColumn
+name|DbColumn
 import|;
 end_import
 
@@ -75,7 +75,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBEntity
+name|DbEntity
 import|;
 end_import
 
@@ -95,7 +95,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBProcedure
+name|DbProcedure
 import|;
 end_import
 
@@ -115,7 +115,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBSchema
+name|DbSchema
 import|;
 end_import
 
@@ -289,14 +289,14 @@ if|if
 condition|(
 name|userObject
 operator|instanceof
-name|DBCatalog
+name|DbCatalog
 condition|)
 block|{
 name|setText
 argument_list|(
 operator|(
 operator|(
-name|DBCatalog
+name|DbCatalog
 operator|)
 name|userObject
 operator|)
@@ -315,14 +315,14 @@ if|if
 condition|(
 name|userObject
 operator|instanceof
-name|DBSchema
+name|DbSchema
 condition|)
 block|{
 name|setText
 argument_list|(
 operator|(
 operator|(
-name|DBSchema
+name|DbSchema
 operator|)
 name|userObject
 operator|)
@@ -341,14 +341,14 @@ if|if
 condition|(
 name|userObject
 operator|instanceof
-name|DBEntity
+name|DbEntity
 condition|)
 block|{
 name|setText
 argument_list|(
 operator|(
 operator|(
-name|DBEntity
+name|DbEntity
 operator|)
 name|userObject
 operator|)
@@ -367,14 +367,14 @@ if|if
 condition|(
 name|userObject
 operator|instanceof
-name|DBColumn
+name|DbColumn
 condition|)
 block|{
 name|setText
 argument_list|(
 operator|(
 operator|(
-name|DBColumn
+name|DbColumn
 operator|)
 name|userObject
 operator|)
@@ -393,14 +393,14 @@ if|if
 condition|(
 name|userObject
 operator|instanceof
-name|DBProcedure
+name|DbProcedure
 condition|)
 block|{
 name|setText
 argument_list|(
 operator|(
 operator|(
-name|DBProcedure
+name|DbProcedure
 operator|)
 name|userObject
 operator|)

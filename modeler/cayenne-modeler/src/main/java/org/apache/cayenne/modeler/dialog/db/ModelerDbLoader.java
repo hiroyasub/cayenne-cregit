@@ -163,20 +163,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|DbEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|Procedure
 import|;
 end_import
@@ -197,7 +183,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBCatalog
+name|DbCatalog
 import|;
 end_import
 
@@ -217,7 +203,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBColumn
+name|DbColumn
 import|;
 end_import
 
@@ -237,7 +223,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBElement
+name|DbElement
 import|;
 end_import
 
@@ -257,7 +243,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBEntity
+name|DbEntity
 import|;
 end_import
 
@@ -277,7 +263,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBModel
+name|DbModel
 import|;
 end_import
 
@@ -297,7 +283,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBProcedure
+name|DbProcedure
 import|;
 end_import
 
@@ -317,7 +303,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBSchema
+name|DbSchema
 import|;
 end_import
 
@@ -486,8 +472,13 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|void
-name|load
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Procedure
+argument_list|>
+name|loadProcedures
 parameter_list|(
 name|DataMap
 name|dataMap
@@ -504,8 +495,10 @@ name|String
 argument_list|,
 name|Procedure
 argument_list|>
-name|procedureMap
+name|procedures
 init|=
+name|super
+operator|.
 name|loadProcedures
 argument_list|(
 name|dataMap
@@ -513,18 +506,14 @@ argument_list|,
 name|config
 argument_list|)
 decl_stmt|;
-name|load
-argument_list|(
-name|dataMap
-argument_list|,
-name|config
-argument_list|)
-expr_stmt|;
 name|addProcedures
 argument_list|(
-name|procedureMap
+name|procedures
 argument_list|)
 expr_stmt|;
+return|return
+name|procedures
+return|;
 block|}
 annotation|@
 name|Override
@@ -651,10 +640,10 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-name|DBElement
+name|DbElement
 name|currentDBCatalog
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|currentDBSchema
 decl_stmt|;
 for|for
@@ -692,7 +681,7 @@ operator|.
 name|getCatalog
 argument_list|()
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|dbCatalog
 init|=
 name|reverseEngineeringController
@@ -721,7 +710,7 @@ block|{
 name|currentDBCatalog
 operator|=
 operator|new
-name|DBCatalog
+name|DbCatalog
 argument_list|(
 name|dbCatalogName
 argument_list|)
@@ -753,7 +742,7 @@ operator|.
 name|getSchema
 argument_list|()
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|dbSchema
 init|=
 name|currentDBCatalog
@@ -780,7 +769,7 @@ block|{
 name|currentDBSchema
 operator|=
 operator|new
-name|DBSchema
+name|DbSchema
 argument_list|(
 name|dbSchemaName
 argument_list|)
@@ -793,11 +782,11 @@ name|currentDBSchema
 argument_list|)
 expr_stmt|;
 block|}
-name|DBProcedure
+name|DbProcedure
 name|currentProcedure
 init|=
 operator|new
-name|DBProcedure
+name|DbProcedure
 argument_list|(
 name|procedure
 operator|.
@@ -818,11 +807,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|DBProcedure
+name|DbProcedure
 name|currentProcedure
 init|=
 operator|new
-name|DBProcedure
+name|DbProcedure
 argument_list|(
 name|procedure
 operator|.
@@ -859,7 +848,7 @@ operator|.
 name|getSchema
 argument_list|()
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|dbSchema
 init|=
 name|reverseEngineeringController
@@ -888,7 +877,7 @@ block|{
 name|currentDBSchema
 operator|=
 operator|new
-name|DBSchema
+name|DbSchema
 argument_list|(
 name|dbSchemaName
 argument_list|)
@@ -903,11 +892,11 @@ name|currentDBSchema
 argument_list|)
 expr_stmt|;
 block|}
-name|DBProcedure
+name|DbProcedure
 name|currentProcedure
 init|=
 operator|new
-name|DBProcedure
+name|DbProcedure
 argument_list|(
 name|procedure
 operator|.
@@ -959,7 +948,7 @@ operator|.
 name|dbModel
 operator|=
 operator|new
-name|DBModel
+name|DbModel
 argument_list|(
 name|reverseEngineeringController
 operator|.
@@ -971,12 +960,12 @@ name|catalogSetted
 init|=
 literal|false
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|currentDBCatalog
 init|=
 literal|null
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|currentDBSchema
 init|=
 literal|null
@@ -1007,6 +996,14 @@ control|)
 block|{
 name|List
 argument_list|<
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 argument_list|>
 name|entityList
@@ -1035,6 +1032,14 @@ argument_list|,
 name|types
 argument_list|)
 decl_stmt|;
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 name|entityFromLoader
 init|=
@@ -1068,7 +1073,7 @@ block|{
 name|currentDBCatalog
 operator|=
 operator|new
-name|DBCatalog
+name|DbCatalog
 argument_list|(
 name|entityFromLoader
 operator|.
@@ -1103,7 +1108,7 @@ block|{
 name|currentDBSchema
 operator|=
 operator|new
-name|DBSchema
+name|DbSchema
 argument_list|(
 name|entityFromLoader
 operator|.
@@ -1140,7 +1145,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|DBEntity
+name|DbEntity
 name|currentDBEntity
 decl_stmt|;
 if|if
@@ -1152,6 +1157,14 @@ condition|)
 block|{
 for|for
 control|(
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 name|dbEntity
 range|:
@@ -1161,7 +1174,7 @@ block|{
 name|currentDBEntity
 operator|=
 operator|new
-name|DBEntity
+name|DbEntity
 argument_list|(
 name|dbEntity
 operator|.
@@ -1192,7 +1205,7 @@ operator|.
 name|addElement
 argument_list|(
 operator|new
-name|DBColumn
+name|DbColumn
 argument_list|(
 name|dbColumn
 operator|.
@@ -1208,6 +1221,14 @@ else|else
 block|{
 for|for
 control|(
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 name|dbEntity
 range|:
@@ -1217,7 +1238,7 @@ block|{
 name|currentDBEntity
 operator|=
 operator|new
-name|DBEntity
+name|DbEntity
 argument_list|(
 name|dbEntity
 operator|.
@@ -1241,7 +1262,7 @@ operator|.
 name|addElement
 argument_list|(
 operator|new
-name|DBColumn
+name|DbColumn
 argument_list|(
 name|dbColumn
 operator|.
@@ -1306,17 +1327,17 @@ operator|.
 name|dbModel
 operator|=
 operator|new
-name|DBModel
+name|DbModel
 argument_list|(
 name|reverseEngineeringController
 operator|.
 name|dataSourceKey
 argument_list|)
 expr_stmt|;
-name|DBElement
+name|DbElement
 name|currentDBCatalog
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|currentDBSchema
 decl_stmt|;
 for|for
@@ -1345,6 +1366,14 @@ control|)
 block|{
 name|List
 argument_list|<
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 argument_list|>
 name|entityList
@@ -1375,6 +1404,14 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 name|dbEntity
 range|:
@@ -1395,7 +1432,7 @@ operator|.
 name|getCatalog
 argument_list|()
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|dbCatalog
 init|=
 name|reverseEngineeringController
@@ -1424,7 +1461,7 @@ block|{
 name|currentDBCatalog
 operator|=
 operator|new
-name|DBCatalog
+name|DbCatalog
 argument_list|(
 name|dbCatalogName
 argument_list|)
@@ -1453,7 +1490,7 @@ operator|.
 name|getSchema
 argument_list|()
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|dbSchema
 init|=
 name|currentDBCatalog
@@ -1480,7 +1517,7 @@ block|{
 name|currentDBSchema
 operator|=
 operator|new
-name|DBSchema
+name|DbSchema
 argument_list|(
 name|dbSchemaName
 argument_list|)
@@ -1493,11 +1530,11 @@ name|currentDBSchema
 argument_list|)
 expr_stmt|;
 block|}
-name|DBEntity
+name|DbEntity
 name|currentDBEntity
 init|=
 operator|new
-name|DBEntity
+name|DbEntity
 argument_list|(
 name|dbEntity
 operator|.
@@ -1528,7 +1565,7 @@ operator|.
 name|addElement
 argument_list|(
 operator|new
-name|DBColumn
+name|DbColumn
 argument_list|(
 name|dbColumn
 operator|.
@@ -1541,11 +1578,11 @@ block|}
 block|}
 else|else
 block|{
-name|DBEntity
+name|DbEntity
 name|currentDBEntity
 init|=
 operator|new
-name|DBEntity
+name|DbEntity
 argument_list|(
 name|dbEntity
 operator|.
@@ -1576,7 +1613,7 @@ operator|.
 name|addElement
 argument_list|(
 operator|new
-name|DBColumn
+name|DbColumn
 argument_list|(
 name|dbColumn
 operator|.
@@ -1604,7 +1641,7 @@ operator|.
 name|getSchema
 argument_list|()
 decl_stmt|;
-name|DBElement
+name|DbElement
 name|dbSchema
 init|=
 name|reverseEngineeringController
@@ -1633,7 +1670,7 @@ block|{
 name|currentDBSchema
 operator|=
 operator|new
-name|DBSchema
+name|DbSchema
 argument_list|(
 name|dbSchemaName
 argument_list|)
@@ -1648,11 +1685,11 @@ name|currentDBSchema
 argument_list|)
 expr_stmt|;
 block|}
-name|DBEntity
+name|DbEntity
 name|currentDBEntity
 init|=
 operator|new
-name|DBEntity
+name|DbEntity
 argument_list|(
 name|dbEntity
 operator|.
@@ -1683,7 +1720,7 @@ operator|.
 name|addElement
 argument_list|(
 operator|new
-name|DBColumn
+name|DbColumn
 argument_list|(
 name|dbColumn
 operator|.

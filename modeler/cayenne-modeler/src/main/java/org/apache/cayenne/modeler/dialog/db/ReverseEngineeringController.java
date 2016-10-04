@@ -157,7 +157,7 @@ name|db
 operator|.
 name|model
 operator|.
-name|DBModel
+name|DbModel
 import|;
 end_import
 
@@ -426,7 +426,7 @@ argument_list|>
 name|reverseEngineeringMap
 decl_stmt|;
 specifier|protected
-name|DBModel
+name|DbModel
 name|dbModel
 decl_stmt|;
 specifier|protected
@@ -739,9 +739,7 @@ name|dataMapViewModel
 init|=
 operator|new
 name|DataMapViewModel
-argument_list|(
-name|mapName
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|dataMapViewModel
 operator|.
