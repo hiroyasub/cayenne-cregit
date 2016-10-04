@@ -587,7 +587,7 @@ argument_list|(
 name|entity
 argument_list|)
 expr_stmt|;
-comment|// perform the merge
+comment|// TODO: Modeler-controlled defaults for all the hardcoded boolean flags here.
 name|EntityMergeSupport
 name|merger
 init|=
@@ -597,6 +597,8 @@ argument_list|(
 operator|new
 name|DefaultObjectNameGenerator
 argument_list|()
+argument_list|,
+literal|true
 argument_list|,
 literal|true
 argument_list|,

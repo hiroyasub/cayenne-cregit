@@ -294,6 +294,7 @@ name|defaultNameGenerator
 argument_list|()
 expr_stmt|;
 block|}
+comment|// TODO: Modeler-controlled defaults for all the hardcoded boolean flags here.
 name|EntityMergeSupport
 name|merger
 init|=
@@ -301,6 +302,8 @@ operator|new
 name|EntityMergeSupport
 argument_list|(
 name|namingStrategy
+argument_list|,
+literal|true
 argument_list|,
 literal|true
 argument_list|,
@@ -476,6 +479,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
+comment|// TODO: Modeler-controlled defaults for all the hardcoded boolean flags here.
 return|return
 name|cancel
 index|[
@@ -495,6 +499,8 @@ name|removeFKs
 index|[
 literal|0
 index|]
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
