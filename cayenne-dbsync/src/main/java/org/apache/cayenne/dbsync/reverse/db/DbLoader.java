@@ -2062,7 +2062,7 @@ index|]
 argument_list|)
 return|;
 block|}
-comment|/**      * Performs database reverse engineering to match the specified catalog,      * schema, table name and table type patterns and fills the specified      * DataMap object with DB and object mapping info.      *      * @since 4.0      */
+comment|/**      * Performs database reverse engineering based on provided configuration. Stores the resulting {@link DbEntity}      * and {@link Procedure} objects in provided DataMap.      *      * @since 4.0      */
 specifier|public
 name|void
 name|load
@@ -2232,7 +2232,7 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Loads database stored procedures into the DataMap.      *<p>      *<i>As of 1.1 there is no boolean property or delegate method to make      * procedure loading optional or to implement custom merging logic, so      * currently this method is NOT CALLED from "loadDataMapFromDB" and should      * be invoked explicitly by the user.</i>      *</p>      *      * @since 4.0      */
-specifier|public
+specifier|protected
 name|Map
 argument_list|<
 name|String

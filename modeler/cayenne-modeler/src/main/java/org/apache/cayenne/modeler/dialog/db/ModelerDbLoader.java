@@ -471,7 +471,7 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|Map
 argument_list|<
 name|String
