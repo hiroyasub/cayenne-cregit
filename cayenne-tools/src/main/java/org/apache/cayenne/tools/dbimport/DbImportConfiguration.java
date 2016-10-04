@@ -972,7 +972,8 @@ operator|.
 name|getFiltersConfig
 argument_list|()
 operator|.
-name|catalogs
+name|getCatalogs
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

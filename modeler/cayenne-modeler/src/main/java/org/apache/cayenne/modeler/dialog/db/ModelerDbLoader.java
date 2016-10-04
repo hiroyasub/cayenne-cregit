@@ -572,7 +572,8 @@ operator|.
 name|getFiltersConfig
 argument_list|()
 operator|.
-name|catalogs
+name|getCatalogs
+argument_list|()
 control|)
 block|{
 for|for
@@ -990,7 +991,8 @@ operator|.
 name|getFiltersConfig
 argument_list|()
 operator|.
-name|catalogs
+name|getCatalogs
+argument_list|()
 control|)
 block|{
 for|for
@@ -1327,7 +1329,8 @@ operator|.
 name|getFiltersConfig
 argument_list|()
 operator|.
-name|catalogs
+name|getCatalogs
+argument_list|()
 control|)
 block|{
 for|for

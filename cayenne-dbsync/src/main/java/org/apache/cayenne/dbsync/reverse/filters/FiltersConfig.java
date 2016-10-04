@@ -38,7 +38,7 @@ specifier|public
 class|class
 name|FiltersConfig
 block|{
-specifier|public
+specifier|private
 specifier|final
 name|CatalogFilter
 index|[]
@@ -88,6 +88,16 @@ name|catalogs
 operator|=
 name|catalogs
 expr_stmt|;
+block|}
+specifier|public
+name|CatalogFilter
+index|[]
+name|getCatalogs
+parameter_list|()
+block|{
+return|return
+name|catalogs
+return|;
 block|}
 specifier|public
 name|PatternFilter
