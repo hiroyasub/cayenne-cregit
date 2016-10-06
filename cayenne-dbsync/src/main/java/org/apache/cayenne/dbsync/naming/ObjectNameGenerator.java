@@ -103,6 +103,7 @@ name|dbAttribute
 parameter_list|)
 function_decl|;
 comment|/**      * Generates a name for DbRelationship derived from the DB foreign key name.      */
+comment|// TODO: the class is called Object* , but here it is generating a DB-layer name... Better naming?
 name|String
 name|dbRelationshipName
 parameter_list|(

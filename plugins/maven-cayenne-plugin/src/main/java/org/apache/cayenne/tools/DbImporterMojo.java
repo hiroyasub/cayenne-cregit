@@ -443,7 +443,7 @@ specifier|private
 name|String
 name|meaningfulPkTables
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.map.naming.NamingStrategy.      * This is used to specify how ObjEntities will be mapped from the imported      * DB schema.      *<p>      * The default is a basic naming strategy.      *      * @parameter namingStrategy="namingStrategy"      * default-value="org.apache.cayenne.map.naming.DefaultObjectNameGenerator"      */
+comment|/**      * Object layer naming generator implementation. Should be fully qualified Java class name implementing      * "org.apache.cayenne.dbsync.naming.ObjectNameGenerator". The default is      * "org.apache.cayenne.dbsync.naming.DefaultObjectNameGenerator".      *      * @parameter namingStrategy="namingStrategy"      * default-value="org.apache.cayenne.dbsync.naming.DefaultObjectNameGenerator"      */
 specifier|private
 name|String
 name|namingStrategy
