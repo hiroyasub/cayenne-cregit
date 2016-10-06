@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|*
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -119,8 +109,58 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Iterator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
-comment|/**  * A query that is a reference to a named parameterized query stored in the mapping. The  * actual query is resolved during execution.  *   * @since 1.2  * @deprecated since 4.0 you should use {@link MappedQuery} instead  */
+comment|/**  * A query that is a reference to a named parameterized query stored in the mapping. The  * actual query is resolved during execution.  *   * @since 1.2  * @deprecated since 4.0 you should use {@link MappedSelect} instead  */
 end_comment
 
 begin_class
