@@ -473,7 +473,7 @@ parameter_list|)
 block|{
 name|flattenedBucket
 operator|.
-name|addFlattenedInsert
+name|addInsertArcKey
 argument_list|(
 name|flattenedEntity
 argument_list|,
