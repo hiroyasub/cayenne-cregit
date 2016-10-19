@@ -23,20 +23,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbimport
-operator|.
-name|ReverseEngineering
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DataMap
@@ -436,22 +422,6 @@ operator|new
 name|UnsupportedOperationException
 argument_list|(
 literal|"Not implemented for Query"
-argument_list|)
-throw|;
-block|}
-specifier|public
-name|T
-name|visitReverseEngineering
-parameter_list|(
-name|ReverseEngineering
-name|reverseEngineering
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Not implemented for ReverseEngineering"
 argument_list|)
 throw|;
 block|}
