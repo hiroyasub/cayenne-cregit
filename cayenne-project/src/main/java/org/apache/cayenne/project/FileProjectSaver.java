@@ -301,7 +301,7 @@ name|getSupportedVersion
 parameter_list|()
 block|{
 return|return
-literal|"8"
+literal|"9"
 return|;
 block|}
 specifier|public
