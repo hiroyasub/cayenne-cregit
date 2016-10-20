@@ -1556,13 +1556,6 @@ argument_list|,
 name|parameters
 argument_list|)
 expr_stmt|;
-name|cdbImport
-operator|.
-name|setIsReverseEngineeringDefined
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 try|try
 block|{
 name|cdbImport
