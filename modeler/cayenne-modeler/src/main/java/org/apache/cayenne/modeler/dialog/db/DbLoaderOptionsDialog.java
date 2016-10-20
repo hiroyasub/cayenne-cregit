@@ -505,7 +505,7 @@ name|builder
 operator|.
 name|append
 argument_list|(
-literal|"Meaningful PK"
+literal|"Tables with Meaningful PK Pattern:"
 argument_list|,
 name|meaningfulPk
 argument_list|)
@@ -670,15 +670,6 @@ expr_stmt|;
 name|this
 operator|.
 name|procNamePatternField
-operator|.
-name|setText
-argument_list|(
-name|WILDCARD_PATTERN
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|meaningfulPk
 operator|.
 name|setText
 argument_list|(
