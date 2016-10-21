@@ -20,26 +20,28 @@ package|;
 end_package
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
-name|junit
+name|apache
 operator|.
-name|Assert
+name|cayenne
 operator|.
-name|assertArrayEquals
+name|crypto
+operator|.
+name|unit
+operator|.
+name|CryptoUnitUtils
 import|;
 end_import
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-operator|.
-name|assertNotNull
+name|Test
 import|;
 end_import
 
@@ -74,28 +76,26 @@ import|;
 end_import
 
 begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|crypto
-operator|.
-name|unit
-operator|.
-name|CryptoUnitUtils
-import|;
-end_import
-
-begin_import
-import|import
+import|import static
 name|org
 operator|.
 name|junit
 operator|.
-name|Test
+name|Assert
+operator|.
+name|assertArrayEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
 import|;
 end_import
 
@@ -169,7 +169,7 @@ name|input1
 init|=
 name|readResource
 argument_list|(
-literal|"plain.txt.gz"
+literal|"plainbytes.gz"
 argument_list|)
 decl_stmt|;
 name|byte
@@ -189,7 +189,7 @@ name|expectedOutput1
 init|=
 name|readResource
 argument_list|(
-literal|"plain.txt"
+literal|"plainbytes"
 argument_list|)
 decl_stmt|;
 name|assertArrayEquals
