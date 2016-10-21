@@ -169,7 +169,7 @@ name|input1
 init|=
 name|readResource
 argument_list|(
-literal|"plainbytes.gz"
+literal|"plain.gz"
 argument_list|)
 decl_stmt|;
 name|byte
@@ -189,7 +189,7 @@ name|expectedOutput1
 init|=
 name|readResource
 argument_list|(
-literal|"plainbytes"
+literal|"plain"
 argument_list|)
 decl_stmt|;
 name|assertArrayEquals
