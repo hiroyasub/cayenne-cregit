@@ -1021,6 +1021,13 @@ name|unit
 operator|.
 name|targetFile
 decl_stmt|;
+comment|// Per CAY-2119, this is an ugly hack to force Windows to unlock the file that was previously locked by
+comment|// our process. Without it, the delete operation downstream would fail
+name|System
+operator|.
+name|gc
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|targetFile
