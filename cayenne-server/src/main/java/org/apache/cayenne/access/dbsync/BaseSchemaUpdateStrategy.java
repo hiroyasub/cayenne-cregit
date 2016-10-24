@@ -45,6 +45,14 @@ begin_comment
 comment|/**  * @since 3.0  */
 end_comment
 
+begin_comment
+comment|// Note that this object must be scoped by DataNode. An attempt to share it between nodes will result in ignoring
+end_comment
+
+begin_comment
+comment|// schema update for all but one node (see CAY-2125)
+end_comment
+
 begin_class
 specifier|public
 specifier|abstract
