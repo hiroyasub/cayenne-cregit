@@ -722,7 +722,9 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a location of DataSource of this node. Depending on how this node 	 * was created, location is either a JNDI name, or a location of node XML 	 * file, etc. 	 */
+comment|/** 	 * Returns a location of DataSource of this node. Depending on how this node 	 * was created, location is either a JNDI name, or a location of node XML 	 * file, etc. 	 * 	 * @deprecated since 4.0. This information is irrelevant at the DataNode level 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getDataSourceLocation
@@ -732,6 +734,9 @@ return|return
 name|dataSourceLocation
 return|;
 block|}
+comment|/** 	 * @deprecated since 4.0. This information is irrelevant at the DataNode level 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataSourceLocation
