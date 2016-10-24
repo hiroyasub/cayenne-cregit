@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -38,6 +28,16 @@ operator|.
 name|access
 operator|.
 name|DataNode
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
 import|;
 end_import
 
@@ -70,20 +70,29 @@ specifier|public
 name|BaseSchemaUpdateStrategy
 parameter_list|()
 block|{
-name|super
-argument_list|()
-expr_stmt|;
+comment|// this barrier is needed to prevent stack overflow in the same thread
+comment|// (getConnection/updateSchema/getConnection/...)
+name|this
+operator|.
 name|threadRunInProgress
 operator|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|Boolean
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
+name|threadRunInProgress
+operator|.
+name|set
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 block|}
-comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|updateSchema
@@ -99,20 +108,11 @@ condition|(
 operator|!
 name|run
 operator|&&
-operator|(
-name|threadRunInProgress
-operator|.
-name|get
-argument_list|()
-operator|==
-literal|null
-operator|||
 operator|!
 name|threadRunInProgress
 operator|.
 name|get
 argument_list|()
-operator|)
 condition|)
 block|{
 synchronized|synchronized

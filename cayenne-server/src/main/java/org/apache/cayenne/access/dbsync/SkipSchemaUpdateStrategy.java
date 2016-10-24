@@ -32,7 +32,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SchemaUpdateStrategy that does nothing. This is usually the default strategy, as in  * most cases DB schema management is outside the scope of Cayenne.  *   * @since 3.0  */
+comment|/**  * A SchemaUpdateStrategy that does nothing. This is usually the default strategy, as in  * most cases DB schema management is outside the scope of Cayenne.  *  * @since 3.0  */
 end_comment
 
 begin_class
@@ -42,7 +42,8 @@ name|SkipSchemaUpdateStrategy
 implements|implements
 name|SchemaUpdateStrategy
 block|{
-comment|/**      * @since 3.0      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|updateSchema

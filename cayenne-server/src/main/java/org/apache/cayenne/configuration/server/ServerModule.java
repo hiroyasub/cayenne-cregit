@@ -79,9 +79,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tx
+name|access
 operator|.
-name|TransactionFilter
+name|dbsync
+operator|.
+name|DefaultSchemaUpdateStrategyFactory
 import|;
 end_import
 
@@ -97,23 +99,7 @@ name|access
 operator|.
 name|dbsync
 operator|.
-name|SchemaUpdateStrategy
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|dbsync
-operator|.
-name|SkipSchemaUpdateStrategy
+name|SchemaUpdateStrategyFactory
 import|;
 end_import
 
@@ -1257,6 +1243,20 @@ name|cayenne
 operator|.
 name|tx
 operator|.
+name|TransactionFilter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
 name|TransactionManager
 import|;
 end_import
@@ -2035,21 +2035,18 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// a default SchemaUpdateStrategy (used when no explicit strategy is
-comment|// specified in
-comment|// XML)
 name|binder
 operator|.
 name|bind
 argument_list|(
-name|SchemaUpdateStrategy
+name|SchemaUpdateStrategyFactory
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|SkipSchemaUpdateStrategy
+name|DefaultSchemaUpdateStrategyFactory
 operator|.
 name|class
 argument_list|)
