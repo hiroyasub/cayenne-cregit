@@ -622,7 +622,6 @@ name|getUpgradeType
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// assertEquals("6", md.getIntermediateUpgradeVersion());
 name|assertNull
 argument_list|(
 name|md
