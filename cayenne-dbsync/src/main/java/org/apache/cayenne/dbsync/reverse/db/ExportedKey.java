@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * ExportedKey is an representation of relationship between two tables   * in database. It can be used for creating names for relationships  *  * Example:  *  Table A with primary key ID  *  Table B with primary key ID and foreign key A_ID  *  *  In that case ExportedKey will be:  *      pkTable:  A  *      pkColumn: A.ID  *      fkTable:  B  *      fkColumn: B.A_ID  *      fkName:   name of foreign key  *      pkName:  *      keySeq: TODO  *   */
+comment|/**  * ExportedKey is an representation of relationship between two tables in database. It can be used for creating names  * for relationships.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -94,63 +94,57 @@ name|ExportedKey
 implements|implements
 name|Comparable
 block|{
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|pkCatalog
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|pkSchema
 decl_stmt|;
-comment|/**      * Name of source table      */
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|pkTable
 decl_stmt|;
-comment|/**      * Name of source column      */
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|pkColumn
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|fkCatalog
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|fkSchema
 decl_stmt|;
-comment|/**      * Name of destination table      */
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|fkTable
 decl_stmt|;
-comment|/**      * Name of destination column      */
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|fkColumn
 decl_stmt|;
-comment|/**      * Name of foreign key (might be null)      */
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|fkName
 decl_stmt|;
-comment|/**      * Name of primary key (might be null)      */
-specifier|public
+specifier|private
 specifier|final
 name|String
 name|pkName
 decl_stmt|;
-specifier|public
+specifier|private
 specifier|final
 name|short
 name|keySeq
@@ -310,7 +304,7 @@ operator|=
 name|keySeq
 expr_stmt|;
 block|}
-comment|/**      * Extracts data from a resultset pointing to a exported key to      * ExportedKey class instance      *       * @param rs ResultSet pointing to a exported key, fetched using      * DataBaseMetaData.getExportedKeys(...)       */
+comment|/**      * Extracts data from a resultset pointing to a exported key to      * ExportedKey class instance      *      * @param rs ResultSet pointing to a exported key, fetched using      *           DataBaseMetaData.getExportedKeys(...)      */
 specifier|public
 specifier|static
 name|ExportedKey

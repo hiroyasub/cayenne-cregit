@@ -92,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An ObjectNameGenerator that creates names in Cayenne's old-fashioned style. I.e. the same way Cayenne did before 3.0,  * with "to" prefixes and "array" suffixes.  *  * @since 4.0  */
+comment|/**  * An ObjectNameGenerator that creates names in Cayenne's old-fashioned style. I.e. the same way Cayenne did before 3.0,  * with relationship "to" prefixes and "Array" suffixes.  *  * @since 4.0  */
 end_comment
 
 begin_class
