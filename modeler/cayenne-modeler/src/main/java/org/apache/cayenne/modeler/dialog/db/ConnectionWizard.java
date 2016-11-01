@@ -227,15 +227,10 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|// set success flag, and unblock the caller...
-name|canceled
-operator|=
+name|onClose
+argument_list|(
 literal|false
-expr_stmt|;
-name|view
-operator|.
-name|dispose
-argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns configured DB connection.      */
