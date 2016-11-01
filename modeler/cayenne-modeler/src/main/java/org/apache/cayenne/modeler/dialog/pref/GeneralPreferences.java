@@ -164,6 +164,15 @@ name|ENCODING_PREFERENCE
 init|=
 literal|"encoding"
 decl_stmt|;
+comment|/** 	 * Favourite data source preference 	 * Currently used in reengineering dialog where it's selected by default 	 * It's not present in preferences dialog hence can't be modified directly 	 */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|FAVOURITE_DATA_SOURCE
+init|=
+literal|"favouriteDataSource"
+decl_stmt|;
 specifier|protected
 name|GeneralPreferencesView
 name|view
