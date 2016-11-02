@@ -724,8 +724,9 @@ name|getDbEntities
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
+name|TableFilter
+name|tableFilter
+init|=
 name|filtersConfig
 operator|.
 name|tableFilter
@@ -740,6 +741,14 @@ operator|.
 name|getSchema
 argument_list|()
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|tableFilter
+operator|!=
+literal|null
+operator|&&
+name|tableFilter
 operator|.
 name|isIncludeTable
 argument_list|(
