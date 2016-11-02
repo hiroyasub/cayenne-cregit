@@ -186,6 +186,10 @@ specifier|private
 name|EntityMergeSupport
 name|entityMergeSupport
 decl_stmt|;
+specifier|private
+name|ObjectNameGenerator
+name|nameGenerator
+decl_stmt|;
 specifier|protected
 name|MergerContext
 parameter_list|()
@@ -207,22 +211,6 @@ name|Builder
 argument_list|(
 name|dataMap
 argument_list|)
-return|;
-block|}
-comment|/**      * @deprecated since 4.0 use {@link #getDataNode()} and its {@link DataNode#getAdapter()} method.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|DbAdapter
-name|getAdapter
-parameter_list|()
-block|{
-return|return
-name|getDataNode
-argument_list|()
-operator|.
-name|getAdapter
-argument_list|()
 return|;
 block|}
 comment|/**      * @since 4.0      */
@@ -273,17 +261,14 @@ return|return
 name|delegate
 return|;
 block|}
-comment|/**      * @deprecated since 4.0 in favor of {@link #getDelegate()}.      */
-annotation|@
-name|Deprecated
+comment|/**      * @since 4.0      */
 specifier|public
-name|ModelMergeDelegate
-name|getModelMergeDelegate
+name|ObjectNameGenerator
+name|getNameGenerator
 parameter_list|()
 block|{
 return|return
-name|getDelegate
-argument_list|()
+name|nameGenerator
 return|;
 block|}
 specifier|public
@@ -294,10 +279,6 @@ block|{
 specifier|private
 name|MergerContext
 name|context
-decl_stmt|;
-specifier|private
-name|ObjectNameGenerator
-name|nameGenerator
 decl_stmt|;
 specifier|private
 name|boolean
@@ -388,11 +369,15 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|context
+operator|.
 name|nameGenerator
 operator|==
 literal|null
 condition|)
 block|{
+name|context
+operator|.
 name|nameGenerator
 operator|=
 operator|new
@@ -421,6 +406,8 @@ operator|=
 operator|new
 name|EntityMergeSupport
 argument_list|(
+name|context
+operator|.
 name|nameGenerator
 argument_list|,
 name|meaningfulPKsFilter
@@ -466,6 +453,8 @@ name|nameGenerator
 parameter_list|)
 block|{
 name|this
+operator|.
+name|context
 operator|.
 name|nameGenerator
 operator|=

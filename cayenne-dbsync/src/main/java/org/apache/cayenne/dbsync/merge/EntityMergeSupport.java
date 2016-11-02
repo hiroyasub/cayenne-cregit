@@ -2026,29 +2026,6 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns registered listeners      */
-specifier|public
-name|EntityMergeListener
-index|[]
-name|getEntityMergeListeners
-parameter_list|()
-block|{
-return|return
-name|listeners
-operator|.
-name|toArray
-argument_list|(
-operator|new
-name|EntityMergeListener
-index|[
-name|listeners
-operator|.
-name|size
-argument_list|()
-index|]
-argument_list|)
-return|;
-block|}
 comment|/**      * Notifies all listeners that an ObjAttribute was added      */
 specifier|protected
 name|void
@@ -2100,26 +2077,6 @@ name|rel
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-comment|/**      * @return a strategy for naming object layer artifacts based on their DB names.      */
-specifier|public
-name|ObjectNameGenerator
-name|getNameGenerator
-parameter_list|()
-block|{
-return|return
-name|nameGenerator
-return|;
-block|}
-comment|/**      * @since 4.0      */
-specifier|public
-name|boolean
-name|isUsingPrimitives
-parameter_list|()
-block|{
-return|return
-name|usingPrimitives
-return|;
 block|}
 block|}
 end_class

@@ -199,9 +199,6 @@ name|baseName
 argument_list|(
 name|context
 operator|.
-name|getEntityMergeSupport
-argument_list|()
-operator|.
 name|getNameGenerator
 argument_list|()
 operator|.
