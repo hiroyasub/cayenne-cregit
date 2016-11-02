@@ -114,7 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A strategy for generating names of entities, attributes etc.  *   * @since 4.0  */
+comment|/**  * The default strategy for converting DB-layer to Object-layer names.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -139,17 +139,42 @@ parameter_list|)
 block|{
 name|String
 name|name
-decl_stmt|;
-if|if
-condition|(
+init|=
 name|toMany
-condition|)
+condition|?
+name|toManyRelationshipName
+argument_list|(
+name|key
+argument_list|)
+else|:
+name|toOneRelationshipName
+argument_list|(
+name|key
+argument_list|)
+decl_stmt|;
+return|return
+name|Util
+operator|.
+name|underscoredToJava
+argument_list|(
+name|name
+argument_list|,
+literal|false
+argument_list|)
+return|;
+block|}
+specifier|protected
+name|String
+name|toManyRelationshipName
+parameter_list|(
+name|ExportedKey
+name|key
+parameter_list|)
 block|{
 try|try
 block|{
-comment|/** 				 * by default we use english language rules here. uppercase is 				 * required for NameConverter to work properly 				 */
-name|name
-operator|=
+comment|// by default we use English rules here...
+return|return
 name|Noun
 operator|.
 name|pluralOf
@@ -166,10 +191,7 @@ name|Locale
 operator|.
 name|ENGLISH
 argument_list|)
-operator|.
-name|toUpperCase
-argument_list|()
-expr_stmt|;
+return|;
 block|}
 catch|catch
 parameter_list|(
@@ -177,19 +199,25 @@ name|Exception
 name|inflectorError
 parameter_list|)
 block|{
-comment|/** 				 * seems that Inflector cannot be trusted. For instance, it 				 * throws an exception when invoked for word "ADDRESS" (although 				 * lower case works fine). To feel safe, we use superclass' 				 * behavior if something's gone wrong 				 */
+comment|//  seems that Inflector cannot be trusted. For instance, it
+comment|// throws an exception when invoked for word "ADDRESS" (although
+comment|// lower case works fine). To feel safe, we use superclass'
+comment|// behavior if something's gone wrong
 return|return
 name|key
 operator|.
 name|getFKTableName
 argument_list|()
-operator|.
-name|toLowerCase
-argument_list|()
 return|;
 block|}
 block|}
-else|else
+specifier|protected
+name|String
+name|toOneRelationshipName
+parameter_list|(
+name|ExportedKey
+name|key
+parameter_list|)
 block|{
 name|String
 name|fkColName
@@ -199,7 +227,6 @@ operator|.
 name|getFKColumnName
 argument_list|()
 decl_stmt|;
-comment|// trim "ID" in the end
 if|if
 condition|(
 name|fkColName
@@ -207,14 +234,14 @@ operator|==
 literal|null
 condition|)
 block|{
-name|name
-operator|=
+return|return
 name|key
 operator|.
 name|getPKTableName
 argument_list|()
-expr_stmt|;
+return|;
 block|}
+comment|// trim "ID" in the end
 if|else if
 condition|(
 name|fkColName
@@ -235,8 +262,7 @@ operator|>
 literal|3
 condition|)
 block|{
-name|name
-operator|=
+return|return
 name|fkColName
 operator|.
 name|substring
@@ -250,7 +276,7 @@ argument_list|()
 operator|-
 literal|3
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 if|else if
 condition|(
@@ -272,8 +298,7 @@ operator|>
 literal|2
 condition|)
 block|{
-name|name
-operator|=
+return|return
 name|fkColName
 operator|.
 name|substring
@@ -287,30 +312,17 @@ argument_list|()
 operator|-
 literal|2
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 else|else
 block|{
-comment|/** 				 * We don't want relationship to conflict with attribute, so 				 * we'd better return superior value with 'to' 				 */
-name|name
-operator|=
+return|return
 name|key
 operator|.
 name|getPKTableName
 argument_list|()
-expr_stmt|;
-block|}
-block|}
-return|return
-name|Util
-operator|.
-name|underscoredToJava
-argument_list|(
-name|name
-argument_list|,
-literal|false
-argument_list|)
 return|;
+block|}
 block|}
 annotation|@
 name|Override
