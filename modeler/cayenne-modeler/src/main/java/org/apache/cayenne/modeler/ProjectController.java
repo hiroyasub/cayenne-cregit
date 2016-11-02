@@ -8895,7 +8895,7 @@ name|e
 argument_list|)
 expr_stmt|;
 break|break;
-comment|// TODO Change event not supported for now. Nikita Timofeev
+comment|// Change event not supported for now
 comment|// There is no good place to catch data source modification
 comment|/*case MapEvent.CHANGE:                     listener.callbackDataSourceChanged(e);                     break;*/
 case|case

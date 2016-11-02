@@ -38,7 +38,8 @@ name|DataSourceModificationListener
 extends|extends
 name|EventListener
 block|{
-comment|//TODO change events not supported for now
+comment|// change events not supported for now
+comment|// There is no good place to catch data source modification
 comment|//void callbackDataSourceChanged(DataSourceModificationEvent e);
 name|void
 name|callbackDataSourceAdded
