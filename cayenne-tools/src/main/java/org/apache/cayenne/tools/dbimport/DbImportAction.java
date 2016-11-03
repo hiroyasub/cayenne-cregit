@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * An API of a strategy that can load DB schema and merge it to a new or an existing DataMap.  *  * @since 4.0  */
 end_comment
 
 begin_interface

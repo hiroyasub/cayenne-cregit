@@ -602,7 +602,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A thin wrapper around {@link DbLoader} that encapsulates DB import logic for  * the benefit of Ant and Maven db importers.  *  * @since 4.0  */
+comment|/**  * A default implementation of {@link DbImportAction} that can load DB schema and merge it to a new or an existing  * DataMap.  *  * @since 4.0  */
 end_comment
 
 begin_class
