@@ -1848,7 +1848,7 @@ condition|)
 block|{
 name|config
 operator|.
-name|setDataMapFile
+name|setTargetDataMap
 argument_list|(
 operator|new
 name|File

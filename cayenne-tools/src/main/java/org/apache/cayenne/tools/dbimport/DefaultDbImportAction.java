@@ -1099,7 +1099,7 @@ operator|+
 operator|(
 name|config
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 operator|==
 literal|null
@@ -1108,7 +1108,7 @@ literal|"null"
 else|:
 name|config
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 operator|.
 name|getAbsolutePath
@@ -1511,7 +1511,7 @@ name|file
 init|=
 name|configuration
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 decl_stmt|;
 if|if
@@ -1625,7 +1625,7 @@ name|URLResource
 argument_list|(
 name|config
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 operator|.
 name|toURI
@@ -2213,10 +2213,11 @@ block|{
 name|DataMap
 name|dataMap
 init|=
-name|config
-operator|.
-name|createDataMap
-argument_list|()
+operator|new
+name|DataMap
+argument_list|(
+literal|"_import_source_"
+argument_list|)
 decl_stmt|;
 name|DbLoader
 name|loader

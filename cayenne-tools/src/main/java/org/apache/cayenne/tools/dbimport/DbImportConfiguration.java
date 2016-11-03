@@ -358,7 +358,7 @@ argument_list|()
 decl_stmt|;
 specifier|private
 name|File
-name|dataMapFile
+name|targetDataMap
 decl_stmt|;
 comment|/**      * A default package for ObjEntity Java classes.      */
 specifier|private
@@ -412,16 +412,16 @@ block|}
 comment|/**      * Retruns DataMap XML file representing the target of the DB import operation.      */
 specifier|public
 name|File
-name|getDataMapFile
+name|getTargetDataMap
 parameter_list|()
 block|{
 return|return
-name|dataMapFile
+name|targetDataMap
 return|;
 block|}
 specifier|public
 name|void
-name|setDataMapFile
+name|setTargetDataMap
 parameter_list|(
 name|File
 name|map
@@ -429,7 +429,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|dataMapFile
+name|targetDataMap
 operator|=
 name|map
 expr_stmt|;
@@ -893,7 +893,7 @@ block|{
 name|String
 name|name
 init|=
-name|dataMapFile
+name|targetDataMap
 operator|.
 name|getName
 argument_list|()

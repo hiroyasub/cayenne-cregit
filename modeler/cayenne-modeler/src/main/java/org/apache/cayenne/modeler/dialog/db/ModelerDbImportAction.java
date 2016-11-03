@@ -255,7 +255,7 @@ name|tools
 operator|.
 name|dbimport
 operator|.
-name|DefaultDbImportAction
+name|DbImportConfiguration
 import|;
 end_import
 
@@ -271,7 +271,7 @@ name|tools
 operator|.
 name|dbimport
 operator|.
-name|DbImportConfiguration
+name|DefaultDbImportAction
 import|;
 end_import
 
@@ -295,7 +295,7 @@ name|java
 operator|.
 name|io
 operator|.
-name|File
+name|IOException
 import|;
 end_import
 
@@ -426,11 +426,13 @@ annotation|@
 name|Override
 specifier|protected
 name|DataMap
-name|loadExistingDataMap
+name|existingTargetMap
 parameter_list|(
-name|File
-name|dataMapFile
+name|DbImportConfiguration
+name|configuration
 parameter_list|)
+throws|throws
+name|IOException
 block|{
 return|return
 name|dbLoaderHelper

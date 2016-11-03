@@ -916,7 +916,7 @@ if|if
 condition|(
 name|config
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 operator|==
 literal|null
@@ -1143,7 +1143,7 @@ block|{
 return|return
 name|config
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 return|;
 block|}
@@ -1157,7 +1157,7 @@ parameter_list|)
 block|{
 name|config
 operator|.
-name|setDataMapFile
+name|setTargetDataMap
 argument_list|(
 name|map
 argument_list|)

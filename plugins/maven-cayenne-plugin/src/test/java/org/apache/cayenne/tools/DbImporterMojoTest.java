@@ -474,7 +474,7 @@ literal|"target/test/org/apache/cayenne/tools/dbimporter-map1.map.xml"
 argument_list|,
 name|parameters1
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 operator|.
 name|getPath
@@ -536,7 +536,7 @@ name|assertNotNull
 argument_list|(
 name|parameters1
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -546,7 +546,7 @@ literal|"target/test/org/apache/cayenne/tools/dbimporter-map1.map.xml"
 argument_list|,
 name|parameters1
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 operator|.
 name|getPath
@@ -563,7 +563,7 @@ operator|.
 name|toParameters
 argument_list|()
 operator|.
-name|getDataMapFile
+name|getTargetDataMap
 argument_list|()
 argument_list|)
 expr_stmt|;
