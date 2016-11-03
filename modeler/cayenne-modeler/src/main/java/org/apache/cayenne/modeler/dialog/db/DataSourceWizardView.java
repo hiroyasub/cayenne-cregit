@@ -142,6 +142,9 @@ name|JDialog
 block|{
 specifier|protected
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|dataSources
 decl_stmt|;
 specifier|protected
@@ -181,6 +184,7 @@ name|dataSources
 operator|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -396,6 +400,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|getDataSources
 parameter_list|()
 block|{
