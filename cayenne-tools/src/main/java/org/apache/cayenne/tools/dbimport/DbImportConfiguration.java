@@ -342,25 +342,16 @@ specifier|private
 specifier|final
 name|DataSourceInfo
 name|dataSourceInfo
-init|=
-operator|new
-name|DataSourceInfo
-argument_list|()
 decl_stmt|;
 specifier|private
 specifier|final
 name|DbLoaderConfiguration
 name|dbLoaderConfiguration
-init|=
-operator|new
-name|DbLoaderConfiguration
-argument_list|()
 decl_stmt|;
 specifier|private
 name|File
 name|targetDataMap
 decl_stmt|;
-comment|/**      * A default package for ObjEntity Java classes.      */
 specifier|private
 name|String
 name|defaultPackage
@@ -386,6 +377,27 @@ name|String
 name|namingStrategy
 decl_stmt|;
 specifier|public
+name|DbImportConfiguration
+parameter_list|()
+block|{
+name|this
+operator|.
+name|dataSourceInfo
+operator|=
+operator|new
+name|DataSourceInfo
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|dbLoaderConfiguration
+operator|=
+operator|new
+name|DbLoaderConfiguration
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
 name|Log
 name|getLogger
 parameter_list|()
@@ -409,7 +421,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
-comment|/**      * Retruns DataMap XML file representing the target of the DB import operation.      */
+comment|/**      * Returns DataMap XML file representing the target of the DB import operation.      */
 specifier|public
 name|File
 name|getTargetDataMap
@@ -434,6 +446,7 @@ operator|=
 name|map
 expr_stmt|;
 block|}
+comment|/**      * Returns a default package for ObjEntity Java classes.      */
 specifier|public
 name|String
 name|getDefaultPackage
