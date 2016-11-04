@@ -1102,22 +1102,6 @@ name|connection
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|sourceDataMap
-operator|==
-literal|null
-condition|)
-block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"Nothing was loaded from db."
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 name|DataMap
 name|targetDataMap
 init|=
