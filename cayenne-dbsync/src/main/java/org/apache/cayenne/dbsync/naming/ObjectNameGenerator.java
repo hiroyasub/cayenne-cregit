@@ -84,7 +84,7 @@ name|DbAttribute
 name|dbAttribute
 parameter_list|)
 function_decl|;
-comment|/**      * Generates a String that can be used as a name of an ObjRelationship, derived from join semantics of a chain of      * connected DbRelationships.      *<p>The chain must contain at least one relationship. Though if we are dealing with a flattened      * relationship, more than one can be passed, in the same order as they are present in a flattened      * relationship.      *<p>Generated name can be usually applied to either ObjRelationship or DbRelationship (in which case the chain      * must have exactly one parameter).      */
+comment|/**      * Generates a String that can be used as a name of an ObjRelationship, derived from join semantics of a chain of      * connected DbRelationships.      *<p>The chain must contain at least one relationship. Though if we are dealing with a flattened      * relationship, more than one can be passed, in the same order as they are present in a flattened      * relationship.      *<p>Generated name can be used for DbRelationship itself (in which case the chain must have exactly one parameter).      */
 name|String
 name|relationshipName
 parameter_list|(
