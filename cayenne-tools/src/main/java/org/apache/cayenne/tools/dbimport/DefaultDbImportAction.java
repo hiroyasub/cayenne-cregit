@@ -1077,7 +1077,7 @@ name|dataSource
 argument_list|)
 decl_stmt|;
 name|DataMap
-name|loadedFomDb
+name|sourceDataMap
 decl_stmt|;
 try|try
 init|(
@@ -1090,7 +1090,7 @@ name|getConnection
 argument_list|()
 init|)
 block|{
-name|loadedFomDb
+name|sourceDataMap
 operator|=
 name|load
 argument_list|(
@@ -1104,7 +1104,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|loadedFomDb
+name|sourceDataMap
 operator|==
 literal|null
 condition|)
@@ -1242,7 +1242,7 @@ name|createMergeTokens
 argument_list|(
 name|targetDataMap
 argument_list|,
-name|loadedFomDb
+name|sourceDataMap
 argument_list|)
 decl_stmt|;
 name|hasChanges
@@ -1300,7 +1300,7 @@ name|syncProcedures
 argument_list|(
 name|targetDataMap
 argument_list|,
-name|loadedFomDb
+name|sourceDataMap
 argument_list|,
 name|loaderConfig
 operator|.
