@@ -60,7 +60,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A strategy for creating names for object layer metadata artifacts based on their DB counterpart naming. Generated  * names should normally be further cleaned by passing them through {@link org.apache.cayenne.dbsync.naming.NameBuilder},  * that will resolve duplication conflicts.  *  * @since 4.0  */
+comment|/**  * A strategy for creating names for object layer metadata artifacts based on their DB counterpart naming or structure.  * Generated names should normally be further cleaned by passing them through  * {@link org.apache.cayenne.dbsync.naming.NameBuilder}, that will resolve duplication conflicts.  *  * @since 4.0  */
 end_comment
 
 begin_interface
