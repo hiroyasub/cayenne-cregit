@@ -313,6 +313,17 @@ name|isSelected
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|overwrite
+operator|.
+name|setEnabled
+argument_list|(
+operator|!
+name|pairs
+operator|.
+name|isSelected
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 argument_list|)
