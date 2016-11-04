@@ -570,8 +570,9 @@ argument_list|(
 name|objEntity2
 argument_list|)
 expr_stmt|;
-name|assertTrue
-argument_list|(
+name|EntityMergeSupport
+name|entityMergeSupport
+init|=
 operator|new
 name|EntityMergeSupport
 argument_list|(
@@ -587,6 +588,10 @@ literal|true
 argument_list|,
 literal|true
 argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|entityMergeSupport
 operator|.
 name|synchronizeWithDbEntities
 argument_list|(
@@ -617,7 +622,7 @@ name|objEntity1
 operator|.
 name|getRelationship
 argument_list|(
-literal|"rel1To2"
+literal|"newTable2s"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -627,7 +632,7 @@ name|objEntity2
 operator|.
 name|getRelationship
 argument_list|(
-literal|"rel2To1"
+literal|"newTable"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -637,7 +642,7 @@ name|objEntity1
 operator|.
 name|getRelationship
 argument_list|(
-literal|"rel1To2"
+literal|"newTable2s"
 argument_list|)
 operator|.
 name|getDeleteRule
@@ -654,7 +659,7 @@ name|objEntity2
 operator|.
 name|getRelationship
 argument_list|(
-literal|"rel2To1"
+literal|"newTable"
 argument_list|)
 operator|.
 name|getDeleteRule

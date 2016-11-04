@@ -855,7 +855,7 @@ name|baseName
 argument_list|(
 name|nameGenerator
 operator|.
-name|objRelationshipName
+name|relationshipName
 argument_list|(
 name|dr
 argument_list|)
