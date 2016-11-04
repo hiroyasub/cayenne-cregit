@@ -1125,7 +1125,7 @@ name|when
 argument_list|(
 name|config
 operator|.
-name|getNameGenerator
+name|createNameGenerator
 argument_list|()
 argument_list|)
 operator|.
@@ -1140,7 +1140,7 @@ name|when
 argument_list|(
 name|config
 operator|.
-name|getMeaningfulPKFilter
+name|createMeaningfulPKFilter
 argument_list|()
 argument_list|)
 operator|.
@@ -1448,7 +1448,7 @@ name|when
 argument_list|(
 name|params
 operator|.
-name|getNameGenerator
+name|createNameGenerator
 argument_list|()
 argument_list|)
 operator|.
@@ -1463,7 +1463,7 @@ name|when
 argument_list|(
 name|params
 operator|.
-name|getMeaningfulPKFilter
+name|createMeaningfulPKFilter
 argument_list|()
 argument_list|)
 operator|.

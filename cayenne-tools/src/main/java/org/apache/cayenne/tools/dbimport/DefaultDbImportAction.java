@@ -1264,12 +1264,12 @@ argument_list|)
 argument_list|,
 name|config
 operator|.
-name|getNameGenerator
+name|createNameGenerator
 argument_list|()
 argument_list|,
 name|config
 operator|.
-name|getMeaningfulPKFilter
+name|createMeaningfulPKFilter
 argument_list|()
 argument_list|,
 name|config

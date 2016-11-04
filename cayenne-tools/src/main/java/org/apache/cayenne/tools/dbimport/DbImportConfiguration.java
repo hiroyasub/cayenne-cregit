@@ -599,14 +599,14 @@ name|adapter
 argument_list|,
 name|loaderDelegate
 argument_list|,
-name|getNameGenerator
+name|createNameGenerator
 argument_list|()
 argument_list|)
 return|;
 block|}
 specifier|public
 name|NameFilter
-name|getMeaningfulPKFilter
+name|createMeaningfulPKFilter
 parameter_list|()
 block|{
 if|if
@@ -695,7 +695,7 @@ return|;
 block|}
 specifier|public
 name|ObjectNameGenerator
-name|getNameGenerator
+name|createNameGenerator
 parameter_list|()
 block|{
 comment|// TODO: load via DI AdhocObjectFactory
