@@ -1567,13 +1567,26 @@ block|{
 comment|// default toModel as we can not do drop a toMany in the db.
 comment|// only
 comment|// toOne are represented using foreign key
-name|token
-operator|=
+name|tokens
+operator|.
+name|addAll
+argument_list|(
 name|token
 operator|.
 name|createReverse
 argument_list|(
 name|tokenFactory
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|tokens
+operator|.
+name|add
+argument_list|(
+name|token
 argument_list|)
 expr_stmt|;
 block|}

@@ -925,6 +925,7 @@ argument_list|(
 name|token
 argument_list|)
 decl_stmt|;
+comment|// TODO change to collection iteration
 name|MergerToken
 name|reverse
 init|=
@@ -934,6 +935,12 @@ name|createReverse
 argument_list|(
 name|mergerTokenFactory
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 decl_stmt|;
 name|selectableTokensList
 operator|.
@@ -1062,6 +1069,7 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
+comment|// TODO change to collection iteration
 name|MergerToken
 name|reverse
 init|=
@@ -1071,6 +1079,12 @@ name|createReverse
 argument_list|(
 name|mergerTokenFactory
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 decl_stmt|;
 name|selectableTokensList
 operator|.

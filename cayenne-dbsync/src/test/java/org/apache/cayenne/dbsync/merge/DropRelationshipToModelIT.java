@@ -976,6 +976,12 @@ argument_list|(
 name|mergerFactory
 argument_list|()
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 decl_stmt|;
 name|MergerToken
 name|token1
@@ -992,6 +998,12 @@ argument_list|(
 name|mergerFactory
 argument_list|()
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 decl_stmt|;
 if|if
 condition|(

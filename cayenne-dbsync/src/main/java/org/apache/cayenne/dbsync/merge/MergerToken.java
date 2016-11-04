@@ -35,6 +35,16 @@ name|MergerTokenFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents a minimal atomic synchronization operation between database and Cayenne model.  */
 end_comment
@@ -58,7 +68,10 @@ name|getDirection
 parameter_list|()
 function_decl|;
 comment|/**      * Create a complimentary token with the reverse direction. AddColumn in one direction becomes      * DropColumn in the other direction.      *<p>      * Not all tokens are reversible.      */
+name|Collection
+argument_list|<
 name|MergerToken
+argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory

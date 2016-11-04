@@ -93,6 +93,26 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
 begin_comment
 comment|/**  * A {@link MergerToken} to add a {@link DbEntity} to a {@link DataMap}  */
 end_comment
@@ -339,7 +359,10 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+name|Collection
+argument_list|<
 name|MergerToken
+argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -347,12 +370,17 @@ name|factory
 parameter_list|)
 block|{
 return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
 name|factory
 operator|.
 name|createDropTableToDb
 argument_list|(
 name|getEntity
 argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}

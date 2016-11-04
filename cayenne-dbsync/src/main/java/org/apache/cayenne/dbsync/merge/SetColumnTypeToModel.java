@@ -77,6 +77,26 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
 begin_comment
 comment|/**  * A {@link MergerToken} that modifies one original {@link DbAttribute} to match another  * new {@link DbAttribute}s type, maxLength and precision. The name and mandatory fields  * are not modified by this token.  *   */
 end_comment
@@ -134,7 +154,10 @@ block|}
 annotation|@
 name|Override
 specifier|public
+name|Collection
+argument_list|<
 name|MergerToken
+argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -142,6 +165,10 @@ name|factory
 parameter_list|)
 block|{
 return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
 name|factory
 operator|.
 name|createSetColumnTypeToDb
@@ -152,6 +179,7 @@ argument_list|,
 name|columnNew
 argument_list|,
 name|columnOriginal
+argument_list|)
 argument_list|)
 return|;
 block|}

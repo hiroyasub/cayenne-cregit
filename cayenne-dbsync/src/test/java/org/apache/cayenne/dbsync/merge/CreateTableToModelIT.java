@@ -319,6 +319,12 @@ argument_list|(
 name|mergerFactory
 argument_list|()
 argument_list|)
+operator|.
+name|iterator
+argument_list|()
+operator|.
+name|next
+argument_list|()
 expr_stmt|;
 block|}
 name|assertTrue

@@ -1904,7 +1904,7 @@ continue|continue;
 block|}
 name|tokens
 operator|.
-name|add
+name|addAll
 argument_list|(
 name|token
 operator|.
