@@ -59,24 +59,6 @@ name|DbRelationship
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|reverse
-operator|.
-name|db
-operator|.
-name|ExportedKey
-import|;
-end_import
-
 begin_comment
 comment|/**  * A strategy for creating names for object layer metadata artifacts based on their DB counterpart naming. Generated  * names should normally be further cleaned by passing them through {@link org.apache.cayenne.dbsync.naming.NameBuilder},  * that will resolve duplication conflicts.  *  * @since 4.0  */
 end_comment
@@ -102,24 +84,13 @@ name|DbAttribute
 name|dbAttribute
 parameter_list|)
 function_decl|;
-comment|/**      * Generates a name for DbRelationship derived from the DB foreign key name.      */
-comment|// TODO: the class is called Object* , but here it is generating a DB-layer name... Better naming?
+comment|/**      * Generates a String that can be used as a name of an ObjRelationship, derived from join semantics of a chain of      * connected DbRelationships. The chain must contain at least one relationship.      *      *<p>If we are dealing with a flattened      * relationship, extra relationships can be passed. They must be in the same order as they will be in a flattened      * relationship.      *      *<p>Generated name can be usually applied to either ObjRelationship or DbRelationship (in which case the chain      * must have exactly one parameter).      */
 name|String
-name|dbRelationshipName
-parameter_list|(
-name|ExportedKey
-name|key
-parameter_list|,
-name|boolean
-name|toMany
-parameter_list|)
-function_decl|;
-comment|/**      * Generates a name for ObjRelationship derived from DbRelationship name.      */
-name|String
-name|objRelationshipName
+name|relationshipName
 parameter_list|(
 name|DbRelationship
-name|dbRelationship
+modifier|...
+name|relationshipChain
 parameter_list|)
 function_decl|;
 block|}
