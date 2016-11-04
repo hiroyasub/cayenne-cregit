@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0.  */
+comment|/**  * A noop {@link DbLoaderDelegate}.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -126,6 +126,8 @@ literal|true
 return|;
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void
@@ -136,6 +138,8 @@ name|entity
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public
