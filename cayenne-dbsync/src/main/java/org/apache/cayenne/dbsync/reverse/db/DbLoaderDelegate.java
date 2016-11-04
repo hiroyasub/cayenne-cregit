@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbLoaderDelegate defines API that allows to control the behavior of DbLoader  * during the database reverse-engineering. Delegate is also notified of the  * progress of reverse-engineering.  */
+comment|/**  * Defines API for progress tracking and altering the folow of reverse-engineering.  */
 end_comment
 
 begin_interface
@@ -84,7 +84,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Called before relationship loading for db-entity      * @param entity      *      * @return true in case you want process relationships for this entity      *         false otherwise      */
+comment|/**      * Called before relationship loading for db-entity      *      * @param entity      * @return true in case you want process relationships for this entity      * false otherwise      */
 name|boolean
 name|dbRelationship
 parameter_list|(
@@ -92,7 +92,7 @@ name|DbEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * Called before relationship will be added into db-entity but after it was loaded from db      * @param entity      *      * @return true in case you want add this relationship into entity      *         false otherwise      */
+comment|/**      * Called before relationship will be added into db-entity but after it was loaded from db      *      * @param entity      * @return true in case you want add this relationship into entity      * false otherwise      */
 name|boolean
 name|dbRelationshipLoaded
 parameter_list|(
@@ -103,6 +103,9 @@ name|DbRelationship
 name|relationship
 parameter_list|)
 function_decl|;
+comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
+annotation|@
+name|Deprecated
 name|void
 name|objEntityAdded
 parameter_list|(
@@ -110,6 +113,9 @@ name|ObjEntity
 name|entity
 parameter_list|)
 function_decl|;
+comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
+annotation|@
+name|Deprecated
 name|void
 name|objEntityRemoved
 parameter_list|(
