@@ -1117,20 +1117,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"Map file does not exist. Loaded db model will be saved into '"
-operator|+
-operator|(
+name|String
+name|path
+init|=
 name|config
 operator|.
 name|getTargetDataMap
@@ -1149,7 +1138,21 @@ name|getAbsolutePath
 argument_list|()
 operator|+
 literal|"'"
-operator|)
+decl_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Map file does not exist. Loaded db model will be saved into '"
+operator|+
+name|path
 argument_list|)
 expr_stmt|;
 name|hasChanges
