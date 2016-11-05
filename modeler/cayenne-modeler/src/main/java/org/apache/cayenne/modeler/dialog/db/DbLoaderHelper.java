@@ -1162,7 +1162,6 @@ name|getNamingStrategy
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// TODO: change DbLoader naming strategy here... or better start with a fresh DbLoader over the same connection
 operator|new
 name|LoadDataMapTask
 argument_list|(
