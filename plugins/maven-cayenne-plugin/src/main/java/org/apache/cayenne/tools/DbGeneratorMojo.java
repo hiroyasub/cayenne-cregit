@@ -81,7 +81,7 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|CayenneDbSyncModule
+name|DbSyncModule
 import|;
 end_import
 
@@ -379,7 +379,7 @@ operator|.
 name|createInjector
 argument_list|(
 operator|new
-name|CayenneDbSyncModule
+name|DbSyncModule
 argument_list|()
 argument_list|,
 operator|new

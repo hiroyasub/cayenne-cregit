@@ -139,7 +139,7 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|CayenneDbSyncModule
+name|DbSyncModule
 import|;
 end_import
 
@@ -1849,7 +1849,7 @@ name|this
 argument_list|)
 decl_stmt|;
 comment|// TODO: we can keep all these things in the Modeler Injector instead of creating a new one?
-comment|// we already have CayenneDbSyncModule in there
+comment|// we already have DbSyncModule in there
 name|Injector
 name|injector
 init|=
@@ -1858,7 +1858,7 @@ operator|.
 name|createInjector
 argument_list|(
 operator|new
-name|CayenneDbSyncModule
+name|DbSyncModule
 argument_list|()
 argument_list|,
 operator|new

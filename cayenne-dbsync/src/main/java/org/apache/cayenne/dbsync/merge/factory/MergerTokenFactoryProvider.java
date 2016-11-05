@@ -43,7 +43,7 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|CayenneDbSyncModule
+name|DbSyncModule
 import|;
 end_import
 
@@ -91,7 +91,7 @@ parameter_list|(
 annotation|@
 name|Inject
 argument_list|(
-name|CayenneDbSyncModule
+name|DbSyncModule
 operator|.
 name|MERGER_FACTORIES_MAP
 argument_list|)
