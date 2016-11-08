@@ -897,7 +897,7 @@ literal|"testUnFlattensManyToMany"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Make sure any merges preserve custom object layer settings, like "usePrimitives", PK mapping as attribute, etc. 	 */
+comment|/**      * Make sure any merges preserve custom object layer settings, like "usePrimitives", PK mapping as attribute, etc.      */
 annotation|@
 name|Test
 specifier|public
@@ -910,6 +910,21 @@ block|{
 name|test
 argument_list|(
 literal|"testCustomObjectLayerSettings"
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testForceDataMapSchema
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|test
+argument_list|(
+literal|"testForceDataMapSchema"
 argument_list|)
 expr_stmt|;
 block|}
