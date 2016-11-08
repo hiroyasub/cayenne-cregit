@@ -814,6 +814,8 @@ operator|new
 name|PatternStemmer
 argument_list|(
 name|stripFromTableNames
+argument_list|,
+literal|false
 argument_list|)
 return|;
 block|}
