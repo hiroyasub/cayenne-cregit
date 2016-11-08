@@ -1046,6 +1046,23 @@ name|namingStrategy
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 4.0      */
+specifier|public
+name|void
+name|setStripFromTableNames
+parameter_list|(
+name|String
+name|pattern
+parameter_list|)
+block|{
+name|config
+operator|.
+name|setStripFromTableNames
+argument_list|(
+name|pattern
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|void
 name|setAdapter

@@ -358,6 +358,11 @@ operator|new
 name|ReverseEngineering
 argument_list|()
 decl_stmt|;
+comment|/**      * A regular expression that should match the part of the table name to strip before generating DB names.      *      * @parameter stripFromTableNames="stripFromTableNames"      * default-value=""      */
+specifier|private
+name|String
+name|stripFromTableNames
+decl_stmt|;
 comment|/**      * JDBC connection URL of a target database.      *      * @parameter url="url"      * @required      */
 specifier|private
 name|String
@@ -696,6 +701,13 @@ operator|.
 name|setNamingStrategy
 argument_list|(
 name|namingStrategy
+argument_list|)
+expr_stmt|;
+name|config
+operator|.
+name|setStripFromTableNames
+argument_list|(
+name|stripFromTableNames
 argument_list|)
 expr_stmt|;
 name|config
