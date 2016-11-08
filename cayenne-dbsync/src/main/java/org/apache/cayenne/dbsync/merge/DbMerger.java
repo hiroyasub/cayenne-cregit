@@ -1424,8 +1424,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// alter detected relationship to match entity and attribute
-comment|// names.
+comment|// alter detected relationship to match entity and attribute names.
 comment|// (case sensitively)
 name|DbEntity
 name|targetEntity
@@ -1544,6 +1543,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// There is only one FK in the database so we create
+comment|// DropRelationshipToDb token only for direct relationships
+comment|// and skip token for toMany relationships
+if|if
+condition|(
+operator|!
+name|detected
+operator|.
+name|isToMany
+argument_list|()
+condition|)
+block|{
 name|MergerToken
 name|token
 init|=
@@ -1556,32 +1567,6 @@ argument_list|,
 name|detected
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|detected
-operator|.
-name|isToMany
-argument_list|()
-condition|)
-block|{
-comment|// default toModel as we can not do drop a toMany in the db.
-comment|// only
-comment|// toOne are represented using foreign key
-name|tokens
-operator|.
-name|addAll
-argument_list|(
-name|token
-operator|.
-name|createReverse
-argument_list|(
-name|tokenFactory
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|tokens
 operator|.
 name|add
@@ -1590,13 +1575,6 @@ name|token
 argument_list|)
 expr_stmt|;
 block|}
-name|tokens
-operator|.
-name|add
-argument_list|(
-name|token
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 return|return
@@ -1677,10 +1655,9 @@ argument_list|()
 condition|)
 block|{
 comment|// TODO I guess we should add relationship always; in order
-comment|// to have ability
-comment|// TODO generate reverse relationship. If it doesn't have
-comment|// anything to execute it will be passed
-comment|// TODO through execution without any affect on db
+comment|// TODO to have ability generate reverse relationship.
+comment|// TODO If it doesn't have anything to execute it will be
+comment|// TODO passed through execution without any affect on db
 name|tokens
 operator|.
 name|add

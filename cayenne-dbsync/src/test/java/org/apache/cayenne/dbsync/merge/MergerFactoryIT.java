@@ -1178,12 +1178,12 @@ operator|.
 name|refreshMappingCache
 argument_list|()
 expr_stmt|;
-comment|/*          * Db -Rel 'toArtistR1' - NEW_TABLE 1 -> 1 ARTIST" r2 =     * Db -Rel 'toNewTableR2' - ARTIST 1 -> * NEW_TABLE"          * */
+comment|/*          * Db -Rel 'toArtistR1' - NEW_TABLE 1 -> 1 ARTIST" r2 =     * Db -Rel 'toNewTableR2' - ARTIST 1 -> * NEW_TABLE" -- Not generated any more          * */
 name|assertTokensAndExecute
 argument_list|(
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
@@ -1516,12 +1516,12 @@ operator|.
 name|refreshMappingCache
 argument_list|()
 expr_stmt|;
-comment|/*         * Add Relationship ARTIST->NEW_TABLE To Model         * Drop Relationship NEW_TABLE->ARTIST To DB         * */
+comment|/*         * Add Relationship ARTIST->NEW_TABLE To Model -- Not generated any more         * Drop Relationship NEW_TABLE->ARTIST To DB         * */
 name|assertTokensAndExecute
 argument_list|(
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
