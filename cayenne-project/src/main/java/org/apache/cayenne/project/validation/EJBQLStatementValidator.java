@@ -63,23 +63,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|ejbql
 operator|.
-name|EntityResolver
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|EJBQLQuery
+name|EJBQLParserFactory
 import|;
 end_import
 
@@ -108,9 +94,6 @@ name|validateEJBQL
 parameter_list|(
 name|EJBQLQueryDescriptor
 name|query
-parameter_list|,
-name|EntityResolver
-name|er
 parameter_list|)
 block|{
 if|if
@@ -128,30 +111,24 @@ name|message
 init|=
 literal|null
 decl_stmt|;
-name|EJBQLQuery
-name|queryTemp
-init|=
-operator|new
-name|EJBQLQuery
-argument_list|()
-decl_stmt|;
-name|queryTemp
+try|try
+block|{
+comment|// Only parse query and validate it's syntax.
+comment|// It still may be invalid e.g. invalid entities used.
+comment|// We can't call compile() for the full check as it will try to get
+comment|// Class objects for ObjEntities used in query that are not available
+comment|// in the modeler
+name|EJBQLParserFactory
 operator|.
-name|setEjbqlStatement
+name|getParser
+argument_list|()
+operator|.
+name|parse
 argument_list|(
 name|query
 operator|.
 name|getEjbql
 argument_list|()
-argument_list|)
-expr_stmt|;
-try|try
-block|{
-name|queryTemp
-operator|.
-name|getExpression
-argument_list|(
-name|er
 argument_list|)
 expr_stmt|;
 block|}
@@ -469,7 +446,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|Exception
+name|Throwable
 name|e
 parameter_list|)
 block|{
@@ -479,13 +456,24 @@ operator|new
 name|PositionException
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|e
+operator|instanceof
+name|Exception
+condition|)
+block|{
 name|message
 operator|.
 name|setE
 argument_list|(
+operator|(
+name|Exception
+operator|)
 name|e
 argument_list|)
 expr_stmt|;
+block|}
 name|message
 operator|.
 name|setMessage
