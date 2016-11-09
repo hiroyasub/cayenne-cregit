@@ -69,7 +69,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|JdbcAdapter
+name|DbAdapter
 import|;
 end_import
 
@@ -685,7 +685,27 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JFileChooser
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JOptionPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|WindowConstants
 import|;
 end_import
 
@@ -719,7 +739,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -827,7 +847,7 @@ name|DataMap
 name|dataMap
 decl_stmt|;
 specifier|protected
-name|JdbcAdapter
+name|DbAdapter
 name|adapter
 decl_stmt|;
 specifier|protected
@@ -1088,9 +1108,6 @@ try|try
 block|{
 name|adapter
 operator|=
-operator|(
-name|JdbcAdapter
-operator|)
 name|connectionInfo
 operator|.
 name|makeAdapter
