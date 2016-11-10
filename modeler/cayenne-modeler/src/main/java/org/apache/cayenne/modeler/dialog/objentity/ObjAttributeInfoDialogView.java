@@ -1117,8 +1117,9 @@ name|setRowSpec
 argument_list|(
 literal|3
 argument_list|,
-operator|new
 name|RowSpec
+operator|.
+name|decode
 argument_list|(
 literal|"fill:min(10dlu;pref):grow"
 argument_list|)
@@ -1130,8 +1131,9 @@ name|setRowSpec
 argument_list|(
 literal|1
 argument_list|,
-operator|new
 name|RowSpec
+operator|.
+name|decode
 argument_list|(
 literal|"fill:min(10dlu;pref):grow"
 argument_list|)
