@@ -198,6 +198,9 @@ name|catalogLabel
 decl_stmt|;
 specifier|protected
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|catalogSelector
 decl_stmt|;
 specifier|protected
@@ -206,6 +209,9 @@ name|schemaLabel
 decl_stmt|;
 specifier|protected
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|schemaSelector
 decl_stmt|;
 specifier|protected
@@ -234,6 +240,9 @@ name|cancelButton
 decl_stmt|;
 specifier|protected
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|strategyCombo
 decl_stmt|;
 specifier|protected
@@ -340,12 +349,14 @@ name|catalogSelector
 operator|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|schemaSelector
 operator|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|tableNamePatternField
@@ -354,11 +365,29 @@ operator|new
 name|JTextField
 argument_list|()
 expr_stmt|;
+name|tableNamePatternField
+operator|.
+name|setToolTipText
+argument_list|(
+literal|"<html>Regular expression to filter table names.<br>"
+operator|+
+literal|"Default expression<b>.*</b> includes all tables.</html>"
+argument_list|)
+expr_stmt|;
 name|procNamePatternField
 operator|=
 operator|new
 name|JTextField
 argument_list|()
+expr_stmt|;
+name|procNamePatternField
+operator|.
+name|setToolTipText
+argument_list|(
+literal|"<html>Regular expression to filter stored procedures names.<br>"
+operator|+
+literal|"Default expression .* includes all stored procedures.</html>"
+argument_list|)
 expr_stmt|;
 name|meaningfulPk
 operator|=
@@ -366,10 +395,22 @@ operator|new
 name|JTextField
 argument_list|()
 expr_stmt|;
+name|meaningfulPk
+operator|.
+name|setToolTipText
+argument_list|(
+literal|"<html>Regular expression to filter tables with meaningful primary keys.<br>"
+operator|+
+literal|"Multiple expressions divided by comma can be used.<br>"
+operator|+
+literal|"Example:<b>^table1,^table2,^prefix.*</b></html>"
+argument_list|)
+expr_stmt|;
 name|strategyCombo
 operator|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|strategyCombo
@@ -651,6 +692,7 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|arr
 argument_list|)
@@ -694,11 +736,18 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|schemas
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|String
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -777,11 +826,18 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|catalogs
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|String
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
