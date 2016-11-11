@@ -1427,11 +1427,7 @@ name|detailPanel
 operator|.
 name|add
 argument_list|(
-operator|new
-name|JScrollPane
-argument_list|(
 name|embeddableView
-argument_list|)
 argument_list|,
 name|EMBEDDABLE_VIEW
 argument_list|)
