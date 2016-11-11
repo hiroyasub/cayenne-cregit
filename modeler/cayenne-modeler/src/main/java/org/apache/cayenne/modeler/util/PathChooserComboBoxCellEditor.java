@@ -365,6 +365,10 @@ specifier|protected
 name|int
 name|row
 decl_stmt|;
+specifier|private
+name|JTable
+name|table
+decl_stmt|;
 specifier|protected
 specifier|abstract
 name|void
@@ -455,6 +459,12 @@ argument_list|,
 name|dbAttributePath
 argument_list|)
 decl_stmt|;
+name|this
+operator|.
+name|table
+operator|=
+name|table
+expr_stmt|;
 name|comboBoxPathChooser
 operator|=
 name|Application
@@ -1329,6 +1339,11 @@ argument_list|()
 operator|.
 name|toString
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|enterPressed
+argument_list|(
+name|table
 argument_list|)
 expr_stmt|;
 block|}
