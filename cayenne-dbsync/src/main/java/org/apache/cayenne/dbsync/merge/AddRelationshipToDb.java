@@ -165,9 +165,10 @@ block|{
 comment|// TODO: skip FK to a different DB
 if|if
 condition|(
+operator|!
 name|this
 operator|.
-name|shouldGenerateFkConstraint
+name|isEmpty
 argument_list|()
 condition|)
 block|{
@@ -205,31 +206,6 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-specifier|public
-name|boolean
-name|shouldGenerateFkConstraint
-parameter_list|()
-block|{
-return|return
-operator|!
-name|relationship
-operator|.
-name|isToMany
-argument_list|()
-operator|&&
-name|relationship
-operator|.
-name|isToPK
-argument_list|()
-comment|// TODO it is not necessary primary key it can be unique index
-operator|&&
-operator|!
-name|relationship
-operator|.
-name|isToDependentPK
-argument_list|()
-return|;
-block|}
 annotation|@
 name|Override
 specifier|public
@@ -261,9 +237,10 @@ parameter_list|()
 block|{
 if|if
 condition|(
+operator|!
 name|this
 operator|.
-name|shouldGenerateFkConstraint
+name|isEmpty
 argument_list|()
 condition|)
 block|{
@@ -298,11 +275,14 @@ name|boolean
 name|isEmpty
 parameter_list|()
 block|{
+comment|// Method DbRelationship.isSourceIndependentFromTargetChange() looks same
 return|return
-operator|!
-name|shouldGenerateFkConstraint
+name|relationship
+operator|.
+name|isSourceIndependentFromTargetChange
 argument_list|()
 return|;
+comment|/*return relationship.isToMany()                 || relationship.isToDependentPK()                 || !relationship.isToPK(); // TODO it is not necessary primary key it can be unique index         */
 block|}
 annotation|@
 name|Override

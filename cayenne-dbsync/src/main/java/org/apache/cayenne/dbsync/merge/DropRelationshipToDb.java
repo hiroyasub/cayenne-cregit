@@ -207,21 +207,9 @@ name|DbAdapter
 name|adapter
 parameter_list|)
 block|{
-name|String
-name|fkName
-init|=
-name|getFkName
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|fkName
-operator|==
-literal|null
-operator|||
-name|relationship
-operator|.
-name|isToMany
+name|isEmpty
 argument_list|()
 condition|)
 block|{
@@ -257,7 +245,8 @@ argument_list|)
 operator|+
 literal|" DROP CONSTRAINT "
 operator|+
-name|fkName
+name|getFkName
+argument_list|()
 argument_list|)
 return|;
 block|}
@@ -289,6 +278,11 @@ name|isEmpty
 parameter_list|()
 block|{
 return|return
+name|getFkName
+argument_list|()
+operator|==
+literal|null
+operator|||
 name|relationship
 operator|.
 name|isToMany

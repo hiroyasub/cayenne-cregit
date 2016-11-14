@@ -768,8 +768,6 @@ name|directionCombo
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// TODO: correct width for the different columns
-comment|//view.getTokens().setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 name|columnModel
 operator|.
 name|getColumn
@@ -925,7 +923,6 @@ argument_list|(
 name|token
 argument_list|)
 decl_stmt|;
-comment|// TODO change to collection iteration
 name|MergerToken
 name|reverse
 init|=
@@ -1063,7 +1060,6 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
-comment|// TODO change to collection iteration
 name|MergerToken
 name|reverse
 init|=
