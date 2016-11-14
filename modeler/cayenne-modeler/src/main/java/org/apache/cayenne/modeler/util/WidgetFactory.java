@@ -92,6 +92,9 @@ name|WidgetFactory
 block|{
 comment|/**      * Creates a new JComboBox with a collection of model objects.      */
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|createComboBox
 parameter_list|(
 name|Collection
@@ -105,10 +108,16 @@ name|sort
 parameter_list|)
 function_decl|;
 comment|/**      * Creates a new JComboBox with an array of model objects.      */
+parameter_list|<
+name|E
+parameter_list|>
 name|JComboBox
+argument_list|<
+name|E
+argument_list|>
 name|createComboBox
 parameter_list|(
-name|Object
+name|E
 index|[]
 name|model
 parameter_list|,
@@ -117,12 +126,24 @@ name|sort
 parameter_list|)
 function_decl|;
 comment|/**      * Creates a new JComboBox.      */
+parameter_list|<
+name|E
+parameter_list|>
 name|JComboBox
+argument_list|<
+name|E
+argument_list|>
 name|createComboBox
 parameter_list|()
 function_decl|;
 comment|/**      * Creates undoable JComboBox.      */
+parameter_list|<
+name|E
+parameter_list|>
 name|JComboBox
+argument_list|<
+name|E
+argument_list|>
 name|createUndoableComboBox
 parameter_list|()
 function_decl|;
@@ -139,6 +160,9 @@ name|TableCellEditor
 name|createCellEditor
 parameter_list|(
 name|JComboBox
+argument_list|<
+name|?
+argument_list|>
 name|combo
 parameter_list|)
 function_decl|;

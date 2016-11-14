@@ -207,6 +207,9 @@ block|{
 comment|/**      * Creates a new JComboBox with a collection of model objects.      */
 specifier|public
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|createComboBox
 parameter_list|(
 name|Collection
@@ -225,7 +228,13 @@ argument_list|(
 name|model
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|String
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|sort
 argument_list|)
@@ -233,10 +242,16 @@ return|;
 block|}
 comment|/**      * Creates a new JComboBox with an array of model objects.      */
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|createComboBox
 parameter_list|(
-name|Object
+name|T
 index|[]
 name|model
 parameter_list|,
@@ -245,6 +260,9 @@ name|sort
 parameter_list|)
 block|{
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|comboBox
 init|=
 name|createComboBox
@@ -269,6 +287,7 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|model
 argument_list|)
@@ -280,15 +299,25 @@ return|;
 block|}
 comment|/**      * Creates a new JComboBox.      */
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|createComboBox
 parameter_list|()
 block|{
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|comboBox
 init|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|comboBox
@@ -332,15 +361,25 @@ return|;
 block|}
 comment|/**      * Creates undoable JComboBox.      *       */
 specifier|public
+parameter_list|<
+name|T
+parameter_list|>
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|createUndoableComboBox
 parameter_list|()
 block|{
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|comboBox
 init|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|comboBox
@@ -415,6 +454,9 @@ name|TableCellEditor
 name|createCellEditor
 parameter_list|(
 name|JComboBox
+argument_list|<
+name|?
+argument_list|>
 name|combo
 parameter_list|)
 block|{

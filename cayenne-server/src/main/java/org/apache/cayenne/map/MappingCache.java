@@ -550,27 +550,11 @@ argument_list|,
 name|queryDescriptor
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|existingQueryDescriptor
-operator|!=
-literal|null
-operator|&&
-name|queryDescriptor
-operator|!=
-name|existingQueryDescriptor
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"More than one QueryDescriptor for name: "
-operator|+
-name|name
-argument_list|)
-throw|;
-block|}
+comment|// No exception is thrown in case of any other entity's name conflict.
+comment|// Why do we throw it here!?
+comment|//                if (existingQueryDescriptor != null&& queryDescriptor != existingQueryDescriptor) {
+comment|//                    throw new CayenneRuntimeException("More than one QueryDescriptor for name: " + name);
+comment|//                }
 block|}
 block|}
 comment|// restart the map iterator to index inheritance
