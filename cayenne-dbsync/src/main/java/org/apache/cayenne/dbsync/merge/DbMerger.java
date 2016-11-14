@@ -1543,18 +1543,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// There is only one FK in the database so we create
-comment|// DropRelationshipToDb token only for direct relationships
-comment|// and skip token for toMany relationships
-if|if
-condition|(
-operator|!
-name|detected
-operator|.
-name|isToMany
-argument_list|()
-condition|)
-block|{
+comment|// Add all relationships. Tokens will decide whether or not to execute
 name|MergerToken
 name|token
 init|=
@@ -1574,7 +1563,6 @@ argument_list|(
 name|token
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 return|return
@@ -1631,6 +1619,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// Add all relationships. Tokens will decide whether or not to execute
 name|AddRelationshipToDb
 name|token
 init|=
@@ -1646,18 +1635,6 @@ argument_list|,
 name|rel
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|token
-operator|.
-name|shouldGenerateFkConstraint
-argument_list|()
-condition|)
-block|{
-comment|// TODO I guess we should add relationship always; in order
-comment|// TODO to have ability generate reverse relationship.
-comment|// TODO If it doesn't have anything to execute it will be
-comment|// TODO passed through execution without any affect on db
 name|tokens
 operator|.
 name|add
@@ -1665,7 +1642,6 @@ argument_list|(
 name|token
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 return|return

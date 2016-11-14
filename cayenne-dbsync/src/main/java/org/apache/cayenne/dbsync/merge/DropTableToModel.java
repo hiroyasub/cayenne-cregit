@@ -77,26 +77,6 @@ name|ObjEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
 begin_comment
 comment|/**  * A {@link MergerToken} to remove a {@link DbEntity} from a {@link DataMap}. Any  * {@link ObjEntity} mapped to the {@link DbEntity} will also be removed.  *   */
 end_comment
@@ -128,10 +108,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Collection
-argument_list|<
 name|MergerToken
-argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -139,17 +116,12 @@ name|factory
 parameter_list|)
 block|{
 return|return
-name|Collections
-operator|.
-name|singleton
-argument_list|(
 name|factory
 operator|.
 name|createCreateTableToDb
 argument_list|(
 name|getEntity
 argument_list|()
-argument_list|)
 argument_list|)
 return|;
 block|}

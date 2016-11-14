@@ -68,10 +68,7 @@ name|getDirection
 parameter_list|()
 function_decl|;
 comment|/**      * Create a complimentary token with the reverse direction. AddColumn in one direction becomes      * DropColumn in the other direction.      *<p>      * Not all tokens are reversible.      */
-name|Collection
-argument_list|<
 name|MergerToken
-argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -85,6 +82,10 @@ parameter_list|(
 name|MergerContext
 name|context
 parameter_list|)
+function_decl|;
+name|boolean
+name|isEmpty
+parameter_list|()
 function_decl|;
 block|}
 end_interface

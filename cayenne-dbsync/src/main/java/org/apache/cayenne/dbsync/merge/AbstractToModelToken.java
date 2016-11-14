@@ -326,6 +326,15 @@ name|getDirection
 argument_list|()
 return|;
 block|}
+specifier|public
+name|boolean
+name|isEmpty
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 specifier|abstract
 specifier|static
 class|class

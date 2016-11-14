@@ -568,7 +568,7 @@ argument_list|)
 expr_stmt|;
 name|assertTokensAndExecute
 argument_list|(
-literal|4
+literal|3
 argument_list|,
 literal|0
 argument_list|)
@@ -976,12 +976,6 @@ argument_list|(
 name|mergerFactory
 argument_list|()
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
 decl_stmt|;
 name|MergerToken
 name|token1
@@ -998,12 +992,6 @@ argument_list|(
 name|mergerFactory
 argument_list|()
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
 decl_stmt|;
 if|if
 condition|(

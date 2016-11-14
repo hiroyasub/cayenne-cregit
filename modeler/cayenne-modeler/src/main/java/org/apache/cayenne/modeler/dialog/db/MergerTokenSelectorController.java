@@ -935,12 +935,6 @@ name|createReverse
 argument_list|(
 name|mergerTokenFactory
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
 decl_stmt|;
 name|selectableTokensList
 operator|.
@@ -1079,12 +1073,6 @@ name|createReverse
 argument_list|(
 name|mergerTokenFactory
 argument_list|)
-operator|.
-name|iterator
-argument_list|()
-operator|.
-name|next
-argument_list|()
 decl_stmt|;
 name|selectableTokensList
 operator|.

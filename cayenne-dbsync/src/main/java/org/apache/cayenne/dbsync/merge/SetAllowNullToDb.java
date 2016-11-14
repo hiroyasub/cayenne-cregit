@@ -97,16 +97,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Collections
 import|;
 end_import
@@ -244,10 +234,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Collection
-argument_list|<
 name|MergerToken
-argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -255,10 +242,6 @@ name|factory
 parameter_list|)
 block|{
 return|return
-name|Collections
-operator|.
-name|singleton
-argument_list|(
 name|factory
 operator|.
 name|createSetNotNullToModel
@@ -268,7 +251,6 @@ argument_list|()
 argument_list|,
 name|getColumn
 argument_list|()
-argument_list|)
 argument_list|)
 return|;
 block|}

@@ -97,16 +97,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Collections
 import|;
 end_import
@@ -243,10 +233,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Collection
-argument_list|<
 name|MergerToken
-argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -254,10 +241,6 @@ name|factory
 parameter_list|)
 block|{
 return|return
-name|Collections
-operator|.
-name|singleton
-argument_list|(
 name|factory
 operator|.
 name|createDropRelationshipToModel
@@ -266,7 +249,6 @@ name|getEntity
 argument_list|()
 argument_list|,
 name|relationship
-argument_list|)
 argument_list|)
 return|;
 block|}
@@ -308,6 +290,19 @@ return|return
 literal|"Skip. No sql representation."
 return|;
 block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isEmpty
+parameter_list|()
+block|{
+return|return
+operator|!
+name|shouldGenerateFkConstraint
+argument_list|()
+return|;
 block|}
 annotation|@
 name|Override

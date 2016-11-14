@@ -35,26 +35,6 @@ name|MergerTokenFactory
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
 begin_comment
 comment|/**  * The reverse of a {@link MergerToken} that can not be reversed.. This will not execute  * any thing, but {@link #createReverse(MergerTokenFactory)} will get back the reverse that  * this was made from.  */
 end_comment
@@ -86,10 +66,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Collection
-argument_list|<
 name|MergerToken
-argument_list|>
 name|createReverse
 parameter_list|(
 name|MergerTokenFactory
@@ -97,12 +74,7 @@ name|factory
 parameter_list|)
 block|{
 return|return
-name|Collections
-operator|.
-name|singleton
-argument_list|(
 name|reverse
-argument_list|)
 return|;
 block|}
 annotation|@
@@ -116,6 +88,17 @@ name|mergerContext
 parameter_list|)
 block|{
 comment|// can not execute
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isEmpty
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
 block|}
 annotation|@
 name|Override

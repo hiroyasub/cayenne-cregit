@@ -891,7 +891,7 @@ name|reverse
 return|;
 block|}
 comment|/**      * Flattens many-to-many relationships in the generated model.      */
-specifier|protected
+specifier|public
 specifier|static
 name|void
 name|flattenManyToManyRelationships
@@ -1904,7 +1904,7 @@ continue|continue;
 block|}
 name|tokens
 operator|.
-name|addAll
+name|add
 argument_list|(
 name|token
 operator|.
