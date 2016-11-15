@@ -441,7 +441,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|SQLException
+name|Throwable
 name|e
 parameter_list|)
 block|{
