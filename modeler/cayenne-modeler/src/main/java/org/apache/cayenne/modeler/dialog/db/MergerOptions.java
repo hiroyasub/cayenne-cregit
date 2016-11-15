@@ -41,21 +41,9 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
+name|event
 operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|DataNodeDescriptor
+name|DataMapEvent
 import|;
 end_import
 
