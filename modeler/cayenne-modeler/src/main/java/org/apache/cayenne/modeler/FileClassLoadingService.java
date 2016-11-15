@@ -110,7 +110,7 @@ specifier|private
 name|FileClassLoader
 name|classLoader
 decl_stmt|;
-specifier|protected
+specifier|private
 name|List
 argument_list|<
 name|File
@@ -127,9 +127,7 @@ name|pathFiles
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|File
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|15
 argument_list|)
@@ -139,7 +137,7 @@ comment|/**      * Returns class for a given name, loading it if needed from con
 annotation|@
 name|SuppressWarnings
 argument_list|(
-literal|"all"
+literal|"unchecked"
 argument_list|)
 specifier|public
 parameter_list|<
@@ -344,6 +342,7 @@ name|classLoader
 return|;
 block|}
 comment|// URLClassLoader with addURL method exposed.
+specifier|private
 specifier|static
 class|class
 name|FileClassLoader
@@ -411,7 +410,7 @@ block|}
 catch|catch
 parameter_list|(
 name|MalformedURLException
-name|ex
+name|ignored
 parameter_list|)
 block|{
 block|}
