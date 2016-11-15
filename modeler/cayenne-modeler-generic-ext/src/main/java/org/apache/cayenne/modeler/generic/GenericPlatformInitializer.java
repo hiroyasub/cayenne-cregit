@@ -197,7 +197,7 @@ condition|)
 block|{
 name|PlasticLookAndFeel
 operator|.
-name|setMyCurrentTheme
+name|setCurrentTheme
 argument_list|(
 name|theme
 argument_list|)

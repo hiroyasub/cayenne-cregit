@@ -524,7 +524,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|CayenneDbSyncModule
+name|DbSyncModule
 implements|implements
 name|Module
 block|{

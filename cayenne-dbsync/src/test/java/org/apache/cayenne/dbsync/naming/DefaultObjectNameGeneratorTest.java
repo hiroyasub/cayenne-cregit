@@ -106,7 +106,12 @@ name|generator
 init|=
 operator|new
 name|DefaultObjectNameGenerator
+argument_list|(
+name|NoStemStemmer
+operator|.
+name|getInstance
 argument_list|()
+argument_list|)
 decl_stmt|;
 specifier|private
 name|DbRelationship

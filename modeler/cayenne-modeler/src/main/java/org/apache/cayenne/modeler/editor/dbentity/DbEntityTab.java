@@ -503,7 +503,7 @@ specifier|final
 name|String
 name|PK_DEFAULT_GENERATOR
 init|=
-literal|"Default"
+literal|"Cayenne-Generated (Default)"
 decl_stmt|;
 specifier|static
 specifier|final

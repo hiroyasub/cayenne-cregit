@@ -41,9 +41,21 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|event
+name|DataChannelDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
 operator|.
-name|DataMapEvent
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|DataNodeDescriptor
 import|;
 end_import
 
@@ -57,7 +69,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|JdbcAdapter
+name|DbAdapter
 import|;
 end_import
 
@@ -238,6 +250,22 @@ operator|.
 name|naming
 operator|.
 name|DefaultObjectNameGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|naming
+operator|.
+name|NoStemStemmer
 import|;
 end_import
 
@@ -767,7 +795,7 @@ name|DataMap
 name|dataMap
 decl_stmt|;
 specifier|protected
-name|JdbcAdapter
+name|DbAdapter
 name|adapter
 decl_stmt|;
 specifier|protected
@@ -1028,9 +1056,6 @@ try|try
 block|{
 name|adapter
 operator|=
-operator|(
-name|JdbcAdapter
-operator|)
 name|connectionInfo
 operator|.
 name|makeAdapter
@@ -1167,7 +1192,12 @@ argument_list|)
 argument_list|,
 operator|new
 name|DefaultObjectNameGenerator
+argument_list|(
+name|NoStemStemmer
+operator|.
+name|getInstance
 argument_list|()
+argument_list|)
 argument_list|)
 operator|.
 name|load
