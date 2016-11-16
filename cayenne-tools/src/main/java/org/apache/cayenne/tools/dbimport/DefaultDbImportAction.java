@@ -923,7 +923,7 @@ name|reverse
 return|;
 block|}
 comment|/**      * Flattens many-to-many relationships in the generated model.      */
-specifier|protected
+specifier|public
 specifier|static
 name|void
 name|flattenManyToManyRelationships

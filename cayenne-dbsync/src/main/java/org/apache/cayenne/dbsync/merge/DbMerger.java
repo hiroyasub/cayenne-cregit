@@ -1424,8 +1424,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// alter detected relationship to match entity and attribute
-comment|// names.
+comment|// alter detected relationship to match entity and attribute names.
 comment|// (case sensitively)
 name|DbEntity
 name|targetEntity
@@ -1544,6 +1543,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|// Add all relationships. Tokens will decide whether or not to execute
 name|MergerToken
 name|token
 init|=
@@ -1556,27 +1556,6 @@ argument_list|,
 name|detected
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|detected
-operator|.
-name|isToMany
-argument_list|()
-condition|)
-block|{
-comment|// default toModel as we can not do drop a toMany in the db.
-comment|// only
-comment|// toOne are represented using foreign key
-name|token
-operator|=
-name|token
-operator|.
-name|createReverse
-argument_list|(
-name|tokenFactory
-argument_list|)
-expr_stmt|;
-block|}
 name|tokens
 operator|.
 name|add
@@ -1640,6 +1619,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// Add all relationships. Tokens will decide whether or not to execute
 name|AddRelationshipToDb
 name|token
 init|=
@@ -1655,19 +1635,6 @@ argument_list|,
 name|rel
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|token
-operator|.
-name|shouldGenerateFkConstraint
-argument_list|()
-condition|)
-block|{
-comment|// TODO I guess we should add relationship always; in order
-comment|// to have ability
-comment|// TODO generate reverse relationship. If it doesn't have
-comment|// anything to execute it will be passed
-comment|// TODO through execution without any affect on db
 name|tokens
 operator|.
 name|add
@@ -1675,7 +1642,6 @@ argument_list|(
 name|token
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 return|return

@@ -35,6 +35,16 @@ name|MergerTokenFactory
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
 begin_comment
 comment|/**  * Represents a minimal atomic synchronization operation between database and Cayenne model.  */
 end_comment
@@ -72,6 +82,10 @@ parameter_list|(
 name|MergerContext
 name|context
 parameter_list|)
+function_decl|;
+name|boolean
+name|isEmpty
+parameter_list|()
 function_decl|;
 block|}
 end_interface

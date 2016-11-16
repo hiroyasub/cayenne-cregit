@@ -135,6 +135,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collections
 import|;
 end_import
@@ -186,7 +196,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|TokensReversTest
+name|TokensReverseTest
 block|{
 annotation|@
 name|Test
@@ -252,7 +262,7 @@ literal|"dontKnow"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -265,7 +275,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -278,7 +288,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -291,7 +301,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -304,7 +314,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -317,7 +327,7 @@ name|rel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -330,7 +340,7 @@ name|rel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -343,7 +353,7 @@ name|rel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -356,7 +366,7 @@ name|rel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -367,7 +377,7 @@ name|entity
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -378,7 +388,7 @@ name|entity
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -389,7 +399,7 @@ name|entity
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -400,7 +410,7 @@ name|entity
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -413,7 +423,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -426,7 +436,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -439,7 +449,7 @@ name|attr
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -461,7 +471,7 @@ operator|.
 name|build
 argument_list|()
 decl_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -476,7 +486,7 @@ name|attr2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -491,7 +501,7 @@ name|attr2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -518,7 +528,7 @@ literal|"PK"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -545,7 +555,7 @@ literal|"PK"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|test
+name|testOneToOneReverse
 argument_list|(
 name|factory
 argument_list|()
@@ -565,16 +575,16 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|test
+name|testOneToOneReverse
 parameter_list|(
 name|MergerToken
-name|token1
+name|token
 parameter_list|)
 block|{
 name|MergerToken
 name|token2
 init|=
-name|token1
+name|token
 operator|.
 name|createReverse
 argument_list|(
@@ -592,7 +602,7 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
-name|token1
+name|token
 operator|.
 name|getTokenName
 argument_list|()
@@ -607,7 +617,7 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
-name|token1
+name|token
 operator|.
 name|getTokenValue
 argument_list|()
@@ -622,7 +632,7 @@ name|Assert
 operator|.
 name|assertEquals
 argument_list|(
-name|token1
+name|token
 operator|.
 name|getDirection
 argument_list|()

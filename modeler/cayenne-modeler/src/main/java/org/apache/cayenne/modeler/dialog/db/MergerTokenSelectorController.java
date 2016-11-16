@@ -768,8 +768,6 @@ name|directionCombo
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// TODO: correct width for the different columns
-comment|//view.getTokens().setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 name|columnModel
 operator|.
 name|getColumn

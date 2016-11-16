@@ -350,6 +350,15 @@ argument_list|()
 return|;
 block|}
 specifier|public
+name|boolean
+name|isEmpty
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
+specifier|public
 specifier|abstract
 name|List
 argument_list|<

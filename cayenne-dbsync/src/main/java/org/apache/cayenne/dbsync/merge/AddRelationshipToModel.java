@@ -294,6 +294,33 @@ name|MergerContext
 name|context
 parameter_list|)
 block|{
+comment|// Set name to relationship if it was created without it, e.g. in createReverse() action
+if|if
+condition|(
+name|relationship
+operator|.
+name|getName
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+name|relationship
+operator|.
+name|setName
+argument_list|(
+name|context
+operator|.
+name|getNameGenerator
+argument_list|()
+operator|.
+name|relationshipName
+argument_list|(
+name|relationship
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|getEntity
 argument_list|()
 operator|.
@@ -302,7 +329,6 @@ argument_list|(
 name|relationship
 argument_list|)
 expr_stmt|;
-comment|// TODO: add reverse relationship as well if it does not exist
 for|for
 control|(
 name|ObjEntity
