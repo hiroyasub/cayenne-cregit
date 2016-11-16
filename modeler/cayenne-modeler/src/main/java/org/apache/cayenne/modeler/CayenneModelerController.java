@@ -790,6 +790,11 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|boolean
 name|processDropAction
@@ -810,6 +815,9 @@ name|fileList
 operator|=
 operator|(
 name|List
+argument_list|<
+name|File
+argument_list|>
 operator|)
 name|transferable
 operator|.
@@ -1255,9 +1263,7 @@ name|allFailures
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ValidationFailure
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Collection
@@ -1470,7 +1476,7 @@ block|}
 catch|catch
 parameter_list|(
 name|BackingStoreException
-name|e
+name|ignored
 parameter_list|)
 block|{
 comment|// ignore exception
@@ -1515,9 +1521,6 @@ name|get
 argument_list|(
 name|i
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1582,7 +1585,6 @@ name|ExpireThread
 extends|extends
 name|Thread
 block|{
-specifier|protected
 name|int
 name|seconds
 decl_stmt|;
@@ -1590,7 +1592,6 @@ specifier|protected
 name|String
 name|message
 decl_stmt|;
-specifier|public
 name|ExpireThread
 parameter_list|(
 name|String
@@ -1818,9 +1819,6 @@ name|get
 argument_list|(
 name|i
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

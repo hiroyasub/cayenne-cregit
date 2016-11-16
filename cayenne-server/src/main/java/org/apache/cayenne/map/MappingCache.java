@@ -355,30 +355,16 @@ range|:
 name|maps
 control|)
 block|{
-for|for
-control|(
-name|DbEntity
-name|de
-range|:
-name|map
-operator|.
-name|getDbEntities
-argument_list|()
-control|)
-block|{
 name|dbEntities
 operator|.
-name|put
+name|putAll
 argument_list|(
-name|de
+name|map
 operator|.
-name|getName
+name|getDbEntityMap
 argument_list|()
-argument_list|,
-name|de
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 for|for
 control|(
@@ -388,7 +374,18 @@ range|:
 name|maps
 control|)
 block|{
-comment|// index ObjEntities
+comment|// index ObjEntities by name
+name|objEntities
+operator|.
+name|putAll
+argument_list|(
+name|map
+operator|.
+name|getObjEntityMap
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|// index ObjEntities by class name
 for|for
 control|(
 name|ObjEntity
@@ -400,21 +397,7 @@ name|getObjEntities
 argument_list|()
 control|)
 block|{
-comment|// index by name
-name|objEntities
-operator|.
-name|put
-argument_list|(
-name|oe
-operator|.
-name|getName
-argument_list|()
-argument_list|,
-name|oe
-argument_list|)
-expr_stmt|;
-comment|// index by class.. use class name as a key to avoid class
-comment|// loading here...
+comment|// use class name as a key to avoid class loading here...
 name|String
 name|className
 init|=
@@ -449,10 +432,7 @@ condition|(
 name|existing
 operator|!=
 literal|null
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|existing
 operator|!=
 name|OBJ_DUPLICATE_MARKER
@@ -468,7 +448,6 @@ name|OBJ_DUPLICATE_MARKER
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 else|else
 block|{
 name|objEntitiesByClassName
@@ -483,30 +462,16 @@ expr_stmt|;
 block|}
 block|}
 comment|// index stored procedures
-for|for
-control|(
-name|Procedure
-name|proc
-range|:
-name|map
-operator|.
-name|getProcedures
-argument_list|()
-control|)
-block|{
 name|procedures
 operator|.
-name|put
+name|putAll
 argument_list|(
-name|proc
+name|map
 operator|.
-name|getName
+name|getProcedureMap
 argument_list|()
-argument_list|,
-name|proc
 argument_list|)
 expr_stmt|;
-block|}
 comment|// index embeddables
 name|embeddables
 operator|.
@@ -519,59 +484,16 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// index query descriptors
-for|for
-control|(
-name|QueryDescriptor
-name|queryDescriptor
-range|:
-name|map
-operator|.
-name|getQueryDescriptors
-argument_list|()
-control|)
-block|{
-name|String
-name|name
-init|=
-name|queryDescriptor
-operator|.
-name|getName
-argument_list|()
-decl_stmt|;
-name|QueryDescriptor
-name|existingQueryDescriptor
-init|=
 name|queryDesriptors
 operator|.
-name|put
+name|putAll
 argument_list|(
-name|name
-argument_list|,
-name|queryDescriptor
+name|map
+operator|.
+name|getQueryDescriptorMap
+argument_list|()
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|existingQueryDescriptor
-operator|!=
-literal|null
-operator|&&
-name|queryDescriptor
-operator|!=
-name|existingQueryDescriptor
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"More than one QueryDescriptor for name: "
-operator|+
-name|name
-argument_list|)
-throw|;
-block|}
-block|}
+expr_stmt|;
 block|}
 comment|// restart the map iterator to index inheritance
 for|for
