@@ -598,6 +598,8 @@ argument_list|(
 name|type
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|newValue
 operator|=
 operator|(
@@ -632,8 +634,6 @@ operator|.
 name|nullValue
 expr_stmt|;
 block|}
-try|try
-block|{
 name|writeMethod
 operator|.
 name|invoke
