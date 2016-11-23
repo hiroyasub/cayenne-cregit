@@ -1323,18 +1323,10 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|e
-operator|.
-name|isEntityChanged
-argument_list|()
-condition|)
-block|{
-comment|// name.getComponent().requestFocusInWindow();
-return|return;
-block|}
+comment|//        if (!e.isEntityChanged()) {
+comment|//            // name.getComponent().requestFocusInWindow();
+comment|//            return;
+comment|//        }
 name|name
 operator|.
 name|setText
