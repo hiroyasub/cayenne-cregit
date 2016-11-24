@@ -437,23 +437,7 @@ block|}
 comment|// If this obj attribute is mapped to db attribute
 if|if
 condition|(
-name|getDbAttribute
-argument_list|()
-operator|!=
-literal|null
-operator|||
-operator|(
-operator|(
-operator|(
-name|ObjEntity
-operator|)
-name|getEntity
-argument_list|()
-operator|)
-operator|.
-name|isAbstract
-argument_list|()
-operator|&&
+comment|/*getDbAttribute() != null                 || (((ObjEntity) getEntity()).isAbstract()&& */
 operator|!
 name|Util
 operator|.
@@ -462,7 +446,6 @@ argument_list|(
 name|getDbAttributePath
 argument_list|()
 argument_list|)
-operator|)
 condition|)
 block|{
 name|encoder
