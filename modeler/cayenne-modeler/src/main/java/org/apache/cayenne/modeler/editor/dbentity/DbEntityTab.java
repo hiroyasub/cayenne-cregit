@@ -135,6 +135,34 @@ end_import
 
 begin_import
 import|import
+name|com
+operator|.
+name|jgoodies
+operator|.
+name|forms
+operator|.
+name|builder
+operator|.
+name|DefaultFormBuilder
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|jgoodies
+operator|.
+name|forms
+operator|.
+name|layout
+operator|.
+name|FormLayout
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -452,34 +480,6 @@ operator|.
 name|validation
 operator|.
 name|ValidationException
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|jgoodies
-operator|.
-name|forms
-operator|.
-name|builder
-operator|.
-name|DefaultFormBuilder
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|jgoodies
-operator|.
-name|forms
-operator|.
-name|layout
-operator|.
-name|FormLayout
 import|;
 end_import
 
@@ -1323,10 +1323,6 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-comment|//        if (!e.isEntityChanged()) {
-comment|//            // name.getComponent().requestFocusInWindow();
-comment|//            return;
-comment|//        }
 name|name
 operator|.
 name|setText
