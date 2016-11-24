@@ -75,16 +75,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -362,9 +352,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|public
+specifier|protected
 name|void
-name|onInit
+name|onInitInternal
 parameter_list|(
 name|DbEntity
 name|entity

@@ -77,9 +77,9 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
-specifier|public
+specifier|protected
 name|void
-name|onInit
+name|onInitInternal
 parameter_list|(
 name|DbEntity
 name|entity

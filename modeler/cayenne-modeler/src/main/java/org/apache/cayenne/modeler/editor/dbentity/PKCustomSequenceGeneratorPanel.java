@@ -395,9 +395,9 @@ name|CENTER
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
+specifier|protected
 name|void
-name|onInit
+name|onInitInternal
 parameter_list|(
 name|DbEntity
 name|entity
@@ -443,6 +443,14 @@ operator|.
 name|setPrimaryKeyGenerator
 argument_list|(
 name|generator
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|setDbEntity
+argument_list|(
+name|entity
 argument_list|)
 expr_stmt|;
 block|}
