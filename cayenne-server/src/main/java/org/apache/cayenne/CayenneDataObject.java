@@ -2585,16 +2585,6 @@ name|getRelationships
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
-name|relationship
-operator|.
-name|isSourceIndependentFromTargetChange
-argument_list|()
-condition|)
-block|{
-continue|continue;
-block|}
 name|List
 argument_list|<
 name|DbRelationship
@@ -2616,23 +2606,62 @@ condition|)
 block|{
 continue|continue;
 block|}
+comment|// skip db relationships that we can't validate or that can't be invalid here
+comment|// can't handle paths longer than two db relationships
+comment|// see ObjRelationship.recalculateReadOnlyValue() for more info
+if|if
+condition|(
+name|dbRels
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|1
+operator|&&
+name|relationship
+operator|.
+name|isSourceIndependentFromTargetChange
+argument_list|()
+operator|||
+name|dbRels
+operator|.
+name|size
+argument_list|()
+operator|>
+literal|1
+operator|&&
+operator|(
+name|relationship
+operator|.
+name|isToMany
+argument_list|()
+operator|||
+name|relationship
+operator|.
+name|isReadOnly
+argument_list|()
+operator|)
+condition|)
+block|{
+continue|continue;
+block|}
 comment|// if db relationship is not based on a PK and is based on mandatory
 comment|// attributes, see if we have a target object set
+comment|// relationship will be validated only if all db path has mandatory
+comment|// db relationships
 name|boolean
 name|validate
 init|=
 literal|true
 decl_stmt|;
+for|for
+control|(
 name|DbRelationship
 name|dbRelationship
-init|=
+range|:
 name|dbRels
-operator|.
-name|get
-argument_list|(
-literal|0
-argument_list|)
-decl_stmt|;
+control|)
+block|{
 for|for
 control|(
 name|DbJoin
@@ -2684,20 +2713,6 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// loop through all joins if there were previous
-comment|// mandatory
-comment|// attribute failures....
-if|if
-condition|(
-operator|!
-name|failedDbAttributes
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-continue|continue;
-block|}
 block|}
 block|}
 else|else
@@ -2708,6 +2723,7 @@ name|validate
 operator|=
 literal|false
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
