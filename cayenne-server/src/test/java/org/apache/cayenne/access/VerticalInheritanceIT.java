@@ -1356,26 +1356,6 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|1
-argument_list|,
-name|ivRootTable
-operator|.
-name|getRowCount
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
-literal|1
-argument_list|,
-name|ivSub3Table
-operator|.
-name|getRowCount
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 comment|/** 	 * @link https://issues.apache.org/jira/browse/CAY-2146 	 */
 annotation|@
