@@ -796,6 +796,10 @@ name|tokens
 decl_stmt|;
 specifier|protected
 name|String
+name|defaultCatalog
+decl_stmt|;
+specifier|protected
+name|String
 name|defaultSchema
 decl_stmt|;
 specifier|private
@@ -816,6 +820,9 @@ name|connectionInfo
 parameter_list|,
 name|DataMap
 name|dataMap
+parameter_list|,
+name|String
+name|defaultCatalog
 parameter_list|,
 name|String
 name|defaultSchema
@@ -872,11 +879,16 @@ name|connectionInfo
 expr_stmt|;
 name|this
 operator|.
+name|defaultCatalog
+operator|=
+name|defaultCatalog
+expr_stmt|;
+name|this
+operator|.
 name|defaultSchema
 operator|=
 name|defaultSchema
 expr_stmt|;
-comment|/*          * TODO:? this.generatorDefaults = (DBGeneratorDefaults) parent          * .getPreferenceDomainForProject() .getDetail("DbGenerator",          * DBGeneratorDefaults.class, true);          */
 name|this
 operator|.
 name|view
@@ -889,11 +901,9 @@ expr_stmt|;
 name|initController
 argument_list|()
 expr_stmt|;
-comment|// tables.updateTables(dataMap);
 name|prepareMigrator
 argument_list|()
 expr_stmt|;
-comment|// generatorDefaults.configureGenerator(generator);
 name|createSQL
 argument_list|()
 expr_stmt|;
@@ -910,7 +920,6 @@ return|return
 name|view
 return|;
 block|}
-comment|/*      * public DBGeneratorDefaults getGeneratorDefaults() { return generatorDefaults; }      */
 specifier|public
 name|String
 name|getTextForSQL
@@ -1079,7 +1088,7 @@ name|FiltersConfig
 operator|.
 name|create
 argument_list|(
-literal|null
+name|defaultCatalog
 argument_list|,
 name|defaultSchema
 argument_list|,
@@ -1367,7 +1376,6 @@ name|void
 name|refreshView
 parameter_list|()
 block|{
-comment|/*          * for (int i = 0; i< optionBindings.length; i++) {          * optionBindings[i].updateView(); }          */
 name|sqlBinding
 operator|.
 name|updateView
@@ -1423,7 +1431,6 @@ name|void
 name|refreshGeneratorAction
 parameter_list|()
 block|{
-comment|// prepareMigrator();
 name|refreshSQLAction
 argument_list|()
 expr_stmt|;
@@ -1434,8 +1441,6 @@ name|void
 name|refreshSQLAction
 parameter_list|()
 block|{
-comment|// sync generator with defaults, make SQL, then sync the view...
-comment|// generatorDefaults.configureGenerator(generator);
 name|createSQL
 argument_list|()
 expr_stmt|;
