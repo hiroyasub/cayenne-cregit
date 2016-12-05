@@ -131,7 +131,7 @@ name|dbsync
 operator|.
 name|merge
 operator|.
-name|AddColumnToDb
+name|AddColumnToModel
 import|;
 end_import
 
@@ -147,7 +147,7 @@ name|dbsync
 operator|.
 name|merge
 operator|.
-name|AddRelationshipToDb
+name|AddRelationshipToModel
 import|;
 end_import
 
@@ -2557,7 +2557,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|AddColumnToDb
+name|AddColumnToModel
 argument_list|(
 literal|null
 argument_list|,
@@ -2570,7 +2570,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|AddRelationshipToDb
+name|AddRelationshipToModel
 argument_list|(
 literal|null
 argument_list|,
@@ -2604,13 +2604,13 @@ name|assertEquals
 argument_list|(
 name|asList
 argument_list|(
-literal|"AddColumnToDb"
+literal|"AddColumnToModel"
 argument_list|,
 literal|"CreateTableToDb"
 argument_list|,
 literal|"CreateTableToModel"
 argument_list|,
-literal|"AddRelationshipToDb"
+literal|"AddRelationshipToModel"
 argument_list|)
 argument_list|,
 name|toClasses
