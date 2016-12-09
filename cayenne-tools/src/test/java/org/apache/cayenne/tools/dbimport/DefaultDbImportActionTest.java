@@ -131,6 +131,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|AddColumnToModel
 import|;
 end_import
@@ -146,6 +148,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|AddRelationshipToModel
 import|;
@@ -163,6 +167,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|CreateTableToDb
 import|;
 end_import
@@ -179,6 +185,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|CreateTableToModel
 import|;
 end_import
@@ -193,7 +201,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|DefaultModelMergeDelegate
 import|;
@@ -210,6 +220,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|MergerToken
 import|;

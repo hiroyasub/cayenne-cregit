@@ -31,6 +31,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|AddColumnToDb
 import|;
 end_import
@@ -46,6 +48,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|AddColumnToModel
 import|;
@@ -63,6 +67,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|AddRelationshipToDb
 import|;
 end_import
@@ -78,6 +84,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|AddRelationshipToModel
 import|;
@@ -95,6 +103,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|CreateTableToDb
 import|;
 end_import
@@ -110,6 +120,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|CreateTableToModel
 import|;
@@ -127,6 +139,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|DropColumnToDb
 import|;
 end_import
@@ -142,6 +156,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|DropColumnToModel
 import|;
@@ -159,6 +175,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|DropRelationshipToDb
 import|;
 end_import
@@ -174,6 +192,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|DropRelationshipToModel
 import|;
@@ -191,6 +211,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|DropTableToDb
 import|;
 end_import
@@ -206,6 +228,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|DropTableToModel
 import|;
@@ -223,6 +247,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|MergerToken
 import|;
 end_import
@@ -238,6 +264,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|SetAllowNullToDb
 import|;
@@ -255,6 +283,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|SetAllowNullToModel
 import|;
 end_import
@@ -270,6 +300,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|SetColumnTypeToDb
 import|;
@@ -287,6 +319,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|SetColumnTypeToModel
 import|;
 end_import
@@ -302,6 +336,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|SetNotNullToDb
 import|;
@@ -319,6 +355,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|SetNotNullToModel
 import|;
 end_import
@@ -334,6 +372,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|SetPrimaryKeyToDb
 import|;
@@ -351,6 +391,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|SetPrimaryKeyToModel
 import|;
 end_import
@@ -367,6 +409,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|SetValueForNullToDb
 import|;
 end_import
@@ -382,6 +426,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|ValueForNullProvider
 import|;

@@ -73,6 +73,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|context
+operator|.
 name|EntityMergeSupport
 import|;
 end_import

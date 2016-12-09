@@ -45,6 +45,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|CreateTableToDb
 import|;
 end_import
@@ -60,6 +62,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|DropRelationshipToDb
 import|;
@@ -77,6 +81,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|MergerToken
 import|;
 end_import
@@ -92,6 +98,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|SetAllowNullToDb
 import|;
@@ -109,6 +117,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|SetColumnTypeToDb
 import|;
 end_import
@@ -124,6 +134,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|SetNotNullToDb
 import|;
