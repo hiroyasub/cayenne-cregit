@@ -15,6 +15,20 @@ name|configuration
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Binder
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines the names of runtime properties and DI collections used in DI modules  * used to configure server and client runtime.  *   * @since 3.1  */
 end_comment
@@ -25,7 +39,7 @@ interface|interface
 name|Constants
 block|{
 comment|// DI "collections"
-comment|/** 	 * A DI container key for the Map&lt;String, String&gt; storing properties 	 * used by built-in Cayenne service. 	 */
+comment|/** 	 * A DI container key for the Map&lt;String, String&gt; storing properties 	 * used by built-in Cayenne service. 	 * 	 * @see org.apache.cayenne.configuration.server.ServerModule#contributeProperties(Binder). 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -43,7 +57,7 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/** 	 * A DI container key for the List&lt;DataChannelFilter&gt; storing 	 * DataDomain filters. 	 */
+comment|/** 	 * A DI container key for the List&lt;DataChannelFilter&gt; storing 	 * DataDomain filters.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainFilters(Binder). 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -61,7 +75,7 @@ name|SERVER_PROJECT_LOCATIONS_LIST
 init|=
 literal|"cayenne.server.project_locations"
 decl_stmt|;
-comment|/** 	 * A DI container key for the List&lt;ExtendedType&gt; storing default 	 * adapter-agnostic ExtendedTypes. 	 */
+comment|/** 	 * A DI container key for the List&lt;ExtendedType&gt; storing default 	 * adapter-agnostic ExtendedTypes. 	 * 	 * @see org.apache.cayenne.configuration.server.ServerModule#contributeDefaultTypes(Binder). 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -70,7 +84,7 @@ name|SERVER_DEFAULT_TYPES_LIST
 init|=
 literal|"cayenne.server.default_types"
 decl_stmt|;
-comment|/** 	 * A DI container key for the List&lt;ExtendedType&gt; storing a 	 * user-provided ExtendedTypes. 	 */
+comment|/** 	 * A DI container key for the List&lt;ExtendedType&gt; storing a 	 * user-provided ExtendedTypes. 	 * 	 * @see org.apache.cayenne.configuration.server.ServerModule#contributeUserTypes(Binder). 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -79,7 +93,7 @@ name|SERVER_USER_TYPES_LIST
 init|=
 literal|"cayenne.server.user_types"
 decl_stmt|;
-comment|/** 	 * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing 	 * default and user-provided ExtendedTypeFactories. 	 */
+comment|/** 	 * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing 	 * default and user-provided ExtendedTypeFactories. 	 * 	 * @see org.apache.cayenne.configuration.server.ServerModule#contributeTypeFactories(Binder). 	 */
 specifier|public
 specifier|static
 specifier|final
