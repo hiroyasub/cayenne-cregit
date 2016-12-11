@@ -37,6 +37,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|ServerModule
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Binder
@@ -130,7 +146,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Include this module when creating a ServerRuntime in order to add support for  * joda-time ObjAttributes.  *   * @since 4.0  */
+comment|/**  * Include this module when creating a ServerRuntime in order to add support for  * joda-time ObjAttributes.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -155,13 +171,11 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
-name|binder
+name|ServerModule
 operator|.
-name|bindList
+name|contributeDefaultExtendedTypes
 argument_list|(
-name|Constants
-operator|.
-name|SERVER_DEFAULT_TYPES_LIST
+name|binder
 argument_list|)
 operator|.
 name|add
