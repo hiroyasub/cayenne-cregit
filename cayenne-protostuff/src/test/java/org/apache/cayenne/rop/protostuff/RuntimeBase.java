@@ -39,7 +39,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -264,7 +268,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CHANNEL_EVENTS_PROPERTY
 argument_list|,

@@ -37,7 +37,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -150,7 +154,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This {@link Provider} initializes HTTP/2 {@link ClientConnection} through {@link JettyHttpROPConnector} which uses  * {@link org.eclipse.jetty.client.HttpClient} over {@link org.eclipse.jetty.http2.client.HTTP2Client}.  * It works without ALPN by default.  *<p>  * In order to use it with ALPN you have to set {@link Constants#ROP_SERVICE_USE_ALPN_PROPERTY} to true  * and provide the alpn-boot-XXX.jar into the bootstrap classpath.  */
+comment|/**  * This {@link Provider} initializes HTTP/2 {@link ClientConnection} through {@link JettyHttpROPConnector} which uses  * {@link org.eclipse.jetty.client.HttpClient} over {@link org.eclipse.jetty.http2.client.HTTP2Client}.  * It works without ALPN by default.  *<p>  * In order to use it with ALPN you have to set {@link ClientConstants#ROP_SERVICE_USE_ALPN_PROPERTY} to true  * and provide the alpn-boot-XXX.jar into the bootstrap classpath.  */
 end_comment
 
 begin_class
@@ -187,7 +191,7 @@ name|runtimeProperties
 operator|.
 name|getBoolean
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_USE_ALPN_PROPERTY
 argument_list|,

@@ -23,7 +23,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -269,67 +273,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotSame
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -349,7 +293,7 @@ annotation|@
 name|ClientRuntimeProperty
 argument_list|(
 block|{
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CHANNEL_EVENTS_PROPERTY
 block|,

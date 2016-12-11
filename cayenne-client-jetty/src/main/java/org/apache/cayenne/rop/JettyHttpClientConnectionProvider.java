@@ -49,7 +49,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|RuntimeProperties
 import|;
 end_import
 
@@ -63,7 +63,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|RuntimeProperties
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -295,7 +299,7 @@ name|runtimeProperties
 operator|.
 name|get
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_SHARED_SESSION_PROPERTY
 argument_list|)
@@ -351,7 +355,7 @@ name|runtimeProperties
 operator|.
 name|get
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_URL_PROPERTY
 argument_list|)
@@ -369,7 +373,7 @@ name|ConfigurationException
 argument_list|(
 literal|"No property defined for '%s', can't initialize connection"
 argument_list|,
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_URL_PROPERTY
 argument_list|)
@@ -382,7 +386,7 @@ name|runtimeProperties
 operator|.
 name|get
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_USERNAME_PROPERTY
 argument_list|)
@@ -394,7 +398,7 @@ name|runtimeProperties
 operator|.
 name|getLong
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_TIMEOUT_PROPERTY
 argument_list|,
@@ -514,7 +518,7 @@ name|runtimeProperties
 operator|.
 name|get
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_PASSWORD_PROPERTY
 argument_list|)
@@ -526,7 +530,7 @@ name|runtimeProperties
 operator|.
 name|get
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_REALM_PROPERTY
 argument_list|)

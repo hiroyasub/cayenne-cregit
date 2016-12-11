@@ -41,7 +41,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -139,7 +143,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_URL_PROPERTY
 argument_list|,
@@ -150,7 +154,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_USERNAME_PROPERTY
 argument_list|,
@@ -161,7 +165,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_PASSWORD_PROPERTY
 argument_list|,

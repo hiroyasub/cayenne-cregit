@@ -278,7 +278,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_URL_PROPERTY
 argument_list|,
@@ -632,7 +632,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CHANNEL_EVENTS_PROPERTY
 argument_list|,
