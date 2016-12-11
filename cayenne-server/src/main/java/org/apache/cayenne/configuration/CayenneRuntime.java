@@ -95,8 +95,28 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
-comment|/**  * A superclass of various Cayenne runtime stacks. A Runtime is the main access  * point to Cayenne for a user application. It provides a default Cayenne  * configuration as well as a way to customize this configuration via a built-in  * dependency injection (DI) container. In fact implementation-wise, Runtime  * object is just a convenience thin wrapper around a DI {@link Injector}.  *   * @since 3.1  */
+comment|/**  * A superclass of various Cayenne runtime stacks. A Runtime is the main access  * point to Cayenne for a user application. It provides a default Cayenne  * configuration as well as a way to customize this configuration via a built-in  * dependency injection (DI) container. In fact implementation-wise, Runtime  * object is just a convenience thin wrapper around a DI {@link Injector}.  *  * @since 3.1  */
 end_comment
 
 begin_class
@@ -105,7 +125,7 @@ specifier|abstract
 class|class
 name|CayenneRuntime
 block|{
-comment|/** 	 * A holder of an Injector bound to the current thread. Used mainly to allow 	 * serializable contexts to attach to correct Cayenne stack on 	 * deserialization. 	 *  	 * @since 3.1 	 */
+comment|/**      * A holder of an Injector bound to the current thread. Used mainly to allow      * serializable contexts to attach to correct Cayenne stack on      * deserialization.      *      * @since 3.1      */
 specifier|protected
 specifier|static
 specifier|final
@@ -122,7 +142,7 @@ name|Injector
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/** 	 * Binds a DI {@link Injector} bound to the current thread. It is primarily 	 * intended for deserialization of ObjectContexts. 	 *  	 * @since 3.1 	 */
+comment|/**      * Binds a DI {@link Injector} bound to the current thread. It is primarily      * intended for deserialization of ObjectContexts.      *      * @since 3.1      */
 specifier|public
 specifier|static
 name|void
@@ -140,7 +160,7 @@ name|injector
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns the {@link Injector} bound to the current thread. Will return 	 * null if none is bound. 	 *  	 * @since 3.1 	 */
+comment|/**      * Returns the {@link Injector} bound to the current thread. Will return      * null if none is bound.      *      * @since 3.1      */
 specifier|public
 specifier|static
 name|Injector
@@ -159,22 +179,33 @@ name|Injector
 name|injector
 decl_stmt|;
 specifier|protected
+name|Collection
+argument_list|<
 name|Module
-name|module
+argument_list|>
+name|modules
 decl_stmt|;
-comment|/** 	 * Creates a CayenneRuntime with configuration based on the supplied array 	 * of DI modules. 	 */
-specifier|public
+comment|/**      * Creates a CayenneRuntime with configuration based on the supplied collection of DI modules.      */
+specifier|protected
 name|CayenneRuntime
 parameter_list|(
+name|Collection
+argument_list|<
 name|Module
-name|module
+argument_list|>
+name|modules
 parameter_list|)
 block|{
 name|this
 operator|.
-name|module
+name|modules
 operator|=
-name|module
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
+name|modules
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -184,39 +215,24 @@ name|DIBootstrap
 operator|.
 name|createInjector
 argument_list|(
-name|module
+name|modules
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns an array of modules used to initialize this runtime. 	 *  	 * @deprecated since 4.0. We only keep one module now, so use 	 *             {@link #getModule()}. 	 */
-annotation|@
-name|Deprecated
+comment|/**      * Returns the collection of modules used to initialize this runtime.      *      * @since 4.0      */
 specifier|public
+name|Collection
+argument_list|<
 name|Module
-index|[]
+argument_list|>
 name|getModules
 parameter_list|()
 block|{
 return|return
-operator|new
-name|Module
-index|[]
-block|{
-name|module
-block|}
+name|modules
 return|;
 block|}
-comment|/** 	 *  	 * Returns the module used to initialize this runtime. 	 *  	 * @since 4.0 	 */
-specifier|public
-name|Module
-name|getModule
-parameter_list|()
-block|{
-return|return
-name|module
-return|;
-block|}
-comment|/** 	 * Returns DI injector used by this runtime. 	 */
+comment|/**      * Returns DI injector used by this runtime.      */
 specifier|public
 name|Injector
 name|getInjector
@@ -226,7 +242,7 @@ return|return
 name|injector
 return|;
 block|}
-comment|/** 	 * Shuts down the DI injector of this runtime, giving all services that need 	 * to release some resources a chance to do that. 	 */
+comment|/**      * Shuts down the DI injector of this runtime, giving all services that need      * to release some resources a chance to do that.      */
 comment|// the following annotation is for environments that manage CayenneRuntimes
 comment|// within
 comment|// another DI registry (e.g. unit tests)
@@ -243,7 +259,7 @@ name|shutdown
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * Returns the runtime {@link DataChannel}. 	 */
+comment|/**      * Returns the runtime {@link DataChannel}.      */
 specifier|public
 name|DataChannel
 name|getChannel
@@ -260,7 +276,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a new ObjectContext instance based on the runtime's main 	 * DataChannel. 	 *  	 * @since 4.0 	 */
+comment|/**      * Returns a new ObjectContext instance based on the runtime's main      * DataChannel.      *      * @since 4.0      */
 specifier|public
 name|ObjectContext
 name|newContext
@@ -280,7 +296,7 @@ name|createContext
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a new ObjectContext which is a child of the specified 	 * DataChannel. This method is used for creation of nested ObjectContexts, 	 * with parent ObjectContext passed as an argument. 	 *  	 * @since 4.0 	 */
+comment|/**      * Returns a new ObjectContext which is a child of the specified      * DataChannel. This method is used for creation of nested ObjectContexts,      * with parent ObjectContext passed as an argument.      *      * @since 4.0      */
 specifier|public
 name|ObjectContext
 name|newContext
@@ -305,7 +321,7 @@ name|parentChannel
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @deprecated since 3.1 use better named {@link #newContext()} instead. 	 */
+comment|/**      * @deprecated since 3.1 use better named {@link #newContext()} instead.      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -318,7 +334,7 @@ name|newContext
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @deprecated since 3.1 use better named {@link #newContext(DataChannel)} 	 *             instead. 	 */
+comment|/**      * @deprecated since 3.1 use better named {@link #newContext(DataChannel)}      * instead.      */
 annotation|@
 name|Deprecated
 specifier|public
