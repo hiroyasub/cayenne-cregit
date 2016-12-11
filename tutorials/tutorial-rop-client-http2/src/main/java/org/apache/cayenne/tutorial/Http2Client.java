@@ -109,7 +109,7 @@ name|cayenne
 operator|.
 name|java8
 operator|.
-name|CayenneJava8Module
+name|Java8Module
 import|;
 end_import
 
@@ -458,7 +458,7 @@ name|ProtostuffModule
 argument_list|()
 argument_list|,
 operator|new
-name|CayenneJava8Module
+name|Java8Module
 argument_list|()
 argument_list|)
 decl_stmt|;
