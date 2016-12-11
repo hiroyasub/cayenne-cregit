@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|joda
+name|crypto
 package|;
 end_package
 
@@ -72,7 +72,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|JodaModuleProvider
+name|CryptoModuleProvider
 implements|implements
 name|ModuleProvider
 block|{
@@ -85,7 +85,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|JodaModule
+name|CryptoModule
 argument_list|()
 return|;
 block|}
@@ -102,7 +102,7 @@ name|moduleType
 parameter_list|()
 block|{
 return|return
-name|JodaModule
+name|CryptoModule
 operator|.
 name|class
 return|;
@@ -122,6 +122,7 @@ argument_list|>
 name|overrides
 parameter_list|()
 block|{
+comment|// we don't override anything, we only decorate ServerModule services...
 return|return
 name|Collections
 operator|.

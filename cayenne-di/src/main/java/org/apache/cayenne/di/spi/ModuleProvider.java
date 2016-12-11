@@ -31,6 +31,16 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
 begin_comment
 comment|/**  * Provider of modules used by module auto-loading mechanism to identify and load modules.  *  * @since 4.0  */
 end_comment
@@ -54,13 +64,15 @@ name|moduleType
 parameter_list|()
 function_decl|;
 comment|/**      * Returns an array of module types this module overrides. Module auto-loading mechanism will ensure module      * load order that respects overriding preferences.      *      * @return a collection of module types this module overrides.      */
+name|Collection
+argument_list|<
 name|Class
 argument_list|<
 name|?
 extends|extends
 name|Module
 argument_list|>
-index|[]
+argument_list|>
 name|overrides
 parameter_list|()
 function_decl|;
