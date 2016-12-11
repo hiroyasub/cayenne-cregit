@@ -322,8 +322,9 @@ decl_stmt|;
 name|CryptoModuleBuilder
 name|builder
 init|=
-operator|new
-name|CryptoModuleBuilder
+name|CryptoModule
+operator|.
+name|builder
 argument_list|()
 operator|.
 name|keyStore
