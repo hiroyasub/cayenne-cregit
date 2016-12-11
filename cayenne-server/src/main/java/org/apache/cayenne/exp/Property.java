@@ -210,7 +210,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Constructs a property path by appending the argument to the      * existing property separated by a dot      */
+comment|/**      * Constructs a property path by appending the argument to the existing property separated by a dot.      *      * @return a newly created Property object.      */
 specifier|public
 name|Property
 argument_list|<
@@ -238,7 +238,7 @@ name|property
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Constructs a property path by appending the argument to the      * existing property separated by a dot      */
+comment|/**      * Constructs a new property path by appending the argument to the existing property separated by a dot.      *      * @return a newly created Property object.      */
 specifier|public
 parameter_list|<
 name|T
@@ -313,6 +313,22 @@ operator|.
 name|endsWith
 argument_list|(
 literal|"+"
+argument_list|)
+return|;
+block|}
+comment|/**      * Converts this property to a path expression.      *      * @return a newly created expression.      */
+specifier|public
+name|Expression
+name|path
+parameter_list|()
+block|{
+return|return
+name|ExpressionFactory
+operator|.
+name|pathExp
+argument_list|(
+name|getName
+argument_list|()
 argument_list|)
 return|;
 block|}

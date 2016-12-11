@@ -3976,6 +3976,42 @@ return|return
 name|like
 return|;
 block|}
+comment|/** 	 * @param pathSpec a String "obj:" path. 	 * @since 4.0 	 * @return a new "obj:" path expression for the specified String path. 	 */
+specifier|public
+specifier|static
+name|Expression
+name|pathExp
+parameter_list|(
+name|String
+name|pathSpec
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ASTObjPath
+argument_list|(
+name|pathSpec
+argument_list|)
+return|;
+block|}
+comment|/** 	 * @param pathSpec a String db: path. 	 * @since 4.0 	 * @return a new "db:" path expression for the specified String path. 	 */
+specifier|public
+specifier|static
+name|Expression
+name|dbPathExp
+parameter_list|(
+name|String
+name|pathSpec
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ASTDbPath
+argument_list|(
+name|pathSpec
+argument_list|)
+return|;
+block|}
 comment|/** 	 * A convenience shortcut for boolean true expression. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|static
