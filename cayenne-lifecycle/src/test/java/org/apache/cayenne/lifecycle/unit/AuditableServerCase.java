@@ -443,7 +443,7 @@ name|configureCayenne
 parameter_list|()
 block|{
 return|return
-name|ServerRuntimeBuilder
+name|ServerRuntime
 operator|.
 name|builder
 argument_list|()

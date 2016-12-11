@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *   * @since 4.0  */
+comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -231,6 +231,9 @@ specifier|private
 name|String
 name|validationQuery
 decl_stmt|;
+comment|/**      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder
@@ -238,11 +241,15 @@ name|builder
 parameter_list|()
 block|{
 return|return
-operator|new
-name|ServerRuntimeBuilder
+name|ServerRuntime
+operator|.
+name|builder
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder(String)}      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder
@@ -253,14 +260,15 @@ name|name
 parameter_list|)
 block|{
 return|return
-operator|new
-name|ServerRuntimeBuilder
+name|ServerRuntime
+operator|.
+name|builder
 argument_list|(
 name|name
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates an empty builder. 	 */
+comment|/**      * Creates an empty builder.      */
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|()
@@ -271,7 +279,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates a builder with a fixed name of the DataDomain of the resulting 	 * ServerRuntime. Specifying explicit name is often needed for consistency 	 * in runtimes merged from multiple configs, each having its own name. 	 */
+comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      */
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|(
@@ -308,7 +316,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/** 	 * Sets a DataSource that will override any DataSources found in the 	 * mapping. If the mapping contains no DataNodes, and the DataSource is set 	 * with this method, the builder would create a single default DataNode. 	 *  	 * @see DataSourceBuilder 	 */
+comment|/**      * Sets a DataSource that will override any DataSources found in the      * mapping. If the mapping contains no DataNodes, and the DataSource is set      * with this method, the builder would create a single default DataNode.      *      * @see DataSourceBuilder      */
 specifier|public
 name|ServerRuntimeBuilder
 name|dataSource
@@ -331,7 +339,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets JNDI location for the default DataSource. If the mapping contains no 	 * DataNodes, and the DataSource is set with this method, the builder would 	 * create a single default DataNode. 	 */
+comment|/**      * Sets JNDI location for the default DataSource. If the mapping contains no      * DataNodes, and the DataSource is set with this method, the builder would      * create a single default DataNode.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|jndiDataSource
@@ -354,7 +362,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a database URL for the default DataSource. 	 */
+comment|/**      * Sets a database URL for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|url
@@ -373,7 +381,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a driver Java class for the default DataSource. 	 */
+comment|/**      * Sets a driver Java class for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|jdbcDriver
@@ -393,7 +401,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a validation query for the default DataSource. 	 *  	 * @param validationQuery 	 *            a SQL string that returns some result. It will be used to 	 *            validate connections in the pool. 	 */
+comment|/**      * Sets a validation query for the default DataSource.      *      * @param validationQuery a SQL string that returns some result. It will be used to      *                        validate connections in the pool.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|validationQuery
@@ -430,7 +438,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a user name for the default DataSource. 	 */
+comment|/**      * Sets a user name for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|user
@@ -449,7 +457,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a password for the default DataSource. 	 */
+comment|/**      * Sets a password for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|password

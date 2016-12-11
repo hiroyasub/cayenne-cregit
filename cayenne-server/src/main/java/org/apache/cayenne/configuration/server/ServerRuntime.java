@@ -140,7 +140,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object representing Cayenne server-stack that connects directly to the  * database via JDBC. This is an entry point for user applications to access  * Cayenne, which encapsulates the dependency injection internals. The term  * "server" is used as opposed to ROP "client" (see {@link CayenneRuntime}). Any  * application, desktop, server, etc. that has a direct JDBC connection should  * be using this runtime.  *   * @since 3.1  */
+comment|/**  * An object representing Cayenne server-stack that connects directly to the  * database via JDBC. This is an entry point for user applications to access  * Cayenne, which encapsulates the dependency injection internals. The term  * "server" is used as opposed to ROP "client" (see {@link CayenneRuntime}). Any  * application, desktop, server, etc. that has a direct JDBC connection should  * be using this runtime.  *  * @since 3.1  */
 end_comment
 
 begin_class
@@ -150,6 +150,37 @@ name|ServerRuntime
 extends|extends
 name|CayenneRuntime
 block|{
+comment|/**      * Creates a builder of ServerRuntime.      *      * @return a builder of ServerRuntime.      * @since 4.0      */
+specifier|public
+specifier|static
+name|ServerRuntimeBuilder
+name|builder
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ServerRuntimeBuilder
+argument_list|()
+return|;
+block|}
+comment|/**      * Creates a builder of ServerRuntime.      *      * @param name      * @return a named builder of ServerRuntime.      */
+specifier|public
+specifier|static
+name|ServerRuntimeBuilder
+name|builder
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ServerRuntimeBuilder
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
 specifier|private
 specifier|static
 name|ModuleCollection
@@ -172,7 +203,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a server runtime configuring it with a standard set of services 	 * contained in {@link ServerModule}. CayenneServerModule is created with 	 * provided 'configurationLocation'. An optional array of extra modules may 	 * contain service overrides and/or user services. 	 */
+comment|/**      * Creates a server runtime configuring it with a standard set of services      * contained in {@link ServerModule}. CayenneServerModule is created with      * provided 'configurationLocation'. An optional array of extra modules may      * contain service overrides and/or user services.      */
 specifier|public
 name|ServerRuntime
 parameter_list|(
@@ -198,7 +229,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates a server runtime configuring it with a standard set of services 	 * contained in {@link ServerModule}. CayenneServerModule is created with 	 * one or more 'configurationLocations'. An optional array of extra modules 	 * may contain service overrides and/or user services. 	 */
+comment|/**      * Creates a server runtime configuring it with a standard set of services      * contained in {@link ServerModule}. CayenneServerModule is created with      * one or more 'configurationLocations'. An optional array of extra modules      * may contain service overrides and/or user services.      */
 specifier|public
 name|ServerRuntime
 parameter_list|(
@@ -225,7 +256,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Runs provided operation wrapped in a single transaction. Transaction 	 * handling delegated to the internal {@link TransactionManager}. Nested 	 * calls to 'performInTransaction' are safe and attached to the same 	 * in-progress transaction. TransactionalOperation can be some arbitrary 	 * user code, which most often than not will consist of multiple Cayenne 	 * operations. 	 *  	 * @since 4.0 	 */
+comment|/**      * Runs provided operation wrapped in a single transaction. Transaction      * handling delegated to the internal {@link TransactionManager}. Nested      * calls to 'performInTransaction' are safe and attached to the same      * in-progress transaction. TransactionalOperation can be some arbitrary      * user code, which most often than not will consist of multiple Cayenne      * operations.      *      * @since 4.0      */
 specifier|public
 parameter_list|<
 name|T
@@ -261,7 +292,7 @@ name|op
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Runs provided operation wrapped in a single transaction. Transaction 	 * handling delegated to the internal {@link TransactionManager}. Nested 	 * calls to 'performInTransaction' are safe and attached to the same 	 * in-progress transaction. TransactionalOperation can be some arbitrary 	 * user code, which most often than not will consist of multiple Cayenne 	 * operations. 	 * 	 * @since 4.0 	 */
+comment|/**      * Runs provided operation wrapped in a single transaction. Transaction      * handling delegated to the internal {@link TransactionManager}. Nested      * calls to 'performInTransaction' are safe and attached to the same      * in-progress transaction. TransactionalOperation can be some arbitrary      * user code, which most often than not will consist of multiple Cayenne      * operations.      *      * @since 4.0      */
 specifier|public
 parameter_list|<
 name|T
@@ -302,7 +333,7 @@ name|callback
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns the main runtime DataDomain. Note that by default the returned 	 * DataDomain is the same as the main DataChannel returned by 	 * {@link #getChannel()}. Although users may redefine DataChannel provider 	 * in the DI registry, for instance to decorate this DataDomain with a 	 * custom wrapper. 	 */
+comment|/**      * Returns the main runtime DataDomain. Note that by default the returned      * DataDomain is the same as the main DataChannel returned by      * {@link #getChannel()}. Although users may redefine DataChannel provider      * in the DI registry, for instance to decorate this DataDomain with a      * custom wrapper.      */
 specifier|public
 name|DataDomain
 name|getDataDomain
@@ -319,7 +350,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a default DataSource for this runtime. If no default DataSource 	 * exists, an exception is thrown. 	 *  	 * @since 4.0 	 */
+comment|/**      * Returns a default DataSource for this runtime. If no default DataSource      * exists, an exception is thrown.      *      * @since 4.0      */
 specifier|public
 name|DataSource
 name|getDataSource
@@ -390,7 +421,7 @@ name|getDataSource
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Provides access to the JDBC DataSource assigned to a given DataNode. A 	 * null argument will work if there's only one DataNode configured. 	 *<p> 	 * Normally Cayenne applications don't need to access DataSource or any 	 * other JDBC code directly, however in some unusual conditions it may be 	 * needed, and this method provides a shortcut to raw JDBC. 	 */
+comment|/**      * Provides access to the JDBC DataSource assigned to a given DataNode. A      * null argument will work if there's only one DataNode configured.      *<p>      * Normally Cayenne applications don't need to access DataSource or any      * other JDBC code directly, however in some unusual conditions it may be      * needed, and this method provides a shortcut to raw JDBC.      */
 specifier|public
 name|DataSource
 name|getDataSource
