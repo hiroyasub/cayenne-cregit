@@ -15,19 +15,55 @@ name|project
 package|;
 end_package
 
-begin_comment
-comment|/**  * @since 3.1  * @deprecated since 4.0 renamed to {@link ProjectModule}.  */
-end_comment
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|util
+operator|.
+name|ModuleProviderChecker
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
 
 begin_class
-annotation|@
-name|Deprecated
 specifier|public
 class|class
-name|CayenneProjectModule
-extends|extends
-name|ProjectModule
-block|{ }
+name|ProjectModuleProviderTest
+block|{
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testProviderPresent
+parameter_list|()
+block|{
+name|ModuleProviderChecker
+operator|.
+name|testProviderPresent
+argument_list|(
+name|ProjectModuleProvider
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 end_class
 
 end_unit
