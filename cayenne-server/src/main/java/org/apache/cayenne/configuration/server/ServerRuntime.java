@@ -209,7 +209,7 @@ name|ServerRuntimeBuilder
 argument_list|()
 return|;
 block|}
-comment|/**      * Creates a builder of ServerRuntime.      *      * @param name      * @return a named builder of ServerRuntime.      */
+comment|/**      * Creates a builder of ServerRuntime.      *      * @param name optional symbolic name of the created runtime.      * @return a named builder of ServerRuntime.      */
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder

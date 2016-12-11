@@ -117,6 +117,22 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|spi
+operator|.
+name|ModuleLoader
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|sql
@@ -246,7 +262,10 @@ name|name
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates an empty builder.      */
+comment|/**      * Creates an empty builder.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
+annotation|@
+name|Deprecated
+comment|// TODO remove once we are comfortable with removal of the deprecated API
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|()
@@ -257,7 +276,10 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      */
+comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder(String)}      */
+annotation|@
+name|Deprecated
+comment|// TODO make private once we are comfortable with removal of the deprecated API
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|(
@@ -638,15 +660,6 @@ name|Collection
 argument_list|<
 name|Module
 argument_list|>
-name|configModules
-init|=
-name|buildConfigModules
-argument_list|()
-decl_stmt|;
-name|Collection
-argument_list|<
-name|Module
-argument_list|>
 name|allModules
 init|=
 operator|new
@@ -654,24 +667,21 @@ name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|// TODO: make ServerModule auto-loadable?
-name|allModules
-operator|.
-name|add
-argument_list|(
-operator|new
-name|ServerModule
-argument_list|()
-argument_list|)
-expr_stmt|;
+comment|// first load default or auto-loaded modules...
 name|allModules
 operator|.
 name|addAll
 argument_list|(
-name|configModules
+name|autoLoadModules
+condition|?
+name|autoLoadedModules
+argument_list|()
+else|:
+name|defaultModules
+argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// custom modules override config modules...
+comment|// custom modules override default and auto-loaded modules...
 name|allModules
 operator|.
 name|addAll
@@ -679,6 +689,15 @@ argument_list|(
 name|this
 operator|.
 name|modules
+argument_list|)
+expr_stmt|;
+comment|// builder modules override default, auto-loaded and custom modules...
+name|allModules
+operator|.
+name|addAll
+argument_list|(
+name|builderModules
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -692,9 +711,51 @@ block|}
 specifier|private
 name|Collection
 argument_list|<
+name|?
+extends|extends
 name|Module
 argument_list|>
-name|buildConfigModules
+name|autoLoadedModules
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ModuleLoader
+argument_list|()
+operator|.
+name|load
+argument_list|()
+return|;
+block|}
+specifier|private
+name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Module
+argument_list|>
+name|defaultModules
+parameter_list|()
+block|{
+return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
+operator|new
+name|ServerModule
+argument_list|()
+argument_list|)
+return|;
+block|}
+specifier|private
+name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Module
+argument_list|>
+name|builderModules
 parameter_list|()
 block|{
 name|Collection
