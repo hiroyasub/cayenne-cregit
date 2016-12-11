@@ -56,8 +56,6 @@ specifier|public
 name|void
 name|setUpRuntime
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|this
 operator|.
