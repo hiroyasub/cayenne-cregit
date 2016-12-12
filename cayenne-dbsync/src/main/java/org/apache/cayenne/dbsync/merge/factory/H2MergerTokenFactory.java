@@ -79,6 +79,8 @@ name|merge
 operator|.
 name|token
 operator|.
+name|db
+operator|.
 name|SetAllowNullToDb
 import|;
 end_import
@@ -97,6 +99,8 @@ name|merge
 operator|.
 name|token
 operator|.
+name|db
+operator|.
 name|SetColumnTypeToDb
 import|;
 end_import
@@ -114,6 +118,8 @@ operator|.
 name|merge
 operator|.
 name|token
+operator|.
+name|db
 operator|.
 name|SetPrimaryKeyToDb
 import|;

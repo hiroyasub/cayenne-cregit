@@ -151,10 +151,11 @@ name|DbEntity
 name|entity
 parameter_list|)
 block|{
+comment|//        return entity.getFullyQualifiedName();
 return|return
 name|entity
 operator|.
-name|getFullyQualifiedName
+name|getName
 argument_list|()
 return|;
 block|}

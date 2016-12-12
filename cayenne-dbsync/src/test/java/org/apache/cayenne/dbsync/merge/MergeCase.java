@@ -141,6 +141,8 @@ name|merge
 operator|.
 name|token
 operator|.
+name|db
+operator|.
 name|AbstractToDbToken
 import|;
 end_import
@@ -737,14 +739,14 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
-name|DbMerger
+name|DataMapMerger
 operator|.
 name|Builder
 name|merger
 parameter_list|()
 block|{
 return|return
-name|DbMerger
+name|DataMapMerger
 operator|.
 name|builder
 argument_list|(

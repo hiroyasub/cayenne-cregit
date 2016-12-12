@@ -346,14 +346,14 @@ argument_list|,
 name|importedFromDb
 argument_list|)
 expr_stmt|;
-name|createAttributeMerger
+name|createRelationshipMerger
 argument_list|(
 name|original
 argument_list|,
 name|importedFromDb
 argument_list|)
 expr_stmt|;
-name|createRelationshipMerger
+name|createAttributeMerger
 argument_list|(
 name|original
 argument_list|,

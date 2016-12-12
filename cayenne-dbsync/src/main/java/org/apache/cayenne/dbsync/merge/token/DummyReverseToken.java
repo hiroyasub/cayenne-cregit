@@ -78,6 +78,7 @@ comment|/**  * The reverse of a {@link MergerToken} that can not be reversed.. T
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|DummyReverseToken
 implements|implements

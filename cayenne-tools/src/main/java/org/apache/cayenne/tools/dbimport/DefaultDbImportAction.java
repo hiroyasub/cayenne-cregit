@@ -121,6 +121,8 @@ name|merge
 operator|.
 name|token
 operator|.
+name|model
+operator|.
 name|AbstractToModelToken
 import|;
 end_import

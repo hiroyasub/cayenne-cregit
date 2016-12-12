@@ -85,6 +85,8 @@ name|merge
 operator|.
 name|token
 operator|.
+name|db
+operator|.
 name|SetColumnTypeToDb
 import|;
 end_import
