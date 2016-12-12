@@ -103,7 +103,7 @@ name|DbRelationship
 name|relationship
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader2 does not deal with object layer anymore.      */
+comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
 annotation|@
 name|Deprecated
 name|void
@@ -113,7 +113,7 @@ name|ObjEntity
 name|entity
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader2 does not deal with object layer anymore.      */
+comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
 annotation|@
 name|Deprecated
 name|void

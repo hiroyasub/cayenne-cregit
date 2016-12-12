@@ -414,7 +414,7 @@ name|loadedData
 return|;
 block|}
 comment|//// Utility methods that better be moved somewhere ////
-comment|/**      * Retrieves catalogs for a given connection.      * using a static method for catalog loading as we don't need a full DbLoader2 for this operation      * @return List with the catalog names; empty list if none found.      */
+comment|/**      * Retrieves catalogs for a given connection.      * using a static method for catalog loading as we don't need a full DbLoader for this operation      * @return List with the catalog names; empty list if none found.      */
 specifier|public
 specifier|static
 name|List
@@ -451,7 +451,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**      * Retrieves the schemas for the given connection.      * using a static method for catalog loading as we don't need a full DbLoader2 for this operation      * @return List with the schema names; empty list if none found.      */
+comment|/**      * Retrieves the schemas for the given connection.      * using a static method for catalog loading as we don't need a full DbLoader for this operation      * @return List with the schema names; empty list if none found.      */
 specifier|public
 specifier|static
 name|List
