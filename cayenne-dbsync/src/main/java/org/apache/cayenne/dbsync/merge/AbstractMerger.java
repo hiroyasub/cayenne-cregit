@@ -346,6 +346,15 @@ argument_list|)
 return|;
 block|}
 block|}
+specifier|public
+specifier|abstract
+name|List
+argument_list|<
+name|MergerToken
+argument_list|>
+name|createMergeTokens
+parameter_list|()
+function_decl|;
 specifier|abstract
 name|MergerDictionaryDiff
 argument_list|<

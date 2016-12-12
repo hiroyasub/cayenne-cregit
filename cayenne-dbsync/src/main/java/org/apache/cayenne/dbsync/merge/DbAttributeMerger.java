@@ -460,7 +460,21 @@ argument_list|)
 expr_stmt|;
 comment|// not implemented yet
 comment|// isGenerated flag
-comment|//checkIsGenerated(same.getOriginal(), same.getImported(), tokens);
+name|checkIsGenerated
+argument_list|(
+name|same
+operator|.
+name|getOriginal
+argument_list|()
+argument_list|,
+name|same
+operator|.
+name|getImported
+argument_list|()
+argument_list|,
+name|tokens
+argument_list|)
+expr_stmt|;
 return|return
 name|tokens
 return|;
@@ -581,7 +595,7 @@ block|}
 comment|/**      * Check whether attributes have same type, max length, scale and precision      * @param original attribute in model      * @param imported attribute from db      * @return true if attributes not same      */
 specifier|private
 name|boolean
-name|needUpdate
+name|needUpdateType
 parameter_list|(
 name|DbAttribute
 name|original
@@ -682,7 +696,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|needUpdate
+name|needUpdateType
 argument_list|(
 name|original
 argument_list|,
@@ -711,9 +725,9 @@ name|createSetColumnTypeToDb
 argument_list|(
 name|originalDbEntity
 argument_list|,
-name|original
-argument_list|,
 name|imported
+argument_list|,
+name|original
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -750,6 +764,22 @@ condition|)
 block|{
 return|return;
 block|}
+block|}
+annotation|@
+name|Override
+specifier|public
+name|List
+argument_list|<
+name|MergerToken
+argument_list|>
+name|createMergeTokens
+parameter_list|()
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|()
+throw|;
 block|}
 block|}
 end_class
