@@ -134,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Loader for data from DB.  * Creates DbEntities and Procedures based on DB meta data.  * Consists of list of loaders that iteratively loads small parts of data,  * e.g. Entity name, Attributes, Relationships...  * @see AbstractLoader and its children  */
+comment|/**  * Loader for data from DB.  * Creates DbEntities and Procedures based on DB meta data.  * Consists of list of loaders that iteratively loads small parts of data,  * e.g. Entity name, Attributes, Relationships...  * @see AbstractLoader and its descendants  */
 end_comment
 
 begin_class

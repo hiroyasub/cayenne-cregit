@@ -135,7 +135,7 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|PrimaryKeyLoader
+name|DbLoader
 operator|.
 name|class
 argument_list|)

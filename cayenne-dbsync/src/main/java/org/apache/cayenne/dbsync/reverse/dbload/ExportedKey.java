@@ -110,7 +110,6 @@ name|short
 name|keySeq
 decl_stmt|;
 comment|/**      * Extracts data from a resultset pointing to a exported key to      * ExportedKey class instance      *      * @param rs ResultSet pointing to a exported key, fetched using      *           DataBaseMetaData.getExportedKeys(...)      */
-specifier|public
 name|ExportedKey
 parameter_list|(
 name|ResultSet
@@ -515,7 +514,6 @@ operator|+
 name|keySeq
 return|;
 block|}
-specifier|public
 name|String
 name|getStrKey
 parameter_list|()

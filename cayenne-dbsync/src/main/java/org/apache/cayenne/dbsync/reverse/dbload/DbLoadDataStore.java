@@ -25,16 +25,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
 import|;
 end_import
@@ -126,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Temporary storage for loaded from DB DbEntities and Procedures.  * DataMap is used but it's functionality is excessive and  * there can be unwanted side effects.  * To get rid of it parallel data structure for dbEntity, attributes,  * procedures etc.. must be created  */
+comment|/**  * Temporary storage for loaded from DB DbEntities and Procedures.  * DataMap is used but it's functionality is excessive and  * there can be unwanted side effects.  * But we can't get rid of it right now as parallel data structure  * for dbEntity, attributes, procedures etc.. must be created  * or some other work around should be implemented because  * some functionality relies on side effects (e.g. entity resolution  * in relationship)  */
 end_comment
 
 begin_class

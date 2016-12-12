@@ -65,7 +65,6 @@ name|uniqueRelName
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
 name|DbRelationshipDetected
 parameter_list|()
 block|{
@@ -81,7 +80,6 @@ name|fkName
 return|;
 block|}
 comment|/**      * Set the name of the underlying foreign key. Typically FK_NAME from jdbc metadata.      */
-specifier|public
 name|void
 name|setFkName
 parameter_list|(

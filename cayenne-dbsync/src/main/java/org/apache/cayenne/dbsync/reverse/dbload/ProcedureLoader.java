@@ -176,7 +176,7 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|ProcedureLoader
+name|DbLoader
 operator|.
 name|class
 argument_list|)
@@ -278,7 +278,7 @@ annotation|@
 name|Override
 specifier|protected
 name|void
-name|processResultSet
+name|processResultSetRow
 parameter_list|(
 name|CatalogFilter
 name|catalog

@@ -206,7 +206,7 @@ name|LogFactory
 operator|.
 name|getLog
 argument_list|(
-name|RelationshipLoader
+name|DbLoader
 operator|.
 name|class
 argument_list|)

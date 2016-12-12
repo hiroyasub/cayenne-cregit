@@ -206,7 +206,7 @@ name|next
 argument_list|()
 condition|)
 block|{
-name|processResultSet
+name|processResultSetRow
 argument_list|(
 name|catalog
 argument_list|,
@@ -254,7 +254,7 @@ name|SQLException
 function_decl|;
 specifier|abstract
 name|void
-name|processResultSet
+name|processResultSetRow
 parameter_list|(
 name|CatalogFilter
 name|catalog
