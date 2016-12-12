@@ -224,7 +224,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|DbMergerTest
+name|DataMapMergerTest
 block|{
 annotation|@
 name|Test
