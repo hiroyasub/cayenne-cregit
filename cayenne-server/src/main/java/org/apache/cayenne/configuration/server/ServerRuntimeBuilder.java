@@ -19,66 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedHashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -143,6 +83,20 @@ name|cayenne
 operator|.
 name|di
 operator|.
+name|ListBuilder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
 name|MapBuilder
 import|;
 end_import
@@ -161,8 +115,44 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|spi
+operator|.
+name|ModuleLoader
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|DataSource
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|*
+import|;
+end_import
+
 begin_comment
-comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *   * @since 4.0  */
+comment|/**  * A convenience class to assemble custom ServerRuntime. It allows to easily  * configure custom modules, multiple config locations, or quickly create a  * global DataSource.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -231,6 +221,13 @@ specifier|private
 name|String
 name|validationQuery
 decl_stmt|;
+specifier|private
+name|boolean
+name|autoLoadModules
+decl_stmt|;
+comment|/**      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder
@@ -238,11 +235,15 @@ name|builder
 parameter_list|()
 block|{
 return|return
-operator|new
-name|ServerRuntimeBuilder
+name|ServerRuntime
+operator|.
+name|builder
 argument_list|()
 return|;
 block|}
+comment|/**      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder(String)}      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder
@@ -253,14 +254,18 @@ name|name
 parameter_list|)
 block|{
 return|return
-operator|new
-name|ServerRuntimeBuilder
+name|ServerRuntime
+operator|.
+name|builder
 argument_list|(
 name|name
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates an empty builder. 	 */
+comment|/**      * Creates an empty builder.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
+annotation|@
+name|Deprecated
+comment|// TODO remove once we are comfortable with removal of the deprecated API
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|()
@@ -271,7 +276,10 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates a builder with a fixed name of the DataDomain of the resulting 	 * ServerRuntime. Specifying explicit name is often needed for consistency 	 * in runtimes merged from multiple configs, each having its own name. 	 */
+comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder(String)}      */
+annotation|@
+name|Deprecated
+comment|// TODO make private once we are comfortable with removal of the deprecated API
 specifier|public
 name|ServerRuntimeBuilder
 parameter_list|(
@@ -307,8 +315,30 @@ name|name
 operator|=
 name|name
 expr_stmt|;
+name|this
+operator|.
+name|autoLoadModules
+operator|=
+literal|true
+expr_stmt|;
 block|}
-comment|/** 	 * Sets a DataSource that will override any DataSources found in the 	 * mapping. If the mapping contains no DataNodes, and the DataSource is set 	 * with this method, the builder would create a single default DataNode. 	 *  	 * @see DataSourceBuilder 	 */
+comment|/**      * Disables DI module auto-loading. By default auto-loading is enabled based on      * {@link org.apache.cayenne.di.spi.ModuleLoader} service provider inetrface. If you decide to disable auto-loading,      * make sure you provide all the modules that you need.      *      * @return this builder instance.      */
+specifier|public
+name|ServerRuntimeBuilder
+name|disableModulesAutoLoading
+parameter_list|()
+block|{
+name|this
+operator|.
+name|autoLoadModules
+operator|=
+literal|false
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
+comment|/**      * Sets a DataSource that will override any DataSources found in the      * mapping. If the mapping contains no DataNodes, and the DataSource is set      * with this method, the builder would create a single default DataNode.      *      * @see DataSourceBuilder      */
 specifier|public
 name|ServerRuntimeBuilder
 name|dataSource
@@ -331,7 +361,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets JNDI location for the default DataSource. If the mapping contains no 	 * DataNodes, and the DataSource is set with this method, the builder would 	 * create a single default DataNode. 	 */
+comment|/**      * Sets JNDI location for the default DataSource. If the mapping contains no      * DataNodes, and the DataSource is set with this method, the builder would      * create a single default DataNode.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|jndiDataSource
@@ -354,7 +384,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a database URL for the default DataSource. 	 */
+comment|/**      * Sets a database URL for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|url
@@ -373,7 +403,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a driver Java class for the default DataSource. 	 */
+comment|/**      * Sets a driver Java class for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|jdbcDriver
@@ -393,7 +423,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a validation query for the default DataSource. 	 *  	 * @param validationQuery 	 *            a SQL string that returns some result. It will be used to 	 *            validate connections in the pool. 	 */
+comment|/**      * Sets a validation query for the default DataSource.      *      * @param validationQuery a SQL string that returns some result. It will be used to      *                        validate connections in the pool.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|validationQuery
@@ -430,7 +460,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a user name for the default DataSource. 	 */
+comment|/**      * Sets a user name for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|user
@@ -449,7 +479,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets a password for the default DataSource. 	 */
+comment|/**      * Sets a password for the default DataSource.      */
 specifier|public
 name|ServerRuntimeBuilder
 name|password
@@ -626,68 +656,180 @@ name|ServerRuntime
 name|build
 parameter_list|()
 block|{
-name|buildModules
+name|Collection
+argument_list|<
+name|Module
+argument_list|>
+name|allModules
+init|=
+operator|new
+name|ArrayList
+argument_list|<>
 argument_list|()
+decl_stmt|;
+comment|// first load default or auto-loaded modules...
+name|allModules
+operator|.
+name|addAll
+argument_list|(
+name|autoLoadModules
+condition|?
+name|autoLoadedModules
+argument_list|()
+else|:
+name|defaultModules
+argument_list|()
+argument_list|)
 expr_stmt|;
-name|String
-index|[]
-name|configs
-init|=
-name|this
+comment|// custom modules override default and auto-loaded modules...
+name|allModules
 operator|.
-name|configs
-operator|.
-name|toArray
+name|addAll
 argument_list|(
-operator|new
-name|String
-index|[
 name|this
 operator|.
-name|configs
-operator|.
-name|size
-argument_list|()
-index|]
+name|modules
 argument_list|)
-decl_stmt|;
-name|Module
-index|[]
-name|modules
-init|=
-name|this
+expr_stmt|;
+comment|// builder modules override default, auto-loaded and custom modules...
+name|allModules
 operator|.
-name|modules
-operator|.
-name|toArray
+name|addAll
 argument_list|(
-operator|new
-name|Module
-index|[
-name|this
-operator|.
-name|modules
-operator|.
-name|size
+name|builderModules
 argument_list|()
-index|]
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 return|return
 operator|new
 name|ServerRuntime
 argument_list|(
-name|configs
-argument_list|,
-name|modules
+name|allModules
 argument_list|)
 return|;
 block|}
 specifier|private
-name|void
-name|buildModules
+name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Module
+argument_list|>
+name|autoLoadedModules
 parameter_list|()
 block|{
+return|return
+operator|new
+name|ModuleLoader
+argument_list|()
+operator|.
+name|load
+argument_list|()
+return|;
+block|}
+specifier|private
+name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Module
+argument_list|>
+name|defaultModules
+parameter_list|()
+block|{
+return|return
+name|Collections
+operator|.
+name|singleton
+argument_list|(
+operator|new
+name|ServerModule
+argument_list|()
+argument_list|)
+return|;
+block|}
+specifier|private
+name|Collection
+argument_list|<
+name|?
+extends|extends
+name|Module
+argument_list|>
+name|builderModules
+parameter_list|()
+block|{
+name|Collection
+argument_list|<
+name|Module
+argument_list|>
+name|modules
+init|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|configs
+operator|.
+name|isEmpty
+argument_list|()
+condition|)
+block|{
+name|modules
+operator|.
+name|add
+argument_list|(
+operator|new
+name|Module
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+name|void
+name|configure
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|)
+block|{
+name|ListBuilder
+argument_list|<
+name|String
+argument_list|>
+name|locationsBinder
+init|=
+name|ServerModule
+operator|.
+name|contributeProjectLocations
+argument_list|(
+name|binder
+argument_list|)
+decl_stmt|;
+for|for
+control|(
+name|String
+name|c
+range|:
+name|configs
+control|)
+block|{
+name|locationsBinder
+operator|.
+name|add
+argument_list|(
+name|c
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
 name|String
 name|nameOverride
 init|=
@@ -700,8 +842,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// check if we need to force the default name ... we do when no
-comment|// configs or multiple configs are supplied.
+comment|// check if we need to force the default name ... we do when no configs or multiple configs are supplied.
 if|if
 condition|(
 name|configs
@@ -731,7 +872,9 @@ name|finalNameOverride
 init|=
 name|nameOverride
 decl_stmt|;
-name|prepend
+name|modules
+operator|.
+name|add
 argument_list|(
 operator|new
 name|Module
@@ -747,13 +890,11 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
-name|binder
+name|ServerModule
 operator|.
-name|bindMap
+name|contributeProperties
 argument_list|(
-name|Constants
-operator|.
-name|PROPERTIES_MAP
+name|binder
 argument_list|)
 operator|.
 name|put
@@ -777,7 +918,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|prepend
+name|modules
+operator|.
+name|add
 argument_list|(
 operator|new
 name|Module
@@ -828,8 +971,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|// URL and driver are the minimal requirement for
-comment|// DelegatingDataSourceFactory to work
+comment|// URL and driver are the minimal requirement for DelegatingDataSourceFactory to work
 if|else if
 condition|(
 name|jdbcUrl
@@ -841,7 +983,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|prepend
+name|modules
+operator|.
+name|add
 argument_list|(
 operator|new
 name|Module
@@ -875,17 +1019,15 @@ argument_list|)
 expr_stmt|;
 name|MapBuilder
 argument_list|<
-name|Object
+name|String
 argument_list|>
 name|props
 init|=
-name|binder
+name|ServerModule
 operator|.
-name|bindMap
+name|contributeProperties
 argument_list|(
-name|Constants
-operator|.
-name|PROPERTIES_MAP
+name|binder
 argument_list|)
 operator|.
 name|put
@@ -1040,26 +1182,9 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-specifier|private
-name|void
-name|prepend
-parameter_list|(
-name|Module
-name|module
-parameter_list|)
-block|{
-comment|// prepend any special modules BEFORE custom modules, to allow callers
-comment|// to override our stuff
+return|return
 name|modules
-operator|.
-name|add
-argument_list|(
-literal|0
-argument_list|,
-name|module
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 block|}
 end_class

@@ -165,7 +165,7 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|CayenneProjectModule
+name|ProjectModule
 import|;
 end_import
 
@@ -350,6 +350,7 @@ name|void
 name|launch
 parameter_list|()
 block|{
+comment|// TODO: use module auto-loading...
 specifier|final
 name|Injector
 name|injector
@@ -508,6 +509,8 @@ argument_list|>
 name|modules
 parameter_list|)
 block|{
+comment|// TODO: this is dirty... "CayenneModeler" is not a project name, and ServerModule is out of place inside
+comment|// the Modeler... If we need ServerRuntime for certain operations, those should start their own stack...
 name|modules
 operator|.
 name|add
@@ -524,7 +527,7 @@ operator|.
 name|add
 argument_list|(
 operator|new
-name|CayenneProjectModule
+name|ProjectModule
 argument_list|()
 argument_list|)
 expr_stmt|;

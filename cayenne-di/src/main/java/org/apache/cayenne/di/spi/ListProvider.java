@@ -238,19 +238,6 @@ decl_stmt|;
 if|if
 condition|(
 name|insertOrder
-operator|==
-literal|null
-condition|)
-throw|throw
-operator|new
-name|DIRuntimeException
-argument_list|(
-literal|"Dependency cycle detected in DI container"
-argument_list|)
-throw|;
-if|if
-condition|(
-name|insertOrder
 operator|.
 name|size
 argument_list|()

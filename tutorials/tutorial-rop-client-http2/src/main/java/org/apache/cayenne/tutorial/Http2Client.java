@@ -37,7 +37,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -105,7 +109,7 @@ name|cayenne
 operator|.
 name|java8
 operator|.
-name|CayenneJava8Module
+name|Java8Module
 import|;
 end_import
 
@@ -266,7 +270,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This example uses {@link ProtostuffROPSerializationService} which is bound in {@link ProtostuffModule}  * and {@link JettyHttpROPConnector} initialized by {@link JettyHttp2ClientConnectionProvider}, which is bound  * in {@link ClientJettyHttp2Module}. It works without ALPN by default.  *<p>  * In order to run it with ALPN, you have to set {@link Constants#ROP_SERVICE_USE_ALPN_PROPERTY} to true  * and provide the alpn-boot-XXX.jar into the bootstrap classpath.  */
+comment|/**  * This example uses {@link ProtostuffROPSerializationService} which is bound in {@link ProtostuffModule}  * and {@link JettyHttpROPConnector} initialized by {@link JettyHttp2ClientConnectionProvider}, which is bound  * in {@link ClientJettyHttp2Module}. It works without ALPN by default.  *<p>  * In order to run it with ALPN, you have to set {@link ClientConstants#ROP_SERVICE_USE_ALPN_PROPERTY} to true  * and provide the alpn-boot-XXX.jar into the bootstrap classpath.  */
 end_comment
 
 begin_class
@@ -386,7 +390,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_URL_PROPERTY
 argument_list|,
@@ -397,7 +401,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_USE_ALPN_PROPERTY
 argument_list|,
@@ -408,7 +412,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_USERNAME_PROPERTY
 argument_list|,
@@ -419,7 +423,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_PASSWORD_PROPERTY
 argument_list|,
@@ -430,7 +434,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_SERVICE_REALM_PROPERTY
 argument_list|,
@@ -454,7 +458,7 @@ name|ProtostuffModule
 argument_list|()
 argument_list|,
 operator|new
-name|CayenneJava8Module
+name|Java8Module
 argument_list|()
 argument_list|)
 decl_stmt|;

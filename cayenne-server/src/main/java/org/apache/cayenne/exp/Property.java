@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * A property in a DataObject.  *</p>  *   *<p>  * Used to construct Expressions quickly and with type-safety, and to construct  * Orderings  *</p>  *   *<p>  * Instances of this class are immutable  *</p>  *   * @param<E>  *            The type this property returns.  * @since 4.0  */
+comment|/**  *<p>  * A property in a DataObject.  *</p>  *<p>  *<p>  * Used to construct Expressions quickly and with type-safety, and to construct  * Orderings  *</p>  *<p>  *<p>  * Instances of this class are immutable  *</p>  *  * @param<E> The type this property returns.  * @since 4.0  */
 end_comment
 
 begin_class
@@ -129,13 +129,13 @@ parameter_list|<
 name|E
 parameter_list|>
 block|{
-comment|/** 	 * Name of the property in the object 	 */
+comment|/**      * Name of the property in the object      */
 specifier|private
 specifier|final
 name|String
 name|name
 decl_stmt|;
-comment|/** 	 * Constructs a new property with the given name. 	 */
+comment|/**      * Constructs a new property with the given name.      */
 specifier|public
 name|Property
 parameter_list|(
@@ -150,7 +150,7 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-comment|/** 	 * @return Name of the property in the object. 	 */
+comment|/**      * @return Name of the property in the object.      */
 specifier|public
 name|String
 name|getName
@@ -210,7 +210,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Constructs a property path by appending the argument to the 	 *         existing property separated by a dot 	 */
+comment|/**      * Constructs a property path by appending the argument to the existing property separated by a dot.      *      * @return a newly created Property object.      */
 specifier|public
 name|Property
 argument_list|<
@@ -238,7 +238,7 @@ name|property
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Constructs a property path by appending the argument to the 	 *         existing property separated by a dot 	 */
+comment|/**      * Constructs a new property path by appending the argument to the existing property separated by a dot.      *      * @return a newly created Property object.      */
 specifier|public
 parameter_list|<
 name|T
@@ -275,7 +275,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a version of this property that represents an OUTER join. It is 	 * up to caller to ensure that the property corresponds to a relationship, 	 * as "outer" attributes make no sense. 	 */
+comment|/**      * Returns a version of this property that represents an OUTER join. It is      * up to caller to ensure that the property corresponds to a relationship,      * as "outer" attributes make no sense.      */
 specifier|public
 name|Property
 argument_list|<
@@ -316,7 +316,23 @@ literal|"+"
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing null. 	 */
+comment|/**      * Converts this property to a path expression.      *      * @return a newly created expression.      */
+specifier|public
+name|Expression
+name|path
+parameter_list|()
+block|{
+return|return
+name|ExpressionFactory
+operator|.
+name|pathExp
+argument_list|(
+name|getName
+argument_list|()
+argument_list|)
+return|;
+block|}
+comment|/**      * @return An expression representing null.      */
 specifier|public
 name|Expression
 name|isNull
@@ -334,7 +350,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing a non-null value. 	 */
+comment|/**      * @return An expression representing a non-null value.      */
 specifier|public
 name|Expression
 name|isNotNull
@@ -355,7 +371,7 @@ name|notExp
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality to TRUE. 	 */
+comment|/**      * @return An expression representing equality to TRUE.      */
 specifier|public
 name|Expression
 name|isTrue
@@ -375,7 +391,7 @@ name|TRUE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality to FALSE. 	 */
+comment|/**      * @return An expression representing equality to FALSE.      */
 specifier|public
 name|Expression
 name|isFalse
@@ -395,7 +411,7 @@ name|FALSE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality to a value. 	 */
+comment|/**      * @return An expression representing equality to a value.      */
 specifier|public
 name|Expression
 name|eq
@@ -416,7 +432,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing equality between two attributes 	 *         (columns). 	 */
+comment|/**      * @return An expression representing equality between two attributes      * (columns).      */
 specifier|public
 name|Expression
 name|eq
@@ -447,7 +463,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing inequality to a value. 	 */
+comment|/**      * @return An expression representing inequality to a value.      */
 specifier|public
 name|Expression
 name|ne
@@ -468,7 +484,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression representing inequality between two attributes 	 *         (columns). 	 */
+comment|/**      * @return An expression representing inequality between two attributes      * (columns).      */
 specifier|public
 name|Expression
 name|ne
@@ -499,7 +515,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @param pattern 	 *            a pattern matching property value. Pattern may include "_" and 	 *            "%" wildcard symbols to match any single character or a 	 *            sequence of characters. To prevent "_" and "%" from being 	 *            treated as wildcards, they need to be escaped and escape char 	 *            passed with {@link #like(String, char)} method. 	 * @return An expression for a Database "LIKE" query. 	 */
+comment|/**      * @param pattern a pattern matching property value. Pattern may include "_" and      *                "%" wildcard symbols to match any single character or a      *                sequence of characters. To prevent "_" and "%" from being      *                treated as wildcards, they need to be escaped and escape char      *                passed with {@link #like(String, char)} method.      * @return An expression for a Database "LIKE" query.      */
 specifier|public
 name|Expression
 name|like
@@ -520,7 +536,7 @@ name|pattern
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @param pattern 	 *            a properly escaped pattern matching property value. Pattern 	 *            may include "_" and "%" wildcard symbols to match any single 	 *            character or a sequence of characters. 	 * @param escapeChar 	 *            an escape character used in the pattern to escape "%" and "_". 	 *  	 * @return An expression for a Database "LIKE" query. 	 */
+comment|/**      * @param pattern    a properly escaped pattern matching property value. Pattern      *                   may include "_" and "%" wildcard symbols to match any single      *                   character or a sequence of characters.      * @param escapeChar an escape character used in the pattern to escape "%" and "_".      * @return An expression for a Database "LIKE" query.      */
 specifier|public
 name|Expression
 name|like
@@ -546,7 +562,7 @@ name|escapeChar
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for a case insensitive "LIKE" query. 	 */
+comment|/**      * @return An expression for a case insensitive "LIKE" query.      */
 specifier|public
 name|Expression
 name|likeIgnoreCase
@@ -567,7 +583,7 @@ name|pattern
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for a Database "NOT LIKE" query. 	 */
+comment|/**      * @return An expression for a Database "NOT LIKE" query.      */
 specifier|public
 name|Expression
 name|nlike
@@ -588,7 +604,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for a case insensitive "NOT LIKE" query. 	 */
+comment|/**      * @return An expression for a case insensitive "NOT LIKE" query.      */
 specifier|public
 name|Expression
 name|nlikeIgnoreCase
@@ -609,7 +625,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates an expression for a database "LIKE" query with the value 	 * converted to a pattern matching anywhere in the String. 	 *  	 * @param substring 	 *            a String to match against property value. "_" and "%" symbols 	 *            are NOT treated as wildcards and are escaped when converted to 	 *            a LIKE expression. 	 */
+comment|/**      * Creates an expression for a database "LIKE" query with the value converted to a pattern matching anywhere in the      * String.      *      * @param substring a String to match against property value. "_" and "%" symbols      *                  are NOT treated as wildcards and are escaped when converted to      *                  a LIKE expression.      * @return a newly created expression.      */
 specifier|public
 name|Expression
 name|contains
@@ -630,7 +646,7 @@ name|substring
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates an expression for a database "LIKE" query with the value 	 * converted to a pattern matching the beginning of a String. 	 *  	 * @param substring 	 *            a String to match against property value. "_" and "%" symbols 	 *            are NOT treated as wildcards and are escaped when converted to 	 *            a LIKE expression. 	 */
+comment|/**      * Creates an expression for a database "LIKE" query with the value converted to a pattern matching the beginning of      * a String.      *      * @param value a String to match against property value. "_" and "%" symbols      *              are NOT treated as wildcards and are escaped when converted to      *              a LIKE expression.      * @return a newly created expression.      */
 specifier|public
 name|Expression
 name|startsWith
@@ -651,7 +667,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates an expression for a database "LIKE" query with the value 	 * converted to a pattern matching the tail of a String. 	 *  	 * @param substring 	 *            a String to match against property value. "_" and "%" symbols 	 *            are NOT treated as wildcards and are escaped when converted to 	 *            a LIKE expression. 	 */
+comment|/**      * Creates an expression for a database "LIKE" query with the value      * converted to a pattern matching the tail of a String.      *      * @param value a String to match against property value. "_" and "%" symbols      *              are NOT treated as wildcards and are escaped when converted to      *              a LIKE expression.      * @return a newly created expression.      */
 specifier|public
 name|Expression
 name|endsWith
@@ -672,7 +688,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Same as {@link #contains(String)}, only using case-insensitive 	 * comparison. 	 */
+comment|/**      * Same as {@link #contains(String)}, only using case-insensitive      * comparison.      */
 specifier|public
 name|Expression
 name|containsIgnoreCase
@@ -693,7 +709,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Same as {@link #startsWith(String)}, only using case-insensitive 	 * comparison. 	 */
+comment|/**      * Same as {@link #startsWith(String)}, only using case-insensitive      * comparison.      */
 specifier|public
 name|Expression
 name|startsWithIgnoreCase
@@ -714,7 +730,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Same as {@link #endsWith(String)}, only using case-insensitive 	 * comparison. 	 */
+comment|/**      * Same as {@link #endsWith(String)}, only using case-insensitive      * comparison.      */
 specifier|public
 name|Expression
 name|endsWithIgnoreCase
@@ -735,7 +751,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression checking for objects between a lower and upper 	 *         bound inclusive 	 *  	 * @param lower 	 *            The lower bound. 	 * @param upper 	 *            The upper bound. 	 */
+comment|/**      * @param lower The lower bound.      * @param upper The upper bound.      * @return An expression checking for objects between a lower and upper      * bound inclusive      */
 specifier|public
 name|Expression
 name|between
@@ -761,7 +777,7 @@ name|upper
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for finding objects with values in the given set. 	 */
+comment|/**      * @return An expression for finding objects with values in the given set.      */
 specifier|public
 name|Expression
 name|in
@@ -841,7 +857,7 @@ name|values
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for finding objects with values not in the given 	 *         set. 	 */
+comment|/**      * @return An expression for finding objects with values not in the given      * set.      */
 specifier|public
 name|Expression
 name|nin
@@ -921,7 +937,7 @@ name|values
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for finding objects with values in the given set. 	 */
+comment|/**      * @return An expression for finding objects with values in the given set.      */
 specifier|public
 name|Expression
 name|in
@@ -945,7 +961,7 @@ name|values
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return An expression for finding objects with values not in the given 	 *         set. 	 */
+comment|/**      * @return An expression for finding objects with values not in the given      * set.      */
 specifier|public
 name|Expression
 name|nin
@@ -969,7 +985,7 @@ name|values
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A greater than Expression. 	 */
+comment|/**      * @return A greater than Expression.      */
 specifier|public
 name|Expression
 name|gt
@@ -990,7 +1006,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Represents a greater than relationship between two attributes 	 *         (columns). 	 */
+comment|/**      * @return Represents a greater than relationship between two attributes      * (columns).      */
 specifier|public
 name|Expression
 name|gt
@@ -1021,7 +1037,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A greater than or equal to Expression. 	 */
+comment|/**      * @return A greater than or equal to Expression.      */
 specifier|public
 name|Expression
 name|gte
@@ -1042,7 +1058,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Represents a greater than or equal relationship between two 	 *         attributes (columns). 	 */
+comment|/**      * @return Represents a greater than or equal relationship between two      * attributes (columns).      */
 specifier|public
 name|Expression
 name|gte
@@ -1073,7 +1089,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A less than Expression. 	 */
+comment|/**      * @return A less than Expression.      */
 specifier|public
 name|Expression
 name|lt
@@ -1094,7 +1110,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Represents a less than relationship between two attributes 	 *         (columns). 	 */
+comment|/**      * @return Represents a less than relationship between two attributes      * (columns).      */
 specifier|public
 name|Expression
 name|lt
@@ -1125,7 +1141,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return A less than or equal to Expression. 	 */
+comment|/**      * @return A less than or equal to Expression.      */
 specifier|public
 name|Expression
 name|lte
@@ -1146,7 +1162,7 @@ name|value
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Represents a less than or equal relationship between two 	 *         attributes (columns). 	 */
+comment|/**      * @return Represents a less than or equal relationship between two      * attributes (columns).      */
 specifier|public
 name|Expression
 name|lte
@@ -1177,7 +1193,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Ascending sort orderings on this property. 	 */
+comment|/**      * @return Ascending sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|asc
@@ -1196,7 +1212,7 @@ name|ASCENDING
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Ascending sort orderings on this property. 	 */
+comment|/**      * @return Ascending sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -1232,7 +1248,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * @return Ascending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Ascending case insensitive sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|ascInsensitive
@@ -1251,7 +1267,7 @@ name|ASCENDING_INSENSITIVE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Ascending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Ascending case insensitive sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -1287,7 +1303,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * @return Descending sort orderings on this property. 	 */
+comment|/**      * @return Descending sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|desc
@@ -1306,7 +1322,7 @@ name|DESCENDING
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Descending sort orderings on this property. 	 */
+comment|/**      * @return Descending sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -1342,7 +1358,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * @return Descending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Descending case insensitive sort orderings on this property.      */
 specifier|public
 name|Ordering
 name|descInsensitive
@@ -1361,7 +1377,7 @@ name|DESCENDING_INSENSITIVE
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @return Descending case insensitive sort orderings on this property. 	 */
+comment|/**      * @return Descending case insensitive sort orderings on this property.      */
 specifier|public
 name|List
 argument_list|<
@@ -1397,7 +1413,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * Returns a prefetch tree that follows this property path, potentially 	 * spanning a number of phantom nodes, and having a single leaf with "joint" 	 * prefetch semantics. 	 */
+comment|/**      * Returns a prefetch tree that follows this property path, potentially      * spanning a number of phantom nodes, and having a single leaf with "joint"      * prefetch semantics.      */
 specifier|public
 name|PrefetchTreeNode
 name|joint
@@ -1416,7 +1432,7 @@ name|JOINT_PREFETCH_SEMANTICS
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a prefetch tree that follows this property path, potentially 	 * spanning a number of phantom nodes, and having a single leaf with 	 * "disjoint" prefetch semantics. 	 */
+comment|/**      * Returns a prefetch tree that follows this property path, potentially      * spanning a number of phantom nodes, and having a single leaf with      * "disjoint" prefetch semantics.      */
 specifier|public
 name|PrefetchTreeNode
 name|disjoint
@@ -1435,7 +1451,7 @@ name|DISJOINT_PREFETCH_SEMANTICS
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a prefetch tree that follows this property path, potentially 	 * spanning a number of phantom nodes, and having a single leaf with 	 * "disjoint by id" prefetch semantics. 	 */
+comment|/**      * Returns a prefetch tree that follows this property path, potentially      * spanning a number of phantom nodes, and having a single leaf with      * "disjoint by id" prefetch semantics.      */
 specifier|public
 name|PrefetchTreeNode
 name|disjointById
@@ -1454,7 +1470,7 @@ name|DISJOINT_BY_ID_PREFETCH_SEMANTICS
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Extracts property value from an object using JavaBean-compatible 	 * introspection with one addition - a property can be a dot-separated 	 * property name path. 	 */
+comment|/**      * Extracts property value from an object using JavaBean-compatible      * introspection with one addition - a property can be a dot-separated      * property name path.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -1483,7 +1499,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Extracts property value from a collection of objects using 	 * JavaBean-compatible introspection with one addition - a property can be a 	 * dot-separated property name path. 	 */
+comment|/**      * Extracts property value from a collection of objects using      * JavaBean-compatible introspection with one addition - a property can be a      * dot-separated property name path.      */
 specifier|public
 name|List
 argument_list|<
@@ -1539,7 +1555,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * Sets a property value in 'obj' using JavaBean-compatible introspection 	 * with one addition - a property can be a dot-separated property name path. 	 */
+comment|/**      * Sets a property value in 'obj' using JavaBean-compatible introspection      * with one addition - a property can be a dot-separated property name path.      */
 specifier|public
 name|void
 name|setIn
@@ -1564,7 +1580,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Sets a property value in a collection of objects using 	 * JavaBean-compatible introspection with one addition - a property can be a 	 * dot-separated property name path. 	 */
+comment|/**      * Sets a property value in a collection of objects using      * JavaBean-compatible introspection with one addition - a property can be a      * dot-separated property name path.      */
 specifier|public
 name|void
 name|setInAll

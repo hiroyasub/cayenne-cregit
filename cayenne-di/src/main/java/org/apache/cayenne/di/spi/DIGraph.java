@@ -19,11 +19,15 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|ArrayDeque
+name|cayenne
+operator|.
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
@@ -33,67 +37,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Deque
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedHashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
+name|*
 import|;
 end_import
 
@@ -108,7 +52,7 @@ parameter_list|<
 name|V
 parameter_list|>
 block|{
-comment|/** 	 * Note: {@link LinkedHashMap} is used for supporting insertion order. 	 */
+comment|/** 	 * {@link LinkedHashMap} is used for supporting insertion order. 	 */
 specifier|private
 name|Map
 argument_list|<
@@ -463,7 +407,7 @@ return|return
 name|result
 return|;
 block|}
-comment|/** 	 * Return (as a List) the topological sort of the vertices; null for no such 	 * sort. 	 */
+comment|/** 	 * Return (as a List) the topological sort of the vertices. Throws an exception if cycles are detected. 	 */
 specifier|public
 name|List
 argument_list|<
@@ -634,9 +578,13 @@ name|size
 argument_list|()
 condition|)
 block|{
-return|return
-literal|null
-return|;
+throw|throw
+operator|new
+name|DIRuntimeException
+argument_list|(
+literal|"Dependency cycle detected in DI container"
+argument_list|)
+throw|;
 block|}
 return|return
 name|result
@@ -700,6 +648,18 @@ return|return
 name|s
 operator|.
 name|toString
+argument_list|()
+return|;
+block|}
+specifier|public
+name|int
+name|size
+parameter_list|()
+block|{
+return|return
+name|neighbors
+operator|.
+name|size
 argument_list|()
 return|;
 block|}

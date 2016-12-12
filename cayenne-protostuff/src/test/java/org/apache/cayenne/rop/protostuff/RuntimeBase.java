@@ -39,7 +39,11 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|rop
+operator|.
+name|client
+operator|.
+name|ClientConstants
 import|;
 end_import
 
@@ -137,7 +141,7 @@ name|cayenne
 operator|.
 name|java8
 operator|.
-name|CayenneJava8Module
+name|Java8Module
 import|;
 end_import
 
@@ -233,19 +237,25 @@ name|this
 operator|.
 name|serverRuntime
 operator|=
-operator|new
 name|ServerRuntime
+operator|.
+name|builder
+argument_list|()
+operator|.
+name|addConfig
 argument_list|(
 literal|"cayenne-protostuff.xml"
-argument_list|,
+argument_list|)
+operator|.
+name|addModule
+argument_list|(
 operator|new
 name|ProtostuffModule
 argument_list|()
-argument_list|,
-operator|new
-name|CayenneJava8Module
-argument_list|()
 argument_list|)
+operator|.
+name|build
+argument_list|()
 expr_stmt|;
 name|Map
 argument_list|<
@@ -264,7 +274,7 @@ name|properties
 operator|.
 name|put
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CHANNEL_EVENTS_PROPERTY
 argument_list|,
@@ -316,7 +326,7 @@ name|ProtostuffModule
 argument_list|()
 argument_list|,
 operator|new
-name|CayenneJava8Module
+name|Java8Module
 argument_list|()
 argument_list|,
 name|module

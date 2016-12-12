@@ -211,7 +211,7 @@ name|properties
 operator|.
 name|getBoolean
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CONTEXT_CHANGE_EVENTS_PROPERTY
 argument_list|,
@@ -225,7 +225,7 @@ name|properties
 operator|.
 name|getBoolean
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CONTEXT_LIFECYCLE_EVENTS_PROPERTY
 argument_list|,

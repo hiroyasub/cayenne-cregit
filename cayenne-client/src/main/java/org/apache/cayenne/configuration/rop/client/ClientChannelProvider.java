@@ -183,7 +183,7 @@ name|properties
 operator|.
 name|getBoolean
 argument_list|(
-name|Constants
+name|ClientConstants
 operator|.
 name|ROP_CHANNEL_EVENTS_PROPERTY
 argument_list|,
