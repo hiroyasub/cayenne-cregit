@@ -378,6 +378,15 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|//    private void assertUniqueConstraintsInRelationships(DataMap map) {
+comment|// unfortunately JDBC metadata doesn't provide info for UNIQUE
+comment|// constraints....
+comment|// cant reengineer them...
+comment|// upd. actually it's provided:
+comment|// http://docs.oracle.com/javase/7/docs/api/java/sql/DatabaseMetaData.html#getIndexInfo%28java.lang.String,%20java.lang.String,%20java.lang.String,%20boolean,%20boolean%29
+comment|// find rel to TO_ONEFK1
+comment|/*          * Iterator it = getDbEntity(map,          * "TO_ONEFK2").getRelationships().iterator(); DbRelationship rel =          * (DbRelationship) it.next(); assertEquals("TO_ONEFK1",          * rel.getTargetEntityName());          * assertFalse("UNIQUE constraint was ignored...", rel.isToMany());          */
+comment|//    }
 block|}
 end_class
 

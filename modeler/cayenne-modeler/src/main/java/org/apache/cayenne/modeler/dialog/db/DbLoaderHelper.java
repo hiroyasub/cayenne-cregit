@@ -672,7 +672,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Stateful helper class that encapsulates access to DbLoader2.  */
+comment|/**  * Stateful helper class that encapsulates access to DbLoader.  */
 end_comment
 
 begin_class
