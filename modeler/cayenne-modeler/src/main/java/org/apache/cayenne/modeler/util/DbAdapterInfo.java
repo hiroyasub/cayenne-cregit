@@ -725,7 +725,7 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|Object
+name|String
 index|[]
 name|getStandardAdapters
 parameter_list|()

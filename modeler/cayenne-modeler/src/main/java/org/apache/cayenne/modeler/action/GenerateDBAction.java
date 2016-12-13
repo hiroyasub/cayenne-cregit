@@ -73,6 +73,8 @@ name|dialog
 operator|.
 name|db
 operator|.
+name|gen
+operator|.
 name|DBGeneratorOptions
 import|;
 end_import
@@ -194,9 +196,7 @@ name|dataMaps
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataMap
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|dataMaps
@@ -205,20 +205,6 @@ name|add
 argument_list|(
 name|dataMap
 argument_list|)
-expr_stmt|;
-operator|new
-name|DBGeneratorOptions
-argument_list|(
-name|getProjectController
-argument_list|()
-argument_list|,
-literal|"Generate DB Schema: Options"
-argument_list|,
-name|dataMaps
-argument_list|)
-operator|.
-name|startupAction
-argument_list|()
 expr_stmt|;
 block|}
 else|else
@@ -247,6 +233,7 @@ operator|.
 name|getDataMaps
 argument_list|()
 expr_stmt|;
+block|}
 operator|new
 name|DBGeneratorOptions
 argument_list|(
@@ -261,7 +248,6 @@ operator|.
 name|startupAction
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 block|}
 end_class

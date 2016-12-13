@@ -16,6 +16,8 @@ operator|.
 name|dialog
 operator|.
 name|db
+operator|.
+name|gen
 package|;
 end_package
 
@@ -102,6 +104,24 @@ operator|.
 name|dialog
 operator|.
 name|ValidationResultBrowser
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|dialog
+operator|.
+name|db
+operator|.
+name|DataSourceWizard
 import|;
 end_import
 
@@ -208,16 +228,6 @@ operator|.
 name|validation
 operator|.
 name|ValidationResult
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
 import|;
 end_import
 
@@ -584,10 +594,14 @@ name|initController
 parameter_list|()
 block|{
 name|DefaultComboBoxModel
+argument_list|<
+name|String
+argument_list|>
 name|adapterModel
 init|=
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|DbAdapterInfo
 operator|.
@@ -871,9 +885,7 @@ name|generators
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbGenerator
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -935,11 +947,11 @@ name|createSQL
 parameter_list|()
 block|{
 comment|// convert them to string representation for display
-name|StringBuffer
+name|StringBuilder
 name|buf
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 for|for
@@ -1169,11 +1181,11 @@ name|void
 name|generateSchemaAction
 parameter_list|()
 block|{
-name|DataSourceController
+name|DataSourceWizard
 name|connectWizard
 init|=
 operator|new
-name|DataSourceController
+name|DataSourceWizard
 argument_list|(
 name|this
 operator|.
@@ -1181,10 +1193,6 @@ name|getParent
 argument_list|()
 argument_list|,
 literal|"Generate DB Schema: Connect to Database"
-argument_list|,
-literal|null
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 if|if
@@ -1196,7 +1204,6 @@ name|startupAction
 argument_list|()
 condition|)
 block|{
-comment|// canceled
 return|return;
 block|}
 name|this
@@ -1257,25 +1264,14 @@ return|return;
 block|}
 try|try
 block|{
-name|DataSource
-name|dataSource
-init|=
-name|connectionInfo
-operator|.
-name|makeDataSource
-argument_list|(
-name|getApplication
-argument_list|()
-operator|.
-name|getClassLoadingService
-argument_list|()
-argument_list|)
-decl_stmt|;
 name|generator
 operator|.
 name|runGenerator
 argument_list|(
-name|dataSource
+name|connectWizard
+operator|.
+name|getDataSource
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|failures
@@ -1395,13 +1391,6 @@ name|getPath
 argument_list|()
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|projectDir
-operator|!=
-literal|null
-condition|)
-block|{
 name|fc
 operator|.
 name|setCurrentDirectory
@@ -1409,7 +1398,6 @@ argument_list|(
 name|projectDir
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|fc
