@@ -113,7 +113,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|DefaultModelMergeDelegate
 import|;
@@ -129,7 +131,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|ModelMergeDelegate
 import|;
@@ -227,7 +231,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DbLoaderConfiguration
 import|;
@@ -245,7 +249,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DbLoaderDelegate
 import|;
@@ -263,7 +267,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DefaultDbLoaderDelegate
 import|;
@@ -281,7 +285,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|LoggingDbLoaderDelegate
 import|;

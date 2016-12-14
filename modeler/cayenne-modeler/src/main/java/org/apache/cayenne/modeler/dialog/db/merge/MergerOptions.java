@@ -75,6 +75,10 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
+name|db
+operator|.
 name|AbstractToDbToken
 import|;
 end_import
@@ -91,7 +95,7 @@ name|dbsync
 operator|.
 name|merge
 operator|.
-name|DbMerger
+name|DataMapMerger
 import|;
 end_import
 
@@ -105,7 +109,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|DefaultModelMergeDelegate
 import|;
@@ -123,6 +129,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|context
+operator|.
 name|MergeDirection
 import|;
 end_import
@@ -138,6 +146,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|context
 operator|.
 name|MergerContext
 import|;
@@ -155,6 +165,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|MergerToken
 import|;
 end_import
@@ -169,7 +181,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|ModelMergeDelegate
 import|;
@@ -185,7 +199,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|ProxyModelMergeDelegate
 import|;
@@ -271,7 +287,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DbLoader
 import|;
@@ -289,7 +305,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DbLoaderConfiguration
 import|;
@@ -307,7 +323,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|LoggingDbLoaderDelegate
 import|;
@@ -1104,10 +1120,10 @@ operator|.
 name|INCLUDE_NOTHING
 argument_list|)
 decl_stmt|;
-name|DbMerger
+name|DataMapMerger
 name|merger
 init|=
-name|DbMerger
+name|DataMapMerger
 operator|.
 name|builder
 argument_list|(
@@ -1152,10 +1168,6 @@ argument_list|)
 decl_stmt|;
 name|DataMap
 name|dbImport
-init|=
-operator|new
-name|DataMap
-argument_list|()
 decl_stmt|;
 try|try
 init|(
@@ -1169,12 +1181,16 @@ argument_list|()
 init|;
 init|)
 block|{
+name|dbImport
+operator|=
 operator|new
 name|DbLoader
 argument_list|(
+name|adapter
+argument_list|,
 name|conn
 argument_list|,
-name|adapter
+name|config
 argument_list|,
 operator|new
 name|LoggingDbLoaderDelegate
@@ -1200,11 +1216,7 @@ argument_list|)
 argument_list|)
 operator|.
 name|load
-argument_list|(
-name|dbImport
-argument_list|,
-name|config
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 catch|catch

@@ -33,6 +33,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|context
+operator|.
 name|MergeDirection
 import|;
 end_import
@@ -49,6 +51,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|MergerToken
 import|;
 end_import
@@ -64,6 +68,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|token
 operator|.
 name|TokenComparator
 import|;
