@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for progress tracking and altering the folow of reverse-engineering.  */
+comment|/**  * Defines API for progress tracking and altering the flow of reverse-engineering.  */
 end_comment
 
 begin_interface
