@@ -73,6 +73,10 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
+name|db
+operator|.
 name|AbstractToDbToken
 import|;
 end_import
@@ -89,7 +93,7 @@ name|dbsync
 operator|.
 name|merge
 operator|.
-name|DbMerger
+name|DataMapMerger
 import|;
 end_import
 
@@ -103,7 +107,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|DefaultModelMergeDelegate
 import|;
@@ -121,6 +127,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|context
+operator|.
 name|MergeDirection
 import|;
 end_import
@@ -136,6 +144,8 @@ operator|.
 name|dbsync
 operator|.
 name|merge
+operator|.
+name|context
 operator|.
 name|MergerContext
 import|;
@@ -153,6 +163,8 @@ name|dbsync
 operator|.
 name|merge
 operator|.
+name|token
+operator|.
 name|MergerToken
 import|;
 end_import
@@ -167,7 +179,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|ModelMergeDelegate
 import|;
@@ -183,7 +197,9 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
-name|merge
+name|reverse
+operator|.
+name|dbload
 operator|.
 name|ProxyModelMergeDelegate
 import|;
@@ -1102,10 +1118,10 @@ operator|.
 name|INCLUDE_NOTHING
 argument_list|)
 decl_stmt|;
-name|DbMerger
+name|DataMapMerger
 name|merger
 init|=
-name|DbMerger
+name|DataMapMerger
 operator|.
 name|builder
 argument_list|(
