@@ -701,8 +701,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
-operator|!=
-literal|null
 condition|)
 block|{
 name|existingFiltered

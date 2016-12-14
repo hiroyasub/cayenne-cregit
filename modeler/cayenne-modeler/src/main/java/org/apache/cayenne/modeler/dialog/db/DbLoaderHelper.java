@@ -235,7 +235,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DbLoader
 import|;
@@ -253,7 +253,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DefaultDbLoaderDelegate
 import|;
@@ -1955,7 +1955,6 @@ name|dataMap
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
 name|DbImportAction
 name|createAction
 parameter_list|(
@@ -2051,7 +2050,6 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-specifier|protected
 name|DbLoader
 name|createDbLoader
 parameter_list|(
@@ -2063,9 +2061,14 @@ return|return
 operator|new
 name|DbLoader
 argument_list|(
+name|adapter
+argument_list|,
 name|connection
 argument_list|,
-name|adapter
+name|configuration
+operator|.
+name|getDbLoaderConfig
+argument_list|()
 argument_list|,
 operator|new
 name|LoaderDelegate

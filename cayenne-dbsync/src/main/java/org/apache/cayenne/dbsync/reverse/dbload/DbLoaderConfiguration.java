@@ -15,7 +15,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 package|;
 end_package
 

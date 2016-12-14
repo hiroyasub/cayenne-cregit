@@ -15,7 +15,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 package|;
 end_package
 
@@ -62,37 +62,55 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines API for progress tracking and altering the folow of reverse-engineering.  */
+comment|/**  * A noop {@link DbLoaderDelegate}.  *  * @since 4.0  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
+class|class
+name|DefaultDbLoaderDelegate
+implements|implements
 name|DbLoaderDelegate
 block|{
+annotation|@
+name|Override
+specifier|public
 name|void
 name|dbEntityAdded
 parameter_list|(
 name|DbEntity
 name|entity
 parameter_list|)
-function_decl|;
+block|{
+block|}
+annotation|@
+name|Override
+specifier|public
 name|void
 name|dbEntityRemoved
 parameter_list|(
 name|DbEntity
 name|entity
 parameter_list|)
-function_decl|;
-comment|/**      * Called before relationship loading for a {@link DbEntity}.      *      * @param entity DbEntity for which {@link DbRelationship} is about to be loaded.      * @return true in case you want process relationships for this entity, false otherwise.      */
+block|{
+block|}
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|dbRelationship
 parameter_list|(
 name|DbEntity
 name|entity
 parameter_list|)
-function_decl|;
-comment|/**      * Called before relationship will be added into db-entity but after it was loaded from db      *      * @param entity      * @return true in case you want add this relationship into entity      * false otherwise      */
+block|{
+return|return
+literal|true
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|dbRelationshipLoaded
 parameter_list|(
@@ -102,29 +120,39 @@ parameter_list|,
 name|DbRelationship
 name|relationship
 parameter_list|)
-function_decl|;
-comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
+block|{
+return|return
+literal|true
+return|;
+block|}
 annotation|@
 name|Deprecated
+annotation|@
+name|Override
+specifier|public
 name|void
 name|objEntityAdded
 parameter_list|(
 name|ObjEntity
 name|entity
 parameter_list|)
-function_decl|;
-comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
+block|{
+block|}
 annotation|@
 name|Deprecated
+annotation|@
+name|Override
+specifier|public
 name|void
 name|objEntityRemoved
 parameter_list|(
 name|ObjEntity
 name|entity
 parameter_list|)
-function_decl|;
+block|{
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

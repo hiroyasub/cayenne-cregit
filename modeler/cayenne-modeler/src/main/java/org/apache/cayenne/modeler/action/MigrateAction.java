@@ -61,7 +61,7 @@ name|dbsync
 operator|.
 name|reverse
 operator|.
-name|db
+name|dbload
 operator|.
 name|DbLoader
 import|;
