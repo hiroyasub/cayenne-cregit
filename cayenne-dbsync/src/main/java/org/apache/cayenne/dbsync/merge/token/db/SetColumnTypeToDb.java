@@ -199,6 +199,8 @@ name|super
 argument_list|(
 literal|"Set Column Type"
 argument_list|,
+literal|60
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;

@@ -170,6 +170,8 @@ name|super
 argument_list|(
 literal|"Add Column"
 argument_list|,
+literal|50
+argument_list|,
 name|entity
 argument_list|,
 name|column
@@ -333,38 +335,6 @@ argument_list|()
 argument_list|,
 name|getColumn
 argument_list|()
-argument_list|)
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|int
-name|compareTo
-parameter_list|(
-name|MergerToken
-name|o
-parameter_list|)
-block|{
-comment|// add all AddRelationshipToDb to the end.
-if|if
-condition|(
-name|o
-operator|instanceof
-name|AddRelationshipToDb
-condition|)
-block|{
-return|return
-operator|-
-literal|1
-return|;
-block|}
-return|return
-name|super
-operator|.
-name|compareTo
-argument_list|(
-name|o
 argument_list|)
 return|;
 block|}

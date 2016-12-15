@@ -206,6 +206,8 @@ name|super
 argument_list|(
 literal|"Set Primary Key"
 argument_list|,
+literal|100
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;

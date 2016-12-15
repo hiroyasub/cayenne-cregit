@@ -130,6 +130,8 @@ name|super
 argument_list|(
 literal|"Set Not Null"
 argument_list|,
+literal|95
+argument_list|,
 name|entity
 argument_list|,
 name|column
