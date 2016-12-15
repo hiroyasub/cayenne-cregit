@@ -43,24 +43,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dbsync
-operator|.
-name|reverse
-operator|.
-name|dbload
-operator|.
-name|DbLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DataMap
@@ -113,9 +95,7 @@ name|dialog
 operator|.
 name|db
 operator|.
-name|merge
-operator|.
-name|DbMigrateOptionsDialog
+name|DbActionOptionsDialog
 import|;
 end_import
 
@@ -172,7 +152,7 @@ name|MigrateAction
 extends|extends
 name|DBWizardAction
 argument_list|<
-name|DbMigrateOptionsDialog
+name|DbActionOptionsDialog
 argument_list|>
 block|{
 specifier|public
@@ -250,7 +230,7 @@ literal|"No current DataMap selected."
 argument_list|)
 throw|;
 block|}
-name|DbMigrateOptionsDialog
+name|DbActionOptionsDialog
 name|optionsDialog
 init|=
 name|loaderOptionDialog
@@ -332,7 +312,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|DbMigrateOptionsDialog
+name|DbActionOptionsDialog
 name|createDialog
 parameter_list|(
 name|Collection
@@ -356,8 +336,15 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|DbMigrateOptionsDialog
+name|DbActionOptionsDialog
 argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|,
+literal|"Migrate DB Schema: Select Catalog and Schema"
+argument_list|,
 name|catalogs
 argument_list|,
 name|schemas

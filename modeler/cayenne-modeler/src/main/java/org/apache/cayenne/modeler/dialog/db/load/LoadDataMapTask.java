@@ -181,6 +181,10 @@ name|LogFactory
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 4.0  */
+end_comment
+
 begin_class
 specifier|final
 specifier|public

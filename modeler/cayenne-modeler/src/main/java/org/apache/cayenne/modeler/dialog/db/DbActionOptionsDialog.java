@@ -197,9 +197,12 @@ name|CayenneDialog
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 4.0  */
+end_comment
+
 begin_class
 specifier|public
-specifier|abstract
 class|class
 name|DbActionOptionsDialog
 extends|extends
@@ -396,30 +399,6 @@ name|builder
 operator|.
 name|setDefaultDialogBorder
 argument_list|()
-expr_stmt|;
-name|catalogLabel
-operator|=
-name|builder
-operator|.
-name|append
-argument_list|(
-literal|"Select Catalog:"
-argument_list|,
-name|catalogSelector
-argument_list|,
-literal|true
-argument_list|)
-expr_stmt|;
-name|schemaLabel
-operator|=
-name|builder
-operator|.
-name|append
-argument_list|(
-literal|"Select Schema:"
-argument_list|,
-name|schemaSelector
-argument_list|)
 expr_stmt|;
 name|initForm
 argument_list|(
@@ -762,14 +741,38 @@ block|}
 block|}
 block|}
 specifier|protected
-specifier|abstract
 name|void
 name|initForm
 parameter_list|(
 name|DefaultFormBuilder
 name|builder
 parameter_list|)
-function_decl|;
+block|{
+name|catalogLabel
+operator|=
+name|builder
+operator|.
+name|append
+argument_list|(
+literal|"Select Catalog:"
+argument_list|,
+name|catalogSelector
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
+name|schemaLabel
+operator|=
+name|builder
+operator|.
+name|append
+argument_list|(
+literal|"Select Schema:"
+argument_list|,
+name|schemaSelector
+argument_list|)
+expr_stmt|;
+block|}
 specifier|public
 name|int
 name|getChoice

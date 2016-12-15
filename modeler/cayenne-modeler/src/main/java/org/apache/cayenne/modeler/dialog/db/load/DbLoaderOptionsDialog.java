@@ -146,7 +146,11 @@ name|DbActionOptionsDialog
 block|{
 specifier|private
 name|JTextField
-name|tableNamePatternField
+name|tableIncludePatternField
+decl_stmt|;
+specifier|private
+name|JTextField
+name|tableExcludePatternField
 decl_stmt|;
 specifier|private
 name|JTextField
@@ -219,19 +223,41 @@ name|DefaultFormBuilder
 name|builder
 parameter_list|)
 block|{
-name|tableNamePatternField
+name|super
+operator|.
+name|initForm
+argument_list|(
+name|builder
+argument_list|)
+expr_stmt|;
+name|tableIncludePatternField
 operator|=
 operator|new
 name|JTextField
 argument_list|()
 expr_stmt|;
-name|tableNamePatternField
+name|tableIncludePatternField
 operator|.
 name|setToolTipText
 argument_list|(
 literal|"<html>Regular expression to filter table names.<br>"
 operator|+
 literal|"Default expression<b>.*</b> includes all tables.</html>"
+argument_list|)
+expr_stmt|;
+name|tableExcludePatternField
+operator|=
+operator|new
+name|JTextField
+argument_list|()
+expr_stmt|;
+name|tableExcludePatternField
+operator|.
+name|setToolTipText
+argument_list|(
+literal|"<html>Regular expression to filter table names.<br>"
+operator|+
+literal|"Empty by default excludes nothing.</html>"
 argument_list|)
 expr_stmt|;
 name|procNamePatternField
@@ -284,9 +310,18 @@ name|builder
 operator|.
 name|append
 argument_list|(
-literal|"Table Name Pattern:"
+literal|"Table Name Include Pattern:"
 argument_list|,
-name|tableNamePatternField
+name|tableIncludePatternField
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
+literal|"Table Name Exclude Pattern:"
+argument_list|,
+name|tableExcludePatternField
 argument_list|)
 expr_stmt|;
 name|builder
@@ -355,7 +390,7 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|tableNamePatternField
+name|tableIncludePatternField
 operator|.
 name|setText
 argument_list|(
@@ -399,7 +434,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|String
-name|getTableNamePattern
+name|getTableIncludePattern
 parameter_list|()
 block|{
 return|return
@@ -407,7 +442,7 @@ literal|""
 operator|.
 name|equals
 argument_list|(
-name|tableNamePatternField
+name|tableIncludePatternField
 operator|.
 name|getText
 argument_list|()
@@ -415,7 +450,30 @@ argument_list|)
 condition|?
 literal|null
 else|:
-name|tableNamePatternField
+name|tableIncludePatternField
+operator|.
+name|getText
+argument_list|()
+return|;
+block|}
+name|String
+name|getTableExcludePattern
+parameter_list|()
+block|{
+return|return
+literal|""
+operator|.
+name|equals
+argument_list|(
+name|tableExcludePatternField
+operator|.
+name|getText
+argument_list|()
+argument_list|)
+condition|?
+literal|null
+else|:
+name|tableExcludePatternField
 operator|.
 name|getText
 argument_list|()

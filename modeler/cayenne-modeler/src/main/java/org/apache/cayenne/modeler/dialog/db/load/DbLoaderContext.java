@@ -345,6 +345,10 @@ name|LogFactory
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 4.0  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -598,11 +602,37 @@ name|IncludeTable
 argument_list|(
 name|dialog
 operator|.
-name|getTableNamePattern
+name|getTableIncludePattern
 argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dialog
+operator|.
+name|getTableExcludePattern
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+name|reverseEngineering
+operator|.
+name|addExcludeTable
+argument_list|(
+operator|new
+name|ExcludeTable
+argument_list|(
+name|dialog
+operator|.
+name|getTableExcludePattern
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|// Add here auto_pk_support table
 name|reverseEngineering
 operator|.
 name|addExcludeTable
