@@ -184,12 +184,6 @@ parameter_list|(
 name|MergerTokenFactory
 name|tokenFactory
 parameter_list|,
-name|DataMap
-name|original
-parameter_list|,
-name|DataMap
-name|imported
-parameter_list|,
 name|ValueForNullProvider
 name|valueForNull
 parameter_list|)
@@ -197,10 +191,6 @@ block|{
 name|super
 argument_list|(
 name|tokenFactory
-argument_list|,
-name|original
-argument_list|,
-name|imported
 argument_list|)
 expr_stmt|;
 name|this
@@ -379,9 +369,10 @@ block|{
 name|DbEntity
 name|originalDbEntity
 init|=
-name|originalDataMap
+name|getOriginalDictionary
+argument_list|()
 operator|.
-name|getDbEntity
+name|getByName
 argument_list|(
 name|imported
 operator|.
@@ -389,6 +380,9 @@ name|getEntity
 argument_list|()
 operator|.
 name|getName
+argument_list|()
+operator|.
+name|toUpperCase
 argument_list|()
 argument_list|)
 decl_stmt|;
