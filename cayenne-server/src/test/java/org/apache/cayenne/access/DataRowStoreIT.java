@@ -47,20 +47,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|event
-operator|.
-name|DefaultEventManager
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|testdo
 operator|.
 name|testmap
@@ -130,16 +116,6 @@ operator|.
 name|junit
 operator|.
 name|After
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Before
 import|;
 end_import
 
@@ -231,6 +207,10 @@ name|assertTrue
 import|;
 end_import
 
+begin_comment
+comment|/**  * We pass null as EventManager parameter, as having it not null will start  * really heavy EventBridge (JavaGroupsBridge implementation) inside DataRowStore  * and this behaviour is not anyhow tested here nor it affects existing tests.  */
+end_comment
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -246,38 +226,9 @@ extends|extends
 name|ServerCase
 block|{
 specifier|private
-name|DefaultEventManager
-name|eventManager
-decl_stmt|;
-specifier|private
 name|DataRowStore
 name|cache
 decl_stmt|;
-annotation|@
-name|After
-specifier|public
-name|void
-name|cleanEventManager
-parameter_list|()
-block|{
-if|if
-condition|(
-name|eventManager
-operator|!=
-literal|null
-condition|)
-block|{
-name|eventManager
-operator|.
-name|shutdown
-argument_list|()
-expr_stmt|;
-name|eventManager
-operator|=
-literal|null
-expr_stmt|;
-block|}
-block|}
 annotation|@
 name|After
 specifier|public
@@ -304,22 +255,6 @@ expr_stmt|;
 block|}
 block|}
 annotation|@
-name|Before
-specifier|public
-name|void
-name|createEventManager
-parameter_list|()
-block|{
-comment|// we don't actually need any event manager here, as having it will start
-comment|// really heavy Event Bridge (jgroups bridge) inside DataRowStore and this behaviour
-comment|// is not anyhow tested here nor it affects existing tests.
-name|eventManager
-operator|=
-literal|null
-expr_stmt|;
-comment|//new DefaultEventManager();
-block|}
-annotation|@
 name|Test
 specifier|public
 name|void
@@ -337,7 +272,7 @@ name|Collections
 operator|.
 name|EMPTY_MAP
 argument_list|,
-name|eventManager
+literal|null
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -439,7 +374,7 @@ literal|"cacheXYZ"
 argument_list|,
 name|props
 argument_list|,
-name|eventManager
+literal|null
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -484,7 +419,7 @@ name|Collections
 operator|.
 name|EMPTY_MAP
 argument_list|,
-name|eventManager
+literal|null
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -575,7 +510,7 @@ literal|"cacheXYZ"
 argument_list|,
 name|props
 argument_list|,
-name|eventManager
+literal|null
 argument_list|)
 expr_stmt|;
 name|assertEquals
