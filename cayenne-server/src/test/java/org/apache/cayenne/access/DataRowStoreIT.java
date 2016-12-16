@@ -310,12 +310,14 @@ name|void
 name|createEventManager
 parameter_list|()
 block|{
+comment|// we don't actually need any event manager here, as having it will start
+comment|// really heavy Event Bridge (jgroups bridge) inside DataRowStore and this behaviour
+comment|// is not anyhow tested here nor it affects existing tests.
 name|eventManager
 operator|=
-operator|new
-name|DefaultEventManager
-argument_list|()
+literal|null
 expr_stmt|;
+comment|//new DefaultEventManager();
 block|}
 annotation|@
 name|Test
