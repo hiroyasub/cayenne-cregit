@@ -71,16 +71,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|UUID_PROPERTY
-init|=
-literal|"uuid"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -100,9 +90,7 @@ name|UUID
 init|=
 operator|new
 name|Property
-argument_list|<
-name|UUID
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"uuid"
 argument_list|)
