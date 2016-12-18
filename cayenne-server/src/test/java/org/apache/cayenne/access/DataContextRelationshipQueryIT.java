@@ -451,7 +451,10 @@ argument_list|()
 argument_list|,
 name|Painting
 operator|.
-name|TO_ARTIST_PROPERTY
+name|TO_ARTIST
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -634,7 +637,10 @@ argument_list|()
 argument_list|,
 name|Painting
 operator|.
-name|TO_ARTIST_PROPERTY
+name|TO_ARTIST
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|true
 argument_list|)

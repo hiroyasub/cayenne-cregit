@@ -1029,9 +1029,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName like 'artist%2'"
 argument_list|)
@@ -1069,9 +1069,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName likeIgnoreCase 'artist%2'"
 argument_list|)
@@ -1109,9 +1109,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName not like 'artist%2'"
 argument_list|)
@@ -1151,9 +1151,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName not likeIgnoreCase 'artist%2'"
 argument_list|)
@@ -1193,9 +1193,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName in ('artist1', 'artist3', 'artist19')"
 argument_list|)
@@ -1233,9 +1233,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName not in ('artist1', 'artist3', 'artist19')"
 argument_list|)
@@ -1275,9 +1275,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice between 2000.0 and 4000.0"
 argument_list|)
@@ -1315,9 +1315,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice not between 2000.0 and 4000.0"
 argument_list|)
@@ -1379,9 +1379,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName=$artistName"
 argument_list|)
@@ -1390,7 +1390,7 @@ name|parsed1
 operator|=
 name|parsed1
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|parameters
 argument_list|)
@@ -1428,9 +1428,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:ARTIST_NAME='artist3'"
 argument_list|)
@@ -1468,9 +1468,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice< 2001.01"
 argument_list|)
@@ -1508,9 +1508,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName!=null"
 argument_list|)
@@ -1535,9 +1535,9 @@ expr_stmt|;
 name|Expression
 name|parsed2
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName = null"
 argument_list|)
@@ -1575,9 +1575,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"true"
 argument_list|)
@@ -1602,9 +1602,9 @@ expr_stmt|;
 name|Expression
 name|parsed2
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"(estimatedPrice< 2001.01) and true"
 argument_list|)
@@ -1629,9 +1629,9 @@ expr_stmt|;
 name|Expression
 name|parsed3
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"(estimatedPrice< 2001.01) or true"
 argument_list|)
@@ -1669,9 +1669,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"false"
 argument_list|)
@@ -1696,9 +1696,9 @@ expr_stmt|;
 name|Expression
 name|parsed2
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"(estimatedPrice< 2001.01) and false"
 argument_list|)
@@ -1723,9 +1723,9 @@ expr_stmt|;
 name|Expression
 name|parsed3
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"(estimatedPrice< 2001.01) or false"
 argument_list|)

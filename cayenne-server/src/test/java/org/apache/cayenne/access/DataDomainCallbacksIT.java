@@ -1099,7 +1099,10 @@ name|addPrefetch
 argument_list|(
 name|Painting
 operator|.
-name|TO_ARTIST_PROPERTY
+name|TO_ARTIST
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|p1

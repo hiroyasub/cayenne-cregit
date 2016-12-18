@@ -374,7 +374,10 @@ name|addPrefetch
 argument_list|(
 name|Painting
 operator|.
-name|TO_PAINTING_INFO_PROPERTY
+name|TO_PAINTING_INFO
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|List

@@ -382,7 +382,10 @@ name|assertEquals
 argument_list|(
 name|Exhibit
 operator|.
-name|TO_GALLERY_PROPERTY
+name|TO_GALLERY
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|failure
 operator|.

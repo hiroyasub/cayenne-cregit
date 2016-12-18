@@ -207,7 +207,10 @@ name|setToOneTarget
 argument_list|(
 name|Painting
 operator|.
-name|TO_ARTIST_PROPERTY
+name|TO_ARTIST
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|transientDO
 argument_list|,
@@ -261,7 +264,10 @@ name|setToOneTarget
 argument_list|(
 name|Painting
 operator|.
-name|TO_ARTIST_PROPERTY
+name|TO_ARTIST
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|persistentDO
 argument_list|,
@@ -324,7 +330,10 @@ name|setToOneTarget
 argument_list|(
 name|Painting
 operator|.
-name|TO_ARTIST_PROPERTY
+name|TO_ARTIST
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|doC2
 argument_list|,
