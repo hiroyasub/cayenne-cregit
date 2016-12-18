@@ -84,9 +84,7 @@ name|SUB1SUB1NAME
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"sub1Sub1Name"
 argument_list|)

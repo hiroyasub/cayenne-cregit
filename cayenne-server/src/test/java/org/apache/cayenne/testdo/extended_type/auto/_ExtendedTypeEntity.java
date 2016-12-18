@@ -77,16 +77,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|NAME_PROPERTY
-init|=
-literal|"name"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -106,9 +96,7 @@ name|NAME
 init|=
 operator|new
 name|Property
-argument_list|<
-name|StringET1
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"name"
 argument_list|)

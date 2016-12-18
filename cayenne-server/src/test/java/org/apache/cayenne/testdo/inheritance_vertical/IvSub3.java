@@ -50,16 +50,23 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Override
-specifier|protected
+specifier|public
 name|void
-name|onPrePersist
-parameter_list|()
+name|setIvRoot
+parameter_list|(
+name|IvRoot
+name|ivRoot
+parameter_list|)
 block|{
-comment|//        if(getIvRoot() == null) {
-comment|//            throw new IllegalStateException("IvRoot must be set");
-comment|//        }
+name|setToOneTarget
+argument_list|(
+literal|"ivRoot"
+argument_list|,
+name|ivRoot
+argument_list|,
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

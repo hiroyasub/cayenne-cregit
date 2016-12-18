@@ -77,16 +77,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|ENUM_ATTRIBUTE_PROPERTY
-init|=
-literal|"enumAttribute"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -106,9 +96,7 @@ name|ENUM_ATTRIBUTE
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Enum1
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"enumAttribute"
 argument_list|)

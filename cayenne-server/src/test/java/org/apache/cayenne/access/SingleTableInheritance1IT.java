@@ -336,7 +336,10 @@ name|matchExp
 argument_list|(
 name|Role
 operator|.
-name|ROLE_GROUPS_PROPERTY
+name|ROLE_GROUPS
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|group2
 argument_list|)

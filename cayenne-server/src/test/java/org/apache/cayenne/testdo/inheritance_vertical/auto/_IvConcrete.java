@@ -110,9 +110,7 @@ name|NAME
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"name"
 argument_list|)
@@ -131,12 +129,7 @@ name|CHILDREN
 init|=
 operator|new
 name|Property
-argument_list|<
-name|List
-argument_list|<
-name|IvConcrete
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"children"
 argument_list|)
@@ -152,9 +145,7 @@ name|PARENT
 init|=
 operator|new
 name|Property
-argument_list|<
-name|IvConcrete
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"parent"
 argument_list|)

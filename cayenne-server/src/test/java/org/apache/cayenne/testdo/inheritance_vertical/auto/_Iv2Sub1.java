@@ -100,9 +100,7 @@ name|X
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Iv2X
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"x"
 argument_list|)

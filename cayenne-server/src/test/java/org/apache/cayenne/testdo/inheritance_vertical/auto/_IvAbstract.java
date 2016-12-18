@@ -80,9 +80,7 @@ name|TYPE
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"type"
 argument_list|)

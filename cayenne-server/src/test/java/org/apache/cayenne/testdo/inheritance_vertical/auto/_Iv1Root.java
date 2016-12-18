@@ -80,9 +80,7 @@ name|DISCRIMINATOR
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"discriminator"
 argument_list|)
@@ -98,9 +96,7 @@ name|NAME
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"name"
 argument_list|)

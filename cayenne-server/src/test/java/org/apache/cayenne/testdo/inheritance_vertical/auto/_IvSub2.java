@@ -84,9 +84,7 @@ name|SUB2ATTR
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"sub2Attr"
 argument_list|)
@@ -102,9 +100,7 @@ name|SUB2NAME
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"sub2Name"
 argument_list|)
