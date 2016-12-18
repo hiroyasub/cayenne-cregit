@@ -1199,9 +1199,7 @@ name|sorted
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Persistent
-argument_list|>
+argument_list|<>
 argument_list|(
 name|size
 argument_list|)

@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -201,6 +181,26 @@ name|ObjEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
 comment|/**  * Filters diffs before returning them to the client. Ensures that no server-only data  * leaks to the client and also that all diff objects returned to the client are public  * classes available on the client.  *   * @since 3.0  */
 end_comment
@@ -250,9 +250,7 @@ name|diffs
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|GraphDiff
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|in

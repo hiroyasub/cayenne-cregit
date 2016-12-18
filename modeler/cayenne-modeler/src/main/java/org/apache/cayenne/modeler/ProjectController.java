@@ -2369,9 +2369,7 @@ name|removeList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -8977,9 +8975,7 @@ name|embs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Embeddable
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while

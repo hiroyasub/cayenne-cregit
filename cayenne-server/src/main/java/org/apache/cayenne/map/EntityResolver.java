@@ -364,9 +364,7 @@ name|maps
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataMap
-argument_list|>
+argument_list|<>
 argument_list|(
 name|dataMaps
 argument_list|)

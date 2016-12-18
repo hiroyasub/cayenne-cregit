@@ -496,9 +496,7 @@ name|list
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|dbEntities
 operator|.
@@ -609,9 +607,7 @@ name|list
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|1
 argument_list|)
@@ -1372,9 +1368,7 @@ name|queries
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Query
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|2
 argument_list|)

@@ -1141,9 +1141,7 @@ name|objects
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|len
 operator|>
@@ -3183,9 +3181,7 @@ name|list
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while
@@ -3581,9 +3577,7 @@ block|{
 return|return
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|1
 argument_list|)
@@ -3611,9 +3605,7 @@ name|result
 else|:
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|1
 argument_list|)

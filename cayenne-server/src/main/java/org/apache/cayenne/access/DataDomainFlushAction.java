@@ -618,9 +618,7 @@ name|queries
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Query
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -669,9 +667,7 @@ name|resultDeletedIds
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjectId
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -680,11 +676,7 @@ name|resultModifiedSnapshots
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|ObjectId
-argument_list|,
-name|DataRow
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|runQueries

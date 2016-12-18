@@ -578,9 +578,7 @@ name|delList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// if subAttr and superAttr have same names, adds subAttr to delList

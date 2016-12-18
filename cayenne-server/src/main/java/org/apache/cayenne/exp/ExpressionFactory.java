@@ -1592,9 +1592,7 @@ name|pairs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -1704,9 +1702,7 @@ name|pairs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -1816,9 +1812,7 @@ name|pairs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -2023,9 +2017,7 @@ name|matches
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|values
 operator|.
@@ -2302,9 +2294,7 @@ name|pairs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -4304,9 +4294,7 @@ name|pairs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|objects
 operator|.

@@ -487,9 +487,7 @@ name|ListResponse
 argument_list|(
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|cachedList
 operator|.
@@ -841,9 +839,7 @@ block|}
 return|return
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -882,10 +878,7 @@ name|clientObjects
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-index|[]
-argument_list|>
+argument_list|<>
 argument_list|(
 name|serverObjects
 operator|.
@@ -1030,9 +1023,7 @@ name|clientObjects
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|serverObjects
 operator|.

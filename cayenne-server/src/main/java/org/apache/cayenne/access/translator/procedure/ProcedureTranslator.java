@@ -558,9 +558,7 @@ name|values
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|callParams
 operator|.
@@ -604,9 +602,7 @@ name|loggableParameters
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|values
 operator|.

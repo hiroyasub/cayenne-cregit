@@ -215,9 +215,7 @@ name|dataMaps
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataMap
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|dataMaps
@@ -301,9 +299,7 @@ name|resultMaps
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataMap
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

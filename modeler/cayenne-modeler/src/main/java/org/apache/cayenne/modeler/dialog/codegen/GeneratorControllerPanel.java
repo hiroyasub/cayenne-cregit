@@ -105,9 +105,7 @@ name|dataMapLines
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|StandardPanelComponent
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this

@@ -293,9 +293,7 @@ name|configs
 operator|=
 operator|new
 name|LinkedHashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -304,9 +302,7 @@ name|modules
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Module
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this

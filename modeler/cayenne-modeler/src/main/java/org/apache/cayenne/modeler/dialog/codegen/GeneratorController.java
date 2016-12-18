@@ -881,9 +881,7 @@ name|selectedEntities
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|getParentController
 argument_list|()
@@ -937,9 +935,7 @@ name|generators
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ClassGenerationAction
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Collection
@@ -999,9 +995,7 @@ name|objEntities
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|ObjEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -1031,9 +1025,7 @@ name|embeddables
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|Embeddable
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.

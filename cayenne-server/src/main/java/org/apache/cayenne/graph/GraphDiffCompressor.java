@@ -150,9 +150,7 @@ name|compressed
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|GraphDiff
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -169,14 +167,7 @@ name|diffsByNode
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Object
-argument_list|,
-name|List
-argument_list|<
-name|NodeDiff
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -900,9 +891,7 @@ name|diffs
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|NodeDiff
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|diffsByNode

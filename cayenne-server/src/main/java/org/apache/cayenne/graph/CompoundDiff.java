@@ -358,9 +358,7 @@ name|diffs
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|GraphDiff
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

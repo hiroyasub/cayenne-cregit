@@ -2137,9 +2137,7 @@ name|incoming
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbRelationship
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -2216,9 +2214,7 @@ name|missing
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbRelationship
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

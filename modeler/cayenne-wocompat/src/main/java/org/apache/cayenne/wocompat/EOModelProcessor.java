@@ -3642,9 +3642,7 @@ name|relationship
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|DbRelationship
-argument_list|>
+argument_list|<>
 argument_list|(
 name|dbEntity
 operator|.

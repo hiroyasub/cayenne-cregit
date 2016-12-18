@@ -17,6 +17,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|reflect
+operator|.
+name|ClassDescriptor
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -52,20 +66,6 @@ operator|.
 name|util
 operator|.
 name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|reflect
-operator|.
-name|ClassDescriptor
 import|;
 end_import
 
@@ -128,9 +128,7 @@ name|resolvedComponents
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|resultDescriptors
 operator|.
@@ -375,9 +373,7 @@ name|resultDescriptors
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -411,9 +407,7 @@ name|resultDescriptors
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)

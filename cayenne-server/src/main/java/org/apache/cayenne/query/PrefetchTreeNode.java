@@ -474,9 +474,7 @@ name|c
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|PrefetchTreeNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|traverse
@@ -509,9 +507,7 @@ name|c
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|PrefetchTreeNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|traverse
@@ -554,9 +550,7 @@ name|c
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|PrefetchTreeNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|traverse
@@ -599,9 +593,7 @@ name|c
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|PrefetchTreeNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|traverse
@@ -644,9 +636,7 @@ name|c
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|PrefetchTreeNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|traverse
@@ -1384,9 +1374,7 @@ name|children
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|PrefetchTreeNode
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|4
 argument_list|)

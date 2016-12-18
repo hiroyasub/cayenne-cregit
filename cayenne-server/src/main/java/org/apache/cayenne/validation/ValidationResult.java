@@ -17,6 +17,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -55,20 +69,6 @@ name|List
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
 begin_comment
 comment|/**  * Represents a result of a validation execution. Contains a set of  * {@link ValidationFailure ValidationFailures}that occured in a given context. All  * failures are kept in the same order they were added.  *   * @since 1.1  */
 end_comment
@@ -95,9 +95,7 @@ name|failures
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ValidationFailure
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -171,9 +169,7 @@ name|matchingFailures
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ValidationFailure
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|5
 argument_list|)

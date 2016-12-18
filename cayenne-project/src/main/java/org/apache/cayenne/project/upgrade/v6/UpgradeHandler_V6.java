@@ -329,9 +329,7 @@ name|resourcesToDelete
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Resource
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -395,9 +393,7 @@ name|Project
 argument_list|(
 operator|new
 name|ConfigurationTree
-argument_list|<
-name|DataChannelDescriptor
-argument_list|>
+argument_list|<>
 argument_list|(
 name|descriptor
 argument_list|)

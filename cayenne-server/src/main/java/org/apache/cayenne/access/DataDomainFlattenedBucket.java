@@ -306,9 +306,7 @@ name|arcKeys
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|FlattenedArcKey
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|insertArcKeys
@@ -392,9 +390,7 @@ name|pk
 else|:
 operator|new
 name|ArrayList
-argument_list|<
-name|DbAttribute
-argument_list|>
+argument_list|<>
 argument_list|(
 name|pk
 argument_list|)

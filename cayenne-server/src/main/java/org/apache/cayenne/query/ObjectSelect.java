@@ -1031,9 +1031,7 @@ name|all
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|expressions
 operator|.
@@ -1168,9 +1166,7 @@ name|all
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Expression
-argument_list|>
+argument_list|<>
 argument_list|(
 name|expressions
 operator|.
@@ -1309,9 +1305,7 @@ name|orderings
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Ordering
-argument_list|>
+argument_list|<>
 argument_list|(
 name|orderings
 operator|.
@@ -1386,9 +1380,7 @@ name|orderings
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Ordering
-argument_list|>
+argument_list|<>
 argument_list|(
 name|orderings
 operator|.

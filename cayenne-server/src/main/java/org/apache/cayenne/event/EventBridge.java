@@ -17,6 +17,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -62,20 +76,6 @@ operator|.
 name|util
 operator|.
 name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
 import|;
 end_import
 
@@ -523,9 +523,7 @@ name|listeners
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|SubjectListener
-argument_list|>
+argument_list|<>
 argument_list|(
 name|localSubjects
 operator|.

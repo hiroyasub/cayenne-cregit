@@ -17,6 +17,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|ToStringBuilder
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -62,20 +76,6 @@ operator|.
 name|util
 operator|.
 name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|ToStringBuilder
 import|;
 end_import
 
@@ -439,9 +439,7 @@ name|fields
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|FieldResult
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

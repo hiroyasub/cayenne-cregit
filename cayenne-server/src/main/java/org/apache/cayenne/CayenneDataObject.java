@@ -1173,9 +1173,7 @@ name|values
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataObject
-argument_list|>
+argument_list|<>
 argument_list|(
 name|values
 argument_list|)
@@ -1188,9 +1186,7 @@ name|removedObjects
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataObject
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// remove all relationships, which are missing in passed collection

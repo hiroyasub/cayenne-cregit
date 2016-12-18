@@ -672,9 +672,7 @@ name|defaultEntityListeners
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|EntityListener
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -1764,9 +1762,7 @@ name|ent
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -1800,9 +1796,7 @@ name|ent
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.
@@ -3213,9 +3207,7 @@ name|result
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -3352,9 +3344,7 @@ name|rel
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|Relationship
-argument_list|>
+argument_list|<>
 argument_list|(
 name|dbEnt
 operator|.
@@ -3560,9 +3550,7 @@ name|relationship
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|Relationship
-argument_list|>
+argument_list|<>
 argument_list|(
 name|ent
 operator|.

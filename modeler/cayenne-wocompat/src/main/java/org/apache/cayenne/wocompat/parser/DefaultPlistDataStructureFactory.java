@@ -19,6 +19,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|wocompat
+operator|.
+name|PlistDataStructureFactory
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -57,20 +71,6 @@ name|Map
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|wocompat
-operator|.
-name|PlistDataStructureFactory
-import|;
-end_import
-
 begin_class
 class|class
 name|DefaultPlistDataStructureFactory
@@ -93,9 +93,7 @@ block|{
 return|return
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 return|;
 block|}

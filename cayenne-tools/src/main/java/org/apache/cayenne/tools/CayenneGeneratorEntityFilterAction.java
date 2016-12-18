@@ -147,9 +147,7 @@ name|embeddables
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Embeddable
-argument_list|>
+argument_list|<>
 argument_list|(
 name|mainDataMap
 operator|.
@@ -232,9 +230,7 @@ name|entities
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|mainDataMap
 operator|.

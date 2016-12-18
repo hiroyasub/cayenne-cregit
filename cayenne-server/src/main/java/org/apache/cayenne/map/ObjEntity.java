@@ -510,9 +510,7 @@ name|entityListeners
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|EntityListener
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|2
 argument_list|)
@@ -523,11 +521,7 @@ name|attributeOverrides
 operator|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1094,9 +1088,7 @@ name|clientPK
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjAttribute
-argument_list|>
+argument_list|<>
 argument_list|(
 name|primaryKeys
 operator|.
@@ -2073,9 +2065,7 @@ name|attributes
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ObjAttribute
-argument_list|>
+argument_list|<>
 argument_list|(
 name|pkAttributes
 operator|.
@@ -3030,9 +3020,7 @@ name|names
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|pkAttributes
 operator|.

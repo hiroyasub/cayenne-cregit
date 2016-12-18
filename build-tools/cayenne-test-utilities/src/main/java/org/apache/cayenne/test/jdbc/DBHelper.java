@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|DataSource
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -104,16 +114,6 @@ operator|.
 name|util
 operator|.
 name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|sql
-operator|.
-name|DataSource
 import|;
 end_import
 
@@ -499,10 +499,7 @@ name|result
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-index|[]
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while

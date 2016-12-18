@@ -1118,9 +1118,7 @@ name|selected
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|InferredRelationship
-argument_list|>
+argument_list|<>
 argument_list|(
 name|selectedEntities
 operator|.

@@ -3953,9 +3953,7 @@ name|dataNode
 range|:
 operator|new
 name|ArrayList
-argument_list|<
-name|DataNodeDescriptor
-argument_list|>
+argument_list|<>
 argument_list|(
 name|dataChannelDescriptor
 operator|.

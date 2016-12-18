@@ -255,9 +255,7 @@ name|dbRelationships
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbRelationship
-argument_list|>
+argument_list|<>
 argument_list|(
 name|getEntity
 argument_list|()

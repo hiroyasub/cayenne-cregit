@@ -465,11 +465,7 @@ name|resolved
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|Map
-argument_list|,
-name|Persistent
-argument_list|>
+argument_list|<>
 argument_list|(
 name|capacity
 argument_list|)
@@ -478,9 +474,7 @@ name|resolvedRows
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DataRow
-argument_list|>
+argument_list|<>
 argument_list|(
 name|capacity
 argument_list|)
@@ -554,11 +548,7 @@ name|id
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -744,11 +734,7 @@ name|targetSource
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|ColumnDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// build a DB path .. find parent node that terminates the joint group...
