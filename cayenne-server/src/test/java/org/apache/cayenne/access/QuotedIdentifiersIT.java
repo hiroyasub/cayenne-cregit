@@ -799,7 +799,10 @@ literal|"QuoteAdress"
 argument_list|,
 name|QuoteAdress
 operator|.
-name|GROUP_PROPERTY
+name|GROUP
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|"324"
 argument_list|)

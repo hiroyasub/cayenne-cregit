@@ -509,7 +509,10 @@ name|readProperty
 argument_list|(
 name|CollectionToMany
 operator|.
-name|TARGETS_PROPERTY
+name|TARGETS
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 operator|instanceof
 name|Collection
@@ -528,7 +531,10 @@ name|setToManyTarget
 argument_list|(
 name|CollectionToMany
 operator|.
-name|TARGETS_PROPERTY
+name|TARGETS
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 operator|new
 name|ArrayList

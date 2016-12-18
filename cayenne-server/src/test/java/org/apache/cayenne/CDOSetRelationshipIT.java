@@ -608,7 +608,10 @@ name|addPrefetch
 argument_list|(
 name|SetToMany
 operator|.
-name|TARGETS_PROPERTY
+name|TARGETS
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|SetToMany

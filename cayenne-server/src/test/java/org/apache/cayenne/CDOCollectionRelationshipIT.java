@@ -570,11 +570,7 @@ name|CollectionToMany
 operator|.
 name|ID_PK_COLUMN
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -584,7 +580,10 @@ name|addPrefetch
 argument_list|(
 name|CollectionToMany
 operator|.
-name|TARGETS_PROPERTY
+name|TARGETS
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|CollectionToMany
