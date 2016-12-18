@@ -3700,12 +3700,7 @@ argument_list|>
 argument_list|()
 argument_list|)
 return|;
-comment|// TODO:
-comment|// do
-comment|// we
-comment|// need
-comment|// aliases
-comment|// here?
+comment|// TODO: do we need aliases here?
 block|}
 comment|/**      * @since 4.0      */
 specifier|public

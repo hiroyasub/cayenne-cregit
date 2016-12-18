@@ -194,11 +194,7 @@ name|handlerMap
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|URL
-argument_list|,
-name|TypesHandler
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|protected

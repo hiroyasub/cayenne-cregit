@@ -19,26 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -107,6 +87,26 @@ name|JGraph
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * Class for storing information about datadomain's builders.  * Has methods for saving and loading graphs, as well as building graph for  * specified data domain.  * This class is center of all graph management in CM  */
 end_comment
@@ -135,11 +135,7 @@ name|graphMaps
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|DataChannelDescriptor
-argument_list|,
-name|GraphMap
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -116,9 +116,7 @@ name|vertices
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|E
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -132,11 +130,7 @@ name|inDegrees
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|E
-argument_list|,
-name|InDegree
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private

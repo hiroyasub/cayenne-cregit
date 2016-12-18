@@ -2844,14 +2844,7 @@ name|databaseTypes
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|Integer
-argument_list|,
-name|List
-argument_list|<
-name|TypeInfo
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public

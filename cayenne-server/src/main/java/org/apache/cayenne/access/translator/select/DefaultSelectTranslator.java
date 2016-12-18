@@ -2626,11 +2626,7 @@ name|attributeOverrides
 operator|=
 operator|new
 name|HashMap
-argument_list|<
-name|ObjAttribute
-argument_list|,
-name|ColumnDescriptor
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
