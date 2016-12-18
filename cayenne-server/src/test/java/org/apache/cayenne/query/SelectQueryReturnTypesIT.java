@@ -474,7 +474,10 @@ name|ASTObjPath
 argument_list|(
 name|ReturnTypesMap1
 operator|.
-name|INTEGER_COLUMN_PROPERTY
+name|INTEGER_COLUMN
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 argument_list|)
 argument_list|)
@@ -594,7 +597,10 @@ name|ASTObjPath
 argument_list|(
 name|ReturnTypesMap1
 operator|.
-name|INTEGER_COLUMN_PROPERTY
+name|INTEGER_COLUMN
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 block|,
 operator|new
@@ -720,7 +726,10 @@ name|ASTObjPath
 argument_list|(
 name|ReturnTypesMap1
 operator|.
-name|INTEGER_COLUMN_PROPERTY
+name|INTEGER_COLUMN
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 block|,
 operator|new
@@ -846,7 +855,10 @@ name|ASTObjPath
 argument_list|(
 name|ReturnTypesMap1
 operator|.
-name|INTEGER_COLUMN_PROPERTY
+name|INTEGER_COLUMN
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 block|,
 operator|new

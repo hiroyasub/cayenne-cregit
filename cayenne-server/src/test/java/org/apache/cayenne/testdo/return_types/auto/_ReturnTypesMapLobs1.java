@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|CLOB_COLUMN_PROPERTY
-init|=
-literal|"clobColumn"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -90,9 +80,7 @@ name|CLOB_COLUMN
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"clobColumn"
 argument_list|)
@@ -108,9 +96,7 @@ name|NCLOB_COLUMN
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"nclobColumn"
 argument_list|)
@@ -148,7 +134,7 @@ return|;
 block|}
 specifier|public
 name|void
-name|setNClobColumn
+name|setNclobColumn
 parameter_list|(
 name|String
 name|nclobColumn
@@ -164,7 +150,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|String
-name|getNClobColumn
+name|getNclobColumn
 parameter_list|()
 block|{
 return|return

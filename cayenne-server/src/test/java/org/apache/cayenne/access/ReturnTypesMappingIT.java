@@ -1723,7 +1723,7 @@ literal|"Ø¯Ø±Ø®ØªâÙØ§Û Ø¬Ø³ØªØ¬ÙÛ ÙØªÙ�
 decl_stmt|;
 name|test
 operator|.
-name|setNCharColumn
+name|setNcharColumn
 argument_list|(
 name|charValue
 argument_list|)
@@ -2140,7 +2140,7 @@ argument_list|()
 decl_stmt|;
 name|test
 operator|.
-name|setNClobColumn
+name|setNclobColumn
 argument_list|(
 name|clobValue
 argument_list|)
@@ -6057,7 +6057,7 @@ literal|"Û ÙØªÙØ§Ø²ÙØ ÙÛØ§Ø²Û ÙØ¯Ø§Ø±
 decl_stmt|;
 name|test
 operator|.
-name|setNVarcharColumn
+name|setNvarcharColumn
 argument_list|(
 name|varcharValue
 argument_list|)
