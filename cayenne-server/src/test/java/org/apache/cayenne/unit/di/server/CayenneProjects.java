@@ -257,14 +257,6 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|PERSISTENT_PROJECT
-init|=
-literal|"cayenne-persistent.xml"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
 name|PRIMITIVE_PROJECT
 init|=
 literal|"cayenne-primitive.xml"

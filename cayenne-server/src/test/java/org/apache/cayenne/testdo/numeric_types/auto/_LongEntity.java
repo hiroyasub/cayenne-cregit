@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|LONG_FIELD_PROPERTY
-init|=
-literal|"longField"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -90,9 +80,7 @@ name|LONG_FIELD
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Long
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"longField"
 argument_list|)

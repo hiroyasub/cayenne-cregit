@@ -593,8 +593,6 @@ literal|"uuid.map.xml"
 block|,
 literal|"multi-tier.map.xml"
 block|,
-literal|"persistent.map.xml"
-block|,
 literal|"reflexive.map.xml"
 block|,
 literal|"delete-rules.map.xml"

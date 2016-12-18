@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|TINYINT_COL_PROPERTY
-init|=
-literal|"tinyintCol"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -90,9 +80,7 @@ name|TINYINT_COL
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Byte
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"tinyintCol"
 argument_list|)

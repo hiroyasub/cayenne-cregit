@@ -71,16 +71,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|BIG_INTEGER_FIELD_PROPERTY
-init|=
-literal|"bigIntegerField"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -100,9 +90,7 @@ name|BIG_INTEGER_FIELD
 init|=
 operator|new
 name|Property
-argument_list|<
-name|BigInteger
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"bigIntegerField"
 argument_list|)

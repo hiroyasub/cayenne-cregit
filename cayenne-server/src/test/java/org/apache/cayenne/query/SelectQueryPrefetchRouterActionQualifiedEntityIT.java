@@ -16,30 +16,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertSame
-import|;
-end_import
-
-begin_import
 import|import
 name|org
 operator|.
@@ -185,6 +161,30 @@ name|Test
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -245,7 +245,10 @@ name|addPrefetch
 argument_list|(
 name|Employee
 operator|.
-name|TO_DEPARTMENT_PROPERTY
+name|TO_DEPARTMENT
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|SelectQueryPrefetchRouterAction
@@ -311,13 +314,11 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
-literal|"db:employees.NAME = 'abc' "
-operator|+
-literal|"and (db:employees.PERSON_TYPE = 'EE' "
+literal|"db:employees.NAME = 'abc' and (db:employees.PERSON_TYPE = 'EE' "
 operator|+
 literal|"or db:employees.PERSON_TYPE = 'EM')"
 argument_list|)
@@ -376,7 +377,10 @@ name|addPrefetch
 argument_list|(
 name|Employee
 operator|.
-name|TO_DEPARTMENT_PROPERTY
+name|TO_DEPARTMENT
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|SelectQueryPrefetchRouterAction

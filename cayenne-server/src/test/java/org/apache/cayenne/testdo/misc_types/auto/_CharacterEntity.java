@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|CHARACTER_FIELD_PROPERTY
-init|=
-literal|"characterField"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -90,9 +80,7 @@ name|CHARACTER_FIELD
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Character
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"characterField"
 argument_list|)

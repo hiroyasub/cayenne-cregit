@@ -571,7 +571,10 @@ name|getProperty
 argument_list|(
 name|MtTable1
 operator|.
-name|TABLE2ARRAY_PROPERTY
+name|TABLE2ARRAY
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -628,7 +631,10 @@ name|assertEquals
 argument_list|(
 name|MtTable2
 operator|.
-name|TABLE1_PROPERTY
+name|TABLE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 operator|(
 operator|(

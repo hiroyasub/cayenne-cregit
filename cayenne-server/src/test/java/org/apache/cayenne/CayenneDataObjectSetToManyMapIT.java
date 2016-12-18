@@ -422,7 +422,10 @@ name|readProperty
 argument_list|(
 name|MapToMany
 operator|.
-name|TARGETS_PROPERTY
+name|TARGETS
+operator|.
+name|getName
+argument_list|()
 argument_list|)
 operator|instanceof
 name|Map
@@ -441,7 +444,10 @@ name|setToManyTarget
 argument_list|(
 name|MapToMany
 operator|.
-name|TARGETS_PROPERTY
+name|TARGETS
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 operator|new
 name|ArrayList

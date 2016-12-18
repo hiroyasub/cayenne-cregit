@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|BIT_COLUMN_PROPERTY
-init|=
-literal|"bitColumn"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -90,9 +80,7 @@ name|BIT_COLUMN
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Boolean
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"bitColumn"
 argument_list|)

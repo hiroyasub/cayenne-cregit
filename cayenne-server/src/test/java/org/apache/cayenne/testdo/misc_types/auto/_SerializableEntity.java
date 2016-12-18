@@ -73,16 +73,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|SERIALIZABLE_FIELD_PROPERTY
-init|=
-literal|"serializableField"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -102,9 +92,7 @@ name|SERIALIZABLE_FIELD
 init|=
 operator|new
 name|Property
-argument_list|<
-name|MockSerializable
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"serializableField"
 argument_list|)

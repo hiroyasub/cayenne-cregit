@@ -61,16 +61,6 @@ name|serialVersionUID
 init|=
 literal|1L
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|BOOLEAN_COLUMN_PROPERTY
-init|=
-literal|"booleanColumn"
-decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -90,9 +80,7 @@ name|BOOLEAN_COLUMN
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Boolean
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"booleanColumn"
 argument_list|)
