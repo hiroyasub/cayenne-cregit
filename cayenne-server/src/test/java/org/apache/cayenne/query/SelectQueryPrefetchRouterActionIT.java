@@ -39,20 +39,6 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Expression
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
 name|ExpressionFactory
 import|;
 end_import
@@ -355,9 +341,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:toArtist.ARTIST_NAME = 'abc'"
 argument_list|)
@@ -485,9 +471,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:toArtist.ARTIST_NAME = 'abc' or db:toArtist.ARTIST_NAME = 'xyz'"
 argument_list|)

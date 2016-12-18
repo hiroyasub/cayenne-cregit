@@ -80,9 +80,9 @@ block|{
 name|Expression
 name|expTrue
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"booleanColumn = true"
 argument_list|)
@@ -90,9 +90,9 @@ decl_stmt|;
 name|Expression
 name|expFalse
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"booleanColumn = false"
 argument_list|)

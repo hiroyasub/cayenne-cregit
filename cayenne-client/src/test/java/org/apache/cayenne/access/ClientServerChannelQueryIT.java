@@ -77,7 +77,7 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Expression
+name|ExpressionFactory
 import|;
 end_import
 
@@ -307,43 +307,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -903,9 +867,9 @@ name|ClientMtTable1
 operator|.
 name|class
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"globalAttribute1 = 'g1'"
 argument_list|)
@@ -969,9 +933,9 @@ name|ClientMtTable1
 operator|.
 name|class
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"table2Array.globalAttribute = 'g1'"
 argument_list|)
@@ -1224,9 +1188,9 @@ name|ClientMtTable2
 operator|.
 name|class
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"globalAttribute = 'g1'"
 argument_list|)
@@ -1352,9 +1316,9 @@ name|ClientMtTable1
 operator|.
 name|class
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"globalAttribute1 = 'g1'"
 argument_list|)

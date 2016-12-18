@@ -2525,9 +2525,9 @@ name|Painting
 operator|.
 name|class
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:PAINTING_ID = 1"
 argument_list|)

@@ -2181,7 +2181,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testExpressionWithParameters
+name|testParams
 parameter_list|()
 throws|throws
 name|Exception
@@ -2257,9 +2257,9 @@ decl_stmt|;
 name|Expression
 name|exp
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"table1 = $attr"
 argument_list|)
@@ -2268,7 +2268,7 @@ name|exp
 operator|=
 name|exp
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|Collections
 operator|.
@@ -2328,15 +2328,15 @@ name|exp
 operator|.
 name|andExp
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"table1 = $attr"
 argument_list|)
 argument_list|)
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|Collections
 operator|.

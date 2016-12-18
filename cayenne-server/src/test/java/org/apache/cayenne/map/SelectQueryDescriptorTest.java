@@ -25,7 +25,7 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Expression
+name|ExpressionFactory
 import|;
 end_import
 
@@ -39,7 +39,35 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|*
+name|Query
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|QueryMetadata
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SelectQuery
 import|;
 end_import
 
@@ -61,31 +89,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertSame
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -282,9 +286,9 @@ name|builder
 operator|.
 name|setQualifier
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"abc = 5"
 argument_list|)
@@ -303,9 +307,9 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"abc = 5"
 argument_list|)

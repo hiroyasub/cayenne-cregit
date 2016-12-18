@@ -111,6 +111,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|exp
+operator|.
+name|ExpressionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|PrefetchTreeNode
@@ -359,55 +373,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -903,9 +869,9 @@ expr_stmt|;
 name|Expression
 name|e
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"galleryName = $name"
 argument_list|)
@@ -926,7 +892,7 @@ name|class
 argument_list|,
 name|e
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|Collections
 operator|.
@@ -1080,9 +1046,9 @@ expr_stmt|;
 name|Expression
 name|e
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"galleryName = $name"
 argument_list|)
@@ -1333,9 +1299,9 @@ expr_stmt|;
 name|Expression
 name|e
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"galleryName = $name"
 argument_list|)
@@ -1593,9 +1559,9 @@ expr_stmt|;
 name|Expression
 name|e
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"galleryName = $name"
 argument_list|)

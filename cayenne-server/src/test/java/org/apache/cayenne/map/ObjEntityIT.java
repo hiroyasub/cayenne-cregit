@@ -1020,9 +1020,9 @@ name|artistE
 operator|.
 name|lastPathComponent
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"paintingArray.paintingTitle"
 argument_list|)
@@ -1065,9 +1065,9 @@ name|artistE
 operator|.
 name|lastPathComponent
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"paintingArray.toGallery"
 argument_list|)
@@ -2361,9 +2361,9 @@ decl_stmt|;
 name|Expression
 name|e1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"paintingArray"
 argument_list|)
@@ -2386,9 +2386,9 @@ literal|"failure: "
 operator|+
 name|translated
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:toArtist.paintingArray"
 argument_list|)
@@ -2427,9 +2427,9 @@ decl_stmt|;
 name|Expression
 name|e1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistExhibitArray.toExhibit"
 argument_list|)
@@ -2452,9 +2452,9 @@ literal|"failure: "
 operator|+
 name|translated
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:toArtist.artistExhibitArray.toExhibit"
 argument_list|)
@@ -2493,9 +2493,9 @@ decl_stmt|;
 name|Expression
 name|e1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"paintingArray.toPaintingInfo.textReview"
 argument_list|)
@@ -2518,9 +2518,9 @@ literal|"failure: "
 operator|+
 name|translated
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:paintingArray.toArtist.paintingArray.toPaintingInfo.TEXT_REVIEW"
 argument_list|)
@@ -2559,9 +2559,9 @@ decl_stmt|;
 name|Expression
 name|e1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistExhibitArray.toExhibit"
 argument_list|)
@@ -2584,9 +2584,9 @@ literal|"failure: "
 operator|+
 name|translated
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:artistExhibitArray.toArtist.artistExhibitArray.toExhibit"
 argument_list|)
@@ -2625,9 +2625,9 @@ decl_stmt|;
 name|Expression
 name|e1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"paintingArray = $p and artistExhibitArray.toExhibit.closingDate = $d"
 argument_list|)
@@ -2650,9 +2650,9 @@ literal|"failure: "
 operator|+
 name|translated
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:toArtist.paintingArray = $p "
 operator|+
@@ -2693,9 +2693,9 @@ decl_stmt|;
 name|Expression
 name|e1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"groupArray+.name"
 argument_list|)
@@ -2718,9 +2718,9 @@ literal|"failure: "
 operator|+
 name|translated
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:toArtist.artistGroupArray+.toGroup+.NAME"
 argument_list|)

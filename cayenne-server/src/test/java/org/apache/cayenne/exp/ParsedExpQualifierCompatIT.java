@@ -504,9 +504,9 @@ expr_stmt|;
 name|Expression
 name|parsed
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName='artist1' or artistName='artist3'"
 argument_list|)
@@ -530,9 +530,9 @@ argument_list|)
 expr_stmt|;
 name|parsed
 operator|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName='artist1' or artistName='artist3' or artistName='artist5'"
 argument_list|)
@@ -570,9 +570,9 @@ expr_stmt|;
 name|Expression
 name|parsed
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName='artist1' and artistName='artist1'"
 argument_list|)
@@ -596,9 +596,9 @@ argument_list|)
 expr_stmt|;
 name|parsed
 operator|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName='artist1' and artistName='artist3'"
 argument_list|)
@@ -636,9 +636,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"not artistName='artist3'"
 argument_list|)
@@ -665,9 +665,9 @@ expr_stmt|;
 name|Expression
 name|parsed2
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"not artistName='artist3'"
 argument_list|)
@@ -707,9 +707,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName='artist3'"
 argument_list|)
@@ -754,9 +754,9 @@ expr_stmt|;
 name|Expression
 name|parsed2
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName=='artist3'"
 argument_list|)
@@ -794,9 +794,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName!='artist3'"
 argument_list|)
@@ -823,9 +823,9 @@ expr_stmt|;
 name|Expression
 name|parsed2
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName<>'artist3'"
 argument_list|)
@@ -865,9 +865,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice< 2000.0"
 argument_list|)
@@ -905,9 +905,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice<= 2000.0"
 argument_list|)
@@ -945,9 +945,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice> 2000"
 argument_list|)
@@ -987,9 +987,9 @@ expr_stmt|;
 name|Expression
 name|parsed1
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"estimatedPrice>= 2000"
 argument_list|)

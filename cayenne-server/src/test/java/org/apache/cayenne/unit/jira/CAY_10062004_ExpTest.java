@@ -35,6 +35,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|ExpressionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|junit
 operator|.
 name|Test
@@ -74,9 +88,9 @@ block|{
 name|Expression
 name|parsed
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"(a = 1 and a = 2) or (a != 1 and a != 2)"
 argument_list|)
@@ -122,9 +136,9 @@ block|{
 name|Expression
 name|parsed
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"(a = 1 and a = 2) or (a != 1 and a != 2)"
 argument_list|)
@@ -132,9 +146,9 @@ decl_stmt|;
 name|Expression
 name|first
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"a = 1"
 argument_list|)
@@ -142,9 +156,9 @@ decl_stmt|;
 name|Expression
 name|second
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"a = 2"
 argument_list|)
@@ -152,9 +166,9 @@ decl_stmt|;
 name|Expression
 name|third
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"a != 1"
 argument_list|)
@@ -162,9 +176,9 @@ decl_stmt|;
 name|Expression
 name|fourth
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"a != 2"
 argument_list|)

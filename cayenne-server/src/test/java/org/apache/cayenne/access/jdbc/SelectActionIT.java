@@ -79,6 +79,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|exp
+operator|.
+name|ExpressionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|query
 operator|.
 name|SelectQuery
@@ -278,9 +292,9 @@ expr_stmt|;
 name|Expression
 name|qual
 init|=
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"clobValue.value = 100"
 argument_list|)
