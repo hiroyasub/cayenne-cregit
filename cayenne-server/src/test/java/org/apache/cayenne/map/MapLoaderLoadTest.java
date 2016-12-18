@@ -951,7 +951,10 @@ name|assertEquals
 argument_list|(
 name|Artist
 operator|.
-name|ARTIST_NAME_PROPERTY
+name|ARTIST_NAME
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|artistNameOrdering
 operator|.
@@ -992,7 +995,10 @@ name|assertEquals
 argument_list|(
 name|Artist
 operator|.
-name|DATE_OF_BIRTH_PROPERTY
+name|DATE_OF_BIRTH
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|dobOrdering
 operator|.

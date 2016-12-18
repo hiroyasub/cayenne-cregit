@@ -326,7 +326,10 @@ name|id
 argument_list|,
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|true
 argument_list|)

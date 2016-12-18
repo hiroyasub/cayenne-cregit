@@ -333,11 +333,10 @@ name|addOrdering
 argument_list|(
 name|Artist
 operator|.
-name|ARTIST_NAME_PROPERTY
-argument_list|,
-name|SortOrder
+name|ARTIST_NAME
 operator|.
-name|ASCENDING
+name|asc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|query

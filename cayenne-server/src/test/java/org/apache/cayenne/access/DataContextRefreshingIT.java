@@ -1177,7 +1177,10 @@ name|addPrefetch
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|artist
@@ -1322,7 +1325,10 @@ name|addPrefetch
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|artist

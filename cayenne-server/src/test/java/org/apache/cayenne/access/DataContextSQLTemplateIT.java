@@ -700,7 +700,10 @@ name|addObjectField
 argument_list|(
 name|Artist
 operator|.
-name|ARTIST_NAME_PROPERTY
+name|ARTIST_NAME
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|"Y"
 argument_list|)
@@ -711,7 +714,10 @@ name|addObjectField
 argument_list|(
 name|Artist
 operator|.
-name|DATE_OF_BIRTH_PROPERTY
+name|DATE_OF_BIRTH
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|"Z"
 argument_list|)

@@ -389,7 +389,10 @@ name|addToManyTarget
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|doC1
 argument_list|,
@@ -444,7 +447,10 @@ name|addToManyTarget
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|transientDO
 argument_list|,
@@ -498,7 +504,10 @@ name|addToManyTarget
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|persistentDO
 argument_list|,

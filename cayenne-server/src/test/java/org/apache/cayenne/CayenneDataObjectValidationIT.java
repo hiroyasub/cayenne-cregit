@@ -529,7 +529,10 @@ name|assertEquals
 argument_list|(
 name|Artist
 operator|.
-name|ARTIST_NAME_PROPERTY
+name|ARTIST_NAME
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|failure
 operator|.
@@ -731,7 +734,10 @@ name|assertEquals
 argument_list|(
 name|Artist
 operator|.
-name|ARTIST_NAME_PROPERTY
+name|ARTIST_NAME
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|failure
 operator|.

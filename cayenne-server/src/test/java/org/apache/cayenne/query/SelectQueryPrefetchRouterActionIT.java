@@ -286,7 +286,10 @@ name|addPrefetch
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|SelectQueryPrefetchRouterAction
@@ -386,18 +389,22 @@ name|class
 argument_list|)
 decl_stmt|;
 name|SelectQuery
+argument_list|<
+name|Artist
+argument_list|>
 name|q
 init|=
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|Artist
 operator|.
 name|class
 argument_list|,
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"artistName = 'abc' or artistName = 'xyz'"
 argument_list|)
@@ -409,7 +416,10 @@ name|addPrefetch
 argument_list|(
 name|Artist
 operator|.
-name|PAINTING_ARRAY_PROPERTY
+name|PAINTING_ARRAY
+operator|.
+name|disjoint
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|SelectQueryPrefetchRouterAction
@@ -598,9 +608,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|Expression
+name|ExpressionFactory
 operator|.
-name|fromString
+name|exp
 argument_list|(
 literal|"db:paintingArray.toArtist.ARTIST_NAME = 'abc'"
 argument_list|)

@@ -81,10 +81,7 @@ name|DOUBLE_ARRAY
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Double
-index|[]
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"doubleArray"
 argument_list|)

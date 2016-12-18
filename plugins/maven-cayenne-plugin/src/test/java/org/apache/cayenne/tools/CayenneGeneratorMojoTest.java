@@ -265,7 +265,7 @@ name|content
 operator|.
 name|contains
 argument_list|(
-literal|"public static final Property<List<TestRelEntity>> ADDITIONAL_REL = new Property<List<TestRelEntity>>(\"additionalRel\");"
+literal|"public static final Property<List<TestRelEntity>> ADDITIONAL_REL = new Property<>(\"additionalRel\");"
 argument_list|)
 argument_list|)
 expr_stmt|;
