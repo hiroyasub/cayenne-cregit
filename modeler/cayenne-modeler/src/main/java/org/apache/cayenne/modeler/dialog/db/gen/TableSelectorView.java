@@ -16,6 +16,8 @@ operator|.
 name|dialog
 operator|.
 name|db
+operator|.
+name|gen
 package|;
 end_package
 
