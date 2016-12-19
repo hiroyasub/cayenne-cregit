@@ -777,6 +777,17 @@ argument_list|,
 name|dbRelationship
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|removingMeaningfulFKs
+condition|)
+block|{
+name|getRidOfAttributesThatAreNowSrcAttributesForRelationships
+argument_list|(
+name|entity
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 return|return
 literal|true
