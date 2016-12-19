@@ -160,6 +160,8 @@ name|super
 argument_list|(
 literal|"Set Allow Null"
 argument_list|,
+literal|70
+argument_list|,
 name|entity
 argument_list|,
 name|column

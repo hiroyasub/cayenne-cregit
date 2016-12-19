@@ -125,6 +125,8 @@ name|super
 argument_list|(
 literal|"Drop Table"
 argument_list|,
+literal|30
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;

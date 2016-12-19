@@ -195,6 +195,8 @@ name|super
 argument_list|(
 literal|"Create Table"
 argument_list|,
+literal|40
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;

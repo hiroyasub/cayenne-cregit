@@ -162,6 +162,8 @@ name|super
 argument_list|(
 literal|"Add Column"
 argument_list|,
+literal|55
+argument_list|,
 name|entity
 argument_list|,
 name|column

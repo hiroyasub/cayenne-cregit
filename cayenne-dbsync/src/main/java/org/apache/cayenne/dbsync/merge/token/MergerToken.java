@@ -81,6 +81,11 @@ begin_interface
 specifier|public
 interface|interface
 name|MergerToken
+extends|extends
+name|Comparable
+argument_list|<
+name|MergerToken
+argument_list|>
 block|{
 name|String
 name|getTokenName
@@ -88,6 +93,10 @@ parameter_list|()
 function_decl|;
 name|String
 name|getTokenValue
+parameter_list|()
+function_decl|;
+name|int
+name|getSortingWeight
 parameter_list|()
 function_decl|;
 comment|/**      * The direction of this token. One of {@link MergeDirection#TO_DB} or      * {@link MergeDirection#TO_MODEL}      */

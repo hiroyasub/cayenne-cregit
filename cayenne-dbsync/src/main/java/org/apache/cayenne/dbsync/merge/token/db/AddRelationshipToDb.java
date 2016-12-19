@@ -160,6 +160,8 @@ name|super
 argument_list|(
 literal|"Add foreign key"
 argument_list|,
+literal|110
+argument_list|,
 name|entity
 argument_list|)
 expr_stmt|;
@@ -302,37 +304,6 @@ name|relationship
 operator|.
 name|isSourceIndependentFromTargetChange
 argument_list|()
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|int
-name|compareTo
-parameter_list|(
-name|MergerToken
-name|o
-parameter_list|)
-block|{
-comment|// add all AddRelationshipToDb to the end.
-if|if
-condition|(
-name|o
-operator|instanceof
-name|AddRelationshipToDb
-condition|)
-block|{
-return|return
-name|super
-operator|.
-name|compareTo
-argument_list|(
-name|o
-argument_list|)
-return|;
-block|}
-return|return
-literal|1
 return|;
 block|}
 block|}

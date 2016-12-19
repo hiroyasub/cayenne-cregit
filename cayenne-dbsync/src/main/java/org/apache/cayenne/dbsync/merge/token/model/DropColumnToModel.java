@@ -206,6 +206,8 @@ name|super
 argument_list|(
 literal|"Drop Column"
 argument_list|,
+literal|25
+argument_list|,
 name|entity
 argument_list|,
 name|column

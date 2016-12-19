@@ -2632,11 +2632,11 @@ name|assertEquals
 argument_list|(
 name|asList
 argument_list|(
-literal|"AddColumnToModel"
-argument_list|,
 literal|"CreateTableToDb"
 argument_list|,
 literal|"CreateTableToModel"
+argument_list|,
+literal|"AddColumnToModel"
 argument_list|,
 literal|"AddRelationshipToModel"
 argument_list|)
