@@ -566,13 +566,6 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|parsed
-operator|!=
-literal|null
-condition|)
-block|{
 for|for
 control|(
 name|int
@@ -788,7 +781,6 @@ name|stop
 operator|=
 literal|true
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
@@ -1090,15 +1082,7 @@ name|resultComponents
 operator|.
 name|add
 argument_list|(
-name|pathsInSelect
-operator|.
-name|get
-argument_list|(
-name|path
-argument_list|)
-operator|.
-name|intValue
-argument_list|()
+name|integer
 argument_list|,
 name|ident
 argument_list|)
@@ -2743,6 +2727,8 @@ name|this
 operator|.
 name|id
 operator|=
+name|normalizeIdPath
+argument_list|(
 operator|(
 operator|(
 name|EJBQLPath
@@ -2752,6 +2738,7 @@ operator|)
 operator|.
 name|getId
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -2883,6 +2870,9 @@ init|=
 name|expression
 operator|.
 name|getText
+argument_list|()
+operator|.
+name|toLowerCase
 argument_list|()
 decl_stmt|;
 comment|// map id variable to class descriptor
