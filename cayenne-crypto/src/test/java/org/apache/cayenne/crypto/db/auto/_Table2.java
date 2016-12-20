@@ -81,10 +81,7 @@ name|CRYPTO_BYTES
 init|=
 operator|new
 name|Property
-argument_list|<
-name|byte
-index|[]
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"cryptoBytes"
 argument_list|)
@@ -101,10 +98,7 @@ name|PLAIN_BYTES
 init|=
 operator|new
 name|Property
-argument_list|<
-name|byte
-index|[]
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"plainBytes"
 argument_list|)

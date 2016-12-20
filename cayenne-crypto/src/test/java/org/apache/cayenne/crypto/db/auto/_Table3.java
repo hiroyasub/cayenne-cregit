@@ -80,9 +80,7 @@ name|CRYPTO_STRING
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"cryptoString"
 argument_list|)
