@@ -80,9 +80,7 @@ name|CRYPTO_INT
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"cryptoInt"
 argument_list|)
@@ -98,9 +96,7 @@ name|CRYPTO_STRING
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"cryptoString"
 argument_list|)
@@ -116,9 +112,7 @@ name|PLAIN_INT
 init|=
 operator|new
 name|Property
-argument_list|<
-name|Integer
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"plainInt"
 argument_list|)
@@ -134,9 +128,7 @@ name|PLAIN_STRING
 init|=
 operator|new
 name|Property
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|"plainString"
 argument_list|)
