@@ -127,7 +127,10 @@ name|artist
 init|=
 name|getDbEntity
 argument_list|(
+name|nameForDb
+argument_list|(
 literal|"ARTIST"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|DbAttribute
@@ -136,7 +139,10 @@ init|=
 operator|new
 name|DbAttribute
 argument_list|(
+name|nameForDb
+argument_list|(
 literal|"ARTIST_ID"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|DbAttribute
@@ -145,7 +151,10 @@ init|=
 operator|new
 name|DbAttribute
 argument_list|(
+name|nameForDb
+argument_list|(
 literal|"ARTIST_NAME"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|DbAttribute
@@ -154,7 +163,10 @@ init|=
 operator|new
 name|DbAttribute
 argument_list|(
+name|nameForDb
+argument_list|(
 literal|"ARTIST_ID1"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|artist
