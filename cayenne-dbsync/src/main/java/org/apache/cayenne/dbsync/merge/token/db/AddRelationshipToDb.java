@@ -160,7 +160,7 @@ name|super
 argument_list|(
 literal|"Add foreign key"
 argument_list|,
-literal|110
+literal|120
 argument_list|,
 name|entity
 argument_list|)
