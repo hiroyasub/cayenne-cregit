@@ -72,7 +72,7 @@ parameter_list|(
 name|PreparedStatement
 name|st
 parameter_list|,
-name|Object
+name|Boolean
 name|val
 parameter_list|,
 name|int

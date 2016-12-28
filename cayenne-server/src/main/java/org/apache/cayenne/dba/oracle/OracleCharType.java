@@ -95,7 +95,7 @@ parameter_list|(
 name|PreparedStatement
 name|st
 parameter_list|,
-name|Object
+name|String
 name|val
 parameter_list|,
 name|int
@@ -142,9 +142,6 @@ name|setString
 argument_list|(
 literal|1
 argument_list|,
-operator|(
-name|String
-operator|)
 name|val
 argument_list|)
 expr_stmt|;
@@ -166,9 +163,6 @@ name|setString
 argument_list|(
 name|pos
 argument_list|,
-operator|(
-name|String
-operator|)
 name|val
 argument_list|)
 expr_stmt|;

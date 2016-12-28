@@ -55,6 +55,9 @@ begin_interface
 specifier|public
 interface|interface
 name|ExtendedType
+parameter_list|<
+name|T
+parameter_list|>
 block|{
 comment|/**      * Returns a full name of Java class that this ExtendedType supports.      */
 name|String
@@ -68,7 +71,7 @@ parameter_list|(
 name|PreparedStatement
 name|statement
 parameter_list|,
-name|Object
+name|T
 name|value
 parameter_list|,
 name|int
@@ -84,7 +87,7 @@ throws|throws
 name|Exception
 function_decl|;
 comment|/**      * Reads an object from JDBC ResultSet column, converting it to class returned by      * 'getClassName' method.      *       * @throws Exception if read error occurred, or an object can't be converted to a      *             target Java class.      */
-name|Object
+name|T
 name|materializeObject
 parameter_list|(
 name|ResultSet
@@ -99,8 +102,8 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Reads an object from a stored procedure OUT parameter, converting it to class      * returned by 'getClassName' method.      *       * @throws Exception if read error ocurred, or an object can't be converted to a      *             target Java class.      */
-name|Object
+comment|/**      * Reads an object from a stored procedure OUT parameter, converting it to class      * returned by 'getClassName' method.      *       * @throws Exception if read error occurred, or an object can't be converted to a      *             target Java class.      */
+name|T
 name|materializeObject
 parameter_list|(
 name|CallableStatement
@@ -114,6 +117,14 @@ name|type
 parameter_list|)
 throws|throws
 name|Exception
+function_decl|;
+comment|/**      *      */
+name|String
+name|toString
+parameter_list|(
+name|T
+name|value
+parameter_list|)
 function_decl|;
 block|}
 end_interface
