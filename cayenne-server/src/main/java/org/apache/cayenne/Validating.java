@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a number of callback methods that allow an object to be validated before safe.  * Entity class can implement this interface and its methods will be called automatically.  *   * @since 3.0  */
+comment|/**  * Defines a number of callback methods that allow an object to be validated before safe.  * Entity class can implement this interface and its methods will be called automatically.  *  * @since 3.0  */
 end_comment
 
 begin_interface
@@ -37,7 +37,6 @@ interface|interface
 name|Validating
 block|{
 comment|/**      * Performs property validation of the NEW object, appending any validation failures      * to the provided validationResult object. This method is invoked by ObjectContext      * before committing a NEW object to the database.      */
-specifier|public
 name|void
 name|validateForInsert
 parameter_list|(
@@ -46,7 +45,6 @@ name|validationResult
 parameter_list|)
 function_decl|;
 comment|/**      * Performs property validation of the MODIFIED object, appending any validation      * failures to the provided validationResult object. This method is invoked by      * ObjectContext before committing a MODIFIED object to the database.      */
-specifier|public
 name|void
 name|validateForUpdate
 parameter_list|(
@@ -55,7 +53,6 @@ name|validationResult
 parameter_list|)
 function_decl|;
 comment|/**      * Performs property validation of the DELETED object, appending any validation      * failures to the provided validationResult object. This method is invoked by      * ObjectContext before committing a DELETED object to the database.      */
-specifier|public
 name|void
 name|validateForDelete
 parameter_list|(
