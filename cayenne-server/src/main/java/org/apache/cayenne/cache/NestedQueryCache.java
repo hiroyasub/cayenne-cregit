@@ -17,26 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -161,6 +141,26 @@ name|ClassDescriptor
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
 begin_comment
 comment|/**  * A {@link QueryCache} wrapper that introduces a key namespace on top of a  * delegate shared cache. This way multiple cache users can share the same  * underlying cache without a possibility of key conflicts, yet refresh the  * cache groups in a coordinated fashion.  *   * @since 3.0  */
 end_comment
@@ -259,6 +259,8 @@ name|delegate
 return|;
 block|}
 comment|/**      * Clears the underlying shared cache.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|clear
@@ -273,6 +275,8 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -304,6 +308,8 @@ argument_list|)
 return|;
 block|}
 annotation|@
+name|Override
+annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"rawtypes"
@@ -328,6 +334,8 @@ argument_list|)
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -358,6 +366,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Removes an entry for key in the current namespace.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|remove
@@ -378,6 +388,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Invalidates a shared cache group.      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|removeGroup
@@ -395,6 +407,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns a shared cache size.      */
+annotation|@
+name|Override
 specifier|public
 name|int
 name|size
@@ -466,6 +480,8 @@ operator|=
 name|mdDelegate
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 index|[]
@@ -479,6 +495,8 @@ name|getCacheGroups
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getCacheKey
@@ -494,6 +512,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|QueryCacheStrategy
 name|getCacheStrategy
@@ -506,6 +526,8 @@ name|getCacheStrategy
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ClassDescriptor
 name|getClassDescriptor
@@ -518,6 +540,8 @@ name|getClassDescriptor
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DataMap
 name|getDataMap
@@ -530,6 +554,8 @@ name|getDataMap
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|DbEntity
 name|getDbEntity
@@ -542,6 +568,8 @@ name|getDbEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getFetchLimit
@@ -554,6 +582,8 @@ name|getFetchLimit
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getFetchOffset
@@ -566,6 +596,8 @@ name|getFetchOffset
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|ObjEntity
 name|getObjEntity
@@ -578,6 +610,8 @@ name|getObjEntity
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Query
 name|getOrginatingQuery
@@ -590,6 +624,8 @@ name|getOrginatingQuery
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getPageSize
@@ -602,6 +638,8 @@ name|getPageSize
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|PrefetchTreeNode
 name|getPrefetchTree
@@ -614,6 +652,8 @@ name|getPrefetchTree
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Map
 argument_list|<
@@ -631,6 +671,8 @@ name|getPathSplitAliases
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Procedure
 name|getProcedure
@@ -643,6 +685,8 @@ name|getProcedure
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|List
 argument_list|<
@@ -658,6 +702,8 @@ name|getResultSetMapping
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isFetchingDataRows
@@ -670,6 +716,8 @@ name|isFetchingDataRows
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|boolean
 name|isRefreshingObjects
@@ -682,6 +730,8 @@ name|isRefreshingObjects
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|getStatementFetchSize
