@@ -778,6 +778,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// transaction is single-threaded, so using a non-concurrent map...
 name|connections
 operator|=
 operator|new

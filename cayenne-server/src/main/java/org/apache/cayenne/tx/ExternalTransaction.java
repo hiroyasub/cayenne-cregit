@@ -73,6 +73,8 @@ literal|"no commit - transaction controlled externally."
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|protected
 name|void
 name|processRollback
