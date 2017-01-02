@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|tx
 package|;
 end_package
 
@@ -198,7 +198,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A wrapper of a JDBC connection that is attached to a transaction. The  * behavior of this object to delegate all method calls to the underlying  * connection, except for the 'close' method that is implemented as noop in hope  * that a transaction originator will close the underlying Connection object.  *   * @since 1.2  */
+comment|/**  * A wrapper of a JDBC connection that is attached to a transaction. The behavior of this object to delegate all method  * calls to the underlying connection, except for the 'close' method that is implemented as noop in hope that a  * transaction originator will close the underlying Connection object.  */
 end_comment
 
 begin_class
@@ -235,7 +235,7 @@ name|SQLException
 block|{
 comment|// noop
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 annotation|@
 name|Override
 specifier|public
@@ -1002,7 +1002,7 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1030,7 +1030,7 @@ name|elements
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1047,7 +1047,7 @@ name|createBlob
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1064,7 +1064,7 @@ name|createClob
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1092,7 +1092,7 @@ name|attributes
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1109,7 +1109,7 @@ name|getClientInfo
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1131,7 +1131,7 @@ name|name
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1152,7 +1152,7 @@ name|properties
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1178,7 +1178,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1200,7 +1200,7 @@ name|timeout
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1216,14 +1216,19 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// TODO...
-throw|throw
-operator|new
-name|UnsupportedOperationException
+return|return
+name|iface
+operator|.
+name|isAssignableFrom
+argument_list|(
+name|connection
+operator|.
+name|getClass
 argument_list|()
-throw|;
+argument_list|)
+return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1242,14 +1247,38 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// TODO
+try|try
+block|{
+return|return
+name|iface
+operator|.
+name|cast
+argument_list|(
+name|connection
+argument_list|)
+return|;
+block|}
+catch|catch
+parameter_list|(
+name|ClassCastException
+name|e
+parameter_list|)
+block|{
 throw|throw
 operator|new
-name|UnsupportedOperationException
+name|SQLException
+argument_list|(
+literal|"Not a Connection: "
+operator|+
+name|e
+operator|.
+name|getMessage
 argument_list|()
+argument_list|)
 throw|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+block|}
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1266,7 +1295,7 @@ name|createNClob
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1283,7 +1312,7 @@ name|createSQLXML
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 annotation|@
 name|Override
 specifier|public
@@ -1304,7 +1333,7 @@ name|schema
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 annotation|@
 name|Override
 specifier|public
@@ -1321,7 +1350,7 @@ name|getSchema
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 annotation|@
 name|Override
 specifier|public
@@ -1347,7 +1376,7 @@ name|milliseconds
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 specifier|public
 name|int
 name|getNetworkTimeout

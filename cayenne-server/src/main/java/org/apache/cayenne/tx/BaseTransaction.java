@@ -17,11 +17,31 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|sql
+operator|.
+name|DataSource
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
 operator|.
 name|Connection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
 import|;
 end_import
 
@@ -41,7 +61,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|HashMap
+name|Collections
 import|;
 end_import
 
@@ -51,7 +71,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|HashMap
 import|;
 end_import
 
@@ -76,7 +96,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne transaction. Currently supports managing JDBC connections.  *   * @since 4.0  */
+comment|/**  * A Cayenne transaction. Currently supports managing JDBC connections.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -87,20 +107,18 @@ name|BaseTransaction
 implements|implements
 name|Transaction
 block|{
-comment|/** 	 * A ThreadLocal that stores current thread transaction. 	 */
+comment|/**      * A ThreadLocal that stores current thread transaction.      */
 specifier|static
 specifier|final
 name|ThreadLocal
 argument_list|<
 name|Transaction
 argument_list|>
-name|currentTransaction
+name|CURRENT_TRANSACTION
 init|=
 operator|new
 name|InheritableThreadLocal
-argument_list|<
-name|Transaction
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|protected
@@ -242,7 +260,7 @@ name|status
 return|;
 block|}
 block|}
-comment|/** 	 * Binds a Transaction to the current thread. 	 */
+comment|/**      * Binds a Transaction to the current thread.      */
 specifier|public
 specifier|static
 name|void
@@ -252,7 +270,7 @@ name|Transaction
 name|transaction
 parameter_list|)
 block|{
-name|currentTransaction
+name|CURRENT_TRANSACTION
 operator|.
 name|set
 argument_list|(
@@ -260,7 +278,7 @@ name|transaction
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a Transaction associated with the current thread, or null if 	 * there is no such Transaction. 	 */
+comment|/**      * Returns a Transaction associated with the current thread, or null if      * there is no such Transaction.      */
 specifier|public
 specifier|static
 name|Transaction
@@ -268,13 +286,13 @@ name|getThreadTransaction
 parameter_list|()
 block|{
 return|return
-name|currentTransaction
+name|CURRENT_TRANSACTION
 operator|.
 name|get
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Creates new inactive transaction. 	 */
+comment|/**      * Creates new inactive transaction.      */
 specifier|protected
 name|BaseTransaction
 parameter_list|()
@@ -346,7 +364,7 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Starts a Transaction. If Transaction is not started explicitly, it will 	 * be started when the first connection is added. 	 */
+comment|/**      * Starts a Transaction. If Transaction is not started explicitly, it will      * be started when the first connection is added.      */
 annotation|@
 name|Override
 specifier|public
@@ -588,8 +606,101 @@ function_decl|;
 annotation|@
 name|Override
 specifier|public
+name|Map
+argument_list|<
+name|String
+argument_list|,
 name|Connection
+argument_list|>
+name|getConnections
+parameter_list|()
+block|{
+return|return
+name|connections
+operator|!=
+literal|null
+condition|?
+name|Collections
+operator|.
+name|unmodifiableMap
+argument_list|(
+name|connections
+argument_list|)
+else|:
+name|Collections
+operator|.
+expr|<
+name|String
+operator|,
+name|Connection
+operator|>
+name|emptyMap
+argument_list|()
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|Connection
+name|getOrCreateConnection
+parameter_list|(
+name|String
+name|connectionName
+parameter_list|,
+name|DataSource
+name|dataSource
+parameter_list|)
+throws|throws
+name|SQLException
+block|{
+name|Connection
+name|c
+init|=
+name|getExistingConnection
+argument_list|(
+name|connectionName
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|c
+operator|==
+literal|null
+operator|||
+name|c
+operator|.
+name|isClosed
+argument_list|()
+condition|)
+block|{
+name|c
+operator|=
+name|dataSource
+operator|.
 name|getConnection
+argument_list|()
+expr_stmt|;
+name|addConnection
+argument_list|(
+name|connectionName
+argument_list|,
+name|c
+argument_list|)
+expr_stmt|;
+block|}
+comment|// wrap transaction-attached connections in a decorator that prevents them from being closed by callers, as
+comment|// transaction should take care of them on commit or rollback.
+return|return
+operator|new
+name|TransactionConnectionDecorator
+argument_list|(
+name|c
+argument_list|)
+return|;
+block|}
+specifier|protected
+name|Connection
+name|getExistingConnection
 parameter_list|(
 name|String
 name|name
@@ -612,10 +723,8 @@ else|:
 literal|null
 return|;
 block|}
-annotation|@
-name|Override
-specifier|public
-name|void
+specifier|protected
+name|Connection
 name|addConnection
 parameter_list|(
 name|String
@@ -625,6 +734,15 @@ name|Connection
 name|connection
 parameter_list|)
 block|{
+name|TransactionConnectionDecorator
+name|wrapper
+init|=
+operator|new
+name|TransactionConnectionDecorator
+argument_list|(
+name|connection
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|listeners
@@ -648,7 +766,7 @@ name|this
 argument_list|,
 name|connectionName
 argument_list|,
-name|connection
+name|wrapper
 argument_list|)
 expr_stmt|;
 block|}
@@ -676,10 +794,10 @@ name|put
 argument_list|(
 name|connectionName
 argument_list|,
-name|connection
+name|wrapper
 argument_list|)
 operator|!=
-name|connection
+name|wrapper
 condition|)
 block|{
 name|connectionAdded
@@ -688,6 +806,9 @@ name|connection
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|wrapper
+return|;
 block|}
 specifier|protected
 name|void
@@ -738,7 +859,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * Closes all connections associated with transaction. 	 */
+comment|/**      * Closes all connections associated with transaction.      */
 specifier|protected
 name|void
 name|close
@@ -758,39 +879,28 @@ condition|)
 block|{
 return|return;
 block|}
-name|Iterator
-argument_list|<
-name|?
-argument_list|>
-name|it
-init|=
+for|for
+control|(
+name|Connection
+name|c
+range|:
 name|connections
 operator|.
 name|values
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 try|try
 block|{
-operator|(
-operator|(
-name|Connection
-operator|)
-name|it
+comment|// make sure we unwrap TX connection before closing it, as the TX wrapper's "close" does nothing.
+name|c
 operator|.
-name|next
-argument_list|()
-operator|)
+name|unwrap
+argument_list|(
+name|Connection
+operator|.
+name|class
+argument_list|)
 operator|.
 name|close
 argument_list|()

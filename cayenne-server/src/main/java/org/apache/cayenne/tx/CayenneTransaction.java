@@ -17,6 +17,32 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|log
+operator|.
+name|JdbcEventLogger
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -42,32 +68,6 @@ operator|.
 name|util
 operator|.
 name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|log
-operator|.
-name|JdbcEventLogger
 import|;
 end_import
 
@@ -179,9 +179,8 @@ name|getAutoCommit
 argument_list|()
 condition|)
 block|{
-comment|// some DBs are very particular about that, (e.g. Informix SE 7.0
-comment|// per
-comment|// CAY-179), so do a try-catch and ignore exception
+comment|// some DBs are very particular about that, (e.g. Informix SE 7.0 per CAY-179), so do a try-catch and
+comment|// ignore exception
 comment|// TODO: maybe allow adapter to provide transaction instance?
 try|try
 block|{
