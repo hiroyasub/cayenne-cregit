@@ -529,13 +529,9 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|TrimmingQualifierTranslator
+name|IngresQualifierTranslator
 argument_list|(
 name|queryAssembler
-argument_list|,
-name|IngresAdapter
-operator|.
-name|TRIM_FUNCTION
 argument_list|)
 return|;
 block|}

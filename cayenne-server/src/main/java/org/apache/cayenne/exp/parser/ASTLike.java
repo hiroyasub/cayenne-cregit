@@ -115,7 +115,7 @@ block|}
 specifier|public
 name|ASTLike
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object
@@ -156,7 +156,7 @@ block|}
 specifier|public
 name|ASTLike
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object

@@ -79,7 +79,7 @@ block|}
 specifier|public
 name|ASTLess
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object

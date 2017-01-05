@@ -87,7 +87,7 @@ block|}
 specifier|public
 name|ASTNotLike
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object
@@ -128,7 +128,7 @@ block|}
 specifier|public
 name|ASTNotLike
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object

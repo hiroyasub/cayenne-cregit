@@ -317,9 +317,6 @@ comment|// match on target PK
 name|DbEntity
 name|ent
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|rel
 operator|.
 name|getTargetEntity

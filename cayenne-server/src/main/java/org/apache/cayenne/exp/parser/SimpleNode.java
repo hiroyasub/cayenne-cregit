@@ -1280,10 +1280,8 @@ name|Object
 name|child
 parameter_list|)
 block|{
-comment|// when child is null, there's no way of telling whether this is a
-comment|// scalar or
-comment|// not... fuzzy... maybe we should stop using this method - it is too
-comment|// generic
+comment|// when child is null, there's no way of telling whether this is a scalar or not... fuzzy...
+comment|// maybe we should stop using this method - it is too generic
 return|return
 operator|(
 name|child

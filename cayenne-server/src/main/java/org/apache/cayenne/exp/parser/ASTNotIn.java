@@ -83,7 +83,7 @@ block|}
 specifier|public
 name|ASTNotIn
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|ASTList

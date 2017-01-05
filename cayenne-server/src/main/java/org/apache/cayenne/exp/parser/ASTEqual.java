@@ -148,7 +148,7 @@ comment|/** 	 * Creates "Equal To" expression. 	 */
 specifier|public
 name|ASTEqual
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object

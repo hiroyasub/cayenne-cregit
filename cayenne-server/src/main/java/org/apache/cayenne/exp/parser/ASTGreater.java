@@ -78,7 +78,7 @@ block|}
 specifier|public
 name|ASTGreater
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object

@@ -525,6 +525,15 @@ name|BITWISE_RIGHT_SHIFT
 init|=
 literal|44
 decl_stmt|;
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|FUNCTION_CALL
+init|=
+literal|45
+decl_stmt|;
 specifier|protected
 name|int
 name|type
@@ -1569,6 +1578,13 @@ condition|(
 name|child
 operator|instanceof
 name|Expression
+operator|&&
+operator|!
+operator|(
+name|child
+operator|instanceof
+name|ASTScalar
+operator|)
 condition|)
 block|{
 name|Expression

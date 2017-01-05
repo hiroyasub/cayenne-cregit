@@ -70,7 +70,7 @@ comment|/**      * Creates "Not Equal To" expression.      */
 specifier|public
 name|ASTNotEqual
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|Object

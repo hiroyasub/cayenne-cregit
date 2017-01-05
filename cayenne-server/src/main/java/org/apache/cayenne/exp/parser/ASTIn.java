@@ -103,7 +103,7 @@ block|}
 specifier|public
 name|ASTIn
 parameter_list|(
-name|ASTPath
+name|SimpleNode
 name|path
 parameter_list|,
 name|ASTList
