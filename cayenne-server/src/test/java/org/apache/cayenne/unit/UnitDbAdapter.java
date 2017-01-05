@@ -1433,6 +1433,15 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsEscapeInLike
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
