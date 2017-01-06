@@ -2091,17 +2091,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|parentNode
-operator|==
-literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-if|if
-condition|(
 name|node
 operator|.
 name|getType
@@ -2114,6 +2103,17 @@ condition|)
 block|{
 return|return
 literal|true
+return|;
+block|}
+if|if
+condition|(
+name|parentNode
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
 return|;
 block|}
 comment|// only unary expressions can go w/o parenthesis

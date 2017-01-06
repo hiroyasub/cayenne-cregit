@@ -1299,7 +1299,7 @@ return|return
 operator|new
 name|Ordering
 argument_list|(
-name|getName
+name|getExpression
 argument_list|()
 argument_list|,
 name|SortOrder
@@ -1352,7 +1352,7 @@ return|return
 operator|new
 name|Ordering
 argument_list|(
-name|getName
+name|getExpression
 argument_list|()
 argument_list|,
 name|SortOrder
@@ -1405,7 +1405,7 @@ return|return
 operator|new
 name|Ordering
 argument_list|(
-name|getName
+name|getExpression
 argument_list|()
 argument_list|,
 name|SortOrder
@@ -1458,7 +1458,7 @@ return|return
 operator|new
 name|Ordering
 argument_list|(
-name|getName
+name|getExpression
 argument_list|()
 argument_list|,
 name|SortOrder

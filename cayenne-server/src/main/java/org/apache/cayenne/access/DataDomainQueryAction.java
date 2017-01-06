@@ -576,6 +576,11 @@ name|GenericResponse
 name|fullResponse
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
+argument_list|>
 name|prefetchResultsByPath
 decl_stmt|;
 name|Map
@@ -1190,9 +1195,6 @@ comment|// It is not sufficient to generate target ObjectId.
 name|DbEntity
 name|targetEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|dbRelationship
 operator|.
 name|getTargetEntity
@@ -2099,9 +2101,7 @@ name|queriesByExecutedQueries
 operator|=
 literal|null
 expr_stmt|;
-comment|// whether this is null or not will driver further decisions on how to
-comment|// process
-comment|// prefetched rows
+comment|// whether this is null or not will driver further decisions on how to process prefetched rows
 name|this
 operator|.
 name|prefetchResultsByPath
@@ -2121,6 +2121,11 @@ argument_list|()
 condition|?
 operator|new
 name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|List
+argument_list|>
 argument_list|()
 else|:
 literal|null
@@ -2200,6 +2205,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|void
 name|interceptObjectConversion
@@ -2219,9 +2229,6 @@ argument_list|()
 condition|)
 block|{
 name|List
-argument_list|<
-name|Object
-argument_list|>
 name|mainRows
 init|=
 name|response
@@ -2229,6 +2236,7 @@ operator|.
 name|firstList
 argument_list|()
 decl_stmt|;
+comment|// List<DataRow> or List<Object[]>
 if|if
 condition|(
 name|mainRows
@@ -2243,6 +2251,9 @@ argument_list|()
 condition|)
 block|{
 name|ObjectConversionStrategy
+argument_list|<
+name|?
+argument_list|>
 name|converter
 decl_stmt|;
 name|List
@@ -3219,14 +3230,6 @@ name|int
 name|position
 parameter_list|)
 block|{
-name|int
-name|len
-init|=
-name|rows
-operator|.
-name|size
-argument_list|()
-decl_stmt|;
 name|List
 argument_list|<
 name|DataRow
@@ -3237,22 +3240,19 @@ operator|new
 name|ArrayList
 argument_list|<>
 argument_list|(
-name|len
+name|rows
+operator|.
+name|size
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|len
-condition|;
-name|i
-operator|++
+name|Object
+index|[]
+name|row
+range|:
+name|rows
 control|)
 block|{
 name|rowsColumn
@@ -3262,12 +3262,7 @@ argument_list|(
 operator|(
 name|DataRow
 operator|)
-name|rows
-operator|.
-name|get
-argument_list|(
-name|i
-argument_list|)
+name|row
 index|[
 name|position
 index|]
@@ -3610,6 +3605,7 @@ name|seen
 init|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|(
 name|mainRows
 operator|.

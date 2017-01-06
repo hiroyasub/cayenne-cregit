@@ -700,6 +700,12 @@ case|:
 return|return
 literal|"NOT LIKE IGNORE CASE"
 return|;
+case|case
+name|FUNCTION_CALL
+case|:
+return|return
+literal|"FUNCTION_CALL"
+return|;
 default|default:
 return|return
 literal|"other"

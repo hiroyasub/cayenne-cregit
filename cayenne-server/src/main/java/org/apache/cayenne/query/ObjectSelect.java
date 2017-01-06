@@ -23,7 +23,67 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|*
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|DataRow
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ResultBatchIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ResultIterator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ResultIteratorCallback
 import|;
 end_import
 
@@ -52,6 +112,20 @@ operator|.
 name|exp
 operator|.
 name|ExpressionFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|Property
 import|;
 end_import
 
@@ -143,12 +217,22 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
 
 begin_comment
-comment|/**  * A selecting query providing chainable API. This is an alternative to  * {@link SelectQuery} when you want to use a fluent API. For example, the following  * is a convenient way to return a record:  *<pre>  * {@code  * Artist a = ObjectSelect  * .query(Artist.class)  * .where(Artist.NAME.eq("Picasso"))  * .selectOne(context);  * }  *</pre>  *   * @since 4.0  */
+comment|/**  * A selecting query providing chainable API. This is an alternative to  * {@link SelectQuery} when you want to use a fluent API. For example, the following  * is a convenient way to return a record:  *<pre>  * {@code  * Artist a = ObjectSelect  * .query(Artist.class)  * .where(Artist.NAME.eq("Picasso"))  * .selectOne(context);  * }  *</pre>  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -195,6 +279,16 @@ name|String
 name|dbEntityName
 decl_stmt|;
 specifier|private
+name|Collection
+argument_list|<
+name|Property
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
+name|columns
+decl_stmt|;
+specifier|private
 name|Expression
 name|where
 decl_stmt|;
@@ -234,7 +328,7 @@ name|String
 index|[]
 name|cacheGroups
 decl_stmt|;
-comment|/** 	 * Creates a ObjectSelect that selects objects of a given persistent class. 	 */
+comment|/**      * Creates a ObjectSelect that selects objects of a given persistent class.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -267,7 +361,7 @@ name|entityType
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that selects objects of a given persistent class 	 * and uses provided expression for its qualifier. 	 */
+comment|/**      * Creates a ObjectSelect that selects objects of a given persistent class      * and uses provided expression for its qualifier.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -308,7 +402,7 @@ name|expression
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that selects objects of a given persistent class 	 * and uses provided expression for its qualifier. 	 */
+comment|/**      * Creates a ObjectSelect that selects objects of a given persistent class      * and uses provided expression for its qualifier.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -360,7 +454,7 @@ name|orderings
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that fetches data for an {@link ObjEntity} 	 * determined from a provided class. 	 */
+comment|/**      * Creates a ObjectSelect that fetches data for an {@link ObjEntity}      * determined from a provided class.      */
 specifier|public
 specifier|static
 name|ObjectSelect
@@ -386,7 +480,7 @@ name|fetchDataRows
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that fetches data for an {@link ObjEntity} 	 * determined from a provided class and uses provided expression for its 	 * qualifier. 	 */
+comment|/**      * Creates a ObjectSelect that fetches data for an {@link ObjEntity}      * determined from a provided class and uses provided expression for its      * qualifier.      */
 specifier|public
 specifier|static
 name|ObjectSelect
@@ -420,7 +514,7 @@ name|expression
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that fetches data for {@link ObjEntity} determined 	 * from provided "entityName", but fetches the result of a provided type. 	 * This factory method is most often used with generic classes that by 	 * themselves are not enough to resolve the entity to fetch. 	 */
+comment|/**      * Creates a ObjectSelect that fetches data for {@link ObjEntity} determined      * from provided "entityName", but fetches the result of a provided type.      * This factory method is most often used with generic classes that by      * themselves are not enough to resolve the entity to fetch.      */
 specifier|public
 specifier|static
 parameter_list|<
@@ -456,7 +550,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that fetches DataRows for a {@link DbEntity} 	 * determined from provided "dbEntityName". 	 */
+comment|/**      * Creates a ObjectSelect that fetches DataRows for a {@link DbEntity}      * determined from provided "dbEntityName".      */
 specifier|public
 specifier|static
 name|ObjectSelect
@@ -473,7 +567,7 @@ return|return
 operator|new
 name|ObjectSelect
 argument_list|<
-name|Object
+name|DataRow
 argument_list|>
 argument_list|()
 operator|.
@@ -486,7 +580,7 @@ name|dbEntityName
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a ObjectSelect that fetches DataRows for a {@link DbEntity} 	 * determined from provided "dbEntityName" and uses provided expression for 	 * its qualifier. 	 *  	 * @return this object 	 */
+comment|/**      * Creates a ObjectSelect that fetches DataRows for a {@link DbEntity}      * determined from provided "dbEntityName" and uses provided expression for      * its qualifier.      *      * @return this object      */
 specifier|public
 specifier|static
 name|ObjectSelect
@@ -506,7 +600,7 @@ return|return
 operator|new
 name|ObjectSelect
 argument_list|<
-name|Object
+name|DataRow
 argument_list|>
 argument_list|()
 operator|.
@@ -529,7 +623,7 @@ name|ObjectSelect
 parameter_list|()
 block|{
 block|}
-comment|/** 	 * Translates self to a SelectQuery. 	 */
+comment|/**      * Translates self to a SelectQuery.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -740,11 +834,18 @@ argument_list|(
 name|statementFetchSize
 argument_list|)
 expr_stmt|;
+name|replacement
+operator|.
+name|setColumns
+argument_list|(
+name|columns
+argument_list|)
+expr_stmt|;
 return|return
 name|replacement
 return|;
 block|}
-comment|/** 	 * Sets the type of the entity to fetch without changing the return type of 	 * the query. 	 *  	 * @return this object 	 */
+comment|/**      * Sets the type of the entity to fetch without changing the return type of      * the query.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -770,7 +871,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Sets the {@link ObjEntity} name to fetch without changing the return type 	 * of the query. This form is most often used for generic entities that 	 * don't map to a distinct class. 	 *  	 * @return this object 	 */
+comment|/**      * Sets the {@link ObjEntity} name to fetch without changing the return type      * of the query. This form is most often used for generic entities that      * don't map to a distinct class.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -793,7 +894,7 @@ literal|null
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Sets the {@link DbEntity} name to fetch without changing the return type 	 * of the query. This form is most often used for generic entities that 	 * don't map to a distinct class. 	 *  	 * @return this object 	 */
+comment|/**      * Sets the {@link DbEntity} name to fetch without changing the return type      * of the query. This form is most often used for generic entities that      * don't map to a distinct class.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -858,7 +959,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Forces query to fetch DataRows. This automatically changes whatever 	 * result type was set previously to "DataRow". 	 *  	 * @return this object 	 */
+comment|/**      * Forces query to fetch DataRows. This automatically changes whatever      * result type was set previously to "DataRow".      *      * @return this object      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -888,7 +989,7 @@ operator|)
 name|this
 return|;
 block|}
-comment|/** 	 * Appends a qualifier expression of this query. An equivalent to 	 * {@link #and(Expression...)} that can be used a syntactic sugar. 	 *  	 * @return this object 	 */
+comment|/**      * Appends a qualifier expression of this query. An equivalent to      * {@link #and(Expression...)} that can be used a syntactic sugar.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -909,7 +1010,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Appends a qualifier expression of this query, using provided expression 	 * String and an array of position parameters. This is an equivalent to 	 * calling "and". 	 *  	 * @return this object 	 */
+comment|/**      * Appends a qualifier expression of this query, using provided expression      * String and an array of position parameters. This is an equivalent to      * calling "and".      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -941,7 +1042,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * AND's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
+comment|/**      * AND's provided expressions to the existing WHERE clause expression.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -983,7 +1084,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * AND's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
+comment|/**      * AND's provided expressions to the existing WHERE clause expression.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1076,7 +1177,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * OR's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
+comment|/**      * OR's provided expressions to the existing WHERE clause expression.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1118,7 +1219,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * OR's provided expressions to the existing WHERE clause expression. 	 *  	 * @return this object 	 */
+comment|/**      * OR's provided expressions to the existing WHERE clause expression.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1211,7 +1312,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Add an ascending ordering on the given property. If there is already an ordering 	 * on this query then add this ordering with a lower priority. 	 *  	 * @param property the property to sort on 	 * @return this object 	 */
+comment|/**      * Add an ascending ordering on the given property. If there is already an ordering      * on this query then add this ordering with a lower priority.      *      * @param property the property to sort on      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1234,7 +1335,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Add an ordering on the given property. If there is already an ordering 	 * on this query then add this ordering with a lower priority. 	 *  	 * @param property the property to sort on 	 * @param sortOrder the direction of the ordering 	 * @return this object 	 */
+comment|/**      * Add an ordering on the given property. If there is already an ordering      * on this query then add this ordering with a lower priority.      *      * @param property  the property to sort on      * @param sortOrder the direction of the ordering      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1262,7 +1363,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Add one or more orderings to this query. 	 *  	 * @return this object 	 */
+comment|/**      * Add one or more orderings to this query.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1277,10 +1378,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|orderings
-operator|==
-literal|null
-operator|||
 name|orderings
 operator|==
 literal|null
@@ -1313,29 +1410,22 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-for|for
-control|(
-name|Ordering
-name|o
-range|:
-name|orderings
-control|)
-block|{
+name|Collections
+operator|.
+name|addAll
+argument_list|(
 name|this
 operator|.
 name|orderings
-operator|.
-name|add
-argument_list|(
-name|o
+argument_list|,
+name|orderings
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Adds a list of orderings to this query. 	 *  	 * @return this object 	 */
+comment|/**      * Adds a list of orderings to this query.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1352,10 +1442,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|orderings
-operator|==
-literal|null
-operator|||
 name|orderings
 operator|==
 literal|null
@@ -1402,7 +1488,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Merges prefetch into the query prefetch tree. 	 *  	 * @return this object 	 */
+comment|/**      * Merges prefetch into the query prefetch tree.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1450,7 +1536,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Merges a prefetch path with specified semantics into the query prefetch 	 * tree. 	 *  	 * @return this object 	 */
+comment|/**      * Merges a prefetch path with specified semantics into the query prefetch      * tree.      *      * @return this object      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1506,7 +1592,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Resets query fetch limit - a parameter that defines max number of objects 	 * that should be ever be fetched from the database. 	 */
+comment|/**      * Resets query fetch limit - a parameter that defines max number of objects      * that should be ever be fetched from the database.      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1544,7 +1630,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Resets query fetch offset - a parameter that defines how many objects 	 * should be skipped when reading data from the database. 	 */
+comment|/**      * Resets query fetch offset - a parameter that defines how many objects      * should be skipped when reading data from the database.      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1582,7 +1668,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Resets query page size. A non-negative page size enables query result 	 * pagination that saves memory and processing time for large lists if only 	 * parts of the result are ever going to be accessed. 	 */
+comment|/**      * Resets query page size. A non-negative page size enables query result      * pagination that saves memory and processing time for large lists if only      * parts of the result are ever going to be accessed.      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1620,7 +1706,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Sets fetch size of the PreparedStatement generated for this query. Only 	 * non-negative values would change the default size. 	 *  	 * @see Statement#setFetchSize(int) 	 */
+comment|/**      * Sets fetch size of the PreparedStatement generated for this query. Only      * non-negative values would change the default size.      *      * @see Statement#setFetchSize(int)      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1798,7 +1884,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Instructs Cayenne to look for query results in the "local" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.cacheStrategy(QueryCacheStrategy.LOCAL_CACHE, cacheGroups); 	 *</pre> 	 */
+comment|/**      * Instructs Cayenne to look for query results in the "local" cache when      * running the query. This is a short-hand notation for:      *<p>      *<pre>      * query.cacheStrategy(QueryCacheStrategy.LOCAL_CACHE, cacheGroups);      *</pre>      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1822,7 +1908,7 @@ name|cacheGroups
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Instructs Cayenne to look for query results in the "shared" cache when 	 * running the query. This is a short-hand notation for: 	 *  	 *<pre> 	 * query.cacheStrategy(QueryCacheStrategy.SHARED_CACHE, cacheGroups); 	 *</pre> 	 */
+comment|/**      * Instructs Cayenne to look for query results in the "shared" cache when      * running the query. This is a short-hand notation for:      *<p>      *<pre>      * query.cacheStrategy(QueryCacheStrategy.SHARED_CACHE, cacheGroups);      *</pre>      */
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -1844,6 +1930,165 @@ name|SHARED_CACHE
 argument_list|,
 name|cacheGroups
 argument_list|)
+return|;
+block|}
+comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * List&lt;Object[]&gt; columns = ObjectSelect.query(Artist.class)      *                                    .columns(Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)      *                                    .select(context);      *</pre>      *      * @param properties array of properties to select      * @see ObjectSelect#column(Property)      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|public
+name|ObjectSelect
+argument_list|<
+name|Object
+index|[]
+argument_list|>
+name|columns
+parameter_list|(
+name|Property
+argument_list|<
+name|?
+argument_list|>
+modifier|...
+name|properties
+parameter_list|)
+block|{
+if|if
+condition|(
+name|properties
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+operator|(
+name|ObjectSelect
+argument_list|<
+name|Object
+index|[]
+argument_list|>
+operator|)
+name|this
+return|;
+block|}
+if|if
+condition|(
+name|this
+operator|.
+name|columns
+operator|==
+literal|null
+condition|)
+block|{
+name|this
+operator|.
+name|columns
+operator|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|(
+name|properties
+operator|.
+name|length
+argument_list|)
+expr_stmt|;
+block|}
+name|Collections
+operator|.
+name|addAll
+argument_list|(
+name|this
+operator|.
+name|columns
+argument_list|,
+name|properties
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|ObjectSelect
+argument_list|<
+name|Object
+index|[]
+argument_list|>
+operator|)
+name|this
+return|;
+block|}
+comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ObjectSelect#columns(Property[])} method as subsequent      * call to this method will override previous columns set via this or      * {@link ObjectSelect#columns(Property[])} method.</p>      *<p>      *<pre>      * List&lt;String&gt; names = ObjectSelect.query(Artist.class).column(Artist.ARTIST_NAME).select(context);      *</pre>      *      * @param property single property to select      * @see ObjectSelect#columns(Property[])      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|public
+parameter_list|<
+name|E
+parameter_list|>
+name|ObjectSelect
+argument_list|<
+name|E
+argument_list|>
+name|column
+parameter_list|(
+name|Property
+argument_list|<
+name|E
+argument_list|>
+name|property
+parameter_list|)
+block|{
+if|if
+condition|(
+name|this
+operator|.
+name|columns
+operator|==
+literal|null
+condition|)
+block|{
+name|this
+operator|.
+name|columns
+operator|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|(
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|this
+operator|.
+name|columns
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+comment|// if we don't clear then return type will be incorrect
+block|}
+name|this
+operator|.
+name|columns
+operator|.
+name|add
+argument_list|(
+name|property
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|ObjectSelect
+argument_list|<
+name|E
+argument_list|>
+operator|)
+name|this
 return|;
 block|}
 specifier|public
@@ -1940,7 +2185,7 @@ return|return
 name|dbEntityName
 return|;
 block|}
-comment|/** 	 * Returns a WHERE clause Expression of this query. 	 */
+comment|/**      * Returns a WHERE clause Expression of this query.      */
 specifier|public
 name|Expression
 name|getWhere
@@ -1969,6 +2214,21 @@ parameter_list|()
 block|{
 return|return
 name|prefetches
+return|;
+block|}
+specifier|public
+name|Collection
+argument_list|<
+name|Property
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
+name|getColumns
+parameter_list|()
+block|{
+return|return
+name|columns
 return|;
 block|}
 annotation|@
@@ -2054,12 +2314,6 @@ name|context
 operator|.
 name|iterate
 argument_list|(
-operator|(
-name|Select
-argument_list|<
-name|T
-argument_list|>
-operator|)
 name|this
 argument_list|,
 name|callback
