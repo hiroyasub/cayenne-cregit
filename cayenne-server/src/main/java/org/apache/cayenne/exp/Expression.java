@@ -77,16 +77,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
 import|;
 end_import
@@ -533,6 +523,15 @@ name|int
 name|FUNCTION_CALL
 init|=
 literal|45
+decl_stmt|;
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|ASTERISK
+init|=
+literal|46
 decl_stmt|;
 specifier|protected
 name|int
