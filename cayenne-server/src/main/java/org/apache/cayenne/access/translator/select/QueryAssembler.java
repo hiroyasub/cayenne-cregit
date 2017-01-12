@@ -87,6 +87,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|exp
+operator|.
+name|Expression
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -233,6 +247,11 @@ argument_list|<
 name|DbAttributeBinding
 argument_list|>
 name|bindings
+decl_stmt|;
+comment|/** 	 * @since 4.0 	 */
+specifier|protected
+name|AddBindingListener
+name|addBindingListener
 decl_stmt|;
 comment|/** 	 * @since 4.0 	 */
 specifier|public
@@ -510,6 +529,21 @@ argument_list|(
 name|binding
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|addBindingListener
+operator|!=
+literal|null
+condition|)
+block|{
+name|addBindingListener
+operator|.
+name|onAdd
+argument_list|(
+name|binding
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/** 	 * @since 4.0 	 */
 specifier|public
@@ -533,6 +567,45 @@ argument_list|()
 index|]
 argument_list|)
 return|;
+block|}
+comment|/**      * @since 4.0      */
+specifier|public
+specifier|abstract
+name|String
+name|getAliasForExpression
+parameter_list|(
+name|Expression
+name|exp
+parameter_list|)
+function_decl|;
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setAddBindingListener
+parameter_list|(
+name|AddBindingListener
+name|addBindingListener
+parameter_list|)
+block|{
+name|this
+operator|.
+name|addBindingListener
+operator|=
+name|addBindingListener
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|protected
+interface|interface
+name|AddBindingListener
+block|{
+name|void
+name|onAdd
+parameter_list|(
+name|DbAttributeBinding
+name|binding
+parameter_list|)
+function_decl|;
 block|}
 block|}
 end_class

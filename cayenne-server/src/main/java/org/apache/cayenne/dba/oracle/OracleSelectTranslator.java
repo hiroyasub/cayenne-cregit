@@ -260,12 +260,31 @@ argument_list|(
 literal|0
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|selectColumnExpList
+operator|.
+name|get
+argument_list|(
+literal|0
+argument_list|)
+operator|.
+name|contains
+argument_list|(
+literal|" AS "
+argument_list|)
+condition|)
+block|{
+name|buffer
 operator|.
 name|append
 argument_list|(
 literal|" AS c0"
 argument_list|)
 expr_stmt|;
+block|}
 comment|// assume there is at least 1 element
 for|for
 control|(
@@ -300,14 +319,36 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|selectColumnExpList
+operator|.
+name|get
+argument_list|(
+name|i
+argument_list|)
+operator|.
+name|contains
+argument_list|(
+literal|" AS "
+argument_list|)
+condition|)
+block|{
+name|buffer
 operator|.
 name|append
 argument_list|(
 literal|" AS c"
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|i
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}

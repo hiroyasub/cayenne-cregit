@@ -198,6 +198,17 @@ comment|// if (driver != null&& driver.startsWith("com.microsoft.") ) {
 comment|// ((JdbcAdapter) getAdapter()).setSupportsGeneratedKeys(false);
 comment|// }
 comment|// }
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsExpressionInHaving
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 
