@@ -246,7 +246,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -258,7 +257,6 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 name|String
@@ -295,10 +293,8 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-init|;
 init|)
 block|{
-comment|// Object pk = null;
 if|if
 condition|(
 operator|!
@@ -577,7 +573,7 @@ name|runUpdate
 argument_list|(
 name|node
 argument_list|,
-name|dropSequenceString
+name|dropSequenceSql
 argument_list|(
 name|ent
 argument_list|)
@@ -631,7 +627,7 @@ name|list
 operator|.
 name|add
 argument_list|(
-name|dropSequenceString
+name|dropSequenceSql
 argument_list|(
 name|entity
 argument_list|)
@@ -669,7 +665,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -681,45 +676,16 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
-name|StringBuilder
-name|buffer
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|"SELECT SEQNAME FROM SYSCAT.SEQUENCES "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"WHERE SEQNAME LIKE '"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|_SEQUENCE_PREFIX
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"%'"
-argument_list|)
-expr_stmt|;
 name|String
 name|sql
 init|=
-name|buffer
-operator|.
-name|toString
-argument_list|()
+literal|"SELECT SEQNAME FROM SYSCAT.SEQUENCES WHERE SEQNAME LIKE '"
+operator|+
+name|_SEQUENCE_PREFIX
+operator|+
+literal|"%'"
 decl_stmt|;
 name|adapter
 operator|.
@@ -746,7 +712,6 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-init|;
 init|)
 block|{
 name|List
@@ -778,6 +743,9 @@ name|getString
 argument_list|(
 literal|1
 argument_list|)
+operator|.
+name|toUpperCase
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -803,6 +771,9 @@ init|=
 name|entity
 operator|.
 name|getName
+argument_list|()
+operator|.
+name|toUpperCase
 argument_list|()
 decl_stmt|;
 name|String
@@ -839,7 +810,7 @@ block|}
 comment|/** 	 * Returns DROP SEQUENCE statement. 	 */
 specifier|protected
 name|String
-name|dropSequenceString
+name|dropSequenceSql
 parameter_list|(
 name|DbEntity
 name|entity
@@ -889,7 +860,7 @@ argument_list|)
 operator|.
 name|append
 argument_list|(
-literal|" START WITH "
+literal|" AS BIGINT START WITH "
 argument_list|)
 operator|.
 name|append

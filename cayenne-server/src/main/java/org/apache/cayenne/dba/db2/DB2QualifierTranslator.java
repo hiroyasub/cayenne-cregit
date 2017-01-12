@@ -639,6 +639,27 @@ parameter_list|)
 block|{
 if|if
 condition|(
+literal|"SUBSTRING"
+operator|.
+name|equals
+argument_list|(
+name|functionExpression
+operator|.
+name|getFunctionName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+literal|"SUBSTR"
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
 operator|!
 literal|"CONCAT"
 operator|.
