@@ -559,7 +559,7 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|protected
+specifier|public
 parameter_list|<
 name|E
 parameter_list|>
