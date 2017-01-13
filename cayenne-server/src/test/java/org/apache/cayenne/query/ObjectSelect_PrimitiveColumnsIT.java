@@ -189,16 +189,6 @@ name|org
 operator|.
 name|junit
 operator|.
-name|After
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Before
 import|;
 end_import
@@ -367,32 +357,6 @@ expr_stmt|;
 block|}
 block|}
 annotation|@
-name|After
-specifier|public
-name|void
-name|cleanTestRecords
-parameter_list|()
-throws|throws
-name|Exception
-block|{
-name|TableHelper
-name|tPrimitives
-init|=
-operator|new
-name|TableHelper
-argument_list|(
-name|dbHelper
-argument_list|,
-literal|"PRIMITIVES_TEST"
-argument_list|)
-decl_stmt|;
-name|tPrimitives
-operator|.
-name|deleteAll
-argument_list|()
-expr_stmt|;
-block|}
-annotation|@
 name|Test
 specifier|public
 name|void
@@ -540,7 +504,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"(obj:intColumn + 1)"
+literal|"(obj:intColumn + obj:intColumn)"
 argument_list|)
 argument_list|,
 name|Integer
@@ -582,7 +546,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|11
+literal|20
 argument_list|,
 name|intColumn2
 argument_list|)
