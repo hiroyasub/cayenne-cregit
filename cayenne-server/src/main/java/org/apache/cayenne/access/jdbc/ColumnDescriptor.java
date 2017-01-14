@@ -178,6 +178,11 @@ specifier|protected
 name|String
 name|javaClass
 decl_stmt|;
+comment|/**      * @since 4.0      */
+specifier|protected
+name|boolean
+name|isExpression
+decl_stmt|;
 comment|/**      * Creates a ColumnDescriptor      */
 specifier|public
 name|ColumnDescriptor
@@ -921,6 +926,32 @@ name|dataRowKey
 operator|=
 name|dataRowKey
 expr_stmt|;
+block|}
+comment|/**      * @since 4.0      * @param isExpression is this column is an expression      */
+specifier|public
+name|void
+name|setIsExpression
+parameter_list|(
+name|boolean
+name|isExpression
+parameter_list|)
+block|{
+name|this
+operator|.
+name|isExpression
+operator|=
+name|isExpression
+expr_stmt|;
+block|}
+comment|/**      * @since 4.0      * @return is this column is an expression      */
+specifier|public
+name|boolean
+name|isExpression
+parameter_list|()
+block|{
+return|return
+name|isExpression
+return|;
 block|}
 block|}
 end_class
