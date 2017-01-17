@@ -134,6 +134,17 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+literal|"LENGTH"
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|"CHAR_LENGTH"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 literal|"SUBSTRING"
 case|:
 name|substringArg
@@ -175,7 +186,18 @@ name|out
 operator|.
 name|append
 argument_list|(
-literal|" | "
+literal|" || "
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|"LOCATE"
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|" IN "
 argument_list|)
 expr_stmt|;
 break|break;
@@ -253,7 +275,34 @@ operator|.
 name|length
 argument_list|()
 operator|-
-literal|3
+literal|" || "
+operator|.
+name|length
+argument_list|()
+argument_list|,
+name|out
+operator|.
+name|length
+argument_list|()
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|"LOCATE"
+case|:
+name|out
+operator|.
+name|delete
+argument_list|(
+name|out
+operator|.
+name|length
+argument_list|()
+operator|-
+literal|" IN "
+operator|.
+name|length
+argument_list|()
 argument_list|,
 name|out
 operator|.
