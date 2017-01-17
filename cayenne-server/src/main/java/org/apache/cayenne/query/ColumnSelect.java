@@ -31,7 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collection
 import|;
 end_import
 
@@ -41,7 +41,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|Collections
 import|;
 end_import
 
@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  *     A selecting query providing individual properties based on the root object.  *  *</p>  *<p>  *     It can be properties of the object itself or some function calls (including aggregate functions)  *</p>  *<p>  * Usage examples:  *<pre>  *      // selecting list of names:  *      List&lt;String&gt; names = ColumnSelect.query(Artist.class, Artist.ARTIST_NAME).select(context);  *  *      // selecting count:  *      long count = ColumnSelect.query(Artist.class, Property.COUNT).selectOne();  *</pre>  *</p>  * @since 4.0  */
+comment|/**  *<p>A selecting query providing individual properties based on the root object.</p>  *<p>  *     It can be properties of the object itself, properties of related entities  *     or some function calls (including aggregate functions).  *</p><p>  * Usage examples:<pre>  *      // select list of names:  *      List&lt;String&gt; names = ColumnSelect.query(Artist.class, Artist.ARTIST_NAME).select(context);  *  *      // select count:  *      Property<Long> countProperty = Property.create(FunctionExpressionFactory.countExp(), Long.class);  *      long count = ColumnSelect.query(Artist.class, countProperty).selectOne();  *  *      // select only required properties of an entity:  *      List&lt;Object[]&gt; data = ColumnSelect.query(Artist.class, Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)  *                                  .where(Artist.ARTIST_NAME.like("Picasso%))  *                                  .select(context);  *</pre></p>  * @since 4.0  */
 end_comment
 
 begin_class
@@ -138,6 +138,12 @@ name|boolean
 name|havingExpressionIsActive
 init|=
 literal|false
+decl_stmt|;
+specifier|private
+name|boolean
+name|singleColumn
+init|=
+literal|true
 decl_stmt|;
 specifier|private
 name|Expression
@@ -218,7 +224,7 @@ name|column
 argument_list|)
 return|;
 block|}
-comment|/**      *      * @param entityType base persistent class that will be used as a root for this query      * @param columns columns to select      */
+comment|/**      *      * @param entityType base persistent class that will be used as a root for this query      * @param firstColumn column to select      * @param otherColumns columns to select      */
 specifier|public
 specifier|static
 name|ColumnSelect
@@ -238,8 +244,14 @@ name|Property
 argument_list|<
 name|?
 argument_list|>
+name|firstColumn
+parameter_list|,
+name|Property
+argument_list|<
+name|?
+argument_list|>
 modifier|...
-name|columns
+name|otherColumns
 parameter_list|)
 block|{
 return|return
@@ -258,7 +270,9 @@ argument_list|)
 operator|.
 name|columns
 argument_list|(
-name|columns
+name|firstColumn
+argument_list|,
+name|otherColumns
 argument_list|)
 return|;
 block|}
@@ -270,6 +284,7 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
+comment|/**      * Copy constructor to convert ObjectSelect to ColumnSelect      */
 specifier|protected
 name|ColumnSelect
 parameter_list|(
@@ -420,11 +435,18 @@ argument_list|(
 name|having
 argument_list|)
 expr_stmt|;
+name|replacement
+operator|.
+name|setCanReturnScalarValue
+argument_list|(
+name|singleColumn
+argument_list|)
+expr_stmt|;
 return|return
 name|replacement
 return|;
 block|}
-comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * List&lt;Object[]&gt; columns = ColumnSelect.query(Artist.class)      *                                    .columns(Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)      *                                    .select(context);      *</pre>      *      * @param properties array of properties to select      * @see ColumnSelect#column(Property)      */
+comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * List&lt;Object[]&gt; columns = ColumnSelect.query(Artist.class)      *                                    .columns(Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)      *                                    .select(context);      *</pre>      *      * @param firstProperty first property      * @param otherProperties array of properties to select      * @see ColumnSelect#column(Property)      * @see ColumnSelect#columns(Collection)      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -442,23 +464,57 @@ name|Property
 argument_list|<
 name|?
 argument_list|>
+name|firstProperty
+parameter_list|,
+name|Property
+argument_list|<
+name|?
+argument_list|>
 modifier|...
-name|properties
+name|otherProperties
 parameter_list|)
 block|{
 if|if
 condition|(
-name|properties
+name|columns
 operator|==
 literal|null
-operator|||
-name|properties
-operator|.
-name|length
-operator|==
-literal|0
 condition|)
 block|{
+name|columns
+operator|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|(
+name|otherProperties
+operator|.
+name|length
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+name|columns
+operator|.
+name|add
+argument_list|(
+name|firstProperty
+argument_list|)
+expr_stmt|;
+name|Collections
+operator|.
+name|addAll
+argument_list|(
+name|columns
+argument_list|,
+name|otherProperties
+argument_list|)
+expr_stmt|;
+name|singleColumn
+operator|=
+literal|false
+expr_stmt|;
 return|return
 operator|(
 name|ColumnSelect
@@ -470,18 +526,7 @@ operator|)
 name|this
 return|;
 block|}
-return|return
-name|columns
-argument_list|(
-name|Arrays
-operator|.
-name|asList
-argument_list|(
-name|properties
-argument_list|)
-argument_list|)
-return|;
-block|}
+comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity properties, function call expressions, properties of relationships, etc).</p>      *<p>      * @param properties collection of properties,<b>must</b> contain at least one element      * @see ColumnSelect#columns(Property, Property[])      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -510,23 +555,31 @@ condition|(
 name|properties
 operator|==
 literal|null
-operator|||
+condition|)
+block|{
+throw|throw
+operator|new
+name|NullPointerException
+argument_list|(
+literal|"properties is null"
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
 name|properties
 operator|.
 name|isEmpty
 argument_list|()
 condition|)
 block|{
-return|return
-operator|(
-name|ColumnSelect
-argument_list|<
-name|Object
-index|[]
-argument_list|>
-operator|)
-name|this
-return|;
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"properties must contain at least one element"
+argument_list|)
+throw|;
 block|}
 if|if
 condition|(
@@ -559,6 +612,10 @@ argument_list|(
 name|properties
 argument_list|)
 expr_stmt|;
+name|singleColumn
+operator|=
+literal|false
+expr_stmt|;
 return|return
 operator|(
 name|ColumnSelect
@@ -570,7 +627,7 @@ operator|)
 name|this
 return|;
 block|}
-comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ColumnSelect#columns(Property[])} method as subsequent      * call to this method will override previous columns set via this or      * {@link ColumnSelect#columns(Property[])} method.</p>      *<p>      *<pre>      * List&lt;String&gt; names = ColumnSelect.query(Artist.class, Artist.ARTIST_NAME).select(context);      *</pre>      *      * @param property single property to select      * @see ColumnSelect#columns(Property[])      */
+comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ColumnSelect#columns(Property, Property[])} method as subsequent      * call to this method will override previous columns set via this or      * {@link ColumnSelect#columns(Property, Property[])} method.</p>      *<p>      *<pre>      * List&lt;String&gt; names = ColumnSelect.query(Artist.class, Artist.ARTIST_NAME).select(context);      *</pre>      *      * @param property single property to select      * @see ColumnSelect#columns(Property, Property[])      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

@@ -205,6 +205,18 @@ return|return
 literal|null
 return|;
 block|}
+comment|/**      * @since 4.0      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSingleResultSetMapping
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|Query

@@ -514,6 +514,17 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSingleResultSetMapping
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 specifier|public
 name|int
 name|getStatementFetchSize

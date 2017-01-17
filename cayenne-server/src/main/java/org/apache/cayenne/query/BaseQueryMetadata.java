@@ -1479,6 +1479,27 @@ return|return
 name|resultSetMapping
 return|;
 block|}
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSingleResultSetMapping
+parameter_list|()
+block|{
+return|return
+name|resultSetMapping
+operator|!=
+literal|null
+operator|&&
+name|resultSetMapping
+operator|.
+name|size
+argument_list|()
+operator|==
+literal|1
+return|;
+block|}
 comment|/** 	 * @since 1.2 	 */
 specifier|public
 name|PrefetchTreeNode

@@ -163,6 +163,9 @@ name|String
 argument_list|>
 name|pathSplitAliases
 decl_stmt|;
+name|boolean
+name|isSingleResultSetMapping
+decl_stmt|;
 annotation|@
 name|Override
 name|void
@@ -262,6 +265,18 @@ name|query
 argument_list|,
 name|resolver
 argument_list|)
+expr_stmt|;
+name|isSingleResultSetMapping
+operator|=
+name|query
+operator|.
+name|canReturnScalarValue
+argument_list|()
+operator|&&
+name|super
+operator|.
+name|isSingleResultSetMapping
+argument_list|()
 expr_stmt|;
 return|return
 literal|true
@@ -889,6 +904,18 @@ argument_list|(
 name|resolver
 argument_list|)
 expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSingleResultSetMapping
+parameter_list|()
+block|{
+return|return
+name|isSingleResultSetMapping
+return|;
 block|}
 block|}
 end_class

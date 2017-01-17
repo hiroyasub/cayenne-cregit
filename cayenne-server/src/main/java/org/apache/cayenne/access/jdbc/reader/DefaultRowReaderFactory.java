@@ -397,11 +397,12 @@ literal|"Empty result descriptor"
 argument_list|)
 throw|;
 block|}
-if|else if
+if|if
 condition|(
-name|resultWidth
-operator|==
-literal|1
+name|queryMetadata
+operator|.
+name|isSingleResultSetMapping
+argument_list|()
 condition|)
 block|{
 name|Object

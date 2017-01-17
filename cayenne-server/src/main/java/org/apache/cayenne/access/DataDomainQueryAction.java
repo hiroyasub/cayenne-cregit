@@ -2285,12 +2285,10 @@ else|else
 block|{
 if|if
 condition|(
-name|rsMapping
+name|metadata
 operator|.
-name|size
+name|isSingleResultSetMapping
 argument_list|()
-operator|==
-literal|1
 condition|)
 block|{
 if|if

@@ -115,106 +115,70 @@ interface|interface
 name|QueryMetadata
 block|{
 comment|/**      * Defines the name of the property for the query {@link #getFetchLimit() fetch limit}      * .      */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|FETCH_LIMIT_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.fetchLimit"
 decl_stmt|;
 comment|/**      * Defines default query fetch limit, which is zero, meaning that all matching rows      * should be fetched.      */
-specifier|public
-specifier|static
-specifier|final
 name|int
 name|FETCH_LIMIT_DEFAULT
 init|=
 literal|0
 decl_stmt|;
 comment|/**      * Defines the name of the property for the query {@link #getFetchOffset() fetch      * offset}.      *       * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|FETCH_OFFSET_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.fetchOffset"
 decl_stmt|;
 comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows      * selected starting from the first.      *       * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
 name|int
 name|FETCH_OFFSET_DEFAULT
 init|=
 literal|0
 decl_stmt|;
 comment|/**      * Defines the name of the property for the query {@link #getPageSize() page size}.      */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|PAGE_SIZE_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.pageSize"
 decl_stmt|;
 comment|/**      * Defines default query page size, which is zero for no pagination.      */
-specifier|public
-specifier|static
-specifier|final
 name|int
 name|PAGE_SIZE_DEFAULT
 init|=
 literal|0
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|FETCHING_DATA_ROWS_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.fetchingDataRows"
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
 name|boolean
 name|FETCHING_DATA_ROWS_DEFAULT
 init|=
 literal|false
 decl_stmt|;
 comment|/**      * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|CACHE_STRATEGY_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.cacheStrategy"
 decl_stmt|;
 comment|/**      * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|CACHE_GROUPS_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.cacheGroups"
 decl_stmt|;
 comment|/**      * Defines the name of the property for the query {@link #getStatementFetchSize() fetch      * size}.      *       * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|STATEMENT_FETCH_SIZE_PROPERTY
 init|=
 literal|"cayenne.GenericSelectQuery.statementFetchSize"
 decl_stmt|;
 comment|/**      * Defines default query fetch start index, which is 0, meaning that matching rows      * selected starting from the first.      *       * @since 3.0      */
-specifier|public
-specifier|static
-specifier|final
 name|int
 name|STATEMENT_FETCH_SIZE_DEFAULT
 init|=
@@ -314,8 +278,12 @@ argument_list|>
 name|getResultSetMapping
 parameter_list|()
 function_decl|;
+comment|/**      * @return should the result be mapped to single object (scalar or entity)      * @see QueryMetadata#getResultSetMapping()      * @since 4.0      */
+name|boolean
+name|isSingleResultSetMapping
+parameter_list|()
+function_decl|;
 comment|/**      * @return statement's fetch size      * @since 3.0      */
-specifier|public
 name|int
 name|getStatementFetchSize
 parameter_list|()

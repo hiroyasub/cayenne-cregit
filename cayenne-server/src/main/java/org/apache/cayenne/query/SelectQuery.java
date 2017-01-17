@@ -353,6 +353,13 @@ specifier|protected
 name|Expression
 name|havingQualifier
 decl_stmt|;
+comment|/** 	 *<p>Flag that indicates whether this query can return single value or 	 * it should always return some complex data (Object[] for now)</p> 	 *<p>Default value is<b>true</b></p> 	 * @since 4.0 	 */
+specifier|protected
+name|boolean
+name|canReturnScalarValue
+init|=
+literal|true
+decl_stmt|;
 name|SelectQueryMetadata
 name|metaData
 init|=
@@ -2458,7 +2465,7 @@ else|:
 name|e
 expr_stmt|;
 block|}
-comment|/** 	 * @since 4.0 	 */
+comment|/** 	 * @since 4.0 	 * @see SelectQuery#setCanReturnScalarValue(boolean) 	 */
 specifier|public
 name|void
 name|setColumns
@@ -2518,6 +2525,32 @@ name|columns
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+comment|/** 	 *<p>Flag that indicates whether this query can return single  value or 	 * it should always return some complex data (Object[] for now)</p> 	 *<p>Default value is<b>true</b></p> 	 * @param canReturnScalarValue can this query return single value 	 * @since 4.0 	 * @see SelectQuery#setColumns 	 */
+specifier|public
+name|void
+name|setCanReturnScalarValue
+parameter_list|(
+name|boolean
+name|canReturnScalarValue
+parameter_list|)
+block|{
+name|this
+operator|.
+name|canReturnScalarValue
+operator|=
+name|canReturnScalarValue
+expr_stmt|;
+block|}
+comment|/** 	 * @return can this query return single value 	 * @since 4.0 	 */
+specifier|public
+name|boolean
+name|canReturnScalarValue
+parameter_list|()
+block|{
+return|return
+name|canReturnScalarValue
+return|;
 block|}
 comment|/** 	 * @since 4.0 	 */
 specifier|public

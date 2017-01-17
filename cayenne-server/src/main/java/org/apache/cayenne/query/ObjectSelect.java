@@ -535,6 +535,12 @@ name|Property
 argument_list|<
 name|?
 argument_list|>
+name|firstProperty
+parameter_list|,
+name|Property
+argument_list|<
+name|?
+argument_list|>
 modifier|...
 name|properties
 parameter_list|)
@@ -549,11 +555,13 @@ argument_list|)
 operator|.
 name|columns
 argument_list|(
+name|firstProperty
+argument_list|,
 name|properties
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ColumnSelect#columns(Property[])} method as subsequent      * call to this method will override previous columns set via this or      * {@link ColumnSelect#columns(Property[])} method.</p>      *<p>      *<pre>      * List&lt;String&gt; names = ObjectSelect.query(Artist.class).column(Artist.ARTIST_NAME).select(context);      *</pre>      *      * @param property single property to select      * @see ColumnSelect#columns(Property[])      */
+comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ColumnSelect#columns(Property, Property[])} method as subsequent      * call to this method will override previous columns set via this or      * {@link ColumnSelect#columns(Property, Property[])} method.</p>      *<p>      *<pre>      * List&lt;String&gt; names = ObjectSelect.query(Artist.class).column(Artist.ARTIST_NAME).select(context);      *</pre>      *      * @param property single property to select      * @see ColumnSelect#columns(Property, Property[])      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
