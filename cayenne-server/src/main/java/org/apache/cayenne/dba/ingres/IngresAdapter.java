@@ -648,15 +648,6 @@ argument_list|()
 operator|==
 name|Types
 operator|.
-name|BOOLEAN
-operator|||
-name|binding
-operator|.
-name|getType
-argument_list|()
-operator|==
-name|Types
-operator|.
 name|BIT
 operator|)
 condition|)
@@ -672,7 +663,7 @@ argument_list|()
 argument_list|,
 name|Types
 operator|.
-name|VARCHAR
+name|SMALLINT
 argument_list|)
 expr_stmt|;
 block|}
