@@ -502,25 +502,9 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|CONNECTION_NAME_KEY
-init|=
-literal|"cayenneTestConnection"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|DEFAULT_CONNECTION_KEY
-init|=
-literal|"internal_embedded_datasource"
-decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
-name|String
 name|SKIP_SCHEMA_KEY
 init|=
-literal|"cayenne.test.schema.skip"
+literal|"cayenneTestSkipSchemaCreation"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -724,30 +708,6 @@ name|void
 name|rebuildSchema
 parameter_list|()
 block|{
-if|if
-condition|(
-literal|"true"
-operator|.
-name|equalsIgnoreCase
-argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-name|SKIP_SCHEMA_KEY
-argument_list|)
-argument_list|)
-condition|)
-block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"skipping schema generation... "
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 comment|// generate schema combining all DataMaps that require schema support.
 comment|// Schema generation is done like that instead of per DataMap on demand
 comment|// to avoid conflicts when dropping and generating PK objects.
@@ -888,6 +848,31 @@ name|map
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+literal|"true"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|System
+operator|.
+name|getProperty
+argument_list|(
+name|SKIP_SCHEMA_KEY
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"skipping schema generation... "
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|dropSchema
 argument_list|()
 expr_stmt|;
@@ -900,6 +885,7 @@ expr_stmt|;
 name|createPKSupport
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 catch|catch
 parameter_list|(
