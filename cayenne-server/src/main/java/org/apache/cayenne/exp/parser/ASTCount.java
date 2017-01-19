@@ -65,6 +65,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|0
+argument_list|,
 literal|"COUNT"
 argument_list|,
 name|expression
@@ -77,6 +79,8 @@ parameter_list|()
 block|{
 name|super
 argument_list|(
+literal|0
+argument_list|,
 literal|"COUNT"
 argument_list|,
 operator|new

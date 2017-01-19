@@ -71,6 +71,9 @@ block|}
 specifier|public
 name|ASTFunctionCall
 parameter_list|(
+name|int
+name|id
+parameter_list|,
 name|String
 name|functionName
 parameter_list|,
@@ -81,7 +84,7 @@ parameter_list|)
 block|{
 name|this
 argument_list|(
-literal|0
+name|id
 argument_list|,
 name|functionName
 argument_list|)

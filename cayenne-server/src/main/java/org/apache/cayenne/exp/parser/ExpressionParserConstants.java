@@ -40,103 +40,211 @@ comment|/** RegularExpression Id. */
 name|int
 name|NULL
 init|=
-literal|38
+literal|34
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|TRUE
 init|=
-literal|39
+literal|35
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FALSE
 init|=
+literal|36
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|AVG
+init|=
+literal|37
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|MIN
+init|=
+literal|38
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|MAX
+init|=
+literal|39
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|SUM
+init|=
 literal|40
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|PROPERTY_PATH
+name|COUNT
 init|=
 literal|41
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|IDENTIFIER
+name|CONCAT
 init|=
 literal|42
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LETTER
+name|SUBSTRING
 init|=
 literal|43
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DIGIT
+name|TRIM
 init|=
 literal|44
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|ESC
+name|LOWER
+init|=
+literal|45
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|UPPER
+init|=
+literal|46
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|LENGTH
 init|=
 literal|47
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SINGLE_QUOTED_STRING
+name|LOCATE
+init|=
+literal|48
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|ABS
 init|=
 literal|49
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|STRING_ESC
+name|SQRT
 init|=
 literal|50
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DOUBLE_QUOTED_STRING
+name|MOD
+init|=
+literal|51
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|CURRENT_DATE
 init|=
 literal|52
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|INT_LITERAL
+name|CURRENT_TIME
 init|=
 literal|53
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|FLOAT_LITERAL
+name|CURRENT_TIMESTAMP
 init|=
 literal|54
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
+name|PROPERTY_PATH
+init|=
+literal|59
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|IDENTIFIER
+init|=
+literal|60
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|LETTER
+init|=
+literal|61
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|DIGIT
+init|=
+literal|62
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|ESC
+init|=
+literal|65
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|SINGLE_QUOTED_STRING
+init|=
+literal|67
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|STRING_ESC
+init|=
+literal|68
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|DOUBLE_QUOTED_STRING
+init|=
+literal|70
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|INT_LITERAL
+init|=
+literal|71
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|FLOAT_LITERAL
+init|=
+literal|72
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
 name|DEC_FLT
 init|=
-literal|55
+literal|73
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DEC_DIGITS
 init|=
-literal|56
+literal|74
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|EXPONENT
 init|=
-literal|57
+literal|75
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FLT_SUFF
 init|=
-literal|58
+literal|76
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
@@ -222,14 +330,6 @@ literal|"\"/\""
 block|,
 literal|"\"~\""
 block|,
-literal|"\"$\""
-block|,
-literal|"\"obj:\""
-block|,
-literal|"\"db:\""
-block|,
-literal|"\"enum:\""
-block|,
 literal|"\" \""
 block|,
 literal|"\"\\t\""
@@ -243,6 +343,50 @@ block|,
 literal|"<TRUE>"
 block|,
 literal|"<FALSE>"
+block|,
+literal|"\"AVG\""
+block|,
+literal|"\"MIN\""
+block|,
+literal|"\"MAX\""
+block|,
+literal|"\"SUM\""
+block|,
+literal|"\"COUNT\""
+block|,
+literal|"\"CONCAT\""
+block|,
+literal|"\"SUBSTRING\""
+block|,
+literal|"\"TRIM\""
+block|,
+literal|"\"LOWER\""
+block|,
+literal|"\"UPPER\""
+block|,
+literal|"\"LENGTH\""
+block|,
+literal|"\"LOCATE\""
+block|,
+literal|"\"ABS\""
+block|,
+literal|"\"SQRT\""
+block|,
+literal|"\"MOD\""
+block|,
+literal|"\"CURRENT_DATE\""
+block|,
+literal|"\"CURRENT_TIME\""
+block|,
+literal|"\"CURRENT_TIMESTAMP\""
+block|,
+literal|"\"$\""
+block|,
+literal|"\"obj:\""
+block|,
+literal|"\"db:\""
+block|,
+literal|"\"enum:\""
 block|,
 literal|"<PROPERTY_PATH>"
 block|,
@@ -258,13 +402,13 @@ literal|"\"\\\"\""
 block|,
 literal|"<ESC>"
 block|,
-literal|"<token of kind 48>"
+literal|"<token of kind 66>"
 block|,
 literal|"\"\\\'\""
 block|,
 literal|"<STRING_ESC>"
 block|,
-literal|"<token of kind 51>"
+literal|"<token of kind 69>"
 block|,
 literal|"\"\\\"\""
 block|,

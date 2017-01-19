@@ -85,6 +85,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTSUBSTRING
+argument_list|,
 literal|"SUBSTRING"
 argument_list|,
 name|path

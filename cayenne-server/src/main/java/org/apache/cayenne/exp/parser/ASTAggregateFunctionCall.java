@@ -48,6 +48,9 @@ expr_stmt|;
 block|}
 name|ASTAggregateFunctionCall
 parameter_list|(
+name|int
+name|id
+parameter_list|,
 name|String
 name|functionName
 parameter_list|,
@@ -58,6 +61,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|id
+argument_list|,
 name|functionName
 argument_list|,
 name|nodes

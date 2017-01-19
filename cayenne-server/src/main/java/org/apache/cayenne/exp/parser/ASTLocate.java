@@ -82,6 +82,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTLOCATE
+argument_list|,
 literal|"LOCATE"
 argument_list|,
 name|substring
@@ -105,6 +109,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTLOCATE
+argument_list|,
 literal|"LOCATE"
 argument_list|,
 name|substring

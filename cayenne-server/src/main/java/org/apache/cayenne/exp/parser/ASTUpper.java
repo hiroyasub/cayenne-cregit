@@ -79,6 +79,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTUPPER
+argument_list|,
 literal|"UPPER"
 argument_list|,
 name|expression

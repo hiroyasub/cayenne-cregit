@@ -65,6 +65,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|0
+argument_list|,
 literal|"MIN"
 argument_list|,
 name|expression

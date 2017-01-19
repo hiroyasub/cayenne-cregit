@@ -79,6 +79,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTSQRT
+argument_list|,
 literal|"SQRT"
 argument_list|,
 name|expression

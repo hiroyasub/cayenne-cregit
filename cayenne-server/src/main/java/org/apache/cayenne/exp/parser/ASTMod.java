@@ -82,6 +82,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTMOD
+argument_list|,
 literal|"MOD"
 argument_list|,
 name|expression

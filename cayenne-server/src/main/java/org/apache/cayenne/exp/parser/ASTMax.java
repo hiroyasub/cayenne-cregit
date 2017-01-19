@@ -65,6 +65,8 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+literal|0
+argument_list|,
 literal|"MAX"
 argument_list|,
 name|expression

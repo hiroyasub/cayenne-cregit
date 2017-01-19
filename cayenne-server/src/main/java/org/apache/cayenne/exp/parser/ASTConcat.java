@@ -80,6 +80,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTCONCAT
+argument_list|,
 literal|"CONCAT"
 argument_list|,
 name|expressions

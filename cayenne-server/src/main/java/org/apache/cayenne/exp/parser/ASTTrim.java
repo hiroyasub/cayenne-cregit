@@ -79,6 +79,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTTRIM
+argument_list|,
 literal|"TRIM"
 argument_list|,
 name|path

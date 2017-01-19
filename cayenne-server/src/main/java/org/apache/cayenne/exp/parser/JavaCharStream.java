@@ -69,10 +69,9 @@ return|return
 name|this
 return|;
 block|}
-empty_stmt|;
 block|}
 decl_stmt|;
-comment|/** Whether parser is static. */
+comment|/**      * Whether parser is static.      */
 specifier|public
 specifier|static
 specifier|final
@@ -227,7 +226,7 @@ argument_list|()
 throw|;
 comment|// Should never come here
 block|}
-comment|/** Position in buffer. */
+comment|/**      * Position in buffer.      */
 specifier|public
 name|int
 name|bufpos
@@ -780,7 +779,7 @@ name|nextCharInd
 index|]
 return|;
 block|}
-comment|/** @return starting character for token. */
+comment|/**      * @return starting character for token.      */
 specifier|public
 name|char
 name|BeginToken
@@ -1004,7 +1003,7 @@ operator|)
 operator|)
 expr_stmt|;
 break|break;
-default|default :
+default|default:
 break|break;
 block|}
 name|bufline
@@ -1022,7 +1021,7 @@ operator|=
 name|column
 expr_stmt|;
 block|}
-comment|/** Read a character. */
+comment|/**      * Read a character.      */
 specifier|public
 name|char
 name|readChar
@@ -1198,6 +1197,7 @@ name|IOException
 name|e
 parameter_list|)
 block|{
+comment|// We are returning one backslash so we should only backup (count-1)
 if|if
 condition|(
 name|backSlashCnt
@@ -1348,7 +1348,9 @@ name|c
 return|;
 block|}
 block|}
-comment|/**    * @deprecated    * @see #getEndColumn    */
+annotation|@
+name|Deprecated
+comment|/**      * @deprecated      * @see #getEndColumn      */
 specifier|public
 name|int
 name|getColumn
@@ -1361,7 +1363,9 @@ name|bufpos
 index|]
 return|;
 block|}
-comment|/**    * @deprecated    * @see #getEndLine    */
+annotation|@
+name|Deprecated
+comment|/**      * @deprecated      * @see #getEndLine      */
 specifier|public
 name|int
 name|getLine
@@ -1374,7 +1378,7 @@ name|bufpos
 index|]
 return|;
 block|}
-comment|/** Get end column. */
+comment|/**      * Get end column.      */
 specifier|public
 name|int
 name|getEndColumn
@@ -1387,7 +1391,7 @@ name|bufpos
 index|]
 return|;
 block|}
-comment|/** Get end line. */
+comment|/**      * Get end line.      */
 specifier|public
 name|int
 name|getEndLine
@@ -1400,7 +1404,7 @@ name|bufpos
 index|]
 return|;
 block|}
-comment|/** @return column of token start */
+comment|/**      * @return column of token start      */
 specifier|public
 name|int
 name|getBeginColumn
@@ -1413,7 +1417,7 @@ name|tokenBegin
 index|]
 return|;
 block|}
-comment|/** @return line number of token start */
+comment|/**      * @return line number of token start      */
 specifier|public
 name|int
 name|getBeginLine
@@ -1426,7 +1430,7 @@ name|tokenBegin
 index|]
 return|;
 block|}
-comment|/** Retreat. */
+comment|/**      * Retreat.      */
 specifier|public
 name|void
 name|backup
@@ -1454,7 +1458,7 @@ operator|+=
 name|bufsize
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1528,7 +1532,7 @@ name|buffersize
 index|]
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1558,7 +1562,7 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1582,7 +1586,32 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|Reader
+name|dstream
+parameter_list|)
+block|{
+name|ReInit
+argument_list|(
+name|dstream
+argument_list|,
+literal|1
+argument_list|,
+literal|1
+argument_list|,
+literal|4096
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1648,7 +1677,7 @@ name|buffersize
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1689,7 +1718,7 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1730,7 +1759,7 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1760,7 +1789,7 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1795,7 +1824,7 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Constructor. */
+comment|/**      * Constructor.      */
 specifier|public
 name|JavaCharStream
 parameter_list|(
@@ -1819,7 +1848,391 @@ literal|4096
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** @return token image as String */
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|Reader
+name|dstream
+parameter_list|,
+name|int
+name|startline
+parameter_list|,
+name|int
+name|startcolumn
+parameter_list|,
+name|int
+name|buffersize
+parameter_list|)
+block|{
+name|inputStream
+operator|=
+name|dstream
+expr_stmt|;
+name|line
+operator|=
+name|startline
+expr_stmt|;
+name|column
+operator|=
+name|startcolumn
+operator|-
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|buffer
+operator|==
+literal|null
+operator|||
+name|buffersize
+operator|!=
+name|buffer
+operator|.
+name|length
+condition|)
+block|{
+name|available
+operator|=
+name|bufsize
+operator|=
+name|buffersize
+expr_stmt|;
+name|buffer
+operator|=
+operator|new
+name|char
+index|[
+name|buffersize
+index|]
+expr_stmt|;
+name|bufline
+operator|=
+operator|new
+name|int
+index|[
+name|buffersize
+index|]
+expr_stmt|;
+name|bufcolumn
+operator|=
+operator|new
+name|int
+index|[
+name|buffersize
+index|]
+expr_stmt|;
+name|nextCharBuf
+operator|=
+operator|new
+name|char
+index|[
+name|buffersize
+index|]
+expr_stmt|;
+block|}
+name|prevCharIsLF
+operator|=
+name|prevCharIsCR
+operator|=
+literal|false
+expr_stmt|;
+name|tokenBegin
+operator|=
+name|inBuf
+operator|=
+name|maxNextCharInd
+operator|=
+literal|0
+expr_stmt|;
+name|nextCharInd
+operator|=
+name|bufpos
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|Reader
+name|dstream
+parameter_list|,
+name|int
+name|startline
+parameter_list|,
+name|int
+name|startcolumn
+parameter_list|)
+block|{
+name|ReInit
+argument_list|(
+name|dstream
+argument_list|,
+name|startline
+argument_list|,
+name|startcolumn
+argument_list|,
+literal|4096
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+name|dstream
+parameter_list|,
+name|String
+name|encoding
+parameter_list|,
+name|int
+name|startline
+parameter_list|,
+name|int
+name|startcolumn
+parameter_list|,
+name|int
+name|buffersize
+parameter_list|)
+throws|throws
+name|java
+operator|.
+name|io
+operator|.
+name|UnsupportedEncodingException
+block|{
+name|ReInit
+argument_list|(
+name|encoding
+operator|==
+literal|null
+condition|?
+operator|new
+name|java
+operator|.
+name|io
+operator|.
+name|InputStreamReader
+argument_list|(
+name|dstream
+argument_list|)
+else|:
+operator|new
+name|java
+operator|.
+name|io
+operator|.
+name|InputStreamReader
+argument_list|(
+name|dstream
+argument_list|,
+name|encoding
+argument_list|)
+argument_list|,
+name|startline
+argument_list|,
+name|startcolumn
+argument_list|,
+name|buffersize
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+name|dstream
+parameter_list|,
+name|int
+name|startline
+parameter_list|,
+name|int
+name|startcolumn
+parameter_list|,
+name|int
+name|buffersize
+parameter_list|)
+block|{
+name|ReInit
+argument_list|(
+operator|new
+name|java
+operator|.
+name|io
+operator|.
+name|InputStreamReader
+argument_list|(
+name|dstream
+argument_list|)
+argument_list|,
+name|startline
+argument_list|,
+name|startcolumn
+argument_list|,
+name|buffersize
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+name|dstream
+parameter_list|,
+name|String
+name|encoding
+parameter_list|,
+name|int
+name|startline
+parameter_list|,
+name|int
+name|startcolumn
+parameter_list|)
+throws|throws
+name|java
+operator|.
+name|io
+operator|.
+name|UnsupportedEncodingException
+block|{
+name|ReInit
+argument_list|(
+name|dstream
+argument_list|,
+name|encoding
+argument_list|,
+name|startline
+argument_list|,
+name|startcolumn
+argument_list|,
+literal|4096
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+name|dstream
+parameter_list|,
+name|int
+name|startline
+parameter_list|,
+name|int
+name|startcolumn
+parameter_list|)
+block|{
+name|ReInit
+argument_list|(
+name|dstream
+argument_list|,
+name|startline
+argument_list|,
+name|startcolumn
+argument_list|,
+literal|4096
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+name|dstream
+parameter_list|,
+name|String
+name|encoding
+parameter_list|)
+throws|throws
+name|java
+operator|.
+name|io
+operator|.
+name|UnsupportedEncodingException
+block|{
+name|ReInit
+argument_list|(
+name|dstream
+argument_list|,
+name|encoding
+argument_list|,
+literal|1
+argument_list|,
+literal|1
+argument_list|,
+literal|4096
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Reinitialise.      */
+specifier|public
+name|void
+name|ReInit
+parameter_list|(
+name|java
+operator|.
+name|io
+operator|.
+name|InputStream
+name|dstream
+parameter_list|)
+block|{
+name|ReInit
+argument_list|(
+name|dstream
+argument_list|,
+literal|1
+argument_list|,
+literal|1
+argument_list|,
+literal|4096
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @return token image as String      */
 specifier|public
 name|String
 name|GetImage
@@ -1873,7 +2286,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/** @return suffix */
+comment|/**      * @return suffix      */
 specifier|public
 name|char
 index|[]
@@ -1977,7 +2390,7 @@ return|return
 name|ret
 return|;
 block|}
-comment|/** Set buffers back to null when finished. */
+comment|/**      * Set buffers back to null when finished.      */
 specifier|public
 name|void
 name|Done
@@ -2000,7 +2413,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**    * Method to adjust line and column numbers for the start of a token.    */
+comment|/**      * Method to adjust line and column numbers for the start of a token.      */
 specifier|public
 name|void
 name|adjustBeginLineColumn
@@ -2227,7 +2640,7 @@ block|}
 end_class
 
 begin_comment
-comment|/* JavaCC - OriginalChecksum=de7dff2a3eda69c495bc3a754d6314ab (do not edit this line) */
+comment|/* JavaCC - OriginalChecksum=42728d5d6de379c28d8e61854c22fc66 (do not edit this line) */
 end_comment
 
 end_unit

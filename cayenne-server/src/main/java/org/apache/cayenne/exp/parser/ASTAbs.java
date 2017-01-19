@@ -79,6 +79,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTABS
+argument_list|,
 literal|"ABS"
 argument_list|,
 name|expression

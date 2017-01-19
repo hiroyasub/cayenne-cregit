@@ -79,6 +79,10 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|ExpressionParserTreeConstants
+operator|.
+name|JJTLENGTH
+argument_list|,
 literal|"LENGTH"
 argument_list|,
 name|expression
