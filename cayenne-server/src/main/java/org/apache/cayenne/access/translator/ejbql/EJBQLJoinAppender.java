@@ -954,7 +954,7 @@ name|context
 operator|.
 name|append
 argument_list|(
-literal|", "
+literal|" AND "
 argument_list|)
 expr_stmt|;
 name|DbJoin
