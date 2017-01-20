@@ -552,6 +552,28 @@ literal|"LTRIM(RTRIM"
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+literal|"CURRENT_DATE"
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|"{fn CURDATE()}"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|"CURRENT_TIME"
+case|:
+name|out
+operator|.
+name|append
+argument_list|(
+literal|"{fn CURTIME()}"
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|super
 operator|.

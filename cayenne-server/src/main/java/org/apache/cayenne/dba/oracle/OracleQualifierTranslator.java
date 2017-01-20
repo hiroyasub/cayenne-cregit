@@ -703,6 +703,27 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+if|else if
+condition|(
+literal|"CURRENT_TIME"
+operator|.
+name|equals
+argument_list|(
+name|functionExpression
+operator|.
+name|getFunctionName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+literal|"{fn CURTIME()}"
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 block|{
 name|super

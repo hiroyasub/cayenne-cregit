@@ -2269,7 +2269,15 @@ name|FUNCTION_CALL
 condition|)
 block|{
 return|return
-literal|true
+operator|(
+operator|(
+name|ASTFunctionCall
+operator|)
+name|node
+operator|)
+operator|.
+name|needParenthesis
+argument_list|()
 return|;
 block|}
 if|if
@@ -2755,6 +2763,16 @@ name|ASTFunctionCall
 name|functionExpression
 parameter_list|)
 block|{
+if|if
+condition|(
+name|functionExpression
+operator|.
+name|getOperandCount
+argument_list|()
+operator|>
+literal|0
+condition|)
+block|{
 name|out
 operator|.
 name|delete
@@ -2772,6 +2790,7 @@ name|length
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * Class to translate DB Entity qualifiers annotation to Obj-entity 	 * qualifiers annotation This is done by changing all Obj-paths to Db-paths 	 * and rejecting all original Db-paths 	 */
 class|class
