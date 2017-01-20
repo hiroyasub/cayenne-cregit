@@ -109,6 +109,9 @@ class|class
 name|DbJoinTableModel
 extends|extends
 name|CayenneTableModel
+argument_list|<
+name|DbJoin
+argument_list|>
 block|{
 comment|// Columns
 specifier|static
@@ -163,6 +166,7 @@ name|src
 argument_list|,
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|relationship
 operator|.
@@ -181,9 +185,6 @@ name|this
 operator|.
 name|source
 operator|=
-operator|(
-name|DbEntity
-operator|)
 name|relationship
 operator|.
 name|getSourceEntity
@@ -193,9 +194,6 @@ name|this
 operator|.
 name|target
 operator|=
-operator|(
-name|DbEntity
-operator|)
 name|relationship
 operator|.
 name|getTargetEntity
@@ -344,9 +342,6 @@ name|size
 argument_list|()
 operator|)
 condition|?
-operator|(
-name|DbJoin
-operator|)
 name|objectList
 operator|.
 name|get
