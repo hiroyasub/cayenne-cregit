@@ -197,6 +197,14 @@ argument_list|(
 name|transformed
 argument_list|)
 expr_stmt|;
+name|b
+operator|.
+name|setExtendedType
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+comment|// TODO fast hack
 block|}
 block|}
 block|}
