@@ -21,6 +21,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -70,20 +80,6 @@ operator|.
 name|filters
 operator|.
 name|TableFilter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
 import|;
 end_import
 
@@ -220,6 +216,8 @@ name|DefaultDbLoaderDelegate
 argument_list|()
 argument_list|)
 decl_stmt|;
+try|try
+block|{
 name|loader
 operator|.
 name|load
@@ -232,6 +230,29 @@ argument_list|,
 name|store
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|SQLException
+name|ex
+parameter_list|)
+block|{
+comment|// SQL Server will throw exception here.
+name|assertTrue
+argument_list|(
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+operator|.
+name|contains
+argument_list|(
+literal|"WRONG"
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|// just check that message is about "WRONG" catalog
+block|}
 name|assertTrue
 argument_list|(
 literal|"Store is not empty"

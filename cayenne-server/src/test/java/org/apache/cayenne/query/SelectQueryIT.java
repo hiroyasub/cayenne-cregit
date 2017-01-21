@@ -1714,6 +1714,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * SQL Server failure: 	 * http://stackoverflow.com/questions/14962419/is-the-like-operator-case-sensitive-with-ms-sql-server 	 */
 annotation|@
 name|Test
 specifier|public

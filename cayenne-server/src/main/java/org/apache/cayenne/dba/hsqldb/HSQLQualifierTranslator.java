@@ -87,6 +87,22 @@ name|exp
 operator|.
 name|parser
 operator|.
+name|ASTFunctionCall
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
 name|PatternMatchNode
 import|;
 end_import
@@ -182,6 +198,53 @@ operator|.
 name|append
 argument_list|(
 literal|"'"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+annotation|@
+name|Override
+specifier|protected
+name|void
+name|appendFunction
+parameter_list|(
+name|ASTFunctionCall
+name|functionExpression
+parameter_list|)
+block|{
+comment|// from documentation:
+comment|// CURRENT_TIME returns a value of TIME WITH TIME ZONE type.
+comment|// LOCALTIME returns a value of TIME type.
+comment|// CURTIME() is a synonym for LOCALTIME.
+comment|// use LOCALTIME to better align with other DBs
+if|if
+condition|(
+literal|"CURRENT_TIME"
+operator|.
+name|equals
+argument_list|(
+name|functionExpression
+operator|.
+name|getFunctionName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|out
+operator|.
+name|append
+argument_list|(
+literal|"LOCALTIME"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|super
+operator|.
+name|appendFunction
+argument_list|(
+name|functionExpression
 argument_list|)
 expr_stmt|;
 block|}

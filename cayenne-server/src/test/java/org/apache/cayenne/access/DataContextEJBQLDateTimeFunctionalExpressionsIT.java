@@ -81,6 +81,20 @@ name|cayenne
 operator|.
 name|unit
 operator|.
+name|UnitDbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
 name|di
 operator|.
 name|server
@@ -198,6 +212,12 @@ name|Inject
 specifier|private
 name|ObjectContext
 name|context
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|private
+name|UnitDbAdapter
+name|unitDbAdapter
 decl_stmt|;
 annotation|@
 name|Test
@@ -500,6 +520,19 @@ argument_list|(
 name|query
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|unitDbAdapter
+operator|.
+name|supportsTimeSqlType
+argument_list|()
+condition|)
+block|{
+comment|// check only that query is executed without error
+comment|// result will be invalid most likely as DB doesn't support TIME data type
+return|return;
+block|}
 name|assertEquals
 argument_list|(
 literal|1

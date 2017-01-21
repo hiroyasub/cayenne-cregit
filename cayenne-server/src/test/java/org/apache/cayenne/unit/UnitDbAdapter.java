@@ -1378,6 +1378,15 @@ return|;
 block|}
 specifier|public
 name|boolean
+name|supportsTimeSqlType
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
 name|onlyGenericDateType
 parameter_list|()
 block|{
@@ -1445,6 +1454,16 @@ block|}
 specifier|public
 name|boolean
 name|supportsExpressionInHaving
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
+comment|/**      * Support for select like this:      * SELECT (intColumn< 10) AS bool FROM table      */
+specifier|public
+name|boolean
+name|supportsSelectBooleanExpression
 parameter_list|()
 block|{
 return|return
