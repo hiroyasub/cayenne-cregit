@@ -344,7 +344,7 @@ specifier|public
 class|class
 name|FunctionExpressionFactory
 block|{
-comment|/**      * Call SUBSTRING(string, offset, length) function      *      * @param exp expression that must evaluate to string      * @param offset start offset of substring      * @param length length of subtring      * @return SUBSTRING() call expression      */
+comment|/**      * Call SUBSTRING(string, offset, length) function      *      * @param exp expression that must evaluate to string      * @param offset start offset of substring      * @param length length of substring      * @return SUBSTRING() call expression      */
 specifier|public
 specifier|static
 name|Expression
@@ -385,7 +385,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Call SUBSTRING(string, offset, length) function      *      * @param path Object path value      * @param offset start offset of substring      * @param length length of subtring      * @return SUBSTRING() call expression      */
+comment|/**      * Call SUBSTRING(string, offset, length) function      *      * @param path Object path value      * @param offset start offset of substring      * @param length length of substring      * @return SUBSTRING() call expression      */
 specifier|public
 specifier|static
 name|Expression
@@ -430,7 +430,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * Call SUBSTRING(string, offset, length) function      *      * @param exp expression that must evaluate to string      * @param offset start offset of substring must evaluate to int      * @param length length of subtring must evaluate to int      * @return SUBSTRING() call expression      */
+comment|/**      * Call SUBSTRING(string, offset, length) function      *      * @param exp expression that must evaluate to string      * @param offset start offset of substring must evaluate to int      * @param length length of substring must evaluate to int      * @return SUBSTRING() call expression      */
 specifier|public
 specifier|static
 name|Expression
