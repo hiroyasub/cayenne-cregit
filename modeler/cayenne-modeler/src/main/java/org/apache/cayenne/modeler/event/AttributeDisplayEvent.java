@@ -73,10 +73,6 @@ name|Entity
 import|;
 end_import
 
-begin_comment
-comment|/**    */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -85,6 +81,7 @@ extends|extends
 name|EntityDisplayEvent
 block|{
 specifier|protected
+specifier|final
 name|Attribute
 index|[]
 name|attributes
@@ -108,9 +105,16 @@ name|DataChannelDescriptor
 name|domain
 parameter_list|)
 block|{
-name|super
+name|this
 argument_list|(
 name|src
+argument_list|,
+operator|new
+name|Attribute
+index|[]
+block|{
+name|attribute
+block|}
 argument_list|,
 name|entity
 argument_list|,
@@ -118,15 +122,6 @@ name|dataMap
 argument_list|,
 name|domain
 argument_list|)
-expr_stmt|;
-name|attributes
-operator|=
-operator|new
-name|Attribute
-index|[]
-block|{
-name|attribute
-block|}
 expr_stmt|;
 block|}
 specifier|public

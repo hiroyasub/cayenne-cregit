@@ -73,20 +73,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|Entity
@@ -117,23 +103,9 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|ProjectController
-import|;
-end_import
-
-begin_import
-import|import
-name|org
+name|action
 operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|dialog
-operator|.
-name|FindDialog
+name|FindAction
 import|;
 end_import
 
@@ -170,7 +142,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Action that displays one of the objects in main tree, and then fires another action (if  * specified)  */
+comment|/**  * Action that displays one of the objects in main tree, and then fires another action (if specified)  */
 end_comment
 
 begin_class
@@ -181,9 +153,11 @@ extends|extends
 name|CayenneAction
 block|{
 comment|/**      * Action that will be performed after selection      */
+specifier|private
 name|CayenneAction
 name|delegate
 decl_stmt|;
+specifier|private
 name|GraphBuilder
 name|builder
 decl_stmt|;
@@ -270,7 +244,7 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-comment|/**          * Create icon manually, because at creation of super object delegate is null          */
+comment|// Create icon manually, because at creation of super object delegate is null
 name|Icon
 name|icon
 init|=
@@ -330,6 +304,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+specifier|private
 name|boolean
 name|display
 parameter_list|()
@@ -353,45 +328,23 @@ return|return
 literal|false
 return|;
 block|}
-name|ProjectController
-name|mediator
-init|=
-name|getProjectController
-argument_list|()
-decl_stmt|;
-comment|// we're always in same domain
-name|FindDialog
+comment|// reusing logic from FindAction
+name|FindAction
 operator|.
 name|jumpToResult
 argument_list|(
 operator|new
-name|Object
-index|[]
-block|{
-name|getApplication
-argument_list|()
+name|FindAction
 operator|.
-name|getProject
-argument_list|()
-block|,
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|mediator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-block|,
+name|SearchResultEntry
+argument_list|(
+name|entity
+argument_list|,
 name|entity
 operator|.
-name|getDataMap
+name|getName
 argument_list|()
-block|,
-name|entity
-block|}
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
