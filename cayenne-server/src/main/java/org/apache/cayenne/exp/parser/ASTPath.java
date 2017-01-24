@@ -341,6 +341,20 @@ literal|"'"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|hashCode
+parameter_list|()
+block|{
+return|return
+name|path
+operator|.
+name|hashCode
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 
