@@ -49,6 +49,22 @@ name|DbAttributeBinding
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ExtendedTypeMap
+import|;
+end_import
+
 begin_comment
 comment|/**  * A factory that creates encryption transformers used for processing batch  * bindings and decryption transformers - for result rows.  *   * @since 4.0  */
 end_comment
@@ -64,6 +80,9 @@ parameter_list|(
 name|DbAttributeBinding
 index|[]
 name|bindings
+parameter_list|,
+name|ExtendedTypeMap
+name|extendedTypeMap
 parameter_list|)
 function_decl|;
 name|MapTransformer

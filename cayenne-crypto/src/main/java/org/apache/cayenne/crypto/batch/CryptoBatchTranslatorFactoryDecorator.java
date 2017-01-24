@@ -212,6 +212,7 @@ parameter_list|(
 name|BatchQuery
 name|query
 parameter_list|,
+specifier|final
 name|DbAdapter
 name|adapter
 parameter_list|,
@@ -265,6 +266,11 @@ operator|.
 name|encryptor
 argument_list|(
 name|getBindings
+argument_list|()
+argument_list|,
+name|adapter
+operator|.
+name|getExtendedTypes
 argument_list|()
 argument_list|)
 expr_stmt|;
