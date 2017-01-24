@@ -19,18 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|lang
-operator|.
-name|reflect
-operator|.
-name|Array
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -44,18 +32,14 @@ import|;
 end_import
 
 begin_import
-import|import static
-name|org
+import|import
+name|java
 operator|.
-name|apache
+name|lang
 operator|.
-name|cayenne
+name|reflect
 operator|.
-name|log
-operator|.
-name|CommonsJdbcEventLogger
-operator|.
-name|TRIM_VALUES_THRESHOLD
+name|Array
 import|;
 end_import
 
@@ -467,7 +451,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 name|StringBuilder
@@ -775,7 +759,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 name|StringBuilder
@@ -1096,7 +1080,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 name|StringBuilder

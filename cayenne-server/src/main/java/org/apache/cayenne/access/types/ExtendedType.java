@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Defines methods to read Java objects from JDBC ResultSets and write as parameters of  * PreparedStatements.  */
+comment|/**  * Defines methods to read Java objects from JDBC ResultSets and write as parameters of PreparedStatements.  */
 end_comment
 
 begin_interface
@@ -59,6 +59,12 @@ parameter_list|<
 name|T
 parameter_list|>
 block|{
+comment|/**      * Defines trimming constant for toString method that helps to limit logging of large values.      */
+name|int
+name|TRIM_VALUES_THRESHOLD
+init|=
+literal|30
+decl_stmt|;
 comment|/**      * Returns a full name of Java class that this ExtendedType supports.      */
 name|String
 name|getClassName
@@ -86,7 +92,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Reads an object from JDBC ResultSet column, converting it to class returned by      * 'getClassName' method.      *       * @throws Exception if read error occurred, or an object can't be converted to a      *             target Java class.      */
+comment|/**      * Reads an object from JDBC ResultSet column, converting it to class returned by      * 'getClassName' method.      *      * @throws Exception if read error occurred, or an object can't be converted to a      *                   target Java class.      */
 name|T
 name|materializeObject
 parameter_list|(
@@ -102,7 +108,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Reads an object from a stored procedure OUT parameter, converting it to class      * returned by 'getClassName' method.      *       * @throws Exception if read error occurred, or an object can't be converted to a      *             target Java class.      */
+comment|/**      * Reads an object from a stored procedure OUT parameter, converting it to class      * returned by 'getClassName' method.      *      * @throws Exception if read error occurred, or an object can't be converted to a      *                   target Java class.      */
 name|T
 name|materializeObject
 parameter_list|(
@@ -118,7 +124,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      *      */
+comment|/**      * Converts value of the supported type to a human-readable String representation.      *      * @param value a vlue to convert to String.      * @since 4.0      */
 name|String
 name|toString
 parameter_list|(

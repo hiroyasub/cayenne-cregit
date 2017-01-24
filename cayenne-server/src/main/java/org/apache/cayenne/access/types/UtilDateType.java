@@ -19,6 +19,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|TypesMapping
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -64,20 +78,6 @@ operator|.
 name|util
 operator|.
 name|Date
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
-name|TypesMapping
 import|;
 end_import
 
@@ -497,7 +497,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 name|long

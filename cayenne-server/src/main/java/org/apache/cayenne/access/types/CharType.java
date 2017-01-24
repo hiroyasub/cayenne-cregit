@@ -19,6 +19,18 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|CayenneException
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|io
@@ -104,18 +116,6 @@ operator|.
 name|sql
 operator|.
 name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneException
 import|;
 end_import
 
@@ -561,7 +561,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 name|StringBuilder
@@ -578,7 +578,6 @@ argument_list|(
 literal|'\''
 argument_list|)
 expr_stmt|;
-comment|// lets escape quotes
 name|String
 name|literal
 init|=
@@ -608,6 +607,7 @@ operator|+
 literal|"..."
 expr_stmt|;
 block|}
+comment|// escape quotes
 name|int
 name|curPos
 init|=
@@ -673,6 +673,7 @@ operator|.
 name|length
 argument_list|()
 condition|)
+block|{
 name|buffer
 operator|.
 name|append
@@ -685,6 +686,7 @@ name|curPos
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|buffer
 operator|.
 name|append

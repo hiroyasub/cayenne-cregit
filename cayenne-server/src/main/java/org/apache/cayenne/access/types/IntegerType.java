@@ -231,7 +231,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 return|return

@@ -19,6 +19,22 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ExtendedType
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -44,22 +60,6 @@ operator|.
 name|sql
 operator|.
 name|ResultSet
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|types
-operator|.
-name|ExtendedType
 import|;
 end_import
 
@@ -234,7 +234,7 @@ literal|null
 condition|)
 block|{
 return|return
-literal|"\'null\'"
+literal|"NULL"
 return|;
 block|}
 return|return
