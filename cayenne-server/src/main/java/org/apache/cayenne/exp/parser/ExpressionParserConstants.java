@@ -40,127 +40,133 @@ comment|/** RegularExpression Id. */
 name|int
 name|NULL
 init|=
-literal|34
+literal|33
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|TRUE
 init|=
-literal|35
+literal|34
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FALSE
 init|=
-literal|36
+literal|35
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|AVG
 init|=
-literal|37
+literal|36
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|MIN
 init|=
-literal|38
+literal|37
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|MAX
 init|=
-literal|39
+literal|38
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|SUM
 init|=
-literal|40
+literal|39
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|COUNT
 init|=
-literal|41
+literal|40
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|CONCAT
 init|=
-literal|42
+literal|41
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|SUBSTRING
 init|=
-literal|43
+literal|42
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|TRIM
 init|=
-literal|44
+literal|43
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|LOWER
 init|=
-literal|45
+literal|44
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|UPPER
 init|=
-literal|46
+literal|45
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|LENGTH
 init|=
-literal|47
+literal|46
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|LOCATE
 init|=
-literal|48
+literal|47
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|ABS
 init|=
-literal|49
+literal|48
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|SQRT
 init|=
-literal|50
+literal|49
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|MOD
 init|=
-literal|51
+literal|50
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|CURRENT_DATE
 init|=
-literal|52
+literal|51
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|CURRENT_TIME
 init|=
-literal|53
+literal|52
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|CURRENT_TIMESTAMP
 init|=
-literal|54
+literal|53
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|ASTERISK
+init|=
+literal|58
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
@@ -324,8 +330,6 @@ literal|"\"+\""
 block|,
 literal|"\"-\""
 block|,
-literal|"\"*\""
-block|,
 literal|"\"/\""
 block|,
 literal|"\"~\""
@@ -387,6 +391,8 @@ block|,
 literal|"\"db:\""
 block|,
 literal|"\"enum:\""
+block|,
+literal|"\"*\""
 block|,
 literal|"<PROPERTY_PATH>"
 block|,

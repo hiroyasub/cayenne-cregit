@@ -69,6 +69,26 @@ name|nodes
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|Object
+name|evaluateNode
+parameter_list|(
+name|Object
+name|o
+parameter_list|)
+throws|throws
+name|Exception
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"In-memory evaluation of aggregate functions not implemented yet."
+argument_list|)
+throw|;
+block|}
 block|}
 end_class
 

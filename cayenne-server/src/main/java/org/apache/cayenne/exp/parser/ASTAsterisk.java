@@ -83,7 +83,7 @@ name|super
 argument_list|(
 name|ExpressionParserTreeConstants
 operator|.
-name|JJTMULTIPLY
+name|JJTASTERISK
 argument_list|)
 expr_stmt|;
 block|}
