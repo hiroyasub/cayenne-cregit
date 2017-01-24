@@ -91,7 +91,8 @@ parameter_list|(
 name|PreparedStatement
 name|st
 parameter_list|,
-name|Object
+name|byte
+index|[]
 name|val
 parameter_list|,
 name|int
@@ -138,10 +139,6 @@ name|setBytes
 argument_list|(
 literal|1
 argument_list|,
-operator|(
-name|byte
-index|[]
-operator|)
 name|val
 argument_list|)
 expr_stmt|;
@@ -163,10 +160,6 @@ name|setBytes
 argument_list|(
 name|pos
 argument_list|,
-operator|(
-name|byte
-index|[]
-operator|)
 name|val
 argument_list|)
 expr_stmt|;

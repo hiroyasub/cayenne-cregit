@@ -84,7 +84,7 @@ parameter_list|(
 name|PreparedStatement
 name|st
 parameter_list|,
-name|Object
+name|String
 name|val
 parameter_list|,
 name|int
@@ -119,9 +119,6 @@ argument_list|(
 name|pos
 argument_list|,
 name|val
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
