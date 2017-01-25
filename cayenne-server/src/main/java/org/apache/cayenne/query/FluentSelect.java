@@ -206,7 +206,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base class for ObjectSelect and ColumnSelect  *  * @since 4.0  */
+comment|/**  * Base class for {@link ObjectSelect} and {@link ColumnSelect}  *  * @since 4.0  */
 end_comment
 
 begin_class
