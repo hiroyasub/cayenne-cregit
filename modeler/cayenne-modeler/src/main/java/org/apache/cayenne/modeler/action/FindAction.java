@@ -648,6 +648,17 @@ argument_list|,
 literal|10
 argument_list|)
 expr_stmt|;
+name|PRIORITY_BY_TYPE
+operator|.
+name|put
+argument_list|(
+name|EmbeddableAttribute
+operator|.
+name|class
+argument_list|,
+literal|11
+argument_list|)
+expr_stmt|;
 block|}
 specifier|public
 specifier|static
