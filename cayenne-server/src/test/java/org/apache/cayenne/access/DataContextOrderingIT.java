@@ -790,16 +790,8 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * For now Ordering doesn't support custom expression      */
 annotation|@
 name|Test
-argument_list|(
-name|expected
-operator|=
-name|CayenneRuntimeException
-operator|.
-name|class
-argument_list|)
 specifier|public
 name|void
 name|testCustomPropertySort
