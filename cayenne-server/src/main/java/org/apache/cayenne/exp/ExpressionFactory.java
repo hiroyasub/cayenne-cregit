@@ -551,6 +551,22 @@ name|exp
 operator|.
 name|parser
 operator|.
+name|ASTScalar
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|parser
+operator|.
 name|ASTSubtract
 import|;
 end_import
@@ -5552,6 +5568,23 @@ expr_stmt|;
 block|}
 return|return
 name|e
+return|;
+block|}
+comment|/** 	 * Wrap value into ASTScalar 	 * @since 4.0 	 */
+specifier|static
+name|Expression
+name|wrapScalarValue
+parameter_list|(
+name|Object
+name|value
+parameter_list|)
+block|{
+return|return
+operator|new
+name|ASTScalar
+argument_list|(
+name|value
+argument_list|)
 return|;
 block|}
 comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 4.0 	 */

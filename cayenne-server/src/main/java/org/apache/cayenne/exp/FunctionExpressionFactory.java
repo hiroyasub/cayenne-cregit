@@ -856,7 +856,7 @@ name|number
 argument_list|)
 return|;
 block|}
-comment|/**      * Factory method for expression to call CONCAT(string1, string2, ...) function      * Can be used like:      *  Expression concat = concatExp(SomeClass.POPERTY_1.getPath(), SomeClass.PROPERTY_2.getPath());      *      * SQL generation note:      * - if DB supports CONCAT function with vararg then it will be used      * - if DB supports CONCAT function with two args but also supports concat operator, then operator (eg ||) will be used      * - if DB supports only CONCAT function with two args then it will be used what can lead to SQL exception if      * used with more than two arguments      *      * Currently only known DB with limited concatenation functionality is Openbase.      *      * @param expressions array of expressions      * @return CONCAT() call expression      */
+comment|/**      *<p>      * Factory method for expression to call CONCAT(string1, string2, ...) function      *</p>      *<p>      * Can be used like:<pre>      *  Expression concat = concatExp(SomeClass.POPERTY_1.getPath(), SomeClass.PROPERTY_2.getPath());      *</pre>      *</p>      *<p>      * SQL generation note:      *<ul>      *<li> if DB supports CONCAT function with vararg then it will be used      *<li> if DB supports CONCAT function with two args but also supports concat operator, then operator (eg ||) will be used      *<li> if DB supports only CONCAT function with two args then it will be used what can lead to SQL exception if      * used with more than two arguments      *</ul>      *</p>      *<p>Currently only known DB with limited concatenation functionality is Openbase.</p>      *      * @param expressions array of expressions      * @return CONCAT() call expression      */
 specifier|public
 specifier|static
 name|Expression
@@ -894,7 +894,7 @@ name|expressions
 argument_list|)
 return|;
 block|}
-comment|/**      * Factory method for expression to call CONCAT(string1, string2, ...) function      * Can be used like:      *  Expression concat = concatExp("property1", "property2");      *      * SQL generation note:      * - if DB supports CONCAT function with vararg then it will be used      * - if DB supports CONCAT function with two args but also supports concat operator, then operator (eg ||) will be used      * - if DB supports only CONCAT function with two args then it will be used what can lead to SQL exception if      * used with more than two arguments      *      * Currently only known DB with limited concatenation functionality is Openbase.      *      * @param paths array of paths      * @return CONCAT() call expression      */
+comment|/**      *<p>      * Factory method for expression to call CONCAT(string1, string2, ...) function      *</p>      *<p>      * Can be used like:<pre>      *  Expression concat = concatExp("property1", "property2");      *</pre>      *</p>      *<p>      * SQL generation note:      *<ul>      *<li> if DB supports CONCAT function with vararg then it will be used      *<li> if DB supports CONCAT function with two args but also supports concat operator, then operator (eg ||) will be used      *<li> if DB supports only CONCAT function with two args then it will be used what can lead to SQL exception if      * used with more than two arguments      *</ul>      *</p>      *<p>Currently only Openbase DB has limited concatenation functionality.</p>      *      * @param paths array of paths      * @return CONCAT() call expression      */
 specifier|public
 specifier|static
 name|Expression
