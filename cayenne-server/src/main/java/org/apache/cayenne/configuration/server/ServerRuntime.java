@@ -186,7 +186,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An object representing Cayenne server-stack that connects directly to the  * database via JDBC. This is an entry point for user applications to access  * Cayenne, which encapsulates the dependency injection internals. The term  * "server" is used as opposed to ROP "client" (see {@link CayenneRuntime}). Any  * application, desktop, server, etc. that has a direct JDBC connection should  * be using this runtime.  *  * @since 3.1  */
+comment|/**  * Object representing Cayenne stack. Serves as an entry point to Cayenne for user applications and a factory of ObjectContexts.  * Implementation is a thin wrapper of the dependency injection container.  *<p>The "Server" prefix in the name is in contrast to ROP "client" (that is started via ClientRuntime). So  * ServerRuntime is the default Cayenne stack that you should be using in all apps with the exception of client-side ROP.</p>  *  * @since 3.1  */
 end_comment
 
 begin_class
