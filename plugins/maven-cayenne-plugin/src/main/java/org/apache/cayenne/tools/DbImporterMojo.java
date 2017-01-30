@@ -349,6 +349,10 @@ comment|/**      * An object that contains reverse engineering rules.      */
 annotation|@
 name|Parameter
 argument_list|(
+name|name
+operator|=
+literal|"dbimport"
+argument_list|,
 name|property
 operator|=
 literal|"dbimport"
@@ -359,12 +363,100 @@ literal|"dbImport"
 argument_list|)
 specifier|private
 name|ReverseEngineering
-name|reverseEngineering
+name|dbImportConfig
 init|=
 operator|new
 name|ReverseEngineering
 argument_list|()
 decl_stmt|;
+comment|/**      * @deprecated use {@code<dataSource>} tag to set connection properties      */
+annotation|@
+name|Deprecated
+annotation|@
+name|Parameter
+argument_list|(
+name|name
+operator|=
+literal|"url"
+argument_list|,
+name|property
+operator|=
+literal|"url"
+argument_list|)
+specifier|private
+specifier|final
+name|String
+name|oldUrl
+init|=
+literal|""
+decl_stmt|;
+comment|// TODO remove in 4.0.BETA
+comment|/**      * @deprecated moved to {@code<dbimport>} section      */
+annotation|@
+name|Deprecated
+annotation|@
+name|Parameter
+argument_list|(
+name|name
+operator|=
+literal|"meaningfulPkTables"
+argument_list|,
+name|property
+operator|=
+literal|"meaningfulPkTables"
+argument_list|)
+specifier|private
+specifier|final
+name|String
+name|oldMeaningfulPkTables
+init|=
+literal|""
+decl_stmt|;
+comment|// TODO remove in 4.0.BETA
+comment|/**      * @deprecated use {@code<dataSource>} tag to set connection properties      */
+annotation|@
+name|Deprecated
+annotation|@
+name|Parameter
+argument_list|(
+name|name
+operator|=
+literal|"driver"
+argument_list|,
+name|property
+operator|=
+literal|"driver"
+argument_list|)
+specifier|private
+specifier|final
+name|String
+name|oldDriver
+init|=
+literal|""
+decl_stmt|;
+comment|// TODO remove in 4.0.BETA
+comment|/**      * @deprecated moved to {@code<dbimport>} section      */
+annotation|@
+name|Deprecated
+annotation|@
+name|Parameter
+argument_list|(
+name|name
+operator|=
+literal|"defaultPackage"
+argument_list|,
+name|property
+operator|=
+literal|"defaultPackage"
+argument_list|)
+specifier|private
+specifier|final
+name|String
+name|oldDefaultPackage
+init|=
+literal|""
+decl_stmt|;
+comment|// TODO remove in 4.0.BETA
 specifier|public
 name|void
 name|execute
@@ -419,7 +511,7 @@ init|=
 operator|new
 name|DbImportConfigurationValidator
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 argument_list|,
 name|config
 argument_list|,
@@ -555,7 +647,7 @@ name|config
 operator|.
 name|setDefaultPackage
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getDefaultPackage
 argument_list|()
@@ -578,7 +670,7 @@ argument_list|(
 operator|new
 name|FiltersConfigBuilder
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 argument_list|)
 operator|.
 name|build
@@ -589,7 +681,7 @@ name|config
 operator|.
 name|setForceDataMapCatalog
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|isForceDataMapCatalog
 argument_list|()
@@ -599,7 +691,7 @@ name|config
 operator|.
 name|setForceDataMapSchema
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|isForceDataMapSchema
 argument_list|()
@@ -616,7 +708,7 @@ name|config
 operator|.
 name|setMeaningfulPkTables
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getMeaningfulPkTables
 argument_list|()
@@ -626,7 +718,7 @@ name|config
 operator|.
 name|setNamingStrategy
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getNamingStrategy
 argument_list|()
@@ -646,7 +738,7 @@ name|config
 operator|.
 name|setSkipRelationshipsLoading
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getSkipRelationshipsLoading
 argument_list|()
@@ -656,7 +748,7 @@ name|config
 operator|.
 name|setSkipPrimaryKeyLoading
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getSkipPrimaryKeyLoading
 argument_list|()
@@ -666,7 +758,7 @@ name|config
 operator|.
 name|setStripFromTableNames
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getStripFromTableNames
 argument_list|()
@@ -676,7 +768,7 @@ name|config
 operator|.
 name|setTableTypes
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|getTableTypes
 argument_list|()
@@ -713,7 +805,7 @@ name|config
 operator|.
 name|setUsePrimitives
 argument_list|(
-name|reverseEngineering
+name|dbImportConfig
 operator|.
 name|isUsePrimitives
 argument_list|()
@@ -732,6 +824,7 @@ return|return
 name|map
 return|;
 block|}
+comment|/**      * Used only in tests, Maven will inject value directly into the "map" field      */
 specifier|public
 name|void
 name|setMap
@@ -747,36 +840,36 @@ operator|=
 name|map
 expr_stmt|;
 block|}
-comment|/**      * This setter is used by Maven      */
+comment|/**      * This setter is used by Maven when defined {@code<dbimport>} tag      */
 specifier|public
 name|void
 name|setDbimport
 parameter_list|(
 name|ReverseEngineering
-name|reverseEngineering
+name|dbImportConfig
 parameter_list|)
 block|{
 name|this
 operator|.
-name|reverseEngineering
+name|dbImportConfig
 operator|=
-name|reverseEngineering
+name|dbImportConfig
 expr_stmt|;
 block|}
-comment|/**      * This setter is used by Maven      */
+comment|/**      * This setter is used by Maven {@code<dbImport>} tag      */
 specifier|public
 name|void
 name|setDbImport
 parameter_list|(
 name|ReverseEngineering
-name|reverseEngineering
+name|dbImportConfig
 parameter_list|)
 block|{
 name|this
 operator|.
-name|reverseEngineering
+name|dbImportConfig
 operator|=
-name|reverseEngineering
+name|dbImportConfig
 expr_stmt|;
 block|}
 specifier|public
@@ -785,11 +878,10 @@ name|getReverseEngineering
 parameter_list|()
 block|{
 return|return
-name|reverseEngineering
+name|dbImportConfig
 return|;
 block|}
-comment|// â¬â¬â¬ All following setters should be removed in 4.0.BETA â¬â¬â¬ //
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
+comment|// TODO â¬â¬â¬ All following setters should be removed in 4.0.BETA â¬â¬â¬
 annotation|@
 name|Deprecated
 specifier|public
@@ -808,45 +900,6 @@ literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\
 argument_list|)
 throw|;
 block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setUser
-parameter_list|(
-name|String
-name|user
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setPassword
-parameter_list|(
-name|String
-name|password
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -865,45 +918,6 @@ literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\
 argument_list|)
 throw|;
 block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setForceDataMapCatalog
-parameter_list|(
-name|boolean
-name|forceDataMapCatalog
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"forceDataMapCatalog property has been moved to<dbimport> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setForceDataMapSchema
-parameter_list|(
-name|boolean
-name|forceDataMapSchema
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"forceDataMapSchema property has been moved to<dbimport> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -922,26 +936,6 @@ literal|"meaningfulPkTables property has been moved to<dbimport> tag since 4.0.M
 argument_list|)
 throw|;
 block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setNamingStrategy
-parameter_list|(
-name|String
-name|namingStrategy
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"namingStrategy property has been moved to<dbimport> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -957,63 +951,6 @@ operator|new
 name|UnsupportedOperationException
 argument_list|(
 literal|"defaultPackage property has been deprecated since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setStripFromTableNames
-parameter_list|(
-name|String
-name|stripFromTableNames
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"stripFromTableNames property has been deprecated since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setUsePrimitives
-parameter_list|(
-name|boolean
-name|usePrimitives
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"usePrimitives property has been deprecated since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
-block|}
-comment|/**      * Setter to catch old styled configuration      * @deprecated to be removed in 4.0.BETA      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setReverseEngineering
-parameter_list|(
-name|ReverseEngineering
-name|reverseEngineering
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"<reverseEngineering> tag has been replaced with<dbimport> since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
 throw|;
 block|}
