@@ -15,71 +15,15 @@ name|dbimport
 package|;
 end_package
 
-begin_import
-import|import
-name|javax
-operator|.
-name|xml
-operator|.
-name|bind
-operator|.
-name|annotation
-operator|.
-name|XmlAccessType
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|xml
-operator|.
-name|bind
-operator|.
-name|annotation
-operator|.
-name|XmlAccessorType
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|xml
-operator|.
-name|bind
-operator|.
-name|annotation
-operator|.
-name|XmlAttribute
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.0.  */
 end_comment
 
 begin_class
-annotation|@
-name|XmlAccessorType
-argument_list|(
-name|XmlAccessType
-operator|.
-name|FIELD
-argument_list|)
 specifier|public
 class|class
 name|PatternParam
 block|{
-annotation|@
-name|XmlAttribute
-argument_list|(
-name|name
-operator|=
-literal|"pattern"
-argument_list|)
 specifier|private
 name|String
 name|pattern
@@ -127,7 +71,7 @@ operator|=
 name|pattern
 expr_stmt|;
 block|}
-comment|/**      * used my maven      *      * @param pattern      */
+comment|/**      * Used by Maven plugin      */
 specifier|public
 name|void
 name|set
@@ -142,7 +86,7 @@ name|pattern
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * used my ant      *      * @param pattern      */
+comment|/**      * Used by Ant task      */
 specifier|public
 name|void
 name|addText
@@ -170,6 +114,7 @@ name|pattern
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * used by Ant?      */
 specifier|public
 name|void
 name|addConfiguredPattern

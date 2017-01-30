@@ -126,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * @since 4.0  * @deprecated  */
 end_comment
 
 begin_class
@@ -250,11 +250,9 @@ name|close
 argument_list|()
 expr_stmt|;
 return|return
-name|reverseEngineering
-operator|.
-name|getConfigurationSource
-argument_list|()
+literal|null
 return|;
+comment|//reverseEngineering.getConfigurationSource();
 block|}
 catch|catch
 parameter_list|(

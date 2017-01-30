@@ -445,9 +445,7 @@ name|res
 init|=
 operator|new
 name|TreeSet
-argument_list|<
-name|Pattern
-argument_list|>
+argument_list|<>
 argument_list|(
 name|PatternFilter
 operator|.
@@ -504,9 +502,7 @@ name|includeTableFilters
 init|=
 operator|new
 name|TreeSet
-argument_list|<
-name|IncludeTableFilter
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1193,13 +1189,6 @@ argument_list|(
 literal|null
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|schema
-operator|!=
-literal|null
-condition|)
-block|{
 for|for
 control|(
 name|IncludeTable
@@ -1286,7 +1275,6 @@ argument_list|(
 name|schemaExcludeColumns
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}

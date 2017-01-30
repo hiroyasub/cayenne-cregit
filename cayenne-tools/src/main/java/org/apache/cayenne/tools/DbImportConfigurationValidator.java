@@ -219,16 +219,14 @@ operator|.
 name|createDataNodeDescriptor
 argument_list|()
 decl_stmt|;
-name|DataSource
-name|dataSource
-decl_stmt|;
 name|DbAdapter
 name|adapter
 decl_stmt|;
 try|try
 block|{
+name|DataSource
 name|dataSource
-operator|=
+init|=
 name|injector
 operator|.
 name|getInstance
@@ -242,7 +240,7 @@ name|getDataSource
 argument_list|(
 name|dataNodeDescriptor
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|adapter
 operator|=
 name|injector
@@ -272,9 +270,7 @@ throw|throw
 operator|new
 name|Exception
 argument_list|(
-literal|"Error creating DataSource or DbAdapter "
-operator|+
-literal|"for DataNodeDescriptor ("
+literal|"Error creating DataSource or DbAdapter for DataNodeDescriptor ("
 operator|+
 name|dataNodeDescriptor
 operator|+
@@ -308,7 +304,7 @@ literal|"Your database does not support catalogs on reverse engineering. "
 operator|+
 literal|"It allows to connect to only one at the moment. "
 operator|+
-literal|"Please don't note catalogs as param."
+literal|"Please don't note catalogs in<dbimport> configuration."
 decl_stmt|;
 throw|throw
 operator|new
@@ -340,14 +336,7 @@ condition|(
 name|catalogs
 operator|==
 literal|null
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-if|if
-condition|(
+operator|||
 name|catalogs
 operator|.
 name|isEmpty

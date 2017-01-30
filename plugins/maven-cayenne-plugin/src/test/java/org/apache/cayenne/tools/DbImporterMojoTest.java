@@ -253,18 +253,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|xml
-operator|.
-name|sax
-operator|.
-name|SAXException
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|io
@@ -359,27 +347,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -1561,7 +1529,7 @@ name|exceptedMessage
 init|=
 literal|"Your database does not support catalogs on reverse engineering. "
 operator|+
-literal|"It allows to connect to only one at the moment. Please don't note catalogs as param."
+literal|"It allows to connect to only one at the moment. Please don't note catalogs in<dbimport> configuration."
 decl_stmt|;
 try|try
 block|{
@@ -1589,6 +1557,8 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
+name|exceptedMessage
+argument_list|,
 name|exceptedException
 operator|.
 name|getCause
@@ -1596,8 +1566,6 @@ argument_list|()
 operator|.
 name|getMessage
 argument_list|()
-argument_list|,
-name|exceptedMessage
 argument_list|)
 expr_stmt|;
 block|}
@@ -1736,13 +1704,7 @@ name|DbImportConfiguration
 name|dbImportConfiguration
 parameter_list|)
 throws|throws
-name|ClassNotFoundException
-throws|,
-name|IllegalAccessException
-throws|,
-name|InstantiationException
-throws|,
-name|SQLException
+name|Exception
 block|{
 comment|// TODO: refactor to common DB management code... E.g. bootique-jdbc-test?
 comment|// TODO: with in-memory Derby, it is easier to just stop and delete the database.. again see bootique-jdbc-test
@@ -1784,7 +1746,6 @@ name|connection
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -1812,7 +1773,6 @@ block|{
 literal|"VIEW"
 block|}
 argument_list|)
-init|;
 init|)
 block|{
 while|while
@@ -1887,7 +1847,6 @@ block|{
 literal|"TABLE"
 block|}
 argument_list|)
-init|;
 init|)
 block|{
 while|while
@@ -2046,7 +2005,6 @@ argument_list|()
 operator|.
 name|getSchemas
 argument_list|()
-init|;
 init|)
 block|{
 while|while
@@ -2201,22 +2159,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|SAXException
-name|e
-parameter_list|)
-block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
-name|fail
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
+name|Exception
 name|e
 parameter_list|)
 block|{

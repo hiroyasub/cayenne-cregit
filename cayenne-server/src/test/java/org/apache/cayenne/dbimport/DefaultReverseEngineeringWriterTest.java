@@ -61,6 +61,16 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Ignore
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
 import|;
 end_import
@@ -122,6 +132,11 @@ specifier|public
 class|class
 name|DefaultReverseEngineeringWriterTest
 block|{
+annotation|@
+name|Ignore
+argument_list|(
+literal|"reverseEngineering.xml is depreceted"
+argument_list|)
 annotation|@
 name|Test
 specifier|public
@@ -393,34 +408,9 @@ argument_list|(
 name|decodedURL
 argument_list|)
 decl_stmt|;
-name|reverseEngineering
-operator|.
-name|setConfigurationSource
-argument_list|(
-operator|new
-name|URLResource
-argument_list|(
-name|url
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|Resource
-name|reverseEngineeringResource
-init|=
-name|engineering
-operator|.
-name|write
-argument_list|(
-name|reverseEngineering
-argument_list|,
-name|printWriter
-argument_list|)
-decl_stmt|;
-name|assertReverseEngineering
-argument_list|(
-name|reverseEngineeringResource
-argument_list|)
-expr_stmt|;
+comment|//        reverseEngineering.setConfigurationSource(new URLResource(url));
+comment|//        Resource reverseEngineeringResource = engineering.write(reverseEngineering, printWriter);
+comment|//        assertReverseEngineering(reverseEngineeringResource);
 block|}
 specifier|public
 name|void
