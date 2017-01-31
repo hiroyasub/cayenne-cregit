@@ -259,6 +259,54 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|LifecyclePhase
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Mojo
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|Parameter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|xml
 operator|.
 name|sax
@@ -288,67 +336,142 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  *   * @phase pre-integration-test  * @goal cdbgen  */
+comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  */
 end_comment
 
 begin_class
+annotation|@
+name|Mojo
+argument_list|(
+name|name
+operator|=
+literal|"cdbgen"
+argument_list|,
+name|defaultPhase
+operator|=
+name|LifecyclePhase
+operator|.
+name|PRE_INTEGRATION_TEST
+argument_list|)
 specifier|public
 class|class
 name|DbGeneratorMojo
 extends|extends
 name|AbstractMojo
 block|{
-comment|/**      * DataMap XML file to use as a schema descriptor.      *       * @parameter map="map"      * @required      */
+comment|/**      * DataMap XML file to use as a schema descriptor.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|required
+operator|=
+literal|true
+argument_list|)
 specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. While this      * attribute is optional (a generic JdbcAdapter is used if not set), it is      * highly recommended to specify correct target adapter.      *       * @parameter adapter="adapter"      */
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. While this      * attribute is optional (a generic JdbcAdapter is used if not set), it is      * highly recommended to specify correct target adapter.      */
+annotation|@
+name|Parameter
 specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      *       * @parameter driver="driver"      * @required      */
+comment|/**      * A class of JDBC driver to use for the target database.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|required
+operator|=
+literal|true
+argument_list|)
 specifier|private
 name|String
 name|driver
 decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      *       * @parameter url="url"      * @required      */
+comment|/**      * JDBC connection URL of a target database.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|required
+operator|=
+literal|true
+argument_list|)
 specifier|private
 name|String
 name|url
 decl_stmt|;
-comment|/**      * Database user name.      *       * @parameter username="username"      */
+comment|/**      * Database user name.      */
+annotation|@
+name|Parameter
 specifier|private
 name|String
 name|username
 decl_stmt|;
-comment|/**      * Database user password.      *       * @parameter password="password"      */
+comment|/**      * Database user password.      */
+annotation|@
+name|Parameter
 specifier|private
 name|String
 name|password
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      *       * @parameter dropTables="dropTables" default-value="false"      */
+comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|dropTables
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects.      * Default is<code>false</code>.      *       * @parameter dropPK="dropPK" default-value="false"      */
+comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects.      * Default is<code>false</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
 specifier|private
 name|boolean
 name|dropPK
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create new tables. Default is      *<code>true</code>.      *       * @parameter createTables="createTables" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create new tables. Default is      *<code>true</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|private
 name|boolean
 name|createTables
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects.      * Default is<code>true</code>.      *       * @parameter createPK="createPK" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects.      * Default is<code>true</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|private
 name|boolean
 name|createPK
 decl_stmt|;
-comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is      *<code>true</code>.      *       * @parameter createFK="createFK" default-value="true"      */
+comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is      *<code>true</code>.      */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"true"
+argument_list|)
 specifier|private
 name|boolean
 name|createFK
