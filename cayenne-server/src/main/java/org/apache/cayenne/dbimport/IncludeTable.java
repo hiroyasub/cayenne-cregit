@@ -47,6 +47,7 @@ extends|extends
 name|PatternParam
 block|{
 specifier|private
+specifier|final
 name|Collection
 argument_list|<
 name|IncludeColumn
@@ -59,6 +60,7 @@ argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
+specifier|final
 name|Collection
 argument_list|<
 name|ExcludeColumn
@@ -114,8 +116,11 @@ block|{
 name|this
 operator|.
 name|includeColumns
-operator|=
+operator|.
+name|addAll
+argument_list|(
 name|includeColumns
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -144,8 +149,11 @@ block|{
 name|this
 operator|.
 name|excludeColumns
-operator|=
+operator|.
+name|addAll
+argument_list|(
 name|excludeColumns
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public

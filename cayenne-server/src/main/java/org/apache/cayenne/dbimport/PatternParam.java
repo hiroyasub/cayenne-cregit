@@ -71,6 +71,20 @@ operator|=
 name|pattern
 expr_stmt|;
 block|}
+specifier|public
+name|void
+name|setName
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+name|setPattern
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Used by Maven plugin      */
 specifier|public
 name|void

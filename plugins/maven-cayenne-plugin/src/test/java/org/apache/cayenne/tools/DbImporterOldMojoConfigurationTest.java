@@ -204,16 +204,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
-name|Test
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -223,7 +213,7 @@ name|cayenne
 operator|.
 name|dbimport
 operator|.
-name|DefaultReverseEngineeringLoaderTest
+name|ReverseEngineeringUtils
 operator|.
 name|*
 import|;
