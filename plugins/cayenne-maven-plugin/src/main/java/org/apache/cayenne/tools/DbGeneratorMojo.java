@@ -177,7 +177,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|tools
+name|dbsync
+operator|.
+name|reverse
 operator|.
 name|configuration
 operator|.
