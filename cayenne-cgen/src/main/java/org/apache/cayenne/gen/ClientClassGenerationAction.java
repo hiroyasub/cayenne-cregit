@@ -157,16 +157,12 @@ case|case
 name|EMBEDDABLE_SUBCLASS
 case|:
 return|return
-name|ClassGenerationAction
-operator|.
 name|EMBEDDABLE_SUBCLASS_TEMPLATE
 return|;
 case|case
 name|EMBEDDABLE_SUPERCLASS
 case|:
 return|return
-name|ClassGenerationAction
-operator|.
 name|EMBEDDABLE_SUPERCLASS_TEMPLATE
 return|;
 case|case
