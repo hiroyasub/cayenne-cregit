@@ -980,7 +980,7 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"defaultPackage property has been deprecated since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
+literal|"defaultPackage property has been moved to<dbimport> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
 throw|;
 block|}
