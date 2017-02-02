@@ -111,6 +111,13 @@ name|usePrimitives
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * Use old Java 7 date types      */
+specifier|private
+name|boolean
+name|useJava7Types
+init|=
+literal|false
+decl_stmt|;
 comment|/**      * Typical types are:<ul>      *<li> "TABLE"      *<li> "VIEW"      *<li> "SYSTEM TABLE"      *<li> "GLOBAL TEMPORARY",      *<li> "LOCAL TEMPORARY"      *<li> "ALIAS"      *<li> "SYNONYM"      *</ul>      */
 specifier|private
 specifier|final
@@ -447,6 +454,15 @@ parameter_list|()
 block|{
 return|return
 name|usePrimitives
+return|;
+block|}
+specifier|public
+name|boolean
+name|isUseJava7Types
+parameter_list|()
+block|{
+return|return
+name|useJava7Types
 return|;
 block|}
 block|}

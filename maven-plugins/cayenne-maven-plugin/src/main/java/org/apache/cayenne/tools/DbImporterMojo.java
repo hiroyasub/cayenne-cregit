@@ -841,6 +841,16 @@ name|isUsePrimitives
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|config
+operator|.
+name|setUseJava7Types
+argument_list|(
+name|dbImportConfig
+operator|.
+name|isUseJava7Types
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|config
 return|;

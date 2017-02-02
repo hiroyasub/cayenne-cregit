@@ -2054,6 +2054,14 @@ name|isUsePrimitives
 argument_list|()
 argument_list|)
 operator|.
+name|usingJava7Types
+argument_list|(
+name|config
+operator|.
+name|isUseJava7Types
+argument_list|()
+argument_list|)
+operator|.
 name|meaningfulPKFilter
 argument_list|(
 name|config
