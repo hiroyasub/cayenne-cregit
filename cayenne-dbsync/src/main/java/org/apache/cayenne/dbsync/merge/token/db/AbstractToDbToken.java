@@ -312,7 +312,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -324,7 +323,6 @@ name|conn
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 name|st

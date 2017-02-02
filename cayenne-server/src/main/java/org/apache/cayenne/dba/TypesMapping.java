@@ -2830,7 +2830,6 @@ name|type
 argument_list|)
 return|;
 block|}
-specifier|protected
 name|Map
 argument_list|<
 name|Integer
@@ -2866,7 +2865,6 @@ name|metaData
 operator|.
 name|getTypeInfo
 argument_list|()
-init|;
 init|)
 block|{
 while|while
