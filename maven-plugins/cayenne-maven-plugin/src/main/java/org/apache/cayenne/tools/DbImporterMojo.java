@@ -936,7 +936,9 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
+literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n"
+operator|+
+literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
 throw|;
 block|}
@@ -954,7 +956,9 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
+literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n"
+operator|+
+literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
 throw|;
 block|}
@@ -972,7 +976,9 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"meaningfulPkTables property has been moved to<dbimport> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
+literal|"meaningfulPkTables property has been moved to<dbimport> tag since 4.0.M5.\n"
+operator|+
+literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
 throw|;
 block|}
@@ -990,7 +996,9 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"defaultPackage property has been moved to<dbimport> tag since 4.0.M5.\n\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
+literal|"defaultPackage property has been moved to<dbimport> tag since 4.0.M5.\n"
+operator|+
+literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
 throw|;
 block|}

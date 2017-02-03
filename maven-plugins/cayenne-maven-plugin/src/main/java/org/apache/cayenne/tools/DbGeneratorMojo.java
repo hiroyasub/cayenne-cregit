@@ -380,7 +380,7 @@ specifier|private
 name|String
 name|adapter
 decl_stmt|;
-comment|/**      * A class of JDBC driver to use for the target database.      */
+comment|/**      * Connection properties.      *      * @see DbImportDataSourceConfig      * @since 4.0      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -389,34 +389,12 @@ operator|=
 literal|true
 argument_list|)
 specifier|private
-name|String
-name|driver
-decl_stmt|;
-comment|/**      * JDBC connection URL of a target database.      */
-annotation|@
-name|Parameter
-argument_list|(
-name|required
-operator|=
-literal|true
-argument_list|)
-specifier|private
-name|String
-name|url
-decl_stmt|;
-comment|/**      * Database user name.      */
-annotation|@
-name|Parameter
-specifier|private
-name|String
-name|username
-decl_stmt|;
-comment|/**      * Database user password.      */
-annotation|@
-name|Parameter
-specifier|private
-name|String
-name|password
+name|DbImportDataSourceConfig
+name|dataSource
+init|=
+operator|new
+name|DbImportDataSourceConfig
+argument_list|()
 decl_stmt|;
 comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      */
 annotation|@
@@ -478,6 +456,28 @@ specifier|private
 name|boolean
 name|createFK
 decl_stmt|;
+comment|/**      * @deprecated use {@code<dataSource>} tag to set connection properties      */
+annotation|@
+name|Deprecated
+annotation|@
+name|Parameter
+argument_list|(
+name|name
+operator|=
+literal|"driver"
+argument_list|,
+name|property
+operator|=
+literal|"driver"
+argument_list|)
+specifier|private
+specifier|final
+name|String
+name|oldDriver
+init|=
+literal|""
+decl_stmt|;
+comment|// TODO remove in 4.0.BETA
 specifier|public
 name|void
 name|execute
@@ -536,11 +536,20 @@ name|format
 argument_list|(
 literal|"connection settings - [driver: %s, url: %s, username: %s]"
 argument_list|,
-name|driver
+name|dataSource
+operator|.
+name|getDriver
+argument_list|()
 argument_list|,
-name|url
+name|dataSource
+operator|.
+name|getUrl
+argument_list|()
 argument_list|,
-name|username
+name|dataSource
+operator|.
+name|getUsername
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -578,9 +587,6 @@ operator|==
 literal|null
 operator|)
 condition|?
-operator|(
-name|DbAdapter
-operator|)
 name|objectFactory
 operator|.
 name|newInstance
@@ -597,9 +603,6 @@ name|getName
 argument_list|()
 argument_list|)
 else|:
-operator|(
-name|DbAdapter
-operator|)
 name|objectFactory
 operator|.
 name|newInstance
@@ -671,7 +674,7 @@ argument_list|)
 expr_stmt|;
 comment|// load driver taking custom CLASSPATH into account...
 name|DriverDataSource
-name|dataSource
+name|driverDataSource
 init|=
 operator|new
 name|DriverDataSource
@@ -683,24 +686,36 @@ name|Class
 operator|.
 name|forName
 argument_list|(
-name|driver
+name|dataSource
+operator|.
+name|getDriver
+argument_list|()
 argument_list|)
 operator|.
 name|newInstance
 argument_list|()
 argument_list|,
-name|url
+name|dataSource
+operator|.
+name|getUrl
+argument_list|()
 argument_list|,
-name|username
+name|dataSource
+operator|.
+name|getUsername
+argument_list|()
 argument_list|,
-name|password
+name|dataSource
+operator|.
+name|getPassword
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|generator
 operator|.
 name|runGenerator
 argument_list|(
-name|dataSource
+name|driverDataSource
 argument_list|)
 expr_stmt|;
 block|}
@@ -764,7 +779,7 @@ throw|;
 block|}
 block|}
 comment|/** Loads and returns DataMap based on<code>map</code> attribute. */
-specifier|protected
+specifier|private
 name|DataMap
 name|loadDataMap
 parameter_list|()
@@ -793,6 +808,26 @@ argument_list|(
 name|in
 argument_list|)
 return|;
+block|}
+annotation|@
+name|Deprecated
+specifier|public
+name|void
+name|setDriver
+parameter_list|(
+name|String
+name|driver
+parameter_list|)
+block|{
+throw|throw
+operator|new
+name|UnsupportedOperationException
+argument_list|(
+literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n"
+operator|+
+literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
+argument_list|)
+throw|;
 block|}
 block|}
 end_class
