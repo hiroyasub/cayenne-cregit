@@ -267,9 +267,6 @@ parameter_list|(
 name|DbAdapter
 name|dbAdapter
 parameter_list|,
-name|DataMap
-name|dataMap
-parameter_list|,
 name|QueryAssembler
 name|assembler
 parameter_list|)
@@ -444,9 +441,6 @@ decl_stmt|;
 name|DbEntity
 name|targetEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|relationship
 operator|.
 name|getTargetEntity
@@ -667,7 +661,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 		 * Attaching root Db entity's qualifier 		 */
+comment|/* 		 * Attaching root Db entity's qualifier 		 */
 name|Expression
 name|dbQualifier
 init|=
@@ -863,7 +857,7 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-comment|/** 				 * We must be in the same join as 'node', otherwise incorrect 				 * join statement like JOIN t1 ... ON (t0.id=t1.id AND 				 * t2.qualifier=0) could be generated 				 */
+comment|/* 				 * We must be in the same join as 'node', otherwise incorrect 				 * join statement like JOIN t1 ... ON (t0.id=t1.id AND 				 * t2.qualifier=0) could be generated 				 */
 if|if
 condition|(
 name|node

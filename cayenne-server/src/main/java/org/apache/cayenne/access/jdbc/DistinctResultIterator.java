@@ -200,7 +200,7 @@ argument_list|>
 name|fetchedIds
 decl_stmt|;
 specifier|protected
-name|DataRow
+name|T
 name|nextDataRow
 decl_stmt|;
 specifier|protected
@@ -211,7 +211,7 @@ specifier|protected
 name|boolean
 name|compareFullRows
 decl_stmt|;
-comment|/**      * Creates new DistinctResultIterator wrapping another ResultIterator.      *       * @param delegate      * @param defaultEntity      *            an entity needed to build ObjectIds for distinct comparison.      */
+comment|/**      * Creates new DistinctResultIterator wrapping another ResultIterator.      *       * @param delegate      *            actual result iterator, that will be decorated by this DistinctResultIterator      * @param defaultEntity      *            an entity needed to build ObjectIds for distinct comparison.      */
 specifier|public
 name|DistinctResultIterator
 parameter_list|(
@@ -276,14 +276,7 @@ name|fetchedIds
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -310,9 +303,7 @@ block|{
 return|return
 operator|new
 name|ResultIteratorIterator
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|(
 name|this
 argument_list|)
@@ -410,18 +401,9 @@ literal|"An attempt to read uninitialized row or past the end of the iterator."
 argument_list|)
 throw|;
 block|}
-comment|// TODO:
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 name|T
 name|row
 init|=
-operator|(
-name|T
-operator|)
 name|nextDataRow
 decl_stmt|;
 name|checkNextRow
@@ -458,6 +440,7 @@ name|checkNextRow
 argument_list|()
 expr_stmt|;
 block|}
+specifier|private
 name|void
 name|checkNextRow
 parameter_list|()
@@ -480,6 +463,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+specifier|private
 name|void
 name|checkNextUniqueRow
 parameter_list|()
@@ -496,12 +480,9 @@ name|hasNextRow
 argument_list|()
 condition|)
 block|{
-name|DataRow
+name|T
 name|next
 init|=
-operator|(
-name|DataRow
-operator|)
 name|delegate
 operator|.
 name|nextRow
@@ -513,6 +494,9 @@ name|fetchedIds
 operator|.
 name|add
 argument_list|(
+operator|(
+name|DataRow
+operator|)
 name|next
 argument_list|)
 condition|)
@@ -527,6 +511,7 @@ break|break;
 block|}
 block|}
 block|}
+specifier|private
 name|void
 name|checkNextRowWithUniqueId
 parameter_list|()
@@ -543,12 +528,9 @@ name|hasNextRow
 argument_list|()
 condition|)
 block|{
-name|DataRow
+name|T
 name|next
 init|=
-operator|(
-name|DataRow
-operator|)
 name|delegate
 operator|.
 name|nextRow
@@ -591,7 +573,12 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
+operator|(
+operator|(
+name|DataRow
+operator|)
 name|next
+operator|)
 operator|.
 name|get
 argument_list|(

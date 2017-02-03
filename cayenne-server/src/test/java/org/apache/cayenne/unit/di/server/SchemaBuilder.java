@@ -614,6 +614,8 @@ block|,
 literal|"unsupported-distinct-types.map.xml"
 block|,
 literal|"array-type.map.xml"
+block|,
+literal|"cay-2032.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded

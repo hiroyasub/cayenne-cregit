@@ -127,6 +127,11 @@ name|boolean
 name|isSuppressingDistinct
 parameter_list|()
 function_decl|;
+comment|/** 	 * @since 4.0 	 * @return do query has at least one join 	 */
+name|boolean
+name|hasJoins
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

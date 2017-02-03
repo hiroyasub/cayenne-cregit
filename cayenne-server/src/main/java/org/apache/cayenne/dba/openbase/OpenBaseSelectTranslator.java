@@ -143,11 +143,6 @@ argument_list|(
 name|getAdapter
 argument_list|()
 argument_list|,
-name|queryMetadata
-operator|.
-name|getDataMap
-argument_list|()
-argument_list|,
 name|this
 argument_list|)
 return|;

@@ -49,6 +49,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|CAY_2032
+init|=
+literal|"cayenne-cay-2032.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|COMPOUND_PROJECT
 init|=
 literal|"cayenne-compound.xml"

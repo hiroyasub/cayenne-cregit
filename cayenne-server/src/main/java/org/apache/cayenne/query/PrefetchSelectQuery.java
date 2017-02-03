@@ -255,7 +255,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Removes an extra result path. Note that this method doesn't check for expression      * invariants, as it doesn't have a proper context to do so. E.g. for the purspose of      * this method "db:ARTIST_NAME" and "obj:artistName" are not the same, though both      * will resolve to the same column name.      */
+comment|/**      * Removes an extra result path. Note that this method doesn't check for expression      * invariants, as it doesn't have a proper context to do so. E.g. for the purpose of      * this method "db:ARTIST_NAME" and "obj:artistName" are not the same, though both      * will resolve to the same column name.      */
 specifier|public
 name|void
 name|removeResultPath
@@ -303,7 +303,11 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_SET
+expr|<
+name|String
+operator|>
+name|emptySet
+argument_list|()
 return|;
 block|}
 comment|/**      * Returns a Collection that internally stores extra result paths, creating it on      * demand.      *       * @since 1.2      */
@@ -325,9 +329,7 @@ name|resultPaths
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

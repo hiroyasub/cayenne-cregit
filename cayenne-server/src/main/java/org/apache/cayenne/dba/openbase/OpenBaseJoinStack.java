@@ -167,9 +167,6 @@ parameter_list|(
 name|DbAdapter
 name|dbAdapter
 parameter_list|,
-name|DataMap
-name|dataMap
-parameter_list|,
 name|QueryAssembler
 name|assembler
 parameter_list|)
@@ -177,8 +174,6 @@ block|{
 name|super
 argument_list|(
 name|dbAdapter
-argument_list|,
-name|dataMap
 argument_list|,
 name|assembler
 argument_list|)
@@ -217,9 +212,6 @@ block|}
 name|DbEntity
 name|targetEntity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|relationship
 operator|.
 name|getTargetEntity
