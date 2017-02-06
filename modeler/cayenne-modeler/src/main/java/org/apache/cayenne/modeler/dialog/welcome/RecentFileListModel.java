@@ -23,6 +23,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -97,7 +107,7 @@ block|{
 specifier|private
 name|List
 argument_list|<
-name|String
+name|File
 argument_list|>
 name|fileListFull
 decl_stmt|;
@@ -121,7 +131,7 @@ name|RecentFileListModel
 parameter_list|(
 name|List
 argument_list|<
-name|String
+name|File
 argument_list|>
 name|fileList
 parameter_list|)
@@ -148,7 +158,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|String
+name|File
 name|next
 range|:
 name|fileList
@@ -165,6 +175,9 @@ operator|.
 name|trim
 argument_list|(
 name|next
+operator|.
+name|getAbsolutePath
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -203,7 +216,7 @@ name|index
 argument_list|)
 return|;
 block|}
-name|String
+name|File
 name|getFullElementAt
 parameter_list|(
 name|int

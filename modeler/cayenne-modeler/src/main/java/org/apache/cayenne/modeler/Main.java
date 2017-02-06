@@ -597,7 +597,7 @@ condition|)
 block|{
 name|List
 argument_list|<
-name|String
+name|File
 argument_list|>
 name|lastFiles
 init|=
@@ -616,15 +616,11 @@ argument_list|()
 condition|)
 block|{
 return|return
-operator|new
-name|File
-argument_list|(
 name|lastFiles
 operator|.
 name|get
 argument_list|(
 literal|0
-argument_list|)
 argument_list|)
 return|;
 block|}

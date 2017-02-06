@@ -63,6 +63,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|File
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|swing
@@ -143,8 +153,8 @@ block|{
 name|void
 name|onFileSelect
 parameter_list|(
-name|String
-name|fileName
+name|File
+name|file
 parameter_list|)
 function_decl|;
 block|}
@@ -318,7 +328,10 @@ argument_list|)
 expr_stmt|;
 name|setToolTipText
 argument_list|(
-name|getFullText
+name|getSelectedFile
+argument_list|()
+operator|.
+name|getAbsolutePath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -420,8 +433,8 @@ parameter_list|)
 block|{
 block|}
 specifier|private
-name|String
-name|getFullText
+name|File
+name|getSelectedFile
 parameter_list|()
 block|{
 if|if
@@ -483,7 +496,7 @@ name|listener
 operator|.
 name|onFileSelect
 argument_list|(
-name|getFullText
+name|getSelectedFile
 argument_list|()
 argument_list|)
 expr_stmt|;
