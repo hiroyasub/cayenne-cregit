@@ -452,7 +452,7 @@ operator|new
 name|ProjectStateUtil
 argument_list|()
 decl_stmt|;
-specifier|protected
+specifier|private
 name|ProjectController
 name|projectController
 decl_stmt|;
@@ -522,6 +522,8 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Component
 name|getView
@@ -620,6 +622,8 @@ operator|new
 name|WindowAdapter
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|windowClosing
@@ -722,6 +726,8 @@ operator|new
 name|DropTargetAdapter
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|drop
@@ -1388,10 +1394,18 @@ specifier|public
 name|void
 name|addToLastProjListAction
 parameter_list|(
-name|String
-name|path
+name|File
+name|file
 parameter_list|)
 block|{
+name|String
+name|path
+init|=
+name|file
+operator|.
+name|getAbsolutePath
+argument_list|()
+decl_stmt|;
 name|Preferences
 name|frefLastProjFiles
 init|=
@@ -1614,6 +1628,8 @@ operator|=
 name|message
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|run
@@ -1665,11 +1681,11 @@ specifier|public
 name|void
 name|changePathInLastProjListAction
 parameter_list|(
-name|String
-name|oldPath
+name|File
+name|oldFile
 parameter_list|,
-name|String
-name|newPath
+name|File
+name|newFile
 parameter_list|)
 block|{
 name|Preferences
@@ -1693,6 +1709,22 @@ argument_list|()
 decl_stmt|;
 comment|// Add proj path to the preferences
 comment|// Prevent duplicate entries.
+name|String
+name|oldPath
+init|=
+name|oldFile
+operator|.
+name|getAbsolutePath
+argument_list|()
+decl_stmt|;
+name|String
+name|newPath
+init|=
+name|newFile
+operator|.
+name|getAbsolutePath
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|arr

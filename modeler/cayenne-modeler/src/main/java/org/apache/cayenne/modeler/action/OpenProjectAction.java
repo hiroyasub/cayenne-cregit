@@ -320,7 +320,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|protected
+specifier|private
 name|ProjectOpener
 name|fileChooser
 decl_stmt|;
@@ -358,6 +358,8 @@ name|ProjectOpener
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|getIconName
@@ -367,6 +369,8 @@ return|return
 literal|"icon-open.gif"
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|KeyStroke
 name|getAcceleratorKey
@@ -391,6 +395,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|performAction
@@ -611,15 +617,15 @@ operator|.
 name|addToLastProjListAction
 argument_list|(
 name|file
-operator|.
-name|getAbsolutePath
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|URL
 name|url
 init|=
 name|file
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()
@@ -770,9 +776,7 @@ block|{
 if|if
 condition|(
 name|processUpgrades
-argument_list|(
-name|md
-argument_list|)
+argument_list|()
 condition|)
 block|{
 comment|// perform upgrade
@@ -831,8 +835,7 @@ operator|.
 name|reconfigure
 argument_list|()
 expr_stmt|;
-comment|// if project file name changed
-comment|// need upgrade all
+comment|// need to update project file name if it has changed
 if|if
 condition|(
 operator|!
@@ -856,15 +859,12 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|controller
-operator|.
-name|changePathInLastProjListAction
+name|File
+name|projectFile
+init|=
+operator|new
+name|File
 argument_list|(
-name|file
-operator|.
-name|getAbsolutePath
-argument_list|()
-argument_list|,
 name|project
 operator|.
 name|getConfigurationResource
@@ -873,8 +873,17 @@ operator|.
 name|getURL
 argument_list|()
 operator|.
-name|getPath
+name|toURI
 argument_list|()
+argument_list|)
+decl_stmt|;
+name|controller
+operator|.
+name|changePathInLastProjListAction
+argument_list|(
+name|file
+argument_list|,
+name|projectFile
 argument_list|)
 expr_stmt|;
 block|}
@@ -969,13 +978,10 @@ return|return
 name|project
 return|;
 block|}
-specifier|protected
+specifier|private
 name|boolean
 name|processUpgrades
-parameter_list|(
-name|UpgradeMetaData
-name|md
-parameter_list|)
+parameter_list|()
 block|{
 comment|// need an upgrade
 name|int
@@ -999,21 +1005,12 @@ operator|.
 name|YES_NO_OPTION
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
 name|returnCode
-operator|==
+operator|!=
 name|JOptionPane
 operator|.
 name|NO_OPTION
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
-literal|true
 return|;
 block|}
 block|}
