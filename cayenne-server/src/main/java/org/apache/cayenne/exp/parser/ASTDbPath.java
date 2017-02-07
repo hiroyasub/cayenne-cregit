@@ -585,9 +585,7 @@ name|reversedPathComponents
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|DbRelationship
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while

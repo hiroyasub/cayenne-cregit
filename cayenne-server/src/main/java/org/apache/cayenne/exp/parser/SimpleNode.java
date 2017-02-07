@@ -150,7 +150,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of AST* expressions that implements Node interface defined by  * JavaCC framework.  *<p>  * Some parts of the parser are based on OGNL parser, copyright (c) 2002, Drew  * Davidson and Luke Blanshard.  *</p>  *   * @since 1.1  */
+comment|/**  * Superclass of AST* expressions that implements Node interface defined by JavaCC framework.  *<p>  * Some parts of the parser are based on OGNL parser,  * copyright (c) 2002, Drew Davidson and Luke Blanshard.  *</p>  *   * @since 1.1  */
 end_comment
 
 begin_class
@@ -292,9 +292,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// parameters
-comment|// start
-comment|// at 1
+comment|// parameters start at 1
 return|return;
 block|}
 if|if
@@ -417,9 +415,15 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"."
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|e
 operator|.
 name|name
@@ -517,8 +521,7 @@ name|quoteChar
 argument_list|)
 expr_stmt|;
 block|}
-comment|// encode only ObjectId for Persistent, ensure that the order of keys is
-comment|// predictable....
+comment|// encode only ObjectId for Persistent, ensure that the order of keys is predictable....
 comment|// TODO: should we use UUID here?
 if|if
 condition|(
@@ -608,9 +611,15 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|"."
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|e
 operator|.
 name|name
@@ -647,7 +656,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Utility method that prints a string to the provided Appendable, escaping 	 * special characters. 	 */
+comment|/** 	 * Utility method that prints a string to the provided Appendable, escaping special characters. 	 */
 specifier|protected
 specifier|static
 name|void
@@ -840,7 +849,7 @@ name|int
 name|index
 parameter_list|)
 function_decl|;
-comment|/** 	 * Returns operator for ebjql statements, which can differ for Cayenne 	 * expression operator 	 */
+comment|/** 	 * Returns operator for EJBQL statements, which can differ for Cayenne expression operator 	 */
 specifier|protected
 name|String
 name|getEJBQLExpressionOperator
@@ -1260,10 +1269,8 @@ argument_list|(
 name|index
 argument_list|)
 decl_stmt|;
-comment|// unwrap ASTScalar nodes - this is likely a temporary thing to keep it
-comment|// compatible
-comment|// with QualifierTranslator. In the future we might want to keep scalar
-comment|// nodes
+comment|// unwrap ASTScalar nodes - this is likely a temporary thing to keep it compatible
+comment|// with QualifierTranslator. In the future we might want to keep scalar nodes
 comment|// for the purpose of expression evaluation.
 return|return
 name|unwrapChild
@@ -1588,9 +1595,8 @@ range|:
 name|children
 control|)
 block|{
-comment|// although nulls are expected to be wrapped in scalar, still
-comment|// doing a
-comment|// check here to make it more robust
+comment|// although nulls are expected to be wrapped in scalar,
+comment|// still doing a check here to make it more robust
 if|if
 condition|(
 name|child
@@ -1701,11 +1707,7 @@ throw|throw
 operator|new
 name|ExpressionException
 argument_list|(
-literal|"Error evaluating expression '"
-operator|+
-name|string
-operator|+
-literal|"'"
+literal|"Error evaluating expression '%s'"
 argument_list|,
 name|string
 argument_list|,
@@ -1715,6 +1717,8 @@ name|unwindException
 argument_list|(
 name|th
 argument_list|)
+argument_list|,
+name|string
 argument_list|)
 throw|;
 block|}

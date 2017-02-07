@@ -466,7 +466,7 @@ name|artist
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertTrue
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -483,6 +483,7 @@ name|artist
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// changed to align with SQL
 name|assertTrue
 argument_list|(
 name|ExpressionFactory
@@ -534,7 +535,7 @@ name|artist
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertTrue
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -551,6 +552,7 @@ name|artist
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// changed to align with SQL
 name|assertTrue
 argument_list|(
 name|ExpressionFactory
