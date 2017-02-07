@@ -139,7 +139,6 @@ name|EntityDisplayEventType
 extends|extends
 name|DisplayEventType
 block|{
-specifier|public
 name|EntityDisplayEventType
 parameter_list|(
 name|ProjectController
@@ -422,7 +421,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-specifier|protected
 name|Entity
 name|getLastEntity
 parameter_list|(

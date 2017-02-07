@@ -346,6 +346,15 @@ range|:
 name|array
 control|)
 block|{
+if|if
+condition|(
+name|entry
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
 name|sb
 operator|.
 name|append
