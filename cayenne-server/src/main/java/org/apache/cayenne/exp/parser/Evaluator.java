@@ -226,9 +226,11 @@ specifier|private
 specifier|static
 specifier|final
 name|Evaluator
-name|COMPAREABLE_EVALUATOR
+name|COMPARABLE_EVALUATOR
 decl_stmt|;
+specifier|private
 specifier|static
+specifier|final
 name|double
 name|EPSILON
 init|=
@@ -278,11 +280,9 @@ literal|null
 condition|)
 block|{
 return|return
-literal|1
+literal|null
 return|;
 block|}
-else|else
-block|{
 return|return
 name|delegate
 operator|.
@@ -293,7 +293,6 @@ argument_list|,
 name|rhs
 argument_list|)
 return|;
-block|}
 block|}
 annotation|@
 name|Override
@@ -309,11 +308,9 @@ parameter_list|)
 block|{
 return|return
 name|rhs
-operator|==
+operator|!=
 literal|null
-condition|?
-literal|false
-else|:
+operator|&&
 name|delegate
 operator|.
 name|eq
@@ -331,14 +328,7 @@ name|evaluators
 operator|=
 operator|new
 name|ConcurrentHashMap
-argument_list|<
-name|Class
-argument_list|<
-name|?
-argument_list|>
-argument_list|,
-name|Evaluator
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|NULL_LHS_EVALUATOR
@@ -696,8 +686,7 @@ name|Object
 name|rhs
 parameter_list|)
 block|{
-comment|// BigDecimals must be compared using compareTo (
-comment|// see CAY-280 and BigDecimal.equals JavaDoc)
+comment|// BigDecimals must be compared using compareTo (see CAY-280 and BigDecimal.equals JavaDoc)
 name|Integer
 name|c
 init|=
@@ -709,10 +698,6 @@ name|rhs
 argument_list|)
 decl_stmt|;
 return|return
-name|c
-operator|!=
-literal|null
-operator|&&
 name|c
 operator|==
 literal|0
@@ -783,9 +768,6 @@ name|Number
 operator|)
 name|lhs
 argument_list|,
-operator|(
-name|Number
-operator|)
 name|rhs
 argument_list|)
 return|;
@@ -828,25 +810,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|private
-specifier|final
-name|List
-name|FLOATING_POINT_CLASSES
-init|=
-name|Arrays
-operator|.
-name|asList
-argument_list|(
-name|Float
-operator|.
-name|class
-argument_list|,
-name|Double
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-comment|/**              * Returns the widest primitive wrapper class given the two operands, used in preparation for               * comparing two boxed numbers of different types, like java.lang.Short and java.lang.Integer.              *               * @param lhs              * @param rhs              * @return              */
+comment|/**              * Returns the widest primitive wrapper class given the two operands, used in preparation for               * comparing two boxed numbers of different types, like java.lang.Short and java.lang.Integer.              */
 name|Class
 argument_list|<
 name|?
@@ -949,60 +913,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|else if
-condition|(
-name|lhsIndex
-operator|==
-operator|-
-literal|1
-operator|&&
-name|rhsIndex
-operator|==
-operator|-
-literal|1
-condition|)
-block|{
-name|widestClass
-operator|=
-name|Double
-operator|.
-name|class
-expr_stmt|;
-comment|// must be one float and one double;
-block|}
-if|else if
-condition|(
-name|lhsIndex
-operator|!=
-operator|-
-literal|1
-operator|||
-name|rhsIndex
-operator|!=
-operator|-
-literal|1
-condition|)
-block|{
-comment|// must be whole number and a float or double
-name|widestClass
-operator|=
-name|Double
-operator|.
-name|class
-expr_stmt|;
-block|}
 else|else
 block|{
 name|widestClass
 operator|=
-literal|null
+name|Double
+operator|.
+name|class
 expr_stmt|;
 block|}
 return|return
 name|widestClass
 return|;
 block|}
-comment|/**              * Enables equality tests for two boxed numbers of different types, like java.lang.Short and java.lang.Integer.              * @param lhs              * @param _rhs              * @return              */
+comment|/**              * Enables equality tests for two boxed numbers of different types, like java.lang.Short and java.lang.Integer.              */
 name|boolean
 name|equalNumbers
 parameter_list|(
@@ -1219,7 +1143,7 @@ argument_list|)
 return|;
 block|}
 block|}
-comment|/**              * Enables comparison of two boxed numbers of different types, like java.lang.Short and java.lang.Integer.              * @param lhs              * @param _rhs              * @return              */
+comment|/**              * Enables comparison of two boxed numbers of different types, like java.lang.Short and java.lang.Integer.              */
 name|Integer
 name|compareNumbers
 parameter_list|(
@@ -1622,7 +1546,7 @@ block|}
 block|}
 argument_list|)
 expr_stmt|;
-name|COMPAREABLE_EVALUATOR
+name|COMPARABLE_EVALUATOR
 operator|=
 operator|new
 name|NonNullLhsEvaluator
@@ -1697,9 +1621,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|static
-parameter_list|<
-name|T
-parameter_list|>
 name|Evaluator
 name|evaluator
 parameter_list|(
@@ -1874,7 +1795,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|COMPAREABLE_EVALUATOR
+name|COMPARABLE_EVALUATOR
 return|;
 block|}
 comment|// nothing we recognize... return default

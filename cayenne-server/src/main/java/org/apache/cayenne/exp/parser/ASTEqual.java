@@ -198,7 +198,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|boolean
+name|Boolean
 name|evaluateSubNode
 parameter_list|(
 name|Object
@@ -226,6 +226,14 @@ name|o
 argument_list|,
 name|o2
 argument_list|)
+condition|?
+name|Boolean
+operator|.
+name|TRUE
+else|:
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 comment|/** 	 * Compares two objects, if one of them is array, 'in' operation is 	 * performed 	 */

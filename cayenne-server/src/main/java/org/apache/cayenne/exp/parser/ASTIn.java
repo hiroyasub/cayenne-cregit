@@ -139,7 +139,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|boolean
+name|Boolean
 name|evaluateSubNode
 parameter_list|(
 name|Object
@@ -152,8 +152,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|// TODO: what if there's a NULL inside IN list?
-comment|// e.g. ASTEqual evals as "NULL == NULL"
 if|if
 condition|(
 name|o
@@ -168,8 +166,13 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// Even if there is NULL value in list we should return false,
+comment|// as check against NULL can be done only with IS NULL operator
+comment|// and moreover not all DB accept syntax like 'value IN (NULL)'
 return|return
-literal|false
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 name|Object
@@ -215,12 +218,16 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|true
+name|Boolean
+operator|.
+name|TRUE
 return|;
 block|}
 block|}
 return|return
-literal|false
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 comment|/** 	 * Creates a copy of this expression node, without copying children. 	 */

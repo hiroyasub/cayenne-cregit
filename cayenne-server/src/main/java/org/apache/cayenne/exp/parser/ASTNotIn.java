@@ -129,7 +129,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|boolean
+name|Boolean
 name|evaluateSubNode
 parameter_list|(
 name|Object
@@ -157,7 +157,9 @@ literal|null
 condition|)
 block|{
 return|return
-literal|false
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 name|Object
@@ -203,12 +205,16 @@ argument_list|)
 condition|)
 block|{
 return|return
-literal|false
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 block|}
 return|return
-literal|true
+name|Boolean
+operator|.
+name|TRUE
 return|;
 block|}
 comment|/**      * Creates a copy of this expression node, without copying children.      */

@@ -292,6 +292,10 @@ name|c
 argument_list|,
 name|evaluatedChildren
 argument_list|)
+operator|==
+name|Boolean
+operator|.
+name|TRUE
 condition|)
 block|{
 return|return
@@ -327,7 +331,7 @@ parameter_list|()
 function_decl|;
 specifier|abstract
 specifier|protected
-name|boolean
+name|Boolean
 name|evaluateSubNode
 parameter_list|(
 name|Object

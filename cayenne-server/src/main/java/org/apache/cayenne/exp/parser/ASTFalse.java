@@ -110,7 +110,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|boolean
+name|Boolean
 name|evaluateSubNode
 parameter_list|(
 name|Object
@@ -124,7 +124,9 @@ throws|throws
 name|Exception
 block|{
 return|return
-literal|false
+name|Boolean
+operator|.
+name|FALSE
 return|;
 block|}
 annotation|@

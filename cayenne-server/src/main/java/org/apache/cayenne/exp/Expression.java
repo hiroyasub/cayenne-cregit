@@ -1451,9 +1451,7 @@ block|{
 return|return
 operator|new
 name|LinkedList
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 return|;
 comment|// returning Collections.emptyList() could cause random client exceptions if they try to mutate the resulting list
