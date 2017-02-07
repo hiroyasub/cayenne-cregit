@@ -219,6 +219,7 @@ name|DataMap
 name|dataMap
 decl_stmt|;
 specifier|protected
+specifier|final
 name|SortedMap
 argument_list|<
 name|String
@@ -226,8 +227,14 @@ argument_list|,
 name|Attribute
 argument_list|>
 name|attributes
+init|=
+operator|new
+name|TreeMap
+argument_list|<>
+argument_list|()
 decl_stmt|;
 specifier|protected
+specifier|final
 name|SortedMap
 argument_list|<
 name|String
@@ -235,6 +242,11 @@ argument_list|,
 name|Relationship
 argument_list|>
 name|relationships
+init|=
+operator|new
+name|TreeMap
+argument_list|<>
+argument_list|()
 decl_stmt|;
 comment|/**      * Creates an unnamed Entity.      */
 specifier|public
@@ -255,28 +267,6 @@ name|String
 name|name
 parameter_list|)
 block|{
-name|attributes
-operator|=
-operator|new
-name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Attribute
-argument_list|>
-argument_list|()
-expr_stmt|;
-name|relationships
-operator|=
-operator|new
-name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|Relationship
-argument_list|>
-argument_list|()
-expr_stmt|;
 name|setName
 argument_list|(
 name|name
@@ -365,6 +355,7 @@ operator|instanceof
 name|DataMap
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -374,6 +365,7 @@ operator|+
 name|parent
 argument_list|)
 throw|;
+block|}
 name|setDataMap
 argument_list|(
 operator|(
@@ -445,6 +437,7 @@ argument_list|()
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -452,9 +445,9 @@ argument_list|(
 literal|"Attempt to insert unnamed attribute."
 argument_list|)
 throw|;
+block|}
 comment|// block overrides
-comment|// TODO: change method signature to return replaced attribute and make sure the
-comment|// Modeler handles it...
+comment|// TODO: change method signature to return replaced attribute and make sure the Modeler handles it...
 name|Object
 name|existingAttribute
 init|=
@@ -481,8 +474,11 @@ name|existingAttribute
 operator|==
 name|attribute
 condition|)
+block|{
 return|return;
+block|}
 else|else
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -497,6 +493,7 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
+block|}
 block|}
 comment|// Check that there aren't any relationships with the same name as the given
 comment|// attribute.
@@ -519,6 +516,7 @@ name|existingRelationship
 operator|!=
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -533,6 +531,7 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
+block|}
 name|attributes
 operator|.
 name|put
@@ -553,7 +552,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Removes an attribute named<code>attrName</code>. */
+comment|/**      * Removes an attribute named<code>attrName</code>.      */
 specifier|public
 name|void
 name|removeAttribute
@@ -622,7 +621,7 @@ name|relName
 argument_list|)
 return|;
 block|}
-comment|/** Adds new relationship to the entity. */
+comment|/**      * Adds new relationship to the entity.      */
 specifier|public
 name|void
 name|addRelationship
@@ -640,6 +639,7 @@ argument_list|()
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -647,6 +647,7 @@ argument_list|(
 literal|"Attempt to insert unnamed relationship."
 argument_list|)
 throw|;
+block|}
 comment|// block overrides
 comment|// TODO: change method signature to return replaced attribute and make sure the
 comment|// Modeler handles it...
@@ -676,8 +677,11 @@ name|existingRelationship
 operator|==
 name|relationship
 condition|)
+block|{
 return|return;
+block|}
 else|else
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -692,6 +696,7 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
+block|}
 block|}
 comment|// Check that there aren't any attributes with the same name as the given
 comment|// relationship.
@@ -714,6 +719,7 @@ name|existingAttribute
 operator|!=
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -728,6 +734,7 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
+block|}
 name|relationships
 operator|.
 name|put
@@ -748,7 +755,7 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** Removes a relationship named<code>attrName</code>. */
+comment|/**      *  Removes a relationship named<code>attrName</code>.      */
 specifier|public
 name|void
 name|removeRelationship
@@ -817,9 +824,11 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
+block|{
 return|return
 literal|null
 return|;
+block|}
 for|for
 control|(
 name|Relationship
@@ -838,9 +847,11 @@ argument_list|()
 operator|==
 name|targetEntity
 condition|)
+block|{
 return|return
 name|r
 return|;
+block|}
 block|}
 return|return
 literal|null
@@ -1141,8 +1152,7 @@ name|path
 argument_list|)
 return|;
 block|}
-comment|// An iterator resolving mapping components represented by the path string.
-comment|// This entity is assumed to be the root of the path.
+comment|/**      * An iterator resolving mapping components represented by the path string.      * This entity is assumed to be the root of the path.      */
 specifier|final
 class|class
 name|PathIterator
@@ -1153,16 +1163,18 @@ name|CayenneMapEntry
 argument_list|>
 block|{
 specifier|private
+specifier|final
 name|StringTokenizer
-name|toks
+name|tokens
+decl_stmt|;
+specifier|private
+specifier|final
+name|String
+name|path
 decl_stmt|;
 specifier|private
 name|Entity
-name|currentEnt
-decl_stmt|;
-specifier|private
-name|String
-name|path
+name|currentEntity
 decl_stmt|;
 name|PathIterator
 parameter_list|(
@@ -1170,16 +1182,13 @@ name|String
 name|path
 parameter_list|)
 block|{
-name|super
-argument_list|()
-expr_stmt|;
-name|currentEnt
+name|currentEntity
 operator|=
 name|Entity
 operator|.
 name|this
 expr_stmt|;
-name|toks
+name|tokens
 operator|=
 operator|new
 name|StringTokenizer
@@ -1202,7 +1211,7 @@ name|hasNext
 parameter_list|()
 block|{
 return|return
-name|toks
+name|tokens
 operator|.
 name|hasMoreTokens
 argument_list|()
@@ -1216,16 +1225,43 @@ block|{
 name|String
 name|pathComp
 init|=
-name|toks
+name|tokens
 operator|.
 name|nextToken
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|pathComp
+operator|.
+name|endsWith
+argument_list|(
+name|OUTER_JOIN_INDICATOR
+argument_list|)
+condition|)
+block|{
+name|pathComp
+operator|=
+name|pathComp
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+name|pathComp
+operator|.
+name|length
+argument_list|()
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 comment|// see if this is an attribute
 name|Attribute
 name|attr
 init|=
-name|currentEnt
+name|currentEntity
 operator|.
 name|getAttribute
 argument_list|(
@@ -1242,26 +1278,26 @@ block|{
 comment|// do a sanity check...
 if|if
 condition|(
-name|toks
+name|tokens
 operator|.
 name|hasMoreTokens
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|ExpressionException
 argument_list|(
-literal|"Attribute must be the last component of the path: '"
-operator|+
-name|pathComp
-operator|+
-literal|"'."
+literal|"Attribute must be the last component of the path: '%s'."
 argument_list|,
 name|path
 argument_list|,
 literal|null
+argument_list|,
+name|pathComp
 argument_list|)
 throw|;
+block|}
 return|return
 name|attr
 return|;
@@ -1269,7 +1305,7 @@ block|}
 name|Relationship
 name|rel
 init|=
-name|currentEnt
+name|currentEntity
 operator|.
 name|getRelationship
 argument_list|(
@@ -1283,7 +1319,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|currentEnt
+name|currentEntity
 operator|=
 name|rel
 operator|.
@@ -1292,12 +1328,12 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|currentEnt
+name|currentEntity
 operator|!=
 literal|null
 operator|||
 operator|!
-name|toks
+name|tokens
 operator|.
 name|hasMoreTokens
 argument_list|()
@@ -1313,65 +1349,31 @@ name|String
 name|entityName
 init|=
 operator|(
-name|currentEnt
+name|currentEntity
 operator|!=
 literal|null
 operator|)
 condition|?
-name|currentEnt
+name|currentEntity
 operator|.
 name|getName
 argument_list|()
 else|:
 literal|"(?)"
 decl_stmt|;
-comment|// build error message
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"Can't resolve path component: ["
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|entityName
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|'.'
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|pathComp
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"]."
-argument_list|)
-expr_stmt|;
 throw|throw
 operator|new
 name|ExpressionException
 argument_list|(
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"Can't resolve path component: [%s.%s]."
 argument_list|,
 name|path
 argument_list|,
 literal|null
+argument_list|,
+name|entityName
+argument_list|,
+name|pathComp
 argument_list|)
 throw|;
 block|}
@@ -1406,18 +1408,18 @@ name|parent
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Entity '"
-operator|+
+literal|"Entity '%s' has no parent MappingNamespace (such as DataMap)"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|"' has no parent MappingNamespace (such as DataMap)"
 argument_list|)
 throw|;
+block|}
 return|return
 name|parent
 return|;

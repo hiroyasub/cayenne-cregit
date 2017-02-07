@@ -768,15 +768,10 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|Byte
-operator|.
-name|valueOf
-argument_list|(
 operator|(
 name|byte
 operator|)
 literal|0
-argument_list|)
 return|;
 block|}
 if|else if
@@ -790,12 +785,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 literal|0
-argument_list|)
 return|;
 block|}
 if|else if
@@ -809,12 +799,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|Long
-operator|.
-name|valueOf
-argument_list|(
-literal|0
-argument_list|)
+literal|0L
 return|;
 block|}
 if|else if
@@ -828,15 +813,10 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|Short
-operator|.
-name|valueOf
-argument_list|(
 operator|(
 name|short
 operator|)
 literal|0
-argument_list|)
 return|;
 block|}
 if|else if
@@ -850,15 +830,10 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|Character
-operator|.
-name|valueOf
-argument_list|(
 operator|(
 name|char
 operator|)
 literal|0
-argument_list|)
 return|;
 block|}
 if|else if
@@ -872,11 +847,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|new
-name|Double
-argument_list|(
 literal|0.0d
-argument_list|)
 return|;
 block|}
 if|else if
@@ -890,11 +861,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-operator|new
-name|Float
-argument_list|(
 literal|0.0f
-argument_list|)
 return|;
 block|}
 if|else if
@@ -942,10 +909,12 @@ init|=
 literal|2056090443413498626L
 decl_stmt|;
 specifier|private
+specifier|final
 name|String
 name|segmentName
 decl_stmt|;
 specifier|private
+specifier|final
 name|Accessor
 name|nextAccessor
 decl_stmt|;
@@ -959,12 +928,47 @@ name|Accessor
 name|nextAccessor
 parameter_list|)
 block|{
+comment|// trim outer join component
+if|if
+condition|(
+name|segmentName
+operator|.
+name|endsWith
+argument_list|(
+name|Entity
+operator|.
+name|OUTER_JOIN_INDICATOR
+argument_list|)
+condition|)
+block|{
+name|this
+operator|.
+name|segmentName
+operator|=
+name|segmentName
+operator|.
+name|substring
+argument_list|(
+literal|0
+argument_list|,
+name|segmentName
+operator|.
+name|length
+argument_list|()
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|this
 operator|.
 name|segmentName
 operator|=
 name|segmentName
 expr_stmt|;
+block|}
 name|this
 operator|.
 name|nextAccessor
