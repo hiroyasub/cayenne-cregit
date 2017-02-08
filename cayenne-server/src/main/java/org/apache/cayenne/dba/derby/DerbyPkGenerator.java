@@ -167,9 +167,7 @@ specifier|final
 name|String
 name|SELECT_QUERY
 init|=
-literal|"SELECT NEXT_ID FROM AUTO_PK_SUPPORT"
-operator|+
-literal|" WHERE TABLE_NAME = ? FOR UPDATE"
+literal|"SELECT NEXT_ID FROM AUTO_PK_SUPPORT WHERE TABLE_NAME = ? FOR UPDATE"
 decl_stmt|;
 comment|/** 	 * @since 3.0 	 */
 annotation|@
@@ -233,7 +231,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -255,7 +252,6 @@ name|ResultSet
 operator|.
 name|CONCUR_UPDATABLE
 argument_list|)
-init|;
 init|)
 block|{
 name|select
@@ -279,7 +275,6 @@ name|select
 operator|.
 name|executeQuery
 argument_list|()
-init|;
 init|)
 block|{
 if|if

@@ -146,17 +146,6 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
-specifier|protected
-name|String
-name|dropAutoPkString
-parameter_list|()
-block|{
-return|return
-literal|"DROP TABLE IF EXISTS AUTO_PK_SUPPORT"
-return|;
-block|}
 comment|/** 	 * Overrides superclass's implementation to perform locking of the primary 	 * key lookup table. 	 *  	 * @since 3.0 	 */
 annotation|@
 name|Override
@@ -186,7 +175,7 @@ name|long
 name|pk
 init|=
 operator|-
-literal|1l
+literal|1L
 decl_stmt|;
 try|try
 init|(
@@ -200,7 +189,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 if|if
@@ -219,6 +207,8 @@ literal|false
 argument_list|)
 expr_stmt|;
 block|}
+try|try
+init|(
 name|Statement
 name|st
 init|=
@@ -226,7 +216,8 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
+init|)
+block|{
 try|try
 block|{
 name|pk
@@ -264,7 +255,7 @@ block|}
 catch|catch
 parameter_list|(
 name|SQLException
-name|e
+name|ignored
 parameter_list|)
 block|{
 block|}
@@ -274,16 +265,14 @@ name|processSQLException
 argument_list|(
 name|pkEx
 argument_list|,
-name|exception
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
 finally|finally
 block|{
 comment|// UNLOCK!
-comment|// THIS MUST BE EXECUTED NO MATTER WHAT, OR WE WILL LOCK THE
-comment|// PRIMARY KEY
-comment|// TABLE!!
+comment|// THIS MUST BE EXECUTED NO MATTER WHAT, OR WE WILL LOCK THE PRIMARY KEY TABLE!!
 try|try
 block|{
 name|String
@@ -329,25 +318,6 @@ name|exception
 argument_list|)
 expr_stmt|;
 block|}
-finally|finally
-block|{
-comment|// close statement
-try|try
-block|{
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|stClosingEx
-parameter_list|)
-block|{
-comment|// ignoring...
-block|}
 block|}
 block|}
 block|}
@@ -363,7 +333,7 @@ name|processSQLException
 argument_list|(
 name|otherEx
 argument_list|,
-name|exception
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -421,43 +391,24 @@ annotation|@
 name|Override
 specifier|protected
 name|String
+name|dropAutoPkString
+parameter_list|()
+block|{
+return|return
+literal|"DROP TABLE IF EXISTS AUTO_PK_SUPPORT"
+return|;
+block|}
+annotation|@
+name|Override
+specifier|protected
+name|String
 name|pkTableCreateString
 parameter_list|()
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"CREATE TABLE IF NOT EXISTS AUTO_PK_SUPPORT ("
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  TABLE_NAME CHAR(100) NOT NULL,"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  NEXT_ID BIGINT NOT NULL, UNIQUE (TABLE_NAME)"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|")"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"CREATE TABLE IF NOT EXISTS AUTO_PK_SUPPORT "
+operator|+
+literal|"(TABLE_NAME CHAR(100) NOT NULL, NEXT_ID BIGINT NOT NULL, UNIQUE (TABLE_NAME))"
 return|;
 block|}
 comment|/** 	 * @since 3.0 	 */
@@ -526,6 +477,11 @@ operator|.
 name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
+name|long
+name|pk
+decl_stmt|;
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -535,14 +491,7 @@ name|executeQuery
 argument_list|(
 name|selectString
 argument_list|)
-decl_stmt|;
-name|long
-name|pk
-init|=
-operator|-
-literal|1
-decl_stmt|;
-try|try
+init|)
 block|{
 if|if
 condition|(
@@ -593,25 +542,6 @@ operator|+
 literal|"'"
 argument_list|)
 throw|;
-block|}
-block|}
-finally|finally
-block|{
-try|try
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-comment|// ignoring...
 block|}
 block|}
 comment|// update

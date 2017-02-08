@@ -629,45 +629,10 @@ name|String
 name|pkTableCreateString
 parameter_list|()
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"CREATE TABLE AUTO_PK_SUPPORT ("
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  TABLE_NAME CHAR(100) NOT NULL,"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  NEXT_ID BIGINT NOT NULL,"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"  PRIMARY KEY(TABLE_NAME)"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|")"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"CREATE TABLE AUTO_PK_SUPPORT "
+operator|+
+literal|"(TABLE_NAME CHAR(100) NOT NULL, NEXT_ID BIGINT NOT NULL, PRIMARY KEY(TABLE_NAME))"
 return|;
 block|}
 specifier|protected
@@ -786,55 +751,16 @@ name|String
 name|entName
 parameter_list|)
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"INSERT INTO AUTO_PK_SUPPORT"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" (TABLE_NAME, NEXT_ID)"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" VALUES ('"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|entName
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"', "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|pkStartValue
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|")"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"INSERT INTO AUTO_PK_SUPPORT (TABLE_NAME, NEXT_ID) VALUES ('"
+operator|+
+name|entName
+operator|+
+literal|"', "
+operator|+
+name|pkStartValue
+operator|+
+literal|")"
 return|;
 block|}
 specifier|protected
@@ -845,35 +771,12 @@ name|String
 name|entName
 parameter_list|)
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"SELECT NEXT_ID FROM AUTO_PK_SUPPORT WHERE TABLE_NAME = '"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|entName
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|'\''
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"SELECT NEXT_ID FROM AUTO_PK_SUPPORT WHERE TABLE_NAME = '"
+operator|+
+name|entName
+operator|+
+literal|'\''
 return|;
 block|}
 specifier|protected
@@ -884,50 +787,16 @@ name|String
 name|entName
 parameter_list|)
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"UPDATE AUTO_PK_SUPPORT"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" SET NEXT_ID = NEXT_ID + "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|pkCacheSize
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" WHERE TABLE_NAME = '"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|entName
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|'\''
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"UPDATE AUTO_PK_SUPPORT SET NEXT_ID = NEXT_ID + "
+operator|+
+name|pkCacheSize
+operator|+
+literal|" WHERE TABLE_NAME = '"
+operator|+
+name|entName
+operator|+
+literal|'\''
 return|;
 block|}
 specifier|protected
@@ -962,7 +831,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 name|DatabaseMetaData
@@ -990,7 +858,6 @@ literal|"AUTO_PK_SUPPORT"
 argument_list|,
 literal|null
 argument_list|)
-init|;
 init|)
 block|{
 return|return
@@ -1042,7 +909,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -1054,7 +920,6 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 return|return
@@ -1085,9 +950,6 @@ block|{
 name|DbEntity
 name|entity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|pk
 operator|.
 name|getEntity
@@ -1147,21 +1009,22 @@ argument_list|()
 operator|!=
 literal|null
 condition|)
+block|{
 name|cacheSize
 operator|=
 name|pkGenerator
 operator|.
 name|getKeyCacheSize
 argument_list|()
-operator|.
-name|intValue
-argument_list|()
 expr_stmt|;
+block|}
 else|else
+block|{
 name|cacheSize
 operator|=
 name|pkCacheSize
 expr_stmt|;
+block|}
 name|Long
 name|value
 decl_stmt|;
@@ -1213,9 +1076,7 @@ name|pks
 operator|=
 operator|new
 name|ConcurrentLinkedQueue
-argument_list|<
-name|Long
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|Queue
@@ -1319,8 +1180,7 @@ return|;
 block|}
 else|else
 block|{
-comment|// leaving it up to the user to ensure that PK does not exceed max
-comment|// int...
+comment|// leaving it up to the user to ensure that PK does not exceed max int...
 return|return
 name|value
 operator|.
@@ -1346,9 +1206,7 @@ block|{
 name|String
 name|select
 init|=
-literal|"SELECT #result('NEXT_ID' 'long' 'NEXT_ID') "
-operator|+
-literal|"FROM AUTO_PK_SUPPORT "
+literal|"SELECT #result('NEXT_ID' 'long' 'NEXT_ID') FROM AUTO_PK_SUPPORT "
 operator|+
 literal|"WHERE TABLE_NAME = '"
 operator|+
@@ -1510,6 +1368,7 @@ block|{
 name|Number
 name|id
 decl_stmt|;
+specifier|final
 name|String
 name|entityName
 decl_stmt|;

@@ -195,7 +195,7 @@ name|pkTableCreateString
 parameter_list|()
 block|{
 return|return
-literal|"CREATE TABLE AUTO_PK_SUPPORT (  TABLE_NAME CHAR(100) NOT NULL, NEXT_ID DECIMAL(19,0) NOT NULL, PRIMARY KEY(TABLE_NAME))"
+literal|"CREATE TABLE AUTO_PK_SUPPORT (TABLE_NAME CHAR(100) NOT NULL, NEXT_ID DECIMAL(19,0) NOT NULL, PRIMARY KEY(TABLE_NAME))"
 return|;
 block|}
 comment|/** 	 * Generates database objects to provide automatic primary key support. 	 * Method will execute the following SQL statements: 	 *<p> 	 * 1. Executed only if a corresponding table does not exist in the database. 	 *</p> 	 *  	 *<pre> 	 *    CREATE TABLE AUTO_PK_SUPPORT ( 	 *       TABLE_NAME VARCHAR(32) NOT NULL, 	 *       NEXT_ID DECIMAL(19,0) NOT NULL 	 *    ) 	 *</pre> 	 *<p> 	 * 2. Executed under any circumstances. 	 *</p> 	 *  	 *<pre> 	 * if exists (SELECT * FROM sysobjects WHERE name = 'auto_pk_for_table') 	 * BEGIN 	 *    DROP PROCEDURE auto_pk_for_table  	 * END 	 *</pre> 	 *<p> 	 * 3. Executed under any circumstances. 	 *</p> 	 * CREATE PROCEDURE auto_pk_for_table 	 *  	 *<pre> 	 *&#064;tname VARCHAR(32), 	 *&#064;pkbatchsize INT AS BEGIN BEGIN TRANSACTION UPDATE AUTO_PK_SUPPORT set NEXT_ID = 	 *              NEXT_ID + 	 *&#064;pkbatchsize WHERE TABLE_NAME = 	 *&#064;tname SELECT NEXT_ID from AUTO_PK_SUPPORT where NEXT_ID = 	 *&#064;tname COMMIT END 	 *</pre> 	 *  	 * @param node 	 *            node that provides access to a DataSource. 	 */
@@ -402,15 +402,11 @@ throws|throws
 name|Exception
 block|{
 comment|// handle CAY-588 - get connection that is separate from the connection
-comment|// in the
-comment|// current transaction.
+comment|// in the current transaction.
 comment|// TODO (andrus, 7/6/2006) Note that this will still work in a pool with
-comment|// a single
-comment|// connection, as PK generator is invoked early in the transaction,
-comment|// before the
-comment|// connection is grabbed for commit... So maybe promote this to other
-comment|// adapters in
-comment|// 3.0?
+comment|// a single connection, as PK generator is invoked early in the transaction,
+comment|// before the connection is grabbed for commit...
+comment|// So maybe promote this to other adapters in 3.0?
 name|Transaction
 name|transaction
 init|=
@@ -427,8 +423,6 @@ literal|null
 argument_list|)
 expr_stmt|;
 try|try
-block|{
-try|try
 init|(
 name|Connection
 name|connection
@@ -440,7 +434,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -454,7 +447,6 @@ name|prepareCall
 argument_list|(
 literal|"{call auto_pk_for_table(?, ?)}"
 argument_list|)
-init|;
 init|)
 block|{
 name|statement
@@ -481,9 +473,7 @@ name|getPkCacheSize
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// can't use "executeQuery"
-comment|// per
-comment|// http://jtds.sourceforge.net/faq.html#expectingResultSet
+comment|// can't use "executeQuery" per http://jtds.sourceforge.net/faq.html#expectingResultSet
 name|statement
 operator|.
 name|execute
@@ -506,7 +496,6 @@ name|statement
 operator|.
 name|getResultSet
 argument_list|()
-init|;
 init|)
 block|{
 if|if
@@ -562,7 +551,6 @@ throw|;
 block|}
 block|}
 block|}
-block|}
 finally|finally
 block|{
 name|BaseTransaction
@@ -579,40 +567,10 @@ name|String
 name|safePkTableDrop
 parameter_list|()
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"if exists (SELECT * FROM sysobjects WHERE name = 'AUTO_PK_SUPPORT')"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" BEGIN "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" DROP TABLE AUTO_PK_SUPPORT"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|" END"
-argument_list|)
-expr_stmt|;
 return|return
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"if exists (SELECT * FROM sysobjects WHERE name = 'AUTO_PK_SUPPORT') BEGIN "
+operator|+
+literal|" DROP TABLE AUTO_PK_SUPPORT END"
 return|;
 block|}
 specifier|private
