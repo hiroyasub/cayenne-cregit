@@ -437,6 +437,13 @@ throw|;
 block|}
 name|replacement
 operator|.
+name|setName
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|replacement
+operator|.
 name|setQualifier
 argument_list|(
 name|where

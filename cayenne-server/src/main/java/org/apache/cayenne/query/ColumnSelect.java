@@ -173,6 +173,14 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
+name|name
+operator|=
+name|select
+operator|.
+name|name
+expr_stmt|;
+name|this
+operator|.
 name|entityType
 operator|=
 name|select
