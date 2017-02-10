@@ -15,6 +15,16 @@ name|cache
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
 begin_comment
 comment|/**  * A factory that is used by the cache to rebuild expired entries.  *   * @since 3.0  */
 end_comment
@@ -25,7 +35,7 @@ interface|interface
 name|QueryCacheEntryFactory
 block|{
 comment|/**      * Provides a fresh value of the cache entry. Normally this operation would perform a      * database query. This operation must not return null.      */
-name|Object
+name|List
 name|createObject
 parameter_list|()
 function_decl|;

@@ -1379,9 +1379,6 @@ name|put
 argument_list|(
 name|metadata
 argument_list|,
-operator|(
-name|List
-operator|)
 name|factory
 operator|.
 name|createObject
@@ -1423,7 +1420,7 @@ name|QueryCacheEntryFactory
 argument_list|()
 block|{
 specifier|public
-name|Object
+name|List
 name|createObject
 parameter_list|()
 block|{

@@ -1943,9 +1943,6 @@ name|put
 argument_list|(
 name|metadata
 argument_list|,
-operator|(
-name|List
-operator|)
 name|factory
 operator|.
 name|createObject
@@ -1970,7 +1967,7 @@ block|{
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|List
 name|createObject
 parameter_list|()
 block|{

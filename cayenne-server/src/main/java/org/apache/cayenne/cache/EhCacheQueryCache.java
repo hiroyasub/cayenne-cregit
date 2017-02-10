@@ -476,7 +476,7 @@ return|;
 block|}
 comment|// if not succeeded in reading again putting
 comment|// object to the cache ourselves
-name|Object
+name|List
 name|object
 init|=
 name|factory
@@ -484,16 +484,6 @@ operator|.
 name|createObject
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|object
-operator|instanceof
-name|List
-operator|)
-condition|)
-block|{
 if|if
 condition|(
 name|object
@@ -514,25 +504,6 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Invalid query result, expected List, got "
-operator|+
-name|object
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
-block|}
 name|cache
 operator|.
 name|put
@@ -547,9 +518,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|List
-operator|)
 name|object
 return|;
 block|}
