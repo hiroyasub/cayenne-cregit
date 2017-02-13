@@ -94,11 +94,15 @@ name|ToOneFK2
 argument_list|>
 name|TO_PK
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"toPK"
+argument_list|,
+name|ToOneFK2
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

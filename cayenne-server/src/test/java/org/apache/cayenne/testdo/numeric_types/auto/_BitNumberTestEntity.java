@@ -78,11 +78,15 @@ name|Integer
 argument_list|>
 name|BIT_COLUMN
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"bitColumn"
+argument_list|,
+name|Integer
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

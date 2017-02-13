@@ -62,11 +62,15 @@ name|String
 argument_list|>
 name|EMBEDDED10
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"embedded10"
+argument_list|,
+name|String
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public
@@ -78,11 +82,15 @@ name|String
 argument_list|>
 name|EMBEDDED20
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"embedded20"
+argument_list|,
+name|String
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 comment|// special properties injected by Cayenne

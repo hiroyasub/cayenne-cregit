@@ -78,11 +78,15 @@ name|String
 argument_list|>
 name|PAINTING_TITLE
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"paintingTitle"
+argument_list|,
+name|String
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

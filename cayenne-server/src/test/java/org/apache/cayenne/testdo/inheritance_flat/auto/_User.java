@@ -98,11 +98,15 @@ name|UserProperties
 argument_list|>
 name|USER_PROPERTIES
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"userProperties"
+argument_list|,
+name|UserProperties
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

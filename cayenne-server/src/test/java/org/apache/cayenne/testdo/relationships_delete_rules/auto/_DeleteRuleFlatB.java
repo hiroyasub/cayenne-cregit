@@ -107,11 +107,15 @@ argument_list|>
 argument_list|>
 name|UNTITLED_REL
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"untitledRel"
+argument_list|,
+name|List
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

@@ -78,11 +78,15 @@ name|Long
 argument_list|>
 name|LONG_FIELD
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"longField"
+argument_list|,
+name|Long
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

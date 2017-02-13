@@ -82,11 +82,15 @@ name|String
 argument_list|>
 name|SUBCLASS2ATTRIBUTE1
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"subclass2Attribute1"
+argument_list|,
+name|String
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

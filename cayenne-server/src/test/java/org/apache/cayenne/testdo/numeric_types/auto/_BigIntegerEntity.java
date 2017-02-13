@@ -88,11 +88,15 @@ name|BigInteger
 argument_list|>
 name|BIG_INTEGER_FIELD
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"bigIntegerField"
+argument_list|,
+name|BigInteger
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

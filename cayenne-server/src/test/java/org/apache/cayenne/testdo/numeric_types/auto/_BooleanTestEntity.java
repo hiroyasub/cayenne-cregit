@@ -78,11 +78,15 @@ name|Boolean
 argument_list|>
 name|BOOLEAN_COLUMN
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"booleanColumn"
+argument_list|,
+name|Boolean
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

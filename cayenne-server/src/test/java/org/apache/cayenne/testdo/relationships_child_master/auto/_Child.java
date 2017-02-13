@@ -94,11 +94,15 @@ name|Master
 argument_list|>
 name|MASTER
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"master"
+argument_list|,
+name|Master
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

@@ -94,11 +94,15 @@ name|CollectionToMany
 argument_list|>
 name|COLLECTION_TO_MANY
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"collectionToMany"
+argument_list|,
+name|CollectionToMany
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

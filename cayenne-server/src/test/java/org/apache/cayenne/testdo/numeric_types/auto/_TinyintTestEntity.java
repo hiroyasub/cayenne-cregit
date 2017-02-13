@@ -78,11 +78,15 @@ name|Byte
 argument_list|>
 name|TINYINT_COL
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"tinyintCol"
+argument_list|,
+name|Byte
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

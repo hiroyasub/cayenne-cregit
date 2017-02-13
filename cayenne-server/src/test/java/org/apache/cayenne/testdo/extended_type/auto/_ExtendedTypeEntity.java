@@ -94,11 +94,15 @@ name|StringET1
 argument_list|>
 name|NAME
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"name"
+argument_list|,
+name|StringET1
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

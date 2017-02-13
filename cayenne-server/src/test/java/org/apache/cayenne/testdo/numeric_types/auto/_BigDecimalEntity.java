@@ -88,11 +88,15 @@ name|BigDecimal
 argument_list|>
 name|BIG_DECIMAL_FIELD
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"bigDecimalField"
+argument_list|,
+name|BigDecimal
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

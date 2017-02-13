@@ -94,11 +94,15 @@ name|Enum1
 argument_list|>
 name|ENUM_ATTRIBUTE
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"enumAttribute"
+argument_list|,
+name|Enum1
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

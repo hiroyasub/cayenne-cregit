@@ -78,11 +78,15 @@ name|Character
 argument_list|>
 name|CHARACTER_FIELD
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"characterField"
+argument_list|,
+name|Character
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

@@ -107,11 +107,15 @@ argument_list|>
 argument_list|>
 name|TO_MANY_ONE_WAY_DB
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"toManyOneWayDb"
+argument_list|,
+name|List
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

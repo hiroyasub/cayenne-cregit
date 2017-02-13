@@ -111,11 +111,15 @@ argument_list|>
 argument_list|>
 name|MANAGED_DEPARTMENTS
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"managedDepartments"
+argument_list|,
+name|List
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

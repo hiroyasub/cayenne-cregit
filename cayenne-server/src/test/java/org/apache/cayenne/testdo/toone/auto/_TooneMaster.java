@@ -94,11 +94,15 @@ name|TooneDep
 argument_list|>
 name|TO_DEPENDENT
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"toDependent"
+argument_list|,
+name|TooneDep
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

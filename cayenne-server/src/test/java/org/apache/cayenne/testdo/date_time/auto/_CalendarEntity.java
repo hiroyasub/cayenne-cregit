@@ -88,11 +88,15 @@ name|Calendar
 argument_list|>
 name|CALENDAR_FIELD
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"calendarField"
+argument_list|,
+name|Calendar
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

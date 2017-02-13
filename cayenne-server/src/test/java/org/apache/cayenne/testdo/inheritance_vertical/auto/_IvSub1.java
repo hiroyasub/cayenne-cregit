@@ -82,11 +82,15 @@ name|String
 argument_list|>
 name|SUB1NAME
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"sub1Name"
+argument_list|,
+name|String
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

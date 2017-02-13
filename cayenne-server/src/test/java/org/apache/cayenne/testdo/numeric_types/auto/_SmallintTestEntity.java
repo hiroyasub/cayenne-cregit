@@ -78,11 +78,15 @@ name|Short
 argument_list|>
 name|SMALLINT_COL
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"smallintCol"
+argument_list|,
+name|Short
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

@@ -98,11 +98,15 @@ name|Iv2X
 argument_list|>
 name|X
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"x"
+argument_list|,
+name|Iv2X
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

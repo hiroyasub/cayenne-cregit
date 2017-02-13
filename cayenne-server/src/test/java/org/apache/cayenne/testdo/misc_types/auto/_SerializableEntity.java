@@ -90,11 +90,15 @@ name|MockSerializable
 argument_list|>
 name|SERIALIZABLE_FIELD
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"serializableField"
+argument_list|,
+name|MockSerializable
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

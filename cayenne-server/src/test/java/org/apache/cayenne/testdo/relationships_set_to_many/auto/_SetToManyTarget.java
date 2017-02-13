@@ -94,11 +94,15 @@ name|SetToMany
 argument_list|>
 name|SET_TO_MANY
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"setToMany"
+argument_list|,
+name|SetToMany
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

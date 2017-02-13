@@ -94,11 +94,15 @@ name|RelationshipHelper
 argument_list|>
 name|RELATIONSHIP_HELPER
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"relationshipHelper"
+argument_list|,
+name|RelationshipHelper
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

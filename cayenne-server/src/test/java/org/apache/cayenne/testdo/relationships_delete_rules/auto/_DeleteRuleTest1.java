@@ -94,11 +94,15 @@ name|DeleteRuleTest2
 argument_list|>
 name|TEST2
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"test2"
+argument_list|,
+name|DeleteRuleTest2
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

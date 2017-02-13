@@ -78,11 +78,15 @@ name|String
 argument_list|>
 name|DISCRIMINATOR
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"discriminator"
+argument_list|,
+name|String
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

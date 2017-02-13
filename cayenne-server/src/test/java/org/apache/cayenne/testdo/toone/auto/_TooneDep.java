@@ -94,11 +94,15 @@ name|TooneMaster
 argument_list|>
 name|TO_MASTER
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"toMaster"
+argument_list|,
+name|TooneMaster
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

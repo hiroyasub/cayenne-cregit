@@ -107,11 +107,15 @@ argument_list|>
 argument_list|>
 name|TARGETS
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"targets"
+argument_list|,
+name|Collection
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

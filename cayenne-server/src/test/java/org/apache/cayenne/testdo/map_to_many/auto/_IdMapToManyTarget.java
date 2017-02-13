@@ -94,11 +94,15 @@ name|IdMapToMany
 argument_list|>
 name|MAP_TO_MANY
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"mapToMany"
+argument_list|,
+name|IdMapToMany
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public

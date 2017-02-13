@@ -107,11 +107,15 @@ argument_list|>
 argument_list|>
 name|F2
 init|=
-operator|new
 name|Property
-argument_list|<>
+operator|.
+name|create
 argument_list|(
 literal|"f2"
+argument_list|,
+name|List
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 specifier|public
