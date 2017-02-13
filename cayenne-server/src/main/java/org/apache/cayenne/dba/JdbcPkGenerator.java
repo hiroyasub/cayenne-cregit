@@ -1022,7 +1022,8 @@ else|else
 block|{
 name|cacheSize
 operator|=
-name|pkCacheSize
+name|getPkCacheSize
+argument_list|()
 expr_stmt|;
 block|}
 name|Long

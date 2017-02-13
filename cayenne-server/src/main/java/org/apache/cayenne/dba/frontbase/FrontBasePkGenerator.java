@@ -213,7 +213,7 @@ operator|=
 literal|1000000
 expr_stmt|;
 block|}
-comment|/** 	 * Retruns zero as PK caching is not supported by FrontBaseAdapter. 	 */
+comment|/** 	 * Returns zero as PK caching is not supported by FrontBaseAdapter. 	 */
 annotation|@
 name|Override
 specifier|public
