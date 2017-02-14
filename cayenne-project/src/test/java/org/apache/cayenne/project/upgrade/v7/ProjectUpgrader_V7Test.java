@@ -1565,6 +1565,9 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -2777,6 +2780,9 @@ argument_list|(
 literal|0
 argument_list|)
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -3289,6 +3295,9 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

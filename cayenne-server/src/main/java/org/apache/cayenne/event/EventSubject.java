@@ -77,6 +77,11 @@ implements|implements
 name|Serializable
 block|{
 comment|// a Map that will allow the values to be GC'ed
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 specifier|static
 name|Map

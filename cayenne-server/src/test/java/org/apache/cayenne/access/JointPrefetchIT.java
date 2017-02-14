@@ -1801,7 +1801,7 @@ argument_list|)
 decl_stmt|;
 name|artistSQL
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|Collections
 operator|.

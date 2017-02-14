@@ -404,7 +404,13 @@ name|aliasedPath
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+argument_list|,
+name|String
+operator|>
+name|emptyMap
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|Collection

@@ -592,6 +592,9 @@ name|URLResource
 argument_list|(
 name|outFile
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|)
@@ -958,6 +961,9 @@ operator|new
 name|URLResource
 argument_list|(
 name|outFile
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

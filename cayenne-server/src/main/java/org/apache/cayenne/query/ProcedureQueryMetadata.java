@@ -179,7 +179,7 @@ name|procedure
 operator|=
 name|resolver
 operator|.
-name|lookupProcedure
+name|getProcedure
 argument_list|(
 operator|(
 name|String

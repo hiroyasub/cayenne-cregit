@@ -790,10 +790,6 @@ decl_stmt|;
 if|if
 condition|(
 name|propertyPath
-operator|==
-literal|null
-operator|||
-name|propertyPath
 operator|.
 name|equals
 argument_list|(
@@ -868,7 +864,7 @@ specifier|protected
 name|boolean
 name|isAuditableUpdate
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|,
 name|boolean
@@ -890,9 +886,6 @@ name|descriptor
 operator|.
 name|auditableChange
 argument_list|(
-operator|(
-name|Persistent
-operator|)
 name|object
 argument_list|)
 return|;
@@ -901,7 +894,7 @@ specifier|private
 name|AuditableEntityDescriptor
 name|getEntityDescriptor
 parameter_list|(
-name|Object
+name|Persistent
 name|object
 parameter_list|,
 name|boolean
@@ -913,7 +906,7 @@ name|entity
 init|=
 name|entityResolver
 operator|.
-name|lookupObjEntity
+name|getObjEntity
 argument_list|(
 name|object
 argument_list|)

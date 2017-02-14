@@ -396,7 +396,12 @@ name|resultDescriptors
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|ColumnDescriptor
+index|[]
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
 comment|/**      * Adds a descriptor for a single ResultSet. More than one descriptor can be added by      * calling this method multiple times in the order of described ResultSet appearance      * in the procedure results.      *       * @since 1.2      */
@@ -507,7 +512,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 name|Object

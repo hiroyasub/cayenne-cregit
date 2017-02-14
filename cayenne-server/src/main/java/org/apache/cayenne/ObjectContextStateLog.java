@@ -173,12 +173,16 @@ name|void
 name|graphCommitted
 parameter_list|()
 block|{
-comment|/**          * Array for deleted ids, to avoid concurrent modification          */
+comment|/*          * Array for deleted ids, to avoid concurrent modification          */
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|deletedIds
 init|=
 operator|new
 name|Vector
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -267,7 +271,7 @@ break|break;
 block|}
 block|}
 block|}
-comment|/**          * Now unregister all deleted objects          */
+comment|/*          * Now unregister all deleted objects          */
 for|for
 control|(
 name|Object

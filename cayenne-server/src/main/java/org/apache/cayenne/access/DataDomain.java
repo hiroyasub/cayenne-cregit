@@ -614,6 +614,11 @@ name|String
 name|name
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|properties
 parameter_list|)
 block|{
@@ -642,9 +647,7 @@ name|filters
 operator|=
 operator|new
 name|CopyOnWriteArrayList
-argument_list|<
-name|DataChannelFilter
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -674,7 +677,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 name|setName
 argument_list|(
@@ -744,7 +748,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 name|sharedCacheEnabled
 operator|=
@@ -787,7 +792,13 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|String
+operator|>
+name|emptyMap
+argument_list|()
 expr_stmt|;
 name|String
 name|sharedCacheEnabled

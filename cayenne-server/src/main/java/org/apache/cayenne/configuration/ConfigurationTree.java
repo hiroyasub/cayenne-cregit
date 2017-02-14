@@ -140,7 +140,11 @@ name|loadFailures
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|ValidationFailure
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
 block|}

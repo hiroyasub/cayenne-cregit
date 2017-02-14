@@ -278,6 +278,11 @@ init|=
 literal|true
 decl_stmt|;
 comment|/** 	 * Orders a given list of objects, using a List of Orderings applied 	 * according the default iteration order of the Orderings list. I.e. each 	 * Ordering with lower index is more significant than any other Ordering 	 * with higher index. List being ordered is modified in place. 	 */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 specifier|static
 name|void

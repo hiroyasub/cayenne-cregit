@@ -72,6 +72,8 @@ expr_stmt|;
 block|}
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 specifier|synchronized
 name|ObjEntity

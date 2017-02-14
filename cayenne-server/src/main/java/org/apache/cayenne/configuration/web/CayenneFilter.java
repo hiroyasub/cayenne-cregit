@@ -262,25 +262,23 @@ expr_stmt|;
 name|ServerRuntime
 name|runtime
 init|=
-operator|new
 name|ServerRuntime
+operator|.
+name|builder
+argument_list|()
+operator|.
+name|addConfig
 argument_list|(
 name|configurationLocation
-argument_list|,
-name|modules
+argument_list|)
 operator|.
-name|toArray
+name|addModules
 argument_list|(
-operator|new
-name|Module
-index|[
 name|modules
+argument_list|)
 operator|.
-name|size
+name|build
 argument_list|()
-index|]
-argument_list|)
-argument_list|)
 decl_stmt|;
 name|WebUtil
 operator|.
@@ -295,7 +293,7 @@ name|runtime
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Subclasses may override this to specify additional modules that should be included when creating the CayenneRuntime (in addition to those specified in the web.xml file).      *       * @since 4.0      */
+comment|/**      * Subclasses may override this to specify additional modules that should be included when creating the CayenneRuntime      * (in addition to those specified in the web.xml file).      *       * @since 4.0      */
 specifier|protected
 name|Collection
 argument_list|<

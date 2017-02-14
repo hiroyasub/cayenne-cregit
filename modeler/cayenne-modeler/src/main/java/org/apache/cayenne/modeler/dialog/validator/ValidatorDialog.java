@@ -530,7 +530,8 @@ name|validationObjects
 operator|=
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 expr_stmt|;
 name|initView
 argument_list|()

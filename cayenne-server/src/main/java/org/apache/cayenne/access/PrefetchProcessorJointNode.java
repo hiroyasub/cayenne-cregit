@@ -457,6 +457,7 @@ name|objects
 operator|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|capacity
 argument_list|)

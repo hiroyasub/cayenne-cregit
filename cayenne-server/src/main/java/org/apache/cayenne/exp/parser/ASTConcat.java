@@ -86,6 +86,10 @@ name|JJTCONCAT
 argument_list|,
 literal|"CONCAT"
 argument_list|,
+operator|(
+name|Object
+index|[]
+operator|)
 name|expressions
 argument_list|)
 expr_stmt|;

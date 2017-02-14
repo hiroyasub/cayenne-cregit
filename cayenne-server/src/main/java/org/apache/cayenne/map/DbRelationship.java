@@ -461,6 +461,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a Collection of target attributes.      *       * @since 1.1      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|Collection
 argument_list|<
@@ -482,7 +487,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 return|return
@@ -499,6 +505,11 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a Collection of source attributes.      *       * @since 1.1      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|Collection
 argument_list|<
@@ -520,7 +531,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 return|return
@@ -1289,7 +1301,8 @@ name|idMap
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 else|else

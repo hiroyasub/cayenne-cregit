@@ -280,7 +280,8 @@ name|properties
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 name|metadata
@@ -620,7 +621,13 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 return|;
 block|}
 specifier|public
@@ -647,7 +654,13 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|Integer
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 return|;
 block|}
 comment|/**      * Sets a named query parameter value.      */

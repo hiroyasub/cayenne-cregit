@@ -894,6 +894,11 @@ return|;
 block|}
 comment|/**      * Returns a Collection of all attributes that either belong to this      * DbEntity or inherited.      */
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
 name|Override
 specifier|public
 name|Collection
@@ -1152,6 +1157,11 @@ expr_stmt|;
 block|}
 comment|/**      * Returns a Collection of relationships from this entity or inherited.      */
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
 name|Override
 specifier|public
 name|Collection
@@ -1174,6 +1184,11 @@ name|getRelationships
 argument_list|()
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 annotation|@
 name|Override
 specifier|public

@@ -640,12 +640,12 @@ operator|instanceof
 name|ServerModule
 argument_list|)
 expr_stmt|;
-comment|// [1] is an inner class
+comment|// [2] is an inner class
 name|assertTrue
 argument_list|(
 name|marray
 index|[
-literal|2
+literal|1
 index|]
 operator|instanceof
 name|WebModule
@@ -805,12 +805,12 @@ operator|instanceof
 name|ServerModule
 argument_list|)
 expr_stmt|;
-comment|// [1] is an inner class
+comment|// [4] is an inner class
 name|assertTrue
 argument_list|(
 name|marray
 index|[
-literal|2
+literal|1
 index|]
 operator|instanceof
 name|WebModule
@@ -820,7 +820,7 @@ name|assertTrue
 argument_list|(
 name|marray
 index|[
-literal|3
+literal|2
 index|]
 operator|instanceof
 name|MockModule1
@@ -830,7 +830,7 @@ name|assertTrue
 argument_list|(
 name|marray
 index|[
-literal|4
+literal|3
 index|]
 operator|instanceof
 name|MockModule2

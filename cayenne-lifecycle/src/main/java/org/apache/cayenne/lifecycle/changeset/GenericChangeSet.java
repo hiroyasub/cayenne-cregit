@@ -183,7 +183,13 @@ name|changes
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|PropertyChange
+operator|>
+name|emptyMap
+argument_list|()
 return|;
 block|}
 specifier|private
@@ -424,6 +430,9 @@ comment|// record the fact of relationship change... TODO: analyze relationship
 comment|// semantics and record changset values
 name|getChange
 argument_list|(
+operator|(
+name|ObjectId
+operator|)
 name|nodeId
 argument_list|,
 operator|(
@@ -453,6 +462,9 @@ comment|// record the fact of relationship change... TODO: analyze relationship
 comment|// semantics and record changset values
 name|getChange
 argument_list|(
+operator|(
+name|ObjectId
+operator|)
 name|nodeId
 argument_list|,
 operator|(

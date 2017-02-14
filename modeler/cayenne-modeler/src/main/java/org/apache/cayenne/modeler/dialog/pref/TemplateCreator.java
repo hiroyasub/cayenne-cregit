@@ -256,6 +256,9 @@ name|canceled
 decl_stmt|;
 specifier|protected
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|existingNames
 decl_stmt|;
 specifier|protected
@@ -314,6 +317,7 @@ name|existingNames
 operator|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|PreferenceEditor

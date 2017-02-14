@@ -568,10 +568,14 @@ block|}
 comment|// TODO: Andrus 1/31/2006 - IncrementalFaultList is not properly
 comment|// transferred between contexts....
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|childObjects
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|objects
 operator|.
@@ -579,21 +583,13 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Object
+name|object1
+range|:
 name|objects
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|Persistent
 name|object
@@ -601,10 +597,7 @@ init|=
 operator|(
 name|Persistent
 operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|object1
 decl_stmt|;
 name|childObjects
 operator|.

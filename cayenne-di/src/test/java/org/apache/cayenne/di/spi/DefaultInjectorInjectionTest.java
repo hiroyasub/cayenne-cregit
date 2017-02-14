@@ -1873,6 +1873,9 @@ name|class
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|firstList
 init|=
 operator|new
@@ -1902,6 +1905,9 @@ literal|"3value"
 argument_list|)
 expr_stmt|;
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 name|secondList
 init|=
 operator|new

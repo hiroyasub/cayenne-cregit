@@ -618,7 +618,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 comment|// Assuming that internal diffs list can only grow and can never be trimmed,

@@ -485,7 +485,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|Collections
 operator|.
@@ -637,7 +637,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|Collections
 operator|.

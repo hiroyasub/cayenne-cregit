@@ -579,7 +579,11 @@ name|lifecycleEventInducedChanges
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|GraphDiff
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
 name|void

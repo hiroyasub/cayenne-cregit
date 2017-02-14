@@ -381,7 +381,11 @@ name|subentities
 else|:
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|EntityInheritanceTree
+operator|>
+name|emptyList
+argument_list|()
 return|;
 block|}
 specifier|public

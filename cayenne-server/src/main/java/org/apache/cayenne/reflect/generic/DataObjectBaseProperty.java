@@ -49,7 +49,7 @@ name|cayenne
 operator|.
 name|reflect
 operator|.
-name|Property
+name|PropertyDescriptor
 import|;
 end_import
 
@@ -90,7 +90,7 @@ specifier|abstract
 class|class
 name|DataObjectBaseProperty
 implements|implements
-name|Property
+name|PropertyDescriptor
 implements|,
 name|Serializable
 block|{

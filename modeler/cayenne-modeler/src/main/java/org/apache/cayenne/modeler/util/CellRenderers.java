@@ -686,6 +686,9 @@ comment|/**      * Returns a ListCellRenderer to display Cayenne project tree no
 specifier|public
 specifier|static
 name|ListCellRenderer
+argument_list|<
+name|Object
+argument_list|>
 name|listRenderer
 parameter_list|()
 block|{
@@ -701,6 +704,9 @@ comment|/**      * Returns a ListCellRenderer to display Cayenne project tree no
 specifier|public
 specifier|static
 name|ListCellRenderer
+argument_list|<
+name|Object
+argument_list|>
 name|listRendererWithIcons
 parameter_list|()
 block|{
@@ -716,6 +722,9 @@ comment|/**      * Returns a ListCellRenderer to display Cayenne project tree no
 specifier|public
 specifier|static
 name|ListCellRenderer
+argument_list|<
+name|Object
+argument_list|>
 name|entityListRendererWithIcons
 parameter_list|(
 name|MappingNamespace

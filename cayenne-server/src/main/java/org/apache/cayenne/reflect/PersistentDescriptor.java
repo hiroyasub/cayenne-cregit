@@ -1211,7 +1211,8 @@ block|}
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 comment|/** 	 * Recursively looks up property descriptor in this class descriptor and all 	 * superclass descriptors. 	 */

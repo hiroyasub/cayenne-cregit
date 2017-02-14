@@ -651,6 +651,9 @@ name|void
 name|convertSingleObjects
 parameter_list|(
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|objects
 parameter_list|,
 name|DeepMergeOperation
@@ -658,6 +661,9 @@ name|merger
 parameter_list|)
 block|{
 name|ListIterator
+argument_list|<
+name|Object
+argument_list|>
 name|it
 init|=
 name|objects
@@ -1021,9 +1027,6 @@ condition|)
 block|{
 name|entityResolver
 operator|=
-operator|(
-name|EntityResolver
-operator|)
 name|send
 argument_list|(
 operator|new
@@ -1131,8 +1134,6 @@ comment|/**      * Sends a message via connector, getting a result as an instanc
 specifier|protected
 parameter_list|<
 name|T
-extends|extends
-name|Object
 parameter_list|>
 name|T
 name|send

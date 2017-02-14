@@ -196,11 +196,18 @@ comment|// starting Cayenne
 name|ServerRuntime
 name|cayenneRuntime
 init|=
-operator|new
 name|ServerRuntime
+operator|.
+name|builder
+argument_list|()
+operator|.
+name|addConfig
 argument_list|(
 literal|"cayenne-project.xml"
 argument_list|)
+operator|.
+name|build
+argument_list|()
 decl_stmt|;
 comment|// getting a hold of ObjectContext
 name|ObjectContext

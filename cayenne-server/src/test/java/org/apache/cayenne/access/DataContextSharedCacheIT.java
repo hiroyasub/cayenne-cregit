@@ -519,10 +519,16 @@ literal|"WHERE ARTIST_NAME = #bind($oldName)"
 argument_list|)
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|map
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -547,7 +553,7 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|map
 argument_list|)
@@ -582,6 +588,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|Artist
 operator|.
@@ -861,7 +868,7 @@ literal|3000
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case to prove that changes made to an object in one ObjectStore and committed      * to the database will be correctly merged in the peer ObjectStore using the same      * DataRowCache. E.g. modified objects will be merged so that no new changes are lost.      *       * @throws Exception      */
+comment|/**      * Test case to prove that changes made to an object in one ObjectStore and committed      * to the database will be correctly merged in the peer ObjectStore using the same      * DataRowCache. E.g. modified objects will be merged so that no new changes are lost.      */
 annotation|@
 name|Test
 specifier|public
@@ -1232,7 +1239,7 @@ literal|3000
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case to prove that deleting an object in one ObjectStore and committed to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default HOLLOW objects will be changed to TRANSIENT.      *       * @throws Exception      */
+comment|/**      * Test case to prove that deleting an object in one ObjectStore and committed to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default HOLLOW objects will be changed to TRANSIENT.      */
 annotation|@
 name|Test
 specifier|public
@@ -1546,7 +1553,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case to prove that deleting an object in one ObjectStore and committing to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default DELETED objects will be changed to TRANSIENT.      *       * @throws Exception      */
+comment|/**      * Test case to prove that deleting an object in one ObjectStore and committing to the      * database will be reflected in the peer ObjectStore using the same DataRowCache. By      * default DELETED objects will be changed to TRANSIENT.      */
 annotation|@
 name|Test
 specifier|public
@@ -2028,7 +2035,7 @@ literal|3000
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Test case to prove that inserting an object in one ObjectStore and committing to      * the database will be reflected in the peer ObjectStore using the same DataRowCache.      * This would mean refreshing to-many collections.      *       * @throws Exception      */
+comment|/**      * Test case to prove that inserting an object in one ObjectStore and committing to      * the database will be reflected in the peer ObjectStore using the same DataRowCache.      * This would mean refreshing to-many collections.      */
 annotation|@
 name|Test
 specifier|public
@@ -2363,10 +2370,16 @@ literal|"UPDATE ARTIST SET ARTIST_NAME = #bind($newName) WHERE ARTIST_NAME = #bi
 argument_list|)
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|map
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -2391,7 +2404,7 @@ argument_list|)
 expr_stmt|;
 name|update
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|map
 argument_list|)
@@ -2421,6 +2434,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|Artist
 operator|.
@@ -3152,10 +3166,16 @@ name|template
 argument_list|)
 decl_stmt|;
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|map
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|(
 literal|3
 argument_list|)
@@ -3180,7 +3200,7 @@ argument_list|)
 expr_stmt|;
 name|update
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|map
 argument_list|)

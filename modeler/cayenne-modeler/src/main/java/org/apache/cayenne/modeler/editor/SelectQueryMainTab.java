@@ -147,6 +147,16 @@ end_import
 
 begin_import
 import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|ListCellRenderer
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -230,6 +240,20 @@ operator|.
 name|map
 operator|.
 name|Entity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|ObjEntity
 import|;
 end_import
 
@@ -522,6 +546,9 @@ name|name
 decl_stmt|;
 specifier|protected
 name|JComboBox
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|queryRoot
 decl_stmt|;
 specifier|protected
@@ -1120,7 +1147,7 @@ operator|.
 name|getCurrentDataMap
 argument_list|()
 decl_stmt|;
-name|Object
+name|ObjEntity
 index|[]
 name|roots
 init|=
@@ -1130,7 +1157,13 @@ name|getObjEntities
 argument_list|()
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|ObjEntity
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -1155,10 +1188,14 @@ argument_list|)
 expr_stmt|;
 block|}
 name|DefaultComboBoxModel
+argument_list|<
+name|ObjEntity
+argument_list|>
 name|model
 init|=
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|roots
 argument_list|)
@@ -1370,7 +1407,7 @@ argument_list|(
 name|text
 argument_list|)
 decl_stmt|;
-comment|/**                  * Advanced checking. See CAY-888 #1                  */
+comment|/*                  * Advanced checking. See CAY-888 #1                  */
 if|if
 condition|(
 name|query
@@ -1604,7 +1641,7 @@ operator|instanceof
 name|ASTPath
 condition|)
 block|{
-comment|/**                  * Try to iterate through path, if some attributes are not present,                  * exception will be raised                  */
+comment|/*                  * Try to iterate through path, if some attributes are not present,                  * exception will be raised                  */
 name|Iterator
 argument_list|<
 name|CayenneMapEntry
@@ -1778,7 +1815,7 @@ name|needChangeName
 condition|)
 block|{
 comment|//not changed by user
-comment|/**                          * Doing auto name change, following CAY-888 #2                          */
+comment|/*                          * Doing auto name change, following CAY-888 #2                          */
 name|String
 name|newPrefix
 init|=

@@ -4204,7 +4204,7 @@ return|return
 name|transactionFactory
 return|;
 block|}
-comment|/**      * @since 4.0      * @deprecated since 4.0 avoid using thsi directly. Transaction management      *             at this level will be eventually removed      */
+comment|/**      * @since 4.0      * @deprecated since 4.0 avoid using this directly. Transaction management      *             at this level will be eventually removed      */
 annotation|@
 name|Deprecated
 specifier|public

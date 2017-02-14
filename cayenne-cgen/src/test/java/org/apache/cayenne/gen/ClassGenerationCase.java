@@ -81,7 +81,7 @@ name|runtime
 operator|.
 name|log
 operator|.
-name|NullLogSystem
+name|NullLogChute
 import|;
 end_import
 
@@ -149,7 +149,7 @@ name|RuntimeConstants
 operator|.
 name|RUNTIME_LOG_LOGSYSTEM_CLASS
 argument_list|,
-name|NullLogSystem
+name|NullLogChute
 operator|.
 name|class
 operator|.

@@ -88,6 +88,11 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 class|class
 name|NamedQueryTest
@@ -194,8 +199,8 @@ decl_stmt|;
 name|assertTrue
 argument_list|(
 name|clone
-operator|instanceof
-name|NamedQuery
+operator|!=
+literal|null
 argument_list|)
 expr_stmt|;
 name|NamedQuery

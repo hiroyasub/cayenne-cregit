@@ -1069,7 +1069,7 @@ name|class
 argument_list|,
 name|e
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|Collections
 operator|.
@@ -1322,7 +1322,7 @@ name|class
 argument_list|,
 name|e
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|Collections
 operator|.
@@ -1582,7 +1582,7 @@ name|class
 argument_list|,
 name|e
 operator|.
-name|expWithParameters
+name|params
 argument_list|(
 name|Collections
 operator|.

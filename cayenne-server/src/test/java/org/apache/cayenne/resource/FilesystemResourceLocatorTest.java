@@ -547,6 +547,9 @@ name|assertEquals
 argument_list|(
 name|f1
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -625,6 +628,9 @@ name|assertEquals
 argument_list|(
 name|f1
 operator|.
+name|toURI
+argument_list|()
+operator|.
 name|toURL
 argument_list|()
 argument_list|,
@@ -640,6 +646,9 @@ expr_stmt|;
 name|assertEquals
 argument_list|(
 name|f2
+operator|.
+name|toURI
+argument_list|()
 operator|.
 name|toURL
 argument_list|()

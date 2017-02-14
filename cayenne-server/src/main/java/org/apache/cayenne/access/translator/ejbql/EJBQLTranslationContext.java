@@ -611,7 +611,7 @@ argument_list|)
 decl_stmt|;
 name|query
 operator|.
-name|setParameters
+name|setParams
 argument_list|(
 name|boundParameters
 argument_list|)

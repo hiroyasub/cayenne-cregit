@@ -486,8 +486,14 @@ operator|)
 condition|?
 name|Collections
 operator|.
-name|EMPTY_MAP
-else|:
+expr|<
+name|String
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
+operator|:
 name|Collections
 operator|.
 name|unmodifiableMap
@@ -528,7 +534,13 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+operator|,
+name|Object
+operator|>
+name|emptyMap
+argument_list|()
 return|;
 block|}
 annotation|@
@@ -698,7 +710,7 @@ name|entrySet
 argument_list|()
 control|)
 block|{
-name|Object
+name|String
 name|entryKey
 init|=
 name|entry
@@ -1006,7 +1018,7 @@ argument_list|()
 decl_stmt|;
 comment|// handle multiple keys - must sort the keys to use with
 comment|// HashCodeBuilder
-name|Object
+name|String
 index|[]
 name|keys
 init|=
@@ -1016,7 +1028,13 @@ name|keySet
 argument_list|()
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|String
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 name|Arrays
 operator|.
@@ -1349,7 +1367,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|Object
+name|String
 name|key
 range|:
 name|keys

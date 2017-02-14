@@ -175,7 +175,8 @@ name|entityWeights
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 annotation|@
@@ -265,6 +266,11 @@ block|}
 block|}
 block|}
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+annotation|@
 name|Override
 specifier|protected
 name|Comparator
@@ -303,6 +309,11 @@ return|return
 name|c
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 annotation|@
 name|Override
 specifier|protected
@@ -366,9 +377,6 @@ operator|!=
 literal|null
 condition|?
 name|w
-operator|.
-name|intValue
-argument_list|()
 else|:
 literal|1
 return|;

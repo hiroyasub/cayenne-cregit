@@ -1290,7 +1290,14 @@ comment|// must do a slow map scan to ensure the object is not mapped under a di
 comment|// key...
 name|Iterator
 argument_list|<
-name|?
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 argument_list|>
 name|it
 init|=
@@ -1320,16 +1327,6 @@ name|Object
 argument_list|>
 name|e
 init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-argument_list|<
-name|Object
-argument_list|,
-name|Object
-argument_list|>
-operator|)
 name|it
 operator|.
 name|next
