@@ -244,15 +244,13 @@ name|chain
 operator|!=
 literal|null
 operator|)
-condition|?
+operator|&&
 name|chain
 operator|.
 name|remove
 argument_list|(
 name|query
 argument_list|)
-else|:
-literal|false
 return|;
 block|}
 specifier|public

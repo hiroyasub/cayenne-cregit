@@ -435,6 +435,14 @@ name|getCacheGroups
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|assertNull
+argument_list|(
+name|selectQuery
+operator|.
+name|getCacheGroup
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|0
@@ -483,8 +491,7 @@ name|void
 name|testCreateReplacementQuery_Full
 parameter_list|()
 block|{
-comment|// add all possible attributes to the query and make sure they got
-comment|// propagated
+comment|// add all possible attributes to the query and make sure they got propagated
 name|ObjectSelect
 argument_list|<
 name|Artist
@@ -542,8 +549,6 @@ operator|.
 name|localCache
 argument_list|(
 literal|"cg2"
-argument_list|,
-literal|"cg1"
 argument_list|)
 operator|.
 name|limit
@@ -746,17 +751,25 @@ expr_stmt|;
 name|assertArrayEquals
 argument_list|(
 operator|new
-name|Object
+name|String
 index|[]
 block|{
 literal|"cg2"
-block|,
-literal|"cg1"
 block|}
 argument_list|,
 name|selectQuery
 operator|.
 name|getCacheGroups
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|"cg2"
+argument_list|,
+name|selectQuery
+operator|.
+name|getCacheGroup
 argument_list|()
 argument_list|)
 expr_stmt|;

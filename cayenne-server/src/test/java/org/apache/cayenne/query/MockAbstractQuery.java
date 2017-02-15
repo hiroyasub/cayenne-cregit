@@ -58,6 +58,17 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Override
+specifier|protected
+name|BaseQueryMetadata
+name|getBaseMetaData
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_class
 

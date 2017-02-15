@@ -27,16 +27,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Objects
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -147,6 +137,7 @@ implements|implements
 name|QueryCache
 block|{
 comment|/**      * Default cache group name.      */
+specifier|private
 specifier|static
 specifier|final
 name|String
@@ -156,6 +147,7 @@ literal|"cayenne.default.cachegroup"
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|Log
 name|logger
 init|=
@@ -290,12 +282,7 @@ name|cacheName
 init|=
 name|cacheName
 argument_list|(
-name|key
-argument_list|,
 name|metadata
-operator|.
-name|getCacheGroups
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|Ehcache
@@ -387,12 +374,7 @@ name|cacheName
 init|=
 name|cacheName
 argument_list|(
-name|key
-argument_list|,
 name|metadata
-operator|.
-name|getCacheGroups
-argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// create empty cache for cache group here, as we have a factory to
@@ -537,65 +519,25 @@ specifier|protected
 name|String
 name|cacheName
 parameter_list|(
-name|String
-name|key
-parameter_list|,
-name|String
-modifier|...
-name|cacheGroups
+name|QueryMetadata
+name|metadata
 parameter_list|)
 block|{
 if|if
 condition|(
-name|cacheGroups
+name|metadata
+operator|.
+name|getCacheGroup
+argument_list|()
 operator|!=
 literal|null
-operator|&&
-name|cacheGroups
-operator|.
-name|length
-operator|>
-literal|0
 condition|)
 block|{
-if|if
-condition|(
-name|cacheGroups
-operator|.
-name|length
-operator|>
-literal|1
-condition|)
-block|{
-name|logger
-operator|.
-name|warn
-argument_list|(
-literal|"multiple cache groups per key '"
-operator|+
-name|key
-operator|+
-literal|"', ignoring all but the first one: "
-operator|+
-name|cacheGroups
-index|[
-literal|0
-index|]
-argument_list|)
-expr_stmt|;
-block|}
 return|return
-name|Objects
+name|metadata
 operator|.
-name|requireNonNull
-argument_list|(
-name|cacheGroups
-index|[
-literal|0
-index|]
-argument_list|,
-literal|"Null cache group"
-argument_list|)
+name|getCacheGroup
+argument_list|()
 return|;
 block|}
 return|return
@@ -638,12 +580,7 @@ name|cacheName
 init|=
 name|cacheName
 argument_list|(
-name|key
-argument_list|,
 name|metadata
-operator|.
-name|getCacheGroups
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|Ehcache
@@ -793,7 +730,7 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Returns default cache group.      *       * @deprecated since 4.0 - this method is no longer in use. If you are      *             overriding it, override {@link #cacheName(String, String...)}      *             instead.      */
+comment|/**      * Returns default cache group.      *       * @deprecated since 4.0 - this method is no longer in use. If you are      *             overriding it, override {@link #cacheName(QueryMetadata)}      *             instead.      */
 annotation|@
 name|Deprecated
 specifier|public

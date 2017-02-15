@@ -269,11 +269,11 @@ name|cacheStrategy
 expr_stmt|;
 name|this
 operator|.
-name|cacheGroups
+name|cacheGroup
 operator|=
 name|select
 operator|.
-name|cacheGroups
+name|cacheGroup
 expr_stmt|;
 block|}
 annotation|@

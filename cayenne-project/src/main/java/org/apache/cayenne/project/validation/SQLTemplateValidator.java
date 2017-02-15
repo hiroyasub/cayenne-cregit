@@ -134,6 +134,13 @@ argument_list|,
 name|validationResult
 argument_list|)
 expr_stmt|;
+name|validateCacheGroup
+argument_list|(
+name|query
+argument_list|,
+name|validationResult
+argument_list|)
+expr_stmt|;
 block|}
 name|void
 name|validateDefaultSQL

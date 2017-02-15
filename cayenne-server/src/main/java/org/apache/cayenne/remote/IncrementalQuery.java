@@ -199,7 +199,7 @@ argument_list|)
 block|{
 specifier|public
 name|Query
-name|getOrginatingQuery
+name|getOriginatingQuery
 parameter_list|()
 block|{
 return|return

@@ -169,6 +169,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|super
 operator|.
 name|resolve
@@ -181,6 +182,10 @@ literal|null
 argument_list|)
 condition|)
 block|{
+return|return
+literal|false
+return|;
+block|}
 if|if
 condition|(
 name|QueryCacheStrategy
@@ -191,9 +196,10 @@ name|getCacheStrategy
 argument_list|()
 condition|)
 block|{
+return|return
+literal|true
+return|;
 block|}
-else|else
-block|{
 comment|// create a unique key based on entity, EJBQL, and parameters
 name|StringBuilder
 name|key
@@ -504,13 +510,8 @@ operator|.
 name|toString
 argument_list|()
 expr_stmt|;
-block|}
 return|return
 literal|true
-return|;
-block|}
-return|return
-literal|false
 return|;
 block|}
 block|}

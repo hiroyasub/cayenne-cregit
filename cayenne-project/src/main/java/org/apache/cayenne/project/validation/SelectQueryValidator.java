@@ -176,6 +176,13 @@ argument_list|,
 name|validationResult
 argument_list|)
 expr_stmt|;
+name|validateCacheGroup
+argument_list|(
+name|query
+argument_list|,
+name|validationResult
+argument_list|)
+expr_stmt|;
 comment|// Resolve root to Entity for further validation
 name|Entity
 name|root

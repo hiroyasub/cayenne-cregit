@@ -481,7 +481,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Cache Groups:"
+literal|"Cache Group:"
 argument_list|,
 name|cc
 operator|.

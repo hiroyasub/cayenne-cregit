@@ -120,8 +120,8 @@ specifier|public
 specifier|abstract
 class|class
 name|AbstractQuery
-implements|implements
-name|Query
+extends|extends
+name|CacheableQuery
 block|{
 comment|/**      * The root object this query. May be an entity name, Java class, ObjEntity or      * DbEntity, depending on the specific query and how it was constructed.      */
 specifier|protected
@@ -163,6 +163,8 @@ name|dataMap
 expr_stmt|;
 block|}
 comment|/**      * Returns a symbolic name of the query.      *       * @since 1.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getName

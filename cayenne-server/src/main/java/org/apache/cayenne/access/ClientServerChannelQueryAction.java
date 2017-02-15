@@ -391,7 +391,7 @@ name|originatingQuery
 init|=
 name|serverMetadata
 operator|.
-name|getOrginatingQuery
+name|getOriginatingQuery
 argument_list|()
 decl_stmt|;
 if|if

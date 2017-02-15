@@ -40,7 +40,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An interface that defines generic QueryCache.  *<p>  * Note that depending on implementation, {@link #remove(String)},  * {@link #removeGroup(String)} and {@link #clear()} methods may mark the matching  * existing entries as expired instead of actually removing them. So it may appear that  * the size of the cache, as reported by {@link #size()} method, is unchanged.  *   * @since 3.0  */
+comment|/**  *<p>  * An interface that defines generic QueryCache.  *</p>  *<p>  * Note that depending on implementation, {@link #remove(String)},  * {@link #removeGroup(String)} and {@link #clear()} methods may mark the matching  * existing entries as expired instead of actually removing them. So it may appear that  * the size of the cache, as reported by {@link #size()} method, is unchanged.  *</p>  * @since 3.0  */
 end_comment
 
 begin_interface
