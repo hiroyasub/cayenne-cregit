@@ -1147,7 +1147,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"45"
+literal|"34"
 argument_list|,
 name|exp
 operator|.

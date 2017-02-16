@@ -61,7 +61,7 @@ specifier|abstract
 class|class
 name|ASTFunctionCall
 extends|extends
-name|SimpleNode
+name|EvaluatedNode
 block|{
 specifier|private
 name|String

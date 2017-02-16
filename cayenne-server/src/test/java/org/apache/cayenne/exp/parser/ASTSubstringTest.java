@@ -192,7 +192,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"34567890"
+literal|"23456789"
 argument_list|,
 name|res
 argument_list|)
