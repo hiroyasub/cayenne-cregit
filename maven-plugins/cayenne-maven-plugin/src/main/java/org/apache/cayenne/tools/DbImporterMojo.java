@@ -350,11 +350,6 @@ decl_stmt|;
 comment|/**      * Connection properties.      *      * @see DbImportDataSourceConfig      * @since 4.0      */
 annotation|@
 name|Parameter
-argument_list|(
-name|required
-operator|=
-literal|true
-argument_list|)
 specifier|private
 name|DbImportDataSourceConfig
 name|dataSource
@@ -505,6 +500,12 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+comment|// check missing data source parameters
+name|dataSource
+operator|.
+name|validate
+argument_list|()
+expr_stmt|;
 name|DbImportConfiguration
 name|config
 init|=
