@@ -419,6 +419,8 @@ return|return
 name|wrappedMd
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getName
@@ -457,6 +459,8 @@ name|this
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
@@ -472,6 +476,8 @@ block|}
 block|}
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap

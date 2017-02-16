@@ -541,6 +541,8 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getName
@@ -573,6 +575,8 @@ argument_list|()
 throw|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap

@@ -103,11 +103,15 @@ name|Query
 argument_list|>
 name|chain
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|String
 name|name
 decl_stmt|;
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|DataMap
 name|dataMap
@@ -338,6 +342,8 @@ literal|"and should've been split into separate queries during routing phase."
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getName
@@ -347,6 +353,8 @@ return|return
 name|name
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setName
@@ -363,6 +371,8 @@ name|name
 expr_stmt|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
@@ -373,6 +383,8 @@ name|dataMap
 return|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataMap

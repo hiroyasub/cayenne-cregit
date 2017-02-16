@@ -128,15 +128,21 @@ specifier|protected
 name|Object
 name|root
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|String
 name|name
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|DataMap
 name|dataMap
 decl_stmt|;
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
@@ -147,6 +153,8 @@ name|dataMap
 return|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataMap
@@ -175,6 +183,8 @@ name|name
 return|;
 block|}
 comment|/**      * Sets a symbolic name of the query.      *       * @since 1.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setName

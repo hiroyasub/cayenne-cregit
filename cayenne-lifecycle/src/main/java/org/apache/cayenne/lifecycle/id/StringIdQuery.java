@@ -385,10 +385,14 @@ name|stringIds
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|protected
 name|String
 name|name
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|DataMap
 name|dataMap
@@ -1016,6 +1020,8 @@ literal|"This query was supposed to be replace with a set of SelectQueries durin
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getName
@@ -1040,6 +1046,8 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
@@ -1049,6 +1057,8 @@ return|return
 name|dataMap
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataMap

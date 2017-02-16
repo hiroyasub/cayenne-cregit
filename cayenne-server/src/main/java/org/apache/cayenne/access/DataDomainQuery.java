@@ -382,6 +382,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap

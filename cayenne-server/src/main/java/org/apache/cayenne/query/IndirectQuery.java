@@ -97,6 +97,8 @@ decl_stmt|;
 comment|/** 	 * @since 3.1 	 */
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
@@ -107,6 +109,8 @@ name|dataMap
 return|;
 block|}
 comment|/** 	 * @since 3.1 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataMap
@@ -158,6 +162,8 @@ return|return
 name|name
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setName

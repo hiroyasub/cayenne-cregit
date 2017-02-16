@@ -108,11 +108,15 @@ specifier|protected
 name|DbEntity
 name|dbEntity
 decl_stmt|;
+annotation|@
+name|Deprecated
 specifier|protected
 name|String
 name|name
 decl_stmt|;
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|DataMap
 name|dataMap
@@ -217,6 +221,8 @@ block|}
 comment|/**      * @since 3.1      */
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
@@ -227,6 +233,8 @@ name|dataMap
 return|;
 block|}
 comment|/**      * @since 3.1      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setDataMap

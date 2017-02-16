@@ -343,6 +343,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|String
 name|getName
@@ -352,6 +354,8 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|public
 name|DataMap
 name|getDataMap
