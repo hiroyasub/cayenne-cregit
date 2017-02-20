@@ -115,6 +115,11 @@ name|TransactionListener
 name|listener
 parameter_list|)
 function_decl|;
+comment|/**      * Is this transaction managed by external transaction manager      */
+name|boolean
+name|isExternal
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

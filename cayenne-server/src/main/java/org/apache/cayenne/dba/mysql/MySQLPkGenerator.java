@@ -123,6 +123,62 @@ name|DbEntity
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|BaseTransaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|tx
+operator|.
+name|Transaction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|Log
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|logging
+operator|.
+name|LogFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  */
 end_comment
@@ -134,6 +190,21 @@ name|MySQLPkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Log
+name|logger
+init|=
+name|LogFactory
+operator|.
+name|getLog
+argument_list|(
+name|MySQLPkGenerator
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 name|MySQLPkGenerator
 parameter_list|(
 name|JdbcAdapter
@@ -177,6 +248,44 @@ init|=
 operator|-
 literal|1L
 decl_stmt|;
+comment|// Start new transaction if needed, can any way lead to problems when
+comment|// using external transaction manager. We can only warn about it.
+comment|// See https://issues.apache.org/jira/browse/CAY-2186 for details.
+name|Transaction
+name|transaction
+init|=
+name|BaseTransaction
+operator|.
+name|getThreadTransaction
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|transaction
+operator|!=
+literal|null
+operator|&&
+name|transaction
+operator|.
+name|isExternal
+argument_list|()
+condition|)
+block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"Using MysqlPkGenerator with external transaction manager may lead to inconsistent state."
+argument_list|)
+expr_stmt|;
+block|}
+name|BaseTransaction
+operator|.
+name|bindThreadTransaction
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 try|try
 init|(
 name|Connection
@@ -337,6 +446,16 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+finally|finally
+block|{
+name|BaseTransaction
+operator|.
+name|bindThreadTransaction
+argument_list|(
+name|transaction
+argument_list|)
+expr_stmt|;
+block|}
 comment|// check errors
 if|if
 condition|(
@@ -408,7 +527,13 @@ block|{
 return|return
 literal|"CREATE TABLE IF NOT EXISTS AUTO_PK_SUPPORT "
 operator|+
-literal|"(TABLE_NAME CHAR(100) NOT NULL, NEXT_ID BIGINT NOT NULL, UNIQUE (TABLE_NAME))"
+literal|"(TABLE_NAME CHAR(100) NOT NULL, NEXT_ID BIGINT NOT NULL, UNIQUE (TABLE_NAME)) "
+operator|+
+literal|"ENGINE="
+operator|+
+name|MySQLAdapter
+operator|.
+name|DEFAULT_STORAGE_ENGINE
 return|;
 block|}
 comment|/** 	 * @since 3.0 	 */
