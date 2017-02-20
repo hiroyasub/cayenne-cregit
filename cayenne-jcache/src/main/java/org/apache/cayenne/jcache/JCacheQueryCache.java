@@ -21,16 +21,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -522,7 +512,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Returns -1 to indicate that we can't calculate the size. JCache and EhCache can potentially have a complex topology      * that can not be meaningfully described by a single int. Use other means (like provider-specific JMX) to monitor cache.      *      * @deprecated since 4.0      * @return -1      */
+comment|/**      * Returns -1 to indicate that we can't calculate the size. JCache and EhCache can potentially have a complex topology      * that can not be meaningfully described by a single int. Use other means (like provider-specific JMX) to monitor cache.      *      * @return -1      */
 annotation|@
 name|Override
 annotation|@

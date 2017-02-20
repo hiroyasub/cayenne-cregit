@@ -67,20 +67,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|ConfigurationNodeVisitor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DataMap
@@ -128,7 +114,9 @@ name|String
 index|[]
 name|groupKeys
 decl_stmt|;
-comment|/**      * Creates a RefreshQuery that does full refresh of all registered objects, cascading      * refresh all the way to the shared cache.      */
+comment|/**      * Creates a RefreshQuery that does full refresh of all registered objects, cascading      * refresh all the way to the shared cache.      *      * @deprecated since 4.0, "refresh all" query will drop all cache contents      * @see org.apache.cayenne.cache.QueryCache#clear()      */
+annotation|@
+name|Deprecated
 specifier|public
 name|RefreshQuery
 parameter_list|()

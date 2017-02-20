@@ -150,17 +150,17 @@ return|return
 name|delegate
 return|;
 block|}
-comment|/**      * Clears the underlying shared cache.      */
+comment|/**      * Clears the underlying shared cache.      * @see QueryCache#clear()      * @deprecated since 4.0      */
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|clear
 parameter_list|()
 block|{
-comment|// seems pretty evil - it clears the keys that do not belong to our
-comment|// subset of the
-comment|// cache
+comment|// seems pretty evil - it clears the keys that do not belong to our subset of the cache
 name|delegate
 operator|.
 name|clear
@@ -298,9 +298,11 @@ name|groupKey
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a shared cache size.      */
+comment|/**      * Returns a shared cache size.      * @see QueryCache#size()      * @deprecated since 4.0      */
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|int
 name|size

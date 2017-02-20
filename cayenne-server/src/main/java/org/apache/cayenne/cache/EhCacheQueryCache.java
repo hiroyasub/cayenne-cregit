@@ -129,7 +129,13 @@ name|Element
 import|;
 end_import
 
+begin_comment
+comment|/**  * @deprecated since 4.0 please use JCacheQueryCache (provided by "cayenne-jcache" module)  */
+end_comment
+
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|EhCacheQueryCache
