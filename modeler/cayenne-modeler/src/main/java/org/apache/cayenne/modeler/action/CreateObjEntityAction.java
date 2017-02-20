@@ -655,6 +655,17 @@ argument_list|)
 decl_stmt|;
 name|merger
 operator|.
+name|setNameGenerator
+argument_list|(
+operator|new
+name|DbEntitySyncAction
+operator|.
+name|PreserveRelationshipNameGenerator
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|merger
+operator|.
 name|addEntityMergeListener
 argument_list|(
 name|DeleteRuleUpdater
