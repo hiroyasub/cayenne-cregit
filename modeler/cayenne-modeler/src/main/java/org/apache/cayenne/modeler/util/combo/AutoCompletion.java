@@ -206,7 +206,7 @@ argument_list|,
 name|strict
 argument_list|)
 expr_stmt|;
-comment|/**          * Marking combobox as auto-completing          */
+comment|// Marking combobox as auto-completing
 name|comboBox
 operator|.
 name|putClientProperty
@@ -687,7 +687,6 @@ name|KeyEvent
 operator|.
 name|VK_ENTER
 case|:
-return|return;
 case|case
 name|KeyEvent
 operator|.

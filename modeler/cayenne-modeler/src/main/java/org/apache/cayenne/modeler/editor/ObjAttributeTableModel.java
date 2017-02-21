@@ -1649,14 +1649,9 @@ name|Boolean
 operator|)
 operator|&&
 operator|(
-operator|(
 name|Boolean
 operator|)
 name|value
-operator|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

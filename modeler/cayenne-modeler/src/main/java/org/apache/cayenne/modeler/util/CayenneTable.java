@@ -685,7 +685,7 @@ name|e
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * ListSelectionModel for Cayenne table. Has a method to set multiple rows selection      * at once.      */
+comment|/**      * ListSelectionModel for Cayenne table. Has a method to set multiple rows selection at once.      */
 class|class
 name|CayenneListSelectionModel
 extends|extends
@@ -706,7 +706,7 @@ index|[]
 name|rows
 parameter_list|)
 block|{
-comment|/**              * First check if we must do anything at all              */
+comment|// First check if we must do anything at all
 name|boolean
 name|selectionChanged
 init|=

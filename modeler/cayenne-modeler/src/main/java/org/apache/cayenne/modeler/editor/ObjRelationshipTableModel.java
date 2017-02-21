@@ -147,6 +147,9 @@ class|class
 name|ObjRelationshipTableModel
 extends|extends
 name|CayenneTableModel
+argument_list|<
+name|ObjRelationship
+argument_list|>
 block|{
 comment|// Columns
 specifier|public
@@ -230,6 +233,7 @@ name|eventSource
 argument_list|,
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|entity
 operator|.
@@ -256,15 +260,6 @@ name|RelationshipComparator
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|void
-name|orderList
-parameter_list|()
-block|{
-comment|// NOOP
 block|}
 specifier|public
 name|ObjEntity
@@ -416,9 +411,6 @@ name|size
 argument_list|()
 operator|)
 condition|?
-operator|(
-name|ObjRelationship
-operator|)
 name|objectList
 operator|.
 name|get
@@ -659,7 +651,10 @@ operator|.
 name|append
 argument_list|(
 literal|", "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|collection
 argument_list|)
 expr_stmt|;
@@ -774,7 +769,7 @@ argument_list|(
 name|target
 argument_list|)
 expr_stmt|;
-comment|/**              * Clear existing relationships, otherwise addDbRelationship() might fail              */
+comment|// Clear existing relationships, otherwise addDbRelationship() might fail
 name|relationship
 operator|.
 name|clearDbRelationships
@@ -904,14 +899,9 @@ name|Boolean
 operator|)
 operator|&&
 operator|(
-operator|(
 name|Boolean
 operator|)
 name|value
-operator|)
-operator|.
-name|booleanValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|fireTableCellUpdated
@@ -1098,45 +1088,32 @@ class|class
 name|RelationshipComparator
 implements|implements
 name|Comparator
+argument_list|<
+name|ObjRelationship
+argument_list|>
 block|{
 specifier|public
 name|int
 name|compare
 parameter_list|(
-name|Object
+name|ObjRelationship
 name|o1
 parameter_list|,
-name|Object
+name|ObjRelationship
 name|o2
 parameter_list|)
 block|{
-name|ObjRelationship
-name|r1
-init|=
-operator|(
-name|ObjRelationship
-operator|)
-name|o1
-decl_stmt|;
-name|ObjRelationship
-name|r2
-init|=
-operator|(
-name|ObjRelationship
-operator|)
-name|o2
-decl_stmt|;
 name|int
 name|delta
 init|=
 name|getWeight
 argument_list|(
-name|r1
+name|o1
 argument_list|)
 operator|-
 name|getWeight
 argument_list|(
-name|r2
+name|o2
 argument_list|)
 decl_stmt|;
 return|return
@@ -1154,12 +1131,12 @@ name|nullSafeCompare
 argument_list|(
 literal|true
 argument_list|,
-name|r1
+name|o1
 operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|r2
+name|o2
 operator|.
 name|getName
 argument_list|()
@@ -1310,7 +1287,6 @@ specifier|private
 name|int
 name|sortCol
 decl_stmt|;
-specifier|public
 name|ObjRelationshipTableComparator
 parameter_list|(
 name|int
@@ -1361,10 +1337,6 @@ condition|(
 name|o1
 operator|==
 literal|null
-operator|&&
-name|o2
-operator|!=
-literal|null
 condition|)
 block|{
 return|return
@@ -1374,10 +1346,6 @@ return|;
 block|}
 if|else if
 condition|(
-name|o1
-operator|!=
-literal|null
-operator|&&
 name|o2
 operator|==
 literal|null

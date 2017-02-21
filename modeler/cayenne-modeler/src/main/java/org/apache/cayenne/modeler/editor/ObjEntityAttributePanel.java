@@ -961,7 +961,7 @@ argument_list|,
 literal|"objEntity/attributeTable"
 argument_list|)
 expr_stmt|;
-comment|/**          * Create and install a popup          */
+comment|// Create and install a popup
 name|Icon
 name|ico
 init|=
@@ -1177,14 +1177,13 @@ operator|.
 name|startupAction
 argument_list|()
 expr_stmt|;
-comment|/**                  * This is required for a table to be updated properly                  */
+comment|// This is required for a table to be updated properly
 name|table
 operator|.
 name|cancelEditing
 argument_list|()
 expr_stmt|;
-comment|// need to refresh selected row... do this by unselecting/selecting the
-comment|// row
+comment|// need to refresh selected row... do this by unselecting/selecting the row
 name|table
 operator|.
 name|getSelectionModel
@@ -1270,9 +1269,7 @@ name|embeddableNames
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|List
@@ -1283,14 +1280,14 @@ name|typeNames
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|DataMap
+name|dataMap
+range|:
 operator|(
 operator|(
 name|DataChannelDescriptor
@@ -1306,29 +1303,8 @@ operator|)
 operator|.
 name|getDataMaps
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DataMap
-name|dataMap
-init|=
-operator|(
-name|DataMap
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 for|for
 control|(
 name|Embeddable

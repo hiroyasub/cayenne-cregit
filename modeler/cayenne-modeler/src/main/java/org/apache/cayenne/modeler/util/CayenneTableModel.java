@@ -220,7 +220,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of CayenneModeler table model classes.  *   */
+comment|/**  * Superclass of CayenneModeler table model classes.  */
 end_comment
 
 begin_class
@@ -273,10 +273,6 @@ parameter_list|,
 name|Object
 name|eventSource
 parameter_list|,
-name|java
-operator|.
-name|util
-operator|.
 name|List
 argument_list|<
 name|T
@@ -305,7 +301,6 @@ name|objectList
 operator|=
 name|objectList
 expr_stmt|;
-comment|//orderList();
 block|}
 specifier|public
 name|void
@@ -438,44 +433,6 @@ name|int
 name|col
 parameter_list|)
 function_decl|;
-comment|/**      * Orders internal object list. Key returned by<code>getOrderingKey</code> is used      * for comparison.      */
-specifier|protected
-name|void
-name|orderList
-parameter_list|()
-block|{
-name|String
-name|key
-init|=
-name|getOrderingKey
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|key
-operator|!=
-literal|null
-condition|)
-block|{
-name|Collections
-operator|.
-name|sort
-argument_list|(
-name|objectList
-argument_list|,
-operator|new
-name|PropertyComparator
-argument_list|(
-name|getOrderingKey
-argument_list|()
-argument_list|,
-name|getElementsClass
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 comment|/**      * Returns Java class of the internal list elements.      */
 specifier|public
 specifier|abstract
@@ -486,16 +443,6 @@ argument_list|>
 name|getElementsClass
 parameter_list|()
 function_decl|;
-comment|/**      * Returns the key by which to order elements in the object list. Default value is      * "name".      */
-specifier|public
-name|String
-name|getOrderingKey
-parameter_list|()
-block|{
-return|return
-literal|"name"
-return|;
-block|}
 comment|/**      * Returns the number of objects on the list.      */
 specifier|public
 name|int
@@ -569,7 +516,7 @@ specifier|public
 name|void
 name|removeRow
 parameter_list|(
-name|Object
+name|T
 name|row
 parameter_list|)
 block|{
@@ -589,7 +536,7 @@ specifier|public
 name|int
 name|moveRowUp
 parameter_list|(
-name|Object
+name|T
 name|row
 parameter_list|)
 block|{
@@ -672,7 +619,7 @@ specifier|public
 name|int
 name|moveRowDown
 parameter_list|(
-name|Object
+name|T
 name|row
 parameter_list|)
 block|{
@@ -792,8 +739,14 @@ block|}
 specifier|protected
 class|class
 name|PropertyComparator
+parameter_list|<
+name|C
+parameter_list|>
 implements|implements
 name|Comparator
+argument_list|<
+name|C
+argument_list|>
 block|{
 name|Method
 name|getter
@@ -906,14 +859,19 @@ name|propertyName
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|int
 name|compare
 parameter_list|(
-name|Object
+name|C
 name|o1
 parameter_list|,
-name|Object
+name|C
 name|o2
 parameter_list|)
 block|{
@@ -943,10 +901,6 @@ condition|(
 name|o1
 operator|==
 literal|null
-operator|&&
-name|o2
-operator|!=
-literal|null
 condition|)
 block|{
 return|return
@@ -956,10 +910,6 @@ return|;
 block|}
 if|else if
 condition|(
-name|o1
-operator|!=
-literal|null
-operator|&&
 name|o2
 operator|==
 literal|null
@@ -1081,6 +1031,7 @@ name|objectList
 argument_list|,
 operator|new
 name|PropertyComparator
+argument_list|<>
 argument_list|(
 name|string
 argument_list|,

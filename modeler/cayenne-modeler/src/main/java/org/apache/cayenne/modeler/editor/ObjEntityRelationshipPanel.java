@@ -1633,6 +1633,9 @@ argument_list|()
 operator|.
 name|indexOf
 argument_list|(
+operator|(
+name|ObjRelationship
+operator|)
 name|e
 operator|.
 name|getRelationship
@@ -1643,6 +1646,9 @@ name|model
 operator|.
 name|removeRow
 argument_list|(
+operator|(
+name|ObjRelationship
+operator|)
 name|e
 operator|.
 name|getRelationship

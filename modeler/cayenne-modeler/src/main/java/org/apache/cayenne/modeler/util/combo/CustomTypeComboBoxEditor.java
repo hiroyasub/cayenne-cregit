@@ -338,6 +338,9 @@ name|String
 name|value
 parameter_list|,
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|classTo
 parameter_list|)
 block|{
@@ -354,7 +357,7 @@ return|return
 name|value
 return|;
 block|}
-comment|/**          * We still try to it in BasicComboBox's way, so that primary object          * types (such as numbers) would still be supported           */
+comment|/*          * We still try to it in BasicComboBox's way, so that primary object          * types (such as numbers) would still be supported           */
 try|try
 block|{
 name|Method
@@ -366,14 +369,9 @@ name|getMethod
 argument_list|(
 literal|"valueOf"
 argument_list|,
-operator|new
-name|Class
-index|[]
-block|{
 name|String
 operator|.
 name|class
-block|}
 argument_list|)
 decl_stmt|;
 return|return
@@ -394,7 +392,7 @@ name|ignored
 parameter_list|)
 block|{
 block|}
-comment|/**          * We could manually convert strings to dbentities, attrs and other, but          * in this implementation we use reverse operation instead, and convert           * combobox model's items to String.          * All string values are assumed unique is one model.          */
+comment|/*          * We could manually convert strings to dbentities, attrs and other, but          * in this implementation we use reverse operation instead, and convert           * combobox model's items to String.          * All string values are assumed unique is one model.          */
 name|ComboBoxModel
 name|model
 init|=

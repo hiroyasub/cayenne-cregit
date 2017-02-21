@@ -61,30 +61,6 @@ name|awt
 operator|.
 name|event
 operator|.
-name|FocusEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|FocusListener
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
 name|MouseEvent
 import|;
 end_import
@@ -166,8 +142,6 @@ name|ActionListener
 implements|,
 name|TableCellEditor
 implements|,
-name|FocusListener
-implements|,
 name|Serializable
 block|{
 specifier|static
@@ -222,21 +196,7 @@ comment|//  Editing should be stopped when textfield loses its focus
 comment|//  otherwise the value may get lost (e.g. see CAY-1104)
 comment|//  LATER: this turned out to be the wrong fix, so I commented
 comment|//  out the code in focusLost to fix CAY-1719 and fixed CAY-1104 differently.
-name|this
-operator|.
-name|comboBox
-operator|.
-name|getEditor
-argument_list|()
-operator|.
-name|getEditorComponent
-argument_list|()
-operator|.
-name|addFocusListener
-argument_list|(
-name|this
-argument_list|)
-expr_stmt|;
+comment|// this.comboBox.getEditor().getEditorComponent().addFocusListener(this);
 comment|// remove the editor's border - the cell itself already has one
 operator|(
 operator|(
@@ -420,36 +380,6 @@ block|}
 return|return
 literal|true
 return|;
-block|}
-specifier|public
-name|void
-name|focusGained
-parameter_list|(
-name|FocusEvent
-name|e
-parameter_list|)
-block|{
-block|}
-specifier|public
-name|void
-name|focusLost
-parameter_list|(
-name|FocusEvent
-name|e
-parameter_list|)
-block|{
-if|if
-condition|(
-name|e
-operator|.
-name|getOppositeComponent
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
-comment|//stopCellEditing(); // Commented out to fix CAY-1719
-block|}
 block|}
 block|}
 end_class

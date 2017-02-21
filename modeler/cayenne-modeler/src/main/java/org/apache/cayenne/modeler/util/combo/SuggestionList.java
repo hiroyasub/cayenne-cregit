@@ -353,9 +353,7 @@ name|int
 name|maxRowCount
 parameter_list|)
 block|{
-name|int
-name|h
-init|=
+return|return
 name|super
 operator|.
 name|getPopupHeightForRowCount
@@ -375,9 +373,6 @@ name|getSize
 argument_list|()
 argument_list|)
 argument_list|)
-decl_stmt|;
-return|return
-name|h
 return|;
 block|}
 comment|/**      * @return selected index in popup      */
