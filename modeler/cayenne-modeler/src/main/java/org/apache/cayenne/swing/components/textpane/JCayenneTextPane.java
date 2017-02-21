@@ -359,10 +359,6 @@ name|int
 name|endYPositionToolTip
 decl_stmt|;
 specifier|public
-name|boolean
-name|repaint
-decl_stmt|;
-specifier|public
 name|JScrollPane
 name|getScrollPane
 parameter_list|()
@@ -465,8 +461,6 @@ name|getViewPosition
 argument_list|()
 argument_list|)
 return|;
-comment|// starting pos
-comment|// in document
 block|}
 specifier|public
 name|int
@@ -525,7 +519,7 @@ name|repaint
 argument_list|()
 expr_stmt|;
 block|}
-comment|/**      * Return an int containing the wrapped line index at the given position      *       * @param int pos      * @return int      */
+comment|/**      * Return an int containing the wrapped line index at the given position      *       * @param pos int      * @return int      */
 specifier|public
 name|int
 name|getLineNumber
@@ -611,7 +605,7 @@ return|return
 name|posLine
 return|;
 block|}
-comment|/**      * Return an int position at the given line number and symbol position in this line      *       * @param int posInLine      * @param int line      * @return int      * @throws BadLocationException      */
+comment|/**      * Return an int position at the given line number and symbol position in this line      *       * @param posInLine int      * @param line int      * @return int      * @throws BadLocationException      */
 specifier|public
 name|int
 name|getPosition
@@ -711,7 +705,7 @@ name|super
 argument_list|()
 expr_stmt|;
 name|Dimension
-name|dimention
+name|dimension
 init|=
 operator|new
 name|Dimension
@@ -723,17 +717,17 @@ argument_list|)
 decl_stmt|;
 name|setMinimumSize
 argument_list|(
-name|dimention
+name|dimension
 argument_list|)
 expr_stmt|;
 name|setPreferredSize
 argument_list|(
-name|dimention
+name|dimension
 argument_list|)
 expr_stmt|;
 name|setMinimumSize
 argument_list|(
-name|dimention
+name|dimension
 argument_list|)
 expr_stmt|;
 name|setBackground
@@ -888,9 +882,6 @@ argument_list|()
 argument_list|,
 literal|1
 argument_list|)
-operator|.
-name|toString
-argument_list|()
 decl_stmt|;
 if|if
 condition|(
@@ -918,7 +909,7 @@ name|repaint
 argument_list|()
 expr_stmt|;
 block|}
-if|if
+if|else if
 condition|(
 name|text
 operator|.
@@ -1026,7 +1017,7 @@ name|painter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * set underlines text in JCayenneTextPane      *       * @param int line - starting line for underlined text      * @param int lastIndex - starting position in line for underlined text      * @param int size      * @param String message - text for toolTip, contains the text of the error      */
+comment|/**      * set underlines text in JCayenneTextPane      *       * @param line int - starting line for underlined text      * @param lastIndex int - starting position in line for underlined text      * @param size int      * @param message String - text for toolTip, contains the text of the error      */
 specifier|public
 name|void
 name|setHighlightText
@@ -1158,31 +1149,14 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|highlights
-operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
 name|Highlighter
 operator|.
 name|Highlight
 name|h
-init|=
+range|:
 name|highlights
-index|[
-name|i
-index|]
-decl_stmt|;
+control|)
+block|{
 if|if
 condition|(
 name|h
@@ -1269,25 +1243,16 @@ argument_list|(
 name|string
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|string
-operator|!=
+name|imageError
+operator|=
+operator|!
 literal|""
-condition|)
-block|{
-name|imageError
-operator|=
-literal|true
+operator|.
+name|equals
+argument_list|(
+name|string
+argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|imageError
-operator|=
-literal|false
-expr_stmt|;
-block|}
 name|setToolTipText
 argument_list|(
 literal|""
@@ -1770,7 +1735,6 @@ name|JTextPaneScrollable
 extends|extends
 name|JTextPane
 block|{
-specifier|public
 name|JTextPaneScrollable
 parameter_list|(
 name|EditorKit
