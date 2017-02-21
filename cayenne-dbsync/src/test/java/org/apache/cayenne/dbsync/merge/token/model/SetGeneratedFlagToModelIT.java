@@ -171,6 +171,18 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+if|if
+condition|(
+operator|!
+name|accessStackAdapter
+operator|.
+name|supportsGeneratedKeysAdd
+argument_list|()
+condition|)
+block|{
+comment|// nothing to do here
+return|return;
+block|}
 name|DbEntity
 name|dbEntity
 init|=

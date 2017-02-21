@@ -574,11 +574,9 @@ name|Ordering
 argument_list|(
 name|FunctionExpressionFactory
 operator|.
-name|modExp
+name|sqrtExp
 argument_list|(
 literal|"paintingArray.estimatedPrice"
-argument_list|,
-literal|3
 argument_list|)
 argument_list|,
 name|SortOrder
@@ -588,7 +586,7 @@ argument_list|)
 decl_stmt|;
 name|doTestAppendPart
 argument_list|(
-literal|"UPPER(COUNT(ta.DATE_OF_BIRTH)), MOD(ta.ESTIMATED_PRICE, ?) DESC"
+literal|"UPPER(COUNT(ta.DATE_OF_BIRTH)), SQRT(ta.ESTIMATED_PRICE) DESC"
 argument_list|,
 name|o1
 argument_list|,

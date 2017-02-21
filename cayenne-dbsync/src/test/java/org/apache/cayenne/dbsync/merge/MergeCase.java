@@ -677,7 +677,7 @@ name|runtime
 decl_stmt|;
 annotation|@
 name|Inject
-specifier|private
+specifier|protected
 name|UnitDbAdapter
 name|accessStackAdapter
 decl_stmt|;
