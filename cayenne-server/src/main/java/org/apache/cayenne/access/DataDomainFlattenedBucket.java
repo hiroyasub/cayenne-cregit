@@ -487,7 +487,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/**      * responsible for adding the flattened Insert Queries. Its possible an insert query for the same DbEntity/ObjectId      * already has been added from the insert bucket queries if that Object also has an attribute. So we want to merge      * the data for each insert into a single insert.      *      * @param queries      */
+comment|/**      * responsible for adding the flattened Insert Queries. Its possible an insert query for the same DbEntity/ObjectId      * already has been added from the insert bucket queries if that Object also has an attribute. So we want to merge      * the data for each insert into a single insert.      */
 name|void
 name|appendInserts
 parameter_list|(
@@ -560,17 +560,6 @@ name|getDataMap
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// TODO: O(N) lookup
-name|InsertBatchQuery
-name|existingQuery
-init|=
-name|findInsertBatchQuery
-argument_list|(
-name|queries
-argument_list|,
-name|dbEntity
-argument_list|)
-decl_stmt|;
 name|InsertBatchQuery
 name|newQuery
 init|=
@@ -582,6 +571,15 @@ argument_list|,
 literal|50
 argument_list|)
 decl_stmt|;
+name|boolean
+name|newQueryAdded
+init|=
+literal|false
+decl_stmt|;
+comment|// Here can be options with multiple arcs:
+comment|//  1. they can go as different columns in a single row
+comment|//  2. they can go as different rows in one batch
+comment|//  3. mix of both
 for|for
 control|(
 name|FlattenedArcKey
@@ -603,6 +601,22 @@ operator|.
 name|buildJoinSnapshotForInsert
 argument_list|(
 name|node
+argument_list|)
+decl_stmt|;
+name|ObjectId
+name|objectId
+init|=
+literal|null
+decl_stmt|;
+comment|// TODO: O(N) lookup
+name|InsertBatchQuery
+name|existingQuery
+init|=
+name|findInsertBatchQuery
+argument_list|(
+name|queries
+argument_list|,
+name|dbEntity
 argument_list|)
 decl_stmt|;
 if|if
@@ -639,6 +653,13 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|objectId
+operator|=
+name|existingRow
+operator|.
+name|getObjectId
+argument_list|()
+expr_stmt|;
 name|List
 argument_list|<
 name|DbAttribute
@@ -711,9 +732,10 @@ operator|.
 name|add
 argument_list|(
 name|snapshot
+argument_list|,
+name|objectId
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|existingQuery
@@ -721,6 +743,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// replace inside arc loop, so next arc know about it
 name|queries
 operator|.
 name|remove
@@ -728,7 +751,6 @@ argument_list|(
 name|existingQuery
 argument_list|)
 expr_stmt|;
-block|}
 name|queries
 operator|.
 name|add
@@ -736,6 +758,38 @@ argument_list|(
 name|newQuery
 argument_list|)
 expr_stmt|;
+name|newQueryAdded
+operator|=
+literal|true
+expr_stmt|;
+comment|// start clean query for the next arc
+name|newQuery
+operator|=
+operator|new
+name|InsertBatchQuery
+argument_list|(
+name|dbEntity
+argument_list|,
+literal|50
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+operator|!
+name|newQueryAdded
+condition|)
+block|{
+comment|// if not replaced existing query already
+name|queries
+operator|.
+name|add
+argument_list|(
+name|newQuery
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 name|void
