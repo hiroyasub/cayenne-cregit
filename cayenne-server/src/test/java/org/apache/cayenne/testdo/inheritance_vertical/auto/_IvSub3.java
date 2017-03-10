@@ -108,6 +108,12 @@ literal|"ivRoot"
 argument_list|)
 return|;
 block|}
+specifier|protected
+specifier|abstract
+name|void
+name|onPrePersist
+parameter_list|()
+function_decl|;
 block|}
 end_class
 
