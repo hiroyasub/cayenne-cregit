@@ -25,7 +25,7 @@ begin_class
 specifier|public
 class|class
 name|EJBQLSyntaxConstant
-implements|implements
+extends|extends
 name|SyntaxConstant
 block|{
 specifier|private

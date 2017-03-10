@@ -25,7 +25,7 @@ begin_class
 specifier|public
 class|class
 name|SQLSyntaxConstants
-implements|implements
+extends|extends
 name|SyntaxConstant
 block|{
 specifier|private
