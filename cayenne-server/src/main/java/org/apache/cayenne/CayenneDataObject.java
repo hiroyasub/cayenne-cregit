@@ -2632,9 +2632,10 @@ operator|>
 literal|1
 operator|&&
 operator|(
+operator|!
 name|relationship
 operator|.
-name|isToMany
+name|isToDependentEntity
 argument_list|()
 operator|||
 name|relationship
