@@ -504,6 +504,11 @@ specifier|protected
 name|TransactionManager
 name|transactionManager
 decl_stmt|;
+comment|/**      * @since 4.0      */
+specifier|protected
+name|DataRowStoreFactory
+name|dataRowStoreFactory
+decl_stmt|;
 comment|/** 	 * @since 3.1 	 */
 specifier|protected
 name|int
@@ -604,7 +609,7 @@ name|resetProperties
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * Creates new DataDomain. 	 *  	 * @param name 	 *            DataDomain name. Domain can be located using its name in the 	 *            Configuration object. 	 * @param properties 	 *            A Map containing domain configuration properties. 	 * @deprecated since 4.0 unused 	 */
+comment|/** 	 * Creates new DataDomain. 	 * 	 * @param name 	 *            DataDomain name. Domain can be located using its name in the 	 *            Configuration object. 	 * @param properties 	 *            A Map containing domain configuration properties. 	 * @deprecated since 4.0 unused 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -686,7 +691,7 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Checks that Domain is not stopped. Throws DomainStoppedException 	 * otherwise. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Checks that Domain is not stopped. Throws DomainStoppedException 	 * otherwise. 	 * 	 * @since 3.0 	 */
 specifier|protected
 name|void
 name|checkStopped
@@ -760,7 +765,7 @@ operator|=
 name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
 expr_stmt|;
 block|}
-comment|/** 	 * Reinitializes domain state with a new set of properties. 	 *  	 * @since 1.1 	 * @deprecated since 4.0 properties are processed by the DI provider. 	 */
+comment|/** 	 * Reinitializes domain state with a new set of properties. 	 * 	 * @since 1.1 	 * @deprecated since 4.0 properties are processed by the DI provider. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -866,7 +871,7 @@ operator|=
 name|properties
 expr_stmt|;
 block|}
-comment|/** 	 * Returns EventManager used by this DataDomain. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Returns EventManager used by this DataDomain. 	 * 	 * @since 1.2 	 */
 specifier|public
 name|EventManager
 name|getEventManager
@@ -876,7 +881,7 @@ return|return
 name|eventManager
 return|;
 block|}
-comment|/** 	 * Sets EventManager used by this DataDomain. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Sets EventManager used by this DataDomain. 	 * 	 * @since 1.2 	 */
 specifier|public
 name|void
 name|setEventManager
@@ -976,7 +981,7 @@ operator|=
 name|sharedCacheEnabled
 expr_stmt|;
 block|}
-comment|/** 	 * Returns whether child DataContexts default behavior is to perform object 	 * validation before commit is executed. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns whether child DataContexts default behavior is to perform object 	 * validation before commit is executed. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|boolean
 name|isValidatingObjectsOnCommit
@@ -986,7 +991,7 @@ return|return
 name|validatingObjectsOnCommit
 return|;
 block|}
-comment|/** 	 * Sets the property defining whether child DataContexts should perform 	 * object validation before commit is executed. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Sets the property defining whether child DataContexts should perform 	 * object validation before commit is executed. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setValidatingObjectsOnCommit
@@ -1061,14 +1066,11 @@ name|this
 operator|.
 name|sharedSnapshotCache
 operator|=
-operator|new
-name|DataRowStore
+name|dataRowStoreFactory
+operator|.
+name|createDataRowStore
 argument_list|(
 name|name
-argument_list|,
-name|properties
-argument_list|,
-name|eventManager
 argument_list|)
 expr_stmt|;
 block|}
@@ -1183,7 +1185,7 @@ name|mapName
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Removes named DataMap from this DataDomain and any underlying DataNodes 	 * that include it. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Removes named DataMap from this DataDomain and any underlying DataNodes 	 * that include it. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|removeDataMap
@@ -1422,7 +1424,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Returns registered DataNode whose name matches<code>name</code> 	 * parameter. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Returns registered DataNode whose name matches<code>name</code> 	 * parameter. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|DataNode
 name|getDataNode
@@ -1440,7 +1442,7 @@ name|nodeName
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a DataNode that should handle queries for all entities in a 	 * DataMap. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns a DataNode that should handle queries for all entities in a 	 * DataMap. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|DataNode
 name|lookupDataNode
@@ -1581,7 +1583,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/** 	 * Sets EntityResolver. If not set explicitly, DataDomain creates a default 	 * EntityResolver internally on demand. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Sets EntityResolver. If not set explicitly, DataDomain creates a default 	 * EntityResolver internally on demand. 	 * 	 * @since 1.1 	 */
 specifier|public
 name|void
 name|setEntityResolver
@@ -1719,7 +1721,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// ****** DataChannel methods:
-comment|/** 	 * Runs query returning generic QueryResponse. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Runs query returning generic QueryResponse. 	 * 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1807,7 +1809,7 @@ return|return
 name|entityResolver
 return|;
 block|}
-comment|/** 	 * Only handles commit-type synchronization, ignoring any other type. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Only handles commit-type synchronization, ignoring any other type. 	 * 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2038,7 +2040,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns shared {@link QueryCache} used by this DataDomain. 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Returns shared {@link QueryCache} used by this DataDomain. 	 * 	 * @since 3.0 	 */
 specifier|public
 name|QueryCache
 name|getQueryCache
@@ -2061,6 +2063,32 @@ operator|.
 name|queryCache
 operator|=
 name|queryCache
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|DataRowStoreFactory
+name|getDataRowStoreFactory
+parameter_list|()
+block|{
+return|return
+name|dataRowStoreFactory
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setDataRowStoreFactory
+parameter_list|(
+name|DataRowStoreFactory
+name|dataRowStoreFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataRowStoreFactory
+operator|=
+name|dataRowStoreFactory
 expr_stmt|;
 block|}
 comment|/** 	 * @since 3.1 	 */
@@ -2093,7 +2121,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Returns an unmodifiable list of filters registered with this DataDomain. 	 *<p> 	 * Filter ordering note: filters are applied in reverse order of their 	 * occurrence in the filter list. I.e. the last filter in the list called 	 * first in the chain. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Returns an unmodifiable list of filters registered with this DataDomain. 	 *<p> 	 * Filter ordering note: filters are applied in reverse order of their 	 * occurrence in the filter list. I.e. the last filter in the list called 	 * first in the chain. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|List
 argument_list|<
@@ -2111,7 +2139,7 @@ name|filters
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Adds a new filter, immediately calling its 'init' method. Since 4.0 this 	 * method also registers passed filter as an event listener, if any of its 	 * methods have event annotations. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Adds a new filter, immediately calling its 'init' method. Since 4.0 this 	 * method also registers passed filter as an event listener, if any of its 	 * methods have event annotations. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|addFilter
@@ -2146,7 +2174,7 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Removes a filter from the filter chain. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Removes a filter from the filter chain. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|void
 name|removeFilter
@@ -2163,7 +2191,7 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Adds a listener, mapping its methods to events based on annotations. This 	 * is a shortcut for 	 * 'getEntityResolver().getCallbackRegistry().addListener(listener)'. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Adds a listener, mapping its methods to events based on annotations. This 	 * is a shortcut for 	 * 'getEntityResolver().getCallbackRegistry().addListener(listener)'. 	 * 	 * @since 4.0 	 */
 specifier|public
 name|void
 name|addListener
@@ -2393,7 +2421,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * An optional DataNode that is used for DataMaps that are not linked to a 	 * DataNode explicitly. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * An optional DataNode that is used for DataMaps that are not linked to a 	 * DataNode explicitly. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|DataNode
 name|getDefaultNode
@@ -2419,7 +2447,7 @@ operator|=
 name|defaultNode
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a maximum number of object IDs to match in a single query for 	 * queries that select objects based on collection of ObjectIds. This 	 * affects queries generated by Cayenne when processing paginated queries 	 * and DISJOINT_BY_ID prefetches and is intended to address database 	 * limitations on the size of SQL statements as well as to cap memory use in 	 * Cayenne when generating such queries. The default is 10000. It can be 	 * changed either by calling {@link #setMaxIdQualifierSize(int)} or changing 	 * the value for property 	 * {@link Constants#SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY}. 	 *  	 * @since 3.1 	 */
+comment|/** 	 * Returns a maximum number of object IDs to match in a single query for 	 * queries that select objects based on collection of ObjectIds. This 	 * affects queries generated by Cayenne when processing paginated queries 	 * and DISJOINT_BY_ID prefetches and is intended to address database 	 * limitations on the size of SQL statements as well as to cap memory use in 	 * Cayenne when generating such queries. The default is 10000. It can be 	 * changed either by calling {@link #setMaxIdQualifierSize(int)} or changing 	 * the value for property 	 * {@link Constants#SERVER_MAX_ID_QUALIFIER_SIZE_PROPERTY}. 	 * 	 * @since 3.1 	 */
 specifier|public
 name|int
 name|getMaxIdQualifierSize

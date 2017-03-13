@@ -17,57 +17,63 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Collection
+name|cayenne
+operator|.
+name|di
+operator|.
+name|DIRuntimeException
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|Map
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Provider
 import|;
 end_import
 
 begin_comment
-comment|/**  * Defines a factory to dynamically create EventBridge instances.  *   * @since 1.1  */
+comment|/**  * @since 4.0  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|EventBridgeFactory
-block|{
-comment|/**      * Creates an {@link EventBridge} with the specified parameters.      *       * @since 1.2      */
+class|class
+name|NoopEventBridgeProvider
+implements|implements
+name|Provider
+argument_list|<
 name|EventBridge
-name|createEventBridge
-parameter_list|(
-name|Collection
-argument_list|<
-name|EventSubject
 argument_list|>
-name|localSubjects
-parameter_list|,
-name|String
-name|externalSubject
-parameter_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|properties
-parameter_list|)
-function_decl|;
+block|{
+annotation|@
+name|Override
+specifier|public
+name|EventBridge
+name|get
+parameter_list|()
+throws|throws
+name|DIRuntimeException
+block|{
+return|return
+operator|new
+name|NoopEventBridge
+argument_list|()
+return|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

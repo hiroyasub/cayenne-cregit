@@ -11,59 +11,25 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|event
+name|access
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines a factory to dynamically create EventBridge instances.  *   * @since 1.1  */
+comment|/**  * A factory for creating {@link DataRowStore}  *  * @since 4.0  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|EventBridgeFactory
+name|DataRowStoreFactory
 block|{
-comment|/**      * Creates an {@link EventBridge} with the specified parameters.      *       * @since 1.2      */
-name|EventBridge
-name|createEventBridge
+comment|/**      * Create new {@link DataRowStore} object.      *      * @since 4.0      * @param name DataRowStore name. Used to identify this DataRowStore in events, etc.      *             Can't be null.      */
+name|DataRowStore
+name|createDataRowStore
 parameter_list|(
-name|Collection
-argument_list|<
-name|EventSubject
-argument_list|>
-name|localSubjects
-parameter_list|,
 name|String
-name|externalSubject
-parameter_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|properties
+name|name
 parameter_list|)
 function_decl|;
 block|}
