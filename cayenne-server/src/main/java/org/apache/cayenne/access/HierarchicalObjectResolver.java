@@ -957,10 +957,14 @@ name|cloneJointSubtree
 argument_list|()
 decl_stmt|;
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|dataRows
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1022,6 +1026,12 @@ name|dataRows
 operator|.
 name|addAll
 argument_list|(
+operator|(
+name|List
+argument_list|<
+name|DataRow
+argument_list|>
+operator|)
 name|context
 operator|.
 name|performQuery
@@ -1297,6 +1307,9 @@ literal|false
 return|;
 block|}
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|parentObjects
 init|=
 name|parent
@@ -1346,9 +1359,6 @@ name|parent
 operator|.
 name|setLastResolved
 argument_list|(
-operator|(
-name|Persistent
-operator|)
 name|parentObjects
 operator|.
 name|get
@@ -1366,6 +1376,9 @@ argument_list|)
 expr_stmt|;
 block|}
 name|List
+argument_list|<
+name|Persistent
+argument_list|>
 name|objects
 init|=
 name|processorNode

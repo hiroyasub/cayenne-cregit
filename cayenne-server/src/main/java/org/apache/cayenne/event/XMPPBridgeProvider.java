@@ -179,7 +179,6 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 return|return
 operator|new
 name|XMPPBridge

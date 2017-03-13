@@ -505,8 +505,6 @@ name|TransactionManager
 name|transactionManager
 decl_stmt|;
 comment|/**      * @since 4.0      */
-annotation|@
-name|Inject
 specifier|protected
 name|DataRowStoreFactory
 name|dataRowStoreFactory
@@ -2065,6 +2063,32 @@ operator|.
 name|queryCache
 operator|=
 name|queryCache
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|DataRowStoreFactory
+name|getDataRowStoreFactory
+parameter_list|()
+block|{
+return|return
+name|dataRowStoreFactory
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setDataRowStoreFactory
+parameter_list|(
+name|DataRowStoreFactory
+name|dataRowStoreFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|dataRowStoreFactory
+operator|=
+name|dataRowStoreFactory
 expr_stmt|;
 block|}
 comment|/** 	 * @since 3.1 	 */

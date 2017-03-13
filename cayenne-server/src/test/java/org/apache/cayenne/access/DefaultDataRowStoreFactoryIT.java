@@ -167,7 +167,7 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|EventBridgeProvider
+name|NoopEventBridgeProvider
 import|;
 end_import
 
@@ -615,7 +615,7 @@ argument_list|)
 operator|.
 name|toProvider
 argument_list|(
-name|EventBridgeProvider
+name|NoopEventBridgeProvider
 operator|.
 name|class
 argument_list|)
