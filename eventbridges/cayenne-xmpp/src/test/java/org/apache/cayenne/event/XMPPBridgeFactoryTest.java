@@ -140,7 +140,13 @@ name|externalSubject
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+argument_list|,
+name|String
+operator|>
+name|emptyMap
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -197,11 +203,7 @@ name|properties
 init|=
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|properties
