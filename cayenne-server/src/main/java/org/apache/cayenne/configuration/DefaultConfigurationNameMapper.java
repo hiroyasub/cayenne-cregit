@@ -58,6 +58,14 @@ specifier|private
 specifier|static
 specifier|final
 name|String
+name|DEFAULT_NAME
+init|=
+literal|"cayenne"
+decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|String
 name|CAYENNE_PREFIX
 init|=
 literal|"cayenne-"
@@ -307,8 +315,9 @@ name|CAYENNE_SUFFIX
 argument_list|)
 condition|)
 block|{
+comment|// DataChannelDescriptor should always have name
 return|return
-literal|null
+name|DEFAULT_NAME
 return|;
 block|}
 return|return

@@ -445,6 +445,14 @@ name|UUID_PROJECT
 init|=
 literal|"cayenne-uuid.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CUSTOM_NAME_PROJECT
+init|=
+literal|"custom-name-file.xml"
+decl_stmt|;
 block|}
 end_class
 
