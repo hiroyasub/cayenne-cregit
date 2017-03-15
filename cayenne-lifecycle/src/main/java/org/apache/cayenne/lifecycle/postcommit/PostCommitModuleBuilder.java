@@ -502,11 +502,12 @@ name|listeners
 init|=
 name|binder
 operator|.
-expr|<
-name|PostCommitListener
-operator|>
 name|bindList
 argument_list|(
+name|PostCommitListener
+operator|.
+name|class
+argument_list|,
 name|PostCommitFilter
 operator|.
 name|POST_COMMIT_LISTENERS_LIST

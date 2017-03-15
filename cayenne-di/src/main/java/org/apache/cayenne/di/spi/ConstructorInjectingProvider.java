@@ -737,11 +737,13 @@ name|?
 argument_list|>
 name|key
 init|=
-name|Key
+name|DIUtil
 operator|.
-name|get
+name|getKeyForTypeAndGenericType
 argument_list|(
 name|parameter
+argument_list|,
+name|genericType
 argument_list|,
 name|bindingName
 argument_list|)

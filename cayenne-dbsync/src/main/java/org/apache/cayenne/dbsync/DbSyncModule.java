@@ -572,6 +572,10 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
+name|MergerTokenFactory
+operator|.
+name|class
+argument_list|,
 name|MERGER_FACTORIES_MAP
 argument_list|)
 return|;

@@ -80,7 +80,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|?
+name|T
 argument_list|>
 argument_list|>
 name|bindingKey
@@ -93,7 +93,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|?
+name|T
 argument_list|>
 argument_list|>
 name|bindingKey
@@ -146,6 +146,8 @@ block|{
 name|Key
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|bindingKey
 init|=
@@ -159,6 +161,8 @@ decl_stmt|;
 name|Binding
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|binding
 init|=
@@ -381,6 +385,9 @@ throws|throws
 name|DIRuntimeException
 block|{
 name|MapProvider
+argument_list|<
+name|T
+argument_list|>
 name|provider
 init|=
 name|getMapProvider
@@ -456,13 +463,17 @@ return|;
 block|}
 specifier|private
 name|MapProvider
+argument_list|<
+name|T
+argument_list|>
 name|getMapProvider
 parameter_list|()
 block|{
 name|MapProvider
+argument_list|<
+name|T
+argument_list|>
 name|provider
-init|=
-literal|null
 decl_stmt|;
 name|Binding
 argument_list|<
@@ -470,7 +481,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|?
+name|T
 argument_list|>
 argument_list|>
 name|binding
@@ -493,6 +504,7 @@ name|provider
 operator|=
 operator|new
 name|MapProvider
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|injector
@@ -511,6 +523,9 @@ name|provider
 operator|=
 operator|(
 name|MapProvider
+argument_list|<
+name|T
+argument_list|>
 operator|)
 name|binding
 operator|.

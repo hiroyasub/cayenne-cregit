@@ -179,6 +179,10 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP

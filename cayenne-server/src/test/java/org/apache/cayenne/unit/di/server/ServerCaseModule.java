@@ -1373,6 +1373,10 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
 name|UnitDbAdapterProvider
 operator|.
 name|TEST_ADAPTERS_MAP

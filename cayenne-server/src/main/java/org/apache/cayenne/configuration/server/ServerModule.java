@@ -1519,6 +1519,10 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_PROJECT_LOCATIONS_LIST
@@ -1543,6 +1547,10 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
+name|DataChannelFilter
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_DOMAIN_FILTERS_LIST
@@ -1567,6 +1575,10 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
+name|DbAdapterDetector
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_ADAPTER_DETECTORS_LIST
@@ -1591,6 +1603,10 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|PROPERTIES_MAP
@@ -1615,6 +1631,10 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
+name|ExtendedTypeFactory
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_TYPE_FACTORIES_LIST
@@ -1639,6 +1659,10 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
+name|ExtendedType
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_DEFAULT_TYPES_LIST
@@ -1663,6 +1687,10 @@ name|binder
 operator|.
 name|bindList
 argument_list|(
+name|ExtendedType
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|SERVER_USER_TYPES_LIST

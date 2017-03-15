@@ -192,7 +192,7 @@ argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
-name|?
+name|PostCommitListener
 argument_list|>
 name|listeners
 init|=
@@ -202,9 +202,9 @@ name|getInstance
 argument_list|(
 name|Key
 operator|.
-name|get
+name|getListOf
 argument_list|(
-name|List
+name|PostCommitListener
 operator|.
 name|class
 argument_list|,
@@ -272,7 +272,7 @@ argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
-name|?
+name|PostCommitListener
 argument_list|>
 name|listeners
 init|=
@@ -282,9 +282,9 @@ name|getInstance
 argument_list|(
 name|Key
 operator|.
-name|get
+name|getListOf
 argument_list|(
-name|List
+name|PostCommitListener
 operator|.
 name|class
 argument_list|,

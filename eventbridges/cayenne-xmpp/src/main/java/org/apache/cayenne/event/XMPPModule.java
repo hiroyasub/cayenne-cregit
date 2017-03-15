@@ -256,6 +256,10 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
 name|XMPP_BRIDGE_PROPERTIES_MAP
 argument_list|)
 return|;

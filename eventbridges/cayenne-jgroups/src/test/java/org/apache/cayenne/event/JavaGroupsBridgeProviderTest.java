@@ -573,6 +573,10 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
 name|Constants
 operator|.
 name|PROPERTIES_MAP

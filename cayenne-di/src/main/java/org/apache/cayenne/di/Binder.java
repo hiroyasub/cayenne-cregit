@@ -58,10 +58,12 @@ argument_list|>
 name|key
 parameter_list|)
 function_decl|;
-comment|/**      * Starts a binding of a java.util.Map&lt;String, ?&gt; distinguished by its binding name.      * Map binding should continue using returned MapBuilder. This is somewhat equivalent      * of using "bind(Map.class, bindingName)", however returned MapBuilder provides extra      * DI capabilities.      */
-parameter_list|<
+comment|/**      * Starts a binding of a java.util.Map&lt;String, ?&gt; distinguished by its binding name.      * Map binding should continue using returned MapBuilder. This is somewhat equivalent      * of using "bind(Map.class, bindingName)", however returned MapBuilder provides extra      * DI capabilities.      *      * @deprecated since 4.0, use use type-safe methods {@link Binder#bindMap(Class)}      *             or {@link Binder#bindMap(Class, String)}      */
+annotation|@
+name|Deprecated
+argument_list|<
 name|T
-parameter_list|>
+argument_list|>
 name|MapBuilder
 argument_list|<
 name|T
@@ -72,7 +74,60 @@ name|String
 name|bindingName
 parameter_list|)
 function_decl|;
-comment|/**      * Starts a binding of a java.util.List&lt;?&gt; distinguished by its binding name. List      * binding should continue using returned ListBuilder. This is somewhat equivalent of      * using "bind(List.class, bindingName)", however returned ListBuilder provides extra      * DI capabilities.      */
+comment|/**      * Starts a binding of a java.util.Map&lt;String, T&gt; distinguished by its values type.      * Map binding should continue using returned MapBuilder.      * This is a type safe way of binding a map.      *      * @since 4.0      */
+parameter_list|<
+name|T
+parameter_list|>
+name|MapBuilder
+argument_list|<
+name|T
+argument_list|>
+name|bindMap
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|valueType
+parameter_list|)
+function_decl|;
+comment|/**      * Starts a binding of a java.util.Map&lt;String, T&gt; distinguished by its      * values type and binding name.      * Map binding should continue using returned MapBuilder.      * This is a type safe way of binding a map.      *      * @since 4.0      */
+parameter_list|<
+name|T
+parameter_list|>
+name|MapBuilder
+argument_list|<
+name|T
+argument_list|>
+name|bindMap
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|valueType
+parameter_list|,
+name|String
+name|bindingName
+parameter_list|)
+function_decl|;
+comment|/**      * Starts a binding of a java.util.List&lt;?&gt; distinguished by its binding name.      * List binding should continue using returned ListBuilder. This is somewhat equivalent of      * using "bind(List.class, bindingName)", however returned ListBuilder provides extra      * DI capabilities.      *      * @deprecated since 4.0, use type-safe methods {@link Binder#bindList(Class)}      *             or {@link Binder#bindList(Class, String)}      */
+annotation|@
+name|Deprecated
+argument_list|<
+name|T
+argument_list|>
+name|ListBuilder
+argument_list|<
+name|T
+argument_list|>
+name|bindList
+parameter_list|(
+name|String
+name|bindingName
+parameter_list|)
+function_decl|;
+comment|/**      * Starts a binding of a java.util.List&lt;T&gt; distinguished by its values type and binding name.      * List binding should continue using returned ListBuilder. This is somewhat equivalent of      * using "bind(List.class, bindingName)", however returned ListBuilder provides extra      * DI capabilities.      *      * @since 4.0      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -82,8 +137,31 @@ name|T
 argument_list|>
 name|bindList
 parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|valueType
+parameter_list|,
 name|String
 name|bindingName
+parameter_list|)
+function_decl|;
+comment|/**      * Starts a binding of a java.util.List&lt;T&gt; distinguished by its values type.      * List binding should continue using returned ListBuilder.      * This is somewhat equivalent of using "bind(List.class, bindingName)",      * however returned ListBuilder provides extra DI capabilities.      *      * @since 4.0      */
+parameter_list|<
+name|T
+parameter_list|>
+name|ListBuilder
+argument_list|<
+name|T
+argument_list|>
+name|bindList
+parameter_list|(
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|valueType
 parameter_list|)
 function_decl|;
 comment|/**      * @since 4.0      */

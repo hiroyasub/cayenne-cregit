@@ -42,6 +42,8 @@ parameter_list|(
 name|Class
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|type
 parameter_list|)
@@ -56,6 +58,8 @@ parameter_list|(
 name|Key
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|key
 parameter_list|)
@@ -70,6 +74,8 @@ parameter_list|(
 name|Class
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|type
 parameter_list|)
@@ -84,6 +90,8 @@ parameter_list|(
 name|Key
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|key
 parameter_list|)

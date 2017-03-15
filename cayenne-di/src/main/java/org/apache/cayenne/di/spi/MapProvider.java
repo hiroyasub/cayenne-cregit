@@ -84,6 +84,9 @@ end_comment
 begin_class
 class|class
 name|MapProvider
+parameter_list|<
+name|T
+parameter_list|>
 implements|implements
 name|Provider
 argument_list|<
@@ -91,7 +94,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|?
+name|T
 argument_list|>
 argument_list|>
 block|{
@@ -103,6 +106,8 @@ argument_list|,
 name|Provider
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 argument_list|>
 name|providers
@@ -128,7 +133,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|?
+name|T
 argument_list|>
 name|get
 parameter_list|()
@@ -139,7 +144,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|Object
+name|T
 argument_list|>
 name|map
 init|=
@@ -157,6 +162,8 @@ argument_list|,
 name|Provider
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 argument_list|>
 name|entry
@@ -199,6 +206,8 @@ parameter_list|,
 name|Provider
 argument_list|<
 name|?
+extends|extends
+name|T
 argument_list|>
 name|provider
 parameter_list|)
