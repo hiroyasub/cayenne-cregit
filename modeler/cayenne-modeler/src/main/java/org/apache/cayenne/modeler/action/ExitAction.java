@@ -134,7 +134,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|void
+name|boolean
 name|exit
 parameter_list|()
 block|{
@@ -145,7 +145,9 @@ name|checkSaveOnClose
 argument_list|()
 condition|)
 block|{
-return|return;
+return|return
+literal|false
+return|;
 block|}
 comment|// stop logging before JVM shutdown to prevent hanging
 name|LogConsole
@@ -169,6 +171,9 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+return|return
+literal|true
+return|;
 block|}
 comment|/**      * Always returns true.      */
 specifier|public
