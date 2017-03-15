@@ -1941,15 +1941,6 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|binder
-operator|.
-name|bindMap
-argument_list|(
-name|Constants
-operator|.
-name|DATA_ROW_STORE_PROPERTIES_MAP
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 decl_stmt|;

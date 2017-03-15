@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
+name|RuntimeProperties
 import|;
 end_import
 
@@ -138,12 +138,7 @@ decl_stmt|;
 name|EventManager
 name|eventManager
 decl_stmt|;
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|RuntimeProperties
 name|properties
 decl_stmt|;
 name|boolean
@@ -164,17 +159,7 @@ name|eventManager
 parameter_list|,
 annotation|@
 name|Inject
-argument_list|(
-name|Constants
-operator|.
-name|DATA_ROW_STORE_PROPERTIES_MAP
-argument_list|)
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
+name|RuntimeProperties
 name|properties
 parameter_list|)
 block|{

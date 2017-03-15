@@ -1468,6 +1468,39 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Sets max size of snapshot cache, in pre 4.0 version this was set in the Modeler.      *      * @param binder DI binder passed to the module during injector startup.      * @param size max size of snapshot cache      * @since 4.0      */
+specifier|public
+specifier|static
+name|void
+name|setSnapshotCacheSize
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|,
+name|int
+name|size
+parameter_list|)
+block|{
+name|contributeProperties
+argument_list|(
+name|binder
+argument_list|)
+operator|.
+name|put
+argument_list|(
+name|Constants
+operator|.
+name|SNAPSHOT_CACHE_SIZE_PROPERTY
+argument_list|,
+name|Integer
+operator|.
+name|toString
+argument_list|(
+name|size
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Provides access to a DI collection builder for String locations that allows downstream modules to      * "contribute" their own Cayenne project locations.      *      * @param binder DI binder passed to the module during injector startup.      * @return ListBuilder for String locations.      * @since 4.0      */
 specifier|public
 specifier|static
@@ -2210,15 +2243,6 @@ argument_list|(
 name|DefaultDataRowStoreFactory
 operator|.
 name|class
-argument_list|)
-expr_stmt|;
-name|binder
-operator|.
-name|bindMap
-argument_list|(
-name|Constants
-operator|.
-name|DATA_ROW_STORE_PROPERTIES_MAP
 argument_list|)
 expr_stmt|;
 comment|// a service to provide the main stack DataDomain
