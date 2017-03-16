@@ -55,6 +55,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|HashMap
 import|;
 end_import
@@ -802,7 +812,7 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 4.0 renamed to {@link #addCallback(LifecycleEvent, Class, String)} 	 *        . 	 */
+comment|/** 	 * @since 4.0 renamed to {@link #addCallback(LifecycleEvent, Class, String)}. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -926,12 +936,7 @@ name|types
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Class
-argument_list|<
-name|?
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Class
@@ -964,29 +969,17 @@ argument_list|(
 name|a
 argument_list|)
 decl_stmt|;
-for|for
-control|(
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|type
-range|:
-name|entities
-control|)
-block|{
-comment|// TODO: ignoring entity subclasses? whenever we add
-comment|// those,
-comment|// take
-comment|// into account "exlcudeSuperclassListeners" flag
-name|types
+comment|// TODO: ignoring entity subclasses?
+comment|// whenever we add those, take into account "exlcudeSuperclassListeners" flag
+name|Collections
 operator|.
-name|add
+name|addAll
 argument_list|(
-name|type
+name|types
+argument_list|,
+name|entities
 argument_list|)
 expr_stmt|;
-block|}
 for|for
 control|(
 name|Class
@@ -1930,12 +1923,7 @@ name|entities
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|Class
-argument_list|<
-name|?
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -1993,11 +1981,9 @@ throw|;
 block|}
 comment|// ensure that we don't register the same callback for multiple
 comment|// classes in the same hierarchy, so find the topmost type using
-comment|// a given
-comment|// annotation and register it once
+comment|// a given annotation and register it once
 comment|// TODO: This ignores "excludeSuperclassListeners" setting,
-comment|// which is
-comment|// not possible with annotations anyways
+comment|// which is not possible with annotations anyways
 while|while
 condition|(
 name|entityType

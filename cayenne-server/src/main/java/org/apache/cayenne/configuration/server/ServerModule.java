@@ -1557,6 +1557,34 @@ name|SERVER_DOMAIN_FILTERS_LIST
 argument_list|)
 return|;
 block|}
+comment|/**      * Provides access to a DI collection builder for lifecycle events listeners.      *      * @param binder DI binder passed to the module during injector startup.      * @return ListBuilder for listener Objects.      * @since 4.0      */
+specifier|public
+specifier|static
+name|ListBuilder
+argument_list|<
+name|Object
+argument_list|>
+name|contributeDomainListeners
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|)
+block|{
+return|return
+name|binder
+operator|.
+name|bindList
+argument_list|(
+name|Object
+operator|.
+name|class
+argument_list|,
+name|Constants
+operator|.
+name|SERVER_DOMAIN_LISTENERS_LIST
+argument_list|)
+return|;
+block|}
 comment|/**      * Provides access to a DI collection builder for {@link DbAdapterDetector}'s that allows downstream modules to      * "contribute" their own adapter detectors.      *      * @param binder DI binder passed to the module during injector startup.      * @return ListBuilder for DbAdapterDetectors.      * @since 4.0      */
 specifier|public
 specifier|static
@@ -1988,6 +2016,12 @@ argument_list|(
 name|TransactionFilter
 operator|.
 name|class
+argument_list|)
+expr_stmt|;
+comment|// init listener list
+name|contributeDomainListeners
+argument_list|(
+name|binder
 argument_list|)
 expr_stmt|;
 comment|// configure extended types

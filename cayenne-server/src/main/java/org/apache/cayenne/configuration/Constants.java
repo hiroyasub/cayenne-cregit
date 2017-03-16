@@ -57,6 +57,12 @@ name|SERVER_DOMAIN_FILTERS_LIST
 init|=
 literal|"cayenne.server.domain_filters"
 decl_stmt|;
+comment|/**      * A DI container key for the List&lt;Object&gt; storing lifecycle events listeners.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainListeners(Binder).      */
+name|String
+name|SERVER_DOMAIN_LISTENERS_LIST
+init|=
+literal|"cayenne.server.domain_listeners"
+decl_stmt|;
 comment|/**      * A DI container key for the List&lt;String&gt; storing locations of the      * one of more project configuration files.      */
 name|String
 name|SERVER_PROJECT_LOCATIONS_LIST
