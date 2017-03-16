@@ -48,9 +48,9 @@ name|JCacheConfigurationFactory
 block|{
 name|Configuration
 argument_list|<
-name|String
+name|Object
 argument_list|,
-name|List
+name|Object
 argument_list|>
 name|create
 parameter_list|(
