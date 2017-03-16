@@ -475,7 +475,7 @@ parameter_list|()
 block|{
 name|testExpression
 argument_list|(
-literal|"SUBSTRING(paintingArray.paintingTitle, 1, 1)"
+literal|"substring(paintingArray.paintingTitle, 1, 1)"
 argument_list|,
 name|String
 operator|.
@@ -492,7 +492,7 @@ parameter_list|()
 block|{
 name|testExpression
 argument_list|(
-literal|"TRIM(paintingArray.paintingTitle)"
+literal|"trim(paintingArray.paintingTitle)"
 argument_list|,
 name|String
 operator|.
@@ -509,7 +509,7 @@ parameter_list|()
 block|{
 name|testExpression
 argument_list|(
-literal|"UPPER(paintingArray.paintingTitle)"
+literal|"upper(paintingArray.paintingTitle)"
 argument_list|,
 name|String
 operator|.
@@ -526,7 +526,7 @@ parameter_list|()
 block|{
 name|testExpression
 argument_list|(
-literal|"LOWER(paintingArray.paintingTitle)"
+literal|"lower(paintingArray.paintingTitle)"
 argument_list|,
 name|String
 operator|.
@@ -543,7 +543,7 @@ parameter_list|()
 block|{
 name|testExpression
 argument_list|(
-literal|"LENGTH(paintingArray.paintingTitle)"
+literal|"length(paintingArray.paintingTitle)"
 argument_list|,
 name|Integer
 operator|.
@@ -560,7 +560,7 @@ parameter_list|()
 block|{
 name|testExpression
 argument_list|(
-literal|"CONCAT(paintingArray.paintingTitle, ' ', 'xyz')"
+literal|"concat(paintingArray.paintingTitle, ' ', 'xyz')"
 argument_list|,
 name|String
 operator|.

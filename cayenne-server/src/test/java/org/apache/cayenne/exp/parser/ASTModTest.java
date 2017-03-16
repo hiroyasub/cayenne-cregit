@@ -176,7 +176,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"MOD(xyz , 3)"
+literal|"mod(xyz , 3)"
 decl_stmt|;
 name|Expression
 name|exp

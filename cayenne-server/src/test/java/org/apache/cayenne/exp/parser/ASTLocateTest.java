@@ -237,7 +237,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"LOCATE(\"xyz\" , abc , 4)"
+literal|"locate(\"xyz\" , abc , 4)"
 decl_stmt|;
 name|Expression
 name|exp

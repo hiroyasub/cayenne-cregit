@@ -540,7 +540,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"ABS(-3)"
+literal|"abs(-3)"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -572,7 +572,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"SQRT(16)"
+literal|"sqrt(16)"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -604,7 +604,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"MOD(11,2)"
+literal|"mod(11,2)"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -636,7 +636,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"10 - MOD(SQRT(ABS(-9)), 2)"
+literal|"10 - mod(sqrt(abs(-9)), 2)"
 argument_list|)
 decl_stmt|;
 name|assertEquals

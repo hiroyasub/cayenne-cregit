@@ -170,7 +170,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"SQRT(xyz)"
+literal|"sqrt(xyz)"
 decl_stmt|;
 name|Expression
 name|exp

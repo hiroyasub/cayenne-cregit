@@ -182,7 +182,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"TRIM(xyz)"
+literal|"trim(xyz)"
 decl_stmt|;
 name|Expression
 name|exp

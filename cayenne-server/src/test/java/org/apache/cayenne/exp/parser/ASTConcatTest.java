@@ -208,7 +208,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"CONCAT(artistName, ' ', 'test')"
+literal|"concat(artistName, ' ', 'test')"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -284,7 +284,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"CONCAT(xyz , \" \" , abc)"
+literal|"concat(xyz , \" \" , abc)"
 decl_stmt|;
 name|Expression
 name|exp

@@ -182,7 +182,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"LOWER(xyz)"
+literal|"lower(xyz)"
 decl_stmt|;
 name|Expression
 name|exp

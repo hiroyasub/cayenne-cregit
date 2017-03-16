@@ -2799,7 +2799,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"TRIM(abc.xyz)"
+literal|"trim(abc.xyz)"
 argument_list|)
 decl_stmt|;
 name|assertEquals

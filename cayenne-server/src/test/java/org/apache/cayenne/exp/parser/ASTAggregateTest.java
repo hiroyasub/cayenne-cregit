@@ -178,7 +178,7 @@ block|{
 name|String
 name|expressionString
 init|=
-literal|"AVG(artistName)"
+literal|"avg(artistName)"
 decl_stmt|;
 name|Expression
 name|exp
@@ -269,7 +269,7 @@ block|{
 name|String
 name|expressionString
 init|=
-literal|"COUNT(artistName)"
+literal|"count(artistName)"
 decl_stmt|;
 name|Expression
 name|exp
@@ -333,7 +333,7 @@ block|{
 name|String
 name|expressionString
 init|=
-literal|"COUNT(*)"
+literal|"count(*)"
 decl_stmt|;
 name|Expression
 name|exp
@@ -426,7 +426,7 @@ block|{
 name|String
 name|expressionString
 init|=
-literal|"MIN(artistName)"
+literal|"min(artistName)"
 decl_stmt|;
 name|Expression
 name|exp
@@ -519,7 +519,7 @@ block|{
 name|String
 name|expressionString
 init|=
-literal|"MAX(artistName)"
+literal|"max(artistName)"
 decl_stmt|;
 name|Expression
 name|exp
@@ -612,7 +612,7 @@ block|{
 name|String
 name|expressionString
 init|=
-literal|"SUM(artistName)"
+literal|"sum(artistName)"
 decl_stmt|;
 name|Expression
 name|exp

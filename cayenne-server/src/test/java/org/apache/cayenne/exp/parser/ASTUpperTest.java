@@ -182,7 +182,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"UPPER(xyz)"
+literal|"upper(xyz)"
 decl_stmt|;
 name|Expression
 name|exp

@@ -1110,7 +1110,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"CONCAT('abc', 'def')"
+literal|"concat('abc', 'def')"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -1142,7 +1142,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"SUBSTRING('123456789', 3, 2)"
+literal|"substring('123456789', 3, 2)"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -1174,7 +1174,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"TRIM(' abc ')"
+literal|"trim(' abc ')"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -1206,7 +1206,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"LOWER('AbC')"
+literal|"lower('AbC')"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -1238,7 +1238,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"UPPER('aBc')"
+literal|"upper('aBc')"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -1270,7 +1270,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"LOCATE('Bc', 'aBc')"
+literal|"locate('Bc', 'aBc')"
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -1302,7 +1302,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"LOCATE(UPPER('Bc'), UPPER('aBc')) = LENGTH(SUBSTRING(TRIM(LOWER(CONCAT('   abc', 'def   '))), 3, 2))"
+literal|"locate(upper('Bc'), upper('aBc')) = length(substring(trim(lower(concat('   abc', 'def   '))), 3, 2))"
 argument_list|)
 decl_stmt|;
 name|assertEquals

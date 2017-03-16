@@ -210,7 +210,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"SUBSTRING(xyz , 2 , 3)"
+literal|"substring(xyz , 2 , 3)"
 decl_stmt|;
 name|Expression
 name|exp

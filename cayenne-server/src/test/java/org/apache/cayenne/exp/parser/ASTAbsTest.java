@@ -171,7 +171,7 @@ block|{
 name|String
 name|expString
 init|=
-literal|"ABS(xyz)"
+literal|"abs(xyz)"
 decl_stmt|;
 name|Expression
 name|exp

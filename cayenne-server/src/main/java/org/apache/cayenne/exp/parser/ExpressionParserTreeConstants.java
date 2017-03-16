@@ -322,21 +322,39 @@ literal|48
 decl_stmt|;
 specifier|public
 name|int
-name|JJTNAMEDPARAMETER
+name|JJTCURRENTDATE
 init|=
 literal|49
 decl_stmt|;
 specifier|public
 name|int
-name|JJTOBJPATH
+name|JJTCURRENTTIME
 init|=
 literal|50
 decl_stmt|;
 specifier|public
 name|int
-name|JJTDBPATH
+name|JJTCURRENTTIMESTAMP
 init|=
 literal|51
+decl_stmt|;
+specifier|public
+name|int
+name|JJTNAMEDPARAMETER
+init|=
+literal|52
+decl_stmt|;
+specifier|public
+name|int
+name|JJTOBJPATH
+init|=
+literal|53
+decl_stmt|;
+specifier|public
+name|int
+name|JJTDBPATH
+init|=
+literal|54
 decl_stmt|;
 specifier|public
 name|String
@@ -442,6 +460,12 @@ literal|"Min"
 block|,
 literal|"Sum"
 block|,
+literal|"CurrentDate"
+block|,
+literal|"CurrentTime"
+block|,
+literal|"CurrentTimestamp"
+block|,
 literal|"NamedParameter"
 block|,
 literal|"ObjPath"
@@ -453,7 +477,7 @@ block|}
 end_interface
 
 begin_comment
-comment|/* JavaCC - OriginalChecksum=0fe59a033c5f411d1c7cc0cc441fabf6 (do not edit this line) */
+comment|/* JavaCC - OriginalChecksum=7571de31b81c878cf4b5f52ebb555fb1 (do not edit this line) */
 end_comment
 
 end_unit
