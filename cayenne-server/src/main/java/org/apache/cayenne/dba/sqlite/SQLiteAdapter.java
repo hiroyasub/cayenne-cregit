@@ -465,6 +465,7 @@ name|registerType
 argument_list|(
 operator|new
 name|SQLiteCalendarType
+argument_list|<>
 argument_list|(
 name|GregorianCalendar
 operator|.
@@ -478,6 +479,7 @@ name|registerType
 argument_list|(
 operator|new
 name|SQLiteCalendarType
+argument_list|<>
 argument_list|(
 name|Calendar
 operator|.

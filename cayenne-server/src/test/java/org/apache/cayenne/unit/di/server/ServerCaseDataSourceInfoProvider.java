@@ -625,7 +625,7 @@ name|sqlite
 operator|.
 name|setDataSourceUrl
 argument_list|(
-literal|"jdbc:sqlite:file:memdb?mode=memory&cache=shared"
+literal|"jdbc:sqlite:file:memdb?mode=memory&cache=shared&date_class=text"
 argument_list|)
 expr_stmt|;
 name|sqlite
