@@ -205,20 +205,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -496,7 +482,7 @@ literal|0
 argument_list|)
 decl_stmt|;
 comment|// TODO: andrus, 1/6/2008 - move reusable join check here...
-name|Entity
+name|DbEntity
 name|sourceEntity
 init|=
 name|incomingDB
@@ -506,37 +492,14 @@ argument_list|()
 decl_stmt|;
 name|String
 name|tableName
-decl_stmt|;
-if|if
-condition|(
-name|sourceEntity
-operator|instanceof
-name|DbEntity
-condition|)
-block|{
-name|tableName
-operator|=
+init|=
 name|quoter
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|sourceEntity
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|tableName
-operator|=
-name|sourceEntity
-operator|.
-name|getName
-argument_list|()
-expr_stmt|;
-block|}
+decl_stmt|;
 name|String
 name|sourceAlias
 init|=
@@ -583,11 +546,6 @@ argument_list|(
 name|semantics
 argument_list|)
 expr_stmt|;
-name|String
-name|targetAlias
-init|=
-literal|""
-decl_stmt|;
 if|if
 condition|(
 name|joinRelationships
@@ -642,9 +600,6 @@ name|quoter
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|dbRelationship
 operator|.
 name|getSourceEntity
@@ -670,9 +625,6 @@ name|quoter
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|dbRelationship
 operator|.
 name|getTargetEntity
@@ -681,8 +633,6 @@ argument_list|)
 decl_stmt|;
 name|String
 name|subqueryTargetAlias
-init|=
-literal|""
 decl_stmt|;
 if|if
 condition|(
@@ -799,13 +749,14 @@ block|}
 else|else
 block|{
 comment|// non-flattened relationship
+name|String
 name|targetAlias
-operator|=
+init|=
 name|appendTable
 argument_list|(
 name|rhsId
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|// apply the joins defined in query
 name|generateJoiningExpression
 argument_list|(
@@ -1080,8 +1031,7 @@ name|tableName
 argument_list|)
 expr_stmt|;
 comment|// not using "AS" to separate table name and alias name - OpenBase doesn't
-comment|// support
-comment|// "AS", and the rest of the databases do not care
+comment|// support "AS", and the rest of the databases do not care
 name|context
 operator|.
 name|append
@@ -1107,8 +1057,6 @@ expr_stmt|;
 name|generateJoinsForFlattenedAttributes
 argument_list|(
 name|id
-argument_list|,
-name|alias
 argument_list|)
 expr_stmt|;
 block|}
@@ -1238,16 +1186,13 @@ return|return
 name|alias
 return|;
 block|}
-comment|/**      * Generates Joins statements for those flattened attributes that appear after the      * FROM clause, e.g. in WHERE, ORDER BY, etc clauses. Flattened attributes of the      * entity from the SELECT clause are processed earlier and therefore are omitted.      *       * @param id table to JOIN id      * @param alias table alias      */
+comment|/**      * Generates Joins statements for those flattened attributes that appear after the      * FROM clause, e.g. in WHERE, ORDER BY, etc clauses. Flattened attributes of the      * entity from the SELECT clause are processed earlier and therefore are omitted.      *      * @param id table to JOIN id      */
 specifier|private
 name|void
 name|generateJoinsForFlattenedAttributes
 parameter_list|(
 name|EJBQLTableId
 name|id
-parameter_list|,
-name|String
-name|alias
 parameter_list|)
 block|{
 name|String
@@ -1269,21 +1214,17 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
+comment|// if the dbPath is not null, all attributes of the entity are processed earlier
 name|boolean
 name|isProcessingOmitted
 init|=
-literal|false
-decl_stmt|;
-comment|// if the dbPath is not null, all attributes of the entity are processed earlier
-name|isProcessingOmitted
-operator|=
 name|id
 operator|.
 name|getDbPath
 argument_list|()
 operator|!=
 literal|null
-expr_stmt|;
+decl_stmt|;
 name|String
 name|sourceExpression
 init|=
@@ -1483,9 +1424,6 @@ name|quoter
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|rel
 operator|.
 name|getTargetEntity
@@ -1541,9 +1479,6 @@ name|quoter
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
-operator|(
-name|DbEntity
-operator|)
 name|rel
 operator|.
 name|getSourceEntity
@@ -1571,8 +1506,7 @@ name|String
 name|entityId
 parameter_list|)
 block|{
-comment|// parser only works on full queries, so prepend a dummy query and then strip it
-comment|// out...
+comment|// parser only works on full queries, so prepend a dummy query and then strip it out...
 name|String
 name|ejbqlChunk
 init|=
