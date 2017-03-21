@@ -348,15 +348,12 @@ argument_list|(
 name|binder
 argument_list|)
 operator|.
-name|add
+name|insertBefore
 argument_list|(
 name|CacheInvalidationFilter
 operator|.
 name|class
-argument_list|)
-operator|.
-name|before
-argument_list|(
+argument_list|,
 name|TransactionFilter
 operator|.
 name|class
