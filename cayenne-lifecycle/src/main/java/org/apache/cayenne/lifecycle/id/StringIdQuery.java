@@ -950,6 +950,17 @@ operator|.
 name|STATEMENT_FETCH_SIZE_DEFAULT
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 return|;
 block|}

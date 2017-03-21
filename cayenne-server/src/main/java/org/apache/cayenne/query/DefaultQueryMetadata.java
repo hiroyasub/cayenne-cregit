@@ -411,6 +411,18 @@ operator|.
 name|STATEMENT_FETCH_SIZE_DEFAULT
 return|;
 block|}
+comment|/**      * @since 4.0      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 

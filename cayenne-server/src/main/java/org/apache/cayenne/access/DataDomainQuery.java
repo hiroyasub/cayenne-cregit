@@ -502,6 +502,17 @@ return|return
 literal|0
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 

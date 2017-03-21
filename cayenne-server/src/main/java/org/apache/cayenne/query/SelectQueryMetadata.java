@@ -432,6 +432,9 @@ decl_stmt|;
 name|boolean
 name|isSingleResultSetMapping
 decl_stmt|;
+name|boolean
+name|suppressingDistinct
+decl_stmt|;
 annotation|@
 name|Override
 name|void
@@ -2092,6 +2095,34 @@ block|{
 return|return
 name|isSingleResultSetMapping
 return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+block|{
+return|return
+name|suppressingDistinct
+return|;
+block|}
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+name|void
+name|setSuppressingDistinct
+parameter_list|(
+name|boolean
+name|suppressingDistinct
+parameter_list|)
+block|{
+name|this
+operator|.
+name|suppressingDistinct
+operator|=
+name|suppressingDistinct
+expr_stmt|;
 block|}
 block|}
 end_class

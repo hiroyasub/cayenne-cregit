@@ -439,6 +439,20 @@ name|getStatementFetchSize
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+block|{
+return|return
+name|mdDelegate
+operator|.
+name|isSuppressingDistinct
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

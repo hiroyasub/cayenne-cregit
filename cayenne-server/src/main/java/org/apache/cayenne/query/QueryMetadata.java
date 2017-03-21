@@ -302,6 +302,11 @@ name|int
 name|getStatementFetchSize
 parameter_list|()
 function_decl|;
+comment|/**      * @since 4.0      */
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 

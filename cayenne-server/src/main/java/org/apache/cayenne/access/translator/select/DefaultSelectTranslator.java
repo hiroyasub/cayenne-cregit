@@ -949,8 +949,17 @@ condition|)
 block|{
 name|suppressingDistinct
 operator|=
-literal|false
+name|queryMetadata
+operator|.
+name|isSuppressingDistinct
+argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|suppressingDistinct
+condition|)
+block|{
 for|for
 control|(
 name|ColumnDescriptor
@@ -975,6 +984,7 @@ operator|=
 literal|true
 expr_stmt|;
 break|break;
+block|}
 block|}
 block|}
 if|if

@@ -2001,6 +2001,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/** 	 * @since 4.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isSuppressingDistinct
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 

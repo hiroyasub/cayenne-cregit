@@ -957,6 +957,11 @@ name|translator
 operator|.
 name|isSuppressingDistinct
 argument_list|()
+operator|||
+name|queryMetadata
+operator|.
+name|isSuppressingDistinct
+argument_list|()
 condition|)
 block|{
 return|return

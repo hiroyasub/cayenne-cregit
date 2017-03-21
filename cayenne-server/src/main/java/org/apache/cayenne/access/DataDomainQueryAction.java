@@ -3641,6 +3641,15 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|metadata
+operator|.
+name|isSuppressingDistinct
+argument_list|()
+condition|)
+block|{
 name|Set
 argument_list|<
 name|List
@@ -3704,6 +3713,7 @@ operator|.
 name|remove
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|// invoke callbacks now that all objects are resolved...

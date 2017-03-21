@@ -1965,6 +1965,25 @@ operator|=
 name|distinct
 expr_stmt|;
 block|}
+comment|/** 	 * Sets<code>distinct</code> property that determines whether this query 	 * returns distinct row. 	 */
+specifier|public
+name|void
+name|setSuppressDistinct
+parameter_list|(
+name|boolean
+name|suppressDistinct
+parameter_list|)
+block|{
+name|this
+operator|.
+name|metaData
+operator|.
+name|setSuppressingDistinct
+argument_list|(
+name|suppressDistinct
+argument_list|)
+expr_stmt|;
+block|}
 comment|/** 	 * Adds one or more aliases for the qualifier expression path. Aliases serve 	 * to instruct Cayenne to generate separate sets of joins for overlapping 	 * paths, that maybe needed for complex conditions. An example of an 	 *<i>implicit</i> splits is this method: 	 * {@link ExpressionFactory#matchAllExp(String, Object...)}. 	 *  	 * @since 3.0 	 */
 specifier|public
 name|void
