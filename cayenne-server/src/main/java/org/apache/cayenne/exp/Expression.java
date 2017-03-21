@@ -547,6 +547,15 @@ name|ASTERISK
 init|=
 literal|46
 decl_stmt|;
+comment|/** 	 * @since 4.0 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|FULL_OBJECT
+init|=
+literal|47
+decl_stmt|;
 specifier|protected
 name|int
 name|type

@@ -593,6 +593,8 @@ name|descriptor
 argument_list|,
 name|queryMetadata
 argument_list|,
+name|resultMetadata
+argument_list|,
 name|postProcessorFactory
 operator|.
 name|get
@@ -688,6 +690,8 @@ argument_list|(
 name|descriptor
 argument_list|,
 name|queryMetadata
+argument_list|,
+literal|null
 argument_list|,
 name|postProcessorFactory
 operator|.

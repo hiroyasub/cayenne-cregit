@@ -215,6 +215,11 @@ specifier|protected
 name|QuotingStrategy
 name|strategy
 decl_stmt|;
+comment|/** 	 * Force joining tables for all relations, not only for toMany 	 * @since 4.0 	 */
+specifier|private
+name|boolean
+name|forceJoinForRelations
+decl_stmt|;
 comment|/** 	 * Creates QueryAssemblerHelper initializing with parent 	 * {@link QueryAssembler} and output buffer object. 	 */
 specifier|public
 name|QueryAssemblerHelper
@@ -1840,6 +1845,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|forceJoinForRelations
+operator|||
 name|rel
 operator|.
 name|isToMany
@@ -1881,51 +1888,25 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|StringBuilder
+name|String
 name|msg
 init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|msg
-operator|.
-name|append
-argument_list|(
-literal|"OBJ_PATH expressions are only supported "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"for a single-join relationships. "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+literal|"OBJ_PATH expressions are only supported for a single-join relationships. "
+operator|+
 literal|"This relationship has "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|joins
 operator|.
 name|size
 argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" joins."
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
 name|msg
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -1941,8 +1922,6 @@ argument_list|)
 decl_stmt|;
 name|DbAttribute
 name|attribute
-init|=
-literal|null
 decl_stmt|;
 if|if
 condition|(
@@ -1955,9 +1934,6 @@ block|{
 name|DbEntity
 name|ent
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|join
 operator|.
 name|getRelationship
@@ -1987,51 +1963,25 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|StringBuilder
+name|String
 name|msg
 init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|msg
-operator|.
-name|append
-argument_list|(
-literal|"DB_NAME expressions can only support "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"targets with a single column PK. "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+literal|"DB_NAME expressions can only support targets with a single column PK. "
+operator|+
 literal|"This entity has "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|pk
 operator|.
 name|size
 argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" columns in primary key."
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
 name|msg
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -2050,6 +2000,13 @@ else|else
 block|{
 name|attribute
 operator|=
+name|forceJoinForRelations
+condition|?
+name|join
+operator|.
+name|getTarget
+argument_list|()
+else|:
 name|join
 operator|.
 name|getSource
@@ -2060,6 +2017,22 @@ name|processColumn
 argument_list|(
 name|attribute
 argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Force joining tables for all relations, not only for toMany 	 * @since 4.0 	 */
+specifier|protected
+name|void
+name|setForceJoinForRelations
+parameter_list|(
+name|boolean
+name|forceJoinForRelations
+parameter_list|)
+block|{
+name|this
+operator|.
+name|forceJoinForRelations
+operator|=
+name|forceJoinForRelations
 expr_stmt|;
 block|}
 block|}

@@ -445,7 +445,7 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Creates a ColumnSelect that will fetch single property that can be resolved      * against a given {@link ObjEntity} class.      *      * @param entityType base persistent class that will be used as a root for this query      * @param column single column to select      */
-specifier|protected
+specifier|public
 specifier|static
 parameter_list|<
 name|E
@@ -487,7 +487,7 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Creates a ColumnSelect that will fetch multiple columns of a given {@link ObjEntity}      *      * @param entityType base persistent class that will be used as a root for this query      * @param firstColumn column to select      * @param otherColumns columns to select      */
-specifier|protected
+specifier|public
 specifier|static
 name|ColumnSelect
 argument_list|<

@@ -606,7 +606,7 @@ name|entityQualifier
 expr_stmt|;
 block|}
 block|}
-comment|/** 		 * Attaching root Db entity's qualifier 		 */
+comment|// Attaching root Db entity's qualifier
 if|if
 condition|(
 name|getDbEntity
@@ -1740,6 +1740,30 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return;
+block|}
+if|if
+condition|(
+name|node
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|Expression
+operator|.
+name|FULL_OBJECT
+operator|&&
+name|parentNode
+operator|!=
+literal|null
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Expression is not supported in where clause."
+argument_list|)
+throw|;
 block|}
 name|int
 name|count
