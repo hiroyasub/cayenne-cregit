@@ -482,6 +482,15 @@ init|=
 literal|""
 decl_stmt|;
 comment|// TODO remove in 4.0.BETA
+comment|/**      * @deprecated renamed to {@code<dbimport>},  remove in 4.0.BETA      */
+annotation|@
+name|Deprecated
+annotation|@
+name|Parameter
+specifier|public
+name|OldReverseEngineering
+name|reverseEngineering
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -937,7 +946,7 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n"
+literal|"\nConnection properties were replaced with<dataSource> tag since 4.0.M5.\n"
 operator|+
 literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
@@ -957,7 +966,7 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n"
+literal|"\nConnection properties were replaced with<dataSource> tag since 4.0.M5.\n"
 operator|+
 literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
@@ -977,7 +986,7 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"meaningfulPkTables property has been moved to<dbimport> tag since 4.0.M5.\n"
+literal|"\nmeaningfulPkTables property has been moved to<dbimport> tag since 4.0.M5.\n"
 operator|+
 literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
@@ -997,7 +1006,7 @@ throw|throw
 operator|new
 name|UnsupportedOperationException
 argument_list|(
-literal|"defaultPackage property has been moved to<dbimport> tag since 4.0.M5.\n"
+literal|"\ndefaultPackage property has been moved to<dbimport> tag since 4.0.M5.\n"
 operator|+
 literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
 argument_list|)
