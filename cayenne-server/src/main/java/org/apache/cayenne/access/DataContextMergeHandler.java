@@ -236,7 +236,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A listener of GraphEvents sent by the DataChannel that merges changes to the  * DataContext.  *   * @since 1.2  */
+comment|/**  * A listener of GraphEvents sent by the DataChannel that merges changes to the DataContext.  *   * @since 1.2  */
 end_comment
 
 begin_comment
@@ -624,6 +624,9 @@ name|os
 operator|.
 name|processDeletedID
 argument_list|(
+operator|(
+name|ObjectId
+operator|)
 name|nodeId
 argument_list|)
 expr_stmt|;

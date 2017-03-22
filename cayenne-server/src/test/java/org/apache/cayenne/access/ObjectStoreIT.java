@@ -593,8 +593,10 @@ name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertNull
+name|assertEquals
 argument_list|(
+name|oid
+argument_list|,
 name|object
 operator|.
 name|getObjectId

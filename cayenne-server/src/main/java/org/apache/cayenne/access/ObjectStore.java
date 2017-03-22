@@ -1115,21 +1115,13 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|Object
+name|object1
+range|:
 name|objects
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|Persistent
 name|object
@@ -1137,10 +1129,7 @@ init|=
 operator|(
 name|Persistent
 operator|)
-name|it
-operator|.
-name|next
-argument_list|()
+name|object1
 decl_stmt|;
 name|ObjectId
 name|id
@@ -1181,13 +1170,6 @@ argument_list|)
 expr_stmt|;
 name|object
 operator|.
-name|setObjectId
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-name|object
-operator|.
 name|setPersistenceState
 argument_list|(
 name|PersistenceState
@@ -1217,17 +1199,31 @@ name|this
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|ObjectId
+argument_list|,
+name|DataRow
+operator|>
+name|emptyMap
+argument_list|()
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|ObjectId
+operator|>
+name|emptyList
+argument_list|()
 argument_list|,
 name|ids
 argument_list|,
 name|Collections
 operator|.
-name|EMPTY_LIST
+expr|<
+name|ObjectId
+operator|>
+name|emptyList
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1240,6 +1236,9 @@ name|objectsRolledBack
 parameter_list|()
 block|{
 name|Iterator
+argument_list|<
+name|Persistent
+argument_list|>
 name|it
 init|=
 name|getObjectIterator
@@ -1257,9 +1256,6 @@ block|{
 name|Persistent
 name|object
 init|=
-operator|(
-name|Persistent
-operator|)
 name|it
 operator|.
 name|next
@@ -1817,6 +1813,9 @@ comment|/**      * Returns an iterator over the registered objects.      */
 specifier|public
 specifier|synchronized
 name|Iterator
+argument_list|<
+name|Persistent
+argument_list|>
 name|getObjectIterator
 parameter_list|()
 block|{
@@ -1952,6 +1951,11 @@ name|event
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|ObjectId
+argument_list|,
+name|DataRow
+argument_list|>
 name|modifiedDiffs
 init|=
 name|event
@@ -1972,40 +1976,24 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|Iterator
-name|oids
-init|=
+for|for
+control|(
+name|Map
+operator|.
+name|Entry
+argument_list|<
+name|ObjectId
+argument_list|,
+name|DataRow
+argument_list|>
+name|entry
+range|:
 name|modifiedDiffs
 operator|.
 name|entrySet
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|oids
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|Map
-operator|.
-name|Entry
-name|entry
-init|=
-operator|(
-name|Map
-operator|.
-name|Entry
-operator|)
-name|oids
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|processUpdatedSnapshot
 argument_list|(
 name|entry
@@ -2013,9 +2001,6 @@ operator|.
 name|getKey
 argument_list|()
 argument_list|,
-operator|(
-name|DataRow
-operator|)
 name|entry
 operator|.
 name|getValue
@@ -2025,6 +2010,9 @@ expr_stmt|;
 block|}
 block|}
 name|Collection
+argument_list|<
+name|ObjectId
+argument_list|>
 name|deletedIDs
 init|=
 name|event
@@ -2045,28 +2033,17 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|Iterator
-name|it
-init|=
+for|for
+control|(
+name|ObjectId
+name|deletedID
+range|:
 name|deletedIDs
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
 name|processDeletedID
 argument_list|(
-name|it
-operator|.
-name|next
-argument_list|()
+name|deletedID
 argument_list|)
 expr_stmt|;
 block|}
@@ -2210,12 +2187,11 @@ comment|/**      * Requires external synchronization.      *       * @since 1.2 
 name|void
 name|processDeletedID
 parameter_list|(
-name|Object
+name|ObjectId
 name|nodeId
 parameter_list|)
 block|{
-comment|// access object map directly - the method should be called in a synchronized
-comment|// context...
+comment|// access object map directly - the method should be called in a synchronized context...
 name|Persistent
 name|object
 init|=
@@ -2409,6 +2385,9 @@ name|void
 name|processInvalidatedIDs
 parameter_list|(
 name|Collection
+argument_list|<
+name|ObjectId
+argument_list|>
 name|invalidatedIDs
 parameter_list|)
 block|{
@@ -2425,33 +2404,14 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|Iterator
-name|it
-init|=
-name|invalidatedIDs
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|ObjectId
 name|oid
-init|=
-operator|(
-name|ObjectId
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
+range|:
+name|invalidatedIDs
+control|)
+block|{
 name|DataObject
 name|object
 init|=
@@ -2601,38 +2561,21 @@ name|void
 name|processIndirectlyModifiedIDs
 parameter_list|(
 name|Collection
+argument_list|<
+name|ObjectId
+argument_list|>
 name|indirectlyModifiedIDs
 parameter_list|)
 block|{
-name|Iterator
-name|indirectlyModifiedIt
-init|=
-name|indirectlyModifiedIDs
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|indirectlyModifiedIt
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
+for|for
+control|(
 name|ObjectId
 name|oid
-init|=
-operator|(
-name|ObjectId
-operator|)
-name|indirectlyModifiedIt
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
-comment|// access object map directly - the method should be called in a synchronized
-comment|// context...
+range|:
+name|indirectlyModifiedIDs
+control|)
+block|{
+comment|// access object map directly - the method should be called in a synchronized context...
 specifier|final
 name|DataObject
 name|object
@@ -2797,15 +2740,14 @@ comment|/**      * Requires external synchronization.      *       * @since 1.1 
 name|void
 name|processUpdatedSnapshot
 parameter_list|(
-name|Object
+name|ObjectId
 name|nodeId
 parameter_list|,
 name|DataRow
 name|diff
 parameter_list|)
 block|{
-comment|// access object map directly - the method should be called in a synchronized
-comment|// context...
+comment|// access object map directly - the method should be called in a synchronized context...
 name|DataObject
 name|object
 init|=
@@ -2885,12 +2827,7 @@ argument_list|()
 operator|.
 name|getClassDescriptor
 argument_list|(
-operator|(
-operator|(
-name|ObjectId
-operator|)
 name|nodeId
-operator|)
 operator|.
 name|getEntityName
 argument_list|()
@@ -2898,13 +2835,10 @@ argument_list|)
 decl_stmt|;
 comment|// TODO: andrus, 5/26/2006 - call to 'getSnapshot' is expensive,
 comment|// however my attempts to merge the 'diff' instead of snapshot
-comment|// via 'refreshObjectWithSnapshot' resulted in even worse
-comment|// performance.
-comment|// This sounds counterintuitive (Not sure if this is some HotSpot
-comment|// related glitch)... still keeping the old algorithm here until
-comment|// we
-comment|// switch from snapshot events to GraphEvents and all this code
-comment|// becomes obsolete.
+comment|// via 'refreshObjectWithSnapshot' resulted in even worse performance.
+comment|// This sounds counterintuitive (Not sure if this is some HotSpot related glitch)...
+comment|// still keeping the old algorithm here until we switch from snapshot events
+comment|// to GraphEvents and all this code becomes obsolete.
 name|DataRow
 name|snapshot
 init|=
@@ -2985,12 +2919,7 @@ argument_list|()
 operator|.
 name|getClassDescriptor
 argument_list|(
-operator|(
-operator|(
-name|ObjectId
-operator|)
 name|nodeId
-operator|)
 operator|.
 name|getEntityName
 argument_list|()
@@ -3445,6 +3374,9 @@ expr_stmt|;
 block|}
 name|registerDiff
 argument_list|(
+operator|(
+name|ObjectId
+operator|)
 name|nodeId
 argument_list|,
 name|diff

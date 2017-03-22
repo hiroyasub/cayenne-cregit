@@ -306,7 +306,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A GraphMap extension that works together with ObjectContext to track persistent object  * changes and send events.  *   * @since 1.2  */
+comment|/**  * A GraphMap extension that works together with {@link ObjectContext} to track persistent object  * changes and send events.  *   * @since 1.2  */
 end_comment
 
 begin_class
@@ -555,6 +555,30 @@ operator|.
 name|unregisterNode
 argument_list|(
 name|nodeId
+argument_list|)
+expr_stmt|;
+name|Persistent
+name|object
+init|=
+operator|(
+name|Persistent
+operator|)
+name|node
+decl_stmt|;
+name|object
+operator|.
+name|setObjectContext
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+name|object
+operator|.
+name|setPersistenceState
+argument_list|(
+name|PersistenceState
+operator|.
+name|TRANSIENT
 argument_list|)
 expr_stmt|;
 return|return
