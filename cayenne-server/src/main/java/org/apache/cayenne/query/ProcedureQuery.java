@@ -162,7 +162,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query based on Procedure. Can be used as a select query, or as a query of an  * arbitrary complexity, performing data modification, selecting data (possibly with  * multiple result sets per call), returning values via OUT parameters.<h3>Execution with  * DataContext</h3><h4>Reading OUT parameters</h4>  *<p>  * If a ProcedureQuery has OUT parameters, they are wrapped in a separate List in the  * query result. Such list will contain a single Map with OUT parameter values.  *</p>  *<h4>Using ProcedureQuery as a GenericSelectQuery</h4>  *<p>  * Executing ProcedureQuery via  * {@link org.apache.cayenne.access.DataContext#performQuery(Query)} makes sense only if  * the stored procedure returns a single result set (or alternatively returns a result via  * OUT parameters and no other result sets). It is still OK if data modification occurs as  * a side effect. However if the query returns more then one result set, a more generic  * form should be used:  * {@link org.apache.cayenne.access.DataContext#performGenericQuery(Query)}.  *</p>  */
+comment|/**  * A query based on Procedure. Can be used as a select query, or as a query of an  * arbitrary complexity, performing data modification, selecting data (possibly with  * multiple result sets per call), returning values via OUT parameters.  *<h3>Execution with DataContext</h3>  *<h4>Reading OUT parameters</h4>  *<p>  * If a ProcedureQuery has OUT parameters, they are wrapped in a separate List in the  * query result. Such list will contain a single Map with OUT parameter values.  *</p>  *<h4>Using ProcedureQuery as a GenericSelectQuery</h4>  *<p>  * Executing ProcedureQuery via  * {@link org.apache.cayenne.access.DataContext#performQuery(Query)} makes sense only if  * the stored procedure returns a single result set (or alternatively returns a result via  * OUT parameters and no other result sets). It is still OK if data modification occurs as  * a side effect. However if the query returns more then one result set, a more generic  * form should be used:  * {@link org.apache.cayenne.access.DataContext#performGenericQuery(Query)}.  *</p>  */
 end_comment
 
 begin_class
@@ -222,8 +222,7 @@ operator|new
 name|ProcedureQueryMetadata
 argument_list|()
 decl_stmt|;
-comment|// TODO: ColumnDescriptor is not XMLSerializable so we can't store
-comment|// it in a DataMap
+comment|// TODO: ColumnDescriptor is not XMLSerializable so we can't store it in a DataMap
 comment|/**      * @since 1.2      */
 specifier|protected
 name|List
