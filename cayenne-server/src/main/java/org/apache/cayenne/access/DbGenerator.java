@@ -1487,11 +1487,9 @@ init|)
 block|{
 name|jdbcEventLogger
 operator|.
-name|logQuery
+name|log
 argument_list|(
 name|sql
-argument_list|,
-literal|null
 argument_list|)
 expr_stmt|;
 name|statement

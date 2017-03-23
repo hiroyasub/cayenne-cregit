@@ -49,16 +49,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -291,13 +281,9 @@ operator|.
 name|getJdbcEventLogger
 argument_list|()
 operator|.
-name|logQuery
+name|log
 argument_list|(
 name|configSQL
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
 try|try
@@ -309,7 +295,6 @@ name|connection
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 name|statement

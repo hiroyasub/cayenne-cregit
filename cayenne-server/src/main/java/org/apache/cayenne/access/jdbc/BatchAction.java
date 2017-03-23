@@ -516,13 +516,9 @@ decl_stmt|;
 comment|// log batch SQL execution
 name|logger
 operator|.
-name|logQuery
+name|log
 argument_list|(
 name|sql
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
 comment|// run batch
@@ -545,7 +541,6 @@ name|prepareStatement
 argument_list|(
 name|sql
 argument_list|)
-init|;
 init|)
 block|{
 for|for
@@ -712,13 +707,9 @@ decl_stmt|;
 comment|// log batch SQL execution
 name|logger
 operator|.
-name|logQuery
+name|log
 argument_list|(
 name|queryStr
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
 comment|// run batch queries one by one

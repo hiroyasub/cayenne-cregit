@@ -1149,12 +1149,7 @@ name|updateCounts
 operator|.
 name|add
 argument_list|(
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 name|updateCount
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dataNode

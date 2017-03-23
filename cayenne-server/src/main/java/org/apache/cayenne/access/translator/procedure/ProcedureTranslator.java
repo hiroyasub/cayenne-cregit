@@ -641,7 +641,6 @@ name|val
 argument_list|)
 expr_stmt|;
 block|}
-comment|// FIXME: compute proper attributes via callParams
 name|logger
 operator|.
 name|logQuery

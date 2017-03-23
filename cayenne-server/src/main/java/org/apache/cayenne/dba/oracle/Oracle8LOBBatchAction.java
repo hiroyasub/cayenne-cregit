@@ -125,16 +125,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -582,8 +572,6 @@ argument_list|)
 expr_stmt|;
 name|int
 name|updated
-init|=
-literal|0
 decl_stmt|;
 name|String
 name|updateStr
@@ -598,13 +586,9 @@ decl_stmt|;
 comment|// 1. run row update
 name|logger
 operator|.
-name|logQuery
+name|log
 argument_list|(
 name|updateStr
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
 try|try

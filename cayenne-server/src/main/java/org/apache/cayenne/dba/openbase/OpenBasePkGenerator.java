@@ -260,9 +260,6 @@ block|{
 name|DbEntity
 name|entity
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|pk
 operator|.
 name|getEntity
@@ -321,12 +318,7 @@ name|BIGINT
 condition|)
 block|{
 return|return
-name|Long
-operator|.
-name|valueOf
-argument_list|(
 name|value
-argument_list|)
 return|;
 block|}
 else|else
@@ -334,15 +326,10 @@ block|{
 comment|// leaving it up to the user to ensure that PK does not exceed max
 comment|// int...
 return|return
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 operator|(
 name|int
 operator|)
 name|value
-argument_list|)
 return|;
 block|}
 block|}
@@ -375,13 +362,9 @@ operator|.
 name|getJdbcEventLogger
 argument_list|()
 operator|.
-name|logQuery
+name|log
 argument_list|(
 name|sql
-argument_list|,
-name|Collections
-operator|.
-name|EMPTY_LIST
 argument_list|)
 expr_stmt|;
 try|try
@@ -396,7 +379,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -408,7 +390,6 @@ name|con
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -422,7 +403,6 @@ name|executeQuery
 argument_list|(
 name|sql
 argument_list|)
-init|;
 init|)
 block|{
 comment|// Object pk = null;
@@ -544,6 +524,9 @@ name|DataNode
 name|node
 parameter_list|,
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 throws|throws
@@ -552,36 +535,14 @@ block|{
 comment|// looks like generating a PK on top of an existing one does not
 comment|// result in errors...
 comment|// create needed sequences
-name|Iterator
-argument_list|<
-name|?
-argument_list|>
-name|it
-init|=
+for|for
+control|(
+name|DbEntity
+name|dbEntity
+range|:
 name|dbEntities
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbEntity
-name|entity
-init|=
-operator|(
-name|DbEntity
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 comment|// the caller must take care of giving us the right entities
 comment|// but lets check anyway
 if|if
@@ -589,7 +550,7 @@ condition|(
 operator|!
 name|canCreatePK
 argument_list|(
-name|entity
+name|dbEntity
 argument_list|)
 condition|)
 block|{
@@ -601,7 +562,7 @@ name|node
 argument_list|,
 name|createPKString
 argument_list|(
-name|entity
+name|dbEntity
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -611,7 +572,7 @@ name|node
 argument_list|,
 name|createUniquePKIndexString
 argument_list|(
-name|entity
+name|dbEntity
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -622,9 +583,15 @@ annotation|@
 name|Override
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|createAutoPkStatements
 parameter_list|(
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 block|{
@@ -646,36 +613,14 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Iterator
-argument_list|<
-name|?
-argument_list|>
-name|it
-init|=
+for|for
+control|(
+name|DbEntity
+name|dbEntity
+range|:
 name|dbEntities
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbEntity
-name|entity
-init|=
-operator|(
-name|DbEntity
-operator|)
-name|it
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 comment|// the caller must take care of giving us the right entities
 comment|// but lets check anyway
 if|if
@@ -683,7 +628,7 @@ condition|(
 operator|!
 name|canCreatePK
 argument_list|(
-name|entity
+name|dbEntity
 argument_list|)
 condition|)
 block|{
@@ -695,7 +640,7 @@ name|add
 argument_list|(
 name|createPKString
 argument_list|(
-name|entity
+name|dbEntity
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -705,7 +650,7 @@ name|add
 argument_list|(
 name|createUniquePKIndexString
 argument_list|(
-name|entity
+name|dbEntity
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -745,6 +690,9 @@ name|DataNode
 name|node
 parameter_list|,
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 throws|throws
@@ -761,16 +709,23 @@ annotation|@
 name|Override
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|dropAutoPkStatements
 parameter_list|(
 name|List
+argument_list|<
+name|DbEntity
+argument_list|>
 name|dbEntities
 parameter_list|)
 block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_LIST
+name|emptyList
+argument_list|()
 return|;
 block|}
 comment|/** 	 * Returns a String to create PK support for an entity. 	 */

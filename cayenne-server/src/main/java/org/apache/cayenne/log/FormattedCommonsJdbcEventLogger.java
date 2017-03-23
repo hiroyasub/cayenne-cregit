@@ -712,6 +712,8 @@ return|;
 block|}
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|logQuery
