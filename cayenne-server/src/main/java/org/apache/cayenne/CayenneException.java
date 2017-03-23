@@ -65,17 +65,6 @@ argument_list|(
 literal|"cayenne.build.date"
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|version
-operator|!=
-literal|null
-operator|||
-name|date
-operator|!=
-literal|null
-condition|)
-block|{
 name|exceptionLabel
 operator|=
 literal|"[v."
@@ -88,14 +77,6 @@ name|date
 operator|+
 literal|"] "
 expr_stmt|;
-block|}
-else|else
-block|{
-name|exceptionLabel
-operator|=
-literal|""
-expr_stmt|;
-block|}
 block|}
 specifier|public
 specifier|static
