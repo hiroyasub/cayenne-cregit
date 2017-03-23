@@ -1125,32 +1125,11 @@ block|}
 catch|catch
 parameter_list|(
 name|InstantiationException
-name|e
-parameter_list|)
-block|{
-empty_stmt|;
-comment|// Swallow it -- no need to throw/etc.
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|IllegalAccessException
-name|e
-parameter_list|)
-block|{
-empty_stmt|;
-comment|// Swallow it -- no need to throw/etc.
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|ClassNotFoundException
-name|e
-parameter_list|)
-block|{
-empty_stmt|;
-comment|// Swallow it -- no need to throw/etc.
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|DIRuntimeException
 name|e
 parameter_list|)

@@ -23,8 +23,6 @@ begin_interface
 specifier|public
 interface|interface
 name|PropertyDescriptor
-extends|extends
-name|Property
 block|{
 comment|/**      * Returns property name.      */
 name|String

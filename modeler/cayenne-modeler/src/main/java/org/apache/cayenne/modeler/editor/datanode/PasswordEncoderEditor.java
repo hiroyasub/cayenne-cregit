@@ -595,6 +595,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|view
 operator|.
 name|getPasswordEncoder
@@ -610,8 +611,6 @@ operator|.
 name|getPasswordEncoderClass
 argument_list|()
 argument_list|)
-operator|==
-literal|false
 condition|)
 return|return;
 if|if

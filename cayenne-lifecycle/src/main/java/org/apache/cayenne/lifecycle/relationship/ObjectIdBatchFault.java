@@ -538,9 +538,7 @@ name|query
 operator|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|DataObject
-argument_list|>
+argument_list|<>
 argument_list|(
 name|entityName
 argument_list|)
@@ -662,6 +660,11 @@ name|getRoot
 argument_list|()
 argument_list|)
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
 argument_list|<
 name|DataObject

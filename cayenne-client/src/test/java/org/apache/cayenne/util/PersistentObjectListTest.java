@@ -286,10 +286,14 @@ literal|"x"
 argument_list|)
 decl_stmt|;
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|objects
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|objects

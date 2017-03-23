@@ -215,11 +215,18 @@ name|Exception
 block|{
 name|runtime
 operator|=
-operator|new
 name|ServerRuntime
+operator|.
+name|builder
+argument_list|()
+operator|.
+name|addConfig
 argument_list|(
 literal|"cayenne-lifecycle.xml"
 argument_list|)
+operator|.
+name|build
+argument_list|()
 expr_stmt|;
 block|}
 annotation|@
@@ -634,7 +641,7 @@ literal|"x"
 argument_list|,
 literal|"ID"
 argument_list|,
-literal|3l
+literal|3L
 argument_list|)
 decl_stmt|;
 name|EntityIdCoder
@@ -1181,7 +1188,7 @@ name|put
 argument_list|(
 literal|"ABC"
 argument_list|,
-literal|6783463l
+literal|6783463L
 argument_list|)
 expr_stmt|;
 name|idMap

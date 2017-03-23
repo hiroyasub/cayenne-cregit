@@ -23,83 +23,9 @@ begin_interface
 specifier|public
 interface|interface
 name|Property
-block|{
-comment|/**      * Returns property name.      */
-name|String
-name|getName
-parameter_list|()
-function_decl|;
-comment|/**      * Returns a property value of an object without disturbing the object fault status.      */
-name|Object
-name|readPropertyDirectly
-parameter_list|(
-name|Object
-name|object
-parameter_list|)
-throws|throws
-name|PropertyException
-function_decl|;
-comment|/**      * Returns a property value, inflating unresolved object if need.      */
-name|Object
-name|readProperty
-parameter_list|(
-name|Object
-name|object
-parameter_list|)
-throws|throws
-name|PropertyException
-function_decl|;
-comment|/**      * Sets a property value of an object without disturbing the object fault status. Old      * value of the property is specified as a hint and can be ignored by the property      * implementor.      */
-name|void
-name|writePropertyDirectly
-parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|Object
-name|oldValue
-parameter_list|,
-name|Object
-name|newValue
-parameter_list|)
-throws|throws
-name|PropertyException
-function_decl|;
-comment|/**      * Sets a property value, inflating unresolved object if need. Old value of the      * property is specified as a hint and can be ignored by the property implementor.      */
-name|void
-name|writeProperty
-parameter_list|(
-name|Object
-name|object
-parameter_list|,
-name|Object
-name|oldValue
-parameter_list|,
-name|Object
-name|newValue
-parameter_list|)
-throws|throws
-name|PropertyException
-function_decl|;
-comment|/**      * A visitor accept method.      *       * @return a status returned by the corresponding callback method of the visitor. It      *         serves as an indication of whether peer properties processing is still      *         needed.      */
-name|boolean
-name|visit
-parameter_list|(
-name|PropertyVisitor
-name|visitor
-parameter_list|)
-function_decl|;
-comment|/**      * If a property is implemented as a ValueHolder, this operation would create an      * unfaulted value holder and inject it into the object, if an object doesn't have it      * set yet.      */
-name|void
-name|injectValueHolder
-parameter_list|(
-name|Object
-name|object
-parameter_list|)
-throws|throws
-name|PropertyException
-function_decl|;
-block|}
+extends|extends
+name|PropertyDescriptor
+block|{ }
 end_interface
 
 end_unit

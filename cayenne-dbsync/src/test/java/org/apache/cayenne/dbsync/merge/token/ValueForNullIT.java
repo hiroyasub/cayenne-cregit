@@ -563,6 +563,11 @@ argument_list|,
 name|qual
 argument_list|)
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
 argument_list|<
 name|Persistent

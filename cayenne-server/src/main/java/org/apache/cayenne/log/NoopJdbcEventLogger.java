@@ -199,6 +199,8 @@ parameter_list|)
 block|{
 block|}
 annotation|@
+name|Deprecated
+annotation|@
 name|Override
 specifier|public
 name|void

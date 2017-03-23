@@ -245,11 +245,18 @@ name|Exception
 block|{
 name|runtime
 operator|=
-operator|new
 name|ServerRuntime
+operator|.
+name|builder
+argument_list|()
+operator|.
+name|addConfig
 argument_list|(
 literal|"cayenne-lifecycle.xml"
 argument_list|)
+operator|.
+name|build
+argument_list|()
 expr_stmt|;
 comment|// a filter is required to invalidate root objects after commit
 name|ObjectIdRelationshipFilter
@@ -395,6 +402,7 @@ name|context
 argument_list|,
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|E1
 operator|.

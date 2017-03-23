@@ -376,7 +376,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
-comment|/** 	 * Return valid method name based on query name (replace all illegal 	 * characters with underscore '_'). 	 *  	 * @param query 	 * @return Method name that perform query. 	 */
+comment|/** 	 * Return valid method name based on query name (replace all illegal 	 * characters with underscore '_'). 	 *  	 * @param query descriptor 	 * @return Method name that perform query. 	 */
 specifier|public
 name|String
 name|getQueryMethodName
@@ -399,7 +399,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Get all parameter names that used in query qualifier. 	 * 	 * @param query 	 * @return Parameter names. 	 */
+comment|/** 	 * Get all parameter names that used in query qualifier. 	 * 	 * @param query select query descriptor 	 * @return Parameter names. 	 */
 specifier|public
 name|Collection
 name|getParameterNames
@@ -650,6 +650,11 @@ name|String
 name|qualifierString
 parameter_list|)
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|Set
 argument_list|<
 name|String
@@ -770,7 +775,7 @@ operator|>
 literal|0
 return|;
 block|}
-comment|/** 	 * Get type of parameter for given name. 	 * 	 * @param query 	 * @param name 	 * @return Parameter type. 	 */
+comment|/** 	 * Get type of parameter for given name. 	 * 	 * @param query descriptor 	 * @param name parameter name 	 * @return Parameter type. 	 */
 specifier|public
 name|String
 name|getParameterType

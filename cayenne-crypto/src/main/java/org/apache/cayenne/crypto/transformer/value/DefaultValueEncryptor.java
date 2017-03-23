@@ -119,6 +119,11 @@ return|return
 literal|null
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|byte
 index|[]
 name|bytes
