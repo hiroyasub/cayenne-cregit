@@ -938,8 +938,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null source entity: "
-operator|+
+literal|"Null source entity: %s"
+argument_list|,
 name|aRelationship
 argument_list|)
 throw|;
@@ -958,8 +958,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null target entity: "
-operator|+
+literal|"Null target entity: %s"
+argument_list|,
 name|aRelationship
 argument_list|)
 throw|;
@@ -981,8 +981,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null DataMap: "
-operator|+
+literal|"Null DataMap: %s"
+argument_list|,
 name|aRelationship
 operator|.
 name|getSourceEntity

@@ -463,8 +463,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Could not properly escape pattern: "
-operator|+
+literal|"Could not properly escape pattern: %s"
+argument_list|,
 name|pattern
 argument_list|)
 throw|;

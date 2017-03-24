@@ -976,8 +976,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjAttribute has no component: "
-operator|+
+literal|"ObjAttribute has no component: %s"
+argument_list|,
 name|attribute
 operator|.
 name|getName

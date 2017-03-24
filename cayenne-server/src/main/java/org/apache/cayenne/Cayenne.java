@@ -819,8 +819,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"PK is not a number: "
-operator|+
+literal|"PK is not a number: %s"
+argument_list|,
 name|dataObject
 operator|.
 name|getObjectId
@@ -872,8 +872,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"PK is not a number: "
-operator|+
+literal|"PK is not a number: %s"
+argument_list|,
 name|dataObject
 operator|.
 name|getObjectId
@@ -930,15 +930,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected single column PK, got "
-operator|+
+literal|"Expected single column PK, got %d columns, ID: %s"
+argument_list|,
 name|pk
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|" columns, ID: "
-operator|+
+argument_list|,
 name|pk
 argument_list|)
 throw|;
@@ -1262,8 +1260,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Non-existent ObjEntity for class: "
-operator|+
+literal|"Non-existent ObjEntity for class: %s"
+argument_list|,
 name|dataObjectClass
 argument_list|)
 throw|;
@@ -1316,12 +1314,7 @@ name|context
 argument_list|,
 name|objEntityName
 argument_list|,
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 name|pk
-argument_list|)
 argument_list|)
 argument_list|)
 return|;
@@ -1495,8 +1488,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected zero or one object, instead query matched: "
-operator|+
+literal|"Expected zero or one object, instead query matched: %d"
+argument_list|,
 name|objects
 operator|.
 name|size
@@ -1581,8 +1574,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Non-existent ObjEntity: "
-operator|+
+literal|"Non-existent ObjEntity: %s"
+argument_list|,
 name|objEntityName
 argument_list|)
 throw|;
@@ -1612,14 +1605,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"PK contains "
-operator|+
+literal|"PK contains %d columns, expected 1."
+argument_list|,
 name|pkAttributes
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|" columns, expected 1."
 argument_list|)
 throw|;
 block|}
@@ -1717,8 +1708,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unmapped DataObject Class: "
-operator|+
+literal|"Unmapped DataObject Class: %s"
+argument_list|,
 name|dataObjectClass
 operator|.
 name|getName
@@ -1751,14 +1742,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"PK contains "
-operator|+
+literal|"PK contains %d columns, expected 1."
+argument_list|,
 name|pkAttributes
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|" columns, expected 1."
 argument_list|)
 throw|;
 block|}

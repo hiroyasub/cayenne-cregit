@@ -1076,8 +1076,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown query type: "
-operator|+
+literal|"Unknown query type: %s"
+argument_list|,
 name|descriptor
 operator|.
 name|getType

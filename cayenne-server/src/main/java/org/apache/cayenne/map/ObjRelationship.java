@@ -955,19 +955,15 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error adding db relationship "
+literal|"Error adding db relationship %s to ObjRelationship %s"
 operator|+
+literal|" because the source of the newly added relationship"
+operator|+
+literal|" is not the target of the previous relationship in the chain."
+argument_list|,
 name|dbRel
-operator|+
-literal|" to ObjRelationship "
-operator|+
+argument_list|,
 name|this
-operator|+
-literal|" because the source of the newly added relationship "
-operator|+
-literal|"is not the target of the previous relationship "
-operator|+
-literal|"in the chain"
 argument_list|)
 throw|;
 block|}
@@ -1644,8 +1640,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No reverse relationship exist for "
-operator|+
+literal|"No reverse relationship exist for %s"
+argument_list|,
 name|relationship
 argument_list|)
 throw|;

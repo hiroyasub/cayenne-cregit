@@ -658,8 +658,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected a single update result. Got a total of "
-operator|+
+literal|"Expected a single update result. Got a total of %d"
+argument_list|,
 name|results
 operator|.
 name|size
@@ -706,8 +706,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected a single update result. Got a total of "
-operator|+
+literal|"Expected a single update result. Got a total of %d"
+argument_list|,
 name|results
 operator|.
 name|size

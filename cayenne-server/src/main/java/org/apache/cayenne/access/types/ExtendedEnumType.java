@@ -643,22 +643,20 @@ name|databaseValue
 operator|instanceof
 name|Integer
 condition|)
+block|{
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Missing enumeration mapping for "
-operator|+
+literal|"Missing enumeration mapping for %s with value %s."
+argument_list|,
 name|getClassName
 argument_list|()
-operator|+
-literal|" with value "
-operator|+
+argument_list|,
 name|databaseValue
-operator|+
-literal|"."
 argument_list|)
 throw|;
+block|}
 comment|// Use the database value (a String) as the enum value.
 return|return
 name|Enum

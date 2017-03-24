@@ -852,6 +852,11 @@ name|getGraphManager
 argument_list|()
 init|)
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|T
 name|localObject
 init|=
@@ -877,11 +882,9 @@ return|return
 name|localObject
 return|;
 block|}
-comment|// create a hollow object, optimistically assuming that the ID we
-comment|// got from
-comment|// 'objectFromAnotherContext' is a valid ID either in the parent
-comment|// context or in
-comment|// the DB. This essentially defers possible FaultFailureExceptions.
+comment|// create a hollow object, optimistically assuming that the ID we got from
+comment|// 'objectFromAnotherContext' is a valid ID either in the parent context or in the DB.
+comment|// This essentially defers possible FaultFailureExceptions.
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -896,11 +899,16 @@ name|getEntityName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Persistent
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+name|T
 name|persistent
 init|=
 operator|(
-name|Persistent
+name|T
 operator|)
 name|descriptor
 operator|.
@@ -941,9 +949,6 @@ name|persistent
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|T
-operator|)
 name|persistent
 return|;
 block|}
@@ -1116,8 +1121,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected zero or one object, instead query matched: "
-operator|+
+literal|"Expected zero or one object, instead query matched: %d"
+argument_list|,
 name|objects
 operator|.
 name|size
@@ -1859,8 +1864,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unrecognized SyncMessage type: "
-operator|+
+literal|"Unrecognized SyncMessage type: %d"
+argument_list|,
 name|syncType
 argument_list|)
 throw|;

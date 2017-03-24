@@ -386,11 +386,11 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Cannot set object as destination of relationship "
+literal|"Cannot set object as destination of relationship %s "
 operator|+
+literal|"because it is in a different ObjectContext"
+argument_list|,
 name|relationshipName
-operator|+
-literal|" because it is in a different ObjectContext"
 argument_list|)
 throw|;
 block|}

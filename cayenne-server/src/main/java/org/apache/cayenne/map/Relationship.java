@@ -340,12 +340,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Relationship '"
-operator|+
+literal|"Relationship '%s' has no parent Entity."
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|"' has no parent Entity."
 argument_list|)
 throw|;
 block|}

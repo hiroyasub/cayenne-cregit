@@ -1030,8 +1030,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Iterated queries are not allowed in a batch. Batch size: "
-operator|+
+literal|"Iterated queries are not allowed in a batch. Batch size: %d"
+argument_list|,
 name|listSize
 argument_list|)
 throw|;

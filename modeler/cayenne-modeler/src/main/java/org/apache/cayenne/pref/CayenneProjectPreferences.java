@@ -277,14 +277,15 @@ name|Throwable
 name|e
 parameter_list|)
 block|{
+throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error initialzing preference"
+literal|"Error initializing preferences"
 argument_list|,
 name|e
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
 block|}
 return|return
@@ -321,14 +322,15 @@ name|BackingStoreException
 name|e
 parameter_list|)
 block|{
+throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"error delete preferences "
-operator|+
+literal|"Error delete preferences"
+argument_list|,
 name|e
 argument_list|)
-expr_stmt|;
+throw|;
 block|}
 block|}
 block|}

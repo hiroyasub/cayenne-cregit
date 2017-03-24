@@ -573,11 +573,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No descriptor for result set at index '"
-operator|+
+literal|"No descriptor for result set at index '%d' configured."
+argument_list|,
 name|setIndex
-operator|+
-literal|"' configured."
 argument_list|)
 throw|;
 block|}

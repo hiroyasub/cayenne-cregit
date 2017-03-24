@@ -424,8 +424,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't find database type for JDBC type '"
-operator|+
+literal|"Can't find database type for JDBC type '%s'"
+argument_list|,
 name|TypesMapping
 operator|.
 name|getSqlNameByType

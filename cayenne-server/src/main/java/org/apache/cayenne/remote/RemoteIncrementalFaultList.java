@@ -965,15 +965,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Resolved range size '"
-operator|+
+literal|"Resolved range size %d is not the same as expected: %d"
+argument_list|,
 name|sublist
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|"' is not the same as expected: "
-operator|+
+argument_list|,
 name|fetchLimit
 argument_list|)
 throw|;

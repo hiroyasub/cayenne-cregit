@@ -1212,8 +1212,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No object for ID exists: "
-operator|+
+literal|"No object for ID exists: %s"
+argument_list|,
 name|nodeId
 argument_list|)
 throw|;
@@ -1232,8 +1232,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected zero or one object, instead query matched: "
-operator|+
+literal|"Expected zero or one object, instead query matched: %d"
+argument_list|,
 name|objects
 operator|.
 name|size

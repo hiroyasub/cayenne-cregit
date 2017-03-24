@@ -441,15 +441,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected property type '"
-operator|+
+literal|"Expected property type '%s', got '%s'. Property: '%s.%s'."
+argument_list|,
 name|propertyType
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"', got '"
-operator|+
+argument_list|,
 name|field
 operator|.
 name|getType
@@ -457,19 +455,13 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'. Property: '"
-operator|+
+argument_list|,
 name|beanClass
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'.'"
-operator|+
+argument_list|,
 name|propertyName
-operator|+
-literal|"'"
 argument_list|)
 throw|;
 block|}

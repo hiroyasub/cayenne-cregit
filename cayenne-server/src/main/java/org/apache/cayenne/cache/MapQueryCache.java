@@ -275,8 +275,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null on cache rebuilding: "
-operator|+
+literal|"Null on cache rebuilding: %s"
+argument_list|,
 name|metadata
 operator|.
 name|getCacheKey

@@ -793,8 +793,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't perform lookup. There is more than one ObjEntity mapped to "
-operator|+
+literal|"Can't perform lookup. There is more than one ObjEntity mapped to %s"
+argument_list|,
 name|entityClass
 operator|.
 name|getName

@@ -264,12 +264,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Failed to generate PK: "
-operator|+
+literal|"Failed to generate PK: %s.%s"
+argument_list|,
 name|name
-operator|+
-literal|"."
-operator|+
+argument_list|,
 name|attribute
 operator|.
 name|getName

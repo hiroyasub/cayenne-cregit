@@ -569,8 +569,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error fetching PK. Expected one row, got "
-operator|+
+literal|"Error fetching PK. Expected one row, got %d"
+argument_list|,
 name|dataRows
 operator|.
 name|size

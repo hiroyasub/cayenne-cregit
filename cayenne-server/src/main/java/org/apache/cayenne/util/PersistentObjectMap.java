@@ -327,8 +327,6 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|// we can index collections on the fly - this is needed for prefetch handling...
-comment|// although it seems to be breaking the contract for 'setValueDirectly' ???
 if|else if
 condition|(
 name|value
@@ -336,12 +334,17 @@ operator|instanceof
 name|Collection
 condition|)
 block|{
+comment|// we can index collections on the fly - this is needed for prefetch handling...
+comment|// although it seems to be breaking the contract for 'setValueDirectly' ???
 name|setObjectMap
 argument_list|(
 name|indexCollection
 argument_list|(
 operator|(
 name|Collection
+argument_list|<
+name|Object
+argument_list|>
 operator|)
 name|value
 argument_list|)
@@ -354,8 +357,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Value must be a Map, a Collection or null, got: "
-operator|+
+literal|"Value must be a Map, a Collection or null, got: %s"
+argument_list|,
 name|value
 operator|.
 name|getClass
@@ -540,16 +543,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Duplicate key '"
+literal|"Duplicate key '%s' in relationship map. "
 operator|+
+literal|"Relationship: %s, source object: %s"
+argument_list|,
 name|key
-operator|+
-literal|"' in relationship map. Relationship: "
-operator|+
+argument_list|,
 name|relationshipName
-operator|+
-literal|", source object: "
-operator|+
+argument_list|,
 name|relationshipOwner
 operator|.
 name|getObjectId

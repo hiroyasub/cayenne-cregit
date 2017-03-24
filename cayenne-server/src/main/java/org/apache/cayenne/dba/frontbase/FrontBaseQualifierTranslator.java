@@ -497,14 +497,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Function "
-operator|+
+literal|"Function %s() is unsupported in FrontBase."
+argument_list|,
 name|functionExpression
 operator|.
 name|getPartCamelCaseName
 argument_list|()
-operator|+
-literal|"() is unsupported in FrontBase."
 argument_list|)
 throw|;
 case|case

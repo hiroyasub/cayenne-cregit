@@ -440,8 +440,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No cached list for "
-operator|+
+literal|"No cached list for %s"
+argument_list|,
 name|serverMetadata
 operator|.
 name|getCacheKey
@@ -1120,8 +1120,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Server returned an object without an id: "
-operator|+
+literal|"Server returned an object without an id: %s"
+argument_list|,
 name|object
 argument_list|)
 throw|;

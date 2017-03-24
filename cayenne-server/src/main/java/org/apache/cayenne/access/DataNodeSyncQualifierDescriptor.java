@@ -475,8 +475,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Only single step dependent relationships are currently supported. Actual path length: "
-operator|+
+literal|"Only single step dependent relationships are currently supported. Actual path length: %d"
+argument_list|,
 name|descriptor
 operator|.
 name|getPathFromMaster

@@ -1488,14 +1488,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Sorting objects for "
-operator|+
+literal|"Sorting objects for %s failed. Cycles found."
+argument_list|,
 name|objEntity
 operator|.
 name|getClassName
 argument_list|()
-operator|+
-literal|" failed. Cycles found."
 argument_list|)
 throw|;
 name|sorted

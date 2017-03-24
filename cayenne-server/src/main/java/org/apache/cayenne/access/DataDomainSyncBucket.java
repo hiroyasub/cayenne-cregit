@@ -1075,8 +1075,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Temporary ID hasn't been replaced on commit: "
-operator|+
+literal|"Temporary ID hasn't been replaced on commit: %s"
+argument_list|,
 name|object
 argument_list|)
 throw|;
@@ -1427,15 +1427,11 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"Can't extract a master key. "
 operator|+
-literal|"Missing key ("
-operator|+
+literal|"Missing key (%s), master ID (%s)"
+argument_list|,
 name|masterKey
-operator|+
-literal|"), master ID ("
-operator|+
+argument_list|,
 name|masterID
-operator|+
-literal|")"
 argument_list|)
 throw|;
 block|}

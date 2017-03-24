@@ -457,12 +457,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error closing ResultIterator: "
-operator|+
+literal|"Error closing ResultIterator: %s"
+argument_list|,
 name|errors
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}

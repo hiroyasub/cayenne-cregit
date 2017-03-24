@@ -1436,8 +1436,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown prefetch node: "
-operator|+
+literal|"Unknown prefetch node: %s"
+argument_list|,
 name|node
 argument_list|)
 throw|;
@@ -1823,8 +1823,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown prefetch node: "
-operator|+
+literal|"Unknown prefetch node: %s"
+argument_list|,
 name|node
 argument_list|)
 throw|;
@@ -1992,8 +1992,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown prefetch node: "
-operator|+
+literal|"Unknown prefetch node: %s"
+argument_list|,
 name|node
 argument_list|)
 throw|;

@@ -333,8 +333,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid synchronization type: "
-operator|+
+literal|"Invalid synchronization type: %d"
+argument_list|,
 name|syncType
 argument_list|)
 throw|;

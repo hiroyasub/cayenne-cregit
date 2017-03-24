@@ -293,12 +293,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can not load JDBC driver named '"
-operator|+
+literal|"Can not load JDBC driver named '%s': %s"
+argument_list|,
 name|driverClassName
-operator|+
-literal|"': "
-operator|+
+argument_list|,
 name|ex
 operator|.
 name|getMessage
@@ -328,12 +326,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error instantiating driver '"
-operator|+
+literal|"Error instantiating driver '%s': %s"
+argument_list|,
 name|driverClassName
-operator|+
-literal|"': "
-operator|+
+argument_list|,
 name|ex
 operator|.
 name|getMessage

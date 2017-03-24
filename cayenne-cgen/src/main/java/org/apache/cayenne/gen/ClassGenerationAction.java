@@ -1281,8 +1281,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Do not have write permissions for "
-operator|+
+literal|"Do not have write permissions for %s"
+argument_list|,
 name|destDir
 argument_list|)
 throw|;

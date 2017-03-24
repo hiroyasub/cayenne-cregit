@@ -483,8 +483,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null object created: "
-operator|+
+literal|"Null object created: %s"
+argument_list|,
 name|metadata
 operator|.
 name|getCacheKey

@@ -3250,8 +3250,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unable to find reverse DbRelationship for "
-operator|+
+literal|"Unable to find reverse DbRelationship for %s.%s."
+argument_list|,
 name|relationship
 operator|.
 name|getSourceEntity
@@ -3259,17 +3259,11 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-name|Entity
-operator|.
-name|PATH_SEPARATOR
-operator|+
+argument_list|,
 name|relationship
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"."
 argument_list|)
 throw|;
 block|}

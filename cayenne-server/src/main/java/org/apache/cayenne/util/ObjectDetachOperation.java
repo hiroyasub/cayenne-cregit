@@ -329,8 +329,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected Persistent, got: "
-operator|+
+literal|"Expected Persistent, got: %s"
+argument_list|,
 name|object
 argument_list|)
 throw|;
@@ -364,8 +364,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Server returned an object without an id: "
-operator|+
+literal|"Server returned an object without an id: %s"
+argument_list|,
 name|source
 argument_list|)
 throw|;

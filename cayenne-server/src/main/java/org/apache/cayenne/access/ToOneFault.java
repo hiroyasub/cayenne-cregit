@@ -339,17 +339,13 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"Error resolving to-one fault. "
 operator|+
-literal|"More than one object found. "
-operator|+
-literal|"Source Id: "
-operator|+
+literal|"More than one object found. Source Id: %s, relationship: %s"
+argument_list|,
 name|sourceObject
 operator|.
 name|getObjectId
 argument_list|()
-operator|+
-literal|", relationship: "
-operator|+
+argument_list|,
 name|relationshipName
 argument_list|)
 throw|;

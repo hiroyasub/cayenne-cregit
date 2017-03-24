@@ -435,15 +435,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Cannot set the read-only flattened relationship '"
-operator|+
+literal|"Cannot set the read-only flattened relationship '%s' in ObjEntity '%s'."
+argument_list|,
 name|relationship
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' in ObjEntity '"
-operator|+
+argument_list|,
 name|relationship
 operator|.
 name|getSourceEntity
@@ -451,8 +449,6 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'."
 argument_list|)
 throw|;
 block|}
@@ -603,8 +599,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Cannot unset the read-only flattened relationship "
-operator|+
+literal|"Cannot unset the read-only flattened relationship %s"
+argument_list|,
 name|relationship
 operator|.
 name|getName

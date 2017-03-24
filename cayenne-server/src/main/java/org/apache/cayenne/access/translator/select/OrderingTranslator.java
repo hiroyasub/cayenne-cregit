@@ -327,8 +327,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unsupported ordering expression: "
-operator|+
+literal|"Unsupported ordering expression: %s"
+argument_list|,
 name|exp
 argument_list|)
 throw|;

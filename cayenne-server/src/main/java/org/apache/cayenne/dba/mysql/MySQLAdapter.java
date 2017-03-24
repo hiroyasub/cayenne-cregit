@@ -1499,15 +1499,10 @@ argument_list|()
 operator|!=
 literal|null
 condition|?
-operator|(
-operator|(
-name|DbEntity
-operator|)
 name|column
 operator|.
 name|getEntity
 argument_list|()
-operator|)
 operator|.
 name|getFullyQualifiedName
 argument_list|()
@@ -1518,19 +1513,15 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Undefined type for attribute '"
-operator|+
+literal|"Undefined type for attribute '%s.%s': %s"
+argument_list|,
 name|entityName
-operator|+
-literal|"."
-operator|+
+argument_list|,
 name|column
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"': "
-operator|+
+argument_list|,
 name|column
 operator|.
 name|getType

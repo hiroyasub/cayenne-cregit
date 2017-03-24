@@ -1397,8 +1397,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No key was retrieved for entity "
-operator|+
+literal|"No key was retrieved for entity %s"
+argument_list|,
 name|entityName
 argument_list|)
 throw|;
@@ -1443,8 +1443,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating PK : entity not supported: "
-operator|+
+literal|"Error generating PK : entity not supported: %s"
+argument_list|,
 name|entityName
 argument_list|)
 throw|;
@@ -1463,8 +1463,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating PK : too many rows for entity: "
-operator|+
+literal|"Error generating PK : too many rows for entity: %s"
+argument_list|,
 name|entityName
 argument_list|)
 throw|;
@@ -1517,12 +1517,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating PK for entity '"
-operator|+
+literal|"Error generating PK for entity '%s': update count is wrong - %d"
+argument_list|,
 name|entityName
-operator|+
-literal|"': update count is wrong - "
-operator|+
+argument_list|,
 name|resultCount
 argument_list|)
 throw|;

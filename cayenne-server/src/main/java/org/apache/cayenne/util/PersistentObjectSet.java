@@ -260,9 +260,6 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|// we can wrap non-set collections on the fly - this is needed for prefetch
-comment|// handling...
-comment|// although it seems to be breaking the contract for 'setValueDirectly' ???
 if|else if
 condition|(
 name|value
@@ -270,6 +267,8 @@ operator|instanceof
 name|Collection
 condition|)
 block|{
+comment|// we can wrap non-set collections on the fly - this is needed for prefetch handling...
+comment|// although it seems to be breaking the contract for 'setValueDirectly' ???
 name|setObjectSet
 argument_list|(
 operator|new
@@ -289,8 +288,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Value must be a list, got: "
-operator|+
+literal|"Value must be a list, got: %s"
+argument_list|,
 name|value
 operator|.
 name|getClass

@@ -531,21 +531,17 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown LOB column type: "
-operator|+
+literal|"Unknown LOB column type: %s(%s). Query buffer: %s."
+argument_list|,
 name|type
-operator|+
-literal|"("
-operator|+
+argument_list|,
 name|TypesMapping
 operator|.
 name|getSqlNameByType
 argument_list|(
 name|type
 argument_list|)
-operator|+
-literal|"). Query buffer: "
-operator|+
+argument_list|,
 name|buf
 argument_list|)
 throw|;

@@ -408,8 +408,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't build a query for temporary id: "
-operator|+
+literal|"Can't build a query for temporary id: %s"
+argument_list|,
 name|objectId
 argument_list|)
 throw|;
@@ -422,9 +422,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|objectId
 operator|.

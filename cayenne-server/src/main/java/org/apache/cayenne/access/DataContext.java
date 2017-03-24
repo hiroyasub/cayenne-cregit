@@ -1456,14 +1456,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No matching objects found for ObjectId "
+literal|"No matching objects found for ObjectId %s"
 operator|+
+literal|". Object may have been deleted externally."
+argument_list|,
 name|object
 operator|.
 name|getObjectId
 argument_list|()
-operator|+
-literal|". Object may have been deleted externally."
 argument_list|)
 throw|;
 block|}
@@ -1828,8 +1828,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unmapped Java class: "
-operator|+
+literal|"Unmapped Java class: %s"
+argument_list|,
 name|objectClass
 argument_list|)
 throw|;

@@ -853,12 +853,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null index property '"
-operator|+
+literal|"Null index property '%s' for object %s"
+argument_list|,
 name|indexProperty
-operator|+
-literal|"' for object "
-operator|+
+argument_list|,
 name|object
 argument_list|)
 throw|;

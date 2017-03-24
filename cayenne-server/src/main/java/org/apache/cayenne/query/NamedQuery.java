@@ -165,6 +165,11 @@ end_comment
 
 begin_class
 annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
+annotation|@
 name|Deprecated
 specifier|public
 class|class
@@ -707,14 +712,6 @@ operator|.
 name|buildQuery
 argument_list|()
 decl_stmt|;
-name|Object
-name|root
-init|=
-name|queryDescriptor
-operator|.
-name|getRoot
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|query
@@ -726,12 +723,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Named query resolves to self: '"
-operator|+
+literal|"Named query resolves to self: '%s'"
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|"'"
 argument_list|)
 throw|;
 block|}

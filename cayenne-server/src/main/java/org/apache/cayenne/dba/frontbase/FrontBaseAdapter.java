@@ -696,21 +696,17 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Undefined type for attribute '"
-operator|+
+literal|"Undefined type for attribute '%s.%s'."
+argument_list|,
 name|ent
 operator|.
 name|getFullyQualifiedName
 argument_list|()
-operator|+
-literal|"."
-operator|+
+argument_list|,
 name|at
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'."
 argument_list|)
 throw|;
 block|}
@@ -743,22 +739,18 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Undefined type for attribute '"
-operator|+
+literal|"Undefined type for attribute '%s.%s': %s"
+argument_list|,
 name|ent
 operator|.
 name|getFullyQualifiedName
 argument_list|()
-operator|+
-literal|"."
-operator|+
+argument_list|,
 name|at
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"': "
-operator|+
+argument_list|,
 name|at
 operator|.
 name|getType

@@ -274,8 +274,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't build Object from row: "
-operator|+
+literal|"Can't build Object from row: %s"
+argument_list|,
 name|row
 argument_list|)
 throw|;

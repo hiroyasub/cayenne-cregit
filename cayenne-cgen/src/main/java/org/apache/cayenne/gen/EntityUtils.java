@@ -811,14 +811,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid map key '"
-operator|+
+literal|"Invalid map key '%s', no matching attribute found"
+argument_list|,
 name|relationship
 operator|.
 name|getMapKey
 argument_list|()
-operator|+
-literal|"', no matching attribute found"
 argument_list|)
 throw|;
 block|}

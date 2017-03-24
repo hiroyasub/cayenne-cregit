@@ -1511,9 +1511,6 @@ argument_list|,
 name|encoder
 argument_list|)
 expr_stmt|;
-comment|// since Queries are not XMLSerializable by default, check for
-comment|// non-serilaizable
-comment|// queries and throws if they are not..
 for|for
 control|(
 name|QueryDescriptor
@@ -1523,38 +1520,13 @@ name|getQueryDescriptors
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
 name|query
-operator|instanceof
-name|XMLSerializable
-condition|)
-block|{
-operator|(
-operator|(
-name|XMLSerializable
-operator|)
-name|query
-operator|)
 operator|.
 name|encodeAsXML
 argument_list|(
 name|encoder
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Query is not XMLSerilaizable: "
-operator|+
-name|query
-argument_list|)
-throw|;
-block|}
 block|}
 name|encoder
 operator|.

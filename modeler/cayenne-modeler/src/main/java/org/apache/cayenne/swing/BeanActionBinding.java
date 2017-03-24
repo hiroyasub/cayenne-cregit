@@ -255,8 +255,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Component does not define action events: "
-operator|+
+literal|"Component does not define action events: %s"
+argument_list|,
 name|component
 argument_list|)
 throw|;

@@ -396,8 +396,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No DataMap found, can't route query "
-operator|+
+literal|"No DataMap found, can't route query %s"
+argument_list|,
 name|this
 argument_list|)
 throw|;

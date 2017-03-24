@@ -287,8 +287,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unsupported retain strategy "
-operator|+
+literal|"Unsupported retain strategy %s"
+argument_list|,
 name|strategy
 argument_list|)
 throw|;

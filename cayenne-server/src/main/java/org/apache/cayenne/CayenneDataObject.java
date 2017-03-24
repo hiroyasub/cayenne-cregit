@@ -1495,11 +1495,11 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Cannot set object as destination of relationship "
-operator|+
-name|relationshipName
+literal|"Cannot set object as destination of relationship %s"
 operator|+
 literal|" because it is in a different ObjectContext"
+argument_list|,
+name|relationshipName
 argument_list|)
 throw|;
 block|}
@@ -2241,8 +2241,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No ObjEntity mapping found for DataObject "
-operator|+
+literal|"No ObjEntity mapping found for DataObject %s"
+argument_list|,
 name|getClass
 argument_list|()
 operator|.
@@ -2311,14 +2311,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjAttribute '"
+literal|"ObjAttribute '%s"
 operator|+
+literal|"' does not have a corresponding DbAttribute"
+argument_list|,
 name|next
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' does not have a corresponding DbAttribute"
 argument_list|)
 throw|;
 block|}

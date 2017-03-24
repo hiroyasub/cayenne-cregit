@@ -1102,8 +1102,6 @@ parameter_list|)
 block|{
 name|SimpleNode
 name|nodeTree
-init|=
-literal|null
 decl_stmt|;
 try|try
 block|{
@@ -1133,12 +1131,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error parsing template '"
-operator|+
+literal|"Error parsing template '%s' : %s"
+argument_list|,
 name|template
-operator|+
-literal|"' : "
-operator|+
+argument_list|,
 name|pex
 operator|.
 name|getMessage
@@ -1157,8 +1153,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error parsing template "
-operator|+
+literal|"Error parsing template %s"
+argument_list|,
 name|template
 argument_list|)
 throw|;

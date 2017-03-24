@@ -526,8 +526,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid port: "
-operator|+
+literal|"Invalid port: %s"
+argument_list|,
 name|portString
 argument_list|)
 throw|;
@@ -836,8 +836,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error connecting to XMPP Server"
-operator|+
+literal|"Error connecting to XMPP Server: %s"
+argument_list|,
 name|e
 operator|.
 name|getLocalizedMessage
@@ -848,22 +848,16 @@ block|}
 name|String
 name|service
 init|=
-name|this
-operator|.
 name|chatService
 operator|!=
 literal|null
 condition|?
-name|this
-operator|.
 name|chatService
 else|:
 name|DEFAULT_CHAT_SERVICE
 decl_stmt|;
 try|try
 block|{
-name|this
-operator|.
 name|groupChat
 operator|=
 name|connection
@@ -911,8 +905,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error setting up a group chat: "
-operator|+
+literal|"Error setting up a group chat: %s"
+argument_list|,
 name|e
 operator|.
 name|getLocalizedMessage
@@ -1062,10 +1056,6 @@ name|getThread
 argument_list|()
 argument_list|)
 condition|)
-block|{
-comment|// discarding
-block|}
-else|else
 block|{
 name|String
 name|payload

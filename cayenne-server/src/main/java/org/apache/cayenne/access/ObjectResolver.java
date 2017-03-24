@@ -348,8 +348,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjEntity '"
-operator|+
+literal|"ObjEntity '%s' has no DbEntity."
+argument_list|,
 name|descriptor
 operator|.
 name|getEntity
@@ -357,8 +357,6 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' has no DbEntity."
 argument_list|)
 throw|;
 block|}
@@ -385,8 +383,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Won't be able to create ObjectId for '"
+literal|"Won't be able to create ObjectId for '%s'. Reason: DbEntity "
 operator|+
+literal|"'%s' has no Primary Key defined."
+argument_list|,
 name|descriptor
 operator|.
 name|getEntity
@@ -394,15 +394,11 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"'. Reason: DbEntity '"
-operator|+
+argument_list|,
 name|dbEntity
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' has no Primary Key defined."
 argument_list|)
 throw|;
 block|}

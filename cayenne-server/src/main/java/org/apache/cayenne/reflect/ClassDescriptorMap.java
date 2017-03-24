@@ -425,8 +425,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Failed to create descriptor for entity: "
-operator|+
+literal|"Failed to create descriptor for entity: %s"
+argument_list|,
 name|entityName
 argument_list|)
 throw|;

@@ -196,14 +196,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Maximum number of connections can not be negative ("
-operator|+
+literal|"Maximum number of connections can not be negative (%d)."
+argument_list|,
 name|poolParameters
 operator|.
 name|getMaxConnections
 argument_list|()
-operator|+
-literal|")."
 argument_list|)
 throw|;
 block|}
@@ -221,14 +219,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Minimum number of connections can not be negative ("
-operator|+
+literal|"Minimum number of connections can not be negative (%d)"
+argument_list|,
 name|poolParameters
 operator|.
 name|getMinConnections
 argument_list|()
-operator|+
-literal|")."
 argument_list|)
 throw|;
 block|}

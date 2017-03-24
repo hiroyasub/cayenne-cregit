@@ -1438,10 +1438,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Some parts of FK are missing in snapshot,"
-operator|+
-literal|" relationship: "
-operator|+
+literal|"Some parts of FK are missing in snapshot, relationship: %s"
+argument_list|,
 name|this
 argument_list|)
 throw|;

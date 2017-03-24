@@ -368,8 +368,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unrecognized ObjEntity name: "
-operator|+
+literal|"Unrecognized ObjEntity name: %s"
+argument_list|,
 name|entityName
 argument_list|)
 throw|;
@@ -410,8 +410,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unrecognized DbEntity name: "
-operator|+
+literal|"Unrecognized DbEntity name: %s"
+argument_list|,
 name|dbEntityName
 argument_list|)
 throw|;

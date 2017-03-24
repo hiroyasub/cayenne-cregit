@@ -2026,8 +2026,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No DbEntity for ObjEntity: "
-operator|+
+literal|"No DbEntity for ObjEntity: %s"
+argument_list|,
 name|getName
 argument_list|()
 argument_list|)
@@ -3515,12 +3515,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't translate expression to DB_PATH, no DbEntity for '"
-operator|+
+literal|"Can't translate expression to DB_PATH, no DbEntity for '%s'."
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|"'."
 argument_list|)
 throw|;
 block|}
@@ -3585,12 +3583,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't transform expression, no DbEntity for '"
-operator|+
+literal|"Can't transform expression, no DbEntity for '%s'."
+argument_list|,
 name|getName
 argument_list|()
-operator|+
-literal|"'."
 argument_list|)
 throw|;
 block|}
@@ -3826,8 +3822,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown path component: "
-operator|+
+literal|"Unknown path component: %s"
+argument_list|,
 name|component
 argument_list|)
 throw|;

@@ -608,14 +608,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating PK: "
-operator|+
+literal|"Error generating PK: %s"
+argument_list|,
+name|ex
+argument_list|,
 name|ex
 operator|.
 name|getMessage
 argument_list|()
-argument_list|,
-name|ex
 argument_list|)
 throw|;
 block|}
@@ -633,6 +633,11 @@ name|node
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|snapshot
 init|=
 name|eagerJoinSnapshot
@@ -1465,6 +1470,11 @@ return|;
 block|}
 specifier|private
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|eagerJoinSnapshot
 parameter_list|()
 block|{
@@ -1493,8 +1503,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Only single-step flattened relationships are supported in this operation: "
-operator|+
+literal|"Only single-step flattened relationships are supported in this operation: %s"
+argument_list|,
 name|relationship
 argument_list|)
 throw|;
@@ -1681,8 +1691,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Only single-step flattened relationships are supported in this operation: "
-operator|+
+literal|"Only single-step flattened relationships are supported in this operation: %s"
+argument_list|,
 name|relationship
 argument_list|)
 throw|;
@@ -1758,36 +1768,12 @@ comment|// here ordering of ids is determined by 'relationship', so use id1, id2
 comment|// instead of orderedIds
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|,
-name|numJoins
-init|=
-name|fromSourceJoins
-operator|.
-name|size
-argument_list|()
-init|;
-name|i
-operator|<
-name|numJoins
-condition|;
-name|i
-operator|++
-control|)
-block|{
 name|DbJoin
 name|join
-init|=
+range|:
 name|fromSourceJoins
-operator|.
-name|get
-argument_list|(
-name|i
-argument_list|)
-decl_stmt|;
+control|)
+block|{
 name|Object
 name|value
 init|=
@@ -1820,36 +1806,12 @@ expr_stmt|;
 block|}
 for|for
 control|(
-name|int
-name|i
-init|=
-literal|0
-init|,
-name|numJoins
-init|=
-name|toTargetJoins
-operator|.
-name|size
-argument_list|()
-init|;
-name|i
-operator|<
-name|numJoins
-condition|;
-name|i
-operator|++
-control|)
-block|{
 name|DbJoin
 name|join
-init|=
+range|:
 name|toTargetJoins
-operator|.
-name|get
-argument_list|(
-name|i
-argument_list|)
-decl_stmt|;
+control|)
+block|{
 name|Object
 name|value
 init|=

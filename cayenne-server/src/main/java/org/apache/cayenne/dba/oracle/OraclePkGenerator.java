@@ -731,8 +731,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating pk for DbEntity "
-operator|+
+literal|"Error generating pk for DbEntity %s"
+argument_list|,
 name|entity
 operator|.
 name|getName

@@ -237,8 +237,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error getting ResultIterator: "
-operator|+
+literal|"Error getting ResultIterator: %s"
+argument_list|,
 name|str
 operator|.
 name|getBuffer

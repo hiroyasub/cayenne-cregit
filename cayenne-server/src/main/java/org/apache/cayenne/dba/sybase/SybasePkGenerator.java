@@ -521,8 +521,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating pk for DbEntity "
-operator|+
+literal|"Error generating pk for DbEntity %s"
+argument_list|,
 name|entity
 operator|.
 name|getName
@@ -538,14 +538,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating pk for DbEntity "
+literal|"Error generating pk for DbEntity %s"
 operator|+
+literal|", no result set from stored procedure."
+argument_list|,
 name|entity
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|", no result set from stored procedure."
 argument_list|)
 throw|;
 block|}

@@ -2507,8 +2507,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No DataNode exists for DataMap "
-operator|+
+literal|"No DataNode exists for DataMap %s"
+argument_list|,
 name|map
 argument_list|)
 throw|;
@@ -2558,8 +2558,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No DataNode exists for name "
-operator|+
+literal|"No DataNode exists for name %s"
+argument_list|,
 name|name
 argument_list|)
 throw|;

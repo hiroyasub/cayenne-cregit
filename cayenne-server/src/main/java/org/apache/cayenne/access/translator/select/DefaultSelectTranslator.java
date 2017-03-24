@@ -2704,8 +2704,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjAttribute has no component: "
-operator|+
+literal|"ObjAttribute has no component: %s"
+argument_list|,
 name|oa
 operator|.
 name|getName
@@ -3273,12 +3273,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid joint prefetch '"
-operator|+
+literal|"Invalid joint prefetch '%s' for entity: %s"
+argument_list|,
 name|prefetch
-operator|+
-literal|"' for entity: "
-operator|+
+argument_list|,
 name|oe
 operator|.
 name|getName
@@ -3371,8 +3369,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjAttribute has no component: "
-operator|+
+literal|"ObjAttribute has no component: %s"
+argument_list|,
 name|oa
 operator|.
 name|getName

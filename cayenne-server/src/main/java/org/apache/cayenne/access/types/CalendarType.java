@@ -312,8 +312,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected an instance of java.util.Date, instead got "
+literal|"Expected an instance of java.util.Date, "
 operator|+
+literal|"instead got %s, column index: %d"
+argument_list|,
 name|object
 operator|.
 name|getClass
@@ -321,9 +323,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|", column index: "
-operator|+
+argument_list|,
 name|index
 argument_list|)
 throw|;
@@ -470,8 +470,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected an instance of java.util.Date, instead got "
+literal|"Expected an instance of java.util.Date, "
 operator|+
+literal|"instead got %s, column index: %d"
+argument_list|,
 name|object
 operator|.
 name|getClass
@@ -479,9 +481,7 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|", column index: "
-operator|+
+argument_list|,
 name|index
 argument_list|)
 throw|;

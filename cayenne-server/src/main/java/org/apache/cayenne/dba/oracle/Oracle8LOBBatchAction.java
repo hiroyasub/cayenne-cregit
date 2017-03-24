@@ -1132,8 +1132,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unsupported class of BLOB value: "
-operator|+
+literal|"Unsupported class of BLOB value: %s"
+argument_list|,
 name|className
 argument_list|)
 throw|;
@@ -1145,8 +1145,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Only BLOB or CLOB is expected here, got: "
-operator|+
+literal|"Only BLOB or CLOB is expected here, got: %s"
+argument_list|,
 name|type
 argument_list|)
 throw|;

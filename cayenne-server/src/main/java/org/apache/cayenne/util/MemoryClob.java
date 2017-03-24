@@ -201,8 +201,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid position: "
-operator|+
+literal|"Invalid position: %d"
+argument_list|,
 operator|(
 name|pos
 operator|+
@@ -228,8 +228,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid length: "
-operator|+
+literal|"Invalid length: %s"
+argument_list|,
 name|length
 argument_list|)
 throw|;
@@ -686,8 +686,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid length: "
-operator|+
+literal|"Invalid length: %d"
+argument_list|,
 name|len
 argument_list|)
 throw|;
@@ -697,9 +697,6 @@ block|{
 comment|// use new String() to ensure we get rid of slack
 name|data
 operator|=
-operator|new
-name|String
-argument_list|(
 name|ldata
 operator|.
 name|substring
@@ -710,7 +707,6 @@ operator|(
 name|int
 operator|)
 name|chars
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

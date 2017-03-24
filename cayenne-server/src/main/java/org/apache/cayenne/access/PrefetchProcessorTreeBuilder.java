@@ -711,15 +711,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No relationship with name '"
-operator|+
+literal|"No relationship with name '%s' found in entity '%s'"
+argument_list|,
 name|node
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' found in entity "
-operator|+
+argument_list|,
 name|currentNode
 operator|.
 name|getResolver

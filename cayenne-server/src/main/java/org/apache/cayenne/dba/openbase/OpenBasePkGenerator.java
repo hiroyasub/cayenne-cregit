@@ -419,8 +419,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating pk for DbEntity "
-operator|+
+literal|"Error generating pk for DbEntity %s"
+argument_list|,
 name|entity
 operator|.
 name|getName
@@ -473,14 +473,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating pk for DbEntity "
+literal|"Error generating pk for DbEntity %s"
 operator|+
+literal|": pk must be single attribute"
+argument_list|,
 name|ent
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|": pk must be single attribute"
 argument_list|)
 throw|;
 block|}
@@ -766,14 +766,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Entity '"
-operator|+
+literal|"Entity '%s' has no PK defined."
+argument_list|,
 name|entity
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' has no PK defined."
 argument_list|)
 throw|;
 block|}
@@ -953,14 +951,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Entity '"
-operator|+
+literal|"Entity '%s' has no PK defined."
+argument_list|,
 name|entity
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' has no PK defined."
 argument_list|)
 throw|;
 block|}

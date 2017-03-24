@@ -195,8 +195,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unsupported batch query: "
-operator|+
+literal|"Unsupported batch query: %s"
+argument_list|,
 name|query
 argument_list|)
 throw|;

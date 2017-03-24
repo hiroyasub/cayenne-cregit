@@ -189,26 +189,21 @@ name|Exception
 name|e1
 parameter_list|)
 block|{
-if|if
-condition|(
-name|errors
-operator|==
-literal|null
-condition|)
-block|{
 name|errors
 operator|=
 operator|new
 name|StringBuilder
 argument_list|()
 expr_stmt|;
-block|}
 name|errors
 operator|.
 name|append
 argument_list|(
 literal|"Error closing ResultSet: "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|e1
 argument_list|)
 expr_stmt|;
@@ -246,7 +241,10 @@ operator|.
 name|append
 argument_list|(
 literal|"Error closing connection: "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|e2
 argument_list|)
 expr_stmt|;
@@ -262,12 +260,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error closing ResultIterator: "
-operator|+
+literal|"Error closing ResultIterator: %s"
+argument_list|,
 name|errors
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 throw|;
 block|}

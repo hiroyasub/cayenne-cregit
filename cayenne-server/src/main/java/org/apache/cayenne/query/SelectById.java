@@ -630,8 +630,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't build a query for temporary id: "
-operator|+
+literal|"Can't build a query for temporary id: %s"
+argument_list|,
 name|id
 argument_list|)
 throw|;
@@ -1255,14 +1255,12 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"PK contains "
-operator|+
+literal|"PK contains %d columns, expected 1."
+argument_list|,
 name|pkAttributes
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|" columns, expected 1."
 argument_list|)
 throw|;
 block|}

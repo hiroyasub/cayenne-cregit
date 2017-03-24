@@ -689,8 +689,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No object is registered in context with Id "
-operator|+
+literal|"No object is registered in context with Id %s"
+argument_list|,
 name|nodeId
 argument_list|)
 throw|;

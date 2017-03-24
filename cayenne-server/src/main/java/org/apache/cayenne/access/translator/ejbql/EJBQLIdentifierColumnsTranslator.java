@@ -544,8 +544,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjAttribute has no component: "
-operator|+
+literal|"ObjAttribute has no component: %s"
+argument_list|,
 name|oa
 operator|.
 name|getName
@@ -1007,12 +1007,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid joint prefetch '"
-operator|+
+literal|"Invalid joint prefetch '%s' for entity: %s"
+argument_list|,
 name|prefetch
-operator|+
-literal|"' for entity: "
-operator|+
+argument_list|,
 name|objectEntity
 operator|.
 name|getName
@@ -1020,18 +1018,11 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-name|Iterator
-argument_list|<
+for|for
+control|(
 name|DbAttribute
-argument_list|>
-name|targetAttributes
-init|=
-operator|(
-name|Iterator
-argument_list|<
-name|DbAttribute
-argument_list|>
-operator|)
+name|attribute
+range|:
 name|r
 operator|.
 name|getTargetEntity
@@ -1039,26 +1030,8 @@ argument_list|()
 operator|.
 name|getAttributes
 argument_list|()
-operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|targetAttributes
-operator|.
-name|hasNext
-argument_list|()
-condition|)
+control|)
 block|{
-name|DbAttribute
-name|attribute
-init|=
-name|targetAttributes
-operator|.
-name|next
-argument_list|()
-decl_stmt|;
 name|appendColumn
 argument_list|(
 name|prefetch
@@ -1230,9 +1203,6 @@ block|{
 name|DbEntity
 name|table
 init|=
-operator|(
-name|DbEntity
-operator|)
 name|column
 operator|.
 name|getEntity
@@ -1433,9 +1403,7 @@ name|columns
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

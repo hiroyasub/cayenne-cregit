@@ -281,8 +281,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Value must be a list, got: "
-operator|+
+literal|"Value must be a list, got: %s"
+argument_list|,
 name|value
 operator|.
 name|getClass

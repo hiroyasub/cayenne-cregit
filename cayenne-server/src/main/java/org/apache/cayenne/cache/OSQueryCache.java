@@ -944,7 +944,7 @@ literal|false
 decl_stmt|;
 try|try
 block|{
-name|Object
+name|List
 name|result
 init|=
 name|factory
@@ -952,16 +952,6 @@ operator|.
 name|createObject
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|result
-operator|instanceof
-name|List
-operator|)
-condition|)
-block|{
 if|if
 condition|(
 name|result
@@ -973,8 +963,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Null on cache rebuilding: "
-operator|+
+literal|"Null on cache rebuilding: %s"
+argument_list|,
 name|metadata
 operator|.
 name|getCacheKey
@@ -982,38 +972,11 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-else|else
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Invalid query result, expected List, got "
-operator|+
-name|result
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-throw|;
-block|}
-block|}
-name|List
-name|list
-init|=
-operator|(
-name|List
-operator|)
-name|result
-decl_stmt|;
 name|put
 argument_list|(
 name|metadata
 argument_list|,
-name|list
+name|result
 argument_list|)
 expr_stmt|;
 name|updated
@@ -1021,7 +984,7 @@ operator|=
 literal|true
 expr_stmt|;
 return|return
-name|list
+name|result
 return|;
 block|}
 finally|finally

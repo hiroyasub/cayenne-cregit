@@ -249,8 +249,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unmapped entity: "
-operator|+
+literal|"Unmapped entity: %s"
+argument_list|,
 name|entityName
 argument_list|)
 throw|;

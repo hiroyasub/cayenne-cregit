@@ -257,8 +257,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Unknown timestamp part: "
-operator|+
+literal|"Unknown timestamp part: %s"
+argument_list|,
 name|partToken
 argument_list|)
 throw|;

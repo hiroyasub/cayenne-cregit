@@ -1314,15 +1314,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected "
-operator|+
+literal|"Expected %d objects, retrieved %d"
+argument_list|,
 name|ids
 operator|.
 name|size
 argument_list|()
-operator|+
-literal|" objects, retrieved "
-operator|+
+argument_list|,
 name|objects
 operator|.
 name|size
@@ -2381,8 +2379,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't find id for "
-operator|+
+literal|"Can't find id for %s"
+argument_list|,
 name|object
 argument_list|)
 throw|;

@@ -840,8 +840,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No entity mapped for class: "
-operator|+
+literal|"No entity mapped for class: %s"
+argument_list|,
 name|persistentClass
 argument_list|)
 throw|;

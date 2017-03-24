@@ -282,19 +282,15 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|this
-operator|.
+literal|"%s is an indirect query and doesn't support its own sql actions. "
+operator|+
+literal|"It should've been delegated to another query during resolution or routing phase."
+argument_list|,
 name|getClass
 argument_list|()
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|" is an indirect query and doesn't support its own sql actions. "
-operator|+
-literal|"It should've been delegated to another "
-operator|+
-literal|"query during resolution or routing phase."
 argument_list|)
 throw|;
 block|}

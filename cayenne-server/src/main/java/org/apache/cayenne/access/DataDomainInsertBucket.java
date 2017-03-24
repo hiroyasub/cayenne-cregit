@@ -802,14 +802,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error generating PK: "
-operator|+
+literal|"Error generating PK: %s"
+argument_list|,
+name|ex
+argument_list|,
 name|ex
 operator|.
 name|getMessage
 argument_list|()
-argument_list|,
-name|ex
 argument_list|)
 throw|;
 block|}

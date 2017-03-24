@@ -272,19 +272,15 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't build ObjectId from row: "
-operator|+
+literal|"Can't build ObjectId from row: %s, entity: %s, prefix: %s"
+argument_list|,
 name|row
-operator|+
-literal|", entity: "
-operator|+
+argument_list|,
 name|entity
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|", prefix: "
-operator|+
+argument_list|,
 name|relatedIdPrefix
 argument_list|)
 throw|;

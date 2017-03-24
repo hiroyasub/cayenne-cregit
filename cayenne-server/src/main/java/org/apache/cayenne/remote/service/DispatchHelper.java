@@ -200,8 +200,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Message dispatch error. Unsupported message: "
-operator|+
+literal|"Message dispatch error. Unsupported message: %s"
+argument_list|,
 name|message
 argument_list|)
 throw|;

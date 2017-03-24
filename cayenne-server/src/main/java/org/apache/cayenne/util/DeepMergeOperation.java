@@ -352,8 +352,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Server returned an object without an id: "
-operator|+
+literal|"Server returned an object without an id: %s"
+argument_list|,
 name|peerInParentContext
 argument_list|)
 throw|;

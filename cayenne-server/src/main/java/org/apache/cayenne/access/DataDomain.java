@@ -1566,14 +1566,14 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No DataNode configured for DataMap '"
+literal|"No DataNode configured for DataMap '%s'"
 operator|+
+literal|" and no default DataNode set"
+argument_list|,
 name|map
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|"' and no default DataNode set"
 argument_list|)
 throw|;
 block|}
@@ -1908,8 +1908,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Invalid synchronization type: "
-operator|+
+literal|"Invalid synchronization type: %d"
+argument_list|,
 name|syncType
 argument_list|)
 throw|;
@@ -1979,8 +1979,8 @@ name|CayenneRuntimeException
 argument_list|(
 literal|"No support for committing ObjectContexts that are not DataContexts yet. "
 operator|+
-literal|"Unsupported context: "
-operator|+
+literal|"Unsupported context: %s"
+argument_list|,
 name|originatingContext
 argument_list|)
 throw|;

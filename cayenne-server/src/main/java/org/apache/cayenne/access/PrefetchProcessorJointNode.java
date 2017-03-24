@@ -1385,8 +1385,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"PK column is not part of result row: "
-operator|+
+literal|"PK column is not part of result row: %s"
+argument_list|,
 name|pk
 operator|.
 name|getName

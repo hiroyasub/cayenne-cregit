@@ -740,8 +740,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Server returned an object without an id: "
-operator|+
+literal|"Server returned an object without an id: %s"
+argument_list|,
 name|object
 argument_list|)
 throw|;
@@ -1181,15 +1181,13 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Expected result type: "
-operator|+
+literal|"Expected result type: %s, actual: %s"
+argument_list|,
 name|resultClass
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|", actual: "
-operator|+
+argument_list|,
 name|resultString
 argument_list|)
 throw|;

@@ -670,8 +670,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"ObjAttribute has no component: "
-operator|+
+literal|"ObjAttribute has no component: %s"
+argument_list|,
 name|attribute
 operator|.
 name|getName
@@ -1122,56 +1122,20 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|StringBuilder
-name|msg
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|msg
-operator|.
-name|append
-argument_list|(
-literal|"Object must have a single primary key column "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"to serve as a query parameter. "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"This object has "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|snap
-operator|.
-name|size
-argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|": "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|snap
-argument_list|)
-expr_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|msg
+literal|"Object must have a single primary key column to serve "
+operator|+
+literal|"as a query parameter. This object has %s: %s"
+argument_list|,
+name|snap
 operator|.
-name|toString
+name|size
 argument_list|()
+argument_list|,
+name|snap
 argument_list|)
 throw|;
 block|}
@@ -1254,56 +1218,20 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|StringBuilder
-name|msg
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|msg
-operator|.
-name|append
-argument_list|(
-literal|"Object must have a single primary key column "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"to serve as a query parameter. "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"This object has "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|snap
-operator|.
-name|size
-argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|": "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|snap
-argument_list|)
-expr_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|msg
+literal|"Object must have a single primary key column to serve "
+operator|+
+literal|"as a query parameter. This object has %s: %s"
+argument_list|,
+name|snap
 operator|.
-name|toString
+name|size
 argument_list|()
+argument_list|,
+name|snap
 argument_list|)
 throw|;
 block|}
@@ -1893,20 +1821,18 @@ name|msg
 init|=
 literal|"OBJ_PATH expressions are only supported for a single-join relationships. "
 operator|+
-literal|"This relationship has "
-operator|+
-name|joins
-operator|.
-name|size
-argument_list|()
-operator|+
-literal|" joins."
+literal|"This relationship has %s joins."
 decl_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
 name|msg
+argument_list|,
+name|joins
+operator|.
+name|size
+argument_list|()
 argument_list|)
 throw|;
 block|}
@@ -1968,20 +1894,18 @@ name|msg
 init|=
 literal|"DB_NAME expressions can only support targets with a single column PK. "
 operator|+
-literal|"This entity has "
-operator|+
-name|pk
-operator|.
-name|size
-argument_list|()
-operator|+
-literal|" columns in primary key."
+literal|"This entity has %d columns in primary key."
 decl_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
 name|msg
+argument_list|,
+name|pk
+operator|.
+name|size
+argument_list|()
 argument_list|)
 throw|;
 block|}

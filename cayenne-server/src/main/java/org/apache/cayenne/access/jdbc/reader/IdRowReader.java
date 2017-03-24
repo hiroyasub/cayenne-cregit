@@ -262,8 +262,8 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Root DBEntity has no PK defined: "
-operator|+
+literal|"Root DBEntity has no PK defined: %s"
+argument_list|,
 name|dbEntity
 argument_list|)
 throw|;

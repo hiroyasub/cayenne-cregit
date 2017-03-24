@@ -351,12 +351,10 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Can't build a query for relationship '"
-operator|+
+literal|"Can't build a query for relationship '%s' for temporary id: %s"
+argument_list|,
 name|relationshipName
-operator|+
-literal|"' for temporary id: "
-operator|+
+argument_list|,
 name|objectId
 argument_list|)
 throw|;
@@ -508,19 +506,15 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"No relationship named "
-operator|+
+literal|"No relationship named %s found in entity %s; object id: %s"
+argument_list|,
 name|relationshipName
-operator|+
-literal|" found in entity "
-operator|+
+argument_list|,
 name|objectId
 operator|.
 name|getEntityName
 argument_list|()
-operator|+
-literal|"; object id: "
-operator|+
+argument_list|,
 name|objectId
 argument_list|)
 throw|;
