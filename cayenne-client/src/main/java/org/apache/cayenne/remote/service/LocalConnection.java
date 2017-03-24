@@ -316,9 +316,6 @@ name|JAVA_SERIALIZATION
 case|:
 name|processedMessage
 operator|=
-operator|(
-name|ClientMessage
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization

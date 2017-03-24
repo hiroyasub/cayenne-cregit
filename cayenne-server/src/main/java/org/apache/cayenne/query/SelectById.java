@@ -291,9 +291,7 @@ name|q
 init|=
 operator|new
 name|SelectById
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|q
@@ -352,9 +350,7 @@ name|q
 init|=
 operator|new
 name|SelectById
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|q
@@ -413,9 +409,7 @@ name|q
 init|=
 operator|new
 name|SelectById
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|q
@@ -723,12 +717,6 @@ name|context
 operator|.
 name|iterate
 argument_list|(
-operator|(
-name|Select
-argument_list|<
-name|T
-argument_list|>
-operator|)
 name|this
 argument_list|,
 name|callback
@@ -1140,9 +1128,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|query
@@ -1344,6 +1330,8 @@ operator|.
 name|getObjEntity
 argument_list|(
 name|entityType
+argument_list|,
+literal|true
 argument_list|)
 return|;
 block|}
