@@ -139,6 +139,8 @@ index|[
 name|input
 operator|.
 name|length
+operator|-
+name|inputOffset
 index|]
 decl_stmt|;
 name|System
@@ -156,6 +158,8 @@ argument_list|,
 name|input
 operator|.
 name|length
+operator|-
+name|inputOffset
 argument_list|)
 expr_stmt|;
 name|swap

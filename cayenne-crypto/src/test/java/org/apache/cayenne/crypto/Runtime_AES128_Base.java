@@ -140,6 +140,9 @@ name|setUp
 parameter_list|(
 name|boolean
 name|compress
+parameter_list|,
+name|boolean
+name|useHMAC
 parameter_list|)
 throws|throws
 name|Exception
@@ -150,6 +153,8 @@ init|=
 name|createCryptoModule
 argument_list|(
 name|compress
+argument_list|,
+name|useHMAC
 argument_list|)
 decl_stmt|;
 name|this
@@ -303,6 +308,9 @@ name|createCryptoModule
 parameter_list|(
 name|boolean
 name|compress
+parameter_list|,
+name|boolean
+name|useHMAC
 parameter_list|)
 block|{
 name|URL
@@ -346,6 +354,17 @@ block|{
 name|builder
 operator|.
 name|compress
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|useHMAC
+condition|)
+block|{
+name|builder
+operator|.
+name|useHMAC
 argument_list|()
 expr_stmt|;
 block|}

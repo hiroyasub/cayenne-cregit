@@ -358,6 +358,10 @@ specifier|private
 name|boolean
 name|compress
 decl_stmt|;
+specifier|private
+name|boolean
+name|useHMAC
+decl_stmt|;
 comment|// use CryptoModule.builder() to create the builder...
 specifier|protected
 name|CryptoModuleBuilder
@@ -962,6 +966,22 @@ return|return
 name|this
 return|;
 block|}
+comment|/**      * Enable authentication codes      */
+specifier|public
+name|CryptoModuleBuilder
+name|useHMAC
+parameter_list|()
+block|{
+name|this
+operator|.
+name|useHMAC
+operator|=
+literal|true
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 comment|/**      * Produces a module that can be used to start Cayenne runtime.      */
 specifier|public
 name|Module
@@ -1090,6 +1110,23 @@ argument_list|(
 name|CryptoConstants
 operator|.
 name|COMPRESSION
+argument_list|,
+literal|"true"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|useHMAC
+condition|)
+block|{
+name|props
+operator|.
+name|put
+argument_list|(
+name|CryptoConstants
+operator|.
+name|USE_HMAC
 argument_list|,
 literal|"true"
 argument_list|)
