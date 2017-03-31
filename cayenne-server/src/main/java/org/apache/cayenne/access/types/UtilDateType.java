@@ -133,6 +133,7 @@ name|Types
 operator|.
 name|DATE
 condition|)
+block|{
 return|return
 operator|new
 name|java
@@ -147,6 +148,7 @@ name|getTime
 argument_list|()
 argument_list|)
 return|;
+block|}
 if|else if
 condition|(
 name|type
@@ -155,6 +157,7 @@ name|Types
 operator|.
 name|TIME
 condition|)
+block|{
 return|return
 operator|new
 name|java
@@ -169,6 +172,7 @@ name|getTime
 argument_list|()
 argument_list|)
 return|;
+block|}
 if|else if
 condition|(
 name|type
@@ -177,6 +181,7 @@ name|Types
 operator|.
 name|TIMESTAMP
 condition|)
+block|{
 return|return
 operator|new
 name|java
@@ -191,7 +196,9 @@ name|getTime
 argument_list|()
 argument_list|)
 return|;
+block|}
 else|else
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -211,6 +218,7 @@ name|type
 argument_list|)
 argument_list|)
 throw|;
+block|}
 block|}
 annotation|@
 name|Override
@@ -232,8 +240,6 @@ name|Exception
 block|{
 name|Date
 name|val
-init|=
-literal|null
 decl_stmt|;
 switch|switch
 condition|(
@@ -335,8 +341,6 @@ name|Exception
 block|{
 name|Date
 name|val
-init|=
-literal|null
 decl_stmt|;
 switch|switch
 condition|(

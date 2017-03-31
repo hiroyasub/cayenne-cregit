@@ -231,6 +231,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ValueObjectTypeRegistry
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|configuration
 operator|.
 name|Constants
@@ -472,6 +488,11 @@ name|SERVER_RESOURCE_LOCATOR
 argument_list|)
 name|ResourceLocator
 name|resourceLocator
+parameter_list|,
+annotation|@
+name|Inject
+name|ValueObjectTypeRegistry
+name|valueObjectTypeRegistry
 parameter_list|)
 block|{
 name|super
@@ -485,6 +506,8 @@ argument_list|,
 name|extendedTypeFactories
 argument_list|,
 name|resourceLocator
+argument_list|,
+name|valueObjectTypeRegistry
 argument_list|)
 expr_stmt|;
 comment|// init defaults

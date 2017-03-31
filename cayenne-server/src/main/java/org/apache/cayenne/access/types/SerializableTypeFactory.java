@@ -194,12 +194,14 @@ literal|"SerializableType will be used for type conversion."
 argument_list|)
 expr_stmt|;
 comment|// using a binary stream delegate instead of byte[] may actually
-comment|// speed up
-comment|// things in some dbs, but at least byte[] type works consistently
-comment|// across
-comment|// adapters...
-comment|// note - can't use "getRegisteredType" as it causes infinite
-comment|// recursion
+comment|// speed up things in some dbs, but at least byte[] type works consistently
+comment|// across adapters...
+comment|// note - can't use "getRegisteredType" as it causes infinite recursion
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|ExtendedType
 argument_list|<
 name|byte
@@ -333,7 +335,6 @@ name|ObjectOutputStream
 argument_list|(
 name|bytes
 argument_list|)
-init|;
 init|)
 block|{
 name|out

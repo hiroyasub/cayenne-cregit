@@ -234,11 +234,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Byte
-name|b
-init|=
-name|value
-decl_stmt|;
 if|if
 condition|(
 name|widenBytes
@@ -250,7 +245,7 @@ name|setInt
 argument_list|(
 name|pos
 argument_list|,
-name|b
+name|value
 operator|.
 name|intValue
 argument_list|()
@@ -265,10 +260,7 @@ name|setByte
 argument_list|(
 name|pos
 argument_list|,
-name|b
-operator|.
-name|byteValue
-argument_list|()
+name|value
 argument_list|)
 expr_stmt|;
 block|}

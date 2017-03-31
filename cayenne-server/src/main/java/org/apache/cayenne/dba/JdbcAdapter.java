@@ -239,6 +239,38 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ValueObjectTypeFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ValueObjectTypeRegistry
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|configuration
 operator|.
 name|Constants
@@ -572,7 +604,7 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 * DataNode. 	 */
+comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the DataNode. 	 */
 annotation|@
 name|Inject
 specifier|protected
@@ -642,6 +674,11 @@ name|SERVER_RESOURCE_LOCATOR
 argument_list|)
 name|ResourceLocator
 name|resourceLocator
+parameter_list|,
+annotation|@
+name|Inject
+name|ValueObjectTypeRegistry
+name|valueObjectTypeRegistry
 parameter_list|)
 block|{
 comment|// init defaults
@@ -730,6 +767,8 @@ argument_list|,
 name|userExtendedTypes
 argument_list|,
 name|extendedTypeFactories
+argument_list|,
+name|valueObjectTypeRegistry
 argument_list|)
 expr_stmt|;
 block|}
@@ -853,7 +892,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/** 	 * Called from {@link #initExtendedTypes(List, List, List)} to load 	 * adapter-specific types into the ExtendedTypeMap right after the default 	 * types are loaded, but before the DI overrides are. This method has 	 * specific implementations in JdbcAdapter subclasses. 	 */
+comment|/** 	 * Called from {@link #initExtendedTypes(List, List, List, ValueObjectTypeRegistry)} to load 	 * adapter-specific types into the ExtendedTypeMap right after the default 	 * types are loaded, but before the DI overrides are. This method has 	 * specific implementations in JdbcAdapter subclasses. 	 */
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -886,6 +925,9 @@ argument_list|<
 name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
+parameter_list|,
+name|ValueObjectTypeRegistry
+name|valueObjectTypeRegistry
 parameter_list|)
 block|{
 for|for
@@ -942,6 +984,19 @@ name|typeFactory
 argument_list|)
 expr_stmt|;
 block|}
+name|extendedTypes
+operator|.
+name|addFactory
+argument_list|(
+operator|new
+name|ValueObjectTypeFactory
+argument_list|(
+name|extendedTypes
+argument_list|,
+name|valueObjectTypeRegistry
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 comment|/** 	 * Creates and returns a primary key generator. This factory method should 	 * be overriden by JdbcAdapter subclasses to provide custom implementations 	 * of PKGenerator. 	 */
 specifier|protected
@@ -1164,36 +1219,19 @@ name|DbEntity
 name|table
 parameter_list|)
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
+return|return
+name|Collections
+operator|.
+name|singleton
 argument_list|(
 literal|"DROP TABLE "
-argument_list|)
-decl_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
+operator|+
 name|quotingStrategy
 operator|.
 name|quotedFullyQualifiedName
 argument_list|(
 name|table
 argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|Collections
-operator|.
-name|singleton
-argument_list|(
-name|buf
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 return|;
 block|}

@@ -124,7 +124,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Converts value of the supported type to a human-readable String representation.      *      * @param value a vlue to convert to String.      * @since 4.0      */
+comment|/**      * Converts value of the supported type to a human-readable String representation.      *      * @param value a value to convert to String.      * @since 4.0      */
 name|String
 name|toString
 parameter_list|(

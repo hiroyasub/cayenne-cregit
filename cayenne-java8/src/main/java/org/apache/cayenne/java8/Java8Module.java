@@ -73,7 +73,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|LocalDateTimeType
+name|LocalDateTimeValueType
 import|;
 end_import
 
@@ -91,7 +91,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|LocalDateType
+name|LocalDateValueType
 import|;
 end_import
 
@@ -109,7 +109,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|LocalTimeType
+name|LocalTimeValueType
 import|;
 end_import
 
@@ -136,30 +136,30 @@ parameter_list|)
 block|{
 name|ServerModule
 operator|.
-name|contributeDefaultTypes
+name|contributeValueObjectTypes
 argument_list|(
 name|binder
 argument_list|)
 operator|.
 name|add
 argument_list|(
-operator|new
-name|LocalDateType
-argument_list|()
+name|LocalDateValueType
+operator|.
+name|class
 argument_list|)
 operator|.
 name|add
 argument_list|(
-operator|new
-name|LocalTimeType
-argument_list|()
+name|LocalTimeValueType
+operator|.
+name|class
 argument_list|)
 operator|.
 name|add
 argument_list|(
-operator|new
-name|LocalDateTimeType
-argument_list|()
+name|LocalDateTimeValueType
+operator|.
+name|class
 argument_list|)
 expr_stmt|;
 block|}

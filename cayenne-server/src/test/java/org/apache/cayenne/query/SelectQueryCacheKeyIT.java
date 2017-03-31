@@ -185,6 +185,18 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertNotEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertNotNull
 import|;
 end_import
@@ -1052,7 +1064,7 @@ name|getCacheKey
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotEquals
 argument_list|(
 name|q1
 operator|.
@@ -1063,9 +1075,7 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 name|q3
 operator|.
 name|getMetaData
@@ -1075,7 +1085,6 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1236,7 +1245,7 @@ name|getCacheKey
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotEquals
 argument_list|(
 name|q1
 operator|.
@@ -1247,9 +1256,7 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 name|q3
 operator|.
 name|getMetaData
@@ -1259,7 +1266,6 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1423,7 +1429,7 @@ name|getCacheKey
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotEquals
 argument_list|(
 name|q1
 operator|.
@@ -1434,9 +1440,7 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 name|q3
 operator|.
 name|getMetaData
@@ -1447,9 +1451,8 @@ operator|.
 name|getCacheKey
 argument_list|()
 argument_list|)
-argument_list|)
 expr_stmt|;
-name|assertFalse
+name|assertNotEquals
 argument_list|(
 name|q1
 operator|.
@@ -1460,9 +1463,7 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-operator|.
-name|equals
-argument_list|(
+argument_list|,
 name|q4
 operator|.
 name|getMetaData
@@ -1472,7 +1473,6 @@ argument_list|)
 operator|.
 name|getCacheKey
 argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

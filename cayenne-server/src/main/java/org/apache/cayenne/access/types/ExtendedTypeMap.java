@@ -261,9 +261,7 @@ name|ExtendedTypeFactory
 argument_list|>
 name|extendedTypeFactories
 decl_stmt|;
-comment|// standard type factories registered by Cayenne that are consulted after
-comment|// the user
-comment|// factories.
+comment|// standard type factories registered by Cayenne that are consulted after the user factories.
 name|Collection
 argument_list|<
 name|ExtendedTypeFactory
@@ -352,8 +350,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// note that Serializable type should be used as a last resort after all
-comment|// other
-comment|// alternatives are exhausted.
+comment|// other alternatives are exhausted.
 name|internalTypeFactories
 operator|.
 name|add
