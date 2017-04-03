@@ -108,6 +108,26 @@ name|String
 name|groupKey
 parameter_list|)
 function_decl|;
+comment|/**      * Removes a group of entries identified by group key.      * Can be used if cache provider supports strictly typed caches.      * @see QueryCache#removeGroup(String)      *      * @since 4.0      */
+name|void
+name|removeGroup
+parameter_list|(
+name|String
+name|groupKey
+parameter_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|keyType
+parameter_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|valueType
+parameter_list|)
+function_decl|;
 comment|/**      * Clears all cache entries.      *      * @deprecated since 4.0. Please use implementation specific methods to perform cache management tasks.      */
 annotation|@
 name|Deprecated
