@@ -51,7 +51,7 @@ block|{
 comment|/**      * @return collection of cache groups to invalidate for given object      */
 name|Collection
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 name|apply
 parameter_list|(

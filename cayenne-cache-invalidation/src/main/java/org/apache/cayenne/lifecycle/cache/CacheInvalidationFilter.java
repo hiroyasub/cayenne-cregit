@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * A {@link DataChannelFilter} that invalidates cache groups.  * Use custom rules for invalidation provided via DI.  *</p>  *<p>  * Default rule is based on entities' {@link CacheGroups} annotation.  *</p>  *<p>  *     To add default filter:<pre>  *         ServerRuntime.builder("cayenne-project.xml")  *              .addModule(CacheInvalidationModuleBuilder.builder().build());  *</pre>  *</p>  *  * @since 3.1  * @see InvalidationHandler  * @see CacheInvalidationModuleBuilder  */
+comment|/**  *<p>  * A {@link DataChannelFilter} that invalidates cache groups.  * Use custom rules for invalidation provided via DI.  *</p>  *<p>  * Default rule is based on entities' {@link CacheGroups} annotation.  *</p>  *<p>  *     To add default filter:<pre>  *         ServerRuntime.builder("cayenne-project.xml")  *              .addModule(CacheInvalidationModuleBuilder.builder().build());  *</pre>  *</p>  *  * @see CacheInvalidationModuleBuilder  * @see InvalidationHandler  *  * @since 3.1  * @since 4.0 enhanced to support custom handlers.  */
 end_comment
 
 begin_class
@@ -295,11 +295,6 @@ name|cacheProvider
 decl_stmt|;
 annotation|@
 name|Inject
-argument_list|(
-name|CacheInvalidationModuleBuilder
-operator|.
-name|INVALIDATION_HANDLERS_LIST
-argument_list|)
 specifier|private
 name|List
 argument_list|<
@@ -333,7 +328,7 @@ name|ThreadLocal
 argument_list|<
 name|Set
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 argument_list|>
 name|groups
@@ -360,7 +355,7 @@ name|Override
 specifier|public
 name|Collection
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 name|apply
 parameter_list|(
@@ -456,7 +451,7 @@ decl_stmt|;
 comment|// no exceptions, flush...
 name|Collection
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 name|groupSet
 init|=
@@ -488,19 +483,58 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|String
+name|CacheGroupDescriptor
 name|group
 range|:
 name|groupSet
 control|)
+block|{
+if|if
+condition|(
+name|group
+operator|.
+name|getKeyType
+argument_list|()
+operator|!=
+name|Void
+operator|.
+name|class
+condition|)
 block|{
 name|cache
 operator|.
 name|removeGroup
 argument_list|(
 name|group
+operator|.
+name|getCacheGroupName
+argument_list|()
+argument_list|,
+name|group
+operator|.
+name|getKeyType
+argument_list|()
+argument_list|,
+name|group
+operator|.
+name|getValueType
+argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|cache
+operator|.
+name|removeGroup
+argument_list|(
+name|group
+operator|.
+name|getCacheGroupName
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 return|return
@@ -616,7 +650,7 @@ expr_stmt|;
 block|}
 name|Collection
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 name|objectGroups
 init|=
@@ -649,14 +683,14 @@ block|}
 specifier|protected
 name|Set
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 name|getOrCreateTxGroups
 parameter_list|()
 block|{
 name|Set
 argument_list|<
-name|String
+name|CacheGroupDescriptor
 argument_list|>
 name|txGroups
 init|=
