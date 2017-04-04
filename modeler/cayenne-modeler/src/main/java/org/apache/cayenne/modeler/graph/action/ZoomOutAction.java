@@ -131,7 +131,7 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
-literal|"Zoom In"
+literal|"Zoom Out"
 argument_list|,
 name|application
 argument_list|)
