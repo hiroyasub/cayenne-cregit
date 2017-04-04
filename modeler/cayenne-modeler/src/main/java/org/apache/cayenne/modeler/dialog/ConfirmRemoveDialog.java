@@ -281,7 +281,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"%s named '%s'?"
+literal|"%s named '%s"
 argument_list|,
 name|type
 argument_list|,
