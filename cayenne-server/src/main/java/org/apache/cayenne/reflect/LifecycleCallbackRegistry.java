@@ -651,7 +651,7 @@ name|addListener
 argument_list|(
 name|LifecycleEvent
 operator|.
-name|POST_PERSIST
+name|PRE_PERSIST
 argument_list|,
 name|entityClass
 argument_list|,
