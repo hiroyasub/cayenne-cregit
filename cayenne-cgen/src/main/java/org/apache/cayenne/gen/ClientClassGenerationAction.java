@@ -33,6 +33,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|ObjEntity
@@ -193,6 +205,7 @@ argument_list|)
 throw|;
 block|}
 block|}
+comment|/**      *      * @param entities      * @throws CayenneException      *      * @since 4.0 throws exception      */
 annotation|@
 name|Override
 specifier|public
@@ -205,7 +218,26 @@ name|ObjEntity
 argument_list|>
 name|entities
 parameter_list|)
+throws|throws
+name|CayenneException
 block|{
+if|if
+condition|(
+operator|!
+name|dataMap
+operator|.
+name|isClientSupported
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneException
+argument_list|(
+literal|"Can't create client classes. Check client supported option on DataMap configuration."
+argument_list|)
+throw|;
+block|}
 if|if
 condition|(
 name|entities
@@ -221,6 +253,15 @@ range|:
 name|entities
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|entity
+operator|.
+name|isServerOnly
+argument_list|()
+condition|)
+block|{
 name|artifacts
 operator|.
 name|add
@@ -232,6 +273,7 @@ name|entity
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
