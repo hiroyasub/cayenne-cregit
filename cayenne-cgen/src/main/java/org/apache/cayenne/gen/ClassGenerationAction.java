@@ -23,6 +23,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|CayenneRuntimeException
 import|;
 end_import
@@ -2001,6 +2013,7 @@ name|dataMap
 expr_stmt|;
 block|}
 comment|/** 	 * Adds entities to the internal entity list. 	 */
+comment|/** 	 * 	 * @param entities 	 * @throws CayenneException 	 * 	 * @since 4.0 throws exception 	 */
 specifier|public
 name|void
 name|addEntities
@@ -2011,6 +2024,8 @@ name|ObjEntity
 argument_list|>
 name|entities
 parameter_list|)
+throws|throws
+name|CayenneException
 block|{
 if|if
 condition|(
