@@ -256,7 +256,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A DI module containing all Cayenne ROP client runtime configurations.  *   * @since 3.1  */
+comment|/**  * A DI module containing all Cayenne ROP client runtime configurations.  *   * @since 3.1  * @since 4.0 this module is auto-loaded by {@link ClientRuntimeBuilder}  */
 end_comment
 
 begin_class
@@ -266,6 +266,9 @@ name|ClientModule
 implements|implements
 name|Module
 block|{
+comment|/**      * @deprecated since 4.0 in favour of {@link ClientRuntimeBuilder}      * @see ClientRuntimeBuilder#properties(Map)      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|Map
 argument_list|<
@@ -274,7 +277,12 @@ argument_list|,
 name|String
 argument_list|>
 name|properties
+init|=
+literal|null
 decl_stmt|;
+comment|/**      * @deprecated since 4.0 in favour of {@link ClientRuntimeBuilder}      * @see ClientRuntimeBuilder#properties(Map)      */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientModule
 parameter_list|(
@@ -309,6 +317,17 @@ operator|=
 name|properties
 expr_stmt|;
 block|}
+comment|/**      * @since 4.0      */
+specifier|public
+name|ClientModule
+parameter_list|()
+block|{
+block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"deprecation"
+argument_list|)
 specifier|public
 name|void
 name|configure
@@ -318,6 +337,14 @@ name|binder
 parameter_list|)
 block|{
 comment|// expose user-provided ROP properties as the main properties map
+comment|// binding here is left only for backward compatibility, should go away with the deprecated code.
+if|if
+condition|(
+name|properties
+operator|!=
+literal|null
+condition|)
+block|{
 name|ServerModule
 operator|.
 name|contributeProperties
@@ -330,6 +357,7 @@ argument_list|(
 name|properties
 argument_list|)
 expr_stmt|;
+block|}
 name|binder
 operator|.
 name|bind

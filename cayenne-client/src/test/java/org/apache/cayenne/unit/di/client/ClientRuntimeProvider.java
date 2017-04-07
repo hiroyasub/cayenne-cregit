@@ -57,7 +57,7 @@ name|rop
 operator|.
 name|client
 operator|.
-name|ClientLocalRuntime
+name|ClientRuntime
 import|;
 end_import
 
@@ -75,7 +75,7 @@ name|rop
 operator|.
 name|client
 operator|.
-name|ClientRuntime
+name|LocalConnectionProvider
 import|;
 end_import
 
@@ -133,20 +133,6 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|Injector
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
 name|Key
 import|;
 end_import
@@ -179,6 +165,20 @@ name|Provider
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|remote
+operator|.
+name|ClientConnection
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -189,9 +189,9 @@ argument_list|<
 name|ClientRuntime
 argument_list|>
 block|{
+comment|// injecting provider to make this provider independent from scoping of ServerRuntime
 annotation|@
 name|Inject
-comment|// injecting provider to make this provider independent from scoping of ServerRuntime
 specifier|protected
 name|Provider
 argument_list|<
@@ -212,58 +212,26 @@ parameter_list|()
 throws|throws
 name|ConfigurationException
 block|{
-name|Injector
-name|serverInjector
-init|=
-name|serverRuntimeProvider
-operator|.
-name|get
-argument_list|()
-operator|.
-name|getInjector
-argument_list|()
-decl_stmt|;
 return|return
-operator|new
-name|ClientLocalRuntime
+name|ClientRuntime
+operator|.
+name|builder
+argument_list|()
+operator|.
+name|properties
 argument_list|(
-name|serverInjector
-argument_list|,
 name|clientCaseProperties
 operator|.
 name|getRuntimeProperties
 argument_list|()
-argument_list|,
-operator|new
-name|ClientExtraModule
-argument_list|(
-name|serverInjector
 argument_list|)
-argument_list|)
-return|;
-block|}
-class|class
-name|ClientExtraModule
-implements|implements
-name|Module
-block|{
-specifier|private
-name|Injector
-name|serverInjector
-decl_stmt|;
-name|ClientExtraModule
-parameter_list|(
-name|Injector
-name|serverInjector
-parameter_list|)
-block|{
-name|this
 operator|.
-name|serverInjector
-operator|=
-name|serverInjector
-expr_stmt|;
-block|}
+name|addModule
+argument_list|(
+operator|new
+name|Module
+argument_list|()
+block|{
 specifier|public
 name|void
 name|configure
@@ -272,10 +240,7 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
-comment|// these are the objects overriding standard ClientLocalModule definitions or
-comment|// dependencies needed by such overrides
-comment|// add an interceptor between client and server parts to capture and inspect
-comment|// the traffic
+comment|// add an interceptor between client and server parts to capture and inspect the traffic
 name|binder
 operator|.
 name|bind
@@ -288,7 +253,7 @@ name|DataChannel
 operator|.
 name|class
 argument_list|,
-name|ClientLocalRuntime
+name|ClientRuntime
 operator|.
 name|CLIENT_SERVER_CHANNEL_KEY
 argument_list|)
@@ -299,11 +264,40 @@ argument_list|(
 operator|new
 name|InterceptingClientServerChannelProvider
 argument_list|(
-name|serverInjector
+name|serverRuntimeProvider
+operator|.
+name|get
+argument_list|()
+operator|.
+name|getInjector
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|// create local connection
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|ClientConnection
+operator|.
+name|class
+argument_list|)
+operator|.
+name|toProviderInstance
+argument_list|(
+operator|new
+name|LocalConnectionProvider
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
+block|}
+argument_list|)
+operator|.
+name|build
+argument_list|()
+return|;
 block|}
 block|}
 end_class

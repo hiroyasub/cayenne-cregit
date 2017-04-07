@@ -114,11 +114,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A user application entry point to Cayenne stack on the ROP client.  *   * @since 3.1  */
-end_comment
-
-begin_comment
-comment|// TODO: module auto-loading and ClientRuntimeBuilder
+comment|/**  * A user application entry point to Cayenne stack on the ROP client.  *   * @since 3.1  * @since 4.0 preferred way to create this class is with {@link ClientRuntime#builder()} method.  */
 end_comment
 
 begin_class
@@ -128,6 +124,30 @@ name|ClientRuntime
 extends|extends
 name|CayenneRuntime
 block|{
+comment|/** 	 * @since 4.0 moved from deprecated ClientLocalRuntime class 	 */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CLIENT_SERVER_CHANNEL_KEY
+init|=
+literal|"client-server-channel"
+decl_stmt|;
+comment|/** 	 * Creates new builder of client runtime 	 * @return client runtime builder 	 * 	 * @since 4.0 	 */
+specifier|public
+specifier|static
+name|ClientRuntimeBuilder
+name|builder
+parameter_list|()
+block|{
+return|return
+operator|new
+name|ClientRuntimeBuilder
+argument_list|()
+return|;
+block|}
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|Collection
@@ -181,6 +201,8 @@ name|modules
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Deprecated
 specifier|private
 specifier|static
 name|Collection
@@ -245,7 +267,9 @@ return|return
 name|modules
 return|;
 block|}
-comment|/** 	 * Creates a client runtime configuring it with a standard set of services 	 * contained in {@link ClientModule}. CayenneClientModule is created based 	 * on a set of properties that contain things like connection information, 	 * etc. Recognized property keys are defined in {@link ClientModule}. An 	 * optional array of extra modules may contain service overrides and/or user 	 * services. 	 */
+comment|/** 	 * Creates a client runtime configuring it with a standard set of services 	 * contained in {@link ClientModule}. CayenneClientModule is created based 	 * on a set of properties that contain things like connection information, 	 * etc. Recognized property keys are defined in {@link ClientModule}. An 	 * optional array of extra modules may contain service overrides and/or user 	 * services. 	 * 	 * @deprecated since 4.0, use {@link ClientRuntime#builder()} instead. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientRuntime
 parameter_list|(
@@ -275,7 +299,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates a client runtime configuring it with a standard set of services 	 * contained in {@link ClientModule}. CayenneClientModule is created based 	 * on a set of properties that contain things like connection information, 	 * etc. Recognized property keys are defined in {@link ClientModule}. An 	 * optional collection of extra modules may contain service overrides and/or 	 * user services. 	 */
+comment|/** 	 * Creates a client runtime configuring it with a standard set of services 	 * contained in {@link ClientModule}. CayenneClientModule is created based 	 * on a set of properties that contain things like connection information, 	 * etc. Recognized property keys are defined in {@link ClientModule}. An 	 * optional collection of extra modules may contain service overrides and/or 	 * user services. 	 * 	 * @deprecated since 4.0, use {@link ClientRuntime#builder()} instead. 	 */
+annotation|@
+name|Deprecated
 specifier|public
 name|ClientRuntime
 parameter_list|(

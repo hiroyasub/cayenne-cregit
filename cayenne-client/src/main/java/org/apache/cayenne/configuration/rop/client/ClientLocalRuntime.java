@@ -154,20 +154,19 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ClientRuntime} that provides an ROP stack based on a local  * connection on top of a server stack.  *  * @since 3.1  */
-end_comment
-
-begin_comment
-comment|// TODO: module auto-loading and ClientLocalRuntimeBuilder
+comment|/**  * A {@link ClientRuntime} that provides an ROP stack based on a local  * connection on top of a server stack.  *  * @since 3.1  * @deprecated since 4.0, use {@link ClientRuntimeBuilder#local(Injector)}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|ClientLocalRuntime
 extends|extends
 name|ClientRuntime
 block|{
+comment|/**      * Moved to {@link ClientRuntime#CLIENT_SERVER_CHANNEL_KEY}      */
 specifier|public
 specifier|static
 specifier|final
@@ -289,6 +288,8 @@ name|DataChannel
 operator|.
 name|class
 argument_list|,
+name|ClientRuntime
+operator|.
 name|CLIENT_SERVER_CHANNEL_KEY
 argument_list|)
 argument_list|)

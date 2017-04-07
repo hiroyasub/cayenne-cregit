@@ -720,7 +720,11 @@ name|ModuleLoader
 argument_list|()
 operator|.
 name|load
-argument_list|()
+argument_list|(
+name|CayenneServerModuleProvider
+operator|.
+name|class
+argument_list|)
 return|;
 block|}
 specifier|private

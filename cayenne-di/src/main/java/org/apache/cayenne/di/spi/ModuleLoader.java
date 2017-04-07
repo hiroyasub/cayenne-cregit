@@ -116,7 +116,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Auto-loads DI modules using ServiceLoader. To make a module auto-loadable, you will need to ship the jar with a file  * "META-INF/services/org.apache.cayenne.di.spi.ModuleProvider" that contains provider implementation for the module in  * question.  *  * @since 4.0  */
+comment|/**  * Auto-loads DI modules using ServiceLoader. To make a module auto-loadable, you will need to ship the jar with a file  * "META-INF/services/&lt;full.provider.class.name&gt;" that contains provider implementation for the module in  * question.  *  * @see ModuleProvider  * @since 4.0  */
 end_comment
 
 begin_class
@@ -124,14 +124,22 @@ specifier|public
 class|class
 name|ModuleLoader
 block|{
-comment|/**      * Auto-loads all modules declared on classpath. Modules are loaded from the SPI declarations stored in      * "META-INF/services/org.apache.cayenne.di.spi.ModuleProvider", and then sorted in the order of override dependency.      *      * @return a sorted collection of auto-loadable modules.      * @throws DIRuntimeException if auto-loaded modules have circular override dependencies.      */
+comment|/**      * Auto-loads all modules declared on classpath. Modules are loaded from the SPI declarations stored in      * "META-INF/services/&lt;full.provider.class.name&gt;", and then sorted in the order of override dependency.      *      * @return a sorted collection of auto-loadable modules.      * @throws DIRuntimeException if auto-loaded modules have circular override dependencies.      */
 specifier|public
 name|List
 argument_list|<
 name|Module
 argument_list|>
 name|load
-parameter_list|()
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+extends|extends
+name|ModuleProvider
+argument_list|>
+name|providerClass
+parameter_list|)
 block|{
 comment|// map providers by class
 name|Map
@@ -161,9 +169,7 @@ name|ServiceLoader
 operator|.
 name|load
 argument_list|(
-name|ModuleProvider
-operator|.
-name|class
+name|providerClass
 argument_list|)
 control|)
 block|{

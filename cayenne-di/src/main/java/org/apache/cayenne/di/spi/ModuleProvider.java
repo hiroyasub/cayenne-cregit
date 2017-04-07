@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Provider of modules used by module auto-loading mechanism to identify and load modules.  *  * @since 4.0  */
+comment|/**  *<p>  * Provider of modules used by module auto-loading mechanism to identify and load modules.  *</p>  *<p>  * Multiple providers can be created by inheriting from this interface and using it with {@link ModuleLoader}  *</p>  *  * @since 4.0  */
 end_comment
 
 begin_interface

@@ -59,7 +59,11 @@ name|ModuleProviderChecker
 operator|.
 name|testProviderPresent
 argument_list|(
-name|ServerModuleProvider
+name|MainCayenneServerModuleProvider
+operator|.
+name|class
+argument_list|,
+name|CayenneServerModuleProvider
 operator|.
 name|class
 argument_list|)

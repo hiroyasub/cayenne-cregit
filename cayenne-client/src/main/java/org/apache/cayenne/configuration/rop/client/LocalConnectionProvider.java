@@ -118,7 +118,7 @@ block|{
 annotation|@
 name|Inject
 argument_list|(
-name|ClientLocalRuntime
+name|ClientRuntime
 operator|.
 name|CLIENT_SERVER_CHANNEL_KEY
 argument_list|)
