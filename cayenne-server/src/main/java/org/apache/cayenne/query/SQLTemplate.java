@@ -1223,14 +1223,12 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/** 	 * Returns an iterator over parameter sets. Each element returned from the 	 * iterator is a java.util.Map. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. 	 */
+comment|/** 	 * Returns an iterator over parameter sets. Each element returned from the 	 * iterator is a java.util.Map. 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-annotation|@
-name|Deprecated
 specifier|public
 name|Iterator
 argument_list|<
@@ -1277,9 +1275,7 @@ name|nullMapTransformer
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns the number of parameter sets. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. 	 */
-annotation|@
-name|Deprecated
+comment|/** 	 * Returns the number of parameter sets. 	 */
 specifier|public
 name|int
 name|parametersSize
@@ -1326,8 +1322,6 @@ name|positionalParams
 operator|=
 literal|null
 expr_stmt|;
-comment|// calling a deprecated method until we can remove multi-parameter-batch
-comment|// deprecation.
 name|setParameters
 argument_list|(
 name|params
@@ -1399,9 +1393,7 @@ else|:
 literal|null
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 *  	 * @deprecated since 4.0 as multiple batches of parameters are superseded by 	 *             the use of {@link QueryChain}. For an alternative use 	 *             {@link #createQuery(Map)}. 	 */
-annotation|@
-name|Deprecated
+comment|/** 	 * Returns a new query built using this query as a prototype and a new set 	 * of parameters. 	 */
 specifier|public
 name|SQLTemplate
 name|queryWithParameters
@@ -1975,9 +1967,7 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 *  	 * @deprecated since 4.0 in favor of {@link #getParams()}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
-annotation|@
-name|Deprecated
+comment|/** 	 * Utility method to get the first set of parameters, since most queries 	 * will only have one. 	 */
 specifier|public
 name|Map
 argument_list|<
@@ -1993,14 +1983,12 @@ name|getParams
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 *  	 * @deprecated since 4.0 in favor of {@link #setParams(Map)}, as multiple 	 *             batches of parameters are superseded by the use of 	 *             {@link QueryChain}. 	 */
+comment|/** 	 * Utility method to initialize query with one or more sets of parameters. 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-annotation|@
-name|Deprecated
 specifier|public
 name|void
 name|setParameters
