@@ -313,6 +313,16 @@ argument_list|(
 literal|"TABLE_SCHEM"
 argument_list|)
 decl_stmt|;
+name|String
+name|type
+init|=
+name|rs
+operator|.
+name|getString
+argument_list|(
+literal|"TABLE_TYPE"
+argument_list|)
+decl_stmt|;
 comment|// Oracle 9i and newer has a nifty recycle bin feature...
 comment|// but we don't want dropped tables to be included here;
 comment|// in fact they may even result in errors on reverse engineering
@@ -426,6 +436,13 @@ operator|.
 name|setSchema
 argument_list|(
 name|schemaName
+argument_list|)
+expr_stmt|;
+name|table
+operator|.
+name|setType
+argument_list|(
+name|type
 argument_list|)
 expr_stmt|;
 name|addDbEntityToMap
