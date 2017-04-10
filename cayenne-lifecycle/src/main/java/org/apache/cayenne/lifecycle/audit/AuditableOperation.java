@@ -18,10 +18,12 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * An enum of possible operations that can be audited.  *   * @since 3.1  */
+comment|/**  * An enum of possible operations that can be audited.  *   * @since 3.1  * @deprecated since 4.0, use {@link org.apache.cayenne.lifecycle.postcommit.PostCommitFilter}  * @see org.apache.cayenne.lifecycle.changemap.ObjectChangeType  */
 end_comment
 
 begin_enum
+annotation|@
+name|Deprecated
 specifier|public
 enum|enum
 name|AuditableOperation

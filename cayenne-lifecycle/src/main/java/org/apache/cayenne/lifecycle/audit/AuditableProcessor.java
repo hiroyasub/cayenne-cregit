@@ -30,7 +30,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of application specific handlers of the {@link Auditable}  * annotation, that provides basic needed callbacks.  *   * @since 3.1  */
+comment|/**  * A superclass of application specific handlers of the {@link Auditable}  * annotation, that provides basic needed callbacks.  *   * @since 3.1  * @deprecated since 4.0, use {@link org.apache.cayenne.lifecycle.postcommit.PostCommitFilter}  */
 end_comment
 
 begin_interface

@@ -100,10 +100,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ChangeSet} implemented as a wrapper on top of {@link GraphDiff} of unspecified  * nature.  *<p>  * Synchronization note: While this class is thread safe, but is not generally intended  * for use in multi-threaded manner. It is common to use it within a single transaction  * thread.  *   * @since 3.1  */
+comment|/**  * A {@link ChangeSet} implemented as a wrapper on top of {@link GraphDiff} of unspecified  * nature.  *<p>  * Synchronization note: While this class is thread safe, but is not generally intended  * for use in multi-threaded manner. It is common to use it within a single transaction  * thread.  *   * @since 3.1  * @deprecated since 4.0  * @see org.apache.cayenne.lifecycle.changemap.ChangeMap  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|GenericChangeSet

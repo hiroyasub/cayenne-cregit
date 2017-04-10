@@ -148,6 +148,8 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|AuditableEntityDescriptor
 block|{
@@ -174,9 +176,7 @@ name|ignoredProperties
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 comment|// ignore runtime relationships

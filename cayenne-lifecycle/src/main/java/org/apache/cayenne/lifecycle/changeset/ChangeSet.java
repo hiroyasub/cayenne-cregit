@@ -54,10 +54,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Represents a set of changes to persistent objects corresponding to a certain lifecycle  * stage. The changes are presented in a more usable form compared to the internal Cayenne  * representation as {@link GraphDiff}. One or more changes to the same property of the  * same object are all combined in a single {@link PropertyChange} instance.  *   * @since 3.1  */
+comment|/**  * Represents a set of changes to persistent objects corresponding to a certain lifecycle  * stage. The changes are presented in a more usable form compared to the internal Cayenne  * representation as {@link GraphDiff}. One or more changes to the same property of the  * same object are all combined in a single {@link PropertyChange} instance.  *   * @since 3.1  * @deprecated since 4.0 in favour of {@link org.apache.cayenne.lifecycle.postcommit.PostCommitFilter}  *  * @see org.apache.cayenne.lifecycle.changemap.ChangeMap  */
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|ChangeSet

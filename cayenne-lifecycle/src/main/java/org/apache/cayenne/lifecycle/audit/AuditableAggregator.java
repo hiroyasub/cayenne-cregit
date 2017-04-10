@@ -66,6 +66,8 @@ comment|/**  * Aggregates audit events per audit root object, and passes them to
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|AuditableAggregator
 block|{

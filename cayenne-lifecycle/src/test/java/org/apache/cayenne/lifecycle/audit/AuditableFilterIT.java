@@ -1402,14 +1402,7 @@ name|audited
 operator|=
 operator|new
 name|EnumMap
-argument_list|<
-name|AuditableOperation
-argument_list|,
-name|Collection
-argument_list|<
-name|Object
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|(
 name|AuditableOperation
 operator|.
@@ -1435,9 +1428,7 @@ name|op
 argument_list|,
 operator|new
 name|ArrayList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 argument_list|)
 expr_stmt|;

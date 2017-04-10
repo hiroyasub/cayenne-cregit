@@ -78,18 +78,16 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An annotation that defines the insertion sorting "weight" of an entity that is used  * when sorting DB operations. This annotation allows to override the topological sorting  * algorithm used by Cayenne by default in special occasions.  *   * @since 3.1  */
+comment|/**  * An annotation that defines the insertion sorting "weight" of an entity that is used  * when sorting DB operations. This annotation allows to override the topological sorting  * algorithm used by Cayenne by default in special occasions.  *   * @since 3.1  *  * @deprecated since 4.0, use instead {@link org.apache.cayenne.ashwood.SortWeight}  * @see org.apache.cayenne.ashwood.SortWeight  */
 end_comment
 
 begin_annotation_defn
 annotation|@
 name|Target
 argument_list|(
-block|{
 name|ElementType
 operator|.
 name|TYPE
-block|}
 argument_list|)
 annotation|@
 name|Retention
@@ -100,6 +98,8 @@ name|RUNTIME
 argument_list|)
 annotation|@
 name|Documented
+annotation|@
+name|Deprecated
 specifier|public
 annotation_defn|@interface
 name|SortWeight

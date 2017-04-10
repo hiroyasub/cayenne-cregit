@@ -190,13 +190,9 @@ operator|.
 name|getEntityResolver
 argument_list|()
 decl_stmt|;
-comment|// since it is impossible to ensure non-coincidental sort order of
-comment|// unrelated
-comment|// DbEntities (without overriding DbEntity.hashCode()), we'll test on 2
-comment|// entities
-comment|// with a relationship, and reverse the topological order with
-comment|// SortWeight
-comment|// annotation.
+comment|// since it is impossible to ensure non-coincidental sort order of unrelated
+comment|// DbEntities (without overriding DbEntity.hashCode()), we'll test on 2 entities
+comment|// with a relationship, and reverse the topological order with SortWeight annotation.
 name|List
 argument_list|<
 name|DbEntity

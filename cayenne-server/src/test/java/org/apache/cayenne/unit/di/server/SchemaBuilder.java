@@ -616,6 +616,8 @@ block|,
 literal|"array-type.map.xml"
 block|,
 literal|"cay-2032.map.xml"
+block|,
+literal|"weighted-sort.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded
@@ -1414,9 +1416,7 @@ name|entities
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|map
 operator|.

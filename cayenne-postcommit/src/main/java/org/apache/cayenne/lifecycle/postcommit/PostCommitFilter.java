@@ -214,13 +214,6 @@ name|PostCommitFilter
 implements|implements
 name|DataChannelFilter
 block|{
-specifier|static
-specifier|final
-name|String
-name|POST_COMMIT_LISTENERS_LIST
-init|=
-literal|"cayenne.server.post_commit.listeners"
-decl_stmt|;
 specifier|private
 name|PostCommitEntityFactory
 name|entityFactory
@@ -242,9 +235,6 @@ name|entityFactory
 parameter_list|,
 annotation|@
 name|Inject
-argument_list|(
-name|POST_COMMIT_LISTENERS_LIST
-argument_list|)
 name|List
 argument_list|<
 name|PostCommitListener
@@ -450,8 +440,7 @@ name|GraphDiff
 name|contextDiff
 parameter_list|)
 block|{
-comment|// capture snapshots of deleted objects before they are purged from
-comment|// cache
+comment|// capture snapshots of deleted objects before they are purged from cache
 name|GraphChangeHandler
 name|handler
 init|=

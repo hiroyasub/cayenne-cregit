@@ -296,13 +296,12 @@ decl_stmt|;
 name|PostCommitModuleBuilder
 parameter_list|()
 block|{
-name|this
-operator|.
-name|entityFactoryType
-operator|=
+name|entityFactory
+argument_list|(
 name|IncludeAllPostCommitEntityFactory
 operator|.
 name|class
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
@@ -392,16 +391,13 @@ name|PostCommitModuleBuilder
 name|auditableEntitiesOnly
 parameter_list|()
 block|{
-name|this
-operator|.
-name|entityFactoryType
-operator|=
+return|return
+name|entityFactory
+argument_list|(
 name|AuditablePostCommitEntityFactory
 operator|.
 name|class
-expr_stmt|;
-return|return
-name|this
+argument_list|)
 return|;
 block|}
 comment|/** 	 * Installs a custom factory for {@link PostCommitEntity} objects that 	 * allows implementors to use their own annotations, etc. 	 */
@@ -500,17 +496,11 @@ name|PostCommitListener
 argument_list|>
 name|listeners
 init|=
-name|binder
+name|PostCommitModule
 operator|.
-name|bindList
+name|contributeListeners
 argument_list|(
-name|PostCommitListener
-operator|.
-name|class
-argument_list|,
-name|PostCommitFilter
-operator|.
-name|POST_COMMIT_LISTENERS_LIST
+name|binder
 argument_list|)
 operator|.
 name|addAll
@@ -527,8 +517,7 @@ range|:
 name|listenerTypes
 control|)
 block|{
-comment|// TODO: temp hack - need to bind each type before adding to
-comment|// collection...
+comment|// TODO: temp hack - need to bind each type before adding to collection...
 name|binder
 operator|.
 name|bind
@@ -549,22 +538,6 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
-name|binder
-operator|.
-name|bind
-argument_list|(
-name|PostCommitFilter
-operator|.
-name|class
-argument_list|)
-operator|.
-name|to
-argument_list|(
-name|PostCommitFilter
-operator|.
-name|class
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|excludeFromTransaction

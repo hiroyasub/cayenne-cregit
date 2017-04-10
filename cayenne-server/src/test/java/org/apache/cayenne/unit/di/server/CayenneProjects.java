@@ -453,6 +453,14 @@ name|CUSTOM_NAME_PROJECT
 init|=
 literal|"custom-name-file.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|WEIGHTED_SORT_PROJECT
+init|=
+literal|"cayenne-weighted-sort.xml"
+decl_stmt|;
 block|}
 end_class
 

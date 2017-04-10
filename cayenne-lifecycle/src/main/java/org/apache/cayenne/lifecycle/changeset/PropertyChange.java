@@ -18,10 +18,12 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * A change to a single object property.  *   * @since 3.1  */
+comment|/**  * A change to a single object property.  *   * @since 3.1  * @deprecated since 4.0  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|PropertyChange
