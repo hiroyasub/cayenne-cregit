@@ -1047,7 +1047,8 @@ parameter_list|()
 block|{
 name|isReverse
 operator|=
-literal|true
+operator|!
+name|isReverse
 expr_stmt|;
 for|for
 control|(
