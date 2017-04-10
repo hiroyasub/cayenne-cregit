@@ -292,6 +292,10 @@ specifier|protected
 name|MergerTokenFactory
 name|mergerTokenFactory
 decl_stmt|;
+specifier|protected
+name|boolean
+name|isReverse
+decl_stmt|;
 specifier|public
 name|MergerTokenSelectorController
 parameter_list|(
@@ -318,9 +322,7 @@ name|excludedTokens
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|MergerToken
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -329,9 +331,7 @@ name|selectableTokensList
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|MergerToken
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|initController
@@ -400,9 +400,7 @@ name|t
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|MergerToken
-argument_list|>
+argument_list|<>
 argument_list|(
 name|selectableTokensList
 argument_list|)
@@ -966,7 +964,7 @@ name|reverse
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * Repaint, so that "Operation" column updates properly          */
+comment|// Repaint, so that "Operation" column updates properly
 name|view
 operator|.
 name|getTokens
@@ -1034,10 +1032,23 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
+name|boolean
+name|isReverse
+parameter_list|()
+block|{
+return|return
+name|isReverse
+return|;
+block|}
+specifier|public
 name|void
 name|reverseAllAction
 parameter_list|()
 block|{
+name|isReverse
+operator|=
+literal|true
+expr_stmt|;
 for|for
 control|(
 name|int
