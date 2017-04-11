@@ -343,8 +343,7 @@ operator|.
 name|getJdbcType
 argument_list|()
 expr_stmt|;
-comment|// query translator may change the order of fields compare to the
-comment|// entity
+comment|// query translator may change the order of fields compare to the entity
 comment|// result, so figure out DataRow labels by doing reverse lookup of
 comment|// RowDescriptor labels...
 if|if
@@ -366,8 +365,7 @@ argument_list|)
 condition|)
 block|{
 comment|// if the dataRowKey contains ".", it is prefetched column and
-comment|// we can use
-comment|// it instead of search the name by alias
+comment|// we can use it instead of search the name by alias
 name|labels
 index|[
 name|i
@@ -408,6 +406,22 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|this
+operator|.
+name|mapCapacity
+operator|=
+operator|(
+name|int
+operator|)
+name|Math
+operator|.
+name|ceil
+argument_list|(
+name|segmentWidth
+operator|/
+literal|0.75
+argument_list|)
+expr_stmt|;
 block|}
 annotation|@
 name|Override

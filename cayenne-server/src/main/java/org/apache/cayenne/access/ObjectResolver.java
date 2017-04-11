@@ -629,8 +629,7 @@ name|row
 argument_list|)
 decl_stmt|;
 comment|// not using DataRow.createObjectId for performance reasons -
-comment|// ObjectResolver
-comment|// has all needed metadata already cached.
+comment|// ObjectResolver has all needed metadata already cached.
 name|ObjectId
 name|anId
 init|=

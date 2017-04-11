@@ -638,8 +638,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// notify of combined counts of all queries inside SQLTemplate
-comment|// multiplied by the
-comment|// number of parameter sets...
+comment|// multiplied by the number of parameter sets...
 name|int
 index|[]
 name|ints
@@ -1113,9 +1112,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|// ignore possible following update counts and bail
-comment|// early on
-comment|// iterated results
+comment|// ignore possible following update counts and bail early on iterated results
 if|if
 condition|(
 name|iteratedResult
@@ -1448,17 +1445,16 @@ init|=
 operator|new
 name|RowDescriptorBuilder
 argument_list|()
-decl_stmt|;
-name|builder
 operator|.
 name|setResultSet
 argument_list|(
 name|resultSet
 argument_list|)
-expr_stmt|;
-comment|// SQLTemplate #result columns take precedence over other ways to
-comment|// determine the
-comment|// type
+operator|.
+name|validateDuplicateColumnNames
+argument_list|()
+decl_stmt|;
+comment|// SQLTemplate #result columns take precedence over other ways to determine the type
 if|if
 condition|(
 name|compiled
@@ -1497,8 +1493,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// TODO: andrus 2008/03/28 support flattened attributes with
-comment|// aliases...
+comment|// TODO: andrus 2008/03/28 support flattened attributes with aliases...
 for|for
 control|(
 name|ObjAttribute
@@ -1550,9 +1545,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// override numeric Java types based on JDBC defaults for DbAttributes,
-comment|// as
-comment|// Oracle
+comment|// override numeric Java types based on JDBC defaults for DbAttributes, as Oracle
 comment|// ResultSetMetadata is not very precise about NUMERIC distinctions...
 comment|// (BigDecimal vs Long vs. Integer)
 if|if
@@ -1673,10 +1666,8 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// note that we MUST convert line breaks to spaces. On some databases
-comment|// (DB2)
-comment|// queries with breaks simply won't run; the rest are affected by
-comment|// CAY-726.
+comment|// note that we MUST convert line breaks to spaces. On some databases (DB2)
+comment|// queries with breaks simply won't run; the rest are affected by CAY-726.
 return|return
 name|Util
 operator|.
