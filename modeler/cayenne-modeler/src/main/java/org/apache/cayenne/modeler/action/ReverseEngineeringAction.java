@@ -147,7 +147,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|SwingUtilities
+name|*
 import|;
 end_import
 
@@ -257,6 +257,27 @@ name|SQLException
 name|ex
 parameter_list|)
 block|{
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|,
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+literal|"Error loading schemas dialog"
+argument_list|,
+name|JOptionPane
+operator|.
+name|ERROR_MESSAGE
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 specifier|final
