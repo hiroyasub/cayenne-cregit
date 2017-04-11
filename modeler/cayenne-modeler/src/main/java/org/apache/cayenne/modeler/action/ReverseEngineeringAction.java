@@ -151,6 +151,16 @@ name|SwingUtilities
 import|;
 end_import
 
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JOptionPane
+import|;
+end_import
+
 begin_comment
 comment|/**  * Action that imports database structure into a DataMap.  */
 end_comment
@@ -257,6 +267,27 @@ name|SQLException
 name|ex
 parameter_list|)
 block|{
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|Application
+operator|.
+name|getFrame
+argument_list|()
+argument_list|,
+name|ex
+operator|.
+name|getMessage
+argument_list|()
+argument_list|,
+literal|"Error loading schemas dialog"
+argument_list|,
+name|JOptionPane
+operator|.
+name|ERROR_MESSAGE
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 specifier|final
