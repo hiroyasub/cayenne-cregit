@@ -377,20 +377,6 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
 name|tools
 operator|.
 name|ant
@@ -410,6 +396,16 @@ operator|.
 name|ant
 operator|.
 name|Project
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
 import|;
 end_import
 
@@ -710,7 +706,7 @@ expr_stmt|;
 name|validateAttributes
 argument_list|()
 expr_stmt|;
-name|Log
+name|Logger
 name|logger
 init|=
 operator|new
