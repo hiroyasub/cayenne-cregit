@@ -318,7 +318,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Orders a given list of objects, using a List of Orderings applied 	 * according the default iteration order of the Orderings list. I.e. each 	 * Ordering with lower index is more significant than any other Ordering 	 * with higher index. List being ordered is modified in place. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Return the sorted list of objects. 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 parameter_list|<
