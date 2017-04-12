@@ -57,6 +57,15 @@ specifier|static
 name|ResourceBundle
 name|bundle
 decl_stmt|;
+static|static
+block|{
+comment|// "static constructor"
+name|bundle
+operator|=
+name|getBundle
+argument_list|()
+expr_stmt|;
+block|}
 comment|/**      * Returns localized string for the given key.      */
 specifier|public
 specifier|static
@@ -69,8 +78,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|getBundle
-argument_list|()
+name|bundle
 operator|==
 literal|null
 condition|)
@@ -82,8 +90,7 @@ block|}
 try|try
 block|{
 return|return
-name|getBundle
-argument_list|()
+name|bundle
 operator|.
 name|getString
 argument_list|(
