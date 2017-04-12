@@ -115,13 +115,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
+name|LoggerFactory
 import|;
 end_import
 
@@ -129,13 +125,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|Logger
 import|;
 end_import
 
@@ -260,12 +252,12 @@ name|DataChannelDescriptorLoader
 block|{
 specifier|private
 specifier|static
-name|Log
+name|Logger
 name|logger
 init|=
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|XMLDataChannelDescriptorLoader
 operator|.
@@ -366,6 +358,9 @@ operator|.
 name|warn
 argument_list|(
 name|exception
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -426,6 +421,9 @@ operator|.
 name|warn
 argument_list|(
 name|exception
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1706,6 +1704,9 @@ operator|.
 name|warn
 argument_list|(
 name|exception
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1771,6 +1772,9 @@ operator|.
 name|warn
 argument_list|(
 name|exception
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1785,6 +1789,9 @@ operator|.
 name|warn
 argument_list|(
 name|exception
+operator|.
+name|getMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
