@@ -595,13 +595,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|LoggerFactory
 import|;
 end_import
 
@@ -1197,9 +1193,9 @@ argument_list|,
 operator|new
 name|LoggingDbLoaderDelegate
 argument_list|(
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|DbLoader
 operator|.
