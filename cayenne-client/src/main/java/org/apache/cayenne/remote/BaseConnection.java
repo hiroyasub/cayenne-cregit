@@ -19,27 +19,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|Logger
 import|;
 end_import
 
@@ -52,6 +34,16 @@ operator|.
 name|cayenne
 operator|.
 name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
 import|;
 end_import
 
@@ -68,7 +60,7 @@ implements|implements
 name|ClientConnection
 block|{
 specifier|protected
-name|Log
+name|Logger
 name|logger
 decl_stmt|;
 specifier|protected
@@ -84,9 +76,9 @@ name|this
 operator|.
 name|logger
 operator|=
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|getClass
 argument_list|()
