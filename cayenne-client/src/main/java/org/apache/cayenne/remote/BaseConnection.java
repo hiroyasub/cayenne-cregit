@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A common base class for concrete ClientConnection implementations. Provides message  * logging functionality via commons-logging.  *   * @since 1.2  */
+comment|/**  * A common base class for concrete ClientConnection implementations. Provides message  * logging functionality via slf4j logging.  *   * @since 1.2  */
 end_comment
 
 begin_class

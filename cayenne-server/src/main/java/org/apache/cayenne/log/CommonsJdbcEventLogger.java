@@ -232,7 +232,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link JdbcEventLogger} built on top of commons-logging.  *   * @since 3.1  */
+comment|/**  * A {@link JdbcEventLogger} built on top of slf4j-api logger.  *   * @since 3.1  */
 end_comment
 
 begin_class
