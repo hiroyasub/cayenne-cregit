@@ -277,7 +277,7 @@ name|nullSortedFirst
 init|=
 literal|true
 decl_stmt|;
-comment|/** 	 * Orders a given list of objects, using a List of Orderings applied 	 * according the default iteration order of the Orderings list. I.e. each 	 * Ordering with lower index is more significant than any other Ordering 	 * with higher index. List being ordered is modified in place. 	 */
+comment|/** 	 * Orders a given list of objects, using a List of Orderings applied 	 * according the default iteration order of the Orderings list. I.e. each 	 * Ordering with lower index is more significant than any other Ordering 	 * with higher index. List being ordered is modified in place. 	 * 	 * @param objects elements to sort 	 * @param orderings list of Orderings to be applied 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -318,7 +318,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Return the sorted list of objects. 	 * @since 4.0 	 */
+comment|/** 	 * Orders a given list of objects, using a List of Orderings applied 	 * according the default iteration order of the Orderings list. I.e. each 	 * Ordering with lower index is more significant than any other Ordering 	 * with higher index. 	 * 	 * @param objects elements to sort 	 * @param orderings list of Orderings to be applied 	 * @return new List with ordered elements 	 * 	 * @since 4.0 	 */
 specifier|public
 specifier|static
 parameter_list|<
@@ -330,6 +330,7 @@ name|E
 argument_list|>
 name|orderedList
 parameter_list|(
+specifier|final
 name|Collection
 argument_list|<
 name|E
@@ -669,7 +670,7 @@ literal|null
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Sets sort order for whether nulls are at the top or bottom of the 	 * resulting list. Default is true. 	 *  	 * @param nullSortedFirst 	 *            true sorts nulls to the top of the list, false sorts nulls to 	 *            the bottom 	 */
+comment|/** 	 * Sets sort order for whether nulls are at the top or bottom of the 	 * resulting list. Default is true. 	 * Affects only in-memory sorting. 	 *  	 * @param nullSortedFirst 	 *            true sorts nulls to the top of the list, false sorts nulls to 	 *            the bottom 	 */
 specifier|public
 name|void
 name|setNullSortedFirst
