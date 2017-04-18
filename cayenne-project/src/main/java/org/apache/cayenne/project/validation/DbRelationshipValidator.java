@@ -480,7 +480,7 @@ name|validationResult
 argument_list|,
 name|relationship
 argument_list|,
-literal|"Relationship '%s' and '%s' ManyToMany is impossible"
+literal|"Relationship '%s' and reverse '%s' are both toMany"
 argument_list|,
 name|relationship
 operator|.
