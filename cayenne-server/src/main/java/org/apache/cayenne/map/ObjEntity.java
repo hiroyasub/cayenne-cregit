@@ -2557,6 +2557,23 @@ name|dbPath
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 4.0      */
+specifier|public
+name|void
+name|removeAttributeOverride
+parameter_list|(
+name|String
+name|attributeName
+parameter_list|)
+block|{
+name|attributeOverrides
+operator|.
+name|remove
+argument_list|(
+name|attributeName
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * @since 3.0      */
 specifier|public
 name|Map
