@@ -2623,6 +2623,27 @@ name|getAttributes
 argument_list|()
 return|;
 block|}
+comment|/**      * Finds attribute declared by this ObjEntity,      * excluding inherited attributes.      *      * @param name of the attribute      * @return declared attribute or null if no attribute is found      *      * @see ObjEntity#getAttribute(String)      *      * @since 4.0      */
+specifier|public
+name|ObjAttribute
+name|getDeclaredAttribute
+parameter_list|(
+name|String
+name|name
+parameter_list|)
+block|{
+return|return
+operator|(
+name|ObjAttribute
+operator|)
+name|super
+operator|.
+name|getAttribute
+argument_list|(
+name|name
+argument_list|)
+return|;
+block|}
 comment|/**      * Returns a named Relationship that either belongs to this ObjEntity or is      * inherited. Returns null if no matching attribute is found.      */
 annotation|@
 name|Override
