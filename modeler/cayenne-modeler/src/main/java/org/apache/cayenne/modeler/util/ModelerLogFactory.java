@@ -43,32 +43,20 @@ name|org
 operator|.
 name|slf4j
 operator|.
-name|Logger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|slf4j
-operator|.
-name|impl
-operator|.
-name|SimpleLoggerFactory
+name|ILoggerFactory
 import|;
 end_import
 
 begin_comment
-comment|/**  * Factory for creating ModelerLogger instances. LogFactoryImpl is subclassed to  * save default behavior  */
+comment|/**  * Factory for creating ModelerLogger instances.  */
 end_comment
 
 begin_class
 specifier|public
 class|class
 name|ModelerLogFactory
-extends|extends
-name|SimpleLoggerFactory
+implements|implements
+name|ILoggerFactory
 block|{
 comment|/** 	 * Local cache of modeler loggers 	 */
 specifier|protected
@@ -93,8 +81,8 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|Logger
-name|getInstance
+name|ModelerLogger
+name|getLogger
 parameter_list|(
 name|String
 name|name
@@ -117,24 +105,13 @@ operator|==
 literal|null
 condition|)
 block|{
-name|Logger
-name|def
-init|=
-name|super
-operator|.
-name|getLogger
-argument_list|(
-name|name
-argument_list|)
-decl_stmt|;
+comment|//Logger def = LoggerFactory.getLogger(name);
 name|local
 operator|=
 operator|new
 name|ModelerLogger
 argument_list|(
 name|name
-argument_list|,
-name|def
 argument_list|)
 expr_stmt|;
 name|localCache
