@@ -87,18 +87,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|logging
-operator|.
-name|Logger
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|sql
@@ -137,13 +125,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
+name|Logger
 import|;
 end_import
 
@@ -151,13 +135,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|LoggerFactory
 import|;
 end_import
 
@@ -175,12 +155,12 @@ block|{
 specifier|private
 specifier|static
 specifier|final
-name|Log
+name|Logger
 name|LOGGER
 init|=
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|DriverDataSource
 operator|.
@@ -850,6 +830,12 @@ comment|/** 	 * @since 3.1 	 */
 annotation|@
 name|Override
 specifier|public
+name|java
+operator|.
+name|util
+operator|.
+name|logging
+operator|.
 name|Logger
 name|getParentLogger
 parameter_list|()

@@ -315,13 +315,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
+name|Logger
 import|;
 end_import
 
@@ -399,7 +395,7 @@ name|boolean
 name|useJava7Types
 decl_stmt|;
 specifier|private
-name|Log
+name|Logger
 name|logger
 decl_stmt|;
 specifier|private
@@ -464,7 +460,7 @@ name|stripFromTableNames
 expr_stmt|;
 block|}
 specifier|public
-name|Log
+name|Logger
 name|getLogger
 parameter_list|()
 block|{
@@ -476,7 +472,7 @@ specifier|public
 name|void
 name|setLogger
 parameter_list|(
-name|Log
+name|Logger
 name|logger
 parameter_list|)
 block|{

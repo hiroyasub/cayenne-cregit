@@ -173,13 +173,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
+name|Logger
 import|;
 end_import
 
@@ -187,13 +183,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|LogFactory
+name|LoggerFactory
 import|;
 end_import
 
@@ -240,7 +232,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link JdbcEventLogger} built on top of commons-logging.  *   * @since 3.1  */
+comment|/**  * A {@link JdbcEventLogger} built on top of slf4j-api logger.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -253,12 +245,12 @@ block|{
 specifier|private
 specifier|static
 specifier|final
-name|Log
+name|Logger
 name|logger
 init|=
-name|LogFactory
+name|LoggerFactory
 operator|.
-name|getLog
+name|getLogger
 argument_list|(
 name|CommonsJdbcEventLogger
 operator|.

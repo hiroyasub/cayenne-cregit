@@ -123,13 +123,9 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|slf4j
 operator|.
-name|commons
-operator|.
-name|logging
-operator|.
-name|Log
+name|Logger
 import|;
 end_import
 
@@ -489,7 +485,7 @@ name|createConfig
 argument_list|(
 name|mock
 argument_list|(
-name|Log
+name|Logger
 operator|.
 name|class
 argument_list|)
@@ -529,7 +525,7 @@ name|createConfig
 argument_list|(
 name|mock
 argument_list|(
-name|Log
+name|Logger
 operator|.
 name|class
 argument_list|)
@@ -552,7 +548,7 @@ name|createConfig
 argument_list|(
 name|mock
 argument_list|(
-name|Log
+name|Logger
 operator|.
 name|class
 argument_list|)
@@ -582,7 +578,7 @@ name|createConfig
 argument_list|(
 name|mock
 argument_list|(
-name|Log
+name|Logger
 operator|.
 name|class
 argument_list|)
@@ -620,7 +616,7 @@ name|createConfig
 argument_list|(
 name|mock
 argument_list|(
-name|Log
+name|Logger
 operator|.
 name|class
 argument_list|)
@@ -1703,7 +1699,7 @@ name|createConfig
 argument_list|(
 name|mock
 argument_list|(
-name|Log
+name|Logger
 operator|.
 name|class
 argument_list|)
