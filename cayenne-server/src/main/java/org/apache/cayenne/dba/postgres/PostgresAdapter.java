@@ -787,13 +787,13 @@ name|Exception
 block|{
 name|binding
 operator|.
-name|setType
+name|setJdbcType
 argument_list|(
 name|mapNTypes
 argument_list|(
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 argument_list|)
 argument_list|)

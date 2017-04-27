@@ -666,7 +666,7 @@ operator|&&
 operator|(
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 operator|==
 name|Types

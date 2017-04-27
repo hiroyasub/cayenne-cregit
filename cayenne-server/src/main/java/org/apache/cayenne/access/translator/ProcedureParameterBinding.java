@@ -77,7 +77,7 @@ annotation|@
 name|Override
 specifier|public
 name|Integer
-name|getType
+name|getJdbcType
 parameter_list|()
 block|{
 return|return

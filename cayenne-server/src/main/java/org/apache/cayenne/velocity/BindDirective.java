@@ -65,9 +65,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|SQLParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -222,7 +222,7 @@ return|return
 name|LINE
 return|;
 block|}
-comment|/** 	 * Extracts the value of the object property to render and passes control to 	 * {@link #render(InternalContextAdapter, Writer, SQLParameterBinding)} to do 	 * the actual rendering. 	 */
+comment|/** 	 * Extracts the value of the object property to render and passes control to 	 * {@link #render(InternalContextAdapter, Writer, ParameterBinding)} to do 	 * the actual rendering. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -525,7 +525,7 @@ argument_list|,
 name|writer
 argument_list|,
 operator|new
-name|SQLParameterBinding
+name|ParameterBinding
 argument_list|(
 name|value
 argument_list|,
@@ -546,7 +546,7 @@ parameter_list|,
 name|Writer
 name|writer
 parameter_list|,
-name|SQLParameterBinding
+name|ParameterBinding
 name|binding
 parameter_list|)
 throws|throws
@@ -620,7 +620,7 @@ parameter_list|(
 name|InternalContextAdapter
 name|context
 parameter_list|,
-name|SQLParameterBinding
+name|ParameterBinding
 name|binding
 parameter_list|)
 block|{

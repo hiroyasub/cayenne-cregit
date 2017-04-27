@@ -913,7 +913,7 @@ literal|null
 operator|&&
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 operator|==
 literal|0
@@ -938,13 +938,13 @@ else|else
 block|{
 name|binding
 operator|.
-name|setType
+name|setJdbcType
 argument_list|(
 name|convertNTypes
 argument_list|(
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 argument_list|)
 argument_list|)

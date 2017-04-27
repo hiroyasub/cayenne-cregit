@@ -713,7 +713,7 @@ if|if
 condition|(
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 operator|==
 name|Types
@@ -723,7 +723,7 @@ condition|)
 block|{
 name|binding
 operator|.
-name|setType
+name|setJdbcType
 argument_list|(
 name|Types
 operator|.
@@ -735,7 +735,7 @@ if|else if
 condition|(
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 operator|==
 name|Types
@@ -745,7 +745,7 @@ condition|)
 block|{
 name|binding
 operator|.
-name|setType
+name|setJdbcType
 argument_list|(
 name|Types
 operator|.
@@ -765,7 +765,7 @@ literal|null
 operator|&&
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 operator|==
 literal|0

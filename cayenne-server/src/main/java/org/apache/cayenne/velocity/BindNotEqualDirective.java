@@ -45,9 +45,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|SQLParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -99,7 +99,7 @@ parameter_list|,
 name|Writer
 name|writer
 parameter_list|,
-name|SQLParameterBinding
+name|ParameterBinding
 name|binding
 parameter_list|)
 throws|throws

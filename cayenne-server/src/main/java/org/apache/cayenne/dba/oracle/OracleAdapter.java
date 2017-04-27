@@ -1116,7 +1116,7 @@ literal|null
 operator|&&
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 operator|==
 name|Types
@@ -1155,7 +1155,7 @@ argument_list|()
 argument_list|,
 name|binding
 operator|.
-name|getType
+name|getJdbcType
 argument_list|()
 argument_list|,
 name|binding

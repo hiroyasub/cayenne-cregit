@@ -49,9 +49,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|SQLParameterBinding
+name|DbAttributeBinding
 import|;
 end_import
 
@@ -67,7 +67,7 @@ name|access
 operator|.
 name|translator
 operator|.
-name|DbAttributeBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -257,7 +257,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * @deprecated  since 4.0      */
+comment|/**      * @deprecated since 4.0      */
 specifier|private
 specifier|static
 specifier|final
@@ -469,14 +469,9 @@ argument_list|(
 name|buffer
 argument_list|,
 operator|(
-operator|(
 name|Byte
 operator|)
 name|object
-operator|)
-operator|.
-name|byteValue
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -836,7 +831,7 @@ if|else if
 condition|(
 name|object
 operator|instanceof
-name|SQLParameterBinding
+name|ParameterBinding
 condition|)
 block|{
 name|sqlLiteralForObject
@@ -845,7 +840,7 @@ name|buffer
 argument_list|,
 operator|(
 operator|(
-name|SQLParameterBinding
+name|ParameterBinding
 operator|)
 name|object
 operator|)
@@ -1387,7 +1382,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, DbAttributeBinding[], long)}. 	 */
+comment|/** 	 * @deprecated since 4.0 use 	 *             {@link #logQuery(String, ParameterBinding[], long)}. 	 */
 annotation|@
 name|Deprecated
 annotation|@
@@ -1672,7 +1667,7 @@ parameter_list|(
 name|String
 name|sql
 parameter_list|,
-name|DbAttributeBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|,
@@ -1923,7 +1918,7 @@ parameter_list|(
 name|String
 name|label
 parameter_list|,
-name|DbAttributeBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -1989,7 +1984,7 @@ parameter_list|,
 name|String
 name|label
 parameter_list|,
-name|DbAttributeBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -2032,7 +2027,7 @@ name|i
 operator|++
 control|)
 block|{
-name|DbAttributeBinding
+name|ParameterBinding
 name|b
 init|=
 name|bindings
@@ -2087,14 +2082,6 @@ literal|": "
 argument_list|)
 expr_stmt|;
 block|}
-name|DbAttribute
-name|attribute
-init|=
-name|b
-operator|.
-name|getAttribute
-argument_list|()
-decl_stmt|;
 name|buffer
 operator|.
 name|append
@@ -2103,6 +2090,26 @@ name|j
 operator|++
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|b
+operator|instanceof
+name|DbAttributeBinding
+condition|)
+block|{
+name|DbAttribute
+name|attribute
+init|=
+operator|(
+operator|(
+name|DbAttributeBinding
+operator|)
+name|b
+operator|)
+operator|.
+name|getAttribute
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|attribute
@@ -2127,6 +2134,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|buffer
 operator|.

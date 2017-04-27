@@ -137,7 +137,7 @@ name|access
 operator|.
 name|jdbc
 operator|.
-name|SQLParameterBinding
+name|SQLStatement
 import|;
 end_import
 
@@ -151,9 +151,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|SQLStatement
+name|ParameterBinding
 import|;
 end_import
 
@@ -1436,7 +1436,7 @@ literal|"Not a binding!"
 argument_list|,
 name|binding
 operator|instanceof
-name|SQLParameterBinding
+name|ParameterBinding
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1445,7 +1445,7 @@ name|expectedValue
 argument_list|,
 operator|(
 operator|(
-name|SQLParameterBinding
+name|ParameterBinding
 operator|)
 name|binding
 operator|)
@@ -1459,7 +1459,7 @@ specifier|private
 name|void
 name|assertBindingType
 parameter_list|(
-name|int
+name|Integer
 name|expectedType
 parameter_list|,
 name|Object
@@ -1472,7 +1472,7 @@ literal|"Not a binding!"
 argument_list|,
 name|binding
 operator|instanceof
-name|SQLParameterBinding
+name|ParameterBinding
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -1481,7 +1481,7 @@ name|expectedType
 argument_list|,
 operator|(
 operator|(
-name|SQLParameterBinding
+name|ParameterBinding
 operator|)
 name|binding
 operator|)

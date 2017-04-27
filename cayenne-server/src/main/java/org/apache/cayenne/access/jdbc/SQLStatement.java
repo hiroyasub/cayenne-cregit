@@ -17,6 +17,22 @@ name|jdbc
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|ParameterBinding
+import|;
+end_import
+
 begin_comment
 comment|/**  * A PreparedStatement descriptor containing a String of SQL and an array of parameters.  * SQLStatement is essentially a "compiled" version of any single query.  *   * @since 1.1  */
 end_comment
@@ -31,7 +47,7 @@ name|String
 name|sql
 decl_stmt|;
 specifier|protected
-name|SQLParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 decl_stmt|;
@@ -51,7 +67,7 @@ parameter_list|(
 name|String
 name|sql
 parameter_list|,
-name|SQLParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -77,7 +93,7 @@ name|ColumnDescriptor
 index|[]
 name|resultColumns
 parameter_list|,
-name|SQLParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)
@@ -125,7 +141,7 @@ name|descriptors
 expr_stmt|;
 block|}
 specifier|public
-name|SQLParameterBinding
+name|ParameterBinding
 index|[]
 name|getBindings
 parameter_list|()
@@ -147,7 +163,7 @@ specifier|public
 name|void
 name|setBindings
 parameter_list|(
-name|SQLParameterBinding
+name|ParameterBinding
 index|[]
 name|bindings
 parameter_list|)

@@ -69,9 +69,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|SQLParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -115,7 +115,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|SQLParameterBinding
+name|ParameterBinding
 argument_list|>
 name|values
 init|=
@@ -153,7 +153,7 @@ name|column
 argument_list|)
 argument_list|,
 operator|new
-name|SQLParameterBinding
+name|ParameterBinding
 argument_list|(
 name|value
 argument_list|,
@@ -168,7 +168,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
-name|SQLParameterBinding
+name|ParameterBinding
 name|get
 parameter_list|(
 name|DbEntity
@@ -206,7 +206,7 @@ name|DbAttribute
 name|column
 parameter_list|)
 block|{
-name|SQLParameterBinding
+name|ParameterBinding
 name|value
 init|=
 name|get

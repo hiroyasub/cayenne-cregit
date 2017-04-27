@@ -77,9 +77,9 @@ name|cayenne
 operator|.
 name|access
 operator|.
-name|jdbc
+name|translator
 operator|.
-name|SQLParameterBinding
+name|ParameterBinding
 import|;
 end_import
 
@@ -641,7 +641,7 @@ block|{
 annotation|@
 name|Override
 specifier|protected
-name|SQLParameterBinding
+name|ParameterBinding
 name|get
 parameter_list|(
 name|DbEntity
@@ -671,7 +671,7 @@ name|VARCHAR
 case|:
 return|return
 operator|new
-name|SQLParameterBinding
+name|ParameterBinding
 argument_list|(
 name|DEFAULT_VALUE_STRING
 argument_list|,
