@@ -2150,6 +2150,10 @@ condition|?
 name|Pattern
 operator|.
 name|CASE_INSENSITIVE
+operator||
+name|Pattern
+operator|.
+name|UNICODE_CASE
 else|:
 literal|0
 decl_stmt|;
