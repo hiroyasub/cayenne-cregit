@@ -242,7 +242,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/**      * Disables DI module auto-loading. By default auto-loading is enabled based on      * {@link org.apache.cayenne.di.spi.ModuleLoader} service provider interface.      * If you decide to disable auto-loading, make sure you provide all the modules that you need.      *      * @return this builder instance.      */
+comment|/**      * Disables DI module auto-loading. By default auto-loading is enabled based on      * {@link CayenneClientModuleProvider} service provider interface.      * If you decide to disable auto-loading, make sure you provide all the modules that you need.      *      * @return this builder instance.      */
 specifier|public
 name|ClientRuntimeBuilder
 name|disableModulesAutoLoading

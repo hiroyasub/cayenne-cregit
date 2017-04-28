@@ -166,7 +166,7 @@ name|ClientLocalRuntime
 extends|extends
 name|ClientRuntime
 block|{
-comment|/**      * Moved to {@link ClientRuntime#CLIENT_SERVER_CHANNEL_KEY}      */
+comment|/**      * @since 4.0 moved to {@link ClientRuntime#CLIENT_SERVER_CHANNEL_KEY}      */
 specifier|public
 specifier|static
 specifier|final

@@ -79,20 +79,6 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|Constants
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
 name|DefaultRuntimeProperties
 import|;
 end_import
@@ -152,6 +138,20 @@ operator|.
 name|di
 operator|.
 name|Binder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|MapBuilder
 import|;
 end_import
 
@@ -336,6 +336,20 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
+comment|// Contribute always to create binding
+name|MapBuilder
+argument_list|<
+name|String
+argument_list|>
+name|propertiesBuilder
+init|=
+name|ServerModule
+operator|.
+name|contributeProperties
+argument_list|(
+name|binder
+argument_list|)
+decl_stmt|;
 comment|// expose user-provided ROP properties as the main properties map
 comment|// binding here is left only for backward compatibility, should go away with the deprecated code.
 if|if
@@ -345,12 +359,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|ServerModule
-operator|.
-name|contributeProperties
-argument_list|(
-name|binder
-argument_list|)
+name|propertiesBuilder
 operator|.
 name|putAll
 argument_list|(
