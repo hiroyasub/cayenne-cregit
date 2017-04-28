@@ -392,10 +392,7 @@ control|(
 name|ObjEntity
 name|e
 range|:
-name|getEntity
-argument_list|()
-operator|.
-name|mappedObjEntities
+name|getMappedObjEntities
 argument_list|()
 control|)
 block|{
