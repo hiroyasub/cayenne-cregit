@@ -1277,7 +1277,7 @@ name|cayenne
 operator|.
 name|log
 operator|.
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 import|;
 end_import
 
@@ -1935,7 +1935,7 @@ argument_list|)
 operator|.
 name|to
 argument_list|(
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 operator|.
 name|class
 argument_list|)

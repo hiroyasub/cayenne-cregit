@@ -108,15 +108,15 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link CommonsJdbcEventLogger} extension that provides pretty formatting of the  * logged SQL messages.  *   * @since 3.1  */
+comment|/**  * A {@link Slf4jJdbcEventLogger} extension that provides pretty formatting of the  * logged SQL messages.  *   * @since 3.1  * @since 4.0 renamed from FormattedCommonsJdbcEventLogger to FormattedSlf4jJdbcEventLogger as part of migration to SLF4J  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|FormattedCommonsJdbcEventLogger
+name|FormattedSlf4jJdbcEventLogger
 extends|extends
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 block|{
 specifier|private
 specifier|final
@@ -255,7 +255,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|FormattedCommonsJdbcEventLogger
+name|FormattedSlf4jJdbcEventLogger
 parameter_list|(
 annotation|@
 name|Inject
@@ -322,11 +322,11 @@ else|:
 operator|-
 literal|1
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|buffer
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|int
@@ -624,11 +624,7 @@ name|result
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|Integer
-argument_list|,
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|String

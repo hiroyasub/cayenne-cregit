@@ -232,13 +232,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link JdbcEventLogger} built on top of slf4j-api logger.  *   * @since 3.1  */
+comment|/**  * A {@link JdbcEventLogger} built on top of slf4j-api logger.  *   * @since 3.1  * @since 4.0 renamed from CommonsJdbcEventLogger to Slf4jJdbcEventLogger as part of migration to SLF4J  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 implements|implements
 name|JdbcEventLogger
 block|{
@@ -252,7 +252,7 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|CommonsJdbcEventLogger
+name|JdbcEventLogger
 operator|.
 name|class
 argument_list|)
@@ -271,7 +271,7 @@ name|long
 name|queryExecutionTimeLoggingThreshold
 decl_stmt|;
 specifier|public
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 parameter_list|(
 annotation|@
 name|Inject
@@ -297,6 +297,8 @@ expr_stmt|;
 block|}
 comment|// this should go away once we can remove 4.0 deprecated API. The actual logic for printing a value is now
 comment|// spread around the ExtendedTypes
+annotation|@
+name|Deprecated
 name|void
 name|sqlLiteralForObject
 parameter_list|(
@@ -1076,50 +1078,20 @@ name|isLoggable
 argument_list|()
 condition|)
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|(
-literal|"Opening connection: "
-argument_list|)
-decl_stmt|;
 comment|// append URL on the same line to make log somewhat grep-friendly
-name|buf
-operator|.
-name|append
-argument_list|(
-name|url
-argument_list|)
-expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"\n\tLogin: "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|userName
-argument_list|)
-expr_stmt|;
-name|buf
-operator|.
-name|append
-argument_list|(
-literal|"\n\tPassword: *******"
-argument_list|)
-expr_stmt|;
 name|logger
 operator|.
 name|info
 argument_list|(
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"Opening connection: "
+operator|+
+name|url
+operator|+
+literal|"\n\tLogin: "
+operator|+
+name|userName
+operator|+
+literal|"\n\tPassword: *******"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1355,14 +1327,6 @@ operator|.
 name|getName
 argument_list|()
 decl_stmt|;
-name|String
-name|key
-init|=
-name|attribute
-operator|.
-name|getName
-argument_list|()
-decl_stmt|;
 name|logger
 operator|.
 name|info
@@ -1373,7 +1337,10 @@ name|entity
 operator|+
 literal|"."
 operator|+
-name|key
+name|attribute
+operator|.
+name|getName
+argument_list|()
 operator|+
 literal|" = "
 operator|+
@@ -1974,6 +1941,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 name|void
 name|appendParameters

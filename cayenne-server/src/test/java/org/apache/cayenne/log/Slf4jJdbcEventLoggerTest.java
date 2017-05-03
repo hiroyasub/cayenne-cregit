@@ -90,7 +90,7 @@ end_import
 begin_class
 specifier|public
 class|class
-name|CommonsJdbcEventLoggerTest
+name|Slf4jJdbcEventLoggerTest
 block|{
 annotation|@
 name|Test
@@ -110,14 +110,20 @@ argument_list|()
 decl_stmt|;
 comment|// test unsupported type
 operator|new
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 argument_list|(
 operator|new
 name|DefaultRuntimeProperties
 argument_list|(
 name|Collections
 operator|.
-name|EMPTY_MAP
+expr|<
+name|String
+argument_list|,
+name|String
+operator|>
+name|emptyMap
+argument_list|()
 argument_list|)
 argument_list|)
 operator|.

@@ -163,7 +163,7 @@ name|cayenne
 operator|.
 name|log
 operator|.
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 import|;
 end_import
 
@@ -420,7 +420,7 @@ block|}
 block|}
 argument_list|,
 operator|new
-name|CommonsJdbcEventLogger
+name|Slf4jJdbcEventLogger
 argument_list|(
 name|runtimeProperties
 argument_list|)
