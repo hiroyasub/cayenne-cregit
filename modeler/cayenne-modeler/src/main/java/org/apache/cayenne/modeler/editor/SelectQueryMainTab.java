@@ -1290,20 +1290,15 @@ argument_list|(
 name|text
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|qualifier
-operator|!=
-literal|null
-condition|)
-block|{
 comment|//getQuery() is not null if we reached here
 name|getQuery
 argument_list|()
 operator|.
 name|setQualifier
 argument_list|(
+operator|(
 name|qualifier
+operator|)
 argument_list|)
 expr_stmt|;
 name|mediator
@@ -1321,8 +1316,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-comment|/**      * Method to create and check an expression      * @param text String to be converted as Expression      * @return Expression if a new expression was created, null otherwise.      * @throws ValidationException if<code>text</code> can't be converted        */
+comment|/**      * Method to create and check an expression      * @param text String to be converted as Expression      * @return Expression if a new expression was created, null otherwise.      * @throws ValidationException if<code>text</code> can't be converted      */
 name|Expression
 name|createQualifier
 parameter_list|(
@@ -1608,7 +1602,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Advanced checking of an expression, needed because Expression.fromString()      * might terminate normally, but returned Expression will not be appliable      * for real Entities.      * Current implementation assures all attributes in expression are present in      * Entity        * @param root Root of a query      * @param ex Expression to check      * @throws ValidationException when something's wrong      */
+comment|/**      * Advanced checking of an expression, needed because Expression.fromString()      * might terminate normally, but returned Expression will not be appliable      * for real Entities.      * Current implementation assures all attributes in expression are present in      * Entity      * @param root Root of a query      * @param ex Expression to check      * @throws ValidationException when something's wrong      */
 specifier|static
 name|void
 name|checkExpression
