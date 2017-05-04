@@ -451,62 +451,17 @@ name|isReadOnly
 argument_list|()
 condition|)
 block|{
-name|StringBuilder
-name|message
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|message
-operator|.
-name|append
-argument_list|(
-literal|"Attempt to modify object(s) mapped to a read-only entity: "
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|entity
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|message
-operator|.
-name|append
-argument_list|(
-literal|" '"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|entity
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"'"
-argument_list|)
-expr_stmt|;
-name|message
-operator|.
-name|append
-argument_list|(
-literal|". Can't commit changes."
-argument_list|)
-expr_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|message
+literal|"Attempt to modify object(s) mapped to a read-only entity: '%s'. "
+operator|+
+literal|"Can't commit changes."
+argument_list|,
+name|entity
 operator|.
-name|toString
+name|getName
 argument_list|()
 argument_list|)
 throw|;
@@ -640,8 +595,7 @@ expr_stmt|;
 block|}
 block|}
 comment|// secondary DbEntities...
-comment|// Note that this logic won't allow flattened attributes to span multiple
-comment|// databases...
+comment|// Note that this logic won't allow flattened attributes to span multiple databases...
 for|for
 control|(
 name|ObjAttribute
@@ -1088,8 +1042,7 @@ operator|=
 name|id
 expr_stmt|;
 block|}
-comment|// do not take the snapshot until generated columns are processed (see
-comment|// code above)
+comment|// do not take the snapshot until generated columns are processed (see code above)
 name|DataRow
 name|dataRow
 init|=
@@ -1171,8 +1124,7 @@ operator|.
 name|getComplimentaryReverseArc
 argument_list|()
 decl_stmt|;
-comment|// must resolve faults... hopefully for to-one this will not cause
-comment|// extra fetches...
+comment|// must resolve faults... hopefully for to-one this will not cause extra fetches...
 name|Object
 name|source
 init|=
@@ -1286,8 +1238,7 @@ block|}
 comment|// else - do not check for conflicts here (i.e. another object mapped for the same
 comment|// key), as we have no control of the order in which this method is called, so
 comment|// another object may be remapped later by the caller
-comment|// must do a slow map scan to ensure the object is not mapped under a different
-comment|// key...
+comment|// must do a slow map scan to ensure the object is not mapped under a different key...
 name|Iterator
 argument_list|<
 name|Map

@@ -536,8 +536,7 @@ name|getAdapter
 argument_list|()
 decl_stmt|;
 comment|// skip db-generated... looks like we don't care about the actual PK
-comment|// value
-comment|// here, so no need to retrieve db-generated pk back to Java.
+comment|// value here, so no need to retrieve db-generated pk back to Java.
 if|if
 condition|(
 name|adapter
@@ -1034,6 +1033,9 @@ name|Query
 name|query
 parameter_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 name|dataRows
 parameter_list|)
 block|{

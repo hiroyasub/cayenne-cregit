@@ -227,9 +227,7 @@ name|flattenedInserts
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|FlattenedArcKey
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -238,9 +236,7 @@ name|flattenedDeletes
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|FlattenedArcKey
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -251,8 +247,7 @@ name|GraphDiff
 name|allChanges
 parameter_list|)
 block|{
-comment|// extract flattened and indirect changes and remove duplicate
-comment|// changes...
+comment|// extract flattened and indirect changes and remove duplicate changes...
 name|allChanges
 operator|.
 name|apply
@@ -452,9 +447,7 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// Register this combination (so we can remove it later if an
-comment|// insert
-comment|// occurs before commit)
+comment|// Register this combination (so we can remove it later if an insert occurs before commit)
 name|FlattenedArcKey
 name|key
 init|=
@@ -474,8 +467,7 @@ argument_list|,
 name|relationship
 argument_list|)
 decl_stmt|;
-comment|// If this combination has already been deleted, simply undelete
-comment|// it.
+comment|// If this combination has already been deleted, simply undelete it.
 if|if
 condition|(
 operator|!
@@ -608,9 +600,7 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// Register this combination (so we can remove it later if an
-comment|// insert
-comment|// occurs before commit)
+comment|// Register this combination (so we can remove it later if an insert occurs before commit)
 name|FlattenedArcKey
 name|key
 init|=
@@ -630,9 +620,7 @@ argument_list|,
 name|relationship
 argument_list|)
 decl_stmt|;
-comment|// If this combination has already been inserted, simply
-comment|// "uninsert" it
-comment|// also do not delete it twice
+comment|// If this combination has already been inserted, simply "uninsert" it also do not delete it twice
 if|if
 condition|(
 operator|!

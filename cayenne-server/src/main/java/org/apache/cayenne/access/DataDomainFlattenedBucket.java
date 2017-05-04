@@ -157,16 +157,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -343,11 +333,6 @@ operator|==
 literal|null
 condition|)
 block|{
-name|boolean
-name|optimisticLocking
-init|=
-literal|false
-decl_stmt|;
 name|Collection
 argument_list|<
 name|DbAttribute
@@ -408,7 +393,7 @@ name|relationDeleteQuery
 operator|.
 name|setUsingOptimisticLocking
 argument_list|(
-name|optimisticLocking
+literal|false
 argument_list|)
 expr_stmt|;
 name|flattenedDeleteQueries

@@ -456,8 +456,7 @@ block|}
 block|}
 else|else
 block|{
-comment|// TODO: andrus 12/23/2007 - only one step relationship is
-comment|// supported...
+comment|// TODO: andrus 12/23/2007 - only one step relationship is supported...
 if|if
 condition|(
 name|descriptor
@@ -642,8 +641,22 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+comment|// only use qualifier if dbEntities match
 if|if
 condition|(
+name|dbAttribute
+operator|.
+name|getEntity
+argument_list|()
+operator|.
+name|equals
+argument_list|(
+name|descriptor
+operator|.
+name|getDbEntity
+argument_list|()
+argument_list|)
+operator|&&
 operator|!
 name|attributes
 operator|.
@@ -756,11 +769,8 @@ operator|.
 name|getSource
 argument_list|()
 decl_stmt|;
-comment|// relationship transformers override attribute
-comment|// transformers for
-comment|// meaningful FK's... why meaningful FKs can go out of
-comment|// sync is
-comment|// another story (CAY-595)
+comment|// relationship transformers override attribute transformers for meaningful FK's...
+comment|// why meaningful FKs can go out of sync is another story (CAY-595)
 name|int
 name|index
 init|=

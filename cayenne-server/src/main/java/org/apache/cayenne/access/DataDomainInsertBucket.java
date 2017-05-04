@@ -705,8 +705,7 @@ literal|0
 condition|)
 block|{
 comment|// primitive 0 has to be treated as NULL, or
-comment|// otherwise we
-comment|// can't generate PK for POJO's
+comment|// otherwise we can't generate PK for POJO's
 block|}
 else|else
 block|{
@@ -748,8 +747,7 @@ block|{
 continue|continue;
 block|}
 comment|// only a single key can be generated from DB... if this is done
-comment|// already
-comment|// in this loop, we must bail out.
+comment|// already in this loop, we must bail out.
 if|if
 condition|(
 name|autoPkDone
