@@ -407,13 +407,17 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
+comment|// In case, when uses EditRelationship button, relationship doesn't exist => it doesn't have joins
+comment|// and just return targetName
+return|return
+name|stemmed
 argument_list|(
-literal|"No joins for relationship. Can't generate a name"
+name|last
+operator|.
+name|getTargetEntityName
+argument_list|()
 argument_list|)
-throw|;
+return|;
 block|}
 name|DbJoin
 name|join1
