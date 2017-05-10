@@ -225,7 +225,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-query.gif"
+literal|"icon-new_query.png"
 return|;
 block|}
 specifier|public

@@ -270,7 +270,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-create-method.gif"
+literal|"icon-create-method.png"
 return|;
 block|}
 comment|/**      * performs adding new callback method      *      * @param e event      */

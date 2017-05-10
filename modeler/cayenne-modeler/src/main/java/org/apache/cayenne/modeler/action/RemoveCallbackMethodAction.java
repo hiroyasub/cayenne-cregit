@@ -222,7 +222,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-trash.gif"
+literal|"icon-trash.png"
 return|;
 block|}
 comment|/**      * performs callback method removing      * @param e event      */

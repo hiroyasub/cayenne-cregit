@@ -779,7 +779,7 @@ argument_list|,
 literal|"relationshipTable"
 argument_list|)
 expr_stmt|;
-comment|/**          * Create and install a popup          */
+comment|// Create and install a popup
 name|Icon
 name|ico
 init|=
@@ -787,7 +787,7 @@ name|ModelerUtil
 operator|.
 name|buildIcon
 argument_list|(
-literal|"icon-info.gif"
+literal|"icon-edit.png"
 argument_list|)
 decl_stmt|;
 name|resolveMenu

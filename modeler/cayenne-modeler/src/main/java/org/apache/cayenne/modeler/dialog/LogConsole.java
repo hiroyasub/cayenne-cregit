@@ -83,16 +83,6 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JToolBar
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
 name|text
 operator|.
 name|*
@@ -154,30 +144,6 @@ operator|.
 name|event
 operator|.
 name|ActionListener
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|MouseAdapter
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|MouseEvent
 import|;
 end_import
 
@@ -383,9 +349,15 @@ name|setForeground
 argument_list|(
 name|INFO_STYLE
 argument_list|,
+operator|new
 name|Color
-operator|.
-name|BLUE
+argument_list|(
+literal|32
+argument_list|,
+literal|65
+argument_list|,
+literal|150
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|DEBUG_STYLE
@@ -450,63 +422,6 @@ name|void
 name|initBindings
 parameter_list|()
 block|{
-name|view
-operator|.
-name|getMenuButton
-argument_list|()
-operator|.
-name|addMouseListener
-argument_list|(
-operator|new
-name|MouseAdapter
-argument_list|()
-block|{
-specifier|public
-name|void
-name|mousePressed
-parameter_list|(
-name|MouseEvent
-name|e
-parameter_list|)
-block|{
-name|view
-operator|.
-name|getMenu
-argument_list|()
-operator|.
-name|show
-argument_list|(
-name|view
-argument_list|,
-name|view
-operator|.
-name|getMenuButton
-argument_list|()
-operator|.
-name|getX
-argument_list|()
-argument_list|,
-name|view
-operator|.
-name|getMenuButton
-argument_list|()
-operator|.
-name|getY
-argument_list|()
-operator|+
-name|view
-operator|.
-name|getMenuButton
-argument_list|()
-operator|.
-name|getHeight
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-argument_list|)
-expr_stmt|;
 name|view
 operator|.
 name|getClearItem
@@ -578,7 +493,7 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
-comment|/**                  * Log console should be visible                  */
+comment|// Log console should be visible
 name|disappear
 argument_list|()
 expr_stmt|;
@@ -636,12 +551,9 @@ condition|)
 block|{
 name|view
 operator|.
-name|getDockItem
-argument_list|()
-operator|.
-name|setText
+name|setDocked
 argument_list|(
-literal|"Dock"
+literal|false
 argument_list|)
 expr_stmt|;
 if|if
@@ -709,12 +621,9 @@ else|else
 block|{
 name|view
 operator|.
-name|getDockItem
-argument_list|()
-operator|.
-name|setText
+name|setDocked
 argument_list|(
-literal|"Undock"
+literal|true
 argument_list|)
 expr_stmt|;
 name|Application
@@ -785,7 +694,7 @@ operator|.
 name|getSelectedText
 argument_list|()
 decl_stmt|;
-comment|/**          * If nothing is selected, we copy the whole text          */
+comment|// If nothing is selected, we copy the whole text
 if|if
 condition|(
 name|Util
@@ -1001,6 +910,8 @@ parameter_list|)
 block|{
 name|appendMessage
 argument_list|(
+name|level
+argument_list|,
 name|message
 argument_list|,
 literal|null
@@ -1075,15 +986,11 @@ name|Date
 argument_list|()
 argument_list|)
 argument_list|)
+comment|//.append(System.getProperty("line.separator"))
 operator|.
 name|append
 argument_list|(
-name|System
-operator|.
-name|getProperty
-argument_list|(
-literal|"line.separator"
-argument_list|)
+literal|" "
 argument_list|)
 operator|.
 name|append
@@ -1092,7 +999,10 @@ name|level
 operator|.
 name|toUpperCase
 argument_list|()
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 literal|": "
 argument_list|)
 decl_stmt|;
@@ -1103,7 +1013,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|/**              * Append the message              */
+comment|// Append the message
 name|newText
 operator|.
 name|append
@@ -1129,7 +1039,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|/**              * Append the stack trace              */
+comment|// Append the stack trace
 name|StringWriter
 name|out
 init|=

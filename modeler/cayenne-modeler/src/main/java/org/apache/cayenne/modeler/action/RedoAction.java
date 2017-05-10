@@ -203,7 +203,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-redo.gif"
+literal|"icon-redo.png"
 return|;
 block|}
 annotation|@

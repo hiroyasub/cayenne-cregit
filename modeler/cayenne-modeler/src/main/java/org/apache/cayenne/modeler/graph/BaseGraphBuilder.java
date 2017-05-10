@@ -929,7 +929,7 @@ name|HashMap
 argument_list|<>
 argument_list|()
 expr_stmt|;
-comment|/**          * an array for entities that are not connected to anyone. We add them          * separately so that layout doesn't touch them          */
+comment|/*          * an array for entities that are not connected to anyone. We add them          * separately so that layout doesn't touch them          */
 name|List
 argument_list|<
 name|DefaultGraphCell
@@ -943,7 +943,7 @@ name|DefaultGraphCell
 argument_list|>
 argument_list|()
 decl_stmt|;
-comment|/**          * 1. Add all entities          */
+comment|/*          * 1. Add all entities          */
 for|for
 control|(
 name|DataMap
@@ -1033,7 +1033,7 @@ expr_stmt|;
 comment|// port
 block|}
 block|}
-comment|/**          * 2. Add all relationships          */
+comment|/*          * 2. Add all relationships          */
 for|for
 control|(
 name|DataMap
@@ -1144,8 +1144,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-comment|// JGraphSimpleLayout layout = new
-comment|// JGraphSimpleLayout(JGraphSimpleLayout.TYPE_TILT, 4000, 2000);
+comment|// JGraphHierarchicalLayout layout = new JGraphHierarchicalLayout();
+comment|// layout.setInterHierarchySpacing(150.0);
+comment|// layout.setIntraCellSpacing(150.0);
+comment|// layout.setInterRankCellSpacing(150.0);
+comment|// JGraphSimpleLayout layout = new JGraphSimpleLayout(JGraphSimpleLayout.TYPE_TILT, 4000, 2000);
 name|layout
 operator|.
 name|run
@@ -1178,7 +1181,7 @@ argument_list|)
 expr_stmt|;
 comment|// Apply the results to the actual graph
 block|}
-comment|/**          * Adding isolated objects          *           * We're placing them so that they will take maximum space in left top          * corner. The sample order is below:          *           * 1 2 6 7... 3 5 8 ... 4 9... 10 ...          */
+comment|/*          * Adding isolated objects          *           * We're placing them so that they will take maximum space in left top          * corner. The sample order is below:          *           * 1 2 6 7... 3 5 8 ... 4 9... 10 ...          */
 if|if
 condition|(
 name|isolatedObjects
@@ -2431,7 +2434,7 @@ name|cell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Updates relationship labels for specified relationship edge.      *       * @param order      *            order of relationship in entity's same target relationships -      *            to differ labels of relationships with same source and target      */
+comment|/**      * Updates relationship labels for specified relationship edge.      */
 specifier|protected
 name|void
 name|updateRelationshipLabels

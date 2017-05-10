@@ -202,7 +202,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-new.gif"
+literal|"icon-new.png"
 return|;
 block|}
 specifier|public

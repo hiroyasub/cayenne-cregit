@@ -302,7 +302,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-plus.gif"
+literal|"icon-plus.png"
 return|;
 block|}
 comment|/**      * Creates ProcedureParameter depending on context.      */

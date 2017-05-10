@@ -589,15 +589,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|String
-name|getIconName
-parameter_list|()
-block|{
-return|return
-literal|"icon-eomodel.gif"
-return|;
-block|}
-specifier|public
 name|void
 name|performAction
 parameter_list|(

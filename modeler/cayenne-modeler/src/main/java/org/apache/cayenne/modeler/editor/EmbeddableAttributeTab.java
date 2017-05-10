@@ -622,6 +622,13 @@ operator|new
 name|JToolBar
 argument_list|()
 decl_stmt|;
+name|toolBar
+operator|.
+name|setFloatable
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|ActionManager
 name|actionManager
 init|=
@@ -691,7 +698,9 @@ name|class
 argument_list|)
 operator|.
 name|buildButton
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toolBar
@@ -708,7 +717,9 @@ name|class
 argument_list|)
 operator|.
 name|buildButton
-argument_list|()
+argument_list|(
+literal|2
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toolBar
@@ -725,7 +736,9 @@ name|class
 argument_list|)
 operator|.
 name|buildButton
-argument_list|()
+argument_list|(
+literal|3
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|add

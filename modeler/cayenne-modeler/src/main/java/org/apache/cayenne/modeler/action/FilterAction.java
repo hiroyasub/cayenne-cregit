@@ -164,6 +164,7 @@ name|filterDialog
 operator|==
 literal|null
 condition|)
+block|{
 name|filterDialog
 operator|=
 operator|new
@@ -182,6 +183,7 @@ name|getFilterController
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|filterDialog
 operator|.
 name|pack
@@ -200,6 +202,16 @@ operator|.
 name|getHeight
 argument_list|()
 argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|resetDialog
+parameter_list|()
+block|{
+name|filterDialog
+operator|=
+literal|null
 expr_stmt|;
 block|}
 block|}

@@ -393,9 +393,12 @@ block|}
 block|}
 if|if
 condition|(
-name|action
-operator|==
 literal|"expand"
+operator|.
+name|equals
+argument_list|(
+name|action
+argument_list|)
 condition|)
 block|{
 name|tree
@@ -408,9 +411,12 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|action
-operator|==
 literal|"collapse"
+operator|.
+name|equals
+argument_list|(
+name|action
+argument_list|)
 condition|)
 block|{
 name|treeModel

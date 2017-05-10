@@ -178,7 +178,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-gen_java.gif"
+literal|"icon-gen_java.png"
 return|;
 block|}
 specifier|public

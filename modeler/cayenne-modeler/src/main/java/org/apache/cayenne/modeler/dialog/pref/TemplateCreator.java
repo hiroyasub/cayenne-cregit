@@ -584,7 +584,7 @@ name|view
 argument_list|,
 literal|"Enter Template Name"
 argument_list|,
-literal|null
+literal|"Error"
 argument_list|,
 name|JOptionPane
 operator|.
@@ -614,7 +614,7 @@ name|templateName
 operator|+
 literal|"' is already taken, enter a different name"
 argument_list|,
-literal|null
+literal|"Error"
 argument_list|,
 name|JOptionPane
 operator|.
@@ -643,7 +643,7 @@ name|view
 argument_list|,
 literal|"Must select an existing template file"
 argument_list|,
-literal|null
+literal|"Error"
 argument_list|,
 name|JOptionPane
 operator|.

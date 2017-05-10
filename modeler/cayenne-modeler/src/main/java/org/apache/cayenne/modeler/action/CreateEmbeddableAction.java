@@ -264,7 +264,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-new_embeddable.gif"
+literal|"icon-new_embeddable.png"
 return|;
 block|}
 annotation|@

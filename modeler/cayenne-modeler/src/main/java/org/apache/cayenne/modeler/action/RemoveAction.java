@@ -848,7 +848,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-trash.gif"
+literal|"icon-trash.png"
 return|;
 block|}
 annotation|@

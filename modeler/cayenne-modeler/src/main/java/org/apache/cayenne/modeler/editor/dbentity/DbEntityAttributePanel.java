@@ -576,7 +576,7 @@ name|BoardTableCellRenderer
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/**          * Create and install a popup          */
+comment|// Create and install a popup
 name|JPopupMenu
 name|popup
 init|=
@@ -967,8 +967,7 @@ name|entity
 argument_list|)
 expr_stmt|;
 block|}
-comment|// if an entity was selected on a tree,
-comment|// unselect currently selected row
+comment|// if an entity was selected on a tree, unselect currently selected row
 if|if
 condition|(
 name|e

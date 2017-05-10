@@ -652,7 +652,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-paste.gif"
+literal|"icon-paste.png"
 return|;
 block|}
 annotation|@

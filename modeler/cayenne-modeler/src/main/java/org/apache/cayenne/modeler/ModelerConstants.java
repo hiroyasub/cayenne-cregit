@@ -25,17 +25,11 @@ interface|interface
 name|ModelerConstants
 block|{
 comment|/** Defines path to the images. */
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|RESOURCE_PATH
 init|=
 literal|"org/apache/cayenne/modeler/images/"
 decl_stmt|;
-specifier|public
-specifier|static
-specifier|final
 name|String
 name|TITLE
 init|=

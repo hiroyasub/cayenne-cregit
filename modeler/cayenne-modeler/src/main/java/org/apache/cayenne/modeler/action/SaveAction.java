@@ -186,7 +186,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-save.gif"
+literal|"icon-save.png"
 return|;
 block|}
 annotation|@

@@ -469,7 +469,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-relationship.gif"
+literal|"icon-relationship.png"
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */

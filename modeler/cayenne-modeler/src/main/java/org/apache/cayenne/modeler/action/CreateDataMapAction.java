@@ -204,7 +204,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-datamap.gif"
+literal|"icon-datamap.png"
 return|;
 block|}
 comment|/** Calls addDataMap() or creates new data map if no data node selected. */

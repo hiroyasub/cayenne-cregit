@@ -105,7 +105,7 @@ return|return
 literal|"Move Forward"
 return|;
 block|}
-comment|/**      * Constructor for Move Forward Action      * @param name      */
+comment|/**      * Constructor for Move Forward Action      */
 specifier|public
 name|NavigateForwardAction
 parameter_list|(
@@ -128,7 +128,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-forward_nav.gif"
+literal|"icon-forward.png"
 return|;
 block|}
 comment|/**      * Moves to the previous element in the navigation history      */

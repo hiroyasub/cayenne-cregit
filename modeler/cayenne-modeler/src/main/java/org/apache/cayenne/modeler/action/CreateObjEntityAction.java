@@ -423,7 +423,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-new_objentity.gif"
+literal|"icon-new_objentity.png"
 return|;
 block|}
 annotation|@

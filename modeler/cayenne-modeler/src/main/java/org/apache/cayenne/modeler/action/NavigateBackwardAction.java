@@ -105,7 +105,7 @@ return|return
 literal|"Move Backward"
 return|;
 block|}
-comment|/**      * Constructor for Move Backward Action      * @param name      */
+comment|/**      * Constructor for Move Backward Action      */
 specifier|public
 name|NavigateBackwardAction
 parameter_list|(
@@ -128,7 +128,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-backward_nav.gif"
+literal|"icon-backward.png"
 return|;
 block|}
 comment|/**      * Moves to the next element in the navigation history      */

@@ -362,6 +362,20 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
+comment|// init look and feel before using any Swing classes...
+name|injector
+operator|.
+name|getInstance
+argument_list|(
+name|PlatformInitializer
+operator|.
+name|class
+argument_list|)
+operator|.
+name|initLookAndFeel
+argument_list|()
+expr_stmt|;
+comment|// logger should go after Look And Feel or Logger Console will be without style
 name|logger
 operator|.
 name|info
@@ -391,19 +405,6 @@ argument_list|(
 literal|"java.home"
 argument_list|)
 argument_list|)
-expr_stmt|;
-comment|// init look and feel before starting any Swing classes...
-name|injector
-operator|.
-name|getInstance
-argument_list|(
-name|PlatformInitializer
-operator|.
-name|class
-argument_list|)
-operator|.
-name|initLookAndFeel
-argument_list|()
 expr_stmt|;
 name|SwingUtilities
 operator|.

@@ -358,7 +358,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-open.gif"
+literal|"icon-open.png"
 return|;
 block|}
 annotation|@

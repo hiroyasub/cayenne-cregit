@@ -641,7 +641,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-attribute.gif"
+literal|"icon-attribute.png"
 return|;
 block|}
 comment|/**      * Creates ObjAttribute, DbAttribute depending on context.      */

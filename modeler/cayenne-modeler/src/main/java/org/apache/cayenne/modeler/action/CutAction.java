@@ -170,7 +170,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-cut.gif"
+literal|"icon-cut.png"
 return|;
 block|}
 annotation|@

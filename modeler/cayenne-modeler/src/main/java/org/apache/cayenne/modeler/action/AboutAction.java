@@ -97,7 +97,7 @@ return|return
 literal|"About CayenneModeler"
 return|;
 block|}
-comment|/**      * Constructor for AboutMenuAction.      * @param name      */
+comment|/**      * Constructor for AboutMenuAction.      */
 specifier|public
 name|AboutAction
 parameter_list|(

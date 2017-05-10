@@ -438,7 +438,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-copy.gif"
+literal|"icon-copy.png"
 return|;
 block|}
 annotation|@

@@ -203,8 +203,8 @@ block|{
 if|if
 condition|(
 name|p
-operator|instanceof
-name|Project
+operator|!=
+literal|null
 condition|)
 block|{
 name|StringBuilder
@@ -285,32 +285,11 @@ return|;
 block|}
 else|else
 block|{
-name|String
-name|message
-init|=
-operator|(
-name|p
-operator|==
-literal|null
-operator|)
-condition|?
-literal|"Null project."
-else|:
-literal|"Unrecognized project class: "
-operator|+
-name|p
-operator|.
-name|getClass
-argument_list|()
-operator|.
-name|getName
-argument_list|()
-decl_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-name|message
+literal|"Null project."
 argument_list|)
 throw|;
 block|}
@@ -496,15 +475,12 @@ break|break;
 block|}
 if|else if
 condition|(
+operator|!
 name|dialog
 operator|.
 name|shouldSelectAnother
 argument_list|()
 condition|)
-block|{
-continue|continue;
-block|}
-else|else
 block|{
 comment|// canceled
 return|return

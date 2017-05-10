@@ -118,7 +118,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Table model for displaying methods list for a particular CallbackDescriptor  *   * @version 1.0 Oct 23, 2007  */
+comment|/**  * Table model for displaying methods list for a particular CallbackDescriptor  */
 end_comment
 
 begin_class
@@ -127,6 +127,9 @@ class|class
 name|CallbackDescriptorTableModel
 extends|extends
 name|CayenneTableModel
+argument_list|<
+name|String
+argument_list|>
 block|{
 specifier|private
 specifier|static
@@ -167,6 +170,9 @@ name|Object
 name|eventSource
 parameter_list|,
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|objectList
 parameter_list|,
 name|CallbackDescriptor
@@ -237,9 +243,6 @@ name|rowIndex
 parameter_list|)
 block|{
 return|return
-operator|(
-name|String
-operator|)
 name|objectList
 operator|.
 name|get
@@ -276,14 +279,6 @@ argument_list|(
 name|rowIndex
 argument_list|)
 return|;
-block|}
-comment|/**      * sorting disabled      */
-specifier|protected
-name|void
-name|orderList
-parameter_list|()
-block|{
-comment|// NOOP
 block|}
 comment|/**      * @param column column index      * @return column name      */
 specifier|public
@@ -358,9 +353,6 @@ block|}
 name|String
 name|prevMethod
 init|=
-operator|(
-name|String
-operator|)
 name|getObjectList
 argument_list|()
 operator|.

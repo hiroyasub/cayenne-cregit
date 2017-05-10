@@ -477,7 +477,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-stored-procedure.gif"
+literal|"icon-stored-procedure.png"
 return|;
 block|}
 block|}

@@ -169,7 +169,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-undo.gif"
+literal|"icon-undo.png"
 return|;
 block|}
 annotation|@

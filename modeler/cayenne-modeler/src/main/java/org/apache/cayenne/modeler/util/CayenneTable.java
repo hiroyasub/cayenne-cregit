@@ -1043,6 +1043,23 @@ operator|=
 name|widthChanged
 expr_stmt|;
 block|}
+comment|/**      * @since 4.0      */
+specifier|public
+name|void
+name|setSortable
+parameter_list|(
+name|boolean
+name|sortable
+parameter_list|)
+block|{
+name|renderer
+operator|.
+name|setSortingEnabled
+argument_list|(
+name|sortable
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

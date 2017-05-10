@@ -342,7 +342,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-dbentity.gif"
+literal|"icon-dbentity.png"
 return|;
 block|}
 comment|/**      * Creates new DbEntity, adds it to the current DataMap, fires DbEntityEvent and DbEntityDisplayEvent.      */

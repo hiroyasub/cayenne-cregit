@@ -276,7 +276,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-move_up.gif"
+literal|"icon-move_up.png"
 return|;
 block|}
 comment|/**      * @see org.apache.cayenne.modeler.util.CayenneAction#performAction(ActionEvent)      */

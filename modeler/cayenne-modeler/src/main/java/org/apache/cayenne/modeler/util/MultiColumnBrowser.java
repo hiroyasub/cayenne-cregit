@@ -302,7 +302,7 @@ name|ModelerUtil
 operator|.
 name|buildIcon
 argument_list|(
-literal|"scroll_right.gif"
+literal|"icon-arrow-closed.png"
 argument_list|)
 decl_stmt|;
 specifier|public

@@ -260,7 +260,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-sync.gif"
+literal|"icon-sync.png"
 return|;
 block|}
 specifier|public

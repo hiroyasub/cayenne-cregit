@@ -283,7 +283,7 @@ name|getIconName
 parameter_list|()
 block|{
 return|return
-literal|"icon-node.gif"
+literal|"icon-node.png"
 return|;
 block|}
 annotation|@
