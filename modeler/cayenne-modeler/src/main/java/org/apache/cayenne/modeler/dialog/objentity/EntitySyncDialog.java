@@ -249,7 +249,7 @@ argument_list|(
 operator|new
 name|JLabel
 argument_list|(
-literal|"Remove Foreign Keys Mapped as Object Attributes?"
+literal|"Remove Object Attributes mapped on Foreign Keys?"
 argument_list|)
 argument_list|,
 name|cc
