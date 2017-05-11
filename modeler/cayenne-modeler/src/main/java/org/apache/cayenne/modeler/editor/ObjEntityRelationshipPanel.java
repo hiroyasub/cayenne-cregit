@@ -339,6 +339,22 @@ name|modeler
 operator|.
 name|util
 operator|.
+name|CayenneAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|util
+operator|.
 name|CayenneTable
 import|;
 end_import
@@ -982,7 +998,9 @@ decl_stmt|;
 name|resolveMenu
 operator|=
 operator|new
-name|JMenuItem
+name|CayenneAction
+operator|.
+name|CayenneMenuItem
 argument_list|(
 literal|"Database Mapping"
 argument_list|,

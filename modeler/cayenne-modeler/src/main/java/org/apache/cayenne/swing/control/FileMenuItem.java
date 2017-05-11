@@ -49,11 +49,17 @@ end_import
 
 begin_import
 import|import
-name|javax
+name|org
 operator|.
-name|swing
+name|apache
 operator|.
-name|JMenuItem
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|CayenneAction
 import|;
 end_import
 
@@ -66,7 +72,9 @@ specifier|public
 class|class
 name|FileMenuItem
 extends|extends
-name|JMenuItem
+name|CayenneAction
+operator|.
+name|CayenneMenuItem
 block|{
 comment|/**      * Creates a new instance with the specified fileName.      */
 specifier|public
@@ -76,7 +84,7 @@ name|String
 name|fileName
 parameter_list|)
 block|{
-name|setText
+name|super
 argument_list|(
 name|fileName
 argument_list|)
@@ -115,16 +123,17 @@ expr_stmt|;
 name|setEnabled
 argument_list|(
 name|a
-operator|!=
+operator|==
 literal|null
-condition|?
+operator|||
 name|a
 operator|.
 name|isEnabled
 argument_list|()
-else|:
-literal|true
 argument_list|)
+expr_stmt|;
+name|updateActiveIcon
+argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Returns a file if this menu item points to a readable file or directory, or null      * otherwise.      */

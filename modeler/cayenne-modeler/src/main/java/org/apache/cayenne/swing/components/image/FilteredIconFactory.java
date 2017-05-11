@@ -164,6 +164,15 @@ name|SelectionFilter
 argument_list|()
 argument_list|)
 block|,
+name|WHITE
+argument_list|(
+operator|new
+name|ColorFilter
+argument_list|(
+literal|0xFFFFFF
+argument_list|)
+argument_list|)
+block|,
 name|GREEN
 argument_list|(
 operator|new
