@@ -669,7 +669,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|)
 expr_stmt|;
 block|}
@@ -705,7 +705,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|,
 name|object
 argument_list|)
@@ -748,7 +748,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|,
 name|object
 argument_list|,
@@ -789,7 +789,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|,
 name|objects
 argument_list|)
@@ -827,7 +827,7 @@ name|throwable
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|)
 expr_stmt|;
 block|}
@@ -878,7 +878,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|)
 expr_stmt|;
 block|}
@@ -917,7 +917,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|,
 name|object
 argument_list|)
@@ -963,7 +963,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|,
 name|object
 argument_list|,
@@ -1007,7 +1007,7 @@ literal|null
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|,
 name|objects
 argument_list|)
@@ -1048,7 +1048,7 @@ name|throwable
 argument_list|,
 name|LogConsole
 operator|.
-name|WARN_STYLE
+name|DEBUG_STYLE
 argument_list|)
 expr_stmt|;
 block|}

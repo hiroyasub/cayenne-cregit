@@ -133,6 +133,16 @@ name|ScrollPaneConstants
 import|;
 end_import
 
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|UIManager
+import|;
+end_import
+
 begin_comment
 comment|/**  */
 end_comment
@@ -167,6 +177,15 @@ operator|=
 operator|new
 name|JTable
 argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|table
+operator|.
+name|setRowHeight
+argument_list|(
+literal|22
+argument_list|)
 expr_stmt|;
 comment|// TODO: andrus 04/07/2006 - is there an easy way to stick that checkbox in the
 comment|// table header????
@@ -250,6 +269,18 @@ name|LEADING
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|topPanel
+operator|.
+name|setBorder
+argument_list|(
+name|UIManager
+operator|.
+name|getBorder
+argument_list|(
+literal|"ToolBar.border"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|topPanel
 operator|.
 name|add

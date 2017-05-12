@@ -362,7 +362,20 @@ argument_list|)
 expr_stmt|;
 name|DEBUG_STYLE
 operator|=
-literal|null
+operator|new
+name|SimpleAttributeSet
+argument_list|()
+expr_stmt|;
+name|StyleConstants
+operator|.
+name|setForeground
+argument_list|(
+name|DEBUG_STYLE
+argument_list|,
+name|Color
+operator|.
+name|GRAY
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Lone log console instance      */
