@@ -969,7 +969,7 @@ operator|==
 literal|null
 operator|)
 condition|?
-literal|"[New]"
+literal|"[New Project]"
 else|:
 name|projectController
 operator|.
@@ -989,14 +989,6 @@ name|frame
 operator|.
 name|setTitle
 argument_list|(
-literal|"* - "
-operator|+
-name|ModelerConstants
-operator|.
-name|TITLE
-operator|+
-literal|" - "
-operator|+
 name|title
 argument_list|)
 expr_stmt|;
@@ -1027,12 +1019,6 @@ name|frame
 operator|.
 name|setTitle
 argument_list|(
-name|ModelerConstants
-operator|.
-name|TITLE
-operator|+
-literal|" - "
-operator|+
 name|projectController
 operator|.
 name|getProject
@@ -1076,15 +1062,6 @@ name|frame
 operator|.
 name|repaint
 argument_list|()
-expr_stmt|;
-name|frame
-operator|.
-name|setTitle
-argument_list|(
-name|ModelerConstants
-operator|.
-name|TITLE
-argument_list|)
 expr_stmt|;
 name|projectController
 operator|.
@@ -1176,11 +1153,7 @@ name|frame
 operator|.
 name|setTitle
 argument_list|(
-name|ModelerConstants
-operator|.
-name|TITLE
-operator|+
-literal|"- [New]"
+literal|"[New Project]"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1195,12 +1168,6 @@ name|frame
 operator|.
 name|setTitle
 argument_list|(
-name|ModelerConstants
-operator|.
-name|TITLE
-operator|+
-literal|" - "
-operator|+
 name|project
 operator|.
 name|getConfigurationResource
