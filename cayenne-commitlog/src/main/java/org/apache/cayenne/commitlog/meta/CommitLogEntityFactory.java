@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
-name|db
+name|meta
 package|;
 end_package
 
@@ -25,56 +25,28 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
-name|audit
-operator|.
-name|Auditable
+name|ObjectId
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|db
-operator|.
-name|auto
-operator|.
-name|_Auditable2
-import|;
-end_import
+begin_comment
+comment|/**  * @since 4.0  */
+end_comment
 
-begin_class
-annotation|@
-name|Auditable
-argument_list|(
-name|ignoredProperties
-operator|=
-literal|"charProperty1"
-argument_list|)
+begin_interface
 specifier|public
-class|class
-name|Auditable2
-extends|extends
-name|_Auditable2
+interface|interface
+name|CommitLogEntityFactory
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|long
-name|serialVersionUID
-init|=
-literal|5203324250911707978L
-decl_stmt|;
+name|CommitLogEntity
+name|getEntity
+parameter_list|(
+name|ObjectId
+name|id
+parameter_list|)
+function_decl|;
 block|}
-end_class
+end_interface
 
 end_unit
 
