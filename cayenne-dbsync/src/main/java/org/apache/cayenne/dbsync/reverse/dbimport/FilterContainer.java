@@ -44,6 +44,7 @@ comment|/**  * @since 4.0.  */
 end_comment
 
 begin_class
+specifier|public
 specifier|abstract
 class|class
 name|FilterContainer
