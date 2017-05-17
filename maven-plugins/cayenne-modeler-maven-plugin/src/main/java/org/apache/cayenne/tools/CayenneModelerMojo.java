@@ -35,7 +35,9 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|Main
+name|generic
+operator|.
+name|GenericMain
 import|;
 end_import
 
@@ -192,7 +194,7 @@ name|isDirectory
 argument_list|()
 condition|)
 block|{
-name|Main
+name|GenericMain
 operator|.
 name|main
 argument_list|(
@@ -210,7 +212,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Main
+name|GenericMain
 operator|.
 name|main
 argument_list|(
