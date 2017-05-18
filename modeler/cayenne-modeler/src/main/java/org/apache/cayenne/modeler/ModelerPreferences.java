@@ -442,6 +442,11 @@ name|contains
 argument_list|(
 name|file
 argument_list|)
+operator|&&
+name|file
+operator|.
+name|exists
+argument_list|()
 condition|)
 block|{
 name|lastProjectsFiles
