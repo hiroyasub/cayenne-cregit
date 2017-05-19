@@ -759,8 +759,6 @@ name|compiled
 operator|.
 name|getBindings
 argument_list|()
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -926,8 +924,6 @@ name|compiled
 operator|.
 name|getBindings
 argument_list|()
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

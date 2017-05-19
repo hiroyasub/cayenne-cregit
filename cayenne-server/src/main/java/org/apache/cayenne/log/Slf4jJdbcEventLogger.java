@@ -1637,9 +1637,6 @@ parameter_list|,
 name|ParameterBinding
 index|[]
 name|bindings
-parameter_list|,
-name|long
-name|translatedIn
 parameter_list|)
 block|{
 if|if

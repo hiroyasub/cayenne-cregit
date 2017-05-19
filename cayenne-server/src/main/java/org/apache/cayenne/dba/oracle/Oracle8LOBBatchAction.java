@@ -947,8 +947,6 @@ argument_list|(
 name|selectStr
 argument_list|,
 name|attributeBindings
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

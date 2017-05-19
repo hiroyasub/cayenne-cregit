@@ -463,6 +463,7 @@ operator|.
 name|getSql
 argument_list|()
 decl_stmt|;
+specifier|final
 name|DbAttributeBinding
 index|[]
 name|bindings
@@ -479,13 +480,6 @@ argument_list|(
 name|sql
 argument_list|,
 name|bindings
-argument_list|,
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-operator|-
-name|t1
 argument_list|)
 expr_stmt|;
 name|PreparedStatement
@@ -911,9 +905,7 @@ block|{
 return|return
 operator|new
 name|LimitResultIterator
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|(
 name|iterator
 argument_list|,

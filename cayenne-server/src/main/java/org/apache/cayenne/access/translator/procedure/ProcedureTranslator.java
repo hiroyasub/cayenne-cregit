@@ -550,14 +550,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|long
-name|t1
-init|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-decl_stmt|;
 name|this
 operator|.
 name|callParams
@@ -600,16 +592,6 @@ argument_list|()
 condition|)
 block|{
 comment|// need to convert OUT/VOID parameters to loggable strings
-name|long
-name|time
-init|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
-operator|-
-name|t1
-decl_stmt|;
 name|ParameterBinding
 index|[]
 name|parameterBindings
@@ -705,8 +687,6 @@ argument_list|(
 name|sqlStr
 argument_list|,
 name|parameterBindings
-argument_list|,
-name|time
 argument_list|)
 expr_stmt|;
 block|}

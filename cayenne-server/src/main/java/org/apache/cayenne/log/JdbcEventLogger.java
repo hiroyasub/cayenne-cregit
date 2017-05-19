@@ -149,7 +149,7 @@ name|Object
 name|value
 parameter_list|)
 function_decl|;
-comment|/** 	 * @deprecated since 4.0 use {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+comment|/** 	 * @deprecated since 4.0 use {@link #logQuery(String, ParameterBinding[])}. 	 */
 annotation|@
 name|Deprecated
 name|void
@@ -165,7 +165,7 @@ argument_list|>
 name|params
 parameter_list|)
 function_decl|;
-comment|/** 	 * @deprecated since 4.0 use {@link #logQuery(String, ParameterBinding[], long)}. 	 */
+comment|/** 	 * @deprecated since 4.0 use {@link #logQuery(String, ParameterBinding[])}. 	 */
 annotation|@
 name|Deprecated
 name|void
@@ -200,9 +200,6 @@ parameter_list|,
 name|ParameterBinding
 index|[]
 name|bindings
-parameter_list|,
-name|long
-name|translatedIn
 parameter_list|)
 function_decl|;
 comment|/** 	 * @since 4.0 	 */
