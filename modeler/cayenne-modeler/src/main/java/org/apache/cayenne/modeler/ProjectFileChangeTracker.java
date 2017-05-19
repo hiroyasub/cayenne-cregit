@@ -237,6 +237,14 @@ name|boolean
 name|paused
 decl_stmt|;
 specifier|protected
+name|boolean
+name|isShownChangeDialog
+decl_stmt|;
+specifier|protected
+name|boolean
+name|isShownRemoveDialog
+decl_stmt|;
+specifier|protected
 name|ProjectController
 name|mediator
 decl_stmt|;
@@ -402,6 +410,10 @@ name|void
 name|run
 parameter_list|()
 block|{
+name|isShownChangeDialog
+operator|=
+literal|true
+expr_stmt|;
 if|if
 condition|(
 name|showConfirmation
@@ -476,6 +488,10 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+name|isShownChangeDialog
+operator|=
+literal|false
+expr_stmt|;
 block|}
 block|}
 argument_list|)
@@ -509,6 +525,10 @@ name|void
 name|run
 parameter_list|()
 block|{
+name|isShownRemoveDialog
+operator|=
+literal|true
+expr_stmt|;
 name|FileDeletedDialog
 name|dialog
 init|=
@@ -585,6 +605,10 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+name|isShownRemoveDialog
+operator|=
+literal|false
+expr_stmt|;
 block|}
 block|}
 argument_list|)
@@ -864,6 +888,9 @@ block|}
 if|if
 condition|(
 name|hasDeletions
+operator|&&
+operator|!
+name|isShownRemoveDialog
 condition|)
 block|{
 name|doOnRemove
@@ -873,6 +900,9 @@ block|}
 if|else if
 condition|(
 name|hasChanges
+operator|&&
+operator|!
+name|isShownChangeDialog
 condition|)
 block|{
 name|doOnChange
