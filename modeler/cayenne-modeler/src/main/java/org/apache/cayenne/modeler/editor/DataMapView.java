@@ -586,6 +586,10 @@ name|JLabel
 name|defaultClientPackageLabel
 decl_stmt|;
 specifier|protected
+name|JLabel
+name|defaultClientSuperclassLabel
+decl_stmt|;
+specifier|protected
 name|TextAdapter
 name|defaultClientPackage
 decl_stmt|;
@@ -1099,6 +1103,8 @@ argument_list|,
 name|updateDefaultClientPackage
 argument_list|)
 expr_stmt|;
+name|defaultClientSuperclassLabel
+operator|=
 name|builder
 operator|.
 name|append
@@ -1782,6 +1788,13 @@ name|enabled
 argument_list|)
 expr_stmt|;
 name|defaultClientPackageLabel
+operator|.
+name|setEnabled
+argument_list|(
+name|enabled
+argument_list|)
+expr_stmt|;
+name|defaultClientSuperclassLabel
 operator|.
 name|setEnabled
 argument_list|(
