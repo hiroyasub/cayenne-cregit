@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
 name|db
 package|;
@@ -25,11 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
-name|audit
-operator|.
-name|Auditable
+name|CommitLog
 import|;
 end_import
 
@@ -41,7 +39,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
 name|db
 operator|.
@@ -53,11 +51,15 @@ end_import
 
 begin_class
 annotation|@
-name|Auditable
+name|CommitLog
 argument_list|(
 name|ignoredProperties
 operator|=
 literal|"charProperty1"
+argument_list|,
+name|confidential
+operator|=
+literal|"charProperty2"
 argument_list|)
 specifier|public
 class|class

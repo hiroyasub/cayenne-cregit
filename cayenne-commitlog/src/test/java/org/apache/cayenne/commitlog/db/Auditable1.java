@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
 name|db
 package|;
@@ -25,11 +25,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
-name|audit
-operator|.
-name|Auditable
+name|CommitLog
 import|;
 end_import
 
@@ -41,29 +39,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|commitlog
 operator|.
 name|db
 operator|.
 name|auto
 operator|.
-name|_Auditable2
+name|_Auditable1
 import|;
 end_import
 
 begin_class
 annotation|@
-name|Auditable
-argument_list|(
-name|ignoredProperties
-operator|=
-literal|"charProperty1"
-argument_list|)
+name|CommitLog
 specifier|public
 class|class
-name|Auditable2
+name|Auditable1
 extends|extends
-name|_Auditable2
+name|_Auditable1
 block|{
 specifier|private
 specifier|static
@@ -71,7 +64,7 @@ specifier|final
 name|long
 name|serialVersionUID
 init|=
-literal|5203324250911707978L
+literal|8458581370578140962L
 decl_stmt|;
 block|}
 end_class
