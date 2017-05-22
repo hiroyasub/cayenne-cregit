@@ -989,6 +989,8 @@ name|frame
 operator|.
 name|setTitle
 argument_list|(
+literal|"* - "
+operator|+
 name|title
 argument_list|)
 expr_stmt|;
@@ -1062,6 +1064,13 @@ name|frame
 operator|.
 name|repaint
 argument_list|()
+expr_stmt|;
+name|frame
+operator|.
+name|setTitle
+argument_list|(
+literal|""
+argument_list|)
 expr_stmt|;
 name|projectController
 operator|.
