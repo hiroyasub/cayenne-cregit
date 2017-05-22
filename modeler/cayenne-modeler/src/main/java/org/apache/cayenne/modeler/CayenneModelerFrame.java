@@ -1381,13 +1381,6 @@ name|ActionManager
 name|actionManager
 parameter_list|)
 block|{
-name|super
-argument_list|(
-name|ModelerConstants
-operator|.
-name|TITLE
-argument_list|)
-expr_stmt|;
 name|this
 operator|.
 name|actionManager
