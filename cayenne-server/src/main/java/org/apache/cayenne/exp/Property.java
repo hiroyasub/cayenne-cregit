@@ -410,7 +410,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|/**      * @return expression that represents this Property      */
+comment|/**      * This method returns fresh copy of the expression for each call.      * @return expression that represents this Property      */
 specifier|public
 name|Expression
 name|getExpression
