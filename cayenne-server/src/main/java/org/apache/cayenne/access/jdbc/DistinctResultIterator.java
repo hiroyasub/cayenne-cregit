@@ -190,12 +190,7 @@ decl_stmt|;
 specifier|protected
 name|Set
 argument_list|<
-name|Map
-argument_list|<
-name|String
-argument_list|,
 name|Object
-argument_list|>
 argument_list|>
 name|fetchedIds
 decl_stmt|;
@@ -494,9 +489,6 @@ name|fetchedIds
 operator|.
 name|add
 argument_list|(
-operator|(
-name|DataRow
-operator|)
 name|next
 argument_list|)
 condition|)
