@@ -175,7 +175,7 @@ argument_list|(
 name|listener
 argument_list|)
 operator|.
-name|build
+name|module
 argument_list|()
 decl_stmt|;
 name|Injector
@@ -251,7 +251,7 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|build
+name|module
 argument_list|()
 decl_stmt|;
 name|Injector

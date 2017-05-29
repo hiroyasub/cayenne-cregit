@@ -324,7 +324,7 @@ argument_list|(
 name|listener
 argument_list|)
 operator|.
-name|build
+name|module
 argument_list|()
 argument_list|)
 return|;

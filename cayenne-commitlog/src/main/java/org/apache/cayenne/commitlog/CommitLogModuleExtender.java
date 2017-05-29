@@ -381,7 +381,7 @@ block|}
 comment|/**      * Creates a DI module that would install {@link CommitLogFilter} and its      * listeners in Cayenne.      */
 specifier|public
 name|Module
-name|build
+name|module
 parameter_list|()
 block|{
 return|return
