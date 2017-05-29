@@ -192,13 +192,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder of a module that integrates {@link CommitLogFilter} and  * {@link CommitLogListener} in Cayenne.  *   * @since 4.0  */
+comment|/**  * A builder of a custom extensions module for {@link CommitLogModule} that customizes its services and installs  * application-specific commit log listeners.  *  * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|CommitLogModuleBuilder
+name|CommitLogModuleExtender
 block|{
 specifier|private
 specifier|static
@@ -210,23 +210,11 @@ name|LoggerFactory
 operator|.
 name|getLogger
 argument_list|(
-name|CommitLogModuleBuilder
+name|CommitLogModuleExtender
 operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|public
-specifier|static
-name|CommitLogModuleBuilder
-name|builder
-parameter_list|()
-block|{
-return|return
-operator|new
-name|CommitLogModuleBuilder
-argument_list|()
-return|;
-block|}
 specifier|private
 name|Class
 argument_list|<
@@ -259,7 +247,7 @@ specifier|private
 name|boolean
 name|excludeFromTransaction
 decl_stmt|;
-name|CommitLogModuleBuilder
+name|CommitLogModuleExtender
 parameter_list|()
 block|{
 name|entityFactory
@@ -289,8 +277,8 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|CommitLogModuleBuilder
-name|listener
+name|CommitLogModuleExtender
+name|addListener
 parameter_list|(
 name|Class
 argument_list|<
@@ -315,8 +303,8 @@ name|this
 return|;
 block|}
 specifier|public
-name|CommitLogModuleBuilder
-name|listener
+name|CommitLogModuleExtender
+name|addListener
 parameter_list|(
 name|CommitLogListener
 name|instance
@@ -335,9 +323,9 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * If called, events will be dispatched outside of the main commit 	 * transaction. By default events are dispatched within the transaction, so 	 * listeners can commit their code together with the main commit. 	 */
+comment|/**      * If called, events will be dispatched outside of the main commit      * transaction. By default events are dispatched within the transaction, so      * listeners can commit their code together with the main commit.      */
 specifier|public
-name|CommitLogModuleBuilder
+name|CommitLogModuleExtender
 name|excludeFromTransaction
 parameter_list|()
 block|{
@@ -351,9 +339,9 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Installs entity filter that would only include entities annotated with 	 * {@link CommitLog} on the callbacks. Also {@link CommitLog#confidential()} 	 * properties will be obfuscated and {@link CommitLog#ignoredProperties()} - 	 * excluded from the change collection. 	 */
+comment|/**      * Installs entity filter that would only include entities annotated with      * {@link CommitLog} on the callbacks. Also {@link CommitLog#confidential()}      * properties will be obfuscated and {@link CommitLog#ignoredProperties()} -      * excluded from the change collection.      */
 specifier|public
-name|CommitLogModuleBuilder
+name|CommitLogModuleExtender
 name|commitLogAnnotationEntitiesOnly
 parameter_list|()
 block|{
@@ -366,9 +354,9 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Installs a custom factory for {@link CommitLogEntity} objects that 	 * allows implementors to use their own annotations, etc. 	 */
+comment|/**      * Installs a custom factory for {@link CommitLogEntity} objects that      * allows implementors to use their own annotations, etc.      */
 specifier|public
-name|CommitLogModuleBuilder
+name|CommitLogModuleExtender
 name|entityFactory
 parameter_list|(
 name|Class
@@ -390,7 +378,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * Creates a DI module that would install {@link CommitLogFilter} and its 	 * listeners in Cayenne. 	 */
+comment|/**      * Creates a DI module that would install {@link CommitLogFilter} and its      * listeners in Cayenne.      */
 specifier|public
 name|Module
 name|build

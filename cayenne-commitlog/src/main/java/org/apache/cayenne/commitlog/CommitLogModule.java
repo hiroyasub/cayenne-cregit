@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * Auto-loadable module that enables gathering of commit log information for Cayenne stack. To add custom listeners to  * receive commit log events, implement {@link CommitLogListener} and register it using {@link CommitLogModule#extend()}.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -121,6 +121,19 @@ name|CommitLogListener
 operator|.
 name|class
 argument_list|)
+return|;
+block|}
+comment|/**      * Starts an extensions module builder to add listeners to {@link CommitLogModule} and/or otherwise customize this      * module.      *      * @return a new builder of {@link CommitLogModule} extensions.      * @see CommitLogListener      */
+specifier|public
+specifier|static
+name|CommitLogModuleExtender
+name|extend
+parameter_list|()
+block|{
+return|return
+operator|new
+name|CommitLogModuleExtender
+argument_list|()
 return|;
 block|}
 annotation|@

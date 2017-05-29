@@ -16,36 +16,14 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
 import|import
-name|java
+name|org
 operator|.
-name|util
+name|apache
 operator|.
-name|List
+name|cayenne
+operator|.
+name|ObjectContext
 import|;
 end_import
 
@@ -57,7 +35,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ObjectContext
+name|commitlog
+operator|.
+name|model
+operator|.
+name|ChangeMap
 import|;
 end_import
 
@@ -121,25 +103,43 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
-operator|.
-name|commitlog
-operator|.
-name|model
-operator|.
-name|ChangeMap
+name|Test
 import|;
 end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import static
 name|org
 operator|.
 name|junit
 operator|.
-name|Test
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -165,12 +165,12 @@ decl_stmt|;
 name|Module
 name|m
 init|=
-name|CommitLogModuleBuilder
+name|CommitLogModule
 operator|.
-name|builder
+name|extend
 argument_list|()
 operator|.
-name|listener
+name|addListener
 argument_list|(
 name|listener
 argument_list|)
@@ -239,12 +239,12 @@ block|{
 name|Module
 name|m
 init|=
-name|CommitLogModuleBuilder
+name|CommitLogModule
 operator|.
-name|builder
+name|extend
 argument_list|()
 operator|.
-name|listener
+name|addListener
 argument_list|(
 name|L
 operator|.
