@@ -5619,11 +5619,6 @@ argument_list|)
 expr_stmt|;
 name|popup
 operator|.
-name|addSeparator
-argument_list|()
-expr_stmt|;
-name|popup
-operator|.
 name|add
 argument_list|(
 name|buildMenu

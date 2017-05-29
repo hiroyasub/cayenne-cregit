@@ -1127,13 +1127,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|RemoveAction
-operator|.
-name|class
-operator|.
-name|getName
-argument_list|()
-argument_list|,
 name|CreateNodeAction
 operator|.
 name|class
@@ -1261,6 +1254,13 @@ name|getName
 argument_list|()
 argument_list|,
 name|MigrateAction
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|,
+name|RemoveAction
 operator|.
 name|class
 operator|.
