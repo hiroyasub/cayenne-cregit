@@ -149,6 +149,9 @@ name|result
 init|=
 name|runner
 operator|.
+name|forwardOutput
+argument_list|()
+operator|.
 name|build
 argument_list|()
 decl_stmt|;
@@ -160,7 +163,7 @@ operator|.
 name|getAbsolutePath
 argument_list|()
 operator|+
-literal|"/org/example/cayenne/persistent/"
+literal|"/src/main/java/org/example/cayenne/persistent/"
 decl_stmt|;
 name|String
 name|generatedClassPath
