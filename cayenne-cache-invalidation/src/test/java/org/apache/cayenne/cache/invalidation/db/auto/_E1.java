@@ -7,7 +7,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|cache
+operator|.
+name|invalidation
 operator|.
 name|db
 operator|.

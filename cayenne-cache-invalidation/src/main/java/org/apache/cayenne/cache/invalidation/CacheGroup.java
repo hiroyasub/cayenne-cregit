@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
 name|cache
+operator|.
+name|invalidation
 package|;
 end_package
 
@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * A built-in annotation that provides declarative cache management for persistent  * objects.  *</p>  *  * @see InvalidationHandler  * @see CacheGroup  *  * @since 3.1  */
+comment|/**  * Annotation for defining cache group in case different cache types are targeted.  *  * @see CacheGroups  * @see CacheGroupsHandler  *  * @since 4.0  */
 end_comment
 
 begin_annotation_defn
@@ -114,24 +114,37 @@ annotation|@
 name|Inherited
 specifier|public
 annotation_defn|@interface
-name|CacheGroups
-block|{
-comment|/**      * Defines one or more cache group names associated with the tagged entity.      */
-name|String
-index|[]
-name|value
-argument_list|()
-expr|default
-block|{}
-expr_stmt|;
-comment|/**      * Defines one or more typed cache groups associated with the tagged entity.      *      * @since 4.0      */
 name|CacheGroup
-index|[]
-name|groups
-argument_list|()
-expr|default
-block|{}
-expr_stmt|;
+block|{
+comment|/**      * @return cache group name      */
+name|String
+name|value
+parameter_list|()
+function_decl|;
+comment|/**      * Defines key type of the cache.      * Could be used for managing  external caches that is strictly typed (e.g. JCache).      */
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|keyType
+parameter_list|()
+default|default
+name|Void
+operator|.
+name|class
+function_decl|;
+comment|/**      * Defines value type of the cache.      * Could be used for managing external caches that is strictly typed (e.g. JCache).      */
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|valueType
+parameter_list|()
+default|default
+name|Void
+operator|.
+name|class
+function_decl|;
 block|}
 end_annotation_defn
 

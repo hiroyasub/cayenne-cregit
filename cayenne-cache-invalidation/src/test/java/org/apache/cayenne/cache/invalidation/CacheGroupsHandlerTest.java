@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
 name|cache
+operator|.
+name|invalidation
 package|;
 end_package
 
@@ -45,7 +45,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|cache
+operator|.
+name|invalidation
 operator|.
 name|db
 operator|.
@@ -61,7 +63,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|cache
+operator|.
+name|invalidation
 operator|.
 name|db
 operator|.

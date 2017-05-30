@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
 name|cache
+operator|.
+name|invalidation
 package|;
 end_package
 
@@ -75,7 +75,7 @@ name|ModuleProviderChecker
 operator|.
 name|testProviderPresent
 argument_list|(
-name|CacheInvalidationServerModuleProvider
+name|CacheInvalidationModuleProvider
 operator|.
 name|class
 argument_list|,

@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|cache
 operator|.
-name|unit
+name|invalidation
 package|;
 end_package
 

@@ -11,9 +11,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
 name|cache
+operator|.
+name|invalidation
+operator|.
+name|db
 package|;
 end_package
 
@@ -25,34 +27,60 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|Persistent
+name|cache
+operator|.
+name|invalidation
+operator|.
+name|CacheGroups
 import|;
 end_import
 
-begin_comment
-comment|/**  * A pluggable handler to invalidate cache groups on changes in certain objects.  * @since 4.0  */
-end_comment
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|cache
+operator|.
+name|invalidation
+operator|.
+name|db
+operator|.
+name|auto
+operator|.
+name|_E1
+import|;
+end_import
 
-begin_interface
-specifier|public
-interface|interface
-name|InvalidationHandler
+begin_class
+annotation|@
+name|CacheGroups
+argument_list|(
 block|{
-comment|/**      * @return invalidation function or null if there is nothing to invalidate      */
-name|InvalidationFunction
-name|canHandle
-parameter_list|(
-name|Class
-argument_list|<
-name|?
-extends|extends
-name|Persistent
-argument_list|>
-name|type
-parameter_list|)
-function_decl|;
+literal|"g1"
+block|,
+literal|"g2"
 block|}
-end_interface
+argument_list|)
+specifier|public
+class|class
+name|E1
+extends|extends
+name|_E1
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|long
+name|serialVersionUID
+init|=
+literal|1L
+decl_stmt|;
+block|}
+end_class
 
 end_unit
 

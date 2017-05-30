@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
-operator|.
 name|cache
+operator|.
+name|invalidation
 package|;
 end_package
 
@@ -63,27 +63,13 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|lifecycle
+name|cache
+operator|.
+name|invalidation
 operator|.
 name|db
 operator|.
 name|E1
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|lifecycle
-operator|.
-name|unit
-operator|.
-name|CacheInvalidationCase
 import|;
 end_import
 
