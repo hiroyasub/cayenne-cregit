@@ -240,13 +240,16 @@ annotation|@
 name|Override
 specifier|protected
 name|Module
-name|buildInvalidationModule
+name|extendInvalidationModule
 parameter_list|()
 block|{
 return|return
 name|CacheInvalidationModule
 operator|.
 name|extend
+argument_list|()
+operator|.
+name|addCacheGroupsHandler
 argument_list|()
 operator|.
 name|module

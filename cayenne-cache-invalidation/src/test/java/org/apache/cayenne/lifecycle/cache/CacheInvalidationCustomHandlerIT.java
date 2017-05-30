@@ -158,7 +158,7 @@ annotation|@
 name|Override
 specifier|protected
 name|Module
-name|buildInvalidationModule
+name|extendInvalidationModule
 parameter_list|()
 block|{
 return|return
@@ -167,7 +167,7 @@ operator|.
 name|extend
 argument_list|()
 operator|.
-name|addInvalidationHandler
+name|addHandler
 argument_list|(
 name|G1InvalidationHandler
 operator|.

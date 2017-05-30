@@ -230,7 +230,7 @@ block|}
 specifier|protected
 specifier|abstract
 name|Module
-name|buildInvalidationModule
+name|extendInvalidationModule
 parameter_list|()
 function_decl|;
 specifier|protected
@@ -270,7 +270,7 @@ argument_list|()
 operator|.
 name|addModule
 argument_list|(
-name|buildInvalidationModule
+name|extendInvalidationModule
 argument_list|()
 argument_list|)
 operator|.

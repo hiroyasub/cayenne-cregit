@@ -136,7 +136,7 @@ name|addCacheGroupsHandler
 parameter_list|()
 block|{
 return|return
-name|addInvalidationHandler
+name|addHandler
 argument_list|(
 name|CacheGroupsHandler
 operator|.
@@ -146,7 +146,7 @@ return|;
 block|}
 specifier|public
 name|CacheInvalidationModuleExtender
-name|addInvalidationHandler
+name|addHandler
 parameter_list|(
 name|Class
 argument_list|<
@@ -170,7 +170,7 @@ return|;
 block|}
 specifier|public
 name|CacheInvalidationModuleExtender
-name|addInvalidationHandler
+name|addHandler
 parameter_list|(
 name|InvalidationHandler
 name|handlerInstance
