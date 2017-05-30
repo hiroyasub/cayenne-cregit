@@ -19,20 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|atomic
-operator|.
-name|AtomicInteger
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -182,6 +168,20 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|atomic
+operator|.
+name|AtomicInteger
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -244,12 +244,12 @@ name|buildInvalidationModule
 parameter_list|()
 block|{
 return|return
-name|CacheInvalidationModuleExtender
+name|CacheInvalidationModule
 operator|.
-name|builder
+name|extend
 argument_list|()
 operator|.
-name|build
+name|module
 argument_list|()
 return|;
 block|}

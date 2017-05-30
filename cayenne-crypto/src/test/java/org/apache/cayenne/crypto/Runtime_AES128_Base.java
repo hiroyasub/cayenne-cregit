@@ -332,7 +332,7 @@ name|builder
 init|=
 name|CryptoModule
 operator|.
-name|builder
+name|extend
 argument_list|()
 operator|.
 name|keyStore

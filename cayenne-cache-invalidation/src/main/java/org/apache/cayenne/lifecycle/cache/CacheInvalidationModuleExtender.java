@@ -192,7 +192,7 @@ return|;
 block|}
 specifier|public
 name|Module
-name|build
+name|module
 parameter_list|()
 block|{
 return|return
