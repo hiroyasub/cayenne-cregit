@@ -21,36 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|DatabaseMetaData
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|ResultSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -80,6 +50,36 @@ operator|.
 name|slf4j
 operator|.
 name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|DatabaseMetaData
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|ResultSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
 import|;
 end_import
 
@@ -288,7 +288,7 @@ operator|.
 name|getTable
 argument_list|()
 operator|+
-literal|"' not found"
+literal|"' is not found"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -334,7 +334,7 @@ operator|.
 name|getTable
 argument_list|()
 operator|+
-literal|"' not found"
+literal|"' is not found"
 argument_list|)
 expr_stmt|;
 return|return;
