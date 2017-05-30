@@ -19,6 +19,18 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -37,30 +49,6 @@ name|Collection
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|Persistent
-import|;
-end_import
-
-begin_import
-import|import static
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-operator|.
-name|asList
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -72,6 +60,11 @@ name|CacheGroupsHandler
 implements|implements
 name|InvalidationHandler
 block|{
+specifier|public
+name|CacheGroupsHandler
+parameter_list|()
+block|{
+block|}
 comment|/**      * Return invalidation function that returns values      * of {@link CacheGroups} and {@link CacheGroup} annotations for the given type.      */
 annotation|@
 name|Override
