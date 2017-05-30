@@ -19,30 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|ConcurrentHashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|concurrent
-operator|.
-name|ConcurrentMap
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -239,8 +215,32 @@ name|Query
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|ConcurrentHashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|concurrent
+operator|.
+name|ConcurrentMap
+import|;
+end_import
+
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that enables audit of entities annotated with  * {@link Auditable} and {@link AuditableChild}. Note that this filter relies on  * {@link ChangeSetFilter} presence in the DataDomain filter chain to be able to  * analyze ignored properties.  *   * @since 3.1  * @deprecated since 4.0, use {@link org.apache.cayenne.lifecycle.postcommit.PostCommitFilter}  */
+comment|/**  * A {@link DataChannelFilter} that enables audit of entities annotated with  * {@link Auditable} and {@link AuditableChild}. Note that this filter relies on  * {@link ChangeSetFilter} presence in the DataDomain filter chain to be able to  * analyze ignored properties.  *   * @since 3.1  * @deprecated since 4.0, use {@link org.apache.cayenne.commitlog.CommitLogFilter}.  */
 end_comment
 
 begin_class

@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A built-in annotation used to tag an object that is not auditable on its own, but whose  * changes should be tracked together with changes of another ("parent") object. This  * annotation allows to group changes in a closely related subtree of objects. Either  * {@link #value()} or {@link #objectIdRelationship()} must be set to a non-empty String,  * so that a processor of AuditableChild could find the parent of the annotated object.  *   * @since 3.1  */
+comment|/**  * A built-in annotation used to tag an object that is not auditable on its own, but whose  * changes should be tracked together with changes of another ("parent") object. This  * annotation allows to group changes in a closely related subtree of objects. Either  * {@link #value()} or {@link #objectIdRelationship()} must be set to a non-empty String,  * so that a processor of AuditableChild could find the parent of the annotated object.  *  * @{@link org.apache.cayenne.commitlog.CommitLog} annotation.  * @since 3.1  * @deprecated since 4.0. A preferred way to implement Audit functionality is via cayenne-commitlog module and  * {@link org.apache.cayenne.commitlog.CommitLog} annotation. Unfortunately cayenne-commitlog does not provide  * functionality to group changes for parent and child entities into a single event. So AuditableChild functionality  * will have to be manually reimplemented in a custom {@link org.apache.cayenne.commitlog.CommitLogListener}.  */
 end_comment
 
 begin_annotation_defn
@@ -112,6 +112,8 @@ annotation|@
 name|Documented
 annotation|@
 name|Inherited
+annotation|@
+name|Deprecated
 specifier|public
 annotation_defn|@interface
 name|AuditableChild

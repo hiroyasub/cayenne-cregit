@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An annotation that adds auditing behavior to DataObjects.  *   * @since 3.1  */
+comment|/**  * An annotation that adds auditing behavior to DataObjects.  *  * @since 3.1  * @deprecated since 4.0. A preferred way to implement Audit functionality is via cayenne-commitlog module and  * {@link org.apache.cayenne.commitlog.CommitLog} annotation.  */
 end_comment
 
 begin_annotation_defn
@@ -112,11 +112,13 @@ annotation|@
 name|Documented
 annotation|@
 name|Inherited
+annotation|@
+name|Deprecated
 specifier|public
 annotation_defn|@interface
 name|Auditable
 block|{
-comment|/** 	 * Returns an array of entity properties that should be excluded from audit. 	 */
+comment|/**      * Returns an array of entity properties that should be excluded from audit.      */
 name|String
 index|[]
 name|ignoredProperties
