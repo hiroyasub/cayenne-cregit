@@ -100,7 +100,6 @@ name|CommitLogModule
 implements|implements
 name|Module
 block|{
-specifier|public
 specifier|static
 name|ListBuilder
 argument_list|<
@@ -123,7 +122,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * Starts an extensions module builder to add listeners to {@link CommitLogModule} and/or otherwise customize this      * module.      *      * @return a new builder of {@link CommitLogModule} extensions.      * @see CommitLogListener      */
+comment|/**      * Starts an extension module builder to add listeners and/or other customizations for {@link CommitLogModule}.      *      * @return a new builder of {@link CommitLogModule} extensions.      * @see CommitLogListener      */
 specifier|public
 specifier|static
 name|CommitLogModuleExtender

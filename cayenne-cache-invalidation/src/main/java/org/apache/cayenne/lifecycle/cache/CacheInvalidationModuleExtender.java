@@ -19,26 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashSet
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -79,6 +59,26 @@ name|Module
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -86,7 +86,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|CacheInvalidationModuleBuilder
+name|CacheInvalidationModuleExtender
 block|{
 specifier|private
 name|Collection
@@ -111,19 +111,7 @@ specifier|private
 name|boolean
 name|noCacheGroupsHandler
 decl_stmt|;
-specifier|public
-specifier|static
-name|CacheInvalidationModuleBuilder
-name|builder
-parameter_list|()
-block|{
-return|return
-operator|new
-name|CacheInvalidationModuleBuilder
-argument_list|()
-return|;
-block|}
-name|CacheInvalidationModuleBuilder
+name|CacheInvalidationModuleExtender
 parameter_list|()
 block|{
 name|this
@@ -147,7 +135,7 @@ expr_stmt|;
 block|}
 comment|/**      * Disable {@link CacheGroupsHandler} based on {@link CacheGroups} annotation.      */
 specifier|public
-name|CacheInvalidationModuleBuilder
+name|CacheInvalidationModuleExtender
 name|noCacheGroupsHandler
 parameter_list|()
 block|{
@@ -160,8 +148,8 @@ name|this
 return|;
 block|}
 specifier|public
-name|CacheInvalidationModuleBuilder
-name|invalidationHandler
+name|CacheInvalidationModuleExtender
+name|addInvalidationHandler
 parameter_list|(
 name|Class
 argument_list|<
@@ -184,8 +172,8 @@ name|this
 return|;
 block|}
 specifier|public
-name|CacheInvalidationModuleBuilder
-name|invalidationHandler
+name|CacheInvalidationModuleExtender
+name|addInvalidationHandler
 parameter_list|(
 name|InvalidationHandler
 name|handlerInstance

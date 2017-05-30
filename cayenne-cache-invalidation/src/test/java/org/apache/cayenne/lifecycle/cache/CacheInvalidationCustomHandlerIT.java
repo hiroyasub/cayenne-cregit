@@ -162,7 +162,7 @@ name|buildInvalidationModule
 parameter_list|()
 block|{
 return|return
-name|CacheInvalidationModuleBuilder
+name|CacheInvalidationModuleExtender
 operator|.
 name|builder
 argument_list|()

@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * A {@link DataChannelFilter} that invalidates cache groups.  * Use custom rules for invalidation provided via DI.  *</p>  *<p>  * Default rule is based on entities' {@link CacheGroups} annotation.  *</p>  *<p>  *     To add default filter:<pre>  *         ServerRuntime.builder("cayenne-project.xml")  *              .addModule(CacheInvalidationModuleBuilder.builder().build());  *</pre>  *</p>  *  * @see CacheInvalidationModuleBuilder  * @see InvalidationHandler  *  * @since 3.1  * @since 4.0 enhanced to support custom handlers.  */
+comment|/**  *<p>  * A {@link DataChannelFilter} that invalidates cache groups.  * Use custom rules for invalidation provided via DI.  *</p>  *<p>  * Default rule is based on entities' {@link CacheGroups} annotation.  *</p>  *<p>  *     To add default filter:<pre>  *         ServerRuntime.builder("cayenne-project.xml")  *              .addModule(CacheInvalidationModuleBuilder.builder().build());  *</pre>  *</p>  *  * @see CacheInvalidationModuleExtender  * @see InvalidationHandler  *  * @since 3.1  * @since 4.0 enhanced to support custom handlers.  */
 end_comment
 
 begin_class

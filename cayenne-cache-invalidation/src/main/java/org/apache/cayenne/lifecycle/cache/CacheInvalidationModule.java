@@ -90,7 +90,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This module is autoloaded, all extensions should be done via {@link CacheInvalidationModuleBuilder}.  * @since 4.0  */
+comment|/**  * This module is autoloaded, all extensions should be done via {@link CacheInvalidationModuleExtender}.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -122,6 +122,19 @@ name|class
 argument_list|)
 return|;
 block|}
+comment|/**      * Returns a new "extender" to customize the defaults provided by this module.      *      * @return a new "extender" to customize the defaults provided by this module.      */
+specifier|public
+specifier|static
+name|CacheInvalidationModuleExtender
+name|extend
+parameter_list|()
+block|{
+return|return
+operator|new
+name|CacheInvalidationModuleExtender
+argument_list|()
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
@@ -137,7 +150,7 @@ argument_list|(
 name|binder
 argument_list|)
 expr_stmt|;
-comment|// want the filter to be INSIDE transaction
+comment|// want the filter to be INSIDE transaction by default
 name|ServerModule
 operator|.
 name|contributeDomainFilters
