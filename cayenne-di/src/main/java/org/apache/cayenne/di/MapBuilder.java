@@ -25,20 +25,6 @@ name|Map
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|DIRuntimeException
-import|;
-end_import
-
 begin_comment
 comment|/**  * A binding builder for map configurations. Creates a parameterized map of type&lt;String, T&gt;.  *   * @param<T> A type of the map values.  * @since 3.1  */
 end_comment
