@@ -43,6 +43,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|net
+operator|.
+name|URLDecoder
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|ArrayList
@@ -163,6 +173,10 @@ literal|"cgen"
 argument_list|,
 literal|"-PdataMap="
 operator|+
+name|URLDecoder
+operator|.
+name|decode
+argument_list|(
 name|getClass
 argument_list|()
 operator|.
@@ -173,6 +187,9 @@ argument_list|)
 operator|.
 name|getFile
 argument_list|()
+argument_list|,
+literal|"UTF-8"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|runner
