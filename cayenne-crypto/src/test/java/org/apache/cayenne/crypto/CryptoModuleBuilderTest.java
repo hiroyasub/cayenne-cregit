@@ -191,7 +191,7 @@ name|Module
 name|m
 init|=
 operator|new
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 argument_list|()
 operator|.
 name|keyStore
@@ -212,7 +212,7 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|build
+name|module
 argument_list|()
 decl_stmt|;
 name|Injector

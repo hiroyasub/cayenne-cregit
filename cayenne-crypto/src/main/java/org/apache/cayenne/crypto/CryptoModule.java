@@ -709,19 +709,19 @@ name|DEFAULT_COLUMN_MAPPER_PATTERN
 init|=
 literal|"^CRYPTO_"
 decl_stmt|;
+comment|/**      * Returns a new extender that helps to build a custom module that provides required configuration for {@link CryptoModule}      * as well as custom strategies overriding the defaults defined here.      *      * @return a new extender that helps to build a custom module that provides required configuration for {@link CryptoModule}.      */
 specifier|public
 specifier|static
-name|CryptoModuleBuilder
-name|builder
+name|CryptoModuleExtender
+name|extend
 parameter_list|()
 block|{
 return|return
 operator|new
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 argument_list|()
 return|;
 block|}
-specifier|public
 specifier|static
 name|MapBuilder
 argument_list|<
@@ -748,7 +748,6 @@ name|PROPERTIES_MAP
 argument_list|)
 return|;
 block|}
-specifier|public
 specifier|static
 name|MapBuilder
 argument_list|<
@@ -782,7 +781,6 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|public
 specifier|static
 name|MapBuilder
 argument_list|<
@@ -831,7 +829,6 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|public
 specifier|static
 name|MapBuilder
 argument_list|<

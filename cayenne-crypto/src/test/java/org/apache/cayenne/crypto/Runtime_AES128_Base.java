@@ -327,7 +327,7 @@ operator|.
 name|KS1_JCEKS
 argument_list|)
 decl_stmt|;
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|builder
 init|=
 name|CryptoModule
@@ -371,7 +371,7 @@ block|}
 return|return
 name|builder
 operator|.
-name|build
+name|module
 argument_list|()
 return|;
 block|}

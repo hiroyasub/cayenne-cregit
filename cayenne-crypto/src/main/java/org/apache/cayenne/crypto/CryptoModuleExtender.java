@@ -236,13 +236,13 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A builder that allows to customize {@link CryptoModule} module.  *  * @since 4.0  */
+comment|/**  * A builder of custom extensions and required configuration for {@link CryptoModule} module.  *  * @since 4.0  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 block|{
 specifier|private
 name|Class
@@ -364,7 +364,7 @@ name|useHMAC
 decl_stmt|;
 comment|// use CryptoModule.builder() to create the builder...
 specifier|protected
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 parameter_list|()
 block|{
 name|this
@@ -387,7 +387,7 @@ argument_list|()
 expr_stmt|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|cipherAlgorithm
 parameter_list|(
 name|String
@@ -410,7 +410,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|cipherMode
 parameter_list|(
 name|String
@@ -433,7 +433,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|cipherFactory
 parameter_list|(
 name|Class
@@ -461,7 +461,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|valueTransformer
 parameter_list|(
 name|Class
@@ -492,7 +492,7 @@ specifier|public
 parameter_list|<
 name|T
 parameter_list|>
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|objectToBytesConverter
 parameter_list|(
 name|Class
@@ -530,7 +530,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|dbToBytesConverter
 parameter_list|(
 name|int
@@ -562,7 +562,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|bytesTransformer
 parameter_list|(
 name|Class
@@ -590,7 +590,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|columnMapper
 parameter_list|(
 name|Class
@@ -630,7 +630,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|columnMapper
 parameter_list|(
 name|ColumnMapper
@@ -665,7 +665,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|columnMapper
 parameter_list|(
 name|String
@@ -701,7 +701,7 @@ return|;
 block|}
 comment|/**      * @param encryptionKeyAlias The name of the key in the keystore that should be used for      *                           encryption by default.      */
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|encryptionKeyAlias
 parameter_list|(
 name|String
@@ -725,7 +725,7 @@ return|;
 block|}
 comment|/**      * Configures keystore parameters. The KeyStore must be of "jceks" type and      * contain all needed secret keys for the target database. Currently all      * keys must be protected with the same password.      *      * @param file               A file to load keystore from.      * @param passwordForAllKeys A password that unlocks all keys in the keystore.      * @param encryptionKeyAlias The name of the key in the keystore that should be used for      *                           encryption by default.      */
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|keyStore
 parameter_list|(
 name|File
@@ -780,7 +780,7 @@ return|;
 block|}
 comment|/**      * Configures keystore parameters. The KeyStore must be of "jceks" type and      * contain all needed secret keys for the target database. Currently all      * keys must be protected with the same password.      *      * @param url                A URL to load keystore from.      * @param passwordForAllKeys A password that unlocks all keys in the keystore.      * @param encryptionKeyAlias The name of the key in the keystore that should be used for      *                           encryption by default.      */
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|keyStore
 parameter_list|(
 name|String
@@ -835,7 +835,7 @@ return|;
 block|}
 comment|/**      * Configures keystore parameters. The KeyStore must be of "jceks" type and      * contain all needed secret keys for the target database. Currently all      * keys must be protected with the same password.      *      * @param url                A URL to load keystore from.      * @param passwordForAllKeys A password that unlocks all keys in the keystore.      * @param encryptionKeyAlias The name of the key in the keystore that should be used for      *                           encryption by default.      */
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|keyStore
 parameter_list|(
 name|URL
@@ -889,7 +889,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|keySource
 parameter_list|(
 name|Class
@@ -923,7 +923,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|keySource
 parameter_list|(
 name|KeySource
@@ -952,7 +952,7 @@ name|this
 return|;
 block|}
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|compress
 parameter_list|()
 block|{
@@ -968,7 +968,7 @@ return|;
 block|}
 comment|/**      * Enable authentication codes      */
 specifier|public
-name|CryptoModuleBuilder
+name|CryptoModuleExtender
 name|useHMAC
 parameter_list|()
 block|{
@@ -985,7 +985,7 @@ block|}
 comment|/**      * Produces a module that can be used to start Cayenne runtime.      */
 specifier|public
 name|Module
-name|build
+name|module
 parameter_list|()
 block|{
 return|return
