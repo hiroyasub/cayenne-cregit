@@ -19,6 +19,20 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Inject
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -54,20 +68,6 @@ operator|.
 name|util
 operator|.
 name|Map
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Inject
 import|;
 end_import
 
@@ -131,9 +131,7 @@ name|keys
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|(
 name|configuration
 operator|.
