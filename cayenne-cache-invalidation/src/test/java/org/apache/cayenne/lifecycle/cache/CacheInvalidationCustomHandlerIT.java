@@ -167,9 +167,6 @@ operator|.
 name|extend
 argument_list|()
 operator|.
-name|noCacheGroupsHandler
-argument_list|()
-operator|.
 name|addInvalidationHandler
 argument_list|(
 name|G1InvalidationHandler
