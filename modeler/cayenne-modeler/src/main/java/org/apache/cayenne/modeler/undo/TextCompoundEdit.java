@@ -452,6 +452,13 @@ operator|.
 name|getSelectionPath
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|treePath
+operator|!=
+literal|null
+condition|)
+block|{
 name|DefaultMutableTreeNode
 name|newPath
 init|=
@@ -470,6 +477,7 @@ operator|.
 name|getUserObject
 argument_list|()
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|targetObject
