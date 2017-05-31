@@ -209,7 +209,7 @@ name|void
 name|notConfiguredTaskFailure
 parameter_list|()
 throws|throws
-name|IOException
+name|Exception
 block|{
 name|GradleRunner
 name|runner
@@ -279,7 +279,7 @@ name|void
 name|emptyDbTaskSuccess
 parameter_list|()
 throws|throws
-name|IOException
+name|Exception
 block|{
 name|GradleRunner
 name|runner
