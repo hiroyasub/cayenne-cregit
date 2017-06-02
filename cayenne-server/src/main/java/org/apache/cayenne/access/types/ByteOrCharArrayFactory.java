@@ -470,7 +470,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"< "
+literal|"<"
 argument_list|)
 expr_stmt|;
 name|int
@@ -519,21 +519,6 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|i
-operator|>
-literal|0
-condition|)
-block|{
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|","
-argument_list|)
-expr_stmt|;
-block|}
 name|buffer
 operator|.
 name|append
@@ -778,7 +763,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"< "
+literal|"<"
 argument_list|)
 expr_stmt|;
 name|int
@@ -827,21 +812,6 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|i
-operator|>
-literal|0
-condition|)
-block|{
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|","
-argument_list|)
-expr_stmt|;
-block|}
 name|buffer
 operator|.
 name|append
@@ -1099,7 +1069,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|"< "
+literal|"<"
 argument_list|)
 expr_stmt|;
 name|int
@@ -1145,21 +1115,6 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|i
-operator|>
-literal|0
-condition|)
-block|{
-name|buffer
-operator|.
-name|append
-argument_list|(
-literal|","
-argument_list|)
-expr_stmt|;
-block|}
 name|IDUtil
 operator|.
 name|appendFormattedByte
