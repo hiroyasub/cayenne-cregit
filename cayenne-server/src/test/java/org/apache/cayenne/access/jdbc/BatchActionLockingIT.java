@@ -833,11 +833,7 @@ name|put
 argument_list|(
 literal|"LOCKING_TEST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|DeleteBatchQuery

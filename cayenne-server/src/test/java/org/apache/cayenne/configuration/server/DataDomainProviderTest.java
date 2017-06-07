@@ -1120,14 +1120,16 @@ import|;
 end_import
 
 begin_import
-import|import static
-name|org
+import|import
+name|java
 operator|.
-name|junit
+name|util
 operator|.
-name|Assert
+name|concurrent
 operator|.
-name|assertEquals
+name|atomic
+operator|.
+name|AtomicInteger
 import|;
 end_import
 
@@ -1139,43 +1141,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertSame
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -1187,31 +1153,7 @@ name|mockito
 operator|.
 name|Mockito
 operator|.
-name|mock
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|verify
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|when
+name|*
 import|;
 end_import
 
@@ -1446,12 +1388,9 @@ specifier|final
 name|TestListener
 name|mockListener
 init|=
-name|mock
-argument_list|(
+operator|new
 name|TestListener
-operator|.
-name|class
-argument_list|)
+argument_list|()
 decl_stmt|;
 name|Module
 name|testModule
@@ -2535,14 +2474,18 @@ argument_list|,
 name|mockPersistent
 argument_list|)
 expr_stmt|;
-name|verify
+name|assertEquals
 argument_list|(
-name|mockListener
-argument_list|)
+literal|"Should call postLoadCallback() method"
+argument_list|,
+literal|1
+argument_list|,
+name|TestListener
 operator|.
-name|postLoadCallback
-argument_list|(
-name|mockPersistent
+name|counter
+operator|.
+name|get
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2550,6 +2493,15 @@ specifier|static
 class|class
 name|TestListener
 block|{
+specifier|static
+specifier|private
+name|AtomicInteger
+name|counter
+init|=
+operator|new
+name|AtomicInteger
+argument_list|()
+decl_stmt|;
 annotation|@
 name|PostLoad
 specifier|public
@@ -2560,6 +2512,11 @@ name|Object
 name|object
 parameter_list|)
 block|{
+name|counter
+operator|.
+name|incrementAndGet
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 block|}

@@ -212,8 +212,6 @@ parameter_list|(
 name|RuntimeServices
 name|rs
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|super
 operator|.
@@ -261,8 +259,6 @@ throws|throws
 name|ResourceNotFoundException
 throws|,
 name|ParseErrorException
-throws|,
-name|Exception
 block|{
 synchronized|synchronized
 init|(
