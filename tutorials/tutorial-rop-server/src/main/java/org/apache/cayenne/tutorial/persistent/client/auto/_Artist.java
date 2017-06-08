@@ -21,9 +21,9 @@ begin_import
 import|import
 name|java
 operator|.
-name|util
+name|time
 operator|.
-name|Date
+name|LocalDate
 import|;
 end_import
 
@@ -112,7 +112,7 @@ specifier|static
 specifier|final
 name|Property
 argument_list|<
-name|Date
+name|LocalDate
 argument_list|>
 name|DATE_OF_BIRTH
 init|=
@@ -122,7 +122,7 @@ name|create
 argument_list|(
 literal|"dateOfBirth"
 argument_list|,
-name|Date
+name|LocalDate
 operator|.
 name|class
 argument_list|)
@@ -171,7 +171,7 @@ name|class
 argument_list|)
 decl_stmt|;
 specifier|protected
-name|Date
+name|LocalDate
 name|dateOfBirth
 decl_stmt|;
 specifier|protected
@@ -186,7 +186,7 @@ argument_list|>
 name|paintings
 decl_stmt|;
 specifier|public
-name|Date
+name|LocalDate
 name|getDateOfBirth
 parameter_list|()
 block|{
@@ -217,7 +217,7 @@ specifier|public
 name|void
 name|setDateOfBirth
 parameter_list|(
-name|Date
+name|LocalDate
 name|dateOfBirth
 parameter_list|)
 block|{
