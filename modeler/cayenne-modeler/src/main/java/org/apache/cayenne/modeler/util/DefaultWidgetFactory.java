@@ -85,18 +85,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|syntax
-operator|.
-name|jedit
-operator|.
-name|JEditTextArea
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -174,16 +162,6 @@ operator|.
 name|awt
 operator|.
 name|Color
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|Font
 import|;
 end_import
 
@@ -528,18 +506,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|editor
-return|;
-block|}
-comment|/**      * Creates and returns a JEdit text component with syntax highlighing      */
-specifier|public
-name|JEditTextArea
-name|createJEditTextArea
-parameter_list|()
-block|{
-return|return
-operator|new
-name|JEditTextAreaUndoable
-argument_list|()
 return|;
 block|}
 block|}
