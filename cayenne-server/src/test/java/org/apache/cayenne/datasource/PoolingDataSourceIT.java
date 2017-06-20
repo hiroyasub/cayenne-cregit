@@ -16,38 +16,48 @@ package|;
 end_package
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
-name|junit
+name|apache
 operator|.
-name|Assert
+name|cayenne
 operator|.
-name|assertEquals
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|CayenneProjects
 import|;
 end_import
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
-name|junit
+name|apache
 operator|.
-name|Assert
+name|cayenne
 operator|.
-name|assertTrue
+name|unit
+operator|.
+name|di
+operator|.
+name|server
+operator|.
+name|UseServerRuntime
 import|;
 end_import
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-operator|.
-name|fail
+name|Test
 import|;
 end_import
 
@@ -162,48 +172,14 @@ import|;
 end_import
 
 begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|di
-operator|.
-name|server
-operator|.
-name|CayenneProjects
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|unit
-operator|.
-name|di
-operator|.
-name|server
-operator|.
-name|UseServerRuntime
-import|;
-end_import
-
-begin_import
-import|import
+import|import static
 name|org
 operator|.
 name|junit
 operator|.
-name|Test
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -274,9 +250,7 @@ name|connections
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Connection
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 try|try
@@ -451,9 +425,7 @@ name|connections
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|Connection
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 try|try
@@ -504,7 +476,7 @@ argument_list|()
 expr_stmt|;
 name|fail
 argument_list|(
-literal|"Opening more connections than the pool allows succeeeded"
+literal|"Opening more connections than the pool allows succeeded"
 argument_list|)
 expr_stmt|;
 block|}
@@ -988,6 +960,8 @@ parameter_list|()
 block|{
 try|try
 block|{
+try|try
+init|(
 name|Connection
 name|c
 init|=
@@ -995,9 +969,10 @@ name|dataSource
 operator|.
 name|getConnection
 argument_list|()
-decl_stmt|;
-try|try
+init|)
 block|{
+try|try
+init|(
 name|Statement
 name|st
 init|=
@@ -1005,9 +980,10 @@ name|c
 operator|.
 name|createStatement
 argument_list|()
-decl_stmt|;
-try|try
+init|)
 block|{
+try|try
+init|(
 name|ResultSet
 name|rs
 init|=
@@ -1017,8 +993,7 @@ name|executeQuery
 argument_list|(
 literal|"SELECT ARTIST_ID FROM ARTIST"
 argument_list|)
-decl_stmt|;
-try|try
+init|)
 block|{
 name|rs
 operator|.
@@ -1026,31 +1001,7 @@ name|next
 argument_list|()
 expr_stmt|;
 block|}
-finally|finally
-block|{
-name|rs
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
-block|}
-finally|finally
-block|{
-name|st
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
-name|c
-operator|.
-name|close
-argument_list|()
-expr_stmt|;
 block|}
 comment|// increment only after success
 name|i
