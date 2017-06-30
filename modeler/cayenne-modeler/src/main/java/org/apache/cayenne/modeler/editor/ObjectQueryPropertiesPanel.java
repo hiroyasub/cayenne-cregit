@@ -35,7 +35,7 @@ name|awt
 operator|.
 name|event
 operator|.
-name|ActionEvent
+name|ItemEvent
 import|;
 end_import
 
@@ -47,7 +47,7 @@ name|awt
 operator|.
 name|event
 operator|.
-name|ActionListener
+name|ItemListener
 import|;
 end_import
 
@@ -58,6 +58,22 @@ operator|.
 name|swing
 operator|.
 name|JCheckBox
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|swing
+operator|.
+name|components
+operator|.
+name|JCayenneCheckBox
 import|;
 end_import
 
@@ -187,7 +203,7 @@ comment|// create widgets
 name|dataRows
 operator|=
 operator|new
-name|JCheckBox
+name|JCayenneCheckBox
 argument_list|()
 expr_stmt|;
 comment|// assemble
@@ -493,18 +509,20 @@ argument_list|()
 expr_stmt|;
 name|dataRows
 operator|.
-name|addActionListener
+name|addItemListener
 argument_list|(
 operator|new
-name|ActionListener
+name|ItemListener
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
-name|actionPerformed
+name|itemStateChanged
 parameter_list|(
-name|ActionEvent
-name|event
+name|ItemEvent
+name|e
 parameter_list|)
 block|{
 name|Boolean
