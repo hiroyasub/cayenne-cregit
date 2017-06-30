@@ -69,18 +69,6 @@ name|TableCellEditor
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|syntax
-operator|.
-name|jedit
-operator|.
-name|JEditTextArea
-import|;
-end_import
-
 begin_comment
 comment|/**  * Utility class to create standard Swing widgets following default look-and-feel of  * CayenneModeler.  */
 end_comment
@@ -165,11 +153,6 @@ name|?
 argument_list|>
 name|combo
 parameter_list|)
-function_decl|;
-comment|/**      * Creates and returns a JEdit text component with syntax highlighing      */
-name|JEditTextArea
-name|createJEditTextArea
-parameter_list|()
 function_decl|;
 block|}
 end_interface
