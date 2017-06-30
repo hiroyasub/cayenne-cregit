@@ -1165,13 +1165,13 @@ name|query
 decl_stmt|;
 comment|/**          * Paths of multiple selection          */
 specifier|private
-name|Object
+name|ConfigurationNode
 index|[]
 name|paths
 decl_stmt|;
 comment|/**          * Parent path of multiple selection          */
 specifier|private
-name|Object
+name|ConfigurationNode
 name|parentPath
 decl_stmt|;
 comment|/**          * currently selecte entity listener class          */
@@ -1509,6 +1509,9 @@ name|currentState
 decl_stmt|;
 specifier|protected
 name|CircularArray
+argument_list|<
+name|ControllerState
+argument_list|>
 name|controllerStateHistory
 decl_stmt|;
 specifier|protected
@@ -1550,6 +1553,7 @@ name|controllerStateHistory
 operator|=
 operator|new
 name|CircularArray
+argument_list|<>
 argument_list|(
 name|maxHistorySize
 argument_list|)
@@ -2303,7 +2307,9 @@ name|currentState
 operator|.
 name|isRefiring
 condition|)
+block|{
 return|return;
+block|}
 name|currentState
 operator|=
 operator|new
@@ -2363,7 +2369,7 @@ argument_list|()
 decl_stmt|;
 name|List
 argument_list|<
-name|Object
+name|ControllerState
 argument_list|>
 name|removeList
 init|=
@@ -2390,9 +2396,6 @@ block|{
 name|ControllerState
 name|cs
 init|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -2400,6 +2403,21 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|cs
+operator|==
+literal|null
+operator|||
+name|cs
+operator|.
+name|event
+operator|==
+literal|null
+condition|)
+block|{
+continue|continue;
+block|}
 name|EventObject
 name|csEvent
 init|=
@@ -2407,15 +2425,6 @@ name|cs
 operator|.
 name|event
 decl_stmt|;
-if|if
-condition|(
-name|csEvent
-operator|==
-literal|null
-condition|)
-block|{
-continue|continue;
-block|}
 if|if
 condition|(
 name|e
@@ -2720,7 +2729,7 @@ block|}
 block|}
 for|for
 control|(
-name|Object
+name|ControllerState
 name|o
 range|:
 name|removeList
@@ -2901,7 +2910,7 @@ name|procedureParameters
 return|;
 block|}
 specifier|public
-name|Object
+name|ConfigurationNode
 index|[]
 name|getCurrentPaths
 parameter_list|()
@@ -2913,7 +2922,7 @@ name|paths
 return|;
 block|}
 specifier|public
-name|Object
+name|ConfigurationNode
 name|getCurrentParentPath
 parameter_list|()
 block|{
@@ -5173,7 +5182,9 @@ name|source
 operator|==
 literal|null
 condition|)
+block|{
 return|return;
+block|}
 name|int
 name|size
 init|=
@@ -5201,8 +5212,6 @@ argument_list|)
 decl_stmt|;
 name|ControllerState
 name|cs
-init|=
-literal|null
 decl_stmt|;
 if|if
 condition|(
@@ -5213,9 +5222,6 @@ condition|)
 block|{
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5252,9 +5258,6 @@ comment|// a new state got created without it being saved.
 comment|// just move to the beginning of the list
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5275,9 +5278,6 @@ block|{
 comment|// move forward
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5293,9 +5293,6 @@ block|{
 comment|// wrap around
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5363,9 +5360,6 @@ try|try
 block|{
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5384,9 +5378,6 @@ parameter_list|)
 block|{
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5410,9 +5401,6 @@ block|{
 comment|// move to the previous one
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5428,9 +5416,6 @@ block|{
 comment|// wrap around
 name|cs
 operator|=
-operator|(
-name|ControllerState
-operator|)
 name|controllerStateHistory
 operator|.
 name|get
@@ -5454,8 +5439,7 @@ condition|)
 block|{
 break|break;
 block|}
-comment|// if it doesn't find it within 5 tries it is probably stuck in
-comment|// a loop
+comment|// if it doesn't find it within 5 tries it is probably stuck in a loop
 if|if
 condition|(
 operator|++
@@ -5470,6 +5454,21 @@ name|i
 operator|--
 expr_stmt|;
 block|}
+block|}
+else|else
+block|{
+throw|throw
+operator|new
+name|IllegalStateException
+argument_list|(
+literal|"Unknown source for navigation event: "
+operator|+
+name|e
+operator|.
+name|getSource
+argument_list|()
+argument_list|)
+throw|;
 block|}
 comment|// reset the current state to the one we just navigated to
 name|currentState
@@ -5489,7 +5488,9 @@ name|de
 operator|==
 literal|null
 condition|)
+block|{
 return|return;
+block|}
 comment|// make sure that isRefiring is turned off prior to exiting this routine
 comment|// this flag is used to tell the controller to not create new states
 comment|// when we are refiring the event that we saved earlier
@@ -5500,8 +5501,7 @@ operator|=
 literal|true
 expr_stmt|;
 comment|// the order of the following is checked in most specific to generic
-comment|// because
-comment|// of the inheritance heirarchy
+comment|// because of the inheritance hierarchy
 name|de
 operator|.
 name|setRefired
@@ -8000,7 +8000,7 @@ operator|.
 name|callbackMethods
 return|;
 block|}
-comment|/**      * @return currently selecte entity listener class      */
+comment|/**      * set current entity listener class      */
 specifier|public
 name|void
 name|setCurrentListenerClass
@@ -8016,7 +8016,7 @@ operator|=
 name|listenerClass
 expr_stmt|;
 block|}
-comment|/**      * @return currently selected callback type      */
+comment|/**      * set current callback type      */
 specifier|public
 name|void
 name|setCurrentCallbackType
@@ -8032,7 +8032,7 @@ operator|=
 name|callbackType
 expr_stmt|;
 block|}
-comment|/**      * @return currently selected callback methods      */
+comment|/**      * set current callback methods      */
 specifier|public
 name|void
 name|setCurrentCallbackMethods
@@ -8301,11 +8301,6 @@ name|fileChangeTracker
 return|;
 block|}
 comment|/**      * Returns currently selected object, null if there are none, List if there      * are several      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|Object
 name|getCurrentObject
@@ -8424,24 +8419,11 @@ literal|null
 condition|)
 block|{
 comment|// multiple objects
-name|Object
+name|ConfigurationNode
 index|[]
 name|paths
 init|=
 name|getCurrentPaths
-argument_list|()
-decl_stmt|;
-name|List
-argument_list|<
-name|Object
-argument_list|>
-name|result
-init|=
-operator|new
-name|Vector
-argument_list|<
-name|Object
-argument_list|>
 argument_list|()
 decl_stmt|;
 name|ConfigurationNodeParentGetter
@@ -8467,32 +8449,36 @@ name|parentGetter
 operator|.
 name|getParent
 argument_list|(
-operator|(
-name|ConfigurationNode
-operator|)
 name|paths
 index|[
 literal|0
 index|]
 argument_list|)
 decl_stmt|;
-for|for
-control|(
-name|Object
-name|path
-range|:
-name|paths
-control|)
-block|{
+name|List
+argument_list|<
+name|ConfigurationNode
+argument_list|>
+name|result
+init|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
+decl_stmt|;
 name|result
 operator|.
-name|add
+name|addAll
 argument_list|(
-name|path
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|paths
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**              * Here we sort the list of objects to minimize the risk that              * objects will be pasted incorrectly. For instance, ObjEntity              * should go before Query, to increase chances that Query's root              * would be set.              */
+comment|/*              * Here we sort the list of objects to minimize the risk that              * objects will be pasted incorrectly. For instance, ObjEntity              * should go before Query, to increase chances that Query's root              * would be set.              */
 name|Collections
 operator|.
 name|sort
@@ -9204,7 +9190,7 @@ operator|=
 name|entityTabSelection
 expr_stmt|;
 block|}
-comment|/**      * If true, all save buttons become available.      * @param enable      */
+comment|/**      * If true, all save buttons become available.      * @param enable or not save button      */
 specifier|public
 name|void
 name|enableSave
@@ -9248,7 +9234,7 @@ name|enable
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**     * Set currently selected ObjAttributes     */
+comment|/**      * Set currently selected ObjAttributes      */
 specifier|public
 name|void
 name|setCurrentObjAttributes
@@ -9265,7 +9251,7 @@ operator|=
 name|attrs
 expr_stmt|;
 block|}
-comment|/**     * Set currently selected ObjRelationships     */
+comment|/**      * Set currently selected ObjRelationships      */
 specifier|public
 name|void
 name|setCurrentObjRelationships
@@ -9282,7 +9268,7 @@ operator|=
 name|rels
 expr_stmt|;
 block|}
-comment|/**     * Set currently selected DbAttributes     */
+comment|/**      * Set currently selected DbAttributes      */
 specifier|public
 name|void
 name|setCurrentDbAttributes
@@ -9299,7 +9285,7 @@ operator|=
 name|attrs
 expr_stmt|;
 block|}
-comment|/**     * Set currently selected DbRelationships     */
+comment|/**      * Set currently selected DbRelationships      */
 specifier|public
 name|void
 name|setCurrentDbRelationships

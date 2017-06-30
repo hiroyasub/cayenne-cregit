@@ -315,7 +315,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Object
+name|ConfigurationNode
 index|[]
 name|multipleObjects
 init|=
@@ -350,7 +350,7 @@ argument_list|()
 decl_stmt|;
 for|for
 control|(
-name|Object
+name|ConfigurationNode
 name|object
 range|:
 name|multipleObjects
@@ -416,9 +416,7 @@ name|configurationNodeList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ConfigurationNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ConfigurationNode
@@ -521,9 +519,7 @@ name|configurationNodeList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ConfigurationNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ConfigurationNode
@@ -630,9 +626,7 @@ name|configurationNodeList
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|ConfigurationNode
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ConfigurationNode

@@ -25,13 +25,14 @@ begin_class
 specifier|public
 class|class
 name|CircularArray
-extends|extends
-name|Object
+parameter_list|<
+name|T
+parameter_list|>
 block|{
 specifier|private
 name|Object
-name|array
 index|[]
+name|array
 init|=
 literal|null
 decl_stmt|;
@@ -267,7 +268,7 @@ specifier|public
 name|boolean
 name|contains
 parameter_list|(
-name|Object
+name|T
 name|obj
 parameter_list|)
 block|{
@@ -281,8 +282,13 @@ literal|0
 return|;
 block|}
 comment|/**      * Gets the object at the specified index.      *       * @param index      *            the index of the object to be retrieved      */
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
-name|Object
+name|T
 name|get
 parameter_list|(
 name|int
@@ -306,6 +312,9 @@ literal|null
 return|;
 block|}
 return|return
+operator|(
+name|T
+operator|)
 name|array
 index|[
 name|convert
@@ -320,7 +329,7 @@ specifier|public
 name|int
 name|indexOf
 parameter_list|(
-name|Object
+name|T
 name|obj
 parameter_list|)
 block|{
@@ -368,12 +377,12 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/**      * Removes the specified object from the array      *       * @param i      *            the index of the object to be removed      */
+comment|/**      * Removes the specified object from the array      *      * @param obj object to be removed      */
 specifier|public
 name|void
 name|remove
 parameter_list|(
-name|Object
+name|T
 name|obj
 parameter_list|)
 block|{
@@ -1149,7 +1158,7 @@ return|;
 block|}
 comment|/**      * Converts the array to an Object array.      */
 specifier|public
-name|Object
+name|T
 index|[]
 name|toArray
 parameter_list|()
@@ -1194,6 +1203,10 @@ index|]
 expr_stmt|;
 block|}
 return|return
+operator|(
+name|T
+index|[]
+operator|)
 name|o
 return|;
 block|}
@@ -1204,14 +1217,12 @@ parameter_list|()
 block|{
 name|Object
 name|o
-init|=
-literal|null
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|sb
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|sb
@@ -1427,14 +1438,12 @@ argument_list|()
 decl_stmt|;
 name|Object
 name|o
-init|=
-literal|null
 decl_stmt|;
-name|StringBuffer
+name|StringBuilder
 name|sb
 init|=
 operator|new
-name|StringBuffer
+name|StringBuilder
 argument_list|()
 decl_stmt|;
 name|sb

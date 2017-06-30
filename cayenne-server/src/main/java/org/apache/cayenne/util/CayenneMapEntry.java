@@ -25,19 +25,16 @@ interface|interface
 name|CayenneMapEntry
 block|{
 comment|/**      * Returns the name property of this object.      *       * @return name of this entry.      */
-specifier|public
 name|String
 name|getName
 parameter_list|()
 function_decl|;
 comment|/**      * Returns the parent map.      */
-specifier|public
 name|Object
 name|getParent
 parameter_list|()
 function_decl|;
 comment|/**      * Stores the parent map.      */
-specifier|public
 name|void
 name|setParent
 parameter_list|(
