@@ -789,6 +789,24 @@ name|type
 argument_list|)
 return|;
 block|}
+comment|/** 	 * @since 4.1 	 * @param type name 	 * @return is given type primitive 	 */
+specifier|public
+name|boolean
+name|isPrimitive
+parameter_list|(
+name|String
+name|type
+parameter_list|)
+block|{
+return|return
+name|classesForPrimitives
+operator|.
+name|containsKey
+argument_list|(
+name|type
+argument_list|)
+return|;
+block|}
 comment|/** 	 * Generate package and list of import statements based on the registered 	 * types. 	 */
 specifier|public
 name|String

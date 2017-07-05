@@ -273,7 +273,7 @@ specifier|final
 name|String
 name|TEMPLATES_DIR_NAME
 init|=
-literal|"templates/v1_2/"
+literal|"templates/v4_1/"
 decl_stmt|;
 specifier|public
 specifier|static
