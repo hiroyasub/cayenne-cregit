@@ -386,6 +386,8 @@ literal|"artistName"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|artistName
 return|;
 block|}
@@ -426,6 +428,8 @@ literal|"estimatedPrice"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|estimatedPrice
 return|;
 block|}
@@ -466,6 +470,8 @@ literal|"galleryName"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|galleryName
 return|;
 block|}
@@ -506,6 +512,8 @@ literal|"paintingTitle"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|paintingTitle
 return|;
 block|}
@@ -546,6 +554,8 @@ literal|"textReview"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|textReview
 return|;
 block|}
@@ -946,6 +956,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|artistName
 argument_list|)
 expr_stmt|;
@@ -953,6 +965,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|estimatedPrice
 argument_list|)
 expr_stmt|;
@@ -960,6 +974,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|galleryName
 argument_list|)
 expr_stmt|;
@@ -967,6 +983,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|paintingTitle
 argument_list|)
 expr_stmt|;
@@ -974,6 +992,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|textReview
 argument_list|)
 expr_stmt|;
@@ -981,6 +1001,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|toArtist
 argument_list|)
 expr_stmt|;
@@ -988,6 +1010,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|toGallery
 argument_list|)
 expr_stmt|;
@@ -995,6 +1019,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|toPaintingInfo
 argument_list|)
 expr_stmt|;
@@ -1020,6 +1046,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|artistName
 operator|=
 operator|(
@@ -1030,6 +1058,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|estimatedPrice
 operator|=
 operator|(
@@ -1040,6 +1070,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|galleryName
 operator|=
 operator|(
@@ -1050,6 +1082,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|paintingTitle
 operator|=
 operator|(
@@ -1060,6 +1094,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|textReview
 operator|=
 operator|(
@@ -1070,6 +1106,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|toArtist
 operator|=
 name|in
@@ -1077,6 +1115,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|toGallery
 operator|=
 name|in
@@ -1084,6 +1124,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|toPaintingInfo
 operator|=
 name|in

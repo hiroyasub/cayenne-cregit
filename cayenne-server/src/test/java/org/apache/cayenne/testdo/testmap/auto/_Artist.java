@@ -333,6 +333,8 @@ literal|"artistName"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|artistName
 return|;
 block|}
@@ -373,6 +375,8 @@ literal|"dateOfBirth"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|dateOfBirth
 return|;
 block|}
@@ -797,6 +801,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|artistName
 argument_list|)
 expr_stmt|;
@@ -804,6 +810,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|dateOfBirth
 argument_list|)
 expr_stmt|;
@@ -811,6 +819,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|artistExhibitArray
 argument_list|)
 expr_stmt|;
@@ -818,6 +828,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|groupArray
 argument_list|)
 expr_stmt|;
@@ -825,6 +837,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|paintingArray
 argument_list|)
 expr_stmt|;
@@ -850,6 +864,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|artistName
 operator|=
 operator|(
@@ -860,6 +876,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|dateOfBirth
 operator|=
 operator|(
@@ -870,6 +888,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|artistExhibitArray
 operator|=
 name|in
@@ -877,6 +897,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|groupArray
 operator|=
 name|in
@@ -884,6 +906,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|paintingArray
 operator|=
 name|in

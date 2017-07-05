@@ -229,6 +229,8 @@ literal|"imageBlob"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|imageBlob
 return|;
 block|}
@@ -269,6 +271,8 @@ literal|"textReview"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|textReview
 return|;
 block|}
@@ -505,6 +509,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|imageBlob
 argument_list|)
 expr_stmt|;
@@ -512,6 +518,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|textReview
 argument_list|)
 expr_stmt|;
@@ -519,6 +527,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|painting
 argument_list|)
 expr_stmt|;
@@ -544,6 +554,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|imageBlob
 operator|=
 operator|(
@@ -555,6 +567,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|textReview
 operator|=
 operator|(
@@ -565,6 +579,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|painting
 operator|=
 name|in

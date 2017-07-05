@@ -256,6 +256,8 @@ literal|"galleryName"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|galleryName
 return|;
 block|}
@@ -579,6 +581,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|galleryName
 argument_list|)
 expr_stmt|;
@@ -586,6 +590,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|exhibitArray
 argument_list|)
 expr_stmt|;
@@ -593,6 +599,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|paintingArray
 argument_list|)
 expr_stmt|;
@@ -618,6 +626,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|galleryName
 operator|=
 operator|(
@@ -628,6 +638,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|exhibitArray
 operator|=
 name|in
@@ -635,6 +647,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|paintingArray
 operator|=
 name|in

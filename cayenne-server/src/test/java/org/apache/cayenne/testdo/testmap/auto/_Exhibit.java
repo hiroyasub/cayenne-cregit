@@ -287,6 +287,8 @@ literal|"closingDate"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|closingDate
 return|;
 block|}
@@ -327,6 +329,8 @@ literal|"openingDate"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|openingDate
 return|;
 block|}
@@ -642,6 +646,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|closingDate
 argument_list|)
 expr_stmt|;
@@ -649,6 +655,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|openingDate
 argument_list|)
 expr_stmt|;
@@ -656,6 +664,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|artistExhibitArray
 argument_list|)
 expr_stmt|;
@@ -663,6 +673,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|toGallery
 argument_list|)
 expr_stmt|;
@@ -688,6 +700,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|closingDate
 operator|=
 operator|(
@@ -698,6 +712,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|openingDate
 operator|=
 operator|(
@@ -708,6 +724,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|artistExhibitArray
 operator|=
 name|in
@@ -715,6 +733,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|toGallery
 operator|=
 name|in

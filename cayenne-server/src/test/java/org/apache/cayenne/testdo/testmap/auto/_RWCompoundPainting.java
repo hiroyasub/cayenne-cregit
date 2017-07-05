@@ -218,6 +218,8 @@ literal|"estimatedPrice"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|estimatedPrice
 return|;
 block|}
@@ -258,6 +260,8 @@ literal|"paintingTitle"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|paintingTitle
 return|;
 block|}
@@ -298,6 +302,8 @@ literal|"textReview"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|textReview
 return|;
 block|}
@@ -503,6 +509,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|estimatedPrice
 argument_list|)
 expr_stmt|;
@@ -510,6 +518,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|paintingTitle
 argument_list|)
 expr_stmt|;
@@ -517,6 +527,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|textReview
 argument_list|)
 expr_stmt|;
@@ -542,6 +554,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|estimatedPrice
 operator|=
 operator|(
@@ -552,6 +566,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|paintingTitle
 operator|=
 operator|(
@@ -562,6 +578,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|textReview
 operator|=
 operator|(
