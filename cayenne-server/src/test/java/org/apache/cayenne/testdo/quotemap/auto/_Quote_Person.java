@@ -306,6 +306,8 @@ literal|"dAte"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|dAte
 return|;
 block|}
@@ -346,6 +348,8 @@ literal|"fULL_name"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|fULL_name
 return|;
 block|}
@@ -386,6 +390,8 @@ literal|"group"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|group
 return|;
 block|}
@@ -426,6 +432,8 @@ literal|"name"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|name
 return|;
 block|}
@@ -466,6 +474,8 @@ literal|"salary"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|salary
 return|;
 block|}
@@ -764,6 +774,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|dAte
 argument_list|)
 expr_stmt|;
@@ -771,6 +783,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|fULL_name
 argument_list|)
 expr_stmt|;
@@ -778,6 +792,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|group
 argument_list|)
 expr_stmt|;
@@ -785,6 +801,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|name
 argument_list|)
 expr_stmt|;
@@ -792,6 +810,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|salary
 argument_list|)
 expr_stmt|;
@@ -799,6 +819,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|address_Rel
 argument_list|)
 expr_stmt|;
@@ -824,6 +846,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|dAte
 operator|=
 operator|(
@@ -834,6 +858,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|fULL_name
 operator|=
 operator|(
@@ -844,6 +870,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|group
 operator|=
 operator|(
@@ -854,6 +882,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|name
 operator|=
 operator|(
@@ -864,6 +894,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|salary
 operator|=
 operator|(
@@ -874,6 +906,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|address_Rel
 operator|=
 name|in

@@ -165,6 +165,8 @@ literal|"blobCol"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|blobCol
 return|;
 block|}
@@ -329,6 +331,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|blobCol
 argument_list|)
 expr_stmt|;
@@ -354,6 +358,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|blobCol
 operator|=
 operator|(

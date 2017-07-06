@@ -466,6 +466,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|groupMembers
 argument_list|)
 expr_stmt|;
@@ -473,6 +475,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|groupProperties
 argument_list|)
 expr_stmt|;
@@ -498,6 +502,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|groupMembers
 operator|=
 name|in
@@ -505,6 +511,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|groupProperties
 operator|=
 name|in

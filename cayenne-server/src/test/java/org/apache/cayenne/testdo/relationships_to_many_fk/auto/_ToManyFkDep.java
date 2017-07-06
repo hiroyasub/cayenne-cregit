@@ -272,6 +272,8 @@ literal|"depId"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|depId
 return|;
 block|}
@@ -312,6 +314,8 @@ literal|"name"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|name
 return|;
 block|}
@@ -598,6 +602,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|depId
 argument_list|)
 expr_stmt|;
@@ -605,6 +611,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|name
 argument_list|)
 expr_stmt|;
@@ -612,6 +620,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|root
 argument_list|)
 expr_stmt|;
@@ -619,6 +629,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|root2
 argument_list|)
 expr_stmt|;
@@ -644,6 +656,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|depId
 operator|=
 operator|(
@@ -654,6 +668,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|name
 operator|=
 operator|(
@@ -664,6 +680,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|root
 operator|=
 name|in
@@ -671,6 +689,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|root2
 operator|=
 name|in

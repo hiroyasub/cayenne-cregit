@@ -249,6 +249,8 @@ literal|"appointmentDate"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|appointmentDate
 return|;
 block|}
@@ -289,6 +291,8 @@ literal|"appointmentNo"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|appointmentNo
 return|;
 block|}
@@ -472,6 +476,12 @@ name|this
 operator|.
 name|appointmentNo
 operator|=
+name|val
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
 operator|(
 name|Integer
 operator|)
@@ -557,6 +567,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|appointmentDate
 argument_list|)
 expr_stmt|;
@@ -564,6 +576,8 @@ name|out
 operator|.
 name|writeInt
 argument_list|(
+name|this
+operator|.
 name|appointmentNo
 argument_list|)
 expr_stmt|;
@@ -571,6 +585,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|results
 argument_list|)
 expr_stmt|;
@@ -596,6 +612,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|appointmentDate
 operator|=
 operator|(
@@ -606,6 +624,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|appointmentNo
 operator|=
 name|in
@@ -613,6 +633,8 @@ operator|.
 name|readInt
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|results
 operator|=
 name|in

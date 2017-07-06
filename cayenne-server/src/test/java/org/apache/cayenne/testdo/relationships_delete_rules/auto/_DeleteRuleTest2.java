@@ -494,6 +494,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|deleteRuleTest3Array
 argument_list|)
 expr_stmt|;
@@ -501,6 +503,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|test1Array
 argument_list|)
 expr_stmt|;
@@ -526,6 +530,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|deleteRuleTest3Array
 operator|=
 name|in
@@ -533,6 +539,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|test1Array
 operator|=
 name|in

@@ -246,6 +246,8 @@ literal|"byteArray"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|byteArray
 return|;
 block|}
@@ -288,6 +290,8 @@ literal|"byteWrapperArray"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|byteWrapperArray
 return|;
 block|}
@@ -330,6 +334,8 @@ literal|"charArray"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|charArray
 return|;
 block|}
@@ -372,6 +378,8 @@ literal|"charWrapperArray"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|charWrapperArray
 return|;
 block|}
@@ -602,6 +610,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|byteArray
 argument_list|)
 expr_stmt|;
@@ -609,6 +619,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|byteWrapperArray
 argument_list|)
 expr_stmt|;
@@ -616,6 +628,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|charArray
 argument_list|)
 expr_stmt|;
@@ -623,6 +637,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|charWrapperArray
 argument_list|)
 expr_stmt|;
@@ -648,6 +664,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|byteArray
 operator|=
 operator|(
@@ -659,6 +677,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|byteWrapperArray
 operator|=
 operator|(
@@ -670,6 +690,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|charArray
 operator|=
 operator|(
@@ -681,6 +703,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|charWrapperArray
 operator|=
 operator|(

@@ -261,6 +261,8 @@ literal|"id"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|id
 return|;
 block|}
@@ -301,6 +303,8 @@ literal|"name"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|name
 return|;
 block|}
@@ -341,6 +345,8 @@ literal|"type"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|type
 return|;
 block|}
@@ -527,6 +533,12 @@ name|this
 operator|.
 name|id
 operator|=
+name|val
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
 operator|(
 name|Long
 operator|)
@@ -553,6 +565,12 @@ name|this
 operator|.
 name|type
 operator|=
+name|val
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
 operator|(
 name|Integer
 operator|)
@@ -638,6 +656,8 @@ name|out
 operator|.
 name|writeLong
 argument_list|(
+name|this
+operator|.
 name|id
 argument_list|)
 expr_stmt|;
@@ -645,6 +665,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|name
 argument_list|)
 expr_stmt|;
@@ -652,6 +674,8 @@ name|out
 operator|.
 name|writeInt
 argument_list|(
+name|this
+operator|.
 name|type
 argument_list|)
 expr_stmt|;
@@ -659,6 +683,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|roleGroups
 argument_list|)
 expr_stmt|;
@@ -684,6 +710,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|id
 operator|=
 name|in
@@ -691,6 +719,8 @@ operator|.
 name|readLong
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|name
 operator|=
 operator|(
@@ -701,6 +731,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|type
 operator|=
 name|in
@@ -708,6 +740,8 @@ operator|.
 name|readInt
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|roleGroups
 operator|=
 name|in

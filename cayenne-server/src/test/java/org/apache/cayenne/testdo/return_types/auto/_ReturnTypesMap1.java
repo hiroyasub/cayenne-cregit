@@ -636,6 +636,8 @@ literal|"bigintColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|bigintColumn
 return|;
 block|}
@@ -676,6 +678,8 @@ literal|"bitColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|bitColumn
 return|;
 block|}
@@ -716,6 +720,8 @@ literal|"booleanColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|booleanColumn
 return|;
 block|}
@@ -756,6 +762,8 @@ literal|"charColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|charColumn
 return|;
 block|}
@@ -796,6 +804,8 @@ literal|"dateColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|dateColumn
 return|;
 block|}
@@ -836,6 +846,8 @@ literal|"decimalColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|decimalColumn
 return|;
 block|}
@@ -876,6 +888,8 @@ literal|"doubleColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|doubleColumn
 return|;
 block|}
@@ -916,6 +930,8 @@ literal|"floatColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|floatColumn
 return|;
 block|}
@@ -956,6 +972,8 @@ literal|"integerColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|integerColumn
 return|;
 block|}
@@ -996,6 +1014,8 @@ literal|"longnvarcharColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|longnvarcharColumn
 return|;
 block|}
@@ -1036,6 +1056,8 @@ literal|"longvarcharColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|longvarcharColumn
 return|;
 block|}
@@ -1076,6 +1098,8 @@ literal|"ncharColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|ncharColumn
 return|;
 block|}
@@ -1116,6 +1140,8 @@ literal|"numericColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|numericColumn
 return|;
 block|}
@@ -1156,6 +1182,8 @@ literal|"nvarcharColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|nvarcharColumn
 return|;
 block|}
@@ -1196,6 +1224,8 @@ literal|"realColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|realColumn
 return|;
 block|}
@@ -1236,6 +1266,8 @@ literal|"smallintColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|smallintColumn
 return|;
 block|}
@@ -1276,6 +1308,8 @@ literal|"timeColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|timeColumn
 return|;
 block|}
@@ -1316,6 +1350,8 @@ literal|"timestampColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|timestampColumn
 return|;
 block|}
@@ -1356,6 +1392,8 @@ literal|"tinyintColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|tinyintColumn
 return|;
 block|}
@@ -1396,6 +1434,8 @@ literal|"varcharColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|varcharColumn
 return|;
 block|}
@@ -1958,6 +1998,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|bigintColumn
 argument_list|)
 expr_stmt|;
@@ -1965,6 +2007,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|bitColumn
 argument_list|)
 expr_stmt|;
@@ -1972,6 +2016,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|booleanColumn
 argument_list|)
 expr_stmt|;
@@ -1979,6 +2025,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|charColumn
 argument_list|)
 expr_stmt|;
@@ -1986,6 +2034,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|dateColumn
 argument_list|)
 expr_stmt|;
@@ -1993,6 +2043,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|decimalColumn
 argument_list|)
 expr_stmt|;
@@ -2000,6 +2052,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|doubleColumn
 argument_list|)
 expr_stmt|;
@@ -2007,6 +2061,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|floatColumn
 argument_list|)
 expr_stmt|;
@@ -2014,6 +2070,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|integerColumn
 argument_list|)
 expr_stmt|;
@@ -2021,6 +2079,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|longnvarcharColumn
 argument_list|)
 expr_stmt|;
@@ -2028,6 +2088,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|longvarcharColumn
 argument_list|)
 expr_stmt|;
@@ -2035,6 +2097,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|ncharColumn
 argument_list|)
 expr_stmt|;
@@ -2042,6 +2106,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|numericColumn
 argument_list|)
 expr_stmt|;
@@ -2049,6 +2115,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|nvarcharColumn
 argument_list|)
 expr_stmt|;
@@ -2056,6 +2124,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|realColumn
 argument_list|)
 expr_stmt|;
@@ -2063,6 +2133,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|smallintColumn
 argument_list|)
 expr_stmt|;
@@ -2070,6 +2142,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|timeColumn
 argument_list|)
 expr_stmt|;
@@ -2077,6 +2151,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|timestampColumn
 argument_list|)
 expr_stmt|;
@@ -2084,6 +2160,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|tinyintColumn
 argument_list|)
 expr_stmt|;
@@ -2091,6 +2169,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|varcharColumn
 argument_list|)
 expr_stmt|;
@@ -2116,6 +2196,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|bigintColumn
 operator|=
 operator|(
@@ -2126,6 +2208,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|bitColumn
 operator|=
 operator|(
@@ -2136,6 +2220,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|booleanColumn
 operator|=
 operator|(
@@ -2146,6 +2232,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|charColumn
 operator|=
 operator|(
@@ -2156,6 +2244,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|dateColumn
 operator|=
 operator|(
@@ -2166,6 +2256,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|decimalColumn
 operator|=
 operator|(
@@ -2176,6 +2268,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|doubleColumn
 operator|=
 operator|(
@@ -2186,6 +2280,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|floatColumn
 operator|=
 operator|(
@@ -2196,6 +2292,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|integerColumn
 operator|=
 operator|(
@@ -2206,6 +2304,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|longnvarcharColumn
 operator|=
 operator|(
@@ -2216,6 +2316,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|longvarcharColumn
 operator|=
 operator|(
@@ -2226,6 +2328,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|ncharColumn
 operator|=
 operator|(
@@ -2236,6 +2340,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|numericColumn
 operator|=
 operator|(
@@ -2246,6 +2352,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|nvarcharColumn
 operator|=
 operator|(
@@ -2256,6 +2364,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|realColumn
 operator|=
 operator|(
@@ -2266,6 +2376,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|smallintColumn
 operator|=
 operator|(
@@ -2276,6 +2388,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|timeColumn
 operator|=
 operator|(
@@ -2286,6 +2400,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|timestampColumn
 operator|=
 operator|(
@@ -2296,6 +2412,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|tinyintColumn
 operator|=
 operator|(
@@ -2306,6 +2424,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|varcharColumn
 operator|=
 operator|(

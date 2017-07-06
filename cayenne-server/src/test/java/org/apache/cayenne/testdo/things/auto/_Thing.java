@@ -277,6 +277,8 @@ literal|"volume"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|volume
 return|;
 block|}
@@ -317,6 +319,8 @@ literal|"weight"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|weight
 return|;
 block|}
@@ -596,6 +600,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|volume
 argument_list|)
 expr_stmt|;
@@ -603,6 +609,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|weight
 argument_list|)
 expr_stmt|;
@@ -610,6 +618,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|ball
 argument_list|)
 expr_stmt|;
@@ -617,6 +627,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|box
 argument_list|)
 expr_stmt|;
@@ -642,6 +654,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|volume
 operator|=
 operator|(
@@ -652,6 +666,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|weight
 operator|=
 operator|(
@@ -662,6 +678,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|ball
 operator|=
 name|in
@@ -669,6 +687,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|box
 operator|=
 name|in

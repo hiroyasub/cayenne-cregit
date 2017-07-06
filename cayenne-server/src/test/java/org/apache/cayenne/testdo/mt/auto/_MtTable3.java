@@ -266,6 +266,8 @@ literal|"binaryColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|binaryColumn
 return|;
 block|}
@@ -306,6 +308,8 @@ literal|"charColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|charColumn
 return|;
 block|}
@@ -346,6 +350,8 @@ literal|"intColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|intColumn
 return|;
 block|}
@@ -632,6 +638,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|binaryColumn
 argument_list|)
 expr_stmt|;
@@ -639,6 +647,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|charColumn
 argument_list|)
 expr_stmt|;
@@ -646,6 +656,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|intColumn
 argument_list|)
 expr_stmt|;
@@ -653,6 +665,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|table2Array
 argument_list|)
 expr_stmt|;
@@ -678,6 +692,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|binaryColumn
 operator|=
 operator|(
@@ -689,6 +705,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|charColumn
 operator|=
 operator|(
@@ -699,6 +717,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|intColumn
 operator|=
 operator|(
@@ -709,6 +729,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|table2Array
 operator|=
 name|in

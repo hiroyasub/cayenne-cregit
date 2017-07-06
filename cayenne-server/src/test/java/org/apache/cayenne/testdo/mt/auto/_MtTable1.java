@@ -237,6 +237,8 @@ literal|"globalAttribute1"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|globalAttribute1
 return|;
 block|}
@@ -277,6 +279,8 @@ literal|"serverAttribute1"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|serverAttribute1
 return|;
 block|}
@@ -541,6 +545,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|globalAttribute1
 argument_list|)
 expr_stmt|;
@@ -548,6 +554,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|serverAttribute1
 argument_list|)
 expr_stmt|;
@@ -555,6 +563,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|table2Array
 argument_list|)
 expr_stmt|;
@@ -580,6 +590,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|globalAttribute1
 operator|=
 operator|(
@@ -590,6 +602,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|serverAttribute1
 operator|=
 operator|(
@@ -600,6 +614,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|table2Array
 operator|=
 name|in

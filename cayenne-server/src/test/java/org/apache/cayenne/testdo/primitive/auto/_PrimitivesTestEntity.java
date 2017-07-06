@@ -184,6 +184,8 @@ literal|"booleanColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|booleanColumn
 return|;
 block|}
@@ -224,6 +226,8 @@ literal|"intColumn"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|intColumn
 return|;
 block|}
@@ -320,6 +324,12 @@ name|this
 operator|.
 name|booleanColumn
 operator|=
+name|val
+operator|==
+literal|null
+condition|?
+literal|false
+else|:
 operator|(
 name|Boolean
 operator|)
@@ -333,6 +343,12 @@ name|this
 operator|.
 name|intColumn
 operator|=
+name|val
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
 operator|(
 name|Integer
 operator|)
@@ -408,6 +424,8 @@ name|out
 operator|.
 name|writeBoolean
 argument_list|(
+name|this
+operator|.
 name|booleanColumn
 argument_list|)
 expr_stmt|;
@@ -415,6 +433,8 @@ name|out
 operator|.
 name|writeInt
 argument_list|(
+name|this
+operator|.
 name|intColumn
 argument_list|)
 expr_stmt|;
@@ -440,6 +460,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|booleanColumn
 operator|=
 name|in
@@ -447,6 +469,8 @@ operator|.
 name|readBoolean
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|intColumn
 operator|=
 name|in

@@ -269,6 +269,8 @@ literal|"key1"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|key1
 return|;
 block|}
@@ -309,6 +311,8 @@ literal|"key2"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|key2
 return|;
 block|}
@@ -349,6 +353,8 @@ literal|"name"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|name
 return|;
 block|}
@@ -634,6 +640,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|key1
 argument_list|)
 expr_stmt|;
@@ -641,6 +649,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|key2
 argument_list|)
 expr_stmt|;
@@ -648,6 +658,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|name
 argument_list|)
 expr_stmt|;
@@ -655,6 +667,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|compoundFkArray
 argument_list|)
 expr_stmt|;
@@ -680,6 +694,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|key1
 operator|=
 operator|(
@@ -690,6 +706,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|key2
 operator|=
 operator|(
@@ -700,6 +718,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|name
 operator|=
 operator|(
@@ -710,6 +730,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|compoundFkArray
 operator|=
 name|in

@@ -213,6 +213,8 @@ literal|"clobCol"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|clobCol
 return|;
 block|}
@@ -456,6 +458,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|clobCol
 argument_list|)
 expr_stmt|;
@@ -463,6 +467,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|clobValue
 argument_list|)
 expr_stmt|;
@@ -488,6 +494,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|clobCol
 operator|=
 operator|(
@@ -498,6 +506,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|clobValue
 operator|=
 name|in

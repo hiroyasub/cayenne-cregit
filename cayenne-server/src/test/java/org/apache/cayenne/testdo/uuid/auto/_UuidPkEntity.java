@@ -170,6 +170,8 @@ literal|"id"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|id
 return|;
 block|}
@@ -333,6 +335,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|id
 argument_list|)
 expr_stmt|;
@@ -358,6 +362,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|id
 operator|=
 operator|(

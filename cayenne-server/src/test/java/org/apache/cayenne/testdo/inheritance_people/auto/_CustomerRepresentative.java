@@ -204,6 +204,8 @@ literal|"clientContactType"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|clientContactType
 return|;
 block|}
@@ -418,6 +420,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|clientContactType
 argument_list|)
 expr_stmt|;
@@ -425,6 +429,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|toClientCompany
 argument_list|)
 expr_stmt|;
@@ -450,6 +456,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|clientContactType
 operator|=
 operator|(
@@ -460,6 +468,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|toClientCompany
 operator|=
 name|in

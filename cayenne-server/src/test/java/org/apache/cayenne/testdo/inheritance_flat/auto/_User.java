@@ -333,6 +333,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|userProperties
 argument_list|)
 expr_stmt|;
@@ -358,6 +360,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|userProperties
 operator|=
 name|in

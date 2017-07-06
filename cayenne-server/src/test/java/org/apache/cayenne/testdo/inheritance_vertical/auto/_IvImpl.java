@@ -252,6 +252,8 @@ literal|"attr1"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|attr1
 return|;
 block|}
@@ -292,6 +294,8 @@ literal|"attr2"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|attr2
 return|;
 block|}
@@ -578,6 +582,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|attr1
 argument_list|)
 expr_stmt|;
@@ -585,6 +591,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|attr2
 argument_list|)
 expr_stmt|;
@@ -592,6 +600,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|other1
 argument_list|)
 expr_stmt|;
@@ -599,6 +609,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|other2
 argument_list|)
 expr_stmt|;
@@ -624,6 +636,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|attr1
 operator|=
 operator|(
@@ -634,6 +648,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|attr2
 operator|=
 operator|(
@@ -644,6 +660,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|other1
 operator|=
 name|in
@@ -651,6 +669,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|other2
 operator|=
 name|in

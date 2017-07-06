@@ -188,6 +188,8 @@ literal|"sub2Attr"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|sub2Attr
 return|;
 block|}
@@ -228,6 +230,8 @@ literal|"sub2Name"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|sub2Name
 return|;
 block|}
@@ -412,6 +416,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|sub2Attr
 argument_list|)
 expr_stmt|;
@@ -419,6 +425,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|sub2Name
 argument_list|)
 expr_stmt|;
@@ -444,6 +452,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|sub2Attr
 operator|=
 operator|(
@@ -454,6 +464,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|sub2Name
 operator|=
 operator|(

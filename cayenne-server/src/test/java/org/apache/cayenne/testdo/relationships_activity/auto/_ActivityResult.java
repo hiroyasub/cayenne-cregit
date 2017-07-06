@@ -234,6 +234,8 @@ literal|"appointDate"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|appointDate
 return|;
 block|}
@@ -274,6 +276,8 @@ literal|"appointNo"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|appointNo
 return|;
 block|}
@@ -314,6 +318,8 @@ literal|"field"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|field
 return|;
 block|}
@@ -431,6 +437,12 @@ name|this
 operator|.
 name|appointNo
 operator|=
+name|val
+operator|==
+literal|null
+condition|?
+literal|0
+else|:
 operator|(
 name|Integer
 operator|)
@@ -519,6 +531,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|appointDate
 argument_list|)
 expr_stmt|;
@@ -526,6 +540,8 @@ name|out
 operator|.
 name|writeInt
 argument_list|(
+name|this
+operator|.
 name|appointNo
 argument_list|)
 expr_stmt|;
@@ -533,6 +549,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|field
 argument_list|)
 expr_stmt|;
@@ -558,6 +576,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|appointDate
 operator|=
 operator|(
@@ -568,6 +588,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|appointNo
 operator|=
 name|in
@@ -575,6 +597,8 @@ operator|.
 name|readInt
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|field
 operator|=
 operator|(

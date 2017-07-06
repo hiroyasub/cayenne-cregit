@@ -283,6 +283,8 @@ literal|"longvarcharCol"
 argument_list|)
 expr_stmt|;
 return|return
+name|this
+operator|.
 name|longvarcharCol
 return|;
 block|}
@@ -686,6 +688,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|longvarcharCol
 argument_list|)
 expr_stmt|;
@@ -693,6 +697,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|base
 argument_list|)
 expr_stmt|;
@@ -700,6 +706,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|contained
 argument_list|)
 expr_stmt|;
@@ -707,6 +715,8 @@ name|out
 operator|.
 name|writeObject
 argument_list|(
+name|this
+operator|.
 name|orderBy
 argument_list|)
 expr_stmt|;
@@ -732,6 +742,8 @@ argument_list|(
 name|in
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|longvarcharCol
 operator|=
 operator|(
@@ -742,6 +754,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|base
 operator|=
 name|in
@@ -749,6 +763,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|contained
 operator|=
 name|in
@@ -756,6 +772,8 @@ operator|.
 name|readObject
 argument_list|()
 expr_stmt|;
+name|this
+operator|.
 name|orderBy
 operator|=
 name|in
