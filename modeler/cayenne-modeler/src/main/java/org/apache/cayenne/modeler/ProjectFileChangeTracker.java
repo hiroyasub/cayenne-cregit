@@ -372,6 +372,17 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|dm
+operator|.
+name|getConfigurationSource
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
+comment|// if DataMap is in separate file, monitor it
 name|addFile
 argument_list|(
 name|dm
@@ -386,6 +397,7 @@ name|getPath
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|resumeWatching

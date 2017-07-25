@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  *<p>DataMap XML file extension mechanics.</p>  *<p>  *     Can be used to enhance datamap.map.xml files with additional (really random) information.  *     By default extensions not used by {@link org.apache.cayenne.configuration.server.ServerRuntime} or  *     ClientRuntime so they can safely store big chunks of data.  *</p>  *<p>  *     Extensions can be contributed by {@link org.apache.cayenne.project.ProjectModule#contributeExtension(org.apache.cayenne.di.Binder)}.  *     {@link org.apache.cayenne.project.ProjectModule} currently used by Modeler and cli tools, e.g. cdbimport and cgen.  *</p>  *  * @see org.apache.cayenne.project.extension.info.InfoExtension as reference implementation  * @since 4.1  */
+comment|/**  *<p>DataMap XML file extension mechanics.</p>  *<p>  *     Can be used to enhance datamap.map.xml files with additional (really random) information.  *     By default extensions not used by {@link org.apache.cayenne.configuration.server.ServerRuntime} or  *     ClientRuntime so they can safely store big chunks of data.  *</p>  *<p>  *     Extensions can be contributed by {@link org.apache.cayenne.project.ProjectModule#contributeExtensions(org.apache.cayenne.di.Binder)}.  *     {@link org.apache.cayenne.project.ProjectModule} currently used by Modeler and cli tools, e.g. cdbimport and cgen.  *</p>  *  * @since 4.1  */
 end_comment
 
 begin_interface

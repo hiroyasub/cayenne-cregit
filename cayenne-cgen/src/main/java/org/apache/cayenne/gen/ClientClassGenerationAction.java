@@ -33,7 +33,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -229,7 +229,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      *      * @param entities      * @throws CayenneException      *      * @since 4.0 throws exception      */
+comment|/**      * @since 4.0 throws exception      */
 annotation|@
 name|Override
 specifier|public
@@ -243,7 +243,7 @@ argument_list|>
 name|entities
 parameter_list|)
 throws|throws
-name|CayenneException
+name|CayenneRuntimeException
 block|{
 if|if
 condition|(
@@ -256,7 +256,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 literal|"Can't create client classes. Check client supported option on DataMap configuration."
 argument_list|)

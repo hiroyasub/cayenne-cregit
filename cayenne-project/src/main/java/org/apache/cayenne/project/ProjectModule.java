@@ -245,7 +245,7 @@ name|ListBuilder
 argument_list|<
 name|ProjectExtension
 argument_list|>
-name|contributeExtension
+name|contributeExtensions
 parameter_list|(
 name|Binder
 name|binder
@@ -408,7 +408,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|contributeExtension
+name|contributeExtensions
 argument_list|(
 name|binder
 argument_list|)

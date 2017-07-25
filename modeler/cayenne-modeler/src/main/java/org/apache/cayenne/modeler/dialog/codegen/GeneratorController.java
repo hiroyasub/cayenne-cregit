@@ -27,7 +27,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -1185,7 +1185,7 @@ expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
-name|CayenneException
+name|CayenneRuntimeException
 name|exception
 parameter_list|)
 block|{

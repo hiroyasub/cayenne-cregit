@@ -2021,7 +2021,7 @@ argument_list|>
 name|entities
 parameter_list|)
 throws|throws
-name|CayenneException
+name|CayenneRuntimeException
 block|{
 if|if
 condition|(

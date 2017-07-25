@@ -132,16 +132,12 @@ name|XMLSerializable
 extends|,
 name|UndoableEditListener
 block|{
-specifier|public
-specifier|static
-specifier|final
 name|double
 name|ZOOM_FACTOR
 init|=
 literal|1.3
 decl_stmt|;
 comment|/**      * Builds graph      */
-specifier|public
 name|void
 name|buildGraph
 parameter_list|(
@@ -156,37 +152,31 @@ name|layout
 parameter_list|)
 function_decl|;
 comment|/**      * Invoked at destroying of the builder      */
-specifier|public
 name|void
 name|destroy
 parameter_list|()
 function_decl|;
 comment|/**      * Returns built graph for this builder      */
-specifier|public
 name|JGraph
 name|getGraph
 parameter_list|()
 function_decl|;
 comment|/**      * Returns domain.      */
-specifier|public
 name|DataChannelDescriptor
 name|getDataDomain
 parameter_list|()
 function_decl|;
 comment|/**      * Returns type of the graph      */
-specifier|public
 name|GraphType
 name|getType
 parameter_list|()
 function_decl|;
 comment|/**      * Returns selected entity,<code>null</code> if none is selected      */
-specifier|public
 name|Entity
 name|getSelectedEntity
 parameter_list|()
 function_decl|;
 comment|/**      * Returns cell of an entity      */
-specifier|public
 name|DefaultGraphCell
 name|getEntityCell
 parameter_list|(
