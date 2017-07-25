@@ -916,6 +916,9 @@ name|model
 operator|.
 name|removeRow
 argument_list|(
+operator|(
+name|DbAttribute
+operator|)
 name|e
 operator|.
 name|getAttribute

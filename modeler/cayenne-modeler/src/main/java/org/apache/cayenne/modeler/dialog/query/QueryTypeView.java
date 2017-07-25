@@ -196,7 +196,7 @@ operator|=
 operator|new
 name|JRadioButton
 argument_list|(
-literal|"Raw SQL"
+literal|"SQLTemplate Query"
 argument_list|)
 expr_stmt|;
 name|procedureSelect
