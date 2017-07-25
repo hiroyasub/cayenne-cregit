@@ -392,7 +392,9 @@ name|DataMap
 name|dataMap
 init|=
 name|loadDataMap
-argument_list|()
+argument_list|(
+name|injector
+argument_list|)
 decl_stmt|;
 comment|// load driver taking custom CLASSPATH into account...
 name|DriverDataSource
