@@ -23,9 +23,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|configuration
 operator|.
-name|Attribute
+name|ConfigurationNodeVisitor
 import|;
 end_import
 
@@ -83,6 +83,9 @@ name|encodeAsXML
 parameter_list|(
 name|XMLEncoder
 name|encoder
+parameter_list|,
+name|ConfigurationNodeVisitor
+name|delegate
 parameter_list|)
 block|{
 block|}

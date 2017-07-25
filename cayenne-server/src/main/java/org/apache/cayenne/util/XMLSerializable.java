@@ -15,6 +15,20 @@ name|util
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ConfigurationNodeVisitor
+import|;
+end_import
+
 begin_comment
 comment|/**  * Interface for Cayenne objects that can be saved to XML.  *   * @since 1.1  */
 end_comment
@@ -25,12 +39,14 @@ interface|interface
 name|XMLSerializable
 block|{
 comment|/**      * Prints itself as XML to the provided XMLEncoder.      *       * @since 1.1      */
-specifier|public
 name|void
 name|encodeAsXML
 parameter_list|(
 name|XMLEncoder
 name|encoder
+parameter_list|,
+name|ConfigurationNodeVisitor
+name|delegate
 parameter_list|)
 function_decl|;
 block|}

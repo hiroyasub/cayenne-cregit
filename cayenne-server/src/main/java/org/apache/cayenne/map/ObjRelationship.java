@@ -321,20 +321,22 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Prints itself as XML to the provided XMLEncoder.      *       * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|encodeAsXML
 parameter_list|(
 name|XMLEncoder
 name|encoder
+parameter_list|,
+name|ConfigurationNodeVisitor
+name|delegate
 parameter_list|)
 block|{
 name|ObjEntity
 name|source
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|getSourceEntity
 argument_list|()
 decl_stmt|;
@@ -349,20 +351,23 @@ return|return;
 block|}
 name|encoder
 operator|.
-name|print
+name|start
 argument_list|(
-literal|"<obj-relationship name=\""
-operator|+
+literal|"obj-relationship"
+argument_list|)
+operator|.
+name|attribute
+argument_list|(
+literal|"name"
+argument_list|,
 name|getName
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|encoder
 operator|.
-name|print
+name|attribute
 argument_list|(
-literal|"\" source=\""
-operator|+
+literal|"source"
+argument_list|,
 name|source
 operator|.
 name|getName
@@ -370,16 +375,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// looking up a target entity ensures that bogus names are not saved...
-comment|// whether
-comment|// this is good or bad is debatable, as users may want to point to
-comment|// non-existent
-comment|// entities on purpose.
+comment|// whether this is good or bad is debatable, as users may want to point to
+comment|// non-existent entities on purpose.
 name|ObjEntity
 name|target
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
@@ -392,10 +392,10 @@ condition|)
 block|{
 name|encoder
 operator|.
-name|print
+name|attribute
 argument_list|(
-literal|"\" target=\""
-operator|+
+literal|"target"
+argument_list|,
 name|target
 operator|.
 name|getName
@@ -422,48 +422,33 @@ condition|)
 block|{
 name|encoder
 operator|.
-name|print
+name|attribute
 argument_list|(
-literal|"\" collection-type=\""
-operator|+
+literal|"collection-type"
+argument_list|,
 name|getCollectionType
 argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|getMapKey
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
 name|encoder
 operator|.
-name|print
+name|attribute
 argument_list|(
-literal|"\" map-key=\""
-operator|+
-name|getMapKey
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
+literal|"lock"
+argument_list|,
 name|isUsedForLocking
 argument_list|()
-condition|)
-block|{
-name|encoder
+argument_list|)
 operator|.
-name|print
+name|attribute
 argument_list|(
-literal|"\" lock=\"true"
+literal|"map-key"
+argument_list|,
+name|getMapKey
+argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 name|String
 name|deleteRule
 init|=
@@ -477,60 +462,51 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|deleteRule
+operator|!=
+literal|null
+operator|&&
 name|getDeleteRule
 argument_list|()
 operator|!=
 name|DeleteRule
 operator|.
 name|NO_ACTION
-operator|&&
-name|deleteRule
-operator|!=
-literal|null
 condition|)
 block|{
 name|encoder
 operator|.
-name|print
+name|attribute
 argument_list|(
-literal|"\" deleteRule=\""
-operator|+
+literal|"deleteRule"
+argument_list|,
 name|deleteRule
 argument_list|)
 expr_stmt|;
 block|}
 comment|// quietly get rid of invalid path... this is not the best way of doing
-comment|// things,
-comment|// but it is consistent across map package
-name|String
-name|path
-init|=
+comment|// things, but it is consistent across map package
+name|encoder
+operator|.
+name|attribute
+argument_list|(
+literal|"db-relationship-path"
+argument_list|,
 name|getValidRelationshipPath
 argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|path
-operator|!=
-literal|null
-condition|)
-block|{
-name|encoder
-operator|.
-name|print
-argument_list|(
-literal|"\" db-relationship-path=\""
-operator|+
-name|path
 argument_list|)
 expr_stmt|;
-block|}
+name|delegate
+operator|.
+name|visitObjRelationship
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
 name|encoder
 operator|.
-name|println
-argument_list|(
-literal|"\"/>"
-argument_list|)
+name|end
+argument_list|()
 expr_stmt|;
 block|}
 comment|/**      * Returns a target ObjEntity of this relationship. Entity is looked up in      * the parent DataMap using "targetEntityName".      */
@@ -1716,7 +1692,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Sets relationship path, but does not trigger its conversion to      * List<DbRelationship> For internal purposes, primarily datamap loading      */
+comment|/**      * Sets relationship path, but does not trigger its conversion to      * List<DbRelationship> For internal purposes, primarily datamap loading      * @since 4.1 this method is public as it is used by new XML loaders      */
+specifier|public
 name|void
 name|setDeferredDbRelationshipPath
 parameter_list|(

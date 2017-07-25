@@ -397,6 +397,7 @@ return|return
 name|descriptor
 return|;
 block|}
+specifier|public
 name|void
 name|setName
 parameter_list|(
@@ -412,6 +413,7 @@ name|name
 expr_stmt|;
 block|}
 comment|/**      * It's better be handled by project upgrade handler and actually it is.      * But upgrade logic is faulty when project is several versions away      * and can't be changed without complete upgrade system rewrite      * @param factory old style query factory class      */
+specifier|public
 name|void
 name|setLegacyFactory
 parameter_list|(
@@ -476,6 +478,7 @@ argument_list|)
 throw|;
 block|}
 block|}
+specifier|public
 name|void
 name|setQueryType
 parameter_list|(
@@ -507,7 +510,7 @@ name|rootType
 operator|==
 literal|null
 operator|||
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|DATA_MAP_ROOT
 operator|.
@@ -528,7 +531,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|OBJ_ENTITY_ROOT
 operator|.
@@ -550,7 +553,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|DB_ENTITY_ROOT
 operator|.
@@ -572,7 +575,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|PROCEDURE_ROOT
 operator|.
@@ -594,7 +597,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|JAVA_CLASS_ROOT
 operator|.
@@ -628,6 +631,7 @@ else|:
 name|dataMap
 return|;
 block|}
+specifier|public
 name|void
 name|setResultEntity
 parameter_list|(
@@ -643,6 +647,7 @@ name|resultEntity
 expr_stmt|;
 block|}
 comment|/**      * Sets the information pertaining to the root of the query.      */
+specifier|public
 name|void
 name|setRoot
 parameter_list|(
@@ -675,6 +680,7 @@ operator|=
 name|rootName
 expr_stmt|;
 block|}
+specifier|public
 name|void
 name|setEjbql
 parameter_list|(
@@ -690,6 +696,7 @@ name|ejbql
 expr_stmt|;
 block|}
 comment|/**      * Adds raw sql. If adapterClass parameter is not null, sets the SQL string to be      * adapter-specific. Otherwise it is used as a default SQL string.      */
+specifier|public
 name|void
 name|addSql
 parameter_list|(
@@ -742,6 +749,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
 name|void
 name|setQualifier
 parameter_list|(
@@ -791,6 +799,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+specifier|public
 name|void
 name|addProperty
 parameter_list|(
@@ -826,6 +835,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|void
 name|addOrdering
 parameter_list|(
@@ -946,6 +956,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|void
 name|addPrefetch
 parameter_list|(

@@ -57,6 +57,8 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|xml
+operator|.
 name|XMLDataChannelDescriptorLoader
 import|;
 end_import

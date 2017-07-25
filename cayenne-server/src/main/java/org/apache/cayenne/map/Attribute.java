@@ -33,6 +33,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|ConfigurationNodeVisitor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|CayenneMapEntry
@@ -152,6 +166,8 @@ name|toString
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|abstract
 name|void
@@ -159,6 +175,9 @@ name|encodeAsXML
 parameter_list|(
 name|XMLEncoder
 name|encoder
+parameter_list|,
+name|ConfigurationNodeVisitor
+name|delegate
 parameter_list|)
 function_decl|;
 comment|/**      * Returns parent entity that holds this attribute.      */

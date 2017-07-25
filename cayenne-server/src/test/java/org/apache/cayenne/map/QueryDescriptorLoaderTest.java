@@ -142,7 +142,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|DB_ENTITY_ROOT
 argument_list|,
@@ -200,7 +200,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|OBJ_ENTITY_ROOT
 argument_list|,
@@ -242,7 +242,7 @@ name|setRoot
 argument_list|(
 name|map
 argument_list|,
-name|MapLoader
+name|QueryDescriptor
 operator|.
 name|DATA_MAP_ROOT
 argument_list|,
