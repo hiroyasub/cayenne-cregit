@@ -13,40 +13,28 @@ name|cayenne
 operator|.
 name|project
 operator|.
-name|upgrade
+name|extension
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|resource
-operator|.
-name|Resource
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines API of an upgrade handler for Cayenne projects.  *   * @since 3.1  */
+comment|/**  *<p>DataMap XML file extension mechanics.</p>  *<p>  *     Can be used to enhance datamap.map.xml files with additional (really random) information.  *     By default extensions not used by {@link org.apache.cayenne.configuration.server.ServerRuntime} or  *     ClientRuntime so they can safely store big chunks of data.  *</p>  *<p>  *     Extensions can be contributed by {@link org.apache.cayenne.project.ProjectModule#contributeExtension(org.apache.cayenne.di.Binder)}.  *     {@link org.apache.cayenne.project.ProjectModule} currently used by Modeler and cli tools, e.g. cdbimport and cgen.  *</p>  *  * @see org.apache.cayenne.project.extension.info.InfoExtension as reference implementation  * @since 4.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|ProjectUpgrader
+name|ProjectExtension
 block|{
-comment|/**      * Returns an upgrade handler to process upgrades of a given project.      */
-name|UpgradeHandler
-name|getUpgradeHandler
-parameter_list|(
-name|Resource
-name|projectSource
-parameter_list|)
+comment|/**      * @return delegate that handle loading phase of XML processing      */
+name|LoaderDelegate
+name|createLoaderDelegate
+parameter_list|()
+function_decl|;
+comment|/**      * @return delegate that handle saving phase of XML processing      */
+name|SaverDelegate
+name|createSaverDelegate
+parameter_list|()
 function_decl|;
 block|}
 end_interface

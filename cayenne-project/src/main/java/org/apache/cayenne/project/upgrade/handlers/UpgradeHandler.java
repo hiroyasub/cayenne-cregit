@@ -14,6 +14,8 @@ operator|.
 name|project
 operator|.
 name|upgrade
+operator|.
+name|handlers
 package|;
 end_package
 
@@ -25,7 +27,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ConfigurationException
+name|configuration
+operator|.
+name|DataChannelDescriptor
 import|;
 end_import
 
@@ -37,14 +41,16 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|resource
+name|project
 operator|.
-name|Resource
+name|upgrade
+operator|.
+name|UpgradeUnit
 import|;
 end_import
 
 begin_comment
-comment|/**  * A stateful helper object for analyzing the projects and performing upgrades.  *   * @since 3.1  */
+comment|/**  * Interface that upgrade handlers should implement.  * Implementation also should be injected into DI stack in right order.  *  * @since 4.1  */
 end_comment
 
 begin_interface
@@ -52,23 +58,37 @@ specifier|public
 interface|interface
 name|UpgradeHandler
 block|{
-comment|/**      * Returns the original configuration source for the project before the upgrade.      */
-name|Resource
-name|getProjectSource
+comment|/**      * @return target version for this handler      */
+name|String
+name|getVersion
 parameter_list|()
 function_decl|;
-comment|/**      * Returns a metadata object containing information about the upgrade to be performed.      * Users should call this method before invoking {@link #performUpgrade()}, to make      * sure upgrade is needed and possible. Tools (like CayenneModeler) may use this      * object to build user-friendly messages asking for user input on the upgrade.      */
-name|UpgradeMetaData
-name|getUpgradeMetaData
-parameter_list|()
+comment|/**      * Process DOM for the project root file (e.g. cayenne-project.xml)      */
+name|void
+name|processProjectDom
+parameter_list|(
+name|UpgradeUnit
+name|upgradeUnit
+parameter_list|)
 function_decl|;
-comment|/**      * Performs an in-place project configuration upgrade, throwing a      * {@link ConfigurationException} if the upgrade fails. Before doing the upgrade,      * check the handler {@link UpgradeMetaData}. Upgrades will succeed only for projects      * that have {@link UpgradeType#UPGRADE_NEEDED} or      * {@link UpgradeType#UPGRADE_NOT_NEEDED} statuses. In the later case of course,      * upgrade will simply be skipped.      *       * @return a configuration Resource for the upgraded project. Depending on the upgrade      *         type, it may be the same resource as the original configuration, or a      *         totally different resource.      */
-name|Resource
-name|performUpgrade
-parameter_list|()
-throws|throws
-name|ConfigurationException
+comment|/**      * Process DOM for the data map file (e.g. datamap.map.xml)      */
+name|void
+name|processDataMapDom
+parameter_list|(
+name|UpgradeUnit
+name|upgradeUnit
+parameter_list|)
 function_decl|;
+comment|/**      * This method should be avoided as much as possible, as      * using this method will make upgrade process not future proof and      * will require refactoring if model should change.      */
+name|void
+name|processModel
+parameter_list|(
+name|DataChannelDescriptor
+name|dataChannelDescriptor
+parameter_list|)
+function_decl|;
+comment|// should be this really, but no Java 8 yet:
+comment|//default void processModel(DataChannelDescriptor dataChannelDescriptor) {}
 block|}
 end_interface
 

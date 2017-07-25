@@ -110,6 +110,15 @@ specifier|public
 class|class
 name|Project
 block|{
+comment|/** 	 * Current version of Cayenne project. 	 * Used by different parsers and savers of project's XML files. 	 * 	 * @since 4.1 	 */
+specifier|static
+specifier|public
+specifier|final
+name|int
+name|VERSION
+init|=
+literal|10
+decl_stmt|;
 specifier|protected
 name|boolean
 name|modified
@@ -165,9 +174,7 @@ name|unusedResources
 operator|=
 operator|new
 name|HashSet
-argument_list|<
-name|URL
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

@@ -165,6 +165,22 @@ name|cayenne
 operator|.
 name|project
 operator|.
+name|extension
+operator|.
+name|ProjectExtension
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project
+operator|.
 name|unit
 operator|.
 name|Project2Case
@@ -296,6 +312,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -377,7 +403,15 @@ name|saver
 operator|=
 operator|new
 name|FileProjectSaver
+argument_list|(
+name|Collections
+operator|.
+expr|<
+name|ProjectExtension
+operator|>
+name|emptyList
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|Injector
 name|injector
