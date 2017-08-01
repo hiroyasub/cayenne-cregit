@@ -127,7 +127,7 @@ begin_class
 class|class
 name|DataSourceChildrenHandler
 extends|extends
-name|SAXNestedTagHandler
+name|NamespaceAwareNestedTagHandler
 block|{
 specifier|private
 specifier|static

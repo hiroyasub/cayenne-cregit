@@ -664,6 +664,13 @@ argument_list|(
 name|input
 argument_list|)
 expr_stmt|;
+name|loaderContext
+operator|.
+name|dataChannelLoaded
+argument_list|(
+name|descriptor
+argument_list|)
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(

@@ -138,7 +138,7 @@ specifier|final
 class|class
 name|DataChannelChildrenHandler
 extends|extends
-name|SAXNestedTagHandler
+name|NamespaceAwareNestedTagHandler
 block|{
 specifier|private
 specifier|static

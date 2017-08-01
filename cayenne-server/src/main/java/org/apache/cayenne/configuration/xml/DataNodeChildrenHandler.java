@@ -78,7 +78,7 @@ specifier|final
 class|class
 name|DataNodeChildrenHandler
 extends|extends
-name|SAXNestedTagHandler
+name|NamespaceAwareNestedTagHandler
 block|{
 specifier|static
 specifier|final
@@ -111,7 +111,7 @@ parameter_list|(
 name|XMLDataChannelDescriptorLoader
 name|xmlDataChannelDescriptorLoader
 parameter_list|,
-name|SAXNestedTagHandler
+name|NamespaceAwareNestedTagHandler
 name|parentHandler
 parameter_list|,
 name|DataNodeDescriptor
