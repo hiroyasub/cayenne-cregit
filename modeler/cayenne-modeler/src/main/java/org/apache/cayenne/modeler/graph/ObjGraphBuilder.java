@@ -219,6 +219,18 @@ name|jgraph
 operator|.
 name|graph
 operator|.
+name|AttributeMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|jgraph
+operator|.
+name|graph
+operator|.
 name|DefaultEdge
 import|;
 end_import
@@ -244,6 +256,16 @@ operator|.
 name|graph
 operator|.
 name|GraphConstants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
 import|;
 end_import
 
@@ -409,26 +431,14 @@ return|return
 literal|false
 return|;
 block|}
-comment|// TODO: andrus 05/30/2010 - reindexing all DataMaps every time may be VERY slow
-comment|// on large projects
+comment|// TODO: andrus 05/30/2010 - reindexing all DataMaps every time may be VERY slow on large projects
 name|EntityResolver
 name|resolver
 init|=
 operator|new
 name|EntityResolver
 argument_list|(
-operator|(
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|mediator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-operator|)
+name|domain
 operator|.
 name|getDataMaps
 argument_list|()
@@ -439,7 +449,7 @@ name|inheritanceTree
 init|=
 name|resolver
 operator|.
-name|lookupInheritanceTree
+name|getInheritanceTree
 argument_list|(
 name|entity
 operator|.
@@ -907,10 +917,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|Map
+argument_list|<
+name|DefaultEdge
+argument_list|,
+name|AttributeMap
+argument_list|>
 name|nested
 init|=
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|nested

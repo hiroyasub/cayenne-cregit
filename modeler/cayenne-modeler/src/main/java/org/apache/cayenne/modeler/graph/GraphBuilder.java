@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Serializable
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -118,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface for building graphs which represent some prespective of a domain  */
+comment|/**  * Interface for building graphs which represent some perspective of a domain  */
 end_comment
 
 begin_interface
@@ -126,8 +116,6 @@ specifier|public
 interface|interface
 name|GraphBuilder
 extends|extends
-name|Serializable
-extends|,
 name|XMLSerializable
 extends|,
 name|UndoableEditListener
