@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -275,16 +285,6 @@ name|ResourceLocator
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
 begin_comment
 comment|/**  *<p>  * Cayenne DbAdapter implementation for<a  * href="http://www.microsoft.com/sql/">Microsoft SQL Server</a> engine.  *</p>  *<h3>Microsoft Driver Settings</h3>  *<p>  * Sample connection settings to use with MS SQL Server are shown below:  *   *<pre>  *       sqlserver.jdbc.username = test  *       sqlserver.jdbc.password = secret  *       sqlserver.jdbc.url = jdbc:sqlserver://192.168.0.65;databaseName=cayenne;SelectMethod=cursor  *       sqlserver.jdbc.driver = com.microsoft.sqlserver.jdbc.SQLServerDriver  *</pre>  *<p>  *<i>Note on case-sensitive LIKE: if your application requires case-sensitive  * LIKE support, ask your DBA to configure the database to use a case-senstitive  * collation (one with "CS" in symbolic collation name instead of "CI", e.g.  * "SQL_Latin1_general_CP1_CS_AS").</i>  *</p>  *<h3>jTDS Driver Settings</h3>  *<p>  * jTDS is an open source driver that can be downloaded from<a href=  * "http://jtds.sourceforge.net">http://jtds.sourceforge.net</a>. It supports  * both SQLServer and Sybase. Sample SQLServer settings are the following:  *</p>  *   *<pre>  *       sqlserver.jdbc.username = test  *       sqlserver.jdbc.password = secret  *       sqlserver.jdbc.url = jdbc:jtds:sqlserver://192.168.0.65/cayenne  *       sqlserver.jdbc.driver = net.sourceforge.jtds.jdbc.Driver  *</pre>  *   * @since 1.1  */
 end_comment
@@ -380,15 +380,6 @@ argument_list|,
 name|resourceLocator
 argument_list|,
 name|valueObjectTypeRegistry
-argument_list|)
-expr_stmt|;
-comment|// TODO: i wonder if Sybase supports generated keys...
-comment|// in this case we need to move this to the super.
-name|this
-operator|.
-name|setSupportsGeneratedKeys
-argument_list|(
-literal|true
 argument_list|)
 expr_stmt|;
 name|this
