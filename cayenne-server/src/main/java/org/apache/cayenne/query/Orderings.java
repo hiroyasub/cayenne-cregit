@@ -52,7 +52,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   *<p>Orderings is provided so that you can chain Ordering together and then use    * the result to pass into methods that require List&lt;Ordering&gt;</p>   *<p>Example:</p>   *<pre>Person.COMPANY_NAME.asc().then(Person.FIRST_NAME.desc)</pre>   *    * @since 4.0   */
+comment|/**   *<p>Orderings is provided so that you can chain Ordering together and then use    * the result to pass into methods that require List&lt;Ordering&gt;</p>   *<p>Example:</p>   *<pre>Person.COMPANY_NAME.asc().then(Person.FIRST_NAME.desc)</pre>   *    * @since 4.1   */
 end_comment
 
 begin_class
@@ -177,7 +177,7 @@ return|return
 name|this
 return|;
 block|}
-comment|/** 	 * @see Orderings#then(Orderings) 	 * @param nextOrderings 	 * @return 	 */
+comment|/** 	 * @see Orderings#then(Orderings) 	 * @param nextOrderings the sort ordering to add 	 * @return this 	 */
 specifier|public
 name|Orderings
 name|then

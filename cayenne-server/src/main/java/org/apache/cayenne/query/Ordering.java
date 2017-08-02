@@ -1562,7 +1562,7 @@ return|return
 name|sortOrder
 return|;
 block|}
-comment|/** 	  * Returns Orderings with this Ordering followed by the provided 	  * next Ordering. 	  *  	  * @param nextOrdering the next Ordering to chain to this 	  * @return a new Orderings with both Ordering 	  */
+comment|/** 	  * Returns Orderings with this Ordering followed by the provided 	  * next Ordering. 	  *  	  * @param nextOrdering the next Ordering to chain to this 	  * @return a new Orderings with both Ordering 	  * @since 4.1 	  */
 specifier|public
 name|Orderings
 name|then
@@ -1581,7 +1581,7 @@ name|nextOrdering
 argument_list|)
 return|;
 block|}
-comment|/** 	  * Returns Orderings with this Ordering followed by the provided 	  * list of next Orderings. 	  *  	  * @param nextOrderings the next Orderings to chain to this 	  * @return an array of sort orderings 	  */
+comment|/** 	  * Returns Orderings with this Ordering followed by the provided 	  * list of next Orderings. 	  *  	  * @param nextOrderings the next Orderings to chain to this 	  * @return an array of sort orderings 	  * @since 4.1 	  */
 specifier|public
 name|Orderings
 name|then
@@ -1608,7 +1608,7 @@ name|nextOrderings
 argument_list|)
 return|;
 block|}
-comment|/** 	  * @see Orderings#then(Orderings) 	  * @param nextOrderings 	  * @return 	  */
+comment|/** 	  * @see Orderings#then(Orderings) 	  * @param nextOrderings the next Orderings to chain to this 	  * @return an array of sort orderings 	  * @since 4.1 	  */
 specifier|public
 name|Orderings
 name|then
