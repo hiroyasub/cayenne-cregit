@@ -61,6 +61,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -156,22 +166,6 @@ operator|.
 name|util
 operator|.
 name|Util
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|map
-operator|.
-name|SingletonMap
 import|;
 end_import
 
@@ -668,10 +662,16 @@ block|{
 comment|// this map is used as "flyweight", providing on the spot context for Ognl
 comment|// expression evaluation
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|listContext
 init|=
-operator|new
-name|SingletonMap
+name|Collections
+operator|.
+name|singletonMap
 argument_list|(
 name|ITEM_VAR
 argument_list|,

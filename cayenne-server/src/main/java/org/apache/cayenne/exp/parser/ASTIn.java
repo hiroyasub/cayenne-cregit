@@ -19,15 +19,13 @@ end_package
 
 begin_import
 import|import
-name|org
+name|java
 operator|.
-name|apache
+name|util
 operator|.
-name|cayenne
+name|function
 operator|.
-name|exp
-operator|.
-name|Expression
+name|Function
 import|;
 end_import
 
@@ -37,11 +35,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|exp
 operator|.
-name|Transformer
+name|Expression
 import|;
 end_import
 
@@ -279,7 +277,12 @@ specifier|protected
 name|Object
 name|transformExpression
 parameter_list|(
-name|Transformer
+name|Function
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|transformer
 parameter_list|)
 block|{

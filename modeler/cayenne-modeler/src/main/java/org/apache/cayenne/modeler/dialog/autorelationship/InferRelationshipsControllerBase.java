@@ -123,20 +123,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Predicate
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|awt
@@ -192,6 +178,18 @@ operator|.
 name|util
 operator|.
 name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Predicate
 import|;
 end_import
 
@@ -1162,6 +1160,9 @@ name|boolean
 name|updateSelection
 parameter_list|(
 name|Predicate
+argument_list|<
+name|InferredRelationship
+argument_list|>
 name|predicate
 parameter_list|)
 block|{
@@ -1183,7 +1184,7 @@ name|select
 init|=
 name|predicate
 operator|.
-name|evaluate
+name|test
 argument_list|(
 name|entity
 argument_list|)
@@ -1256,15 +1257,13 @@ return|return
 name|currentEntity
 operator|!=
 literal|null
-condition|?
+operator|&&
 name|selectedEntities
 operator|.
 name|contains
 argument_list|(
 name|currentEntity
 argument_list|)
-else|:
-literal|false
 return|;
 block|}
 specifier|public

@@ -251,20 +251,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Transformer
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -360,6 +346,18 @@ operator|.
 name|util
 operator|.
 name|SortedMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
 import|;
 end_import
 
@@ -2459,7 +2457,12 @@ specifier|final
 class|class
 name|RelationshipPathConverter
 implements|implements
-name|Transformer
+name|Function
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 block|{
 name|String
 name|relationshipPath
@@ -2528,7 +2531,7 @@ block|}
 block|}
 specifier|public
 name|Object
-name|transform
+name|apply
 parameter_list|(
 name|Object
 name|input

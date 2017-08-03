@@ -123,7 +123,7 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Adds a snapshot to batch. Optionally stores the object id for the      * snapshot. Note that snapshot can hold either the real values or the      * instances of org.apache.commons.collections.Factory that will be resolved      * to the actual value on the spot, thus allowing deferred propagated keys      * resolution.      *       * @since 1.2      */
+comment|/**      * Adds a snapshot to batch. Optionally stores the object id for the      * snapshot. Note that snapshot can hold either the real values or the      * instances of java.util.Supplier that will be resolved      * to the actual value on the spot, thus allowing deferred propagated keys      * resolution.      *       * @since 1.2      */
 specifier|public
 name|void
 name|add
