@@ -155,20 +155,6 @@ name|Parser
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|IteratorUtils
-import|;
-end_import
-
 begin_comment
 comment|/**  * Helper class used by EOModelProcessor. EOModelHelper loads an EOModel from  * the specified location and gives its users access to the untyped EOModel  * information.  */
 end_comment
@@ -1148,6 +1134,7 @@ block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|entityClassIndex
 operator|.
@@ -1193,7 +1180,8 @@ name|prototypeValues
 operator|=
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 expr_stmt|;
 block|}
 else|else
@@ -1488,9 +1476,10 @@ argument_list|()
 condition|)
 block|{
 return|return
-name|IteratorUtils
+name|Collections
 operator|.
-name|EMPTY_ITERATOR
+name|emptyIterator
+argument_list|()
 return|;
 block|}
 return|return

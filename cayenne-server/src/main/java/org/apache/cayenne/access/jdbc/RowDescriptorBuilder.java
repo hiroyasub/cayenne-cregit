@@ -650,13 +650,13 @@ name|warn
 argument_list|(
 literal|"Found duplicated columns '"
 operator|+
-name|Util
+name|String
 operator|.
 name|join
 argument_list|(
-name|duplicates
-argument_list|,
 literal|"', '"
+argument_list|,
+name|duplicates
 argument_list|)
 operator|+
 literal|"' in row descriptor. "
