@@ -267,7 +267,7 @@ name|Object
 name|makeInt
 parameter_list|()
 block|{
-name|Object
+name|long
 name|result
 decl_stmt|;
 name|String
@@ -444,6 +444,11 @@ expr_stmt|;
 break|break;
 block|}
 return|return
+name|negate
+condition|?
+operator|-
+name|result
+else|:
 name|result
 return|;
 block|}
