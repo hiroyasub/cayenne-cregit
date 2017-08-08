@@ -1445,6 +1445,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|template
+operator|.
+name|CayenneSQLTemplateProcessor
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|tx
 operator|.
 name|DefaultTransactionFactory
@@ -2859,6 +2873,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+comment|//        binder.bind(SQLTemplateProcessor.class).to(VelocitySQLTemplateProcessor.class);
 name|binder
 operator|.
 name|bind
@@ -2870,7 +2885,7 @@ argument_list|)
 operator|.
 name|to
 argument_list|(
-name|VelocitySQLTemplateProcessor
+name|CayenneSQLTemplateProcessor
 operator|.
 name|class
 argument_list|)

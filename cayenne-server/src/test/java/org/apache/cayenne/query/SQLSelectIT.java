@@ -209,6 +209,16 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Ignore
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
 import|;
 end_import
@@ -1784,6 +1794,12 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+annotation|@
+name|Ignore
+argument_list|(
+literal|"This is supported by Velocity only"
+argument_list|)
+comment|// TODO: move this test to new cayenne-velocity module
 specifier|public
 name|void
 name|test_ParamsArray_Multiple_OptionalChunks
@@ -1874,6 +1890,12 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+annotation|@
+name|Ignore
+argument_list|(
+literal|"This is supported by Velocity only"
+argument_list|)
+comment|// TODO: move this test to new cayenne-velocity module
 specifier|public
 name|void
 name|test_Params_Multiple_OptionalChunks

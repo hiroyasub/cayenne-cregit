@@ -95,6 +95,12 @@ init|=
 literal|11
 decl_stmt|;
 specifier|public
+name|int
+name|JJTARRAY
+init|=
+literal|12
+decl_stmt|;
+specifier|public
 name|String
 index|[]
 name|jjtNodeName
@@ -123,13 +129,15 @@ block|,
 literal|"Variable"
 block|,
 literal|"Method"
+block|,
+literal|"Array"
 block|,   }
 decl_stmt|;
 block|}
 end_interface
 
 begin_comment
-comment|/* JavaCC - OriginalChecksum=7c5329fded1e29c67b674bf81b4db143 (do not edit this line) */
+comment|/* JavaCC - OriginalChecksum=4e04f6ed8da48f129794e9555444f8df (do not edit this line) */
 end_comment
 
 end_unit

@@ -40,41 +40,17 @@ comment|/** RegularExpression Id. */
 name|int
 name|IF
 init|=
-literal|1
+literal|5
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|ELSE
 init|=
-literal|2
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|END
-init|=
-literal|3
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|TRUE
-init|=
-literal|4
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|FALSE
-init|=
-literal|5
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|WHITESPACE
-init|=
 literal|6
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|NEWLINE
+name|END
 init|=
 literal|7
 decl_stmt|;
@@ -92,129 +68,147 @@ literal|9
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LBRACKET
+name|TRUE
 init|=
 literal|10
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|RBRACKET
+name|FALSE
 init|=
 literal|11
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|COMMA
+name|RBRACKET
 init|=
 literal|12
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DOT
+name|COMMA
 init|=
 literal|13
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|IDENTIFIER
+name|LSBRACKET
 init|=
 literal|14
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LETTER
+name|RSBRACKET
 init|=
 literal|15
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DIGIT
+name|LBRACKET
 init|=
 literal|16
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SINGLE_LINE_COMMENT_END
+name|DOT
+init|=
+literal|17
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|IDENTIFIER
 init|=
 literal|18
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|ESC
+name|LETTER
+init|=
+literal|19
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|DIGIT
+init|=
+literal|20
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|SINGLE_LINE_COMMENT_END
 init|=
 literal|22
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
+name|ESC
+init|=
+literal|26
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
 name|SINGLE_QUOTED_STRING
-init|=
-literal|24
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|STRING_ESC
-init|=
-literal|25
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|DOUBLE_QUOTED_STRING
-init|=
-literal|27
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|INT_LITERAL
 init|=
 literal|28
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|FLOAT_LITERAL
+name|STRING_ESC
 init|=
 literal|29
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DEC_FLT
-init|=
-literal|30
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|DEC_DIGITS
+name|DOUBLE_QUOTED_STRING
 init|=
 literal|31
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|EXPONENT
+name|INT_LITERAL
 init|=
 literal|32
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|FLT_SUFF
+name|FLOAT_LITERAL
 init|=
 literal|33
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DOUBLE_ESCAPE
+name|DEC_FLT
 init|=
 literal|34
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|ESCAPE
+name|DEC_DIGITS
 init|=
 literal|35
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|TEXT
+name|EXPONENT
 init|=
 literal|36
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|FLT_SUFF
+init|=
+literal|37
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|TEXT
+init|=
+literal|38
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|TEXT_OTHER
+init|=
+literal|39
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
@@ -224,21 +218,33 @@ literal|0
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
-name|IN_SINGLE_LINE_COMMENT
+name|ARGS
 init|=
 literal|1
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
-name|WithinSingleQuoteLiteral
+name|NOT_TEXT
 init|=
 literal|2
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
-name|WithinDoubleQuoteLiteral
+name|IN_SINGLE_LINE_COMMENT
 init|=
 literal|3
+decl_stmt|;
+comment|/** Lexical state. */
+name|int
+name|WithinSingleQuoteLiteral
+init|=
+literal|4
+decl_stmt|;
+comment|/** Lexical state. */
+name|int
+name|WithinDoubleQuoteLiteral
+init|=
+literal|5
 decl_stmt|;
 comment|/** Literal token values. */
 name|String
@@ -248,29 +254,37 @@ init|=
 block|{
 literal|"<EOF>"
 block|,
+literal|"\" \""
+block|,
+literal|"\"\\t\""
+block|,
+literal|"\"\\n\""
+block|,
+literal|"\"\\r\""
+block|,
 literal|"\"#if\""
 block|,
 literal|"\"#else\""
 block|,
 literal|"\"#end\""
 block|,
-literal|"<TRUE>"
-block|,
-literal|"<FALSE>"
-block|,
-literal|"<WHITESPACE>"
-block|,
-literal|"<NEWLINE>"
-block|,
 literal|"\"#\""
 block|,
 literal|"\"$\""
 block|,
-literal|"\"(\""
+literal|"<TRUE>"
+block|,
+literal|"<FALSE>"
 block|,
 literal|"\")\""
 block|,
 literal|"\",\""
+block|,
+literal|"\"[\""
+block|,
+literal|"\"]\""
+block|,
+literal|"\"(\""
 block|,
 literal|"\".\""
 block|,
@@ -284,7 +298,7 @@ literal|"\"##\""
 block|,
 literal|"<SINGLE_LINE_COMMENT_END>"
 block|,
-literal|"<token of kind 19>"
+literal|"<token of kind 23>"
 block|,
 literal|"\"\\\'\""
 block|,
@@ -292,13 +306,13 @@ literal|"\"\\\"\""
 block|,
 literal|"<ESC>"
 block|,
-literal|"<token of kind 23>"
+literal|"<token of kind 27>"
 block|,
 literal|"\"\\\'\""
 block|,
 literal|"<STRING_ESC>"
 block|,
-literal|"<token of kind 26>"
+literal|"<token of kind 30>"
 block|,
 literal|"\"\\\"\""
 block|,
@@ -314,11 +328,9 @@ literal|"<EXPONENT>"
 block|,
 literal|"<FLT_SUFF>"
 block|,
-literal|"\"\\\\\\\\\""
-block|,
-literal|"\"\\\\\""
-block|,
 literal|"<TEXT>"
+block|,
+literal|"<TEXT_OTHER>"
 block|,   }
 decl_stmt|;
 block|}

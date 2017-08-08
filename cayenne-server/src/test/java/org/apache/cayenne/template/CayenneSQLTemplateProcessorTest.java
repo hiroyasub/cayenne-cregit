@@ -16,18 +16,14 @@ package|;
 end_package
 
 begin_import
-import|import
+import|import static
 name|org
 operator|.
-name|apache
+name|junit
 operator|.
-name|cayenne
+name|Assert
 operator|.
-name|template
-operator|.
-name|parser
-operator|.
-name|ASTExpression
+name|*
 import|;
 end_import
 
@@ -35,24 +31,12 @@ begin_comment
 comment|/**  * @since 4.1  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|Directive
-block|{
-name|String
-name|apply
-parameter_list|(
-name|Context
-name|context
-parameter_list|,
-name|ASTExpression
-modifier|...
-name|expressions
-parameter_list|)
-function_decl|;
-block|}
-end_interface
+class|class
+name|CayenneSQLTemplateProcessorTest
+block|{    }
+end_class
 
 end_unit
 
