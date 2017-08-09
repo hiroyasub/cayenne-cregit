@@ -11,21 +11,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|velocity
+name|template
+operator|.
+name|directive
 package|;
 end_package
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
 
 begin_import
 import|import
@@ -258,6 +248,18 @@ operator|.
 name|junit
 operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
 import|;
 end_import
 

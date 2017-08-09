@@ -53,11 +53,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|StringUtils
+name|Util
 import|;
 end_import
 
@@ -241,9 +241,9 @@ name|obj
 operator|.
 name|setName
 argument_list|(
-name|StringUtils
+name|Util
 operator|.
-name|capitalize
+name|capitalized
 argument_list|(
 name|getRandomJavaName
 argument_list|()

@@ -11,7 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|velocity
+name|template
 package|;
 end_package
 

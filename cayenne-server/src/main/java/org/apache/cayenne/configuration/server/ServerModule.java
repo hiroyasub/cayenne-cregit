@@ -1525,20 +1525,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|velocity
-operator|.
-name|VelocitySQLTemplateProcessor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|xml
 operator|.
 name|sax
@@ -2873,7 +2859,6 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|//        binder.bind(SQLTemplateProcessor.class).to(VelocitySQLTemplateProcessor.class);
 name|binder
 operator|.
 name|bind

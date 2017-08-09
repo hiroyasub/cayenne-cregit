@@ -157,11 +157,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|util
 operator|.
-name|Transformer
+name|Util
 import|;
 end_import
 
@@ -173,9 +173,9 @@ name|apache
 operator|.
 name|commons
 operator|.
-name|lang
+name|collections
 operator|.
-name|StringUtils
+name|Transformer
 import|;
 end_import
 
@@ -671,7 +671,7 @@ name|warn
 argument_list|(
 literal|"Found duplicated columns '"
 operator|+
-name|StringUtils
+name|Util
 operator|.
 name|join
 argument_list|(

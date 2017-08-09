@@ -76,18 +76,16 @@ import|;
 end_import
 
 begin_import
-import|import static
+import|import
 name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|StringUtils
-operator|.
-name|isEmpty
+name|Util
 import|;
 end_import
 
@@ -353,7 +351,9 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|isEmpty
+name|Util
+operator|.
+name|isEmptyString
 argument_list|(
 name|obj
 operator|.
