@@ -61,11 +61,11 @@ block|{
 specifier|public
 specifier|static
 specifier|final
-name|BindEqual
+name|BindNotEqual
 name|INSTANCE
 init|=
 operator|new
-name|BindEqual
+name|BindNotEqual
 argument_list|()
 decl_stmt|;
 annotation|@
