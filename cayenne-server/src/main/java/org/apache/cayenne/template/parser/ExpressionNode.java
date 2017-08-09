@@ -40,6 +40,13 @@ specifier|public
 interface|interface
 name|ExpressionNode
 block|{
+name|String
+name|evaluateAsString
+parameter_list|(
+name|Context
+name|context
+parameter_list|)
+function_decl|;
 name|Object
 name|evaluateAsObject
 parameter_list|(

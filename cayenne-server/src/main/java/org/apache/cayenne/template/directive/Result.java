@@ -476,7 +476,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|String
+name|void
 name|apply
 parameter_list|(
 name|Context
@@ -502,7 +502,7 @@ index|[
 literal|0
 index|]
 operator|.
-name|evaluate
+name|evaluateAsString
 argument_list|(
 name|context
 argument_list|)
@@ -531,7 +531,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|evaluate
+name|evaluateAsString
 argument_list|(
 name|context
 argument_list|)
@@ -568,7 +568,7 @@ index|[
 literal|2
 index|]
 operator|.
-name|evaluate
+name|evaluateAsString
 argument_list|(
 name|context
 argument_list|)
@@ -595,7 +595,7 @@ index|[
 literal|3
 index|]
 operator|.
-name|evaluate
+name|evaluateAsString
 argument_list|(
 name|context
 argument_list|)
@@ -678,11 +678,16 @@ argument_list|(
 name|columnDescriptor
 argument_list|)
 expr_stmt|;
-name|String
-name|result
-init|=
+name|context
+operator|.
+name|getBuilder
+argument_list|()
+operator|.
+name|append
+argument_list|(
 name|column
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -702,16 +707,22 @@ name|column
 argument_list|)
 condition|)
 block|{
-name|result
-operator|+=
+name|context
+operator|.
+name|getBuilder
+argument_list|()
+operator|.
+name|append
+argument_list|(
 literal|" AS "
-operator|+
+argument_list|)
+operator|.
+name|append
+argument_list|(
 name|alias
+argument_list|)
 expr_stmt|;
 block|}
-return|return
-name|result
-return|;
 block|}
 comment|/**      * Converts "short" type notation to the fully qualified class name. Right      * now supports all major standard SQL types, including primitives. All      * other types are expected to be fully qualified, and are not converted.      */
 specifier|protected

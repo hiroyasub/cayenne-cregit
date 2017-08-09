@@ -74,7 +74,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|String
+name|void
 name|evaluate
 parameter_list|(
 name|Context
@@ -99,9 +99,7 @@ operator|==
 literal|null
 condition|)
 block|{
-return|return
-literal|""
-return|;
+return|return;
 block|}
 name|ASTExpression
 index|[]
@@ -146,7 +144,6 @@ name|i
 index|]
 expr_stmt|;
 block|}
-return|return
 name|directive
 operator|.
 name|apply
@@ -155,7 +152,7 @@ name|context
 argument_list|,
 name|expressions
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 block|}
 end_class

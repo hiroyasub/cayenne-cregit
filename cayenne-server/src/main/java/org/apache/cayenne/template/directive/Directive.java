@@ -56,7 +56,7 @@ specifier|public
 interface|interface
 name|Directive
 block|{
-name|String
+name|void
 name|apply
 parameter_list|(
 name|Context

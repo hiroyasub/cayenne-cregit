@@ -58,7 +58,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|String
+name|void
 name|evaluate
 parameter_list|(
 name|Context
@@ -86,7 +86,6 @@ name|context
 argument_list|)
 condition|)
 block|{
-return|return
 name|jjtGetChild
 argument_list|(
 literal|1
@@ -96,7 +95,7 @@ name|evaluate
 argument_list|(
 name|context
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -109,7 +108,6 @@ operator|>
 literal|2
 condition|)
 block|{
-return|return
 name|jjtGetChild
 argument_list|(
 literal|2
@@ -119,11 +117,8 @@ name|evaluate
 argument_list|(
 name|context
 argument_list|)
-return|;
+expr_stmt|;
 block|}
-return|return
-literal|""
-return|;
 block|}
 block|}
 block|}

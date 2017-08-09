@@ -54,18 +54,8 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-specifier|public
-name|void
-name|jjtOpen
-parameter_list|()
-block|{
-block|}
-specifier|public
-name|void
-name|jjtClose
-parameter_list|()
-block|{
-block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|jjtSetParent
@@ -79,6 +69,8 @@ operator|=
 name|n
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Node
 name|jjtGetParent
@@ -88,6 +80,8 @@ return|return
 name|parent
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|jjtAddChild
@@ -168,6 +162,8 @@ operator|=
 name|n
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|Node
 name|jjtGetChild
@@ -183,6 +179,8 @@ name|i
 index|]
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|int
 name|jjtGetNumChildren
@@ -202,6 +200,8 @@ operator|.
 name|length
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|String
 name|toString

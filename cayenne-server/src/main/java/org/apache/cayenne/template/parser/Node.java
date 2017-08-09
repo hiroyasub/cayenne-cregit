@@ -40,16 +40,6 @@ specifier|public
 interface|interface
 name|Node
 block|{
-comment|/**      * This method is called after the node has been made the current      * node.  It indicates that child nodes can now be added to it.      */
-name|void
-name|jjtOpen
-parameter_list|()
-function_decl|;
-comment|/**      * This method is called after all the child nodes have been      * added.      */
-name|void
-name|jjtClose
-parameter_list|()
-function_decl|;
 comment|/**      * This pair of methods are used to inform the node of its      * parent.      */
 name|void
 name|jjtSetParent
@@ -86,7 +76,7 @@ name|int
 name|jjtGetNumChildren
 parameter_list|()
 function_decl|;
-name|String
+name|void
 name|evaluate
 parameter_list|(
 name|Context

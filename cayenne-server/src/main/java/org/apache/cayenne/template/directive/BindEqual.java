@@ -77,9 +77,6 @@ parameter_list|(
 name|Context
 name|context
 parameter_list|,
-name|StringBuilder
-name|builder
-parameter_list|,
 name|ParameterBinding
 name|binding
 parameter_list|)
@@ -101,7 +98,10 @@ argument_list|(
 name|binding
 argument_list|)
 expr_stmt|;
-name|builder
+name|context
+operator|.
+name|getBuilder
+argument_list|()
 operator|.
 name|append
 argument_list|(
@@ -111,7 +111,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|builder
+name|context
+operator|.
+name|getBuilder
+argument_list|()
 operator|.
 name|append
 argument_list|(

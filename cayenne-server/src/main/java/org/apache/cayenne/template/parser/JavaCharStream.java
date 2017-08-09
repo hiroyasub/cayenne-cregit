@@ -17,6 +17,16 @@ name|parser
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|IOException
+import|;
+end_import
+
 begin_comment
 comment|/**  * An implementation of interface CharStream, where the stream is assumed to  * contain only ASCII characters (with java-like unicode escape processing).  *  * @since 4.1  */
 end_comment
@@ -26,6 +36,30 @@ specifier|public
 class|class
 name|JavaCharStream
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|IOException
+name|END_OF_STREAM_EXCEPTION
+init|=
+operator|new
+name|IOException
+argument_list|()
+block|{
+annotation|@
+name|Override
+specifier|public
+specifier|synchronized
+name|Throwable
+name|fillInStackTrace
+parameter_list|()
+block|{
+return|return
+name|this
+return|;
+block|}
+block|}
+decl_stmt|;
 comment|/**      * Whether parser is static.      */
 specifier|public
 specifier|static
@@ -273,6 +307,10 @@ name|int
 name|tabSize
 init|=
 literal|8
+decl_stmt|;
+specifier|private
+name|boolean
+name|closed
 decl_stmt|;
 specifier|protected
 name|void
@@ -567,7 +605,9 @@ if|if
 condition|(
 name|maxNextCharInd
 operator|==
-literal|4096
+name|nextCharBuf
+operator|.
+name|length
 condition|)
 name|maxNextCharInd
 operator|=
@@ -577,8 +617,12 @@ literal|0
 expr_stmt|;
 try|try
 block|{
+comment|// check for closed status to prevent the underlying Reader from
+comment|// throwing IOException that causes performance degradation
 if|if
 condition|(
+name|closed
+operator|||
 operator|(
 name|i
 operator|=
@@ -590,7 +634,9 @@ name|nextCharBuf
 argument_list|,
 name|maxNextCharInd
 argument_list|,
-literal|4096
+name|nextCharBuf
+operator|.
+name|length
 operator|-
 name|maxNextCharInd
 argument_list|)
@@ -605,14 +651,12 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
+name|closed
+operator|=
+literal|true
+expr_stmt|;
 throw|throw
-operator|new
-name|java
-operator|.
-name|io
-operator|.
-name|IOException
-argument_list|()
+name|END_OF_STREAM_EXCEPTION
 throw|;
 block|}
 else|else
@@ -1582,6 +1626,10 @@ name|bufpos
 operator|=
 operator|-
 literal|1
+expr_stmt|;
+name|closed
+operator|=
+literal|false
 expr_stmt|;
 block|}
 comment|/**      * Reinitialise.      */

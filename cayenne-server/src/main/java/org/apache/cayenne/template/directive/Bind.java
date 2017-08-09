@@ -121,7 +121,7 @@ decl_stmt|;
 annotation|@
 name|Override
 specifier|public
-name|String
+name|void
 name|apply
 parameter_list|(
 name|Context
@@ -176,7 +176,7 @@ index|[
 literal|1
 index|]
 operator|.
-name|evaluate
+name|evaluateAsString
 argument_list|(
 name|context
 argument_list|)
@@ -260,13 +260,6 @@ argument_list|(
 name|context
 argument_list|)
 decl_stmt|;
-name|StringBuilder
-name|builder
-init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
 name|value
@@ -302,8 +295,6 @@ name|processBinding
 argument_list|(
 name|context
 argument_list|,
-name|builder
-argument_list|,
 operator|new
 name|ParameterBinding
 argument_list|(
@@ -326,7 +317,10 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|builder
+name|context
+operator|.
+name|getBuilder
+argument_list|()
 operator|.
 name|append
 argument_list|(
@@ -342,8 +336,6 @@ name|processBinding
 argument_list|(
 name|context
 argument_list|,
-name|builder
-argument_list|,
 operator|new
 name|ParameterBinding
 argument_list|(
@@ -356,12 +348,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-return|return
-name|builder
-operator|.
-name|toString
-argument_list|()
-return|;
 block|}
 specifier|protected
 name|void
@@ -369,9 +355,6 @@ name|processBinding
 parameter_list|(
 name|Context
 name|context
-parameter_list|,
-name|StringBuilder
-name|builder
 parameter_list|,
 name|ParameterBinding
 name|binding
@@ -384,7 +367,10 @@ argument_list|(
 name|binding
 argument_list|)
 expr_stmt|;
-name|builder
+name|context
+operator|.
+name|getBuilder
+argument_list|()
 operator|.
 name|append
 argument_list|(
