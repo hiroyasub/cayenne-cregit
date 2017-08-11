@@ -23,7 +23,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneDataObject
+name|BaseDataObject
 import|;
 end_import
 
@@ -119,7 +119,7 @@ operator|.
 name|getSuperClassName
 argument_list|()
 else|:
-name|CayenneDataObject
+name|BaseDataObject
 operator|.
 name|class
 operator|.

@@ -23,7 +23,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneDataObject
+name|BaseDataObject
 import|;
 end_import
 
@@ -863,11 +863,11 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|CayenneDataObject
+name|BaseDataObject
 name|fk1
 init|=
 operator|(
-name|CayenneDataObject
+name|BaseDataObject
 operator|)
 name|objects
 operator|.
@@ -1009,11 +1009,11 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|CayenneDataObject
+name|BaseDataObject
 name|pk1
 init|=
 operator|(
-name|CayenneDataObject
+name|BaseDataObject
 operator|)
 name|pks
 operator|.
@@ -1069,11 +1069,11 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|CayenneDataObject
+name|BaseDataObject
 name|fk1
 init|=
 operator|(
-name|CayenneDataObject
+name|BaseDataObject
 operator|)
 name|toMany
 operator|.
@@ -1094,11 +1094,11 @@ name|getPersistenceState
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|CayenneDataObject
+name|BaseDataObject
 name|fk2
 init|=
 operator|(
-name|CayenneDataObject
+name|BaseDataObject
 operator|)
 name|toMany
 operator|.

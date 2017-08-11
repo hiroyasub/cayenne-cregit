@@ -204,7 +204,7 @@ literal|"Artist"
 argument_list|,
 literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 name|assertExists
@@ -236,7 +236,7 @@ literal|"Artist"
 argument_list|,
 literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 name|assertExists
@@ -284,7 +284,7 @@ literal|"_Artist"
 argument_list|,
 literal|"org.apache.cayenne.testdo.testmap.auto"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 block|}
@@ -322,7 +322,7 @@ literal|"_Artist"
 argument_list|,
 literal|"org.apache.cayenne.testdo.testmap"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 name|assertExists
@@ -365,7 +365,7 @@ literal|"_Artist"
 argument_list|,
 literal|"org.apache.cayenne.testdo.testmap.superart"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 block|}
@@ -439,7 +439,7 @@ literal|"_EmbedEntity1"
 argument_list|,
 literal|"org.apache.cayenne.testdo.embeddable.auto"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 name|assertContents

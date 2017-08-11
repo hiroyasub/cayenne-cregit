@@ -515,7 +515,7 @@ literal|"_MyArtGroup"
 argument_list|,
 literal|"org.apache.cayenne.testdo.cgen2.auto"
 argument_list|,
-literal|"CayenneDataObject"
+literal|"BaseDataObject"
 argument_list|)
 expr_stmt|;
 name|assertContents

@@ -830,6 +830,8 @@ specifier|public
 name|void
 name|testResolveFault
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|Artist
 name|o1
@@ -874,14 +876,42 @@ name|getPersistenceState
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertNull
-argument_list|(
-name|o1
+comment|// NOTE: Map-based data objects clear their state, while field-based do not,
+comment|// but all we really care is that HOLLOW object transparently updates it's state.
+comment|// Here can be two variants depending on what type of data object is used:
+comment|// assertNull(o1.readPropertyDirectly("artistName")); // map-based
+comment|// assertEquals("a", o1.readPropertyDirectly("artistName")); // field-based
+comment|// update table bypassing Cayenne
+name|int
+name|count
+init|=
+name|tArtist
 operator|.
-name|readPropertyDirectly
+name|update
+argument_list|()
+operator|.
+name|set
 argument_list|(
-literal|"artistName"
+literal|"ARTIST_NAME"
+argument_list|,
+literal|"b"
 argument_list|)
+operator|.
+name|where
+argument_list|(
+literal|"ARTIST_NAME"
+argument_list|,
+literal|"a"
+argument_list|)
+operator|.
+name|execute
+argument_list|()
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|count
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|context
@@ -909,7 +939,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"a"
+literal|"b"
 argument_list|,
 name|o1
 operator|.
@@ -969,7 +999,7 @@ block|}
 catch|catch
 parameter_list|(
 name|CayenneRuntimeException
-name|ex
+name|ignored
 parameter_list|)
 block|{
 block|}
@@ -1177,11 +1207,7 @@ name|put
 argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|100000
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|DataObject
@@ -1270,11 +1296,7 @@ name|put
 argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|100001
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|row
@@ -1372,11 +1394,7 @@ name|put
 argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|123456
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|row

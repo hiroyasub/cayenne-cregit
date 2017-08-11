@@ -405,7 +405,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"import org.apache.cayenne.CayenneDataObject;"
+literal|"import org.apache.cayenne.BaseDataObject;"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -749,7 +749,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"writeProperty(\"ID\", ID);"
+literal|"this.ID = ID;"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -773,19 +773,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"Object value = readProperty(\"ID\");"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|superclass
-argument_list|,
-name|superclass
-operator|.
-name|contains
-argument_list|(
-literal|"return (value != null) ? (Integer) value : 0;"
+literal|"return this.ID;"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -809,7 +797,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"writeProperty(\"name\", name);"
+literal|"this.name = name;"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -833,19 +821,7 @@ name|superclass
 operator|.
 name|contains
 argument_list|(
-literal|"Object value = readProperty(\"name\");"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|assertTrue
-argument_list|(
-name|superclass
-argument_list|,
-name|superclass
-operator|.
-name|contains
-argument_list|(
-literal|"return (value != null) ? (Character) value : 0;"
+literal|"return this.name;"
 argument_list|)
 argument_list|)
 expr_stmt|;
