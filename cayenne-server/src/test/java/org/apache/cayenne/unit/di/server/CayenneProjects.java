@@ -461,6 +461,14 @@ name|WEIGHTED_SORT_PROJECT
 init|=
 literal|"cayenne-weighted-sort.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|HYBRID_DATA_OBJECT_PROJECT
+init|=
+literal|"cayenne-hybrid-data-object.xml"
+decl_stmt|;
 block|}
 end_class
 

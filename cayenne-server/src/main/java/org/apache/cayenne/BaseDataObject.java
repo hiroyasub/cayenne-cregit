@@ -274,7 +274,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Base implementation of DataObject,  * have no assumption about how data is actually stored.  *  * Two variants are currently supported:  * - field based storage, e.g. each entity class will directly define fields to store data  * - Map based storage, e.g. values will be stored in general Map (see {@link CayenneDataObject})  *  * @see CayenneDataObject  * @since 4.1  */
+comment|/**  * Base implementation of {@link DataObject},  * have no assumption about how data is actually stored.  *<p>  * Three variants are currently supported:  *<ul>  *<li> field based storage, e.g. each entity class will directly define fields to store data  *<li> {@link Map} based storage, e.g. values will be stored in general Map ({@link CayenneDataObject})  *<li> mixed fields and generic Map to store runtime attributes ({@link HybridDataObject})  *</ul>  *<p>  * This class can be used directly as superclass for field-based data objects.  *<p>  * To create own implementation of {@link DataObject} with custom field storage logic it is enough  * to implement {@link #readPropertyDirectly(String)} and {@link #writePropertyDirectly(String, Object)} methods  * and serialization support if needed (helper methods {@link #writeState(ObjectOutputStream)}  * and {@link #readState(ObjectInputStream)} are provided).  *  * @see CayenneDataObject  * @see HybridDataObject  *  * @since 4.1  */
 end_comment
 
 begin_class

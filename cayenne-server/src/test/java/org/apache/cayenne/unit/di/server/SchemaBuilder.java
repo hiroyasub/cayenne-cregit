@@ -644,6 +644,8 @@ block|,
 literal|"cay-2032.map.xml"
 block|,
 literal|"weighted-sort.map.xml"
+block|,
+literal|"hybrid-data-object.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded
