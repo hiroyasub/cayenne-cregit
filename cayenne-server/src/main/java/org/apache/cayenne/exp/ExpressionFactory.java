@@ -3302,7 +3302,7 @@ condition|)
 block|{
 return|return
 operator|new
-name|ASTFalse
+name|ASTTrue
 argument_list|()
 return|;
 block|}
