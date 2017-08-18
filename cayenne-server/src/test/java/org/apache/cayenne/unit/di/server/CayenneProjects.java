@@ -469,6 +469,14 @@ name|HYBRID_DATA_OBJECT_PROJECT
 init|=
 literal|"cayenne-hybrid-data-object.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|JAVA8
+init|=
+literal|"cayenne-java8.xml"
+decl_stmt|;
 block|}
 end_class
 
