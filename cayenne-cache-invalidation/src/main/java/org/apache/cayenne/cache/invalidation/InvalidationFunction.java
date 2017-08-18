@@ -39,14 +39,38 @@ name|Collection
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
+import|;
+end_import
+
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * @since 4.0  * @deprecated since 4.1 plain Function&gt;Persistent, Collection&gt;CacheGroupDescriptor>> can be used.  */
 end_comment
 
 begin_interface
+annotation|@
+name|Deprecated
 specifier|public
 interface|interface
 name|InvalidationFunction
+extends|extends
+name|Function
+argument_list|<
+name|Persistent
+argument_list|,
+name|Collection
+argument_list|<
+name|CacheGroupDescriptor
+argument_list|>
+argument_list|>
 block|{
 comment|/**      * @return collection of cache groups to invalidate for given object      */
 name|Collection

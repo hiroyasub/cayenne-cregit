@@ -19,6 +19,28 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -39,7 +61,15 @@ interface|interface
 name|InvalidationHandler
 block|{
 comment|/**      * @return invalidation function or null if there is nothing to invalidate      */
-name|InvalidationFunction
+name|Function
+argument_list|<
+name|Persistent
+argument_list|,
+name|Collection
+argument_list|<
+name|CacheGroupDescriptor
+argument_list|>
+argument_list|>
 name|canHandle
 parameter_list|(
 name|Class
