@@ -238,6 +238,18 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|time
+operator|.
+name|temporal
+operator|.
+name|ChronoField
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -592,6 +604,8 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+comment|// round up seconds fraction
+comment|// reason: on MySQL field should be defined as TIMESTAMP(fractionSecondsPrecision) to support it
 name|LocalDateTime
 name|localDateTime
 init|=
@@ -599,6 +613,15 @@ name|LocalDateTime
 operator|.
 name|now
 argument_list|()
+operator|.
+name|with
+argument_list|(
+name|ChronoField
+operator|.
+name|NANO_OF_SECOND
+argument_list|,
+literal|0
+argument_list|)
 decl_stmt|;
 name|localDateTimeTestEntity
 operator|.
@@ -670,6 +693,8 @@ name|void
 name|columnSelectWithJava8Type
 parameter_list|()
 block|{
+comment|// round up seconds fraction
+comment|// reason: on MySQL field should be defined as TIMESTAMP(fractionSecondsPrecision) to support it
 name|LocalDateTime
 name|localDateTime
 init|=
@@ -677,6 +702,15 @@ name|LocalDateTime
 operator|.
 name|now
 argument_list|()
+operator|.
+name|with
+argument_list|(
+name|ChronoField
+operator|.
+name|NANO_OF_SECOND
+argument_list|,
+literal|0
+argument_list|)
 decl_stmt|;
 name|LocalDateTimeTestEntity
 name|localDateTimeTestEntity
