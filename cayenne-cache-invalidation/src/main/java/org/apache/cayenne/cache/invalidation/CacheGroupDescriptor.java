@@ -18,7 +18,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * Immutable object describing cache group.  * Used as a result in {@link InvalidationFunction}.  *  * @see CacheGroupDescriptor#CacheGroupDescriptor(String)  * @see CacheGroupDescriptor#CacheGroupDescriptor(String, Class, Class)  *  * @since 4.0  */
+comment|/**  * Immutable object describing cache group.  * Used as a result in invalidation function.  *  * @see CacheGroupDescriptor#CacheGroupDescriptor(String)  * @see CacheGroupDescriptor#CacheGroupDescriptor(String, Class, Class)  *  * @since 4.0  */
 end_comment
 
 begin_class

@@ -11,9 +11,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|java8
+name|testdo
 operator|.
-name|db
+name|java8
 package|;
 end_package
 
@@ -25,22 +25,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|java8
+name|testdo
 operator|.
-name|db
+name|java8
 operator|.
 name|auto
 operator|.
-name|_LocalTimeTestEntity
+name|_LocalDateTimeTestEntity
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|LocalTimeTestEntity
+name|LocalDateTimeTestEntity
 extends|extends
-name|_LocalTimeTestEntity
+name|_LocalDateTimeTestEntity
 block|{
 specifier|private
 specifier|static

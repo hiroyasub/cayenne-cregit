@@ -91,6 +91,18 @@ name|HashSet
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -208,19 +220,8 @@ name|module
 parameter_list|()
 block|{
 return|return
-operator|new
-name|Module
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|configure
-parameter_list|(
-name|Binder
 name|binder
-parameter_list|)
+lambda|->
 block|{
 if|if
 condition|(
@@ -246,7 +247,15 @@ block|{
 annotation|@
 name|Override
 specifier|public
-name|InvalidationFunction
+name|Function
+argument_list|<
+name|Persistent
+argument_list|,
+name|Collection
+argument_list|<
+name|CacheGroupDescriptor
+argument_list|>
+argument_list|>
 name|canHandle
 parameter_list|(
 name|Class
@@ -306,7 +315,6 @@ argument_list|(
 name|handlerType
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 return|;

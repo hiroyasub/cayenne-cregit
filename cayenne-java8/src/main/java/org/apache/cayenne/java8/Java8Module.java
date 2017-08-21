@@ -67,8 +67,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|java8
-operator|.
 name|access
 operator|.
 name|types
@@ -84,8 +82,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|java8
 operator|.
 name|access
 operator|.
@@ -103,8 +99,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|java8
-operator|.
 name|access
 operator|.
 name|types
@@ -114,10 +108,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * @since 4.0  * @deprecated since 4.1 Java 8 types are in cayenne-server by default  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|Java8Module
