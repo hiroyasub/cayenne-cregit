@@ -231,20 +231,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Factory
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -300,6 +286,18 @@ operator|.
 name|util
 operator|.
 name|Map
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Supplier
 import|;
 end_import
 
@@ -1317,7 +1315,7 @@ specifier|static
 class|class
 name|PropagatedValueFactory
 implements|implements
-name|Factory
+name|Supplier
 block|{
 name|ObjectId
 name|masterID
@@ -1349,7 +1347,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|Object
-name|create
+name|get
 parameter_list|()
 block|{
 name|Object

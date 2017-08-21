@@ -123,20 +123,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Predicate
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -215,6 +201,18 @@ name|Set
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Predicate
+import|;
+end_import
+
 begin_comment
 comment|/**  * A base superclass of a top controller for the code generator. Defines all common model  * parts used in class generation.  *  */
 end_comment
@@ -255,10 +253,16 @@ name|classes
 decl_stmt|;
 specifier|protected
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|selectedEntities
 decl_stmt|;
 specifier|protected
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|selectedEmbeddables
 decl_stmt|;
 specifier|protected
@@ -296,6 +300,7 @@ name|classes
 operator|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -314,6 +319,7 @@ name|addAll
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|dataMap
 operator|.
@@ -330,6 +336,7 @@ name|addAll
 argument_list|(
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|dataMap
 operator|.
@@ -345,6 +352,7 @@ name|selectedEntities
 operator|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -353,6 +361,7 @@ name|selectedEmbeddables
 operator|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -460,6 +469,9 @@ name|boolean
 name|updateSelection
 parameter_list|(
 name|Predicate
+argument_list|<
+name|Object
+argument_list|>
 name|predicate
 parameter_list|)
 block|{
@@ -481,7 +493,7 @@ name|select
 init|=
 name|predicate
 operator|.
-name|evaluate
+name|test
 argument_list|(
 name|classObj
 argument_list|)
@@ -915,10 +927,6 @@ name|ObjEntity
 condition|)
 block|{
 return|return
-name|currentClass
-operator|!=
-literal|null
-condition|?
 name|selectedEntities
 operator|.
 name|contains
@@ -933,8 +941,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
-else|:
-literal|false
 return|;
 block|}
 if|if
@@ -945,10 +951,6 @@ name|Embeddable
 condition|)
 block|{
 return|return
-name|currentClass
-operator|!=
-literal|null
-condition|?
 name|selectedEmbeddables
 operator|.
 name|contains
@@ -963,8 +965,6 @@ operator|.
 name|getClassName
 argument_list|()
 argument_list|)
-else|:
-literal|false
 return|;
 block|}
 return|return

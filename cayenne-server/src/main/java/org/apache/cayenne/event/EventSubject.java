@@ -55,13 +55,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|util
 operator|.
-name|map
-operator|.
-name|ReferenceMap
+name|WeakValueMap
 import|;
 end_import
 
@@ -93,16 +91,9 @@ argument_list|>
 name|_registeredSubjects
 init|=
 operator|new
-name|ReferenceMap
-argument_list|(
-name|ReferenceMap
-operator|.
-name|HARD
-argument_list|,
-name|ReferenceMap
-operator|.
-name|WEAK
-argument_list|)
+name|WeakValueMap
+argument_list|<>
+argument_list|()
 decl_stmt|;
 comment|// Subject identifier in the form "com.foo.bar/SubjectName"
 specifier|private

@@ -31,22 +31,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|map
-operator|.
-name|LinkedMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|junit
 operator|.
 name|Test
@@ -70,6 +54,16 @@ operator|.
 name|util
 operator|.
 name|HashMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedHashMap
 import|;
 end_import
 
@@ -895,7 +889,8 @@ argument_list|>
 name|hm1
 init|=
 operator|new
-name|LinkedMap
+name|LinkedHashMap
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|hm1
@@ -930,7 +925,7 @@ argument_list|>
 name|hm2
 init|=
 operator|new
-name|LinkedMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 comment|// put same keys but in different order
@@ -1417,7 +1412,7 @@ argument_list|>
 name|hm1
 init|=
 operator|new
-name|LinkedMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 name|hm1
@@ -1452,7 +1447,7 @@ argument_list|>
 name|hm2
 init|=
 operator|new
-name|LinkedMap
+name|LinkedHashMap
 argument_list|()
 decl_stmt|;
 comment|// put same keys but in different order

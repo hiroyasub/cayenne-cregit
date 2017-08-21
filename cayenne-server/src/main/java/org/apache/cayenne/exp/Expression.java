@@ -113,6 +113,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -220,20 +232,6 @@ operator|.
 name|util
 operator|.
 name|XMLSerializable
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Transformer
 import|;
 end_import
 
@@ -1747,7 +1745,12 @@ specifier|public
 name|Expression
 name|transform
 parameter_list|(
-name|Transformer
+name|Function
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|transformer
 parameter_list|)
 block|{
@@ -1803,7 +1806,12 @@ specifier|protected
 name|Object
 name|transformExpression
 parameter_list|(
-name|Transformer
+name|Function
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 name|transformer
 parameter_list|)
 block|{
@@ -1882,7 +1890,7 @@ name|transformedChild
 operator|=
 name|transformer
 operator|.
-name|transform
+name|apply
 argument_list|(
 name|operand
 argument_list|)
@@ -1956,7 +1964,7 @@ name|Expression
 operator|)
 name|transformer
 operator|.
-name|transform
+name|apply
 argument_list|(
 name|copy
 argument_list|)
@@ -2230,7 +2238,12 @@ specifier|final
 class|class
 name|NamedParamTransformer
 implements|implements
-name|Transformer
+name|Function
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 block|{
 specifier|private
 name|Map
@@ -2276,7 +2289,7 @@ annotation|@
 name|Override
 specifier|public
 name|Object
-name|transform
+name|apply
 parameter_list|(
 name|Object
 name|object
@@ -2348,7 +2361,7 @@ index|[
 name|i
 index|]
 operator|=
-name|transform
+name|apply
 argument_list|(
 name|source
 index|[

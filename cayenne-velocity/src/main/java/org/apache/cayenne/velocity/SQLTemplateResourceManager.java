@@ -51,11 +51,13 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|collections
+name|util
 operator|.
-name|ExtendedProperties
+name|concurrentlinkedhashmap
+operator|.
+name|ConcurrentLinkedHashMap
 import|;
 end_import
 
@@ -69,9 +71,7 @@ name|commons
 operator|.
 name|collections
 operator|.
-name|map
-operator|.
-name|LRUMap
+name|ExtendedProperties
 import|;
 end_import
 
@@ -224,10 +224,23 @@ operator|.
 name|templateCache
 operator|=
 operator|new
-name|LRUMap
+name|ConcurrentLinkedHashMap
+operator|.
+name|Builder
+argument_list|<
+name|String
+argument_list|,
+name|Template
+argument_list|>
+argument_list|()
+operator|.
+name|maximumWeightedCapacity
 argument_list|(
 literal|100
 argument_list|)
+operator|.
+name|build
+argument_list|()
 expr_stmt|;
 block|}
 specifier|public

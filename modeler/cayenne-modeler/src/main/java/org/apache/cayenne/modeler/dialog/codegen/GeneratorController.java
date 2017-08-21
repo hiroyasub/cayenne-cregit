@@ -339,20 +339,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Predicate
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -458,6 +444,18 @@ operator|.
 name|util
 operator|.
 name|Set
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Predicate
 import|;
 end_import
 
@@ -2413,7 +2411,6 @@ operator|.
 name|getCurrentEmbeddable
 argument_list|()
 decl_stmt|;
-comment|// select a single entity
 if|if
 condition|(
 name|selectedEntity
@@ -2421,6 +2418,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// select a single entity
 specifier|final
 name|boolean
 name|hasProblem
@@ -2439,19 +2437,8 @@ operator|!=
 literal|null
 decl_stmt|;
 return|return
-operator|new
-name|Predicate
-argument_list|()
-block|{
-specifier|public
-name|boolean
-name|evaluate
-parameter_list|(
-name|Object
 name|object
-parameter_list|)
-block|{
-return|return
+lambda|->
 operator|!
 name|hasProblem
 operator|&&
@@ -2460,10 +2447,6 @@ operator|==
 name|selectedEntity
 return|;
 block|}
-block|}
-return|;
-block|}
-comment|// select a single embeddable
 if|else if
 condition|(
 name|selectedEmbeddable
@@ -2471,6 +2454,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// select a single embeddable
 specifier|final
 name|boolean
 name|hasProblem
@@ -2489,19 +2473,8 @@ operator|!=
 literal|null
 decl_stmt|;
 return|return
-operator|new
-name|Predicate
-argument_list|()
-block|{
-specifier|public
-name|boolean
-name|evaluate
-parameter_list|(
-name|Object
 name|object
-parameter_list|)
-block|{
-return|return
+lambda|->
 operator|!
 name|hasProblem
 operator|&&
@@ -2510,24 +2483,12 @@ operator|==
 name|selectedEmbeddable
 return|;
 block|}
-block|}
-return|;
-block|}
-comment|// select all entities
 else|else
 block|{
+comment|// select all entities
 return|return
-operator|new
-name|Predicate
-argument_list|()
-block|{
-specifier|public
-name|boolean
-name|evaluate
-parameter_list|(
-name|Object
 name|object
-parameter_list|)
+lambda|->
 block|{
 if|if
 condition|(
@@ -2586,7 +2547,6 @@ block|}
 return|return
 literal|false
 return|;
-block|}
 block|}
 return|;
 block|}

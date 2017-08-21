@@ -83,22 +83,6 @@ name|ObjEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|comparators
-operator|.
-name|ReverseComparator
-import|;
-end_import
-
 begin_comment
 comment|/**  * EntitySorter that takes into account entity "weights", and otherwise delegating to  * another (topological) sorter.  *   * @since 3.1, since 4.0 moved to cayenne-server from cayenne-lifecycle  */
 end_comment
@@ -296,11 +280,10 @@ condition|)
 block|{
 name|c
 operator|=
-operator|new
-name|ReverseComparator
-argument_list|(
 name|c
-argument_list|)
+operator|.
+name|reversed
+argument_list|()
 expr_stmt|;
 block|}
 return|return
@@ -340,11 +323,10 @@ condition|)
 block|{
 name|c
 operator|=
-operator|new
-name|ReverseComparator
-argument_list|(
 name|c
-argument_list|)
+operator|.
+name|reversed
+argument_list|()
 expr_stmt|;
 block|}
 return|return

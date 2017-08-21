@@ -201,20 +201,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|collections
-operator|.
-name|Transformer
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -320,6 +306,18 @@ operator|.
 name|util
 operator|.
 name|TreeMap
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
 import|;
 end_import
 
@@ -3598,7 +3596,12 @@ specifier|final
 class|class
 name|DBPathConverter
 implements|implements
-name|Transformer
+name|Function
+argument_list|<
+name|Object
+argument_list|,
+name|Object
+argument_list|>
 block|{
 comment|// TODO: make it a public method - resolveDBPathComponents or
 comment|// something...
@@ -3792,7 +3795,7 @@ return|;
 block|}
 specifier|public
 name|Object
-name|transform
+name|apply
 parameter_list|(
 name|Object
 name|input
