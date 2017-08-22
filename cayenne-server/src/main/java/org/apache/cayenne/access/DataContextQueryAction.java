@@ -507,6 +507,12 @@ argument_list|)
 operator|instanceof
 name|EntityResultSegment
 operator|)
+operator|||
+operator|!
+name|metadata
+operator|.
+name|isSingleResultSetMapping
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -560,9 +566,7 @@ name|paginatedList
 operator|=
 operator|new
 name|SimpleIdIncrementalFaultList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|actingDataContext
 argument_list|,
@@ -578,9 +582,7 @@ name|paginatedList
 operator|=
 operator|new
 name|IncrementalFaultList
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|actingDataContext
 argument_list|,
