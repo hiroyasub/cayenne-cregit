@@ -21,13 +21,11 @@ end_package
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
-name|xml
+name|util
 operator|.
-name|bind
-operator|.
-name|DatatypeConverter
+name|Base64
 import|;
 end_import
 
@@ -70,9 +68,12 @@ name|value
 parameter_list|)
 block|{
 return|return
-name|DatatypeConverter
+name|Base64
 operator|.
-name|parseBase64Binary
+name|getDecoder
+argument_list|()
+operator|.
+name|decode
 argument_list|(
 name|value
 argument_list|)
@@ -90,9 +91,12 @@ name|bytes
 parameter_list|)
 block|{
 return|return
-name|DatatypeConverter
+name|Base64
 operator|.
-name|printBase64Binary
+name|getEncoder
+argument_list|()
+operator|.
+name|encodeToString
 argument_list|(
 name|bytes
 argument_list|)
