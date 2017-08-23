@@ -1170,8 +1170,25 @@ name|ds
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
+block|{
+comment|// force connection to autocommit, see CAY-2354
+name|boolean
+name|autoCommit
+init|=
+name|connection
+operator|.
+name|getAutoCommit
+argument_list|()
+decl_stmt|;
+name|connection
+operator|.
+name|setAutoCommit
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+try|try
 block|{
 comment|// drop tables
 if|if
@@ -1450,6 +1467,18 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+finally|finally
+block|{
+comment|// restore connection autocommit state in case it will be recycled in some underlying pool
+name|connection
+operator|.
+name|setAutoCommit
+argument_list|(
+name|autoCommit
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 comment|/** 	 * Builds and executes a SQL statement, catching and storing SQL exceptions 	 * resulting from invalid SQL. Only non-recoverable exceptions are rethrown. 	 *  	 * @since 1.1 	 */
 specifier|protected
@@ -1474,7 +1503,6 @@ name|connection
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 name|jdbcEventLogger
