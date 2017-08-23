@@ -23,7 +23,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|Arrays
 import|;
 end_import
 
@@ -33,7 +33,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
+name|Collection
 import|;
 end_import
 
@@ -80,6 +80,20 @@ operator|.
 name|di
 operator|.
 name|Module
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project
+operator|.
+name|ProjectModule
 import|;
 end_import
 
@@ -145,21 +159,21 @@ argument_list|>
 name|overrides
 parameter_list|()
 block|{
-comment|// compatibility module overrides XML loaders defind in ServerModule
-name|Collection
-name|modules
-init|=
-name|Collections
+comment|// compatibility module overrides XML loaders defined in ServerModule and
+comment|// upgrade services from ProjectModule
+return|return
+name|Arrays
 operator|.
-name|singletonList
+name|asList
 argument_list|(
 name|ServerModule
 operator|.
 name|class
+argument_list|,
+name|ProjectModule
+operator|.
+name|class
 argument_list|)
-decl_stmt|;
-return|return
-name|modules
 return|;
 block|}
 block|}
