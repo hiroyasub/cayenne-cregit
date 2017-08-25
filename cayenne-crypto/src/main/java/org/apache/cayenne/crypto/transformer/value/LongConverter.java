@@ -37,6 +37,9 @@ specifier|public
 specifier|static
 specifier|final
 name|BytesConverter
+argument_list|<
+name|Long
+argument_list|>
 name|INSTANCE
 init|=
 operator|new
