@@ -574,7 +574,8 @@ range|:
 name|rows
 control|)
 block|{
-comment|// nulls are possible here since 3.0 for soem varieties of EJBQL
+comment|// nulls are possible here since 3.0 for some varieties of EJBQL,
+comment|// simple example of this: "select p.toGallery+ from Painting p" where toGallery is null.
 name|results
 operator|.
 name|add
@@ -988,6 +989,27 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|dataRow
+operator|.
+name|containsKey
+argument_list|(
+name|key
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"No PK column '%s' found in data row."
+argument_list|,
+name|key
+argument_list|)
+throw|;
+block|}
 return|return
 literal|null
 return|;
@@ -1078,6 +1100,27 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|dataRow
+operator|.
+name|containsKey
+argument_list|(
+name|key
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"No PK column '%s' found in data row."
+argument_list|,
+name|key
+argument_list|)
+throw|;
+block|}
 return|return
 literal|null
 return|;
