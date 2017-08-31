@@ -25,7 +25,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneDataObject
+name|BaseDataObject
 import|;
 end_import
 
@@ -38,7 +38,7 @@ specifier|public
 class|class
 name|ArtDataObject
 extends|extends
-name|CayenneDataObject
+name|BaseDataObject
 block|{
 specifier|private
 specifier|static
