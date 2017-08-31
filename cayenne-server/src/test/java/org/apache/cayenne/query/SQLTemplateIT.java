@@ -928,12 +928,7 @@ literal|null
 argument_list|,
 literal|"p1"
 argument_list|,
-name|BigInteger
-operator|.
-name|valueOf
-argument_list|(
-literal|10L
-argument_list|)
+literal|10
 argument_list|)
 expr_stmt|;
 name|String
@@ -1023,12 +1018,7 @@ literal|null
 argument_list|,
 literal|"p1"
 argument_list|,
-name|BigInteger
-operator|.
-name|valueOf
-argument_list|(
-literal|10L
-argument_list|)
+literal|10
 argument_list|)
 expr_stmt|;
 name|String
