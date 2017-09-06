@@ -61,7 +61,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collections
+name|HashMap
 import|;
 end_import
 
@@ -669,14 +669,25 @@ name|Object
 argument_list|>
 name|listContext
 init|=
-name|Collections
-operator|.
-name|singletonMap
+operator|new
+name|HashMap
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
+argument_list|()
+block|{
+block|{
+name|put
 argument_list|(
 name|ITEM_VAR
 argument_list|,
 literal|null
 argument_list|)
+expr_stmt|;
+block|}
+block|}
 decl_stmt|;
 specifier|public
 name|int
