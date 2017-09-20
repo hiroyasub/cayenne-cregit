@@ -75,18 +75,6 @@ name|jgraph
 operator|.
 name|graph
 operator|.
-name|DefaultGraphCell
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|jgraph
-operator|.
-name|graph
-operator|.
 name|GraphConstants
 import|;
 end_import
@@ -120,7 +108,6 @@ comment|/**  * @since 4.1  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|EntityHandler
 extends|extends

@@ -53,26 +53,6 @@ end_import
 
 begin_import
 import|import
-name|com
-operator|.
-name|sun
-operator|.
-name|corba
-operator|.
-name|se
-operator|.
-name|impl
-operator|.
-name|orbutil
-operator|.
-name|graph
-operator|.
-name|Graph
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -262,7 +242,6 @@ comment|/**  * Class to load graph from XML  */
 end_comment
 
 begin_class
-specifier|public
 class|class
 name|GraphHandler
 extends|extends
