@@ -804,6 +804,14 @@ name|getSql
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|template
+operator|.
+name|setFetchingDataRows
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+comment|// in case result set will be returned
 if|if
 condition|(
 name|positionalParams

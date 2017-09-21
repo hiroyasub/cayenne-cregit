@@ -310,11 +310,12 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// possible cause: query that is not expected to have result set somehow got it..
 throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Set up Object entity or use rowFetchingQuery"
+literal|"No ClassDescriptor. Maybe DataRows should be fetched instead of objects."
 argument_list|)
 throw|;
 block|}
