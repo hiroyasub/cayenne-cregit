@@ -47,6 +47,26 @@ name|Directive
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -58,6 +78,21 @@ name|ASTDirective
 extends|extends
 name|IdentifierNode
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|logger
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|ASTDirective
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|public
 name|ASTDirective
 parameter_list|(
@@ -99,6 +134,16 @@ operator|==
 literal|null
 condition|)
 block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"Unknown directive #{}"
+argument_list|,
+name|getIdentifier
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|ASTExpression
