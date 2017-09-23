@@ -127,20 +127,6 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|Binder
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
 name|ClassLoaderManager
 import|;
 end_import
@@ -243,7 +229,7 @@ name|cayenne
 operator|.
 name|log
 operator|.
-name|Slf4jJdbcEventLogger
+name|JdbcEventLogger
 import|;
 end_import
 
@@ -257,7 +243,7 @@ name|cayenne
 operator|.
 name|log
 operator|.
-name|JdbcEventLogger
+name|Slf4jJdbcEventLogger
 import|;
 end_import
 
@@ -319,43 +305,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertSame
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -398,25 +348,12 @@ specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Module
 name|testModule
 init|=
-operator|new
-name|Module
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|configure
-parameter_list|(
-name|Binder
 name|binder
-parameter_list|)
+lambda|->
 block|{
 name|binder
 operator|.
@@ -526,7 +463,6 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 decl_stmt|;
 name|this
@@ -803,17 +739,8 @@ expr_stmt|;
 name|Module
 name|testModule
 init|=
-operator|new
-name|Module
-argument_list|()
-block|{
-specifier|public
-name|void
-name|configure
-parameter_list|(
-name|Binder
 name|binder
-parameter_list|)
+lambda|->
 block|{
 name|binder
 operator|.
@@ -918,7 +845,6 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 decl_stmt|;
 name|Injector

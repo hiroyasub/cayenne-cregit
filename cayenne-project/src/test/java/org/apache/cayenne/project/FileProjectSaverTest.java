@@ -95,20 +95,6 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|Binder
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
 name|DIBootstrap
 import|;
 end_import
@@ -368,18 +354,8 @@ block|{
 name|Module
 name|testModule
 init|=
-operator|new
-name|Module
-argument_list|()
-block|{
-specifier|public
-name|void
-name|configure
-parameter_list|(
-name|Binder
 name|binder
-parameter_list|)
-block|{
+lambda|->
 name|binder
 operator|.
 name|bind
@@ -395,9 +371,6 @@ name|DefaultConfigurationNameMapper
 operator|.
 name|class
 argument_list|)
-expr_stmt|;
-block|}
-block|}
 decl_stmt|;
 name|saver
 operator|=
@@ -970,7 +943,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Method test fix for CAY-1780. If specify related fragments (for example ./../)      * in target file path then file must be created successfully.      * @throws Exception      */
+comment|/**      * Method test fix for CAY-1780. If specify related fragments (for example ./../)      * in target file path then file must be created successfully.      *      * @throws Exception      */
 annotation|@
 name|Test
 specifier|public

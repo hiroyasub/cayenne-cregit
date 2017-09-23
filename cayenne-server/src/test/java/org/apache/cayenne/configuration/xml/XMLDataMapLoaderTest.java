@@ -19,16 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|net
-operator|.
-name|URL
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -92,20 +82,6 @@ operator|.
 name|di
 operator|.
 name|AdhocObjectFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Binder
 import|;
 end_import
 
@@ -286,6 +262,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|net
+operator|.
+name|URL
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -322,17 +308,8 @@ block|{
 name|Module
 name|testModule
 init|=
-operator|new
-name|Module
-argument_list|()
-block|{
-specifier|public
-name|void
-name|configure
-parameter_list|(
-name|Binder
 name|binder
-parameter_list|)
+lambda|->
 block|{
 name|binder
 operator|.
@@ -451,7 +428,6 @@ operator|.
 name|withoutScope
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 decl_stmt|;
 name|injector

@@ -392,17 +392,8 @@ block|{
 name|Module
 name|module
 init|=
-operator|new
-name|Module
-argument_list|()
-block|{
-specifier|public
-name|void
-name|configure
-parameter_list|(
-name|Binder
 name|binder
-parameter_list|)
+lambda|->
 block|{
 name|XMPPModule
 operator|.
@@ -451,7 +442,6 @@ argument_list|,
 name|CHAT_SERVICE_TEST
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 decl_stmt|;
 name|Injector
