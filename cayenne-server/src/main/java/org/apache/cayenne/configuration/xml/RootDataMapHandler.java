@@ -55,18 +55,6 @@ name|ContentHandler
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|xml
-operator|.
-name|sax
-operator|.
-name|SAXException
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -76,7 +64,7 @@ specifier|public
 class|class
 name|RootDataMapHandler
 extends|extends
-name|NamespaceAwareNestedTagHandler
+name|VersionAwareHandler
 block|{
 specifier|public
 name|RootDataMapHandler
@@ -88,6 +76,8 @@ block|{
 name|super
 argument_list|(
 name|loaderContext
+argument_list|,
+literal|"data-map"
 argument_list|)
 expr_stmt|;
 name|setTargetNamespace
@@ -97,28 +87,6 @@ operator|.
 name|SCHEMA_XSD
 argument_list|)
 expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|boolean
-name|processElement
-parameter_list|(
-name|String
-name|namespaceURI
-parameter_list|,
-name|String
-name|localName
-parameter_list|,
-name|Attributes
-name|attributes
-parameter_list|)
-throws|throws
-name|SAXException
-block|{
-return|return
-literal|false
-return|;
 block|}
 annotation|@
 name|Override
