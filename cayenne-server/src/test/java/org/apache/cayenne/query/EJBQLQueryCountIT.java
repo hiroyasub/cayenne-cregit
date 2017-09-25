@@ -261,6 +261,70 @@ annotation|@
 name|Test
 specifier|public
 name|void
+name|test_SimpleCount
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|tArtist
+operator|.
+name|insert
+argument_list|(
+literal|1
+argument_list|,
+literal|"A1"
+argument_list|)
+expr_stmt|;
+name|tArtist
+operator|.
+name|insert
+argument_list|(
+literal|2
+argument_list|,
+literal|"A2"
+argument_list|)
+expr_stmt|;
+name|tArtist
+operator|.
+name|insert
+argument_list|(
+literal|3
+argument_list|,
+literal|"A3"
+argument_list|)
+expr_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"SELECT COUNT(a) FROM Artist a"
+argument_list|)
+decl_stmt|;
+comment|// this should be simply a count of painting/artist joins
+name|assertEquals
+argument_list|(
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
+literal|3L
+argument_list|)
+argument_list|,
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
 name|test_ToOne
 parameter_list|()
 throws|throws
@@ -342,7 +406,7 @@ name|Collections
 operator|.
 name|singletonList
 argument_list|(
-literal|3l
+literal|3L
 argument_list|)
 argument_list|,
 name|context
@@ -354,20 +418,103 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|//	@Test
-comment|//	public void test_DistinctToOne() throws Exception {
-comment|//		tArtist.insert(1, "A1");
-comment|//		tArtist.insert(2, "A2");
-comment|//		tArtist.insert(3, "A3");
-comment|//
-comment|//		tPainting.insert(1, 1, "P1");
-comment|//		tPainting.insert(2, 1, "P2");
-comment|//		tPainting.insert(4, 2, "P1");
-comment|//
-comment|//		EJBQLQuery query = new EJBQLQuery("SELECT COUNT(DISTINCT p.toArtist) FROM Painting p");
-comment|//		// this should be a count of artists that have paintings
-comment|//		assertEquals(Collections.singletonList(2l), context.performQuery(query));
-comment|//	}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|test_DistinctToOne
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|tArtist
+operator|.
+name|insert
+argument_list|(
+literal|1
+argument_list|,
+literal|"A1"
+argument_list|)
+expr_stmt|;
+name|tArtist
+operator|.
+name|insert
+argument_list|(
+literal|2
+argument_list|,
+literal|"A2"
+argument_list|)
+expr_stmt|;
+name|tArtist
+operator|.
+name|insert
+argument_list|(
+literal|3
+argument_list|,
+literal|"A3"
+argument_list|)
+expr_stmt|;
+name|tPainting
+operator|.
+name|insert
+argument_list|(
+literal|1
+argument_list|,
+literal|1
+argument_list|,
+literal|"P1"
+argument_list|)
+expr_stmt|;
+name|tPainting
+operator|.
+name|insert
+argument_list|(
+literal|2
+argument_list|,
+literal|1
+argument_list|,
+literal|"P2"
+argument_list|)
+expr_stmt|;
+name|tPainting
+operator|.
+name|insert
+argument_list|(
+literal|4
+argument_list|,
+literal|2
+argument_list|,
+literal|"P1"
+argument_list|)
+expr_stmt|;
+name|EJBQLQuery
+name|query
+init|=
+operator|new
+name|EJBQLQuery
+argument_list|(
+literal|"SELECT COUNT(DISTINCT p.toArtist) FROM Painting p"
+argument_list|)
+decl_stmt|;
+comment|// this should be a count of artists that have paintings
+name|assertEquals
+argument_list|(
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
+literal|2l
+argument_list|)
+argument_list|,
+name|context
+operator|.
+name|performQuery
+argument_list|(
+name|query
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 annotation|@
 name|Test
 specifier|public
@@ -453,7 +600,7 @@ name|Collections
 operator|.
 name|singletonList
 argument_list|(
-literal|1l
+literal|1L
 argument_list|)
 argument_list|,
 name|context
