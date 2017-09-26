@@ -2028,20 +2028,11 @@ block|{
 literal|null
 block|}
 decl_stmt|;
+comment|// capture last alias for joined table, will use it to resolve object columns
 name|joinListener
 operator|=
-operator|new
-name|AddJoinListener
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|joinAdded
 parameter_list|()
-block|{
-comment|// capture last alias for joined table, will use it to resolve object columns
+lambda|->
 name|joinTableAliasForProperty
 index|[
 literal|0
@@ -2049,9 +2040,6 @@ index|]
 operator|=
 name|getCurrentAlias
 argument_list|()
-expr_stmt|;
-block|}
-block|}
 expr_stmt|;
 name|setAddBindingListener
 argument_list|(
@@ -2072,6 +2060,13 @@ name|getColumns
 argument_list|()
 control|)
 block|{
+name|joinTableAliasForProperty
+index|[
+literal|0
+index|]
+operator|=
+literal|null
+expr_stmt|;
 name|int
 name|expressionType
 init|=
