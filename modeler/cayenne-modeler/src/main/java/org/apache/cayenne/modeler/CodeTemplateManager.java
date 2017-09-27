@@ -168,6 +168,14 @@ name|STANDARD_SERVER_SUBCLASS
 init|=
 literal|"Standard Server Subclass"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SINGLE_SERVER_CLASS
+init|=
+literal|"Single Server class"
+decl_stmt|;
 specifier|static
 specifier|final
 name|String
@@ -311,6 +319,13 @@ argument_list|(
 name|STANDARD_CLIENT_SUBCLASS
 argument_list|)
 expr_stmt|;
+name|standardSubclassTemplates
+operator|.
+name|add
+argument_list|(
+name|SINGLE_SERVER_CLASS
+argument_list|)
+expr_stmt|;
 name|updateCustomTemplates
 argument_list|(
 name|getTemplatePreferences
@@ -370,6 +385,17 @@ operator|.
 name|SUBCLASS_TEMPLATE
 argument_list|)
 expr_stmt|;
+name|standardTemplates
+operator|.
+name|put
+argument_list|(
+name|SINGLE_SERVER_CLASS
+argument_list|,
+name|ClassGenerationAction
+operator|.
+name|SINGLE_CLASS_TEMPLATE
+argument_list|)
+expr_stmt|;
 block|}
 comment|/** 	 * Updates custom templates from preferences. 	 */
 specifier|public
@@ -384,7 +410,7 @@ name|String
 index|[]
 name|keys
 init|=
-literal|null
+block|{}
 decl_stmt|;
 try|try
 block|{
@@ -427,19 +453,10 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|int
-name|j
-init|=
-literal|0
-init|;
-name|j
-operator|<
+name|String
+name|key
+range|:
 name|keys
-operator|.
-name|length
-condition|;
-name|j
-operator|++
 control|)
 block|{
 name|FSPath
@@ -452,10 +469,7 @@ name|preference
 operator|.
 name|node
 argument_list|(
-name|keys
-index|[
-name|j
-index|]
+name|key
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -463,10 +477,7 @@ name|customTemplates
 operator|.
 name|put
 argument_list|(
-name|keys
-index|[
-name|j
-index|]
+name|key
 argument_list|,
 name|path
 operator|.
