@@ -335,6 +335,10 @@ name|i
 operator|*
 literal|10
 argument_list|,
+name|String
+operator|.
+name|valueOf
+argument_list|(
 operator|(
 name|char
 operator|)
@@ -343,6 +347,7 @@ literal|'a'
 operator|+
 name|i
 operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
