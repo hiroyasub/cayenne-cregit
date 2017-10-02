@@ -93,6 +93,16 @@ name|javax
 operator|.
 name|swing
 operator|.
+name|ImageIcon
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
 name|JComponent
 import|;
 end_import
@@ -114,16 +124,6 @@ operator|.
 name|swing
 operator|.
 name|UIManager
-import|;
-end_import
-
-begin_import
-import|import
-name|sun
-operator|.
-name|swing
-operator|.
-name|ImageIconUIResource
 import|;
 end_import
 
@@ -346,7 +346,7 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|new
-name|ImageIconUIResource
+name|ImageIcon
 argument_list|(
 name|resultImage
 argument_list|)
