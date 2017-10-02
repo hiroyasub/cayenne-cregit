@@ -1287,6 +1287,25 @@ name|type
 parameter_list|)
 block|{
 comment|// "bytea" type does not support length
+if|if
+condition|(
+name|Types
+operator|.
+name|DOUBLE
+operator|==
+name|type
+operator|||
+name|Types
+operator|.
+name|REAL
+operator|==
+name|type
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
 name|String
 index|[]
 name|externalTypes
