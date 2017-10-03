@@ -375,7 +375,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|CharacterType
+name|CharacterValueType
 import|;
 end_import
 
@@ -2485,7 +2485,7 @@ argument_list|)
 operator|.
 name|add
 argument_list|(
-name|CharacterType
+name|CharacterValueType
 operator|.
 name|class
 argument_list|)

@@ -24,7 +24,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|CharacterType
+name|CharacterValueType
 implements|implements
 name|ValueObjectType
 argument_list|<
