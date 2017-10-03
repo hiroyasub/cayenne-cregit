@@ -229,6 +229,22 @@ name|access
 operator|.
 name|types
 operator|.
+name|CharacterValueType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
 name|DateType
 import|;
 end_import
@@ -1817,6 +1833,17 @@ name|contributeProperties
 argument_list|(
 name|binder
 argument_list|)
+comment|// Use soft references instead of default weak.
+comment|// Should remove problems with random-failing tests (those that are GC-sensitive).
+operator|.
+name|put
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_OBJECT_RETAIN_STRATEGY_PROPERTY
+argument_list|,
+literal|"soft"
+argument_list|)
 expr_stmt|;
 comment|// configure extended types
 name|ServerModule
@@ -2019,6 +2046,13 @@ operator|.
 name|add
 argument_list|(
 name|LocalDateTimeValueType
+operator|.
+name|class
+argument_list|)
+operator|.
+name|add
+argument_list|(
+name|CharacterValueType
 operator|.
 name|class
 argument_list|)
