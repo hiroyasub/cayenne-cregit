@@ -375,7 +375,7 @@ name|String
 operator|.
 name|valueOf
 argument_list|(
-literal|'Ã'
+literal|'Z'
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -525,7 +525,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|'Ã'
+literal|'Z'
 argument_list|,
 name|result
 operator|.
