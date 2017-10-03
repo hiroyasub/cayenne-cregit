@@ -446,7 +446,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" (DESCRIPTION, LOCKING_TEST_ID, NAME) VALUES (?, ?, ?)"
+literal|" (DESCRIPTION, INT_COLUMN_NOTNULL, INT_COLUMN_NULL, LOCKING_TEST_ID, NAME) VALUES (?, ?, ?, ?, ?)"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -580,6 +580,22 @@ literal|", "
 operator|+
 name|charStart
 operator|+
+literal|"INT_COLUMN_NOTNULL"
+operator|+
+name|charEnd
+operator|+
+literal|", "
+operator|+
+name|charStart
+operator|+
+literal|"INT_COLUMN_NULL"
+operator|+
+name|charEnd
+operator|+
+literal|", "
+operator|+
+name|charStart
+operator|+
 literal|"LOCKING_TEST_ID"
 operator|+
 name|charEnd
@@ -592,7 +608,7 @@ literal|"NAME"
 operator|+
 name|charEnd
 operator|+
-literal|") VALUES (?, ?, ?)"
+literal|") VALUES (?, ?, ?, ?, ?)"
 argument_list|,
 name|generatedSql
 argument_list|)
