@@ -152,7 +152,7 @@ operator|.
 name|getTargetType
 argument_list|()
 operator|.
-name|getName
+name|getCanonicalName
 argument_list|()
 argument_list|)
 decl_stmt|;
