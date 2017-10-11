@@ -47,6 +47,16 @@ name|ResultSet
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -180,14 +190,12 @@ argument_list|<
 name|T
 argument_list|>
 block|{
-specifier|private
 name|ExtendedType
 argument_list|<
 name|E
 argument_list|>
 name|extendedType
 decl_stmt|;
-specifier|private
 name|ValueObjectType
 argument_list|<
 name|T
@@ -217,13 +225,23 @@ name|this
 operator|.
 name|extendedType
 operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|extendedType
+argument_list|)
 expr_stmt|;
 name|this
 operator|.
 name|valueObjectType
 operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|valueObjectType
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
