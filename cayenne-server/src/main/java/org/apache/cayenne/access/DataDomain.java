@@ -468,28 +468,6 @@ name|VALIDATING_OBJECTS_ON_COMMIT_DEFAULT
 init|=
 literal|true
 decl_stmt|;
-comment|/** 	 * @deprecated since 4.0 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|USING_EXTERNAL_TRANSACTIONS_PROPERTY
-init|=
-literal|"cayenne.DataDomain.usingExternalTransactions"
-decl_stmt|;
-comment|/** 	 * @deprecated since 4.0 See {@link Constants#SERVER_EXTERNAL_TX_PROPERTY}. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|boolean
-name|USING_EXTERNAL_TRANSACTIONS_DEFAULT
-init|=
-literal|false
-decl_stmt|;
 comment|/** 	 * @since 3.1 	 */
 annotation|@
 name|Inject

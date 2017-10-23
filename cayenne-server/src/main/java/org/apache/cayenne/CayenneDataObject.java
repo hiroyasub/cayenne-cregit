@@ -504,28 +504,6 @@ name|values
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Convenience method to invoke {@link Cayenne#makePath(String...)} from 	 * within a DataObject subclass to create a dotted path using the generated 	 * string constants for attributes and relationships. 	 * 	 * @deprecated since 4.1, use {@link Cayenne#makePath(String...)} instead 	 * @see Cayenne#makePath(String...) 	 * @since 3.1 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|String
-name|makePath
-parameter_list|(
-name|String
-modifier|...
-name|pathParts
-parameter_list|)
-block|{
-return|return
-name|Cayenne
-operator|.
-name|makePath
-argument_list|(
-name|pathParts
-argument_list|)
-return|;
-block|}
 block|}
 end_class
 

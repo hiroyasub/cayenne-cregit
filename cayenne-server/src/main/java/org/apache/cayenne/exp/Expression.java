@@ -572,25 +572,6 @@ specifier|protected
 name|int
 name|type
 decl_stmt|;
-comment|/** 	 * Parses string, converting it to Expression. If string does not represent 	 * a semantically correct expression, an ExpressionException is thrown. 	 *  	 * @since 1.1 	 * @deprecated since 4.0 use 	 *             {@link ExpressionFactory#exp(String, Object...)} 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|Expression
-name|fromString
-parameter_list|(
-name|String
-name|expressionString
-parameter_list|)
-block|{
-return|return
-name|exp
-argument_list|(
-name|expressionString
-argument_list|)
-return|;
-block|}
 comment|/** 	 * Returns a map of path aliases for this expression. It returns a non-empty 	 * map only if this is a path expression and the aliases are known at the 	 * expression creation time. Otherwise an empty map is returned. 	 *  	 * @since 3.0 	 */
 specifier|public
 specifier|abstract
@@ -2030,18 +2011,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Stores a String representation of Expression using a provided 	 * PrintWriter. 	 *  	 * @since 1.1 	 * @deprecated since 4.0 use {@link #appendAsString(Appendable)}. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|abstract
-name|void
-name|encodeAsString
-parameter_list|(
-name|PrintWriter
-name|pw
-parameter_list|)
-function_decl|;
 comment|/** 	 * Appends own content as a String to the provided Appendable. 	 *  	 * @since 4.0 	 * @throws IOException 	 */
 specifier|public
 specifier|abstract
@@ -2053,21 +2022,6 @@ name|out
 parameter_list|)
 throws|throws
 name|IOException
-function_decl|;
-comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * PrintWriter. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 3.0 	 * @deprecated since 4.0 use {@link #appendAsEJBQL(Appendable, String)} 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|abstract
-name|void
-name|encodeAsEJBQL
-parameter_list|(
-name|PrintWriter
-name|pw
-parameter_list|,
-name|String
-name|rootId
-parameter_list|)
 function_decl|;
 comment|/** 	 * Stores a String representation of Expression as EJBQL using a provided 	 * Appendable. DB path expressions produce non-standard EJBQL path 	 * expressions. 	 *  	 * @since 4.0 	 * @throws IOException 	 */
 specifier|public

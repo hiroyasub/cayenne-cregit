@@ -86,59 +86,6 @@ name|String
 name|message
 parameter_list|)
 function_decl|;
-comment|/** 	 * Logs database connection event using container data source. 	 *  	 * @deprecated since 4.0 connection events are logged by the DataSources 	 *             using their own logger. 	 */
-annotation|@
-name|Deprecated
-name|void
-name|logConnect
-parameter_list|(
-name|String
-name|dataSource
-parameter_list|)
-function_decl|;
-comment|/** 	 * @deprecated since 4.0 connection events are logged by the DataSources 	 *             using their own logger. 	 */
-annotation|@
-name|Deprecated
-name|void
-name|logConnect
-parameter_list|(
-name|String
-name|url
-parameter_list|,
-name|String
-name|userName
-parameter_list|,
-name|String
-name|password
-parameter_list|)
-function_decl|;
-comment|/** 	 * @deprecated since 4.0 connection events are logged by the DataSources 	 *             using their own logger. 	 */
-annotation|@
-name|Deprecated
-name|void
-name|logPoolCreated
-parameter_list|(
-name|DataSourceInfo
-name|dsi
-parameter_list|)
-function_decl|;
-comment|/** 	 * @deprecated since 4.0 connection events are logged by the DataSources 	 *             using their own logger. 	 */
-annotation|@
-name|Deprecated
-name|void
-name|logConnectSuccess
-parameter_list|()
-function_decl|;
-comment|/** 	 * @deprecated since 4.0 connection events are logged by the DataSources 	 *             using their own logger. 	 */
-annotation|@
-name|Deprecated
-name|void
-name|logConnectFailure
-parameter_list|(
-name|Throwable
-name|th
-parameter_list|)
-function_decl|;
 name|void
 name|logGeneratedKey
 parameter_list|(

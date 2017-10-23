@@ -326,50 +326,6 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|/**      * @deprecated since 4.0, never used actually      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|SNAPSHOT_EXPIRATION_PROPERTY
-init|=
-literal|"cayenne.DataRowStore.snapshot.expiration"
-decl_stmt|;
-comment|/**      * @deprecated since 4.0, use {@link org.apache.cayenne.configuration.Constants#SNAPSHOT_CACHE_SIZE_PROPERTY}      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|SNAPSHOT_CACHE_SIZE_PROPERTY
-init|=
-literal|"cayenne.DataRowStore.snapshot.size"
-decl_stmt|;
-comment|/**      * @deprecated since 4.0 does nothing. Previously it used to check if need to create {@link EventBridge}.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|REMOTE_NOTIFICATION_PROPERTY
-init|=
-literal|"cayenne.DataRowStore.remote.notify"
-decl_stmt|;
-comment|/**      * @deprecated since 4.0 {@link DataRowStoreFactory} establishes {@link EventBridge}.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|EVENT_BRIDGE_FACTORY_PROPERTY
-init|=
-literal|"cayenne.DataRowStore.EventBridge.factory"
-decl_stmt|;
 comment|// default property values
 specifier|public
 specifier|static
@@ -392,27 +348,6 @@ name|SNAPSHOT_CACHE_SIZE_DEFAULT
 init|=
 literal|10000
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|boolean
-name|REMOTE_NOTIFICATION_DEFAULT
-init|=
-literal|false
-decl_stmt|;
-comment|/**      * @deprecated since 4.0 does nothing.      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|EVENT_BRIDGE_FACTORY_DEFAULT
-init|=
-literal|"org.apache.cayenne.event.JavaGroupsBridgeFactory"
-decl_stmt|;
 specifier|protected
 name|String
 name|name
@@ -429,13 +364,6 @@ argument_list|,
 name|DataRow
 argument_list|>
 name|snapshots
-decl_stmt|;
-comment|/**      * @deprecated since 4.0 does nothing. Previously it used to check if need to create {@link EventBridge}.      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|boolean
-name|notifyingRemoteListeners
 decl_stmt|;
 specifier|protected
 specifier|transient
@@ -1840,34 +1768,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isNotifyingRemoteListeners
-parameter_list|()
-block|{
-return|return
-name|notifyingRemoteListeners
-return|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setNotifyingRemoteListeners
-parameter_list|(
-name|boolean
-name|notifyingRemoteListeners
-parameter_list|)
-block|{
-name|this
-operator|.
-name|notifyingRemoteListeners
-operator|=
-name|notifyingRemoteListeners
-expr_stmt|;
 block|}
 comment|// deserialization support
 specifier|private

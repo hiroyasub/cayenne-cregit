@@ -103,26 +103,6 @@ name|DbRelationship
 name|relationship
 parameter_list|)
 function_decl|;
-comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
-annotation|@
-name|Deprecated
-name|void
-name|objEntityAdded
-parameter_list|(
-name|ObjEntity
-name|entity
-parameter_list|)
-function_decl|;
-comment|/**      * @deprecated since 4.0 no longer invoked as DbLoader does not deal with object layer anymore.      */
-annotation|@
-name|Deprecated
-name|void
-name|objEntityRemoved
-parameter_list|(
-name|ObjEntity
-name|entity
-parameter_list|)
-function_decl|;
 block|}
 end_interface
 

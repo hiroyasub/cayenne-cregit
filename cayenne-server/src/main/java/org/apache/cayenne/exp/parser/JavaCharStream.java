@@ -1348,36 +1348,6 @@ name|c
 return|;
 block|}
 block|}
-annotation|@
-name|Deprecated
-comment|/**      * @deprecated      * @see #getEndColumn      */
-specifier|public
-name|int
-name|getColumn
-parameter_list|()
-block|{
-return|return
-name|bufcolumn
-index|[
-name|bufpos
-index|]
-return|;
-block|}
-annotation|@
-name|Deprecated
-comment|/**      * @deprecated      * @see #getEndLine      */
-specifier|public
-name|int
-name|getLine
-parameter_list|()
-block|{
-return|return
-name|bufline
-index|[
-name|bufpos
-index|]
-return|;
-block|}
 comment|/**      * Get end column.      */
 specifier|public
 name|int

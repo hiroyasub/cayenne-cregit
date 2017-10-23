@@ -2532,36 +2532,6 @@ return|return
 name|quotingStrategy
 return|;
 block|}
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 * DataNode. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-name|BatchTranslatorFactory
-name|getBatchQueryBuilderFactory
-parameter_list|()
-block|{
-return|return
-name|batchQueryBuilderFactory
-return|;
-block|}
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the 	 * DataNode. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setBatchQueryBuilderFactory
-parameter_list|(
-name|BatchTranslatorFactory
-name|batchQueryBuilderFactory
-parameter_list|)
-block|{
-name|this
-operator|.
-name|batchQueryBuilderFactory
-operator|=
-name|batchQueryBuilderFactory
-expr_stmt|;
-block|}
 comment|/** 	 * Simply returns this, as JdbcAdapter is not a wrapper. 	 * 	 * @since 4.0 	 */
 annotation|@
 name|Override

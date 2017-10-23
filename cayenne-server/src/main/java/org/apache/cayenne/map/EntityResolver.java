@@ -841,22 +841,6 @@ name|getEmbeddables
 argument_list|()
 return|;
 block|}
-comment|/**      * @deprecated since 4.0 use {@link #getResults()}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Collection
-argument_list|<
-name|SQLResult
-argument_list|>
-name|getResultSets
-parameter_list|()
-block|{
-return|return
-name|getResults
-argument_list|()
-return|;
-block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|Collection
@@ -1270,18 +1254,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Removes all entity mappings from the cache.      *      * @deprecated since 4.0 in favor of {@link #refreshMappingCache()}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|clearCache
-parameter_list|()
-block|{
-name|refreshMappingCache
-argument_list|()
-expr_stmt|;
-block|}
 specifier|private
 name|void
 name|checkMappingCache
@@ -1481,24 +1453,6 @@ expr_stmt|;
 block|}
 return|return
 name|tree
-return|;
-block|}
-comment|/**      * @deprecated since 4.0 use {@link #getInheritanceTree(String)}.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|EntityInheritanceTree
-name|lookupInheritanceTree
-parameter_list|(
-name|String
-name|entityName
-parameter_list|)
-block|{
-return|return
-name|getInheritanceTree
-argument_list|(
-name|entityName
-argument_list|)
 return|;
 block|}
 comment|/**      * Looks in the DataMap's that this object was created with for the      * ObjEntity that maps to the services the specified class      *      * @return the required ObjEntity or null if there is none that matches the      *         specifier      *      * @since 4.0      */
@@ -1763,29 +1717,6 @@ operator|.
 name|getClass
 argument_list|()
 argument_list|)
-return|;
-block|}
-comment|/**      * @deprecated since 4.0. Use q.getMetaData(resolver).getProcedure()      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Procedure
-name|lookupProcedure
-parameter_list|(
-name|Query
-name|q
-parameter_list|)
-block|{
-return|return
-name|q
-operator|.
-name|getMetaData
-argument_list|(
-name|this
-argument_list|)
-operator|.
-name|getProcedure
-argument_list|()
 return|;
 block|}
 comment|/**      * @deprecated since 4.0 use {@link #getProcedure(String)}.      */
