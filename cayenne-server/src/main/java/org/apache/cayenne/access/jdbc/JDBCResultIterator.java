@@ -512,31 +512,6 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * @deprecated since 4.0 always returns false. Connection closing is outside      *             the scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|boolean
-name|isClosingConnection
-parameter_list|()
-block|{
-return|return
-literal|false
-return|;
-block|}
-comment|/**      * Sets the<code>closingConnection</code> property.      *       * @deprecated since 4.0 does nothing. Connection closing is outside the      *             scope of this iterator. See      *             {@link ConnectionAwareResultIterator} for a replacement.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setClosingConnection
-parameter_list|(
-name|boolean
-name|flag
-parameter_list|)
-block|{
-comment|// noop
-block|}
 block|}
 end_class
 

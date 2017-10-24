@@ -1357,7 +1357,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a query built using this query as a prototype, using a set of 	 * parameters to build the qualifier. 	 *  	 * @see org.apache.cayenne.exp.Expression#expWithParameters(java.util.Map, 	 *      boolean) parameter substitution. 	 */
+comment|/** 	 * Returns a query built using this query as a prototype, using a set of 	 * parameters to build the qualifier. 	 *  	 * @see org.apache.cayenne.exp.Expression#params(java.util.Map, 	 *      boolean) parameter substitution. 	 */
 specifier|public
 name|SelectQuery
 argument_list|<

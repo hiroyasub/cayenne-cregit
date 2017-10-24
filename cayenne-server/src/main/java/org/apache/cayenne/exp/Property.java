@@ -224,25 +224,6 @@ name|E
 argument_list|>
 name|type
 decl_stmt|;
-comment|/**      * Constructs a new property with the given name.      *      * @param name name of the property (usually it's obj path)      *      * @see Property#create(String, Class)      * @deprecated use factory method Property.create("propertyName", PropertyType.class)      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Property
-parameter_list|(
-specifier|final
-name|String
-name|name
-parameter_list|)
-block|{
-name|this
-argument_list|(
-name|name
-argument_list|,
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Constructs a new property with the given name and type.      *      * @param name of the property (usually it's obj path)      * @param type of the property      *      * @see Property#create(String, Class)      */
 specifier|protected
 name|Property
