@@ -261,43 +261,6 @@ specifier|private
 name|boolean
 name|autoLoadModules
 decl_stmt|;
-comment|/**      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|ServerRuntimeBuilder
-name|builder
-parameter_list|()
-block|{
-return|return
-name|ServerRuntime
-operator|.
-name|builder
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder(String)}      */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-name|ServerRuntimeBuilder
-name|builder
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-return|return
-name|ServerRuntime
-operator|.
-name|builder
-argument_list|(
-name|name
-argument_list|)
-return|;
-block|}
 comment|/**      * Creates an empty builder.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
 annotation|@
 name|Deprecated

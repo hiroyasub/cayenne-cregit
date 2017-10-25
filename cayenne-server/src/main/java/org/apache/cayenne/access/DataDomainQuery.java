@@ -281,17 +281,6 @@ return|return
 literal|false
 return|;
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|Query
-name|getOrginatingQuery
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|Query

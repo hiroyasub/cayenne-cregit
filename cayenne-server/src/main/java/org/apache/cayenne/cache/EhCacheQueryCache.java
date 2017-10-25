@@ -754,23 +754,6 @@ return|return
 name|size
 return|;
 block|}
-comment|/**      * Returns default cache group.      *       * @deprecated since 4.0 - this method is no longer in use. If you are      *             overriding it, override {@link #cacheName(QueryMetadata)}      *             instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Ehcache
-name|getDefaultCache
-parameter_list|()
-block|{
-return|return
-name|cacheManager
-operator|.
-name|getCache
-argument_list|(
-name|DEFAULT_CACHE_NAME
-argument_list|)
-return|;
-block|}
 comment|/**      * Shuts down EhCache CacheManager      */
 annotation|@
 name|BeforeScopeEnd

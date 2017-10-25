@@ -257,13 +257,6 @@ name|int
 name|getFetchLimit
 parameter_list|()
 function_decl|;
-comment|/**      * @since 3.0      * @deprecated since 4.0, use {@link QueryMetadata#getOriginatingQuery()}      */
-annotation|@
-name|Deprecated
-name|Query
-name|getOrginatingQuery
-parameter_list|()
-function_decl|;
 comment|/**      * Returns a query that originated this query. Originating query is a query whose      * result is needed to obtain the result of the query owning this metadata. Most often      * than not the returned value is null. One example of non-null originating query is a      * query for a range of objects in a previously fetched paginated list. The query that      * fetched the original paginated list is an "originated" query. It may be used to      * restore a list that got lost due to a cache overflow, etc.      *      * @since 4.0      */
 name|Query
 name|getOriginatingQuery
