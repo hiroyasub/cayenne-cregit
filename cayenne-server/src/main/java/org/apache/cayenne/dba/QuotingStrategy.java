@@ -94,26 +94,6 @@ specifier|public
 interface|interface
 name|QuotingStrategy
 block|{
-comment|/**      * Returns a properly quoted identifier.      *       * @deprecated since 4.0      */
-annotation|@
-name|Deprecated
-name|String
-name|quoteString
-parameter_list|(
-name|String
-name|identifier
-parameter_list|)
-function_decl|;
-comment|/**      * @deprecated since 4.0 renamed to      *             {@link #quotedFullyQualifiedName(DbEntity)}.      */
-annotation|@
-name|Deprecated
-name|String
-name|quoteFullyQualifiedName
-parameter_list|(
-name|DbEntity
-name|entity
-parameter_list|)
-function_decl|;
 comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of "quotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName())".      *       * @since 4.0      */
 name|String
 name|quotedFullyQualifiedName

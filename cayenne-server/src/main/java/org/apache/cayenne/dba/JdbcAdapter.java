@@ -2506,22 +2506,6 @@ literal|"\""
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 * @deprecated since 4.0 use {@link #getQuotingStrategy()}. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-name|QuotingStrategy
-name|getQuotingStrategy
-parameter_list|(
-name|boolean
-name|needQuotes
-parameter_list|)
-block|{
-return|return
-name|getQuotingStrategy
-argument_list|()
-return|;
-block|}
 comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|QuotingStrategy
