@@ -297,17 +297,6 @@ return|return
 literal|null
 return|;
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|Query
-name|getOrginatingQuery
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 specifier|public
 name|Query
 name|getOriginatingQuery
