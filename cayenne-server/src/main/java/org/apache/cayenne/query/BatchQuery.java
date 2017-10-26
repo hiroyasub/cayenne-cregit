@@ -370,21 +370,6 @@ return|return
 name|dbAttributes
 return|;
 block|}
-comment|/**      * @deprecated since 4.0 use getRows().size().      */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|size
-parameter_list|()
-block|{
-return|return
-name|rows
-operator|.
-name|size
-argument_list|()
-return|;
-block|}
 block|}
 end_class
 
