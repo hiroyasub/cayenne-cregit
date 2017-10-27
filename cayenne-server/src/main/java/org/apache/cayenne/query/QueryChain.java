@@ -109,13 +109,6 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
-comment|/**      * @since 3.1      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|DataMap
-name|dataMap
-decl_stmt|;
 comment|/**      * Creates an empty QueryChain.      */
 specifier|public
 name|QueryChain
@@ -368,24 +361,6 @@ operator|.
 name|name
 operator|=
 name|name
-expr_stmt|;
-block|}
-comment|/**      * @since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDataMap
-parameter_list|(
-name|DataMap
-name|dataMap
-parameter_list|)
-block|{
-name|this
-operator|.
-name|dataMap
-operator|=
-name|dataMap
 expr_stmt|;
 block|}
 comment|/**      * Returns default metadata.      */
