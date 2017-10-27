@@ -912,28 +912,6 @@ name|substitutedQuery
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @deprecated since 4.0 only first cache group will be used 	 * 			   use {@link IncrementalSelectQuery#setCacheGroup(String)} 	 */
-annotation|@
-name|Override
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setCacheGroups
-parameter_list|(
-name|String
-modifier|...
-name|cacheGroups
-parameter_list|)
-block|{
-name|query
-operator|.
-name|setCacheGroups
-argument_list|(
-name|cacheGroups
-argument_list|)
-expr_stmt|;
-block|}
 comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override

@@ -1390,37 +1390,6 @@ name|getDefaultStrategy
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 * @deprecated since 4.0, use {@link BaseQueryMetadata#setCacheGroup(String)} 	 */
-annotation|@
-name|Deprecated
-name|void
-name|setCacheGroups
-parameter_list|(
-name|String
-modifier|...
-name|groups
-parameter_list|)
-block|{
-if|if
-condition|(
-name|groups
-operator|.
-name|length
-operator|>
-literal|0
-condition|)
-block|{
-name|this
-operator|.
-name|cacheGroup
-operator|=
-name|groups
-index|[
-literal|0
-index|]
-expr_stmt|;
-block|}
-block|}
 comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override

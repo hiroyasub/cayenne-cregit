@@ -391,12 +391,6 @@ specifier|protected
 name|String
 name|name
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|protected
-name|DataMap
-name|dataMap
-decl_stmt|;
 specifier|protected
 name|Collection
 argument_list|<

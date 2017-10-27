@@ -515,16 +515,6 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * @since 3.0      * @deprecated since 4.0 does nothing. Previously it used to create runtime      *             ObjRelationships, that broke a lot of things.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|applyObjectLayerDefaults
-parameter_list|()
-block|{
-comment|// noop
-block|}
 specifier|private
 name|String
 name|getUniqueRelationshipName

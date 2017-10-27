@@ -665,8 +665,6 @@ operator|.
 name|useSharedCache
 argument_list|(
 literal|"g1"
-argument_list|,
-literal|"g2"
 argument_list|)
 expr_stmt|;
 name|QueryMetadata
