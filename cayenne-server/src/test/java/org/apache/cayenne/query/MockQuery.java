@@ -77,17 +77,6 @@ name|MockQuery
 parameter_list|()
 block|{
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|DataMap
-name|getDataMap
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 specifier|public
 name|QueryMetadata
 name|getMetaData

@@ -562,20 +562,6 @@ name|UnsupportedOperationException
 argument_list|()
 throw|;
 block|}
-comment|/**      * @since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|DataMap
-name|getDataMap
-parameter_list|()
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
-block|}
 block|}
 end_class
 

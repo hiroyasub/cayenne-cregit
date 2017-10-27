@@ -1046,17 +1046,6 @@ operator|=
 name|name
 expr_stmt|;
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|DataMap
-name|getDataMap
-parameter_list|()
-block|{
-return|return
-name|dataMap
-return|;
-block|}
 block|}
 end_class
 

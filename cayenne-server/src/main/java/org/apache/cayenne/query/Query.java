@@ -129,13 +129,6 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
-comment|/**      * @since 3.1      * @deprecated since 4.0, {@link QueryDescriptor#getDataMap()} should be used instead      */
-annotation|@
-name|Deprecated
-name|DataMap
-name|getDataMap
-parameter_list|()
-function_decl|;
 block|}
 end_interface
 

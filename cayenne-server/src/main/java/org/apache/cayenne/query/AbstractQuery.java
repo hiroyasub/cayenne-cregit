@@ -144,18 +144,6 @@ comment|/**      * @since 3.1      */
 annotation|@
 name|Deprecated
 specifier|public
-name|DataMap
-name|getDataMap
-parameter_list|()
-block|{
-return|return
-name|dataMap
-return|;
-block|}
-comment|/**      * @since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
 name|void
 name|setDataMap
 parameter_list|(
