@@ -1390,35 +1390,6 @@ name|getDefaultStrategy
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * @since 3.0 	 * @deprecated since 4.0, use {@link BaseQueryMetadata#getCacheGroup()} 	 */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-block|{
-if|if
-condition|(
-name|cacheGroup
-operator|==
-literal|null
-condition|)
-block|{
-return|return
-literal|null
-return|;
-block|}
-return|return
-operator|new
-name|String
-index|[]
-block|{
-name|cacheGroup
-block|}
-return|;
-block|}
 comment|/** 	 * @since 3.0 	 * @deprecated since 4.0, use {@link BaseQueryMetadata#setCacheGroup(String)} 	 */
 annotation|@
 name|Deprecated

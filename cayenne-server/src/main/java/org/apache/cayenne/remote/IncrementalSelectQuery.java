@@ -588,24 +588,6 @@ name|obj
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @deprecated since 4.0, use {@link IncrementalSelectQuery#getCacheGroup()} 	 */
-annotation|@
-name|Override
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-block|{
-return|return
-name|query
-operator|.
-name|getCacheGroups
-argument_list|()
-return|;
-block|}
 comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override

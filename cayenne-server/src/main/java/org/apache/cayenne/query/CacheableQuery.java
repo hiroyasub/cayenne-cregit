@@ -100,23 +100,6 @@ name|strategy
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 3.0      * @deprecated since 4.0, use {@link CacheableQuery#getCacheGroup()}      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-block|{
-return|return
-name|getBaseMetaData
-argument_list|()
-operator|.
-name|getCacheGroups
-argument_list|()
-return|;
-block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|String

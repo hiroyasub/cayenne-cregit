@@ -285,19 +285,6 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * @deprecated since 4.0, use {@link DefaultQueryMetadata#getCacheGroup()}      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * @since 4.0      */
 annotation|@
 name|Override

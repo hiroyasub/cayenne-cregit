@@ -219,14 +219,6 @@ name|String
 name|getCacheKey
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an optional array of cache "groups". Cache groups allow to invalidate query      * caches in bulk on different events. Usually the first group in the array is      * considered to be the "main" group that is used for declarative cache invalidation      * with some cache providers.      *       * @since 3.0      * @deprecated since 4.0 only single cache group supported, use {@link QueryMetadata#getCacheGroup()} instead      * @see QueryMetadata#getCacheGroup()      */
-annotation|@
-name|Deprecated
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-function_decl|;
 comment|/**      * Returns an optional cache "group".      * Cache groups allow to invalidate query caches in bulk on different events.      *      * @since 4.0      */
 name|String
 name|getCacheGroup

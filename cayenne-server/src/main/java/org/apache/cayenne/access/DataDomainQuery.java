@@ -317,18 +317,6 @@ name|substitutedQuery
 parameter_list|)
 block|{
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|String
