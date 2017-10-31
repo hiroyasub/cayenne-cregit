@@ -11,8 +11,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
 name|osgi
 package|;
 end_package
