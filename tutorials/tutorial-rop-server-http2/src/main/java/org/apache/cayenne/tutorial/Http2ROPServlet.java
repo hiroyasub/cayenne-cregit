@@ -41,8 +41,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
 name|rop
 operator|.
 name|server
@@ -75,8 +73,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
 name|web
 operator|.
 name|WebConfiguration
@@ -90,8 +86,6 @@ operator|.
 name|apache
 operator|.
 name|cayenne
-operator|.
-name|configuration
 operator|.
 name|web
 operator|.
