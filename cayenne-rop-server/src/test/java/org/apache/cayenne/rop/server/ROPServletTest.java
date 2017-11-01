@@ -471,92 +471,406 @@ name|locations
 argument_list|)
 expr_stmt|;
 block|}
-comment|//	@Test
-comment|//	public void testInitWithStandardModules() throws Exception {
-comment|//
-comment|//		String name = "cayenne-org.apache.cayenne.configuration.rop.server.test-config";
-comment|//
-comment|//		MockServletConfig config = new MockServletConfig();
-comment|//		config.setServletName(name);
-comment|//
-comment|//		MockServletContext context = new MockServletContext();
-comment|//		config.setServletContext(context);
-comment|//
-comment|//		ROPServlet servlet = new ROPServlet();
-comment|//		servlet.init(config);
-comment|//
-comment|//		runtime = WebUtil.getCayenneRuntime(context);
-comment|//		assertNotNull(runtime);
-comment|//
-comment|//		List<String> locations = runtime.getInjector().getInstance(
-comment|//				Key.getListOf(String.class, Constants.SERVER_PROJECT_LOCATIONS_LIST));
-comment|//
-comment|//		assertEquals(Arrays.asList(name + ".xml"), locations);
-comment|//
-comment|//		Collection<Module> modules = runtime.getModules();
-comment|//		assertEquals(3, modules.size());
-comment|//		Object[] marray = modules.toArray();
-comment|//
-comment|//		assertTrue(marray[0] instanceof ServerModule);
-comment|//		// [2] is an inner class
-comment|//		assertTrue(marray[1] instanceof ROPServerModule);
-comment|//	}
-comment|//	@Test
-comment|//	public void testInitWithExtraModules() throws Exception {
-comment|//
-comment|//		String name = "cayenne-org.apache.cayenne.configuration.rop.server.test-config";
-comment|//
-comment|//		MockServletConfig config = new MockServletConfig();
-comment|//		config.setServletName(name);
-comment|//		config.setInitParameter("extra-modules", MockModule1.class.getName() + "," + MockModule2.class.getName());
-comment|//
-comment|//		MockServletContext context = new MockServletContext();
-comment|//		config.setServletContext(context);
-comment|//
-comment|//		ROPServlet servlet = new ROPServlet();
-comment|//		servlet.init(config);
-comment|//
-comment|//		runtime = WebUtil.getCayenneRuntime(context);
-comment|//		assertNotNull(runtime);
-comment|//
-comment|//		Collection<Module> modules = runtime.getModules();
-comment|//		assertEquals(5, modules.size());
-comment|//
-comment|//		Object[] marray = modules.toArray();
-comment|//
-comment|//		assertTrue(marray[0] instanceof ServerModule);
-comment|//		// [1] is an inner class
-comment|//		assertTrue(marray[1] instanceof ROPServerModule);
-comment|//		assertTrue(marray[2] instanceof MockModule1);
-comment|//		assertTrue(marray[3] instanceof MockModule2);
-comment|//
-comment|//		RequestHandler handler = runtime.getInjector().getInstance(RequestHandler.class);
-comment|//		assertTrue(handler instanceof MockRequestHandler);
-comment|//	}
-comment|//	@Test
-comment|//	public void testInitHessianService() throws Exception {
-comment|//
-comment|//		MockServletConfig config = new MockServletConfig();
-comment|//		config.setServletName("abc");
-comment|//
-comment|//		MockServletContext context = new MockServletContext();
-comment|//		config.setServletContext(context);
-comment|//		config.setInitParameter("extra-modules", ROPHessianServlet_ConfigModule.class.getName());
-comment|//
-comment|//		ROPServlet servlet = new ROPServlet();
-comment|//
-comment|//		servlet.init(config);
-comment|//		runtime = WebUtil.getCayenneRuntime(context);
-comment|//		Collection<Module> modules = runtime.getModules();
-comment|//		assertEquals(4, modules.size());
-comment|//
-comment|//		Object[] marray = modules.toArray();
-comment|//
-comment|//		assertTrue(marray[2] instanceof ROPHessianServlet_ConfigModule);
-comment|//
-comment|//		// TODO: mock servlet request to check that the right service instance
-comment|//		// is invoked
-comment|//	}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testInitWithStandardModules
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|String
+name|name
+init|=
+literal|"cayenne-org.apache.cayenne.configuration.rop.server.test-config"
+decl_stmt|;
+name|MockServletConfig
+name|config
+init|=
+operator|new
+name|MockServletConfig
+argument_list|()
+decl_stmt|;
+name|config
+operator|.
+name|setServletName
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|MockServletContext
+name|context
+init|=
+operator|new
+name|MockServletContext
+argument_list|()
+decl_stmt|;
+name|config
+operator|.
+name|setServletContext
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|ROPServlet
+name|servlet
+init|=
+operator|new
+name|ROPServlet
+argument_list|()
+decl_stmt|;
+name|servlet
+operator|.
+name|init
+argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
+name|runtime
+operator|=
+name|WebUtil
+operator|.
+name|getCayenneRuntime
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|assertNotNull
+argument_list|(
+name|runtime
+argument_list|)
+expr_stmt|;
+name|List
+argument_list|<
+name|String
+argument_list|>
+name|locations
+init|=
+name|runtime
+operator|.
+name|getInjector
+argument_list|()
+operator|.
+name|getInstance
+argument_list|(
+name|Key
+operator|.
+name|getListOf
+argument_list|(
+name|String
+operator|.
+name|class
+argument_list|,
+name|Constants
+operator|.
+name|SERVER_PROJECT_LOCATIONS_LIST
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+name|Arrays
+operator|.
+name|asList
+argument_list|(
+name|name
+operator|+
+literal|".xml"
+argument_list|)
+argument_list|,
+name|locations
+argument_list|)
+expr_stmt|;
+name|Collection
+argument_list|<
+name|Module
+argument_list|>
+name|modules
+init|=
+name|runtime
+operator|.
+name|getModules
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|4
+argument_list|,
+name|modules
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Object
+index|[]
+name|marray
+init|=
+name|modules
+operator|.
+name|toArray
+argument_list|()
+decl_stmt|;
+comment|//		Now we dont know correct order of modules.
+comment|/*		assertTrue(marray[1] instanceof ServerModule); 		assertTrue(marray[2] instanceof ROPServerModule);*/
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testInitWithExtraModules
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|String
+name|name
+init|=
+literal|"cayenne-org.apache.cayenne.configuration.rop.server.test-config"
+decl_stmt|;
+name|MockServletConfig
+name|config
+init|=
+operator|new
+name|MockServletConfig
+argument_list|()
+decl_stmt|;
+name|config
+operator|.
+name|setServletName
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|config
+operator|.
+name|setInitParameter
+argument_list|(
+literal|"extra-modules"
+argument_list|,
+name|MockModule1
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|","
+operator|+
+name|MockModule2
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|MockServletContext
+name|context
+init|=
+operator|new
+name|MockServletContext
+argument_list|()
+decl_stmt|;
+name|config
+operator|.
+name|setServletContext
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|ROPServlet
+name|servlet
+init|=
+operator|new
+name|ROPServlet
+argument_list|()
+decl_stmt|;
+name|servlet
+operator|.
+name|init
+argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
+name|runtime
+operator|=
+name|WebUtil
+operator|.
+name|getCayenneRuntime
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|assertNotNull
+argument_list|(
+name|runtime
+argument_list|)
+expr_stmt|;
+name|Collection
+argument_list|<
+name|Module
+argument_list|>
+name|modules
+init|=
+name|runtime
+operator|.
+name|getModules
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|6
+argument_list|,
+name|modules
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|//		Now we dont know correct order of modules.
+comment|/*		Object[] marray = modules.toArray(); 		assertTrue(marray[1] instanceof ServerModule); 		assertTrue(marray[2] instanceof ROPServerModule); 		assertTrue(marray[3] instanceof MockModule1); 		assertTrue(marray[4] instanceof MockModule2);*/
+name|RequestHandler
+name|handler
+init|=
+name|runtime
+operator|.
+name|getInjector
+argument_list|()
+operator|.
+name|getInstance
+argument_list|(
+name|RequestHandler
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|handler
+operator|instanceof
+name|MockRequestHandler
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testInitHessianService
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|MockServletConfig
+name|config
+init|=
+operator|new
+name|MockServletConfig
+argument_list|()
+decl_stmt|;
+name|config
+operator|.
+name|setServletName
+argument_list|(
+literal|"abc"
+argument_list|)
+expr_stmt|;
+name|MockServletContext
+name|context
+init|=
+operator|new
+name|MockServletContext
+argument_list|()
+decl_stmt|;
+name|config
+operator|.
+name|setServletContext
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|config
+operator|.
+name|setInitParameter
+argument_list|(
+literal|"extra-modules"
+argument_list|,
+name|ROPHessianServlet_ConfigModule
+operator|.
+name|class
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|ROPServlet
+name|servlet
+init|=
+operator|new
+name|ROPServlet
+argument_list|()
+decl_stmt|;
+name|servlet
+operator|.
+name|init
+argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
+name|runtime
+operator|=
+name|WebUtil
+operator|.
+name|getCayenneRuntime
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|Collection
+argument_list|<
+name|Module
+argument_list|>
+name|modules
+init|=
+name|runtime
+operator|.
+name|getModules
+argument_list|()
+decl_stmt|;
+name|assertEquals
+argument_list|(
+literal|5
+argument_list|,
+name|modules
+operator|.
+name|size
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|Object
+index|[]
+name|marray
+init|=
+name|modules
+operator|.
+name|toArray
+argument_list|()
+decl_stmt|;
+name|assertTrue
+argument_list|(
+name|marray
+index|[
+literal|3
+index|]
+operator|instanceof
+name|ROPHessianServlet_ConfigModule
+argument_list|)
+expr_stmt|;
+comment|// TODO: mock servlet request to check that the right service instance
+comment|// is invoked
+block|}
 block|}
 end_class
 

@@ -1,499 +1,569 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|///*****************************************************************
-end_comment
-
-begin_comment
-comment|// *   Licensed to the Apache Software Foundation (ASF) under one
-end_comment
-
-begin_comment
-comment|// *  or more contributor license agreements.  See the NOTICE file
-end_comment
-
-begin_comment
-comment|// *  distributed with this work for additional information
-end_comment
-
-begin_comment
-comment|// *  regarding copyright ownership.  The ASF licenses this file
-end_comment
-
-begin_comment
-comment|// *  to you under the Apache License, Version 2.0 (the
-end_comment
-
-begin_comment
-comment|// *  "License"); you may not use this file except in compliance
-end_comment
-
-begin_comment
-comment|// *  with the License.  You may obtain a copy of the License at
-end_comment
-
-begin_comment
-comment|// *
-end_comment
-
-begin_comment
-comment|// *    http://www.apache.org/licenses/LICENSE-2.0
-end_comment
-
-begin_comment
-comment|// *
-end_comment
-
-begin_comment
-comment|// *  Unless required by applicable law or agreed to in writing,
-end_comment
-
-begin_comment
-comment|// *  software distributed under the License is distributed on an
-end_comment
-
-begin_comment
-comment|// *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-end_comment
-
-begin_comment
-comment|// *  KIND, either express or implied.  See the License for the
-end_comment
-
-begin_comment
-comment|// *  specific language governing permissions and limitations
-end_comment
-
-begin_comment
-comment|// *  under the License.
-end_comment
-
-begin_comment
-comment|// ****************************************************************/
-end_comment
-
-begin_comment
-comment|//package org.apache.cayenne.web;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//import com.mockrunner.mock.web.MockHttpServletRequest;
-end_comment
-
-begin_comment
-comment|//import com.mockrunner.mock.web.MockHttpServletResponse;
-end_comment
-
-begin_comment
-comment|//import com.mockrunner.mock.web.MockHttpSession;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.BaseContext;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.DataChannel;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.MockDataChannel;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.ObjectContext;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.configuration.ObjectContextFactory;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.di.DIBootstrap;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.di.Injector;
-end_comment
-
-begin_comment
-comment|//import org.apache.cayenne.di.Module;
-end_comment
-
-begin_comment
-comment|//import org.junit.Test;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//import static org.junit.Assert.*;
-end_comment
-
-begin_comment
-comment|//import static org.mockito.Mockito.mock;
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//public class ServletContextHandlerTest {
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//    @Test
-end_comment
-
-begin_comment
-comment|//    public void testRequestStart_bindContext() {
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        Module module = binder -> {
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            binder.bind(DataChannel.class).to(MockDataChannel.class);
-end_comment
-
-begin_comment
-comment|//            binder.bind(ObjectContextFactory.class).toInstance(
-end_comment
-
-begin_comment
-comment|//                    new ObjectContextFactory() {
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//                        public ObjectContext createContext(DataChannel parent) {
-end_comment
-
-begin_comment
-comment|//                            return mock(ObjectContext.class);
-end_comment
-
-begin_comment
-comment|//                        }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//                        public ObjectContext createContext() {
-end_comment
-
-begin_comment
-comment|//                            return mock(ObjectContext.class);
-end_comment
-
-begin_comment
-comment|//                        }
-end_comment
-
-begin_comment
-comment|//                    });
-end_comment
-
-begin_comment
-comment|//        };
-end_comment
-
-begin_comment
-comment|//        Injector injector = DIBootstrap.createInjector(module);
-end_comment
-
-begin_comment
-comment|//        SessionContextRequestHandler handler = new SessionContextRequestHandler();
-end_comment
-
-begin_comment
-comment|//        injector.injectMembers(handler);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        MockHttpSession session = new MockHttpSession();
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        BaseContext.bindThreadObjectContext(null);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//        try {
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            MockHttpServletRequest request1 = new MockHttpServletRequest();
-end_comment
-
-begin_comment
-comment|//            MockHttpServletResponse response1 = new MockHttpServletResponse();
-end_comment
-
-begin_comment
-comment|//            request1.setSession(session);
-end_comment
-
-begin_comment
-comment|//            handler.requestStart(request1, response1);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            ObjectContext c1 = BaseContext.getThreadObjectContext();
-end_comment
-
-begin_comment
-comment|//            assertNotNull(c1);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            handler.requestEnd(request1, response1);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            try {
-end_comment
-
-begin_comment
-comment|//                BaseContext.getThreadObjectContext();
-end_comment
-
-begin_comment
-comment|//                fail("thread context not null");
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//            catch (IllegalStateException e) {
-end_comment
-
-begin_comment
-comment|//                // expected
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            MockHttpServletRequest request2 = new MockHttpServletRequest();
-end_comment
-
-begin_comment
-comment|//            MockHttpServletResponse response2 = new MockHttpServletResponse();
-end_comment
-
-begin_comment
-comment|//            request2.setSession(session);
-end_comment
-
-begin_comment
-comment|//            handler.requestStart(request2, response2);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            ObjectContext c2 = BaseContext.getThreadObjectContext();
-end_comment
-
-begin_comment
-comment|//            assertSame(c1, c2);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            handler.requestEnd(request2, response2);
-end_comment
-
-begin_comment
-comment|//            try {
-end_comment
-
-begin_comment
-comment|//                BaseContext.getThreadObjectContext();
-end_comment
-
-begin_comment
-comment|//                fail("thread context not null");
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//            catch (IllegalStateException e) {
-end_comment
-
-begin_comment
-comment|//                // expected
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            MockHttpServletRequest request3 = new MockHttpServletRequest();
-end_comment
-
-begin_comment
-comment|//            MockHttpServletResponse response3 = new MockHttpServletResponse();
-end_comment
-
-begin_comment
-comment|//            request3.setSession(new MockHttpSession());
-end_comment
-
-begin_comment
-comment|//            handler.requestStart(request3, response3);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            ObjectContext c3 = BaseContext.getThreadObjectContext();
-end_comment
-
-begin_comment
-comment|//            assertNotNull(c3);
-end_comment
-
-begin_comment
-comment|//            assertNotSame(c1, c3);
-end_comment
-
-begin_comment
-comment|//
-end_comment
-
-begin_comment
-comment|//            handler.requestEnd(request3, response3);
-end_comment
-
-begin_comment
-comment|//            try {
-end_comment
-
-begin_comment
-comment|//                BaseContext.getThreadObjectContext();
-end_comment
-
-begin_comment
-comment|//                fail("thread context not null");
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//            catch (IllegalStateException e) {
-end_comment
-
-begin_comment
-comment|//                // expected
-end_comment
-
-begin_comment
-comment|//            }
-end_comment
-
-begin_comment
-comment|//        }
-end_comment
-
-begin_comment
-comment|//        finally {
-end_comment
-
-begin_comment
-comment|//            BaseContext.bindThreadObjectContext(null);
-end_comment
-
-begin_comment
-comment|//        }
-end_comment
-
-begin_comment
-comment|//    }
-end_comment
-
-begin_comment
-comment|//}
-end_comment
+comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+end_comment
+
+begin_package
+package|package
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|web
+package|;
+end_package
+
+begin_import
+import|import
+name|com
+operator|.
+name|mockrunner
+operator|.
+name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpServletRequest
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|mockrunner
+operator|.
+name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpServletResponse
+import|;
+end_import
+
+begin_import
+import|import
+name|com
+operator|.
+name|mockrunner
+operator|.
+name|mock
+operator|.
+name|web
+operator|.
+name|MockHttpSession
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|BaseContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|DataChannel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|MockDataChannel
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ObjectContext
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|ObjectContextFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|DIBootstrap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Injector
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Module
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
+name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
+import|;
+end_import
+
+begin_class
+specifier|public
+class|class
+name|ServletContextHandlerTest
+block|{
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testRequestStart_bindContext
+parameter_list|()
+block|{
+name|Module
+name|module
+init|=
+name|binder
+lambda|->
+block|{
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|DataChannel
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|MockDataChannel
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|ObjectContextFactory
+operator|.
+name|class
+argument_list|)
+operator|.
+name|toInstance
+argument_list|(
+operator|new
+name|ObjectContextFactory
+argument_list|()
+block|{
+specifier|public
+name|ObjectContext
+name|createContext
+parameter_list|(
+name|DataChannel
+name|parent
+parameter_list|)
+block|{
+return|return
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
+return|;
+block|}
+specifier|public
+name|ObjectContext
+name|createContext
+parameter_list|()
+block|{
+return|return
+name|mock
+argument_list|(
+name|ObjectContext
+operator|.
+name|class
+argument_list|)
+return|;
+block|}
+block|}
+argument_list|)
+expr_stmt|;
+block|}
+decl_stmt|;
+name|Injector
+name|injector
+init|=
+name|DIBootstrap
+operator|.
+name|createInjector
+argument_list|(
+name|module
+argument_list|)
+decl_stmt|;
+name|SessionContextRequestHandler
+name|handler
+init|=
+operator|new
+name|SessionContextRequestHandler
+argument_list|()
+decl_stmt|;
+name|injector
+operator|.
+name|injectMembers
+argument_list|(
+name|handler
+argument_list|)
+expr_stmt|;
+name|MockHttpSession
+name|session
+init|=
+operator|new
+name|MockHttpSession
+argument_list|()
+decl_stmt|;
+name|BaseContext
+operator|.
+name|bindThreadObjectContext
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+try|try
+block|{
+name|MockHttpServletRequest
+name|request1
+init|=
+operator|new
+name|MockHttpServletRequest
+argument_list|()
+decl_stmt|;
+name|MockHttpServletResponse
+name|response1
+init|=
+operator|new
+name|MockHttpServletResponse
+argument_list|()
+decl_stmt|;
+name|request1
+operator|.
+name|setSession
+argument_list|(
+name|session
+argument_list|)
+expr_stmt|;
+name|handler
+operator|.
+name|requestStart
+argument_list|(
+name|request1
+argument_list|,
+name|response1
+argument_list|)
+expr_stmt|;
+name|ObjectContext
+name|c1
+init|=
+name|BaseContext
+operator|.
+name|getThreadObjectContext
+argument_list|()
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|c1
+argument_list|)
+expr_stmt|;
+name|handler
+operator|.
+name|requestEnd
+argument_list|(
+name|request1
+argument_list|,
+name|response1
+argument_list|)
+expr_stmt|;
+try|try
+block|{
+name|BaseContext
+operator|.
+name|getThreadObjectContext
+argument_list|()
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"thread context not null"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|e
+parameter_list|)
+block|{
+comment|// expected
+block|}
+name|MockHttpServletRequest
+name|request2
+init|=
+operator|new
+name|MockHttpServletRequest
+argument_list|()
+decl_stmt|;
+name|MockHttpServletResponse
+name|response2
+init|=
+operator|new
+name|MockHttpServletResponse
+argument_list|()
+decl_stmt|;
+name|request2
+operator|.
+name|setSession
+argument_list|(
+name|session
+argument_list|)
+expr_stmt|;
+name|handler
+operator|.
+name|requestStart
+argument_list|(
+name|request2
+argument_list|,
+name|response2
+argument_list|)
+expr_stmt|;
+name|ObjectContext
+name|c2
+init|=
+name|BaseContext
+operator|.
+name|getThreadObjectContext
+argument_list|()
+decl_stmt|;
+name|assertSame
+argument_list|(
+name|c1
+argument_list|,
+name|c2
+argument_list|)
+expr_stmt|;
+name|handler
+operator|.
+name|requestEnd
+argument_list|(
+name|request2
+argument_list|,
+name|response2
+argument_list|)
+expr_stmt|;
+try|try
+block|{
+name|BaseContext
+operator|.
+name|getThreadObjectContext
+argument_list|()
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"thread context not null"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|e
+parameter_list|)
+block|{
+comment|// expected
+block|}
+name|MockHttpServletRequest
+name|request3
+init|=
+operator|new
+name|MockHttpServletRequest
+argument_list|()
+decl_stmt|;
+name|MockHttpServletResponse
+name|response3
+init|=
+operator|new
+name|MockHttpServletResponse
+argument_list|()
+decl_stmt|;
+name|request3
+operator|.
+name|setSession
+argument_list|(
+operator|new
+name|MockHttpSession
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|handler
+operator|.
+name|requestStart
+argument_list|(
+name|request3
+argument_list|,
+name|response3
+argument_list|)
+expr_stmt|;
+name|ObjectContext
+name|c3
+init|=
+name|BaseContext
+operator|.
+name|getThreadObjectContext
+argument_list|()
+decl_stmt|;
+name|assertNotNull
+argument_list|(
+name|c3
+argument_list|)
+expr_stmt|;
+name|assertNotSame
+argument_list|(
+name|c1
+argument_list|,
+name|c3
+argument_list|)
+expr_stmt|;
+name|handler
+operator|.
+name|requestEnd
+argument_list|(
+name|request3
+argument_list|,
+name|response3
+argument_list|)
+expr_stmt|;
+try|try
+block|{
+name|BaseContext
+operator|.
+name|getThreadObjectContext
+argument_list|()
+expr_stmt|;
+name|fail
+argument_list|(
+literal|"thread context not null"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IllegalStateException
+name|e
+parameter_list|)
+block|{
+comment|// expected
+block|}
+block|}
+finally|finally
+block|{
+name|BaseContext
+operator|.
+name|bindThreadObjectContext
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+end_class
 
 end_unit
 

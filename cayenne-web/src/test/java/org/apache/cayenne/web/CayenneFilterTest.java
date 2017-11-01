@@ -527,11 +527,8 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//		Was removed because now it is not in correct order. ServerModule and WebModule can change there positioins.
-comment|// 		Object[] marray = modules.toArray();
-comment|//		assertTrue(marray[0] instanceof ServerModule);
-comment|//		//		 [2] is an inner class
-comment|//		assertTrue(marray[1] instanceof WebModule);
+comment|// 		Now we dont  correct order.
+comment|/*		Object[] marray = modules.toArray(); 	    assertTrue(marray[0] instanceof WebModule); 		assertTrue(marray[1] instanceof ServerModule);*/
 name|RequestHandler
 name|handler
 init|=
@@ -667,13 +664,8 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//		Was removed because now it is not in correct order. ServerModule and WebModule can change there positioins.
-comment|//		Object[] marray = modules.toArray();
-comment|//		assertTrue(marray[0] instanceof ServerModule);
-comment|//		// [4] is an inner class
-comment|//		assertTrue(marray[1] instanceof WebModule);
-comment|//		assertTrue(marray[2] instanceof MockModule1);
-comment|//		assertTrue(marray[3] instanceof MockModule2);
+comment|//		Now we dont know correct order.
+comment|/*Object[] marray = modules.toArray(); 		assertTrue(marray[0] instanceof WebModule); 		assertTrue(marray[1] instanceof ServerModule); 		assertTrue(marray[2] instanceof MockModule1); 		assertTrue(marray[3] instanceof MockModule2);*/
 name|RequestHandler
 name|handler
 init|=
@@ -849,10 +841,43 @@ name|getEnded
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|//
-comment|//		filter.doFilter(new MockHttpServletRequest(), new MockHttpServletResponse(), new MockFilterChain());
-comment|//		assertEquals(2, handler.getStarted());
-comment|//		assertEquals(2, handler.getEnded());
+name|filter
+operator|.
+name|doFilter
+argument_list|(
+operator|new
+name|MockHttpServletRequest
+argument_list|()
+argument_list|,
+operator|new
+name|MockHttpServletResponse
+argument_list|()
+argument_list|,
+operator|new
+name|MockFilterChain
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|handler
+operator|.
+name|getStarted
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertEquals
+argument_list|(
+literal|2
+argument_list|,
+name|handler
+operator|.
+name|getEnded
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
