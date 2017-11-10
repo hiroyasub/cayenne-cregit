@@ -261,20 +261,6 @@ name|visitor
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getName
-parameter_list|()
-block|{
-return|return
-name|query
-operator|.
-name|getName
-argument_list|()
-return|;
-block|}
 block|}
 end_class
 

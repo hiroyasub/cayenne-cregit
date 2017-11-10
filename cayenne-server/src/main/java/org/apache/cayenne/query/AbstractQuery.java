@@ -131,12 +131,6 @@ decl_stmt|;
 annotation|@
 name|Deprecated
 specifier|protected
-name|String
-name|name
-decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|protected
 name|DataMap
 name|dataMap
 decl_stmt|;
@@ -156,36 +150,6 @@ operator|.
 name|dataMap
 operator|=
 name|dataMap
-expr_stmt|;
-block|}
-comment|/**      * Returns a symbolic name of the query.      *       * @since 1.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getName
-parameter_list|()
-block|{
-return|return
-name|name
-return|;
-block|}
-comment|/**      * Sets a symbolic name of the query.      *       * @since 1.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setName
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-name|this
-operator|.
-name|name
-operator|=
-name|name
 expr_stmt|;
 block|}
 comment|/**      * Returns default select parameters.      *       * @since 1.2      */
@@ -213,8 +177,7 @@ argument_list|()
 argument_list|,
 name|resolver
 argument_list|,
-name|getName
-argument_list|()
+literal|null
 argument_list|)
 expr_stmt|;
 return|return
@@ -360,14 +323,6 @@ argument_list|(
 literal|"root"
 argument_list|,
 name|root
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"name"
-argument_list|,
-name|getName
-argument_list|()
 argument_list|)
 operator|.
 name|toString

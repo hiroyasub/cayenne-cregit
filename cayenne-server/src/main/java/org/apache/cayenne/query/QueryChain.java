@@ -103,12 +103,6 @@ name|Query
 argument_list|>
 name|chain
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|protected
-name|String
-name|name
-decl_stmt|;
 comment|/**      * Creates an empty QueryChain.      */
 specifier|public
 name|QueryChain
@@ -334,34 +328,6 @@ operator|+
 literal|"and should've been split into separate queries during routing phase."
 argument_list|)
 throw|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getName
-parameter_list|()
-block|{
-return|return
-name|name
-return|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setName
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-name|this
-operator|.
-name|name
-operator|=
-name|name
-expr_stmt|;
 block|}
 comment|/**      * Returns default metadata.      */
 specifier|public

@@ -108,12 +108,6 @@ specifier|protected
 name|DbEntity
 name|dbEntity
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|protected
-name|String
-name|name
-decl_stmt|;
 comment|/**      * @since 4.0      */
 specifier|protected
 name|List
@@ -182,34 +176,6 @@ block|{
 return|return
 name|rows
 return|;
-block|}
-annotation|@
-name|Override
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getName
-parameter_list|()
-block|{
-return|return
-name|name
-return|;
-block|}
-specifier|public
-name|void
-name|setName
-parameter_list|(
-name|String
-name|name
-parameter_list|)
-block|{
-name|this
-operator|.
-name|name
-operator|=
-name|name
-expr_stmt|;
 block|}
 comment|/**      * Returns default select parameters.      *       * @since 1.2      */
 annotation|@

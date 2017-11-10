@@ -242,14 +242,6 @@ literal|"E1FS1"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|assertNull
-argument_list|(
-name|query
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|assertNotNull
 argument_list|(
 name|query

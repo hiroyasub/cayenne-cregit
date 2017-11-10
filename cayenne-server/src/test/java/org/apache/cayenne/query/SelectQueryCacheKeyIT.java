@@ -290,13 +290,6 @@ name|getCacheKey
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|query
-operator|.
-name|setName
-argument_list|(
-literal|"XYZ"
-argument_list|)
-expr_stmt|;
 name|QueryMetadata
 name|md2
 init|=
@@ -737,13 +730,6 @@ argument_list|(
 name|QueryCacheStrategy
 operator|.
 name|SHARED_CACHE
-argument_list|)
-expr_stmt|;
-name|query
-operator|.
-name|setName
-argument_list|(
-literal|"XYZ"
 argument_list|)
 expr_stmt|;
 name|QueryMetadata

@@ -122,13 +122,6 @@ name|SQLActionVisitor
 name|visitor
 parameter_list|)
 function_decl|;
-comment|/**      * Returns a symbolic name of the query. The name is normally used as a key to find      * queries stored in the DataMap.      *       * @since 1.1      * @deprecated {@link QueryDescriptor#getName()} should be used instead      */
-annotation|@
-name|Deprecated
-name|String
-name|getName
-parameter_list|()
-function_decl|;
 block|}
 end_interface
 

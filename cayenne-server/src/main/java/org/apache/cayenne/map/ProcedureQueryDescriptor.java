@@ -149,16 +149,6 @@ expr_stmt|;
 block|}
 name|procedureQuery
 operator|.
-name|setName
-argument_list|(
-name|this
-operator|.
-name|getName
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|procedureQuery
-operator|.
 name|setDataMap
 argument_list|(
 name|dataMap
