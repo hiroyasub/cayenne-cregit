@@ -113,7 +113,7 @@ name|void
 name|removeGroup
 parameter_list|(
 name|String
-name|groupKey
+name|grou3pKey
 parameter_list|,
 name|Class
 argument_list|<
@@ -133,13 +133,6 @@ annotation|@
 name|Deprecated
 name|void
 name|clear
-parameter_list|()
-function_decl|;
-comment|/**      * Returns the number of entries currently in the cache, including expired but not      * removed entries.      *      * @deprecated since 4.0. Please use implementation specific methods to perform cache management tasks.      */
-annotation|@
-name|Deprecated
-name|int
-name|size
 parameter_list|()
 function_decl|;
 block|}

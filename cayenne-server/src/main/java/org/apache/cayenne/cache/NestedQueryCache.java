@@ -332,23 +332,6 @@ name|valueType
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Returns a shared cache size.      * @see QueryCache#size()      * @deprecated since 4.0      */
-annotation|@
-name|Override
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|size
-parameter_list|()
-block|{
-return|return
-name|delegate
-operator|.
-name|size
-argument_list|()
-return|;
-block|}
 specifier|private
 name|String
 name|qualifiedKey
