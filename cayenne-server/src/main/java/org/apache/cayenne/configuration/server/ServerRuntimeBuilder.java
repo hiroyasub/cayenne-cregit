@@ -261,11 +261,8 @@ specifier|private
 name|boolean
 name|autoLoadModules
 decl_stmt|;
-comment|/**      * Creates an empty builder.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder()}      */
-annotation|@
-name|Deprecated
-comment|// TODO remove once we are comfortable with removal of the deprecated API
-specifier|public
+comment|/**      * Creates an empty builder.      */
+specifier|protected
 name|ServerRuntimeBuilder
 parameter_list|()
 block|{
@@ -275,11 +272,8 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      *      * @deprecated since 4.0.M5 in favor of {@link ServerRuntime#builder(String)}      */
-annotation|@
-name|Deprecated
-comment|// TODO make private once we are comfortable with removal of the deprecated API
-specifier|public
+comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      */
+specifier|protected
 name|ServerRuntimeBuilder
 parameter_list|(
 name|String
