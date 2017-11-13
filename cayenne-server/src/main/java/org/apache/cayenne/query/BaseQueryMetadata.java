@@ -431,9 +431,6 @@ name|root
 parameter_list|,
 name|EntityResolver
 name|resolver
-parameter_list|,
-name|String
-name|cacheKey
 parameter_list|)
 block|{
 if|if
@@ -447,12 +444,6 @@ operator|!=
 name|resolver
 condition|)
 block|{
-name|this
-operator|.
-name|cacheKey
-operator|=
-name|cacheKey
-expr_stmt|;
 name|this
 operator|.
 name|classDescriptor
