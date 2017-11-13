@@ -139,13 +139,6 @@ argument_list|)
 decl_stmt|;
 name|ejbqlQuery
 operator|.
-name|setDataMap
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|ejbqlQuery
-operator|.
 name|initWithProperties
 argument_list|(
 name|this

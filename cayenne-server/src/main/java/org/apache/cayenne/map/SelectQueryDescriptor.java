@@ -429,13 +429,6 @@ argument_list|)
 expr_stmt|;
 name|selectQuery
 operator|.
-name|setDataMap
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|selectQuery
-operator|.
 name|setQualifier
 argument_list|(
 name|this

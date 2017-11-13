@@ -149,13 +149,6 @@ expr_stmt|;
 block|}
 name|procedureQuery
 operator|.
-name|setDataMap
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|procedureQuery
-operator|.
 name|setResultEntityName
 argument_list|(
 name|this

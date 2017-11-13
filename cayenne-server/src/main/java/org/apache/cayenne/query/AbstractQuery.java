@@ -128,30 +128,6 @@ specifier|protected
 name|Object
 name|root
 decl_stmt|;
-annotation|@
-name|Deprecated
-specifier|protected
-name|DataMap
-name|dataMap
-decl_stmt|;
-comment|/**      * @since 3.1      */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDataMap
-parameter_list|(
-name|DataMap
-name|dataMap
-parameter_list|)
-block|{
-name|this
-operator|.
-name|dataMap
-operator|=
-name|dataMap
-expr_stmt|;
-block|}
 comment|/**      * Returns default select parameters.      *       * @since 1.2      */
 specifier|public
 name|QueryMetadata
