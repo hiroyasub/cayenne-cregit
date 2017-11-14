@@ -471,8 +471,6 @@ block|}
 block|}
 annotation|@
 name|Test
-annotation|@
-name|Deprecated
 specifier|public
 name|void
 name|testConstructor_Modules
