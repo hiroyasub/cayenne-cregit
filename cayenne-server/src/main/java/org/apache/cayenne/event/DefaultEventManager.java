@@ -254,12 +254,7 @@ expr_stmt|;
 name|String
 name|prefix
 init|=
-literal|"cayenne-edt-"
-operator|+
-name|hashCode
-argument_list|()
-operator|+
-literal|"-"
+literal|"cayenne-event-"
 decl_stmt|;
 comment|// start dispatch threads
 for|for
