@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|TransactionManager
 block|{
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction.      *      * @param op an operation to perform within the trsnaction.      * @return a value returned by the "op" operation.      */
+comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction.      *      * @param op an operation to perform within the transaction.      * @return a value returned by the "op" operation.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -38,7 +38,7 @@ argument_list|>
 name|op
 parameter_list|)
 function_decl|;
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction. As transaction goes through stages, callback methods are invoked allowing the caller to customize      * transaction parameters.      *      * @param op       an operation to perform within the trsnaction.      * @param callback a callback to notify as transaction progresses through stages.      * @return a value returned by the "op" operation.      */
+comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction. As transaction goes through stages, callback methods are invoked allowing the caller to customize      * transaction parameters.      *      * @param op       an operation to perform within the transaction.      * @param callback a callback to notify as transaction progresses through stages.      * @return a value returned by the "op" operation.      */
 parameter_list|<
 name|T
 parameter_list|>
