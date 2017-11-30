@@ -3760,11 +3760,19 @@ parameter_list|)
 throws|throws
 name|IOException
 block|{
+comment|// See CAY-2382
+synchronized|synchronized
+init|(
+name|getObjectStore
+argument_list|()
+init|)
+block|{
 name|out
 operator|.
 name|defaultWriteObject
 argument_list|()
 expr_stmt|;
+block|}
 comment|// Serialize local snapshots cache
 if|if
 condition|(
