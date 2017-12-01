@@ -47,33 +47,7 @@ name|swing
 operator|.
 name|tree
 operator|.
-name|DefaultMutableTreeNode
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|tree
-operator|.
 name|TreePath
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|ConfigurationNode
 import|;
 end_import
 
@@ -358,6 +332,20 @@ operator|.
 name|next
 argument_list|()
 decl_stmt|;
+name|viewCounterpartEntity
+argument_list|(
+name|entity
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|viewCounterpartEntity
+parameter_list|(
+name|ObjEntity
+name|entity
+parameter_list|)
+block|{
 name|TreePath
 name|path
 init|=
@@ -448,7 +436,7 @@ name|getView
 argument_list|()
 return|;
 block|}
-comment|/**      * Builds a tree path for a given path. Urgent for later selection.      *       * @param path      * @return tree path      */
+comment|/**      * Builds a tree path for a given entity. Urgent for later selection.      *       * @param entity to build path for      * @return tree path      */
 specifier|public
 specifier|static
 name|TreePath
