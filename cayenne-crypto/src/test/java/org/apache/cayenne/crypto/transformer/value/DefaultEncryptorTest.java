@@ -111,6 +111,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Base64
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|crypto
@@ -136,18 +146,6 @@ operator|.
 name|crypto
 operator|.
 name|NoSuchPaddingException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|xml
-operator|.
-name|bind
-operator|.
-name|DatatypeConverter
 import|;
 end_import
 
@@ -645,9 +643,12 @@ name|byte
 index|[]
 name|b1_t
 init|=
-name|DatatypeConverter
+name|Base64
 operator|.
-name|parseBase64Binary
+name|getDecoder
+argument_list|()
+operator|.
+name|decode
 argument_list|(
 name|s1_t
 argument_list|)
@@ -707,9 +708,12 @@ name|byte
 index|[]
 name|b2_t
 init|=
-name|DatatypeConverter
+name|Base64
 operator|.
-name|parseBase64Binary
+name|getDecoder
+argument_list|()
+operator|.
+name|decode
 argument_list|(
 name|s2_t
 argument_list|)
