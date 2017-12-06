@@ -23,27 +23,7 @@ name|org
 operator|.
 name|junit
 operator|.
-name|Assert
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|junit
-operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
 import|;
 end_import
 
@@ -54,6 +34,30 @@ operator|.
 name|util
 operator|.
 name|Collections
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertSame
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
 import|;
 end_import
 
@@ -73,8 +77,6 @@ specifier|final
 name|ClassLoader
 name|appCl
 init|=
-name|Mockito
-operator|.
 name|mock
 argument_list|(
 name|ClassLoader
@@ -86,8 +88,6 @@ specifier|final
 name|ClassLoader
 name|diCl
 init|=
-name|Mockito
-operator|.
 name|mock
 argument_list|(
 name|ClassLoader
@@ -99,8 +99,6 @@ specifier|final
 name|ClassLoader
 name|serverCl
 init|=
-name|Mockito
-operator|.
 name|mock
 argument_list|(
 name|ClassLoader
@@ -151,8 +149,6 @@ return|;
 block|}
 block|}
 decl_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|appCl
@@ -165,8 +161,6 @@ literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|appCl
@@ -179,8 +173,6 @@ literal|""
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|appCl
@@ -193,8 +185,6 @@ literal|"org/example/test"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|appCl
@@ -207,8 +197,6 @@ literal|"/org/example/test"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|serverCl
@@ -221,8 +209,6 @@ literal|"/org/apache/cayenne/access/DataContext.class"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|diCl
@@ -235,8 +221,6 @@ literal|"/org/apache/cayenne/di/Injector.class"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Assert
-operator|.
 name|assertSame
 argument_list|(
 name|diCl

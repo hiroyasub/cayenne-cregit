@@ -19,6 +19,26 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|servlet
+operator|.
+name|ServletRequest
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|servlet
+operator|.
+name|ServletResponse
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -99,21 +119,15 @@ end_import
 
 begin_import
 import|import
-name|javax
+name|org
 operator|.
-name|servlet
+name|apache
 operator|.
-name|ServletRequest
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
+name|cayenne
 operator|.
-name|servlet
+name|di
 operator|.
-name|ServletResponse
+name|Module
 import|;
 end_import
 

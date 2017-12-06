@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|javax
+operator|.
+name|servlet
+operator|.
+name|ServletContext
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -28,16 +38,6 @@ operator|.
 name|configuration
 operator|.
 name|CayenneRuntime
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|servlet
-operator|.
-name|ServletContext
 import|;
 end_import
 
